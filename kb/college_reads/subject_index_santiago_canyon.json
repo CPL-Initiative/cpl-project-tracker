@@ -1,12 +1,11 @@
 {
- "_readme": "S730 subject-title hunt (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject and unblock the 88 stray M-ID codes, r-no-mid-on-a-stray-code-sam-2026-11-25). Pass 2 of this plan (pass 1 read run 45623883828): two pages naming sample courses past page 221, to learn how the catalog heads a subject. No model call.",
+ "_readme": "S730 subject-title hunt (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject and unblock the 88 stray M-ID codes, r-no-mid-on-a-stray-code-sam-2026-11-25). Pass 3 of this plan (pass 2 read run 45625671325): the course-description pages for ACCT 101 (any line naming it without a program's Total Units), past the program pages pass 2 found. No model call.",
  "college": "Santiago Canyon College",
  "questions": {
   "subject_titles": "The catalog's printed heading (or prefix legend entry) for each course subject code."
  },
  "keywords": [
-  "\\bACCT 101\\b",
-  "\\bVBUS 10\\b"
+  "ACCT\\s?-?\\s?101\\b(?![^\\n]*Total Units)"
  ],
  "pdf_page_cap": 14,
  "pdf_unfolded": true,
@@ -19,7 +18,7 @@
   }
  ],
  "pdf_span": [
-  222,
+  282,
   1165
  ]
 }

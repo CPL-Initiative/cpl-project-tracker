@@ -1,12 +1,12 @@
 {
- "_readme": "S730 subject-title hunt (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject and unblock the 88 stray M-ID codes, r-no-mid-on-a-stray-code-sam-2026-11-25). Pass 2 of this plan (pass 1 read run 45623883828): the Key to Course Abbreviations, which pass 1 found opening on page 230. No model call.",
+ "_readme": "S730 subject-title hunt (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject and unblock the 88 stray M-ID codes, r-no-mid-on-a-stray-code-sam-2026-11-25). Pass 3 of this plan (pass 2 read run 45625671325): two sample courses' pages in the course section (from page 231), to learn how the catalog heads a subject; the Key to Course Abbreviations on page 230 is an example, not a legend. No model call.",
  "college": "Mendocino College",
  "questions": {
   "subject_titles": "The catalog's printed heading (or prefix legend entry) for each course subject code."
  },
  "keywords": [
-  "KEY TO COURSE ABBREVIATIONS",
-  "^[A-Z]{2,5}\\s*[-=.]+\\s*[A-Z][a-z]"
+  "\\bCSC-102\\b",
+  "\\bEDU-103\\b"
  ],
  "pdf_page_cap": 14,
  "pdf_unfolded": true,
@@ -19,7 +19,7 @@
   }
  ],
  "pdf_span": [
-  230,
-  234
+  231,
+  364
  ]
 }

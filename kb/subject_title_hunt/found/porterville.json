@@ -1,0 +1,450 @@
+{
+ "college": "Porterville College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:34:28Z",
+ "run": "45623883828",
+ "plan": "kb/college_reads/subject_index_porterville.json",
+ "titles": [
+  {
+   "code": "ACCT",
+   "title": "Accounting",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ADMJ",
+   "title": "Administration of Justice",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "AGRI",
+   "title": "Agriculture",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ASL",
+   "title": "American Sign Language",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "APDS",
+   "title": "Applied Design",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "BSAD",
+   "title": "Business Administration",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CHDV",
+   "title": "Child Development",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CDEV",
+   "title": "Child Development",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CMRT",
+   "title": "Commercial Art",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CMUS",
+   "title": "Commercial Music",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CGRA",
+   "title": "Computer Graphics",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CSC",
+   "title": "Computer Science/Software Engineering",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "DRMA",
+   "title": "Drama",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ERSC",
+   "title": "Earth Science",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "EDUC",
+   "title": "Education",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "EMTC",
+   "title": "Emergency Medical Technician.",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "EL2",
+   "title": "English for Second Language Learners",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ETHN",
+   "title": "Ethnic Studies",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "FIRE",
+   "title": "Fire Technology",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "HCRS",
+   "title": "Health Careers",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "HLED",
+   "title": "Health Education",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "HOSP",
+   "title": "Hospitality",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "INDT",
+   "title": "Industrial Maintenance",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "INFS",
+   "title": "Information Systems",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "INST",
+   "title": "Interdisciplinary Studies",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "KIN",
+   "title": "Kinesiology",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "LING",
+   "title": "Linguistics",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MGMT",
+   "title": "Management",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MKTG",
+   "title": "Marketing",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics/Statistics",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "STAT",
+   "title": "Mathematics/Statistics",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MESA",
+   "title": "Mathematics, Engineering, Science Achievement",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MUSC",
+   "title": "Music",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "NURS",
+   "title": "Nursing",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "NUTR",
+   "title": "Nutrition",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "OFFT",
+   "title": "Office Technology",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PHOT",
+   "title": "Photography",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PHSC",
+   "title": "Physical Science",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PSYT",
+   "title": "Psychiatric Technology",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PTVN",
+   "title": "Psychiatric Technology/Voc Nursing",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "SOCI",
+   "title": "Sociology",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "STSS",
+   "title": "Student Success",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "VESL",
+   "title": "Vocational ESL",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "VNRS",
+   "title": "Vocational Nursing",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "WELD",
+   "title": "Welding",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=135",
+   "where": "catalog",
+   "method": "prefix legend"
+  }
+ ]
+}

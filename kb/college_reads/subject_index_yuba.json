@@ -1,12 +1,12 @@
 {
- "_readme": "S730 subject-title hunt (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject and unblock the 88 stray M-ID codes, r-no-mid-on-a-stray-code-sam-2026-11-25). Pass 2 of this plan (pass 1 read run 45623883828): two pages naming sample courses past page 43, to learn how the catalog heads a subject. No model call.",
+ "_readme": "S730 subject-title hunt (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject and unblock the 88 stray M-ID codes, r-no-mid-on-a-stray-code-sam-2026-11-25). Pass 3 of this plan (pass 2 read run 45625671325): the table of contents, since pass 2 found no course descriptions in the PDF (VETT 1 is named only in its program, LEARN 49 nowhere). No model call.",
  "college": "Yuba College",
  "questions": {
   "subject_titles": "The catalog's printed heading (or prefix legend entry) for each course subject code."
  },
  "keywords": [
-  "\\bLEARN 49\\b",
-  "\\bVETT 1\\b"
+  "CONTENTS",
+  "Contents"
  ],
  "pdf_page_cap": 14,
  "pdf_unfolded": true,
@@ -19,7 +19,7 @@
   }
  ],
  "pdf_span": [
-  44,
-  198
+  1,
+  14
  ]
 }
