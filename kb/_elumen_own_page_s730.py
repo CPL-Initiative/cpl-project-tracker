@@ -236,6 +236,11 @@ def decide(lst: dict, college: str, run: str) -> dict:
             if cn in base_srcs:
                 srcs = [base_srcs[cn] if s.get("control_number") == cn else s for s in srcs]
     _write(src_path, srcs)
+    for d in lst["dispatch"]:
+        if d["college"] == college:
+            # The force the read ran with is history; the force list now names what may still go live.
+            d.setdefault("read", {"run": str(run), "only": d["only"], "force": d["force"]})
+            d["force"] = ",".join(force_names(lst, college))
     return lst
 
 

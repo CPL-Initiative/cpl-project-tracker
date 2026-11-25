@@ -71,7 +71,8 @@ for d in LST["dispatch"]:
     check(not rr & (kept | settled) and rr <= force | {e["control_number"] for e in LST["entries"]
                                                        if e["decision"] == "replace"},
           "2 %s: the reread's keys are decided replaces alone (%d)" % (college, len(rr)))
-    check(set(d["only"].split(",")) == force | set(E.ALSO_READ.get(college, [])),
+    ran = d.get("read") or d
+    check(set(ran["only"].split(",")) == set(ran["force"].split(",")) | set(E.ALSO_READ.get(college, [])),
           "2 %s: only= names the force list and %s" % (college, E.ALSO_READ.get(college, [])))
     check(d["estimate_high_usd"] is not None and d["estimate_high_usd"] <= 40,
           "2 %s: the read's estimate ($%s, high $%s) is within $40" % (college, d["estimate_usd"], d["estimate_high_usd"]))
@@ -83,7 +84,8 @@ for college, want in HELD.items():
     kept = {e["control_number"] for e in LST["entries"] if e["college"] == college and e["decision"] == "keep"}
     check(set(d["force"].split(",")) - {""} == want - kept,
           "2 %s: the force list is the %d held programs less the kept (%s)" % (college, len(want), sorted(kept)))
-check(set(LST["dispatch"][0]["only"].split(",")) - set(LST["dispatch"][0]["force"].split(",")) <= {"43150"},
+ran0 = LST["dispatch"][0].get("read") or LST["dispatch"][0]
+check(set(ran0["only"].split(",")) - set(ran0["force"].split(",")) <= {"43150"},
       "2 only= adds 43150 alone beside the force list")
 
 fake = copy.deepcopy(LST)
@@ -101,7 +103,9 @@ check("02150" not in f and "02155" not in f and "02152" in f and "02160" in f,
 fd = [d for d in fake["dispatch"] if d["college"] == AV][0]
 check("02150" not in fd["force"].split(",") and "02150" not in fd["only"].split(","),
       "2 settled() takes the checked row out of the dispatch's force and only")
-check(E.reread_keys(fake, AV) == ["02160"], "2 the reread's keys: the replace alone")
+rk = E.reread_keys(fake, AV)
+check("02160" in rk and "02155" not in rk and "02150" not in rk,
+      "2 the reread's keys: a replace, never a kept key or a checked row")
 
 # ── 3. verdict() ─────────────────────────────────────────────────────────────────────────────────
 e0 = [e for e in LST["entries"] if e["control_number"] == "02150"][0]

@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Professional Bookkeeping",
  "award": "A.S. Degree",
- "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/professional-bookkeeping-as-fall-2026",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/professional-bookkeeping-cert-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9351,
+  "input_tokens": 8689,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9351,
-    "output_tokens": 2757,
+    "input_tokens": 8689,
+    "output_tokens": 2294,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2757,
+  "output_tokens": 2294,
   "output_tokens_details": {
-   "thinking_tokens": 1072
+   "thinking_tokens": 680
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09254,
- "ms": 22034,
- "seconds": 22.6,
+ "cost_usd": 0.08064,
+ "ms": 19001,
+ "seconds": 19.3,
  "parts": null,
  "error": null,
  "score": {
@@ -61,39 +61,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    59.0,
-    61.0
+    32.0,
+    33.0
    ],
    "stated": [
-    60.0,
-    60.0
+    32.0,
+    33.0
    ],
-   "against": "degree",
-   "ge": [
-    27.0,
-    28.0
-   ],
-   "why": [
-    "the blocks and general education come to 59.0-61.0, past the 60.0-60.0 the catalog prints for the degree"
-   ],
-   "fill": null,
-   "major": {
-    "pass": true,
-    "status": "equal",
-    "computed": [
-     32.0,
-     33.0
-    ],
-    "stated": [
-     32.0,
-     33.0
-    ],
-    "against": "program",
-    "why": []
-   }
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -115,13 +94,16 @@
    "pass": true
   },
   "degree": {
-   "status": "read"
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Professional Bookkeeping AS",
+   "section_heading": "Professional Bookkeeping Cert",
    "measure": "units",
    "total_units": {
     "min": 32,
@@ -132,16 +114,16 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": "AVC GE",
+   "ge_pattern": null,
    "degree_total": {
-    "min": 60,
-    "max": 60
+    "min": null,
+    "max": null
    },
    "ge_units": {
-    "min": 27,
-    "max": 28
+    "min": null,
+    "max": null
    },
-   "electives_fill_degree": true,
+   "electives_fill_degree": false,
    "outcomes": [
     "Understand and apply ethics in a bookkeeping environment.",
     "Analyze, compute and record bookkeeping transactions in the form of journal entries.",
@@ -171,63 +153,63 @@
     },
     "courses": [
      {
-      "code": "ACCT111",
+      "code": "ACCT 111",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ACCT113",
+      "code": "ACCT 113",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ACCT115",
+      "code": "ACCT 115",
       "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ACCT121",
+      "code": "ACCT 121",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ACCT131",
+      "code": "ACCT 131",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "BUS113",
+      "code": "BUS 113",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "BUS121",
+      "code": "BUS 121",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CA103",
+      "code": "CA 103",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CA121",
+      "code": "CA 121",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -236,7 +218,7 @@
     ]
    },
    {
-    "name": "Math Course",
+    "name": "Math Requirement",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -246,14 +228,14 @@
     },
     "courses": [
      {
-      "code": "BUS105",
+      "code": "BUS 105",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "MATH124",
+      "code": "MATH 124",
       "units": 4,
       "units_max": null,
       "alternatives": [],
@@ -272,42 +254,42 @@
     },
     "courses": [
      {
-      "code": "ACCT199",
-      "units": 3,
+      "code": "ACCT 199",
+      "units": 1,
       "units_max": 8,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "BUS101",
+      "code": "BUS 101",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "BUS201",
+      "code": "BUS 201",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CA111",
+      "code": "CA 111",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CA131",
+      "code": "CA 131",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "MGT115",
+      "code": "MGT 115",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -319,31 +301,14 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Program Requirements prints 'Professional Bookkeeping AS (Total 32 - 33)' covering core (26), math (3-4) and program electives (3); recorded as total_units. A second requirements table prints 'Required Major Total 29-30' (core + math only) plus 'Program Electives 3' separately.",
-   "Second table prints 'Total Degree Units 60', recorded as degree_total; the description also says a minimum of 60 units is required for the degree.",
-   "The page prints 27-28 units for 'Completion of General Education requirements, plus electives (as needed to reach 60 units)' combined; no separate GE unit figure, so ge_units is null and electives_fill_degree set true. Reviewer should check.",
-   "ge_pattern 'AVC GE' inferred from the Recommended Pathway entries ('Any AVC GE Area 2', etc.); the description refers to general education requirements shown on the Recommended Plan of Study.",
-   "ACCT199 units printed as 3-8 in the Program Requirements list and 1-8 in the second requirements table; recorded 3-8 from the primary list.",
-   "Math Course block: Program Requirements says 'Complete the following number of credits: 3-4'; the second table says 'Choose one'; recorded as choose one course.",
-   "MATH103 appears only in the Recommended Pathway as a GE Area 2 option, not a program requirement; not placed.",
-   "Page recommends taking Program Elective list courses as General Electives; those courses are already in the Program Electives block.",
-   "Program Goals and Objectives repeats the description text; careers drawn from it and the description."
+   "The requested award is the A.S. Degree, but the source page (URL and heading) is the Professional Bookkeeping Certificate; no A.S. degree section, GE pattern or degree total appears in the text. Requirements recorded are those of the certificate section; a reviewer should confirm whether the A.S. degree shares this major or locate the degree page.",
+   "The catalog prints a 'Required Courses' wrapper (Total 29-30) containing Core Courses (26) and Math Requirement (3-4); the 'Required Major Total' is printed as 29-30 and 'Total Certificate Units' as 32-33. total_units records the 32-33 certificate total.",
+   "Math Requirement printed as 'Complete the following number of credits: 3-4' and 'Choose one: BUS 105 OR MATH 124'; recorded as choose 1 course.",
+   "Codes appear both without a space (ACCT111) in the program requirements list and with a space (ACCT 111) in the requirements table; closed-list codes ACCT115 and ACCT131 are the same courses as ACCT 115 and ACCT 131.",
+   "A maximum of 6 pass/no pass units will be accepted for the certificate.",
+   "Program outcomes are printed under the heading 'Professional Bookkeeping Cert'; if the A.S. degree is a separate award, they may not apply to it."
   ]
  },
- "extracted_run": "45612549421",
- "catalog_year": "2026-2027",
- "reconciled": [
-  {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
-   "now": {
-    "min": 27,
-    "max": 28
-   },
-   "words": "Completion of General Education requirements, plus electives (as needed to reach 60 units)\n27-28"
-  }
- ]
+ "extracted_run": "38979725726",
+ "catalog_year": "2026-2027"
 }

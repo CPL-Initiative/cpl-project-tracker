@@ -28,15 +28,30 @@
     "ge_units": null
    },
    "degree_figures_on_certificate": false,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/air-conditioning-refrigeration-specialist-as-fall-2026",
+    "extracted_run": "45612549421",
+    "score": {
+     "passes_live": true,
+     "pass": true,
+     "placed": 8,
+     "listed": 8,
+     "arithmetic": "equal",
+     "invented": 0
+    },
+    "section_heading": "Air Conditioning & Refrigeration Specialist AS",
+    "total_units": 40,
+    "degree_total": 63,
+    "ge_units": 23
+   },
    "live": {
     "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/air-conditioning-refrigeration-specialist-cert-fall-2026",
     "extracted_run": "38979725726",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574354887: its filed record passes but was read from air-conditioning-refrigeration-specialist-cert-fall-2026, so no own-page record exists; a forced read files one"
+   "decision": "replace",
+   "why": "its own-page record (read 45612549421) passes as the live table counts it"
   },
   {
    "college": "Antelope Valley College",
@@ -64,15 +79,30 @@
     "ge_units": null
    },
    "degree_figures_on_certificate": false,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-collision-repair-specialist-as-fall-2026",
+    "extracted_run": "45612549421",
+    "score": {
+     "passes_live": true,
+     "pass": true,
+     "placed": 9,
+     "listed": 9,
+     "arithmetic": "equal",
+     "invented": 0
+    },
+    "section_heading": "Auto Collision Repair Specialist AS",
+    "total_units": 30,
+    "degree_total": 60,
+    "ge_units": 30
+   },
    "live": {
     "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-collision-repair-specialist-cert-fall-2026",
     "extracted_run": "38979725726",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574354887: its filed record passes but was read from automotive-collision-repair-specialist-cert-fall-2026, so no own-page record exists; a forced read files one"
+   "decision": "replace",
+   "why": "its own-page record (read 45612549421) passes as the live table counts it"
   },
   {
    "college": "Antelope Valley College",
@@ -100,15 +130,30 @@
     "ge_units": null
    },
    "degree_figures_on_certificate": false,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/welding-as-fall-2026",
+    "extracted_run": "45612549421",
+    "score": {
+     "passes_live": true,
+     "pass": true,
+     "placed": 10,
+     "listed": 10,
+     "arithmetic": "equal",
+     "invented": 0
+    },
+    "section_heading": "Welding AS",
+    "total_units": 28,
+    "degree_total": 60,
+    "ge_units": 32
+   },
    "live": {
     "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/welding-cert-fall-2026",
     "extracted_run": "38979725726",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574354887: its filed record passes but was read from welding-cert-fall-2026, so no own-page record exists; a forced read files one"
+   "decision": "replace",
+   "why": "its own-page record (read 45612549421) passes as the live table counts it"
   },
   {
    "college": "Antelope Valley College",
@@ -136,15 +181,30 @@
     "ge_units": null
    },
    "degree_figures_on_certificate": false,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/commercial-photography-aa-fall-2026",
+    "extracted_run": "45612549421",
+    "score": {
+     "passes_live": true,
+     "pass": true,
+     "placed": 14,
+     "listed": 14,
+     "arithmetic": "equal",
+     "invented": 0
+    },
+    "section_heading": "Commercial Photography AA",
+    "total_units": 30,
+    "degree_total": null,
+    "ge_units": null
+   },
    "live": {
     "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/commercial-photography-cert-fall-2025",
     "extracted_run": "38979725726",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574354887: its filed record passes but was read from commercial-photography-cert-fall-2025, so no own-page record exists; a forced read files one"
+   "decision": "replace",
+   "why": "its own-page record (read 45612549421) passes as the live table counts it"
   },
   {
    "college": "Antelope Valley College",
@@ -172,15 +232,30 @@
     "ge_units": null
    },
    "degree_figures_on_certificate": false,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/instructional-aide-aa-fall-2026",
+    "extracted_run": "45612549421",
+    "score": {
+     "passes_live": true,
+     "pass": true,
+     "placed": 23,
+     "listed": 23,
+     "arithmetic": "equal",
+     "invented": 0
+    },
+    "section_heading": "Instructional Aide AA",
+    "total_units": 24,
+    "degree_total": null,
+    "ge_units": null
+   },
    "live": {
     "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/instructional-aide-cert-fall-2026",
     "extracted_run": "38979725726",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574354887: its filed record passes but was read from instructional-aide-cert-fall-2026, so no own-page record exists; a forced read files one"
+   "decision": "replace",
+   "why": "its own-page record (read 45612549421) passes as the live table counts it"
   },
   {
    "college": "Antelope Valley College",
@@ -208,15 +283,30 @@
     "ge_units": null
    },
    "degree_figures_on_certificate": false,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/fire-technology-as-fall-2026",
+    "extracted_run": "45612549421",
+    "score": {
+     "passes_live": true,
+     "pass": true,
+     "placed": 25,
+     "listed": 25,
+     "arithmetic": "equal",
+     "invented": 0
+    },
+    "section_heading": "Fire Technology AS",
+    "total_units": 30,
+    "degree_total": null,
+    "ge_units": null
+   },
    "live": {
     "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/fire-technology-cert-fall-2026",
     "extracted_run": "38979725726",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574354887: its filed record passes but was read from fire-technology-cert-fall-2026, so no own-page record exists; a forced read files one"
+   "decision": "replace",
+   "why": "its own-page record (read 45612549421) passes as the live table counts it"
   },
   {
    "college": "Antelope Valley College",
@@ -244,15 +334,30 @@
     "ge_units": null
    },
    "degree_figures_on_certificate": false,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/school-aged-child-care-aa-fall-2026",
+    "extracted_run": "45612549421",
+    "score": {
+     "passes_live": true,
+     "pass": true,
+     "placed": 24,
+     "listed": 24,
+     "arithmetic": "equal",
+     "invented": 0
+    },
+    "section_heading": "School-Aged Child Care AA",
+    "total_units": 33,
+    "degree_total": null,
+    "ge_units": null
+   },
    "live": {
     "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/school-aged-child-care-cert-fall-2026",
     "extracted_run": "38979725726",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574354887: its filed record passes but was read from school-aged-child-care-cert-fall-2026, so no own-page record exists; a forced read files one"
+   "decision": "replace",
+   "why": "its own-page record (read 45612549421) passes as the live table counts it"
   },
   {
    "college": "Antelope Valley College",
@@ -280,15 +385,30 @@
     "ge_units": null
    },
    "degree_figures_on_certificate": false,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/video-design-and-production-aa-fall-2026",
+    "extracted_run": "45612549421",
+    "score": {
+     "passes_live": true,
+     "pass": true,
+     "placed": 21,
+     "listed": 21,
+     "arithmetic": "equal",
+     "invented": 0
+    },
+    "section_heading": "Video Design and Production AA",
+    "total_units": 27,
+    "degree_total": null,
+    "ge_units": null
+   },
    "live": {
     "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/video-design-and-production-cert-fall-2026",
     "extracted_run": "38979725726",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574354887: its filed record passes but was read from video-design-and-production-cert-fall-2026, so no own-page record exists; a forced read files one"
+   "decision": "replace",
+   "why": "its own-page record (read 45612549421) passes as the live table counts it"
   },
   {
    "college": "Antelope Valley College",
@@ -316,15 +436,30 @@
     "ge_units": null
    },
    "degree_figures_on_certificate": false,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/interactive-media-web-design-aa-fall-2026",
+    "extracted_run": "45612549421",
+    "score": {
+     "passes_live": true,
+     "pass": true,
+     "placed": 16,
+     "listed": 16,
+     "arithmetic": "equal",
+     "invented": 0
+    },
+    "section_heading": "Interactive Media-Web Design AA",
+    "total_units": 27,
+    "degree_total": null,
+    "ge_units": null
+   },
    "live": {
     "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/interactive-media-web-design-cert-fall-2025",
     "extracted_run": "38979725726",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574354887: its filed record passes but was read from interactive-media-web-design-cert-fall-2025, so no own-page record exists; a forced read files one"
+   "decision": "replace",
+   "why": "its own-page record (read 45612549421) passes as the live table counts it"
   },
   {
    "college": "Antelope Valley College",
@@ -352,15 +487,30 @@
     "ge_units": null
    },
    "degree_figures_on_certificate": false,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/deaf-studies-american-sign-language-aa-fall-2026",
+    "extracted_run": "45612549421",
+    "score": {
+     "passes_live": true,
+     "pass": true,
+     "placed": 18,
+     "listed": 18,
+     "arithmetic": "equal",
+     "invented": 0
+    },
+    "section_heading": "Deaf Studies: American Sign Language AA",
+    "total_units": 38,
+    "degree_total": null,
+    "ge_units": null
+   },
    "live": {
     "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/deaf-studies-american-sign-language-cert-fall-2025",
     "extracted_run": "38979725726",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574354887: its filed record passes but was read from deaf-studies-american-sign-language-cert-fall-2025, so no own-page record exists; a forced read files one"
+   "decision": "replace",
+   "why": "its own-page record (read 45612549421) passes as the live table counts it"
   },
   {
    "college": "Antelope Valley College",
@@ -388,15 +538,30 @@
     "ge_units": null
    },
    "degree_figures_on_certificate": false,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/refrigeration-specialist-as-fall-2026",
+    "extracted_run": "45612549421",
+    "score": {
+     "passes_live": true,
+     "pass": true,
+     "placed": 4,
+     "listed": 4,
+     "arithmetic": "equal",
+     "invented": 0
+    },
+    "section_heading": "Refrigeration Specialist AS",
+    "total_units": 20,
+    "degree_total": 60,
+    "ge_units": 40
+   },
    "live": {
     "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/refrigeration-specialist-cert-fall-2026",
     "extracted_run": "38979725726",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574354887: its filed record passes but was read from refrigeration-specialist-cert-fall-2026, so no own-page record exists; a forced read files one"
+   "decision": "replace",
+   "why": "its own-page record (read 45612549421) passes as the live table counts it"
   },
   {
    "college": "Antelope Valley College",
@@ -424,15 +589,30 @@
     "ge_units": null
    },
    "degree_figures_on_certificate": false,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/air-conditioning-specialist-as-fall-2026",
+    "extracted_run": "45612549421",
+    "score": {
+     "passes_live": true,
+     "pass": true,
+     "placed": 4,
+     "listed": 4,
+     "arithmetic": "equal",
+     "invented": 0
+    },
+    "section_heading": "Air Conditioning Specialist AS",
+    "total_units": 20,
+    "degree_total": 60,
+    "ge_units": 40
+   },
    "live": {
     "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/air-conditioning-specialist-cert-fall-2026",
     "extracted_run": "38979725726",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574354887: its filed record passes but was read from air-conditioning-specialist-cert-fall-2026, so no own-page record exists; a forced read files one"
+   "decision": "replace",
+   "why": "its own-page record (read 45612549421) passes as the live table counts it"
   },
   {
    "college": "Antelope Valley College",
@@ -460,15 +640,30 @@
     "ge_units": null
    },
    "degree_figures_on_certificate": false,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-refinishing-specialist-as-fall-2026",
+    "extracted_run": "45612549421",
+    "score": {
+     "passes_live": true,
+     "pass": true,
+     "placed": 9,
+     "listed": 9,
+     "arithmetic": "equal",
+     "invented": 0
+    },
+    "section_heading": "Automotive Refinishing Specialist AS",
+    "total_units": 30,
+    "degree_total": 60,
+    "ge_units": 30
+   },
    "live": {
     "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-refinishing-specialist-cert-fall-2026",
     "extracted_run": "38979725726",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574354887: its filed record passes but was read from automotive-refinishing-specialist-cert-fall-2026, so no own-page record exists; a forced read files one"
+   "decision": "replace",
+   "why": "its own-page record (read 45612549421) passes as the live table counts it"
   },
   {
    "college": "Antelope Valley College",
@@ -496,15 +691,30 @@
     "ge_units": null
    },
    "degree_figures_on_certificate": false,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-collision-repair-and-refinishing-specialist-as-fall-2026",
+    "extracted_run": "45612549421",
+    "score": {
+     "passes_live": true,
+     "pass": true,
+     "placed": 12,
+     "listed": 12,
+     "arithmetic": "equal",
+     "invented": 0
+    },
+    "section_heading": "Automotive Collision Repair and Refinishing Specialist AS",
+    "total_units": 40,
+    "degree_total": 62,
+    "ge_units": 22
+   },
    "live": {
     "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-collision-repair-and-refinishing-specialist-cert-fall-2026",
     "extracted_run": "38979725726",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574354887: its filed record passes but was read from automotive-collision-repair-and-refinishing-specialist-cert-fall-2026, so no own-page record exists; a forced read files one"
+   "decision": "replace",
+   "why": "its own-page record (read 45612549421) passes as the live table counts it"
   },
   {
    "college": "Antelope Valley College",
@@ -532,15 +742,30 @@
     "ge_units": null
    },
    "degree_figures_on_certificate": false,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/graphic-design-aa-fall-2026",
+    "extracted_run": "45612549421",
+    "score": {
+     "passes_live": true,
+     "pass": true,
+     "placed": 19,
+     "listed": 19,
+     "arithmetic": "equal",
+     "invented": 0
+    },
+    "section_heading": "Graphic Design AA",
+    "total_units": 27,
+    "degree_total": 60,
+    "ge_units": 21
+   },
    "live": {
     "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/graphic-design-cert-fall-2025",
     "extracted_run": "38979725726",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574354887: its filed record passes but was read from graphic-design-cert-fall-2025, so no own-page record exists; a forced read files one"
+   "decision": "replace",
+   "why": "its own-page record (read 45612549421) passes as the live table counts it"
   },
   {
    "college": "Antelope Valley College",
@@ -568,15 +793,30 @@
     "ge_units": null
    },
    "degree_figures_on_certificate": false,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/deaf-studies-interpreter-training-aa-fall-2026",
+    "extracted_run": "45612549421",
+    "score": {
+     "passes_live": true,
+     "pass": true,
+     "placed": 14,
+     "listed": 14,
+     "arithmetic": "equal",
+     "invented": 0
+    },
+    "section_heading": "Deaf Studies: Interpreter Training AA",
+    "total_units": 39,
+    "degree_total": null,
+    "ge_units": null
+   },
    "live": {
     "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/deaf-studies-interpreter-training-cert-fall-2025",
     "extracted_run": "38979725726",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574354887: its filed record passes but was read from deaf-studies-interpreter-training-cert-fall-2025, so no own-page record exists; a forced read files one"
+   "decision": "replace",
+   "why": "its own-page record (read 45612549421) passes as the live table counts it"
   },
   {
    "college": "Antelope Valley College",
@@ -604,15 +844,30 @@
     "ge_units": null
    },
    "degree_figures_on_certificate": false,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-networking-multi-platform-as-fall-2026",
+    "extracted_run": "45612549421",
+    "score": {
+     "passes_live": true,
+     "pass": true,
+     "placed": 13,
+     "listed": 13,
+     "arithmetic": "equal",
+     "invented": 0
+    },
+    "section_heading": "Computer Networking Multi-Platform AS",
+    "total_units": 31,
+    "degree_total": 60,
+    "ge_units": 21
+   },
    "live": {
     "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-networking-multi-platform-cert-fall-2026",
     "extracted_run": "38979725726",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574354887: its filed record passes but was read from computer-networking-multi-platform-cert-fall-2026, so no own-page record exists; a forced read files one"
+   "decision": "replace",
+   "why": "its own-page record (read 45612549421) passes as the live table counts it"
   },
   {
    "college": "Antelope Valley College",
@@ -640,15 +895,30 @@
     "ge_units": null
    },
    "degree_figures_on_certificate": false,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/professional-bookkeeping-as-fall-2026",
+    "extracted_run": "45612549421",
+    "score": {
+     "passes_live": false,
+     "pass": false,
+     "placed": 17,
+     "listed": 17,
+     "arithmetic": "unequal",
+     "invented": 0
+    },
+    "section_heading": "Professional Bookkeeping AS",
+    "total_units": 32,
+    "degree_total": 60,
+    "ge_units": 27
+   },
    "live": {
     "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/professional-bookkeeping-cert-fall-2026",
     "extracted_run": "38979725726",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574354887: its filed record passes but was read from professional-bookkeeping-cert-fall-2026, so no own-page record exists; a forced read files one"
+   "decision": "keep",
+   "why": "its own-page record does not pass: arithmetic unequal (computed [59.0, 61.0], stated [60.0, 60.0])"
   },
   {
    "college": "Antelope Valley College",
@@ -676,15 +946,30 @@
     "ge_units": 21
    },
    "degree_figures_on_certificate": true,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/electronics-technology-cert-fall-2026",
+    "extracted_run": "45612549421",
+    "score": {
+     "passes_live": true,
+     "pass": true,
+     "placed": 13,
+     "listed": 13,
+     "arithmetic": "equal",
+     "invented": 0
+    },
+    "section_heading": "Electronics Technology Cert",
+    "total_units": 30,
+    "degree_total": null,
+    "ge_units": null
+   },
    "live": {
     "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/electronics-technology-as-fall-2026",
     "extracted_run": "38979725726",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574354887: its filed record passes but was read from electronics-technology-as-fall-2026, so no own-page record exists; a forced read files one"
+   "decision": "replace",
+   "why": "its own-page record (read 45612549421) passes as the live table counts it"
   },
   {
    "college": "Antelope Valley College",
@@ -712,15 +997,30 @@
     "ge_units": null
    },
    "degree_figures_on_certificate": false,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/deaf-studies-american-sign-language-cert-fall-2025",
+    "extracted_run": "45612549421",
+    "score": {
+     "passes_live": true,
+     "pass": true,
+     "placed": 18,
+     "listed": 18,
+     "arithmetic": "equal",
+     "invented": 0
+    },
+    "section_heading": "Deaf Studies: American Sign Language Cert",
+    "total_units": 38,
+    "degree_total": null,
+    "ge_units": null
+   },
    "live": {
     "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/deaf-studies-american-sign-language-aa-fall-2026",
     "extracted_run": "38979725726",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574354887: its filed record passes but was read from deaf-studies-american-sign-language-aa-fall-2026, so no own-page record exists; a forced read files one"
+   "decision": "replace",
+   "why": "its own-page record (read 45612549421) passes as the live table counts it"
   },
   {
    "college": "Antelope Valley College",
@@ -748,15 +1048,30 @@
     "ge_units": null
    },
    "degree_figures_on_certificate": false,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/deaf-studies-interpreter-training-cert-fall-2025",
+    "extracted_run": "45612549421",
+    "score": {
+     "passes_live": true,
+     "pass": true,
+     "placed": 14,
+     "listed": 14,
+     "arithmetic": "equal",
+     "invented": 0
+    },
+    "section_heading": "Deaf Studies: Interpreter Training Cert",
+    "total_units": 39,
+    "degree_total": null,
+    "ge_units": null
+   },
    "live": {
     "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/deaf-studies-interpreter-training-aa-fall-2026",
     "extracted_run": "38979725726",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574354887: its filed record passes but was read from deaf-studies-interpreter-training-aa-fall-2026, so no own-page record exists; a forced read files one"
+   "decision": "replace",
+   "why": "its own-page record (read 45612549421) passes as the live table counts it"
   },
   {
    "college": "Antelope Valley College",
@@ -784,15 +1099,30 @@
     "ge_units": null
    },
    "degree_figures_on_certificate": false,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/commercial-photography-cert-fall-2025",
+    "extracted_run": "45612549421",
+    "score": {
+     "passes_live": true,
+     "pass": true,
+     "placed": 14,
+     "listed": 14,
+     "arithmetic": "equal",
+     "invented": 0
+    },
+    "section_heading": "Commercial Photography Cert",
+    "total_units": 30,
+    "degree_total": null,
+    "ge_units": null
+   },
    "live": {
     "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/commercial-photography-aa-fall-2026",
     "extracted_run": "38979725726",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574354887: its filed record passes but was read from commercial-photography-aa-fall-2026, so no own-page record exists; a forced read files one"
+   "decision": "replace",
+   "why": "its own-page record (read 45612549421) passes as the live table counts it"
   },
   {
    "college": "Antelope Valley College",
@@ -820,15 +1150,30 @@
     "ge_units": null
    },
    "degree_figures_on_certificate": false,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-animation-cert-fall-2025",
+    "extracted_run": "45612549421",
+    "score": {
+     "passes_live": true,
+     "pass": true,
+     "placed": 18,
+     "listed": 18,
+     "arithmetic": "equal",
+     "invented": 0
+    },
+    "section_heading": "Computer Animation Cert",
+    "total_units": 30,
+    "degree_total": null,
+    "ge_units": null
+   },
    "live": {
     "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-animation-aa-fall-2026",
     "extracted_run": "38979725726",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574354887: its filed record passes but was read from computer-animation-aa-fall-2026, so no own-page record exists; a forced read files one"
+   "decision": "replace",
+   "why": "its own-page record (read 45612549421) passes as the live table counts it"
   },
   {
    "college": "Antelope Valley College",
@@ -856,15 +1201,30 @@
     "ge_units": null
    },
    "degree_figures_on_certificate": false,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/graphic-design-cert-fall-2025",
+    "extracted_run": "45612549421",
+    "score": {
+     "passes_live": true,
+     "pass": true,
+     "placed": 19,
+     "listed": 19,
+     "arithmetic": "equal",
+     "invented": 0
+    },
+    "section_heading": "Graphic Design Cert",
+    "total_units": 27,
+    "degree_total": null,
+    "ge_units": null
+   },
    "live": {
     "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/graphic-design-aa-fall-2026",
     "extracted_run": "38979725726",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574354887: its filed record passes but was read from graphic-design-aa-fall-2026, so no own-page record exists; a forced read files one"
+   "decision": "replace",
+   "why": "its own-page record (read 45612549421) passes as the live table counts it"
   },
   {
    "college": "Antelope Valley College",
@@ -892,15 +1252,30 @@
     "ge_units": null
    },
    "degree_figures_on_certificate": false,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/interactive-media-web-design-cert-fall-2025",
+    "extracted_run": "45612549421",
+    "score": {
+     "passes_live": true,
+     "pass": true,
+     "placed": 16,
+     "listed": 16,
+     "arithmetic": "equal",
+     "invented": 0
+    },
+    "section_heading": "Interactive Media-Web Design Cert",
+    "total_units": 27,
+    "degree_total": null,
+    "ge_units": null
+   },
    "live": {
     "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/interactive-media-web-design-aa-fall-2026",
     "extracted_run": "38979725726",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574354887: its filed record passes but was read from interactive-media-web-design-aa-fall-2026, so no own-page record exists; a forced read files one"
+   "decision": "replace",
+   "why": "its own-page record (read 45612549421) passes as the live table counts it"
   },
   {
    "college": "Antelope Valley College",
@@ -928,15 +1303,30 @@
     "ge_units": null
    },
    "degree_figures_on_certificate": false,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/video-design-and-production-cert-fall-2026",
+    "extracted_run": "45612549421",
+    "score": {
+     "passes_live": true,
+     "pass": true,
+     "placed": 21,
+     "listed": 21,
+     "arithmetic": "equal",
+     "invented": 0
+    },
+    "section_heading": "Video Design and Production Cert",
+    "total_units": 27,
+    "degree_total": null,
+    "ge_units": null
+   },
    "live": {
     "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/video-design-and-production-aa-fall-2026",
     "extracted_run": "38979725726",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574354887: its filed record passes but was read from video-design-and-production-aa-fall-2026, so no own-page record exists; a forced read files one"
+   "decision": "replace",
+   "why": "its own-page record (read 45612549421) passes as the live table counts it"
   },
   {
    "college": "Antelope Valley College",
@@ -964,15 +1354,30 @@
     "ge_units": null
    },
    "degree_figures_on_certificate": false,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/professional-bookkeeping-cert-fall-2026",
+    "extracted_run": "45612549421",
+    "score": {
+     "passes_live": true,
+     "pass": true,
+     "placed": 17,
+     "listed": 17,
+     "arithmetic": "equal",
+     "invented": 0
+    },
+    "section_heading": "Professional Bookkeeping Cert",
+    "total_units": 32,
+    "degree_total": null,
+    "ge_units": null
+   },
    "live": {
     "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/professional-bookkeeping-as-fall-2026",
     "extracted_run": "38979725726",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574354887: its filed record passes but was read from professional-bookkeeping-as-fall-2026, so no own-page record exists; a forced read files one"
+   "decision": "replace",
+   "why": "its own-page record (read 45612549421) passes as the live table counts it"
   },
   {
    "college": "Antelope Valley College",
@@ -1000,15 +1405,30 @@
     "ge_units": null
    },
    "degree_figures_on_certificate": false,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-applications-cert-fall-2026",
+    "extracted_run": "45612549421",
+    "score": {
+     "passes_live": true,
+     "pass": true,
+     "placed": 11,
+     "listed": 11,
+     "arithmetic": "equal",
+     "invented": 0
+    },
+    "section_heading": "Computer Applications Cert",
+    "total_units": 28,
+    "degree_total": null,
+    "ge_units": null
+   },
    "live": {
     "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-applications-as-fall-2026",
     "extracted_run": "38979725726",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574354887: its filed record passes but was read from computer-applications-as-fall-2026, so no own-page record exists; a forced read files one"
+   "decision": "replace",
+   "why": "its own-page record (read 45612549421) passes as the live table counts it"
   },
   {
    "college": "Antelope Valley College",
@@ -1036,15 +1456,30 @@
     "ge_units": null
    },
    "degree_figures_on_certificate": false,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-networking-multi-platform-cert-fall-2026",
+    "extracted_run": "45612549421",
+    "score": {
+     "passes_live": true,
+     "pass": true,
+     "placed": 13,
+     "listed": 13,
+     "arithmetic": "equal",
+     "invented": 0
+    },
+    "section_heading": "Computer Networking Multi-Platform Cert",
+    "total_units": 31,
+    "degree_total": null,
+    "ge_units": null
+   },
    "live": {
     "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-networking-multi-platform-as-fall-2026",
     "extracted_run": "38979725726",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574354887: its filed record passes but was read from computer-networking-multi-platform-as-fall-2026, so no own-page record exists; a forced read files one"
+   "decision": "replace",
+   "why": "its own-page record (read 45612549421) passes as the live table counts it"
   },
   {
    "college": "Antelope Valley College",
@@ -1072,15 +1507,30 @@
     "ge_units": null
    },
    "degree_figures_on_certificate": false,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/instructional-aide-cert-fall-2026",
+    "extracted_run": "45612549421",
+    "score": {
+     "passes_live": true,
+     "pass": true,
+     "placed": 23,
+     "listed": 23,
+     "arithmetic": "equal",
+     "invented": 0
+    },
+    "section_heading": "Instructional Aide Cert",
+    "total_units": 24,
+    "degree_total": null,
+    "ge_units": null
+   },
    "live": {
     "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/instructional-aide-aa-fall-2026",
     "extracted_run": "38979725726",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574354887: its filed record passes but was read from instructional-aide-aa-fall-2026, so no own-page record exists; a forced read files one"
+   "decision": "replace",
+   "why": "its own-page record (read 45612549421) passes as the live table counts it"
   },
   {
    "college": "Antelope Valley College",
@@ -1108,15 +1558,30 @@
     "ge_units": 21
    },
    "degree_figures_on_certificate": true,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/general-aircraft-maintenance-cert-fall-2026",
+    "extracted_run": "45612549421",
+    "score": {
+     "passes_live": true,
+     "pass": true,
+     "placed": 9,
+     "listed": 9,
+     "arithmetic": "equal",
+     "invented": 0
+    },
+    "section_heading": "General Aircraft Maintenance Cert",
+    "total_units": 18,
+    "degree_total": null,
+    "ge_units": null
+   },
    "live": {
     "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/general-aircraft-maintenance-as-fall-2026",
     "extracted_run": "38979725726",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574354887: its filed record passes but was read from general-aircraft-maintenance-as-fall-2026, so no own-page record exists; a forced read files one"
+   "decision": "replace",
+   "why": "its own-page record (read 45612549421) passes as the live table counts it"
   },
   {
    "college": "Antelope Valley College",
@@ -1144,15 +1609,30 @@
     "ge_units": 21
    },
    "degree_figures_on_certificate": true,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-powerplant-cert-fall-2026",
+    "extracted_run": "45612549421",
+    "score": {
+     "passes_live": true,
+     "pass": true,
+     "placed": 2,
+     "listed": 2,
+     "arithmetic": "equal",
+     "invented": 0
+    },
+    "section_heading": "Aircraft Powerplant Cert",
+    "total_units": 30,
+    "degree_total": null,
+    "ge_units": null
+   },
    "live": {
     "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-powerplant-as-fall-2026",
     "extracted_run": "38979725726",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574354887: its filed record passes but was read from aircraft-powerplant-as-fall-2026, so no own-page record exists; a forced read files one"
+   "decision": "replace",
+   "why": "its own-page record (read 45612549421) passes as the live table counts it"
   },
   {
    "college": "Antelope Valley College",
@@ -1180,15 +1660,30 @@
     "ge_units": 21
    },
    "degree_figures_on_certificate": true,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-fabrication-assembly-technician-cert-fall-2026",
+    "extracted_run": "45612549421",
+    "score": {
+     "passes_live": true,
+     "pass": true,
+     "placed": 5,
+     "listed": 5,
+     "arithmetic": "equal",
+     "invented": 0
+    },
+    "section_heading": "Aircraft Fabrication & Assembly Technician Cert",
+    "total_units": 26,
+    "degree_total": null,
+    "ge_units": null
+   },
    "live": {
     "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-fabrication-and-assembly-technician-as-fall-2026",
     "extracted_run": "38979725726",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574354887: its filed record passes but was read from aircraft-fabrication-and-assembly-technician-as-fall-2026, so no own-page record exists; a forced read files one"
+   "decision": "replace",
+   "why": "its own-page record (read 45612549421) passes as the live table counts it"
   },
   {
    "college": "Antelope Valley College",
@@ -1216,15 +1711,30 @@
     "ge_units": null
    },
    "degree_figures_on_certificate": false,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/school-aged-child-care-cert-fall-2026",
+    "extracted_run": "45612549421",
+    "score": {
+     "passes_live": true,
+     "pass": true,
+     "placed": 24,
+     "listed": 24,
+     "arithmetic": "equal",
+     "invented": 0
+    },
+    "section_heading": "School-Aged Child Care Cert",
+    "total_units": 33,
+    "degree_total": null,
+    "ge_units": null
+   },
    "live": {
     "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/school-aged-child-care-aa-fall-2026",
     "extracted_run": "38979725726",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574354887: its filed record passes but was read from school-aged-child-care-aa-fall-2026, so no own-page record exists; a forced read files one"
+   "decision": "replace",
+   "why": "its own-page record (read 45612549421) passes as the live table counts it"
   },
   {
    "college": "Antelope Valley College",
@@ -1252,15 +1762,30 @@
     "ge_units": null
    },
    "degree_figures_on_certificate": false,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/fire-technology-cert-fall-2026",
+    "extracted_run": "45612549421",
+    "score": {
+     "passes_live": true,
+     "pass": true,
+     "placed": 25,
+     "listed": 25,
+     "arithmetic": "equal",
+     "invented": 0
+    },
+    "section_heading": "Fire Technology Cert",
+    "total_units": 30,
+    "degree_total": null,
+    "ge_units": null
+   },
    "live": {
     "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/fire-technology-as-fall-2026",
     "extracted_run": "38979725726",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574354887: its filed record passes but was read from fire-technology-as-fall-2026, so no own-page record exists; a forced read files one"
+   "decision": "replace",
+   "why": "its own-page record (read 45612549421) passes as the live table counts it"
   },
   {
    "college": "Antelope Valley College",
@@ -1288,15 +1813,30 @@
     "ge_units": null
    },
    "degree_figures_on_certificate": false,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/all-automotive-systems-cert-fall-2025",
+    "extracted_run": "45612549421",
+    "score": {
+     "passes_live": true,
+     "pass": true,
+     "placed": 10,
+     "listed": 10,
+     "arithmetic": "equal",
+     "invented": 0
+    },
+    "section_heading": "All Automotive Systems Certificate",
+    "total_units": 48,
+    "degree_total": null,
+    "ge_units": null
+   },
    "live": {
     "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/all-automotive-systems-as-fall-2026",
     "extracted_run": "38979725726",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574354887: its filed record passes but was read from all-automotive-systems-as-fall-2026, so no own-page record exists; a forced read files one"
+   "decision": "replace",
+   "why": "its own-page record (read 45612549421) passes as the live table counts it"
   },
   {
    "college": "Antelope Valley College",
@@ -1324,15 +1864,30 @@
     "ge_units": null
    },
    "degree_figures_on_certificate": false,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/paramedic-as-spring-2026",
+    "extracted_run": "45612549421",
+    "score": {
+     "passes_live": true,
+     "pass": true,
+     "placed": 11,
+     "listed": 11,
+     "arithmetic": "equal",
+     "invented": 0
+    },
+    "section_heading": "Paramedic AS",
+    "total_units": 47,
+    "degree_total": 69,
+    "ge_units": 22
+   },
    "live": {
     "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/paramedic-cert-spring-2026",
     "extracted_run": "38979725726",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574354887: its filed record passes but was read from paramedic-cert-spring-2026, so no own-page record exists; a forced read files one"
+   "decision": "replace",
+   "why": "its own-page record (read 45612549421) passes as the live table counts it"
   },
   {
    "college": "Antelope Valley College",
@@ -1360,15 +1915,30 @@
     "ge_units": 22
    },
    "degree_figures_on_certificate": true,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/paramedic-cert-spring-2026",
+    "extracted_run": "45612549421",
+    "score": {
+     "passes_live": true,
+     "pass": true,
+     "placed": 11,
+     "listed": 11,
+     "arithmetic": "equal",
+     "invented": 0
+    },
+    "section_heading": "Paramedic Cert",
+    "total_units": 47,
+    "degree_total": null,
+    "ge_units": null
+   },
    "live": {
     "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/paramedic-as-spring-2026",
     "extracted_run": "38979725726",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574354887: its filed record passes but was read from paramedic-as-spring-2026, so no own-page record exists; a forced read files one"
+   "decision": "replace",
+   "why": "its own-page record (read 45612549421) passes as the live table counts it"
   },
   {
    "college": "College of the Redwoods",
@@ -1478,7 +2048,7 @@
    "college": "Antelope Valley College",
    "step": "read",
    "only": "02150,02152,02155,02160,02184,02185,07242,07246,07247,07248,10234,10235,10237,10238,10241,12137,14790,16468,19460,19463,19464,19465,19467,19469,19470,19471,20149,20159,20162,20163,20175,20179,20181,20202,20203,43150,43151,43843,45151",
-   "force": "02150,02152,02155,02160,02184,02185,07242,07246,07247,07248,10234,10235,10237,10238,10241,12137,14790,16468,19460,19463,19464,19465,19467,19469,19470,19471,20149,20159,20162,20163,20175,20179,20181,20202,20203,43151,43843,45151",
+   "force": "02150,02152,02155,02160,02184,02185,07242,07246,07247,07248,10234,10235,10237,10238,10241,12137,14790,19460,19463,19464,19465,19467,19469,19470,19471,20149,20159,20162,20163,20175,20179,20181,20202,20203,43151,43843,45151",
    "programs": 39,
    "estimate_usd": 2.73,
    "estimate_high_usd": 4.45,
@@ -1487,7 +2057,12 @@
     "decide Antelope Valley College <the read's run>",
     "step=load",
     "step=reread"
-   ]
+   ],
+   "read": {
+    "run": "45612549421",
+    "only": "02150,02152,02155,02160,02184,02185,07242,07246,07247,07248,10234,10235,10237,10238,10241,12137,14790,16468,19460,19463,19464,19465,19467,19469,19470,19471,20149,20159,20162,20163,20175,20179,20181,20202,20203,43150,43151,43843,45151",
+    "force": "02150,02152,02155,02160,02184,02185,07242,07246,07247,07248,10234,10235,10237,10238,10241,12137,14790,16468,19460,19463,19464,19465,19467,19469,19470,19471,20149,20159,20162,20163,20175,20179,20181,20202,20203,43151,43843,45151"
+   }
   },
   {
    "college": "College of the Redwoods",
@@ -1502,7 +2077,12 @@
     "decide College of the Redwoods <the read's run>",
     "step=load",
     "step=reread"
-   ]
+   ],
+   "read": {
+    "run": "45609110977",
+    "only": "45557,45595",
+    "force": "45557,45595"
+   }
   }
  ],
  "pin": {
@@ -1543,6 +2123,24 @@
    }
   },
   "live": "none (handoff 728: 43150 has no live row; reread 45579427195 skipped it)",
-  "fix": "the pin alone binds the page; a paid read (only=43150) extracts it and step=load inserts it"
+  "fix": "the pin alone binds the page; a paid read (only=43150) extracts it and step=load inserts it",
+  "read": {
+   "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/all-automotive-systems-as-fall-2026",
+   "extracted_run": "45612549421",
+   "score": {
+    "passes_live": true,
+    "pass": true,
+    "placed": 10,
+    "listed": 10,
+    "arithmetic": "equal",
+    "invented": 0
+   },
+   "section_heading": "All Automotive Systems AS",
+   "total_units": 48,
+   "degree_total": 70,
+   "ge_units": 22,
+   "decision": "insert",
+   "why": "its own-page record (read 45612549421) passes as the live table counts it: load inserts it"
+  }
  }
 }
