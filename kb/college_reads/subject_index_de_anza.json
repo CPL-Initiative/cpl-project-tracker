@@ -1,5 +1,5 @@
 {
- "_readme": "S730 title hunt (elumen group), 2026-11-25, round 2. Sam asked on 2026-11-25 for each college's printed local subject titles (the catalog's heading for each course subject code; kb/subject_title_hunt/README.md, r-no-mid-on-a-stray-code-sam-2026-11-25). Round 1 (run 45623983494): the menu links one page per credit subject, 'CODE - Name Courses' (84, filed). This read loads the Noncredit Courses and Certificates page, to see whether it heads the noncredit subjects the same way. No model call, writes nothing.",
+ "_readme": "S730 title hunt (elumen group), 2026-11-25, round 3. Rounds 1 and 2 (runs 45623983494, 45625568851) filed the 84 credit subject headings ('CODE - Name Courses') and found the noncredit section's own Noncredit Course Listings page. This read loads that page, rendered, to see whether it heads the noncredit subjects with their codes. One load, no model call, writes nothing.",
  "college": "De Anza College",
  "questions": {
   "subject_index": "Where the catalog prints each course subject code with its name, and the names as printed."
@@ -14,12 +14,12 @@
  ],
  "pages": [
   {
-   "url": "https://deanza.elumenapp.com/catalog/2026-2027/noncredit-courses-and-certificates",
-   "links": "courses|noncredit",
-   "links_cap": 400,
    "answers": [
     "subject_index"
-   ]
+   ],
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/noncredit-course-listings",
+   "links": "courses|noncredit",
+   "links_cap": 400
   }
  ]
 }
