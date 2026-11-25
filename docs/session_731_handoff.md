@@ -70,6 +70,15 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 
 ## Split changes during the run
 
+- 11:05Z: the declaration, #3823. 11:08Z: `lever`, `elumen2` and the Los Angeles Trade-Technical (s730a) and
+  Saddleback (s730b) piles started on Opus 5.5 at high effort, a fresh worker each. Long Beach City's piles and
+  `pooled` wait for a slot. **DECIDED** `d-lever-dispatches-paid-reads-in-words-s730`: `lever` may dispatch paid reads
+  on its own branch with `only=`, at most $5 a college and $15 in all on the estimate, beside the free steps S727
+  lifted in words (`d-workers-dispatch-loads-in-words-s727`), to save the conductor's context; applies stay the
+  conductor's.
+- 11:12Z: display build `2c8507c058b1` (18,724 records, built on `main` `56c21b96` with Python 3.12) on
+  `claude/s730-display`; the Glendale gate 45602360120 dispatched at 11:13Z.
+
 [[S730 FILL: the run's log]]
 
 Spend: [[S730 FILL]]
