@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-25_s727d_prreq_piles_apply.sql
-name=s727d_prreq_piles_apply
+file=kb/migrations/2026-11-25_gather_filters.sql
+name=gather_filters
