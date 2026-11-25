@@ -222,6 +222,17 @@
     ".cf-elig { display: inline-flex; vertical-align: middle; margin: 0 2px 0 4px; cursor: help; }",
     ".cf-lead .cf-elig { width: 28px; height: 28px; margin: 0; justify-content: center; align-items: center; }",
     ".cf-lead .cf-empty { cursor: default; }",
+    // THE ROW'S CARET (Sam, 2026-11-25, on the public page after the team tested Simple view: "add a carat to each
+    // row to the left of the pie glyph"). It points right on a closed row and down on an open one. It is drawn, not
+    // typed, so no font substitutes a glyph, and it is aria-hidden: the name's button already carries the state
+    // (aria-expanded) and the whole row is the toggle, so a second focus stop would say nothing new.
+    ".cf-chev { display: inline-flex; flex: none; width: 16px; height: 28px; align-items: center; justify-content: center; }",
+    ".cf-chev::before { content: ''; width: 6px; height: 6px; border-right: 2px solid var(--cobalt, #0D5BC6); " +
+      "border-bottom: 2px solid var(--cobalt, #0D5BC6); transform: rotate(-45deg); transition: transform .15s; }",
+    "tr.cplfund-open .cf-chev::before { transform: rotate(45deg); }",
+    ".cf-chev.cf-chev-empty::before { content: none; }",
+    "@media (prefers-reduced-motion: reduce) { .cf-chev::before { transition: none; } }",
+    "@media print { .cf-chev { display: none; } }",
     ".cf-starslot { display: inline-block; width: 20px; margin-left: 4px; text-align: center; }",
     ".cf-starslot .cplfund-vstar { margin: 0; font-size: 1.45em; line-height: 1; }",
     // Each pie slice answers for itself; the one under the pointer is outlined.
@@ -12878,7 +12889,9 @@
   })();
   function saveColPrefs() { try { localStorage.setItem(COLS_STORE, JSON.stringify(COL_PREFS)); } catch (e) {} }
   function hiddenCols() { return COL_PREFS.college || (COL_PREFS.college = {}); }
-  function isColHidden(key) { return !!hiddenCols()[key]; }
+  // Simple view takes the # column off whatever this browser remembers (Sam, 2026-11-25: "take off the college
+  // numbering column"): the view hides the Columns menu, so a # turned on earlier could not be turned off there.
+  function isColHidden(key) { return (key === "order" && !!state.simpleView) || !!hiddenCols()[key]; }
   function idColKey() { return "college"; }
   function colHideStyleHtml() {
     // One row shape per institution (R6, 2026-08-31) — no paired-NC-row
@@ -13886,8 +13899,13 @@
   // name's button: the print copy flattens that button to its text, and its
   // accessible name stays the name.
   function leadHtml(c) {
-    return '<span class="cf-lead"><span class="cf-elig">' + eligGlyph(c.college) + "</span>" +
+    return '<span class="cf-lead">' + chevHtml(false) + '<span class="cf-elig">' + eligGlyph(c.college) + "</span>" +
       '<span class="cf-starslot">' + vetStarHtml(c) + "</span></span>";
+  }
+  // The row's caret, on the public page alone (the drawing is CSS, .cf-chev above). An empty slot on a row that does
+  // not open keeps the names in line.
+  function chevHtml(empty) {
+    return publicMode() ? '<span class="cf-chev' + (empty ? " cf-chev-empty" : "") + '" aria-hidden="true"></span>' : "";
   }
   function collegeRowHtml(c, idx) {
     var id = "c:" + c.college;
@@ -14785,8 +14803,8 @@
       ? '<span class="cf-sys-elig" title="Condition status pending: the MAP coordinator data has not loaded.">&mdash;</span>'
       : '<span class="cf-sys-elig" title="' + esc(allMetTitle()) + '">' + fmtInt(allMet) + " of " +
         fmtInt(oneRoster().length) + " meet all conditions</span>";
-    var foot = '<tr class="cplfund-systemrow" data-id="sys">' +
-      '<td></td><td class="t cf-inst"><span class="cf-lead"><span class="cf-elig cf-empty"></span><span class="cf-starslot"></span></span>' +
+    var foot = '<tr class="cplfund-systemrow' + (sysOpen ? " cplfund-open" : "") + '" data-id="sys">' +
+      '<td></td><td class="t cf-inst"><span class="cf-lead">' + chevHtml(false) + '<span class="cf-elig cf-empty"></span><span class="cf-starslot"></span></span>' +
       '<button type="button" class="cplfund-caret" aria-expanded="' +
       (sysOpen ? "true" : "false") + '" aria-label="Statewide totals, per-priority detail">Statewide</button>' + sysElig + "</td>" +
       // THE COUNTS (Sam, 2026-09-24: "include count of colleges at the System
@@ -19454,6 +19472,7 @@
     // SIMPLE VIEW on the public page (Sam, 2026-11-24): who sees the package, the
     // count cards and their filter, and the flat table the switch asks for.
     simplePackageShown: simplePackageShown, simpleViewLive: simpleViewLive, setSimpleViewLive: setSimpleViewLive,
+    isColHidden: isColHidden,
     simpleView: function () { return !!state.simpleView; }, setSimpleView: setSimpleView,
     condCards: condCards, condFilter: function () { return state.condFilter || ""; }, setCondFilter: setCondFilter,
     setText: setText, textPlain: textPlain, textIsCustom: textIsCustom, textIsBlank: textIsBlank,
