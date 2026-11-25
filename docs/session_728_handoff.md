@@ -8,7 +8,7 @@ obsidian-folder: cpl-project-tracker/handoffs
 ---
 
 **Routing, both ways.** A CPL Queue routine firing follows this file. A plain session Sam opens follows the newest
-handoff his plain sessions write (726, SkyAvocet's, or 727 once S726 writes it), never this file. **Numbering.** Sam's
+handoff his plain sessions write (727, S726 SkyAvocet's, merged in #3815 at 08:42Z), never this file. **Numbering.** Sam's
 plain session S726 (SkyAvocet) merged #3802, #3805 and #3806 before this firing and has not written handoff 727, so
 this run takes S727, the next free number, and writes 728, leaving 727 to S726 (`d-routine-takes-next-free-number-s713`).
 The routine's next session is **SkyFrigatebird**: it takes the next free session number at its start and writes the
@@ -19,10 +19,10 @@ handoff one above the highest on `main` (`d-routine-leaves-plain-handoff-number-
 From SkyTropicbird (S727), the CPL Queue routine's 06:12Z firing of 2026-11-25, a conductor run for collection only
 under Sam's routine prompt of 2026-11-17 and the COBIx brief on #3358 (Tue Nov 24, written 6:45 PM PT). Handoff 722
 named SkyTropicbird for the routine's next session, and no plain session holds the name. A **full checkpoint** (the
-harvest lane moved; Rule 10 data writes ran: by 08:25Z six guarded applies, four loads and a display build), written by
-the checkpoint-docs worker from 08:23Z while #3810, #3811, Butte's reconcile and the records held for a person were in
-flight. The conductor brings it to its final state: the memory rows (step 10), step 12's stamp and every
-`[[S727 FILL]]` below. Skipped: step 2 (tonight's code sits in the harvest's own named-gap file, reader and reconcile,
+harvest lane moved; Rule 10 data writes ran: seven guarded applies, the lever's and the eLumen fix's loads and rereads,
+a display build and the memory rows), written by the checkpoint-docs worker from 08:23Z and finished after the last
+merge with the conductor's final facts. The conductor applied the memory rows (migrate 45588204442, 22 rows) and
+stamped step 12 (`2e947e1b`). Skipped: step 2 (tonight's code sits in the harvest's own named-gap file, reader and reconcile,
 which the lane and lessons document), step 3 (no user-facing surface changed), step 7 (no re-mint, no roadmap status
 change, no auditor counts moved) and step 9 (the UI pass is its own queue item). The start and the college split below
 were written before any worker started.
@@ -42,10 +42,9 @@ were written before any worker started.
 2a. **Sam's work order (2026-11-20):** collection comes first, data waves before fixes, and a fix goes ahead of the next
    wave only when it blocks it or would file wrong rows (`r-collection-first-sam-2026-11-20`). Collection serves the
    M-IDs, so its fixes are ranked by the M-ID cards they unblock (`r-collect-for-mids-work-order-sam-2026-11-20`).
-3. **Merge order at this writing (08:48Z):** #3810 (the eLumen fix) and #3811 (the lever), the oldest finished first,
-   each with one update from `main` right before its merge; then the second land PR (Santa Barbara City, s727v, the
-   records held for a person, Butte); this checkpoint, #3807, at sign-off [[S727 FILL: the merge order at sign-off]].
-   Whichever is still open at your start goes first. Dependabot's #3383 waits.
+3. **Merge order at sign-off:** every substantive PR of tonight's has merged (#3808, #3812, #3810, #3816, #3811). This
+   checkpoint, #3807, merges at sign-off, with one update from `main` right before its merge. Open PRs at sign-off:
+   #3807 and dependabot's #3383, which waits. Butte's branch has no PR yet (open work, below).
 
 ## The start (06:12Z firing, 2026-11-25)
 
@@ -177,8 +176,21 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 - 08:24Z: Sam's plain session's #3813 merged (`77e9903a`, the Commons cards' titles), one writer per file.
 - 08:26Z: the persons plan's round 1 fixes (`56153e5b`: hold 33013, 39539, 32832 and 44984; De Anza 45499 takes
   `unit_line_not_read`).
-- [[S727 FILL: the split changes after 08:26Z: #3810's and #3811's reads, loads and merges, Butte, the persons plan,
-  the second land PR, the display build and the closing census]]
+- 08:27Z: Butte's reconcile run 45576373568 dispatched on `claude/s727-butte` (`745f6940`); at 09:59Z it was still
+  capturing.
+- 08:42Z: S726's checkpoint #3815 merged (`e335cd9c`): handoff 727, for Sam's next plain session.
+- Before #3810's merge: Antelope Valley's read 45574354887 ($0.77) and load 45578200792 (20166, 20184 and 20186
+  live), its reread 45579427195 (8 rows replaced); Redwoods' read 45574359765 ($0.09) and reread 45579562962 (42895
+  replaced). The persons plan s727f applied (migrate 45577450381): 5 live with named gaps, 6 named gaps with no
+  record. Moorpark 43405 and Pasadena City 33404 and 33699 read and loaded on #3811.
+- 09:05Z: #3810 merged (`0da3b19a`). 09:24Z: #3816 merged (`c8e04d10`), the second land PR: s727d, s727f and s727v.
+- 09:35Z: step 12 stamped (`2e947e1b`: 15,551 of 20,282 complete at 118 colleges; the next firing taken from the hourly
+  schedule, no `get_trigger` here).
+- 09:39Z: the closing census 45586922147 on `main` (`3f04de68`): 15,551 of 20,282 pass, 4,227 without a passing
+  record, 504 collected with a named gap.
+- 09:44Z to 09:47Z: the memory rows applied (migrate 45588204442, 22 rows); `.apply` restored (`76e4f2b0`).
+- 09:48Z: Sam's plain session's #3817 merged (`023f21f7`). 09:57Z: #3811 merged (`a079e472`) without a final update
+  from `main`, which had moved only by #3817, touching none of its files (`d-lever-merged-without-main-update-s727`).
 
 ## What shipped
 
@@ -195,32 +207,37 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
     12180 `option_lists_read_apart` and 20130 `noted_total_cut_off`, both new); 7 held;
   - College of the Canyons, s727a (45570064450): 6 named gaps, and 43388 inserted with `heading_not_in_text` (new; its
     course list capped at 50, `d-heading-not-in-text-cap-s727`); 14 held.
-- **Applied and loaded, on branches open at this writing** (the ledger carries their merges):
-  - #3811 (`claude/s727-lever`): San Bernardino Valley 32317 (read 45561301147, $0.075; load 45565240210), Orange Coast
-    04007, 22394 and 33569 (read 45567337117, about $0.22; load 45573129578) and Southwestern 33642 (read 45567354959,
-    $0.048; load 45574052184), all passing on their own pages. Named gaps for programs with no record: Orange Coast 5
-    (03970 and 22389 `list_printed_as_range`; 42115 and 42117 `list_by_reference`; 32235 `successor_printed`), North
-    Orange Continuing Education 4 (38320, 39325, 39625, 46253) and Moorpark 2 (12383, 45352). [[S727 FILL: Moorpark
-    43405's and Pasadena City 33404's and 33699's reads and loads; #3811's merge]]
-  - `claude/s727-piles-sbcc`, Santa Barbara City s727d (migrate 45573614115): 12, of which 6 pass under the floor
-    reading (05913, 10661, 19099, 31338, 38595, 43539), 4 `repeat_read_once`, 08565 `no_units_read` and 05924
-    `required_list_outside_total` (new); 5 held, and 05934 on S714's hold.
-  - `claude/s727-avc43028`, Antelope Valley 43028 s727v (migrate 45575092684): `ge_figures_other_pattern` (new).
-- **In flight at this writing:** #3810, the eLumen fix (Antelope Valley's read of 49 and Redwoods' of 3, then their
-  loads and rereads); Butte's reconcile (`claude/s727-butte`, `clear_conditional` for S721's nine, round 1's fixes in);
-  the records held for a person (s727f, `claude/s727-persons`, round 1's fixes in). Santa Barbara City, s727v, the
-  persons plan and Butte land in a second land PR. [[S727 FILL: their outcomes]]
+- **#3810 `0da3b19a` (09:05Z), the eLumen fix:** each award binds its own page, on `elumenapp.com` alone (self-recall
+  2,086 right, 0 wrong; 0 of 18,377 labels move on other roads). Antelope Valley: 20166, 20184 and 20186 live (read
+  45574354887, $0.77; load 45578200792) and 8 rows replaced by reread 45579427195 (02139 and 20148 read unequal,
+  collected with no gap); 38 bound their own page but were `held_no_gain`, keeping passing records read from the
+  sister page. Redwoods: 42895 replaced (read 45574359765, $0.09; reread 45579562962); 45557 and 45595 `held_no_gain`.
+- **#3816 `c8e04d10` (09:24Z), the second land PR**, three plans, every one applied and live before the merge:
+  - Santa Barbara City, s727d (migrate 45573614115): 12, of which 6 pass under the floor reading (05913, 10661, 19099,
+    31338, 38595, 43539), 4 `repeat_read_once`, 08565 `no_units_read` and 05924 `required_list_outside_total` (new);
+    5 held, and 05934 on S714's hold;
+  - the records held for a person, s727f (45577450381): 5 live with named gaps (De Anza 45499 `unit_line_not_read`;
+    Santa Monica 10345 `noted_no_total`; Santa Monica 43765 and Clovis 33501 `lists_not_closed`; Contra Costa 01417
+    `entry_path_range`, new); 6 named gaps with no record, `no_own_page_found`; held 33013, 39539, 32832 and 44984 (a
+    reload), with Santa Monica 03281, Glendale 44488 and Clovis 36326, each reason in its receipt;
+  - Antelope Valley 43028, s727v (45575092684): `ge_figures_other_pattern` (new).
+- **#3811 `a079e472` (09:57Z), the lever:** 8 live on their own pages, all passing, for about $0.52 of paid reads: San
+  Bernardino Valley 32317; Orange Coast 04007, 22394 and 33569 (on `site_pages` pins; `site_heading_names` cuts a title's
+  site name with `TITLE_SPLIT`); Southwestern 33642; Moorpark 43405; Pasadena City 33404 and 33699. 11 named gaps for
+  programs with no record: Orange Coast 5 (03970 and 22389 `list_printed_as_range`; 42115 and 42117 `list_by_reference`;
+  32235 `successor_printed`), North Orange Continuing Education 4 and Moorpark 2 (12383, 45352). Held: Pasadena City
+  31599; Southwestern 32693 and 36634; Allan Hancock 42208, 42210 and 43770; West Valley 35588, 06276 and 32021.
 
-**Tonight's count:** by 08:25Z, 52 records collected and live: the pooled reading's 11, all passing; lane 2's 35
-(Shasta 4, American River 12, College of the Canyons 7, Santa Barbara City 12), 29 with named gaps and 6 passing; the
-lever's 5, all passing; Antelope Valley 43028, a named gap. Besides: 12 named gaps for programs with no record. 0
-outline rows (step 11's queue is empty). Paid reads about $0.34 by then (San Bernardino Valley $0.075, Orange Coast
-about $0.22, Southwestern $0.048), before West Valley's read and the reads still in flight. [[S727 FILL: the final
-count and the paid reads' total]]
+**Tonight's count:** 72 records collected and live: the seven applied plans' 52 (the pooled reading's 11, all passing;
+lane 2's 35 at Shasta, American River, College of the Canyons and Santa Barbara City, 29 with named gaps and 6
+passing; the records held for a person, 5 with named gaps; Antelope Valley 43028, a named gap); the lever's 8, all
+passing; the eLumen fix's 12 (3 new, 9 reread from their own pages). Besides: 18 named gaps for programs with no
+record. 0 outline rows (step 11's queue is empty). Paid reads about $1.38 (the lever about $0.52, Antelope Valley $0.77,
+Redwoods $0.09).
 
-**The closing census on `main`:** [[S727 FILL: run id, time, sha and counts]]. At 07:13Z (45565884062): 15,536 of 20,282
-active programs pass, 4,277 have no passing record and 469 are collected with a named gap (15,524, 4,289 and 469 at this
-run's start). Step 12's headline: [[S727 FILL: the pair]] (15,524 of 20,282 at 118 colleges at the start).
+**The closing census on `main`:** run 45586922147 (09:39Z, `3f04de68`): 15,551 of 20,282 active programs pass and
+4,227 have no passing record (4,289 at this run's start, 62 fewer); 504 are collected with a named gap (469 at the
+start). Step 12's headline: 15,551 of 20,282 at 118 colleges (15,524 at the start).
 
 Read in order: this file; the NEXT of [`program-requirements-harvest`](reference/lanes/program-requirements-harvest.md);
 `docs/program_requirements_harvest_lessons.md`, *S727*; `docs/reference/conductor_mode.md`, *What went wrong in S727*;
@@ -230,12 +247,17 @@ Read in order: this file; the NEXT of [`program-requirements-harvest`](reference
 ## Open work, from the lanes' NEXT lines
 
 1. **`program-requirements-harvest`** (the routine's):
-   - Land what S727 left in flight (merge order above): #3810, #3811 and the second land PR; then the display build
-     carrying tonight's records, gate college Glendale, then `harvest-gap-census.yml` on `main` (NEXT (2)).
-   - Lane 1: West Valley 06276 and 32021 first (find why its load inserted nothing; never a blind rerun); the holds on
-     #3811 (Allan Hancock 42208, 42210, 43770; Southwestern 32693, 36634; Pasadena City 31599); then Los Angeles
-     Southwest 4, Sacramento City 4 with its one reread, Cosumnes River 3 with 33542, Folsom Lake 38736, Santiago Canyon
-     3, El Camino 4, East Los Angeles 3 and Napa Valley 3; then a fresh census's wave (NEXT (3)).
+   - Butte's reconcile (`claude/s727-butte`, head `745f6940`, no PR): its run 45576373568 was still capturing at
+     09:59Z. When it has filed: `python3 kb/_program_reconcile_s727_butte.py keep-only --run 45576373568 --base
+     745f6940`, commit with both Commons builders, push, dispatch `step=reread` for Butte College, confirm from its
+     receipt that only the nine moved, then a PR. If the run failed, redispatch `step=reconcile extract=0` once (NEXT (2)).
+   - Then the display build carrying tonight's records, gate college Glendale, then `harvest-gap-census.yml` on `main`
+     (NEXT (2)).
+   - Lane 1: West Valley 06276, 32021 and 35588 first (find why its load inserted nothing; never a blind rerun); the
+     eLumen follow-up (Antelope Valley's 38 `held_no_gain`, a `step=reread` with `force`; Antelope Valley 43150's pin);
+     the holds on #3811 (Allan Hancock 42208, 42210, 43770; Southwestern 32693, 36634; Pasadena City 31599); then Los
+     Angeles Southwest 4, Sacramento City 4 with its one reread, Cosumnes River 3 with 33542, Folsom Lake 38736,
+     Santiago Canyon 3, El Camino 4, East Los Angeles 3 and Napa Valley 3; then a fresh census's wave (NEXT (3)).
    - The pooled reading's next: El Camino 02513, 02515 and 02517; Modesto's 8 other s720j holds; Cuyamaca 18635; the
      real pools it refuses at Porterville and Cuyamaca (NEXT (4)).
    - Lane 2, the census's next piles: Los Angeles Trade-Technical 17, Saddleback 17, Long Beach City 16, Cosumnes River
@@ -259,7 +281,7 @@ Read in order: this file; the NEXT of [`program-requirements-harvest`](reference
 
 | Block | Who clears it | Since |
 |---|---|---|
-| West Valley 06276 and 32021: read 45574056664 filed only `capture_preview.json`; load 45575119022 inserted nothing | Sky, a follow-up, never a blind rerun | 2026-11-25 (S727) |
+| West Valley 06276, 32021 and 35588: read 45574056664 filed only `capture_preview.json`; load 45575119022 inserted nothing | Sky, a follow-up, never a blind rerun | 2026-11-25 (S727) |
 | Held on #3811: Allan Hancock 42208, 42210, 43770; Southwestern 32693, 36634; Pasadena City 31599 (no award word beside its title) | Sky, lane 1 | 2026-11-25 (S727) |
 | Tonight's holds by key, each reason in its plan's receipt: American River 7 (07207, 12191, 12238, 30595, 39341, 39731, 39732); Shasta 15; College of the Canyons 14; Santa Barbara City 5 (19012, 30746, 43553, 45452, 46520) | Sky, lane 2 | 2026-11-25 (S727) |
 | Santa Barbara City 05934: on S714's hold until `find_codes` reads a slash cross-listing's first code (0 of 97 found) | Sky, the follow-up (a capture fix) | 2026-11-23 (S714), S727 |
@@ -267,8 +289,8 @@ Read in order: this file; the NEXT of [`program-requirements-harvest`](reference
 | `noted_total_cut_off` fires on 664 failing records statewide: a self-recall before it files beyond 20130 | Sky, the follow-up | 2026-11-25 (S727) |
 | The census ignores a college's own named-gap files (14 programs relisted) | Sky, the follow-up | 2026-11-25 (S727) |
 | Orange Coast 08626, filed from the Airframe & Powerplant A.S. page; a title heading check alone passes a successor's page (32235) | Sky, lane 1 | 2026-11-25 (S727) |
-| The eLumen fix (#3810): Antelope Valley's read of 49 and Redwoods' of 3, their loads and rereads; Mission's 8 binds move at its next capture | Sky, lane 1 | 2026-11-24 (S721), S727 |
-| Butte's nine (01362, 07269, 11136, 31042, 31941, 32469, 33199, 40923, 43453): `clear_conditional` on `claude/s727-butte`; 01312, 14583, 33579 | Sky, a Butte reconcile | 2026-11-24 (S721) |
+| The eLumen follow-up (#3810 merged): Antelope Valley's 38 that bind their own page were `held_no_gain`, keeping passing records read from the sister page (a `step=reread` with `force`); Redwoods 45557 and 45595 `held_no_gain`; Antelope Valley 43150 needs a pin; 02139 and 20148 reread unequal, collected with no gap; Mission's 8 binds move at its next capture | Sky, lane 1 | 2026-11-25 (S727) |
+| Butte's nine (01362, 07269, 11136, 31042, 31941, 32469, 33199, 40923, 43453): `clear_conditional` on `claude/s727-butte`, its reconcile run 45576373568 still capturing at 09:59Z; 01312, 14583, 33579 | Sky, the Butte reconcile (open work, item 1) | 2026-11-24 (S721), S727 |
 | S721's holds by key, each reason in its plan's receipt: Orange Coast 17 (08670 `degree_total_minimum` and 32737's substitution list among them); Palo Verde 5 (17998, 17999, 41227, 41242, 45359); Porterville 4 (09528, 35229, 35449, 45511); Gavilan 11 (08460, 19378, 38787 among them) | Sky, lane 2 | 2026-11-24 (S721) |
 | MiraCosta 36144 and 36171 (`text_window_cut`: their section prints past the capture's 16,000 characters) | Sky, a wider text window | 2026-11-24 (S721) |
 | The follow-up's minors: a kept `degree_within_map_range` is not checked against `within_map`; a certificate's heading check accepts a plural department heading; #3764's `live_flips` reads the filed arithmetic for rescored rows, and "List A requires 9 units together with its lab" still pools | Sky, the follow-up | 2026-11-24 (S721) |
@@ -279,7 +301,7 @@ Read in order: this file; the NEXT of [`program-requirements-harvest`](reference
 | Fullerton: 15 of its 296 passing records are not on their own page | Sky, a page read | 2026-11-24 (S720) |
 | East Los Angeles's bound is unmeasured on capture text (41097 likely; 36345, 37924, 43632, 45935 possible) | Sky, a free reconcile before its next text run | 2026-11-23 (S714) |
 | The 30-day artifact `course-outcomes-45026998155-part1` holds trial pages that print a staff name: delete it | a person | 2026-11-22 (S703) |
-| Records held for a person, taken up by s727f (round 1 holds Clovis 39539, East Los Angeles 33013, Los Angeles City 32832, Cerritos 44984): De Anza 45499; Santa Monica 03281, 10345, 43765; Glendale 44488; Clovis 33501, 36326; Contra Costa 01417; West Los Angeles 46261, 38677; Napa Valley 19126, 31158, 36528; Los Angeles Harbor 44947; Ventura 45355 [[S727 FILL: s727f's outcome]]. Los Angeles Mission 44849 (no live row) | Sky, s727f; a person for what it holds | S653 to S727 |
+| Records held for a person that s727f held, each reason in its receipt: Santa Monica 03281, Glendale 44488, Clovis 36326 and 39539, East Los Angeles 33013, Los Angeles City 32832, Cerritos 44984 (a reload); Los Angeles Mission 44849 (no live row) | Sky for the reload; a person for the rest | S653 to S727 |
 | Santa Rosa Junior 06566 and 32298, held: the second reader found the wrong cause | Sky, a reread or a rule | 2026-11-23 (S713) |
 | Las Positas 01037 (passes only by double counting) and 09227; Antelope Valley 39295 | Sky, lane 2 | 2026-11-23 (S713) |
 | College of Marin: its program URLs changed form, so the moved-page guard stopped its general education step (19789, 19791) | Sky, a capture or guard fix | 2026-11-23 (S713) |
@@ -293,7 +315,8 @@ Read in order: this file; the NEXT of [`program-requirements-harvest`](reference
 Cleared tonight: handoff 722's San Bernardino Valley 32317 row (passing); Modesto Junior's 5 s720j holds and the flips
 at Rio Hondo, Cuyamaca and Golden West (s727p); Orange Coast's 8 on the reader-page lever (3 passing, 5 named gaps);
 Antelope Valley 43028 (s727v); College of the Canyons 43388 (inserted with its gap named) and Shasta 18153 (a named gap
-with no record); the census's piles at College of the Canyons, American River, Shasta and Santa Barbara City.
+with no record); the records held for a person, 5 collected with named gaps and 6 named with no record (s727f); the
+eLumen sister-award swap (#3810: 3 new, 9 reread from their own pages); the census's piles at College of the Canyons, American River, Shasta and Santa Barbara City.
 
 ## For Sam
 
@@ -320,9 +343,12 @@ and his collect-with-gaps ruling of the same day.
 - `d-workers-dispatch-loads-in-words-s727`: workers dispatched loads, rereads and js-tests on #3810's and #3811's
   branches, by the conductor's word, to save its context; applies stayed the conductor's.
 - `d-no-new-workers-after-0757z-s727`: at about $165 at 07:57Z the run started no new worker.
+- `d-lever-merged-without-main-update-s727` (a DECIDED line only, no memory row): #3811 merged without a final update
+  from `main`, which had moved only by the plain session's #3817, touching none of its files.
 
-Memory rows: `kb/migrations/2026-11-25_s727_cpl_memory_rows.sql` (22 rows, rollback in its header), not pointed at by
-`.apply`; the conductor applies it with one `execute_sql` call. DECIDED lines: the harvest lane.
+Memory rows: `kb/migrations/2026-11-25_s727_cpl_memory_rows.sql` (22 rows, rollback in its header), applied by migrate
+45588204442 (receipt `kb/receipts/migration_s727_cpl_memory_rows_45588204442.json`; `.apply` restored at `76e4f2b0`).
+DECIDED lines: the harvest lane.
 
 ## Patterns that worked
 
@@ -377,27 +403,25 @@ checkpoint. Sam's plain sessions S725 and S726 ran earlier on this UTC day, unme
 | #3807 (`claude/awesome-fermat-gyx5ec`) | the declaration and this checkpoint | merges at sign-off |
 | #3808 (`claude/s727-display`) | merged `0b13c85c` (07:08Z); display build `f4b48370bc11` live | none |
 | #3812 (`claude/s727-land`) | merged `3b2bf062` (08:17Z): s727p, s727c, s727b and s727a, all applied and live | none |
-| #3810 (`claude/s727-elumen`) | round 1's fixes in (`8677f108`) [[S727 FILL: state]] | Antelope Valley's read of 49 and Redwoods' of 3, loads and rereads |
-| #3811 (`claude/s727-lever`) | 5 loads live; West Valley's load inserted nothing [[S727 FILL: state]] | Moorpark's and Pasadena City's reads and loads, then West Valley's follow-up |
-| `claude/s727-piles-sbcc` | s727d applied (migrate 45573614115, 12) | the second land PR |
-| `claude/s727-avc43028` | s727v applied (migrate 45575092684, 1) | the second land PR |
-| `claude/s727-persons` | s727f at its reader, round 1's fixes in (`56153e5b`) [[S727 FILL: state]] | its apply, then the second land PR |
-| `claude/s727-butte` | the reconcile, round 1's fixes in (`745f6940`) [[S727 FILL: state]] | its reconcile run, then the second land PR |
-| `claude/s727-pooled`, `-piles-shasta`, `-piles-arc`, `-piles-canyons` | landed in #3812 | none |
-| Harvest gap census on `main` | run 45565884062 (07:13Z): 15,536 pass, 4,277 without [[S727 FILL: the closing run]] | the next after tonight's display build |
-| #3813 | Sam's plain session's, merged `77e9903a` (08:24Z) | none |
+| #3810 (`claude/s727-elumen`) | merged `0da3b19a` (09:05Z); 3 new and 9 reread live | the eLumen follow-up (lane 1) |
+| #3816 (`claude/s727-land2`) | merged `c8e04d10` (09:24Z): s727d, s727f and s727v, all applied and live | none |
+| #3811 (`claude/s727-lever`) | merged `a079e472` (09:57Z); 8 live, all passing | West Valley's follow-up, then lane 1's holds |
+| `claude/s727-butte` | head `745f6940`, no PR; reconcile run 45576373568 still capturing at 09:59Z | keep-only, the reread, then a PR (open work, item 1) |
+| `claude/s727-pooled`, `-piles-shasta`, `-piles-arc`, `-piles-canyons`, `-piles-sbcc`, `-persons`, `-avc43028` | landed in #3812 and #3816 | none |
+| Harvest gap census on `main` | run 45565884062 (07:13Z): 15,536 pass, 4,277 without; the closing run 45586922147 (09:39Z): 15,551 pass, 4,227 without | the next after tonight's display build |
+| #3813, #3815, #3817 | Sam's plain session's, merged `77e9903a` (08:24Z), `e335cd9c` (08:42Z), `023f21f7` (09:48Z) | none |
 | #3383 | dependabot's | waits |
 
 ## Let go
 
-The brief names no PR subscription, scheduled check-in or artifact watch: the run gated each PR by reads, so there is
-none to drop [[S727 FILL: confirm at sign-off]]. No COBIx watcher ran (Sam's word of 2026-11-23). Workers end with the
+No PR subscription, scheduled check-in or artifact watch was opened tonight: the run gated each PR by reads, so there is
+none to drop. No COBIx watcher ran (Sam's word of 2026-11-23). Workers end with the
 session; each branch is pushed. The local Postgres 16 used for the apply proofs stops at sign-off. The vault note for
 this run is `CPLBrain/07-session-notes/2026-11-25-s727-skytropicbird-collection.md`, on the vault's branch
 `claude/pensive-archimedes-gyx5ec` (draft PR samueltlee/CPLBrain#864, which merges on its checks).
 
-Spend: [[S727 FILL: the Spend line in step 8's shape, tagged collection, from 06:13Z; then python3 kb/_build_spend_daily.py --sessions-only]]
+Spend: $303.30 (a token-count estimate at list prices, kb/_spend_meter.py's rates; no cost readout here); collection $303.30; 2026-11-25T06:13Z to 2026-11-25T10:20Z. The conductor about $68 (about $8 of it the close), 31 agents about $235. The paid reads' own cost, about $1.38 on their meter, is listed apart. Stop rules: none fired (72 records, about $4.21 each; no outline rows; no rollback).
 
 Opening line: *Greetings, you are SkyFrigatebird (the next free session number; Sam's plain session S726 holds 727), see SkyTropicbird's (S727) handoff — `docs/session_728_handoff.md` — let's keep rolling with our queue.*
 
-This session's cost: [[S727 FILL: the cost, the records collected, the outline rows added (0 at this writing) and the substantive PRs merged (#3808 and #3812 at this writing)]].
+Session cost about $303 (a token-count estimate; get_session is not available here); 72 records collected and live, plus 18 named gaps for programs with no record; 0 outline rows added; 5 substantive PRs merged (#3808, #3812, #3810, #3816, #3811), not counting checkpoints.

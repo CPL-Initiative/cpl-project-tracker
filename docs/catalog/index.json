@@ -3628,7 +3628,7 @@
      ],
      "title": "A reader fix moves rows it was not aimed at, so compare each full read row by row",
      "type": "methodology",
-     "updated": "2026-10-03"
+     "updated": "2026-11-25"
     },
     {
      "created": "2026-11-12",
@@ -15606,7 +15606,7 @@
      ],
      "title": "Program requirements harvest lessons \u2014 archive 8 (S687 onward)",
      "type": null,
-     "updated": "2026-11-24"
+     "updated": "2026-11-25"
     },
     {
      "created": "2026-11-12",
@@ -16890,7 +16890,7 @@
      ],
      "title": "Program requirements harvest \u2014 lane state",
      "type": null,
-     "updated": "2026-11-24"
+     "updated": "2026-11-25"
     },
     {
      "created": "2026-08-28",
@@ -17145,7 +17145,7 @@
      ],
      "title": "Conductor mode \u2014 how a session runs workers, COBIx and the merge gate",
      "type": null,
-     "updated": "2026-11-24"
+     "updated": "2026-11-25"
     },
     {
      "created": "2026-08-29",
@@ -17558,8 +17558,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 683,
+   "count": 684,
    "docs": [
+    {
+     "created": "2026-11-25",
+     "governs": [],
+     "n": 728,
+     "path": "docs/session_728_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 728 handoff (from SkyTropicbird, S727, the CPL Queue routine's collection run of 2026-11-25, from 06:12Z)",
+     "type": null,
+     "updated": "2026-11-25"
+    },
     {
      "created": "2026-11-25",
      "governs": [],
@@ -28894,5 +28908,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1576
+ "total": 1577
 }

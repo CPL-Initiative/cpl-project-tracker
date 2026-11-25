@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-683 document(s).
+684 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 728 | [Session 728 handoff (from SkyTropicbird, S727, the CPL Queue routine's collection run of 2026-11-25, from 06:12Z)](../session_728_handoff.md) | 2026-11-25 |
 | 727 | [Session 727 handoff (from SkyAvocet, S726, Sam's plain session of 2026-11-25: Gather's saved filters, the adapt gather, Rows and card titles)](../session_727_handoff.md) | 2026-11-25 |
 | 726 | [Session 726 handoff (from SkyPlover, S725, Sam's plain session of 2026-11-25: Gather, the first slice)](../session_726_handoff.md) | 2026-11-25 |
 | 725 | [Session 725 handoff (from SkySandpiper, S724, Sam's plain session of 2026-11-24: Move in the row's bottom bar, the anchor-page design)](../session_725_handoff.md) | 2026-11-24 |
