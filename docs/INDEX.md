@@ -70,10 +70,10 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Doctrine (behavior-shaping) | 6 | [`catalog/doctrine.md`](catalog/doctrine.md) |
 | KB notes | 605 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 95 | [`catalog/lessons.md`](catalog/lessons.md) |
-| Workstream docs | 111 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
+| Workstream docs | 112 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 77 | [`catalog/reference.md`](catalog/reference.md) |
 | Session handoffs | 688 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1582** | |
+| **total** | **1583** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -124,6 +124,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-25 (the funding page side job beside S733, light checkpoint): #3844 and #3849 (Simple view switch visible again, row caret, # and District off in Simple view, As of / Ver. hidden from readers not signed in, the college landing page in a bottom bar), #3845 (the NC lead from MAP's College Contacts report: 27 colleges meet it, was 2), #3852 (How to maximize funding). Funding lessons' S439 to S466 sections moved to archive 5. Side section in handoff 734.
 - 2026-11-25 (S733 SkyGodwit, Sam's plain session, checkpoint with the lane moved): #3841 (COBIx's 911 leftover titles filed through `--csv`), #3843 (the stray-code re-mint dry run: retire, not re-key), #3846 (the rescore scored 0 to 100 on Sam's ruling; scope at 90: 92 retire, 48 held, Needs an M-ID 1,819 to 1,918). Handoff 734.
 - 2026-11-25 (S731 SkyFrigatebird, the CPL Queue routine's collection run, conductor, full checkpoint): #3825 (display build `2c8507c058b1`, 18,723 rows live), #3830 (the land PR: Los Angeles Trade-Technical 6, Saddleback 8 under a new gap kind, Long Beach City 12); applied and loaded on open branches: land 2, #3827 (the eLumen follow-up's 40, the pooled reading's 7, the lever's 3), and Saddleback's repeat steps' 7 for land 3; 83 records in all. KB note `methodology-a-self-check-must-see-what-the-rule-writes` gained an S731 section; the harvest lessons' S714 sections moved to archive 9. Handoff 732.
 - 2026-11-25 (S730 SkyDunlin, Sam's plain session, light checkpoint): #3824 (Needs you folds to its card; a doubt ruling moves the in-doubt count at once), #3826 (`npm run a11y` on the Commons fold: an h2 above the folded card, 24px card titles).  #3831 (Sam's stray-code ruling and the title hunt list), #3832 (runners read every college's catalog subject index: 103 colleges and 8,147 named codes, from 19 and 1,655; the CSV is the 2,500 leftovers). Handoff 731.

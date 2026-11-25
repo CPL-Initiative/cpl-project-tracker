@@ -15,7 +15,7 @@ related:
 
 Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` that is not a lessons doc or a session handoff.
 
-111 document(s).
+112 document(s).
 
 | Title | File | Created | Updated |
 |---|---|---|---|
@@ -43,6 +43,7 @@ Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` t
 | [CPL Implementation Funding tab — archived lessons, part 2 (2026-08-04 → 2026-08-31)](../cpl_funding_lessons_archive_2.md) | `cpl_funding_lessons_archive_2.md` | 2026-10-25 | 2026-10-25 |
 | [CPL Implementation Funding tab — archived lessons, part 3 (2026-08-31 → 2026-09-16)](../cpl_funding_lessons_archive_3.md) | `cpl_funding_lessons_archive_3.md` | 2026-10-25 | 2026-10-25 |
 | [CPL Implementation Funding tab — archived lessons, part 4 (2026-09-22 onward)](../cpl_funding_lessons_archive_4.md) | `cpl_funding_lessons_archive_4.md` | 2026-10-24 | 2026-11-03 |
+| [CPL Implementation Funding tab — archived lessons, part 5 (2026-10-20 to 2026-10-24)](../cpl_funding_lessons_archive_5.md) | `cpl_funding_lessons_archive_5.md` | 2026-11-25 | 2026-11-25 |
 | [CPL Implementation Funding — next-session handoff](../cpl_funding_handoff.md) | `cpl_funding_handoff.md` | 2026-06-11 | 2026-08-05 |
 | [CPL Pathways side-lane handoff — the Common Course Reference redesign](../cpl_pathways_handoff.md) | `cpl_pathways_handoff.md` | 2026-07-16 |  |
 | [CPL presentations — workstream handoff (StarBOG)](../cpl_presentations_handoff.md) | `cpl_presentations_handoff.md` | 2026-07-20 |  |
