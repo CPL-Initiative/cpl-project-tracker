@@ -82,20 +82,21 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/general-business-cert-fall-2026",
-   "title": "General Business Cert",
-   "h1": "General Business Cert",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/general-business-as-fall-2026",
+   "title": "General Business AS",
+   "h1": "General Business AS",
    "text_from": "innerText",
    "label": {
-    "award": 0,
+    "award": 1,
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 26,
-  "text_chars": 8440
+  "text_chars": 10492
  },
  {
   "control_number": "02140",
@@ -266,17 +267,21 @@
    "ACRV223"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/air-conditioning-refrigeration-specialist-cert-fall-2026",
-   "title": "Air Conditioning & Refrigeration Specialist Cert",
-   "h1": "Air Conditioning & Refrigeration Specialist Cert",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/air-conditioning-refrigeration-specialist-as-fall-2026",
+   "title": "Air Conditioning & Refrigeration Specialist AS",
+   "h1": "Air Conditioning & Refrigeration Specialist AS",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 8,
-  "text_chars": 6666
+  "text_chars": 8920
  },
  {
   "control_number": "02152",
@@ -297,17 +302,21 @@
    "ABDY215"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-collision-repair-specialist-cert-fall-2026",
-   "title": "Automotive Collision Repair Specialist Cert",
-   "h1": "Automotive Collision Repair Specialist Cert",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-collision-repair-specialist-as-fall-2026",
+   "title": "Automotive Collision Repair Specialist AS",
+   "h1": "Automotive Collision Repair Specialist AS",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 9,
-  "text_chars": 4583
+  "text_chars": 5975
  },
  {
   "control_number": "02153",
@@ -364,17 +373,21 @@
    "WELD265"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/welding-cert-fall-2026",
-   "title": "Welding Cert",
-   "h1": "Welding Cert",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/welding-as-fall-2026",
+   "title": "Welding AS",
+   "h1": "Welding AS",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 10,
-  "text_chars": 4912
+  "text_chars": 5775
  },
  {
   "control_number": "02157",
@@ -485,17 +498,21 @@
    "PHTC298"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/commercial-photography-cert-fall-2025",
-   "title": "Commercial Photography Cert",
-   "h1": "Commercial Photography Cert",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/commercial-photography-aa-fall-2026",
+   "title": "Commercial Photography AA",
+   "h1": "Commercial Photography AA",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 14,
-  "text_chars": 4858
+  "text_chars": 5589
  },
  {
   "control_number": "02167",
@@ -664,17 +681,21 @@
    "SPAN102"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/instructional-aide-cert-fall-2026",
-   "title": "Instructional Aide Cert",
-   "h1": "Instructional Aide Cert",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/instructional-aide-aa-fall-2026",
+   "title": "Instructional Aide AA",
+   "h1": "Instructional Aide AA",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 23,
-  "text_chars": 4653
+  "text_chars": 5136
  },
  {
   "control_number": "02185",
@@ -711,17 +732,21 @@
    "GEOG201"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/fire-technology-cert-fall-2026",
-   "title": "Fire Technology Cert",
-   "h1": "Fire Technology Cert",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/fire-technology-as-fall-2026",
+   "title": "Fire Technology AS",
+   "h1": "Fire Technology AS",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 25,
-  "text_chars": 4154
+  "text_chars": 4430
  },
  {
   "control_number": "02197",
@@ -794,17 +819,21 @@
    "NF102"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/school-aged-child-care-cert-fall-2026",
-   "title": "School-Aged Child Care Cert",
-   "h1": "School-Aged Child Care Cert",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/school-aged-child-care-aa-fall-2026",
+   "title": "School-Aged Child Care AA",
+   "h1": "School-Aged Child Care AA",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 24,
-  "text_chars": 6539
+  "text_chars": 5299
  },
  {
   "control_number": "07246",
@@ -837,17 +866,21 @@
    "THA220"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/video-design-and-production-cert-fall-2026",
-   "title": "Video Design and Production Cert",
-   "h1": "Video Design and Production Cert",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/video-design-and-production-aa-fall-2026",
+   "title": "Video Design and Production AA",
+   "h1": "Video Design and Production AA",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 21,
-  "text_chars": 3798
+  "text_chars": 5192
  },
  {
   "control_number": "07247",
@@ -875,17 +908,21 @@
    "PHTC125"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/interactive-media-web-design-cert-fall-2025",
-   "title": "Interactive Media-Web Design Cert",
-   "h1": "Interactive Media-Web Design Cert",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/interactive-media-web-design-aa-fall-2026",
+   "title": "Interactive Media-Web Design AA",
+   "h1": "Interactive Media-Web Design AA",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 16,
-  "text_chars": 3129
+  "text_chars": 5149
  },
  {
   "control_number": "07248",
@@ -915,17 +952,21 @@
    "INT210"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/deaf-studies-american-sign-language-cert-fall-2025",
-   "title": "Deaf Studies: American Sign Language Cert",
-   "h1": "Deaf Studies: American Sign Language Cert",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/deaf-studies-american-sign-language-aa-fall-2026",
+   "title": "Deaf Studies: American Sign Language AA",
+   "h1": "Deaf Studies: American Sign Language AA",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 18,
-  "text_chars": 4183
+  "text_chars": 4563
  },
  {
   "control_number": "10234",
@@ -941,17 +982,21 @@
    "ACRV213"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/refrigeration-specialist-cert-fall-2026",
-   "title": "Refrigeration Specialist Cert",
-   "h1": "Refrigeration Specialist Cert",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/refrigeration-specialist-as-fall-2026",
+   "title": "Refrigeration Specialist AS",
+   "h1": "Refrigeration Specialist AS",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 4,
-  "text_chars": 5338
+  "text_chars": 5548
  },
  {
   "control_number": "10235",
@@ -967,17 +1012,21 @@
    "ACRV223"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/air-conditioning-specialist-cert-fall-2026",
-   "title": "Air Conditioning Specialist Cert",
-   "h1": "Air Conditioning Specialist Cert",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/air-conditioning-specialist-as-fall-2026",
+   "title": "Air Conditioning Specialist AS",
+   "h1": "Air Conditioning Specialist AS",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 4,
-  "text_chars": 5140
+  "text_chars": 5707
  },
  {
   "control_number": "10237",
@@ -998,17 +1047,21 @@
    "ABDY225"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-refinishing-specialist-cert-fall-2026",
-   "title": "Automotive Refinishing Specialist Cert",
-   "h1": "Automotive Refinishing Specialist Cert",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-refinishing-specialist-as-fall-2026",
+   "title": "Automotive Refinishing Specialist AS",
+   "h1": "Automotive Refinishing Specialist AS",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 9,
-  "text_chars": 4648
+  "text_chars": 5906
  },
  {
   "control_number": "10238",
@@ -1032,17 +1085,21 @@
    "ABDY225"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-collision-repair-and-refinishing-specialist-cert-fall-2026",
-   "title": "Automotive Collision Repair and Refinishing Specialist Cert",
-   "h1": "Automotive Collision Repair and Refinishing Specialist Cert",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-collision-repair-and-refinishing-specialist-as-fall-2026",
+   "title": "Automotive Collision Repair and Refinishing Specialist AS",
+   "h1": "Automotive Collision Repair and Refinishing Specialist AS",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 12,
-  "text_chars": 5454
+  "text_chars": 6536
  },
  {
   "control_number": "10239",
@@ -1119,17 +1176,21 @@
    "DM298"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/graphic-design-cert-fall-2025",
-   "title": "Graphic Design Cert",
-   "h1": "Graphic Design Cert",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/graphic-design-aa-fall-2026",
+   "title": "Graphic Design AA",
+   "h1": "Graphic Design AA",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 19,
-  "text_chars": 4206
+  "text_chars": 4653
  },
  {
   "control_number": "11647",
@@ -1211,17 +1272,21 @@
    "INT210"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/deaf-studies-interpreter-training-cert-fall-2025",
-   "title": "Deaf Studies: Interpreter Training Cert",
-   "h1": "Deaf Studies: Interpreter Training Cert",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/deaf-studies-interpreter-training-aa-fall-2026",
+   "title": "Deaf Studies: Interpreter Training AA",
+   "h1": "Deaf Studies: Interpreter Training AA",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 14,
-  "text_chars": 3985
+  "text_chars": 4311
  },
  {
   "control_number": "12161",
@@ -1387,17 +1452,21 @@
    "CA183"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-networking-multi-platform-cert-fall-2026",
-   "title": "Computer Networking Multi-Platform Cert",
-   "h1": "Computer Networking Multi-Platform Cert",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-networking-multi-platform-as-fall-2026",
+   "title": "Computer Networking Multi-Platform AS",
+   "h1": "Computer Networking Multi-Platform AS",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 13,
-  "text_chars": 5778
+  "text_chars": 6387
  },
  {
   "control_number": "14791",
@@ -1485,17 +1554,21 @@
    "MGT115"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/professional-bookkeeping-cert-fall-2026",
-   "title": "Professional Bookkeeping Cert",
-   "h1": "Professional Bookkeeping Cert",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/professional-bookkeeping-as-fall-2026",
+   "title": "Professional Bookkeeping AS",
+   "h1": "Professional Bookkeeping AS",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 17,
-  "text_chars": 6487
+  "text_chars": 8162
  },
  {
   "control_number": "16508",
@@ -1983,17 +2056,21 @@
    "ELTE254"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/electronics-technology-as-fall-2026",
-   "title": "Electronics Technology AS",
-   "h1": "Electronics Technology AS",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/electronics-technology-cert-fall-2026",
+   "title": "Electronics Technology Cert",
+   "h1": "Electronics Technology Cert",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 13,
-  "text_chars": 5902
+  "text_chars": 4964
  },
  {
   "control_number": "19463",
@@ -2023,17 +2100,21 @@
    "INT210"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/deaf-studies-american-sign-language-aa-fall-2026",
-   "title": "Deaf Studies: American Sign Language AA",
-   "h1": "Deaf Studies: American Sign Language AA",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/deaf-studies-american-sign-language-cert-fall-2025",
+   "title": "Deaf Studies: American Sign Language Cert",
+   "h1": "Deaf Studies: American Sign Language Cert",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 18,
-  "text_chars": 4563
+  "text_chars": 4183
  },
  {
   "control_number": "19464",
@@ -2059,17 +2140,21 @@
    "INT210"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/deaf-studies-interpreter-training-aa-fall-2026",
-   "title": "Deaf Studies: Interpreter Training AA",
-   "h1": "Deaf Studies: Interpreter Training AA",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/deaf-studies-interpreter-training-cert-fall-2025",
+   "title": "Deaf Studies: Interpreter Training Cert",
+   "h1": "Deaf Studies: Interpreter Training Cert",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 0.75
+    "award": 1,
+    "title": 0.75,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 14,
-  "text_chars": 4311
+  "text_chars": 3985
  },
  {
   "control_number": "19465",
@@ -2095,17 +2180,21 @@
    "PHTC298"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/commercial-photography-aa-fall-2026",
-   "title": "Commercial Photography AA",
-   "h1": "Commercial Photography AA",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/commercial-photography-cert-fall-2025",
+   "title": "Commercial Photography Cert",
+   "h1": "Commercial Photography Cert",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 14,
-  "text_chars": 5589
+  "text_chars": 4858
  },
  {
   "control_number": "19467",
@@ -2135,17 +2224,21 @@
    "DM298"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-animation-aa-fall-2026",
-   "title": "Computer Animation AA",
-   "h1": "Computer Animation AA",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-animation-cert-fall-2025",
+   "title": "Computer Animation Cert",
+   "h1": "Computer Animation Cert",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 18,
-  "text_chars": 5081
+  "text_chars": 4101
  },
  {
   "control_number": "19469",
@@ -2176,17 +2269,21 @@
    "DM298"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/graphic-design-aa-fall-2026",
-   "title": "Graphic Design AA",
-   "h1": "Graphic Design AA",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/graphic-design-cert-fall-2025",
+   "title": "Graphic Design Cert",
+   "h1": "Graphic Design Cert",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 19,
-  "text_chars": 4653
+  "text_chars": 4206
  },
  {
   "control_number": "19470",
@@ -2214,17 +2311,21 @@
    "PHTC125"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/interactive-media-web-design-aa-fall-2026",
-   "title": "Interactive Media-Web Design AA",
-   "h1": "Interactive Media-Web Design AA",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/interactive-media-web-design-cert-fall-2025",
+   "title": "Interactive Media-Web Design Cert",
+   "h1": "Interactive Media-Web Design Cert",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 16,
-  "text_chars": 5149
+  "text_chars": 3129
  },
  {
   "control_number": "19471",
@@ -2257,17 +2358,21 @@
    "THA220"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/video-design-and-production-aa-fall-2026",
-   "title": "Video Design and Production AA",
-   "h1": "Video Design and Production AA",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/video-design-and-production-cert-fall-2026",
+   "title": "Video Design and Production Cert",
+   "h1": "Video Design and Production Cert",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 21,
-  "text_chars": 5192
+  "text_chars": 3798
  },
  {
   "control_number": "20148",
@@ -2305,17 +2410,21 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/general-business-as-fall-2026",
-   "title": "General Business AS",
-   "h1": "General Business AS",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/general-business-cert-fall-2026",
+   "title": "General Business Cert",
+   "h1": "General Business Cert",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 26,
-  "text_chars": 10492
+  "text_chars": 8440
  },
  {
   "control_number": "20149",
@@ -2344,17 +2453,21 @@
    "MGT115"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/professional-bookkeeping-as-fall-2026",
-   "title": "Professional Bookkeeping AS",
-   "h1": "Professional Bookkeeping AS",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/professional-bookkeeping-cert-fall-2026",
+   "title": "Professional Bookkeeping Cert",
+   "h1": "Professional Bookkeeping Cert",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 17,
-  "text_chars": 8162
+  "text_chars": 6487
  },
  {
   "control_number": "20152",
@@ -2416,17 +2529,21 @@
    "CA221"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-applications-as-fall-2026",
-   "title": "Computer Applications AS",
-   "h1": "Computer Applications AS",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-applications-cert-fall-2026",
+   "title": "Computer Applications Cert",
+   "h1": "Computer Applications Cert",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 11,
-  "text_chars": 6492
+  "text_chars": 4740
  },
  {
   "control_number": "20162",
@@ -2451,17 +2568,21 @@
    "CA183"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-networking-multi-platform-as-fall-2026",
-   "title": "Computer Networking Multi-Platform AS",
-   "h1": "Computer Networking Multi-Platform AS",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-networking-multi-platform-cert-fall-2026",
+   "title": "Computer Networking Multi-Platform Cert",
+   "h1": "Computer Networking Multi-Platform Cert",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 13,
-  "text_chars": 6387
+  "text_chars": 5778
  },
  {
   "control_number": "20163",
@@ -2496,17 +2617,21 @@
    "SPAN102"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/instructional-aide-aa-fall-2026",
-   "title": "Instructional Aide AA",
-   "h1": "Instructional Aide AA",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/instructional-aide-cert-fall-2026",
+   "title": "Instructional Aide Cert",
+   "h1": "Instructional Aide Cert",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 23,
-  "text_chars": 5136
+  "text_chars": 4653
  },
  {
   "control_number": "20165",
@@ -2522,17 +2647,21 @@
    "ACRV223"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/air-conditioning-specialist-as-fall-2026",
-   "title": "Air Conditioning Specialist AS",
-   "h1": "Air Conditioning Specialist AS",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/air-conditioning-specialist-cert-fall-2026",
+   "title": "Air Conditioning Specialist Cert",
+   "h1": "Air Conditioning Specialist Cert",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 4,
-  "text_chars": 5707
+  "text_chars": 5140
  },
  {
   "control_number": "20166",
@@ -2552,17 +2681,21 @@
    "ACRV223"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/air-conditioning-refrigeration-specialist-as-fall-2026",
-   "title": "Air Conditioning & Refrigeration Specialist AS",
-   "h1": "Air Conditioning & Refrigeration Specialist AS",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/air-conditioning-refrigeration-specialist-cert-fall-2026",
+   "title": "Air Conditioning & Refrigeration Specialist Cert",
+   "h1": "Air Conditioning & Refrigeration Specialist Cert",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 8,
-  "text_chars": 8920
+  "text_chars": 6666
  },
  {
   "control_number": "20168",
@@ -2578,17 +2711,21 @@
    "ACRV213"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/refrigeration-specialist-as-fall-2026",
-   "title": "Refrigeration Specialist AS",
-   "h1": "Refrigeration Specialist AS",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/refrigeration-specialist-cert-fall-2026",
+   "title": "Refrigeration Specialist Cert",
+   "h1": "Refrigeration Specialist Cert",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 4,
-  "text_chars": 5548
+  "text_chars": 5338
  },
  {
   "control_number": "20171",
@@ -2609,17 +2746,21 @@
    "ABDY215"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-collision-repair-specialist-as-fall-2026",
-   "title": "Automotive Collision Repair Specialist AS",
-   "h1": "Automotive Collision Repair Specialist AS",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-collision-repair-specialist-cert-fall-2026",
+   "title": "Automotive Collision Repair Specialist Cert",
+   "h1": "Automotive Collision Repair Specialist Cert",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 9,
-  "text_chars": 5975
+  "text_chars": 4583
  },
  {
   "control_number": "20172",
@@ -2640,17 +2781,21 @@
    "ABDY225"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-refinishing-specialist-as-fall-2026",
-   "title": "Automotive Refinishing Specialist AS",
-   "h1": "Automotive Refinishing Specialist AS",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-refinishing-specialist-cert-fall-2026",
+   "title": "Automotive Refinishing Specialist Cert",
+   "h1": "Automotive Refinishing Specialist Cert",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 9,
-  "text_chars": 5906
+  "text_chars": 4648
  },
  {
   "control_number": "20174",
@@ -2674,17 +2819,21 @@
    "ABDY225"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-collision-repair-and-refinishing-specialist-as-fall-2026",
-   "title": "Automotive Collision Repair and Refinishing Specialist AS",
-   "h1": "Automotive Collision Repair and Refinishing Specialist AS",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-collision-repair-and-refinishing-specialist-cert-fall-2026",
+   "title": "Automotive Collision Repair and Refinishing Specialist Cert",
+   "h1": "Automotive Collision Repair and Refinishing Specialist Cert",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 12,
-  "text_chars": 6536
+  "text_chars": 5454
  },
  {
   "control_number": "20175",
@@ -2705,17 +2854,21 @@
    "ELTE254"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/general-aircraft-maintenance-as-fall-2026",
-   "title": "General Aircraft Maintenance AS",
-   "h1": "General Aircraft Maintenance AS",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/general-aircraft-maintenance-cert-fall-2026",
+   "title": "General Aircraft Maintenance Cert",
+   "h1": "General Aircraft Maintenance Cert",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 9,
-  "text_chars": 5994
+  "text_chars": 5080
  },
  {
   "control_number": "20177",
@@ -2729,17 +2882,21 @@
    "AERO231"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-airframe-as-fall-2026",
-   "title": "Aircraft Airframe AS",
-   "h1": "Aircraft Airframe AS",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-airframe-cert-fall-2026",
+   "title": "Aircraft Airframe Cert",
+   "h1": "Aircraft Airframe Cert",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 2,
-  "text_chars": 4318
+  "text_chars": 4294
  },
  {
   "control_number": "20179",
@@ -2753,17 +2910,21 @@
    "AERO241"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-powerplant-as-fall-2026",
-   "title": "Aircraft Powerplant AS",
-   "h1": "Aircraft Powerplant AS",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-powerplant-cert-fall-2026",
+   "title": "Aircraft Powerplant Cert",
+   "h1": "Aircraft Powerplant Cert",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 2,
-  "text_chars": 4470
+  "text_chars": 4236
  },
  {
   "control_number": "20181",
@@ -2780,17 +2941,21 @@
    "AFAB210"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-fabrication-and-assembly-technician-as-fall-2026",
-   "title": "Aircraft Fabrication and Assembly Technician AS",
-   "h1": "Aircraft Fabrication and Assembly Technician AS",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-fabrication-assembly-technician-cert-fall-2026",
+   "title": "Aircraft Fabrication & Assembly Technician Cert",
+   "h1": "Aircraft Fabrication & Assembly Technician Cert",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 5,
-  "text_chars": 5776
+  "text_chars": 4906
  },
  {
   "control_number": "20184",
@@ -2811,17 +2976,21 @@
    "ELEC250"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/electrical-technology-as-fall-2026",
-   "title": "Electrical Technology AS",
-   "h1": "Electrical Technology AS",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/electrical-technology-cert-fall-2025",
+   "title": "Electrical Technology Cert",
+   "h1": "Electrical Technology Cert",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 9,
-  "text_chars": 5267
+  "text_chars": 4756
  },
  {
   "control_number": "20186",
@@ -2843,17 +3012,21 @@
    "WELD265"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/welding-as-fall-2026",
-   "title": "Welding AS",
-   "h1": "Welding AS",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/welding-cert-fall-2026",
+   "title": "Welding Cert",
+   "h1": "Welding Cert",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 10,
-  "text_chars": 5775
+  "text_chars": 4912
  },
  {
   "control_number": "20189",
@@ -2973,17 +3146,21 @@
    "NF102"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/school-aged-child-care-aa-fall-2026",
-   "title": "School-Aged Child Care AA",
-   "h1": "School-Aged Child Care AA",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/school-aged-child-care-cert-fall-2026",
+   "title": "School-Aged Child Care Cert",
+   "h1": "School-Aged Child Care Cert",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 24,
-  "text_chars": 5299
+  "text_chars": 6539
  },
  {
   "control_number": "20203",
@@ -3020,17 +3197,21 @@
    "GEOG201"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/fire-technology-as-fall-2026",
-   "title": "Fire Technology AS",
-   "h1": "Fire Technology AS",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/fire-technology-cert-fall-2026",
+   "title": "Fire Technology Cert",
+   "h1": "Fire Technology Cert",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 25,
-  "text_chars": 4430
+  "text_chars": 4154
  },
  {
   "control_number": "30661",
@@ -5139,17 +5320,21 @@
    "AUTO280"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/all-automotive-systems-as-fall-2026",
-   "title": "All Automotive Systems AS",
-   "h1": "All Automotive Systems AS",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/all-automotive-systems-cert-fall-2025",
+   "title": "All Automotive Systems Cert",
+   "h1": "All Automotive Systems Cert",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 10,
-  "text_chars": 5178
+  "text_chars": 3702
  },
  {
   "control_number": "43375",
@@ -5492,17 +5677,21 @@
    "EMT130B"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/paramedic-cert-spring-2026",
-   "title": "Paramedic Cert",
-   "h1": "Paramedic Cert",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/paramedic-as-spring-2026",
+   "title": "Paramedic AS",
+   "h1": "Paramedic AS",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 11,
-  "text_chars": 6594
+  "text_chars": 7155
  },
  {
   "control_number": "43845",
@@ -6502,17 +6691,21 @@
    "EMT130B"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/paramedic-as-spring-2026",
-   "title": "Paramedic AS",
-   "h1": "Paramedic AS",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/paramedic-cert-spring-2026",
+   "title": "Paramedic Cert",
+   "h1": "Paramedic Cert",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
    }
   },
   "listed": 11,
-  "text_chars": 7155
+  "text_chars": 6594
  },
  {
   "control_number": "45152",
