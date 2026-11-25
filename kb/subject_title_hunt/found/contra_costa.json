@@ -1,0 +1,633 @@
+{
+ "college": "Contra Costa College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:30:25Z",
+ "run": "45632227441",
+ "plan": "kb/college_reads/subject_index_contra_costa.json",
+ "titles": [
+  {
+   "code": "ADJUS",
+   "title": "Administration of Justice",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,administration-justice?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 21
+  },
+  {
+   "code": "AFRAM",
+   "title": "African American Studies",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,african-american-studies?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 14
+  },
+  {
+   "code": "ANTHR",
+   "title": "Anthropology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,anthropology?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 7
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,art?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 41,
+   "shared_heading": [
+    "ART",
+    "ARTH"
+   ]
+  },
+  {
+   "code": "ARTH",
+   "title": "Art",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,art?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 2,
+   "shared_heading": [
+    "ART",
+    "ARTH"
+   ]
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,astronomy-1?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 1,
+   "shared_heading": [
+    "ASTR",
+    "ASTRO"
+   ]
+  },
+  {
+   "code": "ASTRO",
+   "title": "Astronomy",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,astronomy-1?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 2,
+   "shared_heading": [
+    "ASTR",
+    "ASTRO"
+   ]
+  },
+  {
+   "code": "AUSER",
+   "title": "Automotive Services",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,automotive-services?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 24
+  },
+  {
+   "code": "BIOL",
+   "title": "Biological Science",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,biological-science?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 1,
+   "shared_heading": [
+    "BIOL",
+    "BIOSC"
+   ]
+  },
+  {
+   "code": "BIOSC",
+   "title": "Biological Science",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,biological-science?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 28,
+   "shared_heading": [
+    "BIOL",
+    "BIOSC"
+   ]
+  },
+  {
+   "code": "BOT",
+   "title": "Business Office Technology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,business-office-technology?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 12
+  },
+  {
+   "code": "BUS",
+   "title": "Business",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,business?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 16
+  },
+  {
+   "code": "CCT",
+   "title": "Computer and Communications Technology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,computer-and-communications-technology?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 7
+  },
+  {
+   "code": "CDEV",
+   "title": "Early Childhood Education",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,early-childhood-education?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 1,
+   "shared_heading": [
+    "CDEV",
+    "ECHD"
+   ]
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,chemistry?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 6
+  },
+  {
+   "code": "CHIN",
+   "title": "Chinese",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,chinese?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 4
+  },
+  {
+   "code": "CIS",
+   "title": "Computer Information Systems",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,computer-information-systems?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 17
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies/Speech",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,comm-studies-speech?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 1,
+   "shared_heading": [
+    "COMM",
+    "SPCH"
+   ]
+  },
+  {
+   "code": "COMP",
+   "title": "Computer Science",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,computer-science?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 9
+  },
+  {
+   "code": "COOP",
+   "title": "Work Experience",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,work-experience?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 1
+  },
+  {
+   "code": "COUNS",
+   "title": "Counseling",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,counseling?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 10
+  },
+  {
+   "code": "CULIN",
+   "title": "Culinary Arts",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,culinary-arts?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 25
+  },
+  {
+   "code": "DANCE",
+   "title": "Dance",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,dance?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 11
+  },
+  {
+   "code": "DRAMA",
+   "title": "Dramatic Arts",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,dramatic-arts?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 27
+  },
+  {
+   "code": "ECHD",
+   "title": "Early Childhood Education",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,early-childhood-education?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 37,
+   "shared_heading": [
+    "CDEV",
+    "ECHD"
+   ]
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,economics?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 5
+  },
+  {
+   "code": "EMED",
+   "title": "Emergency Medical Sciences",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,emergency-medical-sciences?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 15
+  },
+  {
+   "code": "ENGIN",
+   "title": "Engineering",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,engineering?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 8
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,english?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 19
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,english-as-a-second-language?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 47
+  },
+  {
+   "code": "ETHN",
+   "title": "Ethnic Studies",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,ethnic-studies?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 1
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,geography?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 9
+  },
+  {
+   "code": "HED",
+   "title": "Health Education",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,health-education?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 13
+  },
+  {
+   "code": "HHS",
+   "title": "Health and Human Services",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,health-and-human-services?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 18
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,history?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 13
+  },
+  {
+   "code": "HUMAN",
+   "title": "Humanities",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,humanities?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 6
+  },
+  {
+   "code": "INDIS",
+   "title": "Interdisciplinary Studies",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,interdisciplinary-studies?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 1
+  },
+  {
+   "code": "INTEC",
+   "title": "Industrial Technology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,industrial-technology?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 7
+  },
+  {
+   "code": "JAPAN",
+   "title": "Japanese",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,japanese?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 4
+  },
+  {
+   "code": "JRNAL",
+   "title": "Journalism",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,journalism?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 11
+  },
+  {
+   "code": "KINES",
+   "title": "Physical Education/Kinesiology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,physical-education-kinesiology?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 9,
+   "shared_heading": [
+    "KINES",
+    "PE",
+    "PEIC",
+    "PUBSR"
+   ]
+  },
+  {
+   "code": "LARAZ",
+   "title": "La Raza Studies",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,la-raza-studies?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 14
+  },
+  {
+   "code": "LIBST",
+   "title": "Library Studies",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,library-studies?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 3
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,mathematics?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 22,
+   "shared_heading": [
+    "MATH",
+    "STAT"
+   ]
+  },
+  {
+   "code": "MEDIA",
+   "title": "Media",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,media?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 10
+  },
+  {
+   "code": "MEDIC",
+   "title": "Medical Assisting",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,medical-assisting?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 15
+  },
+  {
+   "code": "MUSIC",
+   "title": "Music",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,music?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 59
+  },
+  {
+   "code": "NURS",
+   "title": "Nursing",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,nursing?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 22
+  },
+  {
+   "code": "PE",
+   "title": "Physical Education/Kinesiology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,physical-education-kinesiology?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 56,
+   "shared_heading": [
+    "KINES",
+    "PE",
+    "PEIC",
+    "PUBSR"
+   ]
+  },
+  {
+   "code": "PEIC",
+   "title": "Physical Education/Kinesiology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,physical-education-kinesiology?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 10,
+   "shared_heading": [
+    "KINES",
+    "PE",
+    "PEIC",
+    "PUBSR"
+   ]
+  },
+  {
+   "code": "PHILO",
+   "title": "Philosophy",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,philosophy?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 11
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,physics?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 14
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,political-science?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 1,
+   "shared_heading": [
+    "POLS",
+    "POLSC"
+   ]
+  },
+  {
+   "code": "POLSC",
+   "title": "Political Science",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,political-science?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 5,
+   "shared_heading": [
+    "POLS",
+    "POLSC"
+   ]
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,psychology?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 1,
+   "shared_heading": [
+    "PSYC",
+    "PSYCH"
+   ]
+  },
+  {
+   "code": "PSYCH",
+   "title": "Psychology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,psychology?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 16,
+   "shared_heading": [
+    "PSYC",
+    "PSYCH"
+   ]
+  },
+  {
+   "code": "PUBSR",
+   "title": "Physical Education/Kinesiology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,physical-education-kinesiology?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 2,
+   "shared_heading": [
+    "KINES",
+    "PE",
+    "PEIC",
+    "PUBSR"
+   ]
+  },
+  {
+   "code": "RE",
+   "title": "Real Estate",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,real-estate?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 7
+  },
+  {
+   "code": "SOCI",
+   "title": "Sociology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,sociology?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 3,
+   "shared_heading": [
+    "SOCI",
+    "SOCIO",
+    "SOCSC"
+   ]
+  },
+  {
+   "code": "SOCIO",
+   "title": "Sociology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,sociology?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 10,
+   "shared_heading": [
+    "SOCI",
+    "SOCIO",
+    "SOCSC"
+   ]
+  },
+  {
+   "code": "SOCSC",
+   "title": "Sociology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,sociology?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 5,
+   "shared_heading": [
+    "SOCI",
+    "SOCIO",
+    "SOCSC"
+   ]
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,spanish?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 12
+  },
+  {
+   "code": "SPCH",
+   "title": "Communication Studies/Speech",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,comm-studies-speech?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 8,
+   "shared_heading": [
+    "COMM",
+    "SPCH"
+   ]
+  },
+  {
+   "code": "STAT",
+   "title": "Mathematics",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,mathematics?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 2,
+   "shared_heading": [
+    "MATH",
+    "STAT"
+   ]
+  },
+  {
+   "code": "TUTR",
+   "title": "Tutoring",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,tutoring?tenant=ccc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 2
+  }
+ ],
+ "note": "The catalog prints no code beside a subject name (runs 45623983494, 45625568851: the Courses view is unpublished, Chapter 4 lists department names alone). Each title is the heading of the department page that lists the code's courses (53 pages read through their content calls), so method is department label, the README's weaker tier. Ten pages head more than one code (shared_heading), among them Physical Education/Kinesiology (KINES, PE, PEIC, PUBSR) and Sociology (SOCI, SOCIO, SOCSC). Liberal Arts lists no course."
+}
