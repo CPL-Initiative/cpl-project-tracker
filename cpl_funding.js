@@ -17426,7 +17426,7 @@
     var frame = host && host.querySelector("iframe");
     if (!frame || frame.getAttribute("src") !== src) {
       mount.innerHTML = '<div class="cplfund cplfund-pagepv"><div id="cplFundPvChrome"></div>' +
-        '<div id="cplFundPvFrameHost"><iframe class="cplfund-pv-frame" src="' + esc(src) + '" ' +
+        '<div id="cplFundPvFrameHost"><iframe class="cplfund-pv-frame" scrolling="no" src="' + esc(src) + '" ' +
         'title="The public funding page, as colleges read it"></iframe></div></div>';
       frame = mount.querySelector("#cplFundPvFrameHost iframe");
       frame.addEventListener("load", function () { sizePageFrame(frame); });
@@ -17438,6 +17438,10 @@
     var doc = null;
     try { doc = frame.contentDocument; } catch (e) { doc = null; }
     if (!doc || !doc.documentElement) return;
+    // The frame is as tall as the page, so it never scrolls; its own scrollbar showed as an empty track at the
+    // frame's right edge (Sam, 2026-11-25: "we have what looks like an unnecessary scroll bar...doesn't do
+    // anything"). The outer page scrolls instead.
+    try { doc.documentElement.style.overflow = "hidden"; } catch (e) {}
     var fit = function () {
       var h = Math.max(doc.documentElement.scrollHeight, doc.body ? doc.body.scrollHeight : 0);
       if (h > 0) frame.style.height = h + "px";

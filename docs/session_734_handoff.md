@@ -93,6 +93,23 @@ waits on the team. A plain session "Simplified funding page refinements" holds `
 - A dry run's pins must be refrozen (`--freeze`, then replace the PINS block) whenever its scope rule changes.
 - `CLAUDE.md` is over its budget (65 KB of 60 KB): do not add to it.
 
+## Beside this session: the funding page side job (2026-11-25, 17:05Z to about 19:20Z)
+
+A separate session, *Simplified funding page refinements*, worked the public funding page while SkyGodwit worked the
+queue (one writer each; no file overlap). A light checkpoint; it adds this section instead of a new handoff, so this
+file stays yours. What landed, all on the public page (lane `implementation-funding`, the Simple View lines):
+
+- #3844, #3849: the Simple view switch shows again (white on white before); a caret on each row; # and District off
+  in Simple view; the As of / Ver. label hidden from readers not signed in; a college's name opens its MAP landing
+  page in a bottom bar (65%, resizable, works inside COBI's frame). Sam turned Simple view on for the public.
+- #3845: MAP's College Contacts report now carries *Noncredit CPL Lead* (+ Email); the sync fills
+  `map_college_contacts.nc_cpl_lead`, and `has_nc_cpl_lead` reads it or the landing-page title. 27 colleges meet the
+  NC lead condition (was 2). Migration `kb/migrations/2026-11-25_nc_lead_from_contacts.sql`, rollback beside it.
+- #3852 (merged): *How to maximize funding* on each credit priority row, a panel beside the table
+  with the row's dollars, what the model counts, the strategies, Get Help in Office Hours, Priority N Strategies and
+  Ask Sierra.
+- Offered, not asked for: a phone layout for the institution table (the lane's NEXT).
+
 ## Safety
 
 - Rule 10: bulk writes insert-only under a cohort email, with a committed receipt; the apply's receipt restores
