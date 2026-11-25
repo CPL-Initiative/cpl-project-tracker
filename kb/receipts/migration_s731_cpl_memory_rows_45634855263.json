@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-25_s731_cpl_memory_rows.sql",
+ "name": "s731_cpl_memory_rows",
+ "version": "20261125143630",
+ "sha256": "1ec574b3f3fbf00c094dc0d622c3d35e0e29ec8415c82776b75bcbbd14ab2f20",
+ "run": "45634855263",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"slug\":\"d-display-merged-without-main-update-s731\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":211},{\"slug\":\"d-elumen-read-before-reader-s731\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":299},{\"slug\":\"d-lbcc-42970-no-units-read-or-hold-s731\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":257},{\"slug\":\"d-lever-dispatches-paid-reads-in-words-s731\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":360},{\"slug\":\"d-multi-run-load-history-proves-run-s731c\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":239},{\"slug\":\"d-porterville-06773-keeps-s721c-gap-s731\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":314},{\"slug\":\"d-routine-yields-730-to-plain-s731\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":349},{\"slug\":\"d-saddleback-reconcile-before-reader-s731\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":360},{\"slug\":\"d-waived-course-counted-keeps-50-s731\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":310},{\"slug\":\"f-continued-heading-list-b-joins-s731\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":270},{\"slug\":\"f-follow-up-minors-s731\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":242},{\"slug\":\"f-green-read-files-only-preview-s731\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":326},{\"slug\":\"f-porterville-06773-flips-on-reconcile-s731\",\"kind\":\"risk\",\"status\":\"proposed\",\"summary_len\":373},{\"slug\":\"f-saddleback-repeat-window-s731\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":325},{\"slug\":\"f-waiver-shape-misses-six-s731\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":224},{\"slug\":\"m-collection-s731\",\"kind\":\"milestone\",\"status\":\"proposed\",\"summary_len\":334},{\"slug\":\"p-pooled-change-opus-reader-recall-s731\",\"kind\":\"procedure\",\"status\":\"proposed\",\"summary_len\":347},{\"slug\":\"p-test-asserts-other-pr-absent-recurs-s731\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":318},{\"slug\":\"p-worker-push-proved-by-ls-remote-s731\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":320}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

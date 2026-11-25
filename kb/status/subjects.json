@@ -62,11 +62,11 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-25T13:12:18Z",
+  "written_at": "2026-11-25T15:09:16Z",
   "project": "subjects",
   "next_step": {
-    "title": "Load COBIx's local subject titles, then send the stray codes' courses back to Needs an M-ID",
-    "text": "COBIx collects the printed title for each college and local subject code with none, with its source. Load them, rescore the 88 stray codes' local subjects with the title leading, then run the re-mint as a dry run for Sam before it applies."
+    "title": "Rescore the stray codes with their titles, then the dry-run re-mint",
+    "text": "The runners filed the printed subject titles of 103 colleges. Rescore the 88 stray codes' local subjects with the title leading, then run the re-mint as a dry run for Sam before it applies; file COBIx's leftover titles the same way as they land."
   },
   "changes": [
     {
@@ -232,6 +232,10 @@
     {
       "at": "2026-11-25T13:10Z",
       "text": "A list of 8,786 college and local subject codes with no title went to COBIx, each with a recommended title and its measured confidence; Sam ruled that no M-ID is minted on a local code."
+    },
+    {
+      "at": "2026-11-25T15:08Z",
+      "text": "Runners read every college's catalog subject index: the Subjects record names 8,147 local subject codes at 103 colleges, up from 1,655 at 19."
     }
   ]
 }
