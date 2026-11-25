@@ -1,0 +1,14 @@
+{
+ "college": "Calbright College Credit",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:48:06Z",
+ "run": "45626565022",
+ "runs": [
+  "45625006694",
+  "45626565022"
+ ],
+ "plan": "kb/college_reads/subject_index_calbright_credit.json",
+ "source_pdf": "https://www.calbright.edu/wp-content/uploads/2026/09/Final-Calbright-College-Academic-Catalog-2026-2027-September-18-2026.docx.pdf",
+ "titles": [],
+ "not_read": "The catalog (102 PDF pages) prints each course under its program (IT501 under IT Support, BUS530 under CRM Platform Administration) and prints no subject heading or prefix legend for a code (pass 1 found no legend or course-description page; pass 2 read PDF pages 27 to 48)."
+}

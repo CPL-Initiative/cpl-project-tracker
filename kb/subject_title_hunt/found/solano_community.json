@@ -1,0 +1,16 @@
+{
+ "college": "Solano Community College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:04:36Z",
+ "run": "45629430201",
+ "runs": [
+  "45625006694",
+  "45626565022",
+  "45627807594",
+  "45629430201"
+ ],
+ "plan": "kb/college_reads/subject_index_solano_community.json",
+ "source_pdf": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf",
+ "titles": [],
+ "not_read": "The 2026-2027 catalog PDF prints program pages only, headed by the program's area name; it prints no course descriptions and no prefix legend (program pages read 203 to 435, no course line after page 435, run 45629430201). Its contents pages print in a font the extractor cannot read."
+}

@@ -1,0 +1,24 @@
+{
+ "_readme": "S730 subject-title hunt, second wave (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject). Pass 5: VN's first course sits under the nursing admission note (run 45629430201); print its page. No model call.",
+ "college": "Lassen College",
+ "questions": {
+  "subject_titles": "The catalog's printed heading (or prefix legend entry) for each course subject code."
+ },
+ "keywords": [
+  "(?:^|\\n)VN 50\\b"
+ ],
+ "pages": [
+  {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf",
+   "answers": [
+    "subject_titles"
+   ]
+  }
+ ],
+ "pdf_span": [
+  140,
+  160
+ ],
+ "pdf_page_cap": 14,
+ "pdf_unfolded": true
+}

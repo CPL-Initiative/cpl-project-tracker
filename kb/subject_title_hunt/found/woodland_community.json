@@ -1,0 +1,425 @@
+{
+ "college": "Woodland Community College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:04:36Z",
+ "run": "45629430201",
+ "runs": [
+  "45625006694",
+  "45626565022",
+  "45627807594",
+  "45629430201",
+  "45630937766"
+ ],
+ "plan": "kb/college_reads/subject_index_woodland_community.json",
+ "source_pdf": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf",
+ "titles": [
+  {
+   "code": "ACCT",
+   "title": "ACCOUNTING",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=88",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'ACCOUNTING COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "AG",
+   "title": "AGRICULTURE",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=101",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'AGRICULTURE COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "AJ",
+   "title": "ADMINISTRATION OF JUSTICE",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=92",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'ADMINISTRATION OF JUSTICE COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "ANTH",
+   "title": "ANTHROPOLOGY",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=109",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'ANTHROPOLOGY COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "ANTHR",
+   "title": "ANTHROPOLOGY",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=109",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "no heading of its own: its first course prints under the heading of ANTH's courses"
+  },
+  {
+   "code": "ART",
+   "title": "ART",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=110",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'ART COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "ASTR",
+   "title": "ASTRONOMY",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=112",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'ASTRONOMY COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "BCA",
+   "title": "BUSINESS COMPUTER APPLICATIONS",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=125",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'BUSINESS COMPUTER APPLICATIONS COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "BIOL",
+   "title": "BIOLOGY",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=114",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'BIOLOGY COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "CDEV",
+   "title": "CHILD DEVELOPMENT",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=143",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'CHILD DEVELOPMENT COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "CHEM",
+   "title": "CHEMISTRY",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=128",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'CHEMISTRY COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "COMM",
+   "title": "COMMUNICATION",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=131",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'COMMUNICATION COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "COUNS",
+   "title": "COUNSELING",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=132",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'COUNSELING COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "CUL",
+   "title": "CULINARY ARTS",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=135",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'CULINARY ARTS COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "ECE",
+   "title": "EARLY CHILDHOOD EDUCATION",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=143",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'EARLY CHILDHOOD EDUCATION COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "ECOL",
+   "title": "ECOLOGY",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=147",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'ECOLOGY COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "ECON",
+   "title": "ECONOMICS",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=149",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'ECONOMICS COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "EMT",
+   "title": "EMERGENCY MEDICAL TECHNICIAN",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=151",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'EMERGENCY MEDICAL TECHNICIAN COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "ENGL",
+   "title": "ENGLISH",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=153",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'ENGLISH COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "ENVHR",
+   "title": "ENVIRONMENTAL HORTICULTURE",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=104",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'ENVIRONMENTAL HORTICULTURE COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "ENVTC",
+   "title": "ENVIRONMENTAL TECHNOLOGY",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=165",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'ENVIRONMENTAL TECHNOLOGY COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "ESOL",
+   "title": "ENGLISH FOR SPEAKERS OF OTHER LANGUAGES",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=158",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'ENGLISH FOR SPEAKERS OF OTHER LANGUAGES COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "ETHN",
+   "title": "ETHNIC STUDIES",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=168",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'ETHNIC STUDIES COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "GEOG",
+   "title": "GEOGRAPHY",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=170",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'GEOGRAPHY COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "GEOL",
+   "title": "GEOLOGY",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=173",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'GEOLOGY COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "GNBUS",
+   "title": "BUSINESS",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=122",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'BUSINESS COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "HIST",
+   "title": "HISTORY",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=176",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'HISTORY COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "HLTH",
+   "title": "HEALTH EDUCATION",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=174",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'HEALTH EDUCATION COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "HUMAN",
+   "title": "HUMANITIES",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=186",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'HUMANITIES COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "HUSEV",
+   "title": "HUMAN SERVICES",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=182",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'HUMAN SERVICES COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "LEARN",
+   "title": "LEARNING ASSISTANCE",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=194",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'LEARNING ASSISTANCE COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "LIBSC",
+   "title": "LIBRARY SCIENCE",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=195",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'LIBRARY SCIENCE COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "MATH",
+   "title": "MATHEMATICS",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=197",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'MATHEMATICS COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "MUSIC",
+   "title": "MUSIC",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=201",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'MUSIC COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "NUTR",
+   "title": "NUTRITION",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=205",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'NUTRITION COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "PE",
+   "title": "PHYSICAL EDUCATION",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=207",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'PHYSICAL EDUCATION COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "PHIL",
+   "title": "PHILOSOPHY",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=206",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'PHILOSOPHY COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "PHYS",
+   "title": "PHYSICS",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=209",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'PHYSICS COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "PLSCI",
+   "title": "PLANT SCIENCE",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=106",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'PLANT SCIENCE COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "POLS",
+   "title": "POLITICAL SCIENCE",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=212",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'POLITICAL SCIENCE COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "PSYC",
+   "title": "PSYCHOLOGY",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=214",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'PSYCHOLOGY COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "PSYCH",
+   "title": "PSYCHOLOGY",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=214",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "no heading of its own: its first course prints under the heading of PSYC's courses"
+  },
+  {
+   "code": "SIGN",
+   "title": "SIGN LANGUAGE",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=216",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'SIGN LANGUAGE COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "SOCI",
+   "title": "SOCIOLOGY",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=218",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'SOCIOLOGY COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "SOCIL",
+   "title": "SOCIOLOGY",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=218",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "no heading of its own: its first course prints under the heading of SOCI's courses"
+  },
+  {
+   "code": "SPAN",
+   "title": "SPANISH",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=221",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'SPANISH COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "SPECH",
+   "title": "COMMUNICATION",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=131",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "no heading of its own: its first course prints under the heading of COMM's courses"
+  },
+  {
+   "code": "STAT",
+   "title": "STATISTICS",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=222",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'STATISTICS COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "THART",
+   "title": "THEATRE ARTS",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=223",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'THEATRE ARTS COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "WELD",
+   "title": "WELDING",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=225",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'WELDING COURSES'; the heading's last word COURSES is dropped"
+  },
+  {
+   "code": "WORK",
+   "title": "WORK EXPERIENCE",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=227",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed 'WORK EXPERIENCE COURSES'; the heading's last word COURSES is dropped"
+  }
+ ]
+}

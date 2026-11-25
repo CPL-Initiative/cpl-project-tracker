@@ -1,0 +1,24 @@
+{
+ "_readme": "S730 subject-title hunt, second wave (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject). Pass 4: five codes printed no units-bearing course line (run 45627807594); print the course pages that name them. No model call.",
+ "college": "Barstow Community College",
+ "questions": {
+  "subject_titles": "The catalog's printed heading (or prefix legend entry) for each course subject code."
+ },
+ "keywords": [
+  "(?:^|\\n)(?:BARB|HOSP|MAIN|MAKE|NUAS) ?C?\\d"
+ ],
+ "pages": [
+  {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf",
+   "answers": [
+    "subject_titles"
+   ]
+  }
+ ],
+ "pdf_span": [
+  126,
+  212
+ ],
+ "pdf_page_cap": 24,
+ "pdf_unfolded": true
+}
