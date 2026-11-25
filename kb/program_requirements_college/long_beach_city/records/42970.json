@@ -70,6 +70,7 @@
     5.0,
     5.0
    ],
+   "against": "program",
    "why": [
     "the blocks sum to 8.0-8.0; the catalog states 5.0-5.0"
    ]
@@ -93,7 +94,21 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "no_units_printed",
+    "label": "The catalog prints no units for at least one required course.",
+    "words": "The catalog prints no units beside BCOM 15 (the closed list stores 3 units), so units is null."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

@@ -74,6 +74,7 @@
     26.0,
     26.0
    ],
+   "against": "program",
    "why": [
     "the blocks sum to 24.5-24.5; the catalog states 26.0-26.0"
    ]
@@ -97,7 +98,21 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "repeat_read_once",
+    "label": "The catalog prints a course the program takes more than once, and the record counts it once, so its units fall short of the printed total by the repeats.",
+    "words": "MUSIC 92AD is a single repeatable course required for FOUR semesters (2 units total); recorded as an 'all' block with stated 2."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 60,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

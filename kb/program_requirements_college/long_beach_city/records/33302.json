@@ -70,6 +70,7 @@
     21.0,
     23.0
    ],
+   "against": "program",
    "why": [
     "'REQUIRED CORE COURSES - Option 2' chooses courses but names no minimum"
    ]
@@ -93,7 +94,21 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "lists_not_closed",
+    "label": "A choice list prints no unit figure of its own, one that depends on another choice, or also takes courses from another list, so the lists alone cannot add the program's units.",
+    "words": "Option 2 under 'Select 1 of 2 Options' prints only a list of courses (ART 11, HIST, HUMAN, LING, SOCIO) with no selection rule or count; recorded as choose_courses with minimum null. The table appears garbled or incomplete; reviewer should check the actual Option 2 requirement (e.g., whether it includes SPAN 9/10 or a set number of courses)."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 30,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

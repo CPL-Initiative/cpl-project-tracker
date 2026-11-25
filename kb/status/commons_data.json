@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-25T10:05:48Z",
+ "written_at": "2026-11-25T11:56:24Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,8 +168,8 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17370,
-  "gap": 4965,
+  "passing": 17383,
+  "gap": 4952,
   "with_gap": 118,
   "cost_usd": 1341.08,
   "passed_at_read": 16397,
@@ -189,9 +189,9 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16864,
-  "gap": 4965,
-  "collected_with_gaps": 506,
+  "passing": 16867,
+  "gap": 4952,
+  "collected_with_gaps": 516,
   "discontinued": 0
  },
  "census_live": {
@@ -6311,13 +6311,13 @@
    "harvested": true,
    "slug": "long_beach_city",
    "programs": 391,
-   "passing": 326,
-   "gap": 65,
+   "passing": 339,
+   "gap": 52,
    "causes": {
     "no_closed_list": 6,
     "page_not_found": 17,
     "places_none": 19,
-    "unknown_without_live": 23
+    "unknown_without_live": 10
    },
    "census_causes": {
     "no_closed_list": 3,
@@ -6375,9 +6375,9 @@
    "read_seconds": 10701.5,
    "run": "39891611701",
    "levers": {
-    "reconcile_steps": 23,
     "reader_page_assignment": 19,
     "reader_page_search": 17,
+    "reconcile_steps": 10,
     "program_course_file_check": 6
    },
    "collection": {
