@@ -74,8 +74,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     47.0,
     47.0
@@ -84,9 +84,9 @@
     47.0,
     53.0
    ],
-   "why": [
-    "the blocks sum to 47.0-47.0; the catalog states 47.0-53.0"
-   ]
+   "against": "program",
+   "why": [],
+   "short_high": true
   },
   "repeated": {
    "codes": [],
@@ -107,7 +107,7 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

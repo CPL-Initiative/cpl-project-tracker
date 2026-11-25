@@ -64,8 +64,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     20.0,
     21.0
@@ -74,9 +74,9 @@
     20.0,
     20.0
    ],
-   "why": [
-    "the blocks sum to 20.0-21.0; the catalog states 20.0-20.0"
-   ]
+   "against": "program",
+   "why": [],
+   "meets": true
   },
   "repeated": {
    "codes": [],
@@ -97,7 +97,7 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

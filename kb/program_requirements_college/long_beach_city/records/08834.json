@@ -78,6 +78,7 @@
     64.0,
     65.0
    ],
+   "against": "program",
    "why": [
     "the blocks sum to 46.0-47.0; the catalog states 64.0-65.0"
    ]
@@ -101,7 +102,21 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "unit_line_not_read",
+    "label": "The catalog prints a requirement as a line of units with no course named, and the record leaves the line out; with it the courses add to the printed total.",
+    "words": "The 64-65 subtotal includes 18 units of advanced placement granted after passing the Nursing Department Examination (and holding an LVN license); these are not courses and are not recorded in any block."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {
