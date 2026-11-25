@@ -70,6 +70,7 @@
     19.0,
     20.0
    ],
+   "against": "program",
    "why": [
     "the blocks sum to 17.5-19.5; the catalog states 19.0-20.0"
    ]
@@ -93,7 +94,21 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "lists_not_closed",
+    "label": "A choice list prints no unit figure of its own, one that depends on another choice, or also takes courses from another list, so the lists alone cannot add the program's units.",
+    "words": "LIST A states: 'The 9 unit requirement for LIST A must include the REQUIRED CORE COURSE not already used above'. This appears to mean whichever of TART 39AD or TART 49AD was not taken in the core must be taken within LIST A. This is ambiguous; a reviewer should check it."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 30,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

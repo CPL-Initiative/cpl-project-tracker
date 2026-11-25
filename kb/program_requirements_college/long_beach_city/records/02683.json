@@ -82,6 +82,7 @@
     71.5,
     71.5
    ],
+   "against": "program",
    "why": [
     "the blocks sum to 81.5-81.5; the catalog states 71.5-71.5"
    ]
@@ -105,7 +106,21 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "prerequisites_counted",
+    "label": "The record counts the program's prerequisite courses, which the catalog's printed total leaves out; without them the courses add to the printed total.",
+    "words": "Prerequisite courses (ANAT 41, AH 60, AH 61; Total Prerequisite Units 10) must be completed within five years before the program's first spring semester; they are recorded as their own block but are not included in the 71.5 Required Subtotal used as total_units. Reviewer should confirm whether prerequisites belong in the award record."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 70,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

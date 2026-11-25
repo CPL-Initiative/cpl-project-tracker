@@ -98,7 +98,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "option_lists_read_apart",
+    "label": "An option the catalog prints takes more than one list under the option's own printed figure, and the record's one option group holds each list as an alternative of its own, so the program's units cannot be checked against the printed figures.",
+    "words": "Student completes one of six specialty areas ('Completion of One Specialty Area (14-15 units)'); each specialty is recorded as two blocks (Required Courses + Restricted Electives) sharing option_group 'Specialty'. A student completes both blocks of a single specialty, not one block from the group."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

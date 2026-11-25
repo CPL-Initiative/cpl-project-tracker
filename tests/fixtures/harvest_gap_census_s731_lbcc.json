@@ -1,0 +1,33 @@
+{
+  "_what": "S731 (lane 2, Long Beach City): the reconcile_steps lever of the committed census (run 45586922147, written 2026-11-25 09:39Z) at the college, frozen: kb/_program_piles_s731_lbcc.py planned from it.",
+  "written_at": "2026-11-25 09:39Z",
+  "levers": [
+    {
+      "lever": "reconcile_steps",
+      "scope": "Long Beach City College",
+      "programs": 16,
+      "kind": "free",
+      "what": "a team session writes correction rules from the catalog's own wording, then rescores the saved record",
+      "estimate_usd": null,
+      "over_college_limit": false,
+      "members": [
+        "02618",
+        "02678",
+        "02683",
+        "08834",
+        "20937",
+        "20940",
+        "30650",
+        "32634",
+        "33302",
+        "33390",
+        "35803",
+        "37213",
+        "41220",
+        "42970",
+        "43021",
+        "44848"
+      ]
+    }
+  ]
+}

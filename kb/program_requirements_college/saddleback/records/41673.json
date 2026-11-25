@@ -98,7 +98,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "waived_course_counted",
+    "label": "The page prints a requirement at a range from zero units, since a student may meet it without the course (a certification, an exam or earlier coursework), and the record counts the course, so its units match the top of the printed range and not its low end.",
+    "words": "The 'Select one' (0.0-2.0 units) choice sits inside the Required Core; its other option is 'ServSafe Certification', which is not a course and is not recorded as an alternative. Students with valid California ServSafe Certification may have CUL 171 waived, hence the 0-2 unit range."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

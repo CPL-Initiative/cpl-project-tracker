@@ -1,0 +1,34 @@
+{
+  "_what": "S730 (lane 2, Los Angeles Trade-Technical): the reconcile_steps lever of the committed census (run 45586922147, written 2026-11-25 09:39Z) at the college, frozen: kb/_program_piles_s730_lattc.py planned from it.",
+  "written_at": "2026-11-25 09:39Z",
+  "levers": [
+    {
+      "lever": "reconcile_steps",
+      "scope": "Los Angeles Trade Technical College",
+      "programs": 17,
+      "kind": "free",
+      "what": "a team session writes correction rules from the catalog's own wording, then rescores the saved record",
+      "estimate_usd": null,
+      "over_college_limit": false,
+      "members": [
+        "02911",
+        "02925",
+        "08479",
+        "08482",
+        "18857",
+        "21849",
+        "21855",
+        "21867",
+        "31089",
+        "31090",
+        "31280",
+        "37706",
+        "38737",
+        "41011",
+        "41150",
+        "44344",
+        "45285"
+      ]
+    }
+  ]
+}
