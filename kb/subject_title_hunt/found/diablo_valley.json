@@ -83,7 +83,7 @@
    "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-biological-science-course?tenant=dvc.elumenapp.com",
    "where": "catalog",
    "method": "subject heading",
-   "courses_listed": 16
+   "courses_listed": 18
   },
   {
    "code": "BUS",
@@ -171,7 +171,7 @@
    "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-communication-studies-course?tenant=dvc.elumenapp.com",
    "where": "catalog",
    "method": "subject heading",
-   "courses_listed": 12
+   "courses_listed": 13
   },
   {
    "code": "COMSC",
@@ -243,7 +243,7 @@
    "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-economics-course?tenant=dvc.elumenapp.com",
    "where": "catalog",
    "method": "subject heading",
-   "courses_listed": 6
+   "courses_listed": 8
   },
   {
    "code": "EDUC",
@@ -283,7 +283,7 @@
    "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-english-course?tenant=dvc.elumenapp.com",
    "where": "catalog",
    "method": "subject heading",
-   "courses_listed": 38
+   "courses_listed": 43
   },
   {
    "code": "ENGTC",
@@ -371,7 +371,7 @@
    "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-history-course?tenant=dvc.elumenapp.com",
    "where": "catalog",
    "method": "subject heading",
-   "courses_listed": 21
+   "courses_listed": 23
   },
   {
    "code": "HORT",
@@ -483,7 +483,11 @@
    "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-mathematics-course?tenant=dvc.elumenapp.com",
    "where": "catalog",
    "method": "subject heading",
-   "courses_listed": 33
+   "courses_listed": 33,
+   "shared_heading": [
+    "MATH",
+    "STAT"
+   ]
   },
   {
    "code": "MUSIC",
@@ -571,7 +575,7 @@
    "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-political-science-course?tenant=dvc.elumenapp.com",
    "where": "catalog",
    "method": "subject heading",
-   "courses_listed": 13
+   "courses_listed": 14
   },
   {
    "code": "PSYC",
@@ -579,7 +583,7 @@
    "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-psychology-course?tenant=dvc.elumenapp.com",
    "where": "catalog",
    "method": "subject heading",
-   "courses_listed": 18
+   "courses_listed": 19
   },
   {
    "code": "RE",
@@ -630,6 +634,18 @@
    "courses_listed": 9
   },
   {
+   "code": "STAT",
+   "title": "Mathematics",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-mathematics-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 2,
+   "shared_heading": [
+    "MATH",
+    "STAT"
+   ]
+  },
+  {
    "code": "STMFT",
    "title": "Steamfitting",
    "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-steamfitting-course?tenant=dvc.elumenapp.com",
@@ -646,5 +662,5 @@
    "courses_listed": 1
   }
  ],
- "note": "The Courses view (run 45625568851) lists every subject by name, each linking one subject page; each page's content call prints that name as its heading over its courses, all under one code (80 pages, 80 codes). url is the content call the run read; the rendered page is https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/<the same dvc-...-course slug>."
+ "note": "The Courses view (run 45625568851) lists every subject by name, each linking one subject page; each page's content call prints that name as its heading over its courses (80 pages). One page heads two codes: Mathematics lists MATH and two STAT courses (shared_heading). url is the content call the run read; the rendered page is https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/<the same dvc-...-course slug>."
 }

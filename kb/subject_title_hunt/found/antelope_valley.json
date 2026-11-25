@@ -1,0 +1,812 @@
+{
+ "college": "Antelope Valley College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:15:49Z",
+ "run": "45630517798",
+ "plan": "kb/college_reads/subject_index_antelope_valley.json",
+ "titles": [
+  {
+   "code": "ABDY",
+   "title": "Auto Body",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,auto-body?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 15
+  },
+  {
+   "code": "ACCT",
+   "title": "Accounting",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,accounting?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 8
+  },
+  {
+   "code": "ACRV",
+   "title": "Air Conditioning, Refrigeration & Ventilation",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,air-conditioning-refrigeration-ventilation?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 8
+  },
+  {
+   "code": "AERO",
+   "title": "Aeronautical & Aviation Technology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,aeronautical-aviation-technology?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 16
+  },
+  {
+   "code": "AFAB",
+   "title": "Aircraft Fabrication and Assembly",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,aircraft-fabrication-assembly?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 9
+  },
+  {
+   "code": "AFMT",
+   "title": "Airframe Manufacturing Technology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,airframe-manufacturing-technologyv2?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 10
+  },
+  {
+   "code": "AIED",
+   "title": "Artificial Intelligence Education",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,artificial-intelligence-education?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 6
+  },
+  {
+   "code": "AJ",
+   "title": "Administration of Justice",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,administration-of-justice?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 26
+  },
+  {
+   "code": "ALM",
+   "title": "Aerospace Leadership and Management",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,aerospace-leadership-and-management?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 4
+  },
+  {
+   "code": "AM",
+   "title": "Advanced Manufacturing",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,advanced-manufacturing?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 8
+  },
+  {
+   "code": "ANDI",
+   "title": "Aeronautical Non-Destructive Inspection",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,aeronautical-non-destructive-inspection?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 4
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,anthropology?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 10
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,art?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 22,
+   "shared_heading": [
+    "ART",
+    "ARTH"
+   ]
+  },
+  {
+   "code": "ARTH",
+   "title": "Art",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,art?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 4,
+   "shared_heading": [
+    "ART",
+    "ARTH"
+   ]
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,astronomy?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 3
+  },
+  {
+   "code": "ATH",
+   "title": "Athletic Training",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,athletic-training?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 5
+  },
+  {
+   "code": "AUTO",
+   "title": "Automotive Technology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,automotive-technology?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 11
+  },
+  {
+   "code": "BIOL",
+   "title": "Biological & Environmental Sciences",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,biological-environmental-sciences?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 21,
+   "also_under": [
+    "Airframe Manufacturing Technology",
+    "Respiratory Care"
+   ]
+  },
+  {
+   "code": "BIP",
+   "title": "Business Information Professional",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,business-information-professional?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 29
+  },
+  {
+   "code": "BUS",
+   "title": "Business",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,business?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 20
+  },
+  {
+   "code": "CA",
+   "title": "Computer Applications",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,computer-applications?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 23
+  },
+  {
+   "code": "CFE",
+   "title": "Child and Family Education",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,child-and-family-education?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 28
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,chemistry?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 8
+  },
+  {
+   "code": "CHIN",
+   "title": "Chinese",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,chinese?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 4
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,communication-studiesv2?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 15
+  },
+  {
+   "code": "CS",
+   "title": "Computer Science",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,computer-science?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 12
+  },
+  {
+   "code": "DA",
+   "title": "Dance",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,dance?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 27
+  },
+  {
+   "code": "DFST",
+   "title": "Deaf Studies",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,deaf-studies?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 15,
+   "shared_heading": [
+    "DFST",
+    "INT"
+   ]
+  },
+  {
+   "code": "DM",
+   "title": "Digital Media",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,digital-media?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 20
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,economics?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 6
+  },
+  {
+   "code": "ED",
+   "title": "Education",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,education?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 4
+  },
+  {
+   "code": "ELEC",
+   "title": "Electrical Technology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,electrical-technology?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 9
+  },
+  {
+   "code": "ELTE",
+   "title": "Electronics Technology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,electronics-technology?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 14
+  },
+  {
+   "code": "EMT",
+   "title": "Emergency Medical Technology/Paramedic",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,emergency-medical-technology?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 17
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,english?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 26,
+   "also_under": [
+    "Airframe Manufacturing Technology",
+    "Respiratory Care"
+   ]
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,engineering?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 14
+  },
+  {
+   "code": "ERSC",
+   "title": "Earth Science",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,earth-science?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 1
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,english-as-a-second-language?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 16
+  },
+  {
+   "code": "ETHN",
+   "title": "Ethnic Studies",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,ethnic-studies?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 15
+  },
+  {
+   "code": "FREN",
+   "title": "French",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,french?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 5
+  },
+  {
+   "code": "FTEC",
+   "title": "Fire Technology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,fire-technology?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 18,
+   "shared_heading": [
+    "FTEC",
+    "FTW"
+   ]
+  },
+  {
+   "code": "FTV",
+   "title": "Film and Television",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,film-and-television?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 18
+  },
+  {
+   "code": "FTW",
+   "title": "Fire Technology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,fire-technology?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 11,
+   "shared_heading": [
+    "FTEC",
+    "FTW"
+   ]
+  },
+  {
+   "code": "GEOG",
+   "title": "Geosciences",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,geosciences?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 14,
+   "shared_heading": [
+    "GEOG",
+    "GEOL"
+   ]
+  },
+  {
+   "code": "GEOL",
+   "title": "Geosciences",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,geosciences?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 5,
+   "shared_heading": [
+    "GEOG",
+    "GEOL"
+   ]
+  },
+  {
+   "code": "GER",
+   "title": "German",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,german?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 4
+  },
+  {
+   "code": "HD",
+   "title": "Human Development",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,human-development?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 7
+  },
+  {
+   "code": "HE",
+   "title": "Health Education",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,health-education?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 5
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,history?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 17
+  },
+  {
+   "code": "IATH",
+   "title": "Kinesiology and Athletics",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,kinesiology?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 24,
+   "shared_heading": [
+    "IATH",
+    "KINF",
+    "KINT"
+   ]
+  },
+  {
+   "code": "IMTA",
+   "title": "Industrial Manufacturing",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,industrial-manufacturingv2?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 5
+  },
+  {
+   "code": "INT",
+   "title": "Deaf Studies",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,deaf-studies?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 9,
+   "shared_heading": [
+    "DFST",
+    "INT"
+   ]
+  },
+  {
+   "code": "JOUR",
+   "title": "Journalism",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,journalism?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 3
+  },
+  {
+   "code": "KINF",
+   "title": "Kinesiology and Athletics",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,kinesiology?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 61,
+   "shared_heading": [
+    "IATH",
+    "KINF",
+    "KINT"
+   ]
+  },
+  {
+   "code": "KINT",
+   "title": "Kinesiology and Athletics",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,kinesiology?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 14,
+   "shared_heading": [
+    "IATH",
+    "KINF",
+    "KINT"
+   ]
+  },
+  {
+   "code": "LAC",
+   "title": "Learning Assistance",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,learning-assistance?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 9
+  },
+  {
+   "code": "LATN",
+   "title": "Latin",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,latin?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 3
+  },
+  {
+   "code": "LIB",
+   "title": "Library Studies",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,library-studies?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 4
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,mathematics?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 21,
+   "shared_heading": [
+    "MATH",
+    "STAT"
+   ]
+  },
+  {
+   "code": "MGT",
+   "title": "Management",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,management?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 6
+  },
+  {
+   "code": "MKTG",
+   "title": "Marketing",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,marketing?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 5
+  },
+  {
+   "code": "MOA",
+   "title": "Medical Assisting",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,medical-assistingv2?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 4
+  },
+  {
+   "code": "MSAM",
+   "title": "Metrology Sciences for Aerospace Manufacturing",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,metrology-sciences-for-aerospace-manufacturing?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 2
+  },
+  {
+   "code": "MUS",
+   "title": "Music",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,music?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 29
+  },
+  {
+   "code": "MUSC",
+   "title": "Music - Commercial",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,music-commercial?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 23
+  },
+  {
+   "code": "NF",
+   "title": "Nutrition and Foods",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,nutrition-and-foods?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 6
+  },
+  {
+   "code": "NS",
+   "title": "Nursing Science",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,nursing-science?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 17
+  },
+  {
+   "code": "PARL",
+   "title": "Legal Assisting (Paralegal)",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,legal-assisting-paralegal?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 11
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,philosophy?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 12,
+   "also_under": [
+    "Respiratory Care"
+   ]
+  },
+  {
+   "code": "PHTC",
+   "title": "Photography - Commercial",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,photography-commercial?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 11
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,physics?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 5
+  },
+  {
+   "code": "POLS",
+   "title": "Political Sciences",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,political-sciences?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 8
+  },
+  {
+   "code": "PSCI",
+   "title": "Physical Science",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,physical-science?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 2,
+   "also_under": [
+    "Airframe Manufacturing Technology"
+   ]
+  },
+  {
+   "code": "PSY",
+   "title": "Psychology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,psychology?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 21,
+   "also_under": [
+    "Airframe Manufacturing Technology",
+    "Respiratory Care"
+   ],
+   "shared_heading": [
+    "PSY",
+    "PSYC"
+   ]
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,psychology?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 2,
+   "shared_heading": [
+    "PSY",
+    "PSYC"
+   ]
+  },
+  {
+   "code": "RADT",
+   "title": "Radiologic Technology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,radiologic-technology?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 16
+  },
+  {
+   "code": "RCP",
+   "title": "Respiratory Care",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,respiratory-care?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 17
+  },
+  {
+   "code": "RE",
+   "title": "Real Estate",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,real-estate?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 13
+  },
+  {
+   "code": "READ",
+   "title": "Reading",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,reading?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 1
+  },
+  {
+   "code": "REC",
+   "title": "Recreational Leadership",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,recreational-leadership?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 2
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,sociology?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 8,
+   "shared_heading": [
+    "SOC",
+    "SOCI"
+   ]
+  },
+  {
+   "code": "SOCI",
+   "title": "Sociology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,sociology?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 2,
+   "shared_heading": [
+    "SOC",
+    "SOCI"
+   ]
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,spanish?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 8
+  },
+  {
+   "code": "STAT",
+   "title": "Mathematics",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,mathematics?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 3,
+   "shared_heading": [
+    "MATH",
+    "STAT"
+   ]
+  },
+  {
+   "code": "THA",
+   "title": "Theatre Arts",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,theatre-arts?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 38
+  },
+  {
+   "code": "VN",
+   "title": "Vocational Nursing",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,vocational-nursing?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 5
+  },
+  {
+   "code": "WDTO",
+   "title": "Water Treatment",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,water-treatment?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 3
+  },
+  {
+   "code": "WELD",
+   "title": "Welding",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,welding?tenant=avc.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 16
+  }
+ ],
+ "note": "The catalog prints no code beside a subject name (runs 45623983494, 45625568851: All Courses lists courses alone, the Courses view is unpublished). Each title is the heading of the department page that lists the code's courses (79 pages read through their content calls), so method is department label, the README's weaker tier. A code listed on several pages keeps the page listing most of its courses (also_under names the others: the B.S. pages list a few general education courses). The All Disciplines page names seven disciplines that have no department page of their own and whose courses sit on a broader page: Geography and Geology (Geosciences), Kinesiology and Intercollegiate Athletics (Kinesiology and Athletics), Interpreter Training (Deaf Studies), Wildland Fire Technology (Fire Technology), and Photography (no page in the menu; PHOT's two courses print on Photography - Commercial, so PHOT is not filed).",
+ "not_filed": [
+  {
+   "code": "PHOT",
+   "headings": [
+    "Photography - Commercial"
+   ],
+   "why": "two courses on the Photography - Commercial page; All Disciplines names a Photography discipline the menu links no page for"
+  }
+ ]
+}
