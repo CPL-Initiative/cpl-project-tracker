@@ -46,25 +46,24 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 18,
+   "placed": 17,
    "listed": 18,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.944,
+   "missing": [
+    "COMM5"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "COMMC1004",
-     "listed": "COMM5",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "COMMC1004"
+   ],
+   "flagged": [
+    "COMMC1004"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -333,6 +332,5 @@
    "COMM C1004 (Interpersonal Communication) is not in the closed list; its description says it was formerly COMM 5, which is in the closed list."
   ]
  },
- "extracted_run": 45606980427,
- "read_run": "38843470509"
+ "extracted_run": "38843470509"
 }

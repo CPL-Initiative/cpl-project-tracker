@@ -46,25 +46,24 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 4,
+   "placed": 3,
    "listed": 4,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.75,
+   "missing": [
+    "CDE7"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "CDEVC1000",
-     "listed": "CDE7",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "CDEVC1000"
+   ],
+   "flagged": [
+    "CDEVC1000"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -193,6 +192,5 @@
    "Certificate also requires a minimum grade of C in each course; additional work experience (50 days of 3+ hours) is required for the Associate Teacher Permit but not for the certificate."
   ]
  },
- "extracted_run": 45606980427,
- "read_run": "38843470509"
+ "extracted_run": "38843470509"
 }

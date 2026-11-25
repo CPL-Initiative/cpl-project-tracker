@@ -46,30 +46,27 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 34,
+   "placed": 32,
    "listed": 34,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.941,
+   "missing": [
+    "ENG25",
+    "ENG25H"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "ENGLC1002",
-     "listed": "ENG25",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "ENGLC1002H",
-     "listed": "ENG25H",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 2,
+   "codes": [
+    "ENGLC1002",
+    "ENGLC1002H"
+   ],
+   "flagged": [
+    "ENGLC1002",
+    "ENGLC1002H"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -459,6 +456,5 @@
    "The course list at the end of the text is cut off mid-description of ENG 160."
   ]
  },
- "extracted_run": 45606980427,
- "read_run": "38843470509"
+ "extracted_run": "38843470509"
 }

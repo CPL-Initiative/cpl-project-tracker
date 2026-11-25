@@ -46,25 +46,24 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 21,
+   "placed": 20,
    "listed": 21,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.952,
+   "missing": [
+    "COMM5"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "COMMC1004",
-     "listed": "COMM5",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "COMMC1004"
+   ],
+   "flagged": [
+    "COMMC1004"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -340,6 +339,5 @@
    "The Learning Outcome(s) list is printed on the program page and recorded as this award's outcomes."
   ]
  },
- "extracted_run": 45606980427,
- "read_run": "38843470509"
+ "extracted_run": "38843470509"
 }

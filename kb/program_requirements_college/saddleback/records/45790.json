@@ -46,35 +46,30 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 7,
+   "placed": 4,
    "listed": 7,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.571,
+   "missing": [
+    "MATH3A",
+    "MATH3AH",
+    "MATH3B"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "MATHC2210",
-     "listed": "MATH3A",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "MATHC2210H",
-     "listed": "MATH3AH",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "MATHC2220",
-     "listed": "MATH3B",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 3,
+   "codes": [
+    "MATHC2210",
+    "MATHC2210H",
+    "MATHC2220"
+   ],
+   "flagged": [
+    "MATHC2210",
+    "MATHC2210H",
+    "MATHC2220"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -256,6 +251,5 @@
    "Outcomes are printed under the program summary for the AA-T/AS-T and recorded for this award."
   ]
  },
- "extracted_run": 45606980427,
- "read_run": "38843470509"
+ "extracted_run": "38843470509"
 }

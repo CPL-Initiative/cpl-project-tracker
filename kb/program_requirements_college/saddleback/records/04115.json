@@ -46,25 +46,24 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 31,
+   "placed": 30,
    "listed": 31,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.968,
+   "missing": [
+    "HIST17"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "HISTC1002",
-     "listed": "HIST17",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "HISTC1002"
+   ],
+   "flagged": [
+    "HISTC1002"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -402,6 +401,5 @@
    "Careers taken from the program summary ('entry-level positions in ... or work as ...')."
   ]
  },
- "extracted_run": 45606980427,
- "read_run": "38843470509"
+ "extracted_run": "38843470509"
 }

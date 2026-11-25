@@ -46,40 +46,33 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 18,
+   "placed": 14,
    "listed": 18,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.778,
+   "missing": [
+    "ECON2",
+    "ECON4",
+    "MATH3A",
+    "MATH3AH"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "ECONC2001",
-     "listed": "ECON4",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "ECONC2002",
-     "listed": "ECON2",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "MATHC2210",
-     "listed": "MATH3A",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "MATHC2210H",
-     "listed": "MATH3AH",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 4,
+   "codes": [
+    "ECONC2001",
+    "ECONC2002",
+    "MATHC2210",
+    "MATHC2210H"
+   ],
+   "flagged": [
+    "ECONC2001",
+    "ECONC2002",
+    "MATHC2210",
+    "MATHC2210H"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -315,6 +308,5 @@
    "The course list at the end of the text is cut off mid-description (STAT C1000H)."
   ]
  },
- "extracted_run": 45606980427,
- "read_run": "38843470509"
+ "extracted_run": "38843470509"
 }

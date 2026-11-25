@@ -46,30 +46,30 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 20,
+   "placed": 19,
    "listed": 20,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.95,
+   "missing": [
+    "BIO20"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "BIOLC1000",
-     "listed": "BIO20",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "BIOLC1000"
+   ],
+   "flagged": [
+    "BIOLC1000"
+   ],
    "pass": true
   },
   "arithmetic": {
    "pass": true,
    "status": "equal",
+   "meets": true,
    "computed": [
     19.0,
     21.0
@@ -80,7 +80,6 @@
    ],
    "against": "program",
    "why": [],
-   "meets": true,
    "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
   },
   "repeated": {
@@ -338,6 +337,5 @@
    "Outcomes are printed for the program page under 'Learning Outcome(s)'; 'Differentiate from pseudoscience.' copied as printed though it appears to be missing words."
   ]
  },
- "extracted_run": 45606980427,
- "read_run": "38843470509"
+ "extracted_run": "38843470509"
 }

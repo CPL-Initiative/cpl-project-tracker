@@ -46,25 +46,24 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 14,
+   "placed": 13,
    "listed": 14,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.929,
+   "missing": [
+    "ECON4"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "ECONC2001",
-     "listed": "ECON4",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "ECONC2001"
+   ],
+   "flagged": [
+    "ECONC2001"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -298,6 +297,5 @@
    "Careers include workplace fields named for entry-level employment (urban farms, nurseries, labs, golf courses) and job titles named for after a baccalaureate degree."
   ]
  },
- "extracted_run": 45606980427,
- "read_run": "38843470509"
+ "extracted_run": "38843470509"
 }

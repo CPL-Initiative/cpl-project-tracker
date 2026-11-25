@@ -46,10 +46,11 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 17,
+   "placed": 16,
    "listed": 25,
-   "share": 0.68,
+   "share": 0.64,
    "missing": [
+    "COMM5",
     "CTVR124",
     "ENG25",
     "ENG70",
@@ -61,26 +62,21 @@
    ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "COMMC1004",
-     "listed": "COMM5",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 5,
    "codes": [
     "COMM106",
     "COMM110",
+    "COMMC1004",
     "CTVR1H",
     "JRN1H"
    ],
    "flagged": [
     "COMM106",
     "COMM110",
+    "COMMC1004",
     "CTVR1H",
     "JRN1H"
    ],
@@ -391,6 +387,5 @@
    "Outcomes are printed under 'Learning Outcome(s):' for this program."
   ]
  },
- "extracted_run": 45606980427,
- "read_run": "38843470509"
+ "extracted_run": "38843470509"
 }

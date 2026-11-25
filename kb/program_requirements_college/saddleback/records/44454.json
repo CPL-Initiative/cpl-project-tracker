@@ -46,25 +46,24 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 13,
+   "placed": 12,
    "listed": 13,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.923,
+   "missing": [
+    "BIO20"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "BIOLC1000",
-     "listed": "BIO20",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "BIOLC1000"
+   ],
+   "flagged": [
+    "BIOLC1000"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -305,6 +304,5 @@
    "Careers sentence names work settings (hospitals, state and local health departments, non-profit agencies, educational institutions, research organizations, health clinics, international programs) rather than careers or job titles; left careers empty for reviewer check."
   ]
  },
- "extracted_run": 45606980427,
- "read_run": "38843470509"
+ "extracted_run": "38843470509"
 }

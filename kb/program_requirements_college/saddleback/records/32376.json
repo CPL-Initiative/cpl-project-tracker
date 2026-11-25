@@ -46,25 +46,24 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 23,
+   "placed": 22,
    "listed": 23,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.957,
+   "missing": [
+    "ARTH26"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "ARTHC1200",
-     "listed": "ARTH26",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "ARTHC1200"
+   ],
+   "flagged": [
+    "ARTHC1200"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -393,6 +392,5 @@
    "Course list text is cut off at ARTH 32's description."
   ]
  },
- "extracted_run": 45606980427,
- "read_run": "38843470509"
+ "extracted_run": "38843470509"
 }

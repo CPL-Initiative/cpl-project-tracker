@@ -46,35 +46,30 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 32,
+   "placed": 29,
    "listed": 32,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.906,
+   "missing": [
+    "CDE7",
+    "ECON2",
+    "ECON4"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "CDEVC1000",
-     "listed": "CDE7",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "ECONC2001",
-     "listed": "ECON4",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "ECONC2002",
-     "listed": "ECON2",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 3,
+   "codes": [
+    "CDEVC1000",
+    "ECONC2001",
+    "ECONC2002"
+   ],
+   "flagged": [
+    "CDEVC1000",
+    "ECONC2001",
+    "ECONC2002"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -406,6 +401,5 @@
    "Course list text is cut off partway through the HS 131 description; descriptions for HS 140, HS 150, HS 170, HS 172, PSYC and STAT courses are not shown."
   ]
  },
- "extracted_run": 45606980427,
- "read_run": "38843470509"
+ "extracted_run": "38843470509"
 }

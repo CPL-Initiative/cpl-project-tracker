@@ -46,35 +46,30 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 26,
+   "placed": 23,
    "listed": 26,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.885,
+   "missing": [
+    "BIO20",
+    "MATH3A",
+    "MATH3AH"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "BIOLC1000",
-     "listed": "BIO20",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "MATHC2210",
-     "listed": "MATH3A",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "MATHC2210H",
-     "listed": "MATH3AH",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 3,
+   "codes": [
+    "BIOLC1000",
+    "MATHC2210",
+    "MATHC2210H"
+   ],
+   "flagged": [
+    "BIOLC1000",
+    "MATHC2210",
+    "MATHC2210H"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -376,6 +371,5 @@
    "Course list text is cut off in the MATH C2210 description."
   ]
  },
- "extracted_run": 45606980427,
- "read_run": "38843470509"
+ "extracted_run": "38843470509"
 }

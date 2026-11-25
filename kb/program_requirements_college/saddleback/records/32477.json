@@ -46,25 +46,24 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 18,
+   "placed": 17,
    "listed": 18,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.944,
+   "missing": [
+    "ECON2"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "ECONC2002",
-     "listed": "ECON2",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "ECONC2002"
+   ],
+   "flagged": [
+    "ECONC2002"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -316,6 +315,5 @@
    "No careers are named; the summary mentions only 'professional careers' generically."
   ]
  },
- "extracted_run": 45606980427,
- "read_run": "38843470509"
+ "extracted_run": "38843470509"
 }

@@ -46,25 +46,24 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 19,
+   "placed": 18,
    "listed": 19,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.947,
+   "missing": [
+    "CDE7"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "CDEVC1000",
-     "listed": "CDE7",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "CDEVC1000"
+   ],
+   "flagged": [
+    "CDEVC1000"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -333,6 +332,5 @@
    "The catalog text ends cut off mid-entry in the course list (STAT C1000 description); requirements section appears complete."
   ]
  },
- "extracted_run": 45606980427,
- "read_run": "38843470509"
+ "extracted_run": "38843470509"
 }

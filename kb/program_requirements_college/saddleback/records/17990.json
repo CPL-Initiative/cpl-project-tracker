@@ -46,25 +46,24 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 38,
+   "placed": 37,
    "listed": 38,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.974,
+   "missing": [
+    "BIO20"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "BIOLC1000",
-     "listed": "BIO20",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "BIOLC1000"
+   ],
+   "flagged": [
+    "BIOLC1000"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -441,6 +440,5 @@
    "Careers list includes occupations (Nursing Assistants, Home Health Aides, Medical Assistants) and professional career fields named as requiring a baccalaureate (Health Sciences, Health Care Management/Administration, Public Health)."
   ]
  },
- "extracted_run": 45606980427,
- "read_run": "38843470509"
+ "extracted_run": "38843470509"
 }

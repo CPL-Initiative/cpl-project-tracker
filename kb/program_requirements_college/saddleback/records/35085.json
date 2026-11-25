@@ -46,25 +46,24 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 9,
+   "placed": 8,
    "listed": 9,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.889,
+   "missing": [
+    "BIO20"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "BIOLC1000",
-     "listed": "BIO20",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "BIOLC1000"
+   ],
+   "flagged": [
+    "BIOLC1000"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -230,6 +229,5 @@
    "Careers taken from the program summary: 'Biomedical illustrators' and 'a career in the field as illustrators in various medical, science, and technical presentation areas'."
   ]
  },
- "extracted_run": 45606980427,
- "read_run": "38843470509"
+ "extracted_run": "38843470509"
 }
