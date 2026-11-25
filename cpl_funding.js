@@ -231,6 +231,11 @@
       "border-bottom: 2px solid var(--cobalt, #0D5BC6); transform: rotate(-45deg); transition: transform .15s; }",
     "tr.cplfund-open .cf-chev::before { transform: rotate(45deg); }",
     ".cf-chev.cf-chev-empty::before { content: none; }",
+    ".cplfund-table .cf-maxbtn { margin-left: 12px; padding: 0 2px; min-height: 24px; border: 0; background: none; font: inherit; " +
+      "font-size: .92em; white-space: nowrap; color: var(--cobalt, #0D5BC6); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }",
+    ".cplfund-table .cf-maxbtn:hover { text-decoration-thickness: 2px; }",
+    ".cplfund-table .cf-maxbtn:focus-visible { outline: 2px solid var(--gold-accent); outline-offset: 1px; border-radius: 3px; }",
+    "@media print { .cplfund-table .cf-maxbtn { display: none; } }",
     "button.cf-chev { border: 0; background: none; padding: 0; margin: 0; cursor: pointer; min-width: 24px; min-height: 28px; }",
     "button.cf-chev:focus-visible { outline: 2px solid var(--gold-accent); outline-offset: 1px; border-radius: 3px; }",
     ".cplfund-table .cf-lpname { text-decoration: underline; text-decoration-style: solid; text-underline-offset: 3px; color: var(--cobalt, #0D5BC6); }",
@@ -14057,6 +14062,42 @@
   }
   // The priority's label cell: what it counts, the goal it serves, its share
   // and its price. `np` is the noncredit twin, when the institution has one.
+  // HOW TO MAXIMIZE FUNDING (Sam, 2026-11-25: the team heard that newcomers to CPL "wanted to know what is moving
+  // and could move their Funds Qualified so far"; on the approved mock, "How to maximize funding" on the priority's
+  // own line, and a Get Help in Office Hours link). On the public page, each credit priority row in an institution's
+  // detail carries the link; it opens a panel beside the table (funding-model/maximize_bar.js) with where the
+  // institution stands, what the model counts, and the priority's recommended strategies, the ones already in place
+  // set aside. Every word comes from the model and the published scenario: nothing is written for the college.
+  // One entry per drawn link: the page draws a priority more than once (each view of the model), so a key per
+  // institution and priority let the last drawing answer for every link. MAXI_N numbers the drawings.
+  var MAXI = {}, MAXI_N = 0;
+  function maximizeBtnHtml(o, p, slot, crF, crA, isF, ncF) {
+    if (!publicMode() || !o || !o.college || !crF) return "";
+    if (MAXI_N > 5000) { MAXI = {}; MAXI_N = 0; }
+    var c = o.college, key = "m" + (++MAXI_N);
+    var strategies = (Array.isArray(p.strategies) && p.strategies.length) ? p.strategies.slice() : prioStrategies(slot, p.pos);
+    var fr = crF.fr || {};
+    // Units to FTES only where the measure counts units (a headcount measure has no such ratio).
+    var unitsPerFtes = (fr.status === "earned" && fr.meas && fr.meas.unit === "units" && fr.actual > 0 && fr.raw > 0)
+      ? fr.raw / fr.actual : null;
+    MAXI[key] = {
+      college: dispName(c.college), label: p.label + " (CR)" + (p.title ? ": " + p.title : ""),
+      // The row's own Max Funds and Funds Qualified So Far: the credit share plus the noncredit share where the
+      // institution has one, as the Total columns add them.
+      maxFunds: (crF.maxFunds || 0) + (ncF ? ncF.maxFunds || 0 : 0),
+      actualFunds: (crF.actualFunds || 0) + (ncF ? ncF.actualFunds || 0 : 0),
+      withNc: !!(ncF && ncF.maxFunds > 0), slot: slot, pos: p.pos, prioLabel: p.label,
+      // The credit measure's count, in its own unit: FTES, or students for a headcount measure.
+      inFtes: !!isF, maxCount: crF.maxFtes || 0, actCount: crA && crA.measured ? (crA.val || 0) : null,
+      unitsPerFtes: unitsPerFtes, gated: !!o.gated,
+      counts: p.metric || "", measure: measureWords(p) || "", units: unitsLine(c, fr),
+      none: fr.status === "none",
+      strategies: strategies, landingPage: !!lpUrlOf(c.college)
+    };
+    return ' <button type="button" class="cf-maxbtn" data-max-key="' + esc(key) + '" data-max-label="' + esc(c.college + "|" + p.label) +
+      '" aria-haspopup="dialog">How to maximize funding</button>';
+  }
+  function maximizeInfo(key) { return MAXI[key] ? JSON.parse(JSON.stringify(MAXI[key])) : null; }
   function prioLabelTip(p, slot, np) {
     var lines = [p.label + (p.title ? ": " + p.title : "")];
     (prioGoals(slot, p.pos, p).keys || []).forEach(function (k) {
@@ -14434,7 +14475,8 @@
         : crA.text;
       var CELL = {
         college: '<td class="t cf-subname" title="' + esc(prioLabelTip(p, slot, np)) + '">' +
-          rowNameHtml(p.label + " (CR)", p.title, prioGoals(slot, p.pos, p).keys) + "</td>",
+          rowNameHtml(p.label + " (CR)", p.title, prioGoals(slot, p.pos, p).keys) +
+          maximizeBtnHtml(o, p, slot, crF, crA, isF, ncF) + "</td>",
         cr_award: maxCell(crF, isF, p, "cr"),
         cr_current: curCell(crF, crA, isF, null),
         nc_award: ncF ? maxCell(ncF, true, np, "nc") : dash,
@@ -19516,7 +19558,7 @@
     // SIMPLE VIEW on the public page (Sam, 2026-11-24): who sees the package, the
     // count cards and their filter, and the flat table the switch asks for.
     simplePackageShown: simplePackageShown, simpleViewLive: simpleViewLive, setSimpleViewLive: setSimpleViewLive,
-    isColHidden: isColHidden,
+    isColHidden: isColHidden, maximizeInfo: maximizeInfo,
     simpleView: function () { return !!state.simpleView; }, setSimpleView: setSimpleView,
     condCards: condCards, condFilter: function () { return state.condFilter || ""; }, setCondFilter: setCondFilter,
     setText: setText, textPlain: textPlain, textIsCustom: textIsCustom, textIsBlank: textIsBlank,
