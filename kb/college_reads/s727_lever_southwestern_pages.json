@@ -1,0 +1,44 @@
+{
+ "_readme": "S727 lever (the gap census's reader_page_assignment lever, census of 2026-11-25 01:39Z, Next wave): Southwestern College's 3 programs whose filed record places none of the state's listed courses (capture 44529722751): Administration of Justice A.S.-T 32693 and Psychology A.A.-T 36634 were handed their department pages; Geology A.S.-T 33642's filed record (run 38563578596) was read from the Cal-GETC page, and the capture now hands it geology/geology-for-transfer-as/, read here as the capture reads it. This plan reads each guessed own address as the capture reads it (capture_view: innerText with the tab panels appended), then each department or area page's links under it, following up to five award pages, so a session sees which programs have a page of their own and what the capture reads there, and a test pins it. No model call, nothing written.",
+ "college": "Southwestern College",
+ "questions": {
+  "department": "Which pages the department or area page links under it, and which is each program's own (its heading with its award and its requirement list).",
+  "own_page": "What the capture reads on the program's own page: its heading, its award, its course list and its total, on the visible text or a tab panel."
+ },
+ "keywords": [
+  "certificate of (?:achievement|completion|competency)[^\\n]{0,80}",
+  "associate (?:of|in) (?:arts|science)[^\\n]{0,80}",
+  "total[^\\n]{0,40}(?:units?|hours?)",
+  "required courses?"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "33642 Geology A.S.-T, the page the capture now hands it",
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/geology/geology-for-transfer-as/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "department"
+   ],
+   "why": "32693 Administration of Justice A.S.-T: the department page the capture handed it",
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/administration-justice/",
+   "links": "associate\\-degree\\-certificate\\-programs/administration\\-justice/.",
+   "links_cap": 80,
+   "follow": "associate\\-degree\\-certificate\\-programs/administration\\-justice/[a-z0-9_-]*(?:transfer|-ast|as-t|ad-t|adt)"
+  },
+  {
+   "answers": [
+    "department"
+   ],
+   "why": "36634 Psychology A.A.-T: the department page the capture handed it",
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/psychology/",
+   "links": "associate\\-degree\\-certificate\\-programs/psychology/.",
+   "links_cap": 80,
+   "follow": "associate\\-degree\\-certificate\\-programs/psychology/[a-z0-9_-]*(?:transfer|-aat|aa-t|ad-t|adt)"
+  }
+ ]
+}
