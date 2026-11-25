@@ -2453,6 +2453,16 @@
   }
   // A card's Revise or Edit opens the box at the top of the tab, far from the card (Sam, 2026-11-05: "nothing
   // seemed to happen"): land with the box's heading and the piece's name in view, then the field focused.
+  // Both Publish to Public Library buttons land in the form they open (Sam, 2026-11-25: the card's top one "did
+  // nothing"). The form sits in Details, below the card's face, and carries the Public summary only once the piece's
+  // check passes, so focus goes to the summary when the form has one, else to its first button, and the form scrolls
+  // into view either way.
+  function landOnPubForm(id) {
+    var f = document.querySelector('form[data-pubform="' + id + '"]');
+    var n = f && (f.querySelector("#lp-sum") || f.querySelector("button"));
+    if (n && n.focus) n.focus();
+    if (f && f.scrollIntoView) f.scrollIntoView({ block: "nearest" });
+  }
   function landOnBox(fieldId) {
     var h = document.getElementById("lib-panel-h"), f = document.getElementById(fieldId);
     if (f && f.focus) { try { f.focus({ preventScroll: true }); } catch (e) { f.focus(); } }
@@ -4472,10 +4482,7 @@
         state.open[v] = true; state.edit = v; state.retireAsk = null; say(""); render();
         var es = document.getElementById("le-status"); if (es) es.focus();
       }
-      else if ((v = b.getAttribute("data-pubtop"))) {
-        state.pub = v; state.open[v] = true; say(""); render();
-        var ps2 = document.getElementById("lp-sum"); if (ps2) ps2.focus();
-      }
+      else if ((v = b.getAttribute("data-pubtop"))) { state.pub = v; state.open[v] = true; say(""); render(); landOnPubForm(v); }
       else if (b.getAttribute("data-editcancel")) {
         var was = state.edit;
         state.edit = null; state.retireAsk = null; clearPiece(); render();
@@ -4484,7 +4491,7 @@
       else if ((v = b.getAttribute("data-retire"))) { state.retireAsk = v; render(); }
       else if (b.getAttribute("data-retireno")) { state.retireAsk = null; render(); }
       else if ((v = b.getAttribute("data-retireyes"))) retire(v);
-      else if ((v = b.getAttribute("data-pub"))) { state.pub = v; say(""); render(); var ps = document.getElementById("lp-sum"); if (ps) ps.focus(); }
+      else if ((v = b.getAttribute("data-pub"))) { state.pub = v; say(""); render(); landOnPubForm(v); }
       else if (b.getAttribute("data-pubcancel")) { state.pub = null; render(); }
       else if ((v = b.getAttribute("data-unpub"))) setPublic(v, false);
       else if ((v = b.getAttribute("data-view"))) setView(v, true);
