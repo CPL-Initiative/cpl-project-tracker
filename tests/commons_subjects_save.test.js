@@ -53,8 +53,8 @@ const FILES = {
   "kb/status/subject_courses/alpha.json": { college: "Alpha College", slug: "alpha", columns: ["number", "title", "band", "listed", "units", "cid", "ccn", "mid"],
     codes: { MATH: [["1", "Algebra", "C", "Both", 4, "", "", ""]], "ES/A": [["5", "Yoga", "C", "Both", 1, "", "", ""]] } },
   "kb/status/local_subject_recommendations.json": { colleges: [{ slug: "alpha", rows: [{ code: "MATH",
-    title: { title: "Mathematics", level: "High", from: "other_colleges", why: "other colleges agree." },
-    common: { code: "MATH", discipline: "Mathematics", level: "Medium", from: "own_courses", why: "its courses sit under MATH." } }] }] }
+    title: { title: "Mathematics", confidence: 95, from: "other_colleges", why: "other colleges agree." },
+    common: { code: "MATH", discipline: "Mathematics", confidence: 80, from: "own_courses", why: "its courses sit under MATH." } }] }] }
 };
 const REST = "https://hvuwhnbuahrtptokpqfh.supabase.co/rest/v1/kb_curation";
 const ME = { email: "a@rccd.edu", access_token: "tok.en.x", refresh_token: "r" };
@@ -340,10 +340,10 @@ function typeIn(x, id, v) { const i = x.d.getElementById(id); i.value = v; retur
 
   /* (13) Accept on the row */
   const RECS2 = { colleges: [{ slug: "alpha", rows: [{ code: "MATH",
-    title: { title: "Mathematics", level: "Medium", confidence: 0.7, from: "web_search", candidates: [
-      { title: "Mathematics", confidence: 0.7, level: "Medium", from: ["web_search"] }, { title: "Math Lab", confidence: 0.575, level: "Low", from: ["course_joins"] }],
+    title: { title: "Mathematics", confidence: 70, from: "web_search", candidates: [
+      { title: "Mathematics", confidence: 70, from: ["web_search"] }, { title: "Math Lab", confidence: 58, from: ["course_joins"] }],
       search: { result_url: "https://alpha.edu/math", result_title: "Mathematics" } },
-    common: { code: "MATH", discipline: "Mathematics", level: "Medium", confidence: 0.91, from: "own_courses" } }] }] };
+    common: { code: "MATH", discipline: "Mathematics", confidence: 91, from: "own_courses" } }] }] };
   x = load("#commons/subjects/disagree", { sess: ME, files: { "kb/status/local_subject_recommendations.json": RECS2 } });
   await x.M.boot(); await settle();
   let m13row = x.d.querySelector('.csb-codes tr[data-code="MATH"]');
@@ -370,7 +370,7 @@ function typeIn(x, id, v) { const i = x.d.getElementById(id); i.value = v; retur
 
   /* (14) Sam, S722: "save all titles and just flag for possible action those that are below 80" */
   const RECS3 = JSON.parse(JSON.stringify(RECS2));
-  RECS3.colleges[0].rows[0].title.candidates[0].confidence = 0.86;
+  RECS3.colleges[0].rows[0].title.candidates[0].confidence = 86;
   x = load("#commons/subjects/disagree", { files: { "kb/status/local_subject_recommendations.json": RECS3 } });
   await x.M.boot(); await settle();
   check("(14) ⭐ a title Sky rates 80 or more stands: it leaves the list to check", !x.d.querySelector('.csb-codes tr[data-code="MATH"]') && /80 or more/.test(txt(x.d.getElementById("csb-check-rule"))));

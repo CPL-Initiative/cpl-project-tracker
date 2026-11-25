@@ -3,7 +3,7 @@
 
 WHY. A local subject title comes only from the catalog's subject heading (Sam's rule on #3655). Where the catalog
 gives a code no heading, a person settles the title, and Sam asked for a recommendation beside each such row with
-a confidence level that was measured before it is shown. This script reads what the repo already holds and files
+a confidence that was measured before it is shown. This script reads what the repo already holds and files
 kb/status/local_subject_recommendations.json. It writes no title and no common code anywhere else: the Subjects
 builder and the subject map do not read it.
 
@@ -16,19 +16,35 @@ THE SOURCES, each measured with the answer left out of its own vote:
   course_joins    the code's courses in the state list that share an M-ID, a C-ID or a CCN with a course under
                   a titled code at another filed college; each course gives one vote.
   program_titles  a program at the same college whose required courses sit mostly under this code (Sam,
-                  2026-11-21: program titles inform the recommendation and never set it; never High).
+                  2026-11-21: program titles inform the recommendation and never set it; never 90 or more).
   web_search      a search a session ran and filed in kb/reference/subject_web_searches.json (Sam, 2026-11-21:
-                  for every Not in catalog row). It lifts or lowers a level; by itself it reads Low. A department
+                  for every Not in catalog row). It lifts or lowers the score; by itself it scores WEB_SCORE. A department
                   or program label the search found is read the same way, as weaker evidence (Sam, 2026-11-21:
                   "Dept labels can be helpful for our edge case recommendations").
 
 THE MEASURE. Every titled code is taken out and each source is asked for its title. A source's answer is right
 when it equals the catalog's heading after folding case, "&" and punctuation, or when one names the other whole
 (Welding and Welding Technology). Each source is split into the conditions it can be in (all agree, mixed, ...)
-and each condition takes the level its measured share earns: High at 90% right or more, Medium at 60%, Low
-below. A condition measured on fewer than 20 codes reads Low. Program titles are capped at Medium. A second
-source that agrees lifts the level one step; one that disagrees is shown beside it and the row reads Low, and
-among differing titles one the code's letters run through (COOP ED through Cooperative Education) is put first.
+and each condition scores its measured share as a whole number from 0 to 100, the one bar Sam asked for (Sam,
+2026-11-24: "a simple bar from 0-100 is the most recognizable and quickly understood indicator--better that high,
+medium, low or others"; 2026-11-25: "confidence bars 0-100 rather than low, med, high throughout all commons
+procedures", r-confidence-0-100-in-all-commons-procedures-sam-2026-11-25). The file writes no Low, Medium or High.
+The numeric rules, each keeping the intent of the step rule it replaces, each number sourced from the measured table:
+  THIN_CAP 59      a condition measured on fewer than FLOOR_N (20) codes scores 59 at most. Under 20 codes a share
+                   cannot be told from the weakest measured conditions (course joins few or mixed, 48; program
+                   titles one or mixed, 56), so it stays below 60, the line those conditions sit under. The one thin
+                   cell today is sibling same letters, 2 of 2, which would otherwise score 100.
+  PROGRAM_CAP 89   program titles score 89 at most (Sam, 2026-11-21: they inform and never set), so they never reach
+                   90 alone. Their best measured condition, several agree, scores 64, so no score moves today.
+  agreement        sources that name the same title join at 100 x (1 - the product of (1 - each score / 100)), the
+                   chance that at least one is right when each errs apart from the others, capped at JOIN_CAP 99:
+                   no join of measured sources is certain. District all agree (99) with other colleges all agree (95)
+                   joins at 99; other colleges mixed (87) with course joins most agree (88) joins at 98.
+  DISAGREE_CAP 89  where another candidate names a different title, every candidate scores 89 at most: the best
+                   measured mixed condition, district mixed, scores 88, and a disagreement is the evidence of a mixed
+                   vote, so it never reaches 90.
+Among differing titles one the code's letters run through (COOP ED through Cooperative Education) is put first.
+Totals count the recommendations by band of the score: 90_plus, 60_to_89, under_60.
 
 THE COMMON CODE. For a row with no common code the script recommends one from, in order: the title (the local
 or recommended title, or a part of it set off by a slash or a comma, names an MQ discipline in
@@ -80,14 +96,35 @@ OUT = os.path.join("kb", "status", "local_subject_recommendations.json")
 NCLIST = os.path.join("kb", "status", "noncredit_subject_titles.json")
 NO_CATEGORY = "(no category in the export)"
 
-HIGH, MEDIUM, FLOOR_N = 0.90, 0.60, 20
+FLOOR_N = 20
+THIN_CAP, PROGRAM_CAP, DISAGREE_CAP, JOIN_CAP = 59, 89, 89, 99
+BANDS = ((90, "90_plus"), (60, "60_to_89"), (0, "under_60"))
 # A noncredit list condition right less often than wrong is a guess, and the brief rules guesses out (S701 review): it
 # stays measured in the file, marked unused, and feeds no recommendation.
 USE_FLOOR = 0.50
-LEVELS = ["Low", "Medium", "High"]
 AWARD_WORDS = re.compile(
     r"\b(a\.?a\.?-?t?|a\.?s\.?-?t?|associate (in|of) (arts|science)( for transfer)?|degree|certificate( of "
     r"(achievement|proficiency|competency|completion|accomplishment))?|for transfer|adt|noncredit|skills?)\b", re.I)
+
+
+def pct(share):
+    """A measured share (0 to 1) as the bar's whole number from 0 to 100."""
+    return int(round(100 * share + 1e-9))
+
+
+def score_of(share, asked, src=None):
+    """The 0-100 score a measured cell earns: its share, capped where it was measured thin or is a program title."""
+    n = pct(share)
+    if asked < FLOOR_N:
+        n = min(n, THIN_CAP)
+    if src == "program_titles":
+        n = min(n, PROGRAM_CAP)
+    return n
+
+
+def band(n):
+    """The totals band a 0-100 score falls in."""
+    return next(name for floor, name in BANDS if n >= floor)
 
 
 def norm(t):
@@ -309,12 +346,8 @@ def measure(data):
     table = {}
     for (src, cond), (right, asked) in sorted(tally.items()):
         share = right / asked
-        level = "High" if share >= HIGH else ("Medium" if share >= MEDIUM else "Low")
-        if asked < FLOOR_N:
-            level = "Low"
-        if src == "program_titles" and level == "High":
-            level = "Medium"
-        table.setdefault(src, {})[cond] = {"right": right, "asked": asked, "share": round(share, 3), "level": level}
+        table.setdefault(src, {})[cond] = {"right": right, "asked": asked, "share": round(share, 3),
+                                           "score": score_of(share, asked, src)}
     return table
 
 
@@ -322,30 +355,25 @@ def measure(data):
 # Mechatronics (which is the correct title), your confidence bar should get higher"). The searches ran only for codes
 # with no title, so no titled code can measure them: these are set, not measured, and the file says so. A title a page
 # of the college's own site or catalog gives for the code's courses (d-program-label-lists-the-codes-courses-s719)
-# reads as a Medium source; a department or program label reads below it.
-WEB_SHARE = {"title": 0.80, "label": 0.55}
-
-
-def level_for(share):
-    return "High" if share >= HIGH else ("Medium" if share >= MEDIUM else "Low")
+# scores 80, the line at which the Subjects panel lets a derived title stand (Sam, 2026-11-24: "flag for possible action
+# those that are below 80"), so a found title stands and a search alone never reaches 90; a department or program label
+# scores 55, below the 60 line where the measured weak conditions sit (program titles one or mixed, 56).
+WEB_SCORE = {"title": 80, "label": 55}
 
 
 def recommend_title(data, table, row):
     """Every candidate title with its own confidence, most confident first; the first is the recommendation.
 
-    Each source's confidence is its measured share for the condition it is in (a web search's is WEB_SHARE). Sources that
-    name the same title join: their confidence is 1 - the product of (1 - share), so a second source that agrees lifts it.
-    Ties go to a title the code's letters run through (MECH through Mechatronics). Where another candidate differs, the
-    first reads Medium at most: disagreeing sources never settle a title on their own."""
+    Each source's confidence (0-100) is its measured cell's score (a web search's is WEB_SCORE). Sources that name the
+    same title join at 100 x (1 - the product of (1 - score / 100)), capped at JOIN_CAP, so a second source that agrees
+    lifts it. Ties go to a title the code's letters run through (MECH through Mechatronics). Where another candidate
+    differs, every candidate scores DISAGREE_CAP at most: disagreeing sources never settle a title on their own."""
     band = "C" if row["credit_courses"] else None
     got = sources(data, row["slug"], row["code"], band)
     entries = []   # (share, src, title, why)
     for src, (t, cond, ev) in got.items():
-        m = table.get(src, {}).get(cond) or {"level": "Low", "share": 0.0, "asked": 0}
-        share = m["share"] if m.get("asked", 0) >= FLOOR_N else min(m["share"], MEDIUM - 0.01)
-        if src == "program_titles":
-            share = min(share, HIGH - 0.01)
-        entries.append((share, src, t, "%s: %s (%s, right %d%% of the time)" % (src.replace("_", " "), ev, cond, round(m["share"] * 100))))
+        m = table.get(src, {}).get(cond) or {"score": 0, "share": 0.0, "asked": 0}
+        entries.append((m["score"], src, t, "%s: %s (%s, right %d%% of the time)" % (src.replace("_", " "), ev, cond, round(m["share"] * 100))))
     search = data.searches.get((row["slug"], row["code"]))
     # What the search found: the subject title a page of the college gives, else a department or program label
     # (Sam, 2026-11-21: "Dept labels can be helpful for our edge case recommendations").
@@ -355,9 +383,9 @@ def recommend_title(data, table, row):
     if search:
         brief = {k: search.get(k) for k in ("query", "searched_on", "result_title", "result_url", "where")}
     if found and search.get("where") in ("college site", "catalog"):
-        w = WEB_SHARE["label" if is_label else "title"]
-        entries.append((w, "web_search", found, "web search: the college's own %s gives %s %s (set at %d%%, not measured)" % (
-            "catalog" if search.get("where") == "catalog" else "site", "a department or program label" if is_label else "this title", "", round(w * 100))))
+        w = WEB_SCORE["label" if is_label else "title"]
+        entries.append((w, "web_search", found, "web search: the college's own %s gives %s %s (set at %d of 100, not measured)" % (
+            "catalog" if search.get("where") == "catalog" else "site", "a department or program label" if is_label else "this title", "", w)))
     if not entries:
         return None
     groups = []
@@ -372,23 +400,23 @@ def recommend_title(data, table, row):
     for g in groups:
         miss = 1.0
         for e in g["parts"]:
-            miss *= 1 - e[0]
-        conf = round(min(0.99, 1 - miss), 3)
+            miss *= 1 - e[0] / 100
+        conf = min(JOIN_CAP, pct(1 - miss))
         # The group reads as its most specific title (Computer Applications and Office Technologies over Technologies).
         shown = max(g["parts"], key=lambda x: (len(norm(x[2]).split()), x[0]))[2]
-        cands.append({"title": title_case(shown), "confidence": conf, "level": level_for(conf),
+        cands.append({"title": title_case(shown), "confidence": conf,
                       "from": [e[1] for e in g["parts"]], "why": "; ".join(e[3].replace("  ", " ").rstrip() for e in g["parts"]) + "."})
     cands.sort(key=lambda c: (-c["confidence"], not fits(row["code"], c["title"]), c["title"]))
+    if len(cands) > 1:
+        for c in cands:
+            c["confidence"] = min(c["confidence"], DISAGREE_CAP)
     top = cands[0]
-    lvl = top["level"]
-    if len(cands) > 1 and lvl == "High":
-        lvl = "Medium"
     why = top["why"]
     if len(cands) > 1:
         why += " Another source reads differently."
     elif len(top["from"]) > 1:
         why += " The sources agree."
-    out = {"title": top["title"], "level": lvl, "confidence": top["confidence"], "from": top["from"][0], "why": why,
+    out = {"title": top["title"], "confidence": top["confidence"], "from": top["from"][0], "why": why,
            "also": [{"title": c["title"], "from": c["from"][0]} for c in cands[1:]], "candidates": cands}
     if brief:
         out["search"] = brief
@@ -449,10 +477,10 @@ def noncredit_list(data, row):
     return None
 
 
-def level_of(right, asked):
+def scored(right, asked):
+    """(0-100 score, share) for a measured cell."""
     share = right / asked if asked else 0.0
-    level = "High" if share >= HIGH else ("Medium" if share >= MEDIUM else "Low")
-    return ("Low" if asked < FLOOR_N else level), share
+    return score_of(share, asked), share
 
 
 def map_settled(row):
@@ -484,11 +512,11 @@ def measure_noncredit(data):
                 common[0] += 1 if code == row["common"] else 0
     table = {}
     for cond, (right, asked) in sorted(titles.items()):
-        level, share = level_of(right, asked)
-        table[cond] = {"right": right, "wrong": asked - right, "asked": asked, "share": round(share, 3), "level": level,
+        n, share = scored(right, asked)
+        table[cond] = {"right": right, "wrong": asked - right, "asked": asked, "share": round(share, 3), "score": n,
                        "used": share >= USE_FLOOR}
-    level, share = level_of(*common)
-    return table, {"right": common[0], "wrong": common[1] - common[0], "asked": common[1], "share": round(share, 3), "level": level}
+    n, share = scored(*common)
+    return table, {"right": common[0], "wrong": common[1] - common[0], "asked": common[1], "share": round(share, 3), "score": n}
 
 
 def recommend_common(data, slug, code, title, band="C"):
@@ -546,15 +574,11 @@ def build(root=ROOT):
             cell = score["subject_map_rows"][rec[1]]
             cell[1] += 1
             cell[0] += 1 if rec[0] == row["common"] else 0
-    common_level, common_share = {}, {}
+    common_score = {}
     for src in ("title", "own_courses", "same_code_statewide"):
         r = [score[k][src][0] for k in score]
         a = [score[k][src][1] for k in score]
-        share = sum(r) / sum(a) if sum(a) else 0
-        common_share[src] = round(share, 3)
-        common_level[src] = "High" if share >= HIGH else ("Medium" if share >= MEDIUM else "Low")
-        if sum(a) < FLOOR_N:
-            common_level[src] = "Low"
+        common_score[src] = scored(sum(r), sum(a))[0]
     colleges, totals = [], Counter()
     for slug in sorted(data.by_college):
         out_rows = []
@@ -571,11 +595,11 @@ def build(root=ROOT):
                         totals["noncredit_title_unused_condition"] += 1
                         got = None
                     if got:
-                        lvl = (nc_table.get(got[1]) or {"level": "Low"})["level"]
-                        entry["title"] = {"title": got[0], "level": lvl, "from": "noncredit_list",
+                        conf = (nc_table.get(got[1]) or {"score": 0})["score"]
+                        entry["title"] = {"title": got[0], "confidence": conf, "from": "noncredit_list",
                                           "why": "noncredit list: the title under %s (%s)." % (category_words(cat, n, total), got[1]),
                                           "also": []}
-                        totals["title_" + lvl.lower()] += 1
+                        totals["title_" + band(conf)] += 1
                         totals["noncredit_title"] += 1
                     else:
                         totals["title_none"] += 1
@@ -584,13 +608,13 @@ def build(root=ROOT):
                     totals["noncredit_no_common"] += 1
                     m = data.nc_mq.get(cat) or {} if cat else {}
                     if cat and m.get("common_code"):
-                        entry["common"] = {"code": m["common_code"], "discipline": m.get("mq_discipline"), "level": nc_common["level"],
+                        entry["common"] = {"code": m["common_code"], "discipline": m.get("mq_discipline"), "confidence": nc_common["score"],
                                            "from": "noncredit_category", "category": cat,
                                            "why": "The noncredit MQ discipline of %s." % category_words(cat, n, total)}
-                        totals["common_" + nc_common["level"].lower()] += 1
+                        totals["common_" + band(nc_common["score"])] += 1
                         totals["noncredit_common"] += 1
                     elif cat:
-                        entry["common"] = {"code": None, "discipline": m.get("mq_discipline"), "level": None,
+                        entry["common"] = {"code": None, "discipline": m.get("mq_discipline"), "confidence": None,
                                            "from": "noncredit_category", "category": cat,
                                            "why": "The category has no common subject code yet: %s." % category_words(cat, n, total)}
                         totals["common_no_code_yet"] += 1
@@ -606,23 +630,21 @@ def build(root=ROOT):
                 if rec:
                     entry["title"] = rec
                     title = rec["title"]
-                    totals["title_" + rec["level"].lower()] += 1
+                    totals["title_" + band(rec["confidence"])] += 1
                 else:
                     totals["title_none"] += 1
             if not row["common"] and row["credit_courses"]:
                 totals["no_common"] += 1
                 rc = recommend_common(data, slug, code, title)
                 if rc:
-                    lvl = common_level[rc[1]]
-                    # The bar's number (S722, Sam: "a simple bar from 0-100"): the source's measured share, and
+                    # The bar's number (S722, Sam: "a simple bar from 0-100"): the source's measured score, and
                     # where the code comes from a recommended title, no more than that title's own confidence.
-                    conf = common_share[rc[1]]
+                    conf = common_score[rc[1]]
                     if not row["printed_name"] and rc[1] == "title":
-                        lvl = LEVELS[min(LEVELS.index(lvl), LEVELS.index(entry["title"]["level"]))]
-                        conf = min(conf, entry["title"].get("confidence", conf))
-                    entry["common"] = {"code": rc[0], "discipline": data.code_title[rc[0]], "level": lvl, "confidence": conf,
+                        conf = min(conf, entry["title"]["confidence"])
+                    entry["common"] = {"code": rc[0], "discipline": data.code_title[rc[0]], "confidence": conf,
                                        "from": rc[1], "why": rc[2][0].upper() + rc[2][1:] + "."}
-                    totals["common_" + lvl.lower()] += 1
+                    totals["common_" + band(conf)] += 1
                 else:
                     totals["common_none"] += 1
             if len(entry) > 1:
@@ -635,15 +657,18 @@ def build(root=ROOT):
 
     return {
         "_what": ("A recommended local title for every Subjects row with no catalog heading, and a recommended "
-                  "common subject code for every credit row with none, each with the level its source measured "
+                  "common subject code for every credit row with none, each with the 0-100 confidence its source measured "
                   "(Sam on #3655, 2026-11-21). A recommendation is for a person to accept or change; nothing "
                   "reads it as a title or a mapping. A row whose courses are all noncredit is lined up with the "
                   "standing noncredit subject title list by its dominant COCI noncredit category. "
                   "Built by kb/_build_local_subject_recommendations.py; no clock is read."),
-        "_levels": ("High: the source's condition gave the catalog's own heading for 90% or more of the titled "
-                    "codes it was asked, each left out of its own vote. Medium: 60% or more. Low: below, or asked "
-                    "fewer than 20. Program titles are capped at Medium. A second source that agrees lifts a "
-                    "level one step; one that differs is listed under also and the row reads Low."),
+        "_confidence": ("A whole number from 0 to 100 (Sam, 2026-11-25: confidence bars 0-100 rather than low, med, "
+                        "high): the share of the titled codes, each left out of its own vote, for which the source's "
+                        "condition gave the catalog's own heading. A condition asked fewer than %d codes scores %d at "
+                        "most; program titles %d at most. Sources that agree join at 100 x (1 - the product of (1 - "
+                        "score / 100)), %d at most; where another source differs, it is listed under also and every "
+                        "candidate scores %d at most. Totals count recommendations by band: 90_plus, 60_to_89, "
+                        "under_60." % (FLOOR_N, THIN_CAP, PROGRAM_CAP, JOIN_CAP, DISAGREE_CAP)),
         "measured_on_titled_codes": table,
         "noncredit": {"title_from_the_list": nc_table, "common_code_from_the_category": nc_common,
                       "note": ("Measured on the noncredit-only codes that hold a catalog heading (titles) or a common "
@@ -651,9 +676,9 @@ def build(root=ROOT):
                                "right less than half the time is a guess: it stays measured here, used false, and "
                                "gives no recommendation. The common code's answer key is the subject map, which reads "
                                "a code without its credit or noncredit band (f-subject-map-ignores-credit-band-s698), "
-                               "so its share is a floor, and it reads Low.")},
+                               "so its share is a floor.")},
         "common_code": {
-            "levels": common_level,
+            "scores": common_score,
             "sams_30": {"decisions": len(dec["decisions"]), "agree": agrees, "diverge": len(diverges),
                         "no_recommendation": sorted(silent), "by_source": cells(score["sams_30"]),
                         "divergences": diverges,

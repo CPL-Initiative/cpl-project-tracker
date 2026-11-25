@@ -91,8 +91,9 @@
   }
   function stateOf(r) { return STATES[r.title_state] || STATES.not_read; }
   /* The recommendations (S700, #3655; Sam, 2026-11-21): a recommended local title beside every row with no catalog
-     heading and a recommended common code beside every credit row with none, each with the level its source
-     measured on the titled codes (kb/_build_local_subject_recommendations.py). A High title counts as settled for
+     heading and a recommended common code beside every credit row with none, each with the 0-100 confidence its source
+     measured on the titled codes (kb/_build_local_subject_recommendations.py; Sam, 2026-11-25: "confidence bars 0-100
+     rather than low, med, high throughout all commons procedures"). A title at 90 or more counts as settled for
      Needs attention; a person's save confirms any recommendation. A noncredit-only row's recommendation is lined up with the noncredit title list by its own
      COCI noncredit category (S701, after the hold lifted). */
   var REC_FILE = "kb/status/local_subject_recommendations.json";
@@ -107,21 +108,26 @@
   function recOf(r) { return REC[r.slug + "|" + r.code] || {}; }
   /* A recommendation reads as what it names and a confidence bar from 0 to 100 (Sam, S722, 2026-11-24: delete
      "Recommended" and the explanation, "we will rely on the bar"; a "simple bar from 0-100" is the one indicator). The
-     reasons stay in the Edit sidebar. A recommendation the file gives no number for shows its level word. */
-  function bar(v, about) { var C = window.CPL_COMMONS; return C && typeof C.confBar === "function" ? C.confBar(v, about) : null; }
+     reasons stay in the Edit sidebar. The file writes each confidence as a whole number from 0 to 100; the bar takes
+     0 to 1. A recommendation the file gives no number for shows no bar and no level word (Sam, 2026-11-25). */
+  var SETTLED = 90;
+  function bar(v, about) {
+    var C = window.CPL_COMMONS;
+    if (v == null || isNaN(v) || !C || typeof C.confBar !== "function") return null;
+    return C.confBar(Number(v) / 100, about);
+  }
   function recNote(kind, what, x) {
     if (kind === "common" && !x.code) return el("span", { cls: "csb-sub csb-rec", "data-rec": "common-none" }, [
       el("strong", { text: "No common subject code yet" }), ". " + (x.why || "")]);
     var b = bar(x.confidence, what);
-    return el("span", { cls: "csb-sub csb-rec", "data-rec": kind, "data-level": x.level }, [el("strong", { text: what }), " ",
-      b || el("span", { text: x.level })]);
+    return el("span", { cls: "csb-sub csb-rec", "data-rec": kind }, [el("strong", { text: what }), b ? " " : null, b]);
   }
   /* A title's candidates, most confident first (kb/_build_local_subject_recommendations.py writes them in that order). */
   function candidatesOf(x) {
     if (!x || !x.title) return [];
     if (x.candidates && x.candidates.length) return x.candidates;
-    return [{ title: x.title, confidence: x.confidence, level: x.level, from: [x.from] }].concat((x.also || []).filter(function (a) { return a && a.title; })
-      .map(function (a) { return { title: a.title, confidence: null, level: "", from: [a.from] }; }));
+    return [{ title: x.title, confidence: x.confidence, from: [x.from] }].concat((x.also || []).filter(function (a) { return a && a.title; })
+      .map(function (a) { return { title: a.title, confidence: null, from: [a.from] }; }));
   }
   var DISAGREE = "disagree";
   var HELD = "held";
@@ -502,7 +508,7 @@
      list to check. A person's save still wins, and the row marks it "Derived title" (Sam, 2026-11-24: "rather than
      sky's title, how about derived title or expected title"). A recommendation the file gives no
      number for stays in the list to check: the bar is the measure, and no level word stands in for it. */
-  var STANDS = 0.80;
+  var STANDS = 80;
   function skyTitle(r) {
     if (!needsTitle(r)) return null;
     var sv = savedOf(r);
@@ -789,7 +795,7 @@
       var b = el("button", { type: "button", cls: "csb-word csb-accept", "data-csb-accept": "title", "data-csb-cand": String(i),
         "aria-label": "Accept " + c.title + " as the title of " + r.code + " at " + r.college, text: "Accept" });
       b.addEventListener("click", function () { doAccept(r, acceptValue(r, c.title, false), b); });
-      return el("li", { "data-cand": c.title }, [el("strong", { text: c.title }), " ", bar(c.confidence, c.title) || el("span", { text: c.level || "" }), " ", b]);
+      return el("li", { "data-cand": c.title }, [el("strong", { text: c.title }), " ", bar(c.confidence, c.title), " ", b]);
     }));
   }
   function codeTable(rows, label) {
@@ -1041,7 +1047,7 @@
       else if (!c && !r.common) A.level = "";
     }
     A.code = A.level !== "Confident";
-    A.title = untitledNow(r) && !(rec.title && rec.title.level === "High");
+    A.title = untitledNow(r) && !(rec.title && rec.title.confidence != null && rec.title.confidence >= SETTLED);
     A.needs = A.code || A.title;
     return A;
   }
@@ -1056,7 +1062,7 @@
     var parts = [], call = A.sw && A.sw.recommend, rec = recOf(r);
     if (A.code) parts.push(A.level && call && call.common ? "COBI’s call for its common subject code, " + call.common + (call.discipline ? " " + call.discipline : "") + ", is " + confWords(A.conf) + ", below Confident."
       : "It has no common subject code yet, and no confidence is measured for it.");
-    if (A.title) parts.push(rec.title && rec.title.title ? "It has no local title; COBI recommends " + rec.title.title + " at " + rec.title.level + " confidence." : "It has no local title, and COBI has no recommendation for one yet.");
+    if (A.title) parts.push(rec.title && rec.title.title ? "It has no local title; COBI recommends " + rec.title.title + (rec.title.confidence != null ? ", confidence " + Math.round(rec.title.confidence) + " of 100." : ".") : "It has no local title, and COBI has no recommendation for one yet.");
     return parts.join(" ");
   }
   /* The web search a person runs for a code (Sam, 2026-11-23: "we need 'try web search' like we do for our credential

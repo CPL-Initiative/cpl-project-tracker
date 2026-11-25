@@ -52,8 +52,8 @@ const FILES = {
   "kb/status/subject_courses/alpha.json": { college: "Alpha College", slug: "alpha", columns: ["number", "title", "band", "listed", "units", "cid", "ccn", "mid"],
     codes: { MATH: [["1", "Algebra", "C", "Both", 4, "", "", ""]] } },
   "kb/status/local_subject_recommendations.json": { colleges: [{ slug: "alpha", rows: [{ code: "MATH",
-    title: { title: "Mathematics", level: "High", from: "other_colleges", why: "other colleges agree." },
-    common: { code: "MATH", discipline: "Mathematics", level: "Medium", from: "own_courses", why: "its courses sit under MATH." } }] }] }
+    title: { title: "Mathematics", confidence: 70, from: "other_colleges", why: "other colleges agree." },
+    common: { code: "MATH", discipline: "Mathematics", confidence: 80, from: "own_courses", why: "its courses sit under MATH." } }] }] }
 };
 const REST = "https://hvuwhnbuahrtptokpqfh.supabase.co/rest/v1/kb_curation";
 const ME = { email: "a@rccd.edu", access_token: "tok.en.x", refresh_token: "r" };
