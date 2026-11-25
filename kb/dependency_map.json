@@ -4,9 +4,9 @@
   "supabase_tables": 119,
   "rpcs": 68,
   "edge_functions": 16,
-  "file_datasets": 1231,
+  "file_datasets": 1248,
   "external_services": 200,
-  "consumers": 681,
+  "consumers": 689,
   "workflows": 77,
   "data_js_files": 71,
   "tabs": 41
@@ -483,7 +483,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2660
+     "line": 2745
     }
    ],
    "main_committers": []
@@ -542,7 +542,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2616
+     "line": 2701
     }
    ],
    "main_committers": []
@@ -745,7 +745,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2553
+     "line": 2638
     }
    ],
    "main_committers": []
@@ -1008,6 +1008,13 @@
      ]
     },
     {
+     "id": "module:commons_front.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 1268
+    },
+    {
      "id": "module:commons_subjects.js",
      "kind": "module",
      "direction": "read",
@@ -1256,7 +1263,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1829
+     "line": 1837
     },
     {
      "id": "module:admin.js",
@@ -1998,7 +2005,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2489
+     "line": 2497
     }
    ],
    "main_committers": []
@@ -2054,7 +2061,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1580,
+     "line": 1588,
      "tabs": [
       "commons"
      ]
@@ -2669,7 +2676,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1439
+     "line": 1447
     }
    ],
    "main_committers": []
@@ -2688,7 +2695,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1784
+     "line": 1792
     },
     {
      "id": "module:college_briefing.js",
@@ -3165,7 +3172,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2146
+     "line": 2231
     },
     {
      "id": "workflow:program-requirements-college.yml",
@@ -3397,7 +3404,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1840
+     "line": 1848
     },
     {
      "id": "module:dashboard_filters.js",
@@ -4667,7 +4674,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 466
+     "line": 471
     },
     {
      "id": "module:fact-sheet/factsheet_edit.js",
@@ -4788,7 +4795,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2153
+     "line": 2161
     }
    ],
    "main_committers": []
@@ -6063,7 +6070,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2037
+     "line": 2045
     },
     {
      "id": "module:admin.js",
@@ -6964,7 +6971,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 994,
+     "line": 996,
      "tabs": [
       "commons"
      ]
@@ -6980,7 +6987,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1154,
+     "line": 1162,
      "tabs": [
       "commons"
      ]
@@ -6996,7 +7003,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1023,
+     "line": 1025,
      "tabs": [
       "commons"
      ]
@@ -7246,7 +7253,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1006,
+     "line": 1008,
      "tabs": [
       "commons"
      ]
@@ -7256,7 +7263,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1216
+     "line": 1258
     }
    ],
    "served": true,
@@ -7444,7 +7451,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2428
+     "line": 2436
     },
     {
      "id": "module:college_briefing.js",
@@ -7657,7 +7664,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1499
+     "line": 1507
     },
     {
      "id": "module:cpl_funding.js",
@@ -9168,7 +9175,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7281
+     "line": 7370
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -9188,7 +9195,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7357
+     "line": 7446
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -19377,7 +19384,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 3504
+     "line": 3589
     }
    ],
    "served": false,
@@ -19390,7 +19397,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8231
+     "line": 8320
     }
    ],
    "served": false,
@@ -19658,7 +19665,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1994
+     "line": 2071
     },
     {
      "id": "script:kb/_program_requirements_cheap_piles_s683.py",
@@ -19689,7 +19696,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 464
+     "line": 483
     }
    ],
    "served": false,
@@ -19702,7 +19709,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 432
+     "line": 451
     }
    ],
    "served": false,
@@ -20105,6 +20112,19 @@
      "direction": "write",
      "how": "literal",
      "line": 46
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/receipts/program_requirement_records_floor_rescore_<date>_s529.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_piles_s731_lbcc.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 117
     }
    ],
    "served": false,
@@ -22366,7 +22386,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1852
+     "line": 1929
     },
     {
      "id": "script:kb/_program_piles_s714_sequoias.py",
@@ -24194,7 +24214,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7844
+     "line": 7933
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -24214,7 +24234,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6693
+     "line": 6782
     }
    ],
    "served": false,
@@ -24877,7 +24897,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8099
+     "line": 8188
     }
    ],
    "served": false,
@@ -24890,7 +24910,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7319
+     "line": 7408
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -25062,7 +25082,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 227
+     "line": 228
     },
     {
      "id": "script:kb/_program_piles_s721_gavilan.py",
@@ -25093,6 +25113,62 @@
      "line": 221
     },
     {
+     "id": "script:kb/_program_piles_s727_arc.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 256
+    },
+    {
+     "id": "script:kb/_program_piles_s727_canyons.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 345
+    },
+    {
+     "id": "script:kb/_program_piles_s727_persons.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 354
+    },
+    {
+     "id": "script:kb/_program_piles_s727_sbcc.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 262
+    },
+    {
+     "id": "script:kb/_program_piles_s727_shasta.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 249
+    },
+    {
+     "id": "script:kb/_program_piles_s730_lattc.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 336
+    },
+    {
+     "id": "script:kb/_program_piles_s730_saddleback.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 396
+    },
+    {
+     "id": "script:kb/_program_piles_s731_lbcc.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 399
+    },
+    {
      "id": "script:kb/_program_pooled_s721.py",
      "kind": "script",
      "direction": "read",
@@ -25110,7 +25186,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 2004
+     "line": 2081
     }
    ],
    "served": false,
@@ -25134,6 +25210,33 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:program_requirements_reread_*_checked.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_piles_s727_canyons.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 373
+    },
+    {
+     "id": "script:kb/_program_piles_s727_persons.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 381
+    },
+    {
+     "id": "script:kb/_program_piles_s730_lattc.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 363
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:project_lifecycle.js": {
@@ -29167,6 +29270,32 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/fixtures/option_lists_statewide_s727.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_piles_s727_arc.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 558
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/fixtures/saddleback_shapes_statewide_s730.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_piles_s730_saddleback.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 649
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/fold_issuer_resolution_test.py": {
    "consumers": [
     {
@@ -30235,6 +30364,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/program_ge_other_pattern_s727v_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/program_ge_steps_s713_test.py": {
    "consumers": [
     {
@@ -30625,7 +30767,137 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/program_piles_s727_arc_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_piles_s727_canyons_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_piles_s727_persons_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_piles_s727_pooled_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_piles_s727_sbcc_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_piles_s727_shasta_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_piles_s730_lattc_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_piles_s730_saddleback_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_piles_s731_lbcc_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/program_pooled_figure_s721_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_reconcile_s727_butte_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -30691,6 +30963,19 @@
    "main_committers": []
   },
   "file:tests/program_requirements_display_apply_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_requirements_elumen_sister_award_s727_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -30808,6 +31093,19 @@
    "main_committers": []
   },
   "file:tests/program_requirements_lever_pins_s721_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_requirements_lever_pins_s727_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -34404,7 +34702,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 8205
+     "line": 8294
     }
    ],
    "main_committers": []
@@ -34416,7 +34714,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 8322
+     "line": 8411
     }
    ],
    "main_committers": []
@@ -34471,7 +34769,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1328,
+     "line": 1336,
      "tabs": [
       "commons"
      ]
@@ -35987,7 +36285,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 971
+     "line": 1013
     },
     {
      "id": "module:cr_reference.js",
@@ -36611,7 +36909,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 871
+     "line": 877
     },
     {
      "id": "module:commons_subjects.js",
@@ -38223,7 +38521,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1306,
+     "line": 1314,
      "tabs": [
       "commons"
      ]
@@ -39845,6 +40143,9 @@
     "tests/program_requirements_lever_pins_s720_test.py",
     "tests/program_requirements_site_pins_s720_test.py",
     "tests/program_requirements_lever_pins_s721_test.py",
+    "tests/program_requirements_lever_pins_s727_test.py",
+    "tests/program_ge_other_pattern_s727v_test.py",
+    "tests/program_requirements_elumen_sister_award_s727_test.py",
     "tests/program_requirements_sjdelta_aliases_s703_test.py",
     "tests/program_requirements_named_gaps_s703_test.py",
     "tests/program_requirements_same_page_recall_s697_test.py",
@@ -39869,6 +40170,7 @@
     "tests/program_piles_s714_fullerton_test.py",
     "tests/program_piles_s714_sequoias_test.py",
     "tests/program_piles_s721_butte_test.py",
+    "tests/program_reconcile_s727_butte_test.py",
     "tests/program_piles_s720_fullerton_test.py",
     "tests/program_piles_s720_sequoias_test.py",
     "tests/program_piles_s720_clovis_test.py",
@@ -39878,13 +40180,22 @@
     "tests/program_piles_s720_smc_test.py",
     "tests/program_piles_s720_ventura_test.py",
     "tests/program_pooled_figure_s721_test.py",
+    "tests/program_piles_s727_pooled_test.py",
     "tests/program_piles_s720_cabrillo_test.py",
     "tests/program_piles_s720_contracosta_test.py",
     "tests/program_piles_s720_elcamino_test.py",
     "tests/program_piles_s721_orangecoast_test.py",
     "tests/program_piles_s721_paloverde_test.py",
+    "tests/program_piles_s727_persons_test.py",
     "tests/program_piles_s721_porterville_test.py",
     "tests/program_piles_s721_gavilan_test.py",
+    "tests/program_piles_s727_shasta_test.py",
+    "tests/program_piles_s727_arc_test.py",
+    "tests/program_piles_s727_canyons_test.py",
+    "tests/program_piles_s727_sbcc_test.py",
+    "tests/program_piles_s730_lattc_test.py",
+    "tests/program_piles_s730_saddleback_test.py",
+    "tests/program_piles_s731_lbcc_test.py",
     "tests/program_discontinued_test.py",
     "tests/reader_page_checks_test.py",
     "tests/reader_page_checks_recall_test.py",

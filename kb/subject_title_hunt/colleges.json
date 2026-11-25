@@ -1,0 +1,428 @@
+{
+ "_what": "The 54 colleges behind the 88 stray M-ID codes whose catalogs have not been read for subject headings (S730, Sam's go of 2026-11-25: start with these). Grouped by catalog platform, each with the registry's catalog_url (program_source_registry, read 2026-11-25). Hand-filed: the college blocks the runner and a person's copy is filed under kb/hand_filed_catalogs/<slug>.json. Second wave (Sam, 2026-11-25: run the runners on the rest too): the 45 other unread colleges, groups elumen_2, curriqunet_2, pdf_2 and html_c.",
+ "groups": {
+  "elumen": [
+   [
+    "Antelope Valley College",
+    "https://avc.elumenapp.com/catalog/2026-27/welcome"
+   ],
+   [
+    "Bakersfield College",
+    "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/about-bc"
+   ],
+   [
+    "College of the Redwoods",
+    "https://redwoods.elumenapp.com/catalog/2026-2027/home"
+   ],
+   [
+    "Contra Costa College",
+    "https://ccc.elumenapp.com/catalog/ccc-2026-27/home"
+   ],
+   [
+    "De Anza College",
+    "https://deanza.elumenapp.com/catalog/2026-2027/home",
+    "hand-filed: de_anza"
+   ],
+   [
+    "Diablo Valley College",
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/generalinformation"
+   ],
+   [
+    "Modesto Junior College",
+    "https://mjc.elumenapp.com/catalog/2026-2027/mjc-ge"
+   ]
+  ],
+  "curriqunet": [
+   [
+    "Allan Hancock College",
+    "https://hancockcollege.curriqunet.com/catalog/iq/28553"
+   ],
+   [
+    "Berkeley City College",
+    "https://bcc.curriqunet.com/catalog/view/"
+   ],
+   [
+    "Chabot College",
+    "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/6077"
+   ],
+   [
+    "Chaffey College",
+    "https://chaffey.curriqunet.com/catalog/iq/18783"
+   ],
+   [
+    "Fresno City College",
+    "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-catalog-cover"
+   ],
+   [
+    "Las Positas College",
+    "https://laspositas.curriqunet.com/catalog/iq/881"
+   ],
+   [
+    "Madera College",
+    "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Cover"
+   ],
+   [
+    "Palomar College",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/Cover"
+   ],
+   [
+    "Reedley College",
+    "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3100"
+   ],
+   [
+    "Rio Hondo College",
+    "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22177"
+   ],
+   [
+    "Saddleback College",
+    "https://saddleback.curriqunet.com/catalog/iq/45443"
+   ],
+   [
+    "San Diego City College",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15489"
+   ],
+   [
+    "San Diego Mesa College",
+    "https://sdccd.curriqunet.com/catalog/alias/mesa26-27"
+   ],
+   [
+    "San Diego Miramar College",
+    "https://sdccd.curriqunet.com/catalog/alias/miramar26-27/iq/20891"
+   ]
+  ],
+  "pdf": [
+   [
+    "American River College",
+    "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf",
+    "hand-filed: american_river"
+   ],
+   [
+    "Cerro Coso Community College",
+    "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf",
+    "hand-filed: cerro_coso_community"
+   ],
+   [
+    "City College of San Francisco",
+    "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf",
+    "hand-filed: city_of_san_francisco"
+   ],
+   [
+    "College of the Canyons",
+    "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf"
+   ],
+   [
+    "Cosumnes River College",
+    "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf",
+    "hand-filed: cosumnes_river"
+   ],
+   [
+    "Folsom Lake College",
+    "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf",
+    "hand-filed: folsom_lake"
+   ],
+   [
+    "Mendocino College",
+    "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf"
+   ],
+   [
+    "Ohlone College",
+    "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf"
+   ],
+   [
+    "Porterville College",
+    "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf",
+    "hand-filed: porterville"
+   ],
+   [
+    "Sacramento City College",
+    "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf",
+    "hand-filed: sacramento_city"
+   ],
+   [
+    "Santiago Canyon College",
+    "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf"
+   ],
+   [
+    "Yuba College",
+    "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf"
+   ]
+  ],
+  "html_a": [
+   [
+    "Cañada College",
+    "https://catalog.canadacollege.edu/current/",
+    "hand-filed: ca_ada"
+   ],
+   [
+    "Citrus College",
+    "https://catalog.citruscollege.edu/"
+   ],
+   [
+    "Coastline Community College",
+    "https://catalog.cccd.edu/coastline/"
+   ],
+   [
+    "College of San Mateo",
+    "https://catalog.collegeofsanmateo.edu/current/"
+   ],
+   [
+    "College of the Sequoias",
+    "https://catalog.cos.edu/"
+   ],
+   [
+    "Cypress College",
+    "https://catalog.nocccd.edu/cypress-college/"
+   ],
+   [
+    "Foothill College",
+    "https://catalog.foothill.edu/"
+   ],
+   [
+    "Glendale Community College",
+    "https://catalog.glendale.edu/"
+   ],
+   [
+    "Golden West College",
+    "https://catalog.cccd.edu/golden-west/"
+   ],
+   [
+    "Grossmont College",
+    "https://catalog.gcccd.edu/grossmont/"
+   ]
+  ],
+  "html_b": [
+   [
+    "Merced College",
+    "https://catalog.mccd.edu/"
+   ],
+   [
+    "MiraCosta College",
+    "https://catalog.miracosta.edu/"
+   ],
+   [
+    "Moorpark College",
+    "https://catalog.vcccd.edu/moorpark/"
+   ],
+   [
+    "Napa Valley College",
+    "https://catalog.napavalley.edu/"
+   ],
+   [
+    "Orange Coast College",
+    "https://catalog.cccd.edu/orange-coast/"
+   ],
+   [
+    "San Joaquin Delta College",
+    "https://catalog.deltacollege.edu/"
+   ],
+   [
+    "San Jose City College",
+    "https://catalog.sjcc.edu/"
+   ],
+   [
+    "Santa Monica College",
+    "https://catalog.smc.edu/current/index.php"
+   ],
+   [
+    "Sierra College",
+    "https://catalog.sierracollege.edu/"
+   ],
+   [
+    "Skyline College",
+    "https://catalog.skylinecollege.edu/current/"
+   ],
+   [
+    "West Valley College",
+    "https://www.westvalley.edu/catalog/"
+   ]
+  ],
+  "elumen_2": [
+   [
+    "Cabrillo College",
+    "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome"
+   ],
+   [
+    "College of Marin",
+    "https://marin.elumenapp.com/catalog/current/home"
+   ],
+   [
+    "College of the Siskiyous",
+    "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/2026-27cataloghomepage"
+   ],
+   [
+    "Columbia College",
+    "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/admissions/getting-started"
+   ],
+   [
+    "Lake Tahoe Community College",
+    "https://ltcc.elumenapp.com/catalog/2026-2027/about-this-catalog"
+   ],
+   [
+    "Lemoore College",
+    "https://westhillslemoore.elumenapp.com/catalog/26-27/Welcome"
+   ],
+   [
+    "Los Medanos College",
+    "https://lmc.elumenapp.com/catalog/26-27/art"
+   ],
+   [
+    "Mission College",
+    "https://mission.elumenapp.com/catalog/24-25/cataloghome"
+   ]
+  ],
+  "curriqunet_2": [
+   [
+    "Butte College",
+    "https://butte.curriqunet.com/Catalog/"
+   ],
+   [
+    "College of Alameda",
+    "https://coa.curriqunet.com/catalog/iq/47367"
+   ],
+   [
+    "Cuesta College",
+    "https://cuesta.curriqunet.com/catalog/iq/29951"
+   ],
+   [
+    "Feather River College",
+    "https://frc.curriqunet.com/Catalog/iq/1452"
+   ],
+   [
+    "Gavilan College",
+    "https://gavilan.curriqunet.com/catalog/alias/2026-2027catalog"
+   ],
+   [
+    "Imperial Valley College",
+    "https://imperial.curriqunet.com/catalog/iq/8512/8586"
+   ],
+   [
+    "Irvine Valley College",
+    "https://irvine.curriqunet.com/Catalog/iq/48953"
+   ],
+   [
+    "Laney College",
+    "https://lan.curriqunet.com/catalog/view/iq/44232"
+   ],
+   [
+    "Merritt College",
+    "https://mc.curriqunet.com/catalog/iq/48767"
+   ],
+   [
+    "Moreno Valley College",
+    "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4710"
+   ],
+   [
+    "Norco College",
+    "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5358"
+   ],
+   [
+    "Riverside City College",
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5842/6111"
+   ]
+  ],
+  "pdf_2": [
+   [
+    "Barstow Community College",
+    "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf"
+   ],
+   [
+    "Calbright College Credit",
+    "https://www.calbright.edu/wp-content/uploads/2026/09/Final-Calbright-College-Academic-Catalog-2026-2027-September-18-2026.docx.pdf"
+   ],
+   [
+    "Compton College",
+    "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf"
+   ],
+   [
+    "Copper Mountain College",
+    "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf"
+   ],
+   [
+    "Lassen College",
+    "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf"
+   ],
+   [
+    "Santa Rosa Junior College",
+    "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf"
+   ],
+   [
+    "Shasta College",
+    "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf"
+   ],
+   [
+    "Solano Community College",
+    "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf"
+   ],
+   [
+    "Woodland Community College",
+    "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf"
+   ]
+  ],
+  "html_c": [
+   [
+    "Coalinga College",
+    "https://coalingacollege.edu/catalog/2026-2027/"
+   ],
+   [
+    "College of the Desert",
+    "https://catalog.collegeofthedesert.edu/"
+   ],
+   [
+    "Crafton Hills College",
+    "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog"
+   ],
+   [
+    "Cuyamaca College",
+    "https://catalog.gcccd.edu/cuyamaca/"
+   ],
+   [
+    "Evergreen Valley College",
+    "https://catalog.evc.edu/"
+   ],
+   [
+    "Fullerton College",
+    "https://catalog.nocccd.edu/fullerton-college/"
+   ],
+   [
+    "Hartnell College",
+    "https://hartnell.catalog.prod.coursedog.com/"
+   ],
+   [
+    "Mt. San Jacinto College",
+    "https://catalog.msjc.edu/courses/"
+   ],
+   [
+    "Oxnard College",
+    "https://catalog.vcccd.edu/oxnard/"
+   ],
+   [
+    "Palo Verde College",
+    "https://catalog.paloverde.edu/"
+   ],
+   [
+    "Pasadena City College",
+    "https://curriculum.pasadena.edu/"
+   ],
+   [
+    "San Bernardino Valley College",
+    "https://catalog.valleycollege.edu/"
+   ],
+   [
+    "Santa Barbara City College",
+    "https://catalog.sbcc.edu/"
+   ],
+   [
+    "Taft College",
+    "https://taftcollege.smartcatalogiq.com/2026-2027/2026-2027-catalog"
+   ],
+   [
+    "Ventura College",
+    "https://catalog.vcccd.edu/ventura/"
+   ],
+   [
+    "Victor Valley College",
+    "https://catalog.vvc.edu/"
+   ]
+  ]
+ }
+}

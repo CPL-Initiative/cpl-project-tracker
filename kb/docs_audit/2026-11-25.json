@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1593,
-    "bytes": 17581957,
+    "bytes": 17587279,
     "over_budget": 6,
     "handoff_max": 731,
     "always_loaded_files": 1,
@@ -26,17 +26,17 @@
       },
       "other": {
         "files": 167,
-        "bytes": 5923328,
+        "bytes": 5923564,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 11653,
+        "bytes": 12020,
         "over": 0
       },
       "lessons": {
         "files": 87,
-        "bytes": 2877078,
+        "bytes": 2878257,
         "over": 2
       },
       "kb_note": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 44,
-        "bytes": 548180,
+        "bytes": 549438,
         "over": 2
       },
       "handoff": {
         "files": 686,
-        "bytes": 5189178,
+        "bytes": 5191460,
         "over": 0
       }
     },
@@ -61,10 +61,10 @@
       "vault_heavy_path": 80
     },
     "vault": {
-      "files": 30104,
-      "bytes": 1617015028,
+      "files": 30106,
+      "bytes": 1618923981,
       "heavy_bytes": 1234069980,
-      "heavy_share": 0.763,
+      "heavy_share": 0.762,
       "ignore_filters": [
         "cpl-project-tracker/kb/program_requirements_college",
         "cpl-project-tracker/kb/regional_cpl_out",
