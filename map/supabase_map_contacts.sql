@@ -37,6 +37,9 @@ create table if not exists public.map_college_contacts (
                                  -- links the college straight to their MAP page so
                                  -- they can log in + update their users
   last_updated_on        text,   -- MAP's "Last Updated On" (per-college staleness)
+  -- nc_cpl_lead, nc_cpl_lead_email text: MAP's "Noncredit CPL Lead" (+ Email), added 2026-11-25 by
+  -- kb/migrations/2026-11-25_nc_lead_from_contacts.sql, which also holds the live map_contacts_replace and
+  -- map_coordinator_summary (has_nc_cpl_lead now reads these OR the landing-page title).
   synced_at              timestamptz not null default now()
 );
 

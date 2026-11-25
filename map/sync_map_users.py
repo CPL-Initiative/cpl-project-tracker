@@ -99,6 +99,11 @@ CONTACTS_FIELD_MAP = [
     ("Academic Senate President Email", "senate_president_email"),
     ("School Certifying Official",               "certifying_official"),  # 101/123
     ("Veteran School Certifying Official Email", "certifying_official_email"),
+    # The Noncredit CPL Lead, added to the report by MAP (Sam, in session 2026-11-25: "pedro added the nc lead and
+    # nc lead email to the college contacts report"). Value-signature probe run 45662551870: both real, 25/124.
+    # They meet the funding page's noncredit lead condition through map_coordinator_summary (a boolean, never a name).
+    ("Noncredit CPL Lead",       "nc_cpl_lead"),
+    ("Noncredit CPL Lead Email", "nc_cpl_lead_email"),
 ]
 CONTACTS_COLUMNS = [a for a, _ in CONTACTS_FIELD_MAP]
 
