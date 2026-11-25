@@ -179,8 +179,8 @@ for r in rec["records"]:
 check(os.path.isfile(W._path("43388")) and not os.path.exists(W._held_path("43388")),
       "43388 moved from held_for_person/ to records/")
 c43388 = W._load("43388")["score"]["confidence"]
-check(c43388 == {"unit_arithmetic": 20, "course_list_match": 100, "ge_pattern": None, "catalog_year": 100,
-                 "source": 50}, "43388's confidence: arithmetic 20, source capped at 50: %s" % c43388)
+check(c43388 == {"unit_arithmetic": 20, "course_list_match": 50, "ge_pattern": None, "catalog_year": 100,
+                 "source": 50}, "43388's confidence: arithmetic 20, course list and source capped at 50: %s" % c43388)
 check(W._load("16962")["score"]["confidence"]["course_list_match"] == 31, "16962's course-list match is 31, under 50")
 
 check(not any(W.scorer_passes(W._load(cn)) for cn in ROWS), "the scorer passes none of the gap rows (#3753's MAJOR)")
