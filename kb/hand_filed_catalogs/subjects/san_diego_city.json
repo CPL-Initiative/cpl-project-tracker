@@ -1,0 +1,1358 @@
+{
+ "_what": "The subjects San Diego City College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "San Diego City College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:03:15Z",
+ "run": "45629512231",
+ "source": [
+  "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523"
+ ],
+ "rows": [
+  {
+   "code": "AAPI",
+   "heading": "Asian American Pacific Islander Studies",
+   "heading_printed": "Asian American Pacific Islander Studies",
+   "rule": "index",
+   "codes": [
+    "AAPI"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ACCT",
+   "heading": "Accounting",
+   "heading_printed": "Accounting",
+   "rule": "index",
+   "codes": [
+    "ACCT"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ADJU",
+   "heading": "Administration of Justice",
+   "heading_printed": "Administration of Justice",
+   "rule": "index",
+   "codes": [
+    "ADJU"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "AGRI",
+   "heading": "Agriculture",
+   "heading_printed": "Agriculture",
+   "rule": "index",
+   "codes": [
+    "AGRI"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "AIRE",
+   "heading": "Air Conditioning, Heating, and Solar Energy",
+   "heading_printed": "Air Conditioning, Heating, and Solar Energy",
+   "rule": "index",
+   "codes": [
+    "AIRE"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "AMSL",
+   "heading": "American Sign Language/Interpreting",
+   "heading_printed": "American Sign Language/Interpreting",
+   "rule": "index",
+   "codes": [
+    "AMSL"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "AODS",
+   "heading": "Alcohol and Other Drug Studies",
+   "heading_printed": "Alcohol and Other Drug Studies",
+   "rule": "index",
+   "codes": [
+    "AODS"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ARAB",
+   "heading": "Arabic",
+   "heading_printed": "Arabic",
+   "rule": "index",
+   "codes": [
+    "ARAB"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ARTF",
+   "heading": "Art-Fine Art",
+   "heading_printed": "Art-Fine Art",
+   "rule": "index",
+   "codes": [
+    "ARTF"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "index",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ASTR",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "ASTR"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "BCAS",
+   "heading": "Black Contractor's Association Studies",
+   "heading_printed": "Black Contractor's Association Studies",
+   "rule": "index",
+   "codes": [
+    "BCAS"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "index",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "BLAS",
+   "heading": "Black Studies",
+   "heading_printed": "Black Studies",
+   "rule": "index",
+   "codes": [
+    "BLAS"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "BUSE",
+   "heading": "Business",
+   "heading_printed": "Business",
+   "rule": "index",
+   "codes": [
+    "BUSE"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "CBTE",
+   "heading": "Computer Business Technology",
+   "heading_printed": "Computer Business Technology",
+   "rule": "index",
+   "codes": [
+    "CBTE"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "CHIC",
+   "heading": "Chicana and Chicano Studies",
+   "heading_printed": "Chicana and Chicano Studies",
+   "rule": "index",
+   "codes": [
+    "CHIC"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "CHIL",
+   "heading": "Child Development",
+   "heading_printed": "Child Development",
+   "rule": "index",
+   "codes": [
+    "CHIL"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "CISC",
+   "heading": "Computer and Information Sciences",
+   "heading_printed": "Computer and Information Sciences",
+   "rule": "index",
+   "codes": [
+    "CISC"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "COMS",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMS"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "COSM",
+   "heading": "Cosmetology",
+   "heading_printed": "Cosmetology",
+   "rule": "index",
+   "codes": [
+    "COSM"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "CRES",
+   "heading": "Conflict Resolution",
+   "heading_printed": "Conflict Resolution",
+   "rule": "index",
+   "codes": [
+    "CRES"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "CYDA",
+   "heading": "Cyber Defense and Analysis",
+   "heading_printed": "Cyber Defense and Analysis",
+   "rule": "index",
+   "codes": [
+    "CYDA"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "DANC",
+   "heading": "Dance",
+   "heading_printed": "Dance",
+   "rule": "index",
+   "codes": [
+    "DANC"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "DRAM",
+   "heading": "Dramatic Arts",
+   "heading_printed": "Dramatic Arts",
+   "rule": "index",
+   "codes": [
+    "DRAM"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "DSGN",
+   "heading": "Design",
+   "heading_printed": "Design",
+   "rule": "index",
+   "codes": [
+    "DSGN"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "DSPS",
+   "heading": "Disability Support Programs and Services",
+   "heading_printed": "Disability Support Programs and Services",
+   "rule": "index",
+   "codes": [
+    "DSPS"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "DSST",
+   "heading": "Disability Studies",
+   "heading_printed": "Disability Studies",
+   "rule": "index",
+   "codes": [
+    "DSST"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "EDUC",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "index",
+   "codes": [
+    "EDUC"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ELAC",
+   "heading": "English Language Acquisition",
+   "heading_printed": "English Language Acquisition",
+   "rule": "index",
+   "codes": [
+    "ELAC"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ELCT",
+   "heading": "Electricity",
+   "heading_printed": "Electricity",
+   "rule": "index",
+   "codes": [
+    "ELCT"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ELDT",
+   "heading": "Electronic Systems",
+   "heading_printed": "Electronic Systems",
+   "rule": "index",
+   "codes": [
+    "ELDT"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ENGE",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "index",
+   "codes": [
+    "ENGE"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "EXSC",
+   "heading": "Exercise Science",
+   "heading_printed": "Exercise Science",
+   "rule": "index",
+   "codes": [
+    "EXSC"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "FJMP",
+   "heading": "Film, Journalism, and Media Production",
+   "heading_printed": "Film, Journalism, and Media Production",
+   "rule": "index",
+   "codes": [
+    "FJMP"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "FREN",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "index",
+   "codes": [
+    "FREN"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "GEND",
+   "heading": "Gender Studies",
+   "heading_printed": "Gender Studies",
+   "rule": "index",
+   "codes": [
+    "GEND"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "GISG",
+   "heading": "Geographic Information Systems",
+   "heading_printed": "Geographic Information Systems",
+   "rule": "index",
+   "codes": [
+    "GISG"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "HEAL",
+   "heading": "Health Education",
+   "heading_printed": "Health Education",
+   "rule": "index",
+   "codes": [
+    "HEAL"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "HEAN",
+   "heading": "Health Sciences",
+   "heading_printed": "Health Sciences",
+   "rule": "index",
+   "codes": [
+    "HEAN"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "HUMA",
+   "heading": "Humanities",
+   "heading_printed": "Humanities",
+   "rule": "index",
+   "codes": [
+    "HUMA"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "HUMS",
+   "heading": "Human Services",
+   "heading_printed": "Human Services",
+   "rule": "index",
+   "codes": [
+    "HUMS"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "INWT",
+   "heading": "Information, Network, and Web Technologies",
+   "heading_printed": "Information, Network, and Web Technologies",
+   "rule": "index",
+   "codes": [
+    "INWT"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ITAL",
+   "heading": "Italian",
+   "heading_printed": "Italian",
+   "rule": "index",
+   "codes": [
+    "ITAL"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "JOUR",
+   "heading": "Journalism",
+   "heading_printed": "Journalism",
+   "rule": "index",
+   "codes": [
+    "JOUR"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "LABR",
+   "heading": "Labor Studies",
+   "heading_printed": "Labor Studies",
+   "rule": "index",
+   "codes": [
+    "LABR"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "LBAS",
+   "heading": "Liberal Arts and Sciences",
+   "heading_printed": "Liberal Arts and Sciences",
+   "rule": "index",
+   "codes": [
+    "LBAS"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "LIBS",
+   "heading": "Library Science",
+   "heading_printed": "Library Science",
+   "rule": "index",
+   "codes": [
+    "LIBS"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "MACT",
+   "heading": "Machine Technology",
+   "heading_printed": "Machine Technology",
+   "rule": "index",
+   "codes": [
+    "MACT"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "MARK",
+   "heading": "Marketing",
+   "heading_printed": "Marketing",
+   "rule": "index",
+   "codes": [
+    "MARK"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "MEDA",
+   "heading": "Medical Assisting",
+   "heading_printed": "Medical Assisting",
+   "rule": "index",
+   "codes": [
+    "MEDA"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "MFET",
+   "heading": "Manufacturing Engineering Technology",
+   "heading_printed": "Manufacturing Engineering Technology",
+   "rule": "index",
+   "codes": [
+    "MFET"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "MUSC",
+   "heading": "Music Commercial",
+   "heading_printed": "Music Commercial",
+   "rule": "index",
+   "codes": [
+    "MUSC"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "MUSI",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "index",
+   "codes": [
+    "MUSI"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "NAIS",
+   "heading": "Native American and Indigenous Studies",
+   "heading_printed": "Native American and Indigenous Studies",
+   "rule": "index",
+   "codes": [
+    "NAIS"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "NRSE",
+   "heading": "Nursing Education",
+   "heading_printed": "Nursing Education",
+   "rule": "index",
+   "codes": [
+    "NRSE"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "NUTR",
+   "heading": "Nutrition",
+   "heading_printed": "Nutrition",
+   "rule": "index",
+   "codes": [
+    "NUTR"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "OCEA",
+   "heading": "Oceanography",
+   "heading_printed": "Oceanography",
+   "rule": "index",
+   "codes": [
+    "OCEA"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "PADM",
+   "heading": "Public Administration",
+   "heading_printed": "Public Administration",
+   "rule": "index",
+   "codes": [
+    "PADM"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "PEAC",
+   "heading": "Peace Studies",
+   "heading_printed": "Peace Studies",
+   "rule": "index",
+   "codes": [
+    "PEAC"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "PERG",
+   "heading": "Personal Growth",
+   "heading_printed": "Personal Growth",
+   "rule": "index",
+   "codes": [
+    "PERG"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "PHOT",
+   "heading": "Photography",
+   "heading_printed": "Photography",
+   "rule": "index",
+   "codes": [
+    "PHOT"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "PHYN",
+   "heading": "Physical Science",
+   "heading_printed": "Physical Science",
+   "rule": "index",
+   "codes": [
+    "PHYN"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "POLI",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLI"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "SDGE",
+   "heading": "San Diego Gas and Electric",
+   "heading_printed": "San Diego Gas and Electric",
+   "rule": "index",
+   "codes": [
+    "SDGE"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "SOCO",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOCO"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "SOLR",
+   "heading": "Solar",
+   "heading_printed": "Solar",
+   "rule": "index",
+   "codes": [
+    "SOLR"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "SUST",
+   "heading": "Sustainability",
+   "heading_printed": "Sustainability",
+   "rule": "index",
+   "codes": [
+    "SUST"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "WORK",
+   "heading": "Work Experience",
+   "heading_printed": "Work Experience",
+   "rule": "index",
+   "codes": [
+    "WORK"
+   ],
+   "candidate": null,
+   "address": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  }
+ ],
+ "subjects": 84,
+ "with_heading": 84
+}

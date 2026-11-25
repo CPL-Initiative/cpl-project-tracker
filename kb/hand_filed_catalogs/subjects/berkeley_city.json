@@ -1,0 +1,782 @@
+{
+ "_what": "The subjects Berkeley City College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "Berkeley City College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:51:22Z",
+ "run": "45626743727",
+ "source": [
+  "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964"
+ ],
+ "rows": [
+  {
+   "code": "AFRAM",
+   "heading": "African American Studies",
+   "heading_printed": "African American Studies",
+   "rule": "index",
+   "codes": [
+    "AFRAM"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ANTHR",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTHR"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ART",
+   "heading": "Art and Art History",
+   "heading_printed": "Art and Art History",
+   "rule": "index",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art and Art History",
+   "heading_printed": "Art and Art History",
+   "rule": "index",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ASAME",
+   "heading": "Asian & Asian American Studies",
+   "heading_printed": "Asian & Asian American Studies",
+   "rule": "index",
+   "codes": [
+    "ASAME"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ASL",
+   "heading": "American Sign Language",
+   "heading_printed": "American Sign Language",
+   "rule": "index",
+   "codes": [
+    "ASL"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ASTR",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "ASTR"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "index",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "BUS",
+   "heading": "Business",
+   "heading_printed": "Business",
+   "rule": "index",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "CHDEV",
+   "heading": "Child Development",
+   "heading_printed": "Child Development",
+   "rule": "index",
+   "codes": [
+    "CHDEV"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "CIS",
+   "heading": "Computer Information Systems",
+   "heading_printed": "Computer Information Systems",
+   "rule": "index",
+   "codes": [
+    "CIS"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "COPED",
+   "heading": "Cooperative Work Experience",
+   "heading_printed": "Cooperative Work Experience",
+   "rule": "index",
+   "codes": [
+    "COPED"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "COUN",
+   "heading": "Counseling",
+   "heading_printed": "Counseling",
+   "rule": "index",
+   "codes": [
+    "COUN"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "EDUC",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "index",
+   "codes": [
+    "EDUC"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ESOL",
+   "heading": "English for Speakers of Other Languages",
+   "heading_printed": "English for Speakers of Other Languages",
+   "rule": "index",
+   "codes": [
+    "ESOL"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ETHST",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ETHST"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "FREN",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "index",
+   "codes": [
+    "FREN"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "HLTED",
+   "heading": "Health Education",
+   "heading_printed": "Health Education",
+   "rule": "index",
+   "codes": [
+    "HLTED"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "HUMAN",
+   "heading": "Humanities",
+   "heading_printed": "Humanities",
+   "rule": "index",
+   "codes": [
+    "HUMAN"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "HUSV",
+   "heading": "Human Services",
+   "heading_printed": "Human Services",
+   "rule": "index",
+   "codes": [
+    "HUSV"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "LIS",
+   "heading": "Library Information Studies",
+   "heading_printed": "Library Information Studies",
+   "rule": "index",
+   "codes": [
+    "LIS"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "LRNRE",
+   "heading": "Learning Resources",
+   "heading_printed": "Learning Resources",
+   "rule": "index",
+   "codes": [
+    "LRNRE"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "M/LAT",
+   "heading": "Mexican & Latin American Studies",
+   "heading_printed": "Mexican & Latin American Studies",
+   "rule": "index",
+   "codes": [
+    "M/LAT"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "MM/AN",
+   "heading": "Multimedia Arts Animation and Game Design",
+   "heading_printed": "Multimedia Arts Animation and Game Design",
+   "rule": "index",
+   "codes": [
+    "MM/AN"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "MMART",
+   "heading": "Multimedia Arts",
+   "heading_printed": "Multimedia Arts",
+   "rule": "index",
+   "codes": [
+    "MMART"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "MM/DI",
+   "heading": "Multimedia Arts Digital Imaging",
+   "heading_printed": "Multimedia Arts Digital Imaging",
+   "rule": "index",
+   "codes": [
+    "MM/DI"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "MM/MW",
+   "heading": "Multimedia Arts Mobile and Web",
+   "heading_printed": "Multimedia Arts Mobile and Web",
+   "rule": "index",
+   "codes": [
+    "MM/MW"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "MM/VI",
+   "heading": "Multimedia Arts Video",
+   "heading_printed": "Multimedia Arts Video",
+   "rule": "index",
+   "codes": [
+    "MM/VI"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "PHYSC",
+   "heading": "Physical Science",
+   "heading_printed": "Physical Science",
+   "rule": "index",
+   "codes": [
+    "PHYSC"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "POSCI",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POSCI"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "PSYCH",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYCH"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "SOCSC",
+   "heading": "Social Science",
+   "heading_printed": "Social Science",
+   "rule": "index",
+   "codes": [
+    "SOCSC"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "STAT",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "WS",
+   "heading": "Women's Studies",
+   "heading_printed": "Women's Studies",
+   "rule": "index",
+   "codes": [
+    "WS"
+   ],
+   "candidate": null,
+   "address": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  }
+ ],
+ "subjects": 48,
+ "with_heading": 48
+}

@@ -1,0 +1,2001 @@
+{
+ "_what": "The subjects Allan Hancock College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "Allan Hancock College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:51:15Z",
+ "run": "45626743727",
+ "source": [
+  "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28854",
+  "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28855",
+  "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28858",
+  "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28859",
+  "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28860",
+  "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28861",
+  "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28862",
+  "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28863",
+  "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28864",
+  "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28865",
+  "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28866",
+  "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28867",
+  "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28868",
+  "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28869",
+  "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28870",
+  "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28871",
+  "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28872",
+  "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28873",
+  "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28874",
+  "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28882"
+ ],
+ "rows": [
+  {
+   "code": "AB",
+   "heading": "Auto Body",
+   "heading_printed": "Auto Body",
+   "rule": "index",
+   "codes": [
+    "AB"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28854",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ACCT",
+   "heading": "Accounting",
+   "heading_printed": "Accounting",
+   "rule": "index",
+   "codes": [
+    "ACCT"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28854",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "AG",
+   "heading": "Agriculture",
+   "heading_printed": "Agriculture",
+   "rule": "index",
+   "codes": [
+    "AG"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28854",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "AJ",
+   "heading": "Administration of Justice",
+   "heading_printed": "Administration of Justice",
+   "rule": "index",
+   "codes": [
+    "AJ"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28854",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "AJN",
+   "heading": "Administration of Justice (NC)",
+   "heading_printed": "Administration of Justice (NC)",
+   "rule": "index",
+   "codes": [
+    "AJN"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28854",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28854",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "APRN",
+   "heading": "Apprenticeship Training",
+   "heading_printed": "Apprenticeship Training",
+   "rule": "index",
+   "codes": [
+    "APRN"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28854",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ARCH",
+   "heading": "Architecture",
+   "heading_printed": "Architecture",
+   "rule": "index",
+   "codes": [
+    "ARCH"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28854",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ASL",
+   "heading": "American Sign Language",
+   "heading_printed": "American Sign Language",
+   "rule": "index",
+   "codes": [
+    "ASL"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28854",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ASTR",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "ASTR"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28854",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "AT",
+   "heading": "Automotive Technology",
+   "heading_printed": "Automotive Technology",
+   "rule": "index",
+   "codes": [
+    "AT"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28854",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ATH",
+   "heading": "Athletic Training",
+   "heading_printed": "Athletic Training",
+   "rule": "index",
+   "codes": [
+    "ATH"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28854",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "BARB",
+   "heading": "Barbering (NC)",
+   "heading_printed": "Barbering (NC)",
+   "rule": "index",
+   "codes": [
+    "BARB"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28859",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "BASK",
+   "heading": "Basic Skills (NC)",
+   "heading_printed": "Basic Skills (NC)",
+   "rule": "index",
+   "codes": [
+    "BASK"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28859",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "index",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28859",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "BUS",
+   "heading": "Business",
+   "heading_printed": "Business",
+   "rule": "index",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28859",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "CA",
+   "heading": "Culinary Arts",
+   "heading_printed": "Culinary Arts",
+   "rule": "index",
+   "codes": [
+    "CA"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28855",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "CBIS",
+   "heading": "Computer Business Information Systems",
+   "heading_printed": "Computer Business Information Systems",
+   "rule": "index",
+   "codes": [
+    "CBIS"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28855",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "CBOT",
+   "heading": "Computer Business Office Technology",
+   "heading_printed": "Computer Business Office Technology",
+   "rule": "index",
+   "codes": [
+    "CBOT"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28855",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "CCNC",
+   "heading": "Computer Courses (NC)",
+   "heading_printed": "Computer Courses (NC)",
+   "rule": "index",
+   "codes": [
+    "CCNC"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28855",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "CEL",
+   "heading": "Computer Electronics",
+   "heading_printed": "Computer Electronics",
+   "rule": "index",
+   "codes": [
+    "CEL"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28855",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28855",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "CITZ",
+   "heading": "Citizenship (NC)",
+   "heading_printed": "Citizenship (NC)",
+   "rule": "index",
+   "codes": [
+    "CITZ"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28855",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "CNET",
+   "heading": "Computer Networking & Electronics Technology",
+   "heading_printed": "Computer Networking & Electronics Technology",
+   "rule": "index",
+   "codes": [
+    "CNET"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28855",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28855",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "COS",
+   "heading": "Cosmetology",
+   "heading_printed": "Cosmetology",
+   "rule": "index",
+   "codes": [
+    "COS"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28855",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "CS",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "index",
+   "codes": [
+    "CS"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28855",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "DA",
+   "heading": "Dental Assisting",
+   "heading_printed": "Dental Assisting",
+   "rule": "index",
+   "codes": [
+    "DA"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28860",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "DANC",
+   "heading": "Dance",
+   "heading_printed": "Dance",
+   "rule": "index",
+   "codes": [
+    "DANC"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28860",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "DAX",
+   "heading": "Dental Assisting (NC)",
+   "heading_printed": "Dental Assisting (NC)",
+   "rule": "index",
+   "codes": [
+    "DAX"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28860",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "DISA",
+   "heading": "Adults with Disabilities (NC)",
+   "heading_printed": "Adults with Disabilities (NC)",
+   "rule": "index",
+   "codes": [
+    "DISA"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28860",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "DNCN",
+   "heading": "Dance (NC)",
+   "heading_printed": "Dance (NC)",
+   "rule": "index",
+   "codes": [
+    "DNCN"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28860",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "DRMA",
+   "heading": "Drama",
+   "heading_printed": "Drama",
+   "rule": "index",
+   "codes": [
+    "DRMA"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28860",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28858",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ECS",
+   "heading": "Early Childhood Studies",
+   "heading_printed": "Early Childhood Studies",
+   "rule": "index",
+   "codes": [
+    "ECS"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28858",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ECSN",
+   "heading": "Early Childhood Studies (NC)",
+   "heading_printed": "Early Childhood Studies (NC)",
+   "rule": "index",
+   "codes": [
+    "ECSN"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28858",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "EDTC",
+   "heading": "Educational Technologies",
+   "heading_printed": "Educational Technologies",
+   "rule": "index",
+   "codes": [
+    "EDTC"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28858",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "EDUC",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "index",
+   "codes": [
+    "EDUC"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28858",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "EDUN",
+   "heading": "Education (NC)",
+   "heading_printed": "Education (NC)",
+   "rule": "index",
+   "codes": [
+    "EDUN"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28858",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "EL",
+   "heading": "Electronics",
+   "heading_printed": "Electronics",
+   "rule": "index",
+   "codes": [
+    "EL"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28858",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ELD",
+   "heading": "English Language Development",
+   "heading_printed": "English Language Development",
+   "rule": "index",
+   "codes": [
+    "ELD"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28858",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ELDN",
+   "heading": "English Language Development (NC)",
+   "heading_printed": "English Language Development (NC)",
+   "rule": "index",
+   "codes": [
+    "ELDN"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28858",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ELDV",
+   "heading": "English Language Development Vocational (NC)",
+   "heading_printed": "English Language Development Vocational (NC)",
+   "rule": "index",
+   "codes": [
+    "ELDV"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28858",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "EMS",
+   "heading": "Emergency Medical Services",
+   "heading_printed": "Emergency Medical Services",
+   "rule": "index",
+   "codes": [
+    "EMS"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28858",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "EMSP",
+   "heading": "Emergency Medical Services Paramedic",
+   "heading_printed": "Emergency Medical Services Paramedic",
+   "rule": "index",
+   "codes": [
+    "EMSP"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28858",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28858",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ENGR",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "index",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28858",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ENTR",
+   "heading": "Entrepreneurship",
+   "heading_printed": "Entrepreneurship",
+   "rule": "index",
+   "codes": [
+    "ENTR"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28858",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ENVT",
+   "heading": "Environmental Technology",
+   "heading_printed": "Environmental Technology",
+   "rule": "index",
+   "codes": [
+    "ENVT"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28858",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ES",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ES"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28858",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ET",
+   "heading": "Engineering Technology",
+   "heading_printed": "Engineering Technology",
+   "rule": "index",
+   "codes": [
+    "ET"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28858",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "FASH",
+   "heading": "Fashion Merchandising",
+   "heading_printed": "Fashion Merchandising",
+   "rule": "index",
+   "codes": [
+    "FASH"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28861",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "FASN",
+   "heading": "Fashion Studies (NC)",
+   "heading_printed": "Fashion Studies (NC)",
+   "rule": "index",
+   "codes": [
+    "FASN"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28861",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "FCS",
+   "heading": "Family & Consumer Science",
+   "heading_printed": "Family & Consumer Science",
+   "rule": "index",
+   "codes": [
+    "FCS"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28861",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "FRCH",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "index",
+   "codes": [
+    "FRCH"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28861",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "FSN",
+   "heading": "Food Science & Nutrition",
+   "heading_printed": "Food Science & Nutrition",
+   "rule": "index",
+   "codes": [
+    "FSN"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28861",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "FT",
+   "heading": "Fire Technology",
+   "heading_printed": "Fire Technology",
+   "rule": "index",
+   "codes": [
+    "FT"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28861",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "FTEC",
+   "heading": "Fire Tech",
+   "heading_printed": "Fire Tech",
+   "rule": "index",
+   "codes": [
+    "FTEC"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28861",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "FTNC",
+   "heading": "Fire Technology (NC)",
+   "heading_printed": "Fire Technology (NC)",
+   "rule": "index",
+   "codes": [
+    "FTNC"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28861",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "GBST",
+   "heading": "Global Studies",
+   "heading_printed": "Global Studies",
+   "rule": "index",
+   "codes": [
+    "GBST"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28863",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28863",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28863",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "GRPH",
+   "heading": "Graphics",
+   "heading_printed": "Graphics",
+   "rule": "index",
+   "codes": [
+    "GRPH"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28863",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "HEAL",
+   "heading": "Health & Safety (NC)",
+   "heading_printed": "Health & Safety (NC)",
+   "rule": "index",
+   "codes": [
+    "HEAL"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28862",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "HED",
+   "heading": "Health Education",
+   "heading_printed": "Health Education",
+   "rule": "index",
+   "codes": [
+    "HED"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28862",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28862",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "HIT",
+   "heading": "Health Information Technology",
+   "heading_printed": "Health Information Technology",
+   "rule": "index",
+   "codes": [
+    "HIT"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28862",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "HLCR",
+   "heading": "Health Careers",
+   "heading_printed": "Health Careers",
+   "rule": "index",
+   "codes": [
+    "HLCR"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28862",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "HLTH",
+   "heading": "Health (NC)",
+   "heading_printed": "Health (NC)",
+   "rule": "index",
+   "codes": [
+    "HLTH"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28862",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "HOEC",
+   "heading": "Home Economics (NC)",
+   "heading_printed": "Home Economics (NC)",
+   "rule": "index",
+   "codes": [
+    "HOEC"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28862",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "HOSP",
+   "heading": "Hospitality Management",
+   "heading_printed": "Hospitality Management",
+   "rule": "index",
+   "codes": [
+    "HOSP"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28862",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "HUM",
+   "heading": "Humanities",
+   "heading_printed": "Humanities",
+   "rule": "index",
+   "codes": [
+    "HUM"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28862",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "HUSV",
+   "heading": "Human Services",
+   "heading_printed": "Human Services",
+   "rule": "index",
+   "codes": [
+    "HUSV"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28862",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "INTD",
+   "heading": "Interior Design",
+   "heading_printed": "Interior Design",
+   "rule": "index",
+   "codes": [
+    "INTD"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28864",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "KIN",
+   "heading": "Kinesiology",
+   "heading_printed": "Kinesiology",
+   "rule": "index",
+   "codes": [
+    "KIN"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28865",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "LBRY",
+   "heading": "Library Skills",
+   "heading_printed": "Library Skills",
+   "rule": "index",
+   "codes": [
+    "LBRY"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28870",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "LDER",
+   "heading": "Leadership",
+   "heading_printed": "Leadership",
+   "rule": "index",
+   "codes": [
+    "LDER"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28870",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "LE",
+   "heading": "Law Enforcement",
+   "heading_printed": "Law Enforcement",
+   "rule": "index",
+   "codes": [
+    "LE"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28870",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "LGBT",
+   "heading": "Lesbian, Gay, Bi-Sexual, Transgender and Queer",
+   "heading_printed": "Lesbian, Gay, Bi-sexual, Transgender and Queer",
+   "rule": "index",
+   "codes": [
+    "LGBT"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28870",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "LS",
+   "heading": "Learning Skills",
+   "heading_printed": "Learning Skills",
+   "rule": "index",
+   "codes": [
+    "LS"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28870",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "MA",
+   "heading": "Medical Assisting",
+   "heading_printed": "Medical Assisting",
+   "rule": "index",
+   "codes": [
+    "MA"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28871",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28871",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "MB",
+   "heading": "Medical Billing",
+   "heading_printed": "Medical Billing",
+   "rule": "index",
+   "codes": [
+    "MB"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28871",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "MMAC",
+   "heading": "Multimedia Arts & Communication",
+   "heading_printed": "Multimedia Arts & Communication",
+   "rule": "index",
+   "codes": [
+    "MMAC"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28871",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "MT",
+   "heading": "Machine Technology",
+   "heading_printed": "Machine Technology",
+   "rule": "index",
+   "codes": [
+    "MT"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28871",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "MUS",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "index",
+   "codes": [
+    "MUS"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28871",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "NURS",
+   "heading": "Nursing",
+   "heading_printed": "Nursing",
+   "rule": "index",
+   "codes": [
+    "NURS"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28882",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "NURX",
+   "heading": "Nursing (NC)",
+   "heading_printed": "Nursing (NC)",
+   "rule": "index",
+   "codes": [
+    "NURX"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28882",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "OLDR",
+   "heading": "Older Adults (NC)",
+   "heading_printed": "Older Adults (NC)",
+   "rule": "index",
+   "codes": [
+    "OLDR"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28866",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "PARN",
+   "heading": "Parenting (NC)",
+   "heading_printed": "Parenting (NC)",
+   "rule": "index",
+   "codes": [
+    "PARN"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28867",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "PD",
+   "heading": "Personal Development",
+   "heading_printed": "Personal Development",
+   "rule": "index",
+   "codes": [
+    "PD"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28867",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "PDNC",
+   "heading": "Personal Development (NC)",
+   "heading_printed": "Personal Development (NC)",
+   "rule": "index",
+   "codes": [
+    "PDNC"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28867",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "PE",
+   "heading": "Physical Education",
+   "heading_printed": "Physical Education",
+   "rule": "index",
+   "codes": [
+    "PE"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28867",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "PEIA",
+   "heading": "Physical Education Intercollegiate Athletics",
+   "heading_printed": "Physical Education Intercollegiate Athletics",
+   "rule": "index",
+   "codes": [
+    "PEIA"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28867",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28867",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "PHSC",
+   "heading": "Physical Science",
+   "heading_printed": "Physical Science",
+   "rule": "index",
+   "codes": [
+    "PHSC"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28867",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "PHTO",
+   "heading": "Photography",
+   "heading_printed": "Photography",
+   "rule": "index",
+   "codes": [
+    "PHTO"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28867",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28867",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "PLGL",
+   "heading": "Paralegal Studies",
+   "heading_printed": "Paralegal Studies",
+   "rule": "index",
+   "codes": [
+    "PLGL"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28867",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28867",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "PROD",
+   "heading": "Professional Development",
+   "heading_printed": "Professional Development",
+   "rule": "index",
+   "codes": [
+    "PROD"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28867",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "PSY",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSY"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28867",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "RE",
+   "heading": "Real Estate",
+   "heading_printed": "Real Estate",
+   "rule": "index",
+   "codes": [
+    "RE"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28868",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "READ",
+   "heading": "Reading",
+   "heading_printed": "Reading",
+   "rule": "index",
+   "codes": [
+    "READ"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28868",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "REC",
+   "heading": "Recreation",
+   "heading_printed": "Recreation",
+   "rule": "index",
+   "codes": [
+    "REC"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28868",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "RT",
+   "heading": "Radiological Technician",
+   "heading_printed": "Radiological Technician",
+   "rule": "index",
+   "codes": [
+    "RT"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28868",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "SEWN",
+   "heading": "Sewing (NC)",
+   "heading_printed": "Sewing (NC)",
+   "rule": "index",
+   "codes": [
+    "SEWN"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28869",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28869",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28869",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "STEM",
+   "heading": "Science, Technology, Engineering, and Math",
+   "heading_printed": "Science, Technology, Engineering, and Math",
+   "rule": "index",
+   "codes": [
+    "STEM"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28869",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "STMN",
+   "heading": "Science, Technology, Engineering, and Math (NC)",
+   "heading_printed": "Science, Technology, Engineering, and Math (NC)",
+   "rule": "index",
+   "codes": [
+    "STMN"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28869",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "THEA",
+   "heading": "Theatre",
+   "heading_printed": "Theatre",
+   "rule": "index",
+   "codes": [
+    "THEA"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28872",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "TRCK",
+   "heading": "Truck Driving (NC)",
+   "heading_printed": "Truck Driving (NC)",
+   "rule": "index",
+   "codes": [
+    "TRCK"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28872",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "VEN",
+   "heading": "Viticulture and Enology",
+   "heading_printed": "Viticulture and Enology",
+   "rule": "index",
+   "codes": [
+    "VEN"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28873",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "VOCE",
+   "heading": "Vocational Community Ed (NC)",
+   "heading_printed": "Vocational Community Ed (NC)",
+   "rule": "index",
+   "codes": [
+    "VOCE"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28873",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "VT",
+   "heading": "Veterinary Technology",
+   "heading_printed": "Veterinary Technology",
+   "rule": "index",
+   "codes": [
+    "VT"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28873",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "WEE",
+   "heading": "Work Experience Education",
+   "heading_printed": "Work Experience Education",
+   "rule": "index",
+   "codes": [
+    "WEE"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28874",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "WEEX",
+   "heading": "Work Experience (NC)",
+   "heading_printed": "Work Experience (NC)",
+   "rule": "index",
+   "codes": [
+    "WEEX"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28874",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "WFT",
+   "heading": "Wildland Fire Technology",
+   "heading_printed": "Wildland Fire Technology",
+   "rule": "index",
+   "codes": [
+    "WFT"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28874",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "WFTL",
+   "heading": "Wildland Fire Logistics",
+   "heading_printed": "Wildland Fire Logistics",
+   "rule": "index",
+   "codes": [
+    "WFTL"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28874",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "WFTO",
+   "heading": "Wildland Fire Technology Operations",
+   "heading_printed": "Wildland Fire Technology Operations",
+   "rule": "index",
+   "codes": [
+    "WFTO"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28874",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "WKPR",
+   "heading": "Workforce Preparation (NC)",
+   "heading_printed": "Workforce Preparation (NC)",
+   "rule": "index",
+   "codes": [
+    "WKPR"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28874",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "WLDT",
+   "heading": "Welding Technology",
+   "heading_printed": "Welding Technology",
+   "rule": "index",
+   "codes": [
+    "WLDT"
+   ],
+   "candidate": null,
+   "address": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28874",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  }
+ ],
+ "subjects": 123,
+ "with_heading": 123
+}
