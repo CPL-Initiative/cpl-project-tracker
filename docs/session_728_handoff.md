@@ -113,3 +113,14 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 - 07:33Z: American River fixed at 12 rows (a second new kind, `noted_total_cut_off`, for 20130) to round 2 with its
   reader. Canyons fixed at 7 rows; the conductor asked for a course-list cap of 50 on `heading_not_in_text` before
   round 2, since 43388's list cannot be told from its page's other lists.
+- 07:36Z: American River's round 2, APPLY; clean md5 pre-read (12 of 12); migrate 45569505474 returned 12, all live;
+  `.apply` restored (`618bca45`). 07:41Z: Canyons's round 2, APPLY; clean md5 pre-read (6 of 6; 43388 absent, no
+  verdicts); migrate 45570064450 returned 6 and inserted 43388; `.apply` restored (`f8223804`).
+- 07:42Z: Butte's reconcile reading (`clear_conditional`, a new reconcile kind in shared code; self-recall 21 fire, 0
+  wrong) to an Opus reader before its reconcile run; the records-held-for-a-person worker started (twelve colleges);
+  the `land` worker started (`claude/s727-land`: the pooled, Shasta, American River and Canyons branches as one PR).
+- 07:46Z: `elumen`'s reader, round 1: FIX THEN DISPATCH (the change moved binds off the eLumen road, El Camino's ten
+  certificates among them: limit it to eLumen addresses; the exact-heading rank must check the award; s727v moves to
+  its own branch, `claude/s727-avc43028`). Santa Barbara City's reader, round 1: FIX THEN APPLY (08565 refiled
+  `no_units_read`; 05934 keeps S714's hold).
+- Orange Coast's read 45567337117 is still in its Capture step at this writing (from 07:21Z).
