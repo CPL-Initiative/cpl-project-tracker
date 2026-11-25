@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-25_adult_ed_cpl_starting_points_library.sql",
+ "name": "adult_ed_cpl_starting_points_library",
+ "version": "20261125222413",
+ "sha256": "a778e606a49eed5b2eac55c95d165cd30d1397a1bfadec557a23d8cb270e58d5",
+ "run": "45712712158",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"library_rows\":1,\"memory_rows\":6}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
