@@ -14,7 +14,7 @@ start (733 or above) and say so in your handoff; the moniker below stays yours.
 
 # You are SkyGodwit, Sam's next plain session
 
-From SkyDunlin (S730), Sam's plain session of 2026-11-25 (~10:52Z to ~15:10Z). A **light checkpoint**, refreshed after
+From SkyDunlin (S730), Sam's plain session of 2026-11-25 (~10:52Z to ~16:10Z). A **light checkpoint**, refreshed after
 Sam came back: the commons and common-subjects lanes moved inside their PRs, and four `cpl_memory` rows were written; no Roadmap row moved, no re-mint or Rule 10 data write,
 no tab joined or left the nav. Skipped: step 2 (no KB structure change), step 3 (README), step 5 (no kb-note crossed the
 bar), step 7 (the pipeline did not move).
@@ -29,7 +29,8 @@ bar), step 7 (the pipeline did not move).
 2a. **Sam's work order (2026-11-20):** collection first, data waves before fixes (`r-collection-first-sam-2026-11-20`);
    collection's fixes rank by the M-ID cards they unblock (`r-collect-for-mids-work-order-sam-2026-11-20`).
 2b. **Before a push, `bash scripts/check_generated.sh` must read all ok.**
-3. **Merge order:** nothing open of this line's (#3831 carried the title hunt and this refresh). Dependabot's #3383 stays.
+3. **Merge order:** #3836 (this checkpoint) first: GitHub's merge API failed with 500, 502 and 504 during the 16:00Z
+   incident; read its comments and merge. Then nothing else open of this line's (#3831 carried the title hunt and this refresh). Dependabot's #3383 stays.
 
 ## What shipped
 
@@ -76,7 +77,17 @@ bar), step 7 (the pipeline did not move).
 
 ## Open work, in order
 
-0. **The stray codes (common-subjects-reference lane):** the titles are in. Rescore the 88 stray codes' local subjects
+00. **COBIx's leftover titles (Sam, 2026-11-25, relayed from COBIx):** #3837 (batch 1: the 11 unread-catalog colleges,
+    657 of 785 rows) and #3838 (batch 2: department-label rows, 374 of 414) fill the leftovers CSV, 1,031 titles. Merge
+    #3837 before #3838 (batch 2 sits on batch 1) once each is green; SkyDunlin may already have. Then add a CSV import
+    to `kb/_file_found_subject_titles.py` (a filled row with a source URL becomes a found title; a `department label`
+    method stays a hint), file them, rebuild the subject family, and rerun the stray-code rescore.
+
+0. **The stray codes (common-subjects-reference lane):** the rescore is filed, `kb/subject_title_hunt/20261125_stray_code_rescore.csv`
+   (116 local subjects, 247 courses): High 24 (53 courses, the title names the discipline), Medium 32 (76, a filed
+   common subject with a title to check), Low 4 (6; two title-filing conflicts, San Diego City FJMP and Mendocino CSC),
+   None 56 (112, a person picks). Next: put the 56 and the 4 in front of Sam as one plain list, then the dry-run re-mint
+   of the High and Medium rows. The titles are in. Rescore the 88 stray codes' local subjects
    with the title leading (the statewide codes and recommender already read them after the nightly build), then the
    dry-run re-mint that sends their 247 courses back to Needs an M-ID under their common subject, for Sam to see
    before it applies (`r-no-mid-on-a-stray-code-sam-2026-11-25`). When COBIx's PRs with leftover titles land, write
@@ -135,6 +146,6 @@ codes, Sam's refile in Local subjects; the re-point of folded local codes); **im
 At sign-off: no PR watch remains (#3824, #3826, #3828 and #3831 and #3832 merged and unsubscribed; nine workers done; #3825 unsubscribed); no check-ins; no
 artifact watch; no COBIx watcher.
 
-Spend: not available; 2026-11-25T10:52Z to 2026-11-25T15:10Z.
+Spend: not available; 2026-11-25T10:52Z to 2026-11-25T16:10Z.
 
 Opening line: *Greetings, you are SkyGodwit (Session 733), see SkyDunlin's handoff — `docs/session_731_handoff.md` — let's keep rolling with our queue.*
