@@ -1,33 +1,25 @@
 {
- "_readme": "S730 title hunt (elumen group), 2026-11-25, round 1. Sam asked on 2026-11-25 for each college's printed local subject titles (the catalog's heading for each course subject code), which decide a local code's common subject and unblock the 88 stray M-ID codes (r-no-mid-on-a-stray-code-sam-2026-11-25; kb/subject_title_hunt/README.md). S712 (run 45161535251) found Bakersfield's eLumen courses view prints every subject as 'Name - CODE'. This read loads this catalog's start page and its courses view, rendered, and prints the menu links that name a subject or department, so a session files the headings without reading every course. The registry's hand-filed 2025-2026 PDF is retired (kb/hand_filed_catalogs/retired); the 2026-2027 catalog is on eLumen (S636). No model call, writes nothing.",
+ "_readme": "S730 title hunt (elumen group), 2026-11-25, round 2. Sam asked on 2026-11-25 for each college's printed local subject titles (the catalog's heading for each course subject code; kb/subject_title_hunt/README.md, r-no-mid-on-a-stray-code-sam-2026-11-25). Round 1 (run 45623983494): the menu links one page per credit subject, 'CODE - Name Courses' (84, filed). This read loads the Noncredit Courses and Certificates page, to see whether it heads the noncredit subjects the same way. No model call, writes nothing.",
  "college": "De Anza College",
  "questions": {
-  "subject_index": "Where the catalog prints each course subject code with its name (a courses view, a subject list, or the menu's headings), and the names as printed."
+  "subject_index": "Where the catalog prints each course subject code with its name, and the names as printed."
  },
  "keywords": [
   " - [A-Z]{2,6}\\b",
   "\\([A-Z]{2,6}\\)",
   "[Ss]ubjects?",
-  "[Cc]ourses",
-  "[Dd]epartments?",
-  "[Dd]isciplines?"
+  "[Dd]isciplines?",
+  "[Pp]refix",
+  "[Dd]epartments?"
  ],
  "pages": [
   {
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/noncredit-courses-and-certificates",
+   "links": "courses|noncredit",
+   "links_cap": 400,
    "answers": [
     "subject_index"
-   ],
-   "url": "https://deanza.elumenapp.com/catalog/2026-2027",
-   "links": "subject|department|disciplin|courses|descriptions|prefix",
-   "links_cap": 400
-  },
-  {
-   "answers": [
-    "subject_index"
-   ],
-   "url": "https://deanza.elumenapp.com/catalog/2026-2027/courses",
-   "links": "subject|department|disciplin|courses|descriptions|prefix",
-   "links_cap": 400
+   ]
   }
  ]
 }

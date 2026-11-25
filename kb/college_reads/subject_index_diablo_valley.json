@@ -1,33 +1,31 @@
 {
- "_readme": "S730 title hunt (elumen group), 2026-11-25, round 1. Sam asked on 2026-11-25 for each college's printed local subject titles (the catalog's heading for each course subject code), which decide a local code's common subject and unblock the 88 stray M-ID codes (r-no-mid-on-a-stray-code-sam-2026-11-25; kb/subject_title_hunt/README.md). S712 (run 45161535251) found Bakersfield's eLumen courses view prints every subject as 'Name - CODE'. This read loads this catalog's start page and its courses view, rendered, and prints the menu links that name a subject or department, so a session files the headings without reading every course.  No model call, writes nothing.",
+ "_readme": "S730 title hunt (elumen group), 2026-11-25, round 2. Sam asked on 2026-11-25 for each college's printed local subject titles (the catalog's heading for each course subject code; kb/subject_title_hunt/README.md, r-no-mid-on-a-stray-code-sam-2026-11-25). Round 1 (run 45623983494): the Courses view prints each subject's name with no code and no link the round-1 pattern matched; this read loads the view's content call (the page the catalog's own scripts fetch) to see each subject's address, and the view again with every link printed. No model call, writes nothing.",
  "college": "Diablo Valley College",
  "questions": {
-  "subject_index": "Where the catalog prints each course subject code with its name (a courses view, a subject list, or the menu's headings), and the names as printed."
+  "subject_index": "Where the catalog prints each course subject code with its name, and the names as printed."
  },
  "keywords": [
   " - [A-Z]{2,6}\\b",
   "\\([A-Z]{2,6}\\)",
   "[Ss]ubjects?",
-  "[Cc]ourses",
-  "[Dd]epartments?",
-  "[Dd]isciplines?"
+  "[Dd]isciplines?",
+  "[Pp]refix",
+  "[Dd]epartments?"
  ],
  "pages": [
   {
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,courses?tenant=dvc.elumenapp.com",
    "answers": [
     "subject_index"
-   ],
-   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/generalinformation",
-   "links": "subject|department|disciplin|courses|descriptions|prefix",
-   "links_cap": 400
+   ]
   },
   {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/courses",
+   "links": ".",
+   "links_cap": 400,
    "answers": [
     "subject_index"
-   ],
-   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/courses",
-   "links": "subject|department|disciplin|courses|descriptions|prefix",
-   "links_cap": 400
+   ]
   }
  ]
 }
