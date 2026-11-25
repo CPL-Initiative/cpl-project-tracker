@@ -1,0 +1,96 @@
+{
+ "_readme": "Subject-title hunt, group html_b (S730 worker, 2026-11-25, Sam's ask of 2026-11-25 in session S730: the catalog's printed heading for each local subject code, for the 88 stray M-ID codes, ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Round 3: round 2 (run 45626064651) read page 1 of 15 of the Acalog course list on Course Information (navoid 1515), which prints each course type's heading above its courses (Administration of Justice, then AJ 15 ...). This read loads pages 2 to 15 at the addresses page 1 links, so every heading is read once. No model call.",
+ "college": "San Joaquin Delta College",
+ "questions": {
+  "subjects": "Every subject heading the catalog's course index prints, with its code."
+ },
+ "keywords": [
+  "\\b[A-Z][A-Z -]{0,9} \\d{1,4}[A-Z]*\\b"
+ ],
+ "pages": [
+  {
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&catoid=14&navoid=1515&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=2",
+   "answers": [
+    "subjects"
+   ]
+  },
+  {
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&catoid=14&navoid=1515&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=3",
+   "answers": [
+    "subjects"
+   ]
+  },
+  {
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&catoid=14&navoid=1515&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=4",
+   "answers": [
+    "subjects"
+   ]
+  },
+  {
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&catoid=14&navoid=1515&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=5",
+   "answers": [
+    "subjects"
+   ]
+  },
+  {
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&catoid=14&navoid=1515&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=6",
+   "answers": [
+    "subjects"
+   ]
+  },
+  {
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&catoid=14&navoid=1515&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=7",
+   "answers": [
+    "subjects"
+   ]
+  },
+  {
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&catoid=14&navoid=1515&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=8",
+   "answers": [
+    "subjects"
+   ]
+  },
+  {
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&catoid=14&navoid=1515&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=9",
+   "answers": [
+    "subjects"
+   ]
+  },
+  {
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&catoid=14&navoid=1515&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=10",
+   "answers": [
+    "subjects"
+   ]
+  },
+  {
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&catoid=14&navoid=1515&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=11",
+   "answers": [
+    "subjects"
+   ]
+  },
+  {
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&catoid=14&navoid=1515&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=12",
+   "answers": [
+    "subjects"
+   ]
+  },
+  {
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&catoid=14&navoid=1515&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=13",
+   "answers": [
+    "subjects"
+   ]
+  },
+  {
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&catoid=14&navoid=1515&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=14",
+   "answers": [
+    "subjects"
+   ]
+  },
+  {
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&catoid=14&navoid=1515&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=15",
+   "answers": [
+    "subjects"
+   ]
+  }
+ ]
+}

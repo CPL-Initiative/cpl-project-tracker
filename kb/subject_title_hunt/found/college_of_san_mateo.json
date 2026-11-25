@@ -1,0 +1,492 @@
+{
+ "college": "College of San Mateo",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:40:26Z",
+ "run": "45625529988",
+ "plan": "kb/college_reads/subject_index_college_of_san_mateo.json",
+ "titles": [
+  {
+   "code": "ACTG",
+   "title": "Accounting",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ADAP",
+   "title": "Adapted Physical Education",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ADS",
+   "title": "Addiction Studies",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ADMJ",
+   "title": "Administration of Justice",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AJPS",
+   "title": "Administration of Justice – Public Safety Training",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AQUA",
+   "title": "Aquatics",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARCH",
+   "title": "Architecture",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASL",
+   "title": "American Sign Language",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BLDG",
+   "title": "Building Inspection Technology",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BUS.",
+   "title": "Business",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CRER",
+   "title": "Career and Life Planning",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CDEV",
+   "title": "Child Development",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHIN",
+   "title": "Chinese",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CIS",
+   "title": "Computer and Information Science",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COSM",
+   "title": "Cosmetology",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COUN",
+   "title": "Counseling",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DANC",
+   "title": "Dance",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DENT",
+   "title": "Dental Assisting",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DGME",
+   "title": "Digital Media",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DRAF",
+   "title": "Drafting Technology",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ELEL",
+   "title": "Electrical Apprenticeship",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EMC.",
+   "title": "Emergency Medical Care",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESL",
+   "title": "English Second Language",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESTI",
+   "title": "Esthetics",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETHN",
+   "title": "Ethnic Studies",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FILM",
+   "title": "Film",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FIRE",
+   "title": "Fire Technology",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FITN",
+   "title": "Fitness",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GBST",
+   "title": "Global Studies",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HSCI",
+   "title": "Health Science",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "INDV",
+   "title": "Individual Sports",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "IDST",
+   "title": "Interdisciplinary Studies",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KINE",
+   "title": "Kinesiology",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LCTR",
+   "title": "Learning Center",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LSKL",
+   "title": "Learning Skills",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LIBR",
+   "title": "Library Studies",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LIT.",
+   "title": "Literature",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MGMT",
+   "title": "Management",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUS.",
+   "title": "Music",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NURS",
+   "title": "Nursing",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "OCEN",
+   "title": "Oceanography",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PALN",
+   "title": "Paleontology",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "P.E.",
+   "title": "Physical Education Theory",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSCI",
+   "title": "Physical Science",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PNPA",
+   "title": "Public and Nonprofit Administration",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "R.E.",
+   "title": "Real Estate",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOCI",
+   "title": "Sociology",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "TEAM",
+   "title": "Team Sports",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "VARS",
+   "title": "Varsity Sports",
+   "url": "https://catalog.collegeofsanmateo.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ]
+}

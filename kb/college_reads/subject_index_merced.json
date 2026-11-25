@@ -1,0 +1,29 @@
+{
+ "_readme": "Subject-title hunt, group html_b (S730 worker, 2026-11-25, Sam's ask of 2026-11-25 in session S730: the catalog's printed heading for each local subject code, for the 88 stray M-ID codes, ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Round 2: round 1 (run 45623798209) found the catalog's Courses page in the vendor's catalogPages answer (Accounting (ACTG) Courses, Administrative Office Management (AOM) ...), printed only to 1,500 characters. This read loads the courses page again and prints the stretch of that answer past its opening. No model call.",
+ "college": "Merced College",
+ "outside_hosts": {
+  "app.coursedog.com": "Merced's catalog vendor: the catalog's own scripts on catalog.mccd.edu call it (merced_coursedog_pdf.json)."
+ },
+ "questions": {
+  "subjects": "Every subject heading the catalog's course index prints, with its code."
+ },
+ "keywords": [
+  "\\([A-Z&]{1,8}\\)"
+ ],
+ "pages": [
+  {
+   "url": "https://catalog.mccd.edu/courses",
+   "answers": [
+    "subjects"
+   ],
+   "network": true,
+   "network_hosts": [
+    "app.coursedog.com"
+   ],
+   "network_find": [
+    "Allied Healt",
+    "</ul>"
+   ]
+  }
+ ]
+}

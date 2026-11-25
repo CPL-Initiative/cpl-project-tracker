@@ -1,0 +1,1002 @@
+{
+ "college": "Santa Monica College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:51:41Z",
+ "run": "45627087073",
+ "plan": "kb/college_reads/subject_index_santa_monica.json",
+ "titles": [
+  {
+   "code": "ACCTG",
+   "title": "Accounting",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=1",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 29
+  },
+  {
+   "code": "AD JUS",
+   "title": "Administration of Justice",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=1",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 7
+  },
+  {
+   "code": "AHIS",
+   "title": "Art History",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=1",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 14
+  },
+  {
+   "code": "ANATMY",
+   "title": "Biological Sciences",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=2",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 2
+  },
+  {
+   "code": "ANIM",
+   "title": "Animation",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=1",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 30
+  },
+  {
+   "code": "ANTHRO",
+   "title": "Anthropology",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=1",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 17
+  },
+  {
+   "code": "AQUA",
+   "title": "Aquaculture",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=1",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 12
+  },
+  {
+   "code": "ARABIC",
+   "title": "Arabic",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=1",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 2
+  },
+  {
+   "code": "ARC",
+   "title": "Architecture",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=1",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 18
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=1",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 52
+  },
+  {
+   "code": "ART",
+   "title": "Art – Noncredit",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=1",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 6
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=1",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 2
+  },
+  {
+   "code": "ARTS",
+   "title": "Art",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=1",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 3
+  },
+  {
+   "code": "ASL",
+   "title": "American Sign Language",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=1",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 3
+  },
+  {
+   "code": "ASTRON",
+   "title": "Astronomy",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=1",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 10
+  },
+  {
+   "code": "AUTO",
+   "title": "Automotive Technology",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=1",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 10
+  },
+  {
+   "code": "BCYCLE",
+   "title": "Bicycle Maintenance – Noncredit",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=2",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 2
+  },
+  {
+   "code": "BIOL",
+   "title": "Biological Sciences",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=2",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 25
+  },
+  {
+   "code": "BOTANY",
+   "title": "Biological Sciences",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=2",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 2
+  },
+  {
+   "code": "BUS",
+   "title": "Business",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=2",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 80
+  },
+  {
+   "code": "BUS",
+   "title": "Business – Noncredit",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=2",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 4
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=2",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 12
+  },
+  {
+   "code": "CHNESE",
+   "title": "Chinese",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=2",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 7
+  },
+  {
+   "code": "CIS",
+   "title": "Computer Information Systems",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=2",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 41
+  },
+  {
+   "code": "CIS",
+   "title": "Computer Information Systems – Noncredit",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=2",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 2
+  },
+  {
+   "code": "COM ST",
+   "title": "Communication Studies",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=2",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 16
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=2",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 1
+  },
+  {
+   "code": "COSM",
+   "title": "Cosmetology",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=2",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 53
+  },
+  {
+   "code": "COUNS",
+   "title": "Counseling: Disabled Student Services",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=2",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 19
+  },
+  {
+   "code": "COUNS",
+   "title": "Counseling",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=2",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 17
+  },
+  {
+   "code": "COUNS",
+   "title": "Counseling: Disabled Student Services – Noncredit",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=2",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 4
+  },
+  {
+   "code": "COUNS",
+   "title": "Counseling: Noncredit",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=2",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 3
+  },
+  {
+   "code": "CS",
+   "title": "Computer Science",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=2",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 93
+  },
+  {
+   "code": "DANCE",
+   "title": "Dance: Technique and Performance",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=3",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 57
+  },
+  {
+   "code": "DANCE",
+   "title": "Dance: Appreciation and History",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=3",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 4
+  },
+  {
+   "code": "DESIGN",
+   "title": "Graphic Design",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=6",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 25
+  },
+  {
+   "code": "DMPOST",
+   "title": "Digital Media Post-Production",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=3",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 17
+  },
+  {
+   "code": "ECE",
+   "title": "Early Childhood Education",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=3",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 37
+  },
+  {
+   "code": "ECE",
+   "title": "Early Childhood Education – Noncredit",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=3",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 10
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=3",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 11
+  },
+  {
+   "code": "EDUC",
+   "title": "Education",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=3",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 2
+  },
+  {
+   "code": "ENERGY",
+   "title": "Energy Efficiency",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=4",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 3
+  },
+  {
+   "code": "ENGL",
+   "title": "English – Literature",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=5",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 37
+  },
+  {
+   "code": "ENGL",
+   "title": "English – Composition",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=5",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 7
+  },
+  {
+   "code": "ENGL",
+   "title": "English – Creative Writing",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=5",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 6
+  },
+  {
+   "code": "ENGL",
+   "title": "English – Fundamentals",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=5",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 4
+  },
+  {
+   "code": "ENGL",
+   "title": "English – Noncredit",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=5",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 1
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=4",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 9
+  },
+  {
+   "code": "ENVRN",
+   "title": "Environmental Studies",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=5",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 7
+  },
+  {
+   "code": "ESL",
+   "title": "ESL – Noncredit",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=5",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 23
+  },
+  {
+   "code": "ESL",
+   "title": "ESL – English as a Second Language",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=5",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 15
+  },
+  {
+   "code": "ET",
+   "title": "Entertainment Technology",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=5",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 6
+  },
+  {
+   "code": "ETH ST",
+   "title": "Ethnic Studies",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=5",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 5
+  },
+  {
+   "code": "FASHN",
+   "title": "Fashion Design and Merchandising",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=5",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 28
+  },
+  {
+   "code": "FILM",
+   "title": "Film Studies",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=5",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 30
+  },
+  {
+   "code": "FRENCH",
+   "title": "French",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=5",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 10
+  },
+  {
+   "code": "GAME",
+   "title": "Game Design",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=5",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 6
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=5",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 19
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=5",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 14
+  },
+  {
+   "code": "GERMAN",
+   "title": "German",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=6",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 6
+  },
+  {
+   "code": "GIS",
+   "title": "Geographic Information Systems",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=5",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 8
+  },
+  {
+   "code": "GLOBAL",
+   "title": "Global Studies",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=6",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 5
+  },
+  {
+   "code": "HEALTH",
+   "title": "Health – Noncredit",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=6",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 12
+  },
+  {
+   "code": "HEALTH",
+   "title": "Health Education",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=6",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 9
+  },
+  {
+   "code": "HEALTH",
+   "title": "Health Occupations",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=6",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 1
+  },
+  {
+   "code": "HEBREW",
+   "title": "Hebrew",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=6",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 5
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=6",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 40
+  },
+  {
+   "code": "HUM",
+   "title": "Humanities",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=6",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 4
+  },
+  {
+   "code": "IARC",
+   "title": "Interior Architectural Design",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=6",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 17
+  },
+  {
+   "code": "ITAL",
+   "title": "Italian",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=6",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 6
+  },
+  {
+   "code": "IXD",
+   "title": "Interaction Design",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=6",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 20
+  },
+  {
+   "code": "JAPAN",
+   "title": "Japanese",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=6",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 7
+  },
+  {
+   "code": "JOURN",
+   "title": "Journalism",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=7",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 15
+  },
+  {
+   "code": "KIN PE",
+   "title": "Kinesiology/Physical Education: Fitness",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=7",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 27
+  },
+  {
+   "code": "KIN PE",
+   "title": "Kinesiology/Physical Education: Individual Sports",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=7",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 26
+  },
+  {
+   "code": "KIN PE",
+   "title": "Kinesiology/Physical Education: Team Sports",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=7",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 22
+  },
+  {
+   "code": "KIN PE",
+   "title": "Kinesiology/Physical Education: Aquatics",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=7",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 13
+  },
+  {
+   "code": "KIN PE",
+   "title": "Kinesiology/Physical Education: Combatives",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=7",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 8
+  },
+  {
+   "code": "KIN PE",
+   "title": "Kinesiology/Physical Education",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=7",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 2
+  },
+  {
+   "code": "KOREAN",
+   "title": "Korean",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=7",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 9
+  },
+  {
+   "code": "LIBR",
+   "title": "Library Studies",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=7",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 1
+  },
+  {
+   "code": "LING",
+   "title": "Linguistics",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=7",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 2
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=7",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 38
+  },
+  {
+   "code": "MCRBIO",
+   "title": "Biological Sciences",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=2",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 1
+  },
+  {
+   "code": "MEDIA",
+   "title": "Media Studies",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=7",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 29
+  },
+  {
+   "code": "MUSIC",
+   "title": "Music",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=7",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 71
+  },
+  {
+   "code": "NPMGMT",
+   "title": "Non-Profit Management",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=8",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 6
+  },
+  {
+   "code": "NURSNG",
+   "title": "Nursing",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=8",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 44
+  },
+  {
+   "code": "NURSNG",
+   "title": "Nursing – Noncredit",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=8",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 1
+  },
+  {
+   "code": "NUTR",
+   "title": "Biological Sciences",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=2",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 11
+  },
+  {
+   "code": "NUTR",
+   "title": "Nutrition",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=2",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 11
+  },
+  {
+   "code": "OFTECH",
+   "title": "Office Technology",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=8",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 20
+  },
+  {
+   "code": "OT",
+   "title": "Occupational Therapy",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=8",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 1
+  },
+  {
+   "code": "PERSIN",
+   "title": "Persian",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=8",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 3
+  },
+  {
+   "code": "PHILOS",
+   "title": "Philosophy",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=8",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 17
+  },
+  {
+   "code": "PHOTO",
+   "title": "Photography",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=8",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 30
+  },
+  {
+   "code": "PHYS",
+   "title": "Biological Sciences",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=2",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 1
+  },
+  {
+   "code": "PHYSCS",
+   "title": "Physics",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=8",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 13
+  },
+  {
+   "code": "POL SC",
+   "title": "Political Science",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=8",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 15
+  },
+  {
+   "code": "POL SC",
+   "title": "Political Science – Noncredit",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=8",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 1
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=8",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 1
+  },
+  {
+   "code": "PORTGS",
+   "title": "Portuguese",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=9",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 3
+  },
+  {
+   "code": "PRO CR",
+   "title": "Professional Courses In Kinesiology/Physical Education",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=9",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 29
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=9",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 1
+  },
+  {
+   "code": "PSYCH",
+   "title": "Psychology",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=9",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 17
+  },
+  {
+   "code": "PV",
+   "title": "Photovoltaic Systems",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=8",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 3
+  },
+  {
+   "code": "RC",
+   "title": "Respiratory Care",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=9",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 30
+  },
+  {
+   "code": "REALES",
+   "title": "Real Estate",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=9",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 5
+  },
+  {
+   "code": "REL ST",
+   "title": "Religious Studies",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=9",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 2
+  },
+  {
+   "code": "RES TH",
+   "title": "Respiratory Therapy",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=9",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 6
+  },
+  {
+   "code": "RUSS",
+   "title": "Russian",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=9",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 4
+  },
+  {
+   "code": "SCI",
+   "title": "Science – General Studies",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=9",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 1
+  },
+  {
+   "code": "SMM",
+   "title": "Sustainable Materials Management",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=10",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 4
+  },
+  {
+   "code": "SOCIOL",
+   "title": "Sociology",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=9",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 11
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=9",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 14
+  },
+  {
+   "code": "SST",
+   "title": "Sustainability Systems and Technology – Noncredit",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=9",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 7
+  },
+  {
+   "code": "STAT",
+   "title": "Mathematics",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=7",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 1
+  },
+  {
+   "code": "STUGOV",
+   "title": "Student Activities",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=9",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 1
+  },
+  {
+   "code": "SWHS",
+   "title": "Social Work and Human Services",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=9",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 3
+  },
+  {
+   "code": "TH ART",
+   "title": "Theatre Arts",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=10",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 43
+  },
+  {
+   "code": "URBAN",
+   "title": "Urban Studies",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=10",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 1
+  },
+  {
+   "code": "VAR PE",
+   "title": "Varsity Intercollegiate Athletics",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=10",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 26
+  },
+  {
+   "code": "WGS",
+   "title": "Women’s, Gender, and Sexuality Studies",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=10",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 9
+  },
+  {
+   "code": "ZOOL",
+   "title": "Biological Sciences",
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=2",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 1
+  }
+ ],
+ "note": "The Course Finder (subject-finder.php, ten pages) prints each section's heading above its courses and no code beside the heading; a code is filed under each heading that prints over its courses, with the count, most first. The headings are the finder's own SUBJECT list (run 45626064651). Sections group several codes: Biological Sciences heads ANATMY, BIOL, BOTANY, MCRBIO, NUTR, PHYS and ZOOL. ERTHSC is left out: its one course (ERTHSC 88A) prints inside the Anthropology section, under no heading of its own."
+}

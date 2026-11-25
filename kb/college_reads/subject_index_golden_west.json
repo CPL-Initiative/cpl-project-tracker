@@ -1,0 +1,27 @@
+{
+ "_readme": "S730 subject-title hunt (group html_a), 2026-11-25, under Sam's ask in session S730: the catalog's printed heading for each course subject code, for the local subject titles that decide each code's common subject (ruling r-no-mid-on-a-stray-code-sam-2026-11-25). One load of the course-descriptions index, which lists every subject as 'Title (CODE)'. No model call. Coastline's course-descriptions page on the same host links its subjects from Credit Courses and Noncredit Courses (run 45626395872), so this read goes to those two pages. Two loads.",
+ "college": "Golden West College",
+ "questions": {
+  "subjects": "Each subject the course-descriptions index lists, with its printed title and code."
+ },
+ "keywords": [
+  "\\([A-Z]{2,7}\\)"
+ ],
+ "capture_lines": 4000,
+ "pages": [
+  {
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "answers": [
+    "subjects"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/noncredit-courses/",
+   "answers": [
+    "subjects"
+   ],
+   "capture_view": true
+  }
+ ]
+}

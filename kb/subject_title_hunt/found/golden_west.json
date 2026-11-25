@@ -1,0 +1,443 @@
+{
+ "college": "Golden West College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:55:57Z",
+ "run": "45628303101",
+ "plan": "kb/college_reads/subject_index_golden_west.json",
+ "titles": [
+  {
+   "code": "ACCT",
+   "title": "Accounting",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AFS",
+   "title": "African American Studies",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARTH",
+   "title": "Art",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASAM",
+   "title": "Asian American Studies",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AUTO",
+   "title": "Automotive Technology",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BUS",
+   "title": "Business",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CMST",
+   "title": "Communication Studies",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CS",
+   "title": "Computer Science",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COSM",
+   "title": "Cosmetology",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COUN",
+   "title": "Counseling",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CJ",
+   "title": "Criminal Justice",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DANC",
+   "title": "Dance",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DART",
+   "title": "Digital Arts",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DRAF",
+   "title": "Drafting",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EDUC",
+   "title": "Education",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETHS",
+   "title": "Ethnic Studies",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GLST",
+   "title": "Global Studies",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HLED",
+   "title": "Health Education",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ATHL",
+   "title": "Intercollegiate Athletics",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "INTR",
+   "title": "Interpreting",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KIN",
+   "title": "Kinesiology",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LRSK",
+   "title": "Learning Skills",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LIBR",
+   "title": "Library",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MGMT",
+   "title": "Management",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MKTG",
+   "title": "Marketing",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STAT",
+   "title": "Mathematics",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUS",
+   "title": "Music",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NURS",
+   "title": "Nursing",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHOT",
+   "title": "Photography",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PE",
+   "title": "Physical Education",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHSC",
+   "title": "Physical Science",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSCI",
+   "title": "Political Science",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SIGN",
+   "title": "Sign",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SWHS",
+   "title": "Social Work/Human Services",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "THEA",
+   "title": "Theater Arts",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "TUTR",
+   "title": "Tutoring",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "VIET",
+   "title": "Vietnamese",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WORK",
+   "title": "Work Experience",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CBA",
+   "title": "Computer Business Applications",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/noncredit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ELL",
+   "title": "English Language Learning",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/noncredit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GED",
+   "title": "General Education Development",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/noncredit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LIFE",
+   "title": "Lifeguard",
+   "url": "https://catalog.cccd.edu/golden-west/course-descriptions/noncredit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ]
+}

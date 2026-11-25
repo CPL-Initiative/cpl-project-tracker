@@ -1,0 +1,935 @@
+{
+ "college": "Pasadena City College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:49:04Z",
+ "run": "45625259489,45626788039",
+ "plan": "kb/college_reads/subject_index_pasadena_city.json",
+ "titles": [
+  {
+   "code": "ABE",
+   "title": "ADULT BASIC EDUCATION",
+   "url": "https://curriculum.pasadena.edu/noncredit-courses/abe/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ACCT",
+   "title": "ACCOUNTING",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/acct/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AGPS",
+   "title": "AGRICULTURE PLANT SCIENCE",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/agps/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AHSD",
+   "title": "ADULT HIGH SCHOOL DIPLOMA",
+   "url": "https://curriculum.pasadena.edu/noncredit-courses/ahsd/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AJ",
+   "title": "ADMINISTRATION OF JUSTICE",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/aj/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANAT",
+   "title": "ANATOMY",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/anat/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANTH",
+   "title": "ANTHROPOLOGY",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/anth/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARBC",
+   "title": "ARABIC",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/arbc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARCH",
+   "title": "ARCHITECTURE",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/arch/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARMN",
+   "title": "ARMENIAN",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/armn/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ART",
+   "title": "ART",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/art/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARTH",
+   "title": "ART HISTORY",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/arth/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASL",
+   "title": "AMERICAN SIGN LANGUAGE",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/asl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASTR",
+   "title": "ASTRONOMY",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/astr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AT",
+   "title": "ANESTHESIA TECHNOLOGY",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/at/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AUTO",
+   "title": "AUTOMOTIVE TECHNOLOGY",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/auto/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIOL",
+   "title": "BIOLOGY",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/biol/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIT",
+   "title": "BUSINESS INFORMATION TECHNOLOGY",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/bit/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BLDG",
+   "title": "BUILDING CONSTRUCTION",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/bldg/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BLDN",
+   "title": "BUILDING CONSTRUCTION NONCRED",
+   "url": "https://curriculum.pasadena.edu/noncredit-courses/bldn/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BUS",
+   "title": "BUSINESS",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/bus/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BUSN",
+   "title": "BUSINESS NONCREDIT",
+   "url": "https://curriculum.pasadena.edu/noncredit-courses/busn/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHDN",
+   "title": "CHILD DEVELOPMENT NONCREDIT",
+   "url": "https://curriculum.pasadena.edu/noncredit-courses/chdn/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHDV",
+   "title": "CHILD DEVELOPMENT",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/chdv/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHEM",
+   "title": "CHEMISTRY",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/chem/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHIN",
+   "title": "CHINESE",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/chin/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CINE",
+   "title": "CINEMA",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/cine/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CIS",
+   "title": "COMPUTER INFORMATION SYSTEMS",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/cis/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COLL",
+   "title": "COLLEGE",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/coll/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "COMMUNICATION",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/comm/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COSM",
+   "title": "COSMETOLOGY",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/cosm/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COUN",
+   "title": "COUNSELING",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/coun/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CS",
+   "title": "COMPUTER SCIENCE",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/cs/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CSTN",
+   "title": "CENTRAL STERILE PROCESSING TECHNICIAN",
+   "url": "https://curriculum.pasadena.edu/noncredit-courses/cstn/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DA",
+   "title": "DENTAL ASSISTING",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/da/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DANC",
+   "title": "DANCE",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/danc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DH",
+   "title": "DENTAL HYGIENE",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/dh/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DMA",
+   "title": "DESIGN MEDIA ART",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/dma/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DSPS",
+   "title": "DISABLED STUDENT PROGRAMS & SERVICES",
+   "url": "https://curriculum.pasadena.edu/noncredit-courses/dsps/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DT",
+   "title": "DESIGN TECHNOLOGY",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/dt/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "ECONOMICS",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/econ/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EDUC",
+   "title": "EDUCATION",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/educ/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ELTN",
+   "title": "ELECTRONICS",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/eltn/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ELTY",
+   "title": "ELECTRICITY",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/elty/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EMED",
+   "title": "EMERGENCY MEDICAL TECH",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/emed/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "ENGLISH",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/engl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGR",
+   "title": "ENGINEERING",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/engr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENVS",
+   "title": "ENVIRONMENTAL STUDIES",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/envs/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESL",
+   "title": "ENGLISH AS A SECOND LANGUAGE",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/esl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESLN",
+   "title": "ESL NONCREDIT",
+   "url": "https://curriculum.pasadena.edu/noncredit-courses/esln/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESLV",
+   "title": "ESL VOCATIONAL NONCREDIT",
+   "url": "https://curriculum.pasadena.edu/noncredit-courses/eslv/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETH",
+   "title": "ETHNIC STUDIES",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/eth/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EVST",
+   "title": "ELECTRIC VEHICLE CHARGING STATION TECHNICIAN",
+   "url": "https://curriculum.pasadena.edu/noncredit-courses/evst/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FASH",
+   "title": "FASHION",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/fash/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FIRE",
+   "title": "FIRE TECHNOLOGY",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/fire/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FLNG",
+   "title": "FOREIGN LANGUAGE",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/flng/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FRNC",
+   "title": "FRENCH",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/frnc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "GEOGRAPHY",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/geog/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOL",
+   "title": "GEOLOGY",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/geol/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GERO",
+   "title": "GERONTOLOGY",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/gero/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GLBL",
+   "title": "GLOBAL STUDIES",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/glbl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GRFN",
+   "title": "GRAPHIC DESIGN NONCREDIT",
+   "url": "https://curriculum.pasadena.edu/noncredit-courses/grfn/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GRMN",
+   "title": "GERMAN",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/grmn/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HED",
+   "title": "HEALTH EDUCATION",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/hed/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "HISTORY",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/hist/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HLSC",
+   "title": "HEALTH SCIENCE",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/hlsc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HLTN",
+   "title": "HEALTH NONCREDIT",
+   "url": "https://curriculum.pasadena.edu/noncredit-courses/hlsc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HOSP",
+   "title": "HOSPITALITY",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/hosp/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HSE",
+   "title": "HIGH SCHOOL EQUIVALENCY PREPARATION",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/hse/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HSN",
+   "title": "HIGH SCHOOL NONCREDT",
+   "url": "https://curriculum.pasadena.edu/noncredit-courses/hsn/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HUM",
+   "title": "HUMANITIES",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/hum/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "IMME",
+   "title": "IMMIGRANT EDUCATION",
+   "url": "https://curriculum.pasadena.edu/noncredit-courses/imme/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ITAL",
+   "title": "ITALIAN",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/ital/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JAMN",
+   "title": "JAM - COLLEGE READINESS NONCREDIT",
+   "url": "https://curriculum.pasadena.edu/noncredit-courses/jamn/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JAPN",
+   "title": "JAPANESE",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/japn/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JOUR",
+   "title": "JOURNALISM",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/jour/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KATH",
+   "title": "KINESIOLOGY ATHLETICS",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/kath/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KINA",
+   "title": "KINESIOLOGY ACTIVITY",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/kina/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KINT",
+   "title": "KINESIOLOGY THEORY",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/kint/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LAC",
+   "title": "LEARNING ASSISTANCE",
+   "url": "https://curriculum.pasadena.edu/noncredit-courses/lac/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LASR",
+   "title": "LASER TECHNOLOGY",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/lasr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LATN",
+   "title": "LATIN",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/latn/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LIB",
+   "title": "LIBRARY",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/lib/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LING",
+   "title": "LINGUISTICS",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/ling/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MA",
+   "title": "MEDICAL ASSISTING",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/ma/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MACH",
+   "title": "MACHINE SHOP",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/mach/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATH",
+   "title": "MATHEMATICS",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/math/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATN",
+   "title": "MATHEMATICS - NONCREDIT",
+   "url": "https://curriculum.pasadena.edu/noncredit-courses/matn/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MICR",
+   "title": "MICROBIOLOGY",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/micr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MIT",
+   "title": "MANUFACTURING & INDUSTRIAL TECH",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/mit/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MRKT",
+   "title": "MARKETING",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/mrkt/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUSC",
+   "title": "MUSIC",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/musc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUSP",
+   "title": "POPULAR MUSIC",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/musp/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NURS",
+   "title": "NURSING",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/nurs/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NUTR",
+   "title": "NUTRITION",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/nutr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "OLAD",
+   "title": "OLDER ADULTS",
+   "url": "https://curriculum.pasadena.edu/noncredit-courses/olad/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PAR",
+   "title": "PARENT EDUCATION",
+   "url": "https://curriculum.pasadena.edu/noncredit-courses/par/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PCAN",
+   "title": "PERSONAL CARE ATTENDANT NC",
+   "url": "https://curriculum.pasadena.edu/noncredit-courses/pcan/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PDF",
+   "title": "Download Page",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/course-descriptions.pdf",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHCA",
+   "title": "PERSONAL HEALTH CARE ASSISTANT",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/phca/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHIL",
+   "title": "PHILOSOPHY",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/phil/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHOT",
+   "title": "PHOTOGRAPHY",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/phot/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHRM",
+   "title": "PHARMACOLOGY",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/phrm/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHSC",
+   "title": "PHYSICAL SCIENCE",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/phsc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYS",
+   "title": "PHYSICS",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/phys/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PLGL",
+   "title": "PARALEGAL STUDIES",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/plgl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PLMB",
+   "title": "PIPEFITTING/PLUMBING",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/plmb/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLS",
+   "title": "POLITICAL SCIENCE",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/pols/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PORT",
+   "title": "PORTUGUESE",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/port/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSYC",
+   "title": "PSYCHOLOGY",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/psyc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PYSO",
+   "title": "PHYSIOLOGY",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/pyso/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RDT",
+   "title": "RESTORATIVE DENTAL TECHNOLOGY",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/rdt/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RDTC",
+   "title": "RADIOLOGIC TECHNOLOGY",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/rdtc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RELG",
+   "title": "RELIGIOUS STUDIES",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/relg/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RUSS",
+   "title": "RUSSIAN",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/russ/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SLPA",
+   "title": "SPEECH LANGUAGE PATHOLOGY ASSISTANT",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/slpa/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOC",
+   "title": "SOCIOLOGY",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/soc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOSC",
+   "title": "SOCIAL SCIENCES",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/sosc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "SPANISH",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/span/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPCH",
+   "title": "SPEECH COMMUNICATION",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/spch/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPSV",
+   "title": "SPECIAL SERVICES",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/spsv/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STAT",
+   "title": "STATISTICS",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/stat/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SWHS",
+   "title": "SOCIAL WORK AND HUMAN SERVICES",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/swhs/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "TECH",
+   "title": "TECHNICAL EDUCATION",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/tech/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "THRT",
+   "title": "THEATER ARTS",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/thrt/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "TRLN",
+   "title": "TRANSLATION",
+   "url": "https://curriculum.pasadena.edu/noncredit-courses/trln/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "TVR",
+   "title": "TELEVISION AND RADIO",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/tvr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WELD",
+   "title": "WELDING",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/weld/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WEXP",
+   "title": "WORK EXPERIENCE/INTERNSHIP",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/wexp/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WFT",
+   "title": "WILDLAND FIRE TECHNOLOGY",
+   "url": "https://curriculum.pasadena.edu/course-descriptions/wft/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WRKP",
+   "title": "WORKFORCE PREPARATION",
+   "url": "https://curriculum.pasadena.edu/noncredit-courses/wrkp/",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ],
+ "not_listed": {
+  "codes": [
+   "DLT",
+   "MAN",
+   "SET",
+   "SPEA"
+  ],
+  "why": "The hunt list names these codes, and the index this read loaded prints no subject for them."
+ }
+}

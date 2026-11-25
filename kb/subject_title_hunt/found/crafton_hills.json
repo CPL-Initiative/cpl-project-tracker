@@ -1,0 +1,531 @@
+{
+ "college": "Crafton Hills College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:49:04Z",
+ "run": "45626788039",
+ "plan": "kb/college_reads/subject_index_crafton_hills.json",
+ "titles": [
+  {
+   "code": "ACCT",
+   "title": "Accounting",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/acct-accounting",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AH",
+   "title": "Allied Health",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/ah-allied-health",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANAT",
+   "title": "Anatomy",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/anat-anatomy",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/anth-anthropology",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/art-art",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASL",
+   "title": "American Sign Language",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/asl-american-sign-language",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASL/N",
+   "title": "American Sign Language (Noncredit)",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-courses/asln-american-sign-language-noncredit",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/astr-astronomy",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/biol-biology",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BUSAD",
+   "title": "Business Administration",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/busad-business-administration",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CDEV",
+   "title": "Child Development",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/cdev-child-development",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHC",
+   "title": "College Life",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/chc-college-life",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/chem-chemistry",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CIS",
+   "title": "Computer Information Systems",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/cis-computer-information-systems",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CIS/N",
+   "title": "Computer Information Systems (Noncredit)",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-courses/cisn-computer-information-systems-noncredit",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CNA/N",
+   "title": "Certified Nursing Assistant (Noncredit)",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-courses/cnan-certified-nursing-assistant-noncredit",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COA/N",
+   "title": "Course for Older Adults (Noncredit)",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-courses/coan-course-for-older-adults-noncredit",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/comm-communication-studies",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COUN",
+   "title": "Counseling",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/coun-counseling",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CSCI",
+   "title": "Computer Science",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/csci-computer-science",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DANCE",
+   "title": "Dance",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/dance-dance",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EA",
+   "title": "Educational Assistance",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/ea-educational-assistance",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/econ-economics",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EDU",
+   "title": "Education",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/edu-education",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EMS",
+   "title": "Emergency Medical Services",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/ems-emergency-medical-services",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/engl-english",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/engr-engineering",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESL/N",
+   "title": "English as a Second Language (Noncredit)",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-courses/esln-english-as-a-second-language-noncredit",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETHS",
+   "title": "Ethnic Studies",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/eths-ethnic-studies",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FIRET",
+   "title": "Fire Technology",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/firet-fire-technology",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/geog-geography",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/geol-geology",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HEALTH",
+   "title": "Health Education",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/health-health-education",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/hist-history",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIT",
+   "title": "Health Information Technologies",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/hit-health-information-technologies",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HSE/N",
+   "title": "Health and Safety Education (Noncredit)",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-courses/hsen-health-and-safety-education-noncredit",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HUM",
+   "title": "Humanities",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/hum-humanities",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "IEC/N",
+   "title": "Immigrant Education Including Citizenship (Noncredit)",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-courses/iecn-immigrant-education-including-citizenship-noncredit",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JOUR",
+   "title": "Journalism",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/jour-journalism",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KIN",
+   "title": "Kinesiology",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/kin-kinesiology",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KIN/D",
+   "title": "Kinesiology (Dance)",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/kind-dance",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KIN/F",
+   "title": "Kinesiology (Fitness Activities)",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/kinf-fitness-activities",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KIN/N",
+   "title": "Kinesiology and Health Education (Noncredit)",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-courses/kinn-kinesiology-and-health-education-noncredit",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KIN/S",
+   "title": "Kinesiology (Sports Activities)",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/kins-sport-activities",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KIN/X",
+   "title": "Kinesiology (Athletics)",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/kinx-athletics",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LIBR",
+   "title": "Library Science",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/libr-library-science",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LRC",
+   "title": "Learning Resources",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/lrc-learning-resources",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MARKET",
+   "title": "Marketing",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/market-marketing",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/math-mathematics",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATH/N",
+   "title": "Mathematics (Noncredit)",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-courses/mathn-mathematics-noncredit",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MICRO",
+   "title": "Microbiology",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/micro-microbiology",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MULTI",
+   "title": "Multimedia",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/multi-multimedia",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUSIC",
+   "title": "Music",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/music-music",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "OCEAN",
+   "title": "Oceanography",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/ocean-oceanography",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PBSF",
+   "title": "Public Safety and Services",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/pbsf-public-safety-and-services",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/phil-philosophy",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYSIC",
+   "title": "Physics",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/physic-physics",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/pols-political-science",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/psyc-psychology",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RADIOL",
+   "title": "Radiologic Technology",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/radiol-radiologic-technology",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "READ",
+   "title": "Reading and Study Skills",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/read-reading-and-study-skills",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RELIG",
+   "title": "Religious Studies",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/relig-religious-studies",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RESP",
+   "title": "Respiratory Care",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/resp-respiratory-care",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOCI",
+   "title": "Sociology",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/soci-sociology",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOWO",
+   "title": "Social Work",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/sowo-social-science",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/span-spanish",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "THART",
+   "title": "Theatre Arts",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/thart-theatre-arts",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "THART/S",
+   "title": "Theatre Arts (Stagecraft)",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/tharts-theatre-arts-stagecraft",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "VNUR",
+   "title": "Vocational Nursing",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/vnur-vocational-nursing",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "VNUR/N",
+   "title": "Vocational Nursing (Noncredit)",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-courses/vnurn-vocational-nursing-noncredit",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WFP/N",
+   "title": "Workforce Preparation (Noncredit)",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-courses/wfpn-workforce-prep-noncredit",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WKEXP",
+   "title": "Work Experience",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-courses/wkexp-work-experience",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ],
+ "not_listed": {
+  "codes": [
+   "ANTHRO",
+   "CD",
+   "JAPN",
+   "KINS",
+   "KINX",
+   "PTA",
+   "READ/N",
+   "SLPA",
+   "SOC",
+   "SPEECH",
+   "STAT",
+   "WRIT/N",
+   "span"
+  ],
+  "why": "The hunt list names these codes, and the index this read loaded prints no subject for them."
+ }
+}

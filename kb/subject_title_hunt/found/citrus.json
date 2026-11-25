@@ -1,0 +1,562 @@
+{
+ "college": "Citrus College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:29:42Z",
+ "run": "45623961538",
+ "plan": "kb/college_reads/subject_index_citrus.json",
+ "titles": [
+  {
+   "code": "ACCT",
+   "title": "Accounting",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AJ",
+   "title": "Administration of Justice",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASL",
+   "title": "American Sign Language",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARCH",
+   "title": "Architecture",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARTH",
+   "title": "Art",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AUTO",
+   "title": "Automotive Technology",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BARB",
+   "title": "Barbering",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIOT",
+   "title": "Biotechnology",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BUS",
+   "title": "Business",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHLD",
+   "title": "Child Development",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHIN",
+   "title": "Chinese",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "Communications",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CS",
+   "title": "Computer Science",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CM",
+   "title": "Construction Management",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COS",
+   "title": "Cosmetology",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COUN",
+   "title": "Counseling",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CLNU",
+   "title": "Culinary Nutrition",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DANC",
+   "title": "Dance",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DENT",
+   "title": "Dental Assisting",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DRAF",
+   "title": "Drafting Technology",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESCI",
+   "title": "Earth Science",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EAC",
+   "title": "Educational Assistance Courses",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESL",
+   "title": "English Second Language",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESTH",
+   "title": "Esthetician",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETHN",
+   "title": "Ethnic Studies",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EOPS",
+   "title": "Extended Opportunity Programs and Services",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FOR",
+   "title": "Forestry",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FREN",
+   "title": "French",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GAME",
+   "title": "Game",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GER",
+   "title": "German",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HEAL",
+   "title": "Health Sciences",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HUM",
+   "title": "Humanities",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ITIS",
+   "title": "Info Tech & Info Systems",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ITAL",
+   "title": "Italian",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JPN",
+   "title": "Japanese",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KIN",
+   "title": "Kinesiology",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KINC",
+   "title": "Kinesiology-Comp Athletics",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LIBT",
+   "title": "Library Technology",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STAT",
+   "title": "Mathematics",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MTRK",
+   "title": "Medium & Heavy Diesel Truck Tech",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUSC",
+   "title": "Music-Commercial",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUSE",
+   "title": "Music-Education",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUSP",
+   "title": "Music-Performance",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NAT",
+   "title": "Natural History",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NC",
+   "title": "Non-Credit",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NRS",
+   "title": "Nursing",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "OFF",
+   "title": "Office Technology",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHTO",
+   "title": "Photography",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLI",
+   "title": "Political Science",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PMET",
+   "title": "Production Management and Engineering Technology",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSY",
+   "title": "Psychology",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PUB",
+   "title": "Public Works",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "REAL",
+   "title": "Real Estate",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "REC",
+   "title": "Recording Technology",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RNRS",
+   "title": "Registered Nursing",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STEM",
+   "title": "Science, Technology, Engineering & Math",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPCH",
+   "title": "Speech",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPWG",
+   "title": "Stationary Power Generation",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "THEA",
+   "title": "Theatre Arts",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "UAS",
+   "title": "Uncrewed Aerial Systems",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "VNRS",
+   "title": "Vocational Nursing",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WATR",
+   "title": "Water Technology",
+   "url": "https://catalog.citruscollege.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ]
+}

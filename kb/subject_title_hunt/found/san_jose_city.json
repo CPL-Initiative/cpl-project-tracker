@@ -1,0 +1,576 @@
+{
+ "college": "San Jose City College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:29:29Z",
+ "run": "45623798209",
+ "plan": "kb/college_reads/subject_index_san_jose_city.json",
+ "titles": [
+  {
+   "code": "ACCTG",
+   "title": "Accounting",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/acctg/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "APE",
+   "title": "Adapted Physical Education",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/ape/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AJ",
+   "title": "Administration of Justice",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/aj/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AIRC",
+   "title": "Air Conditioning",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/airc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ADS",
+   "title": "Alcohol and Drug Studies",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/ads/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/anth/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARABC",
+   "title": "Arabic",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/arabc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/art/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARTH",
+   "title": "Art",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/art/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASTRO",
+   "title": "Astronomy",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/astro/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/biol/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BROAD",
+   "title": "Broadcasting",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/broad/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BUS",
+   "title": "Business",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/bus/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/chem/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/coms/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMS",
+   "title": "Communication Studies",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/coms/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CA",
+   "title": "Computer Applications",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/ca/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CGID",
+   "title": "Computer Graphics and Interactive Design",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/cgid/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CIS",
+   "title": "Computer Information Systems",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/cis/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CNSTR",
+   "title": "Construction Technology",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/cnstr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COS",
+   "title": "Cosmetology",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/cos/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DANCE",
+   "title": "Dance",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/dance/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DENT",
+   "title": "Dental Assisting",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/dent/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DSPS",
+   "title": "Disabled Students Programs and Services",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/dsps/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECE",
+   "title": "Early Childhood Education",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/ece/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/econ/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EDUC",
+   "title": "Education",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/educ/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ELECT",
+   "title": "Electrician",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/elect/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EMS",
+   "title": "Emergency Medical Services",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/ems/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETEC",
+   "title": "Emerging Technology",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/etec/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/engl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/engr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESL",
+   "title": "English As a Second Language",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/esl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENVIR",
+   "title": "Environmental Science",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/envir/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESTI",
+   "title": "Esthetics",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/esti/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETH",
+   "title": "Ethnic Studies",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/eth/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FMT",
+   "title": "Facilities Maintenance Technology",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/fmt/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FCS",
+   "title": "Family and Consumer Studies",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/fcs/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FREN",
+   "title": "French",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/fren/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/geog/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/geol/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GLOBL",
+   "title": "Global Studies",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/globl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GUIDE",
+   "title": "Guidance",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/guide/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HED",
+   "title": "Health Education",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/hed/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HSCI",
+   "title": "Health Science",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/hsci/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/hist/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HUMNT",
+   "title": "Humanities",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/humnt/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "IRON",
+   "title": "Ironworker Apprenticeship",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/iron/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JAPAN",
+   "title": "Japanese",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/japan/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JOURN",
+   "title": "Journalism",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/journ/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KIN",
+   "title": "Kinesiology, Wellness and Athletics",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/kin/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KINA",
+   "title": "Kinesiology-Athletics",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/kina/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KINAM",
+   "title": "Kinesiology-Athletics, Men",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/kinam/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KINAW",
+   "title": "Kinesiology-Athletics,Women",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/kinaw/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KINPE",
+   "title": "Kinesiology-Wellness",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/kinpe/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LASER",
+   "title": "Laser Technology",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/laser/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LS",
+   "title": "Learning Skills",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/ls/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LIB",
+   "title": "Library Studies",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/lib/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MACH",
+   "title": "Machine Technology",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/mach/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics/Statistics",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/math/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STAT",
+   "title": "Mathematics/Statistics",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/math/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MA",
+   "title": "Medical Assisting",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/ma/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "METEO",
+   "title": "Meteorology",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/meteo/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUSIC",
+   "title": "Music",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/music/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "OCEAN",
+   "title": "Oceanography",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/ocean/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/phil/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHOTO",
+   "title": "Photography",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/photo/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/phys/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/polsc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLSC",
+   "title": "Political Science",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/polsc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/psych/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSYCH",
+   "title": "Psychology",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/psych/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "READ",
+   "title": "Reading",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/read/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "REST",
+   "title": "Real Estate",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/rest/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SL",
+   "title": "Sign Language",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/sl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/soc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOLAR",
+   "title": "Solar & Renewable Energy",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/solar/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/span/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "THEAT",
+   "title": "Theatre Arts",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/theat/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "VIET",
+   "title": "Vietnamese",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/viet/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WE",
+   "title": "Work Experience",
+   "url": "https://catalog.sjcc.edu/course-descriptions-information/course-descriptions/we/",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ]
+}

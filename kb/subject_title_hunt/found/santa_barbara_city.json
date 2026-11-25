@@ -1,0 +1,763 @@
+{
+ "college": "Santa Barbara City College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:40:25Z",
+ "run": "45625259489",
+ "plan": "kb/college_reads/subject_index_santa_barbara_city.json",
+ "titles": [
+  {
+   "code": "ACCT",
+   "title": "Accounting",
+   "url": "https://catalog.sbcc.edu/course-descriptions/acct/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ADC",
+   "title": "Addictive Disorders Counseling",
+   "url": "https://catalog.sbcc.edu/course-descriptions/adc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AH",
+   "title": "Allied Health (Healthcare Interpreting and Medical Terminology)",
+   "url": "https://catalog.sbcc.edu/course-descriptions/ah/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AJ",
+   "title": "Justice Studies",
+   "url": "https://catalog.sbcc.edu/course-descriptions/aj/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://catalog.sbcc.edu/course-descriptions/anth/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARBC",
+   "title": "Arabic",
+   "url": "https://catalog.sbcc.edu/course-descriptions/arbc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://catalog.sbcc.edu/course-descriptions/art/",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed_code": "ART/ARTH"
+  },
+  {
+   "code": "ARTH",
+   "title": "Art",
+   "url": "https://catalog.sbcc.edu/course-descriptions/art/",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed_code": "ART/ARTH"
+  },
+  {
+   "code": "ASAM",
+   "title": "Asian-American Studies",
+   "url": "https://catalog.sbcc.edu/course-descriptions/asam/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASL",
+   "title": "American Sign Language",
+   "url": "https://catalog.sbcc.edu/course-descriptions/asl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AUTO",
+   "title": "Automotive Service and Technology",
+   "url": "https://catalog.sbcc.edu/course-descriptions/auto/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BARB",
+   "title": "Barbering",
+   "url": "https://catalog.sbcc.edu/course-descriptions/barb/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://catalog.sbcc.edu/course-descriptions/biol/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BLAW",
+   "title": "Business Law",
+   "url": "https://catalog.sbcc.edu/course-descriptions/blaw/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BLST",
+   "title": "Black Studies",
+   "url": "https://catalog.sbcc.edu/course-descriptions/blst/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BMS",
+   "title": "Bio-Medical Sciences",
+   "url": "https://catalog.sbcc.edu/course-descriptions/bms/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BOT",
+   "title": "Botany",
+   "url": "https://catalog.sbcc.edu/course-descriptions/bot/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BUS",
+   "title": "Business Administration",
+   "url": "https://catalog.sbcc.edu/course-descriptions/bus/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CA",
+   "title": "Culinary Arts",
+   "url": "https://catalog.sbcc.edu/course-descriptions/ca/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://catalog.sbcc.edu/course-descriptions/chem/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHIN",
+   "title": "Chinese",
+   "url": "https://catalog.sbcc.edu/course-descriptions/chin/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHST",
+   "title": "Chicano Studies",
+   "url": "https://catalog.sbcc.edu/course-descriptions/chst/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CIM",
+   "title": "Cancer Information Management",
+   "url": "https://catalog.sbcc.edu/course-descriptions/cim/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CIS",
+   "title": "Computer Information Systems",
+   "url": "https://catalog.sbcc.edu/course-descriptions/cis/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CNA",
+   "title": "Certified Nursing Assistant",
+   "url": "https://catalog.sbcc.edu/course-descriptions/cna/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CNEE",
+   "title": "Computer Network Engineering",
+   "url": "https://catalog.sbcc.edu/course-descriptions/cnee/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication",
+   "url": "https://catalog.sbcc.edu/course-descriptions/comm/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMP",
+   "title": "Computer Applications and Office Management",
+   "url": "https://catalog.sbcc.edu/course-descriptions/comp/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CS",
+   "title": "Computer Science",
+   "url": "https://catalog.sbcc.edu/course-descriptions/cs/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CSMT",
+   "title": "Cosmetology",
+   "url": "https://catalog.sbcc.edu/course-descriptions/csmt/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CT",
+   "title": "Construction Technology",
+   "url": "https://catalog.sbcc.edu/course-descriptions/ct/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DRFT",
+   "title": "Drafting/CAD",
+   "url": "https://catalog.sbcc.edu/course-descriptions/drft/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DSPS",
+   "title": "Disability Services and Programs",
+   "url": "https://catalog.sbcc.edu/course-descriptions/dsps/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECE",
+   "title": "Early Childhood Education",
+   "url": "https://catalog.sbcc.edu/course-descriptions/ece/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://catalog.sbcc.edu/course-descriptions/econ/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ED",
+   "title": "Education",
+   "url": "https://catalog.sbcc.edu/course-descriptions/ed/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EH",
+   "title": "Environmental Horticulture",
+   "url": "https://catalog.sbcc.edu/course-descriptions/eh/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EMT",
+   "title": "Emergency Medical Technician",
+   "url": "https://catalog.sbcc.edu/course-descriptions/emt/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENG",
+   "title": "English, Composition and Literature",
+   "url": "https://catalog.sbcc.edu/course-descriptions/eng/",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed_code": "ENG/ENGL"
+  },
+  {
+   "code": "ENGL",
+   "title": "English, Composition and Literature",
+   "url": "https://catalog.sbcc.edu/course-descriptions/eng/",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed_code": "ENG/ENGL"
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://catalog.sbcc.edu/course-descriptions/engr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENT",
+   "title": "Entrepreneurship",
+   "url": "https://catalog.sbcc.edu/course-descriptions/ent/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENVS",
+   "title": "Environmental Studies",
+   "url": "https://catalog.sbcc.edu/course-descriptions/envs/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ERTH",
+   "title": "Earth and Planetary Sciences",
+   "url": "https://catalog.sbcc.edu/course-descriptions/erth/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language",
+   "url": "https://catalog.sbcc.edu/course-descriptions/esl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETHS",
+   "title": "American Ethnic Studies",
+   "url": "https://catalog.sbcc.edu/course-descriptions/eths/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FIN",
+   "title": "Finance",
+   "url": "https://catalog.sbcc.edu/course-descriptions/fin/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FP",
+   "title": "Film and Television Production",
+   "url": "https://catalog.sbcc.edu/course-descriptions/fp/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FR",
+   "title": "French",
+   "url": "https://catalog.sbcc.edu/course-descriptions/fr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FS",
+   "title": "Film and Media Studies",
+   "url": "https://catalog.sbcc.edu/course-descriptions/fs/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GDP",
+   "title": "Graphic Design and Photography",
+   "url": "https://catalog.sbcc.edu/course-descriptions/gdp/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://catalog.sbcc.edu/course-descriptions/geog/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GER",
+   "title": "German",
+   "url": "https://catalog.sbcc.edu/course-descriptions/ger/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GLST",
+   "title": "Global Studies",
+   "url": "https://catalog.sbcc.edu/course-descriptions/glst/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HE",
+   "title": "Health Education",
+   "url": "https://catalog.sbcc.edu/course-descriptions/he/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HEBR",
+   "title": "Hebrew",
+   "url": "https://catalog.sbcc.edu/course-descriptions/hebr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://catalog.sbcc.edu/course-descriptions/hist/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIT",
+   "title": "Health Information Technology",
+   "url": "https://catalog.sbcc.edu/course-descriptions/hit/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HM",
+   "title": "Hotel Management",
+   "url": "https://catalog.sbcc.edu/course-descriptions/hm/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HNRS",
+   "title": "Honors",
+   "url": "https://catalog.sbcc.edu/course-descriptions/hnrs/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "IBUS",
+   "title": "International Business",
+   "url": "https://catalog.sbcc.edu/course-descriptions/ibus/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ID",
+   "title": "Interior Design",
+   "url": "https://catalog.sbcc.edu/course-descriptions/id/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ITAL",
+   "title": "Italian",
+   "url": "https://catalog.sbcc.edu/course-descriptions/ital/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JAPN",
+   "title": "Japanese",
+   "url": "https://catalog.sbcc.edu/course-descriptions/japn/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JOUR",
+   "title": "Journalism",
+   "url": "https://catalog.sbcc.edu/course-descriptions/jour/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LIBR",
+   "title": "Library",
+   "url": "https://catalog.sbcc.edu/course-descriptions/libr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MAT",
+   "title": "Multimedia Arts and Technologies",
+   "url": "https://catalog.sbcc.edu/course-descriptions/mat/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://catalog.sbcc.edu/course-descriptions/math/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MDT",
+   "title": "Marine Diving Technologies",
+   "url": "https://catalog.sbcc.edu/course-descriptions/mdt/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MGMT",
+   "title": "Management",
+   "url": "https://catalog.sbcc.edu/course-descriptions/mgmt/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MKT",
+   "title": "Marketing",
+   "url": "https://catalog.sbcc.edu/course-descriptions/mkt/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUS",
+   "title": "Music",
+   "url": "https://catalog.sbcc.edu/course-descriptions/mus/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NATA",
+   "title": "Native American Studies",
+   "url": "https://catalog.sbcc.edu/course-descriptions/nata/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NURS",
+   "title": "Nursing",
+   "url": "https://catalog.sbcc.edu/course-descriptions/nurs/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PD",
+   "title": "Personal Development",
+   "url": "https://catalog.sbcc.edu/course-descriptions/pd/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PDF",
+   "title": "Download Page",
+   "url": "https://catalog.sbcc.edu/course-descriptions/course-descriptions.pdf",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PE",
+   "title": "Physical Education/Health Education/Dance/Athletics",
+   "url": "https://catalog.sbcc.edu/course-descriptions/pe/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://catalog.sbcc.edu/course-descriptions/phil/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHOT",
+   "title": "Photography",
+   "url": "https://catalog.sbcc.edu/course-descriptions/phot/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHSC",
+   "title": "Physical Science",
+   "url": "https://catalog.sbcc.edu/course-descriptions/phsc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://catalog.sbcc.edu/course-descriptions/phys/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://catalog.sbcc.edu/course-descriptions/pols/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PRO",
+   "title": "Professional Development",
+   "url": "https://catalog.sbcc.edu/course-descriptions/pro/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSY",
+   "title": "Psychology",
+   "url": "https://catalog.sbcc.edu/course-descriptions/psy/",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed_code": "PSY/PSYC"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://catalog.sbcc.edu/course-descriptions/psy/",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed_code": "PSY/PSYC"
+  },
+  {
+   "code": "RE",
+   "title": "Real Estate",
+   "url": "https://catalog.sbcc.edu/course-descriptions/re/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RT",
+   "title": "Radiologic and Imaging Sciences",
+   "url": "https://catalog.sbcc.edu/course-descriptions/rt/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://catalog.sbcc.edu/course-descriptions/soc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://catalog.sbcc.edu/course-descriptions/span/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SS",
+   "title": "Social Science",
+   "url": "https://catalog.sbcc.edu/course-descriptions/ss/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://catalog.sbcc.edu/course-descriptions/stat/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STEM",
+   "title": "Science, Technology, Engineering and Mathematics",
+   "url": "https://catalog.sbcc.edu/course-descriptions/stem/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "TA",
+   "title": "Theatre Arts",
+   "url": "https://catalog.sbcc.edu/course-descriptions/ta/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "TIS",
+   "title": "Translation and Interpretation",
+   "url": "https://catalog.sbcc.edu/course-descriptions/tis/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "TUT",
+   "title": "Tutoring",
+   "url": "https://catalog.sbcc.edu/course-descriptions/tut/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "VN",
+   "title": "Vocational Nursing",
+   "url": "https://catalog.sbcc.edu/course-descriptions/vn/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WEXP",
+   "title": "Work Experience",
+   "url": "https://catalog.sbcc.edu/course-descriptions/wexp/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WTRS",
+   "title": "Water Science",
+   "url": "https://catalog.sbcc.edu/course-descriptions/wtrs/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ZOOL",
+   "title": "Zoology",
+   "url": "https://catalog.sbcc.edu/course-descriptions/zool/",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ],
+ "not_listed": {
+  "codes": [
+   "ACTV",
+   "AHV",
+   "CAV",
+   "CISV",
+   "CMPW",
+   "CNAV",
+   "CNEW",
+   "COMW",
+   "CRAO",
+   "CREO",
+   "CRMO",
+   "CRTO",
+   "CTV",
+   "ECEP",
+   "EHV",
+   "EMTV",
+   "ENTW",
+   "ES",
+   "ESLN",
+   "ESLNC",
+   "ESLV",
+   "GDPW",
+   "GED",
+   "GEDB",
+   "HEAL",
+   "HMEC",
+   "HSCA",
+   "HSEC",
+   "HSEN",
+   "HSHE",
+   "HSHI",
+   "HSMA",
+   "HSPD",
+   "HSPS",
+   "HSSC",
+   "HSVA",
+   "HSWH",
+   "IBW",
+   "KOR",
+   "LATN",
+   "LIBW",
+   "MATNC",
+   "MATW",
+   "MKTW",
+   "PDW",
+   "PHOW",
+   "PROW",
+   "SLFO",
+   "TUTW",
+   "WELO"
+  ],
+  "why": "The hunt list names these codes, and the index this read loaded prints no subject for them."
+ }
+}

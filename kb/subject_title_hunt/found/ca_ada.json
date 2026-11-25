@@ -1,0 +1,346 @@
+{
+ "college": "Cañada College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:07:42Z",
+ "run": "45630267572",
+ "plan": "kb/college_reads/subject_index_ca_ada.json",
+ "titles": [
+  {
+   "code": "ACTG",
+   "title": "Accounting",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=244",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=244",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARCH",
+   "title": "Architecture",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=245",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=245",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=248",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=250",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AQUA",
+   "title": "Aquatics",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=250",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIOL",
+   "title": "Biological Sciences",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=251",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CRER",
+   "title": "Career and Personal Development",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=255",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=259",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CBOT",
+   "title": "Computer Business Office Technology",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=260",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CIS",
+   "title": "Computer Science",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=262",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DSKL",
+   "title": "Developmental Learning Skills",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=272",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MART",
+   "title": "Digital Art and Animation",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=272",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=282",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EDUC",
+   "title": "Education",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=283",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=284",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENVS",
+   "title": "Environmental Science & Technology",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=290",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETHN",
+   "title": "Ethnic Studies",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=290",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FASH",
+   "title": "Fashion Design and Merchandising",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=292",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FITN",
+   "title": "Fitness",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=297",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=303",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GBST",
+   "title": "Global Studies",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=304",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HSCI",
+   "title": "Health Science",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=304",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=304",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=305",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HMSV",
+   "title": "Human Services",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=307",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "INDV",
+   "title": "Individual Sports",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=308",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "IDST",
+   "title": "Interdisciplinary Studies",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=310",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "INTD",
+   "title": "Interior Design",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=310",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LIBR",
+   "title": "Library Science",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=316",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LING",
+   "title": "Linguistics",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=317",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MGMT",
+   "title": "Management",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=319",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MEDA",
+   "title": "Medical Assisting",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=323",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "METE",
+   "title": "Meteorology",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=326",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LEGL",
+   "title": "Paralegal Studies",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=329",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=331",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PALT",
+   "title": "Photonics and Laser Technology",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=333",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=335",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=336",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=337",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOSC",
+   "title": "Social Sciences",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=342",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOCI",
+   "title": "Sociology",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=342",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=343",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=346",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "TEAM",
+   "title": "Team Sports",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=346",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "VARS",
+   "title": "Varsity Sports",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=352",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WORK",
+   "title": "Work Experience Education",
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=354",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ],
+ "note": "Read from the hand-filed copy of the 2026-2027 Catalog Rights edition (kb/hand_filed_catalogs/ca_ada.json); robots.txt refuses the college's /current/ catalog to readers. The url is the copy's address with its PDF page. A heading that wraps onto two lines is joined (Career and Personal Development). Ten subjects whose first course stands below an introductory note or a running page header print no heading in the lines read, and are left out: CHEM, DANC, DRAM, ENGL, ESL, KINE, LCTR, MATH, OCEN, RADT. A subject whose courses all carry C numbers was not reached."
+}

@@ -1,0 +1,611 @@
+{
+ "college": "College of the Sequoias",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:30:48Z",
+ "run": "45624011924",
+ "plan": "kb/college_reads/subject_index_college_of_the_sequoias.json",
+ "titles": [
+  {
+   "code": "ACCT",
+   "title": "Accounting",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AJ",
+   "title": "Administration of Justice",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AGMT",
+   "title": "Agricultural Management",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AGTC",
+   "title": "Agricultural Technology",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AG",
+   "title": "Agriculture",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASL",
+   "title": "American Sign Language",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASCI",
+   "title": "Animal Science",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARCH",
+   "title": "Architecture",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AUTO",
+   "title": "Automotive Technology",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BUS",
+   "title": "Business",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHLD",
+   "title": "Child Development",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CINA",
+   "title": "Cinema Arts",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMP",
+   "title": "Computer",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CSCI",
+   "title": "Computer Science",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CT",
+   "title": "Construction Technology",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COSM",
+   "title": "Cosmetology",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COUN",
+   "title": "Counseling",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CULN",
+   "title": "Culinary",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DANC",
+   "title": "Dance",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DRFT",
+   "title": "Drafting",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DRAM",
+   "title": "Drama",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESCI",
+   "title": "Earth Science",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EDUC",
+   "title": "Education",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ET",
+   "title": "Electrician Training",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EMT",
+   "title": "Emergency Medical Technician",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESL",
+   "title": "English As A Second Language",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECT",
+   "title": "Environment Control Technology",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETHN",
+   "title": "Ethnic Studies",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FASH",
+   "title": "Fashion",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FIRE",
+   "title": "Fire Technology",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GD",
+   "title": "Graphic Design",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HW",
+   "title": "Health and Wellness",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HLTH",
+   "title": "Health",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HDEV",
+   "title": "Human Development",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HSRV",
+   "title": "Human Services",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ITEC",
+   "title": "Industry and Technology",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ICT",
+   "title": "Info/Communication Technology",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "IA",
+   "title": "Intercollegiate Athletics",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "IS",
+   "title": "Interdisciplinary Studies",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JOUR",
+   "title": "Journalism",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KINE",
+   "title": "Kinesiology",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LS",
+   "title": "Learning Skills",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LIBR",
+   "title": "Library",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LING",
+   "title": "Linguistics",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUS",
+   "title": "Music",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NSCI",
+   "title": "Natural Sciences",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NURS",
+   "title": "Nursing",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NUTR",
+   "title": "Nutrition/Foods",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "OH",
+   "title": "Ornamental Horticulture",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PARA",
+   "title": "Paralegal",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PM",
+   "title": "Paramedicine",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PEAC",
+   "title": "PE Activity",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PT",
+   "title": "Pharmacy Technology",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSCI",
+   "title": "Physical Science",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PTA",
+   "title": "Physical Therapy Assistant",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PLSI",
+   "title": "Plant Science",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PS",
+   "title": "Police Science",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PORT",
+   "title": "Portuguese",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHSC",
+   "title": "Public Health Science",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "REC",
+   "title": "Recreation",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SSCI",
+   "title": "Social Science",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SMED",
+   "title": "Sports Medicine",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "VT",
+   "title": "Veterinary Technician",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WELD",
+   "title": "Welding",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WEXP",
+   "title": "Work Experience",
+   "url": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ]
+}
