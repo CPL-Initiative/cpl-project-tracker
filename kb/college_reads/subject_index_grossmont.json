@@ -1,0 +1,22 @@
+{
+ "_readme": "S730 subject-title hunt (group html_a), 2026-11-25, under Sam's ask in session S730: the catalog's printed heading for each course subject code, for the local subject titles that decide each code's common subject (ruling r-no-mid-on-a-stray-code-sam-2026-11-25). One load of the course-descriptions index, which lists every subject as 'Title (CODE)'. No model call.",
+ "college": "Grossmont College",
+ "questions": {
+  "subjects": "Each subject the course-descriptions index lists, with its printed title and code."
+ },
+ "keywords": [
+  "\\([A-Z]{2,7}\\)"
+ ],
+ "capture_lines": 4000,
+ "pages": [
+  {
+   "url": "https://catalog.gcccd.edu/grossmont/course-descriptions/",
+   "answers": [
+    "subjects"
+   ],
+   "links": "/grossmont/course-descriptions/[a-z0-9_-]+/|course",
+   "links_cap": 60,
+   "capture_view": true
+  }
+ ]
+}
