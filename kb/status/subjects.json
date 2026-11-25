@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 730,
-  "moniker": "SkyDunlin",
+  "session": 733,
+  "moniker": "SkyGodwit",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_731_handoff.md",
+  "handoff": "docs/session_734_handoff.md",
   "calls": [
     {
       "title": "The noncredit subject title list",
@@ -62,11 +62,11 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-25T15:09:16Z",
+  "written_at": "2026-11-25T18:10:35Z",
   "project": "subjects",
   "next_step": {
-    "title": "Rescore the stray codes with their titles, then the dry-run re-mint",
-    "text": "The runners filed the printed subject titles of 103 colleges. Rescore the 88 stray codes' local subjects with the title leading, then run the re-mint as a dry run for Sam before it applies; file COBIx's leftover titles the same way as they land."
+    "title": "Apply the stray-code re-mint",
+    "text": "The dry run retires 92 M-IDs on the stray codes whose local subjects score 90 or more, and Needs an M-ID goes from 1,819 to 1,918. Next is the apply under the re-mint playbook: a fresh live read, a receipt that restores every removal, then the daily build. A person picks the 50 local subjects under 90."
   },
   "changes": [
     {
@@ -236,6 +236,18 @@
     {
       "at": "2026-11-25T15:08Z",
       "text": "Runners read every college's catalog subject index: the Subjects record names 8,147 local subject codes at 103 colleges, up from 1,655 at 19."
+    },
+    {
+      "at": "2026-11-25T17:26Z",
+      "text": "COBIx's leftover local subject titles filed: 911 titles at 18 colleges, each with its source; 96 department labels kept as hints (PR 3841)."
+    },
+    {
+      "at": "2026-11-25T17:43Z",
+      "text": "The stray-code re-mint as a dry run: the in-scope M-IDs retire and their courses return to Needs an M-ID (PR 3843)."
+    },
+    {
+      "at": "2026-11-25T18:10Z",
+      "text": "The stray-code rescore scored 0 to 100 in place of levels; the dry run takes 90 or more: 66 local subjects, 92 M-IDs retire, 48 held (PR 3846)."
     }
   ]
 }
