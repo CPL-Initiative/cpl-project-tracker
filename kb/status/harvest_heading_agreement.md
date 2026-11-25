@@ -1,8 +1,8 @@
 # Harvest heading agreement
 
-A dated snapshot of main at commit 0b13c85cb1b3 (2026-11-24; the newest capture it reads started 2026-11-24), written by `kb/_program_requirements_heading_agreement.py` from the files that commit holds. A dispatch of `harvest-gap-census.yml` rewrites it beside the gap census; nothing gates a PR on it, so it can trail the records. Each record's own heading against the program it is filed under (COCI title and award).
+A dated snapshot of main at commit c8e04d10ebae (2026-11-25; the newest capture it reads started 2026-11-25), written by `kb/_program_requirements_heading_agreement.py` from the files that commit holds. A dispatch of `harvest-gap-census.yml` rewrites it beside the gap census; nothing gates a PR on it, so it can trail the records. Each record's own heading against the program it is filed under (COCI title and award).
 
-All colleges: 18968 records, 15477 agree, 260 disagree (169 of them pass on the committed files), 3231 cannot tell (262 say the heading is not in their text; 74 name an award and none of the program's title words, 70 of them passing, set aside).
+All colleges: 18969 records, 15489 agree, 248 disagree (169 of them pass on the committed files), 3232 cannot tell (263 say the heading is not in their text; 74 name an award and none of the program's title words, 70 of them passing, set aside).
 
 The heading check (a heading that names another award type and some of the program's title) would fail 137 records that pass on the committed files (passes_live), 31 of them a transfer degree and a local degree crossed. It is in no pass rule.
 
@@ -38,7 +38,7 @@ A suspect record has a heading that disagrees with its program, or was read from
 | Barstow Community College | main | 68 | 63 | 0 | 0 | 5 | 0 (0) | 0 (0) | none seen | no number line |
 | Cañada College | main | 70 | 65 | 0 | 0 | 5 | 0 (0) | 0 (0) | none seen | no number line |
 | Cerro Coso Community College | main | 56 | 55 | 0 | 0 | 1 | 0 (0) | 0 (0) | none seen | no number line |
-| College of the Canyons | main | 247 | 234 | 0 | 0 | 13 | 0 (0) | 0 (0) | none seen | no number line |
+| College of the Canyons | main | 248 | 234 | 0 | 0 | 14 | 0 (0) | 0 (0) | none seen | no number line |
 | Compton College | main | 83 | 63 | 0 | 0 | 20 | 0 (0) | 0 (0) | none seen | no number line |
 | Copper Mountain College | main | 48 | 44 | 0 | 0 | 4 | 0 (0) | 0 (0) | none seen | no number line |
 | Folsom Lake College | main | 107 | 98 | 0 | 0 | 9 | 0 (0) | 0 (0) | none seen | no number line |

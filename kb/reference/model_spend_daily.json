@@ -91,7 +91,8 @@
   "2026-11-21": 5.98,
   "2026-11-22": 1.29,
   "2026-11-23": 0.17,
-  "2026-11-24": 2.9
+  "2026-11-24": 2.9,
+  "2026-11-25": 0.86
  },
  "runner_runs": {
   "38322747831": {
@@ -1143,6 +1144,16 @@
    "college": "antelope_valley",
    "usd": 0.56,
    "day": "2026-11-24"
+  },
+  "45574354887": {
+   "college": "antelope_valley",
+   "usd": 0.77,
+   "day": "2026-11-25"
+  },
+  "45574359765": {
+   "college": "college_of_the_redwoods",
+   "usd": 0.09,
+   "day": "2026-11-25"
   }
  },
  "runner_since": "2026-11-17",
@@ -1173,9 +1184,9 @@
    "sessions": 5,
    "not_available": 0,
    "tags": {
-    "curation": 136.0,
+    "collection": 256.0,
     "infrastructure": 109.9,
-    "collection": 256.0
+    "curation": 136.0
    },
    "untagged_usd": 0.0,
    "estimate_usd": 288.0
