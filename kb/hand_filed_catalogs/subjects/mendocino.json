@@ -1,0 +1,800 @@
+{
+ "_what": "The subjects Mendocino College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "Mendocino College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:05:47Z",
+ "run": "45629589579",
+ "source": [
+  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=231",
+  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=234",
+  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=237",
+  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=245",
+  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=247",
+  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=252",
+  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=254",
+  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=258",
+  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=261",
+  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=263",
+  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=268",
+  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=272",
+  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=273",
+  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=274",
+  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=276",
+  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=277",
+  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=279",
+  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=282",
+  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=283",
+  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=287",
+  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=289",
+  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=291",
+  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=294",
+  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=297",
+  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=298",
+  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=309",
+  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=310",
+  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=313",
+  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=320",
+  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=324",
+  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=326",
+  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=329",
+  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=330",
+  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=345",
+  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=346"
+ ],
+ "rows": [
+  {
+   "code": "ADJ",
+   "heading": "Administration of Justice",
+   "heading_printed": "ADMINISTRATION OF JUSTICE",
+   "rule": "index",
+   "codes": [
+    "ADJ"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=231",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "AGR",
+   "heading": "Agriculture",
+   "heading_printed": "AGRICULTURE",
+   "rule": "index",
+   "codes": [
+    "AGR"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=234",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "ANT",
+   "heading": "Anthropology",
+   "heading_printed": "ANTHROPOLOGY",
+   "rule": "index",
+   "codes": [
+    "ANT"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=237",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "ARC",
+   "heading": "Addiction and Recovery Counseling",
+   "heading_printed": "ADDICTION AND RECOVERY COUNSELING",
+   "rule": "index",
+   "codes": [
+    "ARC"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=231",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "ASL",
+   "heading": "American Sign Language",
+   "heading_printed": "AMERICAN SIGN LANGUAGE",
+   "rule": "index",
+   "codes": [
+    "ASL"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=237",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "AST",
+   "heading": "Astronomy",
+   "heading_printed": "ASTRONOMY",
+   "rule": "index",
+   "codes": [
+    "AST"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=245",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "ATH",
+   "heading": "Athletics",
+   "heading_printed": "ATHLETICS",
+   "rule": "index",
+   "codes": [
+    "ATH"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=245",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "AUT",
+   "heading": "Automotive Technology",
+   "heading_printed": "AUTOMOTIVE TECHNOLOGY",
+   "rule": "index",
+   "codes": [
+    "AUT"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=247",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "BIO",
+   "heading": "Biological Sciences",
+   "heading_printed": "BIOLOGICAL SCIENCES",
+   "rule": "index",
+   "codes": [
+    "BIO"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=252",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "BSK",
+   "heading": "Basic Skills",
+   "heading_printed": "BASIC SKILLS",
+   "rule": "index",
+   "codes": [
+    "BSK"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=252",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "BUS",
+   "heading": "Business",
+   "heading_printed": "BUSINESS",
+   "rule": "index",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=254",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "CAM",
+   "heading": "Culinary Arts Management",
+   "heading_printed": "CULINARY ARTS MANAGEMENT",
+   "rule": "index",
+   "codes": [
+    "CAM"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=268",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "CDV",
+   "heading": "Child Development",
+   "heading_printed": "CHILD DEVELOPMENT",
+   "rule": "index",
+   "codes": [
+    "CDV"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=258",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "CLO",
+   "heading": "Clothing",
+   "heading_printed": "CLOTHING",
+   "rule": "index",
+   "codes": [
+    "CLO"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=261",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "CSC",
+   "heading": "Computer Science",
+   "heading_printed": "COMPUTER SCIENCE",
+   "rule": "index",
+   "codes": [
+    "CSC"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=263",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "DAM",
+   "heading": "Digital Arts and Media",
+   "heading_printed": "DIGITAL ARTS AND MEDIA",
+   "rule": "index",
+   "codes": [
+    "DAM"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=272",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "DRN",
+   "heading": "Drone Studies",
+   "heading_printed": "DRONE STUDIES",
+   "rule": "index",
+   "codes": [
+    "DRN"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=273",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "EAS",
+   "heading": "Earth Science",
+   "heading_printed": "EARTH SCIENCE",
+   "rule": "index",
+   "codes": [
+    "EAS"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=274",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "EDU",
+   "heading": "Education",
+   "heading_printed": "EDUCATION",
+   "rule": "index",
+   "codes": [
+    "EDU"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=274",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "EMS",
+   "heading": "Emergency Medical Services",
+   "heading_printed": "EMERGENCY MEDICAL SERVICES",
+   "rule": "index",
+   "codes": [
+    "EMS"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=276",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "ENGLISH",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=277",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "ENGLISH AS A SECOND LANGUAGE",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=279",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "ETH",
+   "heading": "Ethnic Studies",
+   "heading_printed": "ETHNIC STUDIES",
+   "rule": "index",
+   "codes": [
+    "ETH"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=282",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "FSC",
+   "heading": "Fire Science",
+   "heading_printed": "FIRE SCIENCE",
+   "rule": "index",
+   "codes": [
+    "FSC"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=283",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "GEL",
+   "heading": "Geology",
+   "heading_printed": "GEOLOGY",
+   "rule": "index",
+   "codes": [
+    "GEL"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=287",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "GEO",
+   "heading": "Geography",
+   "heading_printed": "GEOGRAPHY",
+   "rule": "index",
+   "codes": [
+    "GEO"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=287",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "HISTORY",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=289",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "HSP",
+   "heading": "Hospitality Management",
+   "heading_printed": "HOSPITALITY MANAGEMENT",
+   "rule": "index",
+   "codes": [
+    "HSP"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=291",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "HUS",
+   "heading": "Human Services",
+   "heading_printed": "HUMAN SERVICES",
+   "rule": "index",
+   "codes": [
+    "HUS"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=291",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "ITA",
+   "heading": "Italian",
+   "heading_printed": "ITALIAN",
+   "rule": "index",
+   "codes": [
+    "ITA"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=294",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "KIN",
+   "heading": "Kinesiology",
+   "heading_printed": "KINESIOLOGY",
+   "rule": "index",
+   "codes": [
+    "KIN"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=294",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "LIB",
+   "heading": "Library",
+   "heading_printed": "LIBRARY",
+   "rule": "index",
+   "codes": [
+    "LIB"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=297",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "LVN",
+   "heading": "Licensed Vocational Nursing",
+   "heading_printed": "LICENSED VOCATIONAL NURSING",
+   "rule": "index",
+   "codes": [
+    "LVN"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=297",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "MTH",
+   "heading": "Mathematics",
+   "heading_printed": "MATHEMATICS",
+   "rule": "index",
+   "codes": [
+    "MTH"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=298",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "NAL",
+   "heading": "Native American Languages",
+   "heading_printed": "NATIVE AMERICAN LANGUAGES",
+   "rule": "index",
+   "codes": [
+    "NAL"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=309",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "NUR",
+   "heading": "Nursing",
+   "heading_printed": "NURSING",
+   "rule": "index",
+   "codes": [
+    "NUR"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=310",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "PEA",
+   "heading": "Physical Education - Adaptive",
+   "heading_printed": "PHYSICAL EDUCATION - ADAPTIVE",
+   "rule": "index",
+   "codes": [
+    "PEA"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=313",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "PHL",
+   "heading": "Philosophy",
+   "heading_printed": "PHILOSOPHY",
+   "rule": "index",
+   "codes": [
+    "PHL"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=313",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "PHY",
+   "heading": "Physics",
+   "heading_printed": "PHYSICS",
+   "rule": "index",
+   "codes": [
+    "PHY"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=320",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "RLS",
+   "heading": "Real Estate",
+   "heading_printed": "REAL ESTATE",
+   "rule": "index",
+   "codes": [
+    "RLS"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=324",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "SCI",
+   "heading": "Science",
+   "heading_printed": "SCIENCE",
+   "rule": "index",
+   "codes": [
+    "SCI"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=326",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "SCT",
+   "heading": "Sustainable Construction and Energy Technology",
+   "heading_printed": "SUSTAINABLE CONSTRUCTION AND ENERGY TECHNOLOGY",
+   "rule": "index",
+   "codes": [
+    "SCT"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=330",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology",
+   "heading_printed": "SOCIOLOGY",
+   "rule": "index",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=326",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "SPN",
+   "heading": "Spanish",
+   "heading_printed": "SPANISH",
+   "rule": "index",
+   "codes": [
+    "SPN"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=326",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "STATISTICS",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=329",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "WLD",
+   "heading": "Welding",
+   "heading_printed": "WELDING",
+   "rule": "index",
+   "codes": [
+    "WLD"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=345",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  },
+  {
+   "code": "WOD",
+   "heading": "Woodworking",
+   "heading_printed": "WOODWORKING",
+   "rule": "index",
+   "codes": [
+    "WOD"
+   ],
+   "candidate": null,
+   "address": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=346",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629589579)",
+   "run": "45629589579"
+  }
+ ],
+ "subjects": 47,
+ "with_heading": 47
+}
