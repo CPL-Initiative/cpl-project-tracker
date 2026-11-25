@@ -816,6 +816,10 @@ jobs:
       - name: Pooled figures S721 (the reading, the self-recall, the plan)
         if: matrix.shard == 4
         run: python3 tests/program_pooled_figure_s721_test.py
+      # S727 lane 1: the rest of what the pooled reading opens at five colleges; the hand reading, the holds, the plan s727p.
+      - name: Pooled figures S727 (the rows, the holds, the plan)
+        if: matrix.shard == 2
+        run: python3 tests/program_piles_s727_pooled_test.py
       # S720 at Cabrillo: the census's 21 wording-rule records, 8 collected with named gaps; the plan.
       - name: Cheap piles S720 at Cabrillo (named gaps, the plan)
         if: matrix.shard == 4
@@ -845,6 +849,21 @@ jobs:
       - name: Cheap piles S721 at Gavilan (named gaps, the plan)
         if: matrix.shard == 4
         run: python3 tests/program_piles_s721_gavilan_test.py
+      # S727 at Shasta: the census's 19 wording-rule records, 4 collected with named gaps, 15 held; 18153 a named
+      # gap with no record; the plan.
+      - name: Cheap piles S727 at Shasta (named gaps, 18153, the plan)
+        if: matrix.shard == 2
+        run: python3 tests/program_piles_s727_shasta_test.py
+      # S727 at American River: the census's 19 wording-rule records, 12 collected with named gaps (two new kinds,
+      # option_lists_read_apart and noted_total_cut_off), 7 held; the plan.
+      - name: Cheap piles S727 at American River (named gaps, the plan)
+        if: matrix.shard == 3
+        run: python3 tests/program_piles_s727_arc_test.py
+      # S727 at College of the Canyons: the census's 20 wording-rule records, 6 collected with named gaps, and
+      # 43388 (held for a person since S691) inserted with the new heading_not_in_text; the plan.
+      - name: Cheap piles S727 at College of the Canyons (named gaps, an insert, the plan)
+        if: matrix.shard == 1
+        run: python3 tests/program_piles_s727_canyons_test.py
       # Discontinued programs (S680; Sam, 2026-11-17 on #3480): a program's own catalog section marks it,
       # or a prior year prints it and this year does not; flagged out of the gap, never deleted. Pure stdlib.
       - name: Discontinued programs (own-section mark, out of the gap, the file is current)

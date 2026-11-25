@@ -60,18 +60,39 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    11.0,
-    17.0
+    14.0,
+    14.0
    ],
    "stated": [
     14.0,
     14.0
    ],
-   "why": [
-    "the blocks sum to 11.0-17.0; the catalog states 14.0-14.0"
+   "against": "program",
+   "why": [],
+   "pooled": [
+    {
+     "blocks": [
+      "AGRICULTURE SCIENCE BREADTH COURSES",
+      "AGRICULTURE SCIENCE BREADTH COURSES"
+     ],
+     "figure": [
+      9.0,
+      9.0
+     ],
+     "minimum": false,
+     "parts": [
+      6.0,
+      12.0
+     ],
+     "read": [
+      9.0,
+      9.0
+     ],
+     "words": "Section II 'AGRICULTURE SCIENCE BREADTH - COMPLETE 9 UNITS' (Total 9): 6-9 units from PLSC/NR/AGEC courses and 0-3 units from AGM 200/AGM 235, for 9 units combined."
+    }
    ]
   },
   "repeated": {
@@ -93,7 +114,7 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

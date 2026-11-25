@@ -65,19 +65,36 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    5.0,
-    15.0
+    18.0,
+    18.0
    ],
    "stated": [
     18.0,
     18.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 5.0-15.0; the catalog states 18.0-18.0"
+   "why": [],
+   "pooled": [
+    {
+     "blocks": "all",
+     "figure": [
+      18.0,
+      18.0
+     ],
+     "minimum": false,
+     "parts": [
+      5.0,
+      15.0
+     ],
+     "read": [
+      18.0,
+      18.0
+     ],
+     "words": "Rule: choose at least one course from each of categories A, B and C, then additional courses from any category to total 18 units; at least one laboratory course required."
+    }
    ]
   },
   "repeated": {
@@ -105,7 +122,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

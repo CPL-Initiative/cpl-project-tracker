@@ -70,18 +70,40 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    23.0,
-    32.0
+    29.0,
+    29.0
    ],
    "stated": [
     29.0,
     29.0
    ],
-   "why": [
-    "the blocks sum to 23.0-32.0; the catalog states 29.0-29.0"
+   "against": "program",
+   "why": [],
+   "pooled": [
+    {
+     "blocks": [
+      "AGRICULTURE SCIENCE BREADTH COURSES",
+      "AGRICULTURE SCIENCE BREADTH COURSES",
+      "AGRICULTURE SCIENCE BREADTH COURSES"
+     ],
+     "figure": [
+      9.0,
+      9.0
+     ],
+     "minimum": false,
+     "parts": [
+      3.0,
+      12.0
+     ],
+     "read": [
+      9.0,
+      9.0
+     ],
+     "words": "AGRICULTURE SCIENCE BREADTH COURSES - COMPLETE 9 UNITS (Total 9): the 9 units are split across three sub-lists printed as 3-6, 0-3 and 0-3 units; recorded each sub-list as a choose_units block with its printed lower bound as minimum."
+    }
    ]
   },
   "repeated": {
@@ -103,7 +125,7 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
