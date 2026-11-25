@@ -1,5 +1,5 @@
 {
- "_readme": "Subject title hunt, group curriqunet_2 (S730 worker, 2026-11-25; Sam's ask of 2026-11-25). Round 4: round 3 (run 45627124597) found the Courses list holds a subject node; this read lists that node's children. One JSON call, no model call, writes nothing.",
+ "_readme": "Subject title hunt, group curriqunet_2 (S730 worker, 2026-11-25; Sam's ask of 2026-11-25). Round 5: round 4 (run 45628061061) found the subject node holds one link list; this read lists its items whole. One JSON call, no model call, writes nothing.",
  "college": "Imperial Valley College",
  "questions": {
   "cq_subjects": "Which navigation node lists the catalog's course subjects with their names."
@@ -15,7 +15,7 @@
    "answers": [
     "cq_subjects"
    ],
-   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8588",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
    "capture_view": true
   }
  ],
