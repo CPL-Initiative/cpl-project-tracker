@@ -91,6 +91,21 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   estimate); it files to the branch only, and a Sonnet second reader gates the load and reread
   (**DECIDED** `d-elumen-read-before-reader-s731`).
 
+- 11:28Z: s730a (Los Angeles Trade-Technical, `claude/s730-piles-lattc` `2344333b`): 6 named gaps (`noted_figures_differ`
+  3, `noted_section_cut_off` 2, `lists_not_closed` 1), 11 held, no new kind. The Long Beach City piles (s731c) started
+  in its slot. 11:31Z: its Sonnet reader said APPLY (one minor: the guards abort through a cast error). 11:32Z: clean md5
+  pre-read (6 of 6); migrate 45605350857 returned 6, none skipped; `.apply` restored (`567f3a76`).
+- 11:33Z: s730b (Saddleback, `claude/s730-piles-saddleback` `ceff0ef8`): 8 rows, `option_lists_read_apart` 4 and
+  `waived_course_counted` 4 (new; self-recall 17 of 17, the shape fires on 15 statewide), 9 held, seven of them on a
+  `repeat` reconcile step; to an Opus reader. The same worker builds Saddleback's `repeat` step on
+  `claude/s731-saddleback-repeat` (a free reconcile, then keep-only for the seven) and stops before the reread.
+- `elumen2`'s commit `0665e817` never reached `claude/s730-elumen2`: the worker reported a push that the remote did not
+  hold, so Antelope Valley's read 45603949086 runs on `56c21b96` without the 43150 pin (the 38 still force-read from
+  their own pages; 43150 waits for its pin). Briefs from here ask for `git ls-remote` proof of a push
+  (`p-worker-push-proved-by-ls-remote-s731`).
+- 11:44Z: #3825 merged (`9a5deb35`) without a final update from `main`, which had moved only by the plain session's
+  #3824, touching none of its files (`d-display-merged-without-main-update-s731`); the census dispatched on `main`.
+
 [[S731 FILL: the run's log]]
 
 Spend: [[S731 FILL]]
