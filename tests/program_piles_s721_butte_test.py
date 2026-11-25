@@ -149,10 +149,16 @@ check(all(W.on_live_run(W._load(cn)) for cn in ROWS), "as the receipts stand now
 # The next lever, measured and written nowhere: the map's conditional elective line read as electives that fill the
 # degree passes nine on today's scorer, so they are held (the second reader's blocker); the four within rows and the
 # other three held do not pass on it.
+# S727's reconcile (kb/_program_reconcile_s727_butte.py) files the nine with the line's figure cleared, so a record it
+# filed counts as the reading's own: the test holds before that run and after it.
+import _program_reconcile_s727_butte as B7  # noqa: E402
 nxt = {cn for cn in members if W.elective_line_passes(W._load(cn))}
-check(nxt == set(W.ELECTIVE_LINE_PASSES) == NINE, "the elective line passes the nine: %s" % sorted(nxt))
+filed7 = {cn for cn in members if B7.reconciled_by_step(W._load(cn))}
+check(nxt | filed7 == set(W.ELECTIVE_LINE_PASSES) == NINE and not nxt & filed7,
+      "the elective line passes the nine: %s" % sorted(nxt | filed7))
 check(all(S._span(W._load(cn)["record"]["program"].get("degree_elective_units")) is not None for cn in nxt),
       "each of the nine holds the map's elective line as degree_elective_units")
+check(all(W._load(cn)["score"]["arithmetic"].get("pass") is True for cn in filed7), "each one S727 filed passes")
 
 check(all(h["why"] == W.ELECTIVE_LINE_HELD for h in rec["held"] if h["control_number"] in NINE)
       and "the page's 60 settles the total" in W.ELECTIVE_LINE_HELD and "reconcile_steps" in W.ELECTIVE_LINE_HELD,

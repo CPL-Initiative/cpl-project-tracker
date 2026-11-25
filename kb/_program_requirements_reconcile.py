@@ -1464,4 +1464,64 @@ def _college_steps(record: dict, text: str | None, college: str, award: str | No
             notes.append({"field": field, "was": prog.get(field), "now": {"min": None, "max": None},
                           "words": m.group(0).strip()})
             prog[field] = {"min": None, "max": None}
+        elif st["kind"] == "clear_conditional":
+            # A figure the reader took from a line the page prints as needed only when the degree's units fall
+            # short (Butte, S727: the sample term map's elective line, "Only necessary if the 60 units needed to
+            # graduate have not been completed") is no requirement: the electives fill the degree. The page's text
+            # prints the line (the pattern), the record reads electives_fill_degree and a degree total, and one of
+            # the record's own notes names the field, its figure and the line's words (conditional_note), so the
+            # figure cleared is the one that line printed and no other. And the line is needed, as its words say:
+            # the major and general education at their least come short of the degree total's low end
+            # (conditional_short). Where they reach it the line asks for nothing, and a cleared figure would leave
+            # a sum inside the map's range, which the scorer fails by design (Butte 07264, 31930, 32721 pass today
+            # on the overlap reading of a sum past the range's top; S727's self-recall).
+            if _empty(prog.get(field)) or prog.get("electives_fill_degree") is not True \
+                    or _empty(prog.get("degree_total")) or held_by_step(st, control_number, prog) \
+                    or not conditional_short(prog):
+                continue
+            said = conditional_note(out, field, st["note_words"])
+            if not said:
+                continue
+            notes.append({"field": field, "was": prog.get(field), "now": {"min": None, "max": None},
+                          "words": "%s (the reader's note: %s)" % (m.group(0).strip(), said[:240])})
+            prog[field] = {"min": None, "max": None}
     return (out, notes) if notes else (record, [])
+
+
+def _figure_in(figure, note: str) -> bool:
+    """Whether a note prints a figure as the record holds it: 13 as '13', '13.00' or '13-unit', never inside '113'
+    or '13.5'."""
+    f = _num(figure)
+    if f is None:
+        return False
+    s = ("%d" % f) if float(f).is_integer() else ("%g" % f)
+    return re.search(r"(?<![\d.])%s(?:\.0+)?(?![\d]|\.\d)" % re.escape(s), note) is not None
+
+
+def conditional_short(prog: dict) -> bool:
+    """Whether the major (total_units), its open electives and the general education units, each at its least, come
+    short of the degree total's low end (clear_conditional, S727): the units a conditional elective line says it is
+    needed for. False where any of the three figures it needs is not read."""
+    tlo = _span_of(prog.get("total_units"))[0]
+    glo = _span_of(prog.get("ge_units"))[0]
+    dlo = _span_of(prog.get("degree_total"))[0]
+    if tlo is None or glo is None or dlo is None:
+        return False
+    oe = _num(prog.get("open_elective_units")) if not isinstance(prog.get("open_elective_units"), dict) \
+        else _span_of(prog.get("open_elective_units"))[0]
+    return float(tlo) + float(glo) + float(oe or 0) < float(dlo) - 0.01
+
+
+def conditional_note(record: dict, field: str, words: str) -> str | None:
+    """The record's own note that ties a field's figure to the page's conditional line (clear_conditional, S727): one
+    note naming the field, printing the field's figure (both ends of a range) and quoting the line's words (words,
+    a regex, letter case aside). None where no note does."""
+    lo, hi = _span_of(((record or {}).get("program") or {}).get(field))
+    if lo is None:
+        return None
+    rx = re.compile(words, re.I)
+    for n in (record or {}).get("notes") or []:
+        n = str(n)
+        if field in n and rx.search(n) and _figure_in(lo, n) and (hi == lo or _figure_in(hi, n)):
+            return n
+    return None
