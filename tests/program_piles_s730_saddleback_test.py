@@ -11,8 +11,9 @@ its gaps noted and confidence scores, a gap noted instead of a reread; a record 
     (p-test-pins-census-members-s714): 8 collected, 9 held; each shape check reads 17 of 17 right, and each fires on
     exactly the statewide records tests/fixtures/saddleback_shapes_statewide_s730.json pins, the waiver shape leaving
     out Los Angeles City 02746, whose note names prerequisites;
-  * the seven repeat records stay on the reconcile lever: with the course taken twice, as a repeat step writes it,
-    today's scorer reads the printed total, and none takes a gap;
+  * the seven repeat records are right in either state, and none takes a gap: held on the reconcile lever (with the
+    course taken twice, as a repeat step writes it, today's scorer reads the printed total), or passed once S731's
+    repeat step has landed with the course at times 2 (p-test-asserts-other-pr-absent-s721);
   * each kind's own figures: read as the scorer's option parts, the specialty and pattern records give the printed
     total; read at 0 to its units, the waived course gives the printed range; 04073 needs two readings and holds;
   * the own-page guard keys on the pages the records were read from (each record its own curriQunet page), and the
@@ -76,16 +77,25 @@ check(len(lacc) == 1 and not W.waived_shape(lacc[0])
           n.replace("PREREQUISITES", "").replace("prerequisites", "") for n in lacc[0]["record"]["notes"]]))),
       "02746 is left out by its prerequisite words alone")
 
+# Each of the seven is right in either state (p-test-asserts-other-pr-absent-s721): held on the lever, or passed once
+# S731's repeat step (claude/s731-saddleback-repeat) has landed with the course at times 2.
 lv = W.lever(CENSUS_AT_PLAN)
-check(lv == {"right": 7, "wrong": []}, "the seven repeat records pass on the lever's reading: %s" % lv)
+check(lv["right"] == 7 and not lv["wrong"] and set(lv["states"]) == LEVER
+      and set(lv["states"].values()) <= {"held", "passed"}, "the seven repeat records are held or passed: %s" % lv)
 for cn in LEVER:
     f = W._load(cn)
     e = W.ON_LEVER[cn]
-    a = W._arith(W.as_repeated(f["record"], e["code"], 2), f["award"])
-    check(a["status"] == "equal" and not W.scorer_passes(f) and W.gap_noted(f) is None and cn not in W.REVIEWED,
-          "%s: with %s taken twice today's scorer passes it; it takes no gap" % (cn, e["code"]))
-    moved = dict(e, times=3)
-    check(not W.repeat_passes(f, moved), "%s: taken three times it does not close" % cn)
+    st = lv["states"].get(cn)
+    check(W.gap_noted(f) is None and cn not in W.REVIEWED, "%s: it takes no gap" % cn)
+    if st == "held":
+        a = W._arith(W.as_repeated(f["record"], e["code"], 2), f["award"])
+        check(a["status"] == "equal" and not W.scorer_passes(f),
+              "%s: held, and with %s taken twice today's scorer passes it" % (cn, e["code"]))
+        check(not W.repeat_passes(f, dict(e, times=3)), "%s: taken three times it does not close" % cn)
+    else:
+        check(st == "passed" and W.scorer_passes(f) and [x.get("times") for x in W._entries(f["record"], e["code"])]
+              == [2], "%s: passed, %s at times 2 and today's scorer passing it" % (cn, e["code"]))
+        check(not W.passed_on_lever(f, dict(e, times=3)), "%s: a count of three is not the step's" % cn)
 
 cc = W.claim_checks(CENSUS_AT_PLAN)
 check(cc["counts"] == {"stands": 8} and not cc["not_standing"], "8 claims stand")

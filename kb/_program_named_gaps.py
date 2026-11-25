@@ -1838,8 +1838,9 @@ OTHER_PAGE_GAPS = OTHER_PAGE_GAPS | {"heading_not_in_text"}
 # year of high school mechanical drafting), which the record counts at the course's units, so its sum matches the
 # printed range's top and not its low end. No existing kind fits: entry_path_range names an entry path a student is
 # admitted to, noted_unit_floor a minimum above the printed units, and the printed_total reconcile kind a test-out whose
-# units the page's own separate total counts. Its score is entry_path_range's 50: in both the page prints a range over
-# two paths and the record holds the full one.
+# units the page's own separate total counts. Its score is 50 (d-waived-course-counted-keeps-50-s731, S730's second
+# reader): the record's figure closes against the printed range only for a student who holds the waiver, so the
+# arithmetic is shown right for one of the two paths the page prints, not for both.
 GAPS.setdefault("waived_course_counted",
                 "The page prints a requirement at a range from zero units, since a student may meet it without the "
                 "course (a certification, an exam or earlier coursework), and the record counts the course, so its "

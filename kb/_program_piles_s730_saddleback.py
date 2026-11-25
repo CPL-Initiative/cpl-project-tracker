@@ -30,8 +30,8 @@ claim check against today's capture. The kinds:
                            range's top and not its low end. No existing kind fits: entry_path_range names an entry path
                            a student is admitted to, noted_unit_floor a minimum above the printed units, and
                            printed_total (the reconcile kind) a test-out whose units the page's own separate total
-                           counts. Its score is entry_path_range's 50: in both the page prints a range over two paths
-                           and the record holds the full one. The entry's own check: the course appears once at its
+                           counts. Its score is 50 (d-waived-course-counted-keeps-50-s731): the figure closes only
+                           for a student who holds the waiver. The entry's own check: the course appears once at its
                            units, the sum's low end is the printed low end plus those units, and read at 0 to its
                            units, today's scorer gives the printed range.
 
@@ -511,20 +511,43 @@ def precision(census_path: str = CENSUS, skip: tuple = ()) -> dict:
     return out
 
 
+def passed_on_lever(filed: dict, e: dict) -> bool:
+    """The lever's other state: the reconcile's repeat step has landed (S731, claude/s731-saddleback-repeat), so the
+    record carries its course once at times 2 and today's scorer passes it at the printed total."""
+    rec = filed.get("record") or {}
+    xs = _entries(rec, e["code"])
+    a = _arith(rec, filed.get("award"))
+    return len(xs) == 1 and xs[0].get("times") == e["times"] and _closes(a, e["stated"])
+
+
+def lever_state(filed: dict | None, e: dict, skip: tuple = ()) -> str | None:
+    """'held' while the record waits on the repeat step (its reading passes today's scorer, the record as filed does
+    not, on its live run), 'passed' once the step has landed; None for anything else. Either state is right here, so
+    this test never asserts that the repeat branch is absent (p-test-asserts-other-pr-absent-s721)."""
+    if not filed:
+        return None
+    if repeat_passes(filed, e) and not scorer_passes(filed) and on_live_run(filed, skip):
+        return "held"
+    if passed_on_lever(filed, e):
+        return "passed"
+    return None
+
+
 def lever(census_path: str = CENSUS, skip: tuple = ()) -> dict:
-    """The records held on the reconcile lever: each one's repeat reading passes today's scorer, and none takes a gap."""
-    right, wrong = 0, []
+    """The records on the reconcile lever: each one held (its repeat reading passes today's scorer) or passed (the
+    step landed and today's scorer passes it), and none takes a gap."""
+    right, wrong, states = 0, [], {}
     for cn in census_members(census_path):
         if cn not in ON_LEVER:
             continue
         f = _load(cn)
-        ok = bool(f) and repeat_passes(f, ON_LEVER[cn]) and not scorer_passes(f) and on_live_run(f, skip) \
-            and gap_noted(f, skip=skip) is None
-        if ok:
+        st = lever_state(f, ON_LEVER[cn], skip)
+        states[cn] = st
+        if st and gap_noted(f, skip=skip) is None and cn not in REVIEWED:
             right += 1
         else:
             wrong.append(cn)
-    return {"right": right, "wrong": wrong}
+    return {"right": right, "wrong": wrong, "states": states}
 
 
 def claim_checks(census_path: str = CENSUS) -> dict:
