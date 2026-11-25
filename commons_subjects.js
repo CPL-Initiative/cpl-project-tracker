@@ -1502,7 +1502,7 @@
     var e = (F.codes || {})[c.code];
     if (!e) return [];
     return (e.rows || []).map(function (r) {
-      return { college: e.colleges[r[0]], subject: r[1] || c.code, number: String(r[2] || ""), title: r[3] || "", band: r[4] || "", top: r[5] || "" };
+      return { college: e.colleges[r[0]], subject: r[1] || c.code, number: String(r[2] || ""), title: r[3] || "", band: r[4] || "", top: r[5] || "", mid: r[6] || "" };
     });
   }
   var COCI_BANDS = { C: "Credit", N: "Noncredit", E: "Noncredit enhanced" };
@@ -1691,6 +1691,26 @@
       el("optgroup", { label: "Credit" }, keys.filter(function (k) { return !nc[k]; }).sort(byName).map(opt)),
       el("optgroup", { label: "Noncredit" }, keys.filter(function (k) { return nc[k]; }).sort(byName).map(opt))]);
   }
+  /* The move itself, one kb_curation row per course under the reviewer's sign-in, shared by this panel's move bar and the
+     CSR's Local subjects sidebar (csr_local_subjects.js, S733). items: [{ slug, code, number, mid, title, band }]; k a
+     common subject code the caller has checked. Resolves { done: [items], bad: [items], lapsed }. A number holding a bar
+     never saves: it would break the CRS:<college>|<code>|<number> key. A lapsed sign-in stops the rest. */
+  function moveMany(items, k) {
+    var done = [], bad = [], stop = false;
+    return (items || []).reduce(function (p, it) {
+      return p.then(function () {
+        var num = String(it.number == null ? "" : it.number);
+        if (stop || !it.slug || !num || num.indexOf("|") >= 0) { bad.push(it); return; }
+        var key = moveKey(it.slug, it.code, num);
+        var value = { common_code: k, from_mid: it.mid || null, title: it.title || null, band: it.band || null };
+        return writeSave(key, value, MOVE_FIELD).then(function (res) {
+          if (!res.ok) { bad.push(it); if (res.lapsed) { LAPSED = true; stop = true; } return; }
+          done.push(it);
+          MOVES[key] = { common: k, fromMid: value.from_mid || "", title: value.title || "", at: new Date().toISOString(), by: res.email || "", label: "a reviewer", decidedBy: "", key: key };
+        }, function () { bad.push(it); });
+      });
+    }, Promise.resolve()).then(function () { return { done: done, bad: bad, lapsed: stop }; });
+  }
   /* One move: the checked boxes inside scope, one kb_curation row each, under the reviewer's sign-in. */
   function moveControls(slug, code, scope, pre, label) {
     var co = codePicker(pre + "-code", pre + "-code-msg");
@@ -1707,19 +1727,11 @@
       if (!COMMON[k]) { cmsg.textContent = k + " is not a common subject code on the Common Subjects Reference. Nothing was saved."; return; }
       save.disabled = true;
       status.textContent = "Moving " + fmt(boxes.length) + (boxes.length === 1 ? " course…" : " courses…");
-      var done = 0, bad = [], stop = false;
-      boxes.reduce(function (p, b) {
-        return p.then(function () {
-          var num = b.getAttribute("data-move-number"), key = moveKey(slug, code, num);
-          if (stop || String(num).indexOf("|") >= 0) { bad.push(num); return; }
-          var value = { common_code: k, from_mid: b.getAttribute("data-move-mid") || null, title: b.getAttribute("data-move-title") || null, band: b.getAttribute("data-move-band") || null };
-          return writeSave(key, value, MOVE_FIELD).then(function (res) {
-            if (!res.ok) { bad.push(num); if (res.lapsed) { LAPSED = true; stop = true; } return; }
-            done += 1;
-            MOVES[key] = { common: k, fromMid: value.from_mid || "", title: value.title || "", at: new Date().toISOString(), by: res.email || "", label: "a reviewer", decidedBy: "", key: key };
-          }, function () { bad.push(num); });
-        });
-      }, Promise.resolve()).then(function () {
+      moveMany(boxes.map(function (b) {
+        return { slug: slug, code: code, number: b.getAttribute("data-move-number"), mid: b.getAttribute("data-move-mid"),
+          title: b.getAttribute("data-move-title"), band: b.getAttribute("data-move-band") };
+      }), k).then(function (R) {
+        var done = R.done.length, stop = R.lapsed, bad = R.bad.map(function (it) { return it.number; });
         var w = done ? "Moved " + fmt(done) + (done === 1 ? " course" : " courses") + " to " + k + ". The M-IDs move at the next re-mint." : "";
         if (bad.length) w += (w ? " " : "") + "Not moved: " + bad.join(", ") + (stop ? ". Your sign-in has ended; sign in again, then save." : ". Only a reviewer on the list may save; press again to retry.");
         MOVE_SAID[slug + "|" + code] = w;
@@ -2106,7 +2118,8 @@
   /* The widest a sidebar may be: from 900px up, what leaves VIEW_MIN of the view beside it (less any other sidebar open),
      below that the window less a margin, where a sidebar covers the view by design. */
   function viewLeft() {
-    var r = document.getElementById("commons-root");
+    /* Another view that holds these sidebars (the CSR's Local subjects, S733) marks its root data-csb-view-root. */
+    var r = document.getElementById("commons-root") || document.querySelector("[data-csb-view-root]");
     return r && r.getBoundingClientRect ? Math.max(0, Math.round(r.getBoundingClientRect().left)) : 0;
   }
   function panelMax(others) {
@@ -2822,7 +2835,40 @@
     document.head.appendChild(el("style", { id: "csb-css", text: CSS }));
   }
 
+  /* ── One local code's courses statewide, for another view (S733; Sam, 2026-11-25, on the CSR's Local subjects: "there
+     should at least be a side bar that allows me to move one or more courses to another subject"). The same reads as
+     this tab (the titles file's slugs and common codes, the code's course file, the moves) and the same write (moveMany,
+     course_subject_decision, CRS:<college>|<code>|<number>), so a move made in either view shows in both. ── */
+  function ready() {
+    cache = cache || load();
+    return cache.then(null, function (e) { cache = null; throw e; });
+  }
+  function localCourses(code) {
+    return ready().then(function (M) {
+      return loadCodeCourses(code).then(function () {
+        var slugs = slugMap(M);
+        return (coursesOf({ code: code }) || []).map(function (x) {
+          var slug = slugFor(slugs, x.college) || "", key = slug ? moveKey(slug, x.subject, x.number) : "", mv = key ? MOVES[key] || null : null;
+          var minted = String(x.mid || "").split(" ")[0];
+          return { college: x.college, slug: slug, code: x.subject, number: x.number, title: x.title, band: x.band, top: x.top, mid: x.mid,
+            minted: x.mid ? minted : "", mintedName: x.mid && COMMON ? COMMON[minted] || "" : "", key: key,
+            move: mv ? { common: mv.common, commonName: COMMON ? COMMON[mv.common] || "" : "", by: mine(mv) ? "you" : mv.decidedBy || mv.by || "a person", at: day(mv.at), mine: mine(mv) } : null };
+        });
+      });
+    });
+  }
+  function takeBackMove(key) {
+    return takeBack(key, MOVE_FIELD).then(function (res) {
+      if (res.ok && res.n) delete MOVES[key];
+      return res;
+    });
+  }
   window.CPL_COMMONS_SUBJECTS = {
+    localCourses: localCourses, moveCourses: moveMany, takeBackMove: takeBackMove, commonCodes: function () { return COMMON; },
+    codeList: codeList, ensureCss: ensureCss, MOVE_FIELD: MOVE_FIELD, MOVE_PREFIX: MOVE_PREFIX, moveKey: moveKey,
+    /* The sidebar rules (beside the view, a resize from its inner edge that leaves VIEW_MIN of the view): a view that
+       puts a .csb-panel in its root lays it out with layout(root), gives it grip(panel, id), and calls off(root) on Close. */
+    sidebar: { layout: stackLayout, off: besideOff, grip: function (panel, id) { return gripFor(panel, MEM1, id); }, VIEW_MIN: VIEW_MIN },
     boot: boot, render: render, model: model, figures: figures, liveFigures: liveFigures, heldNow: heldNow, levels: levels, heldModel: heldModel, recModel: recModel, REC_FILE: REC_FILE,
     _recs: function (f) { REC = recModel(f); }, address: address, open: open, load: load, FILE: FILE, HELD_FILE: HELD_FILE, SIDES: SIDES, CSS: CSS,
     _state: S, COURSE_DIR: COURSE_DIR, bandOf: bandOf, saveKey: saveKey, titleCase: titleCase, savesModel: savesModel,

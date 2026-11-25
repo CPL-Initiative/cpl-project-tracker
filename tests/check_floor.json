@@ -442,6 +442,7 @@
     "commons_way_back.test.js": 23,
     "commons_subjects_mq.test.js": 60,
     "commons_cards_checks.test.js": 14,
-    "commons_cards_live_figures.test.js": 23
+    "commons_cards_live_figures.test.js": 23,
+    "csr_local_subjects_move.test.js": 22
   }
 }
