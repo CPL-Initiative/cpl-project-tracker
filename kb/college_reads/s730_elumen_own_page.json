@@ -29,8 +29,12 @@
    },
    "degree_figures_on_certificate": false,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/air-conditioning-refrigeration-specialist-cert-fall-2026",
+    "extracted_run": "38979725726",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574354887: its filed record passes but was read from air-conditioning-refrigeration-specialist-cert-fall-2026, so no own-page record exists; a forced read files one"
   },
@@ -61,8 +65,12 @@
    },
    "degree_figures_on_certificate": false,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-collision-repair-specialist-cert-fall-2026",
+    "extracted_run": "38979725726",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574354887: its filed record passes but was read from automotive-collision-repair-specialist-cert-fall-2026, so no own-page record exists; a forced read files one"
   },
@@ -93,8 +101,12 @@
    },
    "degree_figures_on_certificate": false,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/welding-cert-fall-2026",
+    "extracted_run": "38979725726",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574354887: its filed record passes but was read from welding-cert-fall-2026, so no own-page record exists; a forced read files one"
   },
@@ -125,8 +137,12 @@
    },
    "degree_figures_on_certificate": false,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/commercial-photography-cert-fall-2025",
+    "extracted_run": "38979725726",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574354887: its filed record passes but was read from commercial-photography-cert-fall-2025, so no own-page record exists; a forced read files one"
   },
@@ -157,8 +173,12 @@
    },
    "degree_figures_on_certificate": false,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/instructional-aide-cert-fall-2026",
+    "extracted_run": "38979725726",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574354887: its filed record passes but was read from instructional-aide-cert-fall-2026, so no own-page record exists; a forced read files one"
   },
@@ -189,8 +209,12 @@
    },
    "degree_figures_on_certificate": false,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/fire-technology-cert-fall-2026",
+    "extracted_run": "38979725726",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574354887: its filed record passes but was read from fire-technology-cert-fall-2026, so no own-page record exists; a forced read files one"
   },
@@ -221,8 +245,12 @@
    },
    "degree_figures_on_certificate": false,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/school-aged-child-care-cert-fall-2026",
+    "extracted_run": "38979725726",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574354887: its filed record passes but was read from school-aged-child-care-cert-fall-2026, so no own-page record exists; a forced read files one"
   },
@@ -253,8 +281,12 @@
    },
    "degree_figures_on_certificate": false,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/video-design-and-production-cert-fall-2026",
+    "extracted_run": "38979725726",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574354887: its filed record passes but was read from video-design-and-production-cert-fall-2026, so no own-page record exists; a forced read files one"
   },
@@ -285,8 +317,12 @@
    },
    "degree_figures_on_certificate": false,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/interactive-media-web-design-cert-fall-2025",
+    "extracted_run": "38979725726",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574354887: its filed record passes but was read from interactive-media-web-design-cert-fall-2025, so no own-page record exists; a forced read files one"
   },
@@ -317,8 +353,12 @@
    },
    "degree_figures_on_certificate": false,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/deaf-studies-american-sign-language-cert-fall-2025",
+    "extracted_run": "38979725726",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574354887: its filed record passes but was read from deaf-studies-american-sign-language-cert-fall-2025, so no own-page record exists; a forced read files one"
   },
@@ -349,8 +389,12 @@
    },
    "degree_figures_on_certificate": false,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/refrigeration-specialist-cert-fall-2026",
+    "extracted_run": "38979725726",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574354887: its filed record passes but was read from refrigeration-specialist-cert-fall-2026, so no own-page record exists; a forced read files one"
   },
@@ -381,8 +425,12 @@
    },
    "degree_figures_on_certificate": false,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/air-conditioning-specialist-cert-fall-2026",
+    "extracted_run": "38979725726",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574354887: its filed record passes but was read from air-conditioning-specialist-cert-fall-2026, so no own-page record exists; a forced read files one"
   },
@@ -413,8 +461,12 @@
    },
    "degree_figures_on_certificate": false,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-refinishing-specialist-cert-fall-2026",
+    "extracted_run": "38979725726",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574354887: its filed record passes but was read from automotive-refinishing-specialist-cert-fall-2026, so no own-page record exists; a forced read files one"
   },
@@ -445,8 +497,12 @@
    },
    "degree_figures_on_certificate": false,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-collision-repair-and-refinishing-specialist-cert-fall-2026",
+    "extracted_run": "38979725726",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574354887: its filed record passes but was read from automotive-collision-repair-and-refinishing-specialist-cert-fall-2026, so no own-page record exists; a forced read files one"
   },
@@ -477,8 +533,12 @@
    },
    "degree_figures_on_certificate": false,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/graphic-design-cert-fall-2025",
+    "extracted_run": "38979725726",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574354887: its filed record passes but was read from graphic-design-cert-fall-2025, so no own-page record exists; a forced read files one"
   },
@@ -509,8 +569,12 @@
    },
    "degree_figures_on_certificate": false,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/deaf-studies-interpreter-training-cert-fall-2025",
+    "extracted_run": "38979725726",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574354887: its filed record passes but was read from deaf-studies-interpreter-training-cert-fall-2025, so no own-page record exists; a forced read files one"
   },
@@ -541,8 +605,12 @@
    },
    "degree_figures_on_certificate": false,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-networking-multi-platform-cert-fall-2026",
+    "extracted_run": "38979725726",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574354887: its filed record passes but was read from computer-networking-multi-platform-cert-fall-2026, so no own-page record exists; a forced read files one"
   },
@@ -573,8 +641,12 @@
    },
    "degree_figures_on_certificate": false,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/professional-bookkeeping-cert-fall-2026",
+    "extracted_run": "38979725726",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574354887: its filed record passes but was read from professional-bookkeeping-cert-fall-2026, so no own-page record exists; a forced read files one"
   },
@@ -605,8 +677,12 @@
    },
    "degree_figures_on_certificate": true,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/electronics-technology-as-fall-2026",
+    "extracted_run": "38979725726",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574354887: its filed record passes but was read from electronics-technology-as-fall-2026, so no own-page record exists; a forced read files one"
   },
@@ -637,8 +713,12 @@
    },
    "degree_figures_on_certificate": false,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/deaf-studies-american-sign-language-aa-fall-2026",
+    "extracted_run": "38979725726",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574354887: its filed record passes but was read from deaf-studies-american-sign-language-aa-fall-2026, so no own-page record exists; a forced read files one"
   },
@@ -669,8 +749,12 @@
    },
    "degree_figures_on_certificate": false,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/deaf-studies-interpreter-training-aa-fall-2026",
+    "extracted_run": "38979725726",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574354887: its filed record passes but was read from deaf-studies-interpreter-training-aa-fall-2026, so no own-page record exists; a forced read files one"
   },
@@ -701,8 +785,12 @@
    },
    "degree_figures_on_certificate": false,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/commercial-photography-aa-fall-2026",
+    "extracted_run": "38979725726",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574354887: its filed record passes but was read from commercial-photography-aa-fall-2026, so no own-page record exists; a forced read files one"
   },
@@ -733,8 +821,12 @@
    },
    "degree_figures_on_certificate": false,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-animation-aa-fall-2026",
+    "extracted_run": "38979725726",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574354887: its filed record passes but was read from computer-animation-aa-fall-2026, so no own-page record exists; a forced read files one"
   },
@@ -765,8 +857,12 @@
    },
    "degree_figures_on_certificate": false,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/graphic-design-aa-fall-2026",
+    "extracted_run": "38979725726",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574354887: its filed record passes but was read from graphic-design-aa-fall-2026, so no own-page record exists; a forced read files one"
   },
@@ -797,8 +893,12 @@
    },
    "degree_figures_on_certificate": false,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/interactive-media-web-design-aa-fall-2026",
+    "extracted_run": "38979725726",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574354887: its filed record passes but was read from interactive-media-web-design-aa-fall-2026, so no own-page record exists; a forced read files one"
   },
@@ -829,8 +929,12 @@
    },
    "degree_figures_on_certificate": false,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/video-design-and-production-aa-fall-2026",
+    "extracted_run": "38979725726",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574354887: its filed record passes but was read from video-design-and-production-aa-fall-2026, so no own-page record exists; a forced read files one"
   },
@@ -861,8 +965,12 @@
    },
    "degree_figures_on_certificate": false,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/professional-bookkeeping-as-fall-2026",
+    "extracted_run": "38979725726",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574354887: its filed record passes but was read from professional-bookkeeping-as-fall-2026, so no own-page record exists; a forced read files one"
   },
@@ -893,8 +1001,12 @@
    },
    "degree_figures_on_certificate": false,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-applications-as-fall-2026",
+    "extracted_run": "38979725726",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574354887: its filed record passes but was read from computer-applications-as-fall-2026, so no own-page record exists; a forced read files one"
   },
@@ -925,8 +1037,12 @@
    },
    "degree_figures_on_certificate": false,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-networking-multi-platform-as-fall-2026",
+    "extracted_run": "38979725726",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574354887: its filed record passes but was read from computer-networking-multi-platform-as-fall-2026, so no own-page record exists; a forced read files one"
   },
@@ -957,8 +1073,12 @@
    },
    "degree_figures_on_certificate": false,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/instructional-aide-aa-fall-2026",
+    "extracted_run": "38979725726",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574354887: its filed record passes but was read from instructional-aide-aa-fall-2026, so no own-page record exists; a forced read files one"
   },
@@ -989,8 +1109,12 @@
    },
    "degree_figures_on_certificate": true,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/general-aircraft-maintenance-as-fall-2026",
+    "extracted_run": "38979725726",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574354887: its filed record passes but was read from general-aircraft-maintenance-as-fall-2026, so no own-page record exists; a forced read files one"
   },
@@ -1021,8 +1145,12 @@
    },
    "degree_figures_on_certificate": true,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-powerplant-as-fall-2026",
+    "extracted_run": "38979725726",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574354887: its filed record passes but was read from aircraft-powerplant-as-fall-2026, so no own-page record exists; a forced read files one"
   },
@@ -1053,8 +1181,12 @@
    },
    "degree_figures_on_certificate": true,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-fabrication-and-assembly-technician-as-fall-2026",
+    "extracted_run": "38979725726",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574354887: its filed record passes but was read from aircraft-fabrication-and-assembly-technician-as-fall-2026, so no own-page record exists; a forced read files one"
   },
@@ -1085,8 +1217,12 @@
    },
    "degree_figures_on_certificate": false,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/school-aged-child-care-aa-fall-2026",
+    "extracted_run": "38979725726",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574354887: its filed record passes but was read from school-aged-child-care-aa-fall-2026, so no own-page record exists; a forced read files one"
   },
@@ -1117,8 +1253,12 @@
    },
    "degree_figures_on_certificate": false,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/fire-technology-as-fall-2026",
+    "extracted_run": "38979725726",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574354887: its filed record passes but was read from fire-technology-as-fall-2026, so no own-page record exists; a forced read files one"
   },
@@ -1149,8 +1289,12 @@
    },
    "degree_figures_on_certificate": false,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/all-automotive-systems-as-fall-2026",
+    "extracted_run": "38979725726",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574354887: its filed record passes but was read from all-automotive-systems-as-fall-2026, so no own-page record exists; a forced read files one"
   },
@@ -1181,8 +1325,12 @@
    },
    "degree_figures_on_certificate": false,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/paramedic-cert-spring-2026",
+    "extracted_run": "38979725726",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574354887: its filed record passes but was read from paramedic-cert-spring-2026, so no own-page record exists; a forced read files one"
   },
@@ -1213,8 +1361,12 @@
    },
    "degree_figures_on_certificate": true,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/paramedic-as-spring-2026",
+    "extracted_run": "38979725726",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574354887: its filed record passes but was read from paramedic-as-spring-2026, so no own-page record exists; a forced read files one"
   },
@@ -1245,8 +1397,12 @@
    },
    "degree_figures_on_certificate": false,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/psychiatric-technician-fall-2026",
+    "extracted_run": "38979396148",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574359765: its filed record passes but was read from psychiatric-technician-fall-2026, so no own-page record exists; a forced read files one"
   },
@@ -1277,8 +1433,12 @@
    },
    "degree_figures_on_certificate": false,
    "own_record": null,
-   "live": null,
-   "person_settled": null,
+   "live": {
+    "source_url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/psychiatric-technician-ca-fall-2026",
+    "extracted_run": "38979396148",
+    "checked": false
+   },
+   "person_settled": false,
    "decision": "read_own_page",
    "why": "held_no_gain in read 45574359765: its filed record passes but was read from psychiatric-technician-ca-fall-2026, so no own-page record exists; a forced read files one"
   }

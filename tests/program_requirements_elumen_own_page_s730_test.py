@@ -76,6 +76,16 @@ for d in LST["dispatch"]:
     check(d["estimate_high_usd"] is not None and d["estimate_high_usd"] <= 40,
           "2 %s: the read's estimate ($%s, high $%s) is within $40" % (college, d["estimate_usd"], d["estimate_high_usd"]))
 
+# Against a fixed list, never the list's own fields (the S731 second reader): no live row of the 40 was checked at the
+# conductor's read of 11:24Z, so the force list is the held set, less any key decided keep.
+for college, want in HELD.items():
+    d = [x for x in LST["dispatch"] if x["college"] == college][0]
+    kept = {e["control_number"] for e in LST["entries"] if e["college"] == college and e["decision"] == "keep"}
+    check(set(d["force"].split(",")) - {""} == want - kept,
+          "2 %s: the force list is the %d held programs less the kept (%s)" % (college, len(want), sorted(kept)))
+check(set(LST["dispatch"][0]["only"].split(",")) - set(LST["dispatch"][0]["force"].split(",")) <= {"43150"},
+      "2 only= adds 43150 alone beside the force list")
+
 fake = copy.deepcopy(LST)
 live = {"rows": [{"college": AV, "cn": "02150", "source_url": "x", "extracted_run": 1, "checked": True},
                  {"college": AV, "cn": "02152", "source_url": "x", "extracted_run": 1, "checked": False}]}
@@ -105,6 +115,18 @@ check(v[0] == "keep" and "arithmetic unequal" in v[1], "3 an own-page record tha
 check(E.verdict(e0, dict(own, extracted_run=98), "99")[0] == "keep", "3 a record from another run keeps")
 check(E.verdict(e0, dict(own, source_url=e0["filed"]["source_url"]), "99")[0] == "keep",
       "3 a record from the sister page keeps")
+# 43150 has no live row, so step=load inserts whatever the branch holds: only an own-page record that passes.
+pin = LST["pin"]
+p_own = {"source_url": pin["url"], "extracted_run": 99, "score": good, "record": {"program": {}}}
+check(E.pin_read(pin, p_own, "99")["decision"] == "insert", "3 43150: an own-page record that passes is inserted")
+pr = E.pin_read(pin, dict(p_own, score=bad), "99")
+check(pr["decision"] == "leave_out" and "arithmetic unequal" in pr["why"],
+      "3 43150: an own-page record whose arithmetic fails is left out, and says why (%s)" % pr["why"])
+check(E.pin_read(pin, dict(p_own, source_url=pin["filed"]["source_url"]), "99")["decision"] == "leave_out",
+      "3 43150: a record from the certificate's page is left out")
+fk = copy.deepcopy(LST)
+fk["pin"]["read"] = pr
+check(E.insert_keys(fk, AV) == [], "3 43150 left out: load has nothing of it to insert")
 
 # ── 4. the branch's records ──────────────────────────────────────────────────────────────────────
 wrong = []
@@ -117,6 +139,13 @@ for e in LST["entries"]:
     if not ok:
         wrong.append(e["control_number"])
 check(not wrong, "4 each key not replaced holds its filed record from its filed run; each replace its own page (%s)" % wrong)
+r43 = json.load(open(os.path.join(E.folder("antelope_valley"), "records", "43150.json")))
+dec = (LST["pin"].get("read") or {}).get("decision")
+import _program_requirements_score as SC  # noqa: E402
+check((dec == "insert" and r43.get("source_url") == LST["pin"]["url"] and SC.passes_live(r43.get("score")))
+      or (dec != "insert" and r43.get("source_url") == LST["pin"]["filed"]["source_url"]),
+      "4 43150 on the branch: its own-page record only where it passes (%s), else its filed record, which load skips"
+      % dec)
 
 # ── 5. 43150's pin ───────────────────────────────────────────────────────────────────────────────
 pins = C.site_pin_entries(AV)

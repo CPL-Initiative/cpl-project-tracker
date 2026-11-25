@@ -196,6 +196,14 @@ def verdict(e: dict, rec: dict, run: str) -> tuple[str, str, dict | None]:
         run, rec.get("extracted_run"), (rec.get("source_url") or "").rsplit("/", 1)[-1]), None
 
 
+def pin_read(pin: dict, rec: dict, run: str) -> dict:
+    """The pin's program after the read: insert where its own-page record passes as the live table counts it,
+    else leave_out, with why."""
+    decision, why, acct = verdict({"own_url": pin["url"]}, rec, run)
+    return dict(acct or {}, decision="insert" if decision == "replace" else "leave_out",
+                why=why.replace("passes as the live table counts it", "passes as the live table counts it: load inserts it"))
+
+
 def decide(lst: dict, college: str, run: str) -> dict:
     """After the forced read: each candidate's own-page record replaces the live row where it passes, and where it
     does not, its filed record and source entry come back from BASE so the reread cannot post it."""
@@ -215,12 +223,28 @@ def decide(lst: dict, college: str, run: str) -> dict:
         cn = e["control_number"]
         if cn in base_srcs:
             srcs = [base_srcs[cn] if s.get("control_number") == cn else s for s in srcs]
+    if college == lst["pin"].get("college"):
+        # 43150 has no live row, so step=load inserts whatever record the branch holds for it. It goes in only where
+        # its own-page record passes; otherwise its filed record (another program's page, which places none of its
+        # listed courses, so load_rows() skips it) and its source entry come back from BASE (S731 second reader).
+        cn = lst["pin"]["control_number"]
+        path = os.path.join(folder(slug), "records", cn + ".json")
+        lst["pin"]["read"] = pin_read(lst["pin"], _load(path), run)
+        if lst["pin"]["read"]["decision"] != "insert":
+            with open(path, "w", encoding="utf-8") as fh:
+                fh.write(_git_show(path))
+            if cn in base_srcs:
+                srcs = [base_srcs[cn] if s.get("control_number") == cn else s for s in srcs]
     _write(src_path, srcs)
-    if college == "Antelope Valley College":
-        rec = _load(os.path.join(folder(slug), "records", "43150.json"))
-        lst["pin"]["read"] = dict(run=str(rec.get("extracted_run")), source_url=rec.get("source_url"),
-                                  score=score_brief(rec.get("score")))
     return lst
+
+
+def insert_keys(lst: dict, college: str) -> list[str]:
+    """The keys with no live row that step=load may insert for this follow-up: the pin's program, only when its
+    own-page record passed."""
+    pin = lst.get("pin") or {}
+    return [pin["control_number"]] if pin.get("college") == college and (pin.get("read") or {}).get("decision") \
+        == "insert" else []
 
 
 def main(argv: list[str]) -> int:
