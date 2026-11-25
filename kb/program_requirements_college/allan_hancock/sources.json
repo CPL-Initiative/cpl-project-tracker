@@ -5263,17 +5263,22 @@
    "CHEM120"
   ],
   "source": {
-   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31148",
-   "title": "Agricultural Business - Associate in Science for Transfer",
-   "h1": "Agricultural Business - Associate in Science for Transfer",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31144",
+   "title": "Agricultural Science - Associate in Science",
+   "h1": "Agricultural Science - Associate in Science",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
-   }
+    "title": 1.0,
+    "section": "as",
+    "section_line": "agricultural science - associate in science",
+    "section_fit": 1.0,
+    "exact": 0
+   },
+   "pinned": true
   },
   "listed": 6,
-  "text_chars": 11049
+  "text_chars": 10801
  },
  {
   "control_number": "43817",
