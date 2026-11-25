@@ -1,24 +1,27 @@
 {
- "_readme": "S730 subject-title hunt (group html_a), 2026-11-25, under Sam's ask in session S730: the catalog's printed heading for each course subject code, for the local subject titles that decide each code's common subject (ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Cañada's robots.txt refuses /current/ to readers, so this reads the hand-filed copy of the 2026-2027 catalog (kb/hand_filed_catalogs/ca_ada.json, Sam's download of 2026-10-17) and prints only the lines above each subject's first course, as el_camino_subject_headings.json does. One load of the copy, no model call. Second read: the first (run 45626678601) took each code's first course from the program pages, which end by page 232, so this one starts at page 233. Third read: the second (run 45628047809) still met program pages through page 243, the last page with a course code, so this one prints the copy's table of contents (pages 1 to 8) to find where, or whether, it prints course descriptions.",
+ "_readme": "S730 subject-title hunt (group html_a), 2026-11-25, under Sam's ask in session S730: the catalog's printed heading for each course subject code, for the local subject titles that decide each code's common subject (ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Cañada's robots.txt refuses /current/ to readers, so this reads the hand-filed copy of the 2026-2027 catalog (kb/hand_filed_catalogs/ca_ada.json, Sam's download of 2026-10-17) and prints only the lines above each subject's first course, as el_camino_subject_headings.json does. One load of the copy, no model call. Second read: the first (run 45626678601) took each code's first course from the program pages, which end by page 232, so this one starts at page 233. Third read: the second (run 45628047809) still met program pages through page 243, the last page with a course code, so this one prints the copy's table of contents (pages 1 to 8) to find where, or whether, it prints course descriptions. Fourth read: the table of contents (run 45628685042) puts Course Descriptions at page 244 and the index at 355 of 358, and the second read's pattern met no course there, so this one starts at page 244 and lets the code and number stand on a line of their own, the title optional.",
  "college": "Cañada College",
  "questions": {
-  "contents": "Where the copy prints its course descriptions, or that it prints none."
+  "subject_headings": "The subject heading the catalog prints above each subject's first course."
  },
  "keywords": [
-  "Course\\s+Descriptions",
-  "Contents"
+  "\\b[Uu]nits?\\b"
  ],
  "pages": [
   {
    "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf",
    "answers": [
-    "contents"
+    "subject_headings"
    ],
    "hand_filed": true
   }
  ],
- "pdf_span": [
-  1,
-  8
- ]
+ "subject_context": {
+  "heading": "^(?P<subj>[A-Z]{2,5}) ?(?P<num>\\d{1,3}(?:\\.\\d{1,2})?[A-Z]{0,2})(?: (?P<title>.+))?$",
+  "before": 6,
+  "start_page": 244,
+  "units": "\\b[Uu]nits?\\b",
+  "units_inline": "\\b[Uu]nits?\\b",
+  "within": 4
+ }
 }
