@@ -1,35 +1,24 @@
 {
- "_readme": "Subject title hunt, group curriqunet (S730 worker, 2026-11-25; Sam's ask of 2026-11-25, ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Round 1: the host's catalog list and the start page's own navigation calls, to find the catalog id and the node that lists course subjects by name. No model call, writes nothing.",
+ "_readme": "Subject title hunt, group curriqunet (S730 worker, 2026-11-25; Sam's ask of 2026-11-25, ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Round 2: the course section's navigation children and its page, read as JSON (the keyword \"text\" keeps a long answer whole in its excerpts). Catalog 1758, nodes 6799, named by round 1.",
  "college": "Fresno City College",
  "questions": {
   "cq_subjects": "Which catalog id is the current catalog, and which navigation node lists the course subjects with their names."
  },
  "keywords": [
-  "[Cc]ourse [Dd]escriptions?",
-  "[Cc]ourses",
-  "[Ss]ubjects?",
-  "[Dd]isciplines?",
-  "[Dd]epartments?"
+  "\"text\":"
  ],
  "pages": [
   {
    "answers": [
     "cq_subjects"
    ],
-   "url": "https://fresno.curriqunet.com/catalog/_getCatalogs"
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=6799"
   },
   {
    "answers": [
     "cq_subjects"
    ],
-   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-catalog-cover",
-   "network": true,
-   "network_find": [
-    "Course Descriptions",
-    "Courses",
-    "Subject",
-    "Discipline"
-   ]
+   "url": "https://fresno.curriqunet.com/Catalog/_getPage?catalogId=1758&id=6799"
   }
  ]
 }
