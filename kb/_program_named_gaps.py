@@ -1771,6 +1771,20 @@ for _g, _s, _a in (
 del _g, _s, _a
 
 
+# S727 at College of the Canyons (kb/_program_piles_s727_canyons.py): 43388, held for a person since S691 because its
+# read's heading shares no word with its title, collected with its gap named (COBIx's brief of 2026-11-24: a record
+# held for a person is collected with its gap named and a lower confidence). The page the read held prints a
+# requirements list and not the program's own heading. Unit arithmetic takes noted_section_cut_off's 20 (a required
+# course carries no hours and no total was read); the source takes OTHER_PAGE_SOURCE's cap of 50 in confidence(), as
+# the kinds read from another award's page do, since the page is not shown to be the program's own.
+GAPS.setdefault("heading_not_in_text",
+                "The page the read held prints a requirements list but not the program's own heading, which sits on a "
+                "page the read did not hold; the record takes the list as this program's by its title alone, and no "
+                "page read has confirmed it.")
+ARITH_SCORE.setdefault("heading_not_in_text", 20)
+OTHER_PAGE_GAPS = OTHER_PAGE_GAPS | {"heading_not_in_text"}
+
+
 def lists_precision(files: list[dict], keys: frozenset | None = None) -> dict:
     """The gap's own claim, that the figures add to the printed total while a list's courses pass its figure,
     measured on the records of its shape (_lists_shape; #3678 and #3679 second readers, finding 2) with keys the

@@ -100,7 +100,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "heading_not_in_text",
+    "label": "The page the read held prints a requirements list but not the program's own heading, which sits on a page the read did not hold; the record takes the list as this program's by its title alone, and no page read has confirmed it.",
+    "words": "The text begins mid-section on page 328. The certificate's title, description and outcome were apparently printed on the preceding page and are not in the text. This record takes the first Program Requirements list as Fundamentals of Public Communications: NC.COMM-001 Strategies and Tactics of Public Relations plus NC.CSKL-014 Public Speaking in the Workplace. That reading matches the program title, but a reviewer should confirm it against page 327."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 20,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 50
+  }
  },
  "record": {
   "program": {

@@ -1,0 +1,2459 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30); S727: College of the Canyons's 20 wording-rule records, collected with their gaps named where one is honest (no reread), and 43388, held for a person since S691, collected with its gap named (COBIx's brief of 2026-11-24)",
+ "at": "2026-11-25T06:44:13Z",
+ "college": "College of the Canyons",
+ "census": {
+  "file": "kb/status/harvest_gap_census.json",
+  "levers": [
+   "reconcile_steps"
+  ],
+  "person": [],
+  "members": [
+   "02277",
+   "10302",
+   "10312",
+   "15477",
+   "16962",
+   "19386",
+   "32723",
+   "32815",
+   "32896",
+   "33814",
+   "36793",
+   "37648",
+   "40090",
+   "40383",
+   "40384",
+   "41576",
+   "43549",
+   "44260",
+   "44657",
+   "45528"
+  ],
+  "from_held": [
+   "43388"
+  ]
+ },
+ "gaps": {
+  "heading_not_in_text": "The page the read held prints a requirements list but not the program's own heading, which sits on a page the read did not hold; the record takes the list as this program's by its title alone, and no page read has confirmed it.",
+  "lists_not_closed": "A choice list prints no unit figure of its own, one that depends on another choice, or also takes courses from another list, so the lists alone cannot add the program's units.",
+  "noted_figures_differ": "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires.",
+  "noted_section_cut_off": "The reader's note says the program's section runs onto a page the read did not hold, so part of its requirements is missing from the record.",
+  "noted_unit_floor": "The catalog requires a variable-unit course at a minimum above the units printed beside it; with that minimum the courses add to the printed total.",
+  "pool_figure_not_read": "The catalog prints one figure over several lists or nested options together, and the record adds the parts instead, so its units cannot be checked against that figure.",
+  "unit_line_not_read": "The catalog prints a requirement as a line of units with no course named, and the record leaves the line out; with it the courses add to the printed total."
+ },
+ "moved": 9,
+ "by": {
+  "unit_line_not_read": 1,
+  "noted_figures_differ": 3,
+  "noted_unit_floor": 1,
+  "noted_section_cut_off": 1,
+  "lists_not_closed": 1,
+  "pool_figure_not_read": 1,
+  "heading_not_in_text": 1
+ },
+ "updates": 8,
+ "inserts": 1,
+ "precision": {
+  "read": 21,
+  "right": 21,
+  "wrong": [],
+  "no_record_file": 0,
+  "not_hand_held": 0,
+  "by_answer": {
+   "unit_line_not_read": 1,
+   "none": 12,
+   "noted_figures_differ": 3,
+   "noted_unit_floor": 1,
+   "noted_section_cut_off": 1,
+   "lists_not_closed": 1,
+   "pool_figure_not_read": 1,
+   "heading_not_in_text": 1
+  }
+ },
+ "claim_checks": {
+  "counts": {
+   "stands": 9,
+   "a named course not found": 1
+  },
+  "not_standing": [
+   [
+    "41576",
+    "a named course not found"
+   ]
+  ]
+ },
+ "boundaries": {
+  "counts": {
+   "the note's words gone right": 10,
+   "the stated total one unit off right": 10,
+   "coverage failing right": 10,
+   "the line one unit short right": 1,
+   "the course taken one unit more right": 1,
+   "the course taken at its printed least right": 1,
+   "the open list read as required right": 1,
+   "a repeat one time short right": 1,
+   "another key right": 1
+  },
+  "wrong": []
+ },
+ "held": [
+  {
+   "control_number": "10302",
+   "why": "held: coverage and invented fail: WWE 186ID printed as WE-186ID; ID-101B not in the state's file; today's scorer passes its arithmetic (scorer_passes), so it is never gap-filed: a rename or prefix alias that places those courses is its lever",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "19386",
+   "why": "held: coverage and invented fail: WWE 186ID printed as WE-186ID; ID-101B not in the state's file; today's scorer passes its arithmetic (scorer_passes), so it is never gap-filed: a rename or prefix alias that places those courses is its lever",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "32723",
+   "why": "held: coverage and invented fail: PSYCH 104 printed as PSYC-104, a prefix alias S691 filed after this record's run; ten courses not in the state's file; today's scorer passes its arithmetic (scorer_passes), so it is never gap-filed: a rename or prefix alias that places those courses is its lever",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "32815",
+   "why": "held: page 216 is shared with the Spanish A.A. (02290) and no note names the record's own section (the own-section guard); its last list is a substitution list that adds no units to the printed 23, so a wording rule that reads it so passes it (23 against 23): the reconcile lever",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "33814",
+   "why": "held: coverage and invented fail: WWE 186ID printed as WE-186ID; ARCHT-250 not in the state's file; today's scorer passes its arithmetic (scorer_passes), so it is never gap-filed: a rename or prefix alias that places those courses is its lever",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "36793",
+   "why": "held: its courses add to 19-22, inside the printed 18-22, so the figures do not disagree (d-lists-gap-holds-range-sums-s703), and no kind names a units sum inside a printed range (hours_within_printed_range is the hours form)",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "40090",
+   "why": "held: coverage and invented fail: the catalog's misprints PSCYH-104 and ATNHRO-105; four courses not in the state's file; today's scorer passes its arithmetic (scorer_passes), so it is never gap-filed: a rename or prefix alias that places those courses is its lever",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "40384",
+   "why": "held: page 84 is shared with five programs and no note of its own names its section (the own-section guard); 40383's note says one section serves both awards, a reading for a person or a rule",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "41576",
+   "why": "held: the claim check: today's capture did not find MUSIC 189 or MUSIC 190 among the codes on its pages (22 of the file's 30), so the repeat its note names is not corroborated; repeat_read_once (20 plus the six repeats is the printed 26) waits on a page read",
+   "claim": "a named course not found"
+  },
+  {
+   "control_number": "44260",
+   "why": "held: coverage and invented fail: WE ARCH486 printed as WE-486ARCH; CONST-105 and CONST-106 not in the state's file; today's scorer passes its arithmetic (scorer_passes), so it is never gap-filed: a rename or prefix alias that places those courses is its lever",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "44657",
+   "why": "held: coverage fails (invented passes): the catalog's misprint ANTRHO-103 for ANTHRO 103 and 103H; today's scorer passes its arithmetic (scorer_passes), so it is never gap-filed: a rename or prefix alias that places those courses is its lever",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "45528",
+   "why": "held: page 66 is shared with the Administration of Justice certificate (20465) and no note names the record's own section (the own-section guard)",
+   "claim": "no entry stands"
+  }
+ ],
+ "records": [
+  {
+   "college": "College of the Canyons",
+   "control_number": "02277",
+   "award": "A.S. Degree",
+   "extracted_run": "44769429877",
+   "moves_to": "unit_line_not_read",
+   "words": "Non-transfer path: MATH-211 (5 units) AND 'Nine additional units from the above CMPSCI courses that have not already been taken.' The 9 units are not recorded as a separate block; the block lists only MATH-211, with its printed 14-unit total. 'Above CMPSCI courses' presumably means the CMPSCI courses in the six-unit elective list (CMPSCI-132, 190, 192, 222, 236), but this is ambiguous.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "path": "kb/program_requirements_college/college_of_the_canyons/records/02277.json",
+   "write": "update",
+   "before_image": {
+    "program_title": "Computer Science",
+    "award": "A.S. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=113",
+    "measure": "units",
+    "total_min": 37,
+    "total_max": 38,
+    "record": {
+     "program": {
+      "section_heading": "Associate in Science Degree: Computer Science",
+      "measure": "units",
+      "total_units": {
+       "min": 37,
+       "max": 38
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Students will be able to identify, evaluate, analyze, and present fundamental software solutions and their applications."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Program Requirements",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "CMPSCI-111",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CMPSCI-111L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CMPSCI-122",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CMPSCI-182",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CMPSCI-182L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CMPSCI-235",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CMPSCI-282",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Plus six units from the following",
+       "rule": "choose_units",
+       "minimum": 6,
+       "option_group": null,
+       "stated": {
+        "min": 6,
+        "max": 6
+       },
+       "courses": [
+        {
+         "code": "CMPSCI-132",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CMPSCI-190",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CMPSCI-192",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CMPSCI-222",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CMPSCI-236",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHILOS-230",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Plus 14 units to 15 units from the following (for transfer students)",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Transfer or non-transfer path",
+       "stated": {
+        "min": 14,
+        "max": 15
+       },
+       "courses": [
+        {
+         "code": "MATH-211",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "MATH-211X",
+           "units": 6,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH-212",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH-214",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Plus 14 units from the following (for non-transfer students)",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Transfer or non-transfer path",
+       "stated": {
+        "min": 14,
+        "max": 14
+       },
+       "courses": [
+        {
+         "code": "MATH-211",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 15,
+     "listed": 15
+    },
+    "extracted_run": "44769429877"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 15,
+     "listed": 15,
+     "gaps": [
+      "unit_line_not_read"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 1
+  },
+  {
+   "college": "College of the Canyons",
+   "control_number": "10312",
+   "award": "A.S. Degree",
+   "extracted_run": "44769429877",
+   "moves_to": "noted_figures_differ",
+   "words": "The page states 'Units Required: 18', but the seven required courses sum to 18 units and the degree also requires a minimum of 2 units of WE-186HOSP, which would give 20 units. The stated total is recorded as printed; a reviewer should check it.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "path": "kb/program_requirements_college/college_of_the_canyons/records/10312.json",
+   "write": "update",
+   "before_image": {
+    "program_title": "Restaurant Management",
+    "award": "A.S. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=171",
+    "measure": "units",
+    "total_min": 18,
+    "total_max": 18,
+    "record": {
+     "program": {
+      "section_heading": "Associate in Science Degree: Restaurant Management",
+      "measure": "units",
+      "total_units": {
+       "min": 18,
+       "max": 18
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Students will be able to demonstrate proficiency in the core skills and knowledge required for employment in restaurant management."
+      ],
+      "careers": [
+       "restaurant industry"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Program Requirements",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "HOSP-101",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HOSP-104",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HOSP-220",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HOSP-245",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CULARTS-110",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CULARTS-136",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CULARTS-150",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Plus a minimum of 2 units from the following",
+       "rule": "choose_units",
+       "minimum": 2,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "WE-186HOSP",
+         "units": 1,
+         "units_max": 4,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 8,
+     "listed": 8
+    },
+    "extracted_run": "44769429877"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 8,
+     "listed": 8,
+     "gaps": [
+      "noted_figures_differ"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 2
+  },
+  {
+   "college": "College of the Canyons",
+   "control_number": "15477",
+   "award": "A.A. Degree",
+   "extracted_run": "44769429877",
+   "moves_to": "noted_unit_floor",
+   "words": "Capstone block 'Required electives: Capstone (needs only one unit of WE-186MEA)' recorded as 'all' (MEA-295 plus one unit of WE-186MEA); this reading makes the blocks sum to the stated 29 units (6+2+15+3+3). Reviewer should confirm it is not a choose-one rule.",
+   "confidence": {
+    "unit_arithmetic": 70,
+    "course_list_match": 46,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "path": "kb/program_requirements_college/college_of_the_canyons/records/15477.json",
+   "write": "update",
+   "before_image": {
+    "program_title": "Filmmaking",
+    "award": "A.A. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=204",
+    "measure": "units",
+    "total_min": 29,
+    "total_max": 29,
+    "record": {
+     "program": {
+      "section_heading": "Associate in Arts Degree: Filmmaking",
+      "measure": "units",
+      "total_units": {
+       "min": 29,
+       "max": 29
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Students will be able to demonstrate proficiency in the core skills and knowledge required for employment in the filmmaking industry."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Program Requirements",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "MEA-101",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MEA-120",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Plus a minimum of two units from the following",
+       "rule": "choose_units",
+       "minimum": 2,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "MEA-111",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MEA-112",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Plus fifteen units from the following",
+       "rule": "choose_units",
+       "minimum": 15,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "MEA-100",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MEA-108",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MEA-116",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MEA-180",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "MEA-190",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "MEA-221",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MEA-280",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required electives: Capstone (needs only one unit of WE-186MEA)",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "MEA-295",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "WE-186MEA",
+         "units": 0.05,
+         "units_max": 4,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Plus a minimum of three units from the following not already taken above",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "CINEMA-122",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MEA-102",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MEA-106",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MEA-107",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MEA-109",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MEA-111",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MEA-112",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC-114",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MUSIC-155",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC-159",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MEA-190",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MEA-208",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "THEATR-140",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "THEATR-144",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 16,
+     "listed": 35
+    },
+    "extracted_run": "44769429877"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 16,
+     "listed": 35,
+     "gaps": [
+      "noted_unit_floor"
+     ],
+     "confidence": {
+      "unit_arithmetic": 70,
+      "course_list_match": 46,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 3
+  },
+  {
+   "college": "College of the Canyons",
+   "control_number": "16962",
+   "award": "A.S. Degree",
+   "extracted_run": "44769429877",
+   "moves_to": "noted_section_cut_off",
+   "words": "The catalog text begins mid-section on page 84: the Automotive Technology A.S. Degree heading, description, outcomes, units required and the first part of its course list are on page 83, which is not in the text. Only the tail of the list (AUTECH-185, one of AUTECH-120/130, and WE-186AUTO) is visible; reviewer should check page 83.",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 31,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "path": "kb/program_requirements_college/college_of_the_canyons/records/16962.json",
+   "write": "update",
+   "before_image": {
+    "program_title": "Automotive Technology",
+    "award": "A.S. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=84",
+    "measure": "units",
+    "total_min": null,
+    "total_max": null,
+    "record": {
+     "program": {
+      "section_heading": "AUTOMOTIVE TECHNOLOGY",
+      "measure": "units",
+      "total_units": {
+       "min": null,
+       "max": null
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Program Requirements (list continued from page 83; earlier courses not in the text)",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "AUTECH-185",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Plus one course from the following",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "AUTECH-120",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTECH-130",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Plus a minimum of one unit from the following",
+       "rule": "choose_units",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "WE-186AUTO",
+         "units": 1,
+         "units_max": 4,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 4,
+     "listed": 13
+    },
+    "extracted_run": "44769429877"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 4,
+     "listed": 13,
+     "gaps": [
+      "noted_section_cut_off"
+     ],
+     "confidence": {
+      "unit_arithmetic": 20,
+      "course_list_match": 31,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 4
+  },
+  {
+   "college": "College of the Canyons",
+   "control_number": "32896",
+   "award": "A.A- T Degree",
+   "extracted_run": "44769429877",
+   "moves_to": "lists_not_closed",
+   "words": "The third block's minimum depends on the option chosen: 3 units if Option 1 is selected, 6 units if Option 2 is selected. Recorded minimum 3; reviewer should note Option 2 requires 6 units from this list (giving 18 units for Option 1 and 19 for Option 2, matching 'Units Required: 18-19').",
+   "confidence": {
+    "unit_arithmetic": 30,
+    "course_list_match": 96,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "path": "kb/program_requirements_college/college_of_the_canyons/records/32896.json",
+   "write": "update",
+   "before_image": {
+    "program_title": "English",
+    "award": "A.A- T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=141",
+    "measure": "units",
+    "total_min": 18,
+    "total_max": 19,
+    "record": {
+     "program": {
+      "section_heading": "Associate in Arts for Transfer Degree: English",
+      "measure": "units",
+      "total_units": {
+       "min": 18,
+       "max": 19
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "CalGETC",
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Appraise the contributions and relevance of literature.",
+       "Apply multiple perspectives and critical thinking methods to analyze and interpret literature."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "OPTION 1",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Option",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ENGL-C1001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL-C1001H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL C1002",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "OPTION 2",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Option",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ENGL C1003",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Plus six units from the following",
+       "rule": "choose_units",
+       "minimum": 6,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ENGL-250",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-251",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-260",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-261",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-273",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-274",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "If Option 1 is selected above, plus three units / If Option 2 is selected above, plus six units from the following",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ENGL-105",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-106",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-108",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-109",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-250",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-251",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-260",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-261",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-262",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-273",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-274",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-275",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Plus three units from the following that have not already been selected from the courses listed above",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ENGL-105",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-106",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-108",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-109",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-122",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-135",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-200",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-250",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-251",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-260",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-261",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-262",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-263",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-264",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-270",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-271",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-272",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-273",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-274",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-275",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-280",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-281",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 26,
+     "listed": 27
+    },
+    "extracted_run": "44769429877"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 26,
+     "listed": 27,
+     "gaps": [
+      "lists_not_closed"
+     ],
+     "confidence": {
+      "unit_arithmetic": 30,
+      "course_list_match": 96,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 5
+  },
+  {
+   "college": "College of the Canyons",
+   "control_number": "37648",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": 44887850515,
+   "moves_to": "pool_figure_not_read",
+   "words": "Overall rule: 'Take six courses from the following for a minimum of 18 units, at least one course from each of the five areas.' Each area is recorded as a choose_courses block with minimum 1; the sixth course may come from any area, and the six courses must total at least 18 units.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "path": "kb/program_requirements_college/college_of_the_canyons/records/37648.json",
+   "write": "update",
+   "before_image": {
+    "program_title": "Global Competencies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=161",
+    "measure": "units",
+    "total_min": 18,
+    "total_max": 18,
+    "record": {
+     "program": {
+      "section_heading": "Certificate of Achievement: Global Competencies",
+      "measure": "units",
+      "total_units": {
+       "min": 18,
+       "max": 18
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Students will be able to demonstrate an understanding of interdependent socio-cultural, geographical, and political systems inherent to international affairs and global communities.",
+       "Students will be able to demonstrate an ability to apply sustainable and responsible perspectives to local, national, and international situations with a heightened awareness of their global impact."
+      ],
+      "careers": [
+       "public relations",
+       "diplomacy",
+       "civil service",
+       "global trade",
+       "global policy",
+       "world health and related affairs",
+       "humanitarian services"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Global Politics",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "POLS-210",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLS-250",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLS-270",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Regional Area Studies",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "GEOGRPH-104",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST-191",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST-193",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST-212",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST-240",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST-243",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "The Physical World",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "BIOSCI-130",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOGRPH-100",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOGRPH-103",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "The Socio-Historical World",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ANTHRO-103",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ANTHRO-103H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTHRO-220",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-273",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOGRPH-102",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HUMAN-115",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHILOS-220",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOCI-102",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOCI-200",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "SOCI-200H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOCI-205",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOCI-207",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "World Culture and Arts",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ART-100",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARTH-C1100",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ARTH-C1200",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ART-112",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ART-116",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CINEMA-131",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CULARTS-133",
+         "units": 2.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE-101",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC-108",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC-112",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 34,
+     "listed": 34
+    },
+    "extracted_run": "44887850515"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 34,
+     "listed": 34,
+     "gaps": [
+      "pool_figure_not_read"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 6
+  },
+  {
+   "college": "College of the Canyons",
+   "control_number": "40383",
+   "award": "A.S. Degree",
+   "extracted_run": "44769429877",
+   "moves_to": "noted_figures_differ",
+   "words": "The required courses sum to 36 units, which equals the stated 'Units Required: 36'. The minimum of 1 unit of WE-186AUTO would bring the total to 37, so the stated total appears to exclude the work experience unit. Reviewer should check.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "path": "kb/program_requirements_college/college_of_the_canyons/records/40383.json",
+   "write": "update",
+   "before_image": {
+    "program_title": "Advanced Diagnosis and Performance",
+    "award": "A.S. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=84",
+    "measure": "units",
+    "total_min": 36,
+    "total_max": 36,
+    "record": {
+     "program": {
+      "section_heading": "Associate in Science Degree and Certificate of Achievement: Advanced Diagnosis and Performance",
+      "measure": "units",
+      "total_units": {
+       "min": 36,
+       "max": 36
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Students will be able to demonstrate proficiency in the core skills and knowledge required for employment in the automotive industry."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Program Requirements",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "AUTECH-110",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTECH-112",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTECH-114",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTECH-116",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTECH-135",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTECH-136",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTECH-180",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTECH-185",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTECH-190",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTECH-200",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Plus a minimum of one unit from the following",
+       "rule": "choose_units",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "WE-186AUTO",
+         "units": 1,
+         "units_max": 4,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 11,
+     "listed": 11
+    },
+    "extracted_run": "44769429877"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 11,
+     "listed": 11,
+     "gaps": [
+      "noted_figures_differ"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 7
+  },
+  {
+   "college": "College of the Canyons",
+   "control_number": "43549",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "44769429877",
+   "moves_to": "noted_figures_differ",
+   "words": "Stated total is 22.5 units, but the required courses (19) plus the 3-unit option plus a minimum 1 unit of work experience sum to 23; recorded the printed 22.5.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 82,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "path": "kb/program_requirements_college/college_of_the_canyons/records/43549.json",
+   "write": "update",
+   "before_image": {
+    "program_title": "Commercial Music",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=220",
+    "measure": "units",
+    "total_min": 22.5,
+    "total_max": 22.5,
+    "record": {
+     "program": {
+      "section_heading": "Certificate of Achievement: Commercial Music",
+      "measure": "units",
+      "total_units": {
+       "min": 22.5,
+       "max": 22.5
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Record, mix, edit and master a music track using industry standard equipment and software.",
+       "Design an audio reinforcement system for a live concert or event",
+       "Demonstrate professional behavior as an audio engineer."
+      ],
+      "careers": [
+       "audio engineering"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Program Requirements",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "MUSIC-137A",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC-154",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC-156",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC-157",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC-192",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MEA-295",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC-155",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Plus three units from one of the following two options: Pro Tools",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Three-unit option",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "MUSIC-193A",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC-193B",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Plus three units from one of the following two options: GarageBand/Logic Pro",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Three-unit option",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "MUSIC-194A",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MUSIC-194B",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "Plus a minimum of one unit from the following",
+       "rule": "choose_units",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "WE-186MUS",
+         "units": 0.05,
+         "units_max": 4,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 9,
+     "listed": 11
+    },
+    "extracted_run": "44769429877"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 9,
+     "listed": 11,
+     "gaps": [
+      "noted_figures_differ"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 82,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 8
+  },
+  {
+   "college": "College of the Canyons",
+   "control_number": "43388",
+   "award": "Noncredit program",
+   "extracted_run": "44886816990",
+   "moves_to": "heading_not_in_text",
+   "words": "The text begins mid-section on page 328. The certificate's title, description and outcome were apparently printed on the preceding page and are not in the text. This record takes the first Program Requirements list as Fundamentals of Public Communications: NC.COMM-001 Strategies and Tactics of Public Relations plus NC.CSKL-014 Public Speaking in the Workplace. That reading matches the program title, but a reviewer should confirm it against page 327.",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 50
+   },
+   "path": "kb/program_requirements_college/college_of_the_canyons/records/43388.json",
+   "write": "insert",
+   "from": "kb/program_requirements_college/college_of_the_canyons/held_for_person/43388.json",
+   "after_image": {
+    "program_title": "Fundamentals of Public Communications",
+    "award": "Noncredit program",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=328",
+    "measure": "hours",
+    "total_min": null,
+    "total_max": null,
+    "record": {
+     "program": {
+      "section_heading": "SCHOOL OF PERSONAL AND PROFESSIONAL LEARNING - NONCREDIT (Program Requirements list at the top of page 328; the certificate's own heading is not in the text)",
+      "measure": "hours",
+      "total_units": {
+       "min": null,
+       "max": null
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Program Requirements",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "NC.COMM-001",
+         "units": 12,
+         "units_max": 20,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "NC.CSKL-014",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 1,
+     "listed": 1,
+     "gaps": [
+      "heading_not_in_text"
+     ],
+     "confidence": {
+      "unit_arithmetic": 20,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 50
+     }
+    },
+    "extracted_run": "44886816990"
+   },
+   "i": 9
+  }
+ ],
+ "shared_pages": {
+  "02277": [
+   "32704"
+  ],
+  "15477": [
+   "18949"
+  ],
+  "16962": [
+   "40383",
+   "40384",
+   "40389",
+   "40411",
+   "40415"
+  ],
+  "32896": [
+   "02294"
+  ],
+  "40383": [
+   "16962",
+   "40384",
+   "40389",
+   "40411",
+   "40415"
+  ],
+  "43388": [
+   "35146",
+   "38685",
+   "44813",
+   "44814"
+  ]
+ },
+ "representation": "UPDATE rows: checks.gaps and checks.confidence added as the load reads the filed score; checks.arithmetic, coverage, invented and the record unchanged. INSERT rows: the record moved from held_for_person/ to records/ with its gap, and the load's image of it inserted as the load would (checked false), only where no live row holds the key",
+ "claim_check_reads": "Today's capture (sources.json): every course an entry names among the codes it found, and a page a note says the read lacked not among the capture's pages. The capture keeps no page text, so a note's quoted figures are the reader's words, never re-read here.",
+ "follow_verdict": "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows (confirm_matches); the apply aborts, writing nothing, unless the count is 0.",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'College of the Canyons', '02277', 44769429877, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMPSCI-111\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMPSCI-111L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMPSCI-122\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMPSCI-182\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMPSCI-182L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMPSCI-235\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMPSCI-282\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Program Requirements\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMPSCI-132\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMPSCI-190\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CMPSCI-192\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMPSCI-222\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMPSCI-236\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHILOS-230\",\"units\":3,\"units_max\":null}],\"minimum\":6,\"name\":\"Plus six units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"MATH-211X\",\"units\":6}],\"catalog_addition\":false,\"code\":\"MATH-211\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH-212\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH-214\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Plus 14 units to 15 units from the following (for transfer students)\",\"option_group\":\"Transfer or non-transfer path\",\"rule\":\"all\",\"stated\":{\"max\":15,\"min\":14}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH-211\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Plus 14 units from the following (for non-transfer students)\",\"option_group\":\"Transfer or non-transfer path\",\"rule\":\"all\",\"stated\":{\"max\":14,\"min\":14}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Students will be able to identify, evaluate, analyze, and present fundamental software solutions and their applications.\"],\"section_heading\":\"Associate in Science Degree: Computer Science\",\"total_units\":{\"max\":38,\"min\":37}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"unit_line_not_read\"],\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb),\n  (2, 'College of the Canyons', '10312', 44769429877, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HOSP-101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HOSP-104\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HOSP-220\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HOSP-245\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CULARTS-110\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CULARTS-136\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CULARTS-150\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"Program Requirements\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"WE-186HOSP\",\"units\":1,\"units_max\":4}],\"minimum\":2,\"name\":\"Plus a minimum of 2 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"restaurant industry\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Students will be able to demonstrate proficiency in the core skills and knowledge required for employment in restaurant management.\"],\"section_heading\":\"Associate in Science Degree: Restaurant Management\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb),\n  (3, 'College of the Canyons', '15477', 44769429877, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-120\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Program Requirements\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-111\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-112\",\"units\":2,\"units_max\":null}],\"minimum\":2,\"name\":\"Plus a minimum of two units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-108\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-116\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MEA-190\",\"units\":3}],\"catalog_addition\":false,\"code\":\"MEA-180\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MEA-221\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-280\",\"units\":3,\"units_max\":null}],\"minimum\":15,\"name\":\"Plus fifteen units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-295\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"WE-186MEA\",\"units\":0.05,\"units_max\":4}],\"minimum\":null,\"name\":\"Required electives: Capstone (needs only one unit of WE-186MEA)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CINEMA-122\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-106\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MEA-107\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-109\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-111\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-112\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUSIC-114\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC-155\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUSIC-159\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-190\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MEA-208\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"THEATR-140\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"THEATR-144\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Plus a minimum of three units from the following not already taken above\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Students will be able to demonstrate proficiency in the core skills and knowledge required for employment in the filmmaking industry.\"],\"section_heading\":\"Associate in Arts Degree: Filmmaking\",\"total_units\":{\"max\":29,\"min\":29}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":35,\"placed\":16}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":46,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":70},\"coverage\":true,\"gaps\":[\"noted_unit_floor\"],\"invented\":true,\"listed\":35,\"placed\":16}'::jsonb),\n  (4, 'College of the Canyons', '16962', 44769429877, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTECH-185\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Program Requirements (list continued from page 83; earlier courses not in the text)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTECH-120\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTECH-130\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Plus one course from the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"WE-186AUTO\",\"units\":1,\"units_max\":4}],\"minimum\":1,\"name\":\"Plus a minimum of one unit from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"AUTOMOTIVE TECHNOLOGY\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":13,\"placed\":4}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":31,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":20},\"coverage\":true,\"gaps\":[\"noted_section_cut_off\"],\"invented\":true,\"listed\":13,\"placed\":4}'::jsonb),\n  (5, 'College of the Canyons', '32896', 44769429877, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL-C1001H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ENGL-C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL C1002\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"OPTION 1\",\"option_group\":\"Option\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL C1003\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"OPTION 2\",\"option_group\":\"Option\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-250\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-251\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-260\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-261\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-273\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-274\",\"units\":3,\"units_max\":null}],\"minimum\":6,\"name\":\"Plus six units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-105\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-106\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-108\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-109\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-250\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-251\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-260\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-261\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-262\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-273\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-274\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-275\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"If Option 1 is selected above, plus three units / If Option 2 is selected above, plus six units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-105\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-106\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-108\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-109\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-122\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-135\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-250\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-251\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-260\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-261\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-262\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-263\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-264\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-270\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-271\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-272\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-273\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-274\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-275\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-280\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-281\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Plus three units from the following that have not already been selected from the courses listed above\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"CalGETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Appraise the contributions and relevance of literature.\",\"Apply multiple perspectives and critical thinking methods to analyze and interpret literature.\"],\"section_heading\":\"Associate in Arts for Transfer Degree: English\",\"total_units\":{\"max\":19,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":27,\"placed\":26}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":96,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":27,\"placed\":26}'::jsonb),\n  (6, 'College of the Canyons', '37648', 44887850515, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS-210\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS-250\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS-270\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Global Politics\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOGRPH-104\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-191\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-193\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-212\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-240\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-243\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Regional Area Studies\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOSCI-130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOGRPH-100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOGRPH-103\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"The Physical World\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ANTHRO-103H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ANTHRO-103\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHRO-220\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-273\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOGRPH-102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HUMAN-115\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHILOS-220\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI-102\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SOCI-200H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"SOCI-200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI-205\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI-207\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"The Socio-Historical World\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART-100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARTH-C1100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARTH-C1200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART-112\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART-116\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CINEMA-131\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CULARTS-133\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE-101\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC-108\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC-112\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"World Culture and Arts\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"public relations\",\"diplomacy\",\"civil service\",\"global trade\",\"global policy\",\"world health and related affairs\",\"humanitarian services\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Students will be able to demonstrate an understanding of interdependent socio-cultural, geographical, and political systems inherent to international affairs and global communities.\",\"Students will be able to demonstrate an ability to apply sustainable and responsible perspectives to local, national, and international situations with a heightened awareness of their global impact.\"],\"section_heading\":\"Certificate of Achievement: Global Competencies\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":34,\"placed\":34}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"pool_figure_not_read\"],\"invented\":true,\"listed\":34,\"placed\":34}'::jsonb),\n  (7, 'College of the Canyons', '40383', 44769429877, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTECH-110\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTECH-112\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTECH-114\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTECH-116\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTECH-135\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTECH-136\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTECH-180\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTECH-185\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTECH-190\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTECH-200\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Program Requirements\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"WE-186AUTO\",\"units\":1,\"units_max\":4}],\"minimum\":1,\"name\":\"Plus a minimum of one unit from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Students will be able to demonstrate proficiency in the core skills and knowledge required for employment in the automotive industry.\"],\"section_heading\":\"Associate in Science Degree and Certificate of Achievement: Advanced Diagnosis and Performance\",\"total_units\":{\"max\":36,\"min\":36}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":11,\"placed\":11}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":11,\"placed\":11}'::jsonb),\n  (8, 'College of the Canyons', '43549', 44769429877, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC-137A\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC-154\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC-156\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC-157\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC-192\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-295\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC-155\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Program Requirements\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC-193A\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC-193B\",\"units\":1.5,\"units_max\":null}],\"minimum\":null,\"name\":\"Plus three units from one of the following two options: Pro Tools\",\"option_group\":\"Three-unit option\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUSIC-194A\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUSIC-194B\",\"units\":1.5,\"units_max\":null}],\"minimum\":null,\"name\":\"Plus three units from one of the following two options: GarageBand/Logic Pro\",\"option_group\":\"Three-unit option\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"WE-186MUS\",\"units\":0.05,\"units_max\":4}],\"minimum\":1,\"name\":\"Plus a minimum of one unit from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"audio engineering\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Record, mix, edit and master a music track using industry standard equipment and software.\",\"Design an audio reinforcement system for a live concert or event\",\"Demonstrate professional behavior as an audio engineer.\"],\"section_heading\":\"Certificate of Achievement: Commercial Music\",\"total_units\":{\"max\":22.5,\"min\":22.5}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":11,\"placed\":9}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":82,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":11,\"placed\":9}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'insert_listed', 1,\n  'insert_present', (select count(*) from public.program_requirement_records r0\n                      where r0.college = 'College of the Canyons' and r0.control_number in ('43388')),\n  'insert_verdicts', (select count(*) from public.program_record_verdicts pv0\n                       where pv0.college = 'College of the Canyons' and pv0.control_number in ('43388')),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "pre_read_md5": "with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) as (values\n  (1, 'College of the Canyons', '02277', 44769429877, 'b01bac1722ffeca05ea8255ebb3b9b80', '3c81834a38a33a73170c8fc53655fda9', '03b91331d7d6495724918843438c7e36'),\n  (2, 'College of the Canyons', '10312', 44769429877, '7433c8af535fa2e99153bfe5e995baef', 'b167e014df6b97bdebba96ca16afce51', 'a54d651fc6a696ebd80f5d37405cb210'),\n  (3, 'College of the Canyons', '15477', 44769429877, 'a54c783d382da92c40c8217149b44ba1', '6d2e0cb935c0d38e7096880bea2459b6', 'f18db3d5a55d8615cd7c1f7f8024f29f'),\n  (4, 'College of the Canyons', '16962', 44769429877, 'ee66bf27d36d39229f0fc9bc7c355f3a', '234453088e0b56a19eaeadeba055ec57', 'a4eebf937e7f76112191d60a66fb0bc1'),\n  (5, 'College of the Canyons', '32896', 44769429877, '6207051ad9ed21f49aad4a530f4aaeed', 'f61818b42c814e08375c21e81c36f31e', 'fc76fd3c74d7ed9cb6382fd420048ba8'),\n  (6, 'College of the Canyons', '37648', 44887850515, '399fbdb5881972ed041d2ea1987827e9', 'db490ca8012a7848af424ef80ddf2930', 'd21a97d2e502ab364e154db42048f4bf'),\n  (7, 'College of the Canyons', '40383', 44769429877, 'e77edfa5c75401e5bb5d8ea2aa0bdb50', '025f5967e09072e40425565d0b8c2cce', 'b2f52d687182327018d540fc089e06d6'),\n  (8, 'College of the Canyons', '43549', 44769429877, 'f029489641f518df8e1ae6c06ae93a02', '9fa490af04301b243653e4713e374514', 'ca8139eeccdd73cd6266169729b6b460'))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'insert_listed', 1,\n  'insert_present', (select count(*) from public.program_requirement_records r0\n                      where r0.college = 'College of the Canyons' and r0.control_number in ('43388')),\n  'insert_verdicts', (select count(*) from public.program_record_verdicts pv0\n                       where pv0.college = 'College of the Canyons' and pv0.control_number in ('43388')),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.record::text) = v.rec_md5),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.checks::text) = v.chk_md5),\n  'already_after', count(*) filter (where md5(r.checks::text) = v.after_md5),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'College of the Canyons', '02277', 44769429877, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMPSCI-111\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMPSCI-111L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMPSCI-122\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMPSCI-182\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMPSCI-182L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMPSCI-235\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMPSCI-282\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Program Requirements\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMPSCI-132\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMPSCI-190\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CMPSCI-192\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMPSCI-222\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMPSCI-236\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHILOS-230\",\"units\":3,\"units_max\":null}],\"minimum\":6,\"name\":\"Plus six units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"MATH-211X\",\"units\":6}],\"catalog_addition\":false,\"code\":\"MATH-211\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH-212\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH-214\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Plus 14 units to 15 units from the following (for transfer students)\",\"option_group\":\"Transfer or non-transfer path\",\"rule\":\"all\",\"stated\":{\"max\":15,\"min\":14}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH-211\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Plus 14 units from the following (for non-transfer students)\",\"option_group\":\"Transfer or non-transfer path\",\"rule\":\"all\",\"stated\":{\"max\":14,\"min\":14}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Students will be able to identify, evaluate, analyze, and present fundamental software solutions and their applications.\"],\"section_heading\":\"Associate in Science Degree: Computer Science\",\"total_units\":{\"max\":38,\"min\":37}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"unit_line_not_read\"],\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb),\n  (2, 'College of the Canyons', '10312', 44769429877, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HOSP-101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HOSP-104\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HOSP-220\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HOSP-245\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CULARTS-110\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CULARTS-136\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CULARTS-150\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"Program Requirements\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"WE-186HOSP\",\"units\":1,\"units_max\":4}],\"minimum\":2,\"name\":\"Plus a minimum of 2 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"restaurant industry\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Students will be able to demonstrate proficiency in the core skills and knowledge required for employment in restaurant management.\"],\"section_heading\":\"Associate in Science Degree: Restaurant Management\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb),\n  (3, 'College of the Canyons', '15477', 44769429877, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-120\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Program Requirements\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-111\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-112\",\"units\":2,\"units_max\":null}],\"minimum\":2,\"name\":\"Plus a minimum of two units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-108\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-116\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MEA-190\",\"units\":3}],\"catalog_addition\":false,\"code\":\"MEA-180\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MEA-221\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-280\",\"units\":3,\"units_max\":null}],\"minimum\":15,\"name\":\"Plus fifteen units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-295\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"WE-186MEA\",\"units\":0.05,\"units_max\":4}],\"minimum\":null,\"name\":\"Required electives: Capstone (needs only one unit of WE-186MEA)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CINEMA-122\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-106\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MEA-107\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-109\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-111\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-112\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUSIC-114\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC-155\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUSIC-159\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-190\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MEA-208\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"THEATR-140\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"THEATR-144\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Plus a minimum of three units from the following not already taken above\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Students will be able to demonstrate proficiency in the core skills and knowledge required for employment in the filmmaking industry.\"],\"section_heading\":\"Associate in Arts Degree: Filmmaking\",\"total_units\":{\"max\":29,\"min\":29}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":35,\"placed\":16}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":46,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":70},\"coverage\":true,\"gaps\":[\"noted_unit_floor\"],\"invented\":true,\"listed\":35,\"placed\":16}'::jsonb),\n  (4, 'College of the Canyons', '16962', 44769429877, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTECH-185\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Program Requirements (list continued from page 83; earlier courses not in the text)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTECH-120\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTECH-130\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Plus one course from the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"WE-186AUTO\",\"units\":1,\"units_max\":4}],\"minimum\":1,\"name\":\"Plus a minimum of one unit from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"AUTOMOTIVE TECHNOLOGY\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":13,\"placed\":4}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":31,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":20},\"coverage\":true,\"gaps\":[\"noted_section_cut_off\"],\"invented\":true,\"listed\":13,\"placed\":4}'::jsonb),\n  (5, 'College of the Canyons', '32896', 44769429877, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL-C1001H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ENGL-C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL C1002\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"OPTION 1\",\"option_group\":\"Option\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL C1003\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"OPTION 2\",\"option_group\":\"Option\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-250\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-251\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-260\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-261\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-273\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-274\",\"units\":3,\"units_max\":null}],\"minimum\":6,\"name\":\"Plus six units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-105\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-106\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-108\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-109\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-250\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-251\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-260\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-261\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-262\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-273\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-274\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-275\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"If Option 1 is selected above, plus three units / If Option 2 is selected above, plus six units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-105\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-106\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-108\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-109\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-122\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-135\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-250\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-251\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-260\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-261\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-262\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-263\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-264\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-270\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-271\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-272\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-273\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-274\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-275\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-280\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-281\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Plus three units from the following that have not already been selected from the courses listed above\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"CalGETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Appraise the contributions and relevance of literature.\",\"Apply multiple perspectives and critical thinking methods to analyze and interpret literature.\"],\"section_heading\":\"Associate in Arts for Transfer Degree: English\",\"total_units\":{\"max\":19,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":27,\"placed\":26}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":96,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":27,\"placed\":26}'::jsonb),\n  (6, 'College of the Canyons', '37648', 44887850515, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS-210\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS-250\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS-270\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Global Politics\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOGRPH-104\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-191\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-193\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-212\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-240\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-243\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Regional Area Studies\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOSCI-130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOGRPH-100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOGRPH-103\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"The Physical World\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ANTHRO-103H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ANTHRO-103\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHRO-220\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-273\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOGRPH-102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HUMAN-115\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHILOS-220\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI-102\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SOCI-200H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"SOCI-200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI-205\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI-207\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"The Socio-Historical World\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART-100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARTH-C1100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARTH-C1200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART-112\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART-116\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CINEMA-131\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CULARTS-133\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE-101\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC-108\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC-112\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"World Culture and Arts\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"public relations\",\"diplomacy\",\"civil service\",\"global trade\",\"global policy\",\"world health and related affairs\",\"humanitarian services\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Students will be able to demonstrate an understanding of interdependent socio-cultural, geographical, and political systems inherent to international affairs and global communities.\",\"Students will be able to demonstrate an ability to apply sustainable and responsible perspectives to local, national, and international situations with a heightened awareness of their global impact.\"],\"section_heading\":\"Certificate of Achievement: Global Competencies\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":34,\"placed\":34}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"pool_figure_not_read\"],\"invented\":true,\"listed\":34,\"placed\":34}'::jsonb),\n  (7, 'College of the Canyons', '40383', 44769429877, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTECH-110\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTECH-112\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTECH-114\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTECH-116\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTECH-135\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTECH-136\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTECH-180\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTECH-185\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTECH-190\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTECH-200\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Program Requirements\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"WE-186AUTO\",\"units\":1,\"units_max\":4}],\"minimum\":1,\"name\":\"Plus a minimum of one unit from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Students will be able to demonstrate proficiency in the core skills and knowledge required for employment in the automotive industry.\"],\"section_heading\":\"Associate in Science Degree and Certificate of Achievement: Advanced Diagnosis and Performance\",\"total_units\":{\"max\":36,\"min\":36}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":11,\"placed\":11}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":11,\"placed\":11}'::jsonb),\n  (8, 'College of the Canyons', '43549', 44769429877, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC-137A\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC-154\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC-156\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC-157\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC-192\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-295\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC-155\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Program Requirements\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC-193A\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC-193B\",\"units\":1.5,\"units_max\":null}],\"minimum\":null,\"name\":\"Plus three units from one of the following two options: Pro Tools\",\"option_group\":\"Three-unit option\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUSIC-194A\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUSIC-194B\",\"units\":1.5,\"units_max\":null}],\"minimum\":null,\"name\":\"Plus three units from one of the following two options: GarageBand/Logic Pro\",\"option_group\":\"Three-unit option\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"WE-186MUS\",\"units\":0.05,\"units_max\":4}],\"minimum\":1,\"name\":\"Plus a minimum of one unit from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"audio engineering\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Record, mix, edit and master a music track using industry standard equipment and software.\",\"Design an audio reinforcement system for a live concert or event\",\"Demonstrate professional behavior as an audio engineer.\"],\"section_heading\":\"Certificate of Achievement: Commercial Music\",\"total_units\":{\"max\":22.5,\"min\":22.5}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":11,\"placed\":9}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":82,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":11,\"placed\":9}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\nf as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number\n        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true\n       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)),\ne(expect) as (values (8)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\nn(i, college, control_number, program_title, award, catalog_year, source_url, measure, total_min, total_max, record, checks, extracted_run) as (values\n  (9, 'College of the Canyons', '43388', 'Fundamentals of Public Communications', 'Noncredit program', '2026-2027', 'https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=328', 'hours', null::numeric, null::numeric, '{\"program\": {\"section_heading\": \"SCHOOL OF PERSONAL AND PROFESSIONAL LEARNING - NONCREDIT (Program Requirements list at the top of page 328; the certificate''s own heading is not in the text)\", \"measure\": \"hours\", \"total_units\": {\"min\": null, \"max\": null}, \"open_elective_units\": null, \"degree_elective_units\": {\"min\": null, \"max\": null}, \"ge_pattern\": null, \"degree_total\": {\"min\": null, \"max\": null}, \"ge_units\": {\"min\": null, \"max\": null}, \"electives_fill_degree\": false, \"outcomes\": [], \"careers\": []}, \"blocks\": [{\"name\": \"Program Requirements\", \"rule\": \"all\", \"minimum\": null, \"option_group\": null, \"stated\": {\"min\": null, \"max\": null}, \"courses\": [{\"code\": \"NC.COMM-001\", \"units\": 12, \"units_max\": 20, \"alternatives\": [], \"catalog_addition\": true}, {\"code\": \"NC.CSKL-014\", \"units\": null, \"units_max\": null, \"alternatives\": [], \"catalog_addition\": false}]}]}'::jsonb, '{\"coverage\": true, \"invented\": true, \"arithmetic\": \"incomplete\", \"placed\": 1, \"listed\": 1, \"gaps\": [\"heading_not_in_text\"], \"confidence\": {\"unit_arithmetic\": 20, \"course_list_match\": 100, \"ge_pattern\": null, \"catalog_year\": 100, \"source\": 50}}'::jsonb, 44886816990::bigint)),\nins as (\ninsert into public.program_requirement_records (college, control_number, program_title, award, catalog_year,\n       source_url, measure, total_min, total_max, record, checks, checked, extracted_run)\nselect college, control_number, program_title, award, catalog_year, source_url, measure, total_min, total_max,\n       record, checks, false, extracted_run from n\non conflict (college, control_number) do nothing\nreturning control_number),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when f.n > 0\n            then ('s727a piles confirm guard: ' || f.n || ' rows hold a matching confirm verdict ' || f.keys::text)::int::text::json\n            when (select count(*) from ins) <> 1\n            then ('s727a piles insert guard: the INSERT wrote ' || (select count(*) from ins) || ' rows, the plan names 1')::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'inserted', (select coalesce(json_agg(control_number order by control_number), '[]'::json) from ins), 'skipped_checked', c.keys)\n            else ('s727a piles guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, f;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'College of the Canyons', '02277', 44769429877, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMPSCI-111\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMPSCI-111L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMPSCI-122\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMPSCI-182\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMPSCI-182L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMPSCI-235\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMPSCI-282\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Program Requirements\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMPSCI-132\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMPSCI-190\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CMPSCI-192\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMPSCI-222\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMPSCI-236\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHILOS-230\",\"units\":3,\"units_max\":null}],\"minimum\":6,\"name\":\"Plus six units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"MATH-211X\",\"units\":6}],\"catalog_addition\":false,\"code\":\"MATH-211\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH-212\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH-214\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Plus 14 units to 15 units from the following (for transfer students)\",\"option_group\":\"Transfer or non-transfer path\",\"rule\":\"all\",\"stated\":{\"max\":15,\"min\":14}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH-211\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Plus 14 units from the following (for non-transfer students)\",\"option_group\":\"Transfer or non-transfer path\",\"rule\":\"all\",\"stated\":{\"max\":14,\"min\":14}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Students will be able to identify, evaluate, analyze, and present fundamental software solutions and their applications.\"],\"section_heading\":\"Associate in Science Degree: Computer Science\",\"total_units\":{\"max\":38,\"min\":37}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"unit_line_not_read\"],\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb),\n  (2, 'College of the Canyons', '10312', 44769429877, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HOSP-101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HOSP-104\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HOSP-220\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HOSP-245\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CULARTS-110\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CULARTS-136\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CULARTS-150\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"Program Requirements\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"WE-186HOSP\",\"units\":1,\"units_max\":4}],\"minimum\":2,\"name\":\"Plus a minimum of 2 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"restaurant industry\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Students will be able to demonstrate proficiency in the core skills and knowledge required for employment in restaurant management.\"],\"section_heading\":\"Associate in Science Degree: Restaurant Management\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb),\n  (3, 'College of the Canyons', '15477', 44769429877, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-120\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Program Requirements\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-111\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-112\",\"units\":2,\"units_max\":null}],\"minimum\":2,\"name\":\"Plus a minimum of two units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-108\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-116\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MEA-190\",\"units\":3}],\"catalog_addition\":false,\"code\":\"MEA-180\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MEA-221\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-280\",\"units\":3,\"units_max\":null}],\"minimum\":15,\"name\":\"Plus fifteen units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-295\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"WE-186MEA\",\"units\":0.05,\"units_max\":4}],\"minimum\":null,\"name\":\"Required electives: Capstone (needs only one unit of WE-186MEA)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CINEMA-122\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-106\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MEA-107\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-109\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-111\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-112\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUSIC-114\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC-155\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUSIC-159\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-190\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MEA-208\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"THEATR-140\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"THEATR-144\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Plus a minimum of three units from the following not already taken above\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Students will be able to demonstrate proficiency in the core skills and knowledge required for employment in the filmmaking industry.\"],\"section_heading\":\"Associate in Arts Degree: Filmmaking\",\"total_units\":{\"max\":29,\"min\":29}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":35,\"placed\":16}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":46,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":70},\"coverage\":true,\"gaps\":[\"noted_unit_floor\"],\"invented\":true,\"listed\":35,\"placed\":16}'::jsonb),\n  (4, 'College of the Canyons', '16962', 44769429877, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTECH-185\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Program Requirements (list continued from page 83; earlier courses not in the text)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTECH-120\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTECH-130\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Plus one course from the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"WE-186AUTO\",\"units\":1,\"units_max\":4}],\"minimum\":1,\"name\":\"Plus a minimum of one unit from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"AUTOMOTIVE TECHNOLOGY\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":13,\"placed\":4}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":31,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":20},\"coverage\":true,\"gaps\":[\"noted_section_cut_off\"],\"invented\":true,\"listed\":13,\"placed\":4}'::jsonb),\n  (5, 'College of the Canyons', '32896', 44769429877, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL-C1001H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ENGL-C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL C1002\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"OPTION 1\",\"option_group\":\"Option\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL C1003\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"OPTION 2\",\"option_group\":\"Option\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-250\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-251\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-260\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-261\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-273\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-274\",\"units\":3,\"units_max\":null}],\"minimum\":6,\"name\":\"Plus six units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-105\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-106\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-108\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-109\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-250\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-251\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-260\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-261\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-262\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-273\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-274\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-275\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"If Option 1 is selected above, plus three units / If Option 2 is selected above, plus six units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-105\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-106\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-108\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-109\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-122\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-135\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-250\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-251\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-260\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-261\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-262\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-263\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-264\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-270\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-271\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-272\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-273\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-274\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-275\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-280\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-281\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Plus three units from the following that have not already been selected from the courses listed above\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"CalGETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Appraise the contributions and relevance of literature.\",\"Apply multiple perspectives and critical thinking methods to analyze and interpret literature.\"],\"section_heading\":\"Associate in Arts for Transfer Degree: English\",\"total_units\":{\"max\":19,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":27,\"placed\":26}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":96,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":27,\"placed\":26}'::jsonb),\n  (6, 'College of the Canyons', '37648', 44887850515, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS-210\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS-250\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS-270\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Global Politics\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOGRPH-104\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-191\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-193\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-212\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-240\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-243\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Regional Area Studies\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOSCI-130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOGRPH-100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOGRPH-103\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"The Physical World\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ANTHRO-103H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ANTHRO-103\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHRO-220\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-273\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOGRPH-102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HUMAN-115\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHILOS-220\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI-102\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SOCI-200H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"SOCI-200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI-205\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI-207\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"The Socio-Historical World\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART-100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARTH-C1100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARTH-C1200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART-112\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART-116\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CINEMA-131\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CULARTS-133\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE-101\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC-108\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC-112\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"World Culture and Arts\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"public relations\",\"diplomacy\",\"civil service\",\"global trade\",\"global policy\",\"world health and related affairs\",\"humanitarian services\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Students will be able to demonstrate an understanding of interdependent socio-cultural, geographical, and political systems inherent to international affairs and global communities.\",\"Students will be able to demonstrate an ability to apply sustainable and responsible perspectives to local, national, and international situations with a heightened awareness of their global impact.\"],\"section_heading\":\"Certificate of Achievement: Global Competencies\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":34,\"placed\":34}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"pool_figure_not_read\"],\"invented\":true,\"listed\":34,\"placed\":34}'::jsonb),\n  (7, 'College of the Canyons', '40383', 44769429877, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTECH-110\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTECH-112\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTECH-114\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTECH-116\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTECH-135\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTECH-136\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTECH-180\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTECH-185\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTECH-190\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTECH-200\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Program Requirements\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"WE-186AUTO\",\"units\":1,\"units_max\":4}],\"minimum\":1,\"name\":\"Plus a minimum of one unit from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Students will be able to demonstrate proficiency in the core skills and knowledge required for employment in the automotive industry.\"],\"section_heading\":\"Associate in Science Degree and Certificate of Achievement: Advanced Diagnosis and Performance\",\"total_units\":{\"max\":36,\"min\":36}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":11,\"placed\":11}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":11,\"placed\":11}'::jsonb),\n  (8, 'College of the Canyons', '43549', 44769429877, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC-137A\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC-154\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC-156\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC-157\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC-192\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MEA-295\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC-155\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Program Requirements\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC-193A\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC-193B\",\"units\":1.5,\"units_max\":null}],\"minimum\":null,\"name\":\"Plus three units from one of the following two options: Pro Tools\",\"option_group\":\"Three-unit option\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUSIC-194A\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUSIC-194B\",\"units\":1.5,\"units_max\":null}],\"minimum\":null,\"name\":\"Plus three units from one of the following two options: GarageBand/Logic Pro\",\"option_group\":\"Three-unit option\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"WE-186MUS\",\"units\":0.05,\"units_max\":4}],\"minimum\":1,\"name\":\"Plus a minimum of one unit from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"audio engineering\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Record, mix, edit and master a music track using industry standard equipment and software.\",\"Design an audio reinforcement system for a live concert or event\",\"Demonstrate professional behavior as an audio engineer.\"],\"section_heading\":\"Certificate of Achievement: Commercial Music\",\"total_units\":{\"max\":22.5,\"min\":22.5}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":11,\"placed\":9}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":82,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":11,\"placed\":9}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (8)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\nn(i, college, control_number, program_title, award, catalog_year, source_url, measure, total_min, total_max, record, checks, extracted_run) as (values\n  (9, 'College of the Canyons', '43388', 'Fundamentals of Public Communications', 'Noncredit program', '2026-2027', 'https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=328', 'hours', null::numeric, null::numeric, '{\"program\": {\"section_heading\": \"SCHOOL OF PERSONAL AND PROFESSIONAL LEARNING - NONCREDIT (Program Requirements list at the top of page 328; the certificate''s own heading is not in the text)\", \"measure\": \"hours\", \"total_units\": {\"min\": null, \"max\": null}, \"open_elective_units\": null, \"degree_elective_units\": {\"min\": null, \"max\": null}, \"ge_pattern\": null, \"degree_total\": {\"min\": null, \"max\": null}, \"ge_units\": {\"min\": null, \"max\": null}, \"electives_fill_degree\": false, \"outcomes\": [], \"careers\": []}, \"blocks\": [{\"name\": \"Program Requirements\", \"rule\": \"all\", \"minimum\": null, \"option_group\": null, \"stated\": {\"min\": null, \"max\": null}, \"courses\": [{\"code\": \"NC.COMM-001\", \"units\": 12, \"units_max\": 20, \"alternatives\": [], \"catalog_addition\": true}, {\"code\": \"NC.CSKL-014\", \"units\": null, \"units_max\": null, \"alternatives\": [], \"catalog_addition\": false}]}]}'::jsonb, '{\"coverage\": true, \"invented\": true, \"arithmetic\": \"incomplete\", \"placed\": 1, \"listed\": 1, \"gaps\": [\"heading_not_in_text\"], \"confidence\": {\"unit_arithmetic\": 20, \"course_list_match\": 100, \"ge_pattern\": null, \"catalog_year\": 100, \"source\": 50}}'::jsonb, 44886816990::bigint)),\nnc as (select coalesce(json_agg(n.control_number order by n.control_number), '[]'::json) as keys, count(*) as n\n        from n join public.program_requirement_records r\n          on r.college = n.college and r.control_number = n.control_number where r.checked is true),\ndel as (\ndelete from public.program_requirement_records r\n using n\n where r.college = n.college and r.control_number = n.control_number and r.extracted_run = n.extracted_run\n   and r.record = n.record and r.checks = n.checks and r.checked is not true\nreturning r.control_number),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when (select count(*) from del) <> 1 - nc.n\n            then ('s727a piles rollback delete guard: the DELETE matched ' || (select count(*) from del) || ' rows, the plan names ' || (1 - nc.n))::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'deleted', (select coalesce(json_agg(control_number order by control_number), '[]'::json) from del), 'skipped_checked_inserts', nc.keys, 'skipped_checked', c.keys)\n            else ('s727a piles rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, nc;"
+}
