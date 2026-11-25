@@ -3,7 +3,7 @@
  "college": "Oxnard College",
  "catalog_year": null,
  "read_at": null,
- "run": null,
+ "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv",
  "source": [
   "https://catalog.vcccd.edu/oxnard/programs-courses/accounting/#coursestextcontainer",
   "https://catalog.vcccd.edu/oxnard/programs-courses/addictive-disorders-studies/#coursestextcontainer",
@@ -87,7 +87,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "AC",
@@ -103,7 +103,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "ACCT",
@@ -119,7 +119,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "ACT",
@@ -135,7 +135,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "ADS",
@@ -151,7 +151,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "ANAT",
@@ -167,7 +167,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "ANTH",
@@ -183,7 +183,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "ART",
@@ -199,7 +199,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "ASL",
@@ -215,7 +215,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "AT",
@@ -231,7 +231,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "BRS",
@@ -247,7 +247,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "BUS",
@@ -263,7 +263,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "CAOT",
@@ -279,7 +279,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "CHEM",
@@ -295,7 +295,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "CHST",
@@ -311,7 +311,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "CIS",
@@ -327,7 +327,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "CNIT",
@@ -343,7 +343,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "COMM",
@@ -359,7 +359,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "COUN",
@@ -375,7 +375,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "CRM",
@@ -391,7 +391,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "CS",
@@ -407,7 +407,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "DA",
@@ -423,7 +423,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "DANC",
@@ -439,7 +439,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "DH",
@@ -455,7 +455,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "ECE",
@@ -471,7 +471,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "ECON",
@@ -487,7 +487,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "EDU",
@@ -503,7 +503,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "EMT",
@@ -519,7 +519,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "ENGL",
@@ -535,7 +535,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "ENGR",
@@ -551,7 +551,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "ESL",
@@ -567,7 +567,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "ESRM",
@@ -583,7 +583,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "ETHS",
@@ -599,7 +599,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "FILI",
@@ -615,7 +615,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "FT",
@@ -631,7 +631,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "FTVE",
@@ -647,7 +647,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "GEOG",
@@ -663,7 +663,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "GEOL",
@@ -679,7 +679,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "GIS",
@@ -695,7 +695,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "GLST",
@@ -711,7 +711,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "HED",
@@ -727,7 +727,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "HIST",
@@ -743,7 +743,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "ICA",
@@ -759,7 +759,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "IDS",
@@ -775,7 +775,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "KIN",
@@ -791,7 +791,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "LAW",
@@ -807,7 +807,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "LOGI",
@@ -823,7 +823,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "LS",
@@ -839,7 +839,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "MICR",
@@ -855,7 +855,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "MST",
@@ -871,7 +871,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "MUS",
@@ -887,7 +887,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "PHIL",
@@ -903,7 +903,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "PHSC",
@@ -919,7 +919,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "PHSO",
@@ -935,7 +935,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "PHYS",
@@ -951,7 +951,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "POLS",
@@ -967,7 +967,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "READ",
@@ -983,7 +983,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "SJS",
@@ -999,7 +999,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "SPAN",
@@ -1015,7 +1015,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "THTR",
@@ -1031,7 +1031,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "TUTR",
@@ -1047,7 +1047,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "URBS",
@@ -1063,7 +1063,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   }
  ],
  "subjects": 62,

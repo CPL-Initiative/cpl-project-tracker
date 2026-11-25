@@ -3,7 +3,7 @@
  "college": "Lake Tahoe Community College",
  "catalog_year": null,
  "read_at": null,
- "run": null,
+ "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv",
  "source": [
   "https://www.ltcc.edu/_resources/pdfs/catalog/2016-17_catalog_021617_update.pdf#page=62",
   "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
@@ -24,7 +24,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "ASL",
@@ -40,7 +40,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "BIO",
@@ -56,7 +56,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "BOT",
@@ -72,7 +72,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "BSN",
@@ -88,7 +88,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "CAO",
@@ -104,7 +104,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "CHM",
@@ -120,7 +120,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "CIS",
@@ -136,7 +136,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "CNT",
@@ -152,7 +152,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "COM",
@@ -168,7 +168,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "COU",
@@ -184,7 +184,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "CRJ",
@@ -200,7 +200,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "CUL",
@@ -216,7 +216,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "DMA",
@@ -232,7 +232,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "ECE",
@@ -248,7 +248,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "ECO",
@@ -264,7 +264,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "EDU",
@@ -280,7 +280,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "ENG",
@@ -296,7 +296,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "ESL",
@@ -312,7 +312,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "ETH",
@@ -328,7 +328,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "EVS",
@@ -344,7 +344,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "FIR",
@@ -360,7 +360,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "FOR",
@@ -376,7 +376,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "GEG",
@@ -392,7 +392,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "GEL",
@@ -408,7 +408,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "GES",
@@ -424,7 +424,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "HEA",
@@ -440,7 +440,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "HIS",
@@ -456,7 +456,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "HRM",
@@ -472,7 +472,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "HSP",
@@ -488,7 +488,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "HTR",
@@ -504,7 +504,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "HUM",
@@ -520,7 +520,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "JPN",
@@ -536,7 +536,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "LAT",
@@ -552,7 +552,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "MAT",
@@ -568,7 +568,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "MOA",
@@ -584,7 +584,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "MUS",
@@ -600,7 +600,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "PEA",
@@ -616,7 +616,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "PEF",
@@ -632,7 +632,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "PEH",
@@ -648,7 +648,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "PET",
@@ -664,7 +664,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "PHI",
@@ -680,7 +680,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "PHS",
@@ -696,7 +696,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "PHY",
@@ -712,7 +712,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "POL",
@@ -728,7 +728,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "PSY",
@@ -744,7 +744,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "REL",
@@ -760,7 +760,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "RES",
@@ -776,7 +776,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "SNL",
@@ -792,7 +792,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "SOC",
@@ -808,7 +808,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "SPA",
@@ -824,7 +824,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "SPE",
@@ -840,7 +840,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "THE",
@@ -856,7 +856,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "WKX",
@@ -872,7 +872,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "WLD",
@@ -888,7 +888,7 @@
    "method": "prefix legend",
    "found_on": "2026-11-25",
    "found_by": "Subjects",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   }
  ],
  "subjects": 55,

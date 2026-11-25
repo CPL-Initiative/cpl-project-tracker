@@ -675,7 +675,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "SIGN",
@@ -723,7 +723,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "SPAN",
@@ -755,7 +755,7 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBIx",
-   "run": null
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "STAT",
