@@ -169,3 +169,14 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   without a line in `tests/lints_docs_only_skip.json` (it now runs on every diff); lints 5 because two El Camino page
   plans named no `http_hosts` reason for nine http pages (both now do; the push read nothing again). The worklist
   date's hand edit was not a cause.
+- 09:10Z: `piles` reported (head `5d92c461`): 44 rows planned (10 passing on a rescore, 34 named gaps), 42 applied;
+  s739h, the person rows at Clovis (36326 `lists_not_closed`, 39539 `heading_not_in_text`), to a Sonnet reader with
+  the shared module's two later changes (the Palomar-shaped `_heading_apart` fix, guarded by
+  `tests/program_piles_s739_guard_test.py`; `on_live_run` accepting a row already at its after-image, since Shasta's
+  test went red on 18144 once s739b applied). Los Angeles Mission 44849 is named with no record. A reread or page read
+  is the lever for American River 39731 and 39732, Shasta 18625, Santa Barbara City 30746 and 43553, Los Angeles
+  Trade-Technical 45285 and 31280, Long Beach City 37213, Santa Monica 03281 and Los Angeles City 32832; an alias and
+  a free reconcile for Shasta 18655 and Los Angeles Trade-Technical 31089 and 41150; a reload for Cerritos 44984; a
+  units twin of `hours_within_printed_range` for Shasta 32162 and College of the Canyons 36793. Glendale 44488 stays
+  held (its invented check fails; the college's call). 09:12Z: `piles` resumed on Cosumnes River's 17 (s739i), then
+  Orange Coast's 17 and 08626 (s739j), to stop at 11:00Z.
