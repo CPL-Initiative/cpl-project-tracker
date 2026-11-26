@@ -3258,7 +3258,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.98,
+  "coverage": 1.0,
   "codes_found": [
    "AGNR11",
    "AGNR60",
@@ -3308,6 +3308,7 @@
    "NHIS65",
    "POLS25",
    "SOC25",
+   "SOCIC1000",
    "ZOOL1"
   ],
   "source": {

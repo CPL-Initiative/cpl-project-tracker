@@ -2,21 +2,21 @@
  "college": "Shasta College",
  "programs": 150,
  "with_closed_list": 137,
- "found": 116,
- "extracted": 116,
+ "found": 112,
+ "extracted": 115,
  "errors": 0,
- "passed_machine_checks": 80,
+ "passed_machine_checks": 71,
  "failed": {
-  "coverage": 6,
-  "invented": 1,
-  "arithmetic": 33,
+  "coverage": 4,
+  "invented": 0,
+  "arithmetic": 32,
   "repeated": 0,
-  "outcomes": 6
+  "outcomes": 17
  },
- "cost_usd_run": 2.74,
- "cost_usd_filed": 10.97,
- "cost_per_program": 0.0945,
- "extract_calls": 24,
+ "cost_usd_run": 0.0,
+ "cost_usd_filed": 10.88,
+ "cost_per_program": 0.0946,
+ "extract_calls": null,
  "extract_failed": [],
  "not_found": [
   {
@@ -26,7 +26,8 @@
    "near_miss": {
     "why": "rule B then A: the pages printing the program's title with its award are course descriptions or general-education pages",
     "rule": "A",
-    "refused_b": 1
+    "refused_b": 1,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -37,7 +38,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active - Teachout Only"
   },
@@ -48,7 +50,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active - Teachout Only"
   },
@@ -59,7 +62,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -70,7 +74,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -81,7 +86,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -102,7 +108,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -113,7 +120,9 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "plain_named": true,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -124,9 +133,34 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "18146",
+   "title": "General Studies - Fire - Fire Investigation",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "18147",
+   "title": "General Studies - Fire - Fire Service Command, Company Officer",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
+   },
+   "status": "Active"
   },
   {
    "control_number": "18150",
@@ -135,7 +169,20 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "18152",
+   "title": "General Studies - Health",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -146,7 +193,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -157,7 +205,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -168,7 +217,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -179,7 +229,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -190,7 +241,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -210,7 +262,8 @@
    "award": "A.S. Degree",
    "near_miss": {
     "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=25",
-    "coverage": 0.0
+    "coverage": 0.0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -220,7 +273,8 @@
    "award": "A.S. T Degree",
    "near_miss": {
     "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=18",
-    "coverage": 0.333
+    "coverage": 0.333,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -231,7 +285,20 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "39382",
+   "title": "Web Master",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active - Teachout Only"
   },
@@ -242,10 +309,11 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active - Teachout Only"
   }
  ],
- "run": "44513230805"
+ "run": "45841957622"
 }

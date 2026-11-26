@@ -64,34 +64,34 @@
    "pass": true,
    "status": "equal",
    "computed": [
-    97.0,
-    97.0
+    76.0,
+    76.0
    ],
    "stated": [
-    82.0,
-    82.0
+    76.0,
+    76.0
    ],
-   "against": "degree",
-   "ge": [
-    21.0,
-    21.0
-   ],
+   "against": "program",
    "why": [],
-   "major": {
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     76.0,
-     76.0
+     97.0,
+     97.0
     ],
     "stated": [
-     76.0,
-     76.0
+     82.0,
+     82.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": [],
+    "overlap": true
    },
-   "overlap": true,
    "rescored": "Sam's ruling of 2026-11-17, local degree overlap"
   },
   "repeated": {
@@ -316,7 +316,7 @@
    "The LVN 30-unit non-degree option (REGN 35X, 35PX, 36X, 36PX, 48X, 48PX) is a separate non-degree path and is not recorded."
   ]
  },
- "extracted_run": "39006384701",
+ "extracted_run": 45841957622,
  "reconciled": [
   {
    "field": "ge_overlap",
@@ -325,5 +325,6 @@
    "words": "the major sums to 76, the major total the catalog prints; the major and general education sum to 97 against the degree's 82 (Sam, 2026-11-17, \"Let major courses count toward general education for local degrees too\" (#3461, ruling 1))",
    "statewide": "local_degree_ge_overlap"
   }
- ]
+ ],
+ "read_run": "39006384701"
 }

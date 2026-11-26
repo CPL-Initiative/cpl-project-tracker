@@ -65,7 +65,7 @@
    "status": "equal",
    "computed": [
     24.0,
-    29.0
+    30.0
    ],
    "stated": [
     24.0,
@@ -73,12 +73,13 @@
    ],
    "against": "program",
    "why": [],
+   "meets": true,
    "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
      62.0,
-     75.0
+     76.0
     ],
     "stated": [
      60.0,
@@ -305,5 +306,6 @@
    "CHEM 1A, CHEM 2A, CHEM 2B, STAT C1000 and STAT C1000E are marked # (may be used to fulfill Cal-GETC requirements)."
   ]
  },
- "extracted_run": "39006384701"
+ "extracted_run": 45841957622,
+ "read_run": "39006384701"
 }

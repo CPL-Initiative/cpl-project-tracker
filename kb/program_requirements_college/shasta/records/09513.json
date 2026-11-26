@@ -90,34 +90,34 @@
    "pass": true,
    "status": "equal",
    "computed": [
-    118.0,
-    118.0
+    97.0,
+    97.0
    ],
    "stated": [
-    103.0,
-    103.0
+    97.0,
+    97.0
    ],
-   "against": "degree",
-   "ge": [
-    21.0,
-    21.0
-   ],
+   "against": "program",
    "why": [],
-   "major": {
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     97.0,
-     97.0
+     118.0,
+     118.0
     ],
     "stated": [
-     97.0,
-     97.0
+     103.0,
+     103.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": [],
+    "overlap": true
    },
-   "overlap": true,
    "rescored": "Sam's ruling of 2026-11-17, local degree overlap"
   },
   "repeated": {
@@ -128,11 +128,15 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Ninety- five percent of those students who are eligible to sit for the Mock National Board Dental Hygiene Examination will pass their examination on the first attempt."
+   ],
+   "why": [
+    "not in the catalog text as printed: Ninety- five percent of those students who are eligible to sit for the Mock Nati"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 1,
@@ -142,7 +146,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -456,7 +460,7 @@
    "The Health General Studies emphasis that follows belongs to a different program and was not read."
   ]
  },
- "extracted_run": "39006384701",
+ "extracted_run": 45841957622,
  "reconciled": [
   {
    "field": "ge_overlap",
@@ -465,5 +469,6 @@
    "words": "the major sums to 97, the major total the catalog prints; the major and general education sum to 118 against the degree's 103 (Sam, 2026-11-17, \"Let major courses count toward general education for local degrees too\" (#3461, ruling 1))",
    "statewide": "local_degree_ge_overlap"
   }
- ]
+ ],
+ "read_run": "39006384701"
 }

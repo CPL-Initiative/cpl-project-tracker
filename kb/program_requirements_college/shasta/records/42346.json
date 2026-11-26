@@ -78,11 +78,15 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Self- assess individual attitude, stress, communication style, personality style and apply skills to work with team members who possess different styles."
+   ],
+   "why": [
+    "not in the catalog text as printed: Self- assess individual attitude, stress, communication style, personality style"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 0,
@@ -92,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -182,5 +186,6 @@
    "The text that follows (Small Business/Entrepreneurship Start-up, Business Information Systems Professional) belongs to other programs and was not read for this record."
   ]
  },
- "extracted_run": "39006384701"
+ "extracted_run": 45841957622,
+ "read_run": "39006384701"
 }

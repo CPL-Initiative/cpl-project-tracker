@@ -64,34 +64,34 @@
    "pass": true,
    "status": "equal",
    "computed": [
-    66.5,
-    66.5
+    45.5,
+    45.5
    ],
    "stated": [
-    60.5,
-    60.5
+    45.5,
+    45.5
    ],
-   "against": "degree",
-   "ge": [
-    21.0,
-    21.0
-   ],
+   "against": "program",
    "why": [],
-   "major": {
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     45.5,
-     45.5
+     66.5,
+     66.5
     ],
     "stated": [
-     45.5,
-     45.5
+     60.5,
+     60.5
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": [],
+    "overlap": true
    },
-   "overlap": true,
    "rescored": "Sam's ruling of 2026-11-17, local degree overlap"
   },
   "repeated": {
@@ -274,7 +274,7 @@
    "Description says auto mechanic courses and diesel courses may be interchanged to satisfy major requirements when necessary; students are encouraged to take additional technical courses and related electives (no specific courses listed)."
   ]
  },
- "extracted_run": "39006384701",
+ "extracted_run": 45841957622,
  "reconciled": [
   {
    "field": "ge_overlap",
@@ -283,5 +283,6 @@
    "words": "the major sums to 45.5, the major total the catalog prints; the major and general education sum to 66.5 against the degree's 60.5 (Sam, 2026-11-17, \"Let major courses count toward general education for local degrees too\" (#3461, ruling 1))",
    "statewide": "local_degree_ge_overlap"
   }
- ]
+ ],
+ "read_run": "39006384701"
 }

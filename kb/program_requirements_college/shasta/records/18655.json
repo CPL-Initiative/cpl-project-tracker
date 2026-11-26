@@ -46,25 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 49,
+   "placed": 50,
    "listed": 50,
-   "share": 0.98,
-   "missing": [
-    "SOCIC1000"
-   ],
-   "unexplained": [
-    "SOCIC1000"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "SOCC1000"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
@@ -656,7 +650,7 @@
   "missing_explained": [],
   "notes": []
  },
- "extracted_run": "44513230805",
+ "extracted_run": 45841957622,
  "catalog_year": "2026-2027",
  "source_sha": "4fed824a6ddc4d56",
  "source_codes": [
@@ -710,5 +704,6 @@
   "SOC25",
   "ZOOL1"
  ],
- "source_coverage": 0.98
+ "source_coverage": 0.98,
+ "read_run": "44513230805"
 }
