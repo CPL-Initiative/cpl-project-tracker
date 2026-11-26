@@ -1,6 +1,6 @@
 # Harvest heading agreement
 
-A dated snapshot of main at commit 282e1f036388 (2026-11-25; the newest capture it reads started 2026-11-25), written by `kb/_program_requirements_heading_agreement.py` from the files that commit holds. A dispatch of `harvest-gap-census.yml` rewrites it beside the gap census; nothing gates a PR on it, so it can trail the records. Each record's own heading against the program it is filed under (COCI title and award).
+A dated snapshot of main at commit 075d1ee8b2de (2026-11-25; the newest capture it reads started 2026-11-25), written by `kb/_program_requirements_heading_agreement.py` from the files that commit holds. A dispatch of `harvest-gap-census.yml` rewrites it beside the gap census; nothing gates a PR on it, so it can trail the records. Each record's own heading against the program it is filed under (COCI title and award).
 
 All colleges: 18971 records, 15534 agree, 208 disagree (132 of them pass on the committed files), 3229 cannot tell (262 say the heading is not in their text; 74 name an award and none of the program's title words, 70 of them passing, set aside).
 

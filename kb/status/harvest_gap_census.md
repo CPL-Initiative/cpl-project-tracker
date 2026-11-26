@@ -1,8 +1,8 @@
 # Harvest gap census
 
-Written by `kb/_harvest_gap_census.py` (2026-11-26 01:19Z, live). Every active program without a passing record, each with one cause and one lever. Counts are a snapshot; rerun `harvest-gap-census.yml` for today's.
+Written by `kb/_harvest_gap_census.py` (2026-11-26 06:54Z, live). Every active program without a passing record, each with one cause and one lever. Counts are a snapshot; rerun `harvest-gap-census.yml` for today's.
 
-Universe 20282 · passing 15577 · without a passing record 4176.
+Universe 20282 · passing 15578 · without a passing record 4175.
 
 Of the passing, 54 counts as passing on the tab; the scorer's own test fails (listed in the JSON, not counted as gaps).
 
@@ -27,7 +27,7 @@ Named gap, 4 programs: "The state lists this program twice. The other listing ha
 | extracted, no score (an error) | 4 |
 | live, coverage fails | 155 |
 | live, a course added | 3 |
-| live, units unequal | 668 |
+| live, units unequal | 667 |
 | live, units incomplete | 251 |
 
 ## Top levers
