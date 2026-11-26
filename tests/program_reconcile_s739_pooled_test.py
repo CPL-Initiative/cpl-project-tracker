@@ -143,9 +143,13 @@ def recon(record, text, award="A.S. Degree"):
 
 
 print("the step on the page's own words")
+check(isinstance(STEPS.get(MJC), dict) and any(st.get("kind") == "fill" and st.get("field") == "ge_units"
+                                               for st in STEPS[MJC].get("steps") or []),
+      "kb/program_requirements_reconcile.json holds Modesto Junior's entry with its ge_units fill step")
 new, notes = recon(rec83, PAGE)
+filled = (new.get("program") or {}).get("ge_units") or {}     # {} where the step is absent: the checks fail, by name
 check([n["field"] for n in notes] == ["ge_units"], "06683: one note, on ge_units (%r)" % [n["field"] for n in notes])
-check(new["program"].get("ge_units") == {"min": 15, "max": 15}, "06683: the fill is the block's own 15")
+check(filled == {"min": 15, "max": 15}, "06683: the fill is the block's own 15 (%r)" % filled)
 check(notes and notes[0]["words"].startswith("TO EARN AN ASSOCIATE IN SCIENCE DEGREE IN RESPIRATORY CARE (Total 15)"),
       "06683: the note quotes the block's heading with its total")
 before, after = score(f83, rec83, PAGE)["arithmetic"], score(f83, new, PAGE)["arithmetic"]
@@ -162,8 +166,8 @@ print("the wrong joins")
 no_block = PAGE.replace(GE_BLOCK, "")
 check(recon(rec83, no_block)[1] == [], "a page without the block fills nothing (never 18 - 20, 42.5 or 8)")
 for wrong in (42.5, 8, 18, 20, 12, 13, 11, 10.5):
-    check((new["program"]["ge_units"]["min"], new["program"]["ge_units"]["max"]) != (wrong, wrong),
-          "the fill is never another block's %s" % wrong)
+    check(filled and (filled.get("min"), filled.get("max")) != (wrong, wrong),
+          "the fill is made, and is never another block's %s (%r)" % (wrong, filled))
 sentence = no_block + ("To earn an Associate in Science degree in Medical Assisting the student must complete the MJC "
                        "Associate Degree Requirements.\nTO EARN AN ASSOCIATE IN SCIENCE DEGREE IN MEDICAL ASSISTING\n"
                        "REQUIRED COURSES (MEDICAL ASSISTING) - SECOND SEMESTER (Total 14)\n")

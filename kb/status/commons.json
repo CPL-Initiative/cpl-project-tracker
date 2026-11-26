@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-25T20:02:00Z",
+ "written_at": "2026-11-26T08:04:43Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 15567,
+     "n": 15572,
      "of": 20282,
      "words": "complete at 118 colleges",
      "open": "#program-requirements/list"
@@ -34,7 +34,7 @@
    ],
    "issues": [
     {
-     "n": 1791,
+     "n": 1786,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
@@ -63,13 +63,13 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-11-25T12:19:48Z",
+    "at": "2026-11-26T07:18:10Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 15567,
-    "failing": 1791,
+    "complete": 15572,
+    "failing": 1786,
     "unread": 2924,
     "records": 18964,
     "colleges": 118,
@@ -99,13 +99,13 @@
    "pair": [
     {
      "n": 3223,
-     "of": 6256,
-     "words": "titles carry a review stamp (1,582 a person's, 1,641 a cohort's), counting 3 titles MAP carries with no entry yet; 2,970 credentials, 2,574 of 3,344 records stamped",
+     "of": 6257,
+     "words": "titles carry a review stamp (1,582 a person's, 1,641 a cohort's), counting 4 titles MAP carries with no entry yet; 2,970 credentials, 2,574 of 3,344 records stamped",
      "open": "#exhibits/list"
     },
     {
      "n": 1582,
-     "of": 6256,
+     "of": 6257,
      "words": "confirmed by a person",
      "open": "#exhibits/list",
      "error": null
@@ -171,7 +171,7 @@
    },
    "facts": {
     "titles": 6253,
-    "backlog": 3,
+    "backlog": 4,
     "stamped": 3223,
     "person": 1582,
     "cohort": 1641,
@@ -181,8 +181,8 @@
     "records_stamped": 2574,
     "saved_at": "2026-11-25T18:16:01Z",
     "fold_at": "2026-11-25T19:54:58Z",
-    "map_titles": 5444,
-    "unclassified": 3,
+    "map_titles": 5445,
+    "unclassified": 4,
     "left_map": 812,
     "below_80": 1117,
     "below_60": 235,
@@ -293,7 +293,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-25T20:00:05+00:00",
+    "at": "2026-11-26T06:21:48+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -517,7 +517,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-25T19:54:54Z",
+    "at": "2026-11-26T06:18:08Z",
     "every_hours": 24
    },
    "facts": {
@@ -530,7 +530,7 @@
     "modal": 0,
     "shared": [],
     "missed_alignment": 0,
-    "scanned_at": "2026-11-25",
+    "scanned_at": "2026-11-26",
     "procedures_on": 6
    },
    "sources": [
@@ -791,7 +791,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 1791,
+    "n": 1786,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"
@@ -823,23 +823,12 @@
   ],
   "stalled": [
    {
-    "ref": "requirements",
-    "title": "Program Requirements",
-    "kind": "not_shrinking",
-    "n": 2924,
-    "was": 2829,
-    "since": "2026-11-18",
-    "words": "active programs with no record yet",
-    "owner": "the harvest",
-    "open": "#program-requirements/list/unread"
-   },
-   {
     "ref": "exhibit",
     "title": "Common Exhibit Reference",
     "kind": "not_shrinking",
     "n": 597,
-    "was": 504,
-    "since": "2026-11-18",
+    "was": 546,
+    "since": "2026-11-19",
     "words": "credentials with no Common SUBJ (451 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
     "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
     "open": "#exhibits/list/nosubj"

@@ -1,14 +1,14 @@
 {
-  "scraped_at": "2026-11-25T19:46:49.542259+00:00",
+  "scraped_at": "2026-11-26T06:17:50.309940+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34565,
-    "jst": 32739,
-    "star_colleges": 71
+    "jst": 32746,
+    "star_colleges": 72
   },
-  "computed_star_colleges": 71,
+  "computed_star_colleges": 72,
   "colleges": {
     "Los Angeles Pierce College": {
       "vets": 286,
@@ -220,14 +220,14 @@
       "jst": 189,
       "star": true
     },
-    "Fullerton College": {
-      "vets": 306,
-      "jst": 563,
-      "star": true
-    },
     "Cerro Coso Community College": {
       "vets": 158,
       "jst": 193,
+      "star": true
+    },
+    "Fullerton College": {
+      "vets": 306,
+      "jst": 563,
       "star": true
     },
     "Ventura College": {
@@ -247,8 +247,8 @@
     },
     "Golden West College": {
       "vets": 227,
-      "jst": 170,
-      "star": false
+      "jst": 171,
+      "star": true
     },
     "Solano Community College": {
       "vets": 293,
@@ -300,6 +300,11 @@
       "jst": 125,
       "star": true
     },
+    "Cerritos College": {
+      "vets": 204,
+      "jst": 175,
+      "star": true
+    },
     "Los Angeles Harbor College": {
       "vets": 114,
       "jst": 206,
@@ -314,11 +319,6 @@
       "vets": 403,
       "jst": 145,
       "star": false
-    },
-    "Cerritos College": {
-      "vets": 204,
-      "jst": 170,
-      "star": true
     },
     "Diablo Valley College": {
       "vets": 192,
@@ -377,7 +377,7 @@
     },
     "Copper Mountain College": {
       "vets": 83,
-      "jst": 83,
+      "jst": 84,
       "star": true
     },
     "Foothill College": {
