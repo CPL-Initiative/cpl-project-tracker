@@ -100,3 +100,21 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   (`f-elcamino-02487-stale-pass-s739`, for the lane). MINORs: the test crashed rather than asserted with the Modesto
   steps removed; two sibling tests now accept either state (the S731 pattern). `pooled` resumed to merge `main`,
   regenerate and tidy the test; the conductor opens the land.
+- 08:05Z: `lever` reported (head `dbfd245a`, `main` merged in): 3 live and passing (Folsom Lake 38736; East Los
+  Angeles 38332, pinned to pp.195-196; Coastline 40476); Sacramento City's reconcile and reread restamped 30 rows with
+  no verdict moved; 6 named gaps with no record (East Los Angeles 45540 `list_by_reference`; Coastline 03724, 20353,
+  18054, 11459, 18216 `credit_not_in_catalog`); Coastline 43057 held (the title rule binds legacy 33014 on its page, a
+  shared reader change); Los Angeles Southwest 4, Cosumnes River 3, Santiago Canyon 3 and Napa Valley 3 were already
+  named gaps with no record, relisted by the census (`f-census-ignores-college-named-gaps-s727`). Plan s739l, 2 rows
+  for the conductor: Cosumnes River 33542 `option_lists_read_apart` and East Los Angeles 33013 `noted_figures_differ`,
+  each at 40. Paid reads $0.34 charged. To a Sonnet second reader (the land and the plan).
+- 08:10Z: lane 1 takes the fresh census's wave (45771011713's `next_wave`, less the colleges held, parked or blocked),
+  split in two before either worker started its first write: `waveA` (Fable 5.2, high effort): North Orange
+  Continuing Education, Allan Hancock, Bakersfield, Citrus, College of the Redwoods, Copper Mountain, Cuesta, De Anza,
+  Grossmont, Las Positas, Los Angeles Harbor, Los Angeles Pierce, Moorpark. `waveB` (Fable 5.2, high effort): San
+  Diego City, San Diego College of Continuing Education, Santa Rosa Junior, Sierra, Skyline, Taft, West Los Angeles,
+  Riverside City, Berkeley City, Chaffey, Evergreen Valley, Lassen, Merced, Mt. San Antonio, Ohlone, Reedley, Santa
+  Ana, Victor Valley, Yuba. Each checks its colleges' own named-gap files first; a paid read takes `only=`, at most $5
+  a college and $15 a worker on the estimate. Left out of the wave: College of the Desert (robots.txt), Saddleback (its
+  `repeat` window first), MiraCosta (a wider text window), Southwestern, Pasadena City and West Valley (rule A and
+  35588, reader changes), Antelope Valley and Mission (the eLumen follow-up's rest), and every lane 2 college.
