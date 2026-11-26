@@ -105,12 +105,17 @@ NAMED = (("bakersfield", {"09237": "catalog_list_differs"}),
          ("grossmont", {"21402": "certificate_names_the_major"}),
          ("los_angeles_harbor", {"33797": "ge_pattern_certificate"}),
          ("los_angeles_pierce", {"45035": "ge_pattern_certificate", "19181": "list_printed_as_number_run"}))
+CONF_KEYS = {"unit_arithmetic", "course_list_match", "ge_pattern", "catalog_year", "source"}
 for slug, want in NAMED:
     ng = gaps_file(slug, "s739")
     got = {g["control_number"]: g["reason"] for g in ng["programs"]}
     check(got == want and len(ng["programs"]) == len(want)
           and all(g["reason"] in ng["reasons"] and g.get("note") for g in ng["programs"]),
           "%s: the named gaps are %s, each once with a defined reason and a note" % (slug, sorted(want)))
+    check(all(set(g.get("confidence") or {}) == CONF_KEYS
+              and all(v is None or (isinstance(v, int) and 0 <= v <= 100) for v in g["confidence"].values())
+              for g in ng["programs"]),
+          "%s: each named gap carries the five confidence scores, 0 to 100 or none" % slug)
     check(not (set(got) & set(C.site_pin_entries(ng["college"])))
           and not (set(got) & set(((STEPS.get(ng["college"]) or {}).get("pdf_pages") or {}))),
           "%s: no named gap is also pinned" % slug)
