@@ -612,7 +612,8 @@ check(NG.ARITH_SCORE["total_differs"] == 50 and "total_differs" in NG.GAPS, "the
 for (_c, _cn), _e in _td.items():
     _p = os.path.join(NG.COLLEGE_DIR, {"Clovis Community College": "clovis_community",
                                        "Glendale Community College": "glendale_community",
-                                       "East Los Angeles College": "east_los_angeles"}[_c], "records", _cn + ".json")
+                                       "East Los Angeles College": "east_los_angeles",
+                                       "San Bernardino Valley College": "san_bernardino_valley"}[_c], "records", _cn + ".json")
     with open(_p, encoding="utf-8") as _fh:
         _f = _json.load(_fh)
     _bare = dict(_f, score={k: v for k, v in _f["score"].items() if k not in ("gaps", "confidence")})

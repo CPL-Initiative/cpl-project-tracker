@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-26T14:47:03Z",
+ "written_at": "2026-11-26T15:05:07Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17518,
-  "gap": 4817,
+  "passing": 17533,
+  "gap": 4802,
   "with_gap": 118,
   "cost_usd": 1341.62,
-  "passed_at_read": 16457,
+  "passed_at_read": 16468,
   "cost_receipts": 118,
   "spent_usd": 1244.44,
   "spent_runs": 240,
@@ -189,9 +189,9 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16921,
-  "gap": 4817,
-  "collected_with_gaps": 597,
+  "passing": 16932,
+  "gap": 4802,
+  "collected_with_gaps": 601,
   "discontinued": 0
  },
  "census_live": {
@@ -10622,13 +10622,14 @@
    "harvested": true,
    "slug": "san_jose_city",
    "programs": 125,
-   "passing": 55,
-   "gap": 70,
+   "passing": 70,
+   "gap": 55,
    "causes": {
+    "found_not_extracted": 1,
     "no_closed_list": 35,
-    "page_not_found": 7,
+    "page_not_found": 6,
     "places_none": 4,
-    "unknown_without_live": 24
+    "unknown_without_live": 9
    },
    "census_causes": {
     "coverage_fails": 10,
@@ -10651,10 +10652,10 @@
    "outcomes_file": "kb/status/commons_data_programs/san_jose_city.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-20T16:06:17Z",
+   "read_at": "2026-11-26T14:39:12Z",
    "read_kind": "capture",
    "cost_usd": 6.58,
-   "passed_at_read": 52,
+   "passed_at_read": 63,
    "slo_queue": null,
    "scout": null,
    "spot_check": {
@@ -10673,13 +10674,13 @@
     "why": "4 agree, 1 differ, 0 unreachable"
    },
    "listed_closed": 90,
-   "found": 83,
+   "found": 84,
    "extracted": 83,
    "errors": 0,
    "failed_checks": {
-    "coverage": 21,
-    "invented": 16,
-    "arithmetic": 14,
+    "coverage": 9,
+    "invented": 5,
+    "arithmetic": 13,
     "repeated": 1,
     "outcomes": 0
    },
@@ -10689,13 +10690,14 @@
    "capture_root": "https://catalog.sjcc.edu/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1163.1,
-   "run": "44769778910",
+   "read_seconds": 1191.9,
+   "run": "45840981324",
    "levers": {
     "program_course_file_check": 35,
-    "reconcile_steps": 23,
-    "reader_page_search": 7,
+    "reconcile_steps": 8,
+    "reader_page_search": 6,
     "reader_page_assignment": 4,
+    "paid_read": 1,
     "scorer_noncredit_hours": 1
    },
    "collection": {
@@ -10704,8 +10706,8 @@
      "models": {
       "claude-opus-5-5": 83
      },
-     "run": "44769778910",
-     "at": "2026-11-20T16:06:17Z",
+     "run": "45840981324",
+     "at": "2026-11-26T14:39:12Z",
      "cost_usd": 6.58,
      "platform": "courseleaf"
     },
