@@ -1,0 +1,19 @@
+{
+ "_readme": "S739 (wave A), the gap census's Next wave (census run 45771011713 of 2026-11-26 06:54Z, the reader_page_assignment and paid_read levers): 1 program of Los Angeles Harbor College whose filed record places none of the state's listed courses: the CSU General Education certificate 33797. The Cal-GETC certificate 44947 is already named in named_gaps_s727.json (no_own_page_found). Filed as named gaps and never sent to a paid read. Their filed records stay as filed (the load skips a record that places none). No model call, no Supabase write. Each is the college's to settle in COCI or its catalog, or waits on the reader change its reason names.",
+ "college": "Los Angeles Harbor College",
+ "written": "2026-11-26T08:35:56Z",
+ "capture": "44687664966",
+ "page_reads": [],
+ "reasons": {
+  "ge_pattern_certificate": "General-education pattern certificate. It has no fixed course list by design (the census's named gap, kb/_harvest_gap_census.py NAMED_GAPS)."
+ },
+ "programs": [
+  {
+   "control_number": "33797",
+   "title": "CSU General Education",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "reason": "ge_pattern_certificate",
+   "note": "The state's file lists 152 courses for it; the filed record was read from PDF pp.173 to 174, which open on 'LAHC General Education Requirements'."
+  }
+ ]
+}

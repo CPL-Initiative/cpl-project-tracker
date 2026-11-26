@@ -1,0 +1,29 @@
+{
+ "_readme": "S739 (wave A), the gap census's Next wave (census run 45771011713 of 2026-11-26 06:54Z, the reader_page_assignment and paid_read levers): 2 programs of Los Angeles Pierce College: the Cal-GETC certificate 45035, whose filed read ran past the model's output limit, and General Studies: Arts and Humanities A.A. 19181, whose filed record places none of the state's listed courses and whose own section (college-page-read run 45781997815) prints its list as runs of course numbers. Filed as named gaps and never sent to a paid read. Their filed records stay as filed (the load skips a record that places none). No model call, no Supabase write. Each is the college's to settle in COCI or its catalog, or waits on the reader change its reason names.",
+ "college": "Los Angeles Pierce College",
+ "written": "2026-11-26T08:35:56Z",
+ "capture": "44475498778",
+ "page_reads": [
+  "45781997815"
+ ],
+ "reasons": {
+  "ge_pattern_certificate": "General-education pattern certificate. It has no fixed course list by design (the census's named gap, kb/_harvest_gap_census.py NAMED_GAPS).",
+  "list_printed_as_number_run": "The program's own section prints its list as runs of course numbers after one subject name ('ART 103 (3 units), 105 (3 units), 107'), and the state's file lists each course by its full code, so the capture's code net reads fewer than half of the listed courses on the section and refuses it as the program's page. It waits on a reader change (the code net reading a number run), which no step scoped to one college makes."
+ },
+ "programs": [
+  {
+   "control_number": "45035",
+   "title": "Cal-GETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "reason": "ge_pattern_certificate",
+   "note": "The state's file lists 272 courses for it; the filed read (run 39006383070) took PDF pp.31 to 33, which open on 'LACCD General Education Pattern', and ended in an error ('part 1 of 2: the record ran past max_tokens'), so no record is filed."
+  },
+  {
+   "control_number": "19181",
+   "title": "General Studies: Arts and Humanities",
+   "award": "A.A. Degree",
+   "reason": "list_printed_as_number_run",
+   "note": "Its own section opens on PDF p.118 ('GENERAL STUDIES: ARTS AND HUMANITIES (STATE CODE 19181)', under 'Complete 18 units in one of the areas of emphasis listed below') and ends on p.119 at 'ARTS AND HUMANITIES EMPHASIS TOTAL UNITS 18'. A pdf_pages pin binds its heading there, and the window names 23 of the 227 listed courses by full code (tests/program_requirements_wave_a_s739_test.py), below the half a page must name. The filed capture handed it pp.31 to 33, the general education pattern."
+  }
+ ]
+}

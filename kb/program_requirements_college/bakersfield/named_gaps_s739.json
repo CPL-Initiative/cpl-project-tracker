@@ -1,0 +1,22 @@
+{
+ "_readme": "S739 (wave A), the gap census's Next wave (census run 45771011713 of 2026-11-26 06:54Z, the reader_page_assignment and paid_read levers): 1 program of Bakersfield College whose filed record places none of the state's listed courses and whose own catalog page, found in the catalog's menu (college-page-read run 45781997815) and read through the publish/content call the capture reads (run 45783372680), names fewer than half of them. Filed as named gaps and never sent to a paid read. Their filed records stay as filed (the load skips a record that places none). No model call, no Supabase write. Each is the college's to settle in COCI or its catalog, or waits on the reader change its reason names.",
+ "college": "Bakersfield College",
+ "written": "2026-11-26T08:35:56Z",
+ "capture": "38414480070",
+ "page_reads": [
+  "45781997815",
+  "45783372680"
+ ],
+ "reasons": {
+  "catalog_list_differs": "The 2026-27 catalog prints the program's own page and course list, and the list names fewer than half of the state's listed courses: the Program Course File's list and the catalog's differ, so the capture refuses the page as the program's and a read of it would place too few courses to count."
+ },
+ "programs": [
+  {
+   "control_number": "09237",
+   "title": "Animal Science",
+   "award": "A.S. Degree",
+   "reason": "catalog_list_differs",
+   "note": "Its own page ('Animal Science Associate of Science', program/animal-science-associate-of-science-summer-2018) prints 'Animal Science Associate of Science (Total 23 - 24)': core courses AGBS B2, AGRI B1, ANSC B1 and AGRI B49, two of ANSC B2, B3, B4, B5 and B10, and two of ANSC B6, B7 and B11. It names 7 of the state's 16 listed courses (AGBS B2, AGRI B1, ANSC B3, B4, B5, B6, B7); the other 9 are NRES B1 and eight veterinary technician courses (ANSC B84, B85, B86, B88, B90, B92, B94, B96), which print on the Registered Veterinary Technicians Job Skills Certificate page the filed capture handed it."
+  }
+ ]
+}
