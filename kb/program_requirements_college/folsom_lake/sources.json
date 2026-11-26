@@ -3355,10 +3355,11 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.944,
+  "coverage": 1.0,
   "codes_found": [
    "ACCT301",
    "ACCT311",
+   "ACCT341",
    "ACCT342",
    "BUS300",
    "BUS302",
@@ -3376,27 +3377,27 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=177",
-   "title": "Course Code Course Code Course Title Course Title Units Units",
-   "h1": "Course Code Course Code Course Title Course Title Units Units",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=176",
+   "title": "A.A. in Business Analyst/Data Analytics",
+   "h1": "A.A. in Business Analyst/Data Analytics",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    177,
-    178,
-    179,
-    180
+    176,
+    177
    ],
    "extractor": "pypdf",
    "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
-   }
+   },
+   "text_sha": "0e00bc51729b5036"
   },
   "listed": 18,
-  "text_chars": 16000
+  "text_chars": 2517
  },
  {
   "control_number": "38741",
