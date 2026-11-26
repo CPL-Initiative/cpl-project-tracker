@@ -506,12 +506,14 @@ _tnp_sc = {"arithmetic": {"pass": False, "status": "incomplete", "why": [NG.NO_T
            "coverage": {"pass": True}, "invented": {"pass": True}}
 _tnp_rec = {"college": "Santa Monica College", "control_number": "45811", "score": _tnp_sc}
 # S703 adds Clovis's General Business 33433 (PDF pp.106-107 print each option's total, none for the major).
-# S740 adds Solano's Psychology A.A.-T 32917 (PDF p.413 prints the section whole, with no major total).
+# S740 adds Solano's Psychology A.A.-T 32917 (PDF p.413 prints the section whole, with no major total) and its Social
+# Work and Human Services A.A.-T 42041 (PDF p.303, the same).
 check(sorted(_tnp) == sorted([("Santa Monica College", cn) for cn in ["37885", "45811", "45812", "45813", "45814",
                                                                       "45815"]] + [("Clovis Community College", "33433"),
-                                                                                   ("Solano Community College", "32917")])
+                                                                                   ("Solano Community College", "32917"),
+                                                                                   ("Solano Community College", "42041")])
       and all(e.get("page") and e.get("words") and e.get("evidence") and e.get("run") for e in _tnp.values()),
-      "the not-printed list holds Santa Monica's six, Clovis's 33433 and Solano's 32917, each with its page and run")
+      "the not-printed list holds Santa Monica's six, Clovis's 33433 and Solano's two, each with its page and run")
 check(NG.answer(_tnp_rec)[0] == "total_not_printed" and NG.held_answer(_tnp_rec) == "total_not_printed",
       "a listed record naming no total takes total_not_printed")
 check(NG.total_not_printed(dict(_tnp_rec, control_number="45899")) is None,
@@ -542,16 +544,19 @@ for _p in sorted(_glob.glob(os.path.join(NG.COLLEGE_DIR, "*", "records", "*.json
 with open(os.path.join(ROOT, "kb", "receipts", "program_requirement_records_named_gaps_2026-11-22_s703pins.json"),
           encoding="utf-8") as _fh:
     _s703 = _json.load(_fh)
-# S740 (lane 1 at Solano, plan s740c2): Psychology A.A.-T 32917, by the same record rule inside its college's plan.
-with open(os.path.join(ROOT, "kb", "receipts",
-                       "program_requirement_records_piles_s739_solano_community_2026-11-26_s740c2.json"),
-          encoding="utf-8") as _fh:
-    _s740 = _json.load(_fh)
+# S740 (lane 1 at Solano), by the same record rule inside its college's plans: Psychology A.A.-T 32917 (s740c2) and,
+# once the reconcile's reread posted its row, Social Work and Human Services A.A.-T 42041 (s740c6).
+_s740 = []
+for _tag in ("s740c2", "s740c6"):
+    with open(os.path.join(ROOT, "kb", "receipts",
+                           "program_requirement_records_piles_s739_solano_community_2026-11-26_%s.json" % _tag),
+              encoding="utf-8") as _fh:
+        _s740 += _json.load(_fh)["records"]
 _plan_tnp = {(r["college"], str(r["control_number"])) for r in _s697["records"]} | {
     (r["college"], str(r["control_number"])) for r in _s703["records"] if r["gap"] == "total_not_printed"} | {
-    (r["college"], str(r["control_number"])) for r in _s740["records"] if r["moves_to"] == "total_not_printed"}
-check(_filed_tnp == _plan_tnp == _held_tnp == set(_tnp) and len(_plan_tnp) == 8,
-      "the applied gaps name exactly the self-recall's eight (filed %d, plans %d, held %d)"
+    (r["college"], str(r["control_number"])) for r in _s740 if r["moves_to"] == "total_not_printed"}
+check(_filed_tnp == _plan_tnp == _held_tnp == set(_tnp) and len(_plan_tnp) == 9,
+      "the applied gaps name exactly the self-recall's nine (filed %d, plans %d, held %d)"
       % (len(_filed_tnp), len(_plan_tnp), len(_held_tnp)))
 check(_s697["only_gaps"] == ["total_not_printed"] and _s697["by_gap"] == {"total_not_printed": 6}
       and {r["gap"] for r in _s697["records"]} == {"total_not_printed"}, "the S697 plan moves total_not_printed alone")
@@ -613,7 +618,8 @@ for (_c, _cn), _e in _td.items():
     _p = os.path.join(NG.COLLEGE_DIR, {"Clovis Community College": "clovis_community",
                                        "Glendale Community College": "glendale_community",
                                        "East Los Angeles College": "east_los_angeles",
-                                       "San Bernardino Valley College": "san_bernardino_valley"}[_c], "records", _cn + ".json")
+                                       "San Bernardino Valley College": "san_bernardino_valley",
+                                       "San Jose City College": "san_jose_city"}[_c], "records", _cn + ".json")
     with open(_p, encoding="utf-8") as _fh:
         _f = _json.load(_fh)
     _bare = dict(_f, score={k: v for k, v in _f["score"].items() if k not in ("gaps", "confidence")})
@@ -634,16 +640,19 @@ with open(os.path.join(ROOT, "kb", "receipts", "program_requirement_records_pile
                  if r["reading"] == "total_differs" and r["after_image"]["checks"].get("gaps") == ["total_differs"]
                  and not (r["before_image"]["checks"] or {}).get("gaps")}
 check(_s714e_td == {("East Los Angeles College", "45602")}, "the S714 plan moves 45602 to total_differs")
-# S740 (lane 1 at San Bernardino Valley, plan s740c3): Political Science A.A.-T 32309 and Music A.A.-T 35802, by the
-# same record rule inside the college's plan (page read 45835049303).
-with open(os.path.join(ROOT, "kb", "receipts",
-                       "program_requirement_records_piles_s739_san_bernardino_valley_2026-11-26_s740c3.json"),
-          encoding="utf-8") as _fh:
-    _s740_td = {(r["college"], str(r["control_number"])) for r in _json.load(_fh)["records"]
-                if r["moves_to"] == "total_differs" and r["after_image"]["checks"].get("gaps") == ["total_differs"]
-                and not (r["before_image"]["checks"] or {}).get("gaps")}
-check(_s740_td == {("San Bernardino Valley College", "32309"), ("San Bernardino Valley College", "35802")},
-      "the S740 plan moves 32309 and 35802 to total_differs")
+# S740 (lane 1, page read 45835049303), by the same record rule inside each college's plan: at San Bernardino Valley
+# (plan s740c3) Political Science A.A.-T 32309 and Music A.A.-T 35802; at San Jose City (plan s740c5) Construction
+# Technology: Residential Maintenance, Level 2 08859.
+_s740_td = set()
+for _name in ("san_bernardino_valley_2026-11-26_s740c3", "san_jose_city_2026-11-26_s740c5"):
+    with open(os.path.join(ROOT, "kb", "receipts", "program_requirement_records_piles_s739_%s.json" % _name),
+              encoding="utf-8") as _fh:
+        _s740_td |= {(r["college"], str(r["control_number"])) for r in _json.load(_fh)["records"]
+                     if r["moves_to"] == "total_differs" and r["after_image"]["checks"].get("gaps") == ["total_differs"]
+                     and not (r["before_image"]["checks"] or {}).get("gaps")}
+check(_s740_td == {("San Bernardino Valley College", "32309"), ("San Bernardino Valley College", "35802"),
+                   ("San Jose City College", "08859")},
+      "the S740 plans move 32309, 35802 and 08859 to total_differs")
 check(_p2["only_gaps"] == ["total_differs"] and not _p2["recall"]["wrong"]
       and _p2_keys | {(r["college"], str(r["control_number"])) for r in _s703_td} | _s714e_td | _s740_td == set(_td)
       and {(r["college"], str(r["control_number"])) for r in _s703_td} == {("Clovis Community College", "33491")}

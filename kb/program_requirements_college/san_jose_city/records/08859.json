@@ -106,7 +106,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "total_differs",
+    "label": "The catalog prints a total for this program that its own printed units do not add to.",
+    "words": "the catalog prints a total of 36, and its own figures add to 24 (the program's own page, https://catalog.sjcc.edu/degrees-certificates/construction-technology/residential-maintenance-certificate-achievement-level-2/; college-page-read run 45835049303)"
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

@@ -100,7 +100,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "total_not_printed",
+    "label": "The catalog prints no total for this program, so its units cannot be checked against one.",
+    "words": "the catalog prints no program total (PDF p.303; college-page-read run 45835049303)"
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

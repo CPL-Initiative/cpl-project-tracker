@@ -212,6 +212,22 @@
     "evidence": "Music A.A.-T 35802: the page prints 'Required Courses:' MUS 101, 102 and 201 at 3 and MUS 101L, 102L and 201L at 1, 12; 'Applied Music:' the one row 'MUS 141X2 & MUS 241X2 · Applied Music I and Applied Music II · 1'; 'Large Ensemble: Select four units from the following: 4'; and 'List A - (3-4 units)': 20-21 units, under 'Major Total 21-22', 'Total Double-Counted Units 3', 'General Education (Cal-GETC) Units 34', 'Elective Units 7-8' and 'Total Units 60' (college-page-read run 45835049303, the same plan). The page does not say that the applied pair is taken more than once.",
     "run": "45835049303"
    }
+  },
+  "San Jose City College": {
+   "08859": {
+    "where": "the program's own page, https://catalog.sjcc.edu/degrees-certificates/construction-technology/residential-maintenance-certificate-achievement-level-2/",
+    "printed_total": [
+     36,
+     36
+    ],
+    "printed_sum": [
+     24,
+     24
+    ],
+    "words": "Total Units 36",
+    "evidence": "Construction Technology: Residential Maintenance, Certificate of Achievement Level 2 08859: the page prints 'Required · 15' over CNSTR 101A (2), 101B (3), 102A (3), 102B (3), 110 (3) and 117 (1), which add to 15; 'Approved Major Electives · 9' over 'Complete 3 non-duplicated units from the following approved major electives:'; and 'Total Units · 36': its own printed figures add to 24 (college-page-read run 45835049303, kb/college_reads/s740_reconcile_san_jose_city_pages.json, read as the capture reads the page). The award's own band is 16 to fewer than 30 units.",
+    "run": "45835049303"
+   }
   }
  }
 }

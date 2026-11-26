@@ -93,9 +93,9 @@ bare = dict(f, score={k: v for k, v in f["score"].items() if k not in ("gaps", "
 check(NG.answer(bare) == ("total_not_printed", NG.total_not_printed(bare))
       and "PDF p.413" in NG.total_not_printed(bare) and "45835049303" in NG.total_not_printed(bare),
       "32917: the record rule names total_not_printed, with its page and run")
-check(NG.total_not_printed(dict(bare, control_number="42041")) is None
-      and (M.COLLEGE, "42041") not in NG.total_not_printed_list(),
-      "an unlisted record of the same shape takes nothing: 42041 is not listed until its row is on its live run")
+check(NG.total_not_printed(dict(bare, control_number="99999")) is None
+      and (M.COLLEGE, "99999") not in NG.total_not_printed_list(),
+      "an unlisted record of the same shape takes nothing (42041 is listed by plan s740c6, once its row is live)")
 check(bare["score"]["arithmetic"]["why"] == [NG.NO_TOTAL_WHY] and bare["score"]["arithmetic"]["computed"] == [19.0, 20.0],
       "32917: its one arithmetic reason is that it names no total, over courses that add to 19-20")
 

@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-26T15:36:25Z",
+ "written_at": "2026-11-26T15:56:05Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,8 +168,8 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17541,
-  "gap": 4794,
+  "passing": 17544,
+  "gap": 4791,
   "with_gap": 118,
   "cost_usd": 1341.62,
   "passed_at_read": 16466,
@@ -190,8 +190,8 @@
  "census_check": {
   "universe": 22335,
   "passing": 16934,
-  "gap": 4794,
-  "collected_with_gaps": 607,
+  "gap": 4791,
+  "collected_with_gaps": 610,
   "discontinued": 0
  },
  "census_live": {
@@ -10624,14 +10624,14 @@
    "harvested": true,
    "slug": "san_jose_city",
    "programs": 125,
-   "passing": 70,
-   "gap": 55,
+   "passing": 72,
+   "gap": 53,
    "causes": {
     "found_not_extracted": 1,
     "no_closed_list": 35,
     "page_not_found": 6,
     "places_none": 4,
-    "unknown_without_live": 9
+    "unknown_without_live": 7
    },
    "census_causes": {
     "coverage_fails": 10,
@@ -10696,8 +10696,8 @@
    "run": "45840981324",
    "levers": {
     "program_course_file_check": 35,
-    "reconcile_steps": 8,
     "reader_page_search": 6,
+    "reconcile_steps": 6,
     "reader_page_assignment": 4,
     "paid_read": 1,
     "scorer_noncredit_hours": 1
@@ -11622,13 +11622,13 @@
    "harvested": true,
    "slug": "solano_community",
    "programs": 171,
-   "passing": 145,
-   "gap": 26,
+   "passing": 146,
+   "gap": 25,
    "causes": {
     "no_closed_list": 8,
     "page_not_found": 7,
     "places_none": 2,
-    "unknown_without_live": 9
+    "unknown_without_live": 8
    },
    "census_causes": {
     "coverage_fails": 7,
@@ -11693,7 +11693,7 @@
    "levers": {
     "program_course_file_check": 8,
     "reader_page_search": 7,
-    "reconcile_steps": 7,
+    "reconcile_steps": 6,
     "ge_units_steps": 2,
     "reader_page_assignment": 2
    },

@@ -1056,6 +1056,14 @@ jobs:
       - name: Cheap piles S740 at San Bernardino Valley (the reconcile's two, named gaps, the holds, the plan)
         if: matrix.shard == 1
         run: python3 tests/program_piles_s740_sbvc_test.py
+      # S740 (lane 1) after the reconciles' rereads: the records plans s740c4 and s740c2 held for them, each with its gap
+      # named (32078 required_list_outside_total, 08859 total_differs; then Solano's 42041 total_not_printed).
+      - name: Cheap piles S740 at San Jose City, after the reread (32078 and 08859, the plan)
+        if: matrix.shard == 1
+        run: python3 tests/program_piles_s740_sjcc2_test.py
+      - name: Cheap piles S740 at Solano, after the reread (42041, the own-page guard, the plan)
+        if: matrix.shard == 1
+        run: python3 tests/program_piles_s740_solano2_test.py
       # S739 at Orange Coast: the 17 records s721b held, read again by key: 4 collected with named gaps (no new
       # kind), 13 held; 32737 and 36732 on their live run through a reread's kept keys; the plan.
       - name: Cheap piles S739 at Orange Coast (the earlier holds, named gaps, the plan)
