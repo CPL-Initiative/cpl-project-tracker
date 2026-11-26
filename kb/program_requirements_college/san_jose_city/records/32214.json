@@ -65,20 +65,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    30.0,
-    30.0
+    31.0,
+    32.0
    ],
    "stated": [
     31.0,
     32.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 30.0-30.0; the catalog states 31.0-32.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -102,7 +100,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -249,7 +247,7 @@
     "courses": [
      {
       "code": "BIOL 020",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -283,5 +281,19 @@
    "Grade of C or better required in each major course; an advanced course in the major must be taken at San Jose City College."
   ]
  },
- "extracted_run": "43357106423"
+ "extracted_run": 45840981324,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "BIOL 020": [
+     4,
+     4
+    ]
+   },
+   "words": "college-page-read run 45835049303 (kb/college_reads/s740_reconcile_san_jose_city_pages.json) (Medical Assisting: Clinical A.S. 32078's page prints 'Complete one of the following courses: · 4-5 · BIOL 020 · Human Biology · 4 · BIOL 071 · Human Anatomy · 5 · MA 004 · Structure and Function of the Human Body · 4'; the certificate 32214's page prints the same three courses with no units beside them under 'Select one of the following courses: · 3' and 'Total Units · 31-32')"
+  }
+ ],
+ "read_run": "43357106423"
 }

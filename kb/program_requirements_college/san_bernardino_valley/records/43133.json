@@ -45,39 +45,25 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 37,
+   "placed": 43,
    "listed": 43,
-   "share": 0.86,
-   "missing": [
-    "CD126",
-    "HIST100",
-    "SOC110",
-    "SOC110H",
-    "SOC141",
-    "SOC141H"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "HISTC1001",
+     "listed": "HIST100",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 6,
-   "codes": [
-    "CDEV126",
-    "HISTC1001",
-    "SOCI110",
-    "SOCI110H",
-    "SOCI141",
-    "SOCI141H"
-   ],
-   "flagged": [
-    "CDEV126",
-    "HISTC1001",
-    "SOCI110",
-    "SOCI110H",
-    "SOCI141",
-    "SOCI141H"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -541,7 +527,7 @@
    "Footnote 1 on HUMSV 195A and HUMSV 198C: students must find and select an agency for fieldwork hours before registering."
   ]
  },
- "extracted_run": 43609973859,
- "read_run": 43355003065,
+ "extracted_run": 45844530701,
+ "read_run": 43609973859,
  "catalog_year": "2026-2027"
 }

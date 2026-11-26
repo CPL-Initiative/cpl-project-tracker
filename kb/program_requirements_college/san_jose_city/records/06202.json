@@ -46,27 +46,22 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 13,
+   "placed": 14,
    "listed": 14,
-   "share": 0.929,
-   "missing": [
-    "SOLARRENEWAB"
-   ],
-   "unexplained": [
-    "SOLARRENEWAB"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 6,
+   "count": 5,
    "codes": [
     "CNSTR115",
     "CNSTR116",
     "CNSTR118",
     "CNSTR120",
-    "CNSTR128",
-    "SOLAR102"
+    "CNSTR128"
    ],
    "flagged": [
     "CNSTR115",
@@ -75,7 +70,7 @@
     "CNSTR120",
     "CNSTR128"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -117,7 +112,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -339,5 +334,6 @@
    "'construction trades' is taken from the program description; the other careers come from the CAREER OPTIONS list."
   ]
  },
- "extracted_run": "43357106423"
+ "extracted_run": 45840981324,
+ "read_run": "43357106423"
 }

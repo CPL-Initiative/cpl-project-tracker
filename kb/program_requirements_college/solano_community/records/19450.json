@@ -46,37 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 7,
+   "placed": 12,
    "listed": 12,
-   "share": 0.583,
-   "missing": [
-    "SOC2",
-    "SOC23",
-    "SOC40",
-    "SOC45",
-    "SOC75"
-   ],
-   "unexplained": [
-    "SOC2",
-    "SOC23",
-    "SOC40",
-    "SOC45",
-    "SOC75"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 5,
-   "codes": [
-    "SOCI2",
-    "SOCI23",
-    "SOCI40",
-    "SOCI45",
-    "SOCI75"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -117,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -282,6 +264,6 @@
    "No careers named in the text."
   ]
  },
- "extracted_run": 39037377728,
- "read_run": "39035226783"
+ "extracted_run": 45840125172,
+ "read_run": 39037377728
 }

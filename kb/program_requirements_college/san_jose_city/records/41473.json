@@ -46,28 +46,21 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 6,
+   "placed": 8,
    "listed": 11,
-   "share": 0.545,
+   "share": 0.727,
    "missing": [
-    "ACCOUNTINGAC",
-    "BUSINESSBUS0",
     "ECONC2001",
     "ECONC2002",
     "MATH20"
    ],
-   "unexplained": [
-    "ACCOUNTINGAC",
-    "BUSINESSBUS0"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 5,
+   "count": 3,
    "codes": [
-    "ACCTG20",
-    "BUS71",
     "ECON10A",
     "ECON10B",
     "MATH62"
@@ -77,7 +70,7 @@
     "ECON10B",
     "MATH62"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -134,7 +127,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -280,5 +273,6 @@
    "Program learning outcomes printed on the program's outcomes tab; recorded for this award."
   ]
  },
- "extracted_run": "43357106423"
+ "extracted_run": 45840981324,
+ "read_run": "43357106423"
 }

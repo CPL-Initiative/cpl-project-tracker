@@ -83,8 +83,13 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 18.0-18.0; the catalog states 27.0-27.0"
-   ]
+    "the blocks sum to 18.0-18.0; the catalog states 27.0-27.0",
+    "electives would fill the rest, but the reader's note says the requirements run outside the text read"
+   ],
+   "fill_refused": {
+    "gap": "section_cut_off",
+    "words": "Part of the requirements table may be missing from the extraction (e.g., a required core preceding the 18-unit selection)."
+   }
   },
   "repeated": {
    "codes": [],
@@ -245,6 +250,6 @@
    "Catalog codes printed with leading zeros (ASL 001 etc.) are treated as matching closed-list codes (ASL 1 etc.); ASL 007 and ASL 011 are not in the closed list."
   ]
  },
- "extracted_run": 39037377728,
- "read_run": "39035226783"
+ "extracted_run": 45840125172,
+ "read_run": 39037377728
 }

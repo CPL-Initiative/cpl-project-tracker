@@ -737,7 +737,7 @@
   "title": "Geology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1738,7 +1738,7 @@
   "title": "Career Specialist",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -2315,12 +2315,32 @@
   "title": "Manual Lathe and Milling Machine Operator",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MACH21",
+   "MACH22",
+   "MACH75",
+   "MACH90",
+   "MACH98",
+   "TECALC87"
+  ],
+  "source": {
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/machinist-technology/",
+   "title": "Machinist Technology | Academic Catalog",
+   "h1": "Machinist Technology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 9273
  },
  {
   "control_number": "17044",
@@ -2478,7 +2498,8 @@
     "title": 1.0,
     "section": "as",
     "section_line": "environmental science associate of science degree",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 31,
@@ -3549,36 +3570,97 @@
   "title": "Computer Numerical Control: CAD/CAM",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MACH129",
+   "MACH21",
+   "MACH22",
+   "MACH70",
+   "MACH71",
+   "MACH72",
+   "MACH73",
+   "MACH74",
+   "MACH90",
+   "TECALC87"
+  ],
+  "source": {
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/machinist-technology/",
+   "title": "Machinist Technology | Academic Catalog",
+   "h1": "Machinist Technology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 9273
  },
  {
   "control_number": "22806",
   "title": "Machinist Standard",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MACH129",
+   "MACH21",
+   "MACH22",
+   "MACH90"
+  ],
+  "source": {
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/machinist-technology/machinist-standard-as-degree/",
+   "title": "Computer Numerical Control (CNC) Machining Associate of Science Degree | Academic Catalog",
+   "h1": "Computer Numerical Control (CNC) Machining Associate of Science Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 5773
  },
  {
   "control_number": "22809",
   "title": "Tool & Die",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MACH129",
+   "MACH21",
+   "MACH22",
+   "MACH90",
+   "TECALC87"
+  ],
+  "source": {
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/machinist-technology/",
+   "title": "Machinist Technology | Academic Catalog",
+   "h1": "Machinist Technology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 0
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 9273
  },
  {
   "control_number": "22816",
@@ -4142,12 +4224,54 @@
   "title": "Administration of Justice",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJUS101",
+   "ADJUS102",
+   "ADJUS103",
+   "ADJUS104",
+   "ADJUS105",
+   "ADJUS106",
+   "ADJUS108",
+   "ADJUS151",
+   "ADJUS152",
+   "ADJUS153",
+   "ADJUS154",
+   "ADJUS155",
+   "ADJUS156",
+   "CIT101",
+   "ECON208",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "PHIL102",
+   "PHIL103",
+   "POLSC1000",
+   "POLSC1000H",
+   "PSYC105",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOCIC1000",
+   "SOCIC1000H",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/administration-justice/administration-justice-aat-degree/",
+   "title": "Administration of Justice Associate in Science for Transfer Degree | Academic Catalog",
+   "h1": "Administration of Justice Associate in Science for Transfer Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "administration of justice associate in science for transfer degree",
+    "section_fit": 1.0,
+    "exact": 0
+   }
+  },
   "listed": 28,
-  "text_chars": 0
+  "text_chars": 6525
  },
  {
   "control_number": "31886",
@@ -4771,7 +4895,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 153 of 176 closed-list programs on their own page, 4 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 178 of 199 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -5980,7 +6104,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "street rod construction certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 3,
@@ -6009,11 +6134,12 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "automotive interiors certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 4,
-  "text_chars": 4512
+  "text_chars": 4485
  },
  {
   "control_number": "38015",
@@ -6480,11 +6606,12 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "smart systems automation technology certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 4,
-  "text_chars": 4889
+  "text_chars": 4782
  },
  {
   "control_number": "39192",
@@ -6706,12 +6833,31 @@
   "title": "Social Media Narrative Production",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FTVM111",
+   "FTVM112",
+   "FTVM198",
+   "FTVM215",
+   "FTVM233"
+  ],
+  "source": {
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/ftvm/",
+   "title": "Film, Television, and Media | Academic Catalog",
+   "h1": "Film, Television, and Media",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 0.25,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 0
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 15954
  },
  {
   "control_number": "39237",
@@ -7261,11 +7407,12 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "flight operations certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 7,
-  "text_chars": 4981
+  "text_chars": 4849
  },
  {
   "control_number": "40832",
@@ -7313,7 +7460,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.81,
+  "coverage": 1.0,
   "codes_found": [
    "ANTHRO102",
    "ANTHRO102H",
@@ -7330,6 +7477,10 @@
    "HISTC1001H",
    "HISTC1002",
    "HISTC1002H",
+   "SOC110",
+   "SOC110H",
+   "SOC141",
+   "SOC141H",
    "SOCIC1000",
    "SOCIC1000H"
   ],
@@ -7343,7 +7494,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "history associate in arts for transfer degree",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 21,
@@ -7426,11 +7578,15 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.696,
+  "coverage": 1.0,
   "codes_found": [
    "ANTHRO102",
    "ANTHRO102H",
    "BIOLC1000",
+   "CD111",
+   "CD126",
+   "CD138",
+   "CD160",
    "CDEVC1000",
    "CDEVC1000H",
    "ECON208",
@@ -7440,6 +7596,9 @@
    "PSYC111",
    "PSYCC1000",
    "PSYCC1000H",
+   "SOC130",
+   "SOC141",
+   "SOC141H",
    "SOCIC1000",
    "SOCIC1000H",
    "STATC1000",
@@ -7455,11 +7614,12 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "child and adolescent development associate in arts for transfer degree",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 23,
-  "text_chars": 5540
+  "text_chars": 5727
  },
  {
   "control_number": "41787",
@@ -7845,7 +8005,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.884,
+  "coverage": 1.0,
   "codes_found": [
    "ADJUS101",
    "ANTHRO102",
@@ -7855,6 +8015,7 @@
    "BIOL260",
    "BIOL261",
    "BIOLC1000",
+   "CD126",
    "CDEVC1000",
    "CDEVC1000H",
    "COMM174",
@@ -7881,6 +8042,10 @@
    "PSYC111",
    "PSYCC1000",
    "PSYCC1000H",
+   "SOC110",
+   "SOC110H",
+   "SOC141",
+   "SOC141H",
    "SOCIC1000",
    "SOCIC1000H",
    "STATC1000",
@@ -7896,7 +8061,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "social work and human services associate in arts for transfer degree",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 43,
