@@ -1,0 +1,23 @@
+{
+ "_readme": "S740, lane 2's cheap piles (2026-11-26). Three Shasta records hold on what the catalog PDF prints around the pages their reads held. 18655 (University Studies - Earth Sciences, read from p.74): its record prints 'SOC C1000' where the state's file lists SOCI C1000, so coverage and invented fail; a course renumber in Shasta's reconcile entry needs the catalog's own line to show the two are one course (S739's second reader asked the same of Los Angeles Trade-Technical 41150). 32162 (Kinesiology A.A.-T, read from p.100): its heading sits on p.99, which the read did not hold, and 18094 (University Studies - Physical Education) was read from the same page with 29 of its 32 courses, so the own-page guard does not show its section its own. 18625 (General Studies - Coastal Oceanographic Studies, read from p.78): its heading sits on p.77. This read prints the pages with a hit between p.74 and p.100, so a session can read the Sociology line as printed, the Kinesiology transfer degree's heading with the lists under it, and the Coastal Oceanographic Studies heading. One load, no model call, nothing written.",
+ "college": "Shasta College",
+ "questions": {
+  "sociology_line": "How pp.74-77 print the Sociology course in the Earth Sciences University Studies emphasis (SOC C1000 or SOCI C1000), with its title.",
+  "kinesiology_heading": "Where the 'Associate in Arts in Kinesiology for Transfer' heading sits (p.99 or p.100), and which lists follow it before the next program heading.",
+  "coastal_heading": "Where the 'General Studies - Coastal Oceanographic Studies' heading sits (p.77 or p.78), with its total and its emphases."
+ },
+ "keywords": [
+  "SOCI? ?C1000[^\\n]{0,80}",
+  "Kinesiology for Transfer[^\\n]{0,80}",
+  "Coastal Oceanographic[^\\n]{0,80}",
+  "Physical Education University Studies[^\\n]{0,80}"
+ ],
+ "pdf_span": [74, 100],
+ "pdf_page_cap": 18,
+ "pages": [
+  {
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf",
+   "answers": ["sociology_line", "kinesiology_heading", "coastal_heading"]
+  }
+ ]
+}

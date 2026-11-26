@@ -108,12 +108,39 @@ function key(x, el, k, mods) {
     txt(x.d.getElementById("csb-rapid-ex")) === "Example course: WELD 10 Intro to Welding (1 of 7 courses)" && !/Arc Welding/.test(txt(x.d.getElementById("csb-rapid"))),
     txt(x.d.getElementById("csb-rapid-ex")));
   const src = x.d.querySelector("#csb-rapid-src a");
-  check("(9) a guess with a catalog page shows what the catalog says, a link that opens in a new tab",
-    /^The catalog says: WELD: Welding Technology/.test(txt(x.d.getElementById("csb-rapid-src"))) && src && src.getAttribute("href") === "https://catalog.beta.example.edu/weld"
-    && src.getAttribute("target") === "_blank" && /noopener/.test(src.getAttribute("rel") || ""), txt(x.d.getElementById("csb-rapid-src")));
+  check("(9) a guess with a catalog page shows what the catalog says, a link to the page",
+    /^The catalog says: WELD: Welding Technology/.test(txt(x.d.getElementById("csb-rapid-src"))) && src && src.getAttribute("href") === "https://catalog.beta.example.edu/weld",
+    txt(x.d.getElementById("csb-rapid-src")));
+  /* (14) the catalog page opens in a bottom bar (Sam, 2026-11-26) */
+  src.click(); await settle();
+  const cbar = x.d.getElementById("csb-bar"), fr = cbar && cbar.querySelector("iframe");
+  check("(14) ⭐ the catalog link opens the page in a bottom bar, not a new tab", !!cbar && fr && fr.getAttribute("src") === "https://catalog.beta.example.edu/weld"
+    && /Open in a new tab/.test(txt(cbar)) && (cbar.querySelector('a[target="_blank"]') || {}).href === "https://catalog.beta.example.edu/weld", cbar && cbar.outerHTML.slice(0, 300));
+  check("(14) the bar's grip is a labelled separator the keys resize", !!cbar && (cbar.querySelector(".csb-bar-grip") || {}).getAttribute && cbar.querySelector(".csb-bar-grip").getAttribute("role") === "separator");
+  x.d.getElementById("csb-bar-close").click(); await settle();
+  check("(14) Close removes the bar and gives the page its foot back", !x.d.getElementById("csb-bar") && !x.d.body.style.paddingBottom);
+  /* (15) the explanation folds away, and (16) a training note */
+  const more = x.d.getElementById("csb-rapid-more");
+  check("(15) ⭐ the explanation sits in a closed How this works section", more && more.tagName === "DETAILS" && !more.open
+    && more.contains(x.d.getElementById("csb-rapid-keys")) && /How codes are compared/.test(txt(more)), more && txt(more).slice(0, 120));
+  const nb = x.d.getElementById("csb-rapid-note");
+  check("(16) a closed Add a training note section holds a labelled box", nb && nb.tagName === "DETAILS" && !nb.open && /Add a training note/.test(txt(nb.querySelector("summary")))
+    && !!x.d.querySelector('label[for="csb-rapid-note-in"]'));
+
   check("(6) the controls are underlined-word buttons and the keys show in one line",
     ["csb-rapid-accept", "csb-rapid-skip", "csb-rapid-back"].every((id) => { const b = x.d.getElementById(id); return b && b.tagName === "BUTTON" && b.classList.contains("csb-word"); })
-    && /Enter in the title accepts it/.test(txt(x.d.getElementById("csb-rapid-keys"))) && !!x.d.querySelector('label[for="csb-rapid-title"]'));
+    && /Enter does the same/.test(txt(x.d.getElementById("csb-rapid-keys"))) && /Skip saves nothing/.test(txt(x.d.getElementById("csb-rapid-keys")))
+    && !!x.d.querySelector('label[for="csb-rapid-title"]'));
+  /* (6b) The word follows the box (Sam, 2026-11-26: "not sure whether to click Accept to accept the title I entered"). */
+  {
+    const inp = x.d.getElementById("csb-rapid-title"), acc = x.d.getElementById("csb-rapid-accept"), was = inp.value;
+    const at0 = acc.textContent;
+    inp.value = was + " Studies"; inp.dispatchEvent(new x.w.Event("input", { bubbles: true }));
+    const at1 = acc.textContent;
+    inp.value = was; inp.dispatchEvent(new x.w.Event("input", { bubbles: true }));
+    check("(6b) ⭐ Accept reads Save this title once the title is changed, and Accept again when it is put back",
+      at0 === "Accept" && at1 === "Save this title" && acc.textContent === "Accept", [at0, at1, acc.textContent].join(" / "));
+  }
 
   /* (3) Skip and Back write nothing */
   x.d.getElementById("csb-rapid-skip").click(); await settle();
@@ -216,6 +243,60 @@ function key(x, el, k, mods) {
     && x.d.getElementById("csb-rapid-title").value === "" && /not a subject code/.test(txt(x.d.getElementById("csb-rapid-verdict"))));
   x.d.getElementById("csb-rapid-accept").click(); await settle();
   check("(11) ⭐ so Accept on it saves nothing", writesOf(x).length === 0 && /Nothing to accept/.test(txt(x.d.getElementById("csb-rapid-msg"))));
+
+  /* (13) The example course opens its description, or a search for it (Sam, 2026-11-26) */
+  {
+    const y = load("#commons/subjects/rapid", { sess: ME });
+    await y.M.boot(); await settle();
+    const btn = y.d.getElementById("csb-rapid-exbtn"), dsc = y.d.getElementById("csb-rapid-desc");
+    check("(13) the example course is a button that opens its description line", btn && btn.tagName === "BUTTON" && dsc && dsc.hasAttribute("hidden")
+      && btn.getAttribute("aria-expanded") === "false", y.d.getElementById("csb-rapid-ex") && y.d.getElementById("csb-rapid-ex").outerHTML);
+    if (btn) { btn.click(); await settle(); }
+    check("(13) ⭐ a tap shows it; with no description on file it says so and offers a search that opens a new tab",
+      dsc && !dsc.hasAttribute("hidden") && btn.getAttribute("aria-expanded") === "true" && /No description of this course is on file yet/.test(txt(dsc))
+      && (dsc.querySelector("a") || {}).target === "_blank" && /google\.com\/search/.test((dsc.querySelector("a") || {}).href || ""), dsc && dsc.outerHTML);
+  }
+
+  /* (16) a training note saves a row of its own */
+  {
+    const y = load("#commons/subjects/rapid", { sess: ME });
+    await y.M.boot(); await settle();
+    y.d.getElementById("csb-rapid-note-in").value = "Check the schedule search before guessing.";
+    y.d.getElementById("csb-rapid-note-save").click(); await settle();
+    const w = writesOf(y), nbody = w[0] && JSON.parse(w[0].body);
+    check("(16) ⭐ Save the note writes a procedure_note row of its own, with the view and the code",
+      w.length === 1 && nbody.field === "procedure_note" && /^NOTE:commons\/subjects\/rapid\|/.test(nbody.course_id)
+      && JSON.parse(nbody.value).note === "Check the schedule search before guessing." && /\|/.test(JSON.parse(nbody.value).code), w[0] && w[0].body);
+  }
+
+  /* (12) Not a subject and Skip take a code off the list (Sam, 2026-11-26: TEST "stays on the list as not having been
+     acted upon...needs to pop off the list") */
+  {
+    const before = txt(x.d.getElementById("csb-rapid-left"));
+    x.d.getElementById("csb-rapid-notsubj").click(); await settle();
+    const w = writesOf(x), nb = w[0] && JSON.parse(w[0].body);
+    check("(12) ⭐ Not a subject saves the person's decision under the code's key",
+      w.length === 1 && nb.course_id === "SUBJ:alpha|MATH|credit" && JSON.parse(nb.value).not_a_subject === true, w[0] && w[0].body);
+    check("(12) ⭐ and the code leaves the list at once", head(x) !== "MATH at Alpha College"
+      && parseInt(txt(x.d.getElementById("csb-rapid-left")), 10) === parseInt(before, 10) - 1, txt(x.d.getElementById("csb-rapid-left")));
+    const left0 = parseInt(txt(x.d.getElementById("csb-rapid-left")), 10), skipped = head(x);
+    x.d.getElementById("csb-rapid-skip").click(); await settle();
+    const after = x.d.getElementById("csb-rapid-left") ? parseInt(txt(x.d.getElementById("csb-rapid-left")), 10) : 0;
+    check("(12) ⭐ Skip sets the code aside for the visit: the count drops and nothing is written",
+      after === left0 - 1 && writesOf(x).length === 1 && head(x) !== skipped, txt(x.d.getElementById("csb-rapid")));
+    if (!after) check("(12) with only skipped codes left, the round says so and offers Back",
+      /you skipped this visit/.test(txt(x.d.getElementById("csb-rapid-empty"))) && !!x.d.getElementById("csb-rapid-back"), txt(x.d.getElementById("csb-rapid")));
+    x.d.getElementById("csb-rapid-back").click(); await settle();
+    check("(12) Back brings the skipped code back", head(x) === skipped && parseInt(txt(x.d.getElementById("csb-rapid-left")), 10) === left0, head(x));
+  }
+  {
+    const NS = [{ course_id: "SUBJ:alpha|MATH|credit", value: JSON.stringify({ not_a_subject: true }), reviewed_at: "2026-11-26T00:00:00Z", reviewer_email: ME.email, reviewer_label: "a reviewer" }];
+    const y = load("#commons/subjects/rapid", { sess: ME, saves: NS });
+    await y.M.boot(); await settle();
+    const seen = [];
+    for (let i = 0; i < 5 && y.d.getElementById("csb-rapid-h"); i++) { seen.push(txt(y.d.getElementById("csb-rapid-h"))); y.d.getElementById("csb-rapid-skip").click(); await settle(); }
+    check("(12) ⭐ a saved Not a subject keeps the code off the list on the next visit", seen.length && seen.indexOf("MATH at Alpha College") < 0, seen.join(", "));
+  }
 
   /* (8) an empty queue */
   const AT = "2026-11-26T00:00:00Z";

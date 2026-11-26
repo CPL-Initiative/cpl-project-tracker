@@ -1,0 +1,309 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30); Sam's routine prompt of 2026-11-25, as the S739 conductor's brief carries it: a record held for a gap is collected with its gap named and a lower score on the 0-100 bar, never held, unless the record is not the program's own; S739: Butte's records kb/receipts/program_requirement_records_piles_s721_butte_2026-11-24_s721e.json held, read again by key: passed by a rescore where today's scorer's one reading moves them, else collected with their gaps named where the record is the program's own (no reread, no reconcile)",
+ "at": "2026-11-26T15:27:20Z",
+ "college": "Butte College",
+ "keys": {
+  "from": "kb/receipts/program_requirement_records_piles_s721_butte_2026-11-24_s721e.json",
+  "members": [
+   "01312",
+   "14583",
+   "33579"
+  ]
+ },
+ "gaps": {
+  "required_list_outside_total": "The catalog prints a list the program requires apart from its printed total, and the record counts that list; without it the courses add to the printed total."
+ },
+ "moved": 1,
+ "by": {
+  "required_list_outside_total": 1
+ },
+ "precision": {
+  "read": 3,
+  "right": 3,
+  "wrong": [],
+  "no_record_file": 0,
+  "not_hand_held": 0,
+  "by_answer": {
+   "none": 2,
+   "required_list_outside_total": 1
+  }
+ },
+ "claim_checks": {
+  "counts": {
+   "stands": 1
+  },
+  "not_standing": []
+ },
+ "boundaries": {
+  "counts": {
+   "the note's words gone right": 1,
+   "the stated total one unit off right": 1,
+   "coverage failing right": 1
+  },
+  "wrong": []
+ },
+ "held": [
+  {
+   "control_number": "01312",
+   "why": "held: the major adds up, and the degree's 60-61 falls short of the map's 62-69; the map's 2-unit Graduation Requirement line closes the low end only, and Butte's reconcile step keeps that line out by S636's call; no kind's sentence is true of a sum below its printed range",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "14583",
+   "why": "held: an incomplete read (the requirements table is not in the text read; HELD_INCOMPLETE), on a page read for 43185 too, whose section heading names program code 43185: the own-section guard",
+   "claim": "no entry stands"
+  }
+ ],
+ "records": [
+  {
+   "college": "Butte College",
+   "control_number": "33579",
+   "award": "A.S. T Degree",
+   "extracted_run": 42973457189,
+   "moves_to": "required_list_outside_total",
+   "words": "The map lists AGS 20 and AGS 40 within List A, whereas the requirements list them as a separate 'Select one'; the requirements section was followed. | The 23.00 printed beside 'Required courses:' and 'Total : 23.00' is the major total; recorded as total_units, not as the first block's stated total.",
+   "confidence": {
+    "unit_arithmetic": 70,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/butte/records/33579.json",
+   "before_image": {
+    "program_title": "Agriculture Business",
+    "award": "A.S. T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://butte.curriqunet.com/catalog/iq/25398/28076/28186",
+    "measure": "units",
+    "total_min": 23,
+    "total_max": 23,
+    "record": {
+     "program": {
+      "section_heading": "AS-T Degree in Agriculture Business",
+      "measure": "units",
+      "total_units": {
+       "min": 23,
+       "max": 23
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "Cal-GETC",
+      "degree_total": {
+       "min": 60,
+       "max": 64
+      },
+      "ge_units": {
+       "min": 34,
+       "max": 34
+      },
+      "electives_fill_degree": true,
+      "outcomes": [
+       "Accumulate, record, and analyze agricultural financial statements.",
+       "Analyze specific markets to explain and predict changes in price and economic behavior.",
+       "Demonstrate core management principles and apply them to different working scenarios.",
+       "Apply core marketing principles to the unique structure of the agriculture sector.",
+       "Demonstrate effective verbal and written communication in an agricultural business environment.",
+       "Recognize consumer and producer responsiveness to changing market conditions."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "AB 22",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "AGS 50",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECON C2002",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Select one",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 4,
+        "max": 4
+       },
+       "courses": [
+        {
+         "code": "STAT C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "STAT C1000E",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List A (Select three)",
+       "rule": "choose_courses",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 9,
+        "max": 9
+       },
+       "courses": [
+        {
+         "code": "AB 15",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AB 25",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AB 26",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AB 50",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Select one",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "AGS 20",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AGS 40",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Elective (Department recommends)",
+       "rule": "recommended",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ACCT 4",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CHEM 51",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 10,
+     "listed": 10
+    },
+    "extracted_run": "42973457189"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 10,
+     "listed": 10,
+     "gaps": [
+      "required_list_outside_total"
+     ],
+     "confidence": {
+      "unit_arithmetic": 70,
+      "course_list_match": 100,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 1
+  }
+ ],
+ "live_run_proof": null,
+ "shared_pages": {},
+ "representation": "checks.gaps and checks.confidence added as the load reads the filed score (a passing row: checks.arithmetic to equal); checks.coverage, invented and the record unchanged",
+ "claim_check_reads": "Today's capture (sources.json): every course an entry names among the codes it found, and a course an entry says the printed total leaves out on neither it nor the state's list. A note's quoted figures are the reader's words, never re-read here.",
+ "follow_verdict": "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows (confirm_matches); the apply aborts, writing nothing, unless the count is 0.",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Butte College', '33579', 42973457189, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"AB 22\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGS 50\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON C2002\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STAT C1000E\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":4,\"min\":4}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AB 15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AB 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AB 26\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AB 50\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"List A (Select three)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":9,\"min\":9}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGS 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGS 40\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ACCT 4\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CHEM 51\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Elective (Department recommends)\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":64,\"min\":60},\"electives_fill_degree\":true,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Accumulate, record, and analyze agricultural financial statements.\",\"Analyze specific markets to explain and predict changes in price and economic behavior.\",\"Demonstrate core management principles and apply them to different working scenarios.\",\"Apply core marketing principles to the unique structure of the agriculture sector.\",\"Demonstrate effective verbal and written communication in an agricultural business environment.\",\"Recognize consumer and producer responsiveness to changing market conditions.\"],\"section_heading\":\"AS-T Degree in Agriculture Business\",\"total_units\":{\"max\":23,\"min\":23}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":10,\"placed\":10}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":70},\"coverage\":true,\"gaps\":[\"required_list_outside_total\"],\"invented\":true,\"listed\":10,\"placed\":10}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "pre_read_md5": "with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) as (values\n  (1, 'Butte College', '33579', 42973457189, 'de60d0bdc1d313df0db951e4a2718b92', '565698f6affa77ef6c1410d28f8c0923', '418ab721e4dea4fcc8fb2662e263902d'))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.record::text) = v.rec_md5),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.checks::text) = v.chk_md5),\n  'already_after', count(*) filter (where md5(r.checks::text) = v.after_md5),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Butte College', '33579', 42973457189, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"AB 22\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGS 50\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON C2002\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STAT C1000E\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":4,\"min\":4}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AB 15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AB 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AB 26\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AB 50\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"List A (Select three)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":9,\"min\":9}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGS 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGS 40\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ACCT 4\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CHEM 51\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Elective (Department recommends)\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":64,\"min\":60},\"electives_fill_degree\":true,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Accumulate, record, and analyze agricultural financial statements.\",\"Analyze specific markets to explain and predict changes in price and economic behavior.\",\"Demonstrate core management principles and apply them to different working scenarios.\",\"Apply core marketing principles to the unique structure of the agriculture sector.\",\"Demonstrate effective verbal and written communication in an agricultural business environment.\",\"Recognize consumer and producer responsiveness to changing market conditions.\"],\"section_heading\":\"AS-T Degree in Agriculture Business\",\"total_units\":{\"max\":23,\"min\":23}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":10,\"placed\":10}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":70},\"coverage\":true,\"gaps\":[\"required_list_outside_total\"],\"invented\":true,\"listed\":10,\"placed\":10}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\nf as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number\n        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true\n       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)),\ne(expect) as (values (1)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when f.n > 0\n            then ('s740h piles confirm guard: ' || f.n || ' rows hold a matching confirm verdict ' || f.keys::text)::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s740h piles guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, f;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Butte College', '33579', 42973457189, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"AB 22\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGS 50\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON C2002\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STAT C1000E\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":4,\"min\":4}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AB 15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AB 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AB 26\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AB 50\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"List A (Select three)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":9,\"min\":9}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGS 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGS 40\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ACCT 4\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CHEM 51\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Elective (Department recommends)\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":64,\"min\":60},\"electives_fill_degree\":true,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Accumulate, record, and analyze agricultural financial statements.\",\"Analyze specific markets to explain and predict changes in price and economic behavior.\",\"Demonstrate core management principles and apply them to different working scenarios.\",\"Apply core marketing principles to the unique structure of the agriculture sector.\",\"Demonstrate effective verbal and written communication in an agricultural business environment.\",\"Recognize consumer and producer responsiveness to changing market conditions.\"],\"section_heading\":\"AS-T Degree in Agriculture Business\",\"total_units\":{\"max\":23,\"min\":23}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":10,\"placed\":10}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":70},\"coverage\":true,\"gaps\":[\"required_list_outside_total\"],\"invented\":true,\"listed\":10,\"placed\":10}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (1)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s740h piles rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;"
+}

@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 184,
  "with_closed_list": 178,
- "started": "2026-11-19T11:29:46Z",
+ "started": "2026-11-26T15:20:04Z",
  "scope": "/ventura/",
  "sitemap": {
   "url": "https://catalog.vcccd.edu/sitemap.xml",
@@ -173,7 +173,7 @@
   "yield_refused_passing": 0
  },
  "loads": 298,
- "seconds": 1542.9,
+ "seconds": 1500.5,
  "found": 174,
  "by_method": {
   "no_closed_list": 6,
@@ -257,64 +257,33 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/ventura",
-  "kept": 169,
+  "kept": 173,
   "kept_moved": 0,
-  "programs": 5,
-  "list": [
-   {
-    "control_number": "31298",
-    "title": "Administration of Justice",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/criminal-justice/administration-justice-ast/",
-    "coverage": 0.857,
-    "was_url": "https://catalog.vcccd.edu/ventura/transfer-information/c-id/",
-    "was_coverage": 0.762,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "35207",
-    "title": "Elementary Teacher Education",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/education/elementary-teacher-education-aat/",
-    "coverage": 0.564,
-    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/education/elementary-teacher-education-aat/",
-    "was_coverage": 0.538,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "44186",
-    "title": "Administration in Early Education",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/child-development/administration-in-early-education-coa/",
-    "coverage": 0.75,
-    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/child-development/",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
+  "programs": 0,
+  "list": [],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "only": [
+   "06948",
+   "08253",
+   "35654",
+   "37415",
+   "44994",
+   "44995"
+  ],
+  "not_named": [
    {
     "control_number": "45355",
     "title": "California General Education Transfer Curriculum (Cal-GETC)",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://catalog.vcccd.edu/ventura/transfer-information/c-id/",
     "coverage": 0.517,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "45831",
-    "title": "Elementary Teacher Education: Integrated Programs",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/education/elementary-teacher-education-aat/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/education/elementary-teacher-education-aat/",
-    "was_coverage": 0.971,
+    "was_url": "https://catalog.vcccd.edu/ventura/transfer-information/c-id/",
+    "was_coverage": 0.517,
     "was_method": "sitemap_page"
    }
   ],
-  "held_worse_window": [],
-  "held_no_gain": [],
-  "held_opens_on_list": [],
   "refused_passing": [],
   "forced_unbound": []
  },
@@ -1016,5 +985,5 @@
    "url": "https://catalog.vcccd.edu/ventura/programs-courses/computer-science/cisco-ccna-coa/"
   }
  },
- "run": "44514835321"
+ "run": "45847865286"
 }

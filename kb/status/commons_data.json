@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-26T14:03:19Z",
+ "written_at": "2026-11-26T17:20:58Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17507,
-  "gap": 4828,
+  "passing": 17587,
+  "gap": 4748,
   "with_gap": 118,
-  "cost_usd": 1341.61,
-  "passed_at_read": 16455,
+  "cost_usd": 1341.45,
+  "passed_at_read": 16503,
   "cost_receipts": 118,
   "spent_usd": 1244.44,
   "spent_runs": 240,
@@ -189,9 +189,9 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16915,
-  "gap": 4828,
-  "collected_with_gaps": 592,
+  "passing": 16945,
+  "gap": 4748,
+  "collected_with_gaps": 642,
   "discontinued": 0
  },
  "census_live": {
@@ -845,12 +845,12 @@
    "harvested": true,
    "slug": "butte",
    "programs": 192,
-   "passing": 162,
-   "gap": 30,
+   "passing": 163,
+   "gap": 29,
    "causes": {
     "no_closed_list": 24,
     "page_not_found": 3,
-    "unknown_without_live": 3
+    "unknown_without_live": 2
    },
    "census_causes": {
     "no_closed_list": 24,
@@ -904,7 +904,7 @@
    "levers": {
     "program_course_file_check": 24,
     "reader_page_search": 3,
-    "reconcile_steps": 3
+    "reconcile_steps": 2
    },
    "collection": {
     "program_reader": {
@@ -941,12 +941,12 @@
    "harvested": true,
    "slug": "cabrillo",
    "programs": 291,
-   "passing": 255,
-   "gap": 36,
+   "passing": 262,
+   "gap": 29,
    "causes": {
     "no_closed_list": 10,
     "page_not_found": 12,
-    "unknown_without_live": 14
+    "unknown_without_live": 7
    },
    "census_causes": {
     "no_closed_list": 9,
@@ -1000,9 +1000,9 @@
    "read_seconds": 1552.1,
    "run": "44090886950",
    "levers": {
-    "reconcile_steps": 13,
     "reader_page_search": 12,
     "program_course_file_check": 10,
+    "reconcile_steps": 6,
     "scorer_noncredit_hours": 1
    },
    "collection": {
@@ -2513,14 +2513,14 @@
    "harvested": true,
    "slug": "college_of_the_canyons",
    "programs": 283,
-   "passing": 242,
-   "gap": 41,
+   "passing": 243,
+   "gap": 40,
    "causes": {
     "found_not_extracted": 1,
     "no_closed_list": 19,
     "page_not_found": 15,
     "places_none": 1,
-    "unknown_without_live": 5
+    "unknown_without_live": 4
    },
    "census_causes": {
     "found_not_extracted": 1,
@@ -2589,8 +2589,7 @@
     "reader_page_search": 15,
     "scorer_noncredit_hours": 4,
     "paid_read": 1,
-    "reader_page_assignment": 1,
-    "reconcile_steps": 1
+    "reader_page_assignment": 1
    },
    "collection": {
     "program_reader": {
@@ -3244,13 +3243,13 @@
    "harvested": true,
    "slug": "contra_costa",
    "programs": 131,
-   "passing": 86,
-   "gap": 45,
+   "passing": 88,
+   "gap": 43,
    "causes": {
     "no_closed_list": 26,
     "page_not_found": 8,
     "places_none": 1,
-    "unknown_without_live": 10
+    "unknown_without_live": 8
    },
    "census_causes": {
     "no_closed_list": 23,
@@ -3304,8 +3303,8 @@
    "run": "44687786167",
    "levers": {
     "program_course_file_check": 26,
-    "reconcile_steps": 10,
     "reader_page_search": 8,
+    "reconcile_steps": 8,
     "reader_page_assignment": 1
    },
    "collection": {
@@ -3352,12 +3351,11 @@
    "harvested": true,
    "slug": "copper_mountain",
    "programs": 59,
-   "passing": 37,
-   "gap": 22,
+   "passing": 42,
+   "gap": 17,
    "causes": {
     "no_closed_list": 11,
-    "places_none": 2,
-    "unknown_without_live": 9
+    "unknown_without_live": 6
    },
    "census_causes": {
     "coverage_fails": 4,
@@ -3378,10 +3376,10 @@
    "outcomes_file": "kb/status/commons_data_programs/copper_mountain.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-17T13:07:57Z",
+   "read_at": "2026-11-26T16:07:00Z",
    "read_kind": "capture",
-   "cost_usd": 3.84,
-   "passed_at_read": 32,
+   "cost_usd": 3.85,
+   "passed_at_read": 40,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -3394,46 +3392,23 @@
    "extracted": 48,
    "errors": 0,
    "failed_checks": {
-    "coverage": 6,
-    "invented": 4,
-    "arithmetic": 15,
+    "coverage": 0,
+    "invented": 0,
+    "arithmetic": 8,
     "repeated": 0,
     "outcomes": 0
    },
    "platform": "pdf",
    "catalog_year": "2026-2027",
-   "catalog_url": "https://www.cmccd.edu/academic-catalogs/",
-   "capture_root": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf",
-   "catalog_now": "https://www.cmccd.edu/wp-content/uploads/2026/10/Final-26-27-Catalog-10.26.26.pdf",
-   "catalog_checks": [
-    {
-     "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf",
-     "status": 404,
-     "checked_at": "2026-11-13T23:35:00Z",
-     "by": "COBIx, #3229 comment 6867640358",
-     "result": "not found"
-    },
-    {
-     "url": "https://www.cmccd.edu/academic-catalogs/",
-     "status": 200,
-     "checked_at": "2026-11-13T23:35:00Z",
-     "by": "COBIx, #3229 comment 6867640358",
-     "result": "answered"
-    },
-    {
-     "url": "https://www.cmccd.edu/wp-content/uploads/2026/10/Final-26-27-Catalog-10.26.26.pdf",
-     "status": 200,
-     "checked_at": "2026-11-13T23:35:00Z",
-     "by": "COBIx, #3229 comment 6867640358",
-     "result": "answered"
-    }
-   ],
-   "read_seconds": 28.8,
-   "run": "39035222722",
+   "catalog_url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf",
+   "capture_root": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf",
+   "catalog_now": null,
+   "catalog_checks": null,
+   "read_seconds": 22.6,
+   "run": "45855512160",
    "levers": {
     "program_course_file_check": 11,
-    "reconcile_steps": 9,
-    "reader_page_assignment": 2
+    "reconcile_steps": 6
    },
    "collection": {
     "program_reader": {
@@ -3441,13 +3416,13 @@
      "models": {
       "claude-opus-5-5": 48
      },
-     "run": "39035222722",
-     "at": "2026-10-17T13:07:57Z",
-     "cost_usd": 3.84,
+     "run": "45855512160",
+     "at": "2026-11-26T16:07:00Z",
+     "cost_usd": 3.85,
      "platform": "pdf"
     },
     "slo_read": null,
-    "plo_programs": 43,
+    "plo_programs": 44,
     "ppm_member": null,
     "maps": {
      "held": 0,
@@ -4326,13 +4301,13 @@
    "harvested": true,
    "slug": "el_camino",
    "programs": 189,
-   "passing": 114,
-   "gap": 75,
+   "passing": 118,
+   "gap": 71,
    "causes": {
     "no_closed_list": 54,
     "page_not_found": 9,
     "places_none": 4,
-    "unknown_without_live": 8
+    "unknown_without_live": 4
    },
    "census_causes": {
     "no_closed_list": 54,
@@ -4388,8 +4363,8 @@
    "levers": {
     "program_course_file_check": 54,
     "reader_page_search": 9,
-    "reconcile_steps": 8,
-    "reader_page_assignment": 4
+    "reader_page_assignment": 4,
+    "reconcile_steps": 4
    },
    "collection": {
     "program_reader": {
@@ -5024,13 +4999,13 @@
    "harvested": true,
    "slug": "gavilan",
    "programs": 135,
-   "passing": 96,
-   "gap": 39,
+   "passing": 100,
+   "gap": 35,
    "causes": {
     "no_closed_list": 15,
     "page_not_found": 17,
     "places_none": 1,
-    "unknown_without_live": 6
+    "unknown_without_live": 2
    },
    "census_causes": {
     "no_closed_list": 15,
@@ -5086,7 +5061,7 @@
    "levers": {
     "reader_page_search": 17,
     "program_course_file_check": 15,
-    "reconcile_steps": 6,
+    "reconcile_steps": 2,
     "reader_page_assignment": 1
    },
    "collection": {
@@ -6924,13 +6899,13 @@
    "harvested": true,
    "slug": "los_angeles_trade_technical",
    "programs": 211,
-   "passing": 162,
-   "gap": 49,
+   "passing": 164,
+   "gap": 47,
    "causes": {
     "no_closed_list": 23,
     "page_not_found": 20,
     "places_none": 1,
-    "unknown_without_live": 5
+    "unknown_without_live": 3
    },
    "census_causes": {
     "coverage_fails": 5,
@@ -6985,7 +6960,7 @@
    "levers": {
     "program_course_file_check": 23,
     "reader_page_search": 20,
-    "reconcile_steps": 5,
+    "reconcile_steps": 3,
     "reader_page_assignment": 1
    },
    "collection": {
@@ -8536,12 +8511,12 @@
    "harvested": true,
    "slug": "norco",
    "programs": 161,
-   "passing": 133,
-   "gap": 28,
+   "passing": 135,
+   "gap": 26,
    "causes": {
     "no_closed_list": 11,
     "page_not_found": 3,
-    "unknown_without_live": 14
+    "unknown_without_live": 12
    },
    "census_causes": {
     "course_added": 1,
@@ -8596,7 +8571,7 @@
    "read_seconds": 911.1,
    "run": "44765224865",
    "levers": {
-    "reconcile_steps": 14,
+    "reconcile_steps": 12,
     "program_course_file_check": 11,
     "reader_page_search": 3
    },
@@ -8840,13 +8815,13 @@
    "harvested": true,
    "slug": "orange_coast",
    "programs": 328,
-   "passing": 248,
-   "gap": 80,
+   "passing": 251,
+   "gap": 77,
    "causes": {
     "no_closed_list": 27,
     "page_not_found": 30,
     "places_none": 5,
-    "unknown_without_live": 18
+    "unknown_without_live": 15
    },
    "census_causes": {
     "coverage_fails": 4,
@@ -8873,10 +8848,10 @@
     "courseleaf"
    ],
    "objectives_printed": null,
-   "read_at": "2026-11-25T07:21:17Z",
+   "read_at": "2026-11-26T16:25:35Z",
    "read_kind": "capture",
    "cost_usd": 19.77,
-   "passed_at_read": 224,
+   "passed_at_read": 226,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -8891,7 +8866,7 @@
    "failed_checks": {
     "coverage": 9,
     "invented": 3,
-    "arithmetic": 36,
+    "arithmetic": 34,
     "repeated": 0,
     "outcomes": 8
    },
@@ -8901,12 +8876,12 @@
    "capture_root": "https://catalog.cccd.edu/orange-coast/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 2323.9,
-   "run": "45567337117",
+   "read_seconds": 2297.6,
+   "run": "45858495107",
    "levers": {
     "reader_page_search": 30,
     "program_course_file_check": 27,
-    "reconcile_steps": 17,
+    "reconcile_steps": 14,
     "reader_page_assignment": 5,
     "ge_units_steps": 1
    },
@@ -8916,8 +8891,8 @@
      "models": {
       "claude-opus-5-5": 271
      },
-     "run": "45567337117",
-     "at": "2026-11-25T07:21:17Z",
+     "run": "45858495107",
+     "at": "2026-11-26T16:25:35Z",
      "cost_usd": 19.77,
      "platform": "courseleaf"
     },
@@ -9991,12 +9966,13 @@
    "harvested": true,
    "slug": "san_bernardino_valley",
    "programs": 236,
-   "passing": 201,
-   "gap": 35,
+   "passing": 209,
+   "gap": 27,
    "causes": {
+    "found_not_extracted": 6,
     "no_closed_list": 4,
-    "page_not_found": 11,
-    "unknown_without_live": 20
+    "page_not_found": 5,
+    "unknown_without_live": 12
    },
    "census_causes": {
     "coverage_fails": 2,
@@ -10019,10 +9995,10 @@
    "outcomes_file": "kb/status/commons_data_programs/san_bernardino_valley.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-25T06:32:58Z",
+   "read_at": "2026-11-26T15:00:34Z",
    "read_kind": "capture",
    "cost_usd": 15.21,
-   "passed_at_read": 184,
+   "passed_at_read": 182,
    "slo_queue": null,
    "scout": null,
    "spot_check": {
@@ -10045,9 +10021,9 @@
    "extracted": 221,
    "errors": 0,
    "failed_checks": {
-    "coverage": 2,
-    "invented": 2,
-    "arithmetic": 35,
+    "coverage": 0,
+    "invented": 0,
+    "arithmetic": 39,
     "repeated": 0,
     "outcomes": 0
    },
@@ -10057,11 +10033,12 @@
    "capture_root": "https://catalog.valleycollege.edu/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1484.5,
-   "run": "45561301147",
+   "read_seconds": 1483.7,
+   "run": "45844530701",
    "levers": {
-    "reconcile_steps": 18,
-    "reader_page_search": 11,
+    "reconcile_steps": 10,
+    "paid_read": 6,
+    "reader_page_search": 5,
     "program_course_file_check": 4,
     "ge_units_steps": 2
    },
@@ -10071,8 +10048,8 @@
      "models": {
       "claude-opus-5-5": 221
      },
-     "run": "45561301147",
-     "at": "2026-11-25T06:32:58Z",
+     "run": "45844530701",
+     "at": "2026-11-26T15:00:34Z",
      "cost_usd": 15.21,
      "platform": "courseleaf"
     },
@@ -10622,13 +10599,14 @@
    "harvested": true,
    "slug": "san_jose_city",
    "programs": 125,
-   "passing": 55,
-   "gap": 70,
+   "passing": 72,
+   "gap": 53,
    "causes": {
+    "found_not_extracted": 1,
     "no_closed_list": 35,
-    "page_not_found": 7,
+    "page_not_found": 6,
     "places_none": 4,
-    "unknown_without_live": 24
+    "unknown_without_live": 7
    },
    "census_causes": {
     "coverage_fails": 10,
@@ -10651,10 +10629,10 @@
    "outcomes_file": "kb/status/commons_data_programs/san_jose_city.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-20T16:06:17Z",
+   "read_at": "2026-11-26T14:39:12Z",
    "read_kind": "capture",
    "cost_usd": 6.58,
-   "passed_at_read": 52,
+   "passed_at_read": 63,
    "slo_queue": null,
    "scout": null,
    "spot_check": {
@@ -10673,13 +10651,13 @@
     "why": "4 agree, 1 differ, 0 unreachable"
    },
    "listed_closed": 90,
-   "found": 83,
+   "found": 84,
    "extracted": 83,
    "errors": 0,
    "failed_checks": {
-    "coverage": 21,
-    "invented": 16,
-    "arithmetic": 14,
+    "coverage": 9,
+    "invented": 5,
+    "arithmetic": 13,
     "repeated": 1,
     "outcomes": 0
    },
@@ -10689,13 +10667,14 @@
    "capture_root": "https://catalog.sjcc.edu/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1163.1,
-   "run": "44769778910",
+   "read_seconds": 1191.9,
+   "run": "45840981324",
    "levers": {
     "program_course_file_check": 35,
-    "reconcile_steps": 23,
-    "reader_page_search": 7,
+    "reader_page_search": 6,
+    "reconcile_steps": 6,
     "reader_page_assignment": 4,
+    "paid_read": 1,
     "scorer_noncredit_hours": 1
    },
    "collection": {
@@ -10704,8 +10683,8 @@
      "models": {
       "claude-opus-5-5": 83
      },
-     "run": "44769778910",
-     "at": "2026-11-20T16:06:17Z",
+     "run": "45840981324",
+     "at": "2026-11-26T14:39:12Z",
      "cost_usd": 6.58,
      "platform": "courseleaf"
     },
@@ -10736,13 +10715,12 @@
    "harvested": true,
    "slug": "santa_ana",
    "programs": 370,
-   "passing": 330,
-   "gap": 40,
+   "passing": 342,
+   "gap": 28,
    "causes": {
-    "extraction_error": 1,
     "no_closed_list": 11,
     "page_not_found": 12,
-    "unknown_without_live": 16
+    "unknown_without_live": 5
    },
    "census_causes": {
     "extraction_error": 1,
@@ -10768,10 +10746,10 @@
     "curriqunet"
    ],
    "objectives_printed": null,
-   "read_at": "2026-10-16T03:03:02Z",
+   "read_at": "2026-11-26T14:51:09Z",
    "read_kind": "capture",
-   "cost_usd": 22.03,
-   "passed_at_read": 307,
+   "cost_usd": 22.14,
+   "passed_at_read": 332,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -10780,13 +10758,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 359,
-   "found": 347,
+   "found": 348,
    "extracted": 347,
-   "errors": 1,
+   "errors": 0,
    "failed_checks": {
     "coverage": 0,
     "invented": 0,
-    "arithmetic": 39,
+    "arithmetic": 14,
     "repeated": 1,
     "outcomes": 0
    },
@@ -10796,24 +10774,23 @@
    "capture_root": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/36562",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 7227.4,
-   "run": "38843461766",
+   "read_seconds": 7344.7,
+   "run": "45842667274",
    "levers": {
-    "reconcile_steps": 15,
     "reader_page_search": 12,
     "program_course_file_check": 11,
-    "ge_units_steps": 1,
-    "paid_read": 1
+    "reconcile_steps": 4,
+    "ge_units_steps": 1
    },
    "collection": {
     "program_reader": {
      "records": 347,
      "models": {
-      "claude-opus-5-5": 346
+      "claude-opus-5-5": 347
      },
-     "run": "38843461766",
-     "at": "2026-10-16T03:03:02Z",
-     "cost_usd": 22.03,
+     "run": "45842667274",
+     "at": "2026-11-26T14:51:09Z",
+     "cost_usd": 22.14,
      "platform": "curriqunet"
     },
     "slo_read": {
@@ -10945,13 +10922,13 @@
    "harvested": true,
    "slug": "santa_monica",
    "programs": 256,
-   "passing": 226,
-   "gap": 30,
+   "passing": 227,
+   "gap": 29,
    "causes": {
     "no_closed_list": 16,
     "page_not_found": 9,
     "places_none": 1,
-    "unknown_without_live": 4
+    "unknown_without_live": 3
    },
    "census_causes": {
     "coverage_fails": 1,
@@ -11008,7 +10985,7 @@
    "levers": {
     "program_course_file_check": 16,
     "reader_page_search": 9,
-    "reconcile_steps": 4,
+    "reconcile_steps": 3,
     "reader_page_assignment": 1
    },
    "collection": {
@@ -11283,14 +11260,14 @@
    "harvested": true,
    "slug": "shasta",
    "programs": 150,
-   "passing": 105,
-   "gap": 45,
+   "passing": 106,
+   "gap": 44,
    "causes": {
     "found_not_extracted": 1,
     "no_closed_list": 13,
     "page_not_found": 21,
     "places_none": 4,
-    "unknown_without_live": 6
+    "unknown_without_live": 5
    },
    "census_causes": {
     "coverage_fails": 1,
@@ -11351,7 +11328,7 @@
    "levers": {
     "reader_page_search": 21,
     "program_course_file_check": 13,
-    "reconcile_steps": 6,
+    "reconcile_steps": 5,
     "reader_page_assignment": 4,
     "paid_read": 1
    },
@@ -11618,13 +11595,13 @@
    "harvested": true,
    "slug": "solano_community",
    "programs": 171,
-   "passing": 136,
-   "gap": 35,
+   "passing": 146,
+   "gap": 25,
    "causes": {
     "no_closed_list": 8,
     "page_not_found": 7,
     "places_none": 2,
-    "unknown_without_live": 18
+    "unknown_without_live": 8
    },
    "census_causes": {
     "coverage_fails": 7,
@@ -11646,10 +11623,10 @@
    "outcomes_file": "kb/status/commons_data_programs/solano_community.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-21T08:12:26Z",
+   "read_at": "2026-11-26T14:33:58Z",
    "read_kind": "capture",
-   "cost_usd": 13.22,
-   "passed_at_read": 105,
+   "cost_usd": 13.23,
+   "passed_at_read": 107,
    "slo_queue": null,
    "scout": null,
    "spot_check": {
@@ -11672,11 +11649,11 @@
    "extracted": 156,
    "errors": 0,
    "failed_checks": {
-    "coverage": 9,
-    "invented": 7,
-    "arithmetic": 19,
+    "coverage": 3,
+    "invented": 0,
+    "arithmetic": 20,
     "repeated": 0,
-    "outcomes": 30
+    "outcomes": 32
    },
    "platform": "pdf",
    "catalog_year": "2026-2027",
@@ -11684,12 +11661,12 @@
    "capture_root": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 88.4,
-   "run": "44884569184",
+   "read_seconds": 100.5,
+   "run": "45840125172",
    "levers": {
-    "reconcile_steps": 16,
     "program_course_file_check": 8,
     "reader_page_search": 7,
+    "reconcile_steps": 6,
     "ge_units_steps": 2,
     "reader_page_assignment": 2
    },
@@ -11699,9 +11676,9 @@
      "models": {
       "claude-opus-5-5": 156
      },
-     "run": "44884569184",
-     "at": "2026-11-21T08:12:26Z",
-     "cost_usd": 13.22,
+     "run": "45840125172",
+     "at": "2026-11-26T14:33:58Z",
+     "cost_usd": 13.23,
      "platform": "pdf"
     },
     "slo_read": null,
@@ -11974,10 +11951,10 @@
    "outcomes_file": "kb/status/commons_data_programs/ventura.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-19T11:29:46Z",
+   "read_at": "2026-11-26T15:20:04Z",
    "read_kind": "capture",
-   "cost_usd": 12.81,
-   "passed_at_read": 143,
+   "cost_usd": 12.52,
+   "passed_at_read": 145,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -11987,12 +11964,12 @@
    },
    "listed_closed": 178,
    "found": 174,
-   "extracted": 174,
+   "extracted": 173,
    "errors": 0,
    "failed_checks": {
-    "coverage": 3,
-    "invented": 1,
-    "arithmetic": 31,
+    "coverage": 1,
+    "invented": 0,
+    "arithmetic": 28,
     "repeated": 0,
     "outcomes": 0
    },
@@ -12002,8 +11979,8 @@
    "capture_root": "https://catalog.vcccd.edu/ventura/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1542.9,
-   "run": "44514835321",
+   "read_seconds": 1500.5,
+   "run": "45847865286",
    "levers": {
     "reconcile_steps": 11,
     "program_course_file_check": 6,
@@ -12019,9 +11996,9 @@
      "models": {
       "claude-opus-5-5": 173
      },
-     "run": "44514835321",
-     "at": "2026-11-19T11:29:46Z",
-     "cost_usd": 12.81,
+     "run": "45847865286",
+     "at": "2026-11-26T15:20:04Z",
+     "cost_usd": 12.52,
      "platform": "courseleaf"
     },
     "slo_read": null,

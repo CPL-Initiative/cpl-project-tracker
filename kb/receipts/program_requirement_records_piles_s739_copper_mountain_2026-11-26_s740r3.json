@@ -1,0 +1,291 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30); Sam's routine prompt of 2026-11-25, as the S739 conductor's brief carries it: a record held for a gap is collected with its gap named and a lower score on the 0-100 bar, never held, unless the record is not the program's own; S739: Copper Mountain's records kb/status/harvest_gap_census.json (reconcile_steps at Copper Mountain College, written 2026-11-26 12:06Z) held, read again by key: passed by a rescore where today's scorer's one reading moves them, else collected with their gaps named where the record is the program's own (no reread, no reconcile)",
+ "at": "2026-11-26T15:49:14Z",
+ "college": "Copper Mountain College",
+ "keys": {
+  "from": "kb/status/harvest_gap_census.json (reconcile_steps at Copper Mountain College, written 2026-11-26 12:06Z)",
+  "members": [
+   "14710",
+   "14737",
+   "14751",
+   "16657",
+   "18519",
+   "20094",
+   "42178",
+   "43854",
+   "45594"
+  ]
+ },
+ "gaps": {
+  "noted_figures_differ": "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires."
+ },
+ "moved": 1,
+ "by": {
+  "noted_figures_differ": 1
+ },
+ "precision": {
+  "read": 9,
+  "right": 9,
+  "wrong": [],
+  "no_record_file": 0,
+  "not_hand_held": 0,
+  "by_answer": {
+   "none": 8,
+   "noted_figures_differ": 1
+  }
+ },
+ "claim_checks": {
+  "counts": {
+   "stands": 1
+  },
+  "not_standing": []
+ },
+ "boundaries": {
+  "counts": {
+   "the note's words gone right": 1,
+   "the stated total one unit off right": 1,
+   "coverage failing right": 1,
+   "the note_quotes shape broken right": 1
+  },
+  "wrong": []
+ },
+ "held": [
+  {
+   "control_number": "14710",
+   "why": "held: the restricted electives' figure depends on the work experience units taken, and three concentrations print totals their courses do not add to (20, 11 and 14); no one kind is true for the row: a reread, or a person",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "14737",
+   "why": "held: not collectable until PSYC 003 reads as the state's PSY 3 (the pair is in the college's reconcile entry now); then noted_figures_differ fits, its note quoting the courses' 54.6 against 'Total Units for the Major 56'. Two steps, a rename and then a gap: a read of the reissue first",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "14751",
+   "why": "held: the filed arithmetic (42-48 against the major's 42) is an older scorer's, and today's reads the degree (63-69 against 60): a read of the reissue files today's before any gap is read",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "16657",
+   "why": "held: not collectable until PSYC 003 and COMM 007 read as the state's PSY 3 and SP 7 (the pairs are in the college's reconcile entry now); then prerequisites_counted fits, the printed 37 being the nursing courses alone (its note). Two steps, a rename and then a gap: a read of the reissue first",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "18519",
+   "why": "held: its arithmetic passes (18 against the printed 18) and coverage fails only on PSY 3, PSY 5, SOC 2 and SOC 4, which the catalog prints as PSYC 003, PSYC 005, SOCI 002 and SOCI 004 (its own note; the pairs are in the college's reconcile entry now). Its page is shared with 18520, and its heading prints '&' where the state's title says 'and', so the shared own-heading form does not show the section its own: a read of the reissue, with the pairs, passes it",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "20094",
+   "why": "held: not collectable until PSYC 003 reads as the state's PSY 3 (the pair is in the college's reconcile entry now); then noted_figures_differ fits, its note quoting the courses' 54.6 against 'Total Units for the Major 56'. Two steps, a rename and then a gap: a read of the reissue first",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "43854",
+   "why": "held: the major adds to its printed 24, and the degree's 58-67 holds the printed 60 inside it, matching neither end: it waits on the units within-range kind (d-within-range-sums-hold-for-units-kind-s739)",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "45594",
+   "why": "held: List C prints '3-12' beside 'Up to 12 additional units', and the printed 32-49 adds only with that list from zero; its notes quote no second figure, and CD 10 is unplaced until CDEV C1000 reads as it: a read of the reissue with the pair, then a gap",
+   "claim": "no entry stands"
+  }
+ ],
+ "records": [
+  {
+   "college": "Copper Mountain College",
+   "control_number": "42178",
+   "award": "A.S. T Degree",
+   "extracted_run": "39035222722",
+   "moves_to": "noted_figures_differ",
+   "words": "The printed 'Required Courses 32-33' does not match the listed courses, which sum to 30 units (22 core + 8 physics); recorded as printed.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/copper_mountain/records/42178.json",
+   "before_image": {
+    "program_title": "Biology",
+    "award": "A.S. T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=75",
+    "measure": "units",
+    "total_min": 32,
+    "total_max": 33,
+    "record": {
+     "program": {
+      "section_heading": "Associate in Science in BIOLOGY for transfer",
+      "measure": "units",
+      "total_units": {
+       "min": 32,
+       "max": 33
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "Cal-GETC",
+      "degree_total": {
+       "min": 66,
+       "max": 66
+      },
+      "ge_units": {
+       "min": 31,
+       "max": 33
+      },
+      "electives_fill_degree": true,
+      "outcomes": [
+       "Compare and contrast best practices in biology including ethical behavior and peer-reviewed research. (Institutional Learning Outcomes 3 Ethics and 4 Personal Development)",
+       "Utilize scientific methods to empirically test hypotheses and apply findings within the context of the sciences. (Institutional Learning Outcomes 2 Critical Thinking Skills and 5 Information Competency)",
+       "Collaboratively analyze collected data using problem-based learning and communicate findings in written and oral forms. (Institutional Learning Outcomes 1 Communication Skills and 5 Information Competency)."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "BIOL 005",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "BIOL 006",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CH 001A",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CH 001B",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MATH C2210",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "Physics Requirement: PH 002A & 002B series",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Physics series",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "PH 002A",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PH 002B",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Physics Requirement: PH 004A & 004B series",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Physics series",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "PH 004A",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PH 004B",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 2,
+     "listed": 2
+    },
+    "extracted_run": "39035222722"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 2,
+     "listed": 2,
+     "gaps": [
+      "noted_figures_differ"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 1
+  }
+ ],
+ "live_run_proof": null,
+ "shared_pages": {},
+ "representation": "checks.gaps and checks.confidence added as the load reads the filed score (a passing row: checks.arithmetic to equal); checks.coverage, invented and the record unchanged",
+ "claim_check_reads": "Today's capture (sources.json): every course an entry names among the codes it found, and a course an entry says the printed total leaves out on neither it nor the state's list. A note's quoted figures are the reader's words, never re-read here.",
+ "follow_verdict": "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows (confirm_matches); the apply aborts, writing nothing, unless the count is 0.",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Copper Mountain College', '42178', 39035222722, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 005\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 006\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CH 001A\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CH 001B\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH C2210\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PH 002A\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PH 002B\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Physics Requirement: PH 002A & 002B series\",\"option_group\":\"Physics series\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PH 004A\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PH 004B\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Physics Requirement: PH 004A & 004B series\",\"option_group\":\"Physics series\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":66,\"min\":66},\"electives_fill_degree\":true,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":33,\"min\":31},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Compare and contrast best practices in biology including ethical behavior and peer-reviewed research. (Institutional Learning Outcomes 3 Ethics and 4 Personal Development)\",\"Utilize scientific methods to empirically test hypotheses and apply findings within the context of the sciences. (Institutional Learning Outcomes 2 Critical Thinking Skills and 5 Information Competency)\",\"Collaboratively analyze collected data using problem-based learning and communicate findings in written and oral forms. (Institutional Learning Outcomes 1 Communication Skills and 5 Information Competency).\"],\"section_heading\":\"Associate in Science in BIOLOGY for transfer\",\"total_units\":{\"max\":33,\"min\":32}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":2,\"placed\":2}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":2,\"placed\":2}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "pre_read_md5": "with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) as (values\n  (1, 'Copper Mountain College', '42178', 39035222722, '079e119225c5e530403173432b9a919d', 'dfde00127a538f508c28565d7c2b6fb6', 'fbee6e347cdef2b5daee3f320953e857'))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.record::text) = v.rec_md5),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.checks::text) = v.chk_md5),\n  'already_after', count(*) filter (where md5(r.checks::text) = v.after_md5),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Copper Mountain College', '42178', 39035222722, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 005\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 006\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CH 001A\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CH 001B\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH C2210\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PH 002A\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PH 002B\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Physics Requirement: PH 002A & 002B series\",\"option_group\":\"Physics series\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PH 004A\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PH 004B\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Physics Requirement: PH 004A & 004B series\",\"option_group\":\"Physics series\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":66,\"min\":66},\"electives_fill_degree\":true,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":33,\"min\":31},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Compare and contrast best practices in biology including ethical behavior and peer-reviewed research. (Institutional Learning Outcomes 3 Ethics and 4 Personal Development)\",\"Utilize scientific methods to empirically test hypotheses and apply findings within the context of the sciences. (Institutional Learning Outcomes 2 Critical Thinking Skills and 5 Information Competency)\",\"Collaboratively analyze collected data using problem-based learning and communicate findings in written and oral forms. (Institutional Learning Outcomes 1 Communication Skills and 5 Information Competency).\"],\"section_heading\":\"Associate in Science in BIOLOGY for transfer\",\"total_units\":{\"max\":33,\"min\":32}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":2,\"placed\":2}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":2,\"placed\":2}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\nf as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number\n        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true\n       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)),\ne(expect) as (values (1)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when f.n > 0\n            then ('s740r3 piles confirm guard: ' || f.n || ' rows hold a matching confirm verdict ' || f.keys::text)::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s740r3 piles guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, f;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Copper Mountain College', '42178', 39035222722, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 005\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 006\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CH 001A\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CH 001B\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH C2210\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PH 002A\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PH 002B\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Physics Requirement: PH 002A & 002B series\",\"option_group\":\"Physics series\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PH 004A\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PH 004B\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Physics Requirement: PH 004A & 004B series\",\"option_group\":\"Physics series\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":66,\"min\":66},\"electives_fill_degree\":true,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":33,\"min\":31},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Compare and contrast best practices in biology including ethical behavior and peer-reviewed research. (Institutional Learning Outcomes 3 Ethics and 4 Personal Development)\",\"Utilize scientific methods to empirically test hypotheses and apply findings within the context of the sciences. (Institutional Learning Outcomes 2 Critical Thinking Skills and 5 Information Competency)\",\"Collaboratively analyze collected data using problem-based learning and communicate findings in written and oral forms. (Institutional Learning Outcomes 1 Communication Skills and 5 Information Competency).\"],\"section_heading\":\"Associate in Science in BIOLOGY for transfer\",\"total_units\":{\"max\":33,\"min\":32}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":2,\"placed\":2}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":2,\"placed\":2}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (1)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s740r3 piles rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;"
+}

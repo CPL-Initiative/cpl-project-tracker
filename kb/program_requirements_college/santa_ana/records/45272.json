@@ -46,24 +46,25 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 10,
+   "placed": 11,
    "listed": 11,
-   "share": 0.909,
-   "missing": [
-    "CDEV107"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "CDEVC1000",
+     "listed": "CDEV107",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "CDEVC1000"
-   ],
-   "flagged": [
-    "CDEVC1000"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -242,5 +243,6 @@
    "No program learning outcomes appear in the provided text."
   ]
  },
- "extracted_run": "38843461766"
+ "extracted_run": 45841675928,
+ "read_run": "38843461766"
 }

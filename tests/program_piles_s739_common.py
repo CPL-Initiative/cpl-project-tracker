@@ -22,6 +22,8 @@ plan:
   * a row the applied plan wrote and a later rollback took back (rolled_back; Orange Coast 41373): the receipt and
     the four SQL files still name it, as the record of what was written; it is a hold now, with no entry; and its
     committed record is back at the receipt's before-image, carrying no gap, so no later load posts the gap again.
+    Where a later plan files another kind on that row (refiled; S740's s740b), the committed record carries that
+    kind alone over the receipt's before-image.
 """
 import json
 import os
@@ -50,11 +52,14 @@ class Checks:
 
 
 def run(W, *, rows: dict, held: dict, scores: dict, day: str, boundaries: int, prior_held: set | None = None,
-        own: dict | None = None, t: Checks | None = None, rolled_back: dict | None = None) -> Checks:
+        own: dict | None = None, t: Checks | None = None, rolled_back: dict | None = None,
+        refiled: dict | None = None) -> Checks:
     """rows: {key: its kind, or B.PASSES}; held: {key: words its reason carries}; scores: {kind: its unit-arithmetic
     score}; boundaries: the count of boundary readings; prior_held: the earlier receipt's held keys (default: read
     from W.held_by); own: {key: the own-page guard's form} for rows read from a shared page; rolled_back: {key:
-    its kind} for a row the applied plan wrote and a later rollback took back (it is in held too)."""
+    its kind} for a row the applied plan wrote and a later rollback took back (it is in held too); refiled: {key:
+    the kind a later plan files on a rolled-back row} (S740's s740b on Orange Coast 41373): the committed record
+    then carries that kind alone, over this receipt's before-image."""
     t = t or Checks()
     check = t.check
     receipt = W.receipt_path(day)
@@ -142,6 +147,16 @@ def run(W, *, rows: dict, held: dict, scores: dict, day: str, boundaries: int, p
     for r in rec["records"]:
         img = images[(W.college, r["control_number"])]
         if r["control_number"] in rolled:
+            later = (refiled or {}).get(r["control_number"])
+            if later and img["checks"].get("gaps"):
+                # A later plan files another kind on the rolled-back row: that kind alone, over this receipt's
+                # before-image, and never the kind the rollback took back.
+                check(img["checks"]["gaps"] == [later] and later != r["moves_to"]
+                      and {k: v for k, v in img["checks"].items() if k not in ("gaps", "confidence")}
+                      == r["before_image"]["checks"] and img["record"] == r["before_image"]["record"],
+                      "%s: rolled back, then refiled as %s over the receipt's before-image"
+                      % (r["control_number"], later))
+                continue
             check(img["checks"] == r["before_image"]["checks"] and not img["checks"].get("gaps")
                   and img["record"] == r["before_image"]["record"],
                   "%s: rolled back, the load posts the receipt's before-image, with no gap" % r["control_number"])

@@ -46,32 +46,27 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 11,
+   "placed": 12,
    "listed": 12,
-   "share": 0.917,
-   "missing": [
-    "SOLARRENEWAB"
-   ],
-   "unexplained": [
-    "SOLARRENEWAB"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 3,
    "codes": [
     "CNSTR116",
     "CNSTR118",
-    "CNSTR128",
-    "SOLAR102"
+    "CNSTR128"
    ],
    "flagged": [
     "CNSTR116",
     "CNSTR118",
     "CNSTR128"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
@@ -111,7 +106,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "total_differs",
+    "label": "The catalog prints a total for this program that its own printed units do not add to.",
+    "words": "the catalog prints a total of 36, and its own figures add to 24 (the program's own page, https://catalog.sjcc.edu/degrees-certificates/construction-technology/residential-maintenance-certificate-achievement-level-2/; college-page-read run 45835049303)"
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {
@@ -302,5 +311,6 @@
    "CNSTR 138 printed as 1-8 units."
   ]
  },
- "extracted_run": "43357106423"
+ "extracted_run": 45840981324,
+ "read_run": "43357106423"
 }

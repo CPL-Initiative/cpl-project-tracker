@@ -46,21 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 136,
+   "placed": 137,
    "listed": 143,
-   "share": 0.951,
+   "share": 0.958,
    "missing": [
     "COMPUTERGRAP",
     "DANCE23",
     "DMA1",
     "ETH18",
     "SL10A",
-    "SL10B",
-    "THEATREARTST"
+    "SL10B"
    ],
    "unexplained": [
-    "COMPUTERGRAP",
-    "THEATREARTST"
+    "COMPUTERGRAP"
    ],
    "none_placed": false,
    "course_id": [
@@ -78,7 +76,7 @@
    "pass": false
   },
   "invented": {
-   "count": 29,
+   "count": 28,
    "codes": [
     "ART76",
     "ART98",
@@ -107,8 +105,7 @@
     "MUSIC83H",
     "MUSIC98",
     "PHOTO62",
-    "PHOTO9",
-    "THEAT33"
+    "PHOTO9"
    ],
    "flagged": [
     "ART76",
@@ -1425,6 +1422,7 @@
    "Outcomes are printed on the program's outcomes tab for this degree."
   ]
  },
- "extracted_run": "44769778910",
- "catalog_year": "2026-2027"
+ "extracted_run": 45840981324,
+ "catalog_year": "2026-2027",
+ "read_run": "44769778910"
 }

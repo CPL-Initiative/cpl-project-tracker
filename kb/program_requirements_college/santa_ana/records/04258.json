@@ -46,29 +46,34 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 34,
+   "placed": 36,
    "listed": 36,
-   "share": 0.944,
-   "missing": [
-    "ECON120",
-    "ECON121"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON121",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECON120",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 2,
    "codes": [
     "BIOL259",
-    "ECONC2001",
-    "ECONC2002",
     "ENVR259"
    ],
    "flagged": [
     "BIOL259",
-    "ECONC2001",
-    "ECONC2002",
     "ENVR259"
    ],
    "pass": true
@@ -463,5 +468,6 @@
    "One learning outcome is printed for the program; recorded for this A.A. award."
   ]
  },
- "extracted_run": "38843461766"
+ "extracted_run": 45841675928,
+ "read_run": "38843461766"
 }

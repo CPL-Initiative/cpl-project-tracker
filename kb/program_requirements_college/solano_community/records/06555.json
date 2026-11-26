@@ -46,25 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 26,
+   "placed": 27,
    "listed": 27,
-   "share": 0.963,
-   "missing": [
-    "SOC23"
-   ],
-   "unexplained": [
-    "SOC23"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "SOCI23"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -125,7 +119,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -418,7 +412,7 @@
    "Ligature-broken characters in the PDF text (e.g., 'Ɵ', 'ﬁ') were read as normal letters in the outcomes and careers."
   ]
  },
- "extracted_run": "44884569184",
+ "extracted_run": 45840125172,
  "catalog_year": "2026-2027",
  "source_sha": "59d1ebff71429e89",
  "source_codes": [
@@ -449,5 +443,6 @@
   "SJS30",
   "THEA13"
  ],
- "source_coverage": 0.963
+ "source_coverage": 0.963,
+ "read_run": "44884569184"
 }

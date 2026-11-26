@@ -128,7 +128,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "required_list_outside_total",
+    "label": "The catalog prints a list the program requires apart from its printed total, and the record counts that list; without it the courses add to the printed total.",
+    "words": "The map lists AGS 20 and AGS 40 within List A, whereas the requirements list them as a separate 'Select one'; the requirements section was followed. | The 23.00 printed beside 'Required courses:' and 'Total : 23.00' is the major total; recorded as total_units, not as the first block's stated total."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 70,
+   "course_list_match": 100,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

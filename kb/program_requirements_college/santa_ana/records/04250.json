@@ -46,24 +46,25 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 32,
+   "placed": 33,
    "listed": 33,
-   "share": 0.97,
-   "missing": [
-    "CDEV107"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "CDEVC1000",
+     "listed": "CDEV107",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "CDEVC1000"
-   ],
-   "flagged": [
-    "CDEVC1000"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -410,5 +411,6 @@
    "APED 120B and EDUC 120B are marked Historical in the catalog."
   ]
  },
- "extracted_run": "38843461766"
+ "extracted_run": 45841675928,
+ "read_run": "38843461766"
 }

@@ -154,6 +154,18 @@ under 90 are one list for a person: `kb/subject_title_hunt/20261125_stray_codes_
 longer drops assigned codes (#3857). **NEXT:** file common subjects for the 35 held and the 50 under 90 (Sam picks, or
 moves courses in the Local subjects sidebar, #3851), then rerun the dry run for the rest.
 
+**RULED (Sam, 2026-11-26) `r-schedule-tool-first-for-subject-titles-sam-2026-11-26`: read each college's class schedule
+search for local subject titles before guessing.** *"note the strategy for our cpl queue and commons collections to
+search each college's website for their schedule tool, which is almost always listed by subject and title."* A
+college's schedule search (PeopleSoft class search, Banner dynamic schedule, Colleague Self-Service) lists every
+subject code it schedules beside the title it prints, so it is the second source after the catalog's subject index,
+and ahead of any guess. **Measured 2026-11-26 (S736):** no run has read one. Every one of the 7,102 filed titles came
+from a catalog (`kb/subject_title_hunt/found/`); `kb/status/subject_sources.json` marks the schedule way not needed at
+116 colleges only because the catalog was read; 1,431 college and code pairs still print no title, at 114 colleges.
+Only two systems are on file: LACCD's PeopleSoft guest search (nine colleges, 212 codes with no printed title;
+[`data_sources`](../data_sources.md)) and Riverside's Colleague. The lightning round's codes come first; the
+LACCD read runs on the runners, since a session's network refuses the host.
+
 ## NEXT
 
 **NEXT (S719), in order:** (1) re-point the folded local codes, a re-mint under

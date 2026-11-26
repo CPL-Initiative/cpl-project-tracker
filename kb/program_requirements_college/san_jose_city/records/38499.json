@@ -46,13 +46,12 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 31,
+   "placed": 32,
    "listed": 51,
-   "share": 0.608,
+   "share": 0.627,
    "missing": [
     "AJ113",
     "BUS60",
-    "BUSINESSBUS0",
     "COMMC1000H",
     "COMS190",
     "COMS40",
@@ -72,16 +71,14 @@
     "JOURNALISMJO"
    ],
    "unexplained": [
-    "BUSINESSBUS0",
     "JOURNALISMJO"
    ],
    "none_placed": false,
    "pass": false
   },
   "invented": {
-   "count": 12,
+   "count": 11,
    "codes": [
-    "BUS71",
     "ECON10A",
     "ECON10B",
     "ETH27",
@@ -626,5 +623,6 @@
    "Outcomes are printed for the program as a whole on the outcomes tab; this award shares them."
   ]
  },
- "extracted_run": "43357106423"
+ "extracted_run": 45840981324,
+ "read_run": "43357106423"
 }

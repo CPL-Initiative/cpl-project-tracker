@@ -46,32 +46,21 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 28,
+   "placed": 31,
    "listed": 31,
-   "share": 0.903,
-   "missing": [
-    "SOC2",
-    "SOC40",
-    "SOC75"
-   ],
-   "unexplained": [
-    "SOC2",
-    "SOC40",
-    "SOC75"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 7,
+   "count": 4,
    "codes": [
     "CINA11",
     "COMMC1000",
     "GEOG1",
-    "MATH12",
-    "SOCI2",
-    "SOCI40",
-    "SOCI75"
+    "MATH12"
    ],
    "flagged": [
     "CINA11",
@@ -79,7 +68,7 @@
     "GEOG1",
     "MATH12"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -120,7 +109,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -457,6 +446,6 @@
    "COMM C1000, MATH 012, GEOG 001 and CINA 011 are not in the closed list and are marked as catalog additions."
   ]
  },
- "extracted_run": 39037377728,
- "read_run": "39035226783"
+ "extracted_run": 45840125172,
+ "read_run": 39037377728
 }

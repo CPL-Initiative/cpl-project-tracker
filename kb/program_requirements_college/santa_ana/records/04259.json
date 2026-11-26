@@ -46,27 +46,32 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 27,
+   "placed": 29,
    "listed": 29,
-   "share": 0.931,
-   "missing": [
-    "ECON120",
-    "HIST120"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2002",
+     "listed": "ECON120",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001",
+     "listed": "HIST120",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 1,
    "codes": [
-    "ECONC2002",
-    "HISTC1001",
     "IDS117H"
    ],
    "flagged": [
-    "ECONC2002",
-    "HISTC1001",
     "IDS117H"
    ],
    "pass": true
@@ -416,5 +421,6 @@
    "Careers are named for the baccalaureate degree the program prepares students for; 'law school' was also named but is not a career and was not recorded."
   ]
  },
- "extracted_run": "38843461766"
+ "extracted_run": 45841675928,
+ "read_run": "38843461766"
 }

@@ -64,7 +64,8 @@
     "title": 1.0,
     "section": "as",
     "section_line": "business management, associate in science",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 12,
@@ -708,7 +709,8 @@
     "title": 1.0,
     "section": "as",
     "section_line": "medical assistant - administrative, associate in science",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 7,
@@ -3628,7 +3630,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "basic law enforcement academy, certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -3821,7 +3824,8 @@
     "title": 1.0,
     "section": "as",
     "section_line": "basic law enforcement academy, associate in science",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -5638,7 +5642,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 3,
@@ -5666,7 +5671,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 3,
