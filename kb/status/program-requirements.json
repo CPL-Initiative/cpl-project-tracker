@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-26T11:24:12Z",
-  "session": 739,
-  "moniker": "SkyOystercatcher",
+  "written_at": "2026-11-26T17:13:56Z",
+  "session": 740,
+  "moniker": "SkySkimmer",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_740_handoff.md",
+  "handoff": "docs/session_741_handoff.md",
   "next_step": {
     "title": "Build the display page carrying tonight's records, then the census",
-    "text": "Build the display page carrying S739's records, apply it at Glendale first and then whole, and run the census on main. Then lane 1's reader and scorer changes (a units twin of the within-range kind first, then the El Camino, Cuyamaca, Modesto and Cosumnes River changes the night found), the long fresh captures at San Diego City and Santa Ana, lane 2's rereads and Cabrillo's 13, and the night's follow-up with the Porterville guard first."
+    "text": "Build the display page carrying S740's records, apply it at Glendale first and then whole, and run the census on main. Then lane 1: the units kind's reviewed keys, the reader change that lets San Diego City 22367 read, Ventura's read behind a second reader, Norco's curriQunet change and the reader changes still open; then lane 2's holds and the night's follow-up with the Porterville guard first."
   },
   "calls": [
     {
@@ -844,6 +844,38 @@
     {
       "at": "2026-11-17T14:30:00Z",
       "text": "Six colleges read again so that programs listed without their own requirements take back the catalog page another program had been read from: Cabrillo, College of San Mateo, Crafton Hills, Feather River, Gavilan and Lemoore. 22 more programs now have complete requirements."
+    },
+    {
+      "at": "2026-11-26T13:54:00Z",
+      "text": "The display page now carries every filed record: 18,743 programs at build 9e28519af71f, after a first apply at Glendale. The 16 programs that had no display now have one."
+    },
+    {
+      "at": "2026-11-26T14:03:00Z",
+      "text": "The census on main after the display build: 15,610 of 20,282 active programs pass, 4,082 have no passing record, and 590 are collected with a named gap."
+    },
+    {
+      "at": "2026-11-26T14:32:00Z",
+      "text": "Six programs at Gavilan, Orange Coast and College of the Canyons are collected with the gap named: each sums inside its printed range. The new gap kind files only from a reviewed list."
+    },
+    {
+      "at": "2026-11-26T15:01:00Z",
+      "text": "Copper Mountain 41085 and 43132 now pass, read from the college's reissued catalog, and four Santa Ana programs pass after a reread."
+    },
+    {
+      "at": "2026-11-26T15:44:00Z",
+      "text": "Solano and San Bernardino Valley records reread: six Solano programs and two San Bernardino Valley programs pass; the passes the reread would have lost were kept."
+    },
+    {
+      "at": "2026-11-26T16:12:00Z",
+      "text": "Copper Mountain 18519 now passes after a paid read of the reissue; San Jose City has 11 programs passing."
+    },
+    {
+      "at": "2026-11-26T16:25:00Z",
+      "text": "Lane 2 collected 23 programs with the gap named, at Gavilan, Orange Coast, Canyons, Cabrillo, El Camino, Santa Monica, Contra Costa, Butte, Shasta and Los Angeles Trade-Technical; Cerritos 44984 and 20504 pass."
+    },
+    {
+      "at": "2026-11-26T16:30:00Z",
+      "text": "79 program records collected tonight by 16:30: 29 passing and 50 with a named gap."
     }
   ],
   "headline": [
@@ -1144,18 +1176,18 @@
     {
       "day": "2026-11-26",
       "active": 20282,
-      "complete": 15610,
+      "complete": 15638,
       "colleges": 118
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-25T16:12:00Z"
+    "at": "2026-11-26T18:12:00Z"
   },
   "harvest": {
     "day": "2026-11-26",
-    "gaps": 3391,
+    "gaps": 3394,
     "parts": {
       "links": {
         "catalog": [
@@ -1176,7 +1208,7 @@
         20282
       ],
       "coci": [
-        17257,
+        17260,
         20282
       ],
       "outcomes": {
@@ -1185,12 +1217,12 @@
           88736
         ],
         "plo": [
-          17257,
+          17260,
           20282
         ]
       },
       "careers": [
-        16279,
+        16282,
         20282
       ]
     }
