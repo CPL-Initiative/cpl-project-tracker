@@ -1,0 +1,1843 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30); Sam's routine prompt of 2026-11-25, as the S739 conductor's brief carries it: a record held for a gap is collected with its gap named and a lower score on the 0-100 bar, never held, unless the record is not the program's own; S739: Los Angeles Trade-Technical's records kb/receipts/program_requirement_records_piles_s730_lattc_2026-11-25_s730a.json held, read again by key: passed by a rescore where today's scorer's one reading moves them, else collected with their gaps named where the record is the program's own (no reread, no reconcile)",
+ "at": "2026-11-26T08:06:31Z",
+ "college": "Los Angeles Trade Technical College",
+ "keys": {
+  "from": "kb/receipts/program_requirement_records_piles_s730_lattc_2026-11-25_s730a.json",
+  "members": [
+   "02911",
+   "21855",
+   "31090",
+   "31280",
+   "41150",
+   "31089",
+   "41011",
+   "45285",
+   "18857",
+   "38737",
+   "37706"
+  ]
+ },
+ "gaps": {
+  "noted_figures_differ": "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires.",
+  "noted_no_total": "The reader's note says the catalog prints no total for this program, so its units cannot be checked against one; no page read has confirmed it.",
+  "pool_figure_not_read": "The catalog prints one figure over several lists or nested options together, and the record adds the parts instead, so its units cannot be checked against that figure."
+ },
+ "moved": 7,
+ "by": {
+  "passes": 4,
+  "pool_figure_not_read": 1,
+  "noted_no_total": 1,
+  "noted_figures_differ": 1
+ },
+ "precision": {
+  "read": 11,
+  "right": 11,
+  "wrong": [],
+  "no_record_file": 0,
+  "not_hand_held": 0,
+  "by_answer": {
+   "passes": 4,
+   "none": 4,
+   "pool_figure_not_read": 1,
+   "noted_no_total": 1,
+   "noted_figures_differ": 1
+  }
+ },
+ "claim_checks": {
+  "counts": {
+   "stands": 7
+  },
+  "not_standing": []
+ },
+ "boundaries": {
+  "counts": {
+   "the note's words gone right": 7,
+   "the printed code absent right": 4,
+   "the arithmetic failing right": 4,
+   "its own section not shown right": 5,
+   "the stated total one unit off right": 3,
+   "coverage failing right": 3,
+   "the reading against a total one unit off right": 1,
+   "the no_total shape broken right": 1,
+   "the note_quotes shape broken right": 1
+  },
+  "wrong": []
+ },
+ "held": [
+  {
+   "control_number": "31280",
+   "why": "held: not collectable (collected_with_gaps, kb/_harvest_gap_census.py): with 'Plumbing 028' renamed to PLUMBNG 28, as its note has it, CRPNTRY 111C is still unplaced and unexplained, so coverage fails; a read of its section, or a missing-course note, is its lever",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "31089",
+   "why": "held: not collectable (collected_with_gaps, kb/_harvest_gap_census.py): coverage and invented fail on BLDGTCQ 007, 008 and 009 printed for BLDGCTQ and PLUMBING 028 read as an alternative; its arithmetic (37-38 against the printed 42) waits on those: course renumbers in the college's reconcile entry, then a free reconcile",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "41011",
+   "why": "held: a noncredit program whose arithmetic reads no total (unstated), and its page prints VOC ED 460 where the state's file lists VOC ED 463, which its own note calls a 'possible renumbering or catalog error': which course the L1 row names is the college's to say in COCI",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "45285",
+   "why": "held: not collectable (collected_with_gaps, kb/_harvest_gap_census.py): 53 of 99 placed: its text holds only page 65, the Cal-GETC pattern's Areas 4 to 6, and its note says the heading and Areas 1 to 3 are on earlier pages; a page pin with its section's own pages is its lever (a reread)",
+   "claim": "no entry stands"
+  }
+ ],
+ "records": [
+  {
+   "college": "Los Angeles Trade Technical College",
+   "control_number": "02911",
+   "award": "A.S. Degree",
+   "extracted_run": "39054673977",
+   "moves_to": "passes",
+   "words": "'PLUMBING 028' is printed with a misspelled subject; read as PLUMBNG 28 (Plumbing Code I) from the closed list, so catalog_addition false.",
+   "confidence": null,
+   "own": "own_heading",
+   "path": "kb/program_requirements_college/los_angeles_trade_technical/records/02911.json",
+   "reading": "renames",
+   "renamed": {
+    "PLUMBING 028": "PLUMBNG 28"
+   },
+   "before_image": {
+    "program_title": "Plumbing",
+    "award": "A.S. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=144",
+    "measure": "units",
+    "total_min": 48,
+    "total_max": 48,
+    "record": {
+     "program": {
+      "section_heading": "PLUMBING Associate in Science Degree",
+      "measure": "units",
+      "total_units": {
+       "min": 48,
+       "max": 48
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": 21,
+       "max": 21
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Demonstrate proper procedures and techniques required to construct a plumbing system, utilizing plumbing tools, in preparation for the Apprentice-level employment in the plumbing trade.",
+       "Perform standard industry trade calculations and formulas including measurements to lay out to design a basic plumbing system..",
+       "Recall, restate and apply current plumbing codes, industry rules, regulations, legal standards and procedures to the construction of an operable plumbing system following industry guidelines and restrictions according to the Uniform Plumbing Code for construction of commercial and residential."
+      ],
+      "careers": [
+       "First-Line Sup/Mgrs of Construction Trades and Extraction Workers",
+       "Helpers--Pipelayers, Plumbers, Pipefitters, and Steamfitters",
+       "Pipelayers",
+       "Plumbers, Pipefitters, and Steamfitters",
+       "Septic Tank Servicers and Sewer Pipe Cleaners"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "REQUIRED COURSES",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 45,
+        "max": 45
+       },
+       "courses": [
+        {
+         "code": "PLUMBNG 111",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMBNG 112",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMBNG 113",
+         "units": 6,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMBNG 121",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMBNG 122",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMBNG 123",
+         "units": 6,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMBNG 131",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMBNG 132",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMBNG 133",
+         "units": 6,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMBNG 141",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMBNG 142",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMBNG 143",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "MAJOR ELECTIVES",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "BLDGCTQ 101",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECONMT 100",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMBNG 026",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMBNG 027",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMBING 028",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMBNG 029",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMBNG 031",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMBNG 033",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMBNG 144",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMBNG 145",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PLUMBNG 246",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PLUMBNG 941",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": false,
+     "invented": false,
+     "arithmetic": "equal",
+     "placed": 21,
+     "listed": 22
+    },
+    "extracted_run": "39054673977"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "equal",
+     "placed": 22,
+     "listed": 22
+    }
+   },
+   "i": 1
+  },
+  {
+   "college": "Los Angeles Trade Technical College",
+   "control_number": "21855",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "extracted_run": "39054673977",
+   "moves_to": "passes",
+   "words": "'PLUMBING 028' is printed with a misspelled subject; it is taken as PLUMBNG 28 (Plumbing Code I) on the closed list.",
+   "confidence": null,
+   "own": "own_section",
+   "path": "kb/program_requirements_college/los_angeles_trade_technical/records/21855.json",
+   "reading": "renames",
+   "renamed": {
+    "PLUMBING 028": "PLUMBNG 28"
+   },
+   "before_image": {
+    "program_title": "Plumbing",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=144",
+    "measure": "units",
+    "total_min": 48,
+    "total_max": 48,
+    "record": {
+     "program": {
+      "section_heading": "PLUMBING ▌ Certificate of Achievement",
+      "measure": "units",
+      "total_units": {
+       "min": 48,
+       "max": 48
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Demonstrate proper procedures and techniques required to construct a plumbing system, utilizing plumbing tools, in preparation for the Apprentice-level employment in the plumbing trade.",
+       "Perform standard industry trade calculations and formulas including measurements to lay out to design a basic plumbing system..",
+       "Recall, restate and apply current plumbing codes, industry rules, regulations, legal standards and procedures to the construction of an operable plumbing system following industry guidelines and restrictions according to the Uniform Plumbing Code for construction of commercial and residential."
+      ],
+      "careers": [
+       "First-Line Sup/Mgrs of Construction Trades and Extraction Workers",
+       "Helpers--Pipelayers, Plumbers, Pipefitters, and Steamfitters",
+       "Pipelayers",
+       "Plumbers, Pipefitters, and Steamfitters",
+       "Septic Tank Servicers and Sewer Pipe Cleaners"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 45,
+        "max": 45
+       },
+       "courses": [
+        {
+         "code": "PLUMBNG 111",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMBNG 112",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMBNG 113",
+         "units": 6,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMBNG 121",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMBNG 122",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMBNG 123",
+         "units": 6,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMBNG 131",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMBNG 132",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMBNG 133",
+         "units": 6,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMBNG 141",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMBNG 142",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMBNG 143",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Major Electives",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "BLDGCTQ 101",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECONMT 100",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMBNG 026",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMBNG 027",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMBING 028",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMBNG 029",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMBNG 031",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMBNG 033",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMBNG 144",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMBNG 145",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PLUMBNG 246",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PLUMBNG 941",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": false,
+     "invented": false,
+     "arithmetic": "equal",
+     "placed": 21,
+     "listed": 22
+    },
+    "extracted_run": "39054673977"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "equal",
+     "placed": 22,
+     "listed": 22
+    }
+   },
+   "i": 2
+  },
+  {
+   "college": "Los Angeles Trade Technical College",
+   "control_number": "31090",
+   "award": "A.S. Degree",
+   "extracted_run": "39115770293",
+   "moves_to": "passes",
+   "words": "'PLUMBING 028' is printed with a misspelled subject; read as PLUMBNG 28 (Plumbing Code I) from the closed list, so catalog_addition false.",
+   "confidence": null,
+   "own": "own_heading",
+   "path": "kb/program_requirements_college/los_angeles_trade_technical/records/31090.json",
+   "reading": "renames",
+   "renamed": {
+    "PLUMBING 028": "PLUMBNG 28"
+   },
+   "note_of": "02911",
+   "before_image": {
+    "program_title": "Energy Efficiency Technician",
+    "award": "A.S. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=138",
+    "measure": "units",
+    "total_min": 40,
+    "total_max": 42,
+    "record": {
+     "program": {
+      "section_heading": "ENERGY EFFICIENCY TECHNICIAN ▌ Associate in Science Degree",
+      "measure": "units",
+      "total_units": {
+       "min": 40,
+       "max": 42
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": 21,
+       "max": 21
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Use energy efficiency diagnostic tools such as door blowers and duct blasters to determine air infiltration into buildings.",
+       "Calculate energy usage in terms of electrical, mechanical and heat energy units.",
+       "Recommend alternative energy methods to reduce utility costs and provide green energy substitutes for fossil fuel energy forms."
+      ],
+      "careers": [
+       "residential and commercial renewable energy-related occupations",
+       "renewable energy and/or energy efficiency occupations"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 36,
+        "max": 38
+       },
+       "courses": [
+        {
+         "code": "ECONMT 115",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECONMT 116",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BLDGCTQ 010",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECONMT 119",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ECONMT 173",
+           "units": 3,
+           "catalog_addition": false
+          },
+          {
+           "code": "MATH 115",
+           "units": 3,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECONMT 129",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECONMT 100",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRPNTRY 148",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "REF A/C 100",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECONMT 110",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BLDGCTQ 007",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BLDGCTQ 008",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "BLDGCTQ 009",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BLDGCTQ 012",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECONMT 171",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "PLUMBING 028",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Major Electives",
+       "rule": "choose_units",
+       "minimum": 4,
+       "option_group": null,
+       "stated": {
+        "min": 4,
+        "max": 4
+       },
+       "courses": [
+        {
+         "code": "ECONMT 105",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECONMT 205",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "REF A/C 105",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "REF A/C 110",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "REF A/C 165",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BLDGCTQ 921",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": false,
+     "invented": false,
+     "arithmetic": "equal",
+     "placed": 20,
+     "listed": 21
+    },
+    "extracted_run": "39115770293"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "equal",
+     "placed": 21,
+     "listed": 21
+    }
+   },
+   "i": 3
+  },
+  {
+   "college": "Los Angeles Trade Technical College",
+   "control_number": "41150",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "39054673977",
+   "moves_to": "passes",
+   "words": "The catalog prints the subject as 'DIGMD' (DIGMD 100, 101, 104), while the closed list uses 'DIGLMD'. These were matched to DIGLMD100, DIGLMD 101 and DIGLMD 104 as the same courses, so they are not marked as catalog additions. The closed-list title for DIGLMD100 is 'Introduction to Digital Video', but the catalog prints 'Introduction to Digital Media'.",
+   "confidence": null,
+   "own": "own_heading",
+   "path": "kb/program_requirements_college/los_angeles_trade_technical/records/41150.json",
+   "reading": "renames",
+   "renamed": {
+    "DIGMD 100": "DIGLMD100",
+    "DIGMD 101": "DIGLMD 101",
+    "DIGMD 104": "DIGLMD 104"
+   },
+   "before_image": {
+    "program_title": "Fashion Media",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=182",
+    "measure": "units",
+    "total_min": 19,
+    "total_max": 19,
+    "record": {
+     "program": {
+      "section_heading": "FASHION MEDIA — Certificate of Achievement",
+      "measure": "units",
+      "total_units": {
+       "min": 19,
+       "max": 19
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Develop promotional activities using various media platforms for the purpose of branding and marketing a successful fashion business."
+      ],
+      "careers": [
+       "Advertising and Promotions Managers",
+       "Marketing Managers",
+       "Public Relations Specialists"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "REQUIRED COURSES",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "FASHMER 035",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FASHDSN 147",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DIGMD 100",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DIGMD 101",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FASHMER 001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "DIGMD 104",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "VISCOM129",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "FASHDSN 244",
+           "units": 2,
+           "catalog_addition": false
+          },
+          {
+           "code": "FASHDSN 270",
+           "units": 2,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "FASHMER 045",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": false,
+     "invented": false,
+     "arithmetic": "equal",
+     "placed": 7,
+     "listed": 10
+    },
+    "extracted_run": "39054673977"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "equal",
+     "placed": 10,
+     "listed": 10
+    }
+   },
+   "i": 4
+  },
+  {
+   "college": "Los Angeles Trade Technical College",
+   "control_number": "18857",
+   "award": "A.A. Degree",
+   "extracted_run": "39054673977",
+   "moves_to": "pool_figure_not_read",
+   "words": "Rule reads: 'Complete 18 units with a minimum of 3 units from each of the following categories.' Each list is recorded as choose_units minimum 3; the remaining units (to reach the 18-unit major) may come from any of the three lists.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/los_angeles_trade_technical/records/18857.json",
+   "lever": "the pooled reading's next (S.pooled_figures reading 'with a minimum of 3 units from each' as pooled words) passes it at 18 = 18 (S730's reason); a reconcile's rescore drops the gap when it does",
+   "before_image": {
+    "program_title": "Liberal Arts & Sciences:  Emphasis in Mathematics, Physical and Natural Sciences",
+    "award": "A.A. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=95",
+    "measure": "units",
+    "total_min": 18,
+    "total_max": 18,
+    "record": {
+     "program": {
+      "section_heading": "LIBERAL ARTS & SCIENCES: EMPHASIS IN MATHEMATICS, PHYSICAL AND NATURAL SCIENCES",
+      "measure": "units",
+      "total_units": {
+       "min": 18,
+       "max": 18
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": 21,
+       "max": 21
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Apply scientific principles, theories, and/or models to explain or predict the behavior of natural physical phenomena.",
+       "Apply scientific knowledge and reasoning to evaluate the human interaction with the natural world and identify major issues impacting society."
+      ],
+      "careers": [
+       "business",
+       "industry",
+       "medicine",
+       "health sciences",
+       "education",
+       "government"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "LIST A: LIFE SCIENCES",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ANATOMY 001",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTHRO 101",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOLOGY 003",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOLOGY 005",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOLOGY 006",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOLOGY 007",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MICRO 020",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYSIOL 001",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYCH 002",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "LIST B: PHYSICAL SCIENCES",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ASTRON 001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ASTRON 005",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 051",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 070",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 101",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 102",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 211",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 212",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 221",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "EARTH 001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ELECTRN 002",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENG GEN 151",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENG GEN 220",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENG GEN 231",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENV SCI 001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOG 001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOLOGY 001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOLOGY 006",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYSICS 006",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYSICS 007",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYSICS 011",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYSICS 012",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYSICS 014",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYSICS 101",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYSICS 102",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYSICS 103",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "LIST C: MATHEMATICS",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "MATH 215",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "STAT C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "STAT C1000E",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 230",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 235",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 236",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 241",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 241S",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 245",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 260",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 260S",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 261",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 262",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 263",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 270",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 272",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 275",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 47,
+     "listed": 47
+    },
+    "extracted_run": "39054673977"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 47,
+     "listed": 47,
+     "gaps": [
+      "pool_figure_not_read"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 5
+  },
+  {
+   "college": "Los Angeles Trade Technical College",
+   "control_number": "38737",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "extracted_run": "39054673977",
+   "moves_to": "noted_no_total",
+   "words": "No total units are printed for the certificate; total_units left null (the listed courses sum to 11 units, not recorded). | The text prints no program title heading for this section; section_heading uses 'PROGRAM OVERVIEW', the first heading of the Industrial Safety, Regulatory and Biomanufacturing certificate section. The lines above it (T038737D C - 11 - 11, the 60-unit Associate degree sentence, GE note) appear to be the tail of the preceding program and were not used.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/los_angeles_trade_technical/records/38737.json",
+   "lever": "a Los Angeles Trade-Technical fill step that reads the major figure of the page's row for its own state code, 'T038737D C - 11 - 11', fills its total, and today's scorer then passes it at 11 = 11 (S730's reason); a reconcile's rescore drops the gap when it does",
+   "before_image": {
+    "program_title": "Industrial Safety, Regulatory and Biomanufacturing",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=94",
+    "measure": "units",
+    "total_min": null,
+    "total_max": null,
+    "record": {
+     "program": {
+      "section_heading": "PROGRAM OVERVIEW",
+      "measure": "units",
+      "total_units": {
+       "min": null,
+       "max": null
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Students will be able to identify and describe industrial hazards, including hazards in the chemical, biomanufacturing and process industries",
+       "Students will be able to ID and describe GLP and cGMP regulations",
+       "Students will be able to identify the main areas affected by the validation process in the biomanufacturing industry and validation regulations that will require internal and external auditing.",
+       "Students will be able to demonstrate mastery of appropriate industrial protocols and documentation",
+       "Students will be able to demonstrate an understanding of the purpose, fundamentals and regulations of biomanufacturing",
+       "Students will be able to demonstrate an understanding of the science underlying biomanufacturing",
+       "Students will be able to apply techniques and procedures applicable to biomanufacturing."
+      ],
+      "careers": [
+       "industrial safety and regulatory industry"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "REQUIRED COURSES",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "PRPLTEK 104",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PRPLTEK 214",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOTECH 10",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 3,
+     "listed": 3
+    },
+    "extracted_run": "39054673977"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 3,
+     "listed": 3,
+     "gaps": [
+      "noted_no_total"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 6
+  },
+  {
+   "college": "Los Angeles Trade Technical College",
+   "control_number": "37706",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "39054673977",
+   "moves_to": "noted_figures_differ",
+   "words": "The printed major total (18-19 units) does not match the listed courses: MATH 215 (3) + CHEM 051 (5) + MICRO 020 (4) or MICRO 001 (5) + PHYSIOL 001 (4) = 16-17 units. The state file lists 16-19. The course list may be incomplete or the stated total may be wrong; reviewer should check.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 75,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "own": "own_heading",
+   "path": "kb/program_requirements_college/los_angeles_trade_technical/records/37706.json",
+   "before_image": {
+    "program_title": "Pre-Health Professions II",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=200",
+    "measure": "units",
+    "total_min": 18,
+    "total_max": 19,
+    "record": {
+     "program": {
+      "section_heading": "PRE-HEALTH PROFESSIONS II Certificate of Achievement",
+      "measure": "units",
+      "total_units": {
+       "min": 18,
+       "max": 19
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Apply fundamental biological, chemical, and mathematical principles as it relates to human health."
+      ],
+      "careers": [
+       "nursing",
+       "medicine",
+       "dentistry",
+       "pharmacy",
+       "occupational therapy",
+       "physical therapy"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "REQUIRED COURSES",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 18,
+        "max": 19
+       },
+       "courses": [
+        {
+         "code": "MATH 215",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 051",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MICRO 020",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "MICRO 001",
+           "units": 5,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": true
+        },
+        {
+         "code": "PHYSIOL 001",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 3,
+     "listed": 4
+    },
+    "extracted_run": "39054673977"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 3,
+     "listed": 4,
+     "gaps": [
+      "noted_figures_differ"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 75,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 7
+  }
+ ],
+ "live_run_proof": null,
+ "shared_pages": {
+  "02911": [
+   "08484",
+   "21855"
+  ],
+  "21855": [
+   "02911",
+   "08484"
+  ],
+  "31090": [
+   "30210",
+   "30906"
+  ],
+  "41150": [
+   "08653",
+   "40323",
+   "40330"
+  ],
+  "37706": [
+   "38452"
+  ]
+ },
+ "representation": "checks.gaps and checks.confidence added as the load reads the filed score (a passing row: checks.arithmetic to equal); checks.coverage, invented and the record unchanged",
+ "claim_check_reads": "Today's capture (sources.json): every course an entry names among the codes it found, and a course an entry says the printed total leaves out on neither it nor the state's list. A note's quoted figures are the reader's words, never re-read here.",
+ "follow_verdict": "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows (confirm_matches); the apply aborts, writing nothing, unless the count is 0.",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Los Angeles Trade Technical College', '02911', 39054673977, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 111\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 112\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 113\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 121\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 122\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 123\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 131\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 132\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 133\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 141\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 142\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 143\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":45,\"min\":45}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECONMT 100\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 026\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 027\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBING 028\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 029\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 031\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 033\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 144\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PLUMBNG 145\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PLUMBNG 246\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 941\",\"units\":4,\"units_max\":null}],\"minimum\":3,\"name\":\"MAJOR ELECTIVES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[\"First-Line Sup/Mgrs of Construction Trades and Extraction Workers\",\"Helpers--Pipelayers, Plumbers, Pipefitters, and Steamfitters\",\"Pipelayers\",\"Plumbers, Pipefitters, and Steamfitters\",\"Septic Tank Servicers and Sewer Pipe Cleaners\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":21,\"min\":21},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate proper procedures and techniques required to construct a plumbing system, utilizing plumbing tools, in preparation for the Apprentice-level employment in the plumbing trade.\",\"Perform standard industry trade calculations and formulas including measurements to lay out to design a basic plumbing system..\",\"Recall, restate and apply current plumbing codes, industry rules, regulations, legal standards and procedures to the construction of an operable plumbing system following industry guidelines and restrictions according to the Uniform Plumbing Code for construction of commercial and residential.\"],\"section_heading\":\"PLUMBING Associate in Science Degree\",\"total_units\":{\"max\":48,\"min\":48}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":22,\"placed\":21}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":22,\"placed\":22}'::jsonb),\n  (2, 'Los Angeles Trade Technical College', '21855', 39054673977, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 111\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 112\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 113\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 121\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 122\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 123\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 131\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 132\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 133\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 141\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 142\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 143\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":45,\"min\":45}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECONMT 100\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 026\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 027\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBING 028\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 029\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 031\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 033\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 144\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PLUMBNG 145\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PLUMBNG 246\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 941\",\"units\":4,\"units_max\":null}],\"minimum\":3,\"name\":\"Major Electives\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[\"First-Line Sup/Mgrs of Construction Trades and Extraction Workers\",\"Helpers--Pipelayers, Plumbers, Pipefitters, and Steamfitters\",\"Pipelayers\",\"Plumbers, Pipefitters, and Steamfitters\",\"Septic Tank Servicers and Sewer Pipe Cleaners\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate proper procedures and techniques required to construct a plumbing system, utilizing plumbing tools, in preparation for the Apprentice-level employment in the plumbing trade.\",\"Perform standard industry trade calculations and formulas including measurements to lay out to design a basic plumbing system..\",\"Recall, restate and apply current plumbing codes, industry rules, regulations, legal standards and procedures to the construction of an operable plumbing system following industry guidelines and restrictions according to the Uniform Plumbing Code for construction of commercial and residential.\"],\"section_heading\":\"PLUMBING ▌ Certificate of Achievement\",\"total_units\":{\"max\":48,\"min\":48}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":22,\"placed\":21}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":22,\"placed\":22}'::jsonb),\n  (3, 'Los Angeles Trade Technical College', '31090', 39115770293, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECONMT 115\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECONMT 116\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 010\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ECONMT 173\",\"units\":3},{\"catalog_addition\":true,\"code\":\"MATH 115\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ECONMT 119\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECONMT 129\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECONMT 100\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 148\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"REF A/C 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECONMT 110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 007\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BLDGCTQ 008\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 009\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 012\",\"units\":1,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PLUMBING 028\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ECONMT 171\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":38,\"min\":36}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECONMT 105\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECONMT 205\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"REF A/C 105\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"REF A/C 110\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"REF A/C 165\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 921\",\"units\":4,\"units_max\":null}],\"minimum\":4,\"name\":\"Major Electives\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":4,\"min\":4}}],\"program\":{\"careers\":[\"residential and commercial renewable energy-related occupations\",\"renewable energy and/or energy efficiency occupations\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":21,\"min\":21},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Use energy efficiency diagnostic tools such as door blowers and duct blasters to determine air infiltration into buildings.\",\"Calculate energy usage in terms of electrical, mechanical and heat energy units.\",\"Recommend alternative energy methods to reduce utility costs and provide green energy substitutes for fossil fuel energy forms.\"],\"section_heading\":\"ENERGY EFFICIENCY TECHNICIAN ▌ Associate in Science Degree\",\"total_units\":{\"max\":42,\"min\":40}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":21,\"placed\":20}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":21,\"placed\":21}'::jsonb),\n  (4, 'Los Angeles Trade Technical College', '41150', 39054673977, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 035\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 147\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DIGMD 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DIGMD 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"DIGMD 104\",\"units\":3}],\"catalog_addition\":false,\"code\":\"FASHMER 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"FASHDSN 244\",\"units\":2},{\"catalog_addition\":false,\"code\":\"FASHDSN 270\",\"units\":2}],\"catalog_addition\":false,\"code\":\"VISCOM129\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 045\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"Advertising and Promotions Managers\",\"Marketing Managers\",\"Public Relations Specialists\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Develop promotional activities using various media platforms for the purpose of branding and marketing a successful fashion business.\"],\"section_heading\":\"FASHION MEDIA — Certificate of Achievement\",\"total_units\":{\"max\":19,\"min\":19}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":10,\"placed\":7}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":10,\"placed\":10}'::jsonb),\n  (5, 'Los Angeles Trade Technical College', '18857', 39054673977, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANATOMY 001\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHRO 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOLOGY 003\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOLOGY 005\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOLOGY 006\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOLOGY 007\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MICRO 020\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSIOL 001\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYCH 002\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"LIST A: LIFE SCIENCES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASTRON 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASTRON 005\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 051\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 070\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 101\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 102\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 211\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 212\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CHEM 221\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"EARTH 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ELECTRN 002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENG GEN 151\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENG GEN 220\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENG GEN 231\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENV SCI 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOLOGY 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOLOGY 006\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSICS 006\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSICS 007\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSICS 011\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSICS 012\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSICS 014\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSICS 101\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSICS 102\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSICS 103\",\"units\":5,\"units_max\":null}],\"minimum\":3,\"name\":\"LIST B: PHYSICAL SCIENCES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 215\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STAT C1000E\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 230\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 235\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 236\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 241\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 241S\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 245\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 260\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 260S\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 261\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 262\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 263\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 270\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 272\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 275\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"LIST C: MATHEMATICS\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"business\",\"industry\",\"medicine\",\"health sciences\",\"education\",\"government\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":21,\"min\":21},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Apply scientific principles, theories, and/or models to explain or predict the behavior of natural physical phenomena.\",\"Apply scientific knowledge and reasoning to evaluate the human interaction with the natural world and identify major issues impacting society.\"],\"section_heading\":\"LIBERAL ARTS & SCIENCES: EMPHASIS IN MATHEMATICS, PHYSICAL AND NATURAL SCIENCES\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":47,\"placed\":47}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"pool_figure_not_read\"],\"invented\":true,\"listed\":47,\"placed\":47}'::jsonb),\n  (6, 'Los Angeles Trade Technical College', '38737', 39054673977, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRPLTEK 104\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRPLTEK 214\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOTECH 10\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"industrial safety and regulatory industry\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Students will be able to identify and describe industrial hazards, including hazards in the chemical, biomanufacturing and process industries\",\"Students will be able to ID and describe GLP and cGMP regulations\",\"Students will be able to identify the main areas affected by the validation process in the biomanufacturing industry and validation regulations that will require internal and external auditing.\",\"Students will be able to demonstrate mastery of appropriate industrial protocols and documentation\",\"Students will be able to demonstrate an understanding of the purpose, fundamentals and regulations of biomanufacturing\",\"Students will be able to demonstrate an understanding of the science underlying biomanufacturing\",\"Students will be able to apply techniques and procedures applicable to biomanufacturing.\"],\"section_heading\":\"PROGRAM OVERVIEW\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":3,\"placed\":3}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_no_total\"],\"invented\":true,\"listed\":3,\"placed\":3}'::jsonb),\n  (7, 'Los Angeles Trade Technical College', '37706', 39054673977, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 215\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 051\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"MICRO 001\",\"units\":5}],\"catalog_addition\":true,\"code\":\"MICRO 020\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSIOL 001\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":19,\"min\":18}}],\"program\":{\"careers\":[\"nursing\",\"medicine\",\"dentistry\",\"pharmacy\",\"occupational therapy\",\"physical therapy\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Apply fundamental biological, chemical, and mathematical principles as it relates to human health.\"],\"section_heading\":\"PRE-HEALTH PROFESSIONS II Certificate of Achievement\",\"total_units\":{\"max\":19,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":4,\"placed\":3}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":75,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":4,\"placed\":3}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "pre_read_md5": "with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) as (values\n  (1, 'Los Angeles Trade Technical College', '02911', 39054673977, '9038e0e6314b6af0dc0dd31d2415ae20', '2fac7f4cf7a6ba6567cb80b588101fc6', '41d4a1221c3e7818b092e31fa4d4b289'),\n  (2, 'Los Angeles Trade Technical College', '21855', 39054673977, '9cd92ac09d0aaab49d15c4464a698a34', '2fac7f4cf7a6ba6567cb80b588101fc6', '41d4a1221c3e7818b092e31fa4d4b289'),\n  (3, 'Los Angeles Trade Technical College', '31090', 39115770293, 'c28c9ea58bb8851c22838a46cc5f8bd4', '47da0209649c82cd95b3823123a7b1f9', '072e959a821c97284ee3eff595bae498'),\n  (4, 'Los Angeles Trade Technical College', '41150', 39054673977, 'ba76c7f1e2c3567a8f263dfce3317dca', 'c48d99329e36dd39301181655198f0e4', 'deb7800cc2e98a175ec85a26e7f121d8'),\n  (5, 'Los Angeles Trade Technical College', '18857', 39054673977, '30ddf27aad63106004ad93b0826d0abe', '580c87f6aaa9844d141e12a6e4ff739d', '35143cae07f338a8bfcd24032ae8ae5f'),\n  (6, 'Los Angeles Trade Technical College', '38737', 39054673977, '52e7c863fa758676edc9982676d68e6c', '459dfeeb5c989cefc33fe2c631af6755', '31b7c31aabd6e242d97b5819b243d8e0'),\n  (7, 'Los Angeles Trade Technical College', '37706', 39054673977, 'a9fc904dada2b182dd78adf146843860', '4e62525ffab7b40148e6f2aab9b3bd9f', 'b0f3c99dc33831e5b20e41722a99df38'))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.record::text) = v.rec_md5),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.checks::text) = v.chk_md5),\n  'already_after', count(*) filter (where md5(r.checks::text) = v.after_md5),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Los Angeles Trade Technical College', '02911', 39054673977, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 111\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 112\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 113\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 121\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 122\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 123\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 131\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 132\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 133\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 141\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 142\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 143\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":45,\"min\":45}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECONMT 100\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 026\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 027\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBING 028\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 029\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 031\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 033\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 144\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PLUMBNG 145\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PLUMBNG 246\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 941\",\"units\":4,\"units_max\":null}],\"minimum\":3,\"name\":\"MAJOR ELECTIVES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[\"First-Line Sup/Mgrs of Construction Trades and Extraction Workers\",\"Helpers--Pipelayers, Plumbers, Pipefitters, and Steamfitters\",\"Pipelayers\",\"Plumbers, Pipefitters, and Steamfitters\",\"Septic Tank Servicers and Sewer Pipe Cleaners\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":21,\"min\":21},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate proper procedures and techniques required to construct a plumbing system, utilizing plumbing tools, in preparation for the Apprentice-level employment in the plumbing trade.\",\"Perform standard industry trade calculations and formulas including measurements to lay out to design a basic plumbing system..\",\"Recall, restate and apply current plumbing codes, industry rules, regulations, legal standards and procedures to the construction of an operable plumbing system following industry guidelines and restrictions according to the Uniform Plumbing Code for construction of commercial and residential.\"],\"section_heading\":\"PLUMBING Associate in Science Degree\",\"total_units\":{\"max\":48,\"min\":48}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":22,\"placed\":21}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":22,\"placed\":22}'::jsonb),\n  (2, 'Los Angeles Trade Technical College', '21855', 39054673977, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 111\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 112\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 113\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 121\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 122\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 123\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 131\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 132\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 133\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 141\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 142\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 143\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":45,\"min\":45}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECONMT 100\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 026\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 027\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBING 028\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 029\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 031\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 033\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 144\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PLUMBNG 145\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PLUMBNG 246\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 941\",\"units\":4,\"units_max\":null}],\"minimum\":3,\"name\":\"Major Electives\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[\"First-Line Sup/Mgrs of Construction Trades and Extraction Workers\",\"Helpers--Pipelayers, Plumbers, Pipefitters, and Steamfitters\",\"Pipelayers\",\"Plumbers, Pipefitters, and Steamfitters\",\"Septic Tank Servicers and Sewer Pipe Cleaners\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate proper procedures and techniques required to construct a plumbing system, utilizing plumbing tools, in preparation for the Apprentice-level employment in the plumbing trade.\",\"Perform standard industry trade calculations and formulas including measurements to lay out to design a basic plumbing system..\",\"Recall, restate and apply current plumbing codes, industry rules, regulations, legal standards and procedures to the construction of an operable plumbing system following industry guidelines and restrictions according to the Uniform Plumbing Code for construction of commercial and residential.\"],\"section_heading\":\"PLUMBING ▌ Certificate of Achievement\",\"total_units\":{\"max\":48,\"min\":48}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":22,\"placed\":21}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":22,\"placed\":22}'::jsonb),\n  (3, 'Los Angeles Trade Technical College', '31090', 39115770293, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECONMT 115\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECONMT 116\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 010\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ECONMT 173\",\"units\":3},{\"catalog_addition\":true,\"code\":\"MATH 115\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ECONMT 119\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECONMT 129\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECONMT 100\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 148\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"REF A/C 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECONMT 110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 007\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BLDGCTQ 008\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 009\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 012\",\"units\":1,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PLUMBING 028\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ECONMT 171\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":38,\"min\":36}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECONMT 105\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECONMT 205\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"REF A/C 105\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"REF A/C 110\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"REF A/C 165\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 921\",\"units\":4,\"units_max\":null}],\"minimum\":4,\"name\":\"Major Electives\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":4,\"min\":4}}],\"program\":{\"careers\":[\"residential and commercial renewable energy-related occupations\",\"renewable energy and/or energy efficiency occupations\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":21,\"min\":21},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Use energy efficiency diagnostic tools such as door blowers and duct blasters to determine air infiltration into buildings.\",\"Calculate energy usage in terms of electrical, mechanical and heat energy units.\",\"Recommend alternative energy methods to reduce utility costs and provide green energy substitutes for fossil fuel energy forms.\"],\"section_heading\":\"ENERGY EFFICIENCY TECHNICIAN ▌ Associate in Science Degree\",\"total_units\":{\"max\":42,\"min\":40}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":21,\"placed\":20}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":21,\"placed\":21}'::jsonb),\n  (4, 'Los Angeles Trade Technical College', '41150', 39054673977, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 035\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 147\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DIGMD 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DIGMD 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"DIGMD 104\",\"units\":3}],\"catalog_addition\":false,\"code\":\"FASHMER 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"FASHDSN 244\",\"units\":2},{\"catalog_addition\":false,\"code\":\"FASHDSN 270\",\"units\":2}],\"catalog_addition\":false,\"code\":\"VISCOM129\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 045\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"Advertising and Promotions Managers\",\"Marketing Managers\",\"Public Relations Specialists\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Develop promotional activities using various media platforms for the purpose of branding and marketing a successful fashion business.\"],\"section_heading\":\"FASHION MEDIA — Certificate of Achievement\",\"total_units\":{\"max\":19,\"min\":19}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":10,\"placed\":7}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":10,\"placed\":10}'::jsonb),\n  (5, 'Los Angeles Trade Technical College', '18857', 39054673977, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANATOMY 001\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHRO 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOLOGY 003\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOLOGY 005\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOLOGY 006\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOLOGY 007\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MICRO 020\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSIOL 001\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYCH 002\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"LIST A: LIFE SCIENCES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASTRON 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASTRON 005\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 051\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 070\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 101\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 102\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 211\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 212\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CHEM 221\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"EARTH 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ELECTRN 002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENG GEN 151\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENG GEN 220\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENG GEN 231\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENV SCI 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOLOGY 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOLOGY 006\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSICS 006\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSICS 007\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSICS 011\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSICS 012\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSICS 014\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSICS 101\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSICS 102\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSICS 103\",\"units\":5,\"units_max\":null}],\"minimum\":3,\"name\":\"LIST B: PHYSICAL SCIENCES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 215\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STAT C1000E\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 230\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 235\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 236\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 241\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 241S\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 245\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 260\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 260S\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 261\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 262\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 263\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 270\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 272\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 275\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"LIST C: MATHEMATICS\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"business\",\"industry\",\"medicine\",\"health sciences\",\"education\",\"government\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":21,\"min\":21},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Apply scientific principles, theories, and/or models to explain or predict the behavior of natural physical phenomena.\",\"Apply scientific knowledge and reasoning to evaluate the human interaction with the natural world and identify major issues impacting society.\"],\"section_heading\":\"LIBERAL ARTS & SCIENCES: EMPHASIS IN MATHEMATICS, PHYSICAL AND NATURAL SCIENCES\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":47,\"placed\":47}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"pool_figure_not_read\"],\"invented\":true,\"listed\":47,\"placed\":47}'::jsonb),\n  (6, 'Los Angeles Trade Technical College', '38737', 39054673977, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRPLTEK 104\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRPLTEK 214\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOTECH 10\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"industrial safety and regulatory industry\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Students will be able to identify and describe industrial hazards, including hazards in the chemical, biomanufacturing and process industries\",\"Students will be able to ID and describe GLP and cGMP regulations\",\"Students will be able to identify the main areas affected by the validation process in the biomanufacturing industry and validation regulations that will require internal and external auditing.\",\"Students will be able to demonstrate mastery of appropriate industrial protocols and documentation\",\"Students will be able to demonstrate an understanding of the purpose, fundamentals and regulations of biomanufacturing\",\"Students will be able to demonstrate an understanding of the science underlying biomanufacturing\",\"Students will be able to apply techniques and procedures applicable to biomanufacturing.\"],\"section_heading\":\"PROGRAM OVERVIEW\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":3,\"placed\":3}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_no_total\"],\"invented\":true,\"listed\":3,\"placed\":3}'::jsonb),\n  (7, 'Los Angeles Trade Technical College', '37706', 39054673977, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 215\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 051\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"MICRO 001\",\"units\":5}],\"catalog_addition\":true,\"code\":\"MICRO 020\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSIOL 001\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":19,\"min\":18}}],\"program\":{\"careers\":[\"nursing\",\"medicine\",\"dentistry\",\"pharmacy\",\"occupational therapy\",\"physical therapy\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Apply fundamental biological, chemical, and mathematical principles as it relates to human health.\"],\"section_heading\":\"PRE-HEALTH PROFESSIONS II Certificate of Achievement\",\"total_units\":{\"max\":19,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":4,\"placed\":3}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":75,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":4,\"placed\":3}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\nf as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number\n        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true\n       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)),\ne(expect) as (values (7)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when f.n > 0\n            then ('s739e piles confirm guard: ' || f.n || ' rows hold a matching confirm verdict ' || f.keys::text)::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s739e piles guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, f;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Los Angeles Trade Technical College', '02911', 39054673977, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 111\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 112\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 113\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 121\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 122\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 123\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 131\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 132\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 133\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 141\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 142\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 143\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":45,\"min\":45}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECONMT 100\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 026\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 027\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBING 028\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 029\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 031\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 033\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 144\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PLUMBNG 145\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PLUMBNG 246\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 941\",\"units\":4,\"units_max\":null}],\"minimum\":3,\"name\":\"MAJOR ELECTIVES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[\"First-Line Sup/Mgrs of Construction Trades and Extraction Workers\",\"Helpers--Pipelayers, Plumbers, Pipefitters, and Steamfitters\",\"Pipelayers\",\"Plumbers, Pipefitters, and Steamfitters\",\"Septic Tank Servicers and Sewer Pipe Cleaners\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":21,\"min\":21},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate proper procedures and techniques required to construct a plumbing system, utilizing plumbing tools, in preparation for the Apprentice-level employment in the plumbing trade.\",\"Perform standard industry trade calculations and formulas including measurements to lay out to design a basic plumbing system..\",\"Recall, restate and apply current plumbing codes, industry rules, regulations, legal standards and procedures to the construction of an operable plumbing system following industry guidelines and restrictions according to the Uniform Plumbing Code for construction of commercial and residential.\"],\"section_heading\":\"PLUMBING Associate in Science Degree\",\"total_units\":{\"max\":48,\"min\":48}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":22,\"placed\":21}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":22,\"placed\":22}'::jsonb),\n  (2, 'Los Angeles Trade Technical College', '21855', 39054673977, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 111\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 112\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 113\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 121\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 122\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 123\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 131\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 132\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 133\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 141\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 142\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 143\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":45,\"min\":45}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECONMT 100\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 026\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 027\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBING 028\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 029\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 031\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 033\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 144\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PLUMBNG 145\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PLUMBNG 246\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMBNG 941\",\"units\":4,\"units_max\":null}],\"minimum\":3,\"name\":\"Major Electives\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[\"First-Line Sup/Mgrs of Construction Trades and Extraction Workers\",\"Helpers--Pipelayers, Plumbers, Pipefitters, and Steamfitters\",\"Pipelayers\",\"Plumbers, Pipefitters, and Steamfitters\",\"Septic Tank Servicers and Sewer Pipe Cleaners\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate proper procedures and techniques required to construct a plumbing system, utilizing plumbing tools, in preparation for the Apprentice-level employment in the plumbing trade.\",\"Perform standard industry trade calculations and formulas including measurements to lay out to design a basic plumbing system..\",\"Recall, restate and apply current plumbing codes, industry rules, regulations, legal standards and procedures to the construction of an operable plumbing system following industry guidelines and restrictions according to the Uniform Plumbing Code for construction of commercial and residential.\"],\"section_heading\":\"PLUMBING ▌ Certificate of Achievement\",\"total_units\":{\"max\":48,\"min\":48}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":22,\"placed\":21}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":22,\"placed\":22}'::jsonb),\n  (3, 'Los Angeles Trade Technical College', '31090', 39115770293, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECONMT 115\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECONMT 116\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 010\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ECONMT 173\",\"units\":3},{\"catalog_addition\":true,\"code\":\"MATH 115\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ECONMT 119\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECONMT 129\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECONMT 100\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 148\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"REF A/C 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECONMT 110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 007\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BLDGCTQ 008\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 009\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 012\",\"units\":1,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PLUMBING 028\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ECONMT 171\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":38,\"min\":36}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECONMT 105\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECONMT 205\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"REF A/C 105\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"REF A/C 110\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"REF A/C 165\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 921\",\"units\":4,\"units_max\":null}],\"minimum\":4,\"name\":\"Major Electives\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":4,\"min\":4}}],\"program\":{\"careers\":[\"residential and commercial renewable energy-related occupations\",\"renewable energy and/or energy efficiency occupations\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":21,\"min\":21},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Use energy efficiency diagnostic tools such as door blowers and duct blasters to determine air infiltration into buildings.\",\"Calculate energy usage in terms of electrical, mechanical and heat energy units.\",\"Recommend alternative energy methods to reduce utility costs and provide green energy substitutes for fossil fuel energy forms.\"],\"section_heading\":\"ENERGY EFFICIENCY TECHNICIAN ▌ Associate in Science Degree\",\"total_units\":{\"max\":42,\"min\":40}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":21,\"placed\":20}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":21,\"placed\":21}'::jsonb),\n  (4, 'Los Angeles Trade Technical College', '41150', 39054673977, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 035\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 147\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DIGMD 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DIGMD 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"DIGMD 104\",\"units\":3}],\"catalog_addition\":false,\"code\":\"FASHMER 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"FASHDSN 244\",\"units\":2},{\"catalog_addition\":false,\"code\":\"FASHDSN 270\",\"units\":2}],\"catalog_addition\":false,\"code\":\"VISCOM129\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 045\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"Advertising and Promotions Managers\",\"Marketing Managers\",\"Public Relations Specialists\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Develop promotional activities using various media platforms for the purpose of branding and marketing a successful fashion business.\"],\"section_heading\":\"FASHION MEDIA — Certificate of Achievement\",\"total_units\":{\"max\":19,\"min\":19}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":10,\"placed\":7}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":10,\"placed\":10}'::jsonb),\n  (5, 'Los Angeles Trade Technical College', '18857', 39054673977, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANATOMY 001\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHRO 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOLOGY 003\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOLOGY 005\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOLOGY 006\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOLOGY 007\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MICRO 020\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSIOL 001\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYCH 002\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"LIST A: LIFE SCIENCES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASTRON 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASTRON 005\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 051\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 070\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 101\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 102\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 211\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 212\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CHEM 221\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"EARTH 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ELECTRN 002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENG GEN 151\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENG GEN 220\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENG GEN 231\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENV SCI 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOLOGY 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOLOGY 006\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSICS 006\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSICS 007\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSICS 011\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSICS 012\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSICS 014\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSICS 101\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSICS 102\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSICS 103\",\"units\":5,\"units_max\":null}],\"minimum\":3,\"name\":\"LIST B: PHYSICAL SCIENCES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 215\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STAT C1000E\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 230\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 235\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 236\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 241\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 241S\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 245\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 260\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 260S\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 261\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 262\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 263\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 270\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 272\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 275\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"LIST C: MATHEMATICS\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"business\",\"industry\",\"medicine\",\"health sciences\",\"education\",\"government\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":21,\"min\":21},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Apply scientific principles, theories, and/or models to explain or predict the behavior of natural physical phenomena.\",\"Apply scientific knowledge and reasoning to evaluate the human interaction with the natural world and identify major issues impacting society.\"],\"section_heading\":\"LIBERAL ARTS & SCIENCES: EMPHASIS IN MATHEMATICS, PHYSICAL AND NATURAL SCIENCES\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":47,\"placed\":47}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"pool_figure_not_read\"],\"invented\":true,\"listed\":47,\"placed\":47}'::jsonb),\n  (6, 'Los Angeles Trade Technical College', '38737', 39054673977, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRPLTEK 104\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRPLTEK 214\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOTECH 10\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"industrial safety and regulatory industry\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Students will be able to identify and describe industrial hazards, including hazards in the chemical, biomanufacturing and process industries\",\"Students will be able to ID and describe GLP and cGMP regulations\",\"Students will be able to identify the main areas affected by the validation process in the biomanufacturing industry and validation regulations that will require internal and external auditing.\",\"Students will be able to demonstrate mastery of appropriate industrial protocols and documentation\",\"Students will be able to demonstrate an understanding of the purpose, fundamentals and regulations of biomanufacturing\",\"Students will be able to demonstrate an understanding of the science underlying biomanufacturing\",\"Students will be able to apply techniques and procedures applicable to biomanufacturing.\"],\"section_heading\":\"PROGRAM OVERVIEW\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":3,\"placed\":3}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_no_total\"],\"invented\":true,\"listed\":3,\"placed\":3}'::jsonb),\n  (7, 'Los Angeles Trade Technical College', '37706', 39054673977, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 215\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 051\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"MICRO 001\",\"units\":5}],\"catalog_addition\":true,\"code\":\"MICRO 020\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSIOL 001\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":19,\"min\":18}}],\"program\":{\"careers\":[\"nursing\",\"medicine\",\"dentistry\",\"pharmacy\",\"occupational therapy\",\"physical therapy\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Apply fundamental biological, chemical, and mathematical principles as it relates to human health.\"],\"section_heading\":\"PRE-HEALTH PROFESSIONS II Certificate of Achievement\",\"total_units\":{\"max\":19,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":4,\"placed\":3}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":75,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":4,\"placed\":3}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (7)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s739e piles rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;"
+}

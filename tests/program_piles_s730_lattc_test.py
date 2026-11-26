@@ -97,8 +97,11 @@ for cn in W.ON_LEVER:
 check(W.S.POOL_WORDS.search("with a minimum of 3 units from each") is None, "the pooled words are main's again")
 for cn in ALIAS:
     f = W._load(cn)
-    check(W.scorer_passes(f) and not NG.collectable(f["score"]) and cn not in W.REVIEWED,
-          "%s: today's scorer passes its arithmetic and its coverage fails" % cn)
+    # Either state (p-test-asserts-other-pr-absent-recurs-s731): as S730 left it, coverage failing; or passed by
+    # S739's rename (kb/_program_piles_s739_lattc.py, plan s739e), the filed score naming its renames.
+    renamed = bool(f["score"].get("course_renumbers")) and W.S.passes_live(f["score"])
+    check(W.scorer_passes(f) and (not NG.collectable(f["score"]) or renamed) and cn not in W.REVIEWED,
+          "%s: today's scorer passes its arithmetic, and its coverage fails or S739's rename passes it" % cn)
 for cn in ("31089", "41011", "45285"):
     check(not NG.collectable(W._load(cn)["score"]) and cn not in W.REVIEWED, "%s: coverage or invented fails" % cn)
 

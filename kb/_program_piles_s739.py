@@ -530,7 +530,12 @@ class Pile:
             src = (self.sources().get(cn) or {}).get("source") or {}
             words = _words(filed.get("title"))
             said_gone = HEADING_GONE.search(heading) or any(HEADING_GONE.search(n) for n in notes(filed))
-            found = src.get("heading_named") is True or bool(((filed.get("score") or {}).get("coverage") or {}).get("pass"))
+            cov = (filed.get("score") or {}).get("coverage") or {}
+            if e.get("renames"):
+                # A rename row's list is placed once its renames are read: the rescored coverage.
+                rs = self.renamed_score(filed)
+                cov = (rs[0].get("coverage") or {}) if rs else cov
+            found = src.get("heading_named") is True or bool(cov.get("pass"))
             if words and set(words) <= set(_words(heading)) and not said_gone and found \
                     and src.get("url") == filed.get("source_url") \
                     and all(self._heading_apart(filed, heading, m) for m in mates):
@@ -621,7 +626,13 @@ class Pile:
         if not e or not e.get("renames") or filed.get("college") != self.college:
             return None
         table = {S.norm_code(k): S.norm_code(v) for k, v in e["renames"].items()}
-        words = self.words(filed, e)
+        # The note that names the rename: the record's own, or (note_of) another record's of the same college whose
+        # note names the same printed code, where this record's own notes are silent on it (the catalog's misprint
+        # is the catalog's, whichever program's reader wrote it down).
+        other = self.load(e["note_of"]) if e.get("note_of") else None
+        if e.get("note_of") and (other is None or not set(table) <= codes(other)):
+            return None
+        words = self.words(other if other is not None else filed, e)
         if not words or not set(table) <= codes(filed) or not self.on_live_run(filed, skip):
             return None
         sc = filed.get("score") or {}
@@ -816,7 +827,12 @@ class Pile:
                 continue
             if cn in self.passed and self.passed[cn].get("renames") and self.passing_score(f):
                 e = self.passed[cn]
-                tally("the note's words gone", self.passing_score(no_words(copy.deepcopy(f), e)) is None, cn)
+                if e.get("note_of"):
+                    tally("the note's words gone", self.passing_score(f) is not None
+                          and self.renamed_score(f) is not None
+                          and self.words(no_words(copy.deepcopy(self.load(e["note_of"])), e), e) is None, cn)
+                else:
+                    tally("the note's words gone", self.passing_score(no_words(copy.deepcopy(f), e)) is None, cn)
                 g = copy.deepcopy(f)
                 table = {S.norm_code(k): v for k, v in e["renames"].items()}
                 for b in g["record"].get("blocks") or []:
@@ -831,6 +847,7 @@ class Pile:
                 tally("the arithmetic failing", self.passing_score(g) is None or S.passes_live(f["score"]), cn)
                 if self.shared_with(cn):
                     g = copy.deepcopy(f)
+                    g["record"]["notes"] = [n for n in notes(g) if not (e.get("own_section") and e["own_section"] in n)]
                     g["record"]["program"]["section_heading"] = "another heading"
                     tally("its own section not shown", self.own(g, e) is None, cn)
                 continue
@@ -969,6 +986,8 @@ class Pile:
                 row["reading"] = "renames" if self.passed[cn].get("renames") else self.passed[cn]["reading"]
                 if self.passed[cn].get("renames"):
                     row["renamed"] = self.passed[cn]["renames"]
+                    if self.passed[cn].get("note_of"):
+                        row["note_of"] = self.passed[cn]["note_of"]
             if write:
                 row["before_image"] = {k: img[k] for k in ("program_title", "award", "catalog_year", "source_url",
                                                            "measure", "total_min", "total_max", "record", "checks",
