@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-25T20:02:00Z",
+ "written_at": "2026-11-26T06:45:48Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 15567,
+     "n": 15568,
      "of": 20282,
      "words": "complete at 118 colleges",
      "open": "#program-requirements/list"
@@ -34,14 +34,14 @@
    ],
    "issues": [
     {
-     "n": 1791,
+     "n": 1792,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
      "open": "#program-requirements/list/fail"
     },
     {
-     "n": 2924,
+     "n": 2922,
      "words": "active programs with no record yet",
      "owner": "the harvest",
      "carry": "routine",
@@ -63,15 +63,15 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-11-25T12:19:48Z",
+    "at": "2026-11-26T06:38:25Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 15567,
-    "failing": 1791,
-    "unread": 2924,
-    "records": 18964,
+    "complete": 15568,
+    "failing": 1792,
+    "unread": 2922,
+    "records": 18966,
     "colleges": 118,
     "outside_active": 1606,
     "confirmed": 32,
@@ -383,7 +383,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-19T06:22:43Z",
+    "at": "2026-11-20T06:24:22+00:00",
     "every_hours": null
    },
    "facts": {
@@ -791,7 +791,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 1791,
+    "n": 1792,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"
@@ -799,7 +799,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 2924,
+    "n": 2922,
     "words": "active programs with no record yet",
     "owner": "the harvest",
     "open": "#program-requirements/list/unread"
@@ -823,23 +823,12 @@
   ],
   "stalled": [
    {
-    "ref": "requirements",
-    "title": "Program Requirements",
-    "kind": "not_shrinking",
-    "n": 2924,
-    "was": 2829,
-    "since": "2026-11-18",
-    "words": "active programs with no record yet",
-    "owner": "the harvest",
-    "open": "#program-requirements/list/unread"
-   },
-   {
     "ref": "exhibit",
     "title": "Common Exhibit Reference",
     "kind": "not_shrinking",
     "n": 597,
-    "was": 504,
-    "since": "2026-11-18",
+    "was": 546,
+    "since": "2026-11-19",
     "words": "credentials with no Common SUBJ (451 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
     "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
     "open": "#exhibits/list/nosubj"

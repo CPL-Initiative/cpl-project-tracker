@@ -58,10 +58,10 @@
   },
   "program_titles": {
    "one or mixed": {
-    "right": 990,
+    "right": 989,
     "asked": 1782,
-    "share": 0.556,
-    "score": 56
+    "share": 0.555,
+    "score": 55
    },
    "several agree": {
     "right": 649,
@@ -317,7 +317,7 @@
        },
        {
         "title": "Ceramics",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -1524,7 +1524,7 @@
        },
        {
         "title": "Animation",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -1670,7 +1670,7 @@
        },
        {
         "title": "Solar Energy Systems Design, Estimation & Sales",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -1822,7 +1822,7 @@
        },
        {
         "title": "Refrigeration Service Technician Apprenticeship",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -2510,7 +2510,7 @@
        },
        {
         "title": "Studio Arts",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -2980,7 +2980,7 @@
        },
        {
         "title": "Studio Arts",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -3112,7 +3112,7 @@
        },
        {
         "title": "Early Childhood Education",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -4582,7 +4582,7 @@
        },
        {
         "title": "Applied Ceramics",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -5209,7 +5209,7 @@
        },
        {
         "title": "Studio Arts",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -5599,7 +5599,7 @@
        },
        {
         "title": "Theatre: Acting Emphasis",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -5649,7 +5649,7 @@
        },
        {
         "title": "Ceramics - One Year",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -5894,7 +5894,7 @@
        },
        {
         "title": "Studio Arts",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -6607,7 +6607,7 @@
        },
        {
         "title": "Studio Arts",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -7152,7 +7152,7 @@
        },
        {
         "title": "Making with Hand Tools",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -8905,7 +8905,7 @@
        },
        {
         "title": "Studio Arts",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -10018,7 +10018,7 @@
        },
        {
         "title": "Studio Arts",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -10490,7 +10490,7 @@
        },
        {
         "title": "Studio Arts",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -11054,7 +11054,7 @@
        },
        {
         "title": "Studio Arts",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -11873,7 +11873,7 @@
        },
        {
         "title": "Auto Collision 1: Detail Technician",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -12469,7 +12469,7 @@
        },
        {
         "title": "Drama - Musical Theater",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -12726,7 +12726,7 @@
        },
        {
         "title": "Business Information Worker I",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -13452,7 +13452,7 @@
        },
        {
         "title": "Digital Art and Design",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -14335,7 +14335,7 @@
        },
        {
         "title": "Studio Arts",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -17608,7 +17608,7 @@
        },
        {
         "title": "Studio Arts",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -18341,7 +18341,7 @@
        },
        {
         "title": "Ceramics",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -18846,7 +18846,7 @@
        },
        {
         "title": "Studio Arts",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -20377,7 +20377,7 @@
        },
        {
         "title": "ESL Milestone - Language Arts, Oral Communication",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -20462,7 +20462,7 @@
        },
        {
         "title": "Dietetic Service Supervisor",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -21096,7 +21096,7 @@
        },
        {
         "title": "Medical Assistant Training",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -21326,7 +21326,7 @@
        },
        {
         "title": "Chicana/O Studies, Latina/O Studies",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -21979,7 +21979,7 @@
      "code": "NRS-HCA",
      "title": {
       "title": "Certified Nurse Assistant and Home Health Aide",
-      "confidence": 56,
+      "confidence": 55,
       "from": "program_titles",
       "why": "program titles: 1 of 1 programs (one or mixed, right 56% of the time). Another source reads differently.",
       "also": [
@@ -21991,7 +21991,7 @@
       "candidates": [
        {
         "title": "Certified Nurse Assistant and Home Health Aide",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -22426,7 +22426,7 @@
        },
        {
         "title": "Agriculture Animal Sciences",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -22950,7 +22950,7 @@
        },
        {
         "title": "Acting",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -24057,7 +24057,7 @@
        },
        {
         "title": "Auto & Related Technology: Transmission Repair",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -24107,7 +24107,7 @@
        },
        {
         "title": "Weatherization and Energy Auditor",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -24214,7 +24214,7 @@
        },
        {
         "title": "Amazon Web Services",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -24640,14 +24640,14 @@
      "code": "ELECLNM",
      "title": {
       "title": "Electrical Lineman Apprenticeship",
-      "confidence": 56,
+      "confidence": 55,
       "from": "program_titles",
       "why": "program titles: 1 of 1 programs (one or mixed, right 56% of the time).",
       "also": [],
       "candidates": [
        {
         "title": "Electrical Lineman Apprenticeship",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -24958,7 +24958,7 @@
      "code": "MCYCMEK",
      "title": {
       "title": "Motorcycle Repair Mechanics",
-      "confidence": 56,
+      "confidence": 55,
       "from": "program_titles",
       "why": "program titles: 1 of 1 programs (one or mixed, right 56% of the time). Another source reads differently.",
       "also": [
@@ -24970,7 +24970,7 @@
       "candidates": [
        {
         "title": "Motorcycle Repair Mechanics",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -26257,7 +26257,7 @@
        },
        {
         "title": "ESL Milestone - Pathway to Language Arts / Spoken Communication",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -27321,7 +27321,7 @@
        },
        {
         "title": "Studio Arts",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -27894,14 +27894,14 @@
      "code": "LRS",
      "title": {
       "title": "Employment Work",
-      "confidence": 56,
+      "confidence": 55,
       "from": "program_titles",
       "why": "program titles: 1 of 1 programs (one or mixed, right 56% of the time).",
       "also": [],
       "candidates": [
        {
         "title": "Employment Work",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -28133,7 +28133,7 @@
        },
        {
         "title": "Technical Theatre",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -33733,7 +33733,7 @@
        },
        {
         "title": "Glassblowing",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -34727,7 +34727,7 @@
        },
        {
         "title": "Studio Arts",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -38255,7 +38255,7 @@
        },
        {
         "title": "Studio Arts",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -38464,7 +38464,7 @@
        },
        {
         "title": "Apparel Design",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -38509,7 +38509,7 @@
        },
        {
         "title": "Paralegal/Legal Assistant",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -38617,7 +38617,7 @@
        },
        {
         "title": "Fitness Specialist",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -40766,7 +40766,7 @@
        },
        {
         "title": "Introduction to Working with Older Adults",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -41026,7 +41026,7 @@
        },
        {
         "title": "LVN to Adn, Career Ladder Curriculum",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -41234,7 +41234,7 @@
        },
        {
         "title": "Studio Arts",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -42643,7 +42643,7 @@
        },
        {
         "title": "Studio Arts",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -42977,7 +42977,7 @@
        },
        {
         "title": "Studio Arts",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -43703,7 +43703,7 @@
        },
        {
         "title": "Studio Arts",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -44814,7 +44814,7 @@
        },
        {
         "title": "Emergency Medical Technician",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -44911,7 +44911,7 @@
        },
        {
         "title": "Aircraft Power Plant Technician",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -45346,7 +45346,7 @@
        },
        {
         "title": "Fundamentals of Medical Assisting",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -46383,7 +46383,7 @@
      "code": "PSYCT",
      "title": {
       "title": "Psychiatric Technician",
-      "confidence": 56,
+      "confidence": 55,
       "from": "program_titles",
       "why": "program titles: 1 of 1 programs (one or mixed, right 56% of the time). Another source reads differently.",
       "also": [
@@ -46395,7 +46395,7 @@
       "candidates": [
        {
         "title": "Psychiatric Technician",
-        "confidence": 56,
+        "confidence": 55,
         "from": [
          "program_titles"
         ],
@@ -46414,7 +46414,7 @@
      "common": {
       "code": "NURP",
       "discipline": "Psychiatric Technician",
-      "confidence": 56,
+      "confidence": 55,
       "from": "title",
       "why": "The title names the discipline Psychiatric Technician."
      }

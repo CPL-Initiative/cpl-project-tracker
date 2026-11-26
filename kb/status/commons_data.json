@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-26T01:20:14Z",
+ "written_at": "2026-11-26T06:45:42Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17413,
-  "gap": 4922,
+  "passing": 17416,
+  "gap": 4919,
   "with_gap": 118,
-  "cost_usd": 1341.14,
-  "passed_at_read": 16414,
+  "cost_usd": 1341.29,
+  "passed_at_read": 16415,
   "cost_receipts": 118,
   "spent_usd": 1243.5,
   "spent_runs": 223,
@@ -189,9 +189,9 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16882,
-  "gap": 4922,
-  "collected_with_gaps": 531,
+  "passing": 16883,
+  "gap": 4919,
+  "collected_with_gaps": 533,
   "discontinued": 0
  },
  "census_live": {
@@ -3471,13 +3471,13 @@
    "harvested": true,
    "slug": "cosumnes_river",
    "programs": 226,
-   "passing": 178,
-   "gap": 48,
+   "passing": 179,
+   "gap": 47,
    "causes": {
     "no_closed_list": 7,
     "page_not_found": 2,
     "places_none": 9,
-    "unknown_without_live": 30
+    "unknown_without_live": 29
    },
    "census_causes": {
     "coverage_fails": 8,
@@ -3541,7 +3541,7 @@
    "read_seconds": 341.2,
    "run": "45355422235",
    "levers": {
-    "reconcile_steps": 16,
+    "reconcile_steps": 15,
     "ge_units_steps": 14,
     "reader_page_assignment": 9,
     "program_course_file_check": 7,
@@ -4215,14 +4215,13 @@
    "harvested": true,
    "slug": "east_los_angeles",
    "programs": 234,
-   "passing": 124,
-   "gap": 110,
+   "passing": 125,
+   "gap": 109,
    "causes": {
-    "found_not_extracted": 2,
     "no_closed_list": 87,
     "page_not_found": 11,
-    "places_none": 1,
-    "unknown_without_live": 9
+    "places_none": 3,
+    "unknown_without_live": 8
    },
    "census_causes": {
     "coverage_fails": 1,
@@ -4249,9 +4248,9 @@
    "outcomes_file": "kb/status/commons_data_programs/east_los_angeles.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-23T12:40:40Z",
+   "read_at": "2026-11-26T06:38:25Z",
    "read_kind": "capture",
-   "cost_usd": 10.49,
+   "cost_usd": 10.67,
    "passed_at_read": 115,
    "slo_queue": null,
    "scout": null,
@@ -4274,12 +4273,12 @@
    },
    "listed_closed": 147,
    "found": 136,
-   "extracted": 134,
+   "extracted": 136,
    "errors": 0,
    "failed_checks": {
-    "coverage": 1,
+    "coverage": 3,
     "invented": 0,
-    "arithmetic": 17,
+    "arithmetic": 19,
     "repeated": 0,
     "outcomes": 2
    },
@@ -4289,25 +4288,24 @@
    "capture_root": "https://www.elac.edu/academic-resources/catalog",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 203.3,
-   "run": "45176404274",
+   "read_seconds": 158.0,
+   "run": "45769480150",
    "levers": {
     "program_course_file_check": 87,
     "reader_page_search": 11,
-    "reconcile_steps": 6,
+    "reconcile_steps": 5,
     "ge_units_steps": 3,
-    "paid_read": 2,
-    "reader_page_assignment": 1
+    "reader_page_assignment": 3
    },
    "collection": {
     "program_reader": {
-     "records": 134,
+     "records": 136,
      "models": {
-      "claude-opus-5-5": 134
+      "claude-opus-5-5": 136
      },
-     "run": "45176404274",
-     "at": "2026-11-23T12:40:40Z",
-     "cost_usd": 10.49,
+     "run": "45769480150",
+     "at": "2026-11-26T06:38:25Z",
+     "cost_usd": 10.67,
      "platform": "custom_html"
     },
     "slo_read": null,
@@ -4642,11 +4640,11 @@
    "harvested": true,
    "slug": "folsom_lake",
    "programs": 108,
-   "passing": 99,
-   "gap": 9,
+   "passing": 100,
+   "gap": 8,
    "causes": {
     "page_not_found": 1,
-    "unknown_without_live": 8
+    "unknown_without_live": 7
    },
    "census_causes": {
     "page_not_found": 1,
@@ -4665,10 +4663,10 @@
    "outcomes_file": "kb/status/commons_data_programs/folsom_lake.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-24T08:32:02Z",
+   "read_at": "2026-11-26T06:32:14Z",
    "read_kind": "capture",
-   "cost_usd": 9.4,
-   "passed_at_read": 90,
+   "cost_usd": 9.37,
+   "passed_at_read": 91,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -4683,7 +4681,7 @@
    "failed_checks": {
     "coverage": 0,
     "invented": 0,
-    "arithmetic": 16,
+    "arithmetic": 15,
     "repeated": 0,
     "outcomes": 1
    },
@@ -4693,10 +4691,10 @@
    "capture_root": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 89.1,
-   "run": "45356831201",
+   "read_seconds": 155.2,
+   "run": "45768555107",
    "levers": {
-    "reconcile_steps": 8,
+    "reconcile_steps": 7,
     "reader_page_search": 1
    },
    "collection": {
@@ -4705,9 +4703,9 @@
      "models": {
       "claude-opus-5-5": 107
      },
-     "run": "45356831201",
-     "at": "2026-11-24T08:32:02Z",
-     "cost_usd": 9.4,
+     "run": "45768555107",
+     "at": "2026-11-26T06:32:14Z",
+     "cost_usd": 9.37,
      "platform": "pdf"
     },
     "slo_read": null,
