@@ -102,6 +102,12 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
   "pass": false
  },
  "record": {
@@ -316,5 +322,6 @@
    "Catalog text appears truncated at start and end."
   ]
  },
- "extracted_run": "38631686677"
+ "extracted_run": 45768189197,
+ "read_run": "38631686677"
 }

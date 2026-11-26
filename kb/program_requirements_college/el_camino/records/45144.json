@@ -79,7 +79,26 @@
     39.0
    ],
    "against": "program",
-   "why": []
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     63.0,
+     63.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     24.0
+    ],
+    "why": [],
+    "overlap": true
+   }
   },
   "repeated": {
    "codes": [],
@@ -99,6 +118,9 @@
    "count": 4,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "read"
   },
   "pass": true
  },
@@ -127,7 +149,8 @@
     "VFX",
     "3D modeling",
     "game art and animation"
-   ]
+   ],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -387,5 +410,15 @@
    "The 'Select 21 units' and 'Select 3 units' headings were read as the block minimums; no separate block totals are printed, so stated is null."
   ]
  },
- "extracted_run": "38631686677"
+ "extracted_run": 45768189197,
+ "reconciled": [
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "the major sums to 39, the major total the catalog prints; the major and general education sum to 63 against the degree's 60 (Sam, 2026-11-17, \"Let major courses count toward general education for local degrees too\" (#3461, ruling 1))",
+   "statewide": "local_degree_ge_overlap"
+  }
+ ],
+ "read_run": "38631686677"
 }

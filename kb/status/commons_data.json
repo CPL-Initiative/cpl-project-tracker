@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-26T09:03:50Z",
+ "written_at": "2026-11-26T09:26:31Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17462,
-  "gap": 4873,
+  "passing": 17464,
+  "gap": 4871,
   "with_gap": 118,
-  "cost_usd": 1341.27,
-  "passed_at_read": 16418,
+  "cost_usd": 1341.28,
+  "passed_at_read": 16437,
   "cost_receipts": 118,
   "spent_usd": 1243.5,
   "spent_runs": 223,
@@ -189,9 +189,9 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16895,
-  "gap": 4873,
-  "collected_with_gaps": 567,
+  "passing": 16900,
+  "gap": 4871,
+  "collected_with_gaps": 564,
   "discontinued": 0
  },
  "census_live": {
@@ -4364,10 +4364,10 @@
    "outcomes_file": null,
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-19T08:02:49Z",
+   "read_at": "2026-11-26T07:18:10Z",
    "read_kind": "capture",
-   "cost_usd": 8.13,
-   "passed_at_read": 93,
+   "cost_usd": 8.14,
+   "passed_at_read": 96,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -4382,7 +4382,7 @@
    "failed_checks": {
     "coverage": 4,
     "invented": 0,
-    "arithmetic": 33,
+    "arithmetic": 30,
     "repeated": 0,
     "outcomes": 0
    },
@@ -4392,8 +4392,8 @@
    "capture_root": "http://catalog.elcamino.edu/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1414.3,
-   "run": "44480396671",
+   "read_seconds": 1446.3,
+   "run": "45773663927",
    "levers": {
     "program_course_file_check": 54,
     "reader_page_search": 9,
@@ -4406,9 +4406,9 @@
      "models": {
       "claude-opus-5-5": 126
      },
-     "run": "44480396671",
-     "at": "2026-11-19T08:02:49Z",
-     "cost_usd": 8.13,
+     "run": "45773663927",
+     "at": "2026-11-26T07:18:10Z",
+     "cost_usd": 8.14,
      "platform": "acalog"
     },
     "slo_read": null,
@@ -7843,13 +7843,13 @@
    "harvested": true,
    "slug": "modesto_junior",
    "programs": 199,
-   "passing": 183,
-   "gap": 16,
+   "passing": 185,
+   "gap": 14,
    "causes": {
     "no_closed_list": 3,
     "page_not_found": 8,
     "places_none": 1,
-    "unknown_without_live": 4
+    "unknown_without_live": 2
    },
    "census_causes": {
     "coverage_fails": 1,
@@ -7874,10 +7874,10 @@
     "elumen"
    ],
    "objectives_printed": false,
-   "read_at": "2026-11-19T13:51:22Z",
+   "read_at": "2026-11-26T07:02:08Z",
    "read_kind": "capture",
    "cost_usd": 12.08,
-   "passed_at_read": 165,
+   "passed_at_read": 181,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -7890,9 +7890,9 @@
    "extracted": 188,
    "errors": 0,
    "failed_checks": {
-    "coverage": 2,
-    "invented": 1,
-    "arithmetic": 22,
+    "coverage": 1,
+    "invented": 0,
+    "arithmetic": 7,
     "repeated": 0,
     "outcomes": 0
    },
@@ -7902,12 +7902,12 @@
    "capture_root": "https://mjc.elumenapp.com/catalog/2026-2027/mjc-ge",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 899.9,
-   "run": "44540818388",
+   "read_seconds": 895.3,
+   "run": "45772245635",
    "levers": {
     "reader_page_search": 8,
-    "reconcile_steps": 4,
     "program_course_file_check": 3,
+    "reconcile_steps": 2,
     "reader_page_assignment": 1
    },
    "collection": {
@@ -7916,8 +7916,8 @@
      "models": {
       "claude-opus-5-5": 188
      },
-     "run": "44540818388",
-     "at": "2026-11-19T13:51:22Z",
+     "run": "45772245635",
+     "at": "2026-11-26T07:02:08Z",
      "cost_usd": 12.08,
      "platform": "elumen"
     },

@@ -70,6 +70,7 @@
     9.0,
     9.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -90,6 +91,9 @@
    "count": 2,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -157,5 +161,6 @@
    "Careers: 'production planning and scheduling' is taken from the description ('entry level jobs in production planning and scheduling'); 'Production Scheduling Assistant' is taken from the third outcome. Reviewer may wish to confirm both qualify."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

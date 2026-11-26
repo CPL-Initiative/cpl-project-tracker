@@ -134,6 +134,12 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
   "pass": true
  },
  "record": {
@@ -480,5 +486,6 @@
    "An orphan lead-in 'Upon satisfactory completion of this award, the student should be prepared to:' appears before the outcomes heading with nothing under it; the outcomes are recorded from the Program Learning Outcomes heading."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

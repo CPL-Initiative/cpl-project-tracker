@@ -70,6 +70,7 @@
     17.5,
     17.5
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -90,6 +91,9 @@
    "count": 0,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -166,5 +170,6 @@
    "A stray lead-in 'Upon satisfactory completion of this award, the student should be prepared to:' appears before the PLO heading with no outcomes after it; outcomes were taken from the Program Learning Outcomes heading."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

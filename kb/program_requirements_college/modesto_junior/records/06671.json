@@ -96,6 +96,7 @@
     25.0,
     27.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -116,6 +117,12 @@
    "count": 0,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -410,5 +417,6 @@
    "Codes recorded as printed without a space (e.g., MUST121). PSYCC1000 is printed as-is; may be a typo or a new course numbering."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

@@ -73,7 +73,26 @@
    "against": "program",
    "why": [
     "the blocks sum to 27.0-30.0; the catalog states 28.0-30.0"
-   ]
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     61.0,
+     64.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
   },
   "repeated": {
    "codes": [],
@@ -93,6 +112,9 @@
    "count": 4,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "read"
   },
   "pass": false
  },
@@ -262,5 +284,6 @@
    "Catalog course titles differ slightly from the state file (LAW 4 'Legal Environment of Business'; MATH 190 'Analytic Geometry'). The codes match."
   ]
  },
- "extracted_run": "38631686677"
+ "extracted_run": 45768189197,
+ "read_run": "38631686677"
 }

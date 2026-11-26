@@ -70,6 +70,7 @@
     9.0,
     9.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -90,6 +91,9 @@
    "count": 2,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -156,5 +160,6 @@
    "Careers are read from the description 'entry level jobs in procurement or customer service operations'; reviewer may check whether these career fields should be recorded."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

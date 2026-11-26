@@ -74,6 +74,7 @@
     26.0,
     26.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -94,6 +95,9 @@
    "count": 0,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -193,5 +197,6 @@
    "The description refers to the California Real Estate Broker licensing exam but names no careers or job titles explicitly, so careers is left empty."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

@@ -92,6 +92,7 @@
     29.0,
     29.0
    ],
+   "against": "program",
    "why": [
     "the blocks sum to 23.0-35.0; the catalog states 29.0-29.0"
    ]
@@ -114,6 +115,12 @@
    "count": 11,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": false,
   "gaps": [
@@ -444,5 +451,6 @@
    "Source URL slug references 'summer-2020' though the catalog year is 2026-2027; reviewer may verify currency."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

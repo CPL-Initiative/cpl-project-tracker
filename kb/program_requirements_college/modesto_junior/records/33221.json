@@ -70,6 +70,7 @@
     26.0,
     27.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -90,6 +91,9 @@
    "count": 5,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -227,5 +231,6 @@
    "A stray lead-in 'Upon satisfactory completion of this award, the student should be prepared to:' appears before the outcomes heading with no outcomes under it; the outcomes were taken from the Program Learning Outcomes heading."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

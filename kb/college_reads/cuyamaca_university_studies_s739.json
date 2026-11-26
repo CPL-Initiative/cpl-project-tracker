@@ -1,0 +1,54 @@
+{
+ "_readme": "S739 (the pooled reading's next, lane 1). Cuyamaca's four University Studies degrees (18634, 18635, 18636, 18637) read their 18-unit area of emphasis under the pooled reading and then add to 52 (18 and Cal-GETC 34) against a printed 60. Each reading's notes quote 'Complete 60 transferable units' and say the page prints no electives line, so the record leaves electives_fill_degree false (plan s731p's holds). This read prints each page as the capture reads it, so a Cuyamaca reconcile step can be written on the page's own words and tested on them: how the page heads the program, how it prints the 60 and the 34, and whether any line says electives make up the rest. 18637's filed record was read from Grossmont's page; its own Cuyamaca page is the fourth. Four loads, no model call, nothing written.",
+ "college": "Cuyamaca College",
+ "questions": {
+  "sixty_line": "How each page prints the degree's 60 units and the Cal-GETC 34, word for word, and under which heading.",
+  "electives_line": "Whether any line says electives or other transferable units make up the rest of the 60.",
+  "heading": "How the page heads the program and its requirements (the heading the reading filed is 'Requirements' or the title)."
+ },
+ "keywords": [
+  "Complete\\s+60[^\\n]{0,120}",
+  "transferable\\s+units[^\\n]{0,120}",
+  "[Ee]lective[^\\n]{0,120}",
+  "minimum\\s+of\\s+18[^\\n]{0,120}",
+  "Cal-?GETC[^\\n]{0,120}"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "sixty_line",
+    "electives_line",
+    "heading"
+   ],
+   "capture_view": true,
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/language-communication/university-studies-communication-language-arts/"
+  },
+  {
+   "answers": [
+    "sixty_line",
+    "electives_line",
+    "heading"
+   ],
+   "capture_view": true,
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/culture-people-ideas/university-studies-humanities-fine-arts/"
+  },
+  {
+   "answers": [
+    "sixty_line",
+    "electives_line",
+    "heading"
+   ],
+   "capture_view": true,
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/stem/university-studies-science-mathematics/"
+  },
+  {
+   "answers": [
+    "sixty_line",
+    "electives_line",
+    "heading"
+   ],
+   "capture_view": true,
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/university-studies-social-behavioral-sciences/"
+  }
+ ]
+}

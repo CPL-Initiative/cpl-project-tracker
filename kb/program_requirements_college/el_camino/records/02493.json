@@ -87,10 +87,30 @@
     28.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 25.0-29.0; the catalog states 25.0-28.0"
-   ],
+   "why": [],
    "meets": true,
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     49.0,
+     53.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     24.0
+    ],
+    "why": [],
+    "fill": [
+     7.0,
+     11.0
+    ]
+   },
    "rescored": "Open Asks Sheet 120 card 1"
   },
   "repeated": {
@@ -111,6 +131,9 @@
    "count": 1,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "read"
   },
   "pass": true
  },
@@ -492,5 +515,6 @@
    "Career entry 'teaching' is taken from 'teaching careers' in the TEP contact sentence; the description also mentions a multiple-subject teaching credential for grades K-5."
   ]
  },
- "extracted_run": "38631686677"
+ "extracted_run": 45768189197,
+ "read_run": "38631686677"
 }

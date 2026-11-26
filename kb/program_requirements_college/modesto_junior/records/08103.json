@@ -115,6 +115,12 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
   "pass": true
  },
  "record": {
@@ -386,5 +392,6 @@
    "Source URL slug references 'summer-2020' though the page is labeled catalog year 2026-2027; reviewer may want to confirm currency."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

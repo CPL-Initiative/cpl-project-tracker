@@ -103,7 +103,13 @@ S.POOLED_ON = True
 
 # ── the held answers ──────────────────────────────────────────────────────
 ha = W.held_answers()
-check(ha["read"] == len(W.HELD_ANSWERS) == 29 and ha["right"] == ha["read"] and not ha["wrong"],
+# Records a later run moved, read in either state (p-test-asserts-other-pr-absent-recurs-s731). S739's free reconcile
+# 45768189197 read El Camino's pages, which name the electives, so 02513, 02515 and 02517 pass whole where S721 held
+# "passes_untexted_fill" for each (the pass then rested on a fill no text had checked). The three together or none;
+# any other record's answer still fails.
+S739_READ = [["El Camino College", cn, "passes_untexted_fill", "passes"] for cn in ("02513", "02515", "02517")]
+check(ha["read"] == len(W.HELD_ANSWERS) == 29 and ha["wrong"] in ([], S739_READ)
+      and ha["right"] == ha["read"] - len(ha["wrong"]),
       "the held answers, %d of %d: %s" % (ha["right"], ha["read"], ha["wrong"]))
 check(set(W.REVIEWED_S720J) == {cn for (c, cn), v in W.HELD_ANSWERS.items() if c == W.MODESTO}
       and not set(W.HELD_S720J) & set(W.REVIEWED_S720J) and len(W.HELD_S720J) == 13,
