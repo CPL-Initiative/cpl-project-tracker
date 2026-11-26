@@ -189,3 +189,10 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   whose own land follows once the first merges (**DECIDED** `d-land-applied-piles-apart-s739`).
 - 09:34Z: `claude/s739-piles-land` at `a7c293a8` (`main` `1caef64a` merged; the three Commons files took `main`'s side,
   then both builders reran; `check_generated.sh` all ok; every S739 test passes). #3883 opened for its land.
+- 09:36Z: `piles`' second report (head `20982003`): s739i Cosumnes River, 11 rows (4 passing by a rename to a fused
+  state code: MKT 495 for 'MKT 495 23085' at 04596 and 35899, RE 296 for 'RE296282560' at 20197 and 39139; 7 named
+  gaps; 5 held), and s739j Orange Coast, 4 named gaps (13 held; 08626 no key). The shared module adds `LiveRuns`, the
+  live-run reading for a college with no earlier module. Both, with `LiveRuns`, to a Sonnet reader. `piles` finished
+  (Palo Verde, Gavilan, Ventura and Cabrillo not reached). 09:38Z: `piles2` (Fable 5.2, high effort) took Palo
+  Verde, Gavilan and Ventura on `claude/s739-piles2`, cut at `20982003` (s739k, s739m, s739n), to stop at 10:50Z;
+  `claude/s739-piles` lands through it.
