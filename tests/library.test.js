@@ -1380,8 +1380,8 @@ block("(19)", function () {
     openEdit(m, "p2");
     check("(19) Edit the record opens the record's form inside its Details, with no Start",
       !!m.root.querySelector('.lib-details form[data-editform="p2"]') && !m.root.querySelector('#lib-drop form[data-editform="p2"]'));
-    click(m.w, m.root.querySelector('[data-newver="p2"]'));
-    check("(19) File a new version opens the filing form for that same record", !!doc.getElementById("lib-addform") && m.M._state.formFor === "p2" && !doc.getElementById("lib-go"));
+    // Sam, 2026-11-26: "the file feature is not needed". File a new version left the card; Revise drafts the next one.
+    check("(19) Details offers no File a new version", !m.root.querySelector('[data-newver="p2"]'));
     if (!m.root.querySelector('[data-fromit="p2"]')) click(m.w, m.root.querySelector('[data-toggle="p2"]'));
     click(m.w, m.root.querySelector('[data-fromit="p2"]'));
     doc.getElementById("lc-instr").value = "A deck for the grantee webinar";
