@@ -540,14 +540,23 @@ class Pile:
         earlier module reads the receipts (its loads, rereads and every applied plan)."""
         import inspect
 
+        def takes_skip(fn):
+            return "skip" in inspect.signature(fn).parameters
+
         def call(fn, *a):
-            # An earlier module whose function takes no skip reads every receipt; this plan's own rows, once
-            # applied, post the run the record already holds, so the answer is the same before and after.
-            return fn(*a, skip) if "skip" in inspect.signature(fn).parameters else fn(*a)
-        if call(self.prior.on_live_run, filed):
+            return fn(*a, skip) if takes_skip(fn) else fn(*a)
+        cn = str(filed.get("control_number"))
+        if takes_skip(self.prior.on_live_run) or not takes_skip(self.prior.posted_runs):
+            live = call(self.prior.on_live_run, filed)
+        else:
+            # An earlier module whose on_live_run takes no skip: its own rule (the latest receipt's run is the
+            # record's) over its posted_runs with the skip, so a test reads the receipts as they stood before this
+            # plan's own apply (p-test-reads-own-apply-receipt-s721; Shasta 18144 after s739b's apply).
+            rows = self.prior.posted_runs(skip).get(cn) or []
+            live = bool(rows) and max(rows)[1] == str(filed.get("extracted_run"))
+        if live:
             return True
-        posted = call(self.prior.posted_runs).get(str(filed.get("control_number")))
-        return not posted and self.history_live(filed)
+        return not call(self.prior.posted_runs).get(cn) and self.history_live(filed)
 
     # ── the own-page guard ──
     def own(self, filed: dict, e: dict) -> str | None:
