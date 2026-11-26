@@ -5,18 +5,18 @@
  "found": 168,
  "extracted": 168,
  "errors": 0,
- "passed_machine_checks": 151,
+ "passed_machine_checks": 147,
  "failed": {
-  "coverage": 4,
-  "invented": 2,
+  "coverage": 9,
+  "invented": 8,
   "arithmetic": 14,
   "repeated": 1,
   "outcomes": 1
  },
- "cost_usd_run": 0.0,
+ "cost_usd_run": 0.22,
  "cost_usd_filed": 13.67,
  "cost_per_program": 0.0814,
- "extract_calls": null,
+ "extract_calls": 2,
  "extract_failed": [],
  "not_found": [
   {
@@ -35,8 +35,7 @@
    "award": "A.S. Degree",
    "near_miss": {
     "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=77",
-    "coverage": 0.455,
-    "page_checks": true
+    "coverage": 0.455
    },
    "status": "Active"
   },
@@ -46,8 +45,7 @@
    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
    "near_miss": {
     "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=188",
-    "coverage": 0.0,
-    "page_checks": true
+    "coverage": 0.0
    },
    "status": "Active"
   },
@@ -57,8 +55,7 @@
    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
    "near_miss": {
     "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=128",
-    "coverage": 0.222,
-    "page_checks": true
+    "coverage": 0.222
    },
    "status": "Active"
   },
@@ -69,8 +66,7 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0,
-    "page_checks": true
+    "refused_b": 0
    },
    "status": "Active"
   },
@@ -91,8 +87,7 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0,
-    "page_checks": true
+    "refused_b": 0
    },
    "status": "Active"
   },
@@ -103,8 +98,7 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0,
-    "page_checks": true
+    "refused_b": 0
    },
    "status": "Active"
   },
@@ -128,8 +122,7 @@
    "award": "Noncredit program",
    "near_miss": {
     "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=228",
-    "coverage": 0.0,
-    "page_checks": true
+    "coverage": 0.0
    },
    "status": "Active"
   },
@@ -166,8 +159,7 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0,
-    "page_checks": true
+    "refused_b": 0
    },
    "status": "Active"
   },
@@ -185,8 +177,7 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0,
-    "page_checks": true
+    "refused_b": 0
    },
    "status": "Active"
   },
@@ -197,8 +188,7 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0,
-    "page_checks": true
+    "refused_b": 0
    },
    "status": "Active"
   },
@@ -256,5 +246,5 @@
    "status": "Active"
   }
  ],
- "run": "45844759766"
+ "run": "44475507447"
 }

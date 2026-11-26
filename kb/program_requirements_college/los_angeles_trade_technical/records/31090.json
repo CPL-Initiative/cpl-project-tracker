@@ -104,7 +104,14 @@
   "degree": {
    "status": "read"
   },
-  "pass": true
+  "pass": true,
+  "course_renumbers": [
+   {
+    "printed": "PLUMBING 028",
+    "listed": "PLUMBNG28",
+    "block": "Required Courses"
+   }
+  ]
  },
  "record": {
   "program": {
@@ -334,6 +341,5 @@
    "'At least 60 degree applicable units are required to earn an Associate degree' is a generic statement, not recorded as degree_total."
   ]
  },
- "extracted_run": 45844759766,
- "read_run": "39115770293"
+ "extracted_run": "39115770293"
 }

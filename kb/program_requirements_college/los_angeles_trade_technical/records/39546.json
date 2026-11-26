@@ -72,8 +72,9 @@
     19.0
    ],
    "against": "program",
-   "why": [],
-   "meets": true,
+   "why": [
+    "the blocks sum to 18.0-20.0; the catalog states 18.0-19.0"
+   ],
    "degree": {
     "pass": true,
     "status": "equal",
@@ -96,6 +97,7 @@
      8.0
     ]
    },
+   "meets": true,
    "rescored": "Open Asks Sheet 120 card 1"
   },
   "repeated": {
@@ -327,6 +329,5 @@
    "Total Degree units 60 includes Cal-GETC 34 and 'CSU Transfer elective to complete 60-unit minimum' with no units printed for electives."
   ]
  },
- "extracted_run": 45844759766,
- "read_run": "39054673977"
+ "extracted_run": "39054673977"
 }

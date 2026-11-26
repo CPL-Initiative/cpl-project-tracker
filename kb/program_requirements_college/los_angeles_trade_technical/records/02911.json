@@ -102,7 +102,14 @@
   "degree": {
    "status": "read"
   },
-  "pass": true
+  "pass": true,
+  "course_renumbers": [
+   {
+    "printed": "PLUMBING 028",
+    "listed": "PLUMBNG28",
+    "block": "MAJOR ELECTIVES"
+   }
+  ]
  },
  "record": {
   "program": {
@@ -348,6 +355,5 @@
    "PLUMBNG 141 is printed 'Advanced Layout and Procedures' vs. closed list 'Advance Layout and Procedures'."
   ]
  },
- "extracted_run": 45844759766,
- "read_run": "39054673977"
+ "extracted_run": "39054673977"
 }

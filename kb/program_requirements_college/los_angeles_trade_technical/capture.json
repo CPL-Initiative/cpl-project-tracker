@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 211,
  "with_closed_list": 188,
- "started": "2026-11-26T15:02:02Z",
+ "started": "2026-11-19T06:56:27Z",
  "catalog_year_from": "the procedure record's catalog step",
  "procedure_step": {
   "start": "https://www.lattc.edu/academic-resources/catalog",
@@ -18,10 +18,10 @@
   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf",
   "access": "ok",
   "status": 200,
-  "bytes": 11359620,
+  "bytes": 11359170,
   "pages_total": 376,
   "error": null,
-  "chars_total": 1615617,
+  "chars_total": 1614969,
   "pypdf_accepted": 185,
   "sample": [
    "p113: 'Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG\\nGRADUATION REQUIREMENTS, PATHWAYS \\nAND PROGRAMS OF STUDY\\n113\\nBusiness & Civic Engagement Pathway (BCE)\\nCOMPUTER APPLICATIONS & OFFICE \\nTECHNOLOGIES\\nAward Title Academic Plan Aw'",
@@ -303,7 +303,7 @@
     "cn_printed": true,
     "titled": true,
     "coverage": 0.842,
-    "opens": "[page 196] Nursing, Registered T002922C A.S. 21* 38 - 38 Nursing, Registered: LVN to RN Career Ladder T008498C A.S. 21 30 - 30 Nursing, Registered 30-Unit Option 30 - 30 At least 60 degree applicable units are require"
+    "opens": "[page 196] Nursing, Registered T002922C A.S. 21* 38 - 38 Nursing, Registered: LVN to RN Career Ladder T008498C A.S. 21 30 - 30 Nursing, Registered 25-Unit Option 30 - 30 At least 60 degree applicable units are require"
    },
    {
     "control_number": "02925",
@@ -1249,7 +1249,7 @@
     "code": null,
     "cn_printed": true,
     "titled": true,
-    "coverage": 0.87,
+    "coverage": 0.696,
     "opens": "[page 150] and Maintenance T031089C A.S. 21* 38 4 42 Solar Thermal Installation and Maintenance T031082D C 30 - 30 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may"
    },
    {
@@ -1264,7 +1264,7 @@
     "code": null,
     "cn_printed": true,
     "titled": true,
-    "coverage": 0.952,
+    "coverage": 0.905,
     "opens": "[page 138] Technician T031090C A.S. 21* 36-38 4 40-42 Energy Systems Technology Fundamentals T030906D C 16 - 16 Weatherization and Energy Auditor T030210D C 14 - 14 At least 60 degree applicable units are required to e"
    },
    {
@@ -1324,7 +1324,7 @@
     "code": null,
     "cn_printed": true,
     "titled": true,
-    "coverage": 0.84,
+    "coverage": 0.72,
     "opens": "[page 148] T031280C A.S. 21* 36-38 4 40-42 Solar PV Installation and Maintenance Technician T031081D C 26-28 - 26-28 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements "
    },
    {
@@ -1386,8 +1386,8 @@
     "code": null,
     "cn_printed": true,
     "titled": true,
-    "coverage": 0.961,
-    "opens": "[page 193] Kinesiology T032948G AA-T Cal- GETC 20-24.5 - 20-24.5 At least 60 degree applicable units are required to earn an Associate degree. This program is Financial Aid Eligible. PROGRAM OVERVIEW Kinesiology is the "
+    "coverage": 0.824,
+    "opens": "[page 193] Kinesiology T032948G AA-T Cal- GETC 21-24 - 21-24 At least 60 degree applicable units are required to earn an Associate degree. This program is Financial Aid Eligible. PROGRAM OVERVIEW Kinesiology is the stud"
    },
    {
     "control_number": "33225",
@@ -2045,7 +2045,7 @@
     "code": null,
     "cn_printed": true,
     "titled": true,
-    "coverage": 1.0,
+    "coverage": 0.9,
     "opens": "[page 182] Fashion Media T041150D C - 19 - 19 Fashion Merchandising T008653C A.S. 21* 33 5 38 Fashion Merchandising T021867D C - 33 5 38 Retail Merchandising T040330D C - 21 - 21 Wholesale Merchandising T0"
    },
    {
@@ -2359,7 +2359,7 @@
  "loads": 2,
  "pages_listed": 1,
  "pages_answered": 1,
- "seconds": 119.0,
+ "seconds": 99.4,
  "found": 168,
  "by_method": {
   "no_closed_list": 23,
@@ -2596,8 +2596,7 @@
    "award": "A.S. Degree",
    "near_miss": {
     "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=77",
-    "coverage": 0.455,
-    "page_checks": true
+    "coverage": 0.455
    },
    "status": "Active"
   },
@@ -2607,8 +2606,7 @@
    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
    "near_miss": {
     "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=188",
-    "coverage": 0.0,
-    "page_checks": true
+    "coverage": 0.0
    },
    "status": "Active"
   },
@@ -2618,8 +2616,7 @@
    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
    "near_miss": {
     "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=128",
-    "coverage": 0.222,
-    "page_checks": true
+    "coverage": 0.222
    },
    "status": "Active"
   },
@@ -2630,8 +2627,7 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0,
-    "page_checks": true
+    "refused_b": 0
    },
    "status": "Active"
   },
@@ -2652,8 +2648,7 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0,
-    "page_checks": true
+    "refused_b": 0
    },
    "status": "Active"
   },
@@ -2664,8 +2659,7 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0,
-    "page_checks": true
+    "refused_b": 0
    },
    "status": "Active"
   },
@@ -2689,8 +2683,7 @@
    "award": "Noncredit program",
    "near_miss": {
     "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=228",
-    "coverage": 0.0,
-    "page_checks": true
+    "coverage": 0.0
    },
    "status": "Active"
   },
@@ -2727,8 +2720,7 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0,
-    "page_checks": true
+    "refused_b": 0
    },
    "status": "Active"
   },
@@ -2746,8 +2738,7 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0,
-    "page_checks": true
+    "refused_b": 0
    },
    "status": "Active"
   },
@@ -2758,8 +2749,7 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0,
-    "page_checks": true
+    "refused_b": 0
    },
    "status": "Active"
   },
@@ -2820,54 +2810,24 @@
  "page_claimed": [],
  "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 12,
-  "0.8-1.0": 34,
-  "1.0": 122
+  "0.5-0.8": 14,
+  "0.8-1.0": 33,
+  "1.0": 121
  },
  "would_extract": {
   "against": "kb/program_requirements_college/los_angeles_trade_technical",
-  "kept": 160,
+  "kept": 164,
   "kept_moved": 0,
-  "programs": 6,
+  "programs": 2,
   "list": [
    {
-    "control_number": "31089",
-    "title": "Solar Thermal Installation & Maintenance",
+    "control_number": "02900",
+    "title": "Computer Information Systems",
     "award": "A.S. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=150",
-    "coverage": 0.87,
-    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=150",
-    "was_coverage": 0.696,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "31090",
-    "title": "Energy Efficiency Technician",
-    "award": "A.S. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=138",
-    "coverage": 0.952,
-    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=138",
-    "was_coverage": 0.905,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "31280",
-    "title": "Photo Voltaic (PV) Solar Installation & Maintenance",
-    "award": "A.S. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=148",
-    "coverage": 0.84,
-    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=148",
-    "was_coverage": 0.72,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "32948",
-    "title": "Kinesiology",
-    "award": "A.A- T Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=193",
-    "coverage": 0.961,
-    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=193",
-    "was_coverage": 0.824,
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=116",
+    "coverage": 1.0,
+    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=117",
+    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
@@ -2876,18 +2836,8 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=55",
     "coverage": 0.786,
-    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=55",
-    "was_coverage": 0.786,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "41150",
-    "title": "Fashion Media",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=182",
-    "coverage": 1.0,
-    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=182",
-    "was_coverage": 0.9,
+    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=212",
+    "was_coverage": 0.622,
     "was_method": "pdf_pages"
    }
   ],
@@ -2940,7 +2890,7 @@
    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=113"
   },
   "02898": {
-   "sha256": "b0c524b64b7f35fb843d3a4f6dd4a3fca4594066475811a4490c93e42e32a21d",
+   "sha256": "81c6bc93631d39230e31c1fda9ba937805a1a1501eec3786ac8dd022083e2b37",
    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=119"
   },
   "02900": {
@@ -2992,7 +2942,7 @@
    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=186"
   },
   "02922": {
-   "sha256": "64ea68ae2e102d60dc4626836c7c661181c2b590e12c5d352acb06dc674cc6f3",
+   "sha256": "e0eb3ca01538355105f594f4a7421e3b8783d0799d4f60c6fe2bf93ecf62eb47",
    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=196"
   },
   "02925": {
@@ -3132,7 +3082,7 @@
    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=113"
   },
   "21836": {
-   "sha256": "995e4d40a6f44583938d2936dc2a7befe08599edf323ae5f5b303380e81b4a6c",
+   "sha256": "47059ce6ac3c69f5e771f0f0faa76a420d8d43eaaedfb2606a6ccdef62c050c9",
    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=119"
   },
   "21839": {
@@ -3308,7 +3258,7 @@
    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=102"
   },
   "32948": {
-   "sha256": "99a462f7b00c4ab67e38ad902491bf1eb764ca55601ae1fb0e3893bf3ec6bd05",
+   "sha256": "d741f4665d48ec89336d59b56373a08448d5703df0b7645faa4efa780272f04e",
    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=193"
   },
   "33225": {
@@ -3588,5 +3538,5 @@
    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=185"
   }
  },
- "run": "45844759766"
+ "run": "44475507447"
 }

@@ -102,7 +102,14 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": true,
+  "course_renumbers": [
+   {
+    "printed": "PLUMBING 028",
+    "listed": "PLUMBNG28",
+    "block": "Major Electives"
+   }
+  ]
  },
  "record": {
   "program": {
@@ -345,6 +352,5 @@
    "The program table lists Plumbing certificate T021855D as 45 required + 3 elective = 48 major units (day only)."
   ]
  },
- "extracted_run": 45844759766,
- "read_run": "39054673977"
+ "extracted_run": "39054673977"
 }

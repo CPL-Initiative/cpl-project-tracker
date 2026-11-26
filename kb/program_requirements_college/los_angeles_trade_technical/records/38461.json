@@ -74,7 +74,9 @@
     19.0
    ],
    "against": "program",
-   "why": [],
+   "why": [
+    "the blocks sum to 19.0-20.0; the catalog states 19.0-19.0"
+   ],
    "meets": true,
    "rescored": "Open Asks Sheet 120 card 1"
   },
@@ -310,6 +312,5 @@
    "The page text begins mid-table on page 105; the award-title cell above 'Development T038461G' may be cut off."
   ]
  },
- "extracted_run": 45844759766,
- "read_run": "39054673977"
+ "extracted_run": "39054673977"
 }

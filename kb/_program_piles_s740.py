@@ -174,11 +174,15 @@ WITHIN_HELD = {
                                            "HAND)"),
     ("Fullerton College", "36798"): (None, "none: not the program's own page (kb/_program_piles_s720_fullerton.py "
                                            "HAND)"),
-    ("Santa Monica College", "41797"): (None, "none: held, figures_differ_fails keeps it off catalog_figures_differ "
-                                              "(kb/_program_piles_s720_smc.py)"),
+    # S720 held 41797 off catalog_figures_differ (its lists meet the printed 15 at the top) for a person or a page
+    # read. S740's review: its 14-15 sits inside the printed 13-15, the shape this kind names, and its heading
+    # shows its section its own (kb/_program_piles_s740_smc.py, s740f).
+    ("Santa Monica College", "41797"): (WITHIN, "kb/_program_piles_s740_smc.py, over s720s's hold "
+                                                "(kb/_program_piles_s720_smc.py HAND)"),
 }
 # The reviewed lists: each S740 plan's module, by its file name. A key filed there is the reviewed lists' answer.
-PLAN_MODULES = ("_program_piles_s740_gavilan", "_program_piles_s740_canyons", "_program_piles_s740_orangecoast")
+PLAN_MODULES = ("_program_piles_s740_gavilan", "_program_piles_s740_canyons", "_program_piles_s740_orangecoast",
+                "_program_piles_s740_smc")
 # Shasta 32162, held (no plan): the reason, for the handoff's Blocks.
 SHASTA_32162 = ("held: its 23-27 sits inside the printed 22-27 and units_within_printed_range is true of its figures, "
                 "but its section is not shown to be its own: its heading sits on the page before the one the read "

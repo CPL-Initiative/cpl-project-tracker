@@ -78,8 +78,9 @@
     18.0
    ],
    "against": "program",
-   "why": [],
-   "meets": true,
+   "why": [
+    "the blocks sum to 18.0-19.0; the catalog states 18.0-18.0"
+   ],
    "degree": {
     "pass": true,
     "status": "equal",
@@ -102,6 +103,7 @@
      8.0
     ]
    },
+   "meets": true,
    "rescored": "Open Asks Sheet 120 card 1"
   },
   "repeated": {
@@ -292,6 +294,5 @@
    "Course codes recorded as printed (e.g., 'ADM JUS 002' matches closed-list 'ADM JUS 2'; 'ADM JUS 075' matches 'ADMJUS075'; 'SOC 001' matches 'SOC 1')."
   ]
  },
- "extracted_run": 45844759766,
- "read_run": "39054673977"
+ "extracted_run": "39054673977"
 }

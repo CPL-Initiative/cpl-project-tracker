@@ -102,7 +102,9 @@
     47.0
    ],
    "against": "program",
-   "why": [],
+   "why": [
+    "the blocks sum to 47.0-49.0; the catalog states 47.0-47.0"
+   ],
    "meets": true,
    "rescored": "Open Asks Sheet 120 card 1"
   },
@@ -354,6 +356,5 @@
    "The Accounting Clerk Certificate of Achievement section on page 101 was not recorded."
   ]
  },
- "extracted_run": 45844759766,
- "read_run": "39054673977"
+ "extracted_run": "39054673977"
 }

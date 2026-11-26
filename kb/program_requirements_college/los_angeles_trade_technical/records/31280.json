@@ -46,38 +46,41 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 17,
+   "placed": 16,
    "listed": 25,
-   "share": 0.68,
+   "share": 0.64,
    "missing": [
     "BLDGCTQ12",
     "BLDGCTQ7",
     "BLDGCTQ9",
     "CRPNTRY111A",
     "CRPNTRY111C",
+    "PLUMBNG28",
     "REFA/C165",
     "REFAC100",
     "REFAC110"
    ],
    "unexplained": [
-    "CRPNTRY111C"
+    "CRPNTRY111C",
+    "PLUMBNG28"
    ],
    "none_placed": false,
    "pass": false
   },
   "invented": {
-   "count": 3,
+   "count": 4,
    "codes": [
     "BLDGCTQ102",
     "BLDGTCQ14",
-    "MATH115"
+    "MATH115",
+    "PLUMBING28"
    ],
    "flagged": [
     "BLDGCTQ102",
     "BLDGTCQ14",
     "MATH115"
    ],
-   "pass": true
+   "pass": false
   },
   "arithmetic": {
    "pass": true,
@@ -353,6 +356,5 @@
    "Career field 'solar energy' taken from the shared program overview ('working in the new, emerging field of solar energy'), which covers both the A.S. and certificate."
   ]
  },
- "extracted_run": 45844759766,
- "read_run": "39115770293"
+ "extracted_run": "39115770293"
 }
