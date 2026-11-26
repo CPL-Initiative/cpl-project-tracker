@@ -303,7 +303,7 @@ def check(root=ROOT):
         if d.get("with_heading") != sum(1 for r in rows if r.get("heading")):
             bad.append("%s: with_heading" % os.path.basename(path))
         for r in rows:
-            if r.get("rule") not in ("named", "caps", "fits", "section", "index", "code_address", "search_page", "none") or bool(r.get("heading")) != (r.get("rule") != "none"):
+            if r.get("rule") not in ("named", "caps", "fits", "section", "index", "code_address", "search_page", "schedule", "none") or bool(r.get("heading")) != (r.get("rule") != "none"):
                 bad.append("%s: %s rule" % (os.path.basename(path), r.get("code")))
     return bad
 

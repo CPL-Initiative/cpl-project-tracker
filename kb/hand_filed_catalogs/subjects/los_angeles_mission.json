@@ -5,31 +5,9 @@
  "source": [
   "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf"
  ],
- "subjects": 98,
- "with_heading": 69,
+ "subjects": 104,
+ "with_heading": 103,
  "rows": [
-  {
-   "code": "A S L",
-   "heading": "American Sign Language",
-   "heading_printed": "AMERICAN SIGN LANGUAGE",
-   "rule": "caps",
-   "codes": [
-    "A S L"
-   ],
-   "candidate": null,
-   "page": 91,
-   "above": [
-    "This course is designed to help students develop the skills",
-    "necessary to gain employment in healthcare industry.",
-    "AMERICAN SIGN LANGUAGE – GLOBAL LANGUAGES",
-    "AND SOCIETY"
-   ],
-   "first_course": "A S L 001 AMERICAN SIGN LANGUAGE I (CSU) – 4 UNITS",
-   "where": "catalog",
-   "method": "subject heading",
-   "found_on": "2026-11-25",
-   "found_by": "COBI, a runner read (run 44948526227)"
-  },
   {
    "code": "ACAD PR",
    "heading": "Academic Preparation",
@@ -97,10 +75,26 @@
    "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
+   "code": "AFRO AM",
+   "heading": "African American Studies",
+   "heading_printed": "African American Studies",
+   "rule": "schedule",
+   "codes": [
+    "AFRO AM"
+   ],
+   "candidate": null,
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAMC&strm=2268&subj=AFRO%20AM&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
+  },
+  {
    "code": "ALD HTH",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Allied Health",
+   "heading_printed": "Allied Health",
+   "rule": "schedule",
    "codes": [
     "ALD HTH"
    ],
@@ -112,7 +106,29 @@
     "American Heart Association. The 0.5 units may be substituted with",
     "any associate degree applicable course."
    ],
-   "first_course": "ALD HTH 035 INTRODUCTION TO MEDICAL ASSISTING I"
+   "first_course": "ALD HTH 035 INTRODUCTION TO MEDICAL ASSISTING I",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAMC&strm=2268&subj=ALD%20HTH&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
+  },
+  {
+   "code": "ANATOMY",
+   "heading": "Anatomy",
+   "heading_printed": "Anatomy",
+   "rule": "schedule",
+   "codes": [
+    "ANATOMY"
+   ],
+   "candidate": null,
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAMC&strm=2268&subj=ANATOMY&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "ANIMATN",
@@ -181,10 +197,26 @@
    "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
+   "code": "ARTH",
+   "heading": "Art History (CCN)",
+   "heading_printed": "Art History (CCN)",
+   "rule": "schedule",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAMC&strm=2268&subj=ARTH&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
+  },
+  {
    "code": "ARTHIST",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "schedule",
    "codes": [
     "ARTHIST"
    ],
@@ -196,7 +228,35 @@
     "art from Europe. The course will further consider global inter-",
     "actions involving this region."
    ],
-   "first_course": "ARTHIST 103 ART APPRECIATION I – (UC:CSU:C-ID ARTH 100) 3 UNITS"
+   "first_course": "ARTHIST 103 ART APPRECIATION I – (UC:CSU:C-ID ARTH 100) 3 UNITS",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAMC&strm=2268&subj=ARTHIST&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
+  },
+  {
+   "code": "A S L",
+   "heading": "American Sign Language",
+   "heading_printed": "AMERICAN SIGN LANGUAGE",
+   "rule": "caps",
+   "codes": [
+    "A S L"
+   ],
+   "candidate": null,
+   "page": 91,
+   "above": [
+    "This course is designed to help students develop the skills",
+    "necessary to gain employment in healthcare industry.",
+    "AMERICAN SIGN LANGUAGE – GLOBAL LANGUAGES",
+    "AND SOCIETY"
+   ],
+   "first_course": "A S L 001 AMERICAN SIGN LANGUAGE I (CSU) – 4 UNITS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "ASTRON",
@@ -350,9 +410,9 @@
   },
   {
    "code": "CH DEV",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Child Development",
+   "heading_printed": "Child Development",
+   "rule": "schedule",
    "codes": [
     "CH DEV"
    ],
@@ -364,7 +424,13 @@
     "Special Needs: 023, 044 or 055, 045, 172 (11 units)",
     "Family Child Care: 023, 060, 061, 062, 063, 172 (11 units)"
    ],
-   "first_course": "CH DEV 001 CHILD GROWTH AND DEVELOPMENT"
+   "first_course": "CH DEV 001 CHILD GROWTH AND DEVELOPMENT",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAMC&strm=2268&subj=CH%20DEV&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "CHEM",
@@ -390,9 +456,9 @@
   },
   {
    "code": "CHICANO",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Chicano Studies",
+   "heading_printed": "Chicano Studies",
+   "rule": "schedule",
    "codes": [
     "CHICANO"
    ],
@@ -404,7 +470,13 @@
     "cultural, and institutional determinants that are important to",
     "the Chicana/o/x as well as the Latina/o/x experience."
    ],
-   "first_course": "CHICANO 004 INTRODUCTION TO CHICANA/O STUDIES"
+   "first_course": "CHICANO 004 INTRODUCTION TO CHICANA/O STUDIES",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAMC&strm=2268&subj=CHICANO&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "CINEMA",
@@ -471,6 +543,22 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 44948526227)"
+  },
+  {
+   "code": "COLLEGE",
+   "heading": "College Studies",
+   "heading_printed": "College Studies",
+   "rule": "schedule",
+   "codes": [
+    "COLLEGE"
+   ],
+   "candidate": null,
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAMC&strm=2268&subj=COLLEGE&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "COMM",
@@ -627,24 +715,6 @@
    "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
-   "code": "E.S.L.",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
-   "codes": [
-    "E.S.L."
-   ],
-   "candidate": null,
-   "page": 119,
-   "above": [
-    "NOTE: E.S.L. courses at levels 003, 004, 005, and 006 are divided",
-    "into three sections: A. Writing and Grammar, B. Reading and",
-    "Vocabulary, C. Listening and Speaking. Students are highly encour -",
-    "aged to enroll in all three sections (A, B, C)."
-   ],
-   "first_course": "E.S.L. 003A COLLEGE ESL III: WRITING AND GRAMMAR – 6 UNITS"
-  },
-  {
    "code": "EARTH",
    "heading": "Earth Science",
    "heading_printed": "EARTH SCIENCE",
@@ -668,9 +738,9 @@
   },
   {
    "code": "ECON",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "schedule",
    "codes": [
     "ECON"
    ],
@@ -682,7 +752,13 @@
     "ployment, inflation, economic growth, inequality, the financial",
     "system, and monetary, fiscal, and other economic policies."
    ],
-   "first_course": "ECON 001 PRINCIPLES OF MICROECONOMICS – (UC:CSU:C-ID ECON 201)"
+   "first_course": "ECON 001 PRINCIPLES OF MICROECONOMICS – (UC:CSU:C-ID ECON 201)",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAMC&strm=2268&subj=ECON&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "EDUC",
@@ -707,13 +783,13 @@
   },
   {
    "code": "EGD TEK",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Engineering Graphics & Design",
+   "heading_printed": "Engineering Graphics & Design",
+   "rule": "schedule",
    "codes": [
     "EGD TEK"
    ],
-   "candidate": "Engineering Graphics & Design",
+   "candidate": null,
    "page": 115,
    "above": [
     "rem using instruments such as multimeter, oscilloscopes, and",
@@ -721,13 +797,19 @@
     "ENGINEERING GRAPHICS & DESIGN",
     "MATHEMATICS, COMPUTER SCIENCE, AND ENGINEERING"
    ],
-   "first_course": "EGD TEK 101 ENGINEERING GRAPHICS WITH CAD – (UC:CSU) 3 UNITS"
+   "first_course": "EGD TEK 101 ENGINEERING GRAPHICS WITH CAD – (UC:CSU) 3 UNITS",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAMC&strm=2268&subj=EGD%20TEK&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "ENG GEN",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Engineering, General",
+   "heading_printed": "Engineering, General",
+   "rule": "schedule",
    "codes": [
     "ENG GEN"
    ],
@@ -739,31 +821,19 @@
     "develop skills in planning, communication, team working,",
     "and creativity. Only basic mathematics skills are required."
    ],
-   "first_course": "ENG GEN 122 PROGRAMMING AND PROBLEM-SOLVING IN MATLAB –"
-  },
-  {
-   "code": "ENG SUP",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
-   "codes": [
-    "ENG SUP"
-   ],
-   "candidate": null,
-   "page": 116,
-   "above": [
-    "Professional Land Surveyor. In this course, students review",
-    "math topics as they apply to plane surveying. Some topics",
-    "covered in this course are filed data and image data acquisi-",
-    "tion, development of GIS maps, boundary and cadastral law."
-   ],
-   "first_course": "ENG SUP 225 BOUNDARY CONTROL FOR SURVEYORS"
+   "first_course": "ENG GEN 122 PROGRAMMING AND PROBLEM-SOLVING IN MATLAB –",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAMC&strm=2268&subj=ENG%20GEN&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "ENGL",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "English (CCN)",
+   "heading_printed": "English (CCN)",
+   "rule": "schedule",
    "codes": [
     "ENGL"
    ],
@@ -775,13 +845,19 @@
     "of language, analytical thinking, and the foundations of",
     "academic research."
    ],
-   "first_course": "ENGL C1000E ACADEMIC READING AND WRITING – (UC:CSU) 3 UNITS"
+   "first_course": "ENGL C1000E ACADEMIC READING AND WRITING – (UC:CSU) 3 UNITS",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAMC&strm=2268&subj=ENGL&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "ENGLISH",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "schedule",
    "codes": [
     "ENGLISH"
    ],
@@ -793,7 +869,37 @@
     "Writing (or C-ID ENGL 100) or similar first-year college",
     "writing course."
    ],
-   "first_course": "ENGLISH 021 ENGLISH FUNDAMENTALS – (NDA) 3 UNITS"
+   "first_course": "ENGLISH 021 ENGLISH FUNDAMENTALS – (NDA) 3 UNITS",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAMC&strm=2268&subj=ENGLISH&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
+  },
+  {
+   "code": "ENG SUP",
+   "heading": "Engineering Support",
+   "heading_printed": "Engineering Support",
+   "rule": "schedule",
+   "codes": [
+    "ENG SUP"
+   ],
+   "candidate": null,
+   "page": 116,
+   "above": [
+    "Professional Land Surveyor. In this course, students review",
+    "math topics as they apply to plane surveying. Some topics",
+    "covered in this course are filed data and image data acquisi-",
+    "tion, development of GIS maps, boundary and cadastral law."
+   ],
+   "first_course": "ENG SUP 225 BOUNDARY CONTROL FOR SURVEYORS",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAMC&strm=2268&subj=ENG%20SUP&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "ENV SCI",
@@ -816,6 +922,46 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 44948526227)"
+  },
+  {
+   "code": "E.S.L.",
+   "heading": "English as a Second Language-12",
+   "heading_printed": "English As A Second Language-12",
+   "rule": "schedule",
+   "codes": [
+    "E.S.L."
+   ],
+   "candidate": null,
+   "page": 119,
+   "above": [
+    "NOTE: E.S.L. courses at levels 003, 004, 005, and 006 are divided",
+    "into three sections: A. Writing and Grammar, B. Reading and",
+    "Vocabulary, C. Listening and Speaking. Students are highly encour -",
+    "aged to enroll in all three sections (A, B, C)."
+   ],
+   "first_course": "E.S.L. 003A COLLEGE ESL III: WRITING AND GRAMMAR – 6 UNITS",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAMC&strm=2268&subj=E.S.L.&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
+  },
+  {
+   "code": "ESLCVCS",
+   "heading": "English as a Second Language Civics",
+   "heading_printed": "English As A Second Language Civics",
+   "rule": "schedule",
+   "codes": [
+    "ESLCVCS"
+   ],
+   "candidate": null,
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAMC&strm=2268&subj=ESLCVCS&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "ESL NC",
@@ -885,13 +1031,13 @@
   },
   {
    "code": "FIRETEK",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Fire Technology",
+   "heading_printed": "Fire Technology",
+   "rule": "schedule",
    "codes": [
     "FIRETEK"
    ],
-   "candidate": "Fire Technology",
+   "candidate": null,
    "page": 123,
    "above": [
     "interviews and research to produce news content. Experiences",
@@ -899,7 +1045,13 @@
     "writing under a deadline; and the use of AP Style.",
     "FIRE TECHNOLOGY – BUSINESS AND LAW"
    ],
-   "first_course": "FIRETEK 201 FIRE PROTECTION ORGANIZATION – (CSU) 3 UNITS"
+   "first_course": "FIRETEK 201 FIRE PROTECTION ORGANIZATION – (CSU) 3 UNITS",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAMC&strm=2268&subj=FIRETEK&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "FRENCH",
@@ -1096,9 +1248,9 @@
   },
   {
    "code": "HTHTEK",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Health Information Technology",
+   "heading_printed": "Health Information Technology",
+   "rule": "schedule",
    "codes": [
     "HTHTEK"
    ],
@@ -1110,7 +1262,13 @@
     "requirements, filing and number system, medical staff organi-",
     "zation, regulatory and accrediting agencies."
    ],
-   "first_course": "HTHTEK 103 INTRODUCTION TO BASIC CODING – (CSU) 3 UNITS"
+   "first_course": "HTHTEK 103 INTRODUCTION TO BASIC CODING – (CSU) 3 UNITS",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAMC&strm=2268&subj=HTHTEK&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "HUMAN",
@@ -1136,13 +1294,13 @@
   },
   {
    "code": "IND TEK",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Industrial Technology",
+   "heading_printed": "Industrial Technology",
+   "rule": "schedule",
    "codes": [
     "IND TEK"
    ],
-   "candidate": "Industrial Technology",
+   "candidate": null,
    "page": 127,
    "above": [
     "the contribution of their work toward the development of con-",
@@ -1150,7 +1308,13 @@
     "INDUSTRIAL TECHNOLOGY – MATHEMATICS,",
     "COMPUTER SCIENCE, AND ENGINEERING"
    ],
-   "first_course": "IND TEK 103 TECHNICAL WRITING AND COMMUNICATION - (CSU)"
+   "first_course": "IND TEK 103 TECHNICAL WRITING AND COMMUNICATION - (CSU)",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAMC&strm=2268&subj=IND%20TEK&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "INTRDGN",
@@ -1374,9 +1538,9 @@
   },
   {
    "code": "MATH",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "schedule",
    "codes": [
     "MATH"
    ],
@@ -1388,7 +1552,13 @@
     "cesses to applications using data from a broad range of disci-",
     "plines. This course has embedded support."
    ],
-   "first_course": "MATH 112 PRE-ALGEBRA – (NDA) 3 UNITS"
+   "first_course": "MATH 112 PRE-ALGEBRA – (NDA) 3 UNITS",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAMC&strm=2268&subj=MATH&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "MATH NC",
@@ -1414,9 +1584,9 @@
   },
   {
    "code": "MEDIART",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Media Arts",
+   "heading_printed": "Media Arts",
+   "rule": "schedule",
    "codes": [
     "MEDIART"
    ],
@@ -1428,7 +1598,13 @@
     "media. Students will learn about ethical and legal issues",
     "regarding professional journalistic practices."
    ],
-   "first_course": "MEDIART 802 INTRODUCTION TO PODCAST – (CSU) 3 UNITS"
+   "first_course": "MEDIART 802 INTRODUCTION TO PODCAST – (CSU) 3 UNITS",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAMC&strm=2268&subj=MEDIART&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "MGMT",
@@ -1476,9 +1652,9 @@
   },
   {
    "code": "MULTIMD",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Multimedia",
+   "heading_printed": "Multimedia",
+   "rule": "schedule",
    "codes": [
     "MULTIMD"
    ],
@@ -1490,7 +1666,13 @@
     "digitally manipulate graphic images and text with Adobe",
     "Photoshop and Illustrator."
    ],
-   "first_course": "MULTIMD 110 VISUAL COMMUNICATION – (CSU) 3 UNITS"
+   "first_course": "MULTIMD 110 VISUAL COMMUNICATION – (CSU) 3 UNITS",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAMC&strm=2268&subj=MULTIMD&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "MUSIC",
@@ -1515,12 +1697,12 @@
    "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
-   "code": "NRS-HCA",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "code": "NRS HCA",
+   "heading": "Nursing-Health Care Ancillaries",
+   "heading_printed": "Nursing-Health Care Ancillaries",
+   "rule": "schedule",
    "codes": [
-    "NRS-HCA"
+    "NRS HCA"
    ],
    "candidate": null,
    "page": 145,
@@ -1530,13 +1712,19 @@
     "students will be eligible to take the California’s Nurse",
     "Assistant Certification Examination."
    ],
-   "first_course": "NRS-HCA 399A NURSE ASSISTANT TRAINING PROGRAM"
+   "first_course": "NRS-HCA 399A NURSE ASSISTANT TRAINING PROGRAM",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAMC&strm=2268&subj=NRS-HCA&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "NURSING",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Nursing",
+   "heading_printed": "Nursing",
+   "rule": "schedule",
    "codes": [
     "NURSING"
    ],
@@ -1548,7 +1736,13 @@
     "to safety, emotional support, communication, and client",
     "teaching are integrated throughout the course."
    ],
-   "first_course": "NURSING 095 INTERMEDIATE VOCATIONAL NURSING"
+   "first_course": "NURSING 095 INTERMEDIATE VOCATIONAL NURSING",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAMC&strm=2268&subj=NURSING&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "NUTRTN",
@@ -1615,6 +1809,22 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 44948526227)"
+  },
+  {
+   "code": "PALEGAL",
+   "heading": "Paralegal",
+   "heading_printed": "Paralegal",
+   "rule": "schedule",
+   "codes": [
+    "PALEGAL"
+   ],
+   "candidate": null,
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAMC&strm=2268&subj=PALEGAL&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "PARENT",
@@ -1684,13 +1894,13 @@
   },
   {
    "code": "PHRMCTK",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Pharmacy Technician",
+   "heading_printed": "Pharmacy Technician",
+   "rule": "schedule",
    "codes": [
     "PHRMCTK"
    ],
-   "candidate": "Pharmacy Technician",
+   "candidate": null,
    "page": 147,
    "above": [
     "reviewed. Personal parenting goals will be developed and appro-",
@@ -1698,31 +1908,19 @@
     "stressors and community resources and support will be explored.",
     "PHARMACY TECHNICIAN – LIFE SCIENCES"
    ],
-   "first_course": "PHRMCTK 021 RETAIL PRODUCTS FOR PHARMACY CLERKS"
-  },
-  {
-   "code": "PHYS SC",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
-   "codes": [
-    "PHYS SC"
-   ],
-   "candidate": "Physical Education",
-   "page": 149,
-   "above": [
-    "ions and understanding of photographs are an essential part",
-    "of this class.",
-    "PHYSICAL EDUCATION – SEE KINESIOLOGY",
-    "PHYSICAL SCIENCE – PHYSICAL SCIENCES"
-   ],
-   "first_course": "PHYS SC 001 PHYSICAL SCIENCE I – (UC:CSU) 3 UNITS"
+   "first_course": "PHRMCTK 021 RETAIL PRODUCTS FOR PHARMACY CLERKS",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAMC&strm=2268&subj=PHRMCTK&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "PHYSICS",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "schedule",
    "codes": [
     "PHYSICS"
    ],
@@ -1734,7 +1932,13 @@
     "Technology), Pre-medical, Pre-dental, Pre-optometry, Pre-",
     "pharmacy, and Geology majors."
    ],
-   "first_course": "PHYSICS 037 PHYSICS FOR ENGINEERS AND SCIENTISTS I"
+   "first_course": "PHYSICS 037 PHYSICS FOR ENGINEERS AND SCIENTISTS I",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAMC&strm=2268&subj=PHYSICS&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "PHYSIOL",
@@ -1759,14 +1963,57 @@
    "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
+   "code": "PHYS SC",
+   "heading": "Physical Science",
+   "heading_printed": "Physical Science",
+   "rule": "schedule",
+   "codes": [
+    "PHYS SC"
+   ],
+   "candidate": null,
+   "page": 149,
+   "above": [
+    "ions and understanding of photographs are an essential part",
+    "of this class.",
+    "PHYSICAL EDUCATION – SEE KINESIOLOGY",
+    "PHYSICAL SCIENCE – PHYSICAL SCIENCES"
+   ],
+   "first_course": "PHYS SC 001 PHYSICAL SCIENCE I – (UC:CSU) 3 UNITS",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAMC&strm=2268&subj=PHYS%20SC&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science (CCN)",
+   "heading_printed": "Political Science (CCN)",
+   "rule": "schedule",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "page": 150,
+   "above": [],
+   "first_course": "POLS C1000 AMERICAN GOVERNMENT AND POLITICS",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAMC&strm=2268&subj=POLS&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
+  },
+  {
    "code": "POL SCI",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "schedule",
    "codes": [
     "POL SCI"
    ],
-   "candidate": "Pol Sci to Pols C",
+   "candidate": null,
    "page": 150,
    "above": [
     "POLITICAL SCIENCE – SOCIAL SCIENCES",
@@ -1774,20 +2021,13 @@
     "POL SCI to POLS C",
     "Old Course New Course Title"
    ],
-   "first_course": "POL SCI 001 POLS C1000 American Government and Politics"
-  },
-  {
-   "code": "POLS",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
-   "codes": [
-    "POLS"
-   ],
-   "candidate": null,
-   "page": 150,
-   "above": [],
-   "first_course": "POLS C1000 AMERICAN GOVERNMENT AND POLITICS"
+   "first_course": "POL SCI 001 POLS C1000 American Government and Politics",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAMC&strm=2268&subj=POL%20SCI&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "PROFBKG",
@@ -1852,9 +2092,9 @@
   },
   {
    "code": "PUBSERV",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Public Service",
+   "heading_printed": "Public Service",
+   "rule": "schedule",
    "codes": [
     "PUBSERV"
    ],
@@ -1866,7 +2106,13 @@
     "policies and procedures for personnel who have completed",
     "basic police academy training."
    ],
-   "first_course": "PUBSERV 150 CUSTODIAL HEALTH ISSUES - 0.5 UNITS"
+   "first_course": "PUBSERV 150 CUSTODIAL HEALTH ISSUES - 0.5 UNITS",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAMC&strm=2268&subj=PUBSERV&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "REAL ES",
@@ -1936,9 +2182,9 @@
   },
   {
    "code": "STAT",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "schedule",
    "codes": [
     "STAT"
    ],
@@ -1950,17 +2196,23 @@
     "the statistical findings. Students apply methods and processes",
     "to applications using data from a broad range of disciplines."
    ],
-   "first_course": "STAT C1000E INTRODUCTION TO STATISTICS – (UC:CSU) 4 UNITS"
+   "first_course": "STAT C1000E INTRODUCTION TO STATISTICS – (UC:CSU) 4 UNITS",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAMC&strm=2268&subj=STAT&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "TECTHTR",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Technical Stage Production",
+   "heading_printed": "Technical Stage Production",
+   "rule": "schedule",
    "codes": [
     "TECTHTR"
    ],
-   "candidate": "Technical Stage Production",
+   "candidate": null,
    "page": 156,
    "above": [
     "156",
@@ -1968,7 +2220,13 @@
     "TECHNICAL STAGE PRODUCTION",
     "ARTS, MEDIA, AND PERFORMANCE"
    ],
-   "first_course": "TECTHTR 342 TECHNICAL STAGE PRODUCTION – (UC:CSU)"
+   "first_course": "TECTHTR 342 TECHNICAL STAGE PRODUCTION – (UC:CSU)",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAMC&strm=2268&subj=TECTHTR&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "THEATER",
@@ -1994,13 +2252,13 @@
   },
   {
    "code": "TUTOR",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Supervised Learning Assistance",
+   "heading_printed": "Supervised Learning Assistance",
+   "rule": "schedule",
    "codes": [
     "TUTOR"
    ],
-   "candidate": "See Mathematics",
+   "candidate": null,
    "page": 155,
    "above": [
     "(formerly MATH 227S Statistics with Support)",
@@ -2008,7 +2266,13 @@
     "SUPERVISED LEARNING ASSISTANCE",
     "LEARNING CENTER"
    ],
-   "first_course": "TUTOR 001T SUPERVISED LEARNING – 0 UNITS"
+   "first_course": "TUTOR 001T SUPERVISED LEARNING – 0 UNITS",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAMC&strm=2268&subj=TUTOR&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "VOC ED",

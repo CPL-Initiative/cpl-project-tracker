@@ -160,6 +160,17 @@ FORMS_JS = """() => Array.from(document.forms).slice(0, 5).map(f => ({
       .map(o => o.value + '=' + (o.text || '').trim().slice(0, 40)) : null}))}))"""
 
 
+# Every <select> on a page, whole (S736): a class schedule search lists each subject code beside its title in one
+# dropdown (LACCD's PeopleSoft guest search, "ACCTG - Accounting"), and FORMS_JS's caps (5 forms, 60 fields, 160
+# options of 40 characters) cut a PeopleSoft page's list short. A page with "selects": true prints each select's id,
+# name and every option, value and words.
+SELECTS_CAP = 800
+SELECTS_JS = """(cap) => Array.from(document.querySelectorAll('select')).slice(0, 40).map(e => ({
+  id: e.id || '', name: e.name || '', label: ((e.labels && e.labels[0] && e.labels[0].textContent) || '').trim().slice(0, 80),
+  options: Array.from(e.options).slice(0, cap).map(o => [o.value, (o.text || '').trim().slice(0, 120)]),
+  total: e.options.length}))"""
+
+
 # A plan's page may submit one of its forms (read 4: Schedule+ lists a term's
 # sections for the departments ticked on its form). The spec names the form by
 # the end of its action, the fields to set (each name maps to the values that
@@ -167,6 +178,18 @@ FORMS_JS = """() => Array.from(document.forms).slice(0, 5).map(f => ({
 # optionally a pattern for the submit button's name or words. Fields it does not
 # name keep the page's defaults. The reader prints what it sent.
 SUBMIT_PREP_JS = """(spec) => {
+  document.querySelectorAll('[data-cpl-read]').forEach(x => x.removeAttribute('data-cpl-read'));
+  if (spec.link) {
+    // A PeopleSoft page acts by links that run its own submit (javascript:submitAction_win0): the spec names the
+    // link by its words, and the reader clicks it as a person would.
+    const rx = new RegExp(spec.link);
+    const a = Array.from(document.querySelectorAll('a')).find(x => rx.test((x.textContent || '').trim()));
+    if (!a) return {error: 'no link whose words match ' + spec.link};
+    a.setAttribute('data-cpl-read', 'link');
+    const f = a.closest('form') || document.forms[0];
+    return {action: f ? f.action : location.href, method: f ? (f.method || 'get').toUpperCase() : 'GET', sent: [],
+            button: 'link ' + (a.id || '') + '=' + (a.textContent || '').trim().slice(0, 60), buttons: []};
+  }
   const f = Array.from(document.forms).find(x => !spec.action ||
     (x.getAttribute('action') || '').endsWith(spec.action) || x.action.endsWith(spec.action));
   if (!f) return {error: 'no form whose action ends with ' + spec.action};
@@ -191,6 +214,8 @@ SUBMIT_PREP_JS = """(spec) => {
 }"""
 
 SUBMIT_GO_JS = """() => {
+  const a = document.querySelector('a[data-cpl-read=link]');
+  if (a) { a.click(); return; }
   const f = document.querySelector('form[data-cpl-read=form]');
   const b = document.querySelector('[data-cpl-read=button]');
   if (b && f.requestSubmit) f.requestSubmit(b); else HTMLFormElement.prototype.submit.call(f);
@@ -615,7 +640,8 @@ def cq_view_read(reader, url: str, catalog: int, errors: list) -> dict:
 
 def read_one(reader, url: str, pattern: re.Pattern, cache: dict, expand: bool = False,
              rows: str | None = None, network: bool = False, network_hosts: tuple = (),
-             network_find: tuple = (), capture_view: bool = False, cq_catalog: int = 0) -> dict:
+             network_find: tuple = (), capture_view: bool = False, cq_catalog: int = 0,
+             selects: bool = False) -> dict:
     """One page through the census's Reader (or the pilot's PDF reader), with
     its text, its links and the excerpts around the plan's keywords."""
     from _program_requirements_pilot import read_pdf, pdfminer_pages
@@ -665,6 +691,8 @@ def read_one(reader, url: str, pattern: re.Pattern, cache: dict, expand: bool = 
                     if hidden:
                         out["text"] += "\n[collapsed sections, read by textContent]\n" + hidden
                 out["forms"] = reader.page.evaluate(FORMS_JS)
+                if selects:
+                    out["selects"] = reader.page.evaluate(SELECTS_JS, SELECTS_CAP)
             except Exception as exc:
                 out["error"] = str(exc).splitlines()[0][:200]
             out["kind"] = "html"
@@ -737,6 +765,12 @@ def print_page(n: int, rec: dict, pattern: re.Pattern, plan: dict | None = None)
             print("  %s [%s]%s%s" % (e.get("name"), e.get("type"),
                   (" value=" + e["value"]) if e.get("value") and not opts else "",
                   (" options: " + " | ".join(opts)) if opts else ""))
+    for e in rec.get("selects") or []:
+        print("--- select id=%s name=%s label=%s (%d options%s) ---" % (
+            e.get("id"), e.get("name"), e.get("label") or "-", e.get("total") or 0,
+            ", the first %d printed" % SELECTS_CAP if (e.get("total") or 0) > SELECTS_CAP else ""))
+        for v, t in e.get("options") or []:
+            print("  %s = %s" % (v, t))
     sub = rec.get("submitted")
     if sub and sub.get("action"):
         print("--- form submitted: %s %s ---" % (sub.get("method"), sub.get("action")))
@@ -880,7 +914,8 @@ def main(argv: list[str] | None = None) -> int:
                                    network_hosts=tuple(h.lower() for h in target.get("network_hosts") or ()),
                                    network_find=tuple(target.get("network_find") or ()),
                                    capture_view=bool(target.get("capture_view")) and not parent,
-                                   cq_catalog=int(target.get("cq_catalog") or 0) if target.get("cq_view") and not parent else 0)
+                                   cq_catalog=int(target.get("cq_catalog") or 0) if target.get("cq_view") and not parent else 0,
+                                   selects=bool(target.get("selects")) and not parent)
                 rec["answers"] = target.get("answers") or []
                 if parent:
                     rec["from"] = parent
@@ -909,6 +944,15 @@ def main(argv: list[str] | None = None) -> int:
                     sub["answers"], sub["from"] = rec["answers"], n
                     records.append(sub)
                     print_page(len(records), sub, pattern, plan)
+                    # "then" (S736): further submits or link clicks on the page the last one reached, in order, so a
+                    # lookup that opens on one action and pages by letter (LACCD's subject list, A to Z) reads whole.
+                    for nxt in spec.get("then") or []:
+                        if sub.get("access") != "ok":
+                            break
+                        sub = finish(submit_form(reader, nxt), pattern)
+                        sub["answers"], sub["from"] = rec["answers"], n
+                        records.append(sub)
+                        print_page(len(records), sub, pattern, plan)
     finally:
         browser.close()
         pw.stop()

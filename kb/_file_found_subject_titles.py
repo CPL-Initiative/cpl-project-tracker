@@ -13,6 +13,9 @@ RULES.
   - A find with no title, or one that only repeats its code, is not filed; nor is a code the find prints under two
     different headings, which is left for a person.
   - A heading is saved in Title Case (subject_title_case), with the catalog's own spelling in `heading_printed`.
+  - A find may name its row's rule (S736): "schedule" for a title a college's class schedule search prints
+    (kb/_laccd_schedule_subjects.py), so the Subjects build names its source and never reads it as the catalog's index;
+    its title is filed even when it spells its code (ART, Art), since the lookup prints the two apart.
   - `--backfill` adds where, method, found_on and found_by to the rows filed before S730, from the file's own run and
     rule, and changes nothing else.
 
@@ -96,7 +99,9 @@ def file_doc(slug, d, dry):
             continue
         code, printed = str(t.get("code") or "").strip(), str(t.get("title") or "").strip()
         k = code_key(code)
-        if not k or not printed or code_key(printed) == k:
+        # A class schedule's lookup prints the code and its title in two columns (S736), so its ART titled Art is a
+        # title; a catalog heading that only repeats its code is not.
+        if not k or not printed or (code_key(printed) == k and t.get("rule") != "schedule"):
             skipped += 1
             continue
         old = have.get(k)
@@ -106,7 +111,7 @@ def file_doc(slug, d, dry):
             else:
                 differ += 1
             continue
-        row = {"code": code, "heading": title_case(printed), "heading_printed": printed, "rule": "index", "codes": [code],
+        row = {"code": code, "heading": title_case(printed), "heading_printed": printed, "rule": t.get("rule") or "index", "codes": [code],
                "candidate": None, "address": t.get("url"), "where": t.get("where") or "catalog",
                "method": t.get("method") or "subject heading",
                "found_on": t.get("found_on") or (d.get("read_at") or "")[:10] or None,

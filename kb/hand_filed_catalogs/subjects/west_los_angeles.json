@@ -5,40 +5,18 @@
  "source": [
   "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf"
  ],
- "subjects": 90,
- "with_heading": 75,
+ "subjects": 94,
+ "with_heading": 94,
  "rows": [
   {
-   "code": "A S L",
-   "heading": "American Sign Language (a S L)",
-   "heading_printed": "AMERICAN SIGN LANGUAGE (A S L)",
-   "rule": "caps",
-   "codes": [
-    "A S L"
-   ],
-   "candidate": null,
-   "page": 165,
-   "above": [
-    "Medical Training program and is approved for Cooperative",
-    "Education, Work Experience, and Internships.",
-    "AMERICAN SIGN LANGUAGE",
-    "(A S L)"
-   ],
-   "first_course": "A S L 001 American Sign Language I (4) UC/CSU",
-   "where": "catalog",
-   "method": "subject heading",
-   "found_on": "2026-11-25",
-   "found_by": "COBI, a runner read (run 44948529916)"
-  },
-  {
    "code": "ACAD PR",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Academic Preparation",
+   "heading_printed": "Academic Preparation",
+   "rule": "schedule",
    "codes": [
     "ACAD PR"
    ],
-   "candidate": "Required Courses",
+   "candidate": null,
    "page": 248,
    "above": [
     "analyze quantitative aspects problems arising in",
@@ -46,17 +24,23 @@
     "Required Courses",
     "ACAD PR 015CE Data Analysis .......................... 12-36 hours"
    ],
-   "first_course": "ACAD PR 016CE Algebra .................................... 12-54 hours"
+   "first_course": "ACAD PR 016CE Algebra .................................... 12-54 hours",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=WLAC&strm=2268&subj=ACAD%20PR&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "ACCTG",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Accounting",
+   "heading_printed": "Accounting",
+   "rule": "schedule",
    "codes": [
     "ACCTG"
    ],
-   "candidate": "Credit Course Units",
+   "candidate": null,
    "page": 158,
    "above": [
     "8. “-1, -2” etc. = course that are part of a sequence of",
@@ -64,7 +48,13 @@
     "CREDIT COURSE UNITS",
     "The number in parentheses following the course title - e.g.,"
    ],
-   "first_course": "ACCTG 015 Tax Accounting (3) - indicates the credit value of"
+   "first_course": "ACCTG 015 Tax Accounting (3) - indicates the credit value of",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=WLAC&strm=2268&subj=ACCTG&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "ADDICST",
@@ -134,9 +124,9 @@
   },
   {
    "code": "AFRO AM",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "African American Studies",
+   "heading_printed": "African American Studies",
+   "rule": "schedule",
    "codes": [
     "AFRO AM"
    ],
@@ -148,13 +138,19 @@
     "the U.S. from an African American perspective. (GE Areas -",
     "Cal-GETC: 4)"
    ],
-   "first_course": "AFRO AM 019 Introduction to African American Studies"
+   "first_course": "AFRO AM 019 Introduction to African American Studies",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=WLAC&strm=2268&subj=AFRO%20AM&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "ALD HTH",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Allied Health",
+   "heading_printed": "Allied Health",
+   "rule": "schedule",
    "codes": [
     "ALD HTH"
    ],
@@ -166,7 +162,13 @@
     "Heart Association Basic Cardiovascular Life Support for the",
     "Healthcare Provider card valid for two years."
    ],
-   "first_course": "ALD HTH 033 Medical Terminology (3) CSU"
+   "first_course": "ALD HTH 033 Medical Terminology (3) CSU",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=WLAC&strm=2268&subj=ALD%20HTH&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "ANATOMY",
@@ -257,6 +259,22 @@
    "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
+   "code": "ARTH",
+   "heading": "Art History (CCN)",
+   "heading_printed": "Art History (CCN)",
+   "rule": "schedule",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=WLAC&strm=2268&subj=ARTH&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
+  },
+  {
    "code": "ASIAN",
    "heading": "Asian-American Studies (Asian)",
    "heading_printed": "ASIAN-AMERICAN STUDIES (ASIAN)",
@@ -273,6 +291,28 @@
     "(ASIAN)"
    ],
    "first_course": "ASIAN 001 Asian American History (3) UC/CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
+  },
+  {
+   "code": "A S L",
+   "heading": "American Sign Language (a S L)",
+   "heading_printed": "AMERICAN SIGN LANGUAGE (A S L)",
+   "rule": "caps",
+   "codes": [
+    "A S L"
+   ],
+   "candidate": null,
+   "page": 165,
+   "above": [
+    "Medical Training program and is approved for Cooperative",
+    "Education, Work Experience, and Internships.",
+    "AMERICAN SIGN LANGUAGE",
+    "(A S L)"
+   ],
+   "first_course": "A S L 001 American Sign Language I (4) UC/CSU",
    "where": "catalog",
    "method": "subject heading",
    "found_on": "2026-11-25",
@@ -478,9 +518,9 @@
   },
   {
    "code": "CHICANO",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Chicano Studies",
+   "heading_printed": "Chicano Studies",
+   "rule": "schedule",
    "codes": [
     "CHICANO"
    ],
@@ -492,7 +532,13 @@
     "Mexican-Americans in relationship to other groups in",
     "American society. (GE Areas – Cal-GETC: 4, 6)"
    ],
-   "first_course": "CHICANO 004 Introduction To Chicana/o Studies (3)"
+   "first_course": "CHICANO 004 Introduction To Chicana/o Studies (3)",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=WLAC&strm=2268&subj=CHICANO&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "CINEMA",
@@ -537,6 +583,22 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 44948529916)"
+  },
+  {
+   "code": "COLLEGE",
+   "heading": "College Studies",
+   "heading_printed": "College Studies",
+   "rule": "schedule",
+   "codes": [
+    "COLLEGE"
+   ],
+   "candidate": null,
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=WLAC&strm=2268&subj=COLLEGE&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "COMM",
@@ -606,9 +668,9 @@
   },
   {
    "code": "COUNSEL",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Counseling",
+   "heading_printed": "Counseling",
+   "rule": "schedule",
    "codes": [
     "COUNSEL"
    ],
@@ -620,17 +682,23 @@
     "interviewing skills, and strategies for managing a career.",
     "Students will design their own educational plan."
    ],
-   "first_course": "COUNSEL 040 College Success Seminar (3) UC/CSU"
+   "first_course": "COUNSEL 040 College Success Seminar (3) UC/CSU",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=WLAC&strm=2268&subj=COUNSEL&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "CS",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "schedule",
    "codes": [
     "CS"
    ],
-   "candidate": "Computer Science",
+   "candidate": null,
    "page": 182,
    "above": [
     "administration, IT security, cloud computing (AWS, Azure,",
@@ -638,7 +706,13 @@
     "COMPUTER SCIENCE",
     "(CS)"
    ],
-   "first_course": "CS 101 Introduction to Computer Science (3) UC/CSU"
+   "first_course": "CS 101 Introduction to Computer Science (3) UC/CSU",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=WLAC&strm=2268&subj=CS&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "DANCEST",
@@ -708,9 +782,9 @@
   },
   {
    "code": "DEN HY",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Dental Hygiene",
+   "heading_printed": "Dental Hygiene",
+   "rule": "schedule",
    "codes": [
     "DEN HY"
    ],
@@ -722,7 +796,13 @@
     "be found in the “Upper Division Course Listings &",
     "Descriptions” section of this catalog."
    ],
-   "first_course": "DEN HY 090 Special Projects in Dental Hygiene (2) NDA"
+   "first_course": "DEN HY 090 Special Projects in Dental Hygiene (2) NDA",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=WLAC&strm=2268&subj=DEN%20HY&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "EARTH",
@@ -858,13 +938,13 @@
   },
   {
    "code": "ENGL",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "English (CCN)",
+   "heading_printed": "English (CCN)",
+   "rule": "schedule",
    "codes": [
     "ENGL"
    ],
-   "candidate": "English",
+   "candidate": null,
    "page": 188,
    "above": [
     "develop sketching and 2-D and 3-D CAD skills. The use of",
@@ -872,13 +952,19 @@
     "ENGLISH",
     "(ENGLISH or ENGL)"
    ],
-   "first_course": "ENGL C1000 Academic Reading and Writing (3) UC/CSU"
+   "first_course": "ENGL C1000 Academic Reading and Writing (3) UC/CSU",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=WLAC&strm=2268&subj=ENGL&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "ENGLISH",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "schedule",
    "codes": [
     "ENGLISH"
    ],
@@ -890,7 +976,13 @@
     "C1000 with two additional lab support hours for students who",
     "desire additional support (GE Areas – Cal-GETC 1A)"
    ],
-   "first_course": "ENGLISH 102 Academic Writing and Literature (3) UC/CSU"
+   "first_course": "ENGLISH 102 Academic Writing and Literature (3) UC/CSU",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=WLAC&strm=2268&subj=ENGLISH&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "ENV SCI",
@@ -915,24 +1007,6 @@
    "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
-   "code": "ESL NC",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
-   "codes": [
-    "ESL NC"
-   ],
-   "candidate": null,
-   "page": 256,
-   "above": [
-    "critical reading and interpretation/analysis. Students will be",
-    "introduced to appropriate citation and basic bibliographic",
-    "conventions in their writing. Advanced grammar skills and",
-    "mechanics are emphasized."
-   ],
-   "first_course": "ESL NC 023CE English as A Second Language - Speech I"
-  },
-  {
    "code": "ESLCVCS",
    "heading": "English as a Second Language – Civics (Eslcvcs)",
    "heading_printed": "ENGLISH AS A SECOND LANGUAGE – CIVICS (ESLCVCS)",
@@ -953,6 +1027,30 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 44948529916)"
+  },
+  {
+   "code": "ESL NC",
+   "heading": "English Second Language - NC",
+   "heading_printed": "English Second Language - NC",
+   "rule": "schedule",
+   "codes": [
+    "ESL NC"
+   ],
+   "candidate": null,
+   "page": 256,
+   "above": [
+    "critical reading and interpretation/analysis. Students will be",
+    "introduced to appropriate citation and basic bibliographic",
+    "conventions in their writing. Advanced grammar skills and",
+    "mechanics are emphasized."
+   ],
+   "first_course": "ESL NC 023CE English as A Second Language - Speech I",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=WLAC&strm=2268&subj=ESL%20NC&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "FAM & CS",
@@ -1022,9 +1120,9 @@
   },
   {
    "code": "FLM PRD",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Film Production",
+   "heading_printed": "Film Production",
+   "rule": "schedule",
    "codes": [
     "FLM PRD"
    ],
@@ -1036,7 +1134,13 @@
     "introductory course for any student pursuing a certificate of",
     "achievement in Film Production and TV Crafts."
    ],
-   "first_course": "FLM PRD 101 Production Skills (3) CSU"
+   "first_course": "FLM PRD 101 Production Skills (3) CSU",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=WLAC&strm=2268&subj=FLM%20PRD&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "FRENCH",
@@ -1194,9 +1298,9 @@
   },
   {
    "code": "HLTHOCC",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Health Occupations",
+   "heading_printed": "Health Occupations",
+   "rule": "schedule",
    "codes": [
     "HLTHOCC"
    ],
@@ -1208,7 +1312,13 @@
     "spreadsheets, accounts receivable, insurance data entry,",
     "patient demographic entry and scheduling systems."
    ],
-   "first_course": "HLTHOCC 052 Medical Office Procedures I (4)"
+   "first_course": "HLTHOCC 052 Medical Office Procedures I (4)",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=WLAC&strm=2268&subj=HLTHOCC&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "HOSPT",
@@ -1341,6 +1451,22 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 44948529916)"
+  },
+  {
+   "code": "LAW",
+   "heading": "Law",
+   "heading_printed": "Law",
+   "rule": "schedule",
+   "codes": [
+    "LAW"
+   ],
+   "candidate": null,
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=WLAC&strm=2268&subj=LAW&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "LIB SCI",
@@ -1476,9 +1602,9 @@
   },
   {
    "code": "MULTIMD",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Multimedia",
+   "heading_printed": "Multimedia",
+   "rule": "schedule",
    "codes": [
     "MULTIMD"
    ],
@@ -1490,7 +1616,13 @@
     "production, forming the basis for the study of digital arts and",
     "technologies."
    ],
-   "first_course": "MULTIMD 210 Digital Editing (3) CSU"
+   "first_course": "MULTIMD 210 Digital Editing (3) CSU",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=WLAC&strm=2268&subj=MULTIMD&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "MUSIC",
@@ -1513,6 +1645,22 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 44948529916)"
+  },
+  {
+   "code": "NRS HCA",
+   "heading": "Nursing-Health Care Ancillaries",
+   "heading_printed": "Nursing-Health Care Ancillaries",
+   "rule": "schedule",
+   "codes": [
+    "NRS HCA"
+   ],
+   "candidate": null,
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=WLAC&strm=2268&subj=NRS-HCA&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "OCEANO",
@@ -1625,28 +1773,6 @@
    "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
-   "code": "PHYS SC",
-   "heading": "Physical Science (Phys Sc)",
-   "heading_printed": "PHYSICAL SCIENCE (PHYS SC)",
-   "rule": "caps",
-   "codes": [
-    "PHYS SC"
-   ],
-   "candidate": null,
-   "page": 214,
-   "above": [
-    "CREDIT COURSE LISTINGS & DESCRIPTIONS",
-    "West Los Angeles College 2026-2027 Catalog 213",
-    "PHYSICAL SCIENCE",
-    "(PHYS SC)"
-   ],
-   "first_course": "PHYS SC 001 Physical Science I (3) UC/CSU",
-   "where": "catalog",
-   "method": "subject heading",
-   "found_on": "2026-11-25",
-   "found_by": "COBI, a runner read (run 44948529916)"
-  },
-  {
    "code": "PHYSICS",
    "heading": "Physics (Physics)",
    "heading_printed": "PHYSICS (PHYSICS)",
@@ -1691,22 +1817,22 @@
    "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
-   "code": "POL SCI",
-   "heading": "Political Science (Pol Sci/Pols)",
-   "heading_printed": "POLITICAL SCIENCE (POL SCI/POLS)",
-   "rule": "section",
+   "code": "PHYS SC",
+   "heading": "Physical Science (Phys Sc)",
+   "heading_printed": "PHYSICAL SCIENCE (PHYS SC)",
+   "rule": "caps",
    "codes": [
-    "POL SCI"
+    "PHYS SC"
    ],
    "candidate": null,
-   "page": 215,
+   "page": 214,
    "above": [
-    "constitutions, structure, and operation of governing",
-    "institutions, civil liberties and civil rights, political behaviors,",
-    "political issues, and public policy using political science theory",
-    "and methodology. (GE Areas - Cal-GETC: 4)"
+    "CREDIT COURSE LISTINGS & DESCRIPTIONS",
+    "West Los Angeles College 2026-2027 Catalog 213",
+    "PHYSICAL SCIENCE",
+    "(PHYS SC)"
    ],
-   "first_course": "POL SCI 002 Introduction to Comparative Politics (3)",
+   "first_course": "PHYS SC 001 Physical Science I (3) UC/CSU",
    "where": "catalog",
    "method": "subject heading",
    "found_on": "2026-11-25",
@@ -1729,6 +1855,28 @@
     "(POL SCI/POLS)"
    ],
    "first_course": "POLS C1000 American Government and Politics (3)",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
+  },
+  {
+   "code": "POL SCI",
+   "heading": "Political Science (Pol Sci/Pols)",
+   "heading_printed": "POLITICAL SCIENCE (POL SCI/POLS)",
+   "rule": "section",
+   "codes": [
+    "POL SCI"
+   ],
+   "candidate": null,
+   "page": 215,
+   "above": [
+    "constitutions, structure, and operation of governing",
+    "institutions, civil liberties and civil rights, political behaviors,",
+    "political issues, and public policy using political science theory",
+    "and methodology. (GE Areas - Cal-GETC: 4)"
+   ],
+   "first_course": "POL SCI 002 Introduction to Comparative Politics (3)",
    "where": "catalog",
    "method": "subject heading",
    "found_on": "2026-11-25",
@@ -1912,13 +2060,13 @@
   },
   {
    "code": "VOC ED",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Vocational Education",
+   "heading_printed": "Vocational Education",
+   "rule": "schedule",
    "codes": [
     "VOC ED"
    ],
-   "candidate": "Required Courses",
+   "candidate": null,
    "page": 239,
    "above": [
     "3. Perform basic and supervisory level job functions in",
@@ -1926,7 +2074,13 @@
     "Required Courses",
     "VOC ED 243CE Front Desk Representative ..... 9-18 hours"
    ],
-   "first_course": "VOC ED 249CE Reservationist Skills Training .. 9-18 hours"
+   "first_course": "VOC ED 249CE Reservationist Skills Training .. 9-18 hours",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=WLAC&strm=2268&subj=VOC%20ED&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   }
  ],
  "code_address_tried": [

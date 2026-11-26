@@ -1,0 +1,34 @@
+{
+ "_readme": "LACCD class schedule search, probe 2 (S736). Probe 1 (run 45867183517) found no subject dropdown: the search takes the subject as text beside a 'select subject' lookup, and Sam's address (subj=OLD ADL, catalogid=029CE, Campus=LAPC) opens the results, which print 'Course Subject: Older Adults'. This probe asks: does a subject alone (no course number) open results, with or without a campus; what a code with no section prints; whether the 'select subject' lookup lists every subject in one page; and whether a class's detail page (one extra load) prints the course description. Reads only; no model call.",
+ "college": "Los Angeles Pierce College",
+ "questions": {
+  "subjects": "The subject title the results print for a code.",
+  "lookup": "Whether the select subject lookup lists every code with its title.",
+  "descriptions": "Whether a class's detail prints the course description."
+ },
+ "keywords": [
+  "Course Subject:",
+  "[Dd]escription",
+  "no results"
+ ],
+ "pages": [
+  {
+   "url": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?strm=2268&subj=OLD%20ADL&",
+   "answers": ["subjects"]
+  },
+  {
+   "url": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAVC&strm=2268&subj=CH%20DEV&",
+   "answers": ["subjects", "descriptions"],
+   "submit": {"action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL", "set": {"ICAction": ["MTG_CLASS_NBR$0"]}}
+  },
+  {
+   "url": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAPC&strm=2268&subj=ANTRHO&",
+   "answers": ["subjects"]
+  },
+  {
+   "url": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAPC&strm=2268",
+   "answers": ["lookup"],
+   "submit": {"action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL", "set": {"ICAction": ["CLASS_SRCH_WRK2_SSR_PB_SUBJ_SRCH$0"]}}
+  }
+ ]
+}

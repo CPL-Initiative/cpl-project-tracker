@@ -1,0 +1,308 @@
+{
+ "_readme": "LACCD class schedule search, the subject list (S736, Sam's ruling r-schedule-tool-first-for-subject-titles-sam-2026-11-26). Probe 2 (run 45868075237) found the search's 'select subject' lookup lists the district's subjects by first letter, each code beside its title (A S L, American Sign Language). This read opens the lookup from Pierce's search for term 2268 (A) and posts each other letter and digit in turn (the form's ICAction SSR_CLSRCH_WRK2_SSR_ALPHANUM_<letter>; read 1, run 45868547282, found a click on the letter runs in place, with no page load the reader waits on). One district subject table serves all nine colleges (the lookup is the district's, Institution LACCD). kb/_laccd_schedule_subjects.py parses the log into kb/subject_title_hunt/found/<slug>.json for each college, a code filed only where the college holds it. Reads only; no model call.",
+ "college": "Los Angeles Pierce College",
+ "questions": {
+  "subjects": "Every subject code the district's class search lists, with its title."
+ },
+ "keywords": [
+  "Select a Subject"
+ ],
+ "pages": [
+  {
+   "url": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAPC&strm=2268",
+   "answers": [
+    "subjects"
+   ],
+   "submit": {
+    "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+    "set": {
+     "ICAction": [
+      "CLASS_SRCH_WRK2_SSR_PB_SUBJ_SRCH$0"
+     ]
+    },
+    "then": [
+     {
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_B"
+       ]
+      }
+     },
+     {
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_C"
+       ]
+      }
+     },
+     {
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_D"
+       ]
+      }
+     },
+     {
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_E"
+       ]
+      }
+     },
+     {
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_F"
+       ]
+      }
+     },
+     {
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_G"
+       ]
+      }
+     },
+     {
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_H"
+       ]
+      }
+     },
+     {
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_I"
+       ]
+      }
+     },
+     {
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_J"
+       ]
+      }
+     },
+     {
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_K"
+       ]
+      }
+     },
+     {
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_L"
+       ]
+      }
+     },
+     {
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_M"
+       ]
+      }
+     },
+     {
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_N"
+       ]
+      }
+     },
+     {
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_O"
+       ]
+      }
+     },
+     {
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_P"
+       ]
+      }
+     },
+     {
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_Q"
+       ]
+      }
+     },
+     {
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_R"
+       ]
+      }
+     },
+     {
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_S"
+       ]
+      }
+     },
+     {
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_T"
+       ]
+      }
+     },
+     {
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_U"
+       ]
+      }
+     },
+     {
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_V"
+       ]
+      }
+     },
+     {
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_W"
+       ]
+      }
+     },
+     {
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_X"
+       ]
+      }
+     },
+     {
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_Y"
+       ]
+      }
+     },
+     {
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_Z"
+       ]
+      }
+     },
+     {
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_0"
+       ]
+      }
+     },
+     {
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_1"
+       ]
+      }
+     },
+     {
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_2"
+       ]
+      }
+     },
+     {
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_3"
+       ]
+      }
+     },
+     {
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_4"
+       ]
+      }
+     },
+     {
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_5"
+       ]
+      }
+     },
+     {
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_6"
+       ]
+      }
+     },
+     {
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_7"
+       ]
+      }
+     },
+     {
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_8"
+       ]
+      }
+     },
+     {
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_9"
+       ]
+      }
+     }
+    ]
+   }
+  }
+ ]
+}
