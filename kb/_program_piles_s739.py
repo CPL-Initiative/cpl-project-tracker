@@ -15,7 +15,11 @@ record changed. A Pile below carries what every such plan shares, in S731's shap
 
   KEYS      the earlier plan's holds, by key (its receipt's held list), never a census read.
   PASSED    a record today's scorer passes under one named reading (short_high, meets), rescored where the rescore is
-            exact (the S714 rescore's guard).
+            exact (the S714 rescore's guard); or a record whose arithmetic already passes and whose coverage and
+            invented fail only on a code the page prints otherwise than the state's file lists it (a misprint, a
+            subject printed otherwise), named by the record's own note: the filed score is rescored with those
+            renames alone (P.rescore_common_numbers, S721's rename at Porterville). The rename stays in the plan:
+            the entry names each printed code and the listed course it is.
   REVIEWED  a hand reading of the record's own notes: the gap's kind, the filed figures it was read against, the note's
             words, and the kind's own check. The check is either a reading (ops: the record re-added with the one
             change its note names, which must give the printed total at both ends under today's scorer) or a shape (a
@@ -402,7 +406,22 @@ def shape_block_over(filed: dict, e: dict) -> bool:
         and abs((comp[0] - st[0]) - (fig[0] - e["one"])) <= NG.FIG_EPS
 
 
-SHAPES = {"total_cut": shape_total_cut, "option_names": shape_option_names, "double_count": shape_double_count,
+def shape_note_quotes(filed: dict, e: dict) -> bool:
+    """noted_figures_differ, where no reading closes the record: the entry's note quotes both figures as the page
+    and the reader give them (e["quotes"]: the printed total's words and the sum's words), and those figures are the
+    filed arithmetic's stated total and computed sum."""
+    a = (filed.get("score") or {}).get("arithmetic") or {}
+    note = next((n for n in notes(filed) if e["words"] in n), "")
+
+    def figures(text):
+        nums = [float(x) for x in re.findall(r"\d+(?:\.\d+)?", text)]
+        return [nums[0], nums[-1]] if nums else None
+    q = e["quotes"]
+    return q["stated"] in note and q["computed"] in note and same(figures(q["stated"]), a.get("stated")) \
+        and same(figures(q["computed"]), a.get("computed")) and not same(a.get("stated"), a.get("computed"))
+
+
+SHAPES = {"note_quotes": shape_note_quotes, "total_cut": shape_total_cut, "option_names": shape_option_names, "double_count": shape_double_count,
           "block_over": shape_block_over, "open": shape_open, "depends": shape_depends, "heading_gone": shape_heading_gone, "cut": shape_cut,
           "no_total": shape_no_total, "option_lists": shape_option_lists}
 
@@ -564,6 +583,8 @@ class Pile:
         e = self.passed.get(str(filed.get("control_number")))
         if not e or filed.get("college") != self.college:
             return None
+        if e.get("renames"):
+            return self.renamed_score(filed, skip)
         words = next((n for n in notes(filed) if e["words"] in n), None)
         if not words or not self.on_live_run(filed, skip):
             return None
@@ -576,6 +597,38 @@ class Pile:
         sc["arithmetic"] = now
         sc["pass"] = C._overall(sc)
         return (sc, words) if S.passes_live(sc) else None
+
+    def renamed_score(self, filed: dict, skip: tuple = ()) -> tuple[dict, str] | None:
+        """(the filed score rescored with the entry's renames, the note's words) where the entry stands: the note
+        still says so, the record still prints each code, each listed course is on the state's list and missing in
+        the filed score, no printed code is on the state's list, the rescore renames exactly the entry's codes and
+        is exact, and the rescored score passes as the live table counts it."""
+        cn = str(filed.get("control_number"))
+        e = self.passed.get(cn)
+        if not e or not e.get("renames") or filed.get("college") != self.college:
+            return None
+        table = {S.norm_code(k): S.norm_code(v) for k, v in e["renames"].items()}
+        words = self.words(filed, e)
+        if not words or not set(table) <= codes(filed) or not self.on_live_run(filed, skip):
+            return None
+        sc = filed.get("score") or {}
+        want = set(table.items())
+        got = {(S.norm_code(r.get("printed")), S.norm_code(r.get("listed"))) for r in sc.get("course_renumbers") or []}
+        if got == want:
+            # The plan's own rescore, as filed: it stands where the filed score still passes.
+            return (sc, words) if S.passes_live(sc) else None
+        if S.passes_live(sc) or (sc.get("arithmetic") or {}).get("status") != "equal":
+            return None
+        listed = {S.norm_code(c.get("code")) for c in C.closed_list(self.college, cn)}
+        missing = {S.norm_code(k) for k in (sc.get("coverage") or {}).get("missing") or []}
+        if not set(table.values()) <= listed & missing or set(table) & listed:
+            return None
+        rn = P.rescore_common_numbers(filed, name_of=lambda code: table.get(S.norm_code(code)), key="course_renumbers")
+        if not rn or not rn["exact"] or not S.passes_live(rn["score"]):
+            return None
+        if {(S.norm_code(r["printed"]), S.norm_code(r["listed"])) for r in rn["renamed"]} != want:
+            return None
+        return rn["score"], words
 
     # ── a named gap ──
     def words(self, filed: dict, e: dict) -> str | None:
@@ -658,9 +711,14 @@ class Pile:
         if self.own(filed, e) is None:
             return "the page is shared and nothing shows the record's own section"
         found = {S.norm_code(x) for x in s.get("codes_found") or []}
-        if any(S.norm_code(c) not in found for c in e.get("courses") or []):
+        raw = [str(c.get("code") or "") for c in C.closed_list(self.college, cn)]
+        listed = {S.norm_code(c) for c in raw}
+        # A code the state's file stores with no space (MUSIC189): the capture's matcher does not find it on a page
+        # that prints MUSIC-189, so such a course stands on the record's own placing of it (Canyons 41576, where the
+        # capture finds every spaced code of the list and none of the unspaced ones).
+        unspaced = {S.norm_code(c) for c in raw if not re.search(r"[\s-]", c.strip())} & codes(filed)
+        if any(S.norm_code(c) not in found | unspaced for c in e.get("courses") or []):
             return "a named course not found"
-        listed = {S.norm_code(c.get("code")) for c in C.closed_list(self.college, cn)}
         if any(S.norm_code(c) in found | listed for c in e.get("outside") or []):
             return "a course the printed total leaves out is on the state's list"
         return "stands"
@@ -742,6 +800,26 @@ class Pile:
             f = self.load(cn)
             if f is None:
                 continue
+            if cn in self.passed and self.passed[cn].get("renames") and self.passing_score(f):
+                e = self.passed[cn]
+                tally("the note's words gone", self.passing_score(no_words(copy.deepcopy(f), e)) is None, cn)
+                g = copy.deepcopy(f)
+                table = {S.norm_code(k): v for k, v in e["renames"].items()}
+                for b in g["record"].get("blocks") or []:
+                    for c in b.get("courses") or []:
+                        for x in [c] + [a for a in c.get("alternatives") or [] if isinstance(a, dict)]:
+                            if S.norm_code(x.get("code")) in table:
+                                x["code"] = table[S.norm_code(x.get("code"))]
+                tally("the printed code absent", self.passing_score(g) is None, cn)
+                g = copy.deepcopy(f)
+                g["score"]["arithmetic"] = dict(g["score"]["arithmetic"], status="unequal", **{"pass": False})
+                g["score"].pop("course_renumbers", None)
+                tally("the arithmetic failing", self.passing_score(g) is None or S.passes_live(f["score"]), cn)
+                if self.shared_with(cn):
+                    g = copy.deepcopy(f)
+                    g["record"]["program"]["section_heading"] = "another heading"
+                    tally("its own section not shown", self.own(g, e) is None, cn)
+                continue
             if cn in self.passed and self.passing_score(f):
                 e = self.passed[cn]
                 tally("the note's words gone", self.passing_score(no_words(copy.deepcopy(f), e)) is None, cn)
@@ -820,6 +898,8 @@ class Pile:
                 for c in b.get("courses") or []:
                     if S.norm_code(c.get("code")) in {S.norm_code(x) for x in e["double_courses"]}:
                         c["units"] = 0
+        elif sh == "note_quotes":
+            g["score"]["arithmetic"]["computed"] = [x + 1 for x in g["score"]["arithmetic"]["computed"]]
         elif sh == "block_over":
             for b in rec["blocks"]:
                 if b.get("name") == e["over"]:
@@ -872,7 +952,9 @@ class Pile:
             if e.get("today"):
                 row["read_against"] = "today's arithmetic (the filed one is an older scorer's and stays as filed)"
             if gap == PASSES:
-                row["reading"] = self.passed[cn]["reading"]
+                row["reading"] = "renames" if self.passed[cn].get("renames") else self.passed[cn]["reading"]
+                if self.passed[cn].get("renames"):
+                    row["renamed"] = self.passed[cn]["renames"]
             if write:
                 row["before_image"] = {k: img[k] for k in ("program_title", "award", "catalog_year", "source_url",
                                                            "measure", "total_min", "total_max", "record", "checks",

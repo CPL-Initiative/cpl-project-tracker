@@ -46,31 +46,27 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 28,
+   "placed": 29,
    "listed": 32,
-   "share": 0.875,
+   "share": 0.906,
    "missing": [
     "ARCHT100",
     "ARCHT110",
-    "ARCHT84",
-    "WWE186ID"
+    "ARCHT84"
    ],
-   "unexplained": [
-    "WWE186ID"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "ID101B",
-    "WE186ID"
+    "ID101B"
    ],
    "flagged": [
     "ID101B"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -111,7 +107,14 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true,
+  "course_renumbers": [
+   {
+    "printed": "WE-186ID",
+    "listed": "WWE186ID",
+    "block": "Plus six units from the following that have not already been taken above"
+   }
+  ]
  },
  "record": {
   "program": {

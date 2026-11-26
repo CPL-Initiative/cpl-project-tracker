@@ -129,7 +129,13 @@ def run(W, *, rows: dict, held: dict, scores: dict, day: str, boundaries: int, p
               "%s: the load posts the receipt's after-image" % r["control_number"])
         check((img["checks"].get("gaps") or []) == want, "%s: the image carries its gap, or none" % r["control_number"])
         check(img["record"] == r["before_image"]["record"], "%s: the record is unchanged" % r["control_number"])
-        check(r["before_image"]["checks"].get("coverage") is True and r["before_image"]["checks"].get("invented") is True
-              and not r["before_image"]["checks"].get("gaps"), "%s: the row was collectable and carried no gap"
-              % r["control_number"])
+        bc, ac = r["before_image"]["checks"], r["after_image"]["checks"]
+        if r["moves_to"] == B.PASSES:
+            check(not B.F.row_passes(bc) and B.F.row_passes(ac) and not bc.get("gaps") and not ac.get("gaps"),
+                  "%s: the row did not pass, and its after-image passes with no gap" % r["control_number"])
+        else:
+            check(bc.get("coverage") is True and bc.get("invented") is True and not bc.get("gaps"),
+                  "%s: the row was collectable and carried no gap" % r["control_number"])
+            check({k: v for k, v in ac.items() if k not in ("gaps", "confidence")} == bc,
+                  "%s: the after-image adds the gap and its scores and moves nothing else" % r["control_number"])
     return t

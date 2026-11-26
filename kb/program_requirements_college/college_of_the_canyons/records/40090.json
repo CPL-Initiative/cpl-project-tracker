@@ -46,28 +46,20 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 59,
+   "placed": 61,
    "listed": 61,
-   "share": 0.967,
-   "missing": [
-    "ANTHRO105",
-    "PSYCH104"
-   ],
-   "unexplained": [
-    "ANTHRO105",
-    "PSYCH104"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 6,
+   "count": 4,
    "codes": [
-    "ATNHRO105",
     "ENVRMT101",
     "GEOLOGY111",
     "OCEAN119",
-    "PSCYH104",
     "SOCI250"
    ],
    "flagged": [
@@ -76,7 +68,7 @@
     "OCEAN119",
     "SOCI250"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -114,7 +106,19 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true,
+  "course_renumbers": [
+   {
+    "printed": "PSCYH-104",
+    "listed": "PSYCH104",
+    "block": "Programs Requirements"
+   },
+   {
+    "printed": "ATNHRO-105",
+    "listed": "ANTHRO105",
+    "block": "Anthropology and Archeology Focus"
+   }
+  ]
  },
  "record": {
   "program": {

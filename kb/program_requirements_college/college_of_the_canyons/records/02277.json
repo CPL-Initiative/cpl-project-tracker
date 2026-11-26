@@ -107,7 +107,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "unit_line_not_read",
+    "label": "The catalog prints a requirement as a line of units with no course named, and the record leaves the line out; with it the courses add to the printed total.",
+    "words": "Non-transfer path: MATH-211 (5 units) AND 'Nine additional units from the above CMPSCI courses that have not already been taken.' The 9 units are not recorded as a separate block; the block lists only MATH-211, with its printed 14-unit total. 'Above CMPSCI courses' presumably means the CMPSCI courses in the six-unit elective list (CMPSCI-132, 190, 192, 222, 236), but this is ambiguous."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

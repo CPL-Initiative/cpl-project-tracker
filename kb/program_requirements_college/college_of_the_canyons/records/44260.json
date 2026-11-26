@@ -46,31 +46,27 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 40,
+   "placed": 41,
    "listed": 42,
-   "share": 0.952,
+   "share": 0.976,
    "missing": [
-    "ARCHT100",
-    "WEARCH486"
+    "ARCHT100"
    ],
-   "unexplained": [
-    "WEARCH486"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 2,
    "codes": [
     "CONST105",
-    "CONST106",
-    "WE486ARCH"
+    "CONST106"
    ],
    "flagged": [
     "CONST105",
     "CONST106"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -108,7 +104,14 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true,
+  "course_renumbers": [
+   {
+    "printed": "WE-486ARCH",
+    "listed": "WEARCH486",
+    "block": "Plus a total of 3 units of upper division work experience"
+   }
+  ]
  },
  "record": {
   "program": {
