@@ -1,0 +1,21 @@
+{
+ "_readme": "S739 wave B, the gap census's Next wave (census of 2026-11-26 06:54Z, run 45771011713; levers reader_page_assignment and paid_read): 1 noncredit program of San Diego College of Continuing Education whose own section prints other courses than the state's file lists (college-page-read run 45782471633, PDF p.66). The college's other program on the lever, Visual and Vector Design 38411, is pinned in its reconcile entry (kb/program_requirements_reconcile.json, pdf_pages) and read from its own section. Filed as named gaps and never sent to a paid read. Each filed record stays as filed (the load skips a record that places none of its listed courses). No model call, no Supabase write. Each is the college's to settle in COCI or its catalog.",
+ "college": "San Diego College of Continuing Education",
+ "written": "2026-11-26T08:48:35Z",
+ "capture": "45784241940",
+ "page_reads": [
+  "45782471633"
+ ],
+ "reasons": {
+  "catalog_list_differs": "The 2026-27 catalog prints the program's own section and course list, and the list names none of the state's listed courses: the Program Course File's list and the catalog's differ, so a read of the section places none of them."
+ },
+ "programs": [
+  {
+   "control_number": "40532",
+   "title": "Intermediate Low Prevocational ESL",
+   "award": "Noncredit program",
+   "reason": "catalog_list_differs",
+   "note": "Its own section, 'Certificate of Competency: Intermediate Low Prevocational ESL' (PDF p.66), prints 'ESLA 428A Int Low Prevocational 1' and 'ESLA 428B Int Low Prevocational 2'. The state's file lists ESLA 427A and ESLA 427B; the catalog prints ESLA 427A in the section before it, Intermediate High Prevocational ESL ('ESLA 427A Int High Prevocational 1', 'ESLA 428B Int High Prevocational 2'). The filed record (run 44739577102) read this section and recorded ESLA 428A and 428B, so it places neither listed course."
+  }
+ ]
+}

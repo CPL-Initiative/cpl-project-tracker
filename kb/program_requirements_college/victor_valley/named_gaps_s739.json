@@ -1,0 +1,21 @@
+{
+ "_readme": "S739 wave B, the gap census's Next wave (census of 2026-11-26 06:54Z, run 45771011713; levers reader_page_assignment and paid_read): 1 degree of Victor Valley College whose own page prints its course list as a range of course numbers (college-page-read run 45782471633, degrees-certificates/criminal-justice/criminal-justice-as/). Filed as named gaps and never sent to a paid read. Each filed record stays as filed (the load skips a record that places none of its listed courses). No model call, no Supabase write. Each is the college's to settle in COCI or its catalog.",
+ "college": "Victor Valley College",
+ "written": "2026-11-26T08:48:35Z",
+ "capture": "44515659606",
+ "page_reads": [
+  "45782471633"
+ ],
+ "reasons": {
+  "list_printed_as_range": "The program's own page prints its list as a course range, and the state's file lists the range's courses one by one, so the page names fewer than half of the state's listed courses by code and the capture refuses it as the program's page."
+ },
+ "programs": [
+  {
+   "control_number": "04967",
+   "title": "Criminal Justice",
+   "award": "A.S. Degree",
+   "reason": "list_printed_as_range",
+   "note": "Its own page, 'Criminal Justice, AS', prints on its REQUIREMENTS tab 'Complete 18 units from any of the following: Criminal Justice (CJ) courses. Select courses numbered 50-299, except 138.' and 'Total Units 18', and names no course by code beyond CJ 138; the state's file lists 15 CJ courses. The capture reads it from the department page, and the filed record's own notes (run 38675237912) say the degree's requirements 'are not in the text'."
+  }
+ ]
+}

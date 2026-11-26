@@ -1,0 +1,28 @@
+{
+ "_readme": "S739 wave B (the gap census of 2026-11-26 06:54Z, run 45771011713, Next wave; lever paid_read): Riverside City College's History AA-T 33230, read from its own entry (5852/6117/5993) by run 45781329321: 36 of 36 listed courses placed and the major's 18 units equal, the degree check incomplete. The free reconcile 45781875995 held the college's Cal-GETC step on it: 'the section names another pattern: CSUGE'. This reads the entry as the capture reads it and prints every line naming a general education pattern, so a session sees what the entry says of CSUGE and which gap names it. One load. No model call, nothing written.",
+ "college": "Riverside City College",
+ "questions": {
+  "ge_words": "What the entry prints about its general education pattern (Cal-GETC, CSUGE, IGETC) and its unit figures."
+ },
+ "keywords": [
+  "[^\\n]{0,160}CSU ?GE[^\\n]{0,160}",
+  "[^\\n]{0,160}IGETC[^\\n]{0,160}",
+  "[^\\n]{0,160}Cal-?GETC[^\\n]{0,160}",
+  "[^\\n]{0,80}\\b60\\b[^\\n]{0,120}",
+  "Total[^\\n]{0,40}"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "ge_words"
+   ],
+   "why": "33230",
+   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5993",
+   "cq_view": true,
+   "cq_catalog": 124
+  }
+ ],
+ "outside_hosts": {
+  "curriqunet.com": "Riverside City College (rccd.curriqunet.com): the college's own 2026-2027 catalog, served on its catalog vendor's domain"
+ }
+}

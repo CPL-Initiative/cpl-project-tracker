@@ -1,0 +1,23 @@
+{
+ "_readme": "S739 wave B (the gap census of 2026-11-26 06:54Z, run 45771011713, Next wave; lever reader_page_assignment): Registered Dental Assisting 43938, whose filed record (run 39006337658) was read from pp.125-126, the DA course descriptions, and names no program section. This prints every page naming the program, whole, so a session sees whether the catalog prints its certificate section and on which page. One load. No model call, nothing written.",
+ "college": "Lassen College",
+ "questions": {
+  "own_page": "Whether the catalog prints the program's own section (its heading, its award, its course list and its total), where, and which course codes it prints."
+ },
+ "keywords": [
+  "Registered Dental Assisting",
+  "Dental Assisting[^\\n]{0,40}Certificate",
+  "Certificate[^\\n]{0,40}Dental Assisting"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf",
+   "why": "43938"
+  }
+ ],
+ "pdf_page_cap": 10,
+ "pdf_unfolded": true
+}

@@ -2,63 +2,23 @@
  "college": "Evergreen Valley College",
  "programs": 93,
  "with_closed_list": 92,
- "found": 88,
+ "found": 89,
  "extracted": 89,
  "errors": 0,
- "passed_machine_checks": 81,
+ "passed_machine_checks": 82,
  "failed": {
-  "coverage": 1,
+  "coverage": 0,
   "invented": 0,
-  "arithmetic": 8,
+  "arithmetic": 7,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd_run": 2.63,
+ "cost_usd_run": 0.05,
  "cost_usd_filed": 6.14,
  "cost_per_program": 0.069,
- "extract_calls": 33,
+ "extract_calls": 1,
  "extract_failed": [],
  "not_found": [
-  {
-   "control_number": "07516",
-   "title": "Engineering",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://catalog.evc.edu/degrees-certificates/engineering/biomedical-and-biological-engineering-certificate-achievement/",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText+tabs",
-    "coverage": 0.769,
-    "body": 0.0,
-    "content": 0.154,
-    "net": 10,
-    "listed": 13,
-    "why": "a candidate, lost to a program the page names more fully",
-    "error": null,
-    "chars": {
-     "body": 4424,
-     "content": 17864,
-     "tabs": 1189
-    },
-    "tab_panels": [
-     [
-      "Print Options\n(Opens Modal)",
-      234
-     ],
-     [
-      "LEARNING OUTCOMES",
-      385
-     ],
-     [
-      "REQUIRED COURSES",
-      1165
-     ]
-    ]
-   },
-   "status": "Active - Teachout Only"
-  },
   {
    "control_number": "30668",
    "title": "Building Information Modeling",
@@ -92,7 +52,7 @@
    "status": "Active"
   }
  ],
- "run": "44519542333",
+ "run": "45787017784",
  "kept_no_read": [
   {
    "control_number": "30668",
