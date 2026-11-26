@@ -49,7 +49,7 @@ log, kept whole.
 2a. **Sam's work order (2026-11-20):** collection comes first, data waves before fixes, and a fix goes ahead of the next
    wave only when it blocks it or would file wrong rows (`r-collection-first-sam-2026-11-20`). Collection serves the
    M-IDs, so its fixes are ranked by the M-ID cards they unblock (`r-collect-for-mids-work-order-sam-2026-11-20`).
-3. **Merge order at sign-off:** #3886 (`0017cd97`, the display build) has merged; the land <land PR number> (`claude/s740-land`, all five working branches as one PR off `main`): <land state at sign-off>. This checkpoint, #3885, merges at sign-off, with one update from `main` right before its merge. Open PRs at sign-off: #3885 and dependabot's #3383, which waits.
+3. **Merge order at sign-off:** #3886 (`0017cd97`, the display build) has merged; the land #3892 (`claude/s740-land`, all five working branches as one PR off `main`): <land state at sign-off>. This checkpoint, #3885, merges at sign-off, with one update from `main` right before its merge. Open PRs at sign-off: #3885 and dependabot's #3383, which waits.
 
 ## The start (13:12Z firing, 2026-11-26)
 
@@ -269,22 +269,24 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 
 ## What shipped
 
-In all: <final record count> records collected (79 at 16:30Z), no outline rows, paid reads under $2 (the conductor's
-closing figure is in the Spend line's note). Headline and census: <closing census>.
+In all: 82 records collected (32 passing by reread or load, 50 named gaps by guarded plans), no outline rows, paid
+reads about $1.28 on their meter (Copper Mountain $0.91, Santa Ana 12242 $0.11, Orange Coast $0.26; San Diego City and
+Ventura charged nothing). Headline and census: <closing census>.
 
 **Merged.**
 - **#3886 (`0017cd97`, 13:54Z), the display build `9e28519af71f`** (18,743 rows; S739's records): the gate at Glendale
   45829454750 (242 rows), then the whole build 45830104263; the 16 rows with no display now carry one, the same 32 stay at
   older builds, none without a display. The census on `main` after it, 45833723371 (14:03Z): 15,610 of 20,282 pass,
   4,082 have no passing record, 590 collected with a named gap.
-- **The land <land PR number> (`claude/s740-land`, <land merge sha>)**, all five working branches as one PR off `main`:
+- **The land #3892 (`claude/s740-land`, <land merge sha>)**, all five working branches as one PR off `main`:
   `reads`, `reconcile`, `piles`, `claude/s740-cerritos` and `claude/s740-reads-cm`.
 
 **Live (each applied or loaded before the land).**
 - Passing by reread or load: Cerritos 44984 and 20504 (reread 45837760519, receipt `1a0bd569`); Copper Mountain 41085,
   43132 and 18519 (reads 45836803063, 45842624535, 45855512160, reread 45855997214); Santa Ana 18581, 18582, 19268 and
   31980 (reconcile 45841675928); San Jose City 11 (reread 45847599186, receipt `a15c5aba`); Solano 6 and San Bernardino
-  Valley 2 (rereads at 45840125172 and 45844530701, keep-better `3b22ef61` first); Los Angeles Trade-Technical 41150.
+  Valley 2 (rereads at 45840125172 and 45844530701, keep-better `3b22ef61` first); Los Angeles Trade-Technical 41150;
+  Santa Ana 12242 (read 45842667274, load 45863040323); Orange Coast 03954 and 31217 (read 45858495107 and its reread).
 - Named gaps by guarded plans, each with a Sonnet reader's APPLY, a clean md5 pre-read and the conductor's apply, `.apply`
   restored after each: s740a Gavilan 4 (45839224932), s740b Orange Coast 1 (45839553639), s740c College of the Canyons 1
   (45839834306), s740c1 Norco 2 (45847730410), s740c2 Solano 3 (45848030080), s740d Cabrillo 7 (45849528191), s740e El
@@ -298,9 +300,9 @@ closing figure is in the Spend line's note). Headline and census: <closing censu
   `CATALOG_LINKS` entry dropped from `kb/_build_commons_data_status.py`.
 
 **Pending at the checkpoint's write (16:40Z; the conductor fills the outcome in the places marked).**
-- Santa Ana 12242's long read (run 45842667274, dispatched 14:48Z) and its load: <Santa Ana 12242 outcome>.
-- Orange Coast 03954, 08664 and 31217's paid read 45858495107 (16:24Z) and its reread: <Orange Coast outcome>.
-- The land <land PR number>: <land state at sign-off>. The closing census: <closing census>.
+- Santa Ana 12242's long read (run 45842667274, dispatched 14:48Z) and its load: read 45842667274 filed 12242 passing at 16:54Z (38.5 against the printed 38.5, $0.11); load 45863040323 inserted it alone (receipt `b6455ebe`).
+- Orange Coast 03954, 08664 and 31217's paid read 45858495107 (16:24Z) and its reread: the read filed at 17:04Z ($0.26): 03954 and 31217 pass, 08664 reads unequal; reread (receipt `ddbf12f5`) posted the three at 45858495107, all three failing and unchecked before, so 2 records collected.
+- The land #3892: <land state at sign-off>. The closing census: <closing census>.
 - The display build carrying S740's records, once no apply is in flight, and the Spend line's builders.
 
 ## Open work, from the lanes' NEXT lines
@@ -371,7 +373,7 @@ order of 2026-11-20.
 
 Memory rows: `kb/migrations/2026-11-26_s740_cpl_memory_rows.sql` (10 rows, all proposed, INSERT-only with
 `ON CONFLICT DO NOTHING`, rollback in its header), drafted by the checkpoint-docs worker, applied by the conductor
-(<memory apply run>). DECIDED lines: the harvest lane.
+(run 45865222835; 10 rows, all proposed; `.apply` restored at `ede596c4`). DECIDED lines: the harvest lane.
 
 ## Patterns that worked
 
@@ -433,9 +435,9 @@ after about $190; the repo's rates read $180.09 at 16:24Z.
 |---|---|---|
 | #3885 (`claude/awesome-fermat-sqsn0p`) | the declaration, the log and this checkpoint (draft) | merges at sign-off, after one update from `main` |
 | #3886 (`claude/s740-display`) | merged `0017cd97` (13:54Z); display build `9e28519af71f` live | none |
-| `claude/s740-reads`, `claude/s740-reads-cm`, `claude/s740-reads-sdcity` | s740r1 to s740r4 applied; Copper Mountain's reads and reread live; San Diego City's read refused at the price step | land <land PR number> (the first two); the third, nothing to land |
-| `claude/s740-reconcile`, `claude/s740-piles`, `claude/s740-cerritos` | s740a to s740j, s740c1 to s740c6 applied; Cerritos live | land <land PR number> |
-| <land PR number> (`claude/s740-land`) | all five branches as one PR off `main` | <land state at sign-off> |
+| `claude/s740-reads`, `claude/s740-reads-cm`, `claude/s740-reads-sdcity` | s740r1 to s740r4 applied; Copper Mountain's reads and reread live; San Diego City's read refused at the price step | land #3892 (the first two); the third, nothing to land |
+| `claude/s740-reconcile`, `claude/s740-piles`, `claude/s740-cerritos` | s740a to s740j, s740c1 to s740c6 applied; Cerritos live | land #3892 |
+| #3892 (`claude/s740-land`) | all five branches as one PR off `main` | <land state at sign-off> |
 | Harvest gap census on `main` | 45816008322 (12:06Z): 15,610 pass; after the display build 45833723371 (14:03Z): 15,610 pass, 4,082 without, 590 with a named gap | the closing census: <closing census> |
 | #3383 | dependabot's | waits |
 
@@ -443,7 +445,7 @@ after about $190; the repo's rates read $180.09 at 16:24Z.
 
 No PR subscription, scheduled check-in, artifact watch or COBIx watcher was opened tonight, so there is none to drop.
 Workers end with the session; each branch is pushed. The vault note for this run is
-`CPLBrain/07-session-notes/2026-11-26-s740-skyskimmer-collection.md` (<vault note state>).
+`CPLBrain/07-session-notes/2026-11-26-s740-skyskimmer-collection.md` (merged as samueltlee/CPLBrain#873, `d3547b0c`; S739's #872 merged first, `ccc1977e`, under Sam's ruling of 2026-11-21 that vault note drafts merge on their own).
 
 Spend: <Spend line>
 
