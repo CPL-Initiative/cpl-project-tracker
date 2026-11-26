@@ -1,6 +1,6 @@
 # Harvest gap census
 
-Written by `kb/_harvest_gap_census.py` (2026-11-25 15:04Z, live). Every active program without a passing record, each with one cause and one lever. Counts are a snapshot; rerun `harvest-gap-census.yml` for today's.
+Written by `kb/_harvest_gap_census.py` (2026-11-26 01:19Z, live). Every active program without a passing record, each with one cause and one lever. Counts are a snapshot; rerun `harvest-gap-census.yml` for today's.
 
 Universe 20282 · passing 15577 · without a passing record 4176.
 
