@@ -96,8 +96,18 @@
   },
   "careers": {
    "count": 9,
-   "not_verbatim": [],
-   "pass": true
+   "not_verbatim": [
+    "Registered Dental Assistant Extended Functions (R.D.A.E.F.)",
+    "Registered Dental Hygienist (RDH)",
+    "Registered Dental Hygienist Alternative Practice (RDHAP)",
+    "Dental Laboratory Technician",
+    "Dental X-Ray Technician",
+    "Dental Assisting Instructor",
+    "Dental Officer Manager",
+    "Dental Sedation Assistant (DSA)",
+    "Orthodontic Assistant"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "n/a"
@@ -278,6 +288,7 @@
    "Careers copied as printed, including 'Dental Officer Manager' (likely typo for 'Office')."
   ]
  },
- "extracted_run": "44769778910",
- "catalog_year": "2026-2027"
+ "extracted_run": 45840981324,
+ "catalog_year": "2026-2027",
+ "read_run": "44769778910"
 }

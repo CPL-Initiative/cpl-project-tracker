@@ -46,31 +46,23 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 16,
+   "placed": 18,
    "listed": 18,
-   "share": 0.889,
-   "missing": [
-    "FACILITIESMA",
-    "FACILITIESMAINTENANCETECHNOLOGY(FMT)"
-   ],
-   "unexplained": [
-    "FACILITIESMA",
-    "FACILITIESMAINTENANCETECHNOLOGY(FMT)"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 1,
    "codes": [
-    "AIRC132",
-    "FMT105",
-    "FMT123"
+    "AIRC132"
    ],
    "flagged": [
     "AIRC132"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -109,7 +101,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -328,5 +320,6 @@
    "Required courses (29.5) + one choice (2-2.5) + electives (0.5) align with the stated total of 32."
   ]
  },
- "extracted_run": "43357106423"
+ "extracted_run": 45840981324,
+ "read_run": "43357106423"
 }

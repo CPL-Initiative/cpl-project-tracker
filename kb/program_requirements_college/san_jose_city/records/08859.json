@@ -46,32 +46,27 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 11,
+   "placed": 12,
    "listed": 12,
-   "share": 0.917,
-   "missing": [
-    "SOLARRENEWAB"
-   ],
-   "unexplained": [
-    "SOLARRENEWAB"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 3,
    "codes": [
     "CNSTR116",
     "CNSTR118",
-    "CNSTR128",
-    "SOLAR102"
+    "CNSTR128"
    ],
    "flagged": [
     "CNSTR116",
     "CNSTR118",
     "CNSTR128"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
@@ -302,5 +297,6 @@
    "CNSTR 138 printed as 1-8 units."
   ]
  },
- "extracted_run": "43357106423"
+ "extracted_run": 45840981324,
+ "read_run": "43357106423"
 }
