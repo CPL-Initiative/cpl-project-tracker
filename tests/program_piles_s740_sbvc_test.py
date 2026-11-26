@@ -51,8 +51,11 @@ check = t.check
 
 with open(os.path.join(B.ROOT, "kb", "status", "harvest_gap_census.json"), encoding="utf-8") as fh:
     census = json.load(fh)
-lever = next(e for e in census["levers"] if e["lever"] == "reconcile_steps" and e["scope"] == M.COLLEGE)
-check(sorted(lever["members"]) == sorted(M.LEVER) and set(M.LEVER) == set(M.KEYS) | set(M.PASSED_BY_RECONCILE)
+# The run took its keys from the census's reconcile_steps lever. Once its piles land the census rebuilds and the
+# records it resolved leave the lever, or the lever leaves the census when none is left (S736, 2026-11-26, after #3892
+# and the census run 45870806616). So the lever may only shrink, never gain a record the run did not hold.
+lever = next((e for e in census["levers"] if e["lever"] == "reconcile_steps" and e["scope"] == M.COLLEGE), {"members": []})
+check(set(lever["members"]) <= set(M.LEVER) and set(M.LEVER) == set(M.KEYS) | set(M.PASSED_BY_RECONCILE)
       and not set(M.KEYS) & set(M.PASSED_BY_RECONCILE),
       "the lever's 15 are the two the reconcile passed and the plan's thirteen keys")
 for cn in M.PASSED_BY_RECONCILE:
