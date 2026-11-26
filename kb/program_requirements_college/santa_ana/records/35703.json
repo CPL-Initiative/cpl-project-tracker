@@ -46,30 +46,35 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 16,
+   "placed": 18,
    "listed": 18,
-   "share": 0.889,
-   "missing": [
-    "ECON120",
-    "ECON121"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON121",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECON120",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 2,
    "codes": [
     "BUS120",
-    "CMPR167",
-    "ECONC2001",
-    "ECONC2002"
+    "CMPR167"
    ],
    "flagged": [
     "BUS120",
-    "CMPR167",
-    "ECONC2001",
-    "ECONC2002"
+    "CMPR167"
    ],
    "pass": true
   },
@@ -325,5 +330,6 @@
    "No program learning outcomes are printed in the text."
   ]
  },
- "extracted_run": "38843461766"
+ "extracted_run": 45841675928,
+ "read_run": "38843461766"
 }

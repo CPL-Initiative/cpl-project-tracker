@@ -80,9 +80,7 @@
     19.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 19.0-21.0; the catalog states 19.0-19.0"
-   ],
+   "why": [],
    "meets": true,
    "rescored": "Open Asks Sheet 120 card 1"
   },
@@ -407,5 +405,6 @@
    "Careers taken from the Summary's 'career plans include helping people, e.g.' list; branches of psychology (child, clinical, counseling, etc.) named as specialization areas were not recorded as careers."
   ]
  },
- "extracted_run": "38843461766"
+ "extracted_run": 45841675928,
+ "read_run": "38843461766"
 }

@@ -46,28 +46,31 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 5,
+   "placed": 6,
    "listed": 6,
-   "share": 0.833,
-   "missing": [
-    "MATH180"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MATH180",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 5,
+   "count": 4,
    "codes": [
     "MATH180H",
-    "MATHC2210",
     "MATHC2220",
     "PHYS217",
     "PHYS227"
    ],
    "flagged": [
     "MATH180H",
-    "MATHC2210",
     "MATHC2220",
     "PHYS217",
     "PHYS227"
@@ -239,5 +242,6 @@
    "No program learning outcomes or careers are printed in the text."
   ]
  },
- "extracted_run": "38843461766"
+ "extracted_run": 45841675928,
+ "read_run": "38843461766"
 }

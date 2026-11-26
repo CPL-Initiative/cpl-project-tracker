@@ -46,31 +46,42 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 31,
+   "placed": 34,
    "listed": 35,
-   "share": 0.886,
+   "share": 0.971,
    "missing": [
-    "ECON120",
-    "ECON121",
-    "MATH145",
-    "MATH180"
+    "MATH145"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON121",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECON120",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2210",
+     "listed": "MATH180",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 9,
+   "count": 6,
    "codes": [
     "ACCT101",
     "BUS106",
     "BUS120",
     "CMPR121",
     "CMPR167",
-    "ECONC2001",
-    "ECONC2002",
-    "MATH172",
-    "MATHC2210"
+    "MATH172"
    ],
    "flagged": [
     "ACCT101",
@@ -78,28 +89,23 @@
     "BUS120",
     "CMPR121",
     "CMPR167",
-    "ECONC2001",
-    "ECONC2002",
-    "MATH172",
-    "MATHC2210"
+    "MATH172"
    ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    3.5,
-    7.5
+    18.0,
+    18.0
    ],
    "stated": [
     18.0,
     18.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 3.5-7.5; the catalog states 18.0-18.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -126,7 +132,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -156,13 +162,13 @@
   },
   "blocks": [
    {
-    "name": "Business",
+    "name": "The Area of Emphasis's lists",
     "rule": "choose_units",
-    "minimum": 2,
+    "minimum": 18,
     "option_group": null,
     "stated": {
-     "min": 2,
-     "max": 4.5
+     "min": 18,
+     "max": 18
     },
     "courses": [
      {
@@ -387,19 +393,7 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Technology",
-    "rule": "choose_units",
-    "minimum": 1.5,
-    "option_group": null,
-    "stated": {
-     "min": 1.5,
-     "max": 3
-    },
-    "courses": [
+     },
      {
       "code": "BA 179",
       "units": 3,
@@ -456,6 +450,24 @@
       "alternatives": [],
       "catalog_addition": false
      }
+    ],
+    "floors": [
+     {
+      "name": "Business",
+      "minimum": 2,
+      "stated": {
+       "min": 2,
+       "max": 4.5
+      }
+     },
+     {
+      "name": "Technology",
+      "minimum": 1.5,
+      "stated": {
+       "min": 1.5,
+       "max": 3
+      }
+     }
     ]
    }
   ],
@@ -487,5 +499,17 @@
    "No program learning outcomes or careers printed in the text."
   ]
  },
- "extracted_run": "38843461766"
+ "extracted_run": 45841675928,
+ "reconciled": [
+  {
+   "field": "blocks",
+   "was": [
+    "Business",
+    "Technology"
+   ],
+   "now": "The Area of Emphasis's lists",
+   "words": "Complete a minimum of 18 units from a single Area of Emphasis"
+  }
+ ],
+ "read_run": "38843461766"
 }

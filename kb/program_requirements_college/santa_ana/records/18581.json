@@ -46,26 +46,38 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 125,
+   "placed": 128,
    "listed": 131,
-   "share": 0.954,
+   "share": 0.977,
    "missing": [
-    "ART101",
-    "ART102",
     "CAR101",
     "CAR102",
-    "CAR150",
-    "CMST101"
+    "CAR150"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ARTHC1100",
+     "listed": "ART101",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTHC1200",
+     "listed": "ART102",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "COMMC1004",
+     "listed": "CMST101",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 19,
+   "count": 16,
    "codes": [
-    "ARTHC1100",
-    "ARTHC1200",
     "ASIA150",
     "ASL110H",
     "ASL111H",
@@ -74,7 +86,6 @@
     "BLST150",
     "CHST150",
     "CMST113",
-    "COMMC1004",
     "DM103",
     "DM104",
     "ENGLC1000E",
@@ -85,8 +96,6 @@
     "HIST118"
    ],
    "flagged": [
-    "ARTHC1100",
-    "ARTHC1200",
     "ASIA150",
     "ASL110H",
     "ASL111H",
@@ -95,7 +104,6 @@
     "BLST150",
     "CHST150",
     "CMST113",
-    "COMMC1004",
     "DM103",
     "DM104",
     "ENGLC1000E",
@@ -108,20 +116,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    9.0,
-    13.0
+    18.0,
+    18.0
    ],
    "stated": [
     18.0,
     18.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 9.0-13.0; the catalog states 18.0-18.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -148,7 +154,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -178,13 +184,13 @@
   },
   "blocks": [
    {
-    "name": "Arts: Minimum 3-4 units from this block",
+    "name": "The Area of Emphasis's lists",
     "rule": "choose_units",
-    "minimum": 3,
+    "minimum": 18,
     "option_group": null,
     "stated": {
-     "min": 3,
-     "max": 4
+     "min": 18,
+     "max": 18
     },
     "courses": [
      {
@@ -504,19 +510,7 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Humanities: Minimum 3-5 units from this block",
-    "rule": "choose_units",
-    "minimum": 3,
-    "option_group": null,
-    "stated": {
-     "min": 3,
-     "max": 5
-    },
-    "courses": [
+     },
      {
       "code": "ANTH 104",
       "units": 3,
@@ -668,27 +662,6 @@
      },
      {
       "code": "ENGL 232",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "ENGL 233A",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "ENGL 233B",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "ENGL 233C",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -891,13 +864,6 @@
       "catalog_addition": false
      },
      {
-      "code": "IDS 121",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
       "code": "IDS 200",
       "units": 3,
       "units_max": null,
@@ -914,13 +880,6 @@
      {
       "code": "ITAL 121",
       "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "JAMS 103",
-      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -1073,19 +1032,7 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Communications: Minimum 3-4 units from this block",
-    "rule": "choose_units",
-    "minimum": 3,
-    "option_group": null,
-    "stated": {
-     "min": 3,
-     "max": 4
-    },
-    "courses": [
+     },
      {
       "code": "CMST 100",
       "units": 3,
@@ -1201,19 +1148,6 @@
       "catalog_addition": false
      },
      {
-      "code": "ENGL C1003",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "ENGL C1003H",
-        "units": 4,
-        "catalog_addition": false
-       }
-      ],
-      "catalog_addition": false
-     },
-     {
       "code": "EMLS 112",
       "units": 4,
       "units_max": null,
@@ -1239,6 +1173,32 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
+     }
+    ],
+    "floors": [
+     {
+      "name": "Arts: Minimum 3-4 units from this block",
+      "minimum": 3,
+      "stated": {
+       "min": 3,
+       "max": 4
+      }
+     },
+     {
+      "name": "Humanities: Minimum 3-5 units from this block",
+      "minimum": 3,
+      "stated": {
+       "min": 3,
+       "max": 5
+      }
+     },
+     {
+      "name": "Communications: Minimum 3-4 units from this block",
+      "minimum": 3,
+      "stated": {
+       "min": 3,
+       "max": 4
+      }
      }
     ]
    }
@@ -1282,5 +1242,18 @@
    "No program learning outcomes or careers are printed in the text."
   ]
  },
- "extracted_run": "38843461766"
+ "extracted_run": 45841675928,
+ "reconciled": [
+  {
+   "field": "blocks",
+   "was": [
+    "Arts: Minimum 3-4 units from this block",
+    "Humanities: Minimum 3-5 units from this block",
+    "Communications: Minimum 3-4 units from this block"
+   ],
+   "now": "The Area of Emphasis's lists",
+   "words": "Complete a minimum of 18 units from a single Area of Emphasis"
+  }
+ ],
+ "read_run": "38843461766"
 }

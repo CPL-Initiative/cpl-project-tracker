@@ -46,28 +46,34 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 95,
+   "placed": 97,
    "listed": 98,
-   "share": 0.969,
+   "share": 0.99,
    "missing": [
-    "HIST120",
-    "HIST121",
     "JAMS102"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "HISTC1001",
+     "listed": "HIST120",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002",
+     "listed": "HIST121",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 1,
    "codes": [
-    "HISTC1001",
-    "HISTC1002",
     "JAMS105"
    ],
    "flagged": [
-    "HISTC1001",
-    "HISTC1002",
     "JAMS105"
    ],
    "pass": true
@@ -847,5 +853,6 @@
    "No program learning outcomes or careers are printed in the text."
   ]
  },
- "extracted_run": "38843461766"
+ "extracted_run": 45841675928,
+ "read_run": "38843461766"
 }

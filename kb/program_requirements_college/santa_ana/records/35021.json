@@ -46,24 +46,27 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 8,
+   "placed": 9,
    "listed": 9,
-   "share": 0.889,
-   "missing": [
-    "MATH180"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MATH180",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "MATHC2210",
     "MATHC2220"
    ],
    "flagged": [
-    "MATHC2210",
     "MATHC2220"
    ],
    "pass": true
@@ -233,5 +236,6 @@
    "Catalog text is cut off at the end ('Completion of a minimum of 18 semeste...')."
   ]
  },
- "extracted_run": "38843461766"
+ "extracted_run": 45841675928,
+ "read_run": "38843461766"
 }

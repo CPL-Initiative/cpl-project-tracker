@@ -46,31 +46,36 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 6,
+   "placed": 8,
    "listed": 8,
-   "share": 0.75,
-   "missing": [
-    "ECON120",
-    "ECON121"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON121",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECON120",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 5,
+   "count": 3,
    "codes": [
     "ACCT101",
     "BUS120",
-    "ECONC2001",
-    "ECONC2002",
     "STATC1000E"
    ],
    "flagged": [
     "ACCT101",
     "BUS120",
-    "ECONC2001",
-    "ECONC2002",
     "STATC1000E"
    ],
    "pass": true
@@ -79,7 +84,7 @@
    "pass": false,
    "status": "unequal",
    "computed": [
-    21.0,
+    22.0,
     22.5
    ],
    "stated": [
@@ -88,7 +93,30 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 21.0-22.5; the catalog states 25.0-26.5"
+    "the blocks sum to 22.0-22.5; the catalog states 25.0-26.5"
+   ],
+   "pooled": [
+    {
+     "blocks": [
+      "Requirements",
+      "Requirements (BUS 150 or MATH 145)",
+      "Requirements (Statistics)"
+     ],
+     "figure": [
+      22.0,
+      23.5
+     ],
+     "minimum": false,
+     "parts": [
+      21.0,
+      22.5
+     ],
+     "read": [
+      22.0,
+      22.5
+     ],
+     "words": "The Requirements group prints a total of 22.0-23.5 units over ACCT 101, ACCT 102, ECON C2002, ECON C2001 and the two nested 'or' groups; recorded on no single block."
+    }
    ]
   },
   "repeated": {
@@ -294,5 +322,6 @@
    "MATH 145 and BUS 101 are marked Historical in the catalog."
   ]
  },
- "extracted_run": "38843461766"
+ "extracted_run": 45841675928,
+ "read_run": "38843461766"
 }

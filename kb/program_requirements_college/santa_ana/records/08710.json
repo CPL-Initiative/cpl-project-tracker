@@ -46,31 +46,35 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 8,
+   "placed": 9,
    "listed": 10,
-   "share": 0.8,
+   "share": 0.9,
    "missing": [
-    "CDEV107",
     "ETHN150"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "CDEVC1000",
+     "listed": "CDEV107",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 5,
+   "count": 4,
    "codes": [
     "ASL113",
     "ASL210",
     "CDEV205",
-    "CDEVC1000",
     "ETHN101"
    ],
    "flagged": [
     "ASL113",
     "ASL210",
     "CDEV205",
-    "CDEVC1000",
     "ETHN101"
    ],
    "pass": true
@@ -281,5 +285,6 @@
    "ASL 113 and ASL 210 are required in the catalog but absent from the closed list."
   ]
  },
- "extracted_run": "38843461766"
+ "extracted_run": 45841675928,
+ "read_run": "38843461766"
 }

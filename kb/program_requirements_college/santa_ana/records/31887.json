@@ -46,28 +46,32 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 32,
+   "placed": 33,
    "listed": 35,
-   "share": 0.914,
+   "share": 0.943,
    "missing": [
-    "CDEV107",
     "HIST120",
     "HISTC1001H"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "CDEVC1000",
+     "listed": "CDEV107",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 3,
    "codes": [
-    "CDEVC1000",
     "HIST102",
     "HIST102H",
     "PSC115"
    ],
    "flagged": [
-    "CDEVC1000",
     "HIST102",
     "HIST102H",
     "PSC115"
@@ -78,7 +82,7 @@
    "pass": false,
    "status": "unequal",
    "computed": [
-    49.0,
+    51.0,
     52.0
    ],
    "stated": [
@@ -87,7 +91,7 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 49.0-52.0; the catalog states 52.0-52.0"
+    "the blocks sum to 51.0-52.0; the catalog states 52.0-52.0"
    ]
   },
   "repeated": {
@@ -439,5 +443,6 @@
    "CDEV C1000, HIST 102, HIST 102H and PSC 115 appear in the catalog but not in the closed list, so they are marked as catalog additions."
   ]
  },
- "extracted_run": "38843461766"
+ "extracted_run": 45841675928,
+ "read_run": "38843461766"
 }

@@ -46,36 +46,45 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 52,
+   "placed": 57,
    "listed": 57,
-   "share": 0.912,
-   "missing": [
-    "ART101",
-    "ART102",
-    "CDEV107",
-    "HIST120",
-    "HIST121"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ARTHC1100",
+     "listed": "ART101",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTHC1200",
+     "listed": "ART102",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEVC1000",
+     "listed": "CDEV107",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001",
+     "listed": "HIST120",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002",
+     "listed": "HIST121",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 5,
-   "codes": [
-    "ARTHC1100",
-    "ARTHC1200",
-    "CDEVC1000",
-    "HISTC1001",
-    "HISTC1002"
-   ],
-   "flagged": [
-    "ARTHC1100",
-    "ARTHC1200",
-    "CDEVC1000",
-    "HISTC1001",
-    "HISTC1002"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -551,5 +560,6 @@
    "Learning outcomes are printed under 'Learning Outcome(s):' for this degree."
   ]
  },
- "extracted_run": "38843461766"
+ "extracted_run": 45841675928,
+ "read_run": "38843461766"
 }

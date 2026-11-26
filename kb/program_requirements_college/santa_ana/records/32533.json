@@ -46,27 +46,31 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 40,
+   "placed": 41,
    "listed": 43,
-   "share": 0.93,
+   "share": 0.953,
    "missing": [
-    "CMST101",
     "ETHN150",
     "ETHN150H"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "COMMC1004",
+     "listed": "CMST101",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 2,
    "codes": [
-    "COMMC1004",
     "ETHN101",
     "ETHN101H"
    ],
    "flagged": [
-    "COMMC1004",
     "ETHN101",
     "ETHN101H"
    ],
@@ -487,5 +491,6 @@
    "Several courses are marked '( Historical )' in the catalog for 2026-2027, including SPAN 101, SPAN 202H, and most of the substitution list; reviewer may check currency."
   ]
  },
- "extracted_run": "38843461766"
+ "extracted_run": 45841675928,
+ "read_run": "38843461766"
 }

@@ -22,28 +22,36 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 250,
+   "placed": 252,
    "listed": 254,
-   "share": 0.984,
+   "share": 0.992,
    "missing": [
-    "CDEV107",
-    "CMST101",
     "DNCE109B",
     "DNCE140A"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "CDEVC1000",
+     "listed": "CDEV107",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "COMMC1004",
+     "listed": "CMST101",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 19,
+   "count": 17,
    "codes": [
     "APCD107",
     "BIOL259",
     "BIOL275",
-    "CDEVC1000",
     "CMST113",
-    "COMMC1004",
     "DNCE107B",
     "DNCE107C",
     "DNCE107D",
@@ -62,9 +70,7 @@
     "APCD107",
     "BIOL259",
     "BIOL275",
-    "CDEVC1000",
     "CMST113",
-    "COMMC1004",
     "DNCE107B",
     "DNCE107C",
     "DNCE107D",
@@ -82,20 +88,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    15.0,
-    15.0
+    18.0,
+    18.0
    ],
    "stated": [
     18.0,
     18.0
    ],
    "against": "program",
-   "why": [
-    "'e. Additional units to be selected from a, b, or c above for a total of 18 units' chooses units but names no minimum"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -122,7 +126,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -152,13 +156,13 @@
   },
   "blocks": [
    {
-    "name": "a. Kinesiology and Movement (minimum 3 units)",
+    "name": "The Area of Emphasis's lists",
     "rule": "choose_units",
-    "minimum": 3,
+    "minimum": 18,
     "option_group": null,
     "stated": {
-     "min": 3,
-     "max": 3
+     "min": 18,
+     "max": 18
     },
     "courses": [
      {
@@ -319,19 +323,7 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "b. Scientific and Nutrition Foundation (minimum 3 units)",
-    "rule": "choose_units",
-    "minimum": 3,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
+     },
      {
       "code": "ANTH 101",
       "units": 3,
@@ -608,19 +600,7 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "c. Behavioral Development, Communication, and Diversity (Minimum 3 units)",
-    "rule": "choose_units",
-    "minimum": 3,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
+     },
      {
       "code": "APCD 107",
       "units": 3,
@@ -948,29 +928,10 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "d. Physical Activity (6 units selected from at least three different areas)",
-    "rule": "choose_units",
-    "minimum": 6,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
+     },
      {
       "code": "DNCE 009A",
       "units": 0.5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "DNCE 102",
-      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -2074,18 +2035,49 @@
       "alternatives": [],
       "catalog_addition": false
      }
+    ],
+    "floors": [
+     {
+      "name": "a. Kinesiology and Movement (minimum 3 units)",
+      "minimum": 3,
+      "stated": {
+       "min": 3,
+       "max": 3
+      }
+     },
+     {
+      "name": "b. Scientific and Nutrition Foundation (minimum 3 units)",
+      "minimum": 3,
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "c. Behavioral Development, Communication, and Diversity (Minimum 3 units)",
+      "minimum": 3,
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "d. Physical Activity (6 units selected from at least three different areas)",
+      "minimum": 6,
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "e. Additional units to be selected from a, b, or c above for a total of 18 units",
+      "minimum": null,
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     }
     ]
-   },
-   {
-    "name": "e. Additional units to be selected from a, b, or c above for a total of 18 units",
-    "rule": "choose_units",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": []
    }
   ],
   "course_outcomes": [],
@@ -2130,5 +2122,20 @@
    "Read in 2 parts, because one reply could not hold the whole record."
   ]
  },
- "extracted_run": "38843461766"
+ "extracted_run": 45841675928,
+ "reconciled": [
+  {
+   "field": "blocks",
+   "was": [
+    "a. Kinesiology and Movement (minimum 3 units)",
+    "b. Scientific and Nutrition Foundation (minimum 3 units)",
+    "c. Behavioral Development, Communication, and Diversity (Minimum 3 units)",
+    "d. Physical Activity (6 units selected from at least three different areas)",
+    "e. Additional units to be selected from a, b, or c above for a total of 18 units"
+   ],
+   "now": "The Area of Emphasis's lists",
+   "words": "Complete a minimum of 18 units from a single Area of Emphasis"
+  }
+ ],
+ "read_run": "38843461766"
 }

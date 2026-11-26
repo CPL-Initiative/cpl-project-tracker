@@ -46,41 +46,52 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 98,
+   "placed": 103,
    "listed": 103,
-   "share": 0.951,
-   "missing": [
-    "CDEV107",
-    "ECON120",
-    "ECON121",
-    "HIST120",
-    "HIST121"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "CDEVC1000",
+     "listed": "CDEV107",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON121",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECON120",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001",
+     "listed": "HIST120",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002",
+     "listed": "HIST121",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 8,
+   "count": 3,
    "codes": [
-    "CDEVC1000",
     "CMST150",
     "COMMC1004",
-    "COMMC1004H",
-    "ECONC2001",
-    "ECONC2002",
-    "HISTC1001",
-    "HISTC1002"
+    "COMMC1004H"
    ],
    "flagged": [
-    "CDEVC1000",
     "CMST150",
     "COMMC1004",
-    "COMMC1004H",
-    "ECONC2001",
-    "ECONC2002",
-    "HISTC1001",
-    "HISTC1002"
+    "COMMC1004H"
    ],
    "pass": true
   },
@@ -922,5 +933,6 @@
    "Several listed courses are marked Historical (e.g., ANTH 104H, ENGL 104H, CMPR 100, CJ 101/101H, NUTR 120, HIST 146, HIST 150, HIST C1001/C1002 and honors, PSYC 219, 260, 270)."
   ]
  },
- "extracted_run": "38843461766"
+ "extracted_run": 45841675928,
+ "read_run": "38843461766"
 }

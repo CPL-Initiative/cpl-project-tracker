@@ -46,19 +46,28 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 15,
+   "placed": 17,
    "listed": 17,
-   "share": 0.882,
-   "missing": [
-    "MATH180",
-    "MATH185"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MATH180",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2220",
+     "listed": "MATH185",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 9,
+   "count": 7,
    "codes": [
     "CMPR121",
     "ENGR114",
@@ -66,9 +75,7 @@
     "ENGR131",
     "ENGR133",
     "ENGR158",
-    "ENGR184",
-    "MATHC2210",
-    "MATHC2220"
+    "ENGR184"
    ],
    "flagged": [
     "CMPR121",
@@ -77,9 +84,7 @@
     "ENGR131",
     "ENGR133",
     "ENGR158",
-    "ENGR184",
-    "MATHC2210",
-    "MATHC2220"
+    "ENGR184"
    ],
    "pass": true
   },
@@ -378,5 +383,6 @@
    "No general education pattern or degree total printed on the page."
   ]
  },
- "extracted_run": "38843461766"
+ "extracted_run": 45841675928,
+ "read_run": "38843461766"
 }
