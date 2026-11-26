@@ -442,6 +442,26 @@
     try { localStorage.setItem(RETURN_KEY, JSON.stringify({ tab: tab, at: Date.now() })); } catch (e) { /* ignore */ }
     try { sessionStorage.setItem(RETURN_KEY, tab); } catch (e) { /* ignore */ }
   }
+  /* The return address the link itself carries (Sam, 2026-11-26, on his phone: the magic link "takes me to COBI
+   * dashboard and no way to navigate to the tool"). The link opens in whatever browser the mail app picks, and a
+   * private tab or another browser shares no storage with the tab that asked for it, so the stash above is never seen
+   * there. sendLink puts the address in the link as ?cpl_return=, and the callback reads it when no stash answers. */
+  var RETURN_PARAM = "cpl_return";
+  var RETURN_OK = /^[A-Za-z0-9][A-Za-z0-9_\-\/.%]{0,199}$/;
+  function returnAddress(tab) { var a = tab ? viewOf(String(tab)) : ""; return RETURN_OK.test(a) ? a : ""; }
+  function paramReturn() {
+    try {
+      var m = String(location.search || "").match(new RegExp("[?&]" + RETURN_PARAM + "=([^&]*)"));
+      var v = m ? decodeURIComponent(m[1]) : "";
+      return RETURN_OK.test(v) ? v : null;
+    } catch (e) { return null; }
+  }
+  function searchWithoutReturn() {
+    var q = String(location.search || "").replace(/^\?/, "").split("&").filter(function (kv) {
+      return kv && kv.indexOf(RETURN_PARAM + "=") !== 0;
+    }).join("&");
+    return q ? "?" + q : "";
+  }
   function takeReturnTab() {
     var out = null;
     try {
@@ -503,8 +523,8 @@
       exp: Date.now() + (parseInt(p.expires_in || "3600", 10) * 1000)
     };
     write(s);
-    returnedTo = takeReturnTab();
-    try { history.replaceState(null, "", location.pathname + location.search + (returnedTo ? "#" + returnedTo : "")); }
+    returnedTo = takeReturnTab() || paramReturn();
+    try { history.replaceState(null, "", location.pathname + searchWithoutReturn() + (returnedTo ? "#" + returnedTo : "")); }
     catch (e) { /* no history API — the session is kept all the same */ }
     announce(s);
     return true;
@@ -556,6 +576,7 @@
     signOut: function () { drop(); announce(null); },
     stashReturnTab: stashReturnTab,
     takeReturnTab: takeReturnTab,
+    returnAddress: returnAddress,
     // The tab a magic link brought this page back to, or null (read, never taken).
     returnedTo: function () { return returnedTo; },
     viewAddress: viewAddress,
