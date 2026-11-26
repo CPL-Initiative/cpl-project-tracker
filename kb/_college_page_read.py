@@ -178,6 +178,18 @@ SELECTS_JS = """(cap) => Array.from(document.querySelectorAll('select')).slice(0
 # optionally a pattern for the submit button's name or words. Fields it does not
 # name keep the page's defaults. The reader prints what it sent.
 SUBMIT_PREP_JS = """(spec) => {
+  document.querySelectorAll('[data-cpl-read]').forEach(x => x.removeAttribute('data-cpl-read'));
+  if (spec.link) {
+    // A PeopleSoft page acts by links that run its own submit (javascript:submitAction_win0): the spec names the
+    // link by its words, and the reader clicks it as a person would.
+    const rx = new RegExp(spec.link);
+    const a = Array.from(document.querySelectorAll('a')).find(x => rx.test((x.textContent || '').trim()));
+    if (!a) return {error: 'no link whose words match ' + spec.link};
+    a.setAttribute('data-cpl-read', 'link');
+    const f = a.closest('form') || document.forms[0];
+    return {action: f ? f.action : location.href, method: f ? (f.method || 'get').toUpperCase() : 'GET', sent: [],
+            button: 'link ' + (a.id || '') + '=' + (a.textContent || '').trim().slice(0, 60), buttons: []};
+  }
   const f = Array.from(document.forms).find(x => !spec.action ||
     (x.getAttribute('action') || '').endsWith(spec.action) || x.action.endsWith(spec.action));
   if (!f) return {error: 'no form whose action ends with ' + spec.action};
@@ -202,6 +214,8 @@ SUBMIT_PREP_JS = """(spec) => {
 }"""
 
 SUBMIT_GO_JS = """() => {
+  const a = document.querySelector('a[data-cpl-read=link]');
+  if (a) { a.click(); return; }
   const f = document.querySelector('form[data-cpl-read=form]');
   const b = document.querySelector('[data-cpl-read=button]');
   if (b && f.requestSubmit) f.requestSubmit(b); else HTMLFormElement.prototype.submit.call(f);
@@ -930,6 +944,15 @@ def main(argv: list[str] | None = None) -> int:
                     sub["answers"], sub["from"] = rec["answers"], n
                     records.append(sub)
                     print_page(len(records), sub, pattern, plan)
+                    # "then" (S736): further submits or link clicks on the page the last one reached, in order, so a
+                    # lookup that opens on one action and pages by letter (LACCD's subject list, A to Z) reads whole.
+                    for nxt in spec.get("then") or []:
+                        if sub.get("access") != "ok":
+                            break
+                        sub = finish(submit_form(reader, nxt), pattern)
+                        sub["answers"], sub["from"] = rec["answers"], n
+                        records.append(sub)
+                        print_page(len(records), sub, pattern, plan)
     finally:
         browser.close()
         pw.stop()

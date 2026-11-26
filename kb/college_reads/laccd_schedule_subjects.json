@@ -1,0 +1,133 @@
+{
+ "_readme": "LACCD class schedule search, the subject list (S736, Sam's ruling r-schedule-tool-first-for-subject-titles-sam-2026-11-26). Probe 2 (run 45868075237) found the search's 'select subject' lookup lists the district's subjects by first letter, each code beside its title (A S L, American Sign Language). This read opens the lookup from Pierce's search for term 2268 (A) and clicks each other letter and digit in turn. One district subject table serves all nine colleges (the lookup is the district's, Institution LACCD). kb/_laccd_schedule_subjects.py parses the log into kb/subject_title_hunt/found/<slug>.json for each college, a code filed only where the college holds it. Reads only; no model call.",
+ "college": "Los Angeles Pierce College",
+ "questions": {
+  "subjects": "Every subject code the district's class search lists, with its title."
+ },
+ "keywords": [
+  "Select a Subject"
+ ],
+ "pages": [
+  {
+   "url": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAPC&strm=2268",
+   "answers": [
+    "subjects"
+   ],
+   "submit": {
+    "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+    "set": {
+     "ICAction": [
+      "CLASS_SRCH_WRK2_SSR_PB_SUBJ_SRCH$0"
+     ]
+    },
+    "then": [
+     {
+      "link": "^B$"
+     },
+     {
+      "link": "^C$"
+     },
+     {
+      "link": "^D$"
+     },
+     {
+      "link": "^E$"
+     },
+     {
+      "link": "^F$"
+     },
+     {
+      "link": "^G$"
+     },
+     {
+      "link": "^H$"
+     },
+     {
+      "link": "^I$"
+     },
+     {
+      "link": "^J$"
+     },
+     {
+      "link": "^K$"
+     },
+     {
+      "link": "^L$"
+     },
+     {
+      "link": "^M$"
+     },
+     {
+      "link": "^N$"
+     },
+     {
+      "link": "^O$"
+     },
+     {
+      "link": "^P$"
+     },
+     {
+      "link": "^Q$"
+     },
+     {
+      "link": "^R$"
+     },
+     {
+      "link": "^S$"
+     },
+     {
+      "link": "^T$"
+     },
+     {
+      "link": "^U$"
+     },
+     {
+      "link": "^V$"
+     },
+     {
+      "link": "^W$"
+     },
+     {
+      "link": "^X$"
+     },
+     {
+      "link": "^Y$"
+     },
+     {
+      "link": "^Z$"
+     },
+     {
+      "link": "^0$"
+     },
+     {
+      "link": "^1$"
+     },
+     {
+      "link": "^2$"
+     },
+     {
+      "link": "^3$"
+     },
+     {
+      "link": "^4$"
+     },
+     {
+      "link": "^5$"
+     },
+     {
+      "link": "^6$"
+     },
+     {
+      "link": "^7$"
+     },
+     {
+      "link": "^8$"
+     },
+     {
+      "link": "^9$"
+     }
+    ]
+   }
+  }
+ ]
+}
