@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-26_s739n_prreq_piles_apply.sql
-name=s739n_prreq_piles_apply
+file=kb/migrations/2026-11-26_s739j_41373_rollback.sql
+name=s739j_41373_rollback
