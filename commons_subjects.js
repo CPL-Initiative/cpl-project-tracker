@@ -159,6 +159,15 @@
   var SRC_PICKS = [["needed", "Titles needed", function (r) { return !r.catalog_on_file; }],
     ["titled", "Titled", function (r) { return r.catalog_on_file; }], ["all", "All", function () { return true; }]];
   var SRCS = { pick: "needed" };
+  /* The lightning round (S737; Sam, 2026-11-26: "a lightning round way to rifle through these and clear the deck"):
+     #commons/subjects/rapid shows one code with no title at a time, untitledNow's rows from every college, the most
+     confident guess first. Accept saves the field's text with the same kb_curation row the row's Accept writes; Skip
+     and Back move without a save. The guesses are read from kb/status/subject_title_guesses.json when the view opens;
+     without the file, or without a guess for a code, the field starts from the recommender's top candidate. Each code
+     shows one example course (Sam, 2026-11-26). The position and the count saved last the visit and are never stored
+     (Sam, 2026-10-21). */
+  var RAPID = "rapid", GUESS_FILE = "kb/status/subject_title_guesses.json";
+  var RAPIDS = { i: 0, done: 0, said: "" };
   /* The MQ view (S719; Sam, 2026-11-23, r-mq-view-more-than-codes-sam-2026-11-23: "we may need an mq view that
      integrates our subj codes and decisions to we can troubleshoot anything moving forward"): every discipline in the
      20th-edition Minimum Qualifications handbook, read from kb/status/mq_view.json (kb/_mq_view.py) when the view opens.
@@ -1164,6 +1173,116 @@
       return r.json();
     }).then(null, function (e) { srcCache = null; throw e; });
     return srcCache;
+  }
+  /* ── The lightning round (RAPID, above) ── */
+  var guessCache = null;
+  function loadGuesses() {
+    guessCache = guessCache || fetch(GUESS_FILE, { cache: "no-cache" }).then(function (r) {
+      if (!r || !r.ok) throw new Error(GUESS_FILE + " answered " + (r ? r.status : "nothing"));
+      return r.json();
+    }).then(null, function (e) { guessCache = null; throw e; });
+    return guessCache;
+  }
+  function guessIndex(f) {
+    var by = {};
+    ((f || {}).rows || []).forEach(function (g) { if (g && g.slug && g.code) by[g.slug + "|" + g.code] = g; });
+    return by;
+  }
+  /* One code's starting title: the guess file's, else the recommender's top candidate, else nothing. */
+  function rapidGuess(r) {
+    var g = (VIEW.G || {})[r.slug + "|" + r.code];
+    /* source_url and source_says: the college's own catalog page and the words it prints for the code (S737). */
+    if (g && g.guess) return { title: g.guess, confidence: g.confidence, why: g.why || "", courses: g.courses || [],
+      sourceUrl: /^https?:\/\//i.test(String(g.source_url || "")) ? g.source_url : "", sourceSays: g.source_says || "" };
+    var rec = recOf(r), top = candidatesOf(rec.title)[0];
+    if (top && top.title) return { title: top.title, confidence: top.confidence, why: top.why || (rec.title && rec.title.why) || "", courses: (g && g.courses) || [] };
+    return { title: "", confidence: null, why: "", courses: (g && g.courses) || [] };
+  }
+  /* The queue, recomputed at every draw so a saved code leaves it at once: most confident first, then college, then code. */
+  function rapidQueue(M) {
+    var q = [];
+    ((M && M.list) || []).forEach(function (x) { x.rows.forEach(function (r) { if (untitledNow(r)) q.push({ r: r, g: rapidGuess(r) }); }); });
+    function cf(e) { return e.g.confidence == null || isNaN(e.g.confidence) ? -1 : Number(e.g.confidence); }
+    return q.sort(function (a, b) {
+      return cf(b) - cf(a) || a.r.college.localeCompare(b.r.college) || String(a.r.code).localeCompare(String(b.r.code));
+    });
+  }
+  function rapidCourseCount(r) { return Math.max(r.state_courses || 0, r.catalog_courses || 0); }
+  function rapidDraw(focusId) {
+    if (!VIEW.root || !VIEW.M || S.view !== RAPID) return;
+    render(VIEW.root, VIEW.M, RAPID);
+    var f = VIEW.root.querySelector("#" + (focusId || "csb-rapid-title"));
+    if (f && f.focus) f.focus();
+  }
+  function rapidAccept(e, input, btn) {
+    var r = e.r, k = acceptKey(r), msg = VIEW.root && VIEW.root.querySelector("#csb-rapid-msg");
+    function say(t) { if (msg) msg.textContent = t; }
+    if (!k) { say("No save can be keyed for this code’s noncredit category. Skip it, or use Edit on the code’s row."); return; }
+    var value = acceptValue(r, input.value, false);
+    if (!value.local_title) { say("Nothing to accept. Type a title, or Skip."); return; }
+    /* The catalog page stands as the save's source only for the guess accepted as written; an edited title has none. */
+    if (e.g.sourceUrl && input.value === e.g.title) value.source_url = e.g.sourceUrl;
+    else delete value.source_url;
+    btn.disabled = true; say("Saving…");
+    writeSave(k.key, value).then(function (res) {
+      if (!res.ok) { btn.disabled = false; say(res.lapsed ? "Not saved: your sign-in has ended. Sign in again, then accept." : "Not saved: the server answered " + res.status + ". Only a reviewer on the list may save."); return; }
+      LAPSED = false;
+      SAVED[k.mapKey] = { title: value.local_title || "", common: value.common_code || "", source: value.source_url || "", at: new Date().toISOString(), by: res.email || "",
+        label: "a reviewer", decidedBy: "", key: k.key, mapKey: k.mapKey };
+      RAPIDS.done++;
+      RAPIDS.said = "Saved " + value.local_title + " for " + r.code + " at " + r.college + ".";
+      rapidDraw();   /* the saved code has left the queue, so the same place holds the next one */
+    }, function (er) { btn.disabled = false; say("Not saved: " + ((er && er.message) || "the network failed") + "."); });
+  }
+  function rapidMove(step) {
+    var n = rapidQueue(VIEW.M).length;
+    if (!n) return;
+    RAPIDS.said = "";
+    RAPIDS.i = step > 0 ? (RAPIDS.i + 1) % n : Math.max(0, RAPIDS.i - 1);
+    rapidDraw();
+  }
+  function rapidView(M) {
+    var q = rapidQueue(M), box = el("div", { cls: "csb-rapid", id: "csb-rapid" });
+    if (!q.length) {
+      box.appendChild(el("p", { cls: "csb-note", id: "csb-rapid-empty", role: "status" }, ["No codes are left without a title. ", go("#commons/subjects", "Back to Subjects"), "."]));
+      return box;
+    }
+    if (RAPIDS.i >= q.length) RAPIDS.i = 0;
+    var e = q[RAPIDS.i], r = e.r, g = e.g;
+    box.appendChild(el("p", { cls: "csb-note", id: "csb-rapid-left", role: "status" }, [el("strong", { text: fmt(q.length) + " to go" }),
+      ". " + fmt(RAPIDS.done) + " saved this visit. This is code " + fmt(RAPIDS.i + 1) + " of " + fmt(q.length) + "." + (RAPIDS.said ? " " + RAPIDS.said : "")]));
+    box.appendChild(el("h3", { id: "csb-rapid-h", text: r.code + " at " + r.college }));
+    var n = rapidCourseCount(r), ex = g.courses && g.courses[0];
+    if (ex) box.appendChild(el("p", { cls: "csb-note", id: "csb-rapid-ex" }, ["Example course: ", el("strong", { text: ex }),
+      n ? " (1 of " + fmt(n) + (n === 1 ? " course)" : " courses)") : ""]));
+    else if (n) box.appendChild(el("p", { cls: "csb-note", id: "csb-rapid-ex", text: fmt(n) + (n === 1 ? " course" : " courses") + "; no example course is on file." }));
+    if (g.sourceUrl) box.appendChild(el("p", { cls: "csb-note", id: "csb-rapid-src" }, ["The catalog says: ",
+      el("a", { href: g.sourceUrl, target: "_blank", rel: "noopener noreferrer" }, [g.sourceSays || g.sourceUrl, el("span", { cls: "csb-vh", text: " (opens in a new tab)" })])]));
+    var input = el("input", { type: "text", cls: "csb-input", id: "csb-rapid-title", autocomplete: "off", spellcheck: "true" });
+    input.value = g.title || "";
+    var b = bar01(g.confidence == null || isNaN(g.confidence) ? null : Number(g.confidence) / 100, "Confidence in this title");
+    box.appendChild(el("div", { cls: "csb-ed-field" }, [el("label", { "for": "csb-rapid-title", text: "Local title" }),
+      el("div", { cls: "csb-rapid-row" }, [input, b, g.why ? el("span", { cls: "csb-sub csb-rapid-why", id: "csb-rapid-why", text: g.why }) : null])]));
+    var acc = el("button", { type: "button", cls: "csb-word", id: "csb-rapid-accept", text: "Accept" });
+    var skip = el("button", { type: "button", cls: "csb-word", id: "csb-rapid-skip", text: "Skip" });
+    var back = el("button", { type: "button", cls: "csb-word", id: "csb-rapid-back", text: "Back" });
+    if (RAPIDS.i === 0) back.disabled = true;
+    acc.addEventListener("click", function () { rapidAccept(e, input, acc); });
+    skip.addEventListener("click", function () { rapidMove(1); });
+    back.addEventListener("click", function () { rapidMove(-1); });
+    input.addEventListener("keydown", function (ev) {
+      if (ev.key === "Enter" && !ev.ctrlKey && !ev.metaKey && !ev.altKey && !ev.shiftKey) { ev.preventDefault(); rapidAccept(e, input, acc); }
+    });
+    box.addEventListener("keydown", function (ev) {
+      if (!(ev.ctrlKey || ev.metaKey) || (ev.key !== "ArrowRight" && ev.key !== "ArrowLeft")) return;
+      ev.preventDefault();
+      rapidMove(ev.key === "ArrowRight" ? 1 : -1);
+    });
+    box.appendChild(el("p", { cls: "csb-rapid-acts" }, [acc, skip, back]));
+    box.appendChild(el("p", { cls: "csb-ed-msg", id: "csb-rapid-msg", role: "status" }));
+    if (!session()) box.appendChild(el("p", { cls: "csb-note", id: "csb-rapid-signin", text: "Accept saves once you sign in as a reviewer." }));
+    box.appendChild(el("p", { cls: "csb-foot", id: "csb-rapid-keys", text: "Keys: Enter in the title accepts it. Ctrl or Command with the right arrow skips; with the left arrow, goes back. Tab moves between the controls." }));
+    return box;
   }
   /* A status word, plain text: Read carries weight, the ways with nothing to do are muted, so it reads the same without color. */
   function srcCell(R, w) {
@@ -2446,7 +2565,7 @@
     /* <college slug>/<local code> opens that college with the code's course panel; a code may hold a slash (ES/A). */
     var seg = view.split("/"), code = "", at = "";
     view = seg[0] === ALL && seg.length >= 3 ? "" : seg[0];
-    var special = view === DISAGREE || view === HELD || view === NC || view === SW || view === SRC || view === MQ;
+    var special = view === DISAGREE || view === HELD || view === NC || view === SW || view === SRC || view === MQ || view === RAPID;
     STACK.second = null;
     if (view === SW || view === MQ) {
       /* S719: statewide[/code/<COMMON>] and mq[/code/<COMMON>], then a second sidebar (<kind>/<LOCAL>) or a course
@@ -2477,9 +2596,9 @@
     M.list.forEach(function (x) { all = all.concat(x.rows); });
     var untitled = F.untitled, nSaved = F.saved;   /* counted as the lists they open count, the live saves on top */
     var wrap = el("div", { cls: "cmn-wrap csb" });
-    wrap.appendChild(trail(c ? c.college : S.view === DISAGREE ? "Titles to check" : S.view === HELD ? "Codes the M-ID mint holds on" : S.view === NC ? "Noncredit subject titles" : S.view === SW ? "Every local code, statewide" : S.view === SRC ? "Colleges by source" : S.view === MQ ? "MQ disciplines" : ""));
+    wrap.appendChild(trail(c ? c.college : S.view === DISAGREE ? "Titles to check" : S.view === HELD ? "Codes the M-ID mint holds on" : S.view === NC ? "Noncredit subject titles" : S.view === SW ? "Every local code, statewide" : S.view === SRC ? "Colleges by source" : S.view === MQ ? "MQ disciplines" : S.view === RAPID ? "Lightning round" : ""));
     wrap.appendChild(el("header", { cls: "cmn-top" }, [
-      el("h2", { cls: "cmn-title", id: "csb-h", text: c ? "Subjects at " + c.college : S.view === DISAGREE ? "Subject titles to check" : S.view === HELD ? "Local subject codes the M-ID mint holds on" : S.view === NC ? "Noncredit subject titles" : S.view === SW ? "Every local subject code, statewide" : S.view === SRC ? "Subjects: colleges by source" : S.view === MQ ? "Minimum Qualifications disciplines" : "Subjects" }),
+      el("h2", { cls: "cmn-title", id: "csb-h", text: c ? "Subjects at " + c.college : S.view === DISAGREE ? "Subject titles to check" : S.view === HELD ? "Local subject codes the M-ID mint holds on" : S.view === NC ? "Noncredit subject titles" : S.view === SW ? "Every local subject code, statewide" : S.view === SRC ? "Subjects: colleges by source" : S.view === MQ ? "Minimum Qualifications disciplines" : S.view === RAPID ? "Subject titles: lightning round" : "Subjects" }),
       el("div", { cls: "cmn-rule", "aria-hidden": "true" }),
       el("p", { cls: "cmn-lede", text: S.view === MQ ? MQ_LEDE : "Step a is the common subject code each discipline shares; Step b is each college’s own name for its subject codes, read from its catalog. The Courses bot drafts each local title from the catalog’s subject heading, and COBI scores each code’s common subject code. A code is settled once that score is 90 or better on the 0-100 bar, from the evidence or from a person’s confirm or save. Needs attention counts each college’s codes below 90 or with no title." })
     ]));
@@ -2489,6 +2608,7 @@
       go("#commons/subjects/" + DISAGREE, fmt(untitled) + " titles to check"),
       " (" + fmt(F.notInCatalog) + " not in catalog, " + fmt(F.notRead) + " not read yet, " + fmt(F.blocked) + " blocked). "
         + (F.notRead ? "The nightly data collection reads the codes not read yet. " : ""),
+      go("#commons/subjects/" + RAPID, "Lightning round"), ": one code at a time, from the keyboard. ",
       count(F.withCommon, "", "common", fmt(F.withCommon) + " codes with a common subject code. Show them."), " codes have a common subject code, each with its confidence score. ",
       el("a", { href: "#canonical-subj4", text: "Common Subjects Reference" }), ". ",
       go("#commons/subjects/" + HELD, "Codes the M-ID mint holds on"), ". ",
@@ -2506,6 +2626,10 @@
       wrap.appendChild(bandBar(c.rows));
       var pl = pickLine(c.rows); if (pl) wrap.appendChild(pl);
       wrap.appendChild(codeTable(c.rows.filter(inPick).filter(function (r) { return inBand(r, S.band); }), "Subject codes at " + c.college));
+    } else if (S.view === RAPID) {
+      /* The lightning round: one code with no title at a time (rapidView). The queue is untitledNow's rows, live. */
+      if (!VIEW.G) wrap.appendChild(el("p", { cls: "csb-note", role: "status", text: "Reading the title guesses…" }));
+      else wrap.appendChild(rapidView(M));
     } else if (S.view === SRC) {
       if (!VIEW.R) wrap.appendChild(el("p", { cls: "csb-note", role: "status", text: VIEW.srcError ? "The colleges by source could not be read (" + VIEW.srcError + "). Reload the tab to try again." : "Reading the colleges by source…" }));
       else wrap.appendChild(sourcesView(VIEW.R, F));
@@ -2627,6 +2751,15 @@
       return loadSources().then(function (R) { VIEW.R = R; VIEW.srcError = ""; }, function (e) { VIEW.srcError = e && e.message ? e.message : String(e); })
         .then(function () { if (VIEW.root && VIEW.M && S.view === SRC) render(VIEW.root, VIEW.M, SRC); });
     }
+    if (String(view || "") === RAPID && !VIEW.G) {
+      /* A missing guess file is no fault: the round starts each field from the recommender's top candidate. */
+      return loadGuesses().then(function (G) { VIEW.G = guessIndex(G); }, function () { VIEW.G = {}; })
+        .then(function () {
+          if (!VIEW.root || !VIEW.M || S.view !== RAPID) return;
+          var a = document.activeElement, mine = a && a.id && VIEW.root.contains(a) && a.id !== "csb-h";
+          if (mine) render(VIEW.root, VIEW.M, RAPID); else rapidDraw();
+        });
+    }
     if (v0 === SW && !VIEW.W) {
       return loadStatewide().then(function (W) { VIEW.W = W; VIEW.swError = ""; }, function (e) { VIEW.swError = e && e.message ? e.message : String(e); })
         .then(function () { if (VIEW.root && VIEW.M && S.view === SW) render(VIEW.root, VIEW.M, viewPath()); });
@@ -2645,6 +2778,7 @@
     var first = String(view || "").split("/")[0];
     if (!keep && (first === ALL ? "" : first) !== S.view) S.pick = "";
     if (first !== SRC) SRCS.pick = "needed";   /* a pick lasts the visit (Sam, 2026-10-21) */
+    if (first !== RAPID || S.view !== RAPID) { RAPIDS.i = 0; RAPIDS.done = 0; RAPIDS.said = ""; }   /* the round's place lasts the visit */
     if (first !== MQ) { MQS.pick = "all"; MQS.q = ""; }
     render(VIEW.root, VIEW.M, view || "");
     withHeld(view);
@@ -2768,6 +2902,12 @@
     ".csb-rec { color:var(--cmn-ink-2); margin-top:4px; } .csb-rec strong { color:var(--cmn-heading); font-weight:600; }",
     ".csb-cands { list-style:none; margin:0 0 4px; padding:0; display:grid; gap:4px; } .csb-cands li { display:flex; flex-wrap:wrap; align-items:center; gap:4px 8px; } .csb-cands strong { color:var(--cmn-heading); font-weight:600; }",
     ".csb-acc-msg:empty { display:none; } .csb-accept { margin-right:8px; }",
+    /* S737: the lightning round. */
+    ".csb-rapid { display:grid; gap:10px; min-width:0; background:var(--cmn-surface); border:1px solid var(--cmn-line); border-radius:12px; padding:14px 16px; }",
+    ".csb-rapid h3 { margin:0; font-family:var(--cmn-serif); font-size:clamp(1.15rem, 1rem + .6vw, 1.4rem); color:var(--cmn-title, var(--cmn-heading)); overflow-wrap:anywhere; }",
+    ".csb-rapid-row { display:flex; flex-wrap:wrap; align-items:center; gap:6px 12px; min-width:0; }",
+    ".csb-rapid-row .csb-input { flex:1 1 16rem; max-width:32rem; }",
+    ".csb-rapid-acts { margin:0; display:flex; flex-wrap:wrap; gap:6px 24px; align-items:baseline; }",
     ".csb-chip { display:inline-block; font-size:.78rem; font-weight:600; color:var(--cmn-ink-2); border:1px solid var(--cmn-line); border-radius:999px; padding:1px 9px; background:var(--cmn-surface); white-space:nowrap; cursor:help; }",
     ".csb-chip[data-state='not_in_catalog'] { color:var(--cmn-heading); border-color:var(--cmn-accent); }",
     ".csb-chip:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:2px; }",
@@ -2893,8 +3033,8 @@
     _recs: function (f) { REC = recModel(f); }, address: address, open: open, load: load, FILE: FILE, HELD_FILE: HELD_FILE, SIDES: SIDES, CSS: CSS,
     _state: S, COURSE_DIR: COURSE_DIR, bandOf: bandOf, saveKey: saveKey, titleCase: titleCase, savesModel: savesModel,
     SAVE_FIELD: SAVE_FIELD, SAVE_PREFIX: SAVE_PREFIX, dominantOf: dominantOf, attentionBy: attentionBy, webQuery: webQuery,
-    MQ_FILE: MQ_FILE, _stack: STACK, _breakAfter: breakAfter,
+    MQ_FILE: MQ_FILE, GUESS_FILE: GUESS_FILE, RAPID: RAPID, _stack: STACK, _breakAfter: breakAfter,
     _reset: function () { VIEW.Q = null; VIEW.mqError = ""; mqCache = null; MQS.pick = "all"; MQS.q = ""; MQS.code = ""; MQS.side = null; STACK.second = null; VIEW.cociError = ""; codeCourses = {}; codeCoursesWait = {};
-      SWS.filter = "top"; SWS.common = ""; VIEW.W = null; VIEW.swError = ""; swCache = null; SW_IX = null; SAVED = {}; SAVE_ERR = ""; SAID = {}; LAPSED = false; COMMON = null; TC = null; NC_SLUGS = {}; cache = null; heldCache = null; ncCache = null; courseCache = {}; VIEW.M = null; VIEW.H = null; VIEW.N = null; S.view = ""; S.code = ""; S.at = ""; S.band = ""; S.pick = ""; }
+      SWS.filter = "top"; SWS.common = ""; VIEW.W = null; VIEW.swError = ""; swCache = null; SW_IX = null; SAVED = {}; SAVE_ERR = ""; SAID = {}; LAPSED = false; COMMON = null; TC = null; NC_SLUGS = {}; cache = null; heldCache = null; ncCache = null; courseCache = {}; VIEW.M = null; VIEW.H = null; VIEW.N = null; VIEW.G = null; guessCache = null; RAPIDS.i = 0; RAPIDS.done = 0; RAPIDS.said = ""; S.view = ""; S.code = ""; S.at = ""; S.band = ""; S.pick = ""; }
   };
 })();

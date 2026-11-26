@@ -1,0 +1,9 @@
+{
+  "_what": "Fixture for tests/commons_subjects_rapid.test.js: title guesses for two of the three untitled codes in local_subject_titles_fixture.json; beta ENG has none.",
+  "written": "2026-11-26T00:00:00Z",
+  "method": "fixture",
+  "rows": [
+    { "slug": "alpha", "code": "MATH", "guess": "Math", "confidence": 60, "why": "Its courses are algebra and statistics.", "courses": ["MATH 1 Algebra", "MATH 2 Statistics"], "source_url": "https://catalog.alpha.example.edu/math", "source_says": "MATH - Math" },
+    { "slug": "beta", "code": "WELD", "guess": "Welding Technology", "confidence": 92, "why": "Two other colleges print this title for WELD.", "courses": ["WELD 10 Intro to Welding", "WELD 20 Arc Welding"], "source_url": "https://catalog.beta.example.edu/weld", "source_says": "WELD: Welding Technology" }
+  ]
+}
