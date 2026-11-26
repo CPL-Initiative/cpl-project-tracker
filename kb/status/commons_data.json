@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-26T14:39:46Z",
+ "written_at": "2026-11-26T15:26:21Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17508,
-  "gap": 4827,
+  "passing": 17521,
+  "gap": 4814,
   "with_gap": 118,
-  "cost_usd": 1341.62,
-  "passed_at_read": 16461,
+  "cost_usd": 1341.65,
+  "passed_at_read": 16486,
   "cost_receipts": 118,
   "spent_usd": 1244.44,
   "spent_runs": 240,
@@ -189,9 +189,9 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16916,
-  "gap": 4827,
-  "collected_with_gaps": 592,
+  "passing": 16921,
+  "gap": 4814,
+  "collected_with_gaps": 600,
   "discontinued": 0
  },
  "census_live": {
@@ -3352,11 +3352,10 @@
    "harvested": true,
    "slug": "copper_mountain",
    "programs": 59,
-   "passing": 38,
-   "gap": 21,
+   "passing": 39,
+   "gap": 20,
    "causes": {
     "no_closed_list": 11,
-    "places_none": 1,
     "unknown_without_live": 9
    },
    "census_causes": {
@@ -3378,10 +3377,10 @@
    "outcomes_file": "kb/status/commons_data_programs/copper_mountain.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-26T14:14:15Z",
+   "read_at": "2026-11-26T14:48:58Z",
    "read_kind": "capture",
-   "cost_usd": 3.85,
-   "passed_at_read": 38,
+   "cost_usd": 3.88,
+   "passed_at_read": 39,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -3390,13 +3389,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 48,
-   "found": 47,
+   "found": 48,
    "extracted": 48,
    "errors": 0,
    "failed_checks": {
-    "coverage": 5,
+    "coverage": 4,
     "invented": 4,
-    "arithmetic": 9,
+    "arithmetic": 8,
     "repeated": 0,
     "outcomes": 0
    },
@@ -3406,12 +3405,11 @@
    "capture_root": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 25.8,
-   "run": "45836803063",
+   "read_seconds": 32.1,
+   "run": "45842624535",
    "levers": {
     "program_course_file_check": 11,
-    "reconcile_steps": 9,
-    "reader_page_assignment": 1
+    "reconcile_steps": 9
    },
    "collection": {
     "program_reader": {
@@ -3419,13 +3417,13 @@
      "models": {
       "claude-opus-5-5": 48
      },
-     "run": "45836803063",
-     "at": "2026-11-26T14:14:15Z",
-     "cost_usd": 3.85,
+     "run": "45842624535",
+     "at": "2026-11-26T14:48:58Z",
+     "cost_usd": 3.88,
      "platform": "pdf"
     },
     "slo_read": null,
-    "plo_programs": 44,
+    "plo_programs": 45,
     "ppm_member": null,
     "maps": {
      "held": 0,
@@ -10714,13 +10712,13 @@
    "harvested": true,
    "slug": "santa_ana",
    "programs": 370,
-   "passing": 330,
-   "gap": 40,
+   "passing": 342,
+   "gap": 28,
    "causes": {
     "extraction_error": 1,
     "no_closed_list": 11,
     "page_not_found": 12,
-    "unknown_without_live": 16
+    "unknown_without_live": 4
    },
    "census_causes": {
     "extraction_error": 1,
@@ -10749,7 +10747,7 @@
    "read_at": "2026-10-16T03:03:02Z",
    "read_kind": "capture",
    "cost_usd": 22.03,
-   "passed_at_read": 307,
+   "passed_at_read": 331,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -10764,7 +10762,7 @@
    "failed_checks": {
     "coverage": 0,
     "invented": 0,
-    "arithmetic": 39,
+    "arithmetic": 14,
     "repeated": 1,
     "outcomes": 0
    },
@@ -10775,11 +10773,11 @@
    "catalog_now": null,
    "catalog_checks": null,
    "read_seconds": 7227.4,
-   "run": "38843461766",
+   "run": "45841675928",
    "levers": {
-    "reconcile_steps": 15,
     "reader_page_search": 12,
     "program_course_file_check": 11,
+    "reconcile_steps": 3,
     "ge_units_steps": 1,
     "paid_read": 1
    },
@@ -10789,7 +10787,7 @@
      "models": {
       "claude-opus-5-5": 346
      },
-     "run": "38843461766",
+     "run": "45841675928",
      "at": "2026-10-16T03:03:02Z",
      "cost_usd": 22.03,
      "platform": "curriqunet"

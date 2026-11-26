@@ -112,7 +112,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "required_list_outside_total",
+    "label": "The catalog prints a list the program requires apart from its printed total, and the record counts that list; without it the courses add to the printed total.",
+    "words": "The printed total 18.0-20.5 equals 11 required units plus 7.0-9.5 elective units; it appears not to count the minimum 3 units from the movement areas (which would give 21-23.5). Reviewer should check."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 70,
+   "course_list_match": 97,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

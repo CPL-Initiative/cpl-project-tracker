@@ -1,0 +1,33 @@
+{
+ "_readme": "S740 lane 1 (reads): Copper Mountain College's census pile (reconcile_steps, 9 records). Four of them fail coverage on a course the reissued 2026-2027 catalog prints under a new subject code, which each record's own note names: PSYC 003 and PSYC 005 for the state's PSY 3 and PSY 5, SOCI 002 and SOCI 004 for SOC 2 and SOC 4, COMM 007 for SP 7 (Liberal Arts: Social and Behavioral Sciences 18519, Vocational Nursing 14737 and 20094, Registered Nursing 16657); BIOL 015 for BI 15 and CDEV C1000 for CD 10 are the same case on other records. This prints each course-description page of the reissue that names one of those printed codes or a 'Formerly known as' line for PSY, SOC, SP, CD or BI, line for line, so a session can cite each course_renumbers pair by the catalog's own words. One load. No model call, nothing written.",
+ "college": "Copper Mountain College",
+ "questions": {
+  "renumbers": "For each of PSYC 003, PSYC 005, SOCI 002, SOCI 004, COMM 007, BIOL 015 and CDEV C1000: the course description's title, units and the former code it prints."
+ },
+ "keywords": [
+  "(?:^|\\n)PSYC[ -]0?0?3\\b",
+  "(?:^|\\n)PSYC[ -]0?0?5\\b",
+  "(?:^|\\n)SOCI[ -]0?0?2\\b",
+  "(?:^|\\n)SOCI[ -]0?0?4\\b",
+  "(?:^|\\n)COMM[ -]0?0?7\\b",
+  "(?:^|\\n)BIOL[ -]0?15\\b",
+  "(?:^|\\n)BIOL[ -]0?22\\b",
+  "(?:^|\\n)CDEV[ -]C1000\\b",
+  "[Ff]ormerly\\s+known\\s+as\\s+(?:PSY|SOC|SP|CD)[ -]?0*\\d+"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "renumbers"
+   ],
+   "why": "18519 14737 20094 16657",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf"
+  }
+ ],
+ "pdf_span": [
+  120,
+  184
+ ],
+ "pdf_page_cap": 30,
+ "pdf_unfolded": true
+}
