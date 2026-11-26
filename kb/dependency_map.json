@@ -4,7 +4,7 @@
   "supabase_tables": 119,
   "rpcs": 68,
   "edge_functions": 16,
-  "file_datasets": 1265,
+  "file_datasets": 1269,
   "external_services": 202,
   "consumers": 696,
   "workflows": 77,
@@ -1024,14 +1024,14 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1268
+     "line": 1271
     },
     {
      "id": "module:commons_subjects.js",
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1310,
+     "line": 1485,
      "tabs": [
       "commons"
      ]
@@ -3264,7 +3264,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2514,
+     "line": 2606,
      "tabs": [
       "library"
      ]
@@ -4002,7 +4002,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1075,
+     "line": 1097,
      "tabs": [
       "commons"
      ]
@@ -5684,7 +5684,7 @@
      "kind": "page",
      "direction": "read",
      "how": "inline",
-     "line": 353
+     "line": 370
     }
    ],
    "served": false,
@@ -6269,6 +6269,13 @@
      "direction": "read",
      "how": "inline",
      "line": 0
+    },
+    {
+     "id": "script:kb/_acct_repoint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 91
     },
     {
      "id": "script:kb/_apply_cid_claim_holds.py",
@@ -7165,7 +7172,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3834,
+     "line": 3926,
      "tabs": [
       "library"
      ]
@@ -7327,7 +7334,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1258
+     "line": 1261
     },
     {
      "id": "module:csr_local_subjects.js",
@@ -8262,6 +8269,13 @@
      "direction": "read",
      "how": "literal",
      "line": 49
+    },
+    {
+     "id": "script:kb/_acct_repoint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 91
     },
     {
      "id": "script:kb/_build_adopt_page.py",
@@ -10000,7 +10014,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3125,
+     "line": 3217,
      "tabs": [
       "library"
      ]
@@ -10016,7 +10030,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2507,
+     "line": 2599,
      "tabs": [
       "library"
      ]
@@ -12508,6 +12522,13 @@
      "line": 9045
     },
     {
+     "id": "script:kb/_acct_repoint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 90
+    },
+    {
      "id": "script:kb/_audit_cid_claims.py",
      "kind": "script",
      "direction": "read",
@@ -12582,6 +12603,13 @@
      "direction": "read",
      "how": "literal",
      "line": 5340
+    },
+    {
+     "id": "script:kb/_acct_repoint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 89
     },
     {
      "id": "script:kb/_apply_cid_claim_holds.py",
@@ -13320,7 +13348,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 110
+     "line": 116
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -13563,6 +13591,13 @@
   },
   "file:kb/coci_inactive_cards.json": {
    "consumers": [
+    {
+     "id": "script:kb/_acct_repoint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 90
+    },
     {
      "id": "script:kb/_build_inactive_cards.py",
      "kind": "script",
@@ -13848,7 +13883,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 108
+     "line": 114
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -14831,7 +14866,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 109
+     "line": 115
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -16664,6 +16699,13 @@
      "line": 8637
     },
     {
+     "id": "script:kb/_acct_repoint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 89
+    },
+    {
      "id": "script:kb/_detect_crnc_mirrors.py",
      "kind": "script",
      "direction": "read",
@@ -17028,6 +17070,13 @@
      "direction": "read",
      "how": "literal",
      "line": 8092
+    },
+    {
+     "id": "script:kb/_acct_repoint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 64
     },
     {
      "id": "script:kb/_anchor_rekey_apply.py",
@@ -18690,7 +18739,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 736
+     "line": 742
     }
    ],
    "served": false,
@@ -19331,19 +19380,6 @@
    "served": false,
    "main_committers": []
   },
-  "file:kb/prefix_fold_out/2026-09-03/held.json": {
-   "consumers": [
-    {
-     "id": "script:kb/_prefix_fold_dryrun.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 256
-    }
-   ],
-   "served": false,
-   "main_committers": []
-  },
   "file:kb/prefix_fold_out/<date>/alias_map.json": {
    "consumers": [
     {
@@ -19964,6 +20000,13 @@
      "line": 9178
     },
     {
+     "id": "script:kb/_acct_repoint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 89
+    },
+    {
      "id": "script:kb/_analyze_official_fold_evidence.py",
      "kind": "script",
      "direction": "read",
@@ -20003,7 +20046,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 388
+     "line": 394
     },
     {
      "id": "script:kb/_reclustering_s648_dryrun.py",
@@ -20193,6 +20236,19 @@
      "direction": "read",
      "how": "literal",
      "line": 62
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/receipts/migration_s653_honors_of_rows_43889173474.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_honors_of_s653_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 995
     }
    ],
    "served": false,
@@ -21747,6 +21803,13 @@
      "line": 4298
     },
     {
+     "id": "script:kb/_acct_repoint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 65
+    },
+    {
      "id": "script:kb/_apply_crossdisc_remint.py",
      "kind": "script",
      "direction": "read",
@@ -22611,7 +22674,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 134,
+     "line": 141,
      "tabs": [
       "commons"
      ]
@@ -22854,7 +22917,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 76
+     "line": 80
     },
     {
      "id": "script:kb/_build_noncredit_categories.py",
@@ -22888,7 +22951,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 146,
+     "line": 153,
      "tabs": [
       "commons"
      ]
@@ -23132,6 +23195,13 @@
   },
   "file:kb/status/subject_decisions.json": {
    "consumers": [
+    {
+     "id": "script:kb/_acct_repoint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 66
+    },
     {
      "id": "script:kb/_held_subject_codes.py",
      "kind": "script",
@@ -24803,7 +24873,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2743,
+     "line": 2835,
      "tabs": [
       "library"
      ]
@@ -25697,6 +25767,13 @@
   "file:prototype/ccr_remint_blast.json": {
    "consumers": [
     {
+     "id": "script:kb/_acct_repoint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 92
+    },
+    {
      "id": "script:kb/_build_remint_blast_radius.py",
      "kind": "script",
      "direction": "read",
@@ -25764,6 +25841,13 @@
   "file:prototype/ccr_universe.json": {
    "consumers": [
     {
+     "id": "script:kb/_acct_repoint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 92
+    },
+    {
      "id": "script:kb/_build_ccr_cpl.py",
      "kind": "script",
      "direction": "read",
@@ -25818,6 +25902,13 @@
   },
   "file:prototype/ccr_universe_members.json": {
    "consumers": [
+    {
+     "id": "script:kb/_acct_repoint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 92
+    },
     {
      "id": "script:kb/_audit_control_number_claims.py",
      "kind": "script",
@@ -27183,7 +27274,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4532,
+     "line": 4645,
      "tabs": [
       "library"
      ]
@@ -27231,7 +27322,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 594
+     "line": 613
     },
     {
      "id": "page:library/cable-splicer-cpl-opportunities-mwmo31a1/index.html",
@@ -27798,6 +27889,19 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:tests/acct_repoint_dryrun_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:tests/active_colleges_ccc_test.py": {
@@ -29836,6 +29940,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/honors_mints_redraw_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/honors_of_rows_check_test.py": {
    "consumers": [
     {
@@ -30104,6 +30221,19 @@
    "main_committers": []
   },
   "file:tests/library_publishing_sql_proof.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/lints_docs_only_skip_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -32263,6 +32393,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/subject_state_label_title_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/subjects_daily_build_test.py": {
    "consumers": [
     {
@@ -33064,6 +33207,13 @@
      "line": 8480
     },
     {
+     "id": "script:kb/_acct_repoint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 90
+    },
+    {
      "id": "script:kb/_analyze_witness_kinship.py",
      "kind": "script",
      "direction": "read",
@@ -33159,7 +33309,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 131
+     "line": 137
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -33358,7 +33508,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 733
+     "line": 739
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -33442,7 +33592,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 733
+     "line": 739
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -33655,7 +33805,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 733
+     "line": 739
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -33770,6 +33920,13 @@
      "line": 10506
     },
     {
+     "id": "script:kb/_acct_repoint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 91
+    },
+    {
      "id": "script:kb/_assign_from_panel_dryrun.py",
      "kind": "script",
      "direction": "read",
@@ -33830,7 +33987,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 131
+     "line": 137
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -36378,7 +36535,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1678,
+     "line": 1762,
      "tabs": [
       "library"
      ]
@@ -36455,7 +36612,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1476,
+     "line": 1560,
      "tabs": [
       "library"
      ]
@@ -37255,7 +37412,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 303,
+     "line": 322,
      "tabs": [
       "commons"
      ]
@@ -37265,7 +37422,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 326,
+     "line": 345,
      "tabs": [
       "commons"
      ]
@@ -40405,6 +40562,8 @@
    "scripts": [
     "tests/run.js",
     "tests/governance_docs_panel.test.js",
+    "tests/subject_state_label_title_test.py",
+    "tests/lints_docs_only_skip_test.py",
     "tests/pages_allowlist.test.js",
     "scripts/repo_size_guard.py",
     "tests/repo_size_guard_test.py",
@@ -40727,6 +40886,7 @@
     "tests/browser_install_single_source_test.py",
     "tests/honors_of_test.py",
     "tests/honors_of_rows_check_test.py",
+    "tests/honors_mints_redraw_test.py",
     "tests/honors_subject_reading_test.py",
     "tests/session_spend_build_test.py",
     "tests/blocked_catalogs_test.py",
@@ -40757,6 +40917,7 @@
     "tests/zband_retire_dryrun_test.py",
     "tests/uc_cur_zscheme_dryrun_test.py",
     "tests/subjects_list_recode_test.py",
+    "tests/acct_repoint_dryrun_test.py",
     "tests/top_gate_test.py",
     "tests/row_audit_subject_outlier_test.py",
     "tests/row_audit_top_source_score_test.py",
