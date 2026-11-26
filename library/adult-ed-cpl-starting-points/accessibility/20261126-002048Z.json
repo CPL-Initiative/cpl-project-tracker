@@ -1,0 +1,10 @@
+{
+  "check_id": "88e01400-ac11-42cb-a82e-402605e3e4e1",
+  "library_id": "bc20bfc0-292c-4dec-9187-a2726345fed7",
+  "version_key": "version:1",
+  "url": "https://cpl-initiative.github.io/cpl-project-tracker/library/adult-ed-cpl-starting-points/",
+  "result": "fail",
+  "sha256": "4529dc0ccbf168e0a4486331a1d5356407d6975cbd7081e9937f247883cb4673",
+  "report": "https://cpl-initiative.github.io/cpl-project-tracker/library/adult-ed-cpl-starting-points/accessibility/20261126-002048Z.txt",
+  "_about": "The page this check saw: sha256 of library/adult-ed-cpl-starting-points/index.html with the accessibility line taken out (scripts/library_check.py content_hash). The line prints this check's pass only while the page still has this hash."
+}
