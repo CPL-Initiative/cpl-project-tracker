@@ -2,60 +2,249 @@
  "college": "Bakersfield College",
  "programs": 249,
  "with_closed_list": 241,
- "found": 231,
+ "found": 230,
  "extracted": 231,
  "errors": 0,
- "passed_machine_checks": 207,
+ "passed_machine_checks": 210,
  "failed": {
-  "coverage": 2,
+  "coverage": 1,
   "invented": 0,
-  "arithmetic": 24,
+  "arithmetic": 21,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 13.38,
- "cost_per_program": 0.0579,
+ "cost_usd_run": 0.06,
+ "cost_usd_filed": 13.4,
+ "cost_per_program": 0.058,
+ "extract_calls": 1,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "02090",
    "title": "Liberal Arts",
-   "award": "A.A. Degree"
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/liberal-arts-associate-of-arts-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 179,
+    "why": "coarse net: the page's code tokens name 0 of 179 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2138,
+     "content": 2138,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "09237",
+   "title": "Animal Science",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/agriculture-animal-science-associate-in-science-for-transfer-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.375,
+    "body": 0.375,
+    "content": 0.375,
+    "net": 6,
+    "listed": 16,
+    "why": "coarse net: the page's code tokens name 6 of 16 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3859,
+     "content": 3859,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Active"
   },
   {
    "control_number": "36716",
    "title": "California State University General Education Breadth",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/california-state-university-csu-general-education-breadth-certificate-of-achievement-summer-2019",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 152,
+    "why": "coarse net: the page's code tokens name 0 of 152 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1768,
+     "content": 1768,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   },
   {
    "control_number": "36745",
    "title": "Intersegmental General Education (IGETC) for STEM",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/intersegmental-general-education-transfer-igetc-for-stem-general-education-certificate-of-achievement-summer-2019",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 123,
+    "why": "coarse net: the page's code tokens name 0 of 123 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1833,
+     "content": 1833,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   },
   {
    "control_number": "36746",
    "title": "Intersegmental General Education (IGETC)",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/intersegmental-general-education-transfer-igetc-for-stem-general-education-certificate-of-achievement-summer-2019",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 123,
+    "why": "coarse net: the page's code tokens name 0 of 123 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1833,
+     "content": 1833,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   },
   {
    "control_number": "43364",
    "title": "Sheet Metal Apprenticeship",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/sheet-metal-apprenticeship-certificate-of-achievement-spring-2024",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 1,
+    "listed": 10,
+    "why": "coarse net: the page's code tokens name 1 of 10 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2651,
+     "content": 2651,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   },
   {
    "control_number": "43365",
    "title": "Electrician Apprenticeship",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/electrician-apprenticeship-certificate-of-achievement-spring-2024",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 1,
+    "listed": 10,
+    "why": "coarse net: the page's code tokens name 1 of 10 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2796,
+     "content": 2796,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   },
   {
    "control_number": "45809",
    "title": "California General Education Transfer Curriculum (Cal-GETC)",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/california-general-education-transfer-curriculum-cal-getc-certificate-of-achievement-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 180,
+    "why": "coarse net: the page's code tokens name 0 of 180 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3457,
+     "content": 3457,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   },
   {
    "control_number": "46263",
    "title": "Basic First Aid and CPR",
-   "award": "Noncredit program"
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
   }
  ],
- "run": "38414480070"
+ "run": "45802578239"
 }
