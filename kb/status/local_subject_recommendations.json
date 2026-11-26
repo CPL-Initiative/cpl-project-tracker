@@ -4,15 +4,15 @@
  "measured_on_titled_codes": {
   "course_joins": {
    "few or mixed": {
-    "right": 1755,
-    "asked": 3641,
-    "share": 0.482,
+    "right": 1776,
+    "asked": 3679,
+    "share": 0.483,
     "score": 48
    },
    "most courses agree": {
-    "right": 3548,
-    "asked": 4053,
-    "share": 0.875,
+    "right": 3583,
+    "asked": 4087,
+    "share": 0.877,
     "score": 88
    }
   },
@@ -218,22 +218,22 @@
  },
  "web_searches_filed": 313,
  "totals": {
-  "common_60_to_89": 242,
-  "common_90_plus": 953,
+  "common_60_to_89": 234,
+  "common_90_plus": 974,
   "common_no_code_yet": 100,
-  "common_none": 655,
-  "common_under_60": 545,
+  "common_none": 654,
+  "common_under_60": 533,
   "no_common": 2495,
-  "no_title": 1511,
+  "no_title": 1431,
   "noncredit_common": 501,
   "noncredit_no_common": 688,
-  "noncredit_no_title": 260,
+  "noncredit_no_title": 259,
   "noncredit_title": 21,
   "noncredit_title_unused_condition": 67,
-  "title_60_to_89": 496,
-  "title_90_plus": 489,
-  "title_none": 393,
-  "title_under_60": 133
+  "title_60_to_89": 464,
+  "title_90_plus": 490,
+  "title_none": 379,
+  "title_under_60": 98
  },
  "colleges": [
   {
@@ -2079,7 +2079,7 @@
       "title": "Steamfitting",
       "confidence": 83,
       "from": "other_colleges",
-      "why": "other colleges: 1 of 1 other colleges (one college, right 68% of the time); course joins: 10 of 19 joined courses (few or mixed, right 48% of the time). The sources agree.",
+      "why": "other colleges: 1 of 1 other colleges (one college, right 68% of the time); course joins: 10 of 20 joined courses (few or mixed, right 48% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -2089,7 +2089,7 @@
          "other_colleges",
          "course_joins"
         ],
-        "why": "other colleges: 1 of 1 other colleges (one college, right 68% of the time); course joins: 10 of 19 joined courses (few or mixed, right 48% of the time)."
+        "why": "other colleges: 1 of 1 other colleges (one college, right 68% of the time); course joins: 10 of 20 joined courses (few or mixed, right 48% of the time)."
        }
       ]
      },
@@ -5324,19 +5324,19 @@
     {
      "code": "CISPROG",
      "title": {
-      "title": "Computer Science",
+      "title": "Computer Information Systems",
       "confidence": 48,
       "from": "course_joins",
-      "why": "course joins: 2 of 2 joined courses (few or mixed, right 48% of the time).",
+      "why": "course joins: 1 of 2 joined courses (few or mixed, right 48% of the time).",
       "also": [],
       "candidates": [
        {
-        "title": "Computer Science",
+        "title": "Computer Information Systems",
         "confidence": 48,
         "from": [
          "course_joins"
         ],
-        "why": "course joins: 2 of 2 joined courses (few or mixed, right 48% of the time)."
+        "why": "course joins: 1 of 2 joined courses (few or mixed, right 48% of the time)."
        }
       ]
      }
@@ -7673,31 +7673,19 @@
      "code": "FILM",
      "title": {
       "title": "Film",
-      "confidence": 87,
+      "confidence": 93,
       "from": "other_colleges",
-      "why": "other colleges: 3 of 9 other colleges (mixed, right 87% of the time). Another source reads differently.",
-      "also": [
-       {
-        "title": "English",
-        "from": "course_joins"
-       }
-      ],
+      "why": "other colleges: 3 of 9 other colleges (mixed, right 87% of the time); course joins: 2 of 7 joined courses (few or mixed, right 48% of the time). The sources agree.",
+      "also": [],
       "candidates": [
        {
         "title": "Film",
-        "confidence": 87,
+        "confidence": 93,
         "from": [
-         "other_colleges"
-        ],
-        "why": "other colleges: 3 of 9 other colleges (mixed, right 87% of the time)."
-       },
-       {
-        "title": "English",
-        "confidence": 48,
-        "from": [
+         "other_colleges",
          "course_joins"
         ],
-        "why": "course joins: 2 of 7 joined courses (few or mixed, right 48% of the time)."
+        "why": "other colleges: 3 of 9 other colleges (mixed, right 87% of the time); course joins: 2 of 7 joined courses (few or mixed, right 48% of the time)."
        }
       ]
      }
@@ -15676,7 +15664,7 @@
       "title": "Computer and Information Science",
       "confidence": 89,
       "from": "other_colleges",
-      "why": "other colleges: 1 of 4 other colleges (mixed, right 87% of the time); course joins: 9 of 22 joined courses (few or mixed, right 48% of the time). Another source reads differently.",
+      "why": "other colleges: 1 of 4 other colleges (mixed, right 87% of the time); course joins: 8 of 22 joined courses (few or mixed, right 48% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Computer Networking",
@@ -15691,7 +15679,7 @@
          "other_colleges",
          "course_joins"
         ],
-        "why": "other colleges: 1 of 4 other colleges (mixed, right 87% of the time); course joins: 9 of 22 joined courses (few or mixed, right 48% of the time)."
+        "why": "other colleges: 1 of 4 other colleges (mixed, right 87% of the time); course joins: 8 of 22 joined courses (few or mixed, right 48% of the time)."
        },
        {
         "title": "Computer Networking",
@@ -16013,31 +16001,19 @@
      "code": "CS/IS",
      "title": {
       "title": "Computer Information Systems",
-      "confidence": 64,
+      "confidence": 81,
       "from": "program_titles",
-      "why": "program titles: 2 of 18 programs (several agree, right 64% of the time). Another source reads differently.",
-      "also": [
-       {
-        "title": "Computer Science",
-        "from": "course_joins"
-       }
-      ],
+      "why": "program titles: 2 of 18 programs (several agree, right 64% of the time); course joins: 9 of 24 joined courses (few or mixed, right 48% of the time). The sources agree.",
+      "also": [],
       "candidates": [
        {
         "title": "Computer Information Systems",
-        "confidence": 64,
+        "confidence": 81,
         "from": [
-         "program_titles"
-        ],
-        "why": "program titles: 2 of 18 programs (several agree, right 64% of the time)."
-       },
-       {
-        "title": "Computer Science",
-        "confidence": 48,
-        "from": [
+         "program_titles",
          "course_joins"
         ],
-        "why": "course joins: 10 of 24 joined courses (few or mixed, right 48% of the time)."
+        "why": "program titles: 2 of 18 programs (several agree, right 64% of the time); course joins: 9 of 24 joined courses (few or mixed, right 48% of the time)."
        }
       ]
      }
@@ -17904,7 +17880,7 @@
       "why": "other colleges: 3 of 9 other colleges (mixed, right 87% of the time); program titles: 1 of 1 programs (one or mixed, right 56% of the time). Another source reads differently.",
       "also": [
        {
-        "title": "English",
+        "title": "Theatre Arts",
         "from": "course_joins"
        }
       ],
@@ -17919,7 +17895,7 @@
         "why": "other colleges: 3 of 9 other colleges (mixed, right 87% of the time); program titles: 1 of 1 programs (one or mixed, right 56% of the time)."
        },
        {
-        "title": "English",
+        "title": "Theatre Arts",
         "confidence": 48,
         "from": [
          "course_joins"
@@ -28169,7 +28145,7 @@
         "from": [
          "course_joins"
         ],
-        "why": "course joins: 12 of 32 joined courses (few or mixed, right 48% of the time)."
+        "why": "course joins: 13 of 32 joined courses (few or mixed, right 48% of the time)."
        }
       ]
      }
@@ -38750,64 +38726,7 @@
    "slug": "san_jose_city",
    "rows": [
     {
-     "code": "ACCOUNTING (ACCTG)",
-     "title": {
-      "title": "Accounting",
-      "confidence": 88,
-      "from": "course_joins",
-      "why": "course joins: 6 of 7 joined courses (most courses agree, right 88% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Accounting",
-        "confidence": 88,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 6 of 7 joined courses (most courses agree, right 88% of the time)."
-       }
-      ]
-     }
-    },
-    {
-     "code": "ADMINISTRATION OF JUSTICE (AJ)",
-     "title": {
-      "title": "Administration of Justice",
-      "confidence": 88,
-      "from": "course_joins",
-      "why": "course joins: 8 of 12 joined courses (most courses agree, right 88% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Administration of Justice",
-        "confidence": 88,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 8 of 12 joined courses (most courses agree, right 88% of the time)."
-       }
-      ]
-     }
-    },
-    {
      "code": "AIR CONDITIONING (AIRC)",
-     "title": {
-      "title": "Heating & Air Conditioning",
-      "confidence": 48,
-      "from": "course_joins",
-      "why": "course joins: 1 of 1 joined courses (few or mixed, right 48% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Heating & Air Conditioning",
-        "confidence": 48,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 1 of 1 joined courses (few or mixed, right 48% of the time)."
-       }
-      ]
-     },
      "common": {
       "code": "HVAC",
       "discipline": "Air Conditioning, Refrigeration, Heating",
@@ -38817,70 +38736,13 @@
      }
     },
     {
-     "code": "ALCOHOL AND DRUG STUDIES (ADS)",
-     "title": {
-      "title": "Communication",
-      "confidence": 48,
-      "from": "course_joins",
-      "why": "course joins: 2 of 5 joined courses (few or mixed, right 48% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Communication",
-        "confidence": 48,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 2 of 5 joined courses (few or mixed, right 48% of the time)."
-       }
-      ]
-     }
-    },
-    {
      "code": "ANTHROPOLOGY (ANTH)",
-     "title": {
-      "title": "Anthropology",
-      "confidence": 48,
-      "from": "course_joins",
-      "why": "course joins: 2 of 2 joined courses (few or mixed, right 48% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Anthropology",
-        "confidence": 48,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 2 of 2 joined courses (few or mixed, right 48% of the time)."
-       }
-      ]
-     },
      "common": {
       "code": "ANTH",
       "discipline": "Anthropology",
-      "confidence": 48,
+      "confidence": 97,
       "from": "title",
       "why": "The title names the discipline Anthropology."
-     }
-    },
-    {
-     "code": "ARABIC (ARABC)",
-     "title": {
-      "title": "Arabic",
-      "confidence": 48,
-      "from": "course_joins",
-      "why": "course joins: 2 of 2 joined courses (few or mixed, right 48% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Arabic",
-        "confidence": 48,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 2 of 2 joined courses (few or mixed, right 48% of the time)."
-       }
-      ]
      }
     },
     {
@@ -38905,27 +38767,10 @@
     },
     {
      "code": "ASTRONOMY (ASTRO)",
-     "title": {
-      "title": "Astronomy",
-      "confidence": 48,
-      "from": "course_joins",
-      "why": "course joins: 2 of 2 joined courses (few or mixed, right 48% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Astronomy",
-        "confidence": 48,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 2 of 2 joined courses (few or mixed, right 48% of the time)."
-       }
-      ]
-     },
      "common": {
       "code": "ASTR",
       "discipline": "Astronomy",
-      "confidence": 48,
+      "confidence": 97,
       "from": "title",
       "why": "The title names the discipline Astronomy."
      }
@@ -38951,204 +38796,33 @@
      }
     },
     {
-     "code": "BIOLOGY (BIOL)",
-     "title": {
-      "title": "Biology",
-      "confidence": 88,
-      "from": "course_joins",
-      "why": "course joins: 10 of 10 joined courses (most courses agree, right 88% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Biology",
-        "confidence": 88,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 10 of 10 joined courses (most courses agree, right 88% of the time)."
-       }
-      ]
-     }
-    },
-    {
-     "code": "BROADCASTING (BROAD)",
-     "title": {
-      "title": "Radio",
-      "confidence": 48,
-      "from": "course_joins",
-      "why": "course joins: 1 of 2 joined courses (few or mixed, right 48% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Radio",
-        "confidence": 48,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 1 of 2 joined courses (few or mixed, right 48% of the time)."
-       }
-      ]
-     }
-    },
-    {
-     "code": "BUSINESS (BUS)",
-     "title": {
-      "title": "Business",
-      "confidence": 88,
-      "from": "course_joins",
-      "why": "course joins: 5 of 5 joined courses (most courses agree, right 88% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Business",
-        "confidence": 88,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 5 of 5 joined courses (most courses agree, right 88% of the time)."
-       }
-      ]
-     }
-    },
-    {
      "code": "CHEMISTRY (CHEM)",
-     "title": {
-      "title": "Chemistry",
-      "confidence": 88,
-      "from": "course_joins",
-      "why": "course joins: 10 of 10 joined courses (most courses agree, right 88% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Chemistry",
-        "confidence": 88,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 10 of 10 joined courses (most courses agree, right 88% of the time)."
-       }
-      ]
-     },
      "common": {
       "code": "CHEM",
       "discipline": "Chemistry",
-      "confidence": 88,
+      "confidence": 97,
       "from": "title",
       "why": "The title names the discipline Chemistry."
      }
     },
     {
      "code": "COMMUNICATION STUDIES (COMS)",
-     "title": {
-      "title": "Communication Studies",
-      "confidence": 88,
-      "from": "course_joins",
-      "why": "course joins: 6 of 7 joined courses (most courses agree, right 88% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Communication Studies",
-        "confidence": 88,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 6 of 7 joined courses (most courses agree, right 88% of the time)."
-       }
-      ]
-     },
      "common": {
       "code": "COMM",
       "discipline": "Communication Studies",
-      "confidence": 88,
+      "confidence": 97,
       "from": "title",
       "why": "The title names the discipline Communication Studies."
      }
     },
     {
-     "code": "COMPUTER APPLICATIONS (CA)",
-     "title": {
-      "title": "Computer Applications and Office Technology",
-      "confidence": 48,
-      "from": "course_joins",
-      "why": "course joins: 1 of 3 joined courses (few or mixed, right 48% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Computer Applications and Office Technology",
-        "confidence": 48,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 1 of 3 joined courses (few or mixed, right 48% of the time)."
-       }
-      ]
-     }
-    },
-    {
-     "code": "COMPUTER INFORMATION SYSTEMS (CIS)",
-     "title": {
-      "title": "Computer Information Systems",
-      "confidence": 48,
-      "from": "course_joins",
-      "why": "course joins: 7 of 26 joined courses (few or mixed, right 48% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Computer Information Systems",
-        "confidence": 48,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 7 of 26 joined courses (few or mixed, right 48% of the time)."
-       }
-      ]
-     }
-    },
-    {
-     "code": "CONSTRUCTION (CNSTR)",
-     "title": {
-      "title": "Welding",
-      "confidence": 48,
-      "from": "course_joins",
-      "why": "course joins: 3 of 6 joined courses (few or mixed, right 48% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Welding",
-        "confidence": 48,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 3 of 6 joined courses (few or mixed, right 48% of the time)."
-       }
-      ]
-     }
-    },
-    {
      "code": "CONSTRUCTION TECHNOLOGY (CNSTR)",
-     "title": {
-      "title": "Business",
-      "confidence": 48,
-      "from": "course_joins",
-      "why": "course joins: 1 of 1 joined courses (few or mixed, right 48% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Business",
-        "confidence": 48,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 1 of 1 joined courses (few or mixed, right 48% of the time)."
-       }
-      ]
-     },
      "common": {
-      "code": "BUSI",
-      "discipline": "Business",
-      "confidence": 48,
+      "code": "CNST",
+      "discipline": "Construction Technology",
+      "confidence": 97,
       "from": "title",
-      "why": "The title names the discipline Business."
+      "why": "The title names the discipline Construction Technology."
      }
     },
     {
@@ -39156,9 +38830,9 @@
      "common": {
       "code": "COSM",
       "discipline": "Cosmetology",
-      "confidence": 95,
-      "from": "own_courses",
-      "why": "15 of 15 of its courses with an M-ID sit under COSM."
+      "confidence": 97,
+      "from": "title",
+      "why": "The title names the discipline Cosmetology."
      }
     },
     {
@@ -39182,100 +38856,23 @@
      }
     },
     {
-     "code": "DENTAL ASSISTING (DENT)",
-     "title": {
-      "title": "Dental Assistant",
-      "confidence": 48,
-      "from": "course_joins",
-      "why": "course joins: 1 of 2 joined courses (few or mixed, right 48% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Dental Assistant",
-        "confidence": 48,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 1 of 2 joined courses (few or mixed, right 48% of the time)."
-       }
-      ]
-     }
-    },
-    {
-     "code": "DIGITAL MEDIA ARTS (DMA)",
-     "title": {
-      "title": "Digital Media Arts",
-      "confidence": 48,
-      "from": "course_joins",
-      "why": "course joins: 1 of 1 joined courses (few or mixed, right 48% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Digital Media Arts",
-        "confidence": 48,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 1 of 1 joined courses (few or mixed, right 48% of the time)."
-       }
-      ]
-     }
-    },
-    {
      "code": "DISABLED STUDENTS PROGRAMS AND SERVICES (DSPS)",
-     "title": {
-      "title": "Counseling",
-      "confidence": 48,
-      "from": "course_joins",
-      "why": "course joins: 1 of 1 joined courses (few or mixed, right 48% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Counseling",
-        "confidence": 48,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 1 of 1 joined courses (few or mixed, right 48% of the time)."
-       }
-      ]
-     },
      "common": {
-      "code": "COUN",
-      "discipline": "Counseling",
-      "confidence": 48,
+      "code": "DSAC",
+      "discipline": "Adapted Computer Technology: Disabled Students Programs and Services",
+      "confidence": 97,
       "from": "title",
-      "why": "The title names the discipline Counseling."
-     }
-    },
-    {
-     "code": "EARLY CHILDHOOD EDUCATION (ECE)",
-     "title": {
-      "title": "Child Development",
-      "confidence": 88,
-      "from": "course_joins",
-      "why": "course joins: 7 of 10 joined courses (most courses agree, right 88% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Child Development",
-        "confidence": 88,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 7 of 10 joined courses (most courses agree, right 88% of the time)."
-       }
-      ]
+      "why": "The title names the discipline Adapted Computer Technology: Disabled Students Programs and Services."
      }
     },
     {
      "code": "ECONOMICS (ECON)",
      "common": {
-      "code": "SOCS",
-      "discipline": "Social Science",
-      "confidence": 95,
-      "from": "own_courses",
-      "why": "2 of 2 of its courses with an M-ID sit under SOCS."
+      "code": "ECON",
+      "discipline": "Economics",
+      "confidence": 97,
+      "from": "title",
+      "why": "The title names the discipline Economics."
      }
     },
     {
@@ -39283,56 +38880,9 @@
      "common": {
       "code": "EDUC",
       "discipline": "Education",
-      "confidence": 95,
-      "from": "own_courses",
-      "why": "3 of 3 of its courses with an M-ID sit under EDUC."
-     }
-    },
-    {
-     "code": "ELECTRICIAN (ELECT)",
-     "title": {
-      "title": "Construction Technology",
-      "confidence": 48,
-      "from": "course_joins",
-      "why": "course joins: 1 of 1 joined courses (few or mixed, right 48% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Construction Technology",
-        "confidence": 48,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 1 of 1 joined courses (few or mixed, right 48% of the time)."
-       }
-      ]
-     },
-     "common": {
-      "code": "CNST",
-      "discipline": "Construction Technology",
-      "confidence": 48,
+      "confidence": 97,
       "from": "title",
-      "why": "The title names the discipline Construction Technology."
-     }
-    },
-    {
-     "code": "EMERGENCY MEDICAL SERVICES (EMS)",
-     "title": {
-      "title": "Emergency Medical Services",
-      "confidence": 48,
-      "from": "course_joins",
-      "why": "course joins: 1 of 3 joined courses (few or mixed, right 48% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Emergency Medical Services",
-        "confidence": 48,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 1 of 3 joined courses (few or mixed, right 48% of the time)."
-       }
-      ]
+      "why": "The title names the discipline Education."
      }
     },
     {
@@ -39347,177 +38897,33 @@
      }
     },
     {
-     "code": "EMERGING TECHNOLOGY (ETEC)",
-     "title": {
-      "title": "Electrical Systems Technology",
-      "confidence": 48,
-      "from": "course_joins",
-      "why": "course joins: 1 of 1 joined courses (few or mixed, right 48% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Electrical Systems Technology",
-        "confidence": 48,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 1 of 1 joined courses (few or mixed, right 48% of the time)."
-       }
-      ]
-     }
-    },
-    {
      "code": "ENGINEERING (ENGR)",
-     "title": {
-      "title": "Engineering",
-      "confidence": 88,
-      "from": "course_joins",
-      "why": "course joins: 6 of 6 joined courses (most courses agree, right 88% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Engineering",
-        "confidence": 88,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 6 of 6 joined courses (most courses agree, right 88% of the time)."
-       }
-      ]
-     },
      "common": {
       "code": "ENGR",
       "discipline": "Engineering",
-      "confidence": 88,
+      "confidence": 97,
       "from": "title",
       "why": "The title names the discipline Engineering."
      }
     },
     {
-     "code": "ENGLISH (ENGL)",
-     "title": {
-      "title": "English",
-      "confidence": 88,
-      "from": "course_joins",
-      "why": "course joins: 11 of 11 joined courses (most courses agree, right 88% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "English",
-        "confidence": 88,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 11 of 11 joined courses (most courses agree, right 88% of the time)."
-       }
-      ]
-     }
-    },
-    {
      "code": "ENGLISH AS A SECOND LANGUAGE (ESL)",
-     "title": {
-      "title": "English as a Second Language",
-      "confidence": 88,
-      "from": "course_joins",
-      "why": "course joins: 8 of 9 joined courses (most courses agree, right 88% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "English as a Second Language",
-        "confidence": 88,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 8 of 9 joined courses (most courses agree, right 88% of the time)."
-       }
-      ]
-     },
      "common": {
       "code": "ESOL",
       "discipline": "English as a Second Language",
-      "confidence": 88,
+      "confidence": 97,
       "from": "title",
       "why": "The title names the discipline English as a Second Language."
      }
     },
     {
-     "code": "ENGLISH SECOND LANGUAGE (ESL)",
-     "title": {
-      "title": "English",
-      "confidence": 48,
-      "from": "course_joins",
-      "why": "course joins: 1 of 2 joined courses (few or mixed, right 48% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "English",
-        "confidence": 48,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 1 of 2 joined courses (few or mixed, right 48% of the time)."
-       }
-      ]
-     }
-    },
-    {
-     "code": "ENVIRONMENTAL SCIENCE (ENVIR)",
-     "title": {
-      "title": "Biology",
-      "confidence": 48,
-      "from": "course_joins",
-      "why": "course joins: 1 of 1 joined courses (few or mixed, right 48% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Biology",
-        "confidence": 48,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 1 of 1 joined courses (few or mixed, right 48% of the time)."
-       }
-      ]
-     }
-    },
-    {
-     "code": "ETHNIC STUDIES (ETH)",
-     "title": {
-      "title": "Ethnic Studies",
-      "confidence": 88,
-      "from": "course_joins",
-      "why": "course joins: 12 of 17 joined courses (most courses agree, right 88% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Ethnic Studies",
-        "confidence": 88,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 12 of 17 joined courses (most courses agree, right 88% of the time)."
-       }
-      ]
-     }
-    },
-    {
      "code": "FAMILY AND CONSUMER STUDIES (FCS)",
-     "title": {
-      "title": "Nutrition",
-      "confidence": 48,
-      "from": "course_joins",
-      "why": "course joins: 1 of 2 joined courses (few or mixed, right 48% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Nutrition",
-        "confidence": 48,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 1 of 2 joined courses (few or mixed, right 48% of the time)."
-       }
-      ]
+     "common": {
+      "code": "FCSH",
+      "discipline": "Family and Consumer Studies/ Home Economics",
+      "confidence": 97,
+      "from": "title",
+      "why": "The title names the discipline Family and Consumer Studies/ Home Economics."
      }
     },
     {
@@ -39531,71 +38937,17 @@
      }
     },
     {
-     "code": "FRENCH (FREN)",
-     "title": {
-      "title": "French",
-      "confidence": 88,
-      "from": "course_joins",
-      "why": "course joins: 4 of 4 joined courses (most courses agree, right 88% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "French",
-        "confidence": 88,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 4 of 4 joined courses (most courses agree, right 88% of the time)."
-       }
-      ]
-     }
-    },
-    {
      "code": "GEOGRAPHY (GEOG)",
-     "title": {
-      "title": "Geography",
-      "confidence": 48,
-      "from": "course_joins",
-      "why": "course joins: 2 of 2 joined courses (few or mixed, right 48% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Geography",
-        "confidence": 48,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 2 of 2 joined courses (few or mixed, right 48% of the time)."
-       }
-      ]
-     },
      "common": {
       "code": "GEOG",
       "discipline": "Geography",
-      "confidence": 48,
+      "confidence": 97,
       "from": "title",
       "why": "The title names the discipline Geography."
      }
     },
     {
      "code": "GEOLOGY (GEOL)",
-     "title": {
-      "title": "Geology",
-      "confidence": 88,
-      "from": "course_joins",
-      "why": "course joins: 4 of 4 joined courses (most courses agree, right 88% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Geology",
-        "confidence": 88,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 4 of 4 joined courses (most courses agree, right 88% of the time)."
-       }
-      ]
-     },
      "common": {
       "code": "GEOL",
       "discipline": "Earth Science",
@@ -39606,23 +38958,6 @@
     },
     {
      "code": "GLOBAL STUDIES (GLOBL)",
-     "title": {
-      "title": "Global Studies",
-      "confidence": 48,
-      "from": "course_joins",
-      "why": "course joins: 2 of 4 joined courses (few or mixed, right 48% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Global Studies",
-        "confidence": 48,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 2 of 4 joined courses (few or mixed, right 48% of the time)."
-       }
-      ]
-     },
      "common": {
       "code": "SOCS",
       "discipline": "Social Science",
@@ -39632,284 +38967,33 @@
      }
     },
     {
-     "code": "GUIDANCE (GUIDE)",
-     "title": {
-      "title": "Counseling",
-      "confidence": 88,
-      "from": "course_joins",
-      "why": "course joins: 4 of 4 joined courses (most courses agree, right 88% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Counseling",
-        "confidence": 88,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 4 of 4 joined courses (most courses agree, right 88% of the time)."
-       }
-      ]
-     }
-    },
-    {
      "code": "HEALTH EDUCATION (HED)",
-     "title": {
-      "title": "Health",
-      "confidence": 48,
-      "from": "course_joins",
-      "why": "course joins: 1 of 2 joined courses (few or mixed, right 48% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Health",
-        "confidence": 48,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 1 of 2 joined courses (few or mixed, right 48% of the time)."
-       }
-      ]
-     },
      "common": {
       "code": "HLTH",
       "discipline": "Health",
-      "confidence": 48,
-      "from": "title",
-      "why": "The title names the discipline Health."
-     }
-    },
-    {
-     "code": "HEALTH SCIENCE (HSCI)",
-     "title": {
-      "title": "Business",
-      "confidence": 48,
-      "from": "course_joins",
-      "why": "course joins: 1 of 1 joined courses (few or mixed, right 48% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Business",
-        "confidence": 48,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 1 of 1 joined courses (few or mixed, right 48% of the time)."
-       }
-      ]
-     },
-     "common": {
-      "code": "BUSI",
-      "discipline": "Business",
-      "confidence": 48,
-      "from": "title",
-      "why": "The title names the discipline Business."
-     }
-    },
-    {
-     "code": "HEALTH SCIENCES (HSCI)",
-     "title": {
-      "title": "Allied Health",
-      "confidence": 48,
-      "from": "course_joins",
-      "why": "course joins: 1 of 1 joined courses (few or mixed, right 48% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Allied Health",
-        "confidence": 48,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 1 of 1 joined courses (few or mixed, right 48% of the time)."
-       }
-      ]
+      "confidence": 95,
+      "from": "own_courses",
+      "why": "3 of 3 of its courses with an M-ID sit under HLTH."
      }
     },
     {
      "code": "HISTORY (HIST)",
-     "title": {
-      "title": "History",
-      "confidence": 88,
-      "from": "course_joins",
-      "why": "course joins: 7 of 8 joined courses (most courses agree, right 88% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "History",
-        "confidence": 88,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 7 of 8 joined courses (most courses agree, right 88% of the time)."
-       }
-      ]
-     },
      "common": {
       "code": "HIST",
       "discipline": "History",
-      "confidence": 88,
+      "confidence": 97,
       "from": "title",
       "why": "The title names the discipline History."
      }
     },
     {
-     "code": "IRONWORKER APPRENTICESHIP (IRON)",
-     "title": {
-      "title": "Iron Workers",
-      "confidence": 48,
-      "from": "course_joins",
-      "why": "course joins: 4 of 9 joined courses (few or mixed, right 48% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Iron Workers",
-        "confidence": 48,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 4 of 9 joined courses (few or mixed, right 48% of the time)."
-       }
-      ]
-     }
-    },
-    {
-     "code": "JAPANESE (JAPAN)",
-     "title": {
-      "title": "Japanese",
-      "confidence": 88,
-      "from": "course_joins",
-      "why": "course joins: 4 of 4 joined courses (most courses agree, right 88% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Japanese",
-        "confidence": 88,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 4 of 4 joined courses (most courses agree, right 88% of the time)."
-       }
-      ]
-     }
-    },
-    {
-     "code": "JOURNALISM (JOURN)",
-     "title": {
-      "title": "Journalism",
-      "confidence": 88,
-      "from": "course_joins",
-      "why": "course joins: 5 of 5 joined courses (most courses agree, right 88% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Journalism",
-        "confidence": 88,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 5 of 5 joined courses (most courses agree, right 88% of the time)."
-       }
-      ]
-     }
-    },
-    {
-     "code": "KINESIOLOGY (KIN)",
-     "title": {
-      "title": "Kinesiology",
-      "confidence": 88,
-      "from": "course_joins",
-      "why": "course joins: 4 of 4 joined courses (most courses agree, right 88% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Kinesiology",
-        "confidence": 88,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 4 of 4 joined courses (most courses agree, right 88% of the time)."
-       }
-      ]
-     }
-    },
-    {
-     "code": "KINESIOLOGY PHYSICAL EDUCATION (KINPE)",
-     "title": {
-      "title": "Kinesiology",
-      "confidence": 88,
-      "from": "course_joins",
-      "why": "course joins: 3 of 5 joined courses (most courses agree, right 88% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Kinesiology",
-        "confidence": 88,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 3 of 5 joined courses (most courses agree, right 88% of the time)."
-       }
-      ]
-     }
-    },
-    {
-     "code": "KINESIOLOGY-ATHLETICS, MEN (KINAM)",
-     "title": {
-      "title": "Athletics",
-      "confidence": 48,
-      "from": "course_joins",
-      "why": "course joins: 3 of 6 joined courses (few or mixed, right 48% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Athletics",
-        "confidence": 48,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 3 of 6 joined courses (few or mixed, right 48% of the time)."
-       }
-      ]
-     }
-    },
-    {
-     "code": "KINESIOLOGY-ATHLETICS, WOMEN (KINAW)",
-     "title": {
-      "title": "Athletics",
-      "confidence": 88,
-      "from": "course_joins",
-      "why": "course joins: 3 of 4 joined courses (most courses agree, right 88% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Athletics",
-        "confidence": 88,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 3 of 4 joined courses (most courses agree, right 88% of the time)."
-       }
-      ]
-     }
-    },
-    {
-     "code": "KINESIOLOGY-WELLNESS (KINPE)",
-     "title": {
-      "title": "Kinesiology",
-      "confidence": 88,
-      "from": "course_joins",
-      "why": "course joins: 13 of 15 joined courses (most courses agree, right 88% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Kinesiology",
-        "confidence": 88,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 13 of 15 joined courses (most courses agree, right 88% of the time)."
-       }
-      ]
+     "code": "HUMANITIES (HUMNT)",
+     "common": {
+      "code": "HUMA",
+      "discipline": "Humanities",
+      "confidence": 97,
+      "from": "title",
+      "why": "The title names the discipline Humanities."
      }
     },
     {
@@ -39920,113 +39004,6 @@
       "confidence": 95,
       "from": "own_courses",
       "why": "4 of 4 of its courses with an M-ID sit under INDT."
-     }
-    },
-    {
-     "code": "LIBRARY STUDIES (LIB)",
-     "title": {
-      "title": "Adult Education",
-      "confidence": 48,
-      "from": "course_joins",
-      "why": "course joins: 1 of 1 joined courses (few or mixed, right 48% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Adult Education",
-        "confidence": 48,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 1 of 1 joined courses (few or mixed, right 48% of the time)."
-       }
-      ]
-     }
-    },
-    {
-     "code": "MACHINE TECHNOLOGY (MACH)",
-     "title": {
-      "title": "Machine and Metals Technology",
-      "confidence": 48,
-      "from": "course_joins",
-      "why": "course joins: 1 of 1 joined courses (few or mixed, right 48% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Machine and Metals Technology",
-        "confidence": 48,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 1 of 1 joined courses (few or mixed, right 48% of the time)."
-       }
-      ]
-     }
-    },
-    {
-     "code": "MATHEMATICS (MATH)",
-     "title": {
-      "title": "Mathematics",
-      "confidence": 88,
-      "from": "course_joins",
-      "why": "course joins: 20 of 21 joined courses (most courses agree, right 88% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Mathematics",
-        "confidence": 88,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 20 of 21 joined courses (most courses agree, right 88% of the time)."
-       }
-      ]
-     }
-    },
-    {
-     "code": "MEDICAL ASSISTING (MA)",
-     "title": {
-      "title": "Allied Health",
-      "confidence": 48,
-      "from": "course_joins",
-      "why": "course joins: 2 of 7 joined courses (few or mixed, right 48% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Allied Health",
-        "confidence": 48,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 2 of 7 joined courses (few or mixed, right 48% of the time)."
-       }
-      ]
-     }
-    },
-    {
-     "code": "METEOROLOGY (METEO)",
-     "title": {
-      "title": "Geography",
-      "confidence": 48,
-      "from": "course_joins",
-      "why": "course joins: 1 of 1 joined courses (few or mixed, right 48% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Geography",
-        "confidence": 48,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 1 of 1 joined courses (few or mixed, right 48% of the time)."
-       }
-      ]
-     },
-     "common": {
-      "code": "GEOG",
-      "discipline": "Geography",
-      "confidence": 48,
-      "from": "title",
-      "why": "The title names the discipline Geography."
      }
     },
     {
@@ -40050,142 +39027,31 @@
      }
     },
     {
-     "code": "OCEANOGRAPHY (OCEAN)",
-     "title": {
-      "title": "Oceanography",
-      "confidence": 48,
-      "from": "course_joins",
-      "why": "course joins: 1 of 1 joined courses (few or mixed, right 48% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Oceanography",
-        "confidence": 48,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 1 of 1 joined courses (few or mixed, right 48% of the time)."
-       }
-      ]
-     }
-    },
-    {
-     "code": "PHILOSOPHY (PHIL)",
-     "title": {
-      "title": "Philosophy",
-      "confidence": 88,
-      "from": "course_joins",
-      "why": "course joins: 5 of 5 joined courses (most courses agree, right 88% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Philosophy",
-        "confidence": 88,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 5 of 5 joined courses (most courses agree, right 88% of the time)."
-       }
-      ]
-     }
-    },
-    {
      "code": "PHOTOGRAPHY (PHOTO)",
-     "title": {
-      "title": "Photography",
-      "confidence": 88,
-      "from": "course_joins",
-      "why": "course joins: 4 of 4 joined courses (most courses agree, right 88% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Photography",
-        "confidence": 88,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 4 of 4 joined courses (most courses agree, right 88% of the time)."
-       }
-      ]
-     },
      "common": {
       "code": "PHOT",
       "discipline": "Photography",
-      "confidence": 88,
+      "confidence": 97,
       "from": "title",
       "why": "The title names the discipline Photography."
      }
     },
     {
-     "code": "PHYSICAL EDUCATITON (KINPE)",
-     "title": {
-      "title": "Kinesiology",
-      "confidence": 88,
-      "from": "course_joins",
-      "why": "course joins: 5 of 5 joined courses (most courses agree, right 88% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Kinesiology",
-        "confidence": 88,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 5 of 5 joined courses (most courses agree, right 88% of the time)."
-       }
-      ]
-     }
-    },
-    {
      "code": "PHYSICS (PHYS)",
-     "title": {
-      "title": "Physics",
-      "confidence": 88,
-      "from": "course_joins",
-      "why": "course joins: 3 of 3 joined courses (most courses agree, right 88% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Physics",
-        "confidence": 88,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 3 of 3 joined courses (most courses agree, right 88% of the time)."
-       }
-      ]
-     },
      "common": {
       "code": "PHYS",
       "discipline": "Physics/Astronomy",
-      "confidence": 88,
+      "confidence": 97,
       "from": "title",
       "why": "The title names the discipline Physics/Astronomy."
      }
     },
     {
      "code": "POLITICAL SCIENCE (POLSC)",
-     "title": {
-      "title": "Political Science",
-      "confidence": 48,
-      "from": "course_joins",
-      "why": "course joins: 2 of 2 joined courses (few or mixed, right 48% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Political Science",
-        "confidence": 48,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 2 of 2 joined courses (few or mixed, right 48% of the time)."
-       }
-      ]
-     },
      "common": {
       "code": "POLS",
       "discipline": "Political Science",
-      "confidence": 48,
+      "confidence": 97,
       "from": "title",
       "why": "The title names the discipline Political Science."
      }
@@ -40218,184 +39084,53 @@
      }
     },
     {
-     "code": "PSYCHOLOGY (PSYCH)",
-     "title": {
-      "title": "Psychology",
-      "confidence": 88,
-      "from": "course_joins",
-      "why": "course joins: 7 of 7 joined courses (most courses agree, right 88% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Psychology",
-        "confidence": 88,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 7 of 7 joined courses (most courses agree, right 88% of the time)."
-       }
-      ]
-     }
-    },
-    {
      "code": "READING (READ)",
-     "title": {
-      "title": "Reading",
-      "confidence": 48,
-      "from": "course_joins",
-      "why": "course joins: 2 of 2 joined courses (few or mixed, right 48% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Reading",
-        "confidence": 48,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 2 of 2 joined courses (few or mixed, right 48% of the time)."
-       }
-      ]
-     },
      "common": {
       "code": "READ",
       "discipline": "Reading",
-      "confidence": 48,
+      "confidence": 97,
       "from": "title",
       "why": "The title names the discipline Reading."
      }
     },
     {
-     "code": "SIGN LANGUAGE (SL)",
-     "title": {
-      "title": "American Sign Language",
-      "confidence": 88,
-      "from": "course_joins",
-      "why": "course joins: 5 of 6 joined courses (most courses agree, right 88% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "American Sign Language",
-        "confidence": 88,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 5 of 6 joined courses (most courses agree, right 88% of the time)."
-       }
-      ]
+     "code": "REAL ESTATE (REST)",
+     "common": {
+      "code": "REAL",
+      "discipline": "Real Estate",
+      "confidence": 97,
+      "from": "title",
+      "why": "The title names the discipline Real Estate."
      }
     },
     {
      "code": "SOCIOLOGY (SOC)",
-     "title": {
-      "title": "Sociology",
-      "confidence": 88,
-      "from": "course_joins",
-      "why": "course joins: 4 of 4 joined courses (most courses agree, right 88% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Sociology",
-        "confidence": 88,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 4 of 4 joined courses (most courses agree, right 88% of the time)."
-       }
-      ]
-     },
      "common": {
       "code": "SOCI",
       "discipline": "Sociology",
-      "confidence": 88,
+      "confidence": 97,
       "from": "title",
       "why": "The title names the discipline Sociology."
      }
     },
     {
-     "code": "SPANISH (SPAN)",
-     "title": {
-      "title": "Spanish",
-      "confidence": 88,
-      "from": "course_joins",
-      "why": "course joins: 7 of 7 joined courses (most courses agree, right 88% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Spanish",
-        "confidence": 88,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 7 of 7 joined courses (most courses agree, right 88% of the time)."
-       }
-      ]
-     }
-    },
-    {
-     "code": "THEATRE ARTS (THEAT)",
-     "title": {
-      "title": "Theatre Arts",
-      "confidence": 88,
-      "from": "course_joins",
-      "why": "course joins: 8 of 10 joined courses (most courses agree, right 88% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Theatre Arts",
-        "confidence": 88,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 8 of 10 joined courses (most courses agree, right 88% of the time)."
-       }
-      ]
-     }
-    },
-    {
-     "code": "VIETNAMESE (VIET)",
-     "title": {
-      "title": "Vietnamese",
-      "confidence": 48,
-      "from": "course_joins",
-      "why": "course joins: 2 of 2 joined courses (few or mixed, right 48% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Vietnamese",
-        "confidence": 48,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 2 of 2 joined courses (few or mixed, right 48% of the time)."
-       }
-      ]
-     }
-    },
-    {
-     "code": "WORK EXPERIENCE (WE)",
-     "title": {
-      "title": "Business",
-      "confidence": 48,
-      "from": "course_joins",
-      "why": "course joins: 1 of 1 joined courses (few or mixed, right 48% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Business",
-        "confidence": 48,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 1 of 1 joined courses (few or mixed, right 48% of the time)."
-       }
-      ]
-     },
+     "code": "THEATER ARTS (THEAT)",
      "common": {
-      "code": "BUSI",
-      "discipline": "Business",
-      "confidence": 48,
+      "code": "THTR",
+      "discipline": "Drama/Theater Arts",
+      "confidence": 97,
       "from": "title",
-      "why": "The title names the discipline Business."
+      "why": "The title names the discipline Drama/Theater Arts."
+     }
+    },
+    {
+     "code": "TRANSPORTATION (TRANS)",
+     "common": {
+      "code": "TRNS",
+      "discipline": "Transportation",
+      "confidence": 97,
+      "from": "title",
+      "why": "The title names the discipline Transportation."
      }
     }
    ]

@@ -230,6 +230,10 @@ jobs:
       - name: Docs-reading jsdom tests (run even when the suite is skipped)
         if: matrix.shard == 1 && (needs.gate.outputs.decision == 'skip')
         run: node tests/governance_docs_panel.test.js
+      # A state-list subject written as its title and code takes its title from the label (S737, San Jose City).
+      - name: Subject titles from a state-list label (TITLE (CODE))
+        if: matrix.shard == 3
+        run: python3 tests/subject_state_label_title_test.py
       # The docs-only lint skip (S737): the heavy steps listed in tests/lints_docs_only_skip.json read no docs file
       # (traced under strace), so on a docs-only diff they skip with `&& (needs.gate.outputs.decision == 'run')`.
       # Main's push run and every code PR run them. A step joins the skip only through that list.
