@@ -319,7 +319,12 @@ Each step lands only after the one before it, under its own receipt, and each ha
    cohort and field, and keeps a row a person validated (`kept_for_a_person`). The anchored plan mints neither HUMA
    M10ME nor LIBR M10CJ. The restamp's before-values are committed in
    `kb/honors_of_s653_out/2026-11-14/step1_restamp_before.json`. Proof: `tests/kb_curation_guarded_sql_proof.py`.
-2. **The rows**, after every item above.
+2. **The rows** (done: 380 rows applied 2026-11-16T14:50:41Z by supabase-migrate run 43889173474, from the
+   2026-11-15 plan; receipt `kb/receipts/migration_s653_honors_of_rows_43889173474.json`). S733's stray-code re-mint
+   retired FTVM M10AS and M10AF and deleted that pair's row live (restore in
+   `kb/stray_code_remint_out/2026-11-25/applied/`), so 379 stand. Since then `--plan` refuses; step 4 reads the
+   redraw (`--redraw`, `kb/honors_mints_out/<date>/`, S737), which lists each pair that left, arrived or changed
+   action against the applied plan. Redraw it after every alias map and before the mint's dry run.
 3. **HUMA M10OI into HUMA M1110** (`d-huma-m10oi-into-m1110-s652`) and LIBR M10CJ's stale minted entry, each its own
    small change after step 1, when the pairwise hold already stands.
 4. **The mints** (a re-mint under `docs/coursecontrolnumber_remint.md`): one alias map from each unheld Honors M-ID to

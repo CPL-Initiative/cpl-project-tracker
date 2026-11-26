@@ -32,6 +32,12 @@ Run (from repo root):
   python3 kb/_honors_of_s653_dryrun.py --plan        # writes kb/honors_of_s653_out/<today>/ and step 2's SQL
   python3 kb/_honors_of_s653_dryrun.py --sql-only    # redrafts step 2's SQL from the newest plan.json
   python3 kb/_honors_of_s653_dryrun.py --check       # the apply-day check on the newest plan (or --date)
+  python3 kb/_honors_of_s653_dryrun.py --redraw      # step 4's plan on today's payload, in kb/honors_mints_out/
+
+THE REDRAW (S737). Step 2 is applied (380 rows, receipt kb/receipts/migration_s653_honors_of_rows_43889173474.json),
+so its plan folder, SQL and --check stay pinned to what ran. A later alias map (S733's stray-code re-mint) moves the
+payload under step 4, the mints. --redraw draws the same plan into kb/honors_mints_out/<today>/, writes no SQL and no
+kb/honors_of_s653_out file, and lists every pair that left, arrived or changed action against the applied plan.
 """
 import argparse
 import hashlib
@@ -985,6 +991,30 @@ def freshness_problems(root=ROOT):
     return freshness(root)[0]
 
 
+STEP2_PLAN = "2026-11-15"   # the plan step 2 applied from (rows md5 29667c0741e7e7fafb509b4c2937e9db)
+STEP2_RECEIPT = os.path.join(HERE, "receipts", "migration_s653_honors_of_rows_43889173474.json")
+
+
+def against_applied(doc):
+    """Every pair that left, arrived or changed action since the applied step-2 plan, and why a pair left: an id
+    the alias chain now resolves elsewhere or that is no longer live."""
+    old = jload(os.path.join(HERE, "honors_of_s653_out", STEP2_PLAN, "plan.json"))
+    A = {(p["honors_id"], p["base_id"]): p for p in old["pairs"]}
+    B = {(p["honors_id"], p["base_id"]): p for p in doc["pairs"]}
+    maps = alias_chain.load_maps(alias_chain.ALIAS_MAPS)
+    gone = [{"honors_id": h, "base_id": b, "was": A[(h, b)]["action"],
+             "now": {"honors_id": alias_chain.resolve_id(h, maps), "base_id": alias_chain.resolve_id(b, maps)}}
+            for (h, b) in sorted(A) if (h, b) not in B]
+    new = [{"honors_id": h, "base_id": b, "action": B[(h, b)]["action"]} for (h, b) in sorted(B) if (h, b) not in A]
+    moved = [{"honors_id": h, "base_id": b, "was": A[(h, b)]["action"], "now": B[(h, b)]["action"],
+              "holds": B[(h, b)]["holds"]} for (h, b) in sorted(A) if (h, b) in B
+             and A[(h, b)]["action"] != B[(h, b)]["action"]]
+    return {"applied_plan": STEP2_PLAN, "alias_era": [old.get("alias_era"), doc.get("alias_era")],
+            "counts": {"left": len(gone), "arrived": len(new), "changed_action": len(moved),
+                       "mints": [old["summary"]["mints"], doc["summary"]["mints"]]},
+            "left": gone, "arrived": new, "changed_action": moved}
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--plan", action="store_true", help="draw the plan on the committed payload, and its SQL")
@@ -996,6 +1026,9 @@ def main():
                          "origin/main, the SQL is the plan's, and a re-measure on the day's payload gives its rows "
                          "and classes; on a pass, write check_receipt.json")
     ap.add_argument("--check-sql", action="store_true", help="the SQL half of --check alone (CI)")
+    ap.add_argument("--redraw", action="store_true",
+                    help="step 4's plan on today's payload into kb/honors_mints_out/<today>/; no SQL, and the "
+                         "applied step-2 plan untouched")
     a = ap.parse_args()
     if a.sql_only or a.check or a.check_sql:
         doc = jload(os.path.join(plan_dir(a.date), "plan.json"))
@@ -1004,8 +1037,11 @@ def main():
             return 0
         print(f"drafted {write_rows_sql(doc)} rows: {os.path.relpath(ROWS_SQL, ROOT)}, {os.path.relpath(ROWS_RB, ROOT)}")
         return 0
-    if not a.plan:
-        raise SystemExit("pass --plan, --sql-only, --check or --check-sql")
+    if not (a.plan or a.redraw):
+        raise SystemExit("pass --plan, --redraw, --sql-only, --check or --check-sql")
+    if a.plan and os.path.exists(STEP2_RECEIPT):
+        raise SystemExit("REFUSED: step 2 is applied (" + os.path.relpath(STEP2_RECEIPT, ROOT) + "); --plan would "
+                         "rewrite its migration. Use --redraw for step 4's plan")
     date = a.date or datetime.now(timezone.utc).strftime("%Y-%m-%d")
     w = Shim(ROOT)
     _, _, rows, _ = s648.measure_honors(w)
@@ -1039,6 +1075,35 @@ def main():
     doc["step2_rows"] = len(step2_rows(doc))
     doc["plan_md5"] = plan_md5(plan)
     doc["summary"].update(q2_lists(w, plan))
+    if a.redraw:
+        doc["_about"] = ("Step 4's plan redrawn on today's payload (S737). Nothing applied, no SQL. Step 2 applied "
+                         "from " + STEP2_PLAN + ". Design: docs/reference/honors_of_design.md.")
+        doc["against_applied"] = against_applied(doc)
+        od = os.path.join(HERE, "honors_mints_out", date)
+        os.makedirs(od, exist_ok=True)
+        with open(os.path.join(od, "plan.json"), "w", encoding="utf-8") as f:
+            json.dump(doc, f, indent=1, ensure_ascii=False)
+            f.write("\n")
+        write_md(doc, os.path.join(od, "plan.md"))
+        aa = doc["against_applied"]
+        L = ["", "## Against the applied step-2 plan (" + STEP2_PLAN + ")", "",
+             f"Alias era {aa['alias_era'][0]} to {aa['alias_era'][1]}. Mints {aa['counts']['mints'][0]} to "
+             f"{aa['counts']['mints'][1]}. Left {aa['counts']['left']}, arrived {aa['counts']['arrived']}, changed "
+             f"action {aa['counts']['changed_action']}.", ""]
+        if aa["left"] or aa["arrived"] or aa["changed_action"]:
+            L += ["| Honors id | Base id | Then | Now |", "|---|---|---|---|"]
+            L += [f"| {g['honors_id']} | {g['base_id']} | {g['was']} | left: "
+                  + ("the chain keeps both ids, so an id retired or left the payload" if g["now"] == {
+                      "honors_id": g["honors_id"], "base_id": g["base_id"]} else
+                     f"the chain sends it to {g['now']['honors_id']}, {g['now']['base_id']}") + " |"
+                  for g in aa["left"]]
+            L += [f"| {g['honors_id']} | {g['base_id']} | (none) | {g['action']} |" for g in aa["arrived"]]
+            L += [f"| {g['honors_id']} | {g['base_id']} | {g['was']} | {g['now']} |" for g in aa["changed_action"]]
+        with open(os.path.join(od, "plan.md"), "a", encoding="utf-8") as f:
+            f.write("\n".join(L) + "\n")
+        print(json.dumps({"summary": {k: doc["summary"][k] for k in ("pairs", "by_action", "rows_to_write", "mints")},
+                          "against_applied": doc["against_applied"]["counts"]}, indent=1))
+        return 0
     od = os.path.join(HERE, "honors_of_s653_out", date)
     os.makedirs(od, exist_ok=True)
     with open(os.path.join(od, "plan.json"), "w", encoding="utf-8") as f:

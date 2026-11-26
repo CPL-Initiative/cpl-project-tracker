@@ -2254,6 +2254,11 @@ jobs:
       - name: Honors rows plan, the apply-day check refuses a stale plan
         if: matrix.shard == 4
         run: python3 tests/honors_of_rows_check_test.py
+      # The Honors step-4 redraw (S737): --plan refuses once step 2 is applied, and --redraw names every pair that
+      # left, arrived or changed action against the applied plan. Pure-stdlib python.
+      - name: Honors step-4 redraw, refuses to rewrite step 2 and names every moved pair
+        if: matrix.shard == 4
+        run: python3 tests/honors_mints_redraw_test.py
       # How the rows plan reads a subject (S655, COBIx's two findings on #3315): engineering, computing and
       # biotechnology read apart from English, communication and biology; the Honors subject marker is Victor Valley's.
       - name: Honors rows plan, the subject family and the Honors subject marker
