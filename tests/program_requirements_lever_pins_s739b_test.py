@@ -22,7 +22,7 @@ earlier file already names is a relist and is filed nowhere again.
   4. Named gaps: each college's named_gaps_s739.json names exactly its programs, each once, with a defined reason
      and a note, none also pinned; a relist (Santa Rosa Junior 37014, West Los Angeles 46261) stays in the file
      that already names it and is in no S739 file.
-  5. A record read from its pinned section places every listed course (whichever run filed it).
+  5. A record read from its pinned section or page places its listed courses (whichever run filed it).
 Pure stdlib.
 """
 import json
@@ -169,15 +169,26 @@ for slug, cn, where in RELISTS:
     names = ([g["control_number"] for g in held.get("programs") or []] or [held.get("control_number")])
     check(cn in names and cn not in S739, "%s %s is a relist: %s already names it, and no S739 file does" % (slug, cn, where))
 
-# ── 5. a record read from its pinned section places every listed course ───────────────────────────────
+# ── 5. a record read from its pinned section places its listed courses ────────────────────────────────
+# Each check holds only while the record is the one read from the pin (another read may move it on).
 for key, college, cn, title, codes, page, through, filed_page, holds in PDF:
-    path = os.path.join(DIR, C.slug_of(college), "records", cn + ".json")
-    rec = json.load(open(path, encoding="utf-8"))
+    with open(os.path.join(DIR, C.slug_of(college), "records", cn + ".json"), encoding="utf-8") as fh:
+        rec = json.load(fh)
     cov = (rec.get("score") or {}).get("coverage") or {}
-    from_pin = str(rec.get("source_url") or "").endswith("#page=%d" % page) and str(rec.get("extracted_run")) >= "45784000000"
+    from_pin = (str(rec.get("source_url") or "").endswith("#page=%d" % page)
+                and int(str(rec.get("extracted_run") or 0)) >= 45784241940)
     check(not from_pin or (cov.get("placed") == cov.get("listed") == len(codes)),
           "%s: its record, once read from the pinned section, places %d of %d (now: placed %s, run %s)"
           % (cn, len(codes), len(codes), cov.get("placed"), rec.get("extracted_run")))
+SITE_PLACED = {"41116": 3, "30882": 4}   # Skyline's page does not print STAT C1000, the fifth course the state lists
+for college, cn, title, award, url, own_h1, handed_h1 in SITE:
+    with open(os.path.join(DIR, C.slug_of(college), "records", cn + ".json"), encoding="utf-8") as fh:
+        rec = json.load(fh)
+    cov = (rec.get("score") or {}).get("coverage") or {}
+    from_pin = str(rec.get("source_url") or "").rstrip("/") == url.rstrip("/")
+    check(not from_pin or (cov.get("placed") or 0) >= SITE_PLACED[cn],
+          "%s: its record, once read from its own page, places at least %d of its listed courses (now: placed %s, "
+          "page %s)" % (cn, SITE_PLACED[cn], cov.get("placed"), "its own" if from_pin else "another"))
 
 print("\n%d checks, %d failed" % (N[0], len(FAILS)))
 sys.exit(1 if FAILS else 0)
