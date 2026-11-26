@@ -1321,8 +1321,26 @@
       RAPIDS.last ? " " : null, RAPIDS.last ? (function () { var u = el("button", { type: "button", cls: "csb-word", id: "csb-rapid-undo", text: "Undo" }); u.addEventListener("click", rapidUndo); return u; })() : null]));
     box.appendChild(el("h3", { id: "csb-rapid-h", text: r.code + " at " + r.college }));
     var n = rapidCourseCount(r), ex = g.courses && g.courses[0];
-    if (ex) box.appendChild(el("p", { cls: "csb-note", id: "csb-rapid-ex" }, ["Example course: ", el("strong", { text: ex }),
-      n ? " (1 of " + fmt(n) + (n === 1 ? " course)" : " courses)") : ""]));
+    /* The example course opens its description (Sam, 2026-11-26: "add hover over on the course listed on each card
+       showing the course description"). A phone has no hover, so a tap opens it; a mouse sees it as the hover title
+       too. Only a description on file is shown (g.description, from a schedule or catalog read); otherwise the line
+       offers a web search for the course, and says no description is on file. */
+    if (ex) {
+      var desc = String(g.description || "").trim();
+      var exBtn = el("button", { type: "button", cls: "csb-word", id: "csb-rapid-exbtn", "aria-expanded": "false", "aria-controls": "csb-rapid-desc",
+        title: desc || "Tap to find this course’s description", text: ex });
+      var descBox = el("p", { cls: "csb-note", id: "csb-rapid-desc", hidden: "hidden" }, desc ? [desc]
+        : ["No description of this course is on file yet. ", el("a", { href: webHref(String(r.college || "") + " " + ex + " course description"), target: "_blank", rel: "noopener noreferrer" },
+            ["Find its description", el("span", { cls: "csb-vh", text: " (opens in a new tab)" })]), "."]);
+      exBtn.addEventListener("click", function () {
+        var open = descBox.hasAttribute("hidden");
+        if (open) descBox.removeAttribute("hidden"); else descBox.setAttribute("hidden", "hidden");
+        exBtn.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+      box.appendChild(el("p", { cls: "csb-note", id: "csb-rapid-ex" }, ["Example course: ", exBtn,
+        n ? " (1 of " + fmt(n) + (n === 1 ? " course)" : " courses)") : ""]));
+      box.appendChild(descBox);
+    }
     else if (n) box.appendChild(el("p", { cls: "csb-note", id: "csb-rapid-ex", text: fmt(n) + (n === 1 ? " course" : " courses") + "; no example course is on file." }));
     if (g.judged) {
       var jv = g.judged.verdict === "accept" ? "COBI accepts the guess." : g.judged.verdict === "change" ? "COBI changed the guess, which read " + g.guess + "."

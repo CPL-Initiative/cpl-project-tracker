@@ -228,6 +228,19 @@ function key(x, el, k, mods) {
   x.d.getElementById("csb-rapid-accept").click(); await settle();
   check("(11) ⭐ so Accept on it saves nothing", writesOf(x).length === 0 && /Nothing to accept/.test(txt(x.d.getElementById("csb-rapid-msg"))));
 
+  /* (13) The example course opens its description, or a search for it (Sam, 2026-11-26) */
+  {
+    const y = load("#commons/subjects/rapid", { sess: ME });
+    await y.M.boot(); await settle();
+    const btn = y.d.getElementById("csb-rapid-exbtn"), dsc = y.d.getElementById("csb-rapid-desc");
+    check("(13) the example course is a button that opens its description line", btn && btn.tagName === "BUTTON" && dsc && dsc.hasAttribute("hidden")
+      && btn.getAttribute("aria-expanded") === "false", y.d.getElementById("csb-rapid-ex") && y.d.getElementById("csb-rapid-ex").outerHTML);
+    if (btn) { btn.click(); await settle(); }
+    check("(13) ⭐ a tap shows it; with no description on file it says so and offers a search that opens a new tab",
+      dsc && !dsc.hasAttribute("hidden") && btn.getAttribute("aria-expanded") === "true" && /No description of this course is on file yet/.test(txt(dsc))
+      && (dsc.querySelector("a") || {}).target === "_blank" && /google\.com\/search/.test((dsc.querySelector("a") || {}).href || ""), dsc && dsc.outerHTML);
+  }
+
   /* (12) Not a subject and Skip take a code off the list (Sam, 2026-11-26: TEST "stays on the list as not having been
      acted upon...needs to pop off the list") */
   {
