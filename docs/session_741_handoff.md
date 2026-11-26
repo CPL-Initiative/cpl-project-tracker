@@ -84,5 +84,16 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   same 32 at older builds, none without a display. 13:41Z: #3886 opened; `test` green at 13:51Z (run 45831658269).
 - 13:54Z: #3886 merged (`0017cd97`, confirmed on `origin/main`; `main` had not moved since its base). 13:55Z: the census
   dispatched on `main`.
+- 14:03Z: the census after the display build, 45833723371 on `main` (`a2008423`): 15,610 of 20,282 pass, 4,082 have no
+  passing record, 590 collected with a named gap (unchanged, as a display build moves no record).
+- 14:05Z: `reads` reported (head `3e59a452`): neither long capture is needed, since both filed captures' artifacts
+  still exist and `sources_from` stages them with no page loaded (free staged runs 45830705593 and 45830902990, each
+  priced at $0.10); plan s740r1, Copper Mountain's registry row (Sam's Sheet 88 correction, applied by S405) moved to
+  the same 2026-2027 catalog's reissue, the old address answering 404. The conductor read it (one row, guarded, the
+  history trigger and the receipt both hold the before-row; new source evidence reopens a person's save,
+  `r-person-settled-wins` in `CLAUDE.md`), pre-read clean 1 of 1; migrate 45835717010 returned 1; `.apply` restored
+  (`0b2b5042`). 14:08Z: paid read San Diego City 22367 (staged from 38347787891, `only` and `force` 22367, $0.10 on the
+  estimate; the force has its cause: S739's page read prints the four courses and the total the filed record lacks):
+  run 45836017170. None of the three records has a live row, so each goes live by `load`.
 - 13:31Z: `piles`, `reads` and `reconcile` started on Fable 5.2 at high effort, each in its own worktree off `609c2a2b`
   (`/home/user/wt/<name>`), told to open no PR (the conductor opens each land) and to leave `.apply` to the conductor.
