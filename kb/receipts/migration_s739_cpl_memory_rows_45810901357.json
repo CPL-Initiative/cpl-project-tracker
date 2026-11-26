@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-26_s739_cpl_memory_rows.sql",
+ "name": "s739_cpl_memory_rows",
+ "version": "20261126112943",
+ "sha256": "d6b986f45ca1d54b2958fde33cd9ddb5f35168c7d7ee8c0bdca61ba456105258",
+ "run": "45810901357",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"slug\":\"d-free-page-read-workflow-in-lift-s739\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":293},{\"slug\":\"d-land-applied-piles-apart-s739\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":308},{\"slug\":\"d-one-land-for-piles2-and-waves-s739\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":269},{\"slug\":\"d-within-range-sums-hold-for-units-kind-s739\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":373},{\"slug\":\"f-elcamino-02487-stale-pass-s739\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":292},{\"slug\":\"f-four-new-named-gap-labels-s739\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":305},{\"slug\":\"f-heading-apart-both-awards-s739\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":361},{\"slug\":\"f-shasta-30580-shares-43618-list-s739\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":232},{\"slug\":\"m-collection-s739\",\"kind\":\"milestone\",\"status\":\"proposed\",\"summary_len\":333},{\"slug\":\"p-new-ci-step-docs-only-skip-needs-list-s739\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":289},{\"slug\":\"p-older-pile-tests-pin-runs-later-plans-move-s739\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":298},{\"slug\":\"p-shared-clone-origin-main-stale-s739\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":319}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
