@@ -184,3 +184,6 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 - 09:19Z: s739h's reader: APPLY; the shared module's two later changes SOUND (MINOR: a vacuous check in the persons
   test). 09:20Z: clean md5 pre-read, 2 of 2; Los Angeles Mission 44849 has no live row, as its named gap says. The
   s739h apply dispatched. 09:23Z: migrate 45790943587 returned 2, none skipped; `.apply` restored (`59486d6e`).
+- 09:25Z: the applied plans s739a to s739h land now from `claude/s739-piles-land`, cut at `59486d6e` and brought up
+  to `main` by a Sonnet worker (no data writes), while `piles` keeps writing s739i and s739j on `claude/s739-piles`,
+  whose own land follows once the first merges (**DECIDED** `d-land-applied-piles-apart-s739`).
