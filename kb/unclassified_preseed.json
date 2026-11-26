@@ -1,10 +1,10 @@
 {
  "_about": "Pre-fills for the CER's unclassified titles, written each night by kb/_cer_procedures.py from the procedures in kb/cer_procedures.json and the classifier. credential_reference.js pre-fills each row. A pre-fill no reason holds is also saved to kb_curation under its procedure's cohort (Open Asks Sheet 94 card 2, 2026-10-18); a held one waits for the curator's Save. Rows with a saved assignment are never here.",
- "_generated_at": "2026-11-25T18:16:00Z",
+ "_generated_at": "2026-11-26T17:59:31Z",
  "_queue_count": 4,
  "_counts": {
   "staged": 3,
-  "needs_you": 3,
+  "needs_you": 4,
   "not_yet_asked": 0
  },
  "_residual": [],
@@ -24,19 +24,6 @@
    ],
    "trainer": "U.S. Armed Forces"
   },
-  "CCNA Certification": {
-   "title": "Cisco Certified Network Associate (CCNA)",
-   "issuer": "Cisco",
-   "via": "classifier",
-   "confidence": 0.95,
-   "note": "Hint mended: the title joins the house family 'Cisco Certified Network Associate (CCNA)', and the issuer uses the house spelling 'Cisco' rather than 'Cisco Systems, Inc.'.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 6",
-    "Rule 7"
-   ]
-  },
   "Community Health Worker Certificate-Code Tenderloin": {
    "title": "Community Health Worker Certificate",
    "issuer": "Code Tenderloin",
@@ -51,6 +38,20 @@
     "issuer-issues-the-card"
    ],
    "trainer": "Code Tenderloin"
+  },
+  "Spanish Literature for Bilinguals Examiantion": {
+   "title": "Spanish Literature for Bilinguals",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.8,
+   "note": "Mended the cx hint by dropping the misspelled mechanism word 'Examiantion' (Examination); the remaining course content is the title. The Southwestern College course's CCN/C-ID alignment is unverified.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "mechanism-collapses",
+    "Rule 5c",
+    "Rule 1"
+   ]
   }
  }
 }

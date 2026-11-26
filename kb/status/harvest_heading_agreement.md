@@ -1,8 +1,8 @@
 # Harvest heading agreement
 
-A dated snapshot of main at commit 0017cd97671e (2026-11-26; the newest capture it reads started 2026-11-26), written by `kb/_program_requirements_heading_agreement.py` from the files that commit holds. A dispatch of `harvest-gap-census.yml` rewrites it beside the gap census; nothing gates a PR on it, so it can trail the records. Each record's own heading against the program it is filed under (COCI title and award).
+A dated snapshot of main at commit 7f00b8279306 (2026-11-26; the newest capture it reads started 2026-11-26), written by `kb/_program_requirements_heading_agreement.py` from the files that commit holds. A dispatch of `harvest-gap-census.yml` rewrites it beside the gap census; nothing gates a PR on it, so it can trail the records. Each record's own heading against the program it is filed under (COCI title and award).
 
-All colleges: 18976 records, 15540 agree, 207 disagree (132 of them pass on the committed files), 3229 cannot tell (261 say the heading is not in their text; 74 name an award and none of the program's title words, 70 of them passing, set aside).
+All colleges: 18976 records, 15544 agree, 207 disagree (132 of them pass on the committed files), 3225 cannot tell (260 say the heading is not in their text; 74 name an award and none of the program's title words, 70 of them passing, set aside).
 
 The heading check (a heading that names another award type and some of the program's title) would fail 99 records that pass on the committed files (passes_live), 31 of them a transfer degree and a local degree crossed. It is in no pass rule.
 
@@ -40,7 +40,7 @@ A suspect record has a heading that disagrees with its program, or was read from
 | Cerro Coso Community College | main | 56 | 55 | 0 | 0 | 1 | 0 (0) | 0 (0) | none seen | no number line |
 | College of the Canyons | main | 248 | 234 | 0 | 0 | 14 | 0 (0) | 0 (0) | none seen | no number line |
 | Compton College | main | 83 | 63 | 0 | 0 | 20 | 0 (0) | 0 (0) | none seen | no number line |
-| Copper Mountain College | main | 48 | 44 | 0 | 0 | 4 | 0 (0) | 0 (0) | none seen | no number line |
+| Copper Mountain College | main | 48 | 47 | 0 | 0 | 1 | 0 (0) | 0 (0) | none seen | no number line |
 | Folsom Lake College | main | 107 | 99 | 0 | 0 | 8 | 0 (0) | 0 (0) | none seen | no number line |
 | Los Angeles City College | main | 244 | 222 | 0 | 0 | 22 | 0 (0) | 0 (0) | Academic Plan 153, State Code 161 | at_heading |
 | Los Angeles Mission College | main | 127 | 24 | 0 | 0 | 103 | 0 (0) | 0 (0) | none seen | no number line |

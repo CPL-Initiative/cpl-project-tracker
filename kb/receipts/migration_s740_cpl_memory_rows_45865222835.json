@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-26_s740_cpl_memory_rows.sql",
+ "name": "s740_cpl_memory_rows",
+ "version": "20261126171347",
+ "sha256": "bb77d82b742c19f01d36e67588fcc58e7777f58a1d35e3ee356c8b0b11f33947",
+ "run": "45865222835",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"slug\":\"d-copper-mountain-registry-moves-to-reissue-s740\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":338},{\"slug\":\"d-waived-course-counted-at-range-top-s740\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":349},{\"slug\":\"f-rule-b-refuses-san-diego-city-22367-s740\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":387},{\"slug\":\"f-units-within-range-by-key-only-s740\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":354},{\"slug\":\"m-collection-s740\",\"kind\":\"milestone\",\"status\":\"proposed\",\"summary_len\":337},{\"slug\":\"p-free-reconcile-cannot-reach-moved-address-records-s740\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":306},{\"slug\":\"p-harness-pins-worker-worktree-s740\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":327},{\"slug\":\"p-reread-posts-raw-reconcile-keep-better-first-s740\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":338},{\"slug\":\"p-sandbox-python-311-check-generated-false-stale-s740\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":309},{\"slug\":\"p-staged-read-predating-page-counts-held-by-price-step-s740\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":327}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

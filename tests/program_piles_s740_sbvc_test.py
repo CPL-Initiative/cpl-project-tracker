@@ -51,10 +51,16 @@ check = t.check
 
 with open(os.path.join(B.ROOT, "kb", "status", "harvest_gap_census.json"), encoding="utf-8") as fh:
     census = json.load(fh)
-lever = next(e for e in census["levers"] if e["lever"] == "reconcile_steps" and e["scope"] == M.COLLEGE)
-check(sorted(lever["members"]) == sorted(M.LEVER) and set(M.LEVER) == set(M.KEYS) | set(M.PASSED_BY_RECONCILE)
-      and not set(M.KEYS) & set(M.PASSED_BY_RECONCILE),
-      "the lever's 15 are the two the reconcile passed and the plan's thirteen keys")
+# Either state (S740 conductor, after the closing census 45870806616): before tonight's writes the census lists
+# the plan-time lever; after them, the rows the reread passed and the plan named have left it (and the lever, capped
+# at 15 a college, may list others or be gone) (p-older-pile-tests-pin-runs-later-plans-move-s739).
+lever = next((e for e in census["levers"] if e["lever"] == "reconcile_steps" and e["scope"] == M.COLLEGE), None)
+members = set(lever["members"]) if lever else set()
+before = (sorted(members) == sorted(M.LEVER) and set(M.LEVER) == set(M.KEYS) | set(M.PASSED_BY_RECONCILE)
+          and not set(M.KEYS) & set(M.PASSED_BY_RECONCILE))
+after = (set(M.LEVER) == set(M.KEYS) | set(M.PASSED_BY_RECONCILE) and not set(M.KEYS) & set(M.PASSED_BY_RECONCILE)
+         and not members & (set(M.PASSED_BY_RECONCILE) | set(ROWS)))
+check(before or after, "the lever's 15 are the two the reconcile passed and the plan's thirteen keys, or tonight's passed and named rows have left it")
 for cn in M.PASSED_BY_RECONCILE:
     f = W.load(cn)
     sc = S.score(f["record"], C.closed_list(M.COLLEGE, cn), None, f.get("award"), R.prefix_aliases(M.COLLEGE), False)
