@@ -1,0 +1,30 @@
+{
+ "_readme": "LACCD class schedule search, probe (S736, Sam's ruling r-schedule-tool-first-for-subject-titles-sam-2026-11-26). The district's PeopleSoft guest class search lists each subject code a college schedules beside its title. Page 1 loads Pierce's search for term 2268 with no subject and prints every select whole (the subject list, the campus list); page 2 loads Sam's example (OLD ADL 029CE at Pierce) to see whether a course's result or detail prints its description. Reads only; no model call.",
+ "college": "Los Angeles Pierce College",
+ "questions": {
+  "subjects": "Every subject code the search lists for the campus and term, with its title.",
+  "campuses": "The campus codes the search takes.",
+  "descriptions": "Whether a class result or its detail prints the course description."
+ },
+ "keywords": [
+  "OLD ADL",
+  "Older Adults",
+  "[Dd]escription",
+  "[Ss]ubject"
+ ],
+ "pages": [
+  {
+   "url": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAPC&strm=2268",
+   "answers": ["subjects", "campuses"],
+   "selects": true,
+   "forms": true,
+   "network": true
+  },
+  {
+   "url": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAPC&strm=2268&subj=OLD%20ADL&catalogid=029CE&",
+   "answers": ["descriptions", "subjects"],
+   "selects": true,
+   "links": "[Dd]etail|[Dd]escription|CLASS_DETAIL|029CE"
+  }
+ ]
+}
