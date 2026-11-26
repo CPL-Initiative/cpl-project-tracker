@@ -235,7 +235,7 @@ const buttonWords = (el) => Array.prototype.map.call(el.querySelectorAll("button
     await m.M.activate(); await tick();
     m.M._state.open.v1 = true; m.M.render();
     click(m.w, m.root.querySelector('[data-pub="v1"]'));
-    check("H ⭐ a pass for a revision draft does not open the listing form for the page", /Not yet certified/.test(m.root.textContent) && !m.root.querySelector("#lp-sum"));
+    check("H ⭐ a pass for a revision draft does not open the listing form for the page", /Not yet certified/.test(m.root.textContent) && !/The Public Library shows the title/.test(m.root.textContent));
     submit(m.w, m.root.querySelector('form[data-pubform="v1"]'));
     await until(() => patches(m).length > 0);
     check("H ⭐ and the press lists nothing: it keeps the choice only", rpcCalls(m).length === 0 && patches(m).length === 1 && patches(m)[0].body.publish_target === "public");
@@ -247,7 +247,7 @@ const buttonWords = (el) => Array.prototype.map.call(el.querySelectorAll("button
     await m.M.activate(); await tick();
     m.M._state.open.v1 = true; m.M.render();
     click(m.w, m.root.querySelector('[data-pub="v1"]'));
-    check("H the page's own pass opens the listing form", !!m.root.querySelector("#lp-sum"));
+    check("H the page's own pass opens the listing form", !!/The Public Library shows the title/.test(m.root.textContent));
   }
   {
     // A piece waiting to be listed whose page check has since passed offers the listing form (should-fix 3).
@@ -281,7 +281,7 @@ const buttonWords = (el) => Array.prototype.map.call(el.querySelectorAll("button
     await m.M.activate(); await tick();
     m.M._state.open.v1 = true; m.M.render();
     click(m.w, m.root.querySelector('[data-pub="v1"]'));
-    check("I ⭐ a pass at the old url does not open the listing form after a url move", !m.root.querySelector("#lp-sum") && /Not yet certified/.test(m.root.textContent));
+    check("I ⭐ a pass at the old url does not open the listing form after a url move", !/The Public Library shows the title/.test(m.root.textContent) && /Not yet certified/.test(m.root.textContent));
     submit(m.w, m.root.querySelector('form[data-pubform="v1"]'));
     await until(() => patches(m).length > 0);
     check("I ⭐ and the press calls no listing: it keeps the choice for the check run", rpcCalls(m).length === 0 && patches(m).length === 1 && patches(m)[0].body.publish_target === "public");
@@ -291,7 +291,7 @@ const buttonWords = (el) => Array.prototype.map.call(el.querySelectorAll("button
     await m.M.activate(); await tick();
     m.M._state.open.v1 = true; m.M.render();
     click(m.w, m.root.querySelector('[data-pub="v1"]'));
-    check("I a check with no url (every row before #3577) never opens the listing form", !m.root.querySelector("#lp-sum"));
+    check("I a check with no url (every row before #3577) never opens the listing form", !/The Public Library shows the title/.test(m.root.textContent));
   }
   {
     // A version relabeled to a key that passed: the pass ran before the page last changed.
@@ -299,7 +299,7 @@ const buttonWords = (el) => Array.prototype.map.call(el.querySelectorAll("button
     await m.M.activate(); await tick();
     m.M._state.open.v1 = true; m.M.render();
     click(m.w, m.root.querySelector('[data-pub="v1"]'));
-    check("I ⭐ a pass older than the page's last change (a relabeled version) does not open the listing form", !m.root.querySelector("#lp-sum"));
+    check("I ⭐ a pass older than the page's last change (a relabeled version) does not open the listing form", !/The Public Library shows the title/.test(m.root.textContent));
   }
   {
     // Newest wins per key and url: a later fail at this url, beside an older pass here and a newer pass elsewhere.
@@ -323,7 +323,7 @@ const buttonWords = (el) => Array.prototype.map.call(el.querySelectorAll("button
     await m.M.activate(); await tick();
     m.M._state.open.v1 = true; m.M.render();
     click(m.w, m.root.querySelector('[data-pub="v1"]'));
-    check("I a pass at the page's url after its last change opens the listing form", !!m.root.querySelector("#lp-sum"));
+    check("I a pass at the page's url after its last change opens the listing form", !!/The Public Library shows the title/.test(m.root.textContent));
   }
   // ── J. The second read of #3581: the card says why the check run leaves a piece waiting ──
   {

@@ -403,6 +403,20 @@
     var R = "#" + ROOT_ID;
     var css = [
       R + "{text-align:left;color:var(--text-body);}",
+      // The List and its side panel share one height and one type (Sam, 2026-11-25: "the libraries sidebar should be
+      // same height as the listview and use same font type and size. height should be optimized to window hight").
+      // fitList() measures where the List starts and sets --lib-fill-h so both end at the window's foot; each scrolls
+      // inside itself. Below 900px the panel covers the view as before (commons_list.js), so the rule stops there.
+      R + "{--lib-row-font:.75rem;--lib-row-lh:1.3;}",
+      R + " .libl-table{font-size:var(--lib-row-font);line-height:var(--lib-row-lh);}",
+      R + " .libl-panel .libl-pbody{font-family:inherit;font-size:var(--lib-row-font);line-height:var(--lib-row-lh);}",
+      R + " .libl-panel .libl-pbody :is(p,li,dt,dd,span,a,b,button,label,input,textarea,select,code,td,th,summary){font-size:inherit;}",
+      "@media (min-width: 901px){" +
+        R + " .libl-wrap{max-height:var(--lib-fill-h,calc(100dvh - 160px));}" +
+        R + " .libl-split{align-items:stretch;}" +
+        R + " .libl-split > .libl-wrap," + R + " .libl-split > .libl-panel{box-sizing:border-box;height:var(--lib-fill-h,calc(100dvh - 160px));max-height:var(--lib-fill-h,calc(100dvh - 160px));}" +
+        R + " .libl-split > .libl-panel{position:relative;top:auto;}" +
+      "}",
       R + " .lib-lede{margin:0 0 14px;font-size:1.02rem;max-width:var(--cpl-measure,none);}",
       R + " .lib-views{display:flex;flex-wrap:wrap;gap:4px 18px;margin:0 0 14px;}",
       R + " .lib-views button{background:none;border:0;padding:0 2px;min-height:24px;font:inherit;font-weight:600;color:var(--cobalt);text-decoration:underline;text-underline-offset:3px;cursor:pointer;}",
@@ -544,6 +558,9 @@
       R + " ol.lib-steps li::before{content:counter(lib-step) \". \";}",
       R + " ol.lib-steps li.done{color:var(--text-body);}",
       R + " ol.lib-steps li.now{border-color:var(--cobalt);color:var(--cobalt);background:var(--surface-subtle);}",
+      R + " .lib-progress{margin:10px 0 0;}",
+      R + " .lib-progress .lib-bar{display:block;width:100%;max-width:var(--cpl-measure,none);height:6px;margin:8px 0 0;accent-color:var(--cobalt);}",
+      R + " @media (prefers-reduced-motion:reduce){.lib-progress .lib-bar{animation:none;}}",
       R + " textarea.lib-brief{width:100%;min-height:170px;margin-top:10px;font:inherit;font-size:.88rem;color:var(--text-body);background:var(--surface-subtle);border:1px solid var(--border-strong);border-radius:6px;padding:8px 10px;}",
       R + " .lib-vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}",
       // Regenerate: the request's state under the card, and the documents a piece is built from.
@@ -831,7 +848,7 @@
 
   function details(r) {
     var recActs = '<div class="lib-recacts">' + word("data-edittop", r.id, "Edit the record", false, r.title) +
-      (draftsOnCard(r) ? "" : word("data-newver", r.id, "File a new version")) + word("data-fromit", r.id, "Start something new from it") + "</div>" +
+      word("data-fromit", r.id, "Start something new from it") + "</div>" +
       (state.edit === r.id ? editForm(r) : "");
     return recActs + detailsList(r);
   }
@@ -949,8 +966,56 @@
   // never copies the internal summary or the title, so a waiting piece without one says so.
   var NEEDS_SUMMARY = "Its accessibility check passed. The Public Library lists it once it has a public summary: press Publish to Public Library and add one.";
   function needsSummary(r, gate) { return waitsToList(r) && gate.ok && !String(r.public_summary || "").trim(); }
+  // A piece waiting on its first check shows where it is (Sam, 2026-11-26: "when it is being check for accessibility, i
+  // need a progress indicator...it's just been stuck there"). library-publish.yml checks on its schedule, every three
+  // hours at :41 UTC, so the card names the next run and reads the check records again each minute while it waits.
+  var CHECK_CRON_MIN = 41, CHECK_CRON_EVERY_H = 3;
+  function nextCheckRun(now) {
+    var t = new Date(now || Date.now()), n = new Date(t.getTime());
+    n.setUTCMinutes(CHECK_CRON_MIN, 0, 0);
+    n.setUTCHours(Math.floor(t.getUTCHours() / CHECK_CRON_EVERY_H) * CHECK_CRON_EVERY_H);
+    while (n.getTime() <= t.getTime()) n.setUTCHours(n.getUTCHours() + CHECK_CRON_EVERY_H);
+    return n;
+  }
+  function awaitsFirstCheck(r, gate) {
+    return waitsToList(r) && !!r.url && !gate.ok && !gate.check && !gate.label && !gate.absent && r.remediation !== "in_remediation";
+  }
+  function checkRunWords() {
+    var at = nextCheckRun(), mins = Math.max(1, Math.round((at.getTime() - Date.now()) / 60000));
+    return { mins: mins, when: at.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" }) };
+  }
+  // The public summary can be added while the check waits, so the piece lists the moment it passes.
+  function summaryNowBtn(r) {
+    return String(r.public_summary || "").trim() ? ""
+      : '<div class="lib-actions-row"><button type="button" class="lib-word" data-pubtop="' + esc(r.id) + '"' + (state.busy ? " disabled" : "") +
+        '>Add its public summary<span class="lib-vh"> for ' + esc(r.title) + "</span></button></div>";
+  }
+  function checkProgress(r) {
+    var cr = checkRunWords(), mins = cr.mins, when = cr.when;
+    var steps = ["Published", "Accessibility check", "Listed in the Public Library"].map(function (w, i) {
+      return '<li class="' + (i === 0 ? "done" : i === 1 ? "now" : "") + '"' + (i === 1 ? ' aria-current="step"' : "") + ">" + w + "</li>";
+    }).join("");
+    return '<div class="lib-progress" data-checkwait="' + esc(r.id) + '" role="status">' +
+      '<ol class="lib-steps" aria-label="Where it is">' + steps + "</ol>" +
+      '<progress class="lib-bar" aria-label="Waiting for its accessibility check"></progress>' +
+      '<p class="lib-line">Waiting for its accessibility check. The next check run starts at ' + esc(when) +
+      " (in about " + mins + (mins === 1 ? " minute" : " minutes") + ") and takes a few minutes; this card updates when it finishes.</p>" + summaryNowBtn(r) + "</div>";
+  }
+  var checkPoll = null;
+  function pollChecks() {
+    var waiting = (state.rows || []).some(function (r) { return awaitsFirstCheck(r, publicGate(r)); });
+    // jsdom (the tests) never re-reads: a live interval keeps Node from exiting, and a test shard then never ends.
+    if (/jsdom/i.test((window.navigator && window.navigator.userAgent) || "")) return;
+    if (waiting && !checkPoll) {
+      checkPoll = setInterval(function () {
+        if (document.hidden) return;
+        loadChecks().then(render, function () {});
+      }, 60000);
+    } else if (!waiting && checkPoll) { clearInterval(checkPoll); checkPoll = null; }
+  }
   function waitLine(r) {
     var gate = waitsToList(r) && r.url ? publicGate(r) : { ok: true };
+    if (awaitsFirstCheck(r, gate)) return checkProgress(r);
     if (r.url && needsSummary(r, gate)) return '<p class="lib-line" data-pubwait="' + esc(r.id) + '">' + esc(NEEDS_SUMMARY) + "</p>";
     return !gate.ok ? '<p class="lib-line" data-pubwait="' + esc(r.id) + '">' + esc(waitWords(r, gate)) +
       (gate.check && gate.check.result !== "pass" ? reportLink(gate.check) : "") + "</p>" : "";
@@ -979,7 +1044,11 @@
     if (!r.url) return esc(draftsOnCard(r) ? "Not listed. Publish to Public Library on its card lists it once its page is up and its accessibility check passes." : publicReach(r));
     var gate = publicGate(r);
     // A piece waiting on its check offers the listing form once the check passes (second read of #3572).
-    if (waitsToList(r) && !gate.ok) return esc(waitWords(r, gate)) + (gate.check && gate.check.result !== "pass" ? reportLink(gate.check) : "");
+    var firstCheck = awaitsFirstCheck(r, gate);
+    if (firstCheck && state.pub !== r.id) {
+      return "Waiting for its accessibility check; the next check run starts at " + esc(checkRunWords().when) + "." + summaryNowBtn(r);
+    }
+    if (!firstCheck && waitsToList(r) && !gate.ok) return esc(waitWords(r, gate)) + (gate.check && gate.check.result !== "pass" ? reportLink(gate.check) : "");
     if (state.pub !== r.id) {
       return (needsSummary(r, gate) ? esc(NEEDS_SUMMARY) : "In the Internal Library.") + '<div class="lib-actions-row"><button type="button" class="lib-btn" data-pub="' + esc(r.id) + '">Publish to Public Library</button></div>';
     }
@@ -988,18 +1057,33 @@
     if (gate.absent) return head + '<p class="lib-pubwarn">' + esc(gate.why) + '</p><div class="lib-actions-row">' + cancel + "</div></form>";
     if (!gate.ok) {
       return head + '<p class="lib-pubwarn">' + esc(gate.why) + " It stays in the Internal Library until then.</p>" +
+        '<div class="lib-grid">' + pubFields(r) + "</div>" +
         '<div class="lib-actions-row"><button type="submit" class="lib-btn primary"' + (state.busy ? " disabled" : "") + ">Publish to Public Library</button>" + cancel + "</div></form>";
     }
     var claude = r.home === "web" && /^https:\/\/claude\.ai\//i.test(r.url);
     var reach = publicReach(r);
     return head + "<p>The Public Library shows the title, occasion, date, the summary below, its topics and the link, and Sierra can link it. Nothing else leaves COBI.</p>" +
       (reach ? '<p class="lib-pubwarn">' + esc(reach) + "</p>" : "") +
-      '<div class="lib-grid">' +
-      '<div class="lib-field wide"><label for="lp-sum">Public summary</label><textarea id="lp-sum" rows="3" maxlength="600" required>' + esc(r.public_summary || r.summary || "") + "</textarea></div>" +
-      '<div class="lib-field wide"><label for="lp-topics">Topics Sierra matches, separated by commas</label><input id="lp-topics" type="text" value="' + esc((r.public_topics || []).join(", ")) + '" placeholder="DSP training, developmental disabilities"></div>' +
+      '<div class="lib-grid">' + pubFields(r) +
       (claude ? '<div class="lib-field wide"><label class="lib-check"><input type="checkbox" id="lp-shared" required> I set its claude.ai link to public in the Share menu</label></div>' : "") +
       "</div>" +
       '<div class="lib-actions-row"><button type="submit" class="lib-btn primary"' + (state.busy ? " disabled" : "") + ">Publish to Public Library</button>" + cancel + "</div></form>";
+  }
+  // Every publish form carries the Public summary and its topics, certified or not (Sam, 2026-11-25: "can you have
+  // library auto add a summary I can edit so if I forget and click publish, we'll still have a summary?"). The summary
+  // starts from the internal one; left empty, the form saves the internal summary in its place, so a press never
+  // leaves a piece waiting on a summary nobody wrote.
+  function pubFields(r) {
+    var hint = String(r.summary || "").trim() ? '<p class="lib-hint">Left empty, it takes the internal summary. You can change it on the card later.</p>' : "";
+    return '<div class="lib-field wide"><label for="lp-sum">Public summary</label><textarea id="lp-sum" rows="3" maxlength="600">' + esc(String(r.public_summary || r.summary || "").slice(0, 600)) + "</textarea>" + hint + "</div>" +
+      '<div class="lib-field wide"><label for="lp-topics">Topics Sierra matches, separated by commas</label><input id="lp-topics" type="text" value="' + esc((r.public_topics || []).join(", ")) + '" placeholder="DSP training, developmental disabilities"></div>';
+  }
+  // What the form says: the summary typed, else the internal one (600 characters at most, the table's limit), and the topics.
+  function readPubFields(r) {
+    var sum = ((document.getElementById("lp-sum") || {}).value || "").trim() || String(r.summary || "").trim();
+    var topics = ((document.getElementById("lp-topics") || {}).value || "").split(",")
+      .map(function (t) { return t.trim(); }).filter(Boolean).slice(0, 12);
+    return { sum: sum.slice(0, 600), topics: topics };
   }
   // The Public confirmation on a ready draft's card, inside its publish form (so the name and the pictures box stay).
   function draftPublicConfirm(r) {
@@ -2453,6 +2537,15 @@
   }
   // A card's Revise or Edit opens the box at the top of the tab, far from the card (Sam, 2026-11-05: "nothing
   // seemed to happen"): land with the box's heading and the piece's name in view, then the field focused.
+  // Both Publish to Public Library buttons land in the form they open (Sam, 2026-11-25: the card's top one "did
+  // nothing"). The form sits in Details, below the card's face: focus goes to its Public summary, or to its first
+  // button where the check record is absent and the form holds only Cancel, and the form scrolls into view.
+  function landOnPubForm(id) {
+    var f = document.querySelector('form[data-pubform="' + id + '"]');
+    var n = f && (f.querySelector("#lp-sum") || f.querySelector("button"));
+    if (n && n.focus) n.focus();
+    if (f && f.scrollIntoView) f.scrollIntoView({ block: "nearest" });
+  }
   function landOnBox(fieldId) {
     var h = document.getElementById("lib-panel-h"), f = document.getElementById(fieldId);
     if (f && f.focus) { try { f.focus({ preventScroll: true }); } catch (e) { f.focus(); } }
@@ -2491,7 +2584,6 @@
       '<fieldset class="lib-uses"><legend>What do you want to do with it?</legend>' +
       (r.status === "requested" ? "" : row("revise", regenState(r) === "ready" ? "Ask for more changes to the draft" : "Revise and remediate this piece")) +
       row("details", "Change its details: status, who sees it, who it is for, project, link") +
-      row("version", "File a new version of it") +
       row("background", "Use it as background for something new") + "</fieldset>" +
       (regenState(r) === "ready" && state.pieceUse === "revise" ? '<p class="lib-line" id="lc-more">' + esc(moreWords(r)) + "</p>" : "");
   }
@@ -3860,6 +3952,7 @@
     var root = document.getElementById(ROOT_ID);
     if (!root) return;
     ensureCss();
+    pollChecks();
     root.style.cssText = "";
     var head = '<h2 class="lib-h lib-top">Library</h2><p class="lib-lede">Every visual, deck, video and document the CPL Initiative has made: what it is, who it is made for, where the file lives, who may see it, and how to rebuild or remediate it.</p>';
     // Two views (Sam, Open Asks Sheet 121 card 1, 2026-10-23): the pieces, and the Knowledge
@@ -3959,13 +4052,22 @@
     var focusId = document.activeElement && document.activeElement.id;
     root.innerHTML = head + attention + controls + list + how;
     var lh = document.getElementById("lib-list"), E = lh && listEngine();
-    if (E) E.render(lh);
+    if (E) { E.render(lh); fitList(); }
     Object.keys(typed).forEach(function (id) {
       if ((id.indexOf("la-") === 0 && !sameAdd) || (id.indexOf("le-") === 0 && !sameEdit) || false) return;
       var n = document.getElementById(id); if (n) n.value = typed[id];
     });
     painted = { form: !!state.form, formFor: state.formFor, edit: state.edit };
     if (focusId) { var again = document.getElementById(focusId); if (again && again.focus) again.focus(); }
+  }
+
+  // The List and its side panel fill the window below where the List starts (Sam, 2026-11-25). The height sits on the
+  // root, which the List's own redraws leave alone, so opening a row's panel keeps it.
+  function fitList() {
+    var root = document.getElementById(ROOT_ID), w = root && root.querySelector(".libl-wrap");
+    if (!w || !window.innerHeight) return;
+    var top = w.getBoundingClientRect().top + (window.pageYOffset || 0);
+    root.style.setProperty("--lib-fill-h", Math.max(240, Math.floor(window.innerHeight - top - 16)) + "px");
   }
 
   // ── events (delegated on the root, wired once) ──────────────────────────────
@@ -4161,8 +4263,21 @@
     var gate = publicGate(r);
     if (gate.absent) { say(gate.why, true); render(); return; }
     if (gate.ok) { setPublic(id, true); return; }
-    var by = storedAuthor() || null;
+    var by = storedAuthor() || null, pf = readPubFields(r), token = reviewerToken();
     write(TABLE_URL + "?id=eq." + encodeURIComponent(id), { method: "PATCH", body: { publish_target: "public", updated_by: by } }).then(function () {
+      // The summary and topics change only inside cpl_library_set_public() (cpl_library_guard_public refuses a PATCH).
+      // Called with p_listed false it needs no check record and leaves the piece unlisted; the check run lists it with
+      // this summary once its check passes.
+      if (!pf.sum || (!token && !teamPhrase())) return;
+      return window.fetch(SET_PUBLIC_URL, {
+        method: "POST",
+        headers: token ? { apikey: SUPABASE_ANON, Authorization: "Bearer " + token, "Content-Type": "application/json" }
+                       : headers({ "Content-Type": "application/json" }),
+        body: JSON.stringify({ p_slug: r.slug, p_listed: false, p_summary: pf.sum, p_topics: pf.topics, p_by: by })
+      }).then(function (res) {
+        if (!res.ok) return res.text().then(function (t) { throw new Error("It waits for its check, but the public summary was refused (" + res.status + "). " + String(t || "").slice(0, 200)); });
+      });
+    }).then(function () {
       say("Saved. It stays in the Internal Library, and the Public Library lists it once its accessibility check passes.");
       state.pub = null;
       return load();
@@ -4176,9 +4291,7 @@
     if (!token && !teamPhrase()) { say("Listing in the public library needs the team phrase or your reviewer sign-in. Enter the phrase, or sign in from About in the header, then try again.", true); render(); return; }
     var body = { p_slug: r.slug, p_listed: listed, p_by: storedAuthor() || null };
     if (listed) {
-      var sum = ((document.getElementById("lp-sum") || {}).value || "").trim();
-      var topics = ((document.getElementById("lp-topics") || {}).value || "").split(",")
-        .map(function (t) { return t.trim(); }).filter(Boolean).slice(0, 12);
+      var pf = readPubFields(r), sum = pf.sum, topics = pf.topics;
       var shared = document.getElementById("lp-shared");
       if (!sum) { say("Add a public summary. It is what the public page and Sierra show.", true); render(); return; }
       if (shared && !shared.checked) { say("Set the claude.ai link to public first, then tick the box.", true); render(); return; }
@@ -4472,10 +4585,7 @@
         state.open[v] = true; state.edit = v; state.retireAsk = null; say(""); render();
         var es = document.getElementById("le-status"); if (es) es.focus();
       }
-      else if ((v = b.getAttribute("data-pubtop"))) {
-        state.pub = v; state.open[v] = true; say(""); render();
-        var ps2 = document.getElementById("lp-sum"); if (ps2) ps2.focus();
-      }
+      else if ((v = b.getAttribute("data-pubtop"))) { state.pub = v; state.open[v] = true; say(""); render(); landOnPubForm(v); }
       else if (b.getAttribute("data-editcancel")) {
         var was = state.edit;
         state.edit = null; state.retireAsk = null; clearPiece(); render();
@@ -4484,11 +4594,14 @@
       else if ((v = b.getAttribute("data-retire"))) { state.retireAsk = v; render(); }
       else if (b.getAttribute("data-retireno")) { state.retireAsk = null; render(); }
       else if ((v = b.getAttribute("data-retireyes"))) retire(v);
-      else if ((v = b.getAttribute("data-pub"))) { state.pub = v; say(""); render(); var ps = document.getElementById("lp-sum"); if (ps) ps.focus(); }
+      else if ((v = b.getAttribute("data-pub"))) { state.pub = v; say(""); render(); landOnPubForm(v); }
       else if (b.getAttribute("data-pubcancel")) { state.pub = null; render(); }
       else if ((v = b.getAttribute("data-unpub"))) setPublic(v, false);
       else if ((v = b.getAttribute("data-view"))) setView(v, true);
     });
+    window.addEventListener("resize", fitList);
+    // The box above the List folds open and shut without a render, and the List's top moves with it.
+    root.addEventListener("toggle", fitList, true);
     window.addEventListener("hashchange", function () {
       var v = viewFromHash();
       if (v !== state.view && document.getElementById(ROOT_ID)) setView(v, false);
@@ -4547,6 +4660,7 @@
   }
 
   window.CPL_LIBRARY = {
+    _nextCheckRun: nextCheckRun,
     activate: activate,
     render: render,
     load: load,
