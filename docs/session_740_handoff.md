@@ -76,4 +76,8 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   any work (`p-shared-clone-origin-main-stale-s739`).
 - 06:24Z: display build `3a699eddc8c9` on `claude/s739-display` (built on `51744a70` with Python 3.12; the sandbox's
   3.12 lacked `openpyxl` until `requirements.txt` was installed). 06:25Z: the Glendale gate 45768078451 dispatched,
-  beside the day's dashboard run 45766799397.
+  beside the day's dashboard run 45766799397 (green at 06:25Z).
+- 06:28Z: the Glendale gate green: 242 rows at `3a699eddc8c9`, nothing else moved. 06:29Z to 06:37Z: the whole build:
+  18,727 rows at `3a699eddc8c9` (the 4 with no display now carry one), the same 32 at older builds, none without a
+  display. #3880 opened for the merge; the census on `main` follows it.
+- 06:30Z: workers told to open no PR (the run keeps at most 3 open); the conductor opens each land.
