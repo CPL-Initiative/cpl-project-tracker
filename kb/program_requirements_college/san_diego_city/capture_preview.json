@@ -1,0 +1,897 @@
+{
+ "college": "San Diego City College",
+ "catalog_url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15489",
+ "platform": "curriqunet",
+ "catalog_year": "2026-2027",
+ "programs": 203,
+ "with_closed_list": 191,
+ "started": "2026-10-13T04:43:55Z",
+ "curriqunet": {
+  "catalog": 69,
+  "view_prefix": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/",
+  "errors": [],
+  "catalog_from": "_getCatalogs",
+  "sections": [
+   "Degree Curricula and Certificate Programs"
+  ],
+  "nodes_read": 3,
+  "calls": 7,
+  "entries": 228,
+  "stopped_at_cap": false,
+  "same_title_entries": 0,
+  "entries_read": 228
+ },
+ "pages_read": 228,
+ "loads": 1175,
+ "seconds": 5466.0,
+ "found": 171,
+ "by_method": {
+  "no_closed_list": 12,
+  "not_found": 16,
+  "page_claimed": 4,
+  "sitemap_page": 171
+ },
+ "shared_pages": {
+  "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15638": [
+   "05224",
+   "32691",
+   "41495"
+  ],
+  "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15607": [
+   "05285",
+   "32735"
+  ],
+  "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15705": [
+   "09462",
+   "37623"
+  ],
+  "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15667": [
+   "22360",
+   "38668"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "05263",
+   "title": "German",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "18127",
+   "title": "Liberal Arts and Sciences: Elementary Multiple Subject Teaching Preparation",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "19266",
+   "title": "Real Estate Broker",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u"
+  },
+  {
+   "control_number": "19710",
+   "title": "Real Estate",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "33180",
+   "title": "Business Information Worker",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "33649",
+   "title": "Elementary Teacher Education",
+   "award": "A.A- T Degree"
+  },
+  {
+   "control_number": "36567",
+   "title": "Business Information Worker II",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "36568",
+   "title": "Business Information Worker",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "37387",
+   "title": "Special Effects (FX) Makeup",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "38733",
+   "title": "Green Building Energy Professional",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "38735",
+   "title": "Green Building Energy Professional",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "39358",
+   "title": "C++",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "39387",
+   "title": "Energy Analysis and Consultation",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "39388",
+   "title": "Energy Analysis and Consultation",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "42744",
+   "title": "General Atomics CNC Machine Technician Apprenticeship",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "42746",
+   "title": "General Atomics HVAC-R Technician Apprenticeship",
+   "award": "A.S. Degree"
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "15405",
+   "title": "Communications Technician Apprenticeship",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15727",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15729",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15647",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15649",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15728",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15730",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15648",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15650",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15651"
+   ]
+  },
+  {
+   "control_number": "15818",
+   "title": "Honeywell Tool and Die Apprenticeship",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15740",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15820",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15741",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15908",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15662",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15811",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/17368",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15821"
+   ]
+  },
+  {
+   "control_number": "30706",
+   "title": "Communication Studies",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15809"
+   ]
+  },
+  {
+   "control_number": "42745",
+   "title": "General Atomics Electrical Specialist Apprenticeship",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15642"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 10,
+  "0.8-1.0": 6,
+  "1.0": 155
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/san_diego_city",
+  "kept": 171,
+  "kept_moved": 0,
+  "programs": 0,
+  "list": [],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "only": [
+   "22367"
+  ],
+  "not_named": [],
+  "refused_passing": [],
+  "forced_unbound": []
+ },
+ "fingerprints": {
+  "05223": {
+   "sha256": "1b92f5cf67ae1b1eeae157a49774ccec9a97d25161959f4de9b4ea1393d7ec0b",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15671"
+  },
+  "05224": {
+   "sha256": "a0d6be48a51aa16a3c6b9b399a7fd148336a10bc94c9208771b44ab61464bd71",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15638"
+  },
+  "05225": {
+   "sha256": "01ab61599eb8d606781e7b28c164b61d418993a7061b568393025556c72737ee",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15606"
+  },
+  "05227": {
+   "sha256": "dbdb58d68e0fddc5427d2ffcfbf1069148187fb54bf18dd910c51e10fb47eb91",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15735"
+  },
+  "05236": {
+   "sha256": "844b24a5a81b6528d47653de7a792782e381720ef1aacdb1f044a735ef4cf993",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15656"
+  },
+  "05248": {
+   "sha256": "049100aaeafd03adb6415eb01024ccb60a0e2b2413dd42aaed6c127ee530a0b7",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15908"
+  },
+  "05251": {
+   "sha256": "16acec783b4c9c18232e0a4b28a7243f0fb96c060d635029cf2a2206b94ec9dc",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15778"
+  },
+  "05255": {
+   "sha256": "637802776090c7613ee6963a54b4e2cfc2e3be539706db393a0ad327ef84091a",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15753"
+  },
+  "05257": {
+   "sha256": "5e4310f93bf693c06ebf0cf8c95a3b650e7145728dc8b9a99420e5c17df017cd",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15750"
+  },
+  "05260": {
+   "sha256": "30eaac979d236aa7e0d28343ba251666be405596436027b68ed4666296366ed2",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15710"
+  },
+  "05262": {
+   "sha256": "31f389061101a36e2b9cbdbddd6bf064b8d4823cc470fee96c91a2e372517e89",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15669"
+  },
+  "05264": {
+   "sha256": "5bb57f2ce4649c8b202ca5b3b84cb4d6eae804a2f303c5ca2251f23627356fcd",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15743"
+  },
+  "05268": {
+   "sha256": "6e91106de5c56fce5ac3bccb586b64acd6f44e6d927b000ba5e399f717512f52",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15639"
+  },
+  "05271": {
+   "sha256": "35ba93896a1bbd0b0fcb87d79404f17ad1c1d6cf116f7bd9d36a074d945179cb",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15658"
+  },
+  "05272": {
+   "sha256": "e925d2b8ea1f19365bfd56c6217a10a595598605c675366a3fd1924f084ebf59",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15767"
+  },
+  "05273": {
+   "sha256": "636567a015f10894f83c85e1128d79c7e5a273a8e2380729bbbbbf2a87097992",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15689"
+  },
+  "05275": {
+   "sha256": "e39e451965f6e88b2648a96e034ff6bb26ccc228b1364fe825e164fc1cbf1e53",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15713"
+  },
+  "05276": {
+   "sha256": "c0853f8143ba338236334d258994a82f8fc619a657642222f0b9093e8a4047e1",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15761"
+  },
+  "05277": {
+   "sha256": "fff69ca18c58bac22d19e3dc9378e8c4d1b16b944c61ad27b1f14e7315005eac",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15718"
+  },
+  "05285": {
+   "sha256": "55693f530fc41f31b19ef8a10e7054faecc470f44634b502bfdb672645323cde",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15607"
+  },
+  "05288": {
+   "sha256": "215e44fa62b3c775ce9b6d942cf479e701e55788b133c1415d0a0f12d900fae6",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15673"
+  },
+  "05289": {
+   "sha256": "d4d1baabc197d6a06cb4d99260a7413233ee2017bea2d7cdb764dca18f6e25c2",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15715"
+  },
+  "05290": {
+   "sha256": "2ae84e472c591cd0e3e0ba5b78779efb166ead07cfaabef0ad875c0c85f068ca",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15739"
+  },
+  "05293": {
+   "sha256": "5dc92677e04e6c1018698dc481b1cfdf972e962aec35a53eb46e5b13f7d30607",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15787"
+  },
+  "07072": {
+   "sha256": "0861f2f2884d0d4173e65e9bdb9f857a78ce525cb9bb3cb0a43e4ab41c7e9f0b",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15707"
+  },
+  "09442": {
+   "sha256": "9bd51a3474d875c100388552d9f61800456043809d3241401f70b070b15f16a6",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15629"
+  },
+  "09449": {
+   "sha256": "cf96133f03554da1ccbeac50723c899e458c99a025c4ef3b8f66985a8d1e2b62",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15720"
+  },
+  "09450": {
+   "sha256": "779beab4fc9360905992aa78661a1073133524f93638530d2c85954ce4cc24e3",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15756"
+  },
+  "09451": {
+   "sha256": "ccf88edcaca75f402a7cd1005274a3eeb63c343a84123627e2ba088320b431ac",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15622"
+  },
+  "09455": {
+   "sha256": "258326d447450d5a1b757636ebc4d5a835fb90b0c113e49c7096378dd3b7d022",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15647"
+  },
+  "09456": {
+   "sha256": "2299d78dea4b2e3be3f871a7e903be57f0e959a4d0472780f6a4199aecd66522",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15649"
+  },
+  "09457": {
+   "sha256": "0884b42287ef9c64134ae7f15e7f5062d53dbf1f90ebe66019632666a1d133b7",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15725"
+  },
+  "09459": {
+   "sha256": "5cff8360b666ee454bb2afddf83f69c2db3439f1fe7ebf210b6a817afe006fca",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15644"
+  },
+  "09460": {
+   "sha256": "d1b80b826d445ac48324b6f284390a389a09285d0bf69c5f0344db6bed4172ec",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15642"
+  },
+  "09461": {
+   "sha256": "c66eb4579807e2aff79cb65db14e92367f1cc63013e3d7ae2b3fc5a2971ac4f7",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15733"
+  },
+  "09462": {
+   "sha256": "7decc5963e37be9985330320165d2d5a4b673af4c053ed770e9f63705b5aecbd",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15705"
+  },
+  "09468": {
+   "sha256": "8a66ebb21b65b478e73f7ec430498825490896e3dde505e64d430c3f5bb63ac8",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15781"
+  },
+  "09469": {
+   "sha256": "cab826077cd4bdbb6bd028536aeb6bffcc15ae0b0468be04b7b2a8defa2bf993",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15740"
+  },
+  "09470": {
+   "sha256": "87ca995a2354ae8e71db2a70b4cf385c2b28fb9b72220b1b2bf4eb1547fb107a",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15752"
+  },
+  "09471": {
+   "sha256": "f5f11d151716ba3e961eb73306afd6eccf37a3d4a320e23948c41d838f0a241f",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15700"
+  },
+  "09473": {
+   "sha256": "ce33e7a2f10f6d34a92cd0536ffd0f885475fbc0ef2336b50c14afe4a22b5015",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15709"
+  },
+  "09474": {
+   "sha256": "fe3577d7ac6fd5c08ad9d9c2d2581ce69f62f7612f110f083c11748c8e52a47c",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15609"
+  },
+  "09475": {
+   "sha256": "8b57522ace0a9a02a9b3ec41b2372bea2e4189f18f6a251a7438ade84f1c3e40",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15614"
+  },
+  "09486": {
+   "sha256": "39a47f581ab8dce26ef5b25170fad51c3d25af28acdd4841e60865873f01e660",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15475"
+  },
+  "09487": {
+   "sha256": "2a9faa14f45cb2432a1f1b7030dbaf8c80d7f388d285d0289fae530c528bc17c",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15677"
+  },
+  "09488": {
+   "sha256": "d700a55a188d47be378aa8adc7ad7e288e6aa04f877f72ac38ee92a183ffad9a",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15803"
+  },
+  "09493": {
+   "sha256": "50be72f2cf6c415116dc3fb78039a53b5b170edb314171c03bd32c064062fb4e",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15762"
+  },
+  "12091": {
+   "sha256": "01e999f3837c1f4a81677c0be5fbd9f7b6621d8c22bcea7d23f6393df1c41c76",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15763"
+  },
+  "12092": {
+   "sha256": "18f8824516f28ecd36adc5d860d133ce315cffc00b05e8624eca2abea36d9bb8",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15765"
+  },
+  "12093": {
+   "sha256": "f663952cf82eff9c324e2b5601dbff5767517fa887f35c7a773c36e7c62cd6a9",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15764"
+  },
+  "16748": {
+   "sha256": "5db3459c3017487853ee3a50eac497b31f5ac2189daf99502a98be7d21f3569f",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15822"
+  },
+  "16967": {
+   "sha256": "793df587d026ae217416db4d36327ff117b71fb76a8130969c76ce0da7af2da3",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15652"
+  },
+  "16968": {
+   "sha256": "08064f0fa0e5efa852600ea25900e3413bdb1c2c83bd15667fc8899580591b4a",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15662"
+  },
+  "17972": {
+   "sha256": "d260cf41505d5648c0e5d8aa35d17692dfdcb3fadbdad467a125d4920e4698a7",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15819"
+  },
+  "17976": {
+   "sha256": "ed52e02fb6513c9b07bd2a3a022e730cfa4fd235db18245d8397aaf68ae286b2",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15820"
+  },
+  "18099": {
+   "sha256": "b4700796bd58cd6f8595220e9d6558354a7741ded75a28295c366ce5f18228ac",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15813"
+  },
+  "18100": {
+   "sha256": "21a60b36454106bcab31f6924b06f227f3d804a04af1d16650131858531ec4e8",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15809"
+  },
+  "18101": {
+   "sha256": "758d36dbc9a0bb75e6031829a751e12da64ceff94ad3734efefa93f22adf0366",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15810"
+  },
+  "18102": {
+   "sha256": "90d11a3537c17db7e448f1efd5c5737d9a7328a33529010ebdec8c9d8d26b4a0",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15811"
+  },
+  "18103": {
+   "sha256": "ea5b36fe2e1d26d3564df5bca4c31bb6b77eb886881ee244071f1bdab84ae21e",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15972"
+  },
+  "18107": {
+   "sha256": "1503534d03af6b81f6914bb64e7e49c90553d6393e85105e9f1c962f974ad566",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15812"
+  },
+  "19254": {
+   "sha256": "4ecb0fae01910ff0adaedaef8cba5c69a1c32723ff75c97ffcc2712fbdf5783e",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15728"
+  },
+  "19255": {
+   "sha256": "32d03cb93a10e14b760e16a1142a326dc5c3122d3d17d7603ce8898cbe71449d",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15727"
+  },
+  "19403": {
+   "sha256": "3de427fb394beda15bc0e5a4c3062895bd580ca3bd0e05c8652f8b67a95ed6a2",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15626"
+  },
+  "22324": {
+   "sha256": "c507bdcff0b2dec3ca54ebf15732186df07d34f34d032d06e1116a0764f3b27f",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15736"
+  },
+  "22326": {
+   "sha256": "605add3f25835993829bdc917da978982b8053aa8b7e1d94b7d6d89d4957264b",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15806"
+  },
+  "22328": {
+   "sha256": "980ce1203196ba280564d3f5a209b70f08340384c2346f56449721da48269a66",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15650"
+  },
+  "22329": {
+   "sha256": "7729e37fceb1f71f843a4a44ad814873e1dd4f867c6572a8e3f46ea74f61bb97",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15648"
+  },
+  "22331": {
+   "sha256": "0c8e2c8736c1c0454aa0ea87ab57006f15a929fe8b38ef09be581ca43617683f",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15645"
+  },
+  "22332": {
+   "sha256": "371062d74b8e81fd1facc3f2a1f57a88ef6a6157e4a7df8bf9d4da12c97d0c95",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15816"
+  },
+  "22333": {
+   "sha256": "ff60f7362f5c0331604f1bb1aea65a93a5239b76370a77452456181fd046969e",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15651"
+  },
+  "22334": {
+   "sha256": "31b5ec5269e8dccb19e720b62b1448af58dbfd6540ac7d0384e7fa151142de82",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15726"
+  },
+  "22337": {
+   "sha256": "56ac8e13841dbb54f89e986224a81898844af013f6daff8aa04c26a8fc5cd6b8",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15734"
+  },
+  "22352": {
+   "sha256": "ee7e7d04fcf2cfd85a94115b6d24b90c06c431c360f104fe20accf830e480328",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15821"
+  },
+  "22353": {
+   "sha256": "59b31a16351948b7e0544df76981ced405c4a3eb0d0b594be69ff25f1876ee4e",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15779"
+  },
+  "22358": {
+   "sha256": "d5f306447e699f9cc2a29927169954f961ad42efffebd86d7bdffb78d420f4b6",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15741"
+  },
+  "22360": {
+   "sha256": "1c645fdf54b3e06d02391fc44c6fe2a63ca3524012faeb3fe6c87b6ae1a5dd85",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15667"
+  },
+  "22361": {
+   "sha256": "f752e55739151f42f1379b88bdac17436ff971ac0f0fc0d8accf9d716c002934",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15678"
+  },
+  "22365": {
+   "sha256": "bbfacbe9d1bfe185245ed29df68bf1b22f299cfc181a5e2a7422b1daffc3e136",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15628"
+  },
+  "22367": {
+   "sha256": "165bcb454bfa93840088d2ca6464d4c74a6fa68c030463a05d76bed4d0627fd7",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15788"
+  },
+  "30213": {
+   "sha256": "3b4d274c1924703c6c7820229170c29b69a693817ffc63bd91dc699c9e5f1363",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15660"
+  },
+  "30657": {
+   "sha256": "4a83a4ea9826466fa0c44d629ce192fff4d015f0e1d29c778969eb6b157e9293",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15755"
+  },
+  "30694": {
+   "sha256": "74f4ab08b720c756293c578753d79346cdb4c0e55745c5756fb89f5ace07317c",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15748"
+  },
+  "30704": {
+   "sha256": "6d33ec06ba92b74f0d9eb0503791ce38bf4e01dfa3cfd2e6302151976417236b",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15717"
+  },
+  "31168": {
+   "sha256": "01c9461230ef95c42cbe36c6db32cf9ec14a15be5593c3ef9aa2a36eb838a76a",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15814"
+  },
+  "31169": {
+   "sha256": "9792ee8478108fc9d57a46f37474e2cc7a49b5e8c351ae802254a0736cc42f93",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15613"
+  },
+  "31309": {
+   "sha256": "eea2ca809dd67613274c024449f019710968a8d8ca2736b9e5705eca5055d9a7",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15797"
+  },
+  "31310": {
+   "sha256": "9e6b8e04f10c35ed84c4c0678bbe0834fae6f02d9fc5c4b2e68b1de785b4ec5b",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15796"
+  },
+  "31506": {
+   "sha256": "3c39cf98d806f2405bc570e6702e98f2a7cf826e753fe402ce8b142cce2c8aa7",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15695"
+  },
+  "31606": {
+   "sha256": "b87a9f76fb7a60c26493877b6ab444d246031cb690bf5c54e4eaf81cded88bda",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/math2-adt"
+  },
+  "31615": {
+   "sha256": "55c322aea662118735113320a0c31eb2edd962866287337734ad2e39da62fdca",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/phys2-adt"
+  },
+  "31652": {
+   "sha256": "b5874d134d5d7fa5bcb932a08f4c2bd396d32c2285a3eace0630b7a7500e6929",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15684"
+  },
+  "31680": {
+   "sha256": "4e4f69a0cfccbd5bc47b4e3443483d2cdba3165ba5493f37a34bf1a1b5cd91fb",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15751"
+  },
+  "31690": {
+   "sha256": "751f59c3cc46c345c25d2bead90015267d3bebdac6875c4a41caf141d4f513ac",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15714"
+  },
+  "31972": {
+   "sha256": "b5ac4378c7c7770662dd38ef851ffafd220b3951b2ce1c1c078a9a185874500d",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15805"
+  },
+  "32577": {
+   "sha256": "51e739ad373f17b592b5d6dc48a7d7b9c47889d82f176523ee2ff70f07ec356d",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15738"
+  },
+  "32684": {
+   "sha256": "b088650e47c5a413071c99d3d8cd32e5488f7592f1e454d417ec6e767320643a",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15657"
+  },
+  "32685": {
+   "sha256": "8d1008c2804fa3b233d9cac002dc78ab2ad7421883bf4f158122b471e7b03776",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15742"
+  },
+  "32686": {
+   "sha256": "bac4f7b71c9b8fea3b5510ee0278d13fe62db0f59287a316a6e6263dec796411",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15611"
+  },
+  "32691": {
+   "sha256": "a0d6be48a51aa16a3c6b9b399a7fd148336a10bc94c9208771b44ab61464bd71",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15638"
+  },
+  "32711": {
+   "sha256": "f55e5743244dc00af18b82449701166e62fe73f36696641c5d32fefcfd03b4ce",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15745"
+  },
+  "32734": {
+   "sha256": "4a7ca92530bccd40902c2aa65b45d1a093c2e0dd57996eb04f89be5df8d6d33e",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15672"
+  },
+  "32735": {
+   "sha256": "55693f530fc41f31b19ef8a10e7054faecc470f44634b502bfdb672645323cde",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15607"
+  },
+  "33094": {
+   "sha256": "ae6355470c5ab92ed93069ddcfd45bd1e9914236dc900d19a75884591fc35a94",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15804"
+  },
+  "33160": {
+   "sha256": "6852495a64f1052c76c6f3c201fa8a8ce7fe61850feb3b639a54f1098a12851b",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15721"
+  },
+  "33250": {
+   "sha256": "a9eb72c15f3a3bb83f42eb6be89ad711ffe4d7724d6a9e1c65c23351fa716508",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15757"
+  },
+  "33312": {
+   "sha256": "d519cbdc772f0d0a2c8aee8996492bf92bd2eb6145e3fbc8fa6d4589d846cef9",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15754"
+  },
+  "33313": {
+   "sha256": "8ad23864c443a1c26bc63db18f3aa88b5f30884e30c1bddb4989b8cc4d7c3b70",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15785"
+  },
+  "33511": {
+   "sha256": "76b8929f52944ed72ee14f691defd0e93149ad9382368281f4215c3bfb4007a1",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15663"
+  },
+  "33591": {
+   "sha256": "436b65493baf904c936aac70f204986a177547512b1231cb14087c7999a07317",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15674"
+  },
+  "33592": {
+   "sha256": "f5c367efdb2e2e8b37d2139eae3e3151153b8564d46608ec2455b296b0ff8b6f",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15708"
+  },
+  "33645": {
+   "sha256": "0735fffb112a54b6f2b1f8e3885b7cc13d077e43f01f4787f970710eb65c1e26",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15699"
+  },
+  "33677": {
+   "sha256": "e7ffd6a0ba112c2878a8c0a87f63fc359619968601ee6a6f1c9fcc74056c1607",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15615"
+  },
+  "33678": {
+   "sha256": "f71810e1ac8d17b4c3ba212a1b15b7f575d205e67c3e6c9a2b914e3a3adf27f6",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15664"
+  },
+  "33761": {
+   "sha256": "b9a3ccbe4ba80ccc043f4f04b7fe6d241b234865df88bef0cb405adc5cf1a83f",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15623"
+  },
+  "33825": {
+   "sha256": "75050fe05cd88f1dd5c7c2a847ff7c45ab7fdb4bcc36c3755df9d9690a67a6c6",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15618"
+  },
+  "35521": {
+   "sha256": "63aba4a3bc4fbb7dfd8614939cf78a5e1865943acd1a0ef60691ddb6c44267e8",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15676"
+  },
+  "35589": {
+   "sha256": "11e08cbaa6d60c54f93dfa2a969cbd98bcf57423aecd2a2a3e126d8513164027",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15826"
+  },
+  "35976": {
+   "sha256": "7cfe9f3f049f185cf25bab2b753369f0b21a0c449da6b4f10a7189d9de982a27",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15625"
+  },
+  "35977": {
+   "sha256": "1b40665541a53ae6da916d840db24f620d725f51edd829e7ded2a1d18d36ee6e",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15666"
+  },
+  "36118": {
+   "sha256": "ce9cdd51afe0bea2e8249a087a9dc67f9431f6fe7938ea116385abe66ca91c64",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15640"
+  },
+  "36754": {
+   "sha256": "d875d94a8c1e0948de80e29a8f1a6d773fe041a1b9d6e10234992a0ea6bf9d06",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15795"
+  },
+  "36915": {
+   "sha256": "12f3a796caab9b18053b3d139b87c10a7b456c0dd9fe51b11fddc4092a753f0a",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15794"
+  },
+  "36933": {
+   "sha256": "eab324fea9658a43e527a51c5e1e84fa83d7a742ebc331391a91ad93e31def3e",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15737"
+  },
+  "36934": {
+   "sha256": "566152dec99e010676c9a635dc62c61480d21b215c23b8c744538b63d42dc9d3",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15747"
+  },
+  "37032": {
+   "sha256": "9cd7e24dea4d2d36ba09def11d3d7abd718727c869a223c85a8d1e849a738afc",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15661"
+  },
+  "37036": {
+   "sha256": "e32271225cd4f3d860d7c1c17aa02c8ba46c5f082a4e9ba70130027e148df457",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15775"
+  },
+  "37605": {
+   "sha256": "385440a763b8e20f2fea633afede90f2a6704510da459deb2ee42873684709f7",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15749"
+  },
+  "37617": {
+   "sha256": "955f4cc516301d5948eb42171f54b6df98777579fd5a987858c7480c2a4287ac",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15693"
+  },
+  "37618": {
+   "sha256": "7e5d10bb0b313fe0f65e66b2b832e2586b5eb2f2a8d7f9ef02f1ab3c74c434e0",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15694"
+  },
+  "37619": {
+   "sha256": "d591ce753a01056c28c0ddf34afeeeeeb38b44b7eed306131ff0402c30410c17",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15691"
+  },
+  "37620": {
+   "sha256": "73b4e05d6a957882db73792ecca32dc0c2f713297d21470b554673a95f7e0517",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15692"
+  },
+  "37621": {
+   "sha256": "e6fdf6b8c8039bb7400d0a96f03ee3552b4b8610be66fc2ba41b03f030ed0d02",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15704"
+  },
+  "37622": {
+   "sha256": "fc24e7c9348f4a3322ccc8804bfd12901001e132cfd962a2c7be909cc79bb599",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15616"
+  },
+  "37623": {
+   "sha256": "7decc5963e37be9985330320165d2d5a4b673af4c053ed770e9f63705b5aecbd",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15705"
+  },
+  "37624": {
+   "sha256": "5064264f0fa3886c33dc2b45d5cc7e59920d6240423b695f174d72031a68a2f3",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15719"
+  },
+  "37679": {
+   "sha256": "d011bc0c65ab4551a13a8306dfb2f6de70513b32269e937e5eb748e7af43345f",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15807"
+  },
+  "38198": {
+   "sha256": "873a9b1eca183a110d82467fdbb1cb56095cc5e6b7970901b47c286e69173e6e",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15817"
+  },
+  "38311": {
+   "sha256": "22ed06ac3b61d62193fb1223009160348da385ae7ba121ab3399e8d0e4a9ca68",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15730"
+  },
+  "38313": {
+   "sha256": "e99cf952c266bb3eb02880afc6960c236f4fdc21c6a31dbc18d5571791b5374d",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15729"
+  },
+  "38367": {
+   "sha256": "7b418d14f301c0fa2d6805e2efadd6c266e1b982ea5c60ed7144d2fb6ce558a1",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15732"
+  },
+  "38369": {
+   "sha256": "394ec2ef0dacb604ac8a224066e71156d1c0224742ce10081f6bb4e1a6fd9f00",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15731"
+  },
+  "38511": {
+   "sha256": "5215387c67fb77ff382e6190b06d36875627c65385abdd3872b7e4dd76b34ba2",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15823"
+  },
+  "38629": {
+   "sha256": "0bd7647e8b2c9fdad736e97529d39ea5c78d25d8dc50818627f0a7b0032548a2",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15799"
+  },
+  "38638": {
+   "sha256": "617dbea249f110673c26bfd8e82e4735954934774379805a19dd14f8147f7cc9",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15798"
+  },
+  "38668": {
+   "sha256": "1c645fdf54b3e06d02391fc44c6fe2a63ca3524012faeb3fe6c87b6ae1a5dd85",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15667"
+  },
+  "38732": {
+   "sha256": "a18ab329779b601f7cdaf38348ee5c4b5fd12527144ba03061235a90efa6b3db",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15760"
+  },
+  "39165": {
+   "sha256": "14c29444f8fec7e3101d4298ca490f1003d655d8fb377fba26dc22c7348a459c",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15610"
+  },
+  "40495": {
+   "sha256": "76b94dd27fd775a8085228f5ad25b24061f57f9dc54d6a7b92e8e9f6e3637621",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15679"
+  },
+  "40589": {
+   "sha256": "0f99232433dc8d134246c41de86ee5c7399b00491fab8fd94e7a8dfbe2b2e651",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15784"
+  },
+  "40620": {
+   "sha256": "67d9233ffa1f886afa65e6093afc2e9d4dd48784149c0229a0325b5041c6858f",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15783"
+  },
+  "40714": {
+   "sha256": "0fb0b77209d76aa2cd91612a6d8bd44c24c37d51a7881e23d653f83b81f9b489",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15703"
+  },
+  "41293": {
+   "sha256": "3d8f5663510cfa7a693c135fa24a99e86999106cacba7b80d41242a86a9f66e6",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15746"
+  },
+  "41495": {
+   "sha256": "a0d6be48a51aa16a3c6b9b399a7fd148336a10bc94c9208771b44ab61464bd71",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15638"
+  },
+  "42598": {
+   "sha256": "091b0dcb684c2aca5cfa87cbd88edcf376b32552feb0e1d9e2d4a90487155ae8",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15631"
+  },
+  "42599": {
+   "sha256": "593cccc4c2e64f6ab0593dfa84303f9f34eb31ef3eb75bd62549b9a5bbc4786b",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15630"
+  },
+  "43041": {
+   "sha256": "1c86952debddc44c45bd052b820e8cda1a15d84f8a732fead5960ff6398ca045",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15769"
+  },
+  "43523": {
+   "sha256": "316a1399681ee72b1a6cf2256c80ddff228a0aa5b0928640550f8fafaa8da6e0",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15792"
+  },
+  "43656": {
+   "sha256": "93bede74204ee6c9d22139f9b696caf55c59fcae60b8659d221dea4bf11272f8",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15641"
+  },
+  "43748": {
+   "sha256": "12a76902427a89917ce410547f586cdc76cd84b273b9381a5cfe9423d2564f31",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/17388"
+  },
+  "43806": {
+   "sha256": "766fafcc2c217dbb4cd40f307919b5fc9e334e5601d3a8944209eff4cbbf5666",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/17224"
+  },
+  "43836": {
+   "sha256": "9c83d078b939f0af22fa5dcb3626adefb7d99796e89127f96591ca94545f5b16",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/17327"
+  },
+  "44062": {
+   "sha256": "97730c376012a9a3c312054bc56f148f354788ebf468e31b15933caa759c7a03",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/17368"
+  },
+  "44068": {
+   "sha256": "bd59a18edba36102b14ed66f203df5b2316b4837e5ea2d200d36959ffa10f689",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/17436"
+  },
+  "44385": {
+   "sha256": "9d9229315533c45529cf8854850c407589bbc1aa2ad3d04d0296452439c1235a",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/17307"
+  },
+  "44867": {
+   "sha256": "fe62825b44b3a7e4fe8bacb91b97ef9c4e7b67abe2e9405cabfa4cee0567a49e",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/17451"
+  },
+  "45539": {
+   "sha256": "8a68c03bc78fc8758619232d5e78f810de3a3c452ef4ede3a3e604713b51a925",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/22217"
+  },
+  "45542": {
+   "sha256": "4698082bdf8743ac6ef580299bc07b4354d826ca2c863ce039381ae566df59c8",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/22212"
+  },
+  "45664": {
+   "sha256": "bf0870724bad4067438144b52419255f7e0756302da76374377fed0bc2dd7251",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/22237"
+  },
+  "45665": {
+   "sha256": "c545ec79c4e1fdc0ad3e6d37cb9b0d8146100fe4a2f83dbd56ac912ff484042d",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/22236"
+  },
+  "45721": {
+   "sha256": "0d43bf94fa3d40189ead1105142e3e70b22e325e89dcce221fe8e859ccb81eea",
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/22280"
+  }
+ },
+ "staged_from": {
+  "run": "38347787891",
+  "proof": "the filed account equal but for its run, and 3 programs at their address and coverage",
+  "pages_loaded": 0
+ },
+ "run": "45830705593"
+}
