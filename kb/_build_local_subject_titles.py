@@ -61,6 +61,10 @@ COLUMNS = ["code", "printed_name", "catalog_courses", "state_courses", "side", "
            "noncredit_plain", "noncredit_enhanced", "categories", "common_source", "decision", "noncredit_decisions",
            "renamed_to", "history"]
 CODE_HISTORY = "the college's code history"
+# A state-list subject written as its title and code, "ADAPTED PHYSICAL EDUCATION (APE)" (San Jose City College, S737):
+# the label carries the title, so a code the catalog gives none takes it from the label.
+STATE_LABEL = "the state list's subject label"
+STATE_LABEL_RE = re.compile(r"^([A-Za-z][A-Za-z &,/'-]*[A-Za-z])\s*\(([A-Z0-9][A-Z0-9 &/.-]*)\)$")
 # Why a row has no title (Sam, 2026-11-21, #3655: "an indicator (chip) in the row to indicate that the catalog read was
 # either blocked, title not in catalog, or not parsed yet"). A state comes from a recorded fact; a row nothing proves
 # reads not_read, because calling a title absent when the catalog was never looked at is the worse error.
@@ -281,6 +285,10 @@ def build(root=ROOT):
                        for x in sorted(history, key=lambda x: (x.get("from_code") or "", x.get("to_code") or ""))] or None
             if renamed_to and not name:
                 name, source = title_case(moved[k]["to_title"]), CODE_HISTORY
+            if not name:
+                m = STATE_LABEL_RE.match(k.strip())
+                if m and len(m.group(1)) > len(m.group(2)):
+                    name, source = title_case(m.group(1)), STATE_LABEL
             side = "both" if (in_catalog and k in st) else ("catalog" if in_catalog else "state")
             if name:
                 state_ = "catalog"
