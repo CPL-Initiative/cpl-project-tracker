@@ -31182,6 +31182,25 @@
    "hints": "4f53cda18c",
    "asked": "2026-11-05"
   },
+  "Spanish Literature for Bilinguals Examiantion": {
+   "raw_title": "Spanish Literature for Bilinguals Examiantion",
+   "unified_title": "Spanish Literature for Bilinguals",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "mechanism-collapses",
+    "Rule 5c",
+    "Rule 1"
+   ],
+   "_notes": "Mended the cx hint by dropping the misspelled mechanism word 'Examiantion' (Examination); the remaining course content is the title. The Southwestern College course's CCN/C-ID alignment is unverified.",
+   "rules": "75e72fb99f8c",
+   "hints": "dd00c42ce2",
+   "asked": "2026-11-26"
+  },
   "Specialist Course Module F": {
    "raw_title": "Specialist Course Module F",
    "unified_title": "Specialist Course Module F",
