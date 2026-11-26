@@ -1,0 +1,560 @@
+{
+  "held": [
+    {
+      "target": "BSOT 127 X",
+      "ids": [
+        "BUSI M1077"
+      ],
+      "members": 17,
+      "acct_members": 13,
+      "share": 0.765,
+      "title": "",
+      "title_reading": "neutral",
+      "confidence": 66,
+      "homonym_members": 0,
+      "near_code_members": 0,
+      "discipline": null,
+      "why": "a person merged BUSI M1077 into BSOT 127 X, which does not move",
+      "curator": {
+        "BUSI M1077": {
+          "merge_into": "BSOT 127 X",
+          "by": "map@rccd.edu"
+        }
+      }
+    }
+  ],
+  "flagged": [
+    {
+      "target": "BUSI M1019",
+      "ids": [
+        "BSOT M1081",
+        "BUSI M1014",
+        "BUSI M1019",
+        "BUSI M1020",
+        "BUSI M1021",
+        "BUSI M10AC",
+        "BUSI M10AG",
+        "BUSI M10DB",
+        "BUSI M10OY",
+        "BUSI M1145"
+      ],
+      "members": 25,
+      "acct_members": 11,
+      "share": 0.44,
+      "title": "Introduction to Accounting: Bookkeeping Concepts",
+      "title_reading": "accounting",
+      "confidence": 66,
+      "homonym_members": 0,
+      "near_code_members": 1,
+      "discipline": "Business",
+      "why": "accounting courses are 11 of 25 (under half)"
+    },
+    {
+      "target": "BUSI M1054",
+      "ids": [
+        "BUSI M1054"
+      ],
+      "members": 7,
+      "acct_members": 3,
+      "share": 0.429,
+      "title": "General Accounting",
+      "title_reading": "accounting",
+      "confidence": 66,
+      "homonym_members": 0,
+      "near_code_members": 0,
+      "discipline": "Business",
+      "why": "accounting courses are 3 of 7 (under half)"
+    },
+    {
+      "target": "BUSI M10SY",
+      "ids": [
+        "BUSI M10SY"
+      ],
+      "members": 1,
+      "acct_members": 1,
+      "share": 1.0,
+      "title": "Business Financial Planning Using Excel",
+      "title_reading": "other",
+      "confidence": 60,
+      "homonym_members": 0,
+      "near_code_members": 0,
+      "discipline": "Business",
+      "why": "the title reads as another subject"
+    },
+    {
+      "target": "BUSI M1101",
+      "ids": [
+        "BUSI M10JJ",
+        "BUSI M10JK",
+        "BUSI M10JL",
+        "BUSI M1101"
+      ],
+      "members": 5,
+      "acct_members": 2,
+      "share": 0.4,
+      "title": "Enrolled Agent – Individual Taxation",
+      "title_reading": "accounting",
+      "confidence": 64,
+      "homonym_members": 0,
+      "near_code_members": 0,
+      "discipline": "Business",
+      "why": "accounting courses are 2 of 5 (under half)"
+    },
+    {
+      "target": "BUSI M1106",
+      "ids": [
+        "BUSI M1106"
+      ],
+      "members": 2,
+      "acct_members": 1,
+      "share": 0.5,
+      "title": "Data Analytics and Design (Alteryx)",
+      "title_reading": "other",
+      "confidence": 30,
+      "homonym_members": 0,
+      "near_code_members": 0,
+      "discipline": "Business",
+      "why": "the title reads as another subject"
+    },
+    {
+      "target": "BUSI M1115",
+      "ids": [
+        "BUSI M1115"
+      ],
+      "members": 3,
+      "acct_members": 1,
+      "share": 0.333,
+      "title": "Data Analytics Fundamentals",
+      "title_reading": "other",
+      "confidence": 20,
+      "homonym_members": 0,
+      "near_code_members": 0,
+      "discipline": "Business",
+      "why": "the title reads as another subject"
+    },
+    {
+      "target": "BUSI M1143",
+      "ids": [
+        "BUSI M10AA",
+        "BUSI M1143"
+      ],
+      "members": 11,
+      "acct_members": 5,
+      "share": 0.455,
+      "title": "Bookkeeping",
+      "title_reading": "accounting",
+      "confidence": 67,
+      "homonym_members": 0,
+      "near_code_members": 1,
+      "discipline": "Business",
+      "why": "accounting courses are 5 of 11 (under half)"
+    },
+    {
+      "target": "BUSI M11EJ",
+      "ids": [
+        "BUSI M11EJ"
+      ],
+      "members": 1,
+      "acct_members": 1,
+      "share": 1.0,
+      "title": "Education and Financial Pathways for Justice-Impacted Students",
+      "title_reading": "other",
+      "confidence": 60,
+      "homonym_members": 0,
+      "near_code_members": 0,
+      "discipline": "Business",
+      "why": "the title reads as another subject"
+    },
+    {
+      "target": "BUSI M11JJ",
+      "ids": [
+        "BUSI M11JJ"
+      ],
+      "members": 1,
+      "acct_members": 1,
+      "share": 1.0,
+      "title": "Manage Finances W/Quicken",
+      "title_reading": "other",
+      "confidence": 60,
+      "homonym_members": 0,
+      "near_code_members": 0,
+      "discipline": "Business",
+      "why": "the title reads as another subject"
+    },
+    {
+      "target": "BUSI M11OG",
+      "ids": [
+        "BUSI M11OG"
+      ],
+      "members": 1,
+      "acct_members": 1,
+      "share": 1.0,
+      "title": "Introduction to Quicken",
+      "title_reading": "other",
+      "confidence": 60,
+      "homonym_members": 0,
+      "near_code_members": 0,
+      "discipline": "Business",
+      "why": "the title reads as another subject"
+    },
+    {
+      "target": "BUSI M11OM",
+      "ids": [
+        "BUSI M11OM"
+      ],
+      "members": 1,
+      "acct_members": 1,
+      "share": 1.0,
+      "title": "Personal Investing",
+      "title_reading": "other",
+      "confidence": 60,
+      "homonym_members": 0,
+      "near_code_members": 0,
+      "discipline": "Business",
+      "why": "the title reads as another subject"
+    },
+    {
+      "target": "BUSI M1202",
+      "ids": [
+        "BSOT M10II",
+        "BUSI M1202"
+      ],
+      "members": 46,
+      "acct_members": 1,
+      "share": 0.022,
+      "title": "Mathematics for Business",
+      "title_reading": "neutral",
+      "confidence": 21,
+      "homonym_members": 0,
+      "near_code_members": 0,
+      "discipline": "Business",
+      "why": "accounting courses are 1 of 46 (under half)"
+    },
+    {
+      "target": "BUSI M1224",
+      "ids": [
+        "BUSI M1224"
+      ],
+      "members": 2,
+      "acct_members": 1,
+      "share": 0.5,
+      "title": "Spreadsheets 3 - Certification",
+      "title_reading": "other",
+      "confidence": 30,
+      "homonym_members": 0,
+      "near_code_members": 0,
+      "discipline": "Business",
+      "why": "the title reads as another subject"
+    },
+    {
+      "target": "BUSI M1295",
+      "ids": [
+        "BUSI M1295"
+      ],
+      "members": 2,
+      "acct_members": 1,
+      "share": 0.5,
+      "title": "Spreadsheet - MS Excel",
+      "title_reading": "other",
+      "confidence": 30,
+      "homonym_members": 0,
+      "near_code_members": 0,
+      "discipline": "Business",
+      "why": "the title reads as another subject"
+    },
+    {
+      "target": "BUSI M1299",
+      "ids": [
+        "BUSI M10AN",
+        "BUSI M10DC",
+        "BUSI M10OZ",
+        "BUSI M1299"
+      ],
+      "members": 3,
+      "acct_members": 1,
+      "share": 0.333,
+      "title": "Computerized Bookkeeping and Accounting 2",
+      "title_reading": "accounting",
+      "confidence": 60,
+      "homonym_members": 0,
+      "near_code_members": 0,
+      "discipline": "Business",
+      "why": "accounting courses are 1 of 3 (under half)"
+    },
+    {
+      "target": "BUSI M1308",
+      "ids": [
+        "BUSI M1308"
+      ],
+      "members": 50,
+      "acct_members": 3,
+      "share": 0.06,
+      "title": "Personal Finance",
+      "title_reading": "other",
+      "confidence": 4,
+      "homonym_members": 0,
+      "near_code_members": 1,
+      "discipline": "Business",
+      "why": "the title reads as another subject"
+    },
+    {
+      "target": "BUSI M1310",
+      "ids": [
+        "BUSI M1310"
+      ],
+      "members": 2,
+      "acct_members": 1,
+      "share": 0.5,
+      "title": "Individual Financial Planning",
+      "title_reading": "other",
+      "confidence": 30,
+      "homonym_members": 0,
+      "near_code_members": 0,
+      "discipline": "Business",
+      "why": "the title reads as another subject"
+    },
+    {
+      "target": "BUSI M1311",
+      "ids": [
+        "BUSI M1311"
+      ],
+      "members": 2,
+      "acct_members": 1,
+      "share": 0.5,
+      "title": "Introduction to Financial Planning",
+      "title_reading": "other",
+      "confidence": 30,
+      "homonym_members": 0,
+      "near_code_members": 0,
+      "discipline": "Business",
+      "why": "the title reads as another subject"
+    },
+    {
+      "target": "BUSI M1335",
+      "ids": [
+        "BUSI M1335"
+      ],
+      "members": 3,
+      "acct_members": 1,
+      "share": 0.333,
+      "title": "Spreadsheets 1",
+      "title_reading": "other",
+      "confidence": 20,
+      "homonym_members": 0,
+      "near_code_members": 0,
+      "discipline": "Business",
+      "why": "the title reads as another subject"
+    },
+    {
+      "target": "BUSI M1341",
+      "ids": [
+        "BUSI M1341"
+      ],
+      "members": 3,
+      "acct_members": 1,
+      "share": 0.333,
+      "title": "Spreadsheets 2",
+      "title_reading": "other",
+      "confidence": 20,
+      "homonym_members": 0,
+      "near_code_members": 0,
+      "discipline": "Business",
+      "why": "the title reads as another subject"
+    },
+    {
+      "target": "BUSI M1377",
+      "ids": [
+        "BSOT M1003",
+        "BSOT M10AJ",
+        "BSOT M10AK",
+        "BSOT M10IY",
+        "BSOT M10OM",
+        "BSOT M10ON",
+        "BUSI M1377",
+        "CBIT M10AA",
+        "ITIS M11XG"
+      ],
+      "members": 11,
+      "acct_members": 2,
+      "share": 0.182,
+      "title": "Computer Keyboarding: 10 Key",
+      "title_reading": "other",
+      "confidence": 11,
+      "homonym_members": 0,
+      "near_code_members": 0,
+      "discipline": "Business",
+      "why": "the title reads as another subject"
+    },
+    {
+      "target": "BUSI M1396",
+      "ids": [
+        "BUSI M11JQ",
+        "BUSI M11QI",
+        "BUSI M1396",
+        "BUSI M1397",
+        "BUSI M1398"
+      ],
+      "members": 12,
+      "acct_members": 1,
+      "share": 0.083,
+      "title": "Principles of Money Management for Success",
+      "title_reading": "other",
+      "confidence": 5,
+      "homonym_members": 0,
+      "near_code_members": 0,
+      "discipline": "Business",
+      "why": "the title reads as another subject"
+    },
+    {
+      "target": "BUSI M1455",
+      "ids": [
+        "BUSI M10DT",
+        "BUSI M10DU",
+        "BUSI M10DV",
+        "BUSI M10WQ",
+        "BUSI M1455"
+      ],
+      "members": 4,
+      "acct_members": 1,
+      "share": 0.25,
+      "title": "Computer Accounting for Small Businesses",
+      "title_reading": "accounting",
+      "confidence": 55,
+      "homonym_members": 0,
+      "near_code_members": 1,
+      "discipline": "Business",
+      "why": "accounting courses are 1 of 4 (under half)"
+    },
+    {
+      "target": "BUSI M9170",
+      "ids": [
+        "BUSI M90GE",
+        "BUSI M90KW",
+        "BUSI M90LD",
+        "BUSI M9170"
+      ],
+      "members": 3,
+      "acct_members": 1,
+      "share": 0.333,
+      "title": "Not for Profit Recordkeeping and Compliance Noncredit",
+      "title_reading": "neutral",
+      "confidence": 40,
+      "homonym_members": 0,
+      "near_code_members": 0,
+      "discipline": "Business",
+      "why": "accounting courses are 1 of 3 (under half)"
+    },
+    {
+      "target": "ITIS M1295",
+      "ids": [
+        "BUSI M1116",
+        "COMP M10NS",
+        "ITIS M10QK",
+        "ITIS M10QO",
+        "ITIS M11RL",
+        "ITIS M11SB",
+        "ITIS M1293",
+        "ITIS M1295"
+      ],
+      "members": 16,
+      "acct_members": 1,
+      "share": 0.062,
+      "title": "Data Analytics and Visualization (Tableau)",
+      "title_reading": "other",
+      "confidence": 4,
+      "homonym_members": 0,
+      "near_code_members": 0,
+      "discipline": "Computer Information Systems",
+      "why": "the family's record sits on ITIS (Computer Information Systems), not BUSI"
+    },
+    {
+      "target": "REAL M1052",
+      "ids": [
+        "BUSI M11GR",
+        "REAL M1052",
+        "REAL M10DQ",
+        "REAL M10DZ",
+        "REAL M10EA",
+        "REAL M10EB",
+        "REAL M10EF"
+      ],
+      "members": 6,
+      "acct_members": 1,
+      "share": 0.167,
+      "title": "Real Estate Exchanges and Exchange Taxation",
+      "title_reading": "accounting",
+      "confidence": 50,
+      "homonym_members": 0,
+      "near_code_members": 0,
+      "discipline": "Real Estate",
+      "why": "the family's record sits on REAL (Real Estate), not BUSI"
+    },
+    {
+      "target": "SOCS M1051",
+      "ids": [
+        "SOCS M1051"
+      ],
+      "members": 10,
+      "acct_members": 3,
+      "share": 0.3,
+      "title": "Personal Financial Planning",
+      "title_reading": "other",
+      "confidence": 18,
+      "homonym_members": 0,
+      "near_code_members": 0,
+      "discipline": "Social Science",
+      "why": "the family's record sits on SOCS (Social Science), not BUSI"
+    },
+    {
+      "target": "VOCE M1002",
+      "ids": [
+        "BSOT M10MS",
+        "BUSI M1043",
+        "BUSI M10FJ",
+        "BUSI M10HC",
+        "BUSI M10NY",
+        "BUSI M10OB",
+        "ITIS M12AF",
+        "VOCE M1002"
+      ],
+      "members": 18,
+      "acct_members": 3,
+      "share": 0.167,
+      "title": "Introduction to Spreadsheets - Using MS Excel",
+      "title_reading": "other",
+      "confidence": 10,
+      "homonym_members": 0,
+      "near_code_members": 1,
+      "discipline": "Vocational",
+      "why": "the family's record sits on VOCE (Vocational), not BUSI"
+    },
+    {
+      "target": "WEXP M1001",
+      "ids": [
+        "WEXP M1001"
+      ],
+      "members": 2190,
+      "acct_members": 31,
+      "share": 0.014,
+      "title": "Work Experience Education",
+      "title_reading": "other",
+      "confidence": 1,
+      "homonym_members": 0,
+      "near_code_members": 1,
+      "discipline": "Work Experience Instructors",
+      "why": "the family's record sits on WEXP (Work Experience Instructors), not BUSI"
+    }
+  ],
+  "homonyms": {
+    "Copper Mountain College|ACC": {
+      "n": 4,
+      "reads": 0,
+      "titles": [
+        "ACCESS (DSPS) Computer Keyboarding",
+        "ACCESS (DSPS) Computer Skills and Academic Support Lab",
+        "Introduction to Learning Disabilities",
+        "Strategies for College Success"
+      ]
+    }
+  }
+}
