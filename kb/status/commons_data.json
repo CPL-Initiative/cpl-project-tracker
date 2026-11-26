@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-26T16:56:15Z",
+ "written_at": "2026-11-26T17:20:58Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17585,
-  "gap": 4750,
+  "passing": 17587,
+  "gap": 4748,
   "with_gap": 118,
   "cost_usd": 1341.45,
-  "passed_at_read": 16501,
+  "passed_at_read": 16503,
   "cost_receipts": 118,
   "spent_usd": 1244.44,
   "spent_runs": 240,
@@ -189,8 +189,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16943,
-  "gap": 4750,
+  "passing": 16945,
+  "gap": 4748,
   "collected_with_gaps": 642,
   "discontinued": 0
  },
@@ -8815,13 +8815,13 @@
    "harvested": true,
    "slug": "orange_coast",
    "programs": 328,
-   "passing": 249,
-   "gap": 79,
+   "passing": 251,
+   "gap": 77,
    "causes": {
     "no_closed_list": 27,
     "page_not_found": 30,
     "places_none": 5,
-    "unknown_without_live": 17
+    "unknown_without_live": 15
    },
    "census_causes": {
     "coverage_fails": 4,
@@ -8848,10 +8848,10 @@
     "courseleaf"
    ],
    "objectives_printed": null,
-   "read_at": "2026-11-25T07:21:17Z",
+   "read_at": "2026-11-26T16:25:35Z",
    "read_kind": "capture",
    "cost_usd": 19.77,
-   "passed_at_read": 224,
+   "passed_at_read": 226,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -8866,7 +8866,7 @@
    "failed_checks": {
     "coverage": 9,
     "invented": 3,
-    "arithmetic": 36,
+    "arithmetic": 34,
     "repeated": 0,
     "outcomes": 8
    },
@@ -8876,12 +8876,12 @@
    "capture_root": "https://catalog.cccd.edu/orange-coast/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 2323.9,
-   "run": "45567337117",
+   "read_seconds": 2297.6,
+   "run": "45858495107",
    "levers": {
     "reader_page_search": 30,
     "program_course_file_check": 27,
-    "reconcile_steps": 16,
+    "reconcile_steps": 14,
     "reader_page_assignment": 5,
     "ge_units_steps": 1
    },
@@ -8891,8 +8891,8 @@
      "models": {
       "claude-opus-5-5": 271
      },
-     "run": "45567337117",
-     "at": "2026-11-25T07:21:17Z",
+     "run": "45858495107",
+     "at": "2026-11-26T16:25:35Z",
      "cost_usd": 19.77,
      "platform": "courseleaf"
     },
