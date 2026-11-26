@@ -46,26 +46,31 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 24,
+   "placed": 25,
    "listed": 27,
-   "share": 0.889,
+   "share": 0.926,
    "missing": [
     "BIOL100",
-    "ENGWR488",
     "PSYC480"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ENGL488",
+     "listed": "ENGWR488",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 6,
+   "count": 5,
    "codes": [
     "AH108",
     "BIOL302",
     "COMM481",
     "EDUC300",
-    "ENGL488",
     "ETHNS300"
    ],
    "flagged": [
@@ -73,7 +78,6 @@
     "BIOL302",
     "COMM481",
     "EDUC300",
-    "ENGL488",
     "ETHNS300"
    ],
    "pass": true
@@ -433,5 +437,6 @@
    "The Student Learning Outcomes are printed once for the A.S. program section."
   ]
  },
- "extracted_run": "39047070975"
+ "extracted_run": 45771862247,
+ "read_run": "39047070975"
 }
