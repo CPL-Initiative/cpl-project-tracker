@@ -154,5 +154,22 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   `claude/s740-piles` (about $0.36; the page read shows today's capture holds each Requirements tab).
 - Records collected by 15:22Z: 30 (Cerritos 2, s740a to s740c 6, Copper Mountain 2, Santa Ana 4, San Jose City 11,
   s740c1 2, s740c2 3).
+- 15:24Z: the reader of piles batch 2 (Sonnet): s740d, s740e, s740f APPLY; Shasta and LATTC rereads GO (41150's pass
+  stands on the catalog line "DIGLMD 100 Introduction to Digital Media 3", the line S739's reader asked for). MINORs: pin
+  the run id in the three older tests that now accept either state; 45306's hold reason should say it is on no live run;
+  02520's computed 64.5 equals the printed Program Total. 15:26Z: the two rereads dispatched on `claude/s740-piles`
+  (Shasta posts 18655 at 45841957622, LATTC 41150 and 31089 at 45844759766). 15:28Z to 15:33Z: clean pre-reads (7 of
+  7, 4 of 4, 1 of 1); migrate 45849528191 returned 7 (s740d), 45849791694 returned 4 (s740e), 45850056682 returned 1
+  (s740f), none skipped; `.apply` restored (`1eb74d5c`). Live: 41150 passes; 18655 and 31089 sit at their reconcile runs
+  for a gap plan.
+- 15:30Z: `reads` pushed s740r2 (head `98673952`; Santa Ana, 8 named gaps; 31859 moved to `lists_not_closed` after
+  `tests/reconcile_keeps_named_gaps_test.py` caught the first kind). Its reader (Sonnet): FIX THEN APPLY. MAJOR: 31859
+  is the within-range case (computed 19-19.5 against the printed 18-19.5), so it leaves the plan and holds with 21789
+  for `units_within_printed_range`, filed by key once the kind is on `main`; 31887 files with its hand words naming the
+  reverse containment (the printed 52 inside the sum 51-52). The other six are true.
+- 15:32Z: `reconcile`'s San Bernardino Valley reconcile 45844530701: 8 restamped, 40833 and 41756 fail to pass, and 4
+  noncredit records (38013, 38014, 39191, 40280) pass to fail on fresh text, which keep-better restores from `main`
+  with Solano's three; the conductor's live read for keep-better (no checked rows at either college) handed over.
+- Records collected by 15:34Z: 43 (adds s740d 7, s740e 4, s740f 1 and LATTC 41150).
 - 13:31Z: `piles`, `reads` and `reconcile` started on Fable 5.2 at high effort, each in its own worktree off `609c2a2b`
   (`/home/user/wt/<name>`), told to open no PR (the conductor opens each land) and to leave `.apply` to the conductor.
