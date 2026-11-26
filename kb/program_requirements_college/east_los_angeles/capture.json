@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 234,
  "with_closed_list": 147,
- "started": "2026-11-23T12:40:40Z",
+ "started": "2026-11-26T06:38:25Z",
  "catalog_year_from": "the procedure record's catalog step",
  "procedure_step": {
   "start": "https://www.elac.edu/academic-resources/catalog",
@@ -1953,7 +1953,7 @@
  "loads": 2,
  "pages_listed": 1,
  "pages_answered": 1,
- "seconds": 203.3,
+ "seconds": 158.0,
  "found": 136,
  "by_method": {
   "no_closed_list": 87,
@@ -2258,9 +2258,9 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/east_los_angeles",
-  "kept": 133,
+  "kept": 134,
   "kept_moved": 0,
-  "programs": 3,
+  "programs": 2,
   "list": [
    {
     "control_number": "38332",
@@ -2268,18 +2268,8 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=198",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "44624",
-    "title": "Digital Film Production",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=275",
-    "coverage": 1.0,
-    "was_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=275",
-    "was_coverage": 0.941,
+    "was_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=198",
+    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
@@ -2288,14 +2278,19 @@
     "award": "Baccalaureate of Science (B.S.) Degree.",
     "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=343",
     "coverage": 0.625,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=343",
+    "was_coverage": 0.625,
+    "was_method": "pdf_pages"
    }
   ],
   "held_worse_window": [],
   "held_no_gain": [],
   "held_opens_on_list": [],
+  "only": [
+   "38332",
+   "45540"
+  ],
+  "not_named": [],
   "refused_passing": [],
   "forced_unbound": []
  },
@@ -2845,5 +2840,5 @@
    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=277"
   }
  },
- "run": "45176404274"
+ "run": "45769480150"
 }
