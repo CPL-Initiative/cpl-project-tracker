@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-26T10:38:52Z",
+ "written_at": "2026-11-26T10:58:47Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17418,
-  "gap": 4917,
+  "passing": 17419,
+  "gap": 4916,
   "with_gap": 118,
-  "cost_usd": 1341.34,
-  "passed_at_read": 16424,
+  "cost_usd": 1341.36,
+  "passed_at_read": 16427,
   "cost_receipts": 118,
   "spent_usd": 1243.5,
   "spent_runs": 223,
@@ -189,8 +189,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16887,
-  "gap": 4917,
+  "passing": 16888,
+  "gap": 4916,
   "collected_with_gaps": 531,
   "discontinued": 0
  },
@@ -534,12 +534,12 @@
    "harvested": true,
    "slug": "bakersfield",
    "programs": 249,
-   "passing": 212,
-   "gap": 37,
+   "passing": 213,
+   "gap": 36,
    "causes": {
     "no_closed_list": 8,
     "page_not_found": 10,
-    "places_none": 2,
+    "places_none": 1,
     "unknown_without_live": 17
    },
    "census_causes": {
@@ -564,10 +564,10 @@
    "outcomes_file": "kb/status/commons_data_programs/bakersfield.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-13T14:35:10Z",
+   "read_at": "2026-11-26T10:35:43Z",
    "read_kind": "capture",
-   "cost_usd": 13.38,
-   "passed_at_read": 207,
+   "cost_usd": 13.4,
+   "passed_at_read": 210,
    "slo_queue": {
     "state": "none",
     "why": "its eLumen course pages print no SLOs",
@@ -580,13 +580,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 241,
-   "found": 231,
+   "found": 230,
    "extracted": 231,
    "errors": 0,
    "failed_checks": {
-    "coverage": 2,
+    "coverage": 1,
     "invented": 0,
-    "arithmetic": 24,
+    "arithmetic": 21,
     "repeated": 0,
     "outcomes": 0
    },
@@ -596,13 +596,13 @@
    "capture_root": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/about-bc",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1182.0,
-   "run": "38414480070",
+   "read_seconds": 1162.1,
+   "run": "45802578239",
    "levers": {
     "reconcile_steps": 16,
     "reader_page_search": 10,
     "program_course_file_check": 8,
-    "reader_page_assignment": 2,
+    "reader_page_assignment": 1,
     "scorer_noncredit_hours": 1
    },
    "collection": {
@@ -611,9 +611,9 @@
      "models": {
       "claude-opus-5-5": 231
      },
-     "run": "38414480070",
-     "at": "2026-10-13T14:35:10Z",
-     "cost_usd": 13.38,
+     "run": "45802578239",
+     "at": "2026-11-26T10:35:43Z",
+     "cost_usd": 13.4,
      "platform": "elumen"
     },
     "slo_read": null,

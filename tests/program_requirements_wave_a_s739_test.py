@@ -207,6 +207,9 @@ RECORDS = (
     ("cuesta", "21050", "/30065/30067/30109"),
     # Grossmont: read from its own page on its pin (read 45799536686, load 45802387023).
     ("grossmont", "32879", "/visual-performing-arts/photography-cert-achievement/"),
+    # Bakersfield: read again from its own page, whose first read (record shape 4) named a total and no course
+    # (read 45802578239).
+    ("bakersfield", "09968", "/program/human-services-associate-of-arts-summer-2026"),
 )
 for slug, cn, page in RECORDS:
     path = os.path.join(ROOT, "kb", "program_requirements_college", slug, "records", cn + ".json")
