@@ -1,4 +1,4 @@
-{"schema":1,"college":"Modesto Junior College","slug":"modesto_junior","basis":"live","census_at":"2026-11-26 12:06Z","correction_rules":true,"programs":[
+{"schema":1,"college":"Modesto Junior College","slug":"modesto_junior","basis":"live","census_at":"2026-11-26 14:02Z","correction_rules":true,"programs":[
 {"cn":"06692","title":"Communication Studies","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"32773","title":"Communication Studies","award":"Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"18763","title":"Computer Network Technician","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},

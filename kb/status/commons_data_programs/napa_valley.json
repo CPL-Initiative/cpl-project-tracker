@@ -1,4 +1,4 @@
-{"schema":1,"college":"Napa Valley College","slug":"napa_valley","basis":"live","census_at":"2026-11-26 12:06Z","correction_rules":false,"programs":[
+{"schema":1,"college":"Napa Valley College","slug":"napa_valley","basis":"live","census_at":"2026-11-26 14:02Z","correction_rules":false,"programs":[
 {"cn":"31158","title":"911 Dispatcher","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"found_not_extracted","lever":"paid_read","url":"https://catalog.napavalley.edu//areas-of-study/administration-of-justice/law-enforcement-administration-of-justice-certificate-of-achievement/"},
 {"cn":"36528","title":"Dance","award":"A.A. Degree","cause":"found_not_extracted","lever":"paid_read","url":"https://catalog.napavalley.edu//getting-your-degree/"},
 {"cn":"19126","title":"Studio Arts-Painting and Drawing Emphasis","award":"A.A. Degree","cause":"found_not_extracted","lever":"paid_read","url":"https://catalog.napavalley.edu//getting-your-degree/c-id/"},
