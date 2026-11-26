@@ -1075,6 +1075,16 @@ jobs:
       - name: Cheap piles S740 at College of the Canyons (the units within-range kind, the plan)
         if: matrix.shard == 4
         run: python3 tests/program_piles_s740_canyons_test.py
+      # S740: the cited course renumbers at Shasta (SOC C1000) and Los Angeles Trade-Technical (BLDGTCQ, PLUMBING,
+      # DIGMD), each pair with its page-read citation; what a fresh score moves with them read.
+      - name: Course renumbers S740 at Shasta and Los Angeles Trade-Technical (cited pairs, the fresh score)
+        if: matrix.shard == 5
+        run: python3 tests/program_renumbers_s740_test.py
+      # S740 at Cabrillo (s740d): the 13 records s720b held, read again by key: 7 collected with named gaps (no new
+      # kind), 6 held (four on a reconcile wording rule, one on no proved live run, one with no kind).
+      - name: Cheap piles S740 at Cabrillo (the earlier holds, named gaps, the plan)
+        if: matrix.shard == 6
+        run: python3 tests/program_piles_s740_cabrillo_test.py
       # Discontinued programs (S680; Sam, 2026-11-17 on #3480): a program's own catalog section marks it,
       # or a prior year prints it and this year does not; flagged out of the gap, never deleted. Pure stdlib.
       - name: Discontinued programs (own-section mark, out of the gap, the file is current)

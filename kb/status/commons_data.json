@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-26T14:06:20Z",
+ "written_at": "2026-11-26T14:38:24Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,8 +168,8 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17513,
-  "gap": 4822,
+  "passing": 17520,
+  "gap": 4815,
   "with_gap": 118,
   "cost_usd": 1341.61,
   "passed_at_read": 16455,
@@ -190,8 +190,8 @@
  "census_check": {
   "universe": 22335,
   "passing": 16915,
-  "gap": 4822,
-  "collected_with_gaps": 598,
+  "gap": 4815,
+  "collected_with_gaps": 605,
   "discontinued": 0
  },
  "census_live": {
@@ -941,12 +941,12 @@
    "harvested": true,
    "slug": "cabrillo",
    "programs": 291,
-   "passing": 255,
-   "gap": 36,
+   "passing": 262,
+   "gap": 29,
    "causes": {
     "no_closed_list": 10,
     "page_not_found": 12,
-    "unknown_without_live": 14
+    "unknown_without_live": 7
    },
    "census_causes": {
     "no_closed_list": 9,
@@ -1000,9 +1000,9 @@
    "read_seconds": 1552.1,
    "run": "44090886950",
    "levers": {
-    "reconcile_steps": 13,
     "reader_page_search": 12,
     "program_course_file_check": 10,
+    "reconcile_steps": 6,
     "scorer_noncredit_hours": 1
    },
    "collection": {

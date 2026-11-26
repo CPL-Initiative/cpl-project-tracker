@@ -70,6 +70,7 @@
     17.0,
     17.0
    ],
+   "against": "program",
    "why": [
     "the blocks sum to 14.0-14.0; the catalog states 17.0-17.0"
    ]
@@ -93,7 +94,21 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "repeat_read_once",
+    "label": "The catalog prints a course the program takes more than once, and the record counts it once, so its units fall short of the printed total by the repeats.",
+    "words": "The 'Required' block states 13 credits, but the ten listed courses sum to 14 units at one enrollment each. The catalog adds notes: 'MUS68 and/or MUS68CP need to be repeated 4 times to reach a total of 4 units' (4) and 'MUS40 needs to be repeated 2 time to reach a total of 2 units' (2). One reading: 11 units of single courses + 2 units of MUS40 = 13, plus 4 units of MUS68/MUS68CP = 17 total. The block structure and repeat rules should be reviewed."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 60,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

@@ -112,7 +112,21 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "catalog_figures_differ",
+    "label": "The catalog's own figures do not add up: each list matches its printed figure, and the lists sum past the program's printed total.",
+    "words": "The page prints 'Complete the following number of credits: 60' for the whole degree (recorded as degree_total) and 'Cabrillo College General Education 24' (recorded as ge_units); no total for the major alone is printed, so total_units is null. The generic sentence that an A.S. requires at least 30 units in the major was not recorded as a total. | The five Focus blocks are recorded as one option_group ('Focus') because the page says 'Students should select a focus in the degree and complete the block of recommended courses centered around that focus'; each prints its own credit total."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 100,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {
