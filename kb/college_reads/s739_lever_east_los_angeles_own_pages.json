@@ -1,0 +1,24 @@
+{
+ "_readme": "S739 lever, East Los Angeles College. Paid read 45769480150 (only=38332,45540) handed each program its sister award's section: the Geo-Spatial Engineering and Technologies certificate 38332 was read from PDF pp.198-199, which print the Associate in Science (Academic Plan E038337C) alone, and the Respiratory Therapy B.S. 45540 from pp.343-345, the Associate in Science (E002458C), so each record places none of its listed courses. This read prints each program's own plan line, '(Academic Plan E0<control number>...)', and the pages that name the certificate and the bachelor's upper-division courses, with the two pages after each, so a session can name a pdf_pages pin for each own section or name its gap. One PDF load and robots.txt, no model call, nothing written.",
+ "college": "East Los Angeles College",
+ "questions": {
+  "own_page": "Where each program's own section opens (its heading or plan line and the first line of its requirement list) and where its list ends (its total), so a pdf_pages pin can name the page, the words it opens on and the page it runs through."
+ },
+ "keywords": [
+  "Academic\\W+Plan\\W+E0?(?:38332|45540)|Geo-?\\s*Spatial\\W+Engineering\\W+and\\W+Technologies|Bachelor.{0,40}Respiratory|RESP\\W*TH\\W+[34]\\d\\d"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf"
+  }
+ ],
+ "pdf_span": [
+  150,
+  420
+ ],
+ "pdf_after": 2,
+ "pdf_page_cap": 30
+}

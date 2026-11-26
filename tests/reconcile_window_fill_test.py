@@ -240,6 +240,8 @@ WORDS_ELSEWHERE = {("East Los Angeles College", "33382"): "the printed program h
 # its major adds up with no fill and it leaves this population (it keeps s721c's gap,
 # d-porterville-06773-keeps-s721c-gap-s731).
 NO_FILL_S731 = {("Porterville College", "06773")}
+# S739 (the lever): Folsom Lake 38736 was read again from its own section (pp.176-177, read 45768555107), so its
+# notes name no cut and it leaves this population: 18 records before that read lands, 17 after.
 seen = refused_n = kept = 0
 for path in sorted(glob.glob(os.path.join(COLLEGE_DIR, "*", "records", "*.json"))):
     with open(path, encoding="utf-8") as fh:
@@ -265,7 +267,7 @@ for path in sorted(glob.glob(os.path.join(COLLEGE_DIR, "*", "records", "*.json")
     elif key not in WORDS_ELSEWHERE:
         check(False, "%s %s: a rescore passes it through a fill while its notes name a cut (%s)"
               % (key + (next(w for w in words if INDEPENDENT.search(w))[:120],)))
-check(seen >= 18 and kept == len(WORDS_ELSEWHERE) - len(NO_FILL_S731) and refused_n == seen - kept,
+check(seen >= 17 and kept == len(WORDS_ELSEWHERE) - len(NO_FILL_S731) and refused_n == seen - kept,
       "every college: of %d records a rescore passes through a fill whose words name a cut, the scorer refuses %d "
       "and the %d read by hand keep their pass" % (seen, refused_n, kept))
 

@@ -2238,7 +2238,17 @@
      "date": "2026-11-23",
      "evidence": "The 2026-2027 catalog prints 'ESL  NC 045 Workplace English ....0' in Automotive Fundamentals 37510 (page read 45173349853, pdf page 386), beside ACAD PR 014CE and ACAD PR 005CE, which keep the noncredit CE ending; the state's file lists ESL NC 45CE Workplace English at the college and no ESL NC 45."
     }
-   ]
+   ],
+   "pdf_pages": {
+    "38332": {
+     "page": 195,
+     "words": "Geo-Spatial Engineering and Technologies (Academic Plan E038332D)",
+     "through": 196,
+     "until": "IT Technician Pathway: Stage 1",
+     "evidence": "S739 (lever): Geo-Spatial Engineering and Technologies certificate 38332: its heading and plan line 'Geo-Spatial Engineering and Technologies (Academic Plan E038332D)' print at the foot of PDF p.195, and its list (ENG SUP 121, 221, 224, 225, 200, 201 and 202, ENG GEN 185 and MATH 241 or 241S) with 'Total 20' on p.196; the window ends where 'IT Technician Pathway: Stage 1' opens the next certificate (college-page-read run 45771828002; fixture tests/fixtures/program_requirements_ela_pins_s739.json). Paid read 45769480150 handed it pp.198-199, the Associate in Science (Academic Plan E038337C), so its record placed none of its 7 listed courses."
+    }
+   },
+   "pdf_pages_why": "S739 (lever, the gap census's paid_read lever, census of 2026-11-26 01:19Z): paid read 45769480150 handed the Geo-Spatial Engineering and Technologies certificate 38332 its sister degree's section. It is pinned to its own section: the page and words its plan line opens on, `through` the page its list ends on, and `until` the words the next certificate opens on, so the window holds that section alone. A pin binds only while the file prints the words, the until words after them and every title word between; otherwise the program gets no fresh text and its filed record stands. Respiratory Therapy B.S. 45540 is a named gap (east_los_angeles/named_gaps_s739.json). Reversible by deleting pdf_pages."
   },
   "Los Angeles Pierce College": {
    "why": "S644, the harvest's lever 5 (general education given its units). Pierce's local degrees offer two patterns and the award table prints each one's units: 'Cal-GETC (34 units)' and 'LACCD GE (21 units)' (the reading of Child Development A.A. 08330, notes). A degree on either pattern carries 21 to 34 units of general education, as Monterey Peninsula's 'MPC General Education or Cal-GETC' (24-34), Columbia's CC-GE or Cal-GETC (21-34) and Los Angeles Valley's plans (27-34) read. The step sets that span only where the page prints both figures and the record names the pattern and the degree total (only_with ge_pattern and degree_total). Measured on the filed records by kb/_program_requirements_readings_measure.py: 08330 passes (57-70 against 60, within); no passing record moves. Session decision for Sam to revise (d-ge-pattern-units-s644); reversible by deleting this entry.",

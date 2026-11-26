@@ -46,38 +46,46 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 20,
+   "placed": 23,
    "listed": 27,
-   "share": 0.741,
+   "share": 0.852,
    "missing": [
-    "ENGWR301",
     "ENGWR303",
-    "ENGWR488",
-    "HIST310",
     "HIST311",
     "HIST483",
     "HIST484"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ENGL301",
+     "listed": "ENGWR301",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ENGL488",
+     "listed": "ENGWR488",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001",
+     "listed": "HIST310",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 7,
+   "count": 4,
    "codes": [
-    "ENGL301",
-    "ENGL488",
     "ENGLC1003",
-    "HISTC1001",
     "HISTC1001H",
     "HISTC1002",
     "HISTC1002H"
    ],
    "flagged": [
-    "ENGL301",
-    "ENGL488",
     "ENGLC1003",
-    "HISTC1001",
     "HISTC1001H",
     "HISTC1002",
     "HISTC1002H"
@@ -375,5 +383,6 @@
    "Outcome text copied as printed, including the catalog's spellings 'statues' and 'utilities'."
   ]
  },
- "extracted_run": "39047070975"
+ "extracted_run": 45771862247,
+ "read_run": "39047070975"
 }

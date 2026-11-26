@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 227,
  "with_closed_list": 207,
- "started": "2026-11-24T08:10:42Z",
+ "started": "2026-11-26T06:59:07Z",
  "pdf": {
   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf",
   "access": "hand_filed",
@@ -3053,7 +3053,7 @@
  "loads": 0,
  "pages_listed": 1,
  "pages_answered": 1,
- "seconds": 470.1,
+ "seconds": 469.5,
  "found": 201,
  "by_method": {
   "no_closed_list": 20,
@@ -4332,5 +4332,5 @@
    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=515"
   }
  },
- "run": "45353709365"
+ "run": "45771862247"
 }

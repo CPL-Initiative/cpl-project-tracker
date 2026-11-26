@@ -1,0 +1,21 @@
+{
+ "_readme": "S739 (lever), the gap census's paid_read lever (census of 2026-11-26 01:19Z): East Los Angeles College's Respiratory Therapy B.S., filed as a named gap with no record. Paid read 45769480150 read it from the Associate in Science's section (PDF pp.343-345) and placed none of its 48 listed courses; free page read 45771828002 printed its own section (pp.346-347). The filed record stays as filed (the load skips a record that places none). No Supabase write.",
+ "college": "East Los Angeles College",
+ "written": "2026-11-26T07:03:06Z",
+ "capture": "45769480150",
+ "page_reads": [
+  "45771828002"
+ ],
+ "reasons": {
+  "list_by_reference": "The program's own page prints its required courses and names other awards whose lists complete it, and the state's file lists those awards' courses as the program's own, so the page names fewer than half of the state's listed courses by code and the capture refuses it as the program's page."
+ },
+ "programs": [
+  {
+   "control_number": "45540",
+   "title": "Respiratory Therapy",
+   "award": "Baccalaureate of Science (B.S.) Degree.",
+   "reason": "list_by_reference",
+   "note": "Its own section, 'BACHELOR’S DEGREE PROGRAM Respiratory Therapy, Bachelor of Science Degree (Academic Plan E045540B)' (PDF pp.346-347), admits a graduate of an Associate of Science in Respiratory Therapy and prints the 18 upper-division courses alone (SOC 325, PSYCH 420 and RESP TH 300 to 416, 'TOTAL UNITS REQUIRED FOR UPPER DIVISION 54'), under 'Required Major Units: 76.5-78.5 Lower Division + 54 Upper Division' and 'Total Program Units: 157.5-159.5'. The state's file lists 48 courses, the associate degree's among them, so the section names 18 of 48 (37.5%), under the reader's accept share; pinned to pp.346-348 the capture would refuse it. The lower division prints in the Associate in Science's section (pp.343-345, Academic Plan E002458C)."
+  }
+ ]
+}

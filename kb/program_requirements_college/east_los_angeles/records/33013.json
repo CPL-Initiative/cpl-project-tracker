@@ -136,7 +136,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "noted_figures_differ",
+    "label": "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires.",
+    "words": "Core prints 'ANTHRO 101 OR ANTHRO 101 AND ANTHRO 111**', i.e. the lab ANTHRO 111 is optional; recorded as two option blocks. The catalog's core subtotal is 9-10 units for ANTHRO 101(+111), 102 and 103 together; not placed on any single block."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 100,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

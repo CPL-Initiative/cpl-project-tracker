@@ -46,40 +46,52 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 21,
+   "placed": 26,
    "listed": 28,
-   "share": 0.75,
+   "share": 0.929,
    "missing": [
-    "BIOL308",
-    "BIOL309",
     "ECON302",
-    "ENGWR301",
-    "ENGWR488",
-    "HIST310",
     "HIST483"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "BIOLC1001",
+     "listed": "BIOL308",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOLC1001L",
+     "listed": "BIOL309",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ENGL301",
+     "listed": "ENGWR301",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ENGL488",
+     "listed": "ENGWR488",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001",
+     "listed": "HIST310",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 7,
+   "count": 2,
    "codes": [
-    "BIOLC1001",
-    "BIOLC1001L",
     "ECONC2002",
-    "ENGL301",
-    "ENGL488",
-    "HISTC1001",
     "HISTC1001H"
    ],
    "flagged": [
-    "BIOLC1001",
-    "BIOLC1001L",
     "ECONC2002",
-    "ENGL301",
-    "ENGL488",
-    "HISTC1001",
     "HISTC1001H"
    ],
    "pass": true
@@ -394,5 +406,6 @@
   ],
   "notes": []
  },
- "extracted_run": "39047070975"
+ "extracted_run": 45771862247,
+ "read_run": "39047070975"
 }
