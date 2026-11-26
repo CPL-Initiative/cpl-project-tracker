@@ -17589,8 +17589,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 691,
+   "count": 692,
    "docs": [
+    {
+     "created": "2026-11-26",
+     "governs": [],
+     "n": 741,
+     "path": "docs/session_741_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 741 handoff (from SkySkimmer, S740, the CPL Queue routine's collection run of 2026-11-26, from 13:12Z)",
+     "type": null,
+     "updated": "2026-11-26"
+    },
     {
      "created": "2026-11-26",
      "governs": [],
@@ -29037,5 +29051,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1586
+ "total": 1587
 }

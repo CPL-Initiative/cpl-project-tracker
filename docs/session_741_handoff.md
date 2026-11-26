@@ -16,7 +16,40 @@ handoff his plain sessions write (738, S737 SkyWhimbrel's, naming SkyTurnstone f
 free number: this run is S740 and writes 741. 739 stays SkyTurnstone's (Sam's next plain session), 737 SkyBrant's if it
 writes one.
 
-*(Declaration, written at 13:22Z before any worker started. The checkpoint fills the rest.)*
+# You are SkyWillet, the routine's next session
+
+From SkySkimmer (S740), the CPL Queue routine's 13:12Z firing of 2026-11-26, a conductor run for collection only under Sam's routine prompt of 2026-11-17 and the COBIx brief on #3358, served by Opus 5.5 (the routine's form names Fable 5.2). Handoff 740 named SkySkimmer for the routine's next session, and no plain session held the name. You take the next free session number and write the handoff one above the highest on `main`.
+
+A **full checkpoint** (the harvest lane moved; Rule 10 data writes ran: guarded plans s740a to s740j, s740c1 to s740c6 and
+s740r1 to s740r4, the reads' loads and rereads, a display build; and the memory rows, drafted for the conductor), written by the
+checkpoint-docs worker from 16:39Z, while Santa Ana 12242's read, Orange Coast's read and the combined land were in flight. The
+conductor's final facts fill the places marked in angle brackets. Skipped: step 2 (tonight's code sits in the harvest's own named-gap
+kind, reconcile steps and registry), step 3 (no user-facing surface changed), step 5 (no kb-note: tonight's learnings sit in the
+lessons and memory rows), step 7 (no re-mint, no roadmap status change, no auditor counts moved) and step 9 (the UI pass is its own
+queue item). The start and the college split below were written before any worker started, and the split changes are the run's
+log, kept whole.
+
+*(Declaration, written at 13:22Z before any worker started.)*
+
+## Open with the standing block (COBIx on #3358, 21:20Z 2026-11-18, corrected 21:36Z; Sam's rule for the next two or three sessions)
+
+0. **COBIx's brief is on issue #3358**: read the newest (Wed Nov 25, 6:30 PM PT, at this writing), and comment
+   7064588752 (Sam's two rulings of 2026-11-21), before the split.
+1. **No COBIx watcher.** Sam, 01:53Z 2026-11-23, to S712: *"No need for the Cobix check ins for now"*
+   (`d-cobix-watcher-stopped-on-sam-word-s714`). Read a PR's whole thread before you merge it or apply what it carries.
+1a. **Clone light (Sam, 2026-11-19):** `git clone --filter=blob:none` (or `--depth=1` when history is not needed),
+   never a full clone. Workers share one shallow clone, so fetch a branch by name with `--shallow-since` or `--deepen`,
+   never `--depth` (`p-shared-shallow-clone-reshallows-s713`); a new branch gets a fresh worker. A worker's push counts
+   once `git ls-remote` shows its head (`p-worker-push-proved-by-ls-remote-s731`). **Fetch `main` by name first:** this
+   container's shared clone had `origin/main` at S719's commit tonight, and the harness made every worker's worktree
+   there (`p-shared-clone-origin-main-stale-s739`).
+2. **Merge rules:** at most 3 open PRs (plus #3511 and dependabot's), the oldest finished first, one update from `main`
+   right before its merge, no dependency-map rebuild inside a PR, no full rerun when the input fingerprints match. Stop
+   a review after two rounds. Records PRs merge one at a time (`p-records-prs-merge-one-at-a-time-s703`).
+2a. **Sam's work order (2026-11-20):** collection comes first, data waves before fixes, and a fix goes ahead of the next
+   wave only when it blocks it or would file wrong rows (`r-collection-first-sam-2026-11-20`). Collection serves the
+   M-IDs, so its fixes are ranked by the M-ID cards they unblock (`r-collect-for-mids-work-order-sam-2026-11-20`).
+3. **Merge order at sign-off:** #3886 (`0017cd97`, the display build) has merged; the land <land PR number> (`claude/s740-land`, all five working branches as one PR off `main`): <land state at sign-off>. This checkpoint, #3885, merges at sign-off, with one update from `main` right before its merge. Open PRs at sign-off: #3885 and dependabot's #3383, which waits.
 
 ## The start (13:12Z firing, 2026-11-26)
 
@@ -233,3 +266,187 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 - Records collected by 16:24Z: 75 (adds Copper Mountain 18519, s740c3 6, s740c4 4).
 - 13:31Z: `piles`, `reads` and `reconcile` started on Fable 5.2 at high effort, each in its own worktree off `609c2a2b`
   (`/home/user/wt/<name>`), told to open no PR (the conductor opens each land) and to leave `.apply` to the conductor.
+
+## What shipped
+
+In all: <final record count> records collected (79 at 16:30Z), no outline rows, paid reads under $2 (the conductor's
+closing figure is in the Spend line's note). Headline and census: <closing census>.
+
+**Merged.**
+- **#3886 (`0017cd97`, 13:54Z), the display build `9e28519af71f`** (18,743 rows; S739's records): the gate at Glendale
+  45829454750 (242 rows), then the whole build 45830104263; the 16 rows with no display now carry one, the same 32 stay at
+  older builds, none without a display. The census on `main` after it, 45833723371 (14:03Z): 15,610 of 20,282 pass,
+  4,082 have no passing record, 590 collected with a named gap.
+- **The land <land PR number> (`claude/s740-land`, <land merge sha>)**, all five working branches as one PR off `main`:
+  `reads`, `reconcile`, `piles`, `claude/s740-cerritos` and `claude/s740-reads-cm`.
+
+**Live (each applied or loaded before the land).**
+- Passing by reread or load: Cerritos 44984 and 20504 (reread 45837760519, receipt `1a0bd569`); Copper Mountain 41085,
+  43132 and 18519 (reads 45836803063, 45842624535, 45855512160, reread 45855997214); Santa Ana 18581, 18582, 19268 and
+  31980 (reconcile 45841675928); San Jose City 11 (reread 45847599186, receipt `a15c5aba`); Solano 6 and San Bernardino
+  Valley 2 (rereads at 45840125172 and 45844530701, keep-better `3b22ef61` first); Los Angeles Trade-Technical 41150.
+- Named gaps by guarded plans, each with a Sonnet reader's APPLY, a clean md5 pre-read and the conductor's apply, `.apply`
+  restored after each: s740a Gavilan 4 (45839224932), s740b Orange Coast 1 (45839553639), s740c College of the Canyons 1
+  (45839834306), s740c1 Norco 2 (45847730410), s740c2 Solano 3 (45848030080), s740d Cabrillo 7 (45849528191), s740e El
+  Camino 4 (45849791694), s740f Santa Monica 1 (45850056682), s740g Contra Costa 2 (45853194962), s740h Butte 1
+  (45853610378), s740i Shasta 18655 (45854815868), s740j Los Angeles Trade-Technical 31089 (45855074670), s740r2 Santa
+  Ana 7 (45851366093), s740r3 Copper Mountain 42178 (45855882400), s740c3 San Bernardino Valley 6 (45857815541), s740c4
+  San Jose City 4 (45858064730), s740c5 San Jose City 2, s740c6 Solano 42041, s740r4 Copper Mountain 16657 (its
+  receipts: lessons, *S740*). Registry plan s740r1 (migrate 45835717010).
+- New code: `units_within_printed_range` (50) in `kb/_program_named_gaps.py`, filed only by reviewed key lists; cited
+  `course_renumbers` and `course_units` steps in `kb/program_requirements_reconcile.json`; Copper Mountain's hand-entered
+  `CATALOG_LINKS` entry dropped from `kb/_build_commons_data_status.py`.
+
+**Pending at the checkpoint's write (16:40Z; the conductor fills the outcome in the places marked).**
+- Santa Ana 12242's long read (run 45842667274, dispatched 14:48Z) and its load: <Santa Ana 12242 outcome>.
+- Orange Coast 03954, 08664 and 31217's paid read 45858495107 (16:24Z) and its reread: <Orange Coast outcome>.
+- The land <land PR number>: <land state at sign-off>. The closing census: <closing census>.
+- The display build carrying S740's records, once no apply is in flight, and the Spend line's builders.
+
+## Open work, from the lanes' NEXT lines
+
+1. **`program-requirements-harvest`** (the routine's), by the lane's NEXT:
+   - The display build carrying S740's records, gate college Glendale, then `harvest-gap-census.yml` on `main`
+     (NEXT (2)).
+   - Lane 1 (NEXT (3)): the units kind's reviewed keys (Santa Ana 31859 and 21789, Copper Mountain 43854, San Bernardino
+     Valley 35833; Shasta 32162 first needs the own-page guard cleared), each with a second reader; Copper Mountain
+     14737 and 20094 (`total_differs`); the rule B reader change for San Diego City 22367, with its self-recall and a
+     second reader, then one 91-minute capture; Ventura's read behind a second reader of its `tabs_with_prose` opt-in;
+     Norco's 11 (a curriQunet reader change) and 30061; the reader and scorer changes still open (El Camino 19861,
+     19866, 38948, 43993; Cuyamaca 18634 to 18637; Modesto 35127; Cosumnes River 33542; Coastline 43057; Reedley 30465;
+     Los Angeles Pierce 19181; Grossmont 21402; Cuesta 43053, 41744); then a fresh census's wave.
+   - Lane 2 (NEXT (5)): the holds by key in lessons *S740* (rereads and page pins), then S720's and S721's rest.
+   - The follow-up PR (NEXT (6)): the Porterville 06773 guard first, then S731's four, S739's items, and S740's minors
+     (`extracted_run` str to int; the page words that live only in test strings; the LATTC and Shasta test edits; Butte
+     33579's sentence; the stale Copper Mountain `named_gaps_s739.json` row for 43132).
+   - Step 11: the outline queue is empty until a census, a capture or a verdict row changes (NEXT (1)).
+2. **A plain session's, each by its lane's NEXT.** They wait because conductor runs stay on collection (Sam's routine
+   prompt of 2026-11-17: *"No new UI, tooling or governance work in conductor runs."*): `common-subjects-reference` and
+   `commons` (Sam's plain sessions hold them); `implementation-funding` (27,661 bytes against 20,000: compact the lane
+   first, then its NEXT); `cer-procedures` (21,633 bytes: compact first); `commons` (20,625 bytes); `my-college-action-page`;
+   `nc-learning-partners`; `repo-size`; `governance-team-enablement`, `library`, `sierra-page-redesign` and
+   `common-cr-reference`, each by its lane's NEXT; and the brief's slimming items (`d-slimming-left-to-plain-session-s720`).
+   None was worked tonight.
+
+## Blocks (Sam's ruling 1: listed here until the Commons' Needs you shows them)
+
+Handoff 740's table stands in every row this run did not clear; the rows below changed. Everything else in 740's table
+(Porterville 06773, the reader changes, West Valley 35588, Southwestern and Pasadena City, the eLumen follow-up's rest,
+the census's relists, S721's, S720's and S713's holds, the follow-up's minors, the artifact for a person, the plain
+sessions' items) keeps its owner and its date.
+
+| Block | Who clears it | Since |
+|---|---|---|
+| The units within-range kind's keys: Santa Ana 31859, 21789; Copper Mountain 43854; San Bernardino Valley 35833; Shasta 32162 (the kind is on `main`; it files only by reviewed key lists, `f-units-within-range-by-key-only-s740`) | Sky, a key list with a second reader | 2026-11-26 (S740) |
+| San Diego City 22367: rule B of the reader's page checks reads its entry as descriptions; then a 91-minute capture | Sky, a reader change and a second reader | 2026-11-26 (S739, S740) |
+| Santa Ana 12242's long read and Orange Coast 03954, 08664, 31217's read: the results are in *Pending* | Sky, their loads | 2026-11-26 (S740) |
+| Ventura 06948, 08253, 35654, 37415, 44994, 44995, 40179: a read behind a second reader of the `tabs_with_prose` opt-in | Sky, lane 2 | 2026-11-26 (S739, S740) |
+| Norco: 11 for a curriQunet reader change; 30061 a paid reread. Solano 30184, 30185, 43134 (own-page guard), 38591 (page pin, paid reread). San Bernardino Valley 04873, 04894, 17829, 22784, 22821, 39483. San Jose City 18449, 38499 | Sky, lane 1 | 2026-11-26 (S740) |
+| Copper Mountain 14737, 20094 (`total_differs`), 14751, 45594, 14710 (no reading closes them); the stale `named_gaps_s739.json` row for 43132 | Sky, lane 1 and the follow-up | 2026-11-26 (S740) |
+| Lane 2's holds by key (the program's own page, no proved live run, not collectable, no kind true, the "Recommended" rule; Shasta 32162, 18625; American River 39731, 39732; Long Beach City 37213; El Camino 19883, 19857, 31319, 42541; Butte 14583, 01312; Santa Monica 43767, 21026; Gavilan 08464, 45357; Cabrillo 11293, 45306, 06352, 06380, 06381, 44992; Contra Costa 01400, 40761, 33660; Los Angeles Trade-Technical 31280, 45285; Santa Barbara City 30746, 43553): lessons *S740* | Sky, lane 2 | 2026-11-26 (S740) |
+| Closed-list rescores: Fullerton 33680, 42143; Santa Barbara City 32775 | Sky, the follow-up | 2026-11-26 (S740) |
+| The follow-up's minors from S740's readers (lessons *S740*, *Readers' MINORs*) | Sky, the follow-up | 2026-11-26 (S740) |
+
+Cleared tonight: Copper Mountain 41085 (registry and read), 43132, 18519; Cerritos 44984; Santa Ana's Liberal Arts emphases (4 passing); Shasta 18655 and Los Angeles Trade-Technical 41150 and 31089; and, as named gaps by the units kind, Gavilan 08460, 19378, 38787, 41394, Orange Coast 41373 and College of the Canyons 36793.
+
+## For Sam
+
+Nothing waits on Sam ([Open Asks Sheet 200](https://claude.ai/artifact/5ShC7pGgNuz9bJUhkdsc8Y), current; no reply
+since 2026-11-19T23:47Z). Every call tonight was the conductor's, recorded below and reversible.
+
+## Decisions Sam made
+
+None tonight. Sam's words in this session: none. The run acted on his routine prompt of 2026-11-17 (*"Conductor mode is
+back for collection only."*; *"Two lanes, never on the same college"*; *"Stop a review after two rounds and send what is
+left to Sam or COBIx."*), his collect-with-gaps ruling of the same day (`sam-collect-with-gaps-2026-11-17`) and his work
+order of 2026-11-20.
+
+## Decisions (the conductor's, each reversible)
+
+- `d-waived-course-counted-at-range-top-s740`: San Bernardino Valley 22771 and 22776 sum at the top of their printed
+  ranges, and `waived_course_counted` stands for both (the gap names the record's own reading fault, which S739's
+  within-range rule does not cover).
+- `d-copper-mountain-registry-moves-to-reissue-s740`: Copper Mountain's registry row (Sam's Sheet 88 correction, S405)
+  moved to the reissued 2026-2027 catalog by plan s740r1; new source evidence reopens a person's save.
+
+Memory rows: `kb/migrations/2026-11-26_s740_cpl_memory_rows.sql` (10 rows, all proposed, INSERT-only with
+`ON CONFLICT DO NOTHING`, rollback in its header), drafted by the checkpoint-docs worker, applied by the conductor
+(<memory apply run>). DECIDED lines: the harvest lane.
+
+## Patterns that worked
+
+- **A land branch for all five working branches** (`d-one-land-for-piles2-and-waves-s739`'s shape), cut off `main` and
+  carrying the Cerritos and Copper Mountain read branches whole.
+- **A sibling branch for a long read** (`claude/s740-reads-sdcity`, `claude/s740-reads-cm`), so one two-hour read keeps
+  its branch and the next worker's plan does not wait on it.
+- **A staged free read first** (`sources_from` an earlier capture's artifact stages the pages with no page loaded,
+  priced at $0.10), then the paid read with `only=`.
+- **Keep-better from the conductor's live read before a reread** (`p-reread-posts-raw-reconcile-keep-better-first-s740`).
+- **A second reader on every plan and land** (Sonnet, seven); a clean md5 pre-read before every apply; one apply in
+  flight at a time, `.apply` restored after each.
+
+## Findings
+
+- `f-units-within-range-by-key-only-s740`: the kind `units_within_printed_range` files only by reviewed key lists.
+- `f-rule-b-refuses-san-diego-city-22367-s740`: the reader's page checks refuse an entry whose child page prints
+  descriptions.
+- `p-reread-posts-raw-reconcile-keep-better-first-s740`, `p-staged-read-predating-page-counts-held-by-price-step-s740`,
+  `p-free-reconcile-cannot-reach-moved-address-records-s740`: three read-pipeline pitfalls (lessons *S740*).
+- `p-sandbox-python-311-check-generated-false-stale-s740`: the sandbox's default `python3` is 3.11 and
+  `check_generated.sh` prints false STALE lines under it; a 3.12 shim at `/home/user/wt/.py312bin`.
+- `p-harness-pins-worker-worktree-s740`: the harness pins each worker to its own `.claude/worktrees/agent-*` worktree
+  whatever path the brief names; worker report times ran a few minutes ahead of the conductor's clock.
+
+## Safety patterns to honor
+
+All of handoff 740's. New tonight: a reread runs keep-better against a live read first; the units kind files only by a
+reviewed key list; a staged read from an earlier capture needs page counts in that capture, or the price step holds it
+(no charge); a record read from an address the registry has since moved takes a paid read of the reissue, not a free
+reconcile; no `CPL_READER_PAGE_CHECKS=0` statewide to clear one college; a Commons sidecar built before a reconcile files
+is rebuilt after the reread posts. Never file a person's name from an outline page anywhere. A permission-check refusal is
+never routed around.
+
+## Conductor settings
+
+A conductor run for collection only, under Sam's routine prompt of 2026-11-17 (`docs/reference/conductor_mode.md`,
+*Back for collection only*; review rounds as his ruling of 2026-11-20 sets them). Settings block (Sam, 2026-11-11, his
+latest change; the block copied from `docs/reference/conductor_mode.md`):
+
+- Conductor model: Fable 5.2 (`claude-fable-5-2`), working with COBIx; the routine's form sets the model and ultracode;
+  medium effort lives in its prompt. Tonight Opus 5.5 served the run (the form names Fable 5.2).
+- Ultracode on. The conductor at medium effort.
+- Workers on Opus 5.5 (named in each Agent call, `model: opus`); tonight `reads`, `reconcile` and `piles` ran Fable 5.2
+  at high effort, the seven second readers and the land ran Sonnet, and the checkpoint worker ran Sonnet.
+- A worker building anything that writes shared data or changes an apply runs at **high** effort.
+- A review workflow uses **at most 9 agents in all**, readers and second readers together.
+- **Cost limits:** $40 per college per run, on the estimate, for program-requirements extraction, and a separate $40 per
+  college for SLOs, PLOs and course objectives; per run, never a remaining pot. Paid runs go through the conductor.
+
+Also: two lanes, never on one college; about $750 a day for everything, $10k running total for the whole job; stop
+rules from the brief: a day over $300 with fewer than 40 new programs; over $12 per new program or $0.50 per outline row;
+a rollback that undoes over 1% of a day's rows; the $10k checkpoint. This run aimed at about $250, with no new worker
+after about $190; the repo's rates read $180.09 at 16:24Z.
+
+## Ledger
+
+| PR or branch | State | Next |
+|---|---|---|
+| #3885 (`claude/awesome-fermat-sqsn0p`) | the declaration, the log and this checkpoint (draft) | merges at sign-off, after one update from `main` |
+| #3886 (`claude/s740-display`) | merged `0017cd97` (13:54Z); display build `9e28519af71f` live | none |
+| `claude/s740-reads`, `claude/s740-reads-cm`, `claude/s740-reads-sdcity` | s740r1 to s740r4 applied; Copper Mountain's reads and reread live; San Diego City's read refused at the price step | land <land PR number> (the first two); the third, nothing to land |
+| `claude/s740-reconcile`, `claude/s740-piles`, `claude/s740-cerritos` | s740a to s740j, s740c1 to s740c6 applied; Cerritos live | land <land PR number> |
+| <land PR number> (`claude/s740-land`) | all five branches as one PR off `main` | <land state at sign-off> |
+| Harvest gap census on `main` | 45816008322 (12:06Z): 15,610 pass; after the display build 45833723371 (14:03Z): 15,610 pass, 4,082 without, 590 with a named gap | the closing census: <closing census> |
+| #3383 | dependabot's | waits |
+
+## Let go
+
+No PR subscription, scheduled check-in, artifact watch or COBIx watcher was opened tonight, so there is none to drop.
+Workers end with the session; each branch is pushed. The vault note for this run is
+`CPLBrain/07-session-notes/2026-11-26-s740-skyskimmer-collection.md` (<vault note state>).
+
+Spend: <Spend line>
+
+Opening line: *Greetings, you are SkyWillet (the next free session number at your start; the routine takes it), see SkySkimmer's (S740) handoff — `docs/session_741_handoff.md` — let's keep rolling with our queue.*
+
+<last line: conductor model, session cost, records collected and live, outline rows added, substantive PRs merged>
