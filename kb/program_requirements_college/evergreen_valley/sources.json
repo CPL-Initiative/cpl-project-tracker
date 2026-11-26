@@ -2101,26 +2101,29 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.5,
+  "coverage": 1.0,
   "codes_found": [
+   "AJ11",
    "AJ120",
-   "AJ139"
+   "AJ139",
+   "AJ14"
   ],
   "source": {
    "url": "https://catalog.evc.edu/degrees-certificates/administration-justice/community-service-officer-certificate-achievement/",
    "title": "Community Service Officer - Certificate of Achievement | Evergreen Valley College Catalog",
    "h1": "Community Service Officer - Certificate of Achievement",
-   "text_from": "innerText",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0,
     "section": "coa",
     "section_line": "community service officer - certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 4,
-  "text_chars": 3950
+  "text_chars": 4200
  },
  {
   "control_number": "40354",
