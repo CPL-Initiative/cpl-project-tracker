@@ -19,6 +19,10 @@ section (tests/fixtures/program_requirements_ela_pins_s739.json).
      would still refuse the page.
   3. East Los Angeles's seven reconcile steps and two renumbers are as they were, and the entry holds no other pin.
   4. The committed record of 38332 is read in either state: from p.198 it places none; from p.195 it places all 7.
+  5. Coastline: five programs the 2026-27 catalog prints no page for are named gaps (free read 45774426242), each
+     once; Communications Studies 2.0 43057 is none of them (its own page is found, and the reader's title rule
+     binds the legacy degree to it: a reader change); Introduction to Careers in Esports 40476, read again with its
+     requirements tab, places both courses.
 Pure stdlib.
 """
 import json
@@ -129,6 +133,34 @@ if rec["source_url"].endswith("#page=195"):
 else:
     check(rec["source_url"].endswith("#page=198") and cov["placed"] == 0,
           "read from p.198, the degree's page, the record places none")
+
+# ── 5. Coastline: five named gaps, 43057 held for a reader change, 40476 read from its own page ────────────────
+CC_DIR = os.path.join(ROOT, "kb", "program_requirements_college", "coastline_community")
+with open(os.path.join(CC_DIR, "named_gaps_s739.json"), encoding="utf-8") as fh:
+    cc = json.load(fh)
+cc_named = sorted(p["control_number"] for p in cc["programs"])
+check(cc_named == ["03724", "11459", "18054", "18216", "20353"]
+      and all(p["reason"] in cc["reasons"] and p.get("note") for p in cc["programs"]),
+      "Coastline's named gaps are the five, each once, with a defined reason and a note")
+check("43057" not in cc_named and "40476" not in cc_named and "43057" in cc["_readme"],
+      "43057 (its own page found, bound to the legacy degree by title) and 40476 are not named gaps")
+# The reader's title rule on the 2.0 page, as the capture holds its heading: the legacy degree's title binds, the
+# state's 'Communications Studies 2.0' does not, so a site_pages pin for 43057 would be refused (a reader change).
+pg = {"h1": "", "title": "Communication Studies 2.0, Associate in Arts Degree for Transfer < Coastline College"}
+check(C.site_heading_names(pg, {"title": "Communication Studies", "award": "A.A- T Degree"})[0]
+      and not C.site_heading_names(pg, {"title": "Communications Studies 2.0", "award": "A.A- T Degree"})[0],
+      "the 2.0 page's heading binds the legacy title and refuses the state's 'Communications Studies 2.0'")
+for cn in cc_named:
+    with open(os.path.join(CC_DIR, "records", cn + ".json"), encoding="utf-8") as fh:
+        check(json.load(fh)["score"]["coverage"]["placed"] == 0, "Coastline %s: its filed record places none" % cn)
+with open(os.path.join(CC_DIR, "records", "40476.json"), encoding="utf-8") as fh:
+    es = json.load(fh)
+if str(es.get("extracted_run")) == "38412902035":
+    check(es["score"]["coverage"]["placed"] == 0, "40476 as first read (the overview alone) places none")
+else:
+    check(es["score"]["coverage"]["placed"] == 2 and es["score"]["arithmetic"]["status"] == "equal"
+          and es["record"]["program"]["total_units"] == {"min": 36, "max": 36},
+          "40476 read with its requirements tab places both courses and adds to the printed 36 hours")
 
 print("\n%d checks, %d failed" % (N[0], len(FAILS)))
 sys.exit(1 if FAILS else 0)

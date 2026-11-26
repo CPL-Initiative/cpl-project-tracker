@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-26T07:26:57Z",
+ "written_at": "2026-11-26T07:49:16Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17417,
-  "gap": 4918,
+  "passing": 17418,
+  "gap": 4917,
   "with_gap": 118,
   "cost_usd": 1341.27,
-  "passed_at_read": 16416,
+  "passed_at_read": 16418,
   "cost_receipts": 118,
   "spent_usd": 1243.5,
   "spent_runs": 223,
@@ -189,8 +189,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16884,
-  "gap": 4918,
+  "passing": 16885,
+  "gap": 4917,
   "collected_with_gaps": 533,
   "discontinued": 0
  },
@@ -2091,12 +2091,12 @@
    "harvested": true,
    "slug": "coastline_community",
    "programs": 175,
-   "passing": 125,
-   "gap": 50,
+   "passing": 126,
+   "gap": 49,
    "causes": {
     "no_closed_list": 16,
     "page_not_found": 5,
-    "places_none": 14,
+    "places_none": 13,
     "unknown_without_live": 15
    },
    "census_causes": {
@@ -2123,10 +2123,10 @@
     "courseleaf"
    ],
    "objectives_printed": null,
-   "read_at": "2026-10-13T18:15:00Z",
+   "read_at": "2026-11-26T07:20:09Z",
    "read_kind": "capture",
    "cost_usd": 8.52,
-   "passed_at_read": 124,
+   "passed_at_read": 126,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -2135,13 +2135,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 159,
-   "found": 154,
+   "found": 143,
    "extracted": 154,
    "errors": 0,
    "failed_checks": {
-    "coverage": 14,
+    "coverage": 13,
     "invented": 0,
-    "arithmetic": 29,
+    "arithmetic": 28,
     "repeated": 1,
     "outcomes": 0
    },
@@ -2151,11 +2151,11 @@
    "capture_root": "https://catalog.cccd.edu/coastline/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1236.9,
-   "run": "38445051060",
+   "read_seconds": 1229.1,
+   "run": "45777312083",
    "levers": {
     "program_course_file_check": 16,
-    "reader_page_assignment": 14,
+    "reader_page_assignment": 13,
     "reconcile_steps": 10,
     "reader_page_search": 5,
     "scorer_noncredit_hours": 5
@@ -2166,8 +2166,8 @@
      "models": {
       "claude-opus-5-5": 154
      },
-     "run": "38445051060",
-     "at": "2026-10-13T18:15:00Z",
+     "run": "45777312083",
+     "at": "2026-11-26T07:20:09Z",
      "cost_usd": 8.52,
      "platform": "courseleaf"
     },
