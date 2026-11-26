@@ -46,27 +46,34 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 4,
+   "placed": 6,
    "listed": 6,
-   "share": 0.667,
-   "missing": [
-    "MATH180",
-    "MATH185"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MATH180",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2220",
+     "listed": "MATH185",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 8,
+   "count": 6,
    "codes": [
     "CHEMISTRY219",
     "CMPR114",
     "CMPR121",
     "COMPUTERSCIENCE120",
     "MATH287",
-    "MATHC2210",
-    "MATHC2220",
     "MATHEMATICS290"
    ],
    "flagged": [
@@ -75,8 +82,6 @@
     "CMPR121",
     "COMPUTERSCIENCE120",
     "MATH287",
-    "MATHC2210",
-    "MATHC2220",
     "MATHEMATICS290"
    ],
    "pass": true
@@ -307,5 +312,6 @@
    "The text prints no program learning outcomes."
   ]
  },
- "extracted_run": "38843461766"
+ "extracted_run": 45841675928,
+ "read_run": "38843461766"
 }

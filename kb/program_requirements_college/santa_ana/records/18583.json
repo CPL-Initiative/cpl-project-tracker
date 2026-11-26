@@ -46,25 +46,35 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 70,
+   "placed": 72,
    "listed": 78,
-   "share": 0.897,
+   "share": 0.923,
    "missing": [
     "BIOL139",
     "ERTH150H",
     "MATH145",
-    "MATH180",
-    "MATH185",
     "MATH82",
     "MATH83",
     "MATH84"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MATH180",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2220",
+     "listed": "MATH185",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 11,
+   "count": 9,
    "codes": [
     "BIOL259",
     "BIOL275",
@@ -73,8 +83,6 @@
     "GEOL140L",
     "MATH172",
     "MATH180E",
-    "MATHC2210",
-    "MATHC2220",
     "NUTR115",
     "NUTR115H"
    ],
@@ -86,8 +94,6 @@
     "GEOL140L",
     "MATH172",
     "MATH180E",
-    "MATHC2210",
-    "MATHC2220",
     "NUTR115",
     "NUTR115H"
    ],
@@ -781,5 +787,6 @@
    "No program learning outcomes or careers are printed in the text."
   ]
  },
- "extracted_run": "38843461766"
+ "extracted_run": 45841675928,
+ "read_run": "38843461766"
 }

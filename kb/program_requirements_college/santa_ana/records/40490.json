@@ -72,9 +72,7 @@
     19.5
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 16.0-20.5; the catalog states 16.0-19.5"
-   ],
+   "why": [],
    "meets": true,
    "rescored": "Open Asks Sheet 120 card 1"
   },
@@ -251,5 +249,6 @@
    "Careers are taken from the career fields named in the Summary ('career opportunities requiring drone skills in ...')."
   ]
  },
- "extracted_run": "38843461766"
+ "extracted_run": 45841675928,
+ "read_run": "38843461766"
 }

@@ -46,28 +46,32 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 32,
+   "placed": 33,
    "listed": 35,
-   "share": 0.914,
+   "share": 0.943,
    "missing": [
-    "CDEV107",
     "HIST120",
     "HISTC1001H"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "CDEVC1000",
+     "listed": "CDEV107",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 3,
    "codes": [
-    "CDEVC1000",
     "HIST102",
     "HIST102H",
     "PSC115"
    ],
    "flagged": [
-    "CDEVC1000",
     "HIST102",
     "HIST102H",
     "PSC115"
@@ -78,7 +82,7 @@
    "pass": false,
    "status": "unequal",
    "computed": [
-    49.0,
+    51.0,
     52.0
    ],
    "stated": [
@@ -87,7 +91,7 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 49.0-52.0; the catalog states 52.0-52.0"
+    "the blocks sum to 51.0-52.0; the catalog states 52.0-52.0"
    ]
   },
   "repeated": {
@@ -115,7 +119,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "noted_figures_differ",
+    "label": "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires.",
+    "words": "The biology requirement prints '3.0- 4.0' and reads: BIOL 115 (4) OR BIOL 109H (3) OR BIOL 109 (3) AND BIOL 109L (1). Recorded as BIOL 115 with alternatives BIOL 109H, BIOL 109 and BIOL 109L; BIOL 109L is taken together with BIOL 109 (and probably with BIOL 109H, since the 45-unit core total only adds up with 4 units here). Reviewer should check whether BIOL 109H also requires BIOL 109L."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 94,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {
@@ -439,5 +457,6 @@
    "CDEV C1000, HIST 102, HIST 102H and PSC 115 appear in the catalog but not in the closed list, so they are marked as catalog additions."
   ]
  },
- "extracted_run": "38843461766"
+ "extracted_run": 45841675928,
+ "read_run": "38843461766"
 }

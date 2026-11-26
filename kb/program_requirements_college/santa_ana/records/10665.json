@@ -46,26 +46,34 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 21,
+   "placed": 23,
    "listed": 25,
-   "share": 0.84,
+   "share": 0.92,
    "missing": [
-    "ART101",
-    "ART102",
     "JAMS105",
     "JAMS123A"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ARTHC1100",
+     "listed": "ART101",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTHC1200",
+     "listed": "ART102",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 10,
+   "count": 8,
    "codes": [
     "ART122",
     "ART168",
-    "ARTHC1100",
-    "ARTHC1200",
     "CMSD105",
     "CMSD105H",
     "CMSD123A",
@@ -76,8 +84,6 @@
    "flagged": [
     "ART122",
     "ART168",
-    "ARTHC1100",
-    "ARTHC1200",
     "CMSD105",
     "CMSD105H",
     "CMSD123A",
@@ -457,5 +463,6 @@
    "Careers taken from the summary ('entry into the broad field of visual communication' and 'advertising agency, printing house, design studio, freelance work and related businesses'); 'related businesses' omitted as not a specific career."
   ]
  },
- "extracted_run": "38843461766"
+ "extracted_run": 45841675928,
+ "read_run": "38843461766"
 }

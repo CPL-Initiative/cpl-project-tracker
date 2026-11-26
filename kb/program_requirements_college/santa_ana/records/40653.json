@@ -46,25 +46,28 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 16,
+   "placed": 17,
    "listed": 17,
-   "share": 0.941,
-   "missing": [
-    "ECON121"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON121",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "ACCT101",
-    "ECONC2001"
+    "ACCT101"
    ],
    "flagged": [
-    "ACCT101",
-    "ECONC2001"
+    "ACCT101"
    ],
    "pass": true
   },
@@ -304,5 +307,6 @@
    "No general education pattern or degree total is printed in this section."
   ]
  },
- "extracted_run": "38843461766"
+ "extracted_run": 45841675928,
+ "read_run": "38843461766"
 }

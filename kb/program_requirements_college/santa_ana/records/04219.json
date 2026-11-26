@@ -72,9 +72,7 @@
     32.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 28.0-35.0; the catalog states 28.0-32.0"
-   ],
+   "why": [],
    "meets": true,
    "rescored": "Open Asks Sheet 120 card 1"
   },
@@ -542,5 +540,6 @@
    "No general education pattern or degree total is printed on this page."
   ]
  },
- "extracted_run": "38843461766"
+ "extracted_run": 45841675928,
+ "read_run": "38843461766"
 }

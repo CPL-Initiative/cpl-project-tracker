@@ -46,39 +46,45 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 60,
+   "placed": 64,
    "listed": 64,
-   "share": 0.938,
-   "missing": [
-    "ECON120",
-    "ECON121",
-    "HIST120",
-    "HIST121"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON121",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECON120",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001",
+     "listed": "HIST120",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002",
+     "listed": "HIST121",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 4,
-   "codes": [
-    "ECONC2001",
-    "ECONC2002",
-    "HISTC1001",
-    "HISTC1002"
-   ],
-   "flagged": [
-    "ECONC2001",
-    "ECONC2002",
-    "HISTC1001",
-    "HISTC1002"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
    "pass": true,
    "status": "equal",
-   "meets": true,
    "computed": [
     32.0,
     35.5
@@ -89,6 +95,7 @@
    ],
    "against": "program",
    "why": [],
+   "meets": true,
    "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
   },
   "repeated": {
@@ -621,5 +628,6 @@
    "No program learning outcomes or careers printed in the text."
   ]
  },
- "extracted_run": "38843461766"
+ "extracted_run": 45841675928,
+ "read_run": "38843461766"
 }

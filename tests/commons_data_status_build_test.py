@@ -496,6 +496,18 @@ check("(15c) a 500 from Pingora with an empty body reads unreachable from here, 
       and B.link_check_result({}) == "not checked")
 _OLD = "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf"
 _NEW = "https://www.cmccd.edu/wp-content/uploads/2026/10/Final-26-27-Catalog-10.26.26.pdf"
+# S740: the builder's table holds no entry now (plan s740r1 moved the registry to the college's reissue and read
+# 45836803063 recaptured it, so 15d's own rule had the entry removed). 15c and 15d keep Copper Mountain's entry as
+# the worked example, set on the table for these checks alone and taken off after them.
+check("(15c) the builder's table holds no Copper Mountain entry once its capture reads the reissue",
+      "copper_mountain" not in B.CATALOG_LINKS)
+_TABLE = dict(B.CATALOG_LINKS)
+B.CATALOG_LINKS["copper_mountain"] = {
+    "display": "https://www.cmccd.edu/academic-catalogs/", "current_file": _NEW,
+    "checks": [{"url": _OLD, "status": 404, "checked_at": "2026-11-13T23:35:00Z", "by": "COBIx, #3229 comment 6867640358"},
+               {"url": "https://www.cmccd.edu/academic-catalogs/", "status": 200, "checked_at": "2026-11-13T23:35:00Z",
+                "by": "COBIx, #3229 comment 6867640358"},
+               {"url": _NEW, "status": 200, "checked_at": "2026-11-13T23:35:00Z", "by": "COBIx, #3229 comment 6867640358"}]}
 _one = B.catalog_links("no_such_college", "https://catalog.example.edu/")
 _two = B.catalog_links("copper_mountain", _OLD)
 check("(15c) the capture root stays what the capture read; a listed college displays its catalog page",
@@ -512,6 +524,8 @@ except SystemExit as e:
     _stop = str(e)
 check("(15d) a recaptured college's override stops the builder with a plain message naming the entry to remove",
       _stop is not None and "copper_mountain" in _stop and "stale" in _stop and "Remove the entry" in _stop, _stop)
+B.CATALOG_LINKS.clear()
+B.CATALOG_LINKS.update(_TABLE)
 oc = [c for c in C if c.get("outcomes_file")]
 bad15 = []
 for c in oc:
