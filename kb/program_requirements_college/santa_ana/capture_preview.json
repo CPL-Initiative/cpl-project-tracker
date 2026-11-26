@@ -1,0 +1,1677 @@
+{
+ "college": "Santa Ana College",
+ "catalog_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/36562",
+ "platform": "curriqunet",
+ "catalog_year": "2026-2027",
+ "programs": 370,
+ "with_closed_list": 359,
+ "started": "2026-10-16T03:03:02Z",
+ "curriqunet": {
+  "catalog": 28,
+  "view_prefix": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/",
+  "errors": [
+   "https://sac.curriqunet.com/Catalog/_getPage?catalogId=28&id=35002: APIRequestContext.get: socket hang up (ECONNRESET)"
+  ],
+  "sections": [
+   "Degree & Certificate Types",
+   "Noncredit Certificates",
+   "Instructional Programs "
+  ],
+  "nodes_read": 70,
+  "calls": 141,
+  "entries": 374,
+  "stopped_at_cap": false,
+  "same_title_entries": 0,
+  "entries_read": 374
+ },
+ "pages_read": 374,
+ "banner_h1": null,
+ "loads": 1636,
+ "seconds": 7227.4,
+ "found": 347,
+ "by_method": {
+  "no_closed_list": 11,
+  "not_found": 4,
+  "page_claimed": 8,
+  "sitemap_page": 347
+ },
+ "shared_pages": {
+  "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36122/35925": [
+   "04238",
+   "32436"
+  ],
+  "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36148/36342": [
+   "04244",
+   "32989",
+   "46226"
+  ],
+  "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36108/36007": [
+   "04245",
+   "35021"
+  ],
+  "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36137/36346": [
+   "32062",
+   "46269"
+  ],
+  "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36115/36384": [
+   "46120",
+   "46121"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "04197",
+   "title": "Computer Science",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36111/36016",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2591,
+     "content": 2591,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "31594",
+   "title": "Adult High School Diploma",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36227/36178",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 138,
+    "why": "coarse net: the page's code tokens name 0 of 138 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1685,
+     "content": 1685,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "32750",
+   "title": "Automotive Fundamentals",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36251",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1636,
+     "content": 1636,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "43824",
+   "title": "Automotive Applied Skills",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "04195",
+   "title": "Digital Media",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36130/35926"
+   ]
+  },
+  {
+   "control_number": "04223",
+   "title": "Art: Digital Media Arts",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36103/36080",
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36103/36082"
+   ]
+  },
+  {
+   "control_number": "21759",
+   "title": "School Age Teacher",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36026",
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36027"
+   ]
+  },
+  {
+   "control_number": "32396",
+   "title": "Computer Science",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36108/36007"
+   ]
+  },
+  {
+   "control_number": "40487",
+   "title": "Automotive Manufacturer Exploration",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36063",
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36068",
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36072",
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36073",
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36067"
+   ]
+  },
+  {
+   "control_number": "41702",
+   "title": "After School Program Assistant",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36120/36355",
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36027"
+   ]
+  },
+  {
+   "control_number": "42006",
+   "title": "Public Health Science",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36461/36463",
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36142/35875",
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36283/36267",
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36283/36266",
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36142/35874"
+   ]
+  },
+  {
+   "control_number": "46057",
+   "title": "Early Childhood Education Apprenticeship Program",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36032",
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36030",
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36033",
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36025",
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36031",
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36026",
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36027"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 7,
+  "0.8-1.0": 74,
+  "1.0": 266
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/santa_ana",
+  "kept": 344,
+  "kept_moved": 0,
+  "programs": 1,
+  "list": [
+   {
+    "control_number": "12242",
+    "title": "Speech-Language Pathology Assistant",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36152/36210",
+    "coverage": 0.941,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36152/36210",
+    "was_coverage": 0.941,
+    "was_method": "sitemap_page"
+   }
+  ],
+  "held_worse_window": [
+   {
+    "control_number": "32062",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36137/36346",
+    "coverage": 0.6,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "32989",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36148/36342",
+    "coverage": 0.667,
+    "was_coverage": 1.0
+   }
+  ],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "only": [
+   "12242"
+  ],
+  "not_named": [],
+  "refused_passing": [],
+  "forced_unbound": []
+ },
+ "fingerprints": {
+  "04185": {
+   "sha256": "94f2b5749819dfaaea5824c74e4d50ac29e901ca0d2bded5b33b0a76f80440c4",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36105/36038"
+  },
+  "04187": {
+   "sha256": "7bae9b6ae09faaa677bf6ea94f4f855fdcbfd9021c1fd37cab2d1705988e2375",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36100/36089"
+  },
+  "04188": {
+   "sha256": "f74e80f0bd8c2764501749d7c30aae216c4df96620a732044f1b6ec70b55269e",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36134/35904"
+  },
+  "04189": {
+   "sha256": "95842c5da93d69708a6e4739742ab8e67845fcfff94b4a8158ba957f5b8cc3ca",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36056"
+  },
+  "04190": {
+   "sha256": "bc74ec8847bd8d243e2f029cb1a77afabb889a8650cf46341a32478011bcdd95",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36136/35887"
+  },
+  "04193": {
+   "sha256": "d12f4383e58b0790424f8abea45ffbc9e0668a2f3159a3e676c9b3e09630d27c",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36048"
+  },
+  "04194": {
+   "sha256": "6e3803ad2295fd71ae1213e09c49b8a5893e66b7e3e2030a823f3437c059af5a",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36130/35928"
+  },
+  "04196": {
+   "sha256": "9f4efad8598578bfe4ca756de42b8ee1bd4b693ba67319a07ade89b6fe93bbbe",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36111/36012"
+  },
+  "04200": {
+   "sha256": "e66aef904d28428cc18a018db1f5b9fe48089f89fb8675dd5b23fb0e6342489d",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36131/35919"
+  },
+  "04201": {
+   "sha256": "2eb7b50197f09a66f4f07f45ce70690bfb62e439bbcc9a036744d3c9e857cf6f",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36121/35958"
+  },
+  "04202": {
+   "sha256": "61eed575f2a55c57ba3bd6c060bfc07fc9361ec57e64f1a7f0efe586ce57d775",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36121/35964"
+  },
+  "04203": {
+   "sha256": "5924aa76e58e177a5b670a0230abe658cf316f2cfe06084849df0c719a351e2f",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36121/35968"
+  },
+  "04207": {
+   "sha256": "eca257e045f60405bea3e95c9f33cfecbf68ad2c03d650bab25c55ff666b6dda",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36116/35995"
+  },
+  "04209": {
+   "sha256": "8b6d0d2860478d90f26fa730d1e113301f7aa1c14f3af32dbaf36f812f7ae230",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36067"
+  },
+  "04212": {
+   "sha256": "6be580ad8fc8929fd8ca0cc9fc2441262c064bf1aca5a0c5c4c542f93ccd268c",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36121/35962"
+  },
+  "04213": {
+   "sha256": "51233d5e3bb90d69bf77afbe17315d3d7ec1b520c076f5bfc87394264d77b426",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36135/35892"
+  },
+  "04214": {
+   "sha256": "ec16923eb062b35f3932abe662873d0f2aa071c1dcc4fb37d85fd216f5fe51f9",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36154/36206"
+  },
+  "04218": {
+   "sha256": "0292ac772f1652a162868169975ffb6a551fc875ab3ae90276a9b540b1f6263e",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36103/36080"
+  },
+  "04219": {
+   "sha256": "b4c923bb4d0043b0e8873381421bf31a956606f8a00d64845a91a2d42c3a6794",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36140/35880"
+  },
+  "04220": {
+   "sha256": "c606f5e1287b462a8f308996f4ec1ceeab20a74097ef9e26dd4ecb3cb99c18b1",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36153/36224"
+  },
+  "04221": {
+   "sha256": "2f5a14bcd20831f2189c869ab3f364b39e4f626fdbec8ad020b5b741a09715d8",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36153/36223"
+  },
+  "04222": {
+   "sha256": "c0708bbddfcd1be56e7ed4e8a18acfa86d2a67390aaa6d6949fef6d1ec0b3adb",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36115/35999"
+  },
+  "04224": {
+   "sha256": "9fb808adffdc5ad15e7157c64fe8c6e1baa608e282213c2d2e8d03c3c684d06d",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36147/35862"
+  },
+  "04225": {
+   "sha256": "8498fa1e1eb50d153f7773b824206315105c26848c8acd9fb87893057bd7df6f",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36139/35878"
+  },
+  "04226": {
+   "sha256": "6523c493c3cabdbb75ed06fd8ace27c3d2ba1a6e70cbcabf16b4c6b630b9fed0",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36141/35877"
+  },
+  "04227": {
+   "sha256": "31a98b81d152ca78951d2b537c0ea9f9a214c3e6e8e2d6cda8421ccb5b8cd0e8",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36138/35882"
+  },
+  "04230": {
+   "sha256": "4356f379b996a6fac6414a3b9fce221f8c401624aa04ff7c8623c1cc482eda5c",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36145/35864"
+  },
+  "04235": {
+   "sha256": "64d2ffa94339f3f654d7135372004db0aae10f1585f97c86746a4633469d4575",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36025"
+  },
+  "04236": {
+   "sha256": "98b49a19e0a05e5063fbdd4efc8f90e315190931a4c21c481961a165a71a135e",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36142/35874"
+  },
+  "04237": {
+   "sha256": "18240c81ae9050740732e0a0429d2b47e3dd7f16393791e19618ad0bffe741ad",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36144/35868"
+  },
+  "04238": {
+   "sha256": "782f85060fbb2cf5834b12d966df4dfc505e95dba6fff502a3b128c73438d440",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36122/35925"
+  },
+  "04239": {
+   "sha256": "a66e697b85c3f75cf0fd938027232d8d142521d8c5cd5c63711a596d617026c3",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36110/36010"
+  },
+  "04240": {
+   "sha256": "f72ce0998e0d6d023b4c77782d8f6bf15f294c098a4951be5c750a47669730f8",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36146/35859"
+  },
+  "04241": {
+   "sha256": "07617dc9c8a45bead24289c4a86b5b25d1db89ec41139a8eb683b9f1204d3b01",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36133/35909"
+  },
+  "04242": {
+   "sha256": "29f4b32dc2d94743d3a9902fc4d45c579212e81a4cbd7d62b459a1b08291fac4",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36137/35884"
+  },
+  "04244": {
+   "sha256": "093a1720c9f77b95ec2f8572647f92fb918ae54b900efd48aecae43c94fa250d",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36148/36342"
+  },
+  "04245": {
+   "sha256": "06a14f324bf222643cd3541332ec5bc9597aedbd5749b9e99c8094a7e028188f",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36108/36007"
+  },
+  "04246": {
+   "sha256": "9ec0134414eaa663186d9a8f8e06f8c5331d952ba56614cdd8e966bd99f3edb4",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36128/35578"
+  },
+  "04247": {
+   "sha256": "c86fbd6e7f44888395f46d7f4c27eef2b1b7f0994f619fc1581d7fad72ae424a",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36150/35854"
+  },
+  "04249": {
+   "sha256": "59fafddc445c52ef1eba62754e5bde0c84d5971ea18abbd5b1510f98af1bb128",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36113/36004"
+  },
+  "04250": {
+   "sha256": "225669a9812b7f60b84526a57457ac04edeb151beb07ab46a837092c7f6c5193",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36027"
+  },
+  "04253": {
+   "sha256": "fd581d834ace983ff66deffd4079a5a21104138f70a7fcdd26e032d8c4548ac4",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36155/36176"
+  },
+  "04255": {
+   "sha256": "e11d64d54fc81ae5620c14327d0b1b7b0efaf59f07878224ffeea0a4ea009a89",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36124/35955"
+  },
+  "04256": {
+   "sha256": "8e0a2bbb5efc423521ff100dfe4fbfdb08d69ebe0d20813b238a3ff18265aff2",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36119/35976"
+  },
+  "04257": {
+   "sha256": "6052b6c7575d22c745ef2433fddd3461b119a47288c3b5a5517d1da9322fa918",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36129/35911"
+  },
+  "04258": {
+   "sha256": "157346c5fcaa2afb5d25af33aec8c9595ba88ceccd3f15221ccb8bbcb95db5d0",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36127/35922"
+  },
+  "04259": {
+   "sha256": "13a400d5493c3f28353e1a769a90e1a28fe72b78abd6e357e3e79f287c2c0b83",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36149/35856"
+  },
+  "04260": {
+   "sha256": "ede8f6afb03711bb4d0cf438e0ac689336e52114048de089137cbe5f046533bc",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36151/36212"
+  },
+  "07485": {
+   "sha256": "42c67d5cc6fdc5f323cbbd16065378789109f24d4c00b02afdc953c98f7a5137",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36143/35869"
+  },
+  "08692": {
+   "sha256": "10bd68f9e190389b5cb3f3725bdf3caace64e9a1f0f7437fe9c60e3b032c43a5",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36123/35956"
+  },
+  "08708": {
+   "sha256": "eac113d8a434d92aebc928e8086ce549243b90a630596fb81e7e7ef576f9726f",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36052"
+  },
+  "08709": {
+   "sha256": "2c34e632a5048484546a378b4e9ac87c1dfdf2b9fcabfdf17aee9120cda829f1",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36055"
+  },
+  "08710": {
+   "sha256": "88b437831e57c0ac98234e46fd6a4f60de1365e74250affb586ef72becb7e49c",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36101/36087"
+  },
+  "08711": {
+   "sha256": "6d4351cf75c3d248e0d2c712814c9af7ad2a513f9ed8c46c5a564e5b38a74c7a",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36121/35969"
+  },
+  "08712": {
+   "sha256": "ed97e2996422df74263e77f41708b09152548073bc5125b5fe047c184f1c4ca6",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36116/35993"
+  },
+  "08713": {
+   "sha256": "a25c647356ad10971a836ff7ac2743175e319f3abf63e1455adeee5180a54d9f",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36068"
+  },
+  "08714": {
+   "sha256": "8ab1a1a7c9cf5f2ce0452b0f55640ebfada0ef6f7e22fc5a552f72bef8157f67",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36071"
+  },
+  "08715": {
+   "sha256": "7b3cbfeed99130475b31e6e873d859cb6b57d2daddc360c9e5cd5ff29698451e",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36073"
+  },
+  "08720": {
+   "sha256": "93731db97656e0968e5a2042ed08d4f1953e04822b8a6fc15cf71383de9f86cc",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36121/35960"
+  },
+  "08722": {
+   "sha256": "4db560a594102acd6b3b9792e20dc5140eb0e3f9eaa39ca6ea7cb23ce7a92cb1",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36135/35899"
+  },
+  "08734": {
+   "sha256": "fe476799482d981263ee9ff4be620df3e7e0fd126a8af44b590bd7e9b9ec017d",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36117/35980"
+  },
+  "08737": {
+   "sha256": "eb0c1481d33caa6a647165e3cc9903abf9c5c30fa137f92ece7085021f4dfd33",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36141/35876"
+  },
+  "08739": {
+   "sha256": "e5b8e5d38cbc6b848222664898a15896f2f830bda17e9fd16587a11c23819c56",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36125/35948"
+  },
+  "08740": {
+   "sha256": "f649f4b9d20833308128f113766ce5d31a62dc1e693268b80f448851c253c6b8",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36125/35949"
+  },
+  "08742": {
+   "sha256": "f245000999fbda7b192ad20c5efac0fac6e6b9953960c9c739e1f687e32039a3",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36125/35943"
+  },
+  "08743": {
+   "sha256": "a840fb81f61729d0fe7759b8599acf961fc49b23cea70bc9dd7730a6322f0276",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36026"
+  },
+  "08745": {
+   "sha256": "f04de411545d498136ddd316540b5ed9aef5fc686531d113bbb803e99a1a3c5b",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36142/35871"
+  },
+  "08747": {
+   "sha256": "81d1897b9814c16f77be2cbac7f71788576a7a31686c07a6210e2e71446672c1",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36126/35935"
+  },
+  "08749": {
+   "sha256": "a4e32c026cf03e75e1480bd1275e1a3ea66395b551493652baf69f2203cc3f00",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36126/35937"
+  },
+  "08752": {
+   "sha256": "8845208691ae87095aedf882d63744359e5c11b905ab62bafa2eff016534f325",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36126/35941"
+  },
+  "08754": {
+   "sha256": "78961f7d0a30a4562cd2eeb36b81e5b26895effa1b4e435b48ce5a16786f1196",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36124/35953"
+  },
+  "08755": {
+   "sha256": "811ee3c420bcf4c577f9f5e3feeb9b3ad1575dda844853038bbc9eeb4e7bd652",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36124/35954"
+  },
+  "09209": {
+   "sha256": "727012bc20db8b2abeb2330e4e00b8ed5702c81e95cb5df8f0da9e507f794c85",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36174/36164"
+  },
+  "10549": {
+   "sha256": "876de31c3b279b0e56cb8c2b30415d847b4867c7bb389533349f6f442892cdef",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36126/35934"
+  },
+  "10629": {
+   "sha256": "085f80b0f41e44d199b68fee30607383a89160e32c75884b1ba3f5829782cc75",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36144/35867"
+  },
+  "10658": {
+   "sha256": "db2476590914c079677ae9458ec20785611c22ae9b6d6ea46241a7d6240e2c5b",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36117/35991"
+  },
+  "10659": {
+   "sha256": "6b840b7b178ce3348cf4dc6a0ef65860610545c9eb46d4f42c1ab0c9cc9bdbbc",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36117/35981"
+  },
+  "10660": {
+   "sha256": "c9a3369253edeb7a0bdae17855ec68444bb8d5fa3100d1745ee58fa67c10e478",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36117/35990"
+  },
+  "10664": {
+   "sha256": "2f4bc46d725441c15acb2f50dfc1703368ea3e234349b14db49be4850ee4740f",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36135/35896"
+  },
+  "10665": {
+   "sha256": "5a7a15b4857a86391f63b92fcafa83239c36f9efcd1e1ab1d4f7e1a357610146",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36103/36082"
+  },
+  "10667": {
+   "sha256": "d1787342809b1c1f401a08afc28ede0524a36d8b691371281c83025c3ac27062",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36125/35945"
+  },
+  "10668": {
+   "sha256": "d3cfa25107287080e3241f2f44048a8c4d2a26e46a146e3941c6949813374ee8",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36142/35872"
+  },
+  "12242": {
+   "sha256": "1872b67f589c619bb55df1baa6fd12d6617925736c6928126fab99eb59c17d3d",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36152/36210"
+  },
+  "13446": {
+   "sha256": "3b712e8525dd61b68f4155eea3774b5c414e8e33ffd04b48c04b831e674484cd",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36100/36097"
+  },
+  "13462": {
+   "sha256": "1e744a3aa7c6d871050b273f71cd4ca322111b4b59272443f85318d4d95a8cf9",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36072"
+  },
+  "15242": {
+   "sha256": "01314df42c304e3b4262f2935c0a0b3b22c5cc104e5250f425eb2f08595d16f4",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36134/35907"
+  },
+  "16525": {
+   "sha256": "a5ef5d1b12d932358c52c8a05b2bf7fdab6c05383d5bdfb8c3f2f75ed2eda17e",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36134/35906"
+  },
+  "16536": {
+   "sha256": "34c9721b2f02cbbea7f13a85eb6fdc61dbd295d0b37708f79da369d5bcadeb85",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36140/35879"
+  },
+  "16538": {
+   "sha256": "ee942d0ea4deea8fcbee4e6687768980a405c4e76655933215a690c5921f9396",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36153/36214"
+  },
+  "16619": {
+   "sha256": "175d32097b14d541dcafda1b2c3a93dab478a36fce2d1edf00ab6e7974f6963d",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36135/35891"
+  },
+  "16621": {
+   "sha256": "79e48fff64ff444d0e7d04e4d0a42b019b4a3ede50eae9bd0a530fb49a79f2bf",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36135/35895"
+  },
+  "16974": {
+   "sha256": "352ad62810af3eb14fccbd32fc25e9b01ddf67f68570dd77d4b9942a26a0c1a8",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36130/35926"
+  },
+  "17343": {
+   "sha256": "cf0256095415423a6cd3024591418915e438f553828e195a9eed75af10c24c61",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36069"
+  },
+  "17350": {
+   "sha256": "1a441c3a21f4c1d653c841721870e780df9f5949b6f080993920eaf675d35e63",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36126/35938"
+  },
+  "17761": {
+   "sha256": "e594acfe6ab7a160e38f8ed7e61552a82a7285cab4ecf69c67fcefd3ebee4c6b",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36120/35974"
+  },
+  "18580": {
+   "sha256": "71af3246c08f6625a74cee17fa66296034d6deb8ee14029a6e10deeec2510688",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36283/36263"
+  },
+  "18581": {
+   "sha256": "95e6d703c43fc10cd7c03ef4057296e7906bbfcee6b5af4babe89b668f416502",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36283/36264"
+  },
+  "18582": {
+   "sha256": "1fd974cce3b6140a9b1b27fc41807553f2b1451881b09277d6b5f97dfaff9652",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36283/36265"
+  },
+  "18583": {
+   "sha256": "ef1c11ef58bc7ccf029b99ef63eff96429e1780aaa960448b0bf80dd5adabcef",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36283/36267"
+  },
+  "18584": {
+   "sha256": "5b1cfda6154c52ba15ae8a3f651cbe013047bed93a115b6362c4572a9f559632",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36283/36268"
+  },
+  "18780": {
+   "sha256": "39f0903d1a5ee41a1dc1c15337c6033202588f53924fa06d14c7d60a585179d5",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36145/35866"
+  },
+  "19268": {
+   "sha256": "af9308921d64b58ab9caa16b8a0bdea3b6e14dbfb890d6d00f3d90fdf32b26ae",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36283/36266"
+  },
+  "19391": {
+   "sha256": "8ec5cbe7f31e2900601b2cf48f715a4da0bb0f662a4867f866f4240e6bfca290",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36100/36098"
+  },
+  "19447": {
+   "sha256": "ebcf5d4d71a5b1d3d53ebc6b7a480f7cbe8f95d52e9607f024bc74e657beddc8",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36138/35883"
+  },
+  "19448": {
+   "sha256": "af620c8cf069e96b058a9495dd7aab61e4c1f94d3504433f3b6abb212bb8508e",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36154/36209"
+  },
+  "21748": {
+   "sha256": "7127997a12dceae21a0a03a019f604ab89693bcad7539f4732698272b4d7ba10",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36100/36090"
+  },
+  "21749": {
+   "sha256": "37903a7019fdd183c80c223aab16b34ccb97dd6e3fa0699415be2ea973ae018d",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36123/36350"
+  },
+  "21750": {
+   "sha256": "0c57f373e2ad89d8a08ba3915e34ac7f3929d10e2320b1a1939fd0c7ab5c20d3",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36174/36165"
+  },
+  "21751": {
+   "sha256": "19949b7f2ebcbc32dfc1d7e4e31f098b67e37502ebb77ec854f476c88af59e6c",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36047"
+  },
+  "21752": {
+   "sha256": "19f21ac5c823e73b6970e95adf64733f22e3d35aeea4168f93436994f8f2fae4",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36054"
+  },
+  "21753": {
+   "sha256": "62c8274123a35eba0760dec6ac3f094766636a4fe2621b5c0be3c0e6d572d106",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36130/35929"
+  },
+  "21754": {
+   "sha256": "e544f541b126707e8d3802ba883d03b26cb75681795fde44ad451f0dc6114da0",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36117/35985"
+  },
+  "21755": {
+   "sha256": "641a051a0c2ca5bbce5718939c9ec988deb7ddba7628cbeff678989b4ecf3551",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36051"
+  },
+  "21756": {
+   "sha256": "b078414816f22e29de2e99fb2accd3f1c0c9e88491063b6b818b89cb2836c2cf",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36117/35984"
+  },
+  "21757": {
+   "sha256": "68f743fc4c11069b07d5126b66e5b1b67319eaf51ca54ddfc12350dfc5a871ca",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36111/36013"
+  },
+  "21758": {
+   "sha256": "8a134a1dfcaa060481b923289aafa53e6003618abd99f4ce859a2614590084ce",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36111/36015"
+  },
+  "21766": {
+   "sha256": "dcdf5b355c0b45379cfc10c2ca204912251f5fadf72d5369fb548142fb0a2956",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36121/35965"
+  },
+  "21770": {
+   "sha256": "f097a88ce44f48fa83f21203e71f4fcdc00dad7413360b44d423bdcfc5e91994",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36116/35992"
+  },
+  "21772": {
+   "sha256": "08d6fe60f1f584458428efc2bdeb5060d2a28f636e72acf1ac8766f0771f7c8d",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36116/35994"
+  },
+  "21773": {
+   "sha256": "07e06bf6ef7a20332ddc10037467c7033c4008716968faecaeedbe7b5ace7824",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36121/35961"
+  },
+  "21774": {
+   "sha256": "a13bf1f95e2a704dc6a1e730f32df5e08cf0d43ba0a4a440a98a0ee5fb1f348f",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36121/35967"
+  },
+  "21775": {
+   "sha256": "85ec1be3ed8e6e11c4c3b1e1b40c521e1a2c109cee5dc71530961ce31b3b7391",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36121/35963"
+  },
+  "21776": {
+   "sha256": "cda901faed948ab17027880b32663c0d00dc1f14797e280b91df4dfc49153572",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36121/35970"
+  },
+  "21778": {
+   "sha256": "fec3f4ef88b53988f925026e1180381889bbc6624e2efe94f901da808068d451",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36135/35890"
+  },
+  "21779": {
+   "sha256": "103dee009d5b113f5518ac79d308b2e7b06332c35c1bf2ae263a085d9b70139a",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36135/35893"
+  },
+  "21782": {
+   "sha256": "5e2ac80ef5031fd1e9a00676a9e5c1f4a4bd4203ef761c3336f6db470845d10d",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36135/35894"
+  },
+  "21783": {
+   "sha256": "ff0c2f34226dbf7a7a5a7328e3cf020fa2767b8af556e5b36c4c9105089cd251",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36135/35897"
+  },
+  "21784": {
+   "sha256": "0e168a9b673cb8f8250159c2f497feb610215f8bf2e3eb92b5c1c4bb46b00894",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36135/35898"
+  },
+  "21786": {
+   "sha256": "5a3b12a8dbfc405041176732d5767ab813fa45c92d66a9cae5d6bf5342eaf0f4",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36115/36000"
+  },
+  "21787": {
+   "sha256": "36d0399f0fcf68ccd76c06b0259837254572d87deac3fd5935378fbc6f9807e2",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36147/35861"
+  },
+  "21789": {
+   "sha256": "fa5d1fc780f81078680c23bb100de7ba52d335bc553932e5f1b9d424c4411730",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36145/35865"
+  },
+  "21790": {
+   "sha256": "3e37310ab5a4e1c1fa48a633c3435e69dc4eece1d62230047964c544cb736c27",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36125/35947"
+  },
+  "21791": {
+   "sha256": "42fa4fbbd49f1a7fdc9f3a0e50d6fa4f6cc309e11a899d04aa830268b12ed49d",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36125/35950"
+  },
+  "21792": {
+   "sha256": "5acaf815da93383f3a8727278ac32d229354c4a1949a061ffe4f0673897927e5",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36125/35944"
+  },
+  "21793": {
+   "sha256": "7aad71361d37c9497848017fc45bbec8eff3c7033bb9f200081abec2eef9b641",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36032"
+  },
+  "21794": {
+   "sha256": "b8598fc5143232082468968bc22bbbe2a6b59e93af303cbeacf46e040e112bd8",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36033"
+  },
+  "21795": {
+   "sha256": "456a17a5237d5b63964e7832bc4c212f1e08d6dca6ff1e8ba91e3046d09358fa",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36133/35910"
+  },
+  "21796": {
+   "sha256": "ff40308f2f0e6e9e06902a1f3a6f5d5be8ca68de9d085dc73a90db677234be6f",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36113/36005"
+  },
+  "21797": {
+   "sha256": "be3ef1489c11139bf6c3b7fb1df263bd08cc2787ce673a694cfdf8579a417e9e",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36126/35936"
+  },
+  "21798": {
+   "sha256": "41c1e5804e1672eb1456322c379d738259def1eecbe5dbe06fc38f54ccc97a61",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36126/35940"
+  },
+  "24264": {
+   "sha256": "62aa5f43205662e3e22935adc96a508aa63c1de14aba52ebe15c33d0bea2cf0f",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36227/36178"
+  },
+  "24364": {
+   "sha256": "03af3c14b444ae3fd8f6ae8fd14097ea1fa376ea70034a494ab236a6ec0c6639",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36247"
+  },
+  "24365": {
+   "sha256": "3887ac90ec978caea992593a8ea40e4cb7ff68bb9b6cdeb17e6f9f4c7a2b5226",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36249"
+  },
+  "24384": {
+   "sha256": "36ac4264a0f5a9bf8340f1a53beb36da17df2682d286a53bed7e1b5d13d39178",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36252"
+  },
+  "24390": {
+   "sha256": "a8fc7b54ca28c2d67dc4069a5ac29184f6c9f1dcae4bd824cb63196fa351260b",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36256"
+  },
+  "30640": {
+   "sha256": "d81e94a1660f726ab8818e184668f5692b5e26421c9d7b96cfd810e0e5f7e7b6",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36151/36211"
+  },
+  "30670": {
+   "sha256": "dbec457dab9f30cb63ab06851fe741b100ea4559dade0d7f3fd16b61d45f0815",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36150/35853"
+  },
+  "30752": {
+   "sha256": "ecf54d98e037637291ce62b1255adebee4e7824b78ed0082250263956eeb4812",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36461/36478"
+  },
+  "31137": {
+   "sha256": "1fee2e07b9ddf75c6918b3e283275fef76d3cc158dd9cb772923fb26cd0793dc",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36153/36222"
+  },
+  "31859": {
+   "sha256": "7bff338b72aab68049f265544a38a8e9f22b13268e7f8cd3bcc1d94d43b1a05b",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36149/35855"
+  },
+  "31887": {
+   "sha256": "77463adcd7906e9a1c269404fb8369ca07a2de854d20ffb2760667e3a5cdac45",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36120/36952"
+  },
+  "31980": {
+   "sha256": "5b217b854b193e33c8122e643009c0678bdeecb82ca804cb65deaaedd43dfe8a",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36118/35978"
+  },
+  "32050": {
+   "sha256": "69e280241485f5c2ca61a7caad48a87cde5c36dafa0a794a4599d22d9ca5e378",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36140/35881"
+  },
+  "32062": {
+   "sha256": "87f33c47bc925f59ee85024b24e251cc082764f6edaacc7214fcb086743efcbb",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36137/36346"
+  },
+  "32063": {
+   "sha256": "8599fe403839eb6d0537465460571d2282df1f52867e458c83f68ff5c4926edd",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36031"
+  },
+  "32096": {
+   "sha256": "beb597e26121a7e94e4497824e2269f5dd66689a6e31c050df0a532ea84a85fc",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36131/35920"
+  },
+  "32144": {
+   "sha256": "437504ec2d50c2d4b248e2d323eb33139a3448a0dbba80d9440d6318595821e8",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36128/35577"
+  },
+  "32146": {
+   "sha256": "4984fcdd1aedb1eafd16c49bc377ad5cd00b1511fdbeca51df092901c0dd5775",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36103/36081"
+  },
+  "32148": {
+   "sha256": "bcb412e04724ccebe26e0d83ce646471e6f238804a7293eab745c4f32be7b83b",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36130/35927"
+  },
+  "32255": {
+   "sha256": "2a900df493be7b875209bcc5f0df769ab5b955e0b9177c349c7a7b569b3e3568",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36113/36002"
+  },
+  "32343": {
+   "sha256": "6b04d6a36b7ef813d699533256c6ef1309d71a714ceff46f441e686fb2e3a39d",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36127/35923"
+  },
+  "32395": {
+   "sha256": "7b5a25211579428157919d5d767a0b0cb62bfbe25f1ab104e3344944f4456a4f",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36129/35912"
+  },
+  "32436": {
+   "sha256": "bfcff2bffa3027daf2348105225760cb39025899bc934768caa5a36447c20942",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36122/35925"
+  },
+  "32533": {
+   "sha256": "f89278d075a7e685a1a657bd7968b4c7daace429d6faff76bb8e40292433c093",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36175/36270"
+  },
+  "32538": {
+   "sha256": "d107d43abb7603a0583f6388b00e93f5258313961d21de136ac0a9c98a378a7f",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36154/36208"
+  },
+  "32681": {
+   "sha256": "243c5a4b09cd4b27eeb31c974c6212a3dbc3df617ef7e63fff4d3209a09b7a99",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36243"
+  },
+  "32959": {
+   "sha256": "055f6a768191149bdfb1d459caa6ec97d9e8c4206aac9b9b64491fa4bf7127e3",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36105/36043"
+  },
+  "32989": {
+   "sha256": "093a1720c9f77b95ec2f8572647f92fb918ae54b900efd48aecae43c94fa250d",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36148/36342"
+  },
+  "32998": {
+   "sha256": "f0bb1234cef09896199c1f3942148c310f7fce9e0e0d899716e5eb0568c7cbcd",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36105/36041"
+  },
+  "32999": {
+   "sha256": "aeeb08d98adfd94a2dd78e80d94a5490156cd19e5846719066bcc064b22a67b7",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36105/36044"
+  },
+  "33057": {
+   "sha256": "0092fde53dbbc4ef37b410c4d825de396bafcd3363f8856e75a1491fc8058410",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36102/36086"
+  },
+  "33169": {
+   "sha256": "739c9d016b11891c1b2e2f68975dce92a7671fc071ccf6a5e7799d6ffe942ff4",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36131/35918"
+  },
+  "33187": {
+   "sha256": "007ef6ebd77e583e8d06192b5d33475dd94caddeb302caa183bce3f0a5cbc44c",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36225/36184"
+  },
+  "33188": {
+   "sha256": "b81c480291cd0bee3815933a0af6a6542c8179cecd02acf69fe2604872eb0f58",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36225/36182"
+  },
+  "33189": {
+   "sha256": "fa5c3a79baa9ca6b823636e35aef5d501652259dbe7ae594a9c36346924eda5f",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36225/36181"
+  },
+  "33220": {
+   "sha256": "0cd3db7f99e34bb7bf9d62103e8ad319a8a5167f3adec7272ecc678f402b79af",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36146/35860"
+  },
+  "33333": {
+   "sha256": "5c91ad2e10b9293e0b7e81402edd3ea86e947f8c9c06a1a2fc5d4299f4ae6ebe",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36134/35905"
+  },
+  "33452": {
+   "sha256": "dae5d400024d7fc7ec09579637072f5b86b27af29d272d8e73c4555ffa6ec7a5",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36225/36183"
+  },
+  "33690": {
+   "sha256": "e99539cfc1a48a9741de248dc933acfb872b634948972d2c0d349073e834d50d",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36105/36040"
+  },
+  "33855": {
+   "sha256": "962dcddaa6dbe8a49126ad4878edee6226129e3cb3f3f065b94d183dca139201",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36132/35917"
+  },
+  "33958": {
+   "sha256": "adb2882055fbff051db7a442744764a7d8e2084c76261245dc06e330a971fd5c",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36154/36204"
+  },
+  "34014": {
+   "sha256": "4d85a5daf4743e9329d02ca2aade35da63f81592f5301a805594c984f01ea99c",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/35541/36502"
+  },
+  "35021": {
+   "sha256": "958d6244a93df8a3ad51dc3be653b0a097c7d0f0b76718bc50cf565ac1118375",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36108/36007"
+  },
+  "35134": {
+   "sha256": "e1fa2bf0e22800a4d33b37cddd2ba9cb0810e00209d4381c1f9c64d0a285fcaa",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36105/36039"
+  },
+  "35555": {
+   "sha256": "a7275ab7448add00a176440997888502c780b877371ae4e781dc8f2095b77090",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36119/35977"
+  },
+  "35672": {
+   "sha256": "db22332e4d53923ade44e7da4f2785b33b1e15451af1829e402f4896627ef450",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36103/36408"
+  },
+  "35673": {
+   "sha256": "c07517bf426c3a3619de68037493dd654da9556f9e7f89432ca875bee1f67d17",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36132/35916"
+  },
+  "35674": {
+   "sha256": "b20b7c3ab8bd86d61e0ab985f7ae16e6e58d7e58c334712feb189436eff2836c",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36100/36094"
+  },
+  "35675": {
+   "sha256": "b200d3b119b15dae6afeb68dc4767c9aafd7f4329de2c7d1dc3cf2f0845e4d4c",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36100/36093"
+  },
+  "35698": {
+   "sha256": "bea2444a3938ba62a7adbadf55fbf03944f111d3f917b9a817128be730c0cbbc",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36117/35987"
+  },
+  "35703": {
+   "sha256": "c87ab6b177e533090aefb02902353c76013b4801600545829b0398449aa2040d",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36100/36095"
+  },
+  "35705": {
+   "sha256": "8173a3ae664793c38ffb99ea53a57052dcd6ae1ccb7f091039e0d9ba8b59eb4d",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36132/35914"
+  },
+  "35983": {
+   "sha256": "cbafabf7e73fa53b06eb84b310c85835ecc3e27935bccc42cffb6c17997a79d6",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36142/35875"
+  },
+  "36411": {
+   "sha256": "66759397c57b91c9e93c97aa4659df838ff2bd9889d1ab4a9aa4b42691e29239",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36135/35901"
+  },
+  "36454": {
+   "sha256": "792849531b8bd20c3aa3a75b0c1533e133dcfce3d3d258c34fd5875b98f186dc",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36135/36493"
+  },
+  "36618": {
+   "sha256": "e52c80c8d2c54a6642a2c3bc63c9bb095da8fd5339315defb33810f19e7cde54",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36226/36194"
+  },
+  "36828": {
+   "sha256": "f555375b4671c7aca9a932d089c5964c1ac18b01dda938dbf3a1f3d2319cf504",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36226/36196"
+  },
+  "36829": {
+   "sha256": "c94a1df1141149f0f19d23809a8afb8f5ee0ad47ee11061b176188a608949781",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36226/36193"
+  },
+  "36835": {
+   "sha256": "0834625520686cccc04b39fcdd09ac8b607f2f711a8afbddf2ea020cff66969f",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36226/36200"
+  },
+  "36880": {
+   "sha256": "2a23b604daede40800054191e6d8c9a700b66991ffb4bb36821db0e0e848369f",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36226/36195"
+  },
+  "37093": {
+   "sha256": "064590f02946c2fcdf0ed09bce2c300291a8b48981709404fee998d36703e018",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36226/36197"
+  },
+  "37094": {
+   "sha256": "1f8d94fc02b01c23325c5ba55b860e54d205b57e49d5597f8511b49a65beb086",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36226/36199"
+  },
+  "37095": {
+   "sha256": "c5af5df49283b8d46c456bad02756c777744c098ffc82d924b2621d10e55b812",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36226/36198"
+  },
+  "37198": {
+   "sha256": "412b96c2b85ca4604d1e5c2d6ae3d1e58063df1c551ecc254559c8589cf7df3b",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36226/36190"
+  },
+  "37200": {
+   "sha256": "16e29335325da5611a6990d151004aa83319f43270ac4fbd8d0bd0140e5abe8c",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36226/36202"
+  },
+  "37238": {
+   "sha256": "70d4afd1aec3b2bc133376c1ac1c9af7abbd8bde7fb26a2103f39c333e7c3528",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36226/36191"
+  },
+  "38160": {
+   "sha256": "1e6f7ec210b170c8c15b03a30a2d8395d43e87d959db39efcf70a82efb2874c8",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36153/36220"
+  },
+  "38177": {
+   "sha256": "f2a8334ad842216612c3ad27514ef25f9a6cfa9043d2450344abac2b767a38ce",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36225/36186"
+  },
+  "38621": {
+   "sha256": "ae475ca7a83b71aa02213341bc975dd938ee87745619a2f9198178d1f86aa1e2",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36230"
+  },
+  "38623": {
+   "sha256": "1cc90b3f758c227bdea461045fab6964103c4c1ef755dd477cf480f61768d59c",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36225/36187"
+  },
+  "38680": {
+   "sha256": "109291ea3831fb4a992aeb1f78ed82935fb4309db7ec4cd0f4c3a74d809a2ad1",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36229"
+  },
+  "38684": {
+   "sha256": "82c7e13f12b997792ae8a0e553a19dba824f27590cd3f66dd4b7935cedc957af",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36231"
+  },
+  "38701": {
+   "sha256": "9f7342156844cb40a0c742189182bc03d455187700c9bb8e511f688e299f61eb",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36117/35979"
+  },
+  "38771": {
+   "sha256": "e2e3e9edcf2917bda3a156fd1d053796efff4faa61673a19545fcae8a2063ab6",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36232"
+  },
+  "39456": {
+   "sha256": "5b67d8fea8583de51a744aad3692221e253911823696683abaebc68cee9bd394",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36248"
+  },
+  "39571": {
+   "sha256": "a62068de8034e96761092bec63d42ff8bc51ce67e2cd6c4a568e468a226c863a",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36070"
+  },
+  "39572": {
+   "sha256": "285d4136eea99b12dcc87337c0b060102fd9695a0d69795e0158344866206dcf",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36226/36188"
+  },
+  "39573": {
+   "sha256": "67791ca367f3b09ddd2d9f5d7843e0afb4f4078f2a85d17d21adef3f89690572",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36226/36189"
+  },
+  "39745": {
+   "sha256": "3696c6a77ad6ac101a09c14a49e54353d16eff6acc4cad4cf608fae07e8ca8c4",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36242"
+  },
+  "39746": {
+   "sha256": "1e9f1fb39a3c27f97d8cf6785031a4b4f009aac1619262d5fd286d7e14c0eae0",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36237"
+  },
+  "39747": {
+   "sha256": "858e1f360877f48030ef7348dd3e9b425dbf255e71d7d31afb56e6967e4e27f3",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36228"
+  },
+  "39748": {
+   "sha256": "532226bd004a2fa2edd898d3c028dddb38e4471d900a7f0675e85261ac81609d",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36233"
+  },
+  "39836": {
+   "sha256": "5d0d80557643757632ba0f2af6b8bb2ae2a65518a37e5249e6919321e0aafb36",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36111/36021"
+  },
+  "39839": {
+   "sha256": "500a324592ec9f9d876ae66031a7c3d7624121a229cf65a5adf53e314d3c242c",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36111/36022"
+  },
+  "39840": {
+   "sha256": "edcf7a3839c3a17d5254de076546572340361b4b13502f522d39f22c236a164a",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36111/36020"
+  },
+  "39987": {
+   "sha256": "e81693c7889c5902971c51d23d678f5f8ad9683019ba9407eb5066715c119b8e",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36132/35913"
+  },
+  "40382": {
+   "sha256": "0410eec15082770dea3f6f29713096f2b2fdbdc414051da5da4224ac691fe4ca",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36110/36009"
+  },
+  "40412": {
+   "sha256": "7f728462fff09432aa594dae1355c356209a2948f4606d98eac61362bfabb32b",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36142/35870"
+  },
+  "40473": {
+   "sha256": "3aaf92c5b8383c2bc652fa2982bb0e3bd58cc91d369135fd2b1fd39de3f09431",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36225/36180"
+  },
+  "40485": {
+   "sha256": "67abb915bfa88de0e0e22dfbd8327a5ed5b34ca4f9f92264595df22874ce0c3d",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36059"
+  },
+  "40490": {
+   "sha256": "ca8adf8278cd6d4c9258729d5e40e5f470dc74816a170d577e4e7f8dd0ef635c",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36053"
+  },
+  "40501": {
+   "sha256": "4965a220082c6e4538a4baa2e44dc22bd5bf6e54642b81ea47f69c40a21647cb",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36060"
+  },
+  "40502": {
+   "sha256": "a3495359a3dc0b89b4074acd58ad606db327837f3d629221c62bdc6c89b1eba9",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36062"
+  },
+  "40503": {
+   "sha256": "7e1636e2fae69469c9d0fdb52ca50182adb8e9568a91e9e878d8f903276f02a5",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36100/36092"
+  },
+  "40506": {
+   "sha256": "405c4fec9a65d6c49f87cc08643105ee95c796a745dfd6a03f9cf0166b0726e5",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36063"
+  },
+  "40514": {
+   "sha256": "e205c50affabe506fd0f7a22f9f976dc6a0bb13bb67e1014f76d62c94d318387",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36254"
+  },
+  "40515": {
+   "sha256": "f28988cdc584bf3c8945e2fe185b4c54bbeffe917cfac9514e1f43254a1ef2b6",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36255"
+  },
+  "40518": {
+   "sha256": "f70e044053cf98824696c11610e2ed936a656b245c9bdfd69c9d7a57f8300abc",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36251"
+  },
+  "40519": {
+   "sha256": "5cc53672a498d92021d25af26b926f396173e7ebaa209b4e9ef3d4a39fd1c5f2",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36244"
+  },
+  "40520": {
+   "sha256": "e0cd01e2ec659d1f2a3c14eb528a69d2088d736634545ace318c58a249ed39bb",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36253"
+  },
+  "40527": {
+   "sha256": "9d5289fafa0aceaa95ba72c62db61808bbea6695f1c94f83eff764d36d36b447",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36125/35942"
+  },
+  "40528": {
+   "sha256": "60d2be1c25cef8469826d13919fce5769890ebf48f74f9774453a602b03c195c",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36120/36285"
+  },
+  "40541": {
+   "sha256": "3802df4c3c399271847c508a64b899dd28a42a97f945b43320f6a8048f2f5b9d",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36225/36185"
+  },
+  "40542": {
+   "sha256": "ac4cb028bc83bed1b9f4e764c83dd8b180cca0ecbf40361d7780afe2b5f6ba66",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36238"
+  },
+  "40653": {
+   "sha256": "706940717a46c6171eb7741dfdc3769b6a3fbde94cd6ce1f453a91e8ef2bb250",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36142/35873"
+  },
+  "40726": {
+   "sha256": "80b6cb139d09cabe8bf88c3c4315071e3aebf947ecb0b7dd95667e3986157770",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36061"
+  },
+  "40732": {
+   "sha256": "e8ada46e1797e59e347b80163d102c19403fa977b1f142b7b5de0056b3d29471",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36045"
+  },
+  "40783": {
+   "sha256": "3470ee312f432e8bc9a45945676c684bd6e9ded1cbcfa5396823d4c4a347e7da",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36227/36177"
+  },
+  "40815": {
+   "sha256": "b90e6a3a963382a3f1493b5db1532f061a1890c09b76ffed2bb8fdd56464bb73",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36114/35998"
+  },
+  "40917": {
+   "sha256": "2d3bf873f2e92a11d5c6085c81918eb64b9a3172cff0624ea77e25f2282e7955",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36046"
+  },
+  "40937": {
+   "sha256": "baead8218b2313e839abf297ad9dff4935f83c5d79bd30a8b9384cbd80fe6671",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36057"
+  },
+  "40949": {
+   "sha256": "7115145f93a1a8ba1c3ebab589b6b5543d334aecf2dfe54032557b572aaed6bc",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36260"
+  },
+  "41030": {
+   "sha256": "da94b3927a56e1d356ecc47a8b3f6c9f1cd1932e6a1728e2f6bec23726667539",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36050"
+  },
+  "41031": {
+   "sha256": "5b034df74e59450fc11b74fcf7051f5bb7b30be2ba8f15de3468f520ee06015e",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36049"
+  },
+  "41236": {
+   "sha256": "8e639407f66e82b431ba51f7708bd92d42e35939666cb6cd2513cd837ef47109",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36136/35888"
+  },
+  "41535": {
+   "sha256": "502c2202cbffb1700abcf6c96975539ef0a46681c213cb4b3ae4421c2fa0b3b1",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36130/35933"
+  },
+  "41536": {
+   "sha256": "5fe818d4c93323a62acade1ede6fc0a0c23c1e656b4718e89bd843a331bde149",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36130/35932"
+  },
+  "41537": {
+   "sha256": "15704241f7e7cb5fd4b646496527fe7544fd7b978613cba69e7b98014f6e8486",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36153/36218"
+  },
+  "41538": {
+   "sha256": "fde498a8377dfb29d88ecdd397d29276bdb7cc7810b1c18275aa06efbc010b9e",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36153/36216"
+  },
+  "41539": {
+   "sha256": "94db7ee42dcfedd93e3b0275687c03be742cabb211dbaac61444602393d96fcf",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36130/35930"
+  },
+  "41540": {
+   "sha256": "727b166165cef12f640aabed00e07eb8cc82e395794aa6ad72db2726cb565158",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36121/35971"
+  },
+  "41541": {
+   "sha256": "846d0baf02c386d3cc40a08f0b5b06b57f4de23690694a039191454c90339294",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36115/36001"
+  },
+  "41683": {
+   "sha256": "3dc0190a03c13c1cd1efb7dba2a784298b5a94276386f7431e6f0a557a926336",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36154/36207"
+  },
+  "41686": {
+   "sha256": "fa04e4ea276a6537875400c396433f0f3148e9ef3b9ec06ecaf750c3d8cd13bf",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36111/36017"
+  },
+  "41687": {
+   "sha256": "fb07dbbd546d37165e7bef9128d8f7b4360fdc0efe3268ed34385356a040fbc4",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36412"
+  },
+  "41688": {
+   "sha256": "c939082119623488ee727a4dceb2129a175873437bc5e3581b1a357913786fba",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36058"
+  },
+  "41697": {
+   "sha256": "3613439d67b1d6ad7b3e0ea29be35a02930a9e9e38733f2152512cd23d0461db",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36134/35903"
+  },
+  "41698": {
+   "sha256": "09b5bc414c9881b984bc45b8829ccb9e15916950eef02491bf7568772fe46b35",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36028"
+  },
+  "41699": {
+   "sha256": "063704e1207c19e1f3226941e02eda9dde6d6d9dfba0e0c59c9f18fcb874303d",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36030"
+  },
+  "41700": {
+   "sha256": "ea3a665e98581e22c4d557bb615cb8642839d857aac43b29bdfef0caf894de2b",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36037"
+  },
+  "41701": {
+   "sha256": "1f295163b3f74b1e96b10b07173daa7075d657be4a4d55760f1d0dbcd177c555",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36035"
+  },
+  "41703": {
+   "sha256": "30cade740d468898b302509947250d578e4c18b19bbb6b3d0d9881e5e2b982d9",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36036"
+  },
+  "41704": {
+   "sha256": "ee233ea7b74a4eb2257a17c0dc8bdee4f97b1f4c6bf621aee183adaa8ad734eb",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36120/36355"
+  },
+  "41746": {
+   "sha256": "c2dcc0610bfc13a1f689d260b81674696272373fb84bb0311f4d10faf1e5375d",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36117/35986"
+  },
+  "41747": {
+   "sha256": "7ed83de5fd4594a0bfc51684b0c62364fa507352ebfdbbf928d29c9c08439368",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36117/35989"
+  },
+  "41816": {
+   "sha256": "898b627ba7a8a1dcf9317c0b250173e99b053d04a5f7a40373c16e7a4e05f801",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36106/36282"
+  },
+  "41874": {
+   "sha256": "6e09b44c8e8fa3a259b759f6fae289665a9dbab30292e969767084ac44dd6689",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36105/36042"
+  },
+  "41947": {
+   "sha256": "6bfe683d8d6d0ef5f6bada0d1d12d7d42721b0f824345926d21727a37c5a4966",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36226/36192"
+  },
+  "41952": {
+   "sha256": "670425579baa24d88403610df3b02d4118ae3712a782c12561ab60ab4d3a67aa",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36226/36203"
+  },
+  "41954": {
+   "sha256": "710419f324b9ac7562a844c62bbc3845d9fb869191002b4d7b9061f077afafff",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36235"
+  },
+  "41955": {
+   "sha256": "19b9e69e6c2051768eaea3586b3672b1c03c21c966a25c264e2483a4488cf01f",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36236"
+  },
+  "41957": {
+   "sha256": "597062d99947f59c12babd67bb556fe959ce68abf380d6a6b3847be9fec330ef",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36226/36201"
+  },
+  "42660": {
+   "sha256": "d13d5a28d0ff9a0f7e2abe9f617db5c5908af6849b28f5c4f7807445f00da6c4",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36153/36219"
+  },
+  "42661": {
+   "sha256": "74d5046afd029d621d8cc2fa05aaa0607877063a7a76b79f68b301fb1f4cf423",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36153/36221"
+  },
+  "42733": {
+   "sha256": "33e4bf189a4b9fa495b9040447a59b872da1bcd6b91b357c759d5636b38d05de",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36153/36213"
+  },
+  "42818": {
+   "sha256": "824bbc7abdaa60452dca5bbfc98af3dc1472284fe8656f391d88a56fc9ff8939",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36101/36088"
+  },
+  "42819": {
+   "sha256": "334ed55daa398a3cad12ad746d25d5835b0ac9a03a289ad66399316f074df7ff",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36075"
+  },
+  "42830": {
+   "sha256": "85d2f042d716f438f96893f9c2d4926874c1bfa8d50fe5b8f6a45c0c1066cb4c",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36079"
+  },
+  "42831": {
+   "sha256": "63eb9a1f770d1e83db60f3d89ea166966c0c80074ef1850eb3265a3c1e81398c",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36078"
+  },
+  "42832": {
+   "sha256": "7eb8b22338a51ceabbed4957307e6d28792782b48ce0382351f7e7c31bbfdb1b",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36077"
+  },
+  "42833": {
+   "sha256": "f44e95d2c8c00197c23b657b701c77563c68397a1cc03c7f38c80e3c5a71603f",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36076"
+  },
+  "42834": {
+   "sha256": "e893ca9b4c235b1baf1221833b6c8a16a53b2f0bb346dd25f0c7c11ddc6b1041",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36074"
+  },
+  "42840": {
+   "sha256": "5cf51d10de61afd076dab3b3faf8b18e50b8d80f67a6494d30f382e58058b1dc",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36154/36205"
+  },
+  "42867": {
+   "sha256": "350d69bd4a20021ef4a968340b695a5f25f69d9ebb3701d43a2949583cd49776",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36136/35886"
+  },
+  "42879": {
+   "sha256": "4a858f335670db590653ae04ff3c1469f04afe7cd426668449406efdaa9a3b7e",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36153/36215"
+  },
+  "42880": {
+   "sha256": "e598f69d8d3bcb16b190bfeaacbedf7e1b3af6738c237134cfc51e7610b728ad",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36153/36217"
+  },
+  "42941": {
+   "sha256": "b84bb4410a8cc3c95f0eed4d4cdfba6f6dc05e144fc61a8aac4fa5e60f124023",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36240"
+  },
+  "43224": {
+   "sha256": "2ac0f386f723f7291c9ca7afd739cd4ac8d0142702f51097b91c1d3dd6590a95",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36110/36011"
+  },
+  "43234": {
+   "sha256": "8c57e3f99178a13de6d06ceb82de4be6ab332798b2102d5c2ac280bcada31ce8",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36241"
+  },
+  "43235": {
+   "sha256": "7393100dac232dcb854640df74e5461dcf608b71055af2d99062ac3e17e85635",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36239"
+  },
+  "43592": {
+   "sha256": "4c0c4ff2bf6a5a1cd7e87d32f423c5f7477342095e3c0d861e04bc9adde114e9",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36245"
+  },
+  "43593": {
+   "sha256": "fed7ab0e8106307432af4d33b1d3218d6192f2ca6a7e33b5401ce40799cb2728",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36258"
+  },
+  "43597": {
+   "sha256": "28920a9702dd8dbd0eaaf87d1dbe3cc7ea0ef72e2b419a1d43e54c64fdcf2577",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36259"
+  },
+  "43717": {
+   "sha256": "88e3fa2524c7be83827a9dea10eef2548fbbe59e5fb8e158969b26cd12e5fbe4",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36147/35863"
+  },
+  "43721": {
+   "sha256": "8161496cd21e2ff4b6250c12ce85933643c94aaed5c1f3570a73ecc9d5b9f3f2",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36130/35931"
+  },
+  "43764": {
+   "sha256": "385b3afc3065517704dea9c227403c609677f00a8005ce934399fcb955f18c1e",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36250"
+  },
+  "43816": {
+   "sha256": "dee39653a006ec9b0a3c2e8596f9a3fbc12b86ffdace2339c461d913b037cc03",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36065"
+  },
+  "43991": {
+   "sha256": "962f1c2b88d7006192215acc49bd74e308ebfcbef68646d7b050b02190772bfe",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36132/35915"
+  },
+  "44403": {
+   "sha256": "1cb8b31b7bd61d68aaaf9d5e00e11688c9161ec3626beabbd857cc0d9cbb0a66",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36111/35569"
+  },
+  "44404": {
+   "sha256": "d48a849531aca57a8ec616cef5fbd245e78b40236003d52d0575eb01dafb3383",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36111/35560"
+  },
+  "44529": {
+   "sha256": "27becd621307a9a5eb44784f007c6b7fe187a9989ba6f734e816c2d4ed558f0a",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36142/35562"
+  },
+  "44668": {
+   "sha256": "8d75b9d32cb4d2e19c8a2d3602e1c1ec620e5a59aabb5539c8c875a21b10858a",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36133/35575"
+  },
+  "44679": {
+   "sha256": "d5c682435795aaec51716aa9436ebea1476e18f3d1ca26c55f1fa2d3c5492676",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36111/35563"
+  },
+  "44680": {
+   "sha256": "82bad19a66c430998210edb76f5785a6449b36418373d89b3b35cb03efec8a25",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36111/35564"
+  },
+  "44682": {
+   "sha256": "a633116a6416c4a9949d07769085e418ab5ebc4b0f7d00c79a5deecad911303c",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36115/35567"
+  },
+  "44684": {
+   "sha256": "011493da7914809f01a6787ae2f124dd59912f30d7c93a283d6408a4025aaae6",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36115/35566"
+  },
+  "44691": {
+   "sha256": "1dc1cde7ae59df9ddfdd7d5ff4bfd5b9244e0a2cb3806099537a80e5d95daa96",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36114/36286"
+  },
+  "44692": {
+   "sha256": "63fe92cdae29dab0d00848ac63b443a8dbd58ca61c782e257d5602ae25a84133",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36134/35902"
+  },
+  "44796": {
+   "sha256": "34cf735c3c69a5dcb562c60f83bfe3fd94b87e7e570eab284ced3abfd31da4ba",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36133/35576"
+  },
+  "44923": {
+   "sha256": "190c5a01e3bc8760828342427ed747c1ec8f5166607a7e8f692b6106a8dd163a",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36174/36166"
+  },
+  "44965": {
+   "sha256": "7184517aac29f65eb63f0a4fed5dbf8f7b242172f2fb0ef09518a3c76b287cf2",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36111/35565"
+  },
+  "44976": {
+   "sha256": "b2baad5d2e4bd8640ecbab1694aebfecd6ac831140c8c16d424c4d76d0ad885f",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36134/35571"
+  },
+  "45019": {
+   "sha256": "537655f57e10ada2947f72dd76729a34a05ded237ed244591914ea749911e4ec",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36111/35572"
+  },
+  "45020": {
+   "sha256": "7d0cab3cb9f66473ae140dc763025e21f06f1d52eb93cb1d2599cf322891b1a4",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36111/35573"
+  },
+  "45021": {
+   "sha256": "1432c277c94be5b05795442e7228e14457c65099252c75c299b0564064f82aff",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36111/35570"
+  },
+  "45135": {
+   "sha256": "0b1c12a94f4f926516d0947351a0d6f747148faf16f044253cbddd3b0be2a5f6",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36115/35568"
+  },
+  "45272": {
+   "sha256": "db00d615864bcf624f6a2cb59f7b502e6a8da14b064f0229f18a70b2582ba79d",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/35574"
+  },
+  "45342": {
+   "sha256": "278c95e9bed1f1e12efcea79151fc28338c33a20003d1602f57d0ed259215b6e",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36144/35543"
+  },
+  "45643": {
+   "sha256": "beb1605e261ca3be92296b0ca94c8117c2729f45b87a5592aea3effb322238f3",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36334"
+  },
+  "45644": {
+   "sha256": "39d4b4979555dc90922e8a4f9776ae0a253d3345fc3bba6803bc2cfe6911bb27",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36330"
+  },
+  "45657": {
+   "sha256": "2118ea0b7da5f0e310328d6ed15d127f8a909a636d8ac9eb8e436119a6871c31",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36326"
+  },
+  "45803": {
+   "sha256": "520eab795cd448ec1e66a15609447f66095248e6d9bdd4088ccef3095b8f29b1",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36359"
+  },
+  "45888": {
+   "sha256": "4434deaeef1272a11bf743488358aa72b4dfb2f68bf5e65946c9d0d9315bb5c8",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36115/36389"
+  },
+  "45904": {
+   "sha256": "5e431fb1d135d77982cedd022ec5451fd88d2115de1f5e83d7de5d0e8b0d9abb",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36364"
+  },
+  "45907": {
+   "sha256": "b1fa2002dbfcf0df1bc0d4bd342f0e1637e19822408983b1157d9332f1de967a",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36151/36338"
+  },
+  "46082": {
+   "sha256": "862b0059b7bce432a16afb799ecafa41507d41f384a208d6da8c864de35fa370",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36376"
+  },
+  "46084": {
+   "sha256": "9cc14ecaf4037e9d313eb184c19dcdd66a79d82f3e8549c856fca72bf5fcdbf4",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36380"
+  },
+  "46111": {
+   "sha256": "cde1dafda1412d4e8bb150709b3518018ceb8b7c3d40d9c5852dc0fa42999de0",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36368"
+  },
+  "46112": {
+   "sha256": "0a615a1eddb91f4fd39a7cfa180cf750b1f46c9830df6a5eefcf7dfa01dd44b2",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36372"
+  },
+  "46120": {
+   "sha256": "50226b789e0e5f8b57f0cf69bb93db4fbf85e0f83f7f95b35c9682ca2fdaa8db",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36115/36384"
+  },
+  "46121": {
+   "sha256": "50226b789e0e5f8b57f0cf69bb93db4fbf85e0f83f7f95b35c9682ca2fdaa8db",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36115/36384"
+  },
+  "46132": {
+   "sha256": "fd1814b8ff00ef93fdce5f1c1005039f3fad66bbf3734424026c0e931f779fd0",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36120/35975"
+  },
+  "46216": {
+   "sha256": "69902723faca9bd3d194844f6202796730197b07467d0ce4a1b273a809f045f6",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36461/36463"
+  },
+  "46226": {
+   "sha256": "b7cb337dd063351e9ed581b9e9770e597e1bd43a358c91f191e748fa224de0a8",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36148/36342"
+  },
+  "46269": {
+   "sha256": "87f33c47bc925f59ee85024b24e251cc082764f6edaacc7214fcb086743efcbb",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36137/36346"
+  },
+  "46284": {
+   "sha256": "5a3b5d3a2eab68518ec4060de1eff847c62b03252176d1dd8b2de66ca6a8be41",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36485"
+  },
+  "46373": {
+   "sha256": "079d0097b6242c1d61c3ef7a28d53c828d34d7574eb86bde9403459af44835d5",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36100/36318"
+  }
+ },
+ "staged_from": {
+  "run": "38843461766",
+  "proof": "the filed account equal but for its run, and 347 programs at their address and coverage",
+  "pages_loaded": 0
+ },
+ "run": "45830902990"
+}
