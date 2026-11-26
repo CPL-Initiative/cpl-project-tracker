@@ -118,3 +118,7 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   a college and $15 a worker on the estimate. Left out of the wave: College of the Desert (robots.txt), Saddleback (its
   `repeat` window first), MiraCosta (a wider text window), Southwestern, Pasadena City and West Valley (rule A and
   35588, reader changes), Antelope Valley and Mission (the eLumen follow-up's rest), and every lane 2 college.
+- 08:06Z: `lever`'s reader: LAND: MERGE; PLAN: APPLY (Sacramento City 0 pass to fail, 0 fail to pass; both kinds
+  exist on `main`; MINOR, the window-fill floor 18 to 17 because Folsom 38736 left the cut population). 08:07Z: clean
+  md5 pre-read (2 of 2); migrate 45780554871 returned 2, none skipped; `.apply` restored (`1cf011f2`). Cosumnes
+  River leaves lane 1: its 17 piles may join lane 2. 08:12Z: #3881 opened for `lever`'s land.
