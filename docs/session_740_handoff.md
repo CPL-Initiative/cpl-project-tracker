@@ -227,3 +227,17 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   applied in s739j on the same reading, rolls back from s739j's receipt to its before-checks; all five hold for a
   units twin of `hours_within_printed_range`, with Shasta 32162 and College of the Canyons 36793 (the follow-up's
   item). `piles2` resumed for the fix and the one-row rollback.
+- 10:52Z: `piles2`'s fix (`3daa35e3`, `main` `2e4ccabb` merged; 52 of 52 tests): s739m at 5 rows (the kept rows'
+  images unchanged, renumbered); `kb/migrations/2026-11-26_s739j_41373_rollback.sql` with its md5 pre-read; 41373's
+  committed record file back to `main`'s copy, so no later load re-posts the gap; 17998's field is a default, noted.
+- 11:05Z: `waveB` reported (head `24b34c77`): 6 records live (Riverside City 33230, San Diego College of Continuing
+  Education 38411, Yuba 37946, Evergreen Valley 40353, Mt. San Antonio 41116, Skyline 30882; five pass), 15 named gaps
+  with no record, 2 relists, 3 held (San Diego City 22367 and Santa Ana 12242 need a 91-minute and a two-hour fresh
+  capture; Reedley 30465, rule A); a 1-row plan, its own "s739b" (`kb/migrations/2026-11-26_s739b_prreq_named_gaps_*`,
+  Riverside City 33230 `ge_units_not_read`; the id repeats `piles`' Shasta plan, the files do not); paid reads $0.385.
+  `waveA` reported (head `2e1a1ada`): 8 records live (De Anza 41327 and 31504; Las Positas 18813 and 36449; Cuesta
+  21050 and 43053; Grossmont 32879; Bakersfield 09968; six pass), 8 named gaps with no record, 11 relists, Copper
+  Mountain 41085 held (the registry names a 404 address; the reissued catalog is
+  `https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf`); paid reads $0.50. Each to
+  a Sonnet reader. 11:06Z: clean md5 pre-reads, s739k 5 of 5, s739m 5 of 5, s739n 7 of 7, and 41373 at s739j's
+  after-image; the four run in order on `claude/s739-piles2`.
