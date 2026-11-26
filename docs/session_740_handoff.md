@@ -252,3 +252,6 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   census or `kb/_program_named_gaps.py` match on them without a recall test). **DECIDED**
   `d-one-land-for-piles2-and-waves-s739`: `piles2`, `waveA` and `waveB` land as one PR off `main`, once the applies
   finish, as S731's #3830 did.
+- 11:06Z to 11:11Z: migrate 45807245565 returned 5 (s739k), 45807528712 returned 5 (s739m), 45807753854 returned 7
+  (s739n), none skipped; 45807976291 returned 1 for the 41373 rollback (Orange Coast 41373 back at its before-checks);
+  `.apply` restored on `claude/s739-piles2` (`9b58f0f9`). 11:12Z: `waveB`'s plan dispatched on its branch.
