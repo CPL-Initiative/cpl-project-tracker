@@ -46,21 +46,11 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 17,
+   "placed": 21,
    "listed": 21,
-   "share": 0.81,
-   "missing": [
-    "SOC110",
-    "SOC110H",
-    "SOC141",
-    "SOC141H"
-   ],
-   "unexplained": [
-    "SOC110",
-    "SOC110H",
-    "SOC141",
-    "SOC141H"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
    "course_id": [
     {
@@ -69,10 +59,10 @@
      "matched_by": "course_id"
     }
    ],
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 15,
+   "count": 11,
    "codes": [
     "HIST107",
     "HIST107H",
@@ -84,11 +74,7 @@
     "HIST142",
     "HIST150",
     "HIST171",
-    "HIST185",
-    "SOCI110",
-    "SOCI110H",
-    "SOCI141",
-    "SOCI141H"
+    "HIST185"
    ],
    "flagged": [
     "HIST107",
@@ -103,7 +89,7 @@
     "HIST171",
     "HIST185"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -160,7 +146,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -474,6 +460,7 @@
    "Program learning outcomes are from the page's outcomes tab for this program."
   ]
  },
- "extracted_run": "44481529632",
- "catalog_year": "2026-2027"
+ "extracted_run": 45844530701,
+ "catalog_year": "2026-2027",
+ "read_run": "44481529632"
 }

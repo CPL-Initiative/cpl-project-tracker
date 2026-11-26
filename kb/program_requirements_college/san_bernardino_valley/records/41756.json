@@ -46,43 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 16,
+   "placed": 23,
    "listed": 23,
-   "share": 0.696,
-   "missing": [
-    "CD111",
-    "CD126",
-    "CD138",
-    "CD160",
-    "SOC130",
-    "SOC141",
-    "SOC141H"
-   ],
-   "unexplained": [
-    "CD111",
-    "CD126",
-    "CD138",
-    "CD160",
-    "SOC130",
-    "SOC141",
-    "SOC141H"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 7,
-   "codes": [
-    "CDEV111",
-    "CDEV126",
-    "CDEV138",
-    "CDEV160",
-    "SOCI130",
-    "SOCI141",
-    "SOCI141H"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -139,7 +115,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -362,6 +338,7 @@
    "Program learning outcomes come from the page's outcomes tab for this award."
   ]
  },
- "extracted_run": "44481529632",
- "catalog_year": "2026-2027"
+ "extracted_run": 45844530701,
+ "catalog_year": "2026-2027",
+ "read_run": "44481529632"
 }

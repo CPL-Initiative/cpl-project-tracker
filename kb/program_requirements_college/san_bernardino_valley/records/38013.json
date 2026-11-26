@@ -60,16 +60,20 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
-   "total_only": true,
-   "computed": null,
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
    "stated": [
     320.0,
     360.0
    ],
    "against": "program",
-   "why": []
+   "why": [
+    "a required course in 'Required Courses:' has no units"
+   ]
   },
   "repeated": {
    "codes": [],
@@ -93,7 +97,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -173,7 +177,7 @@
    "The program learning outcomes come from the page's outcomes tab, which is printed for this certificate."
   ]
  },
- "extracted_run": 43355003065,
+ "extracted_run": 45844530701,
  "reconciled": [
   {
    "field": "hours_total_printed",
@@ -182,5 +186,5 @@
    "words": "Total Hours\t3"
   }
  ],
- "read_run": "38748858322"
+ "read_run": 43355003065
 }
