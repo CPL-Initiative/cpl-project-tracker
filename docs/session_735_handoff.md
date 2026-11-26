@@ -5,6 +5,8 @@ updated: 2026-11-25
 tags: [handoff, session]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/handoffs
+superseded: true
+superseded_by: session_738_handoff.md
 ---
 
 **Routing.** SkyAlvord (S735) was a side session beside the main queue. **The main queue is handoff 734's, unchanged**
