@@ -165,3 +165,7 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 - 08:56Z to 09:01Z: migrate 45787269553 returned 6 (s739e), 45787472150 returned 2 (s739f), 45787671731 returned 1
   (s739g), none skipped; `.apply` restored (`964038b6`). The shared clone's `shallow.lock` held four fetches for a
   minute while workers fetched; the apply script retried each.
+- 09:05Z: `pooled`'s lint fix (head `8c632530`): lints 2 failed because its new test step carried the docs-only skip
+  without a line in `tests/lints_docs_only_skip.json` (it now runs on every diff); lints 5 because two El Camino page
+  plans named no `http_hosts` reason for nine http pages (both now do; the push read nothing again). The worklist
+  date's hand edit was not a cause.
