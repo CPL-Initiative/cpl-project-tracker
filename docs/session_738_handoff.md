@@ -53,6 +53,18 @@ step 7 (the pipeline did not move); step 12 refreshed `kb/status/course.json` on
 - Read, no build: the commons lane's NEXT from the 2026-11-20 mock is met by the front page as rebuilt 11-21 to 11-23
   (`f-commons-order-mock-met-s737`); the lane line now says so.
 
+## After the checkpoint: the lightning round (S737, 04:00Z to 05:10Z)
+
+- **#3876** (`0cffe447`): a state-list label `TITLE (CODE)` titles its code (San Jose City College's 80); untitled codes
+  608 to 558. **#3877** (`09ee4706`): `#commons/subjects/rapid`, one untitled code at a time, a best guess, one
+  example course, phone thumb bar, swipes, Undo; guesses and COBI's verdicts in `kb/status/subject_title_guesses.json`
+  (four batches, web-checked; a second reader each; 139 disagreements reconciled: 420 accept, 31 change, 107 not a
+  subject code). Only a reviewer's Accept saves.
+- **Sam's words:** *"Can you judge the lightning round first? I can then go over your judgments in the early morning
+  and see how everyone did."* The batches compete (*"the one to make the most mistakes caught by Sam will have to ask
+  the other agents for tips"*); `batch` names each guess's writer. **RULED**
+  `r-dept-and-program-titles-pose-as-subject-titles-sam-2026-11-26`.
+
 ## Read in order
 
 1. `docs/reference/lanes/common-subjects-reference.md`, "The stray codes and the title hunt".
@@ -61,8 +73,15 @@ step 7 (the pipeline did not move); step 12 refreshed `kb/status/course.json` on
 
 ## Open work, in order
 
-0. **#3874:** mark ready and merge on green; then read the first docs-only PR's lints (this checkpoint's PR is one if
-   it lands after): the listed steps show skipped.
+0. **Score Sam's lightning round** once he has worked it: read his `subject_decision` saves since 2026-11-26T05:10Z
+   against `kb/status/subject_title_guesses.json`; per `batch`, count an edit (saved title differs from `guess`) or a
+   skip; the same for COBI's `judged.title`. Tell the four batches who lost (they ask the others for tips) and report
+   COBI's own score. #3874 merged (the docs-only lint skip).
+0a. **The bad splits** (`f-bad-code-splits-in-state-list-s737`): 107 codes are a prefix glued to a course number or a
+   legacy label (Chabot PEAC/HEAG/ATHL, Cerro Coso +C, Porterville +P, Glendale AD ST, LACCD OLD ADL, Allan Hancock's
+   35). Fix where the state-list code is read, not by titling; the `judged.title` of each names the real code.
+0b. **The reversed label** `PSYCH (PSYCHOLOGY)` at San Jose City: `kb/_build_local_subject_titles.py` reads only
+   `TITLE (CODE)`; add `CODE (TITLE)`.
 1. **The 35 held and the 50 under 90** (common-subjects-reference NEXT): file their common subjects (Sam's picks,
    `kb/subject_title_hunt/20261125_stray_codes_a_person_picks.md`, or courses moved in the Local subjects sidebar),
    then rerun `kb/_stray_code_rescore.py` and the dry run for the rest. Waits on Sam's picks.
@@ -98,6 +117,6 @@ waits on the team (its NEXT: the public funding page's phone layout); the Librar
 At sign-off: #3870 and #3873 merged and unsubscribed with their check-ins canceled; #3874 stays watched with one
 check-in (04:30Z) until it merges, then both drop; no artifact watch; no COBIx watcher.
 
-Spend: not available; 2026-11-26T01:13Z to 2026-11-26T03:50Z.
+Spend: not available; 2026-11-26T01:13Z to 2026-11-26T05:15Z.
 
 Opening line: *Greetings, you are SkyTurnstone (Session 738), see SkyWhimbrel's handoff — `docs/session_738_handoff.md` — let's keep rolling with our queue.*
