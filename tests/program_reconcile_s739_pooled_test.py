@@ -23,8 +23,18 @@ Pinned here:
     as well as the verdicts): the renumbers rename codes in 42664 alone and move its verdict alone; and filing 15
     units of general education on any local degree the step could reach turns no passing record into a failing one.
 
+El Camino's entry, the same way (college page reads 45772237973 and 45772822110):
+  * Marketing A.S. 02487 filed general education as 24-34 across both patterns the page prints, and today's scorer
+    reads 51-62 against the degree's 60. The page says ECC GE's 24 is 'Required for local degrees (AA and AS)', so a
+    set step replaces a filed 24-34 with 24 on a local degree. Pinned: the step on the page's words, the joins it
+    refuses (a transfer degree, a certificate, any other filed figure, a page without both sentences, ECC GE worded
+    for another award), and the self-recall over the local degrees holding 24-34: it moves 02487's verdict alone.
+  * Certificates 19861, 19866, 38948 and 43993 are pinned to their own pages (site_pages): each pin's address, rule
+    A binding the page's own heading, and the page printing at least the accept share of the listed courses.
+
 A record another open branch may move is read in either state: the test strips ge_units from its own copy of 06683
-before the step runs, so it reads the same before and after a reconcile files the fill.
+before the step runs, and sets 02487's to the filed 24-34, so it reads the same before and after a reconcile files
+either change.
 
 Run from repo root: python3 tests/program_reconcile_s739_pooled_test.py
 """
@@ -232,7 +242,147 @@ for cn in ("06644", "06647", "06649"):
     f = filed(cn)
     check(score(f, aliases=None) == score(f), "%s, whose list lacks the row, scores the same with the renumbers" % cn)
 
-FLOOR = 40
+# ── El Camino: the general education a local degree takes, and four certificates' own pages ────────────────────
+# College page read 45772237973 (kb/college_reads/el_camino_pooled_next_s739.json), 'Marketing, AS', line for line
+# from 'Total Major Units' down, as the capture reads the page (blank lines between its lines).
+import _program_requirements_college as CO  # noqa: E402
+import _program_requirements_pilot as P  # noqa: E402
+
+ELC = "El Camino College"
+ELC_FOLDER = os.path.join(ROOT, "kb", "program_requirements_college", "el_camino", "records")
+ELC_PAGE = ("Marketing, AS\n\nRequired Core:\nBUS 101 - Introduction to Business 3 units\n"
+            "BUS 110 - Marketing 3 units\nTotal Major Units: 27-28\nGE Patterns\n\nComplete one of the following:\n\n"
+            "ECC GE: 24 units\n\nRequired for local degrees (AA and AS).\n\nCal-GETC: 34 units\n\n"
+            "Required for transfer degrees (AA-T and AS-T).\n\nElectives\n\n"
+            "As needed to reach a minimum of 60 degree-applicable units.\n\nMinimum Degree Total: 60 units\n")
+
+
+def elc_filed(cn):
+    with open(os.path.join(ELC_FOLDER, cn + ".json"), encoding="utf-8") as fh:
+        return json.load(fh)
+
+
+def elc_score(f, record, text):
+    return S.score(record, C.closed_list(ELC, f["control_number"]), text, f.get("award"),
+                   R.prefix_aliases(ELC, year=f.get("catalog_year")), R.packed_codes(ELC))
+
+
+def elc_recon(record, text, award="A.S. Degree", cn="02487"):
+    return R.reconcile(record, text, ELC, award, title="Marketing", control_number=cn, steps=STEPS)
+
+
+print("El Camino: a local degree takes ECC GE's 24")
+f87 = elc_filed("02487")
+rec87 = copy.deepcopy(f87["record"])
+rec87["program"]["ge_units"] = {"min": 24, "max": 34}    # either state: before or after a reconcile applied the step
+rec87["program"].pop("electives_fill_words", None)
+new87, notes87 = elc_recon(rec87, ELC_PAGE)
+check([n["field"] for n in notes87] == ["ge_units"] and new87["program"]["ge_units"] == {"min": 24, "max": 24}
+      and notes87[0]["was"] == {"min": 24, "max": 34},
+      "02487: the filed 24-34 becomes 24, with one note (%r)" % notes87)
+check(notes87 and notes87[0]["words"].startswith("ECC GE: 24 units")
+      and "Required for local degrees (AA and AS)" in notes87[0]["words"],
+      "02487: the note quotes the page's two sentences")
+b87, a87 = elc_score(f87, rec87, ELC_PAGE), elc_score(f87, new87, ELC_PAGE)
+check(not S.passes_live(b87) and (b87["arithmetic"].get("degree") or b87["arithmetic"])["computed"] == [51.0, 62.0],
+      "02487 with 24-34: 51-62 against the degree's 60, failing (%r)" % b87["arithmetic"])
+deg87 = a87["arithmetic"].get("degree") or {}
+check(S.passes_live(a87) and deg87.get("computed") == [51.0, 52.0] and deg87.get("fill") == [8.0, 9.0],
+      "02487 with 24: 51-52, and the page's electives fill the 60 (%r)" % a87["arithmetic"])
+check(elc_recon(rec87, ELC_PAGE, award="A.A- T Degree")[1] == [] and elc_recon(rec87, ELC_PAGE, award="A.S. T Degree")[1] == [],
+      "a transfer degree keeps its figure (Cal-GETC's 34 is its own)")
+check(elc_recon(rec87, ELC_PAGE, award="Certificate of Achievement: 18  or greater semester units")[1] == [],
+      "a certificate is left alone")
+for held_ge in ({"min": 24, "max": 24}, {"min": 34, "max": 34}, {"min": 21, "max": 34}, {"min": 34, "max": 39}):
+    other = copy.deepcopy(rec87)
+    other["program"]["ge_units"] = held_ge
+    check(elc_recon(other, ELC_PAGE)[1] == [], "a record holding %r keeps it: only a filed 24-34 is replaced" % held_ge)
+empty = copy.deepcopy(rec87)
+empty["program"]["ge_units"] = {"min": None, "max": None}
+check(elc_recon(empty, ELC_PAGE)[1] == [], "a record with no general education units takes none from this step")
+one_pattern = ELC_PAGE.replace("Cal-GETC: 34 units\n\nRequired for transfer degrees (AA-T and AS-T).\n\n", "")
+check(elc_recon(rec87, one_pattern)[1] == [], "a page that does not print both sentences replaces nothing")
+swapped = ELC_PAGE.replace("Required for local degrees (AA and AS).", "Required for transfer degrees (AA-T and AS-T).")
+check(elc_recon(rec87, swapped)[1] == [], "ECC GE not worded as the local degrees' pattern replaces nothing")
+check(R.reconcile(rec87, ELC_PAGE, MJC, "A.S. Degree", steps=STEPS)[0]["program"]["ge_units"] == {"min": 24, "max": 34},
+      "the step is El Camino's alone")
+
+print("El Camino: the self-recall over every committed record the step could reach")
+reach, flips = [], []
+for path in sorted(glob.glob(os.path.join(ELC_FOLDER, "*.json"))):
+    with open(path, encoding="utf-8") as fh:
+        f = json.load(fh)
+    prog = (f.get("record") or {}).get("program") or {} if isinstance(f.get("record"), dict) else {}
+    if not (R.awards_match("local", f.get("award")) and R._span_of(prog.get("ge_units")) == (24, 34)):
+        continue
+    reach.append(str(f["control_number"]))
+    trial = copy.deepcopy(f["record"])
+    trial["program"]["ge_units"] = {"min": 24, "max": 24}
+    was, now = S.passes_live(elc_score(f, f["record"], ELC_PAGE)), S.passes_live(elc_score(f, trial, ELC_PAGE))
+    if was != now:
+        flips.append((str(f["control_number"]), was, now))
+check(set(reach) <= {"02481", "02487", "02527", "38839", "38949", "43992"} and len(reach) >= 5,
+      "the local degrees holding 24-34 are the six read (02487 leaves the list once a reconcile applies the step): %r"
+      % reach)
+check(flips in ([("02487", False, True)], []), "the step moves 02487's verdict alone, fail to pass (%r)" % flips)
+
+print("El Camino: four certificates pinned to their own pages")
+PINS = CO.site_pin_entries(ELC)
+WANT = {"19861": ("3552", "Marketing", "Marketing, AS",
+                  "Required Courses:\nBUS 108 - Written Business Communications 3 units\nBUS 110 - Marketing 3 units\n"
+                  "BUS 111 - Digital Marketing 3 units\nBUS 112 - Advertising 3 units\n"
+                  "BUS 113 - Social Media Marketing 3 units\nTotal Units: 15\n"),
+        "19866": ("3622", "Journalism", "Journalism, AA-T",
+                  "Required Courses:\nJOUR 1 - News Writing and Reporting 3 units\n"
+                  "JOUR 8 - Investigative Reporting, Editing, and Entrepreneurship 3 units\n"
+                  "JOUR 6 - Basic Photojournalism 3 units\nor\nPHOT 106 - Basic Photojournalism 3 units\n"
+                  "JOUR 9abcd - Nonfiction Storytelling for Magazines and Digital Media 3 units *\n"
+                  "JOUR 11abcd - News Media Production and Social Media Storytelling 3 units *\n"
+                  "JOUR 12 - Mass Media and Society 3 units\nJOUR 14abcd - Digital Media Storytelling 3 units *\n"
+                  "Total Units: 21\n"),
+        "38948": ("3699", "Entrepreneurial Studies", "Entrepreneurial Studies, AS",
+                  "Required Core:\nBUS 111 - Digital Marketing 3 units\nBUS 113 - Social Media Marketing 3 units\n"
+                  "BUS 124 - Entrepreneurship Start-up Planning and Funding 3 units\n"
+                  "BUS 125 - Entrepreneurship Start-up Operations and Management 3 units\n"
+                  "BUS 127 - Social Entrepreneurship 3 units\nBUS 128 - Think Like an Entrepreneur 1 unit\n"
+                  "CIS 13 - Computer Information Systems 3 units\n3-4 units from:\n"
+                  "BUS 126 - Accounting for Small Business 3 units\nBUS 150 - Financial Accounting 4 units\n"
+                  "3-4 units from:\nBUS 119 - Principles of Retailing Management 3 units\n"
+                  "BUS 120 - Business Management 3 units\nTotal Units: 19-20\n"),
+        "43993": ("3728", "Hybrid, Electric, and Alternative Fuels", "Hybrid, Electric, and Alternative Fuels, AS",
+                  "Required Core: 18 units\nATEC 1 - Introduction to Automotive Service 2 units\n"
+                  "ATEC 22B - Electrical, Electronics and Computer Controlled Systems 8 units\nor\n"
+                  "ATEC 25 - Automotive Electrical Systems 4 units\nand\nATEC 26 - Automotive Electrical Diagnosis 4 units\n"
+                  "ATEC 51 - Introduction to Alternative Fuel Vehicles 2 units\n"
+                  "ATEC 52 - Introduction to Hybrid, Electric and Fuel-Cell Vehicle Technology 3 units\n"
+                  "ATEC 53 - Hybrid, Fuel-Cell and Electric Vehicle Diagnosis & Repair 3 units\nTotal Units: 18\n")}
+check(sorted(PINS) == sorted(WANT), "El Camino's entry pins the four certificates alone (%r)" % sorted(PINS))
+for cn, (poid, title, degree_h1, body) in sorted(WANT.items()):
+    pin = PINS.get(cn) or {}
+    check(pin.get("url") == "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=%s&print" % poid,
+          "%s is pinned to poid %s, in the address form the capture lists" % (cn, poid))
+    award = elc_filed(cn).get("award")
+    prog = {"title": title, "award": award}
+    h1 = "%s Certificate of Achievement" % title
+    own = {"url": pin.get("url"), "title": "Degree & Certificate: %s - El Camino College" % h1, "h1": h1, "body": body}
+    named, _ = CO.site_heading_names(own, prog)
+    sister = dict(own, title="Degree & Certificate: %s - El Camino College" % degree_h1, h1=degree_h1)
+    refused, _ = CO.site_heading_names(sister, prog)
+    check(named, "%s: rule A binds its own page's heading, %r" % (cn, h1))
+    # The reader's rule A reads 'Journalism, AA-T' as naming this certificate too (a finding for the reader's own
+    # review, S739), so the degree page's refusal is pinned for the three local degrees' headings alone; the pin is
+    # what moves 19866.
+    if not degree_h1.endswith("AA-T"):
+        check(not refused, "%s: rule A refuses the degree page the capture handed it (%r)" % (cn, degree_h1))
+    closed = C.closed_list(ELC, cn)
+    listed = {S.norm_code(c.get("code")) for c in closed if c.get("code")}
+    found = set(P.find_codes(body, closed))
+    check(listed and len(found & listed) / len(listed) >= P.ACCEPT_SHARE,
+          "%s: its own page prints %d of its %d listed courses, at least the accept share" % (cn, len(found & listed), len(listed)))
+check(not any("poid=3684&" in (p.get("url") or "") for p in PINS.values()),
+      "the Certificate of Accomplishment's page (poid 3684), another award, is no pin")
+
+FLOOR = 70
 check(checks[0] >= FLOOR, "at least %d checks run (%d)" % (FLOOR, checks[0]))
 print("%d checks, %d failures" % (checks[0], len(failures)))
 for m in failures:
