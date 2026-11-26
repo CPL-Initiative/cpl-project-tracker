@@ -126,7 +126,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "figure_within_variable_units",
+    "label": "A required list's printed figure falls inside the range its variable-unit courses carry, and the page does not say how many units each takes; counting each list at its printed figure, the figures add to the printed total.",
+    "words": "MUS 12 is printed with a 1-4 unit range though the closed list stores 1 unit. | 'Units: 21' printed under Requirements is read as the major total covering all four requirement groups (13 + 3 + 3 + 2 = 21 at minimum)."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 60,
+   "course_list_match": 90,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {
