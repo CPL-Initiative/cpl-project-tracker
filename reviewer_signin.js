@@ -93,7 +93,9 @@
     var back = returnTab || currentTab() || "dashboard";
     if (window.CPL_SESSION && CPL_SESSION.stashReturnTab) CPL_SESSION.stashReturnTab(back);
     else try { sessionStorage.setItem(RETURN_KEY, back); } catch (e) { /* ignore */ }
-    var redirect = encodeURIComponent(location.origin + location.pathname);
+    // The link carries the address too, for a link opened in another browser or a private tab (cpl_session.js).
+    var addr = window.CPL_SESSION && CPL_SESSION.returnAddress ? CPL_SESSION.returnAddress(back) : "";
+    var redirect = encodeURIComponent(location.origin + location.pathname + (addr ? "?cpl_return=" + encodeURIComponent(addr) : ""));
     return fetch(SUPABASE_URL + "/auth/v1/otp?redirect_to=" + redirect, {
       method: "POST",
       headers: { apikey: SUPABASE_ANON, "Content-Type": "application/json" },
