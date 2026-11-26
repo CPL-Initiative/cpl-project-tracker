@@ -1,0 +1,56 @@
+{
+ "_readme": "S739 (the pooled reading's next, lane 1). Two questions at El Camino, read free before any paid read (d-rccd-pilot-no-blind-force-s671). (1) Four certificates (19861 Marketing, 19866 Journalism, 38948 Entrepreneurial Studies, 43993 Hybrid, Electric, and Alternative Fuels) are bound to their sister degree's page ('Marketing, AS', 'Journalism, AA-T'), and each filed record places none of its courses; reconcile 45768189197's capture still binds them there and would send none of them. This read prints each of those four pages as the capture reads it, to see whether the page prints the certificate's own requirements under its own heading, and lists the Programs of Study links that name each title, to see whether the certificate has a page of its own. (2) Marketing A.S. 02487, read from the first of those pages, holds general education as 24-34 ('ECC GE or Cal-GETC'), and today's scorer reads 51-62 against the degree's 60; this read prints how the page words the two patterns for a local degree. Five loads, no model call, nothing written.",
+ "college": "El Camino College",
+ "questions": {
+  "certificate_section": "Whether each degree page prints the certificate's own requirements under a heading that names the certificate, and how that heading reads.",
+  "own_page": "Whether Programs of Study links a page of its own for each certificate, and its address.",
+  "ge_words": "How the page words ECC GE and Cal-GETC for a local degree, the electives line and the degree total."
+ },
+ "keywords": [
+  "Certificate of Achievement[^\\n]{0,160}",
+  "ECC GE[^\\n]{0,200}",
+  "Cal-?GETC[^\\n]{0,200}",
+  "[Ee]lectives?[^\\n]{0,160}",
+  "Minimum Degree Total[^\\n]{0,80}",
+  "Major Total[^\\n]{0,80}",
+  "Total Units[^\\n]{0,80}"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "http://catalog.elcamino.edu/content.php?catoid=13&navoid=886",
+   "links": "Marketing|Journalism|Entrepreneur|Hybrid|Alternative Fuel"
+  },
+  {
+   "answers": [
+    "certificate_section",
+    "ge_words"
+   ],
+   "capture_view": true,
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3551&print"
+  },
+  {
+   "answers": [
+    "certificate_section"
+   ],
+   "capture_view": true,
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3623&print"
+  },
+  {
+   "answers": [
+    "certificate_section"
+   ],
+   "capture_view": true,
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3697&print"
+  },
+  {
+   "answers": [
+    "certificate_section"
+   ],
+   "capture_view": true,
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3729&print"
+  }
+ ]
+}

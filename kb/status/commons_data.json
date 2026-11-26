@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-26T06:53:00Z",
+ "written_at": "2026-11-26T06:58:35Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17413,
-  "gap": 4922,
+  "passing": 17412,
+  "gap": 4923,
   "with_gap": 118,
-  "cost_usd": 1341.14,
-  "passed_at_read": 16414,
+  "cost_usd": 1341.15,
+  "passed_at_read": 16416,
   "cost_receipts": 118,
   "spent_usd": 1243.5,
   "spent_runs": 223,
@@ -189,9 +189,9 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16882,
-  "gap": 4922,
-  "collected_with_gaps": 531,
+  "passing": 16884,
+  "gap": 4923,
+  "collected_with_gaps": 528,
   "discontinued": 0
  },
  "census_live": {
@@ -4337,13 +4337,13 @@
    "harvested": true,
    "slug": "el_camino",
    "programs": 189,
-   "passing": 114,
-   "gap": 75,
+   "passing": 113,
+   "gap": 76,
    "causes": {
     "no_closed_list": 54,
     "page_not_found": 9,
     "places_none": 4,
-    "unknown_without_live": 8
+    "unknown_without_live": 9
    },
    "census_causes": {
     "no_closed_list": 54,
@@ -4366,10 +4366,10 @@
    "outcomes_file": null,
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-19T08:02:49Z",
+   "read_at": "2026-11-26T06:27:07Z",
    "read_kind": "capture",
-   "cost_usd": 8.13,
-   "passed_at_read": 93,
+   "cost_usd": 8.14,
+   "passed_at_read": 95,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -4384,7 +4384,7 @@
    "failed_checks": {
     "coverage": 4,
     "invented": 0,
-    "arithmetic": 33,
+    "arithmetic": 31,
     "repeated": 0,
     "outcomes": 0
    },
@@ -4394,12 +4394,12 @@
    "capture_root": "http://catalog.elcamino.edu/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1414.3,
-   "run": "44480396671",
+   "read_seconds": 1376.1,
+   "run": "45768189197",
    "levers": {
     "program_course_file_check": 54,
     "reader_page_search": 9,
-    "reconcile_steps": 8,
+    "reconcile_steps": 9,
     "reader_page_assignment": 4
    },
    "collection": {
@@ -4408,9 +4408,9 @@
      "models": {
       "claude-opus-5-5": 126
      },
-     "run": "44480396671",
-     "at": "2026-11-19T08:02:49Z",
-     "cost_usd": 8.13,
+     "run": "45768189197",
+     "at": "2026-11-26T06:27:07Z",
+     "cost_usd": 8.14,
      "platform": "acalog"
     },
     "slo_read": null,
