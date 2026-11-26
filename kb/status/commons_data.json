@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-26T15:35:17Z",
+ "written_at": "2026-11-26T15:51:58Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -171,8 +171,8 @@
   "passing": 17531,
   "gap": 4804,
   "with_gap": 118,
-  "cost_usd": 1341.61,
-  "passed_at_read": 16455,
+  "cost_usd": 1341.32,
+  "passed_at_read": 16457,
   "cost_receipts": 118,
   "spent_usd": 1244.44,
   "spent_runs": 240,
@@ -11973,10 +11973,10 @@
    "outcomes_file": "kb/status/commons_data_programs/ventura.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-19T11:29:46Z",
+   "read_at": "2026-11-26T15:20:04Z",
    "read_kind": "capture",
-   "cost_usd": 12.81,
-   "passed_at_read": 143,
+   "cost_usd": 12.52,
+   "passed_at_read": 145,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -11986,12 +11986,12 @@
    },
    "listed_closed": 178,
    "found": 174,
-   "extracted": 174,
+   "extracted": 173,
    "errors": 0,
    "failed_checks": {
-    "coverage": 3,
-    "invented": 1,
-    "arithmetic": 31,
+    "coverage": 1,
+    "invented": 0,
+    "arithmetic": 28,
     "repeated": 0,
     "outcomes": 0
    },
@@ -12001,8 +12001,8 @@
    "capture_root": "https://catalog.vcccd.edu/ventura/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1542.9,
-   "run": "44514835321",
+   "read_seconds": 1500.5,
+   "run": "45847865286",
    "levers": {
     "reconcile_steps": 11,
     "program_course_file_check": 6,
@@ -12018,9 +12018,9 @@
      "models": {
       "claude-opus-5-5": 173
      },
-     "run": "44514835321",
-     "at": "2026-11-19T11:29:46Z",
-     "cost_usd": 12.81,
+     "run": "45847865286",
+     "at": "2026-11-26T15:20:04Z",
+     "cost_usd": 12.52,
      "platform": "courseleaf"
     },
     "slo_read": null,
