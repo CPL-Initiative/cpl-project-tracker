@@ -208,5 +208,28 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   (`CPL_READER_PAGE_CHECKS=0` would turn the rules off statewide). Santa Ana 12242 is clear of rule B (no record, not
   marked; `page_type` "other", 32 of 34 courses found).
 - Records collected by 16:11Z: 64 (adds s740r3 1).
+- 16:12Z: Copper Mountain's reread 45855997214 posted the eight at 45855512160; 18519 live and passing.
+- 16:13Z: `reconcile`'s second batch (head `b0e4977b`): s740c3 San Bernardino Valley 6, s740c4 San Jose City 4, s740c5
+  San Jose City 2 and s740c6 Solano 1 (42041), all named gaps; then it stopped. 16:19Z: its reader (Sonnet): APPLY on
+  all four. MINORs: 42041's evidence says Human Services sits on p.303 where 08337's note reads p.304 (reword); San
+  Bernardino Valley 22771 and 22776 sum at the top of their printed ranges (24 in 20-24, 44 in 40-44). **DECIDED**
+  `d-waived-course-counted-at-range-top-s740`: `waived_course_counted` stands for both, since the gap names the
+  record's own reading fault (it counted the 0-4 unit course the page lets a student waive, so its low end misses the
+  printed one), which S739's within-range rule (a record with nothing wrong) does not cover. 16:20Z: clean pre-reads
+  (6 of 6, 4 of 4, 2 of 2, 1 of 1); migrate 45857815541 returned 6 (s740c3), 45858064730 returned 4 (s740c4); s740c5
+  and s740c6 applying.
+- 16:13Z: Sam's plain session merged #3889 and #3890 (the sign-in pane and the magic link) to `main` at 15:51Z and
+  16:12Z; no file shared with tonight's branches, and no other open PR.
+- 16:24Z: `reads` pushed s740r4 on `claude/s740-reads-cm` (head `d16bd570`): Registered Nursing 16657
+  `prerequisites_counted`, six held. To a Sonnet reader.
+- 16:25Z: `piles` final (head `9bc1cb5f`): 23 named gaps applied in all, 41150 passing; step 6 (discontinued flags,
+  units rules, retired courses) filed nothing over its colleges. Left for the next session: Ventura's read (a new
+  `tabs_with_prose` opt-in, shared reader config no reader has seen, so it waits for one: `sources_from=45853684392`,
+  `only=35654,37415,44994,44995,40179,06948,08253`, `force=06948,08253`, then its reread). 16:25Z: Orange Coast's paid
+  read dispatched on `claude/s740-piles` (only and force 03954, 08664, 31217; page read 45851759039 shows the
+  Requirements tabs).
+- 16:26Z: spend at the repo's rates $180.09 (16:24Z), so no new collection worker; `land` (Sonnet) started on
+  `claude/s740-land` off `main`, to carry all five branches in one PR.
+- Records collected by 16:24Z: 75 (adds Copper Mountain 18519, s740c3 6, s740c4 4).
 - 13:31Z: `piles`, `reads` and `reconcile` started on Fable 5.2 at high effort, each in its own worktree off `609c2a2b`
   (`/home/user/wt/<name>`), told to open no PR (the conductor opens each land) and to leave `.apply` to the conductor.
