@@ -133,5 +133,8 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   land, not the writes: both Commons sidecars were built before the reconcile filed and must be rebuilt after the
   reread posts. NITs: 19268's pool admits list d into list e's choice (the count stays 18); Copper Mountain's display
   link becomes the PDF. 14:55Z: Santa Ana's reread (force 45841675928) and Copper Mountain's load dispatched.
+- 15:01Z: live: Copper Mountain 41085 and 43132 inserted and passing (arithmetic equal); Santa Ana's 66 rows at
+  45841675928, with 18581, 18582, 19268 and 31980 now passing. Records collected so far: 14 (Cerritos 2, s740a to
+  s740c 6, Copper Mountain 2, Santa Ana 4). `reads`' plan s740r2 (Santa Ana, 8 named gaps, 3 held) is being committed.
 - 13:31Z: `piles`, `reads` and `reconcile` started on Fable 5.2 at high effort, each in its own worktree off `609c2a2b`
   (`/home/user/wt/<name>`), told to open no PR (the conductor opens each land) and to leave `.apply` to the conductor.
