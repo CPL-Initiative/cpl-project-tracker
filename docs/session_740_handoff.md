@@ -209,3 +209,8 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   that branch's receipts before its first push.
 - 09:51Z and 09:54Z: migrate 45795171251 returned 11 (s739i) and 45795874952 returned 4 (s739j), none skipped;
   `.apply` restored on `claude/s739-piles` (`53ec5da1`).
+- 09:55Z: #3883 at `36ba8d32` failed lints 6 (run 45794921914). 10:17Z: fixed (`8aa14169`):
+  `tests/program_piles_s727_canyons_test.py` pinned 15477's run, which s739c's receipt moves (it takes
+  `skip=("s727a","s739c")`); the worker ran all 47 piles and reconcile tests and shard 6's other steps first. An
+  older plan's test that pins posted runs fails when a later plan posts on top of it
+  (`p-older-pile-tests-pin-runs-later-plans-move-s739`); `piles2` told to run all 47 before its push.
