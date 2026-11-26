@@ -763,9 +763,13 @@ check("a page whose visible text prints its own Total Units line is read as befo
 other = dict(ems_got, tabPanels=[{"label": "REQUIREMENTS", "id": "r", "text": "Course List\nNURS 221\tNursing\t12\nTotal Units\t12"}])
 check("a hidden tab that names fewer of the courses is not appended",
       P.best_text(other, fb, {}, ems_courses, True)[2] == "innerText")
-check("Victor Valley's entry opts in; no other college does",
+# S740 adds Ventura (four records read from an Overview that names every course, the REQUIREMENTS tab and its total
+# never read: college-page-read 45837455365); each opt-in names the page read that shows the tab and its total.
+check("Victor Valley's entry opts in, and Ventura's (S740); no other college does",
       R.load_steps()[VV].get("tabs_with_prose") is True
-      and [c for c, e in R.load_steps().items() if e.get("tabs_with_prose")] == [VV])
+      and [c for c, e in R.load_steps().items() if e.get("tabs_with_prose")] == ["Ventura College", VV]
+      and all("college-page-read" in R.load_steps()[c]["tabs_with_prose_why"].lower() for c in ("Ventura College", VV))
+      and "45837455365" in R.load_steps()["Ventura College"]["tabs_with_prose_why"])
 no_total = dict(ems_got, tabPanels=[{"label": "REQUIREMENTS", "id": "r", "text": ems_tab.replace("\nTotal Units\t8", "")}])
 check("a tab that names both courses but prints no Total Units line is not appended",
       P.best_text(no_total, fb, {}, ems_courses, True)[2] == "innerText")

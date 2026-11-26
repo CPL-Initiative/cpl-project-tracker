@@ -2002,6 +2002,12 @@
     }
    ]
   },
+  "Ventura College": {
+   "why": "S740 (piles): no reconcile step; the entry opts the capture into reading a page's hidden tabs beside an Overview that names every course.",
+   "steps": [],
+   "tabs_with_prose": true,
+   "tabs_with_prose_why": "S740: four records (35654 and 37415 Basic Law Enforcement Academy, 44994 and 44995 English for Multilingual Students Level 3) were read from the Overview alone, because its prose names every listed course ('consists of two courses' POSC V01A and POSC V01; 'This 10-unit certificate consists of two out of three sequential courses: Academic Listening and Speaking I (ENGM V01L) or', naming all three) and so reached the share before the hidden tabs were looked at; each record's own note says the REQUIREMENTS tab was not in the text. College-page-read 45837455365 read the four pages as the capture reads them: the REQUIREMENTS tab prints the course table and its total ('POSC V01 Basic Law Enforcement Academy 32 · POSC V01A Orientation for P.O.S.T. Regular and Modular Academy 3.5 · Total Units for the Certificate 35.5'; 'Total Units for the A.S. Degree 60'; 'ENGM V01L ... 4 · or ENGM V02L · ENGM V03L ... 4 · Total Units for the Certificate 8' on both ENGM pages), and no 'Total Units' line prints in the visible text. The paid read 45847865286 made no extraction call for them: the capture chose innerText again, so each page read unchanged. The capture appends the tabs where the visible text prints no Total Units line and a tab names as many of the courses and prints one (kb/_program_requirements_pilot.py best_text; Victor Valley's opt-in, S639). What else the opt-in moves at Ventura is measured by a free capture before any paid read."
+  },
   "Victor Valley College": {
    "tabs_with_prose": true,
    "tabs_with_prose_why": "S639: four EMS certificates (38353, 38366, 38502, 38503) were read from the Overview alone, because its sentence names every course ('This certificate is for successful completion of EMS 82 Paramedic Cardiology and EMS 83 Paramedic Pharmacology') and so reached the share before the hidden tabs were looked at; the REQUIREMENTS tab prints 'EMS 82 Paramedic Cardiology 4.5 · EMS 83 Paramedic Pharmacology 3.5 · Total Units 8' (college-page-read 43136401325). The capture appends the tabs where the visible text prints no Total Units line and a tab names as many of the courses and prints one (kb/_program_requirements_pilot.py best_text). Measured on the capture of reconcile 43139057384: the four EMS certificates moved from innerText to innerText+tabs on the same pages, and no other program's chosen page or text field moved (20545 and 38852 lost their sources under the S449 page rules, not this flag; 42301 stayed). Their filed readings still lack the units: a re-extraction of the four reads the tab.",
@@ -3270,6 +3276,126 @@
     }
    },
    "pdf_pages_why": "S720 (lever, the gap census's reader_page_assignment lever, run 45319725062): each program's extraction placed none of the state's listed courses, because the picker handed it a sibling award's section, the department's list of awards or the course descriptions. Each is pinned to its own section in the college's 2026-27 catalog PDF (the file the capture reads, the same byte count), read page for page by college-page-read run 45341735139: the page and words its heading opens on, `through` the page its section ends on, and `until` the words the next section opens on, so the window holds that section alone. The others on the lever are named gaps (named_gaps_s720.json)."
+  },
+  "Shasta College": {
+   "why": "S740 (piles): no reconcile step; the entry holds one course the catalog prints under another subject code on one page.",
+   "steps": [],
+   "course_renumbers": {
+    "SOC C1000": "SOCIC1000"
+   },
+   "course_renumbers_cited": [
+    {
+     "printed": "SOC C1000",
+     "file": "SOCIC1000",
+     "title": "Introduction to Sociology",
+     "units": 3,
+     "session": "S740",
+     "date": "2026-11-26",
+     "catalog_sources": [
+      "college_page_read"
+     ],
+     "evidence": "same number, title and units in the same catalog. College-page-read run 45837455365: the 2026-2027 catalog PDF prints 'SOC C1000 Introduction to Sociology (3)' once, in the Earth Sciences University Studies emphasis (p.75, the Anthrosphere Requirement, beside 'SOC 25 Race, Ethnicity, and Society (3)'), and prints the same course as 'SOCI C1000 Introduction to Sociology (3)' or 'SOCI C1000 Introduction to Sociology 3' on pp.81, 82, 83, 87, 89, 90 and 100. The state's file lists it as SOCIC1000 and lists no SOC C1000 at Shasta. Read only where the file lists SOCIC1000 and not the printed code (18655 alone among the filed records). Reversible by deleting the pair."
+    }
+   ]
+  },
+  "Los Angeles Trade Technical College": {
+   "why": "S740 (piles): no reconcile step; the entry holds the courses the catalog prints under a misspelled subject code where the state's file lists them, each cited by the title and units both print.",
+   "steps": [],
+   "course_renumbers": {
+    "BLDGTCQ 007": "BLDGCTQ 7",
+    "BLDGTCQ 008": "BLDGCTQ 8",
+    "BLDGTCQ 009": "BLDGCTQ 9",
+    "PLUMBING 028": "PLUMBNG 28",
+    "DIGMD 100": "DIGLMD100",
+    "DIGMD 101": "DIGLMD 101",
+    "DIGMD 104": "DIGLMD 104"
+   },
+   "course_renumbers_cited": [
+    {
+     "printed": "BLDGTCQ 007",
+     "file": "BLDGCTQ 7",
+     "title": "Weatherization - Practical Energy Efficiency Techniques",
+     "units": 3,
+     "session": "S740",
+     "date": "2026-11-26",
+     "catalog_sources": [
+      "college_page_read"
+     ],
+     "evidence": "College-page-read run 45837455365, the 2026-2027 catalog PDF. p.150 prints 'BLDGTCQ 007 Weatherization – Practical Energy Efficiency Techniques 3' in the Solar Thermal elective list, three lines above 'BLDGCTQ 012 Energy Auditor – Residential Practices 1' spelled as the file spells the subject; the state's file lists BLDGCTQ 7 Weatherization - Practical Energy Efficiency Techniques, 3 units (CCC000524957), and no BLDGTCQ subject."
+    },
+    {
+     "printed": "BLDGTCQ 008",
+     "file": "BLDGCTQ 8",
+     "title": "Weatherization-Energy Efficiency Practices",
+     "units": 1,
+     "session": "S740",
+     "date": "2026-11-26",
+     "catalog_sources": [
+      "college_page_read"
+     ],
+     "evidence": "College-page-read run 45837455365, the 2026-2027 catalog PDF. p.150 prints 'BLDGTCQ 008 Weatherization – Energy Efficiency Practices 1'; the state's file lists BLDGCTQ 8 Weatherization-Energy Efficiency Practices, 1 unit (CCC000525019)."
+    },
+    {
+     "printed": "BLDGTCQ 009",
+     "file": "BLDGCTQ 9",
+     "title": "Energy Auditor - Residential",
+     "units": 3,
+     "session": "S740",
+     "date": "2026-11-26",
+     "catalog_sources": [
+      "college_page_read"
+     ],
+     "evidence": "College-page-read run 45837455365, the 2026-2027 catalog PDF. p.150 prints 'BLDGTCQ 009 Energy Auditor – Residential 3'; the state's file lists BLDGCTQ 9 Energy Auditor - Residential, 3 units (CCC000525009). BLDGTCQ 014 is left out: the catalog prints 'Carpentry for Solar Installation 4' where the file's BLDGCTQ 14 is titled 'Carpentry and Construction for Renewable Energy Installers'."
+    },
+    {
+     "printed": "PLUMBING 028",
+     "file": "PLUMBNG 28",
+     "title": "Plumbing Code I",
+     "units": 3,
+     "session": "S740",
+     "date": "2026-11-26",
+     "catalog_sources": [
+      "college_page_read"
+     ],
+     "evidence": "College-page-read run 45837455365, the 2026-2027 catalog PDF. p.150 prints 'or - PLUMBING 028 Plumbing Code I (3)' twice, and p.148 'or - Plumbing 028 Plumbing Code I (3)'; the state's file lists PLUMBNG 28 Plumbing Code I, 3 units (CCC000253564). S739's plan s739e read the same pair for 02911 and 21855 from their notes."
+    },
+    {
+     "printed": "DIGMD 100",
+     "file": "DIGLMD100",
+     "title": "Introduction to Digital Media",
+     "units": 3,
+     "session": "S740",
+     "date": "2026-11-26",
+     "catalog_sources": [
+      "college_page_read"
+     ],
+     "evidence": "College-page-read run 45837455365, the 2026-2027 catalog PDF. The Fashion Media certificate (p.182) prints 'DIGMD 100 Introduction to Digital Media 3'. The catalog prints the same number under the file's subject with both titles: 'DIGLMD 100 Introduction to Digital Media 3' on p.183, and 'DIGLMD 100 Introduction to Digital Video 3' in the Digital Media department's own lists (pp.175 to 177), which is the file's title (DIGLMD 100 INTRODUCTION TO DIGITAL VIDEO, 3 units, CCC000527036). So a catalog line shows DIGLMD 100 under the title p.182 prints (S739's second reader on s739e asked for that line). No DIGMD subject is in the file."
+    },
+    {
+     "printed": "DIGMD 101",
+     "file": "DIGLMD 101",
+     "title": "Fundamentals of Digital Media",
+     "units": 3,
+     "session": "S740",
+     "date": "2026-11-26",
+     "catalog_sources": [
+      "college_page_read"
+     ],
+     "evidence": "College-page-read run 45837455365, the 2026-2027 catalog PDF. p.182 prints 'DIGMD 101 Fundamentals of Digital Media 3'; pp.175 to 177 and 183 print 'DIGLMD 101 Fundamentals of Digital Media 3', and the state's file lists DIGLMD 101 Fundamentals of Digital Media, 3 units (CCC000526954)."
+    },
+    {
+     "printed": "DIGMD 104",
+     "file": "DIGLMD 104",
+     "title": "Digital Media Entrepreneurship",
+     "units": 3,
+     "session": "S740",
+     "date": "2026-11-26",
+     "catalog_sources": [
+      "college_page_read"
+     ],
+     "evidence": "College-page-read run 45837455365, the 2026-2027 catalog PDF. p.182 prints '-or- DIGMD 104 Digital Media Entrepreneurship (3)'; pp.175 to 177 print 'DIGLMD 104 Digital Media Entrepreneurship 3', and the state's file lists DIGLMD 104 Digital Media Entrepreneurship, 3 units (CCC000617251)."
+    }
+   ]
   },
   "Saddleback College": {
    "why": "S731: the repeat steps for the seven records S730's plan s730b held on the reconcile lever (p-gap-filing-leaves-census-lever-s721).",

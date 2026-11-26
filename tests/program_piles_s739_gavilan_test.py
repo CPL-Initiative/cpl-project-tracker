@@ -69,14 +69,24 @@ check("08464" in [str(k) for k in reread["replaced_keys"]] and str(reread["extra
 check(all(not W.shared_with(cn) for cn in M.KEYS), "each record was read from a page no other record was read from")
 
 # A sum inside the printed range is no disagreement: the four hold.
+_S740A = os.path.join(NG.RECEIPTS, "program_requirement_records_piles_s740_gavilan_2026-11-26_s740a.json")
+S740A = {}
+if os.path.isfile(_S740A):
+    with open(_S740A, encoding="utf-8") as fh:
+        S740A = {r["control_number"]: r["moves_to"] for r in json.load(fh)["records"]}
 check(set(M.WITHIN) == {"08460", "19378", "38787", "41394"}, "the four within-range records are pinned")
 for cn, (comp, st) in M.WITHIN.items():
     f = W.load(cn)
     a = f["score"]["arithmetic"]
     check(B.same(a["computed"], comp) and B.same(a["stated"], st) and M.within(a["computed"], a["stated"])
           and st[0] < st[1], "%s: its sum %s sits inside its printed range %s" % (cn, comp, st))
-    check(not f["score"].get("gaps") and not f["score"].get("confidence") and not B.S.passes_live(f["score"]),
-          "%s: its record carries no gap and does not pass" % cn)
+    # Either state, each exact (S740's second reader): no gap, as s739m left it; or the units within-range kind
+    # alone, and then only as the row s740a's own receipt names (a filing by any other road fails here).
+    got = [g.get("gap") for g in f["score"].get("gaps") or []]
+    check((got == [] or (got == ["units_within_printed_range"] and S740A.get(cn) == "units_within_printed_range"))
+          and not B.S.passes_live(f["score"]),
+          "%s: its record carries no gap, or the units within-range kind as s740a's receipt names it, and does not "
+          "pass" % cn)
 check(not any(M.within(W.load(cn)["score"]["arithmetic"]["computed"], W.load(cn)["score"]["arithmetic"]["stated"])
               for cn in ROWS), "no row of the plan adds to a sum inside its printed range")
 check(M.within([27, 27], [26, 27]) and M.within([53, 60], [48, 60]) and not M.within([65, 72], [64, 64])

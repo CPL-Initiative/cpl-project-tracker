@@ -1094,6 +1094,63 @@ jobs:
       - name: Cheap piles S739 at Ventura (the earlier holds, named gaps, the plan)
         if: matrix.shard == 6
         run: python3 tests/program_piles_s739_ventura_test.py
+      # S740: units_within_printed_range, the units twin of hours_within_printed_range (score 50), filed from a
+      # reviewed list and by no record rule; its statewide self-recall on held answers (synthetic: the scorer's own
+      # verdict over every passing units record; real: the hand answers committed plans hold).
+      - name: Units within the printed range (S740, the kind and its statewide self-recall)
+        if: matrix.shard == 1
+        run: python3 tests/program_units_within_s740_test.py
+      # S740 at Gavilan (s740a): the six records s739m held, 4 collected under the units within-range kind, 2 held.
+      - name: Cheap piles S740 at Gavilan (the units within-range kind, the plan)
+        if: matrix.shard == 2
+        run: python3 tests/program_piles_s740_gavilan_test.py
+      # S740 at Orange Coast (s740b): 41373, rolled back from s739j, collected under the units within-range kind.
+      - name: Cheap piles S740 at Orange Coast (the rolled-back row under the units within-range kind, the plan)
+        if: matrix.shard == 3
+        run: python3 tests/program_piles_s740_orangecoast_test.py
+      # S740 at College of the Canyons (s740c): 36793, s739c's one hold, collected under the units within-range kind.
+      - name: Cheap piles S740 at College of the Canyons (the units within-range kind, the plan)
+        if: matrix.shard == 4
+        run: python3 tests/program_piles_s740_canyons_test.py
+      # S740: the cited course renumbers at Shasta (SOC C1000) and Los Angeles Trade-Technical (BLDGTCQ, PLUMBING,
+      # DIGMD), each pair with its page-read citation; what a fresh score moves with them read.
+      - name: Course renumbers S740 at Shasta and Los Angeles Trade-Technical (cited pairs, the fresh score)
+        if: matrix.shard == 5
+        run: python3 tests/program_renumbers_s740_test.py
+      # S740 at Cabrillo (s740d): the 13 records s720b held, read again by key: 7 collected with named gaps (no new
+      # kind), 6 held (four on a reconcile wording rule, one on no proved live run, one with no kind).
+      - name: Cheap piles S740 at Cabrillo (the earlier holds, named gaps, the plan)
+        if: matrix.shard == 6
+        run: python3 tests/program_piles_s740_cabrillo_test.py
+      # S740 at El Camino (s740e): the eight records s720m held, read again by key: 4 collected with named gaps (no
+      # new kind), 4 held (no proved live run, another program's page, two with no kind).
+      - name: Cheap piles S740 at El Camino (the earlier holds, named gaps, the plan)
+        if: matrix.shard == 1
+        run: python3 tests/program_piles_s740_elcamino_test.py
+      # S740 at Santa Monica (s740f): the three records s720s held, 41797 collected under the units within-range
+      # kind (own_heading on a shared PDF page), 2 held.
+      - name: Cheap piles S740 at Santa Monica (the units within-range kind, the plan)
+        if: matrix.shard == 2
+        run: python3 tests/program_piles_s740_smc_test.py
+      # S740 at Contra Costa (s740g): five of s720k's six holds, 2 collected with named gaps (one read against
+      # today's arithmetic), 3 held.
+      - name: Cheap piles S740 at Contra Costa (the earlier holds, named gaps, the plan)
+        if: matrix.shard == 3
+        run: python3 tests/program_piles_s740_contracosta_test.py
+      # S740 at Butte (s740h): the three records s721e still holds, 1 collected with a named gap, 2 held.
+      - name: Cheap piles S740 at Butte (the earlier holds, a named gap, the plan)
+        if: matrix.shard == 4
+        run: python3 tests/program_piles_s740_butte_test.py
+      # S740 at Shasta (s740i): 18655, collectable since the cited renumber's reconcile and reread, collected with a
+      # named gap; 18625 and 32162 held.
+      - name: Cheap piles S740 at Shasta (the reconciled record, a named gap, the plan)
+        if: matrix.shard == 5
+        run: python3 tests/program_piles_s740_shasta_test.py
+      # S740 at Los Angeles Trade-Technical (s740j): 31089, collectable since the cited renumbers' reconcile and
+      # reread, collected with a named gap; 41150 passes; 3 held.
+      - name: Cheap piles S740 at Los Angeles Trade-Technical (the reconciled record, a named gap, the plan)
+        if: matrix.shard == 6
+        run: python3 tests/program_piles_s740_lattc_test.py
       # Discontinued programs (S680; Sam, 2026-11-17 on #3480): a program's own catalog section marks it,
       # or a prior year prints it and this year does not; flagged out of the gap, never deleted. Pure stdlib.
       - name: Discontinued programs (own-section mark, out of the gap, the file is current)

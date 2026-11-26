@@ -1,0 +1,276 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30); Sam's routine prompt of 2026-11-25, as the S739 conductor's brief carries it: a record held for a gap is collected with its gap named and a lower score on the 0-100 bar, never held, unless the record is not the program's own; S739: Santa Monica's records kb/receipts/program_requirement_records_piles_smc_2026-11-24_s720s.json held, read again by key: passed by a rescore where today's scorer's one reading moves them, else collected with their gaps named where the record is the program's own (no reread, no reconcile)",
+ "at": "2026-11-26T15:05:04Z",
+ "college": "Santa Monica College",
+ "keys": {
+  "from": "kb/receipts/program_requirement_records_piles_smc_2026-11-24_s720s.json",
+  "members": [
+   "21026",
+   "41797",
+   "43767"
+  ]
+ },
+ "gaps": {
+  "units_within_printed_range": "The courses' units as read fall within the printed range of units rather than matching it."
+ },
+ "moved": 1,
+ "by": {
+  "units_within_printed_range": 1
+ },
+ "precision": {
+  "read": 3,
+  "right": 3,
+  "wrong": [],
+  "no_record_file": 0,
+  "not_hand_held": 0,
+  "by_answer": {
+   "none": 2,
+   "units_within_printed_range": 1
+  }
+ },
+ "claim_checks": {
+  "counts": {
+   "stands": 1
+  },
+  "not_standing": []
+ },
+ "boundaries": {
+  "counts": {
+   "the program measured in hours right": 1,
+   "the sum at the range's low end right": 1,
+   "the stated total one unit off right": 1,
+   "coverage failing right": 1,
+   "the within shape broken right": 1,
+   "its own section not shown right": 1
+  },
+  "wrong": []
+ },
+ "held": [
+  {
+   "control_number": "21026",
+   "why": "held: its notes quote only the printed 26.5 (none quotes the 27.5 its courses add to, which 03302's note does), so no kind's sentence holds on its own words",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "43767",
+   "why": "held: its Barbering heading is inferred (on a page the read did not hold) and capture.json's shared_pages puts its page with 03302 and 40812: whether it read its own section is a page read",
+   "claim": "no entry stands"
+  }
+ ],
+ "records": [
+  {
+   "college": "Santa Monica College",
+   "control_number": "41797",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "extracted_run": "39567439681",
+   "moves_to": "units_within_printed_range",
+   "words": "the courses' units add to 14-15, within the printed 13-15 units",
+   "confidence": {
+    "unit_arithmetic": 50,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "own": "own_heading",
+   "path": "kb/program_requirements_college/santa_monica/records/41797.json",
+   "before_image": {
+    "program_title": "QuickBooks Virtual Enterprise",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=113",
+    "measure": "units",
+    "total_min": 13,
+    "total_max": 15,
+    "record": {
+     "program": {
+      "section_heading": "Quickbooks Virtual Enterprise, Certificate of Achievement",
+      "measure": "units",
+      "total_units": {
+       "min": 13,
+       "max": 15
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "students will demonstrate proficiency and self-confidence in using QuickBooks Desktop, QuickBooks Online, and Excel, as well as the accounting foundation needed to use these programs.",
+       "Students will apply self-discipline and professional communication techniques in an office environment.",
+       "Students will also employ interpersonal and critical thinking skills, as well as problem solving."
+      ],
+      "careers": [
+       "QuickBooks ProAdvisors"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Accounting: ACCTG 1",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Accounting",
+       "stated": {
+        "min": 5,
+        "max": 5
+       },
+       "courses": [
+        {
+         "code": "ACCTG 1",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Accounting: ACCTG 21 and ACCTG 22",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Accounting",
+       "stated": {
+        "min": 6,
+        "max": 6
+       },
+       "courses": [
+        {
+         "code": "ACCTG 21",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ACCTG 22",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Excel",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "ACCTG 31A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ACCTG 31B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CIS 30",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Other Specialty",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 6,
+        "max": 6
+       },
+       "courses": [
+        {
+         "code": "CIS 2",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "CIS 35A",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "CIS 35B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 9,
+     "listed": 9
+    },
+    "extracted_run": "39567439681"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 9,
+     "listed": 9,
+     "gaps": [
+      "units_within_printed_range"
+     ],
+     "confidence": {
+      "unit_arithmetic": 50,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 1
+  }
+ ],
+ "live_run_proof": null,
+ "shared_pages": {
+  "41797": [
+   "38087",
+   "38088",
+   "38524"
+  ]
+ },
+ "representation": "checks.gaps and checks.confidence added as the load reads the filed score (a passing row: checks.arithmetic to equal); checks.coverage, invented and the record unchanged",
+ "claim_check_reads": "Today's capture (sources.json): every course an entry names among the codes it found, and a course an entry says the printed total leaves out on neither it nor the state's list. A note's quoted figures are the reader's words, never re-read here.",
+ "follow_verdict": "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows (confirm_matches); the apply aborts, writing nothing, unless the count is 0.",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Santa Monica College', '41797', 39567439681, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ACCTG 1\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Accounting: ACCTG 1\",\"option_group\":\"Accounting\",\"rule\":\"all\",\"stated\":{\"max\":5,\"min\":5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ACCTG 21\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ACCTG 22\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Accounting: ACCTG 21 and ACCTG 22\",\"option_group\":\"Accounting\",\"rule\":\"all\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ACCTG 31A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ACCTG 31B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CIS 30\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Excel\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"CIS 35A\",\"units\":3}],\"catalog_addition\":false,\"code\":\"CIS 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CIS 35B\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Other Specialty\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":6,\"min\":6}}],\"program\":{\"careers\":[\"QuickBooks ProAdvisors\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"students will demonstrate proficiency and self-confidence in using QuickBooks Desktop, QuickBooks Online, and Excel, as well as the accounting foundation needed to use these programs.\",\"Students will apply self-discipline and professional communication techniques in an office environment.\",\"Students will also employ interpersonal and critical thinking skills, as well as problem solving.\"],\"section_heading\":\"Quickbooks Virtual Enterprise, Certificate of Achievement\",\"total_units\":{\"max\":15,\"min\":13}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"units_within_printed_range\"],\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "pre_read_md5": "with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) as (values\n  (1, 'Santa Monica College', '41797', 39567439681, 'b3111086b2b1b9cb557e71713ac4a97a', '88e2495efd06d1573c7fb0fe096e2788', 'ba6eb6cd297d917caa612a8253e8e42a'))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.record::text) = v.rec_md5),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.checks::text) = v.chk_md5),\n  'already_after', count(*) filter (where md5(r.checks::text) = v.after_md5),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Santa Monica College', '41797', 39567439681, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ACCTG 1\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Accounting: ACCTG 1\",\"option_group\":\"Accounting\",\"rule\":\"all\",\"stated\":{\"max\":5,\"min\":5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ACCTG 21\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ACCTG 22\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Accounting: ACCTG 21 and ACCTG 22\",\"option_group\":\"Accounting\",\"rule\":\"all\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ACCTG 31A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ACCTG 31B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CIS 30\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Excel\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"CIS 35A\",\"units\":3}],\"catalog_addition\":false,\"code\":\"CIS 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CIS 35B\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Other Specialty\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":6,\"min\":6}}],\"program\":{\"careers\":[\"QuickBooks ProAdvisors\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"students will demonstrate proficiency and self-confidence in using QuickBooks Desktop, QuickBooks Online, and Excel, as well as the accounting foundation needed to use these programs.\",\"Students will apply self-discipline and professional communication techniques in an office environment.\",\"Students will also employ interpersonal and critical thinking skills, as well as problem solving.\"],\"section_heading\":\"Quickbooks Virtual Enterprise, Certificate of Achievement\",\"total_units\":{\"max\":15,\"min\":13}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"units_within_printed_range\"],\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\nf as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number\n        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true\n       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)),\ne(expect) as (values (1)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when f.n > 0\n            then ('s740f piles confirm guard: ' || f.n || ' rows hold a matching confirm verdict ' || f.keys::text)::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s740f piles guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, f;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Santa Monica College', '41797', 39567439681, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ACCTG 1\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Accounting: ACCTG 1\",\"option_group\":\"Accounting\",\"rule\":\"all\",\"stated\":{\"max\":5,\"min\":5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ACCTG 21\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ACCTG 22\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Accounting: ACCTG 21 and ACCTG 22\",\"option_group\":\"Accounting\",\"rule\":\"all\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ACCTG 31A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ACCTG 31B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CIS 30\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Excel\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"CIS 35A\",\"units\":3}],\"catalog_addition\":false,\"code\":\"CIS 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CIS 35B\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Other Specialty\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":6,\"min\":6}}],\"program\":{\"careers\":[\"QuickBooks ProAdvisors\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"students will demonstrate proficiency and self-confidence in using QuickBooks Desktop, QuickBooks Online, and Excel, as well as the accounting foundation needed to use these programs.\",\"Students will apply self-discipline and professional communication techniques in an office environment.\",\"Students will also employ interpersonal and critical thinking skills, as well as problem solving.\"],\"section_heading\":\"Quickbooks Virtual Enterprise, Certificate of Achievement\",\"total_units\":{\"max\":15,\"min\":13}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"units_within_printed_range\"],\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (1)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s740f piles rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;"
+}

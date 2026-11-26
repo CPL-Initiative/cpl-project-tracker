@@ -1,0 +1,388 @@
+{
+ "college": "Los Angeles Trade Technical College",
+ "reread_run": "45849372771",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "45844759766",
+ "at": "2026-11-26T15:28:39Z",
+ "posted": 2,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "36231",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 2,
+ "absent": 0,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [
+  "31089",
+  "41150"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 1,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Los Angeles Trade Technical College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 45844759766;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 23,
+    "placed": 16,
+    "coverage": false,
+    "invented": false,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "REQUIRED COURSES",
+      "rule": "all",
+      "stated": {
+       "max": 38,
+       "min": 38
+      },
+      "courses": [
+       {
+        "code": "ECONMT 115",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECONMT 116",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECONMT 119",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ECONMT 173",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECONMT 129",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECONMT 100",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PLUMBING 028",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "BLDGCTQ 010",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CRPNTRY 111B",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "REF A/C 100",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "REF A/C 110",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "REF A/C 165",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CRPNTRY 148",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECONMT 171",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "ELECTIVE COURSES",
+      "rule": "choose_units",
+      "stated": {
+       "max": 4,
+       "min": 4
+      },
+      "courses": [
+       {
+        "code": "REF A/C 100",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECONMT 205",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BLDGTCQ 007",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BLDGTCQ 008",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BLDGTCQ 009",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BLDGCTQ 012",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CRPNTRY 111A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 4,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "solar thermal installation and maintenance entry-level occupations",
+      "renewable energy and/or energy efficiency occupations",
+      "residential and commercial solar thermal and renewable energy-related occupations"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 21,
+      "min": 21
+     },
+     "outcomes": [
+      "Perform solar thermal installations and maintenance work utilizing hand and power tools.",
+      "Certify the proper and safe operation of solar thermal systems utilizing proper test equipment.",
+      "Calculate solar thermal system efficiency, performance, and installation costs."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 42,
+      "min": 42
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "SOLAR THERMAL INSTALLATION & MAINTENANCE ▌ Associate in Science Degree",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 42,
+   "total_min": 42,
+   "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=150",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39054673977,
+   "program_title": "Solar Thermal Installation & Maintenance",
+   "control_number": "31089"
+  },
+  {
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "checks": {
+    "listed": 10,
+    "placed": 7,
+    "coverage": false,
+    "invented": false,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "REQUIRED COURSES",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "FASHMER 035",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FASHDSN 147",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DIGMD 100",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DIGMD 101",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FASHMER 001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "DIGMD 104",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "VISCOM129",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "FASHDSN 244",
+          "units": 2,
+          "catalog_addition": false
+         },
+         {
+          "code": "FASHDSN 270",
+          "units": 2,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "FASHMER 045",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "Advertising and Promotions Managers",
+      "Marketing Managers",
+      "Public Relations Specialists"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Develop promotional activities using various media platforms for the purpose of branding and marketing a successful fashion business."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 19,
+      "min": 19
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "FASHION MEDIA — Certificate of Achievement",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 19,
+   "total_min": 19,
+   "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=182",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39054673977,
+   "program_title": "Fashion Media",
+   "control_number": "41150"
+  }
+ ]
+}

@@ -101,7 +101,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "catalog_figures_differ",
+    "label": "The catalog's own figures do not add up: each list matches its printed figure, and the lists sum past the program's printed total.",
+    "words": "Arithmetic suggests the second 'Recommended Major Requirements' block (15) and the 'Biotechnology Focus' block (15) may be alternatives (24 GE + 15 + 15 + 6 electives = 60, whereas all three 15-unit blocks would total 75). The text does not say 'one of the following', so option_group is left null; reviewer should check."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 100,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {
