@@ -171,5 +171,16 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   noncredit records (38013, 38014, 39191, 40280) pass to fail on fresh text, which keep-better restores from `main`
   with Solano's three; the conductor's live read for keep-better (no checked rows at either college) handed over.
 - Records collected by 15:34Z: 43 (adds s740d 7, s740e 4, s740f 1 and LATTC 41150).
+- 15:38Z: `reads` pushed s740r2's fix (head `984c8079`, 7 rows; 31859 out). Clean md5 pre-read, 7 of 7; migrate
+  45851366093 returned 7, none skipped; `.apply` restored on `claude/s740-reads` (`211a5599`).
+- 15:43Z: `reconcile` committed keep-better at `3b22ef61` (Solano 20973, 36420, 42205 and San Bernardino Valley
+  38013, 38014, 39191, 40280, 17829 restored from `main`, from the conductor's live read of 15:32:58Z); the conductor
+  checked the commit (only those records and the two accounts move) and dispatched both rereads at 15:41Z. Live at
+  15:45Z: Solano's 9 rows at 45840125172 with 06555, 08337, 19450, 30678, 35213, 43144 passing the live checks (08337's
+  outcomes and careers checks stay false); San Bernardino Valley's 3 at 45844530701 with 40833 and 41756 passing.
+- 15:46Z: `piles` batch 3 (head `724e6a93`): s740g Contra Costa 2, s740h Butte 1, s740i Shasta 18655, s740j LATTC
+  31089 (all named gaps), to a Sonnet second reader. Orange Coast's 13 keep s739j's reasons; Glendale 45068 holds (the
+  capture's 16,000-character cap).
+- Records collected by 15:46Z: 58 (adds s740r2 7, Solano 6, San Bernardino Valley 2).
 - 13:31Z: `piles`, `reads` and `reconcile` started on Fable 5.2 at high effort, each in its own worktree off `609c2a2b`
   (`/home/user/wt/<name>`), told to open no PR (the conductor opens each land) and to leave `.apply` to the conductor.
