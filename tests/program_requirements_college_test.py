@@ -5223,11 +5223,15 @@ def run_sk_capture(lookup, progs=None, pages=None, filed=None, college_dir=None,
     into and keep (a second capture reads what the first filed), else a fresh one; year: the registry's catalog
     year."""
     progs, pages = progs or SK_PROGS, pages or SK_PAGES
-    names = ("college_programs", "hand_filed", "host_registry_urls", "read_sitemap", "index_links", "COLLEGE_DIR")
+    names = ("college_programs", "hand_filed", "host_registry_urls", "read_sitemap", "index_links", "COLLEGE_DIR",
+             "site_pin_entries")
     saved_c = {n: getattr(C, n) for n in names}
     saved_p = (P.fetch_registry, P.open_reader, P.load, P.locate_html)
     saved_env = os.environ.get(C.NCL_LOOKUP_ENV), os.environ.get("CAPTURE_ROUTE")
     with tempfile.TemporaryDirectory() as td:
+        # The fixture names its own pages: the real college's site_pages pins (S739 wave B pins Mathematics A.S.-T
+        # 30882 to a page the fixture does not hold) are no part of it.
+        C.site_pin_entries = lambda college: {}
         C.college_programs = lambda college: json.loads(json.dumps(progs))
         C.hand_filed = lambda college: None
         C.host_registry_urls = lambda start: [SK]
