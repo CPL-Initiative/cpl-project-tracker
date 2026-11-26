@@ -1,5 +1,5 @@
 {
- "_readme": "LACCD class schedule search, the subject list (S736, Sam's ruling r-schedule-tool-first-for-subject-titles-sam-2026-11-26). Probe 2 (run 45868075237) found the search's 'select subject' lookup lists the district's subjects by first letter, each code beside its title (A S L, American Sign Language). This read opens the lookup from Pierce's search for term 2268 (A) and clicks each other letter and digit in turn. One district subject table serves all nine colleges (the lookup is the district's, Institution LACCD). kb/_laccd_schedule_subjects.py parses the log into kb/subject_title_hunt/found/<slug>.json for each college, a code filed only where the college holds it. Reads only; no model call.",
+ "_readme": "LACCD class schedule search, the subject list (S736, Sam's ruling r-schedule-tool-first-for-subject-titles-sam-2026-11-26). Probe 2 (run 45868075237) found the search's 'select subject' lookup lists the district's subjects by first letter, each code beside its title (A S L, American Sign Language). This read opens the lookup from Pierce's search for term 2268 (A) and posts each other letter and digit in turn (the form's ICAction SSR_CLSRCH_WRK2_SSR_ALPHANUM_<letter>; read 1, run 45868547282, found a click on the letter runs in place, with no page load the reader waits on). One district subject table serves all nine colleges (the lookup is the district's, Institution LACCD). kb/_laccd_schedule_subjects.py parses the log into kb/subject_title_hunt/found/<slug>.json for each college, a code filed only where the college holds it. Reads only; no model call.",
  "college": "Los Angeles Pierce College",
  "questions": {
   "subjects": "Every subject code the district's class search lists, with its title."
@@ -22,109 +22,284 @@
     },
     "then": [
      {
-      "link": "^B$"
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_B"
+       ]
+      }
      },
      {
-      "link": "^C$"
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_C"
+       ]
+      }
      },
      {
-      "link": "^D$"
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_D"
+       ]
+      }
      },
      {
-      "link": "^E$"
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_E"
+       ]
+      }
      },
      {
-      "link": "^F$"
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_F"
+       ]
+      }
      },
      {
-      "link": "^G$"
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_G"
+       ]
+      }
      },
      {
-      "link": "^H$"
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_H"
+       ]
+      }
      },
      {
-      "link": "^I$"
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_I"
+       ]
+      }
      },
      {
-      "link": "^J$"
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_J"
+       ]
+      }
      },
      {
-      "link": "^K$"
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_K"
+       ]
+      }
      },
      {
-      "link": "^L$"
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_L"
+       ]
+      }
      },
      {
-      "link": "^M$"
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_M"
+       ]
+      }
      },
      {
-      "link": "^N$"
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_N"
+       ]
+      }
      },
      {
-      "link": "^O$"
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_O"
+       ]
+      }
      },
      {
-      "link": "^P$"
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_P"
+       ]
+      }
      },
      {
-      "link": "^Q$"
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_Q"
+       ]
+      }
      },
      {
-      "link": "^R$"
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_R"
+       ]
+      }
      },
      {
-      "link": "^S$"
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_S"
+       ]
+      }
      },
      {
-      "link": "^T$"
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_T"
+       ]
+      }
      },
      {
-      "link": "^U$"
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_U"
+       ]
+      }
      },
      {
-      "link": "^V$"
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_V"
+       ]
+      }
      },
      {
-      "link": "^W$"
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_W"
+       ]
+      }
      },
      {
-      "link": "^X$"
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_X"
+       ]
+      }
      },
      {
-      "link": "^Y$"
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_Y"
+       ]
+      }
      },
      {
-      "link": "^Z$"
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_Z"
+       ]
+      }
      },
      {
-      "link": "^0$"
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_0"
+       ]
+      }
      },
      {
-      "link": "^1$"
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_1"
+       ]
+      }
      },
      {
-      "link": "^2$"
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_2"
+       ]
+      }
      },
      {
-      "link": "^3$"
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_3"
+       ]
+      }
      },
      {
-      "link": "^4$"
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_4"
+       ]
+      }
      },
      {
-      "link": "^5$"
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_5"
+       ]
+      }
      },
      {
-      "link": "^6$"
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_6"
+       ]
+      }
      },
      {
-      "link": "^7$"
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_7"
+       ]
+      }
      },
      {
-      "link": "^8$"
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_8"
+       ]
+      }
      },
      {
-      "link": "^9$"
+      "action": "COMMUNITY_ACCESS.CLASS_SEARCH.GBL",
+      "set": {
+       "ICAction": [
+        "SSR_CLSRCH_WRK2_SSR_ALPHANUM_9"
+       ]
+      }
      }
     ]
    }
