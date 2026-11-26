@@ -136,5 +136,23 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 - 15:01Z: live: Copper Mountain 41085 and 43132 inserted and passing (arithmetic equal); Santa Ana's 66 rows at
   45841675928, with 18581, 18582, 19268 and 31980 now passing. Records collected so far: 14 (Cerritos 2, s740a to
   s740c 6, Copper Mountain 2, Santa Ana 4). `reads`' plan s740r2 (Santa Ana, 8 named gaps, 3 held) is being committed.
+- 15:10Z: `reconcile` reported (head `33f47436`): cited `course_renumbers` steps and one San Jose City `course_units`
+  step (BIOL 020) in `kb/program_requirements_reconcile.json`; free reconciles at Solano (45840125172: 12 restamped, 6
+  fail to pass on the live checks) and San Jose City (45840981324: 20 restamped, 11 fail to pass), 0 pass to fail on
+  the live table's three checks; plans s740c1 Norco 2 (`lists_not_closed`; 11 held for a curriQunet reader change)
+  and s740c2 Solano 3. 15:17Z: its reader (Sonnet): San Jose City reread GO, s740c1 APPLY, s740c2 APPLY; **Solano
+  reread FIX THEN GO** (MAJOR: the branch holds the raw reread, so 20973, 36420 and 42205 lose their overall pass on
+  ligature text until `kb/_program_reread_keep_better.py` restores them); MINORs: 22239's careers check flips (not a
+  live check); the BIOL 020 step also fills 38426 (true, verdict unchanged); KINPE56 to `KINPE 9B` joins one state
+  control number printed as two courses at 32260 (placed rows unchanged).
+- 15:18Z: San Jose City's reread 45847599186 (receipt `a15c5aba`): 20 rows at 45840981324, the 11 passing live.
+  15:18Z to 15:21Z: clean pre-reads (2 of 2, 3 of 3); migrate 45847730410 returned 2 (s740c1), 45848030080 returned 3
+  (s740c2); `.apply` restored on `claude/s740-reconcile` (`db8d0286`).
+- 15:17Z: `piles` batch 2 (head `b845150f`): s740d Cabrillo 7, s740e El Camino 4, s740f Santa Monica 1 (all named
+  gaps); free reconciles for Shasta 18655 (45841957622) and Los Angeles Trade-Technical 41150 and 31089 (45844759766).
+  To a Sonnet second reader at `b845150f`. 15:21Z: Ventura's paid read for its six reread holds on
+  `claude/s740-piles` (about $0.36; the page read shows today's capture holds each Requirements tab).
+- Records collected by 15:22Z: 30 (Cerritos 2, s740a to s740c 6, Copper Mountain 2, Santa Ana 4, San Jose City 11,
+  s740c1 2, s740c2 3).
 - 13:31Z: `piles`, `reads` and `reconcile` started on Fable 5.2 at high effort, each in its own worktree off `609c2a2b`
   (`/home/user/wt/<name>`), told to open no PR (the conductor opens each land) and to leave `.apply` to the conductor.
