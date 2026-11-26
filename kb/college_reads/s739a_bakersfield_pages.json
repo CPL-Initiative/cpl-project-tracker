@@ -1,0 +1,40 @@
+{
+ "_readme": "S739 wave A (the gap census's Next wave, census run 45771011713 of 2026-11-26 06:54Z, the reader_page_assignment lever): Bakersfield College's 2 programs whose filed record places none of the state's listed courses (capture 38414480070). Animal Science A.S. 09237 was handed the Registered Veterinary Technicians Job Skills Certificate page, which names 8 of its 16 listed courses; Human Services A.A. 09968 its own page (human-services-associate-of-arts-summer-2026, all 8 listed codes in its text), whose record names a 19-unit total and no course. This plan reads the menu's publish call for every address naming animal science or veterinary, and 09968's page through the publish/content call the capture reads, so a session sees whether 09237 has a page of its own and what 09968's page prints before any re-extraction. No model call, nothing written.",
+ "college": "Bakersfield College",
+ "questions": {
+  "menu": "Which addresses the menu gives animal science and veterinary programs.",
+  "own_page": "What the capture reads on the program's own page: its heading, its award, its course list and its total."
+ },
+ "keywords": [
+  "<h[1-3][^>]*>[^<]{0,120}",
+  "[Tt]otal[^\\n<]{0,60}[Uu]nits?",
+  "[Rr]equired [Cc]ourses?",
+  "animal-science[^\"\\s,]{0,80}",
+  "[Aa]nimal [Ss]cience[^\"<\\n]{0,80}",
+  "veterinary[^\"\\s,]{0,80}",
+  "HMSV ?B\\d+[A-Z]?"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "menu"
+   ],
+   "why": "09237: the menu's addresses",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/2026-2027-Catalog,about-bc?tenant=bakersfield.elumenapp.com&api=https://api-prod.elumenapp.com:443"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "09968",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027-Catalog,program,human-services-associate-of-arts-summer-2026?tenant=bakersfield.elumenapp.com"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "09237: the page the capture handed it",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027-Catalog,program,registered-veterinary-technicians-job-skills-certificate-summer-2019?tenant=bakersfield.elumenapp.com"
+  }
+ ]
+}
