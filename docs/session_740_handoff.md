@@ -122,3 +122,12 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   exist on `main`; MINOR, the window-fill floor 18 to 17 because Folsom 38736 left the cut population). 08:07Z: clean
   md5 pre-read (2 of 2); migrate 45780554871 returned 2, none skipped; `.apply` restored (`1cf011f2`). Cosumnes
   River leaves lane 1: its 17 piles may join lane 2. 08:12Z: #3881 opened for `lever`'s land.
+- 08:24Z: #3881 merged (`48966ffa`, confirmed on `origin/main`; `main` had not moved since its base). `pooled` resumed
+  to take `main` once more before its land.
+- 08:25Z: `piles`' first five plans on `claude/s739-piles` (`b4accaca`), 40 rows (11 passing, 29 named gaps), no new
+  kind: s739a American River 5 named gaps (39731 and 39732 held, another award's section); s739b Shasta 12 (18625,
+  18655 and 32162 held); s739c College of the Canyons 13 (7 passing by a rename their notes name, 6 named gaps; 36793
+  held); s739d Santa Barbara City 3 (30746 needs a reread, 43553 a page read); s739e Los Angeles Trade-Technical 7 (4
+  passing by a rename, 3 named gaps; 4 held). Their shared `kb/_program_piles_s739.py` adds an own-page guard on the
+  record's own heading (or its own list, for `heading_not_in_text` alone) and a rename rescore (S721 Porterville's
+  form). Two Sonnet readers took them (s739a and s739b; s739c to s739e), with the shared module in scope.
