@@ -381,6 +381,11 @@ jobs:
       - name: Title hunt filer (kb/_file_found_subject_titles.py)
         if: matrix.shard == 4
         run: python3 tests/file_found_subject_titles_test.py
+      # LACCD's class schedule search (S736): the district's subject lookup parsed into each college's finds; a title
+      # already filed, by the catalog or a person, stands, and schedule rows never read as the catalog's index.
+      - name: LACCD schedule subjects (kb/_laccd_schedule_subjects.py)
+        if: matrix.shard == 4
+        run: python3 tests/laccd_schedule_subjects_test.py
       # Noncredit by category (S698, #3655): a code's noncredit courses under the category the COCI export names,
       # apart from its credit courses; no band and no category is guessed. Pure stdlib (the build reads the export).
       - name: Noncredit categories (kb/_build_noncredit_categories.py)

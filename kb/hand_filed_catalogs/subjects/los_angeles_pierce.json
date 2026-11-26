@@ -5,53 +5,9 @@
  "source": [
   "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf"
  ],
- "subjects": 99,
- "with_heading": 88,
+ "subjects": 100,
+ "with_heading": 100,
  "rows": [
-  {
-   "code": "A S L",
-   "heading": "American Sign Language",
-   "heading_printed": "American Sign Language",
-   "rule": "named",
-   "codes": [
-    "A S L"
-   ],
-   "candidate": null,
-   "page": 173,
-   "above": [
-    "Agriculture - General . . . . . . . . . . Plant Science 100-199",
-    "Horticulture and Landscaping . . . . Plant Science 700-899",
-    "Natural Resource Management . . . Plant Science 900-999",
-    "American Sign Language (A S L)"
-   ],
-   "first_course": "A S L 001 American Sign Language I (4) UC:CSU",
-   "where": "catalog",
-   "method": "subject heading",
-   "found_on": "2026-11-25",
-   "found_by": "COBI, a runner read (run 44948526227)"
-  },
-  {
-   "code": "A S T",
-   "heading": "Automotive Service Technology",
-   "heading_printed": "Automotive Service Technology",
-   "rule": "named",
-   "codes": [
-    "A S T"
-   ],
-   "candidate": null,
-   "page": 185,
-   "above": [
-    "Conference 1 hour per unit.",
-    "This course allows students to pursue directed study in Astronomy on a contract",
-    "basis under the direction of a supervising instructor.",
-    "Automotive Service Technology (A S T)"
-   ],
-   "first_course": "A S T 001 Automotive Engines (5) CSU",
-   "where": "catalog",
-   "method": "subject heading",
-   "found_on": "2026-11-25",
-   "found_by": "COBI, a runner read (run 44948526227)"
-  },
   {
    "code": "ACCTG",
    "heading": "Accounting",
@@ -120,9 +76,9 @@
   },
   {
    "code": "AFRO AM",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "African American Studies",
+   "heading_printed": "African American Studies",
+   "rule": "schedule",
    "codes": [
     "AFRO AM"
    ],
@@ -134,7 +90,13 @@
     "Matter movement.",
     "(Cal-GETC Area 4)"
    ],
-   "first_course": "AFRO AM 019 Introduction to African American Studies (3) UC:CSU"
+   "first_course": "AFRO AM 019 Introduction to African American Studies (3) UC:CSU",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAPC&strm=2268&subj=AFRO%20AM&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "ANATOMY",
@@ -160,9 +122,9 @@
   },
   {
    "code": "ANML SC",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Animal Science",
+   "heading_printed": "Animal Science",
+   "rule": "schedule",
    "codes": [
     "ANML SC"
    ],
@@ -174,7 +136,13 @@
     "Animal Science . . . . . . . . . . . . . . . Animal Science 500-599",
     "Horse Science . . . . . . . . . . . . . . . Animal Science 600-699"
    ],
-   "first_course": "ANML SC 120 Ethical Issues of Using Animals (3) CSU"
+   "first_course": "ANML SC 120 Ethical Issues of Using Animals (3) CSU",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAPC&strm=2268&subj=ANML%20SC&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "ANTHRO",
@@ -222,9 +190,9 @@
   },
   {
    "code": "ART",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "schedule",
    "codes": [
     "ART"
    ],
@@ -236,7 +204,13 @@
     "Water Color & Acrylic . . . . . . . . . . ART 213, 301A, 300-306",
     "Printmaking . . . . . . . . . . . . . . . . . ART 400, 401, 402, 407, 408, 411, 626"
    ],
-   "first_course": "ART 092 Introduction to Museum Studies (3) UC:CSU"
+   "first_course": "ART 092 Introduction to Museum Studies (3) UC:CSU",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAPC&strm=2268&subj=ART&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "ARTH",
@@ -255,6 +229,50 @@
     "Art History (ARTH)"
    ],
    "first_course": "ARTH C1100 Survey of Art from Prehistory to the Medieval Era (3) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
+  },
+  {
+   "code": "A S L",
+   "heading": "American Sign Language",
+   "heading_printed": "American Sign Language",
+   "rule": "named",
+   "codes": [
+    "A S L"
+   ],
+   "candidate": null,
+   "page": 173,
+   "above": [
+    "Agriculture - General . . . . . . . . . . Plant Science 100-199",
+    "Horticulture and Landscaping . . . . Plant Science 700-899",
+    "Natural Resource Management . . . Plant Science 900-999",
+    "American Sign Language (A S L)"
+   ],
+   "first_course": "A S L 001 American Sign Language I (4) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
+  },
+  {
+   "code": "A S T",
+   "heading": "Automotive Service Technology",
+   "heading_printed": "Automotive Service Technology",
+   "rule": "named",
+   "codes": [
+    "A S T"
+   ],
+   "candidate": null,
+   "page": 185,
+   "above": [
+    "Conference 1 hour per unit.",
+    "This course allows students to pursue directed study in Astronomy on a contract",
+    "basis under the direction of a supervising instructor.",
+    "Automotive Service Technology (A S T)"
+   ],
+   "first_course": "A S T 001 Automotive Engines (5) CSU",
    "where": "catalog",
    "method": "subject heading",
    "found_on": "2026-11-25",
@@ -438,9 +456,9 @@
   },
   {
    "code": "CHEM",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "schedule",
    "codes": [
     "CHEM"
    ],
@@ -452,7 +470,13 @@
     "complete Intermediate Algebra and Intermediate Reading and Composition before",
     "enrolling in any Chemistry course."
    ],
-   "first_course": "CHEM 051 Fundamentals of Chemistr y I (5) *UC:CSU"
+   "first_course": "CHEM 051 Fundamentals of Chemistr y I (5) *UC:CSU",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAPC&strm=2268&subj=CHEM&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "CHICANO",
@@ -588,9 +612,9 @@
   },
   {
    "code": "DANCEST",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Dance Studies",
+   "heading_printed": "Dance Studies",
+   "rule": "schedule",
    "codes": [
     "DANCEST"
    ],
@@ -602,13 +626,19 @@
     "Dance Performance . . . . . . . . . . . DANCEST 822, 823",
     "Folk Dance Forms . . . . . . . . . . . . . DNCESPC 491, 492"
    ],
-   "first_course": "DANCEST 301 Choreography I (1) UC:CSU"
+   "first_course": "DANCEST 301 Choreography I (1) UC:CSU",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAPC&strm=2268&subj=DANCEST&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "DANCETQ",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Dance Techniques",
+   "heading_printed": "Dance Techniques",
+   "rule": "schedule",
    "codes": [
     "DANCETQ"
    ],
@@ -620,13 +650,19 @@
     "Dance Performance . . . . . . . . . . . DANCEST 822, 823",
     "Folk Dance Forms . . . . . . . . . . . . . DNCESPC 491, 492"
    ],
-   "first_course": "DANCETQ 101 Dance to Fitness (1) *UC:CSU"
+   "first_course": "DANCETQ 101 Dance to Fitness (1) *UC:CSU",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAPC&strm=2268&subj=DANCETQ&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "DNCESPC",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Dance Specialties",
+   "heading_printed": "Dance Specialties",
+   "rule": "schedule",
    "codes": [
     "DNCESPC"
    ],
@@ -638,29 +674,13 @@
     "Dance Performance DANCEST 822, 823",
     "Folk Dance Forms DNCESPC 491, 492"
    ],
-   "first_course": "DNCESPC 171 Hip-Hop Dance Techniques I (1) UC:CSU"
-  },
-  {
-   "code": "E.S.L.",
-   "heading": "English as a Second Language",
-   "heading_printed": "English as a Second Language",
-   "rule": "named",
-   "codes": [
-    "E.S.L."
-   ],
-   "candidate": null,
-   "page": 226,
-   "above": [
-    "226",
-    "Course Descriptions",
-    "2026-2027 GENERAL CATALOG",
-    "English as a Second Language (E.S.L.)"
-   ],
-   "first_course": "E.S.L. 003A College ESL III: Writing and Grammar (6) (NDA)",
-   "where": "catalog",
-   "method": "subject heading",
-   "found_on": "2026-11-25",
-   "found_by": "COBI, a runner read (run 44948526227)"
+   "first_course": "DNCESPC 171 Hip-Hop Dance Techniques I (1) UC:CSU",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAPC&strm=2268&subj=DNCESPC&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "EARTH",
@@ -883,22 +903,22 @@
    "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
-   "code": "ESL NC",
-   "heading": "Noncredit",
-   "heading_printed": "Noncredit",
+   "code": "E.S.L.",
+   "heading": "English as a Second Language",
+   "heading_printed": "English as a Second Language",
    "rule": "named",
    "codes": [
-    "ESL NC"
+    "E.S.L."
    ],
    "candidate": null,
-   "page": 227,
+   "page": 226,
    "above": [
-    "mar, sentence structure, paragraph and essay writing, and research skills particular",
-    "to those of non-native speakers of English.",
-    "English as a Second Language -",
-    "Noncredit (ESL NC)"
+    "226",
+    "Course Descriptions",
+    "2026-2027 GENERAL CATALOG",
+    "English as a Second Language (E.S.L.)"
    ],
-   "first_course": "ESL NC 001CE English as a Second Language - Beginning I (0) (NDA) -",
+   "first_course": "E.S.L. 003A College ESL III: Writing and Grammar (6) (NDA)",
    "where": "catalog",
    "method": "subject heading",
    "found_on": "2026-11-25",
@@ -921,6 +941,28 @@
     "ESL Civics (ESLCVCS)"
    ],
    "first_course": "ESLCVCS 010CE ESL and Civics I (0) (NDA) - RPT 9",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
+  },
+  {
+   "code": "ESL NC",
+   "heading": "Noncredit",
+   "heading_printed": "Noncredit",
+   "rule": "named",
+   "codes": [
+    "ESL NC"
+   ],
+   "candidate": null,
+   "page": 227,
+   "above": [
+    "mar, sentence structure, paragraph and essay writing, and research skills particular",
+    "to those of non-native speakers of English.",
+    "English as a Second Language -",
+    "Noncredit (ESL NC)"
+   ],
+   "first_course": "ESL NC 001CE English as a Second Language - Beginning I (0) (NDA) -",
    "where": "catalog",
    "method": "subject heading",
    "found_on": "2026-11-25",
@@ -1192,13 +1234,13 @@
   },
   {
    "code": "IND TEK",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Industrial Technology",
+   "heading_printed": "Industrial Technology",
+   "rule": "schedule",
    "codes": [
     "IND TEK"
    ],
-   "candidate": "Welding",
+   "candidate": null,
    "page": 238,
    "above": [
     "Machining/CNC (includes CAM)",
@@ -1206,7 +1248,13 @@
     "Industrial Technology classes are affiliated with the Society of Manufacturing",
     "Engineers and American Welding Society."
    ],
-   "first_course": "IND TEK 105 Industrial Print Reading with GD&T (3) CSU"
+   "first_course": "IND TEK 105 Industrial Print Reading with GD&T (3) CSU",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAPC&strm=2268&subj=IND%20TEK&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "INSUR",
@@ -1320,9 +1368,9 @@
   },
   {
    "code": "KIN",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Kinesiology",
+   "heading_printed": "Kinesiology",
+   "rule": "schedule",
    "codes": [
     "KIN"
    ],
@@ -1334,7 +1382,13 @@
     "Team Sports . . . . . . . . . . . . . . . . . All Levels of KIN 287, 289, 387-1, 387-2",
     "Track & Field Mixed Activities . . . . All Levels of KIN 307, 334"
    ],
-   "first_course": "KIN 201 Swimming Skills (1) *UC:CSU"
+   "first_course": "KIN 201 Swimming Skills (1) *UC:CSU",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAPC&strm=2268&subj=KIN&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "KIN ATH",
@@ -1401,6 +1455,22 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 44948526227)"
+  },
+  {
+   "code": "LRNSKIL",
+   "heading": "Learning Skills",
+   "heading_printed": "Learning Skills",
+   "rule": "schedule",
+   "codes": [
+    "LRNSKIL"
+   ],
+   "candidate": null,
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAPC&strm=2268&subj=LRNSKIL&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "MARKET",
@@ -1558,9 +1628,9 @@
   },
   {
    "code": "MUSIC",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "schedule",
    "codes": [
     "MUSIC"
    ],
@@ -1572,7 +1642,13 @@
     "Percussion Instruments . . . . . . . . MUSIC 631-634",
     "Voice . . . . . . . . . . . . . . . . . . . . . . MUSIC 400-403, 411-414, 431-433, 441, 453"
    ],
-   "first_course": "MUSIC 101 Fundamentals of Music (3) UC:CSU"
+   "first_course": "MUSIC 101 Fundamentals of Music (3) UC:CSU",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAPC&strm=2268&subj=MUSIC&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "NATIVAM",
@@ -1707,28 +1783,6 @@
    "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
-   "code": "PHYS SC",
-   "heading": "Physical Science",
-   "heading_printed": "Physical Science",
-   "rule": "named",
-   "codes": [
-    "PHYS SC"
-   ],
-   "candidate": null,
-   "page": 268,
-   "above": [
-    "Conference 1 hour per unit.",
-    "This course allows students to pursue directed study in Photography on a contract",
-    "basis under the direction of a supervising instructor.",
-    "Physical Science (PHYS SC)"
-   ],
-   "first_course": "PHYS SC 004 Physical Science and Laborator y (4) UC:CSU",
-   "where": "catalog",
-   "method": "subject heading",
-   "found_on": "2026-11-25",
-   "found_by": "COBI, a runner read (run 44948526227)"
-  },
-  {
    "code": "PHYSICS",
    "heading": "Physics",
    "heading_printed": "Physics",
@@ -1773,6 +1827,28 @@
    "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
+   "code": "PHYS SC",
+   "heading": "Physical Science",
+   "heading_printed": "Physical Science",
+   "rule": "named",
+   "codes": [
+    "PHYS SC"
+   ],
+   "candidate": null,
+   "page": 268,
+   "above": [
+    "Conference 1 hour per unit.",
+    "This course allows students to pursue directed study in Photography on a contract",
+    "basis under the direction of a supervising instructor.",
+    "Physical Science (PHYS SC)"
+   ],
+   "first_course": "PHYS SC 004 Physical Science and Laborator y (4) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
+  },
+  {
    "code": "PLNT SC",
    "heading": "Plant Science",
    "heading_printed": "Plant Science",
@@ -1795,28 +1871,6 @@
    "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
-   "code": "POL SCI",
-   "heading": "Political Science",
-   "heading_printed": "Political Science",
-   "rule": "named",
-   "codes": [
-    "POL SCI"
-   ],
-   "candidate": null,
-   "page": 271,
-   "above": [
-    "Political Science (POL SCI)",
-    "See also Chicano Studies.",
-    "POL SCI 001 The Government of the United States (Common Course",
-    "Number change. See POLS C1000.)"
-   ],
-   "first_course": "POL SCI 002 Introduction to Comparative P olitics (3) UC:CSU",
-   "where": "catalog",
-   "method": "subject heading",
-   "found_on": "2026-11-25",
-   "found_by": "COBI, a runner read (run 44948526227)"
-  },
-  {
    "code": "POLS",
    "heading": "Political Science",
    "heading_printed": "Political Science",
@@ -1833,6 +1887,28 @@
     "Political Science (POLS)"
    ],
    "first_course": "POLS C1000 American Go vernment and Politics (3) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
+  },
+  {
+   "code": "POL SCI",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "named",
+   "codes": [
+    "POL SCI"
+   ],
+   "candidate": null,
+   "page": 271,
+   "above": [
+    "Political Science (POL SCI)",
+    "See also Chicano Studies.",
+    "POL SCI 001 The Government of the United States (Common Course",
+    "Number change. See POLS C1000.)"
+   ],
+   "first_course": "POL SCI 002 Introduction to Comparative P olitics (3) UC:CSU",
    "where": "catalog",
    "method": "subject heading",
    "found_on": "2026-11-25",
@@ -2038,13 +2114,13 @@
   },
   {
    "code": "THEATER",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Theater",
+   "heading_printed": "Theater",
+   "rule": "schedule",
    "codes": [
     "THEATER"
    ],
-   "candidate": "Professional Performance Preparation",
+   "candidate": null,
    "page": 279,
    "above": [
     "THEATER 232, 233, 235, 250, 262, 291-294",
@@ -2052,7 +2128,13 @@
     "All Levels of THEATER 205, 276, 277",
     "Voice Theory . . . . . . . . . . . . . . . . . All Levels of THEATER 240, 242"
    ],
-   "first_course": "THEATER 100 Introduction to the Theater (3) UC:CSU"
+   "first_course": "THEATER 100 Introduction to the Theater (3) UC:CSU",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAPC&strm=2268&subj=THEATER&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "TUTOR",

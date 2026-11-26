@@ -264,7 +264,8 @@ def build(root=ROOT):
                 name, source = sorted(e["names"].items(), key=lambda kv: (-kv[1], kv[0]))[0][0], "course pages"
             h = filed.get(k)
             if not name and h and h.get("heading"):
-                name, source = h["heading"], {"index": "index", "code_address": "the code's own catalog page", "search_page": "a page a web search found"}.get(h.get("rule"), "heading above the first course")
+                name, source = h["heading"], {"index": "index", "code_address": "the code's own catalog page", "search_page": "a page a web search found",
+                                   "schedule": "the college's class schedule"}.get(h.get("rule"), "heading above the first course")
             name = title_case(without_code(name, college_codes))
             if not name:
                 source = None

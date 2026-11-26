@@ -5,31 +5,9 @@
  "source": [
   "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf"
  ],
- "subjects": 89,
- "with_heading": 82,
+ "subjects": 96,
+ "with_heading": 96,
  "rows": [
-  {
-   "code": "A S L",
-   "heading": "American Sign Language",
-   "heading_printed": "AMERICAN SIGN LANGUAGE",
-   "rule": "named",
-   "codes": [
-    "A S L"
-   ],
-   "candidate": null,
-   "page": 173,
-   "above": [
-    "also included. Successful course completion earns an American Heart",
-    "Association Basic Cardiovascular Life Support for the Healthcare Provider card",
-    "valid for two years.",
-    "AMERICAN SIGN LANGUAGE (ASL)"
-   ],
-   "first_course": "A S L 001 American Sign Language I (4) UC:CSU",
-   "where": "catalog",
-   "method": "subject heading",
-   "found_on": "2026-11-25",
-   "found_by": "COBI, a runner read (run 44948529916)"
-  },
   {
    "code": "ACCTG",
    "heading": "Accounting",
@@ -98,9 +76,9 @@
   },
   {
    "code": "AFRO AM",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "African American Studies",
+   "heading_printed": "African American Studies",
+   "rule": "schedule",
    "codes": [
     "AFRO AM"
    ],
@@ -112,7 +90,29 @@
     "Lecture: 3 hours",
     "The African American in the History of the U.S. II"
    ],
-   "first_course": "AFRO AM 007 Black Americans and the Political System"
+   "first_course": "AFRO AM 007 Black Americans and the Political System",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LASC&strm=2268&subj=AFRO%20AM&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
+  },
+  {
+   "code": "ALD HTH",
+   "heading": "Allied Health",
+   "heading_printed": "Allied Health",
+   "rule": "schedule",
+   "codes": [
+    "ALD HTH"
+   ],
+   "candidate": null,
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LASC&strm=2268&subj=ALD%20HTH&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "ANATOMY",
@@ -204,10 +204,26 @@
    "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
+   "code": "ARTH",
+   "heading": "Art History (CCN)",
+   "heading_printed": "Art History (CCN)",
+   "rule": "schedule",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LASC&strm=2268&subj=ARTH&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
+  },
+  {
    "code": "ARTHIST",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "schedule",
    "codes": [
     "ARTHIST"
    ],
@@ -219,7 +235,35 @@
     "to the contemporary period with a focus on art from Europe. The course will",
     "further consider global interactions involving this region."
    ],
-   "first_course": "ARTHIST 126 Introduction to Modern Art (3) UC:CSU"
+   "first_course": "ARTHIST 126 Introduction to Modern Art (3) UC:CSU",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LASC&strm=2268&subj=ARTHIST&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
+  },
+  {
+   "code": "A S L",
+   "heading": "American Sign Language",
+   "heading_printed": "AMERICAN SIGN LANGUAGE",
+   "rule": "named",
+   "codes": [
+    "A S L"
+   ],
+   "candidate": null,
+   "page": 173,
+   "above": [
+    "also included. Successful course completion earns an American Heart",
+    "Association Basic Cardiovascular Life Support for the Healthcare Provider card",
+    "valid for two years.",
+    "AMERICAN SIGN LANGUAGE (ASL)"
+   ],
+   "first_course": "A S L 001 American Sign Language I (4) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "ASTRON",
@@ -400,9 +444,9 @@
   },
   {
    "code": "CHICANO",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Chicano Studies",
+   "heading_printed": "Chicano Studies",
+   "rule": "schedule",
    "codes": [
     "CHICANO"
    ],
@@ -414,7 +458,13 @@
     "inequities, and immigration policies affecting Mexicans, Chicanos, and other",
     "Latinos."
    ],
-   "first_course": "CHICANO 004 Introduction to Chicana/o Studies (3) UC:"
+   "first_course": "CHICANO 004 Introduction to Chicana/o Studies (3) UC:",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LASC&strm=2268&subj=CHICANO&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "CIS",
@@ -455,28 +505,6 @@
     "COMPUTER INFORMATION (CO INFO)"
    ],
    "first_course": "CO INFO 035 Multimedia Presentations for the Internet I",
-   "where": "catalog",
-   "method": "subject heading",
-   "found_on": "2026-11-25",
-   "found_by": "COBI, a runner read (run 44948529916)"
-  },
-  {
-   "code": "CO TECH",
-   "heading": "Computer Technology",
-   "heading_printed": "COMPUTER TECHNOLOGY",
-   "rule": "named",
-   "codes": [
-    "CO TECH"
-   ],
-   "candidate": null,
-   "page": 191,
-   "above": [
-    "Emphasis in this course is placed on a maximum of independent study and",
-    "research. Note: This course should be taken as the last class in the required",
-    "courses list",
-    "COMPUTER TECHNOLOGY (CO TECH)"
-   ],
-   "first_course": "CO TECH 001 Introduction to Computers for Technicians",
    "where": "catalog",
    "method": "subject heading",
    "found_on": "2026-11-25",
@@ -549,10 +577,32 @@
    "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
+   "code": "CO TECH",
+   "heading": "Computer Technology",
+   "heading_printed": "COMPUTER TECHNOLOGY",
+   "rule": "named",
+   "codes": [
+    "CO TECH"
+   ],
+   "candidate": null,
+   "page": 191,
+   "above": [
+    "Emphasis in this course is placed on a maximum of independent study and",
+    "research. Note: This course should be taken as the last class in the required",
+    "courses list",
+    "COMPUTER TECHNOLOGY (CO TECH)"
+   ],
+   "first_course": "CO TECH 001 Introduction to Computers for Technicians",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
+  },
+  {
    "code": "COUNSEL",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Counseling",
+   "heading_printed": "Counseling",
+   "rule": "schedule",
    "codes": [
     "COUNSEL"
    ],
@@ -564,7 +614,13 @@
     "workers and customers while looking at effective strategies for conflict",
     "resolutions."
    ],
-   "first_course": "COUNSEL 017 College Survival Skills Development (1)"
+   "first_course": "COUNSEL 017 College Survival Skills Development (1)",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LASC&strm=2268&subj=COUNSEL&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "CS",
@@ -721,10 +777,26 @@
    "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
+   "code": "ELECTRN",
+   "heading": "Electronics",
+   "heading_printed": "Electronics",
+   "rule": "schedule",
+   "codes": [
+    "ELECTRN"
+   ],
+   "candidate": null,
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LASC&strm=2268&subj=ELECTRN&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
+  },
+  {
    "code": "ENG GEN",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Engineering, General",
+   "heading_printed": "Engineering, General",
+   "rule": "schedule",
    "codes": [
     "ENG GEN"
    ],
@@ -736,7 +808,13 @@
     "assignments in the course are drawn from practical applications in engineering,",
     "physics, and mathematics."
    ],
-   "first_course": "ENG GEN 131 Statics (3) CSU"
+   "first_course": "ENG GEN 131 Statics (3) CSU",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LASC&strm=2268&subj=ENG%20GEN&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "ENGL",
@@ -849,10 +927,42 @@
    "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
+   "code": "E.S.L.",
+   "heading": "English as a Second Language-12",
+   "heading_printed": "English As A Second Language-12",
+   "rule": "schedule",
+   "codes": [
+    "E.S.L."
+   ],
+   "candidate": null,
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LASC&strm=2268&subj=E.S.L.&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
+  },
+  {
+   "code": "ESLCVCS",
+   "heading": "English as a Second Language Civics",
+   "heading_printed": "English As A Second Language Civics",
+   "rule": "schedule",
+   "codes": [
+    "ESLCVCS"
+   ],
+   "candidate": null,
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LASC&strm=2268&subj=ESLCVCS&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
+  },
+  {
    "code": "ESL NC",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "English Second Language - NC",
+   "heading_printed": "English Second Language - NC",
+   "rule": "schedule",
    "codes": [
     "ESL NC"
    ],
@@ -864,17 +974,23 @@
     "format. An emphasis will be placed on the production and comprehension of",
     "phrases and sentence structures used in the target subject."
    ],
-   "first_course": "ESL NC 006CE English as a Second Language - 0 (0)"
+   "first_course": "ESL NC 006CE English as a Second Language - 0 (0)",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LASC&strm=2268&subj=ESL%20NC&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "FAM & CS",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Family and Consumer Studies",
+   "heading_printed": "Family And Consumer Studies",
+   "rule": "schedule",
    "codes": [
     "FAM & CS"
    ],
-   "candidate": "Family and Comsumer Studies (Fam",
+   "candidate": null,
    "page": 200,
    "above": [
     "problems and the evaluation of alternatives and solutions that contribute to a",
@@ -882,7 +998,13 @@
     "FAMILY and COMSUMER STUDIES (FAM",
     "& CS)"
    ],
-   "first_course": "FAM & CS 021 Nutrition (3) CSU"
+   "first_course": "FAM & CS 021 Nutrition (3) CSU",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LASC&strm=2268&subj=FAM%20&CS&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "FINANCE",
@@ -1435,6 +1557,22 @@
    "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
+   "code": "NRS HCA",
+   "heading": "Nursing-Health Care Ancillaries",
+   "heading_printed": "Nursing-Health Care Ancillaries",
+   "rule": "schedule",
+   "codes": [
+    "NRS HCA"
+   ],
+   "candidate": null,
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LASC&strm=2268&subj=NRS-HCA&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
+  },
+  {
    "code": "NURSING",
    "heading": "Associate Degree Nursing (Adn)",
    "heading_printed": "ASSOCIATE DEGREE NURSING (ADN)",
@@ -1567,26 +1705,20 @@
    "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
-   "code": "PHYS SC",
-   "heading": "Physical Science",
-   "heading_printed": "PHYSICAL SCIENCE",
-   "rule": "named",
+   "code": "PHOTO",
+   "heading": "Photography",
+   "heading_printed": "Photography",
+   "rule": "schedule",
    "codes": [
-    "PHYS SC"
+    "PHOTO"
    ],
    "candidate": null,
-   "page": 216,
-   "above": [
-    "standards and techniques of correct thought with regular practice with short",
-    "specimens of correct and incorrect reasoning taken from daily life. Consistency,",
-    "thoroughness, and other aspects of rational thought are fostered.",
-    "PHYSICAL SCIENCE (PHYS SC)"
-   ],
-   "first_course": "PHYS SC 001 Physical Science I (3) UC:CSU",
-   "where": "catalog",
-   "method": "subject heading",
-   "found_on": "2026-11-25",
-   "found_by": "COBI, a runner read (run 44948529916)"
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LASC&strm=2268&subj=PHOTO&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "PHYSICS",
@@ -1633,6 +1765,28 @@
    "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
+   "code": "PHYS SC",
+   "heading": "Physical Science",
+   "heading_printed": "PHYSICAL SCIENCE",
+   "rule": "named",
+   "codes": [
+    "PHYS SC"
+   ],
+   "candidate": null,
+   "page": 216,
+   "above": [
+    "standards and techniques of correct thought with regular practice with short",
+    "specimens of correct and incorrect reasoning taken from daily life. Consistency,",
+    "thoroughness, and other aspects of rational thought are fostered.",
+    "PHYSICAL SCIENCE (PHYS SC)"
+   ],
+   "first_course": "PHYS SC 001 Physical Science I (3) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
+  },
+  {
    "code": "PLNT SC",
    "heading": "Plant Science",
    "heading_printed": "PLANT SCIENCE",
@@ -1655,28 +1809,6 @@
    "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
-   "code": "POL SCI",
-   "heading": "Political Science",
-   "heading_printed": "POLITICAL SCIENCE",
-   "rule": "named",
-   "codes": [
-    "POL SCI"
-   ],
-   "candidate": null,
-   "page": 218,
-   "above": [
-    "and California. Students examine the constitutions, structure, and operation of",
-    "governing institutions, civil liberties and civil rights, political behaviors, political",
-    "issues, and public policy using political science theory and methodology.",
-    "POLITICAL SCIENCE (POL SCI)"
-   ],
-   "first_course": "POL SCI 002 Introduction to Comparative Politics (3)",
-   "where": "catalog",
-   "method": "subject heading",
-   "found_on": "2026-11-25",
-   "found_by": "COBI, a runner read (run 44948529916)"
-  },
-  {
    "code": "POLS",
    "heading": "Political Science",
    "heading_printed": "POLITICAL SCIENCE",
@@ -1693,6 +1825,28 @@
     "POLITICAL SCIENCE (POLS)"
    ],
    "first_course": "POLS C1000 American Government and Politics (3)",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
+  },
+  {
+   "code": "POL SCI",
+   "heading": "Political Science",
+   "heading_printed": "POLITICAL SCIENCE",
+   "rule": "named",
+   "codes": [
+    "POL SCI"
+   ],
+   "candidate": null,
+   "page": 218,
+   "above": [
+    "and California. Students examine the constitutions, structure, and operation of",
+    "governing institutions, civil liberties and civil rights, political behaviors, political",
+    "issues, and public policy using political science theory and methodology.",
+    "POLITICAL SCIENCE (POL SCI)"
+   ],
+   "first_course": "POL SCI 002 Introduction to Comparative Politics (3)",
    "where": "catalog",
    "method": "subject heading",
    "found_on": "2026-11-25",

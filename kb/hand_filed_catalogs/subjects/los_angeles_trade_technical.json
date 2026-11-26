@@ -5,31 +5,9 @@
  "source": [
   "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf"
  ],
- "subjects": 113,
- "with_heading": 82,
+ "subjects": 122,
+ "with_heading": 121,
  "rows": [
-  {
-   "code": "A S L",
-   "heading": "American Sign Language",
-   "heading_printed": "AMERICAN SIGN LANGUAGE",
-   "rule": "caps",
-   "codes": [
-    "A S L"
-   ],
-   "candidate": null,
-   "page": 240,
-   "above": [
-    "spirituals, gospels, concert music, opera, ballet, blues, and jazz underscoring",
-    "styles, characteristics, origin, and contributions by African-American artists.",
-    "(Credit allowed for only one of AFRO AM 060 or MUSIC 135.)",
-    "AMERICAN SIGN LANGUAGE"
-   ],
-   "first_course": "A S L 001 AMERICAN SIGN LANGUAGE I (4) UC/CSU",
-   "where": "catalog",
-   "method": "subject heading",
-   "found_on": "2026-11-25",
-   "found_by": "COBI, a runner read (run 44948526227)"
-  },
   {
    "code": "ACAD PR",
    "heading": "Academic Preparation",
@@ -98,9 +76,9 @@
   },
   {
    "code": "AFRO AM",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "African American Studies",
+   "heading_printed": "African American Studies",
+   "rule": "schedule",
    "codes": [
     "AFRO AM"
    ],
@@ -112,7 +90,13 @@
     "students consider current Black struggles for freedom, for justice, and for",
     "humanity through an ethnic studies lens."
    ],
-   "first_course": "AFRO AM 020 AFRICAN-AMERICAN LITERATURE I(3) CSU"
+   "first_course": "AFRO AM 020 AFRICAN-AMERICAN LITERATURE I(3) CSU",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LATTC&strm=2268&subj=AFRO%20AM&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "ANATOMY",
@@ -182,9 +166,9 @@
   },
   {
    "code": "ART",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "schedule",
    "codes": [
     "ART"
    ],
@@ -196,7 +180,51 @@
     "Renaissance to the contemporary period with a focus on art from Europe. The",
     "course will further consider global interactions involving this region."
    ],
-   "first_course": "ART 103 ART APPRECIATION I (3) UC/CSU"
+   "first_course": "ART 103 ART APPRECIATION I (3) UC/CSU",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LATTC&strm=2268&subj=ART&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art History (CCN)",
+   "heading_printed": "Art History (CCN)",
+   "rule": "schedule",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LATTC&strm=2268&subj=ARTH&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
+  },
+  {
+   "code": "A S L",
+   "heading": "American Sign Language",
+   "heading_printed": "AMERICAN SIGN LANGUAGE",
+   "rule": "caps",
+   "codes": [
+    "A S L"
+   ],
+   "candidate": null,
+   "page": 240,
+   "above": [
+    "spirituals, gospels, concert music, opera, ballet, blues, and jazz underscoring",
+    "styles, characteristics, origin, and contributions by African-American artists.",
+    "(Credit allowed for only one of AFRO AM 060 or MUSIC 135.)",
+    "AMERICAN SIGN LANGUAGE"
+   ],
+   "first_course": "A S L 001 AMERICAN SIGN LANGUAGE I (4) UC/CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "ASTRON",
@@ -222,9 +250,9 @@
   },
   {
    "code": "AUTOCOR",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Automotive Collision Repair",
+   "heading_printed": "Automotive Collision Repair",
+   "rule": "schedule",
    "codes": [
     "AUTOCOR"
    ],
@@ -236,13 +264,19 @@
     "including color matching are taught. Certification testing for the DuPont Certificate",
     "is given and certificates are awarded to qualifying students."
    ],
-   "first_course": "AUTOCOR 148 PAINT PREPARATION AND APPLICATION (3)"
+   "first_course": "AUTOCOR 148 PAINT PREPARATION AND APPLICATION (3)",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LATTC&strm=2268&subj=AUTOCOR&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "AUTORTK",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Automotive Mechanics Tech",
+   "heading_printed": "Automotive Mechanics Tech",
+   "rule": "schedule",
    "codes": [
     "AUTORTK"
    ],
@@ -254,7 +288,13 @@
     "This course provides instruction in the theory, design, principles, diagnostics, and",
     "proper system service of automotive brake, suspension, and steering systems."
    ],
-   "first_course": "AUTORTK 121 BASIC ENGINE THEORY INSPECTION AND REPAIR"
+   "first_course": "AUTORTK 121 BASIC ENGINE THEORY INSPECTION AND REPAIR",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LATTC&strm=2268&subj=AUTORTK&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "BAR",
@@ -324,9 +364,9 @@
   },
   {
    "code": "BLDGCTQ",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Bldg Construction Techniques",
+   "heading_printed": "Bldg Construction Techniques",
+   "rule": "schedule",
    "codes": [
     "BLDGCTQ"
    ],
@@ -338,7 +378,13 @@
     "replacement/installation, environmental air, water, appliance energy efficiency, and",
     "lighting are just some of the areas that will be covered."
    ],
-   "first_course": "BLDGCTQ 009 ENERGY AUDITOR - RESIDENTIAL (3)"
+   "first_course": "BLDGCTQ 009 ENERGY AUDITOR - RESIDENTIAL (3)",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LATTC&strm=2268&subj=BLDGCTQ&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "BSICSKL",
@@ -386,13 +432,13 @@
   },
   {
    "code": "CAOT",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Computer Apps Office Tech",
+   "heading_printed": "Computer Apps Office Tech",
+   "rule": "schedule",
    "codes": [
     "CAOT"
    ],
-   "candidate": "Graduation Requirements, Pathways",
+   "candidate": null,
    "page": 263,
    "above": [
     "GRADUATION REQUIREMENTS, PATHWAYS",
@@ -400,7 +446,13 @@
     "263",
     "Course Descriptions - Credit Courses"
    ],
-   "first_course": "CAOT 007 MACHINE TRANSCRIPTION (3)"
+   "first_course": "CAOT 007 MACHINE TRANSCRIPTION (3)",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LATTC&strm=2268&subj=CAOT&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "CH DEV",
@@ -492,9 +544,9 @@
   },
   {
    "code": "CIS",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Computer Information Systems",
+   "heading_printed": "Computer Information Systems",
+   "rule": "schedule",
    "codes": [
     "CIS"
    ],
@@ -506,7 +558,13 @@
     "spreadsheets and presentation graphics in a practical lab environment, along with",
     "a conceptual view of databases and Internet methods and procedures."
    ],
-   "first_course": "CIS 102 COMPUTER CONCEPTS (3) UC/CSU"
+   "first_course": "CIS 102 COMPUTER CONCEPTS (3) UC/CSU",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LATTC&strm=2268&subj=CIS&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "CLN ART",
@@ -529,6 +587,22 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 44948526227)"
+  },
+  {
+   "code": "COLLEGE",
+   "heading": "College Studies",
+   "heading_printed": "College Studies",
+   "rule": "schedule",
+   "codes": [
+    "COLLEGE"
+   ],
+   "candidate": null,
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LATTC&strm=2268&subj=COLLEGE&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "COMM",
@@ -554,9 +628,9 @@
   },
   {
    "code": "COMPLAN",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Community Plan/Economic Dev",
+   "heading_printed": "Community Plan/Economic Dev",
+   "rule": "schedule",
    "codes": [
     "COMPLAN"
    ],
@@ -568,7 +642,13 @@
     "maps, a housing plan and a workforce development plan. The course is also",
     "offered as three modules that run concurrently with the full course."
    ],
-   "first_course": "COMPLAN 002 INTRODUCTION TO COMMUNITY ORGANIZING (3)"
+   "first_course": "COMPLAN 002 INTRODUCTION TO COMMUNITY ORGANIZING (3)",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LATTC&strm=2268&subj=COMPLAN&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "COOP ED",
@@ -594,9 +674,9 @@
   },
   {
    "code": "COUNSEL",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Counseling",
+   "heading_printed": "Counseling",
+   "rule": "schedule",
    "codes": [
     "COUNSEL"
    ],
@@ -608,13 +688,19 @@
     "integrate the student’s career and academic interests and apply across",
     "general education disciplines."
    ],
-   "first_course": "COUNSEL 001 INTRODUCTION TO COLLEGE (1) CSU"
+   "first_course": "COUNSEL 001 INTRODUCTION TO COLLEGE (1) CSU",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LATTC&strm=2268&subj=COUNSEL&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "CRPNTRY",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Carpentry",
+   "heading_printed": "Carpentry",
+   "rule": "schedule",
    "codes": [
     "CRPNTRY"
    ],
@@ -626,7 +712,13 @@
     "carpentry. Measurement calculations will be performed in both standard and metric",
     "measurements."
    ],
-   "first_course": "CRPNTRY 111 CONSTRUCTION I (7) CSU"
+   "first_course": "CRPNTRY 111 CONSTRUCTION I (7) CSU",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LATTC&strm=2268&subj=CRPNTRY&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "CS",
@@ -674,9 +766,9 @@
   },
   {
    "code": "DIESLTK",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Diesel and Related Technology",
+   "heading_printed": "Diesel And Related Technology",
+   "rule": "schedule",
    "codes": [
     "DIESLTK"
    ],
@@ -688,7 +780,13 @@
     "maintenance shops, shop safety, tools, fastening devices, measuring",
     "instruments."
    ],
-   "first_course": "DIESLTK 112B HEAVY DUTY ENGINE FUNDAMENTALS (4)"
+   "first_course": "DIESLTK 112B HEAVY DUTY ENGINE FUNDAMENTALS (4)",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LATTC&strm=2268&subj=DIESLTK&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "DIGLMD",
@@ -732,9 +830,9 @@
   },
   {
    "code": "DRAFT",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Drafting",
+   "heading_printed": "Drafting",
+   "rule": "schedule",
    "codes": [
     "DRAFT"
    ],
@@ -746,29 +844,13 @@
     "presentation drawings, building systems, working drawings, and working",
     "drawing coordination."
    ],
-   "first_course": "DRAFT 062 CADD FOR ARCHITECTS (3) UC/CSU"
-  },
-  {
-   "code": "E.S.L.",
-   "heading": "English as a Second Language",
-   "heading_printed": "ENGLISH AS A SECOND LANGUAGE",
-   "rule": "caps",
-   "codes": [
-    "E.S.L."
-   ],
-   "candidate": null,
-   "page": 289,
-   "above": [
-    "This course is designed to give the student opportunities to view, analyze, and",
-    "evaluate films of artistic and cultural significance. The relationship between",
-    "literature and film is discussed and evaluated.",
-    "ENGLISH AS A SECOND LANGUAGE"
-   ],
-   "first_course": "E.S.L. 005A COLLEGE ESL V: WRITING AND GRAMMAR(6)",
-   "where": "catalog",
-   "method": "subject heading",
-   "found_on": "2026-11-25",
-   "found_by": "COBI, a runner read (run 44948526227)"
+   "first_course": "DRAFT 062 CADD FOR ARCHITECTS (3) UC/CSU",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LATTC&strm=2268&subj=DRAFT&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "EARTH",
@@ -838,9 +920,9 @@
   },
   {
    "code": "EDUC",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "schedule",
    "codes": [
     "EDUC"
    ],
@@ -852,17 +934,23 @@
     "inequality, the financial system, and monetary, fiscal, and other economic",
     "policies. EDUCATION"
    ],
-   "first_course": "EDUC 001 INTRODUCTION TO TEACHING (3) UC/CSU"
+   "first_course": "EDUC 001 INTRODUCTION TO TEACHING (3) UC/CSU",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LATTC&strm=2268&subj=EDUC&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "EGD TEK",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Engineering Graphics & Design",
+   "heading_printed": "Engineering Graphics & Design",
+   "rule": "schedule",
    "codes": [
     "EGD TEK"
    ],
-   "candidate": "Engineering Graphics & Design",
+   "candidate": null,
    "page": 287,
    "above": [
     "superposition, moment-area, and Castigliano methods are also studied. Topics",
@@ -870,17 +958,23 @@
     "ENGINEERING GRAPHICS &",
     "DESIGN"
    ],
-   "first_course": "EGD TEK 101 ENGINEERING GRAPHICS (3) UC/CSU"
+   "first_course": "EGD TEK 101 ENGINEERING GRAPHICS (3) UC/CSU",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LATTC&strm=2268&subj=EGD%20TEK&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "ELECL",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Power Line Mech Trne",
+   "heading_printed": "Power Line Mech Trne",
+   "rule": "schedule",
    "codes": [
     "ELECL"
    ],
-   "candidate": "Powerline Mechanic Trainee",
+   "candidate": null,
    "page": 327,
    "above": [
     "Students will explore the causes, consequences, and methods of resolving international",
@@ -888,7 +982,29 @@
     "policy.",
     "POWERLINE MECHANIC TRAINEE"
    ],
-   "first_course": "ELECL 102 PRE-ELECTRIC STRATION OPERATOR (4)"
+   "first_course": "ELECL 102 PRE-ELECTRIC STRATION OPERATOR (4)",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LATTC&strm=2268&subj=ELECL&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
+  },
+  {
+   "code": "ELECLNM",
+   "heading": "Electrical Lineman - Apprentic",
+   "heading_printed": "Electrical Lineman - Apprentic",
+   "rule": "schedule",
+   "codes": [
+    "ELECLNM"
+   ],
+   "candidate": null,
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LATTC&strm=2268&subj=ELECLNM&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "ELECTRN",
@@ -936,9 +1052,9 @@
   },
   {
    "code": "ENG GEN",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Engineering, General",
+   "heading_printed": "Engineering, General",
+   "rule": "schedule",
    "codes": [
     "ENG GEN"
    ],
@@ -950,7 +1066,13 @@
     "in the course are drawn from practical applications in engineering, physics, and",
     "mathematics."
    ],
-   "first_course": "ENG GEN 131 STATICS (3) UC/CSU"
+   "first_course": "ENG GEN 131 STATICS (3) UC/CSU",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LATTC&strm=2268&subj=ENG%20GEN&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "ENGL",
@@ -1019,22 +1141,42 @@
    "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
-   "code": "ESL NC",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "code": "ENV SCI",
+   "heading": "Environmental Science",
+   "heading_printed": "Environmental Science",
+   "rule": "schedule",
    "codes": [
-    "ESL NC"
+    "ENV SCI"
    ],
    "candidate": null,
-   "page": 350,
-   "above": [
-    "and reading/writing skills at a literacy level. The focus of the course is on",
-    "meeting adult standards that systematically build language skills around life",
-    "skills topics. The course also emphasizes the development of English sound/",
-    "symbol correspondence and reading and writing of simple English sentences."
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LATTC&strm=2268&subj=ENV%20SCI&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
+  },
+  {
+   "code": "E.S.L.",
+   "heading": "English as a Second Language",
+   "heading_printed": "ENGLISH AS A SECOND LANGUAGE",
+   "rule": "caps",
+   "codes": [
+    "E.S.L."
    ],
-   "first_course": "ESL NC 005CE ENGLISH AS A SECOND LANGUAGE (0)"
+   "candidate": null,
+   "page": 289,
+   "above": [
+    "This course is designed to give the student opportunities to view, analyze, and",
+    "evaluate films of artistic and cultural significance. The relationship between",
+    "literature and film is discussed and evaluated.",
+    "ENGLISH AS A SECOND LANGUAGE"
+   ],
+   "first_course": "E.S.L. 005A COLLEGE ESL V: WRITING AND GRAMMAR(6)",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "ESLCVCS",
@@ -1057,6 +1199,30 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 44948526227)"
+  },
+  {
+   "code": "ESL NC",
+   "heading": "English Second Language - NC",
+   "heading_printed": "English Second Language - NC",
+   "rule": "schedule",
+   "codes": [
+    "ESL NC"
+   ],
+   "candidate": null,
+   "page": 350,
+   "above": [
+    "and reading/writing skills at a literacy level. The focus of the course is on",
+    "meeting adult standards that systematically build language skills around life",
+    "skills topics. The course also emphasizes the development of English sound/",
+    "symbol correspondence and reading and writing of simple English sentences."
+   ],
+   "first_course": "ESL NC 005CE ENGLISH AS A SECOND LANGUAGE (0)",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LATTC&strm=2268&subj=ESL%20NC&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "ETNTLGY",
@@ -1148,9 +1314,9 @@
   },
   {
    "code": "FLM PRD",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Film Production",
+   "heading_printed": "Film Production",
+   "rule": "schedule",
    "codes": [
     "FLM PRD"
    ],
@@ -1162,7 +1328,13 @@
     "of the key terminology, protocols, personnel, equipment, duties, responsibilities and",
     "physical demands required of the entertainment industry crafts."
    ],
-   "first_course": "FLM PRD 101 PRODUCTION SKILLS (3) CSU"
+   "first_course": "FLM PRD 101 PRODUCTION SKILLS (3) CSU",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LATTC&strm=2268&subj=FLM%20PRD&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "FRENCH",
@@ -1385,6 +1557,22 @@
    "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
+   "code": "JOURNAL",
+   "heading": "Journalism",
+   "heading_printed": "Journalism",
+   "rule": "schedule",
+   "codes": [
+    "JOURNAL"
+   ],
+   "candidate": null,
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LATTC&strm=2268&subj=JOURNAL&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
+  },
+  {
    "code": "KIN",
    "heading": "Kinesiology",
    "heading_printed": "KINESIOLOGY",
@@ -1408,9 +1596,9 @@
   },
   {
    "code": "KIN ATH",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Kinesiology Athletics",
+   "heading_printed": "Kinesiology Athletics",
+   "rule": "schedule",
    "codes": [
     "KIN ATH"
    ],
@@ -1422,7 +1610,13 @@
     "and diving techniques, including starts, turns, stroke technique, breathing,",
     "interval training and intercollegiate competition."
    ],
-   "first_course": "KIN ATH 516 INTERCOLLEGIATE ATHLETICS-VOLLEYBALL"
+   "first_course": "KIN ATH 516 INTERCOLLEGIATE ATHLETICS-VOLLEYBALL",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LATTC&strm=2268&subj=KIN%20ATH&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "KIN MAJ",
@@ -1492,9 +1686,9 @@
   },
   {
    "code": "LIB SCI",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Library Science",
+   "heading_printed": "Library Science",
+   "rule": "schedule",
    "codes": [
     "LIB SCI"
    ],
@@ -1506,7 +1700,13 @@
     "students learn to locate, evaluate, and communicate information responsibly and",
     "ethically"
    ],
-   "first_course": "LIB SCI 101 COLLEGE RESEARCH SKILLS (1) UC/CSU"
+   "first_course": "LIB SCI 101 COLLEGE RESEARCH SKILLS (1) UC/CSU",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LATTC&strm=2268&subj=LIB%20SCI&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "LRNSKIL",
@@ -1575,6 +1775,22 @@
    "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
+   "code": "MCYCMEK",
+   "heading": "Motorcycle Repair Mechanic",
+   "heading_printed": "Motorcycle Repair Mechanic",
+   "rule": "schedule",
+   "codes": [
+    "MCYCMEK"
+   ],
+   "candidate": null,
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LATTC&strm=2268&subj=MCYCMEK&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
+  },
+  {
    "code": "MGMT",
    "heading": "Management",
    "heading_printed": "MANAGEMENT",
@@ -1620,13 +1836,13 @@
   },
   {
    "code": "MICROTK",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Microcomputer Technician",
+   "heading_printed": "Microcomputer Technician",
+   "rule": "schedule",
    "codes": [
     "MICROTK"
    ],
-   "candidate": "Microcomputer Technician",
+   "candidate": null,
    "page": 318,
    "above": [
     "morphology, physiology, genetics, ecology and evolution of microorganisms. Medical",
@@ -1634,7 +1850,13 @@
     "immune response and a survey of important human diseases.",
     "MICROCOMPUTER TECHNICIAN"
    ],
-   "first_course": "MICROTK 077 CISCO NETWORKING ACADEMY - SEMESTER I (3)"
+   "first_course": "MICROTK 077 CISCO NETWORKING ACADEMY - SEMESTER I (3)",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LATTC&strm=2268&subj=MICROTK&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "MIT",
@@ -1660,13 +1882,13 @@
   },
   {
    "code": "MSCNC",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Machine Shop - CNC",
+   "heading_printed": "Machine Shop - Cnc",
+   "rule": "schedule",
    "codes": [
     "MSCNC"
    ],
-   "candidate": "Machine Shop",
+   "candidate": null,
    "page": 313,
    "above": [
     "organizational strategies for research assignments, to apply citation rules to their",
@@ -1674,7 +1896,13 @@
     "academic integrity.",
     "MACHINE SHOP"
    ],
-   "first_course": "MSCNC 111 PRINCIPLES OF MACHINE TOOLS I (2) CSU"
+   "first_course": "MSCNC 111 PRINCIPLES OF MACHINE TOOLS I (2) CSU",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LATTC&strm=2268&subj=MSCNC&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "MUSIC",
@@ -1744,9 +1972,9 @@
   },
   {
    "code": "OPMA AP",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Engineer-Opr/Maint-Apprentice",
+   "heading_printed": "Engineer-Opr/Maint-Apprentice",
+   "rule": "schedule",
    "codes": [
     "OPMA AP"
    ],
@@ -1758,7 +1986,13 @@
     "exam will be eligible to receive their OSHA (30 hr) safety-training certificate and CPR",
     "first Aid card."
    ],
-   "first_course": "OPMA AP 703 ENERGY MANAGEMENT (2)"
+   "first_course": "OPMA AP 703 ENERGY MANAGEMENT (2)",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LATTC&strm=2268&subj=OPMA%20AP&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "OPMAINT",
@@ -1893,28 +2127,6 @@
    "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
-   "code": "POL SCI",
-   "heading": "Political Science",
-   "heading_printed": "POLITICAL SCIENCE",
-   "rule": "section",
-   "codes": [
-    "POL SCI"
-   ],
-   "candidate": null,
-   "page": 327,
-   "above": [
-    "This course is an introduction to government and politics in the United States and",
-    "California. Students examine the constitutions, structure, and operation of governing",
-    "institutions, civil liberties and civil rights, political behaviors, political issues, and public",
-    "policy using political science theory and methodology."
-   ],
-   "first_course": "POL SCI 002 INTRODUCTION TO COMPARATIVE POLITICS (3) UC/",
-   "where": "catalog",
-   "method": "subject heading",
-   "found_on": "2026-11-25",
-   "found_by": "COBI, a runner read (run 44948526227)"
-  },
-  {
    "code": "POLS",
    "heading": "Political Science",
    "heading_printed": "POLITICAL SCIENCE",
@@ -1937,14 +2149,36 @@
    "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
+   "code": "POL SCI",
+   "heading": "Political Science",
+   "heading_printed": "POLITICAL SCIENCE",
+   "rule": "section",
+   "codes": [
+    "POL SCI"
+   ],
+   "candidate": null,
+   "page": 327,
+   "above": [
+    "This course is an introduction to government and politics in the United States and",
+    "California. Students examine the constitutions, structure, and operation of governing",
+    "institutions, civil liberties and civil rights, political behaviors, political issues, and public",
+    "policy using political science theory and methodology."
+   ],
+   "first_course": "POL SCI 002 INTRODUCTION TO COMPARATIVE POLITICS (3) UC/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
+  },
+  {
    "code": "PROFBKG",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Baking, Professional",
+   "heading_printed": "Baking, Professional",
+   "rule": "schedule",
    "codes": [
     "PROFBKG"
    ],
-   "candidate": "Baking, Professional",
+   "candidate": null,
    "page": 248,
    "above": [
     "Cooperative Education, at the end of the semester is required. Students",
@@ -1952,17 +2186,23 @@
     "program.",
     "BAKING, PROFESSIONAL"
    ],
-   "first_course": "PROFBKG 102 PLANT BASED BAKING TECHNIQUES (4)"
+   "first_course": "PROFBKG 102 PLANT BASED BAKING TECHNIQUES (4)",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LATTC&strm=2268&subj=PROFBKG&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "PRPLTEK",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Process Plant Technology",
+   "heading_printed": "Process Plant Technology",
+   "rule": "schedule",
    "codes": [
     "PRPLTEK"
    ],
-   "candidate": "Process Technology",
+   "candidate": null,
    "page": 328,
    "above": [
     "might limit your abilities to succeed should be considered. Part D is the third of 3",
@@ -1970,7 +2210,13 @@
     "an extended period.",
     "PROCESS TECHNOLOGY"
    ],
-   "first_course": "PRPLTEK 100 INTRODUCTION TO INDUSTRIAL PROCESS (3) CSU"
+   "first_course": "PRPLTEK 100 INTRODUCTION TO INDUSTRIAL PROCESS (3) CSU",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LATTC&strm=2268&subj=PRPLTEK&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "PSYC",
@@ -2061,14 +2307,30 @@
    "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
+   "code": "REF A/C",
+   "heading": "Refrig & Air Condition Mechan",
+   "heading_printed": "Refrig & Air Condition Mechan",
+   "rule": "schedule",
+   "codes": [
+    "REF A/C"
+   ],
+   "candidate": null,
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LATTC&strm=2268&subj=REF%20A/C&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
+  },
+  {
    "code": "REGNRSG",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Nursing, Registered",
+   "heading_printed": "Nursing, Registered",
+   "rule": "schedule",
    "codes": [
     "REGNRSG"
    ],
-   "candidate": "Nursing, Registered",
+   "candidate": null,
    "page": 320,
    "above": [
     "tuning, chords, strumming and notation. Students will learn to read and play",
@@ -2076,7 +2338,13 @@
     "Student must possess a guitar.",
     "NURSING, REGISTERED"
    ],
-   "first_course": "REGNRSG 119 INTRODUCTION TO NURSING (1)"
+   "first_course": "REGNRSG 119 INTRODUCTION TO NURSING (1)",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LATTC&strm=2268&subj=REGNRSG&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "RESTMGT",
@@ -2167,28 +2435,10 @@
    "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
-   "code": "ST MAIN",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
-   "codes": [
-    "ST MAIN"
-   ],
-   "candidate": null,
-   "page": 337,
-   "above": [
-    "PUBLIC WORKS) (3)",
-    "Lecture: 3 hours",
-    "This course is a practical mathematics exploration with an emphasis on application problems",
-    "encountered in ‘Street Maintenance’, ‘Street Services’, and other areas of ‘Public Works’."
-   ],
-   "first_course": "ST MAIN 200 SURVEY OF STREET SERVICES (3)"
-  },
-  {
    "code": "STAT",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "schedule",
    "codes": [
     "STAT"
    ],
@@ -2200,7 +2450,37 @@
     "real numbers and fundamental operations, relations and functions, elementary logic, and",
     "various algorithms used in calculations."
    ],
-   "first_course": "STAT C1000 INTRODUCTION TO STATISTICS (4) UC/CSU"
+   "first_course": "STAT C1000 INTRODUCTION TO STATISTICS (4) UC/CSU",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LATTC&strm=2268&subj=STAT&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
+  },
+  {
+   "code": "ST MAIN",
+   "heading": "Street Maintenance",
+   "heading_printed": "Street Maintenance",
+   "rule": "schedule",
+   "codes": [
+    "ST MAIN"
+   ],
+   "candidate": null,
+   "page": 337,
+   "above": [
+    "PUBLIC WORKS) (3)",
+    "Lecture: 3 hours",
+    "This course is a practical mathematics exploration with an emphasis on application problems",
+    "encountered in ‘Street Maintenance’, ‘Street Services’, and other areas of ‘Public Works’."
+   ],
+   "first_course": "ST MAIN 200 SURVEY OF STREET SERVICES (3)",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LATTC&strm=2268&subj=ST%20MAIN&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "SUPV",
@@ -2226,13 +2506,13 @@
   },
   {
    "code": "SWM TEK",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Solid Waste Management Tech",
+   "heading_printed": "Solid Waste Management Tech",
+   "rule": "schedule",
    "codes": [
     "SWM TEK"
    ],
-   "candidate": "Solid Waste Management Technology",
+   "candidate": null,
    "page": 336,
    "above": [
     "and processes of empowerment through the examination of various social",
@@ -2240,7 +2520,13 @@
     "SOLID WASTE MANAGEMENT",
     "TECHNOLOGY"
    ],
-   "first_course": "SWM TEK 101 INTRODUCTION TO SOLID WASTE MANAGEMENT (3)"
+   "first_course": "SWM TEK 101 INTRODUCTION TO SOLID WASTE MANAGEMENT (3)",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LATTC&strm=2268&subj=SWM%20TEK&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "TAILRNG",
@@ -2287,6 +2573,22 @@
    "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
+   "code": "TUTOR",
+   "heading": "Supervised Learning Assistance",
+   "heading_printed": "Supervised Learning Assistance",
+   "rule": "schedule",
+   "codes": [
+    "TUTOR"
+   ],
+   "candidate": null,
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LATTC&strm=2268&subj=TUTOR&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
+  },
+  {
    "code": "VISCOM",
    "heading": "Visual Communications",
    "heading_printed": "VISUAL COMMUNICATIONS",
@@ -2310,9 +2612,9 @@
   },
   {
    "code": "VOC ED",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Vocational Education",
+   "heading_printed": "Vocational Education",
+   "rule": "schedule",
    "codes": [
     "VOC ED"
    ],
@@ -2324,7 +2626,13 @@
     "fectiveness, problem-solving skills, and teamwork while working in “simulated”",
     "vocational settings."
    ],
-   "first_course": "VOC ED 060CE CUSTODIAL TECHNICIAN TRAINING (0)"
+   "first_course": "VOC ED 060CE CUSTODIAL TECHNICIAN TRAINING (0)",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LATTC&strm=2268&subj=VOC%20ED&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "WASTE",
@@ -2369,6 +2677,22 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 44948526227)"
+  },
+  {
+   "code": "WELDG/E",
+   "heading": "Welding Gas and Electric",
+   "heading_printed": "Welding Gas And Electric",
+   "rule": "schedule",
+   "codes": [
+    "WELDG/E"
+   ],
+   "candidate": null,
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LATTC&strm=2268&subj=WELDG/E&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   }
  ],
  "code_address_tried": [

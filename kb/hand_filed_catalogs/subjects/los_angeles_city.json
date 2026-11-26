@@ -6,30 +6,8 @@
   "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf"
  ],
  "subjects": 101,
- "with_heading": 99,
+ "with_heading": 101,
  "rows": [
-  {
-   "code": "A S L",
-   "heading": "American Sign Language",
-   "heading_printed": "AMERICAN SIGN LANGUAGE",
-   "rule": "named",
-   "codes": [
-    "A S L"
-   ],
-   "candidate": null,
-   "page": 244,
-   "above": [
-    "LACC 2026-2027 COLLEGE CATALOG 243",
-    "CREDIT COURSES",
-    "CREDIT COURSES",
-    "AMERICAN SIGN LANGUAGE (A S L)"
-   ],
-   "first_course": "A S L 001 - AMERICAN SIGN LANGUAGE I",
-   "where": "catalog",
-   "method": "subject heading",
-   "found_on": "2026-11-25",
-   "found_by": "COBI, a runner read (run 44948529916)"
-  },
   {
    "code": "ACAD PR",
    "heading": "Academic Preparation",
@@ -339,6 +317,28 @@
    "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
+   "code": "A S L",
+   "heading": "American Sign Language",
+   "heading_printed": "AMERICAN SIGN LANGUAGE",
+   "rule": "named",
+   "codes": [
+    "A S L"
+   ],
+   "candidate": null,
+   "page": 244,
+   "above": [
+    "LACC 2026-2027 COLLEGE CATALOG 243",
+    "CREDIT COURSES",
+    "CREDIT COURSES",
+    "AMERICAN SIGN LANGUAGE (A S L)"
+   ],
+   "first_course": "A S L 001 - AMERICAN SIGN LANGUAGE I",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
+  },
+  {
    "code": "ASTRON",
    "heading": "Astronomy",
    "heading_printed": "ASTRONOMY",
@@ -581,28 +581,6 @@
    "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
-   "code": "CO TECH",
-   "heading": "Computer Technology",
-   "heading_printed": "COMPUTER TECHNOLOGY",
-   "rule": "named",
-   "codes": [
-    "CO TECH"
-   ],
-   "candidate": null,
-   "page": 270,
-   "above": [
-    "of a subject of special interest in the field of Computer Science.",
-    "Requires consultation with the instructor on a weekly basis, plus",
-    "independent work.",
-    "COMPUTER TECHNOLOGY (CO TECH)"
-   ],
-   "first_course": "CO TECH 002 - INTRODUCTION TO ELECTRONICS",
-   "where": "catalog",
-   "method": "subject heading",
-   "found_on": "2026-11-25",
-   "found_by": "COBI, a runner read (run 44948529916)"
-  },
-  {
    "code": "COLLEGE",
    "heading": "College Studies",
    "heading_printed": "COLLEGE STUDIES",
@@ -685,6 +663,28 @@
     "CORRECTIONS (CORR)"
    ],
    "first_course": "CORR 001 - INTRODUCTION TO CORRECTIONS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
+  },
+  {
+   "code": "CO TECH",
+   "heading": "Computer Technology",
+   "heading_printed": "COMPUTER TECHNOLOGY",
+   "rule": "named",
+   "codes": [
+    "CO TECH"
+   ],
+   "candidate": null,
+   "page": 270,
+   "above": [
+    "of a subject of special interest in the field of Computer Science.",
+    "Requires consultation with the instructor on a weekly basis, plus",
+    "independent work.",
+    "COMPUTER TECHNOLOGY (CO TECH)"
+   ],
+   "first_course": "CO TECH 002 - INTRODUCTION TO ELECTRONICS",
    "where": "catalog",
    "method": "subject heading",
    "found_on": "2026-11-25",
@@ -817,28 +817,6 @@
     "DANCE SPECIALTIES (DNCESPC)"
    ],
    "first_course": "DNCESPC 311 - FLAMENCO AND SPANISH DANCE",
-   "where": "catalog",
-   "method": "subject heading",
-   "found_on": "2026-11-25",
-   "found_by": "COBI, a runner read (run 44948529916)"
-  },
-  {
-   "code": "E.S.L.",
-   "heading": "(E.s.l.)",
-   "heading_printed": "(E.S.L.)",
-   "rule": "caps",
-   "codes": [
-    "E.S.L."
-   ],
-   "candidate": null,
-   "page": 279,
-   "above": [
-    "Students learn basic tap dance steps and combinations, terminol -",
-    "ogy, music, and appreciation of dance as an art form.",
-    "ENGLISH AS A SECOND LANGUAGE 12",
-    "(E.S.L.)"
-   ],
-   "first_course": "E.S.L. 003A - COLLEGE ESL III: WRITING AND GRAMMAR",
    "where": "catalog",
    "method": "subject heading",
    "found_on": "2026-11-25",
@@ -1043,22 +1021,26 @@
    "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
-   "code": "ESL NC",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "code": "E.S.L.",
+   "heading": "(E.s.l.)",
+   "heading_printed": "(E.S.L.)",
+   "rule": "caps",
    "codes": [
-    "ESL NC"
+    "E.S.L."
    ],
-   "candidate": "NC)",
-   "page": 344,
+   "candidate": null,
+   "page": 279,
    "above": [
-    "expressions, and solving non linear equations such as polynomial,",
-    "rational, radical, exponential, and logarithmic.",
-    "ENGLISH SECOND LANGUAGE - NC (ESL",
-    "NC)"
+    "Students learn basic tap dance steps and combinations, terminol -",
+    "ogy, music, and appreciation of dance as an art form.",
+    "ENGLISH AS A SECOND LANGUAGE 12",
+    "(E.S.L.)"
    ],
-   "first_course": "ESL NC 001CE - ENGLISH AS A SECOND LANGUAGE -"
+   "first_course": "E.S.L. 003A - COLLEGE ESL III: WRITING AND GRAMMAR",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "ESLCVCS",
@@ -1083,14 +1065,38 @@
    "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
+   "code": "ESL NC",
+   "heading": "English Second Language - NC",
+   "heading_printed": "English Second Language - NC",
+   "rule": "schedule",
+   "codes": [
+    "ESL NC"
+   ],
+   "candidate": null,
+   "page": 344,
+   "above": [
+    "expressions, and solving non linear equations such as polynomial,",
+    "rational, radical, exponential, and logarithmic.",
+    "ENGLISH SECOND LANGUAGE - NC (ESL",
+    "NC)"
+   ],
+   "first_course": "ESL NC 001CE - ENGLISH AS A SECOND LANGUAGE -",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LACC&strm=2268&subj=ESL%20NC&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
+  },
+  {
    "code": "FAM &CS",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Family and Consumer Studies",
+   "heading_printed": "Family And Consumer Studies",
+   "rule": "schedule",
    "codes": [
     "FAM &CS"
    ],
-   "candidate": "Family and Consumer Studies (Fam",
+   "candidate": null,
    "page": 284,
    "above": [
     "ation and use, pollution, resources, and global climate change are",
@@ -1098,7 +1104,13 @@
     "FAMILY AND CONSUMER STUDIES (FAM",
     "&CS)"
    ],
-   "first_course": "FAM &CS 021 - NUTRITION"
+   "first_course": "FAM &CS 021 - NUTRITION",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LACC&strm=2268&subj=FAM%20&CS&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
   },
   {
    "code": "FINANCE",
@@ -1783,28 +1795,6 @@
    "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
-   "code": "PHYS SC",
-   "heading": "Physical Science",
-   "heading_printed": "PHYSICAL SCIENCE",
-   "rule": "named",
-   "codes": [
-    "PHYS SC"
-   ],
-   "candidate": null,
-   "page": 320,
-   "above": [
-    "course is recommended for all cinema and photography majors,",
-    "and is open to graphic artists as well as the general public. PHOTO",
-    "501 and CINEMA 501 cannot both be completed for credit.",
-    "PHYSICAL SCIENCE (PHYS SC)"
-   ],
-   "first_course": "PHYS SC 004 - PHYSICAL SCIENCE AND LABORATORY",
-   "where": "catalog",
-   "method": "subject heading",
-   "found_on": "2026-11-25",
-   "found_by": "COBI, a runner read (run 44948529916)"
-  },
-  {
    "code": "PHYSICS",
    "heading": "Physics",
    "heading_printed": "PHYSICS",
@@ -1849,22 +1839,22 @@
    "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
-   "code": "POL SCI",
-   "heading": "Political Science",
-   "heading_printed": "POLITICAL SCIENCE",
+   "code": "PHYS SC",
+   "heading": "Physical Science",
+   "heading_printed": "PHYSICAL SCIENCE",
    "rule": "named",
    "codes": [
-    "POL SCI"
+    "PHYS SC"
    ],
    "candidate": null,
-   "page": 322,
+   "page": 320,
    "above": [
-    "system, urinary system, digestive system, endocrine system, and",
-    "reproductive system. This course is primarily intended for Nursing,",
-    "Allied Health, Kinesiology, and other health related majors.",
-    "POLITICAL SCIENCE (POL SCI)"
+    "course is recommended for all cinema and photography majors,",
+    "and is open to graphic artists as well as the general public. PHOTO",
+    "501 and CINEMA 501 cannot both be completed for credit.",
+    "PHYSICAL SCIENCE (PHYS SC)"
    ],
-   "first_course": "POL SCI 002 - INTRODUCTION TO COMPARATIVE POLITICS",
+   "first_course": "PHYS SC 004 - PHYSICAL SCIENCE AND LABORATORY",
    "where": "catalog",
    "method": "subject heading",
    "found_on": "2026-11-25",
@@ -1887,6 +1877,28 @@
     "POLITICAL SCIENCE (CCN) (POLS)"
    ],
    "first_course": "POLS C1000 - AMERICAN GOVERNMENT AND POLITICS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
+  },
+  {
+   "code": "POL SCI",
+   "heading": "Political Science",
+   "heading_printed": "POLITICAL SCIENCE",
+   "rule": "named",
+   "codes": [
+    "POL SCI"
+   ],
+   "candidate": null,
+   "page": 322,
+   "above": [
+    "system, urinary system, digestive system, endocrine system, and",
+    "reproductive system. This course is primarily intended for Nursing,",
+    "Allied Health, Kinesiology, and other health related majors.",
+    "POLITICAL SCIENCE (POL SCI)"
+   ],
+   "first_course": "POL SCI 002 - INTRODUCTION TO COMPARATIVE POLITICS",
    "where": "catalog",
    "method": "subject heading",
    "found_on": "2026-11-25",
@@ -2135,28 +2147,6 @@
    "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
-   "code": "T V",
-   "heading": "Television",
-   "heading_printed": "TELEVISION",
-   "rule": "named",
-   "codes": [
-    "T V"
-   ],
-   "candidate": null,
-   "page": 334,
-   "above": [
-    "to the college's certificates in Business Administration, Marketing,",
-    "and Management, and the Western Association of Food Chains'",
-    "Marketing Management Certificate.",
-    "TELEVISION (T V)"
-   ],
-   "first_course": "T V 001 - EVOLUTION OF TELEVISION",
-   "where": "catalog",
-   "method": "subject heading",
-   "found_on": "2026-11-25",
-   "found_by": "COBI, a runner read (run 44948529916)"
-  },
-  {
    "code": "THEATER",
    "heading": "Theater",
    "heading_printed": "THEATER",
@@ -2195,6 +2185,28 @@
     "(TUTOR)"
    ],
    "first_course": "TUTOR 001T - SUPERVISED TUTORING",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
+  },
+  {
+   "code": "T V",
+   "heading": "Television",
+   "heading_printed": "TELEVISION",
+   "rule": "named",
+   "codes": [
+    "T V"
+   ],
+   "candidate": null,
+   "page": 334,
+   "above": [
+    "to the college's certificates in Business Administration, Marketing,",
+    "and Management, and the Western Association of Food Chains'",
+    "Marketing Management Certificate.",
+    "TELEVISION (T V)"
+   ],
+   "first_course": "T V 001 - EVOLUTION OF TELEVISION",
    "where": "catalog",
    "method": "subject heading",
    "found_on": "2026-11-25",

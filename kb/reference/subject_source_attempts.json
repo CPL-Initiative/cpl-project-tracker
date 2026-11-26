@@ -23,6 +23,51 @@
     {"status": "blocked", "date": "2026-11-23", "note": "cloviscollege.edu did not answer from the session; Sam pasted the catalog contents (PDF page 3), filed as kb/hand_filed_catalogs/subjects/clovis_community.json.", "file": "kb/hand_filed_catalogs/subjects/clovis_community.json", "by": "S715 SkyAlbatross"},
     {"status": "read", "date": "2026-11-23", "note": "Read from Sam's paste of the catalog contents.", "file": "kb/hand_filed_catalogs/subjects/clovis_community.json", "by": "Sam"}
    ]
+  },
+  "east_los_angeles": {
+   "schedule": [
+    {"status": "read", "date": "2026-11-26", "note": "LACCD's class schedule search (PeopleSoft guest, mycollege-guest.laccd.edu): its select subject lookup lists the district's 216 subject codes, each beside its title, letter by letter; read for term 2268 (Fall 2026) on run 45868955654 and filed for the codes the college holds (a catalog or person title stands). Probes: runs 45867183517 (no subject dropdown; Sam's address prints Course Subject: Older Adults) and 45868075237 (the lookup; a campus is required; a class detail prints the course description).", "file": "kb/college_reads/laccd_schedule_subjects.json", "by": "S736 worker"}
+   ]
+  },
+  "los_angeles_city": {
+   "schedule": [
+    {"status": "read", "date": "2026-11-26", "note": "LACCD's class schedule search (PeopleSoft guest, mycollege-guest.laccd.edu): its select subject lookup lists the district's 216 subject codes, each beside its title, letter by letter; read for term 2268 (Fall 2026) on run 45868955654 and filed for the codes the college holds (a catalog or person title stands). Probes: runs 45867183517 (no subject dropdown; Sam's address prints Course Subject: Older Adults) and 45868075237 (the lookup; a campus is required; a class detail prints the course description).", "file": "kb/college_reads/laccd_schedule_subjects.json", "by": "S736 worker"}
+   ]
+  },
+  "los_angeles_harbor": {
+   "schedule": [
+    {"status": "read", "date": "2026-11-26", "note": "LACCD's class schedule search (PeopleSoft guest, mycollege-guest.laccd.edu): its select subject lookup lists the district's 216 subject codes, each beside its title, letter by letter; read for term 2268 (Fall 2026) on run 45868955654 and filed for the codes the college holds (a catalog or person title stands). Probes: runs 45867183517 (no subject dropdown; Sam's address prints Course Subject: Older Adults) and 45868075237 (the lookup; a campus is required; a class detail prints the course description).", "file": "kb/college_reads/laccd_schedule_subjects.json", "by": "S736 worker"}
+   ]
+  },
+  "los_angeles_mission": {
+   "schedule": [
+    {"status": "read", "date": "2026-11-26", "note": "LACCD's class schedule search (PeopleSoft guest, mycollege-guest.laccd.edu): its select subject lookup lists the district's 216 subject codes, each beside its title, letter by letter; read for term 2268 (Fall 2026) on run 45868955654 and filed for the codes the college holds (a catalog or person title stands). Probes: runs 45867183517 (no subject dropdown; Sam's address prints Course Subject: Older Adults) and 45868075237 (the lookup; a campus is required; a class detail prints the course description).", "file": "kb/college_reads/laccd_schedule_subjects.json", "by": "S736 worker"}
+   ]
+  },
+  "los_angeles_pierce": {
+   "schedule": [
+    {"status": "read", "date": "2026-11-26", "note": "LACCD's class schedule search (PeopleSoft guest, mycollege-guest.laccd.edu): its select subject lookup lists the district's 216 subject codes, each beside its title, letter by letter; read for term 2268 (Fall 2026) on run 45868955654 and filed for the codes the college holds (a catalog or person title stands). Probes: runs 45867183517 (no subject dropdown; Sam's address prints Course Subject: Older Adults) and 45868075237 (the lookup; a campus is required; a class detail prints the course description).", "file": "kb/college_reads/laccd_schedule_subjects.json", "by": "S736 worker"}
+   ]
+  },
+  "los_angeles_southwest": {
+   "schedule": [
+    {"status": "read", "date": "2026-11-26", "note": "LACCD's class schedule search (PeopleSoft guest, mycollege-guest.laccd.edu): its select subject lookup lists the district's 216 subject codes, each beside its title, letter by letter; read for term 2268 (Fall 2026) on run 45868955654 and filed for the codes the college holds (a catalog or person title stands). Probes: runs 45867183517 (no subject dropdown; Sam's address prints Course Subject: Older Adults) and 45868075237 (the lookup; a campus is required; a class detail prints the course description).", "file": "kb/college_reads/laccd_schedule_subjects.json", "by": "S736 worker"}
+   ]
+  },
+  "los_angeles_trade_technical": {
+   "schedule": [
+    {"status": "read", "date": "2026-11-26", "note": "LACCD's class schedule search (PeopleSoft guest, mycollege-guest.laccd.edu): its select subject lookup lists the district's 216 subject codes, each beside its title, letter by letter; read for term 2268 (Fall 2026) on run 45868955654 and filed for the codes the college holds (a catalog or person title stands). Probes: runs 45867183517 (no subject dropdown; Sam's address prints Course Subject: Older Adults) and 45868075237 (the lookup; a campus is required; a class detail prints the course description).", "file": "kb/college_reads/laccd_schedule_subjects.json", "by": "S736 worker"}
+   ]
+  },
+  "los_angeles_valley": {
+   "schedule": [
+    {"status": "read", "date": "2026-11-26", "note": "LACCD's class schedule search (PeopleSoft guest, mycollege-guest.laccd.edu): its select subject lookup lists the district's 216 subject codes, each beside its title, letter by letter; read for term 2268 (Fall 2026) on run 45868955654 and filed for the codes the college holds (a catalog or person title stands). Probes: runs 45867183517 (no subject dropdown; Sam's address prints Course Subject: Older Adults) and 45868075237 (the lookup; a campus is required; a class detail prints the course description).", "file": "kb/college_reads/laccd_schedule_subjects.json", "by": "S736 worker"}
+   ]
+  },
+  "west_los_angeles": {
+   "schedule": [
+    {"status": "read", "date": "2026-11-26", "note": "LACCD's class schedule search (PeopleSoft guest, mycollege-guest.laccd.edu): its select subject lookup lists the district's 216 subject codes, each beside its title, letter by letter; read for term 2268 (Fall 2026) on run 45868955654 and filed for the codes the college holds (a catalog or person title stands). Probes: runs 45867183517 (no subject dropdown; Sam's address prints Course Subject: Older Adults) and 45868075237 (the lookup; a campus is required; a class detail prints the course description).", "file": "kb/college_reads/laccd_schedule_subjects.json", "by": "S736 worker"}
+   ]
   }
  }
 }
