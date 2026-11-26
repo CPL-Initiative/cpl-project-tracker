@@ -13,6 +13,11 @@ COLLECTED WITH A NAMED GAP (5, REVIEWED below):
         34-38 add to 52-56 against the printed 60-61, and the record holds no electives figure and no word that
         electives fill the degree (S721's degree_rest, the kind's own check). S721 held it because no note of its own
         says the page prints no electives; the record's own fields say it, and its notes name the three figures.
+        Of those fields, electives_fill_degree false is the field's default (every Palo Verde certificate and
+        noncredit record carries it; two degrees whose page says electives fill the rest carry true), so it says the
+        reader reported no such sentence, never that the reader looked for one and found none. The kind's sentence
+        ends 'and does not say they fill the rest': the row stands on that default and on the null electives figure
+        (S739's reader, MINOR).
   figure_within_variable_units (60)  41242 Fire Science Technical Rescue: the required list's printed 17.25 falls
         inside the 9.25-21.5 its courses carry (FST 090 at 0.25-12, EMS 161 at 1-1.5), and its note says the 17.25
         and the electives' 12.75 are the printed 30 (S721's spans_figure, and the figures add to the stated total).
@@ -136,7 +141,9 @@ REVIEWED = {
               "words": "'Credits: 60.0 - 61.0' at the top of the page is recorded as degree_total; the 18-credit Area "
                        "of Emphasis total is recorded as total_units",
               "also_words": "CalGETC pattern printed at 34-38 credits",
-              "shape": ["degree_rest"]},
+              "shape": ["degree_rest"],
+              "note": "electives_fill_degree false is the field's default, not a finding of the reader's: the row "
+                      "stands on it and on the null electives figure (S739's reader, MINOR)"},
     "41242": {"gap": "figure_within_variable_units", "computed": [21.75, 34.0], "stated": [30, 30],
               "words": "The certificate total is 'Credits: 30.0' as printed, which matches 17.25 required plus 12.75 "
                        "elective credits",

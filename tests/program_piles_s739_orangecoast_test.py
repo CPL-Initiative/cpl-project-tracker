@@ -11,7 +11,10 @@ The shared checks are tests/program_piles_s739_common.py's. Pinned here:
   * 32737's substitution list prints no figure, and without it today's scorer passes the record; 36732's Related
     Fields list prints no figure, and its note names the figures that do not match;
   * 43362 and 41373: each note quotes both figures, and each heading goes beyond its page-mate's title, so the mate
-    does not own it.
+    does not own it;
+  * 41373's rollback slice (kb/migrations/2026-11-26_s739j_41373_rollback.sql and its md5 pre-read): its 29 sits inside
+    the printed 28-29, so the gap goes back; the slice's values line is s739j's rollback row for 41373 byte for byte,
+    it names no other row, restores the before-checks only where the row holds the after-image, and expects 1.
 
 Run from repo root: python3 tests/program_piles_s739_orangecoast_test.py
 """
@@ -69,5 +72,41 @@ for cn, mate in (("43362", "08663"), ("41373", "32086")):
     check(g["record"]["program"]["section_heading"] == f["record"]["program"]["section_heading"]
           and W.own(g, {"gap": "noted_figures_differ", "own_heading": g["record"]["program"]["section_heading"]}) is None,
           "%s carries %s's heading and does not own it" % (mate, cn))
+
+# 41373's rollback slice (S739's reader: its 29 sits inside the printed 28-29, so the gap s739j applied goes back).
+row = M.rollback_41373_row()
+a = row["before_image"], row["after_image"]
+f = W.load("41373")
+check(row["moves_to"] == "noted_figures_differ" and f["score"]["arithmetic"]["computed"] == [29.0, 29.0]
+      and f["score"]["arithmetic"]["stated"] == [28.0, 29.0] and "inside its printed range (29-29 in 28-29)" in M.NOTE_41373
+      and "d-lists-gap-holds-range-sums-s703" in M.NOTE_41373 and "units within-range kind" in M.NOTE_41373,
+      "41373: its 29 sits inside the printed 28-29, and its note holds it for the within-range kind")
+files = M.rollback_41373_files()
+for rel, text in files.items():
+    with open(os.path.join(B.ROOT, rel), encoding="utf-8") as fh:
+        check(fh.read() == text, "%s is the module's own text" % rel)
+sql = files[M.ROLLBACK_41373["sql"]]
+with open(os.path.join(B.ROOT, "kb", "migrations", "2026-11-26_s739j_prreq_piles_rollback.sql"), encoding="utf-8") as fh:
+    whole = fh.read()
+line = NG._values([row])
+check(line in whole and line in sql and sql.count("'Orange Coast College'") == 1,
+      "the slice's one values line is s739j's rollback row for 41373, byte for byte")
+check(not any("'%s'" % cn in sql for cn in ROWS if cn != "41373") and "e(expect) as (values (1))" in sql
+      and "set checks = v.before_checks" in sql and "r.checks = v.after_checks" in sql
+      and "r.extracted_run = v.extracted_run" in sql and "r.checked is not true" in sql
+      and "s739j 41373 rollback guard" in sql,
+      "the slice names 41373 alone, restores the before-checks only where the row holds the after-image, and aborts "
+      "unless it matches exactly 1 row")
+tail = lambda q: q[q.index("c as (select"):].replace("(values (4))", "(values (1))").replace("s739j piles rollback", "s739j 41373 rollback")  # noqa: E731
+check(tail(whole) == tail(sql), "past its values, the slice is s739j's rollback with its expect at 1 and its own name")
+md5 = files[M.ROLLBACK_41373["preread_md5"]]
+with open(os.path.join(B.ROOT, "kb", "migrations", "2026-11-26_s739j_prreq_piles_preread_md5.sql"), encoding="utf-8") as fh:
+    md5_whole = [ln for ln in fh.read().splitlines() if "'41373'" in ln]
+mine = [ln for ln in md5.splitlines() if "'41373'" in ln]
+check(len(md5_whole) == 1 == len(mine) and mine[0].rstrip("),") == md5_whole[0].rstrip("),")
+      and mine[0].count("'") == 10
+      and md5.count("'Orange Coast College'") == 1 and "'already_after'" in md5 and "already_after 1" in md5
+      and "update " not in md5.lower().replace("-- ", ""),
+      "the md5 pre-read names 41373 alone with s739j's own three hashes, expects the after-image, and writes nothing")
 
 sys.exit(t.done())

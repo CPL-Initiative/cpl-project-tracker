@@ -124,21 +124,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false,
-  "gaps": [
-   {
-    "gap": "noted_figures_differ",
-    "label": "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires.",
-    "words": "The Required Core prints 'Units: 42- 48', while the listed courses sum to 47-48 units; recorded as printed. | List C appears cut off: its last course is followed by a trailing 'or' with no further course. Its rule (0-6 units) is ambiguous; recorded as choose_units with minimum 0. CD 25A and ART 25A share the title Art Methods and are recorded as cross-listed alternatives."
-   }
-  ],
-  "confidence": {
-   "unit_arithmetic": 40,
-   "course_list_match": 75,
-   "ge_pattern": null,
-   "catalog_year": 100,
-   "source": 100
-  }
+  "pass": false
  },
  "record": {
   "program": {

@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-26T10:12:38Z",
+ "written_at": "2026-11-26T10:39:40Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,8 +168,8 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17498,
-  "gap": 4837,
+  "passing": 17494,
+  "gap": 4841,
   "with_gap": 118,
   "cost_usd": 1341.27,
   "passed_at_read": 16418,
@@ -190,8 +190,8 @@
  "census_check": {
   "universe": 22335,
   "passing": 16899,
-  "gap": 4837,
-  "collected_with_gaps": 599,
+  "gap": 4841,
+  "collected_with_gaps": 595,
   "discontinued": 0
  },
  "census_live": {
@@ -5037,13 +5037,13 @@
    "harvested": true,
    "slug": "gavilan",
    "programs": 135,
-   "passing": 100,
-   "gap": 35,
+   "passing": 96,
+   "gap": 39,
    "causes": {
     "no_closed_list": 15,
     "page_not_found": 17,
     "places_none": 1,
-    "unknown_without_live": 2
+    "unknown_without_live": 6
    },
    "census_causes": {
     "no_closed_list": 15,
@@ -5099,7 +5099,7 @@
    "levers": {
     "reader_page_search": 17,
     "program_course_file_check": 15,
-    "reconcile_steps": 2,
+    "reconcile_steps": 6,
     "reader_page_assignment": 1
    },
    "collection": {

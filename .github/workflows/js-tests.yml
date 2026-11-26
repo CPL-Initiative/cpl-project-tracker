@@ -1023,8 +1023,8 @@ jobs:
       - name: Cheap piles S739 at Palo Verde (the earlier holds, named gaps, the plan)
         if: matrix.shard == 4
         run: python3 tests/program_piles_s739_paloverde_test.py
-      # S739 at Gavilan: the 11 records s721d held, read again by key: 9 collected with named gaps (no new kind),
-      # 2 held (08464 on no proved live run, 45357 a reread); the plan.
+      # S739 at Gavilan: the 11 records s721d held, read again by key: 5 collected with named gaps (no new kind),
+      # 6 held (four sums inside their printed range, 08464 on no proved live run, 45357 a reread); the plan.
       - name: Cheap piles S739 at Gavilan (the earlier holds, named gaps, the plan)
         if: matrix.shard == 5
         run: python3 tests/program_piles_s739_gavilan_test.py

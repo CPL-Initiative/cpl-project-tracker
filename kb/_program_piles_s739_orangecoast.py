@@ -29,13 +29,24 @@ note supports a kind: a reread); 08628, 19473, 19474 and 43100 (not collectable)
 (cut off, and on no proved live run); 08670, 36032 and 42331 (a sum the printed range or minimum holds: a scorer
 reading). 08626 is no key (NOTE_08626): it passes as filed, read from the wrong page.
 
+41373, ROLLED BACK AFTER THE APPLY (NOTE_41373, ROLLBACK_41373 below). S739's reader on s739m, Gavilan's plan: a sum
+inside its printed range is no disagreement (d-lists-gap-holds-range-sums-s703), and 41373's 29 sits inside the
+printed 28-29, so noted_figures_differ's sentence is not true of it. s739j was applied with it. Its row goes back by
+kb/migrations/2026-11-26_s739j_41373_rollback.sql, s739j's own rollback limited to that one row (pre-read:
+..._rollback_preread_md5.sql), and the record holds for a units within-range kind, a units twin of
+hours_within_printed_range, with Gavilan 08460, 19378, 38787 and 41394. The plan's receipt, its four SQL files and
+REVIEWED stay as applied: they are the record of what was written. Once the rollback is applied, 41373's committed
+record takes its score back too (the receipt's before-image), or the next load of the college posts the gap again.
+
     python3 kb/_program_piles_s739_orangecoast.py --dry-run
     python3 kb/_program_piles_s739_orangecoast.py --tag s739j
+    python3 kb/_program_piles_s739_orangecoast.py --rollback-41373     (writes the two rollback files)
 
 Guard: tests/program_piles_s739_orangecoast_test.py.
 """
 from __future__ import annotations
 
+import json
 import os
 import sys
 
@@ -108,6 +119,56 @@ NOTE_08626 = ("it passes as filed, read from the wrong page (f-occ-08626-wrong-p
 
 W = B.Pile(college=COLLEGE, slug=SLUG, tag=TAG, name="Orange Coast", prior=B.LiveRuns(COLLEGE, SLUG), keys=KEYS,
            reviewed=REVIEWED, hand=HAND, held_by=HELD_BY)
+
+# 41373 after the apply: held, its row rolled back (the docstring's last section).
+NOTE_41373 = ("held: its sum sits inside its printed range (29-29 in 28-29), so no two figures disagree and "
+              "noted_figures_differ's sentence is not true of it (d-lists-gap-holds-range-sums-s703); s739j was applied "
+              "with it, and its row goes back by kb/migrations/2026-11-26_s739j_41373_rollback.sql: it waits for a "
+              "units within-range kind, a units twin of hours_within_printed_range, with its own self-recall")
+ROLLBACK_41373 = {"control_number": "41373", "tag": "s739j 41373 rollback",
+                  "sql": "kb/migrations/2026-11-26_s739j_41373_rollback.sql",
+                  "preread_md5": "kb/migrations/2026-11-26_s739j_41373_rollback_preread_md5.sql"}
+
+
+def rollback_41373_row() -> dict:
+    """s739j's own receipt row for 41373: its run, before-image and after-image, as the apply wrote them."""
+    with open(W.receipt_path("2026-11-26"), encoding="utf-8") as fh:
+        rows = [r for r in json.load(fh)["records"] if r["control_number"] == ROLLBACK_41373["control_number"]]
+    if len(rows) != 1:
+        raise SystemExit("s739j's receipt names 41373 once")
+    return rows[0]
+
+
+def rollback_41373_files() -> dict:
+    """{path: text} of the two files: s739j's rollback limited to 41373 (the before-image's checks back only where
+    the row still holds s739j's after-image; it aborts unless it matches exactly that 1 row, less a row a person
+    checked), and its md5 pre-read."""
+    row = rollback_41373_row()
+    hdr = ("-- S739J, Orange Coast 41373 alone: s739j's rollback limited to the one row (its values line is s739j's own,\n"
+           "-- kb/migrations/2026-11-26_s739j_prreq_piles_rollback.sql row %d). Why: its 29 sits inside the printed 28-29,\n"
+           "-- so noted_figures_differ's sentence is not true of it (d-lists-gap-holds-range-sums-s703; S739's reader).\n"
+           "-- Receipt: kb/receipts/program_requirement_records_piles_s739_orange_coast_2026-11-26_s739j.json.\n"
+           % row["i"])
+    return {
+        ROLLBACK_41373["sql"]: (
+            hdr + "-- Rollback: the before-image's checks back where the row still holds s739j's after-image; it aborts,\n"
+                  "-- writing nothing, unless it matches exactly 1 row (less a row a person checked, listed as\n"
+                  "-- skipped_checked). The committed record's score goes back with it, or the next load posts the gap again.\n"
+            + B.NG.rollback_sql([row], ROLLBACK_41373["tag"]) + "\n"),
+        ROLLBACK_41373["preread_md5"]: (
+            hdr + "-- Compact pre-read for the rollback, read-only: one SELECT, one JSON value; md5 of each image's jsonb text.\n"
+                  "-- The rollback writes only where the row holds the after-image, so a clean reading is: listed 1, on_run 1,\n"
+                  "-- record_is_before 1, checks_is_before 0, already_after 1, checked_now 0.\n"
+            + B.md5_pre_read([row]) + "\n"),
+    }
+
+
+if __name__ == "__main__" and "--rollback-41373" in sys.argv:
+    for rel, text in rollback_41373_files().items():
+        with open(os.path.join(B.ROOT, rel), "w", encoding="utf-8") as fh:
+            fh.write(text)
+        print("wrote %s" % rel)
+    sys.exit(0)
 
 
 if __name__ == "__main__":

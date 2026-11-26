@@ -1,16 +1,19 @@
 #!/usr/bin/env python3
-"""S739, lane 2's cheap piles at Gavilan: the 11 records s721d held, nine collected with named gaps (kb/_program_piles_s739_gavilan.py).
+"""S739, lane 2's cheap piles at Gavilan: the 11 records s721d held, five collected with named gaps (kb/_program_piles_s739_gavilan.py).
 
 WHY. Sam's ruling of 2026-11-17 (sam-collect-with-gaps-2026-11-17) and his routine prompt of 2026-11-25: a record held
 for a gap is collected with its gap named and a lower score, never held, unless the record is not the program's own.
 The shared checks are tests/program_piles_s739_common.py's. Pinned here:
 
-  * the 11 keys are s721d's holds; 9 collected (no new kind), 2 held;
+  * the 11 keys are s721d's holds; 5 collected (no new kind), 6 held;
   * the live runs: the one-run load 38954687546 inserted every row at run 38948144064, the run its record holds;
     08464's record holds run 44090922437 and reread 44118718575 replaced its row at 44112314553 afterward, so it is
     on no proved live run and holds;
-  * 08460 and 19378: each note quotes the printed range and the sum at its top;
-  * the five block_differs rows: the note quotes the list's printed figure and what its courses carry, the list
+  * the within-range holds (d-lists-gap-holds-range-sums-s703; S739's reader on this plan's first round): 08460,
+    19378, 38787 and 41394 each add to a sum inside the printed range, so noted_figures_differ names no gap on them:
+    no entry, no gap on the record, and block_differs refuses such a record even with an entry that quotes its note;
+    no row of the plan sits inside its printed range;
+  * the three block_differs rows: the note quotes the list's printed figure and what its courses carry, the list
     prints the one and adds to the other, and the page's figures at their low end are the stated total's low end; a
     list whose courses add to its figure, a figure the note does not quote, and figures that do not add name no gap;
     06132's sum reads its BIO pair as one; the two-gap rows file both notes;
@@ -34,13 +37,16 @@ import _program_piles_s739_gavilan as M  # noqa: E402
 
 W = M.W
 NG = B.NG
-BLOCK = ("38787", "41394", "06132", "37896", "18541")
-ROWS = {cn: "noted_figures_differ" for cn in ("08460", "19378", "24369") + BLOCK}
+BLOCK = ("06132", "37896", "18541")
+ROWS = {cn: "noted_figures_differ" for cn in ("24369",) + BLOCK}
 ROWS["06128"] = "figure_within_variable_units"
-HELD = {"08464": ["44090922437", "44118718575", "on_live_run"], "45357": ["a reread", "two parts"]}
+RANGE = ["inside its printed range", "d-lists-gap-holds-range-sums-s703", "a units within-range kind"]
+HELD = {"08460": RANGE + ["36-36 in 30-36"], "19378": RANGE + ["24-24 in 14-24"], "38787": RANGE + ["53-60 in 48-60"],
+        "41394": RANGE + ["27-27 in 26-27"],
+        "08464": ["44090922437", "44118718575", "on_live_run"], "45357": ["a reread", "two parts"]}
 SCORES = {"noted_figures_differ": 40, "figure_within_variable_units": 60}
 
-t = T.run(W, rows=ROWS, held=HELD, scores=SCORES, day="2026-11-26", boundaries=30)
+t = T.run(W, rows=ROWS, held=HELD, scores=SCORES, day="2026-11-26", boundaries=16)
 check = t.check
 
 # The live runs.
@@ -62,12 +68,30 @@ check("08464" in [str(k) for k in reread["replaced_keys"]] and str(reread["extra
       "08464 holds run 44090922437, its row was replaced at 44112314553 afterward, and it carries no notes")
 check(all(not W.shared_with(cn) for cn in M.KEYS), "each record was read from a page no other record was read from")
 
-# A printed range whose top the courses add to.
-for cn in ("08460", "19378"):
-    f, e = W.load(cn), M.REVIEWED[cn]
+# A sum inside the printed range is no disagreement: the four hold.
+check(set(M.WITHIN) == {"08460", "19378", "38787", "41394"}, "the four within-range records are pinned")
+for cn, (comp, st) in M.WITHIN.items():
+    f = W.load(cn)
     a = f["score"]["arithmetic"]
-    check(B.shape_note_quotes(f, e) and a["computed"][0] == a["computed"][1] == a["stated"][1] > a["stated"][0]
-          and "lever" in e, "%s: its note quotes the printed range and the sum at its top, and the lever is named" % cn)
+    check(B.same(a["computed"], comp) and B.same(a["stated"], st) and M.within(a["computed"], a["stated"])
+          and st[0] < st[1], "%s: its sum %s sits inside its printed range %s" % (cn, comp, st))
+    check(not f["score"].get("gaps") and not f["score"].get("confidence") and not B.S.passes_live(f["score"]),
+          "%s: its record carries no gap and does not pass" % cn)
+check(not any(M.within(W.load(cn)["score"]["arithmetic"]["computed"], W.load(cn)["score"]["arithmetic"]["stated"])
+              for cn in ROWS), "no row of the plan adds to a sum inside its printed range")
+check(M.within([27, 27], [26, 27]) and M.within([53, 60], [48, 60]) and not M.within([65, 72], [64, 64])
+      and not M.within([65.5, 77.5], [57.5, 72.5]) and not M.within([29, 29], None),
+      "within reads a sum inside a printed range, and neither a sum past an end nor a record with no total")
+for cn, block, quotes, words in (
+        ("38787", 0, {"figure": "Units: 42- 48", "sum": "sum to 47-48 units"},
+         "The Required Core prints 'Units: 42- 48', while the listed courses sum to 47-48 units"),
+        ("41394", 2, {"figure": "block range 3-4", "sum": "listed at 4 units"},
+         "STAT C1000 appears in place of closed-list MATH 5 (listed at 4 units, while the block range 3-4 suggests a "
+         "3-unit option existed)")):
+    f = W.load(cn)
+    e = {"gap": "noted_figures_differ", "words": words, "block": block, "quotes": quotes, "shape": ["block_differs"]}
+    check(any(words in n for n in B.notes(f)) and not M.block_differs(f, e),
+          "%s: block_differs refuses a sum inside the printed range, though its note quotes both figures" % cn)
 
 # One list's printed figure against what its courses carry.
 for cn in BLOCK:
