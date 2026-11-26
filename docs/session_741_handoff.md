@@ -107,5 +107,15 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   named gaps; Shasta 32162 held (the own-page guard), Gavilan 08464 and 45357 held. To a Sonnet second reader on a
   fixed worktree at `22b6dfe2`. 14:18Z: Cerritos 44984 and 20504 (both unchecked, live at run 37961137169) reread at
   38064252862 on a clean branch off `main`, `claude/s740-cerritos`, so the write runs on reviewed code.
+- 14:26Z: the reader of s740a to s740c (Sonnet): APPLY, APPLY, APPLY. All six gaps true (08460 36 in 30-36, 19378 24 in
+  14-24, 38787 53-60 in 48-60, 41394 27 in 26-27, 41373 29 in 28-29, 36793 19-22 in 18-22); nothing files the kind past
+  the listed keys (its recall over 12,141 passing records and 48,486 held readings: 0 wrong); the 12 md5s match.
+  MINORs for the follow-up: the S739 Gavilan and Orange Coast tests now accept "none or this kind"; 38787's core prints
+  42-48 over courses summing to 47, carried as a note; NIT, 41394's STAT C1000 for the closed list's MATH 5.
+- 14:27Z to 14:32Z: clean md5 pre-reads (4 of 4, 1 of 1, 1 of 1); migrate 45839224932 returned 4 (s740a), 45839553639
+  returned 1 (s740b), 45839834306 returned 1 (s740c), none skipped; `.apply` restored on `claude/s740-piles`
+  (`7bd5120b`). Live: each row carries `units_within_printed_range`.
+- 14:23Z: Cerritos's reread 45837760519 (receipt `1a0bd569` on `claude/s740-cerritos`): 44984 and 20504 live at
+  38064252862, arithmetic equal, both passing.
 - 13:31Z: `piles`, `reads` and `reconcile` started on Fable 5.2 at high effort, each in its own worktree off `609c2a2b`
   (`/home/user/wt/<name>`), told to open no PR (the conductor opens each land) and to leave `.apply` to the conductor.
