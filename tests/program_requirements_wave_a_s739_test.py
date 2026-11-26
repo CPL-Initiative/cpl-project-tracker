@@ -163,7 +163,14 @@ check(bool(got) and len(FIX["codes"]) == 227 and got["coverage"] < C.P.ACCEPT_SH
 check("19181" not in ((STEPS.get(LAPC) or {}).get("pdf_pages") or {}), "19181: the trial pin is not filed")
 
 # ── 4. the records the wave's reads filed ───────────────────────────────────────────────────────────────
-RECORDS = ()
+RECORDS = (
+    # De Anza: found by the capture of 2026-11-11 and never extracted (read 45781602148, load 45787324054).
+    ("de_anza", "41327", "/program/film-tv-animation-fall-2024"),
+    # Las Positas: each read again from its own entry, whose first read named a total and no course
+    # (read 45787030902, load 45787511741).
+    ("las_positas", "18813", "/1637/1646"),
+    ("las_positas", "36449", "/1853/1858"),
+)
 for slug, cn, page in RECORDS:
     path = os.path.join(ROOT, "kb", "program_requirements_college", slug, "records", cn + ".json")
     with open(path, encoding="utf-8") as fh:
@@ -175,6 +182,19 @@ for slug, cn, page in RECORDS:
           "%s %s: the record places its listed courses (%s of %s)" % (slug, cn, cov.get("placed"), cov.get("listed")))
     check(passes_live(score) or bool(score.get("gaps")),
           "%s %s: it passes as the live table counts it, or carries a named gap" % (slug, cn))
+
+# De Anza 31504 is collected with its failing check: read from the Certificate of Achievement-Advanced page, which
+# 23067 (64 listed courses) also holds, it places its 12 listed courses and names no total, since its text ends
+# mid-list. A later pass may name its gap or read a total; a record that places none again is the wrong record.
+with open(os.path.join(ROOT, "kb", "program_requirements_college", "de_anza", "records", "31504.json"),
+          encoding="utf-8") as fh:
+    rec = json.load(fh)
+score = rec.get("score") or {}
+cov = score.get("coverage") or {}
+check(cov.get("placed") == 12 and cov.get("listed") == 12 and "/program/film-tv-production-fall-2026" in rec["source_url"],
+      "de_anza 31504: collected from the page the capture bound it to, 12 of 12 listed courses placed")
+check(passes_live(score) or bool(score.get("gaps")) or (score.get("arithmetic") or {}).get("status") == "incomplete",
+      "de_anza 31504: its arithmetic is incomplete (no total in its text), or a later pass named its gap or passed it")
 
 print("\n%d checks, %d failed" % (N[0], len(FAILS)))
 sys.exit(1 if FAILS else 0)

@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-26T06:55:34Z",
+ "written_at": "2026-11-26T08:59:10Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17413,
-  "gap": 4922,
+  "passing": 17416,
+  "gap": 4919,
   "with_gap": 118,
-  "cost_usd": 1341.14,
-  "passed_at_read": 16414,
+  "cost_usd": 1341.34,
+  "passed_at_read": 16416,
   "cost_receipts": 118,
   "spent_usd": 1243.5,
   "spent_runs": 223,
@@ -189,8 +189,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16882,
-  "gap": 4922,
+  "passing": 16885,
+  "gap": 4919,
   "collected_with_gaps": 531,
   "discontinued": 0
  },
@@ -3990,13 +3990,13 @@
    "harvested": true,
    "slug": "de_anza",
    "programs": 248,
-   "passing": 206,
-   "gap": 42,
+   "passing": 207,
+   "gap": 41,
    "causes": {
-    "found_not_extracted": 21,
+    "found_not_extracted": 19,
     "no_closed_list": 5,
     "page_not_found": 1,
-    "unknown_without_live": 15
+    "unknown_without_live": 16
    },
    "census_causes": {
     "found_not_extracted": 2,
@@ -4020,10 +4020,10 @@
    "outcomes_file": "kb/status/commons_data_programs/de_anza.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-11T17:53:38Z",
+   "read_at": "2026-11-26T08:16:19Z",
    "read_kind": "capture",
-   "cost_usd": 17.15,
-   "passed_at_read": 205,
+   "cost_usd": 17.32,
+   "passed_at_read": 206,
    "slo_queue": {
     "state": "held",
     "why": "11 of its 12 trial pages came back empty (HTTP 200, no text) from its eLumen 2026-27 catalog; the one page with text, PSYCC 1000 (a common course number), printed SLOs the reader parsed (4). The catalog does not answer the older course codes in its MAP records; waits on the reader mapping those codes to the ones the 2026-27 catalog prints, then a fresh trial",
@@ -4037,12 +4037,12 @@
    },
    "listed_closed": 243,
    "found": 242,
-   "extracted": 221,
+   "extracted": 223,
    "errors": 0,
    "failed_checks": {
     "coverage": 2,
     "invented": 2,
-    "arithmetic": 15,
+    "arithmetic": 16,
     "repeated": 0,
     "outcomes": 0
    },
@@ -4052,24 +4052,24 @@
    "capture_root": "https://deanza.elumenapp.com/catalog/2026-2027/home",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 2213.4,
-   "run": "43072075772",
+   "read_seconds": 2168.8,
+   "run": "45781602148",
    "levers": {
-    "paid_read": 21,
-    "reconcile_steps": 13,
+    "paid_read": 19,
+    "reconcile_steps": 14,
     "program_course_file_check": 5,
     "scorer_noncredit_hours": 2,
     "reader_page_search": 1
    },
    "collection": {
     "program_reader": {
-     "records": 221,
+     "records": 223,
      "models": {
-      "claude-opus-5-5": 221
+      "claude-opus-5-5": 223
      },
-     "run": "43072075772",
-     "at": "2026-11-11T17:53:38Z",
-     "cost_usd": 17.15,
+     "run": "45781602148",
+     "at": "2026-11-26T08:16:19Z",
+     "cost_usd": 17.32,
      "platform": "elumen"
     },
     "slo_read": null,
@@ -5995,12 +5995,11 @@
    "harvested": true,
    "slug": "las_positas",
    "programs": 204,
-   "passing": 185,
-   "gap": 19,
+   "passing": 187,
+   "gap": 17,
    "causes": {
     "no_closed_list": 3,
     "page_not_found": 6,
-    "places_none": 2,
     "unknown_without_live": 8
    },
    "census_causes": {
@@ -6028,8 +6027,8 @@
    "objectives_printed": null,
    "read_at": "2026-11-23T06:59:40Z",
    "read_kind": "capture",
-   "cost_usd": 12.09,
-   "passed_at_read": 186,
+   "cost_usd": 12.12,
+   "passed_at_read": 187,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -6042,9 +6041,9 @@
    "extracted": 195,
    "errors": 0,
    "failed_checks": {
-    "coverage": 2,
+    "coverage": 0,
     "invented": 0,
-    "arithmetic": 9,
+    "arithmetic": 8,
     "repeated": 0,
     "outcomes": 0
    },
@@ -6055,13 +6054,12 @@
    "catalog_now": null,
    "catalog_checks": null,
    "read_seconds": 2599.9,
-   "run": "45127792228",
+   "run": "45787030902",
    "levers": {
     "reader_page_search": 6,
     "reconcile_steps": 5,
     "ge_units_steps": 3,
-    "program_course_file_check": 3,
-    "reader_page_assignment": 2
+    "program_course_file_check": 3
    },
    "collection": {
     "program_reader": {
@@ -6069,9 +6067,9 @@
      "models": {
       "claude-opus-5-5": 195
      },
-     "run": "45127792228",
+     "run": "45787030902",
      "at": "2026-11-23T06:59:40Z",
-     "cost_usd": 12.09,
+     "cost_usd": 12.12,
      "platform": "curriqunet"
     },
     "slo_read": {
