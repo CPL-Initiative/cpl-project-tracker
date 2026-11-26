@@ -196,3 +196,7 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   (Palo Verde, Gavilan, Ventura and Cabrillo not reached). 09:38Z: `piles2` (Fable 5.2, high effort) took Palo
   Verde, Gavilan and Ventura on `claude/s739-piles2`, cut at `20982003` (s739k, s739m, s739n), to stop at 10:50Z;
   `claude/s739-piles` lands through it.
+- 09:43Z: #3883's `test` failed (lints 2 and 6, run 45793085708). 09:47Z: fixed on the land branch (`36ba8d32`): nine
+  new S739 test steps carried the docs-only skip with no line in `tests/lints_docs_only_skip.json` (they now run on
+  every diff), and `tests/program_piles_s727_shasta_test.py`'s pin read s739b's posted runs as unnamed (it takes
+  `skip=("s727c","s739b")`). `piles2` told both (`p-new-ci-step-docs-only-skip-needs-list-s739`).
