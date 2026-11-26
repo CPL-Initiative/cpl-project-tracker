@@ -99,7 +99,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "noted_total_cut_off",
+    "label": "The reader's note says the program's total line runs onto a page the read did not hold; every course is placed, so only the printed total is missing and its units cannot be checked against it.",
+    "words": "The section's closing total line is cut off at the page break ('ASSOCIATE IN ARTS IN COMMUNICATION STUDIES FOR' ...); no major or degree total is visible, so total_units and degree_total are null. Check the next page for the printed total."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

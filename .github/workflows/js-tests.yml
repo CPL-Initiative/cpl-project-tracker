@@ -959,6 +959,11 @@ jobs:
       - name: Cheap piles S739 at American River (the earlier holds, named gaps, the plan)
         if: matrix.shard == 4 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/program_piles_s739_arc_test.py
+      # S739 at Shasta: the 15 records s727c held, read again by key: 12 collected with named gaps (no new kind),
+      # 3 held (another program's section, not collectable, a sum inside its printed range); the plan.
+      - name: Cheap piles S739 at Shasta (the earlier holds, named gaps, the plan)
+        if: matrix.shard == 5 && (needs.gate.outputs.decision == 'run')
+        run: python3 tests/program_piles_s739_shasta_test.py
       # Discontinued programs (S680; Sam, 2026-11-17 on #3480): a program's own catalog section marks it,
       # or a prior year prints it and this year does not; flagged out of the gap, never deleted. Pure stdlib.
       - name: Discontinued programs (own-section mark, out of the gap, the file is current)

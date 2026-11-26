@@ -50,8 +50,14 @@ check(W.own(g, e) is None, "12238: with 07206's heading its section is not shown
 saved = W._sources
 W._sources = copy.deepcopy(W.sources())
 W._sources["12238"]["source"]["heading_named"] = False
-check(W.own(f, e) is None, "12238: without the capture's finding its heading alone does not show it")
+check(W.own(f, e) == "own_heading", "12238: without the capture's finding, its own state list placed still shows it")
+g = copy.deepcopy(f)
+g["score"]["coverage"]["pass"] = False
+check(W.own(g, e) is None, "12238: with neither the capture's finding nor its list placed, its heading alone does not")
 W._sources = saved
+g = copy.deepcopy(f)
+g["record"]["notes"].append("The program heading is not printed in the text; section_heading uses the title.")
+check(W.own(g, e) is None, "12238: a note saying the heading is not in the text refuses its heading")
 check(W.own(f, e) == "own_heading", "12238: its own heading, found by the capture")
 
 # 39341 against 39731 and 39732: one list, told apart by the award's unit band alone.

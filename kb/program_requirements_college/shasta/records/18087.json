@@ -98,7 +98,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "heading_not_in_text",
+    "label": "The page the read held prints a requirements list but not the program's own heading, which sits on a page the read did not hold; the record takes the list as this program's by its title alone, and no page read has confirmed it.",
+    "words": "The excerpt begins mid-section at 'Engineering.'; the full heading (likely 'University Studies - Engineering' under a University Studies A.A. page) is not printed in the provided text. Program description above this point may be cut off at the page break. | No total for the major is printed; the two blocks sum to 27-30 units but this was not recorded as a total. The text says university requirements 'typically total many more than 26 units', which is advisory, not this award's total."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 20,
+   "course_list_match": 50,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 50
+  }
  },
  "record": {
   "program": {

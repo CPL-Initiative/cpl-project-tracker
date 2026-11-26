@@ -20,6 +20,9 @@ record changed. A Pile below carries what every such plan shares, in S731's shap
             words, and the kind's own check. The check is either a reading (ops: the record re-added with the one
             change its note names, which must give the printed total at both ends under today's scorer) or a shape (a
             kind whose sentence says the units cannot be checked: its figures and blocks must show that shape).
+            Where two gaps sit on one row, the entry files the kind with the lower score and its words carry both
+            notes (also_words; S727f's form at Clovis 33501); "closes": "major" says the reading closes the major
+            and the second note is the degree's.
   HAND      the hand answer for every key: PASSES, a gap's name, or "held: ..." with its reason.
 
 THE STANDING GUARDS, on every row: scorer_passes (a record today's scorer passes is never gap-filed); on_live_run (the
@@ -31,11 +34,14 @@ records were read from (sources.json's source.url and each record's source_url, 
 THE OWN-PAGE GUARD, three forms, each a reviewed entry the code checks (own() below). A record read from a page another
 program was read from stands only where one of these shows its section is its own:
   own_section  a note of its own names its own section (S720's form, East Los Angeles's second reader).
-  own_heading  the record's section_heading is the reviewed heading, it carries every word of the program's title,
-               the capture found the program's heading on the pages read (sources.json source.heading_named, the
-               capture's own finding, never the reader's), the record was read from those pages, and no record read
-               from the same page carries that heading. S727 held such a record for want of a note; the heading the
-               reader read and the capture found is the same fact a note would state.
+  own_heading  the record's section_heading is the reviewed heading and carries every word of the program's title;
+               neither it nor a note says the heading is not in the text (a heading written from the title is no
+               heading read); the record was read from the pages today's capture names; no record read from the same
+               page carries that heading, save one whose title the heading goes beyond (Communication Studies beside
+               Communication Studies 2.0); and either the capture found the program's heading on those pages
+               (sources.json source.heading_named, the capture's own finding, never the reader's) or the record
+               places its own state list (coverage passes: the list under that heading is this program's). S727 held
+               such a record for want of a note; the heading the reader read is the same fact a note would state.
   own_list     for heading_not_in_text alone, whose sentence already says no page read has confirmed the list is the
                program's: the record places at least half of its own state list, and each record read from the same
                page either holds another course list (under half in common) or is told apart by the award's own unit
@@ -75,10 +81,14 @@ PASSES = "passes"
 RULING_S739 = ("Sam's routine prompt of 2026-11-25, as the S739 conductor's brief carries it: a record held for a gap "
                "is collected with its gap named and a lower score on the 0-100 bar, never held, unless the record is "
                "not the program's own")
-# heading_not_in_text's shape: the record's own heading or first block says the program's heading is not in the text.
-HEADING_GONE = re.compile(r"\bnot\s+(?:printed\s+|present\s+)?in\s+the\s+(?:extracted\s+)?text\b"
-                          r"|\bheading\b[^.;]{0,40}\b(?:cut\s+off|on\s+(?:an?\s+|the\s+)?(?:earlier|preceding|previous)"
-                          r"\s+page|on\s+the\s+page\s+before)\b", re.I)
+# The reader's words that the program's heading is not in the text the read held: heading_not_in_text's shape reads
+# them in the record's section_heading, its first block's name or the entry's note, and own_heading refuses a record
+# whose heading or notes say them (a heading the reader wrote from the title is no heading read).
+HEADING_GONE = re.compile(r"\bheading\b[^;]{0,120}?\bnot\s+(?:printed\s+|present\s+)?in\s+(?:the\s+)?"
+                          r"(?:extracted\s+|provided\s+)?(?:text|excerpt)\b"
+                          r"|\bheading\b[^.;]{0,60}\b(?:cut\s+off|on\s+(?:an?\s+|the\s+)?(?:earlier|preceding|previous)"
+                          r"\s+page|on\s+the\s+page\s+before)\b"
+                          r"|^not\s+printed\s+in\s+the\s+(?:extracted\s+)?text\b", re.I)
 # An award's unit band, as the state's file words it: "requiring 30S/45Q to fewer than 60S/90Q units", "60+S/90+Q".
 BAND = re.compile(r"requiring\s+(\d+(?:\.\d+)?)S/\d+(?:\.\d+)?Q\s+to\s+fewer\s+than\s+(\d+(?:\.\d+)?)S/", re.I)
 BAND_OPEN = re.compile(r"requiring\s+(\d+(?:\.\d+)?)\+S/", re.I)
@@ -96,6 +106,10 @@ def same(a, b) -> bool:
     if a is None or b is None:
         return a is b
     return all(abs(x - y) <= NG.FIG_EPS for x, y in zip(a, b))
+
+
+def _words(text) -> list[str]:
+    return re.findall(r"[a-z0-9]+", str(text or "").lower())
 
 
 def notes(filed: dict) -> list[str]:
@@ -197,6 +211,7 @@ def apply_ops(filed: dict, ops: list) -> dict | None:
       ("stated", block, lo[, hi])   a block's printed figure, read otherwise.
       ("units", code, lo[, hi])     a course's units as the page prints them.
       ("repeat", code, times)       a course the program takes more than once.
+      ("alt_units", course, alt, n) an alternative's units as its row prints them.
       ("uncount", code)             a course the printed total leaves out.
       ("total", lo[, hi])           the program's printed total, where a note quotes another figure.
       ("alone", block)              a block of an option group that every student takes: it leaves the group."""
@@ -251,6 +266,13 @@ def apply_ops(filed: dict, ops: list) -> dict | None:
                 b["courses"] = [x for c in b.get("courses") or [] for x in
                                 ([c] + [dict(c, code="%s (repeat %d)" % (c["code"], i)) for i in range(2, args[1] + 1)]
                                  if S.norm_code(c.get("code")) == S.norm_code(args[0]) else [c])]
+        elif kind == "alt_units":
+            rows = [c for b in bl for c in b.get("courses") or [] if S.norm_code(c.get("code")) == S.norm_code(args[0])]
+            alts = [x for c in rows for x in c.get("alternatives") or []
+                    if isinstance(x, dict) and S.norm_code(x.get("code")) == S.norm_code(args[1])]
+            if len(rows) != 1 or len(alts) != 1:
+                return None
+            alts[0]["units"] = args[2]
         elif kind == "uncount":
             rows = [c for b in bl for c in b.get("courses") or [] if S.norm_code(c.get("code")) == S.norm_code(args[0])]
             if len(rows) != 1:
@@ -270,11 +292,15 @@ def apply_ops(filed: dict, ops: list) -> dict | None:
     return rec
 
 
-def closes(filed: dict, record: dict | None) -> bool:
-    """Today's scorer, against the record's own state list, gives the printed total at both ends."""
+def closes(filed: dict, record: dict | None, major: bool = False) -> bool:
+    """Today's scorer, against the record's own state list, gives the printed total at both ends. major: the reading
+    closes the major at its printed total, and the degree's own total is read apart (an entry that names a second
+    note for it)."""
     if record is None:
         return False
     a = C.fresh_score(dict(filed, record=record))["arithmetic"]
+    if major and a.get("against") == "degree":
+        a = a.get("major") or {}
     return a.get("status") == "equal" and same(a.get("computed"), a.get("stated"))
 
 
@@ -296,11 +322,12 @@ def shape_depends(filed: dict, e: dict) -> bool:
 
 
 def shape_heading_gone(filed: dict, e: dict) -> bool:
-    """heading_not_in_text: the record's own section_heading, or its first block's name, says the program's heading is
-    not in the text the read held; and the record places a course (a list was read)."""
+    """heading_not_in_text: the record's own section_heading, its first block's name or the entry's note says the
+    program's heading is not in the text the read held; and the record places a course (a list was read)."""
     rec = filed.get("record") or {}
     first = ((rec.get("blocks") or [{}])[0] or {}).get("name") or ""
-    said = HEADING_GONE.search(str((rec.get("program") or {}).get("section_heading") or "")) or HEADING_GONE.search(first)
+    said = HEADING_GONE.search(str((rec.get("program") or {}).get("section_heading") or "")) or HEADING_GONE.search(first) \
+        or any(e.get("words") and e["words"] in n and HEADING_GONE.search(n) for n in notes(filed))
     return bool(said) and bool(((filed.get("score") or {}).get("coverage") or {}).get("placed"))
 
 
@@ -320,7 +347,63 @@ def shape_option_lists(filed: dict, e: dict) -> bool:
     return ARC.option_lists(filed)
 
 
-SHAPES = {"open": shape_open, "depends": shape_depends, "heading_gone": shape_heading_gone, "cut": shape_cut,
+def shape_total_cut(filed: dict, e: dict) -> bool:
+    """noted_total_cut_off: the record states no total and places every course of its state list."""
+    return ARC.total_cut(filed)
+
+
+def shape_option_names(filed: dict, e: dict) -> bool:
+    """option_lists_read_apart, where the options are named otherwise than 'concentration' (e["options"], the
+    reviewed names): one option group whose every block's name opens with one of the names, two or more of them
+    used, one holding two or more lists; and the scorer's option-parts reading does not already pair them."""
+    rec = filed.get("record") or {}
+    if S.option_parts(rec):
+        return False
+    by = collections.defaultdict(list)
+    for b in rec.get("blocks") or []:
+        if b.get("option_group"):
+            by[b["option_group"]].append(str(b.get("name") or ""))
+    for names in by.values():
+        keys = [next((o for o in e["options"] if n.startswith(o)), None) for n in names]
+        if all(keys):
+            c = collections.Counter(keys)
+            if len(c) >= 2 and max(c.values()) >= 2:
+                return True
+    return False
+
+
+def shape_double_count(filed: dict, e: dict) -> bool:
+    """double_count_noted: today's scorer passes the major and reads the degree past its printed total, by no more
+    than the units of the courses the page marks as also meeting general education (e["double_courses"])."""
+    now = arithmetic(filed)
+    comp, st = pair(now.get("computed")), pair(now.get("stated"))
+    units = []
+    for c in e["double_courses"]:
+        rows = course_rows(filed, c)
+        if len(rows) != 1 or S._num(rows[0].get("units")) is None:
+            return False
+        units.append(S._num(rows[0]["units"]))
+    return now.get("against") == "degree" and bool((now.get("major") or {}).get("pass")) and comp is not None \
+        and st is not None and comp[0] > st[1] + NG.FIG_EPS and comp[1] - st[1] <= sum(units) + NG.FIG_EPS
+
+
+def shape_block_over(filed: dict, e: dict) -> bool:
+    """noted_figures_differ, where a note says a list's printed figure is over what its own rule takes: the named
+    block (e["over"]) prints a figure above the units of one choice (e["one"], the least a choice carries), and the
+    record's low end passes the printed total by exactly that difference."""
+    bs = blocks(filed, e["over"])
+    a = (filed.get("score") or {}).get("arithmetic") or {}
+    comp, st = pair(a.get("computed")), pair(a.get("stated"))
+    if len(bs) != 1 or comp is None or st is None:
+        return False
+    fig = pair(bs[0].get("stated"))
+    least = [S._num(c.get("units")) for c in bs[0].get("courses") or []]
+    return fig is not None and None not in least and min(least) == e["one"] and fig[0] > e["one"] + NG.FIG_EPS \
+        and abs((comp[0] - st[0]) - (fig[0] - e["one"])) <= NG.FIG_EPS
+
+
+SHAPES = {"total_cut": shape_total_cut, "option_names": shape_option_names, "double_count": shape_double_count,
+          "block_over": shape_block_over, "open": shape_open, "depends": shape_depends, "heading_gone": shape_heading_gone, "cut": shape_cut,
           "no_total": shape_no_total, "option_lists": shape_option_lists}
 
 
@@ -328,11 +411,13 @@ class Pile:
     """One college's plan over its earlier plan's holds."""
 
     def __init__(self, *, college: str, slug: str, tag: str, name: str, prior, keys: tuple, reviewed: dict,
-                 hand: dict, passed: dict | None = None, held_by: str = "", shapes: dict | None = None):
+                 hand: dict, passed: dict | None = None, held_by: str = "", shapes: dict | None = None,
+                 file_history: dict | None = None, load_commits: dict | None = None, read_at: str = ""):
         self.college, self.slug, self.tag, self.name, self.prior = college, slug, tag, name, prior
         self.keys, self.reviewed, self.passed, self.hand = tuple(keys), reviewed, passed or {}, hand
         self.held_by = held_by
         self.shapes = dict(SHAPES, **(shapes or {}))
+        self.file_history, self.load_commits, self.read_at = file_history or {}, load_commits or {}, read_at
         self._sources = None
         self._read_pages = None
         for cn, e in reviewed.items():
@@ -386,7 +471,16 @@ class Pile:
     def on_live_run(self, filed: dict, skip: tuple = ()) -> bool:
         """The committed record's run is the run the latest committed receipt posted for the row: the college's
         earlier module reads the receipts (its loads, rereads and every applied plan)."""
-        return bool(self.prior.on_live_run(filed, skip))
+        import inspect
+
+        def call(fn, *a):
+            # An earlier module whose function takes no skip reads every receipt; this plan's own rows, once
+            # applied, post the run the record already holds, so the answer is the same before and after.
+            return fn(*a, skip) if "skip" in inspect.signature(fn).parameters else fn(*a)
+        if call(self.prior.on_live_run, filed):
+            return True
+        posted = call(self.prior.posted_runs).get(str(filed.get("control_number")))
+        return not posted and self.history_live(filed)
 
     # ── the own-page guard ──
     def own(self, filed: dict, e: dict) -> str | None:
@@ -402,12 +496,12 @@ class Pile:
         heading = str((rec.get("program") or {}).get("section_heading") or "")
         if e.get("own_heading") and heading == e["own_heading"]:
             src = (self.sources().get(cn) or {}).get("source") or {}
-            words = set(re.findall(r"[a-z0-9]+", str(filed.get("title") or "").lower()))
-            others = [str(((self.load(m) or {}).get("record") or {}).get("program", {}).get("section_heading") or "")
-                      for m in mates]
-            if words and words <= set(re.findall(r"[a-z0-9]+", heading.lower())) \
-                    and src.get("heading_named") is True and src.get("url") == filed.get("source_url") \
-                    and heading not in others and not HEADING_GONE.search(heading):
+            words = _words(filed.get("title"))
+            said_gone = HEADING_GONE.search(heading) or any(HEADING_GONE.search(n) for n in notes(filed))
+            found = src.get("heading_named") is True or bool(((filed.get("score") or {}).get("coverage") or {}).get("pass"))
+            if words and set(words) <= set(_words(heading)) and not said_gone and found \
+                    and src.get("url") == filed.get("source_url") \
+                    and all(self._heading_apart(filed, heading, m) for m in mates):
                 return "own_heading"
         if e.get("own_list") and e["gap"] == "heading_not_in_text":
             share = ((filed.get("score") or {}).get("coverage") or {}).get("share")
@@ -427,6 +521,40 @@ class Pile:
                     return None
             return "own_list"
         return None
+
+    def _heading_apart(self, filed: dict, heading: str, mate: str) -> bool:
+        """The page-mate's record carries another heading, or the same one where the heading goes beyond the mate's
+        title (every word of the mate's title is in this program's title, which has more)."""
+        g = self.load(mate)
+        if g is None:
+            return True
+        theirs = _words(((g.get("record") or {}).get("program") or {}).get("section_heading"))
+        mine = _words(heading)
+        n = min(len(theirs), len(mine))
+        if not theirs or theirs[:n] != mine[:n]:
+            return True
+        return set(_words(g.get("title"))) < set(_words(filed.get("title")))
+
+    # ── the live run ──
+    def history_live(self, filed: dict) -> bool:
+        """A load over several runs names no run per key. The load writes each row with its record file's own
+        extracted_run and keeps a row it finds, so the live run is the file's run where the commit that filed the
+        load's receipt is the file's newest commit on main (FILE_HISTORY, read through the hosting API's commits by
+        path; d-multi-run-load-history-proves-run-s731c)."""
+        cn = str(filed.get("control_number"))
+        hist = self.file_history.get(cn) or []
+        for path in glob.glob(os.path.join(NG.RECEIPTS, "program_requirement_records_college_%s_*.json" % self.slug)):
+            try:
+                with open(path, encoding="utf-8") as fh:
+                    d = json.load(fh)
+            except (OSError, ValueError):
+                continue
+            runs = [str(r) for r in d.get("extracted_runs") or []]
+            commit = self.load_commits.get(str(d.get("load_run")))
+            if cn in [str(k) for k in d.get("inserted_keys") or []] and len(runs) > 1 \
+                    and str(filed.get("extracted_run")) in runs and commit and hist[:1] == [commit]:
+                return True
+        return False
 
     # ── the rescore ──
     def passing_score(self, filed: dict, skip: tuple = ()) -> tuple[dict, str] | None:
@@ -472,7 +600,7 @@ class Pile:
         return first
 
     def kind_closes(self, filed: dict, e: dict) -> bool:
-        if e.get("ops") and not closes(filed, apply_ops(filed, e["ops"])):
+        if e.get("ops") and not closes(filed, apply_ops(filed, e["ops"]), major=e.get("closes") == "major"):
             return False
         shapes = e.get("shape") or []
         for sh in [shapes] if isinstance(shapes, str) else shapes:
@@ -510,7 +638,10 @@ class Pile:
             words = self.words(filed, e)
             if not words:
                 return None
-        if not same(a.get("computed"), e["computed"]) or not same(a.get("stated"), e["stated"]):
+        # The figures the entry was read against: the filed arithmetic, or today's where the entry says so (a row
+        # an older scorer filed, whose gap is in what today's scorer reads: the degree's total).
+        ref = now if e.get("today") else a
+        if not same(ref.get("computed"), e["computed"]) or not same(ref.get("stated"), e["stated"]):
             return None
         if now.get("status") == "equal" or scorer_passes(filed) or not self.on_live_run(filed, skip):
             return None
@@ -630,7 +761,12 @@ class Pile:
             g = copy.deepcopy(f)
             a = g["score"]["arithmetic"]
             a["stated"] = [a["stated"][0] + 1, a["stated"][1] + 1] if a.get("stated") is not None else [1.0, 1.0]
-            tally("the stated total one unit off", self.gap_noted(g) is None, cn)
+            if e.get("today"):
+                # Today's figures are the record's own: the entry's pinned figures one unit off name no gap.
+                tally("the stated total one unit off",
+                      self.gap_noted(f, {cn: dict(e, stated=[x + 1 for x in e["stated"]])}) is None, cn)
+            else:
+                tally("the stated total one unit off", self.gap_noted(g) is None, cn)
             g = copy.deepcopy(f)
             g["score"]["coverage"] = dict(g["score"]["coverage"], **{"pass": False})
             tally("coverage failing", self.gap_noted(g) is None, cn)
@@ -667,15 +803,27 @@ class Pile:
             rec["program"]["section_heading"] = str(g.get("title"))
             if rec.get("blocks"):
                 rec["blocks"][0]["name"] = "Required Courses"
+            rec["notes"] = [n for n in notes(g) if not HEADING_GONE.search(n)]
         elif sh == "cut":
             if g["score"]["arithmetic"].get("stated") is None:
                 return None
             g["score"]["arithmetic"]["computed"] = list(g["score"]["arithmetic"]["stated"])
         elif sh == "no_total":
             g["score"]["arithmetic"]["stated"] = [1.0, 1.0]
-        elif sh == "option_lists":
+        elif sh in ("option_lists", "option_names"):
             for b in rec["blocks"]:
                 b["option_group"] = None
+        elif sh == "total_cut":
+            g["score"]["arithmetic"]["stated"] = [1.0, 1.0]
+        elif sh == "double_count":
+            for b in rec["blocks"]:
+                for c in b.get("courses") or []:
+                    if S.norm_code(c.get("code")) in {S.norm_code(x) for x in e["double_courses"]}:
+                        c["units"] = 0
+        elif sh == "block_over":
+            for b in rec["blocks"]:
+                if b.get("name") == e["over"]:
+                    b["stated"] = {"min": e["one"], "max": e["one"]}
         else:
             return None
         return g
@@ -721,6 +869,8 @@ class Pile:
                    "path": os.path.relpath(self.path(cn), ROOT)}
             if e.get("lever"):
                 row["lever"] = e["lever"]
+            if e.get("today"):
+                row["read_against"] = "today's arithmetic (the filed one is an older scorer's and stays as filed)"
             if gap == PASSES:
                 row["reading"] = self.passed[cn]["reading"]
             if write:
@@ -781,6 +931,9 @@ class Pile:
                 "gaps": {g: NG.GAPS[g] for g in gaps}, "moved": len(rows), "by": by,
                 "precision": pr, "claim_checks": cc, "boundaries": bd, "held": res["held"],
                 "records": rows,
+                "live_run_proof": ({"read_at": self.read_at, "how": "the hosting API's commits by path on main",
+                                    "load_commits": self.load_commits, "file_history": self.file_history}
+                                   if self.file_history else None),
                 "shared_pages": {r["control_number"]: self.shared_with(r["control_number"]) for r in rows
                                  if self.shared_with(r["control_number"])},
                 "representation": "checks.gaps and checks.confidence added as the load reads the filed score (a "
