@@ -204,6 +204,8 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   `kb/reference/cb_course_basic_fall2025.csv` (`MKT495-23085` "Indep Studies in MKT", 1-3 units; `RE296-28256`
   "Internship in Real Estate", 3 units; the state list holds no separate MKT 495 or RE 296). MINOR: `LiveRuns`' reread
   SQL keeps a row when `cur.extracted_run >= new_run`, so a kept key proves only a run at least the reread's; 32737
-  and 36732 are unaffected and the apply's run guard aborts on a wrong run (`piles2` fixes it). 09:49Z: clean md5
+  and 36732 are unaffected and the apply's run guard aborts on a wrong run (`piles2` fixes it). 09:47Z: clean md5
   pre-reads, s739i 11 of 11 and s739j 4 of 4; their applies run in order on `claude/s739-piles`, and `piles2` merges
   that branch's receipts before its first push.
+- 09:51Z and 09:54Z: migrate 45795171251 returned 11 (s739i) and 45795874952 returned 4 (s739j), none skipped;
+  `.apply` restored on `claude/s739-piles` (`53ec5da1`).
