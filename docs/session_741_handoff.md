@@ -195,5 +195,18 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   the old address as filed), so a paid read of the eight held programs (about $0.80) runs on a sibling branch,
   `claude/s740-reads-cm`, cut at `65de8fed` (16:05Z). s740r3 and the pairs to a Sonnet reader.
 - Records collected by 16:05Z: 63 (adds s740g 2, s740h 1, s740i 1, s740j 1).
+- 16:07Z: the reader of s740r3 and the seven pairs (Sonnet): s740r3 APPLY (42178's blocks sum to 30 against the printed
+  32-33), pairs GO (no two keys share a value; the self-recall over every Copper Mountain record moves no pass to fail).
+  MINOR: CDEV C1000's sentence also names "ECE-010A + ECE-010B", which no record lists yet. Clean pre-read 1 of 1;
+  migrate 45855882400 returned 1; `.apply` restored on `claude/s740-reads` (`ee4496f4`).
+- 16:08Z: Copper Mountain's read 45855512160 filed on `claude/s740-reads-cm` (`3d986aa2`, about $0.75): 18519 passes,
+  the other seven read unequal. 16:10Z: its reread (force 45855512160) dispatched there.
+- 16:13Z: `reads` on San Diego City: the price step refused because the 90-minute capture gave 22367 no page (`only=
+  refused: 22367 has no text in the capture`); the reader's page checks, rule B, read its entry as "descriptions" since
+  its own "Courses" child page prints four course descriptions. A staged read from the artifact fails the same way, so
+  22367 holds for a rule B reader change with its self-recall and a second reader (next session's); no switch tonight
+  (`CPL_READER_PAGE_CHECKS=0` would turn the rules off statewide). Santa Ana 12242 is clear of rule B (no record, not
+  marked; `page_type` "other", 32 of 34 courses found).
+- Records collected by 16:11Z: 64 (adds s740r3 1).
 - 13:31Z: `piles`, `reads` and `reconcile` started on Fable 5.2 at high effort, each in its own worktree off `609c2a2b`
   (`/home/user/wt/<name>`), told to open no PR (the conductor opens each land) and to leave `.apply` to the conductor.
