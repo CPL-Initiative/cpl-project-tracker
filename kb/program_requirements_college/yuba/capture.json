@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 104,
  "with_closed_list": 94,
- "started": "2026-11-19T13:39:06Z",
+ "started": "2026-11-26T08:42:38Z",
  "pdf": {
   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf",
   "access": "ok",
@@ -26,6 +26,14 @@
    "after_mode": false,
    "gated": false,
    "read": "heading"
+  },
+  "pinned": {
+   "37946": {
+    "page": 146,
+    "bound": true,
+    "through": 148,
+    "until_page": 148
+   }
   },
   "picks": [
    {
@@ -196,7 +204,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 0.833,
-    "opens": "[page 134] YUBA COLLEGE CATALOG 2026/2027 134 MFGT-35 3 UNITS Computer Aided Manufacturing TRANSFERABLE TO CSU 36 LECTURE HOURS 54 LAB HOURS The use of the Computer Aided Manufacturing (CAM) software system to learn ab"
+    "opens": "[page 134] The Associate in Science in Mathematics for Transfer is designed for students for transfer into the CSU system to complete a bachelor’s degree in Mathematics or similar major. Students who complete an Associ"
    },
    {
     "control_number": "07053",
@@ -385,7 +393,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 92] INFANT AND TODDLER CERTIFICATE OF ACHIEVEMENT This certificate will prepare students to work in the childcare field, focusing on infants and toddlers, including California State funded and Head Start programs"
+    "opens": "[page 92] TOTAL UNITS REQUIRED FOR CERTIFICATE 35 INFANT AND TODDLER CERTIFICATE OF ACHIEVEMENT This certificate will prepare students to work in the childcare field, focusing on infants and toddlers, including Californ"
    },
    {
     "control_number": "10189",
@@ -1105,14 +1113,17 @@
    {
     "control_number": "37946",
     "pages": [
-     146
+     146,
+     147,
+     148
     ],
     "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 146] YUBA COLLEGE CATALOG 2026/2027 146 1. Completion of the latest edition of the Casper and Test of Essential Academic Skills (TEAS), developed by the Assessment Technologies Institute, LLC (ATI). A minimum com"
+    "opens": "[page 146] LVN TO RN CAREER MOBILITY PROGRAM ASSOCIATE IN SCIENCE Yuba College offers a LVN to RN Career Mobility Program with an Associate in Science Nursing (ASN) degree leading to licensure as a Registered Nurse (",
+    "pinned": true
    },
    {
     "control_number": "38009",
@@ -1364,18 +1375,12 @@
     "opens": "[page 144] The Soil Conservation Technician certificate provides students with the concepts, methods, and applications of field work in soil conservation. Emphasis is on techniques in data collection by following indu"
    }
   ],
-  "page_checks": {
-   "read": 4,
-   "own_page": 4,
-   "no_own_page": 0,
-   "not_printed": 0
-  },
   "unproven": []
  },
  "loads": 1,
  "pages_listed": 1,
  "pages_answered": 1,
- "seconds": 205.6,
+ "seconds": 153.4,
  "found": 94,
  "by_method": {
   "no_closed_list": 10,
@@ -1505,49 +1510,19 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/yuba",
-  "kept": 70,
+  "kept": 78,
   "kept_moved": 0,
-  "programs": 10,
-  "list": [
-   {
-    "control_number": "07002",
-    "title": "Veterinary Technology",
-    "award": "A.S. Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=170",
-    "coverage": 1.0,
-    "was_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=172",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "07029",
-    "title": "Music",
-    "award": "A.A. Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=137",
-    "coverage": 1.0,
-    "was_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=138",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
+  "programs": 0,
+  "list": [],
+  "held_worse_window": [],
+  "held_no_gain": [
    {
     "control_number": "07048",
     "title": "Mathematics",
     "award": "A.S. Degree",
     "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=134",
     "coverage": 0.833,
-    "was_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=98",
-    "was_coverage": 0.833,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "07053",
-    "title": "Psychology with a Focus on Social Services",
-    "award": "A.A. Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=158",
-    "coverage": 1.0,
-    "was_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=159",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
+    "was_coverage": 0.833
    },
    {
     "control_number": "10187",
@@ -1555,79 +1530,23 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=92",
     "coverage": 1.0,
-    "was_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=90",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "11011",
-    "title": "Film, Television, and Electronic Media",
-    "award": "A.A. Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=107",
-    "coverage": 1.0,
-    "was_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=107",
-    "was_coverage": 0.889,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "20201",
-    "title": "Engine Performance/Drivability and Tune-Up",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=69",
-    "coverage": 1.0,
-    "was_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=68",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "20211",
-    "title": "Film, Television, and Electronic Media",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=107",
-    "coverage": 0.571,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "31620",
-    "title": "Chemistry",
-    "award": "A.S. Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=84",
-    "coverage": 1.0,
-    "was_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=85",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "32296",
-    "title": "Early Childhood Education",
-    "award": "A.S. T Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=89",
-    "coverage": 1.0,
-    "was_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=90",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   }
-  ],
-  "held_worse_window": [
-   {
-    "control_number": "20167",
-    "title": "Chemical Dependency Counselor",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=126",
-    "coverage": 0.714,
     "was_coverage": 1.0
    }
   ],
-  "held_no_gain": [
+  "held_opens_on_list": [],
+  "only": [
+   "37946"
+  ],
+  "not_named": [
    {
     "control_number": "07007",
     "title": "Accounting",
     "award": "A.S. Degree",
     "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=77",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=77",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "07035",
@@ -1635,7 +1554,9 @@
     "award": "A.S. Degree",
     "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=145",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=145",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "07062",
@@ -1643,7 +1564,9 @@
     "award": "A.A. Degree",
     "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=121",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=121",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "07159",
@@ -1651,7 +1574,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=111",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=111",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "16183",
@@ -1659,7 +1584,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=79",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=79",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "16751",
@@ -1667,7 +1594,9 @@
     "award": "A.S. Degree",
     "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=78",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=78",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "16894",
@@ -1675,7 +1604,9 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=53",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=53",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "19613",
@@ -1683,7 +1614,19 @@
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
     "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=53",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=53",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "20167",
+    "title": "Chemical Dependency Counselor",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=126",
+    "coverage": 0.714,
+    "was_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=126",
+    "was_coverage": 0.714,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "20191",
@@ -1691,7 +1634,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=64",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=64",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "20209",
@@ -1699,7 +1644,9 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=69",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=69",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "32888",
@@ -1707,7 +1654,9 @@
     "award": "A.A- T Degree",
     "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=127",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=127",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "36035",
@@ -1715,7 +1664,9 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=93",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=93",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "37069",
@@ -1723,10 +1674,11 @@
     "award": "A.A. Degree",
     "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=127",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=127",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    }
   ],
-  "held_opens_on_list": [],
   "refused_passing": [],
   "forced_unbound": []
  },
@@ -1776,7 +1728,7 @@
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=100"
   },
   "07048": {
-   "sha256": "d9ebfc99a09f57c4a512e3f143e0a0b33b6c72c676a9919bf8b1e13472314b9c",
+   "sha256": "58d8123db286863a8423dfe1a8db47dd5e49c7b38670d1ddf19ffe337a89c5e5",
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=134"
   },
   "07053": {
@@ -1828,7 +1780,7 @@
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=92"
   },
   "10187": {
-   "sha256": "090bb175f923fc6e0f8872e30ad12f906f4dda03e07bd7152c426962b8387789",
+   "sha256": "9349472da5f6c989bfce036a3251cb7e73c7a0a4a8fd385259861fba89801abb",
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=92"
   },
   "10189": {
@@ -2032,7 +1984,7 @@
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=75"
   },
   "37946": {
-   "sha256": "0b870cf7dd11ddd62c94ce508f26f955a4fac7860cc241c1b8dea5a3df361b40",
+   "sha256": "4e568b1a06f01844e5ed2c45d55bb4da0a93c15705ade7d35b90ea92df45de2d",
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=146"
   },
   "38009": {
@@ -2108,10 +2060,5 @@
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=144"
   }
  },
- "staged_from": {
-  "run": "44535425454",
-  "proof": "text sha256 of 94 programs",
-  "pages_loaded": 0
- },
- "run": "44536397187"
+ "run": "45784869105"
 }

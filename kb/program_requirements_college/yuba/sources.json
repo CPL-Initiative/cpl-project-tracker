@@ -3093,24 +3093,22 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=146",
-   "title": "YUBA COLLEGE CATALOG 2026/2027",
-   "h1": "YUBA COLLEGE CATALOG 2026/2027",
+   "title": "LVN TO RN CAREER MOBILITY",
+   "h1": "LVN TO RN CAREER MOBILITY",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    146
+    146,
+    147,
+    148
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "page_check": {
-    "rule": "A",
-    "page": 146,
-    "share": 1.0
-   },
-   "text_sha": "ccca9fb5d3988ca8"
+   "pinned": true,
+   "text_sha": "41e1c5c035da5d51"
   },
   "listed": 5,
-  "text_chars": 6978
+  "text_chars": 11975
  },
  {
   "control_number": "38009",

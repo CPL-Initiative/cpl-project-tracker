@@ -13,11 +13,11 @@
   "repeated": 0,
   "outcomes": 1
  },
- "cost_usd_run": 0.88,
+ "cost_usd_run": 0.0,
  "cost_usd_filed": 7.62,
  "cost_per_program": 0.0811,
- "extract_calls": 10,
+ "extract_calls": 0,
  "extract_failed": [],
  "not_found": [],
- "run": "44536397187"
+ "run": "45784869105"
 }
