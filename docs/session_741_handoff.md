@@ -95,5 +95,17 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   (`0b2b5042`). 14:08Z: paid read San Diego City 22367 (staged from 38347787891, `only` and `force` 22367, $0.10 on the
   estimate; the force has its cause: S739's page read prints the four courses and the total the filed record lacks):
   run 45836017170. None of the three records has a live row, so each goes live by `load`.
+- 14:14Z: `reads`' correction: run 45836017170 ended green and extracted nothing, since the price step holds a restaged
+  capture that predates the page counts (no charge); San Diego City 22367 and Santa Ana 12242 do need fresh captures,
+  as S739 said. Copper Mountain's free capture 45836130411 read the reissue (184 pages) and bound 41085 to p.106,
+  coverage 1.0. 14:13Z: Copper Mountain 41085's paid read on `claude/s740-reads` (only 41085, $0.10); a sibling branch
+  `claude/s740-reads-sdcity` cut at `3d347018` for San Diego City's fresh read (only and force 22367, $0.10, about 95
+  minutes), so Santa Ana's two-hour read keeps the reads branch after its reconcile.
+- 14:17Z: `piles` reported (head `22b6dfe2`): the kind `units_within_printed_range` (50) in `kb/_program_named_gaps.py`,
+  filed only by reviewed key lists (its self-recall: on 28 held answers the figures alone were right on 6 and wrong on
+  22, so no matcher files it); s740a Gavilan 4, s740b Orange Coast 41373, s740c College of the Canyons 36793, all
+  named gaps; Shasta 32162 held (the own-page guard), Gavilan 08464 and 45357 held. To a Sonnet second reader on a
+  fixed worktree at `22b6dfe2`. 14:18Z: Cerritos 44984 and 20504 (both unchecked, live at run 37961137169) reread at
+  38064252862 on a clean branch off `main`, `claude/s740-cerritos`, so the write runs on reviewed code.
 - 13:31Z: `piles`, `reads` and `reconcile` started on Fable 5.2 at high effort, each in its own worktree off `609c2a2b`
   (`/home/user/wt/<name>`), told to open no PR (the conductor opens each land) and to leave `.apply` to the conductor.
