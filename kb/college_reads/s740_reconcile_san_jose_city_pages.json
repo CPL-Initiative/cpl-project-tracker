@@ -1,0 +1,83 @@
+{
+ "_readme": "S740 (the census's reconcile_steps lever, lane 1 `reconcile`): the catalog's own words for a correction step, read as the capture reads the page (capture_view), free, no model call, nothing written. San Jose City: the state's file lists some courses under a cut-off subject name where a code belongs ('SolarRenewab', 'ComputerInfo', 'Facilities Maintenance Technology (FMT)', 'KinesiologyP'), and the catalog prints the course under its code; each page here prints the code beside the title the file carries. The Medical Assisting pages print BIOL 020's units on the degree's page and none on the certificate's.",
+ "college": "San Jose City College",
+ "questions": {
+  "code_and_title": "Under which code and at how many units does the page print each course the state's file lists without a code?",
+  "printed_total": "Which total does the page print, and what do its own lists add to?"
+ },
+ "keywords": [
+  "SOLAR 102[^\\n]{0,80}",
+  "CIS 024A[^\\n]{0,80}",
+  "FMT 1(?:05|23)[^\\n]{0,80}",
+  "KINPE 0(?:23|41|56)[^\\n]{0,80}",
+  "BIOL 020[^\\n]{0,80}",
+  "Total Units[^\\n]{0,40}",
+  "ADS 138[^\\n]{0,80}"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "code_and_title"
+   ],
+   "why": "06202",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/construction-technology/construction-technology-associate-science/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "code_and_title"
+   ],
+   "why": "38498",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/computer-information-systems/emerging-tech-entrepreneurship-level-2/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "code_and_title"
+   ],
+   "why": "18921",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/air-conditioning-refrigeration-technology/air-conditioning-refrigeration-technology-certificate-achievement-level-3/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "code_and_title"
+   ],
+   "why": "39391",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/kinesiology/kinesiology-certificate-achievement-level-2/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "code_and_title"
+   ],
+   "why": "32214",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/medical-assisting/medical-assisting-clinical-certificate-achievement-level-3/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "code_and_title"
+   ],
+   "why": "32078",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/medical-assisting/medical-assisting-clinical-associate-science/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "printed_total"
+   ],
+   "why": "08859",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/construction-technology/residential-maintenance-certificate-achievement-level-2/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "printed_total"
+   ],
+   "why": "22241",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/alcohol-drug-studies/alcohol-and-drug-studies-certificate-of-achievement-level-3/",
+   "capture_view": true
+  }
+ ]
+}
