@@ -182,6 +182,36 @@
     "evidence": "Recording and Sound Design (Academic Plan E045602D), a Certificate of Achievement: the page prints one list with no choice, MUSIC 161, 165, 166, 172 and 205 (3 each), MUSIC 261-1 (3), MUSIC 365-1 and 365-2 (2 each), TECTHTR 330 (3) and TECTHTR 347 (2), 27 units, under 'Total 24' (college-page-read run 45173349853, S714). The reader's note says the same and that MUSIC 205 is the course the state's file does not list.",
     "run": "45173349853"
    }
+  },
+  "San Bernardino Valley College": {
+   "32309": {
+    "where": "the program's own page, https://catalog.valleycollege.edu/degree-certificate-program-index/political-science/political-science-aat-degree/",
+    "printed_total": [
+     18,
+     19
+    ],
+    "printed_sum": [
+     21,
+     22
+    ],
+    "words": "Major Total Units 18-19",
+    "evidence": "Political Science A.A.-T 32309: the page prints 'Required Courses:' POLS C1000 (or C1000H), POLS 110 (or 110H), POLS 140 and POLS 141 (or 141H), 3 units each, 12; 'List A - Two courses from the following:' POLS 170, 173, 138 and 139 at 3 and ECON 208 (or STAT C1000, STAT C1000H, PSYC 105) at 4, 6-7; and 'List B - One course from the following:', every course at 3: 21-22 units, under 'Major Total Units 18-19', 'Total Double-Counted Units 9', 'General Education (Cal-GETC) Units 34', 'Elective Units 16-17' and 'Total Units 60' (college-page-read run 45835049303, kb/college_reads/s740_reconcile_san_bernardino_valley_pages.json, read as the capture reads the page).",
+    "run": "45835049303"
+   },
+   "35802": {
+    "where": "the program's own page, https://catalog.valleycollege.edu/degree-certificate-program-index/music/music-ast-degree/",
+    "printed_total": [
+     21,
+     22
+    ],
+    "printed_sum": [
+     20,
+     21
+    ],
+    "words": "Major Total 21-22",
+    "evidence": "Music A.A.-T 35802: the page prints 'Required Courses:' MUS 101, 102 and 201 at 3 and MUS 101L, 102L and 201L at 1, 12; 'Applied Music:' the one row 'MUS 141X2 & MUS 241X2 · Applied Music I and Applied Music II · 1'; 'Large Ensemble: Select four units from the following: 4'; and 'List A - (3-4 units)': 20-21 units, under 'Major Total 21-22', 'Total Double-Counted Units 3', 'General Education (Cal-GETC) Units 34', 'Elective Units 7-8' and 'Total Units 60' (college-page-read run 45835049303, the same plan). The page does not say that the applied pair is taken more than once.",
+    "run": "45835049303"
+   }
   }
  }
 }

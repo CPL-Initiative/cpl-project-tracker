@@ -1050,6 +1050,12 @@ jobs:
       - name: Cheap piles S740 at San Jose City (the reconcile's nine, named gaps, the plan)
         if: matrix.shard == 1
         run: python3 tests/program_piles_s740_sjcc_test.py
+      # S740 at San Bernardino Valley (lane 1): the lever's 15, 2 passed by the free reconcile 45844530701 (CDEV and SOCI for
+      # the file's CD and SOC rows), 6 collected with named gaps (total_differs from page read 45835049303, the placement
+      # waiver, two quoting notes), 7 held; the plan.
+      - name: Cheap piles S740 at San Bernardino Valley (the reconcile's two, named gaps, the holds, the plan)
+        if: matrix.shard == 1
+        run: python3 tests/program_piles_s740_sbvc_test.py
       # S739 at Orange Coast: the 17 records s721b held, read again by key: 4 collected with named gaps (no new
       # kind), 13 held; 32737 and 36732 on their live run through a reread's kept keys; the plan.
       - name: Cheap piles S739 at Orange Coast (the earlier holds, named gaps, the plan)

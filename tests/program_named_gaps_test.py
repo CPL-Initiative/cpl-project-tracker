@@ -634,8 +634,18 @@ with open(os.path.join(ROOT, "kb", "receipts", "program_requirement_records_pile
                  if r["reading"] == "total_differs" and r["after_image"]["checks"].get("gaps") == ["total_differs"]
                  and not (r["before_image"]["checks"] or {}).get("gaps")}
 check(_s714e_td == {("East Los Angeles College", "45602")}, "the S714 plan moves 45602 to total_differs")
+# S740 (lane 1 at San Bernardino Valley, plan s740c3): Political Science A.A.-T 32309 and Music A.A.-T 35802, by the
+# same record rule inside the college's plan (page read 45835049303).
+with open(os.path.join(ROOT, "kb", "receipts",
+                       "program_requirement_records_piles_s739_san_bernardino_valley_2026-11-26_s740c3.json"),
+          encoding="utf-8") as _fh:
+    _s740_td = {(r["college"], str(r["control_number"])) for r in _json.load(_fh)["records"]
+                if r["moves_to"] == "total_differs" and r["after_image"]["checks"].get("gaps") == ["total_differs"]
+                and not (r["before_image"]["checks"] or {}).get("gaps")}
+check(_s740_td == {("San Bernardino Valley College", "32309"), ("San Bernardino Valley College", "35802")},
+      "the S740 plan moves 32309 and 35802 to total_differs")
 check(_p2["only_gaps"] == ["total_differs"] and not _p2["recall"]["wrong"]
-      and _p2_keys | {(r["college"], str(r["control_number"])) for r in _s703_td} | _s714e_td == set(_td)
+      and _p2_keys | {(r["college"], str(r["control_number"])) for r in _s703_td} | _s714e_td | _s740_td == set(_td)
       and {(r["college"], str(r["control_number"])) for r in _s703_td} == {("Clovis Community College", "33491")}
       and all(r["after_image"]["checks"].get("gaps") == ["total_differs"]
               and not (r["before_image"]["checks"] or {}).get("gaps") for r in _p2["records"] + _s703_td),

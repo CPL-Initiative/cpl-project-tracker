@@ -97,7 +97,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "waived_course_counted",
+    "label": "The page prints a requirement at a range from zero units, since a student may meet it without the course (a certification, an exam or earlier coursework), and the record counts the course, so its units match the top of the printed range and not its low end.",
+    "words": "TECALC 087 is required unless the student places into a transfer-level MATH course; the block prints 0-4 units, which accounts for the 20-24 total range."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

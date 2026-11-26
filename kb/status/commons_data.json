@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-26T15:05:07Z",
+ "written_at": "2026-11-26T15:36:25Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17533,
-  "gap": 4802,
+  "passing": 17541,
+  "gap": 4794,
   "with_gap": 118,
   "cost_usd": 1341.62,
-  "passed_at_read": 16468,
+  "passed_at_read": 16466,
   "cost_receipts": 118,
   "spent_usd": 1244.44,
   "spent_runs": 240,
@@ -189,9 +189,9 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16932,
-  "gap": 4802,
-  "collected_with_gaps": 601,
+  "passing": 16934,
+  "gap": 4794,
+  "collected_with_gaps": 607,
   "discontinued": 0
  },
  "census_live": {
@@ -9991,12 +9991,13 @@
    "harvested": true,
    "slug": "san_bernardino_valley",
    "programs": 236,
-   "passing": 201,
-   "gap": 35,
+   "passing": 209,
+   "gap": 27,
    "causes": {
+    "found_not_extracted": 6,
     "no_closed_list": 4,
-    "page_not_found": 11,
-    "unknown_without_live": 20
+    "page_not_found": 5,
+    "unknown_without_live": 12
    },
    "census_causes": {
     "coverage_fails": 2,
@@ -10019,10 +10020,10 @@
    "outcomes_file": "kb/status/commons_data_programs/san_bernardino_valley.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-25T06:32:58Z",
+   "read_at": "2026-11-26T15:00:34Z",
    "read_kind": "capture",
    "cost_usd": 15.21,
-   "passed_at_read": 184,
+   "passed_at_read": 182,
    "slo_queue": null,
    "scout": null,
    "spot_check": {
@@ -10045,9 +10046,9 @@
    "extracted": 221,
    "errors": 0,
    "failed_checks": {
-    "coverage": 2,
-    "invented": 2,
-    "arithmetic": 35,
+    "coverage": 0,
+    "invented": 0,
+    "arithmetic": 39,
     "repeated": 0,
     "outcomes": 0
    },
@@ -10057,11 +10058,12 @@
    "capture_root": "https://catalog.valleycollege.edu/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1484.5,
-   "run": "45561301147",
+   "read_seconds": 1483.7,
+   "run": "45844530701",
    "levers": {
-    "reconcile_steps": 18,
-    "reader_page_search": 11,
+    "reconcile_steps": 10,
+    "paid_read": 6,
+    "reader_page_search": 5,
     "program_course_file_check": 4,
     "ge_units_steps": 2
    },
@@ -10071,8 +10073,8 @@
      "models": {
       "claude-opus-5-5": 221
      },
-     "run": "45561301147",
-     "at": "2026-11-25T06:32:58Z",
+     "run": "45844530701",
+     "at": "2026-11-26T15:00:34Z",
      "cost_usd": 15.21,
      "platform": "courseleaf"
     },
