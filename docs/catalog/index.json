@@ -15637,7 +15637,7 @@
      ],
      "title": "Program requirements harvest lessons \u2014 archive 9 (S714 onward)",
      "type": null,
-     "updated": "2026-11-25"
+     "updated": "2026-11-26"
     },
     {
      "created": "2026-11-12",
@@ -16921,7 +16921,7 @@
      ],
      "title": "Program requirements harvest \u2014 lane state",
      "type": null,
-     "updated": "2026-11-25"
+     "updated": "2026-11-26"
     },
     {
      "created": "2026-08-28",
@@ -17589,8 +17589,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 690,
+   "count": 691,
    "docs": [
+    {
+     "created": "2026-11-26",
+     "governs": [],
+     "n": 740,
+     "path": "docs/session_740_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 740 handoff (from SkyOystercatcher, S739, the CPL Queue routine's collection run of 2026-11-26, from 06:12Z)",
+     "type": null,
+     "updated": "2026-11-26"
+    },
     {
      "created": "2026-11-26",
      "governs": [],
@@ -29023,5 +29037,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1585
+ "total": 1586
 }
