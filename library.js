@@ -558,6 +558,9 @@
       R + " ol.lib-steps li::before{content:counter(lib-step) \". \";}",
       R + " ol.lib-steps li.done{color:var(--text-body);}",
       R + " ol.lib-steps li.now{border-color:var(--cobalt);color:var(--cobalt);background:var(--surface-subtle);}",
+      R + " .lib-progress{margin:10px 0 0;}",
+      R + " .lib-progress .lib-bar{display:block;width:100%;max-width:var(--cpl-measure,none);height:6px;margin:8px 0 0;accent-color:var(--cobalt);}",
+      R + " @media (prefers-reduced-motion:reduce){.lib-progress .lib-bar{animation:none;}}",
       R + " textarea.lib-brief{width:100%;min-height:170px;margin-top:10px;font:inherit;font-size:.88rem;color:var(--text-body);background:var(--surface-subtle);border:1px solid var(--border-strong);border-radius:6px;padding:8px 10px;}",
       R + " .lib-vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}",
       // Regenerate: the request's state under the card, and the documents a piece is built from.
@@ -845,7 +848,7 @@
 
   function details(r) {
     var recActs = '<div class="lib-recacts">' + word("data-edittop", r.id, "Edit the record", false, r.title) +
-      (draftsOnCard(r) ? "" : word("data-newver", r.id, "File a new version")) + word("data-fromit", r.id, "Start something new from it") + "</div>" +
+      word("data-fromit", r.id, "Start something new from it") + "</div>" +
       (state.edit === r.id ? editForm(r) : "");
     return recActs + detailsList(r);
   }
@@ -963,8 +966,54 @@
   // never copies the internal summary or the title, so a waiting piece without one says so.
   var NEEDS_SUMMARY = "Its accessibility check passed. The Public Library lists it once it has a public summary: press Publish to Public Library and add one.";
   function needsSummary(r, gate) { return waitsToList(r) && gate.ok && !String(r.public_summary || "").trim(); }
+  // A piece waiting on its first check shows where it is (Sam, 2026-11-26: "when it is being check for accessibility, i
+  // need a progress indicator...it's just been stuck there"). library-publish.yml checks on its schedule, every three
+  // hours at :41 UTC, so the card names the next run and reads the check records again each minute while it waits.
+  var CHECK_CRON_MIN = 41, CHECK_CRON_EVERY_H = 3;
+  function nextCheckRun(now) {
+    var t = new Date(now || Date.now()), n = new Date(t.getTime());
+    n.setUTCMinutes(CHECK_CRON_MIN, 0, 0);
+    n.setUTCHours(Math.floor(t.getUTCHours() / CHECK_CRON_EVERY_H) * CHECK_CRON_EVERY_H);
+    while (n.getTime() <= t.getTime()) n.setUTCHours(n.getUTCHours() + CHECK_CRON_EVERY_H);
+    return n;
+  }
+  function awaitsFirstCheck(r, gate) {
+    return waitsToList(r) && !!r.url && !gate.ok && !gate.check && !gate.label && !gate.absent && r.remediation !== "in_remediation";
+  }
+  function checkRunWords() {
+    var at = nextCheckRun(), mins = Math.max(1, Math.round((at.getTime() - Date.now()) / 60000));
+    return { mins: mins, when: at.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" }) };
+  }
+  // The public summary can be added while the check waits, so the piece lists the moment it passes.
+  function summaryNowBtn(r) {
+    return String(r.public_summary || "").trim() ? ""
+      : '<div class="lib-actions-row"><button type="button" class="lib-word" data-pubtop="' + esc(r.id) + '"' + (state.busy ? " disabled" : "") +
+        '>Add its public summary<span class="lib-vh"> for ' + esc(r.title) + "</span></button></div>";
+  }
+  function checkProgress(r) {
+    var cr = checkRunWords(), mins = cr.mins, when = cr.when;
+    var steps = ["Published", "Accessibility check", "Listed in the Public Library"].map(function (w, i) {
+      return '<li class="' + (i === 0 ? "done" : i === 1 ? "now" : "") + '"' + (i === 1 ? ' aria-current="step"' : "") + ">" + w + "</li>";
+    }).join("");
+    return '<div class="lib-progress" data-checkwait="' + esc(r.id) + '" role="status">' +
+      '<ol class="lib-steps" aria-label="Where it is">' + steps + "</ol>" +
+      '<progress class="lib-bar" aria-label="Waiting for its accessibility check"></progress>' +
+      '<p class="lib-line">Waiting for its accessibility check. The next check run starts at ' + esc(when) +
+      " (in about " + mins + (mins === 1 ? " minute" : " minutes") + ") and takes a few minutes; this card updates when it finishes.</p>" + summaryNowBtn(r) + "</div>";
+  }
+  var checkPoll = null;
+  function pollChecks() {
+    var waiting = (state.rows || []).some(function (r) { return awaitsFirstCheck(r, publicGate(r)); });
+    if (waiting && !checkPoll) {
+      checkPoll = setInterval(function () {
+        if (document.hidden) return;
+        loadChecks().then(render, function () {});
+      }, 60000);
+    } else if (!waiting && checkPoll) { clearInterval(checkPoll); checkPoll = null; }
+  }
   function waitLine(r) {
     var gate = waitsToList(r) && r.url ? publicGate(r) : { ok: true };
+    if (awaitsFirstCheck(r, gate)) return checkProgress(r);
     if (r.url && needsSummary(r, gate)) return '<p class="lib-line" data-pubwait="' + esc(r.id) + '">' + esc(NEEDS_SUMMARY) + "</p>";
     return !gate.ok ? '<p class="lib-line" data-pubwait="' + esc(r.id) + '">' + esc(waitWords(r, gate)) +
       (gate.check && gate.check.result !== "pass" ? reportLink(gate.check) : "") + "</p>" : "";
@@ -993,7 +1042,11 @@
     if (!r.url) return esc(draftsOnCard(r) ? "Not listed. Publish to Public Library on its card lists it once its page is up and its accessibility check passes." : publicReach(r));
     var gate = publicGate(r);
     // A piece waiting on its check offers the listing form once the check passes (second read of #3572).
-    if (waitsToList(r) && !gate.ok) return esc(waitWords(r, gate)) + (gate.check && gate.check.result !== "pass" ? reportLink(gate.check) : "");
+    var firstCheck = awaitsFirstCheck(r, gate);
+    if (firstCheck && state.pub !== r.id) {
+      return "Waiting for its accessibility check; the next check run starts at " + esc(checkRunWords().when) + "." + summaryNowBtn(r);
+    }
+    if (!firstCheck && waitsToList(r) && !gate.ok) return esc(waitWords(r, gate)) + (gate.check && gate.check.result !== "pass" ? reportLink(gate.check) : "");
     if (state.pub !== r.id) {
       return (needsSummary(r, gate) ? esc(NEEDS_SUMMARY) : "In the Internal Library.") + '<div class="lib-actions-row"><button type="button" class="lib-btn" data-pub="' + esc(r.id) + '">Publish to Public Library</button></div>';
     }
@@ -2529,7 +2582,6 @@
       '<fieldset class="lib-uses"><legend>What do you want to do with it?</legend>' +
       (r.status === "requested" ? "" : row("revise", regenState(r) === "ready" ? "Ask for more changes to the draft" : "Revise and remediate this piece")) +
       row("details", "Change its details: status, who sees it, who it is for, project, link") +
-      row("version", "File a new version of it") +
       row("background", "Use it as background for something new") + "</fieldset>" +
       (regenState(r) === "ready" && state.pieceUse === "revise" ? '<p class="lib-line" id="lc-more">' + esc(moreWords(r)) + "</p>" : "");
   }
@@ -3898,6 +3950,7 @@
     var root = document.getElementById(ROOT_ID);
     if (!root) return;
     ensureCss();
+    pollChecks();
     root.style.cssText = "";
     var head = '<h2 class="lib-h lib-top">Library</h2><p class="lib-lede">Every visual, deck, video and document the CPL Initiative has made: what it is, who it is made for, where the file lives, who may see it, and how to rebuild or remediate it.</p>';
     // Two views (Sam, Open Asks Sheet 121 card 1, 2026-10-23): the pieces, and the Knowledge
@@ -4605,6 +4658,7 @@
   }
 
   window.CPL_LIBRARY = {
+    _nextCheckRun: nextCheckRun,
     activate: activate,
     render: render,
     load: load,

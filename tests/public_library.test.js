@@ -323,8 +323,11 @@ block("(3e5)", function () {
   return Promise.resolve(m.M.activate()).then(settle).then(function () {
     // A record whose choice is already kept offers no second press, and the listing function stays unreached.
     m.M._state.open.r1 = true; m.M.render();
+    // Sam, 2026-11-26: a piece waiting on its first check shows its progress, the next check run, and (only while it
+    // has no public summary) Add its public summary, so it lists the moment the check passes.
     check("(3e5) a piece waiting on its check says so and offers no second Publish to Public Library",
-      /The Public Library lists it once its accessibility check passes/.test(m.root.textContent) && !m.root.querySelector('[data-pub="r1"], [data-pubtop="r1"]'));
+      /Waiting for its accessibility check/.test(m.root.textContent) && !m.root.querySelector('[data-pub="r1"]') &&
+      Array.prototype.every.call(m.root.querySelectorAll('[data-pubtop="r1"]'), function (b) { return /Add its public summary/.test(b.textContent); }));
     check("(3e5) and the listing function is never called", pubCalls(m).rpc.length === 0);
   });
 });
