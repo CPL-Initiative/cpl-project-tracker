@@ -696,6 +696,13 @@ jobs:
       - name: Program requirements lever pins (S730)
         if: matrix.shard == 3
         run: python3 tests/program_requirements_lever_pins_s730_test.py
+      # S739 wave B: the census wave at nineteen colleges. Two PDF pins bind on the pages the read printed (San Diego
+      # College of Continuing Education 38411, Yuba 37946), two site pins bind on their own headings (Mt. San
+      # Antonio 41116, Skyline 30882), fifteen named gaps each carry the reason their page read supports, and two
+      # relists stay in the files that already name them. Pure stdlib.
+      - name: Program requirements lever pins (S739 wave B)
+        if: matrix.shard == 3
+        run: python3 tests/program_requirements_lever_pins_s739b_test.py
       # S727 plan s727v: Antelope Valley 43028 (a Cal-GETC degree whose page prints only CSU GE and IGETC figures),
       # collected with its gap named. Pure stdlib.
       - name: Program requirements GE figures of another pattern (S727 s727v)

@@ -1,0 +1,22 @@
+{
+ "_readme": "S739 wave B, the gap census's Next wave (census of 2026-11-26 06:54Z, run 45771011713; levers reader_page_assignment and paid_read): 1 program of Lassen College whose filed record places none of the state's listed courses and whose title no page of the 2026-2027 catalog prints (college-page-read runs 45782471633 and 45784839786, the whole file searched for dental assisting). Filed as named gaps and never sent to a paid read. Each filed record stays as filed (the load skips a record that places none of its listed courses). No model call, no Supabase write. Each is the college's to settle in COCI or its catalog.",
+ "college": "Lassen College",
+ "written": "2026-11-26T08:48:35Z",
+ "capture": "39006337658",
+ "page_reads": [
+  "45782471633",
+  "45784839786"
+ ],
+ "reasons": {
+  "credit_not_in_catalog": "A credit program the 2026-27 catalog prints under no heading of its own: no page of the file names its title, and its courses print only in the course descriptions."
+ },
+ "programs": [
+  {
+   "control_number": "43938",
+   "title": "Registered Dental Assisting",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "reason": "credit_not_in_catalog",
+   "note": "No line of the catalog prints 'Registered Dental Assisting'. Dental assisting prints on four of its 175 pages: pp.126-128, the course descriptions DA 50 to DA 60 under the subject heading 'DENTAL ASSISTING', and one page of the staff directory. The filed record (run 39006337658) was read from the course descriptions, and its own notes say 'The Registered Dental Assisting Certificate of Achievement requirements section is not in the text'."
+  }
+ ]
+}

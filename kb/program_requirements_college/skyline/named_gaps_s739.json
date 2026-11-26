@@ -1,0 +1,21 @@
+{
+ "_readme": "S739 wave B, the gap census's Next wave (census of 2026-11-26 06:54Z, run 45771011713; levers reader_page_assignment and paid_read): 1 program of Skyline College whose filed record places none of the state's listed courses and whose title the catalog's program list (current/programs/; college-page-read run 45782471633) does not print. The college's other program on the lever, Mathematics A.S.-T 30882, is pinned to its own page in its reconcile entry (kb/program_requirements_reconcile.json, site_pages). Filed as named gaps and never sent to a paid read. Each filed record stays as filed (the load skips a record that places none of its listed courses). No model call, no Supabase write. Each is the college's to settle in COCI or its catalog.",
+ "college": "Skyline College",
+ "written": "2026-11-26T08:48:35Z",
+ "capture": "43968403561",
+ "page_reads": [
+  "45782471633"
+ ],
+ "reasons": {
+  "credit_not_in_catalog": "A credit program the 2026-27 catalog prints under no heading of its own: its list of degrees and certificates does not list it."
+ },
+ "programs": [
+  {
+   "control_number": "32964",
+   "title": "Solar Technology and Business",
+   "award": "Certificate of Achievement: 18 or greater semester (or 27 or greater quarter) units",
+   "reason": "credit_not_in_catalog",
+   "note": "The program list names no solar or energy program under any award. The capture handed it the Business Management Associate in Science Degree's page, which names five of its ten listed courses (BUS 100, BUS 120, BUS 150, BUS 401, MGMT 100) and none of its ENVS or ESTM courses; the filed record (run 39032119511) recorded that degree's heading and no list. Its family is absent from the list too: the state's file lists Solar Installation 32963, Solar Technology and Business A.S. 33043 and Energy Efficiency A.S. 33122 with no course list."
+  }
+ ]
+}

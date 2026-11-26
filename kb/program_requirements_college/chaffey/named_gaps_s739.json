@@ -1,0 +1,21 @@
+{
+ "_readme": "S739 wave B, the gap census's Next wave (census of 2026-11-26 06:54Z, run 45771011713; levers reader_page_assignment and paid_read): 1 program of Chaffey College whose filed record places none of the state's listed courses and whose title the catalog's program index (19210/program_index; college-page-read run 45782712226) does not print. Filed as named gaps and never sent to a paid read. Each filed record stays as filed (the load skips a record that places none of its listed courses). No model call, no Supabase write. Each is the college's to settle in COCI or its catalog.",
+ "college": "Chaffey College",
+ "written": "2026-11-26T08:48:35Z",
+ "capture": "44090894573",
+ "page_reads": [
+  "45782712226"
+ ],
+ "reasons": {
+  "credit_not_in_catalog": "A credit program the 2026-27 catalog prints under no heading of its own: its list of degrees and certificates does not list it."
+ },
+ "programs": [
+  {
+   "control_number": "04779",
+   "title": "Commercial Music",
+   "award": "A.S. Degree",
+   "reason": "credit_not_in_catalog",
+   "note": "The program index names two music programs, 'Music for Transfer - AA-T Degree' and 'Music Industry Studies for Transfer - AA-T Degree', and no Commercial Music degree. The capture handed it the Music Industry Studies AA-T's entry (program_index/musind); the filed record's own notes (run 38242003226) say that entry 'does not contain a Commercial Music A.S. Degree section'."
+  }
+ ]
+}

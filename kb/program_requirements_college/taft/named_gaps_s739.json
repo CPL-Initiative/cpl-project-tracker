@@ -1,0 +1,28 @@
+{
+ "_readme": "S739 wave B, the gap census's Next wave (census of 2026-11-26 06:54Z, run 45771011713; levers reader_page_assignment and paid_read): 2 general-education pattern certificates of Taft College that the 2026-2027 catalog no longer lists: its index of degrees and certificates (college-page-read run 39250246074) lists the Cal-GETC certificate alone, the pattern that replaced CSU GE-Breadth and IGETC. Cal-GETC 45358 holds its own record, read from its own page. Filed as named gaps and never sent to a paid read. Each filed record stays as filed (the load skips a record that places none of its listed courses). No model call, no Supabase write. Each is the college's to settle in COCI or its catalog.",
+ "college": "Taft College",
+ "written": "2026-11-26T08:48:35Z",
+ "capture": "39259699774",
+ "page_reads": [
+  "39250246074"
+ ],
+ "reasons": {
+  "successor_printed": "The 2026-2027 catalog prints no page for the program: its index of degrees and certificates lists the Cal-GETC certificate alone, the pattern that replaced it, a program the state's file lists on its own (45358) and the harvest reads from its own page."
+ },
+ "programs": [
+  {
+   "control_number": "38661",
+   "title": "CSU GE-Breadth",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "reason": "successor_printed",
+   "note": "The address the capture finds for it (transfer-studies-cal-getc/csu-ge-breadth-certificate-of-achievement) is headed 'Cal-GETC: Certificate of Achievement', the Cal-GETC certificate's section under the old address. A record read from it was loaded under this number and removed on 2026-10-21 (Sheet 98 card 1), so it has no record and is not read again."
+  },
+  {
+   "control_number": "38662",
+   "title": "Intersegmental GE Transfer Curriculum",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "reason": "successor_printed",
+   "note": "The capture handed it 'Associate Degree and General Education Philosophy', which names Cal-GETC as Option Two of the associate degree's general education and prints the local pattern's lists. The filed record's own notes (run 39100858309) say the text 'has no section for the IGETC/Cal-GETC Certificate of Achievement'."
+  }
+ ]
+}

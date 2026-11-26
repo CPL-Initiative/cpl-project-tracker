@@ -3146,6 +3146,28 @@
      "evidence": "S739 wave B: LVN to RN Career Mobility Program A.S. 37946: its heading 'LVN TO RN CAREER MOBILITY / PROGRAM / ASSOCIATE IN SCIENCE' prints at the foot of PDF p.146, below the generic nursing degree's 48-unit list; its section runs through p.147 to p.148, where 'PROGRAM REQUIREMENTS / REQUIRED COURSES UNITS' prints NURS 13A (8), NURS 13B (4), NURS 14A (6.5), NURS 14B (1.5) and NURS 14C (4), every course the state lists, and 'TOTAL UNITS REQUIRED FOR DEGREE MAJOR 24'; the window ends where 'LVN TO RN 30-UNIT OPTION / CERTIFICATE OF ACHIEVEMENT' opens the next section (college-page-read run 45782471633). The filed record (run 39006517642) was read from p.146 alone, and its own words say the 'LVN to RN section is cut off at page break', so it placed none of its 5 listed courses."
     }
    }
+  },
+  "Mt. San Antonio College": {
+   "why": "S739 wave B (the gap census of 2026-11-26 06:54Z, lever reader_page_assignment): no reconcile step; the entry names one program's own page (site_pages).",
+   "steps": [],
+   "site_pages_why": "S739 wave B: Mt. San Antonio's CourseLeaf catalog gives each certificate a page of its own. The capture handed Electronics Technology - Level 1 41116 the Electronics and Computer Engineering Technology certificate's page, where its title prints only in the department's navigation, so extraction placed none of its listed courses. It is pinned to its own page, whose heading, course list and total the capture view of college-page-read run 45782471633 printed. Reversible by deleting this entry.",
+   "site_pages": {
+    "41116": {
+     "url": "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-technology-level-1-certificate/",
+     "evidence": "Electronics Technology - Level 1 41116: its own page, read as the capture reads it (college-page-read run 45782471633): the heading 'Electronics Technology - Level 1 (Certificate M0679)', its Required Courses (ELEC 50A, ELEC 50B and ELEC 56, 4 units each, every course the state lists) and 'Total Units 12', 2,755 characters. The department's page links it as 'Electronics Technology - Level 1 (Certificate M0679)'. The filed capture (run 44744647809) handed it the page of Certificate T0906, 'Electronics and Computer Engineering Technology', shared with 08075 and 22176; the filed record's own notes (run 38059865531) say 'The Level 1 heading appears only as a navigation toggle, with no requirements under it'."
+    }
+   }
+  },
+  "Skyline College": {
+   "why": "S739 wave B (the gap census of 2026-11-26 06:54Z, lever reader_page_assignment): no reconcile step; the entry names one program's own page (site_pages).",
+   "steps": [],
+   "site_pages_why": "S739 wave B: Skyline's catalog gives each program a page of its own, and its program list names one mathematics transfer degree, 'Mathematics for Transfer 2.0' (AS-T). The capture handed Mathematics A.S.-T 30882 the Economics AA-T's page, so extraction placed none of its listed courses. It is pinned to its own page, whose heading, course list and total the capture view of college-page-read run 45784839786 printed. The lever's other program, Solar Technology and Business 32964, is a named gap (kb/program_requirements_college/skyline/named_gaps_s739.json). Reversible by deleting this entry.",
+   "site_pages": {
+    "30882": {
+     "url": "https://catalog.skylinecollege.edu/current/programs/mathematics-for-transfer-2-0-as-t.php",
+     "evidence": "Mathematics A.S.-T 30882: its own page, read as the capture reads it (college-page-read run 45784839786): the heading 'Mathematics for Transfer 2.0 Associate in Science Degree for Transfer', its Required Core Courses (MATH C2210, MATH C2220, MATH 253, MATH 270, MATH 275), 'Select one course from the following' (CIS 122, CIS 250 or CIS 274, or PHYS 250) and 'Total Required Major Units: 24 - 25', four of the five courses the state lists (STAT C1000 is not printed), 6,054 characters. The program list (college-page-read run 45782471633) links it as 'Mathematics for Transfer 2.0'. The filed capture (run 43968403561) handed it programs/economics-for-transfer-aa-t.xml; the filed record's own notes (run 39032119511) say the text belongs 'to the Economics for Transfer AA-T, not the Mathematics A.S.-T'."
+    }
+   }
   }
  }
 }
