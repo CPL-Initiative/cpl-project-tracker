@@ -299,7 +299,14 @@
     "KINE 047A": "PE 98",
     "KINE 054A": "PE 45",
     "KINE 057A": "PE 91",
-    "KINE 058A": "PE 43"
+    "KINE 058A": "PE 43",
+    "BIOL 015": "BI 15",
+    "CDEV C1000": "CD 10",
+    "COMM 007": "SP 7",
+    "PSYC 003": "PSY 3",
+    "PSYC 005": "PSY 5",
+    "SOCI 002": "SOC 2",
+    "SOCI 004": "SOC 4"
    },
    "course_renumbers_cited": [
     {
@@ -365,9 +372,72 @@
      "session": "S740",
      "date": "2026-11-26",
      "evidence": "The reissued 2026-2027 catalog's course description (p.161 of Final-26-27-Catalog-11.18.26r1.pdf, college page read 45835379921) prints 'KINE 058A', 'BEGINNING BADMINTON', '1 Unit' and ends 'Formerly known as PE 043.'; the state's file lists PE 43 for Kinesiology A.A.-T 43132, whose own page (p.107) prints KINE 058A."
+    },
+    {
+     "printed": "BIOL 015",
+     "file": "BI 15",
+     "title": "General Microbiology",
+     "units": 5,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The reissued 2026-2027 catalog's course description (p.135 of Final-26-27-Catalog-11.18.26r1.pdf, college page read 45849832859) prints 'BIOL 015', 'GENERAL MICROBIOLOGY', '5 Units' and 'Formerly known as BI 015.'; the state's file lists BI 15 at 5 units for Liberal Arts: Mathematics and Science 18520."
+    },
+    {
+     "printed": "CDEV C1000",
+     "file": "CD 10",
+     "title": "Child Growth and Development",
+     "units": 4,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The reissued 2026-2027 catalog's course description (p.139 of Final-26-27-Catalog-11.18.26r1.pdf, college page read 45849832859) prints 'CDEV C1000', 'CHILD GROWTH AND DEVELOPMENT', '4 Units' and 'Formerly known as CD 010; ECE-010A + ECE-010B.'; the state's file lists CD 10 at 4 units for Elementary Teacher Education A.A.-T 45594."
+    },
+    {
+     "printed": "COMM 007",
+     "file": "SP 7",
+     "title": "Decision-Making and Advocacy",
+     "units": 3,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The reissued 2026-2027 catalog's course description (p.141 of Final-26-27-Catalog-11.18.26r1.pdf, college page read 45849832859) prints 'COMM 007', 'DECISION-MAKING AND ADVOCACY', '3 Units' and 'Formerly known as SP 007.'; the state's file lists SP 7 at 3 units for Registered Nursing A.S. 16657."
+    },
+    {
+     "printed": "PSYC 003",
+     "file": "PSY 3",
+     "title": "Developmental Psychology",
+     "units": 3,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The reissued 2026-2027 catalog's course description (p.169 of Final-26-27-Catalog-11.18.26r1.pdf, college page read 45849832859) prints 'PSYC 003', 'DEVELOPMENTAL PSYCHOLOGY', '3 Units' and 'Formerly known as PSY 003.'; the state's file lists PSY 3 at 3 units for Liberal Arts: Social and Behavioral Sciences 18519, Vocational Nursing 14737 and 20094 and Registered Nursing 16657."
+    },
+    {
+     "printed": "PSYC 005",
+     "file": "PSY 5",
+     "title": "Behavioral and Social Science Research Methods",
+     "units": 4,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The reissued 2026-2027 catalog's course description (p.169 of Final-26-27-Catalog-11.18.26r1.pdf, college page read 45849832859) prints 'PSYC 005', 'BEHAVIORAL AND SOCIAL SCIENCE RESEARCH METHODS', '4 Units' and 'Formerly known as PSY 005.'; the state's file lists PSY 5 at 4 units for Liberal Arts: Social and Behavioral Sciences 18519."
+    },
+    {
+     "printed": "SOCI 002",
+     "file": "SOC 2",
+     "title": "Social Problems",
+     "units": 3,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The reissued 2026-2027 catalog's course description (p.171 of Final-26-27-Catalog-11.18.26r1.pdf, college page read 45849832859) prints 'SOCI 002', 'SOCIAL PROBLEMS', '3 Units' and 'Formerly known as SOC 002.'; the state's file lists SOC 2 at 3 units for Liberal Arts: Social and Behavioral Sciences 18519."
+    },
+    {
+     "printed": "SOCI 004",
+     "file": "SOC 4",
+     "title": "Sociological Analysis and Critical Thinking",
+     "units": 3,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The reissued 2026-2027 catalog's course description (p.171 of Final-26-27-Catalog-11.18.26r1.pdf, college page read 45849832859) prints 'SOCI 004', 'SOCIOLOGICAL ANALYSIS AND CRITICAL THINKING', '3 Units' and 'Formerly known as SOC 004.'; the state's file lists SOC 4 at 3 units for Liberal Arts: Social and Behavioral Sciences 18519."
     }
    ],
-   "course_renumbers_why": "S740 (lane 1, reads): Copper Mountain renumbered its physical education courses into KINE and its BI courses into BIOL, and each course description in the catalog's reissue of 2026-11-18 names its former code ('Formerly known as PE 052.'). The state's file still lists the former codes for Kinesiology A.A.-T 43132, so its own page (p.107) named 4 of its 11 listed courses and the capture refused it (the named gap catalog_renumbered, kb/program_requirements_college/copper_mountain/named_gaps_s739.json). With the seven pairs the page names all 11. Of the college's other filed records only Liberal Arts: Mathematics and Science 18520 lists one of them (BI 23), and it passes with and without the pair. A pair is never read where the file lists the printed code, so each retires once the file catches up. Reversible by deleting the pairs.",
+   "course_renumbers_why": "S740 (lane 1, reads): Copper Mountain renumbered its physical education courses into KINE and its BI courses into BIOL, and each course description in the catalog's reissue of 2026-11-18 names its former code ('Formerly known as PE 052.'). The state's file still lists the former codes for Kinesiology A.A.-T 43132, so its own page (p.107) named 4 of its 11 listed courses and the capture refused it (the named gap catalog_renumbered, kb/program_requirements_college/copper_mountain/named_gaps_s739.json). With the seven pairs the page names all 11. Of the college's other filed records only Liberal Arts: Mathematics and Science 18520 lists one of them (BI 23), and it passes with and without the pair. A pair is never read where the file lists the printed code, so each retires once the file catches up. Reversible by deleting the pairs. Seven more pairs, the same way (college page read 45849832859, kb/college_reads/s740_reads_copper_mountain_renumbers_2.json): PSY to PSYC, SOC to SOCI, SP 7 to COMM 007, BI 15 to BIOL 015 and CD 10 to CDEV C1000, each by its course description's 'Formerly known as' sentence, at the units the state's file carries. They are the listed courses the college's census pile left unplaced: Liberal Arts: Social and Behavioral Sciences 18519 (PSY 3, PSY 5, SOC 2, SOC 4; its arithmetic already passes), Vocational Nursing 14737 and 20094 (PSY 3), Registered Nursing 16657 (PSY 3, SP 7), Liberal Arts: Mathematics and Science 18520 (BI 15) and Elementary Teacher Education 45594 (CD 10). The filed records were read from the 09.03.26 file, another address than the reissue, so a reconcile's moved-page guard leaves them as filed: the pairs reach them through a read of the reissue, which the capture lists them for as moved programs.",
    "pdf_pages": {
     "41085": {
      "page": 106,
