@@ -1195,8 +1195,14 @@
   function rapidGuess(r) {
     var g = (VIEW.G || {})[r.slug + "|" + r.code];
     /* source_url and source_says: the college's own catalog page and the words it prints for the code (S737). */
-    if (g && g.guess) return { title: g.guess, confidence: g.confidence, why: g.why || "", courses: g.courses || [],
-      sourceUrl: /^https?:\/\//i.test(String(g.source_url || "")) ? g.source_url : "", sourceSays: g.source_says || "" };
+    /* COBI's verdict on the guess (S737; Sam: "Can you judge the lightning round first? I can then go over your
+       judgements in the early morning"): the field holds the verdict's title, the guess stays in sight, and a code
+       judged not a subject code starts empty, so a stray Accept titles nothing. */
+    var J = g && g.judged && g.judged.verdict ? g.judged : null;
+    if (g && g.guess) return { title: J ? (J.verdict === "not_a_subject" ? "" : (J.title || g.guess)) : g.guess,
+      confidence: J && J.sure != null ? J.sure : g.confidence, why: J ? (J.why || "") : (g.why || ""), courses: g.courses || [],
+      guess: g.guess, guessConf: g.confidence, judged: J,
+      sourceUrl: /^https?:\/\//i.test(String((J && J.url) || g.source_url || "")) ? ((J && J.url) || g.source_url) : "", sourceSays: (J && J.url ? "" : g.source_says) || "" };
     var rec = recOf(r), top = candidatesOf(rec.title)[0];
     if (top && top.title) return { title: top.title, confidence: top.confidence, why: top.why || (rec.title && rec.title.why) || "", courses: (g && g.courses) || [] };
     return { title: "", confidence: null, why: "", courses: (g && g.courses) || [] };
@@ -1225,7 +1231,7 @@
     var value = acceptValue(r, input.value, false);
     if (!value.local_title) { say("Nothing to accept. Type a title, or Skip."); return; }
     /* The catalog page stands as the save's source only for the guess accepted as written; an edited title has none. */
-    if (e.g.sourceUrl && input.value === e.g.title) value.source_url = e.g.sourceUrl;
+    if (e.g.sourceUrl && e.g.title && input.value === e.g.title) value.source_url = e.g.sourceUrl;
     else delete value.source_url;
     btn.disabled = true; say("Saving…");
     var hadSave = !!SAVED[k.mapKey];
@@ -1278,7 +1284,12 @@
     if (ex) box.appendChild(el("p", { cls: "csb-note", id: "csb-rapid-ex" }, ["Example course: ", el("strong", { text: ex }),
       n ? " (1 of " + fmt(n) + (n === 1 ? " course)" : " courses)") : ""]));
     else if (n) box.appendChild(el("p", { cls: "csb-note", id: "csb-rapid-ex", text: fmt(n) + (n === 1 ? " course" : " courses") + "; no example course is on file." }));
-    if (g.sourceUrl) box.appendChild(el("p", { cls: "csb-note", id: "csb-rapid-src" }, ["The catalog says: ",
+    if (g.judged) {
+      var jv = g.judged.verdict === "accept" ? "COBI accepts the guess." : g.judged.verdict === "change" ? "COBI changed the guess, which read " + g.guess + "."
+        : "COBI judges this not a subject code" + (g.judged.title ? " (it reads as " + g.judged.title + ")" : "") + ". Skip it, or type a title if you disagree. The guess read " + g.guess + ".";
+      box.appendChild(el("p", { cls: "csb-note", id: "csb-rapid-verdict", "data-verdict": g.judged.verdict }, [el("strong", { text: jv })]));
+    }
+    if (g.sourceUrl) box.appendChild(el("p", { cls: "csb-note", id: "csb-rapid-src" }, [g.sourceSays ? "The catalog says: " : "The page that settled it: ",
       el("a", { href: g.sourceUrl, target: "_blank", rel: "noopener noreferrer" }, [g.sourceSays || g.sourceUrl, el("span", { cls: "csb-vh", text: " (opens in a new tab)" })])]));
     var input = el("input", { type: "text", cls: "csb-input", id: "csb-rapid-title", autocomplete: "off", spellcheck: "true", autocapitalize: "words", enterkeyhint: "go" });
     input.value = g.title || "";

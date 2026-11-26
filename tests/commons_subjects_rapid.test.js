@@ -16,7 +16,10 @@
 //   (10) ⭐ on a phone (a coarse pointer; Sam, 2026-11-26: "optimize the lightning round view for the phone so I can
 //       judge or change them on the fly"): the keyboard waits (the heading takes focus, not the title), the hint names
 //       taps and swipes, a left swipe skips and a right swipe goes back writing nothing, the title field asks for Go,
-//       the phone CSS pins the three controls to a thumb bar at 48px; and Undo takes back the save the round just made.
+//       the phone CSS pins the three controls to a thumb bar at 48px; and Undo takes back the save the round just made;
+//   (11) ⭐ COBI's verdict (Sam, 2026-11-26: "Can you judge the lightning round first?"): a changed guess fills the field
+//       with COBI's title and names the guess it replaced; a code judged not a subject code starts empty, so Accept
+//       saves nothing; the page that settled the verdict links out.
 // Run from repo root: `npm test` (or `node tests/commons_subjects_rapid.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -195,6 +198,24 @@ function key(x, el, k, mods) {
     del.length === 1 && /course_id=eq\.SUBJ%3Abeta%7CWELD%7Ccredit/.test(del[0].url) && /reviewer_email=eq\./.test(del[0].url)
     && head(x) === "WELD at Beta College" && /^3 to go\. 0 saved this visit\./.test(txt(x.d.getElementById("csb-rapid-left"))) && !x.d.getElementById("csb-rapid-undo"),
     del[0] && del[0].url);
+
+  /* (11) COBI's verdict */
+  const JG = JSON.parse(JSON.stringify(GUESSES));
+  JG.rows.forEach((r) => {
+    if (r.code === "WELD") r.judged = { verdict: "change", title: "Welding Technology and Fabrication", sure: 95, why: "the catalog heading reads so", url: "https://catalog.beta.example.edu/weld-heading" };
+    if (r.code === "MATH") r.judged = { verdict: "not_a_subject", title: "MATH", sure: 90, why: "a course-number suffix", url: null };
+  });
+  x = load("#commons/subjects/rapid", { sess: ME, files: { "kb/status/subject_title_guesses.json": JG } });
+  await x.M.boot(); await settle();
+  check("(11) ⭐ a changed guess fills the field with COBI's title and names the guess it replaced",
+    head(x) === "WELD at Beta College" && x.d.getElementById("csb-rapid-title").value === "Welding Technology and Fabrication"
+    && /COBI changed the guess, which read Welding Technology\./.test(txt(x.d.getElementById("csb-rapid-verdict"))), txt(x.d.getElementById("csb-rapid-verdict")));
+  check("(11) the page that settled the verdict links out", (x.d.querySelector("#csb-rapid-src a") || {}).href === "https://catalog.beta.example.edu/weld-heading");
+  x.d.getElementById("csb-rapid-skip").click(); await settle();
+  check("(11) ⭐ a code judged not a subject code starts empty and says so", head(x) === "MATH at Alpha College"
+    && x.d.getElementById("csb-rapid-title").value === "" && /not a subject code/.test(txt(x.d.getElementById("csb-rapid-verdict"))));
+  x.d.getElementById("csb-rapid-accept").click(); await settle();
+  check("(11) ⭐ so Accept on it saves nothing", writesOf(x).length === 0 && /Nothing to accept/.test(txt(x.d.getElementById("csb-rapid-msg"))));
 
   /* (8) an empty queue */
   const AT = "2026-11-26T00:00:00Z";
