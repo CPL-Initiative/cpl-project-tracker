@@ -149,3 +149,16 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   award (the heading's words alone had let Long Beach City 43021 through beside 02677). A Sonnet reader took s739e's
   second and last round, s739f, s739g and the shared change.
 - 08:46Z: #3882's `test` failed (lints 2 and 5, run 45784375158); `pooled` resumed to read the two failed jobs and fix.
+- 08:48Z: the reader of s739a and s739b: APPLY, APPLY (all kinds on `main`; the shared guard sound; the rename rescore
+  moves none of their rows). MINORs: Shasta 30580 holds the same list as 43618 from one "Communication Studies 2.0"
+  section and looks mis-filed (`f-shasta-30580-shares-43618-list-s739`, for the lane); 18144's live run rests on the
+  plan's hard-coded file history; a mutated held row passes its test silently. 08:49Z: their SQL unchanged since
+  `b4accaca`; clean md5 pre-reads, s739a 5 of 5 and s739b 12 of 12. Migrate 45786607372 returned 5 and 45786864971
+  returned 12, none skipped; `.apply` restored (`1f932c3b`).
+- 08:55Z: the reader of s739e (round 2), s739f and s739g: APPLY, APPLY, APPLY (41150 out and identical to `main`;
+  every kind on `main`). MAJOR in the shared module, hit by no row tonight: `_heading_apart` lets both same-title
+  sisters claim `own_heading` when the heading names both awards (Palomar's "A.A. Degree Major or Certificate of
+  Achievement": 27 of 348 identical-heading sister pairs both pass); `piles` fixes it, with a Palomar-shaped test,
+  before any later plan uses it (`f-heading-apart-both-awards-s739`). MINOR: the common test misses an edited
+  after-image or md5 in the apply SQL. 08:57Z: clean md5 pre-reads, s739e 6 of 6, s739f 2 of 2, s739g 1 of 1; the
+  three applies run in order, each after the last one's receipt.
