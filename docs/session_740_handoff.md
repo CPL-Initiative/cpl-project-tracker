@@ -162,3 +162,6 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   before any later plan uses it (`f-heading-apart-both-awards-s739`). MINOR: the common test misses an edited
   after-image or md5 in the apply SQL. 08:55Z: clean md5 pre-reads, s739e 6 of 6, s739f 2 of 2, s739g 1 of 1; the
   three applies run in order, each after the last one's receipt.
+- 08:56Z to 09:01Z: migrate 45787269553 returned 6 (s739e), 45787472150 returned 2 (s739f), 45787671731 returned 1
+  (s739g), none skipped; `.apply` restored (`964038b6`). The shared clone's `shallow.lock` held four fetches for a
+  minute while workers fetched; the apply script retried each.
