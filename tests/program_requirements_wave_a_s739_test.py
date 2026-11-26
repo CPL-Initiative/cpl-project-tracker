@@ -175,6 +175,10 @@ RECORDS = (
     # (read 45787030902, load 45787511741).
     ("las_positas", "18813", "/1637/1646"),
     ("las_positas", "36449", "/1853/1858"),
+    # Cuesta: read from its own entry on its pin (read 45787691549).
+    ("cuesta", "21050", "/30065/30067/30109"),
+    # Grossmont: read from its own page on its pin (read 45799536686, load 45802387023).
+    ("grossmont", "32879", "/visual-performing-arts/photography-cert-achievement/"),
 )
 for slug, cn, page in RECORDS:
     path = os.path.join(ROOT, "kb", "program_requirements_college", slug, "records", cn + ".json")
@@ -200,6 +204,20 @@ check(cov.get("placed") == 12 and cov.get("listed") == 12 and "/program/film-tv-
       "de_anza 31504: collected from the page the capture bound it to, 12 of 12 listed courses placed")
 check(passes_live(score) or bool(score.get("gaps")) or (score.get("arithmetic") or {}).get("status") == "incomplete",
       "de_anza 31504: its arithmetic is incomplete (no total in its text), or a later pass named its gap or passed it")
+
+# Cuesta 43053 is collected with its failing check: read from its own entry on its pin, it places its 9 listed
+# courses, and its units read 20 to 25 against the printed 25, since the page prints 'AVMT 110 (5.0) OR AVMT 110A
+# (2.5) AND AVMT 110B (2.5)' and the record files the two halves as two alternatives (its own note says they are
+# required as a pair). Its sister 41744 fails the same way. A later step may read the pair as one alternative.
+with open(os.path.join(ROOT, "kb", "program_requirements_college", "cuesta", "records", "43053.json"),
+          encoding="utf-8") as fh:
+    rec = json.load(fh)
+score = rec.get("score") or {}
+cov = score.get("coverage") or {}
+check(cov.get("placed") == 9 and cov.get("listed") == 9 and rec["source_url"].endswith("/30065/30067/30093"),
+      "cuesta 43053: collected from its own entry, 9 of 9 listed courses placed")
+check(passes_live(score) or bool(score.get("gaps")) or (score.get("arithmetic") or {}).get("status") == "unequal",
+      "cuesta 43053: its units read unequal (the paired halves), or a later pass named its gap or passed it")
 
 print("\n%d checks, %d failed" % (N[0], len(FAILS)))
 sys.exit(1 if FAILS else 0)
