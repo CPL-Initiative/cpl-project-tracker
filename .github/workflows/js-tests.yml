@@ -703,6 +703,11 @@ jobs:
       - name: Program requirements lever pins (S739 wave B)
         if: matrix.shard == 3
         run: python3 tests/program_requirements_lever_pins_s739b_test.py
+      # S739 wave B plan s739b: Riverside City's History AA-T 33230, read and loaded this run, collected with its gap
+      # named (ge_units_not_read). One row; the guarded UPDATE names it alone. Pure stdlib.
+      - name: Program requirements named gap at Riverside City (S739 wave B, s739b)
+        if: matrix.shard == 3
+        run: python3 tests/program_named_gaps_s739b_test.py
       # S727 plan s727v: Antelope Valley 43028 (a Cal-GETC degree whose page prints only CSU GE and IGETC figures),
       # collected with its gap named. Pure stdlib.
       - name: Program requirements GE figures of another pattern (S727 s727v)

@@ -1,0 +1,908 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30)",
+ "gaps": {
+  "major_total_differs": "major total differs from catalog",
+  "no_units_printed": "The catalog prints no units for at least one required course.",
+  "no_units_read": "A required course carries no units as read, so the program's units cannot be added.",
+  "no_hours_read": "A required course carries no hours as read, so the program's hours cannot be added.",
+  "catalog_figures_differ": "The catalog's own figures do not add up: each list matches its printed figure, and the lists sum past the program's printed total.",
+  "noncredit_names_only": "Noncredit certificate: the catalog names it but prints no course list.",
+  "total_not_printed": "The catalog prints no total for this program, so its units cannot be checked against one.",
+  "total_differs": "The catalog prints a total for this program that its own printed units do not add to.",
+  "hours_total_not_read": "A program measured in hours: its courses carry their hours, and no program total was read, so its hours cannot be checked against one.",
+  "hours_within_printed_range": "A program measured in hours: its courses' hours as read fall within the printed range of hours rather than matching it.",
+  "hours_total_differs": "A program measured in hours: its courses' hours as read add to a figure other than the program's printed total.",
+  "ge_units_not_read": "The degree names a general education pattern, and no units for it were read, so the degree's units cannot be added. Its major adds up to the printed major total.",
+  "lists_past_their_figure": "The catalog's figures add up to its printed total, counting each list at its printed figure; the courses in a list carry more units than that figure.",
+  "section_cut_off": "The program's section runs onto a page the read did not hold, so part of its requirements is missing from the record and its units cannot be checked against the printed total.",
+  "noted_figures_differ": "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires.",
+  "noted_unit_floor": "The catalog requires a variable-unit course at a minimum above the units printed beside it; with that minimum the courses add to the printed total.",
+  "lists_not_closed": "A choice list prints no unit figure of its own, one that depends on another choice, or also takes courses from another list, so the lists alone cannot add the program's units.",
+  "no_own_page_total": "The record was read from another award's page, which prints this program's courses inside its own requirements and prints no total for this program.",
+  "pool_figure_not_read": "The catalog prints one figure over several lists or nested options together, and the record adds the parts instead, so its units cannot be checked against that figure.",
+  "one_option_of_shared_page": "The program is one option of a page several programs share; the record holds every option the page prints, so its units are the whole group's, not the program's own.",
+  "pair_read_as_alternatives": "The catalog prints two courses taken together as one option, and the record reads them as separate alternatives, so its low end falls short of the printed total.",
+  "noted_no_total": "The reader's note says the catalog prints no total for this program, so its units cannot be checked against one; no page read has confirmed it.",
+  "noted_section_cut_off": "The reader's note says the program's section runs onto a page the read did not hold, so part of its requirements is missing from the record.",
+  "degree_within_map_range": "The record takes the degree total from the sample map's range, whose low end is the 60 units the page prints as needed to graduate; the major adds up to its printed major total, and the degree's units as read fall inside the map's range and match neither end.",
+  "required_list_outside_total": "The catalog prints a list the program requires apart from its printed total, and the record counts that list; without it the courses add to the printed total.",
+  "ge_figures_other_pattern": "The degree names one general education pattern, and the page prints general education figures only for other patterns, so no units for the named pattern were read and the degree's units cannot be added. Its major adds up to the printed major total.",
+  "repeat_read_once": "The catalog prints a course the program takes more than once, and the record counts it once, so its units fall short of the printed total by the repeats.",
+  "double_count_noted": "The catalog lets some of the program's units count twice, toward the major and general education, and the record adds them twice.",
+  "prerequisites_counted": "The record counts the program's prerequisite courses, which the catalog's printed total leaves out; without them the courses add to the printed total.",
+  "entry_path_range": "The page prints the major as a range over entry paths (a licensed student enters later in the sequence), and the record holds the full path, which matches the range's top; which path a student takes is the college's admission.",
+  "nested_award_not_read": "The program counts another award as one line, and the catalog prints that award's courses in its own section, so the record holds the line without its courses.",
+  "unit_line_not_read": "The catalog prints a requirement as a line of units with no course named, and the record leaves the line out; with it the courses add to the printed total.",
+  "degree_summary_ge_none": "The page's unit summary prints the degree total and prints its general education and electives as None or N/A, so the record holds the major alone; the major adds up to its printed major total.",
+  "figure_within_variable_units": "A required list's printed figure falls inside the range its variable-unit courses carry, and the page does not say how many units each takes; counting each list at its printed figure, the figures add to the printed total.",
+  "degree_electives_not_printed": "The degree's major and general education add to less than the printed degree total, and the page prints no figure for electives and does not say they fill the rest.",
+  "option_lists_read_apart": "An option the catalog prints takes more than one list under the option's own printed figure, and the record's one option group holds each list as an alternative of its own, so the program's units cannot be checked against the printed figures.",
+  "noted_total_cut_off": "The reader's note says the program's total line runs onto a page the read did not hold; every course is placed, so only the printed total is missing and its units cannot be checked against it.",
+  "heading_not_in_text": "The page the read held prints a requirements list but not the program's own heading, which sits on a page the read did not hold; the record takes the list as this program's by its title alone, and no page read has confirmed it.",
+  "waived_course_counted": "The page prints a requirement at a range from zero units, since a student may meet it without the course (a certification, an exam or earlier coursework), and the record counts the course, so its units match the top of the printed range and not its low end."
+ },
+ "at": "2026-11-26T09:21:37Z",
+ "held_colleges": [
+  "Lassen College",
+  "Allan Hancock College",
+  "Chabot College",
+  "Santiago Canyon College"
+ ],
+ "only_gaps": [
+  "ge_units_not_read"
+ ],
+ "census_causes": [
+  "found_not_extracted"
+ ],
+ "collected": 1,
+ "by_gap": {
+  "ge_units_not_read": 1
+ },
+ "recall": {
+  "held": 1729,
+  "right": 1729,
+  "wrong": 0,
+  "by_answer": {
+   "ge_units_not_read": 174,
+   "none": 1350,
+   "lists_past_their_figure": 22,
+   "hours_total_differs": 17,
+   "section_cut_off": 20,
+   "hours_within_printed_range": 12,
+   "hours_total_not_read": 33,
+   "no_hours_read": 57,
+   "no_units_read": 25,
+   "total_not_printed": 7,
+   "total_differs": 12
+  },
+  "wrong_keys": []
+ },
+ "matcher_recall": {
+  "noncredit": {
+   "held": 22141,
+   "right": 22141,
+   "wrong": 0,
+   "missed": 0
+  },
+  "printed_no_units": {
+   "held": 104668,
+   "right": 104005,
+   "wrong": 663
+  }
+ },
+ "ge_units_recall": {
+  "held": 1726,
+  "right": 1726,
+  "wrong": 0,
+  "no_pattern": 269
+ },
+ "ge_units_precision": {
+  "says_none": 1,
+  "prints_figure": 0,
+  "silent": 0,
+  "hand_held_prints_figure": 21,
+  "hand_held_flagged_by_ge_claim": 20,
+  "hand_held_not_flagged": [
+   "Orange Coast College 16634"
+  ]
+ },
+ "ge_units_held_out": {
+  "why": "page prints a GE figure; ge_units_steps passes it free",
+  "decided": "d-ge-gap-only-where-no-figure-s703",
+  "keys": [
+   [
+    "Antelope Valley College",
+    "36852"
+   ],
+   [
+    "Antelope Valley College",
+    "39295"
+   ],
+   [
+    "Antelope Valley College",
+    "40870"
+   ],
+   [
+    "Antelope Valley College",
+    "43028"
+   ],
+   [
+    "Berkeley City College",
+    "31835"
+   ],
+   [
+    "Berkeley City College",
+    "41766"
+   ],
+   [
+    "Berkeley City College",
+    "41902"
+   ],
+   [
+    "Berkeley City College",
+    "42381"
+   ],
+   [
+    "Berkeley City College",
+    "42838"
+   ],
+   [
+    "College of Alameda",
+    "01129"
+   ],
+   [
+    "College of Alameda",
+    "01132"
+   ],
+   [
+    "College of Alameda",
+    "01141"
+   ],
+   [
+    "College of Alameda",
+    "32765"
+   ],
+   [
+    "College of Marin",
+    "19789"
+   ],
+   [
+    "College of Marin",
+    "19791"
+   ],
+   [
+    "De Anza College",
+    "45499"
+   ],
+   [
+    "Las Positas College",
+    "09214"
+   ],
+   [
+    "Las Positas College",
+    "09227"
+   ],
+   [
+    "Las Positas College",
+    "36235"
+   ],
+   [
+    "Las Positas College",
+    "38886"
+   ],
+   [
+    "Orange Coast College",
+    "16634"
+   ]
+  ]
+ },
+ "hours_recall": {
+  "held": 5295,
+  "right": 5295,
+  "wrong": 0,
+  "not_reproduced": 14,
+  "held_out": 44,
+  "by_test": {
+   "hours_total_not_read": 1059,
+   "hours_total_differs": 1059,
+   "hours_within_printed_range": 3177
+  },
+  "by_boundary": {
+   "boundary_top within": 1059,
+   "boundary_low within": 1059
+  }
+ },
+ "hours_precision": {
+  "section_missing": 0,
+  "says_no_total": 0,
+  "silent": 0,
+  "hand_held_no_section": 10,
+  "hand_held_flagged_by_hours_claim": 10,
+  "hand_held_not_flagged": []
+ },
+ "hours_held_out": {
+  "decided": "d-hours-gaps-hold-misreads-s703",
+  "keys": [
+   [
+    "Coastline Community College",
+    "42718",
+    "reread or reconcile wording passes it free"
+   ],
+   [
+    "De Anza College",
+    "41176",
+    "reread or reconcile wording passes it free"
+   ],
+   [
+    "Laney College",
+    "38970",
+    "reread or reconcile wording passes it free"
+   ],
+   [
+    "Laney College",
+    "39365",
+    "reread or reconcile wording passes it free"
+   ],
+   [
+    "Laney College",
+    "39366",
+    "reread or reconcile wording passes it free"
+   ],
+   [
+    "Laney College",
+    "39368",
+    "reread or reconcile wording passes it free"
+   ],
+   [
+    "Laney College",
+    "43451",
+    "reread or reconcile wording passes it free"
+   ],
+   [
+    "Los Angeles City College",
+    "24099",
+    "text lacks the program section"
+   ],
+   [
+    "Mendocino College",
+    "43158",
+    "reread or reconcile wording passes it free"
+   ],
+   [
+    "Pasadena City College",
+    "33140",
+    "text lacks the program section"
+   ],
+   [
+    "Pasadena City College",
+    "33141",
+    "text lacks the program section"
+   ],
+   [
+    "Pasadena City College",
+    "33142",
+    "text lacks the program section"
+   ],
+   [
+    "Pasadena City College",
+    "33143",
+    "text lacks the program section"
+   ],
+   [
+    "Pasadena City College",
+    "33144",
+    "text lacks the program section"
+   ],
+   [
+    "Porterville College",
+    "44805",
+    "text lacks the program section"
+   ],
+   [
+    "Reedley College",
+    "42457",
+    "235.5 against 235.4: a scorer rounding question, not a gap"
+   ],
+   [
+    "Ventura College",
+    "40179",
+    "text lacks the program section"
+   ],
+   [
+    "West Los Angeles College",
+    "30369",
+    "text lacks the program section"
+   ],
+   [
+    "West Los Angeles College",
+    "45311",
+    "text lacks the program section"
+   ]
+  ]
+ },
+ "lists_recall": {
+  "held": 25166,
+  "right": 25166,
+  "wrong": 0,
+  "not_reproduced": 136,
+  "hours": 474,
+  "allows_other": 44,
+  "by_test": {
+   "gap": 6206,
+   "none": 5073,
+   "past_by_half": 6204,
+   "total_by_half": 6208,
+   "cross_list": 1469,
+   "none passes": 1135,
+   "top_only passes": 424,
+   "past_by_half inside range": 4,
+   "gap inside range": 2
+  },
+  "by_kind": {
+   "all": 4738,
+   "choose_courses": 1470
+  },
+  "by_boundary": {
+   "past_by_half": 6204,
+   "total_by_half": 6208,
+   "cross_list": 1469,
+   "past_by_half inside range": 4
+  }
+ },
+ "lists_precision": {
+  "stands": 0,
+  "lists_meet_figure": 0,
+  "prints_other_total": 0,
+  "course_optional": 0,
+  "note_names_difference": 0,
+  "within_printed_range": 0,
+  "hand_held": 29,
+  "hand_held_flagged_by_why": {
+   "a counted course is optional, exempt or met another way; the courses meet the figure": 5,
+   "a list takes courses from another list; with them, no list passes its figure": 8,
+   "the page prints a second total the courses meet; a reread passes it free": 4,
+   "the note names the course or list that makes up the difference": 5,
+   "the sum sits inside the printed range, so the label overstates": 6
+  },
+  "hand_held_flagged_by_lists_claim": 28,
+  "hand_held_by_why": {
+   "a counted course is optional, exempt or met another way; the courses meet the figure": 5,
+   "a list takes courses from another list; with them, no list passes its figure": 8,
+   "the page prints a second total the courses meet; a reread passes it free": 4,
+   "the note names the course or list that makes up the difference": 6,
+   "the sum sits inside the printed range, so the label overstates": 6
+  },
+  "hand_held_not_flagged": [
+   "Los Angeles Trade Technical College 08479"
+  ]
+ },
+ "lists_held_out": {
+  "decided": "d-lists-gap-holds-claim-false-s703",
+  "keys": [
+   [
+    "College of San Mateo",
+    "33879",
+    "a counted course is optional, exempt or met another way; the courses meet the figure"
+   ],
+   [
+    "College of the Siskiyous",
+    "17596",
+    "a counted course is optional, exempt or met another way; the courses meet the figure"
+   ],
+   [
+    "Cuesta College",
+    "33041",
+    "a list takes courses from another list; with them, no list passes its figure"
+   ],
+   [
+    "Cypress College",
+    "03782",
+    "the page prints a second total the courses meet; a reread passes it free"
+   ],
+   [
+    "Diablo Valley College",
+    "18811",
+    "the page prints a second total the courses meet; a reread passes it free"
+   ],
+   [
+    "East Los Angeles College",
+    "45602",
+    "the note names the course or list that makes up the difference"
+   ],
+   [
+    "El Camino College",
+    "02495",
+    "the note names the course or list that makes up the difference"
+   ],
+   [
+    "El Camino College",
+    "02524",
+    "the note names the course or list that makes up the difference"
+   ],
+   [
+    "El Camino College",
+    "02538",
+    "the note names the course or list that makes up the difference"
+   ],
+   [
+    "Gavilan College",
+    "08460",
+    "the sum sits inside the printed range, so the label overstates"
+   ],
+   [
+    "Gavilan College",
+    "38787",
+    "the sum sits inside the printed range, so the label overstates"
+   ],
+   [
+    "Gavilan College",
+    "41394",
+    "the sum sits inside the printed range, so the label overstates"
+   ],
+   [
+    "Imperial Valley College",
+    "35587",
+    "a list takes courses from another list; with them, no list passes its figure"
+   ],
+   [
+    "Irvine Valley College",
+    "32865",
+    "the sum sits inside the printed range, so the label overstates"
+   ],
+   [
+    "Lake Tahoe Community College",
+    "38760",
+    "a list takes courses from another list; with them, no list passes its figure"
+   ],
+   [
+    "Los Angeles Trade Technical College",
+    "08479",
+    "the note names the course or list that makes up the difference"
+   ],
+   [
+    "Madera College",
+    "39520",
+    "a list takes courses from another list; with them, no list passes its figure"
+   ],
+   [
+    "Madera College",
+    "39811",
+    "the note names the course or list that makes up the difference"
+   ],
+   [
+    "Madera College",
+    "39862",
+    "a counted course is optional, exempt or met another way; the courses meet the figure"
+   ],
+   [
+    "Palomar College",
+    "33826",
+    "the sum sits inside the printed range, so the label overstates"
+   ],
+   [
+    "Reedley College",
+    "35732",
+    "a list takes courses from another list; with them, no list passes its figure"
+   ],
+   [
+    "Rio Hondo College",
+    "36175",
+    "a list takes courses from another list; with them, no list passes its figure"
+   ],
+   [
+    "Saddleback College",
+    "04069",
+    "a counted course is optional, exempt or met another way; the courses meet the figure"
+   ],
+   [
+    "Saddleback College",
+    "22874",
+    "a counted course is optional, exempt or met another way; the courses meet the figure"
+   ],
+   [
+    "Santa Ana College",
+    "31859",
+    "a list takes courses from another list; with them, no list passes its figure"
+   ],
+   [
+    "Santa Monica College",
+    "33271",
+    "the page prints a second total the courses meet; a reread passes it free"
+   ],
+   [
+    "Santa Monica College",
+    "35284",
+    "the page prints a second total the courses meet; a reread passes it free"
+   ],
+   [
+    "Taft College",
+    "37366",
+    "a list takes courses from another list; with them, no list passes its figure"
+   ],
+   [
+    "West Valley College",
+    "32022",
+    "the sum sits inside the printed range, so the label overstates"
+   ]
+  ]
+ },
+ "records": [
+  {
+   "college": "Riverside City College",
+   "control_number": "33230",
+   "award": "A.A- T Degree",
+   "extracted_run": "45781329321",
+   "gap": "ge_units_not_read",
+   "words": "the degree names the Cal-GETC pattern and no units were read for it; its major adds to the printed 18",
+   "confidence": {
+    "unit_arithmetic": 50,
+    "course_list_match": 100,
+    "ge_pattern": 50,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "path": "kb/program_requirements_college/riverside_city/records/33230.json",
+   "before_image": {
+    "program_title": "History",
+    "award": "A.A- T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5993",
+    "measure": "units",
+    "total_min": 18,
+    "total_max": 18,
+    "record": {
+     "program": {
+      "section_heading": "History - Associate in Arts for Transfer (ADT) - AA745 (CalGETC)",
+      "measure": "units",
+      "total_units": {
+       "min": 18,
+       "max": 18
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "Cal-GETC",
+      "degree_total": {
+       "min": 60,
+       "max": 60
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Describe and analyze the economic, intellectual, political, and social development of world civilizations and American institutions in the context of continuity and change.",
+       "Articulate and demonstrate the range of ways that primary sources can be interpreted to arrive at different defensible interpretations of key historical events and movements.",
+       "Demonstrate the ability to interpret historical events and movements both orally and in persuasive analytical essays.",
+       "Evaluate the role of individuals, institutions, and cultures in history and in view of historical events in contemporary contexts for greater global awareness."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 12,
+        "max": 12
+       },
+       "courses": [
+        {
+         "code": "HIST-1",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST-2",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "HIST-2H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST-C1001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "HIST-C1001H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST-C1002",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "HIST-C1002H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "Elective Courses - List A",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "ETS-7",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ETS-14",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST-14",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ETS-15",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST-15",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST-16",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST-17",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST-25",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ETS-28",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST-28",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ETS-29",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST-29",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ETS-2",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST-31",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST-32",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST-33",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST-34",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST-38",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST-42",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ETS-44",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST-44",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Elective Courses - List B",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "HIST-11",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MIL-1",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST-12",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MIL-2",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST-18",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST-19",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST-26",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST-35",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 36,
+     "listed": 36
+    },
+    "extracted_run": "45781329321"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 36,
+     "listed": 36,
+     "gaps": [
+      "ge_units_not_read"
+     ],
+     "confidence": {
+      "unit_arithmetic": 50,
+      "course_list_match": 100,
+      "ge_pattern": 50,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 1
+  }
+ ],
+ "decided": "The 1 records count as collected with the gap named (the S680 conductor, on Sam's rule of 2026-11-17: never drop a record for failing; collect it with gaps noted and scores).",
+ "representation": "checks.gaps (a list of gap names, keys of gaps) and checks.confidence (five scores 0-100) added to program_requirement_records.checks; checks.arithmetic unchanged",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Riverside City College', '33230', 45781329321, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-1\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST-2H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HIST-2\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST-C1001H\",\"units\":3}],\"catalog_addition\":true,\"code\":\"HIST-C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST-C1002H\",\"units\":3}],\"catalog_addition\":true,\"code\":\"HIST-C1002\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETS-7\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETS-14\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-14\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETS-15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-16\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-17\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-25\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETS-28\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-28\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETS-29\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-29\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETS-2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-31\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-32\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-33\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-34\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-38\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-42\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETS-44\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-44\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Elective Courses - List A\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MIL-1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MIL-2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-18\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-19\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-26\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-35\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Elective Courses - List B\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Describe and analyze the economic, intellectual, political, and social development of world civilizations and American institutions in the context of continuity and change.\",\"Articulate and demonstrate the range of ways that primary sources can be interpreted to arrive at different defensible interpretations of key historical events and movements.\",\"Demonstrate the ability to interpret historical events and movements both orally and in persuasive analytical essays.\",\"Evaluate the role of individuals, institutions, and cultures in history and in view of historical events in contemporary contexts for greater global awareness.\"],\"section_heading\":\"History - Associate in Arts for Transfer (ADT) - AA745 (CalGETC)\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":36,\"placed\":36}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":50,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"ge_units_not_read\"],\"invented\":true,\"listed\":36,\"placed\":36}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Riverside City College', '33230', 45781329321, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-1\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST-2H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HIST-2\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST-C1001H\",\"units\":3}],\"catalog_addition\":true,\"code\":\"HIST-C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST-C1002H\",\"units\":3}],\"catalog_addition\":true,\"code\":\"HIST-C1002\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETS-7\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETS-14\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-14\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETS-15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-16\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-17\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-25\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETS-28\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-28\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETS-29\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-29\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETS-2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-31\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-32\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-33\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-34\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-38\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-42\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETS-44\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-44\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Elective Courses - List A\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MIL-1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MIL-2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-18\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-19\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-26\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-35\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Elective Courses - List B\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Describe and analyze the economic, intellectual, political, and social development of world civilizations and American institutions in the context of continuity and change.\",\"Articulate and demonstrate the range of ways that primary sources can be interpreted to arrive at different defensible interpretations of key historical events and movements.\",\"Demonstrate the ability to interpret historical events and movements both orally and in persuasive analytical essays.\",\"Evaluate the role of individuals, institutions, and cultures in history and in view of historical events in contemporary contexts for greater global awareness.\"],\"section_heading\":\"History - Associate in Arts for Transfer (ADT) - AA745 (CalGETC)\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":36,\"placed\":36}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":50,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"ge_units_not_read\"],\"invented\":true,\"listed\":36,\"placed\":36}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\ne(expect) as (values (1)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s739b named-gaps guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Riverside City College', '33230', 45781329321, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-1\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST-2H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HIST-2\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST-C1001H\",\"units\":3}],\"catalog_addition\":true,\"code\":\"HIST-C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST-C1002H\",\"units\":3}],\"catalog_addition\":true,\"code\":\"HIST-C1002\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETS-7\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETS-14\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-14\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETS-15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-16\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-17\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-25\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETS-28\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-28\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETS-29\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-29\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETS-2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-31\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-32\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-33\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-34\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-38\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-42\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETS-44\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-44\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Elective Courses - List A\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MIL-1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MIL-2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-18\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-19\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-26\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-35\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Elective Courses - List B\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Describe and analyze the economic, intellectual, political, and social development of world civilizations and American institutions in the context of continuity and change.\",\"Articulate and demonstrate the range of ways that primary sources can be interpreted to arrive at different defensible interpretations of key historical events and movements.\",\"Demonstrate the ability to interpret historical events and movements both orally and in persuasive analytical essays.\",\"Evaluate the role of individuals, institutions, and cultures in history and in view of historical events in contemporary contexts for greater global awareness.\"],\"section_heading\":\"History - Associate in Arts for Transfer (ADT) - AA745 (CalGETC)\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":36,\"placed\":36}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":50,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"ge_units_not_read\"],\"invented\":true,\"listed\":36,\"placed\":36}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (1)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s739b named-gaps rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;"
+}
