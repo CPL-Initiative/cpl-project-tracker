@@ -214,3 +214,9 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   `skip=("s727a","s739c")`); the worker ran all 47 piles and reconcile tests and shard 6's other steps first. An
   older plan's test that pins posted runs fails when a later plan posts on top of it
   (`p-older-pile-tests-pin-runs-later-plans-move-s739`); `piles2` told to run all 47 before its push.
+- 10:26Z: `piles2` reported (head `1272ca87`, carrying s739i's and s739j's receipts): s739k Palo Verde 5 named gaps,
+  s739m Gavilan 9 (08464 and 45357 held), s739n Ventura 7 (10 held, six for a reread); no passing row, no new kind; the
+  kept-key fix in the shared module. It files `noted_figures_differ` on Gavilan 08460, 38787, 41394 and 19378, whose
+  sums sit inside their printed range, where S703 decided they take no lists gap
+  (`d-lists-gap-holds-range-sums-s703`); its Sonnet reader settles whether that kind is true for each.
+- 10:27Z: #3883 merged (`2e4ccabb`, confirmed on `origin/main`; `main` had not moved since the land branch took it).
