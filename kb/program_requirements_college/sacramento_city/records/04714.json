@@ -46,21 +46,27 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 15,
+   "placed": 16,
    "listed": 19,
-   "share": 0.789,
+   "share": 0.842,
    "missing": [
-    "HIST310",
     "HIST311",
     "HIST483",
     "HIST484"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "HISTC1001",
+     "listed": "HIST310",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 22,
+   "count": 21,
    "codes": [
     "ANTH310",
     "ANTH324",
@@ -72,7 +78,6 @@
     "GLST302",
     "HIST486",
     "HIST487",
-    "HISTC1001",
     "HISTC1001H",
     "HISTC1002",
     "HISTC1002H",
@@ -96,7 +101,6 @@
     "GLST302",
     "HIST486",
     "HIST487",
-    "HISTC1001",
     "HISTC1001H",
     "HISTC1002",
     "HISTC1002H",
@@ -617,5 +621,6 @@
    "Student learning outcomes are printed for the A.A.-T. program and recorded here."
   ]
  },
- "extracted_run": "39047070975"
+ "extracted_run": 45771862247,
+ "read_run": "39047070975"
 }

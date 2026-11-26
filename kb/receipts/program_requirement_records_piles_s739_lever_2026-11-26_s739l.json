@@ -1,0 +1,670 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30); S739 (lane 1, the lever): Cosumnes River 33542 and East Los Angeles 33013, each held by earlier sessions, collected with the gap its own notes name (no reread, no reconcile, no record change)",
+ "at": "2026-11-26T06:42:59Z",
+ "colleges": [
+  "Cosumnes River College",
+  "East Los Angeles College"
+ ],
+ "gaps": {
+  "noted_figures_differ": "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires.",
+  "option_lists_read_apart": "An option the catalog prints takes more than one list under the option's own printed figure, and the record's one option group holds each list as an alternative of its own, so the program's units cannot be checked against the printed figures."
+ },
+ "moved": 2,
+ "by": {
+  "option_lists_read_apart": 1,
+  "noted_figures_differ": 1
+ },
+ "boundaries": {
+  "counts": {
+   "the note's words gone right": 2,
+   "the stated total one unit off right": 2,
+   "coverage failing right": 2,
+   "the reading against a total one unit off right": 2,
+   "the options read as both right": 1,
+   "a heading naming another award on a shared page right": 2,
+   "the shorter path alone right": 1
+  },
+  "wrong": []
+ },
+ "options_shape_statewide": {
+  "fires": 2,
+  "failing_and_closed_by_the_reading": [
+   "Cosumnes River College 33542"
+  ]
+ },
+ "held": [],
+ "records": [
+  {
+   "college": "Cosumnes River College",
+   "control_number": "33542",
+   "award": "A.A- T Degree",
+   "extracted_run": "39047009824",
+   "moves_to": "option_lists_read_apart",
+   "words": "Option II consists of two blocks (SPAN 413 and 415 required, plus a minimum of 8 units from a list); both carry option_group 'Option' together with Option I. The catalog prints 'OPTION II - Native Spanish Speaker Units: 16' for the two together; Option I is 16 units. Each option path prints 'Total Units: 19'.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "path": "kb/program_requirements_college/cosumnes_river/records/33542.json",
+   "before_image": {
+    "program_title": "Spanish",
+    "award": "A.A- T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=593",
+    "measure": "units",
+    "total_min": 19,
+    "total_max": 19,
+    "record": {
+     "program": {
+      "section_heading": "A.A.-T. in Spanish",
+      "measure": "units",
+      "total_units": {
+       "min": 19,
+       "max": 19
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "Cal-GETC",
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": true,
+      "outcomes": [
+       "utilize correct grammatical structures of standard Spanish.",
+       "read Spanish proficiently as found, for example, in Spanish language newspapers, magazines, short stories, essays, and selections of poetry written by Spanish, Spanish-American, and Chicano authors.",
+       "demonstrate appropriate writing and composition skills using Spanish.",
+       "discuss and critique Spanish-American literature in a historical context.",
+       "demonstrate proficiency in these areas: comprehension, speaking, reading, writing, and understanding the peoples and cultures of Spanish-speaking countries."
+      ],
+      "careers": [
+       "Airlines/Travel",
+       "Banking",
+       "Bilingual Education",
+       "Bilingual Telecommunications",
+       "Emergency Services",
+       "Foreign Service",
+       "Foreign Language Teacher",
+       "Import & Export",
+       "Intelligence/Military Service",
+       "International Business",
+       "IRS/State Franchise Tax Board",
+       "Business & Commerce",
+       "Law Enforcement/Correctional Officer",
+       "Social Security Officer",
+       "Social Service",
+       "Translating & Interpreting",
+       "Tourism"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "A minimum of 3 units from the following",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "SPAN 426",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 427",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 373",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "OPTION I - Non-Native Spanish Speaker",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Option",
+       "stated": {
+        "min": 16,
+        "max": 16
+       },
+       "courses": [
+        {
+         "code": "SPAN 401",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 402",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 411",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 412",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "OPTION II - Native Spanish Speaker",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Option",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "SPAN 413",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 415",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "OPTION II - Native Spanish Speaker: A minimum of 8 units from the following",
+       "rule": "choose_units",
+       "minimum": 8,
+       "option_group": "Option",
+       "stated": {
+        "min": 8,
+        "max": 8
+       },
+       "courses": [
+        {
+         "code": "SPAN 426",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 427",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 373",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 425",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HUM 331",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGLT 336",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 371",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 13,
+     "listed": 13
+    },
+    "extracted_run": "39047009824"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 13,
+     "listed": 13,
+     "gaps": [
+      "option_lists_read_apart"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 1
+  },
+  {
+   "college": "East Los Angeles College",
+   "control_number": "33013",
+   "award": "A.A- T Degree",
+   "extracted_run": 43357061643,
+   "moves_to": "noted_figures_differ",
+   "words": "Core prints 'ANTHRO 101 OR ANTHRO 101 AND ANTHRO 111**', i.e. the lab ANTHRO 111 is optional; recorded as two option blocks. The catalog's core subtotal is 9-10 units for ANTHRO 101(+111), 102 and 103 together; not placed on any single block.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "path": "kb/program_requirements_college/east_los_angeles/records/33013.json",
+   "before_image": {
+    "program_title": "Anthropology",
+    "award": "A.A- T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=91",
+    "measure": "units",
+    "total_min": 22,
+    "total_max": 24,
+    "record": {
+     "program": {
+      "section_heading": "(Academic Plan E033013G)",
+      "measure": "units",
+      "total_units": {
+       "min": 22,
+       "max": 24
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "Cal-GETC",
+      "degree_total": {
+       "min": 60,
+       "max": 60
+      },
+      "ge_units": {
+       "min": 34,
+       "max": 34
+      },
+      "electives_fill_degree": true,
+      "outcomes": [
+       "Distinguish a culturally relativistic explanation of human behavior from an ethnocentric one.",
+       "Identify the general path of human evolution and the evidence in support of it.",
+       "Utilize empiricism, scientific principles, and/ or the scientific method in order to analyze data from an anthropological perspective."
+      ],
+      "careers": [],
+      "electives_fill_words": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS"
+     },
+     "blocks": [
+      {
+       "name": "Required Core Courses: ANTHRO 101",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "ANTHRO 101 with or without lab",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ANTHRO 101",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Core Courses: ANTHRO 101 AND ANTHRO 111",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "ANTHRO 101 with or without lab",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ANTHRO 101",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTHRO 111",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Core Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ANTHRO 102",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTHRO 103",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "LIST A (SELECT ONE)",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "ANTHRO 104",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTHRO 121",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOG 001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOG 002",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOG 007",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "STAT C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "STAT C1000E",
+           "units": 4,
+           "catalog_addition": false
+          },
+          {
+           "code": "BUS 015",
+           "units": 3,
+           "catalog_addition": true
+          },
+          {
+           "code": "ECON 020",
+           "units": 3,
+           "catalog_addition": true
+          },
+          {
+           "code": "PSYCH 091",
+           "units": 4,
+           "catalog_addition": false
+          },
+          {
+           "code": "SOC 125",
+           "units": 3,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "LIST B (SELECT TWO)",
+       "rule": "choose_courses",
+       "minimum": 2,
+       "option_group": null,
+       "stated": {
+        "min": 6,
+        "max": 6
+       },
+       "courses": [
+        {
+         "code": "ANTHRO 109",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTHRO 132",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOC 001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOC 011",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "LIST C (SELECT ONE)",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 4
+       },
+       "courses": [
+        {
+         "code": "ANATOMY 001",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "GEOLOGY 001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "GEOLOGY 004",
+           "units": 4,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOLOGY 006",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "EARTH 001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "EARTH 002",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOG 025",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "GIS 025",
+           "units": 4,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": true
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 20,
+     "listed": 20
+    },
+    "extracted_run": "43357061643"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 20,
+     "listed": 20,
+     "gaps": [
+      "noted_figures_differ"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 2
+  }
+ ],
+ "shared_pages": {
+  "Cosumnes River College 33542": [
+   "15300"
+  ]
+ },
+ "representation": "checks.gaps and checks.confidence added as the load reads the filed score; checks.coverage, invented, arithmetic and the record unchanged",
+ "claim_check_reads": "Today's capture (sources.json): every course an entry names among the codes it found. The capture keeps no page text, so a note's quoted figures are the reader's words, never re-read here.",
+ "follow_verdict": "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows (confirm_matches); the apply aborts, writing nothing, unless the count is 0.",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Cosumnes River College', '33542', 39047009824, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 426\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 427\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 373\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"A minimum of 3 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 401\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 402\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 411\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 412\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"OPTION I - Non-Native Spanish Speaker\",\"option_group\":\"Option\",\"rule\":\"all\",\"stated\":{\"max\":16,\"min\":16}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 413\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 415\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"OPTION II - Native Spanish Speaker\",\"option_group\":\"Option\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 426\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 427\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 373\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 425\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HUM 331\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGLT 336\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 371\",\"units\":3,\"units_max\":null}],\"minimum\":8,\"name\":\"OPTION II - Native Spanish Speaker: A minimum of 8 units from the following\",\"option_group\":\"Option\",\"rule\":\"choose_units\",\"stated\":{\"max\":8,\"min\":8}}],\"program\":{\"careers\":[\"Airlines/Travel\",\"Banking\",\"Bilingual Education\",\"Bilingual Telecommunications\",\"Emergency Services\",\"Foreign Service\",\"Foreign Language Teacher\",\"Import & Export\",\"Intelligence/Military Service\",\"International Business\",\"IRS/State Franchise Tax Board\",\"Business & Commerce\",\"Law Enforcement/Correctional Officer\",\"Social Security Officer\",\"Social Service\",\"Translating & Interpreting\",\"Tourism\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":true,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"utilize correct grammatical structures of standard Spanish.\",\"read Spanish proficiently as found, for example, in Spanish language newspapers, magazines, short stories, essays, and selections of poetry written by Spanish, Spanish-American, and Chicano authors.\",\"demonstrate appropriate writing and composition skills using Spanish.\",\"discuss and critique Spanish-American literature in a historical context.\",\"demonstrate proficiency in these areas: comprehension, speaking, reading, writing, and understanding the peoples and cultures of Spanish-speaking countries.\"],\"section_heading\":\"A.A.-T. in Spanish\",\"total_units\":{\"max\":19,\"min\":19}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":13,\"placed\":13}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"option_lists_read_apart\"],\"invented\":true,\"listed\":13,\"placed\":13}'::jsonb),\n  (2, 'East Los Angeles College', '33013', 43357061643, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHRO 101\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses: ANTHRO 101\",\"option_group\":\"ANTHRO 101 with or without lab\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHRO 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHRO 111\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses: ANTHRO 101 AND ANTHRO 111\",\"option_group\":\"ANTHRO 101 with or without lab\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHRO 102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHRO 103\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHRO 104\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHRO 121\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GEOG 007\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"STAT C1000E\",\"units\":4},{\"catalog_addition\":true,\"code\":\"BUS 015\",\"units\":3},{\"catalog_addition\":true,\"code\":\"ECON 020\",\"units\":3},{\"catalog_addition\":false,\"code\":\"PSYCH 091\",\"units\":4},{\"catalog_addition\":true,\"code\":\"SOC 125\",\"units\":3}],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"LIST A (SELECT ONE)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHRO 109\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHRO 132\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 011\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"LIST B (SELECT TWO)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ANATOMY 001\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"GEOLOGY 004\",\"units\":4}],\"catalog_addition\":false,\"code\":\"GEOLOGY 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOLOGY 006\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EARTH 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EARTH 002\",\"units\":1,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"GIS 025\",\"units\":4}],\"catalog_addition\":true,\"code\":\"GEOG 025\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"LIST C (SELECT ONE)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":4,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":true,\"electives_fill_words\":\"ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS\",\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Distinguish a culturally relativistic explanation of human behavior from an ethnocentric one.\",\"Identify the general path of human evolution and the evidence in support of it.\",\"Utilize empiricism, scientific principles, and/ or the scientific method in order to analyze data from an anthropological perspective.\"],\"section_heading\":\"(Academic Plan E033013G)\",\"total_units\":{\"max\":24,\"min\":22}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":20,\"placed\":20}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":20,\"placed\":20}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "pre_read_md5": "with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) as (values\n  (1, 'Cosumnes River College', '33542', 39047009824, 'a6b659240566077c134101c17dde573f', '63bb1716563187017be2c4ba1619b459', '9e3e0eef4a56e5d1bc8efdfb6dfcbaac'),\n  (2, 'East Los Angeles College', '33013', 43357061643, 'e60e92a0961d107d068ac31962a74cbc', '841d9b4ca1b4eaf2c4395d3fefcb8b7e', 'c0ebf250e952cf3c4cacc417d6b9cc9e'))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.record::text) = v.rec_md5),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.checks::text) = v.chk_md5),\n  'already_after', count(*) filter (where md5(r.checks::text) = v.after_md5),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Cosumnes River College', '33542', 39047009824, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 426\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 427\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 373\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"A minimum of 3 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 401\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 402\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 411\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 412\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"OPTION I - Non-Native Spanish Speaker\",\"option_group\":\"Option\",\"rule\":\"all\",\"stated\":{\"max\":16,\"min\":16}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 413\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 415\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"OPTION II - Native Spanish Speaker\",\"option_group\":\"Option\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 426\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 427\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 373\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 425\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HUM 331\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGLT 336\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 371\",\"units\":3,\"units_max\":null}],\"minimum\":8,\"name\":\"OPTION II - Native Spanish Speaker: A minimum of 8 units from the following\",\"option_group\":\"Option\",\"rule\":\"choose_units\",\"stated\":{\"max\":8,\"min\":8}}],\"program\":{\"careers\":[\"Airlines/Travel\",\"Banking\",\"Bilingual Education\",\"Bilingual Telecommunications\",\"Emergency Services\",\"Foreign Service\",\"Foreign Language Teacher\",\"Import & Export\",\"Intelligence/Military Service\",\"International Business\",\"IRS/State Franchise Tax Board\",\"Business & Commerce\",\"Law Enforcement/Correctional Officer\",\"Social Security Officer\",\"Social Service\",\"Translating & Interpreting\",\"Tourism\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":true,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"utilize correct grammatical structures of standard Spanish.\",\"read Spanish proficiently as found, for example, in Spanish language newspapers, magazines, short stories, essays, and selections of poetry written by Spanish, Spanish-American, and Chicano authors.\",\"demonstrate appropriate writing and composition skills using Spanish.\",\"discuss and critique Spanish-American literature in a historical context.\",\"demonstrate proficiency in these areas: comprehension, speaking, reading, writing, and understanding the peoples and cultures of Spanish-speaking countries.\"],\"section_heading\":\"A.A.-T. in Spanish\",\"total_units\":{\"max\":19,\"min\":19}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":13,\"placed\":13}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"option_lists_read_apart\"],\"invented\":true,\"listed\":13,\"placed\":13}'::jsonb),\n  (2, 'East Los Angeles College', '33013', 43357061643, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHRO 101\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses: ANTHRO 101\",\"option_group\":\"ANTHRO 101 with or without lab\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHRO 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHRO 111\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses: ANTHRO 101 AND ANTHRO 111\",\"option_group\":\"ANTHRO 101 with or without lab\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHRO 102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHRO 103\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHRO 104\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHRO 121\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GEOG 007\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"STAT C1000E\",\"units\":4},{\"catalog_addition\":true,\"code\":\"BUS 015\",\"units\":3},{\"catalog_addition\":true,\"code\":\"ECON 020\",\"units\":3},{\"catalog_addition\":false,\"code\":\"PSYCH 091\",\"units\":4},{\"catalog_addition\":true,\"code\":\"SOC 125\",\"units\":3}],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"LIST A (SELECT ONE)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHRO 109\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHRO 132\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 011\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"LIST B (SELECT TWO)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ANATOMY 001\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"GEOLOGY 004\",\"units\":4}],\"catalog_addition\":false,\"code\":\"GEOLOGY 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOLOGY 006\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EARTH 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EARTH 002\",\"units\":1,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"GIS 025\",\"units\":4}],\"catalog_addition\":true,\"code\":\"GEOG 025\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"LIST C (SELECT ONE)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":4,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":true,\"electives_fill_words\":\"ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS\",\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Distinguish a culturally relativistic explanation of human behavior from an ethnocentric one.\",\"Identify the general path of human evolution and the evidence in support of it.\",\"Utilize empiricism, scientific principles, and/ or the scientific method in order to analyze data from an anthropological perspective.\"],\"section_heading\":\"(Academic Plan E033013G)\",\"total_units\":{\"max\":24,\"min\":22}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":20,\"placed\":20}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":20,\"placed\":20}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\nf as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number\n        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true\n       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)),\ne(expect) as (values (2)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when f.n > 0\n            then ('s739l piles confirm guard: ' || f.n || ' rows hold a matching confirm verdict ' || f.keys::text)::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s739l piles guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, f;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Cosumnes River College', '33542', 39047009824, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 426\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 427\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 373\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"A minimum of 3 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 401\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 402\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 411\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 412\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"OPTION I - Non-Native Spanish Speaker\",\"option_group\":\"Option\",\"rule\":\"all\",\"stated\":{\"max\":16,\"min\":16}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 413\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 415\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"OPTION II - Native Spanish Speaker\",\"option_group\":\"Option\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 426\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 427\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 373\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 425\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HUM 331\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGLT 336\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 371\",\"units\":3,\"units_max\":null}],\"minimum\":8,\"name\":\"OPTION II - Native Spanish Speaker: A minimum of 8 units from the following\",\"option_group\":\"Option\",\"rule\":\"choose_units\",\"stated\":{\"max\":8,\"min\":8}}],\"program\":{\"careers\":[\"Airlines/Travel\",\"Banking\",\"Bilingual Education\",\"Bilingual Telecommunications\",\"Emergency Services\",\"Foreign Service\",\"Foreign Language Teacher\",\"Import & Export\",\"Intelligence/Military Service\",\"International Business\",\"IRS/State Franchise Tax Board\",\"Business & Commerce\",\"Law Enforcement/Correctional Officer\",\"Social Security Officer\",\"Social Service\",\"Translating & Interpreting\",\"Tourism\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":true,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"utilize correct grammatical structures of standard Spanish.\",\"read Spanish proficiently as found, for example, in Spanish language newspapers, magazines, short stories, essays, and selections of poetry written by Spanish, Spanish-American, and Chicano authors.\",\"demonstrate appropriate writing and composition skills using Spanish.\",\"discuss and critique Spanish-American literature in a historical context.\",\"demonstrate proficiency in these areas: comprehension, speaking, reading, writing, and understanding the peoples and cultures of Spanish-speaking countries.\"],\"section_heading\":\"A.A.-T. in Spanish\",\"total_units\":{\"max\":19,\"min\":19}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":13,\"placed\":13}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"option_lists_read_apart\"],\"invented\":true,\"listed\":13,\"placed\":13}'::jsonb),\n  (2, 'East Los Angeles College', '33013', 43357061643, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHRO 101\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses: ANTHRO 101\",\"option_group\":\"ANTHRO 101 with or without lab\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHRO 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHRO 111\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses: ANTHRO 101 AND ANTHRO 111\",\"option_group\":\"ANTHRO 101 with or without lab\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHRO 102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHRO 103\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHRO 104\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHRO 121\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GEOG 007\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"STAT C1000E\",\"units\":4},{\"catalog_addition\":true,\"code\":\"BUS 015\",\"units\":3},{\"catalog_addition\":true,\"code\":\"ECON 020\",\"units\":3},{\"catalog_addition\":false,\"code\":\"PSYCH 091\",\"units\":4},{\"catalog_addition\":true,\"code\":\"SOC 125\",\"units\":3}],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"LIST A (SELECT ONE)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHRO 109\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHRO 132\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 011\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"LIST B (SELECT TWO)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ANATOMY 001\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"GEOLOGY 004\",\"units\":4}],\"catalog_addition\":false,\"code\":\"GEOLOGY 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOLOGY 006\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EARTH 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EARTH 002\",\"units\":1,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"GIS 025\",\"units\":4}],\"catalog_addition\":true,\"code\":\"GEOG 025\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"LIST C (SELECT ONE)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":4,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":true,\"electives_fill_words\":\"ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS\",\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Distinguish a culturally relativistic explanation of human behavior from an ethnocentric one.\",\"Identify the general path of human evolution and the evidence in support of it.\",\"Utilize empiricism, scientific principles, and/ or the scientific method in order to analyze data from an anthropological perspective.\"],\"section_heading\":\"(Academic Plan E033013G)\",\"total_units\":{\"max\":24,\"min\":22}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":20,\"placed\":20}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":20,\"placed\":20}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (2)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s739l piles rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;",
+ "local_proof": {
+  "at": "2026-11-26T06:44:55Z",
+  "on": "a throwaway local Postgres 16 database seeded with the 2 before-images and one bystander row",
+  "pre_read_md5": "listed 2, on_run 2, record_is_before 2, checks_is_before 2, already_after 0, checked_now 0, confirm_matches 0",
+  "apply": "returned 2, keys 1-2, the after-images exactly the receipt's, the bystander unchanged",
+  "rerun": "aborts: the guard matched 0 rows, the plan names 2",
+  "rollback": "returned 2; every row's checks back to the before-image (table md5 equal)",
+  "confirm": "a matching confirm verdict on one row: the apply aborts on the confirm guard and writes nothing",
+  "checked": "a row a person checked is skipped and listed (returned 1, skipped_checked [1])"
+ }
+}
