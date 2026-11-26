@@ -79,6 +79,10 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   sandbox's default 3.11 prints false STALE lines in `check_generated.sh`, so every worker runs a 3.12 shim at
   `/home/user/wt/.py312bin`). 13:28Z: the Glendale gate 45829454750 dispatched; green at 13:31Z: 242 Glendale rows at
   `9e28519af71f`, nothing else moved (live: 18,485 at `3a699eddc8c9`, 16 rows with no display yet). 13:33Z: the whole
-  build dispatched on the branch.
+  build dispatched on the branch at 13:32Z.
+- 13:38Z: the whole build 45830104263 green: 18,743 rows at `9e28519af71f` (the 16 with no display now carry one), the
+  same 32 at older builds, none without a display. 13:41Z: #3886 opened; `test` green at 13:51Z (run 45831658269).
+- 13:54Z: #3886 merged (`0017cd97`, confirmed on `origin/main`; `main` had not moved since its base). 13:55Z: the census
+  dispatched on `main`.
 - 13:31Z: `piles`, `reads` and `reconcile` started on Fable 5.2 at high effort, each in its own worktree off `609c2a2b`
   (`/home/user/wt/<name>`), told to open no PR (the conductor opens each land) and to leave `.apply` to the conductor.
