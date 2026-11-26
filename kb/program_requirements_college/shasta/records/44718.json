@@ -64,34 +64,34 @@
    "pass": true,
    "status": "equal",
    "computed": [
-    29.0,
-    29.0
+    69.0,
+    69.0
    ],
    "stated": [
-    29.0,
-    29.0
+    60.0,
+    60.0
    ],
-   "against": "program",
+   "against": "degree",
+   "ge": [
+    21.0,
+    21.0
+   ],
    "why": [],
-   "degree": {
+   "major": {
     "pass": true,
     "status": "equal",
     "computed": [
-     69.0,
-     69.0
+     29.0,
+     29.0
     ],
     "stated": [
-     60.0,
-     60.0
+     29.0,
+     29.0
     ],
-    "against": "degree",
-    "ge": [
-     21.0,
-     21.0
-    ],
-    "why": [],
-    "overlap": true
+    "against": "program",
+    "why": []
    },
+   "overlap": true,
    "rescored": "Sam's ruling of 2026-11-17, local degree overlap"
   },
   "repeated": {
@@ -247,7 +247,7 @@
    "The same courses also appear in the Allied Health University Studies emphasis (AA.1511) and Dental Hygiene prerequisites on this page; only the Health Sciences A.S. (AS.1605) section was read."
   ]
  },
- "extracted_run": 45841957622,
+ "extracted_run": "39006384701",
  "reconciled": [
   {
    "field": "ge_overlap",
@@ -256,6 +256,5 @@
    "words": "the major sums to 29, the major total the catalog prints; the major and general education sum to 69 against the degree's 60 (Sam, 2026-11-17, \"Let major courses count toward general education for local degrees too\" (#3461, ruling 1))",
    "statewide": "local_degree_ge_overlap"
   }
- ],
- "read_run": "39006384701"
+ ]
 }

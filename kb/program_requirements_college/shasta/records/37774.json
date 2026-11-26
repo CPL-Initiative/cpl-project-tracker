@@ -64,7 +64,7 @@
    "pass": false,
    "status": "unequal",
    "computed": [
-    17.0,
+    15.0,
     25.0
    ],
    "stated": [
@@ -73,13 +73,13 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 17.0-25.0; the catalog states 18.0-24.0"
+    "the blocks sum to 15.0-25.0; the catalog states 18.0-24.0"
    ],
    "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     53.0,
+     51.0,
      73.0
     ],
     "stated": [
@@ -319,6 +319,5 @@
    "Closed-list unit values differ from catalog for CULA 55 (state 2, catalog 4 printed for the CULA 55/60 pair)."
   ]
  },
- "extracted_run": 45841957622,
- "read_run": "39006384701"
+ "extracted_run": "39006384701"
 }

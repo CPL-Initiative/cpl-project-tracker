@@ -101,32 +101,21 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [
-    "Demonstrate professionalism by exhibiting skill in collaborating, reflecting, communicating and valuing continuous improvement and lifelong learning."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate professionalism by exhibiting skill in collaborating, reflecting, co"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 6,
-   "not_verbatim": [
-    "Elementary Teacher",
-    "Universal Preschool Teacher",
-    "Transitional Kindergarten Teacher",
-    "Child Development Specialist",
-    "Early Childhood Program Director",
-    "Child Life Specialist in hospitals"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -247,6 +236,5 @@
    "The text that follows (A.S. AS.1190, certificates CT.3451, CT.3460, CL.3154) belongs to other awards and was not read for this record."
   ]
  },
- "extracted_run": 45841957622,
- "read_run": "39006384701"
+ "extracted_run": "39006384701"
 }

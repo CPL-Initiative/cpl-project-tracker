@@ -75,21 +75,22 @@
    "status": "equal",
    "computed": [
     33.0,
-    49.0
+    45.0
    ],
    "stated": [
     33.0,
     43.0
    ],
    "against": "program",
-   "why": [],
-   "meets": true,
+   "why": [
+    "the blocks sum to 33.0-45.0; the catalog states 33.0-43.0"
+   ],
    "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
      75.0,
-     104.0
+     100.0
     ],
     "stated": [
      60.0,
@@ -103,6 +104,7 @@
     "why": [],
     "overlap": true
    },
+   "meets": true,
    "rescored": "Open Asks Sheet 120 card 1"
   },
   "repeated": {
@@ -113,17 +115,11 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [
-    "Demonstrate transfer readiness for a liberal studies major at a university, especially a CSU.",
-    "Assemble an observation portfolio which includes descriptions of teaching events that implement the California Teacher Performance Expectations and documentation of 45 hours of classroom observation."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate transfer readiness for a liberal studies major at a university, espe",
-    "not in the catalog text as printed: Assemble an observation portfolio which includes descriptions of teaching events"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -133,7 +129,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -369,6 +365,5 @@
    "The Liberal Studies – Teaching Prep (AA.1504) section that follows also uses many of these courses but belongs to a different award and was not read."
   ]
  },
- "extracted_run": 45841957622,
- "read_run": "39006384701"
+ "extracted_run": "39006384701"
 }

@@ -1,0 +1,2771 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30); Sam's routine prompt of 2026-11-25, as the S739 conductor's brief carries it: a record held for a gap is collected with its gap named and a lower score on the 0-100 bar, never held, unless the record is not the program's own; S739: El Camino's records kb/receipts/program_requirement_records_piles_s720_elcamino_2026-11-24_s720m.json held, read again by key: passed by a rescore where today's scorer's one reading moves them, else collected with their gaps named where the record is the program's own (no reread, no reconcile)",
+ "at": "2026-11-26T14:49:49Z",
+ "college": "El Camino College",
+ "keys": {
+  "from": "kb/receipts/program_requirement_records_piles_s720_elcamino_2026-11-24_s720m.json",
+  "members": [
+   "02518",
+   "02520",
+   "15251",
+   "19857",
+   "19883",
+   "31319",
+   "42541",
+   "45290"
+  ]
+ },
+ "gaps": {
+  "noted_figures_differ": "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires.",
+  "noted_section_cut_off": "The reader's note says the program's section runs onto a page the read did not hold, so part of its requirements is missing from the record.",
+  "required_list_outside_total": "The catalog prints a list the program requires apart from its printed total, and the record counts that list; without it the courses add to the printed total."
+ },
+ "moved": 4,
+ "by": {
+  "noted_figures_differ": 2,
+  "required_list_outside_total": 1,
+  "noted_section_cut_off": 1
+ },
+ "precision": {
+  "read": 8,
+  "right": 8,
+  "wrong": [],
+  "no_record_file": 0,
+  "not_hand_held": 0,
+  "by_answer": {
+   "noted_figures_differ": 2,
+   "required_list_outside_total": 1,
+   "none": 4,
+   "noted_section_cut_off": 1
+  }
+ },
+ "claim_checks": {
+  "counts": {
+   "stands": 4
+  },
+  "not_standing": []
+ },
+ "boundaries": {
+  "counts": {
+   "the note's words gone right": 4,
+   "the stated total one unit off right": 4,
+   "coverage failing right": 4,
+   "the note_quotes shape broken right": 1,
+   "the reading against a total one unit off right": 2,
+   "the no_total shape broken right": 1
+  },
+  "wrong": []
+ },
+ "held": [
+  {
+   "control_number": "19857",
+   "why": "held: on no proved live run: no committed receipt posts its committed run to its live row (on_live_run); its 33 against the printed 36 then needs a reread",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "19883",
+   "why": "held: not the program's own: the certificate was read from the Photography A.S. page (02512's), which prints no certificate section, so its identity is unconfirmed: a page-finding step",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "31319",
+   "why": "held: 19 against the printed 20, and no note names a figure that closes it (MUSI 182 printed 3 where the state's file stores 2 moves it the other way); no kind's sentence is true of it: a reread",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "42541",
+   "why": "held: 27-30 against the printed 28-30, the sum's low end below the range's; no note names the difference and no kind's sentence is true of it: a reread",
+   "claim": "no entry stands"
+  }
+ ],
+ "records": [
+  {
+   "college": "El Camino College",
+   "control_number": "02518",
+   "award": "A.S. Degree",
+   "extracted_run": 45768189197,
+   "moves_to": "noted_figures_differ",
+   "words": "Sum of printed course units (49) plus 3-unit Humanities is 52, not the stated 51; the LVN to RN track shows the same one-unit gap (39.5 vs 38.5). Reviewer should check. | Requirement 'Humanities: Any 3 unit course from Area 3 of the Associate of Arts and Associate of Science Degree' is a GE-area choice with no listed courses; not recorded as a block.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/el_camino/records/02518.json",
+   "before_image": {
+    "program_title": "Nursing",
+    "award": "A.S. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3511&print",
+    "measure": "units",
+    "total_min": 51,
+    "total_max": 51,
+    "record": {
+     "program": {
+      "section_heading": "Major Requirements Generic Program",
+      "measure": "units",
+      "total_units": {
+       "min": 51,
+       "max": 51
+      },
+      "open_elective_units": null,
+      "ge_pattern": "El Camino College A.S. degree general education requirements",
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Core",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "NURS 220",
+         "units": 3.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NURS 222",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NURS 224",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NURS 226",
+         "units": 0.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NURS 230",
+         "units": 3.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NURS 232",
+         "units": 2.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NURS 234",
+         "units": 2.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NURS 238",
+         "units": 0.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NURS 240",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NURS 242",
+         "units": 4.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NURS 244",
+         "units": 0.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NURS 247",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NURS 248",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COMM C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "COMM C1000H",
+           "units": 3,
+           "catalog_addition": false
+          },
+          {
+           "code": "COMS 120",
+           "units": null,
+           "catalog_addition": true
+          },
+          {
+           "code": "COMS 130",
+           "units": null,
+           "catalog_addition": true
+          },
+          {
+           "code": "COMS 140",
+           "units": null,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL C1001",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL C1001H",
+           "units": 4,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "PSYC C1000H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOCI 101",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "SOCI 101H",
+           "units": 3,
+           "catalog_addition": false
+          },
+          {
+           "code": "ANTH 2",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 22,
+     "listed": 22
+    },
+    "extracted_run": "45768189197"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 22,
+     "listed": 22,
+     "gaps": [
+      "noted_figures_differ"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 1
+  },
+  {
+   "college": "El Camino College",
+   "control_number": "02520",
+   "award": "A.S. Degree",
+   "extracted_run": 45768189197,
+   "moves_to": "required_list_outside_total",
+   "words": "The page also prints 'Program Total Units: 64.5'. This includes the Post ECC Graduation Courses RTEC 216 and RTEC 328 (6.5 units). The note says these are completed after ECC graduation but are required to complete the Rad Tech Program. A reviewer should check whether they count toward the A.S. degree itself. | Electives: 'As needed to reach a minimum of 60 degree-applicable units'; degree_total is the printed 'Minimum Degree Total: 60 units'.",
+   "confidence": {
+    "unit_arithmetic": 70,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/el_camino/records/02520.json",
+   "before_image": {
+    "program_title": "Radiologic Technology",
+    "award": "A.S. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3651&print",
+    "measure": "units",
+    "total_min": 58,
+    "total_max": 58,
+    "record": {
+     "program": {
+      "section_heading": "Required Courses:",
+      "measure": "units",
+      "total_units": {
+       "min": 58,
+       "max": 58
+      },
+      "open_elective_units": null,
+      "ge_pattern": "ECC GE",
+      "degree_total": {
+       "min": 60,
+       "max": 60
+      },
+      "ge_units": {
+       "min": 24,
+       "max": 24
+      },
+      "electives_fill_degree": true,
+      "outcomes": [],
+      "careers": [
+       "registered Radiologic Technologist (R.T.)"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 58,
+        "max": 58
+       },
+       "courses": [
+        {
+         "code": "RTEC 91",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "RTEC 93",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "RTEC 104",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "RTEC 106",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "RTEC 107",
+         "units": 7,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "RTEC 109",
+         "units": 2.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "RTEC 111",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "RTEC 123",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "RTEC 124",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "RTEC 217",
+         "units": 7,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "RTEC 218",
+         "units": 7,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "RTEC 220",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "RTEC 233",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "RTEC 244",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "RTEC 255",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Post ECC Graduation Courses (required)",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "RTEC 216",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "RTEC 328",
+         "units": 4.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 15,
+     "listed": 15
+    },
+    "extracted_run": "45768189197"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 15,
+     "listed": 15,
+     "gaps": [
+      "required_list_outside_total"
+     ],
+     "confidence": {
+      "unit_arithmetic": 70,
+      "course_list_match": 100,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 2
+  },
+  {
+   "college": "El Camino College",
+   "control_number": "15251",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "extracted_run": 45768189197,
+   "moves_to": "noted_figures_differ",
+   "words": "The '2-3 units from' list states a 2-unit minimum though every listed course is 3 units; minimum recorded as printed.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/el_camino/records/15251.json",
+   "before_image": {
+    "program_title": "Visual Communications",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3527&print",
+    "measure": "units",
+    "total_min": 33,
+    "total_max": 35,
+    "record": {
+     "program": {
+      "section_heading": "Visual Communications Certificate of Achievement",
+      "measure": "units",
+      "total_units": {
+       "min": 33,
+       "max": 35
+      },
+      "open_elective_units": null,
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Core",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 18,
+        "max": 18
+       },
+       "courses": [
+        {
+         "code": "ART 130",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ART 131",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ART 132",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ART 133",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ART 141",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ART 146",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "3 units from",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "ART 143",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ART 231",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ART 232",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ART 233",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DART 150",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "3-4 units from",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 4
+       },
+       "courses": [
+        {
+         "code": "BUS 110",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BUS 112",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BUS 124",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CIS 133",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CIS 136",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COMM C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "COMM C1000H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "2-3 units from",
+       "rule": "choose_units",
+       "minimum": 2,
+       "option_group": null,
+       "stated": {
+        "min": 2,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "ART 129",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ART 147",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ART 153",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DART 142",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "JOUR 6",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "PHOT 106",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "6-7 units from capstone courses",
+       "rule": "choose_units",
+       "minimum": 6,
+       "option_group": null,
+       "stated": {
+        "min": 6,
+        "max": 7
+       },
+       "courses": [
+        {
+         "code": "ART 96",
+         "units": 2,
+         "units_max": 4,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ART 99",
+         "units": 1,
+         "units_max": 3,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ART 195",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Recommended Preparation",
+       "rule": "recommended",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ART 110",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 26,
+     "listed": 26
+    },
+    "extracted_run": "45768189197"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 26,
+     "listed": 26,
+     "gaps": [
+      "noted_figures_differ"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 3
+  },
+  {
+   "college": "El Camino College",
+   "control_number": "45290",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "extracted_run": 45768189197,
+   "moves_to": "noted_section_cut_off",
+   "words": "The catalog text is cut off mid-Area 5 (at 'GEOL 36 - Geolo'); Area 5B (Biological Science), the Area 5C laboratory requirement and Area 6 (Ethnic Studies), if printed, are not in the text and are not recorded as blocks. | No total units for the certificate are printed in the visible text; total_units left null.",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 50,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/el_camino/records/45290.json",
+   "before_image": {
+    "program_title": "Cal-GETC",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3749&print",
+    "measure": "units",
+    "total_min": null,
+    "total_max": null,
+    "record": {
+     "program": {
+      "section_heading": "Cal-GETC",
+      "measure": "units",
+      "total_units": {
+       "min": null,
+       "max": null
+      },
+      "open_elective_units": null,
+      "ge_pattern": "Cal-GETC",
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "1A - ENGLISH COMPOSITION",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "ENGL C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL C1000H",
+           "units": 4,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 1AE",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "1B - CRITICAL THINKING AND COMPOSITION",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "ENGL C1001",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL C1001H",
+           "units": 4,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHIL 105",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "PHIL 105H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC 103",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "PSYC 103H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "1C - ORAL COMMUNICATION",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "COMM C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "COMM C1000H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "AREA 2 - MATHEMATICAL CONCEPTS AND QUANTITATIVE REASONING",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "MATH 115",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 120",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 130",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 140",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 165",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 180",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 190",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 191",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 210",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 220",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 270",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BUS 116",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COMS 180",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC 109A",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOCI 109A",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "STAT C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "STAT C1000H",
+           "units": 4,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "3A - ARTS",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "ARCH 104",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARCH 107",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARCH 108",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AHIS 101",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AHIS 102C",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AHIS 205A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AHIS 205B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AHIS 207",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AHIS 208",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "AHIS 208H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "AHIS 209",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AHIS 210",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC 101",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC 103",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FILM 105",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FILM 110",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FILM 154",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSI 111",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSI 112",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "MUSI 112H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSI 113",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSI 115",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSI 116",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSI 117",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSI 215A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSI 215B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHOT 150",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "THEA 103",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "THEA 104",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "3B - HUMANITIES",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "ANTH 4",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ANTH 4H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTH 11",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHIN 2",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHIN 3",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHIN 24",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL C1002",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL C1002H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 12",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 15A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 15B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 18",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 20",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 21",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 27",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 28",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 30",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 31",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 34",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 35",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 36",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 39",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 40A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 40B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 41B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 42",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 43",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 44",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 46",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 48",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 90",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FILM 100",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FILM 153",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FREN 2",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FREN 3",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FREN 4",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 105",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 106",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 108",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 110",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 111",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 112",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 114",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 122",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "HIST 122H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 128",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 129",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 140",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 141",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 152",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 154",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GERM 2",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GERM 3",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HUMA 1",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ITAL 2",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ITAL 24",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "JAPA 2",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "JAPA 3",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "JAPA 4",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "JAPA 25",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHIL 101",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "PHIL 101H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHIL 103",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHIL 107",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHIL 111",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHIL 112",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHIL 113",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHIL 115",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHIL 117",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLI 7",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 2",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 3",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 4",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 5",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 6",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 24",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 52A",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 52B",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "AREA 4 - SOCIAL AND BEHAVIORAL SCIENCES",
+       "rule": "choose_courses",
+       "minimum": 2,
+       "option_group": null,
+       "stated": {
+        "min": 6,
+        "max": 6
+       },
+       "courses": [
+        {
+         "code": "AJ 100",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AJ 103",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AJ 115",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTH 2",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ANTH 2H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTH 3",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTH 4",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ANTH 4H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTH 6",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTH 7",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTH 8",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTH 9",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTH 11",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV 103",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COMS 260",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COMS 265",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "COMS 265H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "COMS 275",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECON 100",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESTU 1",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESTU 3",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESTU 5",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOG 2",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOG 5",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "GEOG 5H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOG 7",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 105",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 106",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 108",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 110",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 111",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 112",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 114",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 122",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "HIST 122H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 128",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 129",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 140",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 141",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 152",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 154",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "JOUR 12",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LGBT 101",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PE 212",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PE 275",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLS C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "POLS C1000H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLI 2",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLI 3",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLI 5",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLI 6",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLI 7",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLI 10",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "POLI 10H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "PSYC C1000H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": true
+        },
+        {
+         "code": "PSYC 102",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC 108",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC 110",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC 112",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC 115",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC 116",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "PSYC 116H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC 117",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC 119",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC 125",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SSCI 101",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SSCI 103",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "SSCI 103H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOCI 101",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "SOCI 101H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOCI 102",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOCI 104",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOCI 107",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "SOCI 107H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOCI 108",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOCI 112",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOCI 113",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOCI 115",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOCI 118",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "WSTU 1",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "5A - PHYSICAL SCIENCE",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "ASTR 12",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ASTR 15",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ASTR 20",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ASTR 20H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ASTR 25",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ASTR 25H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 1A",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 1B",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 4",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "CHEM 4H",
+           "units": 5,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 7A",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 7B",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 20",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 21A",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 21B",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOG 1",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOG 6",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOG 9",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOL 1",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOL 2",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOL 3",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOL 4",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOL 7",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOL 15",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOL 30",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOL 32",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOL 34",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOL 36",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 224,
+     "listed": 289
+    },
+    "extracted_run": "45768189197"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 224,
+     "listed": 289,
+     "gaps": [
+      "noted_section_cut_off"
+     ],
+     "confidence": {
+      "unit_arithmetic": 20,
+      "course_list_match": 50,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 4
+  }
+ ],
+ "live_run_proof": null,
+ "shared_pages": {},
+ "representation": "checks.gaps and checks.confidence added as the load reads the filed score (a passing row: checks.arithmetic to equal); checks.coverage, invented and the record unchanged",
+ "claim_check_reads": "Today's capture (sources.json): every course an entry names among the codes it found, and a course an entry says the printed total leaves out on neither it nor the state's list. A note's quoted figures are the reader's words, never re-read here.",
+ "follow_verdict": "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows (confirm_matches); the apply aborts, writing nothing, unless the count is 0.",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'El Camino College', '02518', 45768189197, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 220\",\"units\":3.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 222\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 224\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 226\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 230\",\"units\":3.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 232\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 234\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 238\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 240\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 242\",\"units\":4.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 244\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 247\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 248\",\"units\":2,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"COMM C1000H\",\"units\":3},{\"catalog_addition\":true,\"code\":\"COMS 120\",\"units\":null},{\"catalog_addition\":true,\"code\":\"COMS 130\",\"units\":null},{\"catalog_addition\":true,\"code\":\"COMS 140\",\"units\":null}],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1001H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ENGL C1001\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSYC C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SOCI 101H\",\"units\":3},{\"catalog_addition\":false,\"code\":\"ANTH 2\",\"units\":3}],\"catalog_addition\":false,\"code\":\"SOCI 101\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"El Camino College A.S. degree general education requirements\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Major Requirements Generic Program\",\"total_units\":{\"max\":51,\"min\":51}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":22,\"placed\":22}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":22,\"placed\":22}'::jsonb),\n  (2, 'El Camino College', '02520', 45768189197, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 91\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 93\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 104\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 106\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"RTEC 107\",\"units\":7,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 109\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 111\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 123\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 124\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 217\",\"units\":7,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 218\",\"units\":7,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 220\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 233\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 244\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 255\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":58,\"min\":58}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 216\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"RTEC 328\",\"units\":4.5,\"units_max\":null}],\"minimum\":null,\"name\":\"Post ECC Graduation Courses (required)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"registered Radiologic Technologist (R.T.)\"],\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":true,\"ge_pattern\":\"ECC GE\",\"ge_units\":{\"max\":24,\"min\":24},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Required Courses:\",\"total_units\":{\"max\":58,\"min\":58}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":70},\"coverage\":true,\"gaps\":[\"required_list_outside_total\"],\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb),\n  (3, 'El Camino College', '15251', 45768189197, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 131\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 132\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 133\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 141\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 146\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":18,\"min\":18}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 143\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 231\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 232\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 233\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DART 150\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"3 units from\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 112\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 124\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CIS 133\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CIS 136\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"COMM C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"3-4 units from\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":4,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 129\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 147\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 153\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"DART 142\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PHOT 106\",\"units\":3}],\"catalog_addition\":false,\"code\":\"JOUR 6\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"2-3 units from\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":2}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 96\",\"units\":2,\"units_max\":4},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 99\",\"units\":1,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 195\",\"units\":3,\"units_max\":null}],\"minimum\":6,\"name\":\"6-7 units from capstone courses\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":7,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ART 110\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Recommended Preparation\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Visual Communications Certificate of Achievement\",\"total_units\":{\"max\":35,\"min\":33}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":26,\"placed\":26}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":26,\"placed\":26}'::jsonb),\n  (4, 'El Camino College', '45290', 45768189197, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1000H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ENGL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 1AE\",\"units\":5,\"units_max\":null}],\"minimum\":1,\"name\":\"1A - ENGLISH COMPOSITION\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1001H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ENGL C1001\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PHIL 105H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PHIL 105\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSYC 103H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PSYC 103\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"1B - CRITICAL THINKING AND COMPOSITION\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"COMM C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"1C - ORAL COMMUNICATION\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 115\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 120\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 140\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 165\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 180\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 190\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 191\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 210\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 220\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 270\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 116\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMS 180\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 109A\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 109A\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"STAT C1000H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"AREA 2 - MATHEMATICAL CONCEPTS AND QUANTITATIVE REASONING\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH 104\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH 107\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH 108\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AHIS 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AHIS 102C\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AHIS 205A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AHIS 205B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AHIS 207\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"AHIS 208H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"AHIS 208\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AHIS 209\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AHIS 210\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 103\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FILM 105\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FILM 110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FILM 154\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSI 111\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MUSI 112H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"MUSI 112\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSI 113\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSI 115\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSI 116\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSI 117\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSI 215A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSI 215B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHOT 150\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 103\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 104\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"3A - ARTS\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ANTH 4H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ANTH 4\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHIN 2\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHIN 3\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHIN 24\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1002H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL C1002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 15A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 15B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 18\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 21\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 27\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 28\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 31\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 34\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 35\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 36\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 39\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 40A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 40B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 41B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 42\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 43\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 44\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 46\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 48\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 90\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FILM 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FILM 153\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FREN 2\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FREN 3\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FREN 4\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 105\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 106\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 108\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 111\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 112\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 114\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST 122H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HIST 122\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 128\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 129\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 140\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 141\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 152\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 154\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GERM 2\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GERM 3\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HUMA 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ITAL 2\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ITAL 24\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPA 2\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPA 3\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPA 4\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPA 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PHIL 101H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PHIL 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 103\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 107\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 111\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 112\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 113\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 115\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 117\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLI 7\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 2\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 3\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 4\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 6\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 24\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 52A\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 52B\",\"units\":5,\"units_max\":null}],\"minimum\":1,\"name\":\"3B - HUMANITIES\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AJ 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AJ 103\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AJ 115\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ANTH 2H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ANTH 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 3\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ANTH 4H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ANTH 4\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 6\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 7\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 8\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 9\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 103\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMS 260\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"COMS 265H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"COMS 265\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMS 275\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESTU 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESTU 3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESTU 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"GEOG 5H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"GEOG 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 7\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 105\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 106\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 108\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 111\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 112\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 114\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST 122H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HIST 122\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 128\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 129\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 140\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 141\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 152\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 154\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JOUR 12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 212\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 275\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLS C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"POLS C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLI 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLI 3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLI 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLI 6\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLI 7\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLI 10H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"POLI 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSYC C1000H\",\"units\":3}],\"catalog_addition\":true,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 108\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 112\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 115\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSYC 116H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PSYC 116\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 117\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 119\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 125\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SSCI 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SSCI 103H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"SSCI 103\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SOCI 101H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"SOCI 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 104\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SOCI 107H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"SOCI 107\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 108\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 112\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 113\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 115\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 118\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"WSTU 1\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"AREA 4 - SOCIAL AND BEHAVIORAL SCIENCES\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASTR 12\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASTR 15\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ASTR 20H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ASTR 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ASTR 25H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ASTR 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 1A\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 1B\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"CHEM 4H\",\"units\":5}],\"catalog_addition\":false,\"code\":\"CHEM 4\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 7A\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 7B\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 20\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 21A\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 21B\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 6\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 9\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 3\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 4\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 7\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 30\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 32\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 34\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 36\",\"units\":null,\"units_max\":null}],\"minimum\":1,\"name\":\"5A - PHYSICAL SCIENCE\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[],\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Cal-GETC\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":289,\"placed\":224}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":50,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":20},\"coverage\":true,\"gaps\":[\"noted_section_cut_off\"],\"invented\":true,\"listed\":289,\"placed\":224}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "pre_read_md5": "with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) as (values\n  (1, 'El Camino College', '02518', 45768189197, 'c32e5c1145d4599a175898d4797151b8', '35be8585361df8918ed6f88105424d99', '772d338ff15c33eb61d8c741f2693be2'),\n  (2, 'El Camino College', '02520', 45768189197, 'edfcae331ab44307f85519c38e7a65bc', '3c81834a38a33a73170c8fc53655fda9', '72319ccae9f9086f8d8b7fa785c117ae'),\n  (3, 'El Camino College', '15251', 45768189197, '3f21462ec4955039c9c5263e16559619', 'be095b039bb1c195485474eb04b82f58', '2b3ecdc86323008ad2598e5e07286d70'),\n  (4, 'El Camino College', '45290', 45768189197, 'ffe9e6ddb76af0f860d72815420c46f4', '3bf93036a8e04f96059bdb618ab990d9', '15a76de2ae6d07680daf59111c11a267'))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.record::text) = v.rec_md5),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.checks::text) = v.chk_md5),\n  'already_after', count(*) filter (where md5(r.checks::text) = v.after_md5),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'El Camino College', '02518', 45768189197, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 220\",\"units\":3.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 222\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 224\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 226\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 230\",\"units\":3.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 232\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 234\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 238\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 240\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 242\",\"units\":4.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 244\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 247\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 248\",\"units\":2,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"COMM C1000H\",\"units\":3},{\"catalog_addition\":true,\"code\":\"COMS 120\",\"units\":null},{\"catalog_addition\":true,\"code\":\"COMS 130\",\"units\":null},{\"catalog_addition\":true,\"code\":\"COMS 140\",\"units\":null}],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1001H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ENGL C1001\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSYC C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SOCI 101H\",\"units\":3},{\"catalog_addition\":false,\"code\":\"ANTH 2\",\"units\":3}],\"catalog_addition\":false,\"code\":\"SOCI 101\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"El Camino College A.S. degree general education requirements\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Major Requirements Generic Program\",\"total_units\":{\"max\":51,\"min\":51}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":22,\"placed\":22}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":22,\"placed\":22}'::jsonb),\n  (2, 'El Camino College', '02520', 45768189197, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 91\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 93\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 104\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 106\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"RTEC 107\",\"units\":7,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 109\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 111\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 123\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 124\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 217\",\"units\":7,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 218\",\"units\":7,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 220\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 233\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 244\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 255\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":58,\"min\":58}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 216\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"RTEC 328\",\"units\":4.5,\"units_max\":null}],\"minimum\":null,\"name\":\"Post ECC Graduation Courses (required)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"registered Radiologic Technologist (R.T.)\"],\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":true,\"ge_pattern\":\"ECC GE\",\"ge_units\":{\"max\":24,\"min\":24},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Required Courses:\",\"total_units\":{\"max\":58,\"min\":58}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":70},\"coverage\":true,\"gaps\":[\"required_list_outside_total\"],\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb),\n  (3, 'El Camino College', '15251', 45768189197, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 131\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 132\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 133\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 141\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 146\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":18,\"min\":18}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 143\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 231\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 232\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 233\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DART 150\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"3 units from\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 112\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 124\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CIS 133\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CIS 136\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"COMM C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"3-4 units from\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":4,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 129\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 147\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 153\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"DART 142\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PHOT 106\",\"units\":3}],\"catalog_addition\":false,\"code\":\"JOUR 6\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"2-3 units from\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":2}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 96\",\"units\":2,\"units_max\":4},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 99\",\"units\":1,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 195\",\"units\":3,\"units_max\":null}],\"minimum\":6,\"name\":\"6-7 units from capstone courses\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":7,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ART 110\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Recommended Preparation\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Visual Communications Certificate of Achievement\",\"total_units\":{\"max\":35,\"min\":33}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":26,\"placed\":26}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":26,\"placed\":26}'::jsonb),\n  (4, 'El Camino College', '45290', 45768189197, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1000H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ENGL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 1AE\",\"units\":5,\"units_max\":null}],\"minimum\":1,\"name\":\"1A - ENGLISH COMPOSITION\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1001H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ENGL C1001\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PHIL 105H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PHIL 105\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSYC 103H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PSYC 103\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"1B - CRITICAL THINKING AND COMPOSITION\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"COMM C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"1C - ORAL COMMUNICATION\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 115\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 120\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 140\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 165\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 180\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 190\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 191\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 210\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 220\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 270\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 116\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMS 180\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 109A\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 109A\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"STAT C1000H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"AREA 2 - MATHEMATICAL CONCEPTS AND QUANTITATIVE REASONING\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH 104\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH 107\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH 108\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AHIS 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AHIS 102C\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AHIS 205A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AHIS 205B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AHIS 207\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"AHIS 208H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"AHIS 208\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AHIS 209\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AHIS 210\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 103\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FILM 105\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FILM 110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FILM 154\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSI 111\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MUSI 112H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"MUSI 112\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSI 113\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSI 115\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSI 116\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSI 117\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSI 215A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSI 215B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHOT 150\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 103\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 104\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"3A - ARTS\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ANTH 4H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ANTH 4\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHIN 2\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHIN 3\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHIN 24\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1002H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL C1002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 15A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 15B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 18\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 21\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 27\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 28\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 31\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 34\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 35\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 36\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 39\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 40A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 40B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 41B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 42\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 43\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 44\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 46\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 48\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 90\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FILM 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FILM 153\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FREN 2\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FREN 3\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FREN 4\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 105\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 106\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 108\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 111\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 112\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 114\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST 122H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HIST 122\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 128\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 129\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 140\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 141\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 152\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 154\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GERM 2\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GERM 3\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HUMA 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ITAL 2\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ITAL 24\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPA 2\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPA 3\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPA 4\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPA 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PHIL 101H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PHIL 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 103\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 107\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 111\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 112\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 113\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 115\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 117\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLI 7\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 2\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 3\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 4\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 6\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 24\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 52A\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 52B\",\"units\":5,\"units_max\":null}],\"minimum\":1,\"name\":\"3B - HUMANITIES\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AJ 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AJ 103\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AJ 115\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ANTH 2H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ANTH 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 3\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ANTH 4H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ANTH 4\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 6\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 7\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 8\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 9\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 103\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMS 260\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"COMS 265H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"COMS 265\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMS 275\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESTU 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESTU 3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESTU 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"GEOG 5H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"GEOG 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 7\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 105\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 106\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 108\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 111\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 112\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 114\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST 122H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HIST 122\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 128\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 129\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 140\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 141\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 152\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 154\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JOUR 12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 212\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 275\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLS C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"POLS C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLI 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLI 3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLI 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLI 6\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLI 7\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLI 10H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"POLI 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSYC C1000H\",\"units\":3}],\"catalog_addition\":true,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 108\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 112\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 115\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSYC 116H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PSYC 116\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 117\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 119\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 125\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SSCI 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SSCI 103H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"SSCI 103\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SOCI 101H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"SOCI 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 104\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SOCI 107H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"SOCI 107\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 108\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 112\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 113\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 115\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 118\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"WSTU 1\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"AREA 4 - SOCIAL AND BEHAVIORAL SCIENCES\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASTR 12\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASTR 15\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ASTR 20H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ASTR 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ASTR 25H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ASTR 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 1A\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 1B\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"CHEM 4H\",\"units\":5}],\"catalog_addition\":false,\"code\":\"CHEM 4\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 7A\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 7B\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 20\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 21A\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 21B\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 6\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 9\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 3\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 4\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 7\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 30\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 32\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 34\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 36\",\"units\":null,\"units_max\":null}],\"minimum\":1,\"name\":\"5A - PHYSICAL SCIENCE\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[],\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Cal-GETC\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":289,\"placed\":224}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":50,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":20},\"coverage\":true,\"gaps\":[\"noted_section_cut_off\"],\"invented\":true,\"listed\":289,\"placed\":224}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\nf as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number\n        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true\n       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)),\ne(expect) as (values (4)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when f.n > 0\n            then ('s740e piles confirm guard: ' || f.n || ' rows hold a matching confirm verdict ' || f.keys::text)::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s740e piles guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, f;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'El Camino College', '02518', 45768189197, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 220\",\"units\":3.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 222\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 224\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 226\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 230\",\"units\":3.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 232\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 234\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 238\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 240\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 242\",\"units\":4.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 244\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 247\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 248\",\"units\":2,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"COMM C1000H\",\"units\":3},{\"catalog_addition\":true,\"code\":\"COMS 120\",\"units\":null},{\"catalog_addition\":true,\"code\":\"COMS 130\",\"units\":null},{\"catalog_addition\":true,\"code\":\"COMS 140\",\"units\":null}],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1001H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ENGL C1001\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSYC C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SOCI 101H\",\"units\":3},{\"catalog_addition\":false,\"code\":\"ANTH 2\",\"units\":3}],\"catalog_addition\":false,\"code\":\"SOCI 101\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"El Camino College A.S. degree general education requirements\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Major Requirements Generic Program\",\"total_units\":{\"max\":51,\"min\":51}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":22,\"placed\":22}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":22,\"placed\":22}'::jsonb),\n  (2, 'El Camino College', '02520', 45768189197, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 91\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 93\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 104\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 106\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"RTEC 107\",\"units\":7,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 109\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 111\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 123\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 124\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 217\",\"units\":7,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 218\",\"units\":7,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 220\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 233\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 244\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 255\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":58,\"min\":58}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RTEC 216\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"RTEC 328\",\"units\":4.5,\"units_max\":null}],\"minimum\":null,\"name\":\"Post ECC Graduation Courses (required)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"registered Radiologic Technologist (R.T.)\"],\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":true,\"ge_pattern\":\"ECC GE\",\"ge_units\":{\"max\":24,\"min\":24},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Required Courses:\",\"total_units\":{\"max\":58,\"min\":58}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":70},\"coverage\":true,\"gaps\":[\"required_list_outside_total\"],\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb),\n  (3, 'El Camino College', '15251', 45768189197, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 131\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 132\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 133\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 141\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 146\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":18,\"min\":18}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 143\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 231\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 232\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 233\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DART 150\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"3 units from\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 112\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 124\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CIS 133\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CIS 136\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"COMM C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"3-4 units from\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":4,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 129\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 147\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 153\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"DART 142\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PHOT 106\",\"units\":3}],\"catalog_addition\":false,\"code\":\"JOUR 6\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"2-3 units from\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":2}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 96\",\"units\":2,\"units_max\":4},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 99\",\"units\":1,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 195\",\"units\":3,\"units_max\":null}],\"minimum\":6,\"name\":\"6-7 units from capstone courses\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":7,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ART 110\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Recommended Preparation\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Visual Communications Certificate of Achievement\",\"total_units\":{\"max\":35,\"min\":33}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":26,\"placed\":26}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":26,\"placed\":26}'::jsonb),\n  (4, 'El Camino College', '45290', 45768189197, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1000H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ENGL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 1AE\",\"units\":5,\"units_max\":null}],\"minimum\":1,\"name\":\"1A - ENGLISH COMPOSITION\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1001H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ENGL C1001\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PHIL 105H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PHIL 105\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSYC 103H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PSYC 103\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"1B - CRITICAL THINKING AND COMPOSITION\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"COMM C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"1C - ORAL COMMUNICATION\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 115\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 120\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 140\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 165\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 180\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 190\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 191\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 210\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 220\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 270\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 116\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMS 180\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 109A\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 109A\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"STAT C1000H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"AREA 2 - MATHEMATICAL CONCEPTS AND QUANTITATIVE REASONING\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH 104\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH 107\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH 108\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AHIS 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AHIS 102C\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AHIS 205A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AHIS 205B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AHIS 207\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"AHIS 208H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"AHIS 208\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AHIS 209\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AHIS 210\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 103\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FILM 105\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FILM 110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FILM 154\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSI 111\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MUSI 112H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"MUSI 112\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSI 113\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSI 115\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSI 116\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSI 117\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSI 215A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSI 215B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHOT 150\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 103\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 104\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"3A - ARTS\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ANTH 4H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ANTH 4\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHIN 2\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHIN 3\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHIN 24\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1002H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL C1002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 15A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 15B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 18\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 21\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 27\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 28\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 31\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 34\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 35\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 36\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 39\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 40A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 40B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 41B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 42\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 43\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 44\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 46\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 48\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 90\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FILM 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FILM 153\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FREN 2\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FREN 3\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FREN 4\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 105\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 106\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 108\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 111\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 112\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 114\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST 122H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HIST 122\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 128\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 129\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 140\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 141\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 152\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 154\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GERM 2\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GERM 3\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HUMA 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ITAL 2\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ITAL 24\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPA 2\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPA 3\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPA 4\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPA 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PHIL 101H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PHIL 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 103\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 107\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 111\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 112\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 113\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 115\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 117\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLI 7\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 2\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 3\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 4\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 6\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 24\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 52A\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 52B\",\"units\":5,\"units_max\":null}],\"minimum\":1,\"name\":\"3B - HUMANITIES\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AJ 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AJ 103\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AJ 115\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ANTH 2H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ANTH 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 3\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ANTH 4H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ANTH 4\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 6\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 7\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 8\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 9\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 103\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMS 260\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"COMS 265H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"COMS 265\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMS 275\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESTU 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESTU 3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESTU 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"GEOG 5H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"GEOG 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 7\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 105\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 106\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 108\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 111\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 112\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 114\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST 122H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HIST 122\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 128\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 129\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 140\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 141\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 152\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 154\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JOUR 12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 212\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 275\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLS C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"POLS C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLI 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLI 3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLI 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLI 6\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLI 7\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLI 10H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"POLI 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSYC C1000H\",\"units\":3}],\"catalog_addition\":true,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 108\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 112\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 115\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSYC 116H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PSYC 116\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 117\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 119\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 125\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SSCI 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SSCI 103H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"SSCI 103\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SOCI 101H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"SOCI 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 104\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SOCI 107H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"SOCI 107\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 108\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 112\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 113\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 115\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 118\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"WSTU 1\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"AREA 4 - SOCIAL AND BEHAVIORAL SCIENCES\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASTR 12\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASTR 15\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ASTR 20H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ASTR 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ASTR 25H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ASTR 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 1A\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 1B\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"CHEM 4H\",\"units\":5}],\"catalog_addition\":false,\"code\":\"CHEM 4\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 7A\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 7B\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 20\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 21A\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 21B\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 6\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 9\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 3\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 4\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 7\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 30\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 32\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 34\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 36\",\"units\":null,\"units_max\":null}],\"minimum\":1,\"name\":\"5A - PHYSICAL SCIENCE\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[],\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Cal-GETC\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":289,\"placed\":224}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":50,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":20},\"coverage\":true,\"gaps\":[\"noted_section_cut_off\"],\"invented\":true,\"listed\":289,\"placed\":224}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (4)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s740e piles rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;"
+}

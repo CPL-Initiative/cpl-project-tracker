@@ -73,25 +73,6 @@
    ],
    "against": "program",
    "why": [],
-   "degree": {
-    "pass": true,
-    "status": "equal",
-    "computed": [
-     63.0,
-     69.0
-    ],
-    "stated": [
-     60.0,
-     60.0
-    ],
-    "against": "degree",
-    "ge": [
-     34.0,
-     34.0
-    ],
-    "why": [],
-    "overlap": true
-   },
    "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
   },
   "repeated": {
@@ -271,6 +252,5 @@
    "The PHIL 6, 7, 8 listing under the preceding General Studies Humanities emphasis belongs to a different program and was not used."
   ]
  },
- "extracted_run": 45841957622,
- "read_run": "39006384701"
+ "extracted_run": "39006384701"
 }

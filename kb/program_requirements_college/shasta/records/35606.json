@@ -72,28 +72,8 @@
     33.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 36.0-41.0; the catalog states 28.0-33.0"
-   ],
-   "degree": {
-    "pass": true,
-    "status": "equal",
-    "computed": [
-     73.0,
-     83.0
-    ],
-    "stated": [
-     60.0,
-     60.0
-    ],
-    "against": "degree",
-    "ge": [
-     34.0,
-     34.0
-    ],
-    "why": [],
-    "overlap": true
-   }
+   "why": [],
+   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
   },
   "repeated": {
    "codes": [],
@@ -312,6 +292,5 @@
    "Courses marked # may be used to fulfill Cal-GETC requirements."
   ]
  },
- "extracted_run": 45841957622,
- "read_run": "39006384701"
+ "extracted_run": "39006384701"
 }

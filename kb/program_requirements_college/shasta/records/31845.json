@@ -64,35 +64,36 @@
    "pass": false,
    "status": "unequal",
    "computed": [
-    65.0,
-    67.0
+    37.0,
+    37.0
    ],
    "stated": [
-    60.0,
-    60.0
+    37.0,
+    39.0
    ],
-   "against": "degree",
-   "ge": [
-    21.0,
-    21.0
-   ],
+   "against": "program",
    "why": [
-    "the blocks and general education sum to 65.0-67.0; the catalog prints 60.0-60.0 for the degree"
+    "the blocks sum to 37.0-37.0; the catalog states 37.0-39.0"
    ],
-   "major": {
-    "pass": true,
-    "status": "equal",
+   "degree": {
+    "pass": false,
+    "status": "unequal",
     "computed": [
-     37.0,
-     37.0
+     65.0,
+     67.0
     ],
     "stated": [
-     37.0,
-     39.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": [],
-    "short_high": true
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": [
+     "the blocks and general education sum to 65.0-67.0; the catalog prints 60.0-60.0 for the degree"
+    ]
    }
   },
   "repeated": {
@@ -335,6 +336,5 @@
    "No careers or job titles are named in the A.S. section; the certificate section and other programs on the page were not used."
   ]
  },
- "extracted_run": 45841957622,
- "read_run": "39006384701"
+ "extracted_run": "39006384701"
 }

@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 150,
  "with_closed_list": 137,
- "started": "2026-11-26T14:45:03Z",
+ "started": "2026-11-19T11:24:18Z",
  "pdf": {
   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf",
   "access": "ok",
@@ -619,6 +619,46 @@
     "opens": "[page 79] Engineering. See a counselor for the complete list of courses required for your engineering field and university – the requirements typically total many more than 26 units and the general education areas are "
    },
    {
+    "control_number": "18146",
+    "pages": [
+     80,
+     81,
+     82,
+     83
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.833,
+    "opens": "[page 80] 1. Demonstrate the basic knowledge, skills and abilities to safely perform the tasks required to become an entry level firefighter. CERTIFICATE REQUIREMENTS: FIRS 104 Fire Fighter Academy 21.5 TOTAL UNITS "
+   },
+   {
+    "control_number": "18147",
+    "pages": [
+     80
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 80] 1. Demonstrate the basic knowledge, skills and abilities to safely perform the tasks required to become an entry level firefighter. CERTIFICATE REQUIREMENTS: FIRS 104 Fire Fighter Academy 21.5 TOTAL UNITS "
+   },
+   {
+    "control_number": "18152",
+    "pages": [
+     99,
+     100
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.522,
+    "opens": "[page 99] REQUIRED CORE: MUS 2 Diatonic Harmony and Musicianship 4 MUS 3 Advanced Diatonic Harmony and Musicianship 4 MUS 11 History of Jazz and Early Rock OR MUS 15 History of Rock 3 MUS 17 Computer Softwa"
+   },
+   {
     "control_number": "18153",
     "pages": [
      61,
@@ -720,7 +760,7 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 1.0,
+    "coverage": 0.98,
     "opens": "[page 74] Middle/High School teachers and Elementary School teachers, respectively. In addition, the degree core includes a course in Earth History needed for the Single Subject path but also NGSS -relevant at several"
    },
    {
@@ -1187,16 +1227,15 @@
    {
     "control_number": "36060",
     "pages": [
-     197,
-     198,
-     199
+     88,
+     89
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.885,
-    "opens": "[page 197] PHYSICAL THERAPIST ASSISTANT (PTA) PTA 1 PHYSICAL THERAPY PRACTICE FOR THE PTA – 2 Units Corequisites: PTA 2, PTA 3, PTA 3L, PTA 4, and PTA 4L Limitation on Enrollment: Enrollment in the Physical Therap"
+    "coverage": 1.0,
+    "opens": "[page 88] Physical Therapist Assistant Associate in Science: SC Program: AS.1601 PROGRAM DESCRIPTION: The Physical Therapist Assistant Program is designed to prepare graduates to meet the requirements to practice as "
    },
    {
     "control_number": "37749",
@@ -1236,6 +1275,18 @@
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 61] Business Administration – Business Entrepreneurship Certificate: SC Program: CT.3055 PROGRAM DESCRIPTION: Students completing this certificate will have the foundation necessary to begin building a small"
+   },
+   {
+    "control_number": "39382",
+    "pages": [
+     68
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.615,
+    "opens": "[page 68] Option 2: CISCO Networking Option (9 units) CIS 32 CCNA 2 Routing and Switching – Routing and Switching Essentials 3 CIS 33 CCNA 3 Routing and Switching – Scaling Networks 3 CIS 34 CCNA 4 Routing and S"
    },
    {
     "control_number": "39682",
@@ -1543,9 +1594,9 @@
    }
   ],
   "page_checks": {
-   "read": 23,
-   "own_page": 2,
-   "no_own_page": 21,
+   "read": 21,
+   "own_page": 4,
+   "no_own_page": 17,
    "not_printed": 0
   },
   "unproven": []
@@ -1553,12 +1604,12 @@
  "loads": 1,
  "pages_listed": 1,
  "pages_answered": 1,
- "seconds": 158.6,
- "found": 112,
+ "seconds": 156.9,
+ "found": 116,
  "by_method": {
   "no_closed_list": 13,
-  "not_found": 25,
-  "pdf_pages": 112
+  "not_found": 21,
+  "pdf_pages": 116
  },
  "shared_pages": {
   "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=49": [
@@ -1598,7 +1649,9 @@
   ],
   "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=80": [
    "06454",
-   "11074"
+   "11074",
+   "18146",
+   "18147"
   ],
   "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=69": [
    "06457",
@@ -1675,7 +1728,13 @@
   ],
   "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=68": [
    "18144",
-   "37749"
+   "37749",
+   "39382"
+  ],
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=99": [
+   "18152",
+   "42267",
+   "46491"
   ],
   "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=48": [
    "18159",
@@ -1726,10 +1785,6 @@
   "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=70": [
    "37774",
    "41382"
-  ],
-  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=99": [
-   "42267",
-   "46491"
   ]
  },
  "not_found": [
@@ -1740,8 +1795,7 @@
    "near_miss": {
     "why": "rule B then A: the pages printing the program's title with its award are course descriptions or general-education pages",
     "rule": "A",
-    "refused_b": 1,
-    "page_checks": true
+    "refused_b": 1
    },
    "status": "Active"
   },
@@ -1752,8 +1806,7 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0,
-    "page_checks": true
+    "refused_b": 0
    },
    "status": "Active - Teachout Only"
   },
@@ -1764,8 +1817,7 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0,
-    "page_checks": true
+    "refused_b": 0
    },
    "status": "Active - Teachout Only"
   },
@@ -1776,8 +1828,7 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0,
-    "page_checks": true
+    "refused_b": 0
    },
    "status": "Active"
   },
@@ -1788,8 +1839,7 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0,
-    "page_checks": true
+    "refused_b": 0
    },
    "status": "Active"
   },
@@ -1800,8 +1850,7 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0,
-    "page_checks": true
+    "refused_b": 0
    },
    "status": "Active"
   },
@@ -1822,8 +1871,7 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0,
-    "page_checks": true
+    "refused_b": 0
    },
    "status": "Active"
   },
@@ -1834,9 +1882,7 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0,
-    "plain_named": true,
-    "page_checks": true
+    "refused_b": 0
    },
    "status": "Active"
   },
@@ -1847,34 +1893,9 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0,
-    "page_checks": true
+    "refused_b": 0
    },
    "status": "Active - Teachout Only"
-  },
-  {
-   "control_number": "18146",
-   "title": "General Studies - Fire - Fire Investigation",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0,
-    "page_checks": true
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "18147",
-   "title": "General Studies - Fire - Fire Service Command, Company Officer",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0,
-    "page_checks": true
-   },
-   "status": "Active"
   },
   {
    "control_number": "18150",
@@ -1883,20 +1904,7 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0,
-    "page_checks": true
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "18152",
-   "title": "General Studies - Health",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0,
-    "page_checks": true
+    "refused_b": 0
    },
    "status": "Active"
   },
@@ -1907,8 +1915,7 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0,
-    "page_checks": true
+    "refused_b": 0
    },
    "status": "Active"
   },
@@ -1919,8 +1926,7 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0,
-    "page_checks": true
+    "refused_b": 0
    },
    "status": "Active"
   },
@@ -1931,8 +1937,7 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0,
-    "page_checks": true
+    "refused_b": 0
    },
    "status": "Active"
   },
@@ -1943,8 +1948,7 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0,
-    "page_checks": true
+    "refused_b": 0
    },
    "status": "Active"
   },
@@ -1955,8 +1959,7 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0,
-    "page_checks": true
+    "refused_b": 0
    },
    "status": "Active"
   },
@@ -1976,8 +1979,7 @@
    "award": "A.S. Degree",
    "near_miss": {
     "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=25",
-    "coverage": 0.0,
-    "page_checks": true
+    "coverage": 0.0
    },
    "status": "Active"
   },
@@ -1987,8 +1989,7 @@
    "award": "A.S. T Degree",
    "near_miss": {
     "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=18",
-    "coverage": 0.333,
-    "page_checks": true
+    "coverage": 0.333
    },
    "status": "Active"
   },
@@ -1999,20 +2000,7 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0,
-    "page_checks": true
-   },
-   "status": "Active - Teachout Only"
-  },
-  {
-   "control_number": "39382",
-   "title": "Web Master",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0,
-    "page_checks": true
+    "refused_b": 0
    },
    "status": "Active - Teachout Only"
   },
@@ -2023,8 +2011,7 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0,
-    "page_checks": true
+    "refused_b": 0
    },
    "status": "Active - Teachout Only"
   }
@@ -2032,24 +2019,184 @@
  "page_claimed": [],
  "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 4,
-  "0.8-1.0": 9,
-  "1.0": 99
+  "0.5-0.8": 6,
+  "0.8-1.0": 10,
+  "1.0": 100
  },
  "would_extract": {
   "against": "kb/program_requirements_college/shasta",
-  "kept": 99,
+  "kept": 82,
   "kept_moved": 0,
-  "programs": 2,
+  "programs": 24,
   "list": [
+   {
+    "control_number": "06454",
+    "title": "Fire Technology",
+    "award": "A.S. Degree",
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=80",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "09497",
+    "title": "Administration of Justice",
+    "award": "A.S. Degree",
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=47",
+    "coverage": 1.0,
+    "was_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=48",
+    "was_coverage": 0.944,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "18080",
+    "title": "University Studies - Agriculture Sciences",
+    "award": "A.A. Degree",
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=53",
+    "coverage": 0.982,
+    "was_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=53",
+    "was_coverage": 0.807,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "18093",
+    "title": "University Studies - Natural Sciences",
+    "award": "A.A. Degree",
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=97",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "18094",
+    "title": "University Studies - Physical Education",
+    "award": "A.A. Degree",
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=100",
+    "coverage": 1.0,
+    "was_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=100",
+    "was_coverage": 0.623,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "18143",
+    "title": "General Studies - Business - General Business",
+    "award": "A.S. Degree",
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=61",
+    "coverage": 1.0,
+    "was_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=61",
+    "was_coverage": 0.659,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "18144",
+    "title": "General Studies - Office and Computer Technologies",
+    "award": "A.S. Degree",
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=68",
+    "coverage": 0.797,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "18146",
+    "title": "General Studies - Fire - Fire Investigation",
+    "award": "A.S. Degree",
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=80",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "18147",
+    "title": "General Studies - Fire - Fire Service Command, Company Officer",
+    "award": "A.S. Degree",
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=80",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "18152",
+    "title": "General Studies - Health",
+    "award": "A.S. Degree",
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=99",
+    "coverage": 0.522,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
    {
     "control_number": "18153",
     "title": "General Studies: Food & Beverage & Lodging Management",
     "award": "A.S. Degree",
     "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=61",
     "coverage": 0.5,
-    "was_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=61",
-    "was_coverage": 0.5,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "18154",
+    "title": "General Studies - Human Development",
+    "award": "A.S. Degree",
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=73",
+    "coverage": 1.0,
+    "was_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=73",
+    "was_coverage": 0.56,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "18155",
+    "title": "General Studies - Humanities",
+    "award": "A.S. Degree",
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=91",
+    "coverage": 0.885,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "18156",
+    "title": "General Studies - Industrial Technologies",
+    "award": "A.S. Degree",
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=93",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "18159",
+    "title": "General Studies - Public Safety and Services",
+    "award": "A.S. Degree",
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=48",
+    "coverage": 1.0,
+    "was_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=48",
+    "was_coverage": 0.933,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "18625",
+    "title": "General Studies - Coastal Oceanographic Studies",
+    "award": "A.S. Degree",
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=78",
+    "coverage": 0.75,
+    "was_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=78",
+    "was_coverage": 0.625,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "18626",
+    "title": "General Studies - Geosciences Technician",
+    "award": "A.S. Degree",
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=77",
+    "coverage": 0.882,
+    "was_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=77",
+    "was_coverage": 0.843,
     "was_method": "pdf_pages"
    },
    {
@@ -2057,10 +2204,70 @@
     "title": "University Studies - Earth Sciences",
     "award": "A.A. Degree",
     "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=74",
+    "coverage": 0.98,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "18658",
+    "title": "University Studies - Oceanography and Marine Sciences",
+    "award": "A.A. Degree",
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=78",
     "coverage": 1.0,
-    "was_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=74",
-    "was_coverage": 0.98,
+    "was_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=78",
+    "was_coverage": 0.789,
     "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "18659",
+    "title": "University Studies - Earth Science Teacher",
+    "award": "A.A. Degree",
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=74",
+    "coverage": 0.979,
+    "was_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=74",
+    "was_coverage": 0.915,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "19640",
+    "title": "Accounting Professional",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=58",
+    "coverage": 1.0,
+    "was_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=60",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "31988",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=102",
+    "coverage": 1.0,
+    "was_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=102",
+    "was_coverage": 0.947,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "36060",
+    "title": "Physical Therapist Assistant",
+    "award": "A.S. Degree",
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=88",
+    "coverage": 1.0,
+    "was_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=197",
+    "was_coverage": 0.885,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "39382",
+    "title": "Web Master",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=68",
+    "coverage": 0.615,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    }
   ],
   "held_worse_window": [
@@ -2070,14 +2277,6 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=90",
     "coverage": 0.875,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "36060",
-    "title": "Physical Therapist Assistant",
-    "award": "A.S. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=197",
-    "coverage": 0.885,
     "was_coverage": 1.0
    }
   ],
@@ -2332,6 +2531,18 @@
    "sha256": "30c4e911d318ce90f0e260d2e748729be434ee6f718ae6c2eeacbb20d7bbdfec",
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=79"
   },
+  "18146": {
+   "sha256": "d0862c9b441b172d4a77d31abe9a2f485ca3c6e980b46a3f8e426747c99871a1",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=80"
+  },
+  "18147": {
+   "sha256": "144967e5176c042e737725a2d27d3c37c3d8f0e9d3f50944aea4dcaf4c5fa79b",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=80"
+  },
+  "18152": {
+   "sha256": "3c858cd0ff5dadb869ce348ca796acb285ce1c2b99d440f44a4e34853dd9158c",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=99"
+  },
   "18153": {
    "sha256": "9255d9e5230d5b1572d2fb0ab5c0e333db88a6c3bc3ee33b1f85d7bb5061e7bf",
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=61"
@@ -2501,8 +2712,8 @@
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=101"
   },
   "36060": {
-   "sha256": "28481011d9b4ccc9c30694020fa2e3f490d6a73741a127b6694aa446c0a804af",
-   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=197"
+   "sha256": "5f45b98a8fa3c56a6eec3dfa4f4eced08da644f4cd003e336d404d2b1521d6b5",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=88"
   },
   "37749": {
    "sha256": "c52a2bc6b2ba616114d1a52d19579bb1bcaff13f19fecc27143e89a1946aeda7",
@@ -2515,6 +2726,10 @@
   "38138": {
    "sha256": "9255d9e5230d5b1572d2fb0ab5c0e333db88a6c3bc3ee33b1f85d7bb5061e7bf",
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=61"
+  },
+  "39382": {
+   "sha256": "207216f5b4000999518ca0a5f8a643721b95068f13c03d31422cdc86cd4cfbb1",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=68"
   },
   "39682": {
    "sha256": "b2430528e1c02c785f3af589177a43b0a0f59d6f0b529635a5d640aea370eada",
@@ -2609,5 +2824,5 @@
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=99"
   }
  },
- "run": "45841957622"
+ "run": "44513230805"
 }

@@ -82,15 +82,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Answer , with at least 70 percent accuracy, questions on objective tests covering technical information."
-   ],
-   "why": [
-    "not in the catalog text as printed: Answer , with at least 70 percent accuracy, questions on objective tests coverin"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -100,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -272,6 +268,5 @@
    "The certificate description mentions the Work Experience Education course as highly recommended but names no course code for it in this section."
   ]
  },
- "extracted_run": 45841957622,
- "read_run": "39006384701"
+ "extracted_run": "39006384701"
 }

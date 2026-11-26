@@ -108,7 +108,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "noted_figures_differ",
+    "label": "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires.",
+    "words": "Sum of printed course units (49) plus 3-unit Humanities is 52, not the stated 51; the LVN to RN track shows the same one-unit gap (39.5 vs 38.5). Reviewer should check. | Requirement 'Humanities: Any 3 unit course from Area 3 of the Associate of Arts and Associate of Science Degree' is a GE-area choice with no listed courses; not recorded as a block."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

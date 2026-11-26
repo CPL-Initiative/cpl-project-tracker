@@ -82,34 +82,21 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Apply the knowledge and skills needed to perform entry -level competencies in clinical and administrative medical assisting as outlined by the American Association of Medical Assistants (AAMA).",
-    "Apply the knowledge and skills necessary to successfully pass the certification exam.",
-    "Apply knowledge, skills, and professionalism necessary to compete in the job market.",
-    "Demonstrate the ability to work effectively as an individual and collaboratively as a team member to resolve challenges in a changing healthcare environment."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply the knowledge and skills needed to perform entry -level competencies in cl",
-    "not in the catalog text as printed: Apply the knowledge and skills necessary to successfully pass the certification ",
-    "not in the catalog text as printed: Apply knowledge, skills, and professionalism necessary to compete in the job mar",
-    "not in the catalog text as printed: Demonstrate the ability to work effectively as an individual and collaboratively"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 2,
-   "not_verbatim": [
-    "medical assistant",
-    "allied health professionals"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -226,6 +213,5 @@
    "The Nurse Aide/Home Health Aide and Nursing sections that follow belong to other programs and were ignored."
   ]
  },
- "extracted_run": 45841957622,
- "read_run": "39006384701"
+ "extracted_run": "39006384701"
 }
