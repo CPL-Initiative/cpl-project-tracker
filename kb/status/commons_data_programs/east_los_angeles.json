@@ -1,4 +1,4 @@
-{"schema":1,"college":"East Los Angeles College","slug":"east_los_angeles","basis":"live","census_at":"2026-11-26 01:19Z","correction_rules":true,"programs":[
+{"schema":1,"college":"East Los Angeles College","slug":"east_los_angeles","basis":"live","census_at":"2026-11-26 06:54Z","correction_rules":true,"programs":[
 {"cn":"37510","title":"Automotive Fundamentals","award":"Noncredit program","cause":"coverage_fails","lever":"reconcile_steps","url":"https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=386"},
 {"cn":"38332","title":"Geo-Spatial Engineering and Technologies","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"found_not_extracted","lever":"paid_read","url":"https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=195"},
 {"cn":"45540","title":"Respiratory Therapy","award":"Baccalaureate of Science (B.S.) Degree.","cause":"found_not_extracted","lever":"paid_read","url":"https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=343"},
