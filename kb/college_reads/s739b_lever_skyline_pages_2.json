@@ -1,0 +1,23 @@
+{
+ "_readme": "S739 wave B (the gap census of 2026-11-26 06:54Z, run 45771011713, Next wave; lever reader_page_assignment), a second read: Mathematics A.S.-T 30882. Page read 45782471633 printed the catalog's program list, which names one mathematics transfer degree, 'Mathematics for Transfer 2.0' (AS-T), at programs/mathematics-for-transfer-2-0-as-t.php, and no solar or energy program. This reads that page as the capture reads it, for its heading, its course list and its total. One load. No model call, nothing written.",
+ "college": "Skyline College",
+ "questions": {
+  "own_page": "Whether the catalog prints the program's own section (its heading, its award, its course list and its total), where, and which course codes it prints."
+ },
+ "keywords": [
+  "Mathematics[^\\n]{0,80}",
+  "MATH[ .]?C?\\d{3,4}[^\\n]{0,60}",
+  "Total[^\\n]{0,40}",
+  "Associate in Science[^\\n]{0,60}"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.skylinecollege.edu/current/programs/mathematics-for-transfer-2-0-as-t.php",
+   "capture_view": true,
+   "why": "30882"
+  }
+ ]
+}
