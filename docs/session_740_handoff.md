@@ -241,3 +241,14 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   `https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf`); paid reads $0.50. Each to
   a Sonnet reader. 11:06Z: clean md5 pre-reads, s739k 5 of 5, s739m 5 of 5, s739n 7 of 7, and 41373 at s739j's
   after-image; the four run in order on `claude/s739-piles2`.
+- 11:07Z: `waveB`'s reader: LAND: MERGE, PLAN: APPLY (four of its colleges went fail to pass, none pass to fail; every
+  named-gap reason exists on `main`; no person's name filed). The plan's pre-read compares whole jsonb; the conductor
+  read run, before-checks, the checked flag, heading, blocks and total instead (1 of 1 clean), since the apply guards
+  on the whole before-record itself. 11:10Z: `waveA`'s reader: FIX THEN MERGE: the eight records and eleven relists
+  hold (none pass to fail); the branch must take `main` and regenerate its Commons files (its hand-set
+  `kb/status/commons.json` value matches its base, not `main`); and four of its named-gap labels are new on `main`:
+  `catalog_list_differs`, `certificate_names_the_major`, `list_printed_as_number_run` and `catalog_renumbered`, free
+  text in inert `named_gaps_s739.json` files, so no matcher reads them yet (`f-four-new-named-gap-labels-s739`: no
+  census or `kb/_program_named_gaps.py` match on them without a recall test). **DECIDED**
+  `d-one-land-for-piles2-and-waves-s739`: `piles2`, `waveA` and `waveB` land as one PR off `main`, once the applies
+  finish, as S731's #3830 did.
