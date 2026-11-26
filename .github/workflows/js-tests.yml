@@ -1057,6 +1057,24 @@ jobs:
       - name: Cheap piles S739 at Ventura (the earlier holds, named gaps, the plan)
         if: matrix.shard == 6
         run: python3 tests/program_piles_s739_ventura_test.py
+      # S740: units_within_printed_range, the units twin of hours_within_printed_range (score 50), filed from a
+      # reviewed list and by no record rule; its statewide self-recall on held answers (synthetic: the scorer's own
+      # verdict over every passing units record; real: the hand answers committed plans hold).
+      - name: Units within the printed range (S740, the kind and its statewide self-recall)
+        if: matrix.shard == 1
+        run: python3 tests/program_units_within_s740_test.py
+      # S740 at Gavilan (s740a): the six records s739m held, 4 collected under the units within-range kind, 2 held.
+      - name: Cheap piles S740 at Gavilan (the units within-range kind, the plan)
+        if: matrix.shard == 2
+        run: python3 tests/program_piles_s740_gavilan_test.py
+      # S740 at Orange Coast (s740b): 41373, rolled back from s739j, collected under the units within-range kind.
+      - name: Cheap piles S740 at Orange Coast (the rolled-back row under the units within-range kind, the plan)
+        if: matrix.shard == 3
+        run: python3 tests/program_piles_s740_orangecoast_test.py
+      # S740 at College of the Canyons (s740c): 36793, s739c's one hold, collected under the units within-range kind.
+      - name: Cheap piles S740 at College of the Canyons (the units within-range kind, the plan)
+        if: matrix.shard == 4
+        run: python3 tests/program_piles_s740_canyons_test.py
       # Discontinued programs (S680; Sam, 2026-11-17 on #3480): a program's own catalog section marks it,
       # or a prior year prints it and this year does not; flagged out of the gap, never deleted. Pure stdlib.
       - name: Discontinued programs (own-section mark, out of the gap, the file is current)

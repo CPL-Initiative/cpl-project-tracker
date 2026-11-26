@@ -75,8 +75,11 @@ for cn, (comp, st) in M.WITHIN.items():
     a = f["score"]["arithmetic"]
     check(B.same(a["computed"], comp) and B.same(a["stated"], st) and M.within(a["computed"], a["stated"])
           and st[0] < st[1], "%s: its sum %s sits inside its printed range %s" % (cn, comp, st))
-    check(not f["score"].get("gaps") and not f["score"].get("confidence") and not B.S.passes_live(f["score"]),
-          "%s: its record carries no gap and does not pass" % cn)
+    # S740's s740a files the four under the units within-range kind, the kind they held for: either state holds.
+    check([g.get("gap") for g in f["score"].get("gaps") or []] in ([], ["units_within_printed_range"])
+          and not B.S.passes_live(f["score"]),
+          "%s: its record carries no gap of this plan's (none, or S740's units within-range kind) and does not pass"
+          % cn)
 check(not any(M.within(W.load(cn)["score"]["arithmetic"]["computed"], W.load(cn)["score"]["arithmetic"]["stated"])
               for cn in ROWS), "no row of the plan adds to a sum inside its printed range")
 check(M.within([27, 27], [26, 27]) and M.within([53, 60], [48, 60]) and not M.within([65, 72], [64, 64])

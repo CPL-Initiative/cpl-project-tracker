@@ -43,8 +43,10 @@ HELD = {"03954": TAB, "08664": TAB, "31217": TAB, "03993": ["no kind", "a reread
 SCORES = {"lists_not_closed": 30, "noted_figures_differ": 40}
 OWN = {"43362": "own_heading", "41373": "own_heading"}
 
+# S740's s740b files 41373 under the units within-range kind, the kind its hold waited for: either state holds here.
+REFILED = {"41373": "units_within_printed_range"}
 t = T.run(W, rows=ROWS, held=HELD, scores=SCORES, day="2026-11-26", boundaries=14, own=OWN,
-          rolled_back=ROLLED_BACK)
+          rolled_back=ROLLED_BACK, refiled=REFILED)
 check = t.check
 
 check("08626" not in W.keys and B.S.passes_live(W.load("08626")["score"]) and "wrong page" in M.NOTE_08626,
@@ -105,8 +107,9 @@ line = NG._values([row])
 check(line in whole and line in sql and sql.count("'Orange Coast College'") == 1,
       "the slice's one values line is s739j's rollback row for 41373, byte for byte")
 check("41373" not in M.REVIEWED and set(M.ROLLED_BACK) == {"41373"} and W.hand["41373"] == M.NOTE_41373
-      and not f["score"].get("gaps") and not f["score"].get("confidence"),
-      "41373 is no entry of the plan, holds, and its committed record carries no gap")
+      and [g.get("gap") for g in f["score"].get("gaps") or []] in ([], [REFILED["41373"]]),
+      "41373 is no entry of the plan, holds, and its committed record carries no gap of this plan's (none, or the "
+      "units within-range kind S740's s740b files)")
 check(not any("'%s'" % cn in sql for cn in ROWS) and "e(expect) as (values (1))" in sql
       and "set checks = v.before_checks" in sql and "r.checks = v.after_checks" in sql
       and "r.extracted_run = v.extracted_run" in sql and "r.checked is not true" in sql

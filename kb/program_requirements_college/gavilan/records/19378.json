@@ -104,7 +104,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "units_within_printed_range",
+    "label": "The courses' units as read fall within the printed range of units rather than matching it.",
+    "words": "the courses' units add to 24, within the printed 14-24 units | The printed total is 'Total: 14- 24', recorded as printed; the two blocks (14 + 10) sum to 24, so the low end of 14 looks inconsistent and should be checked."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {
