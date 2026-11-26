@@ -1,9 +1,16 @@
 {
  "_about": "Identity-anchored title suggestions for the CER unclassified-triage worklist (kb/_suggest_unclassified.py). Precedence per skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local course title; plus CareerOneStop authority matches when the registry is synced. One-click FILL chips — the curator always confirms; never auto-applied. `aligned` names each title's aligned course: the course its exhibit's credit recommendation names, as CCN > C-ID > M-ID > the college's course title (Sam, 2026-10-30); exam brands keep their names.",
- "_generated_at": "2026-11-25T20:00:49Z",
+ "_generated_at": "2026-11-26T06:22:21Z",
  "count": 0,
  "suggestions": {},
  "aligned": {
+  "Spanish Literature for Bilinguals Examiantion": {
+   "kind": "course",
+   "id": "SPAN M10FL",
+   "title": "INTRODUCTION TO LITERATURE FOR BILINGUALS",
+   "code": "SPAN 221",
+   "college": "Southwestern College"
+  },
   "ACE CR - Network Fundamentals": {
    "kind": "cid",
    "id": "ITIS 150",

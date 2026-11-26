@@ -123,7 +123,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "heading_not_in_text",
+    "label": "The page the read held prints a requirements list but not the program's own heading, which sits on a page the read did not hold; the record takes the list as this program's by its title alone, and no page read has confirmed it.",
+    "words": "The excerpt starts mid-section on page 145; the program heading, any program learning outcomes and earlier description are not in the excerpt. Outcomes left empty. | total_units 69.5-70.5 is printed as 'Total Units (prerequisites and core courses)'; it includes the prerequisite block (26-27) and the core blocks (12.5+7+11+13)."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 20,
+   "course_list_match": 50,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 50
+  }
  },
  "record": {
   "program": {

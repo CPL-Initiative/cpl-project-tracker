@@ -74,6 +74,7 @@
     31.0,
     32.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -94,6 +95,12 @@
    "count": 1,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -230,5 +237,6 @@
    "Course codes are printed without a space between subject and number (e.g., AGM211) and are recorded as printed."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

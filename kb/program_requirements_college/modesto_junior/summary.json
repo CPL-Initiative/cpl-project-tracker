@@ -5,18 +5,18 @@
  "found": 188,
  "extracted": 188,
  "errors": 0,
- "passed_machine_checks": 165,
+ "passed_machine_checks": 181,
  "failed": {
-  "coverage": 2,
-  "invented": 1,
-  "arithmetic": 22,
+  "coverage": 1,
+  "invented": 0,
+  "arithmetic": 7,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd_run": 1.43,
+ "cost_usd_run": 0.0,
  "cost_usd_filed": 12.08,
  "cost_per_program": 0.0643,
- "extract_calls": 15,
+ "extract_calls": null,
  "extract_failed": [],
  "not_found": [
   {
@@ -26,7 +26,7 @@
    "near_miss": {
     "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/animal-science-mjc-fall-2025",
     "label": {
-     "award": 0,
+     "award": 1,
      "title": 1.0
     },
     "field": "innerText",
@@ -87,7 +87,8 @@
      "content": 2897,
      "tabs": 0
     },
-    "tab_panels": []
+    "tab_panels": [],
+    "page_checks": true
    },
    "status": "Active - Teachout Only"
   },
@@ -101,5 +102,5 @@
    "status": "Active"
   }
  ],
- "run": "44540818388"
+ "run": "45772245635"
 }

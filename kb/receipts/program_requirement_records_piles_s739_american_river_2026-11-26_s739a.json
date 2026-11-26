@@ -1,0 +1,1647 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30); Sam's routine prompt of 2026-11-25, as the S739 conductor's brief carries it: a record held for a gap is collected with its gap named and a lower score on the 0-100 bar, never held, unless the record is not the program's own; S739: American River's records kb/receipts/program_requirement_records_piles_s727_arc_2026-11-25_s727b.json held, read again by key: passed by a rescore where today's scorer's one reading moves them, else collected with their gaps named where the record is the program's own (no reread, no reconcile)",
+ "at": "2026-11-26T06:36:04Z",
+ "college": "American River College",
+ "keys": {
+  "from": "kb/receipts/program_requirement_records_piles_s727_arc_2026-11-25_s727b.json",
+  "members": [
+   "07207",
+   "12191",
+   "12238",
+   "30595",
+   "39341",
+   "39731",
+   "39732"
+  ]
+ },
+ "gaps": {
+  "heading_not_in_text": "The page the read held prints a requirements list but not the program's own heading, which sits on a page the read did not hold; the record takes the list as this program's by its title alone, and no page read has confirmed it.",
+  "option_lists_read_apart": "An option the catalog prints takes more than one list under the option's own printed figure, and the record's one option group holds each list as an alternative of its own, so the program's units cannot be checked against the printed figures.",
+  "unit_line_not_read": "The catalog prints a requirement as a line of units with no course named, and the record leaves the line out; with it the courses add to the printed total."
+ },
+ "moved": 5,
+ "by": {
+  "option_lists_read_apart": 2,
+  "unit_line_not_read": 1,
+  "heading_not_in_text": 2
+ },
+ "precision": {
+  "read": 7,
+  "right": 7,
+  "wrong": [],
+  "no_record_file": 0,
+  "not_hand_held": 0,
+  "by_answer": {
+   "option_lists_read_apart": 2,
+   "unit_line_not_read": 1,
+   "heading_not_in_text": 2,
+   "none": 2
+  }
+ },
+ "claim_checks": {
+  "counts": {
+   "stands": 5
+  },
+  "not_standing": []
+ },
+ "boundaries": {
+  "counts": {
+   "the note's words gone right": 5,
+   "the stated total one unit off right": 5,
+   "coverage failing right": 5,
+   "the option_lists shape broken right": 2,
+   "the no_total shape broken right": 2,
+   "the reading against a total one unit off right": 1,
+   "its own section not shown right": 3,
+   "the heading_gone shape broken right": 2,
+   "the cut shape broken right": 1
+  },
+  "wrong": []
+ },
+ "held": [
+  {
+   "control_number": "39731",
+   "why": "held: not the program's own: read from the p.211 section text that 39341 and 39732 were read from, whose printed 'Total Units: 48' sits outside this award's band (8 to fewer than 16 units); its own note says 'The text may belong to the full Refrigeration Service Technician Apprenticeship certificate rather than Level I': a page read that finds its own section",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "39732",
+   "why": "held: not the program's own: read from the p.211 section text that 39341 and 39731 were read from, whose printed 'Total Units: 48' sits outside this award's band (16 to fewer than 30 units); its own note says 'Printed total of 48 units does not fit the award category': a page read that finds its own section",
+   "claim": "no entry stands"
+  }
+ ],
+ "records": [
+  {
+   "college": "American River College",
+   "control_number": "07207",
+   "award": "A.S. Degree",
+   "extracted_run": "39047245752",
+   "moves_to": "option_lists_read_apart",
+   "words": "The Java concentration is recorded as two blocks (required courses plus the 'minimum of 3 units' choice), both in option_group 'Concentration'; the printed Java concentration total 12-14 covers both blocks. | The catalog prints two concentrations (C++ and Java) with separate totals: C++ concentration 13-15 units, Total Units 19-21; Java concentration 12-14 units, Total Units 18-20. Read as the student completing one concentration (option_group 'Concentration'), though the text does not explicitly say 'select one'. No single award total is printed, so total_units is null.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/american_river/records/07207.json",
+   "before_image": {
+    "program_title": "CIS: Computer Programming",
+    "award": "A.S. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=431",
+    "measure": "units",
+    "total_min": null,
+    "total_max": null,
+    "record": {
+     "program": {
+      "section_heading": "A.S. in CIS: Computer Programming",
+      "measure": "units",
+      "total_units": {
+       "min": null,
+       "max": null
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": true,
+      "outcomes": [
+       "describe how programming relates to the development of an information system.",
+       "develop programs using the top-down method.",
+       "apply structured programming techniques.",
+       "translate a detailed design document into a computer programming language solution.",
+       "verify the syntactic correctness of a program.",
+       "verify the logical correctness of a program.",
+       "analyze the behavior of a program and locate defects."
+      ],
+      "careers": [
+       "entry-level programmer/developer"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Degree Requirements",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 6,
+        "max": 6
+       },
+       "courses": [
+        {
+         "code": "CISC 310",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CISP 350",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "C++ concentration",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Concentration",
+       "stated": {
+        "min": 13,
+        "max": 15
+       },
+       "courses": [
+        {
+         "code": "CISP 300",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CISP 360",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "CISP 480",
+           "units": 5,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "CISP 400",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CISP 430",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Java concentration",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Concentration",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "CISP 300",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CISP 360",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "CISP 480",
+           "units": 5,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "CISP 401",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Java concentration: A minimum of 3 units from the following",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": "Concentration",
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "CISC 320",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CISC 323",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CISC 324",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CISP 310",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 10,
+     "listed": 10
+    },
+    "extracted_run": "39047245752"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 10,
+     "listed": 10,
+     "gaps": [
+      "option_lists_read_apart"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 1
+  },
+  {
+   "college": "American River College",
+   "control_number": "12191",
+   "award": "Certificate of Achievement requiring 60+S/90+Q units",
+   "extracted_run": "39047245752",
+   "moves_to": "unit_line_not_read",
+   "words": "The certificate also requires 'A minimum of 23 units from the following: 23': at least 16 units including one course from each of four ARC General Education areas (Natural Science or Mathematical Concepts & Quantitative Reasoning; English Composition or Oral Communication & Critical Thinking; Arts & Humanities; Social & Behavioral Sciences), plus 7 additional units that may be GE courses or any other ECE courses. No courses are listed, so no block was recorded; the 16 GE units are recorded in ge_units and the pattern as ARC General Education. | Required core courses sum to 37 units; 37 + 23 = 60, matching the printed Total Units: 60.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/american_river/records/12191.json",
+   "lever": "an American River reconcile step of the unit_line kind, keyed on 'A minimum of 23 units from the following: 23', passes it at 60 = 60 (S727's second reader, round 1); a reconcile's rescore drops the gap when it passes",
+   "before_image": {
+    "program_title": "Site Supervisor",
+    "award": "Certificate of Achievement requiring 60+S/90+Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=506",
+    "measure": "units",
+    "total_min": 60,
+    "total_max": 60,
+    "record": {
+     "program": {
+      "section_heading": "Site Supervisor Certificate",
+      "measure": "units",
+      "total_units": {
+       "min": 60,
+       "max": 60
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "ARC General Education",
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": 16,
+       "max": 16
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "formulate an educational philosophy to guide the operation of an early childhood program.",
+       "support culturally respectful interactions among children, parents, teachers and the community.",
+       "evaluate curriculum for sound pedagogy, content, and breadth, including planning for the learning environment, the daily routines, and the individual needs of children.",
+       "manage program planning, budgeting, governing boards, enrollment, and personnel in accordance with the regulations of Title 5 (California Education Code of Regulations) and Title 22 (California Social Services Code of Regulations).",
+       "create procedures for implementing standards of health, nutrition, and safety in group care early childhood education settings.",
+       "plan professional and personal growth and advocacy activities to support children, families and teachers."
+      ],
+      "careers": [
+       "director/site supervisor"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Certificate Requirements",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ECE 300",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECE 312",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "PSYC 372",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECE 314",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECE 320",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECE 321",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECE 326",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECE 331",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECE 415",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "NUTRI 320",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECE 420",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECE 422",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECE 424",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECE 430",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 14,
+     "listed": 14
+    },
+    "extracted_run": "39047245752"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 14,
+     "listed": 14,
+     "gaps": [
+      "unit_line_not_read"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 2
+  },
+  {
+   "college": "American River College",
+   "control_number": "12238",
+   "award": "A.S. Degree",
+   "extracted_run": "43212067552",
+   "moves_to": "option_lists_read_apart",
+   "words": "The degree requires the core (14-15 units) plus one of three concentrations (CISCO, Linux, Windows). All blocks tagged option_group 'Concentration' belong to one of the three concentrations; the student completes every block of a single concentration (the CISCO option is the two CISCO blocks, Linux the two Linux blocks, Windows the two Windows blocks). Reviewer should check this grouping. | The catalog prints a separate Total Units for each concentration (CISCO 31.5-33.5, Linux 31-32, Windows 33-34) and no single total for the award, so total_units is left null.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "own": "own_heading",
+   "path": "kb/program_requirements_college/american_river/records/12238.json",
+   "before_image": {
+    "program_title": "CIS: Computer Networking Management",
+    "award": "A.S. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=429",
+    "measure": "units",
+    "total_min": null,
+    "total_max": null,
+    "record": {
+     "program": {
+      "section_heading": "A.S. in CIS: Computer Networking Management",
+      "measure": "units",
+      "total_units": {
+       "min": null,
+       "max": null
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": true,
+      "outcomes": [
+       "install, configure, monitor, manage, backup, and customize a Microsoft server.",
+       "design, construct and apply group policies and NTFS file system permissions to secure files and network resources.",
+       "design, construct and troubleshoot a Microsoft Active Directory network using Microsoft workstation and server operating systems.",
+       "design, evaluate, construct and implement a routed IP network using industry standard routing protocols and routing equipment, in a wired or wireless configuration.",
+       "design, evaluate, construct and implement a multilayer switching network using switching protocols, such as Ethernet, in a wired or wireless configuration.",
+       "design, install and test Wide Area Network (WAN) connectivity solutions.",
+       "design and evaluate basic security and access solutions in a switched or routed LAN or WAN.",
+       "design, evaluate, specify, and install various types of network media.",
+       "install, configure, monitor, manage, backup, and customize a Linux server.",
+       "design, evaluate and implement and troubleshoot typical Linux server services in the areas of user accounts and security, printing, web server, telnet server, firewall, email server, domain name service, dynamic host configuration protocol, network file system, and Microsoft Windows compatibility."
+      ],
+      "careers": [
+       "network technical support staff",
+       "network administrators",
+       "network designers",
+       "network systems engineer",
+       "network troubleshooters",
+       "information systems security specialists"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Degree Requirements",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 14,
+        "max": 15
+       },
+       "courses": [
+        {
+         "code": "BUS 310",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL C1000",
+           "units": 3,
+           "catalog_addition": false
+          },
+          {
+           "code": "ENGL C1000H",
+           "units": 3,
+           "catalog_addition": false
+          },
+          {
+           "code": "ESLW 340",
+           "units": 4,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "CISA 315",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CISC 320",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CISC 323",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CISC 350",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CISC 361",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CISS 310",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "CISCO Concentration",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Concentration",
+       "stated": {
+        "min": 17.5,
+        "max": 18.5
+       },
+       "courses": [
+        {
+         "code": "CISC 324",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CISN 340",
+         "units": 3.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CISN 341",
+         "units": 3.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CISN 342",
+         "units": 3.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CISS 330",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "CISCO Concentration: [CISN 110 and CISN 111] or CISN 119",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": "Concentration",
+       "stated": {
+        "min": 3,
+        "max": 4
+       },
+       "courses": [
+        {
+         "code": "CISN 110",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CISN 111",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CISN 119",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Linux Concentration",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Concentration",
+       "stated": {
+        "min": 17,
+        "max": 17
+       },
+       "courses": [
+        {
+         "code": "CISC 324",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CISN 110",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CISN 111",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CISN 119",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CISN 120",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CISN 121",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CISN 122",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Linux Concentration: A minimum of 3 units from the following",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": "Concentration",
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "CISP 400",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CISS 342",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Windows Concentration",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Concentration",
+       "stated": {
+        "min": 19,
+        "max": 19
+       },
+       "courses": [
+        {
+         "code": "CISN 110",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CISN 111",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CISN 300",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CISN 302",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CISN 307",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CISN 308",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "CISN 119",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Windows Concentration: A minimum of 3 units from the following",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": "Concentration",
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "CISP 370",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CISS 341",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 29,
+     "listed": 29
+    },
+    "extracted_run": "43212067552"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 29,
+     "listed": 29,
+     "gaps": [
+      "option_lists_read_apart"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 3
+  },
+  {
+   "college": "American River College",
+   "control_number": "30595",
+   "award": "A.A- T Degree",
+   "extracted_run": "44535418752",
+   "moves_to": "heading_not_in_text",
+   "words": "Associate in Arts in Psychology for Transfer (AA-T) degree (heading on the page before 852, not in the text)",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 50,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 50
+   },
+   "own": "own_list",
+   "path": "kb/program_requirements_college/american_river/records/30595.json",
+   "before_image": {
+    "program_title": "Psychology",
+    "award": "A.A- T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=852",
+    "measure": "units",
+    "total_min": 18,
+    "total_max": 19,
+    "record": {
+     "program": {
+      "section_heading": "Associate in Arts in Psychology for Transfer (AA-T) degree (heading on the page before 852, not in the text)",
+      "measure": "units",
+      "total_units": {
+       "min": 18,
+       "max": 19
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "Cal-GETC",
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "differentiate between scientifically derived knowledge versus pseudoscience within the field of psychology.",
+       "compare and contrast the major theoretical perspectives in psychology.",
+       "define and apply basic psychological terminology regarding behavior, cognition, and emotion, and be able to express it clearly when writing or speaking about psychology.",
+       "evaluate psychological data, use the scientific method, draw reasonable conclusions, recognize the ethical implications of these conclusions, and apply these to personal, community, and scientific problems.",
+       "employ and integrate psychological principles that lay the foundation for life-long personal growth and development of interpersonal and social skills.",
+       "demonstrate appropriate interpersonal and social skills in interactions with a diverse population using principles of equity, justice, and inclusion."
+      ],
+      "careers": [
+       "case management",
+       "sales and marketing",
+       "health care facility administration",
+       "teaching",
+       "law enforcement",
+       "licensed psychologists",
+       "industrial/organizational psychologists",
+       "consumer psychologists",
+       "research psychologists"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required Program (continued from previous page)",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ECON 310",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "STAT C1000",
+           "units": 4,
+           "catalog_addition": false
+          },
+          {
+           "code": "STAT C1000H",
+           "units": 4,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC 335",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List A",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "PSYC 305",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC 320",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC 340",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "PSYC 481",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC 342",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC 354",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC 356",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC 359",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC 361",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC 370",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC 373",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC 390",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List B",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "PSYC 365",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "SWCD 330",
+           "units": 3,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC 372",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ECE 312",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC 375",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "GERON 305",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC 400",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "SWCD 340",
+           "units": 3,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC 401",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "SWCD 341",
+           "units": 3,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC 402",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "SWCD 342",
+           "units": 3,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 28,
+     "listed": 32
+    },
+    "extracted_run": "44535418752"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 28,
+     "listed": 32,
+     "gaps": [
+      "heading_not_in_text"
+     ],
+     "confidence": {
+      "unit_arithmetic": 20,
+      "course_list_match": 50,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 50
+     }
+    }
+   },
+   "i": 4
+  },
+  {
+   "college": "American River College",
+   "control_number": "39341",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "extracted_run": "39047245752",
+   "moves_to": "heading_not_in_text",
+   "words": "The extracted text begins mid-table on page 211; the program heading, description and the heading/rule over the first course list are not present (likely on page 210). The first list is recorded as 'all', but its units (42 HVACR + 41 PLUMB = 83) plus the 16-unit work experience block far exceed the printed Total Units: 48, so the first list is probably a choice (e.g., a units minimum or options) stated on the preceding page. Reviewer should check page 210.",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 50,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 50
+   },
+   "own": "own_list",
+   "path": "kb/program_requirements_college/american_river/records/39341.json",
+   "before_image": {
+    "program_title": "Refrigeration Service Technician Apprenticeship",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=211",
+    "measure": "units",
+    "total_min": 48,
+    "total_max": 48,
+    "record": {
+     "program": {
+      "section_heading": "Refrigeration Service Technician Apprenticeship (heading not in the extracted text)",
+      "measure": "units",
+      "total_units": {
+       "min": 48,
+       "max": 48
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "adjust and calibrate a variable air volume (VAV) box.",
+       "build control panels.",
+       "design a pneumatic control system.",
+       "create a wiring ladder diagram.",
+       "demonstrate the use of automatic systems inputs and outputs.",
+       "perform building automation system (BAS) installation, wiring, and testing.",
+       "apply safety guidelines to electrical control systems."
+      ],
+      "careers": [
+       "Refrigeration technicians"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required courses (heading not in the extracted text)",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "HVACR 101",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HVACR 102",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HVACR 110",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HVACR 111",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HVACR 120",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HVACR 122",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HVACR 130",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HVACR 132",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HVACR 140",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HVACR 142",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HVACR 144",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HVACR 146",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HVACR 152",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HVACR 160",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HVACR 161",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HVACR 165",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HVACR 170",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HVACR 171",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HVACR 173",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HVACR 174",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HVACR 176",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMB 101",
+         "units": 4.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMB 120",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMB 161",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMB 162",
+         "units": 6,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMB 180",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMB 181",
+         "units": 3.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMB 182",
+         "units": 4.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMB 190",
+         "units": 4.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMB 191",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMB 192",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "A minimum of 16 units from the following",
+       "rule": "choose_units",
+       "minimum": 16,
+       "option_group": null,
+       "stated": {
+        "min": 16,
+        "max": 16
+       },
+       "courses": [
+        {
+         "code": "HVACR 298",
+         "units": 0.5,
+         "units_max": 6,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLUMB 298",
+         "units": 0.5,
+         "units_max": 6,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "STMFT 298",
+         "units": 0.5,
+         "units_max": 6,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 34,
+     "listed": 34
+    },
+    "extracted_run": "39047245752"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 34,
+     "listed": 34,
+     "gaps": [
+      "heading_not_in_text"
+     ],
+     "confidence": {
+      "unit_arithmetic": 20,
+      "course_list_match": 50,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 50
+     }
+    }
+   },
+   "i": 5
+  }
+ ],
+ "shared_pages": {
+  "12238": [
+   "07206"
+  ],
+  "30595": [
+   "19330"
+  ],
+  "39341": [
+   "39731",
+   "39732"
+  ]
+ },
+ "representation": "checks.gaps and checks.confidence added as the load reads the filed score (a passing row: checks.arithmetic to equal); checks.coverage, invented and the record unchanged",
+ "claim_check_reads": "Today's capture (sources.json): every course an entry names among the codes it found, and a course an entry says the printed total leaves out on neither it nor the state's list. A note's quoted figures are the reader's words, never re-read here.",
+ "follow_verdict": "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows (confirm_matches); the apply aborts, writing nothing, unless the count is 0.",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'American River College', '07207', 39047245752, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISC 310\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISP 350\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Degree Requirements\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISP 300\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"CISP 480\",\"units\":5}],\"catalog_addition\":false,\"code\":\"CISP 360\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISP 400\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISP 430\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"C++ concentration\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":15,\"min\":13}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISP 300\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"CISP 480\",\"units\":5}],\"catalog_addition\":false,\"code\":\"CISP 360\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISP 401\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Java concentration\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISC 320\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISC 323\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CISC 324\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CISP 310\",\"units\":4,\"units_max\":null}],\"minimum\":3,\"name\":\"Java concentration: A minimum of 3 units from the following\",\"option_group\":\"Concentration\",\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[\"entry-level programmer/developer\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":true,\"ge_pattern\":\"Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"describe how programming relates to the development of an information system.\",\"develop programs using the top-down method.\",\"apply structured programming techniques.\",\"translate a detailed design document into a computer programming language solution.\",\"verify the syntactic correctness of a program.\",\"verify the logical correctness of a program.\",\"analyze the behavior of a program and locate defects.\"],\"section_heading\":\"A.S. in CIS: Computer Programming\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":10,\"placed\":10}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"option_lists_read_apart\"],\"invented\":true,\"listed\":10,\"placed\":10}'::jsonb),\n  (2, 'American River College', '12191', 39047245752, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 300\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSYC 372\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ECE 312\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 314\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 320\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 321\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 326\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 331\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"NUTRI 320\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ECE 415\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 420\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 422\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 424\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 430\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Certificate Requirements\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"director/site supervisor\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"ARC General Education\",\"ge_units\":{\"max\":16,\"min\":16},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"formulate an educational philosophy to guide the operation of an early childhood program.\",\"support culturally respectful interactions among children, parents, teachers and the community.\",\"evaluate curriculum for sound pedagogy, content, and breadth, including planning for the learning environment, the daily routines, and the individual needs of children.\",\"manage program planning, budgeting, governing boards, enrollment, and personnel in accordance with the regulations of Title 5 (California Education Code of Regulations) and Title 22 (California Social Services Code of Regulations).\",\"create procedures for implementing standards of health, nutrition, and safety in group care early childhood education settings.\",\"plan professional and personal growth and advocacy activities to support children, families and teachers.\"],\"section_heading\":\"Site Supervisor Certificate\",\"total_units\":{\"max\":60,\"min\":60}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"unit_line_not_read\"],\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb),\n  (3, 'American River College', '12238', 43212067552, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1000\",\"units\":3},{\"catalog_addition\":false,\"code\":\"ENGL C1000H\",\"units\":3},{\"catalog_addition\":false,\"code\":\"ESLW 340\",\"units\":4}],\"catalog_addition\":false,\"code\":\"BUS 310\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISA 315\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISC 320\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISC 323\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISC 350\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISC 361\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISS 310\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Degree Requirements\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":15,\"min\":14}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISC 324\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 340\",\"units\":3.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 341\",\"units\":3.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 342\",\"units\":3.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISS 330\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"CISCO Concentration\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":18.5,\"min\":17.5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 110\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 111\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 119\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"CISCO Concentration: [CISN 110 and CISN 111] or CISN 119\",\"option_group\":\"Concentration\",\"rule\":\"choose_units\",\"stated\":{\"max\":4,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISC 324\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 110\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 111\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 119\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 120\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 121\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 122\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"Linux Concentration\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":17,\"min\":17}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISP 400\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISS 342\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Linux Concentration: A minimum of 3 units from the following\",\"option_group\":\"Concentration\",\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 110\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 111\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 300\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 302\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 307\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"CISN 119\",\"units\":3}],\"catalog_addition\":false,\"code\":\"CISN 308\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Windows Concentration\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":19,\"min\":19}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISP 370\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISS 341\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Windows Concentration: A minimum of 3 units from the following\",\"option_group\":\"Concentration\",\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[\"network technical support staff\",\"network administrators\",\"network designers\",\"network systems engineer\",\"network troubleshooters\",\"information systems security specialists\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":true,\"ge_pattern\":\"Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"install, configure, monitor, manage, backup, and customize a Microsoft server.\",\"design, construct and apply group policies and NTFS file system permissions to secure files and network resources.\",\"design, construct and troubleshoot a Microsoft Active Directory network using Microsoft workstation and server operating systems.\",\"design, evaluate, construct and implement a routed IP network using industry standard routing protocols and routing equipment, in a wired or wireless configuration.\",\"design, evaluate, construct and implement a multilayer switching network using switching protocols, such as Ethernet, in a wired or wireless configuration.\",\"design, install and test Wide Area Network (WAN) connectivity solutions.\",\"design and evaluate basic security and access solutions in a switched or routed LAN or WAN.\",\"design, evaluate, specify, and install various types of network media.\",\"install, configure, monitor, manage, backup, and customize a Linux server.\",\"design, evaluate and implement and troubleshoot typical Linux server services in the areas of user accounts and security, printing, web server, telnet server, firewall, email server, domain name service, dynamic host configuration protocol, network file system, and Microsoft Windows compatibility.\"],\"section_heading\":\"A.S. in CIS: Computer Networking Management\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":29,\"placed\":29}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"option_lists_read_apart\"],\"invented\":true,\"listed\":29,\"placed\":29}'::jsonb),\n  (4, 'American River College', '30595', 44535418752, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4},{\"catalog_addition\":false,\"code\":\"STAT C1000H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ECON 310\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 335\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Program (continued from previous page)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 305\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 320\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSYC 481\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PSYC 340\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 342\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 354\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 356\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 359\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 361\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 370\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 373\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 390\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"List A\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"SWCD 330\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PSYC 365\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ECE 312\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PSYC 372\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"GERON 305\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PSYC 375\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"SWCD 340\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PSYC 400\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"SWCD 341\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PSYC 401\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"SWCD 342\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PSYC 402\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"List B\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[\"case management\",\"sales and marketing\",\"health care facility administration\",\"teaching\",\"law enforcement\",\"licensed psychologists\",\"industrial/organizational psychologists\",\"consumer psychologists\",\"research psychologists\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"differentiate between scientifically derived knowledge versus pseudoscience within the field of psychology.\",\"compare and contrast the major theoretical perspectives in psychology.\",\"define and apply basic psychological terminology regarding behavior, cognition, and emotion, and be able to express it clearly when writing or speaking about psychology.\",\"evaluate psychological data, use the scientific method, draw reasonable conclusions, recognize the ethical implications of these conclusions, and apply these to personal, community, and scientific problems.\",\"employ and integrate psychological principles that lay the foundation for life-long personal growth and development of interpersonal and social skills.\",\"demonstrate appropriate interpersonal and social skills in interactions with a diverse population using principles of equity, justice, and inclusion.\"],\"section_heading\":\"Associate in Arts in Psychology for Transfer (AA-T) degree (heading on the page before 852, not in the text)\",\"total_units\":{\"max\":19,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":32,\"placed\":28}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":50,\"ge_pattern\":null,\"source\":50,\"unit_arithmetic\":20},\"coverage\":true,\"gaps\":[\"heading_not_in_text\"],\"invented\":true,\"listed\":32,\"placed\":28}'::jsonb),\n  (5, 'American River College', '39341', 39047245752, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 101\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 102\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 110\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 111\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 120\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 122\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 130\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 132\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 140\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 142\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 144\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 146\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 152\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 160\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 161\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 165\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 170\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 171\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 173\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 174\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 176\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMB 101\",\"units\":4.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMB 120\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMB 161\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMB 162\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMB 180\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMB 181\",\"units\":3.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMB 182\",\"units\":4.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMB 190\",\"units\":4.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMB 191\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMB 192\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required courses (heading not in the extracted text)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 298\",\"units\":0.5,\"units_max\":6},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMB 298\",\"units\":0.5,\"units_max\":6},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STMFT 298\",\"units\":0.5,\"units_max\":6}],\"minimum\":16,\"name\":\"A minimum of 16 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":16,\"min\":16}}],\"program\":{\"careers\":[\"Refrigeration technicians\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"adjust and calibrate a variable air volume (VAV) box.\",\"build control panels.\",\"design a pneumatic control system.\",\"create a wiring ladder diagram.\",\"demonstrate the use of automatic systems inputs and outputs.\",\"perform building automation system (BAS) installation, wiring, and testing.\",\"apply safety guidelines to electrical control systems.\"],\"section_heading\":\"Refrigeration Service Technician Apprenticeship (heading not in the extracted text)\",\"total_units\":{\"max\":48,\"min\":48}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":34,\"placed\":34}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":50,\"ge_pattern\":null,\"source\":50,\"unit_arithmetic\":20},\"coverage\":true,\"gaps\":[\"heading_not_in_text\"],\"invented\":true,\"listed\":34,\"placed\":34}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "pre_read_md5": "with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) as (values\n  (1, 'American River College', '07207', 39047245752, 'c8442f4b7aa42313a461334c47cf0dfe', '5c9222670e1257a3f0aaa9ed33420bf4', '441452aca0d2acbf9b4848791d5c623f'),\n  (2, 'American River College', '12191', 39047245752, '6aca1763dd188d6921f83819d39e30ac', '3e096e5d8483d0570dfc23bf65a968b0', '585754dabd72d745c8ebfa201980cfb7'),\n  (3, 'American River College', '12238', 43212067552, '3fdb009fab22981f69d21723cafb5a86', '077c543235a78b9caa6fc4c1d7d724e9', '60a446653c149e0869e5e75029c8c675'),\n  (4, 'American River College', '30595', 44535418752, '70ee04fdf2e5fb3251b12be1b98cba00', 'f5efa18d44bd2bf4e67bc370af368ca3', 'b581305919be1d9279a362d262d9b681'),\n  (5, 'American River College', '39341', 39047245752, '8f5ad279d7b8c9413022f0193b3cf7f2', 'db490ca8012a7848af424ef80ddf2930', 'b6dadd805daa53b0a27695f0d9f7d8ca'))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.record::text) = v.rec_md5),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.checks::text) = v.chk_md5),\n  'already_after', count(*) filter (where md5(r.checks::text) = v.after_md5),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'American River College', '07207', 39047245752, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISC 310\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISP 350\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Degree Requirements\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISP 300\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"CISP 480\",\"units\":5}],\"catalog_addition\":false,\"code\":\"CISP 360\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISP 400\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISP 430\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"C++ concentration\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":15,\"min\":13}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISP 300\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"CISP 480\",\"units\":5}],\"catalog_addition\":false,\"code\":\"CISP 360\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISP 401\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Java concentration\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISC 320\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISC 323\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CISC 324\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CISP 310\",\"units\":4,\"units_max\":null}],\"minimum\":3,\"name\":\"Java concentration: A minimum of 3 units from the following\",\"option_group\":\"Concentration\",\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[\"entry-level programmer/developer\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":true,\"ge_pattern\":\"Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"describe how programming relates to the development of an information system.\",\"develop programs using the top-down method.\",\"apply structured programming techniques.\",\"translate a detailed design document into a computer programming language solution.\",\"verify the syntactic correctness of a program.\",\"verify the logical correctness of a program.\",\"analyze the behavior of a program and locate defects.\"],\"section_heading\":\"A.S. in CIS: Computer Programming\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":10,\"placed\":10}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"option_lists_read_apart\"],\"invented\":true,\"listed\":10,\"placed\":10}'::jsonb),\n  (2, 'American River College', '12191', 39047245752, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 300\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSYC 372\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ECE 312\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 314\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 320\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 321\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 326\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 331\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"NUTRI 320\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ECE 415\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 420\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 422\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 424\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 430\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Certificate Requirements\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"director/site supervisor\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"ARC General Education\",\"ge_units\":{\"max\":16,\"min\":16},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"formulate an educational philosophy to guide the operation of an early childhood program.\",\"support culturally respectful interactions among children, parents, teachers and the community.\",\"evaluate curriculum for sound pedagogy, content, and breadth, including planning for the learning environment, the daily routines, and the individual needs of children.\",\"manage program planning, budgeting, governing boards, enrollment, and personnel in accordance with the regulations of Title 5 (California Education Code of Regulations) and Title 22 (California Social Services Code of Regulations).\",\"create procedures for implementing standards of health, nutrition, and safety in group care early childhood education settings.\",\"plan professional and personal growth and advocacy activities to support children, families and teachers.\"],\"section_heading\":\"Site Supervisor Certificate\",\"total_units\":{\"max\":60,\"min\":60}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"unit_line_not_read\"],\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb),\n  (3, 'American River College', '12238', 43212067552, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1000\",\"units\":3},{\"catalog_addition\":false,\"code\":\"ENGL C1000H\",\"units\":3},{\"catalog_addition\":false,\"code\":\"ESLW 340\",\"units\":4}],\"catalog_addition\":false,\"code\":\"BUS 310\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISA 315\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISC 320\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISC 323\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISC 350\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISC 361\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISS 310\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Degree Requirements\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":15,\"min\":14}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISC 324\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 340\",\"units\":3.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 341\",\"units\":3.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 342\",\"units\":3.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISS 330\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"CISCO Concentration\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":18.5,\"min\":17.5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 110\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 111\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 119\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"CISCO Concentration: [CISN 110 and CISN 111] or CISN 119\",\"option_group\":\"Concentration\",\"rule\":\"choose_units\",\"stated\":{\"max\":4,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISC 324\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 110\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 111\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 119\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 120\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 121\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 122\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"Linux Concentration\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":17,\"min\":17}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISP 400\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISS 342\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Linux Concentration: A minimum of 3 units from the following\",\"option_group\":\"Concentration\",\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 110\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 111\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 300\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 302\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 307\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"CISN 119\",\"units\":3}],\"catalog_addition\":false,\"code\":\"CISN 308\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Windows Concentration\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":19,\"min\":19}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISP 370\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISS 341\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Windows Concentration: A minimum of 3 units from the following\",\"option_group\":\"Concentration\",\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[\"network technical support staff\",\"network administrators\",\"network designers\",\"network systems engineer\",\"network troubleshooters\",\"information systems security specialists\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":true,\"ge_pattern\":\"Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"install, configure, monitor, manage, backup, and customize a Microsoft server.\",\"design, construct and apply group policies and NTFS file system permissions to secure files and network resources.\",\"design, construct and troubleshoot a Microsoft Active Directory network using Microsoft workstation and server operating systems.\",\"design, evaluate, construct and implement a routed IP network using industry standard routing protocols and routing equipment, in a wired or wireless configuration.\",\"design, evaluate, construct and implement a multilayer switching network using switching protocols, such as Ethernet, in a wired or wireless configuration.\",\"design, install and test Wide Area Network (WAN) connectivity solutions.\",\"design and evaluate basic security and access solutions in a switched or routed LAN or WAN.\",\"design, evaluate, specify, and install various types of network media.\",\"install, configure, monitor, manage, backup, and customize a Linux server.\",\"design, evaluate and implement and troubleshoot typical Linux server services in the areas of user accounts and security, printing, web server, telnet server, firewall, email server, domain name service, dynamic host configuration protocol, network file system, and Microsoft Windows compatibility.\"],\"section_heading\":\"A.S. in CIS: Computer Networking Management\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":29,\"placed\":29}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"option_lists_read_apart\"],\"invented\":true,\"listed\":29,\"placed\":29}'::jsonb),\n  (4, 'American River College', '30595', 44535418752, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4},{\"catalog_addition\":false,\"code\":\"STAT C1000H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ECON 310\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 335\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Program (continued from previous page)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 305\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 320\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSYC 481\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PSYC 340\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 342\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 354\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 356\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 359\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 361\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 370\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 373\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 390\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"List A\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"SWCD 330\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PSYC 365\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ECE 312\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PSYC 372\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"GERON 305\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PSYC 375\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"SWCD 340\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PSYC 400\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"SWCD 341\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PSYC 401\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"SWCD 342\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PSYC 402\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"List B\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[\"case management\",\"sales and marketing\",\"health care facility administration\",\"teaching\",\"law enforcement\",\"licensed psychologists\",\"industrial/organizational psychologists\",\"consumer psychologists\",\"research psychologists\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"differentiate between scientifically derived knowledge versus pseudoscience within the field of psychology.\",\"compare and contrast the major theoretical perspectives in psychology.\",\"define and apply basic psychological terminology regarding behavior, cognition, and emotion, and be able to express it clearly when writing or speaking about psychology.\",\"evaluate psychological data, use the scientific method, draw reasonable conclusions, recognize the ethical implications of these conclusions, and apply these to personal, community, and scientific problems.\",\"employ and integrate psychological principles that lay the foundation for life-long personal growth and development of interpersonal and social skills.\",\"demonstrate appropriate interpersonal and social skills in interactions with a diverse population using principles of equity, justice, and inclusion.\"],\"section_heading\":\"Associate in Arts in Psychology for Transfer (AA-T) degree (heading on the page before 852, not in the text)\",\"total_units\":{\"max\":19,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":32,\"placed\":28}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":50,\"ge_pattern\":null,\"source\":50,\"unit_arithmetic\":20},\"coverage\":true,\"gaps\":[\"heading_not_in_text\"],\"invented\":true,\"listed\":32,\"placed\":28}'::jsonb),\n  (5, 'American River College', '39341', 39047245752, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 101\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 102\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 110\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 111\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 120\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 122\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 130\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 132\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 140\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 142\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 144\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 146\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 152\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 160\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 161\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 165\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 170\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 171\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 173\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 174\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 176\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMB 101\",\"units\":4.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMB 120\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMB 161\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMB 162\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMB 180\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMB 181\",\"units\":3.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMB 182\",\"units\":4.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMB 190\",\"units\":4.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMB 191\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMB 192\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required courses (heading not in the extracted text)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 298\",\"units\":0.5,\"units_max\":6},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMB 298\",\"units\":0.5,\"units_max\":6},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STMFT 298\",\"units\":0.5,\"units_max\":6}],\"minimum\":16,\"name\":\"A minimum of 16 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":16,\"min\":16}}],\"program\":{\"careers\":[\"Refrigeration technicians\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"adjust and calibrate a variable air volume (VAV) box.\",\"build control panels.\",\"design a pneumatic control system.\",\"create a wiring ladder diagram.\",\"demonstrate the use of automatic systems inputs and outputs.\",\"perform building automation system (BAS) installation, wiring, and testing.\",\"apply safety guidelines to electrical control systems.\"],\"section_heading\":\"Refrigeration Service Technician Apprenticeship (heading not in the extracted text)\",\"total_units\":{\"max\":48,\"min\":48}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":34,\"placed\":34}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":50,\"ge_pattern\":null,\"source\":50,\"unit_arithmetic\":20},\"coverage\":true,\"gaps\":[\"heading_not_in_text\"],\"invented\":true,\"listed\":34,\"placed\":34}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\nf as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number\n        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true\n       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)),\ne(expect) as (values (5)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when f.n > 0\n            then ('s739a piles confirm guard: ' || f.n || ' rows hold a matching confirm verdict ' || f.keys::text)::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s739a piles guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, f;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'American River College', '07207', 39047245752, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISC 310\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISP 350\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Degree Requirements\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISP 300\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"CISP 480\",\"units\":5}],\"catalog_addition\":false,\"code\":\"CISP 360\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISP 400\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISP 430\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"C++ concentration\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":15,\"min\":13}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISP 300\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"CISP 480\",\"units\":5}],\"catalog_addition\":false,\"code\":\"CISP 360\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISP 401\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Java concentration\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISC 320\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISC 323\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CISC 324\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CISP 310\",\"units\":4,\"units_max\":null}],\"minimum\":3,\"name\":\"Java concentration: A minimum of 3 units from the following\",\"option_group\":\"Concentration\",\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[\"entry-level programmer/developer\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":true,\"ge_pattern\":\"Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"describe how programming relates to the development of an information system.\",\"develop programs using the top-down method.\",\"apply structured programming techniques.\",\"translate a detailed design document into a computer programming language solution.\",\"verify the syntactic correctness of a program.\",\"verify the logical correctness of a program.\",\"analyze the behavior of a program and locate defects.\"],\"section_heading\":\"A.S. in CIS: Computer Programming\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":10,\"placed\":10}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"option_lists_read_apart\"],\"invented\":true,\"listed\":10,\"placed\":10}'::jsonb),\n  (2, 'American River College', '12191', 39047245752, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 300\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSYC 372\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ECE 312\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 314\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 320\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 321\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 326\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 331\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"NUTRI 320\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ECE 415\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 420\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 422\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 424\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 430\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Certificate Requirements\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"director/site supervisor\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"ARC General Education\",\"ge_units\":{\"max\":16,\"min\":16},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"formulate an educational philosophy to guide the operation of an early childhood program.\",\"support culturally respectful interactions among children, parents, teachers and the community.\",\"evaluate curriculum for sound pedagogy, content, and breadth, including planning for the learning environment, the daily routines, and the individual needs of children.\",\"manage program planning, budgeting, governing boards, enrollment, and personnel in accordance with the regulations of Title 5 (California Education Code of Regulations) and Title 22 (California Social Services Code of Regulations).\",\"create procedures for implementing standards of health, nutrition, and safety in group care early childhood education settings.\",\"plan professional and personal growth and advocacy activities to support children, families and teachers.\"],\"section_heading\":\"Site Supervisor Certificate\",\"total_units\":{\"max\":60,\"min\":60}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"unit_line_not_read\"],\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb),\n  (3, 'American River College', '12238', 43212067552, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1000\",\"units\":3},{\"catalog_addition\":false,\"code\":\"ENGL C1000H\",\"units\":3},{\"catalog_addition\":false,\"code\":\"ESLW 340\",\"units\":4}],\"catalog_addition\":false,\"code\":\"BUS 310\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISA 315\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISC 320\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISC 323\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISC 350\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISC 361\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISS 310\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Degree Requirements\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":15,\"min\":14}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISC 324\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 340\",\"units\":3.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 341\",\"units\":3.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 342\",\"units\":3.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISS 330\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"CISCO Concentration\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":18.5,\"min\":17.5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 110\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 111\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 119\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"CISCO Concentration: [CISN 110 and CISN 111] or CISN 119\",\"option_group\":\"Concentration\",\"rule\":\"choose_units\",\"stated\":{\"max\":4,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISC 324\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 110\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 111\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 119\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 120\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 121\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 122\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"Linux Concentration\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":17,\"min\":17}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISP 400\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISS 342\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Linux Concentration: A minimum of 3 units from the following\",\"option_group\":\"Concentration\",\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 110\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 111\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 300\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 302\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISN 307\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"CISN 119\",\"units\":3}],\"catalog_addition\":false,\"code\":\"CISN 308\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Windows Concentration\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":19,\"min\":19}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISP 370\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CISS 341\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Windows Concentration: A minimum of 3 units from the following\",\"option_group\":\"Concentration\",\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[\"network technical support staff\",\"network administrators\",\"network designers\",\"network systems engineer\",\"network troubleshooters\",\"information systems security specialists\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":true,\"ge_pattern\":\"Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"install, configure, monitor, manage, backup, and customize a Microsoft server.\",\"design, construct and apply group policies and NTFS file system permissions to secure files and network resources.\",\"design, construct and troubleshoot a Microsoft Active Directory network using Microsoft workstation and server operating systems.\",\"design, evaluate, construct and implement a routed IP network using industry standard routing protocols and routing equipment, in a wired or wireless configuration.\",\"design, evaluate, construct and implement a multilayer switching network using switching protocols, such as Ethernet, in a wired or wireless configuration.\",\"design, install and test Wide Area Network (WAN) connectivity solutions.\",\"design and evaluate basic security and access solutions in a switched or routed LAN or WAN.\",\"design, evaluate, specify, and install various types of network media.\",\"install, configure, monitor, manage, backup, and customize a Linux server.\",\"design, evaluate and implement and troubleshoot typical Linux server services in the areas of user accounts and security, printing, web server, telnet server, firewall, email server, domain name service, dynamic host configuration protocol, network file system, and Microsoft Windows compatibility.\"],\"section_heading\":\"A.S. in CIS: Computer Networking Management\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":29,\"placed\":29}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"option_lists_read_apart\"],\"invented\":true,\"listed\":29,\"placed\":29}'::jsonb),\n  (4, 'American River College', '30595', 44535418752, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4},{\"catalog_addition\":false,\"code\":\"STAT C1000H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ECON 310\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 335\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Program (continued from previous page)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 305\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 320\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSYC 481\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PSYC 340\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 342\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 354\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 356\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 359\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 361\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 370\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 373\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 390\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"List A\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"SWCD 330\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PSYC 365\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ECE 312\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PSYC 372\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"GERON 305\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PSYC 375\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"SWCD 340\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PSYC 400\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"SWCD 341\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PSYC 401\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"SWCD 342\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PSYC 402\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"List B\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[\"case management\",\"sales and marketing\",\"health care facility administration\",\"teaching\",\"law enforcement\",\"licensed psychologists\",\"industrial/organizational psychologists\",\"consumer psychologists\",\"research psychologists\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"differentiate between scientifically derived knowledge versus pseudoscience within the field of psychology.\",\"compare and contrast the major theoretical perspectives in psychology.\",\"define and apply basic psychological terminology regarding behavior, cognition, and emotion, and be able to express it clearly when writing or speaking about psychology.\",\"evaluate psychological data, use the scientific method, draw reasonable conclusions, recognize the ethical implications of these conclusions, and apply these to personal, community, and scientific problems.\",\"employ and integrate psychological principles that lay the foundation for life-long personal growth and development of interpersonal and social skills.\",\"demonstrate appropriate interpersonal and social skills in interactions with a diverse population using principles of equity, justice, and inclusion.\"],\"section_heading\":\"Associate in Arts in Psychology for Transfer (AA-T) degree (heading on the page before 852, not in the text)\",\"total_units\":{\"max\":19,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":32,\"placed\":28}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":50,\"ge_pattern\":null,\"source\":50,\"unit_arithmetic\":20},\"coverage\":true,\"gaps\":[\"heading_not_in_text\"],\"invented\":true,\"listed\":32,\"placed\":28}'::jsonb),\n  (5, 'American River College', '39341', 39047245752, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 101\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 102\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 110\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 111\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 120\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 122\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 130\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 132\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 140\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 142\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 144\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 146\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 152\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 160\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 161\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 165\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 170\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 171\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 173\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 174\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 176\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMB 101\",\"units\":4.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMB 120\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMB 161\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMB 162\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMB 180\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMB 181\",\"units\":3.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMB 182\",\"units\":4.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMB 190\",\"units\":4.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMB 191\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMB 192\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required courses (heading not in the extracted text)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HVACR 298\",\"units\":0.5,\"units_max\":6},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLUMB 298\",\"units\":0.5,\"units_max\":6},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STMFT 298\",\"units\":0.5,\"units_max\":6}],\"minimum\":16,\"name\":\"A minimum of 16 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":16,\"min\":16}}],\"program\":{\"careers\":[\"Refrigeration technicians\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"adjust and calibrate a variable air volume (VAV) box.\",\"build control panels.\",\"design a pneumatic control system.\",\"create a wiring ladder diagram.\",\"demonstrate the use of automatic systems inputs and outputs.\",\"perform building automation system (BAS) installation, wiring, and testing.\",\"apply safety guidelines to electrical control systems.\"],\"section_heading\":\"Refrigeration Service Technician Apprenticeship (heading not in the extracted text)\",\"total_units\":{\"max\":48,\"min\":48}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":34,\"placed\":34}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":50,\"ge_pattern\":null,\"source\":50,\"unit_arithmetic\":20},\"coverage\":true,\"gaps\":[\"heading_not_in_text\"],\"invented\":true,\"listed\":34,\"placed\":34}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (5)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s739a piles rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;"
+}

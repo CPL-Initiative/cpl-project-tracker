@@ -117,7 +117,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "noted_figures_differ",
+    "label": "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires.",
+    "words": "The AGEH 48 OR AGEH 94 row prints 3 units only; no units are printed beside AGEH 94 (the state file stores 1 unit, and the Irrigation certificate lists it as 1-2), so its unit value is unclear. | Major 36-37 recorded as total_units; Degree Total 60, General Education (SCGE) 21, and 'Aditional Electives 5-6*' (number varies with double-counting) recorded as degree_elective_units."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 100,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

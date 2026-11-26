@@ -64,7 +64,7 @@
    "status": "equal",
    "computed": [
     29.0,
-    32.0
+    29.0
    ],
    "stated": [
     29.0,
@@ -72,7 +72,28 @@
    ],
    "against": "program",
    "why": [],
-   "meets": true,
+   "pooled": [
+    {
+     "blocks": [
+      "AGRICULTURE SCIENCE BREADTH COURSES",
+      "AGRICULTURE SCIENCE BREADTH COURSES"
+     ],
+     "figure": [
+      9.0,
+      9.0
+     ],
+     "minimum": false,
+     "parts": [
+      9.0,
+      12.0
+     ],
+     "read": [
+      9.0,
+      9.0
+     ],
+     "words": "The outer group 'AGRICULTURE SCIENCE BREADTH COURSES - COMPLETE 9 UNITS' (Total 9) contains two sub-blocks: one printed 6-9 units (PLSC/ANSC/NR) and one printed 3 units (AGEC)."
+    }
+   ],
    "rescored": "A1 rescored as filed under today's adding-up rules (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358)"
   },
   "repeated": {
@@ -93,6 +114,12 @@
    "count": 1,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -332,5 +359,6 @@
    "A stray lead-in 'Upon satisfactory completion of this award, the student should be prepared to:' appears before the program title line with no outcomes under it; outcomes recorded from the Program Learning Outcomes heading."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

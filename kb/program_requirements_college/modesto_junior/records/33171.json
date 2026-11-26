@@ -74,6 +74,7 @@
     17.0,
     17.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -94,6 +95,9 @@
    "count": 0,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -216,5 +220,6 @@
    "The description mentions 'entry-level jobs skills in equine husbandry and housing' but names no specific career titles, so careers is empty."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

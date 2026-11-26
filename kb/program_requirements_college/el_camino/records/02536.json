@@ -71,7 +71,29 @@
     27.5
    ],
    "against": "program",
-   "why": []
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     51.5,
+     51.5
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     24.0
+    ],
+    "why": [],
+    "fill": [
+     8.5,
+     8.5
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -91,6 +113,9 @@
    "count": 3,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "read"
   },
   "pass": true
  },
@@ -240,5 +265,6 @@
    "Careers taken from the program description ('entry-level employment and job upgrades in fire services and emergency medical fields') and the note on employment as a fire fighter."
   ]
  },
- "extracted_run": "38631686677"
+ "extracted_run": 45768189197,
+ "read_run": "38631686677"
 }

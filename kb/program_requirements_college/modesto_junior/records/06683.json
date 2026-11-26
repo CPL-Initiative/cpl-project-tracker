@@ -60,18 +60,21 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    60.5,
-    62.5
+    75.5,
+    77.5
    ],
    "stated": [
     75.5,
     77.5
    ],
-   "why": [
-    "the blocks sum to 60.5-62.5; the catalog states 75.5-77.5"
+   "against": "program",
+   "why": [],
+   "ge_included": [
+    15.0,
+    15.0
    ]
   },
   "repeated": {
@@ -93,7 +96,10 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
  },
  "record": {
   "program": {
@@ -108,7 +114,11 @@
    "outcomes": [],
    "careers": [
     "Respiratory Therapist"
-   ]
+   ],
+   "ge_units": {
+    "min": 15,
+    "max": 15
+   }
   },
   "blocks": [
    {
@@ -354,5 +364,17 @@
    "No program learning outcomes are printed in the provided text. The text begins mid-sentence (truncated at the start)."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": null,
+   "now": {
+    "min": 15,
+    "max": 15
+   },
+   "words": "TO EARN AN ASSOCIATE IN SCIENCE DEGREE IN RESPIRATORY CARE\n(Total\n15)\nComplete all of the following\nCONSULT WITH AN EDUCATIONAL COUNSELOR FOR SELECTION OF THE FOLLOWING MJC REQUIREMENTS:\n0\nAREA 1B"
+  }
+ ],
+ "read_run": "38477845911"
 }

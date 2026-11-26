@@ -78,6 +78,7 @@
     29.0,
     29.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -98,6 +99,9 @@
    "count": 0,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -247,5 +251,6 @@
    "The description mentions professional certifications (Certified Public Accountant, Certified Management Accountant) as goals requiring a bachelor's degree; these were not recorded as careers for this certificate."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

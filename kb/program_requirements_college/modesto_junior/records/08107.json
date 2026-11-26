@@ -78,6 +78,7 @@
     15.0,
     15.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -98,6 +99,9 @@
    "count": 0,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -177,5 +181,6 @@
    "The text names no careers; 'nursery production industry' appears only inside an outcome and was not recorded as a career."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

@@ -46,34 +46,40 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 13,
+   "placed": 15,
    "listed": 17,
-   "share": 0.765,
+   "share": 0.882,
    "missing": [
-    "COMM321",
     "COMM335",
-    "COMM374",
-    "ENGWR384"
+    "COMM374"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "COMMC1004",
+     "listed": "COMM321",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ENGL384",
+     "listed": "ENGWR384",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 5,
+   "count": 3,
    "codes": [
     "COMM336",
     "COMM339",
-    "COMM369",
-    "COMMC1004",
-    "ENGL384"
+    "COMM369"
    ],
    "flagged": [
     "COMM336",
     "COMM339",
-    "COMM369",
-    "COMMC1004",
-    "ENGL384"
+    "COMM369"
    ],
    "pass": true
   },
@@ -330,5 +336,6 @@
    "COMM C1004 likely corresponds to closed-list COMM 321 (Interpersonal Communication) under C-ID common course numbering; ENGL 384 likely corresponds to closed-list ENGWR 384."
   ]
  },
- "extracted_run": "39047070975"
+ "extracted_run": 45771862247,
+ "read_run": "39047070975"
 }

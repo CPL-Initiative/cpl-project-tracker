@@ -98,7 +98,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "unit_line_not_read",
+    "label": "The catalog prints a requirement as a line of units with no course named, and the record leaves the line out; with it the courses add to the printed total.",
+    "words": "The certificate also requires 'A minimum of 23 units from the following: 23': at least 16 units including one course from each of four ARC General Education areas (Natural Science or Mathematical Concepts & Quantitative Reasoning; English Composition or Oral Communication & Critical Thinking; Arts & Humanities; Social & Behavioral Sciences), plus 7 additional units that may be GE courses or any other ECE courses. No courses are listed, so no block was recorded; the 16 GE units are recorded in ge_units and the pattern as ARC General Education. | Required core courses sum to 37 units; 37 + 23 = 60, matching the printed Total Units: 60."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

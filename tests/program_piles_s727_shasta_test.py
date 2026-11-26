@@ -100,7 +100,7 @@ check([[c["code"] for c in b["courses"]] for b in b30580] == [[c["code"] for c i
       "30580's record is 43618's course for course")
 
 # The live run, read as the receipts stood before this plan's own apply.
-before = W.posted_runs(skip=("s727c",))
+before = W.posted_runs(skip=("s727c", "s739b"))
 check(all(max(before[cn])[1] == W._load(cn)["extracted_run"] for cn in ROWS),
       "before the apply, every row's latest posted run is its committed run")
 check(all(W.on_live_run(W._load(cn)) for cn in ROWS), "every row is on its live run")

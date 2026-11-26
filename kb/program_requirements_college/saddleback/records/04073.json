@@ -101,7 +101,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "waived_course_counted",
+    "label": "The page prints a requirement at a range from zero units, since a student may meet it without the course (a certification, an exam or earlier coursework), and the record counts the course, so its units match the top of the printed range and not its low end.",
+    "words": "The four piano 'Select one' blocks (each 0.0-2.0 units) can each be satisfied by the course OR a proficiency exam; recorded as choose 1 with the course as the only listed option. These sit under the Required Core heading whose printed total is 12.0-20.0 units, which includes the piano units. | Ensemble requirement counts four semesters including repeated classes, so the minimum of 4 is semesters/enrollments rather than distinct courses."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

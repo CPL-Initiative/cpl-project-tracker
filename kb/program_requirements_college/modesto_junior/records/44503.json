@@ -84,6 +84,7 @@
     24.0,
     25.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -104,6 +105,12 @@
    "count": 0,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -314,5 +321,6 @@
    "Degree total is 60 units with Cal-GETC (34 units) and 17-18 elective units as needed; these are degree-level, not part of the 24-25 unit major, so open_elective_units is null."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

@@ -74,6 +74,7 @@
     15.0,
     15.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -94,6 +95,9 @@
    "count": 2,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -187,5 +191,6 @@
    "Careers recorded are the fields named in the description ('enter the field of Floral Design and Flower Shop Management')."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

@@ -2088,6 +2088,44 @@
     }
    ]
   },
+  "El Camino College": {
+   "why": "S739 (the pooled reading's next). Free reconcile 45768189197 rescored El Camino's filed records under today's scorer: Marketing A.S. 02487 reads 51-62 against the degree's 60, because its reading filed general education as 24-34 across both patterns the page prints. The page words them apart (college page read 45772237973, kb/college_reads/el_camino_pooled_next_s739.json): 'GE Patterns', 'Complete one of the following:', 'ECC GE: 24 units', 'Required for local degrees (AA and AS).', 'Cal-GETC: 34 units', 'Required for transfer degrees (AA-T and AS-T).', then 'Electives', 'As needed to reach a minimum of 60 degree-applicable units.' and 'Minimum Degree Total: 60 units'. So a local degree takes ECC GE's 24, and the step replaces a filed 24-34 with 24 on a local degree whose page prints both sentences; it touches no other figure and no transfer degree. With 24, 02487 adds to 51-52 and electives fill the 60. Six local degrees hold the range (02481, 02487, 02527, 38839, 38949, 43992); the step moves 02487's verdict alone (tests/program_reconcile_s739_pooled_test.py). 02487 keeps its filed record until a reconcile applies the step.",
+   "steps": [
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "was": {
+      "min": 24,
+      "max": 34
+     },
+     "value": {
+      "min": 24,
+      "max": 24
+     },
+     "awards": "local",
+     "pattern": "ECC\\s+GE:\\s*24\\s+units\\s+Required\\s+for\\s+local\\s+degrees\\s+\\(AA\\s+and\\s+AS\\)\\.?\\s+Cal-?GETC:\\s*34\\s+units\\s+Required\\s+for\\s+transfer\\s+degrees"
+    }
+   ],
+   "site_pages": {
+    "19861": {
+     "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3552&print",
+     "evidence": "Marketing Certificate of Achievement 19861: its own page, linked from Programs of Study as 'Marketing Certificate of Achievement' (college page read 45772237973) and read as the capture reads it (run 45772822110): the heading 'Marketing Certificate of Achievement', 'Required Courses:' BUS 108, BUS 110, BUS 111, BUS 112 and BUS 113 at 3 units each, the five the state lists, and 'Total Units: 15'. The filed capture handed it the degree's page 'Marketing, AS' (poid 3551), which prints the A.S. alone, so its record placed none of its courses."
+    },
+    "19866": {
+     "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3622&print",
+     "evidence": "Journalism Certificate of Achievement 19866: its own page, linked from Programs of Study as 'Journalism Certificate of Achievement' (college page read 45772237973) and read as the capture reads it (run 45772822110): the heading 'Journalism Certificate of Achievement', 'Required Courses:' and 'Total Units: 21'. The filed capture handed it the transfer degree's page 'Journalism, AA-T' (poid 3623), so its record placed none of its courses."
+    },
+    "38948": {
+     "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3699&print",
+     "evidence": "Entrepreneurial Studies Certificate of Achievement 38948: its own page, linked from Programs of Study as 'Entrepreneurial Studies Certificate of Achievement' (college page read 45772237973) and read as the capture reads it (run 45772822110): the heading 'Entrepreneurial Studies Certificate of Achievement', 'Required Core:', two lists headed '3-4 units from:' and 'Total Units: 19-20'. The filed capture handed it the degree's page 'Entrepreneurial Studies, AS' (poid 3697), so its record placed none of its courses."
+    },
+    "43993": {
+     "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3728&print",
+     "evidence": "Hybrid, Electric, and Alternative Fuels Certificate of Achievement 43993: its own page, linked from Programs of Study as 'Hybrid, Electric, and Alternative Fuels Certificate of Achievement' (college page read 45772237973) and read as the capture reads it (run 45772822110): the heading 'Hybrid, Electric, and Alternative Fuels Certificate of Achievement', 'Required Core: 18 units' and 'Total Units: 18'. The filed capture handed it the degree's page 'Hybrid, Electric, and Alternative Fuels, AS' (poid 3729), so its record placed none of its courses. The Certificate of Accomplishment of nearly the same name (poid 3684) is another award."
+    }
+   },
+   "site_pages_why": "S739 (the pooled reading's next; the gap census's reader_page_assignment lever): El Camino's catalog gives each of these four certificates a page of its own, and the capture handed each its sister degree's page, which prints the degree alone. Each is pinned to its own page; a pin binds only where the capture reads that page and its heading prints the title with its award, and a refused pin reads the program from no page. The capture's Acalog road does not read site_pages yet (kb/_program_requirements_college.py sets site_pins for curriQunet, eLumen and the sitemap roads alone): read 45773663927 (only= the four, extract 1) filed no site_pins account, bound each certificate to its degree page as before and sent none, at $0. The pins bind once the Acalog road reads them, a reader change with its own second reader; until then they move nothing. Reversible by deleting this entry."
+  },
   "East Los Angeles College": {
    "why": "S644, the harvest's NEXT 5. East Los Angeles's degrees say electives fill the degree without the word elective, so the scorer's electives guard fails them: transfer pages print 'COMPLETE ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS' (quoted by the readings of 32154, 32980, 33382, 37923, 42672 and 45935; 31017 and 35720 quote it in mixed case), local pages 'COMPLETE ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS.' (43649, 37956; 35309 and 41132 quote 'Complete additional degree applicable units, if needed, to reach 60 units'). Diagnosis docs/harvest_wave3_diagnoses_s639.md, East Los Angeles causes 1 and 3. The first three steps file the sentence as electives_fill_words, which the guard (electives_named) accepts where the text prints it. They read only from the record's own heading onward (before: end of text, so the heading scope of kb/_program_requirements_reconcile.py applies, as Glendale's steps use it): a capture is a page window that can hold the program before it, whose sentence is not this record's (review of #3193; 32170 reads pages 359-360 after Social Work's section). A record whose heading the window does not print takes no sentence. The fourth gives a transfer degree that names Cal-GETC and no units the 34 the ADT paragraph of the same section prints, 'Cal-GETC ... (34 semester/45 quarter units)' (quoted by the readings of 31017, 32154, 32170, 33013, 33382, 41231 and 43632; 41097's reading saw it on page 130 and left ge_units empty), only where the record names the pattern and the degree total (only_with ge_pattern and degree_total), so a record that passes without a pattern, or holds its major alone, is never given units. Measured on the filed records by kb/_program_requirements_readings_measure.py: 20 records fail on the guard and 19 pass once it is answered (the readings of 10 quote a sentence word for word, the rest paraphrase it; the 9 that do not quote it move only if the reconcile run finds the sentence after their own heading); with the fourth step, and its guard answered, 41097 passes as overlap and 35720 stays unequal (59-65 against 60). No passing record moves. Session decision for Sam to revise (d-electives-fill-words-s644); reversible by deleting this entry. S714 (lane 2's cheap piles, page reads 45173124249 and 45173349853): the steps read from the record's plan line where the reader completed its heading from the description (own_heading_end: the page prints 'Associate in Arts in · Journalism for Transfer · (Academic Plan E032980G)', the reading 'Associate in Arts in Journalism for Transfer Degree (Academic Plan E032980G)'); two local degrees are held from the sentence by name; a local degree's own double-counting note files ge_overlap, its own high-unit waiver takes the waived 6 units off its 27 of general education; a course printed to be completed twice counts twice; two printed codes are renamed to the file's rows. The college-wide 'associate' gate moved onto each step, so the repeat step also reads certificates.",
    "steps": [
@@ -2200,7 +2238,17 @@
      "date": "2026-11-23",
      "evidence": "The 2026-2027 catalog prints 'ESL  NC 045 Workplace English ....0' in Automotive Fundamentals 37510 (page read 45173349853, pdf page 386), beside ACAD PR 014CE and ACAD PR 005CE, which keep the noncredit CE ending; the state's file lists ESL NC 45CE Workplace English at the college and no ESL NC 45."
     }
-   ]
+   ],
+   "pdf_pages": {
+    "38332": {
+     "page": 195,
+     "words": "Geo-Spatial Engineering and Technologies (Academic Plan E038332D)",
+     "through": 196,
+     "until": "IT Technician Pathway: Stage 1",
+     "evidence": "S739 (lever): Geo-Spatial Engineering and Technologies certificate 38332: its heading and plan line 'Geo-Spatial Engineering and Technologies (Academic Plan E038332D)' print at the foot of PDF p.195, and its list (ENG SUP 121, 221, 224, 225, 200, 201 and 202, ENG GEN 185 and MATH 241 or 241S) with 'Total 20' on p.196; the window ends where 'IT Technician Pathway: Stage 1' opens the next certificate (college-page-read run 45771828002; fixture tests/fixtures/program_requirements_ela_pins_s739.json). Paid read 45769480150 handed it pp.198-199, the Associate in Science (Academic Plan E038337C), so its record placed none of its 7 listed courses."
+    }
+   },
+   "pdf_pages_why": "S739 (lever, the gap census's paid_read lever, census of 2026-11-26 01:19Z): paid read 45769480150 handed the Geo-Spatial Engineering and Technologies certificate 38332 its sister degree's section. It is pinned to its own section: the page and words its plan line opens on, `through` the page its list ends on, and `until` the words the next certificate opens on, so the window holds that section alone. A pin binds only while the file prints the words, the until words after them and every title word between; otherwise the program gets no fresh text and its filed record stands. Respiratory Therapy B.S. 45540 is a named gap (east_los_angeles/named_gaps_s739.json). Reversible by deleting pdf_pages."
   },
   "Los Angeles Pierce College": {
    "why": "S644, the harvest's lever 5 (general education given its units). Pierce's local degrees offer two patterns and the award table prints each one's units: 'Cal-GETC (34 units)' and 'LACCD GE (21 units)' (the reading of Child Development A.A. 08330, notes). A degree on either pattern carries 21 to 34 units of general education, as Monterey Peninsula's 'MPC General Education or Cal-GETC' (24-34), Columbia's CC-GE or Cal-GETC (21-34) and Los Angeles Valley's plans (27-34) read. The step sets that span only where the page prints both figures and the record names the pattern and the degree total (only_with ge_pattern and degree_total). Measured on the filed records by kb/_program_requirements_readings_measure.py: 08330 passes (57-70 against 60, within); no passing record moves. Session decision for Sam to revise (d-ge-pattern-units-s644); reversible by deleting this entry.",
@@ -2801,6 +2849,33 @@
     }
    ],
    "steps": []
+  },
+  "Modesto Junior College": {
+   "why": "S739 (the pooled reading's next, plan s731p's holds at Modesto Junior). Respiratory Care A.S. 06683: the page prints 'Respiratory Care (Total 75.5 - 77.5)' over PROGRAM PREREQUISITES (Total 18 - 20), REQUIRED COURSES (RESPIRATORY CARE) (Total 42.5) and 'TO EARN AN ASSOCIATE IN SCIENCE DEGREE IN RESPIRATORY CARE (Total 15)', whose lines are 'CONSULT WITH AN EDUCATIONAL COUNSELOR FOR SELECTION OF THE FOLLOWING MJC REQUIREMENTS: 0' and AREA 1B, AREA 2, AREA 3, AREA 6 and AREA 7 at 3 each (college page read 45768981024, kb/college_reads/modesto_pooled_next_s739.json). The reading recorded the first two and left the 15 out (its note), so its blocks add to 60.5-62.5 against 75.5-77.5. The step files the block's own total as ge_units, and the scorer's ge_included adds it to the printed total (the record names no degree total, so only_without keeps the step to a total that includes its general education). It reads a local degree alone and fills an empty field only. Law, Public Policy, and Society AA-T 42664: the catalog prints BUSAD 249A, 249B and 249C (1, 2 and 3 units) where the state's file lists one row, BUSAD 249ABC, so the record's three codes read as courses the list lacks and the listed row as missing; course_renumbers names the three as that row. Self-recall over Modesto Junior's committed records: tests/program_reconcile_s739_pooled_test.py.",
+   "course_renumbers": {
+    "BUSAD 249A": "BUSAD 249ABC",
+    "BUSAD 249B": "BUSAD 249ABC",
+    "BUSAD 249C": "BUSAD 249ABC"
+   },
+   "course_renumbers_cited": [
+    {
+     "printed": "BUSAD 249A, BUSAD 249B, BUSAD 249C",
+     "file": "BUSAD 249ABC",
+     "units": "1, 2 and 3 as printed; the file's row carries 1",
+     "session": "S739",
+     "date": "2026-11-26",
+     "evidence": "The state's file lists BUSAD 249ABC (CCC000654319) for Law, Public Policy, and Society AA-T 42664, and the 2026-2027 catalog prints the course in LIST A's Internship/Fieldwork area as BUSAD 249A, 249B and 249C at 1, 2 and 3 units (the reading's note on 42664: 'they correspond to the closed-list BUSAD 249ABC'). A code the file lists as printed is never renamed, so Business 06644, Management 06647 and Marketing 06649, whose lists lack the row, keep their three codes as catalog additions."
+    }
+   ],
+   "steps": [
+    {
+     "kind": "fill",
+     "field": "ge_units",
+     "awards": "local",
+     "only_without": "degree_total",
+     "pattern": "TO\\s+EARN\\s+AN\\s+ASSOCIATE\\s+IN\\s+(?:SCIENCE|ARTS)\\s+DEGREE\\s+IN\\s+[A-Z][A-Z ,&/'-]{2,80}?\\s*\\(Total\\s+(?P<min>\\d+(?:\\.\\d+)?)(?:\\s*-\\s*(?P<max>\\d+(?:\\.\\d+)?))?\\)[\\s\\S]{0,160}?MJC\\s+REQUIREMENTS[\\s\\S]{0,40}?AREA\\s+1B\\b"
+    }
+   ]
   },
   "Moreno Valley College": {
    "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints HIST n where the state's Program Course File lists HIS n, the same number and title in every case kb/_prefix_alias_census.py could title (HIST for HIS, 12 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",

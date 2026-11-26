@@ -70,6 +70,7 @@
     21.0,
     26.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -90,6 +91,9 @@
    "count": 0,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -218,5 +222,6 @@
    "No careers are named for the program; the description refers to individuals hired as apprentices by member employers of the Stanislaus County Area Manufacturing and Maintenance Joint Apprenticeship Committee."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

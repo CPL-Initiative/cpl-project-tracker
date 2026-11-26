@@ -3141,21 +3141,22 @@
    "ENGSUP225"
   ],
   "source": {
-   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=198",
-   "title": "Engineering and Technologies Department",
-   "h1": "Engineering and Technologies Department",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=195",
+   "title": "Geo-Spatial Engineering",
+   "h1": "Geo-Spatial Engineering",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    198,
-    199
+    195,
+    196
    ],
    "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "2dca08afe648edc9"
+   "heading_named": true,
+   "pinned": true,
+   "text_sha": "1ed4742e49c4d965"
   },
   "listed": 7,
-  "text_chars": 11800
+  "text_chars": 2051
  },
  {
   "control_number": "38333",

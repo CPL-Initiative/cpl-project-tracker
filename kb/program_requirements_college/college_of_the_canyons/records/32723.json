@@ -46,31 +46,27 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 40,
+   "placed": 41,
    "listed": 45,
-   "share": 0.889,
+   "share": 0.911,
    "missing": [
     "BIOSCI100",
     "BIOSCI100H",
     "KPEA105A",
-    "KPEA125A",
-    "PSYCH104"
+    "KPEA125A"
    ],
-   "unexplained": [
-    "PSYCH104"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 11,
+   "count": 10,
    "codes": [
     "DANCE108",
     "HLHSCI100",
     "KPEA105",
     "KPEA125",
     "KPEA185C",
-    "PSYC104",
     "PSYCC1000",
     "PSYCC1000H",
     "SOCI101",
@@ -89,7 +85,7 @@
     "SOCI101H",
     "STATC1000E"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -131,7 +127,14 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true,
+  "course_renumbers": [
+   {
+    "printed": "PSYC-104",
+    "listed": "PSYCH104",
+    "block": "Plus one courses from the following for three to five units"
+   }
+  ]
  },
  "record": {
   "program": {

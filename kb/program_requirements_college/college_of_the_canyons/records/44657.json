@@ -46,28 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 28,
+   "placed": 30,
    "listed": 30,
-   "share": 0.933,
-   "missing": [
-    "ANTHRO103",
-    "ANTHRO103H"
-   ],
-   "unexplained": [
-    "ANTHRO103",
-    "ANTHRO103H"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "ANTRHO103",
-    "ANTRHO103H"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -108,7 +99,19 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true,
+  "course_renumbers": [
+   {
+    "printed": "ANTRHO-103",
+    "listed": "ANTHRO103",
+    "block": "Plus one course from the following:"
+   },
+   {
+    "printed": "ANTRHO-103H",
+    "listed": "ANTHRO103H",
+    "block": "Plus one course from the following:"
+   }
+  ]
  },
  "record": {
   "program": {
