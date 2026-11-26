@@ -1,0 +1,42 @@
+{
+ "_readme": "S739 (the pooled reading's next, lane 1), after college page read 45772237973: Programs of Study links a page of its own for each of the four certificates the capture binds to its sister degree's page (Marketing Certificate of Achievement poid 3552, Journalism Certificate of Achievement 3622, Entrepreneurial Studies Certificate of Achievement 3699, Hybrid, Electric, and Alternative Fuels Certificate of Achievement 3728), and the degree pages print the degree alone. This read prints each certificate's own page as the capture reads it: its heading, whether it prints the certificate's courses with units and a total, and so whether a site_pages pin would bind (19861, 19866, 38948, 43993). Four loads, no model call, nothing written.",
+ "college": "El Camino College",
+ "questions": {
+  "own_page_text": "How each certificate's own page heads the program, and whether it prints the certificate's courses with their units and a total."
+ },
+ "keywords": [
+  "Certificate of Achievement[^\\n]{0,160}",
+  "Total[^\\n]{0,80}",
+  "\\d+ units?\\b[^\\n]{0,40}"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page_text"
+   ],
+   "capture_view": true,
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3552&print"
+  },
+  {
+   "answers": [
+    "own_page_text"
+   ],
+   "capture_view": true,
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3622&print"
+  },
+  {
+   "answers": [
+    "own_page_text"
+   ],
+   "capture_view": true,
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3699&print"
+  },
+  {
+   "answers": [
+    "own_page_text"
+   ],
+   "capture_view": true,
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3728&print"
+  }
+ ]
+}
