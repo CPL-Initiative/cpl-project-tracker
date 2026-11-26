@@ -597,15 +597,17 @@ class Pile:
     def _heading_apart(self, filed: dict, heading: str, mate: str) -> bool:
         """The heading tells the record from its page-mate. A mate with another title: its record carries another
         heading, or the same one where the heading goes beyond the mate's title (every word of the mate's title is
-        in this program's title, which has more). A mate with the same title (a sister award): the awards differ and
-        the heading names this record's award (two readers word one section's heading two ways, so the words alone
-        tell nothing: Long Beach City 43021 and 02677, one award the state's file lists twice, stay unshown)."""
+        in this program's title, which has more). A mate with the same title (a sister award): the awards differ,
+        the heading names this record's award, and it does not name the mate's (two readers word one section's
+        heading two ways, so the words alone tell nothing: Long Beach City 43021 and 02677, one award the state's
+        file lists twice, stay unshown; a heading that names both awards, Palomar's 'A.A. Degree Major or
+        Certificate of Achievement', shows neither sister its own: S739's third reader, MAJOR)."""
         g = self.load(mate)
         if g is None:
             return True
         if set(_words(g.get("title"))) == set(_words(filed.get("title"))):
-            mine = award_kind(filed.get("award"))
-            return mine is not None and mine != award_kind(g.get("award")) and mine in kinds_named(heading)
+            mine, theirs, named = award_kind(filed.get("award")), award_kind(g.get("award")), kinds_named(heading)
+            return mine is not None and mine != theirs and mine in named and theirs not in named
         theirs = _words(((g.get("record") or {}).get("program") or {}).get("section_heading"))
         mine = _words(heading)
         n = min(len(theirs), len(mine))

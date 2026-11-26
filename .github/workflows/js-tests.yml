@@ -988,6 +988,16 @@ jobs:
       - name: Cheap piles S739 at Long Beach City (the earlier holds, a named gap, the plan)
         if: matrix.shard == 4 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/program_piles_s739_lbcc_test.py
+      # S739 plan s739h: the records s727f held for a person outside lane 1: Clovis 36326 and 39539 collected with
+      # named gaps, Los Angeles Mission 44849 a named gap with no record, four still held; the plan.
+      - name: Cheap piles S739, the records held for a person (Clovis, a named gap with no record, the plan)
+        if: matrix.shard == 5 && (needs.gate.outputs.decision == 'run')
+        run: python3 tests/program_piles_s739_persons_test.py
+      # S739's own-page guard (kb/_program_piles_s739.py): a heading that names both sisters' awards shows neither
+      # its own (the third reader's MAJOR, Palomar's shape); one award listed twice; a title the heading goes beyond.
+      - name: Cheap piles S739, the own-page guard on made-up page-mates
+        if: matrix.shard == 6 && (needs.gate.outputs.decision == 'run')
+        run: python3 tests/program_piles_s739_guard_test.py
       # S739, the lever: Cosumnes River 33542 (Option II's two lists read as alternatives) and East Los Angeles
       # 33013 (the printed total counts the optional lab), each collected with its named gap; the plan.
       - name: The lever S739 at Cosumnes River and East Los Angeles (two named gaps, the plan)

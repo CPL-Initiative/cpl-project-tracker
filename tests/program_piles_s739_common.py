@@ -13,7 +13,10 @@ plan:
     shape holds), today's scorer does not pass the row, and the own-page guard shows the record's section its own;
   * the holds: each held key has no entry and carries its reason;
   * the plan: the rows named exactly by the receipt and the four SQL files, the confirm guard, a second run plans
-    none; the load's image of each committed record is its receipt's after-image, the record unchanged;
+    none; the load's image of each committed record is its receipt's after-image, the record unchanged; each SQL
+    file is the receipt's own SQL, and the apply, the pre-read and the rollback carry every row's before-image and
+    after-image as the receipt has them (S739's third reader: an after-check or an md5 that differs from the receipt
+    fails here);
   * every row is on its live run both as the receipts stood before this plan's own apply (skip) and after it, so the
     test holds before and after the conductor's apply (p-test-reads-own-apply-receipt-s721).
 """
@@ -120,6 +123,11 @@ def run(W, *, rows: dict, held: dict, scores: dict, day: str, boundaries: int, p
               "%s names exactly the %d" % (part, n))
         if part == "apply":
             check("confirm guard" in sql and "e(expect) as (values (%d))" % n in sql, "the apply guards a confirm")
+        body = rec["pre_read_md5" if part == "preread_md5" else "pre_read" if part == "preread" else part]
+        check(sql.endswith(body + "\n"), "%s is the receipt's own SQL, md5s and all" % part)
+        if part != "preread_md5":
+            check(all(NG._values([r]) in sql for r in rec["records"]),
+                  "%s carries each row's run, before-image and after-image as the receipt has them" % part)
     check(W.plan(write=False)["rows"] == [], "a second run plans none")
     images = NG._load_images({W.college})
     for r in rec["records"]:
