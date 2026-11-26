@@ -13,11 +13,14 @@ its catalog (college-page-read runs 45781997815 and 45783372680):
   2. PINS. Three were handed a sister award's page and have a page of their own that names every listed course:
      Grossmont's Photography certificate 32879 and Cuesta's CHILD DEVELOPMENT TEACHER 21050 and AVIATION MECHANIC -
      POWERPLANT 43053 (kb/program_requirements_reconcile.json, site_pages). Rule A binds each own heading and refuses
-     the heading of the page the filed capture handed it.
+     the heading of the page the filed capture handed it. Copper Mountain's Hospitality Management A.S.-T 41085 is
+     pinned to p.106 of the catalog's reissue of 2026-11-18 (pdf_pages); the fixture
+     tests/fixtures/program_requirements_copper_41085_s739.json holds that page, less its advisor line.
   3. NAMED GAPS (named_gaps_s739.json, no record, no paid read): three general-education pattern certificates
      (Citrus 45031, Los Angeles Harbor 33797, Los Angeles Pierce 45035); two whose own page names fewer than half of
      the state's listed courses, so a pin would be refused (Bakersfield 09237, 7 of 16; Citrus 11244, 4 of 9);
-     Grossmont's English certificate 21402, which names its degree's major; and Los Angeles Pierce 19181, whose own
+     Grossmont's English certificate 21402, which names its degree's major; Copper Mountain's Kinesiology A.A.-T
+     43132, whose page prints renumbered codes (4 of 11 by code); and Los Angeles Pierce 19181, whose own
      section prints its list as number runs after one subject, so the code net reads 23 of 227 (the fixture
      tests/fixtures/program_requirements_pierce_19181_s739.json holds the section as the page read printed it).
      None is also pinned.
@@ -99,9 +102,34 @@ check(len((STEPS.get("Grossmont College") or {}).get("steps") or []) == 2
       and (STEPS.get("Cuesta College") or {}).get("steps") == [],
       "Grossmont's two reconcile steps are as they were, and Cuesta's entry holds no step")
 
+# Copper Mountain 41085: a pdf_pages pin to its own page in the catalog's reissue of 2026-11-18 (p.106). It binds on
+# the page as the page read printed it, the window is that page from the section's banner, and it names all 5 listed
+# courses; on a file whose p.106 does not print the banner and the title's words the pin is refused.
+CMC = "Copper Mountain College"
+CFIX = json.load(open(os.path.join(ROOT, "tests", "fixtures", "program_requirements_copper_41085_s739.json"),
+                      encoding="utf-8"))
+cpins = (STEPS.get(CMC) or {}).get("pdf_pages") or {}
+cpin = cpins.get("41085") or {}
+check(sorted(cpins) == ["41085"] and cpin.get("page") == 106 and "S739" not in cpin.get("words", "")
+      and bool(cpin.get("evidence")), "Copper Mountain's reconcile entry pins 41085 alone, to p.106")
+cpages = [CFIX["pages"].get(str(i + 1), "") for i in range(CFIX["pages_total"])]
+cprog = {"control_number": "41085", "title": "Hospitality Management", "award": "A.S. T Degree",
+         "closed_list": [{"code": c} for c in CFIX["codes"]]}
+cprog = C.with_renumbers([cprog], R.course_renumbers(CMC), (STEPS.get(CMC) or {}).get("prefix_aliases"))[0]
+chead, cwhy = C.pdf_pinned_heading(cpages, cprog, cpin)
+check(chead is not None, "41085: the pin's words and every title word print on p.106 (%s)" % cwhy)
+cgot = C.pdf_best("https://example.edu/c.pdf", cpages, cprog, cprog["closed_list"], "pypdf", chead) if chead else None
+check(bool(cgot) and cgot["pages"] == [106] and cgot["coverage"] == 1.0
+      and "MINIMUM TRANSFERABLE UNITS" in cgot["text"],
+      "41085: the window is p.106, names all 5 listed courses and holds the 60-unit total (%s)"
+      % (cgot and "%s, %s" % (cgot["pages"], cgot["coverage"])))
+moved = [""] * 104 + [cpages[105]] + [""] * (len(cpages) - 105)       # the same text one page earlier
+check(C.pdf_pinned_heading(moved, cprog, cpin)[0] is None, "41085: a file whose p.106 is another page refuses the pin")
+
 # ── 3. the named gaps: each once, a defined reason, a note, never also pinned ──────────────────────────
 NAMED = (("bakersfield", {"09237": "catalog_list_differs"}),
          ("citrus", {"11244": "catalog_list_differs", "45031": "ge_pattern_certificate"}),
+         ("copper_mountain", {"43132": "catalog_renumbered"}),
          ("grossmont", {"21402": "certificate_names_the_major"}),
          ("los_angeles_harbor", {"33797": "ge_pattern_certificate"}),
          ("los_angeles_pierce", {"45035": "ge_pattern_certificate", "19181": "list_printed_as_number_run"}))
