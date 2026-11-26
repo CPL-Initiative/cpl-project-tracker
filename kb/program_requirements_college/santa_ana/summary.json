@@ -2,10 +2,10 @@
  "college": "Santa Ana College",
  "programs": 370,
  "with_closed_list": 359,
- "found": 347,
+ "found": 348,
  "extracted": 347,
- "errors": 1,
- "passed_machine_checks": 331,
+ "errors": 0,
+ "passed_machine_checks": 332,
  "failed": {
   "coverage": 0,
   "invented": 0,
@@ -13,10 +13,10 @@
   "repeated": 1,
   "outcomes": 0
  },
- "cost_usd_run": 0.0,
- "cost_usd_filed": 22.03,
- "cost_per_program": 0.0635,
- "extract_calls": null,
+ "cost_usd_run": 0.11,
+ "cost_usd_filed": 22.14,
+ "cost_per_program": 0.0638,
+ "extract_calls": 1,
  "extract_failed": [],
  "not_found": [
   {
@@ -43,7 +43,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "31594",
@@ -69,7 +70,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "32750",
@@ -95,7 +97,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "43824",
@@ -103,8 +106,9 @@
    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   }
  ],
- "run": "45841675928"
+ "run": "45842667274"
 }
