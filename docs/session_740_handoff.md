@@ -220,3 +220,10 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   sums sit inside their printed range, where S703 decided they take no lists gap
   (`d-lists-gap-holds-range-sums-s703`); its Sonnet reader settles whether that kind is true for each.
 - 10:27Z: #3883 merged (`2e4ccabb`, confirmed on `origin/main`; `main` had not moved since the land branch took it).
+- 10:33Z: the reader of s739k, s739m and s739n: APPLY, FIX THEN APPLY, APPLY. MAJOR: `noted_figures_differ` is not
+  true for Gavilan 08460, 19378, 38787 and 41394, whose sums sit inside their printed ranges (36 in 30-36, 27 in
+  26-27, 24 in 14-24, 53-60 in 48-60): the S703 within-range case. **DECIDED**
+  `d-within-range-sums-hold-for-units-kind-s739`: the four leave s739m (rebuilt at 5 rows), and Orange Coast 41373,
+  applied in s739j on the same reading, rolls back from s739j's receipt to its before-checks; all five hold for a
+  units twin of `hours_within_printed_range`, with Shasta 32162 and College of the Canyons 36793 (the follow-up's
+  item). `piles2` resumed for the fix and the one-row rollback.
