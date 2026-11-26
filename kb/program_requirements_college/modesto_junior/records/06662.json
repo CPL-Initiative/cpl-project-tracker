@@ -70,6 +70,7 @@
     32.5,
     32.5
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -90,6 +91,12 @@
    "count": 1,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -223,5 +230,6 @@
    "Career entry taken from the description: 'entry level employment opportunities in the automotive service industry'."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

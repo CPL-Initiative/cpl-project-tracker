@@ -84,6 +84,7 @@
     17.0,
     18.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -104,6 +105,9 @@
    "count": 0,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -281,5 +285,6 @@
    "The text names no careers beyond the program's own title and its role description ('the role of a Community Health Worker'), so careers is left empty; a reviewer may consider adding 'Community Health Worker'."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

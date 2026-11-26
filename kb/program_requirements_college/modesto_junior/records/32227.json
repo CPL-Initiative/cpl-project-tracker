@@ -70,6 +70,7 @@
     24.0,
     24.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -90,6 +91,12 @@
    "count": 0,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -176,5 +183,6 @@
    "The catalog states 7 units may be double-counted between GE and the major."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

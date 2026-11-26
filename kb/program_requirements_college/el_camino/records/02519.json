@@ -77,7 +77,28 @@
    "against": "program",
    "why": [
     "the blocks sum to 68.0-68.0; the catalog states 48.0-48.0"
-   ]
+   ],
+   "degree": {
+    "pass": false,
+    "status": "unequal",
+    "computed": [
+     92.0,
+     92.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     24.0
+    ],
+    "why": [
+     "the blocks and general education come to 92.0-92.0, past the 60.0-60.0 the catalog prints for the degree"
+    ],
+    "fill": null
+   }
   },
   "repeated": {
    "codes": [],
@@ -97,6 +118,9 @@
    "count": 2,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "read"
   },
   "pass": false,
   "gaps": [
@@ -314,5 +338,6 @@
    "The page prints no program learning outcomes."
   ]
  },
- "extracted_run": "38631686677"
+ "extracted_run": 45768189197,
+ "read_run": "38631686677"
 }

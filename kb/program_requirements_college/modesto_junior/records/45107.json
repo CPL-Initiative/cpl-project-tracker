@@ -70,6 +70,7 @@
     25.0,
     25.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -90,6 +91,9 @@
    "count": 0,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -196,5 +200,6 @@
    "No careers named. The description mentions the 'electrical construction industry' and that ELTEC classes are recognized for the training of 'Electrical Trainees'; neither was recorded as a career, which a reviewer may want to check."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

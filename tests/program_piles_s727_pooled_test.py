@@ -66,8 +66,11 @@ for key, hand in sorted(M.REVIEWED.items()):
     check(off.get("computed") != on.get("computed"), "%s %s: with the reading off the sum differs" % key)
 
 # ── the holds ─────────────────────────────────────────────────────────────
+# S739's free reconcile 45768189197 read El Camino's pages: 02513, 02515 and 02517 pass on the page's electives
+# line, so each is read in either state (p-test-asserts-other-pr-absent-recurs-s731).
+S739_READ = {(M.ELC, "02513"), (M.ELC, "02515"), (M.ELC, "02517")}
 for key in sorted(M.HELD):
-    check(M.outcome(key)[0] != "passes", "%s %s: does not pass under the reading alone" % key)
+    check(key in S739_READ or M.outcome(key)[0] != "passes", "%s %s: does not pass under the reading alone" % key)
 # S731's plan s731p (tests/fixtures/pooled_s731.json) takes five of them forward: 38869 and 43164 pass under its
 # reading, 06655, 08109 and 10602 are collected with their gaps named; the rest stay as s727p left them.
 with open(os.path.join(ROOT, "tests", "fixtures", "pooled_s731.json"), encoding="utf-8") as fh:
@@ -77,10 +80,14 @@ for cn in M.UNMOVED_S720J:
         check(M.outcome((M.MODESTO, cn))[0] == "passes", "Modesto %s: passes, rescored by s731p" % cn)
         continue
     f = M.load((M.MODESTO, cn))
-    check(M.outcome((M.MODESTO, cn))[0] == "unmoved" and not M.scorer_passes(f),
+    # S739's reconcile entry for Modesto Junior passes 06683 (its general education block's 15) and 42664 (BUSAD
+    # 249ABC): either state is read (p-test-asserts-other-pr-absent-recurs-s731); the pooled reading moves neither.
+    check(M.outcome((M.MODESTO, cn))[0] == "unmoved" and (cn in ("06683", "42664") or not M.scorer_passes(f)),
           "Modesto %s: the reading moves nothing and today's scorer does not pass it" % cn)
 for key in ((M.ELC, "02513"), (M.ELC, "02515"), (M.ELC, "02517")):
-    check(M.outcome(key)[0] == "passes_untexted_fill", "%s %s: passes only on an untexted electives fill" % key)
+    # S739's free reconcile 45768189197 read the page's text, which names the electives, so each now passes whole.
+    check(M.outcome(key)[0] in ("passes_untexted_fill", "passes"),
+          "%s %s: passes only on an electives fill, untexted before S739's reconcile read the page" % key)
 
 # ── the plan, read from the fixture ───────────────────────────────────────
 with open(os.path.join(ROOT, fx["receipt"]), encoding="utf-8") as fh:

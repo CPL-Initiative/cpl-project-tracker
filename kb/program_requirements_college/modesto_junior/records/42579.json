@@ -74,6 +74,7 @@
     20.0,
     21.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -94,6 +95,9 @@
    "count": 0,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -248,5 +252,6 @@
    "The first block's name says 'COMPLETE 20-21 UNITS' but its printed total is 16; the 20-21 refers to the whole certificate."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

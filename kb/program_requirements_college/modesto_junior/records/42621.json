@@ -70,6 +70,7 @@
     36.0,
     36.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -90,6 +91,9 @@
    "count": 1,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -176,5 +180,6 @@
    "A stray lead-in 'Upon satisfactory completion of this award, the student should be prepared to:' followed by 'TUTORING *' appears before the Program Learning Outcomes heading with no outcomes under it."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

@@ -82,6 +82,7 @@
     22.0,
     33.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -102,6 +103,12 @@
    "count": 0,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -311,5 +318,6 @@
    "Codes are printed without spaces (e.g., AGEC210, STATC1000) and were kept as printed."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

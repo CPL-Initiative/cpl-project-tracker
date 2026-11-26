@@ -92,6 +92,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "n/a"
+  },
   "pass": true
  },
  "record": {
@@ -272,5 +275,6 @@
    "The catalog prints DART 95 as 2-4 units and DART 99 as 1-3 units. The closed list stores them as 2 and 1 units."
   ]
  },
- "extracted_run": "38631686677"
+ "extracted_run": 45768189197,
+ "read_run": "38631686677"
 }

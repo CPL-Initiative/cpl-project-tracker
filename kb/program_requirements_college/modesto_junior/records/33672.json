@@ -78,6 +78,7 @@
     28.0,
     29.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -98,6 +99,12 @@
    "count": 0,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -227,5 +234,6 @@
    "Text begins mid-sentence and repeats the outcomes lead-in before the section heading; likely page scraping artifact."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }
