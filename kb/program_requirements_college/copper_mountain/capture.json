@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 59,
  "with_closed_list": 48,
- "started": "2026-11-26T14:48:58Z",
+ "started": "2026-11-26T16:07:00Z",
  "pdf": {
   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf",
   "access": "ok",
@@ -13,7 +13,7 @@
   "bytes": 10467608,
   "pages_total": 184,
   "error": null,
-  "chars_total": 886398,
+  "chars_total": 886420,
   "pypdf_accepted": 48,
   "sample": [
    "p56: '2026-2027 Catalog \\n48\\nCopper Mountain College\\nfirst CMC course, as long as they matriculate to CMC during the first \\n16-week semester after their high school graduation.\\nCollege authorities may authorize or require substitutions for \\ndiscon'",
@@ -109,7 +109,7 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.667,
+    "coverage": 1.0,
     "opens": "[page 113] Associate in Science in VOCATIONAL NURSING with emphasis on employment preparation The Vocational Nursing Program prepares men and women for entry level vocational nursing positions as contributing members of "
    },
    {
@@ -128,13 +128,15 @@
    {
     "control_number": "16657",
     "pages": [
-     112
+     112,
+     113,
+     114
     ],
     "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.8,
+    "coverage": 1.0,
     "opens": "[page 112] 2026-2027 Catalog 104 Copper Mountain College NURSING: REGISTEREDNURSING: REGISTERED The Associate Degree - Registered Nursing Program is comprised of 37 units of nursing theory and clinical experience plus "
    },
    {
@@ -147,7 +149,7 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.857,
+    "coverage": 0.886,
     "opens": "[page 109] 2026-2027 Catalog 101 Copper Mountain College Students must complete the required courses for their major. General education units, transferable electives, and total degree units will vary for each student. S"
    },
    {
@@ -159,7 +161,7 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.692,
+    "coverage": 1.0,
     "opens": "[page 110] 2026-2027 Catalog 102 Copper Mountain College Associate in Arts in LIBERAL ARTS: Social & Behavioral Sciences These courses emphasize the perspective, concepts, theories, and methodologies of the disciplin"
    },
    {
@@ -174,7 +176,7 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.727,
+    "coverage": 0.818,
     "opens": "[page 110] 2026-2027 Catalog 102 Copper Mountain College Associate in Arts in LIBERAL ARTS: Social & Behavioral Sciences These courses emphasize the perspective, concepts, theories, and methodologies of the disciplin"
    },
    {
@@ -211,7 +213,7 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.667,
+    "coverage": 1.0,
     "opens": "[page 113] of the program a certificate in vocational nursing is awarded and the graduate is eligible to write the National Council Licensure Examination (NCLEX-PN) for vocational nursing in the state of California. An "
    },
    {
@@ -509,7 +511,7 @@
     "pages": [
      107
     ],
-    "named": true,
+    "named": false,
     "code": null,
     "cn_printed": false,
     "titled": true,
@@ -525,7 +527,7 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.75,
+    "coverage": 1.0,
     "opens": "[page 81] The Communications program includes an Associate in Arts Degree for Transfer in Communication Studies 2.0 consisting of courses from the Communication Studies (Speech) academic discipline and General Educatio"
    },
    {
@@ -641,18 +643,12 @@
     "opens": "[page 95] The Associate in Arts degree in English for Transfer (AA-T) degree is for students who intend to complete a bachelor’s degree in English at a California State University. Core course work explores primarily Wo"
    }
   ],
-  "page_checks": {
-   "read": 1,
-   "own_page": 1,
-   "no_own_page": 0,
-   "not_printed": 0
-  },
   "unproven": []
  },
  "loads": 1,
  "pages_listed": 1,
  "pages_answered": 1,
- "seconds": 32.1,
+ "seconds": 22.6,
  "found": 48,
  "by_method": {
   "no_closed_list": 11,
@@ -712,24 +708,94 @@
  "page_claimed": [],
  "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 5,
+  "0.5-0.8": 0,
   "0.8-1.0": 5,
-  "1.0": 38
+  "1.0": 43
  },
  "would_extract": {
   "against": "kb/program_requirements_college/copper_mountain",
-  "kept": 1,
+  "kept": 2,
   "kept_moved": 0,
-  "programs": 1,
+  "programs": 8,
   "list": [
    {
-    "control_number": "43132",
-    "title": "Kinesiology",
-    "award": "A.A- T Degree",
-    "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=107",
+    "control_number": "14710",
+    "title": "General Business",
+    "award": "A.S. Degree",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=78",
     "coverage": 1.0,
-    "was_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=158",
-    "was_coverage": 0.545,
+    "was_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=77",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "14737",
+    "title": "Vocational Nursing",
+    "award": "A.S. Degree",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=113",
+    "coverage": 1.0,
+    "was_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=112",
+    "was_coverage": 0.667,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "14751",
+    "title": "Fire Technology",
+    "award": "A.S. Degree",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=99",
+    "coverage": 0.824,
+    "was_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=98",
+    "was_coverage": 0.824,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "16657",
+    "title": "Registered Nursing",
+    "award": "A.S. Degree",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=112",
+    "coverage": 1.0,
+    "was_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=111",
+    "was_coverage": 0.8,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "18519",
+    "title": "Liberal Arts Social and Behavioral Sciences",
+    "award": "A.A. Degree",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=110",
+    "coverage": 1.0,
+    "was_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=109",
+    "was_coverage": 0.692,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "20094",
+    "title": "Vocational Nursing",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=113",
+    "coverage": 1.0,
+    "was_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=112",
+    "was_coverage": 0.667,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "43854",
+    "title": "History",
+    "award": "A.A. Degree",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=104",
+    "coverage": 1.0,
+    "was_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=103",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "45594",
+    "title": "Elementary Teacher Education: Integrated Programs",
+    "award": "A.A- T Degree",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=93",
+    "coverage": 1.0,
+    "was_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=92",
+    "was_coverage": 0.944,
     "was_method": "pdf_pages"
    }
   ],
@@ -766,14 +832,6 @@
     "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=72",
     "coverage": 1.0,
     "was_coverage": 1.0
-   },
-   {
-    "control_number": "18518",
-    "title": "Liberal Arts: Arts and Humanities",
-    "award": "A.A. Degree",
-    "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=109",
-    "coverage": 0.857,
-    "was_coverage": 0.857
    },
    {
     "control_number": "19796",
@@ -952,14 +1010,6 @@
     "was_coverage": 1.0
    },
    {
-    "control_number": "43282",
-    "title": "Communication Studies 2.0",
-    "award": "A.A- T Degree",
-    "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=81",
-    "coverage": 0.75,
-    "was_coverage": 0.75
-   },
-   {
     "control_number": "43302",
     "title": "Environmental Science",
     "award": "A.S. T Degree",
@@ -1010,57 +1060,24 @@
   ],
   "held_opens_on_list": [],
   "only": [
-   "43132"
+   "14710",
+   "14737",
+   "14751",
+   "16657",
+   "18519",
+   "20094",
+   "43854",
+   "45594"
   ],
   "not_named": [
    {
-    "control_number": "14710",
-    "title": "General Business",
-    "award": "A.S. Degree",
-    "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=78",
-    "coverage": 1.0,
-    "was_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=77",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "14737",
-    "title": "Vocational Nursing",
-    "award": "A.S. Degree",
-    "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=113",
-    "coverage": 0.667,
-    "was_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=112",
-    "was_coverage": 0.667,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "14751",
-    "title": "Fire Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=99",
-    "coverage": 0.824,
-    "was_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=98",
-    "was_coverage": 0.824,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "16657",
-    "title": "Registered Nursing",
-    "award": "A.S. Degree",
-    "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=112",
-    "coverage": 0.8,
-    "was_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=111",
-    "was_coverage": 0.8,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "18519",
-    "title": "Liberal Arts Social and Behavioral Sciences",
+    "control_number": "18518",
+    "title": "Liberal Arts: Arts and Humanities",
     "award": "A.A. Degree",
-    "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=110",
-    "coverage": 0.692,
-    "was_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=109",
-    "was_coverage": 0.692,
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=109",
+    "coverage": 0.886,
+    "was_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=108",
+    "was_coverage": 0.857,
     "was_method": "pdf_pages"
    },
    {
@@ -1068,19 +1085,9 @@
     "title": "Liberal Arts: Mathematics & Science",
     "award": "A.A. Degree",
     "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=110",
-    "coverage": 0.727,
+    "coverage": 0.818,
     "was_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=109",
     "was_coverage": 0.636,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "20094",
-    "title": "Vocational Nursing",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=113",
-    "coverage": 0.667,
-    "was_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=112",
-    "was_coverage": 0.667,
     "was_method": "pdf_pages"
    },
    {
@@ -1104,13 +1111,13 @@
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "43854",
-    "title": "History",
-    "award": "A.A. Degree",
-    "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=104",
+    "control_number": "43282",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=81",
     "coverage": 1.0,
-    "was_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=103",
-    "was_coverage": 1.0,
+    "was_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=80",
+    "was_coverage": 0.75,
     "was_method": "pdf_pages"
    },
    {
@@ -1121,16 +1128,6 @@
     "coverage": 1.0,
     "was_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=89",
     "was_coverage": 0.857,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "45594",
-    "title": "Elementary Teacher Education: Integrated Programs",
-    "award": "A.A- T Degree",
-    "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=93",
-    "coverage": 1.0,
-    "was_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=92",
-    "was_coverage": 0.944,
     "was_method": "pdf_pages"
    }
   ],
@@ -1167,7 +1164,7 @@
    "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=99"
   },
   "16657": {
-   "sha256": "db7bd0162becc636bc4c574e62d6f61dadd89658529ec3edbd908cbf1a1c7130",
+   "sha256": "6763fbdc12b5743855ad822c0779e4c99d0a4a8954826aa812018bd493c7c616",
    "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=112"
   },
   "18518": {
@@ -1179,7 +1176,7 @@
    "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=110"
   },
   "18520": {
-   "sha256": "74b5d16637f0420aa57557480fe81dfed3f26917239b54728708a23e3283ae78",
+   "sha256": "1cb9681d701d688d89b1199ef1dd807f86653310d999958687ca4729d0a5e154",
    "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=110"
   },
   "19796": {
@@ -1215,7 +1212,7 @@
    "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=70"
   },
   "33381": {
-   "sha256": "b5f11816111242662b828f2683f8c0f28862f0f40931d4ba07e600b041b16df0",
+   "sha256": "ceb2323fbd3508cfcab7de0b77757ecdba5a00cbfee33fae17390f0cac1834da",
    "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=92"
   },
   "33793": {
@@ -1251,7 +1248,7 @@
    "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=86"
   },
   "36808": {
-   "sha256": "d1390bd2f975d679c7296514c4125c28ab7c896b9d91ae91c03a06e47367479c",
+   "sha256": "d4cb66c7cc8fe549e6d3d569825d980824cc3e494f009bb1d1e510b01c000653",
    "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=98"
   },
   "38512": {
@@ -1295,7 +1292,7 @@
    "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=81"
   },
   "43302": {
-   "sha256": "3b5f24978fc00f53163479bbb52fca33c005b559b519e96f0f3e9bfec77c815c",
+   "sha256": "853613e6c291b61fb75cdd9de40e36f4685e12025dea61cde24636e29cc26a36",
    "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=97"
   },
   "43422": {
@@ -1331,5 +1328,5 @@
    "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=95"
   }
  },
- "run": "45842624535"
+ "run": "45855512160"
 }
