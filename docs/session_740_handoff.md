@@ -160,5 +160,5 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   sisters claim `own_heading` when the heading names both awards (Palomar's "A.A. Degree Major or Certificate of
   Achievement": 27 of 348 identical-heading sister pairs both pass); `piles` fixes it, with a Palomar-shaped test,
   before any later plan uses it (`f-heading-apart-both-awards-s739`). MINOR: the common test misses an edited
-  after-image or md5 in the apply SQL. 08:57Z: clean md5 pre-reads, s739e 6 of 6, s739f 2 of 2, s739g 1 of 1; the
+  after-image or md5 in the apply SQL. 08:55Z: clean md5 pre-reads, s739e 6 of 6, s739f 2 of 2, s739g 1 of 1; the
   three applies run in order, each after the last one's receipt.
