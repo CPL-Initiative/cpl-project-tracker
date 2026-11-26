@@ -74,4 +74,11 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 
 ## Split changes during the run
 
-- 13:22Z: the declaration (this file's first commit).
+- 13:22Z: the declaration (this file's first commit), draft #3885.
+- 13:24Z: display build `9e28519af71f` on `claude/s740-display` (built on `609c2a2b` with Python 3.12; the
+  sandbox's default 3.11 prints false STALE lines in `check_generated.sh`, so every worker runs a 3.12 shim at
+  `/home/user/wt/.py312bin`). 13:28Z: the Glendale gate 45829454750 dispatched; green at 13:31Z: 242 Glendale rows at
+  `9e28519af71f`, nothing else moved (live: 18,485 at `3a699eddc8c9`, 16 rows with no display yet). 13:33Z: the whole
+  build dispatched on the branch.
+- 13:31Z: `piles`, `reads` and `reconcile` started on Fable 5.2 at high effort, each in its own worktree off `609c2a2b`
+  (`/home/user/wt/<name>`), told to open no PR (the conductor opens each land) and to leave `.apply` to the conductor.
