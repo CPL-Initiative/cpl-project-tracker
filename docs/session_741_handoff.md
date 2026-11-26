@@ -182,5 +182,18 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   31089 (all named gaps), to a Sonnet second reader. Orange Coast's 13 keep s739j's reasons; Glendale 45068 holds (the
   capture's 16,000-character cap).
 - Records collected by 15:44Z: 58 (adds s740r2 7, Solano 6, San Bernardino Valley 2).
+- 15:50Z: batch 3's reader (Sonnet): s740g, s740h, s740i, s740j APPLY. MINORs for the follow-up: Butte 33579's
+  sentence says the program "requires" the AGS 20/40 list apart from the total while its note says the map places those
+  courses in List A (S721 held it for a reread): reword it, or bring its 70 near 50; Contra Costa 33370's sum 42.5-73.5
+  straddles the printed 47 (defensible); the LATTC and S727 Shasta test edits accept the refiled state without tying it
+  to the S740 receipt. 15:51Z to 16:05Z: clean pre-reads (5 of 5); migrate 45853194962 returned 2 (s740g), 45853610378
+  1 (s740h), 45854815868 1 (s740i), 45855074670 1 (s740j), none skipped; `.apply` restored (`6b723a73`).
+- 15:44Z: San Diego City's fresh read 45836824944 on `claude/s740-reads-sdcity` captured for 90 minutes and failed at
+  its price step; nothing was extracted or charged; its capture artifact stays. To `reads` for the cause.
+- 16:03Z: `reads` pushed seven more cited Copper Mountain pairs and s740r3 (Biology 42178, one named gap; head
+  `65de8fed`); the free reconcile it first proposed would move nothing (the moved-page guard leaves records read from
+  the old address as filed), so a paid read of the eight held programs (about $0.80) runs on a sibling branch,
+  `claude/s740-reads-cm`, cut at `65de8fed` (16:05Z). s740r3 and the pairs to a Sonnet reader.
+- Records collected by 16:05Z: 63 (adds s740g 2, s740h 1, s740i 1, s740j 1).
 - 13:31Z: `piles`, `reads` and `reconcile` started on Fable 5.2 at high effort, each in its own worktree off `609c2a2b`
   (`/home/user/wt/<name>`), told to open no PR (the conductor opens each land) and to leave `.apply` to the conductor.
