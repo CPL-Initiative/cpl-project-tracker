@@ -98,7 +98,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "pool_figure_not_read",
+    "label": "The catalog prints one figure over several lists or nested options together, and the record adds the parts instead, so its units cannot be checked against that figure.",
+    "words": "Physical and Biological Sciences - Total 7 Credits: 'Courses must be in 2 different disciplines, 1 must be a lab course'. Recorded as Physical Sciences, Biological Sciences and Lab sub-lists each choose 1; the catalog does not explicitly require one from each of Physical and Biological, and lab courses (e.g., AST 105, CHE 101, BIO 111) can also satisfy the lecture lists. Reviewer should check this reading. | total_units taken from 'Credits: 34.0-38.0'."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

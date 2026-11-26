@@ -15,7 +15,11 @@ mate's. Pinned here, on records made up in the shape of each case (no committed 
   * a heading that goes beyond the mate's title (Communication Studies 2.0 beside Communication Studies): the longer
     title owns it, the shorter does not;
   * a record whose notes say the heading is not in the text never owns a heading;
-  * award_kind and kinds_named read the state's award words and a heading's.
+  * award_kind and kinds_named read the state's award words and a heading's;
+  * the live-run reading's kept keys (LiveRuns.posted_runs, S739's reader, MINOR): a reread keeps a row whose run is
+    at least its own, so a kept key posts the reread's run only where that run is the latest of the one load that
+    inserted the key; a reread at an earlier run of that load, a key two loads inserted, and a key no load names
+    post none. On made-up receipts in a scratch folder.
 
 Run from repo root: python3 tests/program_piles_s739_guard_test.py
 """
@@ -121,6 +125,37 @@ check(B.kinds_named("Associate in Science for Transfer Degree: Public Health") =
       and B.kinds_named("PLUMBING Associate in Science Degree") == {"science"}
       and B.kinds_named("Certificate of Achievement: Interior Design") == {"certificate"}
       and B.kinds_named("Geosciences Technician") == set(), "kinds_named reads a heading's award words")
+
+# The live-run reading's kept keys, on made-up receipts.
+import json  # noqa: E402
+import tempfile  # noqa: E402
+
+with tempfile.TemporaryDirectory() as tmp:
+    def receipt(name, body):
+        with open(os.path.join(tmp, name), "w", encoding="utf-8") as fh:
+            json.dump(body, fh)
+    receipt("program_requirement_records_college_madeup_100.json",
+            {"at": "2026-01-01T00:00:00Z", "extracted_runs": ["7", "8", "12"], "inserted_keys": ["A", "B", "C"]})
+    receipt("program_requirement_records_college_madeup_200.json",
+            {"at": "2026-01-02T00:00:00Z", "extracted_runs": ["7", "8", "12", "20"], "inserted_keys": ["C"]})
+    receipt("program_requirement_records_college_reread_madeup_300.json",
+            {"at": "2026-01-03T00:00:00Z", "extracted_run": "12", "kept_keys": ["A", "C", "D"]})
+    receipt("program_requirement_records_college_reread_madeup_400.json",
+            {"at": "2026-01-04T00:00:00Z", "extracted_run": "8", "kept_keys": ["B"]})
+    saved = B.NG.RECEIPTS
+    B.NG.RECEIPTS = tmp
+    try:
+        live = B.LiveRuns("Made-up College", "madeup")
+        posted = live.posted_runs()
+        check(posted.get("A") == [("2026-01-03T00:00:00Z", "12")]
+              and live.on_live_run({"control_number": "A", "extracted_run": "12"}),
+              "a key kept at the latest run of the one load that inserted it is on that run")
+        check("B" not in posted and not live.on_live_run({"control_number": "B", "extracted_run": "8"}),
+              "a key kept at an earlier run of its load posts none: its row may hold a later run")
+        check("C" not in posted, "a key two loads inserted posts none")
+        check("D" not in posted, "a kept key no load names posts none")
+    finally:
+        B.NG.RECEIPTS = saved
 
 print("%d checks, %d failures" % (checks[0], len(failures)))
 for m in failures:

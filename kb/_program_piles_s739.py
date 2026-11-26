@@ -479,8 +479,14 @@ class LiveRuns:
     committed receipts posted to its live rows, by S731's rule (kb/_program_piles_s731_lbcc.py posted_runs, whose
     plan_applied this reads, never a copy of it). A load with one run posts its inserted_keys at that run; a load
     over several runs names no run per key and posts none here (Pile.history_live proves such a row from its record
-    file's history); a reread posts its replaced_keys and carried_keys at its extracted_run, and its kept_keys for a
-    key no other receipt posts; every applied plan posts its records' runs. skip names plan tags left out."""
+    file's history); a reread posts its replaced_keys and carried_keys at its extracted_run; every applied plan posts
+    its records' runs. skip names plan tags left out.
+
+    A reread's kept_keys: the reread keeps a row whose run is at least its own (its SQL: cur.extracted_run >=
+    new_run), so a kept key shows the live run is no older than the reread's, never that it is the reread's. It is
+    the reread's run only where the row cannot be newer: no other receipt posts the key, one load inserted it, and
+    the reread's run is the latest of that load's runs (the row was inserted at one of them). Such a key is posted
+    at the reread's run; any other kept key posts none (S739's reader, MINOR)."""
 
     def __init__(self, college: str, slug: str):
         self.college, self.slug = college, slug
@@ -489,6 +495,7 @@ class LiveRuns:
         import _program_piles_s731_lbcc as L
         out: dict = {}
         kept = []
+        multi: dict = {}
         for path in glob.glob(os.path.join(NG.RECEIPTS, "program_requirement_records_*.json")):
             name = os.path.basename(path)
             try:
@@ -508,6 +515,9 @@ class LiveRuns:
                 if len(runs) == 1:
                     for k in d.get("inserted_keys") or []:
                         out.setdefault(str(k), []).append((at, runs[0]))
+                else:
+                    for k in d.get("inserted_keys") or []:
+                        multi.setdefault(str(k), []).append(runs)
             elif not name.startswith("program_requirement_records_college_"):
                 tag = name[:-len(".json")].rsplit("_", 1)[-1]
                 if tag in skip or not L.plan_applied(tag):
@@ -517,7 +527,9 @@ class LiveRuns:
                     if isinstance(r, dict) and r.get("college") == self.college and r.get("extracted_run"):
                         out.setdefault(str(r.get("control_number")), []).append((at, str(r["extracted_run"])))
         for k, at, run in kept:
-            if k not in out:
+            loads = multi.get(k) or []
+            if k not in out and len(loads) == 1 and run.isdigit() and all(r.isdigit() for r in loads[0]) \
+                    and int(run) == max(int(r) for r in loads[0]):
                 out[k] = [(at, run)]
         return out
 
