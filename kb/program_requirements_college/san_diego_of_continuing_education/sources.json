@@ -1568,26 +1568,22 @@
    "COMM661"
   ],
   "source": {
-   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=57",
-   "title": "Visual and Vector Design",
-   "h1": "Visual and Vector Design",
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=61",
+   "title": "Certificate of Completion:",
+   "h1": "Certificate of Completion:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    57,
-    58
+    61,
+    62
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "page_check": {
-    "rule": "A",
-    "page": 57,
-    "share": 1.0
-   },
-   "text_sha": "43d37ad3bce083fd"
+   "pinned": true,
+   "text_sha": "7f74ef81e9fc48f6"
   },
   "listed": 2,
-  "text_chars": 5347
+  "text_chars": 1000
  },
  {
   "control_number": "38412",
