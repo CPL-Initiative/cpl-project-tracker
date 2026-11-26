@@ -2,21 +2,21 @@
  "college": "East Los Angeles College",
  "programs": 234,
  "with_closed_list": 147,
- "found": 136,
+ "found": 135,
  "extracted": 136,
  "errors": 0,
- "passed_machine_checks": 115,
+ "passed_machine_checks": 116,
  "failed": {
-  "coverage": 3,
+  "coverage": 2,
   "invented": 0,
-  "arithmetic": 19,
+  "arithmetic": 18,
   "repeated": 0,
   "outcomes": 2
  },
- "cost_usd_run": 0.17,
- "cost_usd_filed": 10.67,
- "cost_per_program": 0.0784,
- "extract_calls": 2,
+ "cost_usd_run": 0.06,
+ "cost_usd_filed": 10.65,
+ "cost_per_program": 0.0783,
+ "extract_calls": 1,
  "extract_failed": [],
  "not_found": [
   {
@@ -146,7 +146,18 @@
     "coverage": 0.333
    },
    "status": "Active"
+  },
+  {
+   "control_number": "45540",
+   "title": "Respiratory Therapy",
+   "award": "Baccalaureate of Science (B.S.) Degree.",
+   "near_miss": {
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=346",
+    "coverage": 0.375,
+    "page_checks": true
+   },
+   "status": "Active"
   }
  ],
- "run": "45769480150"
+ "run": "45773506402"
 }
