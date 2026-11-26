@@ -140,4 +140,12 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 - 08:33Z: clean md5 pre-reads, s739c 13 of 13 and s739d 3 of 3. 08:34Z: s739c's trigger on `claude/s739-piles`
   (`5302ff02`); migrate 45784291084 returned 13, none skipped. 08:36Z: s739d's trigger (`61d2fcb3`). The `piles`
   worker was told to pull before its next commit. 08:35Z: #3882 opened for `pooled`'s land (head `ddb18d16`, `main`
-  `48966ffa` merged in).
+  `48966ffa` merged in). 08:37Z: migrate 45784554765 returned 3 for s739d, none skipped; `.apply` restored
+  (`d0b32281`).
+- 08:40Z: `piles`' interim 2 (head `2b3566b3`): s739e fixed in round 1 (41150 left the plan and holds; 6 rows,
+  expect 6, its SQL and receipt rewritten); s739f Saddleback 2 named gaps (04073 `waived_course_counted`, 36625
+  `pool_figure_not_read`); s739g Long Beach City 1 (44848 `noted_section_cut_off`; 43021, 37213 and 42970 held). The
+  shared module now tells same-title page-mates apart only where the awards differ and the heading names this record's
+  award (the heading's words alone had let Long Beach City 43021 through beside 02677). A Sonnet reader took s739e's
+  second and last round, s739f, s739g and the shared change.
+- 08:46Z: #3882's `test` failed (lints 2 and 5, run 45784375158); `pooled` resumed to read the two failed jobs and fix.
