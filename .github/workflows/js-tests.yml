@@ -908,6 +908,13 @@ jobs:
       - name: Pooled figures S739 (Modesto Junior's reconcile entry, the wrong joins, the self-recall)
         if: matrix.shard == 1
         run: python3 tests/program_reconcile_s739_pooled_test.py
+      # S740 (the census's reconcile_steps lever, lane 1): San Bernardino Valley's, San Jose City's and Solano's reconcile
+      # entries on the catalog's own words (college-page-read 45835049303): each renumber cited, the course_units step on
+      # the certificate's page, the wrong joins, and the self-recall over every committed record of each college.
+      # It runs on every diff: a step joins the docs-only skip only through tests/lints_docs_only_skip.json, by a trace.
+      - name: Reconcile entries S740 (three colleges' renumbers, one units step, the wrong joins, the self-recall)
+        if: matrix.shard == 1
+        run: python3 tests/program_reconcile_s740_test.py
       # S720 at Cabrillo: the census's 21 wording-rule records, 8 collected with named gaps; the plan.
       - name: Cheap piles S720 at Cabrillo (named gaps, the plan)
         if: matrix.shard == 4
