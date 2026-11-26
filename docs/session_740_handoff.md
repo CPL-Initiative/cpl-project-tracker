@@ -181,3 +181,6 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   held (its invented check fails; the college's call). 09:12Z: `piles` resumed on Cosumnes River's 17 (s739i), then
   Orange Coast's 17 and 08626 (s739j), to stop at 11:00Z.
 - 09:15Z: #3882 merged (`1caef64a`, confirmed on `origin/main`; `main` had not moved since the branch took it).
+- 09:19Z: s739h's reader: APPLY; the shared module's two later changes SOUND (MINOR: a vacuous check in the persons
+  test). 09:20Z: clean md5 pre-read, 2 of 2; Los Angeles Mission 44849 has no live row, as its named gap says. The
+  s739h apply dispatched. 09:23Z: migrate 45790943587 returned 2, none skipped; `.apply` restored (`59486d6e`).
