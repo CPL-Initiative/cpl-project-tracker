@@ -93,3 +93,10 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   "Science" with "Sciences"), $0 paid. It ran free page reads through `college-page-read.yml`, which the lift did not
   name (**DECIDED** `d-free-page-read-workflow-in-lift-s739`: a free, branch-only page read is inside the lift's words).
   To a Sonnet second reader before its land.
+- 07:59Z: `pooled`'s reader: FIX THEN MERGE. The rereads' blast radius: El Camino 126 records, 0 pass to fail, 3 fail
+  to pass, no course or total lost; Modesto 188, 0 pass to fail, 2 fail to pass. MAJOR, pre-existing on `main`: El
+  Camino 02487's filed `score` reads pass (27-28) while the scorer gives fail (51-62 against 60), so the Commons counts
+  a pass the scorer rejects; its committed `was` step fixes it at the next reconcile
+  (`f-elcamino-02487-stale-pass-s739`, for the lane). MINORs: the test crashed rather than asserted with the Modesto
+  steps removed; two sibling tests now accept either state (the S731 pattern). `pooled` resumed to merge `main`,
+  regenerate and tidy the test; the conductor opens the land.
