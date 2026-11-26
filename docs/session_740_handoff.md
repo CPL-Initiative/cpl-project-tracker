@@ -34,7 +34,7 @@ This file is the run's declaration until the checkpoint rewrites it. One writer 
   held in a conductor run, as S727 and S731 held them. Step 11: the outline queue is empty until a census changes.
 - Census on `main` (45733846878, 01:19Z): of 20,282 active programs, 15,577 pass and 4,176 have no passing record;
   529 are collected with a named gap.
-- Supabase's connector answered Bad Gateway from 06:16Z to about 06:22Z; reads went through after.
+- Supabase's connector answered Bad Gateway from 06:16Z to about 06:17Z; reads went through after.
 - **Spend aim:** about $350 for this run, no new worker after about $275. S736 and S737 ran unmetered earlier on
   this UTC day (01:13Z to 05:15Z), so the day stays under about $750.
 
@@ -70,4 +70,10 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 
 ## Split changes during the run
 
-(filled as the run goes)
+- 06:19Z: the declaration, #3879. 06:22Z: `lever`, `pooled` and `piles` started on Fable 5.2 at high effort.
+- 06:23Z: this clone's `origin/main` ref was stale (`56c38abf`, S719's), so the harness made each worker's worktree
+  there. The conductor fetched `main` by name (`51744a70`) and told all three to start their branches at it before
+  any work (`p-shared-clone-origin-main-stale-s739`).
+- 06:24Z: display build `3a699eddc8c9` on `claude/s739-display` (built on `51744a70` with Python 3.12; the sandbox's
+  3.12 lacked `openpyxl` until `requirements.txt` was installed). 06:25Z: the Glendale gate 45768078451 dispatched,
+  beside the day's dashboard run 45766799397.
