@@ -46,37 +46,23 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 16,
+   "placed": 20,
    "listed": 23,
-   "share": 0.696,
+   "share": 0.87,
    "missing": [
-    "BLDGCTQ7",
-    "BLDGCTQ8",
-    "BLDGCTQ9",
     "ECONMT110",
-    "PLUMBNG28",
     "REFAC100",
     "REFAC105"
    ],
-   "unexplained": [
-    "BLDGCTQ7",
-    "BLDGCTQ8",
-    "BLDGCTQ9",
-    "PLUMBNG28"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 4,
-   "codes": [
-    "BLDGTCQ7",
-    "BLDGTCQ8",
-    "BLDGTCQ9",
-    "PLUMBING28"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
@@ -348,5 +334,6 @@
    "Careers are taken from the shared PROGRAM OVERVIEW printed before the A.S. heading."
   ]
  },
- "extracted_run": "39054673977"
+ "extracted_run": 45844759766,
+ "read_run": "39054673977"
 }
