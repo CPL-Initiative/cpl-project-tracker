@@ -187,3 +187,5 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 - 09:25Z: the applied plans s739a to s739h land now from `claude/s739-piles-land`, cut at `59486d6e` and brought up
   to `main` by a Sonnet worker (no data writes), while `piles` keeps writing s739i and s739j on `claude/s739-piles`,
   whose own land follows once the first merges (**DECIDED** `d-land-applied-piles-apart-s739`).
+- 09:34Z: `claude/s739-piles-land` at `a7c293a8` (`main` `1caef64a` merged; the three Commons files took `main`'s side,
+  then both builders reran; `check_generated.sh` all ok; every S739 test passes). #3883 opened for its land.
