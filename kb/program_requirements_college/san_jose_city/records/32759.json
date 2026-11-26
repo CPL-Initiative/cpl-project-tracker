@@ -46,11 +46,10 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 10,
+   "placed": 11,
    "listed": 12,
-   "share": 0.833,
+   "share": 0.917,
    "missing": [
-    "ACCOUNTINGAC",
     "MATH20"
    ],
    "unexplained": [],
@@ -58,13 +57,11 @@
    "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "ACCTG20",
     "MATH62"
    ],
    "flagged": [
-    "ACCTG20",
     "MATH62"
    ],
    "pass": true
@@ -308,5 +305,6 @@
    "Outcomes printed in the page's program outcomes tab; recorded for this award."
   ]
  },
- "extracted_run": "43357106423"
+ "extracted_run": 45840981324,
+ "read_run": "43357106423"
 }
