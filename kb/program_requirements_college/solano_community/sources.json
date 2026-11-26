@@ -1108,7 +1108,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.963,
+  "coverage": 1.0,
   "codes_found": [
    "ANTH2",
    "ANTH24",
@@ -1135,6 +1135,7 @@
    "SJS1",
    "SJS2",
    "SJS30",
+   "SOC23",
    "THEA13"
   ],
   "source": {
@@ -1391,7 +1392,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.938,
+  "coverage": 1.0,
   "codes_found": [
    "CJ1",
    "COUN64",
@@ -1407,6 +1408,7 @@
    "PSYC6",
    "PSYCC1000",
    "SJS1",
+   "SOC2",
    "SOCIC1000"
   ],
   "source": {
@@ -3608,7 +3610,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.903,
+  "coverage": 1.0,
   "codes_found": [
    "ANTH2",
    "ARTH1",
@@ -3636,6 +3638,9 @@
    "POLSC1000",
    "PSYC12",
    "PSYCC1000",
+   "SOC2",
+   "SOC40",
+   "SOC75",
    "SOCIC1000",
    "STATC1000"
   ],
@@ -5073,7 +5078,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.96,
+  "coverage": 1.0,
   "codes_found": [
    "ANTH2",
    "BIOL16",
@@ -5097,6 +5102,7 @@
    "PSYCC1000",
    "SJS1",
    "SJS2",
+   "SOC2",
    "SOCIC1000",
    "STATC1000"
   ],
@@ -5458,7 +5464,7 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.933,
+  "coverage": 1.0,
   "codes_found": [
    "BIOL4",
    "BIOL5",
@@ -5472,6 +5478,7 @@
    "HED5",
    "NUTR10",
    "PSYC30",
+   "SOC2",
    "SOCIC1000",
    "STATC1000"
   ],

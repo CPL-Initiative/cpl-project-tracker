@@ -82,11 +82,15 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Demonstrate proﬁ cient, entry-level aviaƟ on maintenance skills in airframe, powerplant, or airframe and powerplant with emphasis on aircraŌ  engines, aircraŌ  structures, and aircraŌ  systems."
+   ],
+   "why": [
+    "not in the catalog text as printed: Demonstrate proﬁ cient, entry-level aviaƟ on maintenance skills in airframe, pow"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 0,
@@ -96,7 +100,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -232,5 +236,6 @@
    "Program Outcomes are printed once for all Airframe, Powerplant and combination certificates and A.S. degrees; this award shares them."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 45840125172,
+ "read_run": "39035226783"
 }

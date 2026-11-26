@@ -84,11 +84,15 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Comp leted the mandated clinic laboratory hours, technical subjects, pracƟ cal operaƟ ons and business fundamentals."
+   ],
+   "why": [
+    "not in the catalog text as printed: Comp leted the mandated clinic laboratory hours, technical subjects, pracƟ cal o"
+   ],
    "heading_printed": false,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 0,
@@ -101,7 +105,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -176,5 +180,6 @@
    "The closed list stores COSM 100 and COSM 101 without a space ('COSM100', 'COSM101'). They are treated as the same courses the catalog prints as 'COSM 100' and 'COSM 101'."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 45840125172,
+ "read_run": "39035226783"
 }

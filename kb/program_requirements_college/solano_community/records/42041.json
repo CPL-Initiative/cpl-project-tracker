@@ -46,25 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 24,
+   "placed": 25,
    "listed": 25,
-   "share": 0.96,
-   "missing": [
-    "SOC2"
-   ],
-   "unexplained": [
-    "SOC2"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "SOCI2"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
@@ -377,5 +371,6 @@
    "List C heading reads 'select two coursres' (typo in catalog)."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 45840125172,
+ "read_run": "39035226783"
 }
