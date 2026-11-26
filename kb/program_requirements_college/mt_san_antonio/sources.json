@@ -11551,20 +11551,22 @@
    "ELEC56"
   ],
   "source": {
-   "url": "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-computer-engineering-technology-certificate/",
-   "title": "Electronics and Computer Engineering Technology (Certificate T0906) < Mt. San Antonio College",
-   "h1": "Electronics and Computer Engineering Technology (Certificate T0906)",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-technology-level-1-certificate/",
+   "title": "Electronics Technology - Level 1 (Certificate M0679) < Mt. San Antonio College",
+   "h1": "Electronics Technology - Level 1 (Certificate M0679)",
    "text_from": "innerText",
    "label": {
     "award": 1,
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
-   }
+    "section_fit": 0.0,
+    "exact": 0
+   },
+   "pinned": true
   },
   "listed": 3,
-  "text_chars": 4582
+  "text_chars": 2890
  },
  {
   "control_number": "41117",

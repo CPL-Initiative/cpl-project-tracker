@@ -5,18 +5,18 @@
  "found": 386,
  "extracted": 386,
  "errors": 0,
- "passed_machine_checks": 363,
+ "passed_machine_checks": 364,
  "failed": {
   "coverage": 0,
   "invented": 0,
-  "arithmetic": 23,
+  "arithmetic": 22,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd_run": 3.25,
- "cost_usd_filed": 22.1,
- "cost_per_program": 0.0573,
- "extract_calls": 28,
+ "cost_usd_run": 0.04,
+ "cost_usd_filed": 22.09,
+ "cost_per_program": 0.0572,
+ "extract_calls": 1,
  "extract_failed": [],
  "not_found": [
   {
@@ -635,7 +635,8 @@
       "Program Learning Outcomes",
       846
      ]
-    ]
+    ],
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -708,5 +709,5 @@
    "status": "Approved"
   }
  ],
- "run": "44744647809"
+ "run": "45789994593"
 }
