@@ -81,3 +81,6 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   18,727 rows at `3a699eddc8c9` (the 4 with no display now carry one), the same 32 at older builds, none without a
   display. #3880 opened for the merge; the census on `main` follows it.
 - 06:30Z: workers told to open no PR (the run keeps at most 3 open); the conductor opens each land.
+- 06:50Z: #3880 merged (`075d1ee8`, confirmed on `origin/main`) without a final update from `main`, which had moved
+  only by the day's dashboard commit `15088513`, touching none of its files (as `d-display-merged-without-main-update-s731`).
+  The census dispatched on `main` at 06:50Z.
