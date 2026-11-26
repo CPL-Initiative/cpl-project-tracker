@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-26T08:26:58Z",
+ "written_at": "2026-11-26T09:26:31Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,8 +168,8 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17420,
-  "gap": 4915,
+  "passing": 17464,
+  "gap": 4871,
   "with_gap": 118,
   "cost_usd": 1341.28,
   "passed_at_read": 16437,
@@ -189,9 +189,9 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16890,
-  "gap": 4915,
-  "collected_with_gaps": 530,
+  "passing": 16900,
+  "gap": 4871,
+  "collected_with_gaps": 564,
   "discontinued": 0
  },
  "census_live": {
@@ -324,12 +324,12 @@
    "harvested": true,
    "slug": "american_river",
    "programs": 371,
-   "passing": 350,
-   "gap": 21,
+   "passing": 355,
+   "gap": 16,
    "causes": {
     "no_closed_list": 3,
     "page_not_found": 10,
-    "unknown_without_live": 8
+    "unknown_without_live": 3
    },
    "census_causes": {
     "no_closed_list": 2,
@@ -390,8 +390,8 @@
    "run": "45353541681",
    "levers": {
     "reader_page_search": 10,
-    "reconcile_steps": 8,
-    "program_course_file_check": 3
+    "program_course_file_check": 3,
+    "reconcile_steps": 3
    },
    "collection": {
     "program_reader": {
@@ -1881,13 +1881,13 @@
    "harvested": true,
    "slug": "clovis_community",
    "programs": 129,
-   "passing": 100,
-   "gap": 29,
+   "passing": 102,
+   "gap": 27,
    "causes": {
     "no_closed_list": 8,
     "page_not_found": 12,
     "places_none": 2,
-    "unknown_without_live": 7
+    "unknown_without_live": 5
    },
    "census_causes": {
     "coverage_fails": 1,
@@ -1944,7 +1944,7 @@
    "levers": {
     "reader_page_search": 12,
     "program_course_file_check": 8,
-    "reconcile_steps": 7,
+    "reconcile_steps": 5,
     "reader_page_assignment": 2
    },
    "collection": {
@@ -2513,14 +2513,14 @@
    "harvested": true,
    "slug": "college_of_the_canyons",
    "programs": 283,
-   "passing": 229,
-   "gap": 54,
+   "passing": 242,
+   "gap": 41,
    "causes": {
     "found_not_extracted": 1,
     "no_closed_list": 19,
     "page_not_found": 15,
     "places_none": 1,
-    "unknown_without_live": 18
+    "unknown_without_live": 5
    },
    "census_causes": {
     "coverage_fails": 7,
@@ -2588,10 +2588,10 @@
    "levers": {
     "program_course_file_check": 19,
     "reader_page_search": 15,
-    "reconcile_steps": 14,
     "scorer_noncredit_hours": 4,
     "paid_read": 1,
-    "reader_page_assignment": 1
+    "reader_page_assignment": 1,
+    "reconcile_steps": 1
    },
    "collection": {
     "program_reader": {
@@ -6309,13 +6309,13 @@
    "harvested": true,
    "slug": "long_beach_city",
    "programs": 391,
-   "passing": 338,
-   "gap": 53,
+   "passing": 339,
+   "gap": 52,
    "causes": {
     "no_closed_list": 6,
     "page_not_found": 17,
     "places_none": 19,
-    "unknown_without_live": 11
+    "unknown_without_live": 10
    },
    "census_causes": {
     "no_closed_list": 3,
@@ -6375,7 +6375,7 @@
    "levers": {
     "reader_page_assignment": 19,
     "reader_page_search": 17,
-    "reconcile_steps": 11,
+    "reconcile_steps": 10,
     "program_course_file_check": 6
    },
    "collection": {
@@ -6941,13 +6941,13 @@
    "harvested": true,
    "slug": "los_angeles_trade_technical",
    "programs": 211,
-   "passing": 156,
-   "gap": 55,
+   "passing": 162,
+   "gap": 49,
    "causes": {
     "no_closed_list": 23,
     "page_not_found": 20,
     "places_none": 1,
-    "unknown_without_live": 11
+    "unknown_without_live": 5
    },
    "census_causes": {
     "coverage_fails": 8,
@@ -7004,7 +7004,7 @@
    "levers": {
     "program_course_file_check": 23,
     "reader_page_search": 20,
-    "reconcile_steps": 11,
+    "reconcile_steps": 5,
     "reader_page_assignment": 1
    },
    "collection": {
@@ -9911,13 +9911,13 @@
    "harvested": true,
    "slug": "saddleback",
    "programs": 367,
-   "passing": 291,
-   "gap": 76,
+   "passing": 293,
+   "gap": 74,
    "causes": {
     "no_closed_list": 14,
     "page_not_found": 32,
     "places_none": 10,
-    "unknown_without_live": 20
+    "unknown_without_live": 18
    },
    "census_causes": {
     "no_closed_list": 6,
@@ -9973,7 +9973,7 @@
    "run": "45606980427",
    "levers": {
     "reader_page_search": 32,
-    "reconcile_steps": 20,
+    "reconcile_steps": 18,
     "program_course_file_check": 14,
     "reader_page_assignment": 10
    },
@@ -10876,12 +10876,12 @@
    "harvested": true,
    "slug": "santa_barbara_city",
    "programs": 319,
-   "passing": 243,
-   "gap": 76,
+   "passing": 246,
+   "gap": 73,
    "causes": {
     "no_closed_list": 32,
     "page_not_found": 36,
-    "unknown_without_live": 8
+    "unknown_without_live": 5
    },
    "census_causes": {
     "coverage_fails": 1,
@@ -10936,7 +10936,7 @@
    "levers": {
     "reader_page_search": 36,
     "program_course_file_check": 32,
-    "reconcile_steps": 8
+    "reconcile_steps": 5
    },
    "collection": {
     "program_reader": {
@@ -11314,14 +11314,14 @@
    "harvested": true,
    "slug": "shasta",
    "programs": 150,
-   "passing": 93,
-   "gap": 57,
+   "passing": 105,
+   "gap": 45,
    "causes": {
     "found_not_extracted": 1,
     "no_closed_list": 13,
     "page_not_found": 21,
     "places_none": 4,
-    "unknown_without_live": 18
+    "unknown_without_live": 6
    },
    "census_causes": {
     "coverage_fails": 1,
@@ -11381,8 +11381,8 @@
    "run": "44513230805",
    "levers": {
     "reader_page_search": 21,
-    "reconcile_steps": 18,
     "program_course_file_check": 13,
+    "reconcile_steps": 6,
     "reader_page_assignment": 4,
     "paid_read": 1
    },

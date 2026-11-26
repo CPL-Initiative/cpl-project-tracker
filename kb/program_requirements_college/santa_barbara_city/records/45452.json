@@ -101,7 +101,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "pair_read_as_alternatives",
+    "label": "The catalog prints two courses taken together as one option, and the record reads them as separate alternatives, so its low end falls short of the printed total.",
+    "words": "BIOL 100 (4) or BIOL 140 & BIOL 141 taken together; both BIOL 140 and BIOL 141 recorded as alternatives to BIOL 100 but must be completed as a pair. The 4-5 range is printed beside the BIOL row."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

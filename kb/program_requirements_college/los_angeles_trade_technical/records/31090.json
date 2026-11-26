@@ -46,30 +46,25 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 20,
+   "placed": 21,
    "listed": 21,
-   "share": 0.952,
-   "missing": [
-    "PLUMBNG28"
-   ],
-   "unexplained": [
-    "PLUMBNG28"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 2,
    "codes": [
     "BLDGCTQ8",
-    "MATH115",
-    "PLUMBING28"
+    "MATH115"
    ],
    "flagged": [
     "BLDGCTQ8",
     "MATH115"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -109,7 +104,14 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true,
+  "course_renumbers": [
+   {
+    "printed": "PLUMBING 028",
+    "listed": "PLUMBNG28",
+    "block": "Required Courses"
+   }
+  ]
  },
  "record": {
   "program": {

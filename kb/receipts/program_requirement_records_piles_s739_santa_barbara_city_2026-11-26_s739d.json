@@ -1,0 +1,1320 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30); Sam's routine prompt of 2026-11-25, as the S739 conductor's brief carries it: a record held for a gap is collected with its gap named and a lower score on the 0-100 bar, never held, unless the record is not the program's own; S739: Santa Barbara City's records kb/receipts/program_requirement_records_piles_s727_sbcc_2026-11-25_s727d.json held, read again by key: passed by a rescore where today's scorer's one reading moves them, else collected with their gaps named where the record is the program's own (no reread, no reconcile)",
+ "at": "2026-11-26T07:55:08Z",
+ "college": "Santa Barbara City College",
+ "keys": {
+  "from": "kb/receipts/program_requirement_records_piles_s727_sbcc_2026-11-25_s727d.json",
+  "members": [
+   "19012",
+   "30746",
+   "43553",
+   "45452",
+   "46520"
+  ]
+ },
+ "gaps": {
+  "lists_not_closed": "A choice list prints no unit figure of its own, one that depends on another choice, or also takes courses from another list, so the lists alone cannot add the program's units.",
+  "pair_read_as_alternatives": "The catalog prints two courses taken together as one option, and the record reads them as separate alternatives, so its low end falls short of the printed total."
+ },
+ "moved": 3,
+ "by": {
+  "lists_not_closed": 2,
+  "pair_read_as_alternatives": 1
+ },
+ "precision": {
+  "read": 5,
+  "right": 5,
+  "wrong": [],
+  "no_record_file": 0,
+  "not_hand_held": 0,
+  "by_answer": {
+   "lists_not_closed": 2,
+   "none": 2,
+   "pair_read_as_alternatives": 1
+  }
+ },
+ "claim_checks": {
+  "counts": {
+   "stands": 3
+  },
+  "not_standing": []
+ },
+ "boundaries": {
+  "counts": {
+   "the note's words gone right": 3,
+   "the stated total one unit off right": 3,
+   "coverage failing right": 3,
+   "the reading against a total one unit off right": 3,
+   "the open shape broken right": 2
+  },
+  "wrong": []
+ },
+ "held": [
+  {
+   "control_number": "30746",
+   "why": "held: not collectable: coverage fails (collected_with_gaps, kb/_harvest_gap_census.py). The state's list names PSY 200, which the record does not place and no note explains (ANTH 110 is explained), and today's capture does not find it on the page: a page read that says whether the page prints it (a reread)",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "43553",
+   "why": "held: the catalog's own figures: its two lists print 26-29 and 6-8, which add to 32-37 under a printed total of 35-41, and no note names the difference. total_differs is filed only from a page read (kb/program_total_differs.json), and noted_figures_differ needs a note that quotes both figures: a page read",
+   "claim": "no entry stands"
+  }
+ ],
+ "records": [
+  {
+   "college": "Santa Barbara City College",
+   "control_number": "19012",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "38670933359",
+   "moves_to": "lists_not_closed",
+   "words": "The List of Electives is not separately required: students may substitute up to two elective courses for two of the four Professional Writing Emphasis courses. Recorded as a choose_courses block with no minimum since the catalog states no required count.",
+   "confidence": {
+    "unit_arithmetic": 30,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/santa_barbara_city/records/19012.json",
+   "lever": "a substitution-list reading on a reconcile passes it (S727's reason, the lever Orange Coast 32737 waits on); a reconcile's rescore drops the gap when it does",
+   "before_image": {
+    "program_title": "Creative Writing: Professional",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.sbcc.edu/academic-departments/english-composition-literature/creative-writing-professional-certificate-achievement/",
+    "measure": "units",
+    "total_min": 19,
+    "total_max": 21,
+    "record": {
+     "program": {
+      "section_heading": "Creative Writing, Certificate of Achievement (C): Professional Writing Emphasis",
+      "measure": "units",
+      "total_units": {
+       "min": 19,
+       "max": 21
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Distinguish key elements of the four genres--fiction, drama, creative non-fiction and poetry and incorporate key elements of each genre in their own work.",
+       "Evaluate both student and professional writers' mastery of key elements of the four genres using criteria established by the course texts and by instructor during class lecture and discussions.",
+       "Synthesize critical appraisals of original drafts and incorporate that critical feedback into subsequent revisions of an original short fiction, drama, creative non-fiction, and poetry.",
+       "Participate actively in class by supporting the workshop environment through reading, class discussion, and peer feedback."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Core",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ENGL C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL C1000H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENG 270",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Complete the following four courses (students may substitute two of the courses from the list of electives below for two of these four Professional Writing Emphasis courses)",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 12,
+        "max": 14
+       },
+       "courses": [
+        {
+         "code": "ENG 173",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "FS 173",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENG 181",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "CIS 181",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENG 271NF",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "JOUR 271NF",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "JOUR 101",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List of Electives",
+       "rule": "choose_courses",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ENG 221",
+         "units": 3,
+         "units_max": 4,
+         "alternatives": [
+          {
+           "code": "ENG 221H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENG 222",
+         "units": 3,
+         "units_max": 4,
+         "alternatives": [
+          {
+           "code": "ENG 222H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENG 225",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENG 226",
+         "units": 3,
+         "units_max": 4,
+         "alternatives": [
+          {
+           "code": "ENG 226H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENG 231",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENG 232",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENG 240",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENG 241",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENG 242",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENG 251",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENG 261",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENG 262",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FS 174",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 26,
+     "listed": 26
+    },
+    "extracted_run": "38670933359"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 26,
+     "listed": 26,
+     "gaps": [
+      "lists_not_closed"
+     ],
+     "confidence": {
+      "unit_arithmetic": 30,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 1
+  },
+  {
+   "college": "Santa Barbara City College",
+   "control_number": "45452",
+   "award": "A.A- T Degree",
+   "extracted_run": "39782741424",
+   "moves_to": "pair_read_as_alternatives",
+   "words": "BIOL 100 (4) or BIOL 140 & BIOL 141 taken together; both BIOL 140 and BIOL 141 recorded as alternatives to BIOL 100 but must be completed as a pair. The 4-5 range is printed beside the BIOL row.",
+   "confidence": {
+    "unit_arithmetic": 50,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/santa_barbara_city/records/45452.json",
+   "before_image": {
+    "program_title": "Elementary Teacher Education: Integrated Programs",
+    "award": "A.A- T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.sbcc.edu/academic-departments/liberal-studies/elementary-teacher-education-integrated-programs-aat/",
+    "measure": "units",
+    "total_min": 35,
+    "total_max": 40,
+    "record": {
+     "program": {
+      "section_heading": "Major Requirements",
+      "measure": "units",
+      "total_units": {
+       "min": 35,
+       "max": 40
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "Cal-GETC",
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Develop an awareness of the study of cultural, literary, humanistic activities and artistic expression of human beings.",
+       "Evaluate and interpret the ways in which humans through the ages in different cultures have responded to themselves and the world around them in artistic and cultural creation.",
+       "Use the scientific method to develop and test a hypothesis.",
+       "Use mathematics to predict and model scientific phenomena.",
+       "Evaluate human behavior and human interaction in the social and physical environment.",
+       "Survey, analyze and interpret concepts, theories and methodologies to cultivate an understanding of human beings and the societies and cultures they create.",
+       "Identify and evaluate how societies and social subgroups operate."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Core",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "BIOL 100",
+         "units": 4,
+         "units_max": 5,
+         "alternatives": [
+          {
+           "code": "BIOL 140",
+           "units": null,
+           "catalog_addition": false
+          },
+          {
+           "code": "BIOL 141",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "COMM C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "COMM C1000H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECE 120",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ED 101",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ED 291",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL C1000E",
+           "units": null,
+           "catalog_addition": false
+          },
+          {
+           "code": "ENGL C1000H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 107",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL C1002",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST C1001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLS C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List A - Complete one lecture & lab course/combination from the following: ERTH 111 & 111L",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "List A",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ERTH 111",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ERTH 111L",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List A - Complete one lecture & lab course/combination from the following: ERTH 112 & 112L",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "List A",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ERTH 112",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ERTH 112L",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List A - Complete one lecture & lab course/combination from the following: PHSC 103",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "List A",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "PHSC 103",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List A - Complete one lecture & lab course/combination from the following: CHEM 101 & PHYS 101 & PHYS 101L",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "List A",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "CHEM 101",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS 101",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS 101L",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List A - Complete one lecture & lab course/combination from the following: CHEM 101 & PHYS 102",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "List A",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "CHEM 101",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS 102",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List A - Complete one lecture & lab course/combination from the following: CHEM 101 & PHYS 105",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "List A",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "CHEM 101",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS 105",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List B - Complete one course from the following:",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "ART 100",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ART 101",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 110",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PE 250",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 103",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 30,
+     "listed": 30
+    },
+    "extracted_run": "39782741424"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 30,
+     "listed": 30,
+     "gaps": [
+      "pair_read_as_alternatives"
+     ],
+     "confidence": {
+      "unit_arithmetic": 50,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 2
+  },
+  {
+   "college": "Santa Barbara City College",
+   "control_number": "46520",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "38670933359",
+   "moves_to": "lists_not_closed",
+   "words": "The Substitution Courses block is not an additional requirement: it lists approved substitutions only for students who place out of a core course and receive no units, who must take additional units 'to reach at least 18 total units in the major'. The 18-unit figure conflicts with the 20-unit core total; reviewer should check. Recorded as choose_units with minimum null since no fixed unit count is required.",
+   "confidence": {
+    "unit_arithmetic": 30,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/santa_barbara_city/records/46520.json",
+   "lever": "a substitution-list reading on a reconcile passes it (S727's reason, the lever Orange Coast 32737 waits on); a reconcile's rescore drops the gap when it does",
+   "before_image": {
+    "program_title": "Spanish for Heritage Speakers",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.sbcc.edu/academic-departments/modern-languages/spanish-for-heritage-speakers-certificate-achievement/",
+    "measure": "units",
+    "total_min": 20,
+    "total_max": 20,
+    "record": {
+     "program": {
+      "section_heading": "Spanish for Heritage Speakers, Certificate of Achievement (C)",
+      "measure": "units",
+      "total_units": {
+       "min": 20,
+       "max": 20
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Write, speak and listen at the intermediate proficiency level connected with Spanish culture",
+       "Participate in conversations, describe experiences, plans, and ask and answer questions with more complexity.",
+       "Write paragraphs, short essays and personal narratives, read longer texts and participate in advanced discussions.",
+       "Follow conversation clearly, including intermediate vocabulary, past tense verbs, subjunctive, and future tense verbs"
+      ],
+      "careers": [
+       "teaching support roles",
+       "tutoring",
+       "nonprofit organizations",
+       "social work",
+       "jobs in the health care sector",
+       "government",
+       "business",
+       "customer service"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required Core",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 20,
+        "max": 20
+       },
+       "courses": [
+        {
+         "code": "SPAN 101",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 102",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 146",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 147",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Substitution Courses",
+       "rule": "choose_units",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ANTH 103",
+         "units": 3,
+         "units_max": 4,
+         "alternatives": [
+          {
+           "code": "ANTH 103H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTH 104",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARBC 101",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARBC 102",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARTH C1100",
+         "units": 3,
+         "units_max": 4,
+         "alternatives": [
+          {
+           "code": "ARTH C1100H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARTH C1200",
+         "units": 3,
+         "units_max": 4,
+         "alternatives": [
+          {
+           "code": "ARTH C1200H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHIN 101",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHIN 102",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHIN 103",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHST 101",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHST 102",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHST 103",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CHST 113",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHST 114",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHST 115",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHST 121",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHST 130",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CHST 131",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "COMM 151",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ETHS 101",
+         "units": 3,
+         "units_max": 4,
+         "alternatives": [
+          {
+           "code": "ETHS 101H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ETHS 107",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "SOC 107",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "FR 101",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FR 102",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FR 103",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FR 104",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FS 112C",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOG 102",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GER 101",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GER 102",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GER 103",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "GER 104",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HEBR 101",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HEBR 102",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 133",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 135",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ITAL 101",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ITAL 102",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ITAL 103",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ITAL 104",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "JAPN 101",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "JAPN 102",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "JAPN 103",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "JAPN 104",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLS C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOC 101",
+         "units": 3,
+         "units_max": 4,
+         "alternatives": [
+          {
+           "code": "SOC 101H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOC 127",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 130",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 132",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 135",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "SPAN 139",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 140",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 55,
+     "listed": 55
+    },
+    "extracted_run": "38670933359"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 55,
+     "listed": 55,
+     "gaps": [
+      "lists_not_closed"
+     ],
+     "confidence": {
+      "unit_arithmetic": 30,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 3
+  }
+ ],
+ "live_run_proof": null,
+ "shared_pages": {},
+ "representation": "checks.gaps and checks.confidence added as the load reads the filed score (a passing row: checks.arithmetic to equal); checks.coverage, invented and the record unchanged",
+ "claim_check_reads": "Today's capture (sources.json): every course an entry names among the codes it found, and a course an entry says the printed total leaves out on neither it nor the state's list. A note's quoted figures are the reader's words, never re-read here.",
+ "follow_verdict": "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows (confirm_matches); the apply aborts, writing nothing, unless the count is 0.",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Santa Barbara City College', '19012', 38670933359, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENG 270\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"FS 173\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENG 173\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"CIS 181\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENG 181\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"JOUR 271NF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENG 271NF\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JOUR 101\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Complete the following four courses (students may substitute two of the courses from the list of electives below for two of these four Professional Writing Emphasis courses)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":14,\"min\":12}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENG 221H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENG 221\",\"units\":3,\"units_max\":4},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENG 222H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENG 222\",\"units\":3,\"units_max\":4},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENG 225\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENG 226H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENG 226\",\"units\":3,\"units_max\":4},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENG 231\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENG 232\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENG 240\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENG 241\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENG 242\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENG 251\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENG 261\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENG 262\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FS 174\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"List of Electives\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Distinguish key elements of the four genres--fiction, drama, creative non-fiction and poetry and incorporate key elements of each genre in their own work.\",\"Evaluate both student and professional writers'' mastery of key elements of the four genres using criteria established by the course texts and by instructor during class lecture and discussions.\",\"Synthesize critical appraisals of original drafts and incorporate that critical feedback into subsequent revisions of an original short fiction, drama, creative non-fiction, and poetry.\",\"Participate actively in class by supporting the workshop environment through reading, class discussion, and peer feedback.\"],\"section_heading\":\"Creative Writing, Certificate of Achievement (C): Professional Writing Emphasis\",\"total_units\":{\"max\":21,\"min\":19}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":26,\"placed\":26}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":26,\"placed\":26}'::jsonb),\n  (2, 'Santa Barbara City College', '45452', 39782741424, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"BIOL 140\",\"units\":null},{\"catalog_addition\":false,\"code\":\"BIOL 141\",\"units\":null}],\"catalog_addition\":false,\"code\":\"BIOL 100\",\"units\":4,\"units_max\":5},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"COMM C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 120\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ED 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ED 291\",\"units\":2,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1000E\",\"units\":null},{\"catalog_addition\":false,\"code\":\"ENGL C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1002\",\"units\":null}],\"catalog_addition\":false,\"code\":\"HIST 107\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS C1000\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ERTH 111\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ERTH 111L\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"List A - Complete one lecture & lab course/combination from the following: ERTH 111 & 111L\",\"option_group\":\"List A\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ERTH 112\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ERTH 112L\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"List A - Complete one lecture & lab course/combination from the following: ERTH 112 & 112L\",\"option_group\":\"List A\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHSC 103\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"List A - Complete one lecture & lab course/combination from the following: PHSC 103\",\"option_group\":\"List A\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 101\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 101\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 101L\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"List A - Complete one lecture & lab course/combination from the following: CHEM 101 & PHYS 101 & PHYS 101L\",\"option_group\":\"List A\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 101\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 102\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"List A - Complete one lecture & lab course/combination from the following: CHEM 101 & PHYS 102\",\"option_group\":\"List A\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 101\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 105\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"List A - Complete one lecture & lab course/combination from the following: CHEM 101 & PHYS 105\",\"option_group\":\"List A\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ART 101\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ART 100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 110\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 250\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 103\",\"units\":null,\"units_max\":null}],\"minimum\":1,\"name\":\"List B - Complete one course from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Develop an awareness of the study of cultural, literary, humanistic activities and artistic expression of human beings.\",\"Evaluate and interpret the ways in which humans through the ages in different cultures have responded to themselves and the world around them in artistic and cultural creation.\",\"Use the scientific method to develop and test a hypothesis.\",\"Use mathematics to predict and model scientific phenomena.\",\"Evaluate human behavior and human interaction in the social and physical environment.\",\"Survey, analyze and interpret concepts, theories and methodologies to cultivate an understanding of human beings and the societies and cultures they create.\",\"Identify and evaluate how societies and social subgroups operate.\"],\"section_heading\":\"Major Requirements\",\"total_units\":{\"max\":40,\"min\":35}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":30,\"placed\":30}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"pair_read_as_alternatives\"],\"invented\":true,\"listed\":30,\"placed\":30}'::jsonb),\n  (3, 'Santa Barbara City College', '46520', 38670933359, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 101\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 102\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 146\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 147\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":20,\"min\":20}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ANTH 103H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ANTH 103\",\"units\":3,\"units_max\":4},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 104\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARBC 101\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARBC 102\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ARTH C1100H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ARTH C1100\",\"units\":3,\"units_max\":4},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ARTH C1200H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ARTH C1200\",\"units\":3,\"units_max\":4},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHIN 101\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHIN 102\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHIN 103\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHST 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHST 102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CHST 103\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHST 113\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHST 114\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHST 115\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHST 121\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CHST 130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CHST 131\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 151\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ETHS 101H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ETHS 101\",\"units\":3,\"units_max\":4},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SOC 107\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ETHS 107\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FR 101\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FR 102\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FR 103\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FR 104\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FS 112C\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GER 101\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GER 102\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GER 103\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GER 104\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HEBR 101\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HEBR 102\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 133\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 135\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ITAL 101\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ITAL 102\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ITAL 103\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ITAL 104\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPN 101\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPN 102\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPN 103\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPN 104\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SOC 101H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SOC 101\",\"units\":3,\"units_max\":4},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 127\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 130\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 132\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SPAN 135\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 139\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 140\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"Substitution Courses\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"teaching support roles\",\"tutoring\",\"nonprofit organizations\",\"social work\",\"jobs in the health care sector\",\"government\",\"business\",\"customer service\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Write, speak and listen at the intermediate proficiency level connected with Spanish culture\",\"Participate in conversations, describe experiences, plans, and ask and answer questions with more complexity.\",\"Write paragraphs, short essays and personal narratives, read longer texts and participate in advanced discussions.\",\"Follow conversation clearly, including intermediate vocabulary, past tense verbs, subjunctive, and future tense verbs\"],\"section_heading\":\"Spanish for Heritage Speakers, Certificate of Achievement (C)\",\"total_units\":{\"max\":20,\"min\":20}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":55,\"placed\":55}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":55,\"placed\":55}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "pre_read_md5": "with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) as (values\n  (1, 'Santa Barbara City College', '19012', 38670933359, '96559441e112f571cf1d731e75792a1b', 'df1f46dda28f904ad5c64f462c51773e', '6434bfe56c0f6e51af755d307dec125c'),\n  (2, 'Santa Barbara City College', '45452', 39782741424, '0eb404319c960b6a904ef7df3b7fee7d', '39747decba62d1a4fc97e2e52cd92e81', 'e230e040c26516ab56d95507939b5641'),\n  (3, 'Santa Barbara City College', '46520', 38670933359, '6552a345b0584c142ca8f13d8ff22e16', '373967db51ec6f7d68777f88776b6b17', 'ee4a74bddfe6294a87567422a958820c'))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.record::text) = v.rec_md5),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.checks::text) = v.chk_md5),\n  'already_after', count(*) filter (where md5(r.checks::text) = v.after_md5),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Santa Barbara City College', '19012', 38670933359, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENG 270\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"FS 173\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENG 173\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"CIS 181\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENG 181\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"JOUR 271NF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENG 271NF\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JOUR 101\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Complete the following four courses (students may substitute two of the courses from the list of electives below for two of these four Professional Writing Emphasis courses)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":14,\"min\":12}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENG 221H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENG 221\",\"units\":3,\"units_max\":4},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENG 222H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENG 222\",\"units\":3,\"units_max\":4},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENG 225\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENG 226H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENG 226\",\"units\":3,\"units_max\":4},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENG 231\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENG 232\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENG 240\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENG 241\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENG 242\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENG 251\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENG 261\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENG 262\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FS 174\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"List of Electives\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Distinguish key elements of the four genres--fiction, drama, creative non-fiction and poetry and incorporate key elements of each genre in their own work.\",\"Evaluate both student and professional writers'' mastery of key elements of the four genres using criteria established by the course texts and by instructor during class lecture and discussions.\",\"Synthesize critical appraisals of original drafts and incorporate that critical feedback into subsequent revisions of an original short fiction, drama, creative non-fiction, and poetry.\",\"Participate actively in class by supporting the workshop environment through reading, class discussion, and peer feedback.\"],\"section_heading\":\"Creative Writing, Certificate of Achievement (C): Professional Writing Emphasis\",\"total_units\":{\"max\":21,\"min\":19}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":26,\"placed\":26}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":26,\"placed\":26}'::jsonb),\n  (2, 'Santa Barbara City College', '45452', 39782741424, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"BIOL 140\",\"units\":null},{\"catalog_addition\":false,\"code\":\"BIOL 141\",\"units\":null}],\"catalog_addition\":false,\"code\":\"BIOL 100\",\"units\":4,\"units_max\":5},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"COMM C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 120\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ED 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ED 291\",\"units\":2,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1000E\",\"units\":null},{\"catalog_addition\":false,\"code\":\"ENGL C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1002\",\"units\":null}],\"catalog_addition\":false,\"code\":\"HIST 107\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS C1000\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ERTH 111\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ERTH 111L\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"List A - Complete one lecture & lab course/combination from the following: ERTH 111 & 111L\",\"option_group\":\"List A\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ERTH 112\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ERTH 112L\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"List A - Complete one lecture & lab course/combination from the following: ERTH 112 & 112L\",\"option_group\":\"List A\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHSC 103\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"List A - Complete one lecture & lab course/combination from the following: PHSC 103\",\"option_group\":\"List A\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 101\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 101\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 101L\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"List A - Complete one lecture & lab course/combination from the following: CHEM 101 & PHYS 101 & PHYS 101L\",\"option_group\":\"List A\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 101\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 102\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"List A - Complete one lecture & lab course/combination from the following: CHEM 101 & PHYS 102\",\"option_group\":\"List A\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 101\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 105\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"List A - Complete one lecture & lab course/combination from the following: CHEM 101 & PHYS 105\",\"option_group\":\"List A\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ART 101\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ART 100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 110\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 250\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 103\",\"units\":null,\"units_max\":null}],\"minimum\":1,\"name\":\"List B - Complete one course from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Develop an awareness of the study of cultural, literary, humanistic activities and artistic expression of human beings.\",\"Evaluate and interpret the ways in which humans through the ages in different cultures have responded to themselves and the world around them in artistic and cultural creation.\",\"Use the scientific method to develop and test a hypothesis.\",\"Use mathematics to predict and model scientific phenomena.\",\"Evaluate human behavior and human interaction in the social and physical environment.\",\"Survey, analyze and interpret concepts, theories and methodologies to cultivate an understanding of human beings and the societies and cultures they create.\",\"Identify and evaluate how societies and social subgroups operate.\"],\"section_heading\":\"Major Requirements\",\"total_units\":{\"max\":40,\"min\":35}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":30,\"placed\":30}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"pair_read_as_alternatives\"],\"invented\":true,\"listed\":30,\"placed\":30}'::jsonb),\n  (3, 'Santa Barbara City College', '46520', 38670933359, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 101\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 102\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 146\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 147\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":20,\"min\":20}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ANTH 103H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ANTH 103\",\"units\":3,\"units_max\":4},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 104\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARBC 101\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARBC 102\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ARTH C1100H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ARTH C1100\",\"units\":3,\"units_max\":4},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ARTH C1200H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ARTH C1200\",\"units\":3,\"units_max\":4},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHIN 101\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHIN 102\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHIN 103\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHST 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHST 102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CHST 103\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHST 113\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHST 114\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHST 115\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHST 121\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CHST 130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CHST 131\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 151\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ETHS 101H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ETHS 101\",\"units\":3,\"units_max\":4},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SOC 107\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ETHS 107\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FR 101\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FR 102\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FR 103\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FR 104\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FS 112C\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GER 101\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GER 102\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GER 103\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GER 104\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HEBR 101\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HEBR 102\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 133\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 135\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ITAL 101\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ITAL 102\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ITAL 103\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ITAL 104\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPN 101\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPN 102\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPN 103\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPN 104\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SOC 101H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SOC 101\",\"units\":3,\"units_max\":4},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 127\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 130\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 132\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SPAN 135\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 139\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 140\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"Substitution Courses\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"teaching support roles\",\"tutoring\",\"nonprofit organizations\",\"social work\",\"jobs in the health care sector\",\"government\",\"business\",\"customer service\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Write, speak and listen at the intermediate proficiency level connected with Spanish culture\",\"Participate in conversations, describe experiences, plans, and ask and answer questions with more complexity.\",\"Write paragraphs, short essays and personal narratives, read longer texts and participate in advanced discussions.\",\"Follow conversation clearly, including intermediate vocabulary, past tense verbs, subjunctive, and future tense verbs\"],\"section_heading\":\"Spanish for Heritage Speakers, Certificate of Achievement (C)\",\"total_units\":{\"max\":20,\"min\":20}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":55,\"placed\":55}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":55,\"placed\":55}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\nf as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number\n        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true\n       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)),\ne(expect) as (values (3)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when f.n > 0\n            then ('s739d piles confirm guard: ' || f.n || ' rows hold a matching confirm verdict ' || f.keys::text)::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s739d piles guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, f;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Santa Barbara City College', '19012', 38670933359, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENG 270\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"FS 173\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENG 173\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"CIS 181\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENG 181\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"JOUR 271NF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENG 271NF\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JOUR 101\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Complete the following four courses (students may substitute two of the courses from the list of electives below for two of these four Professional Writing Emphasis courses)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":14,\"min\":12}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENG 221H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENG 221\",\"units\":3,\"units_max\":4},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENG 222H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENG 222\",\"units\":3,\"units_max\":4},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENG 225\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENG 226H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENG 226\",\"units\":3,\"units_max\":4},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENG 231\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENG 232\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENG 240\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENG 241\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENG 242\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENG 251\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENG 261\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENG 262\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FS 174\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"List of Electives\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Distinguish key elements of the four genres--fiction, drama, creative non-fiction and poetry and incorporate key elements of each genre in their own work.\",\"Evaluate both student and professional writers'' mastery of key elements of the four genres using criteria established by the course texts and by instructor during class lecture and discussions.\",\"Synthesize critical appraisals of original drafts and incorporate that critical feedback into subsequent revisions of an original short fiction, drama, creative non-fiction, and poetry.\",\"Participate actively in class by supporting the workshop environment through reading, class discussion, and peer feedback.\"],\"section_heading\":\"Creative Writing, Certificate of Achievement (C): Professional Writing Emphasis\",\"total_units\":{\"max\":21,\"min\":19}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":26,\"placed\":26}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":26,\"placed\":26}'::jsonb),\n  (2, 'Santa Barbara City College', '45452', 39782741424, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"BIOL 140\",\"units\":null},{\"catalog_addition\":false,\"code\":\"BIOL 141\",\"units\":null}],\"catalog_addition\":false,\"code\":\"BIOL 100\",\"units\":4,\"units_max\":5},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"COMM C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 120\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ED 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ED 291\",\"units\":2,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1000E\",\"units\":null},{\"catalog_addition\":false,\"code\":\"ENGL C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1002\",\"units\":null}],\"catalog_addition\":false,\"code\":\"HIST 107\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS C1000\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ERTH 111\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ERTH 111L\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"List A - Complete one lecture & lab course/combination from the following: ERTH 111 & 111L\",\"option_group\":\"List A\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ERTH 112\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ERTH 112L\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"List A - Complete one lecture & lab course/combination from the following: ERTH 112 & 112L\",\"option_group\":\"List A\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHSC 103\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"List A - Complete one lecture & lab course/combination from the following: PHSC 103\",\"option_group\":\"List A\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 101\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 101\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 101L\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"List A - Complete one lecture & lab course/combination from the following: CHEM 101 & PHYS 101 & PHYS 101L\",\"option_group\":\"List A\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 101\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 102\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"List A - Complete one lecture & lab course/combination from the following: CHEM 101 & PHYS 102\",\"option_group\":\"List A\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 101\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 105\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"List A - Complete one lecture & lab course/combination from the following: CHEM 101 & PHYS 105\",\"option_group\":\"List A\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ART 101\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ART 100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 110\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 250\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 103\",\"units\":null,\"units_max\":null}],\"minimum\":1,\"name\":\"List B - Complete one course from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Develop an awareness of the study of cultural, literary, humanistic activities and artistic expression of human beings.\",\"Evaluate and interpret the ways in which humans through the ages in different cultures have responded to themselves and the world around them in artistic and cultural creation.\",\"Use the scientific method to develop and test a hypothesis.\",\"Use mathematics to predict and model scientific phenomena.\",\"Evaluate human behavior and human interaction in the social and physical environment.\",\"Survey, analyze and interpret concepts, theories and methodologies to cultivate an understanding of human beings and the societies and cultures they create.\",\"Identify and evaluate how societies and social subgroups operate.\"],\"section_heading\":\"Major Requirements\",\"total_units\":{\"max\":40,\"min\":35}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":30,\"placed\":30}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"pair_read_as_alternatives\"],\"invented\":true,\"listed\":30,\"placed\":30}'::jsonb),\n  (3, 'Santa Barbara City College', '46520', 38670933359, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 101\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 102\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 146\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 147\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":20,\"min\":20}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ANTH 103H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ANTH 103\",\"units\":3,\"units_max\":4},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 104\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARBC 101\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARBC 102\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ARTH C1100H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ARTH C1100\",\"units\":3,\"units_max\":4},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ARTH C1200H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ARTH C1200\",\"units\":3,\"units_max\":4},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHIN 101\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHIN 102\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHIN 103\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHST 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHST 102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CHST 103\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHST 113\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHST 114\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHST 115\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHST 121\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CHST 130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CHST 131\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 151\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ETHS 101H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ETHS 101\",\"units\":3,\"units_max\":4},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SOC 107\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ETHS 107\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FR 101\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FR 102\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FR 103\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FR 104\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FS 112C\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GER 101\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GER 102\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GER 103\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GER 104\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HEBR 101\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HEBR 102\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 133\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 135\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ITAL 101\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ITAL 102\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ITAL 103\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ITAL 104\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPN 101\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPN 102\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPN 103\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPN 104\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SOC 101H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SOC 101\",\"units\":3,\"units_max\":4},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 127\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 130\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 132\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SPAN 135\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 139\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 140\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"Substitution Courses\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"teaching support roles\",\"tutoring\",\"nonprofit organizations\",\"social work\",\"jobs in the health care sector\",\"government\",\"business\",\"customer service\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Write, speak and listen at the intermediate proficiency level connected with Spanish culture\",\"Participate in conversations, describe experiences, plans, and ask and answer questions with more complexity.\",\"Write paragraphs, short essays and personal narratives, read longer texts and participate in advanced discussions.\",\"Follow conversation clearly, including intermediate vocabulary, past tense verbs, subjunctive, and future tense verbs\"],\"section_heading\":\"Spanish for Heritage Speakers, Certificate of Achievement (C)\",\"total_units\":{\"max\":20,\"min\":20}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":55,\"placed\":55}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":55,\"placed\":55}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (3)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s739d piles rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;"
+}

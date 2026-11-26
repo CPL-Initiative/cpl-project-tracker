@@ -98,7 +98,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "heading_not_in_text",
+    "label": "The page the read held prints a requirements list but not the program's own heading, which sits on a page the read did not hold; the record takes the list as this program's by its title alone, and no page read has confirmed it.",
+    "words": "The extracted text begins mid-table on page 211; the program heading, description and the heading/rule over the first course list are not present (likely on page 210). The first list is recorded as 'all', but its units (42 HVACR + 41 PLUMB = 83) plus the 16-unit work experience block far exceed the printed Total Units: 48, so the first list is probably a choice (e.g., a units minimum or options) stated on the preceding page. Reviewer should check page 210."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 20,
+   "course_list_match": 50,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 50
+  }
  },
  "record": {
   "program": {

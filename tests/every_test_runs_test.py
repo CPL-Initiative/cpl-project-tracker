@@ -51,6 +51,8 @@ UNRUN = {
         "run by tests/sierra_statewide_catalog.test.js",
     "pile_mint_fixture.py":
         "run by tests/pile_mint_dryrun_test.py",
+    "program_piles_s739_common.py":
+        "run by tests/program_piles_s739_arc_test.py",
 }
 
 RUN_LINE = re.compile(r"\b(?:python3?|node)\s+(?:-\S+\s+)*tests/([\w.\-]+\.(?:py|js))\b")

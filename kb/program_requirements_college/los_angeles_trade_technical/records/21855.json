@@ -46,22 +46,17 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 21,
+   "placed": 22,
    "listed": 22,
-   "share": 0.955,
-   "missing": [
-    "PLUMBNG28"
-   ],
-   "unexplained": [
-    "PLUMBNG28"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 2,
    "codes": [
-    "PLUMBING28",
     "PLUMBNG145",
     "PLUMBNG246"
    ],
@@ -69,7 +64,7 @@
     "PLUMBNG145",
     "PLUMBNG246"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -107,7 +102,14 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true,
+  "course_renumbers": [
+   {
+    "printed": "PLUMBING 028",
+    "listed": "PLUMBNG28",
+    "block": "Major Electives"
+   }
+  ]
  },
  "record": {
   "program": {

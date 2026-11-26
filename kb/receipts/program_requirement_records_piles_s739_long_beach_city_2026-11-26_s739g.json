@@ -1,0 +1,1371 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30); Sam's routine prompt of 2026-11-25, as the S739 conductor's brief carries it: a record held for a gap is collected with its gap named and a lower score on the 0-100 bar, never held, unless the record is not the program's own; S739: Long Beach City's records kb/receipts/program_requirement_records_piles_s731_lbcc_2026-11-25_s731c.json held, read again by key: passed by a rescore where today's scorer's one reading moves them, else collected with their gaps named where the record is the program's own (no reread, no reconcile)",
+ "at": "2026-11-26T08:21:17Z",
+ "college": "Long Beach City College",
+ "keys": {
+  "from": "kb/receipts/program_requirement_records_piles_s731_lbcc_2026-11-25_s731c.json",
+  "members": [
+   "43021",
+   "37213",
+   "44848",
+   "42970"
+  ]
+ },
+ "gaps": {
+  "noted_section_cut_off": "The reader's note says the program's section runs onto a page the read did not hold, so part of its requirements is missing from the record."
+ },
+ "moved": 1,
+ "by": {
+  "noted_section_cut_off": 1
+ },
+ "precision": {
+  "read": 4,
+  "right": 4,
+  "wrong": [],
+  "no_record_file": 0,
+  "not_hand_held": 0,
+  "by_answer": {
+   "none": 3,
+   "noted_section_cut_off": 1
+  }
+ },
+ "claim_checks": {
+  "counts": {
+   "stands": 1
+  },
+  "not_standing": []
+ },
+ "boundaries": {
+  "counts": {
+   "the note's words gone right": 1,
+   "the stated total one unit off right": 1,
+   "coverage failing right": 1,
+   "the no_total shape broken right": 1
+  },
+  "wrong": []
+ },
+ "held": [
+  {
+   "control_number": "43021",
+   "why": "held: the state's file lists Registered Nursing A.S. twice (02677 and 43021), and both records were read from the one Registered Nursing A.S. page under one heading; today's scorer passes it (short_high, 63 against the printed 63-64), but nothing in the committed files shows the page to be 43021's own and not 02677's: which control number the page is is the inventory's call",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "37213",
+   "why": "held: not the program's own: CSU GE-Breadth read from the LBCC-GE Plan A page, which its own note says is 'not the CSU GE-Breadth certificate named in the request'; a page search is its lever",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "42970",
+   "why": "held: d-lbcc-42970-no-units-read-or-hold-s731 stands: no_units_printed is off statewide (NG.NO_UNITS_PRINTED_ON: its matcher failed its own self-recall) and no_units_read's own check refuses it, so a record its replacement kind refuses stays held: S681's reason, 'the record does not show that the catalog prints no units; the page is read free before a gap is named'",
+   "claim": "no entry stands"
+  }
+ ],
+ "records": [
+  {
+   "college": "Long Beach City College",
+   "control_number": "44848",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "extracted_run": "39891611701",
+   "moves_to": "noted_section_cut_off",
+   "words": "Catalog text is cut off partway through the Area 4 list (last item 'CDEV C1000 Child...', units not shown); Areas 5A, 5B, 5C, 6, and the optional U.S. History/Constitution and LOTE lists are not in the text. | The page prints no total units for the pattern; total_units is null. '30 units of Cal-GETC' appears only under CSU admission requirements.",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 50,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/long_beach_city/records/44848.json",
+   "before_image": {
+    "program_title": "Cal-GETC",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://lbcc-public.courseleaf.com//academic-requirements/general-education-transfer-degree-certificate-requirements/general-education-plans/plan-c/",
+    "measure": "units",
+    "total_min": null,
+    "total_max": null,
+    "record": {
+     "program": {
+      "section_heading": "Cal-GETC",
+      "measure": "units",
+      "total_units": {
+       "min": null,
+       "max": null
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Area 1A: English Composition",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ENGL C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL C1000H",
+           "units": 4,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL C1000E",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ESL 1S",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "Area 1B: Critical Thinking and Composition",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ENGL C1001",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL C1001H",
+           "units": 4,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL C1003",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL C1003H",
+           "units": 4,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 47",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PHIL 11",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "READ 84",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "Area 1C: Oral Communication",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "COMM C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "COMM C1000H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Area 2: Mathematical Concepts and Quantitative Reasoning",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "MATH 21B",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 37",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MATH 37S",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MATH 45",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 45S",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MATH 47",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 47S",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MATH 49",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MATH 50",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH C2210",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "MATH C2210H",
+           "units": 5,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH C2210E",
+         "units": 6,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MATH C2220",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "MATH C2220H",
+           "units": 5,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 70S",
+         "units": 6,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MATH 80",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 84",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYCH 5",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "STAT C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "STAT C1000H",
+           "units": 4,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "STAT C1000E",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "STAT 2",
+         "units": 3.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "Area 3A: Arts",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ARCHT 80",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ARCHT 81",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ARTH C1100",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ARTH C1100H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARTH C1200",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ARTH C1200H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ART 3",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ART 4",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ART 5",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ART 10",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ART 11",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 1",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 19",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FASH 32",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "FILM 1",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FILM 2A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FILM 2B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FILM 10",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC 32",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC 33B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MUSIC 35",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC 40",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "MUSIC 40H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC 89",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHOT 10",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "TART 25",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TART 30",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "Area 3B: Humanities",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ASL 1",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ASL 2",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ASL 3",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ASL 4",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ASL 24",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL 15",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL 16",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL 17",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL 32",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL 33",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL 33H",
+           "units": 4,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 34",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL 35",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL 36",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL 37",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 38",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 39",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 41",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 42",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 43A",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 43B",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 44",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL 44H",
+           "units": 4,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 45",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL 45H",
+           "units": 4,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 46",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 47",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 48",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL 48H",
+           "units": 3,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL 49",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL 49H",
+           "units": 3,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": true
+        },
+        {
+         "code": "FREN 3",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FREN 4",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "FREN 25A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST 1A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "HIST 1AH",
+           "units": 3,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 1B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "HIST 1BH",
+           "units": 3,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 2B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 2C",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "HIST 2CH",
+           "units": 3,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 7",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST 8A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "HIST 8AH",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 8B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "HIST 8BH",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 9A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 9B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST 9C",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST C1001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "HIST C1001H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST C1002",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "HIST C1002H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 18",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 25",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 27A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 27B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 33",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HUMAN 1",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "HUMAN 1H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "HUMAN 7",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "JAPAN 3",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "JAPAN 4",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "KHMER 9",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "KHMER 10",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "LING 1",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "LING 1H",
+           "units": 3,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "LING 3",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "LING 3H",
+           "units": 3,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHIL 2",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PHIL 3",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHIL 4",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHIL 5",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHIL 6",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "PHIL 6H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHIL 7",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "PHIL 7H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHIL 8",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PHIL 9",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHIL 10",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "PHIL 10H",
+           "units": 3,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHIL 14",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHIL 15",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PHIL 16",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOCSC 1",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "SOCSC 1H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOCSC 7",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 3",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 4",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 9",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "SPAN 9H",
+           "units": 5,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 10",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "SPAN 10H",
+           "units": 5,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 25A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 25B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 25C",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 25D",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Area 4: Social and Behavioral Sciences",
+       "rule": "choose_courses",
+       "minimum": 2,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ANTHR 2",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ANTHR 2H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTHR 3",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ANTHR 3H",
+           "units": 3,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTHR 4",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTHR 10",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV C1000",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 110,
+     "listed": 189
+    },
+    "extracted_run": "39891611701"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 110,
+     "listed": 189,
+     "gaps": [
+      "noted_section_cut_off"
+     ],
+     "confidence": {
+      "unit_arithmetic": 20,
+      "course_list_match": 50,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 1
+  }
+ ],
+ "live_run_proof": null,
+ "shared_pages": {},
+ "representation": "checks.gaps and checks.confidence added as the load reads the filed score (a passing row: checks.arithmetic to equal); checks.coverage, invented and the record unchanged",
+ "claim_check_reads": "Today's capture (sources.json): every course an entry names among the codes it found, and a course an entry says the printed total leaves out on neither it nor the state's list. A note's quoted figures are the reader's words, never re-read here.",
+ "follow_verdict": "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows (confirm_matches); the apply aborts, writing nothing, unless the count is 0.",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Long Beach City College', '44848', 39891611701, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1000H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ENGL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL C1000E\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ESL 1S\",\"units\":5,\"units_max\":null}],\"minimum\":1,\"name\":\"Area 1A: English Composition\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1001H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ENGL C1001\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ENGL C1003H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ENGL C1003\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 47\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"READ 84\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Area 1B: Critical Thinking and Composition\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"COMM C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Area 1C: Oral Communication\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 21B\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 37\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 37S\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 45\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 45S\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 47\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 47S\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 49\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 50\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH C2210H\",\"units\":5}],\"catalog_addition\":false,\"code\":\"MATH C2210\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH C2210E\",\"units\":6,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH C2220H\",\"units\":5}],\"catalog_addition\":false,\"code\":\"MATH C2220\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 70S\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 80\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 84\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYCH 5\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"STAT C1000H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"STAT C1000E\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"STAT 2\",\"units\":3.5,\"units_max\":null}],\"minimum\":1,\"name\":\"Area 2: Mathematical Concepts and Quantitative Reasoning\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARCHT 80\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARCHT 81\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ARTH C1100H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ARTH C1100\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ARTH C1200H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ARTH C1200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 4\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 19\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FASH 32\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FILM 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FILM 2A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FILM 2B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FILM 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 32\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUSIC 33B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 35\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MUSIC 40H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"MUSIC 40\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 89\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHOT 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TART 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"TART 30\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Area 3A: Arts\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ASL 1\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ASL 2\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ASL 3\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ASL 4\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ASL 24\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 16\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 17\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 32\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL 33H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ENGL 33\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 34\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 35\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 36\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 37\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 38\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 39\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 41\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 42\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 43A\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 43B\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL 44H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ENGL 44\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL 45H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ENGL 45\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 46\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 47\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ENGL 48H\",\"units\":3}],\"catalog_addition\":true,\"code\":\"ENGL 48\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ENGL 49H\",\"units\":3}],\"catalog_addition\":true,\"code\":\"ENGL 49\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FREN 3\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FREN 4\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FREN 25A\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"HIST 1AH\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HIST 1A\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"HIST 1BH\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HIST 1B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 2B\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"HIST 2CH\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HIST 2C\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 7\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST 8AH\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HIST 8A\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST 8BH\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HIST 8B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 9A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 9B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 9C\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST C1001H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HIST C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST C1002H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HIST C1002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 18\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 27A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 27B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 33\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HUMAN 1H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HUMAN 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HUMAN 7\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPAN 3\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPAN 4\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"KHMER 9\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"KHMER 10\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"LING 1H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"LING 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"LING 3H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"LING 3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 4\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PHIL 6H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PHIL 6\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PHIL 7H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PHIL 7\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 8\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 9\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"PHIL 10H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PHIL 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 14\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 16\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SOCSC 1H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"SOCSC 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCSC 7\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 3\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 4\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN 9H\",\"units\":5}],\"catalog_addition\":false,\"code\":\"SPAN 9\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN 10H\",\"units\":5}],\"catalog_addition\":false,\"code\":\"SPAN 10\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 25A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 25B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 25C\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 25D\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Area 3B: Humanities\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ANTHR 2H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ANTHR 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ANTHR 3H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ANTHR 3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHR 4\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHR 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CDEV C1000\",\"units\":null,\"units_max\":null}],\"minimum\":2,\"name\":\"Area 4: Social and Behavioral Sciences\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Cal-GETC\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":189,\"placed\":110}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":50,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":20},\"coverage\":true,\"gaps\":[\"noted_section_cut_off\"],\"invented\":true,\"listed\":189,\"placed\":110}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "pre_read_md5": "with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) as (values\n  (1, 'Long Beach City College', '44848', 39891611701, '076888ec5e30ac596775c10f97b09c8d', '053f7aef5ff7f0e19a19104fb2c86b81', 'cf0d92e7a29924ac1eb8467f4a2aa395'))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.record::text) = v.rec_md5),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.checks::text) = v.chk_md5),\n  'already_after', count(*) filter (where md5(r.checks::text) = v.after_md5),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Long Beach City College', '44848', 39891611701, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1000H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ENGL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL C1000E\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ESL 1S\",\"units\":5,\"units_max\":null}],\"minimum\":1,\"name\":\"Area 1A: English Composition\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1001H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ENGL C1001\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ENGL C1003H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ENGL C1003\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 47\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"READ 84\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Area 1B: Critical Thinking and Composition\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"COMM C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Area 1C: Oral Communication\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 21B\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 37\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 37S\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 45\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 45S\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 47\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 47S\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 49\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 50\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH C2210H\",\"units\":5}],\"catalog_addition\":false,\"code\":\"MATH C2210\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH C2210E\",\"units\":6,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH C2220H\",\"units\":5}],\"catalog_addition\":false,\"code\":\"MATH C2220\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 70S\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 80\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 84\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYCH 5\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"STAT C1000H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"STAT C1000E\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"STAT 2\",\"units\":3.5,\"units_max\":null}],\"minimum\":1,\"name\":\"Area 2: Mathematical Concepts and Quantitative Reasoning\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARCHT 80\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARCHT 81\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ARTH C1100H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ARTH C1100\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ARTH C1200H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ARTH C1200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 4\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 19\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FASH 32\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FILM 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FILM 2A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FILM 2B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FILM 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 32\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUSIC 33B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 35\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MUSIC 40H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"MUSIC 40\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 89\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHOT 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TART 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"TART 30\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Area 3A: Arts\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ASL 1\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ASL 2\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ASL 3\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ASL 4\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ASL 24\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 16\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 17\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 32\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL 33H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ENGL 33\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 34\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 35\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 36\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 37\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 38\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 39\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 41\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 42\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 43A\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 43B\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL 44H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ENGL 44\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL 45H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ENGL 45\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 46\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 47\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ENGL 48H\",\"units\":3}],\"catalog_addition\":true,\"code\":\"ENGL 48\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ENGL 49H\",\"units\":3}],\"catalog_addition\":true,\"code\":\"ENGL 49\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FREN 3\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FREN 4\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FREN 25A\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"HIST 1AH\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HIST 1A\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"HIST 1BH\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HIST 1B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 2B\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"HIST 2CH\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HIST 2C\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 7\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST 8AH\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HIST 8A\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST 8BH\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HIST 8B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 9A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 9B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 9C\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST C1001H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HIST C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST C1002H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HIST C1002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 18\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 27A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 27B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 33\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HUMAN 1H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HUMAN 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HUMAN 7\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPAN 3\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPAN 4\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"KHMER 9\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"KHMER 10\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"LING 1H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"LING 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"LING 3H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"LING 3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 4\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PHIL 6H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PHIL 6\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PHIL 7H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PHIL 7\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 8\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 9\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"PHIL 10H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PHIL 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 14\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 16\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SOCSC 1H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"SOCSC 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCSC 7\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 3\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 4\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN 9H\",\"units\":5}],\"catalog_addition\":false,\"code\":\"SPAN 9\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN 10H\",\"units\":5}],\"catalog_addition\":false,\"code\":\"SPAN 10\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 25A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 25B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 25C\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 25D\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Area 3B: Humanities\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ANTHR 2H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ANTHR 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ANTHR 3H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ANTHR 3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHR 4\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHR 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CDEV C1000\",\"units\":null,\"units_max\":null}],\"minimum\":2,\"name\":\"Area 4: Social and Behavioral Sciences\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Cal-GETC\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":189,\"placed\":110}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":50,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":20},\"coverage\":true,\"gaps\":[\"noted_section_cut_off\"],\"invented\":true,\"listed\":189,\"placed\":110}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\nf as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number\n        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true\n       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)),\ne(expect) as (values (1)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when f.n > 0\n            then ('s739g piles confirm guard: ' || f.n || ' rows hold a matching confirm verdict ' || f.keys::text)::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s739g piles guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, f;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Long Beach City College', '44848', 39891611701, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1000H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ENGL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL C1000E\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ESL 1S\",\"units\":5,\"units_max\":null}],\"minimum\":1,\"name\":\"Area 1A: English Composition\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1001H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ENGL C1001\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ENGL C1003H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ENGL C1003\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 47\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"READ 84\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Area 1B: Critical Thinking and Composition\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"COMM C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Area 1C: Oral Communication\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 21B\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 37\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 37S\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 45\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 45S\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 47\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 47S\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 49\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 50\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH C2210H\",\"units\":5}],\"catalog_addition\":false,\"code\":\"MATH C2210\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH C2210E\",\"units\":6,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH C2220H\",\"units\":5}],\"catalog_addition\":false,\"code\":\"MATH C2220\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 70S\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 80\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 84\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYCH 5\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"STAT C1000H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"STAT C1000E\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"STAT 2\",\"units\":3.5,\"units_max\":null}],\"minimum\":1,\"name\":\"Area 2: Mathematical Concepts and Quantitative Reasoning\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARCHT 80\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARCHT 81\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ARTH C1100H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ARTH C1100\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ARTH C1200H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ARTH C1200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 4\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 19\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FASH 32\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FILM 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FILM 2A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FILM 2B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FILM 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 32\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUSIC 33B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 35\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MUSIC 40H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"MUSIC 40\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 89\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHOT 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TART 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"TART 30\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Area 3A: Arts\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ASL 1\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ASL 2\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ASL 3\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ASL 4\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ASL 24\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 16\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 17\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 32\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL 33H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ENGL 33\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 34\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 35\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 36\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 37\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 38\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 39\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 41\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 42\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 43A\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 43B\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL 44H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ENGL 44\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL 45H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ENGL 45\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 46\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 47\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ENGL 48H\",\"units\":3}],\"catalog_addition\":true,\"code\":\"ENGL 48\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ENGL 49H\",\"units\":3}],\"catalog_addition\":true,\"code\":\"ENGL 49\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FREN 3\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FREN 4\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FREN 25A\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"HIST 1AH\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HIST 1A\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"HIST 1BH\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HIST 1B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 2B\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"HIST 2CH\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HIST 2C\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 7\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST 8AH\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HIST 8A\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST 8BH\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HIST 8B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 9A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 9B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 9C\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST C1001H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HIST C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST C1002H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HIST C1002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 18\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 27A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 27B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 33\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HUMAN 1H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HUMAN 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HUMAN 7\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPAN 3\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPAN 4\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"KHMER 9\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"KHMER 10\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"LING 1H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"LING 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"LING 3H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"LING 3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 4\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PHIL 6H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PHIL 6\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PHIL 7H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PHIL 7\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 8\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 9\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"PHIL 10H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PHIL 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 14\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 16\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SOCSC 1H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"SOCSC 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCSC 7\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 3\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 4\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN 9H\",\"units\":5}],\"catalog_addition\":false,\"code\":\"SPAN 9\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN 10H\",\"units\":5}],\"catalog_addition\":false,\"code\":\"SPAN 10\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 25A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 25B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 25C\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 25D\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Area 3B: Humanities\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ANTHR 2H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ANTHR 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ANTHR 3H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ANTHR 3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHR 4\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHR 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CDEV C1000\",\"units\":null,\"units_max\":null}],\"minimum\":2,\"name\":\"Area 4: Social and Behavioral Sciences\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Cal-GETC\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":189,\"placed\":110}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":50,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":20},\"coverage\":true,\"gaps\":[\"noted_section_cut_off\"],\"invented\":true,\"listed\":189,\"placed\":110}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (1)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s739g piles rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;"
+}

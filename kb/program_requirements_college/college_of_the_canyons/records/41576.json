@@ -149,7 +149,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "repeat_read_once",
+    "label": "The catalog prints a course the program takes more than once, and the record counts it once, so its units fall short of the printed total by the repeats.",
+    "words": "MUSIC-189 and MUSIC-190 are printed at 1.0 unit each but must each be taken 4 times for a total of eight units; block stated records the printed 8."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 60,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

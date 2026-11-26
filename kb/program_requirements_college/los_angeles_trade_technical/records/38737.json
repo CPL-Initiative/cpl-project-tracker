@@ -99,7 +99,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "noted_no_total",
+    "label": "The reader's note says the catalog prints no total for this program, so its units cannot be checked against one; no page read has confirmed it.",
+    "words": "No total units are printed for the certificate; total_units left null (the listed courses sum to 11 units, not recorded). | The text prints no program title heading for this section; section_heading uses 'PROGRAM OVERVIEW', the first heading of the Industrial Safety, Regulatory and Biomanufacturing certificate section. The lines above it (T038737D C - 11 - 11, the 60-unit Associate degree sentence, GE note) appear to be the tail of the preceding program and were not used."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

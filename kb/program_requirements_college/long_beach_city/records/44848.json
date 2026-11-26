@@ -289,7 +289,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "noted_section_cut_off",
+    "label": "The reader's note says the program's section runs onto a page the read did not hold, so part of its requirements is missing from the record.",
+    "words": "Catalog text is cut off partway through the Area 4 list (last item 'CDEV C1000 Child...', units not shown); Areas 5A, 5B, 5C, 6, and the optional U.S. History/Constitution and LOTE lists are not in the text. | The page prints no total units for the pattern; total_units is null. '30 units of Cal-GETC' appears only under CSU admission requirements."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 20,
+   "course_list_match": 50,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

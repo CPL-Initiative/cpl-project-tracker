@@ -1,0 +1,920 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30); Sam's routine prompt of 2026-11-25, as the S739 conductor's brief carries it: a record held for a gap is collected with its gap named and a lower score on the 0-100 bar, never held, unless the record is not the program's own; S739: Saddleback's records kb/receipts/program_requirement_records_piles_s730_saddleback_2026-11-25_s730b.json held, read again by key: passed by a rescore where today's scorer's one reading moves them, else collected with their gaps named where the record is the program's own (no reread, no reconcile)",
+ "at": "2026-11-26T08:18:11Z",
+ "college": "Saddleback College",
+ "keys": {
+  "from": "kb/receipts/program_requirement_records_piles_s730_saddleback_2026-11-25_s730b.json",
+  "members": [
+   "04073",
+   "36625"
+  ]
+ },
+ "gaps": {
+  "pool_figure_not_read": "The catalog prints one figure over several lists or nested options together, and the record adds the parts instead, so its units cannot be checked against that figure.",
+  "waived_course_counted": "The page prints a requirement at a range from zero units, since a student may meet it without the course (a certification, an exam or earlier coursework), and the record counts the course, so its units match the top of the printed range and not its low end."
+ },
+ "moved": 2,
+ "by": {
+  "waived_course_counted": 1,
+  "pool_figure_not_read": 1
+ },
+ "precision": {
+  "read": 2,
+  "right": 2,
+  "wrong": [],
+  "no_record_file": 0,
+  "not_hand_held": 0,
+  "by_answer": {
+   "waived_course_counted": 1,
+   "pool_figure_not_read": 1
+  }
+ },
+ "claim_checks": {
+  "counts": {
+   "stands": 2
+  },
+  "not_standing": []
+ },
+ "boundaries": {
+  "counts": {
+   "the note's words gone right": 2,
+   "the stated total one unit off right": 2,
+   "coverage failing right": 2,
+   "the reading against a total one unit off right": 1
+  },
+  "wrong": []
+ },
+ "held": [],
+ "records": [
+  {
+   "college": "Saddleback College",
+   "control_number": "04073",
+   "award": "A.A. Degree",
+   "extracted_run": "38843470509",
+   "moves_to": "waived_course_counted",
+   "words": "The four piano 'Select one' blocks (each 0.0-2.0 units) can each be satisfied by the course OR a proficiency exam; recorded as choose 1 with the course as the only listed option. These sit under the Required Core heading whose printed total is 12.0-20.0 units, which includes the piano units. | Ensemble requirement counts four semesters including repeated classes, so the minimum of 4 is semesters/enrollments rather than distinct courses.",
+   "confidence": {
+    "unit_arithmetic": 50,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/saddleback/records/04073.json",
+   "lever": "a repeat block_pattern step on the ensemble list (the reconcile lever S730 names) is the second gap's; the waiver stays a named gap, since the figure closes only for a student who passes the proficiency exams (d-waived-course-counted-keeps-50-s731)",
+   "before_image": {
+    "program_title": "Music",
+    "award": "A.A. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_mus_aa",
+    "measure": "units",
+    "total_min": 20,
+    "total_max": 34,
+    "record": {
+     "program": {
+      "section_heading": "MUSIC - Saddleback - A.A. Degree",
+      "measure": "units",
+      "total_units": {
+       "min": 20,
+       "max": 34
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "Saddleback College Graduation Requirements (local GE) or Cal-GETC",
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Transcribe and sight read both diatonic and chromatic music.",
+       "Demonstrate a working knowledge of musical analysis and harmonic theory applicable to their area of specialization.",
+       "Demonstrate a working knowledge of repertoire and performance practice applicable to their area of specialization.",
+       "Perform standard repertoire appropriate to their performance area, as individuals or as members of ensembles.",
+       "Demonstrate a working knowledge of music technology and its application to their area of specialization.",
+       "Create original music in improvised and/or written form.",
+       "Demonstrate the ability to listen critically to musical performance.",
+       "Demonstrate an ability to place composers, works and musical styles within an historical context, both in terms of musical and societal history."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Core",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 12,
+        "max": 20
+       },
+       "courses": [
+        {
+         "code": "MUS 10",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 11",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 12",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 92",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 93",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 94",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Select one",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 0,
+        "max": 2
+       },
+       "courses": [
+        {
+         "code": "MUS 54A",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Select one",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 0,
+        "max": 2
+       },
+       "courses": [
+        {
+         "code": "MUS 54B",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Select one",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 0,
+        "max": 2
+       },
+       "courses": [
+        {
+         "code": "MUS 55A",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Select one",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 0,
+        "max": 2
+       },
+       "courses": [
+        {
+         "code": "MUS 55B",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Ensemble Requirement: Complete four semesters from the following (including repeated classes)",
+       "rule": "choose_courses",
+       "minimum": 4,
+       "option_group": null,
+       "stated": {
+        "min": 4,
+        "max": 8
+       },
+       "courses": [
+        {
+         "code": "MUS 35",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 39",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 41",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 42",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 47",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 61",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 62",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 64",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 65",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 140",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 148",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 182",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 184",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 187",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 197",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Restricted Electives: Select 4-6 units",
+       "rule": "choose_units",
+       "minimum": 4,
+       "option_group": null,
+       "stated": {
+        "min": 4,
+        "max": 6
+       },
+       "courses": [
+        {
+         "code": "MUS 14",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 15",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 25",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 26",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 50",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 18",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 117",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 118",
+         "units": 2.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 130",
+         "units": 2.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 132",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 35,
+     "listed": 35
+    },
+    "extracted_run": "38843470509"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 35,
+     "listed": 35,
+     "gaps": [
+      "waived_course_counted"
+     ],
+     "confidence": {
+      "unit_arithmetic": 50,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 1
+  },
+  {
+   "college": "Saddleback College",
+   "control_number": "36625",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "extracted_run": "38843470509",
+   "moves_to": "pool_figure_not_read",
+   "words": "Restricted Electives: 'Complete 3-5 units (1-2 courses) from one of the following pathways', printed total 3.0-5.0. Each pathway is recorded as a choose_units block with minimum 3 in one option_group; the number printed beside each pathway name (12.0, 19.0, 13.0, 8.0, 12.0, 18.0) appears to be the sum of listed courses and is recorded as stated, not as the required amount. The 5-unit upper limit and the 1-2 course limit are not captured by the schema.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/saddleback/records/36625.json",
+   "lever": "a wording rule on a Saddleback reconcile that reads each pathway at the printed 3-5 passes it (S730's reason); a reconcile's rescore drops the gap when it does",
+   "before_image": {
+    "program_title": "Aging Studies Interdisciplinary",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_Aging_Inter_CA",
+    "measure": "units",
+    "total_min": 12,
+    "total_max": 14,
+    "record": {
+     "program": {
+      "section_heading": "AGING STUDIES INTERDISCIPLINARY - Certificate of Achievement",
+      "measure": "units",
+      "total_units": {
+       "min": 12,
+       "max": 14
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Explain the key sociological, psychological, and biological concepts associated with the study of aging.",
+       "Apply theoretical perspectives to analyze current and historical topics associated with the study of aging.",
+       "Evaluate the family, government, and community support systems for diverse groups of aging individuals.",
+       "Demonstrate knowledge and skills in one of the suggested pathways of study within the Aging Studies Interdisciplinary Certificate Program."
+      ],
+      "careers": [
+       "business",
+       "marketing",
+       "environmental design",
+       "nutrition",
+       "nursing",
+       "medical assisting",
+       "health",
+       "wellness",
+       "recreation",
+       "fitness",
+       "food services/preparation",
+       "human services",
+       "senior communities",
+       "home health care",
+       "caregiving",
+       "travel/tourism"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required Core",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "SOC 18",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Select two courses",
+       "rule": "choose_courses",
+       "minimum": 2,
+       "option_group": null,
+       "stated": {
+        "min": 6,
+        "max": 6
+       },
+       "courses": [
+        {
+         "code": "SOC 16",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOC 12",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC 25",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Pathway 1: Business",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": "Restricted Electives pathway",
+       "stated": {
+        "min": 12,
+        "max": 12
+       },
+       "courses": [
+        {
+         "code": "BUS 16",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BUS 135",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BUS 160",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BUS 172",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Pathway 2: Environmental Design",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": "Restricted Electives pathway",
+       "stated": {
+        "min": 19,
+        "max": 19
+       },
+       "courses": [
+        {
+         "code": "ARCH 18",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARCH 163",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARCH 219",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ID 110",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ID 112",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ID 131",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Pathway 3: Nutrition and Culinary",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": "Restricted Electives pathway",
+       "stated": {
+        "min": 13,
+        "max": 13
+       },
+       "courses": [
+        {
+         "code": "NUTR 50",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CUL 110",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NUTR 161",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NUTR 169",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CUL 232",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Pathway 4: Healthcare",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": "Restricted Electives pathway",
+       "stated": {
+        "min": 8,
+        "max": 8
+       },
+       "courses": [
+        {
+         "code": "MA 206",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MA 280",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "N 204",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Pathway 5: Health and Wellness",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": "Restricted Electives pathway",
+       "stated": {
+        "min": 12,
+        "max": 12
+       },
+       "courses": [
+        {
+         "code": "HLTH 1",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HSC 151",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "KNEA 151",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "KNES 51",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "KNES 60",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "KNES 220",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Pathway 6: Human Services",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": "Restricted Electives pathway",
+       "stated": {
+        "min": 18,
+        "max": 18
+       },
+       "courses": [
+        {
+         "code": "HS 120",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HS 131",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HS 140",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HS 174",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HS 220",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOC 10",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 34,
+     "listed": 34
+    },
+    "extracted_run": "38843470509"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 34,
+     "listed": 34,
+     "gaps": [
+      "pool_figure_not_read"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 2
+  }
+ ],
+ "live_run_proof": null,
+ "shared_pages": {},
+ "representation": "checks.gaps and checks.confidence added as the load reads the filed score (a passing row: checks.arithmetic to equal); checks.coverage, invented and the record unchanged",
+ "claim_check_reads": "Today's capture (sources.json): every course an entry names among the codes it found, and a course an entry says the printed total leaves out on neither it nor the state's list. A note's quoted figures are the reader's words, never re-read here.",
+ "follow_verdict": "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows (confirm_matches); the apply aborts, writing nothing, unless the count is 0.",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Saddleback College', '04073', 38843470509, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 92\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 93\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 94\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":20,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 54A\",\"units\":2,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":2,\"min\":0}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 54B\",\"units\":2,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":2,\"min\":0}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 55A\",\"units\":2,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":2,\"min\":0}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 55B\",\"units\":2,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":2,\"min\":0}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 35\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 39\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 41\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 42\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 47\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 61\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 62\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 64\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 65\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 140\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 148\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 182\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 184\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 187\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 197\",\"units\":1,\"units_max\":null}],\"minimum\":4,\"name\":\"Ensemble Requirement: Complete four semesters from the following (including repeated classes)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":8,\"min\":4}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 14\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 26\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 50\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 18\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 117\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 118\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 130\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 132\",\"units\":2,\"units_max\":null}],\"minimum\":4,\"name\":\"Restricted Electives: Select 4-6 units\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":6,\"min\":4}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Saddleback College Graduation Requirements (local GE) or Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Transcribe and sight read both diatonic and chromatic music.\",\"Demonstrate a working knowledge of musical analysis and harmonic theory applicable to their area of specialization.\",\"Demonstrate a working knowledge of repertoire and performance practice applicable to their area of specialization.\",\"Perform standard repertoire appropriate to their performance area, as individuals or as members of ensembles.\",\"Demonstrate a working knowledge of music technology and its application to their area of specialization.\",\"Create original music in improvised and/or written form.\",\"Demonstrate the ability to listen critically to musical performance.\",\"Demonstrate an ability to place composers, works and musical styles within an historical context, both in terms of musical and societal history.\"],\"section_heading\":\"MUSIC - Saddleback - A.A. Degree\",\"total_units\":{\"max\":34,\"min\":20}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":35,\"placed\":35}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"waived_course_counted\"],\"invented\":true,\"listed\":35,\"placed\":35}'::jsonb),\n  (2, 'Saddleback College', '36625', 38843470509, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 18\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 16\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 25\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"Select two courses\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 16\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 135\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 160\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 172\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Pathway 1: Business\",\"option_group\":\"Restricted Electives pathway\",\"rule\":\"choose_units\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH 18\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH 163\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH 219\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID 110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID 112\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID 131\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Pathway 2: Environmental Design\",\"option_group\":\"Restricted Electives pathway\",\"rule\":\"choose_units\",\"stated\":{\"max\":19,\"min\":19}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NUTR 50\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CUL 110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NUTR 161\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NUTR 169\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CUL 232\",\"units\":1,\"units_max\":null}],\"minimum\":3,\"name\":\"Pathway 3: Nutrition and Culinary\",\"option_group\":\"Restricted Electives pathway\",\"rule\":\"choose_units\",\"stated\":{\"max\":13,\"min\":13}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 206\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 280\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"N 204\",\"units\":2,\"units_max\":null}],\"minimum\":3,\"name\":\"Pathway 4: Healthcare\",\"option_group\":\"Restricted Electives pathway\",\"rule\":\"choose_units\",\"stated\":{\"max\":8,\"min\":8}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTH 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"KNEA 151\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HSC 151\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KNES 51\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KNES 60\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KNES 220\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Pathway 5: Health and Wellness\",\"option_group\":\"Restricted Electives pathway\",\"rule\":\"choose_units\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HS 120\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HS 131\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HS 140\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HS 174\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HS 220\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 10\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Pathway 6: Human Services\",\"option_group\":\"Restricted Electives pathway\",\"rule\":\"choose_units\",\"stated\":{\"max\":18,\"min\":18}}],\"program\":{\"careers\":[\"business\",\"marketing\",\"environmental design\",\"nutrition\",\"nursing\",\"medical assisting\",\"health\",\"wellness\",\"recreation\",\"fitness\",\"food services/preparation\",\"human services\",\"senior communities\",\"home health care\",\"caregiving\",\"travel/tourism\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Explain the key sociological, psychological, and biological concepts associated with the study of aging.\",\"Apply theoretical perspectives to analyze current and historical topics associated with the study of aging.\",\"Evaluate the family, government, and community support systems for diverse groups of aging individuals.\",\"Demonstrate knowledge and skills in one of the suggested pathways of study within the Aging Studies Interdisciplinary Certificate Program.\"],\"section_heading\":\"AGING STUDIES INTERDISCIPLINARY - Certificate of Achievement\",\"total_units\":{\"max\":14,\"min\":12}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":34,\"placed\":34}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"pool_figure_not_read\"],\"invented\":true,\"listed\":34,\"placed\":34}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "pre_read_md5": "with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) as (values\n  (1, 'Saddleback College', '04073', 38843470509, 'ec204a2cd97ee0a9524a423aceda253f', '270e10082391035ce7c624e7f41a2519', 'e6fed47eccbbaa0f1fca3dae96abd10e'),\n  (2, 'Saddleback College', '36625', 38843470509, 'ef6ccd43b69815bd40423c2727c94196', 'db490ca8012a7848af424ef80ddf2930', '1583113ae4b83906a36f6c470a49278f'))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.record::text) = v.rec_md5),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.checks::text) = v.chk_md5),\n  'already_after', count(*) filter (where md5(r.checks::text) = v.after_md5),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Saddleback College', '04073', 38843470509, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 92\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 93\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 94\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":20,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 54A\",\"units\":2,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":2,\"min\":0}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 54B\",\"units\":2,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":2,\"min\":0}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 55A\",\"units\":2,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":2,\"min\":0}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 55B\",\"units\":2,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":2,\"min\":0}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 35\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 39\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 41\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 42\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 47\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 61\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 62\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 64\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 65\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 140\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 148\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 182\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 184\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 187\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 197\",\"units\":1,\"units_max\":null}],\"minimum\":4,\"name\":\"Ensemble Requirement: Complete four semesters from the following (including repeated classes)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":8,\"min\":4}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 14\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 26\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 50\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 18\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 117\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 118\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 130\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 132\",\"units\":2,\"units_max\":null}],\"minimum\":4,\"name\":\"Restricted Electives: Select 4-6 units\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":6,\"min\":4}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Saddleback College Graduation Requirements (local GE) or Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Transcribe and sight read both diatonic and chromatic music.\",\"Demonstrate a working knowledge of musical analysis and harmonic theory applicable to their area of specialization.\",\"Demonstrate a working knowledge of repertoire and performance practice applicable to their area of specialization.\",\"Perform standard repertoire appropriate to their performance area, as individuals or as members of ensembles.\",\"Demonstrate a working knowledge of music technology and its application to their area of specialization.\",\"Create original music in improvised and/or written form.\",\"Demonstrate the ability to listen critically to musical performance.\",\"Demonstrate an ability to place composers, works and musical styles within an historical context, both in terms of musical and societal history.\"],\"section_heading\":\"MUSIC - Saddleback - A.A. Degree\",\"total_units\":{\"max\":34,\"min\":20}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":35,\"placed\":35}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"waived_course_counted\"],\"invented\":true,\"listed\":35,\"placed\":35}'::jsonb),\n  (2, 'Saddleback College', '36625', 38843470509, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 18\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 16\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 25\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"Select two courses\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 16\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 135\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 160\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 172\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Pathway 1: Business\",\"option_group\":\"Restricted Electives pathway\",\"rule\":\"choose_units\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH 18\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH 163\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH 219\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID 110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID 112\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID 131\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Pathway 2: Environmental Design\",\"option_group\":\"Restricted Electives pathway\",\"rule\":\"choose_units\",\"stated\":{\"max\":19,\"min\":19}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NUTR 50\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CUL 110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NUTR 161\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NUTR 169\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CUL 232\",\"units\":1,\"units_max\":null}],\"minimum\":3,\"name\":\"Pathway 3: Nutrition and Culinary\",\"option_group\":\"Restricted Electives pathway\",\"rule\":\"choose_units\",\"stated\":{\"max\":13,\"min\":13}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 206\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 280\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"N 204\",\"units\":2,\"units_max\":null}],\"minimum\":3,\"name\":\"Pathway 4: Healthcare\",\"option_group\":\"Restricted Electives pathway\",\"rule\":\"choose_units\",\"stated\":{\"max\":8,\"min\":8}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTH 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"KNEA 151\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HSC 151\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KNES 51\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KNES 60\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KNES 220\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Pathway 5: Health and Wellness\",\"option_group\":\"Restricted Electives pathway\",\"rule\":\"choose_units\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HS 120\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HS 131\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HS 140\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HS 174\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HS 220\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 10\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Pathway 6: Human Services\",\"option_group\":\"Restricted Electives pathway\",\"rule\":\"choose_units\",\"stated\":{\"max\":18,\"min\":18}}],\"program\":{\"careers\":[\"business\",\"marketing\",\"environmental design\",\"nutrition\",\"nursing\",\"medical assisting\",\"health\",\"wellness\",\"recreation\",\"fitness\",\"food services/preparation\",\"human services\",\"senior communities\",\"home health care\",\"caregiving\",\"travel/tourism\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Explain the key sociological, psychological, and biological concepts associated with the study of aging.\",\"Apply theoretical perspectives to analyze current and historical topics associated with the study of aging.\",\"Evaluate the family, government, and community support systems for diverse groups of aging individuals.\",\"Demonstrate knowledge and skills in one of the suggested pathways of study within the Aging Studies Interdisciplinary Certificate Program.\"],\"section_heading\":\"AGING STUDIES INTERDISCIPLINARY - Certificate of Achievement\",\"total_units\":{\"max\":14,\"min\":12}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":34,\"placed\":34}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"pool_figure_not_read\"],\"invented\":true,\"listed\":34,\"placed\":34}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\nf as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number\n        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true\n       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)),\ne(expect) as (values (2)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when f.n > 0\n            then ('s739f piles confirm guard: ' || f.n || ' rows hold a matching confirm verdict ' || f.keys::text)::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s739f piles guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, f;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Saddleback College', '04073', 38843470509, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 92\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 93\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 94\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":20,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 54A\",\"units\":2,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":2,\"min\":0}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 54B\",\"units\":2,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":2,\"min\":0}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 55A\",\"units\":2,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":2,\"min\":0}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 55B\",\"units\":2,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":2,\"min\":0}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 35\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 39\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 41\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 42\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 47\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 61\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 62\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 64\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 65\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 140\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 148\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 182\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 184\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 187\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 197\",\"units\":1,\"units_max\":null}],\"minimum\":4,\"name\":\"Ensemble Requirement: Complete four semesters from the following (including repeated classes)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":8,\"min\":4}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 14\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 26\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 50\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 18\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 117\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 118\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 130\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 132\",\"units\":2,\"units_max\":null}],\"minimum\":4,\"name\":\"Restricted Electives: Select 4-6 units\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":6,\"min\":4}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Saddleback College Graduation Requirements (local GE) or Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Transcribe and sight read both diatonic and chromatic music.\",\"Demonstrate a working knowledge of musical analysis and harmonic theory applicable to their area of specialization.\",\"Demonstrate a working knowledge of repertoire and performance practice applicable to their area of specialization.\",\"Perform standard repertoire appropriate to their performance area, as individuals or as members of ensembles.\",\"Demonstrate a working knowledge of music technology and its application to their area of specialization.\",\"Create original music in improvised and/or written form.\",\"Demonstrate the ability to listen critically to musical performance.\",\"Demonstrate an ability to place composers, works and musical styles within an historical context, both in terms of musical and societal history.\"],\"section_heading\":\"MUSIC - Saddleback - A.A. Degree\",\"total_units\":{\"max\":34,\"min\":20}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":35,\"placed\":35}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"waived_course_counted\"],\"invented\":true,\"listed\":35,\"placed\":35}'::jsonb),\n  (2, 'Saddleback College', '36625', 38843470509, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 18\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 16\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 25\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"Select two courses\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 16\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 135\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 160\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 172\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Pathway 1: Business\",\"option_group\":\"Restricted Electives pathway\",\"rule\":\"choose_units\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH 18\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH 163\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH 219\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID 110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID 112\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID 131\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Pathway 2: Environmental Design\",\"option_group\":\"Restricted Electives pathway\",\"rule\":\"choose_units\",\"stated\":{\"max\":19,\"min\":19}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NUTR 50\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CUL 110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NUTR 161\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NUTR 169\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CUL 232\",\"units\":1,\"units_max\":null}],\"minimum\":3,\"name\":\"Pathway 3: Nutrition and Culinary\",\"option_group\":\"Restricted Electives pathway\",\"rule\":\"choose_units\",\"stated\":{\"max\":13,\"min\":13}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 206\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 280\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"N 204\",\"units\":2,\"units_max\":null}],\"minimum\":3,\"name\":\"Pathway 4: Healthcare\",\"option_group\":\"Restricted Electives pathway\",\"rule\":\"choose_units\",\"stated\":{\"max\":8,\"min\":8}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTH 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"KNEA 151\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HSC 151\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KNES 51\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KNES 60\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KNES 220\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Pathway 5: Health and Wellness\",\"option_group\":\"Restricted Electives pathway\",\"rule\":\"choose_units\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HS 120\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HS 131\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HS 140\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HS 174\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HS 220\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 10\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Pathway 6: Human Services\",\"option_group\":\"Restricted Electives pathway\",\"rule\":\"choose_units\",\"stated\":{\"max\":18,\"min\":18}}],\"program\":{\"careers\":[\"business\",\"marketing\",\"environmental design\",\"nutrition\",\"nursing\",\"medical assisting\",\"health\",\"wellness\",\"recreation\",\"fitness\",\"food services/preparation\",\"human services\",\"senior communities\",\"home health care\",\"caregiving\",\"travel/tourism\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Explain the key sociological, psychological, and biological concepts associated with the study of aging.\",\"Apply theoretical perspectives to analyze current and historical topics associated with the study of aging.\",\"Evaluate the family, government, and community support systems for diverse groups of aging individuals.\",\"Demonstrate knowledge and skills in one of the suggested pathways of study within the Aging Studies Interdisciplinary Certificate Program.\"],\"section_heading\":\"AGING STUDIES INTERDISCIPLINARY - Certificate of Achievement\",\"total_units\":{\"max\":14,\"min\":12}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":34,\"placed\":34}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"pool_figure_not_read\"],\"invented\":true,\"listed\":34,\"placed\":34}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (2)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s739f piles rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;"
+}

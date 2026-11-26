@@ -46,30 +46,26 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 20,
+   "placed": 21,
    "listed": 23,
-   "share": 0.87,
+   "share": 0.913,
    "missing": [
     "ARCHT100",
-    "ARCHT84",
-    "WWE186ID"
+    "ARCHT84"
    ],
-   "unexplained": [
-    "WWE186ID"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "ID101B",
-    "WE186ID"
+    "ID101B"
    ],
    "flagged": [
     "ID101B"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -107,7 +103,14 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true,
+  "course_renumbers": [
+   {
+    "printed": "WE-186ID",
+    "listed": "WWE186ID",
+    "block": "Plus seven units from the following that have not already been taken above"
+   }
+  ]
  },
  "record": {
   "program": {

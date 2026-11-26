@@ -118,7 +118,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "double_count_noted",
+    "label": "The catalog lets some of the program's units count twice, toward the major and general education, and the record adds them twice.",
+    "words": "Additional Electives printed as 7-9 with a footnote that the number varies depending on units that double count; recorded as degree_elective_units 7-9. | Courses marked * (GEOG 5, CIS 2, GEOG 1A, GEOG 1B, GEOG 7, GEOG 8) may also fulfill General Education requirements."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 100,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

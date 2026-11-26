@@ -128,7 +128,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "heading_not_in_text",
+    "label": "The page the read held prints a requirements list but not the program's own heading, which sits on a page the read did not hold; the record takes the list as this program's by its title alone, and no page read has confirmed it.",
+    "words": "Associate in Arts in Psychology for Transfer (AA-T) degree (heading on the page before 852, not in the text)"
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 20,
+   "course_list_match": 50,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 50
+  }
  },
  "record": {
   "program": {
