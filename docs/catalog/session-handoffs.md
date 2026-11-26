@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-689 document(s).
+690 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 738 | [Session 738 handoff (from SkyWhimbrel, S737, Sam's plain session of 2026-11-26: the Honors redraw, CI from 10 to 8 minutes)](../session_738_handoff.md) | 2026-11-26 |
 | 735 | [Session 735 handoff (from SkyAlvord, S735, a side session of 2026-11-25: Adult Education CPL Starting Points)](../session_735_handoff.md) | 2026-11-25 |
 | 734 | [Session 734 handoff (from SkyGodwit, S733, Sam's plain session of 2026-11-25: COBIx's titles filed, the stray-code rescore scored 0 to 100, the re-mint dry run)](../session_734_handoff.md) | 2026-11-25 |
 | 732 | [Session 732 handoff (from SkyFrigatebird, S731, the CPL Queue routine's collection run of 2026-11-25, from 10:55Z)](../session_732_handoff.md) | 2026-11-25 |

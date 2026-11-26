@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 730,
-  "moniker": "SkyDunlin",
+  "session": 737,
+  "moniker": "SkyWhimbrel",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_731_handoff.md",
+  "handoff": "docs/session_738_handoff.md",
   "calls": [
     {
       "title": "Confirm Kinesiology's 627 where the descriptions and TOP both agree?",
@@ -103,13 +103,17 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-25T11:50:52Z",
+  "written_at": "2026-11-26T03:42:37Z",
   "project": "course",
   "next_step": {
     "title": "Needs you, the rest of step 4, then the Courses list under the trail",
     "text": "Check each remaining Needs you item against its list's own save and read it live where it still waits for the nightly build. Then mount the Courses data list under the Commons trail if a cheap mount path appears, else leave the link."
   },
   "changes": [
+    {
+      "at": "2026-11-26T01:55Z",
+      "text": "The Honors mint plan was redrawn on the current M-IDs: one pair left (FTVM M10AS and M10AF, both retired by the stray-code re-mint), so 128 Honors M-IDs are ready to mint, and the step-2 rows already applied stay pinned to the plan that wrote them."
+    },
     {
       "at": "2026-11-25T06:24Z",
       "text": "The adapt gather published: none of the 34 merged M-IDs keeps its own member list, and PEDS M1029 holds 293 local courses at 0 to 4 units."
