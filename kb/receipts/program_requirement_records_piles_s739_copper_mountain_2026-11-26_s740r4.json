@@ -1,0 +1,408 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30); Sam's routine prompt of 2026-11-25, as the S739 conductor's brief carries it: a record held for a gap is collected with its gap named and a lower score on the 0-100 bar, never held, unless the record is not the program's own; S739: Copper Mountain's records kb/receipts/program_requirement_records_piles_s739_copper_mountain_2026-11-26_s740r3.json (its holds, read again by read 45855512160) held, read again by key: passed by a rescore where today's scorer's one reading moves them, else collected with their gaps named where the record is the program's own (no reread, no reconcile)",
+ "at": "2026-11-26T16:12:07Z",
+ "college": "Copper Mountain College",
+ "keys": {
+  "from": "kb/receipts/program_requirement_records_piles_s739_copper_mountain_2026-11-26_s740r3.json (its holds, read again by read 45855512160)",
+  "members": [
+   "14710",
+   "14737",
+   "14751",
+   "16657",
+   "20094",
+   "43854",
+   "45594"
+  ]
+ },
+ "gaps": {
+  "prerequisites_counted": "The record counts the program's prerequisite courses, which the catalog's printed total leaves out; without them the courses add to the printed total."
+ },
+ "moved": 1,
+ "by": {
+  "prerequisites_counted": 1
+ },
+ "precision": {
+  "read": 7,
+  "right": 7,
+  "wrong": [],
+  "no_record_file": 0,
+  "not_hand_held": 0,
+  "by_answer": {
+   "none": 6,
+   "prerequisites_counted": 1
+  }
+ },
+ "claim_checks": {
+  "counts": {
+   "stands": 1
+  },
+  "not_standing": []
+ },
+ "boundaries": {
+  "counts": {
+   "the note's words gone right": 1,
+   "the stated total one unit off right": 1,
+   "coverage failing right": 1,
+   "the reading against a total one unit off right": 1
+  },
+  "wrong": []
+ },
+ "held": [
+  {
+   "control_number": "14710",
+   "why": "held: the restricted electives' figure depends on the work experience units taken, and the concentrations print totals their courses do not add to; no one kind is true for the row: a person",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "14737",
+   "why": "held: the courses add to 54.6 against the printed 'Total Units for the Major 56', and no reading closes it; this read's notes quote no second figure. total_differs is true for it and is filed only by its own procedure (kb/program_total_differs.json)",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "14751",
+   "why": "held: the major adds to 42-48 against the printed 42 (EMT 084 printed '3-9'), and the degree to 63-69 against the printed 60; two figures on one row, and no one reading closes both",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "20094",
+   "why": "held: the courses add to 54.6 against the printed 'Total Units for the Major 56', and no reading closes it; this read's notes quote no second figure. total_differs is true for it and is filed only by its own procedure (kb/program_total_differs.json)",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "43854",
+   "why": "held: the major adds to its printed 24, and the degree's 58-67 holds the printed 60 inside it, matching neither end: the units within-range kind, units_within_printed_range, filed by key once that kind is on main (d-within-range-sums-hold-for-units-kind-s739)",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "45594",
+   "why": "held: the lists add to 36-49 against the printed 32-49; List C prints '3-12' beside 'Up to 12 additional units', and no reading its note names gives 32",
+   "claim": "no entry stands"
+  }
+ ],
+ "records": [
+  {
+   "college": "Copper Mountain College",
+   "control_number": "16657",
+   "award": "A.S. Degree",
+   "extracted_run": "45855512160",
+   "moves_to": "prerequisites_counted",
+   "words": "'Total Units for the Major 37' equals the sum of the nursing courses only (N 010 through N 045); the prerequisite blocks (BIOL, ENGL, MATH, PSYC, SOCI/ANTH, COMM) are printed outside that total and are presumably partly counted in the 36-unit CMC General Education Requirement toward the 73 minimum degree units.",
+   "confidence": {
+    "unit_arithmetic": 70,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/copper_mountain/records/16657.json",
+   "before_image": {
+    "program_title": "Registered Nursing",
+    "award": "A.S. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=112",
+    "measure": "units",
+    "total_min": 37,
+    "total_max": 37,
+    "record": {
+     "program": {
+      "section_heading": "NURSING: REGISTERED / Associate in Science in REGISTERED NURSING with emphasis on employment preparation",
+      "measure": "units",
+      "total_units": {
+       "min": 37,
+       "max": 37
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "CMC General Education Requirement",
+      "degree_total": {
+       "min": 73,
+       "max": 73
+      },
+      "ge_units": {
+       "min": 36,
+       "max": 36
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Coordination and Collaboration of Care: Perform within an interdisciplinary team utilizing effective communication skills, collaborative decision making, and mutual respect to promote quality patient care. (ILOs: Communication)",
+       "Safety and Quality Improvement: Devise plans of care that minimize risk of harm to improve safety and quality for diverse patients across the life span utilizing system processes. (ILOs: Critical Thinking)",
+       "Evidence Based Practice: Integrate current best evidence utilizing clinical reasoning, nursing judgment and patient preferences to achieve optimal health. (ILOs: Critical Thinking)",
+       "Nursing Judgment: Demonstrate judgment in practice, supported by evidence that integrates knowledge, skills, and attitudes of a beginning nurse generalist to provide safe quality of care. (ILOs: Critical Thinking)",
+       "Utilize the nursing process in providing nursing care. (ILOs: Critical Thinking)",
+       "Culture: Provide patient centered nursing care to meet the healthcare needs of patients with unique cultural attributes within diverse communities. (ILOs: Ethics)",
+       "Manage an environment that promotes patients’ self-esteem, dignity, safety and comfort. (ILOs: Ethics)",
+       "Professionalism and Leadership: Demonstrate integrity, ethical standards and principles of leadership and professional practice, personal growth, accountability for adherence to policies and procedures, and advocacy for patients and the profession of nursing. (ILOs: Personal Development)",
+       "Informatics and Technology: Manage information and technology to communicate with the interdisciplinary team, make informed clinical decisions, and minimize patient and personal harm. (ILOs: Information Competency)"
+      ],
+      "careers": [
+       "Beginning Nurse Generalist"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "RN Program electives to be completed PRIOR to applying to RN program",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "BIOL 015",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "BIOL 022",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "BIOL 023",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MATH 040",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PSYC 003",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "The following must be completed before admission to RN program",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "PSYC C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOCI C1000",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ANTH 002",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": true
+        },
+        {
+         "code": "COMM C1004",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "COMM C1000",
+           "units": 3,
+           "catalog_addition": true
+          },
+          {
+           "code": "COMM 007",
+           "units": null,
+           "catalog_addition": false
+          },
+          {
+           "code": "COMM 015",
+           "units": 3,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "First Semester",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "N 010",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "N 015",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Second Semester",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "N 020",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "N 025",
+         "units": 3.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "Third Semester",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "N 030",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "N 035",
+         "units": 2.25,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "N 036",
+         "units": 2.25,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Fourth Semester",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "N 040",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "N 045",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 10,
+     "listed": 10
+    },
+    "extracted_run": "45855512160"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 10,
+     "listed": 10,
+     "gaps": [
+      "prerequisites_counted"
+     ],
+     "confidence": {
+      "unit_arithmetic": 70,
+      "course_list_match": 100,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 1
+  }
+ ],
+ "live_run_proof": null,
+ "shared_pages": {},
+ "representation": "checks.gaps and checks.confidence added as the load reads the filed score (a passing row: checks.arithmetic to equal); checks.coverage, invented and the record unchanged",
+ "claim_check_reads": "Today's capture (sources.json): every course an entry names among the codes it found, and a course an entry says the printed total leaves out on neither it nor the state's list. A note's quoted figures are the reader's words, never re-read here.",
+ "follow_verdict": "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows (confirm_matches); the apply aborts, writing nothing, unless the count is 0.",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Copper Mountain College', '16657', 45855512160, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 015\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 022\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 023\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 040\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 003\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"RN Program electives to be completed PRIOR to applying to RN program\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ANTH 002\",\"units\":3}],\"catalog_addition\":true,\"code\":\"SOCI C1000\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"COMM C1000\",\"units\":3},{\"catalog_addition\":false,\"code\":\"COMM 007\",\"units\":null},{\"catalog_addition\":true,\"code\":\"COMM 015\",\"units\":3}],\"catalog_addition\":true,\"code\":\"COMM C1004\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"The following must be completed before admission to RN program\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"N 010\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"N 015\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"First Semester\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"N 020\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"N 025\",\"units\":3.5,\"units_max\":null}],\"minimum\":null,\"name\":\"Second Semester\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"N 030\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"N 035\",\"units\":2.25,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"N 036\",\"units\":2.25,\"units_max\":null}],\"minimum\":null,\"name\":\"Third Semester\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"N 040\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"N 045\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Fourth Semester\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"Beginning Nurse Generalist\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":73,\"min\":73},\"electives_fill_degree\":false,\"ge_pattern\":\"CMC General Education Requirement\",\"ge_units\":{\"max\":36,\"min\":36},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Coordination and Collaboration of Care: Perform within an interdisciplinary team utilizing effective communication skills, collaborative decision making, and mutual respect to promote quality patient care. (ILOs: Communication)\",\"Safety and Quality Improvement: Devise plans of care that minimize risk of harm to improve safety and quality for diverse patients across the life span utilizing system processes. (ILOs: Critical Thinking)\",\"Evidence Based Practice: Integrate current best evidence utilizing clinical reasoning, nursing judgment and patient preferences to achieve optimal health. (ILOs: Critical Thinking)\",\"Nursing Judgment: Demonstrate judgment in practice, supported by evidence that integrates knowledge, skills, and attitudes of a beginning nurse generalist to provide safe quality of care. (ILOs: Critical Thinking)\",\"Utilize the nursing process in providing nursing care. (ILOs: Critical Thinking)\",\"Culture: Provide patient centered nursing care to meet the healthcare needs of patients with unique cultural attributes within diverse communities. (ILOs: Ethics)\",\"Manage an environment that promotes patients’ self-esteem, dignity, safety and comfort. (ILOs: Ethics)\",\"Professionalism and Leadership: Demonstrate integrity, ethical standards and principles of leadership and professional practice, personal growth, accountability for adherence to policies and procedures, and advocacy for patients and the profession of nursing. (ILOs: Personal Development)\",\"Informatics and Technology: Manage information and technology to communicate with the interdisciplinary team, make informed clinical decisions, and minimize patient and personal harm. (ILOs: Information Competency)\"],\"section_heading\":\"NURSING: REGISTERED / Associate in Science in REGISTERED NURSING with emphasis on employment preparation\",\"total_units\":{\"max\":37,\"min\":37}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":10,\"placed\":10}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":80,\"unit_arithmetic\":70},\"coverage\":true,\"gaps\":[\"prerequisites_counted\"],\"invented\":true,\"listed\":10,\"placed\":10}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "pre_read_md5": "with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) as (values\n  (1, 'Copper Mountain College', '16657', 45855512160, '0e900bb3847df8ea240f262bd96b824d', '565698f6affa77ef6c1410d28f8c0923', '9713e64eeaf13f3f56231c3d1294eb00'))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.record::text) = v.rec_md5),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.checks::text) = v.chk_md5),\n  'already_after', count(*) filter (where md5(r.checks::text) = v.after_md5),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Copper Mountain College', '16657', 45855512160, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 015\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 022\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 023\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 040\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 003\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"RN Program electives to be completed PRIOR to applying to RN program\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ANTH 002\",\"units\":3}],\"catalog_addition\":true,\"code\":\"SOCI C1000\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"COMM C1000\",\"units\":3},{\"catalog_addition\":false,\"code\":\"COMM 007\",\"units\":null},{\"catalog_addition\":true,\"code\":\"COMM 015\",\"units\":3}],\"catalog_addition\":true,\"code\":\"COMM C1004\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"The following must be completed before admission to RN program\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"N 010\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"N 015\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"First Semester\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"N 020\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"N 025\",\"units\":3.5,\"units_max\":null}],\"minimum\":null,\"name\":\"Second Semester\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"N 030\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"N 035\",\"units\":2.25,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"N 036\",\"units\":2.25,\"units_max\":null}],\"minimum\":null,\"name\":\"Third Semester\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"N 040\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"N 045\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Fourth Semester\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"Beginning Nurse Generalist\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":73,\"min\":73},\"electives_fill_degree\":false,\"ge_pattern\":\"CMC General Education Requirement\",\"ge_units\":{\"max\":36,\"min\":36},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Coordination and Collaboration of Care: Perform within an interdisciplinary team utilizing effective communication skills, collaborative decision making, and mutual respect to promote quality patient care. (ILOs: Communication)\",\"Safety and Quality Improvement: Devise plans of care that minimize risk of harm to improve safety and quality for diverse patients across the life span utilizing system processes. (ILOs: Critical Thinking)\",\"Evidence Based Practice: Integrate current best evidence utilizing clinical reasoning, nursing judgment and patient preferences to achieve optimal health. (ILOs: Critical Thinking)\",\"Nursing Judgment: Demonstrate judgment in practice, supported by evidence that integrates knowledge, skills, and attitudes of a beginning nurse generalist to provide safe quality of care. (ILOs: Critical Thinking)\",\"Utilize the nursing process in providing nursing care. (ILOs: Critical Thinking)\",\"Culture: Provide patient centered nursing care to meet the healthcare needs of patients with unique cultural attributes within diverse communities. (ILOs: Ethics)\",\"Manage an environment that promotes patients’ self-esteem, dignity, safety and comfort. (ILOs: Ethics)\",\"Professionalism and Leadership: Demonstrate integrity, ethical standards and principles of leadership and professional practice, personal growth, accountability for adherence to policies and procedures, and advocacy for patients and the profession of nursing. (ILOs: Personal Development)\",\"Informatics and Technology: Manage information and technology to communicate with the interdisciplinary team, make informed clinical decisions, and minimize patient and personal harm. (ILOs: Information Competency)\"],\"section_heading\":\"NURSING: REGISTERED / Associate in Science in REGISTERED NURSING with emphasis on employment preparation\",\"total_units\":{\"max\":37,\"min\":37}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":10,\"placed\":10}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":80,\"unit_arithmetic\":70},\"coverage\":true,\"gaps\":[\"prerequisites_counted\"],\"invented\":true,\"listed\":10,\"placed\":10}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\nf as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number\n        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true\n       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)),\ne(expect) as (values (1)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when f.n > 0\n            then ('s740r4 piles confirm guard: ' || f.n || ' rows hold a matching confirm verdict ' || f.keys::text)::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s740r4 piles guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, f;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Copper Mountain College', '16657', 45855512160, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 015\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 022\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 023\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 040\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 003\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"RN Program electives to be completed PRIOR to applying to RN program\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ANTH 002\",\"units\":3}],\"catalog_addition\":true,\"code\":\"SOCI C1000\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"COMM C1000\",\"units\":3},{\"catalog_addition\":false,\"code\":\"COMM 007\",\"units\":null},{\"catalog_addition\":true,\"code\":\"COMM 015\",\"units\":3}],\"catalog_addition\":true,\"code\":\"COMM C1004\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"The following must be completed before admission to RN program\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"N 010\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"N 015\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"First Semester\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"N 020\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"N 025\",\"units\":3.5,\"units_max\":null}],\"minimum\":null,\"name\":\"Second Semester\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"N 030\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"N 035\",\"units\":2.25,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"N 036\",\"units\":2.25,\"units_max\":null}],\"minimum\":null,\"name\":\"Third Semester\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"N 040\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"N 045\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Fourth Semester\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"Beginning Nurse Generalist\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":73,\"min\":73},\"electives_fill_degree\":false,\"ge_pattern\":\"CMC General Education Requirement\",\"ge_units\":{\"max\":36,\"min\":36},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Coordination and Collaboration of Care: Perform within an interdisciplinary team utilizing effective communication skills, collaborative decision making, and mutual respect to promote quality patient care. (ILOs: Communication)\",\"Safety and Quality Improvement: Devise plans of care that minimize risk of harm to improve safety and quality for diverse patients across the life span utilizing system processes. (ILOs: Critical Thinking)\",\"Evidence Based Practice: Integrate current best evidence utilizing clinical reasoning, nursing judgment and patient preferences to achieve optimal health. (ILOs: Critical Thinking)\",\"Nursing Judgment: Demonstrate judgment in practice, supported by evidence that integrates knowledge, skills, and attitudes of a beginning nurse generalist to provide safe quality of care. (ILOs: Critical Thinking)\",\"Utilize the nursing process in providing nursing care. (ILOs: Critical Thinking)\",\"Culture: Provide patient centered nursing care to meet the healthcare needs of patients with unique cultural attributes within diverse communities. (ILOs: Ethics)\",\"Manage an environment that promotes patients’ self-esteem, dignity, safety and comfort. (ILOs: Ethics)\",\"Professionalism and Leadership: Demonstrate integrity, ethical standards and principles of leadership and professional practice, personal growth, accountability for adherence to policies and procedures, and advocacy for patients and the profession of nursing. (ILOs: Personal Development)\",\"Informatics and Technology: Manage information and technology to communicate with the interdisciplinary team, make informed clinical decisions, and minimize patient and personal harm. (ILOs: Information Competency)\"],\"section_heading\":\"NURSING: REGISTERED / Associate in Science in REGISTERED NURSING with emphasis on employment preparation\",\"total_units\":{\"max\":37,\"min\":37}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":10,\"placed\":10}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":80,\"unit_arithmetic\":70},\"coverage\":true,\"gaps\":[\"prerequisites_counted\"],\"invented\":true,\"listed\":10,\"placed\":10}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (1)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s740r4 piles rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;"
+}

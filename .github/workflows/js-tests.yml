@@ -1086,6 +1086,11 @@ jobs:
       - name: Cheap pile S740 at Copper Mountain (the census's pile, one named gap, the holds, the plan)
         if: matrix.shard == 1
         run: python3 tests/program_piles_s740_copper_mountain_test.py
+      # S740, lane 1 (reads), Copper Mountain after the reissue's read 45855512160: the seven records it left failing:
+      # 1 collected with a named gap (prerequisites_counted), 6 held; the plan.
+      - name: Cheap pile S740 at Copper Mountain after its read (one named gap, the holds, the plan)
+        if: matrix.shard == 1
+        run: python3 tests/program_piles_s740_copper_mountain_read_test.py
       # S739 at Orange Coast: the 17 records s721b held, read again by key: 4 collected with named gaps (no new
       # kind), 13 held; 32737 and 36732 on their live run through a reread's kept keys; the plan.
       - name: Cheap piles S739 at Orange Coast (the earlier holds, named gaps, the plan)
