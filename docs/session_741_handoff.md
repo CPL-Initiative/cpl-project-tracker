@@ -91,7 +91,7 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   priced at $0.10); plan s740r1, Copper Mountain's registry row (Sam's Sheet 88 correction, applied by S405) moved to
   the same 2026-2027 catalog's reissue, the old address answering 404. The conductor read it (one row, guarded, the
   history trigger and the receipt both hold the before-row; new source evidence reopens a person's save,
-  `r-person-settled-wins` in `CLAUDE.md`), pre-read clean 1 of 1; migrate 45835717010 returned 1; `.apply` restored
+  `CLAUDE.md`, *Person-settled wins*), pre-read clean 1 of 1; migrate 45835717010 returned 1; `.apply` restored
   (`0b2b5042`). 14:08Z: paid read San Diego City 22367 (staged from 38347787891, `only` and `force` 22367, $0.10 on the
   estimate; the force has its cause: S739's page read prints the four courses and the total the filed record lacks):
   run 45836017170. None of the three records has a live row, so each goes live by `load`.
