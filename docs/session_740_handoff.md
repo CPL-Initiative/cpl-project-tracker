@@ -131,3 +131,13 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   passing by a rename, 3 named gaps; 4 held). Their shared `kb/_program_piles_s739.py` adds an own-page guard on the
   record's own heading (or its own list, for `heading_not_in_text` alone) and a rename rescore (S721 Porterville's
   form). Two Sonnet readers took them (s739a and s739b; s739c to s739e), with the shared module in scope.
+- 08:31Z: the second reader of s739c to s739e: s739c APPLY, s739d APPLY, s739e FIX THEN APPLY. MAJOR: s739e's 41150
+  (Fashion Media) renames `DIGMD 100` to `DIGLMD100` on a note that names a title mismatch ("Introduction to Digital
+  Video" in the state list against "Introduction to Digital Media" in the catalog), so it leaves the plan (expect 6)
+  unless a catalog line shows the same course. MINOR: s739e 31090's own-heading pass rests on the PLUMBING 028 rename
+  that 02911's note carries. The shared guard and the rename rescore are sound otherwise (11 rows move by the rename,
+  through coverage only); every kind exists on `main`.
+- 08:33Z: clean md5 pre-reads, s739c 13 of 13 and s739d 3 of 3. 08:34Z: s739c's trigger on `claude/s739-piles`
+  (`5302ff02`); migrate 45784291084 returned 13, none skipped. 08:36Z: s739d's trigger (`61d2fcb3`). The `piles`
+  worker was told to pull before its next commit. 08:35Z: #3882 opened for `pooled`'s land (head `ddb18d16`, `main`
+  `48966ffa` merged in).
