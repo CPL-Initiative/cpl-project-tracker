@@ -74,19 +74,58 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    12.0,
-    12.0
+    18.0,
+    18.0
    ],
    "stated": [
     18.0,
     18.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 12.0-12.0; the catalog states 18.0-18.0"
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     42.0,
+     42.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     24.0
+    ],
+    "why": [],
+    "fill": [
+     18.0,
+     18.0
+    ]
+   },
+   "pooled": [
+    {
+     "blocks": "all",
+     "figure": [
+      18.0,
+      18.0
+     ],
+     "minimum": false,
+     "parts": [
+      12.0,
+      12.0
+     ],
+     "read": [
+      18.0,
+      18.0
+     ],
+     "words": "Catalog states: 'Additional courses from List A or List B must be completed to achieve 18 total units.' Beyond the 5-unit core, 4-unit List A minimum and 3-unit List B minimum (12 units), the student takes 6 more units from either list."
+    }
    ]
   },
   "repeated": {
@@ -108,21 +147,10 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false,
-  "gaps": [
-   {
-    "gap": "pool_figure_not_read",
-    "label": "The catalog prints one figure over several lists or nested options together, and the record adds the parts instead, so its units cannot be checked against that figure.",
-    "words": "Catalog states: 'Additional courses from List A or List B must be completed to achieve 18 total units.' Beyond the 5-unit core, 4-unit List A minimum and 3-unit List B minimum (12 units), the student takes 6 more units from either list."
-   }
-  ],
-  "confidence": {
-   "unit_arithmetic": 40,
-   "course_list_match": 94,
-   "ge_pattern": 100,
-   "catalog_year": 100,
-   "source": 100
-  }
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
  },
  "record": {
   "program": {
@@ -541,5 +569,6 @@
    "No program learning outcomes are printed on the page; the description mentions only 'career opportunities where knowledge of Spanish is useful' without naming specific careers."
   ]
  },
- "extracted_run": "38631686677"
+ "extracted_run": 45768189197,
+ "read_run": "38631686677"
 }

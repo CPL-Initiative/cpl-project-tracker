@@ -70,6 +70,7 @@
     32.0,
     32.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -90,6 +91,9 @@
    "count": 1,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -327,5 +331,6 @@
    "Career field taken from 'pathway to various career opportunities in education'; teachers and administrators are mentioned only in the context of permit requirements and were not recorded as careers."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

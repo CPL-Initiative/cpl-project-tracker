@@ -114,6 +114,12 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
   "pass": true
  },
  "record": {
@@ -286,5 +292,6 @@
    "The outcomes lead-in appears twice in the text (once orphaned before the heading); the four outcomes printed under 'Program Learning Outcomes' were recorded."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

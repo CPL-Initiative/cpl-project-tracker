@@ -74,6 +74,7 @@
     18.0,
     18.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -94,6 +95,9 @@
    "count": 2,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -183,5 +187,6 @@
    "The program-level heading 'Photography (Total 18)' wraps a single required block 'REQUIRED COURSES - COMPLETE 18 UNITS (Total 18)'; recorded as one 'all' block."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

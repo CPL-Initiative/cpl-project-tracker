@@ -84,6 +84,7 @@
     20.0,
     32.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -104,6 +105,12 @@
    "count": 0,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -344,5 +351,6 @@
    "Award instructions also state a minimum of 18 semester units in the major, but the printed major total is 20-32."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

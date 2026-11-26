@@ -70,6 +70,7 @@
     16.5,
     16.5
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -90,6 +91,9 @@
    "count": 0,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -177,5 +181,6 @@
    "The program description is shared with the Computer Graphics Applications Associate Degree and Certificate program."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

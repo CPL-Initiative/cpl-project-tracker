@@ -43,21 +43,31 @@ for g, score in SCORES.items():
     check(g in NG.GAPS and NG.ARITH_SCORE.get(g) == score and g.isidentifier(), "%s has its sentence and score" % g)
 check(set(ROWS.values()) <= set(SCORES), "every kind filed is pinned")
 
+# S739's free reconcile 45768189197 read El Camino's pages under the pooled reading (S731's): 02513, 02515 and 02517
+# now pass whole, the lever plan s731p named for them, so the three left this plan's rows. Every count below is read
+# in either state (p-test-asserts-other-pr-absent-recurs-s731): the three still collected with their gap, or passing.
+MOVED_S739 = ("02513", "02515", "02517")
+moved = {cn for cn in MOVED_S739 if W.S.passes_live((W._load(cn) or {}).get("score"))}
+check(moved in (set(), set(MOVED_S739)), "S739's three moved together or not at all: %s" % sorted(moved))
+
 members = W.census_members(CENSUS_AT_PLAN)
 check(set(members) == set(ROWS) | HELD and len(members) == 22 and not set(W.PERSON) & set(members),
       "the fixture gives the 22 keys")
 pr = W.precision(CENSUS_AT_PLAN)
-check(pr["read"] == 22 and pr["right"] == 22 and not pr["wrong"], "precision 22 of 22: %s" % pr["wrong"])
+check(pr["read"] == 22 and pr["right"] == 22 - len(moved)
+      and sorted(w[0] for w in pr["wrong"]) == sorted(moved) and all(w[2] == "none" for w in pr["wrong"]),
+      "precision 22 of 22, less the three S739 passed: %s" % pr["wrong"])
 
 cc = W.claim_checks(CENSUS_AT_PLAN)
-check(cc["counts"] == {"stands": 14} and not cc["not_standing"], "14 claims stand")
+check(cc["counts"] == {"stands": 14 - len(moved)} and not cc["not_standing"], "14 claims stand, less S739's three")
 src = W._sources()
 s2 = copy.deepcopy(src)
 s2['43992']["codes_found"] = [c for c in s2['43992']["codes_found"] if c != 'ATEC26']
 check(W.claim(W._load('43992'), s2) == "a named course not found", "a named course the capture lacks holds it")
 
 bd = W.boundaries(CENSUS_AT_PLAN)
-check(not bd["wrong"] and sum(bd["counts"].values()) == 42, "every boundary reading names no gap: %s" % bd)
+check(not bd["wrong"] and sum(bd["counts"].values()) == 3 * (14 - len(moved)),
+      "every boundary reading names no gap: %s" % bd)
 
 with open(RECEIPT, encoding="utf-8") as fh:
     rec = json.load(fh)
@@ -76,11 +86,15 @@ check(W.plan(write=False, census_path=CENSUS_AT_PLAN)["rows"] == [], "a second r
 images = NG._load_images({COLLEGE})
 for r in rec["records"]:
     img = images[(COLLEGE, r["control_number"])]
-    check(img["checks"] == r["after_image"]["checks"], "%s: the load posts the receipt's after-image" % r["control_number"])
-    check(img["checks"].get("gaps") == [r["moves_to"]], "%s: the image carries its one gap" % r["control_number"])
+    if r["control_number"] in moved:
+        check(not img["checks"].get("gaps"), "%s: passing after S739, its image carries no gap" % r["control_number"])
+    else:
+        check(img["checks"] == r["after_image"]["checks"], "%s: the load posts the receipt's after-image" % r["control_number"])
+        check(img["checks"].get("gaps") == [r["moves_to"]], "%s: the image carries its one gap" % r["control_number"])
     check(img["record"] == r["before_image"]["record"], "%s: the record is unchanged" % r["control_number"])
 
-check(not any(W.scorer_passes(W._load(cn)) for cn in ROWS), "the scorer passes none of the rows (#3753's MAJOR)")
+check(not any(W.scorer_passes(W._load(cn)) for cn in ROWS if cn not in moved),
+      "the scorer passes none of the rows (#3753's MAJOR)")
 check(all(W.on_live_run(W._load(cn)) for cn in ROWS), "every row is on its live run")
 check(W.shared_with("02512") == ["19883"], "02512's page is shared with 19883 and its note names its own A.S.")
 e = dict(W.REVIEWED["02512"])

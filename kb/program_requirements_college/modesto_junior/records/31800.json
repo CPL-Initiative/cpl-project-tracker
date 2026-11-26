@@ -80,6 +80,7 @@
     18.0,
     18.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -100,6 +101,12 @@
    "count": 0,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -310,5 +317,6 @@
    "The lead-in 'Upon satisfactory completion of this award, the student should be prepared to:' also appears once before the section heading with no outcomes under it (page fragment)."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

@@ -98,6 +98,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "n/a"
+  },
   "pass": true
  },
  "record": {
@@ -245,5 +248,6 @@
    "The text names the California Real Estate Broker license exam but no career or job title as such, so careers is left empty."
   ]
  },
- "extracted_run": "38631686677"
+ "extracted_run": 45768189197,
+ "read_run": "38631686677"
 }

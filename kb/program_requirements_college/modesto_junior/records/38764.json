@@ -70,6 +70,7 @@
     18.0,
     18.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -90,6 +91,9 @@
    "count": 0,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -185,5 +189,6 @@
    "The source URL references 'summer-2020' though the catalog year is 2026-2027; reviewer may confirm the page reflects the current catalog year."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

@@ -70,6 +70,7 @@
     29.0,
     29.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -90,6 +91,12 @@
    "count": 1,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -199,5 +206,6 @@
    "The career 'Certified Athletic Trainer' is taken from the program description, where it is described as achievable after transfer and passing the national exam."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

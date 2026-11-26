@@ -34,9 +34,9 @@ inside its printed range is no disagreement (d-lists-gap-holds-range-sums-s703),
 printed 28-29, so noted_figures_differ's sentence is not true of it. s739j was applied with it. Its row goes back by
 kb/migrations/2026-11-26_s739j_41373_rollback.sql, s739j's own rollback limited to that one row (pre-read:
 ..._rollback_preread_md5.sql), and the record holds for a units within-range kind, a units twin of
-hours_within_printed_range, with Gavilan 08460, 19378, 38787 and 41394. The plan's receipt, its four SQL files and
-REVIEWED stay as applied: they are the record of what was written. Once the rollback is applied, 41373's committed
-record takes its score back too (the receipt's before-image), or the next load of the college posts the gap again.
+hours_within_printed_range, with Gavilan 08460, 19378, 38787 and 41394. The plan's receipt and its four SQL files
+stay as applied: they are the record of what was written. Its entry left REVIEWED (ROLLED_BACK keeps it), it is a
+hold in HAND, and its committed record is back at the receipt's before-image, so no later load posts the gap again.
 
     python3 kb/_program_piles_s739_orangecoast.py --dry-run
     python3 kb/_program_piles_s739_orangecoast.py --tag s739j
@@ -117,14 +117,18 @@ HAND.update({
 NOTE_08626 = ("it passes as filed, read from the wrong page (f-occ-08626-wrong-page-s727): a page pin and a reread, "
               "never a plan on its live row")
 
-W = B.Pile(college=COLLEGE, slug=SLUG, tag=TAG, name="Orange Coast", prior=B.LiveRuns(COLLEGE, SLUG), keys=KEYS,
-           reviewed=REVIEWED, hand=HAND, held_by=HELD_BY)
-
 # 41373 after the apply: held, its row rolled back (the docstring's last section).
 NOTE_41373 = ("held: its sum sits inside its printed range (29-29 in 28-29), so no two figures disagree and "
               "noted_figures_differ's sentence is not true of it (d-lists-gap-holds-range-sums-s703); s739j was applied "
               "with it, and its row goes back by kb/migrations/2026-11-26_s739j_41373_rollback.sql: it waits for a "
               "units within-range kind, a units twin of hours_within_printed_range, with its own self-recall")
+# Its entry as s739j applied it, kept as the record of what was written; it is no entry of the plan now.
+ROLLED_BACK = {"41373": REVIEWED.pop("41373")}
+HAND["41373"] = NOTE_41373
+
+W = B.Pile(college=COLLEGE, slug=SLUG, tag=TAG, name="Orange Coast", prior=B.LiveRuns(COLLEGE, SLUG), keys=KEYS,
+           reviewed=REVIEWED, hand=HAND, held_by=HELD_BY)
+
 ROLLBACK_41373 = {"control_number": "41373", "tag": "s739j 41373 rollback",
                   "sql": "kb/migrations/2026-11-26_s739j_41373_rollback.sql",
                   "preread_md5": "kb/migrations/2026-11-26_s739j_41373_rollback_preread_md5.sql"}

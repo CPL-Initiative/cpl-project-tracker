@@ -70,6 +70,7 @@
     0.0,
     0.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -90,6 +91,9 @@
    "count": 0,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -145,5 +149,6 @@
    "Students may use the certificate as evidence to 'employers or prospective employers', but the text names no career or job title, so careers is empty."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

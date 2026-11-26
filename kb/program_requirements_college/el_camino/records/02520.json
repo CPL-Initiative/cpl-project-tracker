@@ -79,7 +79,28 @@
    "against": "program",
    "why": [
     "the blocks sum to 64.5-64.5; the catalog states 58.0-58.0"
-   ]
+   ],
+   "degree": {
+    "pass": false,
+    "status": "unequal",
+    "computed": [
+     88.5,
+     88.5
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     24.0
+    ],
+    "why": [
+     "the blocks and general education come to 88.5-88.5, past the 60.0-60.0 the catalog prints for the degree"
+    ],
+    "fill": null
+   }
   },
   "repeated": {
    "codes": [],
@@ -99,6 +120,9 @@
    "count": 1,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "read"
   },
   "pass": false
  },
@@ -284,5 +308,6 @@
    "RTEC 111 and RTEC 123 may be earned by credit by examination (Advanced Standing)."
   ]
  },
- "extracted_run": "38631686677"
+ "extracted_run": 45768189197,
+ "read_run": "38631686677"
 }

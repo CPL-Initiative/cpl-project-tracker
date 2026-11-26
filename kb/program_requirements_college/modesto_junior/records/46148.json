@@ -70,6 +70,7 @@
     45.0,
     48.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -90,6 +91,12 @@
    "count": 1,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -380,5 +387,6 @@
    "GE is described only as 'MJC Associate Degree Requirements' (local degree requirements)."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

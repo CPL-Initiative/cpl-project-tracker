@@ -74,6 +74,7 @@
     19.0,
     19.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -94,6 +95,12 @@
    "count": 8,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -190,5 +197,6 @@
    "Award Instructions refer to 'an Associate in American Sign Language degree' although the heading is the American Sign Language Studies A.A. Degree."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

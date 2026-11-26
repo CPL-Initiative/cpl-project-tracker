@@ -158,9 +158,17 @@ for key, (gap, words) in sorted(M.GAP_ROWS.items()):
           "%s %s: collected with %s, its words the record's own note" % (key + (gap,)))
     check(rows[key]["moves_to"] == gap and f["score"].get("confidence"), "%s %s: a %s row with its scores" % (key + (gap,)))
     check(not M.scorer_passes(f), "%s %s: today's scorer does not pass it" % key)
+# S739 took some of these holds forward by the lever each hold names: El Camino 02513, 02515 and 02517 pass on free
+# reconcile 45768189197's page text, its four certificates are pinned to their own pages, and Modesto Junior 06683
+# and 42664 pass on the college's reconcile entry. A hold S739 moves is read in either state
+# (p-test-asserts-other-pr-absent-recurs-s731); every other hold still fails.
+S739_MOVES = {(M.ELC, cn) for cn in ("02513", "02515", "02517", "19861", "19866", "38948", "43993")} \
+    | {(M.MODESTO, "06683"), (M.MODESTO, "42664")}
+check(S739_MOVES <= set(M.HELD), "S739's moves are holds of this plan")
 for key in sorted(M.HELD):
     f = M.load(key)
-    check(f is not None and not S.passes_live(f["score"]), "%s %s: held, and its live score does not pass" % key)
+    check(f is not None and (key in S739_MOVES or not S.passes_live(f["score"])),
+          "%s %s: held, and its live score does not pass" % key)
 f = M.load((M.POR, "06773"))
 check([g["gap"] for g in f["score"].get("gaps") or []] == ["pool_figure_not_read"]
       and not f["score"]["arithmetic"].get("pooled"),

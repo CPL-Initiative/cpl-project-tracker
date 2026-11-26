@@ -884,6 +884,12 @@ jobs:
       - name: Pooled figures S731 (the reading, the self-recall, the rows, the holds, the plan)
         if: matrix.shard == 1 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/program_piles_s731_pooled_test.py
+      # S739, the pooled reading's next: Modesto Junior's reconcile entry on the page's own words (06683's general
+      # education block, 42664's BUSAD 249ABC), the wrong joins it refuses, the self-recall over the college's records.
+      # It runs on every diff: a step joins the docs-only skip only through tests/lints_docs_only_skip.json, by a trace.
+      - name: Pooled figures S739 (Modesto Junior's reconcile entry, the wrong joins, the self-recall)
+        if: matrix.shard == 1
+        run: python3 tests/program_reconcile_s739_pooled_test.py
       # S720 at Cabrillo: the census's 21 wording-rule records, 8 collected with named gaps; the plan.
       - name: Cheap piles S720 at Cabrillo (named gaps, the plan)
         if: matrix.shard == 4
@@ -957,56 +963,56 @@ jobs:
       # (a record held for a gap is collected with its gap named, unless it is not the program's own): 5 collected
       # with named gaps, 2 held as another award's section; the plan (kb/_program_piles_s739.py's shared code).
       - name: Cheap piles S739 at American River (the earlier holds, named gaps, the plan)
-        if: matrix.shard == 4 && (needs.gate.outputs.decision == 'run')
+        if: matrix.shard == 4
         run: python3 tests/program_piles_s739_arc_test.py
       # S739 at Shasta: the 15 records s727c held, read again by key: 12 collected with named gaps (no new kind),
       # 3 held (another program's section, not collectable, a sum inside its printed range); the plan.
       - name: Cheap piles S739 at Shasta (the earlier holds, named gaps, the plan)
-        if: matrix.shard == 5 && (needs.gate.outputs.decision == 'run')
+        if: matrix.shard == 5
         run: python3 tests/program_piles_s739_shasta_test.py
       # S739 at College of the Canyons: the 14 records s727a held, read again by key: 7 passed by a rename their own
       # notes name (S721's rename at Porterville), 6 collected with named gaps (no new kind), 1 held; the plan.
       - name: Cheap piles S739 at College of the Canyons (the earlier holds, renames, named gaps, the plan)
-        if: matrix.shard == 6 && (needs.gate.outputs.decision == 'run')
+        if: matrix.shard == 6
         run: python3 tests/program_piles_s739_canyons_test.py
       # S739 at Santa Barbara City: five records s727d held (05934 keeps its hold), read again by key: 3 collected
       # with named gaps (no new kind), 2 held (not collectable; the catalog's own figures); the plan.
       - name: Cheap piles S739 at Santa Barbara City (the earlier holds, named gaps, the plan)
-        if: matrix.shard == 1 && (needs.gate.outputs.decision == 'run')
+        if: matrix.shard == 1
         run: python3 tests/program_piles_s739_sbcc_test.py
       # S739 at Los Angeles Trade-Technical: the 11 records s730a held, read again by key: 3 passed by a rename
       # (one on a sister record's note), 3 collected with named gaps (no new kind), 5 held; the plan.
       - name: Cheap piles S739 at Los Angeles Trade-Technical (the earlier holds, renames, named gaps, the plan)
-        if: matrix.shard == 2 && (needs.gate.outputs.decision == 'run')
+        if: matrix.shard == 2
         run: python3 tests/program_piles_s739_lattc_test.py
       # S739 at Saddleback: the two records s730b still holds, both collected with named gaps (no new kind); the plan.
       - name: Cheap piles S739 at Saddleback (the earlier holds, named gaps, the plan)
-        if: matrix.shard == 3 && (needs.gate.outputs.decision == 'run')
+        if: matrix.shard == 3
         run: python3 tests/program_piles_s739_saddleback_test.py
       # S739 at Long Beach City: the four records s731c held: 1 collected with a named gap, 3 held (a duplicate
       # listing, another award's page, d-lbcc-42970-no-units-read-or-hold-s731); the plan.
       - name: Cheap piles S739 at Long Beach City (the earlier holds, a named gap, the plan)
-        if: matrix.shard == 4 && (needs.gate.outputs.decision == 'run')
+        if: matrix.shard == 4
         run: python3 tests/program_piles_s739_lbcc_test.py
       # S739 plan s739h: the records s727f held for a person outside lane 1: Clovis 36326 and 39539 collected with
       # named gaps, Los Angeles Mission 44849 a named gap with no record, four still held; the plan.
       - name: Cheap piles S739, the records held for a person (Clovis, a named gap with no record, the plan)
-        if: matrix.shard == 5 && (needs.gate.outputs.decision == 'run')
+        if: matrix.shard == 5
         run: python3 tests/program_piles_s739_persons_test.py
       # S739's own-page guard (kb/_program_piles_s739.py): a heading that names both sisters' awards shows neither
       # its own (the third reader's MAJOR, Palomar's shape); one award listed twice; a title the heading goes beyond.
       - name: Cheap piles S739, the own-page guard on made-up page-mates
-        if: matrix.shard == 6 && (needs.gate.outputs.decision == 'run')
+        if: matrix.shard == 6
         run: python3 tests/program_piles_s739_guard_test.py
       # S739 at Cosumnes River: the census's 16 wording-rule records (33542 is lane 1's): 4 passed by a rename to a
       # fused state code, 7 collected with named gaps (no new kind), 5 held; the shared live-run reading; the plan.
       - name: Cheap piles S739 at Cosumnes River (the census's piles, renames, named gaps, the plan)
-        if: matrix.shard == 1 && (needs.gate.outputs.decision == 'run')
+        if: matrix.shard == 1
         run: python3 tests/program_piles_s739_cosumnes_test.py
       # S739 at Orange Coast: the 17 records s721b held, read again by key: 4 collected with named gaps (no new
       # kind), 13 held; 32737 and 36732 on their live run through a reread's kept keys; the plan.
       - name: Cheap piles S739 at Orange Coast (the earlier holds, named gaps, the plan)
-        if: matrix.shard == 2 && (needs.gate.outputs.decision == 'run')
+        if: matrix.shard == 2
         run: python3 tests/program_piles_s739_orangecoast_test.py
       # S739, the lever: Cosumnes River 33542 (Option II's two lists read as alternatives) and East Los Angeles
       # 33013 (the printed total counts the optional lab), each collected with its named gap; the plan.

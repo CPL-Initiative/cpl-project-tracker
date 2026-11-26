@@ -73,7 +73,29 @@
     24.0
    ],
    "against": "program",
-   "why": []
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     58.0,
+     58.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "fill": [
+     2.0,
+     2.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -93,6 +115,9 @@
    "count": 4,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "read"
   },
   "pass": true
  },
@@ -208,5 +233,6 @@
    "The description also says the program prepares students for 'careers in private or public programs serving infants, toddlers, preschoolers, children with special needs, or children in before and after school care'; this was read as a work setting rather than a named career and not recorded in careers. Transfer majors (Child Development, Education, etc.) were not recorded as careers."
   ]
  },
- "extracted_run": "38631686677"
+ "extracted_run": 45768189197,
+ "read_run": "38631686677"
 }

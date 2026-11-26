@@ -18,7 +18,10 @@ plan:
     after-image as the receipt has them (S739's third reader: an after-check or an md5 that differs from the receipt
     fails here);
   * every row is on its live run both as the receipts stood before this plan's own apply (skip) and after it, so the
-    test holds before and after the conductor's apply (p-test-reads-own-apply-receipt-s721).
+    test holds before and after the conductor's apply (p-test-reads-own-apply-receipt-s721);
+  * a row the applied plan wrote and a later rollback took back (rolled_back; Orange Coast 41373): the receipt and
+    the four SQL files still name it, as the record of what was written; it is a hold now, with no entry; and its
+    committed record is back at the receipt's before-image, carrying no gap, so no later load posts the gap again.
 """
 import json
 import os
@@ -47,16 +50,20 @@ class Checks:
 
 
 def run(W, *, rows: dict, held: dict, scores: dict, day: str, boundaries: int, prior_held: set | None = None,
-        own: dict | None = None, t: Checks | None = None) -> Checks:
+        own: dict | None = None, t: Checks | None = None, rolled_back: dict | None = None) -> Checks:
     """rows: {key: its kind, or B.PASSES}; held: {key: words its reason carries}; scores: {kind: its unit-arithmetic
     score}; boundaries: the count of boundary readings; prior_held: the earlier receipt's held keys (default: read
-    from W.held_by); own: {key: the own-page guard's form} for rows read from a shared page."""
+    from W.held_by); own: {key: the own-page guard's form} for rows read from a shared page; rolled_back: {key:
+    its kind} for a row the applied plan wrote and a later rollback took back (it is in held too)."""
     t = t or Checks()
     check = t.check
     receipt = W.receipt_path(day)
     mig = os.path.join(ROOT, "kb", "migrations", "%s_%s_prreq_piles_%%s.sql" % (day, W.tag))
     gaps = {cn: g for cn, g in rows.items() if g != B.PASSES}
     n = len(rows)
+    rolled = dict(rolled_back or {})
+    named = dict(rows, **rolled)
+    check(set(rolled) <= set(held) and not set(rolled) & set(rows), "a rolled-back row is a hold, and no row")
 
     for g, score in scores.items():
         check(g in NG.GAPS and NG.ARITH_SCORE.get(g) == score, "%s has its sentence and score" % g)
@@ -104,8 +111,9 @@ def run(W, *, rows: dict, held: dict, scores: dict, day: str, boundaries: int, p
     with open(receipt, encoding="utf-8") as fh:
         rec = json.load(fh)
     got = {r["control_number"]: r["moves_to"] for r in rec["records"]}
-    check(got == rows and rec["moved"] == n, "the receipt names the %d rows and their kinds" % n)
-    check({h["control_number"] for h in rec["held"]} == set(held), "the receipt holds the %d" % len(held))
+    check(got == named and rec["moved"] == len(named), "the receipt names the %d rows and their kinds" % len(named))
+    check({h["control_number"] for h in rec["held"]} == set(held) - set(rolled),
+          "the receipt holds the %d" % (len(held) - len(rolled)))
     check(rec["keys"]["members"] == list(W.keys), "the receipt's keys are the plan's")
     check(set(rec["shared_pages"]) == set(own or {}), "the receipt names the rows read from a shared page")
     for r in rec["records"]:
@@ -119,10 +127,11 @@ def run(W, *, rows: dict, held: dict, scores: dict, day: str, boundaries: int, p
     for part in ("apply", "preread", "preread_md5", "rollback"):
         with open(mig % part, encoding="utf-8") as fh:
             sql = fh.read()
-        check(all("'%s'" % cn in sql for cn in rows) and not any("'%s'" % cn in sql for cn in held),
-              "%s names exactly the %d" % (part, n))
+        check(all("'%s'" % cn in sql for cn in named) and not any("'%s'" % cn in sql for cn in held if cn not in rolled),
+              "%s names exactly the %d" % (part, len(named)))
         if part == "apply":
-            check("confirm guard" in sql and "e(expect) as (values (%d))" % n in sql, "the apply guards a confirm")
+            check("confirm guard" in sql and "e(expect) as (values (%d))" % len(named) in sql,
+                  "the apply guards a confirm")
         body = rec["pre_read_md5" if part == "preread_md5" else "pre_read" if part == "preread" else part]
         check(sql.endswith(body + "\n"), "%s is the receipt's own SQL, md5s and all" % part)
         if part != "preread_md5":
@@ -132,6 +141,11 @@ def run(W, *, rows: dict, held: dict, scores: dict, day: str, boundaries: int, p
     images = NG._load_images({W.college})
     for r in rec["records"]:
         img = images[(W.college, r["control_number"])]
+        if r["control_number"] in rolled:
+            check(img["checks"] == r["before_image"]["checks"] and not img["checks"].get("gaps")
+                  and img["record"] == r["before_image"]["record"],
+                  "%s: rolled back, the load posts the receipt's before-image, with no gap" % r["control_number"])
+            continue
         want = [] if r["moves_to"] == B.PASSES else [r["moves_to"]]
         check(img["checks"] == r["after_image"]["checks"],
               "%s: the load posts the receipt's after-image" % r["control_number"])

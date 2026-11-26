@@ -187,7 +187,7 @@ check(not any(W.scorer_passes(W._load(cn)) for cn in ROWS), "the scorer passes n
 check(all(W.scorer_passes(W._load(cn)) for cn in ("10302", "19386", "32723", "33814", "40090", "44260", "44657")),
       "the seven coverage holds pass the scorer's arithmetic, so none is gap-filed")
 # Read as the receipts stood before this plan's own apply (its s727a receipts post its rows once migrated).
-before = W.posted_runs(skip=("s727a",))
+before = W.posted_runs(skip=("s727a", "s739c"))
 check(all(max(before[cn])[1] == str(W._load(cn)["extracted_run"]) for cn in ROWS if cn != "43388"),
       "before the apply, every UPDATE row's latest posted run is its committed run")
 check(max(before["15477"]) == ("2026-11-21T08:54:36Z", "44769429877"), "S691's live read posts 15477's run")

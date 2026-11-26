@@ -70,6 +70,7 @@
     15.0,
     15.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -90,6 +91,9 @@
    "count": 0,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -166,5 +170,6 @@
    "The lead-in 'Upon satisfactory completion of this award, the student should be prepared to:' appears twice; the first occurrence has no outcomes directly under it, followed by the Program Learning Outcomes heading with two outcomes."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

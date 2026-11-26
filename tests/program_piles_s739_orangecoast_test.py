@@ -5,7 +5,8 @@ WHY. Sam's ruling of 2026-11-17 (sam-collect-with-gaps-2026-11-17) and his routi
 for a gap is collected with its gap named and a lower score, never held, unless the record is not the program's own.
 The shared checks are tests/program_piles_s739_common.py's. Pinned here:
 
-  * the 17 keys are s721b's holds; 4 collected (no new kind), 13 held; 08626 is no key (it passes as filed);
+  * the 17 keys are s721b's holds; s739j applied 4 (no new kind) and 41373 was rolled back after it, so 3
+    collected and 14 held; 08626 is no key (it passes as filed);
   * the live runs: 32737 and 36732 are on run 39726645292 through reread 44909976872's kept keys (S731's rule: no
     other receipt posts them); 32790 is on no proved run and holds;
   * 32737's substitution list prints no figure, and without it today's scorer passes the record; 36732's Related
@@ -29,18 +30,21 @@ import _program_piles_s739_orangecoast as M  # noqa: E402
 
 W = M.W
 NG = B.NG
-ROWS = {"32737": "lists_not_closed", "36732": "lists_not_closed", "43362": "noted_figures_differ",
-        "41373": "noted_figures_differ"}
+ROWS = {"32737": "lists_not_closed", "36732": "lists_not_closed", "43362": "noted_figures_differ"}
+# s739j applied 41373 too, and its rollback slice takes it back (below): a hold now, its record at its before-image.
+ROLLED_BACK = {"41373": "noted_figures_differ"}
 TAB = ["Requirements tab is not in the text", "a reread"]
 HELD = {"03954": TAB, "08664": TAB, "31217": TAB, "03993": ["no kind", "a reread"],
         "08628": ["not collectable"], "19473": ["not collectable"], "19474": ["not collectable"],
         "43100": ["not collectable"], "08663": ["not the program's own", "43362"],
         "32790": ["44747523200", "no committed receipt posts"], "08670": ["60-63.5", "a scorer reading"],
-        "36032": ["a scorer reading"], "42331": ["9.5-16", "a scorer reading"]}
+        "36032": ["a scorer reading"], "42331": ["9.5-16", "a scorer reading"],
+        "41373": ["inside its printed range (29-29 in 28-29)", "a units within-range kind"]}
 SCORES = {"lists_not_closed": 30, "noted_figures_differ": 40}
 OWN = {"43362": "own_heading", "41373": "own_heading"}
 
-t = T.run(W, rows=ROWS, held=HELD, scores=SCORES, day="2026-11-26", boundaries=19, own=OWN)
+t = T.run(W, rows=ROWS, held=HELD, scores=SCORES, day="2026-11-26", boundaries=14, own=OWN,
+          rolled_back=ROLLED_BACK)
 check = t.check
 
 check("08626" not in W.keys and B.S.passes_live(W.load("08626")["score"]) and "wrong page" in M.NOTE_08626,
@@ -67,7 +71,8 @@ check(B.shape_open(f, {"open": "Related Fields"}) and "12 core + 3-7 does not ma
       "36732: Related Fields prints no figure, and the gap files the note on the figures too")
 for cn, mate in (("43362", "08663"), ("41373", "32086")):
     f = W.load(cn)
-    check(B.shape_note_quotes(f, M.REVIEWED[cn]) and W.shared_with(cn) == [mate], "%s: its note quotes both figures" % cn)
+    check(B.shape_note_quotes(f, M.REVIEWED.get(cn) or M.ROLLED_BACK[cn]) and W.shared_with(cn) == [mate],
+          "%s: its note quotes both figures" % cn)
     g = W.load(mate)
     check(g["record"]["program"]["section_heading"] == f["record"]["program"]["section_heading"]
           and W.own(g, {"gap": "noted_figures_differ", "own_heading": g["record"]["program"]["section_heading"]}) is None,
@@ -91,7 +96,10 @@ with open(os.path.join(B.ROOT, "kb", "migrations", "2026-11-26_s739j_prreq_piles
 line = NG._values([row])
 check(line in whole and line in sql and sql.count("'Orange Coast College'") == 1,
       "the slice's one values line is s739j's rollback row for 41373, byte for byte")
-check(not any("'%s'" % cn in sql for cn in ROWS if cn != "41373") and "e(expect) as (values (1))" in sql
+check("41373" not in M.REVIEWED and set(M.ROLLED_BACK) == {"41373"} and W.hand["41373"] == M.NOTE_41373
+      and not f["score"].get("gaps") and not f["score"].get("confidence"),
+      "41373 is no entry of the plan, holds, and its committed record carries no gap")
+check(not any("'%s'" % cn in sql for cn in ROWS) and "e(expect) as (values (1))" in sql
       and "set checks = v.before_checks" in sql and "r.checks = v.after_checks" in sql
       and "r.extracted_run = v.extracted_run" in sql and "r.checked is not true" in sql
       and "s739j 41373 rollback guard" in sql,

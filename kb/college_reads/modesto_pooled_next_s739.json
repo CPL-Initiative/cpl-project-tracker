@@ -1,0 +1,31 @@
+{
+ "_readme": "S739 (the pooled reading's next, lane 1). Two Modesto Junior records plan s731p held. Respiratory Care A.S. (06683): the printed 75.5-77.5 includes a 15-unit block 'TO EARN AN ASSOCIATE IN SCIENCE DEGREE IN RESPIRATORY CARE' of MJC general education areas 1B, 2, 3, 6 and 7 that the record leaves out (its note); a Modesto reconcile fill of ge_units from that block's own words is the lever, and this read prints the words. Spanish AA-T (35127): the description lays out two learner paths (non-native; native or heritage) the eLumen structure does not encode, and the page prints 19-23; this read prints the paths' words. The catalog's own publish calls, as the harvest's capture reads them. Two loads, no model call, nothing written.",
+ "college": "Modesto Junior College",
+ "questions": {
+  "ge_block": "How the Respiratory Care page prints the block 'TO EARN AN ASSOCIATE IN SCIENCE DEGREE IN RESPIRATORY CARE', its total and its general education areas.",
+  "learner_paths": "How the Spanish AA-T page words its two learner paths, and which courses and unit figures each path prints."
+ },
+ "keywords": [
+  "TO EARN AN ASSOCIATE[^<\"]{0,200}",
+  "[Gg]eneral [Ee]ducation[^<\"]{0,160}",
+  "Areas?\\s+1B[^<\"]{0,160}",
+  "[Nn]ative[^<\"]{0,200}",
+  "[Hh]eritage[^<\"]{0,200}",
+  "REQUIRED COURSES[^<\"]{0,120}",
+  "Total Units[^<\"]{0,120}"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "ge_block"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,respiratory-care-mjc-fall-2026v2?tenant=mjc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "learner_paths"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,spanish-for-transfer-degree-mjc-fall-2025?tenant=mjc.elumenapp.com"
+  }
+ ]
+}

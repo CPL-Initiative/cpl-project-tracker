@@ -70,6 +70,7 @@
     26.0,
     26.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -90,6 +91,12 @@
    "count": 1,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -191,5 +198,6 @@
    "The text also says the courses upgrade skills of persons already working in the real estate or escrow field(s); only 'salespersons' was recorded as a named career."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }
