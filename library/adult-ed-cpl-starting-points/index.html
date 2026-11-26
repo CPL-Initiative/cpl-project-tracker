@@ -45,7 +45,7 @@ a:focus-visible,button:focus-visible,select:focus-visible,[tabindex]:focus-visib
 /* hero */
 .hero{border-bottom:1px solid var(--line);background:radial-gradient(circle at 80% 40%,var(--glow),var(--glow-0) 32%),linear-gradient(90deg,var(--surface) 0%,var(--surface) 55%,var(--page) 76%,var(--hero-end) 100%)}
 .hero-in{padding-block:22px 18px;padding-left:var(--gutter-l);padding-right:var(--gutter-r);display:grid;gap:12px;min-width:0}
-.eyebrow{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.eyebrow{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--heading);font-weight:700}
 .hero h1{color:var(--title);font-size:clamp(1.9rem,1.3rem + 1.6vw,2.6rem);line-height:1.05;letter-spacing:-.02em}
 .title-accent{width:66px;height:4px;background:var(--gold)}
 .lede{max-width:90ch;font-size:1.02rem}
@@ -104,13 +104,13 @@ th{position:sticky;top:0}th{padding-right:1rem!important}
 .sortbtn{font:inherit;font-weight:600;color:var(--heading);background:none;border:0;padding:0;cursor:pointer;text-align:left;min-height:24px;text-decoration:underline;text-decoration-color:var(--line-strong);text-underline-offset:3px}
 .sdir{color:var(--muted);font-size:.75em}
 .colgrip{position:absolute;top:0;right:0;width:8px;height:100%;cursor:col-resize;border-right:2px solid var(--line)}
-.colgrip:hover,.colgrip:focus-visible{border-right-color:var(--link);outline:none}
+.colgrip:hover{border-right-color:var(--link)}.colgrip:focus-visible{border-right-color:var(--link);outline:2px solid var(--accent);outline-offset:-2px}
 .bbar table,.qt{min-width:100%}
 #side[hidden],#bars[hidden]{display:none!important}
 .qwrap{overflow-x:auto;border:1px solid var(--line);border-radius:11px;background:var(--surface)}.qt td,.qt th{padding:8px 10px}
 ol.nlist{list-style:decimal;padding-left:1.6rem}ol.nlist li{display:list-item}ol.nlist .rowbtn{vertical-align:top}.bbar .head > .close{margin-left:auto}ol.nlist li::marker{color:var(--muted);font-variant-numeric:tabular-nums}
-.fig{font:inherit;background:none;border:0;padding:0;color:var(--link);cursor:pointer;text-decoration:underline;text-underline-offset:2px;min-height:24px}.fig b{color:inherit}
-.rowbtn{font:inherit;background:none;border:0;padding:0;color:var(--link);cursor:pointer;text-align:left;text-decoration:underline;text-underline-offset:2px}
+.fig{font:inherit;background:none;border:0;padding:0;color:var(--link);cursor:pointer;text-decoration:underline;text-underline-offset:2px;min-height:24px;min-width:24px;text-align:center}.fig b{color:inherit}
+.rowbtn{font:inherit;background:none;border:0;padding:0;color:var(--link);cursor:pointer;text-align:left;text-decoration:underline;text-underline-offset:2px;min-height:24px;min-width:24px}
 .sash{border:1.5px dashed var(--line-strong);border-radius:10px;padding:.9rem;display:grid;gap:.6rem;background:var(--page)}
 .sash-eye{font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
 .sash-t{font-weight:700;color:var(--heading);font-size:1.02rem}.sash-id{font-size:.82rem;color:var(--muted);overflow-wrap:anywhere}
@@ -387,9 +387,9 @@ function enhance(table,key){
   b.setAttribute('aria-label','Sort by '+label);
   b.onclick=function(){var s=SORT[key];var dir=(s&&s.i===i)?-s.dir:1;SORT[key]={i:i,dir:dir};sortBy(table,key,i,dir)};
   th.appendChild(b);th.setAttribute('aria-sort','none');
-  if(i<ths.length-1){var g=document.createElement('span');g.className='colgrip';g.setAttribute('role','separator');g.setAttribute('aria-orientation','vertical');g.setAttribute('aria-label','Resize '+label+'; use the arrow keys');g.tabIndex=0;th.appendChild(g);
+  if(i<ths.length-1){var g=document.createElement('span');g.className='colgrip';g.setAttribute('role','separator');g.setAttribute('aria-orientation','vertical');g.setAttribute('aria-label','Resize '+label+'; use the arrow keys');g.setAttribute('aria-valuemin','60');g.setAttribute('aria-valuemax','2000');g.setAttribute('aria-valuenow',String(Math.round(th.getBoundingClientRect().width)||60));g.tabIndex=0;th.appendChild(g);
    function px(){var w=[].map.call(ths,function(h){return h.getBoundingClientRect().width});table.style.width=w.reduce(function(a,b){return a+b},0)+'px';[].forEach.call(cols,function(c,j){c.style.width=w[j]+'px'});return w}
-   function set(w){w[i]=Math.max(60,w[i]);cols[i].style.width=w[i]+'px';table.style.width=w.reduce(function(a,b){return a+b},0)+'px';WID[key]=w}
+   function set(w){w[i]=Math.max(60,w[i]);g.setAttribute('aria-valuenow',String(Math.round(w[i])));cols[i].style.width=w[i]+'px';table.style.width=w.reduce(function(a,b){return a+b},0)+'px';WID[key]=w}
    g.addEventListener('pointerdown',function(e){e.preventDefault();var w=px(),x0=e.clientX,w0=w[i];g.setPointerCapture(e.pointerId);
     function mv(ev){w[i]=w0+ev.clientX-x0;set(w)}function up(){g.removeEventListener('pointermove',mv);g.removeEventListener('pointerup',up)}
     g.addEventListener('pointermove',mv);g.addEventListener('pointerup',up)});
