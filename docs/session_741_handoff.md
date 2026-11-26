@@ -117,5 +117,21 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   (`7bd5120b`). Live: each row carries `units_within_printed_range`.
 - 14:23Z: Cerritos's reread 45837760519 (receipt `1a0bd569` on `claude/s740-cerritos`): 44984 and 20504 live at
   38064252862, arithmetic equal, both passing.
+- 14:47Z: `reads` reported (head `13df9d78`): Copper Mountain 41085 filed passing (read 45836803063, $0.06; 5 of 5
+  placed, degree 60 against 60); seven `course_renumbers` pairs (BI to BIOL, PE to KINE), each cited by the reissued
+  catalog's "Formerly known as" sentence, bound 43132 to its own page p.107 (coverage 4 of 11 before, 1.0 after);
+  Santa Ana's first reconcile entry, one `pool_lists` step for the Liberal Arts emphases ("Complete a minimum of 18
+  units from a single Area of Emphasis"), filed by the free staged reconcile 45841675928: 66 restamped, 4 fail to
+  pass (18581, 18582, 19268 by the step; Earth Science 31980 by today's scorer), 0 pass to fail. Its forced change:
+  `kb/_build_commons_data_status.py` drops Copper Mountain's hand-entered `CATALOG_LINKS` entry, as its own comment
+  asks once a recapture moves the capture root.
+- 14:48Z: Copper Mountain 43132's paid read 45842624535 (filed passing at 14:50Z, arithmetic equal, $0.10) and Santa
+  Ana's long read 45842667274 (only 12242, about two hours) dispatched on `claude/s740-reads`.
+- 14:54Z: the reader of the reads branch (Sonnet): Santa Ana reread GO, Copper Mountain load GO (43132 only once filed
+  passing). It re-derived the 4 fail-to-pass and 0 pass-to-fail from the filed records; the step's self-recall joins
+  exactly 18581, 18582 and 19268; the pairs reach only 43132 and 18520, which passes with or without them. MAJOR for the
+  land, not the writes: both Commons sidecars were built before the reconcile filed and must be rebuilt after the
+  reread posts. NITs: 19268's pool admits list d into list e's choice (the count stays 18); Copper Mountain's display
+  link becomes the PDF. 14:55Z: Santa Ana's reread (force 45841675928) and Copper Mountain's load dispatched.
 - 13:31Z: `piles`, `reads` and `reconcile` started on Fable 5.2 at high effort, each in its own worktree off `609c2a2b`
   (`/home/user/wt/<name>`), told to open no PR (the conductor opens each land) and to leave `.apply` to the conductor.
