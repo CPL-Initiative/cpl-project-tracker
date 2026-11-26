@@ -3118,6 +3118,34 @@
      "why": "S731: the same reading where the page prints the course before the words (the capture keeps no page text, so both orders are read; block_sum and a count already set keep one course from counting twice)."
     }
    ]
+  },
+  "San Diego College of Continuing Education": {
+   "why": "S739 wave B (the gap census of 2026-11-26 06:54Z, lever reader_page_assignment): no reconcile step; the entry names one program's own section (pdf_pages).",
+   "steps": [],
+   "pdf_pages_why": "S739 wave B: Visual and Vector Design 38411 is pinned to the page its section opens on, named with the words it opens on there (college-page-read run 45782471633), never found by a pattern over the catalog's text (S650, Cosumnes River). A pin binds only while the catalog prints the words and every title word; otherwise the program gets no fresh text. Reversible by deleting this entry.",
+   "pdf_pages": {
+    "38411": {
+     "page": 61,
+     "words": "Certificate of Completion: Visual and Vector Design The Visual and Vector Design program is designed",
+     "through": 62,
+     "until": "Certificate of Completion: Web Design and Content Management",
+     "evidence": "S739 wave B: Visual and Vector Design 38411 (noncredit): its heading 'Certificate of Completion: / Visual and Vector Design' and its description print at the foot of PDF p.61, and 'Required Courses / COMM 660 Visual Design / COMM 661 Vector Design' at the top of p.62, both courses the state lists; the window ends where 'Certificate of Completion: / Web Design and Content / Management' opens the next section (college-page-read run 45782471633). The filed record (run 44739577102) was read from p.57, where the title prints alone in a list of the Digital Design certificates, so it placed neither listed course; its own notes say the heading 'appears only as a single line at the top of page 57'."
+    }
+   }
+  },
+  "Yuba College": {
+   "why": "S739 wave B (the gap census of 2026-11-26 06:54Z, lever reader_page_assignment): no reconcile step; the entry names one program's own section (pdf_pages).",
+   "steps": [],
+   "pdf_pages_why": "S739 wave B: LVN to RN Career Mobility Program A.S. 37946 is pinned to the page its section opens on, named with the words it opens on there (college-page-read run 45782471633), never found by a pattern over the catalog's text (S650, Cosumnes River). A pin binds only while the catalog prints the words and every title word; otherwise the program gets no fresh text. Reversible by deleting this entry.",
+   "pdf_pages": {
+    "37946": {
+     "page": 146,
+     "words": "LVN TO RN CAREER MOBILITY PROGRAM ASSOCIATE IN SCIENCE",
+     "through": 148,
+     "until": "LVN TO RN 30-UNIT OPTION CERTIFICATE OF ACHIEVEMENT",
+     "evidence": "S739 wave B: LVN to RN Career Mobility Program A.S. 37946: its heading 'LVN TO RN CAREER MOBILITY / PROGRAM / ASSOCIATE IN SCIENCE' prints at the foot of PDF p.146, below the generic nursing degree's 48-unit list; its section runs through p.147 to p.148, where 'PROGRAM REQUIREMENTS / REQUIRED COURSES UNITS' prints NURS 13A (8), NURS 13B (4), NURS 14A (6.5), NURS 14B (1.5) and NURS 14C (4), every course the state lists, and 'TOTAL UNITS REQUIRED FOR DEGREE MAJOR 24'; the window ends where 'LVN TO RN 30-UNIT OPTION / CERTIFICATE OF ACHIEVEMENT' opens the next section (college-page-read run 45782471633). The filed record (run 39006517642) was read from p.146 alone, and its own words say the 'LVN to RN section is cut off at page break', so it placed none of its 5 listed courses."
+    }
+   }
   }
  }
 }
