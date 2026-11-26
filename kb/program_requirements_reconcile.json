@@ -2802,6 +2802,33 @@
    ],
    "steps": []
   },
+  "Modesto Junior College": {
+   "why": "S739 (the pooled reading's next, plan s731p's holds at Modesto Junior). Respiratory Care A.S. 06683: the page prints 'Respiratory Care (Total 75.5 - 77.5)' over PROGRAM PREREQUISITES (Total 18 - 20), REQUIRED COURSES (RESPIRATORY CARE) (Total 42.5) and 'TO EARN AN ASSOCIATE IN SCIENCE DEGREE IN RESPIRATORY CARE (Total 15)', whose lines are 'CONSULT WITH AN EDUCATIONAL COUNSELOR FOR SELECTION OF THE FOLLOWING MJC REQUIREMENTS: 0' and AREA 1B, AREA 2, AREA 3, AREA 6 and AREA 7 at 3 each (college page read 45768981024, kb/college_reads/modesto_pooled_next_s739.json). The reading recorded the first two and left the 15 out (its note), so its blocks add to 60.5-62.5 against 75.5-77.5. The step files the block's own total as ge_units, and the scorer's ge_included adds it to the printed total (the record names no degree total, so only_without keeps the step to a total that includes its general education). It reads a local degree alone and fills an empty field only. Law, Public Policy, and Society AA-T 42664: the catalog prints BUSAD 249A, 249B and 249C (1, 2 and 3 units) where the state's file lists one row, BUSAD 249ABC, so the record's three codes read as courses the list lacks and the listed row as missing; course_renumbers names the three as that row. Self-recall over Modesto Junior's committed records: tests/program_reconcile_s739_pooled_test.py.",
+   "course_renumbers": {
+    "BUSAD 249A": "BUSAD 249ABC",
+    "BUSAD 249B": "BUSAD 249ABC",
+    "BUSAD 249C": "BUSAD 249ABC"
+   },
+   "course_renumbers_cited": [
+    {
+     "printed": "BUSAD 249A, BUSAD 249B, BUSAD 249C",
+     "file": "BUSAD 249ABC",
+     "units": "1, 2 and 3 as printed; the file's row carries 1",
+     "session": "S739",
+     "date": "2026-11-26",
+     "evidence": "The state's file lists BUSAD 249ABC (CCC000654319) for Law, Public Policy, and Society AA-T 42664, and the 2026-2027 catalog prints the course in LIST A's Internship/Fieldwork area as BUSAD 249A, 249B and 249C at 1, 2 and 3 units (the reading's note on 42664: 'they correspond to the closed-list BUSAD 249ABC'). A code the file lists as printed is never renamed, so Business 06644, Management 06647 and Marketing 06649, whose lists lack the row, keep their three codes as catalog additions."
+    }
+   ],
+   "steps": [
+    {
+     "kind": "fill",
+     "field": "ge_units",
+     "awards": "local",
+     "only_without": "degree_total",
+     "pattern": "TO\\s+EARN\\s+AN\\s+ASSOCIATE\\s+IN\\s+(?:SCIENCE|ARTS)\\s+DEGREE\\s+IN\\s+[A-Z][A-Z ,&/'-]{2,80}?\\s*\\(Total\\s+(?P<min>\\d+(?:\\.\\d+)?)(?:\\s*-\\s*(?P<max>\\d+(?:\\.\\d+)?))?\\)[\\s\\S]{0,160}?MJC\\s+REQUIREMENTS[\\s\\S]{0,40}?AREA\\s+1B\\b"
+    }
+   ]
+  },
   "Moreno Valley College": {
    "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints HIST n where the state's Program Course File lists HIS n, the same number and title in every case kb/_prefix_alias_census.py could title (HIST for HIS, 12 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
    "prefix_aliases": {
