@@ -167,7 +167,10 @@
      shows one example course (Sam, 2026-11-26). The position and the count saved last the visit and are never stored
      (Sam, 2026-10-21). */
   var RAPID = "rapid", GUESS_FILE = "kb/status/subject_title_guesses.json";
-  var RAPIDS = { i: 0, done: 0, said: "" };
+  var RAPIDS = { i: 0, done: 0, said: "", last: null };
+  /* A phone or tablet (Sam, 2026-11-26: "optimize the lightning round view for the phone so I can judge or change them on
+     the fly"): a coarse pointer gets the thumb bar, swipes and no keyboard popping up at every card. */
+  function rapidTouch() { try { return !!(window.matchMedia && window.matchMedia("(pointer: coarse)").matches); } catch (e) { return false; } }
   /* The MQ view (S719; Sam, 2026-11-23, r-mq-view-more-than-codes-sam-2026-11-23: "we may need an mq view that
      integrates our subj codes and decisions to we can troubleshoot anything moving forward"): every discipline in the
      20th-edition Minimum Qualifications handbook, read from kb/status/mq_view.json (kb/_mq_view.py) when the view opens.
@@ -1211,8 +1214,9 @@
   function rapidDraw(focusId) {
     if (!VIEW.root || !VIEW.M || S.view !== RAPID) return;
     render(VIEW.root, VIEW.M, RAPID);
-    var f = VIEW.root.querySelector("#" + (focusId || "csb-rapid-title"));
-    if (f && f.focus) f.focus();
+    /* On a phone the keyboard waits until the title is tapped, so a card can be judged at a glance. */
+    var f = VIEW.root.querySelector("#" + (focusId || (rapidTouch() ? "csb-rapid-h" : "csb-rapid-title")));
+    if (f && f.focus) { if (f.id === "csb-rapid-h") f.setAttribute("tabindex", "-1"); f.focus(); }
   }
   function rapidAccept(e, input, btn) {
     var r = e.r, k = acceptKey(r), msg = VIEW.root && VIEW.root.querySelector("#csb-rapid-msg");
@@ -1224,9 +1228,12 @@
     if (e.g.sourceUrl && input.value === e.g.title) value.source_url = e.g.sourceUrl;
     else delete value.source_url;
     btn.disabled = true; say("Saving…");
+    var hadSave = !!SAVED[k.mapKey];
     writeSave(k.key, value).then(function (res) {
       if (!res.ok) { btn.disabled = false; say(res.lapsed ? "Not saved: your sign-in has ended. Sign in again, then accept." : "Not saved: the server answered " + res.status + ". Only a reviewer on the list may save."); return; }
       LAPSED = false;
+      /* Undo takes back only a save this round made from nothing, so it never removes an earlier decision on the code. */
+      RAPIDS.last = hadSave ? null : { key: k.key, mapKey: k.mapKey, slug: r.slug, code: r.code };
       SAVED[k.mapKey] = { title: value.local_title || "", common: value.common_code || "", source: value.source_url || "", at: new Date().toISOString(), by: res.email || "",
         label: "a reviewer", decidedBy: "", key: k.key, mapKey: k.mapKey };
       RAPIDS.done++;
@@ -1234,10 +1241,24 @@
       rapidDraw();   /* the saved code has left the queue, so the same place holds the next one */
     }, function (er) { btn.disabled = false; say("Not saved: " + ((er && er.message) || "the network failed") + "."); });
   }
+  function rapidUndo() {
+    var L = RAPIDS.last, msg = VIEW.root && VIEW.root.querySelector("#csb-rapid-msg");
+    if (!L) return;
+    if (msg) msg.textContent = "Taking it back…";
+    takeBack(L.key).then(function (res) {
+      if (!res.ok) { if (msg) msg.textContent = res.lapsed ? "Not taken back: your sign-in has ended. Sign in again." : "Not taken back: the server answered " + res.status + "."; return; }
+      delete SAVED[L.mapKey];
+      RAPIDS.last = null; RAPIDS.done = Math.max(0, RAPIDS.done - 1);
+      RAPIDS.said = "Taken back: " + L.code + " is in the round again.";
+      var q = rapidQueue(VIEW.M);
+      for (var i = 0; i < q.length; i++) if (q[i].r.slug === L.slug && q[i].r.code === L.code) { RAPIDS.i = i; break; }
+      rapidDraw();
+    }, function (er) { if (msg) msg.textContent = "Not taken back: " + ((er && er.message) || "the network failed") + "."; });
+  }
   function rapidMove(step) {
     var n = rapidQueue(VIEW.M).length;
     if (!n) return;
-    RAPIDS.said = "";
+    RAPIDS.said = ""; RAPIDS.last = null;
     RAPIDS.i = step > 0 ? (RAPIDS.i + 1) % n : Math.max(0, RAPIDS.i - 1);
     rapidDraw();
   }
@@ -1250,7 +1271,8 @@
     if (RAPIDS.i >= q.length) RAPIDS.i = 0;
     var e = q[RAPIDS.i], r = e.r, g = e.g;
     box.appendChild(el("p", { cls: "csb-note", id: "csb-rapid-left", role: "status" }, [el("strong", { text: fmt(q.length) + " to go" }),
-      ". " + fmt(RAPIDS.done) + " saved this visit. This is code " + fmt(RAPIDS.i + 1) + " of " + fmt(q.length) + "." + (RAPIDS.said ? " " + RAPIDS.said : "")]));
+      ". " + fmt(RAPIDS.done) + " saved this visit. This is code " + fmt(RAPIDS.i + 1) + " of " + fmt(q.length) + "." + (RAPIDS.said ? " " + RAPIDS.said : ""),
+      RAPIDS.last ? " " : null, RAPIDS.last ? (function () { var u = el("button", { type: "button", cls: "csb-word", id: "csb-rapid-undo", text: "Undo" }); u.addEventListener("click", rapidUndo); return u; })() : null]));
     box.appendChild(el("h3", { id: "csb-rapid-h", text: r.code + " at " + r.college }));
     var n = rapidCourseCount(r), ex = g.courses && g.courses[0];
     if (ex) box.appendChild(el("p", { cls: "csb-note", id: "csb-rapid-ex" }, ["Example course: ", el("strong", { text: ex }),
@@ -1258,7 +1280,7 @@
     else if (n) box.appendChild(el("p", { cls: "csb-note", id: "csb-rapid-ex", text: fmt(n) + (n === 1 ? " course" : " courses") + "; no example course is on file." }));
     if (g.sourceUrl) box.appendChild(el("p", { cls: "csb-note", id: "csb-rapid-src" }, ["The catalog says: ",
       el("a", { href: g.sourceUrl, target: "_blank", rel: "noopener noreferrer" }, [g.sourceSays || g.sourceUrl, el("span", { cls: "csb-vh", text: " (opens in a new tab)" })])]));
-    var input = el("input", { type: "text", cls: "csb-input", id: "csb-rapid-title", autocomplete: "off", spellcheck: "true" });
+    var input = el("input", { type: "text", cls: "csb-input", id: "csb-rapid-title", autocomplete: "off", spellcheck: "true", autocapitalize: "words", enterkeyhint: "go" });
     input.value = g.title || "";
     var b = bar01(g.confidence == null || isNaN(g.confidence) ? null : Number(g.confidence) / 100, "Confidence in this title");
     box.appendChild(el("div", { cls: "csb-ed-field" }, [el("label", { "for": "csb-rapid-title", text: "Local title" }),
@@ -1278,10 +1300,22 @@
       ev.preventDefault();
       rapidMove(ev.key === "ArrowRight" ? 1 : -1);
     });
-    box.appendChild(el("p", { cls: "csb-rapid-acts" }, [acc, skip, back]));
+    box.appendChild(el("p", { cls: "csb-rapid-acts", id: "csb-rapid-acts" }, [acc, skip, back]));
+    /* A swipe on the card, not in the title: left skips, right goes back (a phone has no Ctrl and arrow). */
+    var t0 = null;
+    box.addEventListener("touchstart", function (ev) { var t = ev.touches && ev.touches[0]; t0 = t && ev.target !== input ? { x: t.clientX, y: t.clientY } : null; }, { passive: true });
+    box.addEventListener("touchend", function (ev) {
+      var t = ev.changedTouches && ev.changedTouches[0];
+      if (!t0 || !t) return;
+      var dx = t.clientX - t0.x, dy = t.clientY - t0.y; t0 = null;
+      if (Math.abs(dx) < 60 || Math.abs(dy) > 40) return;
+      if (dx < 0) rapidMove(1); else if (RAPIDS.i > 0) rapidMove(-1);
+    }, { passive: true });
     box.appendChild(el("p", { cls: "csb-ed-msg", id: "csb-rapid-msg", role: "status" }));
     if (!session()) box.appendChild(el("p", { cls: "csb-note", id: "csb-rapid-signin", text: "Accept saves once you sign in as a reviewer." }));
-    box.appendChild(el("p", { cls: "csb-foot", id: "csb-rapid-keys", text: "Keys: Enter in the title accepts it. Ctrl or Command with the right arrow skips; with the left arrow, goes back. Tab moves between the controls." }));
+    box.appendChild(el("p", { cls: "csb-foot", id: "csb-rapid-keys", text: rapidTouch()
+      ? "Tap Accept to save the title, or tap the title to change it, then Go. Swipe left to skip, right to go back."
+      : "Keys: Enter in the title accepts it. Ctrl or Command with the right arrow skips; with the left arrow, goes back. Tab moves between the controls." }));
     return box;
   }
   /* A status word, plain text: Read carries weight, the ways with nothing to do are muted, so it reads the same without color. */
@@ -2908,6 +2942,19 @@
     ".csb-rapid-row { display:flex; flex-wrap:wrap; align-items:center; gap:6px 12px; min-width:0; }",
     ".csb-rapid-row .csb-input { flex:1 1 16rem; max-width:32rem; }",
     ".csb-rapid-acts { margin:0; display:flex; flex-wrap:wrap; gap:6px 24px; align-items:baseline; }",
+    ".csb-rapid-why { flex-basis:100%; }",
+    /* The phone (S737): the field at 16px so the page does not zoom, and the three controls in a bar at the thumb, each
+       a word with a 48px target. The card keeps room below so the bar never covers its last line. */
+    "@media (max-width:640px), (pointer: coarse) {"
+      + " .csb-rapid { padding:12px 12px calc(84px + env(safe-area-inset-bottom, 0px)); border-radius:10px; }"
+      + " .csb-rapid .csb-input { font-size:16px; min-height:44px; width:100%; max-width:none; flex-basis:100%; }"
+      + " .csb-rapid-acts { position:fixed; left:0; right:0; bottom:0; z-index:900; display:grid; grid-template-columns:2fr 1fr 1fr; gap:0;"
+      + " background:var(--cmn-surface); border-top:1px solid var(--cmn-line); padding:4px max(8px, env(safe-area-inset-right, 0px)) calc(4px + env(safe-area-inset-bottom, 0px)) max(8px, env(safe-area-inset-left, 0px)); }"
+      + " .csb-rapid-acts .csb-word { min-height:48px; line-height:48px; text-align:center; font-size:1.05rem; }"
+      + " #csb-rapid-accept { font-size:1.15rem; }"
+      + " .csb-rapid-acts .csb-word:disabled { color:var(--cmn-ink-2); text-decoration:none; }"
+      + " #csb-rapid-undo { min-height:44px; line-height:44px; }"
+      + " }",
     ".csb-chip { display:inline-block; font-size:.78rem; font-weight:600; color:var(--cmn-ink-2); border:1px solid var(--cmn-line); border-radius:999px; padding:1px 9px; background:var(--cmn-surface); white-space:nowrap; cursor:help; }",
     ".csb-chip[data-state='not_in_catalog'] { color:var(--cmn-heading); border-color:var(--cmn-accent); }",
     ".csb-chip:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:2px; }",

@@ -12,7 +12,11 @@
 //   (7) each code shows one example course, the guess file's first (Sam, 2026-11-26), with the code's course count;
 //   (8) an empty queue says so and links back to Subjects;
 //   (9) ⭐ a guess with a catalog page (source_url, source_says) shows "The catalog says:" as a link, and Accept saves
-//       source_url only when the guess is accepted unedited.
+//       source_url only when the guess is accepted unedited;
+//   (10) ⭐ on a phone (a coarse pointer; Sam, 2026-11-26: "optimize the lightning round view for the phone so I can
+//       judge or change them on the fly"): the keyboard waits (the heading takes focus, not the title), the hint names
+//       taps and swipes, a left swipe skips and a right swipe goes back writing nothing, the title field asks for Go,
+//       the phone CSS pins the three controls to a thumb bar at 48px; and Undo takes back the save the round just made.
 // Run from repo root: `npm test` (or `node tests/commons_subjects_rapid.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -49,6 +53,7 @@ function load(hash, opt) {
     { url: "https://example.org/index.html" + (hash || ""), runScripts: "dangerously" });
   const w = dom.window, o = {}, calls = [];
   let sess = opt.sess || null;
+  if (opt.coarse) w.matchMedia = (q) => ({ matches: /pointer:\s*coarse/.test(q), addListener() {}, removeListener() {} });
   Object.defineProperty(w, "localStorage", { value: { getItem: (k) => (k in o ? o[k] : null), setItem: (k, v) => { o[k] = String(v); }, removeItem: (k) => { delete o[k]; } }, configurable: true });
   w.CPL_SESSION = {
     get: () => sess, isFresh: () => !!sess, ensureFresh: () => Promise.resolve(sess),
@@ -64,6 +69,7 @@ function load(hash, opt) {
       calls.push({ url, method, headers: init.headers || {}, body: init.body });
       if (method === "GET") return Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve(JSON.parse(JSON.stringify(opt.saves || []))) });
       if (method === "POST") return Promise.resolve({ ok: true, status: 201, json: () => Promise.resolve(null) });
+      if (method === "DELETE") return Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve([{ course_id: "x" }]) });
     }
     const hit = all[url];
     if (!hit) return Promise.resolve({ ok: false, status: 404, json: () => Promise.reject(new Error("404")) });
@@ -157,6 +163,38 @@ function key(x, el, k, mods) {
     && link.previousElementSibling && link.previousElementSibling.getAttribute("data-csb-go") === "disagree");
   link.click(); await settle();
   check("(6) the link opens the round, its field focused", !!x.d.getElementById("csb-rapid") && x.d.activeElement === x.d.getElementById("csb-rapid-title"));
+
+  /* (10) the phone */
+  x = load("#commons/subjects/rapid", { sess: ME, coarse: true });
+  await x.M.boot(); await settle();
+  check("(10) ⭐ on a phone the heading takes focus, so the keyboard waits until the title is tapped",
+    x.d.activeElement === x.d.getElementById("csb-rapid-h") && x.d.activeElement !== x.d.getElementById("csb-rapid-title"), x.d.activeElement && x.d.activeElement.id);
+  check("(10) the phone hint names taps and swipes, and the field asks the keyboard for Go",
+    /Swipe left to skip, right to go back/.test(txt(x.d.getElementById("csb-rapid-keys"))) && x.d.getElementById("csb-rapid-title").getAttribute("enterkeyhint") === "go");
+  const css = Array.from(x.d.querySelectorAll("style")).map((n) => n.textContent).join("\n");
+  check("(10) ⭐ the phone CSS pins the controls to a thumb bar with 48px targets and a 16px field",
+    /@media \(max-width:640px\), \(pointer: coarse\)[^@]*\.csb-rapid-acts \{ position:fixed;[^}]*bottom:0/.test(css) && /\.csb-rapid-acts \.csb-word \{ min-height:48px/.test(css)
+    && /\.csb-rapid \.csb-input \{ font-size:16px/.test(css));
+  function swipe(el, dx) {
+    const T = (X) => ({ clientX: X, clientY: 100 });
+    const a = new x.w.Event("touchstart", { bubbles: true }); a.touches = [T(200)]; el.dispatchEvent(a);
+    const b = new x.w.Event("touchend", { bubbles: true }); b.changedTouches = [T(200 + dx)]; el.dispatchEvent(b);
+  }
+  swipe(x.d.getElementById("csb-rapid-h"), -120); await settle();
+  check("(10) ⭐ a left swipe skips, writing nothing", head(x) === "MATH at Alpha College" && writesOf(x).length === 0, head(x));
+  swipe(x.d.getElementById("csb-rapid-h"), 120); await settle();
+  check("(10) a right swipe goes back, writing nothing", head(x) === "WELD at Beta College" && writesOf(x).length === 0, head(x));
+  swipe(x.d.getElementById("csb-rapid-h"), -30); await settle();
+  check("(10) a short drag is not a swipe", head(x) === "WELD at Beta College");
+  x.d.getElementById("csb-rapid-accept").click(); await settle();
+  const undo = x.d.getElementById("csb-rapid-undo");
+  check("(10) ⭐ after a save the progress line offers Undo", undo && undo.tagName === "BUTTON" && head(x) === "MATH at Alpha College", head(x));
+  undo.click(); await settle();
+  const del = writesOf(x).filter((c) => c.method === "DELETE");
+  check("(10) ⭐ Undo deletes that one save, by its key and the reviewer, and the code is back in front",
+    del.length === 1 && /course_id=eq\.SUBJ%3Abeta%7CWELD%7Ccredit/.test(del[0].url) && /reviewer_email=eq\./.test(del[0].url)
+    && head(x) === "WELD at Beta College" && /^3 to go\. 0 saved this visit\./.test(txt(x.d.getElementById("csb-rapid-left"))) && !x.d.getElementById("csb-rapid-undo"),
+    del[0] && del[0].url);
 
   /* (8) an empty queue */
   const AT = "2026-11-26T00:00:00Z";
