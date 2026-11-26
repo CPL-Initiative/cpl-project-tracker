@@ -81,7 +81,8 @@ S740_RECONCILE = "45844759766"
 for cn in ("31280", "31089", "45285"):
     f = W.load(cn)
     reconciled = (cn == "31089" and str(f.get("extracted_run")) == S740_RECONCILE
-                  and not f["score"]["arithmetic"].get("pass") and not f["score"].get("gaps"))
+                  and not f["score"]["arithmetic"].get("pass")
+                  and [x.get("gap") for x in f["score"].get("gaps") or []] in ([], ["noted_figures_differ"]))
     check(not B.NG.collectable(f["score"]) or reconciled,
           "%s is not collectable, or S740's reconcile made it collectable with its arithmetic failing" % cn)
 rn = B.P.rescore_common_numbers(W.load("31280"), name_of=lambda c: "PLUMBNG28" if S.norm_code(c) == S.norm_code("PLUMBING 028") else None,

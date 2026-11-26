@@ -38,7 +38,8 @@ HELD (6), each reason in HAND:
   11293  Art Studio A.A.: on no proved live run (s720b's reason, unchanged).
   45306  Spanish Intermediate Proficiency certificate: its lists print 13-15 and 1-3, which add to 14-18 around the
          printed 16; no kind's sentence is true of a printed total inside the lists' own range, and the stray '4 - 5'
-         its note names is unread: a reread.
+         its note names is unread: a reread. It is also on no proved live run (run 44090886950, as 11293). The
+         receipt keeps the reason as s740d was applied; this line was added after, on the second reader's note.
 
     python3 kb/_program_piles_s740_cabrillo.py --dry-run
     python3 kb/_program_piles_s740_cabrillo.py --tag s740d
@@ -117,7 +118,7 @@ HAND.update({
               "44090886950's (on_live_run)"),
     "45306": ("held: its lists print 13-15 and 1-3, which add to 14-18 around the printed 16; no kind's sentence is "
               "true of a printed total inside the lists' own range, and the stray '4 - 5' its note names is unread: "
-              "a reread"),
+              "a reread; it is also on no proved live run (its committed record is 44090886950's, as 11293's is)"),
 })
 
 W = B7.Pile(college=COLLEGE, slug=SLUG, tag=TAG, name="Cabrillo", prior=B.LiveRuns(COLLEGE, SLUG), keys=KEYS,

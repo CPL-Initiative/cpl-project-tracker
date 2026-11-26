@@ -102,7 +102,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "noted_figures_differ",
+    "label": "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires.",
+    "words": "Required courses listed in the semester sequence sum to 33 units, not the stated 38; the 'Electives 2' rows in Semesters I and III (4 units) are read as the 4 units of Major Electives. Reviewer should check the discrepancy."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 87,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

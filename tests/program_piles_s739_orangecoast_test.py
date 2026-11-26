@@ -45,6 +45,12 @@ OWN = {"43362": "own_heading", "41373": "own_heading"}
 
 # S740's s740b files 41373 under the units within-range kind, the kind its hold waited for: either state holds here.
 REFILED = {"41373": "units_within_printed_range"}
+# The refiled state is exact (S740's second reader): only as the one row s740b's own receipt names.
+_S740B = os.path.join(B.NG.RECEIPTS, "program_requirement_records_piles_s740_orange_coast_2026-11-26_s740b.json")
+S740B = {}
+if os.path.isfile(_S740B):
+    with open(_S740B, encoding="utf-8") as fh:
+        S740B = {r["control_number"]: r["moves_to"] for r in json.load(fh)["records"]}
 t = T.run(W, rows=ROWS, held=HELD, scores=SCORES, day="2026-11-26", boundaries=14, own=OWN,
           rolled_back=ROLLED_BACK, refiled=REFILED)
 check = t.check
@@ -107,7 +113,8 @@ line = NG._values([row])
 check(line in whole and line in sql and sql.count("'Orange Coast College'") == 1,
       "the slice's one values line is s739j's rollback row for 41373, byte for byte")
 check("41373" not in M.REVIEWED and set(M.ROLLED_BACK) == {"41373"} and W.hand["41373"] == M.NOTE_41373
-      and [g.get("gap") for g in f["score"].get("gaps") or []] in ([], [REFILED["41373"]]),
+      and ([g.get("gap") for g in f["score"].get("gaps") or []] == []
+           or ([g.get("gap") for g in f["score"].get("gaps") or []] == [REFILED["41373"]] and S740B == REFILED)),
       "41373 is no entry of the plan, holds, and its committed record carries no gap of this plan's (none, or the "
       "units within-range kind S740's s740b files)")
 check(not any("'%s'" % cn in sql for cn in ROWS) and "e(expect) as (values (1))" in sql

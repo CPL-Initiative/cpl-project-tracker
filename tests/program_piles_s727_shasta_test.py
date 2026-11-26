@@ -104,7 +104,10 @@ before = W.posted_runs(skip=("s727c", "s739b"))
 check(all(max(before[cn])[1] == W._load(cn)["extracted_run"] for cn in ROWS),
       "before the apply, every row's latest posted run is its committed run")
 check(all(W.on_live_run(W._load(cn)) for cn in ROWS), "every row is on its live run")
-check("18655" not in before and "18144" not in before, "a two-run load names no run for 18655 or 18144")
+# 18655 since S740 (p-older-pile-tests-pin-runs-later-plans-move-s739): reread 45849365599 replaced its row at the
+# reconcile's run 45841957622, and plan s740i posts on top at that run; the two-run load still names none.
+check("18144" not in before and all(run == "45841957622" for _, run in before.get("18655") or []),
+      "a two-run load names no run for 18655 or 18144; 18655's only posted run is S740's reread's")
 
 # The plan, once written (the files are absent only on the branch before its own run).
 check(len(RECEIPTS) == 1 and len(MIGS) == 4, "one receipt and four SQL files")
