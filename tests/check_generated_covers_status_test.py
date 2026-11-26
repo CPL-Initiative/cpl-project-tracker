@@ -29,6 +29,9 @@ STATUS = os.path.join(REPO, "kb", "status")
 
 # file name -> why scripts/check_generated.sh cannot check it. Read the builder before adding one.
 NOT_CHECKED = {
+    "subject_title_guesses.json":
+        "the lightning round's best-guess titles (S737), written once by four model reviewers and their web checks; "
+        "no committed input rebuilds a guess, and a person's accept, never the file, makes a title",
     "commons.json":
         "kb/_build_commons_status.py stamps written_at with the clock on each daily run; the lints job rebuilds it "
         "from the tree and runs every test that reads it",

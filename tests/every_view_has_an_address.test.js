@@ -112,6 +112,10 @@ const READS_OWN_ROUTE = { "exhibits": 1, "cr-reference": 1, "program-requirement
   // The held codes (S695): #commons/subjects/held, the same address path; the round trip is in
   // tests/commons_subjects_held.test.js (1, 5).
   check("(E) commons/subjects/held is a view of the Subjects list's address", /var HELD = "held"/.test(SUBJJS) && /S\.view === HELD/.test(SUBJJS));
+  // The lightning round (S737): #commons/subjects/rapid, the same address path; the round trip is in
+  // tests/commons_subjects_rapid.test.js (6).
+  check("(E) commons/subjects/rapid is a view of the Subjects list's address", /var RAPID = "rapid"/.test(SUBJJS) && /S\.view === RAPID/.test(SUBJJS)
+    && /view === MQ \|\| view === RAPID;/.test(SUBJJS));
   // S719: the MQ view (#commons/subjects/mq), its code sidebar (mq/code/<COMMON>), the statewide list filtered to a
   // code (statewide/code/<COMMON>) and a second sidebar (.../courses/<LOCAL>, .../colleges/<LOCAL>) are parts of the
   // Subjects list's address, read by render and reported by address(); the round trips are in

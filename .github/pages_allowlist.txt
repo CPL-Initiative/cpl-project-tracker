@@ -499,6 +499,7 @@ publish kb/status/statewide_code_courses
 publish kb/status/statewide_subject_codes.json
 publish kb/status/subject_courses
 publish kb/status/subject_sources.json
+publish kb/status/subject_title_guesses.json
 publish kb/status/subjects.json
 publish kb/subject_map_audit.json
 publish kb/synonym_map.json
