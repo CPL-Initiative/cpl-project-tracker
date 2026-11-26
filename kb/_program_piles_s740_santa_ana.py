@@ -14,7 +14,7 @@ record changed, no new kind. The college has no earlier piles module, so its liv
 module's LiveRuns: load 38909293531 inserted every key at run 38843461766, and reread 45841675928's receipt posts the
 rows the reconcile restamped.
 
-COLLECTED WITH A NAMED GAP (8, REVIEWED below; each entry's page words are the page read's):
+COLLECTED WITH A NAMED GAP (7, REVIEWED below; each entry's page words are the page read's):
   required_list_outside_total (70)  32096 Kinesiology A.A.-T: the page asks for 'a maximum of one (1) course from any
         three (3) of the following areas for a minimum of three units', prints each area at 0.0 and prints 'Total :
         18.0- 20.5', which is the required 11 and the electives' 7.0-9.5. The record counts the three units; without
@@ -36,21 +36,21 @@ COLLECTED WITH A NAMED GAP (8, REVIEWED below; each entry's page words are the p
               filed and both notes.
         31887 Elementary Teacher Education A.A.-T: 'Required Core Courses 45.0' adds only with the biology choice at
               4 units, and the page prints that choice at '3.0- 4.0' (BIOL 109H alone at 3.0; BIOL 109 with BIOL
-              109L at 4); with the core at its printed 45 the lists add to the printed 52.
+              109L at 4); with the core at its printed 45 the lists add to the printed 52. It is the reverse
+              containment: the printed 52 lies inside the record's sum, 51-52, by the biology choice's 3-4 units.
         04256 Economics A.A.: 'Course 22.0- 23.5' over courses that add to 21-22.5, and 'Total : 25.0- 26.5', which
               adds the 3.0 the page heads 'Recommended electives:'. With the requirements at their printed 22-23.5
               and the 3 units counted, the figures add to the printed total. Two gaps on one row, both notes filed.
-  lists_not_closed (30)             31859 Political Science A.A.-T: 'List A (select 2): 6-7.5 Units. (Any course
-        not selected from Core and a below course. Or, two below courses.)' prints 6.0- 7.5: the list also takes a
-        course from the core, so its two listed rows (7-7.5) alone cannot add the program's units. Counting List A
-        at its printed figure the lists add to the printed 18-19.5. lists_past_their_figure is not filed: its record
-        rule does not name the row, and a reconcile's rescore keeps a gap of that kind only where the rule does.
-
-HELD (3), each reason in HAND:
+HELD (4), each reason in HAND:
   04238  English A.A.: not the program's own. It was read from the entry of English A.A.-T 32436, whose page prints
          'Program Control Number: 32436'.
   21789  Pharmacy Technology Advanced Option certificate: its groups add to 24.5-29, inside the printed 'Total :
-         24.0- 30.0'. It waits on the units within-range kind (d-within-range-sums-hold-for-units-kind-s739).
+         24.0- 30.0'. It waits on units_within_printed_range (d-within-range-sums-hold-for-units-kind-s739), filed
+         by key once that kind is on main.
+  31859  Political Science A.A.-T: its sum, 19-19.5, sits inside the printed 'Total : 18.0- 19.5' (List A prints
+         6.0- 7.5 and also takes a core course, where its two listed rows carry 7-7.5): the within-range case S739
+         rejected for a lists kind (d-lists-gap-holds-range-sums-s703). It waits, with 21789, on
+         units_within_printed_range, filed by key once that kind is on main.
   32533  Spanish A.A.-T: the record counts the 'Substitution Courses' list (10 units), which a student takes only in
          place of Spanish 101 and 102; without it the courses add to the printed 23-24. No kind names a substitute
          list counted, and required_list_outside_total would be false for it (the program does not require the list).
@@ -117,6 +117,9 @@ REVIEWED = {
                       "units from the following: | 6.0- 8.0'; 'Total : 21.0- 24.0'"},
     "31887": {"gap": "noted_figures_differ", "computed": [51, 52], "stated": [52, 52],
               "words": "the 45-unit core total only adds up with 4 units here",
+              "hand": "the reverse containment: the printed 52 lies inside the record's sum, 51-52, which runs from "
+                      "the biology choice at 3 units (BIOL 109H alone) to 4; the page prints that choice at '3.0- "
+                      "4.0' and the core at 45.0, which adds only at 4",
               "ops": [("choose", "Required Core Courses", 45)],
               "page": "'Required Core Courses | 45.0'; the biology choice prints '1.0 | 3.0- 4.0 | BIOL 115 4.0 OR "
                       "BIOL 109H 3.0 OR BIOL 109 3.0 AND BIOL 109L 1.0'; 'Total : 52.0'"},
@@ -127,13 +130,6 @@ REVIEWED = {
               "page": "'Course | 22.0- 23.5' over ACCT 101 4.0, ACCT 102 4.0, ECON C2002 3.0, ECON C2001 3.0, '3.0- "
                       "4.0 | BUS 150 OR MATH 145' and '4.0- 4.5 | STAT C1000 OR STAT C1000H OR STAT C1000E'; "
                       "'Recommended electives: | 3.0 | 3.0 | BUS 101 OR BUS 120'; 'Total : 25.0- 26.5'"},
-    "31859": {"gap": "lists_not_closed", "computed": [19, 19.5], "stated": [18, 19.5],
-              "words": "List A allows any core course not selected from the Required Core plus one listed course, or "
-                       "two listed courses",
-              "ops": [("choose", "List A (select 2)", 6, 7.5)],
-              "page": "'List A (select 2): 6-7.5 Units. | (Any course not selected from Core and a below course. Or, "
-                      "two below courses.) | 6.0- 7.5' over POLT 235 3.0 and the statistics choice '4.0- 4.5'; 'Total : "
-                      "18.0- 19.5'"},
 }
 HAND = {cn: e["gap"] for cn, e in REVIEWED.items()}
 HAND.update({
@@ -141,8 +137,13 @@ HAND.update({
               "35925), whose page prints 'English : A.A.-T Degree for Transfer' and 'Program Control Number: 32436' "
               "(college page read 45835379921); its own note says the only section in the text is the A.A.-T's"),
     "21789": ("held: its groups add to 24.5-29, inside the printed 'Total : 24.0- 30.0' and matching neither end; it "
-              "waits on the units within-range kind (d-within-range-sums-hold-for-units-kind-s739), and no kind "
-              "filed today is true for it"),
+              "waits on the units within-range kind, units_within_printed_range "
+              "(d-within-range-sums-hold-for-units-kind-s739), filed by key once that kind is on main; no kind filed "
+              "here is true for it"),
+    "31859": ("held: its sum, 19-19.5, sits inside the printed 'Total : 18.0- 19.5' (List A prints 6.0- 7.5 and also "
+              "takes a core course, where its two listed rows carry 7-7.5): the within-range case S739 rejected for a "
+              "lists kind (d-lists-gap-holds-range-sums-s703). It waits, with 21789, on the units within-range kind, "
+              "units_within_printed_range, filed by key once that kind is on main"),
     "32533": ("held: the record counts the 'Substitution Courses' list (10 units), which the page says a student "
               "with credit for Spanish 101 and 102 takes in their place; without it the courses add to the printed "
               "23-24. No kind names a substitute list counted, and required_list_outside_total would be false for it: "
