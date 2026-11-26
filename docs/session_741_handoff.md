@@ -271,7 +271,7 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 
 In all: 82 records collected (32 passing by reread or load, 50 named gaps by guarded plans), no outline rows, paid
 reads about $1.28 on their meter (Copper Mountain $0.91, Santa Ana 12242 $0.11, Orange Coast $0.26; San Diego City and
-Ventura charged nothing). Headline and census: <closing census>.
+Ventura charged nothing). Headline and census: run 45870806616 on `main` (17:51Z, `53a9b577`): 15,640 of 20,282 pass, 4,002 have no passing record (80 fewer than the 12:06Z census's 4,082), 640 are collected with a named gap (50 more); Cerritos 44984 and 20504 already passed in the committed files the census reads, so 80 of tonight's 82 moved its count.
 
 **Merged.**
 - **#3886 (`0017cd97`, 13:54Z), the display build `9e28519af71f`** (18,743 rows; S739's records): the gate at Glendale
@@ -302,7 +302,7 @@ Ventura charged nothing). Headline and census: <closing census>.
 **Pending at the checkpoint's write (16:40Z; the conductor fills the outcome in the places marked).**
 - Santa Ana 12242's long read (run 45842667274, dispatched 14:48Z) and its load: read 45842667274 filed 12242 passing at 16:54Z (38.5 against the printed 38.5, $0.11); load 45863040323 inserted it alone (receipt `b6455ebe`).
 - Orange Coast 03954, 08664 and 31217's paid read 45858495107 (16:24Z) and its reread: the read filed at 17:04Z ($0.26): 03954 and 31217 pass, 08664 reads unequal; reread (receipt `ddbf12f5`) posted the three at 45858495107, all three failing and unchecked before, so 2 records collected.
-- The land #3892: merged at 17:48Z as `7f00b827`, confirmed on `origin/main`, without a final update from `main`, which had moved only by Sam's lightning-round PR (`e965ebb1`), touching none of the land's files (**DECIDED** `d-land-merged-without-main-update-s740`, as `d-display-merged-without-main-update-s731`); `test` green on `c957bda9` (run 45868426477). The closing census: <closing census>.
+- The land #3892: merged at 17:48Z as `7f00b827`, confirmed on `origin/main`, without a final update from `main`, which had moved only by Sam's lightning-round PR (`e965ebb1`), touching none of the land's files (**DECIDED** `d-land-merged-without-main-update-s740`, as `d-display-merged-without-main-update-s731`); `test` green on `c957bda9` (run 45868426477). The closing census: run 45870806616 on `main` (17:51Z, `53a9b577`): 15,640 of 20,282 pass, 4,002 have no passing record (80 fewer than the 12:06Z census's 4,082), 640 are collected with a named gap (50 more); Cerritos 44984 and 20504 already passed in the committed files the census reads, so 80 of tonight's 82 moved its count.
 - The display build carrying S740's records, once no apply is in flight, and the Spend line's builders.
 
 ## Open work, from the lanes' NEXT lines
@@ -438,17 +438,19 @@ after about $190; the repo's rates read $180.09 at 16:24Z.
 | `claude/s740-reads`, `claude/s740-reads-cm`, `claude/s740-reads-sdcity` | s740r1 to s740r4 applied; Copper Mountain's reads and reread live; San Diego City's read refused at the price step | land #3892 (the first two); the third, nothing to land |
 | `claude/s740-reconcile`, `claude/s740-piles`, `claude/s740-cerritos` | s740a to s740j, s740c1 to s740c6 applied; Cerritos live | land #3892 |
 | #3892 (`claude/s740-land`) | all five branches as one PR off `main` | merged at 17:48Z as `7f00b827`, confirmed on `origin/main`, without a final update from `main`, which had moved only by Sam's lightning-round PR (`e965ebb1`), touching none of the land's files (**DECIDED** `d-land-merged-without-main-update-s740`, as `d-display-merged-without-main-update-s731`); `test` green on `c957bda9` (run 45868426477) |
-| Harvest gap census on `main` | 45816008322 (12:06Z): 15,610 pass; after the display build 45833723371 (14:03Z): 15,610 pass, 4,082 without, 590 with a named gap | the closing census: <closing census> |
+| Harvest gap census on `main` | 45816008322 (12:06Z): 15,610 pass; after the display build 45833723371 (14:03Z): 15,610 pass, 4,082 without, 590 with a named gap | the closing census: run 45870806616 on `main` (17:51Z, `53a9b577`): 15,640 of 20,282 pass, 4,002 have no passing record (80 fewer than the 12:06Z census's 4,082), 640 are collected with a named gap (50 more); Cerritos 44984 and 20504 already passed in the committed files the census reads, so 80 of tonight's 82 moved its count |
 | #3383 | dependabot's | waits |
 
 ## Let go
 
-No PR subscription, scheduled check-in, artifact watch or COBIx watcher was opened tonight, so there is none to drop.
+No PR subscription, artifact watch or COBIx watcher was opened tonight, and the run's fallback wakes have all fired with none pending, so there is none to drop.
 Workers end with the session; each branch is pushed. The vault note for this run is
 `CPLBrain/07-session-notes/2026-11-26-s740-skyskimmer-collection.md` (merged as samueltlee/CPLBrain#873, `d3547b0c`; S739's #872 merged first, `ccc1977e`, under Sam's ruling of 2026-11-21 that vault note drafts merge on their own).
 
-Spend: <Spend line>
+Spend: $206.12 estimate (Opus 5.5 $44.94, Fable 5.2 $141.29, Sonnet $19.68, Haiku $0.21); collection $206.12; 2026-11-26T13:12Z to 2026-11-26T17:55Z.
+
+(A token-count estimate at the repo's list prices (`kb/_spend_meter.py`'s table: Opus 5.5 $4 in, $20 out, $0.20 cache read, $5 cache write), measured from this session's transcripts at 17:53Z, with Fable 5.2 priced at the Opus 5.5 rate as S739 did, since the table names no Fable rate; the sign-off turns after 17:53Z are not in it. The paid reads' own cost, about $1.28 on their meter, is apart.)
 
 Opening line: *Greetings, you are SkyWillet (the next free session number at your start; the routine takes it), see SkySkimmer's (S740) handoff — `docs/session_741_handoff.md` — let's keep rolling with our queue.*
 
-<last line: conductor model, session cost, records collected and live, outline rows added, substantive PRs merged>
+Conductor model: Opus 5.5 (the form names Fable 5.2); session cost about $206.12 (a token-count estimate; get_session is not available here); 82 records collected and live (32 passing by reread or load, 50 named gaps); 0 outline rows added; 2 substantive PRs merged (#3886, #3892), not counting checkpoints.
