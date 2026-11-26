@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""The lints job runs in four shards (S722, 2026-11-24; Sam: "do we need to do lints check on the whole code base every
+"""The lints job runs in six shards (four from S722, six since S737; S722, 2026-11-24; Sam: "do we need to do lints check on the whole code base every
 time?"). One runner took 19.7 min for 303 steps in series; each shard now runs about a quarter.
 
 WHAT THIS GUARDS:
@@ -7,7 +7,8 @@ WHAT THIS GUARDS:
   (2) the setup steps (checkout, node, npm install, the pip line) run on every shard, and the pip line installs every
       package a later step installs for itself (openpyxl, pypdf, pyyaml), so no step leans on one that ran elsewhere;
   (3) every other step names exactly one shard, and a step's own condition stays beside the shard's;
-  (4) every shard carries steps (the assignment was balanced by measured time, so the counts differ);
+  (4) every shard carries at least one step (balanced by measured time, so the counts differ: one shard may hold a
+      single long step);
   (5) `test` still needs `lints` by its job id and reads needs.lints.result, which a matrix sets to success only when
       every shard succeeds.
 Run: python3 tests/lints_shards_test.py
@@ -32,9 +33,10 @@ def check(name, ok, detail=""):
 
 
 job = W["jobs"]["lints"]
+SHARDS = [1, 2, 3, 4, 5, 6]   # S737: six shards, each about 330 s of steps (four ran 9 to 11 min)
 steps = job["steps"]
-check("(1) the matrix is shards 1 to 4, fail-fast off",
-      job.get("strategy", {}).get("matrix", {}).get("shard") == [1, 2, 3, 4] and job["strategy"].get("fail-fast") is False)
+check("(1) the matrix is shards 1 to %d, fail-fast off" % len(SHARDS),
+      job.get("strategy", {}).get("matrix", {}).get("shard") == SHARDS and job["strategy"].get("fail-fast") is False)
 setup = steps[:4]
 check("(2) the four setup steps run on every shard", all("if" not in s for s in setup)
       and setup[0].get("uses", "").startswith("actions/checkout") and setup[2].get("run") == "npm install", setup)
@@ -45,7 +47,7 @@ for s in steps[4:]:
         wanted.update(m.group(1).split())
 check("(2) the setup pip line installs every package a later step installs", wanted <= set(pip.split()[3:]),
       sorted(wanted - set(pip.split()[3:])))
-bad, per = [], {1: 0, 2: 0, 3: 0, 4: 0}
+bad, per = [], {k: 0 for k in SHARDS}
 for s in steps[4:]:
     c = str(s.get("if", ""))
     m = re.findall(r"matrix\.shard == (\d)", c)
@@ -57,7 +59,9 @@ check("(3) every step past the setup names exactly one shard", not bad, bad[:5])
 check("(3) a step's own condition stays beside its shard's",
       any(str(s.get("if", "")).endswith("(github.event_name == 'pull_request')") for s in steps)
       and any("needs.gate.outputs.decision == 'skip'" in str(s.get("if", "")) for s in steps))
-check("(4) every shard carries at least 20 steps", min(per.values()) >= 20, per)
+# At least one step, not a step count: balanced by time, the Commons status rebuild (about 360 s) fills a shard
+# alone (S737), while the 0-to-1 s steps spread over the others.
+check("(4) every shard carries at least one step", min(per.values()) >= 1, per)
 t = W["jobs"]["test"]
 check("(5) `test` needs lints by its id and reads needs.lints.result",
       "lints" in t["needs"] and "needs.lints.result" in str(t))
