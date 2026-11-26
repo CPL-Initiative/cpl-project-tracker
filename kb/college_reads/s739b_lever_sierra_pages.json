@@ -1,0 +1,24 @@
+{
+ "_readme": "S739 wave B (the gap census of 2026-11-26 06:54Z, run 45771011713, Next wave; lever reader_page_assignment): Management 21524 and Marketing 21526, Certificates of Achievement read from the Business department page (capture 44687646623), whose filed records say the text sent ends inside the Innovation and Entrepreneurship certificate, before either certificate's section. This prints the page as the capture reads it (hidden tab panels included), so a session sees whether each certificate's section prints on it and how far in. One load. No model call, nothing written.",
+ "college": "Sierra College",
+ "questions": {
+  "own_page": "Whether the catalog prints the program's own section (its heading, its award, its course list and its total), where, and which course codes it prints."
+ },
+ "keywords": [
+  "Management\\s+Certificate of Achievement[^\\n]{0,80}",
+  "Marketing\\s+Certificate of Achievement[^\\n]{0,80}",
+  "Certificate of Achievement",
+  "Total Units[^\\n]{0,20}",
+  "BUS 00(?:28|95)"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.sierracollege.edu/departments/business/",
+   "capture_view": true,
+   "why": "21524 21526"
+  }
+ ]
+}

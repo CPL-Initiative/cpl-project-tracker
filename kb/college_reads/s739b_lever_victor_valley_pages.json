@@ -1,0 +1,32 @@
+{
+ "_readme": "S739 wave B (the gap census of 2026-11-26 06:54Z, run 45771011713, Next wave; lever reader_page_assignment): Criminal Justice A.S. 04967, read from the department page (capture 44515659606), whose filed record says the degree's requirements are not in the text. Its sister certificates sit at criminal-justice/<award>-ca/. This reads the department page's links and the address that pattern gives the degree, as the capture reads it. Two loads. No model call, nothing written.",
+ "college": "Victor Valley College",
+ "questions": {
+  "own_page": "Whether the catalog prints the program's own section (its heading, its award, its course list and its total), where, and which course codes it prints."
+ },
+ "keywords": [
+  "Criminal Justice,? A\\.?S\\.?[^\\n]{0,60}",
+  "Associate in Science[^\\n]{0,60}",
+  "Total[^\\n]{0,40}",
+  "\\bCJ[ \\-]?\\d{2,3}\\b"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.vvc.edu/degrees-certificates/criminal-justice/",
+   "links": "criminal-justice/",
+   "links_cap": 60,
+   "why": "04967, the department page's links"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.vvc.edu/degrees-certificates/criminal-justice/criminal-justice-as/",
+   "capture_view": true,
+   "why": "04967"
+  }
+ ]
+}

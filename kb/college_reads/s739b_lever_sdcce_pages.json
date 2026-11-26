@@ -1,0 +1,28 @@
+{
+ "_readme": "S739 wave B (the gap census of 2026-11-26 06:54Z, run 45771011713, Next wave; lever reader_page_assignment): Visual and Vector Design 38411, whose filed record (run 44739577102, p.57) says its heading prints alone at the top of p.57 and COMM 660 and 661 print under 'Certificate of Completion: Digital Design'; and Intermediate Low Prevocational ESL 40532, whose own section (p.66) prints ESLA 428A and 428B where the state lists ESLA 427A and 427B. This prints each page of pp.40-80 naming either, whole, so a session sees where each section opens and which courses it prints. One load. No model call, nothing written.",
+ "college": "San Diego College of Continuing Education",
+ "questions": {
+  "own_page": "Whether the catalog prints the program's own section (its heading, its award, its course list and its total), where, and which course codes it prints."
+ },
+ "keywords": [
+  "Visual and Vector Design",
+  "Prevocational ESL",
+  "COMM 66[01]\\b",
+  "ESLA 42[78][AB]"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf",
+   "why": "38411 40532"
+  }
+ ],
+ "pdf_span": [
+  40,
+  80
+ ],
+ "pdf_page_cap": 10,
+ "pdf_unfolded": true
+}

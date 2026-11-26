@@ -1,0 +1,30 @@
+{
+ "_readme": "S739 wave B (the gap census of 2026-11-26 06:54Z, run 45771011713, Next wave; lever reader_page_assignment): Community Service Officer 40353, read from its own page (capture 44519542333), whose filed record says the REQUIRED COURSES tab's content was not in the text. This prints the page as the capture reads it and opened, so a session sees whether the tab prints a course list and a total. Two loads. No model call, nothing written.",
+ "college": "Evergreen Valley College",
+ "questions": {
+  "own_page": "Whether the catalog prints the program's own section (its heading, its award, its course list and its total), where, and which course codes it prints."
+ },
+ "keywords": [
+  "AJ[ \\-]?0?(?:11|14|120|139)\\b[^\\n]{0,80}",
+  "Total[^\\n]{0,40}",
+  "Required Courses?[^\\n]{0,60}"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.evc.edu/degrees-certificates/administration-justice/community-service-officer-certificate-achievement/",
+   "capture_view": true,
+   "why": "40353"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.evc.edu/degrees-certificates/administration-justice/community-service-officer-certificate-achievement/#requirementstext",
+   "expand": true,
+   "why": "40353, the tab opened"
+  }
+ ]
+}
