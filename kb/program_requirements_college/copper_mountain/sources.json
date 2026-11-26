@@ -1116,20 +1116,21 @@
    "HOSP2"
   ],
   "source": {
-   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=77",
-   "title": "2026-2027 Catalog",
-   "h1": "2026-2027 Catalog",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=106",
+   "title": "HOSPITALITYHOSPITALITY",
+   "h1": "HOSPITALITYHOSPITALITY",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    77,
-    78
+    106
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "pinned": true,
+   "text_sha": "4c66b23fc32f9ad9"
   },
   "listed": 5,
-  "text_chars": 9508
+  "text_chars": 2608
  },
  {
   "control_number": "41580",

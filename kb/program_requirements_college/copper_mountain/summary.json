@@ -2,19 +2,34 @@
  "college": "Copper Mountain College",
  "programs": 59,
  "with_closed_list": 48,
- "found": 48,
+ "found": 47,
  "extracted": 48,
  "errors": 0,
- "passed_machine_checks": 32,
+ "passed_machine_checks": 38,
  "failed": {
-  "coverage": 6,
+  "coverage": 5,
   "invented": 4,
-  "arithmetic": 15,
+  "arithmetic": 9,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 3.84,
- "cost_per_program": 0.0801,
- "not_found": [],
- "run": "39035222722"
+ "cost_usd_run": 0.06,
+ "cost_usd_filed": 3.85,
+ "cost_per_program": 0.0803,
+ "extract_calls": 1,
+ "extract_failed": [],
+ "not_found": [
+  {
+   "control_number": "43132",
+   "title": "Kinesiology",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=107",
+    "coverage": 0.364,
+    "page_checks": true
+   },
+   "status": "Active"
+  }
+ ],
+ "run": "45836803063"
 }
