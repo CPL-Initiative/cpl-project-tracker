@@ -98,7 +98,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "option_lists_read_apart",
+    "label": "An option the catalog prints takes more than one list under the option's own printed figure, and the record's one option group holds each list as an alternative of its own, so the program's units cannot be checked against the printed figures.",
+    "words": "The degree requires the core (14-15 units) plus one of three concentrations (CISCO, Linux, Windows). All blocks tagged option_group 'Concentration' belong to one of the three concentrations; the student completes every block of a single concentration (the CISCO option is the two CISCO blocks, Linux the two Linux blocks, Windows the two Windows blocks). Reviewer should check this grouping. | The catalog prints a separate Total Units for each concentration (CISCO 31.5-33.5, Linux 31-32, Windows 33-34) and no single total for the award, so total_units is left null."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

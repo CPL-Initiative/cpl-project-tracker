@@ -953,6 +953,12 @@ jobs:
       - name: Cheap piles S731 at Long Beach City (a rescore, named gaps, the plan)
         if: matrix.shard == 3 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/program_piles_s731_lbcc_test.py
+      # S739 at American River: the seven records s727b held, read again by key under Sam's ruling of 2026-11-25
+      # (a record held for a gap is collected with its gap named, unless it is not the program's own): 5 collected
+      # with named gaps, 2 held as another award's section; the plan (kb/_program_piles_s739.py's shared code).
+      - name: Cheap piles S739 at American River (the earlier holds, named gaps, the plan)
+        if: matrix.shard == 4 && (needs.gate.outputs.decision == 'run')
+        run: python3 tests/program_piles_s739_arc_test.py
       # Discontinued programs (S680; Sam, 2026-11-17 on #3480): a program's own catalog section marks it,
       # or a prior year prints it and this year does not; flagged out of the gap, never deleted. Pure stdlib.
       - name: Discontinued programs (own-section mark, out of the gap, the file is current)

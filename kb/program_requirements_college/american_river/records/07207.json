@@ -104,7 +104,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "option_lists_read_apart",
+    "label": "An option the catalog prints takes more than one list under the option's own printed figure, and the record's one option group holds each list as an alternative of its own, so the program's units cannot be checked against the printed figures.",
+    "words": "The Java concentration is recorded as two blocks (required courses plus the 'minimum of 3 units' choice), both in option_group 'Concentration'; the printed Java concentration total 12-14 covers both blocks. | The catalog prints two concentrations (C++ and Java) with separate totals: C++ concentration 13-15 units, Total Units 19-21; Java concentration 12-14 units, Total Units 18-20. Read as the student completing one concentration (option_group 'Concentration'), though the text does not explicitly say 'select one'. No single award total is printed, so total_units is null."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {
