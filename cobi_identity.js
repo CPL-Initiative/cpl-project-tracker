@@ -245,7 +245,12 @@
       ".cobi-ident-note{font-size:.72rem;color:var(--text-muted,#5C5C55);margin:.45rem 0 0;line-height:1.4;",
       "border-top:1px solid var(--border,rgba(28,28,26,.14));padding-top:.4rem;}",
       ".cobi-ident-host{margin:.35rem 0 0;}",
-      "@media (max-width:560px){.cobi-ident-pane{width:min(290px,86vw);}}",
+      // A phone, upright or turned (Sam, 2026-11-26: "couldn't login because the screen is outside phone screen and
+      // won't resize or change orientation when turned"): the pane hung from the right edge of a Sign in word that sits
+      // at the left on a phone, so it opened off the left of the screen. On a narrow or short screen it sits inside
+      // the screen below the menu button, with a gutter on each side, and scrolls inside itself.
+      "@media (max-width:900px),(max-height:520px){.cobi-ident-pane{position:fixed;top:76px;left:max(12px,env(safe-area-inset-left));",
+      "right:max(12px,env(safe-area-inset-right));width:auto;max-height:calc(100dvh - 88px);overflow-y:auto;overscroll-behavior:contain;}}",
     ].join("");
     document.head.appendChild(s);
   }
