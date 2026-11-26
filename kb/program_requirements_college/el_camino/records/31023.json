@@ -87,7 +87,29 @@
     19.0
    ],
    "against": "program",
-   "why": []
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     53.0,
+     53.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "fill": [
+     7.0,
+     7.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -107,6 +129,9 @@
    "count": 6,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "read"
   },
   "pass": true
  },
@@ -327,5 +352,6 @@
    "SOCI 107 is titled 'Issues of Race and Ethnicity in the United States' in the catalog vs. 'Race/Ethnicity in U.S. Society' in the state file; WSTU 1 title also differs slightly ('Introduction of Women's Studies')."
   ]
  },
- "extracted_run": "38631686677"
+ "extracted_run": 45768189197,
+ "read_run": "38631686677"
 }
