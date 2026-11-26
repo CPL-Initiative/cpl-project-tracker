@@ -84,3 +84,12 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 - 06:50Z: #3880 merged (`075d1ee8`, confirmed on `origin/main`) without a final update from `main`, which had moved
   only by the day's dashboard commit `15088513`, touching none of its files (as `d-display-merged-without-main-update-s731`).
   The census dispatched on `main` at 06:50Z.
+- 06:55Z: the census after the display build, 45771011713 on `main` (`00e3011b`): 15,578 of 20,282 pass, 4,175 have
+  no passing record.
+- 07:50Z: `pooled` reported (head `a7c8bedc`): 5 live and passing (El Camino 02513, 02515, 02517 by reconcile
+  45768189197 and reread 45774563911; Modesto 06683 and 42664 by a Modesto reconcile entry, reconcile 45772245635 and
+  reread 45774398044), 9 held (El Camino 19861, 19866, 38948, 43993: the Acalog road never reads `site_pages`; Modesto
+  35127: no gap kind fits two learner paths; Cuyamaca 18634 to 18636: a scorer change; 18637: `page_is_own` compares
+  "Science" with "Sciences"), $0 paid. It ran free page reads through `college-page-read.yml`, which the lift did not
+  name (**DECIDED** `d-free-page-read-workflow-in-lift-s739`: a free, branch-only page read is inside the lift's words).
+  To a Sonnet second reader before its land.
