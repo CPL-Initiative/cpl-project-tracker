@@ -45,7 +45,7 @@ a:focus-visible,button:focus-visible,select:focus-visible,[tabindex]:focus-visib
 /* hero */
 .hero{border-bottom:1px solid var(--line);background:radial-gradient(circle at 80% 40%,var(--glow),var(--glow-0) 32%),linear-gradient(90deg,var(--surface) 0%,var(--surface) 55%,var(--page) 76%,var(--hero-end) 100%)}
 .hero-in{padding-block:22px 18px;padding-left:var(--gutter-l);padding-right:var(--gutter-r);display:grid;gap:12px;min-width:0}
-.eyebrow{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.eyebrow{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--heading);font-weight:700}
 .hero h1{color:var(--title);font-size:clamp(1.9rem,1.3rem + 1.6vw,2.6rem);line-height:1.05;letter-spacing:-.02em}
 .title-accent{width:66px;height:4px;background:var(--gold)}
 .lede{max-width:90ch;font-size:1.02rem}
@@ -55,12 +55,14 @@ a.fact:hover{border-color:var(--line-strong);border-left-color:var(--gold)}
 .fact b{font-family:var(--serif);font-size:1.4rem;line-height:1.1;color:var(--heading);font-variant-numeric:tabular-nums}
 a.fact b{color:var(--link);text-decoration:underline;text-underline-offset:3px}
 .fact span{font-size:.8rem;color:var(--muted);line-height:1.3}
-.picker{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 14px;align-items:end}
+.picker{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px 14px;align-items:end}
 .pk{display:grid;gap:5px;min-width:0}
 .pk label{color:var(--heading);font-size:.82rem;font-weight:700}
+.pk-q{grid-column:1/-1}.pk input{width:100%;min-height:42px;padding:8px 12px;border:1px solid var(--field);border-radius:9px;background:var(--surface);color:var(--ink);font:inherit;font-size:.95rem}
+.badges{display:flex;flex-wrap:wrap;gap:6px}.badge{display:inline-flex;align-items:center;min-height:25px;padding:1px 9px;border-radius:999px;font:inherit;font-size:.76rem;font-weight:700;white-space:nowrap;border:1px solid transparent;cursor:pointer}.badge.sw{background:var(--sel);color:var(--heading);border-color:var(--line-strong)}.badge.ai{background:var(--surface);color:var(--pill-fg);border:1px dashed var(--line-strong)}.badge:hover{text-decoration:underline;text-underline-offset:2px}
 .pk select{width:100%;min-height:42px;padding:8px 12px;border:1px solid var(--field);border-radius:9px;background:var(--surface);color:var(--ink);font:inherit;font-size:.95rem}
 #rnote{grid-column:1/-1}
-@media (max-width:700px){.picker{grid-template-columns:1fr}}
+@media (max-width:1000px){.picker{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (max-width:560px){.picker{grid-template-columns:1fr}}
 .note{font-size:.9rem;color:var(--muted)}
 /* body */
 main{padding-block:16px 28px;padding-left:var(--gutter-l);padding-right:var(--gutter-r);display:grid;gap:14px;min-width:0}
@@ -102,14 +104,13 @@ th{position:sticky;top:0}th{padding-right:1rem!important}
 .sortbtn{font:inherit;font-weight:600;color:var(--heading);background:none;border:0;padding:0;cursor:pointer;text-align:left;min-height:24px;text-decoration:underline;text-decoration-color:var(--line-strong);text-underline-offset:3px}
 .sdir{color:var(--muted);font-size:.75em}
 .colgrip{position:absolute;top:0;right:0;width:8px;height:100%;cursor:col-resize;border-right:2px solid var(--line)}
-.colgrip:hover,.colgrip:focus-visible{border-right-color:var(--link);outline:none}
+.colgrip:hover{border-right-color:var(--link)}.colgrip:focus-visible{border-right-color:var(--link);outline:2px solid var(--accent);outline-offset:-2px}
 .bbar table,.qt{min-width:100%}
 #side[hidden],#bars[hidden]{display:none!important}
-.picker{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:.4rem 1rem;align-items:end}.pk{display:grid;gap:.15rem;min-width:0}.pk select{width:100%}#rnote{grid-column:1/-1}@media (max-width:700px){.picker{grid-template-columns:1fr!important}}
 .qwrap{overflow-x:auto;border:1px solid var(--line);border-radius:11px;background:var(--surface)}.qt td,.qt th{padding:8px 10px}
 ol.nlist{list-style:decimal;padding-left:1.6rem}ol.nlist li{display:list-item}ol.nlist .rowbtn{vertical-align:top}.bbar .head > .close{margin-left:auto}ol.nlist li::marker{color:var(--muted);font-variant-numeric:tabular-nums}
-.fig{font:inherit;background:none;border:0;padding:0;color:var(--link);cursor:pointer;text-decoration:underline;text-underline-offset:2px;min-height:24px}.fig b{color:inherit}
-.rowbtn{font:inherit;background:none;border:0;padding:0;color:var(--link);cursor:pointer;text-align:left;text-decoration:underline;text-underline-offset:2px}
+.fig{font:inherit;background:none;border:0;padding:0;color:var(--link);cursor:pointer;text-decoration:underline;text-underline-offset:2px;min-height:24px;min-width:24px;text-align:center}.fig b{color:inherit}
+.rowbtn{font:inherit;background:none;border:0;padding:0;color:var(--link);cursor:pointer;text-align:left;text-decoration:underline;text-underline-offset:2px;min-height:24px;min-width:24px}
 .sash{border:1.5px dashed var(--line-strong);border-radius:10px;padding:.9rem;display:grid;gap:.6rem;background:var(--page)}
 .sash-eye{font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
 .sash-t{font-weight:700;color:var(--heading);font-size:1.02rem}.sash-id{font-size:.82rem;color:var(--muted);overflow-wrap:anywhere}
@@ -147,11 +148,12 @@ th{font-weight:700;font-size:.82rem;color:var(--heading);background:var(--surfac
 <div class="facts">
 <div class="fact"><b>1,733</b><span>programs adult schools deliver themselves</span></div>
 <div class="fact"><b>190</b><span>schools in 72 consortia</span></div>
-<a class="fact" href="#adopt"><b>419</b><span>pairings of a credential with a college that gives credit or could adopt it</span></a><a class="fact" href="#browse"><b>18</b><span>credentials colleges already credit, taught at 146 schools</span></a>
-<a class="fact" href="#precedent"><b>6</b><span>credentials only one college gives credit for so far</span></a>
-<a class="fact" href="#build"><b>9</b><span>credentials no college gives credit for yet</span></a>
+<div class="fact"><b>667</b><span>prepare for an industry certification or license, at 140 schools</span></div>
+<a class="fact" href="#adopt"><b>441</b><span>pairings of a credential with a college that gives credit or could adopt it</span></a><a class="fact" href="#browse"><b>23</b><span>credentials colleges already credit, taught at 147 schools</span></a>
+<a class="fact" href="#precedent"><b>7</b><span>credentials only one college gives credit for so far</span></a>
+<a class="fact" href="#build"><b>28</b><span>credentials no college gives credit for yet</span></a>
 </div>
-<div class="picker"><span class="pk"><label for="region">Pick a Strong Workforce region</label><select id="region"><option value="">All of California</option></select></span><span class="pk"><label for="sector">Pick an occupation group</label><select id="sector"><option value="">All occupation groups</option></select></span><span class="pk"><label for="site">Pick a training site</label><select id="site"><option value="">All training sites</option></select></span><span class="note" id="rnote"></span></div>
+<div class="picker"><span class="pk pk-q"><label for="q">Search programs and credentials</label><input id="q" type="search" placeholder="CompTIA, phlebotomy, Part 107, a school" autocomplete="off"></span><span class="pk"><label for="region">Pick a Strong Workforce region</label><select id="region"><option value="">All of California</option></select></span><span class="pk"><label for="sector">Pick an occupation group</label><select id="sector"><option value="">All occupation groups</option></select></span><span class="pk"><label for="site">Pick a training site</label><select id="site"><option value="">All training sites</option></select></span><span class="pk"><label for="kind">Pick what the program prepares for</label><select id="kind"><option value="">Any program</option><option value="certlic">A certification or license</option></select></span><span class="note" id="rnote"></span></div>
 </div></section>
 <!-- cpl-public-header:start (CPLBrain/04-projects/cpl-initiative/public-header; apply.py writes this block, edit here and re-apply) -->
 <style>
@@ -293,7 +295,7 @@ var INTRO={
  browse:"Two or more colleges award credit for each of these in MAP. Request Quick Adopt asks a college near the school to adopt one, with no MAP sign-in. Click a name or a number to list it below, then a row for its details.",
  precedent:"Only one college gives credit for each of these so far. Another college can adopt that college’s exhibit in MAP with Request Quick Adopt.",
  build:"No college gives credit for these yet. Most are listed in the Credential Catalog, where anyone can ask for a review."};
-var state={tab:"adopt",fam:null,region:"",sector:"",site:"",list:"schools",side:null,sw:380};
+var state={tab:"adopt",fam:null,region:"",sector:"",site:"",kind:"",q:"",list:"schools",side:null,sw:380};
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
 function short(c){return c.replace(/ Community College$| College$/,"")}
 function famBy(id){for(var i=0;i<F.length;i++)if(F[i].id===id)return F[i]}
@@ -302,10 +304,11 @@ F.forEach(function(f){var m={};f.progs.forEach(function(p,i){var s=m[p[0]]||(m[p
 var SCHOOL_FAMS={};F.forEach(function(f){f.schools.forEach(function(s){(SCHOOL_FAMS[s.name]=SCHOOL_FAMS[s.name]||[]).push(f.id)})});
 function R(){return state.region}
 var SOC={"11":"Management","13":"Business and financial operations","15":"Computer and mathematical","17":"Architecture and engineering","19":"Life, physical and social science","25":"Educational instruction and library","27":"Arts, design, entertainment and media","29":"Healthcare practitioners and technical","31":"Healthcare support","33":"Protective service","35":"Food preparation and serving","37":"Building and grounds cleaning and maintenance","39":"Personal care and service","41":"Sales","43":"Office and administrative support","47":"Construction and extraction","49":"Installation, maintenance and repair","51":"Production","53":"Transportation and material moving"};
-function pOK(p,r){return (!r||p[3]===r)&&(!state.sector||(';'+p[13]+';').indexOf(';'+state.sector+';')>=0)&&(!state.site||p[0]===state.site)}
-function famOK(f){return (!state.sector&&!state.site)||f.progs.some(function(p){return pOK(p,'')})}
+function qOK(p,f){var q=state.q;if(!q)return true;q=q.toLowerCase();return (f&&f.name.toLowerCase().indexOf(q)>=0)||[p[0],p[1],p[7]].some(function(x){return String(x||'').toLowerCase().indexOf(q)>=0})}
+function pOK(p,r,f){return qOK(p,f)&&(!r||p[3]===r)&&(!state.kind||p[14]==='Certification'||p[14]==='License')&&(!state.sector||(';'+p[13]+';').indexOf(';'+state.sector+';')>=0)&&(!state.site||p[0]===state.site)}
+function famOK(f){return (!state.sector&&!state.site&&!state.kind&&!state.q)||f.progs.some(function(p){return pOK(p,'',f)})}
 function L(f,rr){var r=rr===undefined?R():rr;
- var pp=f.progs.map(function(p,i){return[p,i]}).filter(function(x){return pOK(x[0],r)}),have={};pp.forEach(function(x){have[x[0][0]]=1});
+ var pp=f.progs.map(function(p,i){return[p,i]}).filter(function(x){return pOK(x[0],r,f)}),have={};pp.forEach(function(x){have[x[0][0]]=1});
  return{
  schools:f.schools.filter(function(s){return have[s.name]}),
  progs:pp,
@@ -327,7 +330,7 @@ function cards(k){
  var here=R()?' here':'';
  return '<div class="cards">'+fs.map(function(x){var f=x[0],l=x[1];
   var c=f.builders.length?fig(f,'colleges',l.colleges.length,plural(l.colleges.length,'college')+' to ask'+here):(f.catalog.length?fig(f,'catalog',f.catalog.length,plural(f.catalog.length,'Credential Catalog record')):'<span class="note">Add to the Credential Catalog</span>');
-  return '<article class="card'+(state.fam===f.id?' on':'')+(R()&&!l.schools.length?' dim':'')+'"><div class="row"><button class="open" data-fam="'+f.id+'">'+esc(f.name)+'</button><span class="tag">'+esc(f.cluster)+'</span></div>'+
+  return '<article class="card'+(state.fam===f.id?' on':'')+(R()&&!l.schools.length?' dim':'')+'"><div class="row"><button class="open" data-fam="'+f.id+'">'+esc(f.name)+'</button><span class="tag">'+esc(f.cluster)+'</span></div>'+recBadges(f)+
   '<p class="nums">'+fig(f,'schools',l.schools.length,plural(l.schools.length,'adult school')+here)+' · '+fig(f,'progs',l.progs.length,plural(l.progs.length,'program'))+'</p>'+
   '<p class="nums">'+c+(f.cc.length?' · '+fig(f,'cc',l.cc.length,'college noncredit'):'')+'</p></article>'}).join('')+'</div>';
 }
@@ -340,7 +343,7 @@ function queueRows(){
   (f.credit||[]).map(function(c){return [c[0],c[1],null,c[2]]}).concat(f.potential||[]).forEach(function(p){
    var reg=p[1];if(!reg||(R()&&reg!==R())||(siteReg&&reg!==siteReg))return;
    var key=f.id+'|'+reg,row=g[key];
-   if(!row){var near=L(f,reg).schools.length;if((state.sector||state.site)&&!near)return;
+   if(!row){var near=L(f,reg).schools.length;if((state.sector||state.site||state.kind||state.q)&&!near)return;
     var bi=-1;f.builders.forEach(function(b,i){if(bi<0&&b[1]===reg)bi=i});if(bi<0&&p[2]){var t=p[2][0];f.builders.forEach(function(b,i){if(bi<0&&b[3]===t)bi=i})}if(bi<0)bi=0;
     row=g[key]={f:f,region:reg,near:near,nc:L(f,reg).cc.length,gives:[],could:[],bi:bi,same:f.builders[bi]&&f.builders[bi][1]===reg}}
    if(p[2]===null){if(!row.gives.some(function(x){return x[0]===p[0]}))row.gives.push([p[0],p[3]])}
@@ -351,12 +354,12 @@ function queueRows(){
  rows.sort(function(a,b){return b.near-a.near||a.f.name.localeCompare(b.f.name)||a.region.localeCompare(b.region)});
  return rows;
 }
-function filt(){var t=[];if(R())t.push(esc(R()));if(state.sector)t.push(esc(SOC[state.sector]||state.sector)+' occupations');if(state.site)t.push('near '+esc(state.site));return t.length?' for '+t.join(', '):''}
+function filt(){var t=[];if(R())t.push(esc(R()));if(state.sector)t.push(esc(SOC[state.sector]||state.sector)+' occupations');if(state.site)t.push('near '+esc(state.site));if(state.kind)t.push('programs that prepare for a certification or license');if(state.q)t.push('matching “'+esc(state.q)+'”');return t.length?' for '+t.join(', '):''}
 function queue(){
  var rows=queueRows(),n=rows.length,shown=rows.slice(0,QSHOW);
  var fams={},ng=0,nc=0;rows.forEach(function(r){fams[r.f.id]=1;ng+=r.gives.length;nc+=r.could.length});
  var h='<p>One row per credential and region. Get credit at names the colleges there where a completer can bring the credential for credit now; click one to see its exhibit. Could adopt names the colleges that teach a course under the same common course identity (M-ID) as a course the exhibit is articulated to; the exhibit to adopt opens the card to request with Quick Adopt. Schools nearby are adult schools, ROPs and county offices in the region; noncredit nearby counts college noncredit programs there.</p>';
- var nf=Object.keys(fams).length;h+='<p class="nums"><b>'+n+'</b> '+plural(n,'row')+' across <b>'+nf+'</b> '+plural(nf,'credential')+filt()+': '+ng+' '+plural(ng,'college')+' give credit, '+nc+' could adopt. Most schools nearby first.</p>';
+ var nf=Object.keys(fams).length;h+='<p class="nums"><b>'+n+'</b> '+plural(n,'row')+' across <b>'+nf+'</b> '+plural(nf,'credential')+filt()+': '+ng+' '+plural(ng,'college')+(ng===1?' gives':' give')+' credit, '+nc+' could adopt. Most schools nearby first.</p>';
  if(!n)return h+'<p class="note">No pairings match the filters.</p>';
  h+='<div class="qwrap" role="region" aria-label="Quick Adopt queue" tabindex="0"><table class="qt"><colgroup><col style="width:16%"><col style="width:10%"><col style="width:10%"><col style="width:11%"><col style="width:16%"><col style="width:17%"><col></colgroup><thead><tr><th scope="col">Credential</th><th scope="col">Region</th><th scope="col">Schools nearby</th><th scope="col">Noncredit nearby</th><th scope="col">Get credit at</th><th scope="col">Could adopt</th><th scope="col">Exhibit to adopt</th></tr></thead><tbody>'+
  shown.map(function(r){var b=r.f.builders[r.bi];
@@ -384,9 +387,9 @@ function enhance(table,key){
   b.setAttribute('aria-label','Sort by '+label);
   b.onclick=function(){var s=SORT[key];var dir=(s&&s.i===i)?-s.dir:1;SORT[key]={i:i,dir:dir};sortBy(table,key,i,dir)};
   th.appendChild(b);th.setAttribute('aria-sort','none');
-  if(i<ths.length-1){var g=document.createElement('span');g.className='colgrip';g.setAttribute('role','separator');g.setAttribute('aria-orientation','vertical');g.setAttribute('aria-label','Resize '+label+'; use the arrow keys');g.tabIndex=0;th.appendChild(g);
+  if(i<ths.length-1){var g=document.createElement('span');g.className='colgrip';g.setAttribute('role','separator');g.setAttribute('aria-orientation','vertical');g.setAttribute('aria-label','Resize '+label+'; use the arrow keys');g.setAttribute('aria-valuemin','60');g.setAttribute('aria-valuemax','2000');g.setAttribute('aria-valuenow',String(Math.round(th.getBoundingClientRect().width)||60));g.tabIndex=0;th.appendChild(g);
    function px(){var w=[].map.call(ths,function(h){return h.getBoundingClientRect().width});table.style.width=w.reduce(function(a,b){return a+b},0)+'px';[].forEach.call(cols,function(c,j){c.style.width=w[j]+'px'});return w}
-   function set(w){w[i]=Math.max(60,w[i]);cols[i].style.width=w[i]+'px';table.style.width=w.reduce(function(a,b){return a+b},0)+'px';WID[key]=w}
+   function set(w){w[i]=Math.max(60,w[i]);g.setAttribute('aria-valuenow',String(Math.round(w[i])));cols[i].style.width=w[i]+'px';table.style.width=w.reduce(function(a,b){return a+b},0)+'px';WID[key]=w}
    g.addEventListener('pointerdown',function(e){e.preventDefault();var w=px(),x0=e.clientX,w0=w[i];g.setPointerCapture(e.pointerId);
     function mv(ev){w[i]=w0+ev.clientX-x0;set(w)}function up(){g.removeEventListener('pointermove',mv);g.removeEventListener('pointerup',up)}
     g.addEventListener('pointermove',mv);g.addEventListener('pointerup',up)});
@@ -411,7 +414,7 @@ function render(){
  document.getElementById('panels').innerHTML=h+'</div>';
  enhance(document.querySelector('#panels .qt'),'queue');
  var tot=F.filter(function(f){return famOK(f)&&L(f).schools.length}).length;
- document.getElementById('rnote').textContent=(R()||state.sector||state.site)?tot+' of '+F.length+' credentials match.'+(R()?' Bold colleges sit in this region.':''):'';
+ document.getElementById('rnote').textContent=(R()||state.sector||state.site||state.kind||state.q)?tot+' of '+F.length+' credentials match.'+(R()?' Bold colleges sit in this region.':''):'';
  renderBars();if(state.fam&&state.side)showSide()
 }
 document.getElementById('panels').addEventListener('click',function(e){
@@ -421,6 +424,7 @@ document.getElementById('panels').addEventListener('click',function(e){
   if(q.dataset.qb!==undefined){anchor(q);state.side={k:'college',key:q.dataset.qb};addBar(state.fam,'colleges','');showSide();document.getElementById('side-close').focus()}
   else{addBar(state.fam,q.dataset.qlist||'schools',q.dataset.qreg||'')}
   return}
+ var rb=e.target.closest('[data-rec]');if(rb){state.fam=rb.dataset.rec;state.hist=[];state.side={k:'rec'};showSide();return}
  var b=e.target.closest('[data-fam]');if(!b)return;state.barRegion=undefined;
  state.fam=b.dataset.fam;
  addBar(state.fam,b.dataset.list||'schools','');
@@ -480,13 +484,26 @@ function adoptBlock(f,reg){
   h+=sec((could.length?'Other colleges in ':'Colleges in ')+esc(reg),'<p class="note">'+(could.length?'':'MAP lists no college here as able to adopt it yet. ')+'A request asks the college to review '+esc(bo[0])+'’s exhibit, '+esc(bo[3])+', against its own courses.</p><ul class="list">'+
    others.map(function(c){return '<li><span>'+esc(c)+'</span><a class="qa-link" href="'+esc(bo[2])+'" target="_blank" rel="noopener">Request Quick Adopt<span class="sr"> for '+esc(c)+', from '+esc(bo[0])+'’s exhibit</span></a></li>'}).join('')+'</ul>');
  }
+ h+=recBlock(f);
+ return h;
+}
+
+// the Credential Catalog's two badges (library/adopt): a statewide recommendation recorded in MAP, and CPL-AI's
+// course match, evidence for faculty review. Each opens its details in the sidebar.
+function recBadges(f){var o='';if(f.sw&&f.sw.length)o+='<button type="button" class="badge sw" data-rec="'+f.id+'">Statewide recommendation</button>';if(f.ai&&f.ai.length)o+='<button type="button" class="badge ai" data-rec="'+f.id+'">CPL-AI course match</button>';return o?'<div class="badges">'+o+'</div>':''}
+function recBlock(f){
+ var h='';
+ if(f.sw&&f.sw.length) h+=sec('Statewide recommendation','<p class="note">A credit recommendation recorded in MAP for every college to adopt.</p><ul class="list">'+f.sw.map(function(x){return '<li>'+esc(x[0])+'<span class="sub">'+esc(x[2])+' units in '+esc(x[3]?x[3]+' ':'')+esc(x[1])+'</span></li>'}).join('')+'</ul>');
+ if(f.ai&&f.ai.length) h+=sec('CPL-AI course match','<p class="note">Courses CPL-AI rated against the certification, as evidence for faculty review.</p><ul class="list">'+f.ai.map(function(x){var t=x[3]||{};return '<li>'+esc(x[1])+'<span class="sub">'+(x[4]||0)+' colleges; '+(t['1']||0)+' strong evidence, '+(t['2']||0)+' faculty interpretation, '+(t['3']||0)+' limited evidence</span></li>'}).join('')+'</ul>');
+ if(h) h+='<p><a href="'+CAT+'" target="_blank" rel="noopener">See it in the Credential Catalog</a></p>';
  return h;
 }
 function showSide(){
  if(state.side&&(state.side.k==='prog'||state.side.k==='college')&&!DET){needDet(showSide);return}
  var f=famBy(state.fam),s=state.side||{k:'fam'},h='',title=f.name;
  var back=(state.hist&&state.hist.length)?'<button class="close back" data-back="1">Back</button>':'';
- if(s.k==='catalog'){var c=f.catalog[s.key];title=c[0];h+=back+kv([['Issuer',esc(c[1])],['Kind',esc(c[2])],['Status','Not yet evaluated'],['CTDL',c[3]?'Has a CTDL record':'']])+'<p class="note">No college awards credit for it yet. '+esc(f.programs)+' adult school programs teach toward '+esc(f.name)+'.</p><p><a href="'+CAT+'" target="_blank" rel="noopener">Open the Credential Catalog</a>, find the credential, and ask for review.</p>';
+ if(s.k==='rec'){title=f.name+': recommendations';h+=recBlock(f);
+ } else if(s.k==='catalog'){var c=f.catalog[s.key];title=c[0];h+=back+kv([['Issuer',esc(c[1])],['Kind',esc(c[2])],['Status','Not yet evaluated'],['CTDL',c[3]?'Has a CTDL record':'']])+'<p class="note">No college awards credit for it yet. '+esc(f.programs)+' adult school programs teach toward '+esc(f.name)+'.</p><p><a href="'+CAT+'" target="_blank" rel="noopener">Open the Credential Catalog</a>, find the credential, and ask for review.</p>';
  } else if(s.k==='school'){var sc=f.schools.filter(function(x){return x.name===s.key})[0];title=sc.name;
   h+=back+kv([['County',esc(sc.county)],['Region',esc(sc.region)],['Consortium',esc(sc.cons)]]);
   h+=sec(esc(f.name)+' programs ('+sc.idx.length+')','<ol class="list nlist">'+sc.idx.map(function(i){return '<li><button class="rowbtn" data-side="prog" data-key="'+i+'">'+esc(f.progs[i][1])+'</button></li>'}).join('')+'</ol>');
@@ -494,7 +511,7 @@ function showSide(){
   var other=(SCHOOL_FAMS[sc.name]||[]).filter(function(id){return id!==f.id});
   if(other.length) h+=sec('Also teaches toward','<ul class="list">'+other.map(function(id){var g=famBy(id);return '<li><button class="rowbtn" data-gofam="'+id+'">'+esc(g.name)+'</button><span class="sub">'+(g.status==='adopt'?'Adopt now':g.status==='thin'?'Adopt from one college':'Build first')+'</span></li>'}).join('')+'</ul>');
  } else if(s.k==='prog'){var p=f.progs[s.key];title=p[1];
-  h+=back+kv([['School','<button class="rowbtn" data-side="school" data-key="'+esc(p[0])+'">'+esc(p[0])+'</button>'],['County',esc(p[2])],['Hours',esc(p[5])],['Weeks',esc(p[6])],['Credential',esc(p[7])],['Tier',esc(TIER[p[8]]||p[8])],['CIP',esc(p[9]+' '+p[10])],['Delivery',esc(p[12])]]);
+  h+=back+kv([['School','<button class="rowbtn" data-side="school" data-key="'+esc(p[0])+'">'+esc(p[0])+'</button>'],['County',esc(p[2])],['Hours',esc(p[5])],['Weeks',esc(p[6])],['Credential',esc(p[7])],['Credential kind',esc(({Certification:'Industry certification',License:'License',CertificateOfCompletion:'Certificate of completion',ProfessionalCertificate:'Professional certificate',Certificate:'Certificate'})[p[14]]||p[14]||'')],['Tier',esc(TIER[p[8]]||p[8])],['CIP',esc(p[9]+' '+p[10])],['Delivery',esc(p[12])]]);
   var ds=(DET.desc[f.id]||[])[s.key];h+=adoptBlock(f,p[3]);if(ds) h+=sec('Description','<p>'+esc(ds)+(ds.length>=320?'…':'')+'</p>');
  } else if(s.k==='college'){var b=f.builders[s.key];title=b[0];
   h+=back+sash(b);
@@ -578,6 +595,8 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&state.fam)c
 sel.onchange=function(){state.region=sel.value;state.barRegion=undefined;QSHOW=100;fillSites();render()};
 ssel.onchange=function(){state.sector=ssel.value;QSHOW=100;render()};
 tsel.onchange=function(){state.site=tsel.value;QSHOW=100;render()};
+var qin=document.getElementById('q'),qt=null;qin.addEventListener('input',function(){clearTimeout(qt);qt=setTimeout(function(){state.q=qin.value.trim();QSHOW=100;render()},200)});
+var ksel=document.getElementById('kind');ksel.onchange=function(){state.kind=ksel.value;QSHOW=100;render()};
 fillSites();
 function go(k){state.tab=k;try{history.replaceState(null,'','#'+k)}catch(e){};render()}
 function fromHash(){var h=(location.hash||'').slice(1);state.tab=TABS.some(function(t){return t[0]===h})?h:'adopt';render()}

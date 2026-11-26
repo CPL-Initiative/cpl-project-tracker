@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-25_adult_ed_cpl_starting_points_public_summary.sql",
+ "name": "adult_ed_cpl_starting_points_public_summary",
+ "version": "20261125231700",
+ "sha256": "51ca522e5de5a8cf07abd6ff630cdaee3ba275eb42c7893ab21b31805e3425a7",
+ "run": "45719960204",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 400,
+ "response": "{\"message\":\"Failed to run sql query: ERROR:  P0001: Listing in the public library needs the team phrase or a reviewer sign-in (cpl_library_set_public)\\nCONTEXT:  PL/pgSQL function cpl_library_guard_public() line 9 at RAISE\\n\"}"
+}
