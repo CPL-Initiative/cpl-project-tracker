@@ -1003,6 +1003,11 @@ jobs:
       - name: Cheap piles S739 at Cosumnes River (the census's piles, renames, named gaps, the plan)
         if: matrix.shard == 1 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/program_piles_s739_cosumnes_test.py
+      # S739 at Orange Coast: the 17 records s721b held, read again by key: 4 collected with named gaps (no new
+      # kind), 13 held; 32737 and 36732 on their live run through a reread's kept keys; the plan.
+      - name: Cheap piles S739 at Orange Coast (the earlier holds, named gaps, the plan)
+        if: matrix.shard == 2 && (needs.gate.outputs.decision == 'run')
+        run: python3 tests/program_piles_s739_orangecoast_test.py
       # S739, the lever: Cosumnes River 33542 (Option II's two lists read as alternatives) and East Los Angeles
       # 33013 (the printed total counts the optional lab), each collected with its named gap; the plan.
       - name: The lever S739 at Cosumnes River and East Los Angeles (two named gaps, the plan)

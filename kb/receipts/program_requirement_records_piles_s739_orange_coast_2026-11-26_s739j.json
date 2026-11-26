@@ -1,0 +1,1573 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30); Sam's routine prompt of 2026-11-25, as the S739 conductor's brief carries it: a record held for a gap is collected with its gap named and a lower score on the 0-100 bar, never held, unless the record is not the program's own; S739: Orange Coast's records kb/receipts/program_requirement_records_piles_s721_orangecoast_2026-11-24_s721b.json held, read again by key: passed by a rescore where today's scorer's one reading moves them, else collected with their gaps named where the record is the program's own (no reread, no reconcile)",
+ "at": "2026-11-26T09:29:51Z",
+ "college": "Orange Coast College",
+ "keys": {
+  "from": "kb/receipts/program_requirement_records_piles_s721_orangecoast_2026-11-24_s721b.json",
+  "members": [
+   "03954",
+   "03993",
+   "08628",
+   "08663",
+   "08664",
+   "08670",
+   "19473",
+   "19474",
+   "31217",
+   "32737",
+   "32790",
+   "36032",
+   "36732",
+   "41373",
+   "42331",
+   "43100",
+   "43362"
+  ]
+ },
+ "gaps": {
+  "lists_not_closed": "A choice list prints no unit figure of its own, one that depends on another choice, or also takes courses from another list, so the lists alone cannot add the program's units.",
+  "noted_figures_differ": "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires."
+ },
+ "moved": 4,
+ "by": {
+  "lists_not_closed": 2,
+  "noted_figures_differ": 2
+ },
+ "precision": {
+  "read": 17,
+  "right": 17,
+  "wrong": [],
+  "no_record_file": 0,
+  "not_hand_held": 0,
+  "by_answer": {
+   "none": 13,
+   "lists_not_closed": 2,
+   "noted_figures_differ": 2
+  }
+ },
+ "claim_checks": {
+  "counts": {
+   "stands": 4
+  },
+  "not_standing": []
+ },
+ "boundaries": {
+  "counts": {
+   "the note's words gone right": 4,
+   "the stated total one unit off right": 4,
+   "coverage failing right": 4,
+   "the reading against a total one unit off right": 1,
+   "the open shape broken right": 2,
+   "the note_quotes shape broken right": 2,
+   "its own section not shown right": 2
+  },
+  "wrong": []
+ },
+ "held": [
+  {
+   "control_number": "03954",
+   "why": "held: the Requirements tab is not in the text the reader saw (an incomplete read, never a gap): a reread",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "03993",
+   "why": "held: its notes support no kind (18-21 against the printed 20; the core's 'or' alternatives carry no units): a reread",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "08628",
+   "why": "held: not collectable (collected_with_gaps, kb/_harvest_gap_census.py): coverage and invented fail (CNST A196 and A197 unplaced; 11 catalog codes off the state's list), and its heading names Building Construction, not Residential Construction Development",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "08663",
+   "why": "held: not the program's own: its page is the Food and Beverage Management, Advanced certificate's (43362's, whose heading its record carries); 08663 is the Food and Beverage Management certificate: a page-finding step",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "08664",
+   "why": "held: the Requirements tab is not in the text the reader saw (an incomplete read, never a gap): a reread",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "08670",
+   "why": "held: its 62.5-63.5 sits inside the printed 60-63.5, whose low end the page prints as 'Minimum 60 units required for the degree'; no kind's sentence is true of a sum the printed range holds: a scorer reading (S721's degree_total_minimum rule), not a reread",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "19473",
+   "why": "held: not collectable (collected_with_gaps, kb/_harvest_gap_census.py): coverage and invented fail (CNST A196 and A197 unplaced)",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "19474",
+   "why": "held: not collectable (collected_with_gaps, kb/_harvest_gap_census.py): coverage and invented fail (CNST A196 and A197 unplaced)",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "31217",
+   "why": "held: the Requirements tab is not in the text the reader saw (an incomplete read, never a gap): a reread",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "32790",
+   "why": "held: its text is cut off mid-Area 5A and it reads no total, and no committed receipt posts its committed run (44747523200) to its live row: load 44749916015 inserted it over five runs, and no reread has kept it since. A file-history proof of its run, then noted_section_cut_off",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "36032",
+   "why": "held: its major passes and the degree reads 55-64 around the printed 60, with electives the page prints as 'Varies' and says fill the rest, so degree_electives_not_printed's sentence is not true of it: a scorer reading, not a reread",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "42331",
+   "why": "held: its 11.5-16 sits inside the printed 9.5-16 (CNST A190 or A189 at one printed range, and a requirement a CPR certification meets from zero); no kind's sentence is true of a sum the printed range holds: a scorer reading, not a reread",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "43100",
+   "why": "held: not collectable (collected_with_gaps, kb/_harvest_gap_census.py): coverage fails (PSYC A160 on the state's list, not placed)",
+   "claim": "no entry stands"
+  }
+ ],
+ "records": [
+  {
+   "college": "Orange Coast College",
+   "control_number": "32737",
+   "award": "A.A- T Degree",
+   "extracted_run": "39726645292",
+   "moves_to": "lists_not_closed",
+   "words": "The 'Required Core (Substitution Courses) 15 Units Maximum' list is a substitution list: per footnote 2 and the description, students who place out of core Spanish courses without receiving units take units from it to reach at least 18 units in the major. It prints a 15-unit maximum and no minimum, so minimum and stated are left null; it does not add to the 23-25 major total.",
+   "confidence": {
+    "unit_arithmetic": 30,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/orange_coast/records/32737.json",
+   "lever": "a substitution-list reading on a reconcile passes it (S721's reason); a reconcile's rescore drops the gap when it does",
+   "before_image": {
+    "program_title": "Spanish",
+    "award": "A.A- T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.cccd.edu/orange-coast/pathways/language-communication/foreign-languages/spanish-associate-arts-degree-transfer-aat/",
+    "measure": "units",
+    "total_min": 23,
+    "total_max": 25,
+    "record": {
+     "program": {
+      "section_heading": "Associate Degree for Transfer Requirements",
+      "measure": "units",
+      "total_units": {
+       "min": 23,
+       "max": 25
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": 4,
+       "max": 6
+      },
+      "ge_pattern": "Cal-GETC",
+      "degree_total": {
+       "min": 60,
+       "max": 60
+      },
+      "ge_units": {
+       "min": 31,
+       "max": 31
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Recognize and produce the Spanish language in the four primary areas of communication: listening, speaking, reading and writing.",
+       "Demonstrate a better understanding and appreciation of the cultures related to the Spanish language by comparing and contrasting them with the student’s own culture(s).",
+       "Use current technologies to further develop language and cultural competencies.",
+       "Students will be eligible and prepared for admission (SB 1440 and Education Code 66746) to California State University system schools."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "SPAN A180",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "SPAN A180H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN A185",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "SPAN A185H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN A280",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "SPAN A280H",
+           "units": null,
+           "catalog_addition": false
+          },
+          {
+           "code": "SPAN A160",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN A285",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "SPAN A165",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Core (Substitution Courses) 15 Units Maximum",
+       "rule": "choose_units",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ANTH A100",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ANTH A100H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTH A102",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTH A190",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ART A114",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CMST A155",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A135",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A147",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A247",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A116",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A155",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A165",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL A152",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL A152H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ETHS A150",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST A150",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GNDR A100",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOG A100",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "GEOG A100H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOG A101",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "GEOG A185",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GLST A101",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST A140",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC A190",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "PSYC A190H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "PUBH A203",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SJS A102",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOC A100",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "SOC A100H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOC A150",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN A199",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ITAL A199",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FREN A190",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FREN A199",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List A - Select one course from the following:",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 5
+       },
+       "courses": [
+        {
+         "code": "FREN A180",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "FREN A180H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "GRMN A180",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GRMN A185",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST A161",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "HIST A161H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 48,
+     "listed": 48
+    },
+    "extracted_run": "39726645292"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 48,
+     "listed": 48,
+     "gaps": [
+      "lists_not_closed"
+     ],
+     "confidence": {
+      "unit_arithmetic": 30,
+      "course_list_match": 100,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 1
+  },
+  {
+   "college": "Orange Coast College",
+   "control_number": "36732",
+   "award": "A.S. Degree",
+   "extracted_run": "39726645292",
+   "moves_to": "lists_not_closed",
+   "words": "Related Fields courses may fulfill up to three units of the 3-7 unit restricted elective requirement; they are a sub-list of the Restricted Electives, not a separate minimum. Minimum left null because the catalog states only a cap ('up to three units'). | Overview text says 18 major units with 6 additional elective units, but the requirements table prints Restricted Electives 3.0-7.0 and Total Major Units 18.0-19.0; 12 core + 3-7 does not match 18-19. Reviewer should check.",
+   "confidence": {
+    "unit_arithmetic": 30,
+    "course_list_match": 82,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/orange_coast/records/36732.json",
+   "before_image": {
+    "program_title": "Marine Science",
+    "award": "A.S. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/marine-science/marine-science-associate-science-degree/",
+    "measure": "units",
+    "total_min": 18,
+    "total_max": 19,
+    "record": {
+     "program": {
+      "section_heading": "Marine Science, Associate in Science Degree",
+      "measure": "units",
+      "total_units": {
+       "min": 18,
+       "max": 19
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": 23,
+       "max": 24
+      },
+      "ge_pattern": "OCC AS General Education",
+      "degree_total": {
+       "min": 60,
+       "max": 60
+      },
+      "ge_units": {
+       "min": 18,
+       "max": 18
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Describe how the ocean influences and is influenced by terrestrial, atmospheric, geological and biological processes.",
+       "Describe how the physical and chemical properties of water molecules affect the way that the ocean is structured and how the large scale movement of this water in waves, currents and tides influences oceanographic processes.",
+       "Describe the diversity of life in the ocean.",
+       "Identify how humans have influenced the ocean (chemically, physically and biologically) and explain the potential challenges associated with those changes."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Core Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 12,
+        "max": 12
+       },
+       "courses": [
+        {
+         "code": "MRSC A100",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "MRSC A100H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "MRSC A100L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "MRSC A100M",
+           "units": 1,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "MRSC A180",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MRSC A180L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MRSC A185",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MRSC A185L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Restricted Electives - Marine Science",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 7
+       },
+       "courses": [
+        {
+         "code": "MRSC A119",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MRSC A120",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MRSC A121",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ESEC A121",
+           "units": null,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "MRSC A124",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ESEC A124",
+           "units": null,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "MRSC A125",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MRSC A130",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MRSC A135",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MRSC A140",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MRSC A187",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MRSC A188",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MRSC A190",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MRSC A195",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MRSC A199",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MRSC A220",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MRSC A221",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MRSC A222",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MRSC A223",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MRSC A287",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MRSC A288",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MRSC A291",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "MRSC A291H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "MRSC A292",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "MRSC A292H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Related Fields",
+       "rule": "choose_units",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ASTR A101",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL A182",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL A182L",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL A281",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESEC A100",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ESEC A100H",
+           "units": null,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": true
+        },
+        {
+         "code": "ESEC A110",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "GEOG A190",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "GEOL A105",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "GEOL A105H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOL A105L",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOL A110",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOL A131",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOL A137",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOL A160",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOL A185",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "GEOL A185H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOL A185L",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "GEOL A185M",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ITRN A100",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MARA A138",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MARA A150",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MARA A152",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MARA A156",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 32,
+     "listed": 39
+    },
+    "extracted_run": "39726645292"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 32,
+     "listed": 39,
+     "gaps": [
+      "lists_not_closed"
+     ],
+     "confidence": {
+      "unit_arithmetic": 30,
+      "course_list_match": 82,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 2
+  },
+  {
+   "college": "Orange Coast College",
+   "control_number": "41373",
+   "award": "A.S. T Degree",
+   "extracted_run": "38670927724",
+   "moves_to": "noted_figures_differ",
+   "words": "Catalog prints 'Total Major Units 28-29', but the listed required courses sum to 29 units; recorded as printed.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "own_heading",
+   "path": "kb/program_requirements_college/orange_coast/records/41373.json",
+   "before_image": {
+    "program_title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/business/business-administration-associate-science-degree-transfer/",
+    "measure": "units",
+    "total_min": 28,
+    "total_max": 29,
+    "record": {
+     "program": {
+      "section_heading": "Business Administration 2.0, Associate in Science Degree for Transfer (AS-T)",
+      "measure": "units",
+      "total_units": {
+       "min": 28,
+       "max": 29
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": 3,
+       "max": 4
+      },
+      "ge_pattern": "Cal-GETC",
+      "degree_total": {
+       "min": 60,
+       "max": 60
+      },
+      "ge_units": {
+       "min": 34,
+       "max": 34
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Function effectively in entry-level business positions or at a four-year college business program using the skills, principles, and tools they have acquired.",
+       "Demonstrate effective written and/or oral skills.",
+       "Students will be eligible and prepared for admission (SB 1440 and Education Code 66746) to California State University system schools."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ACCT A101",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ACCT A101H",
+           "units": 4,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ACCT A102",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ACCT A102H",
+           "units": 4,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECON C2001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ECON C2001H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECON C2002",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ECON C2002H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "BUS A110",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "BUS A110H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH A140",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "STAT C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "PSYC A160",
+           "units": 4,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "BUS A100",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "BUS A100H",
+           "units": 3,
+           "catalog_addition": false
+          },
+          {
+           "code": "BUS A139",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 15,
+     "listed": 15
+    },
+    "extracted_run": "38670927724"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 15,
+     "listed": 15,
+     "gaps": [
+      "noted_figures_differ"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 3
+  },
+  {
+   "college": "Orange Coast College",
+   "control_number": "43362",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "extracted_run": "39726645292",
+   "moves_to": "noted_figures_differ",
+   "words": "Program Sequence tab prints Total Units 40-41.5 (using 22 for the prerequisite courses), differing from the stated Total Certificate Units 38.5-40; total_units records the requirements-tab figure.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "own_heading",
+   "path": "kb/program_requirements_college/orange_coast/records/43362.json",
+   "before_image": {
+    "program_title": "Food and Beverage Management, Advanced",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/food-beverage-management/food-beverage-management-advanced-coa/",
+    "measure": "units",
+    "total_min": 38.5,
+    "total_max": 40,
+    "record": {
+     "program": {
+      "section_heading": "Food and Beverage Management, Advanced, Certificate of Achievement",
+      "measure": "units",
+      "total_units": {
+       "min": 38.5,
+       "max": 40
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Prepare students with the operational and managerial capabilities needed to advance within the food &amp; beverage industry while upholding industry standards.."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Prerequisites: Food and Beverage Management Certificate of Achievement (20.5 Units)",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 22,
+        "max": 22
+       },
+       "courses": [
+        {
+         "code": "FBM A100",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FBM A102",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FBM A115",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "FBM A190",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "FBM A220",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FBM A195",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "FBM A215",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FBM A270",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Recommended Preparation",
+       "rule": "recommended",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "COUN A100",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "Required Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "FN A140",
+         "units": 2,
+         "units_max": 3,
+         "alternatives": [
+          {
+           "code": "FN A170",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "FBM A221",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FBM A140",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FBM A145",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FBM A175",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FBM A222",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FBM A280",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FBM A147",
+         "units": 2.5,
+         "units_max": 3,
+         "alternatives": [
+          {
+           "code": "FBM A146",
+           "units": null,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 14,
+     "listed": 14
+    },
+    "extracted_run": "39726645292"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 14,
+     "listed": 14,
+     "gaps": [
+      "noted_figures_differ"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 4
+  }
+ ],
+ "live_run_proof": null,
+ "shared_pages": {
+  "41373": [
+   "32086"
+  ],
+  "43362": [
+   "08663"
+  ]
+ },
+ "representation": "checks.gaps and checks.confidence added as the load reads the filed score (a passing row: checks.arithmetic to equal); checks.coverage, invented and the record unchanged",
+ "claim_check_reads": "Today's capture (sources.json): every course an entry names among the codes it found, and a course an entry says the printed total leaves out on neither it nor the state's list. A note's quoted figures are the reader's words, never re-read here.",
+ "follow_verdict": "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows (confirm_matches); the apply aborts, writing nothing, unless the count is 0.",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Orange Coast College', '32737', 39726645292, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN A180H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN A180\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN A185H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN A185\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN A280H\",\"units\":null},{\"catalog_addition\":false,\"code\":\"SPAN A160\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN A280\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN A165\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN A285\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ANTH A100H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ANTH A100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH A102\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH A190\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART A114\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMST A155\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A135\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A147\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A247\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A116\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A155\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A165\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A152H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A152\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETHS A150\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST A150\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GNDR A100\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"GEOG A100H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"GEOG A100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GEOG A101\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG A185\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GLST A101\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST A140\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSYC A190H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"PSYC A190\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PUBH A203\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SJS A102\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SOC A100H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SOC A100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC A150\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN A199\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ITAL A199\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FREN A190\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FREN A199\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core (Substitution Courses) 15 Units Maximum\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"FREN A180H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"FREN A180\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GRMN A180\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GRMN A185\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST A161H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"HIST A161\",\"units\":null,\"units_max\":null}],\"minimum\":1,\"name\":\"List A - Select one course from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":5,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":6,\"min\":4},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":31,\"min\":31},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Recognize and produce the Spanish language in the four primary areas of communication: listening, speaking, reading and writing.\",\"Demonstrate a better understanding and appreciation of the cultures related to the Spanish language by comparing and contrasting them with the student’s own culture(s).\",\"Use current technologies to further develop language and cultural competencies.\",\"Students will be eligible and prepared for admission (SB 1440 and Education Code 66746) to California State University system schools.\"],\"section_heading\":\"Associate Degree for Transfer Requirements\",\"total_units\":{\"max\":25,\"min\":23}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":48,\"placed\":48}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":48,\"placed\":48}'::jsonb),\n  (2, 'Orange Coast College', '36732', 39726645292, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MRSC A100H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"MRSC A100\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MRSC A100M\",\"units\":1}],\"catalog_addition\":false,\"code\":\"MRSC A100L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MRSC A180\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MRSC A180L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MRSC A185\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MRSC A185L\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A119\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A120\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ESEC A121\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MRSC A121\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ESEC A124\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MRSC A124\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A125\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A130\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A135\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A140\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MRSC A187\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MRSC A188\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A190\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A195\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A199\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A220\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A221\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A222\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A223\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A287\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A288\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MRSC A291H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MRSC A291\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MRSC A292H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MRSC A292\",\"units\":null,\"units_max\":null}],\"minimum\":3,\"name\":\"Restricted Electives - Marine Science\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":7,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASTR A101\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL A182\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL A182L\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL A281\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ESEC A100H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"ESEC A100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ESEC A110\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GEOG A190\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"GEOL A105H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"GEOL A105\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL A105L\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL A110\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL A131\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL A137\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL A160\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"GEOL A185H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"GEOL A185\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"GEOL A185M\",\"units\":null}],\"catalog_addition\":false,\"code\":\"GEOL A185L\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ITRN A100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MARA A138\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MARA A150\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MARA A152\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MARA A156\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Related Fields\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":24,\"min\":23},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"OCC AS General Education\",\"ge_units\":{\"max\":18,\"min\":18},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Describe how the ocean influences and is influenced by terrestrial, atmospheric, geological and biological processes.\",\"Describe how the physical and chemical properties of water molecules affect the way that the ocean is structured and how the large scale movement of this water in waves, currents and tides influences oceanographic processes.\",\"Describe the diversity of life in the ocean.\",\"Identify how humans have influenced the ocean (chemically, physically and biologically) and explain the potential challenges associated with those changes.\"],\"section_heading\":\"Marine Science, Associate in Science Degree\",\"total_units\":{\"max\":19,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":39,\"placed\":32}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":82,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":39,\"placed\":32}'::jsonb),\n  (3, 'Orange Coast College', '41373', 38670927724, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ACCT A101H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ACCT A101\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ACCT A102H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ACCT A102\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ECON C2001H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ECON C2001\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ECON C2002H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ECON C2002\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"BUS A110H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"BUS A110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH A140\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSYC A160\",\"units\":4}],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"BUS A100H\",\"units\":3},{\"catalog_addition\":false,\"code\":\"BUS A139\",\"units\":3}],\"catalog_addition\":false,\"code\":\"BUS A100\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":4,\"min\":3},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Function effectively in entry-level business positions or at a four-year college business program using the skills, principles, and tools they have acquired.\",\"Demonstrate effective written and/or oral skills.\",\"Students will be eligible and prepared for admission (SB 1440 and Education Code 66746) to California State University system schools.\"],\"section_heading\":\"Business Administration 2.0, Associate in Science Degree for Transfer (AS-T)\",\"total_units\":{\"max\":29,\"min\":28}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb),\n  (4, 'Orange Coast College', '43362', 39726645292, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A102\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FBM A115\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FBM A190\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A220\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FBM A195\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A215\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A270\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Prerequisites: Food and Beverage Management Certificate of Achievement (20.5 Units)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":22,\"min\":22}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"COUN A100\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Recommended Preparation\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"FN A170\",\"units\":null}],\"catalog_addition\":false,\"code\":\"FN A140\",\"units\":2,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A221\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A140\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A145\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A175\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A222\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A280\",\"units\":2,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"FBM A146\",\"units\":null}],\"catalog_addition\":false,\"code\":\"FBM A147\",\"units\":2.5,\"units_max\":3}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Prepare students with the operational and managerial capabilities needed to advance within the food &amp; beverage industry while upholding industry standards..\"],\"section_heading\":\"Food and Beverage Management, Advanced, Certificate of Achievement\",\"total_units\":{\"max\":40,\"min\":38.5}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "pre_read_md5": "with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) as (values\n  (1, 'Orange Coast College', '32737', 39726645292, '0e2dce8feef73b001850cf2b38a712c1', 'ef4f7e314eb5593594b8d00f331d96d5', 'e61feeea8ad83d318849665dbf26c309'),\n  (2, 'Orange Coast College', '36732', 39726645292, 'b531a8c9a6472fc59c128f5923a609e4', '5702b3c852565b01d547e83b9f2f7e40', 'd98458d8cb84ef818bbf520201c1f313'),\n  (3, 'Orange Coast College', '41373', 38670927724, '7deec0fe2ae7bb500e75e4fcf8aba3df', '3c81834a38a33a73170c8fc53655fda9', '5417c33a6cd7a6ab1d5512f14ad0af80'),\n  (4, 'Orange Coast College', '43362', 39726645292, '1c55808416343f32f136b5eab239dd3a', '3e096e5d8483d0570dfc23bf65a968b0', 'd851cd658151e8c7e278d358268a67c9'))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.record::text) = v.rec_md5),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.checks::text) = v.chk_md5),\n  'already_after', count(*) filter (where md5(r.checks::text) = v.after_md5),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Orange Coast College', '32737', 39726645292, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN A180H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN A180\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN A185H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN A185\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN A280H\",\"units\":null},{\"catalog_addition\":false,\"code\":\"SPAN A160\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN A280\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN A165\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN A285\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ANTH A100H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ANTH A100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH A102\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH A190\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART A114\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMST A155\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A135\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A147\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A247\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A116\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A155\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A165\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A152H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A152\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETHS A150\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST A150\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GNDR A100\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"GEOG A100H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"GEOG A100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GEOG A101\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG A185\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GLST A101\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST A140\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSYC A190H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"PSYC A190\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PUBH A203\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SJS A102\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SOC A100H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SOC A100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC A150\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN A199\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ITAL A199\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FREN A190\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FREN A199\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core (Substitution Courses) 15 Units Maximum\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"FREN A180H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"FREN A180\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GRMN A180\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GRMN A185\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST A161H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"HIST A161\",\"units\":null,\"units_max\":null}],\"minimum\":1,\"name\":\"List A - Select one course from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":5,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":6,\"min\":4},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":31,\"min\":31},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Recognize and produce the Spanish language in the four primary areas of communication: listening, speaking, reading and writing.\",\"Demonstrate a better understanding and appreciation of the cultures related to the Spanish language by comparing and contrasting them with the student’s own culture(s).\",\"Use current technologies to further develop language and cultural competencies.\",\"Students will be eligible and prepared for admission (SB 1440 and Education Code 66746) to California State University system schools.\"],\"section_heading\":\"Associate Degree for Transfer Requirements\",\"total_units\":{\"max\":25,\"min\":23}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":48,\"placed\":48}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":48,\"placed\":48}'::jsonb),\n  (2, 'Orange Coast College', '36732', 39726645292, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MRSC A100H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"MRSC A100\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MRSC A100M\",\"units\":1}],\"catalog_addition\":false,\"code\":\"MRSC A100L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MRSC A180\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MRSC A180L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MRSC A185\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MRSC A185L\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A119\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A120\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ESEC A121\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MRSC A121\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ESEC A124\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MRSC A124\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A125\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A130\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A135\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A140\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MRSC A187\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MRSC A188\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A190\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A195\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A199\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A220\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A221\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A222\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A223\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A287\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A288\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MRSC A291H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MRSC A291\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MRSC A292H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MRSC A292\",\"units\":null,\"units_max\":null}],\"minimum\":3,\"name\":\"Restricted Electives - Marine Science\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":7,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASTR A101\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL A182\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL A182L\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL A281\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ESEC A100H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"ESEC A100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ESEC A110\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GEOG A190\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"GEOL A105H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"GEOL A105\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL A105L\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL A110\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL A131\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL A137\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL A160\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"GEOL A185H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"GEOL A185\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"GEOL A185M\",\"units\":null}],\"catalog_addition\":false,\"code\":\"GEOL A185L\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ITRN A100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MARA A138\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MARA A150\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MARA A152\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MARA A156\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Related Fields\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":24,\"min\":23},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"OCC AS General Education\",\"ge_units\":{\"max\":18,\"min\":18},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Describe how the ocean influences and is influenced by terrestrial, atmospheric, geological and biological processes.\",\"Describe how the physical and chemical properties of water molecules affect the way that the ocean is structured and how the large scale movement of this water in waves, currents and tides influences oceanographic processes.\",\"Describe the diversity of life in the ocean.\",\"Identify how humans have influenced the ocean (chemically, physically and biologically) and explain the potential challenges associated with those changes.\"],\"section_heading\":\"Marine Science, Associate in Science Degree\",\"total_units\":{\"max\":19,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":39,\"placed\":32}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":82,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":39,\"placed\":32}'::jsonb),\n  (3, 'Orange Coast College', '41373', 38670927724, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ACCT A101H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ACCT A101\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ACCT A102H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ACCT A102\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ECON C2001H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ECON C2001\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ECON C2002H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ECON C2002\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"BUS A110H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"BUS A110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH A140\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSYC A160\",\"units\":4}],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"BUS A100H\",\"units\":3},{\"catalog_addition\":false,\"code\":\"BUS A139\",\"units\":3}],\"catalog_addition\":false,\"code\":\"BUS A100\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":4,\"min\":3},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Function effectively in entry-level business positions or at a four-year college business program using the skills, principles, and tools they have acquired.\",\"Demonstrate effective written and/or oral skills.\",\"Students will be eligible and prepared for admission (SB 1440 and Education Code 66746) to California State University system schools.\"],\"section_heading\":\"Business Administration 2.0, Associate in Science Degree for Transfer (AS-T)\",\"total_units\":{\"max\":29,\"min\":28}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb),\n  (4, 'Orange Coast College', '43362', 39726645292, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A102\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FBM A115\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FBM A190\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A220\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FBM A195\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A215\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A270\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Prerequisites: Food and Beverage Management Certificate of Achievement (20.5 Units)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":22,\"min\":22}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"COUN A100\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Recommended Preparation\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"FN A170\",\"units\":null}],\"catalog_addition\":false,\"code\":\"FN A140\",\"units\":2,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A221\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A140\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A145\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A175\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A222\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A280\",\"units\":2,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"FBM A146\",\"units\":null}],\"catalog_addition\":false,\"code\":\"FBM A147\",\"units\":2.5,\"units_max\":3}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Prepare students with the operational and managerial capabilities needed to advance within the food &amp; beverage industry while upholding industry standards..\"],\"section_heading\":\"Food and Beverage Management, Advanced, Certificate of Achievement\",\"total_units\":{\"max\":40,\"min\":38.5}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\nf as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number\n        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true\n       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)),\ne(expect) as (values (4)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when f.n > 0\n            then ('s739j piles confirm guard: ' || f.n || ' rows hold a matching confirm verdict ' || f.keys::text)::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s739j piles guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, f;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Orange Coast College', '32737', 39726645292, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN A180H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN A180\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN A185H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN A185\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN A280H\",\"units\":null},{\"catalog_addition\":false,\"code\":\"SPAN A160\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN A280\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN A165\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN A285\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ANTH A100H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ANTH A100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH A102\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH A190\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART A114\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMST A155\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A135\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A147\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A247\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A116\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A155\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A165\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A152H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A152\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETHS A150\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST A150\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GNDR A100\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"GEOG A100H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"GEOG A100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GEOG A101\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG A185\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GLST A101\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST A140\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSYC A190H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"PSYC A190\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PUBH A203\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SJS A102\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SOC A100H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SOC A100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC A150\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN A199\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ITAL A199\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FREN A190\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FREN A199\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core (Substitution Courses) 15 Units Maximum\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"FREN A180H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"FREN A180\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GRMN A180\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GRMN A185\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST A161H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"HIST A161\",\"units\":null,\"units_max\":null}],\"minimum\":1,\"name\":\"List A - Select one course from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":5,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":6,\"min\":4},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":31,\"min\":31},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Recognize and produce the Spanish language in the four primary areas of communication: listening, speaking, reading and writing.\",\"Demonstrate a better understanding and appreciation of the cultures related to the Spanish language by comparing and contrasting them with the student’s own culture(s).\",\"Use current technologies to further develop language and cultural competencies.\",\"Students will be eligible and prepared for admission (SB 1440 and Education Code 66746) to California State University system schools.\"],\"section_heading\":\"Associate Degree for Transfer Requirements\",\"total_units\":{\"max\":25,\"min\":23}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":48,\"placed\":48}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":48,\"placed\":48}'::jsonb),\n  (2, 'Orange Coast College', '36732', 39726645292, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MRSC A100H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"MRSC A100\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MRSC A100M\",\"units\":1}],\"catalog_addition\":false,\"code\":\"MRSC A100L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MRSC A180\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MRSC A180L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MRSC A185\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MRSC A185L\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A119\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A120\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ESEC A121\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MRSC A121\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ESEC A124\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MRSC A124\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A125\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A130\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A135\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A140\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MRSC A187\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MRSC A188\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A190\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A195\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A199\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A220\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A221\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A222\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A223\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A287\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MRSC A288\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MRSC A291H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MRSC A291\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MRSC A292H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MRSC A292\",\"units\":null,\"units_max\":null}],\"minimum\":3,\"name\":\"Restricted Electives - Marine Science\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":7,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASTR A101\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL A182\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL A182L\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL A281\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ESEC A100H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"ESEC A100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ESEC A110\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GEOG A190\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"GEOL A105H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"GEOL A105\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL A105L\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL A110\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL A131\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL A137\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL A160\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"GEOL A185H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"GEOL A185\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"GEOL A185M\",\"units\":null}],\"catalog_addition\":false,\"code\":\"GEOL A185L\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ITRN A100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MARA A138\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MARA A150\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MARA A152\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MARA A156\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Related Fields\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":24,\"min\":23},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"OCC AS General Education\",\"ge_units\":{\"max\":18,\"min\":18},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Describe how the ocean influences and is influenced by terrestrial, atmospheric, geological and biological processes.\",\"Describe how the physical and chemical properties of water molecules affect the way that the ocean is structured and how the large scale movement of this water in waves, currents and tides influences oceanographic processes.\",\"Describe the diversity of life in the ocean.\",\"Identify how humans have influenced the ocean (chemically, physically and biologically) and explain the potential challenges associated with those changes.\"],\"section_heading\":\"Marine Science, Associate in Science Degree\",\"total_units\":{\"max\":19,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":39,\"placed\":32}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":82,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":39,\"placed\":32}'::jsonb),\n  (3, 'Orange Coast College', '41373', 38670927724, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ACCT A101H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ACCT A101\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ACCT A102H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ACCT A102\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ECON C2001H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ECON C2001\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ECON C2002H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ECON C2002\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"BUS A110H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"BUS A110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH A140\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSYC A160\",\"units\":4}],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"BUS A100H\",\"units\":3},{\"catalog_addition\":false,\"code\":\"BUS A139\",\"units\":3}],\"catalog_addition\":false,\"code\":\"BUS A100\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":4,\"min\":3},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Function effectively in entry-level business positions or at a four-year college business program using the skills, principles, and tools they have acquired.\",\"Demonstrate effective written and/or oral skills.\",\"Students will be eligible and prepared for admission (SB 1440 and Education Code 66746) to California State University system schools.\"],\"section_heading\":\"Business Administration 2.0, Associate in Science Degree for Transfer (AS-T)\",\"total_units\":{\"max\":29,\"min\":28}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb),\n  (4, 'Orange Coast College', '43362', 39726645292, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A102\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FBM A115\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FBM A190\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A220\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FBM A195\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A215\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A270\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Prerequisites: Food and Beverage Management Certificate of Achievement (20.5 Units)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":22,\"min\":22}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"COUN A100\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Recommended Preparation\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"FN A170\",\"units\":null}],\"catalog_addition\":false,\"code\":\"FN A140\",\"units\":2,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A221\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A140\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A145\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A175\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A222\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A280\",\"units\":2,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"FBM A146\",\"units\":null}],\"catalog_addition\":false,\"code\":\"FBM A147\",\"units\":2.5,\"units_max\":3}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Prepare students with the operational and managerial capabilities needed to advance within the food &amp; beverage industry while upholding industry standards..\"],\"section_heading\":\"Food and Beverage Management, Advanced, Certificate of Achievement\",\"total_units\":{\"max\":40,\"min\":38.5}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (4)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s739j piles rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;"
+}
