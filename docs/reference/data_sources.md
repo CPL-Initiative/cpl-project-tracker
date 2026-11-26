@@ -1,7 +1,7 @@
 ---
 title: "Data sources: the register of datasets that could fill a Commons gap"
 created: 2026-11-04
-updated: 2026-11-23
+updated: 2026-11-26
 tags: [reference, commons, data-sources, wishlist, procedures]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference
@@ -69,6 +69,7 @@ at least once), Scheduled (read on a routine). An entry states its current stage
 | Credit for Being You, the student portal's requests | Found | Credentials (the harvested standing), Exhibits | Ask Malone what the portal records when a student names a credential no exhibit covers, and whether a request can arrive with the credential already named |
 | The state's license lists, the Department of Insurance's license types first | Found | Credentials (the harvested standing), Exhibits | Read the Department of Insurance's published license types; measure how many the Catalog lacks |
 | The course outline of record's MQ discipline | Assessed | Subjects (the CSR and the MQ view), Courses | Keep the field in the SLO pass's reader and file it per course |
+| LACCD's class schedule search (PeopleSoft guest), each subject code beside its printed title at the nine LACCD colleges | Found (Sam, 2026-11-26) | Subjects (local subject titles), Courses | Read each college's subject list from the guest search on the runners; file the titles through `kb/_file_found_subject_titles.py` with the page as the finding |
 | MAP College Contacts report: IT Contact, Lead Manager, Primary Contact Phone, the VRC official from the MAP cohort application (each with its email) | Found (Sam's screenshot, 2026-11-24); the sync reads the report's other 22 fields | Student-contact routing, the CSM Workspace | Add the fields to `CONTACTS_FIELD_MAP` in `map/sync_map_users.py` after a value-signature probe confirms each exact API name (MAP rejects the whole report on an unknown column), with columns on `map_college_contacts`; the Noncredit CPL Lead field follows when ITPI adds it (Sam is asking Pedro) |
 
 ### CPL-AI, the Foundation and ASCCC's certification recommendations
@@ -244,6 +245,18 @@ re-mint of the folded local codes needs (ACCT courses called Business, LING call
 Plan: a public read, the one the SLO pass makes: keep the field beside the outcomes and objectives, filed per course,
 then measure how many read outlines carry it. Connect and schedule: the SLO pass's schedule, with the MQ view
 reading the filed field. Found by SkyGannet (S717), 2026-11-23, while building the MQ view with Sam.
+
+### LACCD's class schedule search, for local subject titles
+The Los Angeles Community College District's guest class search (Oracle PeopleSoft, `mycollege-guest.laccd.edu`,
+`COMMUNITY_ACCESS.CLASS_SEARCH`) lists every subject code a college schedules beside its printed title, by campus and
+term (`Campus=LAPC`, `strm=2268`, `subj=`, `catalogid=`). Sam found it on 2026-11-26 while working the subject-title
+lightning round: a search for OLD ADL 029CE, *Literature and the Human Experience*, at Pierce named the subject Older
+Adults, the title the lightning round had guessed. Plug-in: a college's own word on its local subject titles, the
+Subjects card's first source for the nine LACCD colleges, and a second signal beside a catalog heading for each
+guess the round shows. Plan: a public read on the runners (this session's network refuses the host); read one
+campus's subject list for the current term, measure how many of the lightning round's LACCD codes it titles, then
+file the titles through `kb/_file_found_subject_titles.py` with the search page as the finding. Connect and schedule:
+the runners' title hunt, once a term. Found by Sam, 2026-11-26; recorded by SkyBrant (S736).
 
 ### WestEd's environmental scan of datasets and connections
 Sam, 2026-11-04 (S573): *"west ed has a whole environmental scan of datasets and connections I need to feed to you."*

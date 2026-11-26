@@ -167,7 +167,7 @@
      shows one example course (Sam, 2026-11-26). The position and the count saved last the visit and are never stored
      (Sam, 2026-10-21). */
   var RAPID = "rapid", GUESS_FILE = "kb/status/subject_title_guesses.json";
-  var RAPIDS = { i: 0, done: 0, said: "", last: null };
+  var RAPIDS = { i: 0, done: 0, said: "", last: null, skipped: [] };
   /* A phone or tablet (Sam, 2026-11-26: "optimize the lightning round view for the phone so I can judge or change them on
      the fly"): a coarse pointer gets the thumb bar, swipes and no keyboard popping up at every card. */
   function rapidTouch() { try { return !!(window.matchMedia && window.matchMedia("(pointer: coarse)").matches); } catch (e) { return false; } }
@@ -268,7 +268,7 @@
       var slug = parts[0], band = parts[parts.length - 1], code = parts.slice(1, -1).join("|");
       by[slug + "|" + code + "|" + band] = { title: v.local_title || "", common: v.common_code || "", source: v.source_url || "",
         at: v.decided_at || row.reviewed_at || "", by: row.reviewer_email || "", label: row.reviewer_label || "",
-        decidedBy: v.decided_by || "", key: id, mapKey: slug + "|" + code + "|" + band };
+        decidedBy: v.decided_by || "", key: id, mapKey: slug + "|" + code + "|" + band, notSubject: v.not_a_subject === true };
     });
     return by;
   }
@@ -536,7 +536,9 @@
     if (!top || !top.title) return null;
     return { title: top.title, confidence: top.confidence, stands: top.confidence != null && top.confidence >= STANDS };
   }
-  function untitledNow(r) { var sv = savedOf(r), sk = skyTitle(r); return needsTitle(r) && !(sv && sv.title) && !(sk && sk.stands); }
+  /* A person's Not a subject (Sam, 2026-11-26: TEST "stays on the list as not having been acted upon...needs to pop off
+     the list") takes a code off the untitled list for good, like a title would. */
+  function untitledNow(r) { var sv = savedOf(r), sk = skyTitle(r); return needsTitle(r) && !(sv && (sv.title || sv.notSubject)) && !(sk && sk.stands); }
   function figures(M) {
     var F = { named: 0, withCommon: 0, untitled: 0, notInCatalog: 0, notRead: 0, blocked: 0, saved: 0, colleges: 0, collegesNamed: 0, by: {} };
     ((M && M.list) || []).forEach(function (x) {
@@ -1210,7 +1212,9 @@
   /* The queue, recomputed at every draw so a saved code leaves it at once: most confident first, then college, then code. */
   function rapidQueue(M) {
     var q = [];
-    ((M && M.list) || []).forEach(function (x) { x.rows.forEach(function (r) { if (untitledNow(r)) q.push({ r: r, g: rapidGuess(r) }); }); });
+    /* A Skip takes the code off the round for the rest of the visit (Sam, 2026-11-26); Back brings the last one back. */
+    var sk = {}; (RAPIDS.skipped || []).forEach(function (k) { sk[k] = true; });
+    ((M && M.list) || []).forEach(function (x) { x.rows.forEach(function (r) { if (untitledNow(r) && !sk[r.slug + "|" + r.code]) q.push({ r: r, g: rapidGuess(r) }); }); });
     function cf(e) { return e.g.confidence == null || isNaN(e.g.confidence) ? -1 : Number(e.g.confidence); }
     return q.sort(function (a, b) {
       return cf(b) - cf(a) || a.r.college.localeCompare(b.r.college) || String(a.r.code).localeCompare(String(b.r.code));
@@ -1262,15 +1266,131 @@
     }, function (er) { if (msg) msg.textContent = "Not taken back: " + ((er && er.message) || "the network failed") + "."; });
   }
   function rapidMove(step) {
-    var n = rapidQueue(VIEW.M).length;
-    if (!n) return;
+    var q = rapidQueue(VIEW.M);
     RAPIDS.said = ""; RAPIDS.last = null;
-    RAPIDS.i = step > 0 ? (RAPIDS.i + 1) % n : Math.max(0, RAPIDS.i - 1);
+    if (step > 0) {
+      if (!q.length) return;
+      var cur = q[Math.min(RAPIDS.i, q.length - 1)].r;
+      RAPIDS.skipped.push(cur.slug + "|" + cur.code);
+      RAPIDS.said = "Skipped " + cur.code + " at " + cur.college + " for this visit.";
+      if (RAPIDS.i >= q.length - 1) RAPIDS.i = 0;   /* the same place now holds the next code */
+    } else if (RAPIDS.skipped.length) {
+      var back = RAPIDS.skipped.pop(), q2 = rapidQueue(VIEW.M);
+      for (var j = 0; j < q2.length; j++) if (q2[j].r.slug + "|" + q2[j].r.code === back) { RAPIDS.i = j; break; }
+    } else {
+      RAPIDS.i = Math.max(0, RAPIDS.i - 1);
+    }
     rapidDraw();
+  }
+  /* Not a subject: a person's decision, saved like a title, that takes the code off the list for good. */
+  function rapidNotSubject(e, btn) {
+    var r = e.r, k = acceptKey(r), msg = VIEW.root && VIEW.root.querySelector("#csb-rapid-msg");
+    function say(t) { if (msg) msg.textContent = t; }
+    if (!k) { say("No save can be keyed for this code’s noncredit category. Skip it, or use Edit on the code’s row."); return; }
+    btn.disabled = true; say("Saving…");
+    var hadSave = !!SAVED[k.mapKey];
+    writeSave(k.key, { not_a_subject: true }).then(function (res) {
+      if (!res.ok) { btn.disabled = false; say(res.lapsed ? "Not saved: your sign-in has ended. Sign in again." : "Not saved: the server answered " + res.status + ". Only a reviewer on the list may save."); return; }
+      LAPSED = false;
+      RAPIDS.last = hadSave ? null : { key: k.key, mapKey: k.mapKey, slug: r.slug, code: r.code };
+      SAVED[k.mapKey] = { title: "", common: "", source: "", at: new Date().toISOString(), by: res.email || "", label: "a reviewer", decidedBy: "",
+        key: k.key, mapKey: k.mapKey, notSubject: true };
+      RAPIDS.done++;
+      RAPIDS.said = "Saved: " + r.code + " at " + r.college + " is not a subject.";
+      rapidDraw();
+    }, function (er) { btn.disabled = false; say("Not saved: " + ((er && er.message) || "the network failed") + "."); });
+  }
+  /* ── The catalog page in a bottom bar (funding-model/college_bar.js is the pattern): the window's full width, its top
+     edge resizes it (drag, or Up and Down on the grip), its top row stays put with Open in a new tab and Close, Escape
+     closes it and focus returns to the link. Many catalogs refuse to load inside another page, so the bar always
+     offers the new tab and says so. Nothing is remembered across visits. ── */
+  var BAR = { el: null, from: null };
+  function rapidBarCss() {
+    if (document.getElementById("csb-bar-css")) return;
+    var st = document.createElement("style"); st.id = "csb-bar-css";
+    st.textContent = ".csb-bar{position:fixed;left:0;right:0;bottom:0;height:50vh;min-height:160px;max-height:100vh;z-index:900;display:flex;flex-direction:column;"
+      + "background:var(--surface-opaque,var(--surface-1));border-top:1px solid var(--border-strong);box-shadow:0 -8px 24px rgba(20,20,30,.16);}"
+      + ".csb-bar-grip{height:10px;cursor:ns-resize;border-bottom:1px solid var(--border);flex:0 0 auto;}"
+      + ".csb-bar-grip:focus-visible{outline:2px solid var(--cobalt);outline-offset:-2px;}"
+      + ".csb-bar-top{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;padding:6px 16px;flex:0 0 auto;}"
+      + ".csb-bar-top strong{margin-right:auto;}"
+      + ".csb-bar-why{font-size:.8rem;color:var(--text-muted);padding:0 16px 6px;margin:0;flex:0 0 auto;}"
+      + ".csb-bar iframe{flex:1 1 auto;width:100%;border:0;background:var(--surface-1);}"
+      + ".csb-rapid-more summary{cursor:pointer;min-height:24px;text-decoration:underline;}"
+      + ".csb-rapid-note textarea{width:100%;box-sizing:border-box;min-height:4.5em;font:inherit;}";
+    document.head.appendChild(st);
+  }
+  function rapidBarClose() {
+    if (!BAR.el) return;
+    BAR.el.parentNode && BAR.el.parentNode.removeChild(BAR.el);
+    document.body.style.paddingBottom = "";
+    var f = BAR.from; BAR.el = null; BAR.from = null;
+    if (f && f.focus) f.focus();
+  }
+  function rapidBar(url, label, from) {
+    rapidBarClose(); rapidBarCss();
+    var close = el("button", { type: "button", cls: "csb-word", id: "csb-bar-close", text: "Close" });
+    var grip = el("div", { cls: "csb-bar-grip", role: "separator", tabindex: "0", "aria-orientation": "horizontal",
+      "aria-label": "Resize the catalog bar; use the Up and Down keys", "aria-valuemin": "160", "aria-valuemax": String(window.innerHeight || 800) });
+    var frame = el("iframe", { src: url, title: "The catalog page for " + label, referrerpolicy: "no-referrer" });
+    var bar = el("section", { cls: "csb-bar", id: "csb-bar", "aria-label": "Catalog page: " + label }, [grip,
+      el("div", { cls: "csb-bar-top" }, [el("strong", { text: "Catalog: " + label }),
+        el("a", { href: url, target: "_blank", rel: "noopener noreferrer" }, ["Open in a new tab", el("span", { cls: "csb-vh", text: " (opens in a new tab)" })]), close]),
+      el("p", { cls: "csb-bar-why", text: "If the page stays blank, the college’s site will not load inside COBI; open it in a new tab." }), frame]);
+    function setH(h) {
+      h = Math.max(160, Math.min(window.innerHeight || 800, Math.round(h)));
+      bar.style.height = h + "px"; grip.setAttribute("aria-valuenow", String(h)); document.body.style.paddingBottom = h + "px";
+    }
+    close.addEventListener("click", rapidBarClose);
+    bar.addEventListener("keydown", function (ev) { if (ev.key === "Escape") { ev.preventDefault(); rapidBarClose(); } });
+    grip.addEventListener("keydown", function (ev) {
+      if (ev.key === "ArrowUp" || ev.key === "ArrowDown") { ev.preventDefault(); setH(bar.getBoundingClientRect().height + (ev.key === "ArrowUp" ? 40 : -40)); }
+    });
+    grip.addEventListener("pointerdown", function (ev) {
+      ev.preventDefault();
+      var y0 = ev.clientY, h0 = bar.getBoundingClientRect().height;
+      function mv(e) { setH(h0 + (y0 - e.clientY)); }
+      function up() { window.removeEventListener("pointermove", mv); window.removeEventListener("pointerup", up); }
+      window.addEventListener("pointermove", mv); window.addEventListener("pointerup", up);
+    });
+    document.body.appendChild(bar);
+    BAR.el = bar; BAR.from = from || null;
+    setH((window.innerHeight || 800) * 0.5);
+    close.focus();
+  }
+  /* ── A training note for the procedure (Sam, 2026-11-26: "add a place for me to add a training note for our
+     procedures"): a person's own words on how this procedure should run, saved as kb_curation field procedure_note,
+     course_id NOTE:<view>|<time>, value { note, view, code }, under the reviewer's own email. Sessions and procedures
+     read them; nothing applies them. Each note is its own row, so a note never overwrites another. ── */
+  var NOTE_FIELD = "procedure_note", NOTE_VIEW = "commons/subjects/rapid";
+  function rapidNoteBox(r) {
+    var ta = el("textarea", { id: "csb-rapid-note-in", rows: "3", maxlength: "2000", placeholder: "What should COBI or the next person know about this step?" });
+    var btn = el("button", { type: "button", cls: "csb-word", id: "csb-rapid-note-save", text: "Save the note" });
+    var said = el("p", { cls: "csb-ed-msg", id: "csb-rapid-note-msg", role: "status" });
+    btn.addEventListener("click", function () {
+      var t = String(ta.value || "").trim();
+      if (!t) { said.textContent = "Type a note first."; return; }
+      btn.disabled = true; said.textContent = "Saving…";
+      writeSave("NOTE:" + NOTE_VIEW + "|" + new Date().toISOString(), { note: t, view: NOTE_VIEW, code: r.slug + "|" + r.code }, NOTE_FIELD).then(function (res) {
+        btn.disabled = false;
+        if (!res.ok) { said.textContent = res.lapsed ? "Not saved: sign in as a reviewer, then save." : "Not saved: the server answered " + res.status + "."; return; }
+        ta.value = ""; said.textContent = "Saved. The next session reads it with the procedure.";
+      }, function (er) { btn.disabled = false; said.textContent = "Not saved: " + ((er && er.message) || "the network failed") + "."; });
+    });
+    return el("details", { cls: "csb-rapid-note", id: "csb-rapid-note" }, [el("summary", { text: "Add a training note for this procedure" }),
+      el("label", { "for": "csb-rapid-note-in", cls: "csb-vh", text: "Training note" }), ta, el("p", { cls: "csb-rapid-acts" }, [btn]), said]);
   }
   function rapidView(M) {
     var q = rapidQueue(M), box = el("div", { cls: "csb-rapid", id: "csb-rapid" });
     if (!q.length) {
+      var ns = RAPIDS.skipped.length;
+      if (ns) {
+        var bk = el("button", { type: "button", cls: "csb-word", id: "csb-rapid-back", text: "Back" });
+        bk.addEventListener("click", function () { rapidMove(-1); });
+        box.appendChild(el("p", { cls: "csb-note", id: "csb-rapid-empty", role: "status" }, [(RAPIDS.said ? RAPIDS.said + " " : "") + "Nothing is left but the " + fmt(ns)
+          + (ns === 1 ? " code" : " codes") + " you skipped this visit. ", bk, " brings the last one back; ", go("#commons/subjects", "Back to Subjects"), "."]));
+        return box;
+      }
       box.appendChild(el("p", { cls: "csb-note", id: "csb-rapid-empty", role: "status" }, ["No codes are left without a title. ", go("#commons/subjects", "Back to Subjects"), "."]));
       return box;
     }
@@ -1281,16 +1401,42 @@
       RAPIDS.last ? " " : null, RAPIDS.last ? (function () { var u = el("button", { type: "button", cls: "csb-word", id: "csb-rapid-undo", text: "Undo" }); u.addEventListener("click", rapidUndo); return u; })() : null]));
     box.appendChild(el("h3", { id: "csb-rapid-h", text: r.code + " at " + r.college }));
     var n = rapidCourseCount(r), ex = g.courses && g.courses[0];
-    if (ex) box.appendChild(el("p", { cls: "csb-note", id: "csb-rapid-ex" }, ["Example course: ", el("strong", { text: ex }),
-      n ? " (1 of " + fmt(n) + (n === 1 ? " course)" : " courses)") : ""]));
+    /* The example course opens its description (Sam, 2026-11-26: "add hover over on the course listed on each card
+       showing the course description"). A phone has no hover, so a tap opens it; a mouse sees it as the hover title
+       too. Only a description on file is shown (g.description, from a schedule or catalog read); otherwise the line
+       offers a web search for the course, and says no description is on file. */
+    if (ex) {
+      var desc = String(g.description || "").trim();
+      var exBtn = el("button", { type: "button", cls: "csb-word", id: "csb-rapid-exbtn", "aria-expanded": "false", "aria-controls": "csb-rapid-desc",
+        title: desc || "Tap to find this course’s description", text: ex });
+      var descBox = el("p", { cls: "csb-note", id: "csb-rapid-desc", hidden: "hidden" }, desc ? [desc]
+        : ["No description of this course is on file yet. ", el("a", { href: webHref(String(r.college || "") + " " + ex + " course description"), target: "_blank", rel: "noopener noreferrer" },
+            ["Find its description", el("span", { cls: "csb-vh", text: " (opens in a new tab)" })]), "."]);
+      exBtn.addEventListener("click", function () {
+        var open = descBox.hasAttribute("hidden");
+        if (open) descBox.removeAttribute("hidden"); else descBox.setAttribute("hidden", "hidden");
+        exBtn.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+      box.appendChild(el("p", { cls: "csb-note", id: "csb-rapid-ex" }, ["Example course: ", exBtn,
+        n ? " (1 of " + fmt(n) + (n === 1 ? " course)" : " courses)") : ""]));
+      box.appendChild(descBox);
+    }
     else if (n) box.appendChild(el("p", { cls: "csb-note", id: "csb-rapid-ex", text: fmt(n) + (n === 1 ? " course" : " courses") + "; no example course is on file." }));
     if (g.judged) {
       var jv = g.judged.verdict === "accept" ? "COBI accepts the guess." : g.judged.verdict === "change" ? "COBI changed the guess, which read " + g.guess + "."
-        : "COBI judges this not a subject code" + (g.judged.title ? " (it reads as " + g.judged.title + ")" : "") + ". Skip it, or type a title if you disagree. The guess read " + g.guess + ".";
+        : "COBI judges this not a subject code" + (g.judged.title ? " (it reads as " + g.judged.title + ")" : "") + ". Press Not a subject to take it off the list, or type a title if you disagree. The guess read " + g.guess + ".";
       box.appendChild(el("p", { cls: "csb-note", id: "csb-rapid-verdict", "data-verdict": g.judged.verdict }, [el("strong", { text: jv })]));
     }
-    if (g.sourceUrl) box.appendChild(el("p", { cls: "csb-note", id: "csb-rapid-src" }, [g.sourceSays ? "The catalog says: " : "The page that settled it: ",
-      el("a", { href: g.sourceUrl, target: "_blank", rel: "noopener noreferrer" }, [g.sourceSays || g.sourceUrl, el("span", { cls: "csb-vh", text: " (opens in a new tab)" })])]));
+    /* The catalog page opens in a bar along the bottom of the window (Sam, 2026-11-26: "have the catalog link open in
+       bottom bar rather than to a new tab"); the link keeps its address, so a new tab is still a long-press away. */
+    if (g.sourceUrl) {
+      var srcA = el("a", { href: g.sourceUrl, "data-csb-bar": "1" }, [g.sourceSays || g.sourceUrl]);
+      srcA.addEventListener("click", function (ev) {
+        if (ev.ctrlKey || ev.metaKey || ev.shiftKey || ev.button === 1) return;
+        ev.preventDefault(); rapidBar(g.sourceUrl, r.code + " at " + r.college, srcA);
+      });
+      box.appendChild(el("p", { cls: "csb-note", id: "csb-rapid-src" }, [g.sourceSays ? "The catalog says: " : "The page that settled it: ", srcA]));
+    }
     var input = el("input", { type: "text", cls: "csb-input", id: "csb-rapid-title", autocomplete: "off", spellcheck: "true", autocapitalize: "words", enterkeyhint: "go" });
     input.value = g.title || "";
     var b = bar01(g.confidence == null || isNaN(g.confidence) ? null : Number(g.confidence) / 100, "Confidence in this title");
@@ -1299,8 +1445,16 @@
     var acc = el("button", { type: "button", cls: "csb-word", id: "csb-rapid-accept", text: "Accept" });
     var skip = el("button", { type: "button", cls: "csb-word", id: "csb-rapid-skip", text: "Skip" });
     var back = el("button", { type: "button", cls: "csb-word", id: "csb-rapid-back", text: "Back" });
-    if (RAPIDS.i === 0) back.disabled = true;
+    var notSub = el("button", { type: "button", cls: "csb-word", id: "csb-rapid-notsubj", text: "Not a subject" });
+    notSub.addEventListener("click", function () { rapidNotSubject(e, notSub); });
+    if (RAPIDS.i === 0 && !RAPIDS.skipped.length) back.disabled = true;
     acc.addEventListener("click", function () { rapidAccept(e, input, acc); });
+    /* The word follows the box (Sam, 2026-11-26: "I entered Older Adults but not sure whether to click Accept to accept
+       the title I entered or skip or just click enter"): Accept while it holds the guess, Save this title once it is
+       changed. Either saves what the box holds; Enter (Go on a phone) does the same, and Skip saves nothing. */
+    var guessed = String(input.value || "").trim();
+    function accWord() { acc.textContent = String(input.value || "").trim() === guessed ? "Accept" : "Save this title"; }
+    input.addEventListener("input", accWord);
     skip.addEventListener("click", function () { rapidMove(1); });
     back.addEventListener("click", function () { rapidMove(-1); });
     input.addEventListener("keydown", function (ev) {
@@ -1311,7 +1465,7 @@
       ev.preventDefault();
       rapidMove(ev.key === "ArrowRight" ? 1 : -1);
     });
-    box.appendChild(el("p", { cls: "csb-rapid-acts", id: "csb-rapid-acts" }, [acc, skip, back]));
+    box.appendChild(el("p", { cls: "csb-rapid-acts", id: "csb-rapid-acts" }, [acc, notSub, skip, back]));
     /* A swipe on the card, not in the title: left skips, right goes back (a phone has no Ctrl and arrow). */
     var t0 = null;
     box.addEventListener("touchstart", function (ev) { var t = ev.touches && ev.touches[0]; t0 = t && ev.target !== input ? { x: t.clientX, y: t.clientY } : null; }, { passive: true });
@@ -1320,13 +1474,18 @@
       if (!t0 || !t) return;
       var dx = t.clientX - t0.x, dy = t.clientY - t0.y; t0 = null;
       if (Math.abs(dx) < 60 || Math.abs(dy) > 40) return;
-      if (dx < 0) rapidMove(1); else if (RAPIDS.i > 0) rapidMove(-1);
+      if (dx < 0) rapidMove(1); else if (RAPIDS.i > 0 || RAPIDS.skipped.length) rapidMove(-1);
     }, { passive: true });
     box.appendChild(el("p", { cls: "csb-ed-msg", id: "csb-rapid-msg", role: "status" }));
     if (!session()) box.appendChild(el("p", { cls: "csb-note", id: "csb-rapid-signin", text: "Accept saves once you sign in as a reviewer." }));
-    box.appendChild(el("p", { cls: "csb-foot", id: "csb-rapid-keys", text: rapidTouch()
-      ? "Tap Accept to save the title, or tap the title to change it, then Go. Swipe left to skip, right to go back."
-      : "Keys: Enter in the title accepts it. Ctrl or Command with the right arrow skips; with the left arrow, goes back. Tab moves between the controls." }));
+    box.appendChild(rapidNoteBox(r));
+    /* The explanation folds away (Sam, 2026-11-26: "collapse the bottom section with all the explanation text"); render()
+       moves the page's own foot notes into it on this view. */
+    var more = el("details", { cls: "csb-rapid-more", id: "csb-rapid-more" }, [el("summary", { text: "How this works" })]);
+    box.appendChild(more);
+    more.appendChild(el("p", { cls: "csb-foot", id: "csb-rapid-keys", text: rapidTouch()
+      ? "Accept saves the title in the box, the guess or what you typed; Go on the keyboard does the same. Not a subject takes the code off the list for good. Skip sets it aside for this visit. Swipe left to skip, right to go back."
+      : "Accept saves the title in the box, the guess or what you typed; Enter does the same. Not a subject takes the code off the list for good. Skip saves nothing and sets the code aside for this visit. Ctrl or Command with the right arrow skips; with the left arrow, goes back. Tab moves between the controls." }));
     return box;
   }
   /* A status word, plain text: Read carries weight, the ways with nothing to do are muted, so it reads the same without color. */
@@ -2728,6 +2887,11 @@
     if (S.view !== SW) wrap.appendChild(el("p", { cls: "csb-note", id: "csb-to-statewide" }, ["Every college’s codes, with a call and a confidence for each: ",
       go("#commons/subjects/" + SW, "Every local code, statewide"), "."]));
     if (S.view !== MQ) wrap.appendChild(el("p", { cls: "csb-foot", text: "How codes are compared: " + (S.view === HELD && VIEW.H ? VIEW.H.rule : S.view === NC && VIEW.N ? VIEW.N._rule : M.rule + (M.built ? " The state course list was built " + day(M.built) + "." : "")) }));
+    if (S.view === RAPID) {
+      var moreBox = wrap.querySelector("#csb-rapid-more");
+      if (moreBox) Array.prototype.slice.call(wrap.children).filter(function (n) { return n.id === "csb-to-statewide" || (n.classList && n.classList.contains("csb-foot")); })
+        .forEach(function (n) { moreBox.appendChild(n); });
+    }
     var page = el("div", { cls: "cmn-page" }, [wrap]);
     root.appendChild(page);
     stackDraw(root);   /* before the bindings below, so a sidebar's words open what they name */
@@ -2823,7 +2987,7 @@
     var first = String(view || "").split("/")[0];
     if (!keep && (first === ALL ? "" : first) !== S.view) S.pick = "";
     if (first !== SRC) SRCS.pick = "needed";   /* a pick lasts the visit (Sam, 2026-10-21) */
-    if (first !== RAPID || S.view !== RAPID) { RAPIDS.i = 0; RAPIDS.done = 0; RAPIDS.said = ""; }   /* the round's place lasts the visit */
+    if (first !== RAPID || S.view !== RAPID) { RAPIDS.i = 0; RAPIDS.done = 0; RAPIDS.said = ""; RAPIDS.skipped = []; }   /* the round's place lasts the visit */
     if (first !== MQ) { MQS.pick = "all"; MQS.q = ""; }
     render(VIEW.root, VIEW.M, view || "");
     withHeld(view);
@@ -3093,6 +3257,6 @@
     SAVE_FIELD: SAVE_FIELD, SAVE_PREFIX: SAVE_PREFIX, dominantOf: dominantOf, attentionBy: attentionBy, webQuery: webQuery,
     MQ_FILE: MQ_FILE, GUESS_FILE: GUESS_FILE, RAPID: RAPID, _stack: STACK, _breakAfter: breakAfter,
     _reset: function () { VIEW.Q = null; VIEW.mqError = ""; mqCache = null; MQS.pick = "all"; MQS.q = ""; MQS.code = ""; MQS.side = null; STACK.second = null; VIEW.cociError = ""; codeCourses = {}; codeCoursesWait = {};
-      SWS.filter = "top"; SWS.common = ""; VIEW.W = null; VIEW.swError = ""; swCache = null; SW_IX = null; SAVED = {}; SAVE_ERR = ""; SAID = {}; LAPSED = false; COMMON = null; TC = null; NC_SLUGS = {}; cache = null; heldCache = null; ncCache = null; courseCache = {}; VIEW.M = null; VIEW.H = null; VIEW.N = null; VIEW.G = null; guessCache = null; RAPIDS.i = 0; RAPIDS.done = 0; RAPIDS.said = ""; S.view = ""; S.code = ""; S.at = ""; S.band = ""; S.pick = ""; }
+      SWS.filter = "top"; SWS.common = ""; VIEW.W = null; VIEW.swError = ""; swCache = null; SW_IX = null; SAVED = {}; SAVE_ERR = ""; SAID = {}; LAPSED = false; COMMON = null; TC = null; NC_SLUGS = {}; cache = null; heldCache = null; ncCache = null; courseCache = {}; VIEW.M = null; VIEW.H = null; VIEW.N = null; VIEW.G = null; guessCache = null; RAPIDS.i = 0; RAPIDS.done = 0; RAPIDS.said = ""; RAPIDS.skipped = []; S.view = ""; S.code = ""; S.at = ""; S.band = ""; S.pick = ""; }
   };
 })();
