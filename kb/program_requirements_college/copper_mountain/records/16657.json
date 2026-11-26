@@ -144,7 +144,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "prerequisites_counted",
+    "label": "The record counts the program's prerequisite courses, which the catalog's printed total leaves out; without them the courses add to the printed total.",
+    "words": "'Total Units for the Major 37' equals the sum of the nursing courses only (N 010 through N 045); the prerequisite blocks (BIOL, ENGL, MATH, PSYC, SOCI/ANTH, COMM) are printed outside that total and are presumably partly counted in the 36-unit CMC General Education Requirement toward the 73 minimum degree units."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 70,
+   "course_list_match": 100,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {
