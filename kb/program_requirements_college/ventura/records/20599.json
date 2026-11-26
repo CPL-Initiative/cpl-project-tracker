@@ -111,7 +111,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "lists_not_closed",
+    "label": "A choice list prints no unit figure of its own, one that depends on another choice, or also takes courses from another list, so the lists alone cannot add the program's units.",
+    "words": "The CJ V90/CJ V96 block is optional ('May Select 3 units ... as part of the 9 units additionally required'); recorded as choose_units 3, but it appears to be an alternative way to fill up to 3 of the 9 additional units, not an extra requirement. | The 'Select one of the following' forensic science pairs (CJ V35 & V35L or ANTH V35 & V35L) print no units on the page; recorded as two option blocks. The total of 21-22 (12 core + 9 additional) suggests this pair choice may count as one of the 'Required Additional Courses' selections (4 units instead of 3, giving 22) rather than a separate required block; reviewer should check."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 30,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {
