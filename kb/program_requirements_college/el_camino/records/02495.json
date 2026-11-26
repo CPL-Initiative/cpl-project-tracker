@@ -80,7 +80,29 @@
    "against": "program",
    "why": [
     "the blocks sum to 25.0-30.0; the catalog states 22.0-27.0"
-   ]
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     49.0,
+     54.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     24.0
+    ],
+    "why": [],
+    "fill": [
+     6.0,
+     11.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -100,6 +122,9 @@
    "count": 0,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "read"
   },
   "pass": false,
   "gaps": [
@@ -991,5 +1016,6 @@
    "The description mentions only 'entry-level positions in the discipline'; no specific career is named, so careers is empty."
   ]
  },
- "extracted_run": "38631686677"
+ "extracted_run": 45768189197,
+ "read_run": "38631686677"
 }

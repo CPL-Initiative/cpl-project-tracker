@@ -33,7 +33,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 15,
@@ -52,7 +53,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -87,7 +88,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 13,
@@ -106,7 +108,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -139,7 +141,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 11,
@@ -158,7 +161,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -186,7 +189,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -220,7 +223,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 12,
@@ -283,7 +287,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 39,
@@ -320,7 +325,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 13,
@@ -456,7 +462,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 113,
@@ -475,7 +482,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -491,7 +498,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -507,7 +514,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -545,7 +552,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 16,
@@ -564,7 +572,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -606,7 +614,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 21,
@@ -667,7 +676,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 49,
@@ -695,7 +705,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 3,
@@ -736,7 +747,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 19,
@@ -803,7 +815,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 45,
@@ -871,7 +884,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 46,
@@ -924,7 +938,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 29,
@@ -971,7 +986,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 22,
@@ -1013,7 +1029,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 17,
@@ -1053,7 +1070,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 15,
@@ -1093,7 +1111,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 15,
@@ -1153,7 +1172,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 36,
@@ -1190,7 +1210,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 12,
@@ -1249,7 +1270,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 34,
@@ -1268,7 +1290,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -1284,7 +1306,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -1300,7 +1322,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -1316,7 +1338,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -1349,7 +1371,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 12,
@@ -1386,7 +1409,8 @@
     "title": 0.667,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 12,
@@ -1405,7 +1429,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -1442,7 +1466,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 15,
@@ -1461,7 +1486,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -1477,7 +1502,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -1493,7 +1518,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -1518,7 +1543,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 3,
@@ -1537,7 +1563,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -1553,7 +1579,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -1606,7 +1632,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 31,
@@ -1661,7 +1688,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 30,
@@ -1693,7 +1721,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "jewelry design and fabrication certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 8,
@@ -1712,7 +1741,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -1738,7 +1767,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "fire academy certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 6,
@@ -1757,7 +1787,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -1773,7 +1803,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -1805,7 +1835,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 10,
@@ -1824,7 +1855,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -1840,7 +1871,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -1856,7 +1887,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -1872,7 +1903,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -1888,7 +1919,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -1925,7 +1956,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "digital art & design foundation certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 15,
@@ -1976,7 +2008,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "visual communications certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 26,
@@ -1995,7 +2028,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -2011,7 +2044,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -2054,7 +2087,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "fashion stylist certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 9,
@@ -2090,7 +2124,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 11,
@@ -2109,7 +2144,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -2125,7 +2160,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -2141,7 +2176,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -2173,7 +2208,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -2189,7 +2224,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -2205,7 +2240,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -2221,7 +2256,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -2237,7 +2272,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -2253,7 +2288,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -2269,7 +2304,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -2353,7 +2388,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 5,
@@ -2372,7 +2408,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -2388,7 +2424,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -2404,7 +2440,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -2434,7 +2470,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 8,
@@ -2453,7 +2490,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -2487,7 +2524,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 13,
@@ -2521,7 +2559,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "electronics engineering technician certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 9,
@@ -2557,7 +2596,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "computer hardware electronics technician certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 11,
@@ -2592,7 +2632,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "heating, ventilation, and air conditioning (hvac) and refrigeration certificate of achievement",
-    "section_fit": 0.833
+    "section_fit": 0.833,
+    "exact": 0
    }
   },
   "listed": 11,
@@ -2611,7 +2652,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -2650,7 +2691,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 18,
@@ -2669,7 +2711,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -2685,7 +2727,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -2721,7 +2763,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 14,
@@ -2757,7 +2800,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 11,
@@ -2823,7 +2867,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 10,
@@ -2858,7 +2903,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "early childhood education certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 10,
@@ -2898,7 +2944,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 15,
@@ -2917,7 +2964,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -2940,7 +2987,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "fire and emergency technology certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 1,
@@ -2968,7 +3016,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "cosmetology level ii certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 3,
@@ -3044,7 +3093,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -3071,7 +3120,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "engine and driveline technician certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 6,
@@ -3090,7 +3140,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -3106,7 +3156,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -3142,7 +3192,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "sociology, aa-t",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 14,
@@ -3174,7 +3225,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "commercial music certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 8,
@@ -3207,7 +3259,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "geology, as-t",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 8,
@@ -3246,7 +3299,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "psychology, aa-t",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 16,
@@ -3278,7 +3332,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "physics, as-t",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 7,
@@ -3313,7 +3368,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "mathematics, as-t",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 10,
@@ -3352,7 +3408,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "administration of justice, as-t",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 14,
@@ -3386,7 +3443,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "geography, aa-t",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 9,
@@ -3488,7 +3546,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "history, aa-t",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 96,
@@ -3568,7 +3627,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "english, aa-t",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 55,
@@ -3599,7 +3659,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "forensics certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 6,
@@ -3644,7 +3705,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "elementary teacher education, aa-t",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 21,
@@ -3663,7 +3725,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -3693,7 +3755,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "early childhood education, as-t",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 9,
@@ -3712,7 +3775,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -3747,7 +3810,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "theatre arts, aa-t",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 14,
@@ -3766,7 +3830,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -3800,7 +3864,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "philosophy, aa-t",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 12,
@@ -3834,7 +3899,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "business programming certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 9,
@@ -3865,7 +3931,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "database management certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 7,
@@ -3893,7 +3960,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "esl for math certificate of competency",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 3,
@@ -3920,7 +3988,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "esl for healthcare certificate of competency",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -3939,7 +4008,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -3965,7 +4034,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "computer user support specialist certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 7,
@@ -3995,7 +4065,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "esl for healthcare ii certificate of competency",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 5,
@@ -4022,7 +4093,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "esl for childhood educators certificate of competency",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -4063,7 +4135,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "cloud computing and programming with amazon web services certificate of achievement",
-    "section_fit": 0.833
+    "section_fit": 0.833,
+    "exact": 0
    }
   },
   "listed": 5,
@@ -4095,7 +4168,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "cisco networking administration certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 7,
@@ -4129,7 +4203,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "cybersecurity certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 9,
@@ -4170,7 +4245,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 16,
@@ -4206,7 +4282,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 11,
@@ -4245,7 +4322,8 @@
     "title": 0.75,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 14,
@@ -4285,7 +4363,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "esl reading and vocabulary certificate of competency",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 3,
@@ -4313,7 +4392,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "esl writing and grammar certificate of competency",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 3,
@@ -4348,7 +4428,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "communication studies certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 10,
@@ -4415,7 +4496,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "technical support and networking specialist certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 6,
@@ -4443,7 +4525,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "introduction to college and career success certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 3,
@@ -4470,7 +4553,8 @@
     "title": 0.667,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -4583,7 +4667,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "social justice studies, aa-t",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 88,
@@ -4619,7 +4704,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "real estate broker certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 12,
@@ -4647,7 +4733,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "real estate escrow certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 3,
@@ -4675,7 +4762,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "real estate property management certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 3,
@@ -4703,7 +4791,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "real estate salesperson certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 3,
@@ -4731,7 +4820,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "real estate investments certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 3,
@@ -4760,7 +4850,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "real estate finance certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 4,
@@ -4801,7 +4892,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "business administration 2.0, as-t",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 16,
@@ -4834,7 +4926,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "recreation aquatics specialist certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 8,
@@ -4862,7 +4955,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 3,
@@ -4898,7 +4992,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "piano teaching certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 11,
@@ -4925,7 +5020,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "personal care aide certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -4963,7 +5059,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 13,
@@ -4994,7 +5091,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 6,
@@ -5023,7 +5121,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "high school equivalency test certificate of competency",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 4,
@@ -5050,7 +5149,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "basic computer office skills certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -5077,7 +5177,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -5105,7 +5206,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "parenting/caregiving certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 3,
@@ -5132,7 +5234,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "medical transcription certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -5159,7 +5262,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "sterile processing technician certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -5197,7 +5301,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 13,
@@ -5224,7 +5329,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "irs volunteer income tax assistance (vita) program certificate of completion",
-    "section_fit": 0.833
+    "section_fit": 0.833,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -5275,7 +5381,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "dance teacher certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 27,
@@ -5310,7 +5417,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "data science certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 10,
@@ -5350,7 +5458,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "digital art and design: 2d animation certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 15,
@@ -5387,7 +5496,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "digital art and design: 3d modeling & animation certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 12,
@@ -5433,7 +5543,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "digital art and design: concept design certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 21,
@@ -5469,7 +5580,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "digital art and design: game art and animation certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 11,
@@ -5521,7 +5633,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 27,
@@ -5819,7 +5932,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "cal-getc ge requirements and certificate of achievement",
-    "section_fit": 0.5
+    "section_fit": 0.5,
+    "exact": 0
    }
   },
   "listed": 289,
@@ -5877,7 +5991,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 33,
@@ -5921,7 +6036,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 20,
@@ -5955,7 +6071,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "biotechnology laboratory assistant certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 9,
@@ -5991,7 +6108,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "biotechnology technician certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 11,
@@ -6018,7 +6136,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "fashion entrepreneurship certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -6062,7 +6181,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "communication studies 2.0, aa-t",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 19,
