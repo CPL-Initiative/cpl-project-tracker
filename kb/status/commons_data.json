@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-26T14:17:59Z",
+ "written_at": "2026-11-26T14:47:03Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17507,
-  "gap": 4828,
+  "passing": 17518,
+  "gap": 4817,
   "with_gap": 118,
-  "cost_usd": 1341.61,
-  "passed_at_read": 16455,
+  "cost_usd": 1341.62,
+  "passed_at_read": 16457,
   "cost_receipts": 118,
   "spent_usd": 1244.44,
   "spent_runs": 240,
@@ -189,9 +189,9 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16915,
-  "gap": 4828,
-  "collected_with_gaps": 592,
+  "passing": 16921,
+  "gap": 4817,
+  "collected_with_gaps": 597,
   "discontinued": 0
  },
  "census_live": {
@@ -8536,12 +8536,12 @@
    "harvested": true,
    "slug": "norco",
    "programs": 161,
-   "passing": 133,
-   "gap": 28,
+   "passing": 135,
+   "gap": 26,
    "causes": {
     "no_closed_list": 11,
     "page_not_found": 3,
-    "unknown_without_live": 14
+    "unknown_without_live": 12
    },
    "census_causes": {
     "course_added": 1,
@@ -8596,7 +8596,7 @@
    "read_seconds": 911.1,
    "run": "44765224865",
    "levers": {
-    "reconcile_steps": 14,
+    "reconcile_steps": 12,
     "program_course_file_check": 11,
     "reader_page_search": 3
    },
@@ -11618,13 +11618,13 @@
    "harvested": true,
    "slug": "solano_community",
    "programs": 171,
-   "passing": 136,
-   "gap": 35,
+   "passing": 145,
+   "gap": 26,
    "causes": {
     "no_closed_list": 8,
     "page_not_found": 7,
     "places_none": 2,
-    "unknown_without_live": 18
+    "unknown_without_live": 9
    },
    "census_causes": {
     "coverage_fails": 7,
@@ -11646,10 +11646,10 @@
    "outcomes_file": "kb/status/commons_data_programs/solano_community.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-21T08:12:26Z",
+   "read_at": "2026-11-26T14:33:58Z",
    "read_kind": "capture",
-   "cost_usd": 13.22,
-   "passed_at_read": 105,
+   "cost_usd": 13.23,
+   "passed_at_read": 107,
    "slo_queue": null,
    "scout": null,
    "spot_check": {
@@ -11672,11 +11672,11 @@
    "extracted": 156,
    "errors": 0,
    "failed_checks": {
-    "coverage": 9,
-    "invented": 7,
-    "arithmetic": 19,
+    "coverage": 3,
+    "invented": 0,
+    "arithmetic": 20,
     "repeated": 0,
-    "outcomes": 30
+    "outcomes": 32
    },
    "platform": "pdf",
    "catalog_year": "2026-2027",
@@ -11684,12 +11684,12 @@
    "capture_root": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 88.4,
-   "run": "44884569184",
+   "read_seconds": 100.5,
+   "run": "45840125172",
    "levers": {
-    "reconcile_steps": 16,
     "program_course_file_check": 8,
     "reader_page_search": 7,
+    "reconcile_steps": 7,
     "ge_units_steps": 2,
     "reader_page_assignment": 2
    },
@@ -11699,9 +11699,9 @@
      "models": {
       "claude-opus-5-5": 156
      },
-     "run": "44884569184",
-     "at": "2026-11-21T08:12:26Z",
-     "cost_usd": 13.22,
+     "run": "45840125172",
+     "at": "2026-11-26T14:33:58Z",
+     "cost_usd": 13.23,
      "platform": "pdf"
     },
     "slo_read": null,

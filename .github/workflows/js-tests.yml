@@ -1034,6 +1034,17 @@ jobs:
       - name: Cheap piles S739 at Cosumnes River (the census's piles, renames, named gaps, the plan)
         if: matrix.shard == 1
         run: python3 tests/program_piles_s739_cosumnes_test.py
+      # S740 at Norco (lane 1, the census's reconcile_steps lever): 14 records, 2 collected with lists_not_closed,
+      # 11 held for the flattened table (the curriQunet text loses where a 'Select one' group ends: a capture
+      # change, named and not made), 1 not collectable; the pages' own words from read 45835049303; the plan.
+      - name: Cheap piles S740 at Norco (the census's piles, the flattened table's holds, the plan)
+        if: matrix.shard == 1
+        run: python3 tests/program_piles_s740_norco_test.py
+      # S740 at Solano (lane 1): the lever's 14, 6 passed by the free reconcile 45840125172 (SOCI for SOC), 3 collected with
+      # named gaps (pool_figure_not_read, noted_figures_differ, total_not_printed from page read 45835049303), 5 held; the plan.
+      - name: Cheap piles S740 at Solano (the reconcile's six, named gaps, the own-page holds, the plan)
+        if: matrix.shard == 1
+        run: python3 tests/program_piles_s740_solano_test.py
       # S739 at Orange Coast: the 17 records s721b held, read again by key: 4 collected with named gaps (no new
       # kind), 13 held; 32737 and 36732 on their live run through a reread's kept keys; the plan.
       - name: Cheap piles S739 at Orange Coast (the earlier holds, named gaps, the plan)

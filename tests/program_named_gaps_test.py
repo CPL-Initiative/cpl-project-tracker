@@ -506,10 +506,12 @@ _tnp_sc = {"arithmetic": {"pass": False, "status": "incomplete", "why": [NG.NO_T
            "coverage": {"pass": True}, "invented": {"pass": True}}
 _tnp_rec = {"college": "Santa Monica College", "control_number": "45811", "score": _tnp_sc}
 # S703 adds Clovis's General Business 33433 (PDF pp.106-107 print each option's total, none for the major).
+# S740 adds Solano's Psychology A.A.-T 32917 (PDF p.413 prints the section whole, with no major total).
 check(sorted(_tnp) == sorted([("Santa Monica College", cn) for cn in ["37885", "45811", "45812", "45813", "45814",
-                                                                      "45815"]] + [("Clovis Community College", "33433")])
+                                                                      "45815"]] + [("Clovis Community College", "33433"),
+                                                                                   ("Solano Community College", "32917")])
       and all(e.get("page") and e.get("words") and e.get("evidence") and e.get("run") for e in _tnp.values()),
-      "the not-printed list holds Santa Monica's six and Clovis's 33433, each with its page and run")
+      "the not-printed list holds Santa Monica's six, Clovis's 33433 and Solano's 32917, each with its page and run")
 check(NG.answer(_tnp_rec)[0] == "total_not_printed" and NG.held_answer(_tnp_rec) == "total_not_printed",
       "a listed record naming no total takes total_not_printed")
 check(NG.total_not_printed(dict(_tnp_rec, control_number="45899")) is None,
@@ -540,10 +542,16 @@ for _p in sorted(_glob.glob(os.path.join(NG.COLLEGE_DIR, "*", "records", "*.json
 with open(os.path.join(ROOT, "kb", "receipts", "program_requirement_records_named_gaps_2026-11-22_s703pins.json"),
           encoding="utf-8") as _fh:
     _s703 = _json.load(_fh)
+# S740 (lane 1 at Solano, plan s740c2): Psychology A.A.-T 32917, by the same record rule inside its college's plan.
+with open(os.path.join(ROOT, "kb", "receipts",
+                       "program_requirement_records_piles_s739_solano_community_2026-11-26_s740c2.json"),
+          encoding="utf-8") as _fh:
+    _s740 = _json.load(_fh)
 _plan_tnp = {(r["college"], str(r["control_number"])) for r in _s697["records"]} | {
-    (r["college"], str(r["control_number"])) for r in _s703["records"] if r["gap"] == "total_not_printed"}
-check(_filed_tnp == _plan_tnp == _held_tnp == set(_tnp) and len(_plan_tnp) == 7,
-      "the applied gaps name exactly the self-recall's seven (filed %d, plans %d, held %d)"
+    (r["college"], str(r["control_number"])) for r in _s703["records"] if r["gap"] == "total_not_printed"} | {
+    (r["college"], str(r["control_number"])) for r in _s740["records"] if r["moves_to"] == "total_not_printed"}
+check(_filed_tnp == _plan_tnp == _held_tnp == set(_tnp) and len(_plan_tnp) == 8,
+      "the applied gaps name exactly the self-recall's eight (filed %d, plans %d, held %d)"
       % (len(_filed_tnp), len(_plan_tnp), len(_held_tnp)))
 check(_s697["only_gaps"] == ["total_not_printed"] and _s697["by_gap"] == {"total_not_printed": 6}
       and {r["gap"] for r in _s697["records"]} == {"total_not_printed"}, "the S697 plan moves total_not_printed alone")
