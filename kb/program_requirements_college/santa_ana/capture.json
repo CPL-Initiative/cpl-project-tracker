@@ -5,13 +5,11 @@
  "catalog_year": "2026-2027",
  "programs": 370,
  "with_closed_list": 359,
- "started": "2026-10-16T03:03:02Z",
+ "started": "2026-11-26T14:51:09Z",
  "curriqunet": {
   "catalog": 28,
   "view_prefix": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/",
-  "errors": [
-   "https://sac.curriqunet.com/Catalog/_getPage?catalogId=28&id=35002: APIRequestContext.get: socket hang up (ECONNRESET)"
-  ],
+  "errors": [],
   "sections": [
    "Degree & Certificate Types",
    "Noncredit Certificates",
@@ -21,19 +19,145 @@
   "calls": 141,
   "entries": 374,
   "stopped_at_cap": false,
-  "same_title_entries": 0,
-  "entries_read": 374
+  "same_title_entries": 1,
+  "entries_read": 374,
+  "twin_ids": {
+   "36269": [
+    36284
+   ]
+  },
+  "failed_calls": 0
  },
  "pages_read": 374,
+ "pages_listed": 374,
+ "pages_answered": 374,
+ "listing_failed": 0,
  "banner_h1": null,
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 337,
+   "hits": 186,
+   "recall": 0.552,
+   "false": 0,
+   "false_off_own": 0,
+   "false_no_claims": 0,
+   "shared": 11,
+   "false_matches": [],
+   "no_claims_matches": [],
+   "searches": false,
+   "catalog_list": null
+  },
+  "programs": 11,
+  "by_result": {
+   "not_searched": 10,
+   "not_matched": 1
+  },
+  "found": 0,
+  "found_active": 0,
+  "found_pages": 0,
+  "found_programs": [],
+  "other_programs": [
+   {
+    "control_number": "04254",
+    "title": "Anthropology",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 186 of 337 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04264",
+    "title": "Science",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 186 of 337 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "10565",
+    "title": "Business Administration",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 186 of 337 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "18115",
+    "title": "CSU General Education",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 186 of 337 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "18116",
+    "title": "IGETC",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "title_has_no_words"
+   },
+   {
+    "control_number": "24362",
+    "title": "Childcare Workers",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 186 of 337 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "32272",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 186 of 337 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "35217",
+    "title": "Transition to College Certificate of Competency",
+    "award": null,
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 186 of 337 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "43223",
+    "title": "Bus Operator/Driver",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 186 of 337 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "43832",
+    "title": "Science - Biology Emphasis",
+    "award": "A.S. Degree",
+    "status": "Approved",
+    "result": "not_searched",
+    "why": "the matcher found 186 of 337 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "44846",
+    "title": "California General Education Transfer Curriculum (Cal-GETC)",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 186 of 337 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   }
+  ],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
  "loads": 1636,
- "seconds": 7227.4,
- "found": 347,
+ "seconds": 7344.7,
+ "found": 348,
  "by_method": {
   "no_closed_list": 11,
   "not_found": 4,
-  "page_claimed": 8,
-  "sitemap_page": 347
+  "page_claimed": 7,
+  "sitemap_page": 348
  },
  "shared_pages": {
   "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36122/35925": [
@@ -83,7 +207,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "31594",
@@ -109,7 +234,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "32750",
@@ -135,7 +261,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "43824",
@@ -143,7 +270,8 @@
    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   }
  ],
  "page_claimed": [
@@ -153,33 +281,30 @@
    "award": "A.A. Degree",
    "pages": [
     "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36130/35926"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "04223",
    "title": "Art: Digital Media Arts",
    "award": "A.A. Degree",
    "pages": [
-    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36103/36080",
-    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36103/36082"
-   ]
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36103/36080"
+   ],
+   "status": "Active"
   },
   {
    "control_number": "21759",
    "title": "School Age Teacher",
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "pages": [
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36032",
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36120/36355",
     "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36026",
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36025",
     "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36027"
-   ]
-  },
-  {
-   "control_number": "32396",
-   "title": "Computer Science",
-   "award": "A.S. T Degree",
-   "pages": [
-    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36108/36007"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "40487",
@@ -191,7 +316,8 @@
     "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36072",
     "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36073",
     "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36067"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "41702",
@@ -199,8 +325,10 @@
    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
    "pages": [
     "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36120/36355",
-    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36027"
-   ]
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36027",
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36026"
+   ],
+   "status": "Active"
   },
   {
    "control_number": "42006",
@@ -212,7 +340,8 @@
     "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36283/36267",
     "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36283/36266",
     "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36142/35874"
-   ]
+   ],
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "46057",
@@ -226,17 +355,19 @@
     "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36031",
     "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36026",
     "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36027"
-   ]
+   ],
+   "status": "Active"
   }
  ],
+ "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 7,
-  "0.8-1.0": 74,
-  "1.0": 266
+  "0.5-0.8": 2,
+  "0.8-1.0": 32,
+  "1.0": 314
  },
  "would_extract": {
   "against": "kb/program_requirements_college/santa_ana",
-  "kept": 344,
+  "kept": 286,
   "kept_moved": 0,
   "programs": 1,
   "list": [
@@ -245,7 +376,7 @@
     "title": "Speech-Language Pathology Assistant",
     "award": "A.S. Degree",
     "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36152/36210",
-    "coverage": 0.941,
+    "coverage": 1.0,
     "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36152/36210",
     "was_coverage": 0.941,
     "was_method": "sitemap_page"
@@ -257,7 +388,7 @@
     "title": "Mathematics",
     "award": "A.S. T Degree",
     "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36137/36346",
-    "coverage": 0.6,
+    "coverage": 0.733,
     "was_coverage": 1.0
    },
    {
@@ -265,12 +396,607 @@
     "title": "Physics",
     "award": "A.S. T Degree",
     "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36148/36342",
-    "coverage": 0.667,
+    "coverage": 0.833,
     "was_coverage": 1.0
    }
   ],
   "held_no_gain": [],
   "held_opens_on_list": [],
+  "only": [
+   "12242"
+  ],
+  "not_named": [
+   {
+    "control_number": "04201",
+    "title": "Engineering",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36121/35958",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36121/35958",
+    "was_coverage": 0.882,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "04218",
+    "title": "Art",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36103/36080",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36103/36080",
+    "was_coverage": 0.958,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "04235",
+    "title": "Child Development - Emphasis in Early Childhood Education Teacher Preparation",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36025",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36025",
+    "was_coverage": 0.974,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "04239",
+    "title": "Communication Studies",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36110/36010",
+    "coverage": 0.929,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36110/36010",
+    "was_coverage": 0.857,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "04240",
+    "title": "Philosophy",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36146/35859",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36146/35859",
+    "was_coverage": 0.917,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "04242",
+    "title": "Mathematics",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36137/35884",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36137/35884",
+    "was_coverage": 0.867,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "04244",
+    "title": "Physics",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36148/36342",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36148/36342",
+    "was_coverage": 0.667,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "04245",
+    "title": "Chemistry",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36108/36007",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36108/36007",
+    "was_coverage": 0.833,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "04246",
+    "title": "Geology",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36128/35578",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36128/35578",
+    "was_coverage": 0.857,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "04250",
+    "title": "Child Development - Emphasis in Expanded Learning and Recreation",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36027",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36027",
+    "was_coverage": 0.97,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "04256",
+    "title": "Economics",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36119/35976",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36119/35976",
+    "was_coverage": 0.75,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "04257",
+    "title": "History",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36129/35911",
+    "coverage": 0.963,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36129/35911",
+    "was_coverage": 0.852,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "04258",
+    "title": "Geography",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36127/35922",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36127/35922",
+    "was_coverage": 0.944,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "04259",
+    "title": "Political Science",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36149/35856",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36149/35856",
+    "was_coverage": 0.931,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "07485",
+    "title": "Occupational Therapy Assistant",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36143/35869",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36143/35869",
+    "was_coverage": 0.968,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "08710",
+    "title": "American Sign Language",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36101/36087",
+    "coverage": 0.9,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36101/36087",
+    "was_coverage": 0.8,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "08743",
+    "title": "Child Development - Emphasis in Early Childhood and Elementary Teacher Preparation  (Pre-Professional)",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36026",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36026",
+    "was_coverage": 0.969,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "10665",
+    "title": "Graphic Design",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36103/36082",
+    "coverage": 0.92,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36103/36082",
+    "was_coverage": 0.84,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "17761",
+    "title": "Elementary Teacher Preparation (Pre-Professional)",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36120/35974",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36120/35974",
+    "was_coverage": 0.912,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "18580",
+    "title": "Liberal Arts American Studies Emphasis",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36283/36263",
+    "coverage": 0.99,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36283/36263",
+    "was_coverage": 0.969,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "18581",
+    "title": "Liberal Arts Arts, Humanities and Communications Emphasis",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36283/36264",
+    "coverage": 0.977,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36283/36264",
+    "was_coverage": 0.954,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "18582",
+    "title": "Liberal Arts Business and Technology Emphasis",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36283/36265",
+    "coverage": 0.971,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36283/36265",
+    "was_coverage": 0.886,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "18583",
+    "title": "Liberal Arts Mathematics and Science Emphasis",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36283/36267",
+    "coverage": 0.923,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36283/36267",
+    "was_coverage": 0.897,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "18584",
+    "title": "Liberal Arts Social and Behavioral Sciences Emphasis",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36283/36268",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36283/36268",
+    "was_coverage": 0.951,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "19268",
+    "title": "Liberal Arts Kinesiology and Wellness Emphasis",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36283/36266",
+    "coverage": 0.992,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36283/36266",
+    "was_coverage": 0.984,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "21758",
+    "title": "Computer Science",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36111/36015",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36111/36015",
+    "was_coverage": 0.857,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "21793",
+    "title": "Early Childhood Education Teacher",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36032",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36032",
+    "was_coverage": 0.95,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "21794",
+    "title": "Infant and Toddler Education and Development",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36033",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36033",
+    "was_coverage": 0.9,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "30640",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36151/36211",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36151/36211",
+    "was_coverage": 0.906,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "30670",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36150/35853",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36150/35853",
+    "was_coverage": 0.962,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "30752",
+    "title": "Human Services",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36461/36478",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36461/36478",
+    "was_coverage": 0.964,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "31859",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36149/35855",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36149/35855",
+    "was_coverage": 0.846,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "31887",
+    "title": "Elementary Teacher Education",
+    "award": "A.A- T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36120/36952",
+    "coverage": 0.943,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36120/36952",
+    "was_coverage": 0.914,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "32063",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36031",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36031",
+    "was_coverage": 0.933,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "32144",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36128/35577",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36128/35577",
+    "was_coverage": 0.778,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "32146",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36103/36081",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36103/36081",
+    "was_coverage": 0.9,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "32148",
+    "title": "Journalism",
+    "award": "A.A- T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36130/35927",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36130/35927",
+    "was_coverage": 0.944,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "32395",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36129/35912",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36129/35912",
+    "was_coverage": 0.917,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "32396",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36111/36016",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "32533",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36175/36270",
+    "coverage": 0.953,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36175/36270",
+    "was_coverage": 0.93,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "33855",
+    "title": "Pathway to Law School",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36132/35917",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36132/35917",
+    "was_coverage": 0.946,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "35021",
+    "title": "Chemistry",
+    "award": "A.S. T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36108/36007",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36108/36007",
+    "was_coverage": 0.889,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "35134",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36105/36039",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36105/36039",
+    "was_coverage": 0.923,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "35555",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36119/35977",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36119/35977",
+    "was_coverage": 0.833,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "35703",
+    "title": "CPA - Business Subjects",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36100/36095",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36100/36095",
+    "was_coverage": 0.889,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "39987",
+    "title": "Law, Public Policy and Society",
+    "award": "A.A- T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36132/35913",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36132/35913",
+    "was_coverage": 0.938,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "40382",
+    "title": "Communication Studies",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36110/36009",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36110/36009",
+    "was_coverage": 0.923,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "40653",
+    "title": "Hospitality Management",
+    "award": "A.S. T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36142/35873",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36142/35873",
+    "was_coverage": 0.941,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41540",
+    "title": "Engineering STEM Core",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36121/35971",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36121/35971",
+    "was_coverage": 0.818,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41698",
+    "title": "Developmentally Appropriate Discipline & Behavior Guidance for Young Children",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36028",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36028",
+    "was_coverage": 0.833,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41699",
+    "title": "Early Childhood Associate Teacher",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36030",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36030",
+    "was_coverage": 0.923,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41704",
+    "title": "Expanded Learning and Recreation Program Leader",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36120/36355",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36120/36355",
+    "was_coverage": 0.941,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41816",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36106/36282",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36106/36282",
+    "was_coverage": 0.857,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "43224",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36110/36011",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36110/36011",
+    "was_coverage": 0.96,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "45272",
+    "title": "Child and Adolescent Development",
+    "award": "A.A- T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/35574",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/35574",
+    "was_coverage": 0.909,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "46132",
+    "title": "Elementary Teacher Education:  Integrated Programs",
+    "award": "A.A- T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36120/35975",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36120/35975",
+    "was_coverage": 0.962,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "46216",
+    "title": "Social Work and Human Services",
+    "award": "A.A- T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36461/36463",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36461/36463",
+    "was_coverage": 0.891,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "46226",
+    "title": "Physics 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36148/36342",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36148/36342",
+    "was_coverage": 0.778,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "46269",
+    "title": "Mathematics 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36137/36346",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36137/36346",
+    "was_coverage": 0.833,
+    "was_method": "sitemap_page"
+   }
+  ],
   "refused_passing": [],
   "forced_unbound": []
  },
@@ -420,7 +1146,7 @@
    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36148/36342"
   },
   "04245": {
-   "sha256": "06a14f324bf222643cd3541332ec5bc9597aedbd5749b9e99c8094a7e028188f",
+   "sha256": "0b81245c3130b4f716ba8a986824ff8bdbceee40b645fb67a0d5b3bb0fc815d1",
    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36108/36007"
   },
   "04246": {
@@ -660,7 +1386,7 @@
    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36283/36263"
   },
   "18581": {
-   "sha256": "95e6d703c43fc10cd7c03ef4057296e7906bbfcee6b5af4babe89b668f416502",
+   "sha256": "123358e66cdfef2202211f2f95d9ea56946a9f9968ef1e4d055710365d178690",
    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36283/36264"
   },
   "18582": {
@@ -868,11 +1594,11 @@
    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36461/36478"
   },
   "31137": {
-   "sha256": "1fee2e07b9ddf75c6918b3e283275fef76d3cc158dd9cb772923fb26cd0793dc",
+   "sha256": "c9bf3db54602a1069794b36d78636b95be5e668252b59d4e2ca22ba6c9553e26",
    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36153/36222"
   },
   "31859": {
-   "sha256": "7bff338b72aab68049f265544a38a8e9f22b13268e7f8cd3bcc1d94d43b1a05b",
+   "sha256": "88f7c03cccd4eaef914fc95881d6b004755550cfa40cd8fff66c5fe4ad586603",
    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36149/35855"
   },
   "31887": {
@@ -900,7 +1626,7 @@
    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36131/35920"
   },
   "32144": {
-   "sha256": "437504ec2d50c2d4b248e2d323eb33139a3448a0dbba80d9440d6318595821e8",
+   "sha256": "483e116fde154f4b94c75df8956543a8b11ff64ec3d8602f02e020fc0280cff8",
    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36128/35577"
   },
   "32146": {
@@ -922,6 +1648,10 @@
   "32395": {
    "sha256": "7b5a25211579428157919d5d767a0b0cb62bfbe25f1ab104e3344944f4456a4f",
    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36129/35912"
+  },
+  "32396": {
+   "sha256": "8daa8594dd444dabeb025fd780c6df84fa80b738207384b7d5fd4edf8a4ffb81",
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36111/36016"
   },
   "32436": {
    "sha256": "bfcff2bffa3027daf2348105225760cb39025899bc934768caa5a36447c20942",
@@ -1008,7 +1738,7 @@
    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36108/36007"
   },
   "35134": {
-   "sha256": "e1fa2bf0e22800a4d33b37cddd2ba9cb0810e00209d4381c1f9c64d0a285fcaa",
+   "sha256": "b3f080a0b4eb959e78161658879623afa7e0b3b392747c2628d684f9ac978a4c",
    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36105/36039"
   },
   "35555": {
@@ -1416,7 +2146,7 @@
    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36153/36213"
   },
   "42818": {
-   "sha256": "824bbc7abdaa60452dca5bbfc98af3dc1472284fe8656f391d88a56fc9ff8939",
+   "sha256": "3936b462144d34f61feede5e63d0398bdaf2721d4f9fcaedcdfa9377d84b81d6",
    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36101/36088"
   },
   "42819": {
@@ -1664,10 +2394,5 @@
    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36100/36318"
   }
  },
- "staged_from": {
-  "run": "38843461766",
-  "proof": "the filed account equal but for its run, and 347 programs at their address and coverage",
-  "pages_loaded": 0
- },
- "run": "45841675928"
+ "run": "45842667274"
 }
