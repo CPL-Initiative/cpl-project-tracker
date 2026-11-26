@@ -30,7 +30,9 @@ El Camino's entry, the same way (college page reads 45772237973 and 45772822110)
     refuses (a transfer degree, a certificate, any other filed figure, a page without both sentences, ECC GE worded
     for another award), and the self-recall over the local degrees holding 24-34: it moves 02487's verdict alone.
   * Certificates 19861, 19866, 38948 and 43993 are pinned to their own pages (site_pages): each pin's address, rule
-    A binding the page's own heading, and the page printing at least the accept share of the listed courses.
+    A binding the page's own heading, and the page printing at least the accept share of the listed courses. The
+    capture's Acalog road does not read site_pages yet (read 45773663927 sent none of the four), so the pins are
+    pinned here as written and bind once that road reads them.
 
 A record another open branch may move is read in either state: the test strips ge_units from its own copy of 06683
 before the step runs, and sets 02487's to the filed 24-34, so it reads the same before and after a reconcile files
