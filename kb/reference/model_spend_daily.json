@@ -93,7 +93,7 @@
   "2026-11-23": 0.3,
   "2026-11-24": 2.9,
   "2026-11-25": 4.4,
-  "2026-11-26": 0.81
+  "2026-11-26": 1.93
  },
  "runner_runs": {
   "38322747831": {
@@ -1295,6 +1295,41 @@
    "college": "bakersfield",
    "usd": 0.06,
    "day": "2026-11-26"
+  },
+  "45840125172": {
+   "college": "solano_community",
+   "usd": 0.0,
+   "day": "2026-11-26"
+  },
+  "45840981324": {
+   "college": "san_jose_city",
+   "usd": 0.0,
+   "day": "2026-11-26"
+  },
+  "45842667274": {
+   "college": "santa_ana",
+   "usd": 0.11,
+   "day": "2026-11-26"
+  },
+  "45844530701": {
+   "college": "san_bernardino_valley",
+   "usd": 0.0,
+   "day": "2026-11-26"
+  },
+  "45847865286": {
+   "college": "ventura",
+   "usd": 0.0,
+   "day": "2026-11-26"
+  },
+  "45855512160": {
+   "college": "copper_mountain",
+   "usd": 0.75,
+   "day": "2026-11-26"
+  },
+  "45858495107": {
+   "college": "orange_coast",
+   "usd": 0.26,
+   "day": "2026-11-26"
   }
  },
  "runner_since": "2026-11-17",
@@ -1325,9 +1360,9 @@
    "sessions": 5,
    "not_available": 0,
    "tags": {
-    "curation": 136.0,
+    "collection": 256.0,
     "infrastructure": 109.9,
-    "collection": 256.0
+    "curation": 136.0
    },
    "untagged_usd": 0.0,
    "estimate_usd": 288.0
