@@ -162,6 +162,10 @@ def shared_with(cn: str) -> list[str]:
     return sorted({str(m) for v in sp.values() if str(cn) in [str(x) for x in v] for m in v if str(m) != str(cn)})
 
 
+# Plan tags posted_runs leaves out, set by a test that pins this plan's own reading: a later plan that collects
+# a record this one held for its live run posts that run once it is applied (s739j: 36732), and this plan's
+# reading is the receipts as they stood before it (p-test-reads-own-apply-receipt-s721).
+SKIP: tuple = ()
 _POSTED = None
 
 
@@ -194,7 +198,7 @@ def posted_runs() -> dict:
         else:
             # A plan's rows reached the live table only when its migration receipt was filed.
             tag = name[:-len(".json")].rsplit("_", 1)[-1]
-            if not glob.glob(os.path.join(NG.RECEIPTS, "migration_%s_prreq_*.json" % tag)):
+            if tag in SKIP or not glob.glob(os.path.join(NG.RECEIPTS, "migration_%s_prreq_*.json" % tag)):
                 continue
             rows = d.get("records") if isinstance(d.get("records"), list) else d.get("moved")
             for r in rows if isinstance(rows, list) else []:
