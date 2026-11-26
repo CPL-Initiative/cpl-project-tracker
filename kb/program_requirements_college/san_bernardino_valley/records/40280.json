@@ -60,20 +60,16 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
-   "computed": [
-    0.0,
-    0.0
-   ],
+   "pass": true,
+   "status": "equal",
+   "total_only": true,
+   "computed": null,
    "stated": [
     416.0,
     468.0
    ],
    "against": "program",
-   "why": [
-    "a required course in 'Required Courses' has no units"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -97,7 +93,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -211,7 +207,7 @@
    "Careers are read from the phrase 'careers as a pilot in general aviation, commercial aviation, or military aviation'. A reviewer should check whether 'pilot' and the aviation fields should be split as separate entries."
   ]
  },
- "extracted_run": 45844530701,
+ "extracted_run": 43355003065,
  "reconciled": [
   {
    "field": "hours_total_printed",
@@ -220,5 +216,5 @@
    "words": "Total Hours\t4"
   }
  ],
- "read_run": 43355003065
+ "read_run": "38748858322"
 }

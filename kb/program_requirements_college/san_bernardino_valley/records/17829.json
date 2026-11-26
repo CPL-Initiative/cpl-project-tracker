@@ -61,34 +61,35 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
     50.0,
     60.0
    ],
    "stated": [
-    60.0,
-    60.0
+    50.0,
+    63.0
    ],
-   "against": "degree",
-   "ge": null,
+   "against": "program",
    "why": [
-    "the record names the degree total and the SBVC General Education and Graduation Requirements or Cal-GETC - California General Education Transfer Curriculum pattern, but no units for it"
+    "the blocks sum to 50.0-60.0; the catalog states 50.0-63.0"
    ],
-   "major": {
-    "pass": true,
-    "status": "equal",
+   "degree": {
+    "pass": false,
+    "status": "incomplete",
     "computed": [
      50.0,
      60.0
     ],
     "stated": [
-     50.0,
-     63.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": [],
-    "short_high": true
+    "against": "degree",
+    "ge": null,
+    "why": [
+     "the record names the degree total and the SBVC General Education and Graduation Requirements or Cal-GETC - California General Education Transfer Curriculum pattern, but no units for it"
+    ]
    }
   },
   "repeated": {
@@ -439,6 +440,5 @@
    "Program learning outcomes taken from the page's outcomes tab."
   ]
  },
- "extracted_run": 45844530701,
- "read_run": "38748858322"
+ "extracted_run": "38748858322"
 }

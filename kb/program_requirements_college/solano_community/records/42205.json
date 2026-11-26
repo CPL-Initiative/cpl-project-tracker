@@ -82,15 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Comp leted the mandated clinic laboratory hours, technical subjects, pracƟ cal operaƟ ons and business fundamentals."
-   ],
-   "why": [
-    "not in the catalog text as printed: Comp leted the mandated clinic laboratory hours, technical subjects, pracƟ cal o"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -100,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -171,6 +167,5 @@
    "'cosmetologists' is taken from the description's phrase 'education and training of cosmetologists'; no separate careers heading is printed."
   ]
  },
- "extracted_run": 45840125172,
- "read_run": "39035226783"
+ "extracted_run": "39035226783"
 }
