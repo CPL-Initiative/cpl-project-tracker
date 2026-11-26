@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 248,
  "with_closed_list": 243,
- "started": "2026-11-11T17:53:38Z",
+ "started": "2026-11-26T08:16:19Z",
  "elumen": {
   "catalog": "2026-2027",
   "read": "publish/content",
@@ -32,12 +32,85 @@
   "walk_menus": 17,
   "walk_programs": 200,
   "walk_stopped_at_cap": true,
+  "program_pages_listed": 259,
+  "listing_failed": 0,
   "program_pages": 259
  },
  "pages_read": 259,
+ "pages_listed": 259,
+ "pages_answered": 259,
+ "listing_failed": 0,
  "banner_h1": null,
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 226,
+   "hits": 175,
+   "recall": 0.774,
+   "false": 0,
+   "false_off_own": 0,
+   "false_no_claims": 0,
+   "shared": 16,
+   "false_matches": [],
+   "no_claims_matches": [],
+   "searches": false,
+   "catalog_list": null
+  },
+  "programs": 5,
+  "by_result": {
+   "not_searched": 5
+  },
+  "found": 0,
+  "found_active": 0,
+  "found_pages": 0,
+  "found_programs": [],
+  "other_programs": [
+   {
+    "control_number": "10131",
+    "title": "Insurance and Coding",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 175 of 226 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "23075",
+    "title": "Automotive Chassis Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 175 of 226 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "30957",
+    "title": "Advanced Engine Performance Technology",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 175 of 226 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "39306",
+    "title": "Mandarin Translation and Interpretation",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 175 of 226 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "41183",
+    "title": "English as a Second Language Advanced Level",
+    "award": "Noncredit program",
+    "status": "Approved",
+    "result": "not_searched",
+    "why": "the matcher found 175 of 226 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   }
+  ],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
  "loads": 522,
- "seconds": 2213.4,
+ "seconds": 2168.8,
  "found": 242,
  "by_method": {
   "no_closed_list": 5,
@@ -103,368 +176,31 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   }
  ],
  "page_claimed": [],
+ "page_challenged": [],
  "coverage_bands": {
   "0.5-0.8": 1,
-  "0.8-1.0": 21,
-  "1.0": 220
+  "0.8-1.0": 9,
+  "1.0": 232
  },
  "would_extract": {
   "against": "kb/program_requirements_college/de_anza",
-  "kept": 196,
-  "programs": 46,
+  "kept": 209,
+  "kept_moved": 0,
+  "programs": 2,
   "list": [
-   {
-    "control_number": "05969",
-    "title": "Photographic Arts (Film and Digital)",
-    "award": "A.A. Degree",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/photographic-arts-film-and-digital-fall-2025",
-    "coverage": 1.0,
-    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/photographic-arts-film-and-digital-fall-2025",
-    "was_coverage": 0.842,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "05970",
-    "title": "Professional Photography (Film and Digital)",
-    "award": "A.A. Degree",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/professional-photography-film-and-digital-fall-2025",
-    "coverage": 1.0,
-    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/professional-photography-film-and-digital-fall-2025",
-    "was_coverage": 0.882,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "05971",
-    "title": "Graphic Design",
-    "award": "A.A. Degree",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/graphic-design-fall-2025",
-    "coverage": 1.0,
-    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/graphic-design-fall-2025",
-    "was_coverage": 0.952,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "05994",
-    "title": "Child Development",
-    "award": "A.A. Degree",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/child-development-fall-2025",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "07090",
-    "title": "Film/TV: Production",
-    "award": "A.A. Degree",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/film-tv-production-fall-2026v2",
-    "coverage": 0.938,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "07099",
-    "title": "Environmental Resource Management and Pollution Prevention",
-    "award": "A.A. Degree",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/environmental-resource-management-and-pollution-prevention-fall-2025",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "07102",
-    "title": "Paralegal Studies",
-    "award": "A.A. Degree",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/paralegal-studies-fall-2026v2",
-    "coverage": 1.0,
-    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/paralegal-studies-fall-2026v2",
-    "was_coverage": 0.98,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "09226",
-    "title": "Film/TV: Animation",
-    "award": "A.A. Degree",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/film-tv-animation-fall-2026",
-    "coverage": 0.957,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "10137",
-    "title": "Energy Management and Building Science",
-    "award": "A.S. Degree",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/energy-management-and-building-science-fall-2025v2",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "12827",
-    "title": "Child Development",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/child-development-fall-2022v2",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "15181",
-    "title": "Early Intervention/Special Education Assistant",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/early-intervention-special-education-assistant-fall-2026",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "15516",
-    "title": "Liberal Arts (Science, Math and Engineering Emphasis)",
-    "award": "A.A. Degree",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/liberal-arts-science-math-and-engineering-emphasis-fall-2026",
-    "coverage": 1.0,
-    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/liberal-arts-science-math-and-engineering-emphasis-fall-2026",
-    "was_coverage": 0.966,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "15964",
-    "title": "Liberal Arts (Social and Behavioral Sciences Emphasis)",
-    "award": "A.A. Degree",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/liberal-arts-social-and-behavioral-sciences-emphasis-fall-2026",
-    "coverage": 0.991,
-    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/liberal-arts-social-and-behavioral-sciences-emphasis-fall-2026",
-    "was_coverage": 0.845,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "15965",
-    "title": "Liberal Arts (Arts and Letters Emphasis)",
-    "award": "A.A. Degree",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/liberal-arts-arts-and-letters-emphasis-fall-2026",
-    "coverage": 0.984,
-    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/liberal-arts-arts-and-letters-emphasis-fall-2026",
-    "was_coverage": 0.895,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "16510",
-    "title": "Global Studies",
-    "award": "A.A. Degree",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/global-studies-fall-2026",
-    "coverage": 0.983,
-    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/global-studies-fall-2026",
-    "was_coverage": 0.922,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "16977",
-    "title": "Journalism",
-    "award": "A.A. Degree",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/journalism-fall-2026",
-    "coverage": 1.0,
-    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/journalism-fall-2026",
-    "was_coverage": 0.975,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "19521",
-    "title": "Environmental Resource Management and Pollution Prevention",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/environmental-resource-management-and-pollution-prevention-fall-2022v2",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "19530",
-    "title": "Early Childhood Mental Health",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/early-childhood-mental-health-fall-2026",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "19531",
-    "title": "Energy Management and Building Science",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/energy-management-and-building-science-fall-2025",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "19532",
-    "title": "Energy Management and Building Science",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/energy-management-and-building-science-fall-2025",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "23067",
-    "title": "Film/TV: Production",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/film-tv-production-fall-2026",
-    "coverage": 0.938,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "23090",
-    "title": "Graphic Design",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/graphic-design-fall-2024",
-    "coverage": 1.0,
-    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/graphic-design-fall-2024",
-    "was_coverage": 0.952,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "23093",
-    "title": "Child Development",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/child-development-fall-2022",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "23094",
-    "title": "Paralegal Studies",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/paralegal-studies-fall-2026",
-    "coverage": 1.0,
-    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/paralegal-studies-fall-2026",
-    "was_coverage": 0.98,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "23097",
-    "title": "Global Studies",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/global-studies-fall-2026v2",
-    "coverage": 0.968,
-    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/global-studies-fall-2026v2",
-    "was_coverage": 0.952,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "31308",
-    "title": "Film/TV: Screenwriting",
-    "award": "A.A. Degree",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/film-tv-screenwriting-fall-2026",
-    "coverage": 0.962,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
    {
     "control_number": "31504",
     "title": "Film/TV: Production",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/film-tv-production-fall-2026",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "31820",
-    "title": "Political Science",
-    "award": "A.A- T Degree",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/political-science-for-transfer-fall-2026",
-    "coverage": 0.943,
-    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/political-science-for-transfer-fall-2026",
-    "was_coverage": 0.914,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "32006",
-    "title": "Early Childhood Education",
-    "award": "A.S. T Degree",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/early-childhood-education-for-transfer-fall-2025",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "35730",
-    "title": "Environmental Resource Management and Pollution Prevention",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/environmental-resource-management-and-pollution-prevention-fall-2022v2",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "35922",
-    "title": "Facility and Sustainable Building Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/facility-and-sustainable-building-management-fall-2025v2",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "35923",
-    "title": "Facility and Sustainable Building Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/facility-and-sustainable-building-management-fall-2025v2",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "35924",
-    "title": "Facility and Sustainable Building Management",
-    "award": "A.S. Degree",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/facility-and-sustainable-building-management-fall-2025v2v3",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "36263",
-    "title": "Leadership and Social Change",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/leadership-and-social-change-fall-2026",
-    "coverage": 0.904,
-    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/leadership-and-social-change-fall-2026",
-    "was_coverage": 0.892,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "36264",
-    "title": "Liberal Arts (Business and Computer Information Systems Emphasis)",
-    "award": "A.A. Degree",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/liberal-arts-business-and-computer-information-systems-emphasis-fall-2026",
-    "coverage": 0.985,
-    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/liberal-arts-business-and-computer-information-systems-emphasis-fall-2026",
-    "was_coverage": 0.946,
+    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/film-tv-production-fall-2026",
+    "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
    {
@@ -473,111 +209,1302 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/film-tv-animation-fall-2024",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "41858",
-    "title": "French Language and Culture",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/french-language-and-culture-fall-2025",
-    "coverage": 1.0,
-    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/french-language-and-culture-fall-2025",
-    "was_coverage": 0.733,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "41859",
-    "title": "German Language and Culture",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/german-language-and-culture-fall-2026",
-    "coverage": 1.0,
-    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/german-language-and-culture-fall-2026",
-    "was_coverage": 0.857,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "41860",
-    "title": "Italian Language and Culture",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/italian-language-and-culture-fall-2025",
-    "coverage": 1.0,
-    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/italian-language-and-culture-fall-2025",
-    "was_coverage": 0.9,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "41862",
-    "title": "Russian Language and Culture",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/russian-language-and-culture-fall-2025",
-    "coverage": 1.0,
-    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/russian-language-and-culture-fall-2025",
-    "was_coverage": 0.875,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "41863",
-    "title": "Spanish Language and Culture",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/spanish-language-and-culture-fall-2025",
-    "coverage": 1.0,
-    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/spanish-language-and-culture-fall-2025",
-    "was_coverage": 0.917,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "41864",
-    "title": "World Languages and Culture",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/world-languages-and-culture-fall-2026",
-    "coverage": 0.967,
-    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/world-languages-and-culture-fall-2026",
-    "was_coverage": 0.9,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "45561",
-    "title": "Illustration",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/illustration-fall-2025",
-    "coverage": 1.0,
-    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/illustration-fall-2025",
-    "was_coverage": 0.864,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "45563",
-    "title": "Illustration",
-    "award": "A.A. Degree",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/illustration-fall-2025v2",
-    "coverage": 1.0,
-    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/illustration-fall-2025v2",
-    "was_coverage": 0.85,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "46316",
-    "title": "Community Impact",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/community-impact-fall-2026",
-    "coverage": 1.0,
-    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/community-impact-fall-2026",
-    "was_coverage": 0.952,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "46513",
-    "title": "Leadership and Social Change",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/leadership-and-social-change-fall-2026",
-    "coverage": 1.0,
-    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/leadership-and-social-change-fall-2026",
-    "was_coverage": 0.987,
+    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/film-tv-animation-fall-2024",
+    "was_coverage": 1.0,
     "was_method": "sitemap_page"
    }
-  ]
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "only": [
+   "31504",
+   "41327"
+  ],
+  "not_named": [
+   {
+    "control_number": "05994",
+    "title": "Child Development",
+    "award": "A.A. Degree",
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/child-development-fall-2025",
+    "coverage": 1.0,
+    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/child-development-fall-2025",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "07090",
+    "title": "Film/TV: Production",
+    "award": "A.A. Degree",
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/film-tv-production-fall-2026v2",
+    "coverage": 0.953,
+    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/film-tv-production-fall-2026v2",
+    "was_coverage": 0.938,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "07099",
+    "title": "Environmental Resource Management and Pollution Prevention",
+    "award": "A.A. Degree",
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/environmental-resource-management-and-pollution-prevention-fall-2025",
+    "coverage": 1.0,
+    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/environmental-resource-management-and-pollution-prevention-fall-2025",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "09226",
+    "title": "Film/TV: Animation",
+    "award": "A.A. Degree",
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/film-tv-animation-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/film-tv-animation-fall-2026",
+    "was_coverage": 0.957,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "10137",
+    "title": "Energy Management and Building Science",
+    "award": "A.S. Degree",
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/energy-management-and-building-science-fall-2025v2",
+    "coverage": 1.0,
+    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/energy-management-and-building-science-fall-2025v2",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "12827",
+    "title": "Child Development",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/child-development-fall-2022v2",
+    "coverage": 1.0,
+    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/child-development-fall-2022v2",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "15181",
+    "title": "Early Intervention/Special Education Assistant",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/early-intervention-special-education-assistant-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/early-intervention-special-education-assistant-fall-2026",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "15964",
+    "title": "Liberal Arts (Social and Behavioral Sciences Emphasis)",
+    "award": "A.A. Degree",
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/liberal-arts-social-and-behavioral-sciences-emphasis-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/liberal-arts-social-and-behavioral-sciences-emphasis-fall-2026",
+    "was_coverage": 0.991,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "15965",
+    "title": "Liberal Arts (Arts and Letters Emphasis)",
+    "award": "A.A. Degree",
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/liberal-arts-arts-and-letters-emphasis-fall-2026",
+    "coverage": 0.99,
+    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/liberal-arts-arts-and-letters-emphasis-fall-2026",
+    "was_coverage": 0.984,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "16510",
+    "title": "Global Studies",
+    "award": "A.A. Degree",
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/global-studies-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/global-studies-fall-2026",
+    "was_coverage": 0.983,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "18004",
+    "title": "Management",
+    "award": "A.A. Degree",
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/management-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/management-fall-2026",
+    "was_coverage": 0.909,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "19521",
+    "title": "Environmental Resource Management and Pollution Prevention",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/environmental-resource-management-and-pollution-prevention-fall-2022v2",
+    "coverage": 1.0,
+    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/environmental-resource-management-and-pollution-prevention-fall-2022v2",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "19530",
+    "title": "Early Childhood Mental Health",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/early-childhood-mental-health-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/early-childhood-mental-health-fall-2026",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "19531",
+    "title": "Energy Management and Building Science",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/energy-management-and-building-science-fall-2025",
+    "coverage": 1.0,
+    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/energy-management-and-building-science-fall-2025",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "19532",
+    "title": "Energy Management and Building Science",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/energy-management-and-building-science-fall-2025",
+    "coverage": 1.0,
+    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/energy-management-and-building-science-fall-2025",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "23067",
+    "title": "Film/TV: Production",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/film-tv-production-fall-2026",
+    "coverage": 0.953,
+    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/film-tv-production-fall-2026",
+    "was_coverage": 0.938,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "23093",
+    "title": "Child Development",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/child-development-fall-2022",
+    "coverage": 1.0,
+    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/child-development-fall-2022",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "23097",
+    "title": "Global Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/global-studies-fall-2026v2",
+    "coverage": 1.0,
+    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/global-studies-fall-2026v2",
+    "was_coverage": 0.968,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "31308",
+    "title": "Film/TV: Screenwriting",
+    "award": "A.A. Degree",
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/film-tv-screenwriting-fall-2026",
+    "coverage": 0.981,
+    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/film-tv-screenwriting-fall-2026",
+    "was_coverage": 0.962,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "31820",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/political-science-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/political-science-for-transfer-fall-2026",
+    "was_coverage": 0.943,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "32006",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/early-childhood-education-for-transfer-fall-2025",
+    "coverage": 1.0,
+    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/early-childhood-education-for-transfer-fall-2025",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "33338",
+    "title": "Journalism",
+    "award": "A.A- T Degree",
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/journalism-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/journalism-for-transfer-fall-2026",
+    "was_coverage": 0.92,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "35500",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/economics-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/economics-for-transfer-fall-2026",
+    "was_coverage": 0.931,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "35730",
+    "title": "Environmental Resource Management and Pollution Prevention",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/environmental-resource-management-and-pollution-prevention-fall-2022v2",
+    "coverage": 1.0,
+    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/environmental-resource-management-and-pollution-prevention-fall-2022v2",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "35922",
+    "title": "Facility and Sustainable Building Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/facility-and-sustainable-building-management-fall-2025v2",
+    "coverage": 1.0,
+    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/facility-and-sustainable-building-management-fall-2025v2",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "35923",
+    "title": "Facility and Sustainable Building Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/facility-and-sustainable-building-management-fall-2025v2",
+    "coverage": 1.0,
+    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/facility-and-sustainable-building-management-fall-2025v2",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "35924",
+    "title": "Facility and Sustainable Building Management",
+    "award": "A.S. Degree",
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/facility-and-sustainable-building-management-fall-2025v2v3",
+    "coverage": 1.0,
+    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/facility-and-sustainable-building-management-fall-2025v2v3",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "36264",
+    "title": "Liberal Arts (Business and Computer Information Systems Emphasis)",
+    "award": "A.A. Degree",
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/liberal-arts-business-and-computer-information-systems-emphasis-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/liberal-arts-business-and-computer-information-systems-emphasis-fall-2026",
+    "was_coverage": 0.985,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "39390",
+    "title": "Law, Public Policy, and Society",
+    "award": "A.A- T Degree",
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/law-public-policy-and-society-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/law-public-policy-and-society-for-transfer-fall-2026",
+    "was_coverage": 0.953,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41792",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/business-administration-2-0-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/business-administration-2-0-for-transfer-fall-2026",
+    "was_coverage": 0.882,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "44325",
+    "title": "Global Studies",
+    "award": "A.A- T Degree",
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/global-studies-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/global-studies-for-transfer-fall-2026",
+    "was_coverage": 0.931,
+    "was_method": "sitemap_page"
+   }
+  ],
+  "refused_passing": [],
+  "forced_unbound": []
  },
- "run": "43072075772"
+ "fingerprints": {
+  "05951": {
+   "sha256": "a1a8377ff590003468832afec33a818cfe9b2a82ec6d3bffc79e05075dcab660",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/accounting-fall-2026"
+  },
+  "05952": {
+   "sha256": "8f32ac13a816381b890b2a77093bc5f0e10cda5f36c1b017bdd68f952f5d845a",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/business-administration-fall-2026v2"
+  },
+  "05954": {
+   "sha256": "7b54cc474614a6d94af257fa44e668482dd27f100d851f535067f90d32a2272f",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/real-estate-fall-2025"
+  },
+  "05962": {
+   "sha256": "6d5307e6459515572eced71c33968bcad72d44675a4765a260dc2b5959309a74",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-machining-and-engine-repair-fall-2026v2"
+  },
+  "05965": {
+   "sha256": "ff3e4e6773c241aee72acca89d36875add3b6071dafee84d08ead4f8c844c53b",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/art-history-fall-2026v2"
+  },
+  "05966": {
+   "sha256": "65fe92a6f7104854e5bb383357bf113349b79d86448da665cf4edc713fe17c39",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/music-fall-2026"
+  },
+  "05969": {
+   "sha256": "bb1fc6fb371dc67ac71ab5ac19465f94f9909d57b1859905142e97bec0d793d3",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/photographic-arts-film-and-digital-fall-2025"
+  },
+  "05970": {
+   "sha256": "3e5b52e14a82200d2064543253ad8ddac8792de8cd60a6b0cb494314c9915a16",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/professional-photography-film-and-digital-fall-2025"
+  },
+  "05971": {
+   "sha256": "2030090efe45e76b5817026b660e4898449f8234375c8e5cff0426daf33d5f81",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/graphic-design-fall-2025"
+  },
+  "05980": {
+   "sha256": "1531f94afcf4fdc126747631e00e071408a11de957dfcecd9dcd0479aea0fc1c",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/medical-assisting-fall-2025v2"
+  },
+  "05983": {
+   "sha256": "c0a69a5ed2b0f3d68ba91ce85df6e62c430cce061457a6ea4ce2392977e3e80d",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/communication-studies-fall-2025"
+  },
+  "05992": {
+   "sha256": "b0cb055589af90d6f01cef0fba0c08a1de9c1af957d59a8b5e1123401e4e54bc",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/law-enforcement-fall-2026"
+  },
+  "05993": {
+   "sha256": "40c9ceb687d8239898c5944e9f46ff32421bae8855098624aa9ba991beef6d39",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/corrections-probation-fall-2026"
+  },
+  "05994": {
+   "sha256": "ea1b390145036702a8a9f4e6ee02ce4d8ad9d1721a70bf2db66b818107bba175",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/child-development-fall-2025"
+  },
+  "05996": {
+   "sha256": "e81df5666322652156ca347569c311c021549987088addddfb491eaa5cfcfebb",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/intercultural-studies-fall-2026"
+  },
+  "06005": {
+   "sha256": "aff684d4c1ad25c8255e36115b95cff5050064027fb7a5585f83c571464afe4c",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/marketing-management-fall-2026"
+  },
+  "06006": {
+   "sha256": "dd251a1897cea4ce6c1bf83b149f8ba9ac21530876f454b8b938179327a658a6",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/business-programming-fall-2026"
+  },
+  "07090": {
+   "sha256": "d527222ab1f8a7d03969ffd53a093f6a36d0d4e33534d7d1ac35ff800463fea7",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/film-tv-production-fall-2026v2"
+  },
+  "07091": {
+   "sha256": "c480f7d01beba68bccc26bc5c18e172c6705b6aa8be218da426e89824c98ef10",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-powertrain-technology-fall-2025"
+  },
+  "07099": {
+   "sha256": "1006616da291a112d37c69cbbd9bde9db6257bc658a7b2753eabf721617b31a7",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/environmental-resource-management-and-pollution-prevention-fall-2025"
+  },
+  "07101": {
+   "sha256": "3e025f9e5c60347670bee2a45b2e9433a44d76b5769a638914c1a822116140e1",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/registered-nurse-rn-fall-2026"
+  },
+  "07102": {
+   "sha256": "49d01ba1931e9eccaf5caf6290903a8ca263c2aa79f79dc376a2785bed318319",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/paralegal-studies-fall-2026v2"
+  },
+  "07103": {
+   "sha256": "82db374ee8dce7e95689efec47b573ba3b339cda2a01bbaa6dd4fab54426c57b",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/private-security-fall-2026v2"
+  },
+  "09226": {
+   "sha256": "f6acdd53b00bcd8f9117d25820665558b4fbe7eb38033dd18afed2cc12b6c451",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/film-tv-animation-fall-2026"
+  },
+  "10108": {
+   "sha256": "9597124a3d1b6bb4019c68036a413d3b9cbe00db896b65c8f3ca7649c2e13fce",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/accounting-fall-2026v2"
+  },
+  "10112": {
+   "sha256": "16d94302485ea10672245abd067b5ef476354c17f5e8913a91a1366f33167ada",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/systems-programming-fall-2026v2"
+  },
+  "10114": {
+   "sha256": "9b86c5553882b6d4892b3c7a72d8c07c18e683cd8b316993a1d163485457a294",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/network-administration-fall-2025"
+  },
+  "10117": {
+   "sha256": "53ff41c33f4428859aff5b2a0e6918c678a9252cad0d1ec7ceef707761ce1ee1",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-machining-and-engine-repair-technology-fall-2025"
+  },
+  "10118": {
+   "sha256": "792a9ae2da1d3f01bf3d5e5672c21b474171d16bdd88a8513f05ce857a98dfba",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-chassis-technology-fall-2025v2"
+  },
+  "10121": {
+   "sha256": "a23649213756ea616eb4009931c3cab2744794054705c33394f71cbe071c2df6",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/advanced-manufacturing-and-prototyping-technician-fall-2025"
+  },
+  "10122": {
+   "sha256": "490db74cbd9ae05d1230abf00f0147b7c8e28cf36112c9f93e3dc137df326068",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/cnc-research-and-development-machinist-fall-2025"
+  },
+  "10124": {
+   "sha256": "499c6f6ade5582b7eb334119ea13a1b178f75460f28b50a829c034bbaee1f53e",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/ceramics-fall-2026"
+  },
+  "10125": {
+   "sha256": "a7a6e41d02bb9d8a81b2f639ab9a150462e471f627b7b44ca715613274b7e257",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/painting-fall-2026"
+  },
+  "10127": {
+   "sha256": "aa65c768ef4afedef9dfca2ce33efd025895422fe1394d26d5c4701a00b7ac0b",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/sculpture-fall-2025"
+  },
+  "10132": {
+   "sha256": "07e3bc0d0d9d70975fec8fb006060d8d5a898b0f46126639ee7002f34310a0aa",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/lab-assisting-fall-2024"
+  },
+  "10133": {
+   "sha256": "2db4235d055fcb08e69871c05b74410e7cad48d067c3034508675616103975ad",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/medical-reception-fall-2025"
+  },
+  "10134": {
+   "sha256": "7a93051eb5c237f77804882aad9e17c07f97e92ff013bccd2f678634f11cafc0",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/medical-transcribing-with-editing-fall-2022"
+  },
+  "10135": {
+   "sha256": "9b8c7e86f44e4c267834b9b424509e2df4d3f14a7bbb27d08c1c5f62276b8fad",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/phlebotomy-technician-i-fall-2022"
+  },
+  "10137": {
+   "sha256": "b349d2a1fe1be54901e9dc7f60627dee4af579fe2c1024fbcab2689b32883588",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/energy-management-and-building-science-fall-2025v2"
+  },
+  "10416": {
+   "sha256": "24949fa7f19cbb6844e8171599b9eda9c7aca5855759fe709193a9079d57f136",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/medical-file-clerk-fall-2022"
+  },
+  "10417": {
+   "sha256": "81823fdd84068a9ae13def6b504fc571d5d797ddce1cc393a0c34d5c6000dffc",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/medical-records-clerk-fall-2022"
+  },
+  "11040": {
+   "sha256": "5827076c2a309544703aef2c339ff84aa7d4f3cc2ea46fe2785ddf9e7e99abc8",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/network-programming-fall-2026v2"
+  },
+  "11778": {
+   "sha256": "b33ad03a209b1b90190a952f915b3948fd8fe624f52f783435f7ae5b7a188213",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-engine-performance-fall-2026"
+  },
+  "11779": {
+   "sha256": "18b059a100c3638ea6c5c92cf5cd7b3b1575026d53fe0ce0131fb9eb6f63fbb2",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-chassis-and-powertrain-fall-2026"
+  },
+  "11784": {
+   "sha256": "d0277760dc9107ba3c2b142f30b6e6b1d25f77d3d4cd90b3322a718da74f043f",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/advanced-engine-performance-technology-fall-2025"
+  },
+  "12199": {
+   "sha256": "a00eb9ed72f6df86384dc727224b41a358539dd3ebfb44bcd2072e27a3165812",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/network-administration-fall-2026v2"
+  },
+  "12727": {
+   "sha256": "f770ce294ac2fbf1273e0cb9d1896f419a9a67fb50e017d5a2107ff09e4201dd",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/biological-sciences-fall-2025"
+  },
+  "12821": {
+   "sha256": "df4e699f91b215a674fd39bcad7c3525ecba9c251c8c54d944efafaf5ffe08eb",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/lvn-transition-to-rn-fall-2026"
+  },
+  "12827": {
+   "sha256": "8b8a649e2a88cf6a262dbad100016d2a6127a187ecc8cf3d76151322addbc682",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/child-development-fall-2022v2"
+  },
+  "12869": {
+   "sha256": "d3958934bc5b23452876d57e1056d843aee4bfff2a3dfed57292db91572c50f8",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/business-office-clerk-fall-2022"
+  },
+  "15181": {
+   "sha256": "81e840f8af76424036bc7b1f54339b47d58aae52ef7432adc2b49929ad836fcc",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/early-intervention-special-education-assistant-fall-2026"
+  },
+  "15516": {
+   "sha256": "99e2362fd61441798f68ef428b3c7a7fab4e6467b72c437e76ea81ab497482a2",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/liberal-arts-science-math-and-engineering-emphasis-fall-2026"
+  },
+  "15964": {
+   "sha256": "b9f39beefb55f625bc469e44b581851513c29cc9b581da9c55c7f1c56ac6ee37",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/liberal-arts-social-and-behavioral-sciences-emphasis-fall-2026"
+  },
+  "15965": {
+   "sha256": "eea0b07595b47bdaea2cd86d0c136f0361ad7321d67a63993c841ad19d17cdc3",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/liberal-arts-arts-and-letters-emphasis-fall-2026"
+  },
+  "16510": {
+   "sha256": "f6a8e69e8789435fb06439935015e7655f1331ae52996336e2ef3d1b4a6ef404",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/global-studies-fall-2026"
+  },
+  "16757": {
+   "sha256": "6aa1d2a28f8c8b1ba1693b96ccb496b3dea2b31c57382973b2b0b3cabd1444d8",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/medical-laboratory-technology-fall-2026v2"
+  },
+  "16759": {
+   "sha256": "3347ac947c8a956e68cf6ad31e931169e0c9ab8f7add2e1489d273307ccb2a2f",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/cnc-machinist-fall-2024"
+  },
+  "16975": {
+   "sha256": "456933380e52ce6d1572adb838788d2f1b629f8fde8e3405afc8831963f6751a",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/cybersecurity-fall-2025"
+  },
+  "16977": {
+   "sha256": "6b03e078be76e4818c85675c3377f515ccf9634723f2eddb8b6c267cecc8f336",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/journalism-fall-2026"
+  },
+  "18004": {
+   "sha256": "515b7c553bc92fa6644f45ef5e6ca25e54c37f5a7ecf473b2828ae46d4b73372",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/management-fall-2026"
+  },
+  "18850": {
+   "sha256": "8d7bf679ff3b643ea0465c456021a554382e9279f138dc0b97e6851e9dfc54ba",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/cnc-machinist-fall-2025"
+  },
+  "19291": {
+   "sha256": "44b747fc607cfcf5d31afaf80e4de48591f9b7da08ba45d6d5e4073766324f4e",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/management-fall-2026v2"
+  },
+  "19521": {
+   "sha256": "5a8ae9ff94a5ba932b783c556ed8977eba80929ba23068ad150706febfba3d84",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/environmental-resource-management-and-pollution-prevention-fall-2022v2"
+  },
+  "19523": {
+   "sha256": "fd57f26628a37498ecb28f7e36b806966abfb40b69946c217c87bc8773e59fff",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/entrepreneurship-fall-2022"
+  },
+  "19530": {
+   "sha256": "191778bdfe456b4724a03a5a4ac36a5f14c52bbbffd91899620bce24d456ac33",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/early-childhood-mental-health-fall-2026"
+  },
+  "19531": {
+   "sha256": "106043b097bdd4fc76644e8260a874678cebffb0cc512d8af60ea29be6e6c33c",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/energy-management-and-building-science-fall-2025"
+  },
+  "19532": {
+   "sha256": "d7df7fcba878f3b09acaebee7a3c346a92634bcbc6ab864b5eea4e092171b18d",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/energy-management-and-building-science-fall-2025"
+  },
+  "19534": {
+   "sha256": "819bc8da982659e3ec5e76e316b0e4ebb36cd238d7f7d2a8ab7b339554c97b5c",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/medical-assisting-fall-2025"
+  },
+  "19536": {
+   "sha256": "9a39ad28b93e6b15cbed3ce5c59f18a3dd368a6ad5b68252f9f5ad4309a9a294",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/marketing-management-fall-2026v2"
+  },
+  "19537": {
+   "sha256": "b8b27e4157649618bfa951c7c42861adaae220fbf54cbccfc21a6da9551c4747",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/project-management-practitioner-fall-2022"
+  },
+  "19540": {
+   "sha256": "c9a9f1e75377b2ddabb9e7b93551a3c857d11a76c9bfb42b564216c35be3f90a",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/network-administration-fall-2026"
+  },
+  "19846": {
+   "sha256": "95a152618e77dcbb671be4aa37a4dee5c73c0b6ee61d6d653c1163470e35c25c",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/database-development-practitioner-fall-2026v2"
+  },
+  "23063": {
+   "sha256": "6af21a14121edafd861a116be6eb6eb6c8ee0443931cd7de885584c4fa2f6786",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/accounting-fall-2026v2v3"
+  },
+  "23065": {
+   "sha256": "3c2def7fbb0ae6474db3720a3836ba46360af924fcac137d17b4999ced9eb58d",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/real-estate-fall-2026"
+  },
+  "23067": {
+   "sha256": "6868adb896ad51bce259b5a550f706144c79b085173f3576c8ea9fc8392eff11",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/film-tv-production-fall-2026"
+  },
+  "23070": {
+   "sha256": "347425cbdc2dabbf58fdbb8879ecdcb85c6ca79803f5ca4477786c6709f680bc",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/business-programming-fall-2026v2"
+  },
+  "23071": {
+   "sha256": "493460752f30a6ab899a6986d5ad1b377131d16f591e34907e10785cb71af716",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/systems-programming-fall-2026"
+  },
+  "23072": {
+   "sha256": "0e59898fa404db238a777680be1829b5339c924e29e7f892671ac906c95d3700",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/network-programming-fall-2026"
+  },
+  "23073": {
+   "sha256": "9339525a9bba1b4009f97e621e49589a5f2fabee0b1ffb31e425fbcf6e003fde",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/cybersecurity-fall-2025v2v3"
+  },
+  "23077": {
+   "sha256": "22aea0a705266f1f8b6e060064883c7a4f15a6dbfc9e564fba1e6e71b8c7e29e",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/advanced-engine-performance-technology-fall-2022v2"
+  },
+  "23078": {
+   "sha256": "c61fbbc932d635d018b290fbcc8611a7ca39ac33d46af07aa5c470bf4f5436e3",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-machining-and-engine-repair-technology-fall-2022v2"
+  },
+  "23079": {
+   "sha256": "53ca7e3825bc76433ef828f0b3447249435440bd3b82aac7de2db14bf0707b0e",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-powertrain-technology-fall-2025v2"
+  },
+  "23080": {
+   "sha256": "e245acaff5f3faee15db99cdcd79546e1f9327298f831ea75011bb1f704e2ea0",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-chassis-and-powertrain-fall-2026v2"
+  },
+  "23081": {
+   "sha256": "f9fffb0f8c08bbc2260310364b9012d718866b2fa41d681ec983ff33a95dd2d3",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-engine-performance-fall-2026v2"
+  },
+  "23082": {
+   "sha256": "dc17a8670c03f50e33377ac64d5b16973cbc0635b38c40dc09e1f66b2b9942a5",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-machining-and-engine-repair-fall-2026"
+  },
+  "23083": {
+   "sha256": "8f8b679714b0e7a4a936ee299005782b43fb32536b93a35ef29110793b6c3532",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/computer-aided-design-mechanical-fall-2025"
+  },
+  "23084": {
+   "sha256": "633429ee8ccedc724face2f93d9c85e3e475e75f2167759765cb6fe4304194c4",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/advanced-manufacturing-and-prototyping-technician-fall-2024"
+  },
+  "23085": {
+   "sha256": "4c219efee6da8b0db86162d91dc5302708771fb8fb70e82b1fc94c8541777131",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/cnc-research-and-development-machinist-fall-2025v2"
+  },
+  "23086": {
+   "sha256": "9eaffe49cc974025270b6d0ad564d7ea8627b5f19205949221fb7cd5a3aac35f",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/art-history-fall-2026"
+  },
+  "23090": {
+   "sha256": "ae704645c3b7990b6cb116ee137829caea6ced8683addc8c1873c1a24fb96690",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/graphic-design-fall-2024"
+  },
+  "23092": {
+   "sha256": "e60c55f51e6b072b8d4342242a4a8312fff5761a14277847489c7e40658c92d1",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/medical-laboratory-technology-fall-2026"
+  },
+  "23093": {
+   "sha256": "84d0decbe1b684dde3ebb8447c188bf0bad85fe9f3b62fdc3b53a18c3f42b15e",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/child-development-fall-2022"
+  },
+  "23094": {
+   "sha256": "0c1ceb22f6fc97a351c661d9748a0b6e055b19d649d9db94e162e7c2e9e19241",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/paralegal-studies-fall-2026"
+  },
+  "23095": {
+   "sha256": "b4bed64b385e5f36d88b5b0486a513fdd499d2f2773c6c115cb42285e034c66b",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/private-security-fall-2026"
+  },
+  "23096": {
+   "sha256": "5144a1644d4e4e8b01f78b687386aee21e08c2ad2ba77d22e7a5247a344311f8",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/intercultural-studies-fall-2026v2"
+  },
+  "23097": {
+   "sha256": "65ea2f4d87d7a27dc801e15ebd1e7c30d9f8b07e70f8cb552d81c8e598b00b46",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/global-studies-fall-2026v2"
+  },
+  "30618": {
+   "sha256": "b8193c45b2b04d1a37fed004bc1385b5f617a360218a1cde1a86c5877c98ca4e",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/english-fall-2026"
+  },
+  "30911": {
+   "sha256": "1f1bfbc6ef91d9e7436ab0aa22358e2da63b4f06c9121f895dbe0291e401a550",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/mathematics-2-0-for-transfer-fall-2026"
+  },
+  "30931": {
+   "sha256": "8e0d748df87661ca6ad95853bcff197e5e6dab7d40c12d9c74eb347a60cfd236",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/graphic-design-fall-2024"
+  },
+  "30933": {
+   "sha256": "447d755fd5661cedac8abd862d12ed3c2d4eae01d1806eedce09a7006ec49bb9",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/professional-photography-film-and-digital-fall-2022"
+  },
+  "30943": {
+   "sha256": "c52670e1486d330b12de34894feab7e18dc82d852aad4a0ca1becf3d53215c0f",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/smog-technician-fall-2022"
+  },
+  "30944": {
+   "sha256": "6c80eb2bab75def764938b5815faa60a7cf0c7453576d9b47a39c221c05da2d8",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/cybersecurity-fall-2025v2v3"
+  },
+  "30952": {
+   "sha256": "f768d68b3c9d3734d22fd9a4734a603b10995df7d8ab04ac69b1251979860834",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/advanced-automotive-technology-fall-2022"
+  },
+  "30953": {
+   "sha256": "ea241fe3000ec72111bfd0be2b9515f9ebd58fd109731d38b5279c09c9f3f75a",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-machining-and-engine-repair-technology-fall-2022"
+  },
+  "30954": {
+   "sha256": "3c708cc7bc11a277f3fd7d82c9509ee7909568580671a315bac5269dfe72bc0f",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/communication-studies-fall-2026"
+  },
+  "30955": {
+   "sha256": "be448a80d2446c7826d953f320828e8e59d8d9b9888bf7db87fcff518eed1fb0",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-powertrain-technology-fall-2025v2v3"
+  },
+  "30956": {
+   "sha256": "f84fbf4d7b460e7de1468e7879abaf55cda4e313756be0d26ef3337211298948",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-chassis-technology-fall-2022"
+  },
+  "30958": {
+   "sha256": "8849eec4925e9747e41ac53620aa4a65bbebca8e53789546bbdf3a1e317c3321",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/intermediate-engine-performance-technology-fall-2022"
+  },
+  "30959": {
+   "sha256": "95cc416f8300111f387ae80584914608743ad60e9885021dc117fd7a665909f5",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/basic-engine-performance-technology-fall-2022"
+  },
+  "31272": {
+   "sha256": "d7e6e60c01055c0b8f5472b71cd64b2d8f3b50dae311596702dedfb5e12c162f",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/business-administration-fall-2026"
+  },
+  "31293": {
+   "sha256": "a6fa7633528ab54e8f391954ca702a2b51e44b9c5b5a7d9c250ab9124d9590cd",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/kinesiology-for-transfer-fall-2026"
+  },
+  "31308": {
+   "sha256": "87cde462c4d6fefe02e0637f0f7a9d3651d07a065aff7974721b187c4279d16b",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/film-tv-screenwriting-fall-2026"
+  },
+  "31498": {
+   "sha256": "ca1923fd7969198f48819c3d629fa81ce3a64bf954180397532c6115e6968b7e",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/programming-in-java-fall-2025"
+  },
+  "31500": {
+   "sha256": "4d337c42067d50fd10c04ff8ec1d3024d29f2ae4e062f648b396b4efb668b3c3",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/unix-linux-operating-system-fall-2026"
+  },
+  "31502": {
+   "sha256": "922abbdf8c568ffa70598dd598d3859aca3e4398bb9d5a0c713abbb5b5c0f3f7",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/web-development-fall-2025"
+  },
+  "31504": {
+   "sha256": "838b53211212509a8d1f4b48ef5a4a520eca6f1e53e98f6a7fc4307e4796d8b4",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/film-tv-production-fall-2026"
+  },
+  "31511": {
+   "sha256": "a3bc2b5afc103331138f2a5debdd91808cc59323b11559f309fd5b912c78c1c1",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/programming-in-c-c-fall-2025"
+  },
+  "31549": {
+   "sha256": "48d554aa687df7780c40ee9919c404d0335256e4e34f2157906d7c6ec0474e3c",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/network-basics-fall-2025"
+  },
+  "31805": {
+   "sha256": "db65fedc0515549f67322600089a32ea6d460289f355925af006aca48b94420d",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/history-for-transfer-fall-2026"
+  },
+  "31820": {
+   "sha256": "5bfd04f8be39f9e696255d5cfc97af419022a6cbc479452c13cf0c907ef9b6b0",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/political-science-for-transfer-fall-2026"
+  },
+  "32006": {
+   "sha256": "c3feab57615cad2d672cc198a1e1207168b5f617a4812c749c0cd4b075e1c4c0",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/early-childhood-education-for-transfer-fall-2025"
+  },
+  "33329": {
+   "sha256": "48449f6004777246a9b07b738ac5f3020d638bb6dadfe8ce5722ecedd25a501c",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/cnc-programming-cad-cam-fall-2024"
+  },
+  "33330": {
+   "sha256": "84bf6bb80a3ddd6982d299778cd3908045b1754cf8dd04df714b5dd47152485e",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/cnc-machinist-fall-2022"
+  },
+  "33336": {
+   "sha256": "451cf3522754463e14f19bf1c9288ef70193e402484d3dcfa0b252088c2ab2e2",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/computer-science-for-transfer-fall-2025"
+  },
+  "33338": {
+   "sha256": "9c3f5576869b97b8999ff80c93a3633ea98e1c666c369a8d147feb838271e919",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/journalism-for-transfer-fall-2026"
+  },
+  "33366": {
+   "sha256": "0bfd22fbb7d2a914397b4802172e56925a43b519fa646308d7c24f1b1991c512",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/mandarin-language-and-culture-fall-2026"
+  },
+  "33456": {
+   "sha256": "bf3ff6601822464c5ee9dcbc28267cdd8b69e11f4005d32ee63cb2f61aee411f",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/mandarin-language-and-culture-fall-2025"
+  },
+  "33800": {
+   "sha256": "89f3f9190b196f056a511c772fadb0ad79a0b0b95c0607281bad3ec7b666d70c",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/clinical-laboratory-assistant-fall-2026"
+  },
+  "35500": {
+   "sha256": "e352cc0d925dd35df4687a65030dad02062411d36d2c53cf25e786f25c09181a",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/economics-for-transfer-fall-2026"
+  },
+  "35605": {
+   "sha256": "215dbb426eff3fe4ab4856cc52d86fb0e5483278c5af5e169fccb79099636d96",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/humanities-fall-2022"
+  },
+  "35647": {
+   "sha256": "1f8d89321978807a6c0a01d45d4a32ee51f359ace61fa3345bc375b05b2bdc33",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/programming-in-python-fall-2026"
+  },
+  "35661": {
+   "sha256": "aa472c967acceed442242b699272ddaa001940cb0cdb10e6b46906badd7f4ac2",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/women-s-studies-fall-2025"
+  },
+  "35730": {
+   "sha256": "7c0551f349bf388d331f8464d62a60df3a52a725d6bf8fcd7662aa44a952d3ae",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/environmental-resource-management-and-pollution-prevention-fall-2022v2"
+  },
+  "35776": {
+   "sha256": "46df50a9dbd9089e8311e23c58825e017ad0623bd476794aa088c979d58d1591",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/quality-control-technician-fall-2022"
+  },
+  "35828": {
+   "sha256": "d0c01fbded420b52963fa2e07e92c47f6b40d04dcf82b2f5ae1efe3d7d37010e",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/anthropology-for-transfer-fall-2026"
+  },
+  "35922": {
+   "sha256": "d581c6807e5fd50070bc8b7bda16a1a60e1299de13b082f39845e7cc394f8cf4",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/facility-and-sustainable-building-management-fall-2025v2"
+  },
+  "35923": {
+   "sha256": "40825558a40881ee0b29df34031a11fb13713725d974df921440aa63e13d2b1a",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/facility-and-sustainable-building-management-fall-2025v2"
+  },
+  "35924": {
+   "sha256": "ead30e569f853b4644bb0cd1c75b8d3bec7d4f2d8b7afc9f5245af52f0b1718d",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/facility-and-sustainable-building-management-fall-2025v2v3"
+  },
+  "36263": {
+   "sha256": "8a28de91427da87ba7e4ca11f8b3660452e979e274e7d8695d41af3428fd4bd6",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/leadership-and-social-change-fall-2026"
+  },
+  "36264": {
+   "sha256": "9bfe4559cc421463a6e5768b55f2fc3e56a673d35402b91ece1d4c7e0ba24d46",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/liberal-arts-business-and-computer-information-systems-emphasis-fall-2026"
+  },
+  "36775": {
+   "sha256": "767a7c376d914e65cbd443b9efc23516f63b83263deb3a4b8f61958de41de949",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-general-service-technician-fall-2022"
+  },
+  "36776": {
+   "sha256": "056adc28bcf4d22afdbf1d62c0322fdf906365c9629df545d27f4999ffb8f3cf",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/cyber-forensics-and-investigations-fall-2026"
+  },
+  "36817": {
+   "sha256": "3217874acba1adf9164f549f6c15e400e190c08af43d3bcc9daf6f580730dbdd",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/spatial-art-fall-2025"
+  },
+  "36818": {
+   "sha256": "744072a4f6a603ebd6de4d7694b8dcd4737d606aa7d02554b06fdf5daddb612e",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/public-relations-fall-2026"
+  },
+  "36854": {
+   "sha256": "84a50bc3a3c7a7ac63d4d01cdac7c6238e07aeb83e7e22090d887042e7a246ce",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/public-relations-fall-2022"
+  },
+  "38149": {
+   "sha256": "a343b0af43905f13d9a461345953f59cf743eed2eef4e064c3228589721ed89d",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/management-information-systems-support-fall-2025"
+  },
+  "38395": {
+   "sha256": "4974221ede239c60b073b65fa1b9e5eafe3d0c703e6f36e63b5fef156a1a0c6c",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/psychology-for-transfer-fall-2026"
+  },
+  "38397": {
+   "sha256": "075464e8696f8c2a48c66e1870ce97dbc6d12c12860cb90b7324745a8acbe807",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/philosophy-for-transfer-fall-2025"
+  },
+  "39225": {
+   "sha256": "64756fab0de4014003221fcf90e1048973f970556b07841605a7b44901f6fc92",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/asian-american-studies-fall-2026"
+  },
+  "39283": {
+   "sha256": "7497367f732e104a4b06ab53bf85f6141d0fe71b03fbb0928b4882e25ae5b933",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/biology-for-transfer-fall-2025"
+  },
+  "39288": {
+   "sha256": "fbee155d0cb8e730843752f7ae3a8dbafd842722bc3079a576115228c199629a",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-chassis-technology-fall-2026"
+  },
+  "39304": {
+   "sha256": "fb46148d660ff9f0641f989e81f3d780d7feb0a730f625a1d43424c05b5b8596",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/project-management-practitioner-fall-2022v2"
+  },
+  "39305": {
+   "sha256": "5b75bc189987eb84dc278dbf4e14c7e656816e1e3656d23a2dd8f526370bf43d",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/mandarin-translation-and-interpretation-fall-2025v2"
+  },
+  "39307": {
+   "sha256": "c357c28a2543e6053f575c352bcf936ed7c05e5392d4bfcf7b501cb817c38dca",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/database-development-practitioner-fall-2026v2"
+  },
+  "39308": {
+   "sha256": "89639bafbaa70961a4472c81af41f5da7ab2368472a344eb0cbb4e717f34c018",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/database-development-practitioner-fall-2026"
+  },
+  "39309": {
+   "sha256": "cd24ea3cdf24951bccb7b3e221cf77b0cccd99629f6028dd2634ba17a071e324",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/project-management-practitioner-fall-2025"
+  },
+  "39310": {
+   "sha256": "a6bc0bde6d8edd2be3f5485a6d90326f711bceb0c7e7f34cd635cc095e37a367",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/general-service-technician-fall-2026"
+  },
+  "39311": {
+   "sha256": "19f24dca5c81519d98b824ecd47153f89102c7c222667d3d52bca7a01173a8db",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/smog-technician-fall-2026"
+  },
+  "39390": {
+   "sha256": "84eca42a0defbdc2510bee130ebfe6c6b01d8aa0bd42bccaa27a742f63522c70",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/law-public-policy-and-society-for-transfer-fall-2026"
+  },
+  "39415": {
+   "sha256": "bc7d6becb6221027cf5fc2a0171280818ef863817ffebd54fcb937a2cc0e8f22",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/social-justice-studies-general-studies-for-transfer-fall-2026"
+  },
+  "41152": {
+   "sha256": "9754fb6ae9ed3a5c24afcbe7742789a5c59fcf5be102dbd98de5d9641bfc5bad",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/advanced-engine-performance-technology-fall-2026"
+  },
+  "41153": {
+   "sha256": "443f9923b8fb17c2aa49af49a2bd689a318b6769aaa468f658b924d328cdeb12",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-machining-and-engine-repair-technology-fall-2026"
+  },
+  "41154": {
+   "sha256": "13f8895c554fbca0334b0316b1c0e62a56308330bea701c7e988a6c2f1208735",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-powertrain-technology-fall-2026"
+  },
+  "41155": {
+   "sha256": "476744fa67c379f0508922085b778a34d18348955b35a13ef1df2e756f9cb829",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/basic-engine-performance-technology-fall-2026"
+  },
+  "41156": {
+   "sha256": "ea2a89718781da0a4c689a889029d18467841fc2a88cec136794230cbeeed298",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/intermediate-engine-performance-technology-fall-2026"
+  },
+  "41157": {
+   "sha256": "6fb82107a2db5f2b1ff7ff891cbcde3f8ac777f6fd3192c73ed1b4a24eb2e262",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/business-software-applications-fall-2026"
+  },
+  "41158": {
+   "sha256": "188a70b7f92a583dce70b0a12eaa95ca86f1a97894dea80667102f6471aecabc",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/introduction-to-computer-science-fall-2026"
+  },
+  "41159": {
+   "sha256": "92b915efbe9d63c8a69d7fa6cca455a6ea8f5642364a17fed6c5b86049c72b47",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/real-estate-salesperson-fall-2026"
+  },
+  "41160": {
+   "sha256": "71c58891614c11a0d6e6ca7960600e2a44ab002192a8e1d9071c71aab0498b56",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/commercial-lighting-fall-2026"
+  },
+  "41161": {
+   "sha256": "814bc802f40671ecb79723a1773c38af140d304dfd0ea955f5e8716eba80f0d9",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/photographic-retouching-and-digital-post-production-fall-2026"
+  },
+  "41172": {
+   "sha256": "7cb266696eec4919060236e8cc09fc924be49b5238489b81aee75df4bce51ad5",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/precalculus-bridge-fall-2026"
+  },
+  "41174": {
+   "sha256": "0c7b07aa5633bce6ec074b84439965e986572f21cbbebc4f6000a88255c364d2",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/math-basic-skills-fall-2026"
+  },
+  "41176": {
+   "sha256": "fbf0548af61b9c424a1295fde5282e76529748d33b63ce7dbb853e510caccc7e",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/english-as-a-second-language-intermediate-level-fall-2024"
+  },
+  "41326": {
+   "sha256": "89a8a1295566c6093978d1e708a7cc7aac9c6d345f29e870adfd82c0352ea18f",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/community-service-officer-fall-2024"
+  },
+  "41327": {
+   "sha256": "721288b98afc74d4185a85fd8bb2a41423fa4ffc166f6bb3af4533530ee4ceb6",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/film-tv-animation-fall-2024"
+  },
+  "41792": {
+   "sha256": "aaf378a619427453850aea4c3fc28c73dcf41e1d1e4af4e91d49a063910023f6",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/business-administration-2-0-for-transfer-fall-2026"
+  },
+  "41793": {
+   "sha256": "2c1d2ed06f56462315bd3bb9992added02b6734c1f4b4aa10bc698a08a6319a2",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/studio-arts-for-transfer-fall-2026"
+  },
+  "41858": {
+   "sha256": "f7a4d60ee18cbd1b21725e8ed91809396889ef94e0ebe91521ba89fe6c72532f",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/french-language-and-culture-fall-2025"
+  },
+  "41859": {
+   "sha256": "dee554adc454cbcf61d98c01eca90e3bb14028f8d18d3b18957d32ce4aa9bf7b",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/german-language-and-culture-fall-2026"
+  },
+  "41860": {
+   "sha256": "ff1e05200de93b87e3b46454699baf97ea3556e7e5904a07612bbf65ed71ce11",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/italian-language-and-culture-fall-2025"
+  },
+  "41861": {
+   "sha256": "a3ab12003345110323d10ffb57d8cae17d577dd50e34ab9e8ddc350b0cb60b81",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/korean-language-and-culture-fall-2025"
+  },
+  "41862": {
+   "sha256": "c7bff5b96572372c60b5885af05b34a2fd55df1ea042f529cdc6a0f9116ceb40",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/russian-language-and-culture-fall-2025"
+  },
+  "41863": {
+   "sha256": "4cfe18298333a2414c3f8b55104d45b7f254d15a27c3a06820fe821f614f7d7e",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/spanish-language-and-culture-fall-2025"
+  },
+  "41864": {
+   "sha256": "4c87c504a6e256b7022254f0136d60206267bdd704785ed8ea5f3345b5d13235",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/world-languages-and-culture-fall-2026"
+  },
+  "41885": {
+   "sha256": "ed4ce5bd010abdcc2810ac29d045a6bca618a1f5e9d0d76983c7cf0a1ef33430",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/paralegal-studies-corporate-law-fall-2024"
+  },
+  "41886": {
+   "sha256": "e6f708bab256acdd843d5559c4b3efee53374496f6a2aa5913931c97b20bf08d",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/paralegal-studies-intellectual-property-fall-2024"
+  },
+  "41887": {
+   "sha256": "e36f5c2a5948ed429493ad47654d93e7804a7abe315ccd2c4a783aeafdd0b169",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/paralegal-studies-litigation-fall-2024"
+  },
+  "42012": {
+   "sha256": "793f24a6e022ba556119bcb03b9915e2ba863c2ca309a7acfbd2a7508b5b72fe",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/american-english-pronunciation-fall-2023"
+  },
+  "42062": {
+   "sha256": "a392525c37fe06fd28042b52cdcbb0d9af3f4d1546cf6e4a24b2eb06237d2282",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/information-technology-technical-support-fall-2026"
+  },
+  "42169": {
+   "sha256": "e79edc61fb657cd0342ceaf5e4d01ee09a6cde58aecf22cccd0b33a4dc766845",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/information-technology-technical-support-fall-2025"
+  },
+  "42171": {
+   "sha256": "79d9018a15c309a2075d70062c439a3dfc636fed3e2df757cc9889edadd15cd4",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/forensic-criminal-investigation-technician-fall-2026"
+  },
+  "42186": {
+   "sha256": "7b73b074d69ba9782dac517513c21e37b96cb5208d728ecc24a39453eeb5115d",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/additive-manufacturing-technology-3d-design-and-production-fall-2024"
+  },
+  "43348": {
+   "sha256": "99c762e7113534fe05c4907e56f426ad369cdfc69345e015f2570143886d4068",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/english-writing-grammar-and-proofreading-fall-2026"
+  },
+  "43374": {
+   "sha256": "1c0a16158af17c84dfed4a3de99cb310f44837836bc5437cc9ab338a28eda427",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/alternative-fuels-technology-fall-2026"
+  },
+  "43443": {
+   "sha256": "8ed141719cff78e04a206335092af25926bc816610bb115432a383c393642faa",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/communication-studies-2-0-for-transfer-fall-2025"
+  },
+  "44020": {
+   "sha256": "ec069cf2f8957561a797a6426005c93330e23808f533eb57465f8ca38842906d",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/english-as-a-second-language-low-advanced-level-fall-2026"
+  },
+  "44021": {
+   "sha256": "ac52ae44e6f3913d7f705ac2428ae75a7fe754817537e37b9e5ea79658b0b5a8",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/english-as-a-second-language-high-intermediate-level-fall-2024"
+  },
+  "44033": {
+   "sha256": "74592e7a863bd04f76dda0e514fc85be5397efcaa6347201eef82f0bc53a9a65",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/math-skills-for-business-fall-2026"
+  },
+  "44044": {
+   "sha256": "ec30547e83ca5356cf619c6dc4015935471d97fbfae9567a342728ca8b695739",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/project-management-practitioner-fall-2026"
+  },
+  "44045": {
+   "sha256": "a60e25efc418a17946d9b027a7e5023a71ab8cd0a9fc3633af01aa7244460f59",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/database-science-practitioner-fall-2026"
+  },
+  "44194": {
+   "sha256": "ba5af2af2789cd01c049da6c3c58da81a894a249a86323a24e790294088f321b",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/autonomous-and-electric-vehicle-technician-level-2-fall-2024"
+  },
+  "44239": {
+   "sha256": "abdeadf604d71716bcf30b21834b27fb1ce0d8a8dd999f1554c835f4a678ff33",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/autonomous-and-electric-vehicle-technician-level-1-fall-2026"
+  },
+  "44240": {
+   "sha256": "e84d2e26882bba1261e1789d307e6f8115031859586464cb666e1c1543f33fa6",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/autonomous-and-electric-vehicle-technician-level-2-fall-2026"
+  },
+  "44241": {
+   "sha256": "769db8db5c42fa7dab56838f4882ad380c5e1cc550890f8aa3bf859fbe3c61e5",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-body-electrical-fall-2026"
+  },
+  "44242": {
+   "sha256": "b3c62bbaa9e8f22295089680316bfb178e034f0797da06041de4bfdcace43b49",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/ev-and-fuel-vehicle-safety-fall-2026"
+  },
+  "44325": {
+   "sha256": "41c798a4287f48c1ddd3609091c993d7e6c4925e7cb4981de8dc3014c6dd8bc3",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/global-studies-for-transfer-fall-2026"
+  },
+  "44377": {
+   "sha256": "ce8622036e5a6f5d6ed2d84da25d0066b546d0e9fb1ef9b99f202f47396298e8",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/autonomous-and-electric-vehicle-technician-level-1-fall-2024"
+  },
+  "44378": {
+   "sha256": "f78788dc75575962858396e527788fcb879566dfe39e1e9f5b548c445fbb3ab0",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/autonomous-and-electric-vehicle-technology-level-1-fall-2024"
+  },
+  "45128": {
+   "sha256": "23a89270cf087990cdce6e49c9e18529d477c6f73f25f14a3ad3ff0213abb58c",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/mandarin-language-and-culture-fall-2026v2"
+  },
+  "45186": {
+   "sha256": "3e6b579fbe7d9128a1111438b8b0242748a549901c594d9f11eb71742da15586",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/ethnic-studies-fall-2026"
+  },
+  "45187": {
+   "sha256": "355bc764227103d5b3488ebb6a93119273c10bf9ceeb23e56ba5773d33695665",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/hindi-language-and-culture-fall-2026"
+  },
+  "45188": {
+   "sha256": "26449802b4832338ca43a571018c84fb93fbe6a77e4a44a6ff456790e1af3f45",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/japanese-language-and-culture-fall-2025"
+  },
+  "45189": {
+   "sha256": "673cf97f90403856ff7d74155cce45124106c4fd21baeaeefb81d3272393628c",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/vietnamese-language-and-culture-fall-2025"
+  },
+  "45492": {
+   "sha256": "89c3c40e68c797d4ebaaef1651d052fa29306007d445a585d8e472641dc52a36",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/environmental-science-for-transfer-fall-2026"
+  },
+  "45499": {
+   "sha256": "d518a561a485222653d7d4936ca92d4506997bb932fd0fb50e0dc3c202a1d910",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-technology-management-fall-2025"
+  },
+  "45561": {
+   "sha256": "b753c6c8524a7bb41ce172284bd185d6f18f9a0aa1429eac2f9d5b6cc28fb0fd",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/illustration-fall-2025"
+  },
+  "45562": {
+   "sha256": "c9b160fe2c4316b28ca45728ccb042402abe95dc6db37eb77c63df800d30443b",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/ui-ux-user-interface-user-experience-design-fall-2026"
+  },
+  "45563": {
+   "sha256": "848c2c677671cb347f79c8e710052878f14a29cda42fd82b2e19709cba9a0461",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/illustration-fall-2025v2"
+  },
+  "45564": {
+   "sha256": "a42b0ddab41b5001539f50ff5cfdb439e2c9c3cf81b829f9100b2d103b14f453",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/ui-ux-user-interface-user-experience-design-fall-2026v2"
+  },
+  "45937": {
+   "sha256": "7c8d0540097b135bd4fad4751b8c6e1b3a6ca15efcb69805dc2e3e894bac2841",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/mandarin-translation-and-interpretation-level-one-fall-2026"
+  },
+  "45938": {
+   "sha256": "fc7c03ed7858f59d6ccb451742967667dd88351834db0199c5e446d5a22654e5",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/journalism-and-media-practices-fall-2026"
+  },
+  "45939": {
+   "sha256": "2f1de672d383a125b99cb0f066a4a99817659bc21fe932e618294d6393be3724",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/multimedia-and-visual-communication-fall-2026"
+  },
+  "45940": {
+   "sha256": "b25037d6b099b9d5ffa50656c876fb9e4c6fd832ac2b6ffe129ba49a5325d05a",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/nonprofit-management-fall-2026"
+  },
+  "46178": {
+   "sha256": "ae8d49f139894f71b4cb6ba62d6781ea4a77bfc75b9e7d9edb66671c6bdd9fdb",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-service-and-repair-spring-2026"
+  },
+  "46311": {
+   "sha256": "37281f99b743c05dc618b45b1b143c9fb276dd4443c50848fa0a528d8635919e",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/applied-mathematics-fall-2026"
+  },
+  "46312": {
+   "sha256": "f2da4a0c3ee6b5f8b3f2978f6b8cea8c0bd33d98e2073303f340d98a17b5bcb8",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/elementary-mathematics-education-fall-2026"
+  },
+  "46313": {
+   "sha256": "680a8d92b5ab0e15abaec44fc05707a09d90333d6391ef0de1ba71ccf744ec2d",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/mathematics-for-business-and-social-sciences-fall-2026"
+  },
+  "46314": {
+   "sha256": "654555f4fd13da594b171c4bb8126aed2acfcaa28956389b61c6cfcde9a34cfa",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/pure-mathematics-fall-2026"
+  },
+  "46315": {
+   "sha256": "0ada7fcb79553f4505f6d8ec3946d80743b8663cd6513015fcfa03fbc986ef63",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/statistics-fall-2026"
+  },
+  "46316": {
+   "sha256": "6f01d72efb06856a2218ace2f79726a04ddb3f92f19bbc63fdb069fb92c90109",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/community-impact-fall-2026"
+  },
+  "46339": {
+   "sha256": "055ecb87683f33e23b5ec1166989b16f67c1bf014217d0b166d4214389a52e6d",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/engineering-electrical-engineering-track-fall-2026"
+  },
+  "46394": {
+   "sha256": "2f1c5159a8f3d4f987b444e849cd9f4193ed70f8e545552281d57aba1fa63ff2",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/english-as-a-second-language-oral-communication-fall-2026"
+  },
+  "46395": {
+   "sha256": "ca3b5854a72833087ca6ecc4b520b5358e8b584d75826f5eed808e540bb353d5",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/writing-and-reading-skills-for-career-and-college-success-fall-2026"
+  },
+  "46411": {
+   "sha256": "a569b1d6716423e25b11bfe091eddb51fabda89b65f326e7b023b89984b5c170",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/applied-artificial-intelligence-fall-2026"
+  },
+  "46412": {
+   "sha256": "b75677124e288b2c452ec70d20ced241b3e46358990638a605a25b29716f2926",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/ai-in-business-fall-2026"
+  },
+  "46413": {
+   "sha256": "b0514190227353417df3e1bb50ab78a1523f5752bbe8da914ab0a39e02ba1c5e",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/foundations-of-data-science-fall-2026"
+  },
+  "46414": {
+   "sha256": "1680285ded59f45578c9c0c9852e8895ef697324240fcbbdf8625352f5990b51",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/professional-photography-fall-2026"
+  },
+  "46510": {
+   "sha256": "59ee393ae1d2140217781d4d1d37cf55535c6eb30b3678d750fe2b9955132f90",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/applied-artificial-intelligence-fall-2026v2v3v4"
+  },
+  "46511": {
+   "sha256": "0837b6497c5676dc7056d8ee2325126e24d85e1d14ebe59b4d0bd8a81db84604",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/applied-artificial-intelligence-fall-2026v2"
+  },
+  "46512": {
+   "sha256": "07c586f1032b529ca3b83f0d3b17d61571176042eb8baa123d5cd59427ec8c4a",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/applied-artificial-intelligence-fall-2026v2v3"
+  },
+  "46513": {
+   "sha256": "8a28de91427da87ba7e4ca11f8b3660452e979e274e7d8695d41af3428fd4bd6",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/leadership-and-social-change-fall-2026"
+  },
+  "46568": {
+   "sha256": "ff78e944ea685a9e9c3481c632b3c1509a5cb148cf9e488d193c712324b2e19a",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/foundations-of-data-science-fall-2026v2"
+  }
+ },
+ "run": "45781602148"
 }

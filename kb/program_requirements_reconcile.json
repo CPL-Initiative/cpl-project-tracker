@@ -274,6 +274,33 @@
    },
    "site_pages_why": "S730 (lever, the gap census's reader_page_assignment lever, census of 2026-11-25 09:39Z): Allan Hancock's filed capture handed Agricultural Science 43770 another degree's entry. It is pinned to its own entry; a pin binds only where the capture's index walk reads that entry and its heading prints the title with its award, and a refused pin reads the program from no page. Viticulture Levels 2 and 3 (42208, 42210) are named gaps (allan_hancock/named_gaps_s730.json). Reversible by deleting this entry."
   },
+  "Cuesta College": {
+   "why": "S739 (wave A): the entry holds the reader_page_assignment lever's own pages; no reconcile step yet.",
+   "steps": [],
+   "site_pages": {
+    "21050": {
+     "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30109",
+     "evidence": "CHILD DEVELOPMENT TEACHER certificate 21050: its own catalog entry (30067/30109, 'CHILD DEVELOPMENT TEACHER - Certificate of Achievement'), found in the program list by college-page-read run 45781997815 and read through the capture's curriQunet view by run 45783372680: 'Required Courses (26 credits)', its eight courses (CDFS 201, 202, 203, 204, 205, 206, 215, 216, every one the state lists) and 'Total : 26.0'. The filed capture (run 39063368678) handed it the Master Teacher certificate's entry (30067/30107, shared with 38479), so its record placed none of its 8 listed courses."
+    },
+    "43053": {
+     "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30093",
+     "evidence": "AVIATION MECHANIC - POWERPLANT certificate 43053: its own catalog entry (30067/30093, 'AVIATION MECHANIC - POWERPLANT - Certificate of Achievement'), found in the program list by college-page-read run 45781997815 and read through the capture's curriQunet view by run 45783372680: '25 Units', AVMT 110 or AVMT 110A and 110B, AVMT 120 or AVMT 120A and 120B, AVMT 160, 170 and 180 (every one of the 9 the state lists) and 'Total : 25.0'. The filed capture (run 39063368678) handed it the Airframe & Powerplant certificate's entry (30067/30091, shared with 41744), so its record placed none of its 9 listed courses."
+    }
+   },
+   "site_pages_why": "S739 (wave A, the gap census's reader_page_assignment lever, census run 45771011713 of 2026-11-26): Cuesta's filed capture handed each of two certificates a sister certificate's entry whose title holds every word of its own. Each is pinned to its own entry; a pin binds only where the capture's index walk reads that entry and its heading prints the title with its award, and a refused pin reads the program from no page. Reversible by deleting this entry."
+  },
+  "Copper Mountain College": {
+   "why": "S739 (wave A): the entry holds the reader_page_assignment lever's own page; no reconcile step yet.",
+   "steps": [],
+   "pdf_pages": {
+    "41085": {
+     "page": 106,
+     "words": "HOSPITALITYHOSPITALITY",
+     "evidence": "Hospitality Management A.S.-T 41085: its own section in the catalog's reissue of 2026-11-18 (Final-26-27-Catalog-11.18.26r1.pdf), PDF p.106, printed line for line by college-page-read run 45783372680: the section's banner as the PDF text prints it ('HOSPITALITYHOSPITALITY'), 'Required Courses:' HOSP 001, HOSP 002, CULN 001A and ECON C2001, 'Restricted Electives: Select two (2) courses from the following: ACCT 001, ACCT 002, BUMA 020A, or choose STAT C1000 or SOCI 003', 'Cal-GETC General Education Requirements 34', 'MINIMUM TRANSFERABLE UNITS 60' and, at the foot, 'Associate in Science in HOSPITALITY MANAGEMENT for transfer'; it names all 5 of the state's listed courses. The filed capture (run 39035222722) read the 09.03.26 file, whose address answered 404 on run 45781997815, and handed 41085 pp.77 to 78, the General Business A.S. and its Hospitality concentration, so its record placed none of its 5 listed courses."
+    }
+   },
+   "pdf_pages_why": "S739 (wave A, the gap census's reader_page_assignment lever, census run 45771011713 of 2026-11-26): Copper Mountain reissued its 2026-2027 catalog on 2026-11-18 at a new address, and the filed capture handed Hospitality Management A.S.-T 41085 another degree's pages. It is pinned to its own page in the reissue; the pin binds only while that page prints its words and every title word, so a read of any other file refuses it. The registry row still names the 09.03.26 address, which answers 404: read 45805866374 (only=41085) found no page, refused the pin and stopped at its price step with nothing spent, so 41085 waits on the registry naming the reissue. Kinesiology A.A.-T 43132 is not pinned: its own page (p.107) names 4 of its 11 listed courses, the catalog having renumbered the rest (PE to KINE, BI to BIOL). Reversible by deleting this entry."
+  },
    "Pasadena City College": {
     "why": "S727 (lever): the entry holds the reader_page_assignment lever's own pages; no reconcile step yet.",
     "steps": [],
@@ -2086,7 +2113,14 @@
      "source": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/psychology-aat/",
      "source_words": "Plus General Education Requirements (Cal-GETC) 34 (S648, d-calgetc-34-per-college-evidence-s648: Grossmont's transfer pages print their own Cal-GETC figure; Psychology AA-T 30978 and History AA-T 31814 quote it)"
     }
-   ]
+   ],
+   "site_pages": {
+    "32879": {
+     "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/photography-cert-achievement/",
+     "evidence": "Photography Certificate of Achievement 32879: its own page, named 'Photography Certificate of Achievement' in the Visual & Performing Arts page's links and read as the capture reads it by college-page-read run 45783372680: the page title 'Photography Certificate of Achievement', 'Certificate of Achievement Requirements', its six courses (ART-171, ART-210, PHOT-150, PHOT-151, PHOT-154, PHOT-252, every one the state lists) and 'Total Units 18'. The filed capture (run 44539755045) holds no address for this page and handed 32879 the page headed 'Photography Associate in Arts' (photography-aa-cert-achievement/), which prints the degree's ten-course list alone (run 45781997815), so its record placed none of its 6 listed courses."
+    }
+   },
+   "site_pages_why": "S739 (wave A, the gap census's reader_page_assignment lever, census run 45771011713 of 2026-11-26): Grossmont's filed capture handed the Photography certificate 32879 the associate degree's page. It is pinned to its own page; a pin binds only where the capture reads that page and its heading prints the title with its award, and a refused pin reads the program from no page. English certificate 21402 is a named gap (grossmont/named_gaps_s739.json). Reversible by deleting site_pages and this line."
   },
   "El Camino College": {
    "why": "S739 (the pooled reading's next). Free reconcile 45768189197 rescored El Camino's filed records under today's scorer: Marketing A.S. 02487 reads 51-62 against the degree's 60, because its reading filed general education as 24-34 across both patterns the page prints. The page words them apart (college page read 45772237973, kb/college_reads/el_camino_pooled_next_s739.json): 'GE Patterns', 'Complete one of the following:', 'ECC GE: 24 units', 'Required for local degrees (AA and AS).', 'Cal-GETC: 34 units', 'Required for transfer degrees (AA-T and AS-T).', then 'Electives', 'As needed to reach a minimum of 60 degree-applicable units.' and 'Minimum Degree Total: 60 units'. So a local degree takes ECC GE's 24, and the step replaces a filed 24-34 with 24 on a local degree whose page prints both sentences; it touches no other figure and no transfer degree. With 24, 02487 adds to 51-52 and electives fill the 60. Six local degrees hold the range (02481, 02487, 02527, 38839, 38949, 43992); the step moves 02487's verdict alone (tests/program_reconcile_s739_pooled_test.py). 02487 keeps its filed record until a reconcile applies the step.",

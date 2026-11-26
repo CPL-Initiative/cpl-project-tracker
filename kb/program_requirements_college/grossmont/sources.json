@@ -5167,8 +5167,8 @@
    "PHOT252"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/photography-aa-cert-achievement/",
-   "title": "Photography Associate in Arts | Grossmont-Cuyamaca Community College District Academic Catalog",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/photography-cert-achievement/",
+   "title": "Photography Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
@@ -5176,11 +5176,13 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "photography associate in arts photography certificate of achievement",
-    "section_fit": 1.0
-   }
+    "section_fit": 1.0,
+    "exact": 0
+   },
+   "pinned": true
   },
   "listed": 6,
-  "text_chars": 2989
+  "text_chars": 3073
  },
  {
   "control_number": "33211",

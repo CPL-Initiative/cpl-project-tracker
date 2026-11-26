@@ -1,4 +1,4 @@
-{"schema":1,"college":"Cuesta College","slug":"cuesta","basis":"live","census_at":"2026-11-26 06:54Z","correction_rules":false,"programs":[
+{"schema":1,"college":"Cuesta College","slug":"cuesta","basis":"live","census_at":"2026-11-26 06:54Z","correction_rules":true,"programs":[
 {"cn":"35717","title":"Agriculture Plant Science","award":"A.S. T Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"45182","title":"Cal-GETC","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"18665","title":"CSU General Education Breadth","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
@@ -20,8 +20,8 @@
 {"cn":"37543","title":"NONCREDIT READING, WRITING, AND GRAMMAR","award":"Noncredit program","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"38276","title":"NONCREDIT THRIVE AND SURVIVE IN THE WORKPLACE","award":"Noncredit program","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"38249","title":"NONCREDIT WORKPLACE ESSENTIALS","award":"Noncredit program","cause":"page_not_found","lever":"reader_page_search","url":null},
-{"cn":"43053","title":"AVIATION MECHANIC - POWERPLANT","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"places_none","lever":"reader_page_assignment","url":"https://cuesta.curriqunet.com/catalog/iq/30065/30067/30091"},
-{"cn":"21050","title":"CHILD DEVELOPMENT TEACHER","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"places_none","lever":"reader_page_assignment","url":"https://cuesta.curriqunet.com/catalog/iq/30065/30067/30107"},
+{"cn":"43053","title":"AVIATION MECHANIC - POWERPLANT","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"places_none","lever":"reader_page_assignment","url":"https://cuesta.curriqunet.com/catalog/iq/30065/30067/30093"},
+{"cn":"21050","title":"CHILD DEVELOPMENT TEACHER","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"places_none","lever":"reader_page_assignment","url":"https://cuesta.curriqunet.com/catalog/iq/30065/30067/30109"},
 {"cn":"46278","title":"AVIATION MAINTENANCE TECHNOLOGY","award":"A.S. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://cuesta.curriqunet.com/catalog/iq/30065/30067/32738","units":{"sum":[35.0,40.0],"printed":[40.0,40.0],"status":"unequal","measure":"units","against":"program"}},
 {"cn":"41744","title":"AVIATION MECHANIC - AIRFRAME & POWERPLANT","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"units_unequal","lever":"reconcile_steps","url":"https://cuesta.curriqunet.com/catalog/iq/30065/30067/30091","units":{"sum":[35.0,40.0],"printed":[40.0,40.0],"status":"unequal","measure":"units","against":"program"}},
 {"cn":"30452","title":"BUSINESS ADMINISTRATION - CAREER TRACK","award":"A.A. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://cuesta.curriqunet.com/catalog/iq/30065/30067/30095","units":{"sum":[18.0,31.0],"printed":[30.0,31.0],"status":"unequal","measure":"units","against":"program"}},

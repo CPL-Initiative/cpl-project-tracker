@@ -1489,12 +1489,14 @@ _ls_pins = (R.load_steps().get("Lassen College") or {}).get("pdf_pages") or {}
 # S720 (lever): American River, Los Angeles Southwest, Mendocino and Santiago Canyon pin the gap census's
 # reader_page_assignment lever (tests/program_requirements_lever_pins_s720_test.py checks the pages).
 # S739 (lever): East Los Angeles pins 38332 (tests/program_requirements_lever_pins_s739_test.py checks the pages).
-check("no college but American River, City College of San Francisco, Clovis, Cosumnes River, East Los Angeles, "
-      "Folsom Lake, Lassen, Los Angeles Southwest, Mendocino, Ohlone, Sacramento City, Santa Monica and Santiago "
-      "Canyon names pdf_pages",
+# S739 (wave A): Copper Mountain pins 41085 to its own page in the catalog's reissue
+# (tests/program_requirements_wave_a_s739_test.py checks the page).
+check("no college but American River, City College of San Francisco, Clovis, Copper Mountain, Cosumnes River, East Los "
+      "Angeles, Folsom Lake, Lassen, Los Angeles Southwest, Mendocino, Ohlone, Sacramento City, Santa Monica and "
+      "Santiago Canyon names pdf_pages",
       sorted(k for k, v in R.load_steps().items() if v.get("pdf_pages"))
       == sorted([_CR, "American River College", "City College of San Francisco", "Clovis Community College",
-                 "East Los Angeles College",
+                 "Copper Mountain College", "East Los Angeles College",
                  "Folsom Lake College", "Lassen College", "Los Angeles Southwest College", "Mendocino College",
                  "Ohlone College", "Sacramento City College", "Santa Monica College", "Santiago Canyon College"]))
 # S691: Santa Monica pins eleven programs to the page their heading and 'Area of Emphasis' total print on, the page

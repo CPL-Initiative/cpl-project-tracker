@@ -1,0 +1,33 @@
+{
+ "_readme": "S739 wave A (the gap census's Next wave, census run 45771011713 of 2026-11-26 06:54Z, the reader_page_assignment lever): Las Positas College's 2 programs whose filed record places none of the state's listed courses (capture 45127792228, curriQunet catalog 164): Early Childhood Intervention A.A. 18813 (entry 1637/1646) and Athletic Training/Sports Medicine certificate 36449 (entry 1853/1858) were each read from their own entry, whose text holds every listed code, and each record names its printed total (38, 28) and no course. This plan reads both entries through the capture's curriQunet view, so a session sees the text the extraction was given before any re-extraction. No model call, nothing written.",
+ "college": "Las Positas College",
+ "questions": {
+  "own_page": "What the capture reads on the program's own page: its heading, its award, its course list and its total."
+ },
+ "keywords": [
+  "certificate of (?:achievement|completion|competency)[^\\n]{0,80}",
+  "associate (?:of|in) (?:arts|science)[^\\n]{0,80}",
+  "total[^\\n]{0,40}(?:units?|hours?)",
+  "required courses?"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "18813",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/881/1637/1646",
+   "cq_view": true,
+   "cq_catalog": 164
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "36449",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/881/1853/1858",
+   "cq_view": true,
+   "cq_catalog": 164
+  }
+ ]
+}
