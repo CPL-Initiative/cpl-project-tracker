@@ -474,6 +474,58 @@ SHAPES = {"note_quotes": shape_note_quotes, "total_cut": shape_total_cut, "optio
           "no_total": shape_no_total, "option_lists": shape_option_lists}
 
 
+class LiveRuns:
+    """The live-run reading for a college with no earlier piles module (Cosumnes River, s739i): the runs the
+    committed receipts posted to its live rows, by S731's rule (kb/_program_piles_s731_lbcc.py posted_runs, whose
+    plan_applied this reads, never a copy of it). A load with one run posts its inserted_keys at that run; a load
+    over several runs names no run per key and posts none here (Pile.history_live proves such a row from its record
+    file's history); a reread posts its replaced_keys and carried_keys at its extracted_run, and its kept_keys for a
+    key no other receipt posts; every applied plan posts its records' runs. skip names plan tags left out."""
+
+    def __init__(self, college: str, slug: str):
+        self.college, self.slug = college, slug
+
+    def posted_runs(self, skip: tuple = ()) -> dict:
+        import _program_piles_s731_lbcc as L
+        out: dict = {}
+        kept = []
+        for path in glob.glob(os.path.join(NG.RECEIPTS, "program_requirement_records_*.json")):
+            name = os.path.basename(path)
+            try:
+                with open(path, encoding="utf-8") as fh:
+                    d = json.load(fh)
+            except (OSError, ValueError):
+                continue
+            if not isinstance(d, dict):
+                continue
+            at = str(d.get("at") or "")
+            if name.startswith("program_requirement_records_college_reread_%s_" % self.slug):
+                for k in (d.get("replaced_keys") or []) + (d.get("carried_keys") or []):
+                    out.setdefault(str(k), []).append((at, str(d.get("extracted_run"))))
+                kept += [(str(k), at, str(d.get("extracted_run"))) for k in d.get("kept_keys") or []]
+            elif name.startswith("program_requirement_records_college_%s_" % self.slug):
+                runs = [str(r) for r in d.get("extracted_runs") or []]
+                if len(runs) == 1:
+                    for k in d.get("inserted_keys") or []:
+                        out.setdefault(str(k), []).append((at, runs[0]))
+            elif not name.startswith("program_requirement_records_college_"):
+                tag = name[:-len(".json")].rsplit("_", 1)[-1]
+                if tag in skip or not L.plan_applied(tag):
+                    continue
+                rows = d.get("records") if isinstance(d.get("records"), list) else d.get("moved")
+                for r in rows if isinstance(rows, list) else []:
+                    if isinstance(r, dict) and r.get("college") == self.college and r.get("extracted_run"):
+                        out.setdefault(str(r.get("control_number")), []).append((at, str(r["extracted_run"])))
+        for k, at, run in kept:
+            if k not in out:
+                out[k] = [(at, run)]
+        return out
+
+    def on_live_run(self, filed: dict, skip: tuple = ()) -> bool:
+        rows = self.posted_runs(skip).get(str(filed.get("control_number"))) or []
+        return bool(rows) and max(rows)[1] == str(filed.get("extracted_run"))
+
+
 class Pile:
     """One college's plan over its earlier plan's holds."""
 

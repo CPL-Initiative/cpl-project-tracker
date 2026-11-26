@@ -77,7 +77,11 @@ for slug, cn in (("santa_monica", "03281"), ("glendale_community", "44488")):
     # Either state (p-test-asserts-other-pr-absent-recurs-s731): not collectable, or settled by another branch.
     check(f is None or not NG.collectable(f["score"]) or B.S.passes_live(f["score"]) or bool(f["score"].get("gaps")),
           "%s %s is not collectable, unless another branch has settled it" % (slug, cn))
-check(load("los_angeles_city", "32832") is None or True, "Los Angeles City 32832 has no record file, or a later read filed one")
+f = load("los_angeles_city", "32832")
+# Either state (p-test-asserts-other-pr-absent-recurs-s731): no committed record file, as the reconcile left it, or a
+# later read's file, never one at the failing live row's run 39006380342.
+check(f is None or str(f.get("extracted_run")) != "39006380342",
+      "Los Angeles City 32832 has no record file at its failing live row's run")
 f = load("cerritos", "44984")
 check(f is None or B.S.passes_live(B.C.fresh_score(f)), "Cerritos 44984's committed read passes: a reload, never a gap")
 

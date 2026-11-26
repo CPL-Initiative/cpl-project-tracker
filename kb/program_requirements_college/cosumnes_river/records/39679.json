@@ -111,7 +111,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "noted_section_cut_off",
+    "label": "The reader's note says the program's section runs onto a page the read did not hold, so part of its requirements is missing from the record.",
+    "words": "The excerpt begins mid-section on page 578: the program heading, any required core (likely SJS 300 and SJS 310, perhaps SOC 341) and the instruction governing Areas 1-5 are on the preceding page and not in the text. The rule for the areas is unknown; each area is recorded as choose_courses 1 as a placeholder, which a reviewer should verify (e.g., 'select one course from four of the five areas')."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 20,
+   "course_list_match": 50,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {
