@@ -1004,6 +1004,8 @@
   var checkPoll = null;
   function pollChecks() {
     var waiting = (state.rows || []).some(function (r) { return awaitsFirstCheck(r, publicGate(r)); });
+    // jsdom (the tests) never re-reads: a live interval keeps Node from exiting, and a test shard then never ends.
+    if (/jsdom/i.test((window.navigator && window.navigator.userAgent) || "")) return;
     if (waiting && !checkPoll) {
       checkPoll = setInterval(function () {
         if (document.hidden) return;
