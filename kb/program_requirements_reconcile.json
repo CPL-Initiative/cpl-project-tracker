@@ -292,6 +292,82 @@
   "Copper Mountain College": {
    "why": "S739 (wave A): the entry holds the reader_page_assignment lever's own page; no reconcile step yet.",
    "steps": [],
+   "course_renumbers": {
+    "BIOL 023": "BI 23",
+    "KINE 032A": "PE 52",
+    "KINE 039A": "PE 96",
+    "KINE 047A": "PE 98",
+    "KINE 054A": "PE 45",
+    "KINE 057A": "PE 91",
+    "KINE 058A": "PE 43"
+   },
+   "course_renumbers_cited": [
+    {
+     "printed": "BIOL 023",
+     "file": "BI 23",
+     "title": "Human Physiology",
+     "units": 4,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The reissued 2026-2027 catalog's course description (p.135 of Final-26-27-Catalog-11.18.26r1.pdf, college page read 45835379921) prints 'BIOL 023', 'HUMAN PHYSIOLOGY', '4 Units' and ends 'Formerly known as BI 023.'; the state's file lists BI 23 for Kinesiology A.A.-T 43132, whose own page (p.107) prints BIOL 023.",
+     "units_note": "the file's row carries 5 units, the catalog prints 4"
+    },
+    {
+     "printed": "KINE 032A",
+     "file": "PE 52",
+     "title": "Beginning Dance Aerobics",
+     "units": 1,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The reissued 2026-2027 catalog's course description (p.159 of Final-26-27-Catalog-11.18.26r1.pdf, college page read 45835379921) prints 'KINE 032A', 'BEGINNING DANCE AEROBICS', '1 Unit' and ends 'Formerly known as PE 052.'; the state's file lists PE 52 for Kinesiology A.A.-T 43132, whose own page (p.107) prints KINE 032A."
+    },
+    {
+     "printed": "KINE 039A",
+     "file": "PE 96",
+     "title": "Beginning Weight Training",
+     "units": 1,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The reissued 2026-2027 catalog's course description (p.159 of Final-26-27-Catalog-11.18.26r1.pdf, college page read 45835379921) prints 'KINE 039A', 'BEGINNING WEIGHT TRAINING', '1 Unit' and ends 'Formerly known as PE 096.'; the state's file lists PE 96 for Kinesiology A.A.-T 43132, whose own page (p.107) prints KINE 039A."
+    },
+    {
+     "printed": "KINE 047A",
+     "file": "PE 98",
+     "title": "Beginning Yoga",
+     "units": 1,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The reissued 2026-2027 catalog's course description (p.160 of Final-26-27-Catalog-11.18.26r1.pdf, college page read 45835379921) prints 'KINE 047A', 'BEGINNING YOGA', '1 Unit' and ends 'Formerly known as PE 098.'; the state's file lists PE 98 for Kinesiology A.A.-T 43132, whose own page (p.107) prints KINE 047A."
+    },
+    {
+     "printed": "KINE 054A",
+     "file": "PE 45",
+     "title": "Beginning Basketball",
+     "units": 1,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The reissued 2026-2027 catalog's course description (p.160 of Final-26-27-Catalog-11.18.26r1.pdf, college page read 45835379921) prints 'KINE 054A', 'BEGINNING BASKETBALL', '1 Unit' and ends 'Formerly known as PE 045.'; the state's file lists PE 45 for Kinesiology A.A.-T 43132, whose own page (p.107) prints KINE 54A."
+    },
+    {
+     "printed": "KINE 057A",
+     "file": "PE 91",
+     "title": "Beginning Volleyball",
+     "units": 1,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The reissued 2026-2027 catalog's course description (p.160 of Final-26-27-Catalog-11.18.26r1.pdf, college page read 45835379921) prints 'KINE 057A', 'BEGINNING VOLLEYBALL', '1 Unit' and ends 'Formerly known as PE 091.'; the state's file lists PE 91 for Kinesiology A.A.-T 43132, whose own page (p.107) prints KINE 057A."
+    },
+    {
+     "printed": "KINE 058A",
+     "file": "PE 43",
+     "title": "Beginning Badminton",
+     "units": 1,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The reissued 2026-2027 catalog's course description (p.161 of Final-26-27-Catalog-11.18.26r1.pdf, college page read 45835379921) prints 'KINE 058A', 'BEGINNING BADMINTON', '1 Unit' and ends 'Formerly known as PE 043.'; the state's file lists PE 43 for Kinesiology A.A.-T 43132, whose own page (p.107) prints KINE 058A."
+    }
+   ],
+   "course_renumbers_why": "S740 (lane 1, reads): Copper Mountain renumbered its physical education courses into KINE and its BI courses into BIOL, and each course description in the catalog's reissue of 2026-11-18 names its former code ('Formerly known as PE 052.'). The state's file still lists the former codes for Kinesiology A.A.-T 43132, so its own page (p.107) named 4 of its 11 listed courses and the capture refused it (the named gap catalog_renumbered, kb/program_requirements_college/copper_mountain/named_gaps_s739.json). With the seven pairs the page names all 11. Of the college's other filed records only Liberal Arts: Mathematics and Science 18520 lists one of them (BI 23), and it passes with and without the pair. A pair is never read where the file lists the printed code, so each retires once the file catches up. Reversible by deleting the pairs.",
    "pdf_pages": {
     "41085": {
      "page": 106,
@@ -300,6 +376,21 @@
     }
    },
    "pdf_pages_why": "S739 (wave A, the gap census's reader_page_assignment lever, census run 45771011713 of 2026-11-26): Copper Mountain reissued its 2026-2027 catalog on 2026-11-18 at a new address, and the filed capture handed Hospitality Management A.S.-T 41085 another degree's pages. It is pinned to its own page in the reissue; the pin binds only while that page prints its words and every title word, so a read of any other file refuses it. The registry row still names the 09.03.26 address, which answers 404: read 45805866374 (only=41085) found no page, refused the pin and stopped at its price step with nothing spent, so 41085 waits on the registry naming the reissue. Kinesiology A.A.-T 43132 is not pinned: its own page (p.107) names 4 of its 11 listed courses, the catalog having renumbered the rest (PE to KINE, BI to BIOL). Reversible by deleting this entry."
+  },
+  "Santa Ana College": {
+   "why": "S740 (lane 1, reads): the gap census of 2026-11-26 12:06Z (run 45816008322) lists 15 Santa Ana records on the reconcile_steps lever. One step, for the Liberal Arts degree's areas of emphasis.",
+   "steps": [
+    {
+     "kind": "pool_lists",
+     "field": "blocks",
+     "awards": "local",
+     "with_floors": true,
+     "pattern": "Complete a minimum of (?P<n>\\d+) units from a single Area of Emphasis",
+     "block_pattern": "(?:(?:Arts|Humanities|Communications): Minimum \\d|Business$|Technology$|[a-e]\\. )",
+     "name": "The Area of Emphasis's lists",
+     "why": "S740 SkySkimmer, 2026-11-26: the Liberal Arts A.A. prints one sentence on each emphasis's entry, under 'I. Requirements:', 'Complete a minimum of 18 units from a single Area of Emphasis listed below', and 'Total : 18.0' under the emphasis's lists (college page read 45835379921, kb/college_reads/s740_reads_santa_ana_pages.json, each entry read as the capture reads it). Three emphases print several lists, each with its own least: Arts, Humanities and Communications 18581 ('Arts: Minimum 3-4 units from this block', 'Humanities: Minimum 3-5 units from this block', 'Communications: Minimum 3-4 units from this block'), Business and Technology 18582 ('Business: Minimum 2-4.5 units from this block', 'Technology: Minimum 1.5-3 units from this block') and Kinesiology and Wellness 19268 (lists a to d, then 'e. Additional units to be selected from a, b, or c above for a total of 18 units'). The reading kept each list as its own choice at its least, so the records added to 9-13, 3.5-7.5 and 15 against the printed 18. The step joins an emphasis's lists into one 18-unit choice and keeps each list's least in floors (3, 3 and 3; 2 and 1.5; 3, 3, 3 and 6), a course two lists print counted once. The other three emphases (18580, 18583, 18584) print one list of 18 and are left as read: the step joins two or more lists, only under a total of exactly the sentence's figure, and never where the lists' leasts sum past it. Reversible by deleting this entry."
+    }
+   ]
   },
    "Pasadena City College": {
     "why": "S727 (lever): the entry holds the reader_page_assignment lever's own pages; no reconcile step yet.",

@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-26T12:08:08Z",
+ "written_at": "2026-11-26T14:39:46Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17507,
-  "gap": 4828,
+  "passing": 17508,
+  "gap": 4827,
   "with_gap": 118,
-  "cost_usd": 1341.61,
-  "passed_at_read": 16455,
+  "cost_usd": 1341.62,
+  "passed_at_read": 16461,
   "cost_receipts": 118,
   "spent_usd": 1244.44,
   "spent_runs": 240,
@@ -189,8 +189,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16915,
-  "gap": 4828,
+  "passing": 16916,
+  "gap": 4827,
   "collected_with_gaps": 592,
   "discontinued": 0
  },
@@ -3352,11 +3352,11 @@
    "harvested": true,
    "slug": "copper_mountain",
    "programs": 59,
-   "passing": 37,
-   "gap": 22,
+   "passing": 38,
+   "gap": 21,
    "causes": {
     "no_closed_list": 11,
-    "places_none": 2,
+    "places_none": 1,
     "unknown_without_live": 9
    },
    "census_causes": {
@@ -3378,10 +3378,10 @@
    "outcomes_file": "kb/status/commons_data_programs/copper_mountain.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-17T13:07:57Z",
+   "read_at": "2026-11-26T14:14:15Z",
    "read_kind": "capture",
-   "cost_usd": 3.84,
-   "passed_at_read": 32,
+   "cost_usd": 3.85,
+   "passed_at_read": 38,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -3390,50 +3390,28 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 48,
-   "found": 48,
+   "found": 47,
    "extracted": 48,
    "errors": 0,
    "failed_checks": {
-    "coverage": 6,
+    "coverage": 5,
     "invented": 4,
-    "arithmetic": 15,
+    "arithmetic": 9,
     "repeated": 0,
     "outcomes": 0
    },
    "platform": "pdf",
    "catalog_year": "2026-2027",
-   "catalog_url": "https://www.cmccd.edu/academic-catalogs/",
-   "capture_root": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf",
-   "catalog_now": "https://www.cmccd.edu/wp-content/uploads/2026/10/Final-26-27-Catalog-10.26.26.pdf",
-   "catalog_checks": [
-    {
-     "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf",
-     "status": 404,
-     "checked_at": "2026-11-13T23:35:00Z",
-     "by": "COBIx, #3229 comment 6867640358",
-     "result": "not found"
-    },
-    {
-     "url": "https://www.cmccd.edu/academic-catalogs/",
-     "status": 200,
-     "checked_at": "2026-11-13T23:35:00Z",
-     "by": "COBIx, #3229 comment 6867640358",
-     "result": "answered"
-    },
-    {
-     "url": "https://www.cmccd.edu/wp-content/uploads/2026/10/Final-26-27-Catalog-10.26.26.pdf",
-     "status": 200,
-     "checked_at": "2026-11-13T23:35:00Z",
-     "by": "COBIx, #3229 comment 6867640358",
-     "result": "answered"
-    }
-   ],
-   "read_seconds": 28.8,
-   "run": "39035222722",
+   "catalog_url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf",
+   "capture_root": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf",
+   "catalog_now": null,
+   "catalog_checks": null,
+   "read_seconds": 25.8,
+   "run": "45836803063",
    "levers": {
     "program_course_file_check": 11,
     "reconcile_steps": 9,
-    "reader_page_assignment": 2
+    "reader_page_assignment": 1
    },
    "collection": {
     "program_reader": {
@@ -3441,13 +3419,13 @@
      "models": {
       "claude-opus-5-5": 48
      },
-     "run": "39035222722",
-     "at": "2026-10-17T13:07:57Z",
-     "cost_usd": 3.84,
+     "run": "45836803063",
+     "at": "2026-11-26T14:14:15Z",
+     "cost_usd": 3.85,
      "platform": "pdf"
     },
     "slo_read": null,
-    "plo_programs": 43,
+    "plo_programs": 44,
     "ppm_member": null,
     "maps": {
      "held": 0,

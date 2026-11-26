@@ -908,6 +908,18 @@ jobs:
       - name: Pooled figures S739 (Modesto Junior's reconcile entry, the wrong joins, the self-recall)
         if: matrix.shard == 1
         run: python3 tests/program_reconcile_s739_pooled_test.py
+      # S740, lane 1 (reads): Santa Ana's reconcile entry on the page's own words (the Liberal Arts emphases' lists
+      # under 'Complete a minimum of 18 units from a single Area of Emphasis'), the wrong joins it refuses, the
+      # self-recall over the college's records. It runs on every diff, as the step above does.
+      - name: Santa Ana's reconcile entry S740 (the emphasis lists, the wrong joins, the self-recall)
+        if: matrix.shard == 1
+        run: python3 tests/program_reconcile_s740_santa_ana_test.py
+      # S740, lane 1 (reads): Copper Mountain's seven renumbered courses (BI to BIOL, PE to KINE), each pair cited by
+      # the course description's 'Formerly known as' sentence; Kinesiology 43132's own page with and without them;
+      # the self-recall over the college's records. It runs on every diff, as the steps above do.
+      - name: Copper Mountain's renumbered courses S740 (the pairs, 43132's own page, the self-recall)
+        if: matrix.shard == 1
+        run: python3 tests/program_reconcile_s740_copper_mountain_test.py
       # S720 at Cabrillo: the census's 21 wording-rule records, 8 collected with named gaps; the plan.
       - name: Cheap piles S720 at Cabrillo (named gaps, the plan)
         if: matrix.shard == 4
