@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-26T06:45:42Z",
+ "written_at": "2026-11-26T07:10:24Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -9839,7 +9839,7 @@
    "outcomes_file": "kb/status/commons_data_programs/sacramento_city.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-24T08:10:42Z",
+   "read_at": "2026-11-26T06:59:07Z",
    "read_kind": "capture",
    "cost_usd": 18.53,
    "passed_at_read": 167,
@@ -9867,8 +9867,8 @@
    "capture_root": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 470.1,
-   "run": "45353709365",
+   "read_seconds": 469.5,
+   "run": "45771862247",
    "levers": {
     "program_course_file_check": 20,
     "reconcile_steps": 14,
@@ -9882,8 +9882,8 @@
      "models": {
       "claude-opus-5-5": 204
      },
-     "run": "45353709365",
-     "at": "2026-11-24T08:10:42Z",
+     "run": "45771862247",
+     "at": "2026-11-26T06:59:07Z",
      "cost_usd": 18.53,
      "platform": "pdf"
     },

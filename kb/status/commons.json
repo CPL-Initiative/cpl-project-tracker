@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-26T06:45:48Z",
+ "written_at": "2026-11-26T07:10:28Z",
  "rows": [
   {
    "key": "requirements",
@@ -63,7 +63,7 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-11-26T06:38:25Z",
+    "at": "2026-11-26T06:59:07Z",
     "every_hours": null
    },
    "facts": {
@@ -383,7 +383,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-20T06:24:22+00:00",
+    "at": "2026-11-19T23:27:48-08:00",
     "every_hours": null
    },
    "facts": {
