@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-25_adult_ed_cpl_starting_points_pages_url.sql",
+ "name": "adult_ed_cpl_starting_points_pages_url",
+ "version": "20261125230747",
+ "sha256": "62182b2f81222d98dba76c89c71a062ff8034ab95a7e9d7dc6134f8703c6e78c",
+ "run": "45718707847",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"slug\":\"adult-ed-cpl-starting-points\",\"url\":\"https://cpl-initiative.github.io/cpl-project-tracker/library/adult-ed-cpl-starting-points/\",\"versions\":2,\"publish_target\":\"public\",\"public_listed\":false}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

@@ -160,3 +160,24 @@ carries it.
 ## 2026-10-22 — the funding metric comes off the shelf
 
 Sam un-parked §11 of the thinking doc: with no reliable noncredit-origin flag coming, the noncredit share of each award keeps its FTES sizing and releases on outcomes a noncredit program controls. The measurement of his 5% rule, the proposed shape (conditions gate, two outcomes release: exhibits built or adopted, then students awarded credit through them) and his five calls are the funding lane's (`docs/cpl_funding_lessons.md` 2026-10-22; Open Asks Sheet 113). Two things are this lane's: the tagging convention that makes a noncredit-sourced exhibit countable (the exhibit's training agency names the noncredit program, as the 67 high-school, ROP and adult-school trainers already do), and the mirroring playbook, since the title-identical credit and noncredit pairs (1,212 CDCP statewide, median 4 per institution) are the cheapest exhibits a strike team can build.
+
+## 2026-11-25 — SkyAlvord (S735): Adult Education CPL Starting Points
+
+A side session built a page for Sam's meeting with the CDE Adult Education Office and LWDA: the CAEP noncredit inventory
+(5,332 records; 1,733 programs adult schools deliver themselves) read against MAP, so an adult school sees where its
+students can get credit now and which college could adopt an exhibit. The lane holds the page's shape; what was learned:
+
+- **Join a program by its own words.** A CIP title names a field, and a field joins dozens of credentials; joining by
+  the program's own name or its stated credential kept 1,118 of 1,733 programs matched to 58 credentials without false
+  pairings.
+- **An exhibit offered for Quick Adopt must credit the credential itself.** 22 exhibits that sat near a credential but
+  credited something else were dropped, each with its reason, so a college never adopts the wrong thing.
+- **Could adopt reads the held M-ID list.** The CER's `potential_colleges` gave 478 college and credential pairs; the
+  prescriptive list in `statewide_prescriptive.js` gave 261, the ones a college's own courses support.
+- **Every college name goes through `kb/college_short_names.json`.** The inventory's raw names carried mojibake
+  (*CaÃ±ada*) and so lost their region.
+- **Sam's word choice is the student's view:** *"Get Credit instead of Give credit ... because you might send your
+  alvord student to Pierce to get credit"*. A public tool like this takes the Credential Catalog look (his words, same
+  day).
+- **MAP's public API shows its sandbox org.** CA MAP INITIATIVE COLLEGE (slug `CAMAP`) appears on two public exhibits;
+  a page reading the API filters it until MAP removes it.

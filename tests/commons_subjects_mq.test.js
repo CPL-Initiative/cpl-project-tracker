@@ -26,6 +26,10 @@
 //   (7) ⭐ a second sidebar opens beside the first and never over it: the first narrows to 320px, the view gives up the
 //       pair's width, the pair covers the view only where no width is left, and Close on the second gives the first
 //       its own width back. Geometry is measured in a browser (the PR's numbers); jsdom checks the arithmetic.
+//   (8) ⭐ Sam, 2026-11-25 (r-confidence-0-100-in-all-commons-procedures-sam-2026-11-25): "i want to use confidence bars
+//       0-100 rather than low, med, high throughout all commons procedures". The MQ code chip draws CPL_COMMONS.confBar
+//       with its number from the file's 0-1 confidence, and no level word (Confident, Likely, Leaning, Unsure) renders
+//       anywhere in the view or its sidebar, even where the builder's note carries one.
 //
 // Run from repo root: `npm test` (or `node tests/commons_subjects_mq.test.js`).
 const fs = require("fs");
@@ -34,6 +38,8 @@ const { JSDOM } = require("jsdom");
 const results = [];
 function check(name, cond, detail) { results.push([name, !!cond, detail]); }
 function txt(el) { return (el && el.textContent || "").replace(/\s+/g, " ").trim(); }
+/* The words a reader sees: the body without its injected scripts, each text node apart so adjacent cells never run together. */
+function shownTxt(d) { const b = d.body.cloneNode(true); b.querySelectorAll("script, style").forEach((s) => s.remove()); const out = [], tw = d.createTreeWalker(b, 4); while (tw.nextNode()) out.push(tw.currentNode.nodeValue); return out.join(" ").replace(/\s+/g, " ").trim(); }
 
 const SCRIPTS = ["commons_progress.js", "commons_program_records.js", "commons_front.js", "commons_subjects.js", "commons.js"].map((f) => fs.readFileSync(f, "utf8"));
 
@@ -161,10 +167,28 @@ async function group(n, fn) {
     const cn = d.querySelector('table.csb-mq tr[data-mq="Construction Technology"]');
     check("(1) a row shows its list type, its provisions, its common code with its level, and its local codes",
       txt(cn.children[1]) === "Any degree" && /Apprenticeship tie/.test(txt(cn.children[2])) && /CCR 53413/.test(txt(cn.children[2]))
-      && txt(cn.children[3].querySelector("button[data-mq-code]")) === "CNST" && txt(cn.children[3].querySelector(".csb-sub")) === "Confident 97%, a person’s pick"
-      && txt(cn.children[5].querySelector("button[data-mq-count]")) === "2 codes" && txt(cn.children[5].querySelector(".csb-sub")) === "0 filed, 2 Confident", txt(cn));
+      && txt(cn.children[3].querySelector("button[data-mq-code]")) === "CNST" && txt(cn.children[3].querySelector(".csb-sub")) === "97, a person’s pick"
+      && txt(cn.children[5].querySelector("button[data-mq-count]")) === "2 codes" && txt(cn.children[5].querySelector(".csb-sub")) === "0 filed, 2 at 90 or better", txt(cn));
     const ph = d.querySelector('table.csb-mq tr[data-mq="Physics"]');
-    check("(1) a row names what to look at, and an assigned code shows its level alone (the mock)", /vocational TOP code/.test(txt(ph.children[6])) && txt(ph.children[3].querySelector(".csb-sub")) === "Leaning 60%", txt(ph));
+    check("(1) a row names what to look at, and an assigned code shows its level alone (the mock)", /vocational TOP code/.test(txt(ph.children[6])) && txt(ph.children[3].querySelector(".csb-sub")) === "60", txt(ph));
+    /* (8) the 0-100 bar, never a level word */
+    const LEVEL_WORD = /\b(Confident|Likely|Leaning|Unsure)\b/;
+    const phBar = ph.children[3].querySelector(".cmn-cbar"), cnBar = cn.children[3].querySelector(".cmn-cbar");
+    check("(8) ⭐ the MQ code chip draws CPL_COMMONS.confBar with its number from the 0-1 confidence",
+      !!phBar && phBar.getAttribute("data-conf") === "60" && /confidence 60 of 100$/.test(phBar.getAttribute("aria-label")) && phBar.querySelector(".cmn-cbar-fill").style.width === "60%"
+      && !!cnBar && cnBar.getAttribute("data-conf") === "97", ph.children[3].innerHTML);
+    check("(8) ⭐ the builder's level word reads as its number: Assigned at 60 of 100",
+      ph.children[3].querySelector(".csb-sub").getAttribute("title") === "Assigned at 60 of 100.", ph.children[3].querySelector(".csb-sub").getAttribute("title"));
+    check("(8) ⭐ no level word renders in the MQ view, its titles included", shownTxt(d).length > 500 && !LEVEL_WORD.test(shownTxt(d))
+      && !Array.from(d.querySelectorAll("[title]")).some((e) => LEVEL_WORD.test(e.getAttribute("title"))), (shownTxt(d).match(/.{80}\b(Confident|Likely|Leaning|Unsure)\b.{40}/) || [])[0]);
+    check("(8) the filter keys on the 90 line: Codes below 90", /^Codes below 90 \d+$/.test(txt(d.getElementById("csb-mq-f-lower"))), txt(d.getElementById("csb-mq-f-lower")));
+    {
+      const y = load("#commons/subjects/mq/code/PHYS");
+      await y.M.boot(); await settle();
+      const facts = txt(y.d.querySelector(".csb-facts"));
+      check("(8) ⭐ the MQ sidebar says how the code was set by its number, no level word", /How the code was setAssigned at 60 of 100\./.test(facts)
+        && !LEVEL_WORD.test(shownTxt(y.d)), facts);
+    }
     check("(1) the figures say their counts", txt(d.getElementById("csb-mq-f-all")) === "All 6" && txt(d.getElementById("csb-mq-f-gaps")) === "Something to look at 2"
       && txt(d.getElementById("csb-mq-f-appr")) === "Apprenticeship 1", txt(d.getElementById("csb-mq-figs")));
     d.getElementById("csb-mq-f-gaps").click(); await settle();

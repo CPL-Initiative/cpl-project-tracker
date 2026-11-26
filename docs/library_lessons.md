@@ -49,279 +49,7 @@ The sections from S468 (2026-10-24) to S509 (2026-10-29) moved verbatim to
 *The lane's publishing-model and check-run paragraphs (parts 1 and 2 of #3560, S687 and S688) and six shipped records
 moved verbatim to [`library_lessons_archive_3.md`](library_lessons_archive_3.md) at the S690 checkpoint.*
 
-## A Word document's contrast (S511 SkyBilberry, 2026-10-29)
-
-- **Word writes the resolved hex in `w:color`'s `val` beside a `themeColor`**, so `val` wins when it is a hex; the theme
-  and its tint or shade are the fallback for files a generator wrote.
-- **A table style can shade a header row the cell itself never names.** Measuring such a cell's text against the page
-  would report white on white; the reader names it for a person instead.
-- **A finding can be text nobody sees.** The spring update ends a paragraph with a white run on white ("— Spring 2026"),
-  invisible on the page and read aloud by a screen reader. The finding is right; the fix is to delete the run.
-
-## Headers, footers and text boxes in a Word document's contrast (S512 SkyCloudberry, 2026-10-29)
-
-- **A text box is written twice.** Word keeps a VML copy of each DrawingML text box in `mc:Fallback`, with the same
-  words; reading every `w:r` counted each run twice. The reader skips `mc:Fallback`, and the fix lands on the
-  `mc:Choice` copy, which Word 2010 and later draw.
-- **The run that holds a text box holds the box's runs.** `w:r > w:drawing > … > w:txbxContent > w:p > w:r`, so a
-  run's words are only the `w:t` whose nearest run is that run; otherwise the anchor run is read with the box's words
-  and its own color.
-- **What the page shows through:** a box with `a:noFill`, or no fill and no theme `fillRef`, is measured on the page; a
-  `fillRef` with an index (the theme's fill style), a gradient, a picture or a VML-only box is named for a person.
-- **On the team's 84 Word files** the one new finding is the fact sheet's header line, `#888888` on white at 3.5:1
-  (`cpl-fact-sheet-2026-02.docx`), confirmed on a render. None of the 84 holds a text box, so the boxes are proved by
-  the test's fixture alone.
-
-## A PDF is fixed at its source (S513 SkyLingonberry, 2026-10-29)
-
-- **Office keeps a PDF's catalog in a compressed object stream.** The language, the tags and the title display live in
-  the catalog; read without inflating `/Type/ObjStm`, a Word PDF looks untagged with no language. The reader inflates
-  object streams and the XMP metadata only, never page content.
-- **The first `/Title` or `/Lang` in a file is often the wrong one.** A bookmark carries a `/Title` and a span a `/Lang`;
-  read that way the TMC titles came back as their first heading and the TMCs' language as French. Read the Info
-  dictionary the trailer names and the dictionary around `/Type/Catalog`.
-- **Even so, one ASCCC TMC really is French**: `2023_Nov_Law_Public_Policy_and_Society_TMC_r.pdf`'s catalog reads
-  `/Lang(fr)`, so a screen reader voices its English in French. The report names a language other than English as a gap.
-- **On the team's 55 PDFs** the reads agree with `pdfinfo` (creator, producer, title, tagged): 50 from Word (tagged), two
-  from InDesign, a Chromium print, and an untagged macOS Quartz print (the ADT high-unit STEM letter). A Quartz print
-  names no source program, so the report asks for the file it came from.
-- **The report changes nothing in the PDF.** It names what the PDF carries, the program that made it, any Library
-  record whose title or file name matches, and the export steps (PowerPoint's Create PDF/XPS, Word's Save As PDF, each
-  with *Document structure tags for accessibility*), then offers to choose the source .pptx or .docx.
-
-## A workbook in remediation (S514 SkyMarionberry, 2026-10-29)
-
-The lane's NEXT after the PDF: an Excel workbook, checked the way Excel's Accessibility Checker checks one.
-
-- **What it does.** The title from the file's name (a workbook has no heading to take it from). A sheet left at
-  its default name (*Sheet1*, and the French, Spanish, German, Dutch, Italian and Portuguese defaults) is a
-  *Needs you* item with a draft from the sheet's first words, cut to Excel's 31 characters and its banned
-  characters. Alt text for each picture and chart in the sheet's drawing; a chart's draft comes from its cached
-  numbers through the same `chartDraft` the decks use. A table with no header row, data on a sheet with no
-  table (three or more rows of two or more cells), and merged cells are each one item, listed for a person.
-- **A header row is listed, never switched on.** Setting `headerRowCount` makes the table's first row of data
-  its headers: a judgment about the data, so it stays a person's.
-- **A rename reaches everything that points at the sheet.** Formulas, data validation and conditional
-  formatting on every sheet, the workbook's defined names, each chart's `c:f`, a pivot cache's
-  `worksheetSource`, and `docProps/app.xml`. Each new reference is quoted (a quoted name is always valid); a
-  formula's string literals and a reference into another workbook (`[1]Sheet1!`) stay. A name Excel would
-  refuse (empty, *History*, a duplicate) is not written.
-- **openpyxl writes relationship targets from the package root** (`/xl/worksheets/sheet1.xml`). The shared
-  `Doc.rels` joined them to the part's folder and found no sheets, so the first run on our own exports
-  reported nothing. It now reads a leading slash from the root, for decks and documents too.
-- **A chart's large values read whole** (`12,702,751`, not `12,702,751.227`): the budget pie in
-  `CPL_Initiative_Project_List_v3.xlsx` showed the old rounding.
-- **The run on team files.** Six workbooks (the project list, the IT and AI credential catalog, the
-  OpenClassrooms crosswalk, the top-50 export, the TOP lookup, the ARC fill-out): two charts drafted from the
-  budget's numbers, data with no table on every one, merged cells on two sheets, no default sheet name. A copy
-  of the crosswalk with its sheet renamed *Sheet1* came back renamed, and both remediated files open in
-  LibreOffice.
-
-## A workbook's contrast (S515 SkyRaspberry, 2026-10-29)
-
-The lane's NEXT after S514: each cell's words against what they sit on, as the deck and Word checks do.
-
-- **Where the colors live.** A cell's `s` indexes `cellXfs`; its `fontId` gives the font's `color` and size, its
-  `fillId` the fill. A solid `patternFill` paints its `fgColor`; no pattern shows white. A gradient or any other
-  pattern (*gray125*, *darkGrid*) is counted for a person.
-- **Excel counts theme colors lt1 first.** `theme="0"` is Background 1 (lt1) and `theme="1"` Text 1 (dk1), the
-  reverse of the theme file's own `dk1, lt1` order. A `tint` moves the HSL lightness: toward black by
-  `L*(1+tint)` when negative, toward white by `L+(1-L)*tint` when positive. `indexed` reads the old 64-color
-  palette (a workbook's own `indexedColors` replaces it); 64 and up, and `auto`, mean the system color, which
-  never fails.
-- **A styled table paints its own header and bands**, so a cell inside one with no fill of its own is counted,
-  never measured. A cell's own fill still wins there and is measured.
-- **The fix never edits a shared format.** For each cell format a failing item covers, the fix copies the
-  format's font with the new color and copies the format to use it, then points those cells at the copy. Other
-  cells on the old format keep theirs.
-- **Words colored inside a cell** (a shared string's runs) are named with their cells for a person: a shared
-  string can sit in cells with different fills, so one new color would not serve them all.
-- **The run on team files.** Six workbooks. The project list's budget sheet carries six cells in Background 1
-  on white (Cambria 10, likely hidden on purpose) and fourteen in gray 808080 at 3.9:1; one link in 4A90D9 on
-  the project list reads 3.3:1. All 22 were fixed and a second inspect found none; the file opens in
-  LibreOffice. The CEO lookup's conditional formatting is listed. Hidden text gets its own sentence: a screen
-  reader still reads it, so the fix stays offered and the item says how to keep it hidden instead.
-
-## A workbook's conditional formatting (S516 SkyBoysenberry, 2026-10-29)
-
-The lane's NEXT after S515: each conditional-formatting rule measured the way cells are.
-
-- **Where the colors live.** A `cfRule`'s `dxfId` indexes `dxfs` in `xl/styles.xml`. A dxf carries only what it
-  changes: a font color, a bold, a fill. What it leaves out comes from the cell, so a fill-only rule is measured
-  against the cell's own words and a font-only rule against the cell's own fill.
-- **A dxf's solid fill is its `bgColor`**, the reverse of a cell fill (which paints `fgColor`); read `fgColor`
-  only when no `bgColor` is written. A dxf `patternFill` often names no `patternType`, which means solid.
-- **One item per dxf, and the fix has to pass everywhere the failing rules reach.** One dxf can serve rules on
-  white cells and on navy ones. The fix is a copy of the dxf with the new font color; only the failing rules point
-  at it, and when no single color passes on every fill those rules meet (red on white and on navy) the item goes to
-  a person.
-- **A range with no written cell** still holds the rule; it is measured against the sheet's default (format 0, on
-  white).
-- **Name the rule's range, not a sample cell.** The first cell in the range need not be one the rule fires on (the
-  CEO lookup's *Interim* rule spans a column of titles), so a sample there would mislead.
-- **Excel's three highlight presets pass:** dark red on light red 5.9:1, dark yellow on yellow 4.7:1, dark green
-  on green 6.1:1, so the common case raises nothing.
-- **The run on team files.** Of the repos' workbooks one carries conditional formatting, the CEO lookup: three
-  border-only rules, correctly clean. Given a yellow font in one dxf, the check found it, the fix repointed one
-  rule, a second inspect found none, and the file opens in LibreOffice.
-
-## Each picture with its slide (S517, Sam's session, 2026-10-29)
-
-Sam's session, the day before the 7th Annual CPL Summit, on his first live run of remediation (the Summit's
-*0900-0945 Welcome and Introduction* deck: 35 slides, 27 items).
-
-- **A browser cannot paint a slide, but it can draw its plan.** Each shape's box (its own `xfrm`, else its
-  layout's or master's placeholder), its words at their size and alignment, its fill and its picture, the layout's
-  and master's own shapes beneath, and a background picture, drawn at percentages inside a box with the slide's
-  aspect ratio, the text in `cqw` so it scales with the box. A group's children sit in the group's own coordinates
-  (`chOff`, `chExt`) and scale into its box. It is not PowerPoint's rendering (no theme fonts, effects or crops),
-  and it is enough to see what sits under a QR code.
-- **The label nearest a picture is the best context it has.** Below it first (the usual place under a QR code),
-  then above, beside, or laid over it, within reach of the picture's own size; never the title, which goes to
-  Claude on its own line, and never body text over 120 characters.
-- **Read the QR code; do not describe it.** Office's automatic alt text for one is *"A qr code on a white
-  background"*. jsQR reads the address in the browser, and the draft names the label and the address without its
-  scheme: *QR code to MAP Website, map.rccd.edu*. A code drawn on a see-through ground reads only after the canvas
-  is painted white first, as a phone sees it. Claude is not asked about a code the page read: its draft is exact.
-- **Alt text a program wrote is no alt text.** python-pptx writes the picture's file name into `descr`, and Office's
-  own description says it is one (*"Description automatically generated"*, *"AI-generated content may be
-  incorrect."*); both used to pass as described. Now each is listed, Office's words kept as the draft without the
-  notice.
-- **A video's poster frame** is a `p:pic` whose `nvPr` holds `a:videoFile` (or `p14:media`). It is labeled a video
-  and drafted from the name a person gave it in the file.
-- **Claude drafts every picture before the report opens** (Sam: *"Can you have it draft from the picture as a
-  default"*), four at a time, under a line that counts them back and a *Show the report now*. Every picture leaving
-  the browser is now the default, so the box beside Remediate says so and turns it off for a file that shows a
-  student's record. A draft never replaces words a person typed meanwhile.
-- **A draft is not done.** The bar counts an item when a person keeps it (*Keep*, an edit, or Decorative); a
-  contrast fix the page applies counts as fixed while its box stays on. One bar, an equal part per check, each
-  part solid for what the page fixed or found passing, striped for what the person did, gray for what is left, the
-  words under it saying the same, each check named with its WCAG 2.2 criterion: alt text 1.1.1, document title
-  2.4.2, slide titles, headings and sheet names 2.4.6, language 3.1.1, table headers 1.3.1, reading order 1.3.2,
-  color contrast 1.4.3. Its line counts down to *Ready for the Chancellor's Office review*. Sam's purpose for the
-  split: *"we'll use that to work on ways to automate those user inputs that are needed later on."*
-- **The standard is the Chancellor's Office's own.** Its 2025 Certificate of Website Accessibility names WCAG 2.2
-  at level AA and Government Code 7405, 11135 and 11546.7; its accessibility page names WCAG 2.1 AA. 2.2 AA
-  includes 2.1 AA, so the header names both.
-- **Say what the draft reads.** The button is *Draft from the slide*, then *Redraft from the slide* (the section in a
-  Word document, the sheet in a workbook), Sam's naming: *"If we say from the slide, it implies that it's with the
-  context of the slide."* The note under the list says each draft sends one picture and its slide's words, since
-  the words now go too.
-- **One line, said once.** The report's count and the bar's line became one sentence above the bar (Sam: *"make
-  sure none of the information there is redundant"*). Each check's words under the bar are a link to its first
-  item left, or to its line in *Fixed for you*; the bar's part takes a click too, though the words carry the
-  keyboard, since a 10-pixel bar is under WCAG 2.2's 24-pixel target.
-- **Keep all and the next file.** *Keep all* keeps every alt text with words or marked decorative, and says how
-  many still have none. *Remediate another file*, beside *Close*, opens the next report in place, and asks first when
-  kept or edited answers are not yet in a downloaded file.
-- **A tab keeps the module it loaded.** Sam's first look after the merge (07:03 his time) still drew the old report:
-  the Library loads `library.js` once per page and Pages serves it with a ten-minute cache, so an open COBI tab
-  needs a reload to show a deploy. His second confusion was the button: *Remediate and download* read as the
-  start of the routine, which had already run, so it is now *Download the remediated file*. The panel's line
-  that nothing leaves the browser until filing now names what drafting sends.
-- **A file is in the Library from the moment it opens.** Sam: *"there's really no reason to start a file without
-  having it in the library regardless of it's state of remediation or revision"*, and *"the library is functioning
-  as much as a work space for all docs as a repository."* Remediate writes a Draft record as the file opens (no
-  link, `home` not filed, `file_name` the file's), the same file opened again finds it by that name, and the
-  download notes what it fixed there and opens the record's form for the SharePoint link, the one step a browser
-  cannot take.
-- **The Library counts its remediation.** A record's `remediation` (new, nullable: `in_remediation` as the file
-  opens, `remediated` at its download; applied by MCP, `cpl_library_remediation_2026_10_29_s517`) feeds two boxes
-  beside *Needs attention*, each a filter (Sam: *"a box to count and filter for the files in remediation or
-  remediated"*). The count boxes shrank to one line each (*"you can shrink these metric boxes to save real
-  estate"*).
-- **A grid item's minimum width is its content's.** A long URL in a hint widened the whole list item past its
-  column until the item took `min-width:0` and the hints `overflow-wrap:anywhere`.
-
-## A chart's contrast (S517 SkyPartridgeberry, 2026-10-29)
-
-The lane's NEXT after S516: a chart in a deck, a document or a workbook, the one part each check still left to a person.
-
-- **What is measured.** Each series' bars, slices or line against the plot area (WCAG 1.4.11, 3:1): the plot
-  area's fill, else the chart's, else the slide's background (a deck) or white. Words with a color of their own
-  or the chart's (the title's runs, the legend, each axis, the data labels) against what they sit on, at 4.5:1 or
-  3:1 when large. A label inside a bar or slice (`ctr`, `inEnd`, `inBase`, a pie's `bestFit`, a stacked bar's
-  default) sits on that bar or slice. A gradient or picture under a chart is named for a person.
-- **Office's own colors are measured as drawn** (Fable's advice, taken): a series with no fill of its own takes
-  the theme's accent by its `c:idx`, a pie's slice by its point index, the first six only. Office's 2013 gray
-  (accent3) reads 2.4:1 on white, its orange 2.7:1, its gold 1.6:1, so most default charts raise an item. The fix
-  writes the color into the series' `c:spPr`, or into a `c:dPt` of the slice's own, so it survives a theme change.
-- **A series whose values show as labels is advisory**, not exempt (Fable): the labels carry the numbers, but a
-  low-vision reader still reads the bars. Its item says *yours to weigh* and its box starts unticked.
-- **A bar's new color must keep its own labels readable.** The first build lightened the IT and AI deck's pale blue
-  bar to pass on white, and the navy labels inside it fell to 4.1:1. Now the fix walks the hue until it passes on
-  the plot area and keeps every label on it at its own ratio; that deck's bar has no such blue, so it goes to a
-  person with *give the bars a dark outline*.
-- **Slices side by side** below 3:1 against each other are one item for a person (a white border is the usual
-  fix, not a new color). Fable: adjacency has no WCAG threshold, and a recolor cannot keep the theme.
-- **A chart item finds its element by position** (element-child indices from the part's root), resolved for the
-  whole part before any fix inserts an `spPr` or `dPt` that would shift the rest. Alt-text items already carry a
-  `chart` flag, so these carry `inChart`.
-- **The run on team files.** Three files hold charts. The IT and AI credentials deck: one series at 1.8:1, held for
-  a person as above. The project list workbook's two budget pies (Office 2007 colors, white labels): three slices
-  advisory, white labels on green named for a person; after the fixes, a second inspect finds the white labels on
-  blue at 4:1 fixable, and the file opens in LibreOffice. Tests: `library_remediate` (135, block 15).
-
-## Each slide beside its item, and empty boxes removed (S518 SkyServiceberry, 2026-10-29)
-
-Sam, reading the report's last items on the Summit deck: *"Is it possible to show the slides next to the problem item
-with these notes so the ppt doesn't need to be opened separately?"* and *"another example is the blank title box on
-slide 12 where it would be good to see the slide next to it."* Then: *"often when using ppt master slides a title box or
-text box is auto added and the user adds their own text boxes ... Could you delete blank boxes with no background color
-or outline color as part of the remediation? Sometime users add decorative boxes for formatting purposes but they would
-always have some sort of color added."*
-
-- **Every item that names a slide draws it**, from S517's slide plan (`report.slides[n].plan`): one slide to an item's
-  left with *Larger slide* (a blank title, text below AA, a chart's items, which now carry `slide` and `shapeId`
-  through `onSlide`); several as a strip under its words, a slide's number showing it larger (no title box, a crowded
-  slide, text on a gradient). The blank title box, the runs below AA or the chart are outlined.
-- **A crowded slide is numbered in reading order**: the slide's own shapes in the file's order (groups flattened), a
-  picture marked decorative and a wordless shape skipped. Its box reads *Checked here or in PowerPoint*.
-- **Empty boxes go before any check reads the slide** (`emptyBoxes`): a slide's own top-level `p:sp` with no words, no
-  fill and no outline, its layout's and master's placeholder looked at too, and a placeholder kept when the layout
-  cannot be read. Kept: the title box, a box with a link, alt text or an animation (`p:timing`'s `spTgt`), and any box
-  with color, a theme `fillRef` or `lnRef` counting as color. *Fixed for you* names the count and the slides, under
-  Reading order. On the five team decks in the repos it removes nothing: code made them, and none holds an empty box.
-- **The title box stays (Sam asked "why not just also delete empty title boxes?").** A screen reader finds a slide's
-  title only in its title box, and the Accessibility Checker flags a slide without one, so deleting it would turn a
-  typed title into a PowerPoint fix. Instead `titleDraft` drafts the title from the largest words in the slide's top
-  half, the item offers *Keep* (a draft is left until kept, as alt text is), and *Keep the title box just off the
-  slide* (on when the slide's own words show its title) moves the box just above the slide at download, so nothing
-  shows twice. Sam: *"good! draft title will help."*
-- **Phone width:** the strip is a grid item, so it carries `min-width:0;width:100%` or its fixed-width slides widen
-  the column past the screen (measured 430 at 390 before the fix).
-- `cpl_memory`: `sam-remediation-slides-beside-items-2026-10-29`, `sam-remediation-removes-empty-boxes-2026-10-29`.
-  Tests: `library` (17), `library_remediate` (7, 17).
-
-## A title box for every slide, a script in the notes, and the deck's own order (S518, later)
-
-Sam, 2026-10-29, after #2556: *"yes, add the title boxes to slides with none. Also, can you add a prompt once someone
-uploads a ppt for revision or remediation (maybe in the instructions window) to ask if they have notes that they want
-to preserve and the option for you to add a script below or replacing their notes?"*
-
-- **A slide with no title box asks for its title** (`missing: true`), one item a slide in place of the old *no title a
-  screen reader can find* line that sent people to PowerPoint. It is drafted from the slide's largest words in its top
-  half, kept with *Keep*, and at download `addTitleBox` writes a title placeholder first in the slide's shapes, kept
-  just above the slide (the box defaults to off the slide: the design has no title area). A box kept off the slide also
-  moves first, so a screen reader meets the title first. Rendered in LibreOffice, Taco Tuesday's slides are
-  pixel-identical before and after: the six new boxes show nowhere.
-- **Speaker notes.** A dropped .pptx asks *does the deck have notes you want to keep?*: keep them (the default), keep
-  them and add Claude's script below, or replace them with Claude's script. As background, the choice rides in the
-  brief's template line to the session that makes the new deck. To remediate, the page drafts each slide's script
-  through `slide-script-draft` (new, deployed S518, reads no table and writes nothing; the slide's title, its words top
-  to bottom, its pictures' alt text and its notes), four at a time after the pictures' drafts, and shows a *Speaker
-  notes* section, each slide beside its script with *Redraft the script*. At download `writeScripts` puts each script
-  into its notes page's body box, below the notes after one blank line or in their place; a slide with no notes page
-  gets one on the deck's notes master, with its relationships and content type. An empty box leaves a slide's notes as
-  they were.
-- **The deck's own order.** A slide moved in PowerPoint keeps its file's name, and the report numbered slides by file
-  name: in Taco Tuesday the second slide shown is `slide14.xml`, so the report called it Slide 14. `slideOrder` now
-  reads `presentation.xml`'s slide list, and a file the list leaves out is not read. Every report before S518 that came
-  from a reordered deck numbered its slides this way.
-- **Checked on Taco Tuesday:** 6 title boxes added and drafted (5 from the slide's words), 14 scripts written (8 on new
-  notes pages), each script on the slide PowerPoint shows at that number; python-pptx and LibreOffice open the file.
-- Tests: `library_remediate` (1, 2, 5, 18, 19), `library` (17, 18). `cpl_memory`:
-  `sam-remediation-title-boxes-and-notes-2026-10-29`, `pitfall-pptx-slide-order-is-presentation-xml-2026-10-29`.
+*S511 to S518 (2026-10-29: a Word document's, a PDF's, a workbook's and a chart's contrast; each picture and title box with its slide) moved verbatim to [`library_lessons_archive_3.md`](library_lessons_archive_3.md) at the S735 checkpoint.*
 
 ## Moved from the lane (S512)
 
@@ -1216,3 +944,25 @@ file yet. *Copy the brief* gives the whole paste for a new session: the ask, the
 **File it** sits on the In development card: filing a Requested piece moves it to Draft, and a record with no made-on date takes the day it is filed, or the day Edit moves it past Requested (2026-10-27, after the Workplan Update reached Approved through Edit and sorted last, undated). Sam's routine reads Requested records as queue items (step 6 of *At the start* in
 [`scheduled_sessions`](../scheduled_sessions.md)). The versions table shows the time
 each version was filed (`filed_at`, call 8).
+
+## S735 SkyAlvord (2026-11-25): a piece made in a session waits on its own Pages address
+
+Adult Education CPL Starting Points was made as a Claude artifact, copied to `library/adult-ed-cpl-starting-points/`
+with `scripts/library_page.py`, and filed while its record's url still named claude.ai. Three things followed:
+
+- **The check run plans only a record whose url is its own Pages copy** (`on_pages` in `scripts/library_check.py`).
+  With the claude.ai url the piece got no check row and the card showed no progress, so it looked stuck. The fix was
+  the record's url, moved by a guarded update with its rollback beside the receipt. The lesson: when a session copies a
+  piece to Pages, the record's url moves in the same PR.
+- **Publish now shows only on a card with an approved card-drafted revision.** A piece built outside the card never
+  sees it; its listing is the run's after a passing check, and the run lists only a piece with a public summary.
+- **Sam asked for the summary to fill itself:** *"can you have library auto add a summary I can edit so if I forget and
+  click publish, we'll still have a summary?"*; and for the sidebar: *"the libraries sidebar should be same height as
+  the listview and use same font type and size. height should be optimized to window hight"*. A worker drafted both, with
+  the top Publish button's form drawn in sight for an uncertified piece, in #3865.
+- **A page under `library/` carries the vault's canonical header** (`public-header/apply.py --tracker-logos
+  ../../sierra/`); the Catalog's adapted copy fails `tests/library_pages.test.js`.
+- **A session cannot write a public field.** A migration setting the piece's `public_summary` was refused by
+  `cpl_library_guard_public` (run 45719960204: *"Listing in the public library needs the team phrase or a reviewer
+  sign-in"*), the service role included, and was withdrawn from #3864. Public fields change only through
+  `cpl_library_set_public()` from the card; the summary waits on a person's press of Publish to Public Library.
