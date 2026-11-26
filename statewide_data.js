@@ -73373,6 +73373,161 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
+      "exhibit_id": "MAPCXS-SLFB-1-001",
+      "exhibit_ids": [
+        "MAPCXS-SLFB-1-001"
+      ],
+      "title": "Spanish Literature for Bilinguals Examiantion",
+      "unified_title": "Spanish Literature for Bilinguals Examiantion",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Spanish Literature for Bilinguals Examiantion"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Foreign Languages",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "16",
+      "top_codes": [
+        "83"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Southwestern College"
+      ],
+      "potential": 93,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Taft College",
+        "Ventura College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College"
+      ],
+      "total_addressable": 94,
+      "credit_recs": [
+        {
+          "course": "SPAN 221",
+          "credit": "5 hours in INTRODUCTION TO LITERATURE FOR BILINGUALS"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCXS-SLFB-1-001",
+          "title": "Spanish Literature for Bilinguals Examiantion",
+          "units": 5.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Southwestern College": 5.0
+      },
+      "adopter_lines": {
+        "Southwestern College": 1
+      },
+      "adopter_rec_idx": {
+        "Southwestern College": [
+          0
+        ]
+      },
+      "peer_units_median": 5.0,
+      "peer_units_max": 5.0,
+      "rec_units_total": 5.0
+    },
+    {
       "exhibit_id": "MAPCXH-HSA(57-1-001|MAPCXS-A0HA-1-001|MAPCXS-A2CR-1-001|MAPCXS-A2R--1-001|MAPCXS-AJ0-9-1-001|MAPCXS-AJ01-1-001|MAPCXS-AJ5X-1-001|MAPCXS-CATJ1-1-001|MAPCxS-CATJ-1-001",
       "exhibit_ids": [
         "MAPCXH-HSA(57-1-001",
@@ -449839,7 +449994,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 16,
         "ccc_collaborative": 0,
         "industry_certs": 24,
-        "pct": 1.0
+        "pct": 0.9
       },
       {
         "college": "Hartnell College",
@@ -450515,6 +450670,15 @@ window.CPL_STATEWIDE = {
         "ccc_collaborative": 3,
         "industry_certs": 3,
         "pct": 0.0
+      },
+      {
+        "college": "Southwestern College",
+        "credit_recs": 1,
+        "exhibits": 1,
+        "disciplines": 1,
+        "ccc_collaborative": 0,
+        "industry_certs": 0,
+        "pct": 0.0
       }
     ],
     "by_discipline": [
@@ -450583,10 +450747,10 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Foreign Languages",
-        "credit_recs": 417,
-        "exhibits": 242,
-        "courses": 186,
-        "colleges": 44,
+        "credit_recs": 418,
+        "exhibits": 243,
+        "courses": 187,
+        "colleges": 45,
         "ccc_collaborative": 47,
         "pct": 2.4
       },
@@ -450732,7 +450896,7 @@ window.CPL_STATEWIDE = {
         "credit_recs": 8165,
         "exhibits": 3362,
         "colleges": 89,
-        "pct": 46.5
+        "pct": 46.4
       },
       {
         "cpl_type": "Industry Certification",
@@ -450743,9 +450907,9 @@ window.CPL_STATEWIDE = {
       },
       {
         "cpl_type": "Credit By Exam",
-        "credit_recs": 2467,
-        "exhibits": 1984,
-        "colleges": 67,
+        "credit_recs": 2468,
+        "exhibits": 1985,
+        "colleges": 68,
         "pct": 14.0
       },
       {
@@ -450773,9 +450937,9 @@ window.CPL_STATEWIDE = {
     "by_mode_of_learning": [
       {
         "mode": "Self-study, exam preparation, other (S)",
-        "credit_recs": 9648,
-        "exhibits": 4537,
-        "colleges": 95,
+        "credit_recs": 9649,
+        "exhibits": 4538,
+        "colleges": 96,
         "pct": 54.9
       },
       {
@@ -450845,9 +451009,9 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 15710,
-        "exhibits": 7141,
-        "colleges": 100,
+        "credit_recs": 15711,
+        "exhibits": 7142,
+        "colleges": 101,
         "disciplines": 23,
         "pct": 89.4
       },
@@ -451271,8 +451435,8 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-11-25T19:45:53",
-  "total_credit_recs": 17578,
+  "generated_at": "2026-11-26T06:17:12",
+  "total_credit_recs": 17579,
   "cip_sectors": {
     "01": "Agricultural/Animal/Plant/Veterinary Science and Related Fields",
     "03": "Natural Resources and Conservation",
