@@ -1,0 +1,19 @@
+{
+  "_about": "Library check receipt (scripts/library_check.py): the cpl_library_checks rows this run inserted and each listing's before-values, written before the listing's update. Roll back a listing by writing its before-values with the service key; roll back the rows with: delete from public.cpl_library_checks where created_by = '<created_by>' (the table's owner; no role may delete a check).",
+  "at": "2026-11-26T01:12:48.934494+00:00",
+  "created_by": "library-publish.yml run 45734067925 attempt 1",
+  "checks": [
+    {
+      "id": "65c090f1-e0eb-4544-9ea3-58507ad56c6b",
+      "library_id": "bc20bfc0-292c-4dec-9187-a2726345fed7",
+      "version_key": "version:1",
+      "url": "https://cpl-initiative.github.io/cpl-project-tracker/library/adult-ed-cpl-starting-points/",
+      "result": "pass",
+      "findings": 0,
+      "checked_at": "2026-11-26T01:13:01.208672+00:00",
+      "report_url": "https://cpl-initiative.github.io/cpl-project-tracker/library/adult-ed-cpl-starting-points/accessibility/20261126-011248Z.txt"
+    }
+  ],
+  "listed": [],
+  "unlisted": []
+}
