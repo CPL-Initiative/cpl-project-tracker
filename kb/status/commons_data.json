@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-26T16:27:40Z",
+ "written_at": "2026-11-26T16:56:15Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17584,
-  "gap": 4751,
+  "passing": 17585,
+  "gap": 4750,
   "with_gap": 118,
-  "cost_usd": 1341.34,
-  "passed_at_read": 16500,
+  "cost_usd": 1341.45,
+  "passed_at_read": 16501,
   "cost_receipts": 118,
   "spent_usd": 1244.44,
   "spent_runs": 240,
@@ -189,8 +189,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16942,
-  "gap": 4751,
+  "passing": 16943,
+  "gap": 4750,
   "collected_with_gaps": 642,
   "discontinued": 0
  },
@@ -10715,10 +10715,9 @@
    "harvested": true,
    "slug": "santa_ana",
    "programs": 370,
-   "passing": 341,
-   "gap": 29,
+   "passing": 342,
+   "gap": 28,
    "causes": {
-    "extraction_error": 1,
     "no_closed_list": 11,
     "page_not_found": 12,
     "unknown_without_live": 5
@@ -10747,10 +10746,10 @@
     "curriqunet"
    ],
    "objectives_printed": null,
-   "read_at": "2026-10-16T03:03:02Z",
+   "read_at": "2026-11-26T14:51:09Z",
    "read_kind": "capture",
-   "cost_usd": 22.03,
-   "passed_at_read": 331,
+   "cost_usd": 22.14,
+   "passed_at_read": 332,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -10759,9 +10758,9 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 359,
-   "found": 347,
+   "found": 348,
    "extracted": 347,
-   "errors": 1,
+   "errors": 0,
    "failed_checks": {
     "coverage": 0,
     "invented": 0,
@@ -10775,24 +10774,23 @@
    "capture_root": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/36562",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 7227.4,
-   "run": "45841675928",
+   "read_seconds": 7344.7,
+   "run": "45842667274",
    "levers": {
     "reader_page_search": 12,
     "program_course_file_check": 11,
     "reconcile_steps": 4,
-    "ge_units_steps": 1,
-    "paid_read": 1
+    "ge_units_steps": 1
    },
    "collection": {
     "program_reader": {
      "records": 347,
      "models": {
-      "claude-opus-5-5": 346
+      "claude-opus-5-5": 347
      },
-     "run": "45841675928",
-     "at": "2026-10-16T03:03:02Z",
-     "cost_usd": 22.03,
+     "run": "45842667274",
+     "at": "2026-11-26T14:51:09Z",
+     "cost_usd": 22.14,
      "platform": "curriqunet"
     },
     "slo_read": {

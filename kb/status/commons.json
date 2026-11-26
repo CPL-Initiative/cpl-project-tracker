@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-26T16:27:45Z",
+ "written_at": "2026-11-26T16:56:20Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 15625,
+     "n": 15626,
      "of": 20282,
      "words": "complete at 118 colleges",
      "open": "#program-requirements/list"
@@ -41,7 +41,7 @@
      "open": "#program-requirements/list/fail"
     },
     {
-     "n": 2919,
+     "n": 2918,
      "words": "active programs with no record yet",
      "owner": "the harvest",
      "carry": "routine",
@@ -68,10 +68,10 @@
    },
    "facts": {
     "active": 20282,
-    "complete": 15625,
+    "complete": 15626,
     "failing": 1738,
-    "unread": 2919,
-    "records": 18969,
+    "unread": 2918,
+    "records": 18970,
     "colleges": 118,
     "outside_active": 1606,
     "confirmed": 32,
@@ -383,7 +383,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-26T00:23:47-08:00",
+    "at": "2026-11-26T02:27:03-08:00",
     "every_hours": null
    },
    "facts": {
@@ -799,7 +799,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 2919,
+    "n": 2918,
     "words": "active programs with no record yet",
     "owner": "the harvest",
     "open": "#program-requirements/list/unread"
