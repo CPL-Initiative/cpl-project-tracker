@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-26T07:36:09Z",
+ "written_at": "2026-11-26T07:56:00Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,8 +168,8 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17443,
-  "gap": 4892,
+  "passing": 17446,
+  "gap": 4889,
   "with_gap": 118,
   "cost_usd": 1341.14,
   "passed_at_read": 16414,
@@ -190,8 +190,8 @@
  "census_check": {
   "universe": 22335,
   "passing": 16889,
-  "gap": 4892,
-  "collected_with_gaps": 554,
+  "gap": 4889,
+  "collected_with_gaps": 557,
   "discontinued": 0
  },
  "census_live": {
@@ -10878,12 +10878,12 @@
    "harvested": true,
    "slug": "santa_barbara_city",
    "programs": 319,
-   "passing": 243,
-   "gap": 76,
+   "passing": 246,
+   "gap": 73,
    "causes": {
     "no_closed_list": 32,
     "page_not_found": 36,
-    "unknown_without_live": 8
+    "unknown_without_live": 5
    },
    "census_causes": {
     "coverage_fails": 1,
@@ -10938,7 +10938,7 @@
    "levers": {
     "reader_page_search": 36,
     "program_course_file_check": 32,
-    "reconcile_steps": 8
+    "reconcile_steps": 5
    },
    "collection": {
     "program_reader": {

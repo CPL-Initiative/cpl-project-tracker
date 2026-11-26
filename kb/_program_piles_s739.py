@@ -216,6 +216,8 @@ def apply_ops(filed: dict, ops: list) -> dict | None:
       ("units", code, lo[, hi])     a course's units as the page prints them.
       ("repeat", code, times)       a course the program takes more than once.
       ("alt_units", course, alt, n) an alternative's units as its row prints them.
+      ("pair", course, [alts], n)   two alternatives the page prints as taken together: one alternative at the
+                                    pair's units.
       ("uncount", code)             a course the printed total leaves out.
       ("total", lo[, hi])           the program's printed total, where a note quotes another figure.
       ("alone", block)              a block of an option group that every student takes: it leaves the group."""
@@ -277,6 +279,16 @@ def apply_ops(filed: dict, ops: list) -> dict | None:
             if len(rows) != 1 or len(alts) != 1:
                 return None
             alts[0]["units"] = args[2]
+        elif kind == "pair":
+            rows = [c for b in bl for c in b.get("courses") or [] if S.norm_code(c.get("code")) == S.norm_code(args[0])]
+            want = {S.norm_code(x) for x in args[1]}
+            if len(rows) != 1 or len(want) < 2:
+                return None
+            alts = [x for x in rows[0].get("alternatives") or [] if isinstance(x, dict)]
+            if {S.norm_code(x.get("code")) for x in alts} & want != want:
+                return None
+            rows[0]["alternatives"] = [x for x in alts if S.norm_code(x.get("code")) not in want] + [
+                {"code": " & ".join(args[1]), "units": args[2], "catalog_addition": False}]
         elif kind == "uncount":
             rows = [c for b in bl for c in b.get("courses") or [] if S.norm_code(c.get("code")) == S.norm_code(args[0])]
             if len(rows) != 1:
@@ -296,16 +308,17 @@ def apply_ops(filed: dict, ops: list) -> dict | None:
     return rec
 
 
-def closes(filed: dict, record: dict | None, major: bool = False) -> bool:
+def closes(filed: dict, record: dict | None, major: bool = False, verdict: bool = False) -> bool:
     """Today's scorer, against the record's own state list, gives the printed total at both ends. major: the reading
     closes the major at its printed total, and the degree's own total is read apart (an entry that names a second
-    note for it)."""
+    note for it). verdict: the reading need only pass today's scorer (an entry whose printed total is a range the
+    courses meet at its low end, short_high; "closes": "passes")."""
     if record is None:
         return False
     a = C.fresh_score(dict(filed, record=record))["arithmetic"]
     if major and a.get("against") == "degree":
         a = a.get("major") or {}
-    return a.get("status") == "equal" and same(a.get("computed"), a.get("stated"))
+    return a.get("status") == "equal" and (verdict or same(a.get("computed"), a.get("stated")))
 
 
 # ── a shape: a kind whose sentence says the units cannot be checked ────────
@@ -653,7 +666,8 @@ class Pile:
         return first
 
     def kind_closes(self, filed: dict, e: dict) -> bool:
-        if e.get("ops") and not closes(filed, apply_ops(filed, e["ops"]), major=e.get("closes") == "major"):
+        if e.get("ops") and not closes(filed, apply_ops(filed, e["ops"]), major=e.get("closes") == "major",
+                                       verdict=e.get("closes") == "passes"):
             return False
         shapes = e.get("shape") or []
         for sh in [shapes] if isinstance(shapes, str) else shapes:
