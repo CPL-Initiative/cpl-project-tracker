@@ -2,19 +2,215 @@
  "college": "Coastline Community College",
  "programs": 175,
  "with_closed_list": 159,
- "found": 154,
+ "found": 143,
  "extracted": 154,
  "errors": 0,
- "passed_machine_checks": 124,
+ "passed_machine_checks": 126,
  "failed": {
-  "coverage": 14,
+  "coverage": 13,
   "invented": 0,
-  "arithmetic": 29,
+  "arithmetic": 28,
   "repeated": 1,
   "outcomes": 0
  },
- "cost_usd": 8.52,
+ "cost_usd_run": 0.04,
+ "cost_usd_filed": 8.52,
  "cost_per_program": 0.0553,
- "not_found": [],
- "run": "38445051060"
+ "extract_calls": 1,
+ "extract_failed": [],
+ "not_found": [
+  {
+   "control_number": "03724",
+   "title": "Supervision",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program",
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "18054",
+   "title": "Physical Education and Health",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program",
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "18217",
+   "title": "Gerontology",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program",
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "19516",
+   "title": "Emergency Management-Homeland Security",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.cccd.edu/coastline/pathways/law-safety/emergency-management/emergency-management-foundations-cos/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.417,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 5,
+    "listed": 12,
+    "why": "coverage 0.42 in innerText+tabs, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 2619,
+     "content": 5380,
+     "tabs": 297
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      277
+     ]
+    ],
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "20353",
+   "title": "Supervision",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program",
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "35740",
+   "title": "Business Information Worker",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "why": "no page read names the program",
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "42005",
+   "title": "Cloud Computing",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/business-computing/medical-administrative-office-technician-cos/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 0 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2508,
+     "content": 5241,
+     "tabs": 332
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      312
+     ]
+    ],
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "42525",
+   "title": "Cisco Certified Networking Administrator (CCNA)",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program",
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "42526",
+   "title": "Offensive Security",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/computer-cyber-sciences/artificialintelligence-ai-readiness3-security-privacy-bias-noncredit/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2592,
+     "content": 5303,
+     "tabs": 205
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      185
+     ]
+    ],
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "43057",
+   "title": "Communications Studies 2.0",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/communication-studies/communication-studies-2-aat/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 1.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 9,
+    "listed": 9,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 2833,
+     "content": 6682,
+     "tabs": 1428
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      1408
+     ]
+    ],
+    "page_checks": true
+   },
+   "status": "Active"
+  }
+ ],
+ "run": "45777312083"
 }

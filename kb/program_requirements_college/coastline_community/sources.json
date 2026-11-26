@@ -3637,14 +3637,18 @@
    "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english/introduction-careers-esports-certificate-completion/",
    "title": "Introduction to Careers in Esports, Certificate of Completion < Coastline College",
    "h1": "ACADEMIC CATALOGS",
-   "text_from": "innerText",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "introduction to careers in esports, certificate of completion",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
-  "text_chars": 2271
+  "text_chars": 2476
  },
  {
   "control_number": "40477",
