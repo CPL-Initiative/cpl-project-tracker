@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-26_s739j_41373_rollback.sql",
+ "name": "s739j_41373_rollback",
+ "version": "20261126111055",
+ "sha256": "7dda900ff31c7a807bc66eb4d9755bb9d5133a3020a7461b79d08fa284bb915e",
+ "run": "45807976291",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"returned\":{\"returned\":1,\"keys\":[3],\"skipped_checked\":[]}}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

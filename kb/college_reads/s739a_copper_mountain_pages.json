@@ -1,0 +1,28 @@
+{
+ "_readme": "S739 wave A (the gap census's Next wave, census run 45771011713 of 2026-11-26 06:54Z, the reader_page_assignment lever): Copper Mountain College's 2 programs whose filed record places none of the state's listed courses (capture 39035222722, the 2026-2027 catalog PDF): Hospitality Management A.S.-T 41085 was handed pages 77 to 78 (the General Business A.S. and its Hospitality concentration) and Kinesiology A.A.-T 43132 pages 158 to 160 (course descriptions). This plan prints every page of the programs section that names either program, line for line, so a session sees where each one's own section opens and ends for a pdf_pages pin, or that the catalog prints none. The address the filed capture read (.../2026/09/Final-26-27-Catalog-09.03.26r1.pdf) answered 404 on the first read (run 45781997815); this reads the catalog's reissue of 2026-11-18 (kb/college_reads/subject_index_copper_mountain.json reads the same file), whose page numbers may differ from the filed capture's. No model call, nothing written.",
+ "college": "Copper Mountain College",
+ "questions": {
+  "own_page": "Where each program's own section opens (its heading and the first line of its requirement list) and where its list ends (its total), or that no page prints one."
+ },
+ "keywords": [
+  "[Hh]ospitality [Mm]anagement",
+  "HOSPITALITY MANAGEMENT",
+  "[Kk]inesiology",
+  "KINESIOLOGY"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "41085 43132",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf"
+  }
+ ],
+ "pdf_span": [
+  56,
+  125
+ ],
+ "pdf_page_cap": 30,
+ "pdf_unfolded": true
+}

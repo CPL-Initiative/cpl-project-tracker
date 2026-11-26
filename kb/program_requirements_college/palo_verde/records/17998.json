@@ -117,7 +117,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "degree_electives_not_printed",
+    "label": "The degree's major and general education add to less than the printed degree total, and the page prints no figure for electives and does not say they fill the rest.",
+    "words": "'Credits: 60.0 - 61.0' at the top of the page is recorded as degree_total; the 18-credit Area of Emphasis total is recorded as total_units. | CalGETC pattern printed at 34-38 credits; GE courses not placed in blocks."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 100,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

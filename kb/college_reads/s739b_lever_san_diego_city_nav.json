@@ -1,0 +1,44 @@
+{
+ "_readme": "S739 wave B (the gap census of 2026-11-26 06:54Z, run 45771011713, Next wave; lever reader_page_assignment): Communications Technician Apprenticeship 22333, read from the Electronics certificate's entry (15945/15651), and Cosmetology 22367, read from its own entry (15945/15788) into a record with no course block (run 38252422845). This reads the program list with its navigation data for an entry naming Communications Technician or apprenticeship, and the Cosmetology entry as the capture reads it. Two loads. No model call, nothing written.",
+ "college": "San Diego City College",
+ "questions": {
+  "own_page": "Whether the catalog prints the program's own section (its heading, its award, its course list and its total), where, and which course codes it prints."
+ },
+ "keywords": [
+  "communications technician[^\\\"\\n]{0,80}",
+  "apprenticeship[^\\\"\\n]{0,80}",
+  "cosmetology[^\\\"\\n]{0,80}"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945",
+   "network": true,
+   "network_hosts": [
+    "sdccd.curriqunet.com"
+   ],
+   "network_find": [
+    "Communications Technician",
+    "Apprenticeship",
+    "Cosmetology"
+   ],
+   "links": "communications|apprentice|cosmetolog",
+   "links_cap": 200,
+   "why": "the program list"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15788",
+   "cq_view": true,
+   "cq_catalog": 69,
+   "why": "22367"
+  }
+ ],
+ "outside_hosts": {
+  "curriqunet.com": "San Diego City College (sdccd.curriqunet.com): the college's own 2026-2027 catalog, served on its catalog vendor's domain, whose navigation calls hold the program entries"
+ }
+}

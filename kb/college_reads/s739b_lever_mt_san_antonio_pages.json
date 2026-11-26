@@ -1,0 +1,32 @@
+{
+ "_readme": "S739 wave B (the gap census of 2026-11-26 06:54Z, run 45771011713, Next wave; lever reader_page_assignment): Electronics Technology - Level 1 41116 (Certificate M0679), read from the Electronics and Computer Engineering Technology certificate's page (capture 44744647809), whose filed record says the Level 1 heading appears there only as a navigation toggle. Level 2 41117 sits at electronics/electronics-technology-level-2-certificate/. This reads the department's links and the address that pattern gives Level 1, as the capture reads it. Two loads. No model call, nothing written.",
+ "college": "Mt. San Antonio College",
+ "questions": {
+  "own_page": "Whether the catalog prints the program's own section (its heading, its award, its course list and its total), where, and which course codes it prints."
+ },
+ "keywords": [
+  "Level 1[^\\n]{0,80}",
+  "M0679",
+  "Total[^\\n]{0,40}",
+  "ELEC[ \\-]?5[06][AB]?\\b"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.mtsac.edu/programs/programsaz/electronics/",
+   "links": "programsaz/electronics/",
+   "links_cap": 60,
+   "why": "41116, the department page's links"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-technology-level-1-certificate/",
+   "capture_view": true,
+   "why": "41116"
+  }
+ ]
+}

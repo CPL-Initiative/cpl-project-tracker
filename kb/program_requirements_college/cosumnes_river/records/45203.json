@@ -108,7 +108,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "noted_no_total",
+    "label": "The reader's note says the catalog prints no total for this program, so its units cannot be checked against one; no page read has confirmed it.",
+    "words": "The catalog prints no units beside any course; all course units are null. No total units for the certificate is printed (Cal-GETC areas give minimums: Area 1 nine units, Area 2 three, Area 3 six, Area 4 six, Area 6 three); total_units left null."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 97,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

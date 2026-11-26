@@ -1933,17 +1933,22 @@
    "CDFS216"
   ],
   "source": {
-   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30107",
-   "title": "CHILD DEVELOPMENT MASTER TEACHER - Certificate of Achievement",
-   "h1": "CHILD DEVELOPMENT MASTER TEACHER - Certificate of Achievement",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30109",
+   "title": "CHILD DEVELOPMENT TEACHER - Certificate of Achievement",
+   "h1": "CHILD DEVELOPMENT TEACHER - Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
-   }
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "child development teacher - certificate of achievement",
+    "section_fit": 1.0,
+    "exact": 0
+   },
+   "pinned": true
   },
   "listed": 8,
-  "text_chars": 2056
+  "text_chars": 1765
  },
  {
   "control_number": "21053",
@@ -5961,17 +5966,22 @@
    "AVMT180"
   ],
   "source": {
-   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30091",
-   "title": "AVIATION MECHANIC - AIRFRAME & POWERPLANT - Certificate of Achievement",
-   "h1": "AVIATION MECHANIC - AIRFRAME & POWERPLANT - Certificate of Achievement",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30093",
+   "title": "AVIATION MECHANIC - POWERPLANT - Certificate of Achievement",
+   "h1": "AVIATION MECHANIC - POWERPLANT - Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
-   }
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "aviation mechanic - powerplant - certificate of achievement",
+    "section_fit": 1.0,
+    "exact": 0
+   },
+   "pinned": true
   },
   "listed": 9,
-  "text_chars": 1617
+  "text_chars": 1686
  },
  {
   "control_number": "43368",

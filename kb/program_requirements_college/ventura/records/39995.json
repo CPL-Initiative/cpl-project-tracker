@@ -98,7 +98,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "unit_line_not_read",
+    "label": "The catalog prints a requirement as a line of units with no course named, and the record leaves the line out; with it the courses add to the printed total.",
+    "words": "The Required Core Courses block also includes 'One course from: VCCCD GE Area 1b, 6 or 7' (3 units), which is a general education area choice and is not recorded as a course; the listed core courses sum to 24.5 of the stated 27.5 units. | BIOL C1001 & C1001L are printed as one row with 4 units for the pair; the 4 units are recorded on BIOL C1001 and BIOL C1001L has null units."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

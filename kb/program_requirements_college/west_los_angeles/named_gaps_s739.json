@@ -1,0 +1,19 @@
+{
+ "_readme": "S739 wave B, the gap census's Next wave (census of 2026-11-26 06:54Z, run 45771011713; levers reader_page_assignment and paid_read): West Los Angeles College's Cal-GETC certificate, a general-education pattern certificate whose state listing is the pattern's course list. The college's other program on the lever, Spanish for the Workplace Fundamentals 46261, is already a named gap (named_gaps_s727.json, no_own_page_found) and held for a person (held_for_person/46261.json), and is not filed again here. Filed as named gaps and never sent to a paid read. Each filed record stays as filed (the load skips a record that places none of its listed courses). No model call, no Supabase write. Each is the college's to settle in COCI or its catalog.",
+ "college": "West Los Angeles College",
+ "written": "2026-11-26T08:48:35Z",
+ "capture": "44883863572",
+ "page_reads": [],
+ "reasons": {
+  "ge_pattern_certificate": "General-education pattern certificate. It has no fixed course list by design (the census's named gap, kb/_harvest_gap_census.py NAMED_GAPS)."
+ },
+ "programs": [
+  {
+   "control_number": "44945",
+   "title": "Cal-GETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "reason": "ge_pattern_certificate",
+   "note": "The state's file lists 148 courses for it, the Cal-GETC pattern's course list; the filed record (run 39536207109) was read from catalog pp.272-274, the LACCD General Education Pattern for associate degrees, and its own notes say 'The Cal-GETC pattern section itself does not appear in the text'."
+  }
+ ]
+}

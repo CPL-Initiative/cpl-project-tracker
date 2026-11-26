@@ -1,0 +1,21 @@
+{
+ "_readme": "S739 wave B, the gap census's Next wave (census of 2026-11-26 06:54Z, run 45771011713; levers reader_page_assignment and paid_read): 1 program of Ohlone College whose only section in the 2026-2027 guide is headed by another award than the state's (college-page-read run 45782471633, PDF p.88, the one page of pp.86-90 that names it). Filed as named gaps and never sent to a paid read. Each filed record stays as filed (the load skips a record that places none of its listed courses). No model call, no Supabase write. Each is the college's to settle in COCI or its catalog.",
+ "college": "Ohlone College",
+ "written": "2026-11-26T08:48:35Z",
+ "capture": "45025966614",
+ "page_reads": [
+  "45782471633"
+ ],
+ "reasons": {
+  "catalog_award_differs": "The state lists the program as a Certificate of Achievement, and the 2026-2027 guide prints its section, the only one under its title, as a Certificate of Accomplishment: the extraction, asked for the Certificate of Achievement, finds no such section and records no list."
+ },
+ "programs": [
+  {
+   "control_number": "37693",
+   "title": "Kinesiology: Sports Medicine",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "reason": "catalog_award_differs",
+   "note": "PDF p.88 prints 'KINESIOLOGY: SPORTS MEDICINE / Certificate of Accomplishment in Kinesiology: Sports Medicine': KIN-250, KIN-257, KIN-258 and KIN-381 or KIN-382, 'Total Required Units: 10.0-11.0', five of the six courses the state lists (HLTH 101 is not printed) and fewer units than the state's award requires. The filed record (run 39061732843) says the text 'holds only' that certificate."
+  }
+ ]
+}

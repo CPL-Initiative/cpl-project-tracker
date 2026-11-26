@@ -1270,21 +1270,10 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/riverside_city",
-  "kept": 239,
+  "kept": 240,
   "kept_moved": 0,
-  "programs": 1,
-  "list": [
-   {
-    "control_number": "33230",
-    "title": "History",
-    "award": "A.A- T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5993",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5993",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   }
-  ],
+  "programs": 0,
+  "list": [],
   "held_worse_window": [],
   "held_no_gain": [],
   "held_opens_on_list": [],
@@ -2253,5 +2242,10 @@
    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6034"
   }
  },
- "run": "44046016854"
+ "staged_from": {
+  "run": "45781329321",
+  "proof": "text sha256 of 240 programs",
+  "pages_loaded": 0
+ },
+ "run": "45781875995"
 }

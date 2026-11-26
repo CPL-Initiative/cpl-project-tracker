@@ -118,7 +118,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "prerequisites_counted",
+    "label": "The record counts the program's prerequisite courses, which the catalog's printed total leaves out; without them the courses add to the printed total.",
+    "words": "Prerequisite courses (17 units) must be completed before application; they are counted separately from the 52-unit Total Major Units but are included in the 81-unit degree total. | Degree calculation as printed: Prerequisite 17 + Major 52 + VCCCD GE 24 - Double-Counted (12) + Elective 0 = 81 Total Units for the A.S. Degree."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 70,
+   "course_list_match": 100,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

@@ -1,0 +1,22 @@
+{
+ "_readme": "S739 wave B, the gap census's Next wave (census of 2026-11-26 06:54Z, run 45771011713; levers reader_page_assignment and paid_read): 1 program of Merced College whose filed record places none of the state's listed courses and whose title the catalog's program list does not print (college-page-read run 45786121488, the list of 191 programs searched for Physics and for UCTP). Filed as named gaps and never sent to a paid read. Each filed record stays as filed (the load skips a record that places none of its listed courses). No model call, no Supabase write. Each is the college's to settle in COCI or its catalog.",
+ "college": "Merced College",
+ "written": "2026-11-26T08:50:53Z",
+ "capture": "43609965348",
+ "page_reads": [
+  "45784839786",
+  "45786121488"
+ ],
+ "reasons": {
+  "credit_not_in_catalog": "A credit program the 2026-27 catalog prints under no heading of its own: its list of degrees and certificates does not list it."
+ },
+ "programs": [
+  {
+   "control_number": "40858",
+   "title": "UCTP: Physics",
+   "award": "A.S. T Degree",
+   "reason": "credit_not_in_catalog",
+   "note": "Searched for Physics, the program list names one program, 'Physics 2.0 (AST)' (19800.AST), which Physics 2.0 A.S.-T 46490 holds; searched for UCTP it names one, 'UCTP: Chemistry (AS-T)' (19050.AST), which 40854 holds. It lists no UCTP: Physics degree. The capture handed 40858 the Engineering certificate's Requisites page (programs/09010.CT), which names 5 of its 10 listed courses; the filed record (run 39117489616) is headed '09010.CT - Engineering (CT)' and places none of them."
+  }
+ ]
+}

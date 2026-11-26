@@ -474,6 +474,70 @@ SHAPES = {"note_quotes": shape_note_quotes, "total_cut": shape_total_cut, "optio
           "no_total": shape_no_total, "option_lists": shape_option_lists}
 
 
+class LiveRuns:
+    """The live-run reading for a college with no earlier piles module (Cosumnes River, s739i): the runs the
+    committed receipts posted to its live rows, by S731's rule (kb/_program_piles_s731_lbcc.py posted_runs, whose
+    plan_applied this reads, never a copy of it). A load with one run posts its inserted_keys at that run; a load
+    over several runs names no run per key and posts none here (Pile.history_live proves such a row from its record
+    file's history); a reread posts its replaced_keys and carried_keys at its extracted_run; every applied plan posts
+    its records' runs. skip names plan tags left out.
+
+    A reread's kept_keys: the reread keeps a row whose run is at least its own (its SQL: cur.extracted_run >=
+    new_run), so a kept key shows the live run is no older than the reread's, never that it is the reread's. It is
+    the reread's run only where the row cannot be newer: no other receipt posts the key, one load inserted it, and
+    the reread's run is the latest of that load's runs (the row was inserted at one of them). Such a key is posted
+    at the reread's run; any other kept key posts none (S739's reader, MINOR)."""
+
+    def __init__(self, college: str, slug: str):
+        self.college, self.slug = college, slug
+
+    def posted_runs(self, skip: tuple = ()) -> dict:
+        import _program_piles_s731_lbcc as L
+        out: dict = {}
+        kept = []
+        multi: dict = {}
+        for path in glob.glob(os.path.join(NG.RECEIPTS, "program_requirement_records_*.json")):
+            name = os.path.basename(path)
+            try:
+                with open(path, encoding="utf-8") as fh:
+                    d = json.load(fh)
+            except (OSError, ValueError):
+                continue
+            if not isinstance(d, dict):
+                continue
+            at = str(d.get("at") or "")
+            if name.startswith("program_requirement_records_college_reread_%s_" % self.slug):
+                for k in (d.get("replaced_keys") or []) + (d.get("carried_keys") or []):
+                    out.setdefault(str(k), []).append((at, str(d.get("extracted_run"))))
+                kept += [(str(k), at, str(d.get("extracted_run"))) for k in d.get("kept_keys") or []]
+            elif name.startswith("program_requirement_records_college_%s_" % self.slug):
+                runs = [str(r) for r in d.get("extracted_runs") or []]
+                if len(runs) == 1:
+                    for k in d.get("inserted_keys") or []:
+                        out.setdefault(str(k), []).append((at, runs[0]))
+                else:
+                    for k in d.get("inserted_keys") or []:
+                        multi.setdefault(str(k), []).append(runs)
+            elif not name.startswith("program_requirement_records_college_"):
+                tag = name[:-len(".json")].rsplit("_", 1)[-1]
+                if tag in skip or not L.plan_applied(tag):
+                    continue
+                rows = d.get("records") if isinstance(d.get("records"), list) else d.get("moved")
+                for r in rows if isinstance(rows, list) else []:
+                    if isinstance(r, dict) and r.get("college") == self.college and r.get("extracted_run"):
+                        out.setdefault(str(r.get("control_number")), []).append((at, str(r["extracted_run"])))
+        for k, at, run in kept:
+            loads = multi.get(k) or []
+            if k not in out and len(loads) == 1 and run.isdigit() and all(r.isdigit() for r in loads[0]) \
+                    and int(run) == max(int(r) for r in loads[0]):
+                out[k] = [(at, run)]
+        return out
+
+    def on_live_run(self, filed: dict, skip: tuple = ()) -> bool:
+        rows = self.posted_runs(skip).get(str(filed.get("control_number"))) or []
+        return bool(rows) and max(rows)[1] == str(filed.get("extracted_run"))
+
+
 class Pile:
     """One college's plan over its earlier plan's holds."""
 

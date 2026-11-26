@@ -29,6 +29,10 @@ MIG = os.path.join(ROOT, "kb", "migrations", "2026-11-24_s721b_prreq_piles_%s.sq
 sys.path.insert(0, os.path.join(ROOT, "kb"))
 import _program_named_gaps as NG  # noqa: E402
 import _program_piles_s721_orangecoast as W  # noqa: E402
+
+# S739's plan s739j collects 36732, which this plan held for its live run. Its applied receipt posts that run, so
+# this plan's own reading is pinned on the receipts as they stood before it.
+W.SKIP = ("s739j",)
 import _program_requirements_score as S  # noqa: E402
 
 COLLEGE = "Orange Coast College"

@@ -5,16 +5,19 @@
  "found": 183,
  "extracted": 183,
  "errors": 0,
- "passed_machine_checks": 161,
+ "passed_machine_checks": 168,
  "failed": {
-  "coverage": 2,
+  "coverage": 0,
   "invented": 0,
-  "arithmetic": 22,
+  "arithmetic": 15,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 10.93,
+ "cost_usd_run": 0.11,
+ "cost_usd_filed": 10.93,
  "cost_per_program": 0.0597,
+ "extract_calls": 2,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "37255",
@@ -40,7 +43,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "37543",
@@ -66,7 +70,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "38249",
@@ -74,7 +79,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "38261",
@@ -82,7 +88,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "38273",
@@ -90,7 +97,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "38274",
@@ -98,7 +106,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "38275",
@@ -106,7 +115,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "38276",
@@ -114,7 +124,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "38303",
@@ -122,7 +133,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "38304",
@@ -148,7 +160,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "38305",
@@ -156,7 +169,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "38409",
@@ -164,7 +178,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "38410",
@@ -190,7 +205,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "38689",
@@ -198,8 +214,9 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   }
  ],
- "run": "39063368678"
+ "run": "45787691549"
 }

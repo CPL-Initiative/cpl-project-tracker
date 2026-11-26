@@ -119,7 +119,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "lists_not_closed",
+    "label": "A choice list prints no unit figure of its own, one that depends on another choice, or also takes courses from another list, so the lists alone cannot add the program's units.",
+    "words": "The page prints List A (Total 3-4 Credits: STAT C1000, PSY 155) and List B (Total 4 Credits: ANTH C1001, ANTH C1001L) after the 18-credit Area of Emphasis list, with no instruction on how they relate to it (required within the 18, in addition to it, or alternatives). List A read as choose one course and List B as all required; reviewer should check. | Credits: 60.0 - 61.0 recorded as degree_total; CalGETC 34-38 recorded as ge_units."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 30,
+   "course_list_match": 97,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

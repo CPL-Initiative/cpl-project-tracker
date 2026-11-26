@@ -26,6 +26,10 @@ sys.path.insert(0, os.path.join(ROOT, "kb"))
 import _program_named_gaps as NG  # noqa: E402
 import _program_piles_s720_ventura as W  # noqa: E402
 
+# S739's plan s739n collects 06973 and 32834, which this plan held for their live run. Once it is applied its
+# receipt posts their runs, so this plan's own reading is pinned on the receipts as they stood before it.
+W.SKIP = ("s739n",)
+
 COLLEGE = 'Ventura College'
 ROWS = {'06957': 'pool_figure_not_read', '20576': 'pool_figure_not_read', '45731': 'pool_figure_not_read', '31455': 'lists_not_closed', '32054': 'lists_not_closed'}
 HELD = {'35654', '44994', '45427', '39995', '08253', '44995', '32578', '06948', '30587', '32834', '37415', '42967', '45348', '31298', '20599', '39961', '06973'}

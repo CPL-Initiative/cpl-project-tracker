@@ -1,0 +1,26 @@
+{
+ "_readme": "S739 wave A (the gap census's Next wave, census run 45771011713 of 2026-11-26 06:54Z, the reader_page_assignment lever): Los Angeles Pierce College's General Studies: Arts and Humanities A.A. 19181, whose filed record places none of its 227 listed courses (capture 44475498778, the 2026-2027 General Catalog PDF): the capture handed it pages 31 to 33, the district's general education pattern, and the record's notes say the award's own section is not in that text. This plan prints every page of the Educational Programs section that names General Studies, line for line, so a session sees where the award's own section opens and ends for a pdf_pages pin. No model call, nothing written.",
+ "college": "Los Angeles Pierce College",
+ "questions": {
+  "own_page": "Where the award's own section opens (its heading and the first line of its requirement list) and where its list ends (its total)."
+ },
+ "keywords": [
+  "GENERAL STUDIES",
+  "General Studies"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "19181",
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf"
+  }
+ ],
+ "pdf_span": [
+  34,
+  215
+ ],
+ "pdf_page_cap": 24,
+ "pdf_unfolded": true
+}

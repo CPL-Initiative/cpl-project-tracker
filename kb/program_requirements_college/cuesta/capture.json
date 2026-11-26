@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 206,
  "with_closed_list": 198,
- "started": "2026-10-17T19:40:02Z",
+ "started": "2026-11-26T08:59:14Z",
  "curriqunet": {
   "catalog": 15,
   "view_prefix": "https://cuesta.curriqunet.com/catalog/iq/",
@@ -20,12 +20,976 @@
   "entries": 621,
   "stopped_at_cap": false,
   "same_title_entries": 411,
-  "entries_read": 210
+  "entries_read": 210,
+  "twin_ids": {
+   "30069": [
+    30981,
+    31739
+   ],
+   "30070": [
+    30982,
+    31740
+   ],
+   "30071": [
+    30983,
+    31741
+   ],
+   "30072": [
+    30984,
+    31742
+   ],
+   "30073": [
+    30985,
+    31743
+   ],
+   "30074": [
+    30986,
+    31744
+   ],
+   "30075": [
+    30987,
+    31745
+   ],
+   "30076": [
+    30988,
+    31746
+   ],
+   "32751": [
+    32754,
+    32755
+   ],
+   "30077": [
+    30989,
+    31747
+   ],
+   "30078": [
+    30990,
+    31748
+   ],
+   "30079": [
+    32590,
+    31749
+   ],
+   "30080": [
+    30991,
+    31750
+   ],
+   "30081": [
+    30992,
+    31751
+   ],
+   "30082": [
+    30993,
+    31752
+   ],
+   "30083": [
+    30994,
+    31753
+   ],
+   "30084": [
+    30995,
+    31754
+   ],
+   "30085": [
+    30996,
+    31755
+   ],
+   "30086": [
+    30997,
+    31756
+   ],
+   "30087": [
+    30998,
+    31757
+   ],
+   "30088": [
+    30999,
+    31758
+   ],
+   "30089": [
+    31000,
+    31759
+   ],
+   "32738": [
+    32739,
+    32740
+   ],
+   "30090": [
+    31001,
+    31760
+   ],
+   "30091": [
+    31002,
+    31761
+   ],
+   "30092": [
+    31003,
+    31762
+   ],
+   "30093": [
+    31004,
+    31763
+   ],
+   "30094": [
+    31005,
+    31764
+   ],
+   "32702": [
+    32705,
+    32708
+   ],
+   "30095": [
+    31006,
+    31765
+   ],
+   "30096": [
+    31007,
+    31766
+   ],
+   "30097": [
+    31008,
+    31767
+   ],
+   "30098": [
+    31009,
+    31768
+   ],
+   "30099": [
+    31010,
+    31769
+   ],
+   "30100": [
+    31011,
+    31770
+   ],
+   "30101": [
+    31012,
+    31771
+   ],
+   "30102": [
+    31013,
+    31772
+   ],
+   "30103": [
+    31014,
+    31773
+   ],
+   "30104": [
+    31015,
+    31774
+   ],
+   "30105": [
+    31016,
+    31775
+   ],
+   "30106": [
+    31017,
+    31776
+   ],
+   "30107": [
+    31018,
+    31777
+   ],
+   "30108": [
+    31019,
+    31778
+   ],
+   "30109": [
+    31020,
+    31779
+   ],
+   "30110": [
+    32589,
+    31780
+   ],
+   "32672": [
+    32675,
+    32676
+   ],
+   "30112": [
+    31022,
+    31782
+   ],
+   "30113": [
+    31023,
+    31783
+   ],
+   "30114": [
+    31024,
+    31784
+   ],
+   "30115": [
+    31025,
+    31785
+   ],
+   "30116": [
+    32588,
+    31786
+   ],
+   "30117": [
+    31026,
+    31787
+   ],
+   "30118": [
+    31027,
+    31788
+   ],
+   "30119": [
+    31028,
+    31789
+   ],
+   "30120": [
+    31029,
+    31790
+   ],
+   "30123": [
+    31032,
+    31793
+   ],
+   "30121": [
+    31030,
+    31791
+   ],
+   "30122": [
+    31031,
+    31792
+   ],
+   "30124": [
+    31033
+   ],
+   "32700": [
+    32703,
+    32706
+   ],
+   "32701": [
+    32704,
+    32707
+   ],
+   "30125": [
+    31034,
+    31794
+   ],
+   "30126": [
+    31035,
+    31795
+   ],
+   "30127": [
+    31036,
+    31796
+   ],
+   "30128": [
+    31037,
+    31797
+   ],
+   "30129": [
+    31038,
+    31798
+   ],
+   "30130": [
+    31039,
+    31799
+   ],
+   "30131": [
+    31040,
+    31800
+   ],
+   "30132": [
+    31041,
+    31801
+   ],
+   "30133": [
+    31042,
+    31802
+   ],
+   "30134": [
+    31043,
+    31803
+   ],
+   "30135": [
+    31044,
+    31804
+   ],
+   "30136": [
+    31045,
+    31805
+   ],
+   "30137": [
+    31046,
+    31806
+   ],
+   "30138": [
+    31047,
+    31807
+   ],
+   "30139": [
+    31048,
+    31808
+   ],
+   "30140": [
+    31049,
+    31809
+   ],
+   "30141": [
+    31050,
+    31810
+   ],
+   "32560": [
+    32565,
+    32569
+   ],
+   "30143": [
+    31052,
+    32552
+   ],
+   "30142": [
+    31051,
+    32553
+   ],
+   "30144": [
+    31053,
+    31811
+   ],
+   "30145": [
+    31054,
+    31812
+   ],
+   "30146": [
+    31055,
+    31813
+   ],
+   "30147": [
+    31056,
+    31814
+   ],
+   "32618": [
+    32637,
+    32653
+   ],
+   "30148": [
+    31057,
+    31815
+   ],
+   "30149": [
+    31058,
+    31816
+   ],
+   "30150": [
+    31059,
+    31817
+   ],
+   "30151": [
+    31060,
+    31818
+   ],
+   "30152": [
+    31061,
+    31819
+   ],
+   "30153": [
+    31062,
+    31820
+   ],
+   "30154": [
+    31063,
+    31821
+   ],
+   "30111": [
+    31021,
+    31781
+   ],
+   "30155": [
+    31064,
+    31822
+   ],
+   "30156": [
+    31065,
+    31823
+   ],
+   "30157": [
+    31066,
+    31824
+   ],
+   "30158": [
+    31067,
+    31825
+   ],
+   "30159": [
+    31068,
+    31826
+   ],
+   "30160": [
+    31069,
+    31827
+   ],
+   "30161": [
+    31070,
+    31828
+   ],
+   "30162": [
+    31071,
+    31829
+   ],
+   "30163": [
+    32591,
+    31830
+   ],
+   "30164": [
+    32592,
+    31831
+   ],
+   "30165": [
+    31072,
+    31832
+   ],
+   "30166": [
+    31073,
+    31833
+   ],
+   "30167": [
+    31074,
+    31834
+   ],
+   "30168": [
+    31075,
+    31835
+   ],
+   "30169": [
+    31076,
+    31836
+   ],
+   "30170": [
+    31077,
+    31837
+   ],
+   "30171": [
+    31078,
+    31838
+   ],
+   "30173": [
+    32529,
+    31840
+   ],
+   "30174": [
+    32530,
+    31841
+   ],
+   "30172": [
+    31839
+   ],
+   "30175": [
+    32532,
+    31842
+   ],
+   "30176": [
+    31079,
+    31843
+   ],
+   "30177": [
+    31080,
+    31844
+   ],
+   "30178": [
+    31081,
+    31845
+   ],
+   "30179": [
+    31082,
+    31846
+   ],
+   "30180": [
+    31083,
+    31847
+   ],
+   "30213": [
+    31116,
+    31880
+   ],
+   "30181": [
+    31084,
+    31848
+   ],
+   "30182": [
+    31085,
+    31849
+   ],
+   "30183": [
+    31086,
+    31850
+   ],
+   "30184": [
+    31087,
+    31851
+   ],
+   "30185": [
+    31088
+   ],
+   "30186": [
+    31089,
+    31853
+   ],
+   "30187": [
+    31090,
+    31854
+   ],
+   "30188": [
+    31091,
+    31855
+   ],
+   "30189": [
+    31092,
+    31856
+   ],
+   "30190": [
+    31093,
+    31857
+   ],
+   "30191": [
+    31094,
+    31858
+   ],
+   "30192": [
+    31095,
+    31859
+   ],
+   "30193": [
+    31096,
+    31860
+   ],
+   "30194": [
+    31097,
+    31861
+   ],
+   "30195": [
+    31098,
+    31862
+   ],
+   "30196": [
+    31099,
+    31863
+   ],
+   "30197": [
+    31100,
+    31864
+   ],
+   "30198": [
+    31101,
+    31865
+   ],
+   "30199": [
+    31102,
+    31866
+   ],
+   "30200": [
+    31103,
+    31867
+   ],
+   "30201": [
+    31104,
+    31868
+   ],
+   "30202": [
+    31105,
+    31869
+   ],
+   "30203": [
+    31106,
+    31870
+   ],
+   "30204": [
+    31107,
+    31871
+   ],
+   "30205": [
+    31108,
+    31872
+   ],
+   "30206": [
+    31109,
+    31873
+   ],
+   "30207": [
+    31110,
+    31874
+   ],
+   "30208": [
+    31111,
+    31875
+   ],
+   "30209": [
+    31112,
+    31876
+   ],
+   "30210": [
+    31113,
+    31877
+   ],
+   "30211": [
+    31114,
+    31878
+   ],
+   "30212": [
+    31115,
+    31879
+   ],
+   "30214": [
+    31117,
+    31881
+   ],
+   "30215": [
+    31118,
+    31882
+   ],
+   "30216": [
+    31119,
+    31883
+   ],
+   "30217": [
+    31120,
+    31884
+   ],
+   "30218": [
+    31121,
+    31885
+   ],
+   "30219": [
+    31122,
+    31886
+   ],
+   "30220": [
+    31123,
+    31887
+   ],
+   "30221": [
+    31124,
+    31888
+   ],
+   "30222": [
+    31125,
+    31889
+   ],
+   "30223": [
+    31126,
+    31890
+   ],
+   "30224": [
+    31127,
+    31891
+   ],
+   "30225": [
+    31128,
+    31892
+   ],
+   "30226": [
+    31129,
+    31893
+   ],
+   "30227": [
+    31130,
+    31894
+   ],
+   "30228": [
+    31131,
+    31895
+   ],
+   "30229": [
+    31132,
+    31896
+   ],
+   "30230": [
+    31133,
+    31897
+   ],
+   "30231": [
+    31134,
+    31898
+   ],
+   "30232": [
+    31135,
+    31899
+   ],
+   "30233": [
+    32668,
+    31900
+   ],
+   "30234": [
+    31136,
+    31901
+   ],
+   "30235": [
+    31137,
+    31902
+   ],
+   "30236": [
+    31138,
+    31903
+   ],
+   "30237": [
+    31139,
+    31904
+   ],
+   "30238": [
+    31140,
+    31905
+   ],
+   "30239": [
+    31141,
+    31906
+   ],
+   "30240": [
+    31142,
+    31907
+   ],
+   "30241": [
+    31143,
+    31908
+   ],
+   "30242": [
+    31144,
+    31909
+   ],
+   "30243": [
+    31145,
+    32609
+   ],
+   "30244": [
+    31146,
+    31910
+   ],
+   "30245": [
+    31147,
+    31911
+   ],
+   "30246": [
+    31148,
+    31912
+   ],
+   "30247": [
+    31149,
+    31913
+   ],
+   "30248": [
+    31150,
+    31914
+   ],
+   "32673": [
+    32674,
+    32677
+   ],
+   "32561": [
+    32576,
+    32580
+   ],
+   "32617": [
+    32641,
+    32657
+   ],
+   "30249": [
+    31151,
+    31915
+   ],
+   "30250": [
+    31152,
+    31916
+   ],
+   "30251": [
+    31153,
+    31917
+   ],
+   "30252": [
+    31154,
+    31918
+   ],
+   "30253": [
+    31155,
+    31919
+   ],
+   "30254": [
+    31156,
+    31920
+   ],
+   "30255": [
+    31157,
+    31921
+   ],
+   "30256": [
+    31158,
+    31922
+   ],
+   "30257": [
+    31159,
+    31923
+   ],
+   "30258": [
+    31160,
+    31924
+   ],
+   "30259": [
+    31161,
+    31925
+   ],
+   "30260": [
+    31162,
+    31926
+   ],
+   "30261": [
+    31163,
+    31927
+   ],
+   "30262": [
+    31164,
+    31928
+   ],
+   "30263": [
+    31165,
+    31929
+   ],
+   "32619": [
+    32645,
+    32658
+   ]
+  },
+  "failed_calls": 0
  },
  "pages_read": 210,
+ "pages_listed": 210,
+ "pages_answered": 210,
+ "listing_failed": 0,
  "banner_h1": null,
+ "site_pins": {
+  "21050": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30109",
+   "bound": true
+  },
+  "43053": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30093",
+   "bound": true
+  }
+ },
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 176,
+   "hits": 174,
+   "recall": 0.989,
+   "false": 0,
+   "false_off_own": 2,
+   "false_no_claims": 2,
+   "shared": 6,
+   "false_matches": [
+    {
+     "control_number": "33875",
+     "title": "LIBERAL ARTS - SCIENCE",
+     "award": "A.A. Degree",
+     "page": "https://cuesta.curriqunet.com/catalog/iq/30065/30849/32527/32531",
+     "h1": "LIBERAL ARTS: SCIENCE - Associate in Arts"
+    },
+    {
+     "control_number": "43794",
+     "title": "MATH PREPARATION FOR COLLEGE SUCCESS",
+     "award": "Noncredit program",
+     "page": "https://cuesta.curriqunet.com/catalog/iq/30065/31721/31726/31852",
+     "h1": "MATH PREPARATION FOR COLLEGE SUCCESS - Certificate of Completion"
+    }
+   ],
+   "no_claims_matches": [
+    {
+     "control_number": "33875",
+     "title": "LIBERAL ARTS - SCIENCE",
+     "award": "A.A. Degree",
+     "page": "https://cuesta.curriqunet.com/catalog/iq/30065/30849/32527/32531",
+     "h1": "LIBERAL ARTS: SCIENCE - Associate in Arts"
+    },
+    {
+     "control_number": "43794",
+     "title": "MATH PREPARATION FOR COLLEGE SUCCESS",
+     "award": "Noncredit program",
+     "page": "https://cuesta.curriqunet.com/catalog/iq/30065/31721/31726/31852",
+     "h1": "MATH PREPARATION FOR COLLEGE SUCCESS - Certificate of Completion"
+    }
+   ],
+   "searches": false,
+   "catalog_list": null
+  },
+  "programs": 8,
+  "by_result": {
+   "not_searched": 6,
+   "not_matched": 2
+  },
+  "found": 0,
+  "found_active": 0,
+  "found_pages": 0,
+  "found_programs": [],
+  "other_programs": [
+   {
+    "control_number": "18665",
+    "title": "CSU General Education Breadth",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 174 of 176 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "18666",
+    "title": "IGETC",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "title_has_no_words"
+   },
+   {
+    "control_number": "32132",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 174 of 176 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "35717",
+    "title": "Agriculture Plant Science",
+    "award": "A.S. T Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 174 of 176 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "36981",
+    "title": "GED PREPARATION",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 174 of 176 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "38246",
+    "title": "NONCREDIT ACCOUNTING BASICS FOR SMALL BUSINESS",
+    "award": "Noncredit program",
+    "status": "Active - Teachout Only",
+    "result": "not_searched",
+    "why": "the matcher found 174 of 176 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "38271",
+    "title": "NONCREDIT EFFECTIVE MARKETING COMMUNICATION MANAGEMENT",
+    "award": "Noncredit program",
+    "status": "Active - Teachout Only",
+    "result": "not_searched",
+    "why": "the matcher found 174 of 176 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "45182",
+    "title": "Cal-GETC",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "title_has_no_words"
+   }
+  ],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
  "loads": 1009,
- "seconds": 4604.7,
+ "seconds": 4499.4,
  "found": 183,
  "by_method": {
   "no_closed_list": 8,
@@ -34,10 +998,6 @@
   "sitemap_page": 183
  },
  "shared_pages": {
-  "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30107": [
-   "21050",
-   "38479"
-  ],
   "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30113": [
    "31857",
    "42763"
@@ -49,10 +1009,6 @@
   "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30243": [
    "36266",
    "44556"
-  ],
-  "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30091": [
-   "41744",
-   "43053"
   ]
  },
  "not_found": [
@@ -80,7 +1036,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "37543",
@@ -106,7 +1063,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "38249",
@@ -114,7 +1072,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "38261",
@@ -122,7 +1081,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "38273",
@@ -130,7 +1090,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "38274",
@@ -138,7 +1099,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "38275",
@@ -146,7 +1108,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "38276",
@@ -154,7 +1117,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "38303",
@@ -162,7 +1126,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "38304",
@@ -188,7 +1153,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "38305",
@@ -196,7 +1162,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "38409",
@@ -204,7 +1171,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "38410",
@@ -230,7 +1198,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "38689",
@@ -238,7 +1207,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   }
  ],
  "page_claimed": [
@@ -248,1850 +1218,878 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "pages": [
     "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30174"
-   ]
+   ],
+   "status": "Active"
   }
  ],
+ "page_challenged": [],
  "coverage_bands": {
   "0.5-0.8": 2,
-  "0.8-1.0": 13,
-  "1.0": 168
+  "0.8-1.0": 5,
+  "1.0": 176
  },
  "would_extract": {
-  "against": null,
-  "kept": 0,
-  "programs": 183,
+  "against": "kb/program_requirements_college/cuesta",
+  "kept": 172,
+  "kept_moved": 0,
+  "programs": 2,
   "list": [
    {
-    "control_number": "05660",
-    "title": "BUSINESS ADMINISTRATIVE ASSISTANT",
-    "award": "A.A. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30097",
+    "control_number": "21050",
+    "title": "CHILD DEVELOPMENT TEACHER",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30109",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30107",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
-    "control_number": "05661",
-    "title": "JOURNALISM",
-    "award": "A.A. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30166",
+    "control_number": "43053",
+    "title": "AVIATION MECHANIC - POWERPLANT",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30093",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05666",
-    "title": "AUTOMOTIVE TECHNICIAN",
-    "award": "A.S. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30088",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05667",
-    "title": "CONSTRUCTION TECHNOLOGY",
-    "award": "A.S. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30118",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05668",
-    "title": "WELDING TECHNOLOGY",
-    "award": "A.S. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30260",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
+    "was_url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30091",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   }
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "only": [
+   "21050",
+   "43053"
+  ],
+  "not_named": [
    {
     "control_number": "05669",
     "title": "ART HISTORY AND PROFESSIONAL PRACTICES",
     "award": "A.A. Degree",
     "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30083",
-    "coverage": 0.895,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05675",
-    "title": "NURSING, REGISTERED",
-    "award": "A.S. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30214",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05677",
-    "title": "MEDICAL ASSISTING",
-    "award": "A.S. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30188",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05679",
-    "title": "HUMAN SERVICES",
-    "award": "A.A. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30161",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05680",
-    "title": "EARLY CHILDHOOD EDUCATION",
-    "award": "A.A. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30126",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05684",
-    "title": "LIBRARY/INFORMATION TECHNOLOGY",
-    "award": "A.S. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30177",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05686",
-    "title": "PHYSICS",
-    "award": "A.S. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30230",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05687",
-    "title": "Chemistry",
-    "award": "A.S. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30103",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05688",
-    "title": "GEOLOGY",
-    "award": "A.S. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30151",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05690",
-    "title": "CRIMINAL JUSTICE",
-    "award": "A.A. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30120",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05696",
-    "title": "ENGINEERING",
-    "award": "A.S. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30137",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07672",
-    "title": "ARCHITECTURAL TECHNOLOGY",
-    "award": "A.S. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30081",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07677",
-    "title": "ACCOUNTING CLERK",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30070",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07681",
-    "title": "FILM TELEVISION AND ELECTRONIC MEDIA",
-    "award": "A.A. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30146",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07684",
-    "title": "RECREATION ADMINISTRATION",
-    "award": "A.A. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30244",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07685",
-    "title": "AUTO BODY TECHNICIAN",
-    "award": "A.S. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30086",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10374",
-    "title": "ENGINE PERFORMANCE SPECIALIST",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30136",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10433",
-    "title": "BUSINESS ADMINISTRATIVE ASSISTANT",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30098",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "12223",
-    "title": "PARALEGAL",
-    "award": "A.A. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30218",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "13607",
-    "title": "COMPUTER SCIENCE",
-    "award": "A.S. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30116",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "13611",
-    "title": "MANAGEMENT INFORMATION SYSTEMS",
-    "award": "A.S. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30182",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "13697",
-    "title": "NURSING, REGISTERED (30 UNIT OPTION)",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30215",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "13698",
-    "title": "JAZZ STUDIES",
-    "award": "A.A. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30165",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "14441",
-    "title": "COMPUTER AND NETWORKING TECHNOLOGY",
-    "award": "A.S. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30114",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "14793",
-    "title": "ADVANCED ENGINE PERFORMANCE TECHNICIAN",
-    "award": "A.S. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30076",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "14876",
-    "title": "MUSIC PERFORMANCE",
-    "award": "A.A. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30194",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15487",
-    "title": "POLITICAL SCIENCE",
-    "award": "A.A. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30234",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15491",
-    "title": "HISTORY",
-    "award": "A.A. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30156",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15547",
-    "title": "LEGAL STUDIES: BUSINESS OPTION",
-    "award": "A.A. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30170",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15548",
-    "title": "LEGAL STUDIES: SOCIAL SCIENCE OPTION",
-    "award": "A.A. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30171",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "16506",
-    "title": "SOCIOLOGY",
-    "award": "A.A. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30251",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "16766",
-    "title": "ELECTRICAL TECHNOLOGY",
-    "award": "A.S. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30129",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30083",
+    "was_coverage": 0.895,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "16837",
     "title": "Licensed Vocational Nursing",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30213",
-    "coverage": 0.909,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "16875",
-    "title": "Paramedic",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30221",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30213",
+    "was_coverage": 0.909,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "18710",
     "title": "LIBERAL ARTS - ARTS AND HUMANITIES",
     "award": "A.A. Degree",
     "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30173",
-    "coverage": 0.972,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18712",
-    "title": "LIBERAL ARTS - SOCIAL AND BEHAVIORAL SCIENCES",
-    "award": "A.A. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30175",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20945",
-    "title": "PSYCHIATRIC TECHNICIAN",
-    "award": "A.S. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30239",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20946",
-    "title": "PSYCHIATRIC TECHNICIAN",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30240",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21033",
-    "title": "BUSINESS CAREER TRACK CORE",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30099",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21040",
-    "title": "AUTO BODY TECHNICIAN",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30087",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21041",
-    "title": "CONSTRUCTION TECHNOLOGY",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30119",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21042",
-    "title": "ELECTRONICS AND STATE ELECTRICIAN",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30130",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21043",
-    "title": "WELDING TECHNOLOGY",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30261",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21044",
-    "title": "Medical Assisting",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30189",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21050",
-    "title": "CHILD DEVELOPMENT TEACHER",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30107",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21053",
-    "title": "Paralegal",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30219",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21054",
-    "title": "LIBRARY/INFORMATION TECHNOLOGY",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30178",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24397",
-    "title": "NONCREDIT VOCATIONAL ENGLISH AS A SECOND LANGUAGE",
-    "award": "Noncredit program",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30211",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24462",
-    "title": "SECONDARY EDUCATION",
-    "award": "Noncredit program",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30247",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30452",
-    "title": "BUSINESS ADMINISTRATION - CAREER TRACK",
-    "award": "A.A. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30095",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30845",
-    "title": "Sociology",
-    "award": "A.A- T Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30252",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30918",
-    "title": "Mathematics",
-    "award": "A.S. T Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30186",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31857",
-    "title": "Communication Studies",
-    "award": "A.A- T Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30113",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31885",
-    "title": "POLITICAL SCIENCE",
-    "award": "A.A- T Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30235",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31933",
-    "title": "Administration of Justice",
-    "award": "A.S. T Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30075",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "coverage": 0.993,
+    "was_url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30173",
+    "was_coverage": 0.972,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "32131",
     "title": "STUDIO ARTS",
     "award": "A.A- T Degree",
     "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30255",
-    "coverage": 0.939,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32139",
-    "title": "Anthropology",
-    "award": "A.A- T Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30080",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32140",
-    "title": "Theatre Arts",
-    "award": "A.A- T Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30257",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32153",
-    "title": "BUSINESS ADMINISTRATION",
-    "award": "A.S. T Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30096",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32157",
-    "title": "JOURNALISM",
-    "award": "A.A- T Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30167",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32198",
-    "title": "MUSIC",
-    "award": "A.A- T Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30192",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30255",
+    "was_coverage": 0.939,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "32270",
     "title": "ART HISTORY",
     "award": "A.A- T Degree",
     "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30082",
-    "coverage": 0.939,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32271",
-    "title": "English",
-    "award": "A.A- T Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30138",
-    "coverage": 0.643,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32321",
-    "title": "Geology",
-    "award": "A.S. T Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30152",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32377",
-    "title": "EARLY CHILDHOOD EDUCATION",
-    "award": "A.S. T Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30127",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32453",
-    "title": "Physics",
-    "award": "A.S. T Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30231",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32454",
-    "title": "Psychology",
-    "award": "A.A- T Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30242",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32562",
-    "title": "SPANISH",
-    "award": "A.A- T Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30253",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32593",
-    "title": "HISTORY",
-    "award": "A.A- T Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30157",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32960",
-    "title": "PARAMEDIC",
-    "award": "A.S. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30220",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33041",
-    "title": "Economics",
-    "award": "A.A- T Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30128",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33400",
-    "title": "NONCREDIT ENGLISH AS A SECOND LANGUAGE - LEVEL I",
-    "award": "Noncredit program",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30202",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33401",
-    "title": "NONCREDIT ENGLISH AS A SECOND LANGUAGE - LEVEL II",
-    "award": "Noncredit program",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30203",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33402",
-    "title": "NONCREDIT ENGLISH AS A SECOND LANGUAGE - LEVEL III",
-    "award": "Noncredit program",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30204",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33634",
-    "title": "Nutrition and Dietetics",
-    "award": "A.S. T Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30216",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33704",
-    "title": "AGRICULTURE BUSINESS",
-    "award": "A.S. T Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30077",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33875",
-    "title": "LIBERAL ARTS - SCIENCE",
-    "award": "A.A. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30172",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33910",
-    "title": "PRE-NURSING",
-    "award": "A.S. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30238",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30082",
+    "was_coverage": 0.939,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "33939",
     "title": "ART STUDIO",
     "award": "A.A. Degree",
     "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30084",
-    "coverage": 0.964,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33963",
-    "title": "Biology",
-    "award": "A.S. T Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30094",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35008",
-    "title": "Licensed Vocational Nursing",
-    "award": "A.S. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30180",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35076",
-    "title": "Graphics",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30154",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35099",
-    "title": "PSYCHOLOGY",
-    "award": "A.A. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30241",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35142",
-    "title": "NONCREDIT ESL: LISTENING AND SPEAKING FOR ENGLISH SPEAKERS OF OTHER LANGUAGES",
-    "award": "Noncredit program",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30209",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30084",
+    "was_coverage": 0.964,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "36261",
     "title": "FILM, TELEVISION, AND ELECTRONIC MEDIA",
     "award": "A.S. T Degree",
     "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30147",
-    "coverage": 0.913,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36266",
-    "title": "Public Health Science",
-    "award": "A.S. T Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30243",
-    "coverage": 0.625,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36269",
-    "title": "CHILD AND ADOLESCENT DEVELOPMENT",
-    "award": "A.A- T Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30104",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36271",
-    "title": "Global Studies",
-    "award": "A.A- T Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30153",
-    "coverage": 0.882,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36603",
-    "title": "SOCIAL JUSTICE STUDIES",
-    "award": "A.A- T Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30249",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30147",
+    "was_coverage": 0.913,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "36738",
     "title": "Elementary Teacher Education",
     "award": "A.A- T Degree",
     "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30132",
-    "coverage": 0.958,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36762",
-    "title": "LAW, PUBLIC POLICY, AND SOCIETY",
-    "award": "A.A- T Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30169",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36960",
-    "title": "Environmental Sciences",
-    "award": "A.S. T Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30139",
-    "coverage": 0.929,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37046",
-    "title": "Automotive Technician",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30089",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37062",
-    "title": "SOCIAL WORK AND HUMAN SERVICES",
-    "award": "A.A- T Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30250",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37077",
-    "title": "MECHANIZED AGRICULTURE",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30187",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37078",
-    "title": "ADDICTION TREATMENT STUDIES",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30074",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37079",
-    "title": "ADDICTION TREATMENT STUDIES",
-    "award": "A.A. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30073",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37170",
-    "title": "MAINTENANCE AND LIGHT REPAIR TECHNICIAN",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30181",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37252",
-    "title": "NONCREDIT ENGLISH AS A SECOND LANGUAGE LEVEL IV",
-    "award": "Noncredit program",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30205",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37253",
-    "title": "NONCREDIT ENGLISH AS A SECOND LANGUAGE - LEVEL V",
-    "award": "Noncredit program",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30206",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37257",
-    "title": "NONCREDIT AUTO/BODY COLLISION REPAIR",
-    "award": "Noncredit program",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30196",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37258",
-    "title": "NONCREDIT AUTOMOTIVE REFINISH REPAIR",
-    "award": "Noncredit program",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30197",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37339",
-    "title": "HOSPITALITY MANAGEMENT",
-    "award": "A.S. T Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30158",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37433",
-    "title": "MUSIC",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30193",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37435",
-    "title": "PREMEDICAL STUDIES",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30237",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37651",
-    "title": "PK – 3 PATHWAY FOR ELEMENTARY EDUCATORS",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30232",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37979",
-    "title": "CERAMICS",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30102",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37980",
-    "title": "PHOTOGRAPHY",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30229",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37981",
-    "title": "SCULPTURE FOUNDRY",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30245",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38201",
-    "title": "NONCREDIT BASIC OFFICE SOFTWARE SKILLS",
-    "award": "Noncredit program",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30199",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38250",
-    "title": "NONCREDIT BASIC INTERNET SKILLS",
-    "award": "Noncredit program",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30198",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38254",
-    "title": "NONCREDIT BEGINNING COMPUTER SKILLS",
-    "award": "Noncredit program",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30200",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38260",
-    "title": "NONCREDIT CAREER STRATEGIST",
-    "award": "Noncredit program",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30201",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38358",
-    "title": "GEOGRAPHIC INFORMATION SYSTEMS",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30150",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38384",
-    "title": "HOSPITALITY MANAGEMENT NONCREDIT",
-    "award": "Noncredit program",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30160",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38465",
-    "title": "AUDIO TECHNOLOGY I",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30085",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38466",
-    "title": "ADDICTION STUDIES FOUNDATION",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30072",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38467",
-    "title": "NUTRITION EDUCATION/COACHING",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30217",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38468",
-    "title": "HOSPITALITY MANAGEMENT FOUNDATION",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30159",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38469",
-    "title": "PARAPROFESSIONAL COUNSELING SKILLS",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30222",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38470",
-    "title": "CHILD DEVELOPMENT ASSOCIATE TEACHER",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30106",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38471",
-    "title": "CHILD DEVELOPMENT SITE SUPERVISOR",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30108",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38472",
-    "title": "PARENTING EDUCATION/FAMILY ADVOCACY",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30226",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38479",
-    "title": "CHILD DEVELOPMENT MASTER TEACHER",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30107",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38500",
-    "title": "POWER AND INSTRUMENTATION",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30236",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38515",
-    "title": "EQUIPMENT TECHNICIAN",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30140",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38687",
-    "title": "NONCREDIT STRUCTURAL STEEL CERTIFICATION",
-    "award": "Noncredit program",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30210",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38772",
-    "title": "NONCREDIT ESL: BEGINNING CONVERSATION",
-    "award": "Noncredit program",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30207",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38836",
-    "title": "PARAPROFESSIONAL EDUCATOR/PRE-TEACHING",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30225",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38837",
-    "title": "PARAPROFESSIONAL EDUCATOR/PRE-TEACHING",
-    "award": "A.A. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30224",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39678",
-    "title": "HIGH SCHOOL/MIDDLE SCHOOL TEACHER PATHWAY",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30155",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39907",
-    "title": "CLOUD COMPUTING",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30110",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39908",
-    "title": "CULINARY ARTS STUDIES",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30122",
-    "coverage": 0.941,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39909",
-    "title": "MANAGEMENT SPECIALIZATION",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30183",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39911",
-    "title": "VITICULTURE",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30259",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40057",
-    "title": "FARM MANAGEMENT",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30145",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40085",
-    "title": "CULINARY ARTS",
-    "award": "A.S. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30123",
-    "coverage": 0.944,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40104",
-    "title": "INCLUSION AND SPECIAL NEEDS",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30162",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40825",
-    "title": "EMPLOYABILITY & TRANSITIONS",
-    "award": "Noncredit program",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30135",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40856",
-    "title": "CALIFORNIA CONSERVATION AWARENESS",
-    "award": "Noncredit program",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30100",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41234",
-    "title": "EXERCISE SCIENCE - FITNESS PROFESSIONAL",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30144",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41526",
-    "title": "COMMERCIAL MUSIC",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30112",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41742",
-    "title": "BUSINESS ADMINISTRATION 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30096",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41744",
-    "title": "AVIATION MECHANIC - AIRFRAME & POWERPLANT",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30091",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42040",
-    "title": "DIGITAL COMMERCE CONCENTRATION",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30125",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42042",
-    "title": "ACCOUNTING CONCENTRATION",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30071",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42043",
-    "title": "GENERAL BUSINESS CONCENTRATION",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30149",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42044",
-    "title": "MARKETING CONCENTRATION",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30184",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42045",
-    "title": "SMALL BUSINESS MANAGEMENT CONCENTRATION",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30248",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42046",
-    "title": "MULTIMEDIA JOURNALISM",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30191",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42411",
-    "title": "CHILD DEVELOPMENT AND FAMILY STUDIES",
-    "award": "A.A. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30105",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42763",
-    "title": "COMMUNICATION STUDIES 2.0",
-    "award": "A.A- T Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30113",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42770",
-    "title": "CAREER TECHNICAL EDUCATION TEACHER PREPARATION",
-    "award": "A.S. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30101",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42774",
-    "title": "SPORTS MEDICINE",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30254",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42865",
-    "title": "ESL CITIZENSHIP",
-    "award": "Noncredit program",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30141",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42883",
-    "title": "TRANSITIONS",
-    "award": "Noncredit program",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30258",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42891",
-    "title": "ACADEMIC SKILLS BRIDGE TO COLLEGE CREDIT",
-    "award": "Noncredit program",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30069",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42973",
-    "title": "AVIATION MECHANIC - GENERAL",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30092",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43036",
-    "title": "AVIATION MECHANIC - AIRFRAME",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30090",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43053",
-    "title": "AVIATION MECHANIC - POWERPLANT",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30091",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43368",
-    "title": "TECHNICAL THEATER",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30256",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43682",
-    "title": "LIBERAL ARTS: HEALTH AND WELLNESS",
-    "award": "A.A. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30174",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43707",
-    "title": "ETHNIC STUDIES FOR EDUCATORS",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30143",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30132",
+    "was_coverage": 0.958,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "43775",
     "title": "ELEMENTARY EDUCATION: LIBERAL STUDIES WITH CHILD DEVELOPMENT EMPHASIS (PK-6 PREP)",
     "award": "A.A. Degree",
     "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30131",
-    "coverage": 0.964,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43794",
-    "title": "MATH PREPARATION FOR COLLEGE SUCCESS",
-    "award": "Noncredit program",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30185",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44171",
-    "title": "ESSENTIAL RANCHING SKILLS",
-    "award": "Noncredit program",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32560",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44278",
-    "title": "SOCIAL JUSTICE: ETHNIC STUDIES",
-    "award": "A.A- T Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32561",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44552",
-    "title": "SOCIAL JUSTICE: GENDER STUDIES",
-    "award": "A.A- T Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32617",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44556",
-    "title": "PUBLIC HEALTH",
-    "award": "A.S. T Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30243",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44776",
-    "title": "WOMEN'S, FEMINIST, AND QUEER STUDIES",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32619",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44824",
-    "title": "FOOD, NUTRITION, AND SYSTEMS STUDIES",
-    "award": "A.S. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32618",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44904",
-    "title": "SOCIAL JUSTICE: CHICANO STUDIES",
-    "award": "A.A- T Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32673",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45157",
-    "title": "COMMERCIAL DRIVER'S LICENSE",
-    "award": "Noncredit program",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32672",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45889",
-    "title": "DATA SCIENCE",
-    "award": "A.S. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32700",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45890",
-    "title": "DATA SCIENCE",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32701",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46075",
-    "title": "BLACKSMITHING",
-    "award": "Noncredit program",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32702",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46278",
-    "title": "AVIATION MAINTENANCE TECHNOLOGY",
-    "award": "A.S. Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32738",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46389",
-    "title": "AGRICULTURE ANIMAL SCIENCES",
-    "award": "A.S. T Degree",
-    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32751",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30131",
+    "was_coverage": 0.964,
+    "was_method": "sitemap_page"
    }
-  ]
+  ],
+  "refused_passing": [],
+  "forced_unbound": []
  },
- "run": "39063368678"
+ "fingerprints": {
+  "05660": {
+   "sha256": "dba0263fcb0dd03f329bbb069c3836484b50420f13f81d94efc620a69a1221d1",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30097"
+  },
+  "05661": {
+   "sha256": "bac3719e5a2af6d59337b2b976b8e36e17a91df88ab237cb2c99773eea5233bd",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30166"
+  },
+  "05666": {
+   "sha256": "5c804e33455c47967758abc8f7c45d70c048538bd536e0d8640336e4d27193e1",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30088"
+  },
+  "05667": {
+   "sha256": "5846617484202319f72d30aaedea3182f2b87f64fa7ecc31d85e5eaab9849411",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30118"
+  },
+  "05668": {
+   "sha256": "4c9eb1de0125a85304218e3aef24521f48546754a444f2b1ca5e8149e92b0fca",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30260"
+  },
+  "05669": {
+   "sha256": "79e22eb21d750f017300b1f9e0fc2df3eccd7c59f488f28ece5e84af6c627c0d",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30083"
+  },
+  "05675": {
+   "sha256": "afa93e4b113d27f3af02e15bb746377dccde655206b6f6ac77e0eef6acc47baa",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30214"
+  },
+  "05677": {
+   "sha256": "428030f783cabe9b03ea320c5190eade2ec1f85ba8d48d0d4dd265fcc5625ef3",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30188"
+  },
+  "05679": {
+   "sha256": "3fcbfb9453d10a9e44223aed5e5d0b0307016431a2fe0cc3272685f463115473",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30161"
+  },
+  "05680": {
+   "sha256": "98bf696aaa6bca616b19d975ae263b81ce22a2fd8d1936b77ecefd9deb5e5868",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30126"
+  },
+  "05684": {
+   "sha256": "44afaa11d896b9d48266526907a8327561db43f828e7a6e9cfe649f25e957a79",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30177"
+  },
+  "05686": {
+   "sha256": "76f448302ffff91d3b78edf2e10657102d072283eee801323c8f90aaae74f6f3",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30230"
+  },
+  "05687": {
+   "sha256": "89e190412055fb0e49b43f937057ac7b857f1d663ec165d64a1f33b349c2a091",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30103"
+  },
+  "05688": {
+   "sha256": "e98eb2d18ad6b81971ae8147635780e3aeb2aeb0367d0d204893b2189bc4d02e",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30151"
+  },
+  "05690": {
+   "sha256": "90a433d4917ae6df3f72bd1203d3c501386e6451a2042e2d350eb5e101f8c68a",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30120"
+  },
+  "05696": {
+   "sha256": "2c3b4ff7952ed3c407cbe2b2beab9d58350bdc87a7e6d7c20756712312ce1e66",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30137"
+  },
+  "07672": {
+   "sha256": "7a4e72dcbb478377233bab216b43410126c660d413a46ef5f68d5141cd633b53",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30081"
+  },
+  "07677": {
+   "sha256": "caac7d11c2ac43a4c662bf6137bf0ca337c0c47eac86563438e8380b71ea5cdb",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30070"
+  },
+  "07681": {
+   "sha256": "028d50edd8291a6493ef9d8c2151813b7ce89348cc5d99220ef6d8cdc79b47d5",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30146"
+  },
+  "07684": {
+   "sha256": "0e89b6e01038ad3775d37dae63ffa950e9ba3e2416aca0a7a44dfd37f3865027",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30244"
+  },
+  "07685": {
+   "sha256": "c7726dc4287d9a65b142564d81d2835a27c77a0136c9c02d85438bc9e7036d52",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30086"
+  },
+  "10374": {
+   "sha256": "0cdf3fdc445d5e00bf071288c54e1c38effe4a5cf4f0de72cfa58c578a5df161",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30136"
+  },
+  "10433": {
+   "sha256": "08082fd38744d22024415f01ef8b9cceb588c75d0fd505ba099fe2dd0bdc325d",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30098"
+  },
+  "12223": {
+   "sha256": "680087c2bbc8b983a1c024278eafc7ebfe907b92b846ee655e12a35e5be1fb18",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30218"
+  },
+  "13607": {
+   "sha256": "94d9aff18772728320b8bc86d0174c6ec802e80d6a3e5c447a56e8dec5d7a9f2",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30116"
+  },
+  "13611": {
+   "sha256": "6b42d289b9e1dbed01568d9cad96a13a10e925fa6b70c52d330dd6b2e59629b0",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30182"
+  },
+  "13697": {
+   "sha256": "abe8dc3cf638ed443cf5681fc2a3e76552c2094b92a2353917b82dd7983fc519",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30215"
+  },
+  "13698": {
+   "sha256": "b6550eb67eb8b7bb619714f59c3fd9cba7c09d5338a1c1886c84d113e57d5983",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30165"
+  },
+  "14441": {
+   "sha256": "d33345d7693a4704463100dc5b881dc5c5aac3ac0c4c8ece213e081b6703851f",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30114"
+  },
+  "14793": {
+   "sha256": "7ccc2abe9d766d03544a576cd6e85cfa0ba12dfd68e9dcb348a21d686bb61867",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30076"
+  },
+  "14876": {
+   "sha256": "3d995191e5dc6a5f3ab69d8a9c8ef977328102bb0f60ded1983a92dc4025aef1",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30194"
+  },
+  "15487": {
+   "sha256": "1912b09331f461fe4f74ca77839d640af7d15f1f8f5b01366ec2223e01ec6a5c",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30234"
+  },
+  "15491": {
+   "sha256": "4b54d255adc376239964223b36671e5281fbd37528cc447ca1909a2464e9418a",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30156"
+  },
+  "15547": {
+   "sha256": "bf48a2bf726b4633abf62a543e240311d8d788694cca68463829831328c875c5",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30170"
+  },
+  "15548": {
+   "sha256": "04531f6ba8bd3450900c332fba5b49978bf268e058d582158653d045d198b20c",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30171"
+  },
+  "16506": {
+   "sha256": "67e0916794a23556da496f147bed401173cd08bfef01019a06573dd1f606e477",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30251"
+  },
+  "16766": {
+   "sha256": "7ae273213fb9519015f8890268052961512d693e599a74e08688b0c8890f6ad3",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30129"
+  },
+  "16837": {
+   "sha256": "e55173e5c2b08fd25c9f588084ec26f0ce1d9888ef5d96c9e332329eaa1bbd8d",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30213"
+  },
+  "16875": {
+   "sha256": "900f7d0b3fe40f09ff459ba856337c2e4858cb6abb34aecd5851ace3129434b5",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30221"
+  },
+  "18710": {
+   "sha256": "d26e1752006d8d1cbb26f940c07bdccbb2032891b562175ca15fd2b5a31f908d",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30173"
+  },
+  "18712": {
+   "sha256": "31ec613c6ca253254affeff431ee919af36d1a66cbe90ec2c69d080ff5dbe272",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30175"
+  },
+  "20945": {
+   "sha256": "366fccdd4c9ff692f30d0c46f847d56f013ff34d43779289444ca9607d666597",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30239"
+  },
+  "20946": {
+   "sha256": "494a7e443dc725edf4249aa36a599eee45310365d4f8c0d4c6f0c868b338312f",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30240"
+  },
+  "21033": {
+   "sha256": "f5e0d0d5824ff5461c347418c278cb8d22a790447b69aa76f4c9244885bf96e4",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30099"
+  },
+  "21040": {
+   "sha256": "2fb7839ebc1500d503d39b7b9fb7a29dc747c1fb2ee50de3bb2ab83f7a25ed44",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30087"
+  },
+  "21041": {
+   "sha256": "ca819e0c39c0ef6a2e9d272cc261970f2525a211cedf266ff391dbb998c63c4b",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30119"
+  },
+  "21042": {
+   "sha256": "75fb1915953a659c273dbde7f8744e85abea78bfbf7b2129ac1e76e9ca979eae",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30130"
+  },
+  "21043": {
+   "sha256": "5ee468ab5f414554920b088ff8cd24c51f14ebbbdd88216018ff5d8c487a4718",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30261"
+  },
+  "21044": {
+   "sha256": "b02cf0ae8f44fb79ffe2cb00c612f7505dd371253eabf2109e0ad5794c91c363",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30189"
+  },
+  "21050": {
+   "sha256": "caeec9924d83fa5f8af63cdd891a752ded6c4317de6ccecc3000fa6cfae19618",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30109"
+  },
+  "21053": {
+   "sha256": "750412706b6bccb4ed8e40be94ed7c37bffc9f8ff6ed81b2fa3b71ed7dd89bfb",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30219"
+  },
+  "21054": {
+   "sha256": "ddf7f2944f6d8e7a6b056318f668934f0a71703ef2056ebfce1ca10373ce1627",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30178"
+  },
+  "24397": {
+   "sha256": "652f690f8146ae08f6cea651532e0c1d2c195ea1d4617ce1abb324838dd21f51",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30211"
+  },
+  "24462": {
+   "sha256": "dfa522bd172b5f7130d4a927c4fd657e7c5d5394ba9d6d1bc0332a28bee46df2",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30247"
+  },
+  "30452": {
+   "sha256": "f58856ea311e9782e9b44fdeaa96c30760180eadbaee6804e956c8a8142a0d04",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30095"
+  },
+  "30845": {
+   "sha256": "460dd46e5b4e335547a3be46b3e69ddea372dfc976ae3277c273723e3c39e6fe",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30252"
+  },
+  "30918": {
+   "sha256": "b78043d1cdedd5e92bd0b6b8cc5744cf1f09bf8f6e11e38e0145d1644bb295df",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30186"
+  },
+  "31857": {
+   "sha256": "706c61460697294ef27b743b7bd5d669683ce7a7097ff3e25f0fde27fe3b007c",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30113"
+  },
+  "31885": {
+   "sha256": "9554ca857272db40bba693c84e66ed009883cc8e10dc09fdd839b57907f18348",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30235"
+  },
+  "31933": {
+   "sha256": "3acbd8278139935f21c2ee34753b2cfc69d1ce0130020271ad2b7664e18e2bcd",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30075"
+  },
+  "32131": {
+   "sha256": "f794cec989ee6df229061b9b7d697c660649277488068464e7213ba4d89d31bf",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30255"
+  },
+  "32139": {
+   "sha256": "b55b948d3b9835f15110ba1f852858fb8abfe540ca2d1c58f0f5f754992badc1",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30080"
+  },
+  "32140": {
+   "sha256": "a3cac29ebe4e9abc871ee3894c8a655605dc809476c153de99a5b2977fd79889",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30257"
+  },
+  "32153": {
+   "sha256": "94cd6556881010ac27ee6d0b64e5d2e5523a919516d393aef0c9e36cfd81ac28",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30096"
+  },
+  "32157": {
+   "sha256": "46750eba7cfca06408ea326c6c256f9f967325a80cc878ccff2ba5e56415ab50",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30167"
+  },
+  "32198": {
+   "sha256": "2757f159c65ad709b50dfd2f2b9902a958f115f2e24c0d59f8252421e22cb5d0",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30192"
+  },
+  "32270": {
+   "sha256": "a38181b76d5619162277693eea4de753263531e5bc3879e614a58629480f92de",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30082"
+  },
+  "32271": {
+   "sha256": "ec367fa83556d6012ee1c81a33c6796226d09f05c11e2699271e7bf849241458",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30138"
+  },
+  "32321": {
+   "sha256": "a99bce3f9f597fe853db0bb19741ba2e88907abefcbda562504296eae6963e2f",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30152"
+  },
+  "32377": {
+   "sha256": "36242c81cf61f608e6e6ccb6b467ccaa50bdcbcbac39f805ce505af9e8174a5e",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30127"
+  },
+  "32453": {
+   "sha256": "a176b6c163bc35ac793dfd5d1b747a64646bd46c4130e8845a633725bad47d57",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30231"
+  },
+  "32454": {
+   "sha256": "0f0dc7abfa5a4e2f3c9f7c6d48922c07881b9330b12b2e3388984e6bb619ca01",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30242"
+  },
+  "32562": {
+   "sha256": "2889041b3e4673c3395ba998639bf2bb7deb1ee3a29f72c52db0912b73df9d13",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30253"
+  },
+  "32593": {
+   "sha256": "97cca1e3e7c2288de2d28172d2c04f80683b8554e2507c8df0cac908b99db848",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30157"
+  },
+  "32960": {
+   "sha256": "588ad5b97c3925c265c4281583e7aff01308141a66f4d0cbb4306e2f47ed05af",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30220"
+  },
+  "33041": {
+   "sha256": "5222cf3ea36a46be6f0da5753164c62baa30b16b0b023729b8d3f0db26a0dd74",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30128"
+  },
+  "33400": {
+   "sha256": "94a272b31f7c4b35c25d979b999414a9a5fd0714fdefd042252e62902228b3a6",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30202"
+  },
+  "33401": {
+   "sha256": "c2372852021c405109d6455d8c3cbbee080fd9a91c4ac760e8606690947f7485",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30203"
+  },
+  "33402": {
+   "sha256": "eef30e993498b08d80db5a5ac0ee1fc5c3196ebd3e2cb9088f344d4b60244bc4",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30204"
+  },
+  "33634": {
+   "sha256": "651ebccd09c6bf425277348bd86f10deed934dbd9886702b50f5947964444307",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30216"
+  },
+  "33704": {
+   "sha256": "5ad23e1e6a455d71920a05dbf5da25bf7c366e23342ab9ee53fdf1be6c4ec703",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30077"
+  },
+  "33875": {
+   "sha256": "a4a5c88c9d4bff1457d3c4111b8c9f0a12fb14cf9a9927d67d1a4cae92cbbe11",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30172"
+  },
+  "33910": {
+   "sha256": "180706d4d1edb5e95a2ca64e6a84552f236a19f2f1fe5cd226e02edfedf1bb32",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30238"
+  },
+  "33939": {
+   "sha256": "11f1e406b265aae78927e0ba10a96cf940656065e6f1a62959627f6ea07029d4",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30084"
+  },
+  "33963": {
+   "sha256": "117140071b0b803008f376339eded6e1fd3d528d4e430be5e95723d4c9f26e82",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30094"
+  },
+  "35008": {
+   "sha256": "a63ab32b6ef26dd1792f9415ab88d1ed74d076a9c4bf50a8e7309285adc5aad7",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30180"
+  },
+  "35076": {
+   "sha256": "23415f7d999726472eb0c962cde3e8b0701b0c5c33998c46e4e693219d28baeb",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30154"
+  },
+  "35099": {
+   "sha256": "49e3c4f2e1c16252a7c48d1212c95f78b37843957af12f2059cf41eb664afb93",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30241"
+  },
+  "35142": {
+   "sha256": "ee04fc4a825da3849d94833c2d01b200640f83df76f7afa6a979961674e3bc01",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30209"
+  },
+  "36261": {
+   "sha256": "6cdbab0e9162637a66eca915bfa606ddb6955bf160952ae82e61f688dc8c749c",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30147"
+  },
+  "36266": {
+   "sha256": "6cfb9131e345ab9ff3324fcfaeb5699dada39a9fddedd8c762fd430b4b85df83",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30243"
+  },
+  "36269": {
+   "sha256": "dee9f3b41a5a6320d265836b76ec18bcae202d5cf67a2a33de99f87fa96ceb61",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30104"
+  },
+  "36271": {
+   "sha256": "1c99e994fd3afe276eea836902f543ea153cc1d5bf1c81ca2b550fdae77697fb",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30153"
+  },
+  "36603": {
+   "sha256": "efcf29927c1ca99628d91531af92f3e18cc6dc2809585dda6c5e4c096df98f5e",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30249"
+  },
+  "36738": {
+   "sha256": "b05d809e6dd14eac66ddbbed60834d97a55ff7d601c7ebd4a13d20b78624a07c",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30132"
+  },
+  "36762": {
+   "sha256": "a312c369a657ce777a4433267d572813c08b7f536cfde0b06e563d58b7098e1f",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30169"
+  },
+  "36960": {
+   "sha256": "7d0f75444ebafa5f5a8621058e7917597fd85d7ac0bd4635c2f20178535b9f4b",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30139"
+  },
+  "37046": {
+   "sha256": "95d44b7616a6ab0b1ab39673e0033fabb3337e3f2360cbff60cbcd4f46ed9484",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30089"
+  },
+  "37062": {
+   "sha256": "198b8f5d8b77c69d331a1e8a6cf69b7947185364bfe9239b2f230e262c764a37",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30250"
+  },
+  "37077": {
+   "sha256": "44df93449e3b8ea9f2f847874d8e7870ef44206623f549fcf422a29219ef4e2e",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30187"
+  },
+  "37078": {
+   "sha256": "29d9f2c6023025e108eec7fe80cdabdba008ed186c69eda01065cc86d1368e76",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30074"
+  },
+  "37079": {
+   "sha256": "534fe42ca1a8bc3a9860aad399c74cc488b58501a421af2db91f04ecf038f642",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30073"
+  },
+  "37170": {
+   "sha256": "93f7a665d8dc8a1155b528ba23914ac32b9dfd3c8877136b67c7128905ab1d00",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30181"
+  },
+  "37252": {
+   "sha256": "5ad86e05a8e40a07e12bb19802125b6aec9bcc415524c5cc6ed1673c7747bdc6",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30205"
+  },
+  "37253": {
+   "sha256": "5479cd1883002f32ae35473d646df5a067c8b6fcd9d1695362eca6b0225a8580",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30206"
+  },
+  "37257": {
+   "sha256": "cd6565bfa86a081c721db3f103050a3992efff64bd612a44a521e24885ec02e1",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30196"
+  },
+  "37258": {
+   "sha256": "49f9a735ee2bdb28ba950f453a7449d4573c33dbcf16ed4929c3921b71789ad3",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30197"
+  },
+  "37339": {
+   "sha256": "ecec562eaaf8c1b6cd00baacd979bebcc5a551f28eaf0ffcfb8b1ce2ea058ac8",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30158"
+  },
+  "37433": {
+   "sha256": "d3f8c27963a3dfc18228fef54afaba14faf943ad9c95470025f03428226d271a",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30193"
+  },
+  "37435": {
+   "sha256": "a3714310e8fa383cc9825fd7669c507b749f90ba0b84011a258c34ed055a9fae",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30237"
+  },
+  "37651": {
+   "sha256": "99a345bfda6de35c84adfbf2dbfad537783a4022fd87ad26d1b8f11d00892147",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30232"
+  },
+  "37979": {
+   "sha256": "13b2cbcf2fdce102dba83ce2923e2694cde9a7fd3dc1129b034aea4a7d114531",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30102"
+  },
+  "37980": {
+   "sha256": "0dd91ad35c06718c79eb520567b8a2d1ad095e540e095db1baeaf3d27f9956a9",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30229"
+  },
+  "37981": {
+   "sha256": "6e13739bb2687e8632e22c4da79f26c4667abef5b63e136791865b972dd78c04",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30245"
+  },
+  "38201": {
+   "sha256": "be288c7b8c6d43c03ef6d8cb3742e4996a7bf62bfe04a639d8c4ee1ffbb9de5e",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30199"
+  },
+  "38250": {
+   "sha256": "db3c8b9edb5497eecb157f916b57f4a1f36067c6f0121fbe48e757c185ad76d6",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30198"
+  },
+  "38254": {
+   "sha256": "2392c3e8ebdad5b6031e2020df13ed13fd66ec7946b593200331369a829d11d2",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30200"
+  },
+  "38260": {
+   "sha256": "93f33593fb3bdc535a079da1311953284871d784517df112be1b8c773c5917a1",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30201"
+  },
+  "38358": {
+   "sha256": "ef8f15250f80b7ef5c36e4b1fd33b7d63876efc9db57ff89c25f96283d6b5e86",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30150"
+  },
+  "38384": {
+   "sha256": "ce85e97c1c719527d134aff4ad7b91babc99c3cdfd99fe4bb2b0ce959c9a077d",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30160"
+  },
+  "38465": {
+   "sha256": "308071416e3810aebf3eb9c2c19bf642207944e3ddb388e25d8ad997e14fc6e7",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30085"
+  },
+  "38466": {
+   "sha256": "4592a0798206da21d87c3663904bc037aea6804f707d0f0c703a8dfed263078f",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30072"
+  },
+  "38467": {
+   "sha256": "49f29f47f50c5e61e8be8722588677abce4e160eba3aeda4045613146fa08f4a",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30217"
+  },
+  "38468": {
+   "sha256": "7f410623a7ac425cccd8f6655b7dda0a53c27122d49fa720179951005828fe7c",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30159"
+  },
+  "38469": {
+   "sha256": "592c3ff004a477f4b3f2404152da89d55c511bca85cdfe4b9831c0ed83d4d1f6",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30222"
+  },
+  "38470": {
+   "sha256": "03ea14eeeb592dfb3f3b87fa15ca614b222553b1f38779473b9489a227f64986",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30106"
+  },
+  "38471": {
+   "sha256": "e84e20ac1bbb77515a70323f07fa1bb1d310d3912f9594cdb553e1aea763ac6f",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30108"
+  },
+  "38472": {
+   "sha256": "3d4b60fd9ddf9f5d92296981eca20c10af8f1395ca875e96f2e78d7f802b4203",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30226"
+  },
+  "38479": {
+   "sha256": "edfb2567bee845e91f62bc1ab5062644a02d2708be4331da6e95fe0bec9169a5",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30107"
+  },
+  "38500": {
+   "sha256": "b6947a8ed127738831fa706a365907e50973378b5d06995cd82074f4bbb69553",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30236"
+  },
+  "38515": {
+   "sha256": "d8f53831ea058a5b58a54308e8675ebaedbd763d929de400d42e7e7f89c73fe2",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30140"
+  },
+  "38687": {
+   "sha256": "f8f57827a103e130db17509a24a1de166e8cbde737104bcb35e3da33b387f4e9",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30210"
+  },
+  "38772": {
+   "sha256": "4dbca14bd636bdf7e973d1892534d8c841bb37ee5a7d7d11d5442fb44bdc7a39",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30207"
+  },
+  "38836": {
+   "sha256": "f9d4b2636632a17bfc8e13fae7da8bf98ea530ac194ce9da1b8125c12e828019",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30225"
+  },
+  "38837": {
+   "sha256": "1a2c552aabd6677232163aee52d6fdf0d919928104f22e93ff6a5670c0b9a6a1",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30224"
+  },
+  "39678": {
+   "sha256": "101c51ea9f43765356180864893c1280abef438c4f8fae244265a180050edec5",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30155"
+  },
+  "39907": {
+   "sha256": "f661dc0fdbb8640c322b66e8b1c797ebcc6388f1722430d3b0856b4b5bfc9f9e",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30110"
+  },
+  "39908": {
+   "sha256": "3abcda4d80ab0e5e09ea57c12c47bc24129b488badcd8853dc0e785f1f1b8fb9",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30122"
+  },
+  "39909": {
+   "sha256": "bf8d9d86bdda7687e7df9b94f4571a17b458eaa15df9eeed10e2e3fb6f530d80",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30183"
+  },
+  "39911": {
+   "sha256": "0999b8faeb1cbc73c9763d162f2a1ad6e58afe50ae841c374018f2dbd0f8b374",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30259"
+  },
+  "40057": {
+   "sha256": "3befe598fe50fdfabe00b91f536afcde45bcce3342857ac4666b99df0f4ee12f",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30145"
+  },
+  "40085": {
+   "sha256": "61c3a614e7de23ea7e93ed6f447725fbfc38402dd8ba0246a78f957ffc2fa2f9",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30123"
+  },
+  "40104": {
+   "sha256": "1215b2ffb5f45b3fd1d8e6c396acbda0b781ea6c3b96b1330c5b610041b261a4",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30162"
+  },
+  "40825": {
+   "sha256": "b021a9a2f2ca2662b53fcd796499cb20fea70dd676e32c6c4a91c1f4447c1fad",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30135"
+  },
+  "40856": {
+   "sha256": "2957eed9e4af8c2e79c9d258d8f5b40a318cb23db60081c98173f5648977efe3",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30100"
+  },
+  "41234": {
+   "sha256": "975944bfc06da10396b8e502943c62582ab3d97de6c6281d7434d26d366f1574",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30144"
+  },
+  "41526": {
+   "sha256": "366a34722a9e1258b79f1a6f0a1ab6bd8cb3a833637725ef56464b60b8707186",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30112"
+  },
+  "41742": {
+   "sha256": "ba489fd4073d7e25ab213cdb2827fcfa9fa46b22cfdd48a3af8a4a188dde6fef",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30096"
+  },
+  "41744": {
+   "sha256": "1fec2886f4c098bf0a84a81f67586704fee03358d3512c0db473ab5702737655",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30091"
+  },
+  "42040": {
+   "sha256": "0a2031fc5b7e0a0362691c2a2d0c8bbf49de22dbb8ee53097da97f60cd71244b",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30125"
+  },
+  "42042": {
+   "sha256": "9f0f3419d51c421c8af175bd35c9a563782867414cf6924a5f0e61cd1b790957",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30071"
+  },
+  "42043": {
+   "sha256": "5458e296ba1fdeb9af9a785491e747ea1d35104a84b59009a98c61c6b782704a",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30149"
+  },
+  "42044": {
+   "sha256": "03527d0dfbb4f4038c770fd4ab20c371976f13021a3e997b72ee82c3811e8f59",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30184"
+  },
+  "42045": {
+   "sha256": "4ded9e599f58fcfe1cff14727c924bdbbc553af7b5fa81e79ecd8461583bd687",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30248"
+  },
+  "42046": {
+   "sha256": "4f6fe2c3dd534603f37b5eb869d450eadeea0ba30547b098ba33bd1d45104962",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30191"
+  },
+  "42411": {
+   "sha256": "b754a34eb9703c2129fed2cf5c7dcaffcaa972ef1baa3eab1b2e58753f5c8fac",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30105"
+  },
+  "42763": {
+   "sha256": "706c61460697294ef27b743b7bd5d669683ce7a7097ff3e25f0fde27fe3b007c",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30113"
+  },
+  "42770": {
+   "sha256": "370122594a8ed4e171ec4338300028032527bb9f361f9f72c0ba99746a85ccb9",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30101"
+  },
+  "42774": {
+   "sha256": "d2a99e0ba1245b90c7b2916f50b3eb62b92c6f5b1234c85f2a0fd11447388de0",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30254"
+  },
+  "42865": {
+   "sha256": "f60e8568f5c23118027b0d6bd811cdc356c584f76250157697fc0969a0dd980f",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30141"
+  },
+  "42883": {
+   "sha256": "4a6a931de281212daa074771e72b11fd596bb20467dab1a141e441a0c5a52d10",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30258"
+  },
+  "42891": {
+   "sha256": "383f57369a2306a519480dbd86939d8e136a52526aded4eccbbcf1a1d18bd4ad",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30069"
+  },
+  "42973": {
+   "sha256": "cd8da1a74f7b36c41b45f69d7eff920400db0dca875bfa747f784a7bde4d7a65",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30092"
+  },
+  "43036": {
+   "sha256": "a11dd80f5ca88174abca51d3259239793b5ae76ca38ee550c217f468b7bf9d39",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30090"
+  },
+  "43053": {
+   "sha256": "7028d8ce80d3010b677e214f5b3a9d2ca9184081495d854e5b67241c700cfafb",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30093"
+  },
+  "43368": {
+   "sha256": "a76639d17fdafee7c15ee986039726916d1dd7b727cdc362d728792b32239be0",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30256"
+  },
+  "43682": {
+   "sha256": "09efed16f6daa6f42ebb761185f391c38249cc93c45e6fd8a20c8dcc8d4825db",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30174"
+  },
+  "43707": {
+   "sha256": "52409ba47ef53126c61b6aa8cdf721c957eebb0eba293ac9c04395866f46ea0f",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30143"
+  },
+  "43775": {
+   "sha256": "560c87d29d7d0b9ad70913c5a7240e4130b4c8f9a1d4a1a8bded7d2318812c72",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30131"
+  },
+  "43794": {
+   "sha256": "fb99ded718e919bd80cd6291f1fc84197781e0aec218441b57ee5f1755052a8b",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30185"
+  },
+  "44171": {
+   "sha256": "a6cab7b2e2cb27b6c0de988eb07828a2afbeb4e5e4244d515bd8a4ef4a64be2f",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32560"
+  },
+  "44278": {
+   "sha256": "f2c7f437e17e4d44326d01741c2032306b4e943703fa4ea202c2c0c147c0d111",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32561"
+  },
+  "44552": {
+   "sha256": "5f92d7d9aa4b9a0986bf2e82743024f9cad42cad72673aa9f6afb30844b6c9a1",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32617"
+  },
+  "44556": {
+   "sha256": "6cfb9131e345ab9ff3324fcfaeb5699dada39a9fddedd8c762fd430b4b85df83",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30243"
+  },
+  "44776": {
+   "sha256": "e6d8749c352992107759ae3ee0376113631f9c5577e8b0c368bc3602094131d0",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32619"
+  },
+  "44824": {
+   "sha256": "b5e4baebf46280c569b8c042cfaffdc3662b3910cfc41c6fbac08fcba3d0da4b",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32618"
+  },
+  "44904": {
+   "sha256": "b6d8f0676e2a723f5954a3a843905a1789e99593be7c57ed5f0c1775a81aeb4f",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32673"
+  },
+  "45157": {
+   "sha256": "05073d13fc8cb56f0374687b1ae74156b5c4e8aba9d46a3a1a4e76efb170bb72",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32672"
+  },
+  "45889": {
+   "sha256": "28bb462117bfccc33bf0fe7117495d15bec2ac6adbd371fd483f02dadd0296bb",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32700"
+  },
+  "45890": {
+   "sha256": "f347da7f49b3f91839badbe761495278f55433e4ce17b83a521f0506d34f146d",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32701"
+  },
+  "46075": {
+   "sha256": "fb17504a865e30d75e8619d84b58763edbaed74985c72e722fac696c0f1695bc",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32702"
+  },
+  "46278": {
+   "sha256": "6b060436cbc35511072490d89faf86ff67da49a055192a04cf2ebcdb9e0e6b27",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32738"
+  },
+  "46389": {
+   "sha256": "7ca02b1e498cad562836f8831d807ceeccb0a33fbd2d81a24af973e743d07aa4",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32751"
+  }
+ },
+ "run": "45787691549"
 }

@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-26T09:26:36Z",
+ "written_at": "2026-11-26T11:14:40Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 15585,
+     "n": 15600,
      "of": 20282,
      "words": "complete at 118 colleges",
      "open": "#program-requirements/list"
@@ -34,14 +34,14 @@
    ],
    "issues": [
     {
-     "n": 1775,
+     "n": 1763,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
      "open": "#program-requirements/list/fail"
     },
     {
-     "n": 2922,
+     "n": 2919,
      "words": "active programs with no record yet",
      "owner": "the harvest",
      "carry": "routine",
@@ -63,15 +63,15 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-11-26T07:20:09Z",
+    "at": "2026-11-26T10:35:43Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 15585,
-    "failing": 1775,
-    "unread": 2922,
-    "records": 18966,
+    "complete": 15600,
+    "failing": 1763,
+    "unread": 2919,
+    "records": 18969,
     "colleges": 118,
     "outside_active": 1606,
     "confirmed": 32,
@@ -383,7 +383,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-19T06:22:43+00:00",
+    "at": "2026-11-23T11:18:33+00:00",
     "every_hours": null
    },
    "facts": {
@@ -791,7 +791,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 1775,
+    "n": 1763,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"
@@ -799,7 +799,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 2922,
+    "n": 2919,
     "words": "active programs with no record yet",
     "owner": "the harvest",
     "open": "#program-requirements/list/unread"

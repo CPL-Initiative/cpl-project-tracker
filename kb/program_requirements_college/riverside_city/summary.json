@@ -3,19 +3,19 @@
  "programs": 268,
  "with_closed_list": 262,
  "found": 240,
- "extracted": 244,
+ "extracted": 245,
  "errors": 0,
  "passed_machine_checks": 232,
  "failed": {
   "coverage": 0,
   "invented": 0,
-  "arithmetic": 11,
+  "arithmetic": 12,
   "repeated": 0,
   "outcomes": 1
  },
  "cost_usd_run": 0.0,
- "cost_usd_filed": 15.33,
- "cost_per_program": 0.0628,
+ "cost_usd_filed": 15.44,
+ "cost_per_program": 0.063,
  "extract_calls": null,
  "extract_failed": [],
  "not_found": [
@@ -263,5 +263,5 @@
    "status": "Active"
   }
  ],
- "run": "44046016854"
+ "run": "45781875995"
 }

@@ -1,0 +1,28 @@
+{
+ "_readme": "S739 wave B, the gap census's Next wave (census of 2026-11-26 06:54Z, run 45771011713; levers reader_page_assignment and paid_read): 2 certificates of Sierra College whose sections print on the Business department page past the text the capture sends (college-page-read run 45782471633, the page as the capture reads it: 51,984 characters, its Degrees/Certificates tab panel 23,738). Filed as named gaps and never sent to a paid read. Each filed record stays as filed (the load skips a record that places none of its listed courses). No model call, no Supabase write. Each is the college's to settle in COCI or its catalog.",
+ "college": "Sierra College",
+ "written": "2026-11-26T08:48:35Z",
+ "capture": "44687646623",
+ "page_reads": [
+  "45782471633"
+ ],
+ "reasons": {
+  "text_window_cut": "The program's own section prints on its department page past the 16,000 characters of the page's text the capture sends (text_window), so the extraction is given the page's other sections and none of this one's list; a forced re-read would send the same cut text."
+ },
+ "programs": [
+  {
+   "control_number": "21524",
+   "title": "Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "reason": "text_window_cut",
+   "note": "The page prints 'Management / Certificate of Achievement' after the Innovation and Entrepreneurship certificate: five required courses (BUS 0144, BUS 0265, BUS 0275, BUS 0277, IT 0060), 'Select 6 units from the following' (BUS 0028 and BUS 0095, the two courses the state lists, among them) and 'Total Units 21'. The filed record's own notes (run 38675248607) say the text sent 'is cut off partway through the Innovation and Entrepreneurship Certificate of Achievement'."
+  },
+  {
+   "control_number": "21526",
+   "title": "Marketing",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "reason": "text_window_cut",
+   "note": "The page prints 'Marketing / Certificate of Achievement' after the Management certificate: six required courses (BUS 0280, BUS 0282, BUS 0284, AAD 0070, BUS 0265, COMM 0073), 'Select 3 units from the following' (BUS 0028 and BUS 0095, the two courses the state lists, among them) and 'Total Units 27'. The filed record's own notes (run 38675248607) say the text sent holds 'only the Marketing AA or AS Degree section'."
+  }
+ ]
+}

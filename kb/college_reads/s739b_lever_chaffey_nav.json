@@ -1,0 +1,33 @@
+{
+ "_readme": "S739 wave B (the gap census of 2026-11-26 06:54Z, run 45771011713, Next wave; lever reader_page_assignment): Commercial Music A.S. 04779, read from the Music Industry Studies AA-T's entry (19210/program_index/musind; capture 44090894573). This reads the program index with its navigation data for an entry naming Commercial Music or music. One load. No model call, nothing written.",
+ "college": "Chaffey College",
+ "questions": {
+  "own_page": "Whether the catalog prints the program's own section (its heading, its award, its course list and its total), where, and which course codes it prints."
+ },
+ "keywords": [
+  "commercial music[^\\\"\\n]{0,80}",
+  "music[^\\\"\\n]{0,80}"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index",
+   "network": true,
+   "network_hosts": [
+    "chaffey.curriqunet.com"
+   ],
+   "network_find": [
+    "Commercial Music",
+    "Music"
+   ],
+   "links": "music|musind",
+   "links_cap": 200,
+   "why": "the program list"
+  }
+ ],
+ "outside_hosts": {
+  "curriqunet.com": "Chaffey College (chaffey.curriqunet.com): the college's own 2026-2027 catalog, served on its catalog vendor's domain, whose navigation calls hold the program entries"
+ }
+}

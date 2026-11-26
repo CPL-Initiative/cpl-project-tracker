@@ -1,0 +1,50 @@
+{
+ "_readme": "S739 wave B (the gap census of 2026-11-26 06:54Z, run 45771011713, Next wave; lever reader_page_assignment), a second read: Merced College's UCTP: Physics A.S.-T 40858. Page read 45784839786 printed the first 20 of the catalog's 191 programs. This reads the program list searched for Physics and for UCTP, with the data its own scripts fetch, so a session sees which entries the catalog lists under either word and their codes. Two loads. No model call, nothing written.",
+ "college": "Merced College",
+ "questions": {
+  "own_page": "Whether the catalog lists a UCTP Physics degree, and under which program code."
+ },
+ "keywords": [
+  "UCTP[^\\\"\\n]{0,80}",
+  "Physics[^\\\"\\n]{0,80}"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "40858, the list searched for Physics",
+   "url": "https://catalog.mccd.edu/programs?page=1&pq=Physics",
+   "network": true,
+   "network_hosts": [
+    "app.coursedog.com"
+   ],
+   "network_find": [
+    "Physics",
+    "UCTP"
+   ],
+   "links": "programs/",
+   "links_cap": 60
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "40858, the list searched for UCTP",
+   "url": "https://catalog.mccd.edu/programs?page=1&pq=UCTP",
+   "network": true,
+   "network_hosts": [
+    "app.coursedog.com"
+   ],
+   "network_find": [
+    "Physics",
+    "UCTP"
+   ],
+   "links": "programs/",
+   "links_cap": 60
+  }
+ ],
+ "outside_hosts": {
+  "coursedog.com": "Merced's catalog vendor: the catalog's own scripts on catalog.mccd.edu call app.coursedog.com for its program list and each program's requisites."
+ }
+}
