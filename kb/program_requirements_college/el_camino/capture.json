@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 189,
  "with_closed_list": 135,
- "started": "2026-11-26T06:27:07Z",
+ "started": "2026-11-26T07:18:10Z",
  "acalog": {
   "base": "http://catalog.elcamino.edu",
   "start_status": 200,
@@ -1330,7 +1330,7 @@
   "yield_refused_passing": 0
  },
  "loads": 271,
- "seconds": 1376.1,
+ "seconds": 1446.3,
  "found": 126,
  "by_method": {
   "no_closed_list": 54,
@@ -1643,29 +1643,10 @@
   "against": "kb/program_requirements_college/el_camino",
   "kept": 122,
   "kept_moved": 0,
-  "programs": 1,
-  "list": [
-   {
-    "control_number": "19857",
-    "title": "Architecture",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3523&print",
-    "coverage": 0.571,
-    "was_url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3524&print",
-    "was_coverage": 0.571,
-    "was_method": "sitemap_page"
-   }
-  ],
+  "programs": 0,
+  "list": [],
   "held_worse_window": [],
   "held_no_gain": [
-   {
-    "control_number": "19884",
-    "title": "Respiratory Care",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3657&print",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
    {
     "control_number": "30301",
     "title": "Refrigeration",
@@ -1684,6 +1665,34 @@
    }
   ],
   "held_opens_on_list": [],
+  "only": [
+   "19861",
+   "19866",
+   "38948",
+   "43993"
+  ],
+  "not_named": [
+   {
+    "control_number": "19857",
+    "title": "Architecture",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3523&print",
+    "coverage": 0.571,
+    "was_url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3524&print",
+    "was_coverage": 0.571,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "19884",
+    "title": "Respiratory Care",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3657&print",
+    "coverage": 1.0,
+    "was_url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3657&print",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   }
+  ],
   "refused_passing": [],
   "forced_unbound": []
  },
@@ -2193,5 +2202,5 @@
    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=4034&print"
   }
  },
- "run": "45768189197"
+ "run": "45773663927"
 }
