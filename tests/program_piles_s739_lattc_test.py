@@ -1,18 +1,19 @@
 #!/usr/bin/env python3
-"""S739, lane 2's cheap piles at Los Angeles Trade-Technical: the 11 records s730a held, 4 passed by a rename and 3 collected with named gaps (kb/_program_piles_s739_lattc.py).
+"""S739, lane 2's cheap piles at Los Angeles Trade-Technical: the 11 records s730a held, 3 passed by a rename and 3 collected with named gaps (kb/_program_piles_s739_lattc.py).
 
 WHY. Sam's ruling of 2026-11-17 (sam-collect-with-gaps-2026-11-17) and his routine prompt of 2026-11-25: a record held
 for a gap is collected with its gap named and a lower score, never held, unless the record is not the program's own.
 The shared checks are tests/program_piles_s739_common.py's. Pinned here:
 
-  * the 11 keys are s730a's holds; 4 passed, 3 collected (no new kind), 4 held;
+  * the 11 keys are s730a's holds; 3 passed, 3 collected (no new kind), 5 held;
   * each rename: the record prints the code, the listed course is on the state's list and was missing, the filed
     score names the plan's renames alone and passes; 31090's rename stands on 02911's note (note_of), 02911 prints
     the same code, and without that note it does not stand;
   * 18857's three lists as one pool close at 18 alone; 38737 closes with the 11 its own table row prints, and its
     lever is named; 37706's note quotes both figures;
   * the holds: 31280 is still not collectable with its rename read, 31089 and 45285 are not collectable, 41011 reads
-    no total.
+    no total, and 41150 takes no rename: its own note says DIGLMD 100's listed title is not the printed one (the
+    second reader's round 1).
 
 Run from repo root: python3 tests/program_piles_s739_lattc_test.py
 """
@@ -27,16 +28,16 @@ import _program_piles_s739_lattc as M  # noqa: E402
 
 W = M.W
 S = B.S
-PASSED = ("02911", "21855", "31090", "41150")
+PASSED = ("02911", "21855", "31090")
 ROWS = {cn: B.PASSES for cn in PASSED}
 ROWS.update({"18857": "pool_figure_not_read", "38737": "noted_no_total", "37706": "noted_figures_differ"})
-HELD = {"31280": ["not collectable", "CRPNTRY 111C"], "31089": ["not collectable", "BLDGTCQ"],
+HELD = {"41150": ["DIGLMD", "Introduction to Digital Video", "no rename is filed"],
+        "31280": ["not collectable", "CRPNTRY 111C"], "31089": ["not collectable", "BLDGTCQ"],
         "41011": ["unstated", "VOC ED 463"], "45285": ["not collectable", "a reread"]}
 SCORES = {"pool_figure_not_read": 40, "noted_no_total": 40, "noted_figures_differ": 40}
-OWN = {"02911": "own_heading", "21855": "own_section", "31090": "own_heading", "41150": "own_heading",
-       "37706": "own_heading"}
+OWN = {"02911": "own_heading", "21855": "own_section", "31090": "own_heading", "37706": "own_heading"}
 
-t = T.run(W, rows=ROWS, held=HELD, scores=SCORES, day="2026-11-26", boundaries=29, own=OWN)
+t = T.run(W, rows=ROWS, held=HELD, scores=SCORES, day="2026-11-26", boundaries=25, own=OWN)
 check = t.check
 
 for cn in PASSED:
@@ -81,5 +82,9 @@ rn = B.P.rescore_common_numbers(W.load("31280"), name_of=lambda c: "PLUMBNG28" i
 check(rn is not None and not S.passes_live(rn["score"]) and "CRPNTRY111C" in rn["score"]["coverage"]["unexplained"],
       "31280: with its rename read CRPNTRY 111C is still unexplained")
 check(W.load("41011")["score"]["arithmetic"]["status"] == "unstated", "41011 reads no total")
+f = W.load("41150")
+check(not B.NG.collectable(f["score"]) and not f["score"].get("course_renumbers") and not f["score"].get("gaps")
+      and any("Introduction to Digital Video" in n and "Introduction to Digital Media" in n for n in B.notes(f)),
+      "41150 is as S730 left it, and its own note names the title that differs")
 
 sys.exit(t.done())

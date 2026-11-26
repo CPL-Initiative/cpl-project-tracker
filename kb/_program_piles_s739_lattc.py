@@ -1,19 +1,17 @@
 #!/usr/bin/env python3
-"""S739, lane 2's cheap piles at Los Angeles Trade-Technical: the 11 records s730a held, 4 passed and 3 with named gaps.
+"""S739, lane 2's cheap piles at Los Angeles Trade-Technical: the 11 records s730a held, 3 passed and 3 with named gaps.
 
 S730's plan (kb/_program_piles_s730_lattc.py, s730a) collected 6 of the census's 17 wording-rule records and held 11.
 Sam's ruling, as kb/_program_piles_s739.py carries it: a record held for a gap is collected with its gap named and a
 lower score, never held, unless the record is not the program's own. The 11 are read again here, by key, from the
 committed records, their notes and today's capture. No catalog read, no reconcile, no record changed, no new kind.
 
-PASSED BY A RENAME (4, PASSED below): the arithmetic already passes, and coverage and invented fail only on a code
+PASSED BY A RENAME (3, PASSED below): the arithmetic already passes, and coverage and invented fail only on a code
 the page prints otherwise than the state's file lists it (P.rescore_common_numbers, S721's rename at Porterville).
   'PLUMBING 028', a misspelled subject, for the file's PLUMBNG 28 (Plumbing Code I): Plumbing A.S. 02911 and its
       certificate 21855, whose own notes name it, and Energy Efficiency Technician A.S. 31090, which prints the same
       code and whose own notes are silent on it: its rename stands on 02911's note (note_of), the same catalog's
       misprint. 21855's section prints no course list and names the A.S. degree's lists as its own (own_section).
-  DIGMD 100, 101 and 104, three courses under one subject printed otherwise, for the file's DIGLMD: Fashion Media
-      41150.
 
 COLLECTED WITH A NAMED GAP (3, REVIEWED below):
   pool_figure_not_read (40)  18857 Liberal Arts & Sciences, Mathematics, Physical and Natural Sciences: 'Complete 18
@@ -28,7 +26,11 @@ COLLECTED WITH A NAMED GAP (3, REVIEWED below):
         both quoted in its note. S730 held it on the own-page guard (p.200 is shared with Pre-Health Professions I
         38452); its heading names Pre-Health Professions II, the capture found it, and 38452's record carries another.
 
-HELD (4):
+HELD (5):
+  41150  Fashion Media: its arithmetic passes, and coverage and invented fail on DIGMD 100, 101 and 104 printed for
+         the state file's DIGLMD. Its note matches them, and the same note says DIGLMD 100's listed title
+         ('Introduction to Digital Video') is not the printed one ('Introduction to Digital Media'); no committed
+         file shows the printed courses to be the listed ones, so no rename is filed (S739's second reader, round 1).
   31280  not collectable: with 'Plumbing 028' renamed, CRPNTRY 111C is still unplaced and unexplained.
   31089  not collectable: coverage and invented fail on BLDGTCQ 007, 008 and 009 printed for BLDGCTQ and PLUMBING 028
          read as an alternative, and its arithmetic (37-38 against the printed 42) waits on those.
@@ -72,10 +74,6 @@ PASSED = {
     "31090": {"renames": _PLUMB, "note_of": "02911",
               "words": "'PLUMBING 028' is printed with a misspelled subject; read as PLUMBNG 28 (Plumbing Code I)",
               "own_heading": "ENERGY EFFICIENCY TECHNICIAN ▌ Associate in Science Degree"},
-    "41150": {"renames": {"DIGMD 100": "DIGLMD100", "DIGMD 101": "DIGLMD 101", "DIGMD 104": "DIGLMD 104"},
-              "words": "The catalog prints the subject as 'DIGMD' (DIGMD 100, 101, 104), while the closed list uses "
-                       "'DIGLMD'. These were matched to DIGLMD100, DIGLMD 101 and DIGLMD 104 as the same courses",
-              "own_heading": "FASHION MEDIA — Certificate of Achievement"},
 }
 
 REVIEWED = {
@@ -105,6 +103,11 @@ HAND = {cn: B.PASSES for cn in PASSED}
 HAND.update({cn: e["gap"] for cn, e in REVIEWED.items()})
 _NOT = "held: not collectable (collected_with_gaps, kb/_harvest_gap_census.py): "
 HAND.update({
+    "41150": ("held: today's scorer passes its arithmetic, and coverage and invented fail on DIGMD 100, 101 and 104 "
+              "printed for the state file's DIGLMD. Its note matches them, and the same note says the listed title of "
+              "DIGLMD 100 ('Introduction to Digital Video') is not the printed one ('Introduction to Digital Media'); "
+              "no committed file shows the printed courses to be the listed ones, so no rename is filed (S739's second "
+              "reader, round 1): a course renumber the catalog's own course pages confirm, or a page read"),
     "31280": _NOT + ("with 'Plumbing 028' renamed to PLUMBNG 28, as its note has it, CRPNTRY 111C is still unplaced and "
                      "unexplained, so coverage fails; a read of its section, or a missing-course note, is its lever"),
     "31089": _NOT + ("coverage and invented fail on BLDGTCQ 007, 008 and 009 printed for BLDGCTQ and PLUMBING 028 read "

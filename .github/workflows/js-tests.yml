@@ -974,8 +974,8 @@ jobs:
       - name: Cheap piles S739 at Santa Barbara City (the earlier holds, named gaps, the plan)
         if: matrix.shard == 1 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/program_piles_s739_sbcc_test.py
-      # S739 at Los Angeles Trade-Technical: the 11 records s730a held, read again by key: 4 passed by a rename
-      # (one on a sister record's note), 3 collected with named gaps (no new kind), 4 held; the plan.
+      # S739 at Los Angeles Trade-Technical: the 11 records s730a held, read again by key: 3 passed by a rename
+      # (one on a sister record's note), 3 collected with named gaps (no new kind), 5 held; the plan.
       - name: Cheap piles S739 at Los Angeles Trade-Technical (the earlier holds, renames, named gaps, the plan)
         if: matrix.shard == 2 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/program_piles_s739_lattc_test.py

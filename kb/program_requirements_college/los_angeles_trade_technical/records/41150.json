@@ -46,19 +46,31 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 10,
+   "placed": 7,
    "listed": 10,
-   "share": 1.0,
-   "missing": [],
-   "unexplained": [],
+   "share": 0.7,
+   "missing": [
+    "DIGLMD100",
+    "DIGLMD101",
+    "DIGLMD104"
+   ],
+   "unexplained": [
+    "DIGLMD100",
+    "DIGLMD101",
+    "DIGLMD104"
+   ],
    "none_placed": false,
-   "pass": true
+   "pass": false
   },
   "invented": {
-   "count": 0,
-   "codes": [],
+   "count": 3,
+   "codes": [
+    "DIGMD100",
+    "DIGMD101",
+    "DIGMD104"
+   ],
    "flagged": [],
-   "pass": true
+   "pass": false
   },
   "arithmetic": {
    "pass": true,
@@ -96,24 +108,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true,
-  "course_renumbers": [
-   {
-    "printed": "DIGMD 100",
-    "listed": "DIGLMD100",
-    "block": "REQUIRED COURSES"
-   },
-   {
-    "printed": "DIGMD 101",
-    "listed": "DIGLMD101",
-    "block": "REQUIRED COURSES"
-   },
-   {
-    "printed": "DIGMD 104",
-    "listed": "DIGLMD104",
-    "block": "REQUIRED COURSES"
-   }
-  ]
+  "pass": false
  },
  "record": {
   "program": {
