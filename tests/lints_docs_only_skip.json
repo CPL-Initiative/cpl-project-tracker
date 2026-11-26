@@ -1,0 +1,180 @@
+{
+ "_about": "Lint steps that skip on a docs-only diff (S737, 2026-11-26), when the gate's decision is skip: every changed file is docs-shaped (scripts/js_suite_gate.sh). Each listed step was run under strace on origin/main dc7683a8 and opened no docs-shaped path for reading (docs/, .claude/, kb/docs_audit/, a root *.md). Main's push run and every code PR still run them. A step that starts reading a docs path must leave this list; tests/lints_docs_only_skip_test.py keeps the list and the workflow in step.",
+ "traced_at": "2026-11-26",
+ "traced_on": "dc7683a8",
+ "skip": [
+  {
+   "name": "Assign from the panel, the export (excel_to_dashboard.py)",
+   "seconds": 30
+  },
+  {
+   "name": "Cheap piles S683 (A5's misses by cause, the 33 held-out records)",
+   "seconds": 17
+  },
+  {
+   "name": "Cheap piles S713 at Clovis (lab pairs, earlier lists' courses, renumbers, the plan)",
+   "seconds": 62
+  },
+  {
+   "name": "Cheap piles S713 at Glendale (substitute list, heading figure, renumber, the plan)",
+   "seconds": 34
+  },
+  {
+   "name": "Cheap piles S714 at City College of San Francisco (renumbers, option parts, the plan)",
+   "seconds": 22
+  },
+  {
+   "name": "Cheap piles S714, option_parts elsewhere (ten records, the plan)",
+   "seconds": 20
+  },
+  {
+   "name": "Cheap piles S727 at American River (named gaps, the plan)",
+   "seconds": 18
+  },
+  {
+   "name": "Cheap piles S727 at Santa Barbara City (a rescore, named gaps, the plan)",
+   "seconds": 20
+  },
+  {
+   "name": "Cheap piles S727, the records held for a person (named gaps, the plan)",
+   "seconds": 11
+  },
+  {
+   "name": "Cheap piles S730 at Los Angeles Trade-Technical (named gaps, the plan)",
+   "seconds": 11
+  },
+  {
+   "name": "Cheap piles S730 at Saddleback (named gaps, the repeat lever, the plan)",
+   "seconds": 15
+  },
+  {
+   "name": "Cheap piles S731 at Long Beach City (a rescore, named gaps, the plan)",
+   "seconds": 43
+  },
+  {
+   "name": "Commons status rebuilt from this tree, then every test that reads it",
+   "seconds": 207
+  },
+  {
+   "name": "Confidence scorer rules G and M, and their apply and undo (kb/_ccr_confidence_apply.py)",
+   "seconds": 22
+  },
+  {
+   "name": "Course-id route (suffix reading, self-recall, retired alias pairs)",
+   "seconds": 101
+  },
+  {
+   "name": "Harvest no-closed-list lookup census (recall and false matches)",
+   "seconds": 17
+  },
+  {
+   "name": "Honors rows plan, the apply-day check refuses a stale plan",
+   "seconds": 43
+  },
+  {
+   "name": "Jev variable battery (the rule rejects noise and detects signal)",
+   "seconds": 27
+  },
+  {
+   "name": "Named gap ge_units_not_read (self-recall, the plan, the held colleges)",
+   "seconds": 32
+  },
+  {
+   "name": "Named gap lists_past_their_figure (self-recall, claim check, the plan, the held colleges)",
+   "seconds": 41
+  },
+  {
+   "name": "Named gaps (collected with the gap named, scored, counted collected)",
+   "seconds": 51
+  },
+  {
+   "name": "Named hours gaps (self-recall, the plan, the held colleges)",
+   "seconds": 42
+  },
+  {
+   "name": "Next SLO colleges (the order, the trial gate, the verdicts)",
+   "seconds": 11
+  },
+  {
+   "name": "Pooled figures S721 (the reading, the self-recall, the plan)",
+   "seconds": 42
+  },
+  {
+   "name": "Pooled figures S727 (the rows, the holds, the plan)",
+   "seconds": 17
+  },
+  {
+   "name": "Pooled figures S731 (the reading, the self-recall, the rows, the holds, the plan)",
+   "seconds": 23
+  },
+  {
+   "name": "Program requirements eLumen sister awards (S727)",
+   "seconds": 108
+  },
+  {
+   "name": "Program requirements reader follow-up S703 (own run, fragments, editions, prior preview, through, tag)",
+   "seconds": 16
+  },
+  {
+   "name": "ROEP display (page and Sierra agree, figure recomputes)",
+   "seconds": 57
+  },
+  {
+   "name": "Reader page checks, rule A self-recall (own pages found, sister pages refused)",
+   "seconds": 10
+  },
+  {
+   "name": "Reconcile S727 at Butte (the elective line as fill)",
+   "seconds": 20
+  },
+  {
+   "name": "Reconcile window and fill (every college, the cut-off window)",
+   "seconds": 11
+  },
+  {
+   "name": "Statewide subject codes (kb/_statewide_subject_codes.py)",
+   "seconds": 29
+  },
+  {
+   "name": "Subject decisions, noncredit (kb/subject_decisions.py nc:<category>)",
+   "seconds": 14
+  },
+  {
+   "name": "Subject recommendations (kb/_build_local_subject_recommendations.py)",
+   "seconds": 20
+  }
+ ],
+ "read_docs_so_they_run": [
+  {
+   "name": "Apply workflows share one group; a lost push rebuilds once",
+   "reads": [
+    "docs/side.md"
+   ]
+  },
+  {
+   "name": "Commons data dashboard builder",
+   "reads": [
+    "docs/kb-notes/adr-student-detail-aggregate-disclosure-control.md",
+    "docs/program_requirements_harvest_lessons_archive.md",
+    "docs/reference/data_dictionary.md",
+    "docs/reference/data_sources.md"
+   ]
+  },
+  {
+   "name": "Commons data dashboard live counts",
+   "reads": [
+    "docs/kb-notes/adr-student-detail-aggregate-disclosure-control.md",
+    "docs/program_requirements_harvest_lessons_archive.md",
+    "docs/reference/data_dictionary.md",
+    "docs/reference/data_sources.md"
+   ]
+  },
+  {
+   "name": "Dependency map rebuilt from this tree, then every test that reads it",
+   "reads": [
+    "docs/reference",
+    "docs/reference/dependency_map.md"
+   ]
+  }
+ ]
+}

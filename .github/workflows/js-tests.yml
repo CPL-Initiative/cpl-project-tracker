@@ -230,6 +230,12 @@ jobs:
       - name: Docs-reading jsdom tests (run even when the suite is skipped)
         if: matrix.shard == 1 && (needs.gate.outputs.decision == 'skip')
         run: node tests/governance_docs_panel.test.js
+      # The docs-only lint skip (S737): the heavy steps listed in tests/lints_docs_only_skip.json read no docs file
+      # (traced under strace), so on a docs-only diff they skip with `&& (needs.gate.outputs.decision == 'run')`.
+      # Main's push run and every code PR run them. A step joins the skip only through that list.
+      - name: Docs-only lint skip (the list and the workflow agree; docs readers never skip)
+        if: matrix.shard == 2
+        run: python3 tests/lints_docs_only_skip_test.py
       # The Pages allowlist (#3104; #3278 review, finding 6). A docs-shaped PR that adds a root *.md skips the
       # suite, and an undecided path would then first fail on main and turn every later PR red. This runs on
       # every PR and every main run, whatever the gate decides (~3 s).
@@ -379,7 +385,7 @@ jobs:
       # The Subjects recommendations (S700, #3655): a title's own heading never votes for it, a level is the one its
       # source measured, program titles never read High, a row on the noncredit hold takes none. Pure stdlib.
       - name: Subject recommendations (kb/_build_local_subject_recommendations.py)
-        if: matrix.shard == 4
+        if: matrix.shard == 4 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/local_subject_recommendations_test.py
       # The missed subject pages (S700, #3655): a course the file holds is never filed twice, each college's heading
       # rule reads its own pages only, the subject's name is the page title's. Pure stdlib.
@@ -422,7 +428,7 @@ jobs:
       # category's noncredit courses at that college, never a credit course and never a mint route; an unknown slug is
       # refused and listed; the sync accepts credit, whole and nc:<a listed slug>. Pure stdlib.
       - name: Subject decisions, noncredit (kb/subject_decisions.py nc:<category>)
-        if: matrix.shard == 6
+        if: matrix.shard == 6 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/subject_decisions_noncredit_test.py
       # A person's course moves reach the re-mint's gate (#3655): the sync reads CRS: rows into `courses`, lists an
       # unreadable one, commits no email; the reader refuses a non-canonical code and the nightly mint never reads a
@@ -440,7 +446,7 @@ jobs:
       # call and a confidence for each, a filing settled at 100%, no vote from a TOP-only discipline or from the M-ID a
       # code named, a noncredit code by its category, the top confidence band right 95% or more on the labelled codes.
       - name: Statewide subject codes (kb/_statewide_subject_codes.py)
-        if: matrix.shard == 6
+        if: matrix.shard == 6 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/statewide_subject_codes_test.py
       # A college's subject code history (S715; Sam, 2026-11-23: "it happens all the time"): every file names its source
       # and recorder, a rename resolves through a chain and never cycles, and the statewide list counts a renamed code's
@@ -489,7 +495,7 @@ jobs:
         if: matrix.shard == 4
         run: python3 tests/ccr_confidence_rules_test.py
       - name: Confidence scorer rules G and M, and their apply and undo (kb/_ccr_confidence_apply.py)
-        if: matrix.shard == 1
+        if: matrix.shard == 1 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/ccr_rules_g_m_test.py
       # The seed cards both second signals confirm (S615, Open Asks Sheet 174 card 1): receipt, auditor state, undo.
       - name: Seed confirmed by description and TOP (kb/_ccr_seed_confirm_apply.py)
@@ -577,12 +583,12 @@ jobs:
       # retired alias pair's matches are reproduced, and the self-recall test with its floor,
       # from committed files (openpyxl, installed at the top of this job; about 35 s).
       - name: Course-id route (suffix reading, self-recall, retired alias pairs)
-        if: matrix.shard == 4
+        if: matrix.shard == 4 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/course_id_route_test.py
       # An electives fill never passes a record over a window the reader cut off (American River 07206, S655; the
       # eight Los Rios records of S714, widened to every college in S720); committed records and pinned fixtures.
       - name: Reconcile window and fill (every college, the cut-off window)
-        if: matrix.shard == 1
+        if: matrix.shard == 1 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/reconcile_window_fill_test.py
       # A reconcile's rescore keeps a record's named gap (S714's 16 dropped ge_units_not_read gaps; S720).
       - name: Reconcile keeps named gaps (ge_units_not_read)
@@ -640,7 +646,7 @@ jobs:
       # PDF page files its preview; a pin's through binds across a page break; the named-gaps rollback's tag.
       # Needs git for the keep-better fixture repo.
       - name: Program requirements reader follow-up S703 (own run, fragments, editions, prior preview, through, tag)
-        if: matrix.shard == 4
+        if: matrix.shard == 4 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/program_requirements_follow_up_s703_test.py
       # S703: Clovis's and Cosumnes River's own-page pins bind on the pages the free reads printed, open on their
       # words, read from the pinned page in capture_pdf, and hold what the filed page lacked. Pure stdlib.
@@ -694,7 +700,7 @@ jobs:
       # S727: an eLumen heading's award ("Welding AS", "Welding Cert", "Addiction Studies, CA", a title over
       # "A.S. Degree (") names the program's own page, so a degree and its certificate never take each other's.
       - name: Program requirements eLumen sister awards (S727)
-        if: matrix.shard == 3
+        if: matrix.shard == 3 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/program_requirements_elumen_sister_award_s727_test.py
       # S730: the eLumen follow-up's list (kb/_elumen_own_page_s730.py): no kept key and no person-settled row in the
       # forced read's force list, the reread posts decided replaces alone, and Antelope Valley 43150's pin binds.
@@ -749,11 +755,11 @@ jobs:
       # Named gaps (S680; Sam, 2026-11-17: collect with gaps noted and confidence scores): the gap and its
       # scores, the census counting the row collected, the guarded SQL. Pure stdlib.
       - name: Named gaps (collected with the gap named, scored, counted collected)
-        if: matrix.shard == 1
+        if: matrix.shard == 1 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/program_named_gaps_test.py
       # S703, census lever 2: ge_units_not_read, its self-recall on held answers, and lane 1's colleges untouched.
       - name: Named gap ge_units_not_read (self-recall, the plan, the held colleges)
-        if: matrix.shard == 6
+        if: matrix.shard == 6 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/program_ge_units_not_read_s703_test.py
       # The units rules (S680; Commons Clarity's Part A on #3480): a correction lands exactly or the record
       # stays as filed; A11's named gaps; the collection lane's colleges left out. Pure stdlib.
@@ -762,17 +768,17 @@ jobs:
         run: python3 tests/program_requirements_units_rules_test.py
       # S703, census lever 3: the three hours gaps, their self-recall on held answers, and lane 1's colleges untouched.
       - name: Named hours gaps (self-recall, the plan, the held colleges)
-        if: matrix.shard == 5
+        if: matrix.shard == 5 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/program_hours_gaps_s703_test.py
       # The S683 cheap-piles lists (#3358 section 2): A5's wrong answers are the self-check's own, key for key, and
       # each of the 33 held-out records names a committed record and a gap from GAPS or none. Pure stdlib.
       - name: Cheap piles S683 (A5's misses by cause, the 33 held-out records)
-        if: matrix.shard == 1
+        if: matrix.shard == 1 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/program_requirements_cheap_piles_s683_test.py
       # S703, the catalog-wording lever: lists_past_their_figure, its self-recall with boundary readings, the claim
       # check's precision counts, and tonight's held colleges untouched.
       - name: Named gap lists_past_their_figure (self-recall, claim check, the plan, the held colleges)
-        if: matrix.shard == 4
+        if: matrix.shard == 4 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/program_lists_past_figure_s703_test.py
       # S713, lane 2's cheap piles: the common number in parentheses, the named gap section_cut_off, their precision
       # against the hand reading, boundary readings and claim checks, and the plan's 15 rows at Santa Rosa Junior.
@@ -782,7 +788,7 @@ jobs:
       # S713 at Glendale: a list taken in place of a core course, a figure printed in a list's heading, and PSYC 104
       # renumbered for the file's PSYCH 104; the self-recall against the hand reading and the plan's 13 rows.
       - name: Cheap piles S713 at Glendale (substitute list, heading figure, renumber, the plan)
-        if: matrix.shard == 5
+        if: matrix.shard == 5 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/program_piles_s713_glendale_test.py
       # S713: the three general education reconcile steps (Las Positas, Antelope Valley, College of Marin), their
       # mechanics, the measure before the runs, and the 9-row plan against the filed records.
@@ -792,7 +798,7 @@ jobs:
       # S713 at Clovis: a lecture and its lab as one option, a list taking an earlier list's unused courses, and
       # two courses renumbered; the self-recall, the blast radius at every college and the plan's 6 rows.
       - name: Cheap piles S713 at Clovis (lab pairs, earlier lists' courses, renumbers, the plan)
-        if: matrix.shard == 1
+        if: matrix.shard == 1 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/program_piles_s713_clovis_test.py
       # S714 at East Los Angeles: the plan line, double counting, the high-unit waiver, a course taken twice, two
       # printed codes and one named gap, each on the catalog's own sections; the self-recall and the plan's rows.
@@ -802,11 +808,11 @@ jobs:
       # S714 at City College of San Francisco: a cross-listed course and a misread code renamed to the file's rows,
       # one option the reading split over several blocks; the self-recall, the blast radius and the plan's 8 rows.
       - name: Cheap piles S714 at City College of San Francisco (renumbers, option parts, the plan)
-        if: matrix.shard == 6
+        if: matrix.shard == 6 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/program_piles_s714_ccsf_test.py
       # S714 follow-up: the ten records at other colleges option_parts moves to passing; the self-recall and the plan.
       - name: Cheap piles S714, option_parts elsewhere (ten records, the plan)
-        if: matrix.shard == 3
+        if: matrix.shard == 3 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/program_piles_s714_optparts_test.py
       # S714 at Fullerton: the campus letter's place in eight file codes; the self-recall and the plan's 11 rows.
       - name: Cheap piles S714 at Fullerton (campus-letter renumbers, the plan)
@@ -823,7 +829,7 @@ jobs:
       # S727 at Butte: the map's elective line read as electives that fill the degree (clear_conditional); the
       # self-recall over every committed record and the nine's reconcile, before and after its run.
       - name: Reconcile S727 at Butte (the elective line as fill)
-        if: matrix.shard == 3
+        if: matrix.shard == 3 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/program_reconcile_s727_butte_test.py
       # S731 at Saddleback: two repeat steps with block_sum (a course the page says is taken twice), fired on the
       # seven S730's plan s730b held on the reconcile lever and on no other record; keep-only's base checks.
@@ -864,15 +870,15 @@ jobs:
         run: python3 tests/program_piles_s720_ventura_test.py
       # S721 lane 1: one figure printed over several lists read as one pool; the self-recall and the plan s721p.
       - name: Pooled figures S721 (the reading, the self-recall, the plan)
-        if: matrix.shard == 1
+        if: matrix.shard == 1 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/program_pooled_figure_s721_test.py
       # S727 lane 1: the rest of what the pooled reading opens at five colleges; the hand reading, the holds, the plan s727p.
       - name: Pooled figures S727 (the rows, the holds, the plan)
-        if: matrix.shard == 5
+        if: matrix.shard == 5 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/program_piles_s727_pooled_test.py
       # S731 lane 1: the pooled reading's next at four colleges; the scorer change POOLED_S731, its self-recall, the plan s731p.
       - name: Pooled figures S731 (the reading, the self-recall, the rows, the holds, the plan)
-        if: matrix.shard == 1
+        if: matrix.shard == 1 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/program_piles_s731_pooled_test.py
       # S720 at Cabrillo: the census's 21 wording-rule records, 8 collected with named gaps; the plan.
       - name: Cheap piles S720 at Cabrillo (named gaps, the plan)
@@ -897,7 +903,7 @@ jobs:
       # S727 plan s727f: the records held for a person at twelve colleges, collected with each gap named (two new
       # kinds), seven named gaps with no record; the plan.
       - name: Cheap piles S727, the records held for a person (named gaps, the plan)
-        if: matrix.shard == 3
+        if: matrix.shard == 3 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/program_piles_s727_persons_test.py
       # S721 at Porterville: the census's 19 wording-rule records, one passed by its catalog's misprint, 14
       # collected with named gaps, 4 held; the plan.
@@ -916,7 +922,7 @@ jobs:
       # S727 at American River: the census's 19 wording-rule records, 12 collected with named gaps (two new kinds,
       # option_lists_read_apart and noted_total_cut_off), 7 held; the plan.
       - name: Cheap piles S727 at American River (named gaps, the plan)
-        if: matrix.shard == 5
+        if: matrix.shard == 5 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/program_piles_s727_arc_test.py
       # S727 at College of the Canyons: the census's 20 wording-rule records, 6 collected with named gaps, and
       # 43388 (held for a person since S691) inserted with the new heading_not_in_text; the plan.
@@ -926,22 +932,22 @@ jobs:
       # S727 at Santa Barbara City: the census's 18 wording-rule records, 6 passed by a rescore under the floor,
       # 6 collected with named gaps (one new kind), 6 held; the plan.
       - name: Cheap piles S727 at Santa Barbara City (a rescore, named gaps, the plan)
-        if: matrix.shard == 3
+        if: matrix.shard == 3 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/program_piles_s727_sbcc_test.py
       # S730 at Los Angeles Trade-Technical: the census's 17 wording-rule records, 6 collected with named gaps,
       # 11 held (two on a cheaper lever, one on the own-page guard); the plan.
       - name: Cheap piles S730 at Los Angeles Trade-Technical (named gaps, the plan)
-        if: matrix.shard == 3
+        if: matrix.shard == 3 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/program_piles_s730_lattc_test.py
       # S730 at Saddleback: the census's 17 wording-rule records, 8 collected with named gaps (one new kind,
       # waived_course_counted), 7 held on the repeat lever, 2 held; the plan.
       - name: Cheap piles S730 at Saddleback (named gaps, the repeat lever, the plan)
-        if: matrix.shard == 6
+        if: matrix.shard == 6 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/program_piles_s730_saddleback_test.py
       # S731 at Long Beach City: the census's 16 wording-rule records, 3 passed by a rescore (short_high, meets),
       # 10 collected with named gaps, 3 held; each row's live run proved by its record file's history; the plan.
       - name: Cheap piles S731 at Long Beach City (a rescore, named gaps, the plan)
-        if: matrix.shard == 3
+        if: matrix.shard == 3 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/program_piles_s731_lbcc_test.py
       # Discontinued programs (S680; Sam, 2026-11-17 on #3480): a program's own catalog section marks it,
       # or a prior year prints it and this year does not; flagged out of the gap, never deleted. Pure stdlib.
@@ -956,7 +962,7 @@ jobs:
       # Rule A's self-recall (S683 second reader): over the committed site records that place courses, rule A finds
       # the own page of at least 75% and accepts at most 30 sister programs' pages. Reads the committed records.
       - name: Reader page checks, rule A self-recall (own pages found, sister pages refused)
-        if: matrix.shard == 3
+        if: matrix.shard == 3 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/reader_page_checks_recall_test.py
       # S683: after a paid re-read, the filed record stays wherever the re-read is worse (a filed pass above all), put
       # back byte for byte from the base, so step=reread leaves that row alone. Pure stdlib and a fixture git repo.
@@ -970,7 +976,7 @@ jobs:
         run: python3 tests/harvest_no_closed_list_diagnosis_test.py
       # The no-closed-list lookup's self-test on the committed captures (#3299 slice A): none false. Pure stdlib.
       - name: Harvest no-closed-list lookup census (recall and false matches)
-        if: matrix.shard == 4
+        if: matrix.shard == 4 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/harvest_ncl_lookup_census_test.py
       - name: Program requirements dated reads (the SQL's aggregate in Python, verify first)
         if: matrix.shard == 3
@@ -1083,7 +1089,7 @@ jobs:
       # of one build, so the guard holds them equal and recomputes the up-to
       # figure from the page's own data. Needs node (the JS data file).
       - name: ROEP display (page and Sierra agree, figure recomputes)
-        if: matrix.shard == 6
+        if: matrix.shard == 6 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/roep_display_test.py
       # The MAP Custom Report loader's guard (S317). The nightly load runs it
       # before every load, so a PR that breaks it used to surface only as a
@@ -1252,7 +1258,7 @@ jobs:
       # output. Here, not in the shards: the builder reads kb/receipts/, which their checkout omits.
       # --out writes the file alone and leaves commons_history.json as committed.
       - name: Commons status rebuilt from this tree, then every test that reads it
-        if: matrix.shard == 2
+        if: matrix.shard == 2 && (needs.gate.outputs.decision == 'run')
         run: |
           set -euo pipefail
           python3 kb/_build_commons_status.py --out kb/status/commons.json --quiet
@@ -1429,7 +1435,7 @@ jobs:
       # planted signal IS detected, and that a null says "no LARGE effect"
       # rather than "no signal". Pure stdlib, no network, no key.
       - name: Jev variable battery (the rule rejects noise and detects signal)
-        if: matrix.shard == 5
+        if: matrix.shard == 5 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/jev_battery_test.py
       # The re-mint blast radius (Session 277). Guards three READINGS rather
       # than three behaviors, because all three were got wrong while building
@@ -1856,7 +1862,7 @@ jobs:
       # UC_OUT_DIR seam (about a minute). Imports the generator (openpyxl,
       # installed at the top). Same non-required check.
       - name: Assign from the panel, the export (excel_to_dashboard.py)
-        if: matrix.shard == 4
+        if: matrix.shard == 4 && (needs.gate.outputs.decision == 'run')
         run: |
           python3 tests/assign_from_panel_build_test.py
       # Units never split an identity (Sam, 2026-09-27). The M-ID Units bake
@@ -2239,7 +2245,7 @@ jobs:
       # most articulations first, loaded colleges and verdicts skipped, a trial before
       # an unproven host's full read. Pure-stdlib python.
       - name: Next SLO colleges (the order, the trial gate, the verdicts)
-        if: matrix.shard == 5
+        if: matrix.shard == 5 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/next_slo_colleges_test.py
       # One browser install for every workflow (2026-11-11, the runners' DNS fault): a workflow that writes
       # `playwright install` itself fails here, so the next fix lands in scripts/install_browser.sh alone.
@@ -2255,7 +2261,7 @@ jobs:
       # The Honors rows plan's apply-day check (S653, #3315): it re-measures the pairs on the checkout's payload and
       # refuses a dissolved pair, a pre-delete overlay and a checkout without origin/main's head.
       - name: Honors rows plan, the apply-day check refuses a stale plan
-        if: matrix.shard == 6
+        if: matrix.shard == 6 && (needs.gate.outputs.decision == 'run')
         run: python3 tests/honors_of_rows_check_test.py
       # The Honors step-4 redraw (S737): --plan refuses once step 2 is applied, and --redraw names every pair that
       # left, arrived or changed action against the applied plan. Pure-stdlib python.
