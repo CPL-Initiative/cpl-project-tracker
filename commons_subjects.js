@@ -1300,6 +1300,86 @@
       rapidDraw();
     }, function (er) { btn.disabled = false; say("Not saved: " + ((er && er.message) || "the network failed") + "."); });
   }
+  /* ── The catalog page in a bottom bar (funding-model/college_bar.js is the pattern): the window's full width, its top
+     edge resizes it (drag, or Up and Down on the grip), its top row stays put with Open in a new tab and Close, Escape
+     closes it and focus returns to the link. Many catalogs refuse to load inside another page, so the bar always
+     offers the new tab and says so. Nothing is remembered across visits. ── */
+  var BAR = { el: null, from: null };
+  function rapidBarCss() {
+    if (document.getElementById("csb-bar-css")) return;
+    var st = document.createElement("style"); st.id = "csb-bar-css";
+    st.textContent = ".csb-bar{position:fixed;left:0;right:0;bottom:0;height:50vh;min-height:160px;max-height:100vh;z-index:900;display:flex;flex-direction:column;"
+      + "background:var(--surface-opaque,var(--surface-1));border-top:1px solid var(--border-strong);box-shadow:0 -8px 24px rgba(20,20,30,.16);}"
+      + ".csb-bar-grip{height:10px;cursor:ns-resize;border-bottom:1px solid var(--border);flex:0 0 auto;}"
+      + ".csb-bar-grip:focus-visible{outline:2px solid var(--cobalt);outline-offset:-2px;}"
+      + ".csb-bar-top{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;padding:6px 16px;flex:0 0 auto;}"
+      + ".csb-bar-top strong{margin-right:auto;}"
+      + ".csb-bar-why{font-size:.8rem;color:var(--text-muted);padding:0 16px 6px;margin:0;flex:0 0 auto;}"
+      + ".csb-bar iframe{flex:1 1 auto;width:100%;border:0;background:var(--surface-1);}"
+      + ".csb-rapid-more summary{cursor:pointer;min-height:24px;text-decoration:underline;}"
+      + ".csb-rapid-note textarea{width:100%;box-sizing:border-box;min-height:4.5em;font:inherit;}";
+    document.head.appendChild(st);
+  }
+  function rapidBarClose() {
+    if (!BAR.el) return;
+    BAR.el.parentNode && BAR.el.parentNode.removeChild(BAR.el);
+    document.body.style.paddingBottom = "";
+    var f = BAR.from; BAR.el = null; BAR.from = null;
+    if (f && f.focus) f.focus();
+  }
+  function rapidBar(url, label, from) {
+    rapidBarClose(); rapidBarCss();
+    var close = el("button", { type: "button", cls: "csb-word", id: "csb-bar-close", text: "Close" });
+    var grip = el("div", { cls: "csb-bar-grip", role: "separator", tabindex: "0", "aria-orientation": "horizontal",
+      "aria-label": "Resize the catalog bar; use the Up and Down keys", "aria-valuemin": "160", "aria-valuemax": String(window.innerHeight || 800) });
+    var frame = el("iframe", { src: url, title: "The catalog page for " + label, referrerpolicy: "no-referrer" });
+    var bar = el("section", { cls: "csb-bar", id: "csb-bar", "aria-label": "Catalog page: " + label }, [grip,
+      el("div", { cls: "csb-bar-top" }, [el("strong", { text: "Catalog: " + label }),
+        el("a", { href: url, target: "_blank", rel: "noopener noreferrer" }, ["Open in a new tab", el("span", { cls: "csb-vh", text: " (opens in a new tab)" })]), close]),
+      el("p", { cls: "csb-bar-why", text: "If the page stays blank, the college’s site will not load inside COBI; open it in a new tab." }), frame]);
+    function setH(h) {
+      h = Math.max(160, Math.min(window.innerHeight || 800, Math.round(h)));
+      bar.style.height = h + "px"; grip.setAttribute("aria-valuenow", String(h)); document.body.style.paddingBottom = h + "px";
+    }
+    close.addEventListener("click", rapidBarClose);
+    bar.addEventListener("keydown", function (ev) { if (ev.key === "Escape") { ev.preventDefault(); rapidBarClose(); } });
+    grip.addEventListener("keydown", function (ev) {
+      if (ev.key === "ArrowUp" || ev.key === "ArrowDown") { ev.preventDefault(); setH(bar.getBoundingClientRect().height + (ev.key === "ArrowUp" ? 40 : -40)); }
+    });
+    grip.addEventListener("pointerdown", function (ev) {
+      ev.preventDefault();
+      var y0 = ev.clientY, h0 = bar.getBoundingClientRect().height;
+      function mv(e) { setH(h0 + (y0 - e.clientY)); }
+      function up() { window.removeEventListener("pointermove", mv); window.removeEventListener("pointerup", up); }
+      window.addEventListener("pointermove", mv); window.addEventListener("pointerup", up);
+    });
+    document.body.appendChild(bar);
+    BAR.el = bar; BAR.from = from || null;
+    setH((window.innerHeight || 800) * 0.5);
+    close.focus();
+  }
+  /* ── A training note for the procedure (Sam, 2026-11-26: "add a place for me to add a training note for our
+     procedures"): a person's own words on how this procedure should run, saved as kb_curation field procedure_note,
+     course_id NOTE:<view>|<time>, value { note, view, code }, under the reviewer's own email. Sessions and procedures
+     read them; nothing applies them. Each note is its own row, so a note never overwrites another. ── */
+  var NOTE_FIELD = "procedure_note", NOTE_VIEW = "commons/subjects/rapid";
+  function rapidNoteBox(r) {
+    var ta = el("textarea", { id: "csb-rapid-note-in", rows: "3", maxlength: "2000", placeholder: "What should COBI or the next person know about this step?" });
+    var btn = el("button", { type: "button", cls: "csb-word", id: "csb-rapid-note-save", text: "Save the note" });
+    var said = el("p", { cls: "csb-ed-msg", id: "csb-rapid-note-msg", role: "status" });
+    btn.addEventListener("click", function () {
+      var t = String(ta.value || "").trim();
+      if (!t) { said.textContent = "Type a note first."; return; }
+      btn.disabled = true; said.textContent = "Saving…";
+      writeSave("NOTE:" + NOTE_VIEW + "|" + new Date().toISOString(), { note: t, view: NOTE_VIEW, code: r.slug + "|" + r.code }, NOTE_FIELD).then(function (res) {
+        btn.disabled = false;
+        if (!res.ok) { said.textContent = res.lapsed ? "Not saved: sign in as a reviewer, then save." : "Not saved: the server answered " + res.status + "."; return; }
+        ta.value = ""; said.textContent = "Saved. The next session reads it with the procedure.";
+      }, function (er) { btn.disabled = false; said.textContent = "Not saved: " + ((er && er.message) || "the network failed") + "."; });
+    });
+    return el("details", { cls: "csb-rapid-note", id: "csb-rapid-note" }, [el("summary", { text: "Add a training note for this procedure" }),
+      el("label", { "for": "csb-rapid-note-in", cls: "csb-vh", text: "Training note" }), ta, el("p", { cls: "csb-rapid-acts" }, [btn]), said]);
+  }
   function rapidView(M) {
     var q = rapidQueue(M), box = el("div", { cls: "csb-rapid", id: "csb-rapid" });
     if (!q.length) {
@@ -1347,8 +1427,16 @@
         : "COBI judges this not a subject code" + (g.judged.title ? " (it reads as " + g.judged.title + ")" : "") + ". Press Not a subject to take it off the list, or type a title if you disagree. The guess read " + g.guess + ".";
       box.appendChild(el("p", { cls: "csb-note", id: "csb-rapid-verdict", "data-verdict": g.judged.verdict }, [el("strong", { text: jv })]));
     }
-    if (g.sourceUrl) box.appendChild(el("p", { cls: "csb-note", id: "csb-rapid-src" }, [g.sourceSays ? "The catalog says: " : "The page that settled it: ",
-      el("a", { href: g.sourceUrl, target: "_blank", rel: "noopener noreferrer" }, [g.sourceSays || g.sourceUrl, el("span", { cls: "csb-vh", text: " (opens in a new tab)" })])]));
+    /* The catalog page opens in a bar along the bottom of the window (Sam, 2026-11-26: "have the catalog link open in
+       bottom bar rather than to a new tab"); the link keeps its address, so a new tab is still a long-press away. */
+    if (g.sourceUrl) {
+      var srcA = el("a", { href: g.sourceUrl, "data-csb-bar": "1" }, [g.sourceSays || g.sourceUrl]);
+      srcA.addEventListener("click", function (ev) {
+        if (ev.ctrlKey || ev.metaKey || ev.shiftKey || ev.button === 1) return;
+        ev.preventDefault(); rapidBar(g.sourceUrl, r.code + " at " + r.college, srcA);
+      });
+      box.appendChild(el("p", { cls: "csb-note", id: "csb-rapid-src" }, [g.sourceSays ? "The catalog says: " : "The page that settled it: ", srcA]));
+    }
     var input = el("input", { type: "text", cls: "csb-input", id: "csb-rapid-title", autocomplete: "off", spellcheck: "true", autocapitalize: "words", enterkeyhint: "go" });
     input.value = g.title || "";
     var b = bar01(g.confidence == null || isNaN(g.confidence) ? null : Number(g.confidence) / 100, "Confidence in this title");
@@ -1390,7 +1478,12 @@
     }, { passive: true });
     box.appendChild(el("p", { cls: "csb-ed-msg", id: "csb-rapid-msg", role: "status" }));
     if (!session()) box.appendChild(el("p", { cls: "csb-note", id: "csb-rapid-signin", text: "Accept saves once you sign in as a reviewer." }));
-    box.appendChild(el("p", { cls: "csb-foot", id: "csb-rapid-keys", text: rapidTouch()
+    box.appendChild(rapidNoteBox(r));
+    /* The explanation folds away (Sam, 2026-11-26: "collapse the bottom section with all the explanation text"); render()
+       moves the page's own foot notes into it on this view. */
+    var more = el("details", { cls: "csb-rapid-more", id: "csb-rapid-more" }, [el("summary", { text: "How this works" })]);
+    box.appendChild(more);
+    more.appendChild(el("p", { cls: "csb-foot", id: "csb-rapid-keys", text: rapidTouch()
       ? "Accept saves the title in the box, the guess or what you typed; Go on the keyboard does the same. Not a subject takes the code off the list for good. Skip sets it aside for this visit. Swipe left to skip, right to go back."
       : "Accept saves the title in the box, the guess or what you typed; Enter does the same. Not a subject takes the code off the list for good. Skip saves nothing and sets the code aside for this visit. Ctrl or Command with the right arrow skips; with the left arrow, goes back. Tab moves between the controls." }));
     return box;
@@ -2794,6 +2887,11 @@
     if (S.view !== SW) wrap.appendChild(el("p", { cls: "csb-note", id: "csb-to-statewide" }, ["Every college’s codes, with a call and a confidence for each: ",
       go("#commons/subjects/" + SW, "Every local code, statewide"), "."]));
     if (S.view !== MQ) wrap.appendChild(el("p", { cls: "csb-foot", text: "How codes are compared: " + (S.view === HELD && VIEW.H ? VIEW.H.rule : S.view === NC && VIEW.N ? VIEW.N._rule : M.rule + (M.built ? " The state course list was built " + day(M.built) + "." : "")) }));
+    if (S.view === RAPID) {
+      var moreBox = wrap.querySelector("#csb-rapid-more");
+      if (moreBox) Array.prototype.slice.call(wrap.children).filter(function (n) { return n.id === "csb-to-statewide" || (n.classList && n.classList.contains("csb-foot")); })
+        .forEach(function (n) { moreBox.appendChild(n); });
+    }
     var page = el("div", { cls: "cmn-page" }, [wrap]);
     root.appendChild(page);
     stackDraw(root);   /* before the bindings below, so a sidebar's words open what they name */
