@@ -116,6 +116,12 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
   "pass": false,
   "gaps": [
    {
@@ -362,5 +368,6 @@
    "Page states it was revised since initial catalog publication (addendum version)."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

@@ -94,6 +94,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "n/a"
+  },
   "pass": true
  },
  "record": {
@@ -178,5 +181,6 @@
    "Career entry taken from the description phrase 'entry level jobs in warehousing and distribution operations'; the outcome also mentions the job title 'Warehousing and Distribution Assistant'. Reviewer may want to check whether either should be listed."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

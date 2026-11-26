@@ -46,15 +46,11 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 51,
+   "placed": 52,
    "listed": 52,
-   "share": 0.981,
-   "missing": [
-    "BUSAD249ABC"
-   ],
-   "unexplained": [
-    "BUSAD249ABC"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
    "course_id": [
     {
@@ -68,14 +64,11 @@
      "matched_by": "course_id"
     }
    ],
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 5,
+   "count": 2,
    "codes": [
-    "BUSAD249A",
-    "BUSAD249B",
-    "BUSAD249C",
     "COMM130",
     "PSYCH121"
    ],
@@ -83,7 +76,7 @@
     "COMM130",
     "PSYCH121"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -140,7 +133,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -736,6 +729,7 @@
    "Course codes are printed without spaces in the catalog (e.g., 'ADJU201'); recorded with a space between subject and number."
   ]
  },
- "extracted_run": "44540818388",
- "catalog_year": "2026-2027"
+ "extracted_run": 45772245635,
+ "catalog_year": "2026-2027",
+ "read_run": "44540818388"
 }

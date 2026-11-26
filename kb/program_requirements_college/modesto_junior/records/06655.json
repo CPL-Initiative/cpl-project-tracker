@@ -86,6 +86,7 @@
     19.0,
     21.0
    ],
+   "against": "program",
    "why": [
     "the blocks sum to 9.0-12.0; the catalog states 19.0-21.0"
    ]
@@ -108,6 +109,12 @@
    "count": 3,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": false,
   "gaps": [
@@ -473,5 +480,6 @@
    "Catalog additions not in the closed list: CSCI290, CSCI230, CSCI231, CSCI210, CSCI241, CSCI271, CSCI273."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

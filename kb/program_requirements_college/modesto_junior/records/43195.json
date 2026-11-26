@@ -70,6 +70,7 @@
     20.0,
     25.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -90,6 +91,9 @@
    "count": 0,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -210,5 +214,6 @@
    "An empty 'Upon satisfactory completion of this award, the student should be prepared to:' lead-in appears before the Program Learning Outcomes heading; the outcomes were taken from the list under the Program Learning Outcomes heading."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

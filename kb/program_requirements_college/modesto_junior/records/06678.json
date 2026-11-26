@@ -114,6 +114,7 @@
     65.5,
     67.5
    ],
+   "against": "program",
    "why": [
     "the blocks sum to 33.0-35.0; the catalog states 65.5-67.5"
    ]
@@ -136,6 +137,12 @@
    "count": 1,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": false
  },
@@ -395,5 +402,6 @@
    "GE pattern recorded as MJC GE based on 'complete the MJC GE graduation requirements'; Cal-GETC Area 2 is cited only for the math competency admission requirement."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

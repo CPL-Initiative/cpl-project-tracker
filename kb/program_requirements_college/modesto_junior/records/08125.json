@@ -120,6 +120,7 @@
     22.0,
     27.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -140,6 +141,12 @@
    "count": 2,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -1076,5 +1083,6 @@
    "Total units 22.0 - 27.0 Major Units as stated; MJC Associate Degree Requirements (GE) are referenced but no GE pattern is named."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

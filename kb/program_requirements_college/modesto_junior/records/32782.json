@@ -94,6 +94,12 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
   "pass": true
  },
  "record": {
@@ -254,5 +260,6 @@
    "Degree totals: 18-19 major units, 10 units may be double-counted, 34 Cal-GETC units, 17-18 CSU-transferable elective units, 60 total units; electives are part of the degree, not the major, so open_elective_units is null."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

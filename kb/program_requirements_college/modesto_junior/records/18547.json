@@ -70,6 +70,7 @@
     21.0,
     22.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -90,6 +91,12 @@
    "count": 0,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -215,5 +222,6 @@
    "Catalog title for MATH172 is 'Calculus: Second Course' versus closed-list 'Calculus Second Course' (minor punctuation difference)."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }

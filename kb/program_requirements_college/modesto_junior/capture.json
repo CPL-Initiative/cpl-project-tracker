@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 199,
  "with_closed_list": 196,
- "started": "2026-11-19T13:51:22Z",
+ "started": "2026-11-26T07:02:08Z",
  "elumen": {
   "catalog": "2026-2027",
   "read": "publish/content",
@@ -97,7 +97,7 @@
   "yield_refused_passing": 0
  },
  "loads": 217,
- "seconds": 899.9,
+ "seconds": 895.3,
  "found": 188,
  "by_method": {
   "no_closed_list": 3,
@@ -119,7 +119,7 @@
    "near_miss": {
     "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/animal-science-mjc-fall-2025",
     "label": {
-     "award": 0,
+     "award": 1,
      "title": 1.0
     },
     "field": "innerText",
@@ -180,7 +180,8 @@
      "content": 2897,
      "tabs": 0
     },
-    "tab_panels": []
+    "tab_panels": [],
+    "page_checks": true
    },
    "status": "Active - Teachout Only"
   },
@@ -229,163 +230,23 @@
  "page_challenged": [],
  "coverage_bands": {
   "0.5-0.8": 3,
-  "0.8-1.0": 10,
-  "1.0": 175
+  "0.8-1.0": 9,
+  "1.0": 176
  },
  "would_extract": {
   "against": "kb/program_requirements_college/modesto_junior",
-  "kept": 173,
+  "kept": 187,
   "kept_moved": 0,
-  "programs": 15,
+  "programs": 1,
   "list": [
-   {
-    "control_number": "06661",
-    "title": "Machine Tool Technology",
-    "award": "A.S. Degree",
-    "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/machine-tool-technology-mjc-fall-2026v2",
-    "coverage": 0.917,
-    "was_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/machine-tool-technology-mjc-fall-2026",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "06700",
-    "title": "Human Services",
-    "award": "A.A. Degree",
-    "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/human-services-mjc-spring-2027",
-    "coverage": 1.0,
-    "was_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/human-services-mjc-spring-2027",
-    "was_coverage": 0.947,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "08154",
-    "title": "Addiction Studies",
-    "award": "A.A. Degree",
-    "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/addiction-studies-mjc-spring-2027",
-    "coverage": 1.0,
-    "was_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/addiction-studies-mjc-spring-2027",
-    "was_coverage": 0.929,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "13826",
-    "title": "Machine Tool Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/machine-tool-technology-mjc-fall-2026",
-    "coverage": 1.0,
-    "was_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/machine-tool-technology-mjc-fall-2026v2",
-    "was_coverage": 0.917,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "18601",
-    "title": "General Studies: Social & Behavioral Sciences",
-    "award": "A.A. Degree",
-    "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/general-studies-social-behavioral-sciences-mjc-spring-2027",
-    "coverage": 1.0,
-    "was_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/general-studies-social-behavioral-sciences-mjc-spring-2027",
-    "was_coverage": 0.973,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "18602",
-    "title": "General Studies: Arts and Humanities",
-    "award": "A.A. Degree",
-    "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/general-studies-arts-and-humanities-mjc-spring-2027",
-    "coverage": 1.0,
-    "was_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/general-studies-arts-and-humanities-mjc-spring-2027",
-    "was_coverage": 0.989,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "18646",
-    "title": "Language Studies",
-    "award": "A.A. Degree",
-    "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/language-studies-mjc-fall-2026",
-    "coverage": 1.0,
-    "was_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/language-studies-mjc-fall-2026",
-    "was_coverage": 0.947,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "20329",
-    "title": "Human Services",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/human-services-mjc-spring-2027v2",
-    "coverage": 1.0,
-    "was_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/human-services-mjc-spring-2027v2",
-    "was_coverage": 0.95,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "32226",
-    "title": "History",
-    "award": "A.A- T Degree",
-    "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/history-for-transfer-degree-mjc-fall-2026",
-    "coverage": 1.0,
-    "was_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/history-for-transfer-degree-mjc-fall-2026",
-    "was_coverage": 0.905,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "32241",
-    "title": "Anthropology",
-    "award": "A.A- T Degree",
-    "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/anthropology-for-transfer-degree-mjc-fall-2027",
-    "coverage": 1.0,
-    "was_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/anthropology-for-transfer-degree-mjc-fall-2027",
-    "was_coverage": 0.95,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "32249",
-    "title": "English",
-    "award": "A.A- T Degree",
-    "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/english-for-transfer-degree-mjc-fall-2026",
-    "coverage": 1.0,
-    "was_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/english-for-transfer-degree-mjc-fall-2026",
-    "was_coverage": 0.963,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "33809",
-    "title": "Addiction Studies",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/addiction-studies-mjc-spring-2027v2",
-    "coverage": 1.0,
-    "was_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/addiction-studies-mjc-spring-2027v2",
-    "was_coverage": 0.929,
-    "was_method": "sitemap_page"
-   },
    {
     "control_number": "42664",
     "title": "Law, Public Policy, and Society",
     "award": "A.A- T Degree",
     "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/law-public-policy-and-society-for-transfer-degree-mjc-fall-2026",
-    "coverage": 0.981,
+    "coverage": 1.0,
     "was_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/law-public-policy-and-society-for-transfer-degree-mjc-fall-2026",
-    "was_coverage": 0.942,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "44748",
-    "title": "Social Work and Human Services",
-    "award": "A.A- T Degree",
-    "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/social-work-and-human-services-for-transfer-degree-mjc-spring-2027",
-    "coverage": 1.0,
-    "was_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/social-work-and-human-services-for-transfer-degree-mjc-spring-2027",
-    "was_coverage": 0.897,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "45982",
-    "title": "Registered Veterinary Technician",
-    "award": "A.S. Degree",
-    "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/veterinary-technician-mjc-spring-2027",
-    "coverage": 1.0,
-    "was_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/veterinary-technician-mjc-spring-2027",
-    "was_coverage": 0.931,
+    "was_coverage": 0.981,
     "was_method": "sitemap_page"
    }
   ],
@@ -1149,10 +1010,5 @@
    "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/modern-policing-mjc-fall-2026"
   }
  },
- "staged_from": {
-  "run": "44537316386",
-  "proof": "text sha256 of 188 programs",
-  "pages_loaded": 0
- },
- "run": "44540818388"
+ "run": "45772245635"
 }

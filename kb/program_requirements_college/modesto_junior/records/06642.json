@@ -132,6 +132,12 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
   "pass": false,
   "gaps": [
    {
@@ -553,5 +559,6 @@
    "Codes are recorded as printed without a space (e.g., AGM235, AG115)."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": 45772245635,
+ "read_run": "38477845911"
 }
