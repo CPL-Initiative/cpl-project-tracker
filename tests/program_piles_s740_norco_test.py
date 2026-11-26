@@ -43,7 +43,16 @@ with open(os.path.join(B.ROOT, "kb", "status", "harvest_gap_census.json"), encod
     import json
     census = json.load(fh)
 lever = next(e for e in census["levers"] if e["lever"] == "reconcile_steps" and e["scope"] == M.COLLEGE)
-check(sorted(lever["members"]) == sorted(M.KEYS), "the keys are the census's reconcile_steps members at Norco")
+# Either state (S740 conductor, after the closing census 45870806616): before s740c1's apply the census lists every
+# key under reconcile_steps; after it, the two planned rows leave that lever and sit under collected_with_gaps with
+# their gap, and the held keys stay (p-older-pile-tests-pin-runs-later-plans-move-s739).
+named = {(m.get("college"), m.get("control_number")): m.get("gaps") or []
+         for m in (census.get("collected_with_gaps") or {}).get("members") or []}
+before = sorted(lever["members"]) == sorted(M.KEYS)
+after = (sorted(lever["members"]) == sorted(set(M.KEYS) - set(ROWS))
+         and all(kind in named.get((M.COLLEGE, cn), []) for cn, kind in ROWS.items()))
+check(before or after, "the keys are the census's reconcile_steps members at Norco, or the planned rows left them "
+      "collected with their gap")
 
 # ── the pages' own words (college-page-read run 45835049303, line for line) ─────────────────────────────────
 PHILOSOPHY = """Program Requirements

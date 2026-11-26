@@ -389,6 +389,13 @@ Memory rows: `kb/migrations/2026-11-26_s740_cpl_memory_rows.sql` (10 rows, all p
 
 ## Findings
 
+- `p-plan-tests-pin-plan-time-census-s740`: four of tonight's plan tests (Norco, Solano, San Jose City, San Bernardino
+  Valley) checked the census's `reconcile_steps` members against the plan-time list, so the closing census
+  45870806616, which moved the collected rows out of that lever, turned them red on `main` after the land; #3885's
+  `lints (1)` caught it. Each now accepts either state: the plan-time lever, or a later census from which tonight's
+  passed and named rows have left (a capped lever may list others or be gone). A census-reading plan test is written
+  for both states from the start.
+
 - `f-units-within-range-by-key-only-s740`: the kind `units_within_printed_range` files only by reviewed key lists.
 - `f-rule-b-refuses-san-diego-city-22367-s740`: the reader's page checks refuse an entry whose child page prints
   descriptions.
