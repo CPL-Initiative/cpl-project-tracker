@@ -1,4 +1,4 @@
-{"schema":1,"college":"Coastline Community College","slug":"coastline_community","basis":"live","census_at":"2026-11-26 06:54Z","correction_rules":false,"programs":[
+{"schema":1,"college":"Coastline Community College","slug":"coastline_community","basis":"live","census_at":"2026-11-26 12:06Z","correction_rules":false,"programs":[
 {"cn":"20386","title":"Accounting: General Accounting","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"20390","title":"Accounting: Taxation","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"18050","title":"Business Administration","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
@@ -16,7 +16,6 @@
 {"cn":"43057","title":"Communications Studies 2.0","award":"A.A- T Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/communication-studies/"},
 {"cn":"11459","title":"Entrepreneurship & Small Business Management","award":"A.A. Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.cccd.edu/coastline/pathways/business-operations-management/management/supply-chain-management-associate-science-degree/"},
 {"cn":"18216","title":"French","award":"A.A. Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.cccd.edu/coastline/pathways/language-literature/french/"},
-{"cn":"40476","title":"Introduction to Careers in Esports","award":"Noncredit program","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english/introduction-careers-esports-certificate-completion/"},
 {"cn":"18054","title":"Physical Education and Health","award":"A.A. Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.cccd.edu/coastline/general-education/associate-degree/"},
 {"cn":"03724","title":"Supervision","award":"A.A. Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/business-applied-as/"},
 {"cn":"20353","title":"Supervision","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/business-applied-as/"},

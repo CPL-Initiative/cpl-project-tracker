@@ -1,4 +1,4 @@
-{"schema":1,"college":"Saddleback College","slug":"saddleback","basis":"live","census_at":"2026-11-26 06:54Z","correction_rules":true,"programs":[
+{"schema":1,"college":"Saddleback College","slug":"saddleback","basis":"live","census_at":"2026-11-26 12:06Z","correction_rules":true,"programs":[
 {"cn":"38809","title":"Certified Nurse Assistant","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"09836","title":"Geographic Information Systems","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"38813","title":"Home Health Aide","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
@@ -36,7 +36,5 @@
 {"cn":"04054","title":"Retailing and Selling","award":"A.S. Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_bus_comm_skills_ca"},
 {"cn":"22844","title":"Retailing and Selling","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"places_none","lever":"reader_page_assignment","url":"https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_new_media_ca"},
 {"cn":"22895","title":"SCHOOL AGE CARE AND RECREATION","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"places_none","lever":"reader_page_assignment","url":"https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm-calgetc-ca"},
-{"cn":"22897","title":"Site Supervisor","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"places_none","lever":"reader_page_assignment","url":"https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm-calgetc-ca"},
-{"cn":"36625","title":"Aging Studies Interdisciplinary","award":"Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units","cause":"units_unequal","lever":"reconcile_steps","url":"https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_Aging_Inter_CA","units":{"sum":[17.0,28.0],"printed":[12.0,14.0],"status":"unequal","measure":"units","against":"program"}},
-{"cn":"04073","title":"Music","award":"A.A. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_mus_aa","units":{"sum":[29.0,34.0],"printed":[20.0,34.0],"status":"unequal","measure":"units","against":"program"}}
+{"cn":"22897","title":"Site Supervisor","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"places_none","lever":"reader_page_assignment","url":"https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm-calgetc-ca"}
 ]}

@@ -1,4 +1,4 @@
-{"schema":1,"college":"Mt. San Antonio College","slug":"mt_san_antonio","basis":"live","census_at":"2026-11-26 06:54Z","correction_rules":true,"programs":[
+{"schema":1,"college":"Mt. San Antonio College","slug":"mt_san_antonio","basis":"live","census_at":"2026-11-26 12:06Z","correction_rules":true,"programs":[
 {"cn":"08079","title":"Architectural Technology Concentration","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"37314","title":"Architecture Foundational Skills","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"03003","title":"Business Management","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
@@ -68,7 +68,6 @@
 {"cn":"43999","title":"Regenerative Communities","award":"Noncredit program","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"24075","title":"Sports Turf Management","award":null,"cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"24215","title":"Tree Care and Maintenance","award":null,"cause":"page_not_found","lever":"reader_page_search","url":null},
-{"cn":"41116","title":"Electronics Technology - Level 1","award":"Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-technology-level-1-certificate/"},
 {"cn":"44520","title":"Histotechnology","award":"Baccalaureate of Science (B.S.) Degree.","cause":"units_incomplete","lever":"reconcile_steps","url":"https://catalog.mtsac.edu/programs/programsaz/histotechnology/histotechnology-bachelors-degree/","units":{"sum":[85.0,86.0],"printed":null,"status":"incomplete","measure":"units","against":"program"}},
 {"cn":"02990","title":"Agricultural Science and Technology","award":"A.S. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://catalog.mtsac.edu/programs/programsaz/animal-science/agricultural-science-and-technology-degree/","units":{"sum":[29.5,31.5],"printed":[30.5,30.5],"status":"unequal","measure":"units","against":"program"}},
 {"cn":"44689","title":"Audio Arts Level II","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"units_unequal","lever":"reconcile_steps","url":"https://catalog.mtsac.edu/programs/programsaz/music/audio-arts-certificate-level-ii-certificate/","units":{"sum":[32.0,38.0],"printed":[36.0,38.0],"status":"unequal","measure":"units","against":"program"}},
