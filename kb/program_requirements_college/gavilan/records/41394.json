@@ -130,7 +130,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "units_within_printed_range",
+    "label": "The courses' units as read fall within the printed range of units rather than matching it.",
+    "words": "the courses' units add to 27, within the printed 26-27 units | The 60-unit/18-unit sentence is the general ADT requirement, not this award's total; total_units taken from 'Units Required for the Major: 26 - 27'. | ECON 1 and ECON 2 are printed with the titles of closed-list ECON C2002 and ECON C2001; likely the same courses under old numbering. STAT C1000 appears in place of closed-list MATH 5 (listed at 4 units, while the block range 3-4 suggests a 3-unit option existed)."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 77,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

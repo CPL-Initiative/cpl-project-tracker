@@ -2,59 +2,23 @@
  "college": "San Jose City College",
  "programs": 125,
  "with_closed_list": 90,
- "found": 83,
+ "found": 84,
  "extracted": 83,
  "errors": 0,
- "passed_machine_checks": 52,
+ "passed_machine_checks": 63,
  "failed": {
-  "coverage": 21,
-  "invented": 16,
-  "arithmetic": 14,
+  "coverage": 9,
+  "invented": 5,
+  "arithmetic": 13,
   "repeated": 1,
   "outcomes": 0
  },
- "cost_usd_run": 0.77,
+ "cost_usd_run": 0.0,
  "cost_usd_filed": 6.58,
  "cost_per_program": 0.0793,
- "extract_calls": 4,
+ "extract_calls": null,
  "extract_failed": [],
  "not_found": [
-  {
-   "control_number": "06188",
-   "title": "Real Estate",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://catalog.sjcc.edu/degrees-certificates/business/real-estate-associate-science/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText+tabs",
-    "coverage": 0.2,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 1,
-    "listed": 5,
-    "why": "coarse net: the page's code tokens name 1 of 5 listed courses",
-    "error": null,
-    "chars": {
-     "body": 6199,
-     "content": 37960,
-     "tabs": 1309
-    },
-    "tab_panels": [
-     [
-      "Program Learning Outcomes",
-      445
-     ],
-     [
-      "Requirements",
-      1289
-     ]
-    ]
-   },
-   "status": "Active"
-  },
   {
    "control_number": "18738",
    "title": "Residential Carpentry Technology",
@@ -89,42 +53,6 @@
      ]
     ],
     "page_checks": true
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "22225",
-   "title": "Real Estate",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "url": "https://catalog.sjcc.edu/degrees-certificates/business/real-estate-certificate-achievement-level-2/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText+tabs",
-    "coverage": 0.333,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 1,
-    "listed": 3,
-    "why": "coarse net: the page's code tokens name 1 of 3 listed courses",
-    "error": null,
-    "chars": {
-     "body": 6049,
-     "content": 37187,
-     "tabs": 685
-    },
-    "tab_panels": [
-     [
-      "Program Learning Outcomes",
-      445
-     ],
-     [
-      "Requirements",
-      665
-     ]
-    ]
    },
    "status": "Active"
   },
@@ -274,5 +202,5 @@
    "status": "Approved"
   }
  ],
- "run": "44769778910"
+ "run": "45840981324"
 }

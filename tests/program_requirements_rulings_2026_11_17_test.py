@@ -217,8 +217,9 @@ check("the rescore moved local degrees under ruling 1 (%d filed)" % len(moved), 
 check("each carries ge_overlap and the statewide note, so it can be undone",
       all(f["record"]["program"].get("ge_overlap") is True
           and any(n.get("statewide") == "local_degree_ge_overlap" for n in f.get("reconciled") or []) for f in moved))
+# S740: a record whose program check is the whole arithmetic (San Jose City 42242, reconcile 45840981324) carries no major key; the check is the arithmetic itself.
 check("each is a local degree whose major matched exactly",
-      all(R.awards_match("local", f.get("award")) and R.plain_equal(f["score"]["arithmetic"]["major"]) for f in moved))
+      all(R.awards_match("local", f.get("award")) and R.plain_equal(f["score"]["arithmetic"].get("major") or f["score"]["arithmetic"]) for f in moved))
 
 # ── ruling 3: the general education open slot ──────────────────────────────────────────────────────────────────────
 print("ruling 3: the general education open slot")

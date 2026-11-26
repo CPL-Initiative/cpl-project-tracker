@@ -72,9 +72,7 @@
     28.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 22.0-30.0; the catalog states 22.0-28.0"
-   ],
+   "why": [],
    "meets": true,
    "rescored": "Open Asks Sheet 120 card 1"
   },
@@ -332,5 +330,6 @@
    "Careers taken from the summary: 'administrative careers' and 'career pathways in business technology, office administration, and leadership'."
   ]
  },
- "extracted_run": "38843461766"
+ "extracted_run": 45841675928,
+ "read_run": "38843461766"
 }

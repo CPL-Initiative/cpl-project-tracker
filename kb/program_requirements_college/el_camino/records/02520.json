@@ -124,7 +124,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "required_list_outside_total",
+    "label": "The catalog prints a list the program requires apart from its printed total, and the record counts that list; without it the courses add to the printed total.",
+    "words": "The page also prints 'Program Total Units: 64.5'. This includes the Post ECC Graduation Courses RTEC 216 and RTEC 328 (6.5 units). The note says these are completed after ECC graduation but are required to complete the Rad Tech Program. A reviewer should check whether they count toward the A.S. degree itself. | Electives: 'As needed to reach a minimum of 60 degree-applicable units'; degree_total is the printed 'Minimum Degree Total: 60 units'."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 70,
+   "course_list_match": 100,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

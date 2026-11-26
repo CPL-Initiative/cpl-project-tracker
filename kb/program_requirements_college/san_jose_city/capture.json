@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 125,
  "with_closed_list": 90,
- "started": "2026-11-20T16:06:17Z",
+ "started": "2026-11-26T14:39:12Z",
  "scope": null,
  "sitemap": {
   "url": "https://catalog.sjcc.edu/sitemap.xml",
@@ -26,9 +26,9 @@
  "banner_h1": null,
  "catalog_lookup": {
   "self_test": {
-   "tested": 77,
+   "tested": 78,
    "hits": 51,
-   "recall": 0.662,
+   "recall": 0.654,
    "false": 0,
    "false_off_own": 2,
    "false_no_claims": 2,
@@ -83,7 +83,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 51 of 78 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "06209",
@@ -91,7 +91,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 51 of 78 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "06231",
@@ -99,7 +99,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 51 of 78 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "08855",
@@ -107,7 +107,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 51 of 78 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "08863",
@@ -115,7 +115,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 51 of 78 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "10595",
@@ -123,7 +123,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 51 of 78 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "10834",
@@ -131,7 +131,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 51 of 78 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "10837",
@@ -139,7 +139,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 51 of 78 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "10838",
@@ -147,7 +147,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 51 of 78 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "11679",
@@ -155,7 +155,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 51 of 78 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "11849",
@@ -163,7 +163,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 51 of 78 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "13661",
@@ -171,7 +171,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 51 of 78 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "13662",
@@ -179,7 +179,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 51 of 78 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "13664",
@@ -187,7 +187,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 51 of 78 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "13665",
@@ -195,7 +195,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 51 of 78 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "13667",
@@ -203,7 +203,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 51 of 78 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "13668",
@@ -211,7 +211,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 51 of 78 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "14892",
@@ -219,7 +219,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 51 of 78 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "14893",
@@ -227,7 +227,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 51 of 78 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "14894",
@@ -235,7 +235,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 51 of 78 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "14895",
@@ -243,7 +243,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 51 of 78 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "15113",
@@ -251,7 +251,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 51 of 78 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "18920",
@@ -259,7 +259,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 51 of 78 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "18985",
@@ -267,7 +267,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 51 of 78 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "22221",
@@ -275,7 +275,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 51 of 78 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "22222",
@@ -283,7 +283,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 51 of 78 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "22223",
@@ -291,7 +291,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 51 of 78 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "22228",
@@ -299,7 +299,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 51 of 78 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "22233",
@@ -307,7 +307,7 @@
     "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 51 of 78 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "22234",
@@ -315,7 +315,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 51 of 78 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "22235",
@@ -323,7 +323,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 51 of 78 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "22236",
@@ -331,7 +331,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 51 of 78 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "22238",
@@ -339,7 +339,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 51 of 78 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "22989",
@@ -347,7 +347,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 51 of 78 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "31087",
@@ -355,21 +355,22 @@
     "award": "A.S. T Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 51 of 78 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    }
   ],
   "yields": [],
   "yield_unjudged": 0,
   "yield_refused_passing": 0
  },
- "loads": 237,
- "seconds": 1163.1,
- "found": 83,
+ "loads": 236,
+ "seconds": 1191.9,
+ "found": 84,
  "by_method": {
   "link_search": 2,
   "no_closed_list": 35,
-  "not_found": 7,
-  "sitemap_page": 81
+  "not_found": 5,
+  "page_claimed": 1,
+  "sitemap_page": 82
  },
  "shared_pages": {
   "https://catalog.sjcc.edu/degrees-certificates/art/art-associate-science/": [
@@ -386,42 +387,6 @@
   ]
  },
  "not_found": [
-  {
-   "control_number": "06188",
-   "title": "Real Estate",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://catalog.sjcc.edu/degrees-certificates/business/real-estate-associate-science/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText+tabs",
-    "coverage": 0.2,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 1,
-    "listed": 5,
-    "why": "coarse net: the page's code tokens name 1 of 5 listed courses",
-    "error": null,
-    "chars": {
-     "body": 6199,
-     "content": 37960,
-     "tabs": 1309
-    },
-    "tab_panels": [
-     [
-      "Program Learning Outcomes",
-      445
-     ],
-     [
-      "Requirements",
-      1289
-     ]
-    ]
-   },
-   "status": "Active"
-  },
   {
    "control_number": "18738",
    "title": "Residential Carpentry Technology",
@@ -456,42 +421,6 @@
      ]
     ],
     "page_checks": true
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "22225",
-   "title": "Real Estate",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "url": "https://catalog.sjcc.edu/degrees-certificates/business/real-estate-certificate-achievement-level-2/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText+tabs",
-    "coverage": 0.333,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 1,
-    "listed": 3,
-    "why": "coarse net: the page's code tokens name 1 of 3 listed courses",
-    "error": null,
-    "chars": {
-     "body": 6049,
-     "content": 37187,
-     "tabs": 685
-    },
-    "tab_panels": [
-     [
-      "Program Learning Outcomes",
-      445
-     ],
-     [
-      "Requirements",
-      665
-     ]
-    ]
    },
    "status": "Active"
   },
@@ -641,57 +570,199 @@
    "status": "Approved"
   }
  ],
- "page_claimed": [],
+ "page_claimed": [
+  {
+   "control_number": "06188",
+   "title": "Real Estate",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.sjcc.edu/degrees-certificates/biology/public-health-science-associate-science-transfer/",
+    "https://catalog.sjcc.edu/degrees-certificates/economics/economics-associate-arts-transfer/",
+    "https://catalog.sjcc.edu/graduation-certificate-general-education-requirements/course-identification-numbering-system-c-id/"
+   ],
+   "status": "Active"
+  }
+ ],
  "page_challenged": [],
  "coverage_bands": {
   "0.5-0.8": 11,
-  "0.8-1.0": 35,
-  "1.0": 37
+  "0.8-1.0": 28,
+  "1.0": 45
  },
  "would_extract": {
   "against": "kb/program_requirements_college/san_jose_city",
-  "kept": 79,
+  "kept": 66,
   "kept_moved": 0,
-  "programs": 4,
+  "programs": 17,
   "list": [
+   {
+    "control_number": "06185",
+    "title": "Accounting",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/accounting/accounting-associate-science/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.sjcc.edu/degrees-certificates/accounting/accounting-associate-science/",
+    "was_coverage": 0.778,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "06202",
+    "title": "Construction Technology",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/construction-technology/construction-technology-associate-science/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.sjcc.edu/degrees-certificates/construction-technology/construction-technology-associate-science/",
+    "was_coverage": 0.929,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "08859",
+    "title": "Construction Technology-Residential Maintenance-Level 2",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/construction-technology/residential-maintenance-certificate-achievement-level-2/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.sjcc.edu/degrees-certificates/construction-technology/residential-maintenance-certificate-achievement-level-2/",
+    "was_coverage": 0.917,
+    "was_method": "sitemap_page"
+   },
    {
     "control_number": "18449",
     "title": "Liberal Arts: Arts & Humanities",
     "award": "A.A. Degree",
     "url": "https://catalog.sjcc.edu/degrees-certificates/counseling/liberal-arts-arts-humanities-associate-arts/",
-    "coverage": 0.951,
+    "coverage": 0.958,
     "was_url": "https://catalog.sjcc.edu/degrees-certificates/counseling/liberal-arts-arts-humanities-associate-arts/",
-    "was_coverage": 0.937,
+    "was_coverage": 0.951,
     "was_method": "sitemap_page"
    },
    {
-    "control_number": "22239",
-    "title": "Dental Assisting",
+    "control_number": "18921",
+    "title": "Air Conditioning & Refrigeration Technology 3",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/air-conditioning-refrigeration-technology/air-conditioning-refrigeration-technology-certificate-achievement-level-3/",
+    "coverage": 0.944,
+    "was_url": "https://catalog.sjcc.edu/degrees-certificates/air-conditioning-refrigeration-technology/air-conditioning-refrigeration-technology-certificate-achievement-level-3/",
+    "was_coverage": 0.833,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "22220",
+    "title": "Accounting",
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://catalog.sjcc.edu/degrees-certificates/dental-assisting/dental-assisting-certificate-achievement-level-3/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.sjcc.edu/degrees-certificates/dental-assisting/dental-assisting-certificate-achievement-level-3/",
-    "was_coverage": 0.5,
+    "url": "https://catalog.sjcc.edu/degrees-certificates/accounting/accounting-certificate-achievement/",
+    "coverage": 0.923,
+    "was_url": "https://catalog.sjcc.edu/degrees-certificates/accounting/accounting-certificate-achievement/",
+    "was_coverage": 0.769,
     "was_method": "sitemap_page"
    },
    {
-    "control_number": "41533",
-    "title": "Graphic Design",
-    "award": "A.A. Degree",
-    "url": "https://catalog.sjcc.edu/degrees-certificates/digital-media-arts/graphic-design-associate-arts/",
+    "control_number": "22225",
+    "title": "Real Estate",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/business/real-estate-certificate-achievement-level-2/",
     "coverage": 0.667,
     "was_url": null,
     "was_coverage": 0.0,
-    "was_method": "page_claimed"
+    "was_method": "not_found"
    },
    {
-    "control_number": "45796",
-    "title": "Cal-GETC",
+    "control_number": "22237",
+    "title": "Construction Technology-Level 3",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.sjcc.edu/graduation-certificate-general-education-requirements/cal-getc/",
-    "coverage": 0.994,
-    "was_url": "https://catalog.sjcc.edu/graduation-certificate-general-education-requirements/cal-getc/",
-    "was_coverage": 0.981,
+    "url": "https://catalog.sjcc.edu/degrees-certificates/construction-technology/construction-technology-certificate-achievement-level-3/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.sjcc.edu/degrees-certificates/construction-technology/construction-technology-certificate-achievement-level-3/",
+    "was_coverage": 0.929,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "32078",
+    "title": "Medical Assisting: Clinical",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/medical-assisting/medical-assisting-clinical-associate-science/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.sjcc.edu/degrees-certificates/medical-assisting/medical-assisting-clinical-associate-science/",
+    "was_coverage": 0.963,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "32260",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/kinesiology/kinesiology-associate-arts-transfer/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.sjcc.edu/degrees-certificates/kinesiology/kinesiology-associate-arts-transfer/",
+    "was_coverage": 0.962,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "32759",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/economics/economics-associate-arts-transfer/",
+    "coverage": 0.917,
+    "was_url": "https://catalog.sjcc.edu/degrees-certificates/economics/economics-associate-arts-transfer/",
+    "was_coverage": 0.833,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "38113",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/theatrearts/theatre-arts-associate-in-arts-for-transfer/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.sjcc.edu/degrees-certificates/theatrearts/theatre-arts-associate-in-arts-for-transfer/",
+    "was_coverage": 0.889,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "38498",
+    "title": "Emerging Tech Entrepreneurship Level 2",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/computer-information-systems/emerging-tech-entrepreneurship-level-2/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.sjcc.edu/degrees-certificates/computer-information-systems/emerging-tech-entrepreneurship-level-2/",
+    "was_coverage": 0.941,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "38499",
+    "title": "Law, Public Policy, and Society",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/administration-justice/law-public-policy-society-associate-arts-transfer/",
+    "coverage": 0.627,
+    "was_url": "https://catalog.sjcc.edu/degrees-certificates/administration-justice/law-public-policy-society-associate-arts-transfer/",
+    "was_coverage": 0.608,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "39391",
+    "title": "Kinesiology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/kinesiology/kinesiology-certificate-achievement-level-2/",
+    "coverage": 0.973,
+    "was_url": "https://catalog.sjcc.edu/degrees-certificates/kinesiology/kinesiology-certificate-achievement-level-2/",
+    "was_coverage": 0.892,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41473",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/business/business-administration-2.0-associate-science-transfer/",
+    "coverage": 0.727,
+    "was_url": "https://catalog.sjcc.edu/degrees-certificates/business/business-administration-2.0-associate-science-transfer/",
+    "was_coverage": 0.545,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "44596",
+    "title": "Public Health",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/biology/public-health-science-associate-science-transfer/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.sjcc.edu/degrees-certificates/biology/public-health-science-associate-science-transfer/",
+    "was_coverage": 0.962,
     "was_method": "sitemap_page"
    }
   ],
@@ -771,8 +842,12 @@
    "url": "https://catalog.sjcc.edu/degrees-certificates/air-conditioning-refrigeration-technology/air-conditioning-refrigeration-technology-certificate-achievement-level-3/"
   },
   "22220": {
-   "sha256": "ce04b441f5eb89a39cacbac71c00dcba355c74ba06765b373ec2d3c9ad6a25d9",
+   "sha256": "d6c53d8a12b2f85d70ce8a0b1b3d08657364394ee13698219ec83836efa9defd",
    "url": "https://catalog.sjcc.edu/degrees-certificates/accounting/accounting-certificate-achievement/"
+  },
+  "22225": {
+   "sha256": "13b5f79e159da8e34d431e6db814043c4c03709e4cf15682da5926d370f78467",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/business/real-estate-certificate-achievement-level-2/"
   },
   "22232": {
    "sha256": "d78310ea6e959ef61a7ce3b833c90091fe9103807fe57b512a6ddd06ad1763ba",
@@ -783,7 +858,7 @@
    "url": "https://catalog.sjcc.edu/degrees-certificates/construction-technology/construction-technology-certificate-achievement-level-3/"
   },
   "22239": {
-   "sha256": "eeca96bf48fb6c43446e990495a76cf188b93cc018a8a09b283413a5783970c2",
+   "sha256": "a2390ce23c5f8c7fc53f9269548601e2b9ba2d8dd8387a816add0ad11c912e83",
    "url": "https://catalog.sjcc.edu/degrees-certificates/dental-assisting/dental-assisting-certificate-achievement-level-3/"
   },
   "22241": {
@@ -951,7 +1026,7 @@
    "url": "https://catalog.sjcc.edu/degrees-certificates/medical-assisting/community-health-worker-certificate-completion-noncredit/"
   },
   "41473": {
-   "sha256": "24382456f9e9bf8560898d5e6cd6d144d169b682ef0eac592f99b379433e1204",
+   "sha256": "99e8c581b7bbaebede084ca3073f37b3b4609a7e3c86b690083c9506ba0a7352",
    "url": "https://catalog.sjcc.edu/degrees-certificates/business/business-administration-2.0-associate-science-transfer/"
   },
   "41533": {
@@ -1035,5 +1110,5 @@
    "url": "https://catalog.sjcc.edu/degrees-certificates/mathematics/"
   }
  },
- "run": "44769778910"
+ "run": "45840981324"
 }

@@ -75,16 +75,27 @@ check(B.shape_note_quotes(f, M.REVIEWED["37706"]) and W.shared_with("37706") == 
 g = copy.deepcopy(W.load("38452"))
 check(W.own(g, M.REVIEWED["37706"]) is None, "38452 does not own the Pre-Health Professions II section")
 
+# S740 filed the pairs as cited course renumbers and its free reconcile 45844759766 rescored 31089 and 41150 with
+# them read: either state holds here (as S739 left the record, or reconciled at that run).
+S740_RECONCILE = "45844759766"
 for cn in ("31280", "31089", "45285"):
-    check(not B.NG.collectable(W.load(cn)["score"]), "%s is not collectable" % cn)
+    f = W.load(cn)
+    reconciled = (cn == "31089" and str(f.get("extracted_run")) == S740_RECONCILE
+                  and not f["score"]["arithmetic"].get("pass")
+                  and [x.get("gap") for x in f["score"].get("gaps") or []] in ([], ["noted_figures_differ"]))
+    check(not B.NG.collectable(f["score"]) or reconciled,
+          "%s is not collectable, or S740's reconcile made it collectable with its arithmetic failing" % cn)
 rn = B.P.rescore_common_numbers(W.load("31280"), name_of=lambda c: "PLUMBNG28" if S.norm_code(c) == S.norm_code("PLUMBING 028") else None,
                                 key="course_renumbers")
 check(rn is not None and not S.passes_live(rn["score"]) and "CRPNTRY111C" in rn["score"]["coverage"]["unexplained"],
       "31280: with its rename read CRPNTRY 111C is still unexplained")
 check(W.load("41011")["score"]["arithmetic"]["status"] == "unstated", "41011 reads no total")
 f = W.load("41150")
-check(not B.NG.collectable(f["score"]) and not f["score"].get("course_renumbers") and not f["score"].get("gaps")
+check(((not B.NG.collectable(f["score"]) and not f["score"].get("course_renumbers"))
+       or (str(f.get("extracted_run")) == S740_RECONCILE and B.S.passes_live(f["score"])))
+      and not f["score"].get("gaps") and "41150" not in M.REVIEWED and "41150" not in M.PASSED
       and any("Introduction to Digital Video" in n and "Introduction to Digital Media" in n for n in B.notes(f)),
-      "41150 is as S730 left it, and its own note names the title that differs")
+      "41150 is as S730 left it, or S740's reconcile passes it; no entry of this plan names it, and its own note "
+      "names the title that differs")
 
 sys.exit(t.done())

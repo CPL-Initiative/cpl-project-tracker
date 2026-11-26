@@ -46,24 +46,25 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 30,
+   "placed": 31,
    "listed": 31,
-   "share": 0.968,
-   "missing": [
-    "CMST101"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "COMMC1004",
+     "listed": "CMST101",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "COMMC1004"
-   ],
-   "flagged": [
-    "COMMC1004"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -475,5 +476,6 @@
    "The Summary text is cut off mid-sentence; no program outcomes or careers section appears in the provided text. 'occupational therapy assistant' is taken from the summary."
   ]
  },
- "extracted_run": "38843461766"
+ "extracted_run": 45841675928,
+ "read_run": "38843461766"
 }

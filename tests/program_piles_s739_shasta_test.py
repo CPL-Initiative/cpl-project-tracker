@@ -92,6 +92,13 @@ g["record"]["notes"] = [n for n in g["record"]["notes"] if "were not read" not i
 check(W.own(g, M.REVIEWED["18659"]) is None, "18659: without its own note its section is not shown its own")
 check(W.own(W.load("18625"), {"gap": "heading_not_in_text", "own_list": True}) is None,
       "18625: its list does not show it its own (5 of 16 placed)")
-check(not B.NG.collectable(W.load("18655")["score"]), "18655 is not collectable")
+# 18655 as s739b read it: not collectable (SOC C1000 printed for SOCI C1000). S740 filed that pair as a cited course
+# renumber and reconcile 45841957622 rescored the record with it read, so either state holds here: not collectable,
+# or collectable at that run with its arithmetic still failing; and no entry of this plan names a gap for it.
+f18655 = W.load("18655")
+check(not B.NG.collectable(f18655["score"])
+      or (str(f18655["extracted_run"]) == "45841957622" and not f18655["score"]["arithmetic"].get("pass")),
+      "18655 is not collectable, or S740's reconcile made it collectable with its arithmetic still failing")
+check("18655" not in M.REVIEWED and W.gap_noted(f18655) is None, "18655: no entry of this plan names a gap for it")
 
 sys.exit(t.done())

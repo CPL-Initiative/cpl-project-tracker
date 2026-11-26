@@ -46,38 +46,27 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 33,
+   "placed": 36,
    "listed": 37,
-   "share": 0.892,
+   "share": 0.973,
    "missing": [
-    "KIN10",
-    "KINPE2",
-    "KINPE4",
-    "KINPE9B"
+    "KIN10"
    ],
-   "unexplained": [
-    "KINPE9B"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 6,
+   "count": 3,
    "codes": [
     "DANCE23B",
     "DANCE49",
-    "KIN25",
-    "KINPE23",
-    "KINPE41",
-    "KINPE56"
+    "KIN25"
    ],
    "flagged": [
     "DANCE23B",
     "DANCE49",
-    "KIN25",
-    "KINPE23",
-    "KINPE41",
-    "KINPE56"
+    "KIN25"
    ],
    "pass": true
   },
@@ -117,7 +106,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -474,5 +463,6 @@
    "Careers: description mentions 'better career opportunities' and the 'industry of Kinesiology' but names no specific career; careers left empty."
   ]
  },
- "extracted_run": "43357106423"
+ "extracted_run": 45840981324,
+ "read_run": "43357106423"
 }

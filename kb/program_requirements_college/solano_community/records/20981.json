@@ -75,7 +75,7 @@
    "status": "equal",
    "computed": [
     25.0,
-    28.0
+    32.0
    ],
    "stated": [
     25.0,
@@ -83,7 +83,6 @@
    ],
    "against": "program",
    "why": [],
-   "short_high": true,
    "rescored": "Sam's ruling of 2026-11-17, short high end"
   },
   "repeated": {
@@ -345,6 +344,6 @@
    "Career entry 'water and wastewater treatment personnel' is taken from the description's statement about certification requirements; reviewer may judge whether it counts as a career named."
   ]
  },
- "extracted_run": 39037377728,
- "read_run": "39035226783"
+ "extracted_run": 45840125172,
+ "read_run": 39037377728
 }

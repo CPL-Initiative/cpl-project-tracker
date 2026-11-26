@@ -1,0 +1,22 @@
+{
+ "_readme": "S740, lane 2's cheap piles (2026-11-26). Three Los Angeles Trade-Technical records hold on course codes the catalog PDF prints otherwise than the state's file lists them. 31089 (Solar Thermal Installation & Maintenance A.S., pp.150-151): BLDGTCQ 007, 008 and 009 printed for the file's BLDGCTQ, and 'Plumbing 028' read as an alternative. 31280 (Photo Voltaic Solar Installation & Maintenance A.S., pp.148-151): the same subject, and CRPNTRY 111C unplaced. 41150 (Fashion Media certificate, pp.182-183): DIGMD 100, 101 and 104 printed for the file's DIGLMD, where the record's note says the listed title of DIGLMD 100 is not the printed one; S739's second reader held its rename until a catalog line shows the same course. This read prints the pages with a hit between p.148 and p.183, so a session can read each code with the title the catalog prints beside it. One load, no model call, nothing written.",
+ "college": "Los Angeles Trade-Technical College",
+ "questions": {
+  "building_codes": "How pp.148-151 print the building and construction courses (BLDGTCQ or BLDGCTQ 007, 008, 009, 014), each with its title, and whether CRPNTRY 111C and Plumbing 028 are printed in either program's lists.",
+  "digital_media_codes": "How pp.182-183 print the digital media courses (DIGMD or DIGLMD 100, 101, 104), each with its title."
+ },
+ "keywords": [
+  "BLDG ?T?C?T?Q[^\\n]{0,80}",
+  "DIGL?MD[^\\n]{0,80}",
+  "CRPNTRY 111C[^\\n]{0,80}",
+  "P[Ll][Uu][Mm][Bb][A-Za-z]* 0?28[^\\n]{0,80}"
+ ],
+ "pdf_span": [148, 183],
+ "pdf_page_cap": 14,
+ "pages": [
+  {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf",
+   "answers": ["building_codes", "digital_media_codes"]
+  }
+ ]
+}

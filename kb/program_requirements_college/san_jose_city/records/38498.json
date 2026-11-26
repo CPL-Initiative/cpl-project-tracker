@@ -46,30 +46,25 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 16,
+   "placed": 17,
    "listed": 17,
-   "share": 0.941,
-   "missing": [
-    "COMPUTERINFO"
-   ],
-   "unexplained": [
-    "COMPUTERINFO"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 2,
    "codes": [
     "CIS107",
-    "CIS108",
-    "CIS24A"
+    "CIS108"
    ],
    "flagged": [
     "CIS107",
     "CIS108"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -107,7 +102,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -354,5 +349,6 @@
    "Career entry taken from description: 'become entrepreneurs in a technical field'."
   ]
  },
- "extracted_run": "43357106423"
+ "extracted_run": 45840981324,
+ "read_run": "43357106423"
 }

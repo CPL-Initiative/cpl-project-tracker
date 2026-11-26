@@ -1,0 +1,255 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30); Sam's routine prompt of 2026-11-25, as the S739 conductor's brief carries it: a record held for a gap is collected with its gap named and a lower score on the 0-100 bar, never held, unless the record is not the program's own; S739: College of the Canyons's records kb/receipts/program_requirement_records_piles_s739_college_of_the_canyons_2026-11-26_s739c.json held, read again by key: passed by a rescore where today's scorer's one reading moves them, else collected with their gaps named where the record is the program's own (no reread, no reconcile)",
+ "at": "2026-11-26T13:53:53Z",
+ "college": "College of the Canyons",
+ "keys": {
+  "from": "kb/receipts/program_requirement_records_piles_s739_college_of_the_canyons_2026-11-26_s739c.json",
+  "members": [
+   "36793"
+  ]
+ },
+ "gaps": {
+  "units_within_printed_range": "The courses' units as read fall within the printed range of units rather than matching it."
+ },
+ "moved": 1,
+ "by": {
+  "units_within_printed_range": 1
+ },
+ "precision": {
+  "read": 1,
+  "right": 1,
+  "wrong": [],
+  "no_record_file": 0,
+  "not_hand_held": 0,
+  "by_answer": {
+   "units_within_printed_range": 1
+  }
+ },
+ "claim_checks": {
+  "counts": {
+   "stands": 1
+  },
+  "not_standing": []
+ },
+ "boundaries": {
+  "counts": {
+   "the program measured in hours right": 1,
+   "the sum at the range's low end right": 1,
+   "the stated total one unit off right": 1,
+   "coverage failing right": 1,
+   "the within shape broken right": 1,
+   "its own section not shown right": 1
+  },
+  "wrong": []
+ },
+ "held": [],
+ "records": [
+  {
+   "college": "College of the Canyons",
+   "control_number": "36793",
+   "award": "A.S. T Degree",
+   "extracted_run": "44769429877",
+   "moves_to": "units_within_printed_range",
+   "words": "the courses' units add to 19-22, within the printed 18-22 units",
+   "confidence": {
+    "unit_arithmetic": 50,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "own": "own_heading",
+   "path": "kb/program_requirements_college/college_of_the_canyons/records/36793.json",
+   "before_image": {
+    "program_title": "Hospitality Management",
+    "award": "A.S. T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=170",
+    "measure": "units",
+    "total_min": 18,
+    "total_max": 22,
+    "record": {
+     "program": {
+      "section_heading": "Associate in Science for Transfer Degree: Hospitality Management",
+      "measure": "units",
+      "total_units": {
+       "min": 18,
+       "max": 22
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "CalGETC",
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Students will be able to demonstrate proficiency in the core skills and knowledge required for entry level employment in the hospitality management industry."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Program Requirements",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "HOSP-101",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Plus nine units from the following",
+       "rule": "choose_units",
+       "minimum": 9,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "CULARTS-110",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECON-C2001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ECON-C2001H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": true
+        },
+        {
+         "code": "HOSP-150",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HOSP-220",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Plus two courses from the following for six to ten units",
+       "rule": "choose_courses",
+       "minimum": 2,
+       "option_group": null,
+       "stated": {
+        "min": 6,
+        "max": 10
+       },
+       "courses": [
+        {
+         "code": "BUS-201",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BUS-211",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "STAT-C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "STAT-C1000E",
+           "units": 5,
+           "catalog_addition": false
+          },
+          {
+           "code": "STAT-C1000H",
+           "units": 4,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 11,
+     "listed": 11
+    },
+    "extracted_run": "44769429877"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 11,
+     "listed": 11,
+     "gaps": [
+      "units_within_printed_range"
+     ],
+     "confidence": {
+      "unit_arithmetic": 50,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 1
+  }
+ ],
+ "live_run_proof": null,
+ "shared_pages": {
+  "36793": [
+   "02309"
+  ]
+ },
+ "representation": "checks.gaps and checks.confidence added as the load reads the filed score (a passing row: checks.arithmetic to equal); checks.coverage, invented and the record unchanged",
+ "claim_check_reads": "Today's capture (sources.json): every course an entry names among the codes it found, and a course an entry says the printed total leaves out on neither it nor the state's list. A note's quoted figures are the reader's words, never re-read here.",
+ "follow_verdict": "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows (confirm_matches); the apply aborts, writing nothing, unless the count is 0.",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'College of the Canyons', '36793', 44769429877, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HOSP-101\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Program Requirements\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CULARTS-110\",\"units\":2,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ECON-C2001H\",\"units\":3}],\"catalog_addition\":true,\"code\":\"ECON-C2001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HOSP-150\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HOSP-220\",\"units\":3,\"units_max\":null}],\"minimum\":9,\"name\":\"Plus nine units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS-201\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS-211\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"STAT-C1000E\",\"units\":5},{\"catalog_addition\":false,\"code\":\"STAT-C1000H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"STAT-C1000\",\"units\":4,\"units_max\":null}],\"minimum\":2,\"name\":\"Plus two courses from the following for six to ten units\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":10,\"min\":6}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"CalGETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Students will be able to demonstrate proficiency in the core skills and knowledge required for entry level employment in the hospitality management industry.\"],\"section_heading\":\"Associate in Science for Transfer Degree: Hospitality Management\",\"total_units\":{\"max\":22,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":11,\"placed\":11}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"units_within_printed_range\"],\"invented\":true,\"listed\":11,\"placed\":11}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "pre_read_md5": "with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) as (values\n  (1, 'College of the Canyons', '36793', 44769429877, '38f6213e7d926c5ca8e3fe3cbe534659', '025f5967e09072e40425565d0b8c2cce', 'd41311fb31ccdb127b2a9570ab3b6d6c'))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.record::text) = v.rec_md5),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.checks::text) = v.chk_md5),\n  'already_after', count(*) filter (where md5(r.checks::text) = v.after_md5),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'College of the Canyons', '36793', 44769429877, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HOSP-101\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Program Requirements\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CULARTS-110\",\"units\":2,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ECON-C2001H\",\"units\":3}],\"catalog_addition\":true,\"code\":\"ECON-C2001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HOSP-150\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HOSP-220\",\"units\":3,\"units_max\":null}],\"minimum\":9,\"name\":\"Plus nine units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS-201\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS-211\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"STAT-C1000E\",\"units\":5},{\"catalog_addition\":false,\"code\":\"STAT-C1000H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"STAT-C1000\",\"units\":4,\"units_max\":null}],\"minimum\":2,\"name\":\"Plus two courses from the following for six to ten units\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":10,\"min\":6}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"CalGETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Students will be able to demonstrate proficiency in the core skills and knowledge required for entry level employment in the hospitality management industry.\"],\"section_heading\":\"Associate in Science for Transfer Degree: Hospitality Management\",\"total_units\":{\"max\":22,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":11,\"placed\":11}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"units_within_printed_range\"],\"invented\":true,\"listed\":11,\"placed\":11}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\nf as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number\n        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true\n       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)),\ne(expect) as (values (1)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when f.n > 0\n            then ('s740c piles confirm guard: ' || f.n || ' rows hold a matching confirm verdict ' || f.keys::text)::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s740c piles guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, f;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'College of the Canyons', '36793', 44769429877, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HOSP-101\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Program Requirements\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CULARTS-110\",\"units\":2,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ECON-C2001H\",\"units\":3}],\"catalog_addition\":true,\"code\":\"ECON-C2001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HOSP-150\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HOSP-220\",\"units\":3,\"units_max\":null}],\"minimum\":9,\"name\":\"Plus nine units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS-201\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS-211\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"STAT-C1000E\",\"units\":5},{\"catalog_addition\":false,\"code\":\"STAT-C1000H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"STAT-C1000\",\"units\":4,\"units_max\":null}],\"minimum\":2,\"name\":\"Plus two courses from the following for six to ten units\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":10,\"min\":6}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"CalGETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Students will be able to demonstrate proficiency in the core skills and knowledge required for entry level employment in the hospitality management industry.\"],\"section_heading\":\"Associate in Science for Transfer Degree: Hospitality Management\",\"total_units\":{\"max\":22,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":11,\"placed\":11}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"units_within_printed_range\"],\"invented\":true,\"listed\":11,\"placed\":11}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (1)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s740c piles rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;"
+}

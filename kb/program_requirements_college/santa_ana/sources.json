@@ -3329,7 +3329,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.941,
+  "coverage": 1.0,
   "codes_found": [
    "ANTH104",
    "ANTH104H",
@@ -3339,8 +3339,10 @@
    "BIOL109L",
    "BIOL149",
    "BIOL239",
+   "CDEV107",
    "CDEV108",
    "CDEV205",
+   "CMST101",
    "CMST103",
    "CMST103H",
    "CMST151",
@@ -3371,7 +3373,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "speech-language pathology assistant: a.s. degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 34,

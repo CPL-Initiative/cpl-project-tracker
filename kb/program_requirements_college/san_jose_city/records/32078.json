@@ -46,25 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 26,
+   "placed": 27,
    "listed": 27,
-   "share": 0.963,
-   "missing": [
-    "COMPUTERAPPL"
-   ],
-   "unexplained": [
-    "COMPUTERAPPL"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "CA5"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
@@ -124,7 +118,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "required_list_outside_total",
+    "label": "The catalog prints a list the program requires apart from its printed total, and the record counts that list; without it the courses add to the printed total.",
+    "words": "The Approved Program Electives block lies outside the 31-32 unit major total; its minimum of 2 is taken from the 'AS Degree Requirements' table ('Approved Program Electives 2'), which is also recorded in degree_elective_units. The heading itself says 'as needed to reach 60 units' but the page prints 2 units, so electives_fill_degree is false."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 70,
+   "course_list_match": 100,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {
@@ -416,5 +424,6 @@
    "Major total 31-32 + GE 27 + electives 2 = 60-61 versus printed total 60."
   ]
  },
- "extracted_run": "43357106423"
+ "extracted_run": 45840981324,
+ "read_run": "43357106423"
 }

@@ -137,8 +137,18 @@ every = C.every_record()
 ch = C.changes(every)
 check(not ch["clovis"], "no Clovis record moves on a second rescore: %r" % ch["clovis"])
 ep = C.elsewhere_precision(ch)
-check(ep["read"] == 10 and ep["right"] == 10 and ep["wrong"] == 0,
-      "every record the readings move elsewhere is hand-read: %r" % ep)
+# S740: a college's later reconcile files today's arithmetic on its records, so a hand-read record the readings moved
+# no longer moves on a rescore (Santa Ana 31980 and 31887, reconcile 45841675928). Each hand-read record is either
+# still moved, and read right, or settled: its filed arithmetic is already the scorer's. Read in either state.
+_moved = {(r["college"], r["control_number"]) for r in ch["elsewhere"] + ch["not_exact"]}
+_settled = [k for k in C.ELSEWHERE_HAND if k not in _moved]
+_by_key = {(f.get("college"), f.get("control_number")): f for f in every}
+check(len(C.ELSEWHERE_HAND) == 10 and ep["read"] + len(_settled) == 10 and ep["right"] == ep["read"] and ep["wrong"] == 0,
+      "every record the readings move elsewhere is hand-read: %r, settled %r" % (ep, _settled))
+check(all(k in _by_key and C.rescore(_by_key[k]) is None or
+          (C.rescore(_by_key[k]) or {}).get("score", {}).get("arithmetic") == (_by_key[k].get("score") or {}).get("arithmetic")
+          for k in _settled),
+      "a settled record's filed arithmetic is the scorer's: %r" % _settled)
 check(not any(x["college"] == "Clovis Community College" for x in ch["not_exact"]), "no Clovis record is not exact")
 check(sorted(r["control_number"] for r in receipt["changes"]["clovis"]) == sorted(r["control_number"] for r in rows)
       and not receipt["rescored_not_planned"], "at the plan, the readings changed the 6 planned records alone")

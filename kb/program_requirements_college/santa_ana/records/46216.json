@@ -46,36 +46,45 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 41,
+   "placed": 46,
    "listed": 46,
-   "share": 0.891,
-   "missing": [
-    "CDEV107",
-    "ECON120",
-    "ECON121",
-    "HIST120",
-    "HIST121"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "CDEVC1000",
+     "listed": "CDEV107",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON121",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECON120",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001",
+     "listed": "HIST120",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002",
+     "listed": "HIST121",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 5,
-   "codes": [
-    "CDEVC1000",
-    "ECONC2001",
-    "ECONC2002",
-    "HISTC1001",
-    "HISTC1002"
-   ],
-   "flagged": [
-    "CDEVC1000",
-    "ECONC2001",
-    "ECONC2002",
-    "HISTC1001",
-    "HISTC1002"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -496,5 +505,6 @@
    "Total 28.0-30.5 = Required Core 22.0-23.5 plus List A 6.0-7.0."
   ]
  },
- "extracted_run": "38843461766"
+ "extracted_run": 45841675928,
+ "read_run": "38843461766"
 }

@@ -1,0 +1,735 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30); Sam's routine prompt of 2026-11-25, as the S739 conductor's brief carries it: a record held for a gap is collected with its gap named and a lower score on the 0-100 bar, never held, unless the record is not the program's own; S739: Contra Costa's records kb/receipts/program_requirement_records_piles_s720_contracosta_2026-11-24_s720k.json held, read again by key: passed by a rescore where today's scorer's one reading moves them, else collected with their gaps named where the record is the program's own (no reread, no reconcile)",
+ "at": "2026-11-26T15:22:51Z",
+ "college": "Contra Costa College",
+ "keys": {
+  "from": "kb/receipts/program_requirement_records_piles_s720_contracosta_2026-11-24_s720k.json",
+  "members": [
+   "01400",
+   "01415",
+   "33370",
+   "33660",
+   "40761"
+  ]
+ },
+ "gaps": {
+  "degree_summary_ge_none": "The page's unit summary prints the degree total and prints its general education and electives as None or N/A, so the record holds the major alone; the major adds up to its printed major total.",
+  "noted_figures_differ": "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires."
+ },
+ "moved": 2,
+ "by": {
+  "degree_summary_ge_none": 1,
+  "noted_figures_differ": 1
+ },
+ "precision": {
+  "read": 5,
+  "right": 5,
+  "wrong": [],
+  "no_record_file": 0,
+  "not_hand_held": 0,
+  "by_answer": {
+   "none": 3,
+   "degree_summary_ge_none": 1,
+   "noted_figures_differ": 1
+  }
+ },
+ "claim_checks": {
+  "counts": {
+   "stands": 2
+  },
+  "not_standing": []
+ },
+ "boundaries": {
+  "counts": {
+   "the note's words gone right": 2,
+   "the stated total one unit off right": 2,
+   "coverage failing right": 2,
+   "the reading against a total one unit off right": 1
+  },
+  "wrong": []
+ },
+ "held": [
+  {
+   "control_number": "01400",
+   "why": "held: on no proved live run: no committed receipt posts its committed run (44687786167) to a live row (on_live_run); its live row's run is unknown here",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "33660",
+   "why": "held: its notes print general education as None and N/A and say nothing of its electives, so degree_summary_ge_none's sentence (general education and electives as None or N/A) is not its own (the second reader, S720), and no other kind's sentence is true of it",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "40761",
+   "why": "held: on no proved live run: no committed receipt posts its committed run (44687786167) to a live row (on_live_run); its live row's run is unknown here",
+   "claim": "no entry stands"
+  }
+ ],
+ "records": [
+  {
+   "college": "Contra Costa College",
+   "control_number": "01415",
+   "award": "A.A. Degree",
+   "extracted_run": "38979730323",
+   "moves_to": "degree_summary_ge_none",
+   "words": "Total units 19-22 taken from the header '19-22 Credits' and the Unit Summary 'Major or Area of Emphasis 19 / 22'. degree_total 60/60 taken from Unit Summary 'Total Program 60 / 60'; GE and electives rows print 'None'.",
+   "confidence": {
+    "unit_arithmetic": 50,
+    "course_list_match": 100,
+    "ge_pattern": 50,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/contra_costa/records/01415.json",
+   "read_against": "today's arithmetic (the filed one is an older scorer's and stays as filed)",
+   "before_image": {
+    "program_title": "Spanish",
+    "award": "A.A. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/spanish-fall-2020v2",
+    "measure": "units",
+    "total_min": 19,
+    "total_max": 22,
+    "record": {
+     "program": {
+      "section_heading": "Spanish - A.A Degree",
+      "measure": "units",
+      "total_units": {
+       "min": 19,
+       "max": 22
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": 60,
+       "max": 60
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required core courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 10,
+        "max": 10
+       },
+       "courses": [
+        {
+         "code": "SPAN220",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN221",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Plus at least 9 units from any of the following lists (List A, List B, List C)",
+       "rule": "choose_units",
+       "minimum": 9,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "SPAN120",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "SPAN110",
+           "units": 3,
+           "catalog_addition": false
+          },
+          {
+           "code": "SPAN111",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN121",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "SPAN112",
+           "units": 3,
+           "catalog_addition": false
+          },
+          {
+           "code": "SPAN116",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "LARAZ125",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LARAZ130",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LARAZ190",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 11,
+     "listed": 11
+    },
+    "extracted_run": "38979730323"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 11,
+     "listed": 11,
+     "gaps": [
+      "degree_summary_ge_none"
+     ],
+     "confidence": {
+      "unit_arithmetic": 50,
+      "course_list_match": 100,
+      "ge_pattern": 50,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 1
+  },
+  {
+   "college": "Contra Costa College",
+   "control_number": "33370",
+   "award": "A.A. Degree",
+   "extracted_run": "38979730323",
+   "moves_to": "noted_figures_differ",
+   "words": "Core block heading states MUSIC-190A/B and 191A/B count .5 units each though ranges 0.5-5.5 are printed beside them; Major Instrument (2 units) and Ensemble (4 units) totals come from the block headings. | degree_total 60, ge_units 15-20 (General Education, Local) and electives 0-1 (needed to reach 60 unit degree minimum) come from the Program Unit Summary table; it also lists 3 units double counted.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 96,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/contra_costa/records/33370.json",
+   "before_image": {
+    "program_title": "Music",
+    "award": "A.A. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/music-fall-2023",
+    "measure": "units",
+    "total_min": 47,
+    "total_max": 47,
+    "record": {
+     "program": {
+      "section_heading": "Music - A.A. Degree",
+      "measure": "units",
+      "total_units": {
+       "min": 47,
+       "max": 47
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": 0,
+       "max": 1
+      },
+      "ge_pattern": "Contra Costa College Associate in Arts degree general education breadth requirements (local GE)",
+      "degree_total": {
+       "min": 60,
+       "max": 60
+      },
+      "ge_units": {
+       "min": 15,
+       "max": 20
+      },
+      "electives_fill_degree": false,
+      "outcomes": [],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "REQUIRED: Core Courses (.5 units each MUSIC-190A/B and MUSIC-191A/B)",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "MUSIC120",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC121",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC222",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC223",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC190A",
+         "units": 0.5,
+         "units_max": 5.5,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC190B",
+         "units": 0.5,
+         "units_max": 5.5,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC191A",
+         "units": 0.5,
+         "units_max": 5.5,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC191B",
+         "units": 0.5,
+         "units_max": 5.5,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "REQUIRED: Major Instrument (4 semesters at .5 units each, for total of 2 units)",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 2,
+        "max": 2
+       },
+       "courses": [
+        {
+         "code": "MUSIC109",
+         "units": 0.5,
+         "units_max": 7.5,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "REQUIRED: Ensemble (4 semesters at 1 unit each, for total of 4 units)",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 4,
+        "max": 4
+       },
+       "courses": [
+        {
+         "code": "MUSIC167",
+         "units": 1,
+         "units_max": 5,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "REQUIRED: Keyboard Proficiency",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "MUSIC151A",
+         "units": 2.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC151B",
+         "units": 2.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Select from any of the following areas for a minimum of 18 units",
+       "rule": "choose_units",
+       "minimum": 18,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "MUSIC176",
+         "units": 1,
+         "units_max": 5,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC177",
+         "units": 1,
+         "units_max": 5,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC251",
+         "units": 2.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC259",
+         "units": 2.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC272",
+         "units": 1,
+         "units_max": 3,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC155A",
+         "units": 2.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC155B",
+         "units": 2.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC155C",
+         "units": 2.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC155D",
+         "units": 2.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC159",
+         "units": 2.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC171A",
+         "units": 1,
+         "units_max": 3,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC171B",
+         "units": 1,
+         "units_max": 3,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC175A",
+         "units": 2.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC175B",
+         "units": 2.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC175C",
+         "units": 2.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC175D",
+         "units": 2.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC250A",
+         "units": 2.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC250B",
+         "units": 2.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC258",
+         "units": 2.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC270A",
+         "units": 1,
+         "units_max": 3,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC270B",
+         "units": 1,
+         "units_max": 3,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC195A",
+         "units": 0.5,
+         "units_max": 5.5,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC195B",
+         "units": 0.5,
+         "units_max": 5.5,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC195C",
+         "units": 0.5,
+         "units_max": 5.5,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC195D",
+         "units": 0.5,
+         "units_max": 5.5,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC130",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Students not possessing freshman level musical knowledge or skills may be advised to enroll in some of the following classes after an entrance placement audition",
+       "rule": "recommended",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "MUSIC150A",
+         "units": 2.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC150B",
+         "units": 2.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC170",
+         "units": 1,
+         "units_max": 3,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC163",
+         "units": 1,
+         "units_max": 5,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC119",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC102",
+         "units": 3,
+         "units_max": 4,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "Music158A",
+         "units": 2.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "Music158B",
+         "units": 2.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 46,
+     "listed": 48
+    },
+    "extracted_run": "38979730323"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 46,
+     "listed": 48,
+     "gaps": [
+      "noted_figures_differ"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 96,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 2
+  }
+ ],
+ "live_run_proof": null,
+ "shared_pages": {},
+ "representation": "checks.gaps and checks.confidence added as the load reads the filed score (a passing row: checks.arithmetic to equal); checks.coverage, invented and the record unchanged",
+ "claim_check_reads": "Today's capture (sources.json): every course an entry names among the codes it found, and a course an entry says the printed total leaves out on neither it nor the state's list. A note's quoted figures are the reader's words, never re-read here.",
+ "follow_verdict": "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows (confirm_matches); the apply aborts, writing nothing, unless the count is 0.",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Contra Costa College', '01415', 38979730323, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN220\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN221\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required core courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":10,\"min\":10}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN110\",\"units\":3},{\"catalog_addition\":false,\"code\":\"SPAN111\",\"units\":3}],\"catalog_addition\":false,\"code\":\"SPAN120\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN112\",\"units\":3},{\"catalog_addition\":false,\"code\":\"SPAN116\",\"units\":3}],\"catalog_addition\":false,\"code\":\"SPAN121\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LARAZ125\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LARAZ130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LARAZ190\",\"units\":3,\"units_max\":null}],\"minimum\":9,\"name\":\"Plus at least 9 units from any of the following lists (List A, List B, List C)\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Spanish - A.A Degree\",\"total_units\":{\"max\":22,\"min\":19}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":11,\"placed\":11}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":50,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"degree_summary_ge_none\"],\"invented\":true,\"listed\":11,\"placed\":11}'::jsonb),\n  (2, 'Contra Costa College', '33370', 38979730323, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC120\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC121\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC222\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC223\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC190A\",\"units\":0.5,\"units_max\":5.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC190B\",\"units\":0.5,\"units_max\":5.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC191A\",\"units\":0.5,\"units_max\":5.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC191B\",\"units\":0.5,\"units_max\":5.5}],\"minimum\":null,\"name\":\"REQUIRED: Core Courses (.5 units each MUSIC-190A/B and MUSIC-191A/B)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC109\",\"units\":0.5,\"units_max\":7.5}],\"minimum\":null,\"name\":\"REQUIRED: Major Instrument (4 semesters at .5 units each, for total of 2 units)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":2,\"min\":2}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC167\",\"units\":1,\"units_max\":5}],\"minimum\":null,\"name\":\"REQUIRED: Ensemble (4 semesters at 1 unit each, for total of 4 units)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":4,\"min\":4}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC151A\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC151B\",\"units\":2.5,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED: Keyboard Proficiency\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC176\",\"units\":1,\"units_max\":5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC177\",\"units\":1,\"units_max\":5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC251\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC259\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC272\",\"units\":1,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC155A\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC155B\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC155C\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC155D\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC159\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC171A\",\"units\":1,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC171B\",\"units\":1,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC175A\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC175B\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC175C\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC175D\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC250A\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC250B\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC258\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC270A\",\"units\":1,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC270B\",\"units\":1,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC195A\",\"units\":0.5,\"units_max\":5.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC195B\",\"units\":0.5,\"units_max\":5.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC195C\",\"units\":0.5,\"units_max\":5.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC195D\",\"units\":0.5,\"units_max\":5.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC130\",\"units\":3,\"units_max\":null}],\"minimum\":18,\"name\":\"Select from any of the following areas for a minimum of 18 units\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC150A\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC150B\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC170\",\"units\":1,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC163\",\"units\":1,\"units_max\":5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC119\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC102\",\"units\":3,\"units_max\":4},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"Music158A\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"Music158B\",\"units\":2.5,\"units_max\":null}],\"minimum\":null,\"name\":\"Students not possessing freshman level musical knowledge or skills may be advised to enroll in some of the following classes after an entrance placement audition\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":1,\"min\":0},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Contra Costa College Associate in Arts degree general education breadth requirements (local GE)\",\"ge_units\":{\"max\":20,\"min\":15},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Music - A.A. Degree\",\"total_units\":{\"max\":47,\"min\":47}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":48,\"placed\":46}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":96,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":48,\"placed\":46}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "pre_read_md5": "with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) as (values\n  (1, 'Contra Costa College', '01415', 38979730323, 'a58571c7cc9237d621f8c155572f473f', '025f5967e09072e40425565d0b8c2cce', 'd318cab2e10b526c3f5e4e5a2632f4f7'),\n  (2, 'Contra Costa College', '33370', 38979730323, '7b0f515dd12355105cbff5e1508a7b15', 'b7c177ed09a387f9260ab4f52c4541c8', 'ed69263bbdb3b4af1eb5cba19cdd7423'))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.record::text) = v.rec_md5),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.checks::text) = v.chk_md5),\n  'already_after', count(*) filter (where md5(r.checks::text) = v.after_md5),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Contra Costa College', '01415', 38979730323, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN220\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN221\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required core courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":10,\"min\":10}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN110\",\"units\":3},{\"catalog_addition\":false,\"code\":\"SPAN111\",\"units\":3}],\"catalog_addition\":false,\"code\":\"SPAN120\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN112\",\"units\":3},{\"catalog_addition\":false,\"code\":\"SPAN116\",\"units\":3}],\"catalog_addition\":false,\"code\":\"SPAN121\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LARAZ125\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LARAZ130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LARAZ190\",\"units\":3,\"units_max\":null}],\"minimum\":9,\"name\":\"Plus at least 9 units from any of the following lists (List A, List B, List C)\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Spanish - A.A Degree\",\"total_units\":{\"max\":22,\"min\":19}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":11,\"placed\":11}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":50,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"degree_summary_ge_none\"],\"invented\":true,\"listed\":11,\"placed\":11}'::jsonb),\n  (2, 'Contra Costa College', '33370', 38979730323, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC120\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC121\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC222\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC223\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC190A\",\"units\":0.5,\"units_max\":5.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC190B\",\"units\":0.5,\"units_max\":5.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC191A\",\"units\":0.5,\"units_max\":5.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC191B\",\"units\":0.5,\"units_max\":5.5}],\"minimum\":null,\"name\":\"REQUIRED: Core Courses (.5 units each MUSIC-190A/B and MUSIC-191A/B)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC109\",\"units\":0.5,\"units_max\":7.5}],\"minimum\":null,\"name\":\"REQUIRED: Major Instrument (4 semesters at .5 units each, for total of 2 units)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":2,\"min\":2}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC167\",\"units\":1,\"units_max\":5}],\"minimum\":null,\"name\":\"REQUIRED: Ensemble (4 semesters at 1 unit each, for total of 4 units)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":4,\"min\":4}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC151A\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC151B\",\"units\":2.5,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED: Keyboard Proficiency\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC176\",\"units\":1,\"units_max\":5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC177\",\"units\":1,\"units_max\":5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC251\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC259\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC272\",\"units\":1,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC155A\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC155B\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC155C\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC155D\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC159\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC171A\",\"units\":1,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC171B\",\"units\":1,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC175A\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC175B\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC175C\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC175D\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC250A\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC250B\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC258\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC270A\",\"units\":1,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC270B\",\"units\":1,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC195A\",\"units\":0.5,\"units_max\":5.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC195B\",\"units\":0.5,\"units_max\":5.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC195C\",\"units\":0.5,\"units_max\":5.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC195D\",\"units\":0.5,\"units_max\":5.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC130\",\"units\":3,\"units_max\":null}],\"minimum\":18,\"name\":\"Select from any of the following areas for a minimum of 18 units\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC150A\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC150B\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC170\",\"units\":1,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC163\",\"units\":1,\"units_max\":5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC119\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC102\",\"units\":3,\"units_max\":4},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"Music158A\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"Music158B\",\"units\":2.5,\"units_max\":null}],\"minimum\":null,\"name\":\"Students not possessing freshman level musical knowledge or skills may be advised to enroll in some of the following classes after an entrance placement audition\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":1,\"min\":0},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Contra Costa College Associate in Arts degree general education breadth requirements (local GE)\",\"ge_units\":{\"max\":20,\"min\":15},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Music - A.A. Degree\",\"total_units\":{\"max\":47,\"min\":47}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":48,\"placed\":46}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":96,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":48,\"placed\":46}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\nf as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number\n        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true\n       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)),\ne(expect) as (values (2)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when f.n > 0\n            then ('s740g piles confirm guard: ' || f.n || ' rows hold a matching confirm verdict ' || f.keys::text)::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s740g piles guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, f;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Contra Costa College', '01415', 38979730323, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN220\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN221\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required core courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":10,\"min\":10}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN110\",\"units\":3},{\"catalog_addition\":false,\"code\":\"SPAN111\",\"units\":3}],\"catalog_addition\":false,\"code\":\"SPAN120\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN112\",\"units\":3},{\"catalog_addition\":false,\"code\":\"SPAN116\",\"units\":3}],\"catalog_addition\":false,\"code\":\"SPAN121\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LARAZ125\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LARAZ130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LARAZ190\",\"units\":3,\"units_max\":null}],\"minimum\":9,\"name\":\"Plus at least 9 units from any of the following lists (List A, List B, List C)\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Spanish - A.A Degree\",\"total_units\":{\"max\":22,\"min\":19}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":11,\"placed\":11}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":50,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"degree_summary_ge_none\"],\"invented\":true,\"listed\":11,\"placed\":11}'::jsonb),\n  (2, 'Contra Costa College', '33370', 38979730323, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC120\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC121\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC222\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC223\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC190A\",\"units\":0.5,\"units_max\":5.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC190B\",\"units\":0.5,\"units_max\":5.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC191A\",\"units\":0.5,\"units_max\":5.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC191B\",\"units\":0.5,\"units_max\":5.5}],\"minimum\":null,\"name\":\"REQUIRED: Core Courses (.5 units each MUSIC-190A/B and MUSIC-191A/B)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC109\",\"units\":0.5,\"units_max\":7.5}],\"minimum\":null,\"name\":\"REQUIRED: Major Instrument (4 semesters at .5 units each, for total of 2 units)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":2,\"min\":2}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC167\",\"units\":1,\"units_max\":5}],\"minimum\":null,\"name\":\"REQUIRED: Ensemble (4 semesters at 1 unit each, for total of 4 units)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":4,\"min\":4}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC151A\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC151B\",\"units\":2.5,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED: Keyboard Proficiency\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC176\",\"units\":1,\"units_max\":5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC177\",\"units\":1,\"units_max\":5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC251\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC259\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC272\",\"units\":1,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC155A\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC155B\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC155C\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC155D\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC159\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC171A\",\"units\":1,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC171B\",\"units\":1,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC175A\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC175B\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC175C\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC175D\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC250A\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC250B\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC258\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC270A\",\"units\":1,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC270B\",\"units\":1,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC195A\",\"units\":0.5,\"units_max\":5.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC195B\",\"units\":0.5,\"units_max\":5.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC195C\",\"units\":0.5,\"units_max\":5.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC195D\",\"units\":0.5,\"units_max\":5.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC130\",\"units\":3,\"units_max\":null}],\"minimum\":18,\"name\":\"Select from any of the following areas for a minimum of 18 units\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC150A\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC150B\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC170\",\"units\":1,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC163\",\"units\":1,\"units_max\":5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC119\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC102\",\"units\":3,\"units_max\":4},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"Music158A\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"Music158B\",\"units\":2.5,\"units_max\":null}],\"minimum\":null,\"name\":\"Students not possessing freshman level musical knowledge or skills may be advised to enroll in some of the following classes after an entrance placement audition\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":1,\"min\":0},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Contra Costa College Associate in Arts degree general education breadth requirements (local GE)\",\"ge_units\":{\"max\":20,\"min\":15},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Music - A.A. Degree\",\"total_units\":{\"max\":47,\"min\":47}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":48,\"placed\":46}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":96,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":48,\"placed\":46}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (2)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s740g piles rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;"
+}

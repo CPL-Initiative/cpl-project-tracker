@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-26_s740r1_copper_mountain_catalog_reissue_apply.sql",
+ "name": "s740r1_copper_mountain_catalog_reissue",
+ "version": "20261126140804",
+ "sha256": "1b9c9cd77063bd463a99c5133f45a0b829ff338041d31d8a52c023f014afe764",
+ "run": "45835717010",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"returned\":{\"returned\":1,\"before\":{\"catalog_url\":\"https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf\",\"corrected_by\":\"Sam (open-asks sheet 88 card 1), applied by S405 SkyCholla\",\"corrected_at\":\"2026-10-17T12:54:15.300945+00:00\",\"correction_note\":\"The college's catalog page names the 2026-2027 catalog as a PDF; its curriQunet host serves course outlines (S402 page reads).\",\"updated_at\":\"2026-11-22T18:08:51.314162+00:00\"}}}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

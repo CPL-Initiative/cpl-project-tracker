@@ -46,34 +46,43 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 20,
+   "placed": 24,
    "listed": 24,
-   "share": 0.833,
-   "missing": [
-    "ECON120",
-    "ECON121",
-    "MATH180",
-    "MATH185"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON121",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECON120",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2210",
+     "listed": "MATH180",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2220",
+     "listed": "MATH185",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 5,
+   "count": 1,
    "codes": [
-    "ACCT101",
-    "ECONC2001",
-    "ECONC2002",
-    "MATHC2210",
-    "MATHC2220"
+    "ACCT101"
    ],
    "flagged": [
-    "ACCT101",
-    "ECONC2001",
-    "ECONC2002",
-    "MATHC2210",
-    "MATHC2220"
+    "ACCT101"
    ],
    "pass": true
   },
@@ -82,14 +91,15 @@
    "status": "equal",
    "computed": [
     20.0,
-    24.5
+    25.5
    ],
    "stated": [
     20.0,
     24.5
    ],
    "against": "program",
-   "why": []
+   "why": [],
+   "meets": true
   },
   "repeated": {
    "codes": [],
@@ -380,5 +390,6 @@
    "No program learning outcomes printed; no specific careers named."
   ]
  },
- "extracted_run": "38843461766"
+ "extracted_run": 45841675928,
+ "read_run": "38843461766"
 }

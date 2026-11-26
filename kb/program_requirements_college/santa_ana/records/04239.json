@@ -46,26 +46,30 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 12,
+   "placed": 13,
    "listed": 14,
-   "share": 0.857,
+   "share": 0.929,
    "missing": [
-    "CMST101",
     "SLPA170"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "COMMC1004",
+     "listed": "CMST101",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "CMST170",
-    "COMMC1004"
+    "CMST170"
    ],
    "flagged": [
-    "CMST170",
-    "COMMC1004"
+    "CMST170"
    ],
    "pass": true
   },
@@ -287,5 +291,6 @@
    "Learning outcomes are printed under 'Learning Outcome(s):' for this award."
   ]
  },
- "extracted_run": "38843461766"
+ "extracted_run": 45841675928,
+ "read_run": "38843461766"
 }

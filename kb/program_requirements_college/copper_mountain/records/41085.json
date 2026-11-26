@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Hospitality Management",
  "award": "A.S. T Degree",
- "source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=77",
+ "source_url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=106",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8794,
+  "input_tokens": 6616,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8794,
-    "output_tokens": 930,
+    "input_tokens": 6616,
+    "output_tokens": 1780,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,53 +30,66 @@
     "model": null
    }
   ],
-  "output_tokens": 930,
+  "output_tokens": 1780,
   "output_tokens_details": {
-   "thinking_tokens": 276
+   "thinking_tokens": 610
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05378,
- "ms": 8193,
- "seconds": 8.7,
+ "cost_usd": 0.06206,
+ "ms": 14915,
+ "seconds": 18.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 5,
    "listed": 5,
-   "share": 0.0,
-   "missing": [
-    "ACCT1",
-    "ACCT2",
-    "CULN1A",
-    "HOSP1",
-    "HOSP2"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 4,
+   "codes": [
+    "BUMA20A",
+    "ECONC2001",
+    "SOCI3",
+    "STATC1000"
+   ],
+   "flagged": [
+    "BUMA20A",
+    "ECONC2001",
+    "SOCI3",
+    "STATC1000"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    52.5,
+    52.5
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    34.0,
+    34.0
+   ],
+   "why": [],
+   "fill": [
+    7.5,
+    7.5
    ]
   },
   "repeated": {
@@ -84,13 +97,13 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -99,16 +112,13 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "(no Hospitality Management section in the text)",
+   "section_heading": "Associate in Science in HOSPITALITY MANAGEMENT for transfer",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -119,48 +129,133 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
-   "electives_fill_degree": false,
-   "outcomes": [],
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Utilize the functions of business to support the hospitality industry in order to maximize profits.",
+    "Analyze trends, culture, and customer relations within the hospitality industry.",
+    "Discuss key legal and regulatory issues that relate to the hospitality industry."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ACCT 1",
-    "why": "No Hospitality Management section in the text; it appears only in General Business A.S., Accounting and Bookkeeping certificates."
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "HOSP 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOSP 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CULN 001A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
    },
    {
-    "code": "ACCT 2",
-    "why": "No Hospitality Management section in the text; it appears only in General Business A.S. and Accounting certificate."
-   },
-   {
-    "code": "CULN 001A",
-    "why": "No Hospitality Management section in the text; it appears only in the General Business A.S. electives and Hospitality concentration."
-   },
-   {
-    "code": "HOSP 1",
-    "why": "No Hospitality Management section in the text; it appears only in the General Business A.S. electives and Hospitality concentration."
-   },
-   {
-    "code": "HOSP 2",
-    "why": "No Hospitality Management section in the text; it appears only in the General Business A.S. electives and Hospitality concentration."
+    "name": "Restricted Electives",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6.5,
+     "max": 6.5
+    },
+    "courses": [
+     {
+      "code": "ACCT 001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUMA 020A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "STAT C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOCI 003",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The catalog text (pages 77-78) has no section for a Hospitality Management A.S. T degree. It prints the Associate in Science in General Business, the Certificate of Achievement in Accounting, and the Certificates of Proficiency in Office Assistant and Bookkeeping.",
-   "The General Business A.S. has a 'Hospitality' concentration area (CULN 001A, HOSP 001, HOSP 002, BUAC 010, CIS 072D, 14 units). It is part of a different award, so it was not recorded here. A reviewer should check whether the Hospitality Management program is on another catalog page.",
-   "An 'A.S. T' award would normally be an Associate in Science for Transfer. No such award is printed in this text."
+   "Catalog prints HOSP 001/HOSP 002/ACCT 001/ACCT 002; these were matched to closed-list HOSP 1, HOSP 2, ACCT 1, ACCT 2.",
+   "No major total is printed; only block subtotals (Required Courses 12, Restricted Electives 6.5). total_units left null.",
+   "Degree total taken from 'MINIMUM TRANSFERABLE UNITS 60' printed in the program's unit summary; 'Transferable elective units as needed' read as electives filling the degree.",
+   "Restricted Electives: 'Select two (2) courses from ACCT 001, ACCT 002, BUMA 020A, or choose STAT C1000 or SOCI 003' with 6.5 units printed for the block; no per-course units printed. The 'or choose STAT C1000 or SOCI 003' phrasing may imply a different path structure; reviewer should check.",
+   "Section heading 'Associate in Science in HOSPITALITY MANAGEMENT for transfer' appears at the bottom of the extracted page text; the page header is 'HOSPITALITY'.",
+   "The '18 semester units in a major' sentence is a general ADT rule, not recorded as a total.",
+   "Program learning outcomes are printed once for the program and recorded for this award."
   ]
  },
- "extracted_run": "39035222722"
+ "extracted_run": "45836803063",
+ "catalog_year": "2026-2027",
+ "source_sha": "4c66b23fc32f9ad9",
+ "source_codes": [
+  "ACCT1",
+  "ACCT2",
+  "CULN1A",
+  "HOSP1",
+  "HOSP2"
+ ],
+ "source_coverage": 1.0
 }

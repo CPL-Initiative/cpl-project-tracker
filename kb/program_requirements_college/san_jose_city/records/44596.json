@@ -46,28 +46,23 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 25,
+   "placed": 26,
    "listed": 26,
-   "share": 0.962,
-   "missing": [
-    "ACCOUNTINGAC"
-   ],
-   "unexplained": [
-    "ACCOUNTINGAC"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "ACCTG20",
     "CHEM15H"
    ],
    "flagged": [
     "CHEM15H"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -124,7 +119,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -408,5 +403,6 @@
    "Program learning outcomes are printed for the program as a whole on the outcomes tab; this award is the only award on the page and shares them."
   ]
  },
- "extracted_run": "43357106423"
+ "extracted_run": 45840981324,
+ "read_run": "43357106423"
 }

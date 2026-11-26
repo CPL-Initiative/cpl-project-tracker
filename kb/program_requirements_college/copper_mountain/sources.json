@@ -37,20 +37,21 @@
    "REAL86"
   ],
   "source": {
-   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=77",
-   "title": "2026-2027 Catalog",
-   "h1": "2026-2027 Catalog",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=78",
+   "title": "Associate in Science in",
+   "h1": "Associate in Science in",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    77,
-    78
+    78,
+    79
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "e9fff890657b64b9"
   },
   "listed": 28,
-  "text_chars": 9508
+  "text_chars": 9000
  },
  {
   "control_number": "14711",
@@ -226,23 +227,25 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.667,
+  "coverage": 1.0,
   "codes_found": [
+   "PSY3",
    "VN10",
    "VN20"
   ],
   "source": {
-   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=112",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=113",
    "title": "Associate in Science in VOCATIONAL NURSING",
    "h1": "Associate in Science in VOCATIONAL NURSING",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    112,
-    113
+    113,
+    114
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "f35be82261603dda"
   },
   "listed": 3,
   "text_chars": 7403
@@ -271,20 +274,21 @@
    "PHIL13"
   ],
   "source": {
-   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=98",
-   "title": "2026-2027 Catalog",
-   "h1": "2026-2027 Catalog",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=99",
+   "title": "Associate in Science in",
+   "h1": "Associate in Science in",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    98,
-    99
+    99,
+    100
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "115b6260a0ba82de"
   },
   "listed": 17,
-  "text_chars": 10749
+  "text_chars": 7225
  },
  {
   "control_number": "14754",
@@ -304,7 +308,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.8,
+  "coverage": 1.0,
   "codes_found": [
    "ANTH2",
    "N10",
@@ -313,22 +317,27 @@
    "N35",
    "N36",
    "N40",
-   "PSYCC1000"
+   "PSY3",
+   "PSYCC1000",
+   "SP7"
   ],
   "source": {
-   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=111",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=112",
    "title": "2026-2027 Catalog",
    "h1": "2026-2027 Catalog",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    111
+    112,
+    113,
+    114
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "4a65fd3ca28ee2af"
   },
   "listed": 10,
-  "text_chars": 7963
+  "text_chars": 15870
  },
  {
   "control_number": "18517",
@@ -403,7 +412,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.692,
+  "coverage": 1.0,
   "codes_found": [
    "ANTH2",
    "ANTH3",
@@ -412,20 +421,25 @@
    "HISTC1001",
    "HISTC1002",
    "POLSC1000",
+   "PSY3",
+   "PSY5",
    "PSYCC1000",
+   "SOC2",
+   "SOC4",
    "SOCIC1000"
   ],
   "source": {
-   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=109",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=110",
    "title": "2026-2027 Catalog",
    "h1": "2026-2027 Catalog",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    109
+    110
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e8a0b678b0ee7ae8"
   },
   "listed": 13,
   "text_chars": 4375
@@ -567,23 +581,25 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.667,
+  "coverage": 1.0,
   "codes_found": [
+   "PSY3",
    "VN10",
    "VN20"
   ],
   "source": {
-   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=112",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=113",
    "title": "of the program a certificate in vocational nursing is awarded and the graduate is eligible to write the National Council",
    "h1": "of the program a certificate in vocational nursing is awarded and the graduate is eligible to write the National Council",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    112,
-    113
+    113,
+    114
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "14da5b2bef3f07e2"
   },
   "listed": 3,
   "text_chars": 6756
@@ -1116,20 +1132,21 @@
    "HOSP2"
   ],
   "source": {
-   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=77",
-   "title": "2026-2027 Catalog",
-   "h1": "2026-2027 Catalog",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=106",
+   "title": "HOSPITALITYHOSPITALITY",
+   "h1": "HOSPITALITYHOSPITALITY",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    77,
-    78
+    106
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "pinned": true,
+   "text_sha": "4c66b23fc32f9ad9"
   },
   "listed": 5,
-  "text_chars": 9508
+  "text_chars": 2608
  },
  {
   "control_number": "41580",
@@ -1330,31 +1347,40 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.545,
+  "coverage": 1.0,
   "codes_found": [
+   "BI23",
    "PE43",
    "PE45",
    "PE52",
    "PE91",
    "PE96",
-   "PE98"
+   "PE98",
+   "PH2A",
+   "PH4A",
+   "PSYCC1000",
+   "SOCIC1000"
   ],
   "source": {
-   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=158",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=107",
    "title": "2026-2027 Catalog",
    "h1": "2026-2027 Catalog",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    158,
-    159,
-    160
+    107
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 107,
+    "share": 1.0
+   },
+   "text_sha": "d0813b7aafd9b0c4"
   },
   "listed": 11,
-  "text_chars": 14980
+  "text_chars": 4083
  },
  {
   "control_number": "43192",
@@ -1531,17 +1557,18 @@
    "POLSC1000"
   ],
   "source": {
-   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=103",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=104",
    "title": "Courses in the Associate in Arts in History for Transfer degree explore the past in a variety of ways. Through a critica",
    "h1": "Courses in the Associate in Arts in History for Transfer degree explore the past in a variety of ways. Through a critica",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    103,
-    104
+    104,
+    105
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "ae3d7e08afd8ded5"
   },
   "listed": 4,
   "text_chars": 5447
@@ -1615,11 +1642,12 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.944,
+  "coverage": 1.0,
   "codes_found": [
    "ART10",
    "BIOLC1001",
    "BIOLC1001L",
+   "CD10",
    "CH3",
    "COMMC1000",
    "EDUC10",
@@ -1636,16 +1664,17 @@
    "TA1"
   ],
   "source": {
-   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=92",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=93",
    "title": "2026-2027 Catalog",
    "h1": "2026-2027 Catalog",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    92
+    93
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "b0f5e11c551bb1ca"
   },
   "listed": 18,
   "text_chars": 5019

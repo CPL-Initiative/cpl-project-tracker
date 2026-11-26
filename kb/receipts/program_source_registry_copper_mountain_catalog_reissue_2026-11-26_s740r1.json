@@ -1,0 +1,57 @@
+{
+ "what": "S740R1 lane 1 (reads): a guarded plan for the conductor, NOT applied by its writer. Copper Mountain College's program_source_registry row moves from the 2026-2027 catalog PDF's first address, which answers 404, to the college's reissue of 2026-11-18. One row; catalog_url and the three correction fields change, nothing else.",
+ "status": "plan: not applied. The conductor runs the pre-read, then the apply through supabase-migrate (kb/migrations/.apply is the conductor's alone to write).",
+ "written": "2026-11-26T13:41:11Z",
+ "table": "public.program_source_registry",
+ "key": {
+  "college": "Copper Mountain College"
+ },
+ "why": "Hospitality Management A.S.-T 41085 is pinned to its own page (PDF p.106) in the reissue (kb/program_requirements_reconcile.json, pdf_pages), and the pin binds only on that file. Read 45805866374 (only=41085, S739 wave A) asked the registry's address, got no page, refused the pin and stopped at its price step with nothing spent. The reader takes the registry's catalog_url (pdf_start in kb/_program_requirements_college.py) because the college's procedure record v1 (kb/receipts/program_source_procedure_copper_mountain_v1_2026-10-17_s407.sql) names no catalog step.",
+ "evidence": [
+  "college page read 45781997815 (2026-11-26): the first address answered 404",
+  "college page read 45783372680 (2026-11-26, kb/college_reads/s739a_copper_mountain_pages.json): the reissue read whole and printed line for line; p.106 prints Hospitality Management A.S.-T with all 5 of the state's listed courses",
+  "college page read 45627807594 (S730, kb/college_reads/subject_index_copper_mountain.json) read the same reissue"
+ ],
+ "a_person_set_this_row": "Sam, Open Asks Sheet 88 card 1 (2026-10-17, 'Correct them'), applied by S405 (kb/receipts/program_source_registry_sheet88_five_catalogs_2026-10-17_s405.sql): the catalog the college's own page names. This plan keeps his correction (catalog_year, catalog_platform, catalog_format and best_method stay as he set them) and moves its address to the same catalog's reissue; corrected_by says so in words, and stays set, so the census keeps the row.",
+ "before_expected": {
+  "source": "the S405 receipt and the filed capture (kb/program_requirements_college/copper_mountain/capture.json, run 39035222722); the pre-read confirms it live, and the apply returns the live before-values into its migration receipt",
+  "catalog_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf",
+  "catalog_year": "2026-2027",
+  "catalog_platform": "pdf",
+  "catalog_format": "single_pdf",
+  "best_method": "pdf_extraction",
+  "corrected_by": "Sam (open-asks sheet 88 card 1), applied by S405 SkyCholla",
+  "correction_note": "The college's catalog page names the 2026-2027 catalog as a PDF; its curriQunet host serves course outlines (S402 page reads)."
+ },
+ "after": {
+  "catalog_url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf",
+  "corrected_by": "S740 SkySkimmer (the CPL Queue routine) through supabase-migrate, plan s740r1: the address of Sam's correction (open-asks sheet 88 card 1, applied by S405 SkyCholla) moved to the college's reissue of the same 2026-2027 catalog; the year, platform, format and method stay as he set them",
+  "corrected_at": "now() at the apply",
+  "correction_note": "names the reissue, the 404 and the two page reads, and keeps S405's note after 'Before:'"
+ },
+ "guard": "the UPDATE matches only where the row names the first address, catalog_year 2026-2027, catalog_platform pdf and catalog_format single_pdf; it aborts, writing nothing, unless it matches exactly one row",
+ "preread_expect": {
+  "rows": 1,
+  "guard_matches": 1,
+  "already_after": 0,
+  "procedure_catalog_step": false,
+  "stop_when": "guard_matches is 0, or procedure_catalog_step is true (the reader then takes the procedure record's file and this column changes nothing)"
+ },
+ "rollback": "kb/migrations/2026-11-26_s740r1_copper_mountain_catalog_reissue_rollback.sql restores the four fields from the row the history trigger filed under this write's corrected_by, guarded on this write's address and corrected_by. The apply's migration receipt (response.returned.before) holds the same four values.",
+ "after_the_apply": "a free capture of Copper Mountain College on claude/s740-reads (program-requirements-college.yml, step read, extract 0, only=41085), then the paid read with only=41085 on the conductor's go",
+ "files": {
+  "preread": {
+   "path": "kb/migrations/2026-11-26_s740r1_copper_mountain_catalog_reissue_preread.sql",
+   "sha256": "2d94257e4fa11c765efbb8d19817d6057546ff5dc8e5bfeb36b2d8e944e38c26"
+  },
+  "apply": {
+   "path": "kb/migrations/2026-11-26_s740r1_copper_mountain_catalog_reissue_apply.sql",
+   "sha256": "1b9c9cd77063bd463a99c5133f45a0b829ff338041d31d8a52c023f014afe764"
+  },
+  "rollback": {
+   "path": "kb/migrations/2026-11-26_s740r1_copper_mountain_catalog_reissue_rollback.sql",
+   "sha256": "3da2819ff390bb5908a7115b6aea6489f54da97d6b5d499bdbeea2a7802d94de"
+  }
+ },
+ "no_model_call": true
+}

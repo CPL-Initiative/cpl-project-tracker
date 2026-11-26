@@ -46,34 +46,27 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 10,
+   "placed": 12,
    "listed": 13,
-   "share": 0.769,
+   "share": 0.923,
    "missing": [
-    "ACCOUNTINGAC",
-    "BUSINESSBUS0",
     "ECONC2002"
    ],
-   "unexplained": [
-    "ACCOUNTINGAC",
-    "BUSINESSBUS0"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 2,
    "codes": [
-    "ACCTG20",
     "ACCTG50",
-    "BUS71",
     "ECON10A"
    ],
    "flagged": [
     "ACCTG50",
     "ECON10A"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -111,7 +104,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -293,5 +286,6 @@
    "Program learning outcomes are from the page's outcomes tab for this certificate."
   ]
  },
- "extracted_run": "43357106423"
+ "extracted_run": 45840981324,
+ "read_run": "43357106423"
 }

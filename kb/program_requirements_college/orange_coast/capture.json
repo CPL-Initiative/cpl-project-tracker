@@ -5,12 +5,12 @@
  "catalog_year": "2026-2027",
  "programs": 328,
  "with_closed_list": 301,
- "started": "2026-11-25T07:21:17Z",
+ "started": "2026-11-26T16:25:35Z",
  "scope": "/orange-coast/",
  "sitemap": {
   "url": "https://catalog.cccd.edu/sitemap.xml",
   "status": 200,
-  "listed": 4747,
+  "listed": 4749,
   "nested": 0,
   "program_pages": 466,
   "refused": null,
@@ -304,7 +304,7 @@
   "yield_refused_passing": 0
  },
  "loads": 481,
- "seconds": 2323.9,
+ "seconds": 2297.6,
  "found": 271,
  "by_method": {
   "no_closed_list": 27,
@@ -852,21 +852,10 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/orange_coast",
-  "kept": 267,
+  "kept": 268,
   "kept_moved": 0,
-  "programs": 1,
-  "list": [
-   {
-    "control_number": "22394",
-    "title": "Powerplant",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-maintenance-technology/powerplant-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-maintenance-technology/airframe-powerplant-certificate-achievement/",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   }
-  ],
+  "programs": 0,
+  "list": [],
   "held_worse_window": [
    {
     "control_number": "30642",
@@ -897,9 +886,9 @@
   ],
   "held_opens_on_list": [],
   "only": [
-   "04007",
-   "22394",
-   "33569"
+   "03954",
+   "08664",
+   "31217"
   ],
   "not_named": [],
   "refused_passing": [],
@@ -1991,5 +1980,5 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/elementary-teacher-education-integrated-programs-aat/"
   }
  },
- "run": "45567337117"
+ "run": "45858495107"
 }

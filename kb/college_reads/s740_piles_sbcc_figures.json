@@ -1,0 +1,27 @@
+{
+ "_readme": "S740, lane 2's cheap piles (2026-11-26). Two Santa Barbara City records hold on what their own pages print (s739d). 43553 (Law, Public Policy, and Society A.A.-T): its two lists print 26-29 and 6-8, which add to 32-37 under a printed total of 35-41, and no note of the record names the difference; total_differs is filed only from a page read (kb/program_total_differs.json). 30746 (Sociology A.A.-T): the state's list names PSY 200, which the record does not place and no note explains, so coverage fails. This read prints each page as the capture reads it, so a session can read 43553's list figures and total line word for word, and whether 30746's page prints PSY 200 anywhere in its lists. Two loads, no model call, nothing written.",
+ "college": "Santa Barbara City College",
+ "questions": {
+  "figures_43553": "The Required Core figure, the List A figure and the total line of the Law, Public Policy, and Society AA-T, word for word, and any line between them that carries units.",
+  "psy_200": "Whether the Sociology AA-T page prints PSY 200 in any list, and under which list heading."
+ },
+ "keywords": [
+  "Total[^\\n]{0,80}",
+  "List [A-C][^\\n]{0,120}",
+  "Required Core[^\\n]{0,80}",
+  "PSY 200[^\\n]{0,80}",
+  "\\d+(?:\\.\\d+)?\\s*-\\s*\\d+(?:\\.\\d+)?[^\\n]{0,40}"
+ ],
+ "pages": [
+  {
+   "url": "https://catalog.sbcc.edu/academic-departments/justice-studies/law-public-policy-and-society-aat/",
+   "answers": ["figures_43553"],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.sbcc.edu/academic-departments/sociology/sociology-aat/",
+   "answers": ["psy_200"],
+   "capture_view": true
+  }
+ ]
+}

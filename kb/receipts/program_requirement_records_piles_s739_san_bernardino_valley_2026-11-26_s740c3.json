@@ -1,0 +1,2097 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30); Sam's routine prompt of 2026-11-25, as the S739 conductor's brief carries it: a record held for a gap is collected with its gap named and a lower score on the 0-100 bar, never held, unless the record is not the program's own; S739: San Bernardino Valley's records kb/status/harvest_gap_census.json (reconcile_steps at San Bernardino Valley College, written 2026-11-26 12:06Z) held, read again by key: passed by a rescore where today's scorer's one reading moves them, else collected with their gaps named where the record is the program's own (no reread, no reconcile)",
+ "at": "2026-11-26T15:33:46Z",
+ "college": "San Bernardino Valley College",
+ "keys": {
+  "from": "kb/status/harvest_gap_census.json (reconcile_steps at San Bernardino Valley College, written 2026-11-26 12:06Z)",
+  "members": [
+   "04873",
+   "04894",
+   "12197",
+   "17829",
+   "22771",
+   "22776",
+   "22784",
+   "22820",
+   "22821",
+   "32309",
+   "35802",
+   "35833",
+   "39483"
+  ]
+ },
+ "gaps": {
+  "noted_figures_differ": "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires.",
+  "total_differs": "The catalog prints a total for this program that its own printed units do not add to.",
+  "waived_course_counted": "The page prints a requirement at a range from zero units, since a student may meet it without the course (a certification, an exam or earlier coursework), and the record counts the course, so its units match the top of the printed range and not its low end."
+ },
+ "moved": 6,
+ "by": {
+  "noted_figures_differ": 2,
+  "waived_course_counted": 2,
+  "total_differs": 2
+ },
+ "precision": {
+  "read": 13,
+  "right": 13,
+  "wrong": [],
+  "no_record_file": 0,
+  "not_hand_held": 0,
+  "by_answer": {
+   "none": 7,
+   "noted_figures_differ": 2,
+   "waived_course_counted": 2,
+   "total_differs": 2
+  }
+ },
+ "claim_checks": {
+  "counts": {
+   "stands": 6
+  },
+  "not_standing": []
+ },
+ "boundaries": {
+  "counts": {
+   "the note's words gone right": 4,
+   "the stated total one unit off right": 6,
+   "coverage failing right": 6,
+   "the note_quotes shape broken right": 2
+  },
+  "wrong": []
+ },
+ "held": [
+  {
+   "control_number": "04873",
+   "why": "held: the page prints one course under 'Two courses from the following' and two under 'Four courses from the following' (college-page-read run 45835049303), so no reading adds its lists to the printed 24-25; no filed kind names a list shorter than its count, and a new kind is shared code, which S740 does not add",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "04894",
+   "why": "held: today's scorer passes its own arithmetic without the state's list and fails with it: 'MUS 141X2 & MUS 241X2' print one figure for the pair, the reading left MUS 241X2 without units, and the state's file prices it at 0.5 (26.5-36.5 against 27-37); a record today's scorer passes is never gap-filed",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "17829",
+   "why": "held: two gaps on one row and no kind's check closes either: the printed major total 50-63 against lists that add to 50-60, and a degree total over a general education pattern with no units",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "22784",
+   "why": "held: the same waiver as 22771 (waived_course_counted), and its record's run 45355976381 is not shown to be its live row's by the committed receipts (its load held several runs)",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "22821",
+   "why": "held: not the program's own page: read from the Pharmacy Technology department page; the certificate's own page prints seven required courses and 'Total Units 20' (college-page-read run 45835049303): a site_pages pin and a paid read of 22821 are its lever",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "35833",
+   "why": "held: its 19-22 sits inside the printed 18.5-22 (d-within-range-sums-hold-for-units-kind-s739): the label would overstate",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "39483",
+   "why": "held: the reader's own reading: the page prints the two biology sequences inside 'List A - One to two courses' (college-page-read run 45835049303) and the record holds them as lists of their own; no note quotes two figures that disagree: a paid reread",
+   "claim": "no entry stands"
+  }
+ ],
+ "records": [
+  {
+   "college": "San Bernardino Valley College",
+   "control_number": "12197",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "extracted_run": "38748858322",
+   "moves_to": "noted_figures_differ",
+   "words": "total_units 37 is taken from the description ('requires 37 CD units ... plus a minimum of 16 general education units'); the course list prints 'Total Units 49', which includes general education and is recorded in degree_total although this award is a certificate. 37 + 16 = 53 does not equal the printed 49; reviewer should check.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/san_bernardino_valley/records/12197.json",
+   "before_image": {
+    "program_title": "Child Development - Master Teacher",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/child-development/child-development-master-teacher-certificate-achievement/",
+    "measure": "units",
+    "total_min": 37,
+    "total_max": 37,
+    "record": {
+     "program": {
+      "section_heading": "Child Development - Master Teacher Certificate of Achievement",
+      "measure": "units",
+      "total_units": {
+       "min": 37,
+       "max": 37
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "Valley College GE requirements",
+      "degree_total": {
+       "min": 49,
+       "max": 49
+      },
+      "ge_units": {
+       "min": 16,
+       "max": 16
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Develop an integrated personal philosophy into classroom practices that reflects an understanding of typical child development, health safety and nutrition, developmentally, culturally and linguistically appropriate practices, ethical and professional practices and high quality standards.",
+       "Use the observation, planning and implementation cycle to create, implement and evaluate environments, individualized curriculum and activities that support developmentally, culturally and linguistically appropriate, inclusive, play and learning for children.",
+       "Develop strategies to respect the diversity of children and families and then empower families, and use resources that promote supportive relationships and partnerships between programs, teachers, families and their communities.",
+       "Analyze and apply effective positive guidance and interaction strategies that support young children's learning, self-confidence and identity.",
+       "Develop a specialization in Child Development using 6 units of a content area in a specific area.",
+       "Identify and analyze the stages of adult development and learning, and implement strategies to mentor adults who are learning to work with children.",
+       "Analyze, describe and use inclusive, equitable, antibias and antiracist teaching practices and family interactions for working with children and families."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "CDEV C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "CDEV C1000H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV 111",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV 113",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV 114",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV 115",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV 126",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV 127",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV 138",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV 270",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Creative Curriculum Specialization",
+       "rule": "choose_units",
+       "minimum": 6,
+       "option_group": "Specialization",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "CDEV 130",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV 133",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV 134",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV 136",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV 137",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Trauma Informed Care and Guidance Specialization",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Specialization",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "CDEV 109",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV 127",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Infant/Toddler Specialization",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Specialization",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "CDEV 185",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV 186",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "School-Age Specialization",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Specialization",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "CDEV 160",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV 061",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Special Needs Specialization",
+       "rule": "choose_units",
+       "minimum": 6,
+       "option_group": "Specialization",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "CDEV 109",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV 244",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV 245",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Experience Working with Children",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "CDEV 205",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "General Education - Arts and Humanities: (1-2 courses)",
+       "rule": "recommended",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ARTH 103",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 100",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "MUS 100H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "General Education - Social Sciences (1-2 courses)",
+       "rule": "recommended",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "PSYC C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "PSYC C1000H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "General Education - Math or Science (1 course)",
+       "rule": "recommended",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "BIOL C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOG 110",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC 105",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ECON 208",
+           "units": null,
+           "catalog_addition": false
+          },
+          {
+           "code": "STAT C1000",
+           "units": null,
+           "catalog_addition": false
+          },
+          {
+           "code": "STAT C1000H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "General Education - English or Oral Communications (1 course)",
+       "rule": "recommended",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ENGL C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL C1000H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "COMM C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "COMM C1000H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 38,
+     "listed": 38
+    },
+    "extracted_run": "38748858322"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 38,
+     "listed": 38,
+     "gaps": [
+      "noted_figures_differ"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 1
+  },
+  {
+   "college": "San Bernardino Valley College",
+   "control_number": "22771",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "38748858322",
+   "moves_to": "waived_course_counted",
+   "words": "TECALC 087 is required unless the student places into a transfer-level MATH course; the block prints 0-4 units, which accounts for the 20-24 total range.",
+   "confidence": {
+    "unit_arithmetic": 50,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/san_bernardino_valley/records/22771.json",
+   "before_image": {
+    "program_title": "Automatic and Manual Transmission",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-technology/automatic-manual-transmission-certificate-achievement/",
+    "measure": "units",
+    "total_min": 20,
+    "total_max": 24,
+    "record": {
+     "program": {
+      "section_heading": "Automatic and Manual Transmission Certificate of Achievement",
+      "measure": "units",
+      "total_units": {
+       "min": 20,
+       "max": 24
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Identify auto shop safety practices.",
+       "Explain the utilization of automotive tools.",
+       "Summarize the theory and concepts of automotive powertrain and electrical systems.",
+       "Practice auto shop safety.",
+       "Apply the proper use of hand tools used in automotive powertrain and electrical systems.",
+       "Perform the service and repairs of automotive powertrain and electrical systems."
+      ],
+      "careers": [
+       "Transmission technicians"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required Courses:",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "AUTO 064",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "HMDT 064",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTO 075",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTO 075L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTO 077",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTO 077L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTO 084",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTO 084L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTO 090",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTO 090L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Complete the following or place into a transfer-level MATH course:",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 0,
+        "max": 4
+       },
+       "courses": [
+        {
+         "code": "TECALC 087",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 11,
+     "listed": 11
+    },
+    "extracted_run": "38748858322"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 11,
+     "listed": 11,
+     "gaps": [
+      "waived_course_counted"
+     ],
+     "confidence": {
+      "unit_arithmetic": 50,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 2
+  },
+  {
+   "college": "San Bernardino Valley College",
+   "control_number": "22776",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "extracted_run": "38748858322",
+   "moves_to": "waived_course_counted",
+   "words": "TECALC 087 is required unless the student places into a transfer-level MATH course; block recorded as 'all' with the printed 0-4 units.",
+   "confidence": {
+    "unit_arithmetic": 50,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/san_bernardino_valley/records/22776.json",
+   "before_image": {
+    "program_title": "Automotive Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-technology/automotive-technician-certificate-achievement/",
+    "measure": "units",
+    "total_min": 40,
+    "total_max": 44,
+    "record": {
+     "program": {
+      "section_heading": "Automotive Technician Certificate of Achievement",
+      "measure": "units",
+      "total_units": {
+       "min": 40,
+       "max": 44
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Identify auto shop safety practices.",
+       "Explain the utilization of automotive system tools.",
+       "Summarize the theory and concepts of the automotive systems.",
+       "Practice auto shop safety.",
+       "Apply the proper use of hand tools used on the automotive systems.",
+       "Perform the service and repair of automotive systems."
+      ],
+      "careers": [
+       "automotive technicians"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required Courses:",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "AUTO 050",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTO 050L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTO 052",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTO 052L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTO 056",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTO 062",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTO 062L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTO 064",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "HMDT 064",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTO 065",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTO 075",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTO 075L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTO 077",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTO 077L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTO 084",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTO 084L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTO 090",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTO 090L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Complete the following or place into a transfer-level MATH course:",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 0,
+        "max": 4
+       },
+       "courses": [
+        {
+         "code": "TECALC 087",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 19,
+     "listed": 19
+    },
+    "extracted_run": "38748858322"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 19,
+     "listed": 19,
+     "gaps": [
+      "waived_course_counted"
+     ],
+     "confidence": {
+      "unit_arithmetic": 50,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 3
+  },
+  {
+   "college": "San Bernardino Valley College",
+   "control_number": "22820",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "extracted_run": "38748858322",
+   "moves_to": "noted_figures_differ",
+   "words": "The printed Total Units is 43, but the required courses listed sum to 31 units (4 + 8 x 3 + 3 for the art history choice). Reviewer should check whether the course list is incomplete or the total is misprinted.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/san_bernardino_valley/records/22820.json",
+   "before_image": {
+    "program_title": "Graphic Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/art/graphic-design-certificate-achievement/",
+    "measure": "units",
+    "total_min": 43,
+    "total_max": 43,
+    "record": {
+     "program": {
+      "section_heading": "Graphic Design Certificate of Achievement",
+      "measure": "units",
+      "total_units": {
+       "min": 43,
+       "max": 43
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Integrate design skills into their aesthetic sensibility.",
+       "Describe how art history impacts design solutions.",
+       "Use basic concepts, tools, and techniques of digital media to produce art works concept to finished product.",
+       "Apply technical and design standards for digital media.",
+       "Assemble a portfolio that demonstrates preparation for work as an entry-level production artist or graphic designer."
+      ],
+      "careers": [
+       "graphic designers"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ENGL C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL C1000H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARTH C1100",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ART 144",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ART 145",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ART 148",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ART 149",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ART 161",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ART 186",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ART 280",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "One Art History Course from the following",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "ARTH C1200",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ARTH C1200H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARTH 105",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARTH 107",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARTH 108",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Recommended Courses",
+       "rule": "recommended",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ART 120",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ART 121",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ART 124A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ART 126A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ART 132A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ART 185",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "BUSAD 100",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 15,
+     "listed": 15
+    },
+    "extracted_run": "38748858322"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 15,
+     "listed": 15,
+     "gaps": [
+      "noted_figures_differ"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 4
+  },
+  {
+   "college": "San Bernardino Valley College",
+   "control_number": "32309",
+   "award": "A.A- T Degree",
+   "extracted_run": "44481529632",
+   "moves_to": "total_differs",
+   "words": "the catalog prints a total of 18-19, and its own figures add to 21-22 (the program's own page, https://catalog.valleycollege.edu/degree-certificate-program-index/political-science/political-science-aat-degree/; college-page-read run 45835049303)",
+   "confidence": {
+    "unit_arithmetic": 50,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/san_bernardino_valley/records/32309.json",
+   "before_image": {
+    "program_title": "Political Science",
+    "award": "A.A- T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/political-science/political-science-aat-degree/",
+    "measure": "units",
+    "total_min": 18,
+    "total_max": 19,
+    "record": {
+     "program": {
+      "section_heading": "Political Science Associate in Arts for Transfer Degree",
+      "measure": "units",
+      "total_units": {
+       "min": 18,
+       "max": 19
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": 16,
+       "max": 17
+      },
+      "ge_pattern": "Cal-GETC",
+      "degree_total": {
+       "min": 60,
+       "max": 60
+      },
+      "ge_units": {
+       "min": 34,
+       "max": 34
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Demonstrate a comprehensive understanding of the domestic governmental institutions and political practices of the United States – at the national, state, and local levels – including their Constitutional bases; the special functions of the legislative, executive, and judicial branches and their associated bureaucratic and regulatory agencies; and the activities of leading participants in the political process including organized special interest groups, political parties, and grass-roots activists.",
+       "Demonstrate a keen awareness of the world beyond our national borders and know the principal players in world politics--state actors (countries) and non-state actors such as international governmental  organizations (IGOs) and international non-governmental organizations (INGOs), and their respective role in creating world order; employ the principle of levels of analysis to explain a major development in world politics such as the outbreak of war or a complex foreign policy decision; understand the principal parameters around which to compare different political systems; have an understanding of how different historical and cultural forces end up creating different regimes--authoritarian regimes or democratic regimes; and have a general knowledge of the fundamental components of political economy—public goods, taxation, regulations, trade policies, employment, and money supply.",
+       "Demonstrate an understanding of the practical skills needed for employment, or other participation, in governmental and political contexts."
+      ],
+      "careers": [
+       "law",
+       "politics",
+       "governmental service",
+       "social science teaching",
+       "journalism"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required Courses:",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "POLS C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "POLS C1000H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLS 110",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "POLS 110H",
+           "units": null,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": true
+        },
+        {
+         "code": "POLS 140",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "POLS 141",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "POLS 141H",
+           "units": null,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "List A - Two courses from the following:",
+       "rule": "choose_courses",
+       "minimum": 2,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "POLS 170",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "POLS 173",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "POLS 138",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "POLS 138H",
+           "units": null,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": true
+        },
+        {
+         "code": "POLS 139",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "POLS 139H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECON 208",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "STAT C1000",
+           "units": null,
+           "catalog_addition": false
+          },
+          {
+           "code": "STAT C1000H",
+           "units": null,
+           "catalog_addition": false
+          },
+          {
+           "code": "PSYC 105",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List B - One course from the following:",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ANTH 102",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ANTH 102H",
+           "units": null,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": true
+        },
+        {
+         "code": "COMM 135",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECON 100",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECON C2001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ECON C2001H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECON C2002",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ECON C2002H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST C1001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "HIST C1001H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST C1002",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "HIST C1002H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 137",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 150",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 170",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 171",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLS 138",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "POLS 138H",
+           "units": null,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": true
+        },
+        {
+         "code": "POLS 139",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "POLS 139H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLS 150",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLS 173",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PSYC C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "PSYC C1000H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "RELIG 135",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOCI C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "SOCI C1000H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 30,
+     "listed": 30
+    },
+    "extracted_run": "44481529632"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 30,
+     "listed": 30,
+     "gaps": [
+      "total_differs"
+     ],
+     "confidence": {
+      "unit_arithmetic": 50,
+      "course_list_match": 100,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 5
+  },
+  {
+   "college": "San Bernardino Valley College",
+   "control_number": "35802",
+   "award": "A.A- T Degree",
+   "extracted_run": "38748858322",
+   "moves_to": "total_differs",
+   "words": "the catalog prints a total of 21-22, and its own figures add to 20-21 (the program's own page, https://catalog.valleycollege.edu/degree-certificate-program-index/music/music-ast-degree/; college-page-read run 45835049303)",
+   "confidence": {
+    "unit_arithmetic": 50,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/san_bernardino_valley/records/35802.json",
+   "before_image": {
+    "program_title": "Music",
+    "award": "A.A- T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/music/music-ast-degree/",
+    "measure": "units",
+    "total_min": 21,
+    "total_max": 22,
+    "record": {
+     "program": {
+      "section_heading": "Music Associate in Arts for Transfer Degree",
+      "measure": "units",
+      "total_units": {
+       "min": 21,
+       "max": 22
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": 7,
+       "max": 8
+      },
+      "ge_pattern": "Cal-GETC",
+      "degree_total": {
+       "min": 60,
+       "max": 60
+      },
+      "ge_units": {
+       "min": 34,
+       "max": 34
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Compare musical styles by identifying musical differences of various forms and genres.",
+       "Interpret and formulate fundamentals of music theory.",
+       "Distinguish the social and cultural relevance of music by examining historical and cultural contributions.",
+       "Demonstrate basic technical proficiency through performance of playing a musical instrument or lyrical singing."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "MUS 101",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 101L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 102",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 102L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 201",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 201L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Applied Music",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 1,
+        "max": 1
+       },
+       "courses": [
+        {
+         "code": "MUS 141X2",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 241X2",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "Large Ensemble",
+       "rule": "choose_units",
+       "minimum": 4,
+       "option_group": null,
+       "stated": {
+        "min": 4,
+        "max": 4
+       },
+       "courses": [
+        {
+         "code": "MUS 150X4",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MUS 152X4",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MUS 153X4",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 154X4",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 156X4",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 158X4",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 162X4",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 166X4",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 167X4",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 168X4",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 170X2",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 171X2",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 180X4",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List A",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 4
+       },
+       "courses": [
+        {
+         "code": "MUS 100",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "MUS 100H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 121",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "MUS 121H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 122",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "MUS 122H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 133",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 134",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 135",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 202",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 202L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 29,
+     "listed": 29
+    },
+    "extracted_run": "38748858322"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 29,
+     "listed": 29,
+     "gaps": [
+      "total_differs"
+     ],
+     "confidence": {
+      "unit_arithmetic": 50,
+      "course_list_match": 100,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 6
+  }
+ ],
+ "live_run_proof": null,
+ "shared_pages": {},
+ "representation": "checks.gaps and checks.confidence added as the load reads the filed score (a passing row: checks.arithmetic to equal); checks.coverage, invented and the record unchanged",
+ "claim_check_reads": "Today's capture (sources.json): every course an entry names among the codes it found, and a course an entry says the printed total leaves out on neither it nor the state's list. A note's quoted figures are the reader's words, never re-read here.",
+ "follow_verdict": "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows (confirm_matches); the apply aborts, writing nothing, unless the count is 0.",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'San Bernardino Valley College', '12197', 38748858322, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"CDEV C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"CDEV C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 111\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 113\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 114\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 115\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 126\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 127\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 138\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 270\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 133\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 134\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 136\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 137\",\"units\":3,\"units_max\":null}],\"minimum\":6,\"name\":\"Creative Curriculum Specialization\",\"option_group\":\"Specialization\",\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 109\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 127\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Trauma Informed Care and Guidance Specialization\",\"option_group\":\"Specialization\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 185\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 186\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Infant/Toddler Specialization\",\"option_group\":\"Specialization\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 160\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 061\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"School-Age Specialization\",\"option_group\":\"Specialization\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 109\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 244\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 245\",\"units\":3,\"units_max\":null}],\"minimum\":6,\"name\":\"Special Needs Specialization\",\"option_group\":\"Specialization\",\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 205\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Experience Working with Children\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARTH 103\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MUS 100H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MUS 100\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"General Education - Arts and Humanities: (1-2 courses)\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSYC C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"General Education - Social Sciences (1-2 courses)\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 110\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ECON 208\",\"units\":null},{\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":null},{\"catalog_addition\":false,\"code\":\"STAT C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"PSYC 105\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"General Education - Math or Science (1 course)\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"COMM C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"General Education - English or Oral Communications (1 course)\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":49,\"min\":49},\"electives_fill_degree\":false,\"ge_pattern\":\"Valley College GE requirements\",\"ge_units\":{\"max\":16,\"min\":16},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Develop an integrated personal philosophy into classroom practices that reflects an understanding of typical child development, health safety and nutrition, developmentally, culturally and linguistically appropriate practices, ethical and professional practices and high quality standards.\",\"Use the observation, planning and implementation cycle to create, implement and evaluate environments, individualized curriculum and activities that support developmentally, culturally and linguistically appropriate, inclusive, play and learning for children.\",\"Develop strategies to respect the diversity of children and families and then empower families, and use resources that promote supportive relationships and partnerships between programs, teachers, families and their communities.\",\"Analyze and apply effective positive guidance and interaction strategies that support young children''s learning, self-confidence and identity.\",\"Develop a specialization in Child Development using 6 units of a content area in a specific area.\",\"Identify and analyze the stages of adult development and learning, and implement strategies to mentor adults who are learning to work with children.\",\"Analyze, describe and use inclusive, equitable, antibias and antiracist teaching practices and family interactions for working with children and families.\"],\"section_heading\":\"Child Development - Master Teacher Certificate of Achievement\",\"total_units\":{\"max\":37,\"min\":37}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":38,\"placed\":38}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":38,\"placed\":38}'::jsonb),\n  (2, 'San Bernardino Valley College', '22771', 38748858322, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HMDT 064\",\"units\":null}],\"catalog_addition\":false,\"code\":\"AUTO 064\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 075\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 075L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 077\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 077L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 084\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 084L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 090\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 090L\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses:\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TECALC 087\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Complete the following or place into a transfer-level MATH course:\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":4,\"min\":0}}],\"program\":{\"careers\":[\"Transmission technicians\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Identify auto shop safety practices.\",\"Explain the utilization of automotive tools.\",\"Summarize the theory and concepts of automotive powertrain and electrical systems.\",\"Practice auto shop safety.\",\"Apply the proper use of hand tools used in automotive powertrain and electrical systems.\",\"Perform the service and repairs of automotive powertrain and electrical systems.\"],\"section_heading\":\"Automatic and Manual Transmission Certificate of Achievement\",\"total_units\":{\"max\":24,\"min\":20}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":11,\"placed\":11}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"waived_course_counted\"],\"invented\":true,\"listed\":11,\"placed\":11}'::jsonb),\n  (3, 'San Bernardino Valley College', '22776', 38748858322, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 050\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 050L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 052\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 052L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 056\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 062\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 062L\",\"units\":1,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HMDT 064\",\"units\":null}],\"catalog_addition\":false,\"code\":\"AUTO 064\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 065\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 075\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 075L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 077\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 077L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 084\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 084L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 090\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 090L\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses:\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TECALC 087\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Complete the following or place into a transfer-level MATH course:\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":4,\"min\":0}}],\"program\":{\"careers\":[\"automotive technicians\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Identify auto shop safety practices.\",\"Explain the utilization of automotive system tools.\",\"Summarize the theory and concepts of the automotive systems.\",\"Practice auto shop safety.\",\"Apply the proper use of hand tools used on the automotive systems.\",\"Perform the service and repair of automotive systems.\"],\"section_heading\":\"Automotive Technician Certificate of Achievement\",\"total_units\":{\"max\":44,\"min\":40}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":19,\"placed\":19}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"waived_course_counted\"],\"invented\":true,\"listed\":19,\"placed\":19}'::jsonb),\n  (4, 'San Bernardino Valley College', '22820', 38748858322, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARTH C1100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 144\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 145\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 148\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 149\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 161\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 186\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 280\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ARTH C1200H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ARTH C1200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARTH 105\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARTH 107\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARTH 108\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"One Art History Course from the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ART 120\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ART 121\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ART 124A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ART 126A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ART 132A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ART 185\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BUSAD 100\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Recommended Courses\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"graphic designers\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Integrate design skills into their aesthetic sensibility.\",\"Describe how art history impacts design solutions.\",\"Use basic concepts, tools, and techniques of digital media to produce art works concept to finished product.\",\"Apply technical and design standards for digital media.\",\"Assemble a portfolio that demonstrates preparation for work as an entry-level production artist or graphic designer.\"],\"section_heading\":\"Graphic Design Certificate of Achievement\",\"total_units\":{\"max\":43,\"min\":43}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb),\n  (5, 'San Bernardino Valley College', '32309', 44481529632, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLS C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"POLS C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"POLS 110H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"POLS 110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 140\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"POLS 141H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"POLS 141\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses:\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 170\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 173\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"POLS 138H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"POLS 138\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLS 139H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"POLS 139\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":null},{\"catalog_addition\":false,\"code\":\"STAT C1000H\",\"units\":null},{\"catalog_addition\":false,\"code\":\"PSYC 105\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ECON 208\",\"units\":4,\"units_max\":null}],\"minimum\":2,\"name\":\"List A - Two courses from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ANTH 102H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"ANTH 102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 135\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ECON C2001H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ECON C2001\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ECON C2002H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ECON C2002\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST C1001H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"HIST C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST C1002H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"HIST C1002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 137\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 150\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 170\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 171\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"POLS 138H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"POLS 138\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLS 139H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"POLS 139\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS 150\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 173\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSYC C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RELIG 135\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SOCI C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SOCI C1000\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List B - One course from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"law\",\"politics\",\"governmental service\",\"social science teaching\",\"journalism\"],\"degree_elective_units\":{\"max\":17,\"min\":16},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate a comprehensive understanding of the domestic governmental institutions and political practices of the United States – at the national, state, and local levels – including their Constitutional bases; the special functions of the legislative, executive, and judicial branches and their associated bureaucratic and regulatory agencies; and the activities of leading participants in the political process including organized special interest groups, political parties, and grass-roots activists.\",\"Demonstrate a keen awareness of the world beyond our national borders and know the principal players in world politics--state actors (countries) and non-state actors such as international governmental  organizations (IGOs) and international non-governmental organizations (INGOs), and their respective role in creating world order; employ the principle of levels of analysis to explain a major development in world politics such as the outbreak of war or a complex foreign policy decision; understand the principal parameters around which to compare different political systems; have an understanding of how different historical and cultural forces end up creating different regimes--authoritarian regimes or democratic regimes; and have a general knowledge of the fundamental components of political economy—public goods, taxation, regulations, trade policies, employment, and money supply.\",\"Demonstrate an understanding of the practical skills needed for employment, or other participation, in governmental and political contexts.\"],\"section_heading\":\"Political Science Associate in Arts for Transfer Degree\",\"total_units\":{\"max\":19,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":30,\"placed\":30}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":30,\"placed\":30}'::jsonb),\n  (6, 'San Bernardino Valley College', '35802', 38748858322, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 101L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 102L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 201\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 201L\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 141X2\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUS 241X2\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Applied Music\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":1,\"min\":1}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUS 150X4\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUS 152X4\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 153X4\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 154X4\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 156X4\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 158X4\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 162X4\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 166X4\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 167X4\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 168X4\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 170X2\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 171X2\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 180X4\",\"units\":1,\"units_max\":null}],\"minimum\":4,\"name\":\"Large Ensemble\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":4,\"min\":4}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MUS 100H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MUS 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MUS 121H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MUS 121\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MUS 122H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MUS 122\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 133\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 134\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 135\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 202\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 202L\",\"units\":1,\"units_max\":null}],\"minimum\":3,\"name\":\"List A\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":4,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":8,\"min\":7},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Compare musical styles by identifying musical differences of various forms and genres.\",\"Interpret and formulate fundamentals of music theory.\",\"Distinguish the social and cultural relevance of music by examining historical and cultural contributions.\",\"Demonstrate basic technical proficiency through performance of playing a musical instrument or lyrical singing.\"],\"section_heading\":\"Music Associate in Arts for Transfer Degree\",\"total_units\":{\"max\":22,\"min\":21}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":29,\"placed\":29}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":29,\"placed\":29}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "pre_read_md5": "with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) as (values\n  (1, 'San Bernardino Valley College', '12197', 38748858322, 'db0697c85207138959328b8a1ac954f7', '768b5ffa4426c74c74cd6406935caf7a', '83dce534cfff59b1e0b9d91c6365de39'),\n  (2, 'San Bernardino Valley College', '22771', 38748858322, 'a19db2a459a99e09609e87ea83ac0fc1', '025f5967e09072e40425565d0b8c2cce', '0e79276ee68109f4db154ef1a7357662'),\n  (3, 'San Bernardino Valley College', '22776', 38748858322, 'fe4a5cd500ebed84ab5df3ccfd7d3de9', 'd2b6fcfb6953124b2f0584dbf2bd644b', '4318a002e91dfe167bcd62fd70ff7ace'),\n  (4, 'San Bernardino Valley College', '22820', 38748858322, 'e02c647c940dc63805d45029741dd3bc', '3c81834a38a33a73170c8fc53655fda9', '5657e42ab79315df774562e8a865db1b'),\n  (5, 'San Bernardino Valley College', '32309', 44481529632, '3f1b048ff072e2f618c4d708b5721495', '39747decba62d1a4fc97e2e52cd92e81', '05522c0cfd07a2c6045c13a4a8bcb6fa'),\n  (6, 'San Bernardino Valley College', '35802', 38748858322, 'e9a8cff27889b59264750b3c2edf8989', '598b266c8caf0d08b3b919950ad632c6', '3067089624fe6b1cddc238e5051c7cc6'))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.record::text) = v.rec_md5),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.checks::text) = v.chk_md5),\n  'already_after', count(*) filter (where md5(r.checks::text) = v.after_md5),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'San Bernardino Valley College', '12197', 38748858322, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"CDEV C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"CDEV C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 111\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 113\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 114\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 115\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 126\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 127\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 138\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 270\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 133\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 134\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 136\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 137\",\"units\":3,\"units_max\":null}],\"minimum\":6,\"name\":\"Creative Curriculum Specialization\",\"option_group\":\"Specialization\",\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 109\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 127\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Trauma Informed Care and Guidance Specialization\",\"option_group\":\"Specialization\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 185\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 186\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Infant/Toddler Specialization\",\"option_group\":\"Specialization\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 160\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 061\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"School-Age Specialization\",\"option_group\":\"Specialization\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 109\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 244\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 245\",\"units\":3,\"units_max\":null}],\"minimum\":6,\"name\":\"Special Needs Specialization\",\"option_group\":\"Specialization\",\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 205\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Experience Working with Children\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARTH 103\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MUS 100H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MUS 100\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"General Education - Arts and Humanities: (1-2 courses)\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSYC C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"General Education - Social Sciences (1-2 courses)\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 110\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ECON 208\",\"units\":null},{\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":null},{\"catalog_addition\":false,\"code\":\"STAT C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"PSYC 105\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"General Education - Math or Science (1 course)\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"COMM C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"General Education - English or Oral Communications (1 course)\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":49,\"min\":49},\"electives_fill_degree\":false,\"ge_pattern\":\"Valley College GE requirements\",\"ge_units\":{\"max\":16,\"min\":16},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Develop an integrated personal philosophy into classroom practices that reflects an understanding of typical child development, health safety and nutrition, developmentally, culturally and linguistically appropriate practices, ethical and professional practices and high quality standards.\",\"Use the observation, planning and implementation cycle to create, implement and evaluate environments, individualized curriculum and activities that support developmentally, culturally and linguistically appropriate, inclusive, play and learning for children.\",\"Develop strategies to respect the diversity of children and families and then empower families, and use resources that promote supportive relationships and partnerships between programs, teachers, families and their communities.\",\"Analyze and apply effective positive guidance and interaction strategies that support young children''s learning, self-confidence and identity.\",\"Develop a specialization in Child Development using 6 units of a content area in a specific area.\",\"Identify and analyze the stages of adult development and learning, and implement strategies to mentor adults who are learning to work with children.\",\"Analyze, describe and use inclusive, equitable, antibias and antiracist teaching practices and family interactions for working with children and families.\"],\"section_heading\":\"Child Development - Master Teacher Certificate of Achievement\",\"total_units\":{\"max\":37,\"min\":37}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":38,\"placed\":38}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":38,\"placed\":38}'::jsonb),\n  (2, 'San Bernardino Valley College', '22771', 38748858322, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HMDT 064\",\"units\":null}],\"catalog_addition\":false,\"code\":\"AUTO 064\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 075\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 075L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 077\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 077L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 084\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 084L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 090\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 090L\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses:\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TECALC 087\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Complete the following or place into a transfer-level MATH course:\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":4,\"min\":0}}],\"program\":{\"careers\":[\"Transmission technicians\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Identify auto shop safety practices.\",\"Explain the utilization of automotive tools.\",\"Summarize the theory and concepts of automotive powertrain and electrical systems.\",\"Practice auto shop safety.\",\"Apply the proper use of hand tools used in automotive powertrain and electrical systems.\",\"Perform the service and repairs of automotive powertrain and electrical systems.\"],\"section_heading\":\"Automatic and Manual Transmission Certificate of Achievement\",\"total_units\":{\"max\":24,\"min\":20}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":11,\"placed\":11}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"waived_course_counted\"],\"invented\":true,\"listed\":11,\"placed\":11}'::jsonb),\n  (3, 'San Bernardino Valley College', '22776', 38748858322, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 050\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 050L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 052\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 052L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 056\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 062\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 062L\",\"units\":1,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HMDT 064\",\"units\":null}],\"catalog_addition\":false,\"code\":\"AUTO 064\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 065\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 075\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 075L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 077\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 077L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 084\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 084L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 090\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 090L\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses:\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TECALC 087\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Complete the following or place into a transfer-level MATH course:\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":4,\"min\":0}}],\"program\":{\"careers\":[\"automotive technicians\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Identify auto shop safety practices.\",\"Explain the utilization of automotive system tools.\",\"Summarize the theory and concepts of the automotive systems.\",\"Practice auto shop safety.\",\"Apply the proper use of hand tools used on the automotive systems.\",\"Perform the service and repair of automotive systems.\"],\"section_heading\":\"Automotive Technician Certificate of Achievement\",\"total_units\":{\"max\":44,\"min\":40}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":19,\"placed\":19}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"waived_course_counted\"],\"invented\":true,\"listed\":19,\"placed\":19}'::jsonb),\n  (4, 'San Bernardino Valley College', '22820', 38748858322, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARTH C1100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 144\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 145\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 148\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 149\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 161\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 186\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 280\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ARTH C1200H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ARTH C1200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARTH 105\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARTH 107\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARTH 108\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"One Art History Course from the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ART 120\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ART 121\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ART 124A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ART 126A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ART 132A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ART 185\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BUSAD 100\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Recommended Courses\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"graphic designers\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Integrate design skills into their aesthetic sensibility.\",\"Describe how art history impacts design solutions.\",\"Use basic concepts, tools, and techniques of digital media to produce art works concept to finished product.\",\"Apply technical and design standards for digital media.\",\"Assemble a portfolio that demonstrates preparation for work as an entry-level production artist or graphic designer.\"],\"section_heading\":\"Graphic Design Certificate of Achievement\",\"total_units\":{\"max\":43,\"min\":43}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb),\n  (5, 'San Bernardino Valley College', '32309', 44481529632, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLS C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"POLS C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"POLS 110H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"POLS 110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 140\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"POLS 141H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"POLS 141\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses:\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 170\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 173\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"POLS 138H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"POLS 138\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLS 139H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"POLS 139\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":null},{\"catalog_addition\":false,\"code\":\"STAT C1000H\",\"units\":null},{\"catalog_addition\":false,\"code\":\"PSYC 105\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ECON 208\",\"units\":4,\"units_max\":null}],\"minimum\":2,\"name\":\"List A - Two courses from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ANTH 102H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"ANTH 102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 135\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ECON C2001H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ECON C2001\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ECON C2002H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ECON C2002\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST C1001H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"HIST C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST C1002H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"HIST C1002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 137\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 150\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 170\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 171\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"POLS 138H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"POLS 138\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLS 139H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"POLS 139\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS 150\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 173\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSYC C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RELIG 135\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SOCI C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SOCI C1000\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List B - One course from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"law\",\"politics\",\"governmental service\",\"social science teaching\",\"journalism\"],\"degree_elective_units\":{\"max\":17,\"min\":16},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate a comprehensive understanding of the domestic governmental institutions and political practices of the United States – at the national, state, and local levels – including their Constitutional bases; the special functions of the legislative, executive, and judicial branches and their associated bureaucratic and regulatory agencies; and the activities of leading participants in the political process including organized special interest groups, political parties, and grass-roots activists.\",\"Demonstrate a keen awareness of the world beyond our national borders and know the principal players in world politics--state actors (countries) and non-state actors such as international governmental  organizations (IGOs) and international non-governmental organizations (INGOs), and their respective role in creating world order; employ the principle of levels of analysis to explain a major development in world politics such as the outbreak of war or a complex foreign policy decision; understand the principal parameters around which to compare different political systems; have an understanding of how different historical and cultural forces end up creating different regimes--authoritarian regimes or democratic regimes; and have a general knowledge of the fundamental components of political economy—public goods, taxation, regulations, trade policies, employment, and money supply.\",\"Demonstrate an understanding of the practical skills needed for employment, or other participation, in governmental and political contexts.\"],\"section_heading\":\"Political Science Associate in Arts for Transfer Degree\",\"total_units\":{\"max\":19,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":30,\"placed\":30}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":30,\"placed\":30}'::jsonb),\n  (6, 'San Bernardino Valley College', '35802', 38748858322, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 101L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 102L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 201\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 201L\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 141X2\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUS 241X2\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Applied Music\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":1,\"min\":1}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUS 150X4\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUS 152X4\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 153X4\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 154X4\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 156X4\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 158X4\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 162X4\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 166X4\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 167X4\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 168X4\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 170X2\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 171X2\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 180X4\",\"units\":1,\"units_max\":null}],\"minimum\":4,\"name\":\"Large Ensemble\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":4,\"min\":4}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MUS 100H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MUS 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MUS 121H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MUS 121\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MUS 122H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MUS 122\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 133\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 134\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 135\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 202\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 202L\",\"units\":1,\"units_max\":null}],\"minimum\":3,\"name\":\"List A\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":4,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":8,\"min\":7},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Compare musical styles by identifying musical differences of various forms and genres.\",\"Interpret and formulate fundamentals of music theory.\",\"Distinguish the social and cultural relevance of music by examining historical and cultural contributions.\",\"Demonstrate basic technical proficiency through performance of playing a musical instrument or lyrical singing.\"],\"section_heading\":\"Music Associate in Arts for Transfer Degree\",\"total_units\":{\"max\":22,\"min\":21}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":29,\"placed\":29}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":29,\"placed\":29}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\nf as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number\n        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true\n       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)),\ne(expect) as (values (6)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when f.n > 0\n            then ('s740c3 piles confirm guard: ' || f.n || ' rows hold a matching confirm verdict ' || f.keys::text)::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s740c3 piles guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, f;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'San Bernardino Valley College', '12197', 38748858322, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"CDEV C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"CDEV C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 111\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 113\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 114\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 115\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 126\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 127\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 138\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 270\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 133\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 134\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 136\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 137\",\"units\":3,\"units_max\":null}],\"minimum\":6,\"name\":\"Creative Curriculum Specialization\",\"option_group\":\"Specialization\",\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 109\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 127\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Trauma Informed Care and Guidance Specialization\",\"option_group\":\"Specialization\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 185\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 186\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Infant/Toddler Specialization\",\"option_group\":\"Specialization\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 160\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 061\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"School-Age Specialization\",\"option_group\":\"Specialization\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 109\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 244\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 245\",\"units\":3,\"units_max\":null}],\"minimum\":6,\"name\":\"Special Needs Specialization\",\"option_group\":\"Specialization\",\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 205\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Experience Working with Children\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARTH 103\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MUS 100H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MUS 100\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"General Education - Arts and Humanities: (1-2 courses)\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSYC C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"General Education - Social Sciences (1-2 courses)\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 110\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ECON 208\",\"units\":null},{\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":null},{\"catalog_addition\":false,\"code\":\"STAT C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"PSYC 105\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"General Education - Math or Science (1 course)\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"COMM C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"General Education - English or Oral Communications (1 course)\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":49,\"min\":49},\"electives_fill_degree\":false,\"ge_pattern\":\"Valley College GE requirements\",\"ge_units\":{\"max\":16,\"min\":16},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Develop an integrated personal philosophy into classroom practices that reflects an understanding of typical child development, health safety and nutrition, developmentally, culturally and linguistically appropriate practices, ethical and professional practices and high quality standards.\",\"Use the observation, planning and implementation cycle to create, implement and evaluate environments, individualized curriculum and activities that support developmentally, culturally and linguistically appropriate, inclusive, play and learning for children.\",\"Develop strategies to respect the diversity of children and families and then empower families, and use resources that promote supportive relationships and partnerships between programs, teachers, families and their communities.\",\"Analyze and apply effective positive guidance and interaction strategies that support young children''s learning, self-confidence and identity.\",\"Develop a specialization in Child Development using 6 units of a content area in a specific area.\",\"Identify and analyze the stages of adult development and learning, and implement strategies to mentor adults who are learning to work with children.\",\"Analyze, describe and use inclusive, equitable, antibias and antiracist teaching practices and family interactions for working with children and families.\"],\"section_heading\":\"Child Development - Master Teacher Certificate of Achievement\",\"total_units\":{\"max\":37,\"min\":37}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":38,\"placed\":38}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":38,\"placed\":38}'::jsonb),\n  (2, 'San Bernardino Valley College', '22771', 38748858322, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HMDT 064\",\"units\":null}],\"catalog_addition\":false,\"code\":\"AUTO 064\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 075\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 075L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 077\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 077L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 084\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 084L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 090\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 090L\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses:\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TECALC 087\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Complete the following or place into a transfer-level MATH course:\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":4,\"min\":0}}],\"program\":{\"careers\":[\"Transmission technicians\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Identify auto shop safety practices.\",\"Explain the utilization of automotive tools.\",\"Summarize the theory and concepts of automotive powertrain and electrical systems.\",\"Practice auto shop safety.\",\"Apply the proper use of hand tools used in automotive powertrain and electrical systems.\",\"Perform the service and repairs of automotive powertrain and electrical systems.\"],\"section_heading\":\"Automatic and Manual Transmission Certificate of Achievement\",\"total_units\":{\"max\":24,\"min\":20}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":11,\"placed\":11}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"waived_course_counted\"],\"invented\":true,\"listed\":11,\"placed\":11}'::jsonb),\n  (3, 'San Bernardino Valley College', '22776', 38748858322, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 050\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 050L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 052\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 052L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 056\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 062\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 062L\",\"units\":1,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HMDT 064\",\"units\":null}],\"catalog_addition\":false,\"code\":\"AUTO 064\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 065\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 075\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 075L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 077\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 077L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 084\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 084L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 090\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 090L\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses:\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TECALC 087\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Complete the following or place into a transfer-level MATH course:\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":4,\"min\":0}}],\"program\":{\"careers\":[\"automotive technicians\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Identify auto shop safety practices.\",\"Explain the utilization of automotive system tools.\",\"Summarize the theory and concepts of the automotive systems.\",\"Practice auto shop safety.\",\"Apply the proper use of hand tools used on the automotive systems.\",\"Perform the service and repair of automotive systems.\"],\"section_heading\":\"Automotive Technician Certificate of Achievement\",\"total_units\":{\"max\":44,\"min\":40}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":19,\"placed\":19}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"waived_course_counted\"],\"invented\":true,\"listed\":19,\"placed\":19}'::jsonb),\n  (4, 'San Bernardino Valley College', '22820', 38748858322, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARTH C1100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 144\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 145\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 148\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 149\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 161\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 186\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 280\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ARTH C1200H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ARTH C1200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARTH 105\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARTH 107\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARTH 108\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"One Art History Course from the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ART 120\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ART 121\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ART 124A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ART 126A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ART 132A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ART 185\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BUSAD 100\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Recommended Courses\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"graphic designers\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Integrate design skills into their aesthetic sensibility.\",\"Describe how art history impacts design solutions.\",\"Use basic concepts, tools, and techniques of digital media to produce art works concept to finished product.\",\"Apply technical and design standards for digital media.\",\"Assemble a portfolio that demonstrates preparation for work as an entry-level production artist or graphic designer.\"],\"section_heading\":\"Graphic Design Certificate of Achievement\",\"total_units\":{\"max\":43,\"min\":43}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb),\n  (5, 'San Bernardino Valley College', '32309', 44481529632, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLS C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"POLS C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"POLS 110H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"POLS 110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 140\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"POLS 141H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"POLS 141\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses:\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 170\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 173\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"POLS 138H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"POLS 138\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLS 139H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"POLS 139\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":null},{\"catalog_addition\":false,\"code\":\"STAT C1000H\",\"units\":null},{\"catalog_addition\":false,\"code\":\"PSYC 105\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ECON 208\",\"units\":4,\"units_max\":null}],\"minimum\":2,\"name\":\"List A - Two courses from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ANTH 102H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"ANTH 102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 135\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ECON C2001H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ECON C2001\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ECON C2002H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ECON C2002\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST C1001H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"HIST C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST C1002H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"HIST C1002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 137\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 150\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 170\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 171\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"POLS 138H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"POLS 138\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLS 139H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"POLS 139\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS 150\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 173\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSYC C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"RELIG 135\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SOCI C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SOCI C1000\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List B - One course from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"law\",\"politics\",\"governmental service\",\"social science teaching\",\"journalism\"],\"degree_elective_units\":{\"max\":17,\"min\":16},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate a comprehensive understanding of the domestic governmental institutions and political practices of the United States – at the national, state, and local levels – including their Constitutional bases; the special functions of the legislative, executive, and judicial branches and their associated bureaucratic and regulatory agencies; and the activities of leading participants in the political process including organized special interest groups, political parties, and grass-roots activists.\",\"Demonstrate a keen awareness of the world beyond our national borders and know the principal players in world politics--state actors (countries) and non-state actors such as international governmental  organizations (IGOs) and international non-governmental organizations (INGOs), and their respective role in creating world order; employ the principle of levels of analysis to explain a major development in world politics such as the outbreak of war or a complex foreign policy decision; understand the principal parameters around which to compare different political systems; have an understanding of how different historical and cultural forces end up creating different regimes--authoritarian regimes or democratic regimes; and have a general knowledge of the fundamental components of political economy—public goods, taxation, regulations, trade policies, employment, and money supply.\",\"Demonstrate an understanding of the practical skills needed for employment, or other participation, in governmental and political contexts.\"],\"section_heading\":\"Political Science Associate in Arts for Transfer Degree\",\"total_units\":{\"max\":19,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":30,\"placed\":30}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":30,\"placed\":30}'::jsonb),\n  (6, 'San Bernardino Valley College', '35802', 38748858322, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 101L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 102L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 201\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 201L\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 141X2\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUS 241X2\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Applied Music\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":1,\"min\":1}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUS 150X4\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUS 152X4\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 153X4\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 154X4\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 156X4\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 158X4\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 162X4\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 166X4\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 167X4\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 168X4\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 170X2\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 171X2\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 180X4\",\"units\":1,\"units_max\":null}],\"minimum\":4,\"name\":\"Large Ensemble\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":4,\"min\":4}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MUS 100H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MUS 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MUS 121H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MUS 121\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MUS 122H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MUS 122\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 133\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 134\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 135\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 202\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 202L\",\"units\":1,\"units_max\":null}],\"minimum\":3,\"name\":\"List A\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":4,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":8,\"min\":7},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Compare musical styles by identifying musical differences of various forms and genres.\",\"Interpret and formulate fundamentals of music theory.\",\"Distinguish the social and cultural relevance of music by examining historical and cultural contributions.\",\"Demonstrate basic technical proficiency through performance of playing a musical instrument or lyrical singing.\"],\"section_heading\":\"Music Associate in Arts for Transfer Degree\",\"total_units\":{\"max\":22,\"min\":21}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":29,\"placed\":29}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":29,\"placed\":29}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (6)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s740c3 piles rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;"
+}
