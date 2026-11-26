@@ -1331,31 +1331,40 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.545,
+  "coverage": 1.0,
   "codes_found": [
+   "BI23",
    "PE43",
    "PE45",
    "PE52",
    "PE91",
    "PE96",
-   "PE98"
+   "PE98",
+   "PH2A",
+   "PH4A",
+   "PSYCC1000",
+   "SOCIC1000"
   ],
   "source": {
-   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=158",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=107",
    "title": "2026-2027 Catalog",
    "h1": "2026-2027 Catalog",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    158,
-    159,
-    160
+    107
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 107,
+    "share": 1.0
+   },
+   "text_sha": "d0813b7aafd9b0c4"
   },
   "listed": 11,
-  "text_chars": 14980
+  "text_chars": 4083
  },
  {
   "control_number": "43192",
