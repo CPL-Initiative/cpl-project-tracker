@@ -43,7 +43,11 @@ with open(os.path.join(B.ROOT, "kb", "status", "harvest_gap_census.json"), encod
     import json
     census = json.load(fh)
 lever = next(e for e in census["levers"] if e["lever"] == "reconcile_steps" and e["scope"] == M.COLLEGE)
-check(sorted(lever["members"]) == sorted(M.KEYS), "the keys are the census's reconcile_steps members at Norco")
+# The run took its keys from the census's reconcile_steps members at Norco. Once its piles land, the census rebuilds and
+# the keys the run resolved into rows (ROWS) leave the lever (S736, 2026-11-26: 30107 and 30109 left after #3892 and
+# the census run 45870806616), so the census may only shrink by those keys and never gain one.
+check(set(lever["members"]) <= set(M.KEYS) and set(M.KEYS) - set(lever["members"]) <= set(ROWS),
+      "the census's reconcile_steps members at Norco are the run's keys, less the ones it resolved")
 
 # ── the pages' own words (college-page-read run 45835049303, line for line) ─────────────────────────────────
 PHILOSOPHY = """Program Requirements
