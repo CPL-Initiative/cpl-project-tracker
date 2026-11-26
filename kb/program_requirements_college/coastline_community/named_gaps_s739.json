@@ -1,0 +1,47 @@
+{
+ "_readme": "S739 (lever), the gap census's reader_page_assignment lever (census of 2026-11-26 01:19Z): 5 programs of Coastline Community College whose filed record places none of the state's listed courses and for which the 2026-27 catalog prints no page of their own. Free read 45774426242 loaded the catalog's 252 listed pages again (no model call); its capture preview is the source of each note. These are filed as named gaps and are never sent to a paid read. Their filed records stay as filed (the load skips a record that places none). No Supabase write. They are the college's to settle in COCI. Not a named gap: Communications Studies 2.0 A.A.-T. 43057 has its own page (communication-studies-2-aat/, 9 of its 9 listed courses), which the reader hands to the legacy Communication Studies A.A.-T. 33014 because the page prints 'Communication Studies 2.0' where the state's title reads 'Communications Studies 2.0'; it waits on a reader change. Introduction to Careers in Esports 40476 is read from its own page (paid read with only=).",
+ "college": "Coastline Community College",
+ "written": "2026-11-26T07:43:12Z",
+ "capture": "45774426242",
+ "page_reads": [],
+ "reasons": {
+  "credit_not_in_catalog": "A credit program the 2026-27 catalog prints under no page of its own: no page the capture read names its title with its award, and its pathway's page lists no such award."
+ },
+ "programs": [
+  {
+   "control_number": "03724",
+   "title": "Supervision",
+   "award": "A.A. Degree",
+   "reason": "credit_not_in_catalog",
+   "note": "The capture's page checks found no page that names the program ('no page read names the program'). The filed record (run 38445051060) was read from the Business (Applied) A.S. page, whose own note names that degree's control number 46623, and placed none of the 9 listed courses."
+  },
+  {
+   "control_number": "20353",
+   "title": "Supervision",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "reason": "credit_not_in_catalog",
+   "note": "The capture's page checks found no page that names the program ('no page read names the program'). The filed record (run 38445051060) was read from the Business (Applied) A.S. page and placed none of the 9 listed courses."
+  },
+  {
+   "control_number": "18054",
+   "title": "Physical Education and Health",
+   "award": "A.A. Degree",
+   "reason": "credit_not_in_catalog",
+   "note": "The capture's page checks found no page that names the program ('no page read names the program'). The filed record (run 38445051060) was read from the local general education page, where five of its 6 listed courses print in Area 7E, and placed none."
+  },
+  {
+   "control_number": "11459",
+   "title": "Entrepreneurship & Small Business Management",
+   "award": "A.A. Degree",
+   "reason": "credit_not_in_catalog",
+   "note": "The one page that names it is the Business pathway's landing page, which lists the pathway's awards and is claimed by several programs (page_claimed). The catalog's listing holds the certificate's own page (20352, entrepreneurship-small-business-management-certificate-achievement/) and none for the A.A. The filed record (run 38445051060) was read from the Supply Chain Management A.S. page and placed none of the 5 listed courses."
+  },
+  {
+   "control_number": "18216",
+   "title": "French",
+   "award": "A.A. Degree",
+   "reason": "credit_not_in_catalog",
+   "note": "Its page is the French pathway's landing page (pathways/language-literature/french/), unchanged since the filed read (run 38445051060), whose note says the page's Degrees and Certificates tab shows 'No results found.' and its Courses tab describes FREN C180 and C185 alone; it placed none of the 4 listed courses."
+  }
+ ]
+}

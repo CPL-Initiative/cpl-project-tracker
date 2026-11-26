@@ -1,0 +1,21 @@
+{
+ "_readme": "S739 (the lever), plan s739l: the two rows pinned (college, control number, the gap, the filed run and the page the record was read from), read by tests/program_piles_s739_lever_test.py in place of the live census.",
+ "receipt": "kb/receipts/program_requirement_records_piles_s739_lever_2026-11-26_s739l.json",
+ "rows": [
+  {
+   "college": "Cosumnes River College",
+   "control_number": "33542",
+   "moves_to": "option_lists_read_apart",
+   "extracted_run": "39047009824",
+   "page": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=593"
+  },
+  {
+   "college": "East Los Angeles College",
+   "control_number": "33013",
+   "moves_to": "noted_figures_differ",
+   "extracted_run": 43357061643,
+   "page": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=91"
+  }
+ ],
+ "held": []
+}

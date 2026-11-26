@@ -46,24 +46,25 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 21,
+   "placed": 22,
    "listed": 22,
-   "share": 0.955,
-   "missing": [
-    "ENGWR488"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ENGL488",
+     "listed": "ENGWR488",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "ENGL488"
-   ],
-   "flagged": [
-    "ENGL488"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -311,5 +312,6 @@
    "The prerequisite courses (BIOL 430/431/440, PSYC, ENGL, COMM, ANTH/ETHNS/SOC) are listed as degree requirements and also as enrollment prerequisites."
   ]
  },
- "extracted_run": "39047070975"
+ "extracted_run": 45771862247,
+ "read_run": "39047070975"
 }

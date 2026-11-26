@@ -1,4 +1,4 @@
-{"schema":1,"college":"Clovis Community College","slug":"clovis_community","basis":"live","census_at":"2026-11-26 01:19Z","correction_rules":true,"programs":[
+{"schema":1,"college":"Clovis Community College","slug":"clovis_community","basis":"live","census_at":"2026-11-26 06:54Z","correction_rules":true,"programs":[
 {"cn":"33506","title":"Philosophy","award":"A.A- T Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=177"},
 {"cn":"45219","title":"California General Education Transfer Curriculum (Cal-GETC)","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"37034","title":"California State University General Education-Breadth","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
