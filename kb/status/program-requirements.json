@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-25T15:10:00Z",
-  "session": 731,
-  "moniker": "SkyFrigatebird",
+  "written_at": "2026-11-26T11:24:12Z",
+  "session": 739,
+  "moniker": "SkyOystercatcher",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_732_handoff.md",
+  "handoff": "docs/session_740_handoff.md",
   "next_step": {
     "title": "Build the display page carrying tonight's records, then the census",
-    "text": "Build the display page carrying tonight's 83 records, apply it at Glendale first and then whole, and run the census on main. Then lane 1's remainders, the fix Saddleback's repeat steps need before its next read, the next wording-rule piles and the night's one follow-up."
+    "text": "Build the display page carrying S739's records, apply it at Glendale first and then whole, and run the census on main. Then lane 1's reader and scorer changes (a units twin of the within-range kind first, then the El Camino, Cuyamaca, Modesto and Cosumnes River changes the night found), the long fresh captures at San Diego City and Santa Ana, lane 2's rereads and Cabrillo's 13, and the night's follow-up with the Porterville guard first."
   },
   "calls": [
     {
@@ -337,6 +337,38 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-26T06:37:00Z",
+      "text": "The display page now carries every filed record: 18,727 programs at build 3a699eddc8c9, after a first apply at Glendale. The four programs that had no display now have one."
+    },
+    {
+      "at": "2026-11-26T06:55:00Z",
+      "text": "The census on main after the display build: 15,578 of 20,282 active programs pass, 4,175 have no passing record."
+    },
+    {
+      "at": "2026-11-26T08:07:00Z",
+      "text": "Folsom Lake, East Los Angeles and Coastline: 3 programs read from their own catalog pages and loaded, all passing. Cosumnes River 33542 and East Los Angeles 33013 collected with their gaps named. Sacramento City read again with no verdict moved."
+    },
+    {
+      "at": "2026-11-26T09:15:00Z",
+      "text": "El Camino and Modesto Junior: 5 programs read again from filed text and passing (El Camino 02513, 02515, 02517; Modesto 06683, 42664), at no paid read."
+    },
+    {
+      "at": "2026-11-26T09:23:00Z",
+      "text": "Cheap piles collected with their gaps named or passing on a rename: American River 5, Shasta 12, College of the Canyons 13, Santa Barbara City 3, Los Angeles Trade-Technical 6, Saddleback 2, Long Beach City 1 and Clovis 2."
+    },
+    {
+      "at": "2026-11-26T09:54:00Z",
+      "text": "Cosumnes River 11 and Orange Coast 4 collected; four Cosumnes River programs pass on a rename to the state list code."
+    },
+    {
+      "at": "2026-11-26T11:11:00Z",
+      "text": "Palo Verde 5, Gavilan 5 and Ventura 7 collected with their gaps named. Orange Coast 41373 went back to its earlier record, since its units sum sits inside the printed range."
+    },
+    {
+      "at": "2026-11-26T11:14:00Z",
+      "text": "S739 so far: 99 records collected tonight, 22 of them read and loaded and 77 by guarded plans, plus 30 named gaps for programs with no record. Two waves of colleges account for 14 of the 22, 11 of them passing."
+    },
     {
       "at": "2026-11-25T11:23:00Z",
       "text": "The display page now carries every filed record: 18,723 programs at build 2c8507c058b1, after a first apply at Glendale."
@@ -1108,6 +1140,12 @@
       "active": 20282,
       "complete": 15577,
       "colleges": 118
+    },
+    {
+      "day": "2026-11-26",
+      "active": 20282,
+      "complete": 15610,
+      "colleges": 118
     }
   ],
   "next_run": {
@@ -1116,8 +1154,8 @@
     "at": "2026-11-25T16:12:00Z"
   },
   "harvest": {
-    "day": "2026-11-25",
-    "gaps": 3371,
+    "day": "2026-11-26",
+    "gaps": 3391,
     "parts": {
       "links": {
         "catalog": [
@@ -1138,7 +1176,7 @@
         20282
       ],
       "coci": [
-        17240,
+        17257,
         20282
       ],
       "outcomes": {
@@ -1147,12 +1185,12 @@
           88736
         ],
         "plo": [
-          17240,
+          17257,
           20282
         ]
       },
       "careers": [
-        16262,
+        16279,
         20282
       ]
     }
