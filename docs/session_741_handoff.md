@@ -49,7 +49,7 @@ log, kept whole.
 2a. **Sam's work order (2026-11-20):** collection comes first, data waves before fixes, and a fix goes ahead of the next
    wave only when it blocks it or would file wrong rows (`r-collection-first-sam-2026-11-20`). Collection serves the
    M-IDs, so its fixes are ranked by the M-ID cards they unblock (`r-collect-for-mids-work-order-sam-2026-11-20`).
-3. **Merge order at sign-off:** #3886 (`0017cd97`, the display build) has merged; the land #3892 (`claude/s740-land`, all five working branches as one PR off `main`): <land state at sign-off>. This checkpoint, #3885, merges at sign-off, with one update from `main` right before its merge. Open PRs at sign-off: #3885 and dependabot's #3383, which waits.
+3. **Merge order at sign-off:** #3886 (`0017cd97`, the display build) has merged; the land #3892 (`claude/s740-land`, all five working branches as one PR off `main`): merged at 17:48Z as `7f00b827`, confirmed on `origin/main`, without a final update from `main`, which had moved only by Sam's lightning-round PR (`e965ebb1`), touching none of the land's files (**DECIDED** `d-land-merged-without-main-update-s740`, as `d-display-merged-without-main-update-s731`); `test` green on `c957bda9` (run 45868426477). This checkpoint, #3885, merges at sign-off, with one update from `main` right before its merge. Open PRs at sign-off: #3885 and dependabot's #3383, which waits.
 
 ## The start (13:12Z firing, 2026-11-26)
 
@@ -278,7 +278,7 @@ Ventura charged nothing). Headline and census: <closing census>.
   45829454750 (242 rows), then the whole build 45830104263; the 16 rows with no display now carry one, the same 32 stay at
   older builds, none without a display. The census on `main` after it, 45833723371 (14:03Z): 15,610 of 20,282 pass,
   4,082 have no passing record, 590 collected with a named gap.
-- **The land #3892 (`claude/s740-land`, <land merge sha>)**, all five working branches as one PR off `main`:
+- **The land #3892 (`claude/s740-land`, `7f00b827`, merged 17:48Z)**, all five working branches as one PR off `main`:
   `reads`, `reconcile`, `piles`, `claude/s740-cerritos` and `claude/s740-reads-cm`.
 
 **Live (each applied or loaded before the land).**
@@ -302,7 +302,7 @@ Ventura charged nothing). Headline and census: <closing census>.
 **Pending at the checkpoint's write (16:40Z; the conductor fills the outcome in the places marked).**
 - Santa Ana 12242's long read (run 45842667274, dispatched 14:48Z) and its load: read 45842667274 filed 12242 passing at 16:54Z (38.5 against the printed 38.5, $0.11); load 45863040323 inserted it alone (receipt `b6455ebe`).
 - Orange Coast 03954, 08664 and 31217's paid read 45858495107 (16:24Z) and its reread: the read filed at 17:04Z ($0.26): 03954 and 31217 pass, 08664 reads unequal; reread (receipt `ddbf12f5`) posted the three at 45858495107, all three failing and unchecked before, so 2 records collected.
-- The land #3892: <land state at sign-off>. The closing census: <closing census>.
+- The land #3892: merged at 17:48Z as `7f00b827`, confirmed on `origin/main`, without a final update from `main`, which had moved only by Sam's lightning-round PR (`e965ebb1`), touching none of the land's files (**DECIDED** `d-land-merged-without-main-update-s740`, as `d-display-merged-without-main-update-s731`); `test` green on `c957bda9` (run 45868426477). The closing census: <closing census>.
 - The display build carrying S740's records, once no apply is in flight, and the Spend line's builders.
 
 ## Open work, from the lanes' NEXT lines
@@ -437,7 +437,7 @@ after about $190; the repo's rates read $180.09 at 16:24Z.
 | #3886 (`claude/s740-display`) | merged `0017cd97` (13:54Z); display build `9e28519af71f` live | none |
 | `claude/s740-reads`, `claude/s740-reads-cm`, `claude/s740-reads-sdcity` | s740r1 to s740r4 applied; Copper Mountain's reads and reread live; San Diego City's read refused at the price step | land #3892 (the first two); the third, nothing to land |
 | `claude/s740-reconcile`, `claude/s740-piles`, `claude/s740-cerritos` | s740a to s740j, s740c1 to s740c6 applied; Cerritos live | land #3892 |
-| #3892 (`claude/s740-land`) | all five branches as one PR off `main` | <land state at sign-off> |
+| #3892 (`claude/s740-land`) | all five branches as one PR off `main` | merged at 17:48Z as `7f00b827`, confirmed on `origin/main`, without a final update from `main`, which had moved only by Sam's lightning-round PR (`e965ebb1`), touching none of the land's files (**DECIDED** `d-land-merged-without-main-update-s740`, as `d-display-merged-without-main-update-s731`); `test` green on `c957bda9` (run 45868426477) |
 | Harvest gap census on `main` | 45816008322 (12:06Z): 15,610 pass; after the display build 45833723371 (14:03Z): 15,610 pass, 4,082 without, 590 with a named gap | the closing census: <closing census> |
 | #3383 | dependabot's | waits |
 

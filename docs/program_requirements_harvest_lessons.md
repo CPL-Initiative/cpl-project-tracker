@@ -682,7 +682,7 @@ display build (45833723371, 14:03Z): of 20,282 active programs, 15,610 pass, 4,0
 collected with a named gap. 79 records were collected by 16:30Z; the closing census and count: handoff 741.
 
 **Merged.** #3886 (`0017cd97`, 13:54Z), the display build `9e28519af71f` (18,743 rows; the gate at Glendale 45829454750,
-then the whole build 45830104263). The land `claude/s740-land` (#3892, <land merge sha>) carries `reads`,
+then the whole build 45830104263). The land `claude/s740-land` (#3892, `7f00b827`) carries `reads`,
 `reconcile`, `piles`, the Cerritos branch and the Copper Mountain read branch as one PR.
 
 **What ran.**
