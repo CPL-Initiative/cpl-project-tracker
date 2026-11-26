@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-11-25
+updated: 2026-11-26
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -72,8 +72,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 95 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 112 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 77 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 689 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1584** | |
+| Session handoffs | 690 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1585** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -124,6 +124,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-26 (S737 SkyWhimbrel, light checkpoint): #3870 (the Honors step-4 redraw; `--plan` refuses once step 2 applied; 128 mints), #3873 (suite durations re-measured, six lint shards: the check 10.3 to 7.7 min), #3874 open (the docs-only lint skip for 35 traced steps). Handoff 738.
 - 2026-11-25 (S735 SkyAlvord, a side session beside the main queue, checkpoint with the lanes moved): Adult Education CPL Starting Points, the CAEP noncredit inventory read against MAP (#3861 merged: Library record, memory rows and the Pages copy; #3864 open: filter, search, 25 more credentials, the record's url on Pages; the public summary migration was refused by the public-field guard and withdrawn). Library findings: the check run checks a piece only at its own Pages address; Publish now's scope; #3865 drafts the prefilled summary and the sidebar height. Library lessons' S511 to S518 and four lane paragraphs moved to archive 3. Handoff 735 (SkyBrant).
 - 2026-11-25 (the funding page side job beside S733, light checkpoint): #3844 and #3849 (Simple view switch visible again, row caret, # and District off in Simple view, As of / Ver. hidden from readers not signed in, the college landing page in a bottom bar), #3845 (the NC lead from MAP's College Contacts report: 27 colleges meet it, was 2), #3852 (How to maximize funding). Funding lessons' S439 to S466 sections moved to archive 5. Side section in handoff 734.
 - 2026-11-25 (S733 SkyGodwit, second checkpoint): #3851 (Local subjects course-move sidebar), #3853 (the stray-code re-mint applied: 60 retired, 20 aliased, 35 held), #3857 (seeder keeps assigned codes), #3858, #3859 (recommender 0 to 100). Handoff 734 refreshed.

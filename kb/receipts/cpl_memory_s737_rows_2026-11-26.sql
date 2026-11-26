@@ -1,0 +1,9 @@
+-- Receipt: cpl_memory rows written by SkyWhimbrel (S737) at its checkpoint, 2026-11-26, through the Supabase MCP.
+-- INSERT ... ON CONFLICT (slug) DO NOTHING; all four returned, each status 'proposed' and logged 'create' in
+-- cpl_memory_log (actor 'SkyWhimbrel (S737)').
+-- ROLLBACK: delete from public.cpl_memory_log where actor = 'SkyWhimbrel (S737)';
+--           delete from public.cpl_memory where author = 'SkyWhimbrel (S737)' and slug in (
+--   'd-ci-six-lint-shards-s737','p-trace-reads-not-grep-paths-s737','d-honors-redraw-own-folder-s737',
+--   'f-commons-order-mock-met-s737');
+-- Slugs written: d-ci-six-lint-shards-s737 (decision), p-trace-reads-not-grep-paths-s737 (pitfall),
+-- d-honors-redraw-own-folder-s737 (decision), f-commons-order-mock-met-s737 (fact).

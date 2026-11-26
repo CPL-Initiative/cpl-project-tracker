@@ -761,3 +761,8 @@ List writes), so a ruling moves Needs you, the Courses and M-IDs card and Ruling
 
 **The checkpoint (SkyDunlin, S730):** #3824 (squash `d012b203`) and #3826 (squash `d077c4ff`, `npm run a11y` on the fold:
 the h2 above the folded card, 24px card titles, quick-link bullets on their first line). Handoff 731.
+
+**S737 (SkyWhimbrel): the Honors redraw, and a mock read against the page.** A dry-run tool whose step already applied
+must refuse to redraw that step's migration: `_honors_of_s653_dryrun.py --plan` rewrote the applied rows SQL until
+#3870 (now `--redraw`, its own folder, diffed against the applied plan). Before building from a dated mock, read the
+page as it stands: the 2026-11-20 mock's NEXT was met by the 11-21 to 11-23 rebuild. Handoff 738.

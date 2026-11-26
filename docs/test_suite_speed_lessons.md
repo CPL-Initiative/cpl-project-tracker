@@ -106,3 +106,25 @@ files still print no readable check count and are unprotected by the ledger.
 - **CPU spinners did not reproduce it; a delayed step did.** Six busy loops on four cores left it green. Slowing the one async call the check waits on reproduced CI's exact pair of failures, which is the cheaper and surer test.
 - **Adding a test file reshuffles every shard.** A file's neighbors change with any PR that adds or removes a test, so a load-sensitive check surfaces on an unrelated PR. Read the named file before blaming the diff.
 
+
+## 2026-11-26 — Session 737 (SkyWhimbrel): the shards rebalanced, six lint shards, the docs-only lint skip
+
+- **A durations table rots in a week, and rot costs the critical path.** `tests/durations.json` knew 597 of 714
+  files; the 117 it did not know weighed the median (1.6 s), and `csm_workspace.test.js` read 84 s against 459 s on
+  CI. Re-measured (`npm run test:durations`), the balanced split holds 778 s a shard where the old one gave 613 to
+  1,043 s; the slowest suite shard went 9.2 to 7.7 min (#3873).
+- **Rebalancing four lint shards could not beat runner noise.** One step reads 20 to 30% faster or slower from runner
+  to runner (the Commons status rebuild: 207 s, then 360 s), so two rebalances still ran 9 to 11 min. Six shards, each
+  step weighed at the slower of two runs and at least 1 s, brought the whole check to 7.7 min (run 45747296062, from
+  10.3). The Commons status rebuild fills one shard alone, so `lints_shards_test` asks for one step a shard, not 20.
+- **Trace a step's reads instead of grepping its source for a path.** A grep for `docs/` flagged most program steps
+  (they name a docs path in a message, or write a report); `strace -e openat` over each heavy step showed 35 of 39
+  (1,264 s) open no docs-shaped path. They skip on a docs-only diff (#3874, `tests/lints_docs_only_skip.json`); the
+  four that do read docs (dependency map, the Commons data dashboard pair, the apply-workflow group check) run on
+  every diff, and main's push run still runs everything.
+
+### Next concrete step
+
+Read the first docs-only PR's lints after #3874 merges: the skipped steps show as skipped and the job runs a few
+minutes shorter. Re-run the lint reassignment (heaviest first, slower of two runs) when one shard drifts past the
+others by a minute; re-measure `tests/durations.json` when a suite shard does.
