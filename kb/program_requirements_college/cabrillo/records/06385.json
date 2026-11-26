@@ -109,7 +109,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "catalog_figures_differ",
+    "label": "The catalog's own figures do not add up: each list matches its printed figure, and the lists sum past the program's printed total.",
+    "words": "The page prints no total for the major alone; 'Complete the following number of credits: 60-62' is recorded as degree_total, and 'Cabrillo College General Education 24' as ge_units. The general text says an A.S. requires at least 30 units in the major. | 'General electives: any transferable or degree applicable course.' is printed with 0 beside it and no unit amount, and the page does not say they fill the rest of the degree; open_elective_units left null and electives_fill_degree false. Reviewer may check."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 100,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

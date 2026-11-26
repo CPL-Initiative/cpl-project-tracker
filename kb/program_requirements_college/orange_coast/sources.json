@@ -42,7 +42,8 @@
     "title": 1.0,
     "section": "as",
     "section_line": "horticulture, associate in science degree",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 35,
@@ -2336,7 +2337,8 @@
     "title": 1.0,
     "section": "as",
     "section_line": "food and beverage management, advanced, associate in science degree",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 18,
@@ -5934,7 +5936,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "early childhood education, associate in science degree for transfer (as-​t)",
-    "section_fit": 0.75
+    "section_fit": 0.75,
+    "exact": 0
    }
   },
   "listed": 9,

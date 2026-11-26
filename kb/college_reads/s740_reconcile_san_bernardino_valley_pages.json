@@ -1,0 +1,63 @@
+{
+ "_readme": "S740 (the census's reconcile_steps lever, lane 1 `reconcile`): the catalog's own words for a correction step, read as the capture reads the page (capture_view), free, no model call, nothing written. San Bernardino Valley: four program pages whose printed total and lists disagree in the filed record, and the Pharmacy Technology department page with the certificate's own page it links (the filed record was read from the department page).",
+ "college": "San Bernardino Valley College",
+ "questions": {
+  "printed_total": "Which total does the page print, and what do its own lists add to?",
+  "own_page": "Which page is the Pharmacy Technology certificate's own, and what does it print?"
+ },
+ "keywords": [
+  "[Tt]otal[^\\n]{0,40}[Uu]nits?[^\\n]{0,20}",
+  "[Cc]ertificate of [Aa]chievement[^\\n]{0,60}",
+  "Double-Counted[^\\n]{0,40}"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "printed_total"
+   ],
+   "why": "32309",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/political-science/political-science-aat-degree/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "printed_total"
+   ],
+   "why": "39483",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/foods-nutrition/nutrition-and-dietetics-as-t-degree/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "printed_total"
+   ],
+   "why": "35802",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/music/music-ast-degree/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "printed_total"
+   ],
+   "why": "04873",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/ftvm/audio-production-aa-degree/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "22821",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/pharmacy-technology/",
+   "links": "[Pp]harmacy"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "22821",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/pharmacy-technology/pharmacy-technology-certificate-achievement/",
+   "capture_view": true
+  }
+ ]
+}

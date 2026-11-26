@@ -1,4 +1,4 @@
-{"schema":1,"college":"Shasta College","slug":"shasta","basis":"live","census_at":"2026-11-26 12:06Z","correction_rules":false,"programs":[
+{"schema":1,"college":"Shasta College","slug":"shasta","basis":"live","census_at":"2026-11-26 14:02Z","correction_rules":true,"programs":[
 {"cn":"18655","title":"University Studies - Earth Sciences","award":"A.A. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=74"},
 {"cn":"18153","title":"General Studies: Food & Beverage & Lodging Management","award":"A.S. Degree","cause":"found_not_extracted","lever":"paid_read","url":"https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=61"},
 {"cn":"09498","title":"Agriculture","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},

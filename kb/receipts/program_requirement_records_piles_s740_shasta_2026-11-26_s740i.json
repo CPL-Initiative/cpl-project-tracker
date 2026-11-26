@@ -1,0 +1,679 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30); Sam's routine prompt of 2026-11-25, as the S739 conductor's brief carries it: a record held for a gap is collected with its gap named and a lower score on the 0-100 bar, never held, unless the record is not the program's own; S739: Shasta's records kb/receipts/program_requirement_records_piles_s739_shasta_2026-11-26_s739b.json held, read again by key: passed by a rescore where today's scorer's one reading moves them, else collected with their gaps named where the record is the program's own (no reread, no reconcile)",
+ "at": "2026-11-26T15:31:08Z",
+ "college": "Shasta College",
+ "keys": {
+  "from": "kb/receipts/program_requirement_records_piles_s739_shasta_2026-11-26_s739b.json",
+  "members": [
+   "18625",
+   "18655",
+   "32162"
+  ]
+ },
+ "gaps": {
+  "option_lists_read_apart": "An option the catalog prints takes more than one list under the option's own printed figure, and the record's one option group holds each list as an alternative of its own, so the program's units cannot be checked against the printed figures."
+ },
+ "moved": 1,
+ "by": {
+  "option_lists_read_apart": 1
+ },
+ "precision": {
+  "read": 3,
+  "right": 3,
+  "wrong": [],
+  "no_record_file": 0,
+  "not_hand_held": 0,
+  "by_answer": {
+   "none": 2,
+   "option_lists_read_apart": 1
+  }
+ },
+ "claim_checks": {
+  "counts": {
+   "stands": 1
+  },
+  "not_standing": []
+ },
+ "boundaries": {
+  "counts": {
+   "the note's words gone right": 1,
+   "the stated total one unit off right": 1,
+   "coverage failing right": 1,
+   "the option_names shape broken right": 1,
+   "its own section not shown right": 1
+  },
+  "wrong": []
+ },
+ "held": [
+  {
+   "control_number": "18625",
+   "why": "held: not the program's own: its blocks are the 'Emphasis in Coastal Science Technician' that 18626's record prints under the Geosciences Technician degree, it places 5 of its 16 listed courses, and its own note puts its heading on the preceding page, which the read did not hold: a page read that finds its own section",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "32162",
+   "why": "held: its 23-27 sits inside the printed 22-27 and units_within_printed_range is true of its figures, but its section is not shown to be its own: its heading sits on the page before the one the read held, and 18094 (University Studies - Physical Education), read from the same PDF page, holds 29 of its 32 courses in the same unit band. A read that holds page 99 with page 100 (a reread)",
+   "claim": "no entry stands"
+  }
+ ],
+ "records": [
+  {
+   "college": "Shasta College",
+   "control_number": "18655",
+   "award": "A.A. Degree",
+   "extracted_run": 45841957622,
+   "moves_to": "option_lists_read_apart",
+   "words": "Earth Sciences University Studies – 20-22 Unit Emphasis: SC Program: AA.1515",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "own": "own_heading",
+   "path": "kb/program_requirements_college/shasta/records/18655.json",
+   "before_image": {
+    "program_title": "University Studies - Earth Sciences",
+    "award": "A.A. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=74",
+    "measure": "units",
+    "total_min": 20,
+    "total_max": 22,
+    "record": {
+     "program": {
+      "section_heading": "Earth Sciences University Studies – 20-22 Unit Emphasis: SC Program: AA.1515",
+      "measure": "units",
+      "total_units": {
+       "min": 20,
+       "max": 22
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Demonstrate the interrelated aspects of our natural world through feedback loops across subsystems such as hydrosphere- atmosphere, atmosphere- biosphere, hydrosphere-atmosphere-biosphere connections or any of the planet's subsystems.",
+       "Explain life's connection to the abiotic world through the inclusion of evolution/natural selection and concepts in ecology/environmental quality and relate the dependence of life and the diversity of life to the abiotic world.",
+       "Use the intersection of the hydrosphere, atmosphere and geosphere to define how they support the biosphere noting habitat qualities reliant on each within that intersection.",
+       "Understand physical process that shape Earth's surface and the influence this has upon various aspects of the Earth system, including the anthrosphere.",
+       "Identify natural negative feedback loops in the Earth system and how one might be interrupted, or reversed to become a positive feedback loops, while including impacts to the global ecosystem."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Degree Core",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ESCI 17",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Degree Core (choose one: BIOL 1 OR BOT 1 OR ZOOL 1 OR NHIS 5+5L OR NHIS 15+65 OR AGNR 60+61 OR ESCI 6)",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "BIOL 1",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BOT 1",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ZOOL 1",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NHIS 5",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NHIS 5L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NHIS 15",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NHIS 65",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AGNR 60",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AGNR 61",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESCI 6",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Emphasis in Geology and Earth History",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Degree Emphasis",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ESCI 1",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESCI 2",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ESCI 6",
+           "units": 4,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESCI 7",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARCH 3",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "HIST 3",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Emphasis in Geology and Earth History: At least 4 units from the following",
+       "rule": "choose_units",
+       "minimum": 4,
+       "option_group": "Degree Emphasis",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ESCI 32",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESCI 32L",
+         "units": 0.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESCI 33",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESCI 33L",
+         "units": 0.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESCI 34",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESCI 34L",
+         "units": 0.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESCI 35",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESCI 35L",
+         "units": 0.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESCI 36",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESCI 36L",
+         "units": 0.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESCI 37",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESCI 37L",
+         "units": 0.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESCI 38",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESCI 38L",
+         "units": 0.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Emphasis in Atmospheric Sciences",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Degree Emphasis",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ESCI 14",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESCI 14L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESCI 15",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESCI 18",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOG 5",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Emphasis in Earth Systems: Geosphere Requirement (choose one of the following)",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": "Degree Emphasis",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ESCI 1",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESCI 10",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOG 1A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOG 1AL",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Emphasis in Earth Systems: Hydrosphere Requirement (choose one of the following)",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": "Degree Emphasis",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ESCI 15",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AGPS 25",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Emphasis in Earth Systems: Atmosphere Requirement (choose one of the following)",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": "Degree Emphasis",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ESCI 14",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESCI 14L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESCI 18",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Emphasis in Earth Systems: Anthrosphere Requirement (choose one of the following)",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": "Degree Emphasis",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "AGNR 11",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AGPS 24",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTH C1001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTH 2",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTH 25",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOG 1B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOG 5",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOG 7",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOG 8",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLS 25",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOC C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOC 25",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 50,
+     "listed": 50
+    },
+    "extracted_run": "45841957622"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 50,
+     "listed": 50,
+     "gaps": [
+      "option_lists_read_apart"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 1
+  }
+ ],
+ "live_run_proof": {
+  "read_at": "2026-11-26T07:30Z",
+  "how": "the hosting API's commits by path on main",
+  "load_commits": {
+   "44518684470": "0529ca750c241c5385376f431be7bbef36c0dec3"
+  },
+  "file_history": {
+   "18144": [
+    "0529ca750c241c5385376f431be7bbef36c0dec3"
+   ]
+  }
+ },
+ "shared_pages": {
+  "18655": [
+   "18659"
+  ]
+ },
+ "representation": "checks.gaps and checks.confidence added as the load reads the filed score (a passing row: checks.arithmetic to equal); checks.coverage, invented and the record unchanged",
+ "claim_check_reads": "Today's capture (sources.json): every course an entry names among the codes it found, and a course an entry says the printed total leaves out on neither it nor the state's list. A note's quoted figures are the reader's words, never re-read here.",
+ "follow_verdict": "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows (confirm_matches); the apply aborts, writing nothing, unless the count is 0.",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Shasta College', '18655', 45841957622, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 17\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Degree Core\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 1\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BOT 1\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ZOOL 1\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NHIS 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NHIS 5L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NHIS 15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NHIS 65\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGNR 60\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGNR 61\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 6\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Degree Core (choose one: BIOL 1 OR BOT 1 OR ZOOL 1 OR NHIS 5+5L OR NHIS 15+65 OR AGNR 60+61 OR ESCI 6)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 1\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ESCI 6\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ESCI 2\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 7\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST 3\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ARCH 3\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Emphasis in Geology and Earth History\",\"option_group\":\"Degree Emphasis\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 32\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 32L\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 33\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 33L\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 34\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 34L\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 35\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 35L\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 36\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 36L\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 37\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 37L\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 38\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 38L\",\"units\":0.5,\"units_max\":null}],\"minimum\":4,\"name\":\"Emphasis in Geology and Earth History: At least 4 units from the following\",\"option_group\":\"Degree Emphasis\",\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 14\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 14L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 15\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 18\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 5\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Emphasis in Atmospheric Sciences\",\"option_group\":\"Degree Emphasis\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 1\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 10\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 1A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 1AL\",\"units\":1,\"units_max\":null}],\"minimum\":1,\"name\":\"Emphasis in Earth Systems: Geosphere Requirement (choose one of the following)\",\"option_group\":\"Degree Emphasis\",\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 15\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGPS 25\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Emphasis in Earth Systems: Hydrosphere Requirement (choose one of the following)\",\"option_group\":\"Degree Emphasis\",\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 14\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 14L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 18\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Emphasis in Earth Systems: Atmosphere Requirement (choose one of the following)\",\"option_group\":\"Degree Emphasis\",\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGNR 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGPS 24\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 1B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 7\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 8\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 25\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Emphasis in Earth Systems: Anthrosphere Requirement (choose one of the following)\",\"option_group\":\"Degree Emphasis\",\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate the interrelated aspects of our natural world through feedback loops across subsystems such as hydrosphere- atmosphere, atmosphere- biosphere, hydrosphere-atmosphere-biosphere connections or any of the planet''s subsystems.\",\"Explain life''s connection to the abiotic world through the inclusion of evolution/natural selection and concepts in ecology/environmental quality and relate the dependence of life and the diversity of life to the abiotic world.\",\"Use the intersection of the hydrosphere, atmosphere and geosphere to define how they support the biosphere noting habitat qualities reliant on each within that intersection.\",\"Understand physical process that shape Earth''s surface and the influence this has upon various aspects of the Earth system, including the anthrosphere.\",\"Identify natural negative feedback loops in the Earth system and how one might be interrupted, or reversed to become a positive feedback loops, while including impacts to the global ecosystem.\"],\"section_heading\":\"Earth Sciences University Studies – 20-22 Unit Emphasis: SC Program: AA.1515\",\"total_units\":{\"max\":22,\"min\":20}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":50,\"placed\":50}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"option_lists_read_apart\"],\"invented\":true,\"listed\":50,\"placed\":50}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "pre_read_md5": "with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) as (values\n  (1, 'Shasta College', '18655', 45841957622, '78625750b23aa2bd148fb831cb7be371', '8a8a131b7a421d5bb4f8f0d8eb46c633', '71cab3e008329a53876ab4211eeb6b07'))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.record::text) = v.rec_md5),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.checks::text) = v.chk_md5),\n  'already_after', count(*) filter (where md5(r.checks::text) = v.after_md5),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Shasta College', '18655', 45841957622, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 17\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Degree Core\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 1\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BOT 1\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ZOOL 1\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NHIS 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NHIS 5L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NHIS 15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NHIS 65\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGNR 60\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGNR 61\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 6\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Degree Core (choose one: BIOL 1 OR BOT 1 OR ZOOL 1 OR NHIS 5+5L OR NHIS 15+65 OR AGNR 60+61 OR ESCI 6)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 1\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ESCI 6\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ESCI 2\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 7\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST 3\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ARCH 3\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Emphasis in Geology and Earth History\",\"option_group\":\"Degree Emphasis\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 32\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 32L\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 33\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 33L\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 34\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 34L\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 35\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 35L\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 36\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 36L\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 37\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 37L\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 38\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 38L\",\"units\":0.5,\"units_max\":null}],\"minimum\":4,\"name\":\"Emphasis in Geology and Earth History: At least 4 units from the following\",\"option_group\":\"Degree Emphasis\",\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 14\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 14L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 15\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 18\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 5\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Emphasis in Atmospheric Sciences\",\"option_group\":\"Degree Emphasis\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 1\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 10\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 1A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 1AL\",\"units\":1,\"units_max\":null}],\"minimum\":1,\"name\":\"Emphasis in Earth Systems: Geosphere Requirement (choose one of the following)\",\"option_group\":\"Degree Emphasis\",\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 15\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGPS 25\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Emphasis in Earth Systems: Hydrosphere Requirement (choose one of the following)\",\"option_group\":\"Degree Emphasis\",\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 14\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 14L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 18\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Emphasis in Earth Systems: Atmosphere Requirement (choose one of the following)\",\"option_group\":\"Degree Emphasis\",\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGNR 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGPS 24\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 1B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 7\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 8\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 25\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Emphasis in Earth Systems: Anthrosphere Requirement (choose one of the following)\",\"option_group\":\"Degree Emphasis\",\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate the interrelated aspects of our natural world through feedback loops across subsystems such as hydrosphere- atmosphere, atmosphere- biosphere, hydrosphere-atmosphere-biosphere connections or any of the planet''s subsystems.\",\"Explain life''s connection to the abiotic world through the inclusion of evolution/natural selection and concepts in ecology/environmental quality and relate the dependence of life and the diversity of life to the abiotic world.\",\"Use the intersection of the hydrosphere, atmosphere and geosphere to define how they support the biosphere noting habitat qualities reliant on each within that intersection.\",\"Understand physical process that shape Earth''s surface and the influence this has upon various aspects of the Earth system, including the anthrosphere.\",\"Identify natural negative feedback loops in the Earth system and how one might be interrupted, or reversed to become a positive feedback loops, while including impacts to the global ecosystem.\"],\"section_heading\":\"Earth Sciences University Studies – 20-22 Unit Emphasis: SC Program: AA.1515\",\"total_units\":{\"max\":22,\"min\":20}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":50,\"placed\":50}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"option_lists_read_apart\"],\"invented\":true,\"listed\":50,\"placed\":50}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\nf as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number\n        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true\n       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)),\ne(expect) as (values (1)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when f.n > 0\n            then ('s740i piles confirm guard: ' || f.n || ' rows hold a matching confirm verdict ' || f.keys::text)::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s740i piles guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, f;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Shasta College', '18655', 45841957622, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 17\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Degree Core\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 1\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BOT 1\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ZOOL 1\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NHIS 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NHIS 5L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NHIS 15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NHIS 65\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGNR 60\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGNR 61\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 6\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Degree Core (choose one: BIOL 1 OR BOT 1 OR ZOOL 1 OR NHIS 5+5L OR NHIS 15+65 OR AGNR 60+61 OR ESCI 6)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 1\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ESCI 6\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ESCI 2\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 7\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST 3\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ARCH 3\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Emphasis in Geology and Earth History\",\"option_group\":\"Degree Emphasis\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 32\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 32L\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 33\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 33L\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 34\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 34L\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 35\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 35L\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 36\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 36L\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 37\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 37L\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 38\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 38L\",\"units\":0.5,\"units_max\":null}],\"minimum\":4,\"name\":\"Emphasis in Geology and Earth History: At least 4 units from the following\",\"option_group\":\"Degree Emphasis\",\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 14\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 14L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 15\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 18\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 5\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Emphasis in Atmospheric Sciences\",\"option_group\":\"Degree Emphasis\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 1\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 10\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 1A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 1AL\",\"units\":1,\"units_max\":null}],\"minimum\":1,\"name\":\"Emphasis in Earth Systems: Geosphere Requirement (choose one of the following)\",\"option_group\":\"Degree Emphasis\",\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 15\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGPS 25\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Emphasis in Earth Systems: Hydrosphere Requirement (choose one of the following)\",\"option_group\":\"Degree Emphasis\",\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 14\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 14L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESCI 18\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Emphasis in Earth Systems: Atmosphere Requirement (choose one of the following)\",\"option_group\":\"Degree Emphasis\",\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGNR 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGPS 24\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 1B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 7\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 8\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 25\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Emphasis in Earth Systems: Anthrosphere Requirement (choose one of the following)\",\"option_group\":\"Degree Emphasis\",\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate the interrelated aspects of our natural world through feedback loops across subsystems such as hydrosphere- atmosphere, atmosphere- biosphere, hydrosphere-atmosphere-biosphere connections or any of the planet''s subsystems.\",\"Explain life''s connection to the abiotic world through the inclusion of evolution/natural selection and concepts in ecology/environmental quality and relate the dependence of life and the diversity of life to the abiotic world.\",\"Use the intersection of the hydrosphere, atmosphere and geosphere to define how they support the biosphere noting habitat qualities reliant on each within that intersection.\",\"Understand physical process that shape Earth''s surface and the influence this has upon various aspects of the Earth system, including the anthrosphere.\",\"Identify natural negative feedback loops in the Earth system and how one might be interrupted, or reversed to become a positive feedback loops, while including impacts to the global ecosystem.\"],\"section_heading\":\"Earth Sciences University Studies – 20-22 Unit Emphasis: SC Program: AA.1515\",\"total_units\":{\"max\":22,\"min\":20}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":50,\"placed\":50}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"option_lists_read_apart\"],\"invented\":true,\"listed\":50,\"placed\":50}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (1)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s740i piles rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;"
+}

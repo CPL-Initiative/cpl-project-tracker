@@ -292,6 +292,152 @@
   "Copper Mountain College": {
    "why": "S739 (wave A): the entry holds the reader_page_assignment lever's own page; no reconcile step yet.",
    "steps": [],
+   "course_renumbers": {
+    "BIOL 023": "BI 23",
+    "KINE 032A": "PE 52",
+    "KINE 039A": "PE 96",
+    "KINE 047A": "PE 98",
+    "KINE 054A": "PE 45",
+    "KINE 057A": "PE 91",
+    "KINE 058A": "PE 43",
+    "BIOL 015": "BI 15",
+    "CDEV C1000": "CD 10",
+    "COMM 007": "SP 7",
+    "PSYC 003": "PSY 3",
+    "PSYC 005": "PSY 5",
+    "SOCI 002": "SOC 2",
+    "SOCI 004": "SOC 4"
+   },
+   "course_renumbers_cited": [
+    {
+     "printed": "BIOL 023",
+     "file": "BI 23",
+     "title": "Human Physiology",
+     "units": 4,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The reissued 2026-2027 catalog's course description (p.135 of Final-26-27-Catalog-11.18.26r1.pdf, college page read 45835379921) prints 'BIOL 023', 'HUMAN PHYSIOLOGY', '4 Units' and ends 'Formerly known as BI 023.'; the state's file lists BI 23 for Kinesiology A.A.-T 43132, whose own page (p.107) prints BIOL 023.",
+     "units_note": "the file's row carries 5 units, the catalog prints 4"
+    },
+    {
+     "printed": "KINE 032A",
+     "file": "PE 52",
+     "title": "Beginning Dance Aerobics",
+     "units": 1,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The reissued 2026-2027 catalog's course description (p.159 of Final-26-27-Catalog-11.18.26r1.pdf, college page read 45835379921) prints 'KINE 032A', 'BEGINNING DANCE AEROBICS', '1 Unit' and ends 'Formerly known as PE 052.'; the state's file lists PE 52 for Kinesiology A.A.-T 43132, whose own page (p.107) prints KINE 032A."
+    },
+    {
+     "printed": "KINE 039A",
+     "file": "PE 96",
+     "title": "Beginning Weight Training",
+     "units": 1,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The reissued 2026-2027 catalog's course description (p.159 of Final-26-27-Catalog-11.18.26r1.pdf, college page read 45835379921) prints 'KINE 039A', 'BEGINNING WEIGHT TRAINING', '1 Unit' and ends 'Formerly known as PE 096.'; the state's file lists PE 96 for Kinesiology A.A.-T 43132, whose own page (p.107) prints KINE 039A."
+    },
+    {
+     "printed": "KINE 047A",
+     "file": "PE 98",
+     "title": "Beginning Yoga",
+     "units": 1,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The reissued 2026-2027 catalog's course description (p.160 of Final-26-27-Catalog-11.18.26r1.pdf, college page read 45835379921) prints 'KINE 047A', 'BEGINNING YOGA', '1 Unit' and ends 'Formerly known as PE 098.'; the state's file lists PE 98 for Kinesiology A.A.-T 43132, whose own page (p.107) prints KINE 047A."
+    },
+    {
+     "printed": "KINE 054A",
+     "file": "PE 45",
+     "title": "Beginning Basketball",
+     "units": 1,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The reissued 2026-2027 catalog's course description (p.160 of Final-26-27-Catalog-11.18.26r1.pdf, college page read 45835379921) prints 'KINE 054A', 'BEGINNING BASKETBALL', '1 Unit' and ends 'Formerly known as PE 045.'; the state's file lists PE 45 for Kinesiology A.A.-T 43132, whose own page (p.107) prints KINE 54A."
+    },
+    {
+     "printed": "KINE 057A",
+     "file": "PE 91",
+     "title": "Beginning Volleyball",
+     "units": 1,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The reissued 2026-2027 catalog's course description (p.160 of Final-26-27-Catalog-11.18.26r1.pdf, college page read 45835379921) prints 'KINE 057A', 'BEGINNING VOLLEYBALL', '1 Unit' and ends 'Formerly known as PE 091.'; the state's file lists PE 91 for Kinesiology A.A.-T 43132, whose own page (p.107) prints KINE 057A."
+    },
+    {
+     "printed": "KINE 058A",
+     "file": "PE 43",
+     "title": "Beginning Badminton",
+     "units": 1,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The reissued 2026-2027 catalog's course description (p.161 of Final-26-27-Catalog-11.18.26r1.pdf, college page read 45835379921) prints 'KINE 058A', 'BEGINNING BADMINTON', '1 Unit' and ends 'Formerly known as PE 043.'; the state's file lists PE 43 for Kinesiology A.A.-T 43132, whose own page (p.107) prints KINE 058A."
+    },
+    {
+     "printed": "BIOL 015",
+     "file": "BI 15",
+     "title": "General Microbiology",
+     "units": 5,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The reissued 2026-2027 catalog's course description (p.135 of Final-26-27-Catalog-11.18.26r1.pdf, college page read 45849832859) prints 'BIOL 015', 'GENERAL MICROBIOLOGY', '5 Units' and 'Formerly known as BI 015.'; the state's file lists BI 15 at 5 units for Liberal Arts: Mathematics and Science 18520."
+    },
+    {
+     "printed": "CDEV C1000",
+     "file": "CD 10",
+     "title": "Child Growth and Development",
+     "units": 4,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The reissued 2026-2027 catalog's course description (p.139 of Final-26-27-Catalog-11.18.26r1.pdf, college page read 45849832859) prints 'CDEV C1000', 'CHILD GROWTH AND DEVELOPMENT', '4 Units' and 'Formerly known as CD 010; ECE-010A + ECE-010B.'; the state's file lists CD 10 at 4 units for Elementary Teacher Education A.A.-T 45594."
+    },
+    {
+     "printed": "COMM 007",
+     "file": "SP 7",
+     "title": "Decision-Making and Advocacy",
+     "units": 3,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The reissued 2026-2027 catalog's course description (p.141 of Final-26-27-Catalog-11.18.26r1.pdf, college page read 45849832859) prints 'COMM 007', 'DECISION-MAKING AND ADVOCACY', '3 Units' and 'Formerly known as SP 007.'; the state's file lists SP 7 at 3 units for Registered Nursing A.S. 16657."
+    },
+    {
+     "printed": "PSYC 003",
+     "file": "PSY 3",
+     "title": "Developmental Psychology",
+     "units": 3,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The reissued 2026-2027 catalog's course description (p.169 of Final-26-27-Catalog-11.18.26r1.pdf, college page read 45849832859) prints 'PSYC 003', 'DEVELOPMENTAL PSYCHOLOGY', '3 Units' and 'Formerly known as PSY 003.'; the state's file lists PSY 3 at 3 units for Liberal Arts: Social and Behavioral Sciences 18519, Vocational Nursing 14737 and 20094 and Registered Nursing 16657."
+    },
+    {
+     "printed": "PSYC 005",
+     "file": "PSY 5",
+     "title": "Behavioral and Social Science Research Methods",
+     "units": 4,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The reissued 2026-2027 catalog's course description (p.169 of Final-26-27-Catalog-11.18.26r1.pdf, college page read 45849832859) prints 'PSYC 005', 'BEHAVIORAL AND SOCIAL SCIENCE RESEARCH METHODS', '4 Units' and 'Formerly known as PSY 005.'; the state's file lists PSY 5 at 4 units for Liberal Arts: Social and Behavioral Sciences 18519."
+    },
+    {
+     "printed": "SOCI 002",
+     "file": "SOC 2",
+     "title": "Social Problems",
+     "units": 3,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The reissued 2026-2027 catalog's course description (p.171 of Final-26-27-Catalog-11.18.26r1.pdf, college page read 45849832859) prints 'SOCI 002', 'SOCIAL PROBLEMS', '3 Units' and 'Formerly known as SOC 002.'; the state's file lists SOC 2 at 3 units for Liberal Arts: Social and Behavioral Sciences 18519."
+    },
+    {
+     "printed": "SOCI 004",
+     "file": "SOC 4",
+     "title": "Sociological Analysis and Critical Thinking",
+     "units": 3,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The reissued 2026-2027 catalog's course description (p.171 of Final-26-27-Catalog-11.18.26r1.pdf, college page read 45849832859) prints 'SOCI 004', 'SOCIOLOGICAL ANALYSIS AND CRITICAL THINKING', '3 Units' and 'Formerly known as SOC 004.'; the state's file lists SOC 4 at 3 units for Liberal Arts: Social and Behavioral Sciences 18519."
+    }
+   ],
+   "course_renumbers_why": "S740 (lane 1, reads): Copper Mountain renumbered its physical education courses into KINE and its BI courses into BIOL, and each course description in the catalog's reissue of 2026-11-18 names its former code ('Formerly known as PE 052.'). The state's file still lists the former codes for Kinesiology A.A.-T 43132, so its own page (p.107) named 4 of its 11 listed courses and the capture refused it (the named gap catalog_renumbered, kb/program_requirements_college/copper_mountain/named_gaps_s739.json). With the seven pairs the page names all 11. Of the college's other filed records only Liberal Arts: Mathematics and Science 18520 lists one of them (BI 23), and it passes with and without the pair. A pair is never read where the file lists the printed code, so each retires once the file catches up. Reversible by deleting the pairs. Seven more pairs, the same way (college page read 45849832859, kb/college_reads/s740_reads_copper_mountain_renumbers_2.json): PSY to PSYC, SOC to SOCI, SP 7 to COMM 007, BI 15 to BIOL 015 and CD 10 to CDEV C1000, each by its course description's 'Formerly known as' sentence, at the units the state's file carries. They are the listed courses the college's census pile left unplaced: Liberal Arts: Social and Behavioral Sciences 18519 (PSY 3, PSY 5, SOC 2, SOC 4; its arithmetic already passes), Vocational Nursing 14737 and 20094 (PSY 3), Registered Nursing 16657 (PSY 3, SP 7), Liberal Arts: Mathematics and Science 18520 (BI 15) and Elementary Teacher Education 45594 (CD 10). The filed records were read from the 09.03.26 file, another address than the reissue, so a reconcile's moved-page guard leaves them as filed: the pairs reach them through a read of the reissue, which the capture lists them for as moved programs.",
    "pdf_pages": {
     "41085": {
      "page": 106,
@@ -300,6 +446,21 @@
     }
    },
    "pdf_pages_why": "S739 (wave A, the gap census's reader_page_assignment lever, census run 45771011713 of 2026-11-26): Copper Mountain reissued its 2026-2027 catalog on 2026-11-18 at a new address, and the filed capture handed Hospitality Management A.S.-T 41085 another degree's pages. It is pinned to its own page in the reissue; the pin binds only while that page prints its words and every title word, so a read of any other file refuses it. The registry row still names the 09.03.26 address, which answers 404: read 45805866374 (only=41085) found no page, refused the pin and stopped at its price step with nothing spent, so 41085 waits on the registry naming the reissue. Kinesiology A.A.-T 43132 is not pinned: its own page (p.107) names 4 of its 11 listed courses, the catalog having renumbered the rest (PE to KINE, BI to BIOL). Reversible by deleting this entry."
+  },
+  "Santa Ana College": {
+   "why": "S740 (lane 1, reads): the gap census of 2026-11-26 12:06Z (run 45816008322) lists 15 Santa Ana records on the reconcile_steps lever. One step, for the Liberal Arts degree's areas of emphasis.",
+   "steps": [
+    {
+     "kind": "pool_lists",
+     "field": "blocks",
+     "awards": "local",
+     "with_floors": true,
+     "pattern": "Complete a minimum of (?P<n>\\d+) units from a single Area of Emphasis",
+     "block_pattern": "(?:(?:Arts|Humanities|Communications): Minimum \\d|Business$|Technology$|[a-e]\\. )",
+     "name": "The Area of Emphasis's lists",
+     "why": "S740 SkySkimmer, 2026-11-26: the Liberal Arts A.A. prints one sentence on each emphasis's entry, under 'I. Requirements:', 'Complete a minimum of 18 units from a single Area of Emphasis listed below', and 'Total : 18.0' under the emphasis's lists (college page read 45835379921, kb/college_reads/s740_reads_santa_ana_pages.json, each entry read as the capture reads it). Three emphases print several lists, each with its own least: Arts, Humanities and Communications 18581 ('Arts: Minimum 3-4 units from this block', 'Humanities: Minimum 3-5 units from this block', 'Communications: Minimum 3-4 units from this block'), Business and Technology 18582 ('Business: Minimum 2-4.5 units from this block', 'Technology: Minimum 1.5-3 units from this block') and Kinesiology and Wellness 19268 (lists a to d, then 'e. Additional units to be selected from a, b, or c above for a total of 18 units'). The reading kept each list as its own choice at its least, so the records added to 9-13, 3.5-7.5 and 15 against the printed 18. The step joins an emphasis's lists into one 18-unit choice and keeps each list's least in floors (3, 3 and 3; 2 and 1.5; 3, 3, 3 and 6), a course two lists print counted once. The other three emphases (18580, 18583, 18584) print one list of 18 and are left as read: the step joins two or more lists, only under a total of exactly the sentence's figure, and never where the lists' leasts sum past it. Reversible by deleting this entry."
+    }
+   ]
   },
    "Pasadena City College": {
     "why": "S727 (lever): the entry holds the reader_page_assignment lever's own pages; no reconcile step yet.",
@@ -2002,6 +2163,12 @@
     }
    ]
   },
+  "Ventura College": {
+   "why": "S740 (piles): no reconcile step; the entry opts the capture into reading a page's hidden tabs beside an Overview that names every course.",
+   "steps": [],
+   "tabs_with_prose": true,
+   "tabs_with_prose_why": "S740: four records (35654 and 37415 Basic Law Enforcement Academy, 44994 and 44995 English for Multilingual Students Level 3) were read from the Overview alone, because its prose names every listed course ('consists of two courses' POSC V01A and POSC V01; 'This 10-unit certificate consists of two out of three sequential courses: Academic Listening and Speaking I (ENGM V01L) or', naming all three) and so reached the share before the hidden tabs were looked at; each record's own note says the REQUIREMENTS tab was not in the text. College-page-read 45837455365 read the four pages as the capture reads them: the REQUIREMENTS tab prints the course table and its total ('POSC V01 Basic Law Enforcement Academy 32 · POSC V01A Orientation for P.O.S.T. Regular and Modular Academy 3.5 · Total Units for the Certificate 35.5'; 'Total Units for the A.S. Degree 60'; 'ENGM V01L ... 4 · or ENGM V02L · ENGM V03L ... 4 · Total Units for the Certificate 8' on both ENGM pages), and no 'Total Units' line prints in the visible text. The paid read 45847865286 made no extraction call for them: the capture chose innerText again, so each page read unchanged. The capture appends the tabs where the visible text prints no Total Units line and a tab names as many of the courses and prints one (kb/_program_requirements_pilot.py best_text; Victor Valley's opt-in, S639). What else the opt-in moves at Ventura is measured by a free capture before any paid read."
+  },
   "Victor Valley College": {
    "tabs_with_prose": true,
    "tabs_with_prose_why": "S639: four EMS certificates (38353, 38366, 38502, 38503) were read from the Overview alone, because its sentence names every course ('This certificate is for successful completion of EMS 82 Paramedic Cardiology and EMS 83 Paramedic Pharmacology') and so reached the share before the hidden tabs were looked at; the REQUIREMENTS tab prints 'EMS 82 Paramedic Cardiology 4.5 · EMS 83 Paramedic Pharmacology 3.5 · Total Units 8' (college-page-read 43136401325). The capture appends the tabs where the visible text prints no Total Units line and a tab names as many of the courses and prints one (kb/_program_requirements_pilot.py best_text). Measured on the capture of reconcile 43139057384: the four EMS certificates moved from innerText to innerText+tabs on the same pages, and no other program's chosen page or text field moved (20545 and 38852 lost their sources under the S449 page rules, not this flag; 42301 stayed). Their filed readings still lack the units: a re-extraction of the four reads the tab.",
@@ -2371,9 +2538,71 @@
     "CDEV126": "CD 126",
     "CDEV138": "CD 138",
     "CDEV185": "CD 185",
-    "CDEV205": "CD 205"
+    "CDEV205": "CD 205",
+    "CDEV160": "CD 160",
+    "SOCI110": "SOC 110",
+    "SOCI110H": "SOC 110H",
+    "SOCI130": "SOC 130",
+    "SOCI141": "SOC 141",
+    "SOCI141H": "SOC 141H"
    },
-   "course_renumbers_why": "S720 (lever), college-page-read run 45344701810: Early Childhood Education A.S.-T 32317's own page prints its courses under CDEV ('CDEV 108 Early Childhood Development 3', 'CDEV 111 Observation and Assessment in Child Development 3', 113 Principles and Practices of Teaching Young Children, 114 Introduction to Curriculum, 115 Health, Safety and Nutrition, 126 Child, Family, and the Community, 138 Teaching in a Diverse Society, 185 Infant/Toddler Growth and Development, 205 Child Development Practicum / Field Experience 4) where the Program Course File lists CD108 to CD205 with the same titles (CD111 'Observation and Assessment in Child Development', CCC000642974; CD205 'Child Development Practicum / Field Experience', CCC000588546). Read only where the file lists the CD code and not the CDEV one.",
+   "course_renumbers_cited": [
+    {
+     "printed": "CDEV160",
+     "file": "CD 160",
+     "title": "Middle Childhood Development",
+     "units": 3,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The 2026-2027 catalog prints CDEV 160 in Child and Adolescent Development A.A.-T 41756, where the state's file lists CD 160 Middle Childhood Development (CCC000642975, 3 units); the state's file carries the successor as CDEV160 Middle Childhood Development (CCC000657591, approved), the same title, and the college's course record keeps CD-160 at CCC000642975. The S652 census held the CDEV-for-CD prefix on one counterexample (CDEV 272, a title cut short), so the course alone is renumbered (kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json). The record's note: 'CDEV 111/126/138/160 = CD 111/126/138/160 ... Same numbers and titles'."
+    },
+    {
+     "printed": "SOCI110",
+     "file": "SOC 110",
+     "title": "Social Problems",
+     "units": 3,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The 2026-2027 catalog prints SOCI 110 in History A.A.-T 40833, where the state's file lists SOC 110 Social Problems (CCC000434436, 3 units); the state's file carries the successor as SOCI110 Social Problems (CCC000657690, approved), the same title. The S652 census held the SOCI-for-SOC prefix on one counterexample (SOCI 120 Medical Sociology beside SOC 120 Health and Social Justice), so each course is renumbered alone (the same plan). The record's note: 'Catalog prints ... SOCI 110/110H, SOCI 141/141H; closed list stores these as ... SOC 110/110H, SOC 141/141H'."
+    },
+    {
+     "printed": "SOCI110H",
+     "file": "SOC 110H",
+     "title": "Social Problems - Honors",
+     "units": 3,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The 2026-2027 catalog prints SOCI 110H in History A.A.-T 40833, where the state's file lists SOC 110H Social Problems - Honors (CCC000552385, 3 units); the state's file carries the successor as SOCI110H Social Problems - Honors (CCC000657691, approved), the same title. The record's note names the pair."
+    },
+    {
+     "printed": "SOCI130",
+     "file": "SOC 130",
+     "title": "Family Sociology",
+     "units": 3,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The 2026-2027 catalog prints SOCI 130 in Child and Adolescent Development A.A.-T 41756, where the state's file lists SOC 130 Family Sociology (CCC000427798, 3 units); the state's file carries the successor as SOCI130 Family Sociology (CCC000657693, approved), the same title. The record's note: 'SOCI 130/141/141H = SOC 130/141/141H'."
+    },
+    {
+     "printed": "SOCI141",
+     "file": "SOC 141",
+     "title": "Race and Ethnic Relations",
+     "units": 3,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The 2026-2027 catalog prints SOCI 141 in History A.A.-T 40833 and Child and Adolescent Development A.A.-T 41756, where the state's file lists SOC 141 Race and Ethnic Relations (CCC000434899, 3 units); the state's file carries the successor as SOCI141 Race and Ethnic Relations (CCC000657695, approved), the same title. Both records' notes name the pair."
+    },
+    {
+     "printed": "SOCI141H",
+     "file": "SOC 141H",
+     "title": "Race and Ethnic Relations - Honors",
+     "units": 3,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The 2026-2027 catalog prints SOCI 141H in History A.A.-T 40833 and Child and Adolescent Development A.A.-T 41756, where the state's file lists SOC 141H Race and Ethnic Relations - Honors (CCC000628767, 3 units); the state's file carries the successor as SOCI141H Race and Ethnic Relations - Honors (CCC000657696, approved), the same title. Both records' notes name the pair."
+    }
+   ],
+   "course_renumbers_why":"S720 (lever), college-page-read run 45344701810: Early Childhood Education A.S.-T 32317's own page prints its courses under CDEV ('CDEV 108 Early Childhood Development 3', 'CDEV 111 Observation and Assessment in Child Development 3', 113 Principles and Practices of Teaching Young Children, 114 Introduction to Curriculum, 115 Health, Safety and Nutrition, 126 Child, Family, and the Community, 138 Teaching in a Diverse Society, 185 Infant/Toddler Growth and Development, 205 Child Development Practicum / Field Experience 4) where the Program Course File lists CD108 to CD205 with the same titles (CD111 'Observation and Assessment in Child Development', CCC000642974; CD205 'Child Development Practicum / Field Experience', CCC000588546). Read only where the file lists the CD code and not the CDEV one.",
    "site_pages": {
     "04881": {
      "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/hmdt/heavy-medium-duty-truck-technology-certificate-achievement/",
@@ -3209,6 +3438,126 @@
    },
    "pdf_pages_why": "S720 (lever, the gap census's reader_page_assignment lever, run 45319725062): each program's extraction placed none of the state's listed courses, because the picker handed it a sibling award's section, the department's list of awards or the course descriptions. Each is pinned to its own section in the college's 2026-27 catalog PDF (the file the capture reads, the same byte count), read page for page by college-page-read run 45341735139: the page and words its heading opens on, `through` the page its section ends on, and `until` the words the next section opens on, so the window holds that section alone. The others on the lever are named gaps (named_gaps_s720.json)."
   },
+  "Shasta College": {
+   "why": "S740 (piles): no reconcile step; the entry holds one course the catalog prints under another subject code on one page.",
+   "steps": [],
+   "course_renumbers": {
+    "SOC C1000": "SOCIC1000"
+   },
+   "course_renumbers_cited": [
+    {
+     "printed": "SOC C1000",
+     "file": "SOCIC1000",
+     "title": "Introduction to Sociology",
+     "units": 3,
+     "session": "S740",
+     "date": "2026-11-26",
+     "catalog_sources": [
+      "college_page_read"
+     ],
+     "evidence": "same number, title and units in the same catalog. College-page-read run 45837455365: the 2026-2027 catalog PDF prints 'SOC C1000 Introduction to Sociology (3)' once, in the Earth Sciences University Studies emphasis (p.75, the Anthrosphere Requirement, beside 'SOC 25 Race, Ethnicity, and Society (3)'), and prints the same course as 'SOCI C1000 Introduction to Sociology (3)' or 'SOCI C1000 Introduction to Sociology 3' on pp.81, 82, 83, 87, 89, 90 and 100. The state's file lists it as SOCIC1000 and lists no SOC C1000 at Shasta. Read only where the file lists SOCIC1000 and not the printed code (18655 alone among the filed records). Reversible by deleting the pair."
+    }
+   ]
+  },
+  "Los Angeles Trade Technical College": {
+   "why": "S740 (piles): no reconcile step; the entry holds the courses the catalog prints under a misspelled subject code where the state's file lists them, each cited by the title and units both print.",
+   "steps": [],
+   "course_renumbers": {
+    "BLDGTCQ 007": "BLDGCTQ 7",
+    "BLDGTCQ 008": "BLDGCTQ 8",
+    "BLDGTCQ 009": "BLDGCTQ 9",
+    "PLUMBING 028": "PLUMBNG 28",
+    "DIGMD 100": "DIGLMD100",
+    "DIGMD 101": "DIGLMD 101",
+    "DIGMD 104": "DIGLMD 104"
+   },
+   "course_renumbers_cited": [
+    {
+     "printed": "BLDGTCQ 007",
+     "file": "BLDGCTQ 7",
+     "title": "Weatherization - Practical Energy Efficiency Techniques",
+     "units": 3,
+     "session": "S740",
+     "date": "2026-11-26",
+     "catalog_sources": [
+      "college_page_read"
+     ],
+     "evidence": "College-page-read run 45837455365, the 2026-2027 catalog PDF. p.150 prints 'BLDGTCQ 007 Weatherization – Practical Energy Efficiency Techniques 3' in the Solar Thermal elective list, three lines above 'BLDGCTQ 012 Energy Auditor – Residential Practices 1' spelled as the file spells the subject; the state's file lists BLDGCTQ 7 Weatherization - Practical Energy Efficiency Techniques, 3 units (CCC000524957), and no BLDGTCQ subject."
+    },
+    {
+     "printed": "BLDGTCQ 008",
+     "file": "BLDGCTQ 8",
+     "title": "Weatherization-Energy Efficiency Practices",
+     "units": 1,
+     "session": "S740",
+     "date": "2026-11-26",
+     "catalog_sources": [
+      "college_page_read"
+     ],
+     "evidence": "College-page-read run 45837455365, the 2026-2027 catalog PDF. p.150 prints 'BLDGTCQ 008 Weatherization – Energy Efficiency Practices 1'; the state's file lists BLDGCTQ 8 Weatherization-Energy Efficiency Practices, 1 unit (CCC000525019)."
+    },
+    {
+     "printed": "BLDGTCQ 009",
+     "file": "BLDGCTQ 9",
+     "title": "Energy Auditor - Residential",
+     "units": 3,
+     "session": "S740",
+     "date": "2026-11-26",
+     "catalog_sources": [
+      "college_page_read"
+     ],
+     "evidence": "College-page-read run 45837455365, the 2026-2027 catalog PDF. p.150 prints 'BLDGTCQ 009 Energy Auditor – Residential 3'; the state's file lists BLDGCTQ 9 Energy Auditor - Residential, 3 units (CCC000525009). BLDGTCQ 014 is left out: the catalog prints 'Carpentry for Solar Installation 4' where the file's BLDGCTQ 14 is titled 'Carpentry and Construction for Renewable Energy Installers'."
+    },
+    {
+     "printed": "PLUMBING 028",
+     "file": "PLUMBNG 28",
+     "title": "Plumbing Code I",
+     "units": 3,
+     "session": "S740",
+     "date": "2026-11-26",
+     "catalog_sources": [
+      "college_page_read"
+     ],
+     "evidence": "College-page-read run 45837455365, the 2026-2027 catalog PDF. p.150 prints 'or - PLUMBING 028 Plumbing Code I (3)' twice, and p.148 'or - Plumbing 028 Plumbing Code I (3)'; the state's file lists PLUMBNG 28 Plumbing Code I, 3 units (CCC000253564). S739's plan s739e read the same pair for 02911 and 21855 from their notes."
+    },
+    {
+     "printed": "DIGMD 100",
+     "file": "DIGLMD100",
+     "title": "Introduction to Digital Media",
+     "units": 3,
+     "session": "S740",
+     "date": "2026-11-26",
+     "catalog_sources": [
+      "college_page_read"
+     ],
+     "evidence": "College-page-read run 45837455365, the 2026-2027 catalog PDF. The Fashion Media certificate (p.182) prints 'DIGMD 100 Introduction to Digital Media 3'. The catalog prints the same number under the file's subject with both titles: 'DIGLMD 100 Introduction to Digital Media 3' on p.183, and 'DIGLMD 100 Introduction to Digital Video 3' in the Digital Media department's own lists (pp.175 to 177), which is the file's title (DIGLMD 100 INTRODUCTION TO DIGITAL VIDEO, 3 units, CCC000527036). So a catalog line shows DIGLMD 100 under the title p.182 prints (S739's second reader on s739e asked for that line). No DIGMD subject is in the file."
+    },
+    {
+     "printed": "DIGMD 101",
+     "file": "DIGLMD 101",
+     "title": "Fundamentals of Digital Media",
+     "units": 3,
+     "session": "S740",
+     "date": "2026-11-26",
+     "catalog_sources": [
+      "college_page_read"
+     ],
+     "evidence": "College-page-read run 45837455365, the 2026-2027 catalog PDF. p.182 prints 'DIGMD 101 Fundamentals of Digital Media 3'; pp.175 to 177 and 183 print 'DIGLMD 101 Fundamentals of Digital Media 3', and the state's file lists DIGLMD 101 Fundamentals of Digital Media, 3 units (CCC000526954)."
+    },
+    {
+     "printed": "DIGMD 104",
+     "file": "DIGLMD 104",
+     "title": "Digital Media Entrepreneurship",
+     "units": 3,
+     "session": "S740",
+     "date": "2026-11-26",
+     "catalog_sources": [
+      "college_page_read"
+     ],
+     "evidence": "College-page-read run 45837455365, the 2026-2027 catalog PDF. p.182 prints '-or- DIGMD 104 Digital Media Entrepreneurship (3)'; pp.175 to 177 print 'DIGLMD 104 Digital Media Entrepreneurship 3', and the state's file lists DIGLMD 104 Digital Media Entrepreneurship, 3 units (CCC000617251)."
+    }
+   ]
+  },
   "Saddleback College": {
    "why": "S731: the repeat steps for the seven records S730's plan s730b held on the reconcile lever (p-gap-filing-leaves-census-lever-s721).",
    "steps": [
@@ -3277,6 +3626,197 @@
      "evidence": "Mathematics A.S.-T 30882: its own page, read as the capture reads it (college-page-read run 45784839786): the heading 'Mathematics for Transfer 2.0 Associate in Science Degree for Transfer', its Required Core Courses (MATH C2210, MATH C2220, MATH 253, MATH 270, MATH 275), 'Select one course from the following' (CIS 122, CIS 250 or CIS 274, or PHYS 250) and 'Total Required Major Units: 24 - 25', four of the five courses the state lists (STAT C1000 is not printed), 6,054 characters. The program list (college-page-read run 45782471633) links it as 'Mathematics for Transfer 2.0'. The filed capture (run 43968403561) handed it programs/economics-for-transfer-aa-t.xml; the filed record's own notes (run 39032119511) say the text belongs 'to the Economics for Transfer AA-T, not the Mathematics A.S.-T'."
     }
    }
+  },
+  "San Jose City College": {
+   "why": "S740 (the gap census of 2026-11-26 12:06Z, levers reconcile_steps and coverage_fails): at San Jose City the state's Program Course File carries a cut-off subject name in the course-id column ('AccountingAC', 'SolarRenewab', 'TheatreArtsT') for most rows, and the state's course list names most of them by code. The rows it leaves unnamed, or names by a cut-off number (KINPE 2 for KINPE 023), fail a record's coverage though the catalog prints the course under its code. course_renumbers reads the catalog's code as the file's row, each pair cited by its control number in the college's own course record or by the one title the page and the file both print. One step: the Medical Assisting: Clinical certificate's page prints its last choice with no units beside the courses, and the degree's page prints them.",
+   "steps": [
+    {
+     "kind": "course_units",
+     "field": "units",
+     "units": {
+      "BIOL20": [
+       4,
+       4
+      ]
+     },
+     "read": "college-page-read run 45835049303 (kb/college_reads/s740_reconcile_san_jose_city_pages.json)",
+     "source_words": "Medical Assisting: Clinical A.S. 32078's page prints 'Complete one of the following courses: · 4-5 · BIOL 020 · Human Biology · 4 · BIOL 071 · Human Anatomy · 5 · MA 004 · Structure and Function of the Human Body · 4'; the certificate 32214's page prints the same three courses with no units beside them under 'Select one of the following courses: · 3' and 'Total Units · 31-32'",
+     "why": "S740: the certificate's record lists BIOL 020, BIOL 071 and MA 004 without units, and the state's file prices BIOL 71 and MA 4 for it and does not list BIOL 020, so the choice fell to the 3 printed beside its heading and the record added to 30 against the printed 31-32. With BIOL 020 at the 4 units the catalog prints for it, the choice carries 4-5 and the record adds to 31-32. The college's course record names BIOL-020 Human Biology at 4 units (CCC000280422). Only a course the reading gave no units takes the figure."
+    }
+   ],
+   "course_renumbers": {
+    "ACCTG20": "AccountingAC",
+    "BUS71": "BusinessBUS0",
+    "CA5": "ComputerAppl",
+    "FMT123": "FacilitiesMa",
+    "FMT105": "Facilities Maintenance Technology (FMT)",
+    "THEAT33": "TheatreArtsT",
+    "SOLAR102": "SolarRenewab",
+    "CIS24A": "ComputerInfo",
+    "KINPE23": "KINPE 2",
+    "KINPE41": "KINPE 4",
+    "KINPE56": "KINPE 009B"
+   },
+   "course_renumbers_cited": [
+    {
+     "printed": "ACCTG20",
+     "file": "AccountingAC",
+     "title": "Financial Accounting",
+     "units": 5,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The state's file lists control number CCC000581494 at San Jose City as 'AccountingAC Financial Accounting', a subject name cut short where a code belongs, in seven programs (06185, 06188, 22220, 22225, 32759, 41473, 44596); the college's fall 2025 course record (kb/reference/cb_course_basic_fall2025.csv) names the same control number ACCTG-020 Financial Accounting, 5 units, and the 2026-2027 catalog prints ACCTG 020 Financial Accounting in Accounting A.S. 06185 and the Accounting certificate 22220. Both records' notes: 'matched by title to ACCTG 020'."
+    },
+    {
+     "printed": "BUS71",
+     "file": "BusinessBUS0",
+     "title": "Legal Environment of Business",
+     "units": 3,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The state's file lists control number CCC000379206 as 'BusinessBUS0 Legal Environment of Business' in four programs (06185, 22220, 38499, 41473); the college's fall 2025 course record (kb/reference/cb_course_basic_fall2025.csv) names the same control number BUS-071 Legal Environment of Business, 3 units, and the catalog prints BUS 071 Legal Environment of Business in 06185 and 22220 (their notes)."
+    },
+    {
+     "printed": "CA5",
+     "file": "ComputerAppl",
+     "title": "Computer Literacy",
+     "units": 2,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The state's file lists control number CCC000515305 as 'ComputerAppl Computer Literacy' in Medical Assisting: Clinical A.S. 32078; the college's fall 2025 course record (kb/reference/cb_course_basic_fall2025.csv) names the same control number CA-005 Computer Literacy, 2 units, and the catalog's page prints 'CA 005 · Computer Literacy · 2' among its Approved Program Electives (college-page-read run 45835049303)."
+    },
+    {
+     "printed": "FMT123",
+     "file": "FacilitiesMa",
+     "title": "Intermediate Programmable Logic Controllers",
+     "units": 4,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The state's file lists control number CCC000345877 as 'FacilitiesMa Intermediate Programmable Logic Controllers' in Air Conditioning & Refrigeration Technology 3 18921; the college's fall 2025 course record (kb/reference/cb_course_basic_fall2025.csv) names the same control number FMT-123 Intermediate Programmable Logic Controllers, 4 units, and the certificate's page prints 'FMT 123 · Intermediate Programmable Logic Controllers · 4' (college-page-read run 45835049303)."
+    },
+    {
+     "printed": "FMT105",
+     "file": "Facilities Maintenance Technology (FMT)",
+     "title": "Introduction to Industrial Electronics and Controls",
+     "units": 2.5,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The state's file lists control number CCC000083667 as 'FacilitiesMa Introduction to Industrial Electronics and Controls', which the state's course list names 'Facilities Maintenance Technology (FMT)' at 2.5 units, in 18921; the certificate's page prints 'FMT 105 · Introduction to Industrial Electronics and Controls' under 'Select one of the following: 2-2.5' (college-page-read run 45835049303). The course record carries no row for the control number, so the pair stands on the one title both print."
+    },
+    {
+     "printed": "THEAT33",
+     "file": "TheatreArtsT",
+     "title": "Technical Theatre in Production",
+     "units": 1,
+     "units_max": 3,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The state's file lists control number CCC000603685 as 'TheatreArtsT Technical Theatre in Production' in Theatre Arts A.A.-T 38113 and 18449; the college's fall 2025 course record (kb/reference/cb_course_basic_fall2025.csv) names the same control number THEAT-033 Technical Theatre in Production, 1-3 units, and the catalog prints THEAT 033 in 38113 (its note: 'matched by title to the closed-list entry')."
+    },
+    {
+     "printed": "SOLAR102",
+     "file": "SolarRenewab",
+     "title": "Introduction to Photovoltaic Installation",
+     "units": 3.5,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The state's file lists control number CCC000534929 as 'SolarRenewab Introduction to Photovoltaic Installation' in three programs (06202, 08859, 22237), and under no other code; the catalog's Construction Technology A.S. page prints 'SOLAR 102 · Introduction to Photovoltaic Installation · 3.5' (college-page-read run 45835049303). The course record carries no row for the control number, so the pair stands on the one title both print."
+    },
+    {
+     "printed": "CIS24A",
+     "file": "ComputerInfo",
+     "title": "Perl Programming",
+     "units": 3,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The state's file lists control number CCC000438382 as 'ComputerInfo Perl Programming' in Emerging Tech Entrepreneurship Level 2 38498, and under no other code; the certificate's page prints 'CIS 024A · Perl Programming · 3' (college-page-read run 45835049303). The course record carries no row for the control number, so the pair stands on the one title both print."
+    },
+    {
+     "printed": "KINPE23",
+     "file": "KINPE 2",
+     "title": "Cardio Kickboxing",
+     "units": 1,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The state's file lists control number CCC000532184 as 'KinesiologyP Cardio Kickboxing', which the state's course list names KINPE 2, in the Kinesiology certificates 32260 and 39391; the certificate's page prints 'KINPE 023 · Cardio Kickboxing · 1' and no KINPE 002 (college-page-read run 45835049303). The record's note: 'catalog lists Cardio Kickboxing as KINPE 023'."
+    },
+    {
+     "printed": "KINPE41",
+     "file": "KINPE 4",
+     "title": "Pilates Mat Workout",
+     "units": 1,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The state's file lists control number CCC000529761 as 'KinesiologyP Pilates Mat Workout', which the state's course list names KINPE 4, in 32260 and 39391; the college's fall 2025 course record (kb/reference/cb_course_basic_fall2025.csv) names the same control number KINPE-041 Pilates Mat Workout, 1 unit, and the certificate's page prints 'KINPE 041 · Pilates Mat Workout · 1' (college-page-read run 45835049303)."
+    },
+    {
+     "printed": "KINPE56",
+     "file": "KINPE 009B",
+     "title": "Beginning Weight Training",
+     "units": 1,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The state's file lists control number CCC000529719 in Kinesiology certificate 39391 as 'KinesiologyW Beginning Weight Training'; the state's course list names that control number KINPE 009B (in 32260 the file carries the number under two titles, Beginning Weight Training and Intermediate Badminton). the college's fall 2025 course record (kb/reference/cb_course_basic_fall2025.csv) names the control number KINPE-056 Beginning Weight Training, 1 unit, and the certificate's page prints 'KINPE 056 · Beginning Weight Training · 1' and no KINPE 009B (college-page-read run 45835049303)."
+    }
+   ]
+  },
+  "Solano Community College": {
+   "why": "S740 (the gap census of 2026-11-26 12:06Z, levers reconcile_steps and coverage_fails): Solano's 2026-27 catalog prints sociology under SOCI, and each course description says which SOC course it was ('(Formerly SOC 002)'); the state's file still lists SOC 2, 23, 40, 45 and 75. The S652 census held the SOCI-for-SOC prefix for want of a catalog title (kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json, no_catalog_title); the catalog's own page now gives each title, so each course is renumbered alone, cited by its line. No reconcile step.",
+   "steps": [],
+   "course_renumbers": {
+    "SOCI2": "SOC 2",
+    "SOCI23": "SOC 23",
+    "SOCI40": "SOC 40",
+    "SOCI45": "SOC 45",
+    "SOCI75": "SOC 75"
+   },
+   "course_renumbers_cited": [
+    {
+     "printed": "SOCI2",
+     "file": "SOC 2",
+     "title": "Social Issues and Problems",
+     "units": 3,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The 2026-27 catalog prints 'SOCI 002 Social Issues and Problems 3.0 Units' and ends its description '(Formerly SOC 002)' (college-page-read run 45835049303 (kb/college_reads/s740_reconcile_solano_pages.json), PDF page 430); the state's file lists SOC002 Social Issues and Problems (CCC000430329)."
+    },
+    {
+     "printed": "SOCI23",
+     "file": "SOC 23",
+     "title": "Sociology of African Americans",
+     "units": 3,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The 2026-27 catalog prints 'SOCI 023 Sociology of African Americans 3.0 Units' and ends its description '(Formerly SOC 023)' (college-page-read run 45835049303 (kb/college_reads/s740_reconcile_solano_pages.json), PDF page 430); the state's file lists SOC023 Sociology of African Americans (CCC000433017)."
+    },
+    {
+     "printed": "SOCI40",
+     "file": "SOC 40",
+     "title": "Sociology of the Family",
+     "units": 3,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The 2026-27 catalog prints 'SOCI 040 Sociology of the Family 3.0 Units' and ends its description '(Formerly SOC 040)' (college-page-read run 45835049303 (kb/college_reads/s740_reconcile_solano_pages.json), PDF page 430); the state's file lists SOC040 Sociology of the Family (CCC000427327)."
+    },
+    {
+     "printed": "SOCI45",
+     "file": "SOC 45",
+     "title": "Sociology of Religion",
+     "units": 3,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The 2026-27 catalog prints 'SOCI 045 Sociology of Religion 3.0 Units' and ends its description '(Formerly SOC 045)' (college-page-read run 45835049303 (kb/college_reads/s740_reconcile_solano_pages.json), PDF page 430); the state's file lists SOC045 Sociology of Religion (CCC000517940)."
+    },
+    {
+     "printed": "SOCI75",
+     "file": "SOC 75",
+     "title": "Introduction to Sociology of Sport",
+     "units": 3,
+     "session": "S740",
+     "date": "2026-11-26",
+     "evidence": "The 2026-27 catalog prints 'SOCI 075 Introduction to Sociology of Sport 3.0 Units' and ends its description '(Formerly SOC 075)' (college-page-read run 45835049303 (kb/college_reads/s740_reconcile_solano_pages.json), PDF page 430); the state's file lists SOC075 Introduction to Sociology of Sport (CCC000502742)."
+    }
+   ]
   }
  }
 }

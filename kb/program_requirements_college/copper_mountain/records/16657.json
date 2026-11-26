@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Registered Nursing",
  "award": "A.S. Degree",
- "source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=111",
+ "source_url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=112",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8466,
+  "input_tokens": 10892,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8466,
-    "output_tokens": 4878,
+    "input_tokens": 10892,
+    "output_tokens": 4404,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,44 +30,37 @@
     "model": null
    }
   ],
-  "output_tokens": 4878,
+  "output_tokens": 4404,
   "output_tokens_details": {
-   "thinking_tokens": 2315
+   "thinking_tokens": 1783
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.13142,
- "ms": 37564,
- "seconds": 38.1,
+ "cost_usd": 0.13165,
+ "ms": 35165,
+ "seconds": 36.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 8,
+   "placed": 10,
    "listed": 10,
-   "share": 0.8,
-   "missing": [
-    "PSY3",
-    "SP7"
-   ],
-   "unexplained": [
-    "PSY3",
-    "SP7"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 14,
+   "count": 12,
    "codes": [
     "BIOL15",
     "BIOL22",
     "BIOL23",
     "COMM15",
-    "COMM7",
     "COMMC1000",
     "COMMC1004",
     "ENGLC1000",
@@ -75,7 +68,6 @@
     "N20",
     "N25",
     "N45",
-    "PSYC3",
     "SOCIC1000"
    ],
    "flagged": [
@@ -92,7 +84,7 @@
     "N45",
     "SOCIC1000"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
@@ -152,11 +144,25 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "prerequisites_counted",
+    "label": "The record counts the program's prerequisite courses, which the catalog's printed total leaves out; without them the courses add to the printed total.",
+    "words": "'Total Units for the Major 37' equals the sum of the nursing courses only (N 010 through N 045); the prerequisite blocks (BIOL, ENGL, MATH, PSYC, SOCI/ANTH, COMM) are printed outside that total and are presumably partly counted in the 36-unit CMC General Education Requirement toward the 73 minimum degree units."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 70,
+   "course_list_match": 100,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {
-   "section_heading": "NURSING: REGISTERED",
+   "section_heading": "NURSING: REGISTERED / Associate in Science in REGISTERED NURSING with emphasis on employment preparation",
    "measure": "units",
    "total_units": {
     "min": 37,
@@ -178,15 +184,15 @@
    },
    "electives_fill_degree": false,
    "outcomes": [
-    "Coordination and Collaboration of Care : Perform within an interdisciplinary team utilizing effective communication skills, collaborative decision making, and mutual respect to promote quality patient care. (ILOs: Communication)",
-    "Safety and Quality Improvement : Devise plans of care that minimize risk of harm to improve safety and quality for diverse patients across the life span utilizing system processes. (ILOs: Critical Thinking)",
-    "Evidence Based Practice : Integrate current best evidence utilizing clinical reasoning, nursing judgment and patient preferences to achieve optimal health. (ILOs: Critical Thinking)",
-    "Nursing Judgment : Demonstrate judgment in practice, supported by evidence that integrates knowledge, skills, and attitudes of a beginning nurse generalist to provide safe quality of care. (ILOs: Critical Thinking)",
+    "Coordination and Collaboration of Care: Perform within an interdisciplinary team utilizing effective communication skills, collaborative decision making, and mutual respect to promote quality patient care. (ILOs: Communication)",
+    "Safety and Quality Improvement: Devise plans of care that minimize risk of harm to improve safety and quality for diverse patients across the life span utilizing system processes. (ILOs: Critical Thinking)",
+    "Evidence Based Practice: Integrate current best evidence utilizing clinical reasoning, nursing judgment and patient preferences to achieve optimal health. (ILOs: Critical Thinking)",
+    "Nursing Judgment: Demonstrate judgment in practice, supported by evidence that integrates knowledge, skills, and attitudes of a beginning nurse generalist to provide safe quality of care. (ILOs: Critical Thinking)",
     "Utilize the nursing process in providing nursing care. (ILOs: Critical Thinking)",
     "Culture: Provide patient centered nursing care to meet the healthcare needs of patients with unique cultural attributes within diverse communities. (ILOs: Ethics)",
     "Manage an environment that promotes patients’ self-esteem, dignity, safety and comfort. (ILOs: Ethics)",
     "Professionalism and Leadership: Demonstrate integrity, ethical standards and principles of leadership and professional practice, personal growth, accountability for adherence to policies and procedures, and advocacy for patients and the profession of nursing. (ILOs: Personal Development)",
-    "Informatics and Technology : Manage information and technology to communicate with the interdisciplinary team, make informed clinical decisions, and minimize patient and personal harm. (ILOs: Information Competency)"
+    "Informatics and Technology: Manage information and technology to communicate with the interdisciplinary team, make informed clinical decisions, and minimize patient and personal harm. (ILOs: Information Competency)"
    ],
    "careers": [
     "Beginning Nurse Generalist"
@@ -417,15 +423,32 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Catalog codes matched to closed-list codes by number and title: PSYC 003 = PSY 3 (Developmental Psychology), ANTH 002 = ANTH 2, COMM 007 (Decision-Making and Advocacy) = SP 7, N 010/015/030/035/036/040 = N 10/15/30/35/36/40. Reviewer should confirm the subject-code differences (PSYC vs PSY, COMM vs SP).",
-   "'Total Units for the Major 37' equals the sum of the nursing courses only (N 010 through N 045); the prerequisite blocks (BIOL, ENGL, MATH, PSYC, SOCI/ANTH, COMM) are required but appear to count outside the 37-unit major, presumably toward GE or the 73-unit minimum degree. Block sums therefore exceed total_units.",
-   "Units printed oddly in the or-groups: SOCI C1000 has no units beside it (the 3 is beside ANTH 002); COMM C1004 and COMM 007 have no units printed (3 beside COMM C1000 and COMM 015). Recorded as printed (null).",
-   "MATH 040 is no longer offered; footnote allows substitution of STAT C1000, MATH 010, any higher Math course in the College Algebra sequence, or MATH 016 (with one additional unit needed if MATH 016 used). Not recorded as alternatives.",
-   "Footnote: students with 4-unit transfer credit for BIOL 015 and/or BIOL 023 must complete additional units to reach the 73 minimum degree units.",
-   "Three units from the Humanities area satisfy the CMC GE requirement; PHIL 013 Perspectives on Death and Dying is 'highly recommended' — treated as GE guidance, not placed in a block.",
-   "Catalog units for N 035 and N 036 are 2.25 (state file stores 2.3).",
-   "Outcomes 4 and 5 each have an additional unnumbered sentence printed beneath them; these were recorded as separate entries. Reviewer may prefer to treat them as part of outcomes 4 and 5."
+   "Closed-list codes differ from catalog codes: PSY 3 matched to catalog PSYC 003 (Developmental Psychology), SP 7 matched to catalog COMM 007 (Decision-Making and Advocacy), ANTH 2 to ANTH 002, N 10/15/30/35/36/40 to N 010/015/030/035/036/040; marked catalog_addition false on title match. Reviewer should confirm.",
+   "'Total Units for the Major 37' equals the sum of the nursing courses only (N 010 through N 045); the prerequisite blocks (BIOL, ENGL, MATH, PSYC, SOCI/ANTH, COMM) are printed outside that total and are presumably partly counted in the 36-unit CMC General Education Requirement toward the 73 minimum degree units.",
+   "The catalog labels the first block 'RN Program electives' but lists them as courses to be completed prior to applying; recorded as required ('all').",
+   "SOCI C1000 / ANTH 002 and the COMM choice print a single '3' on only some lines; units recorded only where printed beside a code.",
+   "Catalog prints 2.25 units for N 035 and N 036; the state file stores 2.3.",
+   "Humanities GE: 'Select three (3) units from the Humanities area to meet the CMC General Education Requirement. PHIL 013 Perspectives on Death and Dying is highly recommended.' Treated as GE, not recorded as a block.",
+   "MATH 040 is no longer offered; substitutions allowed: STAT C1000, MATH 010, any math higher than MATH 010 in the College Algebra sequence, or MATH 016 (with one additional unit needed).",
+   "Students with 4-unit transfer credit for BIOL 015 and/or BIOL 023 satisfy the prerequisite but must make up the unit toward the 73 minimum degree units.",
+   "Outcomes 4 and 5 each have an additional unnumbered statement with its own ILO tag ('Utilize the nursing process...', 'Manage an environment...'); recorded as separate entries.",
+   "The LVN to RN 30-unit option (N 076A etc.) on page 114 grants no degree and was not recorded."
   ]
  },
- "extracted_run": "39035222722"
+ "extracted_run": "45855512160",
+ "catalog_year": "2026-2027",
+ "source_sha": "4a65fd3ca28ee2af",
+ "source_codes": [
+  "ANTH2",
+  "N10",
+  "N15",
+  "N30",
+  "N35",
+  "N36",
+  "N40",
+  "PSY3",
+  "PSYCC1000",
+  "SP7"
+ ],
+ "source_coverage": 1.0
 }

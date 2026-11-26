@@ -1,0 +1,42 @@
+{
+ "_readme": "S740 (the census's reconcile_steps lever, lane 1 `reconcile`). Norco's curriQunet pages print a figure over Required Courses that the rows under it do not add to as the capture's text gives them: Philosophy A.A.-T prints 'Units: 9.00' over two 'Choose one course' groups of 3.00 (PHI-10, PHI-10H, PHI-12; PHI-32, MATH-32), and Drafting Technology prints 'Units: 14.00-15.00' over four 'Select one of the following' groups that add to 11-12 (college-page-read run 45835049303). The text is flat, so a row that follows a group may be a required course of its own. This read prints the page's own data around those rows, as its scripts fetched it, so the session sees whether the catalog marks where a group ends. Two loads, no model call, nothing written.",
+ "college": "Norco College",
+ "questions": {
+  "group_end": "Does the page's own data mark which rows belong to a 'Choose one course' group and which follow it as required courses?"
+ },
+ "keywords": [
+  "Choose one course",
+  "Select one of the following",
+  "PHI-12",
+  "DFT-62",
+  "Units:\\s*[0-9.]+"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "group_end"
+   ],
+   "why": "32830",
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5218",
+   "network": true,
+   "network_find": [
+    "Choose one course",
+    "PHI-12",
+    "PHI-32"
+   ]
+  },
+  {
+   "answers": [
+    "group_end"
+   ],
+   "why": "30091, 40079",
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5169",
+   "network": true,
+   "network_find": [
+    "Select one of the following",
+    "DFT-51",
+    "DFT-62"
+   ]
+  }
+ ]
+}

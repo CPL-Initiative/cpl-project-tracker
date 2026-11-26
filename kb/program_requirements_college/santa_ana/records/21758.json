@@ -46,34 +46,39 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 12,
+   "placed": 14,
    "listed": 14,
-   "share": 0.857,
-   "missing": [
-    "MATH180",
-    "MATH185"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MATH180",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2220",
+     "listed": "MATH185",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 6,
+   "count": 4,
    "codes": [
     "CMPR117",
     "CMPR121",
     "CMPR139",
-    "CMPR205",
-    "MATHC2210",
-    "MATHC2220"
+    "CMPR205"
    ],
    "flagged": [
     "CMPR117",
     "CMPR121",
     "CMPR139",
-    "CMPR205",
-    "MATHC2210",
-    "MATHC2220"
+    "CMPR205"
    ],
    "pass": true
   },
@@ -355,5 +360,6 @@
    "The page prints one Learning Outcome(s) list for this certificate."
   ]
  },
- "extracted_run": "38843461766"
+ "extracted_run": 45841675928,
+ "read_run": "38843461766"
 }

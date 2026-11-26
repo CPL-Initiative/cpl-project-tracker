@@ -1,0 +1,626 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30); Sam's routine prompt of 2026-11-25, as the S739 conductor's brief carries it: a record held for a gap is collected with its gap named and a lower score on the 0-100 bar, never held, unless the record is not the program's own; S739: San Jose City's records kb/receipts/program_requirement_records_piles_s739_san_jose_city_2026-11-26_s740c4.json held, read again by key: passed by a rescore where today's scorer's one reading moves them, else collected with their gaps named where the record is the program's own (no reread, no reconcile)",
+ "at": "2026-11-26T15:46:00Z",
+ "college": "San Jose City College",
+ "keys": {
+  "from": "kb/receipts/program_requirement_records_piles_s739_san_jose_city_2026-11-26_s740c4.json",
+  "members": [
+   "32078",
+   "08859"
+  ]
+ },
+ "gaps": {
+  "required_list_outside_total": "The catalog prints a list the program requires apart from its printed total, and the record counts that list; without it the courses add to the printed total.",
+  "total_differs": "The catalog prints a total for this program that its own printed units do not add to."
+ },
+ "moved": 2,
+ "by": {
+  "required_list_outside_total": 1,
+  "total_differs": 1
+ },
+ "precision": {
+  "read": 2,
+  "right": 2,
+  "wrong": [],
+  "no_record_file": 0,
+  "not_hand_held": 0,
+  "by_answer": {
+   "required_list_outside_total": 1,
+   "total_differs": 1
+  }
+ },
+ "claim_checks": {
+  "counts": {
+   "stands": 2
+  },
+  "not_standing": []
+ },
+ "boundaries": {
+  "counts": {
+   "the note's words gone right": 1,
+   "the stated total one unit off right": 2,
+   "coverage failing right": 2,
+   "the reading against a total one unit off right": 1
+  },
+  "wrong": []
+ },
+ "held": [],
+ "records": [
+  {
+   "college": "San Jose City College",
+   "control_number": "32078",
+   "award": "A.S. Degree",
+   "extracted_run": 45840981324,
+   "moves_to": "required_list_outside_total",
+   "words": "The Approved Program Electives block lies outside the 31-32 unit major total; its minimum of 2 is taken from the 'AS Degree Requirements' table ('Approved Program Electives 2'), which is also recorded in degree_elective_units. The heading itself says 'as needed to reach 60 units' but the page prints 2 units, so electives_fill_degree is false.",
+   "confidence": {
+    "unit_arithmetic": 70,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/san_jose_city/records/32078.json",
+   "before_image": {
+    "program_title": "Medical Assisting: Clinical",
+    "award": "A.S. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.sjcc.edu/degrees-certificates/medical-assisting/medical-assisting-clinical-associate-science/",
+    "measure": "units",
+    "total_min": 31,
+    "total_max": 32,
+    "record": {
+     "program": {
+      "section_heading": "Medical Assisting: Clinical - Associate in Science",
+      "measure": "units",
+      "total_units": {
+       "min": 31,
+       "max": 32
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": 2,
+       "max": 2
+      },
+      "ge_pattern": "General Education Requirements",
+      "degree_total": {
+       "min": 60,
+       "max": 60
+      },
+      "ge_units": {
+       "min": 27,
+       "max": 27
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Apply principles of anatomy/physiology and medical terminology to clinical protocols and procedures.",
+       "Execute the clinical skills required of a medical assistant.",
+       "Exercise compliance with regard to HIPAA and OSHA regulations, and be able to explain relevant privacy and safety protocols to patients and other health professionals.",
+       "Apply knowledge of clinical medical assisting to passing the Certified Medical Assistant (CMA) exam and/or the Registered Medical Assisting (RMA) exam.",
+       "Communicate effectively with patients and other health care personnel while exercising the highest level of professional conduct.",
+       "Utilize the practical experience acquired during a clinical externship performed in a doctor's office, clinic, hospital, or laboratory to successfully integrate into a similar clinical health care environment upon post-graduate employment.",
+       "Service the community by filling a need for qualified, well-trained clinical medical assistants."
+      ],
+      "careers": [
+       "clinical (back office) medical assistant",
+       "Medical Office",
+       "Medical Clinic",
+       "Hospitals"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required Courses:",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 24,
+        "max": 24
+       },
+       "courses": [
+        {
+         "code": "HSCI 008",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MA 005",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MA 006",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MA 020",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MA 021",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MA 022",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MA 023",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MA 024",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Complete one of the following BUS courses:",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "BUS 007A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BUS 008",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Complete one of the following courses:",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 4,
+        "max": 5
+       },
+       "courses": [
+        {
+         "code": "BIOL 020",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL 071",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MA 004",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Approved Program Electives (as needed to reach 60 units)",
+       "rule": "choose_units",
+       "minimum": 2,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ADS 071",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL 061",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CA 005",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CA 010A",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CA 011",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CA 100D",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FCS 019",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FCS 070",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HED 011",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MA 007",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MA 008",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MA 009",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MA 011",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 27,
+     "listed": 27
+    },
+    "extracted_run": "45840981324"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 27,
+     "listed": 27,
+     "gaps": [
+      "required_list_outside_total"
+     ],
+     "confidence": {
+      "unit_arithmetic": 70,
+      "course_list_match": 100,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 1
+  },
+  {
+   "college": "San Jose City College",
+   "control_number": "08859",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": 45840981324,
+   "moves_to": "total_differs",
+   "words": "the catalog prints a total of 36, and its own figures add to 24 (the program's own page, https://catalog.sjcc.edu/degrees-certificates/construction-technology/residential-maintenance-certificate-achievement-level-2/; college-page-read run 45835049303)",
+   "confidence": {
+    "unit_arithmetic": 50,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/san_jose_city/records/08859.json",
+   "before_image": {
+    "program_title": "Construction Technology-Residential Maintenance-Level 2",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.sjcc.edu/degrees-certificates/construction-technology/residential-maintenance-certificate-achievement-level-2/",
+    "measure": "units",
+    "total_min": 36,
+    "total_max": 36,
+    "record": {
+     "program": {
+      "section_heading": "Construction technology: Residential Maintenance - Certificate of Achievement Level 2",
+      "measure": "units",
+      "total_units": {
+       "min": 36,
+       "max": 36
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Demonstrate appropriate use of construction tools, methods and materials, follow safety practices and procedures used in the industry.",
+       "Demonstrate understanding of construction terms, concepts, and hands-on applications.",
+       "Read and interpret building codes, blueprints, manuals, specifications, shop drawings.",
+       "Apply effective use of emerging technologies in the construction trades including application Virtual Design and Construction (VDC) and energy efficiency."
+      ],
+      "careers": [
+       "Building Inspector",
+       "Carpenter",
+       "Concrete Form Setter",
+       "Construction Worker",
+       "Construction Management",
+       "Contractor",
+       "Drywall Hanger, Taper, and Texturing",
+       "Electrician",
+       "Building Information Modeling (BIM)",
+       "Estimator",
+       "Home Improvement Material Retail Sales",
+       "Insulation Installer",
+       "Painter",
+       "Plumber",
+       "Residential Maintenance",
+       "Roofer"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 15,
+        "max": 15
+       },
+       "courses": [
+        {
+         "code": "CNSTR 101A",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNSTR 101B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNSTR 102A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNSTR 102B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNSTR 110",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNSTR 117",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Approved Major Electives",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 9,
+        "max": 9
+       },
+       "courses": [
+        {
+         "code": "CNSTR 103",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNSTR 104",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNSTR 107",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNSTR 116",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CNSTR 118",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CNSTR 128",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CNSTR 138",
+         "units": 1,
+         "units_max": 8,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FMT 100",
+         "units": 3.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOLAR 102",
+         "units": 3.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 12,
+     "listed": 12
+    },
+    "extracted_run": "45840981324"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 12,
+     "listed": 12,
+     "gaps": [
+      "total_differs"
+     ],
+     "confidence": {
+      "unit_arithmetic": 50,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 2
+  }
+ ],
+ "live_run_proof": null,
+ "shared_pages": {},
+ "representation": "checks.gaps and checks.confidence added as the load reads the filed score (a passing row: checks.arithmetic to equal); checks.coverage, invented and the record unchanged",
+ "claim_check_reads": "Today's capture (sources.json): every course an entry names among the codes it found, and a course an entry says the printed total leaves out on neither it nor the state's list. A note's quoted figures are the reader's words, never re-read here.",
+ "follow_verdict": "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows (confirm_matches); the apply aborts, writing nothing, unless the count is 0.",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'San Jose City College', '32078', 45840981324, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HSCI 008\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 005\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 006\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 020\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 021\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 022\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 023\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 024\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses:\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":24,\"min\":24}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 007A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 008\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Complete one of the following BUS courses:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 020\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 071\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 004\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Complete one of the following courses:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":5,\"min\":4}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADS 071\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 061\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CA 005\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CA 010A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CA 011\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CA 100D\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FCS 019\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FCS 070\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HED 011\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 007\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 008\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 009\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 011\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"Approved Program Electives (as needed to reach 60 units)\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"clinical (back office) medical assistant\",\"Medical Office\",\"Medical Clinic\",\"Hospitals\"],\"degree_elective_units\":{\"max\":2,\"min\":2},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"General Education Requirements\",\"ge_units\":{\"max\":27,\"min\":27},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Apply principles of anatomy/physiology and medical terminology to clinical protocols and procedures.\",\"Execute the clinical skills required of a medical assistant.\",\"Exercise compliance with regard to HIPAA and OSHA regulations, and be able to explain relevant privacy and safety protocols to patients and other health professionals.\",\"Apply knowledge of clinical medical assisting to passing the Certified Medical Assistant (CMA) exam and/or the Registered Medical Assisting (RMA) exam.\",\"Communicate effectively with patients and other health care personnel while exercising the highest level of professional conduct.\",\"Utilize the practical experience acquired during a clinical externship performed in a doctor''s office, clinic, hospital, or laboratory to successfully integrate into a similar clinical health care environment upon post-graduate employment.\",\"Service the community by filling a need for qualified, well-trained clinical medical assistants.\"],\"section_heading\":\"Medical Assisting: Clinical - Associate in Science\",\"total_units\":{\"max\":32,\"min\":31}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":27,\"placed\":27}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":70},\"coverage\":true,\"gaps\":[\"required_list_outside_total\"],\"invented\":true,\"listed\":27,\"placed\":27}'::jsonb),\n  (2, 'San Jose City College', '08859', 45840981324, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNSTR 101A\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNSTR 101B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNSTR 102A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNSTR 102B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNSTR 110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNSTR 117\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":15,\"min\":15}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNSTR 103\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNSTR 104\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNSTR 107\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNSTR 116\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNSTR 118\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNSTR 128\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNSTR 138\",\"units\":1,\"units_max\":8},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FMT 100\",\"units\":3.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOLAR 102\",\"units\":3.5,\"units_max\":null}],\"minimum\":3,\"name\":\"Approved Major Electives\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":9,\"min\":9}}],\"program\":{\"careers\":[\"Building Inspector\",\"Carpenter\",\"Concrete Form Setter\",\"Construction Worker\",\"Construction Management\",\"Contractor\",\"Drywall Hanger, Taper, and Texturing\",\"Electrician\",\"Building Information Modeling (BIM)\",\"Estimator\",\"Home Improvement Material Retail Sales\",\"Insulation Installer\",\"Painter\",\"Plumber\",\"Residential Maintenance\",\"Roofer\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate appropriate use of construction tools, methods and materials, follow safety practices and procedures used in the industry.\",\"Demonstrate understanding of construction terms, concepts, and hands-on applications.\",\"Read and interpret building codes, blueprints, manuals, specifications, shop drawings.\",\"Apply effective use of emerging technologies in the construction trades including application Virtual Design and Construction (VDC) and energy efficiency.\"],\"section_heading\":\"Construction technology: Residential Maintenance - Certificate of Achievement Level 2\",\"total_units\":{\"max\":36,\"min\":36}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":12,\"placed\":12}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":12,\"placed\":12}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "pre_read_md5": "with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) as (values\n  (1, 'San Jose City College', '32078', 45840981324, 'e8c7b72bc48f66419e387ae9e6cc073d', '45ae831dcc33f804e8d358422e3f2514', '012d140c32282c8f20a541f23f58a1df'),\n  (2, 'San Jose City College', '08859', 45840981324, 'cc012a6147ea7fc8eea2cb97656c9f9c', '87e5fe088d44991cdab6e95d09f28b7b', 'f210ad6b636863c32df0e6502e5e0cf5'))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.record::text) = v.rec_md5),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.checks::text) = v.chk_md5),\n  'already_after', count(*) filter (where md5(r.checks::text) = v.after_md5),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'San Jose City College', '32078', 45840981324, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HSCI 008\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 005\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 006\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 020\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 021\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 022\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 023\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 024\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses:\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":24,\"min\":24}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 007A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 008\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Complete one of the following BUS courses:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 020\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 071\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 004\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Complete one of the following courses:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":5,\"min\":4}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADS 071\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 061\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CA 005\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CA 010A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CA 011\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CA 100D\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FCS 019\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FCS 070\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HED 011\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 007\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 008\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 009\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 011\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"Approved Program Electives (as needed to reach 60 units)\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"clinical (back office) medical assistant\",\"Medical Office\",\"Medical Clinic\",\"Hospitals\"],\"degree_elective_units\":{\"max\":2,\"min\":2},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"General Education Requirements\",\"ge_units\":{\"max\":27,\"min\":27},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Apply principles of anatomy/physiology and medical terminology to clinical protocols and procedures.\",\"Execute the clinical skills required of a medical assistant.\",\"Exercise compliance with regard to HIPAA and OSHA regulations, and be able to explain relevant privacy and safety protocols to patients and other health professionals.\",\"Apply knowledge of clinical medical assisting to passing the Certified Medical Assistant (CMA) exam and/or the Registered Medical Assisting (RMA) exam.\",\"Communicate effectively with patients and other health care personnel while exercising the highest level of professional conduct.\",\"Utilize the practical experience acquired during a clinical externship performed in a doctor''s office, clinic, hospital, or laboratory to successfully integrate into a similar clinical health care environment upon post-graduate employment.\",\"Service the community by filling a need for qualified, well-trained clinical medical assistants.\"],\"section_heading\":\"Medical Assisting: Clinical - Associate in Science\",\"total_units\":{\"max\":32,\"min\":31}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":27,\"placed\":27}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":70},\"coverage\":true,\"gaps\":[\"required_list_outside_total\"],\"invented\":true,\"listed\":27,\"placed\":27}'::jsonb),\n  (2, 'San Jose City College', '08859', 45840981324, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNSTR 101A\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNSTR 101B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNSTR 102A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNSTR 102B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNSTR 110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNSTR 117\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":15,\"min\":15}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNSTR 103\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNSTR 104\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNSTR 107\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNSTR 116\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNSTR 118\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNSTR 128\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNSTR 138\",\"units\":1,\"units_max\":8},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FMT 100\",\"units\":3.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOLAR 102\",\"units\":3.5,\"units_max\":null}],\"minimum\":3,\"name\":\"Approved Major Electives\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":9,\"min\":9}}],\"program\":{\"careers\":[\"Building Inspector\",\"Carpenter\",\"Concrete Form Setter\",\"Construction Worker\",\"Construction Management\",\"Contractor\",\"Drywall Hanger, Taper, and Texturing\",\"Electrician\",\"Building Information Modeling (BIM)\",\"Estimator\",\"Home Improvement Material Retail Sales\",\"Insulation Installer\",\"Painter\",\"Plumber\",\"Residential Maintenance\",\"Roofer\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate appropriate use of construction tools, methods and materials, follow safety practices and procedures used in the industry.\",\"Demonstrate understanding of construction terms, concepts, and hands-on applications.\",\"Read and interpret building codes, blueprints, manuals, specifications, shop drawings.\",\"Apply effective use of emerging technologies in the construction trades including application Virtual Design and Construction (VDC) and energy efficiency.\"],\"section_heading\":\"Construction technology: Residential Maintenance - Certificate of Achievement Level 2\",\"total_units\":{\"max\":36,\"min\":36}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":12,\"placed\":12}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":12,\"placed\":12}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\nf as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number\n        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true\n       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)),\ne(expect) as (values (2)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when f.n > 0\n            then ('s740c5 piles confirm guard: ' || f.n || ' rows hold a matching confirm verdict ' || f.keys::text)::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s740c5 piles guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, f;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'San Jose City College', '32078', 45840981324, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HSCI 008\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 005\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 006\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 020\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 021\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 022\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 023\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 024\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses:\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":24,\"min\":24}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 007A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 008\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Complete one of the following BUS courses:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 020\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 071\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 004\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Complete one of the following courses:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":5,\"min\":4}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADS 071\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 061\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CA 005\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CA 010A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CA 011\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CA 100D\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FCS 019\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FCS 070\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HED 011\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 007\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 008\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 009\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 011\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"Approved Program Electives (as needed to reach 60 units)\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"clinical (back office) medical assistant\",\"Medical Office\",\"Medical Clinic\",\"Hospitals\"],\"degree_elective_units\":{\"max\":2,\"min\":2},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"General Education Requirements\",\"ge_units\":{\"max\":27,\"min\":27},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Apply principles of anatomy/physiology and medical terminology to clinical protocols and procedures.\",\"Execute the clinical skills required of a medical assistant.\",\"Exercise compliance with regard to HIPAA and OSHA regulations, and be able to explain relevant privacy and safety protocols to patients and other health professionals.\",\"Apply knowledge of clinical medical assisting to passing the Certified Medical Assistant (CMA) exam and/or the Registered Medical Assisting (RMA) exam.\",\"Communicate effectively with patients and other health care personnel while exercising the highest level of professional conduct.\",\"Utilize the practical experience acquired during a clinical externship performed in a doctor''s office, clinic, hospital, or laboratory to successfully integrate into a similar clinical health care environment upon post-graduate employment.\",\"Service the community by filling a need for qualified, well-trained clinical medical assistants.\"],\"section_heading\":\"Medical Assisting: Clinical - Associate in Science\",\"total_units\":{\"max\":32,\"min\":31}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":27,\"placed\":27}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":70},\"coverage\":true,\"gaps\":[\"required_list_outside_total\"],\"invented\":true,\"listed\":27,\"placed\":27}'::jsonb),\n  (2, 'San Jose City College', '08859', 45840981324, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNSTR 101A\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNSTR 101B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNSTR 102A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNSTR 102B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNSTR 110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNSTR 117\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":15,\"min\":15}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNSTR 103\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNSTR 104\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNSTR 107\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNSTR 116\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNSTR 118\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNSTR 128\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNSTR 138\",\"units\":1,\"units_max\":8},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FMT 100\",\"units\":3.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOLAR 102\",\"units\":3.5,\"units_max\":null}],\"minimum\":3,\"name\":\"Approved Major Electives\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":9,\"min\":9}}],\"program\":{\"careers\":[\"Building Inspector\",\"Carpenter\",\"Concrete Form Setter\",\"Construction Worker\",\"Construction Management\",\"Contractor\",\"Drywall Hanger, Taper, and Texturing\",\"Electrician\",\"Building Information Modeling (BIM)\",\"Estimator\",\"Home Improvement Material Retail Sales\",\"Insulation Installer\",\"Painter\",\"Plumber\",\"Residential Maintenance\",\"Roofer\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate appropriate use of construction tools, methods and materials, follow safety practices and procedures used in the industry.\",\"Demonstrate understanding of construction terms, concepts, and hands-on applications.\",\"Read and interpret building codes, blueprints, manuals, specifications, shop drawings.\",\"Apply effective use of emerging technologies in the construction trades including application Virtual Design and Construction (VDC) and energy efficiency.\"],\"section_heading\":\"Construction technology: Residential Maintenance - Certificate of Achievement Level 2\",\"total_units\":{\"max\":36,\"min\":36}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":12,\"placed\":12}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":12,\"placed\":12}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (2)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s740c5 piles rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;"
+}

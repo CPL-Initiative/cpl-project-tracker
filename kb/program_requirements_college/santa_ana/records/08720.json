@@ -109,7 +109,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "pair_read_as_alternatives",
+    "label": "The catalog prints two courses taken together as one option, and the record reads them as separate alternatives, so its low end falls short of the printed total.",
+    "words": "The Mechanical Option's 'Solidworks Advanced' row (3.0 units) is printed as ENGR 105 OR MNFG 105, then MNFG 106 with an OR after it. Read with the 12-unit option total (3+3+3+3), MNFG 106 is probably a separate required course. But the trailing OR may instead belong between the two options. I recorded MNFG 106 as a third alternative to ENGR 105. Reviewer should check whether MNFG 106 is a separate required course; if so, the Mechanical Option would hold four courses."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

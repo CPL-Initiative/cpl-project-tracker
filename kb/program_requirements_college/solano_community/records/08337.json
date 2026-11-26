@@ -46,25 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 15,
+   "placed": 16,
    "listed": 16,
-   "share": 0.938,
-   "missing": [
-    "SOC2"
-   ],
-   "unexplained": [
-    "SOC2"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "SOCI2"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -317,6 +311,6 @@
    "Catalog codes use leading zeros/spacing (HSW 001, COUN 064, SOCI 002, SOCI C1000) matching closed-list HSW 1, COUN 64, SOC 2, SOCIC1000; treated as the same courses."
   ]
  },
- "extracted_run": 43355021555,
- "read_run": 39037377728
+ "extracted_run": 45840125172,
+ "read_run": 43355021555
 }

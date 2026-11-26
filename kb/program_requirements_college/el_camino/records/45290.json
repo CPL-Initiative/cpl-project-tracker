@@ -141,7 +141,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "noted_section_cut_off",
+    "label": "The reader's note says the program's section runs onto a page the read did not hold, so part of its requirements is missing from the record.",
+    "words": "The catalog text is cut off mid-Area 5 (at 'GEOL 36 - Geolo'); Area 5B (Biological Science), the Area 5C laboratory requirement and Area 6 (Ethnic Studies), if printed, are not in the text and are not recorded as blocks. | No total units for the certificate are printed in the visible text; total_units left null."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 20,
+   "course_list_match": 50,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

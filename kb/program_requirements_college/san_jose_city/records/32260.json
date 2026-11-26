@@ -46,36 +46,27 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 50,
+   "placed": 52,
    "listed": 52,
-   "share": 0.962,
-   "missing": [
-    "KINPE2",
-    "KINPE4"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 8,
+   "count": 5,
    "codes": [
     "KIN25",
-    "KINPE23",
     "KINPE38A",
     "KINPE39B",
-    "KINPE41",
-    "KINPE56",
     "KINPE99B",
     "SOC10H"
    ],
    "flagged": [
     "KIN25",
-    "KINPE23",
     "KINPE38A",
     "KINPE39B",
-    "KINPE41",
-    "KINPE56",
     "KINPE99B",
     "SOC10H"
    ],
@@ -639,5 +630,6 @@
    "Program learning outcomes are printed on the program page's outcomes tab and recorded for this AA-T."
   ]
  },
- "extracted_run": "43357106423"
+ "extracted_run": 45840981324,
+ "read_run": "43357106423"
 }

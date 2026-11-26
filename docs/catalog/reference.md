@@ -72,7 +72,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Conductor mode — how a session runs workers, COBIx and the merge gate](../reference/conductor_mode.md) | — | `conductor_mode.md` | 2026-11-11 | 2026-11-25 |
 | [Context-pressure hook — install and mechanics](../reference/context_pressure_hook.md) | — | `context_pressure_hook.md` | 2026-08-29 |  |
 | [Data dictionary: every Commons data dashboard dataset, its owner, procedure and planned improvement](../reference/data_dictionary.md) | — | `data_dictionary.md` | 2026-11-13 | 2026-11-13 |
-| [Data sources: the register of datasets that could fill a Commons gap](../reference/data_sources.md) | — | `data_sources.md` | 2026-11-04 | 2026-11-23 |
+| [Data sources: the register of datasets that could fill a Commons gap](../reference/data_sources.md) | — | `data_sources.md` | 2026-11-04 | 2026-11-26 |
 | [Data-write rollback — undoing a bulk write to a shared Supabase table](../reference/data_write_rollback.md) | — | `data_write_rollback.md` | 2026-08-30 |  |
 | [Dependency map — dataset to consuming tabs, scripts, workflows and surfaces](../reference/dependency_map.md) | — | `dependency_map.md` | 2026-08-30 |  |
 | [Design principles — every COBI screen (v3)](../reference/design-principles.md) | — | `design-principles.md` | 2026-11-11 | 2026-11-14 |

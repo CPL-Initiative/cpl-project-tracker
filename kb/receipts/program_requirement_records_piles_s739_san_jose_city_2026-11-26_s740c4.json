@@ -1,0 +1,1296 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30); Sam's routine prompt of 2026-11-25, as the S739 conductor's brief carries it: a record held for a gap is collected with its gap named and a lower score on the 0-100 bar, never held, unless the record is not the program's own; S739: San Jose City's records kb/status/harvest_gap_census.json (reconcile_steps at San Jose City College, written 2026-11-26 12:06Z) held, read again by key: passed by a rescore where today's scorer's one reading moves them, else collected with their gaps named where the record is the program's own (no reread, no reconcile)",
+ "at": "2026-11-26T15:00:54Z",
+ "college": "San Jose City College",
+ "keys": {
+  "from": "kb/status/harvest_gap_census.json (reconcile_steps at San Jose City College, written 2026-11-26 12:06Z)",
+  "members": [
+   "08859",
+   "22241",
+   "30403",
+   "32078",
+   "33857",
+   "37604"
+  ]
+ },
+ "gaps": {
+  "figure_within_variable_units": "A required list's printed figure falls inside the range its variable-unit courses carry, and the page does not say how many units each takes; counting each list at its printed figure, the figures add to the printed total.",
+  "lists_not_closed": "A choice list prints no unit figure of its own, one that depends on another choice, or also takes courses from another list, so the lists alone cannot add the program's units.",
+  "noted_unit_floor": "The catalog requires a variable-unit course at a minimum above the units printed beside it; with that minimum the courses add to the printed total."
+ },
+ "moved": 4,
+ "by": {
+  "figure_within_variable_units": 1,
+  "lists_not_closed": 2,
+  "noted_unit_floor": 1
+ },
+ "precision": {
+  "read": 6,
+  "right": 6,
+  "wrong": [],
+  "no_record_file": 0,
+  "not_hand_held": 0,
+  "by_answer": {
+   "none": 2,
+   "figure_within_variable_units": 1,
+   "lists_not_closed": 2,
+   "noted_unit_floor": 1
+  }
+ },
+ "claim_checks": {
+  "counts": {
+   "stands": 4
+  },
+  "not_standing": []
+ },
+ "boundaries": {
+  "counts": {
+   "the note's words gone right": 4,
+   "the stated total one unit off right": 4,
+   "coverage failing right": 4,
+   "the reading against a total one unit off right": 2,
+   "the open shape broken right": 1,
+   "the depends shape broken right": 1
+  },
+  "wrong": []
+ },
+ "held": [
+  {
+   "control_number": "08859",
+   "why": "held: until the reread of the reconcile posts its row: the reconcile reads its course list (SOLAR 102 for the file's SolarRenewab). The page prints 'Required 15', 'Approved Major Electives 9' and 'Total Units 36' (college-page-read run 45835049303): total_differs, once kb/program_total_differs.json lists it, in the plan after that reread",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "32078",
+   "why": "held: until the reread of the reconcile posts its row: the reconcile reads its course list (CA 005 for the file's ComputerAppl). Its record counts the Approved Program Electives both as a list of the major and as the degree's 2 elective units, and the page prints 'Major Requirements 31-32' without them: required_list_outside_total, in the plan after that reread",
+   "claim": "no entry stands"
+  }
+ ],
+ "records": [
+  {
+   "college": "San Jose City College",
+   "control_number": "22241",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "extracted_run": "43357106423",
+   "moves_to": "figure_within_variable_units",
+   "words": "Course units sum to 38-43 with ADS 138 at 1-6 units; the catalog states Total Units 41 (consistent with ADS 138 taken at 4 units). Reviewer may check whether ADS 138 is required at a fixed number of units.",
+   "confidence": {
+    "unit_arithmetic": 60,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/san_jose_city/records/22241.json",
+   "before_image": {
+    "program_title": "Alcohol & Drug Studies",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.sjcc.edu/degrees-certificates/alcohol-drug-studies/alcohol-and-drug-studies-certificate-of-achievement-level-3/",
+    "measure": "units",
+    "total_min": 41,
+    "total_max": 41,
+    "record": {
+     "program": {
+      "section_heading": "Alcohol and Drug Studies-Certificate of Achievement - Level 3",
+      "measure": "units",
+      "total_units": {
+       "min": 41,
+       "max": 41
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Compare cultural, historical and political influences on alcohol and drug abuse and its impact on the community.",
+       "Identify signs and symptoms of addiction, and examine current biomedical research regarding the implications for treatment.",
+       "Conduct thorough intake screening and assessment of client entering treatment from an ASAM (American Society of Addiction medicine) perspective.",
+       "Recognize and discuss the importance of a professional commitment to the values and ethics of the California Consortium of Addiction Programs and Professionals (CCAPP) counselor.",
+       "Assess crisis situations to determine appropriate intervention and apply counseling and intervention skills."
+      ],
+      "careers": [
+       "Alcohol and Drug counselor",
+       "addiction field",
+       "drug and alcohol abuse counselor"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Certificate Requirements",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 41,
+        "max": 41
+       },
+       "courses": [
+        {
+         "code": "ADS 070",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ADS 071",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ADS 072",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ADS 073",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ADS 074",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ADS 075A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ADS 076",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ADS 077A",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ADS 077B",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ADS 078",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ADS 079",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ADS 138",
+         "units": 1,
+         "units_max": 6,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PSYC C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "PSYC C1000H",
+           "units": null,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": true
+        },
+        {
+         "code": "SOC 010",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "SOC 010H",
+           "units": null,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": true
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 9,
+     "listed": 9
+    },
+    "extracted_run": "43357106423"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 9,
+     "listed": 9,
+     "gaps": [
+      "figure_within_variable_units"
+     ],
+     "confidence": {
+      "unit_arithmetic": 60,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 1
+  },
+  {
+   "college": "San Jose City College",
+   "control_number": "30403",
+   "award": "A.S. Degree",
+   "extracted_run": "43357106423",
+   "moves_to": "lists_not_closed",
+   "words": "Approved Program Electives are taken 'as needed to reach 60 units'; no unit minimum printed, so the block's minimum is null and electives_fill_degree is true. Major (33-34) plus GE (27) already reaches 60 at the high end of the major range.",
+   "confidence": {
+    "unit_arithmetic": 30,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/san_jose_city/records/30403.json",
+   "before_image": {
+    "program_title": "Medical Assisting: Administrative",
+    "award": "A.S. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.sjcc.edu/degrees-certificates/medical-assisting/medical-assisting-administrative-associate-science/",
+    "measure": "units",
+    "total_min": 33,
+    "total_max": 34,
+    "record": {
+     "program": {
+      "section_heading": "Medical Assisting: Administrative - Associate in Science",
+      "measure": "units",
+      "total_units": {
+       "min": 33,
+       "max": 34
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "General Education Requirements",
+      "degree_total": {
+       "min": 60,
+       "max": 60
+      },
+      "ge_units": {
+       "min": 27,
+       "max": 27
+      },
+      "electives_fill_degree": true,
+      "outcomes": [
+       "Execute administrative medical front office skills including billing and coding procedures, health insurance form processing, patient and patient record/chart management, and public relations.",
+       "Apply knowledge of the human body, medical terminology and disease to front office administrative protocols and procedures.",
+       "Exercise compliance with regard to HIPAA privacy practices, and be able to explain these guidelines to both patients and other health professionals.",
+       "Adhere to, and support, OSHA and other regulatory agency safety guidelines overseeing the practice of medicine and implement such safety protocols.",
+       "Prepare for Certified Medical Assistant/CMA exam and/or the Registered Medical Assistant (RMA) exam.",
+       "Effectively communicate with patients and other health care personnel while exercising the highest level of professional conduct.",
+       "Integrate practical experience during an externship within a medical office setting.",
+       "Service the community by filling a need for certified, well-trained front office medical assistants."
+      ],
+      "careers": [
+       "administrative (front office) medical assistant",
+       "Medical Office",
+       "Medical Clinic",
+       "Hospitals"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required Courses:",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 26,
+        "max": 26
+       },
+       "courses": [
+        {
+         "code": "CA 100D",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HSCI 008",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MA 005",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MA 006",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MA 007",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MA 008",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MA 009",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MA 011",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MA 012",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "Complete one of the following BUS courses:",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "BUS 007A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BUS 008",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Complete one of the following courses:",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 4,
+        "max": 5
+       },
+       "courses": [
+        {
+         "code": "BIOL 020",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL 071",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MA 004",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "Approved Program Electives (as needed to reach 60 units)",
+       "rule": "choose_units",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ADS 071",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "BIOL 061",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CA 005",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CA 010A",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CA 011",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FCS 019",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "FCS 070",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HED 011",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MA 020",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MA 021",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MA 022",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MA 023",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PSYC C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 12,
+     "listed": 12
+    },
+    "extracted_run": "43357106423"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 12,
+     "listed": 12,
+     "gaps": [
+      "lists_not_closed"
+     ],
+     "confidence": {
+      "unit_arithmetic": 30,
+      "course_list_match": 100,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 2
+  },
+  {
+   "college": "San Jose City College",
+   "control_number": "33857",
+   "award": "A.A. Degree",
+   "extracted_run": "43357106423",
+   "moves_to": "noted_unit_floor",
+   "words": "THEAT 033 is printed as 1-3 units, but the catalog states it must be completed for 3 units for this degree.",
+   "confidence": {
+    "unit_arithmetic": 70,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/san_jose_city/records/33857.json",
+   "before_image": {
+    "program_title": "Dance",
+    "award": "A.A. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.sjcc.edu/degrees-certificates/dance/dance-associate-arts/",
+    "measure": "units",
+    "total_min": 23,
+    "total_max": 23,
+    "record": {
+     "program": {
+      "section_heading": "Dance - Associate in Arts",
+      "measure": "units",
+      "total_units": {
+       "min": 23,
+       "max": 23
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": 3,
+       "max": 3
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": 60,
+       "max": 60
+      },
+      "ge_units": {
+       "min": 34,
+       "max": 34
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Apply proper posture, alignment, body organizations, vocabulary, and performance quality to a variety of dance techniques.",
+       "Discuss the aesthetics and composition of dance as an expression of self and culture.",
+       "Critically compare various dance genres on the basis of movement and historical context.",
+       "Perform original dance choreography in class or for live public performances.",
+       "Create dance choreography using the principles of composition for in class demonstration or live public performance."
+      ],
+      "careers": [
+       "Dance Teacher",
+       "Choreographer",
+       "Dance Performer"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 8.5,
+        "max": 10.5
+       },
+       "courses": [
+        {
+         "code": "DANCE 002",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "DANCE 030",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC 091",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "THEAT 033",
+         "units": 1,
+         "units_max": 3,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "Required Technique Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 7,
+        "max": 7
+       },
+       "courses": [
+        {
+         "code": "DANCE 011",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 011B",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 011C",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 021",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 021B",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 051",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 051B",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Elective Technique Courses",
+       "rule": "choose_units",
+       "minimum": 1.5,
+       "option_group": null,
+       "stated": {
+        "min": 1.5,
+        "max": 1.5
+       },
+       "courses": [
+        {
+         "code": "DANCE 023B",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 023C",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 040B",
+         "units": 0.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 040C",
+         "units": 0.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 064",
+         "units": 0.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 065",
+         "units": 0.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 066",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 067",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Approved Major Electives",
+       "rule": "choose_units",
+       "minimum": 4,
+       "option_group": null,
+       "stated": {
+        "min": 4,
+        "max": 4
+       },
+       "courses": [
+        {
+         "code": "DANCE 004",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 013A",
+         "units": 0.5,
+         "units_max": 1,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 013B",
+         "units": 0.5,
+         "units_max": 1,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 013C",
+         "units": 0.5,
+         "units_max": 1,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 014A",
+         "units": 0.5,
+         "units_max": 1.5,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 014B",
+         "units": 0.5,
+         "units_max": 1.5,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 014C",
+         "units": 0.5,
+         "units_max": 1.5,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 014D",
+         "units": 0.5,
+         "units_max": 1.5,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 014E",
+         "units": 0.5,
+         "units_max": 1.5,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 014F",
+         "units": 0.5,
+         "units_max": 1.5,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 032",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 034A",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 034B",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 034C",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 31,
+     "listed": 31
+    },
+    "extracted_run": "43357106423"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 31,
+     "listed": 31,
+     "gaps": [
+      "noted_unit_floor"
+     ],
+     "confidence": {
+      "unit_arithmetic": 70,
+      "course_list_match": 100,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 3
+  },
+  {
+   "college": "San Jose City College",
+   "control_number": "37604",
+   "award": "A.A- T Degree",
+   "extracted_run": "43357106423",
+   "moves_to": "lists_not_closed",
+   "words": "The List A course count depends on the option: Option 1 requires one List A course (3-5 units), Option 2 two courses (6-8), Option 3 three courses (9-11). The List A block's minimum is recorded as 1. Each option's stated total includes its List A units.",
+   "confidence": {
+    "unit_arithmetic": 30,
+    "course_list_match": 86,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/san_jose_city/records/37604.json",
+   "before_image": {
+    "program_title": "Spanish",
+    "award": "A.A- T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.sjcc.edu/degrees-certificates/spanish/spanish-associate-arts-transfer/",
+    "measure": "units",
+    "total_min": 19,
+    "total_max": 25,
+    "record": {
+     "program": {
+      "section_heading": "Spanish, Associate in Arts for Transfer",
+      "measure": "units",
+      "total_units": {
+       "min": 19,
+       "max": 25
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": 4,
+       "max": 6
+      },
+      "ge_pattern": "Cal-GETC",
+      "degree_total": {
+       "min": 60,
+       "max": 60
+      },
+      "ge_units": {
+       "min": 34,
+       "max": 34
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Communicate with native speakers of Spanish, demonstrating proficiency in reading, listening, writing, and speaking at an intermediate to advanced level.",
+       "Situate and explore the Spanish language and the communities that speak it within sociocultural and historical contexts.",
+       "Develop and improve metacognitive, technological, collaborative, and other competencies in preparation for further academic study, for the workplace, and for making meaningful contributions to the world around them."
+      ],
+      "careers": [
+       "language instruction",
+       "translation and interpretation",
+       "international relations",
+       "global business"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "OPTION 1:",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Option",
+       "stated": {
+        "min": 23,
+        "max": 25
+       },
+       "courses": [
+        {
+         "code": "SPAN 001A",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 001B",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 002A",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "SPAN 022A",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 002B",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "SPAN 022B",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "OPTION 2: (If student is placed directly into SPAN 001B)",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Option",
+       "stated": {
+        "min": 21,
+        "max": 23
+       },
+       "courses": [
+        {
+         "code": "SPAN 001B",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 002A",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "SPAN 022A",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 002B",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "SPAN 022B",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "OPTION 3: (If student is placed directly into SPAN 002A)",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Option",
+       "stated": {
+        "min": 19,
+        "max": 21
+       },
+       "courses": [
+        {
+         "code": "SPAN 002A",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "SPAN 022A",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 002B",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "SPAN 022B",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List A: Complete One Course (or Complete Two or Three Courses based on which option is used)",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 11
+       },
+       "courses": [
+        {
+         "code": "ENGL 080",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ETH 030",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ETH 031",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ETH 037A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ETH 037B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "FREN 001A",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 031",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 032",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 12,
+     "listed": 14
+    },
+    "extracted_run": "43357106423"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 12,
+     "listed": 14,
+     "gaps": [
+      "lists_not_closed"
+     ],
+     "confidence": {
+      "unit_arithmetic": 30,
+      "course_list_match": 86,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 4
+  }
+ ],
+ "live_run_proof": null,
+ "shared_pages": {},
+ "representation": "checks.gaps and checks.confidence added as the load reads the filed score (a passing row: checks.arithmetic to equal); checks.coverage, invented and the record unchanged",
+ "claim_check_reads": "Today's capture (sources.json): every course an entry names among the codes it found, and a course an entry says the printed total leaves out on neither it nor the state's list. A note's quoted figures are the reader's words, never re-read here.",
+ "follow_verdict": "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows (confirm_matches); the apply aborts, writing nothing, unless the count is 0.",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'San Jose City College', '22241', 43357106423, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADS 070\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADS 071\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADS 072\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADS 073\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADS 074\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADS 075A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADS 076\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADS 077A\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADS 077B\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ADS 078\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ADS 079\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ADS 138\",\"units\":1,\"units_max\":6},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"PSYC C1000H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"SOC 010H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"SOC 010\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Certificate Requirements\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":41,\"min\":41}}],\"program\":{\"careers\":[\"Alcohol and Drug counselor\",\"addiction field\",\"drug and alcohol abuse counselor\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Compare cultural, historical and political influences on alcohol and drug abuse and its impact on the community.\",\"Identify signs and symptoms of addiction, and examine current biomedical research regarding the implications for treatment.\",\"Conduct thorough intake screening and assessment of client entering treatment from an ASAM (American Society of Addiction medicine) perspective.\",\"Recognize and discuss the importance of a professional commitment to the values and ethics of the California Consortium of Addiction Programs and Professionals (CCAPP) counselor.\",\"Assess crisis situations to determine appropriate intervention and apply counseling and intervention skills.\"],\"section_heading\":\"Alcohol and Drug Studies-Certificate of Achievement - Level 3\",\"total_units\":{\"max\":41,\"min\":41}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":60},\"coverage\":true,\"gaps\":[\"figure_within_variable_units\"],\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb),\n  (2, 'San Jose City College', '30403', 43357106423, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CA 100D\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HSCI 008\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 005\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 006\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 007\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 008\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 009\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 011\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MA 012\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses:\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":26,\"min\":26}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 007A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 008\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Complete one of the following BUS courses:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 020\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 071\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MA 004\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Complete one of the following courses:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":5,\"min\":4}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ADS 071\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 061\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CA 005\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CA 010A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CA 011\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FCS 019\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FCS 070\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HED 011\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MA 020\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MA 021\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MA 022\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MA 023\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Approved Program Electives (as needed to reach 60 units)\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"administrative (front office) medical assistant\",\"Medical Office\",\"Medical Clinic\",\"Hospitals\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":true,\"ge_pattern\":\"General Education Requirements\",\"ge_units\":{\"max\":27,\"min\":27},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Execute administrative medical front office skills including billing and coding procedures, health insurance form processing, patient and patient record/chart management, and public relations.\",\"Apply knowledge of the human body, medical terminology and disease to front office administrative protocols and procedures.\",\"Exercise compliance with regard to HIPAA privacy practices, and be able to explain these guidelines to both patients and other health professionals.\",\"Adhere to, and support, OSHA and other regulatory agency safety guidelines overseeing the practice of medicine and implement such safety protocols.\",\"Prepare for Certified Medical Assistant/CMA exam and/or the Registered Medical Assistant (RMA) exam.\",\"Effectively communicate with patients and other health care personnel while exercising the highest level of professional conduct.\",\"Integrate practical experience during an externship within a medical office setting.\",\"Service the community by filling a need for certified, well-trained front office medical assistants.\"],\"section_heading\":\"Medical Assisting: Administrative - Associate in Science\",\"total_units\":{\"max\":34,\"min\":33}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":12,\"placed\":12}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":12,\"placed\":12}'::jsonb),\n  (3, 'San Jose City College', '33857', 43357106423, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"DANCE 002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 030\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 091\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"THEAT 033\",\"units\":1,\"units_max\":3}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":10.5,\"min\":8.5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 011\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 011B\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 011C\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 021\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 021B\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 051\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 051B\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Technique Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":7,\"min\":7}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 023B\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 023C\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 040B\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 040C\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 064\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 065\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 066\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 067\",\"units\":1,\"units_max\":null}],\"minimum\":1.5,\"name\":\"Elective Technique Courses\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":1.5,\"min\":1.5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 004\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 013A\",\"units\":0.5,\"units_max\":1},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 013B\",\"units\":0.5,\"units_max\":1},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 013C\",\"units\":0.5,\"units_max\":1},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 014A\",\"units\":0.5,\"units_max\":1.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 014B\",\"units\":0.5,\"units_max\":1.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 014C\",\"units\":0.5,\"units_max\":1.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 014D\",\"units\":0.5,\"units_max\":1.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 014E\",\"units\":0.5,\"units_max\":1.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 014F\",\"units\":0.5,\"units_max\":1.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 032\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 034A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 034B\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 034C\",\"units\":1,\"units_max\":null}],\"minimum\":4,\"name\":\"Approved Major Electives\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":4,\"min\":4}}],\"program\":{\"careers\":[\"Dance Teacher\",\"Choreographer\",\"Dance Performer\"],\"degree_elective_units\":{\"max\":3,\"min\":3},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Apply proper posture, alignment, body organizations, vocabulary, and performance quality to a variety of dance techniques.\",\"Discuss the aesthetics and composition of dance as an expression of self and culture.\",\"Critically compare various dance genres on the basis of movement and historical context.\",\"Perform original dance choreography in class or for live public performances.\",\"Create dance choreography using the principles of composition for in class demonstration or live public performance.\"],\"section_heading\":\"Dance - Associate in Arts\",\"total_units\":{\"max\":23,\"min\":23}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":31,\"placed\":31}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":70},\"coverage\":true,\"gaps\":[\"noted_unit_floor\"],\"invented\":true,\"listed\":31,\"placed\":31}'::jsonb),\n  (4, 'San Jose City College', '37604', 43357106423, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 001A\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 001B\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN 022A\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN 002A\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN 022B\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN 002B\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"OPTION 1:\",\"option_group\":\"Option\",\"rule\":\"all\",\"stated\":{\"max\":25,\"min\":23}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 001B\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN 022A\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN 002A\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN 022B\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN 002B\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"OPTION 2: (If student is placed directly into SPAN 001B)\",\"option_group\":\"Option\",\"rule\":\"all\",\"stated\":{\"max\":23,\"min\":21}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN 022A\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN 002A\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN 022B\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN 002B\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"OPTION 3: (If student is placed directly into SPAN 002A)\",\"option_group\":\"Option\",\"rule\":\"all\",\"stated\":{\"max\":21,\"min\":19}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 080\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETH 030\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETH 031\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ETH 037A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ETH 037B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FREN 001A\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 031\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 032\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List A: Complete One Course (or Complete Two or Three Courses based on which option is used)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":11,\"min\":3}}],\"program\":{\"careers\":[\"language instruction\",\"translation and interpretation\",\"international relations\",\"global business\"],\"degree_elective_units\":{\"max\":6,\"min\":4},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Communicate with native speakers of Spanish, demonstrating proficiency in reading, listening, writing, and speaking at an intermediate to advanced level.\",\"Situate and explore the Spanish language and the communities that speak it within sociocultural and historical contexts.\",\"Develop and improve metacognitive, technological, collaborative, and other competencies in preparation for further academic study, for the workplace, and for making meaningful contributions to the world around them.\"],\"section_heading\":\"Spanish, Associate in Arts for Transfer\",\"total_units\":{\"max\":25,\"min\":19}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":14,\"placed\":12}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":86,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":14,\"placed\":12}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "pre_read_md5": "with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) as (values\n  (1, 'San Jose City College', '22241', 43357106423, '5d64ac2ba0b6604fafa4797cc259d675', '88e2495efd06d1573c7fb0fe096e2788', '9390f46587e4c77f2bf02014185dc0e1'),\n  (2, 'San Jose City College', '30403', 43357106423, 'fda3f6f52dc90f969093bd4b79ca341a', '8fd0a9378506bd00405b5cf1ecb0628d', '5e01ac6fe89132bd5a2c263996b643f3'),\n  (3, 'San Jose City College', '33857', 43357106423, '76fa5bcf88fba5e49e670506be9f85bb', 'cbf5307c76c2a0516620ac747998024e', '2ea6c662b4462522071efd08cb219eff'),\n  (4, 'San Jose City College', '37604', 43357106423, '4acf8cf2538b93256dc846776af8cfaf', 'dd0e3718f0cc4fde4db70ac5ba05d7e1', '68c3db79829c7fe2bd5b49a1d51b3d8c'))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.record::text) = v.rec_md5),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.checks::text) = v.chk_md5),\n  'already_after', count(*) filter (where md5(r.checks::text) = v.after_md5),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'San Jose City College', '22241', 43357106423, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADS 070\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADS 071\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADS 072\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADS 073\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADS 074\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADS 075A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADS 076\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADS 077A\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADS 077B\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ADS 078\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ADS 079\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ADS 138\",\"units\":1,\"units_max\":6},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"PSYC C1000H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"SOC 010H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"SOC 010\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Certificate Requirements\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":41,\"min\":41}}],\"program\":{\"careers\":[\"Alcohol and Drug counselor\",\"addiction field\",\"drug and alcohol abuse counselor\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Compare cultural, historical and political influences on alcohol and drug abuse and its impact on the community.\",\"Identify signs and symptoms of addiction, and examine current biomedical research regarding the implications for treatment.\",\"Conduct thorough intake screening and assessment of client entering treatment from an ASAM (American Society of Addiction medicine) perspective.\",\"Recognize and discuss the importance of a professional commitment to the values and ethics of the California Consortium of Addiction Programs and Professionals (CCAPP) counselor.\",\"Assess crisis situations to determine appropriate intervention and apply counseling and intervention skills.\"],\"section_heading\":\"Alcohol and Drug Studies-Certificate of Achievement - Level 3\",\"total_units\":{\"max\":41,\"min\":41}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":60},\"coverage\":true,\"gaps\":[\"figure_within_variable_units\"],\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb),\n  (2, 'San Jose City College', '30403', 43357106423, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CA 100D\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HSCI 008\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 005\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 006\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 007\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 008\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 009\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 011\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MA 012\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses:\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":26,\"min\":26}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 007A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 008\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Complete one of the following BUS courses:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 020\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 071\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MA 004\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Complete one of the following courses:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":5,\"min\":4}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ADS 071\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 061\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CA 005\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CA 010A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CA 011\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FCS 019\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FCS 070\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HED 011\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MA 020\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MA 021\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MA 022\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MA 023\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Approved Program Electives (as needed to reach 60 units)\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"administrative (front office) medical assistant\",\"Medical Office\",\"Medical Clinic\",\"Hospitals\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":true,\"ge_pattern\":\"General Education Requirements\",\"ge_units\":{\"max\":27,\"min\":27},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Execute administrative medical front office skills including billing and coding procedures, health insurance form processing, patient and patient record/chart management, and public relations.\",\"Apply knowledge of the human body, medical terminology and disease to front office administrative protocols and procedures.\",\"Exercise compliance with regard to HIPAA privacy practices, and be able to explain these guidelines to both patients and other health professionals.\",\"Adhere to, and support, OSHA and other regulatory agency safety guidelines overseeing the practice of medicine and implement such safety protocols.\",\"Prepare for Certified Medical Assistant/CMA exam and/or the Registered Medical Assistant (RMA) exam.\",\"Effectively communicate with patients and other health care personnel while exercising the highest level of professional conduct.\",\"Integrate practical experience during an externship within a medical office setting.\",\"Service the community by filling a need for certified, well-trained front office medical assistants.\"],\"section_heading\":\"Medical Assisting: Administrative - Associate in Science\",\"total_units\":{\"max\":34,\"min\":33}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":12,\"placed\":12}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":12,\"placed\":12}'::jsonb),\n  (3, 'San Jose City College', '33857', 43357106423, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"DANCE 002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 030\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 091\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"THEAT 033\",\"units\":1,\"units_max\":3}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":10.5,\"min\":8.5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 011\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 011B\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 011C\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 021\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 021B\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 051\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 051B\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Technique Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":7,\"min\":7}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 023B\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 023C\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 040B\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 040C\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 064\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 065\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 066\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 067\",\"units\":1,\"units_max\":null}],\"minimum\":1.5,\"name\":\"Elective Technique Courses\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":1.5,\"min\":1.5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 004\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 013A\",\"units\":0.5,\"units_max\":1},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 013B\",\"units\":0.5,\"units_max\":1},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 013C\",\"units\":0.5,\"units_max\":1},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 014A\",\"units\":0.5,\"units_max\":1.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 014B\",\"units\":0.5,\"units_max\":1.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 014C\",\"units\":0.5,\"units_max\":1.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 014D\",\"units\":0.5,\"units_max\":1.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 014E\",\"units\":0.5,\"units_max\":1.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 014F\",\"units\":0.5,\"units_max\":1.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 032\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 034A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 034B\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 034C\",\"units\":1,\"units_max\":null}],\"minimum\":4,\"name\":\"Approved Major Electives\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":4,\"min\":4}}],\"program\":{\"careers\":[\"Dance Teacher\",\"Choreographer\",\"Dance Performer\"],\"degree_elective_units\":{\"max\":3,\"min\":3},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Apply proper posture, alignment, body organizations, vocabulary, and performance quality to a variety of dance techniques.\",\"Discuss the aesthetics and composition of dance as an expression of self and culture.\",\"Critically compare various dance genres on the basis of movement and historical context.\",\"Perform original dance choreography in class or for live public performances.\",\"Create dance choreography using the principles of composition for in class demonstration or live public performance.\"],\"section_heading\":\"Dance - Associate in Arts\",\"total_units\":{\"max\":23,\"min\":23}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":31,\"placed\":31}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":70},\"coverage\":true,\"gaps\":[\"noted_unit_floor\"],\"invented\":true,\"listed\":31,\"placed\":31}'::jsonb),\n  (4, 'San Jose City College', '37604', 43357106423, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 001A\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 001B\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN 022A\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN 002A\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN 022B\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN 002B\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"OPTION 1:\",\"option_group\":\"Option\",\"rule\":\"all\",\"stated\":{\"max\":25,\"min\":23}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 001B\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN 022A\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN 002A\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN 022B\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN 002B\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"OPTION 2: (If student is placed directly into SPAN 001B)\",\"option_group\":\"Option\",\"rule\":\"all\",\"stated\":{\"max\":23,\"min\":21}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN 022A\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN 002A\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN 022B\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN 002B\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"OPTION 3: (If student is placed directly into SPAN 002A)\",\"option_group\":\"Option\",\"rule\":\"all\",\"stated\":{\"max\":21,\"min\":19}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 080\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETH 030\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETH 031\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ETH 037A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ETH 037B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FREN 001A\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 031\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 032\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List A: Complete One Course (or Complete Two or Three Courses based on which option is used)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":11,\"min\":3}}],\"program\":{\"careers\":[\"language instruction\",\"translation and interpretation\",\"international relations\",\"global business\"],\"degree_elective_units\":{\"max\":6,\"min\":4},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Communicate with native speakers of Spanish, demonstrating proficiency in reading, listening, writing, and speaking at an intermediate to advanced level.\",\"Situate and explore the Spanish language and the communities that speak it within sociocultural and historical contexts.\",\"Develop and improve metacognitive, technological, collaborative, and other competencies in preparation for further academic study, for the workplace, and for making meaningful contributions to the world around them.\"],\"section_heading\":\"Spanish, Associate in Arts for Transfer\",\"total_units\":{\"max\":25,\"min\":19}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":14,\"placed\":12}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":86,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":14,\"placed\":12}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\nf as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number\n        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true\n       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)),\ne(expect) as (values (4)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when f.n > 0\n            then ('s740c4 piles confirm guard: ' || f.n || ' rows hold a matching confirm verdict ' || f.keys::text)::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s740c4 piles guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, f;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'San Jose City College', '22241', 43357106423, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADS 070\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADS 071\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADS 072\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADS 073\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADS 074\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADS 075A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADS 076\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADS 077A\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADS 077B\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ADS 078\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ADS 079\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ADS 138\",\"units\":1,\"units_max\":6},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"PSYC C1000H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"SOC 010H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"SOC 010\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Certificate Requirements\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":41,\"min\":41}}],\"program\":{\"careers\":[\"Alcohol and Drug counselor\",\"addiction field\",\"drug and alcohol abuse counselor\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Compare cultural, historical and political influences on alcohol and drug abuse and its impact on the community.\",\"Identify signs and symptoms of addiction, and examine current biomedical research regarding the implications for treatment.\",\"Conduct thorough intake screening and assessment of client entering treatment from an ASAM (American Society of Addiction medicine) perspective.\",\"Recognize and discuss the importance of a professional commitment to the values and ethics of the California Consortium of Addiction Programs and Professionals (CCAPP) counselor.\",\"Assess crisis situations to determine appropriate intervention and apply counseling and intervention skills.\"],\"section_heading\":\"Alcohol and Drug Studies-Certificate of Achievement - Level 3\",\"total_units\":{\"max\":41,\"min\":41}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":60},\"coverage\":true,\"gaps\":[\"figure_within_variable_units\"],\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb),\n  (2, 'San Jose City College', '30403', 43357106423, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CA 100D\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HSCI 008\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 005\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 006\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 007\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 008\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 009\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MA 011\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MA 012\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses:\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":26,\"min\":26}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 007A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 008\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Complete one of the following BUS courses:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 020\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 071\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MA 004\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Complete one of the following courses:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":5,\"min\":4}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ADS 071\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 061\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CA 005\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CA 010A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CA 011\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FCS 019\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FCS 070\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HED 011\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MA 020\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MA 021\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MA 022\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MA 023\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Approved Program Electives (as needed to reach 60 units)\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"administrative (front office) medical assistant\",\"Medical Office\",\"Medical Clinic\",\"Hospitals\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":true,\"ge_pattern\":\"General Education Requirements\",\"ge_units\":{\"max\":27,\"min\":27},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Execute administrative medical front office skills including billing and coding procedures, health insurance form processing, patient and patient record/chart management, and public relations.\",\"Apply knowledge of the human body, medical terminology and disease to front office administrative protocols and procedures.\",\"Exercise compliance with regard to HIPAA privacy practices, and be able to explain these guidelines to both patients and other health professionals.\",\"Adhere to, and support, OSHA and other regulatory agency safety guidelines overseeing the practice of medicine and implement such safety protocols.\",\"Prepare for Certified Medical Assistant/CMA exam and/or the Registered Medical Assistant (RMA) exam.\",\"Effectively communicate with patients and other health care personnel while exercising the highest level of professional conduct.\",\"Integrate practical experience during an externship within a medical office setting.\",\"Service the community by filling a need for certified, well-trained front office medical assistants.\"],\"section_heading\":\"Medical Assisting: Administrative - Associate in Science\",\"total_units\":{\"max\":34,\"min\":33}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":12,\"placed\":12}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":12,\"placed\":12}'::jsonb),\n  (3, 'San Jose City College', '33857', 43357106423, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"DANCE 002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 030\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 091\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"THEAT 033\",\"units\":1,\"units_max\":3}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":10.5,\"min\":8.5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 011\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 011B\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 011C\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 021\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 021B\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 051\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 051B\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Technique Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":7,\"min\":7}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 023B\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 023C\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 040B\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 040C\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 064\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 065\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 066\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 067\",\"units\":1,\"units_max\":null}],\"minimum\":1.5,\"name\":\"Elective Technique Courses\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":1.5,\"min\":1.5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 004\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 013A\",\"units\":0.5,\"units_max\":1},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 013B\",\"units\":0.5,\"units_max\":1},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 013C\",\"units\":0.5,\"units_max\":1},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 014A\",\"units\":0.5,\"units_max\":1.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 014B\",\"units\":0.5,\"units_max\":1.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 014C\",\"units\":0.5,\"units_max\":1.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 014D\",\"units\":0.5,\"units_max\":1.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 014E\",\"units\":0.5,\"units_max\":1.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 014F\",\"units\":0.5,\"units_max\":1.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 032\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 034A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 034B\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 034C\",\"units\":1,\"units_max\":null}],\"minimum\":4,\"name\":\"Approved Major Electives\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":4,\"min\":4}}],\"program\":{\"careers\":[\"Dance Teacher\",\"Choreographer\",\"Dance Performer\"],\"degree_elective_units\":{\"max\":3,\"min\":3},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Apply proper posture, alignment, body organizations, vocabulary, and performance quality to a variety of dance techniques.\",\"Discuss the aesthetics and composition of dance as an expression of self and culture.\",\"Critically compare various dance genres on the basis of movement and historical context.\",\"Perform original dance choreography in class or for live public performances.\",\"Create dance choreography using the principles of composition for in class demonstration or live public performance.\"],\"section_heading\":\"Dance - Associate in Arts\",\"total_units\":{\"max\":23,\"min\":23}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":31,\"placed\":31}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":70},\"coverage\":true,\"gaps\":[\"noted_unit_floor\"],\"invented\":true,\"listed\":31,\"placed\":31}'::jsonb),\n  (4, 'San Jose City College', '37604', 43357106423, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 001A\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 001B\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN 022A\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN 002A\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN 022B\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN 002B\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"OPTION 1:\",\"option_group\":\"Option\",\"rule\":\"all\",\"stated\":{\"max\":25,\"min\":23}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 001B\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN 022A\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN 002A\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN 022B\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN 002B\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"OPTION 2: (If student is placed directly into SPAN 001B)\",\"option_group\":\"Option\",\"rule\":\"all\",\"stated\":{\"max\":23,\"min\":21}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN 022A\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN 002A\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN 022B\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN 002B\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"OPTION 3: (If student is placed directly into SPAN 002A)\",\"option_group\":\"Option\",\"rule\":\"all\",\"stated\":{\"max\":21,\"min\":19}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 080\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETH 030\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETH 031\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ETH 037A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ETH 037B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FREN 001A\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 031\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 032\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List A: Complete One Course (or Complete Two or Three Courses based on which option is used)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":11,\"min\":3}}],\"program\":{\"careers\":[\"language instruction\",\"translation and interpretation\",\"international relations\",\"global business\"],\"degree_elective_units\":{\"max\":6,\"min\":4},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Communicate with native speakers of Spanish, demonstrating proficiency in reading, listening, writing, and speaking at an intermediate to advanced level.\",\"Situate and explore the Spanish language and the communities that speak it within sociocultural and historical contexts.\",\"Develop and improve metacognitive, technological, collaborative, and other competencies in preparation for further academic study, for the workplace, and for making meaningful contributions to the world around them.\"],\"section_heading\":\"Spanish, Associate in Arts for Transfer\",\"total_units\":{\"max\":25,\"min\":19}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":14,\"placed\":12}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":86,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":14,\"placed\":12}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (4)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s740c4 piles rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;"
+}

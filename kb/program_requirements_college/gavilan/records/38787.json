@@ -124,7 +124,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "units_within_printed_range",
+    "label": "The courses' units as read fall within the printed range of units rather than matching it.",
+    "words": "the courses' units add to 53-60, within the printed 48-60 units | Total: 48-60 is recorded as the major total (core 42-48 + List A 3 + List B 3 + List C 0-6). The 60-semester-unit sentence is the generic ADT requirement, not printed as this award's total, so degree_total is null. | The Required Core prints 'Units: 42- 48', while the listed courses sum to 47-48 units; recorded as printed."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 75,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

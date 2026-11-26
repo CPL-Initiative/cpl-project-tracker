@@ -46,28 +46,33 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 9,
+   "placed": 11,
    "listed": 11,
-   "share": 0.818,
-   "missing": [
-    "MATH180",
-    "MATH185"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MATH180",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2220",
+     "listed": "MATH185",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 1,
    "codes": [
-    "CMPR121",
-    "MATHC2210",
-    "MATHC2220"
+    "CMPR121"
    ],
    "flagged": [
-    "CMPR121",
-    "MATHC2210",
-    "MATHC2220"
+    "CMPR121"
    ],
    "pass": true
   },
@@ -266,5 +271,6 @@
    "Summary advises elective choice by major (Mechanical/aerospace: ENGR 235, 240, 103; Civil/environmental: ENGR 235, 240, 183; Electrical/computer: ENGR 250, CMPR 120, CMPR 121), though the elective block heading says select 1 and CMPR 120 is printed in the science/math or-group, not the elective list."
   ]
  },
- "extracted_run": "38843461766"
+ "extracted_run": 45841675928,
+ "read_run": "38843461766"
 }

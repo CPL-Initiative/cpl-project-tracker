@@ -1,0 +1,157 @@
+{
+ "_readme": "S740 lane 1 (reads): Santa Ana College's 16 programs on the gap census of 2026-11-26 12:06Z (run 45816008322): Speech-Language Pathology Assistant A.S. 12242 (the paid_read lever: its extraction of run 38843461766 answered HTTP 503, so no record is filed) and the 15 on the reconcile_steps lever (13 whose blocks and stated total differ, 2 with incomplete arithmetic). Each is read from its own entry as the capture reads it (cq_view, catalog 28), so a session sees today's page text beside the filed record before any paid read and before a reconcile step is written. 16 entries. No model call, nothing written.",
+ "college": "Santa Ana College",
+ "keywords": ["[Tt]otal [Uu]nits[^\\n]{0,40}"],
+ "questions": {
+  "own_page": "What the program's own entry prints today: its heading, its requirement lists with their unit figures, and its total."
+ },
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36152/36210",
+   "cq_view": true,
+   "cq_catalog": 28,
+   "why": "12242"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36145/35864",
+   "cq_view": true,
+   "cq_catalog": 28,
+   "why": "04230"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36122/35925",
+   "cq_view": true,
+   "cq_catalog": 28,
+   "why": "04238"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36119/35976",
+   "cq_view": true,
+   "cq_catalog": 28,
+   "why": "04256"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36121/35960",
+   "cq_view": true,
+   "cq_catalog": 28,
+   "why": "08720"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36283/36264",
+   "cq_view": true,
+   "cq_catalog": 28,
+   "why": "18581"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36283/36265",
+   "cq_view": true,
+   "cq_catalog": 28,
+   "why": "18582"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36145/35866",
+   "cq_view": true,
+   "cq_catalog": 28,
+   "why": "18780"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36283/36266",
+   "cq_view": true,
+   "cq_catalog": 28,
+   "why": "19268"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36100/36090",
+   "cq_view": true,
+   "cq_catalog": 28,
+   "why": "21748"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36145/35865",
+   "cq_view": true,
+   "cq_catalog": 28,
+   "why": "21789"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36149/35855",
+   "cq_view": true,
+   "cq_catalog": 28,
+   "why": "31859"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36120/36952",
+   "cq_view": true,
+   "cq_catalog": 28,
+   "why": "31887"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36118/35978",
+   "cq_view": true,
+   "cq_catalog": 28,
+   "why": "31980"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36131/35920",
+   "cq_view": true,
+   "cq_catalog": 28,
+   "why": "32096"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36175/36270",
+   "cq_view": true,
+   "cq_catalog": 28,
+   "why": "32533"
+  }
+ ],
+ "outside_hosts": {
+  "curriqunet.com": "Santa Ana College (sac.curriqunet.com): the college's own 2026-2027 catalog, served on its catalog vendor's domain"
+ }
+}

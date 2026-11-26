@@ -1,0 +1,45 @@
+{
+ "_readme": "S740, lane 2's cheap piles (2026-11-26). Ventura 06948, 08253, 35654, 37415, 44994 and 44995 hold for a reread (s739n): each record's own note says the Requirements tab was not in the text the reader saw, so its blocks came from a Plan of Study grid or an overview sentence and it reads no total. A paid reread is the conductor's to dispatch, and a free read comes first: this prints each page as the capture reads it today, so a session can see whether the capture's text now holds the Requirements tab (its course table, each list's units and the total line) before any paid read. Six loads, no model call, nothing written.",
+ "college": "Ventura College",
+ "questions": {
+  "requirements_tab": "Whether the capture's text of each page holds the Requirements tab: its course table with units, each list's heading and figure, and the total line, word for word."
+ },
+ "keywords": [
+  "REQUIREMENTS[^\\n]{0,80}",
+  "Total[^\\n]{0,80}",
+  "List [A-C][^\\n]{0,120}",
+  "\\d+(?:\\.\\d+)?\\s*units?\\b[^\\n]{0,40}"
+ ],
+ "pages": [
+  {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/business/business-management-as/",
+   "answers": ["requirements_tab"],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/business/medical-assistant-administrative-as/",
+   "answers": ["requirements_tab"],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/police-science/basic-law-enforcement-academy-coa/",
+   "answers": ["requirements_tab"],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/police-science/basic-law-enforcement-academy-as/",
+   "answers": ["requirements_tab"],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/english-multilingual-students/level-3-oral-communication-coa/",
+   "answers": ["requirements_tab"],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/english-multilingual-students/level-3-written-communication-coa/",
+   "answers": ["requirements_tab"],
+   "capture_view": true
+  }
+ ]
+}

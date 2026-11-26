@@ -1,0 +1,30 @@
+{
+ "_readme": "S740, lane 2's cheap piles (2026-11-26). Orange Coast 03954, 08664 and 31217 hold for a reread (s739j): each record's own note says the Requirements tab was not in the text the reader saw, so its blocks came from a Plan of Study or Program Sequence grid. A paid reread is the conductor's to dispatch, and a free read comes first (Ventura's six, read 45837455365, showed today's capture holds each Requirements tab): this prints each page as the capture reads it today, so a session can see whether the capture's text holds the Requirements tab (its course table, each list's units and the total line) before any paid read. Three loads, no model call, nothing written.",
+ "college": "Orange Coast College",
+ "questions": {
+  "requirements_tab": "Whether the capture's text of each page holds the Requirements tab: its course table with units, each list's heading and figure, and the total line, word for word."
+ },
+ "keywords": [
+  "Requirements[^\\n]{0,80}",
+  "Total[^\\n]{0,80}",
+  "Program Major Units[^\\n]{0,80}",
+  "\\d+(?:\\.\\d+)?\\s*units?\\b[^\\n]{0,40}"
+ ],
+ "pages": [
+  {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/horticulture/horticulture-associate-science-degree/",
+   "answers": ["requirements_tab"],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/food-beverage-management/food-beverage-management-as/",
+   "answers": ["requirements_tab"],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/early-childhood-education-ast/",
+   "answers": ["requirements_tab"],
+   "capture_view": true
+  }
+ ]
+}

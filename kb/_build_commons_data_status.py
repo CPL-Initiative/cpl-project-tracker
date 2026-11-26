@@ -167,20 +167,13 @@ AGE_DAYS = {"fresh": 7, "recent": 30}
 # read the 09.03.26 catalog PDF, which now answers 404; the academic-catalogs page answers and links the 26-27 catalog
 # reissued 10.26.26. The capture root stays what the capture read until a recapture moves the registry's catalog_url
 # (a live write, not this file's). Cosumnes River, El Camino and Citrus answered from outside and stay as stored.
-CATALOG_LINKS = {
-    "copper_mountain": {
-        "display": "https://www.cmccd.edu/academic-catalogs/",
-        "current_file": "https://www.cmccd.edu/wp-content/uploads/2026/10/Final-26-27-Catalog-10.26.26.pdf",
-        "checks": [
-            {"url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf",
-             "status": 404, "checked_at": "2026-11-13T23:35:00Z", "by": "COBIx, #3229 comment 6867640358"},
-            {"url": "https://www.cmccd.edu/academic-catalogs/",
-             "status": 200, "checked_at": "2026-11-13T23:35:00Z", "by": "COBIx, #3229 comment 6867640358"},
-            {"url": "https://www.cmccd.edu/wp-content/uploads/2026/10/Final-26-27-Catalog-10.26.26.pdf",
-             "status": 200, "checked_at": "2026-11-13T23:35:00Z", "by": "COBIx, #3229 comment 6867640358"},
-        ],
-    },
-}
+# S740 (2026-11-26): Copper Mountain's entry is removed, as catalog_links() below asks once a recapture moves the
+# capture root. Plan s740r1 moved the registry's catalog_url to the college's reissue of 2026-11-18
+# (.../2026/11/Final-26-27-Catalog-11.18.26r1.pdf), and read 45836803063 captured that file, so the capture root is
+# the file the college serves now and no entry is left. The entry's shape, for the next college: {slug: {"display":
+# the catalog page, "current_file": the file it links now, "checks": [{"url", "status", "checked_at", "by"}]}}
+# (tests/commons_data_status_build_test.py, 15c and 15d, keeps Copper Mountain's as its worked example).
+CATALOG_LINKS: dict = {}
 
 # Every field a college row carries, flagged for the College view (a later slice draws only "shareable").
 # catalog_url here is the displayed link; the capture root (capture_root) is the registry's catalog_url field.

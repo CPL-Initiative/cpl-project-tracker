@@ -1,0 +1,28 @@
+{
+ "_readme": "S740 (the census's reconcile_steps lever, lane 1 `reconcile`): the catalog's own words for a correction step, read as the capture reads the page (capture_view), free, no model call, nothing written. Solano: the 2026-27 catalog PDF prints sociology under SOCI where the state's file lists SOC, and two records' notes say the course descriptions print '(Formerly SOC 0xx)'; this read prints those lines. It also prints the Psychology A.A.-T and Social Work and Human Services A.A.-T sections, whose records read no major total.",
+ "college": "Solano Community College",
+ "questions": {
+  "formerly": "Which SOCI courses does the catalog print as formerly SOC, and under which titles?",
+  "adt_total": "Does the Psychology A.A.-T section, or the Social Work and Human Services A.A.-T section, print a major total?"
+ },
+ "keywords": [
+  "Formerly\\s+SOC\\s*\\d+",
+  "Associate in Arts in Psychology for Transfer",
+  "Associate in Arts in Social Work and Human Services for Transfer"
+ ],
+ "pdf_after": 1,
+ "pdf_page_cap": 24,
+ "pdf_span": [
+  100,
+  460
+ ],
+ "pages": [
+  {
+   "answers": [
+    "formerly",
+    "adt_total"
+   ],
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf"
+  }
+ ]
+}

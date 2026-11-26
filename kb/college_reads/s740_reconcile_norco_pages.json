@@ -1,0 +1,54 @@
+{
+ "_readme": "S740 (the census's reconcile_steps lever, lane 1 `reconcile`): the catalog's own words for a correction step, read as the capture reads the page (capture_view), free, no model call, nothing written. Norco: five curriQunet program pages whose filed records add short of the printed total by the units of a required row the reading did not hold (Philosophy A.A.-T prints 'Units: 9.00' over two choices of 3); this read prints each page as the capture reads it, so the session sees whether the text holds the row.",
+ "college": "Norco College",
+ "questions": {
+  "required_rows": "Which rows does the page print under Required Courses, and which figure over them?"
+ },
+ "keywords": [
+  "Units:\\s*[0-9.]+[^\\n]{0,30}",
+  "[Rr]equired [Cc]ourses[^\\n]{0,60}",
+  "[Ss]elect|[Cc]hoose"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "required_rows"
+   ],
+   "why": "32830",
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5218",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "required_rows"
+   ],
+   "why": "41680",
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5230",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "required_rows"
+   ],
+   "why": "33751, 33854",
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5237",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "required_rows"
+   ],
+   "why": "30091, 40079",
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5169",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "required_rows"
+   ],
+   "why": "39998, 40064",
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5139",
+   "capture_view": true
+  }
+ ]
+}

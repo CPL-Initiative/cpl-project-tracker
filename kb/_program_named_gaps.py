@@ -2768,5 +2768,113 @@ def write_migrations(body: dict, receipt: str, day: str, tag: str) -> None:
             fh.write(hdr + text + "\n")
 
 
+# ── S740: the units twin of hours_within_printed_range ─────────────────────
+# d-within-range-sums-hold-for-units-kind-s739: a units sum inside its printed range holds no two figures that
+# disagree, so noted_figures_differ's sentence is not true of it (d-lists-gap-holds-range-sums-s703), and S739 held
+# seven such records for a kind of their own (Gavilan 08460, 19378, 38787 and 41394; Orange Coast 41373; Shasta
+# 32162; College of the Canyons 36793). This is that kind. Its sentence says only what the record's figures show: the
+# courses' units as read add to a figure the printed range of units holds, and today's scorer fails it (the sum's
+# low end sits above the range's low end, so the meets and short-high readings do not pass it). Its score is the
+# hours kind's 50.
+#
+# NOT A RECORD RULE. The figures alone are no answer: units_within_recall and units_within_named (the statewide
+# self-recall, tests/program_units_within_s740_test.py) show that every failing record the figures name carries the
+# sentence truthfully, and that some of them belong to another lever (a waiver shape, a reread, a page that is not
+# the program's own). So the kind is filed from a reviewed list alone (kb/_program_piles_s740*.py), by key, and
+# RECORD_RULES, answer and judge above do not name it: no reconcile, load or rescore files it on its own.
+GAPS.setdefault("units_within_printed_range",
+                "The courses' units as read fall within the printed range of units rather than matching it.")
+ARITH_SCORE.setdefault("units_within_printed_range", 50)
+# The scorer's one sentence for a sum that differs from the printed total (S.score): any other reason (a course with
+# no units, a list with no minimum) says the units could not be added, which is another gap.
+UNITS_SUM_WHY = re.compile(r"^the blocks sum to \S+; the catalog states \S+$")
+
+
+def units_within_printed_range(filed: dict) -> str | None:
+    """The kind's own check and words, from the filed figures: a record measured in units, collectable, whose
+    arithmetic fails as unequal against the program total for no reason but the sum itself, both figures above
+    zero, the sum inside the printed range (_within, the hours kind's reading) and its low end above the range's
+    low end. A sum whose low end is the range's low end is the scorer's short-high reading (Sam, 2026-11-17), which
+    passes: a record filed as failing with such figures is an older scorer's, and a free rescore is its lever."""
+    sc = filed.get("score") or {}
+    a = sc.get("arithmetic") or {}
+    if hours_measured(filed) or a.get("pass") or a.get("status") != "unequal" or a.get("against") != "program" \
+            or not collectable(sc) or any(not UNITS_SUM_WHY.match(str(w)) for w in a.get("why") or []):
+        return None
+    comp, st = _pair(a.get("computed")), _pair(a.get("stated"))
+    if comp is None or st is None or comp[1] <= 0 or st[1] <= 0 or not _within(comp, st) \
+            or comp[0] <= st[0] + FIG_EPS:
+        return None
+    return "the courses' units add to %s, within the printed %s units" % (S._fig(*comp), S._fig(*st))
+
+
+UNITS_WITHIN_TESTS = ("within", "boundary_top", "boundary_low", "differs")
+
+
+def units_within_recall(every: list[dict]) -> dict:
+    """The kind's figures against answers already held (S652's review rule; hours_recall's form): every passing
+    record measured in units, read against its program total, collectable, its sum above zero, which the scorer
+    reproduces unchanged (S.score on the filed record, no closed list and no page text). Each is read four ways, its
+    printed total moved, and the scorer's own verdict with the two figures compared directly is the held answer:
+      within        the total widened around the sum (half its low end to twice its top plus 10): the kind;
+      boundary_top  the range's top at the sum's top, its low end below (Gavilan 08460's 36 in 30-36): the kind;
+      boundary_low  the range's low end at the sum's low end, its top beyond: the scorer passes it, so no gap;
+      differs       the total moved past the sum: the scorer fails it and the sum sits outside, so not this kind.
+    Right when units_within_printed_range names the held answer. A record the scorer does not reproduce is counted
+    apart, and so is a reading the scorer makes against another total, or with another sum, once the program total
+    moves (other_total, sum_moved)."""
+    out = {"read": 0, "held": 0, "right": 0, "wrong": 0, "not_reproduced": 0, "other_total": 0, "sum_moved": 0,
+           "by_test": collections.Counter(), "by_answer": collections.Counter(), "wrong_keys": []}
+    for f in every:
+        sc = f.get("score") or {}
+        a = sc.get("arithmetic") or {}
+        rec = f.get("record") or {}
+        comp = _pair(a.get("computed"))
+        if (hours_measured(f) or not a.get("pass") or a.get("against") != "program" or not collectable(sc)
+                or comp is None or comp[0] <= 0):
+            continue
+        if S.score(rec, [], None, f.get("award"))["arithmetic"] != a:
+            out["not_reproduced"] += 1
+            continue
+        out["read"] += 1
+        lo, hi = comp
+        for test, total in (("within", (round(lo / 2, 2), round(hi * 2 + 10, 2))),
+                            ("boundary_top", (round(lo / 2, 2), hi)),
+                            ("boundary_low", (lo, round(hi * 2 + 10, 2))),
+                            ("differs", (round(hi * 2 + 10, 2), round(hi * 2 + 10, 2)))):
+            prog = dict(rec.get("program") or {}, total_units={"min": total[0], "max": total[1]})
+            again = S.score(dict(rec, program=prog), [], None, f.get("award"))["arithmetic"]
+            if again.get("against") != "program":
+                out["other_total"] += 1
+                continue
+            if _pair(again.get("computed")) != comp:
+                # The sum itself moved with the total (a fill, a pool or a list read from the total): the scorer
+                # reads another record, so the test holds no answer about this one.
+                out["sum_moved"] += 1
+                continue
+            inside = total[0] - FIG_EPS <= lo and hi <= total[1] + FIG_EPS
+            held = None if again.get("pass") or not inside else "units_within_printed_range"
+            got = "units_within_printed_range" if units_within_printed_range(
+                dict(f, record=dict(rec, program=prog), score=dict(sc, arithmetic=again))) else None
+            out["held"] += 1
+            out["by_test"][test] += 1
+            out["by_answer"]["%s %s" % (test, held or "none")] += 1
+            if got == held:
+                out["right"] += 1
+            else:
+                out["wrong"] += 1
+                out["wrong_keys"].append({"college": f.get("college"), "control_number": f.get("control_number"),
+                                          "test": test, "held": held, "kind": got})
+    out["by_test"], out["by_answer"] = dict(out["by_test"]), dict(out["by_answer"])
+    return out
+
+
+def units_within_named(every: list[dict]) -> list[tuple]:
+    """Every failing record the kind's figures name, with no gap filed: (college, control number), sorted. What the
+    figures would join if the kind were a record rule; the reviewed lists file a part of it."""
+    return sorted((str(f.get("college")), str(f.get("control_number"))) for f in every
+                  if not (f.get("score") or {}).get("gaps") and units_within_printed_range(f))
+
+
 if __name__ == "__main__":
     sys.exit(main())
