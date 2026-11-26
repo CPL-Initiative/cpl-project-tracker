@@ -116,6 +116,41 @@ def _words(text) -> list[str]:
     return re.findall(r"[a-z0-9]+", str(text or "").lower())
 
 
+def award_kind(award) -> str | None:
+    """The kind of award the state's file names: bachelor, transfer, science, arts, certificate or noncredit."""
+    a = str(award or "").lower()
+    if "baccalaureate" in a or "bachelor" in a:
+        return "bachelor"
+    if re.search(r"\ba\.[as]\.?\s*-?\s*t\b", a):
+        return "transfer"
+    if "a.s" in a:
+        return "science"
+    if "a.a" in a:
+        return "arts"
+    if "noncredit" in a:
+        return "noncredit"
+    return "certificate" if "certificate" in a else None
+
+
+def kinds_named(heading) -> set:
+    """The kinds of award a section heading names in words."""
+    h = str(heading or "").lower()
+    out = set()
+    if "bachelor" in h or "baccalaureate" in h:
+        out.add("bachelor")
+    if re.search(r"for\s+transfer|\ba[as]-t\b|\ba\.[as]\.-t\b", h):
+        out.add("transfer")
+    elif re.search(r"associate\s+in\s+science|\ba\.s\.", h):
+        out.add("science")
+    elif re.search(r"associate\s+in\s+arts|\ba\.a\.", h):
+        out.add("arts")
+    if "noncredit" in h:
+        out.add("noncredit")
+    elif "certificate" in h:
+        out.add("certificate")
+    return out
+
+
 def notes(filed: dict) -> list[str]:
     return [str(n) for n in (filed.get("record") or {}).get("notes") or []]
 
@@ -560,11 +595,17 @@ class Pile:
         return None
 
     def _heading_apart(self, filed: dict, heading: str, mate: str) -> bool:
-        """The page-mate's record carries another heading, or the same one where the heading goes beyond the mate's
-        title (every word of the mate's title is in this program's title, which has more)."""
+        """The heading tells the record from its page-mate. A mate with another title: its record carries another
+        heading, or the same one where the heading goes beyond the mate's title (every word of the mate's title is
+        in this program's title, which has more). A mate with the same title (a sister award): the awards differ and
+        the heading names this record's award (two readers word one section's heading two ways, so the words alone
+        tell nothing: Long Beach City 43021 and 02677, one award the state's file lists twice, stay unshown)."""
         g = self.load(mate)
         if g is None:
             return True
+        if set(_words(g.get("title"))) == set(_words(filed.get("title"))):
+            mine = award_kind(filed.get("award"))
+            return mine is not None and mine != award_kind(g.get("award")) and mine in kinds_named(heading)
         theirs = _words(((g.get("record") or {}).get("program") or {}).get("section_heading"))
         mine = _words(heading)
         n = min(len(theirs), len(mine))
