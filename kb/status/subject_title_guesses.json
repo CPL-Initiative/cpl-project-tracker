@@ -6,7 +6,7 @@
  "inputs": [
   "guess_out_1_v2.json",
   "guess_out_2_v2.json",
-  "guess_out_3.json",
+  "guess_out_3_v2.json",
   "guess_out_4_v2.json"
  ],
  "rows": [
@@ -109,6 +109,50 @@
    "batch": 1
   },
   {
+   "slug": "napa_valley",
+   "college": "Napa Valley College",
+   "code": "FAMN",
+   "guess": "Family Noncredit",
+   "confidence": 94,
+   "why": "catalog subject heading over FAMN courses",
+   "courses": [
+    "FAMN 40 Strategies for Effective Elder Care",
+    "FAMN 41 Professionalism and Ethics in Elder Care"
+   ],
+   "batch": 3,
+   "source_url": "https://catalog.napavalley.edu/courses/famn/",
+   "source_says": "Family Noncredit (FAMN)"
+  },
+  {
+   "slug": "napa_valley",
+   "college": "Napa Valley College",
+   "code": "LRNSNC",
+   "guess": "Learning Skills-Noncredit",
+   "confidence": 94,
+   "why": "catalog subject heading over LRNSNC courses",
+   "courses": [
+    "LRNSNC 1 Differential Learning Diagnosis",
+    "LRNSNC 11 Differential Learning Tutoring"
+   ],
+   "batch": 3,
+   "source_url": "https://catalog.napavalley.edu/courses/lrnsnc/",
+   "source_says": "Learning Skills-Noncredit (LRNSNC)"
+  },
+  {
+   "slug": "orange_coast",
+   "college": "Orange Coast College",
+   "code": "DVP",
+   "guess": "Display & Visual Presentation",
+   "confidence": 94,
+   "why": "catalog subject heading over DVP courses (now FASH A119)",
+   "courses": [
+    "DVP A180 Intro To Display & VP"
+   ],
+   "batch": 3,
+   "source_url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/dvp/",
+   "source_says": "Display & Visual Presentation (DVP)"
+  },
+  {
    "slug": "city_of_san_francisco",
    "college": "City College of San Francisco",
    "code": "ESLV",
@@ -123,6 +167,22 @@
    "batch": 2,
    "source_url": "https://ccsf.edu/academics/ccsf-catalog/courses-by-department/courses-by-subject/52076",
    "source_says": "ESL Vocational - Noncredit Courses"
+  },
+  {
+   "slug": "foothill",
+   "college": "Foothill College",
+   "code": "NCAL",
+   "guess": "Non-Credit: Adult Learning",
+   "confidence": 93,
+   "why": "catalog subject heading; courses all for older adults",
+   "courses": [
+    "NCAL 401A HISTORY OF ART: HISTORY OF WESTERN ART FROM PREHISTORY THROUGH EARLY CHRISTIANITY FOR OLDER ADULTS",
+    "NCAL 402A FUNDAMENTALS IN DRAWING FOR OLDER ADULTS",
+    "NCAL 402B INTERMEDIATE DRAWING FOR OLDER ADULTS"
+   ],
+   "batch": 3,
+   "source_url": "https://catalog.foothill.edu/courses-az/ncal/",
+   "source_says": "Non-Credit: Adult Learning (NCAL)"
   },
   {
    "slug": "fresno_city",
@@ -186,6 +246,96 @@
     "PUNJABI 2 High-Beginning Punjabi"
    ],
    "batch": 3
+  },
+  {
+   "slug": "mission",
+   "college": "Mission College",
+   "code": "NCO",
+   "guess": "Older Adult - Noncredit",
+   "confidence": 93,
+   "why": "catalog subject page heading over NCO courses",
+   "courses": [
+    "NCO 1611 Older Adult Art",
+    "NCO 3900 Forum on World Affairs",
+    "NCO 3901 Forum on World Affairs I"
+   ],
+   "batch": 3,
+   "source_url": "https://majors.missioncollege.edu/current/courses/nco.html",
+   "source_says": "Older Adult - Noncredit Courses"
+  },
+  {
+   "slug": "mt_san_jacinto",
+   "college": "Mt. San Jacinto College",
+   "code": "CEP",
+   "guess": "Career Enhancement Program",
+   "confidence": 93,
+   "why": "catalog subject heading over CEP courses",
+   "courses": [
+    "CEP 950 Career Enhancement Skills (formerly CEP-001X)",
+    "CEP 954 Introduction to Construction",
+    "CEP 955 Residential Construction"
+   ],
+   "batch": 3,
+   "source_url": "https://catalog.msjc.edu/continuing-education/non-credit-courses/cep/",
+   "source_says": "Career Enhancement Program (CEP)"
+  },
+  {
+   "slug": "mt_san_jacinto",
+   "college": "Mt. San Jacinto College",
+   "code": "LL",
+   "guess": "Supervised Tutoring",
+   "confidence": 93,
+   "why": "catalog subject heading over LL courses",
+   "courses": [
+    "LL 998 Supervised Tutoring (formerly LL-001X)"
+   ],
+   "batch": 3,
+   "source_url": "https://catalog.msjc.edu/continuing-education/non-credit-courses/ll",
+   "source_says": "Supervised Tutoring (LL)"
+  },
+  {
+   "slug": "mt_san_jacinto",
+   "college": "Mt. San Jacinto College",
+   "code": "OTEC",
+   "guess": "Office Technology",
+   "confidence": 93,
+   "why": "catalog subject heading over OTEC courses",
+   "courses": [
+    "OTEC 505 Office Procedures and Systems (formerly OTEC-098)"
+   ],
+   "batch": 3,
+   "source_url": "https://catalog.msjc.edu/courses/otec/",
+   "source_says": "Office Technology (OTEC)"
+  },
+  {
+   "slug": "napa_valley",
+   "college": "Napa Valley College",
+   "code": "AGN",
+   "guess": "Wine and Agriculture Noncredit",
+   "confidence": 93,
+   "why": "catalog subject heading over AGN courses",
+   "courses": [
+    "AGN 820 BASIC GARDENING"
+   ],
+   "batch": 3,
+   "source_url": "https://catalog.napavalley.edu/courses/agn/",
+   "source_says": "Wine and Agriculture Noncredit (AGN)"
+  },
+  {
+   "slug": "pasadena_city",
+   "college": "Pasadena City College",
+   "code": "SET",
+   "guess": "Special Education Technology",
+   "confidence": 93,
+   "why": "catalog subject heading over SET courses",
+   "courses": [
+    "SET 102 Adults with Disabilities",
+    "SET 108 Introduction to Learning Disabilities",
+    "SET 111 Introduction to Developmental Disabilities"
+   ],
+   "batch": 3,
+   "source_url": "https://curriculum.pasadena.edu/course-descriptions/set",
+   "source_says": "SPECIAL EDUCATION TECHNOLOGY"
   },
   {
    "slug": "city_of_san_francisco",
@@ -331,6 +481,38 @@
    "batch": 3
   },
   {
+   "slug": "mt_san_jacinto",
+   "college": "Mt. San Jacinto College",
+   "code": "LNSK",
+   "guess": "Learning Skills",
+   "confidence": 92,
+   "why": "catalog contents list the LNSK subject",
+   "courses": [
+    "LNSK 901 Text-to-Speech Software for LD",
+    "LNSK 902 Voice Recognition for LD",
+    "LNSK 903 Self-Advocacy for Students with Disabilities"
+   ],
+   "batch": 3,
+   "source_url": "https://catalog.msjc.edu/catalogcontents",
+   "source_says": "Learning Skills (LNSK)"
+  },
+  {
+   "slug": "oxnard",
+   "college": "Oxnard College",
+   "code": "PG",
+   "guess": "Personal Growth",
+   "confidence": 92,
+   "why": "catalog subject page titled Personal Growth over PG courses",
+   "courses": [
+    "PG R102 College Success",
+    "PG R198H Personal Growth: Boots to Books",
+    "PG R850 Emotional Intelligence"
+   ],
+   "batch": 3,
+   "source_url": "https://vcccd-preview.courseleaf.com/oxnard/programs-courses/personal-growth/personal-growth.pdf",
+   "source_says": "personal growth"
+  },
+  {
    "slug": "san_jose_city",
    "college": "San Jose City College",
    "code": "PSYCH (PSYCHOLOGY)",
@@ -455,6 +637,22 @@
    "source_says": "Learning Resources (SKIL)"
   },
   {
+   "slug": "glendale_community",
+   "college": "Glendale Community College",
+   "code": "OBT",
+   "guess": "Office Business Technology",
+   "confidence": 90,
+   "why": "2019-20 catalog noncredit section and outline name OBT; courses now STV",
+   "courses": [
+    "OBT 100 BEGINNING MICROSOFT WORD",
+    "OBT 10021CC PAGEMAKER/PUBLISHER",
+    "OBT 101 ADVANCED MICROSOFT WORD"
+   ],
+   "batch": 3,
+   "source_url": "https://garfield.glendale.edu/home/showpublisheddocument/23336/638362600341230000",
+   "source_says": "Office Business Technology 70 Customer Service Skills"
+  },
+  {
    "slug": "lassen",
    "college": "Lassen College",
    "code": "GSS",
@@ -536,6 +734,21 @@
     "ZOO M122 Independent Study-Zoology"
    ],
    "batch": 3
+  },
+  {
+   "slug": "pasadena_city",
+   "college": "Pasadena City College",
+   "code": "MAN",
+   "guess": "Medical Assisting Noncredit",
+   "confidence": 90,
+   "why": "PCC noncredit faculty handbook names the code; program now uses HLTN",
+   "courses": [
+    "MAN 5000 Medical Front Office Clerk: Office Procedures",
+    "MAN 5001 Software Applications for Medical Front Office Settings"
+   ],
+   "batch": 3,
+   "source_url": "https://pasadena.edu/academics/divisions/noncredit/docs/NONCREDIT-FACULTY-HANDBOOK.pdf",
+   "source_says": "Medical Assisting Noncredit (MAN)"
   },
   {
    "slug": "san_diego_city",
@@ -1863,6 +2076,38 @@
    "batch": 3
   },
   {
+   "slug": "grossmont",
+   "college": "Grossmont College",
+   "code": "HESC",
+   "guess": "Health Sciences",
+   "confidence": 85,
+   "why": "old catalog lists HESC courses as 'Health Sciences 110' etc.",
+   "courses": [
+    "HESC 115 TECHNIQUE/DEVELOP DISAB SPCLST",
+    "HESC 199 SPECIAL STUDIES IN HESC",
+    "HESC 299 SELECTED TOPICS IN HESC"
+   ],
+   "batch": 3,
+   "source_url": "https://www.grossmont.edu/academics/pdfs/schedule/GCCatalog1415Part4.pdf",
+   "source_says": "Health Sciences 110, Disability and Society"
+  },
+  {
+   "slug": "grossmont",
+   "college": "Grossmont College",
+   "code": "PDC",
+   "guess": "Personal Development-Counseling",
+   "confidence": 85,
+   "why": "2020-21 catalog prose names the courses; PDC since renamed COUN",
+   "courses": [
+    "PDC 103 STANDARDIZED TEST PREPARATION",
+    "PDC 117 CAREER EXPLORE:DISCOVER ALT",
+    "PDC 122 TUTOR TRAINING"
+   ],
+   "batch": 3,
+   "source_url": "https://www.grossmont.edu/academics/catalog/_resources/assets/pdf/2020-2021/2020-2021-catalog-part6.pdf",
+   "source_says": "Personal Development-Counseling courses"
+  },
+  {
    "slug": "lemoore",
    "college": "Lemoore College",
    "code": "STUDEV",
@@ -2440,6 +2685,22 @@
    "batch": 3
   },
   {
+   "slug": "grossmont",
+   "college": "Grossmont College",
+   "code": "TELE",
+   "guess": "Telecommunications",
+   "confidence": 82,
+   "why": "2021-22 catalog index lists a Telecommunications entry; heading not seen",
+   "courses": [
+    "TELE 161 THE FILM AS COMMUNICATION ART",
+    "TELE 162 FILM ADAPTATIONS OF LITERATURE",
+    "TELE 231 VIDEOCONFERENCING"
+   ],
+   "batch": 3,
+   "source_url": "https://www.grossmont.edu/academics/catalog/_resources/assets/pdf/2021-2022/2022-spring/2021-2022-catalog-part8.pdf",
+   "source_says": "Telecommunications"
+  },
+  {
    "slug": "lake_tahoe_community",
    "college": "Lake Tahoe Community College",
    "code": "CMU",
@@ -2543,6 +2804,22 @@
     "NCNUR 285 Nursing Skills/Simulation Laboratory III"
    ],
    "batch": 3
+  },
+  {
+   "slug": "miracosta",
+   "college": "MiraCosta College",
+   "code": "NCVOC",
+   "guess": "Short-Term Vocational",
+   "confidence": 82,
+   "why": "catalog program page names NCVOC as short-term vocational classes",
+   "courses": [
+    "NCVOC 31 Beginning Microsoft Word",
+    "NCVOC 32 Intermediate Microsoft Word",
+    "NCVOC 33 Basic Google Apps"
+   ],
+   "batch": 3,
+   "source_url": "https://catalog.miracosta.edu/continuingeducation/shorttermvoc/",
+   "source_says": "short-term vocational (NCVOC) classes"
   },
   {
    "slug": "mt_san_jacinto",
@@ -3102,6 +3379,22 @@
   {
    "slug": "glendale_community",
    "college": "Glendale Community College",
+   "code": "MEDIA",
+   "guess": "Media Arts",
+   "confidence": 80,
+   "why": "department 'Media Arts' holds MEDIA courses (now FTVM); dept, not subject heading",
+   "courses": [
+    "MEDIA 101 Introduction to TV Studio Production",
+    "MEDIA 103 Introduction to Motion Picture Production",
+    "MEDIA 104 VIDEO PRODUCTION PRACTICUM"
+   ],
+   "batch": 3,
+   "source_url": "https://glendale.edu/academics/academic-divisions/visual-performing-arts-division/media-arts/courses",
+   "source_says": "media-arts/courses"
+  },
+  {
+   "slug": "glendale_community",
+   "college": "Glendale Community College",
    "code": "SPECD",
    "guess": "Special Education",
    "confidence": 80,
@@ -3122,6 +3415,38 @@
     "DM G113N Pro Tools 101"
    ],
    "batch": 3
+  },
+  {
+   "slug": "laney",
+   "college": "Laney College",
+   "code": "MEDIA",
+   "guess": "Media Communications",
+   "confidence": 80,
+   "why": "department name over MEDIA courses (MEDIA 49 Ind. Study in Media Comm.)",
+   "courses": [
+    "MEDIA 044A Virtual Production l",
+    "MEDIA 044B Virtual Production ll",
+    "MEDIA 044C Virtual Production lll: Cinematography"
+   ],
+   "batch": 3,
+   "source_url": "https://laney.edu/media/?p=34",
+   "source_says": "Independent Study in Media Communications"
+  },
+  {
+   "slug": "laney",
+   "college": "Laney College",
+   "code": "MUSIC CM",
+   "guess": "Commercial Music",
+   "confidence": 80,
+   "why": "program 'Commercial Music A.A.' lists MUSIC-CM courses; program name",
+   "courses": [
+    "MUSIC CM 001A Beginning MIDI and Electronic Music",
+    "MUSIC CM 001B Intermediate MIDI and Electronic Music",
+    "MUSIC CM 001C Advanced MIDI and Electronic Music"
+   ],
+   "batch": 3,
+   "source_url": "https://laney.edu/commercial-music",
+   "source_says": "Commercial Music"
   },
   {
    "slug": "lassen",
@@ -3218,6 +3543,22 @@
     "EDIT 14 Instructional Course Design"
    ],
    "batch": 3
+  },
+  {
+   "slug": "moreno_valley",
+   "college": "Moreno Valley College",
+   "code": "SCE",
+   "guess": "Senior Citizen Education",
+   "confidence": 80,
+   "why": "RCCD extended learning names its SCE series Senior Citizen Education",
+   "courses": [
+    "SCE 804 Engaging Topics for Lifelong Learners",
+    "SCE 809 Computer Basics for Lifelong Learners",
+    "SCE 811 Drawing and Painting for Lifelong Learners"
+   ],
+   "batch": 3,
+   "source_url": "https://extendedlearning.rccd.edu/lifelong/documents/FAL_25.pdf",
+   "source_says": "SCE (Senior Citizen Education)"
   },
   {
    "slug": "north_orange_continuing_education",
@@ -3701,6 +4042,22 @@
    "batch": 2
   },
   {
+   "slug": "fresno_city",
+   "college": "Fresno City College",
+   "code": "MMCTC",
+   "guess": "Maintenance Mechanic",
+   "confidence": 78,
+   "why": "program name (noncredit certificate) lists MMCTC 370-372; no subject heading",
+   "courses": [
+    "MMCTC 370 Machine Shop and Equipment Repair for Maintenance Mechanics",
+    "MMCTC 371 Hydraulic, Pneumatic, and Mechanical Drive Fundamentals for Maintenance Mechanics",
+    "MMCTC 372 Electrical Fundamentals for Maintenance Mechanics"
+   ],
+   "batch": 3,
+   "source_url": "https://www.fresnocitycollege.edu/academics/career-and-technical-education/industrial-program.html",
+   "source_says": "Maintenance Mechanic"
+  },
+  {
    "slug": "los_angeles_trade_technical",
    "college": "Los Angeles Trade-Technical College",
    "code": "OPMA AP",
@@ -3734,14 +4091,16 @@
    "slug": "miracosta",
    "college": "MiraCosta College",
    "code": "HSWHG",
-   "guess": "High School: World History and Geography",
+   "guess": "Adult High School: World History and Geography",
    "confidence": 78,
-   "why": "courses: World History and Geography I, II",
+   "why": "AHS diploma lists HSWHG 11 and 12; program name",
    "courses": [
     "HSWHG 11 World History and Geography I",
     "HSWHG 12 World History and Geography II"
    ],
-   "batch": 3
+   "batch": 3,
+   "source_url": "https://catalog.miracosta.edu/continuingeducation/adulthighschooldiploma/",
+   "source_says": "HSWHG 11 and 12 (World History and Geography"
   },
   {
    "slug": "miracosta",
@@ -3749,12 +4108,14 @@
    "code": "NCAHM",
    "guess": "Affordable Housing Management: Noncredit",
    "confidence": 78,
-   "why": "courses: Affordable Housing Management; NCAHM",
+   "why": "program: Affordable Housing Management certificate; program name",
    "courses": [
     "NCAHM 50 Introduction to Affordable Housing Management",
     "NCAHM 51 Emerging Leaders in Affordable Housing Management"
    ],
-   "batch": 3
+   "batch": 3,
+   "source_url": "https://miracosta.edu/academics/continuing-education/career-development-certificates.html",
+   "source_says": "Affordable Housing Management"
   },
   {
    "slug": "ohlone",
@@ -3762,13 +4123,15 @@
    "code": "GA",
    "guess": "Graphic Arts",
    "confidence": 78,
-   "why": "courses: graphic design, computer graphics; GA",
+   "why": "archived Ohlone program page 'Graphic Arts/Computer Graphics'; program",
    "courses": [
     "GA 101 Visual and Interaction Design",
     "GA 109A Beginning Graphic Design I (Letter Forms and Typography)",
     "GA 109B Beginning Graphic Design II"
    ],
-   "batch": 3
+   "batch": 3,
+   "source_url": "https://www.oocities.org/CollegePark/Field/7861/cwsheet.html",
+   "source_says": "Graphic Arts/Computer Graphics"
   },
   {
    "slug": "pasadena_city",
@@ -4090,7 +4453,7 @@
    "code": "BUSOT",
    "guess": "Business Office Technology",
    "confidence": 75,
-   "why": "courses: shorthand, word processing; code BUSOT",
+   "why": "no page found; courses: shorthand, word processing; code BUSOT",
    "courses": [
     "BUSOT 120 A B C SHORTHAND",
     "BUSOT 125 BEGINNING SHORTHAND",
@@ -4104,7 +4467,7 @@
    "code": "HIER",
    "guess": "Hieroglyphics",
    "confidence": 75,
-   "why": "courses: Egypt Hieroglyphs I; code HIER",
+   "why": "no page found; courses: Egypt Hieroglyphs I; code HIER",
    "courses": [
     "HIER 101 EGYPT HIEROGLYPHS I",
     "HIER 102 HIER 102",
@@ -4118,7 +4481,7 @@
    "code": "FOLK",
    "guess": "Folk Dance",
    "confidence": 75,
-   "why": "course: Folk Dance: American Square and Round; code FOLK",
+   "why": "no page found; course: Folk Dance: American Square and Round; code FOLK",
    "courses": [
     "FOLK 110 Folk Dance: American Square and Round Dance"
    ],
@@ -4144,7 +4507,7 @@
    "code": "BLDGM",
    "guess": "Building Maintenance",
    "confidence": 75,
-   "why": "course: Introduction to Maintenance Systems; BLDGM",
+   "why": "no page found; course: Introduction to Maintenance Systems; BLDGM",
    "courses": [
     "BLDGM 248NA INTRODUCTION TO MAINTENANCE SYSTEMS"
    ],
@@ -4154,53 +4517,30 @@
    "slug": "miracosta",
    "college": "MiraCosta College",
    "code": "HSUSH",
-   "guess": "High School: U.S. History",
+   "guess": "Adult High School: U.S. History",
    "confidence": 75,
-   "why": "courses: US History 1, 2; HSUSH",
+   "why": "AHS diploma lists HSUSH 11 and 12; program name",
    "courses": [
     "HSUSH 11 US History 1",
     "HSUSH 12 United States History 2"
    ],
-   "batch": 3
+   "batch": 3,
+   "source_url": "https://catalog.miracosta.edu/continuingeducation/adulthighschooldiploma/",
+   "source_says": "HSUSH 11 and 12 (U.S. History 1 and 2)"
   },
   {
-   "slug": "miracosta",
-   "college": "MiraCosta College",
-   "code": "NCABE",
-   "guess": "Adult Basic Education: Noncredit",
+   "slug": "moorpark",
+   "college": "Moorpark College",
+   "code": "GR",
+   "guess": "Graphics",
    "confidence": 75,
-   "why": "courses: HS Equivalency Prep, mentorship; NCABE",
+   "why": "Design comparables: GR M122 Independent Study - Graphics; DES formerly GR",
    "courses": [
-    "NCABE 11 Mentorship for Student Success",
-    "NCABE 92 High School Equivalency Preparation"
+    "GR M122 Independent Study-Graphics"
    ],
-   "batch": 3
-  },
-  {
-   "slug": "miracosta",
-   "college": "MiraCosta College",
-   "code": "NCBOT",
-   "guess": "Business Office Technology: Noncredit",
-   "confidence": 75,
-   "why": "courses: keyboarding, word processing, office; NCBOT",
-   "courses": [
-    "NCBOT 10 Beginning Keyboarding",
-    "NCBOT 20 Word Processing",
-    "NCBOT 30 Office Systems and Procedures"
-   ],
-   "batch": 3
-  },
-  {
-   "slug": "mt_san_jacinto",
-   "college": "Mt. San Jacinto College",
-   "code": "OTEC",
-   "guess": "Office Technology",
-   "confidence": 75,
-   "why": "course: Office Procedures and Systems; OTEC",
-   "courses": [
-    "OTEC 505 Office Procedures and Systems (formerly OTEC-098)"
-   ],
-   "batch": 3
+   "batch": 3,
+   "source_url": "https://www.moorparkcollege.edu/sites/moorparkcollege/files/media/pdf_document/2022/MC%20Design%20Comparables%202022-2023.pdf",
+   "source_says": "GR M122 Independent Study - Graphics"
   },
   {
    "slug": "north_orange_continuing_education",
@@ -4571,40 +4911,12 @@
    "batch": 2
   },
   {
-   "slug": "foothill",
-   "college": "Foothill College",
-   "code": "NCAL",
-   "guess": "Noncredit Art for Older Adults",
-   "confidence": 72,
-   "why": "courses: drawing, art history, collage all 'for Older Adults'; NC prefix",
-   "courses": [
-    "NCAL 401A HISTORY OF ART: HISTORY OF WESTERN ART FROM PREHISTORY THROUGH EARLY CHRISTIANITY FOR OLDER ADULTS",
-    "NCAL 402A FUNDAMENTALS IN DRAWING FOR OLDER ADULTS",
-    "NCAL 402B INTERMEDIATE DRAWING FOR OLDER ADULTS"
-   ],
-   "batch": 3
-  },
-  {
-   "slug": "fresno_city",
-   "college": "Fresno City College",
-   "code": "MMCTC",
-   "guess": "Maintenance Mechanic",
-   "confidence": 72,
-   "why": "courses: machine shop, hydraulics, electrical for Maintenance Mechanics",
-   "courses": [
-    "MMCTC 370 Machine Shop and Equipment Repair for Maintenance Mechanics",
-    "MMCTC 371 Hydraulic, Pneumatic, and Mechanical Drive Fundamentals for Maintenance Mechanics",
-    "MMCTC 372 Electrical Fundamentals for Maintenance Mechanics"
-   ],
-   "batch": 3
-  },
-  {
    "slug": "glendale_community",
    "college": "Glendale Community College",
    "code": "ESLT",
    "guess": "English as a Second Language: Testing",
    "confidence": 72,
-   "why": "courses: ESL Testing; code ESLT",
+   "why": "no page found; courses: ESL Testing; code ESLT",
    "courses": [
     "ESLT 001  CR ESL TESTING",
     "ESLT 011  BR ENGLISH AS A 2ND LANG TESTING",
@@ -4618,7 +4930,7 @@
    "code": "NCCS",
    "guess": "Computer Science: Noncredit",
    "confidence": 72,
-   "why": "courses: computer concepts, programming, NC; code NCCS",
+   "why": "no page found; courses: computer concepts, programming, NC; code NCCS",
    "courses": [
     "NCCS 25001CP COMPUTER CONCEPTS NC",
     "NCCS 25003CP INTRO TO PROGRAMMING",
@@ -4632,38 +4944,27 @@
    "code": "OA",
    "guess": "Office Administration",
    "confidence": 72,
-   "why": "course: Advanced Typing; code OA",
+   "why": "no page found; course: Advanced Typing; code OA",
    "courses": [
     "OA 215 ADV TYPING"
    ],
    "batch": 3
   },
   {
-   "slug": "laney",
-   "college": "Laney College",
-   "code": "MUSIC CM",
-   "guess": "Music: Commercial Music",
+   "slug": "las_positas",
+   "college": "Las Positas College",
+   "code": "APCT",
+   "guess": "Apprenticeship: Teamsters",
    "confidence": 72,
-   "why": "courses: MIDI, songwriting, music business; MUSIC CM",
+   "why": "course list: APCT Teamsters apprenticeship courses, deactivated Fall 2026",
    "courses": [
-    "MUSIC CM 001A Beginning MIDI and Electronic Music",
-    "MUSIC CM 001B Intermediate MIDI and Electronic Music",
-    "MUSIC CM 001C Advanced MIDI and Electronic Music"
+    "APCT 5ALB Teamsters 5 Axle and Low Bed Driver",
+    "APCT 94 Work Experience - Teamsters Apprenticeship",
+    "APCT BTOS Teamsters 2&3 Axles Booster Tank Oil Spreader Truck Driver"
    ],
-   "batch": 3
-  },
-  {
-   "slug": "lemoore",
-   "college": "Lemoore College",
-   "code": "DIME",
-   "guess": "Digital Media",
-   "confidence": 72,
-   "why": "courses: User Experience Design; TOP Digital Media; DIME",
-   "courses": [
-    "DIME 1 Introduction to User Experience Design",
-    "DIME 2 User Experience Design Tools and Applications"
-   ],
-   "batch": 3
+   "batch": 3,
+   "source_url": "https://laspositascollege.edu/gv/academicsenate/APCT.pdf",
+   "source_says": "Work Experience - Teamsters Apprenticeship"
   },
   {
    "slug": "madera",
@@ -4671,7 +4972,7 @@
    "code": "COTR",
    "guess": "Cooperative Work Experience",
    "confidence": 72,
-   "why": "course: Cooperative Work Experience; COTR; machine notes",
+   "why": "no page found; course: Cooperative Work Experience; COTR; machine notes",
    "courses": [
     "COTR 19G Cooperative Work Experience"
    ],
@@ -4680,66 +4981,109 @@
   {
    "slug": "mendocino",
    "college": "Mendocino College",
-   "code": "HLH",
-   "guess": "Health",
+   "code": "LRS",
+   "guess": "Learning Skills",
    "confidence": 72,
-   "why": "courses: Women's Health, Health Education, Nutrition; HLH",
+   "why": "2015 SLO doc lists LRS 500 among learning skills courses; LRS lab",
    "courses": [
-    "HLH 103 Women's Health",
-    "HLH 104 Medical Terminology",
-    "HLH 199 Independent Study"
+    "LRS 23 Learning Skills Laboratory",
+    "LRS 500 Academics for Adult Learners With Disabilities",
+    "LRS 523 Basic Learning Skills Laboratory"
    ],
-   "batch": 3
+   "batch": 3,
+   "source_url": "https://www.mendocino.edu/sites/default/files/lrs_slos_f15.pdf",
+   "source_says": "Learning Skills Laboratory"
+  },
+  {
+   "slug": "mendocino",
+   "college": "Mendocino College",
+   "code": "NRS",
+   "guess": "Natural Resources",
+   "confidence": 72,
+   "why": "program 'Natural Resources AS' lists NRS 200; program name",
+   "courses": [
+    "NRS 199 Independent Study",
+    "NRS 200 Environmental Science",
+    "NRS 200L Environmental Science Laboratory"
+   ],
+   "batch": 3,
+   "source_url": "https://www.mendocino.edu/sites/default/files/2025-08/NRS_AS_25.pdf",
+   "source_says": "NRS 200 Environmental Science 3"
   },
   {
    "slug": "miracosta",
    "college": "MiraCosta College",
    "code": "HSAGT",
-   "guess": "High School: American Government",
+   "guess": "Adult High School: American Government",
    "confidence": 72,
-   "why": "course: American Government; HS prefix; secondary ed TOP",
+   "why": "program 'Adult High School' diploma lists HSAGT 10; program name",
    "courses": [
     "HSAGT 10 American Government"
    ],
-   "batch": 3
+   "batch": 3,
+   "source_url": "https://catalog.miracosta.edu/continuingeducation/adulthighschooldiploma/",
+   "source_says": "HSAGT 10 (American Government)"
   },
   {
    "slug": "miracosta",
    "college": "MiraCosta College",
    "code": "HSECN",
-   "guess": "High School: Economics",
+   "guess": "Adult High School: Economics",
    "confidence": 72,
-   "why": "course: Economics; HS prefix; secondary ed TOP",
+   "why": "program 'Adult High School' diploma lists HSECN 10; program name",
    "courses": [
     "HSECN 10 Economics"
    ],
-   "batch": 3
-  },
-  {
-   "slug": "miracosta",
-   "college": "MiraCosta College",
-   "code": "HSETHN",
-   "guess": "High School: Ethnic Studies",
-   "confidence": 72,
-   "why": "course: Intro to Ethnic Studies; HS prefix",
-   "courses": [
-    "HSETHN 10 Introduction to Ethnic Studies"
-   ],
-   "batch": 3
+   "batch": 3,
+   "source_url": "https://catalog.miracosta.edu/continuingeducation/adulthighschooldiploma/",
+   "source_says": "HSECN 10 (Economics)"
   },
   {
    "slug": "miracosta",
    "college": "MiraCosta College",
    "code": "HSIFA",
-   "guess": "High School: Introduction to Fine Arts",
+   "guess": "Adult High School: Introduction to Fine Arts",
    "confidence": 72,
-   "why": "courses: Intro to Fine Arts 1-3; HSIFA",
+   "why": "AHS diploma lists HSIFA 11; program name",
    "courses": [
     "HSIFA 11 Introduction to Fine Arts 1 - The History and Development of Theatre",
     "HSIFA 12 Introduction to Fine Arts 2- The History and Development of Art and Music",
     "HSIFA 13 Beginning Film and Digital Media Production"
    ],
-   "batch": 3
+   "batch": 3,
+   "source_url": "https://catalog.miracosta.edu/continuingeducation/adulthighschooldiploma/",
+   "source_says": "HSIFA 11 (Introduction to Fine Arts 1"
+  },
+  {
+   "slug": "miracosta",
+   "college": "MiraCosta College",
+   "code": "NCABE",
+   "guess": "Adult Basic Education: Noncredit",
+   "confidence": 72,
+   "why": "AHS flyer lists NCABE 94 HS Equivalency Prep; no subject heading",
+   "courses": [
+    "NCABE 11 Mentorship for Student Success",
+    "NCABE 92 High School Equivalency Preparation"
+   ],
+   "batch": 3,
+   "source_url": "https://www.miracosta.edu/office-of-the-president/accreditation/_docs/wasc-evidence/chapter1/EV-11_NoncreditCertificatesFlyer.pdf",
+   "source_says": "NCABE 94—High School Equivalency Preparation"
+  },
+  {
+   "slug": "miracosta",
+   "college": "MiraCosta College",
+   "code": "NCBOT",
+   "guess": "Business Office Technology: Noncredit",
+   "confidence": 72,
+   "why": "Office Clerk certificate lists NCBOT 20/30; no subject heading",
+   "courses": [
+    "NCBOT 10 Beginning Keyboarding",
+    "NCBOT 20 Word Processing",
+    "NCBOT 30 Office Systems and Procedures"
+   ],
+   "batch": 3,
+   "source_url": "https://catalog.miracosta.edu/continuingeducation/shorttermvoc/",
+   "source_says": "NCBOT 20 · Specialized Documents for Business"
   },
   {
    "slug": "miracosta",
@@ -4747,7 +5091,7 @@
    "code": "NCPSY",
    "guess": "Psychology: Noncredit",
    "confidence": 72,
-   "why": "courses: Self-Awareness, Radio; NCPSY",
+   "why": "no page found; courses: Self-Awareness, Radio; NCPSY",
    "courses": [
     "NCPSY 11 Self-Awareness Through Improvisation",
     "NCPSY 13 The Impact of Radio on Our Lives"
@@ -4760,25 +5104,11 @@
    "code": "NCWRT",
    "guess": "Writing: Noncredit",
    "confidence": 72,
-   "why": "courses: Creative, Genre, Life Story Writing; NCWRT",
+   "why": "no page found; courses: Creative, Genre, Life Story Writing; NCWRT",
    "courses": [
     "NCWRT 10 Creative Writing",
     "NCWRT 16 Genre Writing",
     "NCWRT 20 Life Story Writing"
-   ],
-   "batch": 3
-  },
-  {
-   "slug": "mt_san_jacinto",
-   "college": "Mt. San Jacinto College",
-   "code": "LNSK",
-   "guess": "Learning Skills",
-   "confidence": 72,
-   "why": "courses: software for LD, self-advocacy; LNSK",
-   "courses": [
-    "LNSK 901 Text-to-Speech Software for LD",
-    "LNSK 902 Voice Recognition for LD",
-    "LNSK 903 Self-Advocacy for Students with Disabilities"
    ],
    "batch": 3
   },
@@ -4799,53 +5129,14 @@
   {
    "slug": "ohlone",
    "college": "Ohlone College",
-   "code": "AF",
-   "guess": "Aerospace Studies",
-   "confidence": 72,
-   "why": "courses: Foundations of the U.S. Air Force; AF ROTC",
-   "courses": [
-    "AF 101B Foundations of the U.S. Air Force",
-    "AF 102B Evolution of the U.S. Air Force Air and Space Power"
-   ],
-   "batch": 3
-  },
-  {
-   "slug": "ohlone",
-   "college": "Ohlone College",
    "code": "BSM",
    "guess": "Business Supervision and Management",
    "confidence": 72,
-   "why": "courses: supervision, HR, leadership; BSM",
+   "why": "no page found; courses: supervision, HR, leadership; BSM",
    "courses": [
     "BSM 101 Fundamentals of Supervision",
     "BSM 102 Interpersonal Relations in the Workplace",
     "BSM 103 Management of Human Resources"
-   ],
-   "batch": 3
-  },
-  {
-   "slug": "orange_coast",
-   "college": "Orange Coast College",
-   "code": "DVP",
-   "guess": "Display and Visual Presentation",
-   "confidence": 72,
-   "why": "course: Intro To Display & VP; DVP",
-   "courses": [
-    "DVP A180 Intro To Display & VP"
-   ],
-   "batch": 3
-  },
-  {
-   "slug": "oxnard",
-   "college": "Oxnard College",
-   "code": "PG",
-   "guess": "Personal Growth",
-   "confidence": 72,
-   "why": "courses: College Success, Personal Growth; PG",
-   "courses": [
-    "PG R102 College Success",
-    "PG R198H Personal Growth: Boots to Books",
-    "PG R850 Emotional Intelligence"
    ],
    "batch": 3
   },
@@ -5128,7 +5419,7 @@
    "code": "ITECH",
    "guess": "Industrial Technology",
    "confidence": 70,
-   "why": "courses: power academy, wind turbine, NATE HVAC; code ITECH",
+   "why": "no page found; courses: power academy, wind turbine, NATE HVAC; code ITECH",
    "courses": [
     "ITECH 155 VERDUGO POWER ACADEMY",
     "ITECH 156 Advanced Metering Technology",
@@ -5142,7 +5433,7 @@
    "code": "NCECT",
    "guess": "Electronics and Computer Technology: Noncredit",
    "confidence": 70,
-   "why": "courses: electronic circuits, soldering; code NCECT",
+   "why": "no page found; courses: electronic circuits, soldering; code NCECT",
    "courses": [
     "NCECT 23001CP MATH FOR ELECTRONICS",
     "NCECT 23002CP ELECTRONIC CIRCUITS",
@@ -5156,39 +5447,41 @@
    "code": "IDS",
    "guess": "Interdisciplinary Studies",
    "confidence": 70,
-   "why": "course: Selected Topics in IDS; code IDS",
+   "why": "no page found; course: Selected Topics in IDS; code IDS",
    "courses": [
     "IDS 299 SELECTED TOPICS IN IDS"
    ],
    "batch": 3
   },
   {
-   "slug": "grossmont",
-   "college": "Grossmont College",
-   "code": "PDC",
-   "guess": "Personal Development Counseling",
-   "confidence": 70,
-   "why": "courses: study skills, career explore, orientation; PDC",
-   "courses": [
-    "PDC 103 STANDARDIZED TEST PREPARATION",
-    "PDC 117 CAREER EXPLORE:DISCOVER ALT",
-    "PDC 122 TUTOR TRAINING"
-   ],
-   "batch": 3
-  },
-  {
    "slug": "las_positas",
    "college": "Las Positas College",
-   "code": "APCT",
-   "guess": "Apprenticeship: Construction Teamsters",
+   "code": "NNTR",
+   "guess": "Nutrition: Noncredit",
    "confidence": 70,
-   "why": "courses: Teamsters truck driver apprenticeship; APCT",
+   "why": "catalog has NNTR course page (noncredit twin of NTRN); heading not seen",
    "courses": [
-    "APCT 5ALB Teamsters 5 Axle and Low Bed Driver",
-    "APCT 94 Work Experience - Teamsters Apprenticeship",
-    "APCT BTOS Teamsters 2&3 Axles Booster Tank Oil Spreader Truck Driver"
+    "NNTR 201 Introduction to Nutrition Science"
    ],
-   "batch": 3
+   "batch": 3,
+   "source_url": "https://laspositascollege.edu/catalog/current/nntr/courses.php",
+   "source_says": "NNTR 201 ... Noncredit"
+  },
+  {
+   "slug": "lemoore",
+   "college": "Lemoore College",
+   "code": "NC",
+   "guess": "Noncredit",
+   "confidence": 70,
+   "why": "catalog has an NC course descriptions page (NC 100 Supervised Tutoring)",
+   "courses": [
+    "NC 100 Supervised Tutoring",
+    "NC 103 Food Managerial Certification Preparation",
+    "NC 104 Professional Kitchen Skills"
+   ],
+   "batch": 3,
+   "source_url": "https://lemoorecollege.edu/catalog/2020-2021/courses/nc/",
+   "source_says": "Course Descriptions ... NC"
   },
   {
    "slug": "los_angeles_harbor",
@@ -5215,18 +5508,20 @@
    "batch": 1
   },
   {
-   "slug": "mission",
-   "college": "Mission College",
-   "code": "NCO",
-   "guess": "Older Adults: Noncredit",
+   "slug": "miracosta",
+   "college": "MiraCosta College",
+   "code": "NCHAS",
+   "guess": "Health and Safety: Noncredit",
    "confidence": 70,
-   "why": "courses: Older Adult Art, Fitness for Older Adults; NCO",
+   "why": "schedule lists 'Health & Safety' as a General Noncredit category",
    "courses": [
-    "NCO 1611 Older Adult Art",
-    "NCO 3900 Forum on World Affairs",
-    "NCO 3901 Forum on World Affairs I"
+    "NCHAS 12 Nutrition and Fitness for Better Health",
+    "NCHAS 70 Body Conditioning Over Easy",
+    "NCHAS 71 Body Conditioning for Older Adults"
    ],
-   "batch": 3
+   "batch": 3,
+   "source_url": "https://www.miracosta.edu/academics/class-schedules-catalog/_docs/continuingedschedule_summerfall2022.pdf",
+   "source_says": "GENERAL NONCREDIT, Adults with Disabilities, Health & Safety, Older Adults"
   },
   {
    "slug": "mt_san_jacinto",
@@ -5234,7 +5529,7 @@
    "code": "ORA",
    "guess": "Oracle",
    "confidence": 70,
-   "why": "course: Oracle Certification Test Review; ORA",
+   "why": "no page found; course: Oracle Certification Test Review; ORA",
    "courses": [
     "ORA 39 Oracle Certification Test Review"
    ],
@@ -5243,15 +5538,18 @@
   {
    "slug": "napa_valley",
    "college": "Napa Valley College",
-   "code": "LRNSNC",
-   "guess": "Learning Skills: Noncredit",
+   "code": "ABEN",
+   "guess": "Adult Basic Education: English as a Second Language",
    "confidence": 70,
-   "why": "courses: Differential Learning Diagnosis/Tutoring; LRNSNC",
+   "why": "dept page 'Community and Adult Basic Education ESL' lists ABEN 750; dept",
    "courses": [
-    "LRNSNC 1 Differential Learning Diagnosis",
-    "LRNSNC 11 Differential Learning Tutoring"
+    "ABEN 750 E.S.L.",
+    "ABEN 753 ESL for Hospitality Workers",
+    "ABEN 755 Preparation for College ESL"
    ],
-   "batch": 3
+   "batch": 3,
+   "source_url": "https://napavalley.edu/programs-and-academics/divisions-and-departments/language-arts-and-developmental-studies/english-as-a-second-language/community-and-adult-basic-education-esl.html",
+   "source_says": "Community and Adult Basic Education ESL"
   },
   {
    "slug": "north_orange_continuing_education",
@@ -5357,18 +5655,33 @@
    "batch": 2
   },
   {
-   "slug": "laney",
-   "college": "Laney College",
-   "code": "MEDIA",
-   "guess": "Media Communications",
+   "slug": "miracosta",
+   "college": "MiraCosta College",
+   "code": "HSETHN",
+   "guess": "Adult High School: Ethnic Studies",
    "confidence": 68,
-   "why": "courses: virtual production, broadcast; code MEDIA",
+   "why": "AHS diploma electives list HSETHN 10; program name",
    "courses": [
-    "MEDIA 044A Virtual Production l",
-    "MEDIA 044B Virtual Production ll",
-    "MEDIA 044C Virtual Production lll: Cinematography"
+    "HSETHN 10 Introduction to Ethnic Studies"
    ],
-   "batch": 3
+   "batch": 3,
+   "source_url": "https://www.miracosta.edu/academics/continuing-education/adult-high-school/credit-courses-that-satisfy-ahs-diploma-requirements.html",
+   "source_says": "HSETHN 10"
+  },
+  {
+   "slug": "ohlone",
+   "college": "Ohlone College",
+   "code": "AF",
+   "guess": "Aerospace Studies",
+   "confidence": 68,
+   "why": "Ohlone has an Air Force cross-town ROTC unit; no college page names AF",
+   "courses": [
+    "AF 101B Foundations of the U.S. Air Force",
+    "AF 102B Evolution of the U.S. Air Force Air and Space Power"
+   ],
+   "batch": 3,
+   "source_url": "https://files.gao.gov/interactive/data/105857/Ohlone_College.html",
+   "source_says": "Air Force cross-town ROTC unit"
   },
   {
    "slug": "san_joaquin_delta",
@@ -5636,7 +5949,7 @@
    "code": "AMN",
    "guess": "Amnesty Education",
    "confidence": 65,
-   "why": "course: Amnesty Level 1-3; TOP Citizenship",
+   "why": "no page found; course: Amnesty Level 1-3; TOP Citizenship",
    "courses": [
     "AMN 00106CR AMNESTY LEVEL 1-3"
    ],
@@ -5648,49 +5961,9 @@
    "code": "LAW",
    "guess": "Law",
    "confidence": 65,
-   "why": "course: Elementary Law; code is the word",
+   "why": "no page found; course: Elementary Law; code is the word",
    "courses": [
     "LAW 001  CQ ELEMENTARY LAW"
-   ],
-   "batch": 3
-  },
-  {
-   "slug": "glendale_community",
-   "college": "Glendale Community College",
-   "code": "MEDIA",
-   "guess": "Media Arts",
-   "confidence": 65,
-   "why": "courses: TV studio, motion picture, audio; code MEDIA; machine Media Studies",
-   "courses": [
-    "MEDIA 101 Introduction to TV Studio Production",
-    "MEDIA 103 Introduction to Motion Picture Production",
-    "MEDIA 104 VIDEO PRODUCTION PRACTICUM"
-   ],
-   "batch": 3
-  },
-  {
-   "slug": "grossmont",
-   "college": "Grossmont College",
-   "code": "TELE",
-   "guess": "Telecommunications",
-   "confidence": 65,
-   "why": "courses: film as communication, videoconferencing; code TELE",
-   "courses": [
-    "TELE 161 THE FILM AS COMMUNICATION ART",
-    "TELE 162 FILM ADAPTATIONS OF LITERATURE",
-    "TELE 231 VIDEOCONFERENCING"
-   ],
-   "batch": 3
-  },
-  {
-   "slug": "las_positas",
-   "college": "Las Positas College",
-   "code": "NNTR",
-   "guess": "Nutrition: Noncredit",
-   "confidence": 65,
-   "why": "course: Introduction to Nutrition Science; NC; code NNTR",
-   "courses": [
-    "NNTR 201 Introduction to Nutrition Science"
    ],
    "batch": 3
   },
@@ -5700,7 +5973,7 @@
    "code": "COT",
    "guess": "Computer Office Technology",
    "confidence": 65,
-   "why": "courses: keyboarding, 10 key; code COT",
+   "why": "no page found; courses: keyboarding, 10 key; code COT",
    "courses": [
     "COT 50 Keyboarding, Level 1",
     "COT 52 Keyboarding, Level 2",
@@ -5709,18 +5982,49 @@
    "batch": 3
   },
   {
+   "slug": "lemoore",
+   "college": "Lemoore College",
+   "code": "DIME",
+   "guess": "Digital Media",
+   "confidence": 65,
+   "why": "program 'User Experience (UX) Design' cert lists DIME 001/002; program name",
+   "courses": [
+    "DIME 1 Introduction to User Experience Design",
+    "DIME 2 User Experience Design Tools and Applications"
+   ],
+   "batch": 3,
+   "source_url": "https://lemoorecollege.edu/academics/user-experience-ux-design/",
+   "source_says": "User Experience (UX) Design"
+  },
+  {
    "slug": "mendocino",
    "college": "Mendocino College",
-   "code": "NRS",
-   "guess": "Natural Resources",
+   "code": "HLH",
+   "guess": "Health",
    "confidence": 65,
-   "why": "courses: Environmental Science; TOP Natural Resources; NRS",
+   "why": "HLH courses sit in the Allied Health AS program; no subject heading",
    "courses": [
-    "NRS 199 Independent Study",
-    "NRS 200 Environmental Science",
-    "NRS 200L Environmental Science Laboratory"
+    "HLH 103 Women's Health",
+    "HLH 104 Medical Terminology",
+    "HLH 199 Independent Study"
    ],
-   "batch": 3
+   "batch": 3,
+   "source_url": "https://www.mendocino.edu/sites/default/files/2025-08/HLH_AH_AS_25.pdf",
+   "source_says": "HLH 214 Foods and Nutrition"
+  },
+  {
+   "slug": "miracosta",
+   "college": "MiraCosta College",
+   "code": "HSWFP",
+   "guess": "Adult High School: Workforce Preparation",
+   "confidence": 65,
+   "why": "AHS lists HSWFP 11 beside NCWFP (workforce prep); program name",
+   "courses": [
+    "HSWFP 11 Applied Computer Skills"
+   ],
+   "batch": 3,
+   "source_url": "https://www.miracosta.edu/office-of-the-president/accreditation/_docs/wasc-evidence/chapter1/EV-8_AdultHighSchoolPSLOs2021-2022Catalog.pdf",
+   "source_says": "HSWFP 11 Applied Computer Skills or NCWFP 11"
   },
   {
    "slug": "mt_san_antonio",
@@ -5913,27 +6217,15 @@
    "code": "AD",
    "guess": "Addiction Studies",
    "confidence": 62,
-   "why": "courses are AD ST numbers on chemical dependency; truncated AD ST",
+   "why": "program page 'Addiction Studies Counseling' uses AD ST; AD looks truncated",
    "courses": [
     "AD ST113 DEPENDENCY & SEXUALITY",
     "AD ST115 ADULT CHILDREN DYS FAM",
     "AD ST116 SOCIAL MODEL TREAT/RECOVERY"
    ],
-   "batch": 3
-  },
-  {
-   "slug": "glendale_community",
-   "college": "Glendale Community College",
-   "code": "OBT",
-   "guess": "Office Business Technology",
-   "confidence": 62,
-   "why": "courses: Microsoft Word, keyboarding, Access; code OBT",
-   "courses": [
-    "OBT 100 BEGINNING MICROSOFT WORD",
-    "OBT 10021CC PAGEMAKER/PUBLISHER",
-    "OBT 101 ADVANCED MICROSOFT WORD"
-   ],
-   "batch": 3
+   "batch": 3,
+   "source_url": "https://www.glendale.edu/academics/degree-certificate-programs/certificate-programs/addiction-studies-counseling",
+   "source_says": "Addiction Studies Counseling"
   },
   {
    "slug": "glendale_community",
@@ -5941,7 +6233,7 @@
    "code": "TLADV",
    "guess": "Tailoring",
    "confidence": 62,
-   "why": "courses: Advanced Tailoring/Dressmaking; code TLADV",
+   "why": "no page found; courses: Advanced Tailoring/Dressmaking; code TLADV",
    "courses": [
     "TLADV 00501CG ADVANCED TAILORING/DRESSMKG",
     "TLADV 00501CN ADVANCED DRESSMAKING"
@@ -5954,51 +6246,25 @@
    "code": "ENGW",
    "guess": "English Writing Center",
    "confidence": 62,
-   "why": "course: Writing Center Conference I; code ENGW",
+   "why": "no page found; course: Writing Center Conference I; code ENGW",
    "courses": [
     "ENGW G020 Writing Center Conference I"
    ],
    "batch": 3
   },
   {
-   "slug": "mendocino",
-   "college": "Mendocino College",
-   "code": "LRS",
-   "guess": "Learning Resources",
-   "confidence": 62,
-   "why": "courses: learning skills lab, adult learners w/ disabilities; LRS",
-   "courses": [
-    "LRS 23 Learning Skills Laboratory",
-    "LRS 500 Academics for Adult Learners With Disabilities",
-    "LRS 523 Basic Learning Skills Laboratory"
-   ],
-   "batch": 3
-  },
-  {
    "slug": "moorpark",
    "college": "Moorpark College",
-   "code": "GR",
-   "guess": "Graphics",
+   "code": "CNSEM",
+   "guess": "Computer Network Systems Engineering",
    "confidence": 62,
-   "why": "course: Independent Study-Graphics; code GR",
+   "why": "CNSE dept lists 'CISCO Semester 6 - Remote Access'; CNSEM likely CNSE M52",
    "courses": [
-    "GR M122 Independent Study-Graphics"
+    "CNSEM 52 CISCO SEMESTER 6-REMOTE ACCESS"
    ],
-   "batch": 3
-  },
-  {
-   "slug": "moreno_valley",
-   "college": "Moreno Valley College",
-   "code": "SCE",
-   "guess": "Senior Citizen Education",
-   "confidence": 62,
-   "why": "courses: '...for Lifelong Learners'; noncredit; SCE",
-   "courses": [
-    "SCE 804 Engaging Topics for Lifelong Learners",
-    "SCE 809 Computer Basics for Lifelong Learners",
-    "SCE 811 Drawing and Painting for Lifelong Learners"
-   ],
-   "batch": 3
+   "batch": 3,
+   "source_url": "https://www.moorparkcollege.edu/sites/moorparkcollege/files/media/pdf_document/2022/MC%20Computer%20Network%20Systems%20Engineering%20Comparables%202022-2023.pdf",
+   "source_says": "CNSE M52, CISCO Semester 6 - Remote Access"
   },
   {
    "slug": "porterville",
@@ -6199,7 +6465,7 @@
    "code": "LIFE",
    "guess": "Life Skills",
    "confidence": 60,
-   "why": "courses: Workforce Preparation, Workplace Success; code LIFE",
+   "why": "no page found; courses: Workforce Preparation, Workplace Success; code LIFE",
    "courses": [
     "LIFE 700 Workforce Preparation and Job Readiness",
     "LIFE 701 Workplace Success"
@@ -6212,7 +6478,7 @@
    "code": "HOM",
    "guess": "Home Economics",
    "confidence": 60,
-   "why": "courses: stitchery, dressmaking, quilting; code HOM",
+   "why": "no page found; courses: stitchery, dressmaking, quilting; code HOM",
    "courses": [
     "HOM A010 CREATIVE STITCHERY",
     "HOM A020 MULTI-LEVEL SEW & DRESSMAKING",
@@ -6226,7 +6492,7 @@
    "code": "NCSOT",
    "guess": "Business Office Technology: Noncredit",
    "confidence": 60,
-   "why": "course: BUSOT Macintosh Basics; code NCSOT",
+   "why": "no page found; course: BUSOT Macintosh Basics; code NCSOT",
    "courses": [
     "NCSOT 30001CH BUSOT MACINTOSH BASICS"
    ],
@@ -6238,12 +6504,26 @@
    "code": "SCI",
    "guess": "Science: High School",
    "confidence": 60,
-   "why": "courses: HS Life Science, HS Physical Science; code SCI",
+   "why": "no page found; courses: HS Life Science, HS Physical Science; code SCI",
    "courses": [
     "SCI L01803CQ HS LIFE SCIENCE 2",
     "SCI L02003CQ HS PHYSICAL SCIENCE"
    ],
    "batch": 3
+  },
+  {
+   "slug": "lassen",
+   "college": "Lassen College",
+   "code": "PLSC",
+   "guess": "Political Science",
+   "confidence": 60,
+   "why": "CCN map: PLSC 1 American Institutions -> POLS; legacy PLSC prefix",
+   "courses": [
+    "PLSC 11 Student Leadership"
+   ],
+   "batch": 3,
+   "source_url": "https://www.lassencollege.edu/wp-content/uploads/2025/11/CCN-Course-Mapping-11-2025.pdf",
+   "source_says": "PLSC 1 American Institutions Political Science POLS C1000"
   },
   {
    "slug": "los_angeles_southwest",
@@ -6257,44 +6537,6 @@
     "DIRECTED STUDIES 385 WORK EXPERIENCE - GENERAL I"
    ],
    "batch": 1
-  },
-  {
-   "slug": "miracosta",
-   "college": "MiraCosta College",
-   "code": "NCVOC",
-   "guess": "Vocational Education: Noncredit",
-   "confidence": 60,
-   "why": "courses: Microsoft Word, Excel, Google Apps; NCVOC",
-   "courses": [
-    "NCVOC 31 Beginning Microsoft Word",
-    "NCVOC 32 Intermediate Microsoft Word",
-    "NCVOC 33 Basic Google Apps"
-   ],
-   "batch": 3
-  },
-  {
-   "slug": "moorpark",
-   "college": "Moorpark College",
-   "code": "CNSEM",
-   "guess": "Cisco Networking",
-   "confidence": 60,
-   "why": "course: Cisco Semester 6; CNSEM",
-   "courses": [
-    "CNSEM 52 CISCO SEMESTER 6-REMOTE ACCESS"
-   ],
-   "batch": 3
-  },
-  {
-   "slug": "mt_san_jacinto",
-   "college": "Mt. San Jacinto College",
-   "code": "LL",
-   "guess": "Learning Lab",
-   "confidence": 60,
-   "why": "course: Supervised Tutoring; code LL",
-   "courses": [
-    "LL 998 Supervised Tutoring (formerly LL-001X)"
-   ],
-   "batch": 3
   },
   {
    "slug": "north_orange_continuing_education",
@@ -6328,13 +6570,15 @@
    "code": "HTEL",
    "guess": "Hotel Management",
    "confidence": 60,
-   "why": "courses: Directed Study; TOP Lodging; HTEL",
+   "why": "legacy HTEL A110 cited beside HTT; 'Hotel Management' is a program name",
    "courses": [
     "HTEL A291 Dir Study",
     "HTEL A292 Dir Study",
     "HTEL A293 Dir Study"
    ],
-   "batch": 3
+   "batch": 3,
+   "source_url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/hotel-management-associate-science-degree/",
+   "source_says": "Hotel Management, Associate in Science Degree"
   },
   {
    "slug": "santa_ana",
@@ -6417,18 +6661,6 @@
     "ARCLA 130 Landscape Drafting and Graphics"
    ],
    "batch": 2
-  },
-  {
-   "slug": "napa_valley",
-   "college": "Napa Valley College",
-   "code": "AGN",
-   "guess": "Agriculture: Noncredit",
-   "confidence": 58,
-   "why": "course: Basic Gardening; AGN",
-   "courses": [
-    "AGN 820 BASIC GARDENING"
-   ],
-   "batch": 3
   },
   {
    "slug": "santiago_canyon",
@@ -6544,7 +6776,7 @@
    "code": "BASIC",
    "guess": "Basic Sewing",
    "confidence": 55,
-   "why": "courses: basic sewing, pattern adaptation; code BASIC",
+   "why": "no page found; courses: basic sewing, pattern adaptation; code BASIC",
    "courses": [
     "BASIC 001  CN RET S SEWING TECHNIQUES",
     "BASIC 00102CG BASIC SEWING TECHNIQUES",
@@ -6558,7 +6790,7 @@
    "code": "MATHL",
    "guess": "Mathematics: Noncredit",
    "confidence": 55,
-   "why": "courses: HS Arithmetic 1, 2; noncredit; MATHL code",
+   "why": "no page found; courses: HS Arithmetic 1, 2; noncredit; MATHL code",
    "courses": [
     "MATHL 010  CE HS ARITHMETIC 1",
     "MATHL 01101CH HS ARITHMETIC 1",
@@ -6572,7 +6804,7 @@
    "code": "OSC",
    "guess": "Office Skills Center",
    "confidence": 55,
-   "why": "courses: shorthand, WordPerfect, Lotus; code OSC",
+   "why": "no page found; courses: shorthand, WordPerfect, Lotus; code OSC",
    "courses": [
     "OSC 00304CQ SHORTHAND,BEG,INTER,ADVANCED",
     "OSC 00502CM OSC/LAB",
@@ -6586,7 +6818,7 @@
    "code": "T ED",
    "guess": "Technical Education",
    "confidence": 55,
-   "why": "course: Tech Mathematics II; code T ED",
+   "why": "no page found; course: Tech Mathematics II; code T ED",
    "courses": [
     "T ED 143 TECH MATHEMATICS II"
    ],
@@ -6598,23 +6830,9 @@
    "code": "PPE",
    "guess": "Professional Physical Education",
    "confidence": 55,
-   "why": "course: Water Safety Instruction; code PPE",
+   "why": "no page found; course: Water Safety Instruction; code PPE",
    "courses": [
     "PPE G200 Water Safety Instruction"
-   ],
-   "batch": 3
-  },
-  {
-   "slug": "grossmont",
-   "college": "Grossmont College",
-   "code": "HESC",
-   "guess": "Health Science",
-   "confidence": 55,
-   "why": "courses: disabilities specialist, special studies; code HESC",
-   "courses": [
-    "HESC 115 TECHNIQUE/DEVELOP DISAB SPCLST",
-    "HESC 199 SPECIAL STUDIES IN HESC",
-    "HESC 299 SELECTED TOPICS IN HESC"
    ],
    "batch": 3
   },
@@ -6648,21 +6866,9 @@
    "code": "ENGSL",
    "guess": "English for Speakers of Other Languages",
    "confidence": 55,
-   "why": "course: ENGLISH; TOP Vocational ESL; ENGSL",
+   "why": "no page found; course: ENGLISH; TOP Vocational ESL; ENGSL",
    "courses": [
     "ENGSL 311 ENGLISH"
-   ],
-   "batch": 3
-  },
-  {
-   "slug": "miracosta",
-   "college": "MiraCosta College",
-   "code": "HSWFP",
-   "guess": "High School: Workforce Preparation",
-   "confidence": 55,
-   "why": "course: Applied Computer Skills; HSWFP guess",
-   "courses": [
-    "HSWFP 11 Applied Computer Skills"
    ],
    "batch": 3
   },
@@ -6672,37 +6878,10 @@
    "code": "NCB",
    "guess": "Basic Skills: Noncredit",
    "confidence": 55,
-   "why": "courses: Strategies to Improve Writing; NCB",
+   "why": "no page found; courses: Strategies to Improve Writing; NCB",
    "courses": [
     "NCB 901 Strategies to Improve Writing",
     "NCB 902 Strategies to Improve Writing"
-   ],
-   "batch": 3
-  },
-  {
-   "slug": "mt_san_jacinto",
-   "college": "Mt. San Jacinto College",
-   "code": "CEP",
-   "guess": "Career Education Preparation",
-   "confidence": 55,
-   "why": "courses: career skills, construction, digital comm; CEP",
-   "courses": [
-    "CEP 950 Career Enhancement Skills (formerly CEP-001X)",
-    "CEP 954 Introduction to Construction",
-    "CEP 955 Residential Construction"
-   ],
-   "batch": 3
-  },
-  {
-   "slug": "napa_valley",
-   "college": "Napa Valley College",
-   "code": "FAMN",
-   "guess": "Family and Consumer Sciences: Noncredit",
-   "confidence": 55,
-   "why": "courses: Elder Care; TOP family/consumer; FAMN",
-   "courses": [
-    "FAMN 40 Strategies for Effective Elder Care",
-    "FAMN 41 Professionalism and Ethics in Elder Care"
    ],
    "batch": 3
   },
@@ -6743,19 +6922,6 @@
     "SAFE 205 Mature Driver Improvement"
    ],
    "batch": 1
-  },
-  {
-   "slug": "pasadena_city",
-   "college": "Pasadena City College",
-   "code": "MAN",
-   "guess": "Medical Assisting: Noncredit",
-   "confidence": 55,
-   "why": "courses: Medical Front Office Clerk; MAN",
-   "courses": [
-    "MAN 5000 Medical Front Office Clerk: Office Procedures",
-    "MAN 5001 Software Applications for Medical Front Office Settings"
-   ],
-   "batch": 3
   },
   {
    "slug": "saddleback",
@@ -6992,7 +7158,7 @@
    "code": "RET",
    "guess": "Retired Seniors",
    "confidence": 50,
-   "why": "courses: RET S psychology, health, life story; older adults",
+   "why": "no page found; courses: RET S psychology, health, life story; older adults",
    "courses": [
     "RET S00101AG PSYCHOLOGY ASPECTS",
     "RET S00108AN PSYCH QUALITY OF LIFE",
@@ -7006,7 +7172,7 @@
    "code": "SCIL",
    "guess": "Science Lab: High School",
    "confidence": 50,
-   "why": "courses: HS life/physical science; code SCIL",
+   "why": "no page found; courses: HS life/physical science; code SCIL",
    "courses": [
     "SCIL 01704CE HS/LIFE SCIENCE I",
     "SCIL 01801CH HS LIFE SCIENCE 2",
@@ -7020,7 +7186,7 @@
    "code": "ESS",
    "guess": "Educational Skills Support",
    "confidence": 50,
-   "why": "courses: basic grammar, reading, learning practicum; machine wrong",
+   "why": "no page found; courses: basic grammar, reading, learning practicum; machine wrong",
    "courses": [
     "ESS 310 BASIC GRAMMER AND PARAGRAPHING SKILLS",
     "ESS 315 LEARNING DEVELOPMENT PRACTICUM",
@@ -7034,35 +7200,9 @@
    "code": "CMS",
    "guess": "Communication Studies",
    "confidence": 50,
-   "why": "course: Electronic Field Production; code CMS",
+   "why": "no page found; course: Electronic Field Production; code CMS",
    "courses": [
     "CMS 60 INTRODUCTION TO ELECTRONIC FIELD PRODUCTION"
-   ],
-   "batch": 3
-  },
-  {
-   "slug": "lassen",
-   "college": "Lassen College",
-   "code": "PLSC",
-   "guess": "Political Science",
-   "confidence": 50,
-   "why": "course: Student Leadership; common POLS; PLSC code",
-   "courses": [
-    "PLSC 11 Student Leadership"
-   ],
-   "batch": 3
-  },
-  {
-   "slug": "lemoore",
-   "college": "Lemoore College",
-   "code": "NC",
-   "guess": "Noncredit",
-   "confidence": 50,
-   "why": "courses span tutoring, kitchen, computer skills; code NC",
-   "courses": [
-    "NC 100 Supervised Tutoring",
-    "NC 103 Food Managerial Certification Preparation",
-    "NC 104 Professional Kitchen Skills"
    ],
    "batch": 3
   },
@@ -7101,20 +7241,6 @@
    "batch": 1,
    "source_url": "https://lattc.edu/sites/lattc.edu/files/2025-03/Health%20Foundation%20Career%20Program%20Cert%20%282022%29.pdf",
    "source_says": "HOC 49 Fundamentals of Elder Care"
-  },
-  {
-   "slug": "napa_valley",
-   "college": "Napa Valley College",
-   "code": "ABEN",
-   "guess": "Adult Basic Education: English",
-   "confidence": 50,
-   "why": "courses: E.S.L., ESL for Hospitality; ABEN",
-   "courses": [
-    "ABEN 750 E.S.L.",
-    "ABEN 753 ESL for Hospitality Workers",
-    "ABEN 755 Preparation for College ESL"
-   ],
-   "batch": 3
   },
   {
    "slug": "san_diego_of_continuing_education",
@@ -7292,7 +7418,7 @@
    "code": "AL",
    "guess": "Alcohol Studies",
    "confidence": 45,
-   "why": "course: AL ST Pharmacology/Alcohol; likely Addiction Studies variant",
+   "why": "no page found; course: AL ST Pharmacology/Alcohol; likely Addiction Studies variant",
    "courses": [
     "AL ST102 PHARMACOLOGY/ALCOHOL"
    ],
@@ -7304,25 +7430,13 @@
    "code": "INTR",
    "guess": "Interdisciplinary Studies",
    "confidence": 45,
-   "why": "course: Foundation Skills for College; machine Interpreting doubtful",
+   "why": "COUN 100 page names INTR 100 as overlap; no subject heading found",
    "courses": [
     "INTR 100 Foundation Skills for the College Experience"
    ],
-   "batch": 3
-  },
-  {
-   "slug": "miracosta",
-   "college": "MiraCosta College",
-   "code": "NCHAS",
-   "guess": "Health and Safety: Noncredit",
-   "confidence": 45,
-   "why": "courses: fitness, chair yoga, tai chi for older adults; NCHAS",
-   "courses": [
-    "NCHAS 12 Nutrition and Fitness for Better Health",
-    "NCHAS 70 Body Conditioning Over Easy",
-    "NCHAS 71 Body Conditioning for Older Adults"
-   ],
-   "batch": 3
+   "batch": 3,
+   "source_url": "https://campusanswers.pages.dev/miracosta/courses/coun-100",
+   "source_says": "credit for COUN 100, COUN 105, or INTR 100"
   },
   {
    "slug": "north_orange_continuing_education",
@@ -7335,20 +7449,6 @@
     "SHOP 100 Cabinet and Millwork"
    ],
    "batch": 1
-  },
-  {
-   "slug": "pasadena_city",
-   "college": "Pasadena City College",
-   "code": "SET",
-   "guess": "Special Education Technology",
-   "confidence": 45,
-   "why": "courses: disabilities, learning disabilities; SET",
-   "courses": [
-    "SET 102 Adults with Disabilities",
-    "SET 108 Introduction to Learning Disabilities",
-    "SET 111 Introduction to Developmental Disabilities"
-   ],
-   "batch": 3
   },
   {
    "slug": "santa_monica",
@@ -7436,7 +7536,7 @@
    "code": "DSL",
    "guess": "Diploma Program",
    "confidence": 40,
-   "why": "courses: HS English, algebra, geometry; TOP secondary ed; DSL unclear",
+   "why": "no page found; courses: HS English, algebra, geometry; TOP secondary ed; DSL unclear",
    "courses": [
     "DSL 01009BF BASIC ENGLISH",
     "DSL 02407BF ALGEBRA 1B",
@@ -7450,7 +7550,7 @@
    "code": "PDEO",
    "guess": "Personal Development: Educational Opportunity",
    "confidence": 40,
-   "why": "course: Transition to Independent Living; PDEO guess",
+   "why": "no page found; course: Transition to Independent Living; PDEO guess",
    "courses": [
     "PDEO 299A Transition to Independent Living"
    ],
@@ -7462,13 +7562,15 @@
    "code": "NBE",
    "guess": "Noncredit Basic Education",
    "confidence": 40,
-   "why": "courses: child development, home health aide; NBE",
+   "why": "no subject page; NBE 100 found only in 'Child Care NC' certificate",
    "courses": [
     "NBE 100 Child Growth and Development",
     "NBE 101 Certified Home Health Aide",
     "NBE 111 Preparation in Education"
    ],
-   "batch": 3
+   "batch": 3,
+   "source_url": "https://paloverde.edu/future-students/programs-certs/docs/26-27/Child%20Care%20NC.pdf",
+   "source_says": "Child Care NC"
   },
   {
    "slug": "santa_monica",
@@ -7502,7 +7604,7 @@
    "code": "SPTP",
    "guess": "Special Topics",
    "confidence": 35,
-   "why": "course: 'As Assigned' only; code SPTP; placeholder-like",
+   "why": "no page found; course: 'As Assigned' only; code SPTP; placeholder-like",
    "courses": [
     "SPTP G299 As Assigned"
    ],
@@ -7534,7 +7636,7 @@
    "code": "INF",
    "guess": "Infection Control",
    "confidence": 30,
-   "why": "course: Sanitation and Safety; INF code unclear",
+   "why": "no page found; course: Sanitation and Safety; INF code unclear",
    "courses": [
     "INF 50 Sanitation and Safety"
    ],
@@ -7556,15 +7658,17 @@
    "slug": "fullerton",
    "college": "Fullerton College",
    "code": "F",
-   "guess": "Fullerton (Legacy Course Prefix)",
-   "confidence": 15,
-   "why": "courses span many subjects (ACCT, ANTH, ART); 'F' looks like a legacy prefix",
+   "guess": "Fullerton (Course-Number Suffix, Not a Subject)",
+   "confidence": 10,
+   "why": "'F' is Fullerton's course-number suffix (ACCT 205 F); the code is a parsing artifact",
    "courses": [
     "F ACCT107 QuickBooks",
     "F ACG162 Multi Media for Macintosh",
     "F ACG164 Multimedia Authoring"
    ],
-   "batch": 3
+   "batch": 3,
+   "source_url": "https://catalog.nocccd.edu/fullerton-college/academic-information/course-numbering/",
+   "source_says": "100 F - 299 F"
   }
  ]
 }
