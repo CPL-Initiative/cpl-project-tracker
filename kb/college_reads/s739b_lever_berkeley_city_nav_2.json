@@ -1,0 +1,33 @@
+{
+ "_readme": "S739 wave B (the gap census of 2026-11-26 06:54Z, run 45771011713, Next wave; lever reader_page_assignment), a second read: Spanish Language for Heritage Speakers 19976. Page read 45782712226 was sent to the catalog's front page and read its top-level navigation alone. This reads the Degree and Certificate Programs list (39711/39966) at the address the catalog's own links use, with its navigation data, for an entry naming Spanish or Heritage. One load. No model call, nothing written.",
+ "college": "Berkeley City College",
+ "questions": {
+  "own_page": "Whether the catalog prints the program's own section (its heading, its award, its course list and its total), where, and which course codes it prints."
+ },
+ "keywords": [
+  "heritage speakers[^\\\"\\n]{0,80}",
+  "spanish[^\\\"\\n]{0,80}"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966",
+   "network": true,
+   "network_hosts": [
+    "bcc.curriqunet.com"
+   ],
+   "network_find": [
+    "Heritage",
+    "Spanish"
+   ],
+   "links": "spanish|heritage|39711/39966/",
+   "links_cap": 200,
+   "why": "the program list"
+  }
+ ],
+ "outside_hosts": {
+  "curriqunet.com": "Berkeley City College (bcc.curriqunet.com): the college's own 2026-2027 catalog, served on its catalog vendor's domain, whose navigation calls hold the program entries"
+ }
+}

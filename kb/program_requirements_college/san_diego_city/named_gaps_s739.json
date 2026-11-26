@@ -1,0 +1,21 @@
+{
+ "_readme": "S739 wave B, the gap census's Next wave (census of 2026-11-26 06:54Z, run 45771011713; levers reader_page_assignment and paid_read): 1 program of San Diego City College whose filed record places none of the state's listed courses and whose title the catalog's list of degree curricula and certificate programs (15604/15945, 224 entries; college-page-read run 45782712226) does not print. The college's other program on the lever, Cosmetology 22367, has its own entry (15945/15788), which prints its four courses and 'Total Units: 24.0'; its filed record (run 38252422845) holds no course block, and it waits on a forced read behind a fresh capture. Filed as named gaps and never sent to a paid read. Each filed record stays as filed (the load skips a record that places none of its listed courses). No model call, no Supabase write. Each is the college's to settle in COCI or its catalog.",
+ "college": "San Diego City College",
+ "written": "2026-11-26T08:48:35Z",
+ "capture": "38347787891",
+ "page_reads": [
+  "45782712226"
+ ],
+ "reasons": {
+  "credit_not_in_catalog": "A credit program the 2026-27 catalog prints under no heading of its own: its list of degrees and certificates does not list it."
+ },
+ "programs": [
+  {
+   "control_number": "22333",
+   "title": "Communications Technician Apprenticeship",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "reason": "credit_not_in_catalog",
+   "note": "The list prints six apprenticeships, each as a degree and a certificate (San Diego Gas and Electric Company Lineman, San Diego Transit Electronic Technician, three San Diego Trolley Inc programs and Solar Turbines, Incorporated), and no Communications Technician Apprenticeship. The capture handed it 'Electronics - Certificate of Achievement: City' (15945/15651), which names 8 of its 16 listed courses; the filed record's own notes say the text 'does not contain a section for the Communications Technician Apprenticeship Certificate of Achievement'."
+  }
+ ]
+}

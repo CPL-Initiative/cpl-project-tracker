@@ -1,0 +1,33 @@
+{
+ "_readme": "S739 wave A (the gap census's Next wave, census run 45771011713 of 2026-11-26 06:54Z, the reader_page_assignment lever), second read: Grossmont College's Photography certificate 32879. The first read (run 45781997815) showed the page the capture handed it is headed 'Photography Associate in Arts' and prints the degree's list alone, and the department's menu names a separate page, 'Photography Certificate of Achievement', which the filed capture (44539755045) holds no address for. This plan reads the Visual & Performing Arts page's links naming photography, and a guessed address for the certificate's page as the capture reads it. No model call, nothing written.",
+ "college": "Grossmont College",
+ "questions": {
+  "department": "Which address the department's menu gives the Photography Certificate of Achievement.",
+  "own_page": "What the capture reads on the program's own page: its heading, its award, its course list and its total."
+ },
+ "keywords": [
+  "certificate of (?:achievement|completion|competency)[^\\n]{0,80}",
+  "associate (?:of|in) (?:arts|science)[^\\n]{0,80}",
+  "total[^\\n]{0,40}(?:units?|hours?)",
+  "required courses?"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "department"
+   ],
+   "why": "32879: the department page's links",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/",
+   "links": "photograph",
+   "links_cap": 40
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "32879: a guessed address (the sister pages' pattern)",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/photography-cert-achievement/",
+   "capture_view": true
+  }
+ ]
+}

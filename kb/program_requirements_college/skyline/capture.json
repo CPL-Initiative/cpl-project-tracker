@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 144,
  "with_closed_list": 58,
- "started": "2026-11-16T22:22:35Z",
+ "started": "2026-11-26T10:06:29Z",
  "scope": "/current/",
  "sitemap": {
   "url": "https://catalog.skylinecollege.edu/sitemap.xml",
@@ -15,23 +15,30 @@
   "program_pages": 470,
   "refused": null,
   "errors": null,
-  "failed": null
+  "failed": null,
+  "challenged": null
  },
  "listing_failed": 0,
- "pages_read": 420,
- "pages_listed": 475,
- "pages_answered": 420,
+ "pages_read": 421,
+ "pages_listed": 476,
+ "pages_answered": 421,
  "child_pages": 5,
  "banner_h1": null,
+ "site_pins": {
+  "30882": {
+   "url": "https://catalog.skylinecollege.edu/current/programs/mathematics-for-transfer-2-0-as-t.php",
+   "bound": true
+  }
+ },
  "catalog_lookup": {
   "self_test": {
-   "tested": 28,
-   "hits": 26,
-   "recall": 0.929,
+   "tested": 30,
+   "hits": 27,
+   "recall": 0.9,
    "false": 0,
    "false_off_own": 0,
    "false_no_claims": 0,
-   "shared": 10,
+   "shared": 9,
    "false_matches": [],
    "no_claims_matches": [],
    "searches": true,
@@ -980,21 +987,17 @@
   "yield_unjudged": 0,
   "yield_refused_passing": 0
  },
- "loads": 490,
- "seconds": 2956.1,
- "found": 48,
+ "loads": 491,
+ "seconds": 2646.0,
+ "found": 45,
  "by_method": {
-  "link_search": 7,
+  "link_search": 4,
   "no_closed_list": 86,
-  "not_found": 4,
+  "not_found": 7,
   "page_claimed": 6,
   "sitemap_page": 41
  },
  "shared_pages": {
-  "https://catalog.skylinecollege.edu/current/programs/business-management-as.php": [
-   "32964",
-   "45267"
-  ],
   "https://catalog.skylinecollege.edu/current/programs/public-health-for-transfer-as-t.php": [
    "36344",
    "45804"
@@ -1002,6 +1005,10 @@
   "https://catalog.skylinecollege.edu/current/programs/communication-studies-for-transfer-2-0-aa-t.php": [
    "39394",
    "44453"
+  ],
+  "https://catalog.skylinecollege.edu/current/_compare.new.programs.php": [
+   "45698",
+   "45699"
   ]
  },
  "not_found": [
@@ -1024,11 +1031,39 @@
     "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
     "error": null,
     "chars": {
-     "body": 385,
-     "content": 4482,
+     "body": 1277,
+     "content": 9282,
      "tabs": 0
     },
     "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "32964",
+   "title": "Solar Technology and Business",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/solar-technology-and-business-ca.php",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 10,
+    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1360,
+     "content": 9364,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -1051,8 +1086,8 @@
     "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
     "error": null,
     "chars": {
-     "body": 468,
-     "content": 4616,
+     "body": 1360,
+     "content": 9416,
      "tabs": 0
     },
     "tab_panels": []
@@ -1078,13 +1113,69 @@
     "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
     "error": null,
     "chars": {
-     "body": 8089,
-     "content": 23194,
+     "body": 8982,
+     "content": 27994,
      "tabs": 0
     },
     "tab_panels": []
    },
    "status": "Active"
+  },
+  {
+   "control_number": "45267",
+   "title": "Business Management",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/business-management-ca.php",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.783,
+    "body": 0.783,
+    "content": 0.783,
+    "net": 7,
+    "listed": 23,
+    "why": "coarse net: the page's code tokens name 7 of 23 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4419,
+     "content": 24261,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Approved"
+  },
+  {
+   "control_number": "45600",
+   "title": "Early Childhood Education",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/early-childhood-education-for-transfer-as-t.php",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.941,
+    "body": 0.941,
+    "content": 0.941,
+    "net": 3,
+    "listed": 17,
+    "why": "coarse net: the page's code tokens name 3 of 17 listed courses",
+    "error": null,
+    "chars": {
+     "body": 6616,
+     "content": 25607,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Approved"
   },
   {
    "control_number": "46509",
@@ -1158,245 +1249,208 @@
  ],
  "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 10,
+  "0.5-0.8": 8,
   "0.8-1.0": 15,
-  "1.0": 23
+  "1.0": 22
  },
  "would_extract": {
   "against": "kb/program_requirements_college/skyline",
   "kept": 43,
   "kept_moved": 0,
-  "programs": 5,
+  "programs": 1,
   "list": [
    {
-    "control_number": "31013",
-    "title": "Psychology",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.skylinecollege.edu/current/programs/psychology-for-transfer-aa-t.php",
-    "coverage": 0.75,
-    "was_url": "https://catalog.skylinecollege.edu/current/programs/psychology-for-transfer-aa-t.php",
-    "was_coverage": 0.667,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "32774",
-    "title": "Administration of Justice",
+    "control_number": "30882",
+    "title": "Mathematics",
     "award": "A.S. T Degree",
-    "url": "https://catalog.skylinecollege.edu/current/programs/administration-of-justice-for-transfer-as-t.php",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "36344",
-    "title": "Public Health Science",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.skylinecollege.edu/current/programs/public-health-for-transfer-as-t.php",
-    "coverage": 0.571,
-    "was_url": "https://catalog.skylinecollege.edu/current/programs/public-health-for-transfer-as-t.php",
-    "was_coverage": 0.5,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "45600",
-    "title": "Early Childhood Education",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.skylinecollege.edu/current/programs-overview/associatestable.php",
-    "coverage": 0.941,
-    "was_url": "https://catalog.skylinecollege.edu/current/programs-overview/associatestable.php",
-    "was_coverage": 0.882,
-    "was_method": "link_search"
-   },
-   {
-    "control_number": "45804",
-    "title": "Public Health",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.skylinecollege.edu/current/programs/public-health-for-transfer-as-t.php",
-    "coverage": 1.0,
-    "was_url": "https://catalog.skylinecollege.edu/current/programs/public-health-for-transfer-as-t.php",
-    "was_coverage": 0.941,
+    "url": "https://catalog.skylinecollege.edu/current/programs/mathematics-for-transfer-2-0-as-t.php",
+    "coverage": 0.8,
+    "was_url": "https://catalog.skylinecollege.edu/current/programs/economics-for-transfer-aa-t.xml",
+    "was_coverage": 0.8,
     "was_method": "sitemap_page"
    }
   ],
   "held_worse_window": [],
   "held_no_gain": [],
   "held_opens_on_list": [],
+  "only": [
+   "30882"
+  ],
+  "not_named": [
+   {
+    "control_number": "45698",
+    "title": "Engineering",
+    "award": "A.S. Degree",
+    "url": "https://catalog.skylinecollege.edu/current/_compare.new.programs.php",
+    "coverage": 0.87,
+    "was_url": "https://catalog.skylinecollege.edu/current/programs/index.xml",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   }
+  ],
   "refused_passing": [],
   "forced_unbound": []
  },
  "fingerprints": {
   "30882": {
-   "sha256": "4e2ad80c6d4d5c3a281839f765cb7b0e9fe5e72b0c1297db890710a7de5b6cbb",
-   "url": "https://catalog.skylinecollege.edu/current/programs/economics-for-transfer-aa-t.xml"
+   "sha256": "32ae3470b5c77a66f0984f296fbac4487de63e9f860fcde2944d816c2e5c5713",
+   "url": "https://catalog.skylinecollege.edu/current/programs/mathematics-for-transfer-2-0-as-t.php"
   },
   "31013": {
-   "sha256": "954162304855be9310a3223fba18cc8221ead361ae1d53a57c431987fd5e8666",
+   "sha256": "8b49373cb86b50c597e8aac03b3e6445fbaa2d2fe2dadcde7cfe1b9781f2ffe9",
    "url": "https://catalog.skylinecollege.edu/current/programs/psychology-for-transfer-aa-t.php"
   },
   "31978": {
-   "sha256": "46e446e8563af98bd6082bf69362a61e7e02eb2cd77237ab8313d22ba13fb81d",
+   "sha256": "ffcd94d7a3c5778cfd516a2009932495c3e6431f92300b4c66819c45cccf88c8",
    "url": "https://catalog.skylinecollege.edu/current/programs/entrepreneurship-and-small-business-management-ca.php"
   },
   "32293": {
-   "sha256": "def3ca96eb274f7d73c65bcc32541891250fcbc2ff2d349549e69d1e0dc69846",
+   "sha256": "9c764f58e98ab972f84ed0c21cc4d50780a3308670f60568b64ad17c33683548",
    "url": "https://catalog.skylinecollege.edu/current/programs/geology-for-transfer-as-t.php"
   },
   "32746": {
-   "sha256": "58c2e87a8cb1f08ba991774ca16b5137c7b24104215381f8ea32eb0c6944cb13",
+   "sha256": "c4a79143ea798c4ffe725bb8ea8955616d321be267860a9b415972c947cf0098",
    "url": "https://catalog.skylinecollege.edu/current/programs/history-for-transfer-aa-t.php"
   },
   "32774": {
-   "sha256": "3b5403a8d4a2a9053b9bfadf4f49d12dcdce4043de538d33cb5652bd2d700b7b",
+   "sha256": "2a97d882184025e5f2ef1d8b475757e8277e41a786cb8930e91f3348233a0adc",
    "url": "https://catalog.skylinecollege.edu/current/programs/administration-of-justice-for-transfer-as-t.php"
   },
-  "32964": {
-   "sha256": "c2fb131729a2f095acf4bf5f6fa163a92df891cb3b325aae2efc67474c687afc",
-   "url": "https://catalog.skylinecollege.edu/current/programs/business-management-as.php"
-  },
   "33399": {
-   "sha256": "e40119387e0d9b4429edec24b857f7f7ecf8109a87205def847675f3c2114185",
+   "sha256": "8e54326c3535d845203bf4b2f8a9bbabc0ec0b9b1ba5a80f0d925d15d83c668c",
    "url": "https://catalog.skylinecollege.edu/current/programs/studio-arts-for-transfer-aa-t.php"
   },
   "35353": {
-   "sha256": "74ea1cf83a4d9b9565525d1ebf6fdd048458308c02bdc22efbfe7b9f800b423b",
+   "sha256": "a52948aacb8a53fd6adaa7b5fcb3ec2588c900ce73b573b461524fe5e152b5ab",
    "url": "https://catalog.skylinecollege.edu/current/programs/electrical-engineering-as.php"
   },
   "35773": {
-   "sha256": "eaabd7c5dfb9b08e673cbd70ab4acf42d638bba437c62df0318efabd6b37ebc7",
+   "sha256": "19c2e7315aa232997d716864f25c94ca525a5fbde5b9802a3c40b0004ea59273",
    "url": "https://catalog.skylinecollege.edu/current/programs/biotechnology-manufacturing-assistant-ca.php"
   },
   "36256": {
-   "sha256": "9ef51f89b949d611862db41f324b3e73a0f4c0ea094f576f5e7f06af57ff81dd",
+   "sha256": "1a152a8505ee5d55ec59bb71b7d92f0d6df1e68b26844fc0d342679cdb668da9",
    "url": "https://catalog.skylinecollege.edu/current/programs/biotechnology-manufacturing-technician-as.php"
   },
   "36303": {
-   "sha256": "4a8c4d039dd81a4eeb764c1970d85de431fac86b1504e648e91e80e60e64ae9d",
+   "sha256": "74ad44befceb99fb8ea179d672606c50f45962557a3e986061e979fc5193e591",
    "url": "https://catalog.skylinecollege.edu/current/programs/biotechnology-manufacturing-technician-ca.php"
   },
   "36344": {
-   "sha256": "423fcea29b18e500a84b006df12e17871954f6ecd10ff66025ecb04cafc6cf51",
+   "sha256": "688ffb39d3c2d15c02e622cf10c2dc3c808190a90decb50c1a98477a0c8031b6",
    "url": "https://catalog.skylinecollege.edu/current/programs/public-health-for-transfer-as-t.php"
   },
   "37135": {
-   "sha256": "ec7f344e42669ca00d54938cc029ca833663defd8258507a497218d69eb09693",
+   "sha256": "a27ad6bda8039fbce7db3f5a92291a476bfdfd818df8b54353362fb5eb95b078",
    "url": "https://catalog.skylinecollege.edu/current/programs/geography-for-transfer-aa-t.php"
   },
   "37144": {
-   "sha256": "bf32bc6d7421446b2818d0aa9c15f17af133780c749fe0a4343adedd0cae400e",
+   "sha256": "f2a88ff0d58dcc1020f18e5ae09647facb23de4a3b0f774252282492c099d9e2",
    "url": "https://catalog.skylinecollege.edu/current/programs/social-justice-studies-for-transfer-aa-t.php"
   },
   "37236": {
-   "sha256": "b379cd8afd8249258afaea670040a7e2e94278b8a5418350e4cfef4abe1a1d7a",
+   "sha256": "f0e5fda9c5058d6930935c43af12f000d83e2bbe29f495cde5e81a37b21f00fb",
    "url": "https://catalog.skylinecollege.edu/current/programs/journalism-for-transfer-aa-t.php"
   },
   "37237": {
-   "sha256": "78bf70e90da3c5e49c590965ad9d6dcde58672881faf6a69acc02c53220fca20",
+   "sha256": "3e40736dd5f889cd90596725b4942013b9a4b86fa02db084b8213e7a05bac6a6",
    "url": "https://catalog.skylinecollege.edu/current/programs/economics-for-transfer-aa-t.php"
   },
   "38299": {
-   "sha256": "97a29f3d477a670792658454f15dc21f62b0568b5eed61e97ebb90f0e2d132aa",
+   "sha256": "adfb75ce44738508769aa1e7275112f98a69b5789c05794370b72852849e669b",
    "url": "https://catalog.skylinecollege.edu/current/programs/proficiency-in-american-culture-and-english-pace-ca.php"
   },
   "39380": {
-   "sha256": "76eb121770d908be9b9a5710fda66402b5b25201e26eeb1a352b86ffffe57eae",
+   "sha256": "5def1183e11e690c666b3a8ed13b55aea48ca4106103c564ebff48d3ec96ab94",
    "url": "https://catalog.skylinecollege.edu/current/programs/anthropology-for-transfer-aa-t.php"
   },
   "39394": {
-   "sha256": "c0cdaf21fb8ee8d49ba0d2a47254e99c5e8c1c19b916798fb5eab358df5fade9",
+   "sha256": "a75bbac8e86793abe4c95976f5a811bc3689a3f707d873031ae1e7c2587c5fdf",
    "url": "https://catalog.skylinecollege.edu/current/programs/communication-studies-for-transfer-2-0-aa-t.php"
   },
   "39660": {
-   "sha256": "900eadf48050bc98ebad4570f7b62c1893b49a6a14fc3750979368589106bed3",
+   "sha256": "e9c6affe868eb44eb441ded9d2ae0cf713778a061d66f9501660f2f83d66d7cc",
    "url": "https://catalog.skylinecollege.edu/current/programs/biology-for-transfer-as-t.php"
   },
   "41387": {
-   "sha256": "4482e651c633996ff01cb76c2cc929176c4fd1b319c519e71d55d143917fa898",
+   "sha256": "edb1dbb191ca6825fc7f0f53d1571dfee63241792be9c50bd235a31546419104",
    "url": "https://catalog.skylinecollege.edu/current/programs/user-experience-design-ca.php"
   },
   "41692": {
-   "sha256": "98cd75dda95ca8c77a2e90253453ac968c05eb988cf718d7a2f61b25d321f9ca",
+   "sha256": "0884e4b8205c7eeabaca8690ba3bc40b011b94263bcd77b11312b6032b1503e6",
    "url": "https://catalog.skylinecollege.edu/current/programs/hospitality-management-for-transfer-as-t.php"
   },
   "41889": {
-   "sha256": "1f5dedc1d803a4f7911de46f40e27c4bcba5baa49eae474891c0c827178bf5bb",
+   "sha256": "0a3ed692af5b9a7a1231a986c1911ddc42427b81945f4b26a1548e46731b3d2a",
    "url": "https://catalog.skylinecollege.edu/current/programs/business-administration-for-transfer-degree-2-0-as-t.php"
   },
   "42252": {
-   "sha256": "d005acebe60afa44a66571cab0bf4f87ef8c8ce288ec09869e85c340b4560df8",
+   "sha256": "5294f7bdbe5764aa162b631c61a35bfc554e1b59b7f57eff466b63bab73596bf",
    "url": "https://catalog.skylinecollege.edu/current/programs/sociology-for-transfer-aa-t.php"
   },
   "42371": {
-   "sha256": "8f7bbe14cda10efbb8a0e15a823e9c5a3e94976162fe7ad82d489dbff3dbe7c5",
+   "sha256": "bad19581d044557439610cbea8e27e695f4306f86a7ba3055a9749195021b99e",
    "url": "https://catalog.skylinecollege.edu/current/programs/barbering-ca.php"
   },
   "42823": {
-   "sha256": "ef6210cea5c18487a87524f7a094aaf2296b78734873d99241fd1d32346f6cc2",
+   "sha256": "61042f181104642a000e9237f06f5c3dc5eb806fb4e64dcbaee3b2dac2553f16",
    "url": "https://catalog.skylinecollege.edu/current/programs/barbering-as.php"
   },
   "44453": {
-   "sha256": "c0cdaf21fb8ee8d49ba0d2a47254e99c5e8c1c19b916798fb5eab358df5fade9",
+   "sha256": "2cad97e521326b31d6cd893eda0af5322729fc6492845bacd5b1fe4461801e38",
    "url": "https://catalog.skylinecollege.edu/current/programs/communication-studies-for-transfer-2-0-aa-t.php"
   },
   "44546": {
-   "sha256": "79165fd6f8d3e70bc15739fbb50d2f9b54a4236efbf406f0c68f4caad51ce989",
+   "sha256": "ab3e44809394eefbfde7169777d56072a37a55c7201a7f698398818798f75cf6",
    "url": "https://catalog.skylinecollege.edu/current/programs/data-science-ca.php"
   },
   "44778": {
-   "sha256": "e2c04d5963496a662ce3fcd2fdf82b0892c7832207ae54ef635ed3799edd0db7",
+   "sha256": "67c9424df2c0862ae3403f6738a0c1d3b0d634ff899a59d0266759a58af9bcda",
    "url": "https://catalog.skylinecollege.edu/current/programs/art-history-for-transfer-aa-t.php"
   },
   "44779": {
-   "sha256": "d867e080bb7c8b71d8eddb1009ea003cce517d0e189f83de4a1d3b3fe1027b90",
+   "sha256": "b4c9949c4f0ff4666172902b3927ee5ee09cc5650473ae642da29fb76d72a980",
    "url": "https://catalog.skylinecollege.edu/current/programs/computer-science-for-transfer-as-t.php"
   },
   "44780": {
-   "sha256": "f88d6b54942293253a6421579b93b0da20c7049f613818113dc4b0f3e9a1bc79",
+   "sha256": "50e33a754efebc76c7344ddae9f437336f33ed58ea21bd98fb9822f26ea5132d",
    "url": "https://catalog.skylinecollege.edu/current/programs/english-for-transfer-aa-t.php"
   },
   "44783": {
-   "sha256": "31f8dff896b0b0f0fd7b9f00d29f753e29c523992b7726f6032311c84f5f6510",
+   "sha256": "47bd526ead3acad966fb2ecb228037e8b18bf0bc5808e8cd07c56412742bd025",
    "url": "https://catalog.skylinecollege.edu/current/programs/law-public-policy-and-society-aa-t.php"
   },
   "44784": {
-   "sha256": "e4b033e042583f9760a97bb4c226bd868905cf6b96540661410060f83792b8f3",
+   "sha256": "1240215d9d741a7ac046c45e1f649ee495bae7c5954261d3571401a0658086a4",
    "url": "https://catalog.skylinecollege.edu/current/programs/political-science-for-transfer-aa-t.php"
   },
   "44785": {
-   "sha256": "fb8a65f69a0b5f4e35c79560838c0d5d9e73b01feb8932113e9cef238543aa5f",
+   "sha256": "5f392fa78779cf19815a73be0fb0e3c5f903cca4bc4fa9743b90b892d43915c6",
    "url": "https://catalog.skylinecollege.edu/current/programs/philosophy-for-transfer-aa-t.php"
   },
   "44866": {
-   "sha256": "867fc9f5a5b9245d94faf6c315b9df59450d3b4bb5e3bbb29a6018099c13d00f",
+   "sha256": "04ff126d7bc4dbafead7271b5010f1909c2ebd2fde71231778a5eaa1d5cf05ab",
    "url": "https://catalog.skylinecollege.edu/current/programs/global-studies-for-transfer-aa-t.php"
   },
   "44934": {
-   "sha256": "4d02e09cebc096abbf61e77fcff3fe174bce750a05b96703c8d0b8b6e0be3db4",
+   "sha256": "3fa1ec0bf14d9443ae4bcd212cd8f2de2b1a2dbb2fe73bd0009c6ae382891cab",
    "url": "https://catalog.skylinecollege.edu/current/programs/integrative-health-and-wellness-ca.php"
   },
   "44935": {
-   "sha256": "529d0ab072a1bac1a718fdfa12f9c59127fbeaec6dedf9e8ff718b69a2c3fb54",
+   "sha256": "6d7f67022e3d583f760b4cdc3277f489006dade279ac99de60513c1b4df05dd7",
    "url": "https://catalog.skylinecollege.edu/current/programs/sports-medicine-integrative-therapies-rehabilitation-ca.php"
   },
   "45183": {
-   "sha256": "2ff47970133b2b16eb1cb0ae89780a6494b87d170ed67bbadee7855d8143ca62",
+   "sha256": "7c62dbade7b88c12b145c2627578f630b28f25b8373f32b11b36451c463179ba",
    "url": "https://catalog.skylinecollege.edu/current/programs/music-for-transfer-aa-t.php"
   },
-  "45267": {
-   "sha256": "c2fb131729a2f095acf4bf5f6fa163a92df891cb3b325aae2efc67474c687afc",
-   "url": "https://catalog.skylinecollege.edu/current/programs/business-management-as.php"
-  },
   "45384": {
-   "sha256": "a98354c70009e167e9fcd384412b0ed2c72098f7699218fd5db2c316afd0afbb",
+   "sha256": "1fb1bc1bd650a2e7820679f684e3b50a9ec8e96a11912d8c34ba7d19ea63d25a",
    "url": "https://catalog.skylinecollege.edu/current/programs/kinesiology-for-transfer-aa-t.php"
   },
   "45573": {
    "sha256": "3a159a5128114a2cdc042c7eb3ce73f930a683591db8641ed80f826cc227e857",
    "url": "https://catalog.skylinecollege.edu/current/programs/integrative-health-and-wellness-ca.xml"
-  },
-  "45600": {
-   "sha256": "0bd96ab35b62eb21243140cb44b7f9d33b79e115a6beb8280c1adfb8ca434155",
-   "url": "https://catalog.skylinecollege.edu/current/programs-overview/associatestable.php"
   },
   "45696": {
    "sha256": "799b1880366f65e7f76f9eb28821b43ef7f5b468ad8f11f0ed20c04b9b4ed712",
@@ -1407,17 +1461,17 @@
    "url": "https://catalog.skylinecollege.edu/current/programs/electrical-engineering-as.xml"
   },
   "45698": {
-   "sha256": "0f120ac8ed2ccc2b033f5f0331ebcc0ee1bfddc3ce948c4e55c16ec31dd426e8",
-   "url": "https://catalog.skylinecollege.edu/current/programs/index.xml"
+   "sha256": "a99befe5b967c57cf4deba1c7e3fa28aa26f6a3435706ddeee9bc9f091b4ef56",
+   "url": "https://catalog.skylinecollege.edu/current/_compare.new.programs.php"
   },
   "45699": {
    "sha256": "a99befe5b967c57cf4deba1c7e3fa28aa26f6a3435706ddeee9bc9f091b4ef56",
    "url": "https://catalog.skylinecollege.edu/current/_compare.new.programs.php"
   },
   "45804": {
-   "sha256": "423fcea29b18e500a84b006df12e17871954f6ecd10ff66025ecb04cafc6cf51",
+   "sha256": "a8b24f86236d34e50f476b6afe751e34a474c69640a51c923ec729bfef586753",
    "url": "https://catalog.skylinecollege.edu/current/programs/public-health-for-transfer-as-t.php"
   }
  },
- "run": "43968403561"
+ "run": "45798037585"
 }

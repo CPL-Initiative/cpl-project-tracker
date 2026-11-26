@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 469,
  "with_closed_list": 428,
- "started": "2026-11-20T13:29:43Z",
+ "started": "2026-11-26T09:14:36Z",
  "scope": null,
  "sitemap": {
   "url": "https://catalog.mtsac.edu/sitemap.xml",
@@ -24,15 +24,21 @@
  "pages_answered": 569,
  "child_pages": 9,
  "banner_h1": null,
+ "site_pins": {
+  "41116": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-technology-level-1-certificate/",
+   "bound": true
+  }
+ },
  "catalog_lookup": {
   "self_test": {
-   "tested": 341,
+   "tested": 340,
    "hits": 231,
-   "recall": 0.677,
+   "recall": 0.679,
    "false": 0,
    "false_off_own": 5,
    "false_no_claims": 5,
-   "shared": 24,
+   "shared": 25,
    "false_matches": [
     {
      "control_number": "24074",
@@ -125,7 +131,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "03003",
@@ -133,7 +139,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "03005",
@@ -141,7 +147,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "03011",
@@ -149,7 +155,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "03030",
@@ -157,7 +163,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "08049",
@@ -165,7 +171,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "08050",
@@ -173,7 +179,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "08056",
@@ -181,7 +187,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "08068",
@@ -189,7 +195,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "08079",
@@ -197,7 +203,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "11592",
@@ -205,7 +211,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "11594",
@@ -213,7 +219,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "11595",
@@ -221,7 +227,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "11596",
@@ -229,7 +235,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "11896",
@@ -237,7 +243,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "18233",
@@ -245,7 +251,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "18744",
@@ -253,7 +259,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "19893",
@@ -261,7 +267,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "22156",
@@ -269,7 +275,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "24070",
@@ -277,7 +283,7 @@
     "award": null,
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "24106",
@@ -285,7 +291,7 @@
     "award": null,
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "24173",
@@ -293,7 +299,7 @@
     "award": null,
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "24178",
@@ -301,7 +307,7 @@
     "award": null,
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "24180",
@@ -309,7 +315,7 @@
     "award": null,
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "24223",
@@ -317,7 +323,7 @@
     "award": "Noncredit program",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "24251",
@@ -325,7 +331,7 @@
     "award": null,
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "24287",
@@ -333,7 +339,7 @@
     "award": null,
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "24288",
@@ -341,7 +347,7 @@
     "award": null,
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "24370",
@@ -349,7 +355,7 @@
     "award": null,
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "24379",
@@ -357,7 +363,7 @@
     "award": "Noncredit program",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "24380",
@@ -365,7 +371,7 @@
     "award": "Noncredit program",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "24402",
@@ -373,7 +379,7 @@
     "award": null,
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "24406",
@@ -381,7 +387,7 @@
     "award": "Noncredit program",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "30862",
@@ -389,7 +395,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "36041",
@@ -397,7 +403,7 @@
     "award": "Noncredit program",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "36873",
@@ -405,7 +411,7 @@
     "award": "Noncredit program",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "36874",
@@ -413,7 +419,7 @@
     "award": "Noncredit program",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "37314",
@@ -421,7 +427,7 @@
     "award": "Noncredit program",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "41412",
@@ -429,7 +435,7 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "41413",
@@ -437,7 +443,7 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "45046",
@@ -445,7 +451,7 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 231 of 340 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
    }
   ],
   "yields": [],
@@ -453,7 +459,7 @@
   "yield_refused_passing": 0
  },
  "loads": 581,
- "seconds": 2951.4,
+ "seconds": 2926.8,
  "found": 386,
  "by_method": {
   "link_search": 15,
@@ -465,8 +471,7 @@
  "shared_pages": {
   "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-computer-engineering-technology-certificate/": [
    "08075",
-   "22176",
-   "41116"
+   "22176"
   ],
   "https://catalog.mtsac.edu/programs/programsaz/child-development/child-development-administration-certificate/": [
    "08098",
@@ -484,6 +489,10 @@
   "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-international-business/international-business--level-2/": [
    "24107",
    "24431"
+  ],
+  "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-electronics/electronics-computer-engineering/": [
+   "24171",
+   "41569"
   ],
   "https://catalog.mtsac.edu/programs/programsaz/communication/communication-studies2-transfer/": [
    "30847",
@@ -1138,7 +1147,8 @@
       "Program Learning Outcomes",
       846
      ]
-    ]
+    ],
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -1337,294 +1347,39 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/mt_san_antonio",
-  "kept": 358,
+  "kept": 384,
   "kept_moved": 0,
-  "programs": 28,
+  "programs": 1,
   "list": [
    {
-    "control_number": "03054",
-    "title": "Nursing - Registered Nursing (RN) Generic Option",
-    "award": "A.S. Degree",
-    "url": "https://catalog.mtsac.edu/programs/programsaz/nursing/licensed-nursing-registered-nursing-rn-generic-option-degree/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.mtsac.edu/programs/programsaz/nursing/licensed-nursing-registered-nursing-rn-generic-option-degree/",
-    "was_coverage": 0.968,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "08086",
-    "title": "Nursing- Licensed Vocational Nurse (LVN) to Registered Nurse (RN) Option",
-    "award": "A.S. Degree",
-    "url": "https://catalog.mtsac.edu/programs/programsaz/nursing/licensed-vocational-nurse-lvn-to-registered-nurse-rn-option-degree/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.mtsac.edu/programs/programsaz/nursing/licensed-vocational-nurse-lvn-to-registered-nurse-rn-option-degree/",
-    "was_coverage": 0.963,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "08087",
-    "title": "Nursing- Licensed Psychiatric Technician (LPT) to Registered Nurse (RN) Option",
-    "award": "A.S. Degree",
-    "url": "https://catalog.mtsac.edu/programs/programsaz/nursing/nursing-licensed-psychiatric-technician-lpt-to-registered-nurse-rn-option-degree/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.mtsac.edu/programs/programsaz/nursing/nursing-licensed-psychiatric-technician-lpt-to-registered-nurse-rn-option-degree/",
-    "was_coverage": 0.962,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "10180",
-    "title": "Social and Behavioral Sciences",
-    "award": "A.A. Degree",
-    "url": "https://catalog.mtsac.edu/programs/programsaz/social-behavioral-sciences/aa-liberal-arts-sciences-emphasis-social-behavioral-sciences/",
-    "coverage": 0.989,
-    "was_url": "https://catalog.mtsac.edu/programs/programsaz/social-behavioral-sciences/aa-liberal-arts-sciences-emphasis-social-behavioral-sciences/",
-    "was_coverage": 0.903,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "18235",
-    "title": "Fine Arts",
-    "award": "A.A. Degree",
-    "url": "https://catalog.mtsac.edu/programs/programsaz/fine-arts/aa-liberal-arts-sciences-emphasis-fine-arts/",
-    "coverage": 0.986,
-    "was_url": "https://catalog.mtsac.edu/programs/programsaz/fine-arts/aa-liberal-arts-sciences-emphasis-fine-arts/",
-    "was_coverage": 0.957,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "18236",
-    "title": "Humanities",
-    "award": "A.A. Degree",
-    "url": "https://catalog.mtsac.edu/programs/programsaz/humanities/aa-liberal-arts-sciences/",
-    "coverage": 0.988,
-    "was_url": "https://catalog.mtsac.edu/programs/programsaz/humanities/aa-liberal-arts-sciences/",
-    "was_coverage": 0.81,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "18239",
-    "title": "Language Arts",
-    "award": "A.A. Degree",
-    "url": "https://catalog.mtsac.edu/programs/programsaz/language-arts/aa-liberal-arts-sciences-emphasis-language-arts/",
-    "coverage": 0.988,
-    "was_url": "https://catalog.mtsac.edu/programs/programsaz/language-arts/aa-liberal-arts-sciences-emphasis-language-arts/",
-    "was_coverage": 0.965,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "30847",
-    "title": "Communication Studies",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.mtsac.edu/programs/programsaz/communication/communication-studies2-transfer/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.mtsac.edu/programs/programsaz/communication/communication-studies2-transfer/",
-    "was_coverage": 0.939,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "31604",
-    "title": "English",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.mtsac.edu/programs/programsaz/english/aa-english-for-transfer/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.mtsac.edu/programs/programsaz/english/aa-english-for-transfer/",
-    "was_coverage": 0.931,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "31607",
-    "title": "Art History",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.mtsac.edu/programs/programsaz/art-history/aa-art-history-transfer/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.mtsac.edu/programs/programsaz/art-history/aa-art-history-transfer/",
-    "was_coverage": 0.711,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "31650",
-    "title": "History",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.mtsac.edu/programs/programsaz/history/aa-history-for-transfer/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.mtsac.edu/programs/programsaz/history/aa-history-for-transfer/",
-    "was_coverage": 0.846,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "31773",
-    "title": "Political Science",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.mtsac.edu/programs/programsaz/political-science/aa-political-science-transfer/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.mtsac.edu/programs/programsaz/political-science/aa-political-science-transfer/",
-    "was_coverage": 0.871,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "32278",
-    "title": "Geography",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.mtsac.edu/programs/programsaz/geography/aa-geography-for-transfer-degree/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.mtsac.edu/programs/programsaz/geography/aa-geography-for-transfer-degree/",
-    "was_coverage": 0.941,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "33391",
-    "title": "Studio Arts",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.mtsac.edu/programs/programsaz/studio-arts/aa-studio-arts-transfer/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.mtsac.edu/programs/programsaz/studio-arts/aa-studio-arts-transfer/",
-    "was_coverage": 0.708,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "33831",
-    "title": "Journalism",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.mtsac.edu/programs/programsaz/communication/as-journalism-transfer/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.mtsac.edu/programs/programsaz/communication/as-journalism-transfer/",
-    "was_coverage": 0.825,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "35116",
-    "title": "Environmental Studies",
-    "award": "A.A. Degree",
-    "url": "https://catalog.mtsac.edu/programs/programsaz/environmental-studies/aa-liberal-arts-sciences-emphasis-environmental-studies/",
-    "coverage": 0.982,
-    "was_url": "https://catalog.mtsac.edu/programs/programsaz/environmental-studies/aa-liberal-arts-sciences-emphasis-environmental-studies/",
-    "was_coverage": 0.909,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "35586",
-    "title": "Agriculture Plant Science",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.mtsac.edu/programs/programsaz/plant-science/plant-science-transfer/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.mtsac.edu/programs/programsaz/plant-science/plant-science-transfer/",
-    "was_coverage": 0.882,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "35796",
-    "title": "World Languages and Global Studies",
-    "award": "A.A. Degree",
-    "url": "https://catalog.mtsac.edu/programs/programsaz/world-languages-global-studies/world-languages-global-studies-aa-degree/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.mtsac.edu/programs/programsaz/world-languages-global-studies/world-languages-global-studies-aa-degree/",
-    "was_coverage": 0.947,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "37603",
-    "title": "Hospitality Management",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.mtsac.edu/programs/programsaz/hospitality/hospitality-management/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.mtsac.edu/programs/programsaz/hospitality/hospitality-management/",
-    "was_coverage": 0.826,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "39842",
-    "title": "Anthropology",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.mtsac.edu/programs/programsaz/anthropology/aa-anthropology-transfer/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.mtsac.edu/programs/programsaz/anthropology/aa-anthropology-transfer/",
-    "was_coverage": 0.87,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "39844",
-    "title": "Social Justice Studies: General",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.mtsac.edu/programs/programsaz/social-justice/aa-social-justice-transfer/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.mtsac.edu/programs/programsaz/social-justice/aa-social-justice-transfer/",
-    "was_coverage": 0.913,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "41569",
+    "control_number": "41116",
     "title": "Electronics Technology - Level 1",
-    "award": "Noncredit program",
-    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-electronics/electronics-technology-level-1/",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-technology-level-1-certificate/",
     "coverage": 1.0,
-    "was_url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-electronics/electronics-computer-engineering/",
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-computer-engineering-technology-certificate/",
     "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "41993",
-    "title": "Public Health",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.mtsac.edu/programs/programsaz/public-health/public-health-tranfer/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.mtsac.edu/programs/programsaz/public-health/public-health-tranfer/",
-    "was_coverage": 0.953,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "42652",
-    "title": "Agriculture Animal Sciences",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.mtsac.edu/programs/programsaz/animal-science/agriculture-animal-science-degree/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.mtsac.edu/programs/programsaz/animal-science/agriculture-animal-science-degree/",
-    "was_coverage": 0.9,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "42657",
-    "title": "Business Administration 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.mtsac.edu/programs/programsaz/business/business-administration2-transfer/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.mtsac.edu/programs/programsaz/business/business-administration2-transfer/",
-    "was_coverage": 0.75,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "42789",
-    "title": "Construction Management",
-    "award": "A.S. Degree",
-    "url": "https://catalog.mtsac.edu/programs/programsaz/construction-management/construction-management-as-degree/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.mtsac.edu/programs/programsaz/construction-management/construction-management-as-degree/",
-    "was_coverage": 0.818,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "45123",
-    "title": "Communication Studies 2.0",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.mtsac.edu/programs/programsaz/communication/communication-studies2-transfer/",
-    "coverage": 0.973,
-    "was_url": "https://catalog.mtsac.edu/programs/programsaz/communication/communication-studies2-transfer/",
-    "was_coverage": 0.919,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "46352",
-    "title": "Museum Studies and Art Gallery",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.mtsac.edu/programs/programsaz/museum-and-art-gallery-exhibition-design-operation/museum-and-art-gallery-exhibition-design-operation-certificate/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.mtsac.edu/programs/programsaz/museum-and-art-gallery-exhibition-design-operation/museum-and-art-gallery-exhibition-design-operation-certificate/",
-    "was_coverage": 0.6,
     "was_method": "sitemap_page"
    }
   ],
   "held_worse_window": [],
   "held_no_gain": [],
   "held_opens_on_list": [],
+  "only": [
+   "41116"
+  ],
+  "not_named": [
+   {
+    "control_number": "41569",
+    "title": "Electronics Technology - Level 1",
+    "award": "Noncredit program",
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-electronics/electronics-computer-engineering/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-electronics/electronics-technology-level-1/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   }
+  ],
   "refused_passing": [],
   "forced_unbound": []
  },
@@ -2730,8 +2485,8 @@
    "url": "https://catalog.mtsac.edu/programs/programsaz/computer-networking-technology/computer-networking-technology-fundamentals/"
   },
   "41116": {
-   "sha256": "e2d250479f5faa466b6824a4256f4b7150b9c3c0743e33ae7b7b872ffdca0cc3",
-   "url": "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-computer-engineering-technology-certificate/"
+   "sha256": "9b50c5ff75d419ba088138fb0d87a34f031e990133ee3fc93e650237f14c3b00",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-technology-level-1-certificate/"
   },
   "41117": {
    "sha256": "240977dac2dd13dca55ce2543f0568679b90570ef5f6b7b130a470f2e7a35873",
@@ -2774,8 +2529,8 @@
    "url": "https://catalog.mtsac.edu/programs/programsaz/physics-engineering/engineering-emphasis-electrical-engineering-applications-degree/"
   },
   "41569": {
-   "sha256": "f11f8112c0021994c78d8b38bece41200b54f4161370e972efe199c17b6f7784",
-   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-electronics/electronics-technology-level-1/"
+   "sha256": "dec7d82d8b10d96555b382927ff72d0a3a5e861c7120cca406779ad1f8ceaea7",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-electronics/electronics-computer-engineering/"
   },
   "41570": {
    "sha256": "e4d57adeb3af58188ae3e2db61e2e761bd3ece03b1836ef9670c127e112c4bd2",
@@ -3174,5 +2929,5 @@
    "url": "https://catalog.mtsac.edu/programs/programsaz/printmaking-certificate/"
   }
  },
- "run": "44744647809"
+ "run": "45789994593"
 }

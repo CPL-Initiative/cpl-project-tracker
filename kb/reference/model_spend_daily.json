@@ -90,9 +90,10 @@
   "2026-11-20": 31.95,
   "2026-11-21": 5.98,
   "2026-11-22": 1.29,
-  "2026-11-23": 0.17,
+  "2026-11-23": 0.3,
   "2026-11-24": 2.9,
-  "2026-11-25": 4.4
+  "2026-11-25": 4.4,
+  "2026-11-26": 0.81
  },
  "runner_runs": {
   "38322747831": {
@@ -1209,6 +1210,91 @@
    "college": "antelope_valley",
    "usd": 2.76,
    "day": "2026-11-25"
+  },
+  "45768555107": {
+   "college": "folsom_lake",
+   "usd": 0.07,
+   "day": "2026-11-26"
+  },
+  "45771862247": {
+   "college": "sacramento_city",
+   "usd": 0.0,
+   "day": "2026-11-26"
+  },
+  "45772245635": {
+   "college": "modesto_junior",
+   "usd": 0.0,
+   "day": "2026-11-26"
+  },
+  "45773506402": {
+   "college": "east_los_angeles",
+   "usd": 0.06,
+   "day": "2026-11-26"
+  },
+  "45773663927": {
+   "college": "el_camino",
+   "usd": 0.0,
+   "day": "2026-11-26"
+  },
+  "45777312083": {
+   "college": "coastline_community",
+   "usd": 0.04,
+   "day": "2026-11-26"
+  },
+  "45781602148": {
+   "college": "de_anza",
+   "usd": 0.16,
+   "day": "2026-11-26"
+  },
+  "45781875995": {
+   "college": "riverside_city",
+   "usd": 0.0,
+   "day": "2026-11-17"
+  },
+  "45784241940": {
+   "college": "san_diego_of_continuing_education",
+   "usd": 0.04,
+   "day": "2026-11-26"
+  },
+  "45785923678": {
+   "college": "yuba",
+   "usd": 0.08,
+   "day": "2026-11-26"
+  },
+  "45787017784": {
+   "college": "evergreen_valley",
+   "usd": 0.05,
+   "day": "2026-11-26"
+  },
+  "45787030902": {
+   "college": "las_positas",
+   "usd": 0.13,
+   "day": "2026-11-23"
+  },
+  "45787691549": {
+   "college": "cuesta",
+   "usd": 0.11,
+   "day": "2026-11-26"
+  },
+  "45789994593": {
+   "college": "mt_san_antonio",
+   "usd": 0.04,
+   "day": "2026-11-26"
+  },
+  "45798037585": {
+   "college": "skyline",
+   "usd": 0.06,
+   "day": "2026-11-26"
+  },
+  "45799536686": {
+   "college": "grossmont",
+   "usd": 0.04,
+   "day": "2026-11-26"
+  },
+  "45802578239": {
+   "college": "bakersfield",
+   "usd": 0.06,
+   "day": "2026-11-26"
   }
  },
  "runner_since": "2026-11-17",
@@ -1239,9 +1325,9 @@
    "sessions": 5,
    "not_available": 0,
    "tags": {
-    "curation": 136.0,
+    "collection": 256.0,
     "infrastructure": 109.9,
-    "collection": 256.0
+    "curation": 136.0
    },
    "untagged_usd": 0.0,
    "estimate_usd": 288.0

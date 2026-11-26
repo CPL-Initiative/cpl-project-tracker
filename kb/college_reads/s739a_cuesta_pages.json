@@ -1,0 +1,58 @@
+{
+ "_readme": "S739 wave A (the gap census's Next wave, census run 45771011713 of 2026-11-26 06:54Z, the reader_page_assignment lever): Cuesta College's 2 programs whose filed record places none of the state's listed courses (capture 39063368678, curriQunet catalog 15): CHILD DEVELOPMENT TEACHER certificate 21050 was handed the Master Teacher certificate's entry (30067/30107) and AVIATION MECHANIC - POWERPLANT certificate 43053 the Airframe & Powerplant certificate's entry (30067/30091). This plan reads the catalog's program list (30065/30067) with the data its own scripts fetch from its host and prints every entry naming child development or aviation, then reads the two handed entries through the capture's curriQunet view, whose twins line names entries of the same title, so a session sees whether each program has an entry of its own. No model call, nothing written.",
+ "college": "Cuesta College",
+ "questions": {
+  "own_page": "Which entry, if any, is each program's own in the 2026-2027 catalog (its id, text and address)."
+ },
+ "keywords": [
+  "child development[^\"\\n]{0,80}",
+  "aviation[^\"\\n]{0,80}",
+  "powerplant[^\"\\n]{0,60}",
+  "certificate of (?:achievement|completion|competency)[^\\n]{0,80}",
+  "associate (?:of|in) (?:arts|science)[^\\n]{0,80}",
+  "total[^\\n]{0,40}(?:units?|hours?)",
+  "required courses?"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "21050 43053: the program list",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067",
+   "network": true,
+   "network_hosts": [
+    "cuesta.curriqunet.com"
+   ],
+   "network_find": [
+    "CHILD DEVELOPMENT TEACHER",
+    "POWERPLANT",
+    "Child Development Teacher",
+    "Powerplant"
+   ],
+   "links": "child|aviation|powerplant|30065/30067/",
+   "links_cap": 300
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "21050: the entry the capture handed it",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30107",
+   "cq_view": true,
+   "cq_catalog": 15
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "43053: the entry the capture handed it",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30091",
+   "cq_view": true,
+   "cq_catalog": 15
+  }
+ ],
+ "outside_hosts": {
+  "curriqunet.com": "Cuesta College's own 2026-2027 catalog (cuesta.curriqunet.com), served on its catalog vendor's domain, whose navigation calls the page's own scripts fetch hold the program entries"
+ }
+}

@@ -158,7 +158,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "lists_not_closed",
+    "label": "A choice list prints no unit figure of its own, one that depends on another choice, or also takes courses from another list, so the lists alone cannot add the program's units.",
+    "words": "Related Fields courses may fulfill up to three units of the 3-7 unit restricted elective requirement; they are a sub-list of the Restricted Electives, not a separate minimum. Minimum left null because the catalog states only a cap ('up to three units'). | Overview text says 18 major units with 6 additional elective units, but the requirements table prints Restricted Electives 3.0-7.0 and Total Major Units 18.0-19.0; 12 core + 3-7 does not match 18-19. Reviewer should check."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 30,
+   "course_list_match": 82,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

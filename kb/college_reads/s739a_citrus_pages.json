@@ -1,0 +1,23 @@
+{
+ "_readme": "S739 wave A (the gap census's Next wave, census run 45771011713 of 2026-11-26 06:54Z, the reader_page_assignment lever): Citrus College's Public Works Administration certificate 11244, whose filed record places none of its 9 listed courses (capture 44481520157): the capture handed it the Public Works discipline page (disciplines/public-works/), whose text holds the course descriptions and no requirement list, while the capture's own catalog lookup names the page 'Certificate in Public Works Administration' (public-works-administration-certificate-achievement/). This plan reads that page as the capture reads it, so a session checks a site_pages pin against its heading, its list and its total. No model call, nothing written.",
+ "college": "Citrus College",
+ "questions": {
+  "own_page": "What the capture reads on the program's own page: its heading, its award, its course list and its total."
+ },
+ "keywords": [
+  "certificate of (?:achievement|completion|competency)[^\\n]{0,80}",
+  "associate (?:of|in) (?:arts|science)[^\\n]{0,80}",
+  "total[^\\n]{0,40}(?:units?|hours?)",
+  "required courses?"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "11244",
+   "url": "https://catalog.citruscollege.edu/disciplines/public-works/public-works-administration-certificate-achievement/",
+   "capture_view": true
+  }
+ ]
+}

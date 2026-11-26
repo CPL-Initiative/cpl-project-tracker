@@ -2,21 +2,21 @@
  "college": "Skyline College",
  "programs": 144,
  "with_closed_list": 58,
- "found": 48,
+ "found": 45,
  "extracted": 48,
  "errors": 0,
- "passed_machine_checks": 41,
+ "passed_machine_checks": 42,
  "failed": {
-  "coverage": 6,
+  "coverage": 5,
   "invented": 0,
-  "arithmetic": 7,
+  "arithmetic": 6,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd_run": 0.34,
- "cost_usd_filed": 3.47,
- "cost_per_program": 0.0723,
- "extract_calls": 5,
+ "cost_usd_run": 0.06,
+ "cost_usd_filed": 3.46,
+ "cost_per_program": 0.072,
+ "extract_calls": 1,
  "extract_failed": [],
  "not_found": [
   {
@@ -38,11 +38,39 @@
     "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
     "error": null,
     "chars": {
-     "body": 385,
-     "content": 4482,
+     "body": 1277,
+     "content": 9282,
      "tabs": 0
     },
     "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "32964",
+   "title": "Solar Technology and Business",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/solar-technology-and-business-ca.php",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 10,
+    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1360,
+     "content": 9364,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -65,8 +93,8 @@
     "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
     "error": null,
     "chars": {
-     "body": 468,
-     "content": 4616,
+     "body": 1360,
+     "content": 9416,
      "tabs": 0
     },
     "tab_panels": []
@@ -92,13 +120,69 @@
     "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
     "error": null,
     "chars": {
-     "body": 8089,
-     "content": 23194,
+     "body": 8982,
+     "content": 27994,
      "tabs": 0
     },
     "tab_panels": []
    },
    "status": "Active"
+  },
+  {
+   "control_number": "45267",
+   "title": "Business Management",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/business-management-ca.php",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.783,
+    "body": 0.783,
+    "content": 0.783,
+    "net": 7,
+    "listed": 23,
+    "why": "coarse net: the page's code tokens name 7 of 23 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4419,
+     "content": 24261,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Approved"
+  },
+  {
+   "control_number": "45600",
+   "title": "Early Childhood Education",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/early-childhood-education-for-transfer-as-t.php",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.941,
+    "body": 0.941,
+    "content": 0.941,
+    "net": 3,
+    "listed": 17,
+    "why": "coarse net: the page's code tokens name 3 of 17 listed courses",
+    "error": null,
+    "chars": {
+     "body": 6616,
+     "content": 25607,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Approved"
   },
   {
    "control_number": "46509",
@@ -110,5 +194,5 @@
    "status": "Approved"
   }
  ],
- "run": "43968403561"
+ "run": "45798037585"
 }

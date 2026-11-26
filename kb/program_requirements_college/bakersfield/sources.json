@@ -898,7 +898,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "human services associate of arts",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 8,

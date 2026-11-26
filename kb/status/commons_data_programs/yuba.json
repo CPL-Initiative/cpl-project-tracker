@@ -1,4 +1,4 @@
-{"schema":1,"college":"Yuba College","slug":"yuba","basis":"live","census_at":"2026-11-26 06:54Z","correction_rules":false,"programs":[
+{"schema":1,"college":"Yuba College","slug":"yuba","basis":"live","census_at":"2026-11-26 12:06Z","correction_rules":true,"programs":[
 {"cn":"32873","title":"Psychology","award":"A.A- T Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=158"},
 {"cn":"07053","title":"Psychology with a Focus on Social Services","award":"A.A. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=158"},
 {"cn":"10998","title":"Arts and Humanities","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
@@ -11,7 +11,6 @@
 {"cn":"17946","title":"Social and Behavioral Sciences","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"07058","title":"Social Science","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"07030","title":"Theatre Arts","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
-{"cn":"37946","title":"LVN to RN Career Mobility Program","award":"A.S. Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=146"},
 {"cn":"07029","title":"Music","award":"A.A. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=137","units":{"sum":[40.0,40.0],"printed":[36.0,40.0],"status":"unequal","measure":"units","against":"program"}},
 {"cn":"07031","title":"Photographic Imaging","award":"A.S. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=61","units":{"sum":[12.0,12.0],"printed":[21.0,21.0],"status":"unequal","measure":"units","against":"program"}},
 {"cn":"33124","title":"Political Science","award":"A.A- T Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=155","units":{"sum":[19.0,19.0],"printed":[18.0,19.0],"status":"unequal","measure":"units","against":"program"}}

@@ -3,18 +3,21 @@
  "programs": 248,
  "with_closed_list": 243,
  "found": 242,
- "extracted": 221,
+ "extracted": 223,
  "errors": 0,
- "passed_machine_checks": 205,
+ "passed_machine_checks": 206,
  "failed": {
   "coverage": 2,
   "invented": 2,
-  "arithmetic": 15,
+  "arithmetic": 16,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 17.15,
- "cost_per_program": 0.0776,
+ "cost_usd_run": 0.16,
+ "cost_usd_filed": 17.32,
+ "cost_per_program": 0.0777,
+ "extract_calls": 2,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "45279",
@@ -40,8 +43,9 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   }
  ],
- "run": "43072075772"
+ "run": "45781602148"
 }

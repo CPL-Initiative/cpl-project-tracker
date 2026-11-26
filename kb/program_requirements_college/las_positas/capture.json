@@ -210,34 +210,18 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/las_positas",
-  "kept": 193,
+  "kept": 195,
   "kept_moved": 0,
-  "programs": 2,
-  "list": [
-   {
-    "control_number": "39143",
-    "title": "Automotive Master",
-    "award": "A.S. Degree",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/126/1372/1399",
-    "coverage": 1.0,
-    "was_url": "https://laspositas.curriqunet.com/catalog/iq/102/105/126/1372/1399",
-    "was_coverage": 0.941,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "45725",
-    "title": "AAG Automotive Emissions Technician",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/2167/2169/2174",
-    "coverage": 1.0,
-    "was_url": "https://laspositas.curriqunet.com/catalog/iq/102/105/2167/2169/2174",
-    "was_coverage": 0.833,
-    "was_method": "sitemap_page"
-   }
-  ],
+  "programs": 0,
+  "list": [],
   "held_worse_window": [],
   "held_no_gain": [],
   "held_opens_on_list": [],
+  "only": [
+   "18813",
+   "36449"
+  ],
+  "not_named": [],
   "refused_passing": [],
   "forced_unbound": []
  },
@@ -1023,5 +1007,10 @@
    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/156/1899/1902"
   }
  },
- "run": "45127792228"
+ "staged_from": {
+  "run": "45127792228",
+  "proof": "text sha256 of 195 programs",
+  "pages_loaded": 0
+ },
+ "run": "45787030902"
 }

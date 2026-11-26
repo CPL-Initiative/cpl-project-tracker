@@ -1,0 +1,49 @@
+{
+ "_readme": "S739 (wave A), the gap census's Next wave (census run 45771011713 of 2026-11-26 06:54Z, the reader_page_assignment and paid_read levers): 2 programs of Citrus College whose filed record places none of the state's listed courses: Public Works Administration 11244, whose own page (read as the capture reads it by college-page-read run 45781997815) names fewer than half of them, and the Cal-GETC certificate 45031. Filed as named gaps and never sent to a paid read. Their filed records stay as filed (the load skips a record that places none). No model call, no Supabase write. Each is the college's to settle in COCI or its catalog, or waits on the reader change its reason names. Each carries the five confidence scores, 0 to 100, that kb/_program_named_gaps.py confidence() gives its filed record as it stands.",
+ "college": "Citrus College",
+ "written": "2026-11-26T09:07:05Z",
+ "capture": "44481520157",
+ "page_reads": [
+  "45781997815"
+ ],
+ "reasons": {
+  "catalog_list_differs": "The 2026-27 catalog prints the program's own page and course list, and the list names fewer than half of the state's listed courses: the Program Course File's list and the catalog's differ, so the capture refuses the page as the program's and a read of it would place too few courses to count.",
+  "ge_pattern_certificate": "General-education pattern certificate. It has no fixed course list by design (the census's named gap, kb/_harvest_gap_census.py NAMED_GAPS)."
+ },
+ "programs": [
+  {
+   "control_number": "11244",
+   "title": "Public Works Administration",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "reason": "catalog_list_differs",
+   "note": "Its own page ('Certificate in Public Works Administration', disciplines/public-works/public-works-administration-certificate-achievement/) prints six required courses, PUB 151, 155, 157, 161, 164 and 166, and 'Total Units 18'. It names 4 of the state's 9 listed courses (PUB 155, 161, 164, 166); the state also lists ITIS 130, MATH 150, PUB 159, PUB 160 and PUB 165, which the page does not print. The filed capture handed it the Public Works discipline page, which holds the course descriptions.",
+   "listed": 9,
+   "placed": 0,
+   "confidence": {
+    "unit_arithmetic": 0,
+    "course_list_match": 0,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "record": "kb/program_requirements_college/citrus/records/11244.json"
+  },
+  {
+   "control_number": "45031",
+   "title": "Cal-GETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "reason": "ge_pattern_certificate",
+   "note": "The state's file lists 235 courses for it; the filed record was read from the General Education Requirements Option I page.",
+   "listed": 235,
+   "placed": 0,
+   "confidence": {
+    "unit_arithmetic": 0,
+    "course_list_match": 0,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "record": "kb/program_requirements_college/citrus/records/45031.json"
+  }
+ ]
+}

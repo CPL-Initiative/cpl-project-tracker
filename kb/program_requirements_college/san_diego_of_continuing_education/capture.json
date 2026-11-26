@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 144,
  "with_closed_list": 120,
- "started": "2026-11-20T12:54:40Z",
+ "started": "2026-11-26T08:35:00Z",
  "pdf": {
   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf",
   "access": "ok",
@@ -26,6 +26,14 @@
    "after_mode": false,
    "gated": false,
    "read": "heading"
+  },
+  "pinned": {
+   "38411": {
+    "page": 61,
+    "bound": true,
+    "through": 62,
+    "until_page": 62
+   }
   },
   "picks": [
    {
@@ -190,14 +198,14 @@
    {
     "control_number": "31482",
     "pages": [
-     78
+     25
     ],
-    "named": true,
+    "named": false,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 78] Electronic Technician Program Gas Metal and Flux Cored Arc Welding Gas Tungsten Arc Welding Metal Fabrication Program Pipe Welding Program Plumbing Program Shielded Metal Arc Welding SolidWorks Design Certifica"
+    "opens": "[page 25] San Diego College of Continuing eDuCation • 2026-2027 25 Welcome to San Diego College of Continuing Education San Diego College of Continuing Education (SDCCE) to College CTE (Career Technical Educati"
    },
    {
     "control_number": "31483",
@@ -482,15 +490,16 @@
    {
     "control_number": "38411",
     "pages": [
-     57,
-     58
+     61,
+     62
     ],
     "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 57] Visual and Vector Design Web Design and Content Management Certificate of Completion: CMS (Content Management Systems) This program provides basic knowledge and skills needed to develop, customize, and manage"
+    "opens": "[page 61] Certificate of Completion: Visual and Vector Design The Visual and Vector Design program is designed to provide students with the knowledge and foundational skills needed to evaluate and appropriate basic de",
+    "pinned": true
    },
    {
     "control_number": "38412",
@@ -502,7 +511,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 58] Digital Design The Digital Design program is designed to provide students with the knowledge and skills needed to assess and learn basic design principles and best practices employed in the visual, print and"
+    "opens": "[page 58] Certificate of Completion: Digital Design The Digital Design program is designed to provide students with the knowledge and skills needed to assess and learn basic design principles and best practices employ"
    },
    {
     "control_number": "38693",
@@ -653,7 +662,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 50] Early Learner Enrichment The Early Learner Enrichment program will provide students with knowledge and experience in various methods to promote and enrich physical, cognitive and socioemotional development i"
+    "opens": "[page 50] Certificate of Completion: Early Learner Enrichment The Early Learner Enrichment program will provide students with knowledge and experience in various methods to promote and enrich physical, cognitive and s"
    },
    {
     "control_number": "39928",
@@ -714,7 +723,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 71] Baking and Pastry Arts I This program provides career readiness skills in the baking and pastry arts. Students will be exposed to the fundamentals of bakeshop product identification, ingredients, and industr"
+    "opens": "[page 71] Certificate of Completion: Baking and Pastry Arts I This program provides career readiness skills in the baking and pastry arts. Students will be exposed to the fundamentals of bakeshop product identificatio"
    },
    {
     "control_number": "40119",
@@ -727,7 +736,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 71] Baking and Pastry Arts II This program provides career readiness skills in the baking and pastry arts. Students will be exposed to advanced pastry and cake production, as well as chocolate and sugar confecti"
+    "opens": "[page 71] Certificate of Completion: Baking and Pastry Arts II This program provides career readiness skills in the baking and pastry arts. Students will be exposed to advanced pastry and cake production, as well as c"
    },
    {
     "control_number": "40120",
@@ -829,16 +838,14 @@
    {
     "control_number": "40516",
     "pages": [
-     47,
-     48,
-     49
+     90
     ],
-    "named": true,
+    "named": false,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 47] The Advanced Project Management Program, presented through three courses, provides students with an opportunity to learn the concepts, skills, and tools necessary to plan, implement and manage projects in a"
+    "opens": "[page 90] 90 San Diego College of Continuing eDuCation • 2026-2027 Project Management III BUSN 623 Non-Fee Advisory: Successful completion of BUSN 621 Project Management I and BUSN 622 Project Management II, "
    },
    {
     "control_number": "40517",
@@ -974,7 +981,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 51] Instructional Aide The Instructional Aide program will help students to understand the realities of working as an instructional aide, as well as help to promote job satisfaction and competence in an entry-le"
+    "opens": "[page 51] Certificate of Completion: Instructional Aide The Instructional Aide program will help students to understand the realities of working as an instructional aide, as well as help to promote job satisfaction an"
    },
    {
     "control_number": "42646",
@@ -1040,14 +1047,14 @@
    {
     "control_number": "44336",
     "pages": [
-     56
+     29
     ],
-    "named": true,
+    "named": false,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 56] The Sewn Product Construction Essentials program develops essential foundational skills for construction of apparel and sewn products in the cut and sew industry. Alongside learning basic through intermedia"
+    "opens": "[page 29] San Diego College of Continuing eDuCation • 2026-2027 29 Welcome to San Diego College of Continuing Education San Diego College of Continuing Education (SDCCE) to College CTE (Career Technical Educati"
    },
    {
     "control_number": "44337",
@@ -1259,8 +1266,8 @@
    }
   ],
   "page_checks": {
-   "read": 19,
-   "own_page": 11,
+   "read": 10,
+   "own_page": 2,
    "no_own_page": 8,
    "not_printed": 0
   },
@@ -1269,7 +1276,7 @@
  "loads": 1,
  "pages_listed": 1,
  "pages_answered": 1,
- "seconds": 36.2,
+ "seconds": 35.3,
  "found": 100,
  "by_method": {
   "no_closed_list": 24,
@@ -1327,10 +1334,6 @@
    "30789",
    "39936"
   ],
-  "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=78": [
-   "31482",
-   "31484"
-  ],
   "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=80": [
    "31483",
    "31487"
@@ -1353,8 +1356,7 @@
   ],
   "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=47": [
    "35967",
-   "35968",
-   "40516"
+   "35968"
   ],
   "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=64": [
    "36588",
@@ -1372,10 +1374,10 @@
    "40471",
    "40532"
   ],
-  "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=57": [
+  "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=61": [
    "38411",
-   "44340",
-   "46210"
+   "39186",
+   "45440"
   ],
   "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=58": [
    "38412",
@@ -1386,10 +1388,6 @@
    "38693",
    "38694",
    "46214"
-  ],
-  "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=61": [
-   "39186",
-   "45440"
   ],
   "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=69": [
    "39640",
@@ -1431,8 +1429,11 @@
   ],
   "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=56": [
    "44333",
-   "44335",
-   "44336"
+   "44335"
+  ],
+  "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=57": [
+   "44340",
+   "46210"
   ]
  },
  "not_found": [
@@ -1642,27 +1643,35 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/san_diego_of_continuing_education",
-  "kept": 85,
+  "kept": 91,
   "kept_moved": 0,
-  "programs": 15,
+  "programs": 1,
   "list": [
-   {
-    "control_number": "31482",
-    "title": "Electronic Technician Program",
-    "award": null,
-    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=78",
-    "coverage": 1.0,
-    "was_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=25",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
    {
     "control_number": "38411",
     "title": "Visual and Vector Design",
     "award": "Noncredit program",
-    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=57",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=61",
     "coverage": 1.0,
-    "was_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=27",
+    "was_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=57",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   }
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "only": [
+   "38411"
+  ],
+  "not_named": [
+   {
+    "control_number": "31482",
+    "title": "Electronic Technician Program",
+    "award": null,
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=25",
+    "coverage": 1.0,
+    "was_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=78",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -1672,17 +1681,7 @@
     "award": "Noncredit program",
     "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=58",
     "coverage": 1.0,
-    "was_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=27",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "39700",
-    "title": "AWS Cloud Solutions",
-    "award": "Noncredit program",
-    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=74",
-    "coverage": 1.0,
-    "was_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=73",
+    "was_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=58",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -1692,7 +1691,7 @@
     "award": "Noncredit program",
     "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=50",
     "coverage": 1.0,
-    "was_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=26",
+    "was_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=50",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -1702,7 +1701,7 @@
     "award": "Noncredit program",
     "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=71",
     "coverage": 1.0,
-    "was_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=29",
+    "was_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=71",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -1712,17 +1711,7 @@
     "award": "Noncredit program",
     "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=71",
     "coverage": 1.0,
-    "was_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=29",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "40120",
-    "title": "Culinary Nutrition",
-    "award": "Noncredit program",
-    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=72",
-    "coverage": 1.0,
-    "was_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=73",
+    "was_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=71",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -1730,29 +1719,9 @@
     "control_number": "40516",
     "title": "Advanced Project Management",
     "award": "Noncredit program",
-    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=47",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=90",
     "coverage": 1.0,
-    "was_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=90",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "40532",
-    "title": "Intermediate Low Prevocational ESL",
-    "award": "Noncredit program",
-    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=66",
-    "coverage": 0.5,
-    "was_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=113",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "41626",
-    "title": "Full Stack Web Developer",
-    "award": "Noncredit program",
-    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=59",
-    "coverage": 1.0,
-    "was_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=60",
+    "was_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=47",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -1762,17 +1731,7 @@
     "award": "Noncredit program",
     "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=51",
     "coverage": 1.0,
-    "was_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=120",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "42646",
-    "title": "Digital Photography",
-    "award": "Noncredit program",
-    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=58",
-    "coverage": 1.0,
-    "was_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=59",
+    "was_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=51",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -1780,26 +1739,13 @@
     "control_number": "44336",
     "title": "Sewn Product Construction Essentials",
     "award": "Noncredit program",
-    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=56",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=29",
     "coverage": 1.0,
-    "was_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=29",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "45444",
-    "title": "Google for Business",
-    "award": "Noncredit program",
-    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=48",
-    "coverage": 1.0,
-    "was_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=49",
+    "was_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=56",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    }
   ],
-  "held_worse_window": [],
-  "held_no_gain": [],
-  "held_opens_on_list": [],
   "refused_passing": [],
   "forced_unbound": []
  },
@@ -1857,8 +1803,8 @@
    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=44"
   },
   "31482": {
-   "sha256": "2062b800084bd7f5b91ea0d18cb19ec8482408cab8aaad7c1a8cdf5b14da019c",
-   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=78"
+   "sha256": "3844250f2e16dc5310fcccecd1643f19b16870eb60b154d1f69270e7259112f4",
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=25"
   },
   "31483": {
    "sha256": "813b529e2c55623daa9b97259679e7f84d5af0de8738aa606e2ec391474f72f8",
@@ -1953,11 +1899,11 @@
    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=66"
   },
   "38411": {
-   "sha256": "583c1d614f85d9fdc8ee71677f06ef3c9e24f7070a365bfd649d2623ae40553e",
-   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=57"
+   "sha256": "65a2c446618c20c4dfea242861a1a625e0b1e91c39c682d581e3d07f31506b97",
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=61"
   },
   "38412": {
-   "sha256": "b1a2992c734ac0d857976dcc6ee3c1968de576842cf89d9e1c29ba6d3a732779",
+   "sha256": "11add9eb4270ba5943e5e5d06a5a5343caaba94c18a73c242c81a0da92c61310",
    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=58"
   },
   "38693": {
@@ -2005,7 +1951,7 @@
    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=50"
   },
   "39927": {
-   "sha256": "84b6c486ef80c2709523a8b3d9ea7a1ae500c76a704164877a4dc1a1e8020b17",
+   "sha256": "1945209f2a49f6b379c942dfbaefa4f74554a431cd8fe6dc00a17a27d6476f9d",
    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=50"
   },
   "39928": {
@@ -2025,11 +1971,11 @@
    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=62"
   },
   "40118": {
-   "sha256": "898b6c67e29ceafa615508ad4644ba0df44fd3f98aefe1d6372c57e0769de859",
+   "sha256": "c4424487eb32353228b87d45ea963cdeb8545d17871d1af365eb155561fd250a",
    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=71"
   },
   "40119": {
-   "sha256": "cfc80bf49968c27c1de5d9f544f3155bf875c97dddd7edf44d08a7db4596eff1",
+   "sha256": "566e30746c6130bd10a69cdd636fa490a7692fca6bac43eef9a232bb6edb49e4",
    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=71"
   },
   "40120": {
@@ -2065,8 +2011,8 @@
    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=70"
   },
   "40516": {
-   "sha256": "f93353df09943d6623a95db7d78979cfab33cc91d2b0a83f21042a81a23add0b",
-   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=47"
+   "sha256": "d500a96319e49779b3af5db36349d6cfba5bc7be61df4db2a93d5ac36c2a3b17",
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=90"
   },
   "40517": {
    "sha256": "2d37c44f71ba17bc8c86341adbfe86f9eb7978079add6123ea475872f1eb19a3",
@@ -2109,7 +2055,7 @@
    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=67"
   },
   "42361": {
-   "sha256": "f2adec581f9b103b1228ba1cc915bc2d671ba91e18fca2c96a601d3dddf0e467",
+   "sha256": "99e903c2deef75ccd7045f9b30b2bc0d2848bcdcaf84f970bc31abfeaeaa5662",
    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=51"
   },
   "42646": {
@@ -2133,8 +2079,8 @@
    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=56"
   },
   "44336": {
-   "sha256": "993ba0c3122d89977b104b96f7257982e4a04012f540b3abec414c391f21d445",
-   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=56"
+   "sha256": "b02e5edf3fa186859d5d0a720c5a292477c61be34fedcc6ac8ff88db53901988",
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=29"
   },
   "44337": {
    "sha256": "05ba5d4378eaf7db64ce8991b81b58aab362ed677d88869d17deea5b68993299",
@@ -2205,5 +2151,5 @@
    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=68"
   }
  },
- "run": "44739577102"
+ "run": "45784241940"
 }

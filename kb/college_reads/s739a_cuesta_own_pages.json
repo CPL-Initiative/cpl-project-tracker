@@ -1,0 +1,33 @@
+{
+ "_readme": "S739 wave A (the gap census's Next wave, census run 45771011713 of 2026-11-26 06:54Z, the reader_page_assignment lever), second read: Cuesta College's 2 certificates. The first read (run 45781997815) found each one's own entry in the program list: CHILD DEVELOPMENT TEACHER - Certificate of Achievement (30067/30109) for 21050 and AVIATION MECHANIC - POWERPLANT - Certificate of Achievement (30067/30093) for 43053; the filed capture (39063368678) handed each a sister certificate's entry. This plan reads both entries through the capture's curriQunet view, so a session checks each site_pages pin against the text the capture will read. No model call, nothing written.",
+ "college": "Cuesta College",
+ "questions": {
+  "own_page": "What the capture reads on the program's own page: its heading, its award, its course list and its total."
+ },
+ "keywords": [
+  "certificate of (?:achievement|completion|competency)[^\\n]{0,80}",
+  "associate (?:of|in) (?:arts|science)[^\\n]{0,80}",
+  "total[^\\n]{0,40}(?:units?|hours?)",
+  "required courses?"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "21050",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30109",
+   "cq_view": true,
+   "cq_catalog": 15
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "43053",
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30093",
+   "cq_view": true,
+   "cq_catalog": 15
+  }
+ ]
+}

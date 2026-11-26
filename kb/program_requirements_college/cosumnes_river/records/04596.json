@@ -46,30 +46,25 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 15,
+   "placed": 16,
    "listed": 16,
-   "share": 0.938,
-   "missing": [
-    "MKT49523085"
-   ],
-   "unexplained": [
-    "MKT49523085"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 2,
    "codes": [
     "CISA305",
-    "MKT495",
     "MKT498"
    ],
    "flagged": [
     "CISA305",
     "MKT498"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -110,7 +105,14 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true,
+  "course_renumbers": [
+   {
+    "printed": "MKT 495",
+    "listed": "MKT49523085",
+    "block": "A minimum of 6 units from the following"
+   }
+  ]
  },
  "record": {
   "program": {

@@ -1,8 +1,8 @@
 # Harvest heading agreement
 
-A dated snapshot of main at commit 075d1ee8b2de (2026-11-25; the newest capture it reads started 2026-11-25), written by `kb/_program_requirements_heading_agreement.py` from the files that commit holds. A dispatch of `harvest-gap-census.yml` rewrites it beside the gap census; nothing gates a PR on it, so it can trail the records. Each record's own heading against the program it is filed under (COCI title and award).
+A dated snapshot of main at commit 91a3a856612f (2026-11-26; the newest capture it reads started 2026-11-26), written by `kb/_program_requirements_heading_agreement.py` from the files that commit holds. A dispatch of `harvest-gap-census.yml` rewrites it beside the gap census; nothing gates a PR on it, so it can trail the records. Each record's own heading against the program it is filed under (COCI title and award).
 
-All colleges: 18971 records, 15534 agree, 208 disagree (132 of them pass on the committed files), 3229 cannot tell (262 say the heading is not in their text; 74 name an award and none of the program's title words, 70 of them passing, set aside).
+All colleges: 18976 records, 15540 agree, 207 disagree (132 of them pass on the committed files), 3229 cannot tell (261 say the heading is not in their text; 74 name an award and none of the program's title words, 70 of them passing, set aside).
 
 The heading check (a heading that names another award type and some of the program's title) would fail 99 records that pass on the committed files (passes_live), 31 of them a transfer degree and a local degree crossed. It is in no pass rule.
 
@@ -19,7 +19,7 @@ A suspect record has a heading that disagrees with its program, or was read from
 | Los Angeles Harbor College | main | 110 | 107 | 0 | 0 | 3 | 6 (5) | 6 (5) | Academic Plan 107 | under_heading |
 | West Los Angeles College | main | 203 | 99 | 6 | 4 | 98 | 0 (0) | 6 (4) | none seen | no number line |
 | Shasta College | main | 115 | 71 | 5 | 4 | 39 | 0 (0) | 5 (4) | none seen | no number line |
-| East Los Angeles College | main | 134 | 34 | 4 | 2 | 96 | 0 (0) | 4 (2) | Academic Plan 103 | under_heading |
+| East Los Angeles College | main | 136 | 35 | 4 | 2 | 97 | 0 (0) | 4 (2) | Academic Plan 104 | under_heading |
 | Sacramento City College | main | 204 | 188 | 4 | 3 | 12 | 0 (0) | 4 (3) | none seen | no number line |
 | Lassen College | main | 64 | 57 | 3 | 1 | 4 | 0 (0) | 3 (1) | none seen | no number line |
 | Los Angeles Pierce College | main | 187 | 111 | 1 | 0 | 75 | 2 (2) | 3 (2) | State Code 129 | unclear |
@@ -41,11 +41,11 @@ A suspect record has a heading that disagrees with its program, or was read from
 | College of the Canyons | main | 248 | 234 | 0 | 0 | 14 | 0 (0) | 0 (0) | none seen | no number line |
 | Compton College | main | 83 | 63 | 0 | 0 | 20 | 0 (0) | 0 (0) | none seen | no number line |
 | Copper Mountain College | main | 48 | 44 | 0 | 0 | 4 | 0 (0) | 0 (0) | none seen | no number line |
-| Folsom Lake College | main | 107 | 98 | 0 | 0 | 9 | 0 (0) | 0 (0) | none seen | no number line |
+| Folsom Lake College | main | 107 | 99 | 0 | 0 | 8 | 0 (0) | 0 (0) | none seen | no number line |
 | Los Angeles City College | main | 244 | 222 | 0 | 0 | 22 | 0 (0) | 0 (0) | Academic Plan 153, State Code 161 | at_heading |
 | Los Angeles Mission College | main | 127 | 24 | 0 | 0 | 103 | 0 (0) | 0 (0) | none seen | no number line |
 | Mendocino College | main | 107 | 104 | 0 | 0 | 3 | 0 (0) | 0 (0) | none seen | no number line |
-| San Diego College of Continuing Education | main | 100 | 76 | 0 | 0 | 24 | 0 (0) | 0 (0) | none seen | no number line |
+| San Diego College of Continuing Education | main | 100 | 77 | 0 | 0 | 23 | 0 (0) | 0 (0) | none seen | no number line |
 | Santiago Canyon College | main | 222 | 187 | 0 | 0 | 35 | 0 (0) | 0 (0) | none seen | no number line |
 | Woodland Community College | main | 65 | 63 | 0 | 0 | 2 | 0 (0) | 0 (0) | none seen | no number line |
 | Yuba College | main | 94 | 83 | 0 | 0 | 11 | 0 (0) | 0 (0) | none seen | no number line |
