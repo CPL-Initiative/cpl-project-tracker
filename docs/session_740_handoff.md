@@ -54,7 +54,7 @@ are the run's log, kept whole.
    M-IDs, so its fixes are ranked by the M-ID cards they unblock (`r-collect-for-mids-work-order-sam-2026-11-20`).
 3. **Merge order at sign-off:** #3880 (`075d1ee8`, the display build), #3881 (`48966ffa`, the lever's land), #3882
    (`1caef64a`, the pooled reading's land) and #3883 (`2e4ccabb`, the applied piles s739a to s739h) have merged; land 4,
-   #<LAND4> (`claude/s739-piles2`, `waveA` and `waveB` as one PR off `main`), merges at <LAND4_TIME>. This checkpoint,
+   #3884 (`claude/s739-piles2`, `waveA` and `waveB` as one PR off `main`), merged at 12:02Z (`91a3a856`, confirmed on `origin/main`). This checkpoint,
    #3879, merges at sign-off, with one update from `main` right before its merge. Open PRs at sign-off: #3879 and
    dependabot's #3383, which waits.
 
@@ -328,16 +328,16 @@ named gaps), s739j Orange Coast 4 (45795874952) less 41373, rolled back at 11:10
 Gavilan 5 (45807528712; rebuilt from 9 after the reader's MAJOR), s739n Ventura 7 (45807753854); `.apply` restored on
 `claude/s739-piles2` (`9b58f0f9`). The shared module adds `LiveRuns` and a kept-key fix.
 
-**Land 4, #<LAND4>** (`claude/s739-piles2`, `waveA` head `2e1a1ada`, `waveB` head `24b34c77`, as one PR off `main`,
+**Land 4, #3884** (`claude/s739-piles2`, `waveA` head `2e1a1ada`, `waveB` head `24b34c77`, as one PR off `main`,
 `d-one-land-for-piles2-and-waves-s739`): `waveB`'s 6 records (Riverside City 33230, San Diego College of Continuing
 Education 38411, Yuba 37946, Evergreen Valley 40353, Mt. San Antonio 41116, Skyline 30882; five pass), 15 named gaps
 with no record, 2 relists, its 1-row plan (Riverside City 33230 `ge_units_not_read`; the id repeats `piles`' Shasta
 plan, the files do not), dispatched 11:12Z; `waveA`'s 8 records (De Anza 41327 and 31504; Las Positas 18813 and 36449;
 Cuesta 21050 and 43053; Grossmont 32879; Bakersfield 09968; six pass), 8 named gaps with no record, 11 relists, which
-must take `main` and regenerate its Commons files first. Applied and merged: <LAND4_FACTS>.
+must take `main` and regenerate its Commons files first. Applied and merged: migrate 45795171251 (s739i, 11), 45795874952 (s739j, 4), 45807976291 (the 41373 rollback, 1), 45807245565 (s739k, 5), 45807528712 (s739m, 5), 45807753854 (s739n, 7) and 45808312036 (`waveB`'s Riverside City 33230, 1), none skipped; one land branch, `claude/s739-land4`, took `main` and the three branches (the four generated Commons files rebuilt; `tests/program_requirements_reconcile_test.py`'s `pdf_pages` list and one `js-tests.yml` step list kept both sides). CI's lints 2 failed once on `6eb3af84`: `tests/program_piles_s739_orangecoast_test.py` rebuilt the 41373 pre-read through a local Postgres the runner lacks, so it now reads the committed file; green on `9ef4ebf3` (run 45813769463); merged `91a3a856` at 12:02Z, confirmed on `origin/main`.
 
 **Pending at the checkpoint's write.** The display build carrying S739's records (gate Glendale) and a census on `main`
-wait for the next session; the closing census: <CLOSING_CENSUS>.
+wait for the next session; the closing census: run 45816008322 on `main` (12:06Z, `0b399a72`): 15,610 of 20,282 pass, 4,082 have no passing record (93 fewer than the 01:19Z census), 590 are collected with a named gap (61 more).
 
 ## Open work, from the lanes' NEXT lines
 
@@ -462,8 +462,8 @@ order of 2026-11-20.
 - `d-display-merged-without-main-update-s731`, used again: #3880 merged without a final update from `main`.
 
 Memory rows: `kb/migrations/2026-11-26_s739_cpl_memory_rows.sql` (12 rows, all proposed, INSERT-only with `ON CONFLICT DO
-NOTHING`, rollback in its header), drafted for the conductor to apply (one `execute_sql` call, or `supabase-migrate.yml`
-through `.apply`). DECIDED lines: the harvest lane.
+NOTHING`, rollback in its header), applied by the conductor through `supabase-migrate.yml` (run 45810901357 at 11:29Z; 12 rows, all
+proposed; `.apply` restored). DECIDED lines: the harvest lane.
 
 ## Patterns that worked
 
@@ -538,10 +538,10 @@ a rollback that undoes over 1% of a day's rows; the $10k checkpoint. S736 and S7
 | #3881 (`lever`'s branch) | merged `48966ffa` (08:24Z): the lever's land; s739l applied | none |
 | #3882 (`pooled`'s branch) | merged `1caef64a` (09:15Z): El Camino and Modesto, live | none |
 | #3883 (`claude/s739-piles-land`) | merged `2e4ccabb` (10:27Z): s739a to s739h, applied and live | none |
-| `claude/s739-piles`, `claude/s739-piles2` | s739i, s739j (less 41373), s739k, s739m, s739n applied; 41373's rollback applied | land in #<LAND4> |
-| `waveA`'s and `waveB`'s branches | waveA head `2e1a1ada`, waveB head `24b34c77`; waveB's plan dispatched 11:12Z | land in #<LAND4> |
-| #<LAND4>, land 4 | piles2, waveA and waveB as one PR off `main` | merges at <LAND4_TIME> |
-| Harvest gap census on `main` | 45733846878 (01:19Z): 15,577 pass, 4,176 without, 529 with a named gap; after the display build 45771011713 (06:55Z): 15,578 pass, 4,175 without | the closing census: <CLOSING_CENSUS> |
+| `claude/s739-piles`, `claude/s739-piles2` | s739i, s739j (less 41373), s739k, s739m, s739n applied; 41373's rollback applied | land in #3884 |
+| `waveA`'s and `waveB`'s branches | waveA head `2e1a1ada`, waveB head `24b34c77`; waveB's plan dispatched 11:12Z | land in #3884 |
+| #3884, land 4 | piles2, waveA and waveB as one PR off `main` | merged `91a3a856` (12:02Z) |
+| Harvest gap census on `main` | 45733846878 (01:19Z): 15,577 pass, 4,176 without, 529 with a named gap; after the display build 45771011713 (06:55Z): 15,578 pass, 4,175 without | the closing census: run 45816008322 on `main` (12:06Z, `0b399a72`): 15,610 of 20,282 pass, 4,082 have no passing record (93 fewer than the 01:19Z census), 590 are collected with a named gap (61 more) |
 | #3383 | dependabot's | waits |
 
 ## Let go
@@ -549,10 +549,12 @@ a rollback that undoes over 1% of a day's rows; the $10k checkpoint. S736 and S7
 No PR subscription, scheduled check-in, artifact watch or COBIx watcher was opened tonight, so there is none to drop.
 Workers end with the session; each branch is pushed. The vault note for this run is
 `CPLBrain/07-session-notes/2026-11-26-s739-skyoystercatcher-collection.md`, on the vault's branch
-`claude/pensive-archimedes-fluaqu`, no PR. The checkpoint worker could not write the vault from its isolated worktree, so the conductor places the note and pushes it.
+`claude/pensive-archimedes-fluaqu` (`1a9514e8`), draft PR samueltlee/CPLBrain#872. The checkpoint worker could not write the vault from its isolated worktree, so the conductor placed the note and pushed it.
 
-Spend: $<TOTAL> estimate (Opus 5.5 $<O>, Fable 5.2 $<F>, Sonnet $<S>, Haiku $<H>); collection $<TOTAL>; 2026-11-26T06:12Z to <END>.
+Spend: $272.54 estimate (Opus 5.5 $32.04, Fable 5.2 $215.44, Sonnet $23.95, Haiku $1.12); collection $272.54; 2026-11-26T06:12Z to 2026-11-26T12:20Z.
+
+(A token-count estimate at list prices, measured from the transcripts at 12:09Z, with Fable 5.2 priced at the Opus 5.5 rate since the meter's table names no Fable rate; the sign-off turns after 12:09Z are not in it. The paid reads' own cost, about $1.23 on their meter, is apart.)
 
 Opening line: *Greetings, you are SkySkimmer (the next free session number at your start; Sam's plain sessions hold 738, and SkyTurnstone's handoff is 739), see SkyOystercatcher's (S739) handoff — `docs/session_740_handoff.md` — let's keep rolling with our queue.*
 
-Conductor model: Opus 5.5 (the form names Fable 5.2); session cost about $<TOTAL> (a token-count estimate; get_session is not available here); <RECORDS> records collected and live, plus <NOGAP> named gaps for programs with no record; 0 outline rows added; <PRS> substantive PRs merged (#3880, #3881, #3882, #3883, <LAND4>), not counting checkpoints.
+Conductor model: Opus 5.5 (the form names Fable 5.2); session cost about $272.54 (a token-count estimate; get_session is not available here); 99 records collected and live, plus 30 named gaps for programs with no record; 0 outline rows added; 5 substantive PRs merged (#3880, #3881, #3882, #3883, #3884), not counting checkpoints.
