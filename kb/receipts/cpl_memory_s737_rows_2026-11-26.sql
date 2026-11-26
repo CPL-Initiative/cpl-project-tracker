@@ -7,3 +7,6 @@
 --   'f-commons-order-mock-met-s737');
 -- Slugs written: d-ci-six-lint-shards-s737 (decision), p-trace-reads-not-grep-paths-s737 (pitfall),
 -- d-honors-redraw-own-folder-s737 (decision), f-commons-order-mock-met-s737 (fact).
+-- Second write, 2026-11-26 ~05:10Z: r-dept-and-program-titles-pose-as-subject-titles-sam-2026-11-26 (decision, verified,
+-- Sam), f-bad-code-splits-in-state-list-s737 (fact, proposed), d-lightning-round-verdicts-not-saves-s737 (decision,
+-- proposed); each logged 'create'. ROLLBACK: add these three slugs to the delete above.
