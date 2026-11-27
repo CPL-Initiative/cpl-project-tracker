@@ -150,3 +150,13 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   of 4, 2 of 2; s741a's `.apply` pushed at 07:44Z (`3a7e9b0b`).
 - 07:45Z: `keys` report 6 (head `63852115`): s741k2 rebuilt on the reread's rows, and a `site_pages` pin for San
   Bernardino Valley 22821; both to the round-1 reader, its second and last round.
+- 07:44Z to 07:51Z, one apply at a time (the migrate queue is global: a second pending run cancels the first): s741a
+  45960496863 returned 1; s741b 45960762506 returned 4; s741c 45960978175 returned 2; s741k2 45961174423 returned 4
+  (round 2: rebuilt on the reread's rows, APPLY); none skipped. `keys`' `.apply` restored (`c0438e51`). Records
+  collected: 20.
+- 07:46Z: s741k2's round-2 reader: APPLY, and the San Bernardino Valley 22821 `site_pages` pin GO. 22821's paid read
+  dispatched on a sibling branch, `claude/s741-keys-sbvc` (cut at the reviewed `63852115`; only 22821, about $0.07, about
+  32 minutes), so `keys`' branch stays free for its free runs.
+- 07:52Z: `piles` batch 2 (head `18cafe6e`): s741d's recall pinned; s741e (Contra Costa 01400, 40761) and seven
+  `site_pages` pins (American River 39731, 39732; Orange Coast 08663, 08626; Fullerton 36798, 35174; El Camino 19883)
+  to the batch-1 reader. s741d's clean pre-read 1 of 1; `.apply` pushed (`b6d43195`).
