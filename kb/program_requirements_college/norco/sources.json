@@ -175,11 +175,12 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "business administration: management concentration - associate of science degree and certificate of achievement - nas521/c/nce521",
-    "section_fit": 0.667
+    "section_fit": 0.667,
+    "exact": 0
    }
   },
   "listed": 16,
-  "text_chars": 3035
+  "text_chars": 3175
  },
  {
   "control_number": "30062",
@@ -642,11 +643,12 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "drafting technology - associate of science degree and certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 15,
-  "text_chars": 2623
+  "text_chars": 2693
  },
  {
   "control_number": "30092",
@@ -3171,11 +3173,12 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "philosophy - associate in arts for transfer (adt)",
-    "section_fit": 0.5
+    "section_fit": 0.5,
+    "exact": 0
    }
   },
   "listed": 23,
-  "text_chars": 3609
+  "text_chars": 3679
  },
  {
   "control_number": "33090",
@@ -3271,11 +3274,12 @@
     "title": 1.0,
     "section": "as",
     "section_line": "supply chain automation - associate of science degree and certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 25,
-  "text_chars": 3537
+  "text_chars": 3677
  },
  {
   "control_number": "33854",
@@ -3320,11 +3324,12 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "supply chain automation - associate of science degree and certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 24,
-  "text_chars": 3537
+  "text_chars": 3677
  },
  {
   "control_number": "33887",
@@ -4045,11 +4050,12 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "environmental science - associate in science for transfer (adt) - nas893 (cai-getc)",
-    "section_fit": 0.333
+    "section_fit": 0.333,
+    "exact": 0
    }
   },
   "listed": 20,
-  "text_chars": 3207
+  "text_chars": 3277
  },
  {
   "control_number": "37459",
@@ -4420,11 +4426,12 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "apprenticeship: manufacturing technician ii - associate of science degree and certificate of achievement",
-    "section_fit": 0.75
+    "section_fit": 0.75,
+    "exact": 0
    }
   },
   "listed": 7,
-  "text_chars": 2528
+  "text_chars": 2668
  },
  {
   "control_number": "39999",
@@ -4774,11 +4781,12 @@
     "title": 1.0,
     "section": "as",
     "section_line": "apprenticeship: manufacturing technician ii - associate of science degree and certificate of achievement",
-    "section_fit": 0.75
+    "section_fit": 0.75,
+    "exact": 0
    }
   },
   "listed": 8,
-  "text_chars": 2528
+  "text_chars": 2668
  },
  {
   "control_number": "40079",
@@ -4814,11 +4822,12 @@
     "title": 1.0,
     "section": "as",
     "section_line": "drafting technology - associate of science degree and certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 15,
-  "text_chars": 2623
+  "text_chars": 2693
  },
  {
   "control_number": "40131",
@@ -5300,11 +5309,12 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "social justice studies - associate in arts for transfer (adt)",
-    "section_fit": 0.75
+    "section_fit": 0.75,
+    "exact": 0
    }
   },
   "listed": 44,
-  "text_chars": 4531
+  "text_chars": 4881
  },
  {
   "control_number": "41774",
@@ -6195,11 +6205,12 @@
     "title": 1.0,
     "section": "as",
     "section_line": "modern policing - associate of science degree - nas1096/c",
-    "section_fit": 0.667
+    "section_fit": 0.667,
+    "exact": 0
    }
   },
   "listed": 41,
-  "text_chars": 4286
+  "text_chars": 4496
  },
  {
   "control_number": "44879",
@@ -6338,11 +6349,12 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "law, public policy, and society - associate in arts for transfer (adt) - naa1008 (cal-getc)",
-    "section_fit": 0.5
+    "section_fit": 0.5,
+    "exact": 0
    }
   },
   "listed": 53,
-  "text_chars": 5320
+  "text_chars": 5390
  },
  {
   "control_number": "44986",

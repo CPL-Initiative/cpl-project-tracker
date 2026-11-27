@@ -5,18 +5,18 @@
  "found": 147,
  "extracted": 147,
  "errors": 0,
- "passed_machine_checks": 133,
+ "passed_machine_checks": 140,
  "failed": {
   "coverage": 0,
-  "invented": 1,
-  "arithmetic": 13,
+  "invented": 0,
+  "arithmetic": 7,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd_run": 0.29,
- "cost_usd_filed": 10.08,
- "cost_per_program": 0.0685,
- "extract_calls": 2,
+ "cost_usd_run": 1.16,
+ "cost_usd_filed": 10.13,
+ "cost_per_program": 0.0689,
+ "extract_calls": 12,
  "extract_failed": [],
  "not_found": [
   {
@@ -38,8 +38,8 @@
     "why": "a candidate, lost to a program the page names more fully",
     "error": null,
     "chars": {
-     "body": 3380,
-     "content": 3380,
+     "body": 3450,
+     "content": 3450,
      "tabs": 0
     },
     "tab_panels": [],
@@ -75,5 +75,5 @@
    "status": "Active"
   }
  ],
- "run": "44765224865"
+ "run": "45964327019"
 }

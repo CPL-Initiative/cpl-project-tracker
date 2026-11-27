@@ -5,11 +5,11 @@
  "title": "Environmental Science",
  "award": "A.S. T Degree",
  "source_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5185",
- "record_shape": 3,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 5859,
+  "input_tokens": 7392,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 5859,
-    "output_tokens": 3196,
+    "input_tokens": 7392,
+    "output_tokens": 3805,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,18 @@
     "model": null
    }
   ],
-  "output_tokens": 3196,
+  "output_tokens": 3805,
   "output_tokens_details": {
-   "thinking_tokens": 1042
+   "thinking_tokens": 1520
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.08736,
- "ms": 25248,
- "seconds": 25.6,
+ "cost_usd": 0.10567,
+ "ms": 30062,
+ "seconds": 31.4,
+ "parts": null,
  "error": null,
  "score": {
   "measure": "units",
@@ -72,19 +74,34 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "unequal",
+   "status": "incomplete",
    "computed": [
-    40.0,
-    40.0
-   ],
-   "stated": [
     41.0,
     41.0
    ],
-   "against": "program",
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
    "why": [
-    "the blocks sum to 40.0-40.0; the catalog states 41.0-41.0"
-   ]
+    "the record names the degree total and the Cal-GETC pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     41.0,
+     41.0
+    ],
+    "stated": [
+     41.0,
+     41.0
+    ],
+    "against": "program",
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
@@ -106,10 +123,7 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": false
  },
@@ -122,12 +136,26 @@
     "max": 41
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Examine the impact of humankind on the environment from scientific, sociological, political, and economic viewpoints both locally and globally.",
     "Apply concepts and implement skills learned in the sciences, mathematics, and humanities to real-world environmental issues.",
     "Demonstrate an ability to examine scientific evidence demonstrating how human activities affect many ecosystems and recommend alternatives to present practices."
-   ]
+   ],
+   "careers": []
   },
   "blocks": [
    {
@@ -136,8 +164,8 @@
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 15,
+     "max": 15
     },
     "courses": [
      {
@@ -157,7 +185,7 @@
     ]
    },
    {
-    "name": "Select one course",
+    "name": "Required Courses: Select one course",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -188,8 +216,8 @@
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 15,
+     "max": 15
     },
     "courses": [
      {
@@ -198,11 +226,18 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
+     },
+     {
+      "code": "GEG-1L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
      }
     ]
    },
    {
-    "name": "Select one of the following: (List A, Geography)",
+    "name": "Electives - List A: Select one of the following (Geography)",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -224,18 +259,11 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
-     {
-      "code": "GEG-1L",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
      }
     ]
    },
    {
-    "name": "Select one of the following: (List A, Statistics)",
+    "name": "Electives - List A: Select one of the following (Statistics)",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -275,7 +303,7 @@
     ]
    },
    {
-    "name": "Select one of the following: (List A, Calculus)",
+    "name": "Electives - List A: Select one of the following (Calculus)",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -301,7 +329,7 @@
     ]
    },
    {
-    "name": "Select one of the following: (List B, Economics)",
+    "name": "Electives - List B: Select one of the following (Economics)",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -327,7 +355,7 @@
     ]
    },
    {
-    "name": "Option 1:",
+    "name": "Take one of the following Physics sequences: Option 1",
     "rule": "all",
     "minimum": null,
     "option_group": "Physics sequence",
@@ -353,7 +381,7 @@
     ]
    },
    {
-    "name": "Option 2:",
+    "name": "Take one of the following Physics sequences: Option 2",
     "rule": "all",
     "minimum": null,
     "option_group": "Physics sequence",
@@ -383,22 +411,24 @@
   "missing_explained": [
    {
     "code": "MAT 1A",
-    "why": "not in the text; catalog lists MATH-C2210 (likely its renumbered successor)"
+    "why": "not in the text; catalog prints MATH-C2210 (Calculus I: Early Transcendentals) instead"
    },
    {
     "code": "ECO 8",
-    "why": "not in the text; catalog lists ECON-C2001 (likely its renumbered successor)"
+    "why": "not in the text; catalog prints ECON-C2001 (Principles of Microeconomics) instead"
    }
   ],
   "notes": [
-   "The page prints the heading twice, once as '(CaI-GETC)' (apparent typo) and once as '(Cal-GETC)'; the latter is used.",
-   "Group totals printed: Required Courses 15.00 units (BIO-60, CHE-1A plus the 'Select one course' block), Electives - List A 15.00 units, Electives - List B 11.00 units; these group totals are not assigned to single blocks.",
-   "List A printed total is 15.00 but its printed subparts sum to 14 (BIO-19 3 + geography 3 + statistics 4 + calculus 4); reviewer should check whether GEG-1L (1 unit) is meant to be taken with GEG-1/GEG-1H rather than as a standalone choice.",
-   "GEG-1L (1 unit) is printed as one option under a 'Select one of the following: 3.00' list alongside GEG-1 and GEG-1H; recorded as printed.",
-   "MATH-C2210 and ECON-C2001 are not in the closed list (catalog additions); the closed list's MATHC2210H and ECONC2001H are matched to the catalog's MATH-C2210H and ECON-C2001H.",
-   "Physics: student completes one of two sequences (PHY-2A and PHY-2B, or PHY-4A and PHY-4B), 8 units."
+   "The heading is printed twice, once with a typo '(CaI-GETC)'; the corrected '(Cal-GETC)' form is used.",
+   "'Units: 15.00' for Required Courses covers both the required BIO-60/CHE-1A and the nested 'Select one course' (BIO-61 or CHE-1B); recorded on the main block.",
+   "'Units: 15.00' for Electives - List A covers BIO-19, GEG-1L and the three nested 'Select one' groups (3+1+3+4+4=15); recorded on the List A required block.",
+   "Electives - List B prints 'Units: 11.00' covering the economics choice (3) and the physics sequence (8); no single block holds it.",
+   "Despite the 'Electives' headings, List A and List B rows are all required or nested choices, not open electives.",
+   "degree_total 60 taken from the sentence that this AS-T will be awarded upon completion of 60 CSU transferable units including the major and Cal-GETC; reviewer should confirm this counts as a printed degree total. No Cal-GETC unit figure is printed.",
+   "MATH-C2210H and ECON-C2001H matched to closed-list MATHC2210H and ECONC2001H (formatting difference only); MATH-C2210 and ECON-C2001 are not on the closed list and are marked catalog additions.",
+   "The page prints one outcomes list for the program; the AS-T shares it."
   ]
  },
- "extracted_run": 44046021561,
- "read_run": 43609971090
+ "extracted_run": "45964327019",
+ "catalog_year": "2026-2027"
 }
