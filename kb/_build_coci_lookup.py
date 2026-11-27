@@ -34,6 +34,9 @@ import re
 import sys
 from datetime import date, timezone
 
+sys.path.insert(0, "kb")
+from coci_campus_letter import fold as fold_campus_letter  # noqa: E402
+
 try:
     import openpyxl
 except ImportError:
@@ -111,6 +114,8 @@ def main():
     rows = []
     shards = {}  # key -> {ctrl: desc}
     mid_hits = 0
+    folded = twins = 0
+    seen = {}  # (college, ctrl, subj, num) -> whether a folded row made it
     for row in ws.iter_rows(values_only=True):
         if hdr is None:
             hdr = list(row)
@@ -121,6 +126,18 @@ def main():
         ctrl = str(row[idx["CourseControlNumber"]] or "").strip()
         subj = str(row[idx["Subject"]] or "").strip()
         num = str(row[idx["Course_Number"]] or "").strip()
+        fs, fn = fold_campus_letter(college, subj, num)
+        was_folded = (fs, fn) != (subj, num)
+        if was_folded:
+            folded += 1
+            subj, num = fs, fn
+        # A folded row that lands on its lettered twin (same control number) is one course listed twice; keep
+        # one. Duplicates the fold did not make (De Anza's, Cerritos') are not this script's to drop.
+        key = (ci, ctrl, subj, num.upper())
+        if key in seen and (was_folded or seen[key]):
+            twins += 1
+            continue
+        seen[key] = seen.get(key, False) or was_folded
         title = str(row[idx["CourseTitle"]] or "").strip()
         units = row[idx["UnitValue"]]
         if isinstance(units, str):
@@ -212,6 +229,7 @@ def main():
     shard_mb = sum(os.path.getsize(f"coci_lookup_desc_{k}.js") for k in shards) / 1e6
     keys_mb = os.path.getsize("cpl_coci_course_keys.js") / 1e6
     n_keys = sum(len(v) for v in course_keys.values())
+    print(f"campus letter folded: {folded:,} rows, {twins:,} twins dropped (kb/coci_campus_letter.py)")
     print(f"rows: {len(rows):,} | colleges: {len(college_list)} | "
           f"M-ID chips: {mid_hits:,} | shards: {len(shards)}")
     print(f"coci_lookup_data.js: {main_mb:.1f} MB | desc shards total: {shard_mb:.1f} MB")

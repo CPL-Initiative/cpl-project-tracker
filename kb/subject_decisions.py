@@ -47,6 +47,10 @@ on the Subjects page and decides no M-ID.
 import json
 import os
 import re
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from coci_campus_letter import base_code, fold as fold_campus_letter, SLUG as CAMPUS_LETTER_SLUG  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATUS = os.path.join("kb", "status", "subject_decisions.json")
@@ -164,6 +168,7 @@ class Decisions:
         self.slug_of = {v: k for k, v in self.nc_slugs.items()}
         self.college, self.noncredit, self.statewide, self.refused = {}, {}, {}, []
         self.course = {}
+        carried = []
         for d in self.doc.get("decisions") or []:
             why = None
             k = parse_key(d.get("key"))
@@ -189,11 +194,24 @@ class Decisions:
             rec = {"key": d["key"], "slug": k[0], "code": code_key(k[1]), "band": k[2], "common_code": common,
                    "discipline": self.by_code.get(common) if common else None, "local_title": title,
                    "who": d.get("who"), "at": d.get("at"), "from": "subject_decision"}
+            # A save on a code COCI glued a campus letter to (Cerro Coso's ADMJC) carries to the folded code (ADMJ),
+            # unless a save on that code itself exists: kb/coci_campus_letter.py, S744.
+            base = code_key(base_code(k[0], k[1]))
+            if base != rec["code"]:
+                carried.append((rec, base, cat_slug))
+                continue
             if cat_slug:
                 rec.update(category=category, category_slug=cat_slug)
-                self.noncredit[(k[0], code_key(k[1]), cat_slug)] = rec
+                self.noncredit[(k[0], rec["code"], cat_slug)] = rec
             else:
-                self.college[(k[0], code_key(k[1]), k[2])] = rec
+                self.college[(k[0], rec["code"], k[2])] = rec
+        for rec, base, cat_slug in carried:
+            rec = dict(rec, code=base, carried_from=rec["code"])
+            if cat_slug:
+                rec.update(category=self.nc_slugs.get(cat_slug), category_slug=cat_slug)
+                self.noncredit.setdefault((rec["slug"], base, cat_slug), rec)
+            else:
+                self.college.setdefault((rec["slug"], base, rec["band"]), rec)
         for s in self.doc.get("statewide") or []:
             code, disc = map_key(s.get("code")), (s.get("discipline") or "").strip()
             common = by_disc.get(disc)
@@ -219,8 +237,11 @@ class Decisions:
             if why:
                 self.refused.append({"key": c.get("key"), "why": why})
                 continue
-            self.course[(k[0], code_key(k[1]), course_number_key(k[2]))] = {
-                "key": c["key"], "slug": k[0], "code": code_key(k[1]), "number": course_number_key(k[2]),
+            college = CAMPUS_LETTER_SLUG.get(k[0], "")
+            ccode, cnum = fold_campus_letter(college, code_key(k[1]), course_number_key(k[2]))
+            ccode, cnum = code_key(ccode), course_number_key(cnum)
+            self.course[(k[0], ccode, cnum)] = {
+                "key": c["key"], "slug": k[0], "code": ccode, "number": cnum,
                 "common_code": common, "discipline": self.by_code.get(common), "from_mid": c.get("from_mid"),
                 "title": c.get("title"), "band": c.get("band"), "who": c.get("who"), "at": c.get("at"),
                 "from": "course_subject_decision"}

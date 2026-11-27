@@ -234,6 +234,10 @@ jobs:
       - name: Subject titles from a state-list label (TITLE (CODE))
         if: matrix.shard == 3
         run: python3 tests/subject_state_label_title_test.py
+      # Cerro Coso's and Porterville's campus letter folded off the subject code (S744, kb/coci_campus_letter.py).
+      - name: Campus letter fold (Cerro Coso, Porterville)
+        if: matrix.shard == 3
+        run: python3 tests/coci_campus_letter_test.py
       # The docs-only lint skip (S737): the heavy steps listed in tests/lints_docs_only_skip.json read no docs file
       # (traced under strace), so on a docs-only diff they skip with `&& (needs.gate.outputs.decision == 'run')`.
       # Main's push run and every code PR run them. A step joins the skip only through that list.
