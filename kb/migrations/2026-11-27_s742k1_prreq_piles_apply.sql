@@ -1,0 +1,37 @@
+-- S742K1 lane 2's cheap piles at Cuesta (2 rows: pair_read_as_alternatives 2). Each row's checks become the college
+-- load's image of its committed record (load_rows): checks.gaps and checks.confidence added, or
+-- checks.arithmetic to equal for a rescore; the record unchanged. Receipt: kb/receipts/program_requirement_records_piles_s740_cuesta_2026-11-27_s742k1.json
+-- (before_image per row).
+-- Guarded UPDATE: only where the row holds the filed run, the before-image's record and checks,
+-- and no person's check. It aborts, writing nothing, unless it matches the plan's 2 rows less
+-- those a person checked (listed as skipped_checked), or a row holds a matching confirm.
+with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values
+  (1, 'Cuesta College', '41744', 39063368678, '{"blocks":[{"courses":[{"alternatives":[{"catalog_addition":false,"code":"AVMT 110A","units":2.5},{"catalog_addition":false,"code":"AVMT 110B","units":2.5}],"catalog_addition":false,"code":"AVMT 110","units":5,"units_max":null},{"alternatives":[{"catalog_addition":false,"code":"AVMT 120A","units":2.5},{"catalog_addition":false,"code":"AVMT 120B","units":2.5}],"catalog_addition":false,"code":"AVMT 120","units":5,"units_max":null},{"alternatives":[],"catalog_addition":false,"code":"AVMT 130","units":5,"units_max":null},{"alternatives":[],"catalog_addition":false,"code":"AVMT 140","units":5,"units_max":null},{"alternatives":[],"catalog_addition":false,"code":"AVMT 150","units":5,"units_max":null},{"alternatives":[],"catalog_addition":false,"code":"AVMT 160","units":5,"units_max":null},{"alternatives":[],"catalog_addition":false,"code":"AVMT 170","units":5,"units_max":null},{"alternatives":[],"catalog_addition":false,"code":"AVMT 180","units":5,"units_max":null}],"minimum":null,"name":"Required Courses (40 units)","option_group":null,"rule":"all","stated":{"max":40,"min":40}}],"program":{"careers":[],"degree_elective_units":{"max":null,"min":null},"degree_total":{"max":null,"min":null},"electives_fill_degree":false,"ge_pattern":null,"ge_units":{"max":null,"min":null},"measure":"units","open_elective_units":null,"outcomes":["Evaluate the air-worthiness of an aircraft.","Identify and perform appropriate maintenance for a variety of aircraft issues.","Read and interpret aircraft schematics.","Complete a risk assessment for an aircraft.","Exhibit appropriate documentation procedures."],"section_heading":"AVIATION MECHANIC - AIRFRAME & POWERPLANT - Certificate of Achievement","total_units":{"max":40,"min":40}}}'::jsonb, '{"arithmetic":"unequal","coverage":true,"invented":true,"listed":12,"placed":12}'::jsonb, '{"arithmetic":"unequal","confidence":{"catalog_year":100,"course_list_match":100,"ge_pattern":null,"source":100,"unit_arithmetic":50},"coverage":true,"gaps":["pair_read_as_alternatives"],"invented":true,"listed":12,"placed":12}'::jsonb),
+  (2, 'Cuesta College', '43053', 45787691549, '{"blocks":[{"courses":[{"alternatives":[{"catalog_addition":false,"code":"AVMT 110A","units":2.5},{"catalog_addition":false,"code":"AVMT 110B","units":2.5}],"catalog_addition":false,"code":"AVMT 110","units":5,"units_max":null},{"alternatives":[{"catalog_addition":false,"code":"AVMT 120A","units":2.5},{"catalog_addition":false,"code":"AVMT 120B","units":2.5}],"catalog_addition":false,"code":"AVMT 120","units":5,"units_max":null},{"alternatives":[],"catalog_addition":false,"code":"AVMT 160","units":5,"units_max":null},{"alternatives":[],"catalog_addition":false,"code":"AVMT 170","units":5,"units_max":null},{"alternatives":[],"catalog_addition":false,"code":"AVMT 180","units":5,"units_max":null}],"minimum":null,"name":"Program Requirements","option_group":null,"rule":"all","stated":{"max":25,"min":25}}],"program":{"careers":[],"degree_elective_units":{"max":null,"min":null},"degree_total":{"max":null,"min":null},"electives_fill_degree":false,"ge_pattern":null,"ge_units":{"max":null,"min":null},"measure":"units","open_elective_units":null,"outcomes":["Remove and install a fuel nozzle in a turbine engine.","Perform engine inspection requirement in compliance with 14 CFR Part 43 and 14 CFR Part 91.","Troubleshoot an engine oil temperature/pressure instrument system and perform necessary repairs to make system operable.","Identify, assess, and mitigate risks associated with fire protection system extinguishing agents.","Inspect engine Perform inspection of aircraft reciprocating engine and determine airworthiness."],"section_heading":"AVIATION MECHANIC - POWERPLANT - Certificate of Achievement","total_units":{"max":25,"min":25}}}'::jsonb, '{"arithmetic":"unequal","coverage":true,"invented":true,"listed":9,"placed":9}'::jsonb, '{"arithmetic":"unequal","confidence":{"catalog_year":100,"course_list_match":100,"ge_pattern":null,"source":100,"unit_arithmetic":50},"coverage":true,"gaps":["pair_read_as_alternatives"],"invented":true,"listed":9,"placed":9}'::jsonb)),
+c as (select count(*) filter (where r.checked is true) as n,
+             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys
+        from v join public.program_requirement_records r
+          on r.college = v.college and r.control_number = v.control_number),
+f as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys
+        from v join public.program_requirement_records r
+          on r.college = v.college and r.control_number = v.control_number
+        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv
+                       where pv.college = v.college and pv.control_number = v.control_number
+                       order by pv.id desc limit 1) lv on true
+       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)),
+e(expect) as (values (2)),
+u as (
+update public.program_requirement_records r
+   set checks = v.after_checks
+  from v
+ where r.college = v.college and r.control_number = v.control_number
+   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record
+   and r.checked is not true
+returning v.i),
+s as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)
+select case when f.n > 0
+            then ('s742k1 piles confirm guard: ' || f.n || ' rows hold a matching confirm verdict ' || f.keys::text)::int::text::json
+            when s.n = e.expect - c.n
+            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)
+            else ('s742k1 piles guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned
+  from s, c, e, f;
