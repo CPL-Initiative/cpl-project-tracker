@@ -118,14 +118,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true,
-  "course_renumbers": [
-   {
-    "printed": "THEA 146 F",
-    "listed": "FTHEA146",
-    "block": "Required Courses"
-   }
-  ]
+  "pass": true
  },
  "record": {
   "program": {
@@ -348,5 +341,6 @@
    "Block totals 21 + 4 + 6 match the stated total of 31 units."
   ]
  },
- "extracted_run": "38675136988"
+ "extracted_run": 46010143379,
+ "read_run": "38675136988"
 }

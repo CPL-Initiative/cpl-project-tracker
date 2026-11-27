@@ -104,14 +104,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": true,
-  "course_renumbers": [
-   {
-    "printed": "ANTH 102 F",
-    "listed": "FANTH102",
-    "block": "Restricted Electives"
-   }
-  ]
+  "pass": true
  },
  "record": {
   "program": {
@@ -335,5 +328,6 @@
    "Careers taken from the description: 'to work in government, teaching, business and other fields'."
   ]
  },
- "extracted_run": "38675136988"
+ "extracted_run": 46010143379,
+ "read_run": "38675136988"
 }

@@ -71,9 +71,7 @@
     37.5
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 33.5-40.0; the catalog states 33.5-37.5"
-   ],
+   "why": [],
    "meets": true,
    "rescored": "Open Asks Sheet 120 card 1"
   },
@@ -443,5 +441,6 @@
    "Closed list stores fixed units for several variable-unit courses (e.g., THEA 131 F 2 vs catalog 2-3; THEA 153 F 0.5 vs catalog 0.5-3); catalog values recorded."
   ]
  },
- "extracted_run": "38675136988"
+ "extracted_run": 46010143379,
+ "read_run": "38675136988"
 }

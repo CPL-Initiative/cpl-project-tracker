@@ -100,14 +100,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true,
-  "course_renumbers": [
-   {
-    "printed": "CRTV 196 F",
-    "listed": "FCRTV196",
-    "block": "Restricted Courses: Select 12-16 units from the list below"
-   }
-  ]
+  "pass": true
  },
  "record": {
   "program": {
@@ -373,5 +366,6 @@
    "Career entry taken from the description: 'professional careers in the television and film industry'."
   ]
  },
- "extracted_run": "38675136988"
+ "extracted_run": 46010143379,
+ "read_run": "38675136988"
 }
