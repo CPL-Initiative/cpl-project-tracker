@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-27T14:23:00Z",
+ "written_at": "2026-11-27T14:25:15Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17640,
-  "gap": 4695,
+  "passing": 17641,
+  "gap": 4694,
   "with_gap": 118,
   "cost_usd": 1341.48,
-  "passed_at_read": 16559,
+  "passed_at_read": 16553,
   "cost_receipts": 118,
   "spent_usd": 1247.47,
   "spent_runs": 255,
@@ -189,8 +189,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16975,
-  "gap": 4695,
+  "passing": 16976,
+  "gap": 4694,
   "collected_with_gaps": 665,
   "discontinued": 0
  },
@@ -4881,13 +4881,13 @@
    "harvested": true,
    "slug": "fullerton",
    "programs": 332,
-   "passing": 309,
-   "gap": 23,
+   "passing": 311,
+   "gap": 21,
    "causes": {
     "no_closed_list": 6,
     "page_not_found": 10,
     "places_none": 2,
-    "unknown_without_live": 5
+    "unknown_without_live": 3
    },
    "census_causes": {
     "coverage_fails": 3,
@@ -4910,10 +4910,10 @@
    "outcomes_file": "kb/status/commons_data_programs/fullerton.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-27T08:12:38Z",
+   "read_at": "2026-11-27T13:48:25Z",
    "read_kind": "capture",
    "cost_usd": 22.36,
-   "passed_at_read": 298,
+   "passed_at_read": 300,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -4928,7 +4928,7 @@
    "failed_checks": {
     "coverage": 5,
     "invented": 1,
-    "arithmetic": 15,
+    "arithmetic": 13,
     "repeated": 1,
     "outcomes": 0
    },
@@ -4938,12 +4938,12 @@
    "capture_root": "https://catalog.nocccd.edu/fullerton-college/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 2075.9,
-   "run": "45968499315",
+   "read_seconds": 2090.2,
+   "run": "46010143379",
    "levers": {
     "reader_page_search": 10,
     "program_course_file_check": 6,
-    "reconcile_steps": 5,
+    "reconcile_steps": 3,
     "reader_page_assignment": 2
    },
    "collection": {
@@ -4952,8 +4952,8 @@
      "models": {
       "claude-opus-5-5": 316
      },
-     "run": "45968499315",
-     "at": "2026-11-27T08:12:38Z",
+     "run": "46010143379",
+     "at": "2026-11-27T13:48:25Z",
      "cost_usd": 22.36,
      "platform": "courseleaf"
     },
@@ -10798,12 +10798,12 @@
    "harvested": true,
    "slug": "santa_barbara_city",
    "programs": 319,
-   "passing": 247,
-   "gap": 72,
+   "passing": 246,
+   "gap": 73,
    "causes": {
     "no_closed_list": 32,
     "page_not_found": 36,
-    "unknown_without_live": 4
+    "unknown_without_live": 5
    },
    "census_causes": {
     "coverage_fails": 1,
@@ -10824,10 +10824,10 @@
    "outcomes_file": "kb/status/commons_data_programs/santa_barbara_city.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-27T13:48:26Z",
+   "read_at": "2026-11-19T12:00:23Z",
    "read_kind": "capture",
    "cost_usd": 18.21,
-   "passed_at_read": 237,
+   "passed_at_read": 229,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -10842,7 +10842,7 @@
    "failed_checks": {
     "coverage": 1,
     "invented": 0,
-    "arithmetic": 13,
+    "arithmetic": 21,
     "repeated": 0,
     "outcomes": 0
    },
@@ -10852,12 +10852,12 @@
    "capture_root": "https://catalog.sbcc.edu/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1862.6,
-   "run": "46010148668",
+   "read_seconds": 1794.5,
+   "run": "44519697720",
    "levers": {
     "reader_page_search": 36,
     "program_course_file_check": 32,
-    "reconcile_steps": 4
+    "reconcile_steps": 5
    },
    "collection": {
     "program_reader": {
@@ -10865,8 +10865,8 @@
      "models": {
       "claude-opus-5-5": 251
      },
-     "run": "46010148668",
-     "at": "2026-11-27T13:48:26Z",
+     "run": "44519697720",
+     "at": "2026-11-19T12:00:23Z",
      "cost_usd": 18.21,
      "platform": "courseleaf"
     },
