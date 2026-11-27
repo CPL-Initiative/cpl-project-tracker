@@ -1,0 +1,98 @@
+{
+ "_readme": "S745 SkyTattler, 2026-11-27. Sam asked what it takes to show three outside tools in CPL Pathways' bottom bar, the way the MAP landing page shows there: Program Pathways Mapper's program maps (programmapper.org/ppm-schools/?search=Bakersfield and a college's own map site), the CVC Exchange's course search (cvc.edu/students, its keyword search) and ASSIST (assist.org and its AI Transfer Articulation and Exploration tool). For each page this read asks two things: does it take a deep link (the address its own search builds, from the data its scripts fetch and its forms), and may another site show it in a frame (frame_check: X-Frame-Options and CSP frame-ancestors). Reads only; no model call.",
+ "college": "Bakersfield College",
+ "outside_hosts": {
+  "programmapper.org": "Program Pathways Mapper's partner directory, which links each college's program map site",
+  "cvc.edu": "the CVC Exchange: its students page and course search (search.cvc.edu)",
+  "search.cvc.edu": "the CVC Exchange course search the students page submits to",
+  "assist.org": "ASSIST, the state's transfer articulation system, and its AI Transfer Articulation and Exploration tool"
+ },
+ "questions": {
+  "deep_link": "What address does the page's own search build for a college, a program or a course?",
+  "frame": "May another site show the page in a frame?"
+ },
+ "keywords": [
+  "search",
+  "Search",
+  "iframe",
+  "frame",
+  "program",
+  "course",
+  "Bakersfield",
+  "ENGL"
+ ],
+ "pages": [
+  {
+   "url": "https://programmapper.org/ppm-schools/?search=Bakersfield",
+   "answers": [
+    "deep_link",
+    "frame"
+   ],
+   "frame_check": true,
+   "network": true,
+   "network_find": [
+    "programmap",
+    "search"
+   ]
+  },
+  {
+   "url": "https://programmap.bakersfieldcollege.edu/",
+   "answers": [
+    "deep_link",
+    "frame"
+   ],
+   "frame_check": true,
+   "network": true,
+   "network_find": [
+    "/api/",
+    "programs",
+    "search"
+   ]
+  },
+  {
+   "url": "https://www.cvc.edu/students/",
+   "answers": [
+    "deep_link",
+    "frame"
+   ],
+   "frame_check": true,
+   "forms": true,
+   "network": true,
+   "network_find": [
+    "search.cvc.edu",
+    "keyword",
+    "course"
+   ]
+  },
+  {
+   "url": "https://search.cvc.edu/search?search=ENGL+C1000",
+   "answers": [
+    "deep_link",
+    "frame"
+   ],
+   "frame_check": true,
+   "network": true,
+   "network_hosts": [
+    "search.cvc.edu"
+   ],
+   "network_find": [
+    "ENGL",
+    "search"
+   ]
+  },
+  {
+   "url": "https://assist.org/",
+   "answers": [
+    "deep_link",
+    "frame"
+   ],
+   "frame_check": true,
+   "network": true,
+   "network_find": [
+    "/api/",
+    "search",
+    "ai"
+   ]
+  }
+ ]
+}

@@ -1633,7 +1633,7 @@
         method: [p([fmt(X.rows) + " is " + fmt(X.pairs) + " exhibit-plus-wording pairs plus " + fmt(X.noExhibit) + " worklist wordings with no exhibit. This is the inventory that rules actually move; it is not in the tracker on main yet. Two other counts measure different things: " + fmt(X.crm) + " is the count in MAP’s Custom Reporting Module, and the Commons page today tracks a narrower set — " + fmt(R.settled) + " of " + fmt(R.wordings) + " wordings settled (" + fmt(R.rule) + " by a rule, " + fmt(R.curator) + " more by a curator). Those " + fmt(R.settled) + " have not moved since " + X.since + " because human credit-recommendation curation is paused, and rule-settled counts only grow when a new rule ships. The credit-recommendation line should later point at this " + fmt(X.rows) + "-row inventory. On the " + fmt(R.groups) + " groups: Sam said yes on November 19 to keeping the colleges’ wording, and the 36 are recorded; each course-number link is flagged for a check. In the POST Basic Academy group, " + X.post.colleges + " colleges (" + X.post.rows + " rows) wrote “3 hours in Physical Training and Health Education (CSU GE Area E),” linked to C-ID AJ 110, whose official title is “Introduction to Criminal Justice.” In cases like POST Basic Academy the course-number link itself may be wrong, so the rule flags those links for a check. ", a("#cr-reference/open", "Wordings still open"), "."]), p([LIVE_WORDS.cr])],
         links: [["Open Credit Recommendations", "#cr-reference"], ["Name-check groups", "#cr-reference/names"]] }),
       checksCard({ key: "interconnect", title: "Interconnectivity", pill: "5 blocked", pillCls: "cmn-pill-needs",
-        big: "5 blocked", rest: [", 4 APIs that would help, and 4 datasets to integrate"],
+        big: "5 blocked", rest: [", 3 priority connections, 4 APIs that would help, and 4 datasets to integrate"],
         quick: [{ ref: "blocked", n: X.ace, one: "row waits on ACE’s recommendation text", many: "rows wait on ACE’s recommendation text" },
           { ref: "blocked", n: 9, one: "Los Angeles district college waits on a district request", many: "Los Angeles district colleges wait on a district request" },
           { ref: "blocked", n: 1, one: "college’s curriculum system sits behind sign-ins", many: "colleges’ curriculum systems sit behind sign-ins" }],
@@ -1641,6 +1641,16 @@
           ["Finished when", "nothing is blocked, and every dataset worth integrating is integrated."],
           ["Scale", "5 blocked, 4 APIs that would help and 4 datasets to integrate."]],
         stages: { Connect: [
+          /* Sam, 2026-11-27: "keep these as priorities on our Connections card", and "when it's all connected properly,
+             we should be able to have chips like the cpl chip for each on our cards". What a runner read found that day
+             (college-page-read runs 46064228996 and 46064419390, plan kb/college_reads/outside_tools_frame_check.json). */
+          { ref: "priorities", name: "Priority connections for CPL Pathways cards", fig: figOf(3, " in progress"),
+            extra: [el("ul", { cls: "cmf-list" }, [
+              el("li", { text: "Program Pathways Mapper · the member directory opens on a college (?search=Bakersfield) and allows framing · each college’s own map site refuses automated reading · a program opens by address (Bakersfield: /pathway/welding-to-degree/?pt=map&year=2026), so a chip can link to it · pressing Share or Print answers 403 and then every map refuses that browser until its site data is cleared (Sam, 2026-11-27, in Firefox and Edge), so a map opens as a link, not in a frame, until PPM says otherwise · an access note was drafted October 17, 2026 and is not recorded as sent" }),
+              el("li", { text: "CVC Exchange · the students page allows framing · its course search (search.cvc.edu) asks automated readers to stay out, so the address for one course waits on CVC" }),
+              el("li", { text: "ASSIST · forbids framing (X-Frame-Options SAMEORIGIN), so it opens as a link until ASSIST names our site in its headers · its public lists of institutions and years answer; articulation agreements need an institutional API key, not yet requested" }),
+              el("li", { text: "The goal · a chip beside CPL on each course and program card for each one, as each connection comes in" })])],
+            act: [["The APIs", "#collect/apis"], ["Integrations", "#collect/integrations"]] },
           { ref: "blocked", name: "Every blocked connection cleared", fig: figOf(5, " blocked"),
             extra: [el("ul", { cls: "cmf-list" }, [
               el("li", { text: "ACE recommendation text (CreditRecommendation column) · fetched nightly, not stored · ask COBI · " + fmt(X.ace) + " rows" }),

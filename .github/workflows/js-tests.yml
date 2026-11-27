@@ -1464,6 +1464,9 @@ jobs:
       - name: College page read (own-site follow, excerpts, plans)
         if: matrix.shard == 5
         run: python3 tests/college_page_read_test.py
+      - name: College page read, the frame verdict (S745)
+        if: matrix.shard == 5
+        run: python3 tests/college_page_read_frame_test.py
       # A college's own program map read into terms (S336): Irvine Valley's
       # all-maps page and Santa Monica's pathway pages, parsed from the text a
       # college page read printed. Pure-stdlib python; same non-required check.
