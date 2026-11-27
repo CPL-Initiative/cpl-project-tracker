@@ -194,3 +194,7 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   cannot report a wrong page, and Dance 06352 and Exercise and Sports Science 44992 were never read; MAJOR: no arithmetic
   guard; MINOR: keep it per college), to `piles` for its last round. No person's check at East Los Angeles (14:08Z, md5
   equal to the 13:44Z read): its reread dispatched on `claude/s742-piles` (force 45176404274).
+- 14:10Z: Butte 14583's paid read 46012628995 filed it from its own page ("AS Degree in Registered Nursing", $0.06);
+  keep-better kept 1 (no person's check). Its reread dispatched on `claude/s742-piles-butte` (force 46012628995): the
+  program's own record replaces the Accelerated Track's, still failing (the text holds the application prerequisites and
+  stops after the second outcome), so `noted_section_cut_off` is the next plan's, not tonight's.
