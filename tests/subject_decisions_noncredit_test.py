@@ -165,6 +165,10 @@ listed = sorted(k for k in after if after[k][NCD])
 # The rows that already list a person's noncredit decision in the committed file (live saves the daily sync carries,
 # such as Sam's Cerritos AED of 2026-11-22) list it here too; only the injected rows may be added beside them.
 real = sorted({(d["college"], d["code"]) for d in committed.get("decisions") or [] if str(d.get("band", "")).startswith("nc:")})
+# The injected Pierce OLD decision adds one applied decision only while no live save holds the same key: a person
+# saved that very key on 2026-11-26 (synced by the daily run of 2026-11-27), and the committed titles already count it.
+_PIERCE = "SUBJ:los_angeles_pierce|OLD|nc:courses-for-older-adults"
+_ADDED = 0 if any(d.get("key") == _PIERCE for d in committed.get("decisions") or []) else 1
 check("(3) ⭐ nothing else moves: no other row at any college, and no other row lists a noncredit decision",
       changed == [("los_angeles_pierce", "OLD")] and listed == sorted(set([("el_camino", "ESL"), ("los_angeles_pierce", "OLD")] + real)),
       json.dumps(changed[:6]) + " " + json.dumps(listed))
@@ -174,7 +178,7 @@ _INJ = {d["key"] for d in NC_DECS}
 na = {r["key"]: r["why"] for r in out["decisions"]["not_applied"] if r["key"] in _INJ}
 check("(3) ⭐ applied counts only what a built column takes: the noncredit-only row's decision, never a credit-and-"
       "noncredit code's category (no per-course reader takes it yet), each other one listed with why",
-      out["decisions"]["applied"] == titles["decisions"]["applied"] + 1
+      out["decisions"]["applied"] == titles["decisions"]["applied"] + _ADDED
       and sorted(na) == ["SUBJ:el_camino|ESL|nc:english-as-a-second-language-esl", "SUBJ:el_camino|ESL|nc:parenting"]
       and "waiting on the per-course reader" in na["SUBJ:el_camino|ESL|nc:english-as-a-second-language-esl"]
       and "lists no noncredit course" in na["SUBJ:el_camino|ESL|nc:parenting"], json.dumps(na))
@@ -188,7 +192,7 @@ finally:
     lst.SD.read_status = real_read
 na2 = {r["key"]: r["why"] for r in out2["decisions"]["not_applied"]}
 check("(3) ⭐ a decision on a non-dominant category is listed as waiting on the per-course reader, never counted applied",
-      out2["decisions"]["applied"] == titles["decisions"]["applied"] + 1
+      out2["decisions"]["applied"] == titles["decisions"]["applied"] + _ADDED
       and "waiting on the per-course reader" in na2.get("SUBJ:cerritos|AED|nc:elementary-and-secondary-basic-skills", ""), json.dumps(na2))
 tmp = tempfile.mkdtemp()
 try:
