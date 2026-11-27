@@ -222,3 +222,6 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 - 14:25Z: live: San Jose City 38499 passing at 46011334736 (records collected: 16); Santa Barbara City 32775 passing at
   46010148668 (records collected: 17) and 43553 unequal at 46010148668; Butte 14583 at 46012628995, incomplete (its own
   page now; a gap plan next session).
+- 14:26Z: Fullerton's free reconcile 46010143379 (on `claude/s742-piles-fullerton`, `d5e17d4c`): 2 fail to pass, 0 pass
+  to fail; the other 21 put back at main's files; keep-better kept 2. Its reread dispatched (force 46010143379; no
+  person's check at 14:24Z): it posts 33680 (22-26 against 22-26) and 42143 (18-19 against 18-19), both passing.
