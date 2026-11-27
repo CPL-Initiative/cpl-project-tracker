@@ -228,6 +228,6 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   45176404274 sit live on older runs, eight passing in the committed files (35087, 35088, 35888, 37510, 38337, 41132,
   43725, 45987), so the census counts them passed where the live table may not; keep-better's generic-heading test
   refuses "(Academic Plan E002456C)", which carries the record's own number (the follow-up, with a reader).
-- 08:55Z: `readers` (head `eb049d29`): the keep-better fix made (a filed unequal record whose major equals stays
+- 08:53Z: `readers` (head `eb049d29`): the keep-better fix made (a filed unequal record whose major equals stays
   above), to its reader's second round; Ventura's account keeps all seven, and its reread dispatched (force
   45964322406). Spend at 08:53Z: about $187.
