@@ -966,3 +966,18 @@ with `scripts/library_page.py`, and filed while its record's url still named cla
   `cpl_library_guard_public` (run 45719960204: *"Listing in the public library needs the team phrase or a reviewer
   sign-in"*), the service role included, and was withdrawn from #3864. Public fields change only through
   `cpl_library_set_public()` from the card; the summary waits on a person's press of Publish to Public Library.
+
+## S736 SkyBrant (2026-11-26 to 11-27): the publish fixes, the 3-hour check and a first check that failed
+
+- **The check runs every three hours.** `library-publish.yml` fires on cron `41 */3 * * *` UTC, so a piece that has
+  just moved to its Pages address can wait up to three hours for its check row. The card now shows the steps, a bar and
+  the next run's time, so a wait reads as a wait (`f-library-check-runs-every-3h-s736`; #3865).
+- **A timer keeps a jsdom shard alive.** A `setInterval` the card starts for its countdown kept one CI test shard from
+  exiting, and the shard hung; #3865 carries a jsdom timer guard for it
+  (`p-setinterval-keeps-jsdom-test-shard-alive-s736`).
+- **A page's first check can fail, and the card must say so.** Adult Ed CPL Starting Points looked finished and failed
+  its first check with 19 findings (target size, the eyebrow's contrast, the column grip's aria). #3868 fixed them and
+  the re-check passed at 01:13Z 2026-11-26 with 0. Read the check row before calling a piece done.
+- **Sam's asks:** the top Publish opens the form, the public summary is prefilled, the sidebar matches the list, a
+  waiting piece offers *Add its public summary*, and *File a new version* is gone (*"the file feature is not needed"*).
+  The summary itself is still his to press: a session cannot write a public field.

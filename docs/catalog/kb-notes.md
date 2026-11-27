@@ -565,7 +565,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Playbook — redeploying a shared, live Supabase Edge Function safely](../kb-notes/playbook-deploy-shared-supabase-edge-function.md) | playbook | published | 2026-06-01 | 2026-08-22 |
 | [Playbook — running an NC integration (notes and artifacts → the curated register)](../kb-notes/playbook-nc-integration-run.md) | playbook | published | 2026-08-06 | 2026-08-06 |
 | [Playbook — Trail Crew 🥾: the method + magic audit (deterministic scanner → AI adjudication → adversarial verify → fire-able staged plan)](../kb-notes/playbook-trail-crew-method-magic-audit.md) | playbook | published | 2026-07-10 |  |
-| [Playbook — where a college's local subject title comes from](../kb-notes/playbook-local-subject-title-sources.md) | playbook | internal | 2026-11-22 | 2026-11-22 |
+| [Playbook — where a college's local subject title comes from](../kb-notes/playbook-local-subject-title-sources.md) | playbook | internal | 2026-11-22 | 2026-11-27 |
 | [Playbook: gated bulk auto-curation (dry-run → md5-pinned server-side apply)](../kb-notes/playbook-gated-bulk-autocuration.md) | playbook | published | 2026-06-12 |  |
 | [Playbook: unattended news aggregation into a live dashboard tab](../kb-notes/playbook-cpl-news-aggregation.md) | playbook | published | 2026-06-21 |  |
 | [Re-keying a shared DB from a committed re-mint alias map](../kb-notes/playbook-rekey-shared-db-from-alias-map.md) | playbook | published | 2026-06-15 | 2026-06-15 |
