@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-27T14:15:50Z",
+ "written_at": "2026-11-27T14:08:44Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,8 +168,8 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17644,
-  "gap": 4691,
+  "passing": 17643,
+  "gap": 4692,
   "with_gap": 118,
   "cost_usd": 1341.48,
   "passed_at_read": 16551,
@@ -190,8 +190,8 @@
  "census_check": {
   "universe": 22335,
   "passing": 16974,
-  "gap": 4691,
-  "collected_with_gaps": 670,
+  "gap": 4692,
+  "collected_with_gaps": 669,
   "discontinued": 0
  },
  "census_live": {
@@ -868,7 +868,7 @@
    "outcomes_file": "kb/status/commons_data_programs/butte.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-25T08:28:11Z",
+   "read_at": "2026-11-27T12:30:47Z",
    "read_kind": "capture",
    "cost_usd": 10.69,
    "passed_at_read": 156,
@@ -896,8 +896,8 @@
    "capture_root": "https://butte.curriqunet.com/Catalog/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 5571.8,
-   "run": "45576373568",
+   "read_seconds": 5518.7,
+   "run": "46012628995",
    "levers": {
     "program_course_file_check": 24,
     "reader_page_search": 3,
@@ -909,13 +909,13 @@
      "models": {
       "claude-opus-5-5": 165
      },
-     "run": "45576373568",
-     "at": "2026-11-25T08:28:11Z",
+     "run": "46012628995",
+     "at": "2026-11-27T12:30:47Z",
      "cost_usd": 10.69,
      "platform": "curriqunet"
     },
     "slo_read": null,
-    "plo_programs": 164,
+    "plo_programs": 165,
     "ppm_member": null,
     "maps": {
      "held": 0,
@@ -4169,13 +4169,13 @@
    "harvested": true,
    "slug": "east_los_angeles",
    "programs": 234,
-   "passing": 128,
-   "gap": 106,
+   "passing": 127,
+   "gap": 107,
    "causes": {
     "no_closed_list": 87,
     "page_not_found": 11,
     "places_none": 2,
-    "unknown_without_live": 6
+    "unknown_without_live": 7
    },
    "census_causes": {
     "coverage_fails": 1,
@@ -4245,8 +4245,8 @@
    "levers": {
     "program_course_file_check": 87,
     "reader_page_search": 11,
+    "reconcile_steps": 4,
     "ge_units_steps": 3,
-    "reconcile_steps": 3,
     "reader_page_assignment": 2
    },
    "collection": {
