@@ -864,8 +864,10 @@ print("the opt-in's self-recall on Ventura's filed pages (S741): what it moves, 
 # 45853684392). Each files a fingerprint of the text every program would send the model, so the two files say page
 # by page what the opt-in changed. Seven pages moved (their text is read from innerText+tabs where it was
 # innerText); on five the text changed, and on two, 35654 and 37415, it did not, the cap cutting the appended tab:
-# right on 5 and no gain on 2, which window_keeps_tabs() above closes. Either state passes: the two captures as
-# filed in S740, or a later capture filed over them, where each of the seven is read from innerText+tabs.
+# right on 5 and no gain on 2, which window_keeps_tabs() above closes. Three states pass: the two captures as
+# filed in S740; the same capture beside a later free capture read with window_keeps_tabs, where the text of all
+# seven differs from the capture's; or a later read filed over both, where each of the seven is read from
+# innerText+tabs.
 import json as _json  # noqa: E402
 VEN = os.path.join(ROOT, "kb", "program_requirements_college", "ventura")
 MOVED = ["35654", "37415", "40179", "44994", "44995", "46400", "46401"]
@@ -894,6 +896,12 @@ if str(ven_cap.get("run")) == "45847865286" and str(ven_pre.get("run")) == "4585
           set(fa) == set(fb2) and len(fa) == 174 and changed == sorted(set(MOVED) - set(SAME_TEXT)))
     check("35654 and 37415 moved with their text the same to the character: the cap cut the appended tab",
           all(fa[cn]["sha256"] == fb2[cn]["sha256"] for cn in SAME_TEXT))
+elif str(ven_cap.get("run")) == "45847865286" and ven_pre.get("fingerprints"):
+    fa, fb2 = ven_cap.get("fingerprints") or {}, ven_pre.get("fingerprints") or {}
+    still = sorted(cn for cn in MOVED if (fa.get(cn) or {}).get("sha256") == (fb2.get(cn) or {"sha256": None})["sha256"])
+    check("a later free capture (run %s), read with window_keeps_tabs: the text of all seven moved pages differs "
+          "from the capture's, 35654 and 37415 among them (unchanged: %r)" % (ven_pre.get("run"), still),
+          not still and all(cn in fb2 for cn in MOVED))
 else:
     ven_src = {s["control_number"]: s for s in _ven("sources.json")}
     check("a later capture is filed: each of the seven moved pages is read from innerText+tabs",
