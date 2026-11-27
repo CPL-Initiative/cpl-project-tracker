@@ -1,4 +1,4 @@
-{"schema":1,"college":"Santa Monica College","slug":"santa_monica","basis":"live","census_at":"2026-11-27 13:04Z","correction_rules":true,"programs":[
+{"schema":1,"college":"Santa Monica College","slug":"santa_monica","basis":"live","census_at":"2026-11-27 16:06Z","correction_rules":true,"programs":[
 {"cn":"03281","title":"Registered Nursing","award":"A.S. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://catalog.smc.edu/current/catalog.pdf#page=175"},
 {"cn":"08967","title":"Administrative Assistant","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"20996","title":"Administrative Assistant","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
@@ -26,6 +26,5 @@
 {"cn":"19604","title":"Logistics and Supply Chain Management","award":"A.S. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"38913","title":"System Administrator","award":"Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"45012","title":"Biotechnology","award":"A.S. Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.smc.edu/current/catalog.pdf#page=99"},
-{"cn":"43767","title":"Barbering","award":"A.S. Degree","cause":"units_incomplete","lever":"reconcile_steps","url":"https://catalog.smc.edu/current/catalog.pdf#page=121","units":{"sum":[25.5,25.5],"printed":[26.5,26.5],"status":"incomplete","measure":"units","against":"program"}},
-{"cn":"21026","title":"Cosmetology","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"units_unequal","lever":"reconcile_steps","url":"https://catalog.smc.edu/current/catalog.pdf#page=121","units":{"sum":[27.5,27.5],"printed":[26.5,26.5],"status":"unequal","measure":"units","against":"program"}}
+{"cn":"43767","title":"Barbering","award":"A.S. Degree","cause":"units_incomplete","lever":"reconcile_steps","url":"https://catalog.smc.edu/current/catalog.pdf#page=121","units":{"sum":[25.5,25.5],"printed":[26.5,26.5],"status":"incomplete","measure":"units","against":"program"}}
 ]}
