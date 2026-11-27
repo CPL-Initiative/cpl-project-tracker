@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-27T14:17:37Z",
+ "written_at": "2026-11-27T14:15:50Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17645,
-  "gap": 4690,
+  "passing": 17644,
+  "gap": 4691,
   "with_gap": 118,
-  "cost_usd": 1341.37,
-  "passed_at_read": 16554,
+  "cost_usd": 1341.48,
+  "passed_at_read": 16551,
   "cost_receipts": 118,
   "spent_usd": 1247.47,
   "spent_runs": 255,
@@ -189,9 +189,9 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16977,
-  "gap": 4690,
-  "collected_with_gaps": 668,
+  "passing": 16974,
+  "gap": 4691,
+  "collected_with_gaps": 670,
   "discontinued": 0
  },
  "census_live": {
@@ -842,12 +842,12 @@
    "harvested": true,
    "slug": "butte",
    "programs": 192,
-   "passing": 163,
-   "gap": 29,
+   "passing": 164,
+   "gap": 28,
    "causes": {
     "no_closed_list": 24,
     "page_not_found": 3,
-    "unknown_without_live": 2
+    "unknown_without_live": 1
    },
    "census_causes": {
     "no_closed_list": 24,
@@ -901,7 +901,7 @@
    "levers": {
     "program_course_file_check": 24,
     "reader_page_search": 3,
-    "reconcile_steps": 2
+    "reconcile_steps": 1
    },
    "collection": {
     "program_reader": {
@@ -938,12 +938,12 @@
    "harvested": true,
    "slug": "cabrillo",
    "programs": 291,
-   "passing": 262,
-   "gap": 29,
+   "passing": 263,
+   "gap": 28,
    "causes": {
     "no_closed_list": 10,
     "page_not_found": 12,
-    "unknown_without_live": 7
+    "unknown_without_live": 6
    },
    "census_causes": {
     "no_closed_list": 9,
@@ -999,7 +999,7 @@
    "levers": {
     "reader_page_search": 12,
     "program_course_file_check": 10,
-    "reconcile_steps": 6,
+    "reconcile_steps": 5,
     "scorer_noncredit_hours": 1
    },
    "collection": {
@@ -3779,7 +3779,7 @@
    "objectives_printed": null,
    "read_at": "2026-11-27T08:35:05Z",
    "read_kind": "capture",
-   "cost_usd": 13.15,
+   "cost_usd": 13.21,
    "passed_at_read": 170,
    "slo_queue": null,
    "scout": null,
@@ -3806,7 +3806,7 @@
    "catalog_now": null,
    "catalog_checks": null,
    "read_seconds": 1111.7,
-   "run": "46003456131",
+   "run": "45966682528",
    "levers": {
     "reconcile_steps": 7,
     "reader_page_search": 6,
@@ -3818,9 +3818,9 @@
      "models": {
       "claude-opus-5-5": 180
      },
-     "run": "46003456131",
+     "run": "45966682528",
      "at": "2026-11-27T08:35:05Z",
-     "cost_usd": 13.15,
+     "cost_usd": 13.21,
      "platform": "courseleaf"
     },
     "slo_read": null,
@@ -4169,13 +4169,13 @@
    "harvested": true,
    "slug": "east_los_angeles",
    "programs": 234,
-   "passing": 127,
-   "gap": 107,
+   "passing": 128,
+   "gap": 106,
    "causes": {
     "no_closed_list": 87,
     "page_not_found": 11,
     "places_none": 2,
-    "unknown_without_live": 7
+    "unknown_without_live": 6
    },
    "census_causes": {
     "coverage_fails": 1,
@@ -4245,8 +4245,8 @@
    "levers": {
     "program_course_file_check": 87,
     "reader_page_search": 11,
-    "reconcile_steps": 4,
     "ge_units_steps": 3,
+    "reconcile_steps": 3,
     "reader_page_assignment": 2
    },
    "collection": {
@@ -4287,12 +4287,13 @@
    "harvested": true,
    "slug": "el_camino",
    "programs": 189,
-   "passing": 125,
-   "gap": 64,
+   "passing": 120,
+   "gap": 69,
    "causes": {
     "no_closed_list": 54,
     "page_not_found": 9,
-    "unknown_without_live": 1
+    "places_none": 4,
+    "unknown_without_live": 2
    },
    "census_causes": {
     "no_closed_list": 54,
@@ -4314,10 +4315,10 @@
    "outcomes_file": null,
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-27T13:03:13Z",
+   "read_at": "2026-11-26T07:18:10Z",
    "read_kind": "capture",
-   "cost_usd": 8.09,
-   "passed_at_read": 99,
+   "cost_usd": 8.14,
+   "passed_at_read": 96,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -4330,9 +4331,9 @@
    "extracted": 126,
    "errors": 0,
    "failed_checks": {
-    "coverage": 0,
+    "coverage": 4,
     "invented": 0,
-    "arithmetic": 27,
+    "arithmetic": 30,
     "repeated": 0,
     "outcomes": 0
    },
@@ -4342,12 +4343,13 @@
    "capture_root": "http://catalog.elcamino.edu/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1424.0,
-   "run": "46007782666",
+   "read_seconds": 1446.3,
+   "run": "45773663927",
    "levers": {
     "program_course_file_check": 54,
     "reader_page_search": 9,
-    "reconcile_steps": 1
+    "reader_page_assignment": 4,
+    "reconcile_steps": 2
    },
    "collection": {
     "program_reader": {
@@ -4355,9 +4357,9 @@
      "models": {
       "claude-opus-5-5": 126
      },
-     "run": "46007782666",
-     "at": "2026-11-27T13:03:13Z",
-     "cost_usd": 8.09,
+     "run": "45773663927",
+     "at": "2026-11-26T07:18:10Z",
+     "cost_usd": 8.14,
      "platform": "acalog"
     },
     "slo_read": null,
@@ -4982,13 +4984,13 @@
    "harvested": true,
    "slug": "gavilan",
    "programs": 135,
-   "passing": 100,
-   "gap": 35,
+   "passing": 101,
+   "gap": 34,
    "causes": {
     "no_closed_list": 15,
     "page_not_found": 17,
     "places_none": 1,
-    "unknown_without_live": 2
+    "unknown_without_live": 1
    },
    "census_causes": {
     "no_closed_list": 15,
@@ -5044,8 +5046,8 @@
    "levers": {
     "reader_page_search": 17,
     "program_course_file_check": 15,
-    "reconcile_steps": 2,
-    "reader_page_assignment": 1
+    "reader_page_assignment": 1,
+    "reconcile_steps": 1
    },
    "collection": {
     "program_reader": {
@@ -7782,13 +7784,13 @@
    "harvested": true,
    "slug": "modesto_junior",
    "programs": 199,
-   "passing": 186,
-   "gap": 13,
+   "passing": 185,
+   "gap": 14,
    "causes": {
     "no_closed_list": 3,
     "page_not_found": 8,
     "places_none": 1,
-    "unknown_without_live": 1
+    "unknown_without_live": 2
    },
    "census_causes": {
     "no_closed_list": 3,
@@ -7845,8 +7847,8 @@
    "levers": {
     "reader_page_search": 8,
     "program_course_file_check": 3,
-    "reader_page_assignment": 1,
-    "reconcile_steps": 1
+    "reconcile_steps": 2,
+    "reader_page_assignment": 1
    },
    "collection": {
     "program_reader": {
@@ -10895,13 +10897,13 @@
    "harvested": true,
    "slug": "santa_monica",
    "programs": 256,
-   "passing": 227,
-   "gap": 29,
+   "passing": 228,
+   "gap": 28,
    "causes": {
     "no_closed_list": 16,
     "page_not_found": 9,
     "places_none": 1,
-    "unknown_without_live": 3
+    "unknown_without_live": 2
    },
    "census_causes": {
     "coverage_fails": 1,
@@ -10958,7 +10960,7 @@
    "levers": {
     "program_course_file_check": 16,
     "reader_page_search": 9,
-    "reconcile_steps": 3,
+    "reconcile_steps": 2,
     "reader_page_assignment": 1
    },
    "collection": {

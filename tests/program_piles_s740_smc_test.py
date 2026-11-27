@@ -55,8 +55,12 @@ check(W.own(g, e) is None, "with a page-mate's heading the record is not shown t
 answer, where = B7.WITHIN_HELD[(M.COLLEGE, "41797")]
 check(answer == B7.WITHIN and "_program_piles_s740_smc" in where and (M.COLLEGE, "41797") in B7.reviewed_keys(),
       "the statewide held list answers the kind for 41797 and names this plan")
+# S742's plan s742a files 21026 as total_differs (a page read lists it in kb/program_total_differs.json, and the
+# conductor's live read proves its run): it carries no gap as s740f left it, or that kind alone.
+LATER = {"21026": ["total_differs"]}
 for cn in HELD:
-    check(not W.load(cn)["score"].get("gaps") and W.hand[cn] == M.S720.HAND[cn],
-          "%s: it carries no gap, and its reason is s720s's own" % cn)
+    kinds = [x["gap"] for x in W.load(cn)["score"].get("gaps") or []]
+    check(kinds in ([], LATER.get(cn)) and W.hand[cn] == M.S720.HAND[cn],
+          "%s: it carries no gap (or the kind a later plan files), and its reason is s720s's own" % cn)
 
 sys.exit(t.done())

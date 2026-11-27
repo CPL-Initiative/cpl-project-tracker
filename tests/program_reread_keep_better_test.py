@@ -46,7 +46,15 @@ so the reread leaves that row alone. This test guards the failure mode: a filed 
     -aa-t-degree page), an ending naming the program's kind still passes, an address with no ending reads as on
     main, and the decision row carries the stripped ending as award_tail;
   * with live_runs absent, the every-branch fixture's outcomes, files and dispatch equal main's script at 94a02499
-    (tests/fixtures/program_reread_keep_better_main_snapshot.json).
+    (tests/fixtures/program_reread_keep_better_main_snapshot.json);
+  * S742, the Academic Plan code (plan_code_own): a generic heading that prints the program's own code and no other
+    passes ("(Academic Plan E002456C)" for 02456); another program's code, two codes with another's among them, or no
+    code shows nothing; a heading whose words name another program fails beside its own code, and one that names
+    the title with another award fails the award check. The self-recall over every committed heading that prints a code (plan_code_recall): none whose words name
+    another program carries the record's own code, every generic heading with its own code places its own state
+    list, and a title word beside another program's code is listed and shown nothing. S742's reader: the code
+    admits a record only where its coverage passes (a code can sit over another program's section: 45986 carries
+    45717's), and every code-shaped token in the heading counts, behind the phrase or not.
 
 Run from repo root: python3 tests/program_reread_keep_better_test.py
 """
@@ -964,6 +972,85 @@ def test_award_ending(tmp):
     check(listed == {"54003"}, "kept on an address with an award ending: %r" % sorted(listed))
 
 
+def test_plan_code():
+    """S742: a generic heading that prints the program's own Academic Plan code holds its own program."""
+    def rec(cn, heading, title="Medical Assistant", award="A.S. Degree", placed=True):
+        return {"college": "East Los Angeles College", "control_number": cn, "title": title, "award": award,
+                "source_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/catalog.pdf#page=84",
+                "record": {"program": {"section_heading": heading}}, "score": {"coverage": {"pass": placed}}}
+    own = "(Academic Plan E002456C)"
+    check(K.plan_code_own(rec("02456", own)) == "the heading prints the program's own Academic Plan code "
+          "(Academic Plan E002456C), and the record places its own state list",
+          "the record's own code over its own list is the evidence, quoted")
+    # S742's reader, MAJOR: the catalog prints 45717's code over Sports Medicine 45986's section, so a re-read of
+    # 45717 that lands there carries its own code and another program's courses: coverage fails, and it is refused.
+    unplaced = rec("45717", "(Academic Plan E045717D)", title="Criminal Investigations", placed=False)
+    why, evidence = K.own_program_why(unplaced)
+    check(K.plan_code_own(unplaced) is None and why and "generic" in why and evidence is None,
+          "its own code over a list it does not place shows nothing: %r" % (why,))
+    no_score = dict(rec("02456", own))
+    no_score.pop("score")
+    check(K.plan_code_own(no_score) is None, "a record with no score is not shown its own by the code")
+    # S742's reader, MINOR: every code-shaped token counts, behind the phrase or not.
+    check(K.plan_code_own(rec("02456", "(Academic Plan E002456C / E045717D)")) is None
+          and K.plan_code_own(rec("02456", "Academic Plan E002456C and E045717D")) is None
+          and K.plan_code_own(rec("02456", "(Academic Plan E002456C, E002456C)")) is not None,
+          "a second code without the phrase is read: another program's refuses, the same one again does not")
+    check(K.plan_code_own(rec("02457", own)) is None, "another program's code shows nothing")
+    check(K.plan_code_own(rec("02456", "(Academic Plan E002456C) (Academic Plan E002457C)")) is None,
+          "two codes with another program's among them show nothing")
+    check(K.plan_code_own(rec("02456", "REQUIREMENTS")) is None and K.plan_code_own(rec("02456", "")) is None
+          and K.plan_code_own(rec("", own)) is None, "no code, no heading or no control number shows nothing")
+    check(K.plan_code_own(rec("45285", "(Academic Plan T045285)")) is not None
+          and K.plan_code_own(rec("45285", "(T045285)")) is None
+          and K.plan_code_own(rec("18706", "(Academic Plan: H018706C)")) is None
+          and K.plan_code_own(rec("02456", "(Academic Plan E0024567C)")) is None
+          and K.plan_code_own(rec("02456", "(Academic Plan E002456CX)")) is None,
+          "a code with no award letter reads; a code without the phrase, the phrase with a colon (Harbor's), a longer "
+          "number or a longer tail is no code read here")
+    why, evidence = K.own_program_why(rec("02456", own))
+    check(why is None and evidence and "E002456C" in evidence,
+          "a generic heading with the program's own code holds its own program: %r" % (why,))
+    why, evidence = K.own_program_why(rec("02457", own))
+    check(why and "generic" in why and evidence is None, "with another program's code it is set aside: %r" % (why,))
+    why, _ = K.own_program_why(rec("02456", "Respiratory Therapy (Academic Plan E002456C)"))
+    check(why and "shares no word" in why, "a heading naming another program fails beside the own code: %r" % (why,))
+    why, _ = K.own_program_why(rec("02456", "Medical Assistant, Certificate of Achievement (Academic Plan E002456C)"))
+    check(why and "heading_award_check" in why,
+          "a heading that names the title with another award fails the award check, code or no code: %r" % (why,))
+    r = K.plan_code_recall()
+    check(r["read"] >= 90 and not r["wrong"] and not r["generic_other"],
+          "the self-recall: of %d headings that print a code, none names another program beside the record's own "
+          "code, and no generic heading carries another program's: %r %r" % (r["read"], r["wrong"], r["generic_other"]))
+    check(r["colleges"] == ["East Los Angeles College"], "the recall reaches East Los Angeles alone: %r" % r["colleges"])
+    check(r["named_own"] >= 60 and r["read"] == r["named_own"] + len(r["named_other"]) + len(r["generic_own"])
+          + len(r["generic_unplaced"]) + len(r["generic_other"]) + len(r["other_words"]) + len(r["wrong"]),
+          "code and title words agree on %d headings, and every heading is counted once" % r["named_own"])
+    slugs = {}
+    for path in __import__("glob").glob(os.path.join(ROOT, "kb", "program_requirements_college", "*", "summary.json")):
+        with open(path, encoding="utf-8") as fh:
+            slugs[json.load(fh).get("college")] = os.path.basename(os.path.dirname(path))
+    placed = 0
+    for college, cn, _ in r["generic_own"]:
+        with open(os.path.join(ROOT, "kb", "program_requirements_college", slugs[college], "records", cn + ".json"),
+                  encoding="utf-8") as fh:
+            f = json.load(fh)
+        placed += bool(((f.get("score") or {}).get("coverage") or {}).get("pass"))
+        check(K.own_program_why(f)[0] is None, "%s %s: its own code lets its generic heading through" % (college, cn))
+    check(placed == len(r["generic_own"]) and placed >= 20,
+          "every one of the %d generic headings with its own code places its own state list (%d)"
+          % (len(r["generic_own"]), placed))
+    for college, cn, code in r["named_other"]:
+        check(K.plan_code_own({"control_number": cn, "score": {"coverage": {"pass": True}}}, "(%s)" % code) is None,
+              "%s %s: a title word beside another program's code (%s) is shown nothing by the code" % (college, cn, code))
+    for college, cn, _ in r["generic_unplaced"]:
+        with open(os.path.join(ROOT, "kb", "program_requirements_college", slugs[college], "records", cn + ".json"),
+                  encoding="utf-8") as fh:
+            f = json.load(fh)
+        check(K.plan_code_own(f) is None and K.own_program_why(f)[0] is not None,
+              "%s %s: its own code over a list it does not place is refused" % (college, cn))
+
+
 def main():
     for fn in (test_checked_list, test_folder, test_all_restored, test_checked_unfiled, test_live_runs,
                test_live_runs_file, test_control_number_shape, test_ascii_runs, test_generic_heading_scorer,
@@ -1013,6 +1100,7 @@ def main():
           "equal and unstated, passing or not, stand above it as they stand above any incomplete")
     check(K.arith_key(major_equal) == "incomplete" and K.compare(major_equal, with_major("incomplete", None))[0] == "reread",
           "alone, or beside another incomplete, it is a plain incomplete (a tie keeps the re-read)")
+    test_plan_code()
     print("%s: %d failure(s)" % ("FAIL" if FAILS else "ok", len(FAILS)))
     return 1 if FAILS else 0
 
