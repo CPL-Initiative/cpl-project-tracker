@@ -165,20 +165,18 @@ candidates, 3 gain one; CPL Pathways' retired-course filter unchanged at both co
 (Porterville CMRTP now 0; its M-ID CMRT M1001 sits on CMRT). Test `tests/coci_campus_letter_test.py`. Evidence: Cerro
 Coso's *Long-Term Schedule Effective Fall 2024* (vault `raw/2026-11-27-cerro-coso-long-term-schedule-fall-2024.md`).
 
+**DONE by COBIx, 2026-11-27** (Sam's approval, 11:57 AM PT): the builder honors `not_a_subject` — a person's save is no longer refused, `title_state` becomes `not_a_subject`, and the lightning round drops those rows; the explicit placeholder list (Cypress C, Golden West SPTP, LAVC BOTH KIN) is committed in `kb/coci_subject_folds.py`. The same PR folds Hancock's truncated labels, Chabot's course letters, and the nine high-sure bad splits by explicit lists, never a prefix rule, and files the 10 code-only headings, Chabot PLBG and PSCI, ELAC ESL NC, Mission NRS-HCA, and 18 SBCC SEL titles (**DECIDED** `d-subject-parse-bundle-cobix-2026-11-27`).
+
 **NEXT (S744), in order:**
-1. **The builder honors `not_a_subject`.** The lightning round saves `{not_a_subject: true}`
-   (`d-lightning-round-not-a-subject-and-skip-s736`), and `kb/subject_decisions.py` lists it as refused today, so the
-   status counts do not drop; make the builder take it.
-2. **LACCD:** 41 codes still untitled; offer Sam the 87 schedule titles that differ from the catalog as one list.
-3. **The schedule-tool sweep beyond LACCD** (`r-schedule-tool-first-for-subject-titles-sam-2026-11-26`): none read.
-   The colleges with the most untitled codes: Allan Hancock 77, Glendale 57, Santa Barbara City 51, Santiago Canyon 39,
-   Santa Monica 36, Canyons 34, Cerro Coso 32, Chabot 32. Name each college's system in `data_sources` as it is found.
-4. **The Accounting re-point apply.** The dry run (#3867, `kb/_acct_repoint_dryrun.py`, `kb/acct_repoint_out/2026-11-26/`):
+1. **LACCD:** 41 codes still untitled; offer Sam the 87 schedule titles that differ from the catalog as one list.
+2. **The schedule-tool sweep beyond LACCD** (`r-schedule-tool-first-for-subject-titles-sam-2026-11-26`): none read.
+   The colleges with the most untitled codes, after the 2026-11-27 parse bundle: Glendale 33, Santa Barbara City 28, Allan Hancock 24, North Orange Continuing Education 20, MiraCosta 20, Canyons 17, Santiago Canyon 17, Santa Monica 14, Marin 13, Victor Valley 13. (Fifteen of those are new real-code rows the fold opened where the target subject had no heading on file yet: Hancock APPREN, COM SC, GRAPHI, HO EC, INT ST, LDRSHP, OA, PHY SC, POL SC, SOC SC, WLD T; Glendale AL ST, RET S, T ART; LA Southwest Q CNTRL.) Name each college's system in `data_sources` as it is found.
+3. **The Accounting re-point apply.** The dry run (#3867, `kb/_acct_repoint_dryrun.py`, `kb/acct_repoint_out/2026-11-26/`):
    372 M-IDs and 907 courses move to ACCT under Accounting, 1 held, 29 families flagged. **BLOCKED:** Sam's four
    `_SUBJ_DISC::ACC`, `ACCT`, `ACCTG` and `ACTG` saves of 2026-11-24 12:46 (a 1,311-row batch) file them under
    Business; they need refiling under Accounting, or his say-so over them (a person's save is terminal). Copper
    Mountain's ACC is ACCESS (disability services), keyed by college and left out.
-5. **The 35 held and the 50 under 90** (the stray-codes paragraph above): Sam's picks.
+4. **The 35 held and the 50 under 90** (the stray-codes paragraph above): Sam's picks.
 
 **NEXT (S719), in order:** (1) re-point the folded local codes (the Accounting codes' dry run is #3867, item 4 above), a re-mint under
 [`docs/coursecontrolnumber_remint.md`](../../coursecontrolnumber_remint.md), dry run first: ACCT, ACCTG, ACC and ACTG

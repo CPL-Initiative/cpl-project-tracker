@@ -42,6 +42,7 @@ from subject_title_case import KEPT, SMALL, title_case  # noqa: E402
 from _build_noncredit_subject_titles import MQ as NC_MQ  # noqa: E402
 import subject_decisions as SD  # noqa: E402
 import subject_code_history as SCH  # noqa: E402
+import coci_subject_folds as CSF  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SUBJECTS = os.path.join("kb", "hand_filed_catalogs", "subjects")
@@ -376,6 +377,10 @@ def build(root=ROOT):
                 if rec.get("title_key"):
                     decision["title_key"], decision["title_moved"] = rec["title_key"], rec["title_moved"]
                     applied.add(rec["title_key"])
+                if rec.get("not_a_subject") and not took_title:
+                    state_ = "not_a_subject"
+            if state_ != "person" and CSF.is_not_a_subject(c["slug"], k):
+                state_ = "not_a_subject"
             addr = (h or {}).get("address")
             page_codes = sorted(codes_at.get(addr) or ()) if addr and not e and addr in read_urls else None
             out.append([k, name, e["n"] if e else 0, st.get(k, 0), side, common, disc, state_, source,

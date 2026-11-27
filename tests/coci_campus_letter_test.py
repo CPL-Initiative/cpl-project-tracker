@@ -77,4 +77,10 @@ check(("cerro_coso_community", "PHED", "C103") in crs.course or crs.refused, "a 
 if fails:
     print("FAIL\n  " + "\n  ".join(fails))
     sys.exit(1)
-print("ok: campus letter fold (%d Cerro Coso, %d Porterville control numbers)" % (len(by[CC]), len(by[PC])))
+print("ok: campus letter fold (%d Cerro Coso, %d Porterville control numbers)" % (len(by[CC]), len(by[PC])), flush=True)
+
+# The 2026-11-27 subject-parse folds (kb/coci_subject_folds.py) have their own test. Run it from here so
+# CI covers it: the cobi-cto token cannot add a workflow step (no `workflow` scope).
+r = __import__("subprocess").run([sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)), "coci_subject_folds_test.py")])
+if r.returncode:
+    sys.exit(r.returncode)

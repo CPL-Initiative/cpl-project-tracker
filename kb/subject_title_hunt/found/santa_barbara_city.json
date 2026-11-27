@@ -703,6 +703,168 @@
    "url": "https://catalog.sbcc.edu/course-descriptions/zool/",
    "where": "catalog",
    "method": "subject heading"
+  },
+  {
+   "code": "ACTV",
+   "title": "Accounting",
+   "url": "https://catalog.sbcc.edu/sel/career-skills",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85"
+  },
+  {
+   "code": "AHV",
+   "title": "Allied Health",
+   "url": "https://catalog.sbcc.edu/sel/career-skills",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85"
+  },
+  {
+   "code": "CAV",
+   "title": "Culinary Arts",
+   "url": "https://catalog.sbcc.edu/sel/career-skills",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85"
+  },
+  {
+   "code": "CISV",
+   "title": "Computer Information Systems",
+   "url": "https://catalog.sbcc.edu/sel/career-skills",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85"
+  },
+  {
+   "code": "CMPW",
+   "title": "Computer Applications",
+   "url": "https://catalog.sbcc.edu/sel/career-skills",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85"
+  },
+  {
+   "code": "CNEW",
+   "title": "Computer Network",
+   "url": "https://catalog.sbcc.edu/sel/career-skills",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85"
+  },
+  {
+   "code": "COMW",
+   "title": "Communication",
+   "url": "https://catalog.sbcc.edu/sel/career-skills",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85"
+  },
+  {
+   "code": "CTV",
+   "title": "Construction Technology",
+   "url": "https://catalog.sbcc.edu/sel/career-skills",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85"
+  },
+  {
+   "code": "EHV",
+   "title": "Environmental Horticulture",
+   "url": "https://catalog.sbcc.edu/sel/career-skills",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85"
+  },
+  {
+   "code": "EMTV",
+   "title": "Emergency Medical Tech",
+   "url": "https://catalog.sbcc.edu/sel/career-skills",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85"
+  },
+  {
+   "code": "GDPW",
+   "title": "Graphic Design",
+   "url": "https://catalog.sbcc.edu/sel/career-skills",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85"
+  },
+  {
+   "code": "IBW",
+   "title": "International Business",
+   "url": "https://catalog.sbcc.edu/sel/career-skills",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85"
+  },
+  {
+   "code": "LIBW",
+   "title": "Library",
+   "url": "https://catalog.sbcc.edu/sel/career-skills",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85"
+  },
+  {
+   "code": "MATW",
+   "title": "Multimedia",
+   "url": "https://catalog.sbcc.edu/sel/career-skills",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85"
+  },
+  {
+   "code": "MKTW",
+   "title": "Marketing",
+   "url": "https://catalog.sbcc.edu/sel/career-skills",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85"
+  },
+  {
+   "code": "PDW",
+   "title": "Personal Development",
+   "url": "https://catalog.sbcc.edu/sel/career-skills",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85"
+  },
+  {
+   "code": "PHOW",
+   "title": "Photography",
+   "url": "https://catalog.sbcc.edu/sel/career-skills",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85"
+  },
+  {
+   "code": "PROW",
+   "title": "Professional Development",
+   "url": "https://catalog.sbcc.edu/sel/career-skills",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85"
   }
  ],
  "not_listed": {
