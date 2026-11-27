@@ -99,3 +99,10 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   carry `units_within_printed_range`. Records collected: 2.
 - 07:07Z: #3900 merged (`2d0fa074`, confirmed on `origin/main`; `test` green on `3b59dacd`); `main` green again.
   #3898 updated from `main` for its `test`.
+- 07:12Z: `keys` report 3 (head `8aaefff6`): plans s741k2 (Copper Mountain 4: 14737 and 20094 `total_differs`, 45594
+  `units_within_printed_range`, 14710 `lists_not_closed` on p.78's own sentence, reversing S740's hold) and s741k3
+  (San Bernardino Valley 35833 `units_within_printed_range`, 22784 `waived_course_counted`; 17829, 04873, 04894, 22821,
+  39483 held), and a Copper Mountain reconcile step (`degree_total_minimum` from the catalog's "MINIMUM DEGREE UNITS"
+  lines: 43854 and 14751 turn passing, none fails; free reconcile 45957316339). All three to one Sonnet reader.
+  Pitfall: the conductor's apply worktree had checked out the worker's branch name, so its pushes moved the worker's
+  local ref; the conductor now applies from a detached HEAD and pushes `HEAD:<branch>`.
