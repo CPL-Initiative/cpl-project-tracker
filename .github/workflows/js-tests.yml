@@ -1183,6 +1183,11 @@ jobs:
       - name: Cheap piles S740 at Los Angeles Trade-Technical (the reconciled record, a named gap, the plan)
         if: matrix.shard == 6
         run: python3 tests/program_piles_s740_lattc_test.py
+      # S741 at Santa Ana (s741k1): the two records s740r2 held for the units within-range kind (31859, 21789), filed
+      # by key, each read against its own catalog entry.
+      - name: Cheap piles S741 at Santa Ana (the units within-range kind by key, the plan)
+        if: matrix.shard == 1
+        run: python3 tests/program_piles_s741_santa_ana_test.py
       # Discontinued programs (S680; Sam, 2026-11-17 on #3480): a program's own catalog section marks it,
       # or a prior year prints it and this year does not; flagged out of the gap, never deleted. Pure stdlib.
       - name: Discontinued programs (own-section mark, out of the gap, the file is current)

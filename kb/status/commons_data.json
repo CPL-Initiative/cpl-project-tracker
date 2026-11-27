@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-27T01:14:04Z",
+ "written_at": "2026-11-27T06:47:30Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,8 +168,8 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17587,
-  "gap": 4748,
+  "passing": 17589,
+  "gap": 4746,
   "with_gap": 118,
   "cost_usd": 1341.45,
   "passed_at_read": 16503,
@@ -190,8 +190,8 @@
  "census_check": {
   "universe": 22335,
   "passing": 16945,
-  "gap": 4748,
-  "collected_with_gaps": 642,
+  "gap": 4746,
+  "collected_with_gaps": 644,
   "discontinued": 0
  },
  "census_live": {
@@ -10704,12 +10704,12 @@
    "harvested": true,
    "slug": "santa_ana",
    "programs": 370,
-   "passing": 342,
-   "gap": 28,
+   "passing": 344,
+   "gap": 26,
    "causes": {
     "no_closed_list": 11,
     "page_not_found": 12,
-    "unknown_without_live": 5
+    "unknown_without_live": 3
    },
    "census_causes": {
     "no_closed_list": 10,
@@ -10766,7 +10766,7 @@
    "levers": {
     "reader_page_search": 12,
     "program_course_file_check": 11,
-    "reconcile_steps": 4,
+    "reconcile_steps": 2,
     "ge_units_steps": 1
    },
    "collection": {
