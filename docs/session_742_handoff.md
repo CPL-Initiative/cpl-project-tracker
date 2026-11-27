@@ -190,3 +190,7 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   Ventura's paid read on `claude/s741-readers` (sources_from 45955854213, seven `only=`, force 06948 and 08253, about
   $0.70) and Norco's on a sibling, `claude/s741-readers-norco` (cut at the reviewed `f45aba82`; sources_from
   45961548900, twelve `only=` and `force=`, about $1.20).
+- 08:12Z: American River's reread 45963855075 posted 39731 and 39732; live at 08:18Z, both equal at 45962123468
+  (passing). Records collected: 25. 08:11Z: San Bernardino Valley 22821's read 45960735042 finished on the sibling;
+  08:18Z, its keep-better live read (no person's check, 221 rows) handed to `keys`. 08:17Z to 08:18Z: Ventura's read
+  45964322406 and Norco's 45964327019 finished; their results go to `readers`.
