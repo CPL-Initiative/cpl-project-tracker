@@ -1216,7 +1216,8 @@ jobs:
         if: matrix.shard == 5
         run: python3 tests/program_reconcile_s741_cuyamaca_test.py
       # S741: keep-better's page_is_own reads a word and its plural as one word (Cuyamaca 18637: the title's 'Science',
-      # the page's 'Sciences'), with its statewide self-recall (44 answers move, all right, none lost).
+      # the page's 'Sciences'), with its statewide self-recall: 37 own-page answers move and none is lost; handed
+      # every sibling's page, the fold alone admits two programs, each on a page whose address prints its own title.
       - name: Keep-better's plural fold (S741, page_is_own and its statewide self-recall)
         if: matrix.shard == 1
         run: python3 tests/program_keep_better_plural_s741_test.py

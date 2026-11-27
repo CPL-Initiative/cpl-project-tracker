@@ -236,8 +236,15 @@ def page_is_own(rec: dict, source: dict | None = None, note: dict | None = None,
     that placed 92 of its 92 listed courses under the generic heading "Requirements" was set aside (S727). The fold
     is a second reading, taken only where the exact one shows nothing: an address counts only while the capture's
     own entry names that page for the program (a sister college's page on a shared host prints the same last
-    segment), and never where another program at the college has a title that differs from this one by a plural
-    alone (plural_twins: the fold could not say whose page it is). The statewide self-recall:
+    segment), and never where another program at the college has a title that holds every word of this one's only
+    once a plural is folded (plural_longer, which takes in plural_twins: "Art" beside "Studio Arts", "Art History"
+    beside "History" never, but "Athletics" beside "Athletic Trainer Aide"; the fold could not say whose page it
+    is). A page title or h1 is folded with its award phrase set aside (AWARD_PHRASE), so "Art" is never read in
+    "Associate in Arts" nor "Sciences" in "Associate of Science", and it names the program only where it prints
+    nothing beside the title's words but an award's words or a program code (fold_names): "Social Science" is not
+    named by "Liberal Arts: Social and Behavioral Sciences Emphasis" (S742, the second reader's finding: handed
+    every sibling's page, the first fold admitted 386 programs on a page that was another's). The exact reading
+    above it is as it was. The statewide self-recall, own pages and siblings' pages both:
     tests/program_keep_better_plural_s741_test.py."""
     import urllib.parse
     import _program_requirements_college as C
@@ -280,8 +287,8 @@ def page_is_own(rec: dict, source: dict | None = None, note: dict | None = None,
     if not src or not url or _page(src.get("url")) != _page(url):
         return None
     # The plural fold (S741), a second reading: only on the page the capture itself names for the program (checked
-    # just above), and never where a sibling's title differs from this one by a plural alone.
-    fold = PLURAL_FOLD_ON and not plural_twins(rec, siblings)
+    # just above), and never where a sibling's title holds this one's words only once a plural is folded (S742).
+    fold = PLURAL_FOLD_ON and not plural_longer(rec, siblings)
     if fold and named and singular(page_words(named)) == singular(want) and award_ok(re.sub(r"[-_]+", " ", bare)) \
             and award_named:
         return "the address's last segment %r names the program, a plural aside" % slug[:80]
@@ -299,7 +306,7 @@ def page_is_own(rec: dict, source: dict | None = None, note: dict | None = None,
             continue
         if text and want <= words and ("2.0" in want) == ("2.0" in words):
             return "the capture's %s %r names the program" % ("page title" if key == "title" else key, text[:80])
-        if fold and text and singular(want) <= singular(words) and ("2.0" in want) == ("2.0" in words):
+        if fold and text and fold_names(want, text) and ("2.0" in want) == ("2.0" in words):
             return "the capture's %s %r names the program, a plural aside" % (
                 "page title" if key == "title" else key, text[:80])
     return None
@@ -323,6 +330,43 @@ def plural_twins(rec: dict, siblings: list | None) -> list[str]:
     return sorted(str(x.get("control_number")) for x in siblings or []
                   if str(x.get("control_number")) != str(rec.get("control_number"))
                   and page_words(x.get("title")) != want and singular(page_words(x.get("title"))) == singular(want))
+
+
+# S742: the award a page title or h1 prints beside the program's name. The fold reads a title's words in what is
+# left, so the award's own "Arts" and "Science" never stand in for a title word.
+AWARD_PHRASE = re.compile(r"associates?\s+(?:in|of)\s+(?:arts?|sciences?)|\b(?:a\.?a\.?|a\.?s\.?)\b", re.I)
+
+
+# The words a page title or h1 may print beside a folded title: an award's own words (the pilot's STOP words, which
+# page_words drops, already take in certificate, degree, achievement and program).
+FOLD_BESIDE = frozenset({"transfer", "completion", "competency", "proficiency", "accomplishment", "associate",
+                         "major", "noncredit"})
+
+
+def fold_names(want: set[str], text: str) -> bool:
+    """Whether a page title or h1 names the title's words (want, from page_words) a plural aside: with its award
+    phrase set aside, the text prints every title word, and beside them only an award's words (FOLD_BESIDE) or a
+    program code (a token carrying a digit: "CE1027", "N0470", "5691"). The exact reading asks only that the text
+    hold the title's words; the fold, which loosens each word, asks that it hold nothing else."""
+    words = singular(page_words(AWARD_PHRASE.sub(" ", text or "")))
+    need = singular(want)
+    return need <= words and all(w in FOLD_BESIDE or any(c.isdigit() for c in w) for w in words - need)
+
+
+def plural_longer(rec: dict, siblings: list | None) -> list[str]:
+    """The college's other programs whose title holds every word of this one's once a plural is folded and not as
+    written, whatever their award: "Studio Arts" beside "Art", "Athletic Trainer Aide I" beside "Athletics", and
+    every plural twin (plural_twins). With one, a folded page title, h1 or address could be the longer title's. A
+    title that holds this one's words as written ("Art History" beside "Art") is the exact reading's question,
+    which the fold leaves as it was."""
+    want = page_words(rec.get("title"))
+    out = []
+    for x in siblings or []:
+        theirs = page_words(x.get("title"))
+        if str(x.get("control_number")) != str(rec.get("control_number")) and theirs != want \
+                and singular(want) <= singular(theirs) and not want <= theirs:
+            out.append(str(x.get("control_number")))
+    return sorted(out)
 
 
 # A catalog term or year after the program's words: -2026, -fall-2026, -2026fa, -2026v2, -2026-27, -intersession.
