@@ -71,38 +71,40 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    58.0,
-    67.0
+    24.0,
+    24.0
    ],
    "stated": [
-    60.0,
-    60.0
+    24.0,
+    24.0
    ],
-   "against": "degree",
-   "ge": [
-    34.0,
-    43.0
-   ],
-   "why": [
-    "the blocks and general education come to 58.0-67.0, past the 60.0-60.0 the catalog prints for the degree"
-   ],
-   "fill": null,
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     24.0,
-     24.0
+     58.0,
+     67.0
     ],
     "stated": [
-     24.0,
-     24.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     34.0,
+     43.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     0.0,
+     2.0
+    ]
    }
   },
   "repeated": {
@@ -127,7 +129,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -153,7 +155,8 @@
    },
    "electives_fill_degree": true,
    "outcomes": [],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -236,7 +239,7 @@
    "The A.A. section prints no program description and no outcomes of its own."
   ]
  },
- "extracted_run": "45855512160",
+ "extracted_run": 45957316339,
  "catalog_year": "2026-2027",
  "source_sha": "ae3d7e08afd8ded5",
  "source_codes": [
@@ -245,5 +248,14 @@
   "HISTC1002",
   "POLSC1000"
  ],
- "source_coverage": 1.0
+ "source_coverage": 1.0,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "MINIMUM TRANSFERABLE UNITS"
+  }
+ ],
+ "read_run": "45855512160"
 }
