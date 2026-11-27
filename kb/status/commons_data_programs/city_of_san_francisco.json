@@ -1,4 +1,4 @@
-{"schema":1,"college":"City College of San Francisco","slug":"city_of_san_francisco","basis":"live","census_at":"2026-11-27 01:12Z","correction_rules":true,"programs":[
+{"schema":1,"college":"City College of San Francisco","slug":"city_of_san_francisco","basis":"live","census_at":"2026-11-27 11:03Z","correction_rules":true,"programs":[
 {"cn":"41315","title":"Asian American Studies","award":"A.A. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=355"},
 {"cn":"32079","title":"Mathematics","award":"A.S. T Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=341"},
 {"cn":"24451","title":"Advanced Word Processing","award":null,"cause":"no_closed_list","lever":"program_course_file_refresh","url":null},

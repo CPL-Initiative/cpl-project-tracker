@@ -1,0 +1,17 @@
+{
+ "name": "program_requirement_records_display_2026-11-13_a143061a2ae2.applied_45951236087_glendale-community-college.json",
+ "kind": "display_applied",
+ "bucket": "cpl-receipts",
+ "object": "display/applied/program_requirement_records_display_2026-11-13_a143061a2ae2.applied_45951236087_glendale-community-college.json.gz",
+ "build": "a143061a2ae2",
+ "built": "2026-11-13",
+ "bytes": 2165,
+ "sha256": "1c8d4b6f60cb3a9ea52a18ed0ff4a6fa9f4e1e6816c0d445ad10e9ddac0989b0",
+ "rows": 242,
+ "stored_at": "2026-11-27T06:23:37Z",
+ "run": "45951236087",
+ "gzip": true,
+ "repo_sha256": "1217fd17f2db4ed53c365d463fc9d6b34b069e21229ddfbbc49244172bf931cf",
+ "repo_bytes": 23913,
+ "repo_blob": "5e2d636f8f2b20ba382bb65c9f3b9fe3b69ae181"
+}

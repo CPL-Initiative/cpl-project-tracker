@@ -106,7 +106,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "noted_unit_floor",
+    "label": "The catalog requires a variable-unit course at a minimum above the units printed beside it; with that minimum the courses add to the printed total.",
+    "words": "CIS099 (Occupational Work Experience, 1-4 units) is matched to closed-list CIS 99 (Work Experience); the description says the program requires 2 units of occupational work experience, which reconciles the course units (4+4+2+4+3+3+2) with the stated 22-unit total."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 70,
+   "course_list_match": 83,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

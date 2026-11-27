@@ -434,6 +434,12 @@ OPTION_PARTS_HELD = {
     ("Foothill College", "36328"): "none", ("Napa Valley College", "36251"): "none",
     ("Evergreen Valley College", "45025"): "none", ("Santa Monica College", "03272"): "none",
     ("City College of San Francisco", "33208"): "none", ("City College of San Francisco", "39727"): "none",
+    # S741: options numbered in Roman numerals of two or more letters (OPTION_PART). Each answer is the record's own
+    # reader's: Cosumnes River 33542's note, 'Option II consists of two blocks ... The catalog prints OPTION II -
+    # Native Spanish Speaker Units: 16 for the two together' (plan s739l read it so and named the gap
+    # option_lists_read_apart); Imperial Valley 01873's note, 'the student completes either Option I - Intercollegiate
+    # Athletics (12.0-14.0 units; three blocks) or Option II - Exercise Science (12.0 units; two blocks)'.
+    ("Cosumnes River College", "33542"): "passes", ("Imperial Valley College", "01873"): "passes",
 }
 
 

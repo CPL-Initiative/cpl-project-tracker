@@ -76,8 +76,13 @@ check(W.shared_with("18655") and W.own(g, e) is None, "18655: with another headi
 check(W.hand["18625"] == M.S739.HAND["18625"] and not W.load("18625")["score"].get("gaps"),
       "18625: s739b's reason, and no gap")
 f = W.load("32162")
+# s740i held 32162 with no gap. s741a files it since (kb/_program_piles_s741_shasta.py: the guard cleared on the
+# page's own lines), so the committed record carries no gap, or that plan's kind alone (pinned to its receipt by
+# tests/program_piles_s741_shasta_test.py).
 check(W.hand["32162"] == B7.SHASTA_32162 and NG.units_within_printed_range(f) is not None
-      and not f["score"].get("gaps") and W.own(f, {"gap": "heading_not_in_text", "own_list": True}) is None,
-      "32162: the kind is true of its figures, its section is not shown its own, and it carries no gap")
+      and [g.get("gap") for g in f["score"].get("gaps") or []] in ([], [B7.WITHIN])
+      and W.own(f, {"gap": "heading_not_in_text", "own_list": True}) is None,
+      "32162: the kind is true of its figures, S739's three forms do not show its section its own, and it carries "
+      "no gap, or s741a's kind alone")
 
 sys.exit(t.done())

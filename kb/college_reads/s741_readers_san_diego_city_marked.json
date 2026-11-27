@@ -1,0 +1,46 @@
+{
+ "_readme": "S741 (worker readers; lane 1, San Diego City 22367). Rule B of the reader's page checks typed Cosmetology's own entry as course descriptions, because its Courses tab prints four descriptions (read 45836824944). The change types an entry without a child page that is descriptions on its own, where its other pages print the listed courses (kb/_reader_page_checks.py entry_less_descriptions). The rules read only programs whose filed record places none: four at San Diego City (22333, 22352, 22367, 38732). This reads the four entries their filed sources name, as the capture reads them, and prints rule B's type of each entry whole and page by page, so the self-recall counts what the change admits on held text. About 28 loads, no model call, nothing written.",
+ "college": "San Diego City College",
+ "questions": {
+  "own_requirements": "Is the entry the program's own, do its pages other than a descriptions tab print the program's required courses and total, and how does rule B type the entry whole and page by page?"
+ },
+ "keywords": [
+  "COURSES REQUIRED[^\\n]{0,60}",
+  "Total Units[^\\n]{0,30}",
+  "Grading:",
+  "Prerequisite[^\\n]{0,60}"
+ ],
+ "pages": [
+  {
+   "answers": ["own_requirements"],
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15788",
+   "cq_view": true,
+   "cq_catalog": 69,
+   "why": "22367 Cosmetology, Certificate of Achievement"
+  },
+  {
+   "answers": ["own_requirements"],
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15760",
+   "cq_view": true,
+   "cq_catalog": 69,
+   "why": "38732 Certified Public Accountant (CPA) Preparatory Program, read from the entry headed Certificate of Performance"
+  },
+  {
+   "answers": ["own_requirements"],
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15821",
+   "cq_view": true,
+   "cq_catalog": 69,
+   "why": "22352 Honeywell Tool and Die Apprenticeship, read from the Manufacturing Fundamentals entry"
+  },
+  {
+   "answers": ["own_requirements"],
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15651",
+   "cq_view": true,
+   "cq_catalog": 69,
+   "why": "22333 Communications Technician Apprenticeship, read from the Electronics certificate's entry (S739's named gap)"
+  }
+ ],
+ "outside_hosts": {
+  "curriqunet.com": "San Diego City College (sdccd.curriqunet.com): the college's own 2026-2027 catalog, served on its catalog vendor's domain"
+ }
+}

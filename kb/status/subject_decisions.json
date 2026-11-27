@@ -3,10 +3,10 @@
  "_rule": "A person's save wins over the catalog, the subject map and any recommendation (r-subject-save-path-kb-curation-sam-2026-11-22). Precedence for a college's code and band: its decision, then a statewide filing, then the subject map, then a recommendation. A credit decision reads the code's credit courses only; whole reads a code COCI lists no course under; nc:<slug> reads the code's noncredit courses in that COCI noncredit category only.",
  "statewide_read": true,
  "totals": {
-  "decisions": 49,
+  "decisions": 52,
   "by_band": {
-   "credit": 41,
-   "nc:courses-for-older-adults": 1,
+   "credit": 43,
+   "nc:courses-for-older-adults": 2,
    "nc:courses-for-persons-with-substantial-disabilities": 1,
    "nc:elementary-and-secondary-basic-skills": 1,
    "nc:english-as-a-second-language-esl": 1,
@@ -15,7 +15,7 @@
    "nc:short-term-vocational": 1,
    "whole": 1
   },
-  "colleges": 9,
+  "colleges": 12,
   "statewide": 1320,
   "courses": 5,
   "unreadable": 0
@@ -402,6 +402,26 @@
    "at": "2026-11-22T04:45:03."
   },
   {
+   "key": "SUBJ:cerro_coso_community|ADMJC|credit",
+   "college": "cerro_coso_community",
+   "code": "ADMJC",
+   "band": "credit",
+   "local_title": "Administration of Justice",
+   "common_code": null,
+   "who": "a reviewer",
+   "at": "2026-11-26T16:25:48."
+  },
+  {
+   "key": "SUBJ:chabot|PEACBTC|credit",
+   "college": "chabot",
+   "code": "PEACBTC",
+   "band": "credit",
+   "local_title": "Physical Education Activity",
+   "common_code": null,
+   "who": "a reviewer",
+   "at": "2026-11-26T16:26:30."
+  },
+  {
    "key": "SUBJ:clovis_community|ANTHRO|credit",
    "college": "clovis_community",
    "code": "ANTHRO",
@@ -470,6 +490,16 @@
    "common_code": "ESOL",
    "who": "a reviewer",
    "at": "2026-11-23T08:57:51."
+  },
+  {
+   "key": "SUBJ:los_angeles_pierce|OLD|nc:courses-for-older-adults",
+   "college": "los_angeles_pierce",
+   "code": "OLD",
+   "band": "nc:courses-for-older-adults",
+   "local_title": "Older Adults",
+   "common_code": null,
+   "who": "a reviewer",
+   "at": "2026-11-26T17:06:54."
   },
   {
    "key": "SUBJ:los_angeles_southwest|POL|credit",

@@ -977,6 +977,42 @@ def main():
             shutil.rmtree(tmp, ignore_errors=True)
     check(K.compare(PASS, PASS)[0] == "reread", "a tie keeps the re-read")
     check(K.compare(None, score())[0] == "reread", "no filed score loses")
+    # S741: a record incomplete with its major equal to the printed major stands above a record that reads unequal
+    # with a major that does not equal, either way round. Norco 32830: the filed record's major read 15 of 18; the
+    # re-read's reads 18 = 18 and its degree lacks the Cal-GETC units. Every other pair keeps the plain order.
+    def with_major(arith, major):
+        sc = score(False, True, 10, 10, arith)
+        if major:
+            sc["arithmetic"]["major"] = {"status": major}
+        return sc
+
+    major_equal = with_major("incomplete", "equal")
+    for unequal, label in ((with_major("unequal", "unequal"), "whose major does not equal"),
+                           (with_major("unequal", None), "that carries no major")):
+        check(K.compare(unequal, major_equal)[0] == "reread"
+              and "incomplete_major_equal" in K.compare(unequal, major_equal)[1],
+              "a re-read incomplete with its major equal is kept over a filed unequal record %s" % label)
+        check(K.compare(major_equal, unequal)[0] == "filed",
+              "a filed record incomplete with its major equal is kept over an unequal re-read %s" % label)
+    # The second reader's pair (S741): a filed record unequal at the degree with its major already equal holds the
+    # general education units; a re-read that lost them reads incomplete with its major equal, and must not win
+    # (Butte 07258; 79 filed records at 27 colleges read unequal with the major equal).
+    holds_ge = with_major("unequal", "equal")
+    check(K.compare(holds_ge, major_equal)[0] == "filed"
+          and K.compare(holds_ge, major_equal)[1] == "the filed arithmetic reads unequal, the re-read's incomplete",
+          "a filed unequal record whose own major equals stays above a re-read incomplete with its major equal")
+    check(K.compare(major_equal, holds_ge)[0] == "reread",
+          "and the other way round the unequal re-read whose major equals is kept, as before")
+    plain = with_major("incomplete", None)
+    check(K.compare(with_major("unequal", "unequal"), plain)[0] == "filed"
+          and K.compare(with_major("unequal", "unequal"), with_major("incomplete", "unequal"))[0] == "filed",
+          "a plain incomplete, or one whose major does not equal, stays below unequal, as before")
+    check(K.compare(score(False, True, 10, 10, "equal"), major_equal)[0] == "filed"
+          and K.compare(score(False, True, 10, 10, "unstated", arith_pass=True), major_equal)[0] == "filed"
+          and K.compare(score(False, True, 10, 10, "unstated", arith_pass=False), major_equal)[0] == "filed",
+          "equal and unstated, passing or not, stand above it as they stand above any incomplete")
+    check(K.arith_key(major_equal) == "incomplete" and K.compare(major_equal, with_major("incomplete", None))[0] == "reread",
+          "alone, or beside another incomplete, it is a plain incomplete (a tie keeps the re-read)")
     print("%s: %d failure(s)" % ("FAIL" if FAILS else "ok", len(FAILS)))
     return 1 if FAILS else 0
 

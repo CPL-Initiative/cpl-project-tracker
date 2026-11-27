@@ -99,9 +99,16 @@ check(W.load("42967")["score"]["arithmetic"]["computed"] == [29.0, 29.0] and "29
 
 for cn in ("30587", "32578"):
     check(B.scorer_passes(W.load(cn)), "%s passes today's scorer on its own record" % cn)
+# Either state (S741): the record as S739 held it, its note saying the tab was not in the text; or S741's paid read
+# 45964322406, whose capture's text holds the tab, re-read it and it passes
+# (p-older-pile-tests-pin-runs-later-plans-move-s739).
 for cn in ("06948", "08253", "35654", "37415", "44994", "44995"):
-    check(any("requirements tab" in n.lower() and (" not " in n or " no " in n.lower()) for n in B.notes(W.load(cn))),
-          "%s: its note says the requirements tab is not in the text" % cn)
+    f = W.load(cn)
+    held_as_filed = any("requirements tab" in n.lower() and (" not " in n or " no " in n.lower()) for n in B.notes(f))
+    reread_s741 = str(f.get("extracted_run")) == "45964322406" and B.scorer_passes(f)
+    check(held_as_filed or reread_s741,
+          "%s: its note says the requirements tab is not in the text, or S741's read 45964322406 re-read it with "
+          "the tab and it passes" % cn)
 f = W.load("45348")
 check(f["score"]["arithmetic"]["major"]["status"] == "equal"
       and any("Required Upper Division General Education Units 10" in n for n in B.notes(f)),

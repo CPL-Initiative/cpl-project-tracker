@@ -1,0 +1,48 @@
+{
+ "_readme": "S741 lane 1 (keys): San Bernardino Valley College's four held records whose own page no free read has printed yet, each read as the capture reads the page (capture_view), free, no model call, nothing written: Geographic Information Systems certificate 35833 (its 19-22 sits inside the printed 18.5-22: which unit figure does the page print beside GIS 098?), Music A.A. 04894 (the applied pair 'MUS 141X2 & MUS 241X2' and its one figure), Environmental Science A.S. 17829 (the printed 50-63 against lists that add to 50-60) and Automotive Wheel Alignment and Brakes certificate 22784 (the placement waiver over TECALC 087 and 'Total Units 16-20').",
+ "college": "San Bernardino Valley College",
+ "questions": {
+  "printed_total": "Which total does the page print, which units does it print beside each course and list, and what do they add to?"
+ },
+ "keywords": [
+  "[Tt]otal[^\\n]{0,40}[Uu]nits?[^\\n]{0,20}",
+  "GIS\\s+098[^\\n]{0,80}",
+  "MUS\\s+[12]41X2[^\\n]{0,80}",
+  "TECALC\\s+087[^\\n]{0,80}",
+  "PHYSIC\\s+\\d+[^\\n]{0,80}"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "printed_total"
+   ],
+   "why": "35833",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/geographic-information-systems-gis/geographic-information-systems-certificate-achievement/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "printed_total"
+   ],
+   "why": "04894",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/music/music-aa-degree/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "printed_total"
+   ],
+   "why": "17829",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/environmental-science/environmental-science-as-degree/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "printed_total"
+   ],
+   "why": "22784",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-technology/wheel-alignment-brakes-certificate-achievement/",
+   "capture_view": true
+  }
+ ]
+}

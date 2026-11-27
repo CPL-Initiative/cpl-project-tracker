@@ -1,0 +1,27 @@
+{
+ "_readme": "S741, lane 2's cheap piles (2026-11-27), second read. The first read (45953358884, pp.209-212) shows PDF p.211, which 39731 (Level I) and 39732 (Level II) were both read from, is the tail of the Refrigeration Service Technician Apprenticeship Level IV Certificate (32 and 16 units, 'Total Units: 48'), and p.209 opens inside Level II's list. This read prints pp.205-208 whole, so a session can name each of Level I's and Level II's heading page, the words each opens on and where each ends, for a pdf_pages pin. One load of the hand-filed copy's address. No model call, nothing written.",
+ "college": "American River College",
+ "questions": {
+  "level_headings": "The page and words the Level I Certificate and the Level II Certificate open on, each one's lists and Total Units, and the words the next section opens on."
+ },
+ "keywords": [
+  "Refrigeration Service Technician[^\\n]{0,80}",
+  "Total Units[^\\n]{0,40}",
+  "A minimum of[^\\n]{0,80}",
+  "Level I+[^\\n]{0,60}"
+ ],
+ "pdf_span": [
+  205,
+  208
+ ],
+ "pdf_page_cap": 4,
+ "pages": [
+  {
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf",
+   "answers": [
+    "level_headings"
+   ],
+   "hand_filed": true
+  }
+ ]
+}

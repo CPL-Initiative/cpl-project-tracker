@@ -811,6 +811,128 @@ check("college_programs stamps tabs_with_prose only for a college whose entry se
       stamped and all(p.get("tabs_with_prose") is True for p in stamped)
       and unstamped and not any("tabs_with_prose" in p for p in unstamped))
 
+print("tabs_with_prose past the cap: the appended panels stay (S741, Ventura's Basic Law Enforcement Academy)")
+# Ventura 35654 and 37415: an Overview that names both courses at its top and again far down, longer than the cap,
+# and the REQUIREMENTS tab the opt-in appends after it.
+blea_courses = [{"code": "POSC V01"}, {"code": "POSC V01A"}]
+blea_body = ("Basic Law Enforcement Academy\nThe program consists of two courses: POSC V01A and POSC V01.\n"
+             + "The academy sets rules of conduct, dress and attendance for every recruit.\n" * 280
+             + "Recruits complete POSC V01A before POSC V01.\nContact the Criminal Justice Training Center.")
+blea_tab = ("Course List\nCode\tTitle\tUnits\nRequired Courses\nPOSC V01\tBasic Law Enforcement Academy\t32\n"
+            "POSC V01A\tOrientation for P.O.S.T. Regular and Modular Academy\t3.5\nTotal Units for the Certificate\t35.5")
+blea_got = {"body": blea_body, "content": blea_body + blea_tab,
+            "tabPanels": [{"label": "REQUIREMENTS", "id": "requirementstextcontainer", "text": blea_tab}]}
+blea_fb = P.find_codes(blea_body, blea_courses)
+blea_text, blea_found, blea_field = P.best_text(blea_got, blea_fb, {}, blea_courses, True)
+flat_window = P.text_window(blea_text, blea_found)
+check("the fixture is the failure: the opt-in appends the tab, and the capped window equals the Overview's alone",
+      blea_field == "innerText+tabs" and len(blea_body) > P.TEXT_CAP and "Total Units" not in flat_window
+      and flat_window == P.text_window(blea_body, blea_fb))
+kept_window = P.window_keeps_tabs(blea_text, blea_found)
+check("window_keeps_tabs keeps the whole tab within the cap, the visible text cut short under a line that says so",
+      len(kept_window) <= P.TEXT_CAP and kept_window.endswith(blea_tab) and P.VISIBLE_CUT in kept_window
+      and kept_window.startswith(flat_window[:P.VISIBLE_KEPT_MIN])
+      and kept_window.index(P.VISIBLE_CUT) >= P.VISIBLE_KEPT_MIN)
+check("where the cap cuts nothing the window is text_window's own, to the character",
+      P.window_keeps_tabs(text, _f) == P.text_window(text, _f)
+      and P.window_keeps_tabs(blea_body, blea_fb) == P.text_window(blea_body, blea_fb)
+      and P.window_keeps_tabs(blea_text, {}) == P.text_window(blea_text, {}))
+long_tab = dict(blea_got, tabPanels=[{"label": "REQUIREMENTS", "id": "r", "text": "Elective\t3\n" * 2000 + blea_tab}])
+lt_text, lt_found, _lf = P.best_text(long_tab, blea_fb, {}, blea_courses, True)
+lt_window = P.window_keeps_tabs(lt_text, lt_found)
+check("panels longer than the cap leave the visible text its least, and the window stays within the cap",
+      len(lt_window) == P.TEXT_CAP and lt_window.index(P.VISIBLE_CUT) == P.VISIBLE_KEPT_MIN
+      and lt_window[P.VISIBLE_KEPT_MIN + len(P.VISIBLE_CUT):].startswith("\n\n[Tab: REQUIREMENTS]"))
+# The second reader's finding (S741): Victor Valley 04967's shape, a short visible text ahead of panels longer than
+# the cap. The least kept, taken from fewer visible characters than it, ran into the panels and printed their
+# opening twice. With no more visible text than the least, the window stands as text_window cuts it.
+short_got = dict(blea_got, body="Criminal Justice\nPOSC V01A and POSC V01 open the program.\n" + "Overview. " * 90,
+                 tabPanels=[{"label": "REQUIREMENTS", "id": "r", "text": "Elective\t3\n" * 2000 + blea_tab}])
+short_fb = P.find_codes(short_got["body"], blea_courses)
+sh_text, sh_found, sh_field = P.best_text(short_got, short_fb, {}, blea_courses, True)
+sh_window = P.window_keeps_tabs(sh_text, sh_found)
+check("a visible text shorter than the least kept leaves the window as text_window cuts it, the panels printed once",
+      sh_field == "innerText+tabs" and len(short_got["body"]) < P.VISIBLE_KEPT_MIN and len(sh_text) > P.TEXT_CAP
+      and sh_window == P.text_window(sh_text, sh_found) and sh_window.count("[Tab: REQUIREMENTS]") == 1
+      and P.VISIBLE_CUT not in sh_window)
+for name, win, full in (("long visible text", kept_window, blea_text), ("long panels", lt_window, lt_text)):
+    head = win.split(P.VISIBLE_CUT)[0]
+    check("%s: the cut ends before the panels start, and nothing prints twice" % name,
+          P.VISIBLE_CUT in win and "[Tab: " not in head and full.startswith(head)
+          and win.count("[Tab: REQUIREMENTS]") == 1 and win.split(P.VISIBLE_CUT)[1] in full)
+blea_prog = {"control_number": "35654", "shape": "certificate", "title": "Basic Law Enforcement Academy",
+             "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units", "status": "Active",
+             "closed_list": blea_courses, "load_id": None}
+blea_best = {"url": "https://catalog.vcccd.edu/ventura/programs-courses/police-science/basic-law-enforcement-academy-coa/",
+             "got": blea_got, "field": blea_field, "label": None, "coverage": 1.0, "found": blea_found, "text": blea_text}
+opted_src = C.source_record("Ventura College", dict(blea_prog, tabs_with_prose=True), {}, blea_best, "sitemap_page")
+plain_src = C.source_record("Other College", blea_prog, {}, blea_best, "sitemap_page")
+check("source_record: an opted-in college's source keeps the tab; any other college's is filed as before",
+      "Total Units for the Certificate\t35.5" in opted_src["text"] and plain_src["text"] == flat_window
+      and opted_src["source"]["text_from"] == plain_src["source"]["text_from"] == "innerText+tabs")
+inner = dict(blea_best, field="innerText", text=blea_body, found=blea_fb)
+check("source_record: a page read from its visible text alone is windowed as before, opted in or not",
+      C.source_record("Ventura College", dict(blea_prog, tabs_with_prose=True), {}, inner, "sitemap_page")["text"]
+      == P.text_window(blea_body, blea_fb))
+
+print("the opt-in's self-recall on Ventura's filed pages (S741): what it moves, and that it moves nothing elsewhere")
+# Held answers: the two captures filed for Ventura, the same 297 pages read 35 minutes apart, the first without the
+# opt-in (capture.json, run 45847865286) and the second with it (capture_preview.json, the free capture
+# 45853684392). Each files a fingerprint of the text every program would send the model, so the two files say page
+# by page what the opt-in changed. Seven pages moved (their text is read from innerText+tabs where it was
+# innerText); on five the text changed, and on two, 35654 and 37415, it did not, the cap cutting the appended tab:
+# right on 5 and no gain on 2, which window_keeps_tabs() above closes. Three states pass: the two captures as
+# filed in S740; the same capture beside a later free capture read with window_keeps_tabs, where the text of all
+# seven differs from the capture's; or a later read filed over both, where each of the seven is read from
+# innerText+tabs.
+import json as _json  # noqa: E402
+VEN = os.path.join(ROOT, "kb", "program_requirements_college", "ventura")
+MOVED = ["35654", "37415", "40179", "44994", "44995", "46400", "46401"]
+SAME_TEXT = ["35654", "37415"]
+
+
+def _ven(name):
+    path = os.path.join(VEN, name)
+    if not os.path.exists(path):
+        return {}
+    with open(path, encoding="utf-8") as fh:
+        return _json.load(fh)
+
+
+ven_cap, ven_pre = _ven("capture.json"), _ven("capture_preview.json")
+if str(ven_cap.get("run")) == "45847865286" and str(ven_pre.get("run")) == "45853684392":
+    recorded = {n[:-5] for n in os.listdir(os.path.join(VEN, "records")) if n.endswith(".json")}
+    listed = (ven_pre.get("would_extract") or {}).get("list") or []
+    moved = sorted(e["control_number"] for e in listed if e["control_number"] in recorded)
+    check("with the opt-in, seven of Ventura's filed pages move, each at the address and coverage it had (%r)" % moved,
+          moved == MOVED and all(e["url"] == e["was_url"] and e["coverage"] == e["was_coverage"] for e in listed)
+          and (ven_cap.get("would_extract") or {}).get("programs") == 0)
+    fa, fb2 = ven_cap.get("fingerprints") or {}, ven_pre.get("fingerprints") or {}
+    changed = sorted(cn for cn in fa if cn in fb2 and fa[cn]["sha256"] != fb2[cn]["sha256"])
+    check("the text changed on five of the seven and on no other page of the 174 (%r)" % changed,
+          set(fa) == set(fb2) and len(fa) == 174 and changed == sorted(set(MOVED) - set(SAME_TEXT)))
+    check("35654 and 37415 moved with their text the same to the character: the cap cut the appended tab",
+          all(fa[cn]["sha256"] == fb2[cn]["sha256"] for cn in SAME_TEXT))
+elif str(ven_cap.get("run")) == "45847865286" and ven_pre.get("fingerprints"):
+    fa, fb2 = ven_cap.get("fingerprints") or {}, ven_pre.get("fingerprints") or {}
+    still = sorted(cn for cn in MOVED if (fa.get(cn) or {}).get("sha256") == (fb2.get(cn) or {"sha256": None})["sha256"])
+    check("a later free capture (run %s), read with window_keeps_tabs: the text of all seven moved pages differs "
+          "from the capture's, 35654 and 37415 among them (unchanged: %r)" % (ven_pre.get("run"), still),
+          not still and all(cn in fb2 for cn in MOVED))
+    if str(ven_pre.get("run")) == "45955854213":
+        changed = sorted(cn for cn in fa if cn in fb2 and fa[cn]["sha256"] != fb2[cn]["sha256"])
+        check("free capture 45955854213: the seven are the only pages of the 174 whose text differs (%r)" % changed,
+              set(fa) == set(fb2) and len(fa) == 174 and changed == MOVED)
+else:
+    ven_src = {s["control_number"]: s for s in _ven("sources.json")}
+    # A read with only= refiles the named programs' sources; a program it does not name keeps its source as filed
+    # (46400 and 46401, passing, after S741's read 45964322406), so those two may still read innerText.
+    named = [cn for cn in MOVED if cn not in ("46400", "46401")]
+    check("a later read is filed: each moved page it named is read from innerText+tabs",
+          all(((ven_src.get(cn) or {}).get("source") or {}).get("text_from") == "innerText+tabs" for cn in named)
+          and all(((ven_src.get(cn) or {}).get("source") or {}).get("text_from") in ("innerText", "innerText+tabs")
+                  for cn in ("46400", "46401")))
+
 print("West Valley's transfer degrees (S639; college page read 43138048261; the areas summed, Sam's count extended)")
 WV = "West Valley College"
 

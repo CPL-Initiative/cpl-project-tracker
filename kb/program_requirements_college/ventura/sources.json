@@ -3624,7 +3624,7 @@
    "url": "https://catalog.vcccd.edu/ventura/programs-courses/police-science/basic-law-enforcement-academy-coa/",
    "title": "Basic Law Enforcement Academy, Certificate of Achievement < Ventura College",
    "h1": "2026-2027\nAcademic Catalog",
-   "text_from": "innerText",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0,
@@ -3818,7 +3818,7 @@
    "url": "https://catalog.vcccd.edu/ventura/programs-courses/police-science/basic-law-enforcement-academy-as/",
    "title": "Basic Law Enforcement Academy, Associate in Science < Ventura College",
    "h1": "2026-2027\nAcademic Catalog",
-   "text_from": "innerText",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0,
@@ -4069,17 +4069,18 @@
    "url": "https://catalog.vcccd.edu/ventura/programs-courses/noncredit-programs-courses/basic-law-enforcement-academy-cocn-noncredit/",
    "title": "Basic Law Enforcement Academy (Noncredit), Certificate of Completion < Ventura College",
    "h1": "2026-2027\nAcademic Catalog",
-   "text_from": "innerText",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0,
     "section": "noncredit",
     "section_line": "basic law enforcement academy (noncredit), certificate of completion",
-    "section_fit": 0.8
+    "section_fit": 0.8,
+    "exact": 0
    }
   },
   "listed": 2,
-  "text_chars": 15873
+  "text_chars": 16658
  },
  {
   "control_number": "40249",
@@ -5636,7 +5637,7 @@
    "url": "https://catalog.vcccd.edu/ventura/programs-courses/english-multilingual-students/level-3-oral-communication-coa/",
    "title": "English for Multilingual Students—Level 3: Advanced Academic Oral Communication Skills < Ventura College",
    "h1": "2026-2027\nAcademic Catalog",
-   "text_from": "innerText",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0,
@@ -5647,7 +5648,7 @@
    }
   },
   "listed": 3,
-  "text_chars": 2895
+  "text_chars": 7525
  },
  {
   "control_number": "44995",
@@ -5665,7 +5666,7 @@
    "url": "https://catalog.vcccd.edu/ventura/programs-courses/english-multilingual-students/level-3-written-communication-coa/",
    "title": "English for Multilingual Students—Level 3: Advanced Academic Written Communication Skills < Ventura College",
    "h1": "2026-2027\nAcademic Catalog",
-   "text_from": "innerText",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0,
@@ -5676,7 +5677,7 @@
    }
   },
   "listed": 3,
-  "text_chars": 2827
+  "text_chars": 7403
  },
  {
   "control_number": "45003",

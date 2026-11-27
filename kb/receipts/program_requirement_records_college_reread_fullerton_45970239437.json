@@ -1,0 +1,365 @@
+{
+ "college": "Fullerton College",
+ "reread_run": "45970239437",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "45968499315",
+ "at": "2026-11-27T09:01:58Z",
+ "posted": 2,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "17369",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "18750",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 2,
+ "absent": 0,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [
+  "35174",
+  "36798"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 2,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Fullerton College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 45968499315;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core (48 units)",
+      "rule": "all",
+      "stated": {
+       "max": 48,
+       "min": 48
+      },
+      "courses": [
+       {
+        "code": "CHEM 111AF",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CHEM 111BF",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CHEM 211AF",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 211BF",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 151 F",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "MATH 151HF",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH 152 F",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "MATH 152HF",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH 251 F",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH 252 F",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "MATH 260 F",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "PHYS 221 F",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "PHYS 222 F",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "PHYS 223 F",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "government agencies",
+      "various areas of industry",
+      "environmental",
+      "pharmaceutical",
+      "material chemistry"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 20,
+      "min": 20
+     },
+     "outcomes": [
+      "Demonstrate knowledge of inorganic and organic chemistry and have the ability to articulate this chemical knowledge in verbal, written, and/or computational form.",
+      "Demonstrate the ability to conduct experiments, analyze data, and interpret results, while observing responsible and ethical scientific conduct.",
+      "Demonstrate the use of proper procedures and regulations for safe handling and use of chemicals."
+     ],
+     "ge_pattern": "IGETC",
+     "total_units": {
+      "max": 48,
+      "min": 47
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Chemistry Associate in Science Degree for UC Transfer",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 48,
+   "total_min": 47,
+   "source_url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/chemistry-associate-in-science-degree-for-uc-transfer/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38670930336,
+   "program_title": "Chemistry",
+   "control_number": "35174"
+  },
+  {
+   "award": "A.S. T Degree",
+   "checks": {
+    "listed": 9,
+    "placed": 9,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": 48,
+       "min": 48
+      },
+      "courses": [
+       {
+        "code": "CHEM 111AF",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CHEM 111BF",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 211AF",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 211BF",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 151 F",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "MATH 151HF",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 152 F",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "MATH 152HF",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 251 F",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH 252 F",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "MATH 260 F",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "PHYS 221 F",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 222 F",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 223 F",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "government agencies",
+      "various areas of industry",
+      "environmental",
+      "pharmaceutical",
+      "material chemistry"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 20,
+      "min": 20
+     },
+     "outcomes": [
+      "Demonstrate knowledge of inorganic and organic chemistry and have the ability to articulate this chemical knowledge in verbal, written, and/or computational form.",
+      "Demonstrate the ability to conduct experiments, analyze data, and interpret results, while observing responsible and ethical scientific conduct.",
+      "Demonstrate the use of proper procedures and regulations for safe handling and use of chemicals."
+     ],
+     "ge_pattern": "IGETC",
+     "total_units": {
+      "max": 48,
+      "min": 47
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Chemistry Associate in Science Degree for UC Transfer",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 48,
+   "total_min": 47,
+   "source_url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/chemistry-associate-in-science-degree-for-uc-transfer/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675136988,
+   "program_title": "Chemistry",
+   "control_number": "36798"
+  }
+ ]
+}

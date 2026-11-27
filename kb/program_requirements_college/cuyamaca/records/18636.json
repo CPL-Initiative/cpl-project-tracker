@@ -65,26 +65,24 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    6.0,
-    6.0
+    18.0,
+    18.0
    ],
    "stated": [
     18.0,
     18.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 6.0-6.0; the catalog states 18.0-18.0"
-   ],
+   "why": [],
    "degree": {
-    "pass": false,
-    "status": "unequal",
+    "pass": true,
+    "status": "equal",
     "computed": [
-     40.0,
-     40.0
+     52.0,
+     52.0
     ],
     "stated": [
      60.0,
@@ -95,10 +93,32 @@
      34.0,
      34.0
     ],
-    "why": [
-     "the blocks and general education sum to 40.0-40.0; the catalog prints 60.0-60.0 for the degree"
+    "why": [],
+    "minimum": true,
+    "fill": [
+     8.0,
+     8.0
     ]
-   }
+   },
+   "pooled": [
+    {
+     "blocks": "all",
+     "figure": [
+      18.0,
+      18.0
+     ],
+     "minimum": true,
+     "parts": [
+      6.0,
+      6.0
+     ],
+     "read": [
+      18.0,
+      18.0
+     ],
+     "words": "The area of emphasis requires 'a minimum of 18 units' (recorded as total_units 18): at least 3 units from Science and 3 units from Mathematics; the remaining 12 units may come from either list."
+    }
+   ]
   },
   "repeated": {
    "codes": [],
@@ -122,7 +142,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -152,7 +172,8 @@
     "Analyze concepts of physical and biological science to evaluate scientific information and solve scientific problems.",
     "Draw scientific conclusions about simple and complex systems by collecting, assessing, and analyzing information."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -584,6 +605,15 @@
    "The catalog text begins mid-sentence; the program description may be cut off at the start."
   ]
  },
- "extracted_run": "44752892297",
- "catalog_year": "2026-2027"
+ "extracted_run": 45966682528,
+ "catalog_year": "2026-2027",
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Complete 60 transferable units"
+  }
+ ],
+ "read_run": "44752892297"
 }

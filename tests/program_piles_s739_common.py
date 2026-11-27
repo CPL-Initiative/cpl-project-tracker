@@ -53,15 +53,29 @@ class Checks:
 
 def run(W, *, rows: dict, held: dict, scores: dict, day: str, boundaries: int, prior_held: set | None = None,
         own: dict | None = None, t: Checks | None = None, rolled_back: dict | None = None,
-        refiled: dict | None = None) -> Checks:
+        refiled: dict | None = None, later_flags: dict | None = None, receipt_own: dict | None = None,
+        read_since: dict | None = None) -> Checks:
     """rows: {key: its kind, or B.PASSES}; held: {key: words its reason carries}; scores: {kind: its unit-arithmetic
     score}; boundaries: the count of boundary readings; prior_held: the earlier receipt's held keys (default: read
     from W.held_by); own: {key: the own-page guard's form} for rows read from a shared page; rolled_back: {key:
     its kind} for a row the applied plan wrote and a later rollback took back (it is in held too); refiled: {key:
     the kind a later plan files on a rolled-back row} (S740's s740b on Orange Coast 41373): the committed record
-    then carries that kind alone, over this receipt's before-image."""
+    then carries that kind alone, over this receipt's before-image; later_flags: {key: {program field: value}} for a
+    row a later reconcile step re-filed with a flag on its program (S741's degree floor on Copper Mountain 16657):
+    the committed record is then the receipt's before-image with those fields alone added, in either state;
+    receipt_own: the forms the receipt was written under, where a later read moved a page-mate to its own page so the guard asks less of the row today than it did
+    at the plan (S741's pins at American River: default, own); read_since: {key: a later read's run} for a row a
+    later read replaced on its own page (S741's pin and read of American River 39341): where the committed record
+    holds that run it is the newer read's, it must pass with no gap, and the row's own checks (its kind, its live
+    run, its images) are the receipt's history, no longer the record's."""
     t = t or Checks()
     check = t.check
+    receipt_own = own if receipt_own is None else receipt_own
+    gone = {cn for cn, run in (read_since or {}).items() if str((W.load(cn) or {}).get("extracted_run")) == str(run)}
+    for cn in sorted(gone):
+        f = W.load(cn)
+        check(cn in rows and B.S.passes_live(f["score"]) and not f["score"].get("gaps"),
+              "%s: a later read (%s) replaced the row's record, which passes with no gap" % (cn, read_since[cn]))
     receipt = W.receipt_path(day)
     mig = os.path.join(ROOT, "kb", "migrations", "%s_%s_prreq_piles_%%s.sql" % (day, W.tag))
     gaps = {cn: g for cn, g in rows.items() if g != B.PASSES}
@@ -83,15 +97,19 @@ def run(W, *, rows: dict, held: dict, scores: dict, day: str, boundaries: int, p
     check(set(W.hand) == set(W.keys), "every key has its hand answer")
 
     pr = W.precision()
-    check(pr["read"] == len(W.keys) and pr["right"] == len(W.keys) and not pr["wrong"] and not pr["not_hand_held"],
+    check(pr["read"] == len(W.keys) and pr["right"] == len(W.keys) - len(gone)
+          and sorted(w[0] for w in pr["wrong"]) == sorted(gone) and not pr["not_hand_held"],
           "precision %d of %d: %s" % (pr["right"], len(W.keys), pr["wrong"]))
     cc = W.claim_checks()
-    check(cc["counts"] == ({"stands": n} if n else {}) and not cc["not_standing"], "%d claims stand: %s" % (n, cc))
+    check(cc["counts"] == ({"stands": n - len(gone)} if n - len(gone) else {}) and not cc["not_standing"],
+          "%d claims stand: %s" % (n - len(gone), cc))
     bd = W.boundaries()
     check(not bd["wrong"] and sum(bd["counts"].values()) == boundaries,
           "every one of the %d boundary readings names no gap: %s" % (boundaries, bd))
 
     for cn, g in gaps.items():
+        if cn in gone:
+            continue
         f = W.load(cn)
         e = W.reviewed[cn]
         check(e["gap"] == g and W.kind_closes(f, e), "%s: its kind's own check stands" % cn)
@@ -99,6 +117,8 @@ def run(W, *, rows: dict, held: dict, scores: dict, day: str, boundaries: int, p
               "%s: today's scorer does not pass it" % cn)
         check(NG.collectable(f["score"]), "%s: coverage and invented pass" % cn)
     for cn in rows:
+        if cn in gone:
+            continue
         f = W.load(cn)
         e = W.reviewed.get(cn) or W.passed.get(cn)
         check(W.own(f, e) == (own or {}).get(cn, "its page is its own"),
@@ -109,9 +129,11 @@ def run(W, *, rows: dict, held: dict, scores: dict, day: str, boundaries: int, p
         check(W.hand[cn].startswith("held") and all(w in W.hand[cn] for w in words),
               "%s: its hold carries its reason" % cn)
 
-    check(all(W.on_live_run(W.load(cn)) for cn in rows), "every row is on its live run")
-    check(all(W.on_live_run(W.load(cn), skip=(W.tag,)) for cn in rows), "every row is on its live run before the apply")
-    check(W.precision(skip=(W.tag,))["right"] == len(W.keys), "precision holds on the receipts before the apply")
+    check(all(W.on_live_run(W.load(cn)) for cn in rows if cn not in gone), "every row is on its live run")
+    check(all(W.on_live_run(W.load(cn), skip=(W.tag,)) for cn in rows if cn not in gone),
+          "every row is on its live run before the apply")
+    check(W.precision(skip=(W.tag,))["right"] == len(W.keys) - len(gone),
+          "precision holds on the receipts before the apply")
 
     with open(receipt, encoding="utf-8") as fh:
         rec = json.load(fh)
@@ -120,14 +142,14 @@ def run(W, *, rows: dict, held: dict, scores: dict, day: str, boundaries: int, p
     check({h["control_number"] for h in rec["held"]} == set(held) - set(rolled),
           "the receipt holds the %d" % (len(held) - len(rolled)))
     check(rec["keys"]["members"] == list(W.keys), "the receipt's keys are the plan's")
-    check(set(rec["shared_pages"]) == set(own or {}), "the receipt names the rows read from a shared page")
+    check(set(rec["shared_pages"]) == set(receipt_own or {}), "the receipt names the rows read from a shared page")
     for r in rec["records"]:
         if r["moves_to"] in scores:
             check(r["confidence"]["unit_arithmetic"] == scores[r["moves_to"]],
                   "%s: its arithmetic score is its kind's" % r["control_number"])
             check(all(v is None or 0 <= v <= 100 for v in r["confidence"].values()),
                   "%s: every score is on the 0-100 bar" % r["control_number"])
-        check(r["own"] == (own or {}).get(r["control_number"], "its page is its own"),
+        check(r["own"] == (receipt_own or {}).get(r["control_number"], "its page is its own"),
               "%s: the receipt says how its section is its own" % r["control_number"])
     for part in ("apply", "preread", "preread_md5", "rollback"):
         with open(mig % part, encoding="utf-8") as fh:
@@ -146,6 +168,12 @@ def run(W, *, rows: dict, held: dict, scores: dict, day: str, boundaries: int, p
     images = NG._load_images({W.college})
     for r in rec["records"]:
         img = images[(W.college, r["control_number"])]
+        if r["control_number"] in gone:
+            # The later read's record: another record than the receipt's, passing, with no gap.
+            check(img["record"] != r["before_image"]["record"] and not img["checks"].get("gaps")
+                  and B.F.row_passes(img["checks"]),
+                  "%s: the load posts the later read's record, passing, with no gap" % r["control_number"])
+            continue
         if r["control_number"] in rolled:
             later = (refiled or {}).get(r["control_number"])
             if later and img["checks"].get("gaps"):
@@ -165,7 +193,12 @@ def run(W, *, rows: dict, held: dict, scores: dict, day: str, boundaries: int, p
         check(img["checks"] == r["after_image"]["checks"],
               "%s: the load posts the receipt's after-image" % r["control_number"])
         check((img["checks"].get("gaps") or []) == want, "%s: the image carries its gap, or none" % r["control_number"])
-        check(img["record"] == r["before_image"]["record"], "%s: the record is unchanged" % r["control_number"])
+        flags = (later_flags or {}).get(r["control_number"]) or {}
+        rec_now = dict(img["record"], program={k: v for k, v in img["record"]["program"].items()
+                                               if not (k in flags and v == flags[k]
+                                                       and k not in r["before_image"]["record"]["program"])})
+        check(rec_now == r["before_image"]["record"],
+              "%s: the record is unchanged%s" % (r["control_number"], ", a later step's flag aside" if flags else ""))
         bc, ac = r["before_image"]["checks"], r["after_image"]["checks"]
         if r["moves_to"] == B.PASSES:
             check(not B.F.row_passes(bc) and B.F.row_passes(ac) and not bc.get("gaps") and not ac.get("gaps"),

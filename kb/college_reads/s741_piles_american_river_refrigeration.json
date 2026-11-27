@@ -1,0 +1,28 @@
+{
+ "_readme": "S741, lane 2's cheap piles (2026-11-27). American River 39731 and 39732 (Refrigeration Service Technician Apprenticeship Level I and Level II certificates) were both read from PDF p.211, which opens mid-table: each record holds the same 31-course list and a 16-unit work experience list under 'Total Units: 48', and each one's note says its heading sits on an earlier page. They hold as not shown to be the program's own. This read prints pp.209-212 whole, so a session can see which headings the catalog prints for the Refrigeration Service Technician awards, where each one's list starts and what total each prints. One load of the hand-filed copy's address, no model call, nothing written.",
+ "college": "American River College",
+ "questions": {
+  "refrigeration_sections": "The headings of the Refrigeration Service Technician Apprenticeship awards on pp.209-212, the rule line above each course list, and each award's Total Units."
+ },
+ "keywords": [
+  "Refrigeration Service Technician[^\\n]{0,80}",
+  "Total Units[^\\n]{0,40}",
+  "A minimum of[^\\n]{0,80}",
+  "Level I+[^\\n]{0,60}",
+  "Certificate[^\\n]{0,60}"
+ ],
+ "pdf_span": [
+  209,
+  212
+ ],
+ "pdf_page_cap": 4,
+ "pages": [
+  {
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf",
+   "answers": [
+    "refrigeration_sections"
+   ],
+   "hand_filed": true
+  }
+ ]
+}

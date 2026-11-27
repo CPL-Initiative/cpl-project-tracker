@@ -72,10 +72,20 @@ check(pr["read"] == 13 and pr["right"] == 13 - len(LEFT_S721P) and sorted(w[0] f
 
 # The claim check (#3753's second reader, BLOCKER): capture.json's shared_pages puts 35174 and 36798 on the
 # UC-transfer page, so neither page is the record's own.
+# S741 pinned both to their own Chemistry pages (kb/program_requirements_reconcile.json, site_pages) and paid read
+# 45968499315 filed each there, passing: from then on neither shares a page, no entry of this plan reads either, and
+# the three boundary readings each one's entry had are gone with its failing record.
+READ_S741 = all(str(W.F._load(cn)["extracted_run"]) == "45968499315" for cn in ("35174", "36798"))
 cc = W.claim_checks(CENSUS_AT_PLAN)
-check(cc["not_standing"] == [["35174", "the capture's page is not the program's own"],
-                             ["36798", "the capture's page is not the program's own"]], "35174 and 36798 fail the claim")
-check(W.shared_with("35174") == ["36798"] and W.shared_with("03853") == [], "shared_pages read from capture.json")
+if READ_S741:
+    check(cc["not_standing"] == [] and all(W.F._load(cn)["score"]["arithmetic"]["status"] == "equal"
+                                         and "uc-transfer" not in W.F._load(cn)["source_url"] for cn in ("35174", "36798")),
+          "35174 and 36798 were read since from their own pages (S741's pins) and pass, so no claim is left to fail")
+    check(W.shared_with("35174") == [] and W.shared_with("03853") == [], "shared_pages read from capture.json")
+else:
+    check(cc["not_standing"] == [["35174", "the capture's page is not the program's own"],
+                                 ["36798", "the capture's page is not the program's own"]], "35174 and 36798 fail the claim")
+    check(W.shared_with("35174") == ["36798"] and W.shared_with("03853") == [], "shared_pages read from capture.json")
 src = W._sources()
 f = W.F._load("42394")
 s2 = copy.deepcopy(src)
@@ -93,7 +103,8 @@ check(W.claim(W.F._load("08422"), s3) == "the capture's page is not another awar
 
 # The boundary readings.
 bd = W.boundaries(CENSUS_AT_PLAN)
-check(not bd["wrong"] and sum(bd["counts"].values()) == (8 - len(LEFT_S721P)) * 3 + 1, "every boundary reading names no gap: %s" % bd)
+check(not bd["wrong"] and sum(bd["counts"].values()) == (8 - len(LEFT_S721P) - (2 if READ_S741 else 0)) * 3 + 1,
+      "every boundary reading names no gap: %s" % bd)
 
 # The plan.
 with open(RECEIPT, encoding="utf-8") as fh:

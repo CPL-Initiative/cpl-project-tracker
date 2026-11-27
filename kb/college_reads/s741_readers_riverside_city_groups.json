@@ -1,0 +1,123 @@
+{
+ "_readme": "S741 (worker readers; the self-recall of the capture's group-end line, kb/_program_requirements_college.py cq_group_ends). Norco's nine entries showed the line where a row follows a 'Select one' group (college-page-read 45954122786). Riverside City College shares Norco's catalog build, so this reads 12 of its entries as the capture reads them on this branch: those whose filed record's units read unequal, and passing records, whose answer is held. Each block's rows print as their div tags nest them, so each list's printed Units figure is checked against its rows read with the group ends marked and read flat. About 24 loads, no model call, nothing written, no record touched. Read again after the second reader's fix (S741): a row inside another group gets no line, the line says what it means, and each row prints whether a group holds it.",
+ "college": "Riverside City College",
+ "questions": {
+  "group_end": "Does each list's printed Units figure equal its rows read with the group ends marked, and does any list close only when read flat?"
+ },
+ "keywords": [
+  "Choose one course",
+  "Select one of the following",
+  "the group above ends here",
+  "Units:\\s*[0-9.]+"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "group_end"
+   ],
+   "why": "31766 Graphic Design and Printing (unequal [31.0, 34.0] against [34.0, 34.0]); 31767 Graphic Design and Printing (unequal [31.0, 34.0] against [34.0, 34.0])",
+   "cq_view": true,
+   "cq_catalog": 124,
+   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5990"
+  },
+  {
+   "answers": [
+    "group_end"
+   ],
+   "why": "31892 Entrepreneurship (unequal [42.0, 42.0] against [24.0, 24.0]); 31898 Entrepreneurship (passes [24.0, 24.0] against [24.0, 24.0])",
+   "cq_view": true,
+   "cq_catalog": 124,
+   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5966"
+  },
+  {
+   "answers": [
+    "group_end"
+   ],
+   "why": "38109 Nutrition and Dietetics (unequal [22.0, 26.0] against [27.0, 31.0])",
+   "cq_view": true,
+   "cq_catalog": 124,
+   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6028"
+  },
+  {
+   "answers": [
+    "group_end"
+   ],
+   "why": "38259 Registered Nursing (unequal [65.0, 65.0] against [71.0, 71.0])",
+   "cq_view": true,
+   "cq_catalog": 124,
+   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6043"
+  },
+  {
+   "answers": [
+    "group_end"
+   ],
+   "why": "38790 Geology (unequal [22.0, 22.0] against [26.0, 26.0])",
+   "cq_view": true,
+   "cq_catalog": 124,
+   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5985"
+  },
+  {
+   "answers": [
+    "group_end"
+   ],
+   "why": "41749 Social Justice Studies: General (unequal [12.0, 13.0] against [18.0, 19.0])",
+   "cq_view": true,
+   "cq_catalog": 124,
+   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6050"
+  },
+  {
+   "answers": [
+    "group_end"
+   ],
+   "why": "41736 Law, Public Policy, and Society (passes [32.0, 34.0] against [32.0, 34.0])",
+   "cq_view": true,
+   "cq_catalog": 124,
+   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6010"
+  },
+  {
+   "answers": [
+    "group_end"
+   ],
+   "why": "42793 Data Analytics (passes [33.0, 33.0] against [33.0, 33.0])",
+   "cq_view": true,
+   "cq_catalog": 124,
+   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5946"
+  },
+  {
+   "answers": [
+    "group_end"
+   ],
+   "why": "42795 Data Science (passes [40.0, 40.0] against [40.0, 40.0])",
+   "cq_view": true,
+   "cq_catalog": 124,
+   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5948"
+  },
+  {
+   "answers": [
+    "group_end"
+   ],
+   "why": "32597 Computer Science (passes [29.0, 29.0] against [29.0, 29.0])",
+   "cq_view": true,
+   "cq_catalog": 124,
+   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5931"
+  },
+  {
+   "answers": [
+    "group_end"
+   ],
+   "why": "41364 Business Administration 2.0 (passes [26.0, 26.0] against [26.0, 26.0])",
+   "cq_view": true,
+   "cq_catalog": 124,
+   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5910"
+  },
+  {
+   "answers": [
+    "group_end"
+   ],
+   "why": "41519 Sustainability in Science and Technology (passes [43.0, 43.0] against [43.0, 43.0])",
+   "cq_view": true,
+   "cq_catalog": 124,
+   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6060"
+  }
+ ]
+}

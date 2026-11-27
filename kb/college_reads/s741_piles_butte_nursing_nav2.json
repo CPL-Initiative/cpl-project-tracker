@@ -1,0 +1,18 @@
+{
+ "_readme": "S741, lane 2's cheap piles (2026-11-27), third read. The second read (45955333186) shows Butte's Nursing section (node 28156) holds one link list, node 28129, with 11 entries. This read asks the catalog's navigation data for that list's children, so a session can name the address of 'AS Degree in Registered Nursing' for a site_pages pin on 14583 (read from the Accelerated Track's page, 28380). One load. No model call, nothing written.",
+ "college": "Butte College",
+ "questions": {
+  "nursing_children": "The id and title of each of the 11 program pages under node 28129: which id is 'AS Degree in Registered Nursing'?"
+ },
+ "keywords": [
+  "Registered Nursing[^\\n]{0,80}"
+ ],
+ "pages": [
+  {
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28129",
+   "answers": [
+    "nursing_children"
+   ]
+  }
+ ]
+}

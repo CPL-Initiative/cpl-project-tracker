@@ -130,8 +130,12 @@ trial = B.Pile(college=M.COLLEGE, slug=M.SLUG, tag="trial", name="Solano", prior
                reviewed=TRIAL, hand={cn: e["gap"] for cn, e in TRIAL.items()})
 for cn, mate in (("30184", "30185"), ("43134", "06538")):
     f = trial.load(cn)
-    check(trial.shared_with(cn) == [mate] and trial.gap_noted(f) is not None and trial.own(f, TRIAL[cn]) is None
-          and trial.outcome(f)[0] == "none",
+    # Either state (p-plan-tests-pin-plan-time-census-s740): at plan time the trial entry's own check stands; once
+    # S741's plan s741k4 lists the row in kb/program_total_differs.json and files it (by the record's own note and
+    # the page's sentence, never this heading), the record rule names total_differs and the trial entry stands down.
+    later = (M.COLLEGE, cn) in NG.total_differs_list()
+    check(trial.shared_with(cn) == [mate] and (trial.gap_noted(f) is not None or later)
+          and trial.own(f, TRIAL[cn]) is None and trial.outcome(f)[0] == "none",
           "%s: with an entry in hand its gap's own check stands, and the own-page guard refuses it (its page-mate "
           "%s was read from the same section)" % (cn, mate))
 check(any("is printed as 37, but the listed courses sum to 36" in n for n in B.notes(W.load("30184"))),

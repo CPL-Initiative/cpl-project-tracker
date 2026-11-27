@@ -1,4 +1,4 @@
-{"schema":1,"college":"Santa Ana College","slug":"santa_ana","basis":"live","census_at":"2026-11-27 01:12Z","correction_rules":true,"programs":[
+{"schema":1,"college":"Santa Ana College","slug":"santa_ana","basis":"live","census_at":"2026-11-27 11:03Z","correction_rules":true,"programs":[
 {"cn":"04254","title":"Anthropology","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"43223","title":"Bus Operator/Driver","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"10565","title":"Business Administration","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
@@ -22,7 +22,5 @@
 {"cn":"21759","title":"School Age Teacher","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"04238","title":"English","award":"A.A. Degree","cause":"units_incomplete","lever":"reconcile_steps","url":"https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36122/35925","units":{"sum":[19.0,25.0],"printed":null,"status":"incomplete","measure":"units","against":"program"}},
 {"cn":"04226","title":"Nursing-Registered Nursing","award":"A.S. Degree","cause":"units_incomplete","lever":"ge_units_steps","url":"https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36141/35877","units":{"sum":[79.0,80.0],"printed":[67.0,70.0],"status":"incomplete","measure":"units","against":"degree"}},
-{"cn":"21789","title":"Pharmacy Technology Advanced Option","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"units_unequal","lever":"reconcile_steps","url":"https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36145/35865","units":{"sum":[24.5,29.0],"printed":[24.0,30.0],"status":"unequal","measure":"units","against":"program"}},
-{"cn":"31859","title":"Political Science","award":"A.A- T Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36149/35855","units":{"sum":[19.0,19.5],"printed":[18.0,19.5],"status":"unequal","measure":"units","against":"program"}},
 {"cn":"32533","title":"Spanish","award":"A.A- T Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36175/36270","units":{"sum":[33.0,34.0],"printed":[23.0,24.0],"status":"unequal","measure":"units","against":"program"}}
 ]}

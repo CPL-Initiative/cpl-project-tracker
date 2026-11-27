@@ -1,0 +1,23 @@
+{
+ "_readme": "S741, lane 2's cheap piles (2026-11-27). Long Beach City 37213 (CSU GE-Breadth certificate) was read from the LBCC-GE (Plan A) page, the local associate degree pattern, and holds as not the program's own. This read prints the general education plans index with its links, so a session can see whether the 2026-2027 catalog prints a CSU GE-Breadth pattern or certificate page at all, and its address. One load. No model call, nothing written.",
+ "college": "Long Beach City College",
+ "questions": {
+  "csu_ge_page": "Which pages the general education plans index links (Plan A, Plan B, Plan C, Cal-GETC, CSU GE-Breadth), with their addresses."
+ },
+ "keywords": [
+  "CSU[^\\n]{0,80}",
+  "Breadth[^\\n]{0,80}",
+  "Cal-?GETC[^\\n]{0,80}",
+  "Plan [A-C][^\\n]{0,80}",
+  "Certificate[^\\n]{0,80}"
+ ],
+ "pages": [
+  {
+   "url": "https://lbcc-public.courseleaf.com/academic-requirements/general-education-transfer-degree-certificate-requirements/general-education-plans/",
+   "answers": [
+    "csu_ge_page"
+   ],
+   "links": "plan|general-education|breadth|getc|certificate"
+  }
+ ]
+}

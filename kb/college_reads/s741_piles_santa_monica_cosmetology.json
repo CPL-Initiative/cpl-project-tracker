@@ -1,0 +1,28 @@
+{
+ "_readme": "S741, lane 2's cheap piles (2026-11-27). Two Santa Monica records hold on what PDF pp.120-122 print. 43767 (Barbering A.S.): its heading is inferred, on a page its read did not hold, and its page is shared with 03302 and 40812. 21026 (Cosmetology certificate): its courses add to 27.5 under a printed 26.5 and no note of its own quotes both figures; total_differs is filed only from a page read (kb/program_total_differs.json). This read prints pp.120-122 whole, so a session can see where the Barbering heading sits, which lists follow it, and each Cosmetology list's courses with their units and the Area of Emphasis figure. One load, no model call, nothing written.",
+ "college": "Santa Monica College",
+ "questions": {
+  "barbering_heading": "Where the Barbering heading sits, which lists follow it before the next program heading, and its Area of Emphasis figure.",
+  "cosmetology_figures": "Each Cosmetology list's courses with their printed units, and the Area of Emphasis figure, word for word."
+ },
+ "keywords": [
+  "Barbering[^\\n]{0,80}",
+  "Cosmetology[^\\n]{0,80}",
+  "Area of Emphasis[^\\n]{0,80}",
+  "COSM \\d+[A-Z]?[^\\n]{0,60}"
+ ],
+ "pdf_span": [
+  120,
+  122
+ ],
+ "pdf_page_cap": 3,
+ "pages": [
+  {
+   "url": "https://catalog.smc.edu/current/catalog.pdf",
+   "answers": [
+    "barbering_heading",
+    "cosmetology_figures"
+   ]
+  }
+ ]
+}

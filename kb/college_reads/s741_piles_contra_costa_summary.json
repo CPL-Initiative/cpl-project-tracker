@@ -1,0 +1,24 @@
+{
+ "_readme": "S741, lane 2's cheap piles (2026-11-27), second read. Contra Costa 33660 (Physical Education/Kinesiology A.S.) holds because its notes quote the unit summary's general education rows ('None', 'N/A') and say nothing of its electives row, so degree_summary_ge_none's sentence (general education and electives as None or N/A) is not shown on its own words. This read prints the page as the capture reads it, so a session can read the Unit Summary's rows word for word. One load. No model call, nothing written.",
+ "college": "Contra Costa College",
+ "questions": {
+  "unit_summary": "Every row of the page's Unit Summary (major, general education local, CSU/IGETC, electives, total program), word for word."
+ },
+ "keywords": [
+  "Min/Max Units[^\\n]{0,80}",
+  "General Education[^\\n]{0,80}",
+  "Electives?[^\\n]{0,80}",
+  "Total Program[^\\n]{0,40}",
+  "None|N/A"
+ ],
+ "pages": [
+  {
+   "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/physical-education-kinesiology-spring-2021",
+   "answers": [
+    "unit_summary"
+   ],
+   "why": "33660",
+   "capture_view": true
+  }
+ ]
+}

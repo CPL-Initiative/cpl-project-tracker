@@ -1,8 +1,8 @@
 # Harvest heading agreement
 
-A dated snapshot of main at commit 128091f25102 (2026-11-27; the newest capture it reads started 2026-11-26), written by `kb/_program_requirements_heading_agreement.py` from the files that commit holds. A dispatch of `harvest-gap-census.yml` rewrites it beside the gap census; nothing gates a PR on it, so it can trail the records. Each record's own heading against the program it is filed under (COCI title and award).
+A dated snapshot of main at commit 63000a440bbf (2026-11-27; the newest capture it reads started 2026-11-27), written by `kb/_program_requirements_heading_agreement.py` from the files that commit holds. A dispatch of `harvest-gap-census.yml` rewrites it beside the gap census; nothing gates a PR on it, so it can trail the records. Each record's own heading against the program it is filed under (COCI title and award).
 
-All colleges: 18976 records, 15544 agree, 207 disagree (132 of them pass on the committed files), 3225 cannot tell (260 say the heading is not in their text; 74 name an award and none of the program's title words, 70 of them passing, set aside).
+All colleges: 18976 records, 15551 agree, 206 disagree (132 of them pass on the committed files), 3219 cannot tell (258 say the heading is not in their text; 74 name an award and none of the program's title words, 70 of them passing, set aside).
 
 The heading check (a heading that names another award type and some of the program's title) would fail 99 records that pass on the committed files (passes_live), 31 of them a transfer degree and a local degree crossed. It is in no pass rule.
 
@@ -30,7 +30,7 @@ A suspect record has a heading that disagrees with its program, or was read from
 | Ohlone College | main | 145 | 122 | 2 | 2 | 21 | 0 (0) | 2 (2) | none seen | no number line |
 | Porterville College | main | 79 | 45 | 2 | 1 | 32 | 0 (0) | 2 (1) | none seen | no number line |
 | Santa Monica College | main | 231 | 211 | 2 | 0 | 18 | 0 (0) | 2 (0) | none seen | no number line |
-| American River College | main | 358 | 347 | 1 | 0 | 10 | 0 (0) | 1 (0) | none seen | no number line |
+| American River College | main | 358 | 350 | 1 | 0 | 7 | 0 (0) | 1 (0) | none seen | no number line |
 | Calbright College Credit | main | 12 | 0 | 1 | 0 | 11 | 0 (0) | 1 (0) | none seen | no openings kept |
 | Cosumnes River College | main | 217 | 200 | 1 | 0 | 16 | 0 (0) | 1 (0) | none seen | no number line |
 | Los Angeles Valley College | main | 223 | 114 | 1 | 0 | 108 | 0 (0) | 1 (0) | State Code 130 | under_heading |

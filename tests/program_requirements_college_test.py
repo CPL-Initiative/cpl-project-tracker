@@ -815,6 +815,297 @@ raw = "\n".join(C.cq_text(b.get("text") or "") for b in MS["body"])
 check(P.coverage(P.find_codes(raw, MS_LIST), MS_LIST) < 0.5,
       "read as printed, the page names under half the list: the failure the expansion fixes")
 
+# ── S741: where a "Select one" group ends (Norco; college-page-reads 45840110369 and 45954122786) ──────────────
+# A curriculum block as curriQunet writes it: every row is a div carrying data-row-id; a row that opens a group
+# carries data-is-group-with-condition="true" and holds its members in a child wrapper
+# (data-child-type="block-entry-children") under a block-group div; a row after the group sits beside the group's
+# row. The fixtures keep that nesting and the page's words (Drafting Technology 30091 and 40079, Philosophy 32830).
+_rid = [8200]
+
+
+def cq_row(inner, group=False, kids=""):
+    _rid[0] += 1
+    wrap = ('<div class="clearfix visible-xs-block"></div><div class="col-xs-12 full-width-column child-wrapper" '
+            'data-child-type="block-entry-children"><div class="block-group" data-tier-level="">%s</div></div>'
+            % kids) if kids else ""
+    return ('<div class="row block-entry" data-entry-style="" data-is-group-with-condition="%s" '
+            'data-include-in-calculations="true" data-row-id="%d">%s%s</div>'
+            % ("true" if group else "false", _rid[0], inner, wrap))
+
+
+def cq_course(code, title, units):
+    return cq_row('<div class="col-xs-2 left-column"><span class="course-entry-link"><a data-action="popover" '
+                  'data-config="{&quot;title&quot;: &quot;Course Summary&quot;}" href="javascript:void(0)">%s</a>'
+                  '</span></div><div class="col-xs-8 middle-column"><span class="course-entry-title">%s</span></div>'
+                  '<div class="col-xs-2 right-column"><span class="units-display">%s</span></div>'
+                  % (code, title, units))
+
+
+def cq_group(title, units, members):
+    return cq_row('<div class="col-xs-12 non-course-row-core-wrapper"><div class="row non-course-row-core">'
+                  '<div class="col-xs-10 left-column"><span class="non-course-entry-title">%s</span></div>'
+                  '<div class="col-xs-2 right-column"><span class="units-display block-entry-units-display">%s</span>'
+                  '</div></div></div>' % (title, units), group=True, kids="".join(members))
+
+
+def cq_list(head, units, rows):
+    return cq_row('<div class="col-xs-12 header-wrapper"><h4>%s</h4><div>Units: %s</div></div>' % (head, units),
+                  kids="".join(rows))
+
+
+SEL = "Select one of the following:"
+DRAFTING = cq_list("Required Courses", "14.00- 15.00", [
+    cq_group(SEL, "3.00", [cq_course("DFT-21", "Drafting", "3.00"), cq_course("ENE-21", "Drafting", "3.00")]),
+    cq_group(SEL, "3.00", [cq_course("DFT-27", "Technical Communications", "3.00"),
+                           cq_course("ENE-27", "Technical Communications", "3.00")]),
+    cq_group(SEL, "2.00- 3.00", [cq_course("DFT-51", "Print Reading", "2.00"), cq_course("ENE-51", "Print Reading", "2.00"),
+                                 cq_course("CON-62", "Print Reading for Construction", "3.00")]),
+    cq_course("DFT-62", "Basic Fusion 360", "3.00")]) + cq_list("Elective Courses", "6.00", [
+        cq_group("Select an additional 6-8 units from the following elective courses:", "6.00", [
+            cq_group("Only one of the following may be used:", "3.00- 4.00", [
+                cq_course("DFT-60", "Math for Engineering Technology", "3.00"), cq_course("MATH-36", "Trigonometry", "4.00")]),
+            cq_course("CON-60", "Introduction to Construction", "3.00"),
+            cq_course("ARE-37", "Architectural Design I", "3.00")])])
+dr_rows = C.cq_rows(DRAFTING)
+check(dr_rows is not None and [r["members"] for r in dr_rows if r["group"]] == [2, 2, 3, 3, 2]
+      and sum(1 for r in dr_rows if r["after_group"]) == 4
+      and sum(1 for r in dr_rows if r["after_group"] and not r["group"]) == 2
+      and [r["inside"] for r in dr_rows if r["after_group"] and not r["group"]] == [0, 1]
+      and max(r["inside"] for r in dr_rows) == 2,
+      "cq_rows reads each group's members from the nesting, which rows follow a group, and how many groups hold "
+      "each row: %r" % [(r["depth"], r["group"], r["members"], r["after_group"], r["inside"]) for r in dr_rows or []])
+dr_flat, dr_text = C.cq_text(DRAFTING), C.cq_text(C.cq_group_ends(DRAFTING))
+dr_lines = dr_text.split("\n")
+check(dr_lines.count(C.CQ_GROUP_END) == 1
+      and dr_lines[dr_lines.index("DFT-62") - 1] == C.CQ_GROUP_END
+      and dr_lines[dr_lines.index("ARE-37") - 1] != C.CQ_GROUP_END,
+      "the text says where a group ends before DFT-62, a required course of its own after the last group; a row "
+      "after a plain row gets no line")
+# The second reader's finding (S741): CON-60 follows "Only one of the following may be used" inside "Select an
+# additional 6-8 units from the following elective courses" (printed 6.00). A line there read as the outer group's
+# end, and the list added to 12. A row inside another group gets no line, so the elective list reads as it did.
+el_at = dr_lines.index("Elective Courses")
+check(C.CQ_GROUP_END not in dr_lines[el_at:] and dr_lines[el_at:] == dr_flat.split("\n")[-len(dr_lines[el_at:]):]
+      and dr_lines[dr_lines.index("CON-60") - 1] != C.CQ_GROUP_END,
+      "no line lands inside another group: Drafting Technology's Elective Courses reads as before, to the line")
+check("ends here" in C.CQ_GROUP_END and "not among its choices" in C.CQ_GROUP_END,
+      "the line says what it means, for a reader that sees the text alone")
+check([ln for ln in dr_lines if ln != C.CQ_GROUP_END] == dr_flat.split("\n"),
+      "the change only adds lines: without them the text is the flat text, line for line")
+PHIL = cq_list("Required Courses", "9.00", [
+    cq_group("Choose one course", "3.00", [cq_course("PHI-10", "Introduction to Philosophy", "3.00"),
+                                           cq_course("PHI-10H", "Honors Introduction to Philosophy", "3.00")]),
+    cq_course("PHI-12", "Introduction to Ethics", "3.00"),
+    cq_group("Choose one course", "3.00", [cq_course("PHI-32", "Introduction to Symbolic Logic", "3.00"),
+                                           cq_course("MATH-32", "Introduction to Symbolic Logic", "3.00")])]) \
+    + cq_list("List A", "6.00", [cq_course("PHI-11", "Critical Thinking", "3.00")])
+ph_lines = C.cq_text(C.cq_group_ends(PHIL)).split("\n")
+check(ph_lines.count(C.CQ_GROUP_END) == 1 and ph_lines[ph_lines.index("PHI-12") - 1] == C.CQ_GROUP_END,
+      "Philosophy: PHI-12 follows the first group as a course of its own (3 + 3 + 3 is the printed 9.00); the "
+      "second group ends with its list and gets no line")
+no_tail = cq_list("Required Courses", "6.00", [
+    cq_course("BIO-60", "Biology", "5.00"),
+    cq_group(SEL, "3.00", [cq_course("DFT-21", "Drafting", "3.00"), cq_course("ENE-21", "Drafting", "3.00")]),
+    cq_group(SEL, "3.00", [cq_course("DFT-27", "Technical Communications", "3.00")])])
+check(C.cq_group_ends(no_tail) == no_tail and C.cq_group_ends("<p>No rows here.</p>") == "<p>No rows here.</p>"
+      and C.cq_group_ends("") == "",
+      "a block whose groups are followed by a group or by the list's end comes back to the character")
+check(C.cq_rows(DRAFTING + "</div>") is None and C.cq_group_ends(DRAFTING + "</div>") == DRAFTING + "</div>"
+      and C.cq_rows("<div>" + DRAFTING) is None and C.cq_group_ends("<div>" + DRAFTING) == "<div>" + DRAFTING,
+      "a block whose div tags do not balance is read flat, as before")
+quoted = DRAFTING.replace('data-entry-style=""', 'data-entry-style="a > b"', 1)
+check(C.cq_text(C.cq_group_ends(quoted)).split("\n").count(C.CQ_GROUP_END) == 1,
+      "a > inside a quoted attribute does not end the tag")
+gp = C.cq_page({"id": 5169, "text": "Drafting Technology - Associate of Science Degree and Certificate of Achievement",
+                "aliaspath": "5367/5467/5169"},
+               {"page": {"text": "Drafting Technology - Associate of Science Degree and Certificate of Achievement"},
+                "body": [{"catalogblockheader": "Program Requirements", "text": DRAFTING}]},
+               "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/")
+check(gp["body"].split("\n").count(C.CQ_GROUP_END) == 1 and gp["codes"] == C.page_codes(dr_flat)
+      and C.page_codes(C.CQ_GROUP_END) == set() and C.RC.page_type("\n".join([C.CQ_GROUP_END] * 40)) == "other",
+      "cq_page's text carries the lines; they name no course and no rule B field, so the codes read are the same")
+
+# ── S741: the group-end line's self-recall on held answers ──
+# The held answer is the figure a page prints over a list ("Required Courses", "Units: 14.00- 15.00"): the list's rows
+# must add to it. College-page-reads 45954122786 (Norco's nine entries, the pages of its eleven held records and
+# 30061) and 45956851384 (Riverside City's twelve and Moreno Valley's seven, the same catalog build: records whose
+# units read unequal, and passing records) printed each block's rows as their div tags nest them. Each list is kept
+# here as its heading, its printed figure and its rows in order, nesting kept: G a group's printed figure, with its
+# members in brackets where it holds another group; R a plain row's units; A a plain row of the list itself right
+# after a group, the one row that gets the line; U a row whose figure the read's outline does not print (a long
+# title). The check builds each list in the page's own nesting, reads it through cq_page_text, and adds its lines
+# as a reader of the text alone must: every group heading counts its printed figure, a group runs to the next
+# heading, the group-end line or the list's end, and a course outside a group counts its own units. It adds them
+# twice, with the group-end lines and without (the text as it stood).
+#
+# Measured 2026-11-27 on 58 lists of 28 pages, after the second reader's fix (no line inside another group).
+# 50 lists hold no group inside a group: 16 close only with the lines, 24 either way (no row follows a group, and
+# their text is unchanged), 0 only without, 2 neither way (Norco's elective lists that choose units from a longer
+# list: 5139, 5148), and 8 are not summed. Right 16, wrong 0. The other 8 hold a group inside a group. None carries
+# a line inside a group, so each reads the same with the lines and without, and none can close only one way; read
+# line by line, 6 close neither way, since the text alone does not show their nesting, as it did not before, and
+# 2 are not summed. The first round's "0 close only flat" missed these: with a line inside the outer group,
+# Drafting Technology's Elective Courses (printed 6.00) read 12.
+GROUP_LISTS = [
+    ("Norco", "5169", 'Required Courses', "14-15", "G3 G3 G3 G2-3 A3"),
+    ("Norco", "5169", 'Elective Courses', "6", "G6[G3-4 R3 R3 G3 R4]"),
+    ("Norco", "5218", 'Required Courses', "9", "G3 A3 G3"),
+    ("Norco", "5218", 'List A', "6", "G6[R3 R3 R3 G3 R3]"),
+    ("Norco", "5218", 'List B', "3", "G3"),
+    ("Norco", "5237", 'Required Courses', "33-34", "G3 G4 G4 G3 G3 G2 G3-4 G1 A4 G3 A3"),
+    ("Norco", "5185", 'Required Courses', "15", "R5 R5 G5"),
+    ("Norco", "5185", 'Electives - List A', "15", "R3 G3 A1 G4 G4"),
+    ("Norco", "5185", 'Electives - List B', "11", "G3 G8[G8 G8]"),
+    ("Norco", "5139", 'Required courses', "16", "G16"),
+    ("Norco", "5139", 'Elective Courses', "14-15", "G3 G3 G3 G2 A5 R4 G1 A4 R3"),
+    ("Norco", "5230", 'Required Courses', "10", "G3 A3 G4"),
+    ("Norco", "5230", 'List A', "9-10", "U U U U"),
+    ("Norco", "5578", 'Required Courses', "48", "G3 G3 A3 G3 A3 G3 A3 G4 G4 G3 G4 G3 G3 G3 G3"),
+    ("Norco", "5581", 'Required Courses', "26-27", "G3 A3 G3 G4 G3-4 G4 G3 G3"),
+    ("Norco", "5581", 'Electives', "6", "U"),
+    ("Norco", "5148", 'Major Core Requirements', "18", "R3 G3 A3 R3 G3 G3"),
+    ("Norco", "5148", 'Concentration Requirements', "3", "R3"),
+    ("Norco", "5148", 'Elective Courses', "9", "G3 A3 R3 R3 R3 R1-4"),
+    ("Moreno Valley", "4462", 'Required Courses', "10", "G4 G3 A3"),
+    ("Moreno Valley", "4462", 'Electives - List A', "3-4", "G3-4[R3 R3 R3 R3 R3 G4]"),
+    ("Moreno Valley", "4462", 'Electives - List B', "6", "G6"),
+    ("Moreno Valley", "4462", 'Electives - List C', "3", "G3"),
+    ("Moreno Valley", "4723", 'Required Courses', "48", "G3 G3 A3 G3 A3 R3 R3 R3 G4 G4 G3 G4 G3 A3 G3"),
+    ("Moreno Valley", "6376", 'Lower Division Required Courses', "35", "R3 R4 R3 G3 G3 G3 G3 G3 G3 G3 G4"),
+    ("Moreno Valley", "6376", 'Upper Division General Education Courses', "9", "R3 R3 R3"),
+    ("Moreno Valley", "6376", 'Upper Division Required Courses', "30", "R3 R3 R3 R3 R3 R3 U R3 R3 R3"),
+    ("Moreno Valley", "6376", 'Upper Division Elective Courses', "3", "G3"),
+    ("Moreno Valley", "4718", 'Required Courses', "26-27", "R3 G4 G3 G3 G3-4 G4 G3 G3"),
+    ("Moreno Valley", "4718", 'List A - ADJ-9 or 9H', "3", "G3"),
+    ("Moreno Valley", "4718", 'List A - Electives', "3", "U"),
+    ("Moreno Valley", "4858", 'Required Courses', "27-28", "R4 R3 G3 G4 G3 G3 G4 G3-4"),
+    ("Moreno Valley", "4858", 'Electives', "10", "G7 G3"),
+    ("Moreno Valley", "4858", 'Recommended Courses', "0", "U"),
+    ("Moreno Valley", "4489", 'Required Courses', "28-29", "R3 R3 R3 R3 R3 G3 G3 G4 G3-4"),
+    ("Moreno Valley", "4489", 'Elective Courses', "1.5-3", "G1.5-3 U"),
+    ("Moreno Valley", "4491", 'Required Courses', "30", "R3 G3 G3 G3 A4 R4 G3 A4 R3"),
+    ("Moreno Valley", "4491", 'Elective Courses', "3", "G3"),
+    ("Riverside City", "5990", 'Required Courses', "28", "R3 R2 R2 R3 R3 R3 R3 R3 R3 R3"),
+    ("Riverside City", "5990", 'Electives', "6", "G6[G6 G6 G6[R3 G3] G6]"),
+    ("Riverside City", "5966", 'Required Courses', "12", "G3 A3 G3 A3"),
+    ("Riverside City", "5966", 'Elective Courses', "12", "G12[U U U]"),
+    ("Riverside City", "6028", 'Required Courses', "15", "R4 R3 G3 G5"),
+    ("Riverside City", "6028", 'Elective Courses - List A', "9-13", "G9-13[G5 G8 G4]"),
+    ("Riverside City", "6028", 'Elective Courses - List B', "3", "G3"),
+    ("Riverside City", "6043", 'Required Courses', "71", "R4 R4 R4 R3 G3 G4 G3 G4 A8.5 R0.5 U R0.5 R8.5 R0.5 U R0.5 U U"),
+    ("Riverside City", "5985", 'Required Courses', "26", "R3 R1 R4 G5 G5 G4 A4"),
+    ("Riverside City", "6050", 'Required Courses', "9", "G3 A3 R3"),
+    ("Riverside City", "6050", 'Elective Courses', "9-10", "G9-10[U U R3 U]"),
+    ("Riverside City", "6010", 'Required Courses', "26-27", "R3 G4 G3 G3 G3 G3-4 G4 G3"),
+    ("Riverside City", "6010", 'Electives - List A', "6-7", "U"),
+    ("Riverside City", "5946", 'Required Courses', "30", "R3 R4 R4 R3 G3 G3 G3 G4 G3"),
+    ("Riverside City", "5946", 'Elective Courses', "3", "G3"),
+    ("Riverside City", "5948", 'Required Courses', "37", "R3 R4 R4 R3 R4 R3 G3 G3 G3 G4 G3"),
+    ("Riverside City", "5948", 'Elective Courses', "3", "G3"),
+    ("Riverside City", "5931", 'Required Courses', "29", "G4 G3 G3 G3 G4 A4 R4 R4"),
+    ("Riverside City", "5910", 'Required Courses', "26", "R3 R3 R3 G3 G3 G4 G4 G3"),
+    ("Riverside City", "6060", 'Required Courses', "43", "R3 R5 R5 G5 G3 G4 G4 A4 R4 G3 A3"),
+]
+
+
+def _fig(s):
+    lo, _dash, hi = s.partition("-")
+    return float(lo), float(hi or lo)
+
+
+def _tokens(encoded):
+    """The encoding as a tree: (letter, figure, members or None) each."""
+    out, stack = [], []
+    cur = out
+    for tok in encoded.replace("[", "[ ").replace("]", " ] ").split():
+        if tok == "]":
+            cur = stack.pop()
+        elif tok.endswith("["):
+            members = []
+            cur.append((tok[0], tok[1:-1], members))
+            stack.append(cur)
+            cur = members
+        else:
+            cur.append((tok[0], tok[1:], None))
+    return out
+
+
+def _rows_html(tree, n):
+    rows = []
+    for letter, figure, members in tree:
+        n[0] += 1
+        lo, hi = _fig(figure)
+        units = "%.2f" % lo if lo == hi else "%.2f- %.2f" % (lo, hi)
+        if letter == "G":
+            inner = _rows_html(members, n) if members is not None else [
+                cq_course("AAA-%d" % n[0], "A choice", "%.2f" % lo), cq_course("BBB-%d" % n[0], "Another choice", "%.2f" % hi)]
+            rows.append(cq_group(SEL, units, inner))
+        else:
+            rows.append(cq_course("CCC-%d" % n[0], "A course", units))
+    return rows
+
+
+def _adds(lines):
+    """The list's units as a reader of the text alone adds them: a group heading counts its printed figure and
+    opens a group, which runs to the next heading, the group-end line or the list's end; a course outside a group
+    counts its own units."""
+    lo = hi = 0.0
+    in_group = False
+    for i, ln in enumerate(lines):
+        if ln == SEL:
+            a, b = _fig(lines[i + 1].replace(" ", ""))
+            lo, hi, in_group = lo + a, hi + b, True
+        elif ln == C.CQ_GROUP_END:
+            in_group = False
+        elif re.fullmatch(r"[A-C]{3}-\d+", ln) and not in_group:
+            a, b = _fig(lines[i + 2].replace(" ", ""))
+            lo, hi = lo + a, hi + b
+    return lo, hi
+
+
+def _group_recall():
+    """(each list under its outcome, plain lists and nested ones apart; whether every list's text carries one line
+    for each A row and none inside a group)."""
+    out = {}
+    ok = True
+    for where, entry, heading, figure, encoded in GROUP_LISTS:
+        kind = "nested" if "[" in encoded else "plain"
+        if "U" in encoded:
+            out.setdefault((kind, "not summed"), []).append((where, entry, heading))
+            continue
+        tree = _tokens(encoded)
+        block = {"page": {"text": heading},
+                 "body": [{"catalogblockheader": None, "text": cq_list(heading, figure, _rows_html(tree, [0]))}]}
+        lines = C.cq_page_text(block)[1].split("\n")
+        ok = ok and lines.count(C.CQ_GROUP_END) == sum(1 for letter, _f, _m in tree if letter == "A")
+        with_ends = _adds(lines) == _fig(figure)
+        as_flat = _adds([ln for ln in lines if ln != C.CQ_GROUP_END]) == _fig(figure)
+        out.setdefault((kind, "only with the lines" if with_ends and not as_flat else "either way" if with_ends
+                        else "only without" if as_flat else "neither way"), []).append((where, entry, heading))
+    return out, ok
+
+
+recall, lines_ok = _group_recall()
+check(lines_ok, "the text carries one group-end line for each row of a list that follows a group, and none inside a "
+      "group, on every list read")
+check({k: len(v) for k, v in recall.items()} == {
+    ("plain", "only with the lines"): 16, ("plain", "either way"): 24, ("plain", "neither way"): 2,
+    ("plain", "not summed"): 8, ("nested", "neither way"): 6, ("nested", "not summed"): 2},
+      "the self-recall on 58 lists whose printed figure is held: %r" % {k: len(v) for k, v in recall.items()})
+check(not recall.get(("plain", "only without")) and not recall.get(("nested", "only without"))
+      and not recall.get(("nested", "only with the lines")),
+      "no list closes only without the lines, and no list that holds a group inside a group reads differently "
+      "with them")
+check(recall[("plain", "neither way")] == [("Norco", "5139", "Elective Courses"), ("Norco", "5148", "Elective Courses")],
+      "the two plain lists no reading closes are Norco's elective lists that choose units from a longer list: %r"
+      % recall[("plain", "neither way")])
+check({(c, n) for c, n, _h in recall[("plain", "only with the lines")]} >= {
+    ("Norco", n) for n in ("5169", "5218", "5237", "5185", "5230", "5578", "5581", "5148")},
+      "eight of Norco's nine pages hold a list that closes only with the lines (5139, Manufacturing Technician 2, "
+      "holds none: its rows after a group sit in a list that chooses units)")
+# ── S741: the self-recall ends ──
+
+
 # what an extraction after a capture would pay for, against the filed read
 _wx = tempfile.mkdtemp()
 try:
@@ -1162,6 +1453,30 @@ check([p["node"] for p in npages] == [19915, 19951, 19998]
       and npages[0].get("twin_ids") == [18990] and nrep["curriqunet"]["same_title_entries"] == 2,
       "a nested program of its own is read, a nested twin is recorded on its entry: %r %r"
       % ([p["node"] for p in npages], nrep["curriqunet"].get("twin_ids")))
+check(nrep["curriqunet"]["group_ends"] == {"pages": 0, "lines": 0},
+      "the capture's account counts the group-end lines: none on pages with no row after a group")
+
+
+# The account counts the pages whose text carries a group-end line, and the lines (S741 review), so a catalog's
+# capture files how many of its pages the line changed.
+def ends_json(reader, url, errors):
+    q = urllib.parse.parse_qs(urllib.parse.urlparse(url).query)
+    if "id" in q and "parentId" not in q and "navigationtypeId" not in q:
+        return {"19915": {"body": [{"text": DRAFTING}]}, "19951": {"body": [{"text": no_tail}]}}.get(q["id"][0])
+    return {"navs": []}
+
+
+saved = (C.cq_json, C.cq_catalog_id, C.cq_index)
+C.cq_json, C.cq_catalog_id = ends_json, (lambda heard: 718)
+C.cq_index = lambda get, catalog, root: ([dict(BUS, haschildbodynavs=False), dict(ACC_AS, haschildbodynavs=False)],
+                                         {"entries": 2})
+try:
+    erep = {"college": "Chaffey College"}
+    epages = C.cq_pages(CqReader(), "https://chaffey.curriqunet.com/catalog/iq/19210", erep)
+finally:
+    C.cq_json, C.cq_catalog_id, C.cq_index = saved
+check(len(epages) == 2 and erep["curriqunet"]["group_ends"] == {"pages": 1, "lines": 1},
+      "one of the two pages carries a line, and one line: %r" % erep["curriqunet"].get("group_ends"))
 
 # ── the source a full college files keeps the pilot's shape ─────────────────
 reg = {"catalog_url": start, "catalog_year": "2026-2027", "catalog_platform": "courseleaf", "catalog_format": "html_per_program"}

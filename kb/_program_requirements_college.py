@@ -898,6 +898,12 @@ def candidates(program: dict, pages: list[dict], programs: list | None = None,
                     "program": {"title": program.get("title") or "",
                                                                 "status": program.get("status")},
                     "key": (award_hit, title, exact, round(cov, 3))})
+        if RC.applies(program):
+            tabs_out = RC.descriptions_tabs(pg, program)
+            if tabs_out:
+                # Rule B typed this entry without its own descriptions tab (S741): filed on the source, so each
+                # page read this way is named.
+                out[-1]["label"]["descriptions_tabs"] = tabs_out
     out.sort(key=lambda c: c["key"], reverse=True)
     return out
 
@@ -2024,12 +2030,16 @@ def source_record(college: str, program: dict, reg: dict, best: dict | None, met
         rec.update(method=method, source=None, coverage=0.0, codes_found=[], text="")
         return rec
     got = best.get("got") or {}
+    # A college that opted into reading tabs beside prose (tabs_with_prose) keeps the appended panels where the cap
+    # would cut them (P.window_keeps_tabs, S741: Ventura 35654 and 37415); every other college's window is as before.
+    window = P.window_keeps_tabs if program.get("tabs_with_prose") and best.get("field") == "innerText+tabs" \
+        else P.text_window
     rec.update(method=method,
                source={"url": best["url"], "title": got.get("title"), "h1": got.get("h1"),
                        "text_from": best.get("field"), "label": best.get("label")},
                coverage=round(best["coverage"], 3),
                codes_found=sorted(best["found"]),
-               text=P.with_outcome_tabs(P.text_window(best.get("text") or "", best["found"]),
+               text=P.with_outcome_tabs(window(best.get("text") or "", best["found"]),
                                         got.get("outcomeTabs")),
                courseleaf_lists=P.courseleaf_lists(got, program["closed_list"])
                if reg.get("catalog_platform") == "courseleaf" else [])
@@ -2249,6 +2259,84 @@ def cq_text(html_text: str) -> str:
     return "\n".join(ln for ln in lines if ln)
 
 
+# Norco (S741; college-page-reads 45835049303 and 45840110369): a curriculum block's rows nest. A row that opens a
+# group ("Select one of the following:", "Choose one course"; data-is-group-with-condition="true") holds its
+# members in a child wrapper (data-child-type="block-entry-children"), and a row that follows the group sits
+# beside the group's row, outside the wrapper. cq_text drops the tags, so the text never said where a group ends.
+# Drafting Technology prints "Units: 14.00-15.00" over four groups that add to 11-12 and DFT-62, a required course
+# of its own after the last group; read flat, DFT-62 was one more choice, and eleven Norco records add up short of
+# their printed figure by the units of such a row (tests/program_piles_s740_norco_test.py). Where a row that opens
+# no group follows a group, the text now says so on a line of its own. A group followed by another group, by the
+# list's end or by nothing reads as before, so a page with no such row keeps its text to the character.
+# Only a row of the list itself gets the line. A row inside another group's child wrapper gets none (S741 review):
+# in Drafting Technology's Elective Courses (printed 6.00) CON-60 follows "Only one of the following may be used"
+# inside "Select an additional 6-8 units from the following elective courses", and a line there read as the end of
+# the outer group, so the list added to 12. The line says what it means, since the reading model sees the text alone.
+CQ_DIV =re.compile(r"<(/?)div\b((?:[^>\"']|\"[^\"]*\"|'[^']*')*)>", re.I)
+CQ_ROW = re.compile(r"\bdata-row-id\s*=", re.I)
+CQ_GROUP_ROW = re.compile(r"\bdata-is-group-with-condition\s*=\s*[\"']true[\"']", re.I)
+CQ_GROUP_KIDS = re.compile(r"\bdata-child-type\s*=\s*[\"']block-entry-children[\"']", re.I)
+CQ_GROUP_END = "(the group above ends here: the rows below are not among its choices)"
+
+
+def cq_rows(html_text: str) -> list[dict] | None:
+    """A curriculum block's rows in order, as its div tags nest them: {"at" (the row's offset), "depth", "group"
+    (the row opens a group with a condition), "members" (rows inside its child wrapper, a group's own count),
+    "after_group" (the row follows a group's row at its depth, with no row between), "inside" (how many groups'
+    child wrappers hold the row; 0 for a row of the list itself)}. None when the block's div tags do not balance, so
+    nothing is read from a nesting that cannot be trusted."""
+    stack: list[dict] = []      # each open div: {"kind": "group" | "kids" | "", "row": its row or None, "n": rows}
+    rows: list[dict] = []
+    pending: int | None = None  # the depth a closed group's next sibling row would open at
+    for m in CQ_DIV.finditer(html_text or ""):
+        attrs = m.group(2)
+        if m.group(1):
+            if not stack:
+                return None
+            top = stack.pop()
+            depth = len(stack)
+            if pending is not None and depth < pending:
+                pending = None                      # the list closed: the group was its last row
+            if top["kind"] == "kids" and top["n"]:
+                owner = next((e for e in reversed(stack) if e["kind"] == "group"), None)
+                if owner is not None:
+                    owner["n"] += top["n"]
+            if top["kind"] == "group":
+                top["row"]["members"] = top["n"]
+                if top["n"]:
+                    pending = depth
+            continue
+        if attrs.rstrip().endswith("/"):
+            continue
+        depth = len(stack)
+        row = None
+        if CQ_ROW.search(attrs):
+            group = bool(CQ_GROUP_ROW.search(attrs))
+            row = {"at": m.start(), "depth": depth, "group": group, "members": 0,
+                   "after_group": pending is not None and depth == pending,
+                   "inside": sum(1 for e in stack if e["kind"] == "group")}
+            rows.append(row)
+            if row["after_group"]:
+                pending = None
+            kids = next((e for e in reversed(stack) if e["kind"] in ("kids", "group")), None)
+            if kids is not None and kids["kind"] == "kids":
+                kids["n"] += 1
+        kind = "group" if row and row["group"] else "kids" if CQ_GROUP_KIDS.search(attrs) else ""
+        stack.append({"kind": kind, "row": row, "n": 0})
+    return None if stack else rows
+
+
+def cq_group_ends(html_text: str) -> str:
+    """The block's HTML with a line, CQ_GROUP_END, before each row of a list that follows a group and opens none
+    itself; a row inside another group gets none. A block whose div tags do not balance, or that holds no such
+    row, comes back unchanged."""
+    rows = cq_rows(html_text)
+    at = [r["at"] for r in rows or [] if r["after_group"] and not r["group"] and not r["inside"]]
+    for i in reversed(at):
+        html_text = html_text[:i] + "<div>%s</div>" % CQ_GROUP_END + html_text[i:]
+    return html_text
+
+
 # RCCD's seven Liberal Arts emphasis degrees name each subject once and then
 # its course numbers alone: "Mathematics (MATH): C2210, C2210H, 5, 9" and
 # "Biology (BIO) 1, 1H, 4". Read as printed, the page names no listed course
@@ -2281,7 +2369,7 @@ def cq_page_text(page: dict) -> tuple[str, str]:
     parts = [title]
     for b in (page or {}).get("body") or []:
         head = (b.get("catalogblockheader") or "").strip()
-        body = cq_subject_lists(cq_text(b.get("text") or ""))
+        body = cq_subject_lists(cq_text(cq_group_ends(b.get("text") or "")))
         if head and head not in parts:
             parts.append(head)
         if body:
@@ -2499,12 +2587,19 @@ def cq_page(entry: dict, page: dict | None, prefix: str, children: list | None =
     if not page:
         return None
     title, text = cq_page_text(page)
+    # The entry's text page by page (RC.OWN_PARTS, S741): rule B types an entry without a child page that is course
+    # descriptions on its own (San Diego City's Courses tab), where the other pages print every listed course.
+    parts = [{"title": title, "text": text, "child": False}]
     for child in children or []:
-        text = "\n".join(t for t in (text, cq_page_text(child)[1]) if t)
+        child_title, child_text = cq_page_text(child)
+        parts.append({"title": child_title, "text": child_text, "child": True})
+        text = "\n".join(t for t in (text, child_text) if t)
     title = title or (entry.get("text") or "")
     url = prefix + (entry.get("aliaspath") or str(entry.get("id")))
     got = {"final_url": url, "title": title, "h1": title, "body": text, "content": text,
            "status": 200, "access": "ok", "links": []}
+    if len(parts) > 1:
+        got[RC.OWN_PARTS] = parts
     out = {"url": url, "title": title, "h1": title, "body": text, "content": text, "got": got,
            "codes": page_codes(text), "node": entry.get("id"), "group": cq_group(entry.get("text") or title, url)}
     if entry.get("twin_ids"):
@@ -2583,6 +2678,7 @@ def cq_pages(reader, start: str, report: dict) -> list[dict]:
     # twin only when its title and award match an entry's, and then its id is
     # recorded on that entry rather than dropped unseen.
     queue, i = list(entries), 0
+    group_ends = {"pages": 0, "lines": 0}
     ids = {e.get("id") for e in entries} | {t for e in entries for t in e.get("twin_ids") or []}
     by_identity = {cq_identity(e): e for e in entries}
     while i < len(queue) and i < MAX_PAGES:
@@ -2606,8 +2702,14 @@ def cq_pages(reader, start: str, report: dict) -> list[dict]:
         pg = cq_page(e, page, prefix, children)
         if pg:
             pages.append(pg)
+            # The account counts the pages whose text carries a group-end line, and the lines (S741 review), so
+            # each catalog's capture files how many of its pages the line changed.
+            ends = sum(1 for ln in pg["body"].split("\n") if ln == CQ_GROUP_END)
+            group_ends["pages"] += 1 if ends else 0
+            group_ends["lines"] += ends
         if i % 50 == 0:
             print("  read %d of %d program pages" % (i, len(queue)), flush=True)
+    report["curriqunet"]["group_ends"] = group_ends
     report["curriqunet"]["entries_read"] = i
     report["curriqunet"]["twin_ids"] = {str(e.get("id")): e["twin_ids"] for e in queue if e.get("twin_ids")}
     report["curriqunet"]["failed_calls"] = failed_calls(errors)   # before the list is cut (pages_account())

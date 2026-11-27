@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 184,
  "with_closed_list": 178,
- "started": "2026-11-26T15:20:04Z",
+ "started": "2026-11-27T07:04:56Z",
  "scope": "/ventura/",
  "sitemap": {
   "url": "https://catalog.vcccd.edu/sitemap.xml",
@@ -173,7 +173,7 @@
   "yield_refused_passing": 0
  },
  "loads": 298,
- "seconds": 1500.5,
+ "seconds": 1461.7,
  "found": 174,
  "by_method": {
   "no_closed_list": 6,
@@ -257,10 +257,61 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/ventura",
-  "kept": 173,
+  "kept": 166,
   "kept_moved": 0,
-  "programs": 0,
-  "list": [],
+  "programs": 5,
+  "list": [
+   {
+    "control_number": "35654",
+    "title": "Basic Law Enforcement Academy",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.vcccd.edu/ventura/programs-courses/police-science/basic-law-enforcement-academy-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/police-science/basic-law-enforcement-academy-coa/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "37415",
+    "title": "Basic Law Enforcement Academy",
+    "award": "A.S. Degree",
+    "url": "https://catalog.vcccd.edu/ventura/programs-courses/police-science/basic-law-enforcement-academy-as/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/police-science/basic-law-enforcement-academy-as/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "40179",
+    "title": "Basic Law Enforcement Academy (Noncredit)",
+    "award": "Noncredit program",
+    "url": "https://catalog.vcccd.edu/ventura/programs-courses/noncredit-programs-courses/basic-law-enforcement-academy-cocn-noncredit/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/noncredit-programs-courses/basic-law-enforcement-academy-cocn-noncredit/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "44994",
+    "title": "English for Multilingual Students—Level 3: Advanced Academic Oral Communication Skills",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.vcccd.edu/ventura/programs-courses/english-multilingual-students/level-3-oral-communication-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/english-multilingual-students/level-3-oral-communication-coa/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "44995",
+    "title": "English for Multilingual Students—Level 3: Advanced Academic Written Communication Skills",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.vcccd.edu/ventura/programs-courses/english-multilingual-students/level-3-written-communication-coa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/english-multilingual-students/level-3-written-communication-coa/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   }
+  ],
   "held_worse_window": [],
   "held_no_gain": [],
   "held_opens_on_list": [],
@@ -269,6 +320,7 @@
    "08253",
    "35654",
    "37415",
+   "40179",
    "44994",
    "44995"
   ],
@@ -281,6 +333,26 @@
     "coverage": 0.517,
     "was_url": "https://catalog.vcccd.edu/ventura/transfer-information/c-id/",
     "was_coverage": 0.517,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "46400",
+    "title": "English for Multilingual Students—Level 3: Advanced Academic Oral Communication Skills",
+    "award": "Noncredit program",
+    "url": "https://catalog.vcccd.edu/ventura/programs-courses/noncredit-programs-courses/engm-level-3-oral-comm-cocn/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/noncredit-programs-courses/engm-level-3-oral-comm-cocn/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "46401",
+    "title": "English for Multilingual Students—Level 3: Advanced Academic Written Communication Skills",
+    "award": "Noncredit program",
+    "url": "https://catalog.vcccd.edu/ventura/programs-courses/noncredit-programs-courses/engm-level-3-written-comm-cocn/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/noncredit-programs-courses/engm-level-3-written-comm-cocn/",
+    "was_coverage": 1.0,
     "was_method": "sitemap_page"
    }
   ],
@@ -601,7 +673,7 @@
    "url": "https://catalog.vcccd.edu/ventura/programs-courses/biology/biology-ast/"
   },
   "35654": {
-   "sha256": "081d451aec4ecff4665a8d46218201da294f0f67cf1bfae8bcc586633248c8d3",
+   "sha256": "9afde228cc8582de69fbe83e4254d58605dc52dfefa572004431bc9f1a2fb54f",
    "url": "https://catalog.vcccd.edu/ventura/programs-courses/police-science/basic-law-enforcement-academy-coa/"
   },
   "36639": {
@@ -625,7 +697,7 @@
    "url": "https://catalog.vcccd.edu/ventura/programs-courses/agriculture/agriculture-business-ast/"
   },
   "37415": {
-   "sha256": "b82d0d7d6ac39f479443e458735ec30f658e12f858eae549a3e144f53f9670cb",
+   "sha256": "2bc2c63a6f070bb41e42939e841644099d882afc7f45c6cbf122b96f507401f0",
    "url": "https://catalog.vcccd.edu/ventura/programs-courses/police-science/basic-law-enforcement-academy-as/"
   },
   "39961": {
@@ -649,7 +721,7 @@
    "url": "https://catalog.vcccd.edu/ventura/programs-courses/manufacturing-technology/advanced-manufacturing-as/"
   },
   "40179": {
-   "sha256": "a9477733db5346da1f8e1ecb23600eafff4d5415928cb84d90a87e4fccbd45ac",
+   "sha256": "d2b72cc35ac007be725a27f876d15d516e6db401033d98a640384161504b4b4e",
    "url": "https://catalog.vcccd.edu/ventura/programs-courses/noncredit-programs-courses/basic-law-enforcement-academy-cocn-noncredit/"
   },
   "40249": {
@@ -817,11 +889,11 @@
    "url": "https://catalog.vcccd.edu/ventura/programs-courses/chemistryas/"
   },
   "44994": {
-   "sha256": "77feff719aae6926d4ad99dacd54ed706e238c66ff50ce77611ea7161f0eabb9",
+   "sha256": "8c417c8d6e474fbb567c4106c24d62c9cc063298be9e41ba7971ab77f2fbce01",
    "url": "https://catalog.vcccd.edu/ventura/programs-courses/english-multilingual-students/level-3-oral-communication-coa/"
   },
   "44995": {
-   "sha256": "c80d09b9eeaeafb870d0fe31bd2f7eee60311a63038537874bc3e84f7ff7498c",
+   "sha256": "f9042abb4f7a57157871c44b86083c5d9cddd9e5ed83cdd4ba90e0f04dff2866",
    "url": "https://catalog.vcccd.edu/ventura/programs-courses/english-multilingual-students/level-3-written-communication-coa/"
   },
   "45003": {
@@ -901,11 +973,11 @@
    "url": "https://catalog.vcccd.edu/ventura/programs-courses/education/elementary-teacher-education-aat/"
   },
   "46400": {
-   "sha256": "b7177d3f4c791e63371ff9a2376e7c0295ee890fa8eabf58ae3231d629eb0015",
+   "sha256": "2927620a051c7486553fd448ed67dc92f53ca0dabb4f01ae362b55acc3c62c4d",
    "url": "https://catalog.vcccd.edu/ventura/programs-courses/noncredit-programs-courses/engm-level-3-oral-comm-cocn/"
   },
   "46401": {
-   "sha256": "b28e4f26302d2e6bbb282ca3b5933e999700961b71b9cd4cbf9b07f1b9868afa",
+   "sha256": "f032234512d3fb51fb84beaf1d477524841eae14a71bf73aca8fd6ae4618f04f",
    "url": "https://catalog.vcccd.edu/ventura/programs-courses/noncredit-programs-courses/engm-level-3-written-comm-cocn/"
   },
   "46415": {
@@ -985,5 +1057,10 @@
    "url": "https://catalog.vcccd.edu/ventura/programs-courses/computer-science/cisco-ccna-coa/"
   }
  },
- "run": "45847865286"
+ "staged_from": {
+  "run": "45955854213",
+  "proof": "text sha256 of 174 programs",
+  "pages_loaded": 0
+ },
+ "run": "45964322406"
 }
