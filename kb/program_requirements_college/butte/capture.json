@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 192,
  "with_closed_list": 168,
- "started": "2026-11-25T08:28:11Z",
+ "started": "2026-11-27T12:30:47Z",
  "curriqunet": {
   "catalog": 14,
   "view_prefix": "https://butte.curriqunet.com/catalog/iq/",
@@ -20,6 +20,10 @@
   "entries": 467,
   "stopped_at_cap": false,
   "same_title_entries": 221,
+  "group_ends": {
+   "pages": 79,
+   "lines": 158
+  },
   "entries_read": 246,
   "twin_ids": {
    "28186": [
@@ -693,15 +697,21 @@
  "pages_answered": 246,
  "listing_failed": 0,
  "banner_h1": null,
+ "site_pins": {
+  "14583": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28156/28324",
+   "bound": true
+  }
+ },
  "catalog_lookup": {
   "self_test": {
-   "tested": 157,
-   "hits": 139,
-   "recall": 0.885,
+   "tested": 159,
+   "hits": 141,
+   "recall": 0.887,
    "false": 0,
    "false_off_own": 7,
    "false_no_claims": 7,
-   "shared": 8,
+   "shared": 6,
    "false_matches": [
     {
      "control_number": "17970",
@@ -822,7 +832,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "01320",
@@ -830,7 +840,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "01321",
@@ -838,7 +848,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "01324",
@@ -846,7 +856,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "01334",
@@ -854,7 +864,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "01339",
@@ -862,7 +872,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "01340",
@@ -870,7 +880,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "01342",
@@ -878,7 +888,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "01343",
@@ -886,7 +896,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "01349",
@@ -894,7 +904,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "01356",
@@ -902,7 +912,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "01357",
@@ -910,7 +920,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "01363",
@@ -918,7 +928,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "01372",
@@ -926,7 +936,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "07259",
@@ -934,7 +944,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "11122",
@@ -942,7 +952,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "11126",
@@ -950,7 +960,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "11133",
@@ -958,7 +968,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "11137",
@@ -966,7 +976,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "11138",
@@ -974,7 +984,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "11139",
@@ -982,7 +992,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "17935",
@@ -990,7 +1000,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "18988",
@@ -998,7 +1008,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "19042",
@@ -1006,7 +1016,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    }
   ],
   "yields": [],
@@ -1014,7 +1024,7 @@
   "yield_refused_passing": 0
  },
  "loads": 1171,
- "seconds": 5571.8,
+ "seconds": 5518.7,
  "found": 165,
  "by_method": {
   "no_closed_list": 24,
@@ -1023,10 +1033,6 @@
   "sitemap_page": 165
  },
  "shared_pages": {
-  "https://butte.curriqunet.com/catalog/iq/25398/28156/28380": [
-   "14583",
-   "43185"
-  ],
   "https://butte.curriqunet.com/catalog/iq/25398/28164/28538": [
    "31950",
    "46540"
@@ -1115,10 +1121,21 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/butte",
-  "kept": 162,
+  "kept": 161,
   "kept_moved": 0,
-  "programs": 0,
-  "list": [],
+  "programs": 1,
+  "list": [
+   {
+    "control_number": "14583",
+    "title": "Registered Nursing",
+    "award": "A.S. Degree",
+    "url": "https://butte.curriqunet.com/catalog/iq/25398/28156/28324",
+    "coverage": 1.0,
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28156/28380",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   }
+  ],
   "held_worse_window": [
    {
     "control_number": "31953",
@@ -1148,12 +1165,16 @@
    }
   ],
   "held_opens_on_list": [],
+  "only": [
+   "14583"
+  ],
+  "not_named": [],
   "refused_passing": [],
   "forced_unbound": []
  },
  "fingerprints": {
   "01298": {
-   "sha256": "0689e2b48d6c524c860b972f7ef0b653bb12df4f7bc42795e62020eb6a4ba7d3",
+   "sha256": "1cab8a131e1494ab715623056c9201ff7d8d4cb0c848b2d28a196d9e897e64f8",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28078/28202"
   },
   "01302": {
@@ -1169,7 +1190,7 @@
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28088/28240"
   },
   "01307": {
-   "sha256": "8ed94a93dc5293603104f1872b94932bf41914a9b536842dc5c8fee54b8b8aff",
+   "sha256": "5e921c7651b619843ef6ab05a7f6e25959949e7081b37585f2b585d43856beea",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28090/28242"
   },
   "01308": {
@@ -1181,11 +1202,11 @@
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28090/28244"
   },
   "01311": {
-   "sha256": "d15978f4a386e69e6eb91012ae326be8fc015d52f160d9159db101164042e8df",
+   "sha256": "8f833ee9ffacbe606cf435d48a1755fc1d7f9cc4c658324c50b59f19762848d8",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28090/28247"
   },
   "01312": {
-   "sha256": "7ec94e3aefc8b61d4c82989241e904e399fbb8200b235daf6b11cb7f40d8bbd4",
+   "sha256": "5e2224e0b8c5faca9577f9d8dc6246eca3c578bdd2fb08a7dfd6192e04126653",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28172/28335"
   },
   "01313": {
@@ -1197,7 +1218,7 @@
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28092/28235"
   },
   "01315": {
-   "sha256": "f266eea2edc7e2449636bb3a29649944c8b4babe439f4509bb0f0a5de69409b4",
+   "sha256": "b1e8a46440ff93189dc89d1bd231702fd481cca7b9357045d26f472811063b7e",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28092/28238"
   },
   "01322": {
@@ -1209,7 +1230,7 @@
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28225"
   },
   "01325": {
-   "sha256": "312d296c7eaf133ad72fcb826cb29c2608e5c1c4555afc7a52578902f4f42f0b",
+   "sha256": "ec7ed71f0ae6d50a731b624cb0bc15173b9e24f45cb5a7c4aa51058440f6605e",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28182/28349"
   },
   "01329": {
@@ -1217,19 +1238,19 @@
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28084/28222"
   },
   "01348": {
-   "sha256": "8bb470e684f0b52617c2ab729baf5879ad898e9d3375435fd0ae222c6181f5ae",
+   "sha256": "c40058d90634a4a83c25b079678cc05e4b0463c0771cead2b3b4e48d76a06bf8",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28124/28296"
   },
   "01355": {
-   "sha256": "ea7a221548d589f2cc756da03b70642c56051c55cb19b647041861fad73fc5af",
+   "sha256": "714422a65c0b5743c098e069b1aa6970bea726dd172084fd1dbf3dfd76372929",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28146/28308"
   },
   "01358": {
-   "sha256": "c45ef809dc6905e8d8ecc567bf6b73a59595f709b697c58b0f2b3b4b1756cef4",
+   "sha256": "26ee6cdb7ada9792f1fc8f349fc38bd487ab7095278a9c22c9192a21cdd56c81",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28094/28255"
   },
   "01362": {
-   "sha256": "0f4a1b05a2c9fe0c4c2d43077f0bedd2ca55e1eb5e6ff1683cbe1f58b93cfb07",
+   "sha256": "b8f432a1e1311b5bd6d91dba4fbb959fd6665808edf4e62a37c0e9cfb50e0757",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28126/28301"
   },
   "01370": {
@@ -1241,7 +1262,7 @@
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28122/28287"
   },
   "07258": {
-   "sha256": "658b460fcee7f167a63d04c19b2d81d840be1d21d7b801c4f8a86cfadc655d80",
+   "sha256": "058de8ef911ee5ee70d9c705fe231d46cc5dbb5e68f55123596571f6daf8a2cb",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28122/28284"
   },
   "07260": {
@@ -1261,23 +1282,23 @@
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28170/28342"
   },
   "09582": {
-   "sha256": "6f29c42585a1b5c2340dc84d94549414b9bc631744195e03a50128e8f3187f71",
+   "sha256": "f0bbccf98696d35df837ec1e82fe68b7494e03be272819f960bf6a42f8d09513",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28150/28313"
   },
   "11128": {
-   "sha256": "55f20694fba4266667fbddd5f1dd85b63a09de16e5391e153ce7153017c583fa",
+   "sha256": "fb9be4a8bb6e8aec75050ef30ea5f15f5d5795a2ac36767b04a3677e5b65dedc",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28084/28223"
   },
   "11131": {
-   "sha256": "17562da68df6c5147013adbea8f6b5ca1975ea443cf43950f608349a42b33a65",
+   "sha256": "38c56597c873db4893e5858549c9962b4077ab8b846922bd084887f89b06a9d1",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28118/28290"
   },
   "11136": {
-   "sha256": "0cdb546dee983f54842a7e342b755226e48fae9a7f1d02c279f0d0eb946331c8",
+   "sha256": "0ef1d4d03d177c7378f23eb840eada8ed51ff3be054794bfe1c6dcb1a32eb89f",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28070/28210"
   },
   "11140": {
-   "sha256": "bd1b9ee8598092091906022c993cf8ab029bb9bb06f2b5fda9683f7b975ccaf7",
+   "sha256": "3d95ac25a06a45167dd5c40ee45cce0f494f0aee2da083cbc169481e9902135d",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28150/28311"
   },
   "12221": {
@@ -1285,11 +1306,11 @@
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28090/28249"
   },
   "14583": {
-   "sha256": "5966bcc1c521e68e3c90f796cf264ba2117becc758f33cf8781ce47f213061b6",
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28156/28380"
+   "sha256": "50494f8659f8caeb6d84dc1f34fd6d3b20b457d72c46cb8ada7aff228ace19f6",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28156/28324"
   },
   "15151": {
-   "sha256": "8408e845fb75da793a190da94b45f4cc22f01b4a4885079949a500134f0f7448",
+   "sha256": "e31d3150a558aa6a66e79c89030547e849bba2a9054bbe271479b474b1446c4f",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28162/28332"
   },
   "16981": {
@@ -1405,15 +1426,15 @@
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28104/28259"
   },
   "31000": {
-   "sha256": "50f5d5debcaeaec1846b3ff8c32afc5eff4e7a8be4eff5355b4f865ea987e2a5",
+   "sha256": "fd0de7a0e0faeaeb4b57f25ec8f6d896460bcd3ad5e748681a18a8e43625acd3",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28138/28306"
   },
   "31042": {
-   "sha256": "89829b3fd496c7edeed6387ee0f8d0fba5394fd4366552542dac2a638fd5aa34",
+   "sha256": "2017a898579878ba51dd4274297beee06f0ad3c501df66e6fb9affb32651e534",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28070/28206"
   },
   "31133": {
-   "sha256": "e4db112f004870c1a3f5d8c63f99a2c6e2890138b49b911905faeafa227050c4",
+   "sha256": "6f3f43b632ab707b78f172471c2b41cd1540dfc52847efffca703709652e7360",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28118/28289"
   },
   "31236": {
@@ -1425,7 +1446,7 @@
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28100/28265"
   },
   "31284": {
-   "sha256": "7639c3e4732d5f8b86c1d627eb3c3426e37ec45c39d762a9337f99332dc9d627",
+   "sha256": "c9b9c641acdcafcd9019b0fca3154a7ea4b3a39b9f311cf4a6441493c636b0a4",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28100/28262"
   },
   "31306": {
@@ -1437,23 +1458,23 @@
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28100/28264"
   },
   "31422": {
-   "sha256": "48ab5a524174ed406bfac4dcc72d71141da9b7c88b7daa3d67cb91b5af71e4ef",
+   "sha256": "5bdc24def1e91de8060d824849d35929d9beee718bfb9715a07940286e264a54",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28168/28334"
   },
   "31512": {
-   "sha256": "a9ca8d78101c8b370ddaf98e3090d57daaa878d2b25158b76db40b276790d59d",
+   "sha256": "7b9ad3d1aed21bcfb01d2d25adb24120877c8d383e809b64ca4ec82686990cab",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28122/28288"
   },
   "31850": {
-   "sha256": "2c60c2f636106b2e2815810c82dda2945607117ad5cd90894755194aecc5145d",
+   "sha256": "690d2fa40a9042cdfa3ec6e629ffb464d7f3fb9939740e987099575db2a1d522",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28108/28276"
   },
   "31930": {
-   "sha256": "9a4595aad308aa45e88b9a5547991dbc65b1437ec9b349b5edd9fb176b2681c7",
+   "sha256": "93f391bd35ca659e88e3ccc3007477d99516f8d5a560b33e7d75fc20122c0221",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28100/28267"
   },
   "31939": {
-   "sha256": "39f1aa6cd806afef82546a00455775cff9648365d8d7350b7b472e59c333c0c1",
+   "sha256": "847c03e2911660902d477c16efa3e69306fe7fd5cec3d8e0e5d7d9e0c46cb296",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28166/28331"
   },
   "31941": {
@@ -1461,35 +1482,35 @@
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28096/28252"
   },
   "31950": {
-   "sha256": "af1fbf7fcbd453efe562c44f1963914432625eee445e18efca9a2972d953f5b3",
+   "sha256": "1410dffb21dcd2e805997be23267bc3e3e8e67c612058807c646d133cc477b9b",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28164/28538"
   },
   "31951": {
-   "sha256": "8725463801dbeaab36f09123a89c7f2cb5921a5be9f29a2cbe4479fb11e23dc1",
+   "sha256": "5cd6f1f016885428742cf302af61b0c66f42e7e20bc74d46443c90f5b637a2a7",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28084/28221"
   },
   "31952": {
-   "sha256": "47d6aa9858fac03d52f31997694734eb8d99d055a2824f3bf1e29095bf7bc4f2",
+   "sha256": "e11821ef4e5911982b2bdbba5f3ba4c8c3a73dfdb626b98aeaec70a3ce84428f",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28130/28304"
   },
   "31953": {
-   "sha256": "2ef0f1459d12a5d7c8e419c0dece46465cf554f1fdf1008ddac0f341af452a37",
+   "sha256": "5d6e9fa009d52ed45159ff1b049ba5a8d322c7496ed1305b1772a8314cc91495",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28146/28526"
   },
   "31954": {
-   "sha256": "b9517c3affb11e292cfb9ccb7935f73e9c2ca927c7a20e57d4961a5de8d2760d",
+   "sha256": "f3bd5860d6fa047e4ca6b7130dfcef9edb088059885c2dc060d6a51b5ad10955",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28176/28345"
   },
   "32093": {
-   "sha256": "c61f6ab41874c414918df91b669e9a093c12a8958bebe69e78fb9133fef46ceb",
+   "sha256": "6bb40d276e90dd5aab112c6559aeecb77a4459476c90a121616debb2e82bdfbf",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28084/28398"
   },
   "32446": {
-   "sha256": "64cf9c1d4fdb01bf495c62c917e2608a4213f76f280c405072573dc209982a9b",
+   "sha256": "4c7bf0d5b45d9c276dcd52c302b94f5b2329b262cfc6f4bf139581a93f64870c",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28142/28361"
   },
   "32469": {
-   "sha256": "b7c1e1279d64b40ca4aa9edf9142738833ffd3660586407fcffb56e081ebed00",
+   "sha256": "1d40f9f74eff4777cbe4a92f1daeafdc6b6ebbbc37e63d1668a41aeb4e28f878",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28152/28315"
   },
   "32721": {
@@ -1505,11 +1526,11 @@
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28152/28317"
   },
   "33199": {
-   "sha256": "360c7daa68dfa69534e5f58b2e2f92320f74ed4575d49e8f030b4ca07e9ef1e1",
+   "sha256": "07bbbf0f146ff521c47bffc5b55abecc49c0e7a9a65760601cbc7e3a506230c7",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28140/28307"
   },
   "33222": {
-   "sha256": "83db65729501157db0ce2ff7b58ca9c743ceccc3d4e097f9c1781a2c1b458324",
+   "sha256": "a27b7066e4c91c80209fbebef24e3f75889075ad31417fe7ba9ca34420ae447b",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28152/28316"
   },
   "33254": {
@@ -1517,11 +1538,11 @@
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28072/28219"
   },
   "33563": {
-   "sha256": "98242a3526503e9ab4fcdb060a95bd9089096aded464e0073639ab67efd7d428",
+   "sha256": "fd325c559a3460ed569604e29c94fd44f47420b69e92a725f29b93dd1dcf61d1",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28112/28279"
   },
   "33579": {
-   "sha256": "954ec11fbbde5e20bb80e07b3dac8128df1d5bc79486750a96afceba383b6dab",
+   "sha256": "4b81186e66352fd94bb9c77cb69bee7168f101b3a568c8a52fff94a75cfe9b07",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28076/28186"
   },
   "33847": {
@@ -1529,27 +1550,27 @@
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28158/28363"
   },
   "33927": {
-   "sha256": "8adc3ee05d734bcfda56cd80ce7a16c27633f0eede112a909b88f6a14ac72338",
+   "sha256": "13525df3c1923e895dc8aec39ac6a84b34f737a362796165485fdf3dec24b7fd",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28110/28278"
   },
   "35022": {
-   "sha256": "2e6a3aed3e8dbeb63122bef5b588df09dfd5d38e20f91d2d20b9978a9d121b0e",
+   "sha256": "6d8d197c723f2b8dae7b01a1db3f2f0ec0819ee2cb0b41fc0a518ee2e7feaeff",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28088/28241"
   },
   "35061": {
-   "sha256": "a6f98b78136615f48d50aa78276b8b026f5b3616642bf147e5b238689ac4a6f7",
+   "sha256": "848934c8268db5dab735689c3bfb80930a897ebcddfc0e251983662175b10776",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28122/28283"
   },
   "35132": {
-   "sha256": "99bca2bb7e89eb3c532a17df60ee217c8c1e8bb407637f9e7bcf9077d1dcb0ad",
+   "sha256": "e8028b5a7e4723a4aa20df92efab550baa01cf67805927623c78baafde4989a0",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28128/28298"
   },
   "35197": {
-   "sha256": "b840b60ed6487dc118efe60989dcd924aa90a3a5e45ea57c75bd374ac98a4d20",
+   "sha256": "099a62a6d612740d8f6c3863dee36169b55692f594f546cb35ddb61de9cbca22",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28096/28251"
   },
   "35684": {
-   "sha256": "a2f2311df564bd70026236c78e8e19496d0dd3114ceec9d9d30238874cde2e4d",
+   "sha256": "e251d382e259bce7ddafedf825270c49770ec44cb30ade70305728862ba652fe",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28170/28340"
   },
   "35746": {
@@ -1557,7 +1578,7 @@
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28134/28364"
   },
   "35887": {
-   "sha256": "f44d124d54c9200803179ed9825730ede2ff10a04ae3a596c6c0d41e756263ce",
+   "sha256": "8c0086fc9c6d3a5c10571c4a0cc85aacf8f3bd5ab90e50be61d5958430d93e88",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28178/28347"
   },
   "35937": {
@@ -1569,15 +1590,15 @@
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28072/28218"
   },
   "36241": {
-   "sha256": "5cb5070a06b275a1b0a777bdf43602fe1d9f5b0b7d3d29a1121df2abc036f17c",
+   "sha256": "5e5f3ee6fbde216a7a482b12f67734b6dfab52742a7238d3a0bbf5efd963ce7b",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28100/28263"
   },
   "36259": {
-   "sha256": "65bc7cd9c661240e94e95f288a63ce6c78658f883b7ee21675d52915d6b386c1",
+   "sha256": "6a7476838f95c20c071b4b8d2768ef1eeabb9b6264b793a8adffa715bf9aaa4d",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28148/28365"
   },
   "37059": {
-   "sha256": "e7924c95098768fb7ee9fa278e9990d15f59b4c9a79c4b979843b9766bd848cd",
+   "sha256": "c0dbcc703b448d2b161b325345ab5dab7193617b718771230deedc70fab1fa8e",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28080/28514"
   },
   "37852": {
@@ -1625,7 +1646,7 @@
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28144/28373"
   },
   "38057": {
-   "sha256": "7f8ab199cddac2e294037c968f4ee637eb0ab026dae4f4e1d7bd5e3d0312ecdd",
+   "sha256": "99e059021b35fbfd2a7985ca9146e68c987b21abc2ef19e16a4111b624203b71",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28102/28354"
   },
   "38058": {
@@ -1665,11 +1686,11 @@
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28100/27600"
   },
   "40923": {
-   "sha256": "a48efdd4c4520309725ffc4ce8d563a0e860bfc80cc960d7bda5f9f10dcab7ab",
+   "sha256": "17a77d988591f8046dfa24c0ca1182cb191a5ec72c7b54817ca7be8b33625b4c",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28402/27536"
   },
   "41755": {
-   "sha256": "fa8c0eb08427de7e15f000532d6596c08f5bbf0f2678340afabea6aecbe13aa4",
+   "sha256": "0717fd9cf7c0a99435176a9a3f8f1d41528c2f2f2889a3378c82fe77880ba28d",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28090/28243"
   },
   "41986": {
@@ -1697,15 +1718,15 @@
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28158/27508"
   },
   "43453": {
-   "sha256": "858630cc15783f42c60d584d12e4a69294179627b3c31ae4d540b03dc66360ab",
+   "sha256": "d1b5ef9b8a3980b8b63e5e88846179eda24cfbf146ad2d196129a1bb68daa6dd",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28098/28257"
   },
   "44131": {
-   "sha256": "356220283cc0e9e82b39b9da363d3b306a988b1e0827ed174ff1f706315bb908",
+   "sha256": "5502ebb8dc7fc481f4334b3786a58f27a9c06230a2fb3b72cfcdd5b0bafc7810",
    "url": "https://butte.curriqunet.com/catalog/iq/25399/28165/28025/27891"
   },
   "44132": {
-   "sha256": "98f35599d408cc7b425b48fe72ddf79683a16d2c517bb1060c5d02556547de1e",
+   "sha256": "bde4cb26eb59b38798620b2249dbfebd7f912c9803a858a9b210ef4489ea02da",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27529"
   },
   "44133": {
@@ -1721,7 +1742,7 @@
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27537"
   },
   "44136": {
-   "sha256": "f8f53913a9556b073139397df07c94179c72adb2d7747f9450462a4232860564",
+   "sha256": "496583a1a58e2723497a5b4bd01f72acb2d1c7292394f7465259b16055be3fc8",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27541"
   },
   "44137": {
@@ -1741,11 +1762,11 @@
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27543"
   },
   "44143": {
-   "sha256": "bcf0d7c6eba7dc3bb178cade157d53881231a7c9cf4ce0289c6b15ae7a0f67b3",
+   "sha256": "4a6fe12402435b0ee16eb0ad43c75a1c343519c9ac4eab6a80013df13ee2b959",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27549"
   },
   "44298": {
-   "sha256": "c5fa69af328a3cdc032babd7e12679f85520ae5ae39092e6f4463421bcff1b8c",
+   "sha256": "f8b2d8731b37ffa8ddb02674a5ca10d73386b426bfbcf4547f802bab8009cf0c",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/27607/27515"
   },
   "44301": {
@@ -1761,11 +1782,11 @@
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27539"
   },
   "44716": {
-   "sha256": "1fd63954001732e0e067c86b899e077a35080d44df469643ddca4b7718832fad",
+   "sha256": "e226afc7f44cb27bf3953b3f469f4ae434c533aca5d3848b743ed3f26df1cd35",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28152/27601"
   },
   "44753": {
-   "sha256": "1ddab80a1da43d88cc15a8eff35a9665a7fbc098e7638a77894da2272eb6a352",
+   "sha256": "d922383693ed6843c58cb4b35637d1f8d47826d4667e9ba5372ef17f7ff633da",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28152/27603"
   },
   "44823": {
@@ -1781,7 +1802,7 @@
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28098/28435"
   },
   "45652": {
-   "sha256": "36e2dc0499929793953ec846c75febf59f83bb08e0f89241c170def568654757",
+   "sha256": "8bf9e975515ce4abea4b837e5fef321d026723a1b99e8d91efd076f2f1768561",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28428/28534"
   },
   "45662": {
@@ -1793,7 +1814,7 @@
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28102/28444"
   },
   "45799": {
-   "sha256": "5c2fec1ff0342cf56c315d44faa20b2bba8c4e8e7fa9a1d54dced2f61843660e",
+   "sha256": "a1361925f4abdd9d7ca16cc311d8c08386c306c97262da63c500b0a459fcafea",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28102/28443"
   },
   "46303": {
@@ -1801,11 +1822,11 @@
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28108/28469"
   },
   "46540": {
-   "sha256": "af1fbf7fcbd453efe562c44f1963914432625eee445e18efca9a2972d953f5b3",
+   "sha256": "1410dffb21dcd2e805997be23267bc3e3e8e67c612058807c646d133cc477b9b",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28164/28538"
   },
   "46541": {
-   "sha256": "2ef0f1459d12a5d7c8e419c0dece46465cf554f1fdf1008ddac0f341af452a37",
+   "sha256": "5d6e9fa009d52ed45159ff1b049ba5a8d322c7496ed1305b1772a8314cc91495",
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28146/28526"
   },
   "46584": {
@@ -1813,5 +1834,10 @@
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28096/28548"
   }
  },
- "run": "45576373568"
+ "staged_from": {
+  "run": "45999110725",
+  "proof": "text sha256 of 165 programs",
+  "pages_loaded": 0
+ },
+ "run": "46012628995"
 }
