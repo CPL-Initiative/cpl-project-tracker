@@ -290,8 +290,20 @@
    "site_pages_why": "S739 (wave A, the gap census's reader_page_assignment lever, census run 45771011713 of 2026-11-26): Cuesta's filed capture handed each of two certificates a sister certificate's entry whose title holds every word of its own. Each is pinned to its own entry; a pin binds only where the capture's index walk reads that entry and its heading prints the title with its award, and a refused pin reads the program from no page. Reversible by deleting this entry."
   },
   "Copper Mountain College": {
-   "why": "S739 (wave A): the entry holds the reader_page_assignment lever's own page; no reconcile step yet.",
-   "steps": [],
+   "why": "S739 (wave A): the entry holds the reader_page_assignment lever's own page. S741 (lane 1, keys): one step, the degree's printed floor.",
+   "steps": [
+    {
+     "kind": "set",
+     "field": "degree_total_minimum",
+     "value": true,
+     "awards": "associate",
+     "only_with": "degree_total",
+     "pattern": "MINIMUM\\s+(?:TRANSFERABLE|DEGREE)\\s+UNITS\\b",
+     "read": "college-page-read run 45953233659 (kb/college_reads/s741_keys_copper_mountain_pages.json)",
+     "source_words": "History A.A. 43854, PDF p.105: 'MINIMUM TRANSFERABLE UNITS ... 60'; Fire Technology A.S. 14751, PDF p.99: 'MINIMUM DEGREE UNITS ... 60'",
+     "why": "S741 SkyWillet, 2026-11-27 (lane 1, keys): every associate degree in Copper Mountain's 2026-2027 catalog words the degree's units as a floor, 'MINIMUM TRANSFERABLE UNITS' (27 degree sections) or 'MINIMUM DEGREE UNITS' (8), and prints on each program page: 'Students must complete the required courses for their major. General education units, transferable electives, and total degree units will vary for each student. Some considerations include the courses (and their respective units) chosen to complete a general education area or transferable elective, and if required courses for the major also count toward a general education area.' (college page read 45953233659, kb/college_reads/s741_keys_copper_mountain_pages.json, PDF pp.57 to 119 printed line for line; a certificate prints 'MINIMUM CERTIFICATE UNITS' and takes nothing). Two records fail on the degree alone, each major adding to its printed total: History A.A. 43854 (p.105: 'Total Units for the Major 24', 'Minimum Cal-GETC General Education Requirements 34-43', 'Transferable elective units as needed.', 'MINIMUM TRANSFERABLE UNITS 60'; the record reads 58-67 against 60) and Fire Technology A.S. 14751 (p.99: 'Total Units for the Major 42', 'CMC General Education Requirement 21', 'MINIMUM DEGREE UNITS 60'; 63-69 against 60). Read as the floor the page prints, electives make up a sum short of it and a sum past it meets it (Cerritos's and San Joaquin Delta's steps, S415). The step sets the flag only on an associate degree that already holds a degree total, where the page prints the words. Self-recall over every committed Copper Mountain record: tests/program_reconcile_s741_copper_mountain_test.py (the flag lands on the degree records alone, 43854 and 14751 turn passing, no passing record turns failing, and a record whose major fails keeps failing). Reversible by deleting this step."
+    }
+   ],
    "course_renumbers": {
     "BIOL 023": "BI 23",
     "KINE 032A": "PE 52",

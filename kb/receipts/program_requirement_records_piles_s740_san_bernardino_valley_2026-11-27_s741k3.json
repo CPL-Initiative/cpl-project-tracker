@@ -1,0 +1,570 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30); Sam's routine prompt of 2026-11-25, as the S739 conductor's brief carries it: a record held for a gap is collected with its gap named and a lower score on the 0-100 bar, never held, unless the record is not the program's own; S739: San Bernardino Valley's records kb/receipts/program_requirement_records_piles_s739_san_bernardino_valley_2026-11-26_s740c3.json held, read again by key: passed by a rescore where today's scorer's one reading moves them, else collected with their gaps named where the record is the program's own (no reread, no reconcile)",
+ "at": "2026-11-27T07:10:21Z",
+ "college": "San Bernardino Valley College",
+ "keys": {
+  "from": "kb/receipts/program_requirement_records_piles_s739_san_bernardino_valley_2026-11-26_s740c3.json",
+  "members": [
+   "04873",
+   "04894",
+   "17829",
+   "22784",
+   "22821",
+   "35833",
+   "39483"
+  ]
+ },
+ "gaps": {
+  "units_within_printed_range": "The courses' units as read fall within the printed range of units rather than matching it.",
+  "waived_course_counted": "The page prints a requirement at a range from zero units, since a student may meet it without the course (a certification, an exam or earlier coursework), and the record counts the course, so its units match the top of the printed range and not its low end."
+ },
+ "moved": 2,
+ "by": {
+  "waived_course_counted": 1,
+  "units_within_printed_range": 1
+ },
+ "precision": {
+  "read": 7,
+  "right": 7,
+  "wrong": [],
+  "no_record_file": 0,
+  "not_hand_held": 0,
+  "by_answer": {
+   "none": 5,
+   "waived_course_counted": 1,
+   "units_within_printed_range": 1
+  }
+ },
+ "claim_checks": {
+  "counts": {
+   "stands": 2
+  },
+  "not_standing": []
+ },
+ "boundaries": {
+  "counts": {
+   "the note's words gone right": 2,
+   "the stated total one unit off right": 2,
+   "coverage failing right": 2,
+   "the within shape broken right": 1,
+   "the program measured in hours right": 1,
+   "the sum at the range's low end right": 1
+  },
+  "wrong": []
+ },
+ "held": [
+  {
+   "control_number": "04873",
+   "why": "held: the page itself prints one course under 'Two courses from the following:' (FTVM 112) and two under 'Four courses from the following:' (FTVM 213, THART 131), over 'Total Units 24-25' (college-page-read run 45835049303), so no reading adds its lists to the printed total; no filed kind names a list shorter than its count, and a new kind is shared code: the follow-up's",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "04894",
+   "why": "held: no gap is true of the page, which adds to its printed 27-37 with the applied pair at the 2 units its heading prints ('Complete 4 semesters totaling 2 units' over 'MUS 141X2 & MUS 241X2 ... 1'; college-page-read run 45953233659); the record leaves MUS 241X2 without units, the state's file prices it at 0.5, and the scorer adds 1.5 for the pair (26.5-36.5). Today's scorer passes the record without the state's list, and a record it passes is never gap-filed: a reconcile step for the pair's printed figure, or a scorer change, the follow-up's",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "17829",
+   "why": "held: its filed arithmetic is an older scorer's (the major's 50-60 against the printed 50-63). Today's scorer passes the major (the short-high reading) and reads the degree, the 60 the page's description prints over a general education pattern with no units (college-page-read run 45953233659), which is ge_units_not_read on today's arithmetic and no kind on the filed one. A gap filed over the filed score would not survive a reconcile's rescore (tests/reconcile_keeps_named_gaps_test.py), so a free reconcile first brings its score to today's, its reread posts it, and the record rule then names the gap",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "22821",
+   "why": "held: not the program's own page: read from the Pharmacy Technology department page; the certificate's own page prints seven required courses and 'Total Units 20' (college-page-read run 45835049303): a site_pages pin and a paid read of 22821 are its lever",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "39483",
+   "why": "held: the record holds the two biology sequences as lists of their own, and the page prints them inside 'List A - One to two courses from the following:' with no units beside them (college-page-read run 45835049303). Read as the page prints it the lists still do not add to the printed 'Major Total 27-30' (16, one to two List A courses of 4 or 5 units or a sequence, and List B's 3-5), so a paid reread is not shown to close it; no note quotes two figures that disagree, and no kind is true of it",
+   "claim": "no entry stands"
+  }
+ ],
+ "records": [
+  {
+   "college": "San Bernardino Valley College",
+   "control_number": "22784",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "45355976381",
+   "moves_to": "waived_course_counted",
+   "words": "TECALC 087 can be waived by placing into a transfer-level MATH course, which explains the 16-20 total range.",
+   "confidence": {
+    "unit_arithmetic": 50,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/san_bernardino_valley/records/22784.json",
+   "before_image": {
+    "program_title": "Automotive Wheel Alignment and Brakes",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-technology/wheel-alignment-brakes-certificate-achievement/",
+    "measure": "units",
+    "total_min": 16,
+    "total_max": 20,
+    "record": {
+     "program": {
+      "section_heading": "Automotive Wheel Alignment and Brakes Certificate of Achievement",
+      "measure": "units",
+      "total_units": {
+       "min": 16,
+       "max": 20
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Identify auto shop safety practices.",
+       "Explain the utilization of automotive brake, suspension, electrical, and preventative maintenance systems tools.",
+       "Summarize the theory and concepts of the automotive brake, suspension, electrical and preventive maintenance systems.",
+       "Practice auto shop safety.",
+       "Apply the proper use of hand tools used on the automotive brake, suspension, electrical and preventive maintenance systems.",
+       "Perform the service and repair of automotive brake, suspension, electrical and preventative maintenance systems."
+      ],
+      "careers": [
+       "automotive technician"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required Courses:",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "AUTO 050",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTO 050L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTO 052",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTO 052L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTO 064",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "HMDT 064",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTO 084",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUTO 084L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Complete the following or place into a Transfer-Level MATH course:",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "TECALC 087",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 9,
+     "listed": 9
+    },
+    "extracted_run": "45355976381"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 9,
+     "listed": 9,
+     "gaps": [
+      "waived_course_counted"
+     ],
+     "confidence": {
+      "unit_arithmetic": 50,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 1
+  },
+  {
+   "college": "San Bernardino Valley College",
+   "control_number": "35833",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "38748858322",
+   "moves_to": "units_within_printed_range",
+   "words": "the courses' units add to 19-22, within the printed 18.5-22 units | Printed total is 18.5-22 units; required courses sum to 18 and electives range 1-4, so the computed range would be 19-22. The 18.5 minimum is recorded as printed; reviewer should check.",
+   "confidence": {
+    "unit_arithmetic": 50,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/san_bernardino_valley/records/35833.json",
+   "before_image": {
+    "program_title": "Geographic Information Systems",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/geographic-information-systems-gis/geographic-information-systems-certificate-achievement/",
+    "measure": "units",
+    "total_min": 18.5,
+    "total_max": 22,
+    "record": {
+     "program": {
+      "section_heading": "Geographic Information Systems Certificate of Achievement",
+      "measure": "units",
+      "total_units": {
+       "min": 18.5,
+       "max": 22
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Demonstrate the skills necessary to become an entry-level GIS technician, including spatial data acquisition, spatial data processing, and publishing web-based maps.",
+       "Employ ArcGIS Field Maps, ArcGIS Survey123, ArcGIS QuickCapture, ArcGIS Workforce, and ArcGIS Navigator applications, as well as public-domain datasets to create web-based map.",
+       "Create and organize a tabular database and associated metadata through entry of textual and numerical information.",
+       "Collect and integrate raster data layers, including remotely sensed imagery, and vector data layers, including points, lines, and polygons.",
+       "GIS map analysis, including descriptive spatial statistics, inferential spatial statistics, and spatial autocorrelation.",
+       "Demonstrate how GIS can visualize and address longstanding issues related to economic, environmental, racial, and social justice, as well as environmental sustainability."
+      ],
+      "careers": [
+       "architecture",
+       "environmental science",
+       "finance",
+       "healthcare",
+       "marketing",
+       "policing",
+       "transportation",
+       "urban planning",
+       "utilities",
+       "GIS technician"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "GEOG 100",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "GIS 100",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "GIS 130",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "GEOG 130",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "GIS 133",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GIS 134",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GIS 135",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GIS 137",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Elective Courses - One course from the following",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "CS 102",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "CS 102H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "CS 120",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GIS 098",
+         "units": 1,
+         "units_max": 4,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GIS 222",
+         "units": 1,
+         "units_max": 3,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "WST 238",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Recommended Courses",
+       "rule": "recommended",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ANTH C1001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ANTH C1001H",
+           "units": null,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": true
+        },
+        {
+         "code": "ARCH 102",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "BIOL 104",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CIT 101",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENVSCI 100",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "GEOG 110",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "GEOL 101",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 14,
+     "listed": 14
+    },
+    "extracted_run": "38748858322"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 14,
+     "listed": 14,
+     "gaps": [
+      "units_within_printed_range"
+     ],
+     "confidence": {
+      "unit_arithmetic": 50,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 2
+  }
+ ],
+ "live_run_proof": {
+  "read_at": "2026-11-27T06:52Z",
+  "how": "the hosting API's commits by path on main",
+  "load_commits": {
+   "45362852938": "a16777d90094bcde916e4884de6c63cc7c4693e5"
+  },
+  "file_history": {
+   "22784": [
+    "a16777d90094bcde916e4884de6c63cc7c4693e5",
+    "677c408dfaf779344c374f4d8bcc1686c1b4df39"
+   ]
+  }
+ },
+ "shared_pages": {},
+ "representation": "checks.gaps and checks.confidence added as the load reads the filed score (a passing row: checks.arithmetic to equal); checks.coverage, invented and the record unchanged",
+ "claim_check_reads": "Today's capture (sources.json): every course an entry names among the codes it found, and a course an entry says the printed total leaves out on neither it nor the state's list. A note's quoted figures are the reader's words, never re-read here.",
+ "follow_verdict": "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows (confirm_matches); the apply aborts, writing nothing, unless the count is 0.",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'San Bernardino Valley College', '22784', 45355976381, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 050\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 050L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 052\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 052L\",\"units\":1,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HMDT 064\",\"units\":null}],\"catalog_addition\":false,\"code\":\"AUTO 064\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 084\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 084L\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses:\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TECALC 087\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Complete the following or place into a Transfer-Level MATH course:\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"automotive technician\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Identify auto shop safety practices.\",\"Explain the utilization of automotive brake, suspension, electrical, and preventative maintenance systems tools.\",\"Summarize the theory and concepts of the automotive brake, suspension, electrical and preventive maintenance systems.\",\"Practice auto shop safety.\",\"Apply the proper use of hand tools used on the automotive brake, suspension, electrical and preventive maintenance systems.\",\"Perform the service and repair of automotive brake, suspension, electrical and preventative maintenance systems.\"],\"section_heading\":\"Automotive Wheel Alignment and Brakes Certificate of Achievement\",\"total_units\":{\"max\":20,\"min\":16}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"waived_course_counted\"],\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb),\n  (2, 'San Bernardino Valley College', '35833', 38748858322, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"GIS 100\",\"units\":3}],\"catalog_addition\":false,\"code\":\"GEOG 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"GEOG 130\",\"units\":3}],\"catalog_addition\":false,\"code\":\"GIS 130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GIS 133\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GIS 134\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GIS 135\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GIS 137\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"CS 102H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"CS 102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS 120\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GIS 098\",\"units\":1,\"units_max\":4},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GIS 222\",\"units\":1,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"WST 238\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Elective Courses - One course from the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ANTH C1001H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"ANTH C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARCH 102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 104\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CIT 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENVSCI 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GEOG 110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GEOL 101\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Recommended Courses\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"architecture\",\"environmental science\",\"finance\",\"healthcare\",\"marketing\",\"policing\",\"transportation\",\"urban planning\",\"utilities\",\"GIS technician\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate the skills necessary to become an entry-level GIS technician, including spatial data acquisition, spatial data processing, and publishing web-based maps.\",\"Employ ArcGIS Field Maps, ArcGIS Survey123, ArcGIS QuickCapture, ArcGIS Workforce, and ArcGIS Navigator applications, as well as public-domain datasets to create web-based map.\",\"Create and organize a tabular database and associated metadata through entry of textual and numerical information.\",\"Collect and integrate raster data layers, including remotely sensed imagery, and vector data layers, including points, lines, and polygons.\",\"GIS map analysis, including descriptive spatial statistics, inferential spatial statistics, and spatial autocorrelation.\",\"Demonstrate how GIS can visualize and address longstanding issues related to economic, environmental, racial, and social justice, as well as environmental sustainability.\"],\"section_heading\":\"Geographic Information Systems Certificate of Achievement\",\"total_units\":{\"max\":22,\"min\":18.5}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"units_within_printed_range\"],\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "pre_read_md5": "with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) as (values\n  (1, 'San Bernardino Valley College', '22784', 45355976381, 'ffd58e42306953323ee696f78fa03509', '88e2495efd06d1573c7fb0fe096e2788', 'd1e365f78b6314f0cfc12c5f47882d54'),\n  (2, 'San Bernardino Valley College', '35833', 38748858322, '682a6aac8f700aa2ab8187ee35b737ad', '3e096e5d8483d0570dfc23bf65a968b0', 'e2d90ead82230b83cb68ea7c748eb03f'))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.record::text) = v.rec_md5),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.checks::text) = v.chk_md5),\n  'already_after', count(*) filter (where md5(r.checks::text) = v.after_md5),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'San Bernardino Valley College', '22784', 45355976381, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 050\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 050L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 052\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 052L\",\"units\":1,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HMDT 064\",\"units\":null}],\"catalog_addition\":false,\"code\":\"AUTO 064\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 084\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 084L\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses:\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TECALC 087\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Complete the following or place into a Transfer-Level MATH course:\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"automotive technician\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Identify auto shop safety practices.\",\"Explain the utilization of automotive brake, suspension, electrical, and preventative maintenance systems tools.\",\"Summarize the theory and concepts of the automotive brake, suspension, electrical and preventive maintenance systems.\",\"Practice auto shop safety.\",\"Apply the proper use of hand tools used on the automotive brake, suspension, electrical and preventive maintenance systems.\",\"Perform the service and repair of automotive brake, suspension, electrical and preventative maintenance systems.\"],\"section_heading\":\"Automotive Wheel Alignment and Brakes Certificate of Achievement\",\"total_units\":{\"max\":20,\"min\":16}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"waived_course_counted\"],\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb),\n  (2, 'San Bernardino Valley College', '35833', 38748858322, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"GIS 100\",\"units\":3}],\"catalog_addition\":false,\"code\":\"GEOG 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"GEOG 130\",\"units\":3}],\"catalog_addition\":false,\"code\":\"GIS 130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GIS 133\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GIS 134\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GIS 135\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GIS 137\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"CS 102H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"CS 102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS 120\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GIS 098\",\"units\":1,\"units_max\":4},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GIS 222\",\"units\":1,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"WST 238\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Elective Courses - One course from the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ANTH C1001H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"ANTH C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARCH 102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 104\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CIT 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENVSCI 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GEOG 110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GEOL 101\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Recommended Courses\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"architecture\",\"environmental science\",\"finance\",\"healthcare\",\"marketing\",\"policing\",\"transportation\",\"urban planning\",\"utilities\",\"GIS technician\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate the skills necessary to become an entry-level GIS technician, including spatial data acquisition, spatial data processing, and publishing web-based maps.\",\"Employ ArcGIS Field Maps, ArcGIS Survey123, ArcGIS QuickCapture, ArcGIS Workforce, and ArcGIS Navigator applications, as well as public-domain datasets to create web-based map.\",\"Create and organize a tabular database and associated metadata through entry of textual and numerical information.\",\"Collect and integrate raster data layers, including remotely sensed imagery, and vector data layers, including points, lines, and polygons.\",\"GIS map analysis, including descriptive spatial statistics, inferential spatial statistics, and spatial autocorrelation.\",\"Demonstrate how GIS can visualize and address longstanding issues related to economic, environmental, racial, and social justice, as well as environmental sustainability.\"],\"section_heading\":\"Geographic Information Systems Certificate of Achievement\",\"total_units\":{\"max\":22,\"min\":18.5}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"units_within_printed_range\"],\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\nf as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number\n        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true\n       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)),\ne(expect) as (values (2)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when f.n > 0\n            then ('s741k3 piles confirm guard: ' || f.n || ' rows hold a matching confirm verdict ' || f.keys::text)::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s741k3 piles guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, f;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'San Bernardino Valley College', '22784', 45355976381, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 050\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 050L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 052\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 052L\",\"units\":1,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HMDT 064\",\"units\":null}],\"catalog_addition\":false,\"code\":\"AUTO 064\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 084\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUTO 084L\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses:\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TECALC 087\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Complete the following or place into a Transfer-Level MATH course:\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"automotive technician\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Identify auto shop safety practices.\",\"Explain the utilization of automotive brake, suspension, electrical, and preventative maintenance systems tools.\",\"Summarize the theory and concepts of the automotive brake, suspension, electrical and preventive maintenance systems.\",\"Practice auto shop safety.\",\"Apply the proper use of hand tools used on the automotive brake, suspension, electrical and preventive maintenance systems.\",\"Perform the service and repair of automotive brake, suspension, electrical and preventative maintenance systems.\"],\"section_heading\":\"Automotive Wheel Alignment and Brakes Certificate of Achievement\",\"total_units\":{\"max\":20,\"min\":16}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"waived_course_counted\"],\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb),\n  (2, 'San Bernardino Valley College', '35833', 38748858322, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"GIS 100\",\"units\":3}],\"catalog_addition\":false,\"code\":\"GEOG 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"GEOG 130\",\"units\":3}],\"catalog_addition\":false,\"code\":\"GIS 130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GIS 133\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GIS 134\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GIS 135\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GIS 137\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"CS 102H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"CS 102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS 120\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GIS 098\",\"units\":1,\"units_max\":4},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GIS 222\",\"units\":1,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"WST 238\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Elective Courses - One course from the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ANTH C1001H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"ANTH C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARCH 102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 104\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CIT 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENVSCI 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GEOG 110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GEOL 101\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Recommended Courses\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"architecture\",\"environmental science\",\"finance\",\"healthcare\",\"marketing\",\"policing\",\"transportation\",\"urban planning\",\"utilities\",\"GIS technician\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate the skills necessary to become an entry-level GIS technician, including spatial data acquisition, spatial data processing, and publishing web-based maps.\",\"Employ ArcGIS Field Maps, ArcGIS Survey123, ArcGIS QuickCapture, ArcGIS Workforce, and ArcGIS Navigator applications, as well as public-domain datasets to create web-based map.\",\"Create and organize a tabular database and associated metadata through entry of textual and numerical information.\",\"Collect and integrate raster data layers, including remotely sensed imagery, and vector data layers, including points, lines, and polygons.\",\"GIS map analysis, including descriptive spatial statistics, inferential spatial statistics, and spatial autocorrelation.\",\"Demonstrate how GIS can visualize and address longstanding issues related to economic, environmental, racial, and social justice, as well as environmental sustainability.\"],\"section_heading\":\"Geographic Information Systems Certificate of Achievement\",\"total_units\":{\"max\":22,\"min\":18.5}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"units_within_printed_range\"],\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (2)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s741k3 piles rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;"
+}
