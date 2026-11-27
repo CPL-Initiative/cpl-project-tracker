@@ -213,3 +213,7 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   39998 and 40064 unequal. Its keep-better ranking change (an "incomplete, major equal" re-read above a filed
   "unequal": 210 such records statewide) to the Fable reader; Norco's reread waits for its GO, Ventura's goes first.
   Keep-better's live read at 08:46Z: no person's check at Ventura, Norco or San Diego City.
+- 08:48Z: Fullerton's two pins bind in free capture 45963792185 (36798 and 35174 each on its own Chemistry page; 314
+  kept); the paid read dispatched on `claude/s741-piles` (sources_from 45963792185, only 36798 and 35174, about
+  $0.20), pending behind American River's second free capture (39341's pin). East Los Angeles 02456, 31017, 37510
+  (live on runs older than the committed reconcile 45176404274) and Santa Monica 43767 go to `piles` next.
