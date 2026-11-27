@@ -1,0 +1,626 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30); Sam's routine prompt of 2026-11-25, as the S739 conductor's brief carries it: a record held for a gap is collected with its gap named and a lower score on the 0-100 bar, never held, unless the record is not the program's own; S739: San Bernardino Valley's records kb/receipts/program_requirement_records_piles_s740_san_bernardino_valley_2026-11-27_s741k3.json held, read again by key: passed by a rescore where today's scorer's one reading moves them, else collected with their gaps named where the record is the program's own (no reread, no reconcile)",
+ "at": "2026-11-27T13:15:14Z",
+ "college": "San Bernardino Valley College",
+ "keys": {
+  "from": "kb/receipts/program_requirement_records_piles_s740_san_bernardino_valley_2026-11-27_s741k3.json",
+  "members": [
+   "04873",
+   "04894",
+   "17829",
+   "39483"
+  ]
+ },
+ "gaps": {
+  "lists_not_closed": "A choice list prints no unit figure of its own, one that depends on another choice, or also takes courses from another list, so the lists alone cannot add the program's units."
+ },
+ "moved": 2,
+ "by": {
+  "lists_not_closed": 2
+ },
+ "precision": {
+  "read": 4,
+  "right": 4,
+  "wrong": [],
+  "no_record_file": 0,
+  "not_hand_held": 0,
+  "by_answer": {
+   "lists_not_closed": 2,
+   "none": 2
+  }
+ },
+ "claim_checks": {
+  "counts": {
+   "stands": 2
+  },
+  "not_standing": []
+ },
+ "boundaries": {
+  "counts": {
+   "the note's words gone right": 2,
+   "the stated total one unit off right": 2,
+   "coverage failing right": 2,
+   "the short_lists shape broken right": 1,
+   "the count_range shape broken right": 1
+  },
+  "wrong": []
+ },
+ "held": [
+  {
+   "control_number": "04894",
+   "why": "held: no gap is true of the page, which adds to its printed 27-37 with the applied pair at the 2 units its heading prints ('Complete 4 semesters totaling 2 units' over 'MUS 141X2 & MUS 241X2 ... 1'; college-page-read run 45953233659). Today's scorer passes the record without the state's list, and a record it passes is never gap-filed. The scorer change (a required list's printed figure ahead of the state's price for a course read without units) moves 9 records fail to pass and 22 pass to fail over 18,970, so it is not proposed; the college's own reconcile steps for the '&' row and the heading's total are what is left, the follow-up's",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "17829",
+   "why": "held: its filed arithmetic is an older scorer's (the major's 50-60 against the printed 50-63). The free reconcile of this session brings its score to today's, keep-better's S741 ranking keeps a re-read whose major equals over a filed record whose major does not, and a reread posts it; its gap, ge_units_not_read on today's arithmetic (college-page-read run 45953233659), is filed on the reread row, never over the filed score (d-reread-before-rebuilt-plan-s741)",
+   "claim": "no entry stands"
+  }
+ ],
+ "records": [
+  {
+   "college": "San Bernardino Valley College",
+   "control_number": "04873",
+   "award": "A.A. Degree",
+   "extracted_run": "38748858322",
+   "moves_to": "lists_not_closed",
+   "words": "The 'Two courses from the following:' block lists only one course (FTVM 112) and the 'Four courses from the following:' block lists only two (FTVM 213, THART 131); the course table appears truncated or garbled. Recorded as printed.",
+   "confidence": {
+    "unit_arithmetic": 30,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/san_bernardino_valley/records/04873.json",
+   "before_image": {
+    "program_title": "Audio Production",
+    "award": "A.A. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/ftvm/audio-production-aa-degree/",
+    "measure": "units",
+    "total_min": 24,
+    "total_max": 25,
+    "record": {
+     "program": {
+      "section_heading": "Audio Production Associate of Arts Degree",
+      "measure": "units",
+      "total_units": {
+       "min": 24,
+       "max": 25
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "SBVC General Education and Graduation Requirements or Cal-GETC - California General Education Transfer Curriculum",
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Create a portfolio of work to demonstrate audio production skills.",
+       "Create an audio performance for a variety of situations ranging from broadcast to voice over production of film, television, and audio.",
+       "Write short news or informational scripts for broadcast.",
+       "Produce, engineer, and edit and short radio program."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Courses:",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "FTVM 130",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FTVM 114",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FTVM 111",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FTVM 110",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Two courses from the following:",
+       "rule": "choose_courses",
+       "minimum": 2,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "FTVM 112",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Four courses from the following:",
+       "rule": "choose_courses",
+       "minimum": 4,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "FTVM 213",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "THART 131",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Work Experience - Complete a minimum of three units from the following:",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "FTVM 098",
+         "units": 0.5,
+         "units_max": 4,
+         "alternatives": [
+          {
+           "code": "FTVM 198",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "Electives - One course from the following:",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "FTVM 233",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FTVM 215",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FTVM 104",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FTVM 122",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FTVM 132",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FTVM 133",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FTVM 134",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 15,
+     "listed": 15
+    },
+    "extracted_run": "38748858322"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 15,
+     "listed": 15,
+     "gaps": [
+      "lists_not_closed"
+     ],
+     "confidence": {
+      "unit_arithmetic": 30,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 1
+  },
+  {
+   "college": "San Bernardino Valley College",
+   "control_number": "39483",
+   "award": "A.S. T Degree",
+   "extracted_run": "38748858322",
+   "moves_to": "lists_not_closed",
+   "words": "List A ('One to two courses from the following') appears to include CHEM 151, CHEM 212, the 'One Biology Course Sequence' (BIOL 250 & BIOL 251, or BIOL 260 & BIOL 261) and the statistics row (STAT C1000 or STAT C1000H or ECON 208 or PSYC 105). The biology sequences are recorded as separate option_group blocks, but a sequence appears to count as one of the List A choices rather than being independently required; reviewer should check. Major total 27-30 is consistent with this reading.",
+   "confidence": {
+    "unit_arithmetic": 30,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/san_bernardino_valley/records/39483.json",
+   "before_image": {
+    "program_title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/foods-nutrition/nutrition-and-dietetics-as-t-degree/",
+    "measure": "units",
+    "total_min": 27,
+    "total_max": 30,
+    "record": {
+     "program": {
+      "section_heading": "Nutrition and Dietetics Associate in Science for Transfer Degree",
+      "measure": "units",
+      "total_units": {
+       "min": 27,
+       "max": 30
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": 9,
+       "max": 12
+      },
+      "ge_pattern": "Cal-GETC",
+      "degree_total": {
+       "min": 60,
+       "max": 60
+      },
+      "ge_units": {
+       "min": 34,
+       "max": 34
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Outline the overall nutritional needs of children and adults and develop comprehensive food plans to ensure nutritional needs are being met.",
+       "Recognize the sources and functions of macronutrients and micronutrients.",
+       "Compare canned/packaged food products using the information on the Nutrition Facts Panel, ingredient list, and Daily Values.",
+       "Analyze a three-day dietary intake by food groups and/or by nutrients using Recommended Daily Allowances (RDA) and write recommendations based on the data gleaned from the analysis."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Courses:",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "FN 162",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "PSYC C1000H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 150",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL 270",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List A - One to two courses from the following:",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "CHEM 151",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 212",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "STAT C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "STAT C1000H",
+           "units": null,
+           "catalog_addition": false
+          },
+          {
+           "code": "ECON 208",
+           "units": null,
+           "catalog_addition": false
+          },
+          {
+           "code": "PSYC 105",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "One Biology Course Sequence: BIOL 250 & BIOL 251",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Biology sequence",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "BIOL 250",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL 251",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "One Biology Course Sequence: BIOL 260 & BIOL 261",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Biology sequence",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "BIOL 260",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL 261",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List B - One course from the following:",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "HOSP 160",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 104",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 105",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 213",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 102",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 103",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 151",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 22,
+     "listed": 22
+    },
+    "extracted_run": "38748858322"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 22,
+     "listed": 22,
+     "gaps": [
+      "lists_not_closed"
+     ],
+     "confidence": {
+      "unit_arithmetic": 30,
+      "course_list_match": 100,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 2
+  }
+ ],
+ "live_run_proof": null,
+ "shared_pages": {},
+ "representation": "checks.gaps and checks.confidence added as the load reads the filed score (a passing row: checks.arithmetic to equal); checks.coverage, invented and the record unchanged",
+ "claim_check_reads": "Today's capture (sources.json): every course an entry names among the codes it found, and a course an entry says the printed total leaves out on neither it nor the state's list. A note's quoted figures are the reader's words, never re-read here.",
+ "follow_verdict": "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows (confirm_matches); the apply aborts, writing nothing, unless the count is 0.",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'San Bernardino Valley College', '04873', 38748858322, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FTVM 130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FTVM 114\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FTVM 111\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FTVM 110\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses:\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FTVM 112\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"Two courses from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FTVM 213\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THART 131\",\"units\":3,\"units_max\":null}],\"minimum\":4,\"name\":\"Four courses from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"FTVM 198\",\"units\":null}],\"catalog_addition\":true,\"code\":\"FTVM 098\",\"units\":0.5,\"units_max\":4}],\"minimum\":3,\"name\":\"Work Experience - Complete a minimum of three units from the following:\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FTVM 233\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FTVM 215\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FTVM 104\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FTVM 122\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FTVM 132\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FTVM 133\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FTVM 134\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Electives - One course from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"SBVC General Education and Graduation Requirements or Cal-GETC - California General Education Transfer Curriculum\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Create a portfolio of work to demonstrate audio production skills.\",\"Create an audio performance for a variety of situations ranging from broadcast to voice over production of film, television, and audio.\",\"Write short news or informational scripts for broadcast.\",\"Produce, engineer, and edit and short radio program.\"],\"section_heading\":\"Audio Production Associate of Arts Degree\",\"total_units\":{\"max\":25,\"min\":24}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb),\n  (2, 'San Bernardino Valley College', '39483', 38748858322, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FN 162\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSYC C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 150\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 270\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses:\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 151\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 212\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"STAT C1000H\",\"units\":null},{\"catalog_addition\":false,\"code\":\"ECON 208\",\"units\":null},{\"catalog_addition\":false,\"code\":\"PSYC 105\",\"units\":null}],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"List A - One to two courses from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 250\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 251\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"One Biology Course Sequence: BIOL 250 & BIOL 251\",\"option_group\":\"Biology sequence\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 260\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 261\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"One Biology Course Sequence: BIOL 260 & BIOL 261\",\"option_group\":\"Biology sequence\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HOSP 160\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 104\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 105\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 213\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 102\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 103\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 151\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"List B - One course from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":12,\"min\":9},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Outline the overall nutritional needs of children and adults and develop comprehensive food plans to ensure nutritional needs are being met.\",\"Recognize the sources and functions of macronutrients and micronutrients.\",\"Compare canned/packaged food products using the information on the Nutrition Facts Panel, ingredient list, and Daily Values.\",\"Analyze a three-day dietary intake by food groups and/or by nutrients using Recommended Daily Allowances (RDA) and write recommendations based on the data gleaned from the analysis.\"],\"section_heading\":\"Nutrition and Dietetics Associate in Science for Transfer Degree\",\"total_units\":{\"max\":30,\"min\":27}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":22,\"placed\":22}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":22,\"placed\":22}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "pre_read_md5": "with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) as (values\n  (1, 'San Bernardino Valley College', '04873', 38748858322, 'e5c0b8098caa690f55df56f92b0bc8fe', 'ff0824422e219dcfb156c2b1d7038ba8', '1e3f69628db3cc1357de60e6fdd62631'),\n  (2, 'San Bernardino Valley College', '39483', 38748858322, '982c120374d5883bf679f848944fdad6', '35be8585361df8918ed6f88105424d99', 'cda98c64fafeaecd5c340d3801b2d233'))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.record::text) = v.rec_md5),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.checks::text) = v.chk_md5),\n  'already_after', count(*) filter (where md5(r.checks::text) = v.after_md5),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'San Bernardino Valley College', '04873', 38748858322, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FTVM 130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FTVM 114\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FTVM 111\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FTVM 110\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses:\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FTVM 112\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"Two courses from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FTVM 213\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THART 131\",\"units\":3,\"units_max\":null}],\"minimum\":4,\"name\":\"Four courses from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"FTVM 198\",\"units\":null}],\"catalog_addition\":true,\"code\":\"FTVM 098\",\"units\":0.5,\"units_max\":4}],\"minimum\":3,\"name\":\"Work Experience - Complete a minimum of three units from the following:\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FTVM 233\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FTVM 215\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FTVM 104\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FTVM 122\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FTVM 132\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FTVM 133\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FTVM 134\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Electives - One course from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"SBVC General Education and Graduation Requirements or Cal-GETC - California General Education Transfer Curriculum\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Create a portfolio of work to demonstrate audio production skills.\",\"Create an audio performance for a variety of situations ranging from broadcast to voice over production of film, television, and audio.\",\"Write short news or informational scripts for broadcast.\",\"Produce, engineer, and edit and short radio program.\"],\"section_heading\":\"Audio Production Associate of Arts Degree\",\"total_units\":{\"max\":25,\"min\":24}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb),\n  (2, 'San Bernardino Valley College', '39483', 38748858322, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FN 162\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSYC C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 150\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 270\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses:\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 151\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 212\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"STAT C1000H\",\"units\":null},{\"catalog_addition\":false,\"code\":\"ECON 208\",\"units\":null},{\"catalog_addition\":false,\"code\":\"PSYC 105\",\"units\":null}],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"List A - One to two courses from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 250\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 251\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"One Biology Course Sequence: BIOL 250 & BIOL 251\",\"option_group\":\"Biology sequence\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 260\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 261\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"One Biology Course Sequence: BIOL 260 & BIOL 261\",\"option_group\":\"Biology sequence\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HOSP 160\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 104\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 105\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 213\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 102\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 103\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 151\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"List B - One course from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":12,\"min\":9},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Outline the overall nutritional needs of children and adults and develop comprehensive food plans to ensure nutritional needs are being met.\",\"Recognize the sources and functions of macronutrients and micronutrients.\",\"Compare canned/packaged food products using the information on the Nutrition Facts Panel, ingredient list, and Daily Values.\",\"Analyze a three-day dietary intake by food groups and/or by nutrients using Recommended Daily Allowances (RDA) and write recommendations based on the data gleaned from the analysis.\"],\"section_heading\":\"Nutrition and Dietetics Associate in Science for Transfer Degree\",\"total_units\":{\"max\":30,\"min\":27}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":22,\"placed\":22}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":22,\"placed\":22}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\nf as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number\n        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true\n       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)),\ne(expect) as (values (2)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when f.n > 0\n            then ('s742k2 piles confirm guard: ' || f.n || ' rows hold a matching confirm verdict ' || f.keys::text)::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s742k2 piles guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, f;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'San Bernardino Valley College', '04873', 38748858322, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FTVM 130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FTVM 114\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FTVM 111\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FTVM 110\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses:\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FTVM 112\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"Two courses from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FTVM 213\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THART 131\",\"units\":3,\"units_max\":null}],\"minimum\":4,\"name\":\"Four courses from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"FTVM 198\",\"units\":null}],\"catalog_addition\":true,\"code\":\"FTVM 098\",\"units\":0.5,\"units_max\":4}],\"minimum\":3,\"name\":\"Work Experience - Complete a minimum of three units from the following:\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FTVM 233\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FTVM 215\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FTVM 104\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FTVM 122\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FTVM 132\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FTVM 133\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FTVM 134\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Electives - One course from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"SBVC General Education and Graduation Requirements or Cal-GETC - California General Education Transfer Curriculum\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Create a portfolio of work to demonstrate audio production skills.\",\"Create an audio performance for a variety of situations ranging from broadcast to voice over production of film, television, and audio.\",\"Write short news or informational scripts for broadcast.\",\"Produce, engineer, and edit and short radio program.\"],\"section_heading\":\"Audio Production Associate of Arts Degree\",\"total_units\":{\"max\":25,\"min\":24}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb),\n  (2, 'San Bernardino Valley College', '39483', 38748858322, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FN 162\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSYC C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 150\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 270\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses:\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 151\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 212\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"STAT C1000H\",\"units\":null},{\"catalog_addition\":false,\"code\":\"ECON 208\",\"units\":null},{\"catalog_addition\":false,\"code\":\"PSYC 105\",\"units\":null}],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"List A - One to two courses from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 250\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 251\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"One Biology Course Sequence: BIOL 250 & BIOL 251\",\"option_group\":\"Biology sequence\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 260\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 261\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"One Biology Course Sequence: BIOL 260 & BIOL 261\",\"option_group\":\"Biology sequence\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HOSP 160\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 104\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 105\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 213\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 102\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 103\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 151\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"List B - One course from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":12,\"min\":9},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Outline the overall nutritional needs of children and adults and develop comprehensive food plans to ensure nutritional needs are being met.\",\"Recognize the sources and functions of macronutrients and micronutrients.\",\"Compare canned/packaged food products using the information on the Nutrition Facts Panel, ingredient list, and Daily Values.\",\"Analyze a three-day dietary intake by food groups and/or by nutrients using Recommended Daily Allowances (RDA) and write recommendations based on the data gleaned from the analysis.\"],\"section_heading\":\"Nutrition and Dietetics Associate in Science for Transfer Degree\",\"total_units\":{\"max\":30,\"min\":27}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":22,\"placed\":22}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":22,\"placed\":22}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (2)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s742k2 piles rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;"
+}
