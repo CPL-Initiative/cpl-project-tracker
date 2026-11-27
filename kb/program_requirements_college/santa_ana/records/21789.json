@@ -102,7 +102,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "units_within_printed_range",
+    "label": "The courses' units as read fall within the printed range of units rather than matching it.",
+    "words": "the courses' units add to 24.5-29, within the printed 24-30 units | A '20.0' subtotal is printed after PHAR 048; it matches the sum of PHAR 055, 051, 052, 056, 057 and 060 (20 units). All seven lecture courses are recorded as one required block; the 24.0-30.0 'Required Courses' figure is recorded as the certificate total."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

@@ -179,10 +179,29 @@ WITHIN_HELD = {
     # shows its section its own (kb/_program_piles_s740_smc.py, s740f).
     ("Santa Monica College", "41797"): (WITHIN, "kb/_program_piles_s740_smc.py, over s720s's hold "
                                                 "(kb/_program_piles_s720_smc.py HAND)"),
+    # S741 (lane 1, keys): the two records s740r2 held for the kind, each reviewed by key against its own catalog
+    # entry (college page read 45835379921): every listed course placed, each printed figure read as printed, the
+    # sum inside the printed range (kb/_program_piles_s741_santa_ana.py, s741k1).
+    ("Santa Ana College", "21789"): (WITHIN, "kb/_program_piles_s741_santa_ana.py, over s740r2's hold "
+                                             "(kb/_program_piles_s740_santa_ana.py HAND)"),
+    ("Santa Ana College", "31859"): (WITHIN, "kb/_program_piles_s741_santa_ana.py, over s740r2's hold "
+                                             "(kb/_program_piles_s740_santa_ana.py HAND)"),
+    # S741 (lane 1, keys): Copper Mountain 45594, which s740r4 held with no reading that gives its printed 32. Its
+    # own section (PDF p.93, college page read 45953233659) prints each figure the record holds, and they add to
+    # 36-49 inside the printed 32-49 (kb/_program_piles_s741_copper_mountain.py, s741k2). History A.A. 43854 is not
+    # this kind: its sum is read against the degree and holds the printed 60 inside it; a reconcile step passes it.
+    ("Copper Mountain College", "45594"): (WITHIN, "kb/_program_piles_s741_copper_mountain.py, over s740r4's hold "
+                                                   "(kb/_program_piles_s740_copper_mountain_read.py HAND)"),
+    # S741 (lane 1, keys): San Bernardino Valley 35833, which s740c3 held for the kind. Its own page (college page
+    # read 45953233659) prints each figure the record holds, GIS 098 at 1-4 among them, and they add to 19-22 inside
+    # the printed 18.5-22 (kb/_program_piles_s741_sbvc.py, s741k3).
+    ("San Bernardino Valley College", "35833"): (WITHIN, "kb/_program_piles_s741_sbvc.py, over s740c3's hold "
+                                                         "(kb/_program_piles_s740_sbvc.py HAND)"),
 }
 # The reviewed lists: each S740 plan's module, by its file name. A key filed there is the reviewed lists' answer.
 PLAN_MODULES = ("_program_piles_s740_gavilan", "_program_piles_s740_canyons", "_program_piles_s740_orangecoast",
-                "_program_piles_s740_smc")
+                "_program_piles_s740_smc", "_program_piles_s741_santa_ana", "_program_piles_s741_copper_mountain",
+                "_program_piles_s741_sbvc")
 # Shasta 32162, held (no plan): the reason, for the handoff's Blocks.
 SHASTA_32162 = ("held: its 23-27 sits inside the printed 22-27 and units_within_printed_range is true of its figures, "
                 "but its section is not shown to be its own: its heading sits on the page before the one the read "

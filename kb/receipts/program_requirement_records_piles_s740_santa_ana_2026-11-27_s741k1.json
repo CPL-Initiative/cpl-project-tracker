@@ -1,0 +1,542 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30); Sam's routine prompt of 2026-11-25, as the S739 conductor's brief carries it: a record held for a gap is collected with its gap named and a lower score on the 0-100 bar, never held, unless the record is not the program's own; S739: Santa Ana's records kb/receipts/program_requirement_records_piles_s739_santa_ana_2026-11-26_s740r2.json held, read again by key: passed by a rescore where today's scorer's one reading moves them, else collected with their gaps named where the record is the program's own (no reread, no reconcile)",
+ "at": "2026-11-27T06:42:21Z",
+ "college": "Santa Ana College",
+ "keys": {
+  "from": "kb/receipts/program_requirement_records_piles_s739_santa_ana_2026-11-26_s740r2.json",
+  "members": [
+   "21789",
+   "31859"
+  ]
+ },
+ "gaps": {
+  "units_within_printed_range": "The courses' units as read fall within the printed range of units rather than matching it."
+ },
+ "moved": 2,
+ "by": {
+  "units_within_printed_range": 2
+ },
+ "precision": {
+  "read": 2,
+  "right": 2,
+  "wrong": [],
+  "no_record_file": 0,
+  "not_hand_held": 0,
+  "by_answer": {
+   "units_within_printed_range": 2
+  }
+ },
+ "claim_checks": {
+  "counts": {
+   "stands": 2
+  },
+  "not_standing": []
+ },
+ "boundaries": {
+  "counts": {
+   "the note's words gone right": 2,
+   "the stated total one unit off right": 2,
+   "coverage failing right": 2,
+   "the within shape broken right": 2,
+   "the program measured in hours right": 2,
+   "the sum at the range's low end right": 2
+  },
+  "wrong": []
+ },
+ "held": [],
+ "records": [
+  {
+   "college": "Santa Ana College",
+   "control_number": "21789",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "38843461766",
+   "moves_to": "units_within_printed_range",
+   "words": "the courses' units add to 24.5-29, within the printed 24-30 units | A '20.0' subtotal is printed after PHAR 048; it matches the sum of PHAR 055, 051, 052, 056, 057 and 060 (20 units). All seven lecture courses are recorded as one required block; the 24.0-30.0 'Required Courses' figure is recorded as the certificate total.",
+   "confidence": {
+    "unit_arithmetic": 50,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/santa_ana/records/21789.json",
+   "before_image": {
+    "program_title": "Pharmacy Technology Advanced Option",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36145/35865",
+    "measure": "units",
+    "total_min": 24,
+    "total_max": 30,
+    "record": {
+     "program": {
+      "section_heading": "Pharmacy Technology Advanced Option: Certificate of Achievement (Transcripted)",
+      "measure": "units",
+      "total_units": {
+       "min": 24,
+       "max": 30
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Develop a polished resume for Pharmacy Technician job interviews, highlighting your advanced technical skills.",
+       "Apply and complete Pharmacy Technician Certification Board Exam successfully.",
+       "Apply for the California Board of Pharmacy application for licensing as a Pharmacy Technician in a timely manner."
+      ],
+      "careers": [
+       "pharmacy technicians"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "PHAR 048",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHAR 055",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHAR 051",
+         "units": 3.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHAR 052",
+         "units": 3.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHAR 056",
+         "units": 4.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHAR 057",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHAR 060",
+         "units": 4.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Skills Lab (PHAR 056L, PHAR 057L or PHAR 060L)",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 0.5,
+        "max": 1
+       },
+       "courses": [
+        {
+         "code": "PHAR 056L",
+         "units": 0.5,
+         "units_max": 1,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHAR 057L",
+         "units": 0.5,
+         "units_max": 1,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PHAR 060L",
+         "units": 0.5,
+         "units_max": 1,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Skills Lab (PHAR 072L-1 or PHAR 072L-2)",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 0.5,
+        "max": 1
+       },
+       "courses": [
+        {
+         "code": "PHAR 072L-1",
+         "units": 0.5,
+         "units_max": 1,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHAR 072L-2",
+         "units": 0.5,
+         "units_max": 1,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Externship",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 1.5,
+        "max": 5
+       },
+       "courses": [
+        {
+         "code": "PHAR 072A",
+         "units": 0.5,
+         "units_max": 2,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHAR 072B",
+         "units": 0.5,
+         "units_max": 1.5,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHAR 072C",
+         "units": 0.5,
+         "units_max": 1.5,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Recommended electives",
+       "rule": "recommended",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 0,
+        "max": 0
+       },
+       "courses": [
+        {
+         "code": "BA 115",
+         "units": 0.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL 149",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 109",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CMPR 100",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 18,
+     "listed": 18
+    },
+    "extracted_run": "38843461766"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 18,
+     "listed": 18,
+     "gaps": [
+      "units_within_printed_range"
+     ],
+     "confidence": {
+      "unit_arithmetic": 50,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 1
+  },
+  {
+   "college": "Santa Ana College",
+   "control_number": "31859",
+   "award": "A.A- T Degree",
+   "extracted_run": 45841675928,
+   "moves_to": "units_within_printed_range",
+   "words": "the courses' units add to 19-19.5, within the printed 18-19.5 units | List A allows any core course not selected from the Required Core plus one listed course, or two listed courses; List B allows any course not selected above or a listed course. These cross-list options are not encoded in the blocks.",
+   "confidence": {
+    "unit_arithmetic": 50,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/santa_ana/records/31859.json",
+   "before_image": {
+    "program_title": "Political Science",
+    "award": "A.A- T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36149/35855",
+    "measure": "units",
+    "total_min": 18,
+    "total_max": 19.5,
+    "record": {
+     "program": {
+      "section_heading": "Political Science: A.A.-T Degree for Transfer",
+      "measure": "units",
+      "total_units": {
+       "min": 18,
+       "max": 19.5
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "Cal-GETC",
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Core: Select 9 units",
+       "rule": "choose_units",
+       "minimum": 9,
+       "option_group": null,
+       "stated": {
+        "min": 9,
+        "max": 9
+       },
+       "courses": [
+        {
+         "code": "POLS C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "POLS C1000H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLT 200",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "POLT 200H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLT 201",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLT 220",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List A (select 2)",
+       "rule": "choose_courses",
+       "minimum": 2,
+       "option_group": null,
+       "stated": {
+        "min": 6,
+        "max": 7.5
+       },
+       "courses": [
+        {
+         "code": "POLT 235",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "STAT C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "STAT C1000H",
+           "units": 4,
+           "catalog_addition": false
+          },
+          {
+           "code": "STAT C1000E",
+           "units": 4.5,
+           "catalog_addition": false
+          },
+          {
+           "code": "PSYC 210",
+           "units": 4,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List B (select one)",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "ECON C2002",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ECON C2001",
+           "units": 3,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": true
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 13,
+     "listed": 13
+    },
+    "extracted_run": "45841675928"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 13,
+     "listed": 13,
+     "gaps": [
+      "units_within_printed_range"
+     ],
+     "confidence": {
+      "unit_arithmetic": 50,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 2
+  }
+ ],
+ "live_run_proof": null,
+ "shared_pages": {},
+ "representation": "checks.gaps and checks.confidence added as the load reads the filed score (a passing row: checks.arithmetic to equal); checks.coverage, invented and the record unchanged",
+ "claim_check_reads": "Today's capture (sources.json): every course an entry names among the codes it found, and a course an entry says the printed total leaves out on neither it nor the state's list. A note's quoted figures are the reader's words, never re-read here.",
+ "follow_verdict": "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows (confirm_matches); the apply aborts, writing nothing, unless the count is 0.",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Santa Ana College', '21789', 38843461766, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 048\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 055\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 051\",\"units\":3.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 052\",\"units\":3.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 056\",\"units\":4.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 057\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 060\",\"units\":4.5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 056L\",\"units\":0.5,\"units_max\":1},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHAR 057L\",\"units\":0.5,\"units_max\":1},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 060L\",\"units\":0.5,\"units_max\":1}],\"minimum\":1,\"name\":\"Skills Lab (PHAR 056L, PHAR 057L or PHAR 060L)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":1,\"min\":0.5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 072L-1\",\"units\":0.5,\"units_max\":1},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 072L-2\",\"units\":0.5,\"units_max\":1}],\"minimum\":1,\"name\":\"Skills Lab (PHAR 072L-1 or PHAR 072L-2)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":1,\"min\":0.5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 072A\",\"units\":0.5,\"units_max\":2},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 072B\",\"units\":0.5,\"units_max\":1.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 072C\",\"units\":0.5,\"units_max\":1.5}],\"minimum\":null,\"name\":\"Externship\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":5,\"min\":1.5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BA 115\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 149\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 109\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMPR 100\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Recommended electives\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":0,\"min\":0}}],\"program\":{\"careers\":[\"pharmacy technicians\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Develop a polished resume for Pharmacy Technician job interviews, highlighting your advanced technical skills.\",\"Apply and complete Pharmacy Technician Certification Board Exam successfully.\",\"Apply for the California Board of Pharmacy application for licensing as a Pharmacy Technician in a timely manner.\"],\"section_heading\":\"Pharmacy Technology Advanced Option: Certificate of Achievement (Transcripted)\",\"total_units\":{\"max\":30,\"min\":24}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":18,\"placed\":18}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"units_within_printed_range\"],\"invented\":true,\"listed\":18,\"placed\":18}'::jsonb),\n  (2, 'Santa Ana College', '31859', 45841675928, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLS C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"POLS C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLT 200H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"POLT 200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLT 201\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLT 220\",\"units\":3,\"units_max\":null}],\"minimum\":9,\"name\":\"Required Core: Select 9 units\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":9,\"min\":9}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLT 235\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"STAT C1000H\",\"units\":4},{\"catalog_addition\":false,\"code\":\"STAT C1000E\",\"units\":4.5},{\"catalog_addition\":false,\"code\":\"PSYC 210\",\"units\":4}],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null}],\"minimum\":2,\"name\":\"List A (select 2)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":7.5,\"min\":6}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ECON C2001\",\"units\":3}],\"catalog_addition\":true,\"code\":\"ECON C2002\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List B (select one)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Political Science: A.A.-T Degree for Transfer\",\"total_units\":{\"max\":19.5,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":13,\"placed\":13}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"units_within_printed_range\"],\"invented\":true,\"listed\":13,\"placed\":13}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "pre_read_md5": "with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) as (values\n  (1, 'Santa Ana College', '21789', 38843461766, '59b7f90f214b8d8db19e3854bae24a08', 'ebd12c758ebab5aaeac4ca39249f2f79', 'b10acb23115c8358a68ce63aaf766e5c'),\n  (2, 'Santa Ana College', '31859', 45841675928, '1cb8921fa6194f17ebe88ca3b3858412', '63bb1716563187017be2c4ba1619b459', '559ed20d5f8738ce376cc4e3b17c1570'))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.record::text) = v.rec_md5),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.checks::text) = v.chk_md5),\n  'already_after', count(*) filter (where md5(r.checks::text) = v.after_md5),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Santa Ana College', '21789', 38843461766, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 048\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 055\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 051\",\"units\":3.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 052\",\"units\":3.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 056\",\"units\":4.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 057\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 060\",\"units\":4.5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 056L\",\"units\":0.5,\"units_max\":1},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHAR 057L\",\"units\":0.5,\"units_max\":1},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 060L\",\"units\":0.5,\"units_max\":1}],\"minimum\":1,\"name\":\"Skills Lab (PHAR 056L, PHAR 057L or PHAR 060L)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":1,\"min\":0.5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 072L-1\",\"units\":0.5,\"units_max\":1},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 072L-2\",\"units\":0.5,\"units_max\":1}],\"minimum\":1,\"name\":\"Skills Lab (PHAR 072L-1 or PHAR 072L-2)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":1,\"min\":0.5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 072A\",\"units\":0.5,\"units_max\":2},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 072B\",\"units\":0.5,\"units_max\":1.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 072C\",\"units\":0.5,\"units_max\":1.5}],\"minimum\":null,\"name\":\"Externship\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":5,\"min\":1.5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BA 115\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 149\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 109\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMPR 100\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Recommended electives\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":0,\"min\":0}}],\"program\":{\"careers\":[\"pharmacy technicians\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Develop a polished resume for Pharmacy Technician job interviews, highlighting your advanced technical skills.\",\"Apply and complete Pharmacy Technician Certification Board Exam successfully.\",\"Apply for the California Board of Pharmacy application for licensing as a Pharmacy Technician in a timely manner.\"],\"section_heading\":\"Pharmacy Technology Advanced Option: Certificate of Achievement (Transcripted)\",\"total_units\":{\"max\":30,\"min\":24}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":18,\"placed\":18}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"units_within_printed_range\"],\"invented\":true,\"listed\":18,\"placed\":18}'::jsonb),\n  (2, 'Santa Ana College', '31859', 45841675928, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLS C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"POLS C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLT 200H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"POLT 200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLT 201\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLT 220\",\"units\":3,\"units_max\":null}],\"minimum\":9,\"name\":\"Required Core: Select 9 units\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":9,\"min\":9}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLT 235\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"STAT C1000H\",\"units\":4},{\"catalog_addition\":false,\"code\":\"STAT C1000E\",\"units\":4.5},{\"catalog_addition\":false,\"code\":\"PSYC 210\",\"units\":4}],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null}],\"minimum\":2,\"name\":\"List A (select 2)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":7.5,\"min\":6}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ECON C2001\",\"units\":3}],\"catalog_addition\":true,\"code\":\"ECON C2002\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List B (select one)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Political Science: A.A.-T Degree for Transfer\",\"total_units\":{\"max\":19.5,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":13,\"placed\":13}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"units_within_printed_range\"],\"invented\":true,\"listed\":13,\"placed\":13}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\nf as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number\n        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true\n       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)),\ne(expect) as (values (2)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when f.n > 0\n            then ('s741k1 piles confirm guard: ' || f.n || ' rows hold a matching confirm verdict ' || f.keys::text)::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s741k1 piles guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, f;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Santa Ana College', '21789', 38843461766, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 048\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 055\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 051\",\"units\":3.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 052\",\"units\":3.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 056\",\"units\":4.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 057\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 060\",\"units\":4.5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 056L\",\"units\":0.5,\"units_max\":1},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHAR 057L\",\"units\":0.5,\"units_max\":1},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 060L\",\"units\":0.5,\"units_max\":1}],\"minimum\":1,\"name\":\"Skills Lab (PHAR 056L, PHAR 057L or PHAR 060L)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":1,\"min\":0.5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 072L-1\",\"units\":0.5,\"units_max\":1},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 072L-2\",\"units\":0.5,\"units_max\":1}],\"minimum\":1,\"name\":\"Skills Lab (PHAR 072L-1 or PHAR 072L-2)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":1,\"min\":0.5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 072A\",\"units\":0.5,\"units_max\":2},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 072B\",\"units\":0.5,\"units_max\":1.5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHAR 072C\",\"units\":0.5,\"units_max\":1.5}],\"minimum\":null,\"name\":\"Externship\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":5,\"min\":1.5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BA 115\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 149\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 109\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMPR 100\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Recommended electives\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":0,\"min\":0}}],\"program\":{\"careers\":[\"pharmacy technicians\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Develop a polished resume for Pharmacy Technician job interviews, highlighting your advanced technical skills.\",\"Apply and complete Pharmacy Technician Certification Board Exam successfully.\",\"Apply for the California Board of Pharmacy application for licensing as a Pharmacy Technician in a timely manner.\"],\"section_heading\":\"Pharmacy Technology Advanced Option: Certificate of Achievement (Transcripted)\",\"total_units\":{\"max\":30,\"min\":24}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":18,\"placed\":18}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"units_within_printed_range\"],\"invented\":true,\"listed\":18,\"placed\":18}'::jsonb),\n  (2, 'Santa Ana College', '31859', 45841675928, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLS C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"POLS C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLT 200H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"POLT 200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLT 201\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLT 220\",\"units\":3,\"units_max\":null}],\"minimum\":9,\"name\":\"Required Core: Select 9 units\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":9,\"min\":9}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLT 235\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"STAT C1000H\",\"units\":4},{\"catalog_addition\":false,\"code\":\"STAT C1000E\",\"units\":4.5},{\"catalog_addition\":false,\"code\":\"PSYC 210\",\"units\":4}],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null}],\"minimum\":2,\"name\":\"List A (select 2)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":7.5,\"min\":6}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ECON C2001\",\"units\":3}],\"catalog_addition\":true,\"code\":\"ECON C2002\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List B (select one)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Political Science: A.A.-T Degree for Transfer\",\"total_units\":{\"max\":19.5,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":13,\"placed\":13}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"units_within_printed_range\"],\"invented\":true,\"listed\":13,\"placed\":13}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (2)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s741k1 piles rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;"
+}

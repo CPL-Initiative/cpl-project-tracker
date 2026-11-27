@@ -653,7 +653,13 @@ def also_from_span(blocks: list, t: int, srcs: list, listed: dict, hours: bool =
 # "Option N" are one option: their units add up, and the sum is one alternative of the group. Only where two or more
 # blocks of the group open with the same option and every block of the group opens with one; a group of alternatives
 # named otherwise reads as before. OPTION_PARTS_ON lets a rescore measure the scorer with the reading off.
-OPTION_PART = re.compile(r"^\s*option\s+(\d{1,2}|[a-z])\b(?!\s*(?:,|or\b|and\b|-\s*\d|–\s*\d|through\b))", re.I)
+# S741: an option numbered in Roman numerals of two or more letters ("OPTION II - Native Spanish Speaker", Cosumnes
+# River 33542; "Option II - Exercise Science: II. Activity Requirement", Imperial Valley 01873) is an option too. The
+# pattern read "Option I", "Option V" and "Option X" as letters and no "Option II", so a group with an Option II had a
+# block with no key and was never read as parts. Self-recall over every filed record
+# (tests/program_option_roman_s741_test.py): four records carry such a name, the parts move at two, both right.
+OPTION_PART = re.compile(r"^\s*option\s+(\d{1,2}|[ivx]{2,5}|[a-z])\b(?!\s*(?:,|or\b|and\b|-\s*\d|–\s*\d|through\b))",
+                         re.I)
 OPTION_ALTERNATIVE_SUFFIX = re.compile(r"\s*\([^()]*\)\s*$")
 OPTION_PARTS_ON = True
 

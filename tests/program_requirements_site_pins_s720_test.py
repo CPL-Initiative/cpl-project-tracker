@@ -140,8 +140,11 @@ FIX = json.load(gzip.open(os.path.join(ROOT, "tests", "fixtures", "program_requi
                           encoding="utf-8"))
 LEVER = set("04881 09267 19002 22732 22754 22756 22784 22787 22792 22799 22816 22818 22831 32317 41789".split())
 SB_PINS = C.site_pin_entries(SB)
-check(set(SB_PINS) == LEVER | {"22768"} == set(FIX["programs"]),
-      "5 the entry pins the census lever's 15 (run 45319725062) and 22768, found and never extracted, as the fixture does")
+# S741 (lane 1, keys): Pharmacy Technology certificate 22821, read from its department's landing page (no total), is
+# pinned to its own page, as college-page-read run 45835049303 printed it.
+check(set(SB_PINS) == LEVER | {"22768", "22821"} == set(FIX["programs"]),
+      "5 the entry pins the census lever's 15 (run 45319725062), 22768, found and never extracted, and S741's 22821, "
+      "as the fixture does")
 sb_pages = [page(url, p["h1"], p["text"]) for url, p in FIX["pages"].items()]
 conf = R.load_steps().get(SB) or {}
 sb_progs = C.with_renumbers([dict(prog(cn, p["title"], p["award"], p["codes"])) for cn, p in FIX["programs"].items()],
@@ -153,7 +156,8 @@ for cn, p in sorted(FIX["programs"].items()):
     totals = len(re.findall(r"^Total Units\t", b.get("text") or "", re.M))
     if not b or b["coverage"] < C.P.ACCEPT_SHARE or totals != 1 or b["url"] == p["filed_url"]:
         bad.append("%s %s cov %s totals %d" % (cn, (got.get(cn) or {}).get("why", ""), b.get("coverage"), totals))
-check(not bad, "5 each of 16 pins binds on its own page, not the filed one, at the accept share with one total (%s)" % bad)
+check(not bad and len(FIX["programs"]) == 17,
+      "5 each of 17 pins binds on its own page, not the filed one, at the accept share with one total (%s)" % bad)
 ece = next(c for c in sb_progs if c["control_number"] == "32317")
 check({c["code"]: c.get("printed") for c in ece["closed_list"]}.get("CD 111") == "CDEV 111"
       and (got["32317"]["best"]["coverage"] == 1.0),

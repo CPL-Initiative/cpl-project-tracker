@@ -182,7 +182,14 @@ a = W.load("35833")["score"]["arithmetic"]
 check(a["stated"][0] <= a["computed"][0] and a["computed"][1] <= a["stated"][1],
       "35833's 19-22 sits inside its printed 18.5-22")
 f = W.load("22784")
-check(str(f["extracted_run"]) == "45355976381" and not W.on_live_run(f), "22784's run is posted by no committed receipt")
+# Either state (p-older-pile-tests-pin-runs-later-plans-move-s739): no committed receipt posted 22784's run when this
+# plan held it. S741's plan (s741k3) proved the run live from the file's history and its load commits and filed the
+# record's gap, so its receipt now posts the record at that run.
+check(str(f["extracted_run"]) == "45355976381"
+      and (not W.on_live_run(f) or "waived_course_counted" in (f["score"].get("gaps") or {})
+           or any(g == "waived_course_counted" or (isinstance(g, dict) and g.get("gap") == "waived_course_counted")
+                  for g in (f["score"].get("gaps") or []))),
+      "22784's run was posted by no committed receipt (S741's plan has filed its gap since)")
 f = W.load("22821")
 check(f["source_url"].rstrip("/").endswith("/pharmacy-technology") and f["score"]["arithmetic"]["why"] == [NG.NO_TOTAL_WHY]
       and any("program overview page" in n for n in B.notes(f)),

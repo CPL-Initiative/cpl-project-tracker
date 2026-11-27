@@ -67,9 +67,16 @@ f = W.load("18519")
 check(W.shared_with("18519") == ["18520"] or S.passes_live(f["score"]),
       "18519's page is shared with 18520 (or a read of the reissue has passed it since)")
 check(B.arithmetic(f).get("status") == "equal", "18519's arithmetic passes")
-a = B.arithmetic(W.load("43854"))
-check(a.get("against") == "degree" and a["computed"][0] < a["stated"][0] < a["computed"][1],
-      "43854: the degree's sum holds the printed 60 inside it")
+f = W.load("43854")
+a = B.arithmetic(f)
+# Either state: as read, or re-filed by S741's free reconcile 45957316339 with the catalog's degree floor
+# (degree_total_minimum), under which it passes; its figures are the page's 24, 34-43 and 60 either way.
+p = f["record"]["program"]
+check((a.get("against") == "degree" and a["computed"][0] < a["stated"][0] < a["computed"][1])
+      or (p.get("degree_total_minimum") is True and S.passes_live(f["score"])),
+      "43854: the degree's sum holds the printed 60 inside it (or it passes by the degree's floor since)")
+check(p["total_units"] == {"min": 24, "max": 24} and p["ge_units"] == {"min": 34, "max": 43}
+      and p["degree_total"] == {"min": 60, "max": 60}, "43854: the record holds the page's 24, 34-43 and 60")
 check(all(cn not in M.REVIEWED for cn in HELD), "no hold carries an entry")
 
 # Why a read and no reconcile: each held record's source is the 09.03.26 file, and the capture now reads the reissue.

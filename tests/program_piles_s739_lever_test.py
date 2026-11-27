@@ -57,6 +57,16 @@ check(all(e["gap"] in NG.GAPS and NG.ARITH_SCORE.get(e["gap"]) == 40 for e in M.
 
 # ── each entry's own reading, on the committed record ─────────────────────
 crc, ela = (M.CRC, "33542"), (M.ELA, "33013")
+# S741 taught the scorer's own option reading Roman numerals of two or more letters (OPTION_PART), so today's scorer
+# reads 33542's 'OPTION II' blocks as one option by itself. The plan's checks below are read with the option pattern
+# as it stood when s739l was planned and applied (digits and single letters); the last check of this block reads
+# today's pattern.
+import re  # noqa: E402
+_TODAY = M.S.OPTION_PART
+M.S.OPTION_PART = re.compile(r"^\s*option\s+(\d{1,2}|[a-z])\b(?!\s*(?:,|or\b|and\b|-\s*\d|–\s*\d|through\b))", re.I)
+check(_TODAY.match("OPTION II - Native Spanish Speaker") and not M.S.OPTION_PART.match("OPTION II - Native Spanish Speaker")
+      and M.S.OPTION_PART.match("OPTION I - Non-Native Spanish Speaker"),
+      "the pattern as s739l knew it reads 'OPTION I' and no 'OPTION II'; today's reads both")
 f = M.load(crc)
 e = M.REVIEWED[crc]
 rec = f["record"]
@@ -113,6 +123,12 @@ check(NG.answer(dict(f, score={k: v for k, v in f["score"].items() if k not in (
 
 bd = M.boundaries()
 check(not bd["wrong"] and sum(bd["counts"].values()) == 12, "the twelve boundaries read right (%s)" % bd)
+M.S.OPTION_PART = _TODAY
+_f = M.load(crc)
+_a = M.major(_f["record"], _f["award"])
+check(set(M.S.option_parts(_f["record"]).values()) == {("Option", "i"), ("Option", "ii")}
+      and _a.get("status") == "equal" and _a.get("computed") == [19.0, 19.0] and "fill" not in _a,
+      "33542: with S741's Roman numerals today's scorer reads the two options itself and adds 19 at both ends (%s)" % _a)
 
 # ── the plan, read from the fixture ───────────────────────────────────────
 with open(os.path.join(ROOT, fx["receipt"]), encoding="utf-8") as fh:

@@ -1,0 +1,31 @@
+{
+ "_readme": "S741 lane 1 (keys): Solano Community College's four records S740 left held on the own-page guard, read from the 2026-27 catalog PDF, line for line, free, no model call, nothing written: Mechatronics A.S. 30184 and its certificate 30185 (one section printed for both awards: how does the section word each award, and what do its printed units add to against 'Required Major Total Units 37'?), World Languages A.A. 43134 (the state's file lists the program twice, 06538 and 43134) and American Sign Language A.A. 38591 (its section, and the ASL/English Interpreter Training section its note says the state's list matches). It also prints the course description of ADVM 051, which the Mechatronics list prints as ADVM 151.",
+ "college": "Solano Community College",
+ "questions": {
+  "own_section": "Where each program's own section opens and ends, how its heading names its awards, and which total it prints.",
+  "formerly": "Which code does the course description of Vocational Mathematics print, and which former code?"
+ },
+ "keywords": [
+  "Mechatronics",
+  "ADVM\\s*0?51\\b",
+  "World Languages",
+  "American Sign Language\\s+Associate",
+  "Interpreter Training"
+ ],
+ "pdf_page_cap": 24,
+ "pdf_span": [
+  116,
+  344
+ ],
+ "pdf_unfolded": true,
+ "pages": [
+  {
+   "answers": [
+    "own_section",
+    "formerly"
+   ],
+   "why": "30184 30185 43134 38591",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf"
+  }
+ ]
+}
