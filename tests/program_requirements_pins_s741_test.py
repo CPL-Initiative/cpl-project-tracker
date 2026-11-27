@@ -143,6 +143,16 @@ for cn, page, total in (("39731", 207, 12), ("39732", 208, 24)):
               "2 %s, read from its pinned page (45962123468), carries its own heading and adds to its printed %d"
               % (cn, total))
 
+with open(os.path.join(DIR, "american_river", "records", "39341.json"), encoding="utf-8") as fh:
+    f = json.load(fh)
+if str(f.get("extracted_run")) == "45970104024":
+    a = f["score"]["arithmetic"]
+    check(f["source_url"].endswith("#page=206") and a["status"] == "equal" and a["computed"] == [56, 56] == a["stated"]
+          and f["record"]["program"]["section_heading"].endswith("Apprenticeship Certificate")
+          and not f["score"].get("gaps"),
+          "2 39341, read from its pinned page (45970104024), carries its own heading, adds to its printed 56, and "
+          "carries no gap")
+
 # ── 3. the site pins ────────────────────────────────────────────────────────
 SITE = (("Orange Coast College", "orange_coast", ("08663", "08626"), "45953358884"),
         ("Fullerton College", "fullerton", ("36798", "35174"), "45955333186"),

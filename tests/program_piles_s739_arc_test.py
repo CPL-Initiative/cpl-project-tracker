@@ -34,12 +34,16 @@ OWN = {"12238": "own_heading", "30595": "own_list", "39341": "own_list"}
 # S741 pinned 39731 and 39732 to their own pages (PDF p.207 and p.208) and read 45962123468 filed them there, both
 # passing, so 39341 is the one record still read from p.211: the guard asks nothing of it today, one boundary reading
 # (its own section not shown) no longer applies, and the receipt keeps the form s739a applied it under (own_list).
-# That read's page reads also show p.211 is the Level IV certificate's tail, so 39341's own section (p.206) is a pin
-# and a read of its own (handoff, S741).
+# That read's page reads also show p.211 is the Level IV certificate's tail, so 39341's own section (p.206) was pinned
+# too, and read 45970104024 filed it there, passing (56 against 56): from then on s739a's row for it is the receipt's
+# history (read_since), and its four boundary readings are gone with the failing record.
 MOVED = not W.shared_with("39341")
+READ_39341 = "45970104024"
+REREAD = str(W.load("39341")["extracted_run"]) == READ_39341
 OWN_NOW = {k: v for k, v in OWN.items() if not (MOVED and k == "39341")}
-t = T.run(W, rows=ROWS, held=HELD, scores=SCORES, day="2026-11-26", boundaries=25 if MOVED else 26, own=OWN_NOW,
-          receipt_own=OWN)
+t = T.run(W, rows=ROWS, held=HELD, scores=SCORES, day="2026-11-26",
+          boundaries=21 if REREAD else 25 if MOVED else 26, own=OWN_NOW, receipt_own=OWN,
+          read_since={"39341": READ_39341})
 check = t.check
 
 # 12191: the unit line alone closes it, and its lever is named.
