@@ -1,0 +1,29 @@
+{
+ "_readme": "S742, lane 2's cheap piles (2026-11-27), second read. The first read (46001469210) printed Psychology A.A. 06381 and Geology A.S. 06380. The reconcile step recommended_counts would also read Dance A.A. 06352 and Exercise and Sports Science A.A. 44992, whose pages no read has printed (the step's reader, MAJOR). This read asks each page's own content call, so a session can quote every list's name with its 'Complete the following number of credits' line, general education, general electives and the degree total, and run the step's recall on the page's own lines. Two loads. No model call, nothing written.",
+ "college": "Cabrillo College",
+ "questions": {
+  "list_lines": "Each list's name with its 'Complete the following number of credits: N' line, in the page's order, with general education, general electives and the degree total."
+ },
+ "keywords": [
+  "[Cc]omplete the following[^<\"]{0,120}",
+  "[Rr]ecommended[^<\"]{0,140}",
+  "General [Ee]lectives?[^<\"]{0,140}",
+  "General Education[^<\"]{0,60}"
+ ],
+ "pages": [
+  {
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,dance-associate-in-arts-a-a-fall-2025?tenant=cabrillo.elumenapp.com",
+   "answers": [
+    "list_lines"
+   ],
+   "why": "06352"
+  },
+  {
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,exercise-and-sports-science-associate-in-arts-a-a-fall-2025?tenant=cabrillo.elumenapp.com",
+   "answers": [
+    "list_lines"
+   ],
+   "why": "44992"
+  }
+ ]
+}
