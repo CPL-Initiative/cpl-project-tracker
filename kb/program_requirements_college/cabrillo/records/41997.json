@@ -70,7 +70,6 @@
     72.0,
     72.0
    ],
-   "against": "program",
    "why": [
     "the blocks sum to 90.0-90.0; the catalog states 72.0-72.0"
    ]
@@ -93,9 +92,6 @@
    "count": 3,
    "not_verbatim": [],
    "pass": true
-  },
-  "degree": {
-   "status": "n/a"
   },
   "pass": false
  },
@@ -154,6 +150,5 @@
    "The careers are taken from 'roles in emergency response, health and safety and community policing' in the program description."
   ]
  },
- "extracted_run": 46015798176,
- "read_run": "38442109713"
+ "extracted_run": "38442109713"
 }

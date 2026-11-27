@@ -70,7 +70,6 @@
     234.0,
     234.0
    ],
-   "against": "program",
    "why": []
   },
   "repeated": {
@@ -91,9 +90,6 @@
    "count": 4,
    "not_verbatim": [],
    "pass": true
-  },
-  "degree": {
-   "status": "n/a"
   },
   "pass": true
  },
@@ -155,6 +151,5 @@
    "Careers read from the description: 'jobs in commercial photography studios in portrait, event, fashion, and wedding photography'; recorded as four fields as printed. A reviewer may prefer 'commercial photography studios' as an additional or alternative entry."
   ]
  },
- "extracted_run": 46015798176,
- "read_run": "38442109713"
+ "extracted_run": "38442109713"
 }

@@ -70,7 +70,6 @@
     16.0,
     17.0
    ],
-   "against": "program",
    "why": []
   },
   "repeated": {
@@ -91,9 +90,6 @@
    "count": 2,
    "not_verbatim": [],
    "pass": true
-  },
-  "degree": {
-   "status": "n/a"
   },
   "pass": true
  },
@@ -212,6 +208,5 @@
    "Career text also mentions 'opportunities in digital photo labs, newspaper photo departments, and graphic design employment'; these were read as workplaces/employment settings rather than careers, but a reviewer may want to add them."
   ]
  },
- "extracted_run": 46015798176,
- "read_run": "38442109713"
+ "extracted_run": "38442109713"
 }

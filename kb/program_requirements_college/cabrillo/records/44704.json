@@ -70,7 +70,6 @@
     234.0,
     234.0
    ],
-   "against": "program",
    "why": []
   },
   "repeated": {
@@ -91,9 +90,6 @@
    "count": 3,
    "not_verbatim": [],
    "pass": true
-  },
-  "degree": {
-   "status": "n/a"
   },
   "pass": true
  },
@@ -153,6 +149,5 @@
    "The Program Map (Summer Start and Spring Start) shows only the sequencing of the same two required courses. It was not recorded as separate blocks."
   ]
  },
- "extracted_run": 46015798176,
- "read_run": "38442109713"
+ "extracted_run": "38442109713"
 }

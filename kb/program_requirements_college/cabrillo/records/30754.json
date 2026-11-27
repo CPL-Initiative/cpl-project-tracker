@@ -114,9 +114,6 @@
    "not_verbatim": [],
    "pass": true
   },
-  "degree": {
-   "status": "read"
-  },
   "pass": true
  },
  "record": {
@@ -310,6 +307,5 @@
    "Program Outcomes are printed once for the program and recorded for this award."
   ]
  },
- "extracted_run": 46015798176,
- "read_run": "38565227455"
+ "extracted_run": "38565227455"
 }

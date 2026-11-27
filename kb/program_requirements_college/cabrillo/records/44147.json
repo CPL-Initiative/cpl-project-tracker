@@ -70,7 +70,6 @@
     25.5,
     25.5
    ],
-   "against": "program",
    "why": []
   },
   "repeated": {
@@ -91,9 +90,6 @@
    "count": 0,
    "not_verbatim": [],
    "pass": true
-  },
-  "degree": {
-   "status": "n/a"
   },
   "pass": true
  },
@@ -207,6 +203,5 @@
    "Program Map anomalies: Fall Start 'Year 2, Fall' lists ECE34 twice and omits ECE52; 'Fall Start for Dual Enrolled High School Students' lists ECE34 twice (Semester 2 and Semester 6) and omits ECE32; dual-enrolled maps skip semester numbers (5, 6). The Program Requirements list was used as authoritative."
   ]
  },
- "extracted_run": 46015798176,
- "read_run": "38442109713"
+ "extracted_run": "38442109713"
 }

@@ -74,7 +74,6 @@
     22.0,
     25.0
    ],
-   "against": "program",
    "why": []
   },
   "repeated": {
@@ -95,9 +94,6 @@
    "count": 3,
    "not_verbatim": [],
    "pass": true
-  },
-  "degree": {
-   "status": "n/a"
   },
   "pass": true
  },
@@ -227,6 +223,5 @@
    "Catalog codes are printed without a space (e.g., CIS71); matched to closed-list codes with a space (CIS 71)."
   ]
  },
- "extracted_run": 46015798176,
- "read_run": "38442109713"
+ "extracted_run": "38442109713"
 }

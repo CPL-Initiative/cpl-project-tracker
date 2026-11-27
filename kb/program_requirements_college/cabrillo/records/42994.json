@@ -70,7 +70,6 @@
     27.0,
     36.0
    ],
-   "against": "program",
    "why": []
   },
   "repeated": {
@@ -91,9 +90,6 @@
    "count": 5,
    "not_verbatim": [],
    "pass": true
-  },
-  "degree": {
-   "status": "n/a"
   },
   "pass": true
  },
@@ -156,6 +152,5 @@
    "Careers are read from the program description (pathways for STEM tutors and teaching assistants; interest in tutoring, teaching assistant positions, and teaching); reviewer may wish to confirm which phrases count as career fields."
   ]
  },
- "extracted_run": 46015798176,
- "read_run": "38442109713"
+ "extracted_run": "38442109713"
 }

@@ -94,9 +94,6 @@
    "not_verbatim": [],
    "pass": true
   },
-  "degree": {
-   "status": "n/a"
-  },
   "pass": true
  },
  "record": {
@@ -404,6 +401,5 @@
    "No careers are named in the text."
   ]
  },
- "extracted_run": 46015798176,
- "read_run": "38442109713"
+ "extracted_run": "38442109713"
 }

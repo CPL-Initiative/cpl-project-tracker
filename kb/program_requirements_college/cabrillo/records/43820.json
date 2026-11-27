@@ -70,7 +70,6 @@
     180.0,
     183.06
    ],
-   "against": "program",
    "why": []
   },
   "repeated": {
@@ -91,9 +90,6 @@
    "count": 0,
    "not_verbatim": [],
    "pass": true
-  },
-  "degree": {
-   "status": "n/a"
   },
   "pass": true
  },
@@ -176,6 +172,5 @@
    "No careers or job titles are named. The description mentions students interested in entrepreneurship, nonprofit work and employment, but these are student interests, not named careers."
   ]
  },
- "extracted_run": 46015798176,
- "read_run": "38442109713"
+ "extracted_run": "38442109713"
 }

@@ -98,9 +98,6 @@
    "not_verbatim": [],
    "pass": true
   },
-  "degree": {
-   "status": "read"
-  },
   "pass": false,
   "gaps": [
    {
@@ -340,6 +337,5 @@
    "Course codes recorded as printed without a space (e.g., MUS1 = closed-list MUS 1). Program Map GE course lists were not recorded as blocks."
   ]
  },
- "extracted_run": 46015798176,
- "read_run": "38565227455"
+ "extracted_run": "38565227455"
 }

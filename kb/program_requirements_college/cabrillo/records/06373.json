@@ -98,9 +98,6 @@
    "not_verbatim": [],
    "pass": true
   },
-  "degree": {
-   "status": "read"
-  },
   "pass": true
  },
  "record": {
@@ -315,6 +312,5 @@
    "Catalog text begins mid-sentence; the start of the program description is cut off."
   ]
  },
- "extracted_run": 46015798176,
- "read_run": "38565227455"
+ "extracted_run": "38565227455"
 }

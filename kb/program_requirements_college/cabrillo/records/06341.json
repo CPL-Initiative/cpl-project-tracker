@@ -112,9 +112,6 @@
    "not_verbatim": [],
    "pass": true
   },
-  "degree": {
-   "status": "read"
-  },
   "pass": false,
   "gaps": [
    {
@@ -517,6 +514,5 @@
    "Program Outcomes are printed for the program as a whole; recorded for this A.S. degree. No careers are named in the text."
   ]
  },
- "extracted_run": 46015798176,
- "read_run": "38565227455"
+ "extracted_run": "38565227455"
 }

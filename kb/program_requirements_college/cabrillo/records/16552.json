@@ -377,7 +377,7 @@
    "Program Outcomes are printed for the program as a whole on this A.S. page and recorded for this award."
   ]
  },
- "extracted_run": 46015798176,
+ "extracted_run": 38639316727,
  "reconciled": [
   {
    "field": "open_elective_units",
@@ -386,5 +386,5 @@
    "words": "General electives: any transferable or degree applicable course.\n0"
   }
  ],
- "read_run": 38639316727
+ "read_run": "38565227455"
 }

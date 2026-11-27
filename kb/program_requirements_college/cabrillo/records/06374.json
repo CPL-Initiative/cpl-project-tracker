@@ -98,9 +98,6 @@
    "not_verbatim": [],
    "pass": true
   },
-  "degree": {
-   "status": "read"
-  },
   "pass": true
  },
  "record": {
@@ -334,6 +331,5 @@
    "The Program Outcomes list appears to merge two versions: it prints items numbered 1, 2, 1, 2, 2, 3, 3, 4, 4, with outcomes 2-4 of the second set duplicated verbatim. Each distinct outcome is recorded once; reviewer should check which set is current."
   ]
  },
- "extracted_run": 46015798176,
- "read_run": "38565227455"
+ "extracted_run": "38565227455"
 }

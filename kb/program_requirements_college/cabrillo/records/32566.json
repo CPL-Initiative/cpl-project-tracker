@@ -104,9 +104,6 @@
    "not_verbatim": [],
    "pass": true
   },
-  "degree": {
-   "status": "read"
-  },
   "pass": true
  },
  "record": {
@@ -516,6 +513,5 @@
    "Catalog text begins mid-description and the Program Map is cut off at List C; the requirements section itself appears complete."
   ]
  },
- "extracted_run": 46015798176,
- "read_run": "38565227455"
+ "extracted_run": "38565227455"
 }

@@ -460,14 +460,14 @@
    "Program Outcomes are printed once for the program and recorded for this A.S. degree."
   ]
  },
- "extracted_run": 46015798176,
+ "extracted_run": 38639316727,
  "reconciled": [
   {
    "field": "open_elective_units",
-   "was": 0,
+   "was": null,
    "now": 0,
    "words": "General electives: any transferable or degree applicable course.\n0"
   }
  ],
- "read_run": 38639316727
+ "read_run": "38565227455"
 }

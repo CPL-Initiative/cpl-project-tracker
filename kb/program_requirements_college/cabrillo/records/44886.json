@@ -76,7 +76,6 @@
     18.0,
     18.5
    ],
-   "against": "program",
    "why": []
   },
   "repeated": {
@@ -97,9 +96,6 @@
    "count": 1,
    "not_verbatim": [],
    "pass": true
-  },
-  "degree": {
-   "status": "n/a"
   },
   "pass": true
  },
@@ -215,6 +211,5 @@
    "Total stated as '18-18.5 Credits'."
   ]
  },
- "extracted_run": 46015798176,
- "read_run": "38442109713"
+ "extracted_run": "38442109713"
 }

@@ -74,7 +74,6 @@
     16.5,
     16.5
    ],
-   "against": "program",
    "why": []
   },
   "repeated": {
@@ -95,9 +94,6 @@
    "count": 12,
    "not_verbatim": [],
    "pass": true
-  },
-  "degree": {
-   "status": "n/a"
   },
   "pass": true
  },
@@ -261,6 +257,5 @@
    "The Program Map lists Music Theory Electives as 'Take one of the following'; the requirements state 3 credits, recorded as choose_units 3 (equivalent to one 3-unit course)."
   ]
  },
- "extracted_run": 46015798176,
- "read_run": "38442109713"
+ "extracted_run": "38442109713"
 }

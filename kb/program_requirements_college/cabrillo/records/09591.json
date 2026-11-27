@@ -104,9 +104,6 @@
    "not_verbatim": [],
    "pass": true
   },
-  "degree": {
-   "status": "read"
-  },
   "pass": true
  },
  "record": {
@@ -285,6 +282,5 @@
    "HORT99 (Horticulture Internships/Work Experience) is printed with 1 unit; it may be variable-unit in the course catalog."
   ]
  },
- "extracted_run": 46015798176,
- "read_run": "38565227455"
+ "extracted_run": "38565227455"
 }

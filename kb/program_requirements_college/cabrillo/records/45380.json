@@ -70,7 +70,6 @@
     29.0,
     30.0
    ],
-   "against": "program",
    "why": []
   },
   "repeated": {
@@ -91,9 +90,6 @@
    "count": 2,
    "not_verbatim": [],
    "pass": true
-  },
-  "degree": {
-   "status": "n/a"
   },
   "pass": true
  },
@@ -222,6 +218,5 @@
    "The Program Map (Spring Start/Fall Start) repeats the same courses and is not recorded as separate blocks."
   ]
  },
- "extracted_run": 46015798176,
- "read_run": "38442109713"
+ "extracted_run": "38442109713"
 }

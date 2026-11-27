@@ -74,7 +74,6 @@
     17.0,
     17.0
    ],
-   "against": "program",
    "why": []
   },
   "repeated": {
@@ -95,9 +94,6 @@
    "count": 8,
    "not_verbatim": [],
    "pass": true
-  },
-  "degree": {
-   "status": "n/a"
   },
   "pass": true
  },
@@ -328,6 +324,5 @@
    "Program Map term totals (5.0-8.0, 6.5-9.0, 4.0-7.0, 7.5-10.0) are pathway suggestions, not requirement totals."
   ]
  },
- "extracted_run": 46015798176,
- "read_run": "38442109713"
+ "extracted_run": "38442109713"
 }

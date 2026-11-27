@@ -80,7 +80,6 @@
     31.5,
     32.5
    ],
-   "against": "program",
    "why": [
     "the blocks sum to 19.5-20.5; the catalog states 31.5-32.5"
    ]
@@ -103,9 +102,6 @@
    "count": 0,
    "not_verbatim": [],
    "pass": true
-  },
-  "degree": {
-   "status": "n/a"
   },
   "pass": false,
   "gaps": [
@@ -315,6 +311,5 @@
    "The Program Outcomes list is printed for the program on this certificate page; one outcome recorded."
   ]
  },
- "extracted_run": 46015798176,
- "read_run": "38442109713"
+ "extracted_run": "38442109713"
 }

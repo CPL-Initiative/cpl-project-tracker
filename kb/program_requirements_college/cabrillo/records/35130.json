@@ -98,9 +98,6 @@
    "not_verbatim": [],
    "pass": true
   },
-  "degree": {
-   "status": "read"
-  },
   "pass": true
  },
  "record": {
@@ -260,6 +257,5 @@
    "The catalog text is cut off mid-way through the Program Map (Year 2, Spring Cal-GETC Area 4 list); the Program Map contains only GE and the same major courses, so no requirements appear lost."
   ]
  },
- "extracted_run": 46015798176,
- "read_run": "38565227455"
+ "extracted_run": "38565227455"
 }

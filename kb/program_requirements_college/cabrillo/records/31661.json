@@ -100,9 +100,6 @@
    "not_verbatim": [],
    "pass": true
   },
-  "degree": {
-   "status": "read"
-  },
   "pass": true
  },
  "record": {
@@ -826,6 +823,5 @@
    "The catalog text begins mid-sentence (description cut off) and the Program Map is cut off at the end; the Program Map is an advisory sequence and was not used for blocks. The opening phrase about work settings (hospitals, wellness centers, schools, etc.) lists settings, not careers, and was not recorded as careers."
   ]
  },
- "extracted_run": 46015798176,
- "read_run": "38565227455"
+ "extracted_run": "38565227455"
 }

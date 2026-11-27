@@ -74,7 +74,6 @@
     16.0,
     19.0
    ],
-   "against": "program",
    "why": []
   },
   "repeated": {
@@ -95,9 +94,6 @@
    "count": 0,
    "not_verbatim": [],
    "pass": true
-  },
-  "degree": {
-   "status": "n/a"
   },
   "pass": true
  },
@@ -383,6 +379,5 @@
    "No careers are named; description refers only generally to professionals in private, public, and non-profit settings."
   ]
  },
- "extracted_run": 46015798176,
- "read_run": "38442109713"
+ "extracted_run": "38442109713"
 }

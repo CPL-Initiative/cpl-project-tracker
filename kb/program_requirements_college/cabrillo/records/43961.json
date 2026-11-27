@@ -76,7 +76,6 @@
     18.5,
     18.5
    ],
-   "against": "program",
    "why": []
   },
   "repeated": {
@@ -97,9 +96,6 @@
    "count": 1,
    "not_verbatim": [],
    "pass": true
-  },
-  "degree": {
-   "status": "n/a"
   },
   "pass": true
  },
@@ -724,6 +720,5 @@
    "Careers: the description names entry-level coaching jobs at college, high school, junior high, middle school, elementary school and community youth organizations; recorded the occupation 'coaches'."
   ]
  },
- "extracted_run": 46015798176,
- "read_run": "38442109713"
+ "extracted_run": "38442109713"
 }

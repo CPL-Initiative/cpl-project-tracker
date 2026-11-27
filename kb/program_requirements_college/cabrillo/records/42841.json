@@ -74,7 +74,6 @@
     16.5,
     16.5
    ],
-   "against": "program",
    "why": []
   },
   "repeated": {
@@ -95,9 +94,6 @@
    "count": 4,
    "not_verbatim": [],
    "pass": true
-  },
-  "degree": {
-   "status": "n/a"
   },
   "pass": true
  },
@@ -254,6 +250,5 @@
    "The Program Map (Fall Start / Spring Start) repeats the same requirements and was not recorded as separate blocks."
   ]
  },
- "extracted_run": 46015798176,
- "read_run": "38442109713"
+ "extracted_run": "38442109713"
 }

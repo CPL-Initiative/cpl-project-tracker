@@ -79,7 +79,6 @@
     46.5,
     49.5
    ],
-   "against": "program",
    "why": []
   },
   "repeated": {
@@ -100,9 +99,6 @@
    "count": 1,
    "not_verbatim": [],
    "pass": true
-  },
-  "degree": {
-   "status": "n/a"
   },
   "pass": true
  },
@@ -429,6 +425,5 @@
    "Career entry is taken from the description ('prepares them for administrative positions in early childhood, school-age, and other community-based settings'); reviewer may prefer splitting or including 'leadership and administrative positions'."
   ]
  },
- "extracted_run": 46015798176,
- "read_run": "38442109713"
+ "extracted_run": "38442109713"
 }

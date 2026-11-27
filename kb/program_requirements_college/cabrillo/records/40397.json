@@ -76,7 +76,6 @@
     18.0,
     21.0
    ],
-   "against": "program",
    "why": []
   },
   "repeated": {
@@ -97,9 +96,6 @@
    "count": 0,
    "not_verbatim": [],
    "pass": true
-  },
-  "degree": {
-   "status": "n/a"
   },
   "pass": true
  },
@@ -219,6 +215,5 @@
    "The Program Map (Spring Start / Fall Start) is a suggested sequence and was not recorded as blocks; its per-term elective lists vary (e.g., BUS50 and BUS82 do not appear in every term) but the Program Requirements section governs."
   ]
  },
- "extracted_run": 46015798176,
- "read_run": "38442109713"
+ "extracted_run": "38442109713"
 }

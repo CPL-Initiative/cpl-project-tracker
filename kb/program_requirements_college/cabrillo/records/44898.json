@@ -98,9 +98,6 @@
    "not_verbatim": [],
    "pass": true
   },
-  "degree": {
-   "status": "read"
-  },
   "pass": true
  },
  "record": {
@@ -362,6 +359,5 @@
    "Careers include the fields named in 'many fields, including film, television, video, marketing, communication, design, social media, and technology'; a reviewer may decide whether these industry fields count as careers."
   ]
  },
- "extracted_run": 46015798176,
- "read_run": "38565227455"
+ "extracted_run": "38565227455"
 }

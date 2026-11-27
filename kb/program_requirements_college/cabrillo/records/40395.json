@@ -77,7 +77,6 @@
     17.0,
     17.0
    ],
-   "against": "program",
    "why": []
   },
   "repeated": {
@@ -98,9 +97,6 @@
    "count": 1,
    "not_verbatim": [],
    "pass": true
-  },
-  "degree": {
-   "status": "n/a"
   },
   "pass": true
  },
@@ -236,6 +232,5 @@
    "Career entry taken from description: 'entry-level career positions in the growing field of human resource management'."
   ]
  },
- "extracted_run": 46015798176,
- "read_run": "38442109713"
+ "extracted_run": "38442109713"
 }

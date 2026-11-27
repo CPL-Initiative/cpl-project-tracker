@@ -74,7 +74,6 @@
     99.0,
     126.0
    ],
-   "against": "program",
    "why": []
   },
   "repeated": {
@@ -95,9 +94,6 @@
    "count": 0,
    "not_verbatim": [],
    "pass": true
-  },
-  "degree": {
-   "status": "n/a"
   },
   "pass": true
  },
@@ -176,6 +172,5 @@
    "Program Map Fall Start lists only BUS488 and VAPA479; map is advisory and not used for requirements."
   ]
  },
- "extracted_run": 46015798176,
- "read_run": "38442109713"
+ "extracted_run": "38442109713"
 }
