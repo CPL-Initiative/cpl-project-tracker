@@ -102,7 +102,7 @@ check(len(md5s) == 1 and len(set(md5s[0])) == 3 and md5_sql.count("College', '")
       "the md5 pre-read names the one row with three hashes: its record, its checks before and its checks after")
 try:
     built = B.md5_pre_read(rows)
-except Exception:  # noqa: BLE001  no local Postgres (CI): the committed file is read as filed
+except (Exception, SystemExit):  # noqa: BLE001  no local Postgres (CI): the committed file is read as filed
     built = None
 check(built is None or built.strip() in md5_sql, "the md5 pre-read is the shared builder's over the receipt's row")
 
