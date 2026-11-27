@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-27T13:43:08Z",
+ "written_at": "2026-11-27T13:51:27Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17640,
-  "gap": 4695,
+  "passing": 17643,
+  "gap": 4692,
   "with_gap": 118,
-  "cost_usd": 1341.48,
-  "passed_at_read": 16551,
+  "cost_usd": 1341.37,
+  "passed_at_read": 16554,
   "cost_receipts": 118,
   "spent_usd": 1247.47,
   "spent_runs": 255,
@@ -189,8 +189,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16974,
-  "gap": 4695,
+  "passing": 16977,
+  "gap": 4692,
   "collected_with_gaps": 666,
   "discontinued": 0
  },
@@ -3779,7 +3779,7 @@
    "objectives_printed": null,
    "read_at": "2026-11-27T08:35:05Z",
    "read_kind": "capture",
-   "cost_usd": 13.21,
+   "cost_usd": 13.15,
    "passed_at_read": 170,
    "slo_queue": null,
    "scout": null,
@@ -3806,7 +3806,7 @@
    "catalog_now": null,
    "catalog_checks": null,
    "read_seconds": 1111.7,
-   "run": "45966682528",
+   "run": "46003456131",
    "levers": {
     "reconcile_steps": 7,
     "reader_page_search": 6,
@@ -3818,9 +3818,9 @@
      "models": {
       "claude-opus-5-5": 180
      },
-     "run": "45966682528",
+     "run": "46003456131",
      "at": "2026-11-27T08:35:05Z",
-     "cost_usd": 13.21,
+     "cost_usd": 13.15,
      "platform": "courseleaf"
     },
     "slo_read": null,
@@ -4287,13 +4287,12 @@
    "harvested": true,
    "slug": "el_camino",
    "programs": 189,
-   "passing": 120,
-   "gap": 69,
+   "passing": 123,
+   "gap": 66,
    "causes": {
     "no_closed_list": 54,
     "page_not_found": 9,
-    "places_none": 4,
-    "unknown_without_live": 2
+    "unknown_without_live": 3
    },
    "census_causes": {
     "no_closed_list": 54,
@@ -4315,10 +4314,10 @@
    "outcomes_file": null,
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-26T07:18:10Z",
+   "read_at": "2026-11-27T13:03:13Z",
    "read_kind": "capture",
-   "cost_usd": 8.14,
-   "passed_at_read": 96,
+   "cost_usd": 8.09,
+   "passed_at_read": 99,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -4331,9 +4330,9 @@
    "extracted": 126,
    "errors": 0,
    "failed_checks": {
-    "coverage": 4,
+    "coverage": 0,
     "invented": 0,
-    "arithmetic": 30,
+    "arithmetic": 27,
     "repeated": 0,
     "outcomes": 0
    },
@@ -4343,13 +4342,12 @@
    "capture_root": "http://catalog.elcamino.edu/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1446.3,
-   "run": "45773663927",
+   "read_seconds": 1424.0,
+   "run": "46007782666",
    "levers": {
     "program_course_file_check": 54,
     "reader_page_search": 9,
-    "reader_page_assignment": 4,
-    "reconcile_steps": 2
+    "reconcile_steps": 3
    },
    "collection": {
     "program_reader": {
@@ -4357,9 +4355,9 @@
      "models": {
       "claude-opus-5-5": 126
      },
-     "run": "45773663927",
-     "at": "2026-11-26T07:18:10Z",
-     "cost_usd": 8.14,
+     "run": "46007782666",
+     "at": "2026-11-27T13:03:13Z",
+     "cost_usd": 8.09,
      "platform": "acalog"
     },
     "slo_read": null,

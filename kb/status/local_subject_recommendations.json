@@ -58,15 +58,15 @@
   },
   "program_titles": {
    "one or mixed": {
-    "right": 1010,
-    "asked": 1825,
+    "right": 1009,
+    "asked": 1823,
     "share": 0.553,
     "score": 55
    },
    "several agree": {
-    "right": 660,
-    "asked": 1035,
-    "share": 0.638,
+    "right": 661,
+    "asked": 1037,
+    "share": 0.637,
     "score": 64
    }
   },
@@ -230,8 +230,8 @@
   "noncredit_no_title": 242,
   "noncredit_title": 21,
   "noncredit_title_unused_condition": 64,
-  "title_60_to_89": 407,
-  "title_90_plus": 398,
+  "title_60_to_89": 408,
+  "title_90_plus": 397,
   "title_none": 359,
   "title_under_60": 93
  },
@@ -13034,21 +13034,33 @@
     {
      "code": "BUS",
      "title": {
-      "title": "Business Administration 2.0",
-      "confidence": 97,
+      "title": "Business",
+      "confidence": 89,
       "from": "other_colleges",
-      "why": "other colleges: 61 of 69 other colleges (mixed, right 87% of the time); program titles: 1 of 4 programs (one or mixed, right 55% of the time); course joins: 26 of 54 joined courses (few or mixed, right 49% of the time). The sources agree.",
-      "also": [],
+      "why": "other colleges: 61 of 69 other colleges (mixed, right 87% of the time); course joins: 26 of 54 joined courses (few or mixed, right 49% of the time). Another source reads differently.",
+      "also": [
+       {
+        "title": "Entrepreneurial Studies",
+        "from": "program_titles"
+       }
+      ],
       "candidates": [
        {
-        "title": "Business Administration 2.0",
-        "confidence": 97,
+        "title": "Business",
+        "confidence": 89,
         "from": [
          "other_colleges",
-         "program_titles",
          "course_joins"
         ],
-        "why": "other colleges: 61 of 69 other colleges (mixed, right 87% of the time); program titles: 1 of 4 programs (one or mixed, right 55% of the time); course joins: 26 of 54 joined courses (few or mixed, right 49% of the time)."
+        "why": "other colleges: 61 of 69 other colleges (mixed, right 87% of the time); course joins: 26 of 54 joined courses (few or mixed, right 49% of the time)."
+       },
+       {
+        "title": "Entrepreneurial Studies",
+        "confidence": 64,
+        "from": [
+         "program_titles"
+        ],
+        "why": "program titles: 2 of 6 programs (several agree, right 64% of the time)."
        }
       ],
       "search": {
