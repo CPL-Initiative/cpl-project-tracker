@@ -110,3 +110,9 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   by the per-college md5 (four equal), handed to `keys` to commit. Two free page reads (San Jose City's JOURN 138 and CGID
   lines, Cuesta's AVMT entries) GO on `keys`' branch.
 - 13:10Z: s742k1 to a Sonnet plan reader from a detached worktree at `418596af`.
+- 13:13Z: s742k1's reader (Sonnet): APPLY (the guard and rollback match S741k1's shape; the receipt's images equal the
+  SQL; MINOR: no page text is committed for either program, so the gap rests on the reader's notes, which agree with the
+  figures; NIT: the branch carries other plans). Clean md5 pre-read 2 of 2. Applies go on a branch of their own,
+  `claude/s742-apply`, cut at the worker's reviewed head, so a worker's branch stays free for its pushes.
+- 13:15Z: s742k1's migrate 46005400935 returned 2, none skipped; `.apply` restored on `claude/s742-apply` (`6df6937c`).
+  Records collected: 2.
