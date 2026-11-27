@@ -186,3 +186,11 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   45999110725 (pin 14583), Orange Coast's 45999669017 pending, free reconciles at Fullerton 46010143379 and Santa Barbara
   City 46010148668. Step 5 over its colleges: 16 discontinued flags, none new; the units rules move 0 rows.
 - 14:03Z: both to the Fable reader (round 2 for `plan_code_own`, its last).
+- 14:07Z: Butte 14583's pin binds in free capture 45999110725 (its own page, coverage 1.0; it had been read from the
+  Accelerated Track's page); the paid read dispatched on a sibling, `claude/s742-piles-butte`, cut at `711d0407` (only
+  14583, about $0.07), so it cannot cancel Orange Coast's capture on `claude/s742-piles`.
+- 14:08Z: the Fable reader's round 2: `plan_code_own` GO (the MAJOR refuses; 28 records move, all East Los Angeles);
+  Cabrillo's `recommended_counts` FIX THEN GO (MAJOR: its recall builds each page from the record's own lists, so it
+  cannot report a wrong page, and Dance 06352 and Exercise and Sports Science 44992 were never read; MAJOR: no arithmetic
+  guard; MINOR: keep it per college), to `piles` for its last round. No person's check at East Los Angeles (14:08Z, md5
+  equal to the 13:44Z read): its reread dispatched on `claude/s742-piles` (force 45176404274).
