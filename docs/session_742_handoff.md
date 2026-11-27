@@ -262,3 +262,8 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   `claude/s741-keys-wordtest` (`302c12c5`) for the next session; nothing of it lands tonight.
 - 09:20Z: Cuyamaca's reread posted 18634, 18635 and 18636, live and equal at 45966682528 (passing). Records collected:
   51. San Diego City's fresh read 45960365618 finished at 09:16Z on `claude/s741-readers-sdcity`.
+- 09:32Z: Cosumnes River's free reconcile 45972311864 filed 8 (33542 passes 19 of 19 by OPTION_PART); keep-better kept
+  3 and restored 5 filed passes; but the college's compiled PDF repaginated (Marketing p.474 to p.473), so the fresh
+  capture moves 04596 and 35899 and two S739 tests (Cosumnes, the lever) go red. **DECIDED**
+  `d-crc-filing-parked-for-moved-pdf-s741`: the filing is parked on `claude/s741-keys-crc` and reverted on
+  `claude/s741-keys`; 33542 waits for the next session (either-state edits to the two tests, then the reread).
