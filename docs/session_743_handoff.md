@@ -225,3 +225,10 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 - 14:26Z: Fullerton's free reconcile 46010143379 (on `claude/s742-piles-fullerton`, `d5e17d4c`): 2 fail to pass, 0 pass
   to fail; the other 21 put back at main's files; keep-better kept 2. Its reread dispatched (force 46010143379; no
   person's check at 14:24Z): it posts 33680 (22-26 against 22-26) and 42143 (18-19 against 18-19), both passing.
+- 14:27Z: `readers` stop 4 (head `4d394536`): plan s742r2 (El Camino 19883 and 38948, `total_differs`, each under its
+  page's printed total); a Cuyamaca reconcile step for 18637 (the page's "CSU or UC transferable units" as
+  `electives_fill_words`; recall over 180 records: the words land on 18637 alone, 0 turn failing); Coastline's free
+  capture 46008933093 bound 43057 to its 2.0 page at coverage 1.0, and its paid read dispatched on `claude/s742-readers`
+  (only 43057, about $0.15). Held, no plan by the wind-down: Reedley 30465 (its page is headed "Child Development,
+  Certificate of Achievement"), Los Angeles Pierce 19181 (number runs), Grossmont 21402 (already a named gap with no
+  record), El Camino 19857. s742r2 and the Cuyamaca step to one Sonnet reader.
