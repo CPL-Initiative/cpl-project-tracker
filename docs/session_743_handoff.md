@@ -179,3 +179,10 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   guard does not check the record, which the plan leaves unchanged). Clean md5 pre-read 1 of 1; its plan files taken
   onto `claude/s742-apply`.
 - 14:00Z: s742r1's migrate 46011828459 returned 1, none skipped; `.apply` restored (`595f694d`). Records collected: 13.
+- 14:03Z: `piles` stop 2 (head `fdfad046`, carrying the 13:44Z read): `plan_code_own` round 2 (all four findings fixed;
+  recall 92 headings, wrong 0; on base `f0d84966` and run 45176404274 East Los Angeles's ten keep); Cabrillo's reconcile
+  kind `recommended_counts` parked on `claude/s742-piles-cabrillo` (`abc31e19`; over Cabrillo's 269 records it reads
+  06352, 06380, 06381 and 44992 alone, all four turn passing). In flight on `piles`' branches: Butte's capture
+  45999110725 (pin 14583), Orange Coast's 45999669017 pending, free reconciles at Fullerton 46010143379 and Santa Barbara
+  City 46010148668. Step 5 over its colleges: 16 discontinued flags, none new; the units rules move 0 rows.
+- 14:05Z: both to the Fable reader (round 2 for `plan_code_own`, its last).
