@@ -75,7 +75,7 @@
    "status": "equal",
    "computed": [
     19.0,
-    23.0
+    22.0
    ],
    "stated": [
     19.0,
@@ -83,6 +83,7 @@
    ],
    "against": "program",
    "why": [],
+   "short_high": true,
    "rescored": "Sam's ruling of 2026-11-17, short high end"
   },
   "repeated": {
@@ -911,6 +912,5 @@
    "PSY 110 and SS 101 appear in List B but are not on the closed list."
   ]
  },
- "extracted_run": 46010148668,
- "read_run": "38670933359"
+ "extracted_run": "38670933359"
 }

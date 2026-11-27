@@ -66,7 +66,7 @@
    "status": "equal",
    "computed": [
     21.0,
-    27.0
+    26.0
    ],
    "stated": [
     21.0,
@@ -74,6 +74,7 @@
    ],
    "against": "program",
    "why": [],
+   "short_high": true,
    "rescored": "Sam's ruling of 2026-11-17, short high end"
   },
   "repeated": {
@@ -645,6 +646,5 @@
    "Careers taken from the description fragment ('data scientist, a CEO, or a professor'); the text preceding it is cut off."
   ]
  },
- "extracted_run": 46010148668,
- "read_run": "38670933359"
+ "extracted_run": "38670933359"
 }
