@@ -198,3 +198,6 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   keep-better against the 08:18Z read kept it (1 re-read, none restored); the reread (force 45960735042) dispatched on
   `claude/s741-keys-sbvc`.
 - 08:24Z: 22821 live and passing at 45960735042. Records collected: 26.
+- 08:28Z: piles batch 3's reader: s741f APPLY (Orange Coast 32790's text stops mid-row in Area 5A with no total; the
+  run proved by the 07:31Z read) and the Butte 14583 and American River 39341 pins GO. s741f's clean pre-read 1 of 1;
+  migrate 45966052595 returned 1, none skipped; `.apply` restored (`1e0d3c84`). Records collected: 27.
