@@ -162,3 +162,7 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   to the batch-1 reader. s741d's clean pre-read 1 of 1; `.apply` pushed (`b6d43195`).
 - 07:53Z: s741d 45961440406 returned 1, none skipped; `piles`' `.apply` restored (`e1480164`). Records collected: 21.
   Spend at 07:54Z: about $110 at the repo's rates.
+- 07:55Z: piles batch 2's reader: s741e APPLY (01400's summary prints GE "None"; 40761 at CIS099's noted 2 units gives
+  the printed 22), the seven pins GO as a set (MINOR: no test yet pins American River's Level I and II windows or
+  Fullerton's two). s741e's clean pre-read 2 of 2; migrate 45961856192 returned 2, none skipped; `.apply` restored
+  (`d4b0d71d`). Records collected: 23.
