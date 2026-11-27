@@ -268,6 +268,40 @@ def submit_form(reader, spec: dict) -> dict:
     return out
 
 
+# "frame_check": true (S745; Sam, 2026-11-27, on showing Program Pathways Mapper, CVC and ASSIST in CPL Pathways'
+# bottom bar): ask the page's address once more through the browser's own request context and print the two
+# headers that decide whether another site may show it in a frame. Nothing is written.
+FRAME_HEADERS = ("x-frame-options", "content-security-policy")
+
+
+def frame_verdict(headers: dict) -> str:
+    """Whether a page with these response headers may be framed by another site: "allowed", or "blocked" with the
+    header that blocks it. X-Frame-Options DENY or SAMEORIGIN blocks; a CSP frame-ancestors list blocks unless it
+    holds * or https:. Header names are matched without case."""
+    h = {str(k).lower(): str(v) for k, v in (headers or {}).items()}
+    xfo = h.get("x-frame-options", "").strip().upper()
+    if xfo in ("DENY", "SAMEORIGIN") or xfo.startswith("ALLOW-FROM"):
+        return "blocked (X-Frame-Options %s)" % xfo
+    for part in h.get("content-security-policy", "").split(";"):
+        bits = part.strip().split()
+        if bits and bits[0].lower() == "frame-ancestors":
+            srcs = [b.lower() for b in bits[1:]]
+            if "*" in srcs or "https:" in srcs:
+                return "allowed (frame-ancestors %s)" % " ".join(bits[1:])
+            return "blocked (frame-ancestors %s)" % (" ".join(bits[1:]) or "none")
+    return "allowed"
+
+
+def frame_headers(reader, url: str) -> dict:
+    try:
+        from _program_source_census import NAV_TIMEOUT_MS as nav_ms
+        resp = reader.page.request.get(url, timeout=nav_ms, max_redirects=5)
+        got = {k: resp.headers.get(k) for k in FRAME_HEADERS if resp.headers.get(k)}
+        return {"status": resp.status, "headers": got, "verdict": frame_verdict(got)}
+    except Exception as exc:
+        return {"error": str(exc).splitlines()[0][:200]}
+
+
 # A host the record marks gone answers, but not as the site the college names
 # (read 4, 2026-10-04: statewidepathways.org redirects to a domain-for-sale page).
 SKIP_ACCESS = {"refused", "unreached", "gone"}
@@ -789,6 +823,12 @@ def print_page(n: int, rec: dict, pattern: re.Pattern, plan: dict | None = None)
               "sha256", "bytes", "extractor", "title", "h1", "expanded", "error"):
         if rec.get(k) not in (None, ""):
             print("%s: %s" % (k, rec[k]))
+    if rec.get("frame"):
+        fr = rec["frame"]
+        print("--- may another site frame it ---")
+        print("verdict: %s" % (fr.get("verdict") or fr.get("error")))
+        for k, v in (fr.get("headers") or {}).items():
+            print("%s: %s" % (k, v[:400]))
     if rec.get("links_shown"):
         print("--- links matching the plan's pattern (shown, not followed) ---")
         for f in rec["links_shown"]:
@@ -959,6 +999,8 @@ def main(argv: list[str] | None = None) -> int:
                                    capture_view=bool(target.get("capture_view")) and not parent,
                                    cq_catalog=int(target.get("cq_catalog") or 0) if target.get("cq_view") and not parent else 0,
                                    selects=bool(target.get("selects")) and not parent)
+                if target.get("frame_check") and not parent and rec.get("access") == "ok":
+                    rec["frame"] = frame_headers(reader, rec.get("final_url") or url)
                 rec["answers"] = target.get("answers") or []
                 if parent:
                     rec["from"] = parent
