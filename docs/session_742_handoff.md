@@ -294,6 +294,13 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   `claude/s741-keys-cuy` (`303ea541`), `claude/s741-readers` (`33b6e622`, holding the Norco and San Diego
   City siblings) and `claude/s741-piles` (`6705512e`); parked and left out: `claude/s741-keys-wordtest`,
   `claude/s741-keys-crc`.
+- 09:37Z: the checkpoint-docs worker (Sonnet) started; step 12's headline and harvest reads at 09:40Z (15,669 of
+  20,282 active programs complete, at 118 colleges). 09:44Z: the checkpoint pushed (`6b1cd442`); 09:46Z: the memory
+  rows, migrate 45976492793, 9 rows, all proposed; `.apply` restored (`01aabd81`). 09:50Z: the vault note merged as
+  samueltlee/CPLBrain#874 (`9e6933e0`), under Sam's ruling of 2026-11-21.
+- 09:55Z: the land (head `662a5933`): generated files rebuilt with their builders, hand-written lists keep both sides,
+  no record or receipt conflict, `.apply` equal to `main`'s; two San Bernardino Valley tests assumed 22821's old hold
+  and now accept either state (`eb16fb5b`). 10:16Z: #3902 opened from `claude/s741-land` and marked ready.
 
 ## What shipped
 
@@ -451,7 +458,7 @@ after about $210; the repo's rates read about $187 at 08:53Z.
 
 No PR subscription, artifact watch or COBIx watcher was opened tonight, and the run's fallback timers have all fired with
 none pending, so there is none to drop. Workers end with the session; each branch is pushed. The vault note for this run is
-`CPLBrain/07-session-notes/2026-11-27-s741-skywillet-collection.md` (the conductor opens and merges its PR).
+`CPLBrain/07-session-notes/2026-11-27-s741-skywillet-collection.md` (merged as samueltlee/CPLBrain#874, `9e6933e0`, under Sam's ruling of 2026-11-21 that vault note drafts merge on their own).
 
 Spend: $<SPEND> estimate; collection $<SPEND>; 2026-11-27T06:12Z to <END>Z. (A token-count estimate at the repo's list
 prices; the conductor fills the final figure. The paid reads' own cost, about $3 on their estimates, is apart.)
