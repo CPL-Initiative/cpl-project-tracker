@@ -160,3 +160,18 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   (the state's `ComputerGrap` stands for 13 courses under one key); San Bernardino Valley 04894 (its scorer change moves 9
   fail to pass and 22 pass to fail).
 - 13:47Z: s742a and San Jose City's pair to one Sonnet reader; `plan_code_own` to a Fable reader.
+- 13:52Z: `readers` stop 3 (head `5e9bd74f`): both siblings merged; keep-better on the 12:46Z read kept Cuyamaca 18637 (92 of
+  92 from its own page) and El Camino's five; plan s742r1 (Modesto 35127, `units_within_printed_range`) to a Sonnet
+  reader. Coastline's free capture running since 13:39Z.
+- 13:53Z: the Sonnet reader of s742a and San Jose City's pair: s742a APPLY (its own scratch-Postgres proof of the batch
+  guard and rollback; Cabrillo 06326 untouched); the pair GO (the page's own line, run 46008386875; MINOR: keyed by the
+  name `JournalismJO`, which 8 control numbers share, one unnamed today). The Fable reader of `plan_code_own`: FIX THEN GO
+  (MAJOR: a code beside another program's section passes, East Los Angeles 45986's heading printing 45717's code; fix:
+  admit on the code only where coverage passes; MINOR: compare every code token), to `piles` for its last round.
+- 13:55Z: no person's check at Cuyamaca, El Camino or San Jose City; md5s equal to keep-better's reads. Dispatched on
+  `claude/s742-readers`: Cuyamaca's reread (force 46003456131), El Camino's load, then its reread (force 46007782666); on
+  `claude/s742-keys`: San Jose City's free reconcile. Clean md5 pre-read of s742a 4 of 4; its plan files alone taken
+  onto `claude/s742-apply` (the two workers' `kb/status/commons_data.json` conflict).
+- 13:57Z: s742a's migrate 46011459090 returned 4, none skipped; `.apply` restored (`5d80744d`). Records collected: 9.
+- 13:58Z: live: El Camino 19861, 19866, 43993 passing (loaded; records collected: 12); 38948 and 19883 unequal at
+  46007782666, for plan s742r2; Cuyamaca 18637 at 46003456131, degree incomplete, for a reconcile step.
