@@ -85,3 +85,10 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   leave paid runs, rereads, loads and `.apply` to the conductor.
 - 06:31Z: the whole build 45951699122 green: 18,746 rows at `a143061a2ae2` (the 3 with no display now carry one), the
   same 32 at older builds, none without a display. 06:33Z: #3898 opened from `claude/s741-display` and marked ready.
+- 06:45Z: `main` red since the daily run of 06:26Z (`2b908677`, JS tests 45951903783, `lints (6)`):
+  `tests/subject_decisions_noncredit_test.py` assumed its injected Los Angeles Pierce OLD noncredit save adds one
+  applied decision, and the sync had just carried a person's save of that very key (2026-11-26T17:06Z). Every PR's
+  `test` runs on its merge with `main`, so this blocks every merge. 06:52Z: #3900 (`claude/s741-main-red`, the two
+  checks expect one more only while no live save holds the key), reproduced red on `2b908677` and green with the fix.
+- 06:48Z: `keys` plan s741k1 (Santa Ana 31859 and 21789, `units_within_printed_range`, head `26272e23`) to a Sonnet
+  second reader.
