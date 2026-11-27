@@ -3991,27 +3991,42 @@ def ac_program_urls(links: list[dict], base: str, catoid: int) -> list[str]:
     return out
 
 
-def ac_pin_in_catalog(url: str | None, catoid: int | None) -> bool:
-    """Whether a site_pages pin names a program page of the catalog being read: a preview_program address whose
-    catoid is that catalog's. A pin written for last year's catalog (another catoid) names an archived page."""
+def ac_pin_in_catalog(url: str | None, catoid: int | None, base: str | None = None) -> bool:
+    """Whether a site_pages pin names a program page of the catalog being read: a preview_program address on the
+    catalog's own host (base, the origin the road loads, when given) whose path is the program view itself and whose
+    catoid is that catalog's. A pin written for last year's catalog (another catoid) names an archived page; a pin
+    on another host that happens to carry the same catoid names another college's catalog (S742's second reader)."""
+    u = urllib.parse.urlparse(url or "")
     m, c = AC_PROGRAM.search(url or ""), AC_CATOID.search(url or "")
-    return bool(m and c and catoid is not None and int(c.group(1)) == int(catoid))
+    if not (m and c and catoid is not None and int(c.group(1)) == int(catoid)):
+        return False
+    if not u.path.lower().endswith("/preview_program.php"):
+        return False          # the words sit in a query or a fragment of some other page
+    if len(AC_CATOID.findall(url or "")) != 1:
+        return False          # two catalog ids: the address does not say which catalog it reads
+    return base is None or (u.hostname or "").lower() == (urllib.parse.urlparse(base).hostname or "").lower()
 
 
 def ac_site_pins(pins: dict[str, dict], base: str | None, catoid: int | None) -> dict[str, dict]:
     """The college's site_pages pins as the Acalog road reads them (S742). A pin naming a program page of the
-    catalog being read takes the address the road itself loads (ac_program_url: the catalog's own origin and the
-    print-friendly view), so a pin written with https, or without &print, still meets the page the capture read.
-    Any other pin (another catalog's catoid, an address that is no program page) is left as written and never
-    queued, so site_pinned() refuses it as not read and the program reads no page: a pin never follows a program
-    into a catalog nobody checked it against."""
+    catalog being read, on the catalog's own host, takes the address the road itself loads (ac_program_url: the
+    catalog's own scheme and the print-friendly view), so a pin written with https, or without &print, still meets
+    the page the capture read. Any other pin (another catalog's catoid, another host, an address that is no program
+    page) is left as written and never queued, so site_pinned() refuses it as not read and the program reads no
+    page: a pin never follows a program into a catalog nobody checked it against."""
     out = {}
     for cn, pin in pins.items():
         m = AC_PROGRAM.search(pin.get("url") or "")
-        if base and m and ac_pin_in_catalog(pin.get("url"), catoid):
+        if base and m and ac_pin_in_catalog(pin.get("url"), catoid, base):
             pin = dict(pin, url=ac_program_url(base, int(catoid), m.group(1)))
         out[cn] = pin
     return out
+
+
+def ac_queue_pins(urls: list[str], pins: dict[str, dict], base: str | None, catoid: int | None) -> list[str]:
+    """The road's page list with each pinned page of the catalog being read added once, after the listed pages."""
+    return urls + [pin["url"] for _, pin in sorted(pins.items())
+                   if pin["url"] not in urls and base and ac_pin_in_catalog(pin["url"], catoid, base)]
 
 
 def ac_program_navs(links: list[dict], base: str, catoid: int) -> list[str]:
@@ -5966,8 +5981,7 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
             # to its degree page as before). A pin is read in the catalog being read alone (ac_site_pins).
             site_pins = ac_site_pins(site_pin_entries(college), report["acalog"].get("base"),
                                      report["acalog"].get("catoid"))
-            urls += [pin["url"] for _, pin in sorted(site_pins.items())
-                     if pin["url"] not in urls and ac_pin_in_catalog(pin["url"], report["acalog"].get("catoid"))]
+            urls = ac_queue_pins(urls, site_pins, report["acalog"].get("base"), report["acalog"].get("catoid"))
             print("%s: %d programs (%d with a course list), %d Acalog program pages (catalog %s), %.1f s between loads"
                   % (college, len(programs), report["with_closed_list"], len(urls),
                      report["acalog"].get("catoid"), delay / 1000), flush=True)

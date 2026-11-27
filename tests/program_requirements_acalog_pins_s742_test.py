@@ -153,6 +153,25 @@ check(got["19866"] == loose["19866"] and got["38948"] == loose["38948"],
 check(C.ac_site_pins(loose, None, CATOID) == loose and C.ac_site_pins(loose, BASE, None) == loose
       and C.ac_site_pins({}, BASE, CATOID) == {},
       "with no origin or no catalog id read, and with no pins, nothing changes")
+# The second reader's probes (S742 round 1): another host carrying the same catoid, the words in a fragment or a
+# query of some other page, and an address naming two catalogs.
+stray = {"1": {"url": "https://catalog.evil.example/preview_program.php?catoid=13&poid=3552"},
+         "4": {"url": BASE + "/content.php?catoid=13&navoid=5#preview_program.php?poid=7"},
+         "5": {"url": "http://x.example/redirect?u=preview_program.php?poid=77&catoid=13"},
+         "6": {"url": BASE + "/preview_program.php?catoid=12&poid=1&x=1&catoid=13"}}
+check(C.ac_site_pins(stray, BASE, CATOID) == stray
+      and not any(C.ac_pin_in_catalog(p["url"], CATOID, BASE) for p in stray.values()),
+      "a pin on another host, in another page's fragment or query, or naming two catalogs is left as written")
+check(C.ac_pin_in_catalog(BASE + "/preview_program.php?poid=3552&catoid=13&returnto=9", CATOID, BASE)
+      and C.ac_site_pins({"3": {"url": BASE + "/preview_program.php?poid=3552&catoid=13&returnto=9"}}, BASE,
+                         CATOID)["3"]["url"] == url_of("3552"),
+      "the catalog's own program page, its query in another order, takes the address the road loads")
+listed = [url_of("3551"), url_of("3552")]
+queued = C.ac_queue_pins(listed, C.ac_site_pins(dict(PINS, **stray), BASE, CATOID), BASE, CATOID)
+check(queued[:2] == listed and sorted(queued[2:]) == sorted(url_of(x) for x in ("3622", "3640", "3699", "3728"))
+      and C.ac_queue_pins(listed, PINS, BASE, 12) == listed and C.ac_queue_pins(listed, PINS, None, CATOID) == listed,
+      "the road queues each pinned page of the catalog being read once, after the listed pages, and none for "
+      "another catalog or with no origin read (%d queued)" % (len(queued) - 2))
 
 # ── 2. the capture wires it ───────────────────────────────────────────────────────────────────────
 print("2. the capture's Acalog branch")
@@ -160,8 +179,8 @@ src = inspect.getsource(C.capture)
 branch = src[src.index('elif platform == "acalog":'):src.index("scope = district_scope(")]
 check("site_pins = ac_site_pins(site_pin_entries(college)" in branch,
       "the Acalog branch reads the college's site_pages pins")
-check('urls += [pin["url"]' in branch and "ac_pin_in_catalog(pin[\"url\"]" in branch,
-      "it queues each pinned page of the catalog being read, and no other")
+check("urls = ac_queue_pins(urls, site_pins," in branch,
+      "it queues the pinned pages through ac_queue_pins (its behavior is pinned in section 1)")
 check("site_pinned(programs, pages, site_pins) if site_pins else {}" in src
       and "with_site_pins(given, pinned_site, site_pins)" in src,
       "the pins bind through site_pinned() and with_site_pins(), as on every other road")
