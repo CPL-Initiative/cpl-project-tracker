@@ -55,6 +55,10 @@ links each *CPL here* line to the landing page on the course's exhibits;
 `r-all-lp-links-open-bottom-bar-sam-2026-11-27`, `r-get-credit-on-pathways-cards-sam-2026-11-27`; mock-up
 https://claude.ai/artifact/BQjk5FcRjeHPGZp57bpDJe); the CPL control opens a bottom bar framing the landing page and
 replaces #3910's line; its MAP pointer is a ruled mark (the 27th), so an a11y sweep keeps it.
+**DECIDED** `r-cpl-chip-white-tile-sam-2026-11-27`: the CPL chip is CPL and the pointer on one white tile, no
+underline, the pointer leaning 30 degrees and turning toward the bar or sidebar it opened (Sam: *"looks great! yes
+carry that ver of the chip over to the other surfaces"*; *"that's cool!"*); branch `claude/cpl-chip-white-tile`;
+spec in [`reference-ui-design-system`](../../kb-notes/reference-ui-design-system.md).
 **FINDING** `f-cerritos-ironworkers-all-24-cpl-s744`: all 24 Cerritos Field Ironworkers A.S. courses carry CPL through
 the apprenticeship exhibits (`MAPICA-RA4P*`/`SA4P*`), but `kb/coci_articulations.json` feeds the display build only
 `MAPCXA-*`, so the view says 15 of 24. **FINDING** `f-coci-description-shards-mojibake-s744`: `coci_lookup_desc_*.js`
