@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 226,
  "with_closed_list": 219,
- "started": "2026-11-27T09:17:16Z",
+ "started": "2026-11-24T08:22:30Z",
  "pdf": {
   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf",
   "access": "hand_filed",
@@ -3141,7 +3141,7 @@
  "loads": 0,
  "pages_listed": 1,
  "pages_answered": 1,
- "seconds": 264.3,
+ "seconds": 341.2,
  "found": 208,
  "by_method": {
   "no_closed_list": 7,
@@ -3501,10 +3501,20 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/cosumnes_river",
-  "kept": 177,
+  "kept": 175,
   "kept_moved": 0,
-  "programs": 13,
+  "programs": 15,
   "list": [
+   {
+    "control_number": "04596",
+    "title": "Marketing",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=473",
+    "coverage": 1.0,
+    "was_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=474",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
    {
     "control_number": "07319",
     "title": "Cooking and Supervision",
@@ -3592,6 +3602,16 @@
     "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=246",
     "coverage": 1.0,
     "was_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=248",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "35899",
+    "title": "Marketing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=473",
+    "coverage": 1.0,
+    "was_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=474",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -4623,5 +4643,5 @@
    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=316"
   }
  },
- "run": "45972311864"
+ "run": "45355422235"
 }
