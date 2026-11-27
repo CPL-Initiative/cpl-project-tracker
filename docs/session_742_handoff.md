@@ -252,3 +252,6 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   with the order to wrap up: Cuyamaca's reread, Cosumnes River's reconcile, then the branch green.
 - 09:10Z: `readers` plan s741r1 (head `60b7a885`; Norco 32830, 37311, 44961 `ge_units_not_read`, 39998 and 40064
   `noted_figures_differ`; recall 5 of 5) to a Sonnet reader.
+- 09:15Z: s741r1's reader (Sonnet): APPLY. Clean md5 pre-read 5 of 5; migrate 45971839433 returned 5, none skipped;
+  `.apply` restored (`96a83de6`). American River 39341 live and passing at 45970104024 (its reread). Records
+  collected: 48.
