@@ -92,3 +92,12 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   against the live table by a per-college md5 of control_number:run (seven equal); no person's check at any of them.
 - 12:50Z: both changes to one Fable 5.2 second reader from a detached worktree at `b7bf3c7b`; `readers` carries on with
   Coastline, Modesto, Reedley, Los Angeles Pierce and Grossmont.
+- 12:59Z: #3904 merged (`1a3e3be8`, confirmed on `origin/main`; `test` green on `583600f4`, `main` unmoved since its
+  base). 13:00Z: the census dispatched on `main`.
+- 13:01Z: the readers' second reader (Fable 5.2): `1f591e73` (the Acalog road) GO, with a MINOR host check for
+  `ac_pin_in_catalog` and a NIT for the follow-up; `e3291376` (the plural fold) FIX THEN GO (MAJOR: its recall cannot
+  report a wrong, since page match and coverage both hold by construction; MAJOR: the fold lets an award phrase or a
+  longer sibling title name the program: across 3,343,033 sibling pairs it admits 386 more, 296 of them "Art" on "Studio
+  Arts" or an "Associate in Arts" page). One finding list to `readers`; round 2 is the fold's last.
+- 13:03Z: Cuyamaca 18637's paid read dispatched on a sibling, `claude/s742-readers-cuy`, cut at `main` `1a3e3be8`
+  (only 18637, sources_from 45966682528, about $0.25); its keep-better waits for the fold's round 2.
