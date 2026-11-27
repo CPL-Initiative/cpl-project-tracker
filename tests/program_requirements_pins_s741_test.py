@@ -18,7 +18,8 @@ Pinned here (the second reader's two MINORs among them):
      on its own heading and ends where Level II's opens; the Level II window opens on its own heading, not on Level
      I's tail above it on the same page, and ends where Level III's opens. A window with its `until` words gone
      binds nothing, and neither does a page without the heading.
-  2. The free capture 45961227651 bound both pins on those pages (capture_preview.json, pdf.pinned).
+  2. The capture bound both pins on those pages (free capture 45961227651, then the paid read's filed capture
+     45962123468, pdf.pinned), and each record that read filed carries its own heading and adds to its printed total.
   3. Each site pin: its address is no filed record's address, it differs from the address the held record was read
      from, no two pins share one, and its evidence names its page read. Fullerton's two page titles name the program
      with its award (C.site_heading_names), and the UC Transfer page's title names neither.
@@ -100,6 +101,15 @@ check(w2 is not None and w2.startswith("Refrigeration Service Technician\nAppren
       and "Total Units: 12" not in w2 and "A minimum of 4 units" not in w2 and "Level III Certificate" not in w2,
       "1 the Level II window opens on its own heading, not on Level I's tail above it on p.208, and ends where Level "
       "III's heading opens")
+# 39341, the apprenticeship certificate itself: s739a filed it from p.211, which is the Level IV certificate's tail,
+# and its own section opens on p.206. Its window opens on its own heading and ends where Level I's opens.
+w0, _ = window("39341", "Refrigeration Service Technician Apprenticeship")
+check((ARC["39341"]["page"], ARC["39341"]["through"]) == (206, 207) and ARC["39341"]["until"] == ARC["39731"]["words"]
+      and w0 is not None and w0.startswith("Refrigeration Service Technician\nApprenticeship Certificate")
+      and "A minimum of 40 units" in w0 and "A minimum of 16 units" in w0 and "Total Units: 56" in w0
+      and "Level I Certificate" not in w0 and "A minimum of 8 units" not in w0,
+      "1 the apprenticeship certificate's window (39341) opens on its own heading on p.206, holds its 40 and 16 units, "
+      "and ends where Level I's heading opens")
 gone = list(pages)
 gone[208] = gone[208].replace("Apprenticeship Level III Certificate", "Apprenticeship Certificate")
 check(window("39732", T2, gone)[0] is None, "1 with Level III's heading gone the Level II pin binds nothing")
@@ -110,17 +120,28 @@ check(window("39731", T1, pin=dict(ARC["39731"], page=208))[0] is None,
       "1 pinned to p.208, where only Level II's heading prints, the Level I pin binds nothing")
 
 # ── 2. the free capture bound both ──────────────────────────────────────────
-with open(os.path.join(DIR, "american_river", "capture_preview.json"), encoding="utf-8") as fh:
-    preview = json.load(fh)
-got = (preview.get("pdf") or {}).get("pinned") or {}
-if str(preview.get("run")) == "45961227651":
+# Free capture 45961227651 bound both (its preview was filed, then replaced by the paid read's capture, 45962123468,
+# staged from it): the filed capture holds the same two bindings, and a later capture must still bind both.
+with open(os.path.join(DIR, "american_river", "capture.json"), encoding="utf-8") as fh:
+    capture = json.load(fh)
+got = (capture.get("pdf") or {}).get("pinned") or {}
+if str(capture.get("run")) == "45962123468":
     check(got.get("39731") == {"page": 207, "bound": True, "through": 208, "until_page": 208}
           and got.get("39732") == {"page": 208, "bound": True, "through": 209, "until_page": 209},
-          "2 free capture 45961227651 bound Level I at p.207 through p.208 and Level II at p.208 through p.209")
+          "2 the filed capture (45962123468) bound Level I at p.207 through p.208 and Level II at p.208 through p.209")
 else:
-    # A later capture files its own preview over this one: each pin still binds there.
     check(all((got.get(cn) or {}).get("bound") is True for cn in ("39731", "39732")),
-          "2 a later capture (%s) still binds both pins" % preview.get("run"))
+          "2 a later capture (%s) still binds both pins" % capture.get("run"))
+for cn, page, total in (("39731", 207, 12), ("39732", 208, 24)):
+    with open(os.path.join(DIR, "american_river", "records", cn + ".json"), encoding="utf-8") as fh:
+        f = json.load(fh)
+    if str(f.get("extracted_run")) == "45962123468":
+        a = f["score"]["arithmetic"]
+        check(f["source_url"].endswith("#page=%d" % page) and a["status"] == "equal"
+              and a["computed"] == [total, total] == a["stated"]
+              and "Level I%s Certificate" % ("I" if cn == "39732" else "") in f["record"]["program"]["section_heading"],
+              "2 %s, read from its pinned page (45962123468), carries its own heading and adds to its printed %d"
+              % (cn, total))
 
 # ── 3. the site pins ────────────────────────────────────────────────────────
 SITE = (("Orange Coast College", "orange_coast", ("08663", "08626"), "45953358884"),

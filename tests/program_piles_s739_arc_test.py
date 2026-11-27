@@ -31,7 +31,15 @@ HELD = {"39731": ["not the program's own", "8 to fewer than 16 units"],
 SCORES = {"option_lists_read_apart": 40, "unit_line_not_read": 40, "heading_not_in_text": 20}
 OWN = {"12238": "own_heading", "30595": "own_list", "39341": "own_list"}
 
-t = T.run(W, rows=ROWS, held=HELD, scores=SCORES, day="2026-11-26", boundaries=26, own=OWN)
+# S741 pinned 39731 and 39732 to their own pages (PDF p.207 and p.208) and read 45962123468 filed them there, both
+# passing, so 39341 is the one record still read from p.211: the guard asks nothing of it today, one boundary reading
+# (its own section not shown) no longer applies, and the receipt keeps the form s739a applied it under (own_list).
+# That read's page reads also show p.211 is the Level IV certificate's tail, so 39341's own section (p.206) is a pin
+# and a read of its own (handoff, S741).
+MOVED = not W.shared_with("39341")
+OWN_NOW = {k: v for k, v in OWN.items() if not (MOVED and k == "39341")}
+t = T.run(W, rows=ROWS, held=HELD, scores=SCORES, day="2026-11-26", boundaries=25 if MOVED else 26, own=OWN_NOW,
+          receipt_own=OWN)
 check = t.check
 
 # 12191: the unit line alone closes it, and its lever is named.
@@ -61,13 +69,21 @@ check(W.own(g, e) is None, "12238: a note saying the heading is not in the text 
 check(W.own(f, e) == "own_heading", "12238: its own heading, found by the capture")
 
 # 39341 against 39731 and 39732: one list, told apart by the award's unit band alone.
-check(W.shared_with("39341") == ["39731", "39732"], "39341 shares its text with 39731 and 39732")
+check(W.shared_with("39341") == ([] if MOVED else ["39731", "39732"]),
+      "39341 shares its text with 39731 and 39732, until S741's read moves both to their own pages")
 check(B.in_band(W.load("39341")["award"], [48, 48]) is True and B.in_band(W.load("39731")["award"], [48, 48]) is False
       and B.in_band(W.load("39732")["award"], [48, 48]) is False, "the printed 48 sits inside 39341's band alone")
-for cn in ("39731", "39732"):
-    g = W.load(cn)
-    check(W.own(g, dict(A.REVIEWED["39341"])) is None, "%s: 39341's entry does not show it its own" % cn)
-check(B.codes(W.load("39341")) == B.codes(W.load("39731")), "39341 and 39731 hold one course list")
+if MOVED:
+    for cn, page in (("39731", 207), ("39732", 208)):
+        g = W.load(cn)
+        check(g["source_url"].endswith("#page=%d" % page) and str(g["extracted_run"]) == "45962123468"
+              and g["score"]["arithmetic"]["status"] == "equal" and not g["score"].get("gaps"),
+              "%s: read from its own page by S741's pin, adding to its own printed total, with no gap" % cn)
+else:
+    for cn in ("39731", "39732"):
+        g = W.load(cn)
+        check(W.own(g, dict(A.REVIEWED["39341"])) is None, "%s: 39341's entry does not show it its own" % cn)
+    check(B.codes(W.load("39341")) == B.codes(W.load("39731")), "39341 and 39731 hold one course list")
 check(len(B.codes(W.load("30595")) & B.codes(W.load("19330"))) == 0, "30595's page-mate holds another list")
 check(B.band("Certificate of Achievement requiring 60+S/90+Q units") == (60.0, None)
       and B.band("A.S. Degree") is None, "an open band and no band read as such")

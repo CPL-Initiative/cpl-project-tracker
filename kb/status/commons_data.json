@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-27T07:44:03Z",
+ "written_at": "2026-11-27T08:08:59Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17597,
-  "gap": 4738,
+  "passing": 17599,
+  "gap": 4736,
   "with_gap": 118,
-  "cost_usd": 1341.45,
-  "passed_at_read": 16503,
+  "cost_usd": 1341.41,
+  "passed_at_read": 16504,
   "cost_receipts": 118,
   "spent_usd": 1245.56,
   "spent_runs": 247,
@@ -189,8 +189,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16948,
-  "gap": 4738,
+  "passing": 16950,
+  "gap": 4736,
   "collected_with_gaps": 649,
   "discontinued": 0
  },
@@ -324,12 +324,12 @@
    "harvested": true,
    "slug": "american_river",
    "programs": 371,
-   "passing": 355,
-   "gap": 16,
+   "passing": 357,
+   "gap": 14,
    "causes": {
     "no_closed_list": 3,
     "page_not_found": 10,
-    "unknown_without_live": 3
+    "unknown_without_live": 1
    },
    "census_causes": {
     "no_closed_list": 2,
@@ -350,10 +350,10 @@
    "outcomes_file": "kb/status/commons_data_programs/american_river.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-24T08:09:33Z",
+   "read_at": "2026-11-27T07:51:13Z",
    "read_kind": "capture",
-   "cost_usd": 29.49,
-   "passed_at_read": 324,
+   "cost_usd": 29.45,
+   "passed_at_read": 325,
    "slo_queue": null,
    "scout": {
     "recommendation": "page_read",
@@ -376,7 +376,7 @@
    "failed_checks": {
     "coverage": 0,
     "invented": 0,
-    "arithmetic": 30,
+    "arithmetic": 29,
     "repeated": 0,
     "outcomes": 6
    },
@@ -386,12 +386,12 @@
    "capture_root": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 631.0,
-   "run": "45353541681",
+   "read_seconds": 330.3,
+   "run": "45962123468",
    "levers": {
     "reader_page_search": 10,
     "program_course_file_check": 3,
-    "reconcile_steps": 3
+    "reconcile_steps": 1
    },
    "collection": {
     "program_reader": {
@@ -399,9 +399,9 @@
      "models": {
       "claude-opus-5-5": 358
      },
-     "run": "45353541681",
-     "at": "2026-11-24T08:09:33Z",
-     "cost_usd": 29.49,
+     "run": "45962123468",
+     "at": "2026-11-27T07:51:13Z",
+     "cost_usd": 29.45,
      "platform": "pdf"
     },
     "slo_read": null,

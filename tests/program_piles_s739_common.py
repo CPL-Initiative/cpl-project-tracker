@@ -53,15 +53,18 @@ class Checks:
 
 def run(W, *, rows: dict, held: dict, scores: dict, day: str, boundaries: int, prior_held: set | None = None,
         own: dict | None = None, t: Checks | None = None, rolled_back: dict | None = None,
-        refiled: dict | None = None) -> Checks:
+        refiled: dict | None = None, receipt_own: dict | None = None) -> Checks:
     """rows: {key: its kind, or B.PASSES}; held: {key: words its reason carries}; scores: {kind: its unit-arithmetic
     score}; boundaries: the count of boundary readings; prior_held: the earlier receipt's held keys (default: read
     from W.held_by); own: {key: the own-page guard's form} for rows read from a shared page; rolled_back: {key:
     its kind} for a row the applied plan wrote and a later rollback took back (it is in held too); refiled: {key:
     the kind a later plan files on a rolled-back row} (S740's s740b on Orange Coast 41373): the committed record
-    then carries that kind alone, over this receipt's before-image."""
+    then carries that kind alone, over this receipt's before-image; receipt_own: the forms the receipt was written
+    under, where a later read moved a page-mate to its own page so the guard asks less of the row today than it did
+    at the plan (S741's pins at American River: default, own)."""
     t = t or Checks()
     check = t.check
+    receipt_own = own if receipt_own is None else receipt_own
     receipt = W.receipt_path(day)
     mig = os.path.join(ROOT, "kb", "migrations", "%s_%s_prreq_piles_%%s.sql" % (day, W.tag))
     gaps = {cn: g for cn, g in rows.items() if g != B.PASSES}
@@ -120,14 +123,14 @@ def run(W, *, rows: dict, held: dict, scores: dict, day: str, boundaries: int, p
     check({h["control_number"] for h in rec["held"]} == set(held) - set(rolled),
           "the receipt holds the %d" % (len(held) - len(rolled)))
     check(rec["keys"]["members"] == list(W.keys), "the receipt's keys are the plan's")
-    check(set(rec["shared_pages"]) == set(own or {}), "the receipt names the rows read from a shared page")
+    check(set(rec["shared_pages"]) == set(receipt_own or {}), "the receipt names the rows read from a shared page")
     for r in rec["records"]:
         if r["moves_to"] in scores:
             check(r["confidence"]["unit_arithmetic"] == scores[r["moves_to"]],
                   "%s: its arithmetic score is its kind's" % r["control_number"])
             check(all(v is None or 0 <= v <= 100 for v in r["confidence"].values()),
                   "%s: every score is on the 0-100 bar" % r["control_number"])
-        check(r["own"] == (own or {}).get(r["control_number"], "its page is its own"),
+        check(r["own"] == (receipt_own or {}).get(r["control_number"], "its page is its own"),
               "%s: the receipt says how its section is its own" % r["control_number"])
     for part in ("apply", "preread", "preread_md5", "rollback"):
         with open(mig % part, encoding="utf-8") as fh:

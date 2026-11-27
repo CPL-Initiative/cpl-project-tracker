@@ -2833,6 +2833,13 @@
    ],
    "steps": [],
    "pdf_pages": {
+    "39341": {
+     "page": 206,
+     "words": "Refrigeration Service Technician Apprenticeship Certificate",
+     "through": 207,
+     "until": "Refrigeration Service Technician Apprenticeship Level I Certificate",
+     "evidence": "Refrigeration Service Technician Apprenticeship certificate 39341: its heading prints on PDF p.206 ('Refrigeration Service Technician', 'Apprenticeship Certificate') with 'A minimum of 40 units from the following: 40' and 'A minimum of 16 units from the following: 16'; its text runs onto p.207, and the window ends where the Level I certificate opens (college-page-read run 45955333186, kb/college_reads/s741_piles_american_river_levels.json, hand_filed: true). The filed record was read from p.211, which run 45953358884 shows is the tail of the Level IV certificate (32 and 16 units, 'Total Units: 48'; 39734's section, read from p.210), so s739a's heading_not_in_text on it names another award's list: a read of its own section replaces it."
+    },
     "39731": {
      "page": 207,
      "words": "Refrigeration Service Technician Apprenticeship Level I Certificate",
