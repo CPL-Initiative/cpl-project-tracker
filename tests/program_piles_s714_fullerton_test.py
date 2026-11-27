@@ -78,7 +78,11 @@ pr = F.precision(CENSUS_AT_PLAN)
 # S721's plan s721p passes 18163 under the pooled reading (kb/_program_pooled_s721.py); this hand reading held it for
 # a reread, so the rule now reads it passing. The exception pins only the keys s721p moved; every other key
 # stays pinned to this plan's hand reading.
-check(pr["read"] == 24 and pr["right"] == 23 and pr["wrong"] == [["18163", "none", "passes"]] and pr["by_answer"] == {"passes": 11, "none": 13},
+# S741 pinned 35174 and 36798 to their own Chemistry pages and paid read 45968499315 filed each there, passing, so the
+# rule reads them passing too; before that read the one exception is 18163.
+S741_READ = [[cn, "none", "passes"] for cn in ("35174", "36798") if str(F._load(cn)["extracted_run"]) == "45968499315"]
+check(pr["read"] == 24 and pr["right"] == 23 - len(S741_READ)
+      and pr["wrong"] == sorted([["18163", "none", "passes"]] + S741_READ) and pr["by_answer"] == {"passes": 11, "none": 13},
       "precision: %r" % pr)
 check({cn for cn, w in F.HAND_HELD.items() if w.startswith("passes")} == PASS, "the eleven passing answers")
 with open(RECEIPT, encoding="utf-8") as fh:

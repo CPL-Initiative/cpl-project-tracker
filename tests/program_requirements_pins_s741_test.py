@@ -157,8 +157,12 @@ for college, slug, cns, run in SITE:
     for cn in cns:
         p = pins[cn]
         check(run in p["evidence"] and cn in p["evidence"], "3 %s %s: its evidence names its page read" % (college, cn))
-        check(norm(p["url"]) != norm(filed[cn]) and norm(p["url"]) not in {norm(u) for u in filed.values()},
-              "3 %s %s: the pinned address is not the one its record was read from, nor any filed record's"
+        # Until its pin's paid read files, the record sits on the sister page it was read from; after it, on the
+        # pinned page (Fullerton's two, read 45968499315). Either way no other record is filed from the pinned page.
+        others = {norm(u) for k, u in filed.items() if k != cn}
+        check(norm(p["url"]) not in others, "3 %s %s: no other record is filed from the pinned address" % (college, cn))
+        check(norm(p["url"]) != norm(filed[cn]) or norm(filed[cn]) not in others,
+              "3 %s %s: its record is filed from the sister page it was held on, or since from its pinned page alone"
               % (college, cn))
 FU = COLLEGES["Fullerton College"]["site_pages"]
 AST = {"title": "Chemistry", "award": "A.S. T Degree"}
@@ -168,10 +172,19 @@ for prog, cn, title in ((AST, "36798", "Chemistry Associate in Science Degree fo
     check(C.site_heading_names({"h1": "", "title": title}, prog)[0] is True and "PROGRAM CODE: 2S%s" % cn in FU[cn]["evidence"],
           "3 Fullerton %s: its page's title names the program with its award, and its evidence quotes its PROGRAM CODE"
           % cn)
+fu_filed = filed_urls("fullerton")
 check(FU["36798"]["url"].endswith("/chemistry-associate-in-science-degree-for-transfer/")
       and FU["35174"]["url"].endswith("/chemistry-associate-science-degree/")
-      and all("uc-transfer" in filed_urls("fullerton")[cn] for cn in ("36798", "35174")),
-      "3 Fullerton: each is pinned to its own award's page, and both filed records were read from the UC Transfer page")
+      and all("uc-transfer" in fu_filed[cn] or fu_filed[cn] == FU[cn]["url"] for cn in ("36798", "35174")),
+      "3 Fullerton: each is pinned to its own award's page; its filed record was read from the UC Transfer page, or "
+      "since (read 45968499315) from its pinned page")
+for cn, total in (("36798", 36), ("35174", 20)):
+    with open(os.path.join(DIR, "fullerton", "records", cn + ".json"), encoding="utf-8") as fh:
+        f = json.load(fh)
+    if str(f.get("extracted_run")) == "45968499315":
+        a = f["score"]["arithmetic"]
+        check(f["source_url"] == FU[cn]["url"] and a["status"] == "equal" and a["computed"] == [total, total] == a["stated"],
+              "3 Fullerton %s, read from its pinned page (45968499315), adds to its printed %d" % (cn, total))
 check(C.site_heading_names({"h1": "", "title": "Chemistry Associate in Science Degree < Fullerton College"}, AST)[0] is False,
       "3 Fullerton: the A.S. page's title does not name the A.S.-T")
 
