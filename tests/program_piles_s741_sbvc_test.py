@@ -147,8 +147,13 @@ check(len(two) == 1 and two[0]["minimum"] == 2 and len(two[0]["courses"]) == 1
       and len(four) == 1 and four[0]["minimum"] == 4 and len(four[0]["courses"]) == 2 and not f["score"].get("gaps"),
       "04873: its two lists hold fewer courses than they ask for, and it carries no gap")
 f = W.load("22821")
-check(f["source_url"].rstrip("/").endswith("/pharmacy-technology") and f["score"]["arithmetic"]["stated"] is None
-      and not f["score"].get("gaps"), "22821: read from the department's page, with no total, and it carries no gap")
+# Either state: the department's page with no total, or S741's read (run 45960735042) of the program's own pinned page,
+# filed passing with its printed Total Units 20 (7 of 7 placed).
+check((f["source_url"].rstrip("/").endswith("/pharmacy-technology") and f["score"]["arithmetic"]["stated"] is None
+       and not f["score"].get("gaps"))
+      or (str(f.get("extracted_run")) == "45960735042" and f["score"]["arithmetic"]["stated"] == [20.0, 20.0]
+          and f["score"]["coverage"]["placed"] == 7 and not f["score"].get("gaps") and B.scorer_passes(f)),
+      "22821: read from the department's page with no total, or from its own pinned page (45960735042) passing, no gap")
 f = W.load("39483")
 seq = [b for b in f["record"]["blocks"] if b.get("option_group") == "Biology sequence"]
 check(len(seq) == 2 and all(c.get("units") is None for b in seq for c in b["courses"]) and not f["score"].get("gaps"),

@@ -191,9 +191,14 @@ check(str(f["extracted_run"]) == "45355976381"
                   for g in (f["score"].get("gaps") or []))),
       "22784's run was posted by no committed receipt (S741's plan has filed its gap since)")
 f = W.load("22821")
-check(f["source_url"].rstrip("/").endswith("/pharmacy-technology") and f["score"]["arithmetic"]["why"] == [NG.NO_TOTAL_WHY]
-      and any("program overview page" in n for n in B.notes(f)),
-      "22821 was read from the department page, and names no total")
+# Either state: the old hold as written, or S741's read (run 45960735042) of the program's own pinned page, which files
+# 22821 passing with its printed Total Units 20 and no gap.
+_held22821 = (f["source_url"].rstrip("/").endswith("/pharmacy-technology") and f["score"]["arithmetic"]["why"] == [NG.NO_TOTAL_WHY]
+              and any("program overview page" in n for n in B.notes(f)))
+_read22821 = (str(f.get("extracted_run")) == "45960735042" and f["score"]["arithmetic"]["stated"] == [20.0, 20.0]
+              and f["score"]["coverage"]["placed"] == 7 and not f["score"].get("gaps") and B.scorer_passes(f))
+check(_held22821 or _read22821,
+      "22821 was read from the department page and names no total, or S741's read of its own pinned page files it passing")
 AUDIO = """Two courses from the following:
 FTVM 112\tFilm Audio Production\t3
 Four courses from the following:
