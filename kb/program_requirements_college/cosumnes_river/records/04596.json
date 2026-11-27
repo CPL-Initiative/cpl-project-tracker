@@ -46,25 +46,30 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 16,
+   "placed": 15,
    "listed": 16,
-   "share": 1.0,
-   "missing": [],
-   "unexplained": [],
+   "share": 0.938,
+   "missing": [
+    "MKT49523085"
+   ],
+   "unexplained": [
+    "MKT49523085"
+   ],
    "none_placed": false,
-   "pass": true
+   "pass": false
   },
   "invented": {
-   "count": 2,
+   "count": 3,
    "codes": [
     "CISA305",
+    "MKT495",
     "MKT498"
    ],
    "flagged": [
     "CISA305",
     "MKT498"
    ],
-   "pass": true
+   "pass": false
   },
   "arithmetic": {
    "pass": true,
@@ -105,14 +110,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": true,
-  "course_renumbers": [
-   {
-    "printed": "MKT 495",
-    "listed": "MKT49523085",
-    "block": "A minimum of 6 units from the following"
-   }
-  ]
+  "pass": false
  },
  "record": {
   "program": {
@@ -334,5 +332,6 @@
    "Career entries 'sales', 'advertising', 'marketing' come from the degree description ('careers in sales, advertising, and marketing'); the rest from the Career Information heading."
   ]
  },
- "extracted_run": "39047009824"
+ "extracted_run": 45972311864,
+ "read_run": "39047009824"
 }

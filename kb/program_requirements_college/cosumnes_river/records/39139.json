@@ -46,23 +46,28 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 9,
+   "placed": 8,
    "listed": 9,
-   "share": 1.0,
-   "missing": [],
-   "unexplained": [],
+   "share": 0.889,
+   "missing": [
+    "RE296282560"
+   ],
+   "unexplained": [
+    "RE296282560"
+   ],
    "none_placed": false,
-   "pass": true
+   "pass": false
   },
   "invented": {
-   "count": 1,
+   "count": 2,
    "codes": [
+    "RE296",
     "RE342"
    ],
    "flagged": [
     "RE342"
    ],
-   "pass": true
+   "pass": false
   },
   "arithmetic": {
    "pass": true,
@@ -100,19 +105,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true,
-  "course_renumbers": [
-   {
-    "printed": "RE 296",
-    "listed": "RE296282560",
-    "block": "Certificate Requirements"
-   },
-   {
-    "printed": "RE 296",
-    "listed": "RE296282560",
-    "block": "A minimum of 3 units from the following"
-   }
-  ]
+  "pass": false
  },
  "record": {
   "program": {
@@ -280,5 +273,6 @@
    "The page header at the top of page 564 reads 'Real Estate Salesperson Certificate', but the certificate's actual section begins on page 566."
   ]
  },
- "extracted_run": "39047009824"
+ "extracted_run": 45972311864,
+ "read_run": "39047009824"
 }

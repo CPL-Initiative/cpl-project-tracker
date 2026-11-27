@@ -253,12 +253,13 @@
    "MKT49523085"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=474",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=473",
    "title": "A.A. in Marketing",
    "h1": "A.A. in Marketing",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    473,
     474,
     475,
     476
@@ -269,10 +270,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "eac188314b88b17b"
   },
   "listed": 16,
-  "text_chars": 10662
+  "text_chars": 10934
  },
  {
   "control_number": "04597",
@@ -4467,7 +4469,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "3abe98f9977f6bd0"
   },
   "listed": 9,
   "text_chars": 16000
@@ -7883,12 +7886,13 @@
    "MKT49523085"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=474",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=473",
    "title": "Marketing Certificate",
    "h1": "Marketing Certificate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    473,
     474,
     475,
     476
@@ -7899,10 +7903,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "2e76bfe77e1032e3"
   },
   "listed": 9,
-  "text_chars": 8135
+  "text_chars": 10915
  },
  {
   "control_number": "35900",
@@ -8702,8 +8707,8 @@
   ],
   "source": {
    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=564",
-   "title": "Real Estate Salesperson Certificate",
-   "h1": "Real Estate Salesperson Certificate",
+   "title": "Real Estate Broker Certificate",
+   "h1": "Real Estate Broker Certificate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -8718,7 +8723,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "3abe98f9977f6bd0"
   },
   "listed": 9,
   "text_chars": 16000

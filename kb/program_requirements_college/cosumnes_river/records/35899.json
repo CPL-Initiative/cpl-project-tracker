@@ -46,23 +46,28 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 9,
+   "placed": 8,
    "listed": 9,
-   "share": 1.0,
-   "missing": [],
-   "unexplained": [],
+   "share": 0.889,
+   "missing": [
+    "MKT49523085"
+   ],
+   "unexplained": [
+    "MKT49523085"
+   ],
    "none_placed": false,
-   "pass": true
+   "pass": false
   },
   "invented": {
-   "count": 1,
+   "count": 2,
    "codes": [
+    "MKT495",
     "MKT498"
    ],
    "flagged": [
     "MKT498"
    ],
-   "pass": true
+   "pass": false
   },
   "arithmetic": {
    "pass": true,
@@ -100,14 +105,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true,
-  "course_renumbers": [
-   {
-    "printed": "MKT 495",
-    "listed": "MKT49523085",
-    "block": "A minimum of 3 units from the following"
-   }
-  ]
+  "pass": false
  },
  "record": {
   "program": {
@@ -257,5 +255,6 @@
    "Careers taken from the certificate description ('careers in sales, advertising, customer service, and business development') and the Career Information heading."
   ]
  },
- "extracted_run": "39047009824"
+ "extracted_run": 45972311864,
+ "read_run": "39047009824"
 }
