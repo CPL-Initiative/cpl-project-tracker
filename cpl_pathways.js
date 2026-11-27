@@ -1523,11 +1523,23 @@
     ".cplpw-rcode .u { font-size:13px; color: var(--text-muted); font-variant-numeric:tabular-nums; overflow:hidden; text-overflow:ellipsis; min-width:0; }",
     ".cplpw-rtile .ttl { display:-webkit-box; -webkit-line-clamp:2; line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; font-size:14px; line-height:1.3; color: var(--text-body); overflow-wrap:anywhere; }",
     ".cplpw-rtile .ttl .or { color: var(--text-muted); }",
-    /* The CPL control: the word, then the MAP pointer 2px later, one underline under both; no border, no fill. */
-    ".cplpw-rcpl { flex:0 0 auto; box-sizing:border-box; height:28px; min-width:24px; display:inline-flex; align-items:center; justify-content:center; white-space:nowrap; font:inherit; font-size:16px; line-height:1; font-weight:400; letter-spacing:0; text-transform:uppercase; text-decoration:none; padding:0 0 2px 10px; border:0; background:none; color: var(--seal-blue-text); cursor:pointer; }",
-    ".cplpw-rcpl .ul { display:inline-flex; align-items:center; gap:2px; border-bottom:1px solid var(--seal-blue-text); padding-bottom:2px; }",
-    ".cplpw-mapptr { flex:0 0 auto; display:block; transform:rotate(25deg); }",
-    ".cplpw-rcpl:hover .ul { border-bottom-width:2px; padding-bottom:1px; }",
+    /* The CPL chip (Sam, 2026-11-27): the word CPL and the MAP pointer on one white tile, no underline. The pointer
+       sits on the baseline of CPL, rises a little above it and nearly touches the L. A ruled exception to "controls
+       are underlined words". The button has no border, no underline and no fill; the tile is the .ul span. */
+    ".cplpw-rcpl { flex:0 0 auto; box-sizing:border-box; min-height:24px; min-width:24px; display:inline-flex; align-items:center; justify-content:center; white-space:nowrap; font:inherit; font-size:16px; line-height:1; font-weight:400; letter-spacing:0; text-transform:uppercase; text-decoration:none; padding:0 0 0 10px; border:0; background:none; color: var(--seal-blue-text); cursor:pointer; }",
+    ".cplpw-rcpl .ul { display:inline-flex; align-items:baseline; gap:0; line-height:1; background: var(--surface-opaque); padding:3px 6px 3px 7px; border-radius:5px; box-shadow:0 0 0 1px var(--border); }",
+    ".cplpw-rcpl:hover .ul { box-shadow:0 0 0 1px var(--seal-blue-text); }",
+    ".cplpw-mapptr { display:inline-block; height:0.95em; width:auto; transform:translateY(0.07em); margin-left:-0.15em; }",
+    /* The pointer turns toward what the chip opened (Sam, 2026-11-27: "it would be totally ridiculous to have the
+       pointer fly out when clicked and point to the bottom bar or sidebar it opens, right?", "try it!", "that's
+       cool!"): down for the bottom bar below, right for a sidebar (data-opens="side"); it holds that heading while
+       open and swings back on close. It never leaves the chip, and it snaps under reduced motion. The open chip
+       keeps its regular weight. */
+    ".cplpw-rcpl .cplpw-mapptr { transform-origin:65% 50%; transition:transform 200ms ease-out; }",
+    ".cplpw-rcpl[aria-expanded=\"true\"] { font-weight:400; }",
+    ".cplpw-rcpl[aria-expanded=\"true\"] .cplpw-mapptr { transform:translate(0.1em, 0.02em) rotate(150deg); }",
+    ".cplpw-rcpl[aria-expanded=\"true\"][data-opens=\"side\"] .cplpw-mapptr { transform:translate(0.05em, 0.04em) rotate(60deg); }",
+    "@media (prefers-reduced-motion: reduce) { .cplpw-rcpl .cplpw-mapptr { transition:none; } }",
     ".cplpw-rcode:focus-visible, .cplpw-rcpl:focus-visible, .cplpw-rgo:focus-visible, .cplpw-cside-close:focus-visible, .cplpw-gbar-close:focus-visible, .cplpw-cside-grip:focus-visible { outline:3px solid var(--focus-ring, var(--cobalt)); outline-offset:2px; }",
     ".cplpw-rtip { position:absolute; z-index:4; top:2.6rem; left:12px; right:12px; background: var(--seal-blue); color: var(--on-seal-blue); border-radius:8px; padding:10px 12px; font-size:13px; line-height:1.4; box-shadow:0 6px 18px color-mix(in srgb, var(--seal-blue) 25%, transparent); display:flex; flex-direction:column; gap:4px; white-space:normal; }",
     ".cplpw-rtip[hidden] { display:none; }",
@@ -2539,29 +2551,32 @@
   /* The MAP pointer beside the word CPL. Sam ruled this glyph in (2026-11-27: "incorporate a CPL glyph symbol that
      becomes recognizable over time ... the MAP directional pointer"; crimson, tilted, beside CPL). It is one of the
      ruled marks: an accessibility or plain-words sweep must not strip it. It is aria-hidden; the button's name says
-     what it does. */
+     what it does. The path is the MAP pointer (M75 0 L150 122 L75 83 L0 122 Z) turned 30 degrees clockwise ahead of
+     time, so its lowest corner is the bottom of its box and no CSS rotate is needed (Sam, 2026-11-27: "tilt it
+     another 5 degrees to the right"). */
   var SVG_NS = "http://www.w3.org/2000/svg";
   function mapPointer() {
     var svg = document.createElementNS(SVG_NS, "svg");
     svg.setAttribute("class", "cplpw-mapptr");
-    svg.setAttribute("viewBox", "0 0 150 122");
-    svg.setAttribute("width", "15");
-    svg.setAttribute("height", "12");
+    svg.setAttribute("viewBox", "0 0 130 144");
+    svg.setAttribute("width", "14");
+    svg.setAttribute("height", "15");
     svg.setAttribute("aria-hidden", "true");
     svg.setAttribute("focusable", "false");
     var p = document.createElementNS(SVG_NS, "path");
-    p.setAttribute("d", "M75 0 L150 122 L75 83 L0 122 Z");
+    p.setAttribute("d", "M126.0 0.0 L129.9 143.2 L84.5 71.9 L0.0 68.2 Z");
     p.setAttribute("fill", "var(--map-crimson)");
     svg.appendChild(p);
     return svg;
   }
   function cplControl(rec, code, info, title) {
     var exhibits = (info.here && info.here.exhibits) || [];
-    var b = el("button", "cplpw-rcpl");
+    var b = el("button", "cplpw-rcpl cplchip");
     b.type = "button";
     b.setAttribute("aria-label", "CPL: get credit for " + code + " at " + rec.college + ", in the bar below");
     b.setAttribute("aria-controls", "cplpw-gbar");
     b.setAttribute("aria-expanded", "false");
+    b.setAttribute("data-opens", "below");
     var ul = el("span", "ul", [el("span", "w", "CPL")]);
     ul.appendChild(mapPointer());
     b.appendChild(ul);

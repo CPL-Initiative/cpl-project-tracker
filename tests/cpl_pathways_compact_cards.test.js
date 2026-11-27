@@ -89,16 +89,37 @@ const tileOf = (r, code) => r.root.querySelector('.cplpw-rmap .cplpw-rtile[data-
   check("(b) it is a button reading CPL, after the code in row 1",
     cpl && cpl.tagName === "BUTTON" && cpl.type === "button" && cpl.textContent === "CPL" && cpl.parentNode.lastElementChild === cpl);
   const cplRule = (SRC.match(/"\.cplpw-rcpl \{[^"]*"/) || [""])[0];
-  check("(b) it has no border and no fill, 16px regular weight, uppercase",
-    /border:0/.test(cplRule) && /background:none/.test(cplRule) && /font-size:16px/.test(cplRule) && /font-weight:400/.test(cplRule) && /text-transform:uppercase/.test(cplRule), cplRule);
-  check("(b) one underline runs under the word and the pointer", /"\.cplpw-rcpl \.ul \{[^"]*border-bottom:1px solid var\(--seal-blue-text\)/.test(SRC) &&
-    cpl.querySelector(".ul > .w") && cpl.querySelector(".ul > svg"));
+  check("(b) the button has no border, no fill and no underline; 16px regular weight, uppercase, a 24px target",
+    /border:0/.test(cplRule) && /background:none/.test(cplRule) && /text-decoration:none/.test(cplRule) && !/border-bottom/.test(cplRule) &&
+    /min-height:24px/.test(cplRule) && /font-size:16px/.test(cplRule) && /font-weight:400/.test(cplRule) && /text-transform:uppercase/.test(cplRule), cplRule);
+  check("(b) the button carries the chip class", cpl.classList.contains("cplchip"));
+  // The settled chip (Sam, 2026-11-27): "now give the cpl chip white background and get rid of the underline".
+  const tileRule = (SRC.match(/"\.cplpw-rcpl \.ul \{[^"]*"/) || [""])[0];
+  const hoverRule = (SRC.match(/"\.cplpw-rcpl:hover \.ul \{[^"]*"/) || [""])[0];
+  check("(b) the word and the pointer sit on one white tile with no underline",
+    /background: var\(--surface-opaque\)/.test(tileRule) && /box-shadow:0 0 0 1px var\(--border\)/.test(tileRule) &&
+    /border-radius:5px/.test(tileRule) && /padding:3px 6px 3px 7px/.test(tileRule) && /align-items:baseline/.test(tileRule) &&
+    /gap:0/.test(tileRule) && !/border-bottom/.test(tileRule) && !/border-bottom/.test(hoverRule) &&
+    /box-shadow:0 0 0 1px var\(--seal-blue-text\)/.test(hoverRule) &&
+    cpl.querySelector(".ul > .w") && cpl.querySelector(".ul > svg") && cpl.querySelector(".ul > .w").nextSibling === cpl.querySelector(".ul > svg"), tileRule);
   const svg = cpl.querySelector("svg");
   const path = svg && svg.querySelector("path");
-  check("(b) the pointer is the MAP arrow, 15 by 12, aria-hidden, filled with the crimson token",
-    svg && svg.getAttribute("viewBox") === "0 0 150 122" && svg.getAttribute("width") === "15" && svg.getAttribute("height") === "12" &&
-    svg.getAttribute("aria-hidden") === "true" && path && path.getAttribute("d") === "M75 0 L150 122 L75 83 L0 122 Z" && path.getAttribute("fill") === "var(--map-crimson)");
-  check("(b) the pointer turns 25 degrees", /\.cplpw-mapptr \{[^}]*rotate\(25deg\)/.test(SRC));
+  check("(b) the pointer is the MAP arrow turned 30 degrees in its path, aria-hidden, filled with the crimson token",
+    svg && svg.getAttribute("viewBox") === "0 0 130 144" && svg.getAttribute("width") === "14" && svg.getAttribute("height") === "15" &&
+    svg.getAttribute("aria-hidden") === "true" && path && path.getAttribute("d") === "M126.0 0.0 L129.9 143.2 L84.5 71.9 L0.0 68.2 Z" && path.getAttribute("fill") === "var(--map-crimson)");
+  const ptrRule = (SRC.match(/"\.cplpw-mapptr \{[^"]*"/) || [""])[0];
+  check("(b) no CSS rotate: the pointer rises a little above CPL, sits on its baseline and nearly touches the L",
+    !/rotate\(/.test(ptrRule) && /height:0\.95em/.test(ptrRule) && /translateY\(0\.07em\)/.test(ptrRule) && /margin-left:-0\.15em/.test(ptrRule), ptrRule);
+  // The pointer turns toward what the chip opened (Sam, 2026-11-27: "try it!" then "that's cool!").
+  const ruleOf = (sel) => (SRC.match(new RegExp('"' + sel.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ' \\{[^"]*"')) || [""])[0];
+  check("(b) the open chip points down at the bar below and right at a sidebar; never bold; snaps under reduced motion",
+    /transform-origin:65% 50%/.test(ruleOf(".cplpw-rcpl .cplpw-mapptr")) && /transition:transform 200ms ease-out/.test(ruleOf(".cplpw-rcpl .cplpw-mapptr")) &&
+    /translate\(0\.1em, 0\.02em\) rotate\(150deg\)/.test(ruleOf('.cplpw-rcpl[aria-expanded=\\"true\\"] .cplpw-mapptr')) &&
+    /translate\(0\.05em, 0\.04em\) rotate\(60deg\)/.test(ruleOf('.cplpw-rcpl[aria-expanded=\\"true\\"][data-opens=\\"side\\"] .cplpw-mapptr')) &&
+    /font-weight:400/.test(ruleOf('.cplpw-rcpl[aria-expanded=\\"true\\"]')) &&
+    /prefers-reduced-motion: reduce\) \{ \.cplpw-rcpl \.cplpw-mapptr \{ transition:none; \}/.test(SRC));
+  check("(b) the CPL control opens the bottom bar, so it says so and starts closed",
+    cpl.getAttribute("data-opens") === "below" && cpl.getAttribute("aria-expanded") === "false");
   check("(b) the code cites Sam's ruling so a sweep keeps the glyph", /the MAP directional pointer/.test(SRC) && /must not strip it/.test(SRC));
   check("(b) --map-crimson is #9E2A2B in light and a lighter crimson in both dark blocks, in both HTMLs",
     DASH === INDEX && (DASH.match(/--map-crimson: #9E2A2B;/g) || []).length === 1 && (DASH.match(/--map-crimson: #E07A7B;/g) || []).length === 2);

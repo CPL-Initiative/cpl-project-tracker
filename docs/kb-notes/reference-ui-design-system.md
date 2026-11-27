@@ -157,6 +157,35 @@ Every other view converts at its UI pass (`/a11y-pass` step 7), measured, rather
 than by a blind sweep: COBI's tabs carry hundreds of boxed buttons, and a target
 that shrinks from 44px to 24px has to be re-measured where it sits.
 
+**The CPL chip is a ruled exception (Sam, 2026-11-27).** The CPL control on CPL
+Pathways (`cplControl` in `cpl_pathways.js`) is the word CPL and the MAP pointer
+on one white tile, with no underline: *"now give the cpl chip white background
+and get rid of the underline"*. The tile is `var(--surface-opaque)` with a 1px
+`var(--border)` ring (the `--seal-blue-text` ring on hover), radius 5px, padding
+3px 6px 3px 7px, so it goes dark in dark mode. The button itself keeps no
+border, no fill and no underline, a 24px minimum target and the focus ring. The
+pointer sits on the baseline of CPL and rises a little above it (*"align
+vertically on the bottom of the cpl text--it should extend a bit above"*), close
+to the L with a hair of space (*"bring the pointer as close as possible the the
+L"*, *"now just a teeny bit of space between the L and pointer"*), and leans 30
+degrees clockwise (*"tilt it another 5 degrees to the right"*), turned in its
+path data with no CSS rotate. The word CPL is the cue that it acts, so the
+underline is not needed for 1.4.1; CPL on the tile is `#002F6D` on `#FFFFFF`
+(12.9:1) in light and `#7DA1D4` on `#1E1E1C` (6.3:1) in dark; the pointer is `#9E2A2B` (7.45:1) and `#E07A7B` (5.76:1). Settled in the PPM
+sketch (`CPLBrain/04-projects/cpl-initiative/connections/20261127_ppm_cpl_pathways_sketch.html`)
+and carried to the live surfaces at his word: *"looks great! yes carry that ver
+of the chip over to the other surfaces"*.
+
+**The pointer turns toward what the chip opened (Sam, 2026-11-27).** *"it would
+be totally ridiculous to have the pointer fly out when clicked and point to the
+bottom bar or sidebar it opens, right?"*, then *"try it!"*, and on seeing it,
+*"that's cool!"*. While the chip's `aria-expanded` is true the pointer turns
+down (150 degrees) toward a bottom bar or list below, or right (60 degrees)
+toward a sidebar when the chip carries `data-opens="side"`, and swings back on
+close. The motion never leaves the chip: the pointer turns in place over 200ms,
+and under `prefers-reduced-motion: reduce` it snaps. The open chip keeps its
+regular weight; state is carried by `aria-expanded` and the turn, never bold.
+
 ## Glyphs: decorative ones are out; state ones stay
 
 **Sam, 2026-08-14:** *"Also want a design rule to not add glyphs to them (as some

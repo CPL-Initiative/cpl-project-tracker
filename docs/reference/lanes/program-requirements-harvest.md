@@ -56,7 +56,7 @@ add* to the Credential Catalog, framed (`openGetCreditBar` takes `o.url`, `o.hea
 names and links should be the same blue as the programs listview"*, *"they should open to a bottom bar rather than a new
 tab"*); #3920 the *Industry certs* chip on a program card (`kb/_build_program_certs.py`, `kb/status/program_certs/`):
 *earns CPL here* on 1,326 programs at 76 colleges (3,432 entries, 1,551 with a college-built exhibit code), *prepares
-for* on 634 programs (707 entries), both on 45; the matcher's precision 93% and 90%, recall about 77% (`kb/status/program_certs/_measure.md`). **IN FLIGHT:** #3922 the live CPL chip
+for* on 634 programs (707 entries), both on 45; the matcher's precision 93% and 90%, recall about 77% (`kb/status/program_certs/_measure.md`). **LIVE:** #3922 the live CPL chip
 (`r-cpl-chip-white-tile-sam-2026-11-27`, refining the pointer ruling: a white tile, the pointer pre-rotated 30 degrees on
 the baseline, no underline; on open it turns toward what it opened, down for a list or bottom bar, right for a sidebar,
 200 ms, snapping under reduced motion; Sam: *"that's cool!"*). **APPLIED:** Trained by on a credential (Sam: *"yes,
