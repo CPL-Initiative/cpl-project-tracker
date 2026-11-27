@@ -915,3 +915,22 @@ match count is exact.
   course's description on hover or a web search, the catalog in a bottom bar, a folded explanation and a training note
   in `kb_curation` (`procedure_note`). His next ask, 2026-11-27: *"there should be a way to ask you to run a routine to
   reparse based on the note and perhaps all the cerro coso items could be resolved quickly"*.
+
+## S744 (SkyCurlew, Sam's plain session, 2026-11-27): the campus letter fold
+
+- **#3908 (`c66c805b`).** `kb/coci_campus_letter.py` holds explicit lists, never a rule: 26 Cerro Coso codes (ADMJC to
+  SPANC) and 6 Porterville (BIOLP CMRTP ENGLP FIREP HLEDP MATHP). A suffix rule would have folded real codes: PSYC MUSC
+  EDUC PHSC SOSC PTEC FRCC EMTC and HOSP all end in the letter. ICC is not folded (no IC subject, and the schedule does
+  not print it; `d-icc-not-folded-s744`).
+- **Folding exposes twins.** `kb/_build_coci_lookup.py` folds 130 rows and drops 20 where COCI lists one control number
+  both glued and lettered. The older duplicates at De Anza, Cerritos and Victor Valley (25 rows) are a different cause
+  and stand.
+- **A person's save follows the fold.** `kb/subject_decisions.py` carries a save on a glued code to the folded code, so
+  Sam's ADMJC "Administration of Justice" save of 2026-11-26 lands on ADMJ; a direct save on the base wins. Statewide
+  subject codes 2,924 to 2,896, and no person's decision lost.
+- **Measure the consumers before the fold, and refresh the input alone first.** The first commit rebuilt the lookup's
+  M-ID chips on their own (20,218 rows), because memberships had moved since the last build; otherwise the fold's diff
+  would have carried that drift. The dry run: closest-M-ID scores shift under 0.01 (corpus size), 3 rows change
+  candidates and 3 gain one; the retired and not-applicable cards change only their input hash; CPL Pathways'
+  retired-course filter is unchanged at both colleges. CI then needed `kb/status/subject_courses` rebuilt (19 colleges)
+  and the stray-code rescore rerun (Porterville CMRTP now 0; its M-ID CMRT M1001 sits on CMRT).

@@ -691,3 +691,60 @@ Verbatim from `docs/reference/lanes/my-college-action-page.md`, moved to keep th
 - **The full `npm run a11y` sweep crashes Chromium in the cloud container partway through** (197 "did not finish",
   all after one browser close). A narrowed config of the touched targets passed 10 of 10; the 42 COBI tabs in light
   passed before the crash.
+
+## S744 (SkyCurlew, Sam's plain session, 2026-11-27): Get credit, stackable programs, the compact cards
+
+- **Get credit (#3910, `45349aae`).** Each *CPL here* line links to the college's MAP landing page with the course's
+  exhibit codes (`here.exhibits`); landing URLs are read once from `map_college_contacts_pub`; a code MAP refuses is
+  skipped; a college with no landing page says so. 14 of 15 CPL-here tiles on Cerritos 42158 link to an exhibit;
+  statewide 59 of 96 across 22 programs. The compact cards replace the line (below). Sam's words:
+  *"we could use the CPL Pathways views to add the 'Get Credit' button that goes to the lp"*
+  (`r-get-credit-on-pathways-cards-sam-2026-11-27`).
+- **Stackable programs (#3911, `1d798625`, built by a worker).** `kb/_build_program_ladders.py` writes
+  `kb/status/program_ladders/<slug>.json` and `index.json` (2.9 MB). Kinds: *contains* (every course of a certificate
+  sits in a same-college degree), *mostly* (80% or more), *same_field* (associate to bachelor's by program CIP4, never
+  TOP) and *curated* (Cerritos 42158 to the B.S. Field Ironworker Supervisor, pathway `cerritos-field-ironworker-bs`,
+  first cohort Spring 2027). Measured: 7,696 certificates, 3,680 wholly inside a degree (4,427 pairs), 4,664 at 80% or
+  more; 27 of 35 active bachelor's link to a harvested associate; 8,295 programs carry a link. A compact *Stackable
+  programs* row tops the record view. Wired into `daily_build.sh` (54 blocks), `check_generated.sh`, the daily
+  workflow's `git add`, js-tests shard 6 and the Pages allowlist. Containment beats CIP across fields: Cerritos files
+  its ironworker certificates under Welding 48.0508 and the A.S. under Manufacturing 15.0613. Sam: *"the stackable
+  programs is very exciting development! would be nice to see a very compact set of cards in a top section of the
+  pathway view showing the stackable possibilities..."*; *"yes, measure and build it."*
+  (`r-stackable-programs-top-row-sam-2026-11-27`).
+- **The compact course cards (in flight, branch `claude/pathways-compact-cards`).** Mock-up
+  https://claude.ai/artifact/BQjk5FcRjeHPGZp57bpDJe (*CPL Pathways Compact Cards*, private), iterated live with Sam
+  until *"OK, let's go with that"* (`r-compact-course-cards-sam-2026-11-27`). One-size short cards (~92px): row 1 the
+  course code (a button to a sidebar with the catalog description and exhibits), units and the CPL control; row 2 the
+  title. The control: the word CPL (16px, regular weight, navy, uppercase, no border or fill) and the MAP pointer (the
+  notched arrowhead from the A in MAP, `prototype/funding_video/assets/map_arrow.png`) in MAP crimson #9E2A2B, tilted
+  25 degrees clockwise, 2px right of CPL, centered on the letters, one underline under both; hover lists exhibit titles
+  with type; a click opens a bottom bar framing the landing page on the course's exhibits. Gone: the Details link, the
+  counts, the CPL-type line and the Get credit link. Sam: *"the '- 2' in the cpl chips doesn't mean anything to the user
+  at this point...so let's take the numbers out"*; *"delete Details link since cpl chip does same thing"*; *"make course
+  clickable to show course details in sidebar"*; *"now we could get rid of the cpl type label because user will need to
+  click the cpl chip anyway"*. On links: *"have the get credit link open a bottom bar so the user doesn't get stranded.
+  bottom bars for wide (lots of) information and sidebars for more compact details..."* and *"again, all links to lp go
+  to bottom bar iframe of the lp"* (`r-all-lp-links-open-bottom-bar-sam-2026-11-27`). MAP's landing page sends no
+  X-Frame-Options or CSP, so it can be framed.
+- **The CPL glyph (`r-cpl-glyph-map-pointer-sam-2026-11-27`).** Sam: *"I think we may want to incorporate a CPL glyph
+  symbol that becomes recognizable over time. Thinking of using the MAP directional pointer we incorporate into the A in
+  MAP."* A ruled exception to the glyph rule, the 27th ruled mark beside the 26 of 2026-09-09: an a11y sweep keeps it.
+- **All 24 Cerritos Field Ironworkers A.S. courses carry CPL, not 15** (`f-cerritos-ironworkers-all-24-cpl-s744`). MAP
+  articulates Cerritos's Ironworker Apprenticeship exhibits (Reinforcing and Structural, periods 1 to 8,
+  `MAPICA-RA4P*`/`SA4P*`, issuer the International Association of Bridge, Structural, Ornamental and Reinforcing Iron
+  Workers) to every IWAP course, Welding I and the Structural option included; live-verified (MAPICA-SA4P1-1-001 lists
+  IWAP 40.21 and 41.06; MAPICA-RA4P3-1-001 lists 40.10 and 40.63). The display build (`kb/_build_roep_display.py`, feed
+  `kb/coci_articulations.json`) carries only the credit-by-exam exhibits (`MAPCXA-*`), so the A.S. view says 15 of 24 and
+  the B.S. page says the Structural option carries none yet. `library/adopt/adopt_data.json` holds the apprenticeship
+  exhibits per college (`a` articulations, `m` exhibit codes).
+- **Ways an ironworker apprentice qualifies for CPL at Cerritos** (Sam asked; from MAP data): completed apprenticeship
+  periods (industry certification, apprenticeship mode; each period maps to specific courses), credit by exam per course
+  (15 courses), and adopting another college's credit (American River's H07/H47/H75/H77 modules, 3 courses; not yet
+  adopted).
+- **Why the B.S. view uses rows.** It is the first, hand-built pathway (`cpl_pathways_data.js`, for the Apprenticeship
+  Council presentation), drawn by the original ladder renderer; the card views read catalog records, and Cerritos has
+  not published the B.S. curriculum (not in the June COCI program export either). Sam likes its metric cards.
+- **The description shards carry mojibake** (`f-coci-description-shards-mojibake-s744`): `coci_lookup_desc_*.js` holds
+  `_x000D_` and UTF-8 read as cp1252 (`Ã¢â‚¬â„¢` for a right quote, `Ã‚Â` for a space); the Commons' course hover
+  likely shows it. Clean it at build in `kb/_build_coci_lookup.py`.

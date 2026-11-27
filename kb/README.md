@@ -173,6 +173,9 @@ C-ID, re-key it from its M-ID and set `id_system` accordingly.
 lazy on first tab open) + 25 `coci_lookup_desc_<A-Z>.js` description shards
 (fetched per expanded row). STATIC — rebuild on a fresh COCI extract; NOT
 daily-cron artifacts. The tab renderer is root `coci_lookup.js`.
+Since S744 (#3908) the build folds Cerro Coso's and Porterville's glued campus
+letter (`PHEDC 103` to `PHED C103`) from the explicit lists in
+`kb/coci_campus_letter.py`, dropping the twins the fold exposes.
 
 ## Governance register (added Session 120, 2026-08-05)
 

@@ -152,34 +152,35 @@ Riverside's Colleague is the only other schedule system on file; no other colleg
 
 ## NEXT
 
-**NEXT (S736), in order:**
-1. **Cerro Coso's and Porterville's glued letter** (`f-cerro-coso-porterville-letter-glued-to-subject-s736`). The
-   colleges number courses with a campus letter (Cerro Coso prints PHED C103), and COCI stores some as `PHEDC 103` and
-   others as `PHED C276`. Of the state-only Cerro Coso codes ending in C whose base exists, these 26 are fake: ADMJC
-   ANTHC ARTC ASLC BIOLC BSADC BSOTC CHDVC CSCIC DMAC EDUCC EMTCC ENGLC FRENC GEOLC HCRSC HMSVC LATNC MATHC MUSCC PARAC
-   PHEDC PHSCC PHYSC POLSC SPANC (ICC to check). The real ones stay: PSYC MUSC EDUC PHSC SOSC PTEC FRCC EMTC.
-   Porterville the same with P: BIOLP CMRTP ENGLP FIREP HLEDP MATHP. Fix in `kb/_build_coci_lookup.py` for those two
-   colleges only (fold to the base code, the letter onto the number), dry run first measuring every consumer (it feeds
-   about 20 builders, and `cpl_coci_course_keys.js` matches MAP articulations on it), then rebuild the subject family.
-   Sam's training note on EMTCC asked for it. **Evidence:** Cerro Coso's *Long-Term Schedule Effective Fall 2024,
-   Active and Inactive Courses* (Sam, 2026-11-27; vault `raw/2026-11-27-cerro-coso-long-term-schedule-fall-2024.md`):
-   459 courses, every one SUBJ plus a C-number; 24 of the 26 bases printed (HMSV absent, PHED printed as KINS). A
-   second signal for the codes, never a title source beyond them ([lessons](../../common_subject_code_tab_lessons.md)).
-2. **The builder honors `not_a_subject`.** The lightning round saves `{not_a_subject: true}`
+**LIVE (#3908, S744, `c66c805b`): the campus letter fold.** Cerro Coso and Porterville number courses with a campus
+letter, and COCI stored some as `PHEDC 103` (`f-cerro-coso-porterville-letter-glued-to-subject-s736`; Sam's training
+note on EMTCC). `kb/coci_campus_letter.py` holds explicit lists: 26 Cerro Coso codes (ADMJC to SPANC) and 6 Porterville
+(BIOLP CMRTP ENGLP FIREP HLEDP MATHP); the real codes stay (PSYC MUSC EDUC PHSC SOSC PTEC FRCC EMTC; HOSP). **DECIDED**
+`d-icc-not-folded-s744`: ICC stays (no IC subject, not on the schedule). `kb/_build_coci_lookup.py` folds 130 rows and
+drops 20 twins (one control number listed glued and lettered); the older duplicates at De Anza, Cerritos and Victor
+Valley (25 rows) stand. `kb/subject_decisions.py` carries a save on a glued code to the folded code (Sam's ADMJC
+"Administration of Justice" save of 2026-11-26 lands on ADMJ); a direct save on the base wins. Statewide subject codes
+2,924 to 2,896; no person's decision lost. The consumer dry run: closest-M-ID scores move under 0.01, 3 rows change
+candidates, 3 gain one; CPL Pathways' retired-course filter unchanged at both colleges. The stray-code rescore reran
+(Porterville CMRTP now 0; its M-ID CMRT M1001 sits on CMRT). Test `tests/coci_campus_letter_test.py`. Evidence: Cerro
+Coso's *Long-Term Schedule Effective Fall 2024* (vault `raw/2026-11-27-cerro-coso-long-term-schedule-fall-2024.md`).
+
+**NEXT (S744), in order:**
+1. **The builder honors `not_a_subject`.** The lightning round saves `{not_a_subject: true}`
    (`d-lightning-round-not-a-subject-and-skip-s736`), and `kb/subject_decisions.py` lists it as refused today, so the
    status counts do not drop; make the builder take it.
-3. **LACCD:** 41 codes still untitled; offer Sam the 87 schedule titles that differ from the catalog as one list.
-4. **The schedule-tool sweep beyond LACCD** (`r-schedule-tool-first-for-subject-titles-sam-2026-11-26`): none read.
+2. **LACCD:** 41 codes still untitled; offer Sam the 87 schedule titles that differ from the catalog as one list.
+3. **The schedule-tool sweep beyond LACCD** (`r-schedule-tool-first-for-subject-titles-sam-2026-11-26`): none read.
    The colleges with the most untitled codes: Allan Hancock 77, Glendale 57, Santa Barbara City 51, Santiago Canyon 39,
    Santa Monica 36, Canyons 34, Cerro Coso 32, Chabot 32. Name each college's system in `data_sources` as it is found.
-5. **The Accounting re-point apply.** The dry run (#3867, `kb/_acct_repoint_dryrun.py`, `kb/acct_repoint_out/2026-11-26/`):
+4. **The Accounting re-point apply.** The dry run (#3867, `kb/_acct_repoint_dryrun.py`, `kb/acct_repoint_out/2026-11-26/`):
    372 M-IDs and 907 courses move to ACCT under Accounting, 1 held, 29 families flagged. **BLOCKED:** Sam's four
    `_SUBJ_DISC::ACC`, `ACCT`, `ACCTG` and `ACTG` saves of 2026-11-24 12:46 (a 1,311-row batch) file them under
    Business; they need refiling under Accounting, or his say-so over them (a person's save is terminal). Copper
    Mountain's ACC is ACCESS (disability services), keyed by college and left out.
-6. **The 35 held and the 50 under 90** (the stray-codes paragraph above): Sam's picks.
+5. **The 35 held and the 50 under 90** (the stray-codes paragraph above): Sam's picks.
 
-**NEXT (S719), in order:** (1) re-point the folded local codes (the Accounting codes' dry run is #3867, item 5 above), a re-mint under
+**NEXT (S719), in order:** (1) re-point the folded local codes (the Accounting codes' dry run is #3867, item 4 above), a re-mint under
 [`docs/coursecontrolnumber_remint.md`](../../coursecontrolnumber_remint.md), dry run first: ACCT, ACCTG, ACC and ACTG
 to ACCT under Accounting, LING, HOSP, the religion codes (RLST, RELS, RELG) to RLST, MCOM, AERO (its AFROTC courses
 to MILS); `kb/reference/subject_discipline_map.json` still sends ACC, ACCT and ACCTG to Business; AT and INS are

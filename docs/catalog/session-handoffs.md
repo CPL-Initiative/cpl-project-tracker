@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-695 document(s).
+696 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 745 | [Session 745 handoff (from SkyCurlew, S744, Sam's plain session of 2026-11-27: the campus letter fold, exhibit deep links, stackable programs, the compact cards)](../session_745_handoff.md) | 2026-11-27 |
 | 744 | [Session 744 handoff (from SkyBrant, S736, Sam's plain session of 2026-11-26 to 11-27: Library publish fixes, the lightning round, LACCD schedule titles, the Accounting dry run)](../session_744_handoff.md) | 2026-11-27 |
 | 743 | [Session 743 handoff (from SkyGodwit, S742, the CPL Queue routine's collection run of 2026-11-27, from 12:12Z)](../session_743_handoff.md) | 2026-11-27 |
 | 742 | [Session 742 handoff (from SkyWillet, S741, the CPL Queue routine's collection run of 2026-11-27, from 06:12Z)](../session_742_handoff.md) | 2026-11-27 |
