@@ -13619,25 +13619,27 @@
    "STMFT298"
   ],
   "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=211",
-   "title": "Course",
-   "h1": "Course",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=207",
+   "title": "Refrigeration Service Technician",
+   "h1": "Refrigeration Service Technician",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    211
+    207,
+    208
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "pinned": true,
    "hand_filed": {
-    "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
-    "fetched_at": "2026-11-11",
-    "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
+    "fetched_by": "S720 lever (a worker of SkyEider, the CPL Queue routine's run of 2026-11-24), filing the file the college's address serves; the runner fetches it with the hand-filed-copy user agent and its pin step fixes the hash",
+    "fetched_at": "2026-11-24",
+    "sha256": "5a86716d570e32ecdbeb75a1fa03c45e1b33888b70156f17a04f0461d5342035"
    },
-   "text_sha": "31eb16616faa6e7d"
+   "text_sha": "678318866b6ce112"
   },
   "listed": 34,
-  "text_chars": 2945
+  "text_chars": 3233
  },
  {
   "control_number": "39732",
@@ -13683,25 +13685,27 @@
    "STMFT298"
   ],
   "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=211",
-   "title": "Course",
-   "h1": "Course",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=208",
+   "title": "Refrigeration Service Technician",
+   "h1": "Refrigeration Service Technician",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    211
+    208,
+    209
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "pinned": true,
    "hand_filed": {
-    "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
-    "fetched_at": "2026-11-11",
-    "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
+    "fetched_by": "S720 lever (a worker of SkyEider, the CPL Queue routine's run of 2026-11-24), filing the file the college's address serves; the runner fetches it with the hand-filed-copy user agent and its pin step fixes the hash",
+    "fetched_at": "2026-11-24",
+    "sha256": "5a86716d570e32ecdbeb75a1fa03c45e1b33888b70156f17a04f0461d5342035"
    },
-   "text_sha": "31eb16616faa6e7d"
+   "text_sha": "25e23ffd6e9a9c08"
   },
   "listed": 34,
-  "text_chars": 2945
+  "text_chars": 3232
  },
  {
   "control_number": "39733",
