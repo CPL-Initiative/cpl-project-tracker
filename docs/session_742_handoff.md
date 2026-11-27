@@ -138,3 +138,15 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   its page contradicts. Clean md5 pre-read 3 of 3; `.apply` pushed (`4e7f4b4e`), migrate 45959650737 queued.
 - 07:39Z: the census after the display build, 45959377512 on `main` (`473dc192`, live at 07:38Z): 15,642 of 20,282
   pass, 3,996 have no passing record, 644 collected with a named gap (6 moved since 01:12Z: tonight's 6).
+- 07:41Z: s741k4's migrate 45959650737 returned 3, none skipped; `.apply` restored (`7de8af25`). Records collected: 9.
+- 07:42Z: the reader of `readers`' three changes (Fable 5.2): rule B GO (a true descriptions page stays refused in
+  three shapes; MINOR, its recall test counts reach, not what it admits); `window_keeps_tabs` FIX THEN GO (MAJOR: the
+  `VISIBLE_KEPT_MIN` floor lets the window run into the panels, which would make Victor Valley 04967 worse);
+  `cq_group_ends` FIX THEN GO (MAJOR: a group-end line inside an outer group's child, the worker's own Drafting 5169
+  fixture, reads 12 against the printed 6). San Diego City's fresh read dispatched at 07:43Z on
+  `claude/s741-readers-sdcity` (cut at the reviewed `13512bd7`; only and force 22367); the two fixes back to `readers`.
+- 07:42Z: piles batch 1's reader (Sonnet): s741a, s741b, s741c APPLY; s741d FIX THEN APPLY (its `plan_code` rule
+  holds for 90 of 92 East Los Angeles headings and needs the count pinned; no data change). Clean pre-reads 1 of 1, 4
+  of 4, 2 of 2; s741a's `.apply` pushed at 07:44Z (`3a7e9b0b`).
+- 07:45Z: `keys` report 6 (head `63852115`): s741k2 rebuilt on the reread's rows, and a `site_pages` pin for San
+  Bernardino Valley 22821; both to the round-1 reader, its second and last round.
