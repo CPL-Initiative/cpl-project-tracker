@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-27T08:41:43Z",
+ "written_at": "2026-11-27T09:08:42Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,8 +168,8 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17601,
-  "gap": 4734,
+  "passing": 17606,
+  "gap": 4729,
   "with_gap": 118,
   "cost_usd": 1341.48,
   "passed_at_read": 16517,
@@ -190,8 +190,8 @@
  "census_check": {
   "universe": 22335,
   "passing": 16959,
-  "gap": 4734,
-  "collected_with_gaps": 642,
+  "gap": 4729,
+  "collected_with_gaps": 647,
   "discontinued": 0
  },
  "census_live": {
@@ -8503,12 +8503,11 @@
    "harvested": true,
    "slug": "norco",
    "programs": 161,
-   "passing": 142,
-   "gap": 19,
+   "passing": 147,
+   "gap": 14,
    "causes": {
     "no_closed_list": 11,
-    "page_not_found": 3,
-    "unknown_without_live": 5
+    "page_not_found": 3
    },
    "census_causes": {
     "course_added": 1,
@@ -8563,9 +8562,7 @@
    "run": "45964327019",
    "levers": {
     "program_course_file_check": 11,
-    "ge_units_steps": 3,
-    "reader_page_search": 3,
-    "reconcile_steps": 2
+    "reader_page_search": 3
    },
    "collection": {
     "program_reader": {

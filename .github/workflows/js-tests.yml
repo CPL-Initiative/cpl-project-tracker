@@ -1057,6 +1057,12 @@ jobs:
       - name: Cheap piles S740 at Norco (the census's piles, the flattened table's holds, the plan)
         if: matrix.shard == 1
         run: python3 tests/program_piles_s740_norco_test.py
+      # S741 at Norco, after the group-end read's reread (45964327019, reread 45969610504): five of s740c1's holds,
+      # each with its gap named (32830, 37311, 44961 ge_units_not_read by the rule; 39998 and 40064
+      # noted_figures_differ: 16.00 printed over APP-450 at 4.00); the plan s741r1.
+      - name: Cheap piles S741 at Norco, after the reread (three transfer degrees, Manufacturing Technician 2, the plan)
+        if: matrix.shard == 1
+        run: python3 tests/program_piles_s741_norco_test.py
       # S740 at Solano (lane 1): the lever's 14, 6 passed by the free reconcile 45840125172 (SOCI for SOC), 3 collected with
       # named gaps (pool_figure_not_read, noted_figures_differ, total_not_printed from page read 45835049303), 5 held; the plan.
       - name: Cheap piles S740 at Solano (the reconcile's six, named gaps, the own-page holds, the plan)
