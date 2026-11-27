@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-27T08:08:59Z",
+ "written_at": "2026-11-27T08:17:13Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,8 +168,8 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17599,
-  "gap": 4736,
+  "passing": 17600,
+  "gap": 4735,
   "with_gap": 118,
   "cost_usd": 1341.41,
   "passed_at_read": 16504,
@@ -190,8 +190,8 @@
  "census_check": {
   "universe": 22335,
   "passing": 16950,
-  "gap": 4736,
-  "collected_with_gaps": 649,
+  "gap": 4735,
+  "collected_with_gaps": 650,
   "discontinued": 0
  },
  "census_live": {
@@ -8806,13 +8806,13 @@
    "harvested": true,
    "slug": "orange_coast",
    "programs": 328,
-   "passing": 255,
-   "gap": 73,
+   "passing": 256,
+   "gap": 72,
    "causes": {
     "no_closed_list": 27,
     "page_not_found": 30,
     "places_none": 5,
-    "unknown_without_live": 11
+    "unknown_without_live": 10
    },
    "census_causes": {
     "coverage_fails": 4,
@@ -8872,7 +8872,7 @@
    "levers": {
     "reader_page_search": 30,
     "program_course_file_check": 27,
-    "reconcile_steps": 10,
+    "reconcile_steps": 9,
     "reader_page_assignment": 5,
     "ge_units_steps": 1
    },

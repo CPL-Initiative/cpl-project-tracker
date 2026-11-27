@@ -1193,6 +1193,11 @@ jobs:
       - name: Cheap piles S741 at Orange Coast (the cross-listed rename, a named gap, the plan)
         if: matrix.shard == 3
         run: python3 tests/program_piles_s741_orangecoast_test.py
+      # S741 at Orange Coast, second plan (s741f): 32790, the Cal-GETC certificate, under noted_section_cut_off, its
+      # live run proved by the conductor's committed live read.
+      - name: Cheap piles S741 at Orange Coast, second plan (the Cal-GETC certificate's cut-off text, the plan)
+        if: matrix.shard == 3
+        run: python3 tests/program_piles_s741_orangecoast2_test.py
       # S741 at El Camino (s741c): 31319 and 42541 under total_differs, each listed from a free page read; 2 held.
       - name: Cheap piles S741 at El Camino (total_differs from a page read, the plan)
         if: matrix.shard == 4
