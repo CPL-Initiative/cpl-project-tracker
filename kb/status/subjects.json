@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 744,
-  "moniker": "SkyCurlew",
+  "session": 745,
+  "moniker": "SkyTattler",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_745_handoff.md",
+  "handoff": "docs/session_746_handoff.md",
   "calls": [
     {
       "title": "The noncredit subject title list",
@@ -62,13 +62,17 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-27T18:48:39Z",
+  "written_at": "2026-11-27T22:06:57Z",
   "project": "subjects",
   "next_step": {
     "title": "Make the subject builder honor Not a subject",
     "text": "The lightning round saves not_a_subject, and kb/subject_decisions.py still lists it as refused, so the status counts do not drop. Make the builder take it, then offer Sam LACCD's 87 schedule titles that differ from the catalog as one list."
   },
   "changes": [
+    {
+      "at": "2026-11-27T20:40:00Z",
+      "text": "Chabot's codes glued to a number, such as ATHL7 and PEAC11, now fold to their subject: 159 rows, Chabot's codes 131 to 106 and its untitled codes 31 to 4, statewide subject codes 2,896 to 2,871, and all 47 person decisions kept. Art, Film and Apprenticeship: Plumbing were filed from Chabot's catalog."
+    },
     {
       "at": "2026-11-23T18:40:00Z",
       "text": "The Subjects tab lists all 118 colleges by title source, with a status for each way to look and the next step."

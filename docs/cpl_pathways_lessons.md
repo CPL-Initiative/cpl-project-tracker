@@ -748,3 +748,26 @@ Verbatim from `docs/reference/lanes/my-college-action-page.md`, moved to keep th
 - **The description shards carry mojibake** (`f-coci-description-shards-mojibake-s744`): `coci_lookup_desc_*.js` holds
   `_x000D_` and UTF-8 read as cp1252 (`Ã¢â‚¬â„¢` for a right quote, `Ã‚Â` for a space); the Commons' course hover
   likely shows it. Clean it at build in `kb/_build_coci_lookup.py`.
+
+## S745 (SkyTattler, Sam's plain session, 2026-11-27): credentials bar, industry certs, the CPL chip, the outside tools
+
+- **What shipped.** #3919 the Credentials list's titles in the Programs blue, opening a bottom bar (the landing page
+  on the college's own exhibits, or the Credential Catalog framed); #3920 the *Industry certs* chip (1,326 programs at
+  76 colleges earn CPL on an industry cert, 634 programs prepare for one, 45 both); #3921 the frame check and the
+  Interconnectivity card's priority connections; #3916 the Pages deploy wait and retry. #3922, the live CPL chip, was
+  finishing at the checkpoint.
+- **Measure a text matcher before it ships.** The prepares-for matcher read 93% and 90% precision over two rounds and
+  about 77% recall (`kb/status/program_certs/_measure.md`); the chip ships with the misses named.
+- **Check an outside page's framing on a runner before designing around it.** Three tools gave three answers: PPM's
+  directory frames, ASSIST refuses, CVC's search refuses readers
+  ([`reference-outside-tools-framing-and-reading`](kb-notes/reference-outside-tools-framing-and-reading.md)).
+- **A sketch in the partner's own logo and terms moves the conversation.** Sam iterated the PPM and ASSIST sketches
+  live and named the advisors (Craig Hayward, Jory Hadsell), both *"all in on interconnecting"*.
+- **Trained by is a gap in `kb/credentials.json`, not in the display.** Only 348 of 2,970 credentials name a training
+  agency; the Cerritos Ironworker Period credentials carry none, so the fill goes through a receipt first.
+
+## S745: the Chabot glue fold (Common Subjects Reference)
+
+- A training note named the pattern (Chabot's ATHL7, PEAC11); explicit code lists again beat a suffix rule, and four
+  look-alike codes (PHEACJUD, MICR, PHSI, PHEA) stay. 47 person decisions carried through the fold, none lost.
+- A filing rule widened for one college (`code_address`) is held at the others until its own measured change.

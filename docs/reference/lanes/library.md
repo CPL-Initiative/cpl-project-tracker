@@ -147,6 +147,10 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
 
 ## Next
 
+- **Library records for the S745 sketches (CPLBrain CLAUDE.md: an artifact made to share gets a record).** PPM
+  https://claude.ai/artifact/4rRKYwJaeTwXmfiYQ6DW7v and ASSIST https://claude.ai/artifact/Vi6yN9NUH2cckKJYqt7KxQ, home
+  `web`, sources in `CPLBrain/04-projects/cpl-initiative/connections/`, through a committed receipt; private until Sam
+  shares them. **NEXT:** write the records, with Trained by (https://claude.ai/artifact/VbgjS2qtA86E8CUDHJvQxe); CVC joins when built.
 - **DECIDED (S669, 2026-11-16): the Credential Catalog (`library/adopt/`), #3405 built.** #3406: the Statewide and
   CPL-AI figures are header boxes that still filter; the introduction starts closed, review cards are short until
   opened, field groups fold (`cpl_catalog_folds`, layout only); Clear all filters sits by the chips. #3407: 16
@@ -161,7 +165,7 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
   `kb/receipts`; Leave it out on a published picture opens a request that replaces the public copy (the file stays
   served until the piece's next publish); a replace-at-once draft with pictures shows the box and a publish step (the
   run skips it every pass); the box's line counts the pictures kept (`fresh.length`), not found.
-- **The Veteran map and the Fact Sheet carry the public header** (S653b; `sam-fact-sheet-no-header-logo-2026-11-14`, `sam-fact-sheet-controls-into-header-2026-11-14`; guards `tests/veteran_map_public_header.test.js`, `tests/factsheet_public_header.test.js`). **NEXT (minor):** the vault's `header.html` has no `aria-current`, so the Fact Sheet's own *CPL Fact Sheet* link opens a second copy, and that test checks the links against the Veteran map's copy. The bullet as it stood: [`library_lessons_archive_3`](../../library_lessons_archive_3.md), *Moved from the lane (S690 checkpoint)*.
+- **The Veteran map and the Fact Sheet's public header** (minor NEXT: the vault's `header.html` lacks `aria-current`): verbatim in [`library_lessons_archive_3`](../../library_lessons_archive_3.md), *Moved from the lane (S745 checkpoint)*.
 - Five shipped records (Revise from the card, S577; the Catalog in the Share menu, #2826; ELL IET Version 5 public; Version 5 in the library look and the dated public cards; the card's quick
   revise, #2824) moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (SkyLoop)*.
 - **Four open rows, each waiting on a person (S650; DECIDED `d-library-four-wait-on-people-s650`).** Ally Barker's

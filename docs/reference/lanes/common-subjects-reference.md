@@ -76,9 +76,7 @@ experience), never its discipline ([`methodology-top-is-a-last-in-line-signal`](
 `r-mq-view-more-than-codes-sam-2026-11-23`: the MQ view joins disciplines, codes and decisions. **DECIDED**
 `d-next-cip-for-mq-type-sam-2026-11-23`.
 
-**Correction:** commit `8afaa532` says "LING now calls LING"; it does not. The statewide calls still read BUSI for
-ACCT, ACCTG, ACC and ACTG (1,012 courses), ANTH for LING, CULN for HOSP, REAL, HUMA or HIST for the religion codes,
-JOUR for MCOM and AVIA for AERO: the model votes from where the M-IDs sit. They move at the re-point re-mint.
+**Correction** (commit `8afaa532`, the statewide calls until the re-point re-mint): verbatim in [`roadmap_archive_8`](../../roadmap_archive_8.md), *(S745 checkpoint)*.
 
 **LIVE: the Progress view (S425, 2026-10-19; guard `tests/csr_progress.test.js`):** verbatim in [`roadmap_archive_8`](../../roadmap_archive_8.md), *(S736 checkpoint)*.
 
@@ -160,10 +158,18 @@ note on EMTCC). `kb/coci_campus_letter.py` holds explicit lists: 26 Cerro Coso c
 drops 20 twins (one control number listed glued and lettered); the older duplicates at De Anza, Cerritos and Victor
 Valley (25 rows) stand. `kb/subject_decisions.py` carries a save on a glued code to the folded code (Sam's ADMJC
 "Administration of Justice" save of 2026-11-26 lands on ADMJ); a direct save on the base wins. Statewide subject codes
-2,924 to 2,896; no person's decision lost. The consumer dry run: closest-M-ID scores move under 0.01, 3 rows change
-candidates, 3 gain one; CPL Pathways' retired-course filter unchanged at both colleges. The stray-code rescore reran
+2,924 to 2,896; no person's decision lost. The stray-code rescore reran
 (Porterville CMRTP now 0; its M-ID CMRT M1001 sits on CMRT). Test `tests/coci_campus_letter_test.py`. Evidence: Cerro
 Coso's *Long-Term Schedule Effective Fall 2024* (vault `raw/2026-11-27-cerro-coso-long-term-schedule-fall-2024.md`).
+
+**LIVE (#3918, S745): the Chabot glue fold.** Sam's Chabot training note: `kb/coci_campus_letter.py` `GLUED` maps a code
+to (base, letters), 25 explicit Chabot codes (ATHL 7, DANC 1, HEAG 6, PEAC 11); PHEACJUD, MICR, PHSI and PHEA stay. 159
+rows fold (29 at Chabot), 20 twins unchanged; Chabot's codes 131 to 106, its untitled 31 to 4; statewide subject codes
+2,896 to 2,871; 47 decisions applied, none lost (the PEACBTC save carries to PEAC). ART Art, FILM Film and PLBG
+Apprenticeship: Plumbing filed from the Chabot catalog (runs 46060688269, 46061067072; rule `code_address` in
+`kb/_file_found_subject_titles.py`). **DECIDED:** the wider `code_address` exception (11 more titles at five colleges:
+Allan Hancock ART FILM; Berkeley City MUSIC; Chaffey ARABIC ART CINEMA DENTAL MUSIC THEATRE; Palomar ART; Rio Hondo ART)
+is held for its own measured change.
 
 **NEXT (S744), in order:**
 1. **The builder honors `not_a_subject`.** The lightning round saves `{not_a_subject: true}`
@@ -172,7 +178,7 @@ Coso's *Long-Term Schedule Effective Fall 2024* (vault `raw/2026-11-27-cerro-cos
 2. **LACCD:** 41 codes still untitled; offer Sam the 87 schedule titles that differ from the catalog as one list.
 3. **The schedule-tool sweep beyond LACCD** (`r-schedule-tool-first-for-subject-titles-sam-2026-11-26`): none read.
    The colleges with the most untitled codes: Allan Hancock 77, Glendale 57, Santa Barbara City 51, Santiago Canyon 39,
-   Santa Monica 36, Canyons 34, Cerro Coso 32, Chabot 32. Name each college's system in `data_sources` as it is found.
+   Santa Monica 36, Canyons 34, Cerro Coso 32 (Chabot 4 since #3918). Name each college's system in `data_sources` as it is found.
 4. **The Accounting re-point apply.** The dry run (#3867, `kb/_acct_repoint_dryrun.py`, `kb/acct_repoint_out/2026-11-26/`):
    372 M-IDs and 907 courses move to ACCT under Accounting, 1 held, 29 families flagged. **BLOCKED:** Sam's four
    `_SUBJ_DISC::ACC`, `ACCT`, `ACCTG` and `ACTG` saves of 2026-11-24 12:46 (a 1,311-row batch) file them under
@@ -190,7 +196,7 @@ from the 20th edition. The MQ view and the local subject-title collection live i
 
 **The Subjects card (S694, #3620):** each college's local subject codes and printed names beside the common subject codes, on the Commons front at `#commons/subjects`; where it stands and its NEXT: [`commons`](commons.md).
 
-**DECIDED** `d-step-b-owner-courses-bot-2026-11-20` (the plain session of 2026-11-20, under Sam's delegation: *"want you to go with your recommendation"*): the Courses bot owns curation step b, the local subject title. It drafts each title from the state subject code and the catalog's subject heading, as COBIx suggested on #3584; a curator settles the ones that disagree. No view builds step b yet. His to revise.
+**DECIDED** `d-step-b-owner-courses-bot-2026-11-20`: verbatim in [`roadmap_archive_8`](../../roadmap_archive_8.md), *(S745 checkpoint)*.
 
 **Sheet 107 cards 1-3 (S436, 2026-10-20), applied:** the record moved verbatim to [`docs/common_subject_code_tab_lessons.md`](../../common_subject_code_tab_lessons.md), *Moved from the lane (S577): Sheet 107*.
 

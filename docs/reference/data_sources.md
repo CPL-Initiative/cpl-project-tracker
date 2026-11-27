@@ -52,9 +52,9 @@ at least once), Scheduled (read on a routine). An entry states its current stage
 | Credential Engine's top 50 | Connected | Credentials, Exhibits | Schedule the fetch; widen the catalog beyond IT |
 | MIS | Connected, in part | Courses, Programs, CPL counts | Name the course elements a nightly read would use; the student match needs an agreement |
 | WestEd | Asked | Courses, Subjects, Programs | The partner exchange's seed, with Malone |
-| PPM, the Program Pathways Mapper | Assessed | Programs | Confirm whether the October 17 note went out |
-| ASSIST | Assessed; its API needs an institutional key | Courses, Programs | Request an institutional key through a sponsoring college or the CO; read a sample of public agreements to measure the second-signal yield |
-| CVC, the California Virtual Campus | Assessed | Courses, Programs | Find who holds the exchange's course equivalencies; draft a note |
+| PPM, the Program Pathways Mapper | Assessed; framed in a sketch (S745) | Programs | Send Craig Hayward's request (draft in the S745 vault note) |
+| ASSIST | Assessed; read plan on `claude/assist-capture` (S745); keys need an institutional API key | Courses, Programs | Send the ASSIST request (draft in the S745 vault note); measure the second-signal yield on public agreements |
+| CVC, the California Virtual Campus | Assessed (S745) | Courses, Programs | Send Jory Hadsell's request (draft in the S745 vault note); the sketch waits on Sam's saved search |
 | Common Cloud Data Platform | Assessed; the January 2026 report names its four lakes and its deliverables | Courses, Programs, CPL counts | Ask the AI Strategy and Digital Transformation Division whether COBI or MAP can be a Deliverable 4 integration; draft a note for the lead |
 | Common Cloud: the Ellucian Insights lake (each district) | Found | Courses, Programs | Ask for a course, section and program view per district, no student records |
 | Common Cloud: the Ellucian Aggregated Insights lake | Found | Courses, Programs | Read through the unified lake unless fields are missing |
@@ -107,6 +107,16 @@ Program maps colleges publish: each program's courses, term by term. Gap: 3,349 
 3,380 fail a check; a published map is a second reading of the same requirements. A note asking the mapper's team for
 access was drafted on 2026-10-17 (`CPLBrain/04-projects/cpl-initiative/20261017_Catalog_Reader_Access_Notes_Draft_1.md`,
 section 5); the record does not show it sent. Named by Sam, 2026-11-04.
+**Read S745 (2026-11-27, runs 46064228996, 46064419390; `kb/_college_page_read.py` `frame_check`, plan
+`kb/college_reads/outside_tools_frame_check.json`):** the directory `programmapper.org/ppm-schools/?search=<college>`
+allows framing; each college's map site refuses automated reading (403). A map opens by address
+`/pathway/<slug>/?pt=map&year=2026&t[]=1..4` (`&v=1` is Table View). **FINDING** `f-ppm-share-print-403-lockout-s745`:
+Share or Print answers 403, and then every map refuses that browser until its site data is cleared (Sam, Firefox and
+Edge). Operator: FoundationCCC (KCCD origin; Concentric Sky built it under the KCCD MOU; the RFP #25-006 maintenance
+award was not found). **FINDING** `f-ppm-invoke-learning-integration-sam-2026-11-27`: PPM integrates with Invoke
+Learning by a per-college API key, and the two collaborate on CPL tools and dashboards. Advisor: Craig Hayward
+(`f-ppm-cvc-advisors-hayward-hadsell-sam-2026-11-27`). Sketch: https://claude.ai/artifact/4rRKYwJaeTwXmfiYQ6DW7v
+(Bakersfield Welding A.S.).
 
 ### ASSIST
 Course-to-course articulation from each community college to UC and CSU. Gap: two colleges' courses that articulate
@@ -114,11 +124,23 @@ to the same UC or CSU course are a second signal for one common course, and ASSI
 program requirements need. Connecting takes an API key from ASSIST: institutional requestors first, public access
 expected in 2026-27, under its Terms of Use (COBIx's reading of the ASSIST API docs and data governance policy,
 2026-11-13, #3220; not verified in the repo). Named by Sam, 2026-11-04.
+**Read S745 (2026-11-27):** ASSIST forbids framing (`X-Frame-Options: SAMEORIGIN`). Its public `/api` answers 400 when
+loaded directly, but its own page fetches `/api/institutions`, `/api/AcademicYears` (2026-27 = 77),
+`/api/agreements?receivingInstitutionId&sendingInstitutionId&academicYearId&categoryCode=major` and
+`/api/articulation/Agreements?Key=<key>` (Cerritos 104, CSULB 81). Its AI tool is a chat at
+`assist.org/ai-exploration-tool` with no deep link. Systematic use of agreement keys needs the institutional API key.
+The read plan `kb/college_reads/assist_agreement_capture.json` sits on branch `claude/assist-capture` (runs
+46067598277, 46068149361, 46069112980, 46069814094; no PR). ASSIST names Cerritos LAW 111 where our record has LAW
+110; one of them is stale. Sketch: https://claude.ai/artifact/Vi6yN9NUH2cckKJYqt7KxQ (Cerritos Business Administration
+2.0 to CSULB Management Option).
 
 ### CVC, the California Virtual Campus
 The statewide catalog of online courses and its course exchange between colleges. Gap: the exchange's record of which
 course one college accepts for another's is a second signal for common courses, and it shows which courses run online.
 What the exchange records is this register's reading, to confirm. Named by Sam, 2026-11-04.
+**Read S745 (2026-11-27):** the students page allows framing; `search.cvc.edu`'s robots.txt disallows readers. CVC is a
+CCCCO grant to Foothill-De Anza; no platform vendor was found publicly. Advisor: Jory Hadsell. Sam: *"cvc chip simple
+is fine"*, *"make it Online CVC"*. The sketch waits on his saved ENGL C1000 search (`.mhtml`, private window).
 
 ### Common Cloud Data Platform
 Where college data comes together for the system. Gap: current sections and enrollments would show which courses and

@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-607 document(s).
+608 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -618,6 +618,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [The workplan Activity↔Project linking model — home field vs the N-to-N association table](../kb-notes/reference-workplan-activity-project-linking-model.md) | reference | published | 2026-07-27 | 2026-07-27 |
 | [TMC confidence score & near-auto-approval — what data we hold vs still need](../kb-notes/reference-tmc-confidence-data-requirements.md) | reference | published | 2026-07-01 |  |
 | [Untangling KIN, PE and Athletics costs two identifiers](../kb-notes/reference-kin-pe-athl-identifier-fallout.md) | reference | internal | 2026-09-22 | 2026-09-22 |
+| [What PPM, CVC and ASSIST allow a page to frame or read](../kb-notes/reference-outside-tools-framing-and-reading.md) | reference | published | 2026-11-27 | 2026-11-27 |
 | [CPL Assistant — CCR/CER-grounded recommendations, real-time benchmark & landing-site demand signal](../kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md) | scope | published | 2026-06-19 |  |
 | [CPL Chatbox → Dashboard integration + cpl-knowledge-base re-point (Scope)](../kb-notes/cpl-chatbox-integration-scope.md) | scope | published | 2026-06-01 |  |
 | [Cross-discipline over-merge re-mint (Scope)](../kb-notes/over-merge-remint-scope.md) | scope | published | 2026-05-29 |  |
