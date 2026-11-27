@@ -88,9 +88,13 @@ check(plan["college"] == M.COLLEGE and bare["source_url"] == plan["pages"][0]["u
       "the page read's plan is committed, and it reads the record's own catalog file over its page")
 
 f = W.load("02456")
-check(not f["score"].get("gaps") and not W.on_live_run(f) and str(f["extracted_run"]) == "45176404274"
+# S742's reread 46013175731 posted the record, and its plan s742b files unit_line_not_read on it: no gap and no proved
+# live run as s741d left it, or that kind alone on the posted record.
+kinds = [x["gap"] for x in f["score"].get("gaps") or []]
+check(((not kinds and not W.on_live_run(f)) or (W.on_live_run(f) and kinds in ([], ["unit_line_not_read"])))
+      and str(f["extracted_run"]) == "45176404274"
       and B.closes(f, B.apply_ops(f, [("line", 3, 5)])) and not B.closes(f, B.apply_ops(f, [("line", 3, 4)])),
-      "02456: the 3-5 line closes it at 48-50, it is on no proved live run, and it carries no gap")
+      "02456: the 3-5 line closes it at 48-50; no proved live run and no gap, or posted and S742's kind alone")
 for cn in ("31017", "37510", "41231"):
     check(W.hand[cn] == M.S720.HAND[cn] and not W.load(cn)["score"].get("gaps"), "%s: s720e's reason, and no gap" % cn)
 

@@ -1260,6 +1260,11 @@ jobs:
       - name: Cheap piles S742, batch a (four colleges in one plan, the page's own words)
         if: matrix.shard == 5
         run: python3 tests/program_piles_s742a_test.py
+      # S742 at East Los Angeles (s742b): 02456 under unit_line_not_read, on the row S742's reread (force
+      # 45176404274, kept by keep-better's Academic Plan code) posted; 3 held.
+      - name: Cheap piles S742 at East Los Angeles (the unit line, on the reread's posted row)
+        if: matrix.shard == 6
+        run: python3 tests/program_piles_s742_ela_test.py
       # S741's page pins: American River's Level I and Level II windows each hold their own heading (cut by until),
       # and each site pin (Orange Coast, Fullerton, El Camino, Butte) is its program's own, unfiled address.
       - name: Page pins S741 (American River's two windows, the site pins)
