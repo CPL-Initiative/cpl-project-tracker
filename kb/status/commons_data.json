@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-27T13:38:03Z",
+ "written_at": "2026-11-27T14:08:44Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -868,7 +868,7 @@
    "outcomes_file": "kb/status/commons_data_programs/butte.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-25T08:28:11Z",
+   "read_at": "2026-11-27T12:30:47Z",
    "read_kind": "capture",
    "cost_usd": 10.69,
    "passed_at_read": 156,
@@ -896,8 +896,8 @@
    "capture_root": "https://butte.curriqunet.com/Catalog/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 5571.8,
-   "run": "45576373568",
+   "read_seconds": 5518.7,
+   "run": "46012628995",
    "levers": {
     "program_course_file_check": 24,
     "reader_page_search": 3,
@@ -909,13 +909,13 @@
      "models": {
       "claude-opus-5-5": 165
      },
-     "run": "45576373568",
-     "at": "2026-11-25T08:28:11Z",
+     "run": "46012628995",
+     "at": "2026-11-27T12:30:47Z",
      "cost_usd": 10.69,
      "platform": "curriqunet"
     },
     "slo_read": null,
-    "plo_programs": 164,
+    "plo_programs": 165,
     "ppm_member": null,
     "maps": {
      "held": 0,
