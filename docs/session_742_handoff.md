@@ -234,3 +234,6 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 - 08:54Z: the keep-better fix's round 2 (Fable 5.2): GO (all 79 major-equal unequal records keep their filed record).
   Ventura's reread 45969224515 posted the seven; live at 08:56Z, all equal at 45964322406 (passing). Records
   collected: 34. Cuyamaca's free reconcile 45966682528 filed at 08:53Z on `claude/s741-keys`.
+- 08:58Z: Norco's keep-better account (head `6df4a2bd`) keeps all twelve re-reads; the reread dispatched (force
+  45964327019) and posted: seven equal (30061, 30091, 33751, 33854, 40079, 41680, 44792), 32830, 37311 and 44961
+  incomplete and 39998 and 40064 unequal, for a gap plan. Records collected: 41.
