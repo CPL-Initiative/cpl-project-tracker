@@ -5,8 +5,8 @@
   "course_joins": {
    "few or mixed": {
     "right": 1833,
-    "asked": 3759,
-    "share": 0.488,
+    "asked": 3760,
+    "share": 0.487,
     "score": 49
    },
    "most courses agree": {
@@ -72,9 +72,9 @@
   },
   "sibling": {
    "one letter apart": {
-    "right": 311,
-    "asked": 443,
-    "share": 0.702,
+    "right": 313,
+    "asked": 445,
+    "share": 0.703,
     "score": 70
    },
    "same letters": {
@@ -96,11 +96,11 @@
     "used": false
    },
    "letters, one title": {
-    "right": 35,
+    "right": 36,
     "wrong": 61,
-    "asked": 96,
-    "share": 0.365,
-    "score": 36,
+    "asked": 97,
+    "share": 0.371,
+    "score": 37,
     "used": false
    },
    "letters, several titles": {
@@ -219,21 +219,21 @@
  "web_searches_filed": 313,
  "totals": {
   "common_60_to_89": 232,
-  "common_90_plus": 976,
+  "common_90_plus": 977,
   "common_no_code_yet": 100,
   "common_none": 654,
   "common_under_60": 533,
-  "no_common": 2495,
-  "no_title": 1260,
+  "no_common": 2496,
+  "no_title": 1257,
   "noncredit_common": 501,
   "noncredit_no_common": 688,
-  "noncredit_no_title": 243,
+  "noncredit_no_title": 242,
   "noncredit_title": 21,
-  "noncredit_title_unused_condition": 65,
-  "title_60_to_89": 409,
+  "noncredit_title_unused_condition": 64,
+  "title_60_to_89": 408,
   "title_90_plus": 397,
-  "title_none": 360,
-  "title_under_60": 94
+  "title_none": 359,
+  "title_under_60": 93
  },
  "colleges": [
   {
@@ -3686,22 +3686,12 @@
    "rows": [
     {
      "code": "ADMJC",
-     "title": {
-      "title": "Administration of Justice",
-      "confidence": 70,
-      "from": "sibling",
-      "why": "sibling: code ADMJ at the same college (one letter apart, right 70% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Administration of Justice",
-        "confidence": 70,
-        "from": [
-         "sibling"
-        ],
-        "why": "sibling: code ADMJ at the same college (one letter apart, right 70% of the time)."
-       }
-      ]
+     "common": {
+      "code": "CRIM",
+      "discipline": "Administration of Justice",
+      "confidence": 97,
+      "from": "title",
+      "why": "The title names the discipline Administration of Justice."
      }
     },
     {
@@ -4956,26 +4946,6 @@
       "confidence": 95,
       "from": "own_courses",
       "why": "3 of 4 of its courses with an M-ID sit under HLTH."
-     }
-    },
-    {
-     "code": "PEACBTC",
-     "title": {
-      "title": "Kinesiology Activity",
-      "confidence": 49,
-      "from": "course_joins",
-      "why": "course joins: 1 of 1 joined courses (few or mixed, right 49% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Kinesiology Activity",
-        "confidence": 49,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 1 of 1 joined courses (few or mixed, right 49% of the time)."
-       }
-      ]
      }
     },
     {
