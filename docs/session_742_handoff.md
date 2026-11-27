@@ -240,5 +240,5 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 - 09:00Z: American River 39341's pin binds in free capture 45968461070 (p.206 to p.207, its own page; it had been read
   from p.211); its paid read queued on `claude/s741-piles` behind Fullerton's (only 39341, about $0.08). Butte's and
   Orange Coast's free captures fall to the next session, their pins in place.
-- 09:03Z: Fullerton's paid read 45968499315 filed 36798 (36 against 36, 9 of 9) and 35174 (20 against 20) from their
+- 09:01Z: Fullerton's paid read 45968499315 filed 36798 (36 against 36, 9 of 9) and 35174 (20 against 20) from their
   own Chemistry pages, nothing else moved; the reread (force 45968499315) queued behind 39341's read 45970104024.
