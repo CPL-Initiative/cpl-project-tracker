@@ -188,10 +188,15 @@ print("read %d, moved %d, lost %d" % (read, len(moved), len(lost)))
 print("colleges whose records move: %s" % ", ".join("%s %d" % kv for kv in sorted(by_college.items())))
 check(read > 18000, "the reach read every filed record (%d)" % read)
 check(not lost, "no answer moves from shown to not shown: %s" % lost[:5])
-check(len(moved) == MOVED, "the fold moves %d own-page answers (pinned %d); the capture names each page for its "
-      "program, so this counts reach" % (len(moved), MOVED))
-check(("Cuyamaca College", "18637") not in moved,
-      "18637's filed record does not move (Grossmont's page); its re-read from its own page is what the fold reads")
+# 18637 in either state: its filed record sat on Grossmont's page and did not move; paid read 46003456131 (S742)
+# filed it from its own page under the heading "Requirements", and that record is one more the fold moves.
+cuy = ("Cuyamaca College", "18637")
+with open(os.path.join(CUY_DIR, "records", "18637.json"), encoding="utf-8") as fh:
+    on_own_page = json.load(fh).get("source_url") == OWN_PAGE
+check(len(moved) == MOVED + (cuy in moved), "the fold moves %d own-page answers (pinned %d, and 18637 once it is filed "
+      "from its own page); the capture names each page for its program, so this counts reach" % (len(moved), MOVED))
+check((cuy in moved) == on_own_page,
+      "18637's record filed from Grossmont's page does not move; filed from its own page (read 46003456131) it does")
 
 print("the wrong-join recall: every program on every sibling's page")
 pairs, off, on, wrong = 0, 0, 0, []
