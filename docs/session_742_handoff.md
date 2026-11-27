@@ -221,3 +221,10 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   beat a filed record holding them; 79 filed records at 27 colleges are unequal at the degree with the major equal;
   fix: the new rank holds only where the filed record's own major is not equal). Norco's three keep their choice under
   the fix. Back to `readers`.
+- 08:54Z: East Los Angeles and Santa Monica: keep-better says no dispatch at either (East Los Angeles: 12 already
+  live at 45176404274, 8 for a person's reason, 4 restored as filed on a generic "(Academic Plan E0...)" heading;
+  Santa Monica: 210 live, 4 for a person's reason, 43767 among them); 02456's plan waits with them. Finding
+  (`f-ela-committed-passes-live-older-s741`): ten East Los Angeles records whose committed file is the reconcile
+  45176404274 sit live on older runs, eight passing in the committed files (35087, 35088, 35888, 37510, 38337, 41132,
+  43725, 45987), so the census counts them passed where the live table may not; keep-better's generic-heading test
+  refuses "(Academic Plan E002456C)", which carries the record's own number (the follow-up, with a reader).
