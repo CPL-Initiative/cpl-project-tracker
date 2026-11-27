@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-26T17:59:47Z",
+ "written_at": "2026-11-27T06:24:46Z",
  "rows": [
   {
    "key": "requirements",
@@ -293,7 +293,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-26T06:21:48+00:00",
+    "at": "2026-11-27T06:23:07+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -517,7 +517,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-26T06:18:08Z",
+    "at": "2026-11-27T06:19:15Z",
     "every_hours": 24
    },
    "facts": {
@@ -530,7 +530,7 @@
     "modal": 0,
     "shared": [],
     "missed_alignment": 0,
-    "scanned_at": "2026-11-26",
+    "scanned_at": "2026-11-27",
     "procedures_on": 6
    },
    "sources": [
@@ -827,8 +827,8 @@
     "title": "Common Exhibit Reference",
     "kind": "not_shrinking",
     "n": 597,
-    "was": 546,
-    "since": "2026-11-19",
+    "was": 563,
+    "since": "2026-11-20",
     "words": "credentials with no Common SUBJ (451 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
     "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
     "open": "#exhibits/list/nosubj"

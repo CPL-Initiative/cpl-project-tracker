@@ -8,7 +8,7 @@
 },
 "curation":{
 "path":"kb/coci_curation.json",
-"sha256":"936b0d0b0e91d78ceeb3929a52c20fe6c9292a20670d5b8ce0ee472d8be854a2"
+"sha256":"02d5a0a55193190b2c968eebccbcd8ccb7fdd1f7a8c2765969c5e9000d716552"
 },
 "fall_2025":{
 "path":"kb/reference/cb_course_basic_fall2025.csv",
