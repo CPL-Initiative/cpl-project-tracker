@@ -237,3 +237,6 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 - 08:58Z: Norco's keep-better account (head `6df4a2bd`) keeps all twelve re-reads; the reread dispatched (force
   45964327019) and posted: seven equal (30061, 30091, 33751, 33854, 40079, 41680, 44792), 32830, 37311 and 44961
   incomplete and 39998 and 40064 unequal, for a gap plan. Records collected: 41.
+- 09:00Z: American River 39341's pin binds in free capture 45968461070 (p.206 to p.207, its own page; it had been read
+  from p.211); its paid read queued on `claude/s741-piles` behind Fullerton's (only 39341, about $0.08). Butte's and
+  Orange Coast's free captures fall to the next session, their pins in place.
