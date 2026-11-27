@@ -230,7 +230,15 @@ def page_is_own(rec: dict, source: dict | None = None, note: dict | None = None,
     sources.json entries, {control_number, title, award}) has the same title words and another award kind (COBIx on
     #3557, 7011458372): two awards share the title, so the bare address cannot say whose page it is (College of the
     Redwoods' Welding Technology certificate passed on welding-technology-fall-2025, the A.S.'s page). The row then
-    falls back to the capture's page title or h1; note["shared_title"] names the other programs."""
+    falls back to the capture's page title or h1; note["shared_title"] names the other programs.
+    A word and its plural are one word (S741, PLURAL_FOLD_ON): the state's file titles Cuyamaca 18637 "University
+    Studies: Social and Behavioral Science" and its own page's address and title print "Sciences", so the re-read
+    that placed 92 of its 92 listed courses under the generic heading "Requirements" was set aside (S727). The fold
+    is a second reading, taken only where the exact one shows nothing: an address counts only while the capture's
+    own entry names that page for the program (a sister college's page on a shared host prints the same last
+    segment), and never where another program at the college has a title that differs from this one by a plural
+    alone (plural_twins: the fold could not say whose page it is). The statewide self-recall:
+    tests/program_keep_better_plural_s741_test.py."""
     import urllib.parse
     import _program_requirements_college as C
     from _program_requirements_pilot import award_kind
@@ -271,6 +279,12 @@ def page_is_own(rec: dict, source: dict | None = None, note: dict | None = None,
     src = (source or {}).get("source") if isinstance((source or {}).get("source"), dict) else {}
     if not src or not url or _page(src.get("url")) != _page(url):
         return None
+    # The plural fold (S741), a second reading: only on the page the capture itself names for the program (checked
+    # just above), and never where a sibling's title differs from this one by a plural alone.
+    fold = PLURAL_FOLD_ON and not plural_twins(rec, siblings)
+    if fold and named and singular(page_words(named)) == singular(want) and award_ok(re.sub(r"[-_]+", " ", bare)) \
+            and award_named:
+        return "the address's last segment %r names the program, a plural aside" % slug[:80]
     texts = [(key, C.TITLE_SPLIT.split((src.get(key) or "").strip())[0]) for key in ("title", "h1")]
     if any(text and not award_ok(text) for _, text in texts):
         return None
@@ -285,7 +299,30 @@ def page_is_own(rec: dict, source: dict | None = None, note: dict | None = None,
             continue
         if text and want <= words and ("2.0" in want) == ("2.0" in words):
             return "the capture's %s %r names the program" % ("page title" if key == "title" else key, text[:80])
+        if fold and text and singular(want) <= singular(words) and ("2.0" in want) == ("2.0" in words):
+            return "the capture's %s %r names the program, a plural aside" % (
+                "page title" if key == "title" else key, text[:80])
     return None
+
+
+# S741: a word and its plural read as one word, as a second reading inside page_is_own. PLURAL_FOLD_ON lets a test
+# measure the reading with the fold off.
+PLURAL_FOLD_ON = True
+
+
+def singular(words: set[str]) -> set[str]:
+    """Each word less one closing s: "sciences" and "science", "arts" and "art". A word of three letters or fewer,
+    or one ending in ss ("business"), is left as it is."""
+    return {w[:-1] if len(w) > 3 and w.endswith("s") and not w.endswith("ss") else w for w in words}
+
+
+def plural_twins(rec: dict, siblings: list | None) -> list[str]:
+    """The college's other programs whose title differs from this one's by a plural alone, whatever their award:
+    with one, a folded page or address could be either's."""
+    want = page_words(rec.get("title"))
+    return sorted(str(x.get("control_number")) for x in siblings or []
+                  if str(x.get("control_number")) != str(rec.get("control_number"))
+                  and page_words(x.get("title")) != want and singular(page_words(x.get("title"))) == singular(want))
 
 
 # A catalog term or year after the program's words: -2026, -fall-2026, -2026fa, -2026v2, -2026-27, -intersession.
