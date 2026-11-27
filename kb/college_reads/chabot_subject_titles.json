@@ -1,0 +1,20 @@
+{
+ "_readme": "S745 SkyTattler, 2026-11-27. Sam's training note of 2026-11-27 19:12Z on Chabot's PEACLSF (Commons, Subjects, lightning round): \"For all Chabot subject titles, see this url\". The title hunt's read of 2026-11-25 (run 45630435823, catalog navigation 7490 and 7524) left 32 Chabot codes untitled, most of them physical education activity, older-adult and athletics codes (PEAC*, HEAG*, ATHL*, PHEA). This read renders Sam's page and records the catalog JSON its own scripts fetch, so each code's printed title can be filed with Sam's page as its source (p-subject-title-carries-its-source-sam-2026-11-25). Reads only; no model call.",
+ "college": "Chabot College",
+ "questions": {
+  "subjects": "Every subject code the page lists, with the title it prints for it."
+ },
+ "keywords": [
+  "PEAC", "HEAG", "ATHL", "PHEA", "PHSI", "MICR", "PLBG", "DANCJD", "FILM",
+  "Physical Education", "Kinesiology", "Athletics", "Older Adult", "Mature Adult"
+ ],
+ "pages": [
+  {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/3973/6083",
+   "answers": ["subjects"],
+   "expand": true,
+   "network": true,
+   "network_find": ["PEACLSF", "PEAC", "HEAG", "ATHL"]
+  }
+ ]
+}
