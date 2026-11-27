@@ -2379,21 +2379,22 @@
    "BUS113"
   ],
   "source": {
-   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3551&print",
-   "title": "Degree & Certificate: Marketing, AS - El Camino College",
-   "h1": "Marketing, AS",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3552&print",
+   "title": "Degree & Certificate: Marketing Certificate of Achievement - El Camino College",
+   "h1": "Marketing Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0,
+    "section": "coa",
+    "section_line": "marketing certificate of achievement",
+    "section_fit": 1.0,
     "exact": 0
-   }
+   },
+   "pinned": true
   },
   "listed": 5,
-  "text_chars": 1618
+  "text_chars": 1409
  },
  {
   "control_number": "19862",
@@ -2461,21 +2462,22 @@
    "PHOT106"
   ],
   "source": {
-   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3623&print",
-   "title": "Degree & Certificate: Journalism, AA-T - El Camino College",
-   "h1": "Journalism, AA-T",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3622&print",
+   "title": "Degree & Certificate: Journalism Certificate of Achievement - El Camino College",
+   "h1": "Journalism Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0,
+    "section": "coa",
+    "section_line": "journalism certificate of achievement",
+    "section_fit": 1.0,
     "exact": 0
-   }
+   },
+   "pinned": true
   },
   "listed": 8,
-  "text_chars": 4513
+  "text_chars": 1228
  },
  {
   "control_number": "19867",
@@ -2791,21 +2793,22 @@
    "PHOT257"
   ],
   "source": {
-   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3639&print",
-   "title": "Degree & Certificate: Photography, AS - El Camino College",
-   "h1": "Photography, AS",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3640&print",
+   "title": "Degree & Certificate: Photography Certificate of Achievement - El Camino College",
+   "h1": "Photography Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0,
+    "section": "coa",
+    "section_line": "photography certificate of achievement",
+    "section_fit": 1.0,
     "exact": 0
-   }
+   },
+   "pinned": true
   },
   "listed": 11,
-  "text_chars": 3019
+  "text_chars": 1487
  },
  {
   "control_number": "19884",
@@ -4273,21 +4276,22 @@
    "CIS13"
   ],
   "source": {
-   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3697&print",
-   "title": "Degree & Certificate: Entrepreneurial Studies, AS - El Camino College",
-   "h1": "Entrepreneurial Studies, AS",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3699&print",
+   "title": "Degree & Certificate: Entrepreneurial Studies Certificate of Achievement - El Camino College",
+   "h1": "Entrepreneurial Studies Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0,
+    "section": "coa",
+    "section_line": "entrepreneurial studies certificate of achievement",
+    "section_fit": 1.0,
     "exact": 0
-   }
+   },
+   "pinned": true
   },
   "listed": 11,
-  "text_chars": 1937
+  "text_chars": 1314
  },
  {
   "control_number": "38949",
@@ -5082,21 +5086,22 @@
    "ATEC53"
   ],
   "source": {
-   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3729&print",
-   "title": "Degree & Certificate: Hybrid, Electric, and Alternative Fuels, AS - El Camino College",
-   "h1": "Hybrid, Electric, and Alternative Fuels, AS",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3728&print",
+   "title": "Degree & Certificate: Hybrid, Electric, and Alternative Fuels Certificate of Achievement - El Camino College",
+   "h1": "Hybrid, Electric, and Alternative Fuels Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0,
+    "section": "coa",
+    "section_line": "hybrid, electric, and alternative fuels certificate of achievement",
+    "section_fit": 1.0,
     "exact": 0
-   }
+   },
+   "pinned": true
   },
   "listed": 6,
-  "text_chars": 2424
+  "text_chars": 1761
  },
  {
   "control_number": "44035",
