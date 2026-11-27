@@ -51,13 +51,19 @@ export function exhibitsFor(verified, colleges) {
 // Sam's rulings on the landing-page button, relayed by COBIx on #3527 (2:42, 2:44 and 3:03 PM PT, 2026-11-18): the
 // button opens the college's landing page, never the MAP dashboard; the landing page shows only articulated courses,
 // so the drafter checks no articulation and builds no filter; a college with no landing page on file is said so,
-// with no fallback link. MAP's landing page reads no exhibit from its address today (Sam picks one in Possible
-// Qualifications), so the piece names the exhibit to choose there by MAP's exact title. Sam asked MAP (Malone and
-// Pedro) for ?Exhibit=<MAP ID> on the landing-page template; when it ships, landingButton is the one line that
-// changes. Until then no parameter is added. The exhibits listed here are the ones MAP names the college as owner
-// of: a head start for names and MAP IDs, never a filter (an exhibit a college adopted may not be listed).
+// with no fallback link. MAP's landing page takes the exhibit in its address (Pedro, 2026-11-27, on Sam's ask of
+// 11-18 to Malone and Pedro): ?Exhibit=<MAP ID> puts the ID in the page's search box and lists that exhibit's courses
+// at the college, so the button opens on them and the piece no longer tells the student what to pick. Verified live
+// S744 at Lassen (CPLICI-ASE1-1-001), Cabrillo (MAPCBEN-AFSB-1-001) and Foothill (MAPCXS-S3-1-001): one course each.
+// The MAP ID is the exhibit's code (MAPICA-SM-1-001); MAP's numeric map_id matches nothing. The page reads Exhibit or
+// exhibit, several IDs comma-separated, and no course parameter. The exhibits listed here are the ones MAP names the
+// college as owner of: a head start for names and MAP IDs, never a filter (an exhibit a college adopted may not be
+// listed).
 export function landingButton(landing, exhibit) {
-  return landing || "";
+  if (!landing) return "";
+  const id = exhibit && String(exhibit.id || "").trim();
+  if (!id) return landing;
+  return landing + (landing.includes("?") ? "&" : "?") + "Exhibit=" + encodeURIComponent(id);
 }
 export function referenceBlock(colleges, landing, exhibits) {
   if (!colleges.length) return "";
@@ -65,13 +71,13 @@ export function referenceBlock(colleges, landing, exhibits) {
   for (const c of colleges) {
     let part = `\n${c}\n`;
     part += landing[c]
-      ? `- MAP landing page (where a student requests CPL at this college; every button goes here): ${landing[c]}\n`
+      ? `- MAP landing page (where a student requests CPL at this college; every button goes here, with ?Exhibit=<MAP ID> for the exhibit it is about): ${landing[c]}\n`
       : "- MAP landing page: NONE ON FILE. Say on the page that this college's CPL landing page is not on file yet; give no button and no other link in its place.\n";
     part += `- CPL Opportunity page (internal pieces only): ${OPPORTUNITY_PAGE}${encodeURIComponent(c)}\n`;
     const ex = (exhibits && exhibits[c]) || [];
     if (ex.length) {
       part += `- Exhibits MAP lists ${c} as the owner of, with each MAP ID (a head start for exact names; not a filter, and not every exhibit the college offers):\n`;
-      for (const e of ex) part += `  - ${e.title} (MAP ID ${e.id})` + (landing[c] ? `: button to ${landingButton(landing[c], e)}; tell the student to choose "${e.title}" under Possible Qualifications` : "") + "\n";
+      for (const e of ex) part += `  - ${e.title} (MAP ID ${e.id})` + (landing[c] ? `: button to ${landingButton(landing[c], e)}` : "") + "\n";
     }
     if (out.length + part.length > MAX_REFERENCE) { out += "\n(More colleges were named than fit; name fewer per piece.)\n"; break; }
     out += part;
