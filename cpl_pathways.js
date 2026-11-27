@@ -2121,7 +2121,8 @@
     if (back && back.hasAttribute && back.hasAttribute("aria-expanded")) back.setAttribute("aria-expanded", "false");
     if (back && document.contains(back)) { try { back.focus(); } catch (e) { /* best effort */ } }
   }
-  /* o: { college, what, exhibits, opener } — the bar opens on o.exhibits' passing codes. With o.url the bar frames that
+  /* o: { college, what, exhibits, opener, via, listHead } — the bar opens on o.exhibits' passing codes; via says how
+     the page opened when no code passes, listHead (or listTitle) heads the exhibit list. With o.url the bar frames that
      page instead (the Credential Catalog for a credential the college could add), under o.heading and o.via. */
   function openGetCreditBar(o) {
     var host = getBar.host;
@@ -2142,8 +2143,8 @@
     h.tabIndex = -1;
     words.appendChild(h);
     words.appendChild(el("span", "what", o.what));
-    var via = el("span", "via", o.via ? o.via : codes.length ? "Opened on MAP exhibit " + codes.join(", ")
-      : "MAP cannot open these exhibits by their codes, so the page opens on every course");
+    var via = el("span", "via", o.url && o.via ? o.via : codes.length ? "Opened on MAP exhibit " + codes.join(", ")
+      : o.via || "MAP cannot open these exhibits by their codes, so the page opens on every course");
     words.appendChild(via);
     var close = el("button", "cplpw-gbar-close", "Close");
     close.type = "button";
@@ -2157,7 +2158,7 @@
     body.appendChild(frameBox);
     if ((o.exhibits || []).length) {
       var side = el("div", "list");
-      side.appendChild(el("h4", null, o.listTitle || "CPL for this course"));
+      side.appendChild(el("h4", null, o.listHead || o.listTitle || "CPL for this course"));
       var ul = el("ul");
       o.exhibits.forEach(function (e) { ul.appendChild(exhibitLine(e)); });
       side.appendChild(ul);
@@ -2213,12 +2214,12 @@
     var g = side.aside && side.aside.querySelector(".cplpw-cside-grip");
     if (g) { g.setAttribute("aria-valuenow", String(w)); if (max) g.setAttribute("aria-valuemax", String(max)); }
   }
-  function sideGrip() {
+  function sideGrip(label) {
     var g = el("span", "cplpw-cside-grip");
     g.setAttribute("role", "separator");
     g.setAttribute("tabindex", "0");
     g.setAttribute("aria-orientation", "vertical");
-    g.setAttribute("aria-label", "Resize the course details");
+    g.setAttribute("aria-label", label || "Resize the course details");
     g.setAttribute("aria-valuemin", String(SIDE_MIN));
     g.setAttribute("aria-valuenow", String(side.w));
     g.addEventListener("keydown", function (e) {
@@ -2355,6 +2356,172 @@
     sideSet(side.w);
     try { h.focus(); } catch (e) { /* best effort */ }
     fillCourseDesc(o.rec, o.code, o.info, dtext);
+    return aside;
+  }
+
+  /* ── Industry certs on the program card (Sam, 2026-11-27: "when you find that there are also stackable industry
+     certs associated with a program though a CPL exhibit or becasue the program teaches to a cert like CompTIA or
+     both, can you note it with a chip that clicks to a sidebar for deatils?"). kb/_build_program_certs.py files one
+     small file per college (kb/status/program_certs/<slug>.json, its index.json naming each college's slug), read
+     lazily like the ladders. Two groups per program: Earns CPL here (an Industry Certification credential whose credit
+     at this college lands on a course of the program) and The program prepares for (a certification the catalog's
+     outcomes or careers name, quoted). The words "Industry certs" with the count show only when either group holds
+     one; they open the sidebar beside the view (the course sidebar's frame: resizable, frozen top row, Close). */
+  var CERTS_DIR = "kb/status/program_certs/";
+  var certCache = { index: undefined, colleges: {} };
+  var CERTS_CSS = [
+    ".cplpw-rcerts { margin-top:10px; }",
+    ".cplpw-rcerts-open { font:inherit; font-size:14px; font-weight:600; background:none; border:0; padding:0; min-height:24px; color: var(--accent-link); text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; cursor:pointer; text-align:left; }",
+    ".cplpw-rcerts-open:hover { text-decoration-thickness:2px; }",
+    ".cplpw-rcerts-open:focus-visible { outline:3px solid var(--focus-ring, var(--cobalt)); outline-offset:2px; }",
+    ".cplpw-certs h4 { margin:0 0 6px; font-size:12px; letter-spacing:.06em; text-transform:uppercase; color: var(--seal-blue-text); }",
+    ".cplpw-certs ul { list-style:none; margin:0; padding:0; display:grid; gap:10px; }",
+    ".cplpw-certs li { display:flex; flex-direction:column; gap:2px; padding-bottom:10px; border-bottom:1px solid var(--border); }",
+    ".cplpw-certs .t { font-weight:700; color: var(--text-strong); overflow-wrap:anywhere; }",
+    ".cplpw-certs .k { font-size:13px; color: var(--text-muted); overflow-wrap:anywhere; }",
+    ".cplpw-certs .both { font-size:13px; font-weight:600; color: var(--seal-blue-text); }",
+    ".cplpw-certs blockquote { margin:4px 0 0; padding:0 0 0 10px; border-left:3px solid var(--border-strong); font-size:13px; color: var(--text-body); overflow-wrap:anywhere; }",
+    ".cplpw-certs .lede { font-size:13px; color: var(--text-muted); }",
+    "@media (prefers-reduced-motion: reduce) { .cplpw-rcerts-open, .cplpw-certs * { transition:none !important; } }"
+  ].join("\n");
+  function ensureCertsCss() {
+    if (document.getElementById("cplpw-certs-css")) return;
+    var s = document.createElement("style");
+    s.id = "cplpw-certs-css";
+    s.textContent = CERTS_CSS;
+    document.head.appendChild(s);
+  }
+  function certJson(path) {
+    if (typeof window.fetch !== "function") return Promise.resolve(null);
+    try {
+      return Promise.resolve(window.fetch(CERTS_DIR + path, { cache: "no-cache" })).then(function (r) {
+        return r && r.ok && typeof r.json === "function" ? r.json() : null;
+      }).catch(function () { return null; });
+    } catch (e) { return Promise.resolve(null); }
+  }
+  // The college's certs file, or null: read once a visit per college, a failed read kept as null.
+  function certsFor(college) {
+    if (certCache.colleges[college] !== undefined) return Promise.resolve(certCache.colleges[college]);
+    var idx = certCache.index !== undefined ? Promise.resolve(certCache.index)
+      : certJson("index.json").then(function (d) { certCache.index = d && d.colleges ? d.colleges : null; return certCache.index; });
+    return idx.then(function (map) {
+      var slug = map && map[college];
+      if (!slug || !/^[a-z0-9_]+$/.test(slug)) return null;
+      return certJson(slug + ".json");
+    }).then(function (d) {
+      var v = d && d.programs && typeof d.programs === "object" ? d.programs : null;
+      certCache.colleges[college] = v;
+      return v;
+    });
+  }
+  function certGroups(rec, file) {
+    var v = file && file[String(rec.control_number)];
+    return { earns: (v && v.earns_cpl_here) || [], prep: (v && v.prepares_for) || [] };
+  }
+  function drawCertsControl(host, rec, file) {
+    clearNode(host);
+    var g = certGroups(rec, file);
+    var n = g.earns.length + g.prep.filter(function (p) { return !p.both; }).length;
+    if (!g.earns.length && !g.prep.length) { host.hidden = true; return; }
+    host.hidden = false;
+    var b = el("button", "cplpw-rcerts-open", "Industry certs (" + n + ")");
+    b.type = "button";
+    b.setAttribute("aria-controls", "cplpw-cside");
+    b.setAttribute("aria-expanded", "false");
+    b.setAttribute("aria-label", "Industry certs: " + n + " connected to this program, details beside the view");
+    b.addEventListener("click", function () { openCertSide(rec, g, b); });
+    host.appendChild(b);
+  }
+  // The control's place on the program card, filled when the college's file is read (at once when it was read before).
+  function roepCerts(rec) {
+    ensureCertsCss();
+    var host = el("div", "cplpw-rcerts");
+    host.hidden = true;
+    var have = certCache.colleges[rec.college];
+    if (have !== undefined) { drawCertsControl(host, rec, have); return host; }
+    certsFor(rec.college).then(function (file) { drawCertsControl(host, rec, file); }, function () { host.hidden = true; });
+    return host;
+  }
+  function certEarnsItem(rec, e) {
+    var li = el("li");
+    li.appendChild(el("span", "t", e.t || ""));
+    if (e.i) li.appendChild(el("span", "k", "Issued by " + e.i));
+    li.appendChild(el("span", "k", "Gives credit for " + (e.courses || []).join(", ") + " in this program"));
+    if (e.both) li.appendChild(el("span", "both", "The catalog names it too"));
+    var ex = (e.exhibits || []).map(function (x) { return { exhibit: x, credential: e.t, type: "Industry certification" }; });
+    var go = el("button", "cplpw-rgo", "Get credit");
+    go.type = "button";
+    go.setAttribute("aria-controls", "cplpw-gbar");
+    go.setAttribute("aria-expanded", "false");
+    go.setAttribute("aria-label", "Get credit for " + (e.t || "this certification") + " at " + rec.college + ", in the bar below");
+    go.addEventListener("click", function () {
+      openGetCreditBar({ college: rec.college, what: (e.t || "") + " · " + (e.courses || []).join(", "), exhibits: ex, opener: go,
+        listHead: "CPL for this certification",
+        via: "No exhibit for it is filed under " + rec.college + ", so the page opens on every course" });
+    });
+    li.appendChild(go);
+    return li;
+  }
+  function certPrepItem(p) {
+    var li = el("li");
+    li.appendChild(el("span", "t", p.name || ""));
+    if (p.issuer) li.appendChild(el("span", "k", "Issued by " + p.issuer));
+    if (p.both) li.appendChild(el("span", "both", "Also earns CPL here"));
+    li.appendChild(el("span", "k", p.from === "careers" ? "The catalog's careers for the program:" : "The catalog's outcomes for the program:"));
+    li.appendChild(el("blockquote", null, p.quote || ""));
+    return li;
+  }
+  /* g: { earns, prep } — the sidebar beside the view, its two groups headed. */
+  function openCertSide(rec, g, opener) {
+    if (!side.split) return null;
+    var again = side.opener === opener;
+    closeCourseSide(true);
+    if (again) { try { opener.focus(); } catch (e) { /* best effort */ } return null; }
+    var aside = el("aside", "cplpw-cside");
+    aside.id = "cplpw-cside";
+    aside.setAttribute("aria-labelledby", "cplpw-cside-h");
+    aside.appendChild(sideGrip("Resize the industry certs"));
+    var head = el("div", "cplpw-cside-head");
+    var h = el("h3", null, "Industry certs");
+    h.id = "cplpw-cside-h";
+    h.tabIndex = -1;
+    var hw = el("div", "w", [h]);
+    hw.appendChild(el("span", "u", rec.title || ""));
+    var close = el("button", "cplpw-cside-close", "Close");
+    close.type = "button";
+    close.addEventListener("click", function () { closeCourseSide(); });
+    head.appendChild(hw);
+    head.appendChild(close);
+    aside.appendChild(head);
+    var body = el("div", "cplpw-cside-body cplpw-certs");
+    if (g.earns.length) {
+      var es = el("section", "earns");
+      es.appendChild(el("h4", null, "Earns CPL here (" + g.earns.length + ")"));
+      es.appendChild(el("p", "lede", "Industry certifications " + rec.college + " gives credit for, on courses this program requires or lists."));
+      var eu = el("ul");
+      g.earns.forEach(function (e) { eu.appendChild(certEarnsItem(rec, e)); });
+      es.appendChild(eu);
+      body.appendChild(es);
+    }
+    if (g.prep.length) {
+      var ps = el("section", "prep");
+      ps.appendChild(el("h4", null, "The program prepares for (" + g.prep.length + ")"));
+      ps.appendChild(el("p", "lede", "Certifications the college's catalog names for this program, in its words."));
+      var pu = el("ul");
+      g.prep.forEach(function (p) { pu.appendChild(certPrepItem(p)); });
+      ps.appendChild(pu);
+      body.appendChild(ps);
+    }
+    aside.appendChild(body);
+    aside.addEventListener("keydown", function (e) { if (e.key === "Escape") closeCourseSide(); });
+    side.split.appendChild(aside);
+    side.split.classList.add("open");
+    side.aside = aside; side.tile = null; side.more = null; side.opener = opener;
+    opener.setAttribute("aria-expanded", "true");
+    sideSet(side.w);
+    /* The control sits on the program card above the split, so bring the sidebar into the window as it opens. */
+    try { if (typeof aside.scrollIntoView === "function") aside.scrollIntoView({ block: "nearest" }); } catch (e) { /* best effort */ }
+    try { h.focus(); } catch (e) { /* best effort */ }
     return aside;
   }
 
@@ -3331,7 +3498,9 @@
     controls.appendChild(ask);
     wrap.appendChild(controls);
 
-    wrap.appendChild(roepProgramCard(rec));
+    var progCard = roepProgramCard(rec);
+    progCard.appendChild(roepCerts(rec));
+    wrap.appendChild(progCard);
     wrap.appendChild(roepStack(rec));
     var grid = el("div", "cplpw-rgrid" + (roepView.who === "college" ? "" : " public"));
     grid.appendChild(roepView.lay === "term" ? roepTermMap(rec) : roepRequirementMap(rec));
@@ -5071,6 +5240,7 @@
     _roepView: roepView,
     _getCreditCodes: getCreditCodes,
     _getCreditUrl: getCreditUrl,
+    _certCache: certCache,
     _cleanDesc: cleanDesc,
     _ccrWho: function () { return ccrWho; },
     _ladderBlocks: ladderBlocks,
