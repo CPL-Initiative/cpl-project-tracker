@@ -1,0 +1,1704 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30); Sam's routine prompt of 2026-11-25, as the S739 conductor's brief carries it: a record held for a gap is collected with its gap named and a lower score on the 0-100 bar, never held, unless the record is not the program's own; S739: Norco's records kb/receipts/program_requirement_records_piles_s739_norco_2026-11-26_s740c1.json held, read again by key: passed by a rescore where today's scorer's one reading moves them, else collected with their gaps named where the record is the program's own (no reread, no reconcile)",
+ "at": "2026-11-27T09:01:39Z",
+ "college": "Norco College",
+ "keys": {
+  "from": "kb/receipts/program_requirement_records_piles_s739_norco_2026-11-26_s740c1.json",
+  "members": [
+   "32830",
+   "37311",
+   "44961",
+   "39998",
+   "40064"
+  ]
+ },
+ "gaps": {
+  "ge_units_not_read": "The degree names a general education pattern, and no units for it were read, so the degree's units cannot be added. Its major adds up to the printed major total.",
+  "noted_figures_differ": "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires."
+ },
+ "moved": 5,
+ "by": {
+  "ge_units_not_read": 3,
+  "noted_figures_differ": 2
+ },
+ "precision": {
+  "read": 5,
+  "right": 5,
+  "wrong": [],
+  "no_record_file": 0,
+  "not_hand_held": 0,
+  "by_answer": {
+   "ge_units_not_read": 3,
+   "noted_figures_differ": 2
+  }
+ },
+ "claim_checks": {
+  "counts": {
+   "stands": 5
+  },
+  "not_standing": []
+ },
+ "boundaries": {
+  "counts": {
+   "the stated total one unit off right": 5,
+   "coverage failing right": 5,
+   "the note's words gone right": 2,
+   "the reading against a total one unit off right": 2,
+   "its own section not shown right": 2
+  },
+  "wrong": []
+ },
+ "held": [],
+ "records": [
+  {
+   "college": "Norco College",
+   "control_number": "32830",
+   "award": "A.A- T Degree",
+   "extracted_run": "45964327019",
+   "moves_to": "ge_units_not_read",
+   "words": "the degree names the Cal-GETC pattern and no units were read for it; its major adds to the printed 18",
+   "confidence": {
+    "unit_arithmetic": 50,
+    "course_list_match": 100,
+    "ge_pattern": 50,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/norco/records/32830.json",
+   "before_image": {
+    "program_title": "Philosophy",
+    "award": "A.A- T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5218",
+    "measure": "units",
+    "total_min": 18,
+    "total_max": 18,
+    "record": {
+     "program": {
+      "section_heading": "Philosophy - Associate in Arts for Transfer (ADT)",
+      "measure": "units",
+      "total_units": {
+       "min": 18,
+       "max": 18
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "Cal-GETC",
+      "degree_total": {
+       "min": 60,
+       "max": 60
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Analyze and critically evaluate the work of major figures in philosophy.",
+       "Compare and contrast different philosophical views across historical periods and contexts of human experience.",
+       "Evaluate the most important topics in key areas of philosophy: theory of knowledge, metaphysics, ethics.",
+       "Demonstrate the ability to apply philosophical ideas to philosophical problems.",
+       "Express philosophical ideas and defend them in argument, both in writing and orally."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 9,
+        "max": 9
+       },
+       "courses": [
+        {
+         "code": "PHI-10",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "PHI-10H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHI-12",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHI-32",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "MATH-32",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List A",
+       "rule": "choose_courses",
+       "minimum": 2,
+       "option_group": null,
+       "stated": {
+        "min": 6,
+        "max": 6
+       },
+       "courses": [
+        {
+         "code": "PHI-11",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHI-22",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHI-33",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHI-35",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "HUM-35",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHI-36",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List B",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "HIST-1",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST-2",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HUM-4",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "HUM-4H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "HUM-5",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "HUM-5H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "HUM-10",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "HUM-10H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "HUM-18",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHI-18",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHI-19",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHI-34",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 23,
+     "listed": 23
+    },
+    "extracted_run": "45964327019"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 23,
+     "listed": 23,
+     "gaps": [
+      "ge_units_not_read"
+     ],
+     "confidence": {
+      "unit_arithmetic": 50,
+      "course_list_match": 100,
+      "ge_pattern": 50,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 1
+  },
+  {
+   "college": "Norco College",
+   "control_number": "37311",
+   "award": "A.S. T Degree",
+   "extracted_run": "45964327019",
+   "moves_to": "ge_units_not_read",
+   "words": "the degree names the Cal-GETC pattern and no units were read for it; its major adds to the printed 41",
+   "confidence": {
+    "unit_arithmetic": 50,
+    "course_list_match": 100,
+    "ge_pattern": 50,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/norco/records/37311.json",
+   "before_image": {
+    "program_title": "Environmental Science",
+    "award": "A.S. T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5185",
+    "measure": "units",
+    "total_min": 41,
+    "total_max": 41,
+    "record": {
+     "program": {
+      "section_heading": "Environmental Science - Associate in Science for Transfer (ADT) - NAS893 (Cal-GETC)",
+      "measure": "units",
+      "total_units": {
+       "min": 41,
+       "max": 41
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "Cal-GETC",
+      "degree_total": {
+       "min": 60,
+       "max": 60
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Examine the impact of humankind on the environment from scientific, sociological, political, and economic viewpoints both locally and globally.",
+       "Apply concepts and implement skills learned in the sciences, mathematics, and humanities to real-world environmental issues.",
+       "Demonstrate an ability to examine scientific evidence demonstrating how human activities affect many ecosystems and recommend alternatives to present practices."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 15,
+        "max": 15
+       },
+       "courses": [
+        {
+         "code": "BIO-60",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHE-1A",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Courses: Select one course",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 5,
+        "max": 5
+       },
+       "courses": [
+        {
+         "code": "BIO-61",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHE-1B",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Electives - List A",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 15,
+        "max": 15
+       },
+       "courses": [
+        {
+         "code": "BIO-19",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEG-1L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Electives - List A: Select one of the following (Geography)",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "GEG-1",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEG-1H",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Electives - List A: Select one of the following (Statistics)",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 4,
+        "max": 4
+       },
+       "courses": [
+        {
+         "code": "STAT-C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "STAT-C1000H",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC-48",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOC-48",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Electives - List A: Select one of the following (Calculus)",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 4,
+        "max": 4
+       },
+       "courses": [
+        {
+         "code": "MATH-C2210",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MATH-C2210H",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Electives - List B: Select one of the following (Economics)",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "ECON-C2001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ECON-C2001H",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Take one of the following Physics sequences: Option 1",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Physics sequence",
+       "stated": {
+        "min": 8,
+        "max": 8
+       },
+       "courses": [
+        {
+         "code": "PHY-2A",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHY-2B",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Take one of the following Physics sequences: Option 2",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Physics sequence",
+       "stated": {
+        "min": 8,
+        "max": 8
+       },
+       "courses": [
+        {
+         "code": "PHY-4A",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHY-4B",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 20,
+     "listed": 20
+    },
+    "extracted_run": "45964327019"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 20,
+     "listed": 20,
+     "gaps": [
+      "ge_units_not_read"
+     ],
+     "confidence": {
+      "unit_arithmetic": 50,
+      "course_list_match": 100,
+      "ge_pattern": 50,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 2
+  },
+  {
+   "college": "Norco College",
+   "control_number": "44961",
+   "award": "A.A- T Degree",
+   "extracted_run": "45964327019",
+   "moves_to": "ge_units_not_read",
+   "words": "the degree names the Cal-GETC pattern and no units were read for it; its major adds to the printed 32-33",
+   "confidence": {
+    "unit_arithmetic": 50,
+    "course_list_match": 100,
+    "ge_pattern": 50,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/norco/records/44961.json",
+   "before_image": {
+    "program_title": "Law, Public Policy, and Society",
+    "award": "A.A- T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5581",
+    "measure": "units",
+    "total_min": 32,
+    "total_max": 33,
+    "record": {
+     "program": {
+      "section_heading": "Law, Public Policy, and Society - Associate in Arts for Transfer (ADT) - NAA1008 (Cal-GETC)",
+      "measure": "units",
+      "total_units": {
+       "min": 32,
+       "max": 33
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "Cal-GETC",
+      "degree_total": {
+       "min": 60,
+       "max": 60
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Evaluate current legal and social issues by applying the relevant judicial framework.",
+       "Analyze issues by applying relevant rules of law, ethical standards, and social mores.",
+       "Produce and evaluate arguments based on appropriate legal concepts and evidence."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Courses: Select one of the following",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "ADJ-1",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ADJ-1H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ADJ-2",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ADJ-3",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ADJ-3H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "BUS-18A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "PHI-12",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Courses: Select one of the following (Communication)",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "COMM-C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "COMM-C1000H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "COMM-6",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Courses: Select one of the following (English Composition)",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 4,
+        "max": 4
+       },
+       "courses": [
+        {
+         "code": "ENGL-C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL-C1000H",
+           "units": 4,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Courses: Select one of the following (Critical Thinking)",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 4
+       },
+       "courses": [
+        {
+         "code": "ENGL-C1003",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL-C1003H",
+           "units": 4,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "COMM-2",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COMM-3",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Courses: Select one of the following (Statistics)",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 4,
+        "max": 4
+       },
+       "courses": [
+        {
+         "code": "STAT-C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "STAT-C1000H",
+           "units": 4,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC-48",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOC-48",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Courses: Select one of the following (U.S. History)",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "HIST-C1001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "HIST-C1001H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST-C1002",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "HIST-C1002H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "Required Courses: Select one of the following (American Government)",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "POLS-C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "POLS-C1000H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Electives",
+       "rule": "choose_units",
+       "minimum": 6,
+       "option_group": null,
+       "stated": {
+        "min": 6,
+        "max": 6
+       },
+       "courses": [
+        {
+         "code": "ADJ-1",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ADJ-1H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ADJ-2",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ADJ-3",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ADJ-3H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ADJ-4",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ADJ-5",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ADJ-8",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ADJ-20",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOC-20",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BUS-18A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECON-C2002",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ECON-C2002H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": true
+        },
+        {
+         "code": "ECON-C2001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ECON-C2001H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": true
+        },
+        {
+         "code": "POLS-2",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLS-4",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "POLS-4H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLS-11",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ADJ-9",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ADJ-9H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ETS-1",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLS-5",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOC-2",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SJS-110",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANT-2",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ANT-2H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "COMM-12",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEG-2",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOC-10",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "SOC-10H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "GUI-48",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ADJ-200",
+         "units": 1,
+         "units_max": 4,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 53,
+     "listed": 53
+    },
+    "extracted_run": "45964327019"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 53,
+     "listed": 53,
+     "gaps": [
+      "ge_units_not_read"
+     ],
+     "confidence": {
+      "unit_arithmetic": 50,
+      "course_list_match": 100,
+      "ge_pattern": 50,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 3
+  },
+  {
+   "college": "Norco College",
+   "control_number": "39998",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "extracted_run": "45964327019",
+   "moves_to": "noted_figures_differ",
+   "words": "Required courses block states 16.00 units but lists only APP-450 at 4.00 units; APP-450 is presumably repeated or taken for 16 units total. Reviewer should check.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "own_section",
+   "path": "kb/program_requirements_college/norco/records/39998.json",
+   "before_image": {
+    "program_title": "Apprenticeship: Manufacturing Technician 2",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5139",
+    "measure": "units",
+    "total_min": 30,
+    "total_max": 31,
+    "record": {
+     "program": {
+      "section_heading": "Apprenticeship: Manufacturing Technician II - Associate of Science Degree and Certificate of Achievement - NAS967/C/NCE967",
+      "measure": "units",
+      "total_units": {
+       "min": 30,
+       "max": 31
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Apply industry standard safety practices and specific safety requirements for different machining operations.",
+       "Produce high precision parts out of a variety of conventional machine tools.",
+       "Demonstrate advanced manufacturing technical practices and procedures that are applicable to all sectors of manufacturing.",
+       "Demonstrate knowledge of CNC specific technical work practices, such as blueprint reading, applied math concepts, tools, and measurement concepts."
+      ],
+      "careers": [
+       "journey level Manufacturing Technician"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 16,
+        "max": 16
+       },
+       "courses": [
+        {
+         "code": "APP-450",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "Elective Courses",
+       "rule": "choose_units",
+       "minimum": 14,
+       "option_group": null,
+       "stated": {
+        "min": 14,
+        "max": 15
+       },
+       "courses": [
+        {
+         "code": "DFT-30",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENE-30",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENE-62",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENE-60",
+           "units": 3,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "DFT-42",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENE-42",
+           "units": 3,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": true
+        },
+        {
+         "code": "DFT-51",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENE-51",
+           "units": 2,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": true
+        },
+        {
+         "code": "MAN-35",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MAN-36",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ELE-55",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "MAN-55",
+           "units": 1,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": true
+        },
+        {
+         "code": "MAN-56",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MAN-57",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 7,
+     "listed": 7
+    },
+    "extracted_run": "45964327019"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 7,
+     "listed": 7,
+     "gaps": [
+      "noted_figures_differ"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 4
+  },
+  {
+   "college": "Norco College",
+   "control_number": "40064",
+   "award": "A.S. Degree",
+   "extracted_run": "45964327019",
+   "moves_to": "noted_figures_differ",
+   "words": "Required courses block prints 'Units: 16.00' but lists only APP-450 at 4.00 units; APP-450 may be repeated to reach 16 units. Reviewer should check.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "own_section",
+   "path": "kb/program_requirements_college/norco/records/40064.json",
+   "before_image": {
+    "program_title": "Apprenticeship: Manufacturing Technician 2",
+    "award": "A.S. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5139",
+    "measure": "units",
+    "total_min": 30,
+    "total_max": 31,
+    "record": {
+     "program": {
+      "section_heading": "Apprenticeship: Manufacturing Technician II - Associate of Science Degree and Certificate of Achievement",
+      "measure": "units",
+      "total_units": {
+       "min": 30,
+       "max": 31
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Apply industry standard safety practices and specific safety requirements for different machining operations.",
+       "Produce high precision parts out of a variety of conventional machine tools.",
+       "Demonstrate advanced manufacturing technical practices and procedures that are applicable to all sectors of manufacturing.",
+       "Demonstrate knowledge of CNC specific technical work practices, such as blueprint reading, applied math concepts, tools, and measurement concepts."
+      ],
+      "careers": [
+       "journey level Manufacturing Technician"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 16,
+        "max": 16
+       },
+       "courses": [
+        {
+         "code": "APP-450",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "Elective Courses",
+       "rule": "choose_units",
+       "minimum": 14,
+       "option_group": null,
+       "stated": {
+        "min": 14,
+        "max": 15
+       },
+       "courses": [
+        {
+         "code": "DFT-30",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENE-30",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENE-62",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENE-60",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "DFT-42",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENE-42",
+           "units": 3,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": true
+        },
+        {
+         "code": "DFT-51",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENE-51",
+           "units": 2,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": true
+        },
+        {
+         "code": "MAN-35",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MAN-36",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ELE-55",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "MAN-55",
+           "units": 1,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": true
+        },
+        {
+         "code": "MAN-56",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MAN-57",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 8,
+     "listed": 8
+    },
+    "extracted_run": "45964327019"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 8,
+     "listed": 8,
+     "gaps": [
+      "noted_figures_differ"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 5
+  }
+ ],
+ "live_run_proof": null,
+ "shared_pages": {
+  "39998": [
+   "40064"
+  ],
+  "40064": [
+   "39998"
+  ]
+ },
+ "representation": "checks.gaps and checks.confidence added as the load reads the filed score (a passing row: checks.arithmetic to equal); checks.coverage, invented and the record unchanged",
+ "claim_check_reads": "Today's capture (sources.json): every course an entry names among the codes it found, and a course an entry says the printed total leaves out on neither it nor the state's list. A note's quoted figures are the reader's words, never re-read here.",
+ "follow_verdict": "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows (confirm_matches); the apply aborts, writing nothing, unless the count is 0.",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Norco College', '32830', 45964327019, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PHI-10H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PHI-10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHI-12\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH-32\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PHI-32\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":9,\"min\":9}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHI-11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHI-22\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHI-33\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HUM-35\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PHI-35\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHI-36\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"List A\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-2\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HUM-4H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HUM-4\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HUM-5H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HUM-5\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HUM-10H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HUM-10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HUM-18\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHI-18\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHI-19\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHI-34\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List B\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Analyze and critically evaluate the work of major figures in philosophy.\",\"Compare and contrast different philosophical views across historical periods and contexts of human experience.\",\"Evaluate the most important topics in key areas of philosophy: theory of knowledge, metaphysics, ethics.\",\"Demonstrate the ability to apply philosophical ideas to philosophical problems.\",\"Express philosophical ideas and defend them in argument, both in writing and orally.\"],\"section_heading\":\"Philosophy - Associate in Arts for Transfer (ADT)\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":23,\"placed\":23}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":50,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"ge_units_not_read\"],\"invented\":true,\"listed\":23,\"placed\":23}'::jsonb),\n  (2, 'Norco College', '37311', 45964327019, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIO-60\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHE-1A\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":15,\"min\":15}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIO-61\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHE-1B\",\"units\":5,\"units_max\":null}],\"minimum\":1,\"name\":\"Required Courses: Select one course\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":5,\"min\":5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIO-19\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEG-1L\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Electives - List A\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":15,\"min\":15}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEG-1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEG-1H\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Electives - List A: Select one of the following (Geography)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STAT-C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STAT-C1000H\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC-48\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC-48\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Electives - List A: Select one of the following (Statistics)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":4,\"min\":4}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH-C2210\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH-C2210H\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Electives - List A: Select one of the following (Calculus)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":4,\"min\":4}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ECON-C2001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON-C2001H\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Electives - List B: Select one of the following (Economics)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHY-2A\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHY-2B\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Take one of the following Physics sequences: Option 1\",\"option_group\":\"Physics sequence\",\"rule\":\"all\",\"stated\":{\"max\":8,\"min\":8}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHY-4A\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHY-4B\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Take one of the following Physics sequences: Option 2\",\"option_group\":\"Physics sequence\",\"rule\":\"all\",\"stated\":{\"max\":8,\"min\":8}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Examine the impact of humankind on the environment from scientific, sociological, political, and economic viewpoints both locally and globally.\",\"Apply concepts and implement skills learned in the sciences, mathematics, and humanities to real-world environmental issues.\",\"Demonstrate an ability to examine scientific evidence demonstrating how human activities affect many ecosystems and recommend alternatives to present practices.\"],\"section_heading\":\"Environmental Science - Associate in Science for Transfer (ADT) - NAS893 (Cal-GETC)\",\"total_units\":{\"max\":41,\"min\":41}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":20,\"placed\":20}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":50,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"ge_units_not_read\"],\"invented\":true,\"listed\":20,\"placed\":20}'::jsonb),\n  (3, 'Norco College', '44961', 45964327019, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ADJ-1H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ADJ-1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADJ-2\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ADJ-3H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ADJ-3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS-18A\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Required Courses: Select one of the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHI-12\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"COMM-C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"COMM-C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM-6\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Required Courses: Select one of the following (Communication)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL-C1000H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ENGL-C1000\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Required Courses: Select one of the following (English Composition)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":4,\"min\":4}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL-C1003H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ENGL-C1003\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM-2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM-3\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Required Courses: Select one of the following (Critical Thinking)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":4,\"min\":3}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"STAT-C1000H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"STAT-C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC-48\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC-48\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Required Courses: Select one of the following (Statistics)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":4,\"min\":4}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST-C1001H\",\"units\":3}],\"catalog_addition\":true,\"code\":\"HIST-C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST-C1002H\",\"units\":3}],\"catalog_addition\":true,\"code\":\"HIST-C1002\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Required Courses: Select one of the following (U.S. History)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLS-C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"POLS-C1000\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Required Courses: Select one of the following (American Government)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ADJ-1H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ADJ-1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADJ-2\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ADJ-3H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ADJ-3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADJ-4\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADJ-5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADJ-8\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADJ-20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC-20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS-18A\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ECON-C2002H\",\"units\":3}],\"catalog_addition\":true,\"code\":\"ECON-C2002\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ECON-C2001H\",\"units\":3}],\"catalog_addition\":true,\"code\":\"ECON-C2001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS-2\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLS-4H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"POLS-4\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS-11\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ADJ-9H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ADJ-9\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETS-1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS-5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC-2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SJS-110\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ANT-2H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ANT-2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM-12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEG-2\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SOC-10H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"SOC-10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GUI-48\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADJ-200\",\"units\":1,\"units_max\":4}],\"minimum\":6,\"name\":\"Electives\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":6,\"min\":6}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Evaluate current legal and social issues by applying the relevant judicial framework.\",\"Analyze issues by applying relevant rules of law, ethical standards, and social mores.\",\"Produce and evaluate arguments based on appropriate legal concepts and evidence.\"],\"section_heading\":\"Law, Public Policy, and Society - Associate in Arts for Transfer (ADT) - NAA1008 (Cal-GETC)\",\"total_units\":{\"max\":33,\"min\":32}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":53,\"placed\":53}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":50,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"ge_units_not_read\"],\"invented\":true,\"listed\":53,\"placed\":53}'::jsonb),\n  (4, 'Norco College', '39998', 45964327019, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"APP-450\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":16,\"min\":16}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENE-30\",\"units\":3}],\"catalog_addition\":true,\"code\":\"DFT-30\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ENE-60\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ENE-62\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ENE-42\",\"units\":3}],\"catalog_addition\":true,\"code\":\"DFT-42\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENE-51\",\"units\":2}],\"catalog_addition\":true,\"code\":\"DFT-51\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MAN-35\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MAN-36\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MAN-55\",\"units\":1}],\"catalog_addition\":true,\"code\":\"ELE-55\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MAN-56\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MAN-57\",\"units\":3,\"units_max\":null}],\"minimum\":14,\"name\":\"Elective Courses\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":15,\"min\":14}}],\"program\":{\"careers\":[\"journey level Manufacturing Technician\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Apply industry standard safety practices and specific safety requirements for different machining operations.\",\"Produce high precision parts out of a variety of conventional machine tools.\",\"Demonstrate advanced manufacturing technical practices and procedures that are applicable to all sectors of manufacturing.\",\"Demonstrate knowledge of CNC specific technical work practices, such as blueprint reading, applied math concepts, tools, and measurement concepts.\"],\"section_heading\":\"Apprenticeship: Manufacturing Technician II - Associate of Science Degree and Certificate of Achievement - NAS967/C/NCE967\",\"total_units\":{\"max\":31,\"min\":30}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":7,\"placed\":7}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":7,\"placed\":7}'::jsonb),\n  (5, 'Norco College', '40064', 45964327019, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"APP-450\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":16,\"min\":16}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENE-30\",\"units\":3}],\"catalog_addition\":true,\"code\":\"DFT-30\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENE-60\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ENE-62\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ENE-42\",\"units\":3}],\"catalog_addition\":true,\"code\":\"DFT-42\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENE-51\",\"units\":2}],\"catalog_addition\":true,\"code\":\"DFT-51\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MAN-35\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MAN-36\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MAN-55\",\"units\":1}],\"catalog_addition\":true,\"code\":\"ELE-55\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MAN-56\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MAN-57\",\"units\":3,\"units_max\":null}],\"minimum\":14,\"name\":\"Elective Courses\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":15,\"min\":14}}],\"program\":{\"careers\":[\"journey level Manufacturing Technician\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Apply industry standard safety practices and specific safety requirements for different machining operations.\",\"Produce high precision parts out of a variety of conventional machine tools.\",\"Demonstrate advanced manufacturing technical practices and procedures that are applicable to all sectors of manufacturing.\",\"Demonstrate knowledge of CNC specific technical work practices, such as blueprint reading, applied math concepts, tools, and measurement concepts.\"],\"section_heading\":\"Apprenticeship: Manufacturing Technician II - Associate of Science Degree and Certificate of Achievement\",\"total_units\":{\"max\":31,\"min\":30}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "pre_read_md5": "with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) as (values\n  (1, 'Norco College', '32830', 45964327019, '6d093daccaa5a802a8187b1603e46642', '5c0fc2afacf0e20b40c9d9cf6243a8cb', '48b5847653f30e082cfde15f62c99bc3'),\n  (2, 'Norco College', '37311', 45964327019, 'a12bc962a4ece71d3a3374ececd9f336', 'e45cef76177bad42e9f8ebf85bb96c71', '6891e80ca51949a7ea291fac2af108bd'),\n  (3, 'Norco College', '44961', 45964327019, '7736b4b6f1ea6634e5212bf6cc00b25c', '29acf0e1d36576f4566eec317ad5b059', 'ec098aff557389dc0bb75e6dd794019f'),\n  (4, 'Norco College', '39998', 45964327019, '66beaa5a8e0bdc9e4a90fec6b6ce496f', '6670455651f81e1d04b6fdc803860ecc', '22e405c17a208085a2215898212ec00c'),\n  (5, 'Norco College', '40064', 45964327019, 'bd451826158b9819f2dad392c22864f8', 'b167e014df6b97bdebba96ca16afce51', '1704d8e783359e43b3731a6af7bb1db8'))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.record::text) = v.rec_md5),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.checks::text) = v.chk_md5),\n  'already_after', count(*) filter (where md5(r.checks::text) = v.after_md5),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Norco College', '32830', 45964327019, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PHI-10H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PHI-10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHI-12\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH-32\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PHI-32\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":9,\"min\":9}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHI-11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHI-22\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHI-33\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HUM-35\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PHI-35\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHI-36\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"List A\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-2\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HUM-4H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HUM-4\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HUM-5H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HUM-5\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HUM-10H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HUM-10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HUM-18\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHI-18\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHI-19\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHI-34\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List B\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Analyze and critically evaluate the work of major figures in philosophy.\",\"Compare and contrast different philosophical views across historical periods and contexts of human experience.\",\"Evaluate the most important topics in key areas of philosophy: theory of knowledge, metaphysics, ethics.\",\"Demonstrate the ability to apply philosophical ideas to philosophical problems.\",\"Express philosophical ideas and defend them in argument, both in writing and orally.\"],\"section_heading\":\"Philosophy - Associate in Arts for Transfer (ADT)\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":23,\"placed\":23}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":50,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"ge_units_not_read\"],\"invented\":true,\"listed\":23,\"placed\":23}'::jsonb),\n  (2, 'Norco College', '37311', 45964327019, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIO-60\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHE-1A\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":15,\"min\":15}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIO-61\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHE-1B\",\"units\":5,\"units_max\":null}],\"minimum\":1,\"name\":\"Required Courses: Select one course\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":5,\"min\":5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIO-19\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEG-1L\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Electives - List A\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":15,\"min\":15}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEG-1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEG-1H\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Electives - List A: Select one of the following (Geography)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STAT-C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STAT-C1000H\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC-48\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC-48\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Electives - List A: Select one of the following (Statistics)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":4,\"min\":4}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH-C2210\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH-C2210H\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Electives - List A: Select one of the following (Calculus)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":4,\"min\":4}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ECON-C2001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON-C2001H\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Electives - List B: Select one of the following (Economics)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHY-2A\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHY-2B\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Take one of the following Physics sequences: Option 1\",\"option_group\":\"Physics sequence\",\"rule\":\"all\",\"stated\":{\"max\":8,\"min\":8}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHY-4A\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHY-4B\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Take one of the following Physics sequences: Option 2\",\"option_group\":\"Physics sequence\",\"rule\":\"all\",\"stated\":{\"max\":8,\"min\":8}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Examine the impact of humankind on the environment from scientific, sociological, political, and economic viewpoints both locally and globally.\",\"Apply concepts and implement skills learned in the sciences, mathematics, and humanities to real-world environmental issues.\",\"Demonstrate an ability to examine scientific evidence demonstrating how human activities affect many ecosystems and recommend alternatives to present practices.\"],\"section_heading\":\"Environmental Science - Associate in Science for Transfer (ADT) - NAS893 (Cal-GETC)\",\"total_units\":{\"max\":41,\"min\":41}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":20,\"placed\":20}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":50,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"ge_units_not_read\"],\"invented\":true,\"listed\":20,\"placed\":20}'::jsonb),\n  (3, 'Norco College', '44961', 45964327019, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ADJ-1H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ADJ-1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADJ-2\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ADJ-3H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ADJ-3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS-18A\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Required Courses: Select one of the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHI-12\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"COMM-C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"COMM-C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM-6\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Required Courses: Select one of the following (Communication)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL-C1000H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ENGL-C1000\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Required Courses: Select one of the following (English Composition)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":4,\"min\":4}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL-C1003H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ENGL-C1003\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM-2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM-3\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Required Courses: Select one of the following (Critical Thinking)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":4,\"min\":3}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"STAT-C1000H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"STAT-C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC-48\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC-48\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Required Courses: Select one of the following (Statistics)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":4,\"min\":4}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST-C1001H\",\"units\":3}],\"catalog_addition\":true,\"code\":\"HIST-C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST-C1002H\",\"units\":3}],\"catalog_addition\":true,\"code\":\"HIST-C1002\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Required Courses: Select one of the following (U.S. History)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLS-C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"POLS-C1000\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Required Courses: Select one of the following (American Government)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ADJ-1H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ADJ-1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADJ-2\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ADJ-3H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ADJ-3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADJ-4\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADJ-5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADJ-8\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADJ-20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC-20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS-18A\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ECON-C2002H\",\"units\":3}],\"catalog_addition\":true,\"code\":\"ECON-C2002\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ECON-C2001H\",\"units\":3}],\"catalog_addition\":true,\"code\":\"ECON-C2001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS-2\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLS-4H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"POLS-4\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS-11\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ADJ-9H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ADJ-9\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETS-1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS-5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC-2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SJS-110\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ANT-2H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ANT-2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM-12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEG-2\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SOC-10H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"SOC-10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GUI-48\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADJ-200\",\"units\":1,\"units_max\":4}],\"minimum\":6,\"name\":\"Electives\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":6,\"min\":6}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Evaluate current legal and social issues by applying the relevant judicial framework.\",\"Analyze issues by applying relevant rules of law, ethical standards, and social mores.\",\"Produce and evaluate arguments based on appropriate legal concepts and evidence.\"],\"section_heading\":\"Law, Public Policy, and Society - Associate in Arts for Transfer (ADT) - NAA1008 (Cal-GETC)\",\"total_units\":{\"max\":33,\"min\":32}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":53,\"placed\":53}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":50,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"ge_units_not_read\"],\"invented\":true,\"listed\":53,\"placed\":53}'::jsonb),\n  (4, 'Norco College', '39998', 45964327019, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"APP-450\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":16,\"min\":16}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENE-30\",\"units\":3}],\"catalog_addition\":true,\"code\":\"DFT-30\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ENE-60\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ENE-62\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ENE-42\",\"units\":3}],\"catalog_addition\":true,\"code\":\"DFT-42\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENE-51\",\"units\":2}],\"catalog_addition\":true,\"code\":\"DFT-51\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MAN-35\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MAN-36\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MAN-55\",\"units\":1}],\"catalog_addition\":true,\"code\":\"ELE-55\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MAN-56\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MAN-57\",\"units\":3,\"units_max\":null}],\"minimum\":14,\"name\":\"Elective Courses\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":15,\"min\":14}}],\"program\":{\"careers\":[\"journey level Manufacturing Technician\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Apply industry standard safety practices and specific safety requirements for different machining operations.\",\"Produce high precision parts out of a variety of conventional machine tools.\",\"Demonstrate advanced manufacturing technical practices and procedures that are applicable to all sectors of manufacturing.\",\"Demonstrate knowledge of CNC specific technical work practices, such as blueprint reading, applied math concepts, tools, and measurement concepts.\"],\"section_heading\":\"Apprenticeship: Manufacturing Technician II - Associate of Science Degree and Certificate of Achievement - NAS967/C/NCE967\",\"total_units\":{\"max\":31,\"min\":30}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":7,\"placed\":7}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":7,\"placed\":7}'::jsonb),\n  (5, 'Norco College', '40064', 45964327019, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"APP-450\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":16,\"min\":16}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENE-30\",\"units\":3}],\"catalog_addition\":true,\"code\":\"DFT-30\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENE-60\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ENE-62\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ENE-42\",\"units\":3}],\"catalog_addition\":true,\"code\":\"DFT-42\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENE-51\",\"units\":2}],\"catalog_addition\":true,\"code\":\"DFT-51\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MAN-35\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MAN-36\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MAN-55\",\"units\":1}],\"catalog_addition\":true,\"code\":\"ELE-55\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MAN-56\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MAN-57\",\"units\":3,\"units_max\":null}],\"minimum\":14,\"name\":\"Elective Courses\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":15,\"min\":14}}],\"program\":{\"careers\":[\"journey level Manufacturing Technician\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Apply industry standard safety practices and specific safety requirements for different machining operations.\",\"Produce high precision parts out of a variety of conventional machine tools.\",\"Demonstrate advanced manufacturing technical practices and procedures that are applicable to all sectors of manufacturing.\",\"Demonstrate knowledge of CNC specific technical work practices, such as blueprint reading, applied math concepts, tools, and measurement concepts.\"],\"section_heading\":\"Apprenticeship: Manufacturing Technician II - Associate of Science Degree and Certificate of Achievement\",\"total_units\":{\"max\":31,\"min\":30}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\nf as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number\n        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true\n       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)),\ne(expect) as (values (5)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when f.n > 0\n            then ('s741r1 piles confirm guard: ' || f.n || ' rows hold a matching confirm verdict ' || f.keys::text)::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s741r1 piles guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, f;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Norco College', '32830', 45964327019, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PHI-10H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PHI-10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHI-12\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH-32\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PHI-32\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":9,\"min\":9}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHI-11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHI-22\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHI-33\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HUM-35\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PHI-35\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHI-36\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"List A\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST-2\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HUM-4H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HUM-4\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HUM-5H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HUM-5\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HUM-10H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HUM-10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HUM-18\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHI-18\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHI-19\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHI-34\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List B\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Analyze and critically evaluate the work of major figures in philosophy.\",\"Compare and contrast different philosophical views across historical periods and contexts of human experience.\",\"Evaluate the most important topics in key areas of philosophy: theory of knowledge, metaphysics, ethics.\",\"Demonstrate the ability to apply philosophical ideas to philosophical problems.\",\"Express philosophical ideas and defend them in argument, both in writing and orally.\"],\"section_heading\":\"Philosophy - Associate in Arts for Transfer (ADT)\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":23,\"placed\":23}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":50,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"ge_units_not_read\"],\"invented\":true,\"listed\":23,\"placed\":23}'::jsonb),\n  (2, 'Norco College', '37311', 45964327019, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIO-60\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHE-1A\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":15,\"min\":15}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIO-61\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHE-1B\",\"units\":5,\"units_max\":null}],\"minimum\":1,\"name\":\"Required Courses: Select one course\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":5,\"min\":5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIO-19\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEG-1L\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Electives - List A\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":15,\"min\":15}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEG-1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEG-1H\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Electives - List A: Select one of the following (Geography)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STAT-C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STAT-C1000H\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC-48\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC-48\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Electives - List A: Select one of the following (Statistics)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":4,\"min\":4}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH-C2210\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH-C2210H\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Electives - List A: Select one of the following (Calculus)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":4,\"min\":4}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ECON-C2001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON-C2001H\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Electives - List B: Select one of the following (Economics)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHY-2A\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHY-2B\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Take one of the following Physics sequences: Option 1\",\"option_group\":\"Physics sequence\",\"rule\":\"all\",\"stated\":{\"max\":8,\"min\":8}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHY-4A\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHY-4B\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Take one of the following Physics sequences: Option 2\",\"option_group\":\"Physics sequence\",\"rule\":\"all\",\"stated\":{\"max\":8,\"min\":8}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Examine the impact of humankind on the environment from scientific, sociological, political, and economic viewpoints both locally and globally.\",\"Apply concepts and implement skills learned in the sciences, mathematics, and humanities to real-world environmental issues.\",\"Demonstrate an ability to examine scientific evidence demonstrating how human activities affect many ecosystems and recommend alternatives to present practices.\"],\"section_heading\":\"Environmental Science - Associate in Science for Transfer (ADT) - NAS893 (Cal-GETC)\",\"total_units\":{\"max\":41,\"min\":41}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":20,\"placed\":20}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":50,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"ge_units_not_read\"],\"invented\":true,\"listed\":20,\"placed\":20}'::jsonb),\n  (3, 'Norco College', '44961', 45964327019, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ADJ-1H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ADJ-1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADJ-2\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ADJ-3H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ADJ-3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS-18A\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Required Courses: Select one of the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHI-12\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"COMM-C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"COMM-C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM-6\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Required Courses: Select one of the following (Communication)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL-C1000H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ENGL-C1000\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Required Courses: Select one of the following (English Composition)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":4,\"min\":4}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL-C1003H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ENGL-C1003\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM-2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM-3\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Required Courses: Select one of the following (Critical Thinking)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":4,\"min\":3}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"STAT-C1000H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"STAT-C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC-48\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC-48\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Required Courses: Select one of the following (Statistics)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":4,\"min\":4}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST-C1001H\",\"units\":3}],\"catalog_addition\":true,\"code\":\"HIST-C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST-C1002H\",\"units\":3}],\"catalog_addition\":true,\"code\":\"HIST-C1002\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Required Courses: Select one of the following (U.S. History)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLS-C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"POLS-C1000\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Required Courses: Select one of the following (American Government)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ADJ-1H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ADJ-1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADJ-2\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ADJ-3H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ADJ-3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADJ-4\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADJ-5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADJ-8\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADJ-20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC-20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS-18A\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ECON-C2002H\",\"units\":3}],\"catalog_addition\":true,\"code\":\"ECON-C2002\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ECON-C2001H\",\"units\":3}],\"catalog_addition\":true,\"code\":\"ECON-C2001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS-2\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLS-4H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"POLS-4\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS-11\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ADJ-9H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ADJ-9\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETS-1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS-5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC-2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SJS-110\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ANT-2H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ANT-2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM-12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEG-2\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SOC-10H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"SOC-10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GUI-48\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ADJ-200\",\"units\":1,\"units_max\":4}],\"minimum\":6,\"name\":\"Electives\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":6,\"min\":6}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Evaluate current legal and social issues by applying the relevant judicial framework.\",\"Analyze issues by applying relevant rules of law, ethical standards, and social mores.\",\"Produce and evaluate arguments based on appropriate legal concepts and evidence.\"],\"section_heading\":\"Law, Public Policy, and Society - Associate in Arts for Transfer (ADT) - NAA1008 (Cal-GETC)\",\"total_units\":{\"max\":33,\"min\":32}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":53,\"placed\":53}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":50,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"ge_units_not_read\"],\"invented\":true,\"listed\":53,\"placed\":53}'::jsonb),\n  (4, 'Norco College', '39998', 45964327019, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"APP-450\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":16,\"min\":16}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENE-30\",\"units\":3}],\"catalog_addition\":true,\"code\":\"DFT-30\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ENE-60\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ENE-62\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ENE-42\",\"units\":3}],\"catalog_addition\":true,\"code\":\"DFT-42\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENE-51\",\"units\":2}],\"catalog_addition\":true,\"code\":\"DFT-51\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MAN-35\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MAN-36\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MAN-55\",\"units\":1}],\"catalog_addition\":true,\"code\":\"ELE-55\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MAN-56\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MAN-57\",\"units\":3,\"units_max\":null}],\"minimum\":14,\"name\":\"Elective Courses\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":15,\"min\":14}}],\"program\":{\"careers\":[\"journey level Manufacturing Technician\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Apply industry standard safety practices and specific safety requirements for different machining operations.\",\"Produce high precision parts out of a variety of conventional machine tools.\",\"Demonstrate advanced manufacturing technical practices and procedures that are applicable to all sectors of manufacturing.\",\"Demonstrate knowledge of CNC specific technical work practices, such as blueprint reading, applied math concepts, tools, and measurement concepts.\"],\"section_heading\":\"Apprenticeship: Manufacturing Technician II - Associate of Science Degree and Certificate of Achievement - NAS967/C/NCE967\",\"total_units\":{\"max\":31,\"min\":30}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":7,\"placed\":7}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":7,\"placed\":7}'::jsonb),\n  (5, 'Norco College', '40064', 45964327019, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"APP-450\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":16,\"min\":16}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENE-30\",\"units\":3}],\"catalog_addition\":true,\"code\":\"DFT-30\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENE-60\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ENE-62\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ENE-42\",\"units\":3}],\"catalog_addition\":true,\"code\":\"DFT-42\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENE-51\",\"units\":2}],\"catalog_addition\":true,\"code\":\"DFT-51\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MAN-35\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MAN-36\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MAN-55\",\"units\":1}],\"catalog_addition\":true,\"code\":\"ELE-55\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MAN-56\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MAN-57\",\"units\":3,\"units_max\":null}],\"minimum\":14,\"name\":\"Elective Courses\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":15,\"min\":14}}],\"program\":{\"careers\":[\"journey level Manufacturing Technician\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Apply industry standard safety practices and specific safety requirements for different machining operations.\",\"Produce high precision parts out of a variety of conventional machine tools.\",\"Demonstrate advanced manufacturing technical practices and procedures that are applicable to all sectors of manufacturing.\",\"Demonstrate knowledge of CNC specific technical work practices, such as blueprint reading, applied math concepts, tools, and measurement concepts.\"],\"section_heading\":\"Apprenticeship: Manufacturing Technician II - Associate of Science Degree and Certificate of Achievement\",\"total_units\":{\"max\":31,\"min\":30}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (5)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s741r1 piles rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;"
+}

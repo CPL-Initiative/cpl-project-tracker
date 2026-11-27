@@ -5,11 +5,11 @@
  "title": "Drafting Technology",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
  "source_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5169",
- "record_shape": 3,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 5413,
+  "input_tokens": 7046,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 5413,
-    "output_tokens": 2868,
+    "input_tokens": 7046,
+    "output_tokens": 3066,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,18 @@
     "model": null
    }
   ],
-  "output_tokens": 2868,
+  "output_tokens": 3066,
   "output_tokens_details": {
-   "thinking_tokens": 1139
+   "thinking_tokens": 1276
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.07901,
- "ms": 23742,
- "seconds": 24.0,
+ "cost_usd": 0.0895,
+ "ms": 25587,
+ "seconds": 26.3,
+ "parts": null,
  "error": null,
  "score": {
   "measure": "units",
@@ -67,20 +69,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    17.0,
-    18.0
+    20.0,
+    21.0
    ],
    "stated": [
     20.0,
     21.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 17.0-18.0; the catalog states 20.0-21.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -97,14 +97,14 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 2,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -115,15 +115,32 @@
     "max": 21
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "An ability to apply and integrate computer technology in the design process, exhibiting skills necessary for entry level employment, as a drafter in the drafting industry.",
     "Knowledge of engineering drawing skills and practice in the solution of industry related design projects."
+   ],
+   "careers": [
+    "entry level drafting or design position",
+    "drafter"
    ]
   },
   "blocks": [
    {
-    "name": "Required Courses: Select one of the following:",
+    "name": "Required Courses - Select one of the following",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -149,7 +166,7 @@
     ]
    },
    {
-    "name": "Required Courses: Select one of the following:",
+    "name": "Required Courses - Select one of the following",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -175,7 +192,7 @@
     ]
    },
    {
-    "name": "Required Courses: Select one of the following:",
+    "name": "Required Courses - Select one of the following",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -201,7 +218,7 @@
     ]
    },
    {
-    "name": "Required Courses: Select one of the following:",
+    "name": "Required Courses - Select one of the following",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -230,7 +247,19 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
      {
       "code": "DFT-62",
       "units": 3,
@@ -308,15 +337,15 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints one combined section and one requirements list for the A.S. degree and the Certificate of Achievement; this record reads that shared list for the certificate. The Program Learning Outcomes are printed once for the program as a whole and the certificate shares them.",
-   "The Required Courses heading states 'Units: 14.00- 15.00'; each 'Select one of the following' group is recorded as its own choose-1 block.",
-   "Elective Courses heading states 'Units: 6.00' (recorded as stated), but the instruction line reads 'Select an additional 6-8 units from the following elective courses'.",
-   "Elective constraints 'Only one of the following may be used' are recorded as alternatives: DFT-60/ENE-60/MATH-36 (group printed 3.00-4.00) and DFT-42/ENE-42 (group printed 3.00). Indentation is lost in the text; it is ambiguous whether CON-60 and ARE-37 belong to the first 'only one' group and whether MAN-56 (4.00 units) belongs to the second group, whose printed total is 3.00. Here CON-60, ARE-37 and MAN-56 are treated as independent electives; reviewer should check.",
-   "Stated program total is 20.00-21.00, while 14-15 required plus 6-8 elective units would allow up to 23.",
-   "DFT-62 (Basic Fusion 360), DFT-42 and ENE-42 (SolidWorks I) are not in the closed list and are marked as catalog additions.",
-   "Codes are recorded as printed with hyphens (e.g., DFT-21 for closed-list DFT 21; MATH-36 for closed-list MATH36)."
+   "The page prints one requirements list and one outcomes list shared by the A.S. degree and the Certificate of Achievement; recorded here for the certificate. Program outcomes are shared with the A.S.",
+   "The 'Required Courses' heading prints 'Units: 14.00- 15.00' covering the four 'Select one of the following' groups plus DFT-62; that total is not attached to any single block. The page notes the select-one group ends before DFT-62, so DFT-62 is recorded as required.",
+   "Elective Courses header prints 'Units: 6.00' while the instruction reads 'Select an additional 6-8 units'; minimum recorded as 6.",
+   "Elective 'Only one of the following may be used' groups recorded as alternatives: DFT-60/ENE-60/MATH-36 (group printed 3.00-4.00) and DFT-42/ENE-42 (group printed 3.00). Group membership is inferred from the printed group units: CON-60 and ARE-37 read as outside the first group, MAN-56 (4.00) read as outside the second group; reviewer should verify.",
+   "MATH-36 matches closed-list code MATH36 (units not stored); catalog prints 4.00 units.",
+   "DFT-62 (Basic Fusion 360), DFT-42 and ENE-42 (SolidWorks I) are not in the closed list and are marked catalog additions.",
+   "Closed list stores MAN 56 title as 'CNC Machine Set-up and Operation'; catalog prints 'CNC Machine Set-Up and Operation'."
   ]
  },
- "extracted_run": 43609971090,
- "read_run": "38085495452"
+ "extracted_run": "45964327019",
+ "catalog_year": "2026-2027"
 }

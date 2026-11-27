@@ -141,8 +141,17 @@ check(named(hours([245.0, 245.0], [172.0, 245.0])) == ("hours_within_printed_ran
       "a sum at the top or at the low end of a printed range the scorer fails takes hours_within_printed_range")
 hp = res["hours_precision"]
 check(set(hp) >= {"section_missing", "says_no_total", "silent"}, "the precision measure has its three counts")
-check(hp["hand_held_no_section"] == 10 and hp["hand_held_flagged_by_hours_claim"] == 10,
-      "hours_claim reads a missing section on %d of the 10 hand-held records" % hp["hand_held_flagged_by_hours_claim"])
+# Either state (S741): Ventura 40179 was held for a missing section, its Requirements tab not in the text. S741's
+# read 45964322406, whose capture's text holds the tab, re-read it and it passes, so its record no longer says a
+# section is missing and the count is one fewer (p-older-pile-tests-pin-runs-later-plans-move-s739).
+with open(os.path.join(ROOT, "kb", "program_requirements_college", "ventura", "records", "40179.json"),
+          encoding="utf-8") as fh:
+    v40179 = json.load(fh)
+reread_s741 = int(str(v40179.get("extracted_run")) == "45964322406"
+                  and v40179["score"]["arithmetic"].get("status") == "equal")
+check(hp["hand_held_no_section"] == 10 and hp["hand_held_flagged_by_hours_claim"] == 10 - reread_s741,
+      "hours_claim reads a missing section on %d of the 10 hand-held records (%d re-read with its section since)"
+      % (hp["hand_held_flagged_by_hours_claim"], reread_s741))
 mid = hours([135.0, 135.0], None)
 mid["record"]["notes"] = ["The excerpt begins mid-section on page 249; the heading is on the previous page."]
 check(NG.hours_claim(mid) == "section_missing" and named(mid) == (None, None),

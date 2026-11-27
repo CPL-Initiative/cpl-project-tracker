@@ -115,6 +115,130 @@ check(coa_hit >= COA_FLOOR * coa_total,
 check(sisters <= SISTER_CEILING, "rule A accepts %d sister programs on a record's own page, over %d: %s"
       % (sisters, SISTER_CEILING, "; ".join(samples)))
 
+# ── S741: the reach of rule B's change (an entry typed without its own descriptions child page) ───────────────
+# The change can move a decision only where three things hold: the rules read the program (its filed record places
+# none, or a filed read refused it: mark()), its catalog's reader joins an entry with its child pages (curriQunet
+# alone sets RC.OWN_PARTS; tests/reader_page_checks_test.py pins that), and rule A accepts the entry for the program.
+# The committed files keep no page text, so the count here is by each marked program's filed page, through its h1,
+# title and address, as above. Measured 2026-11-27 at b896d6f4: 50 marked programs at the 27 curriQunet catalogs,
+# 25 with a filed page, and rule A accepts 2 of the 25, both at San Diego City: Cosmetology 22367 and CPA Preparatory
+# Program 38732. The other 23 sit on a sister's entry, which rule A refuses whatever rule B says.
+#
+# On held text: college-page-read 45954122786 read San Diego City's four marked programs' entries as the capture
+# reads them. Typed whole, all four are descriptions (each entry's Courses tab), so the rule as it stood refuses
+# all four. With the change, at the reader's own bar (ACCEPT_SHARE of the listed courses on the entry's other pages):
+#   * 22367 reads its own entry (right): Requirements prints COSM 50L to 80L and "Total Units: 24.0".
+#   * 38732 reads the catalog's one entry of its title, "Certified Public Accountant Preparatory Program -
+#     Certificate of Performance: City", 6 units, 3 of its 5 listed courses, where the state lists a Certificate of
+#     Achievement of 16 units or more: another award's page (wrong), by rule A's reading of "Certificate".
+#   * 22352 and 22333 stay refused (right): each sits on a sister's entry.
+# Admitted 2, right 1 and wrong 1. So the change asks for every listed course (RC.OWN_REST_SHARE): admitted 1
+# (22367), right 1, wrong 0, and the other three refused as before.
+#
+# Two checks hold that count (S741 review: a count of reach alone still passed with the share back at 0.5). The
+# reach is pinned to the two programs read: a third fails here, so its page is read before a capture files it. And
+# the four entries' held text, kept below as each entry's Requirements page prints its courses, is put to the rule:
+# it admits 22367 alone, and at the reader's own share it would admit 38732 too.
+REVIEWED = {("san_diego_city", "22367"), ("san_diego_city", "38732")}
+marked = with_page = by_heading = catalogs = 0
+reach = []
+reached = set()
+for college in sorted(os.listdir(BASE)):
+    folder = os.path.join(BASE, college)
+    try:
+        with open(os.path.join(folder, "capture.json"), encoding="utf-8") as fh:
+            platform = (json.load(fh) or {}).get("platform")
+        with open(os.path.join(folder, "sources.json"), encoding="utf-8") as fh:
+            filed = {s.get("control_number"): s for s in json.load(fh)}
+    except (OSError, ValueError):
+        continue
+    if platform != "curriqunet":
+        continue
+    catalogs += 1
+    for cn in sorted(RC.places_none_filed(folder) | RC.refused_standing(folder)):
+        marked += 1
+        s = filed.get(cn) or {}
+        src = s.get("source") or {}
+        if not src:
+            continue
+        with_page += 1
+        lines = [src.get("h1") or "", (src.get("title") or "").split("|")[0], RC._slug_words(src.get("url"))]
+        if RC.heading_line(lines, s.get("title"), s.get("award")) >= 0:
+            by_heading += 1
+            reach.append("%s %s %r" % (college, cn, (src.get("h1") or "")[:60]))
+            reached.add((college, cn))
+print("rule B's change, its reach: %d marked programs at %d curriQunet catalogs, %d with a filed page, rule A "
+      "accepts %d: %s" % (marked, catalogs, with_page, by_heading, "; ".join(reach) or "none"))
+check(catalogs >= 20, "the committed captures hold %d curriQunet catalogs, under 20" % catalogs)
+check(reached <= REVIEWED, "rule B's change reaches a marked program whose entry no read has held to it: %s"
+      % "; ".join(sorted("%s %s" % x for x in reached - REVIEWED)))
+
+# What the rule admits, on the four entries' held text (college-page-read 45954122786): each entry's title, the
+# courses its Requirements page prints, and a Courses page of descriptions; each program's title, award and the
+# courses the state lists for it.
+import _program_requirements_college as C  # noqa: E402
+import _program_requirements_pilot as P  # noqa: E402
+SDC = "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/"
+COA_SD = "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+HELD = [
+    ("22367", "Cosmetology", COA_SD, "COSM 50L, COSM 60L, COSM 70L, COSM 80L",
+     15788, "Cosmetology - Certificate of Achievement: City", "COSM 50L, COSM 60L, COSM 70L, COSM 80L"),
+    ("38732", "Certified Public Accountant (CPA) Preparatory Program", COA_SD,
+     "ACCT 119, ACCT 120, ACCT 125, ACCT 135, ACCT 220",
+     15760, "Certified Public Accountant Preparatory Program - Certificate of Performance: City",
+     "ACCT 119, ACCT 125, ACCT 135"),
+    ("22352", "Honeywell Tool and Die Apprenticeship", COA_SD,
+     "COMMC 1000, ENGE 151, ENGLC 1000, MACT 140, MATH 104, MFET 105",
+     15821, "Manufacturing Fundamentals - Certificate of Performance: City",
+     "MFET 101, MFET 105, MFET 115, MFET 120, MFET 107G, MFET 114, MFET 107H"),
+    ("22333", "Communications Technician Apprenticeship",
+     "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "ELDT 123, ELDT 123L, ELDT 124, ELDT 124L, ELDT 143, ELDT 143L, ELDT 144, ELDT 144L, ELDT 225, ELDT 225L, "
+     "ELDT 228, ELDT 228L, ELDT 229, ELDT 229L, ELDT 232, ELDT 232L",
+     15651, "Electronics - Certificate of Achievement: City",
+     "ELDT 123, ELDT 123L, ELDT 124, ELDT 124L, ELDT 125, ELDT 125L, ELDT 126, ELDT 126L, ELDT 143, ELDT 143L, "
+     "ELDT 144, ELDT 144L"),
+]
+
+
+def held_page(node, entry_title, printed):
+    codes = printed.split(", ")
+    requirements = {"page": {"text": "Requirements"}, "body": [{"text": "<div>COURSES REQUIRED FOR THE MAJOR:</div>"
+                    + "".join("<div>%s</div><div>A course (Active)</div><div>3.0</div>" % c for c in codes)}]}
+    courses = {"page": {"text": "Courses"}, "body": [{"text": "".join(
+        "<div>%s</div><div>%s</div><div>A course</div><div>Grading:</div><div>Letter Grade Only</div>"
+        "<div>Advisory: none.</div>" % tuple(c.split()) for c in codes)}]}
+    return C.cq_page({"id": node, "text": entry_title, "aliaspath": "15604/15945/%d" % node},
+                     {"page": {"text": entry_title}, "body": []}, SDC, [requirements, courses])
+
+
+def admitted():
+    out = []
+    for cn, title, award, listed, node, entry_title, printed in HELD:
+        program = {"control_number": cn, "title": title, "award": award, "shape": "certificate", "status": "Active",
+                   "closed_list": [{"code": c} for c in listed.split(", ")], "load_id": None, RC.MARK: True}
+        page = held_page(node, entry_title, printed)
+        whole = dict(page, got={k: v for k, v in page["got"].items() if k != RC.OWN_PARTS})
+        if RC.page_type(page["body"]) != "descriptions" or C.candidates(program, [whole]):
+            out.append(cn + " (the fixture is not the refused page)")
+        elif C.candidates(program, [page]):
+            out.append(cn)
+    return out
+
+
+now = admitted()
+share = RC.OWN_REST_SHARE
+RC.OWN_REST_SHARE = P.ACCEPT_SHARE
+try:
+    at_half = admitted()
+finally:
+    RC.OWN_REST_SHARE = share
+print("rule B's change on the four held entries: admits %s; at the reader's own share it would admit %s"
+      % (now, at_half))
+check(now == ["22367"], "the change admits 22367 alone of the four held entries (right 1, wrong 0), got %r" % now)
+check(at_half == ["22367", "38732"], "at the reader's own share the change also admits 38732 from the Certificate "
+      "of Performance entry (right 1, wrong 1): the count this test holds the share to, got %r" % at_half)
+
 for f in failures:
     print("FAIL:", f)
 print("%d/%d checks passed: reader page checks, self-recall" % (checks[0] - len(failures), checks[0]))

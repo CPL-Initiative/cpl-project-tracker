@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10930,
+  "input_tokens": 11248,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10930,
-    "output_tokens": 1480,
+    "input_tokens": 11248,
+    "output_tokens": 1452,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1480,
+  "output_tokens": 1452,
   "output_tokens_details": {
-   "thinking_tokens": 714
+   "thinking_tokens": 585
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.07332,
- "ms": 14708,
- "seconds": 15.3,
+ "cost_usd": 0.07403,
+ "ms": 12687,
+ "seconds": 29.8,
  "parts": null,
  "error": null,
  "score": {
@@ -60,17 +61,36 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     35.5,
     35.5
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    35.5,
+    35.5
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     60.0,
+     60.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     24.0
+    ],
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
@@ -92,34 +112,31 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
    "section_heading": "Basic Law Enforcement Academy, Associate in Science",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 35.5,
+    "max": 35.5
    },
    "open_elective_units": null,
    "degree_elective_units": {
-    "min": null,
-    "max": null
+    "min": 0.5,
+    "max": 0.5
    },
-   "ge_pattern": null,
+   "ge_pattern": "VCCCD General Education Pattern",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 24,
+    "max": 24
    },
    "electives_fill_degree": false,
    "outcomes": [
@@ -136,25 +153,25 @@
   },
   "blocks": [
    {
-    "name": "POST Academy Information",
+    "name": "Required Core Courses",
     "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 35.5,
+     "max": 35.5
     },
     "courses": [
      {
-      "code": "POSC V01A",
-      "units": null,
+      "code": "POSC V01",
+      "units": 32,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "POSC V01",
-      "units": null,
+      "code": "POSC V01A",
+      "units": 3.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -165,11 +182,14 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The REQUIREMENTS tab (course table with units and totals) is not in the provided text; the overview text is cut off mid-sentence in the Medical Screening paragraph. Courses were placed from the overview statement that the academy 'consists of two courses' (POSC V01A, 80 hours; POSC V01, 910 hours), with units null because no units are printed beside them. Reviewer should verify against the requirements table.",
-   "No major total, degree total, GE pattern or GE units appear in the provided text.",
-   "The overview prints 15 numbered 'measurable skills and abilities' of the RBC's learning domains; these were not recorded as program outcomes (the outcomes tab prints three PSLOs) nor as course outcomes, though they arguably describe POSC V01. Reviewer may wish to check.",
-   "Overview says completion results in a 'Certificate of Achievement', which conflicts with the A.S. award named on the page; check whether this text is shared with the certificate program."
+   "Requirements tab prints Total Major Units 35.5, VCCCD General Education Units 24, Double-Counted Units (0), Elective Units 0.5, and Total Units for the A.S. Degree 60; the 0.5 elective units are recorded as degree electives outside the major.",
+   "The Plan of Study grid totals 60.5 units, while the requirements table states 60 for the degree.",
+   "The overview lists 15 'measurable skills and abilities' as educational goals and objectives of the RBC's 42 learning domains; these are not labeled as program learning outcomes and were not recorded as outcomes. Only the three items under the Program Student Learning Outcomes tab were recorded.",
+   "The overview says completers 'will receive a Certificate of Achievement', although this page is for the A.S. degree; reviewer may want to check.",
+   "The visible overview text is cut off mid-sentence ('College transcri'); the requirements tab appears complete.",
+   "Careers 'police officer' and 'reserve officer' come from the qualifying requirements section of the page (age requirement)."
   ]
  },
- "extracted_run": "38756014587"
+ "extracted_run": "45964322406",
+ "catalog_year": "2026-2027"
 }

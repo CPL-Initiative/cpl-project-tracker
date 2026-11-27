@@ -1,0 +1,705 @@
+{
+ "college": "Ventura College",
+ "reread_run": "45969224515",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "45964322406",
+ "at": "2026-11-27T08:54:18Z",
+ "posted": 7,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "06947",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 7,
+ "absent": 0,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [
+  "06948",
+  "08253",
+  "35654",
+  "37415",
+  "40179",
+  "44994",
+  "44995"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 7,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Ventura College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 45964322406;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 12,
+    "placed": 12,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Plan of Study Grid (major courses)",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BUS V30",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS V31",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ACCT V03",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS V32",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS V33",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ACCT V09",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS V45",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS V62",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS V55",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "BUS V57",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS V46",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "BUS V75",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Explain the fundamental principles of business.",
+      "Examine various approaches to decision-making.",
+      "Create, analyze, and interpret written and verbal communication in business applications.",
+      "Demonstrate an understanding of contemporary issues and theories in the areas of management and human resources systems."
+     ],
+     "ge_pattern": "VCCCD General Education Pattern",
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "PLAN OF STUDY",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/business/business-management-as/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38756014587,
+   "program_title": "Business Management",
+   "control_number": "06948"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 7,
+    "placed": 7,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Plan of Study Grid (major courses)",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BUS V17",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS V27A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS V28A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS V45",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS V29",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS V25",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS V26",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Demonstrate performance of appropriate medical administrative or clinical skills.",
+      "Determine appropriate communication strategies for stakeholders in the medical environment.",
+      "Identify legal and ethical principles that affect the role of a medical assistant.",
+      "Apply appropriate procedures for complying with established risk management and safety practices."
+     ],
+     "ge_pattern": "VC Local GE",
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Plan of Study Grid",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/business/medical-assistant-administrative-as/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38756014587,
+   "program_title": "Medical Assistant-Administrative",
+   "control_number": "08253"
+  },
+  {
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "P.O.S.T. ACADEMY INFORMATION",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "POSC V01A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POSC V01",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "peace officers",
+      "police officer",
+      "reserve officer"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Define and recognize the fundamental duties, obligations, and philosophies of the criminal justice system, and function within the law enforcement field.",
+      "Define and recognize situations and scenarios relating to application of the California Penal Code, California Health and Safety Code, and the California Vehicle Code, and apply the appropriate law.",
+      "Define and recognize the techniques of crime scene searches, courtroom demeanor, and criminal investigation related to child abuse and sexual assault situations."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Basic Law Enforcement Academy, Certificate of Achievement",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/police-science/basic-law-enforcement-academy-coa/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38756014587,
+   "program_title": "Basic Law Enforcement Academy",
+   "control_number": "35654"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "POST Academy Information",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "POSC V01A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POSC V01",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "peace officers",
+      "law enforcement officers",
+      "police officer",
+      "reserve officer"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Define and recognize the fundamental duties, obligations, and philosophies of the criminal justice system, and function within the law enforcement field.",
+      "Define and recognize situations and scenarios relating to application of the California Penal Code, California Health and Safety Code, and the California Vehicle Code, and apply the appropriate law.",
+      "Define and recognize the techniques of crime scene searches, courtroom demeanor, and criminal investigation related to child abuse and sexual assault situations."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Basic Law Enforcement Academy, Associate in Science",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/police-science/basic-law-enforcement-academy-as/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38756014587,
+   "program_title": "Basic Law Enforcement Academy",
+   "control_number": "37415"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "P.O.S.T. Academy Information",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "POSC N101A",
+        "units": 80,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POSC N101",
+        "units": 910,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "peace officers",
+      "law enforcement officers",
+      "police officer"
+     ],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Define and recognize the fundamental duties, obligations, and philosophies of the criminal justice system, and function within the law enforcement field.",
+      "Define and recognize situations and scenarios relating to application of the California Penal Code, California Health and Safety Code, and the California Vehicle Code, and apply the appropriate law.",
+      "Define and recognize the techniques of crime scene searches, courtroom demeanor, and criminal investigation related to child abuse and sexual assault situations."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Basic Law Enforcement Academy (Noncredit), Certificate of Completion",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/noncredit-programs-courses/basic-law-enforcement-academy-cocn-noncredit/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38756014587,
+   "program_title": "Basic Law Enforcement Academy (Noncredit)",
+   "control_number": "40179"
+  },
+  {
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "checks": {
+    "listed": 3,
+    "placed": 3,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Certificate courses (from overview)",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ENGM V01L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENGM V02L",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGM V03L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Apply advanced listening strategies to comprehend, analyze, and evaluate college-level lectures and presentations",
+      "Compose well-structured presentations using academic speaking conventions, including appropriate vocabulary, clear pronunciation, and proper delivery techniques"
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 10,
+      "min": 10
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "English for Multilingual Students—Level 3: Advanced Academic Oral Communication Skills",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 10,
+   "total_min": 10,
+   "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/english-multilingual-students/level-3-oral-communication-coa/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38756014587,
+   "program_title": "English for Multilingual Students—Level 3: Advanced Academic Oral Communication Skills",
+   "control_number": "44994"
+  },
+  {
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "checks": {
+    "listed": 3,
+    "placed": 3,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required courses (as described in the overview)",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ENGM V01R",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENGM V02R",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGM V03R",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Apply advanced reading strategies to comprehend, analyze, and evaluate college-level texts",
+      "Compose well-organized essays using academic conventions, including thesis statements, evidence integration, and proper citations"
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 10,
+      "min": 10
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "English for Multilingual Students—Level 3: Advanced Academic Written Communication Skills",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 10,
+   "total_min": 10,
+   "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/english-multilingual-students/level-3-written-communication-coa/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38756014587,
+   "program_title": "English for Multilingual Students—Level 3: Advanced Academic Written Communication Skills",
+   "control_number": "44995"
+  }
+ ]
+}

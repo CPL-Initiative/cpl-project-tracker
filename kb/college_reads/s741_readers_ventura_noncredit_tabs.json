@@ -1,0 +1,32 @@
+{
+ "_readme": "S741 (worker readers; lane 1, Ventura's tabs_with_prose opt-in). The free capture 45853684392, read with the opt-in, moves seven pages of Ventura's 174: 35654, 37415, 44994 and 44995, whose Requirements tabs college-page-read 45837455365 printed, and three noncredit pages no read has printed: 40179 Basic Law Enforcement Academy (Noncredit), 46400 and 46401 English for Multilingual Students Level 3. This reads those three as the capture reads them, so the self-recall holds each moved page's answer: whether its hidden Requirements tab is the program's own course table with a total the visible text does not print. Three loads, no model call, nothing written.",
+ "college": "Ventura College",
+ "questions": {
+  "requirements_tab": "Does the page's hidden Requirements tab print the program's own course table and total, and does the visible text print no Total line?"
+ },
+ "keywords": [
+  "REQUIREMENTS[^\\n]{0,80}",
+  "Total[^\\n]{0,80}",
+  "\\d+(?:\\.\\d+)?\\s*(?:units?|hours?)\\b[^\\n]{0,40}"
+ ],
+ "pages": [
+  {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/noncredit-programs-courses/basic-law-enforcement-academy-cocn-noncredit/",
+   "answers": ["requirements_tab"],
+   "capture_view": true,
+   "why": "40179"
+  },
+  {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/noncredit-programs-courses/engm-level-3-oral-comm-cocn/",
+   "answers": ["requirements_tab"],
+   "capture_view": true,
+   "why": "46400"
+  },
+  {
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/noncredit-programs-courses/engm-level-3-written-comm-cocn/",
+   "answers": ["requirements_tab"],
+   "capture_view": true,
+   "why": "46401"
+  }
+ ]
+}

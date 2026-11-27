@@ -1,0 +1,96 @@
+{
+ "_readme": "S741 (worker readers; lane 1, Norco's eleven held records and 30061). S740's reads 45835049303 and 45840110369 showed that a Norco curriculum block nests its rows: a 'Select one of the following' row holds its members in a child wrapper, and a row after the group sits beside it, which the capture's flat text never said. The capture now prints a line where a row that opens no group follows a group (kb/_program_requirements_college.py cq_group_ends). This reads the nine entries the twelve records were read from, as the capture reads them on this branch, and prints each block's rows as their div tags nest them, so the session sees each group's members, each row after a group, and the text the extraction would get. About 18 loads, no model call, nothing written. Read again after the second reader's fix (S741): a row inside another group gets no line, the line says what it means, and each row prints whether a group holds it.",
+ "college": "Norco College",
+ "questions": {
+  "group_end": "Which rows does each group hold, which rows follow a group as required courses of their own, and does the text with the group's end marked add up to the figure the page prints over the list?"
+ },
+ "keywords": [
+  "Choose one course",
+  "Select one of the following",
+  "the group above ends here",
+  "Units:\\s*[0-9.]+"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "group_end"
+   ],
+   "why": "30091, 40079 Drafting Technology",
+   "cq_view": true,
+   "cq_catalog": 116,
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5169"
+  },
+  {
+   "answers": [
+    "group_end"
+   ],
+   "why": "32830 Philosophy A.A.-T",
+   "cq_view": true,
+   "cq_catalog": 116,
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5218"
+  },
+  {
+   "answers": [
+    "group_end"
+   ],
+   "why": "33751, 33854 Supply Chain Automation",
+   "cq_view": true,
+   "cq_catalog": 116,
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5237"
+  },
+  {
+   "answers": [
+    "group_end"
+   ],
+   "why": "37311 Environmental Science A.S.-T",
+   "cq_view": true,
+   "cq_catalog": 116,
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5185"
+  },
+  {
+   "answers": [
+    "group_end"
+   ],
+   "why": "39998, 40064 Apprenticeship: Manufacturing Technician 2",
+   "cq_view": true,
+   "cq_catalog": 116,
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5139"
+  },
+  {
+   "answers": [
+    "group_end"
+   ],
+   "why": "41680 Social Justice Studies A.A.-T",
+   "cq_view": true,
+   "cq_catalog": 116,
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5230"
+  },
+  {
+   "answers": [
+    "group_end"
+   ],
+   "why": "44792 Modern Policing A.S.",
+   "cq_view": true,
+   "cq_catalog": 116,
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5578"
+  },
+  {
+   "answers": [
+    "group_end"
+   ],
+   "why": "44961 Law, Public Policy, and Society A.A.-T",
+   "cq_view": true,
+   "cq_catalog": 116,
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5581"
+  },
+  {
+   "answers": [
+    "group_end"
+   ],
+   "why": "30061 Business Administration: Management Concentration (MAG-200)",
+   "cq_view": true,
+   "cq_catalog": 116,
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5148"
+  }
+ ]
+}

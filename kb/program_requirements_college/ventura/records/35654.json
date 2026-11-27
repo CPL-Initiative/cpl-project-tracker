@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10990,
+  "input_tokens": 11152,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10990,
-    "output_tokens": 1895,
+    "input_tokens": 11152,
+    "output_tokens": 1242,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1895,
+  "output_tokens": 1242,
   "output_tokens_details": {
-   "thinking_tokens": 1031
+   "thinking_tokens": 403
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.08186,
- "ms": 16592,
- "seconds": 17.2,
+ "cost_usd": 0.06945,
+ "ms": 11436,
+ "seconds": 29.0,
  "parts": null,
  "error": null,
  "score": {
@@ -60,17 +61,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     35.5,
     35.5
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    35.5,
+    35.5
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -87,22 +89,22 @@
    "pass": true
   },
   "careers": {
-   "count": 3,
+   "count": 4,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
    "section_heading": "Basic Law Enforcement Academy, Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 35.5,
+    "max": 35.5
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -126,13 +128,14 @@
    ],
    "careers": [
     "peace officers",
+    "law enforcement officers",
     "police officer",
     "reserve officer"
    ]
   },
   "blocks": [
    {
-    "name": "P.O.S.T. ACADEMY INFORMATION",
+    "name": "Required Core Courses",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -142,15 +145,15 @@
     },
     "courses": [
      {
-      "code": "POSC V01A",
-      "units": null,
+      "code": "POSC V01",
+      "units": 32,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "POSC V01",
-      "units": null,
+      "code": "POSC V01A",
+      "units": 3.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -161,13 +164,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The REQUIREMENTS tab's course table is not in the supplied text; the text appears cut off mid-sentence ('For information regarding the POST'). The block was built from the prose stating the academy 'consists of two courses': POSC V01A (80-hour orientation) and POSC V01 (910-hour academy), with POSC V01A taken before POSC V01. Check the requirements table for units and total.",
-   "No units are printed beside either course, so their units are null. The hours given (80 and 910) are contact hours of credit courses, not the award's measure; measure stays 'units'. The state file stores 32 units for POSC V01 and 3.5 for POSC V01A.",
-   "No certificate total is printed in the supplied text; total_units is null.",
-   "Outcomes were taken from the outcomes tab. The overview prints the same three PSLOs with lowercase 'California health and safety code' and 'California vehicle code'.",
-   "The overview also lists 15 measurable skills and abilities from the RBC's 42 learning domains. These are course-of-study objectives, not program outcomes, and were not recorded as outcomes.",
-   "Careers were taken from the program description and the qualifying requirements text. 'reserve officer' is named there as an alternative path for applicants under 21."
+   "Outcomes are taken from the page's Program Student Learning Outcomes tab. The overview prints the same three PSLOs (numbered 'PSLO – 1.' etc.) with different capitalization ('California health and safety code', 'California vehicle code'); the tab version was recorded.",
+   "The overview also lists 15 'measurable skills and abilities' from the RBC's 42 learning domains; these were read as course/academy domain objectives, not program learning outcomes, and were not recorded as outcomes. A reviewer may wish to check this.",
+   "The catalog column header is 'Units/Hours'; the requirements total is printed as 'Total Units for the Certificate 35.5', so the award was recorded in units. The text also describes POSC V01 as 910 hours and POSC V01A as 80 hours.",
+   "The overview's visible text is cut off mid-sentence in the enrollment clearance requirements; the requirements tab appears complete.",
+   "Careers recorded from the description: 'peace officers' (becoming peace officers), 'law enforcement officers', 'police officer', and 'reserve officer' (suggested for applicants under 21)."
   ]
  },
- "extracted_run": "38756014587"
+ "extracted_run": "45964322406",
+ "catalog_year": "2026-2027"
 }
