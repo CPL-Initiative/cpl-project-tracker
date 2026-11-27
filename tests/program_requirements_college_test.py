@@ -815,6 +815,106 @@ raw = "\n".join(C.cq_text(b.get("text") or "") for b in MS["body"])
 check(P.coverage(P.find_codes(raw, MS_LIST), MS_LIST) < 0.5,
       "read as printed, the page names under half the list: the failure the expansion fixes")
 
+# ── S741: where a "Select one" group ends (Norco; college-page-reads 45840110369 and 45954122786) ──────────────
+# A curriculum block as curriQunet writes it: every row is a div carrying data-row-id; a row that opens a group
+# carries data-is-group-with-condition="true" and holds its members in a child wrapper
+# (data-child-type="block-entry-children") under a block-group div; a row after the group sits beside the group's
+# row. The fixtures keep that nesting and the page's words (Drafting Technology 30091 and 40079, Philosophy 32830).
+_rid = [8200]
+
+
+def cq_row(inner, group=False, kids=""):
+    _rid[0] += 1
+    wrap = ('<div class="clearfix visible-xs-block"></div><div class="col-xs-12 full-width-column child-wrapper" '
+            'data-child-type="block-entry-children"><div class="block-group" data-tier-level="">%s</div></div>'
+            % kids) if kids else ""
+    return ('<div class="row block-entry" data-entry-style="" data-is-group-with-condition="%s" '
+            'data-include-in-calculations="true" data-row-id="%d">%s%s</div>'
+            % ("true" if group else "false", _rid[0], inner, wrap))
+
+
+def cq_course(code, title, units):
+    return cq_row('<div class="col-xs-2 left-column"><span class="course-entry-link"><a data-action="popover" '
+                  'data-config="{&quot;title&quot;: &quot;Course Summary&quot;}" href="javascript:void(0)">%s</a>'
+                  '</span></div><div class="col-xs-8 middle-column"><span class="course-entry-title">%s</span></div>'
+                  '<div class="col-xs-2 right-column"><span class="units-display">%s</span></div>'
+                  % (code, title, units))
+
+
+def cq_group(title, units, members):
+    return cq_row('<div class="col-xs-12 non-course-row-core-wrapper"><div class="row non-course-row-core">'
+                  '<div class="col-xs-10 left-column"><span class="non-course-entry-title">%s</span></div>'
+                  '<div class="col-xs-2 right-column"><span class="units-display block-entry-units-display">%s</span>'
+                  '</div></div></div>' % (title, units), group=True, kids="".join(members))
+
+
+def cq_list(head, units, rows):
+    return cq_row('<div class="col-xs-12 header-wrapper"><h4>%s</h4><div>Units: %s</div></div>' % (head, units),
+                  kids="".join(rows))
+
+
+SEL = "Select one of the following:"
+DRAFTING = cq_list("Required Courses", "14.00- 15.00", [
+    cq_group(SEL, "3.00", [cq_course("DFT-21", "Drafting", "3.00"), cq_course("ENE-21", "Drafting", "3.00")]),
+    cq_group(SEL, "3.00", [cq_course("DFT-27", "Technical Communications", "3.00"),
+                           cq_course("ENE-27", "Technical Communications", "3.00")]),
+    cq_group(SEL, "2.00- 3.00", [cq_course("DFT-51", "Print Reading", "2.00"), cq_course("ENE-51", "Print Reading", "2.00"),
+                                 cq_course("CON-62", "Print Reading for Construction", "3.00")]),
+    cq_course("DFT-62", "Basic Fusion 360", "3.00")]) + cq_list("Elective Courses", "6.00", [
+        cq_group("Select an additional 6-8 units from the following elective courses:", "6.00", [
+            cq_group("Only one of the following may be used:", "3.00- 4.00", [
+                cq_course("DFT-60", "Math for Engineering Technology", "3.00"), cq_course("MATH-36", "Trigonometry", "4.00")]),
+            cq_course("CON-60", "Introduction to Construction", "3.00"),
+            cq_course("ARE-37", "Architectural Design I", "3.00")])])
+dr_rows = C.cq_rows(DRAFTING)
+check(dr_rows is not None and [r["members"] for r in dr_rows if r["group"]] == [2, 2, 3, 3, 2]
+      and sum(1 for r in dr_rows if r["after_group"]) == 4
+      and sum(1 for r in dr_rows if r["after_group"] and not r["group"]) == 2,
+      "cq_rows reads each group's members from the nesting, and which rows follow a group: %r"
+      % [(r["depth"], r["group"], r["members"], r["after_group"]) for r in dr_rows or []])
+dr_flat, dr_text = C.cq_text(DRAFTING), C.cq_text(C.cq_group_ends(DRAFTING))
+dr_lines = dr_text.split("\n")
+check(dr_lines.count(C.CQ_GROUP_END) == 2
+      and dr_lines[dr_lines.index("DFT-62") - 1] == C.CQ_GROUP_END
+      and dr_lines[dr_lines.index("CON-60") - 1] == C.CQ_GROUP_END
+      and dr_lines[dr_lines.index("ARE-37") - 1] != C.CQ_GROUP_END,
+      "the text says where a group ends before DFT-62, a required course of its own after the last group, and "
+      "before CON-60 inside the elective list; a row after a plain row gets no line")
+check([ln for ln in dr_lines if ln != C.CQ_GROUP_END] == dr_flat.split("\n"),
+      "the change only adds lines: without them the text is the flat text, line for line")
+PHIL = cq_list("Required Courses", "9.00", [
+    cq_group("Choose one course", "3.00", [cq_course("PHI-10", "Introduction to Philosophy", "3.00"),
+                                           cq_course("PHI-10H", "Honors Introduction to Philosophy", "3.00")]),
+    cq_course("PHI-12", "Introduction to Ethics", "3.00"),
+    cq_group("Choose one course", "3.00", [cq_course("PHI-32", "Introduction to Symbolic Logic", "3.00"),
+                                           cq_course("MATH-32", "Introduction to Symbolic Logic", "3.00")])]) \
+    + cq_list("List A", "6.00", [cq_course("PHI-11", "Critical Thinking", "3.00")])
+ph_lines = C.cq_text(C.cq_group_ends(PHIL)).split("\n")
+check(ph_lines.count(C.CQ_GROUP_END) == 1 and ph_lines[ph_lines.index("PHI-12") - 1] == C.CQ_GROUP_END,
+      "Philosophy: PHI-12 follows the first group as a course of its own (3 + 3 + 3 is the printed 9.00); the "
+      "second group ends with its list and gets no line")
+no_tail = cq_list("Required Courses", "6.00", [
+    cq_course("BIO-60", "Biology", "5.00"),
+    cq_group(SEL, "3.00", [cq_course("DFT-21", "Drafting", "3.00"), cq_course("ENE-21", "Drafting", "3.00")]),
+    cq_group(SEL, "3.00", [cq_course("DFT-27", "Technical Communications", "3.00")])])
+check(C.cq_group_ends(no_tail) == no_tail and C.cq_group_ends("<p>No rows here.</p>") == "<p>No rows here.</p>"
+      and C.cq_group_ends("") == "",
+      "a block whose groups are followed by a group or by the list's end comes back to the character")
+check(C.cq_rows(DRAFTING + "</div>") is None and C.cq_group_ends(DRAFTING + "</div>") == DRAFTING + "</div>"
+      and C.cq_rows("<div>" + DRAFTING) is None and C.cq_group_ends("<div>" + DRAFTING) == "<div>" + DRAFTING,
+      "a block whose div tags do not balance is read flat, as before")
+quoted = DRAFTING.replace('data-entry-style=""', 'data-entry-style="a > b"', 1)
+check(C.cq_text(C.cq_group_ends(quoted)).split("\n").count(C.CQ_GROUP_END) == 2,
+      "a > inside a quoted attribute does not end the tag")
+gp = C.cq_page({"id": 5169, "text": "Drafting Technology - Associate of Science Degree and Certificate of Achievement",
+                "aliaspath": "5367/5467/5169"},
+               {"page": {"text": "Drafting Technology - Associate of Science Degree and Certificate of Achievement"},
+                "body": [{"catalogblockheader": "Program Requirements", "text": DRAFTING}]},
+               "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/")
+check(gp["body"].split("\n").count(C.CQ_GROUP_END) == 2 and gp["codes"] == C.page_codes(dr_flat)
+      and C.page_codes(C.CQ_GROUP_END) == set() and C.RC.page_type("\n".join([C.CQ_GROUP_END] * 40)) == "other",
+      "cq_page's text carries the lines; they name no course and no rule B field, so the codes read are the same")
+
 # what an extraction after a capture would pay for, against the filed read
 _wx = tempfile.mkdtemp()
 try:

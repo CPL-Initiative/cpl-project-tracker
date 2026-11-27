@@ -2030,12 +2030,16 @@ def source_record(college: str, program: dict, reg: dict, best: dict | None, met
         rec.update(method=method, source=None, coverage=0.0, codes_found=[], text="")
         return rec
     got = best.get("got") or {}
+    # A college that opted into reading tabs beside prose (tabs_with_prose) keeps the appended panels where the cap
+    # would cut them (P.window_keeps_tabs, S741: Ventura 35654 and 37415); every other college's window is as before.
+    window = P.window_keeps_tabs if program.get("tabs_with_prose") and best.get("field") == "innerText+tabs" \
+        else P.text_window
     rec.update(method=method,
                source={"url": best["url"], "title": got.get("title"), "h1": got.get("h1"),
                        "text_from": best.get("field"), "label": best.get("label")},
                coverage=round(best["coverage"], 3),
                codes_found=sorted(best["found"]),
-               text=P.with_outcome_tabs(P.text_window(best.get("text") or "", best["found"]),
+               text=P.with_outcome_tabs(window(best.get("text") or "", best["found"]),
                                         got.get("outcomeTabs")),
                courseleaf_lists=P.courseleaf_lists(got, program["closed_list"])
                if reg.get("catalog_platform") == "courseleaf" else [])
@@ -2577,7 +2581,7 @@ def cq_page(entry: dict, page: dict | None, prefix: str, children: list | None =
         return None
     title, text = cq_page_text(page)
     # The entry's text page by page (RC.OWN_PARTS, S741): rule B types an entry without a child page that is course
-    # descriptions on its own (San Diego City's Courses tab), where the other pages print the listed courses.
+    # descriptions on its own (San Diego City's Courses tab), where the other pages print every listed course.
     parts = [{"title": title, "text": text, "child": False}]
     for child in children or []:
         child_title, child_text = cq_page_text(child)

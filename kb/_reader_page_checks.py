@@ -11,7 +11,7 @@ choose the page by the heading:
 
   Rule B  A course-descriptions page or a general-education page is never a program's page. Checked first.
           A program entry read with its own child pages (a curriQunet entry and its tabs) is typed without a child
-          page that is course descriptions on its own, where the entry's other pages print the listed courses: San
+          page that is course descriptions on its own, where the entry's other pages print every listed course: San
           Diego City's Cosmetology certificate prints its four courses and "Total Units: 24.0" in its Requirements
           tab and the four descriptions in its Courses tab (entry_less_descriptions(), S741). An entry whose
           courses print only in a descriptions page is refused as before.
@@ -65,6 +65,8 @@ MARK = "page_checks"                      # the program dict's key capture() set
 PIN_HEADING = "site_pin_heading"          # set on the copy site_pinned() tests: the pinned page's heading names it
 OWN_PARTS = "own_parts"                   # a page's got: the entry's text page by page, where the reader joined an
 #                                           entry with its own child pages (cq_page): [{"title", "text", "child"}]
+OWN_REST_SHARE = 1.0                      # the share of the listed courses an entry's pages other than a descriptions
+#                                           page must print for rule B to type the entry by them (S741)
 
 # Words a heading need not print (COBIx's STOP list, file set 1).
 STOP = {"and", "the", "for", "with", "of", "in", "to", "a", "an", "degree", "certificate", "program", "studies"}
@@ -329,8 +331,8 @@ def page_type(text: str | None) -> str:
 def entry_less_descriptions(got: dict | None, courses: list[dict] | None) -> tuple[str, int] | None:
     """Rule B on a program entry the reader joined with its own child pages (got[OWN_PARTS], set by cq_page in
     kb/_program_requirements_college.py): (the entry's text without each child page that is course descriptions on
-    its own, how many such pages), when at least one child page is and the rest prints ACCEPT_SHARE of the listed
-    courses and is no descriptions page itself; else None, and the page is typed whole, as before.
+    its own, how many such pages), when at least one child page is and the rest prints every listed course
+    (OWN_REST_SHARE) and is no descriptions page itself; else None, and the page is typed whole, as before.
 
     WHY (S741). San Diego City's Cosmetology certificate 22367 (entry 15945/15788; college-page-read 45782712226)
     shows four tabs, each a child page: Requirements ("COURSES REQUIRED FOR THE MAJOR", COSM 50L to 80L, "Total
@@ -339,7 +341,14 @@ def entry_less_descriptions(got: dict | None, courses: list[dict] | None) -> tup
     own page (read 45836824944: "22367 has no text in the capture"). The Courses tab is the entry's own, and the
     requirements print outside it, so the entry is typed by its other pages. A page with no child pages (every
     platform but curriQunet), an entry whose description fields sit in no single child page, and an entry whose
-    other pages do not print the courses are typed whole: a descriptions page stays refused."""
+    other pages do not print every listed course are typed whole: a descriptions page stays refused.
+
+    Every listed course, where the reader's own bar is ACCEPT_SHARE: the self-recall (college-page-read
+    45954122786, San Diego City's four marked programs) found that at ACCEPT_SHARE the change also read CPA
+    Preparatory Program 38732, a Certificate of Achievement of 16 units or more, from the catalog's one entry of its
+    title, a 6-unit Certificate of Performance printing 3 of its 5 listed courses: another award's page, which rule
+    A reads as its own by the word "Certificate". An entry that prints only part of the state's list is no proof
+    the entry is the program's, so it stays refused, as it was before the change."""
     parts = [p for p in (got or {}).get(OWN_PARTS) or [] if isinstance(p, dict)]
     rest = [p.get("text") or "" for p in parts
             if not (p.get("child") and page_type(p.get("text")) == "descriptions")]
@@ -347,7 +356,7 @@ def entry_less_descriptions(got: dict | None, courses: list[dict] | None) -> tup
     if not left_out or not courses:
         return None
     text = "\n".join(t for t in rest if t)
-    if page_type(text) == "descriptions" or P.coverage(P.find_codes(text, courses), courses) < P.ACCEPT_SHARE:
+    if page_type(text) == "descriptions" or P.coverage(P.find_codes(text, courses), courses) < OWN_REST_SHARE:
         return None
     return text, left_out
 
@@ -601,7 +610,7 @@ def site_page(pg: dict, program: dict, text: str, found: dict, field: str) -> tu
     body = got.get("body") or pg.get("body") or ""
     kind = page_type(body)
     if kind == "descriptions":
-        # The descriptions are the entry's own child page and its other pages print the courses (S741): typed by
+        # The descriptions are the entry's own child page and its other pages print every listed course (S741): typed by
         # those pages, a general-education entry still refused below; the text read stays the whole entry's.
         rest = entry_less_descriptions(got, courses)
         if rest is not None:

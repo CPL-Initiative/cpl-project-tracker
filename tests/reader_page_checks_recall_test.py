@@ -115,6 +115,58 @@ check(coa_hit >= COA_FLOOR * coa_total,
 check(sisters <= SISTER_CEILING, "rule A accepts %d sister programs on a record's own page, over %d: %s"
       % (sisters, SISTER_CEILING, "; ".join(samples)))
 
+# ── S741: the reach of rule B's change (an entry typed without its own descriptions child page) ───────────────
+# The change can move a decision only where three things hold: the rules read the program (its filed record places
+# none, or a filed read refused it: mark()), its catalog's reader joins an entry with its child pages (curriQunet
+# alone sets RC.OWN_PARTS; tests/reader_page_checks_test.py pins that), and rule A accepts the entry for the program.
+# The committed files keep no page text, so the count here is by each marked program's filed page, through its h1,
+# title and address, as above. Measured 2026-11-27 at b896d6f4: 50 marked programs at the 27 curriQunet catalogs,
+# 25 with a filed page, and rule A accepts 2 of the 25, both at San Diego City: Cosmetology 22367 and CPA Preparatory
+# Program 38732. The other 23 sit on a sister's entry, which rule A refuses whatever rule B says.
+#
+# On held text: college-page-read 45954122786 read San Diego City's four marked programs' entries as the capture
+# reads them. Typed whole, all four are descriptions (each entry's Courses tab), so the rule as it stood refuses
+# all four. With the change, at the reader's own bar (ACCEPT_SHARE of the listed courses on the entry's other pages):
+#   * 22367 reads its own entry (right): Requirements prints COSM 50L to 80L and "Total Units: 24.0".
+#   * 38732 reads the catalog's one entry of its title, "Certified Public Accountant Preparatory Program -
+#     Certificate of Performance: City", 6 units, 3 of its 5 listed courses, where the state lists a Certificate of
+#     Achievement of 16 units or more: another award's page (wrong), by rule A's reading of "Certificate".
+#   * 22352 and 22333 stay refused (right): each sits on a sister's entry.
+# Admitted 2, right 1 and wrong 1. So the change asks for every listed course (RC.OWN_REST_SHARE): admitted 1
+# (22367), right 1, wrong 0, and the other three refused as before. The ceiling sits above the measure: a jump in
+# the programs the change can reach fails here, so its pages are read before a capture files them.
+REACH_CEILING = 10
+marked = with_page = by_heading = catalogs = 0
+reach = []
+for college in sorted(os.listdir(BASE)):
+    folder = os.path.join(BASE, college)
+    try:
+        with open(os.path.join(folder, "capture.json"), encoding="utf-8") as fh:
+            platform = (json.load(fh) or {}).get("platform")
+        with open(os.path.join(folder, "sources.json"), encoding="utf-8") as fh:
+            filed = {s.get("control_number"): s for s in json.load(fh)}
+    except (OSError, ValueError):
+        continue
+    if platform != "curriqunet":
+        continue
+    catalogs += 1
+    for cn in sorted(RC.places_none_filed(folder) | RC.refused_standing(folder)):
+        marked += 1
+        s = filed.get(cn) or {}
+        src = s.get("source") or {}
+        if not src:
+            continue
+        with_page += 1
+        lines = [src.get("h1") or "", (src.get("title") or "").split("|")[0], RC._slug_words(src.get("url"))]
+        if RC.heading_line(lines, s.get("title"), s.get("award")) >= 0:
+            by_heading += 1
+            reach.append("%s %s %r" % (college, cn, (src.get("h1") or "")[:60]))
+print("rule B's change, its reach: %d marked programs at %d curriQunet catalogs, %d with a filed page, rule A "
+      "accepts %d: %s" % (marked, catalogs, with_page, by_heading, "; ".join(reach) or "none"))
+check(catalogs >= 20, "the committed captures hold %d curriQunet catalogs, under 20" % catalogs)
+check(by_heading <= REACH_CEILING, "rule B's change can reach %d marked programs on their own entries, over %d: %s"
+      % (by_heading, REACH_CEILING, "; ".join(reach)))
+
 for f in failures:
     print("FAIL:", f)
 print("%d/%d checks passed: reader page checks, self-recall" % (checks[0] - len(failures), checks[0]))

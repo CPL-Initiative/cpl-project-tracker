@@ -747,6 +747,34 @@ only_desc = C.cq_page(COSM_ENTRY, COSM_OWN, SDC, [COSM_SUMMARY, COSM_ADMIT, COSM
 check(RC.entry_less_descriptions(only_desc["got"], cosm["closed_list"]) is None
       and C.candidates(cosm, [only_desc]) == [],
       "an entry whose courses print only in its descriptions tab is refused: its other pages name no listed course")
+# An entry that prints part of the state's list stays refused (the self-recall's 38732: the catalog's one entry of
+# its title is a 6-unit Certificate of Performance printing ACCT 119, 125 and 135 of the five the state lists for a
+# Certificate of Achievement of 16 units or more; college-page-read 45954122786).
+CPA = ["ACCT 119", "ACCT 120", "ACCT 125", "ACCT 135", "ACCT 220"]
+cpa_entry = {"id": 15760, "text": "Certified Public Accountant Preparatory Program - Certificate of Performance: City",
+             "aliaspath": "15604/15945/15760", "haschildbodynavs": True}
+cpa_req = cq_json("Requirements", [(None, "<div>COURSES REQUIRED FOR THE MAJOR:</div><div>Semester Units: 3.0</div>"
+                                    "<div>ACCT 119</div><div>Accounting Ethics (Active)</div><div>3.0</div>"
+                                    "<div>Complete one course from the following:</div><div>Semester Units: 3.0</div>"
+                                    "<div>ACCT 125</div><div>Government &amp; Not-for-Profit Accounting (Active)</div>"
+                                    "<div>3.0</div><div>ACCT 135</div><div>Principles of Auditing (Active)</div>"
+                                    "<div>3.0</div><div>Total Units: 6.0</div>")])
+cpa_courses = cq_json("Courses", [(None, "".join(
+    cosm_description(c, "Accounting", "none").replace("<div>Grading:</div>", "<div>Advisory: Completion of an "
+                                                      "accounting course.</div><div>Grading:</div>")
+    for c in ("ACCT 119", "ACCT 125", "ACCT 135")))])
+cpa_pg = C.cq_page(cpa_entry, cq_json(cpa_entry["text"], []), SDC, [cpa_req, COSM_SUMMARY, cpa_courses])
+cpa = prog("38732", "Certified Public Accountant (CPA) Preparatory Program", COA, CPA)
+cpa_rest = "\n".join(p["text"] for p in cpa_pg["got"][RC.OWN_PARTS][:3])
+check(RC.page_type(cpa_pg["body"]) == "descriptions" and RC.page_type(cpa_pg["got"][RC.OWN_PARTS][3]["text"]) == "descriptions"
+      and P.coverage(P.find_codes(cpa_rest, cpa["closed_list"]), cpa["closed_list"]) == 0.6
+      and RC.heading_line([cpa_pg["h1"]], cpa["title"], cpa["award"]) >= 0
+      and RC.entry_less_descriptions(cpa_pg["got"], cpa["closed_list"]) is None
+      and C.candidates(cpa, [cpa_pg]) == [],
+      "an entry whose other pages print 3 of the 5 listed courses stays refused, though rule A reads its heading: "
+      "the change reads an entry only where its requirements print every listed course")
+check(RC.OWN_REST_SHARE == 1.0 and RC.OWN_REST_SHARE > P.ACCEPT_SHARE,
+      "the share is every listed course, above the reader's own bar")
 # The descriptions in the entry's own page (no child page holds them) stay refused.
 own_desc = C.cq_page(COSM_ENTRY, cq_json(COSM_ENTRY["text"], COSM_REQ["body"] and [
     (None, COSM_REQ["body"][0]["text"] + COSM_COURSES["body"][0]["text"])]), SDC, [COSM_SUMMARY])
