@@ -1818,16 +1818,19 @@
 
   /* Get credit (Sam, 2026-11-27): a "CPL here" course links to the college's MAP landing page opened on the
      course's exhibit, ?Exhibit=<MAP ID>, which MAP's page puts in its search box and lists that exhibit's courses
-     (verified live S744 at Cerritos: MAPICA-RA4P-1-001 lists IWAP 40.07 and 40.50). A course code in that
-     parameter does nothing, and an exhibit code holding "&" finds nothing (MAPICI-BP&C-1-001 at Chaffey), so such a
-     course opens the landing page alone. The landing page is the only target, never the MAP dashboard; a college
+     (verified live S744 at Cerritos: MAPICA-RA4P-1-001 lists IWAP 40.07 and 40.50). A course code or a title in
+     that parameter does nothing, nor does a code MAP's pattern refuses (EXHIBIT_CODE), so such a course opens the
+     landing page alone. The landing page is the only target, never the MAP dashboard; a college
      with no landing page on file says so, with no link in its place. The URLs come from map_college_contacts_pub. */
   var landingPages = { map: null, loading: null };
+  /* MAP's own test for the parameter (its landing page bundle, read S744): a value that fails it, or any one of a
+     comma list, makes the page drop the parameter, so a code holding "&", "--" or "(" is never sent. */
+  var EXHIBIT_CODE = /^[A-Za-z0-9]+(?:-[A-Za-z0-9]+){2,}$/;
   function getCreditExhibit(here) {
     var ex = (here && here.exhibits) || [];
     for (var i = 0; i < ex.length; i++) {
       var id = String((ex[i] && ex[i].exhibit) || "").trim();
-      if (id && id.indexOf("&") < 0) return id;
+      if (EXHIBIT_CODE.test(id)) return id;
     }
     return "";
   }

@@ -10,7 +10,8 @@
 // Guards, on Cerritos's Field Ironworkers A.S. (cerritos_42158):
 //   (a) every "CPL here" tile carries Get credit, opening the college's landing page on that course's exhibit;
 //   (b) the link goes to the landing page from map_college_contacts_pub, never the MAP dashboard;
-//   (c) an exhibit code holding "&" is skipped, and with no usable code the link opens the landing page alone;
+//   (c) a code MAP's own pattern refuses ("&", "--", a course code) is skipped, and with none left the link opens the
+//       landing page alone;
 //   (d) a college with no landing page on file says so, with no link;
 //   (e) a tile without CPL here carries no Get credit.
 
@@ -73,15 +74,15 @@ async function render(landingRows, edit) {
 
   const b = await render(cer, (rec) => {
     rec.display.courses["IWAP 40.50"].here.exhibits = [{ exhibit: "MAPICI-BP&C-1-001" }, { exhibit: "MAPICA-RA4P-1-001" }];
-    rec.display.courses["IWAP 40.07"].here.exhibits = [{ exhibit: "MAPICI-E&ET-1-001" }];
+    rec.display.courses["IWAP 40.07"].here.exhibits = [{ exhibit: "MAPICI-E&ET-1-001" }, { exhibit: "MAPICI-E3S--1-001" }, { exhibit: "IWAP 40.07" }];
   });
   const hrefOf = (r, code) => {
     const t = [...r.root.querySelectorAll(".cplpw-rtile")].find((x) => x.getAttribute("data-code") === code);
     const l = t && t.querySelector(".cplpw-getcredit a");
     return l ? l.href : null;
   };
-  check("(c) a code holding & is skipped for the next usable one", hrefOf(b, "IWAP 40.50") === LANDING + "?Exhibit=MAPICA-RA4P-1-001", hrefOf(b, "IWAP 40.50"));
-  check("(c) with no usable code the link opens the landing page alone", hrefOf(b, "IWAP 40.07") === LANDING, hrefOf(b, "IWAP 40.07"));
+  check("(c) a code MAP refuses (&) is skipped for the next usable one", hrefOf(b, "IWAP 40.50") === LANDING + "?Exhibit=MAPICA-RA4P-1-001", hrefOf(b, "IWAP 40.50"));
+  check("(c) with no code MAP accepts (&, --, a course code) the link opens the landing page alone", hrefOf(b, "IWAP 40.07") === LANDING, hrefOf(b, "IWAP 40.07"));
 
   const c = await render([{ college: "Cerritos College", landing_page_url: "" }]);
   const slots = [...c.root.querySelectorAll(".cplpw-getcredit")];
