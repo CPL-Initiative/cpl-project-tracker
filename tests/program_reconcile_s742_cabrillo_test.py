@@ -14,15 +14,17 @@ prints that list's name with the very figure the record states, all of the recor
 
 Pinned here:
   * the step as written, citing its page read, and the kind described;
-  * the step on the page's own lines: Psychology's four lists and Geology's three become units to choose at their
-    printed figures, and today's scorer then passes each degree at its printed 60; the same for Dance and Exercise
-    and Sports Science on their own lists' figures, printed as the page prints them;
+  * the step on the page's own lines, the four pages' Program Requirements text committed whole in the page reads'
+    plan files (runs 46001469210 and 46013582118): Psychology's four lists, Geology's three, Dance's seven and
+    Exercise and Sports Science's three become units to choose at their printed figures, and today's scorer then
+    passes each degree at its printed 60; a wrong page, or a list printed at another figure, is refused;
   * the wrong joins it refuses: a page without the lines; a page that prints one list at another figure (all or
     none); a list that states no figure; two lists of one name and figure the page prints once; a record that
     would not add to its printed total with the lists counted (an advisory list on a passing record, 06345); a
     certificate, which the college's steps never read; another college's record;
   * the self-recall over every committed Cabrillo record (the S652 review rule, counting what the step joins as well
-    as the verdicts), each record's page printing its own lists' figures: the step reads the four degrees alone,
+    as the verdicts), the four on their committed pages and every other record on a page printing its own lists'
+    figures (the most the step could be offered): the step reads the four degrees alone,
     each turns passing, no passing record turns failing, and nothing but the lists' rule and minimum moves;
   * the held answers: every passing Cabrillo record whose 'Recommended' lists the reading already counted, misread
     as these four were and put through the step, passes again (right, wrong counted; wrong must be 0).
@@ -160,15 +162,30 @@ with open(os.path.join(ROOT, "kb", "college_reads", "s742_piles_cabrillo_recomme
 check(any("psychology-associate-in-arts" in u for u in urls) and any("geology-associate-in-science" in u for u in urls),
       "the page read's plan names the two pages quoted here")
 
+# The four pages' own Program Requirements text, committed whole in the page reads' plan files under their runs
+# (the step's reader, MAJOR: a recall built from each record's own lists can never report a wrong page).
+PAGES = {}
+for _name, _run in (("s742_piles_cabrillo_recommended", "46001469210"),
+                    ("s742_piles_cabrillo_recommended_2", "46013582118")):
+    with open(os.path.join(ROOT, "kb", "college_reads", _name + ".json"), encoding="utf-8") as fh:
+        _plan = json.load(fh)
+    for _cn, _text in _plan["_quoted"][_run].items():
+        if not _cn.startswith("_"):
+            PAGES[_cn] = _text
+    for _cn in PAGES:
+        pass
+check(sorted(PAGES) == sorted(FOUR) and all("Complete the following number of credits: 60" in t for t in PAGES.values())
+      and PSYCH.split("\n")[0] in PAGES["06381"] and GEOL_HEAD.strip() in PAGES["06380"],
+      "the four degrees' pages are committed as their page reads printed them: %r" % sorted(PAGES))
+
 print("the step on the page's own lines")
-for cn, text, want in (("06381", PSYCH, [3, 3, 9, 9]), ("06380", None, [13, 8, 9])):
+for cn, want in (("06381", [3, 3, 9, 9]), ("06380", [13, 8, 9]), ("06352", [3, 3.5, 10.5, 4, 4, 3, 3]),
+                 ("44992", [10, 8, 18])):
     f = filed(cn)
     rec = misread(f)
-    if text is None:
-        # Geology: the page read's opening lines for its first two lists, and its third list as the page prints it.
-        text = GEOL_HEAD + "Recommended General Electives\nComplete the following number of credits: 9\n"
+    text = PAGES[cn]
     new, notes = recon(rec, text, f["award"], cn)
-    lists = [b for b in new["blocks"] if named(b)]
+    lists = list(new["blocks"])
     check(len(stepped(notes)) == 1 and [b["minimum"] for b in lists] == want
           and all(b["rule"] == "choose_units" for b in lists),
           "%s: every Recommended list reads as units to choose at its printed figure %r: %r" % (cn, want, rules(new)))
@@ -178,14 +195,14 @@ for cn, text, want in (("06381", PSYCH, [3, 3, 9, 9]), ("06380", None, [13, 8, 9
     check(arith(f, rec)["status"] != "equal", "%s: as the reading filed it the degree does not add up" % cn)
     again, more = recon(new, text, f["award"], cn)
     check(not stepped(more) and again == new, "%s: a record already read so is left alone" % cn)
-for cn in ("06352", "44992"):
-    f = filed(cn)
-    rec = misread(f)
-    new, notes = recon(rec, page_of(rec), f["award"], cn)
-    check(len(stepped(notes)) == 1 and all(b["rule"] == "choose_units" and b["minimum"] == S._span(b["stated"])[0]
-                                           for b in new["blocks"])
-          and arith(f, new)["status"] == "equal",
-          "%s: its lists at their printed figures pass the degree" % cn)
+# A page that prints one of the record's lists at another figure refuses the record, on the page's own text.
+f = filed("06352")
+rec = misread(f)
+new, notes = recon(rec, PAGES["06352"].replace("Complete the following number of credits: 10.5",
+                                              "Complete the following number of credits: 12"), f["award"], "06352")
+check(not stepped(notes), "Dance: its Techniques list printed at 12 where the record states 10.5 moves no list")
+new, notes = recon(rec, PAGES["06381"], f["award"], "06352")
+check(not stepped(notes), "Dance's record on Psychology's page moves no list (a wrong page is refused)")
 
 print("the wrong joins it refuses")
 f = filed("06381")
@@ -234,7 +251,9 @@ for path in sorted(glob.glob(os.path.join(FOLDER, "*.json"))):
     cn = str(f["control_number"])
     rec = f["record"] if cn not in FOUR else misread(f)
     before = arith(f, rec)["status"]
-    new, notes = recon(rec, page_of(rec), f.get("award"), cn)
+    # The four are read on their own committed pages; every other record on a page that prints its own lists'
+    # figures, the most the step could be offered.
+    new, notes = recon(rec, PAGES[cn] if cn in FOUR else page_of(rec), f.get("award"), cn)
     if stepped(notes):
         moved.append(cn)
         after = arith(f, new)["status"]
