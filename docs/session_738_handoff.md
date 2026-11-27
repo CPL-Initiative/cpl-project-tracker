@@ -5,6 +5,8 @@ updated: 2026-11-26
 tags: [handoff, session]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/handoffs
+superseded: true
+superseded_by: session_742_handoff.md
 ---
 
 **Routing.** This handoff is for Sam's next plain session and carries the main queue (handoff 734's, worked here).

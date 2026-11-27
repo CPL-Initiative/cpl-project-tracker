@@ -39,7 +39,7 @@ Allow-Once storm) ·
 [doctrine_provenance](docs/reference/doctrine_provenance.md) (the incidents
 behind these rules) · cobix_pr_loop ·
 [credential_watch_agent](docs/reference/credential_watch_agent.md) (the
-industry-credential watch) · `lanes/`.
+industry-credential watch) · [roep_display_structured_fields_design](docs/reference/roep_display_structured_fields_design.md) · `lanes/`.
 
 **Skills** (`.claude/skills/`) are pull-side too, fired by their own
 `description`, not by a pointer: **consult-doctrine** (what this repo

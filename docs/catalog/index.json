@@ -16921,7 +16921,7 @@
      ],
      "title": "Program requirements harvest \u2014 lane state",
      "type": null,
-     "updated": "2026-11-26"
+     "updated": "2026-11-27"
     },
     {
      "created": "2026-08-28",
@@ -17589,8 +17589,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 692,
+   "count": 693,
    "docs": [
+    {
+     "created": "2026-11-27",
+     "governs": [],
+     "n": 742,
+     "path": "docs/session_742_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 742 handoff (from SkyWillet, S741, the CPL Queue routine's collection run of 2026-11-27, from 06:12Z)",
+     "type": null,
+     "updated": "2026-11-27"
+    },
     {
      "created": "2026-11-26",
      "governs": [],
@@ -29051,5 +29065,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1587
+ "total": 1588
 }
