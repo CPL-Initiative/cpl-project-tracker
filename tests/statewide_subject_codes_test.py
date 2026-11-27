@@ -10,8 +10,9 @@ WHAT THIS GUARDS (each a way the list would send a person to the wrong common co
   (3) a person's statewide filing is settled at 100% on the code the person filed;
   (4) no vote comes from an M-ID whose discipline rests on a TOP code alone, and no M-ID votes for the code that named
       it: Cerritos AED, whose courses gave ELEC M90xx their discipline, is not called ELEC;
-  (5) a code whose courses are mostly noncredit takes its leading COCI category's common code (ESLNC is ESLN), and a
-      code whose titles are another code's numbers ("AJ 359") takes that code's call;
+  (5) a code whose courses are mostly noncredit takes its leading COCI category's common code (ESLNC is ESLN); the
+      named_code rule (a code whose titles are another code's numbers, "AJ 359" under LAWEN) still stands in the
+      builder, and Hancock LAWEN is folded to AJ, which keeps the CRIM call;
   (6) the confidence holds where it is highest: on the labelled codes, the top band is right 95% or more;
   (7) a rerun writes the same bytes as the committed file.
 
@@ -94,16 +95,14 @@ check("(4) Cerritos AED is not called ELEC", aed is not None and aed["recommend"
 eslnc = codes.get("ESLNC")
 check("(5) a noncredit code takes its category's common code (ESLNC is ESLN)",
       eslnc is not None and eslnc["class"] == "noncredit" and eslnc["recommend"]["common"] == "ESLN", eslnc and eslnc["recommend"])
-named = [c for c in doc["codes"] if c["class"] == "named_code"]
-lawen = codes.get("LAWEN")
-# A person's statewide filing outranks the rule (person-settled wins, Sam 2026-11-16): LAWEN was filed CRIM by
-# 2026-11-25's daily build, so it reads `settled`. The rule still decides the other named codes; LAWEN keeps CRIM
-# either way, and only a person's filing may settle it.
-lawen_ok = lawen is not None and lawen["recommend"]["common"] == "CRIM" and (
-    lawen["class"] == "named_code"
-    or (lawen["class"] == "settled" and lawen["recommend"]["why"] == "a person filed it statewide"))
-check("(5) a code whose titles are another code's numbers takes that code's call (LAWEN's AJ courses are CRIM)",
-      bool(named) and lawen_ok, lawen and (lawen["class"], lawen["recommend"]))
+# Hancock LAWEN was the worked example of named_code (titles were "AJ 359", call CRIM). The 2026-11-27 parse
+# bundle folded LAWEN to AJ (kb/coci_subject_folds.py); those courses now sit under AJ, which still calls CRIM
+# (a person filed it statewide). The named_code class is empty in the committed list because every live case was
+# one of those folded labels; the rule in the builder stands.
+aj = codes.get("AJ")
+check("(5) Hancock LAWEN is folded off the list; its AJ-titled courses sit under AJ, which calls CRIM",
+      "LAWEN" not in codes and aj is not None and aj["recommend"]["common"] == "CRIM",
+      aj and (aj["class"], aj["recommend"]))
 
 emls = codes.get("EMLS")
 check("(5) a noncredit code with credit courses carries a credit call beside its category call",
