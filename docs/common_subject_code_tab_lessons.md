@@ -888,3 +888,30 @@ main before merging an apply. An apply's audit step can write a file over the 5 
 to the cron. A new alias map changes the honors payload, so a test pinned to "rows unchanged" must tolerate a moved
 payload. The repo's Supabase guard refuses `DO` blocks: write a guarded delete as a CTE that deletes only when the
 match count is exact.
+
+## S736 (SkyBrant, 2026-11-26 to 11-27): the schedule search, the lightning round, COCI's glued letters
+
+- **Read the college's schedule search before guessing a subject title** (Sam, 2026-11-26,
+  `r-schedule-tool-first-for-subject-titles-sam-2026-11-26`: *"search each college's website for their schedule tool,
+  which is almost always listed by subject and title"*, and *"add these titles instead of guessing"*). Every title
+  filed before this run came from a catalog. The schedule lists each code it runs beside the title it prints, which is
+  the second source after the catalog's subject index.
+- **LACCD answers in one table.** The district's PeopleSoft class search has a select-subject lookup per term that lists
+  all 216 subjects of its nine colleges (term 2268); one read titled 171 of 212 untitled codes (#3894,
+  `f-laccd-schedule-subject-lookup-s736`). 87 schedule titles differ from the catalog's; the catalog stands, and the
+  differences are a list for Sam. A course description costs a page load per class, so none was read.
+- **COCI glues a campus letter to the subject.** Cerro Coso numbers courses C-something and Porterville P-something;
+  COCI stores some as `PHEDC 103` and others as `PHED C276`, so 26 Cerro Coso codes ending in C and 6 Porterville codes
+  ending in P are fake subjects (`f-cerro-coso-porterville-letter-glued-to-subject-s736`). Titling them would file a
+  fake code; the fix is in the COCI lookup builder. A real code can end in the letter (PSYC, MUSC, EDUC, PHSC, SOSC,
+  PTEC, FRCC, EMTC), so the fold needs the base code to exist and the code to be state-only.
+- **Cerro Coso's long-term schedule confirms it** (Sam shared the PDF 2026-11-27; *Long-Term Schedule Effective Fall
+  2024, Active and Inactive Courses*, course list of July 17, 2024; vault
+  `raw/2026-11-27-cerro-coso-long-term-schedule-fall-2024.md`). It prints 459 courses under 53 subjects, every one SUBJ
+  plus a C-number (ACAD C070, EMTC C070, BIOL C101). 24 of the 26 fake codes' bases appear; HMSV does not, and PHED is
+  printed as KINS (KINS C101 Foundations of Physical Education), so the fold targets COCI's own PHED and the schedule
+  does not title it. Since it lists inactive courses, it is a second signal for the codes, not a title source.
+- **The lightning round grew from Sam's use of it** (#3893): *Not a subject*, *Skip* for the visit, the example
+  course's description on hover or a web search, the catalog in a bottom bar, a folded explanation and a training note
+  in `kb_curation` (`procedure_note`). His next ask, 2026-11-27: *"there should be a way to ask you to run a routine to
+  reparse based on the note and perhaps all the cerro coso items could be resolved quickly"*.

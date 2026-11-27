@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 733,
-  "moniker": "SkyGodwit",
+  "session": 736,
+  "moniker": "SkyBrant",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_734_handoff.md",
+  "handoff": "docs/session_744_handoff.md",
   "calls": [
     {
       "title": "The noncredit subject title list",
@@ -62,11 +62,11 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-25T22:09:34Z",
+  "written_at": "2026-11-27T15:27:23Z",
   "project": "subjects",
   "next_step": {
-    "title": "File common subjects for the held stray codes",
-    "text": "The re-mint retired 60 stray M-IDs and holds 35 until their local subject carries a filed common subject. File those, and the 50 local subjects scored under 90, from the picks list or by moving courses in the Local subjects sidebar; then rerun the dry run for the rest."
+    "title": "Fold Cerro Coso's and Porterville's glued letter into the course number",
+    "text": "COCI stores some Cerro Coso courses as PHEDC 103 where the college prints PHED C103, and Porterville's the same with P. Fold those state-only codes in the COCI lookup builder for the two colleges only, dry run first measuring every consumer, then rebuild the subject family."
   },
   "changes": [
     {
@@ -260,6 +260,18 @@
     {
       "at": "2026-11-25T22:09Z",
       "text": "Local subject recommendations score 0 to 100 and the Subjects panel draws the confidence bar (PR 3859)."
+    },
+    {
+      "at": "2026-11-26T01:27Z",
+      "text": "The Accounting re-point dry run: 372 M-IDs and 907 courses move to ACCT under Accounting, 1 held, 29 families flagged; the apply waits on Sam's four Business filings (PR 3867)."
+    },
+    {
+      "at": "2026-11-26T17:39Z",
+      "text": "The lightning round takes Not a subject, Skip for the visit, the example course's description, the catalog link in a bottom bar, a folded How this works and a training note (PR 3893)."
+    },
+    {
+      "at": "2026-11-26T19:01Z",
+      "text": "LACCD's class search titles 171 of 212 untitled codes at the district's nine colleges; 87 differ from the catalog, and the catalog stands (PR 3894)."
     }
   ]
 }
