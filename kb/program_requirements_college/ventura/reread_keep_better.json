@@ -1,17 +1,20 @@
 {
  "college": "Ventura College",
  "run": "45964322406",
- "written": "2026-11-27T08:52:20Z",
+ "written": "2026-11-27T08:54:27Z",
  "rule": "a checked live row restores, or is held where the base files none; then own program (a heading sharing a title word, or a generic heading on a page the address or the capture shows is the program's own; then heading_award_check), where a failing re-read is restored, or held where the base files none or the live row already holds this run; then a live row holding this run keeps its record and names no dispatch; then a supplied live run other than the filed record's is held for a person; then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one (d-reread-keep-the-better-s683; COBIx on #3544 and #3547)",
  "checked": [],
  "live_runs": {
   "06948": "38756014587",
   "08253": "38756014587",
+  "31298": "44514835321",
   "35654": "38756014587",
   "37415": "38756014587",
   "40179": "38756014587",
+  "44186": "44514835321",
   "44994": "38756014587",
-  "44995": "38756014587"
+  "44995": "38756014587",
+  "45831": "44514835321"
  },
  "live_read_at": "2026-11-27T08:46:32Z",
  "dispatch": [
@@ -41,25 +44,6 @@
     "40179",
     "44994",
     "44995"
-   ]
-  },
-  {
-   "workflow": "program-requirements-college.yml",
-   "ref": "claude/s741-readers",
-   "inputs": {
-    "college": "Ventura College",
-    "step": "load"
-   },
-   "posts": 3,
-   "control_numbers": [
-    "31298",
-    "44186",
-    "45831"
-   ],
-   "needs_load": [
-    "31298",
-    "44186",
-    "45831"
    ]
   }
  ],
@@ -280,7 +264,7 @@
   "45964322406": {
    "base": "origin/main",
    "base_sha": "473dc192254e258685d6663969251327bf90358c",
-   "decided": "2026-11-27T08:52:20Z",
+   "decided": "2026-11-27T08:54:27Z",
    "counts": {
     "reread": 7,
     "kept": 7,
