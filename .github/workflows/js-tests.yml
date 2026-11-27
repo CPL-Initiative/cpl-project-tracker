@@ -1260,6 +1260,12 @@ jobs:
       - name: Cheap piles S742, batch a (four colleges in one plan, the page's own words)
         if: matrix.shard == 5
         run: python3 tests/program_piles_s742a_test.py
+      # S742 at Cabrillo: the recommended_counts reconcile step. A list the page heads 'Recommended' and counts
+      # ('Complete the following number of credits: N' under its own name) reads as N units to choose, all of a
+      # record's recommended lists or none; four degrees pass, 23 held answers right, 0 wrong.
+      - name: Reconcile S742 at Cabrillo (lists headed Recommended that the page counts)
+        if: matrix.shard == 4
+        run: python3 tests/program_reconcile_s742_cabrillo_test.py
       # S741's page pins: American River's Level I and Level II windows each hold their own heading (cut by until),
       # and each site pin (Orange Coast, Fullerton, El Camino, Butte) is its program's own, unfiled address.
       - name: Page pins S741 (American River's two windows, the site pins)
