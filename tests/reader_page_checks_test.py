@@ -669,6 +669,122 @@ check(RC.heading_line(["182 Business - Oﬃ ce Technolog y", "AdministraƟ ve As
 check(all(g in S._LIGATURES for g in RC.STAND_INS + RC.STAND_IN_LETTER),
       "fold: the stand-in glyphs are keys of the scorer's table, which stays the one table")
 
+# ── S741: rule B types a program entry without its own descriptions child page ────────────────────────────────
+# San Diego City's Cosmetology certificate 22367 (entry 15945/15788), as the capture reads it (college-page-read
+# 45782712226): the entry's page, then its four tabs, each a child page. The Courses tab prints the four courses'
+# descriptions with a "Grading:" line each, so the entry typed whole is "descriptions" and rule B refused the
+# program's own page (read 45836824944). The fixture keeps the page's words, its long paragraphs cut short.
+SDC = "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/"
+COSM = ["COSM 50L", "COSM 60L", "COSM 70L", "COSM 80L"]
+COSM_NAMES = ["Fundamentals of Cosmetology", "Intermediate Cosmetology", "Intermediate-Advanced Cosmetology",
+              "Advanced Cosmetology"]
+
+
+def cq_json(title, blocks):
+    """A curriQunet page's JSON: its node's title and its blocks ((header, html) each)."""
+    return {"page": {"text": title}, "body": [{"catalogblockheader": h, "text": t} for h, t in blocks]}
+
+
+def cosm_description(code, name, limit):
+    subject, number = code.split()
+    return ("<style>.custom-course-summary-context-wrapper {margin-bottom: 5px;}</style>"
+            "<div>%s</div><div>%s</div><div>%s</div><div>16 - 18 hours lecture/240-270 hours lab ; 6 units</div>"
+            "<div>Grading:</div><div>Letter Grade Only</div><div>Limitation on Enrollment: This course is not open "
+            "to students with previous credit for %s</div><div>Special Admission - must be admitted to program.</div>"
+            "<div>This lecture-lab course provides an integration of theoretical and practical principles and "
+            "procedures.</div><div>FT; AA/AS.</div>" % (subject, number, name, limit))
+
+
+COSM_ENTRY = {"id": 15788, "text": "Cosmetology - Certificate of Achievement: City", "aliaspath": "15604/15945/15788",
+              "haschildbodynavs": True}
+COSM_OWN = cq_json(COSM_ENTRY["text"], [])
+COSM_REQ = cq_json("Requirements", [(None, "<div>COURSES REQUIRED FOR THE MAJOR:</div><div>Semester Units: 24.0</div>"
+                                     + "".join("<div>%s</div><div>%s (Active)</div><div>6.0</div>" % (c, n)
+                                               for c, n in zip(COSM, COSM_NAMES))
+                                     + "<div>Total Units: 24.0</div>")])
+COSM_SUMMARY = cq_json("Summary", [(None, "<p>The Certificate of Achievement in Cosmetology provides students with "
+                                    "practical and theoretical cosmetology training that prepares the student for "
+                                    "the California Board of Cosmetology examination.</p><p>Learning Outcome(s): "
+                                    "Students who complete the Cosmetology Program will be able to: Apply "
+                                    "cosmetology concepts, procedures and practices to successfully pass the State "
+                                    "Board Examination.</p>")])
+COSM_ADMIT = cq_json("Admission Criteria", [(None, "<p>Admission Criteria</p><p>Prospective students must be admitted "
+                                             "to the program in order to register for cosmetology courses.</p>")])
+COSM_COURSES = cq_json("Courses", [(None, "".join(
+    cosm_description(c, n, lim) for c, n, lim in zip(COSM, COSM_NAMES, (
+        "COSM 110, COSM 110A and COSM 110B, COSM 50LA and COSM 50LB, or COSM 040",
+        "COSM 120, COSM 120A and COSM 120B, COSM 60LA and COSM 60LB or COSM 42A",
+        "Cosmetology 42B, Cosmetology 130, Cosmetology 130A and Cosmetology 130B",
+        "COSM 140, COSM 140A and COSM 140B, COSM 80LA and COSM 80LB or 42C"))))])
+COSM_TABS = [COSM_REQ, COSM_SUMMARY, COSM_ADMIT, COSM_COURSES]
+cosm_pg = C.cq_page(COSM_ENTRY, COSM_OWN, SDC, COSM_TABS)
+cosm = prog("22367", "Cosmetology", COA, COSM)
+parts = cosm_pg["got"].get(RC.OWN_PARTS) or []
+check([p["title"] for p in parts] == [COSM_ENTRY["text"], "Requirements", "Summary", "Admission Criteria", "Courses"]
+      and [p["child"] for p in parts] == [False, True, True, True, True]
+      and "\n".join(p["text"] for p in parts if p["text"]) == cosm_pg["body"],
+      "cq_page keeps the entry's text page by page, the entry first, and the parts join to the body it always made")
+check(RC.OWN_PARTS not in C.cq_page(COSM_ENTRY, COSM_REQ, SDC)["got"],
+      "an entry read with no child page carries no parts: it is typed whole, as before")
+check(RC.page_type(cosm_pg["body"]) == "descriptions" and len(RC.DESC_FIELD.findall(cosm_pg["body"])) == 4
+      and [RC.page_type(p["text"]) for p in parts] == ["other", "other", "other", "other", "descriptions"],
+      "the fixture is the refused page: typed whole it is descriptions (four 'Grading:' lines), all in its Courses tab")
+got = C.candidates(cosm, [cosm_pg])
+check([c["url"] for c in got] == [SDC + "15604/15945/15788"] and got[0]["coverage"] == 1.0
+      and got[0]["label"].get("descriptions_tabs") == 1,
+      "22367 reads its own entry: rule B types it without its Courses tab, and the source's label says one tab was "
+      "left out of the test, got %r" % [(c["url"], c["label"]) for c in got])
+check(got and got[0]["text"] == cosm_pg["body"] and "Total Units: 24.0" in got[0]["text"]
+      and "Grading:" in got[0]["text"], "the text read is the whole entry's, its Courses tab included, as before")
+old_rule = dict(cosm_pg, got={k: v for k, v in cosm_pg["got"].items() if k != RC.OWN_PARTS})
+check(C.candidates(cosm, [old_rule]) == [],
+      "the same page with no parts is refused, as read 45836824944 refused it: the change is the parts alone")
+unmarked = C.candidates(dict(cosm, **{RC.MARK: False}), [cosm_pg])
+check([c["url"] for c in unmarked] == [cosm_pg["url"]] and "descriptions_tabs" not in unmarked[0]["label"],
+      "an unmarked program reads the page as before, and its label is as before")
+# A true descriptions page stays refused: the courses print only in the descriptions tab.
+only_desc = C.cq_page(COSM_ENTRY, COSM_OWN, SDC, [COSM_SUMMARY, COSM_ADMIT, COSM_COURSES])
+check(RC.entry_less_descriptions(only_desc["got"], cosm["closed_list"]) is None
+      and C.candidates(cosm, [only_desc]) == [],
+      "an entry whose courses print only in its descriptions tab is refused: its other pages name no listed course")
+# The descriptions in the entry's own page (no child page holds them) stay refused.
+own_desc = C.cq_page(COSM_ENTRY, cq_json(COSM_ENTRY["text"], COSM_REQ["body"] and [
+    (None, COSM_REQ["body"][0]["text"] + COSM_COURSES["body"][0]["text"])]), SDC, [COSM_SUMMARY])
+check(RC.page_type(own_desc["body"]) == "descriptions" and C.candidates(cosm, [own_desc]) == [],
+      "descriptions printed in the entry's own page, in no child page, are refused as before")
+# Description fields spread over two child pages, neither a descriptions page alone: typed whole, refused.
+half_a = cq_json("Courses", [(None, "".join(cosm_description(c, n, "none") for c, n in zip(COSM[:2], COSM_NAMES)))])
+half_b = cq_json("More Courses", [(None, "".join(cosm_description(c, n, "none")
+                                                 for c, n in zip(COSM[2:], COSM_NAMES[2:])))])
+spread = C.cq_page(COSM_ENTRY, COSM_OWN, SDC, [COSM_REQ, half_a, half_b])
+check(RC.page_type(spread["body"]) == "descriptions" and C.candidates(cosm, [spread]) == [],
+      "description fields that sit in no single child page leave the entry typed whole")
+# The other pages are a general-education pattern: refused by rule B's own general-education check.
+ge_req = cq_json("Requirements", [(None, COSM_REQ["body"][0]["text"] + "<div>IGETC Area 1A</div><div>CSU GE Area "
+                                   "2</div><div>Cal-GETC Area 3A</div><div>General Education Requirements</div>")])
+ge_entry = C.cq_page(COSM_ENTRY, COSM_OWN, SDC, [ge_req, COSM_COURSES])
+check(RC.page_type(RC.entry_less_descriptions(ge_entry["got"], cosm["closed_list"])[0]) == "ge"
+      and C.candidates(cosm, [ge_entry]) == [],
+      "an entry whose other pages are a general-education pattern is still refused")
+# Rule A still reads the heading: the A.S. degree's entry, with the same tabs, is not the certificate's page.
+as_entry = C.cq_page(dict(COSM_ENTRY, id=15789, text="Cosmetology - Associate of Science Degree: City",
+                          aliaspath="15604/15945/15789"),
+                     cq_json("Cosmetology - Associate of Science Degree: City", []), SDC, COSM_TABS)
+check(C.candidates(cosm, [as_entry]) == [] and [c["url"] for c in C.candidates(cosm, [as_entry, cosm_pg])]
+      == [cosm_pg["url"]], "rule A still decides: the degree's entry is refused, the certificate's own entry read")
+# The kill switch reads as today; every other platform's page carries no parts.
+os.environ["CPL_READER_PAGE_CHECKS"] = "0"
+check([c["url"] for c in C.candidates(cosm, [cosm_pg])] == [cosm_pg["url"]]
+      and "descriptions_tabs" not in C.candidates(cosm, [cosm_pg])[0]["label"],
+      "switch: off, the page reads as an unmarked program's")
+del os.environ["CPL_READER_PAGE_CHECKS"]
+check(RC.OWN_PARTS not in desc_pg["got"] and C.candidates(cert, [desc_pg]) == [],
+      "a course-descriptions page of another platform carries no parts and is refused as before")
+import inspect  # noqa: E402
+setters = [name for name, fn in inspect.getmembers(C, inspect.isfunction) if "RC.OWN_PARTS" in inspect.getsource(fn)]
+check(setters == ["cq_page"], "the curriQunet reader alone sets the parts, so the change reaches no other platform "
+      "(%r)" % setters)
+
 for f in failures:
     print("FAIL:", f)
 print("%d/%d checks passed: reader page checks" % (checks[0] - len(failures), checks[0]))

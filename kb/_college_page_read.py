@@ -635,7 +635,41 @@ def cq_view_read(reader, url: str, catalog: int, errors: list) -> dict:
     pg = C.cq_page(entry, page, prefix, children) if page else None
     out["text"] = pg["body"] if pg else ""
     out["codes"] = sorted(pg["codes"]) if pg else []
+    # S741: how rule B types the entry page by page (kb/_reader_page_checks.py entry_less_descriptions), and how the
+    # rows of its curriculum blocks nest (cq_rows: where a "Select one" group ends).
+    import _reader_page_checks as RC
+    out["page_type"] = RC.page_type(out["text"])
+    out["parts"] = [{"title": p.get("title"), "child": bool(p.get("child")), "chars": len(p.get("text") or ""),
+                     "type": RC.page_type(p.get("text"))}
+                    for p in ((pg or {}).get("got") or {}).get(RC.OWN_PARTS) or []]
+    out["rows"] = cq_row_outline(([page] if page else []) + children)
     return out
+
+
+CQ_ROWS_SHOWN = 240      # rows of one entry's curriculum blocks printed
+CQ_ROW_FLAG = re.compile(r"\bdata-([a-z-]+)\s*=\s*[\"']true[\"']", re.I)
+
+
+def cq_row_outline(pages: list[dict]) -> list[str]:
+    """Each curriculum block's rows as cq_rows nests them, one line a row: its depth, whether it opens a group and
+    with how many members, whether it follows a group, the row tag's true flags and the row's first words."""
+    import _program_requirements_college as C
+    lines: list[str] = []
+    for p in pages:
+        for bi, b in enumerate((p or {}).get("body") or []):
+            html_text = b.get("text") or ""
+            rows = C.cq_rows(html_text)
+            if rows is None:
+                lines.append("block %d: its div tags do not balance, so its rows read flat" % bi)
+                continue
+            for r in rows:
+                tag = C.CQ_DIV.match(html_text, r["at"])
+                flags = ",".join(CQ_ROW_FLAG.findall(tag.group(2))) if tag else ""
+                words = " · ".join(C.cq_text(html_text[r["at"]:r["at"] + 3000]).split("\n")[:3])[:90]
+                lines.append("block %d depth %d %s%s [%s] %s" % (
+                    bi, r["depth"], "GROUP of %d" % r["members"] if r["group"] else "row",
+                    " AFTER A GROUP" if r["after_group"] else "", flags, words))
+    return lines
 
 
 def read_one(reader, url: str, pattern: re.Pattern, cache: dict, expand: bool = False,
@@ -835,6 +869,14 @@ def print_page(n: int, rec: dict, pattern: re.Pattern, plan: dict | None = None)
         print("--- child pages read, in the capture's order: %s ---" % (", ".join(v.get("children") or []) or "none"))
         for m in v.get("more_programs") or []:
             print("a program entry among its children: id %s · %s" % (m.get("id"), m.get("text")))
+        if v.get("parts"):
+            print("--- rule B's type of the entry, whole: %s; page by page: %s ---" % (v.get("page_type"), "; ".join(
+                "%s%s %s (%d characters)" % (p.get("title") or "(no title)", " [child]" if p.get("child") else "",
+                                             p.get("type"), p.get("chars") or 0) for p in v["parts"])))
+        if v.get("rows"):
+            print("--- rows of its curriculum blocks, as their div tags nest them (%d) ---" % len(v["rows"]))
+            for line in v["rows"][:CQ_ROWS_SHOWN]:
+                print(line)
         print("--- the capture's text, as cq_page joins it ---")
         print(unfolded(text))
         print("--- codes the coarse net reads from it (%d) ---" % len(v.get("codes") or []))
