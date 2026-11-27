@@ -114,3 +114,19 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   `d-reread-before-rebuilt-plan-s741`: the reread of the reconciled run first, then s741k2 rebuilt on those rows for
   its second and last round. 07:26Z: s741k3's clean pre-read 2 of 2; migrate 45958459007 returned 2, none skipped;
   `.apply` restored (`512c8a23`). Records collected: 4.
+- 07:31Z: the conductor's live read of lane 2's 56 held keys (55 with a live row, 51 on the filed run, 0 checked),
+  committed whole on `claude/s741-piles` (`c3af2661`) as the live-run proof `piles` asked for. Piles batch 1 (s741a
+  Shasta 32162 under a new own-page form `own_lines`, s741b Orange Coast 4, s741c El Camino 2, s741d East Los Angeles
+  38168; 8 records) to a Sonnet reader.
+- 07:32Z: `keys` report 5 (head `0d808898`): keep-better against the 07:28Z read (9 re-read, 9 kept, 0 restored, none
+  a person's); the Copper Mountain reread dispatched on `claude/s741-keys` (force 45957316339); s741k4 (Solano 30184,
+  30185, 38591, `total_differs`; 43134 held) to a Sonnet reader.
+- 07:32Z: `readers` reported (head `13512bd7`): rule B's `entry_less_descriptions` for San Diego City 22367 (on held
+  text it admits 22367 alone: right 1, wrong 0), Ventura's `window_keeps_tabs` (7 of 174 pages move, the tabs right on
+  all 7; Victor Valley 04967 moves at its next capture), Norco's `cq_group_ends` (58 lists at three curriQunet
+  colleges: 16 close only with group ends marked, 0 close only flat; no filed result moves). The three to one second
+  reader on Fable 5.2 (**DECIDED** `d-shared-reader-change-reader-on-fable-s741`: a shared reader-code change gets
+  the collection model as its reader, Sonnet stays the plan reader, and Opus stays for workers that write shared data
+  or change an apply, under Sam's cost rules of 2026-11-25).
+- 07:34Z: #3898 merged (`de24433f`, confirmed on `origin/main`; `test` green on `9594732f`, `main` unmoved since its
+  update). The census dispatched on `main`.
