@@ -97,5 +97,5 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   reachable only through cross-list options the blocks do not encode (its note says so). Clean md5 pre-read 2 of 2;
   migrate 45955369454 returned 2, none skipped; `.apply` restored on `claude/s741-keys` (`3d62e685`). Live: both rows
   carry `units_within_printed_range`. Records collected: 2.
-- 07:13Z: #3900 merged (`2d0fa074`, confirmed on `origin/main`; `test` green on `3b59dacd`); `main` green again.
+- 07:07Z: #3900 merged (`2d0fa074`, confirmed on `origin/main`; `test` green on `3b59dacd`); `main` green again.
   #3898 updated from `main` for its `test`.
