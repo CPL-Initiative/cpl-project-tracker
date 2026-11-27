@@ -106,3 +106,11 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   lines: 43854 and 14751 turn passing, none fails; free reconcile 45957316339). All three to one Sonnet reader.
   Pitfall: the conductor's apply worktree had checked out the worker's branch name, so its pushes moved the worker's
   local ref; the conductor now applies from a detached HEAD and pushes `HEAD:<branch>`.
+- 07:24Z: the reader of s741k2, s741k3 and the step (Sonnet): s741k3 APPLY (35833 18 + 1-4 in 18.5-22; 22784 16 + 4 in
+  16-20, MINOR: its words say "ranges from zero units" where its page prints no "0-4", for the follow-up); the step GO
+  (the real run flags 9 records, not the synthetic 28; 43854 and 14751 pass, none fails, no other college moves);
+  s741k2 FIX THEN APPLY (MAJOR: the step's reconcile 45957316339 re-filed 14710, 14737 and 45594 on its own run, so
+  the plan's test fails at that head and a reread would leave its guard matching none). **DECIDED**
+  `d-reread-before-rebuilt-plan-s741`: the reread of the reconciled run first, then s741k2 rebuilt on those rows for
+  its second and last round. 07:26Z: s741k3's clean pre-read 2 of 2; migrate 45958459007 returned 2, none skipped;
+  `.apply` restored (`512c8a23`). Records collected: 4.
