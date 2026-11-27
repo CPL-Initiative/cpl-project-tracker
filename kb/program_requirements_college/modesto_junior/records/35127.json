@@ -100,7 +100,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "units_within_printed_range",
+    "label": "The courses' units as read fall within the printed range of units rather than matching it.",
+    "words": "the courses' units add to 23, within the printed 19-23 units | The outer 'REQUIRED COURSES (10 - 20 units)' heading shows '(Total 20)' / 'Complete the following number of credits: 20', but the description lays out two paths: non-native learners take SPAN 101, 102, 103, 110 plus one List A course; native/heritage learners take SPAN 109 and 110 plus List A electives to reach the minimum. The eLumen structure (SPAN 101+102 all; choose 5 units of SPAN 109 or SPAN 103; SPAN 110) does not cleanly encode these paths; reviewer should check."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

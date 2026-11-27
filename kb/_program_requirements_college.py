@@ -3991,6 +3991,44 @@ def ac_program_urls(links: list[dict], base: str, catoid: int) -> list[str]:
     return out
 
 
+def ac_pin_in_catalog(url: str | None, catoid: int | None, base: str | None = None) -> bool:
+    """Whether a site_pages pin names a program page of the catalog being read: a preview_program address on the
+    catalog's own host (base, the origin the road loads, when given) whose path is the program view itself and whose
+    catoid is that catalog's. A pin written for last year's catalog (another catoid) names an archived page; a pin
+    on another host that happens to carry the same catoid names another college's catalog (S742's second reader)."""
+    u = urllib.parse.urlparse(url or "")
+    m, c = AC_PROGRAM.search(url or ""), AC_CATOID.search(url or "")
+    if not (m and c and catoid is not None and int(c.group(1)) == int(catoid)):
+        return False
+    if not u.path.lower().endswith("/preview_program.php"):
+        return False          # the words sit in a query or a fragment of some other page
+    if len(AC_CATOID.findall(url or "")) != 1:
+        return False          # two catalog ids: the address does not say which catalog it reads
+    return base is None or (u.hostname or "").lower() == (urllib.parse.urlparse(base).hostname or "").lower()
+
+
+def ac_site_pins(pins: dict[str, dict], base: str | None, catoid: int | None) -> dict[str, dict]:
+    """The college's site_pages pins as the Acalog road reads them (S742). A pin naming a program page of the
+    catalog being read, on the catalog's own host, takes the address the road itself loads (ac_program_url: the
+    catalog's own scheme and the print-friendly view), so a pin written with https, or without &print, still meets
+    the page the capture read. Any other pin (another catalog's catoid, another host, an address that is no program
+    page) is left as written and never queued, so site_pinned() refuses it as not read and the program reads no
+    page: a pin never follows a program into a catalog nobody checked it against."""
+    out = {}
+    for cn, pin in pins.items():
+        m = AC_PROGRAM.search(pin.get("url") or "")
+        if base and m and ac_pin_in_catalog(pin.get("url"), catoid, base):
+            pin = dict(pin, url=ac_program_url(base, int(catoid), m.group(1)))
+        out[cn] = pin
+    return out
+
+
+def ac_queue_pins(urls: list[str], pins: dict[str, dict], base: str | None, catoid: int | None) -> list[str]:
+    """The road's page list with each pinned page of the catalog being read added once, after the listed pages."""
+    return urls + [pin["url"] for _, pin in sorted(pins.items())
+                   if pin["url"] not in urls and base and ac_pin_in_catalog(pin["url"], catoid, base)]
+
+
 def ac_program_navs(links: list[dict], base: str, catoid: int) -> list[str]:
     """The navigation pages whose names say programs, degrees or certificates."""
     out = []
@@ -5702,6 +5740,13 @@ def site_heading_names(pg: dict, program: dict) -> tuple[bool, str]:
     Orange Coast's: tests/program_requirements_lever_pins_s727_test.py."""
     h1 = pg.get("h1") if "h1" in pg else (pg.get("got") or {}).get("h1")
     title0 = TITLE_SPLIT.split(pg.get("title") or (pg.get("got") or {}).get("title") or "", 1)[0].strip()
+    if AC_PROGRAM.search(pg.get("url") or ""):
+        # An Acalog program page's title opens with the catalog's page-type label and closes with the college's name
+        # ("Degree & Certificate: Journalism, AA-T - El Camino College"), so the label's word "Certificate" stood
+        # beside every program's name and a certificate read as named on its sister transfer degree's page (S742's
+        # self-recall on El Camino's filed sources: 3 false binds in 19,845 pairs, and 19866 on the page the capture
+        # had handed it). The page's heading is its h1 alone; a blank h1 names nothing.
+        title0 = ""
     heads = [x for x in ((h1 or "").strip(), title0) if x]
     named = any(RC.heading_line([x], program.get("title"), program.get("award")) >= 0 for x in heads)
     if not named:
@@ -5753,6 +5798,97 @@ def site_award_subheading(pg: dict, head: str, program: dict) -> str | None:
     return None
 
 
+# S742: a pin's heading read with a word and its plural as one word. SITE_PLURAL_ON lets a test measure the reading
+# with the fold off.
+SITE_PLURAL_ON = True
+
+
+def site_heading_plural(pg: dict, program: dict, programs: list | None = None) -> tuple[str | None, str]:
+    """(the program's title as the page's heading prints it, that heading), or (None, "") when the plural reading
+    shows nothing. A second reading of a pinned page's heading, taken only where site_heading_names() refuses it.
+
+    The state's file titles Coastline 43057 "Communications Studies 2.0"; its own page's heading prints
+    "Communication Studies 2.0, Associate in Arts Degree for Transfer", so rule A, which asks for every title word as
+    written, refused a pin to that page (tests/program_requirements_lever_pins_s739_test.py), and the capture left the
+    program on its department's landing page, where its record placed none of its courses.
+
+    Each title word the heading does not print is swapped for the heading's own word where the two differ by one
+    closing s (keep-better's singular(), the one definition of the fold), and site_heading_names() then reads the
+    heading against the swapped title, award and all. The refusals, each a wrong join the fold could make:
+      * no word swapped (the exact reading already said no, for another reason);
+      * the title and the heading disagree about a version ("2.0" in one and not the other): rule A sets the version
+        aside, so the legacy "Communication Studies" binds the 2.0 page's heading as before, but the fold never joins
+        a legacy title to a 2.0 heading or a 2.0 title to a legacy one;
+      * another program at the college has a title that holds every word of this one's only once a plural is folded
+        (keep-better's plural_longer, which takes in a plural twin): the fold could not say whose page it is;
+      * the heading prints another program's fuller title (site_fuller_title): Coastline's "Communications" A.A.
+        against the heading "Communication Studies, Associate of Arts Degree", which is Communication Studies' own.
+    programs is every program the state lists at the college; without it the last two refusals cannot be read and
+    the fold shows nothing. The self-recall: tests/program_requirements_pin_plural_s742_test.py."""
+    import _program_reread_keep_better as K
+    title = program.get("title") or ""
+    if not SITE_PLURAL_ON or not title or programs is None:
+        return None, ""
+    h1 = pg.get("h1") if "h1" in pg else (pg.get("got") or {}).get("h1")
+    title0 = TITLE_SPLIT.split(pg.get("title") or (pg.get("got") or {}).get("title") or "", 1)[0].strip()
+    if AC_PROGRAM.search(pg.get("url") or ""):
+        title0 = ""           # an Acalog page's heading is its h1 alone (site_heading_names)
+    want = K.page_words(title)
+    for head in [x for x in ((h1 or "").strip(), title0) if x]:
+        got = K.page_words(head)
+        swap = site_plural_swap(title, got)
+        if not swap or ("2.0" in want) != ("2.0" in got):
+            continue
+        if K.plural_longer(program, programs) or site_fuller_title(program, programs, got):
+            return None, ""
+        printed = re.sub(r"[A-Za-z]{3,}", lambda m: _as_cased(m.group(0), swap.get(m.group(0))), title)
+        # The one heading alone, never the page's other heading or its raw load (got), with the body under it for the
+        # award line a title-alone heading takes (site_award_subheading).
+        body = pg.get("body") if "body" in pg else (pg.get("got") or {}).get("body")
+        alone = {"url": pg.get("url"), "h1": head, "title": "", "body": body}
+        if site_heading_names(alone, dict(program, title=printed))[0]:
+            return printed, head
+    return None, ""
+
+
+def site_plural_swap(title: str, head_words: set[str]) -> dict[str, str]:
+    """{a title word the heading does not print: the heading's word that differs from it by one closing s}. A word
+    with two such words in the heading is left alone."""
+    import _program_reread_keep_better as K
+    swap = {}
+    for w in set(re.findall(r"[A-Za-z]{3,}", title or "")):
+        lw = w.lower()
+        if lw in head_words:
+            continue
+        twins = [g for g in head_words if g != lw and K.singular({g}) == K.singular({lw})]
+        if len(twins) == 1:
+            swap[w] = twins[0]
+    return swap
+
+
+def site_fuller_title(program: dict, programs: list, head_words: set[str]) -> list[str]:
+    """The college's other programs whose title, a plural aside, holds every word of this program's title and more,
+    all of them printed in the heading: the heading is the fuller title's."""
+    import _program_reread_keep_better as K
+    want = K.singular(K.page_words(program.get("title")))
+    printed = K.singular(head_words)
+    out = []
+    for x in programs or []:
+        if str(x.get("control_number")) == str(program.get("control_number")):
+            continue
+        theirs = K.singular(K.page_words(x.get("title")))
+        if want < theirs <= printed:
+            out.append(str(x.get("control_number")))
+    return sorted(out)
+
+
+def _as_cased(word: str, to: str | None) -> str:
+    """`to` in the case `word` is written in (its first letter's), or the word itself when there is no swap."""
+    if not to:
+        return word
+    return to.capitalize() if word[:1].isupper() else to
+
+
 def site_pinned(programs: list[dict], pages: list[dict], pins: dict[str, dict]) -> dict[str, dict]:
     """Each pinned program's page: {control number: {"best": candidate} or {"why": refusal}}.
 
@@ -5777,12 +5913,21 @@ def site_pinned(programs: list[dict], pages: list[dict], pins: dict[str, dict]) 
             out[cn] = {"why": "the pinned page was not read"}
             continue
         named, head = site_heading_names(pg, prog)
+        as_printed = None
+        if not named:
+            # A second reading (S742), only where the first shows nothing: a title word and its plural are one word.
+            as_printed, plural_head = site_heading_plural(pg, prog, programs)
+            named, head = bool(as_printed), (plural_head or head)
         if not named:
             out[cn] = {"why": "the pinned page's heading (%r) does not print the program's title with its award"
                               % head}
             continue
         # Its heading names it, so rule B's general-education check stands aside for this page (RC.PIN_HEADING, S721).
         prog = dict(prog, **{RC.PIN_HEADING: True})
+        if as_printed:
+            # The page is read under the title as its heading prints it, so rule A (RC.site_page) and the label read
+            # the same word the heading test did; the source and the record keep the state's title.
+            prog["title"] = as_printed
         cands = candidates(prog, [pg], programs, {})
         if not cands:
             why = None
@@ -5930,6 +6075,13 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
                 report["catalog_year_from"] = report["acalog"].get("catalog_year_from")
             elif read_year and read_year != reg.get("catalog_year"):
                 report["catalog_year_page_differs"] = read_year
+            # A site_pages pin on an Acalog catalog (S742): El Camino's site map lists a certificate's own page beside
+            # its sister degree's, and assign() handed 19861, 19866, 38948, 43993 and 19883 the degree's. Until now
+            # this road never read the pins (read 45773663927 filed no site_pins account and bound each certificate
+            # to its degree page as before). A pin is read in the catalog being read alone (ac_site_pins).
+            site_pins = ac_site_pins(site_pin_entries(college), report["acalog"].get("base"),
+                                     report["acalog"].get("catoid"))
+            urls = ac_queue_pins(urls, site_pins, report["acalog"].get("base"), report["acalog"].get("catoid"))
             print("%s: %d programs (%d with a course list), %d Acalog program pages (catalog %s), %.1f s between loads"
                   % (college, len(programs), report["with_closed_list"], len(urls),
                      report["acalog"].get("catoid"), delay / 1000), flush=True)

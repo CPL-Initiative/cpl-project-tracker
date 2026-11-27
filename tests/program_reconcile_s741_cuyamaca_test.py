@@ -32,6 +32,17 @@ Pinned here:
 
 A record a reconcile run has already moved is read in either state: it takes the flag here or carries it already.
 
+S742 (lane 1, readers): a second step. Paid read 46003456131 read 18637 from its own page, and that reading took
+'CSU or UC transferable units' as the units that fill the rest of the 60 (electives_fill_degree true), where the
+other three readings left the flag false. The scorer's electives guard runs ahead of the floor and asks the catalog
+text for the word or for the catalog's own sentence (electives_fill_words), so 18637 failed with its major equal.
+The step files the page's words, 'CSU or UC transferable units', where the page prints them directly under 'Complete
+60 transferable units', on a local degree that holds a degree total and already reads electives as filling it.
+Pinned below: the step as written; 18637 fails as read against its page's text and passes with both steps; the
+joins it refuses (a page without the second line, a record that leaves the flag false, a transfer degree); and the
+recall, scored against text that prints both lines: the words land on 18637 alone, and no passing record turns
+failing. Every score here reads the page's text, since the electives guard reads nothing without it.
+
 Run from repo root: python3 tests/program_reconcile_s741_cuyamaca_test.py
 """
 import copy
@@ -51,6 +62,7 @@ CUY = "Cuyamaca College"
 FOLDER = os.path.join(ROOT, "kb", "program_requirements_college", "cuyamaca", "records")
 STEPS = R.load_steps()
 FLAG = "degree_total_minimum"
+WORDS = "electives_fill_words"
 FOUR = ("18634", "18635", "18636", "18637")
 checks, failures = [0], []
 
@@ -88,6 +100,7 @@ def filed(cn):
 def unflagged(f):
     rec = copy.deepcopy(f["record"])
     rec["program"].pop(FLAG, None)
+    rec["program"].pop(WORDS, None)
     return rec
 
 
@@ -99,16 +112,32 @@ def flags(notes):
     return [n for n in notes if n.get("field") == FLAG]
 
 
-def arith(f, rec):
-    return C.fresh_score(dict(f, record=rec))["arithmetic"]
+def score(f, rec, text):
+    """The record scored against its own state list and the page's text (the electives guard reads the text)."""
+    return S.score(rec, C.closed_list(CUY, f["control_number"]), text, f.get("award"),
+                   R.prefix_aliases(CUY, year=f.get("catalog_year")), R.packed_codes(CUY))
+
+
+def arith(f, rec, text=None):
+    return score(f, rec, PAGE if text is None else text)["arithmetic"]
 
 
 print("the entry")
 entry = STEPS[CUY]
 steps = entry.get("steps") or []
-check(len(steps) == 1 and steps[0]["kind"] == "set" and steps[0]["field"] == FLAG and steps[0]["value"] is True
+check(len(steps) == 2 and steps[0]["kind"] == "set" and steps[0]["field"] == FLAG and steps[0]["value"] is True
       and steps[0]["awards"] == "local" and steps[0]["only_with"] == "degree_total",
-      "one step: the flag, on a local degree that holds a degree total")
+      "the first step: the flag, on a local degree that holds a degree total")
+check(steps[1]["kind"] == "set" and steps[1]["field"] == WORDS and steps[1]["value"] == "CSU or UC transferable units"
+      and steps[1]["awards"] == "local" and steps[1]["only_with"] == ["degree_total", "electives_fill_degree"]
+      and "45768981024" in steps[1]["read"] and "Reversible" in steps[1]["why"] and "46003456131" in steps[1]["why"],
+      "the second step (S742): the page's words, on a local degree that holds a degree total and reads electives as "
+      "filling it, citing its page read and the paid read")
+pat2 = re.compile(steps[1]["pattern"])
+check(pat2.search(PAGE) and not pat2.search(PAGE.replace("CSU or UC transferable units\n", ""))
+      and not pat2.search("Complete 60 transferable units\nCalifornia General Education Transfer Curriculum\n"
+                          "CSU or UC transferable units") and steps[1]["value"] in pat2.search(PAGE).group(0),
+      "its pattern reads 'CSU or UC transferable units' only directly under 'Complete 60 transferable units'")
 pat = re.compile(steps[0]["pattern"])
 check(pat.search(PAGE) and not pat.search(NO_WORDS) and not pat.search("Complete 34 units of transfer general education")
       and not pat.search("Complete transferable units as needed to reach 60"),
@@ -126,18 +155,34 @@ for cn in FOUR:
           and (before["major"] or {}).get("computed") == [18.0, 18.0],
           "%s: as read, the major pools to its 18 and the degree reads 52 against 60" % cn)
     p = rec["program"]
+    fills = p["electives_fill_degree"] is True       # 18637's reading (paid read 46003456131), and no other
     check(p["total_units"] == {"min": 18, "max": 18} and p["ge_units"] == {"min": 34, "max": 34}
-          and p["degree_total"] == {"min": 60, "max": 60} and p["electives_fill_degree"] is False
+          and p["degree_total"] == {"min": 60, "max": 60} and fills == (cn == "18637")
           and any("60 transferable units" in n.lower() for n in rec.get("notes") or []),
-          "%s: the record holds the page's 18, 34 and 60, no electives flag, and its note quotes the 60" % cn)
+          "%s: the record holds the page's 18, 34 and 60, its note quotes the 60, and 18637 alone reads electives "
+          "as filling it" % cn)
+    if fills:
+        check(before["why"] == ["the record says electives fill the degree total, but the catalog text names no "
+                                "electives"],
+              "%s: as read it fails on the electives guard alone" % cn)
     new, notes = recon(rec, PAGE, f["award"], cn)
     got = flags(notes)
     check(len(got) == 1 and got[0]["now"] is True and "Complete 60 transferable units" in got[0]["words"]
-          and {n.get("field") for n in notes} == {FLAG} and new["blocks"] == rec["blocks"],
-          "%s: the step sets the flag, citing the page's words, and moves nothing else" % cn)
+          and {n.get("field") for n in notes} == ({FLAG, WORDS} if fills else {FLAG}) and new["blocks"] == rec["blocks"],
+          "%s: the step sets the flag, citing the page's words, and moves nothing else (18637 takes the page's "
+          "words too)" % cn)
+    if fills:
+        w = [n for n in notes if n.get("field") == WORDS]
+        check(len(w) == 1 and w[0]["now"] == "CSU or UC transferable units" and w[0]["was"] is None
+              and new["program"][WORDS] == "CSU or UC transferable units" and new["program"]["electives_fill_degree"],
+              "%s: the second step files the page's own words and leaves the reading's flag as read" % cn)
+        only_flag = copy.deepcopy(new)
+        only_flag["program"].pop(WORDS)
+        check(not arith(f, only_flag)["pass"], "%s: with the floor alone it still fails the electives guard" % cn)
     after = arith(f, new)
-    check(after["pass"] and after["status"] == "equal" and S.passes_live(C.fresh_score(dict(f, record=new))),
-          "%s: with the floor today's scorer passes it" % cn)
+    check(after["pass"] and after["status"] == "equal" and (after.get("degree") or {}).get("minimum") is True
+          and (after.get("degree") or {}).get("fill") == [8.0, 8.0],
+          "%s: with the floor today's scorer passes it, eight transferable units filling the 60" % cn)
     check(not flags(recon(new, PAGE, f["award"], cn)[1]), "%s: a record that carries the flag is left alone" % cn)
 
 print("the wrong joins it refuses")
@@ -151,10 +196,19 @@ bare["program"]["degree_total"] = {"min": None, "max": None}
 check(not flags(recon(bare, PAGE, f["award"], "18634")[1]), "a local degree that holds no degree total takes nothing")
 check(not flags(recon(unflagged(f), PAGE, f["award"], "18634", college="Grossmont College")[1]),
       "the step is Cuyamaca's alone: Grossmont's entry sets no floor from the same words")
+check(not [n for n in recon(unflagged(f), PAGE, f["award"], "18634")[1] if n.get("field") == WORDS],
+      "the second step: a record that leaves electives_fill_degree false takes no words (18634)")
+f7 = filed("18637")
+ONE_LINE = PAGE.replace("CSU or UC transferable units\n", "")
+got7 = recon(unflagged(f7), ONE_LINE, f7["award"], "18637")
+check(not [n for n in got7[1] if n.get("field") == WORDS] and not arith(f7, got7[0], ONE_LINE)["pass"],
+      "the second step: a page that does not print the line files no words, and 18637 keeps failing there")
+check(not [n for n in recon(unflagged(f7), PAGE, "A.A- T Degree", "18637")[1] if n.get("field") == WORDS],
+      "the second step: a transfer degree takes nothing")
 
 print("the self-recall over every committed Cuyamaca record")
 EVERY = "Requirements\nComplete 60 transferable units\nCSU or UC transferable units\n"
-read, flagged, turned_passing, turned_failing, others = 0, [], [], [], []
+read, flagged, worded, turned_passing, turned_failing, others = 0, [], [], [], [], []
 for path in sorted(glob.glob(os.path.join(FOLDER, "*.json"))):
     with open(path, encoding="utf-8") as fh:
         f = json.load(fh)
@@ -163,18 +217,24 @@ for path in sorted(glob.glob(os.path.join(FOLDER, "*.json"))):
     read += 1
     cn = f["control_number"]
     rec = unflagged(f)
-    new, notes = recon(rec, EVERY, f.get("award"), cn)
+    # The record's own heading opens the text: the electives guard counts a filed sentence from that heading on.
+    text = "%s\n%s" % ((rec.get("program") or {}).get("section_heading") or "", EVERY)
+    new, notes = recon(rec, text, f.get("award"), cn)
     if flags(notes):
         flagged.append(cn)
-    if [n for n in notes if n.get("field") != FLAG]:
+    if [n for n in notes if n.get("field") == WORDS]:
+        worded.append(cn)
+    if [n for n in notes if n.get("field") not in (FLAG, WORDS)]:
         others.append(cn)
-    before, after = arith(f, rec).get("pass"), arith(f, new).get("pass")
+    before, after = arith(f, rec, text).get("pass"), arith(f, new, text).get("pass")
     if after and not before:
         turned_passing.append(cn)
     if before and not after:
         turned_failing.append(cn)
 check(read >= 180, "the recall read the college's records (%d)" % read)
 check(flagged == list(FOUR), "the flag lands on the four University Studies degrees alone: %s" % flagged)
+check(worded == ["18637"], "the page's words land on 18637 alone, the one record that reads electives as filling "
+      "the degree: %s" % worded)
 check(turned_passing == list(FOUR), "each of the four turns passing, and no other record: %s" % turned_passing)
 check(not turned_failing and not others,
       "no passing record turns failing, and no other field moves: %s %s" % (turned_failing, others))

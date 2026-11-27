@@ -46,9 +46,9 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 32,
+   "placed": 33,
    "listed": 51,
-   "share": 0.627,
+   "share": 0.647,
    "missing": [
     "AJ113",
     "BUS60",
@@ -67,17 +67,14 @@
     "ETH49",
     "HISTC1001",
     "HISTC1001H",
-    "HISTC1002",
-    "JOURNALISMJO"
+    "HISTC1002"
    ],
-   "unexplained": [
-    "JOURNALISMJO"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 11,
+   "count": 10,
    "codes": [
     "ECON10A",
     "ECON10B",
@@ -88,8 +85,7 @@
     "GUIDE130",
     "GUIDE96",
     "HIST17A",
-    "HIST17B",
-    "JOURN138"
+    "HIST17B"
    ],
    "flagged": [
     "ECON10A",
@@ -103,7 +99,7 @@
     "HIST17A",
     "HIST17B"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -160,7 +156,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -623,6 +619,6 @@
    "Outcomes are printed for the program as a whole on the outcomes tab; this award shares them."
   ]
  },
- "extracted_run": 45840981324,
- "read_run": "43357106423"
+ "extracted_run": 46011334736,
+ "read_run": 45840981324
 }

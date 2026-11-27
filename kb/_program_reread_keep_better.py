@@ -20,7 +20,16 @@ with the same file at origin/main and keeps the better one.
   one the reader's slug_awards reads as the program's award (COBIx on #3553); or the capture's sources.json entry
   for that page (heading_named, the page title, the h1) names every title word, while its title and h1 name no
   other award. S684 set aside Ventura's 4 and Evergreen Valley's 13 good re-reads on the word test alone. A
-  heading carrying another program's words still fails, whatever the address. A re-read that fails is set aside
+  generic heading also passes where it prints the program's own Academic Plan code and no other, and the re-read
+  places its own state list (plan_code_own, S742): East Los Angeles prints, beside each award, "Academic Plan", a
+  letter, a zero and the state's control number ("(Academic Plan E002456C)" is 02456's own section), and a reader
+  that kept the code and dropped the title filed a heading the word test reads as naming no program. S741 restored
+  four such re-reads at East Los Angeles and held two that were already live. The code alone is not enough: East
+  Los Angeles heads Sports Medicine 45986's section with 45717's code (Criminal Investigations), so a re-read of
+  45717 that landed there would carry its own code over another program's courses; coverage tells the two apart
+  (S742's reader). Its reach is East Los Angeles: Los Angeles Trade-Technical's coded headings print no "Academic
+  Plan" before the code and Harbor's print a colon after it, and neither is read here. A heading carrying another
+  program's words still fails, whatever the address or the code. A re-read that fails is set aside
   whatever its score: the filed record is restored, or, with no filed record, the new record moves to
   <folder>/held_for_person/ (out of records/, so no load or reread posts it) and is listed there.
 
@@ -230,7 +239,22 @@ def page_is_own(rec: dict, source: dict | None = None, note: dict | None = None,
     sources.json entries, {control_number, title, award}) has the same title words and another award kind (COBIx on
     #3557, 7011458372): two awards share the title, so the bare address cannot say whose page it is (College of the
     Redwoods' Welding Technology certificate passed on welding-technology-fall-2025, the A.S.'s page). The row then
-    falls back to the capture's page title or h1; note["shared_title"] names the other programs."""
+    falls back to the capture's page title or h1; note["shared_title"] names the other programs.
+    A word and its plural are one word (S741, PLURAL_FOLD_ON): the state's file titles Cuyamaca 18637 "University
+    Studies: Social and Behavioral Science" and its own page's address and title print "Sciences", so the re-read
+    that placed 92 of its 92 listed courses under the generic heading "Requirements" was set aside (S727). The fold
+    is a second reading, taken only where the exact one shows nothing: an address counts only while the capture's
+    own entry names that page for the program (a sister college's page on a shared host prints the same last
+    segment), and never where another program at the college has a title that holds every word of this one's only
+    once a plural is folded (plural_longer, which takes in plural_twins: "Art" beside "Studio Arts", "Art History"
+    beside "History" never, but "Athletics" beside "Athletic Trainer Aide"; the fold could not say whose page it
+    is). A page title or h1 is folded with its award phrase set aside (AWARD_PHRASE), so "Art" is never read in
+    "Associate in Arts" nor "Sciences" in "Associate of Science", and it names the program only where it prints
+    nothing beside the title's words but an award's words or a program code (fold_names): "Social Science" is not
+    named by "Liberal Arts: Social and Behavioral Sciences Emphasis" (S742, the second reader's finding: handed
+    every sibling's page, the first fold admitted 386 programs on a page that was another's). The exact reading
+    above it is as it was. The statewide self-recall, own pages and siblings' pages both:
+    tests/program_keep_better_plural_s741_test.py."""
     import urllib.parse
     import _program_requirements_college as C
     from _program_requirements_pilot import award_kind
@@ -271,6 +295,12 @@ def page_is_own(rec: dict, source: dict | None = None, note: dict | None = None,
     src = (source or {}).get("source") if isinstance((source or {}).get("source"), dict) else {}
     if not src or not url or _page(src.get("url")) != _page(url):
         return None
+    # The plural fold (S741), a second reading: only on the page the capture itself names for the program (checked
+    # just above), and never where a sibling's title holds this one's words only once a plural is folded (S742).
+    fold = PLURAL_FOLD_ON and not plural_longer(rec, siblings)
+    if fold and named and singular(page_words(named)) == singular(want) and award_ok(re.sub(r"[-_]+", " ", bare)) \
+            and award_named:
+        return "the address's last segment %r names the program, a plural aside" % slug[:80]
     texts = [(key, C.TITLE_SPLIT.split((src.get(key) or "").strip())[0]) for key in ("title", "h1")]
     if any(text and not award_ok(text) for _, text in texts):
         return None
@@ -285,7 +315,67 @@ def page_is_own(rec: dict, source: dict | None = None, note: dict | None = None,
             continue
         if text and want <= words and ("2.0" in want) == ("2.0" in words):
             return "the capture's %s %r names the program" % ("page title" if key == "title" else key, text[:80])
+        if fold and text and fold_names(want, text) and ("2.0" in want) == ("2.0" in words):
+            return "the capture's %s %r names the program, a plural aside" % (
+                "page title" if key == "title" else key, text[:80])
     return None
+
+
+# S741: a word and its plural read as one word, as a second reading inside page_is_own. PLURAL_FOLD_ON lets a test
+# measure the reading with the fold off.
+PLURAL_FOLD_ON = True
+
+
+def singular(words: set[str]) -> set[str]:
+    """Each word less one closing s: "sciences" and "science", "arts" and "art". A word of three letters or fewer,
+    or one ending in ss ("business"), is left as it is."""
+    return {w[:-1] if len(w) > 3 and w.endswith("s") and not w.endswith("ss") else w for w in words}
+
+
+def plural_twins(rec: dict, siblings: list | None) -> list[str]:
+    """The college's other programs whose title differs from this one's by a plural alone, whatever their award:
+    with one, a folded page or address could be either's."""
+    want = page_words(rec.get("title"))
+    return sorted(str(x.get("control_number")) for x in siblings or []
+                  if str(x.get("control_number")) != str(rec.get("control_number"))
+                  and page_words(x.get("title")) != want and singular(page_words(x.get("title"))) == singular(want))
+
+
+# S742: the award a page title or h1 prints beside the program's name. The fold reads a title's words in what is
+# left, so the award's own "Arts" and "Science" never stand in for a title word.
+AWARD_PHRASE = re.compile(r"associates?\s+(?:in|of)\s+(?:arts?|sciences?)|\b(?:a\.?a\.?|a\.?s\.?)\b", re.I)
+
+
+# The words a page title or h1 may print beside a folded title: an award's own words (the pilot's STOP words, which
+# page_words drops, already take in certificate, degree, achievement and program).
+FOLD_BESIDE = frozenset({"transfer", "completion", "competency", "proficiency", "accomplishment", "associate",
+                         "major", "noncredit"})
+
+
+def fold_names(want: set[str], text: str) -> bool:
+    """Whether a page title or h1 names the title's words (want, from page_words) a plural aside: with its award
+    phrase set aside, the text prints every title word, and beside them only an award's words (FOLD_BESIDE) or a
+    program code (a token carrying a digit: "CE1027", "N0470", "5691"). The exact reading asks only that the text
+    hold the title's words; the fold, which loosens each word, asks that it hold nothing else."""
+    words = singular(page_words(AWARD_PHRASE.sub(" ", text or "")))
+    need = singular(want)
+    return need <= words and all(w in FOLD_BESIDE or any(c.isdigit() for c in w) for w in words - need)
+
+
+def plural_longer(rec: dict, siblings: list | None) -> list[str]:
+    """The college's other programs whose title holds every word of this one's once a plural is folded and not as
+    written, whatever their award: "Studio Arts" beside "Art", "Athletic Trainer Aide I" beside "Athletics", and
+    every plural twin (plural_twins). With one, a folded page title, h1 or address could be the longer title's. A
+    title that holds this one's words as written ("Art History" beside "Art") is the exact reading's question,
+    which the fold leaves as it was."""
+    want = page_words(rec.get("title"))
+    out = []
+    for x in siblings or []:
+        theirs = page_words(x.get("title"))
+        if str(x.get("control_number")) != str(rec.get("control_number")) and theirs != want \
+                and singular(want) <= singular(theirs) and not want <= theirs:
+            out.append(str(x.get("control_number")))
+    return sorted(out)
 
 
 # A catalog term or year after the program's words: -2026, -fall-2026, -2026fa, -2026v2, -2026-27, -intersession.
@@ -339,12 +429,90 @@ def page_words(text: str | None) -> set[str]:
     return out
 
 
+# S742: an Academic Plan code, as East Los Angeles prints it beside each award: "Academic Plan", a letter for the
+# college, a zero, the state's five-digit control number and a letter for the award (E002456C). PLAN_TOKEN reads
+# every such code in a heading, with or without the phrase before it ("Academic Plan E002456C / E045717D").
+PLAN_CODE = re.compile(r"Academic\s+Plan\s+[A-Z]0?(\d{5})[A-Z]?(?![A-Za-z0-9])")
+PLAN_TOKEN = re.compile(r"(?<![A-Za-z0-9])[A-Z]0?(\d{5})[A-Z]?(?![A-Za-z0-9])")
+
+
+def plan_code_own(rec: dict, heading: str | None = None) -> str | None:
+    """What a heading's Academic Plan code shows of the section being the program's own, or None. Three things, all
+    of them: the heading prints "Academic Plan" and a code; every code-shaped token in the heading, behind the
+    phrase or not, carries the record's own control number (another program's code beside it shows nothing); and
+    the record places its own state list (score.coverage.pass). The last is the reader's finding (S742): the
+    catalog can print one program's code over another's section (East Los Angeles 45986, Sports Medicine, is
+    headed with 45717's code), so a re-read that carries its own code and another program's courses is not shown
+    its own. The code is evidence where it matches, never a rule that every heading holds its own
+    (plan_code_recall)."""
+    if heading is None:
+        record = rec.get("record") if isinstance(rec.get("record"), dict) else None
+        heading = ((record or {}).get("program") or {}).get("section_heading")
+    heading = str(heading or "")
+    cn = str(rec.get("control_number") or "")
+    if not cn or not PLAN_CODE.search(heading) or any(c != cn for c in PLAN_TOKEN.findall(heading)):
+        return None
+    if (((rec.get("score") or {}).get("coverage") or {}).get("pass")) is not True:
+        return None
+    return ("the heading prints the program's own Academic Plan code (%s), and the record places its own state list"
+            % PLAN_CODE.search(heading).group(0))
+
+
+def plan_code_recall(college_dir: str | None = None) -> dict:
+    """plan_code_own's self-recall, over every committed record whose heading prints an Academic Plan code. The held
+    answer is the word test's, which reads the heading's own words and never the code: a heading that shares a word
+    with the program's title names the program. Counted: named_own (the heading carries a title word and its code is
+    the record's own: code and words agree) and named_other (a title word beside another program's code: the code
+    shows nothing for such a record, and it is listed); generic_own (no title word, no word that could name a
+    program, the record's own code and its own list placed: the rows plan_code_own lets through), generic_unplaced
+    (the same heading on a record whose coverage fails: refused) and generic_other; and wrong, a heading whose words
+    name ANOTHER program while its code is the record's own, the one way the code could pass a re-read of another
+    program's section. other_words lists a heading that names another program beside another code. named_other is
+    the case the coverage test answers: 45986's section carries 45717's code, so a code can sit over another
+    program's courses."""
+    from _program_requirements_pilot import title_tokens
+    from _program_requirements_score import heading_content_words
+    college_dir = college_dir or os.path.join(HERE, "program_requirements_college")
+    out = {"read": 0, "colleges": set(), "named_own": 0, "named_other": [], "generic_own": [], "generic_unplaced": [],
+           "generic_other": [], "other_words": [], "wrong": []}
+    for path in sorted(glob.glob(os.path.join(college_dir, "*", "records", "*.json"))):
+        try:
+            with open(path, encoding="utf-8") as fh:
+                f = json.load(fh)
+        except (OSError, ValueError):
+            continue
+        record = f.get("record") if isinstance(f.get("record"), dict) else {}
+        heading = str((record.get("program") or {}).get("section_heading") or "")
+        if not PLAN_CODE.search(heading):
+            continue
+        out["read"] += 1
+        out["colleges"].add(f.get("college"))
+        key = [f.get("college"), str(f.get("control_number")), PLAN_CODE.search(heading).group(0)]
+        cn = str(f.get("control_number") or "")
+        own = bool(cn) and all(c == cn for c in PLAN_TOKEN.findall(heading))    # the code alone, coverage aside
+        want = set(title_tokens(f.get("title") or ""))
+        if want and want & set(title_tokens(heading)):
+            if own:
+                out["named_own"] += 1
+            else:
+                out["named_other"].append(key)
+        elif heading_content_words(heading):
+            (out["wrong"] if own else out["other_words"]).append(key)
+        elif own:
+            (out["generic_own"] if plan_code_own(f, heading) else out["generic_unplaced"]).append(key)
+        else:
+            out["generic_other"].append(key)
+    out["colleges"] = sorted(out["colleges"])
+    return out
+
+
 def own_program_why(rec: dict, source: dict | None = None, note: dict | None = None,
                     siblings: list | None = None) -> tuple[str | None, str | None]:
     """(why the re-read does not hold its own program or None, the page evidence that let a generic heading pass or
     None). The heading must share a word with the title (the pilot's title_tokens). A heading that shares none and
     carries no word that could name a program (the scorer's heading_content_words: "REQUIREMENTS", "Course List",
-    "Major Requirements") is generic: it passes only where page_is_own shows the page is the program's own (S685).
+    "Major Requirements") is generic: it passes only where it prints the program's own Academic Plan code
+    (plan_code_own, S742) or page_is_own shows the page is the program's own (S685).
     A heading that carries another program's words still fails, whatever the address. Then the scorer's
     heading_award_check. A blank heading names no program and fails. source: the capture's sources.json entry.
     note: handed to page_is_own, which writes the address's stripped award ending there when it is consulted."""
@@ -360,7 +528,7 @@ def own_program_why(rec: dict, source: dict | None = None, note: dict | None = N
         if heading_content_words(heading):
             return ("the re-read's heading %r shares no word with the title %r" % (heading[:80], rec.get("title")),
                     None)
-        evidence = page_is_own(rec, source, note, siblings)
+        evidence = plan_code_own(rec, heading) or page_is_own(rec, source, note, siblings)
         if not evidence:
             return ("the re-read's heading %r is generic (it names no program), and nothing in the committed files "
                     "shows its page %s is the program's own" % (heading[:80], (rec.get("source_url") or "")[:120]),

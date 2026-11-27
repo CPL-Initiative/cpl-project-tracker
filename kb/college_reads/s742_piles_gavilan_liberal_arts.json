@@ -1,0 +1,30 @@
+{
+ "_readme": "S742, lane 2's cheap piles (2026-11-27). Gavilan 08464 (Liberal Arts: Multiple Subjects A.A.) reads five areas whose printed figures (3, 3-5, 3, 3-5, 2-4) add to 14-20 under a printed total of 19, and it carries no notes; total_differs is filed only from a page read (kb/program_total_differs.json). S741's read (45961506725) loaded the rendered address and got the catalog's menu alone. This read makes the capture's own calls for the entry (cq_view, catalog 19344), so a session can read each area's heading with its figure and the total line word for word. No model call, nothing written.",
+ "college": "Gavilan College",
+ "questions": {
+  "area_figures": "Each area's heading with its printed figure, and the total line, word for word."
+ },
+ "keywords": [
+  "A[Rr][Ee][Aa] \\d[^\\n]{0,90}",
+  "[Tt]otal[^\\n]{0,60}",
+  "[Uu]nits?:?[^\\n]{0,40}"
+ ],
+ "pages": [
+  {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4135/4197",
+   "answers": [
+    "area_figures"
+   ],
+   "why": "08464",
+   "cq_view": true,
+   "cq_catalog": 19344
+  }
+ ],
+ "_quoted": {
+  "46001469210": {
+   "remainder": "Complete one course from each area. Any remaining units needed to reach a minimum of 19 units may be completed by selecting any course from areas 1-5.",
+   "areas": "Area 1 (3 units) English & Communication Skills: | Area 2 (3-5 units) Mathematics & Natural Science: | Area 3 (3 units) Social Science: | Area 4 (3-5 units) Humanities & Fine Arts: | AREA 5 (2 - 4 Units)",
+   "_what": "Lines of college-page-read run 46001469210's log, the entry's text as the capture's own calls join it (cq_view), copied by a session; kb/_program_piles_s742.py page_quote reads 'remainder' for Gavilan 08464's gap."
+  }
+ }
+}

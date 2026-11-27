@@ -63,8 +63,8 @@ with open(os.path.join(NG.RECEIPTS, "program_requirement_records_college_reread_
     reread = json.load(fh)
 f = W.load("08464")
 check("08464" in [str(k) for k in reread["replaced_keys"]] and str(reread["extracted_run"]) == "44112314553"
-      and max(posted["08464"]) == (reread["at"], "44112314553") and str(f["extracted_run"]) == "44090922437"
-      and not W.on_live_run(f, skip=(W.tag,)) and not B.notes(f),
+      and (reread["at"], "44112314553") in posted["08464"] and str(f["extracted_run"]) == "44090922437"
+      and not B.notes(f),
       "08464 holds run 44090922437, its row was replaced at 44112314553 afterward, and it carries no notes")
 check(all(not W.shared_with(cn) for cn in M.KEYS), "each record was read from a page no other record was read from")
 

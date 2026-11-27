@@ -1,0 +1,15 @@
+{
+ "_readme": "S742 lane 1 (keys): Cuesta College's two Aviation Mechanic certificates, each entry read as the capture reads it (capture_view), free, no model call, nothing written: Powerplant 43053 and Airframe & Powerplant 41744. How does the entry print AVMT 110 and AVMT 120 beside their A and B halves, and which total does it print? Plan s742k1 files pair_read_as_alternatives on each record's own note.",
+ "college": "Cuesta College",
+ "questions": {
+  "paired_halves": "How does the entry print AVMT 110A and 110B (and 120A and 120B) beside AVMT 110 (and 120), with which units, and which total does it print?"
+ },
+ "keywords": [
+  "AVMT\\s+\\d+[A-Z]?[^\\n]{0,100}",
+  "[Tt]otal[^\\n]{0,40}[Uu]nits?[^\\n]{0,20}"
+ ],
+ "pages": [
+  {"answers": ["paired_halves"], "why": "43053", "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30093", "capture_view": true},
+  {"answers": ["paired_halves"], "why": "41744", "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30091", "capture_view": true}
+ ]
+}

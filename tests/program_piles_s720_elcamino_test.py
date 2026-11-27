@@ -96,13 +96,17 @@ for r in rec["records"]:
 check(not any(W.scorer_passes(W._load(cn)) for cn in ROWS if cn not in moved),
       "the scorer passes none of the rows (#3753's MAJOR)")
 check(all(W.on_live_run(W._load(cn)) for cn in ROWS), "every row is on its live run")
-check(W.shared_with("02512") == ["19883"], "02512's page is shared with 19883 and its note names its own A.S.")
+# S742: the Acalog road reads site_pages pins, and paid read 46007782666 moved Photography certificate 19883 to its
+# own page (poid 3640), so 02512, the Photography A.S., is alone on its page since. Read in either state.
+shared = W.shared_with("02512")
+check(shared in (["19883"], []), "02512's page is shared with 19883, or since S742's read with no record (%s)" % shared)
 e = dict(W.REVIEWED["02512"])
 e.pop("own_section")
 check(W.claim(W._load("02512")) == "stands", "02512 stands with its own-section words")
 W.REVIEWED["02512"] = e
-check(W.claim(W._load("02512")) == "the page is shared and no note names the record's own section",
-      "without them its shared page holds it")
+check(W.claim(W._load("02512")) == ("the page is shared and no note names the record's own section" if shared
+                                    else "stands"),
+      "without them its shared page holds it, while the page is shared")
 
 # The second reader (S720): 02520's quoted 64.5 includes the 6.5-unit post-graduation block, so its figures agree.
 c02520 = W._load("02520")
