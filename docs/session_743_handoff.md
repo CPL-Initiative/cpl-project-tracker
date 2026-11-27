@@ -83,3 +83,5 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 - 12:29Z: the Glendale gate 45998506887 green at 12:28Z: 242 Glendale rows at `5b80d4de75e9`, nothing else moved (live:
   18,504 at `a143061a2ae2`, 16 at `0874a3a15f22`, 15 Glendale rows at `bef8ef819af7`, 1 at `4c57fd250cce`, 1 with no
   display; 18,779 rows). The whole build dispatched on the branch.
+- 12:36Z: the whole build 45998968540 green at 12:35Z: 18,747 rows at `5b80d4de75e9` (the 1 with no display now carries
+  one), the same 32 at older builds, none without a display. #3904 opened from `claude/s742-display` and marked ready.
