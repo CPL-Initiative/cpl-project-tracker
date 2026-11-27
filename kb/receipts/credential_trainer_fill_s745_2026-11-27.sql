@@ -1,5 +1,5 @@
 -- Credential trainer fill: the 16 Ironworker apprenticeship period credentials (S745, SkyTattler worker)
--- Written 2026-11-27T22:05Z (date -u). A PLAN, NOT APPLIED. The conductor reviews and runs it.
+-- Written 2026-11-27T22:05Z. APPLIED by the conductor 2026-11-27 (date -u below): pre-check read 16 issuer rows by map@rccd.edu and no trainer rows; the insert returned 16 rows.
 --
 -- WHY. Sam, 2026-11-27, on learning that kb/credentials.json carries a training agency for 348 of 2,970
 -- credentials: "yes, this is what we could want to show: Trained by Ironworker JATC". The 16 period credentials
