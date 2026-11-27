@@ -2382,7 +2382,7 @@
   var CERTS_DIR = "kb/status/program_certs/";
   var certCache = { index: undefined, colleges: {} };
   var CERTS_CSS = [
-    ".cplpw-rcerts { margin-top:10px; }",
+    ".cplpw-rcerts { margin-top:10px; display:flex; flex-wrap:wrap; gap:4px 16px; }",
     ".cplpw-rcerts-open { font:inherit; font-size:14px; font-weight:600; background:none; border:0; padding:0; min-height:24px; color: var(--accent-link); text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; cursor:pointer; text-align:left; }",
     ".cplpw-rcerts-open:hover { text-decoration-thickness:2px; }",
     ".cplpw-rcerts-open:focus-visible { outline:3px solid var(--focus-ring, var(--cobalt)); outline-offset:2px; }",
@@ -2428,14 +2428,48 @@
   }
   function certGroups(rec, file) {
     var v = file && file[String(rec.control_number)];
-    return { earns: (v && v.earns_cpl_here) || [], prep: (v && v.prepares_for) || [] };
+    return { earns: (v && v.earns_cpl_here) || [], prep: (v && v.prepares_for) || [], trained: (v && v.trained_by) || [] };
+  }
+  /* ── Trained by on the program card (Sam, 2026-11-27: "yes, this is what we could want to show: Trained by
+     Ironworker JATC"). The same college file carries trained_by: the apprenticeship training committees whose
+     credentials give credit here on the program's courses (kb/_build_program_certs.py; a training committee only,
+     S746). One control per committee, "Trained by" and its short name; it opens the sidebar beside the view. */
+  function trainedControl(rec, t) {
+    var b = el("button", "cplpw-rcerts-open cplpw-rtrained-open", "Trained by " + (t.s || t.a || ""));
+    b.type = "button";
+    b.setAttribute("aria-controls", "cplpw-cside");
+    b.setAttribute("aria-expanded", "false");
+    b.setAttribute("aria-label", "Trained by " + (t.a || t.s || "") + ": " + (t.courses || []).length +
+      " of this program's courses have CPL here from its training, details beside the view");
+    b.addEventListener("click", function () { openTrainedSide(rec, t, b); });
+    return b;
+  }
+  function openTrainedSide(rec, t, opener) {
+    var body = el("div", "cplpw-cside-body cplpw-certs");
+    var sec = el("section", "trained");
+    var n = (t.courses || []).length;
+    sec.appendChild(el("h4", null, t.a || t.s || ""));
+    sec.appendChild(el("p", "lede", "Credentials this committee trains give credit at " + rec.college + " for " + n +
+      " course" + (n === 1 ? "" : "s") + " in this program: " + (t.courses || []).join(", ") + "."));
+    var ul = el("ul");
+    (t.creds || []).forEach(function (c) {
+      var li = el("li");
+      li.appendChild(el("span", "t", c.t || ""));
+      li.appendChild(el("span", "k", "Gives credit for " + (c.courses || []).join(", ")));
+      ul.appendChild(li);
+    });
+    sec.appendChild(ul);
+    body.appendChild(sec);
+    return openSideBody(rec, "Trained by", "Resize the training committee", body, opener);
   }
   function drawCertsControl(host, rec, file) {
     clearNode(host);
     var g = certGroups(rec, file);
     var n = g.earns.length + g.prep.filter(function (p) { return !p.both; }).length;
-    if (!g.earns.length && !g.prep.length) { host.hidden = true; return; }
+    if (!g.earns.length && !g.prep.length && !g.trained.length) { host.hidden = true; return; }
     host.hidden = false;
+    g.trained.forEach(function (t) { host.appendChild(trainedControl(rec, t)); });
+    if (!g.earns.length && !g.prep.length) return;
     var b = el("button", "cplpw-rcerts-open", "Industry certs (" + n + ")");
     b.type = "button";
     b.setAttribute("aria-controls", "cplpw-cside");
@@ -2485,26 +2519,6 @@
   }
   /* g: { earns, prep } — the sidebar beside the view, its two groups headed. */
   function openCertSide(rec, g, opener) {
-    if (!side.split) return null;
-    var again = side.opener === opener;
-    closeCourseSide(true);
-    if (again) { try { opener.focus(); } catch (e) { /* best effort */ } return null; }
-    var aside = el("aside", "cplpw-cside");
-    aside.id = "cplpw-cside";
-    aside.setAttribute("aria-labelledby", "cplpw-cside-h");
-    aside.appendChild(sideGrip("Resize the industry certs"));
-    var head = el("div", "cplpw-cside-head");
-    var h = el("h3", null, "Industry certs");
-    h.id = "cplpw-cside-h";
-    h.tabIndex = -1;
-    var hw = el("div", "w", [h]);
-    hw.appendChild(el("span", "u", rec.title || ""));
-    var close = el("button", "cplpw-cside-close", "Close");
-    close.type = "button";
-    close.addEventListener("click", function () { closeCourseSide(); });
-    head.appendChild(hw);
-    head.appendChild(close);
-    aside.appendChild(head);
     var body = el("div", "cplpw-cside-body cplpw-certs");
     if (g.earns.length) {
       var es = el("section", "earns");
@@ -2524,6 +2538,30 @@
       ps.appendChild(pu);
       body.appendChild(ps);
     }
+    return openSideBody(rec, "Industry certs", "Resize the industry certs", body, opener);
+  }
+  /* The sidebar beside the view with a heading, the program's title under it, Close, and the body given. */
+  function openSideBody(rec, heading, gripLabel, body, opener) {
+    if (!side.split) return null;
+    var again = side.opener === opener;
+    closeCourseSide(true);
+    if (again) { try { opener.focus(); } catch (e) { /* best effort */ } return null; }
+    var aside = el("aside", "cplpw-cside");
+    aside.id = "cplpw-cside";
+    aside.setAttribute("aria-labelledby", "cplpw-cside-h");
+    aside.appendChild(sideGrip(gripLabel));
+    var head = el("div", "cplpw-cside-head");
+    var h = el("h3", null, heading);
+    h.id = "cplpw-cside-h";
+    h.tabIndex = -1;
+    var hw = el("div", "w", [h]);
+    hw.appendChild(el("span", "u", rec.title || ""));
+    var close = el("button", "cplpw-cside-close", "Close");
+    close.type = "button";
+    close.addEventListener("click", function () { closeCourseSide(); });
+    head.appendChild(hw);
+    head.appendChild(close);
+    aside.appendChild(head);
     aside.appendChild(body);
     aside.addEventListener("keydown", function (e) { if (e.key === "Escape") closeCourseSide(); });
     side.split.appendChild(aside);

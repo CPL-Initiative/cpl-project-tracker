@@ -32,6 +32,10 @@ THE TWO GROUPS, per program.
                   Estate) counts only when the line also names a certification, license, exam or test. NATEF is not on
                   the list: it accredits the program, and its lines cite its standards. The matched line is quoted
                   verbatim, trimmed to about 200 characters around the match.
+  trained_by      The agencies that train a credential giving credit at THIS college on a course in the program's
+                  course set (any CPL type): kb/credentials.json's training_agency on the credential's first record,
+                  a training committee only (TRAINER_OK), the credit lines read as for earns_cpl_here. An entry: name a, chip words s, each credential t with
+                  its matched courses, and the courses together. See read_trainers and trained_by below.
   both            A certification in both groups. The test: the closed list's pattern for a prepares_for entry also
                   matches the earned credential's issuer and title ("CompTIA" + "CompTIA A+ ..." matches the A+
                   entry). Both entries carry "both": true.
@@ -39,7 +43,7 @@ THE TWO GROUPS, per program.
 THE MEASURE (S652's matcher rule) is kb/status/program_certs/_measure.md: the counts, the hand-checked sample of hits
 and of misses, and the precision and recall they give. Re-measure when CERTS changes.
 
-Each file: {"college", "slug", "programs": {control_number: {"earns_cpl_here": [...], "prepares_for": [...]}}}, only
+Each file: {"college", "slug", "programs": {control_number: {"earns_cpl_here", "prepares_for", "trained_by"}}}, only
 programs with an entry. kb/status/program_certs/index.json maps each college's name to its slug. No clock is read, so
 the same inputs write the same bytes.
 
@@ -61,6 +65,7 @@ from _program_requirements_college import file_code  # noqa: E402  (the one rewr
 
 ADOPT = os.path.join("library", "adopt", "adopt_data.json")
 ADOPTION = os.path.join("kb", "exhibits_adoption.json")
+CREDENTIALS = os.path.join("kb", "credentials.json")
 OUT_DIR = os.path.join("kb", "status", "program_certs")
 INDUSTRY = "Industry Certification"
 QUOTE = 200
@@ -337,9 +342,17 @@ def read_programs(root):
     return out
 
 
-def read_earnable(root):
+def read_earnable(root, lines=None):
     """{college name: [{"t", "i", "codes": [printed], "exhibits": [code]}]} for the adoption page's Industry
     Certification credentials."""
+    lines = read_lines(root) if lines is None else lines
+    return {college: [{k: e[k] for k in ("t", "i", "codes", "exhibits")} for e in rows if e["industry"]]
+            for college, rows in lines.items() if any(e["industry"] for e in rows)}
+
+
+def read_lines(root):
+    """{college name: [{"t", "i", "codes": [printed], "exhibits": [code], "industry": bool}]} for every settled
+    credential on the adoption page, each with its credit lines at that college."""
     path = os.path.join(root, ADOPT)
     if not os.path.exists(path):
         return {}
@@ -360,8 +373,7 @@ def read_earnable(root):
         full = {}
     out = {}
     for cr in d.get("credentials") or []:
-        if not ind.intersection(cr.get("y") or []):
-            continue
+        industry = bool(ind.intersection(cr.get("y") or []))
         for row in cr.get("a") or []:
             ci = row[0]
             if not (isinstance(ci, int) and 0 <= ci < len(names)):
@@ -374,7 +386,117 @@ def read_earnable(root):
                 if len(m) > 1 and m[1] == ci and EXHIBIT_CODE.match(xid) and xid not in ex:
                     ex.append(xid)
             out.setdefault(college, []).append({"t": cr.get("t") or "", "i": cr.get("i") or "", "codes": codes,
-                                                "exhibits": ex})
+                                                "exhibits": ex, "industry": industry})
+    return out
+
+
+# ── Trained by (Sam, 2026-11-27: "yes, this is what we could want to show: Trained by Ironworker JATC").
+# kb/credentials.json names a training agency on a credential's first record (training_agency). A program is trained by
+# an agency when a credential it trains gives credit at the college on a course in the program's course set. A value
+# that names no one ("varies by academy") is left out. Two spellings of one body fold to one entry (Ironworker and
+# Ironworkers Joint Apprenticeship Training Committee, with or without "and"), shown in the spelling more credentials
+# carry. The short name is the chip's words: a trailing parenthesized acronym (CAL FIRE), else the committee words
+# folded to JATC (Ironworker JATC), else the name.
+# ONLY TRAINING COMMITTEES (S746). The training_agency field also names one college's site on a credential many colleges
+# articulate (AP Biology "trained by" Mater Dei High School at Glendale; Microsoft Office Specialist Excel by the U.S.
+# Armed Forces), and neither its confidence nor its source separates those from the sound ones. An apprenticeship's
+# training committee trains its own credential wherever it is articulated, so the chip names only an agency whose name
+# says it is one (TRAINER_OK); the rest wait on a cleaned field (f-trainer-field-names-one-site-s746).
+TRAINER_OK = re.compile(r"\bapprenticeship\b|\btraining committee\b|\bJATC\b", I)
+GENERIC = re.compile(r"^\s*Joint Apprenticeship (?:and )?Training Committee(?:\s*\(JATC\))?\s*$", I)
+NO_ONE = re.compile(r"^\s*(varies|various|unknown|n/?a\b|none\b|tbd\b)", I)
+JATC_WORDS = re.compile(r"\bJoint Apprenticeship (?:and )?Training Committee\b", I)
+ACRONYM = re.compile(r"\(([A-Z][A-Z0-9 &.\-]{1,14})\)\s*$")
+
+
+def read_trainers(root):
+    """{credential title: training agency} from kb/credentials.json's first record, names only."""
+    try:
+        creds = json.load(open(os.path.join(root, CREDENTIALS), encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+    out = {}
+    for t, recs in creds.items():
+        first = recs[0] if isinstance(recs, list) and recs and isinstance(recs[0], dict) else {}
+        a = re.sub(r"\s+", " ", str(first.get("training_agency") or "")).strip()
+        if a and GENERIC.match(a):
+            a = qualified(a, re.sub(r"\s+", " ", str(first.get("issuing_agency") or "")).strip())
+        if a and not NO_ONE.match(a) and TRAINER_OK.search(a):
+            out[t] = a
+    return out
+
+
+def qualified(generic, issuer):
+    """A bare "Joint Apprenticeship Training Committee (JATC)" says whose committee through the issuer: the issuer's
+    acronym (IBEW Joint Apprenticeship Training Committee), else the issuer when it is a training committee itself
+    (the Carpenters Training Committee for Northern California), else the bare name."""
+    m = ACRONYM.search(issuer)
+    if m:
+        return m.group(1).strip() + " Joint Apprenticeship Training Committee"
+    if TRAINER_OK.search(issuer):
+        return issuer
+    return generic
+
+
+def spellings(trainers):
+    """{agency_key: the spelling most credentials carry}, so a body reads the same on every program card."""
+    n = {}
+    for a in trainers.values():
+        n.setdefault(agency_key(a), {}).setdefault(a, 0)
+        n[agency_key(a)][a] += 1
+    return {k: sorted(v.items(), key=lambda kv: (-kv[1], kv[0]))[0][0] for k, v in n.items()}
+
+
+def agency_key(name):
+    """Ironworkers Joint Apprenticeship and Training Committee = Ironworker Joint Apprenticeship Training Committee."""
+    words = re.findall(r"[a-z0-9]+", name.lower())
+    return " ".join(re.sub(r"(?<=[a-z]{3})s$", "", w) for w in words if w != "and")
+
+
+def short_name(name):
+    """The chip's words. Two committees named as one ("Carpenters Training Committee for Northern California /
+    Southern California Carpenters Joint Apprenticeship") read as what they share: Carpenters Training Committee."""
+    m = ACRONYM.search(name)
+    if m:
+        return m.group(1).strip()
+    if " / " in name:
+        head = re.match(r"^(.*?\btraining committee)\b", name.split(" / ")[0], I)
+        if head:
+            return head.group(1).strip()
+    return JATC_WORDS.sub("JATC", name).strip()
+
+
+def trained_by(p, rows, trainers, spelled=None):
+    """The program's training agencies: [{"a": name, "s": short name, "creds": [{"t", "courses"}], "courses"}]."""
+    groups = {}
+    for e in rows:
+        a = trainers.get(e["t"])
+        if not a:
+            continue
+        hit = []
+        for code in e["codes"]:
+            printed = p["codes"].get(compact(code))
+            if printed and printed not in hit:
+                hit.append(printed)
+        if not hit:
+            continue
+        g = groups.setdefault(agency_key(a), {"creds": {}})
+        have = g["creds"].setdefault(e["t"], [])
+        for h in hit:
+            if h not in have:
+                have.append(h)
+    out = []
+    spelled = spellings(trainers) if spelled is None else spelled
+    for key, g in groups.items():
+        name = spelled[key]
+        creds = [{"t": t, "courses": c} for t, c in sorted(g["creds"].items(), key=lambda kv: kv[0].lower())]
+        courses = []
+        for c in creds:
+            for h in c["courses"]:
+                if h not in courses:
+                    courses.append(h)
+        out.append({"a": name, "s": short_name(name), "creds": creds, "courses": sorted(courses)})
+    out.sort(key=lambda x: (-len(x["courses"]), x["a"].lower()))
     return out
 
 
@@ -387,11 +509,15 @@ def same_cert(key, earned):
     return bool(c[3].search(text))
 
 
-def build(root=ROOT, programs=None, earnable=None):
+def build(root=ROOT, programs=None, earnable=None, lines=None, trainers=None):
     programs = read_programs(root) if programs is None else programs
-    earnable = read_earnable(root) if earnable is None else earnable
+    if lines is None:
+        lines = read_lines(root) if earnable is None else {}
+    earnable = read_earnable(root, lines) if earnable is None else earnable
+    trainers = read_trainers(root) if trainers is None else trainers
+    spelled = spellings(trainers)
     stats = {"programs": 0, "earns": 0, "prepares": 0, "both": 0, "earn_entries": 0, "prep_entries": 0,
-             "prep_by_key": {}}
+             "prep_by_key": {}, "trained": 0, "trained_entries": 0}
     docs = {}
     for slug in sorted(programs):
         c = programs[slug]
@@ -417,7 +543,10 @@ def build(root=ROOT, programs=None, earnable=None):
                     if same_cert(pe["key"], ee):
                         pe["both"] = ee["both"] = True
                         any_both = True
-            if not earns and not prep:
+            trained = trained_by(p, lines.get(c["college"]) or [], trainers, spelled)
+            stats["trained"] += bool(trained)
+            stats["trained_entries"] += len(trained)
+            if not earns and not prep and not trained:
                 continue
             for pe in prep:
                 stats["prep_by_key"][pe["key"]] = stats["prep_by_key"].get(pe["key"], 0) + 1
@@ -431,6 +560,8 @@ def build(root=ROOT, programs=None, earnable=None):
                 entry["earns_cpl_here"] = earns
             if prep:
                 entry["prepares_for"] = prep
+            if trained:
+                entry["trained_by"] = trained
             out[ctl] = entry
         if out:
             docs[slug] = {"college": c["college"], "slug": slug, "programs": out}
@@ -466,7 +597,7 @@ def main(argv):
             f.write(t)
     print("wrote %d files under %s" % (len(files), OUT_DIR))
     print("  programs %(programs)d; earns CPL here %(earns)d (%(earn_entries)d entries); prepares for %(prepares)d "
-          "(%(prep_entries)d entries); both %(both)d" % stats)
+          "(%(prep_entries)d entries); both %(both)d; trained by %(trained)d (%(trained_entries)d agencies)" % stats)
     print("  prepares for by certification: " + ", ".join("%s %d" % kv for kv in sorted(
         stats["prep_by_key"].items(), key=lambda kv: -kv[1])))
     return 0

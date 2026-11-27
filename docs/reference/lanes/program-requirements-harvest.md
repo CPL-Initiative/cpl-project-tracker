@@ -69,9 +69,18 @@ the apprenticeship exhibits (`MAPICA-RA4P*`/`SA4P*`), but `kb/coci_articulations
 `MAPCXA-*`, so the view says 15 of 24. **FINDING** `f-coci-description-shards-mojibake-s744`: `coci_lookup_desc_*.js`
 carries `_x000D_` and cp1252 mojibake. MAP at Bakersfield: 6 Welding A.S. courses carry CPL (NCCER Levels 1-4, AWS
 D1.1/D1.5/D1.8, ASME IX, LA City Certified Welder, credit by exam); Cerritos Business Administration 2.0 A.S.-T has none
-and could adopt on 10 of 11 courses (AP, CLEP, IB calculus, statistics, economics). **NEXT (CPL Pathways):** (1) confirm
-the credential sync folded the 16 trainers, then the live Trained-by chip; (2) merge #3922, then look at the live
-cards; (3) the display build reads the apprenticeship exhibits (`library/adopt/adopt_data.json` has them), then the
+and could adopt on 10 of 11 courses (AP, CLEP, IB calculus, statistics, economics). **LIVE (S746):** *Trained by* on the
+program card (`kb/_build_program_certs.py` `trained_by`, `tests/cpl_pathways_trained_by.test.js`): an underlined-word
+control per training committee, *Trained by Ironworker JATC*, opening the sidebar with the committee's full name and
+each credential with its courses. **DECIDED** `d-trained-by-committees-only-s746`: training committees only (a name
+saying apprenticeship, training committee or JATC); a bare *Joint Apprenticeship Training Committee (JATC)* takes its
+issuer's acronym (*IBEW JATC*) or the issuer when that is a committee (*Carpenters Training Committee*). 19 programs at
+American River, Cabrillo, Cerritos and Santiago Canyon before the sync folds the 15 Cerritos Period trainers (06:17Z
+cron, the sync runs before the build). **FINDING** `f-trainer-field-names-one-site-s746`: `training_agency` names one
+college's site on credentials many colleges articulate (AP Biology by Mater Dei High School at Glendale; Microsoft
+Office Specialist Excel by the U.S. Armed Forces), and neither `confidence_trainer` nor `classified_by` separates those;
+widening the chip waits on a cleaned field. **NEXT (CPL Pathways):** (1) after the 2026-11-28 cron, confirm Cerritos
+Field Ironworkers' Trained by lists the Period credentials; (2) look at the live cards; (3) the display build reads the apprenticeship exhibits (`library/adopt/adopt_data.json` has them), then the
 B.S. page's text; (4) clean the description shards at build in `kb/_build_coci_lookup.py`.
 
 **The display build** (`kb/_build_roep_display.py`) writes each program's facts once, under one build stamp, to `program_requirement_records.display` (Sierra) and `cpl_pathways_roep_data.js` (the page); guard `tests/roep_display_test.py`. Its history (S327-S336): the lessons doc, *Moved from the lane (S346 compaction)*.

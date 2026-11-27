@@ -119,6 +119,33 @@ for line, want in [
 ]:
     check("matcher: %r -> %s" % (line[:60], want or "nothing"), sorted(keys(line)) == sorted(want))
 
+# ── Trained by (S746) ────────────────────────────────────────────────────────────────────
+check("trainer: a two-spelling body folds to one key",
+      B.agency_key("Ironworkers Joint Apprenticeship and Training Committee")
+      == B.agency_key("Ironworker Joint Apprenticeship Training Committee"))
+check("trainer: committee words fold to JATC", B.short_name("Ironworker Joint Apprenticeship Training Committee") == "Ironworker JATC")
+check("trainer: a trailing acronym is the short name", B.short_name("California Department of Forestry and Fire Protection (CAL FIRE)") == "CAL FIRE")
+check("trainer: two committees named as one read as what they share",
+      B.short_name("Carpenters Training Committee for Northern California / Southern California Carpenters Joint Apprenticeship")
+      == "Carpenters Training Committee")
+check("trainer: a bare JATC takes the issuer's acronym",
+      B.qualified("Joint Apprenticeship Training Committee (JATC)", "International Brotherhood of Electrical Workers (IBEW)")
+      == "IBEW Joint Apprenticeship Training Committee")
+for name, ok in [("Ironworker Joint Apprenticeship Training Committee", True), ("Mater Dei High School", False),
+                 ("U.S. Armed Forces", False), ("varies by academy", False)]:
+    check("trainer: %s %s" % (name, "kept" if ok else "left out"), bool(B.TRAINER_OK.search(name) and not B.NO_ONE.match(name)) == ok)
+T_PROG = {"codes": {B.compact("IWAP 40.50"): "IWAP 40.50", B.compact("IWAP 40.07"): "IWAP 40.07"}}
+T_ROWS = [{"t": "Cranes", "codes": ["IWAP 40.50"]}, {"t": "Period 1", "codes": ["IWAP 40.07", "IWAP 40.50", "MATH 1"]},
+          {"t": "AP Biology", "codes": ["IWAP 40.07"]}, {"t": "Rigging", "codes": ["WELD 1"]}]
+T_TRAIN = {"Cranes": "Ironworker Joint Apprenticeship Training Committee",
+           "Period 1": "Ironworkers Joint Apprenticeship and Training Committee",
+           "Rigging": "Ironworker Joint Apprenticeship Training Committee"}
+tb = B.trained_by(T_PROG, T_ROWS, T_TRAIN)
+check("trainer: one entry for the body, both spellings' credentials in it", len(tb) == 1 and [c["t"] for c in tb[0]["creds"]] == ["Cranes", "Period 1"])
+check("trainer: the spelling more credentials carry", tb and tb[0]["a"] == "Ironworker Joint Apprenticeship Training Committee" and tb[0]["s"] == "Ironworker JATC")
+check("trainer: the program's courses only, a credential with none left out",
+      tb and tb[0]["courses"] == ["IWAP 40.07", "IWAP 40.50"] and tb[0]["creds"][1]["courses"] == ["IWAP 40.07", "IWAP 40.50"])
+
 # ── Bytes ────────────────────────────────────────────────────────────────────────────────
 again = B.build(ROOT, programs=PROGRAMS, earnable=EARNABLE)
 check("the same inputs write the same bytes", B.dump(again[0]["alpha"]) == B.dump(docs["alpha"]))
