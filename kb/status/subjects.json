@@ -7,17 +7,6 @@
   "handoff": "docs/session_744_handoff.md",
   "calls": [
     {
-      "title": "Sam's four Accounting codes filed under Business",
-      "text": "On 2026-11-24 Sam's saves filed the local codes ACC, ACCT, ACCTG and ACTG under Business. The Accounting re-point dry run moves 907 courses under 372 M-IDs to ACCT under Accounting; its apply waits until those four are refiled under Accounting, or Sam says to go ahead over them. Copper Mountain's ACC is ACCESS, disability services, and stays out, keyed by college.",
-      "if_no_reply": "Nothing is re-minted; the courses stay under Business and the dry run stands.",
-      "link": "https://github.com/CPL-Initiative/cpl-project-tracker/pull/3867",
-      "link_text": "The Accounting re-point dry run, PR 3867",
-      "view": {
-        "href": "#commons/subjects/held",
-        "text": "The held subject codes"
-      }
-    },
-    {
       "title": "The noncredit subject title list",
       "text": "The list holds 129 headings from the four large noncredit programs as 114 titles. Sam settles which headings join one title, and whether Citizenship, Health and Safety, substantial disabilities and Workforce Preparation take a common code or none.",
       "if_no_reply": "The noncredit hold stands and the list stays a draft.",
