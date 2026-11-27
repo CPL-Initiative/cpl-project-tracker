@@ -116,3 +116,11 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   `claude/s742-apply`, cut at the worker's reviewed head, so a worker's branch stays free for its pushes.
 - 13:15Z: s742k1's migrate 46005400935 returned 2, none skipped; `.apply` restored on `claude/s742-apply` (`6df6937c`).
   Records collected: 2.
+- 13:22Z: `keys` stop 2 (head `f1cd19e7`): keep-better on the 13:08Z read: Cosumnes River's reconcile 45972311864 re-read
+  8, kept 3 (33542 passes 19 of 19; 31055 and 38017 equal), restored 5 filed passes; San Bernardino Valley's free
+  reconcile 46000859685 re-read 5, kept 1 (17829, incomplete with its major equal, over the filed unequal: S741's
+  ranking), restored 4. Plan s742k2 (San Bernardino Valley 04873 and 39483, `lists_not_closed`, the two S741 held as no
+  kind true) to a Sonnet plan reader. Held: 04894 (its scorer change moves 9 fail to pass and 22 pass to fail over
+  18,970 records: not proposed).
+- 13:24Z: no person's check at either college (live read 13:23Z); the rereads dispatched on `claude/s742-keys`, each in
+  its own college's concurrency group: Cosumnes River force 45972311864, San Bernardino Valley force 46000859685.
