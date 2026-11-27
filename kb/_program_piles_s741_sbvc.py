@@ -32,7 +32,9 @@ HELD (5), each reason in HAND:
          general education pattern with no units, and the page prints none ('To earn an SBVC Associate Degree
          students must complete one of the following General Education (GE) patterns'). That is ge_units_not_read on
          today's arithmetic and no kind on the filed one, and a gap filed over the filed score would not survive a
-         reconcile's rescore. A free reconcile, its reread, then the record rule.
+         reconcile's rescore. The free reconcile that brings its score to today's is undone before its reread:
+         keep-better ranks the degree's 'incomplete' below the filed 'unequal' and restores the filed record (S740's
+         did, run 45844530701). A keep-better change for a record whose major now passes: the follow-up's.
   04873  Audio Production A.A.: the page itself prints one course under 'Two courses from the following:' and two
          under 'Four courses from the following:' (read 45835049303). No filed kind names a list shorter than its
          count; a new kind is shared code (the follow-up's).
@@ -123,8 +125,10 @@ HAND.update({
               "scorer passes the major (the short-high reading) and reads the degree, the 60 the page's description "
               "prints over a general education pattern with no units (" + READ + "), which is ge_units_not_read on "
               "today's arithmetic and no kind on the filed one. A gap filed over the filed score would not survive a "
-              "reconcile's rescore (tests/reconcile_keeps_named_gaps_test.py), so a free reconcile first brings its "
-              "score to today's, its reread posts it, and the record rule then names the gap"),
+              "reconcile's rescore (tests/reconcile_keeps_named_gaps_test.py), and the free reconcile that brings "
+              "the score to today's is undone before its reread: keep-better ranks the degree's 'incomplete' below "
+              "the filed 'unequal' and restores the filed record (S740's keep-better did, run 45844530701). A "
+              "keep-better change for a record whose major now passes, the follow-up's"),
     "04873": ("held: the page itself prints one course under 'Two courses from the following:' (FTVM 112) and two "
               "under 'Four courses from the following:' (FTVM 213, THART 131), over 'Total Units 24-25' (" + READ_S740
               + "), so no reading adds its lists to the printed total; no filed kind names a list shorter than its "

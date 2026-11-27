@@ -1198,6 +1198,12 @@ jobs:
       - name: Cheap piles S741 at San Bernardino Valley (the units kind by key, a placement waiver, the plan)
         if: matrix.shard == 3
         run: python3 tests/program_piles_s741_sbvc_test.py
+      # S741 at Solano (s741k4): s740c2's four holds on the own-page guard, 3 collected under total_differs (the
+      # Mechatronics pair by each record's own note and the page's sentence, American Sign Language on its own page),
+      # World Languages 43134 held (the state lists the award twice).
+      - name: Cheap piles S741 at Solano (total_differs on the page's own figures, the own-page guard, the plan)
+        if: matrix.shard == 5
+        run: python3 tests/program_piles_s741_solano_test.py
       # S741 at Copper Mountain: the reconcile step that reads the degree's printed floor ('MINIMUM TRANSFERABLE
       # UNITS', 'MINIMUM DEGREE UNITS'), on the page's own words, with its self-recall over the college's records.
       - name: Reconcile S741 at Copper Mountain (the degree's printed floor, the self-recall)

@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-27T07:14:10Z",
+ "written_at": "2026-11-27T07:25:05Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,8 +168,8 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17595,
-  "gap": 4740,
+  "passing": 17598,
+  "gap": 4737,
   "with_gap": 118,
   "cost_usd": 1341.45,
   "passed_at_read": 16503,
@@ -190,8 +190,8 @@
  "census_check": {
   "universe": 22335,
   "passing": 16945,
-  "gap": 4740,
-  "collected_with_gaps": 650,
+  "gap": 4737,
+  "collected_with_gaps": 653,
   "discontinued": 0
  },
  "census_live": {
@@ -11581,13 +11581,13 @@
    "harvested": true,
    "slug": "solano_community",
    "programs": 171,
-   "passing": 146,
-   "gap": 25,
+   "passing": 149,
+   "gap": 22,
    "causes": {
     "no_closed_list": 8,
     "page_not_found": 7,
     "places_none": 2,
-    "unknown_without_live": 8
+    "unknown_without_live": 5
    },
    "census_causes": {
     "no_closed_list": 6,
@@ -11651,7 +11651,7 @@
    "levers": {
     "program_course_file_check": 8,
     "reader_page_search": 7,
-    "reconcile_steps": 6,
+    "reconcile_steps": 3,
     "ge_units_steps": 2,
     "reader_page_assignment": 2
    },

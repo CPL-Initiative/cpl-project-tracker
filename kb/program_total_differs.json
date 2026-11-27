@@ -260,6 +260,53 @@
     "evidence": "Vocational Nursing certificate 20094: the catalog's reissue of 2026-11-18, PDF p.114, under 'Certificate of Achievement in VOCATIONAL NURSING with emphasis on employment preparation', prints 'Required Courses:' BIOL 022 (4), BIOL 023 (4), HS 065 (3), PSYC 003 (3), VN 010 (9), VN 020 (16) and VN 030 (15.6), 54.6 units, then 'MINIMUM CERTIFICATE UNITS 56', the only total the section prints, and no other list (college-page-read run 45953233659, kb/college_reads/s741_keys_copper_mountain_pages.json, printed line for line).",
     "run": "45953233659"
    }
+  },
+  "Solano Community College": {
+   "30184": {
+    "page": 118,
+    "where": "PDF p.118",
+    "printed_total": [
+     37,
+     37
+    ],
+    "printed_sum": [
+     36,
+     36
+    ],
+    "words": "6 units from List A ... 6 ... Required Major Total Units ... 37",
+    "evidence": "Mechatronics A.S. 30184: the 2026-27 catalog PDF, p.118, under 'Mechatronics', 'Certificate of Achievement and Associate in Science', prints 'The Associate in Science Degree can be obtained by completing the 37-unit major, the general education requirements, and electives as needed to complete a minimum of 60 units. The Certificate of Achievement can be obtained by completing the 37-unit major.', then 'REQUIRED COURSES' CIS 001, ADVM 101, ADVM 151, ADVM 121, ADVM 130, ADVM 132, ADVM 140, ADVM 142, ADVM 162 and ADVM 164 at 3 units each, 30, and '6 units from List A ... 6', 36 units, under 'Required Major Total Units 37'; 'List A: (select 6 units)' follows (college-page-read run 45953233659, kb/college_reads/s741_keys_solano_pages.json, printed line for line). One section serves both awards, each earned by the same major.",
+    "run": "45953233659"
+   },
+   "30185": {
+    "page": 118,
+    "where": "PDF p.118",
+    "printed_total": [
+     37,
+     37
+    ],
+    "printed_sum": [
+     36,
+     36
+    ],
+    "words": "6 units from List A ... 6 ... Required Major Total Units ... 37",
+    "evidence": "Mechatronics certificate 30185: the 2026-27 catalog PDF, p.118, under 'Mechatronics', 'Certificate of Achievement and Associate in Science', prints 'The Associate in Science Degree can be obtained by completing the 37-unit major, the general education requirements, and electives as needed to complete a minimum of 60 units. The Certificate of Achievement can be obtained by completing the 37-unit major.', then 'REQUIRED COURSES' CIS 001, ADVM 101, ADVM 151, ADVM 121, ADVM 130, ADVM 132, ADVM 140, ADVM 142, ADVM 162 and ADVM 164 at 3 units each, 30, and '6 units from List A ... 6', 36 units, under 'Required Major Total Units 37'; 'List A: (select 6 units)' follows (college-page-read run 45953233659, kb/college_reads/s741_keys_solano_pages.json, printed line for line). One section serves both awards, each earned by the same major.",
+    "run": "45953233659"
+   },
+   "38591": {
+    "page": 342,
+    "where": "PDF p.342",
+    "printed_total": [
+     27,
+     27
+    ],
+    "printed_sum": [
+     18,
+     18
+    ],
+    "words": "American Sign Language (select 18 units) ... Required Major Total Units ... 27",
+    "evidence": "American Sign Language A.A. 38591: the 2026-27 catalog PDF, p.342, under 'American Sign Language', 'Associate in Arts', prints 'The American Sign Language Associate in Arts can be obtained by completing the 27-unit major', then 'REQUIRED COURSES', the one list 'American Sign Language (select 18 units)' over ASL 001, 002, 003, 004, 005, 006, 007, 011 and 052 at 3 units each, and 'Required Major Total Units 27'. The section is whole on the page: the one list asks for 18 units under a printed total of 27 (college-page-read run 45953233659, kb/college_reads/s741_keys_solano_pages.json, printed line for line). The ASL/English Interpreter Training awards (36455, 36457) have their own section on p.343.",
+    "run": "45953233659"
+   }
   }
  }
 }

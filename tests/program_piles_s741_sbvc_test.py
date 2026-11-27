@@ -18,7 +18,8 @@ Pinned here:
     not on a proved live run;
   * 17829 is held: the record rule names ge_units_not_read on today's arithmetic (the major passing by the
     short-high reading, the degree a pattern with no units) and none on the filed one, so a gap filed over the filed
-    score would not survive a reconcile's rescore; a free reconcile brings its score to today's first;
+    score would not survive a reconcile's rescore, and keep-better undoes the free reconcile that would bring its
+    score to today's (S740's did): a keep-better change, the follow-up's;
   * the holds: 04894 passes today's scorer without the state's list; 04873's lists hold fewer courses than they
     ask for; 22821 was read from the department's page; 39483 holds the biology sequences as lists of their own;
   * the plan's test holds before and after its apply (the shared checks' skip).
@@ -38,7 +39,7 @@ W = M.W
 B, NG, S = B7.B, B7.NG, B7.S
 ROWS = {"35833": B7.WITHIN, "22784": "waived_course_counted"}
 SCORES = {B7.WITHIN: 50, "waived_course_counted": 50}
-HELD = {"17829": ["older scorer's", "ge_units_not_read", "free reconcile"],
+HELD = {"17829": ["older scorer's", "ge_units_not_read", "keep-better ranks"],
         "04873": ["Two courses from the following", "no filed kind names a list shorter than its count"],
         "04894": ["MUS 141X2 & MUS 241X2", "never gap-filed"],
         "22821": ["not the program's own page", "site_pages pin"],

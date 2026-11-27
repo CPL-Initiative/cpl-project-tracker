@@ -620,7 +620,8 @@ for (_c, _cn), _e in _td.items():
                                        "East Los Angeles College": "east_los_angeles",
                                        "San Bernardino Valley College": "san_bernardino_valley",
                                        "San Jose City College": "san_jose_city",
-                                       "Copper Mountain College": "copper_mountain"}[_c], "records", _cn + ".json")
+                                       "Copper Mountain College": "copper_mountain",
+                                       "Solano Community College": "solano_community"}[_c], "records", _cn + ".json")
     with open(_p, encoding="utf-8") as _fh:
         _f = _json.load(_fh)
     _bare = dict(_f, score={k: v for k, v in _f["score"].items() if k not in ("gaps", "confidence")})
@@ -654,16 +655,21 @@ for _name in ("san_bernardino_valley_2026-11-26_s740c3", "san_jose_city_2026-11-
 check(_s740_td == {("San Bernardino Valley College", "32309"), ("San Bernardino Valley College", "35802"),
                    ("San Jose City College", "08859")},
       "the S740 plans move 32309, 35802 and 08859 to total_differs")
-# S741 (lane 1, page read 45953233659), by the same record rule inside the college's plan: at Copper Mountain (plan
-# s741k2) Vocational Nursing A.S. 14737 and its certificate 20094 (54.6 against the printed 56).
-with open(os.path.join(ROOT, "kb", "receipts",
-                       "program_requirement_records_piles_s740_copper_mountain_2026-11-27_s741k2.json"),
-          encoding="utf-8") as _fh:
-    _s741_td = {(r["college"], str(r["control_number"])) for r in _json.load(_fh)["records"]
-                if r["moves_to"] == "total_differs" and r["after_image"]["checks"].get("gaps") == ["total_differs"]
-                and not (r["before_image"]["checks"] or {}).get("gaps")}
-check(_s741_td == {("Copper Mountain College", "14737"), ("Copper Mountain College", "20094")},
-      "the S741 plan moves 14737 and 20094 to total_differs")
+# S741 (lane 1, page read 45953233659), by the same record rule inside each college's plan: at Copper Mountain (plan
+# s741k2) Vocational Nursing A.S. 14737 and its certificate 20094 (54.6 against the printed 56); at Solano (plan
+# s741k4) Mechatronics A.S. 30184 and its certificate 30185 (36 against 37) and American Sign Language A.A. 38591 (18
+# against 27).
+_s741_td = set()
+for _name in ("s740_copper_mountain_2026-11-27_s741k2", "s739_solano_community_2026-11-27_s741k4"):
+    with open(os.path.join(ROOT, "kb", "receipts", "program_requirement_records_piles_%s.json" % _name),
+              encoding="utf-8") as _fh:
+        _s741_td |= {(r["college"], str(r["control_number"])) for r in _json.load(_fh)["records"]
+                     if r["moves_to"] == "total_differs" and r["after_image"]["checks"].get("gaps") == ["total_differs"]
+                     and not (r["before_image"]["checks"] or {}).get("gaps")}
+check(_s741_td == {("Copper Mountain College", "14737"), ("Copper Mountain College", "20094"),
+                   ("Solano Community College", "30184"), ("Solano Community College", "30185"),
+                   ("Solano Community College", "38591")},
+      "the S741 plans move 14737, 20094, 30184, 30185 and 38591 to total_differs")
 check(_p2["only_gaps"] == ["total_differs"] and not _p2["recall"]["wrong"]
       and _p2_keys | {(r["college"], str(r["control_number"])) for r in _s703_td} | _s714e_td | _s740_td | _s741_td
       == set(_td)
