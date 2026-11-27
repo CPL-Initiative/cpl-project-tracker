@@ -81,8 +81,13 @@ pr = F.precision(CENSUS_AT_PLAN)
 # S741 pinned 35174 and 36798 to their own Chemistry pages and paid read 45968499315 filed each there, passing, so the
 # rule reads them passing too; before that read the one exception is 18163.
 S741_READ = [[cn, "none", "passes"] for cn in ("35174", "36798") if str(F._load(cn)["extracted_run"]) == "45968499315"]
-check(pr["read"] == 24 and pr["right"] == 23 - len(S741_READ)
-      and pr["wrong"] == sorted([["18163", "none", "passes"]] + S741_READ) and pr["by_answer"] == {"passes": 11, "none": 13},
+# S742's free reconcile 46010143379 rescored 33680 and 42143 against their closed lists, each passing (the rescore
+# S720 held them for), so the rule reads them passing too once that run's records are filed.
+S742_RECONCILE = [[cn, "none", "passes"] for cn in ("33680", "42143")
+                  if str(F._load(cn)["extracted_run"]) == "46010143379"]
+check(pr["read"] == 24 and pr["right"] == 23 - len(S741_READ) - len(S742_RECONCILE)
+      and pr["wrong"] == sorted([["18163", "none", "passes"]] + S741_READ + S742_RECONCILE)
+      and pr["by_answer"] == {"passes": 11, "none": 13},
       "precision: %r" % pr)
 check({cn for cn, w in F.HAND_HELD.items() if w.startswith("passes")} == PASS, "the eleven passing answers")
 with open(RECEIPT, encoding="utf-8") as fh:
