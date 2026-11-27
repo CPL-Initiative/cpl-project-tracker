@@ -977,6 +977,24 @@ def main():
             shutil.rmtree(tmp, ignore_errors=True)
     check(K.compare(PASS, PASS)[0] == "reread", "a tie keeps the re-read")
     check(K.compare(None, score())[0] == "reread", "no filed score loses")
+    # S741: an incomplete degree whose major equals its printed total (the gap ge_units_not_read) stands above a
+    # record that reads unequal, either way round; a plain incomplete stays below unequal, as before. Norco 32830:
+    # the filed record read 15 against 18, the re-read's major reads 18 = 18 and its degree lacks the Cal-GETC units.
+    unequal = score(False, True, 10, 10, "unequal")
+    plain = score(False, True, 10, 10, "incomplete")
+    major_equal = score(False, True, 10, 10, "incomplete")
+    major_equal["arithmetic"]["major"] = {"status": "equal", "computed": [18.0, 18.0], "stated": [18.0, 18.0]}
+    major_off = score(False, True, 10, 10, "incomplete")
+    major_off["arithmetic"]["major"] = {"status": "unequal"}
+    check(K.compare(unequal, major_equal)[0] == "reread" and "incomplete_major_equal" in K.compare(unequal, major_equal)[1],
+          "a re-read incomplete with its major equal is kept over a filed record that reads unequal")
+    check(K.compare(major_equal, unequal)[0] == "filed",
+          "a filed record incomplete with its major equal is kept over a re-read that reads unequal")
+    check(K.compare(unequal, plain)[0] == "filed" and K.compare(unequal, major_off)[0] == "filed",
+          "a plain incomplete, or one whose major does not equal, stays below unequal, as before")
+    check(K.compare(score(False, True, 10, 10, "equal"), major_equal)[0] == "filed"
+          and K.compare(score(False, True, 10, 10, "unstated", arith_pass=True), major_equal)[0] == "filed",
+          "equal and a passing unstated still stand above it")
     print("%s: %d failure(s)" % ("FAIL" if FAILS else "ok", len(FAILS)))
     return 1 if FAILS else 0
 

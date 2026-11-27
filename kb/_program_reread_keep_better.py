@@ -30,7 +30,12 @@ with the same file at origin/main and keeps the better one.
     3. score.coverage.pass true;
     4. score.coverage.none_placed false (places_none() where the key is missing);
     5. the higher score.coverage.share (a share either record lacks is no evidence, and the step is skipped);
-    6. the arithmetic: equal, unstated that passes, unequal, unstated that does not pass, incomplete, anything else.
+    6. the arithmetic: equal, unstated that passes, incomplete with the major equal, unequal, unstated that does
+       not pass, incomplete, anything else. "Incomplete with the major equal" is a degree whose major adds to its
+       printed major total and whose degree total lacks only the general education units (the named gap
+       ge_units_not_read: the record is collected with that gap), so it stands above a record whose units add to
+       a figure the catalog does not print (S741: Norco 32830, 37311 and 44961, re-read with the group ends marked;
+       each major now equals its printed total, and the old order restored the filed records that read unequal).
   A record with no score (an extraction error) loses every step. A tie keeps the re-read: it is the current catalog
   text. A program with no filed record keeps its new record.
 
@@ -103,7 +108,7 @@ ACCOUNT = "reread_keep_better.json"
 HELD_DIR = "held_for_person"
 WORKFLOW = "program-requirements-college.yml"
 RUN_INPUT = "force"   # the workflow's input that pins step=reread to one extraction run (EXTRACTED_RUN)
-ARITH_ORDER = ("equal", "unstated_pass", "unequal", "unstated_fail", "incomplete")
+ARITH_ORDER = ("equal", "unstated_pass", "incomplete_major_equal", "unequal", "unstated_fail", "incomplete")
 
 
 def none_placed(score: dict | None) -> bool | None:
@@ -126,6 +131,8 @@ def arith_key(score: dict | None) -> str | None:
     status = a.get("status")
     if status == "unstated":
         return "unstated_pass" if a.get("pass") is True else "unstated_fail"
+    if status == "incomplete" and ((a.get("major") or {}).get("status")) == "equal":
+        return "incomplete_major_equal"      # the degree lacks only its general education units (S741)
     return status
 
 

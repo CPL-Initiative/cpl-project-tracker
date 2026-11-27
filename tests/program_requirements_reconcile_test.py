@@ -925,8 +925,13 @@ elif str(ven_cap.get("run")) == "45847865286" and ven_pre.get("fingerprints"):
               set(fa) == set(fb2) and len(fa) == 174 and changed == MOVED)
 else:
     ven_src = {s["control_number"]: s for s in _ven("sources.json")}
-    check("a later capture is filed: each of the seven moved pages is read from innerText+tabs",
-          all(((ven_src.get(cn) or {}).get("source") or {}).get("text_from") == "innerText+tabs" for cn in MOVED))
+    # A read with only= refiles the named programs' sources; a program it does not name keeps its source as filed
+    # (46400 and 46401, passing, after S741's read 45964322406), so those two may still read innerText.
+    named = [cn for cn in MOVED if cn not in ("46400", "46401")]
+    check("a later read is filed: each moved page it named is read from innerText+tabs",
+          all(((ven_src.get(cn) or {}).get("source") or {}).get("text_from") == "innerText+tabs" for cn in named)
+          and all(((ven_src.get(cn) or {}).get("source") or {}).get("text_from") in ("innerText", "innerText+tabs")
+                  for cn in ("46400", "46401")))
 
 print("West Valley's transfer degrees (S639; college page read 43138048261; the areas summed, Sam's count extended)")
 WV = "West Valley College"

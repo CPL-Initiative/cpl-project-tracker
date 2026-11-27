@@ -113,24 +113,54 @@ check("DFT-62\nBasic Fusion 360\n3.00" in DRAFTING and over[0] - add[0] == 3.0,
 # ── the held records fail by what such a row carries ───────────────────────
 SHORT = {"32830": (3, 3), "30091": (3, 3), "40079": (3, 3), "41680": (3, 3), "44961": (3, 3), "37311": (1, 1),
          "44792": (6, 6)}
+# Either state (p-older-pile-tests-pin-runs-later-plans-move-s739). As S740 held them: each record adds short by the
+# row's units, is collectable, fails and carries no gap. Or S741 made the capture change this plan named (the text
+# marks where a group ends) and paid read 45964327019 re-read the twelve: the record no longer adds short by that
+# row. It passes; or its major adds to the printed major and the degree lacks only its Cal-GETC units (32830,
+# 37311, 44961); or it reads unequal for another cause (39998 and 40064: 'Units: 16.00' over APP-450 at 4.00).
+S741_READ = "45964327019"
+
+
+def reread_s741(filed):
+    return str(filed.get("extracted_run")) == S741_READ
+
+
 for cn, want in SHORT.items():
-    a = W.load(cn)["score"]["arithmetic"]
+    f = W.load(cn)
+    a = f["score"]["arithmetic"]
+    if reread_s741(f):
+        major = a.get("major") or {}
+        check(B.scorer_passes(f) or (a["status"] == "incomplete" and major.get("status") == "equal"),
+              "%s, re-read with the group ends marked: it passes, or its major adds to the printed major (%s)"
+              % (cn, a["status"]))
+        continue
     got = (a["stated"][0] - a["computed"][0], a["stated"][1] - a["computed"][1])
     check(got == want and a["status"] == "unequal", "%s adds %s short of its printed total (%r)" % (cn, want, got))
 for cn in FLAT:
     f = W.load(cn)
+    if reread_s741(f):
+        a = f["score"]["arithmetic"]
+        check(B.scorer_passes(f) or (a.get("major") or {}).get("status") == "equal"
+              or (cn in ("39998", "40064") and a["status"] == "unequal"),
+              "%s, re-read: it passes, its major adds to the printed major, or it is one of the two that read "
+              "unequal on APP-450's figure (%s)" % (cn, a["status"]))
+        continue
     check(NG.collectable(f["score"]) and not B.scorer_passes(f) and not f["score"].get("gaps"),
           "%s is collectable, fails today's scorer and carries no gap: it is held, not gap-filed" % cn)
     check(W.outcome(f)[0] == "none", "%s: the plan names no gap for it" % cn)
-check(any("The flattened table loses indentation" in n for n in B.notes(W.load("44792"))),
-      "44792's own note names the flattened table")
-check(any("a third required item may be missing from the text" in n for n in B.notes(W.load("32830"))),
-      "32830's note says a third required item may be missing from the text")
+check(reread_s741(W.load("44792"))
+      or any("The flattened table loses indentation" in n for n in B.notes(W.load("44792"))),
+      "44792's own note names the flattened table, or S741 re-read it")
+check(reread_s741(W.load("32830"))
+      or any("a third required item may be missing from the text" in n for n in B.notes(W.load("32830"))),
+      "32830's note says a third required item may be missing from the text, or S741 re-read it")
 f = W.load("30061")
-check(not NG.collectable(f["score"]) and f["score"]["arithmetic"]["status"] == "equal"
-      and f["score"]["coverage"]["pass"] and not f["score"]["invented"]["pass"]
-      and any("MAG-200" in n and "should be catalog_addition true" in n for n in B.notes(f)),
-      "30061: its units add up, and it fails only on MAG-200, which its own note says is a catalog addition")
+check((reread_s741(f) and B.scorer_passes(f))
+      or (not NG.collectable(f["score"]) and f["score"]["arithmetic"]["status"] == "equal"
+          and f["score"]["coverage"]["pass"] and not f["score"]["invented"]["pass"]
+          and any("MAG-200" in n and "should be catalog_addition true" in n for n in B.notes(f))),
+      "30061: its units add up, and it fails only on MAG-200, which its own note says is a catalog addition; or "
+      "S741 re-read it and it passes")
 
 # ── the two rows ───────────────────────────────────────────────────────────
 f = W.load("30107")
