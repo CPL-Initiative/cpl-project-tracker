@@ -54,8 +54,8 @@ check(not any(receipts_alone.on_live_run(W.load(cn), skip=(W.tag,)) for cn in ("
       "the committed receipts alone post neither row's run (s740g's hold)")
 other = B8.LiveRead(M.COLLEGE, M.SLUG)
 other.live_read = lambda: {"01400": [("2026-11-27T07:31:18Z", "1")], "40761": [("2026-11-27T07:31:18Z", "1")]}
-check(not any(other.on_live_run(W.load(cn)) for cn in ("01400", "40761")),
-      "a live read naming another run shows neither row on its live run")
+check(not any(other.on_live_run(W.load(cn), skip=(W.tag,)) for cn in ("01400", "40761")),
+      "a live read naming another run shows neither row on its live run (on the receipts before this plan's apply)")
 
 f, e = W.load("01400"), M.REVIEWED["01400"]
 words = f["score"]["gaps"][0]["words"]
