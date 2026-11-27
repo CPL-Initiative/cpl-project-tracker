@@ -205,3 +205,6 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   per-college reconcile step (`degree_total_minimum` from "Complete 60 transferable units"; recall over the college's
   180 records: 4 flagged, right 4, wrong 0, none fails), to the Sonnet reader. 18637's record is Grossmont's page;
   keep-better's word test ("Science" against "Sciences") is the shared change, next.
+- 08:33Z: Cuyamaca's step GO (Sonnet): the real reconcile flags 18634, 18635 and 18636; the recall's fourth, 18637,
+  stays as filed under the moved-page guard (its record is Grossmont's page) until a read of its own page. `keys`
+  dispatches the free reconcile.
