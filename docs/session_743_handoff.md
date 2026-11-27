@@ -207,3 +207,7 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 - 14:21Z: s742b's migrate 46015104644 returned 1, none skipped; `.apply` restored (`3a9dbbf4`). Records collected: 15.
   Cabrillo's `recommended_counts` round 2 (`a186f665`: the recall on the four degrees' own committed text, the
   arithmetic guard) to the Fable reader, its last round.
+- 14:23Z: San Jose City's free reconcile 46011334736 filed on `claude/s742-keys` (`6391c29e`). The conductor ran
+  keep-better on it from the 13:43Z read (expanded; md5 equal): re-read 1, kept 1 (38499, which now holds score.pass),
+  restored 0 (`9718a1dd`). No person's check and the md5 unchanged at 14:24Z; the reread dispatched on
+  `claude/s742-keys` (force 46011334736).
