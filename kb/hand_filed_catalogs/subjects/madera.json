@@ -937,6 +937,22 @@
    "run": "45626743727"
   },
   {
+   "code": "PUNJABI",
+   "heading": "Punjabi",
+   "heading_printed": "Punjabi",
+   "rule": "index",
+   "codes": [
+    "PUNJABI"
+   ],
+   "candidate": null,
+   "address": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
    "code": "RN",
    "heading": "Registered Nursing",
    "heading_printed": "Registered Nursing",
@@ -1097,6 +1113,6 @@
    "run": "45626743727"
   }
  ],
- "subjects": 68,
- "with_heading": 68
+ "subjects": 69,
+ "with_heading": 69
 }

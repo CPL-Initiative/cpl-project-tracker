@@ -36,6 +36,7 @@ from datetime import date, timezone
 
 sys.path.insert(0, "kb")
 from coci_campus_letter import fold as fold_campus_letter  # noqa: E402
+from coci_subject_folds import fold as fold_subject  # noqa: E402
 
 try:
     import openpyxl
@@ -126,7 +127,9 @@ def main():
         ctrl = str(row[idx["CourseControlNumber"]] or "").strip()
         subj = str(row[idx["Subject"]] or "").strip()
         num = str(row[idx["Course_Number"]] or "").strip()
+        title = str(row[idx["CourseTitle"]] or "").strip()
         fs, fn = fold_campus_letter(college, subj, num)
+        fs, fn = fold_subject(college, fs, fn, title)
         was_folded = (fs, fn) != (subj, num)
         if was_folded:
             folded += 1
@@ -138,7 +141,6 @@ def main():
             twins += 1
             continue
         seen[key] = seen.get(key, False) or was_folded
-        title = str(row[idx["CourseTitle"]] or "").strip()
         units = row[idx["UnitValue"]]
         if isinstance(units, str):
             try:
@@ -229,7 +231,7 @@ def main():
     shard_mb = sum(os.path.getsize(f"coci_lookup_desc_{k}.js") for k in shards) / 1e6
     keys_mb = os.path.getsize("cpl_coci_course_keys.js") / 1e6
     n_keys = sum(len(v) for v in course_keys.values())
-    print(f"campus letter folded: {folded:,} rows, {twins:,} twins dropped (kb/coci_campus_letter.py)")
+    print(f"subject folds: {folded:,} rows, {twins:,} twins dropped (kb/coci_campus_letter.py, kb/coci_subject_folds.py)")
     print(f"rows: {len(rows):,} | colleges: {len(college_list)} | "
           f"M-ID chips: {mid_hits:,} | shards: {len(shards)}")
     print(f"coci_lookup_data.js: {main_mb:.1f} MB | desc shards total: {shard_mb:.1f} MB")

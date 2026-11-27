@@ -174,6 +174,7 @@ def shape(rows, statewide_read=True, slugs=None):
                 "key": cid, "college": k[0], "code": k[1], "band": k[2],
                 "local_title": (v.get("local_title") or "").strip() or None,
                 "common_code": (v.get("common_code") or "").strip().upper() or None,
+                "not_a_subject": True if v.get("not_a_subject") else None,
                 "who": safe_who(v.get("decided_by") or r.get("reviewer_label")),
                 "at": str(v.get("decided_at") or r.get("reviewed_at") or "")[:20] or None})
         elif field == sd.STATEWIDE_FIELD and cid.startswith(sd.STATEWIDE_PREFIX):
