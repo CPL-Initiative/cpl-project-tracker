@@ -1220,6 +1220,11 @@ jobs:
       - name: Keep-better's plural fold (S741, page_is_own and its statewide self-recall)
         if: matrix.shard == 1
         run: python3 tests/program_keep_better_plural_s741_test.py
+      # S742: the capture's Acalog road reads site_pages pins (El Camino's five certificates, each on its own page),
+      # and an Acalog page's heading is its h1 alone, with the self-recall on El Camino's filed sources and statewide.
+      - name: Acalog site pins (S742, the road reads the pins; the heading's self-recall)
+        if: matrix.shard == 3
+        run: python3 tests/program_requirements_acalog_pins_s742_test.py
       # S741: the scorer's option reading takes Roman numerals of two or more letters ('OPTION II', Cosumnes River
       # 33542), with its self-recall over every filed record (two records join, both right; none turns failing).
       - name: Option parts in Roman numerals (S741, the pattern and its statewide self-recall)

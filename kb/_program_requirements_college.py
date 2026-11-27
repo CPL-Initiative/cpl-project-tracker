@@ -3991,6 +3991,29 @@ def ac_program_urls(links: list[dict], base: str, catoid: int) -> list[str]:
     return out
 
 
+def ac_pin_in_catalog(url: str | None, catoid: int | None) -> bool:
+    """Whether a site_pages pin names a program page of the catalog being read: a preview_program address whose
+    catoid is that catalog's. A pin written for last year's catalog (another catoid) names an archived page."""
+    m, c = AC_PROGRAM.search(url or ""), AC_CATOID.search(url or "")
+    return bool(m and c and catoid is not None and int(c.group(1)) == int(catoid))
+
+
+def ac_site_pins(pins: dict[str, dict], base: str | None, catoid: int | None) -> dict[str, dict]:
+    """The college's site_pages pins as the Acalog road reads them (S742). A pin naming a program page of the
+    catalog being read takes the address the road itself loads (ac_program_url: the catalog's own origin and the
+    print-friendly view), so a pin written with https, or without &print, still meets the page the capture read.
+    Any other pin (another catalog's catoid, an address that is no program page) is left as written and never
+    queued, so site_pinned() refuses it as not read and the program reads no page: a pin never follows a program
+    into a catalog nobody checked it against."""
+    out = {}
+    for cn, pin in pins.items():
+        m = AC_PROGRAM.search(pin.get("url") or "")
+        if base and m and ac_pin_in_catalog(pin.get("url"), catoid):
+            pin = dict(pin, url=ac_program_url(base, int(catoid), m.group(1)))
+        out[cn] = pin
+    return out
+
+
 def ac_program_navs(links: list[dict], base: str, catoid: int) -> list[str]:
     """The navigation pages whose names say programs, degrees or certificates."""
     out = []
@@ -5702,6 +5725,13 @@ def site_heading_names(pg: dict, program: dict) -> tuple[bool, str]:
     Orange Coast's: tests/program_requirements_lever_pins_s727_test.py."""
     h1 = pg.get("h1") if "h1" in pg else (pg.get("got") or {}).get("h1")
     title0 = TITLE_SPLIT.split(pg.get("title") or (pg.get("got") or {}).get("title") or "", 1)[0].strip()
+    if AC_PROGRAM.search(pg.get("url") or ""):
+        # An Acalog program page's title opens with the catalog's page-type label and closes with the college's name
+        # ("Degree & Certificate: Journalism, AA-T - El Camino College"), so the label's word "Certificate" stood
+        # beside every program's name and a certificate read as named on its sister transfer degree's page (S742's
+        # self-recall on El Camino's filed sources: 3 false binds in 19,845 pairs, and 19866 on the page the capture
+        # had handed it). The page's heading is its h1 alone; a blank h1 names nothing.
+        title0 = ""
     heads = [x for x in ((h1 or "").strip(), title0) if x]
     named = any(RC.heading_line([x], program.get("title"), program.get("award")) >= 0 for x in heads)
     if not named:
@@ -5930,6 +5960,14 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
                 report["catalog_year_from"] = report["acalog"].get("catalog_year_from")
             elif read_year and read_year != reg.get("catalog_year"):
                 report["catalog_year_page_differs"] = read_year
+            # A site_pages pin on an Acalog catalog (S742): El Camino's site map lists a certificate's own page beside
+            # its sister degree's, and assign() handed 19861, 19866, 38948, 43993 and 19883 the degree's. Until now
+            # this road never read the pins (read 45773663927 filed no site_pins account and bound each certificate
+            # to its degree page as before). A pin is read in the catalog being read alone (ac_site_pins).
+            site_pins = ac_site_pins(site_pin_entries(college), report["acalog"].get("base"),
+                                     report["acalog"].get("catoid"))
+            urls += [pin["url"] for _, pin in sorted(site_pins.items())
+                     if pin["url"] not in urls and ac_pin_in_catalog(pin["url"], report["acalog"].get("catoid"))]
             print("%s: %d programs (%d with a course list), %d Acalog program pages (catalog %s), %.1f s between loads"
                   % (college, len(programs), report["with_closed_list"], len(urls),
                      report["acalog"].get("catoid"), delay / 1000), flush=True)
