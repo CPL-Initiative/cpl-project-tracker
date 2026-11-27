@@ -55,15 +55,31 @@ export function exhibitsFor(verified, colleges) {
 // 11-18 to Malone and Pedro): ?Exhibit=<MAP ID> puts the ID in the page's search box and lists that exhibit's courses
 // at the college, so the button opens on them and the piece no longer tells the student what to pick. Verified live
 // S744 at Lassen (CPLICI-ASE1-1-001), Cabrillo (MAPCBEN-AFSB-1-001) and Foothill (MAPCXS-S3-1-001): one course each.
-// The MAP ID is the exhibit's code (MAPICA-SM-1-001); MAP's numeric map_id matches nothing. The page reads Exhibit or
-// exhibit, several IDs comma-separated, and no course parameter. The exhibits listed here are the ones MAP names the
+// The MAP ID is the exhibit's code (MAPICA-SM-1-001); MAP's numeric map_id, a course code and a title match nothing
+// (exhibitParam below holds MAP's own test). The page reads Exhibit or
+// exhibit, up to 10 codes comma-separated, and no course parameter. The exhibits listed here are the ones MAP names the
 // college as owner of: a head start for names and MAP IDs, never a filter (an exhibit a college adopted may not be
 // listed).
 export function landingButton(landing, exhibit) {
   if (!landing) return "";
-  const id = exhibit && String(exhibit.id || "").trim();
-  if (!id) return landing;
-  return landing + (landing.includes("?") ? "&" : "?") + "Exhibit=" + encodeURIComponent(id);
+  const param = exhibitParam(Array.isArray(exhibit) ? exhibit : [exhibit]);
+  if (!param) return landing;
+  return landing + (landing.includes("?") ? "&" : "?") + "Exhibit=" + param;
+}
+// MAP's own test for the parameter (its landing page bundle, read S744): every comma-separated value must match
+// EXHIBIT_CODE, at most 10, or the page drops the whole parameter. So a code holding "&", "--" or "(" (Chaffey's
+// MAPICI-BP&C-1-001, Modesto Junior's MAPICI-E3S--1-001) is left out, and with none left the button opens the page
+// alone. Several codes list the union of their courses (Norco's IBEW years).
+export const EXHIBIT_CODE = /^[A-Za-z0-9]+(?:-[A-Za-z0-9]+){2,}$/;
+export function exhibitParam(list) {
+  const seen = new Set(), out = [];
+  for (const e of list || []) {
+    const id = String((e && typeof e === "object" ? e.id : e) || "").trim();
+    if (!EXHIBIT_CODE.test(id) || seen.has(id.toLowerCase())) continue;
+    seen.add(id.toLowerCase()); out.push(id);
+    if (out.length === 10) break;
+  }
+  return out.join(",");
 }
 export function referenceBlock(colleges, landing, exhibits) {
   if (!colleges.length) return "";

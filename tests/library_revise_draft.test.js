@@ -260,9 +260,13 @@ function load(rows, onFetch) {
     check("F2: ⭐ each exhibit's button opens the college's landing page on that exhibit (?Exhibit=<MAP ID>), never the MAP dashboard, and no pick instruction",
       block.indexOf("Sheet Metal Worker (MAP ID MAPICA-SM-1-001): button to https://cpldashboardcccco.azurewebsites.net/Laney?Exhibit=MAPICA-SM-1-001\n") >= 0 &&
       !/insights\/exhibit-courses/.test(block) && !/Possible Qualifications/.test(block), block);
-    check("F2: landingButton encodes the ID, joins an address that has a query, and gives the bare page without an ID and nothing without a page",
-      R.landingButton("https://x/Laney", { id: "MAPICI-ASE(10-1-001" }) === "https://x/Laney?Exhibit=MAPICI-ASE(10-1-001" &&
-      R.landingButton("https://x/Laney?lang=es", { id: "A B" }) === "https://x/Laney?lang=es&Exhibit=A%20B" &&
+    check("F2: landingButton encodes the ID, joins an address that has a query, and keeps only codes MAP accepts (its own pattern, at most 10, no repeats), and gives the bare page with none and nothing without a page",
+      R.landingButton("https://x/CHC", { id: "MAPICI-BP&C-1-001" }) === "https://x/CHC" &&
+      R.landingButton("https://x/MJC", { id: "MAPICI-E3S--1-001" }) === "https://x/MJC" &&
+      R.landingButton("https://x/L", { id: "MAPICI-ASE(10-1-001" }) === "https://x/L" &&
+      R.landingButton("https://x/L?lang=es", { id: "MAPICA-SM-1-001" }) === "https://x/L?lang=es&Exhibit=MAPICA-SM-1-001" &&
+      R.landingButton("https://x/N", [{ id: "MAPICA-IBEW-1-001" }, { id: "MAPICI-E3S--1-001" }, { id: "mapica-ibew-1-001" }, { id: "MAPICA-IBEW2-1-001" }]) === "https://x/N?Exhibit=MAPICA-IBEW-1-001,MAPICA-IBEW2-1-001" &&
+      R.exhibitParam(Array.from({ length: 12 }, (_, i) => "MAPICA-X" + i + "-1-001")).split(",").length === 10 &&
       R.landingButton("https://x/Laney", null) === "https://x/Laney" && R.landingButton("", { id: "A" }) === "");
     // Sam, 2:44 PM PT: the drafter checks no articulation; the owner list is a head start, never a filter.
     check("F2: the exhibit list is labeled a head start, not a filter, and the drafter builds no articulated filter",

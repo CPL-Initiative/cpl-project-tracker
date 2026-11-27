@@ -82,7 +82,7 @@ under 10 reads `<10`; buttons open the college's MAP landing page (`reference_da
 107, 108). The full record: [`library_lessons.md`](../../library_lessons.md), *Moved from the lane (S683 Library side
 job)*. **Deep link (S744):** MAP's landing page takes `?Exhibit=<MAP ID>` (Pedro, 2026-11-27): the ID fills the page's
 search box and lists that exhibit's courses; Possible Qualifications stays unpicked. The MAP ID is the exhibit code
-(`MAPICA-SM-1-001`); the numeric `map_id` matches nothing; `Exhibit` or `exhibit`, comma-separated, no course parameter.
+(`MAPICA-SM-1-001`); MAP's page takes a value only if it matches `^[A-Za-z0-9]+(?:-[A-Za-z0-9]+){2,}$` (up to 10, comma-separated; one bad value drops all), so a code with `&`, `--` or `(`, a course code, a title or the numeric `map_id` opens the page alone (`exhibitParam`); `Exhibit` or `exhibit`, no course parameter.
 Verified live at Lassen, Cabrillo and Foothill. `landingButton` builds it and the pick instruction is gone. **NEXT:** Ashley's first new pieces through Start; read the logged usage
 of a tool-reading draft (`library-revise-draft usage`) to see what one costs.
 
