@@ -6474,8 +6474,13 @@ def stage_sources(college: str, src_dir: str, out_dir: str, sources_run: str, fo
     standing = RC.refused_standing(dest)
     # A page the rules themselves accepted (source.page_check, set by capture_pdf) is the program's own by rule A, so
     # it is staged as read (COBIx on #3587, 7033948379: Santa Rosa Junior 39418 on p.298 was held).
+    # A bound site_pages pin's page (source.pinned, set by capture() from site_pinned()) is the rules' own too: a
+    # program that stands refused is marked at the capture, so site_pinned() read the pinned page through rules B, C
+    # and A (candidates(), RC.site_page) before it bound. S742: Coastline 43057, refused on its pathway's landing page
+    # and pinned to the 2.0 degree's page (capture 46008933093), was staged as not_found, and the paid read's price
+    # refused only=43057 as holding no text (run 46016403916, nothing sent).
     held = sorted(s["control_number"] for s in srcs if s.get("text") and s["control_number"] in standing
-                  and not (s.get("source") or {}).get("page_check"))
+                  and not (s.get("source") or {}).get("page_check") and not (s.get("source") or {}).get("pinned"))
     for s in srcs:
         if s["control_number"] in held:
             s.update(method="not_found", text="", source=None, coverage=0.0, codes_found=[],
