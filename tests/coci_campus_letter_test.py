@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""The campus letter COCI glued onto Cerro Coso's and Porterville's subject codes (S744, kb/coci_campus_letter.py).
+"""The letters COCI glued onto Cerro Coso's, Porterville's and Chabot's subject codes (S744, S745; kb/coci_campus_letter.py).
 
 WHAT THIS GUARDS (each a way the fold would hurt):
   (1) a real subject that ends in the letter is never folded (Cerro Coso's EMTC PSYC MUSC, Porterville's HOSP), and no
@@ -8,7 +8,10 @@ WHAT THIS GUARDS (each a way the fold would hurt):
   (3) the committed coci_lookup_data.js holds no glued code at either college, and every row the fold dropped was the
       lettered twin of the same control number (no course lost);
   (4) a person's save on a glued code (Sam's ADMJC title, 2026-11-26) carries to the folded code, and a save made on
-      the folded code itself wins over a carried one.
+      the folded code itself wins over a carried one;
+  (5) Chabot (S745): a glued code folds its letters onto the number (PEACLSF 2 -> PEAC LSF2), a code listed both ways
+      (ATHLBB 13 beside ATHL BB13) lands on its twin and both control numbers stay, PHEACJUD and the retired MICR PHSI
+      PHEA stay, the lists never cross colleges, and a save on PEACBTC carries to PEAC.
 
 Run from repo root: python3 tests/coci_campus_letter_test.py
 """
@@ -21,7 +24,7 @@ sys.path.insert(0, os.path.join(ROOT, "kb"))
 import coci_campus_letter as ccl  # noqa: E402
 import subject_decisions as sd  # noqa: E402
 
-CC, PC = "Cerro Coso Community College", "Porterville College"
+CC, PC, CH = "Cerro Coso Community College", "Porterville College", "Chabot College"
 fails = []
 
 
@@ -53,9 +56,9 @@ by = {}
 for r in d["rows"]:
     name = cols[r[0]]
     if name in ccl.GLUED:
-        check(r[2].upper() not in ccl.GLUED[name][1], "glued code left in the lookup: %s %s %s" % (name, r[2], r[3]))
+        check(r[2].upper() not in ccl.GLUED[name], "glued code left in the lookup: %s %s %s" % (name, r[2], r[3]))
         by.setdefault(name, set()).add(r[1])
-check(len(by) == 2, "both colleges present in the lookup")
+check(len(by) == 3, "all three colleges present in the lookup")
 check(len(by.get(CC, ())) > 500, "Cerro Coso keeps its courses")
 
 # (4) a save on a glued code carries; a direct save wins
@@ -74,7 +77,31 @@ check(not dec.refused, "no save is refused: %s" % dec.refused)
 crs = sd.Decisions({"courses": [{"key": "CRS:cerro_coso_community|PHEDC|103", "common_code": "KIN"}]}, None)
 check(("cerro_coso_community", "PHED", "C103") in crs.course or crs.refused, "a course move on a glued code folds")
 
+# (5) Chabot: explicit glued codes, the letters lead the number
+check(ccl.fold(CH, "PEACLSF", "2") == ("PEAC", "LSF2"), "PEACLSF 2 -> PEAC LSF2")
+check(ccl.fold(CH, "ATHLBB", "13") == ("ATHL", "BB13"), "ATHLBB 13 -> ATHL BB13 (its twin)")
+check(ccl.fold(CH, "HEAGBY", "50") == ("HEAG", "BY50"), "HEAGBY 50 -> HEAG BY50")
+check(ccl.fold(CH, "DANCJD", "4") == ("DANC", "JD4"), "DANCJD 4 -> DANC JD4")
+for code in ("PHEACJUD", "MICR", "PHSI", "PHEA", "PEAC", "ATHL", "PEACX"):
+    check(ccl.fold(CH, code, "1") == (code, "1"), "Chabot %s must not fold" % code)
+check(ccl.fold(CC, "PEACLSF", "2") == ("PEACLSF", "2"), "Chabot's list must not apply at Cerro Coso")
+check(ccl.fold(CH, "PHEDC", "103") == ("PHEDC", "103"), "Cerro Coso's list must not apply at Chabot")
+check(ccl.base_code("chabot", "PEACLSF") == "PEAC" and ccl.base_code("chabot", "PHEACJUD") == "PHEACJUD",
+      "Chabot base code")
+ch = [r for r in d["rows"] if cols[r[0]] == CH]
+bb = [r for r in ch if r[2] == "ATHL" and r[3] == "BB13"]
+check(len(bb) == 2 and len({r[1] for r in bb}) == 2,
+      "ATHL BB13 is listed under two control numbers, and both stay (one row per control number)")
+check(any(r[2] == "PEAC" and r[3] == "LSF2" for r in ch) and not any(r[2] == "PEACLSF" for r in ch),
+      "PEAC LSF2 in the lookup, no PEACLSF left")
+check(sum(1 for r in ch if r[2] == "PHEACJUD") == 1, "PHEACJUD stays as COCI writes it")
+dch = sd.Decisions({"decisions": [{"key": "SUBJ:chabot|PEACBTC|credit", "local_title": "Physical Education Activity",
+                                   "who": "a reviewer"}]}, None)
+b = dch.for_row("chabot", "PEAC", "credit")
+check(b and b.get("carried_from") == "PEACBTC", "the PEACBTC save carries to PEAC")
+
 if fails:
     print("FAIL\n  " + "\n  ".join(fails))
     sys.exit(1)
-print("ok: campus letter fold (%d Cerro Coso, %d Porterville control numbers)" % (len(by[CC]), len(by[PC])))
+print("ok: campus letter fold (%d Cerro Coso, %d Porterville, %d Chabot control numbers)"
+      % (len(by[CC]), len(by[PC]), len(by[CH])))
