@@ -2679,6 +2679,10 @@
     "22768": {
      "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/heating-ventilation-air-conditioning-refrigeration-hvacr/heating-ventilation-air-conditioning-refrigeration-certificate-achievement/",
      "evidence": "Heating, Ventilation, Air Conditioning and Refrigeration certificate 22768: its own page, linked from its department page (college-page-read run 45341735139), read as the capture reads it (run 45344701810): the h1 'Heating, Ventilation, Air Conditioning and Refrigeration Certificate of Achievement', its course list and 'Total Units 31'. The filed record was read from the HVAC/R A.S. page (found, never extracted), so it placed none of its listed courses."
+    },
+    "22821": {
+     "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/pharmacy-technology/pharmacy-technology-certificate-achievement/",
+     "evidence": "Pharmacy Technology certificate 22821: its own page, which its department page links (college-page-read run 45835049303, kb/college_reads/s740_reconcile_san_bernardino_valley_pages.json), read as the capture reads it by the same run: the h1 'Pharmacy Technology Certificate of Achievement', 'Required Courses:' PHT 060, 062, 064, 070, 071 and 072 at 3 units and PHT 074 at 2, and 'Total Units 20'. The filed record (run 38748858322) was read from the department's landing page, which prints the course sequence and no total, so it names no total. S741 (lane 1, keys)."
     }
    },
    "site_pages_why": "S720 (lever, the gap census's reader_page_assignment lever, run 45319725062): San Bernardino Valley's CourseLeaf catalog gives each certificate a page of its own, and the capture handed each of these its sister degree's page or its department's landing page, whose side menu prints every award of the department, so extraction placed none of its listed courses. Each is pinned to its own page, which its department page links (college-page-read run 45341735139) and whose h1 and course list the capture view of run 45344701810 printed. Reversible by deleting this key."
