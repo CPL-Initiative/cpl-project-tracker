@@ -1,4 +1,4 @@
-{"schema":1,"college":"Gavilan College","slug":"gavilan","basis":"live","census_at":"2026-11-27 13:04Z","correction_rules":false,"programs":[
+{"schema":1,"college":"Gavilan College","slug":"gavilan","basis":"live","census_at":"2026-11-27 16:06Z","correction_rules":false,"programs":[
 {"cn":"33290","title":"Anthropology","award":"A.A- T Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"06111","title":"Biological Science","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"19656","title":"Biotechnology","award":"Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
@@ -32,6 +32,5 @@
 {"cn":"35176","title":"Wastewater Collection Technology Education","award":"A.A. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"35177","title":"Wastewater Collection Technology Education","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"21290","title":"Spanish Native Speakers 4","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"places_none","lever":"reader_page_assignment","url":"https://gavilan.curriqunet.com/catalog/iq/4089/4148/4045"},
-{"cn":"45357","title":"California General Education Transfer Curriculum (Cal-GETC)","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"units_incomplete","lever":"reconcile_steps","url":"https://gavilan.curriqunet.com/catalog/iq/4089/4135/4166","units":{"sum":[51.0,70.0],"printed":[40.0,42.0],"status":"incomplete","measure":"units","against":"program"}},
-{"cn":"08464","title":"Liberal Arts (Multiple Subjects)","award":"A.A. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://gavilan.curriqunet.com/catalog/iq/4089/4135/4197","units":{"sum":[14.0,20.0],"printed":[19.0,19.0],"status":"unequal","measure":"units","against":"program"}}
+{"cn":"45357","title":"California General Education Transfer Curriculum (Cal-GETC)","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"units_incomplete","lever":"reconcile_steps","url":"https://gavilan.curriqunet.com/catalog/iq/4089/4135/4166","units":{"sum":[51.0,70.0],"printed":[40.0,42.0],"status":"incomplete","measure":"units","against":"program"}}
 ]}

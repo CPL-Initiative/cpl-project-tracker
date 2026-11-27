@@ -1,12 +1,12 @@
 # Harvest gap census
 
-Written by `kb/_harvest_gap_census.py` (2026-11-27 13:04Z, live). Every active program without a passing record, each with one cause and one lever. Counts are a snapshot; rerun `harvest-gap-census.yml` for today's.
+Written by `kb/_harvest_gap_census.py` (2026-11-27 16:06Z, live). Every active program without a passing record, each with one cause and one lever. Counts are a snapshot; rerun `harvest-gap-census.yml` for today's.
 
-Universe 20282 · passing 15669 · without a passing record 3950.
+Universe 20282 · passing 15680 · without a passing record 3927.
 
 Of the passing, 54 counts as passing on the tab; the scorer's own test fails (listed in the JSON, not counted as gaps).
 
-Collected with a named gap, out of the gap: 663 (catalog_figures_differ 23, degree_electives_not_printed 3, degree_summary_ge_none 16, degree_within_map_range 4, double_count_noted 2, entry_path_range 1, figure_within_variable_units 15, ge_figures_other_pattern 1, ge_units_not_read 135, heading_not_in_text 5, hours_total_differs 11, hours_total_not_read 32, hours_within_printed_range 7, lists_not_closed 41, lists_past_their_figure 18, nested_award_not_read 4, no_hours_read 51, no_own_page_total 1, no_units_read 23, noted_figures_differ 61, noted_no_total 16, noted_section_cut_off 24, noted_total_cut_off 2, noted_unit_floor 4, one_option_of_shared_page 6, option_lists_read_apart 12, pair_read_as_alternatives 13, pool_figure_not_read 24, prerequisites_counted 7, repeat_read_once 12, required_list_outside_total 5, section_cut_off 20, total_differs 22, total_not_printed 9, unit_line_not_read 13, units_within_printed_range 12, waived_course_counted 8).
+Collected with a named gap, out of the gap: 675 (catalog_figures_differ 23, degree_electives_not_printed 4, degree_summary_ge_none 16, degree_within_map_range 4, double_count_noted 2, entry_path_range 1, figure_within_variable_units 15, ge_figures_other_pattern 1, ge_units_not_read 136, heading_not_in_text 5, hours_total_differs 11, hours_total_not_read 32, hours_within_printed_range 7, lists_not_closed 45, lists_past_their_figure 18, nested_award_not_read 4, no_hours_read 51, no_own_page_total 1, no_units_read 23, noted_figures_differ 61, noted_no_total 16, noted_section_cut_off 24, noted_total_cut_off 2, noted_unit_floor 4, one_option_of_shared_page 6, option_lists_read_apart 11, pair_read_as_alternatives 15, pool_figure_not_read 24, prerequisites_counted 7, repeat_read_once 12, required_list_outside_total 5, section_cut_off 20, total_differs 25, total_not_printed 9, unit_line_not_read 14, units_within_printed_range 13, waived_course_counted 8).
 
 Read by the harvest but outside the universe: Active - Teachout Only 630, Approved 1423.
 
@@ -22,13 +22,13 @@ Named gap, 4 programs: "The state lists this program twice. The other listing ha
 | no closed list in the Program Course File | 1747 |
 | page not found | 1095 |
 | page found, never extracted | 12 |
-| extracted, places none of its courses | 127 |
+| extracted, places none of its courses | 123 |
 | extracted, not loaded | 1 |
 | extracted, no score (an error) | 3 |
-| live, coverage fails | 111 |
+| live, coverage fails | 110 |
 | live, a course added | 2 |
-| live, units unequal | 540 |
-| live, units incomplete | 218 |
+| live, units unequal | 523 |
+| live, units incomplete | 217 |
 
 ## Top levers
 
@@ -67,7 +67,6 @@ Named gap, 4 programs: "The state lists this program twice. The other listing ha
 | College of the Desert | catalog.collegeofthedesert.edu | 23 | $1.83 | yes |
 | Saddleback College | saddleback.curriqunet.com | 7 | $0.56 | yes |
 | Coastline Community College | catalog.cccd.edu | 6 | $0.33 | yes |
-| El Camino College | catalog.elcamino.edu | 4 | $0.26 | yes |
 | Los Angeles Southwest College | lasc.edu | 4 | $0.26 | yes |
 | MiraCosta College | catalog.miracosta.edu | 4 | $0.34 | yes |
 | North Orange Continuing Education | catalog.nocccd.edu | 4 | $0.18 | yes |
@@ -84,3 +83,4 @@ Named gap, 4 programs: "The state lists this program twice. The other listing ha
 | Long Beach City College | lbcc-public.courseleaf.com | 2 | $0.10 | yes |
 | Los Angeles Harbor College | lahc.edu | 2 | $0.16 | yes |
 | Los Angeles Mission College | lamc.edu | 2 | $0.14 | yes |
+| Los Angeles Pierce College | lapc.edu | 2 | $0.16 | yes |

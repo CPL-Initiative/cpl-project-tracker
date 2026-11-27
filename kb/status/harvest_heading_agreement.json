@@ -1,7 +1,7 @@
 {
  "_readme": "A dated snapshot of main at `commit` (as_of: the newest capture it reads), written by kb/_program_requirements_heading_agreement.py from the files the tree commits (git ls-files). Rewritten by a dispatch of harvest-gap-census.yml beside the gap census; nothing gates a PR on its freshness, so it can trail the records. Each record's own heading (program.section_heading) against the program it is filed under (sources.json: COCI title and award). check_would_fail_passing counts the records that pass on the committed files (passes_live) whose heading names another award type (heading_award_check, in no pass rule). award_not_program counts headings that name an award and none of the program's title words, set aside (Pasadena's one page for an A.S. and its certificate).",
  "commit": {
-  "sha": "1a3e3be836fc0c19bee093c04a0805d57dfc4102",
+  "sha": "1c12d1a79eb06b526ff3f9ca3c364582c7e0a1d5",
   "date": "2026-11-27"
  },
  "as_of": "2026-11-27",
@@ -10,17 +10,17 @@
  ],
  "totals": {
   "records": 18976,
-  "agree": 15551,
-  "disagree": 206,
-  "cannot_tell": 3219,
+  "agree": 15555,
+  "disagree": 201,
+  "cannot_tell": 3220,
   "heading_absent": 258,
   "disagree_passing": 132,
-  "disagree_loaded": 160,
+  "disagree_loaded": 159,
   "check_would_fail_passing": 99,
   "check_would_fail_passing_transfer_local": 31,
   "window_after": 8,
   "window_after_passing": 7,
-  "suspect": 214,
+  "suspect": 209,
   "suspect_passing": 139,
   "check_would_fail_passing_generic_heading": 0,
   "award_not_program": 74,
@@ -2113,9 +2113,9 @@
    "platform": "courseleaf",
    "records": 180,
    "pdf_records": 0,
-   "agree": 170,
+   "agree": 169,
    "disagree": 1,
-   "cannot_tell": 9,
+   "cannot_tell": 10,
    "heading_absent": 0,
    "disagree_passing": 0,
    "disagree_loaded": 0,
@@ -2433,12 +2433,12 @@
    "platform": "acalog",
    "records": 126,
    "pdf_records": 0,
-   "agree": 110,
-   "disagree": 11,
+   "agree": 115,
+   "disagree": 6,
    "cannot_tell": 5,
    "heading_absent": 0,
    "disagree_passing": 5,
-   "disagree_loaded": 7,
+   "disagree_loaded": 6,
    "pdf_disagree": 0,
    "pdf_disagree_passing": 0,
    "pdf_suspect": 0,
@@ -2447,7 +2447,7 @@
    "pdf_cannot_tell": 0,
    "by_reason": {
     "title": 1,
-    "award": 10
+    "award": 5
    },
    "check_would_fail_passing": 5,
    "check_would_fail_passing_transfer_local": 0,
@@ -2459,9 +2459,9 @@
    "award_not_program_passing": 0,
    "window_after": 0,
    "window_after_passing": 0,
-   "suspect": 11,
+   "suspect": 6,
    "suspect_passing": 5,
-   "suspect_loaded": 7,
+   "suspect_loaded": 6,
    "disagreements": [
     {
      "control_number": "02518",
@@ -2476,36 +2476,6 @@
      "window": null,
      "passes_live": false,
      "places_none": false,
-     "method": "sitemap_page"
-    },
-    {
-     "control_number": "19861",
-     "title": "Marketing",
-     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-     "heading": "Marketing, AS",
-     "verdict": "disagree",
-     "reason": "award",
-     "kind": "local_degree_under_certificate",
-     "heading_names_a_program": true,
-     "title_share": 1.0,
-     "window": null,
-     "passes_live": false,
-     "places_none": true,
-     "method": "sitemap_page"
-    },
-    {
-     "control_number": "19866",
-     "title": "Journalism",
-     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-     "heading": "Journalism, AA-T",
-     "verdict": "disagree",
-     "reason": "award",
-     "kind": "transfer_under_certificate",
-     "heading_names_a_program": true,
-     "title_share": 1.0,
-     "window": null,
-     "passes_live": false,
-     "places_none": true,
      "method": "sitemap_page"
     },
     {
@@ -2554,21 +2524,6 @@
      "method": "sitemap_page"
     },
     {
-     "control_number": "19883",
-     "title": "Photography",
-     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-     "heading": "Photography, AS",
-     "verdict": "disagree",
-     "reason": "award",
-     "kind": "local_degree_under_certificate",
-     "heading_names_a_program": true,
-     "title_share": 1.0,
-     "window": null,
-     "passes_live": false,
-     "places_none": false,
-     "method": "sitemap_page"
-    },
-    {
      "control_number": "19885",
      "title": "Paramedical Technician",
      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
@@ -2596,36 +2551,6 @@
      "window": null,
      "passes_live": true,
      "places_none": false,
-     "method": "sitemap_page"
-    },
-    {
-     "control_number": "38948",
-     "title": "Entrepreneurial Studies",
-     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-     "heading": "Entrepreneurial Studies, AS",
-     "verdict": "disagree",
-     "reason": "award",
-     "kind": "local_degree_under_certificate",
-     "heading_names_a_program": true,
-     "title_share": 1.0,
-     "window": null,
-     "passes_live": false,
-     "places_none": true,
-     "method": "sitemap_page"
-    },
-    {
-     "control_number": "43993",
-     "title": "Hybrid, Electric, and Alternative Fuels",
-     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-     "heading": "Hybrid, Electric, and Alternative Fuels, AS",
-     "verdict": "disagree",
-     "reason": "award",
-     "kind": "local_degree_under_certificate",
-     "heading_names_a_program": true,
-     "title_share": 1.0,
-     "window": null,
-     "passes_live": false,
-     "places_none": true,
      "method": "sitemap_page"
     }
    ]
