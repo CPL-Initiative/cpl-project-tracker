@@ -1,6 +1,6 @@
 {
  "_about": "The CER procedures run (kb/_cer_procedures.py): what each procedure settled and held, and the titles that need a person. A pre-fill no reason holds saves under its procedure (Open Asks Sheet 94 card 2); a held one pre-fills the tab and waits for a person.",
- "_generated_at": "2026-11-26T17:59:31Z",
+ "_generated_at": "2026-11-27T17:42:33Z",
  "procedures_hash": "75e72fb99f8c",
  "queue": 4,
  "saved_not_folded": 0,
@@ -266,25 +266,7 @@
    "sample": []
   }
  ],
- "classifier_run": {
-  "calls": 1,
-  "answered": 1,
-  "errors": [],
-  "cost_usd": 0.39,
-  "spend": {
-   "estimate_usd": 5.82,
-   "limit_usd": 40.0,
-   "calls_priced": 1,
-   "asked": 1,
-   "remaining": 0,
-   "ceiling_usd": 40.0,
-   "charge_usd": 0.38716,
-   "in_flight_usd": 0.0,
-   "stopped": false,
-   "sent": 1,
-   "posts_held": 0
-  }
- },
+ "classifier_run": null,
  "needs_you": [
   {
    "raw_title": "ACE CR - Network Fundamentals",
