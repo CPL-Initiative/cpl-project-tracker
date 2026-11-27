@@ -28,9 +28,8 @@ harvest). `kb/status/subjects.json` stamped. 745 was the next free number. No `#
 2a. **Sam's work order (2026-11-20):** collection first, data waves before fixes (`r-collection-first-sam-2026-11-20`);
    collection's fixes rank by the M-ID cards they unblock (`r-collect-for-mids-work-order-sam-2026-11-20`).
 2b. **Before a push, `bash scripts/check_generated.sh` must read all ok.**
-3. **Merge order:** this checkpoint's PR (`claude/s744-checkpoint`), its CPLBrain twin
-   (`claude/affectionate-ramanujan-skvi5h`), then the compact-cards PR (`claude/pathways-compact-cards`) once its
-   `test` is green on its head.
+3. **Merge order:** none waiting. SkyCurlew merged its checkpoint (#3912), its CPLBrain twin (#877) and the
+   compact-cards PR (#3913) before signing off; only this sign-off note's PR follows.
 
 4. **At start, read the training notes** (`kb_curation` rows with `field = 'procedure_note'` since 2026-11-26; once
    open work 5 lands, those with `value->>'act' = 'true'`) and act on what they ask.
@@ -76,9 +75,19 @@ harvest). `kb/status/subjects.json` stamped. 745 was the next free number. No `#
 
 ## Open work, in order (from the lanes' NEXT lines)
 
-1. **The compact-cards PR** (`claude/pathways-compact-cards`, a worker's draft; mock-up
-   https://claude.ai/artifact/BQjk5FcRjeHPGZp57bpDJe): review it against the mock-up and the rulings above, merge once
-   `test` is green. It replaces #3910's line.
+1. **Look at the compact cards live** (#3913, merged e16800c): open Cerritos 42158 in CPL Pathways after the deploy and
+   check the bottom bar's frame of MAP's landing page, the hover list and the sidebar in a real browser (no one has; the
+   a11y routes do not open them; add routes for them in `a11y.config.js`). Confirm the COCI description lookup
+   (`coci_program_courses` control numbers) fills most courses. Mock-up https://claude.ai/artifact/BQjk5FcRjeHPGZp57bpDJe.
+1a. **Industry certifications beside a program** (Sam, 2026-11-27: *"when you find that there are also stackable industry
+   certs associated with a program though a CPL exhibit or becasue the program teaches to a cert like CompTIA or both,
+   can you note it with a chip that clicks to a sidebar for deatils?"*). Build an "Industry certs" chip on the program
+   card opening a sidebar with two groups: *Earns CPL here* (industry-certification exhibits articulated to the
+   program's courses, each with its courses and a link that opens the bottom bar) and *The program prepares for* (certs
+   the catalog names, quoting its line; only 153 of 18,976 records name one in outcomes or careers today: EMT 50, NATEF
+   35, NCLEX 20, ASE 13, CNA 10). A cert in both is marked both. Measure the text matcher's recall and false hits before
+   shipping (S652 rule). Proposal for the routine's lane, not built: a certifications field in the catalog reads, since
+   most colleges name the cert in the program description, which the harvest does not keep.
 2. **The display build reads the apprenticeship exhibits** (`f-cerritos-ironworkers-all-24-cpl-s744`): all 24 Cerritos
    Field Ironworkers A.S. courses carry CPL, but `kb/coci_articulations.json` feeds `kb/_build_roep_display.py` only
    `MAPCXA-*`, so the view says 15 of 24. `library/adopt/adopt_data.json` has the exhibits (`a`, `m`). Its own PR; then
@@ -112,9 +121,9 @@ the team.
 
 ## Let go
 
-At sign-off the conductor drops its artifact watch on https://claude.ai/artifact/BQjk5FcRjeHPGZp57bpDJe and any PR
-subscription it holds (the compact-cards PR's included); no COBIx watcher, no check-in.
+SkyCurlew dropped every PR subscription (#3908 to #3913, CPLBrain#877) and holds the mock-up's artifact watch
+(https://claude.ai/artifact/BQjk5FcRjeHPGZp57bpDJe) only until the session ends; no COBIx watcher, no check-in.
 
-Spend: not available; 2026-11-27T16:00Z to 2026-11-27T18:43Z.
+Spend: not available; 2026-11-27T16:00Z to 2026-11-27T19:30Z.
 
 Opening line: *Greetings, you are SkyTattler (Session 745), see SkyCurlew's handoff — `docs/session_745_handoff.md` — let's keep rolling with our queue.*
