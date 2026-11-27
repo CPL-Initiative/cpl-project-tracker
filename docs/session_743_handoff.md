@@ -238,3 +238,10 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   sibling, `claude/s742-readers-cuy2`, cut at `4d394536`. Clean md5 pre-read of s742r2 2 of 2.
 - 14:38Z: s742r2's migrate 46017601125 returned 2, none skipped; `.apply` restored (`8aec0dfb`). Records collected: 19.
 - 14:39Z: Fullerton's reread posted 33680 and 42143, both passing at 46010143379. Records collected: 21.
+- 14:41Z: `readers` final: Coastline 43057's paid read 46016403916 ended red at its price step and sent nothing ($0):
+  43057 stands refused, so its pinned page staged as not found and `only=43057` had no text. Its fix (`f3a01a5b`: a bound
+  pin's page stages as read) is shared reader code with no second reader yet: **DECIDED**
+  `d-coastline-stage-fix-parked-s742`, parked on `claude/s742-readers-stagepin`; the land takes `claude/s742-readers` at
+  `4d394536`. Held by `readers`: El Camino 19857 (its page's figures disagree, eight unlisted courses, and the capture
+  ties it to the A.S. page), Reedley 30465 (a page read and a pin), Los Angeles Pierce 19181 (number runs), Grossmont
+  21402 (a named gap with no record; its text is cut at "Certificate o").
