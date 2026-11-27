@@ -20,6 +20,12 @@ failing record with its gap named and a 0-100 confidence. Pinned here:
 A row another open branch moves (lane 2 takes Cosumnes River's wording rules next) is accepted in either state: the
 entry's reading is checked on the record with its gaps set aside (p-test-asserts-other-pr-absent-recurs-s731).
 
+Either state for 33542 (S742; d-crc-filing-parked-for-moved-pdf-s741, p-older-pile-tests-pin-runs-later-plans-move-s739):
+S741's free reconcile 45972311864 re-filed the record under the scorer's own option reading (OPTION_PART), so it adds
+to the printed 19 at both ends and passes with no gap. Where the committed record holds that run, the plan's row is
+the receipt's history: the record's body is still the receipt's before-image, the entry's reading still closes on it,
+and the checks that read the gap on the committed score read the passing score in its place.
+
 Run from repo root: python3 tests/program_piles_s739_lever_test.py
 """
 import copy
@@ -70,7 +76,22 @@ check(_TODAY.match("OPTION II - Native Spanish Speaker") and not M.S.OPTION_PART
 f = M.load(crc)
 e = M.REVIEWED[crc]
 rec = f["record"]
-check(M.gap_noted(crc)[0] == "option_lists_read_apart", "33542: the entry stands (%s)" % (M.gap_noted(crc),))
+# Either state: as s739l filed it (the gap stands), or re-filed passing by the reconcile 45972311864.
+REFILED_RUN = "45972311864"
+REFILED = {crc} if str(f.get("extracted_run")) == REFILED_RUN else set()
+if crc in REFILED:
+    _a = f["score"]["arithmetic"]
+    check(S.passes_live(f["score"]) and not f["score"].get("gaps") and _a.get("status") == "equal"
+          and _a.get("computed") == [19.0, 19.0] and _a.get("stated") == [19.0, 19.0]
+          and str(f.get("read_run")) == rows[crc]["extracted_run"],
+          "33542: the reconcile %s re-filed the read of run %s passing at 19 of 19, with no gap"
+          % (REFILED_RUN, rows[crc]["extracted_run"]))
+    check(M.gap_noted(crc) == (None, "the filed score passes, or its coverage or invented check fails"),
+          "33542: the entry names no gap on a passing record (%s)" % (M.gap_noted(crc),))
+    check(any(e["words"] in n for n in M._notes(f)) and M.kind_closes(f, e),
+          "33542: the note's words are the record's and the entry's reading still closes on its body")
+else:
+    check(M.gap_noted(crc)[0] == "option_lists_read_apart", "33542: the entry stands (%s)" % (M.gap_noted(crc),))
 keys = M.option_keys(rec, e["options"])
 check(sorted(keys.values()) == ["I", "II", "II"], "33542: Option I holds one block and Option II two (%s)" % keys)
 a = M.major(rec, f["award"])
@@ -122,7 +143,9 @@ check(NG.answer(dict(f, score={k: v for k, v in f["score"].items() if k not in (
       "33013: no record rule names it under another kind")
 
 bd = M.boundaries()
-check(not bd["wrong"] and sum(bd["counts"].values()) == 12, "the twelve boundaries read right (%s)" % bd)
+# A re-filed, passing row has no entry standing, so its six boundaries are not read.
+check(not bd["wrong"] and sum(bd["counts"].values()) == 12 - 6 * len(REFILED),
+      "the twelve boundaries read right, six for each row still standing (%s)" % bd)
 M.S.OPTION_PART = _TODAY
 _f = M.load(crc)
 _a = M.major(_f["record"], _f["award"])
@@ -153,15 +176,25 @@ images = NG._load_images({c for c, _ in rows})
 for r in rcpt["records"]:
     k = (r["college"], r["control_number"])
     img = images[k]
-    check(img["checks"] == r["after_image"]["checks"], "%s %s: the load posts the receipt's after-image" % k)
     check(img["record"] == r["before_image"]["record"] and img["source_url"] == rows[k]["page"],
           "%s %s: the record and its page are unchanged" % k)
+    check(r["after_image"]["checks"]["gaps"] == [r["moves_to"]] and r["after_image"]["checks"]["arithmetic"] != "equal"
+          and r["after_image"]["checks"]["confidence"]["unit_arithmetic"] == 40
+          and r["confidence"] == r["after_image"]["checks"]["confidence"],
+          "%s %s: the receipt's after-image is collected with its one gap at unit arithmetic 40" % k)
+    check(r["before_image"]["checks"].get("gaps") is None and str(r["before_image"]["extracted_run"]) ==
+          str(rows[k]["extracted_run"]), "%s %s: the before-image is the filed run's, with no gap" % k)
+    if k in REFILED:
+        # The reconcile's passing score is what a load or the reread posts now; the reread's receipt posts its run.
+        check(img["checks"].get("gaps") is None and img["checks"]["arithmetic"] == "equal"
+              and img["checks"].get("coverage") is True and str(img["extracted_run"]) == REFILED_RUN,
+              "%s %s: re-filed, the load posts a passing image with no gap at the reconcile's run" % k)
+        continue
+    check(img["checks"] == r["after_image"]["checks"], "%s %s: the load posts the receipt's after-image" % k)
     check(img["checks"]["gaps"] == [r["moves_to"]] and img["checks"]["arithmetic"] != "equal",
           "%s %s: collected with its one gap, not passing" % k)
     check(img["checks"]["confidence"]["unit_arithmetic"] == 40 and r["confidence"] == img["checks"]["confidence"],
           "%s %s: unit arithmetic 40 on the 0-100 bar" % k)
-    check(r["before_image"]["checks"].get("gaps") is None and str(r["before_image"]["extracted_run"]) ==
-          str(rows[k]["extracted_run"]), "%s %s: the before-image is the filed run's, with no gap" % k)
     with M.lane():
         check(M.W.on_live_run(M.load(k)), "%s %s: on its live run" % k)
 
