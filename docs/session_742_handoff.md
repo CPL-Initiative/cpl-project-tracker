@@ -217,3 +217,7 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   kept); the paid read dispatched on `claude/s741-piles` (sources_from 45963792185, only 36798 and 35174, about
   $0.20), pending behind American River's second free capture (39341's pin). East Los Angeles 02456, 31017, 37510
   (live on runs older than the committed reconcile 45176404274) and Santa Monica 43767 go to `piles` next.
+- 08:50Z: the keep-better ranking's reader (Fable 5.2): FIX THEN GO (MAJOR: a re-read that lost the GE units would
+  beat a filed record holding them; 79 filed records at 27 colleges are unequal at the degree with the major equal;
+  fix: the new rank holds only where the filed record's own major is not equal). Norco's three keep their choice under
+  the fix. Back to `readers`.
