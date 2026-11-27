@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 371,
  "with_closed_list": 368,
- "started": "2026-11-24T08:09:33Z",
+ "started": "2026-11-27T08:48:49Z",
  "pdf": {
   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf",
   "access": "hand_filed",
@@ -51,6 +51,24 @@
     "bound": true,
     "through": 643,
     "until_page": 643
+   },
+   "39341": {
+    "page": 206,
+    "bound": true,
+    "through": 207,
+    "until_page": 207
+   },
+   "39731": {
+    "page": 207,
+    "bound": true,
+    "through": 208,
+    "until_page": 208
+   },
+   "39732": {
+    "page": 208,
+    "bound": true,
+    "through": 209,
+    "until_page": 209
    },
    "44412": {
     "page": 421,
@@ -3657,14 +3675,16 @@
    {
     "control_number": "39341",
     "pages": [
-     168
+     206,
+     207
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 168] • draft and properly complete construction documents. • demonstrate uphill pipe welding method. • list National Inspection Testing Certification (NITC) requirements for medical gas systems. • demonstrate a"
+    "opens": "[page 206] Refrigeration Service Technician Apprenticeship Certificate This certificate includes the training for refrigeration service technician apprentices to meet the Division of Apprenticeship Standards (DAS) jo",
+    "pinned": true
    },
    {
     "control_number": "39389",
@@ -3932,26 +3952,30 @@
    {
     "control_number": "39731",
     "pages": [
-     168
+     207,
+     208
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 168] • draft and properly complete construction documents. • demonstrate uphill pipe welding method. • list National Inspection Testing Certification (NITC) requirements for medical gas systems. • demonstrate a"
+    "opens": "[page 207] Refrigeration Service Technician Apprenticeship Level I Certificate This certificate includes the first period training for refrigeration service technician apprentices to meet the Division of Apprenticesh",
+    "pinned": true
    },
    {
     "control_number": "39732",
     "pages": [
-     168
+     208,
+     209
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 168] • draft and properly complete construction documents. • demonstrate uphill pipe welding method. • list National Inspection Testing Certification (NITC) requirements for medical gas systems. • demonstrate a"
+    "opens": "[page 208] Refrigeration Service Technician Apprenticeship Level II Certificate This certificate includes the second period training for refrigeration service technician apprentices to meet the Division of Apprentice",
+    "pinned": true
    },
    {
     "control_number": "39733",
@@ -5168,7 +5192,7 @@
  "loads": 0,
  "pages_listed": 1,
  "pages_answered": 1,
- "seconds": 631.0,
+ "seconds": 629.2,
  "found": 357,
  "by_method": {
   "no_closed_list": 3,
@@ -5488,12 +5512,6 @@
    "39256",
    "39340"
   ],
-  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=168": [
-   "39341",
-   "39448",
-   "39731",
-   "39732"
-  ],
   "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=195": [
    "39590",
    "39591"
@@ -5699,57 +5717,17 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/american_river",
-  "kept": 147,
+  "kept": 154,
   "kept_moved": 72,
-  "programs": 5,
+  "programs": 1,
   "list": [
    {
-    "control_number": "16946",
-    "title": "Computer Information Security Essentials",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=448",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=428",
-    "was_coverage": 0.5,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "18005",
-    "title": "Diesel Technology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=499",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=491",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "20109",
-    "title": "Cybersecurity and Information Assurance",
+    "control_number": "39341",
+    "title": "Refrigeration Service Technician Apprenticeship",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=449",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=206",
     "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=428",
-    "was_coverage": 0.6,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "20134",
-    "title": "Gerontology: Administrative",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=642",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=630",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "44412",
-    "title": "Business Information Professional II",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=421",
-    "coverage": 0.9,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=408",
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=211",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    }
@@ -7096,11 +7074,7 @@
   ],
   "held_opens_on_list": [],
   "only": [
-   "16946",
-   "18005",
-   "20109",
-   "20134",
-   "44412"
+   "39341"
   ],
   "not_named": [
    {
@@ -7401,36 +7375,6 @@
     "coverage": 0.941,
     "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=153",
     "was_coverage": 0.941,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "39341",
-    "title": "Refrigeration Service Technician Apprenticeship",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=168",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=211",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "39731",
-    "title": "Refrigeration Service Technician Apprenticeship Level I",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=168",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=211",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "39732",
-    "title": "Refrigeration Service Technician Apprenticeship Level II",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=168",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=211",
-    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
@@ -8485,8 +8429,8 @@
    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=166"
   },
   "39341": {
-   "sha256": "d3710c8e5544dbe0475514edcf27db041ddeae0c8d635470be338357d5bd5da8",
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=168"
+   "sha256": "b487b0f0b2cced98c24b5f30340547ee184f11a9997c1b79be57ce8ae5fe1714",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=206"
   },
   "39389": {
    "sha256": "fb59ef8ba008218e3fe7cca77d2050e31e958f5fcb8f9bb79d00f967e15ecf54",
@@ -8565,12 +8509,12 @@
    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=205"
   },
   "39731": {
-   "sha256": "d3710c8e5544dbe0475514edcf27db041ddeae0c8d635470be338357d5bd5da8",
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=168"
+   "sha256": "643700805317fa438be9a8dc5ca521db0cb025313516404bf0d71182033b7fe9",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=207"
   },
   "39732": {
-   "sha256": "d3710c8e5544dbe0475514edcf27db041ddeae0c8d635470be338357d5bd5da8",
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=168"
+   "sha256": "477ae0947c10979b2a75072df87940b89bf3348cc8487342f4b0c7c5af03af59",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=208"
   },
   "39733": {
    "sha256": "0e545ead45f89c5b0e19c5b33660edff2340786bee07ca173a3cad9506bfb91a",
@@ -8917,5 +8861,10 @@
    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=390"
   }
  },
- "run": "45353541681"
+ "staged_from": {
+  "run": "45968461070",
+  "proof": "text sha256 of 357 programs",
+  "pages_loaded": 0
+ },
+ "run": "45970104024"
 }

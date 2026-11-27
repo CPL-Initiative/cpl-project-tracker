@@ -621,7 +621,8 @@ for (_c, _cn), _e in _td.items():
                                        "San Bernardino Valley College": "san_bernardino_valley",
                                        "San Jose City College": "san_jose_city",
                                        "Copper Mountain College": "copper_mountain",
-                                       "Solano Community College": "solano_community"}[_c], "records", _cn + ".json")
+                                       "Solano Community College": "solano_community",
+                                       "El Camino College": "el_camino"}[_c], "records", _cn + ".json")
     with open(_p, encoding="utf-8") as _fh:
         _f = _json.load(_fh)
     _bare = dict(_f, score={k: v for k, v in _f["score"].items() if k not in ("gaps", "confidence")})
@@ -670,8 +671,17 @@ check(_s741_td == {("Copper Mountain College", "14737"), ("Copper Mountain Colle
                    ("Solano Community College", "30184"), ("Solano Community College", "30185"),
                    ("Solano Community College", "38591")},
       "the S741 plans move 14737, 20094, 30184, 30185 and 38591 to total_differs")
+# S741 (lane 2, page read 45953358884), by the same record rule inside El Camino's plan s741c: Commercial Music
+# certificate 31319 (19 under 'Total Units: 20') and Business Administration 2.0 AS-T 42541 (27-30 under 28-30).
+with open(os.path.join(ROOT, "kb", "receipts", "program_requirement_records_piles_s741_el_camino_2026-11-27_s741c.json"),
+          encoding="utf-8") as _fh:
+    _s741b_td = {(r["college"], str(r["control_number"])) for r in _json.load(_fh)["records"]
+                if r["moves_to"] == "total_differs" and r["after_image"]["checks"].get("gaps") == ["total_differs"]
+                and not (r["before_image"]["checks"] or {}).get("gaps")}
+check(_s741b_td == {("El Camino College", "31319"), ("El Camino College", "42541")},
+      "the S741 plan moves 31319 and 42541 to total_differs")
 check(_p2["only_gaps"] == ["total_differs"] and not _p2["recall"]["wrong"]
-      and _p2_keys | {(r["college"], str(r["control_number"])) for r in _s703_td} | _s714e_td | _s740_td | _s741_td
+      and _p2_keys | {(r["college"], str(r["control_number"])) for r in _s703_td} | _s714e_td | _s740_td | _s741_td | _s741b_td
       == set(_td)
       and {(r["college"], str(r["control_number"])) for r in _s703_td} == {("Clovis Community College", "33491")}
       and all(r["after_image"]["checks"].get("gaps") == ["total_differs"]

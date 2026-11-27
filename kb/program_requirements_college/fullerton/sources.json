@@ -6720,20 +6720,22 @@
    "CHEM211BF"
   ],
   "source": {
-   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/chemistry-associate-in-science-degree-for-uc-transfer/",
-   "title": "Chemistry Associate in Science Degree for UC Transfer < Fullerton College",
-   "h1": "Chemistry Associate in Science Degree for UC Transfer",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/chemistry/chemistry-associate-science-degree/",
+   "title": "Chemistry Associate in Science Degree < Fullerton College",
+   "h1": "Chemistry Associate in Science Degree",
    "text_from": "innerText",
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
+    "section": "as",
+    "section_line": "chemistry associate in arts degree chemistry associate in science degree",
+    "section_fit": 1.0,
+    "exact": 0
+   },
+   "pinned": true
   },
   "listed": 2,
-  "text_chars": 3943
+  "text_chars": 3439
  },
  {
   "control_number": "35804",
@@ -7553,20 +7555,22 @@
    "PHYS222F"
   ],
   "source": {
-   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/chemistry-associate-in-science-degree-for-uc-transfer/",
-   "title": "Chemistry Associate in Science Degree for UC Transfer < Fullerton College",
-   "h1": "Chemistry Associate in Science Degree for UC Transfer",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/chemistry/chemistry-associate-in-science-degree-for-transfer/",
+   "title": "Chemistry Associate in Science Degree for Transfer < Fullerton College",
+   "h1": "Chemistry Associate in Science Degree for Transfer",
    "text_from": "innerText",
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
+    "section": "adt",
+    "section_line": "chemistry associate in science degree chemistry associate in science degree for transfer",
+    "section_fit": 0.5,
+    "exact": 0
+   },
+   "pinned": true
   },
   "listed": 9,
-  "text_chars": 3977
+  "text_chars": 3740
  },
  {
   "control_number": "36819",

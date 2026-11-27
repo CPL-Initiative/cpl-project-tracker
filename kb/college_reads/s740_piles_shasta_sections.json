@@ -14,6 +14,22 @@
  ],
  "pdf_span": [74, 100],
  "pdf_page_cap": 18,
+ "_quoted": {
+  "_what": "S741: the lines of run 45837455365's [pdf page 100] that kb/_program_piles_s741_shasta.py's own_lines entry for 32162 rests on, quoted here as the log prints them (the log folds short lines with ' · '), so the guard's evidence sits beside the plan that read it and a second reader checks one place against the run's log.",
+  "45837455365": {
+   "100": {
+    "opens": "students must complete the core courses listed below for the Associate in Arts in Kinesiology for Transfer Degree",
+    "closes": "ASSOCIATE IN ARTS IN KINESIOLOGY FOR TRANSFER DEGREE REQUIREMENTS: Major 22-27",
+    "next": "Physical Education University Studies – 18 Unit Emphasis: SC Program: AA.1493",
+    "as_logged": [
+     "students must complete the core courses listed below for the Associate",
+     "in Arts in Kinesiology for Transfer Degree. Students must also obtain a",
+     "ASSOCIATE IN ARTS IN KINESIOLOGY FOR · TRANSFER DEGREE REQUIREMENTS: · Major 22-27 · General Education (Cal-GETC)  34 · Additional Electives 6-14♦ · Degree Total Will Not Exceed 60 Units",
+     "Physical Education · University Studies – 18 Unit Emphasis: · SC Program: AA.1493"
+    ]
+   }
+  }
+ },
  "pages": [
   {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf",

@@ -84,10 +84,13 @@ check(f["score"]["arithmetic"].get("stated") is None and B.shape_cut(f, e) and B
 f = W.load("19857")
 check(not W.on_live_run(f) and not f["score"].get("gaps"), "19857: on no proved live run, and it carries no gap")
 check(W.shared_with("19883") == ["02512"], "19883: read from a page 02512 was read from")
+# s741c files both since under total_differs, from a page read of each page (kb/_program_piles_s741_elcamino.py,
+# kb/program_total_differs.json): each carries no gap as s740e left it, or that kind alone.
 for cn in ("31319", "42541"):
     f = W.load(cn)
-    check(not f["score"].get("gaps") and NG.units_within_printed_range(f) is None
+    check([g.get("gap") for g in f["score"].get("gaps") or []] in ([], ["total_differs"])
+          and NG.units_within_printed_range(f) is None
           and NG.figures_differ_fails(f) is not None and W.gap_noted(f) is None,
-          "%s: it carries no gap, and neither figures kind is true of it" % cn)
+          "%s: neither figures kind is true of it, and it carries no gap, or s741c's total_differs alone" % cn)
 
 sys.exit(t.done())

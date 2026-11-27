@@ -87,8 +87,13 @@ for title, want in (("Geology, Associate in Science Degree for Transfer (AS-T) <
     check(got[0] is want, "1 %r names Geology A.S.-T: %s (tested %r)" % (title, want, got[1]))
 
 # ── 2. each pin on its own page ─────────────────────────────────────────────────────────────────
-pins = C.site_pin_entries(OCC)
-check(set(pins) == PINNED == set(FIX["pins"]), "2 Orange Coast pins %s (%s)" % (sorted(PINNED), sorted(pins)))
+# S741 pinned two more Orange Coast programs to their own pages (08663 and 08626, each by its printed Control Number,
+# college-page-read run 45953358884); this test's fixture holds S727's three, so it reads those.
+LATER = {"08663", "08626"}
+all_pins = C.site_pin_entries(OCC)
+pins = {cn: p for cn, p in all_pins.items() if cn not in LATER}
+check(set(all_pins) == PINNED | LATER and set(pins) == PINNED == set(FIX["pins"]),
+      "2 Orange Coast pins %s, and S741's %s (%s)" % (sorted(PINNED), sorted(LATER), sorted(all_pins)))
 got = C.site_pinned(progs, pages, pins)
 bad = []
 for cn in sorted(pins):

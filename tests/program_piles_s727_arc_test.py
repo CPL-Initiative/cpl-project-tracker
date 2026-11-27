@@ -114,8 +114,11 @@ check(any("does not explicitly say 'select one'" in n for n in W._notes(W._load(
       "07207 takes no gap: its note says the text does not say the student completes one concentration")
 check("12238" not in W.REVIEWED and W.gap_noted(W._load("12238")) is None, "12238 takes no gap")
 check(not W._notes(W._load("30595")) and W.gap_noted(W._load("30595")) is None, "30595 has no note of its own")
+# S741 pinned 39731 and 39732 to their own pages and read 45962123468 filed them there, so each of the three is read
+# from p.211 with the other two (as s727e found them), or from a page no other of the three was read from.
 for cn in ("39341", "39731", "39732"):
-    check(len(W.shared_with(cn)) == 2 and cn not in W.REVIEWED, "%s: the p.211 section is read for three" % cn)
+    check(len(W.shared_with(cn)) in (0, 2) and cn not in W.REVIEWED,
+          "%s: the p.211 section is read for three, until S741's pins move Level I and Level II off it" % cn)
 
 with open(RECEIPT, encoding="utf-8") as fh:
     rec = json.load(fh)

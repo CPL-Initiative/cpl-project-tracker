@@ -1,0 +1,26 @@
+{
+ "_readme": "S741, lane 2's cheap piles (2026-11-27). East Los Angeles 38168 (Commercial Music: Instrumental/Vocal Performer certificate) was read from the 'Commercial Music: Performance' section on PDF p.288, shared with 38169 and 38206; its note says no section carries its title. Each East Los Angeles section prints its Academic Plan code (E0 and the control number), so this read prints pp.286-290 whole: a session can see which section prints Academic Plan E038168D and what it lists. One load. No model call, nothing written.",
+ "college": "East Los Angeles College",
+ "questions": {
+  "plan_38168": "Which section on pp.286-290 prints Academic Plan E038168D, its heading, lists and total."
+ },
+ "keywords": [
+  "Academic\\W+Plan\\W+E0?381\\d\\d[A-Z]?[^\\n]{0,40}",
+  "Academic\\W+Plan\\W+E0?38206[^\\n]{0,40}",
+  "Commercial Music[^\\n]{0,80}",
+  "Total[^\\n]{0,40}"
+ ],
+ "pdf_span": [
+  286,
+  290
+ ],
+ "pdf_page_cap": 5,
+ "pages": [
+  {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf",
+   "answers": [
+    "plan_38168"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,41 @@
+{
+ "_readme": "S741, lane 2's cheap piles (2026-11-27), second read. Three Orange Coast records hold on what their own pages print, each read here as the capture reads it. 08628 (Construction Technology: Residential Construction Dev A.S.): its page's heading reads 'Building Construction, Associate in Science Degree'; the page's printed Control Number says whether it is 08628's own. 43100 (Athletic Training Level 2 certificate): the state's list names PSYC A160, which the record does not place or explain. 03993 (Dance A.A.): 18-21 against the printed 20. Three loads. No model call, nothing written.",
+ "college": "Orange Coast College",
+ "questions": {
+  "control_number": "The Control Number the page prints, with its heading.",
+  "psyc_a160": "Whether the Athletic Training Level 2 page prints PSYC A160 anywhere, and under which list.",
+  "dance_figures": "Each Dance list's courses with units, each list's printed figure and the total line, word for word."
+ },
+ "keywords": [
+  "Control Number[^\\n]{0,40}",
+  "PSYC A1\\d\\d[^\\n]{0,80}",
+  "[Tt]otal[^\\n]{0,60}",
+  "\\d+(?:\\.\\d+)?\\s*-\\s*\\d+(?:\\.\\d+)?[^\\n]{0,40}"
+ ],
+ "pages": [
+  {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/construction-technology/residential-construction-development-first-award-associate-science-degree/",
+   "answers": [
+    "control_number"
+   ],
+   "why": "08628",
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/kinesiology-fitness-wellness-sports-athletic-performance/kinesiology/athletic-training-level-2-certificate-achievement/",
+   "answers": [
+    "psyc_a160"
+   ],
+   "why": "43100",
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/dance/dance-associate-arts-degree/",
+   "answers": [
+    "dance_figures"
+   ],
+   "why": "03993",
+   "capture_view": true
+  }
+ ]
+}

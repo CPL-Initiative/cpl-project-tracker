@@ -79,9 +79,13 @@ words = W.load("33370")["score"]["gaps"][0]["words"]
 check(e["words"] in words and e["also_words"] in words, "33370: the gap files the heading note and the degree's")
 
 # The holds.
-for cn in ("01400", "40761"):
+# s741e files both since, their run proved by the conductor's live read (kb/_program_piles_s741_contracosta.py): on
+# the receipts as they stood before that plan each is on no proved live run, and each carries no gap, or s741e's.
+for cn, later in (("01400", "degree_summary_ge_none"), ("40761", "noted_unit_floor")):
     f = W.load(cn)
-    check(not W.on_live_run(f) and not f["score"].get("gaps"), "%s: on no proved live run, with no gap" % cn)
+    check(not W.on_live_run(f, skip=("s741e",))
+          and [g.get("gap") for g in f["score"].get("gaps") or []] in ([], [later]),
+          "%s: on no proved live run by the receipts before s741e, with no gap, or s741e's alone" % cn)
 f = W.load("33660")
 check(not f["score"].get("gaps") and W.gap_noted(f) is None
       and any("'None'" in n and "'N/A'" in n for n in B.notes(f)),

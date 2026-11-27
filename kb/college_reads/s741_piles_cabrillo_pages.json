@@ -1,0 +1,33 @@
+{
+ "_readme": "S741, lane 2's cheap piles (2026-11-27), second read. Two questions at Cabrillo, each page read as the capture reads it. 45306 (Spanish Intermediate Proficiency certificate): its lists print 13-15 and 1-3 under a printed 16, and its note names a stray '4 - 5' the record did not read; total_differs is filed only from a page read. 06381 (Psychology A.A.), with 06352, 06380 and 44992: every list is headed 'Recommended' and read as counting nothing; a reconcile wording rule needs the page's own words for what a 'Recommended' list with 'Complete the following number of credits: N' requires. Two loads. No model call, nothing written.",
+ "college": "Cabrillo College",
+ "questions": {
+  "spanish_figures": "Each list's rule line, courses with units and printed figure, the stray '4 - 5' and what it belongs to, and the total line, word for word.",
+  "recommended_words": "The sentence that says what the 'Recommended' lists are, each list's heading and its 'Complete the following number of credits' line, general education, electives and the degree total."
+ },
+ "keywords": [
+  "Complete the following[^\\n]{0,80}",
+  "Recommended[^\\n]{0,120}",
+  "[Tt]otal[^\\n]{0,60}",
+  "\\d+\\s*-\\s*\\d+[^\\n]{0,40}",
+  "must take[^\\n]{0,80}"
+ ],
+ "pages": [
+  {
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/spanish-intermediate-proficiency-certificate-of-achievement-fall-2026",
+   "answers": [
+    "spanish_figures"
+   ],
+   "why": "45306",
+   "capture_view": true
+  },
+  {
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/psychology-associate-in-arts-a-a-fall-2025",
+   "answers": [
+    "recommended_words"
+   ],
+   "why": "06381",
+   "capture_view": true
+  }
+ ]
+}

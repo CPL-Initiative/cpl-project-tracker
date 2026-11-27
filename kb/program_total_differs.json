@@ -306,6 +306,36 @@
     "words": "American Sign Language (select 18 units) ... Required Major Total Units ... 27",
     "evidence": "American Sign Language A.A. 38591: the 2026-27 catalog PDF, p.342, under 'American Sign Language', 'Associate in Arts', prints 'The American Sign Language Associate in Arts can be obtained by completing the 27-unit major', then 'REQUIRED COURSES', the one list 'American Sign Language (select 18 units)' over ASL 001, 002, 003, 004, 005, 006, 007, 011 and 052 at 3 units each, and 'Required Major Total Units 27'. The section is whole on the page: the one list asks for 18 units under a printed total of 27 (college-page-read run 45953233659, kb/college_reads/s741_keys_solano_pages.json, printed line for line). The ASL/English Interpreter Training awards (36455, 36457) have their own section on p.343.",
     "run": "45953233659"
+    }
+   },
+  "El Camino College": {
+   "31319": {
+    "where": "the program's own page, http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3634&print",
+    "printed_total": [
+     20,
+     20
+    ],
+    "printed_sum": [
+     19,
+     19
+    ],
+    "words": "Total Units: 20",
+    "evidence": "Commercial Music Certificate of Achievement 31319: the page prints 'Required Courses:' MUSI 101 (3 units), MUSI 180 (3), MUSI 181A (2), MUSI 181B (2), MUSI 182 (3), MUSI 284 (3) and MUSI 285 (3), seven courses and no choice, 19 units, under 'Total Units: 20' (college-page-read run 45953358884, kb/college_reads/s741_piles_el_camino_pages.json, read as the capture reads the page). The page prints no other course and no other figure.",
+    "run": "45953358884"
+   },
+   "42541": {
+    "where": "the program's own page, http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3555&print",
+    "printed_total": [
+     28,
+     30
+    ],
+    "printed_sum": [
+     27,
+     30
+    ],
+    "words": "Total Major Units: 28-30",
+    "evidence": "Business Administration 2.0, AS-T 42541: the page prints 'Required Core: 28-30 units' over BUS 150 (4 units), BUS 151 (4), ECON C2001 (3), ECON C2002 or C2002H (3), LAW 4 (4) or LAW 5 (3), MATH 165 (5) or MATH 140 (4) or MATH 190 (5), STAT C1000 or C1000H (4) or BUS 116 (3), and BUS 101 or BUS 108 (3): eight rows whose units add to 27 at the least (LAW 5, MATH 140, BUS 116) and 30 at the most, under 'Total Major Units: 28-30' (college-page-read run 45953358884, kb/college_reads/s741_piles_el_camino_pages.json, read as the capture reads the page). The low end the page prints is one unit above what its rows add to.",
+    "run": "45953358884"
    }
   }
  }

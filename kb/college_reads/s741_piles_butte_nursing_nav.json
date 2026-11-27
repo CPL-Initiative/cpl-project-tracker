@@ -1,0 +1,19 @@
+{
+ "_readme": "S741, lane 2's cheap piles (2026-11-27), second read. The first read (45953358884) shows Butte's Nursing section lists 'AS Degree in Registered Nursing' beside 'AS Degree in Accelerated Track Registered Nursing' (28380, the page 14583 was read from), and the section page prints its entries without their addresses. This read asks the catalog's own navigation data for the section's children (the call the page makes as it loads, as kb/college_reads/butte_local_ge_guide.json read node 28399's), so a session can name the Registered Nursing A.S. page's address for a site_pages pin. One load. No model call, nothing written.",
+ "college": "Butte College",
+ "questions": {
+  "nursing_children": "The id and title of each program page under the Nursing section (node 28156): which id is 'AS Degree in Registered Nursing'?"
+ },
+ "keywords": [
+  "Registered Nursing[^\\n]{0,80}",
+  "\"[Ii]d\"\\s*:\\s*\\d+[^\\n]{0,120}"
+ ],
+ "pages": [
+  {
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28156",
+   "answers": [
+    "nursing_children"
+   ]
+  }
+ ]
+}

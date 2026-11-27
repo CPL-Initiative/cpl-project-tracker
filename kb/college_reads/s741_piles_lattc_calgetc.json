@@ -1,0 +1,26 @@
+{
+ "_readme": "S741, lane 2's cheap piles (2026-11-27). Los Angeles Trade-Technical 45285 (Cal-GETC certificate) was read from PDF p.65 alone, the pattern's Areas 4 to 6; its note says the heading and Areas 1 to 3 are on earlier pages, so 53 of its 99 listed courses are placed and it is not collectable. This read prints pp.61-67 whole, so a session can name the section's first page, the words it opens on and its last page for a pdf_pages pin. One load. No model call, nothing written.",
+ "college": "Los Angeles Trade-Technical College",
+ "questions": {
+  "calgetc_section": "The page and words the Cal-GETC pattern (or its Certificate of Achievement) opens on, each Area's page, and where the section ends."
+ },
+ "keywords": [
+  "Cal-?GETC[^\\n]{0,80}",
+  "AREA \\d[^\\n]{0,60}",
+  "Area \\d[^\\n]{0,60}",
+  "Certificate of Achievement[^\\n]{0,60}"
+ ],
+ "pdf_span": [
+  61,
+  67
+ ],
+ "pdf_page_cap": 7,
+ "pages": [
+  {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf",
+   "answers": [
+    "calgetc_section"
+   ]
+  }
+ ]
+}
