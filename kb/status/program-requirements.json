@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-26T17:13:56Z",
-  "session": 740,
-  "moniker": "SkySkimmer",
+  "written_at": "2026-11-27T09:42:51Z",
+  "session": 741,
+  "moniker": "SkyWillet",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_741_handoff.md",
+  "handoff": "docs/session_742_handoff.md",
   "next_step": {
     "title": "Build the display page carrying tonight's records, then the census",
-    "text": "Build the display page carrying S740's records, apply it at Glendale first and then whole, and run the census on main. Then lane 1: the units kind's reviewed keys, the reader change that lets San Diego City 22367 read, Ventura's read behind a second reader, Norco's curriQunet change and the reader changes still open; then lane 2's holds and the night's follow-up with the Porterville guard first."
+    "text": "Build the display page carrying S741's records, apply it at Glendale first and then whole, and run the census on main. Then lane 1: review the Cuyamaca plural fold and Cosumnes River's parked filing, read the pinned programs at Butte, Orange Coast and El Camino once their free captures bind, and the reader changes still open; then lane 2's holds and the night's follow-up with the Porterville guard first."
   },
   "calls": [
     {
@@ -876,6 +876,42 @@
     {
       "at": "2026-11-26T16:30:00Z",
       "text": "79 program records collected tonight by 16:30: 29 passing and 50 with a named gap."
+    },
+    {
+      "at": "2026-11-27T06:20:00Z",
+      "text": "The display page now carries every filed record: 18,746 programs at build a143061a2ae2, after a first apply at Glendale."
+    },
+    {
+      "at": "2026-11-27T06:57:00Z",
+      "text": "Santa Ana 31859 and 21789 collected: each sums inside the units range its catalog prints."
+    },
+    {
+      "at": "2026-11-27T07:41:00Z",
+      "text": "Solano 30184, 30185 and 38591, San Bernardino Valley 35833 and 22784, and Copper Mountain's reconciled records collected; Copper Mountain 43854 and 14751 now pass on the catalog's minimum degree units."
+    },
+    {
+      "at": "2026-11-27T07:51:00Z",
+      "text": "Orange Coast, El Camino, East Los Angeles, Shasta and Contra Costa piles collected with their gaps named; 20 records collected tonight."
+    },
+    {
+      "at": "2026-11-27T08:24:00Z",
+      "text": "San Bernardino Valley 22821 now passes on its own catalog page: 20 units against the printed 20."
+    },
+    {
+      "at": "2026-11-27T08:56:00Z",
+      "text": "Ventura's seven programs pass after the reader learned to keep a page's tabs; American River 39731 and 39732 pass from their own pages."
+    },
+    {
+      "at": "2026-11-27T09:10:00Z",
+      "text": "Fullerton 36798 and 35174 and American River 39341 pass from their own pages; Norco's seven programs pass and five carry a named gap."
+    },
+    {
+      "at": "2026-11-27T09:20:00Z",
+      "text": "Cuyamaca 18634, 18635 and 18636 pass on the catalog's 60 transferable units; 51 records collected tonight."
+    },
+    {
+      "at": "2026-11-27T09:36:00Z",
+      "text": "San Diego City 22367 passes: 24 units against 24 from its own entry. 52 program records collected tonight: 28 passing and 24 with a named gap."
     }
   ],
   "headline": [
@@ -1178,6 +1214,12 @@
       "active": 20282,
       "complete": 15638,
       "colleges": 118
+    },
+    {
+      "day": "2026-11-27",
+      "active": 20282,
+      "complete": 15669,
+      "colleges": 118
     }
   ],
   "next_run": {
@@ -1186,8 +1228,8 @@
     "at": "2026-11-26T18:12:00Z"
   },
   "harvest": {
-    "day": "2026-11-26",
-    "gaps": 3394,
+    "day": "2026-11-27",
+    "gaps": 3392,
     "parts": {
       "links": {
         "catalog": [
@@ -1208,7 +1250,7 @@
         20282
       ],
       "coci": [
-        17260,
+        17261,
         20282
       ],
       "outcomes": {
@@ -1217,12 +1259,12 @@
           88736
         ],
         "plo": [
-          17260,
+          17261,
           20282
         ]
       },
       "careers": [
-        16282,
+        16294,
         20282
       ]
     }
