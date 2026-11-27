@@ -3199,7 +3199,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 46,
@@ -3320,7 +3321,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 96,
@@ -3400,7 +3402,8 @@
     "title": 1.0,
     "section": null,
     "section_line": null,
-    "section_fit": 0.0
+    "section_fit": 0.0,
+    "exact": 0
    }
   },
   "listed": 55,
