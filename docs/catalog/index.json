@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 605,
+   "count": 607,
    "docs": [
     {
      "created": "2026-08-14",
@@ -9233,6 +9233,25 @@
      "updated": "2026-06-28"
     },
     {
+     "created": "2026-11-27",
+     "governs": [
+      "kb/_build_program_ladders.py",
+      "kb/status/program_ladders/index.json"
+     ],
+     "path": "docs/kb-notes/methodology-stackable-programs-by-course-containment.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "cpl-pathways",
+      "programs",
+      "stackable-credentials",
+      "cip"
+     ],
+     "title": "Stackable programs are found by course containment, not by CIP",
+     "type": "methodology",
+     "updated": "2026-11-27"
+    },
+    {
      "created": "2026-06-01",
      "governs": [
       "statewide_interactive.js"
@@ -11396,6 +11415,26 @@
      "title": "Issuing-agency authority sources for CER exhibit canonicalization",
      "type": "reference",
      "updated": ""
+    },
+    {
+     "created": "2026-11-27",
+     "governs": [
+      "chatbox/supabase/functions/library-revise-draft/reference_data.mjs",
+      "chatbox/supabase/functions/library-revise-draft/cobi_data.mjs",
+      "cpl_pathways.js"
+     ],
+     "path": "docs/kb-notes/reference-map-landing-page-exhibit-parameter.md",
+     "status": "published",
+     "tags": [
+      "reference",
+      "map-platform",
+      "landing-pages",
+      "exhibits",
+      "deep-link"
+     ],
+     "title": "MAP's landing page takes an exhibit code in its address",
+     "type": "reference",
+     "updated": "2026-11-27"
     },
     {
      "created": "2026-08-06",
@@ -17589,8 +17628,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 695,
+   "count": 696,
    "docs": [
+    {
+     "created": "2026-11-27",
+     "governs": [],
+     "n": 745,
+     "path": "docs/session_745_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 745 handoff (from SkyCurlew, S744, Sam's plain session of 2026-11-27: the campus letter fold, exhibit deep links, stackable programs, the compact cards)",
+     "type": null,
+     "updated": "2026-11-27"
+    },
     {
      "created": "2026-11-27",
      "governs": [],
@@ -29093,5 +29146,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1590
+ "total": 1593
 }

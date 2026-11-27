@@ -52,7 +52,7 @@ page's vault source) needs #3868's edits.
 Deploying, Live (only once the page's own address answers), or Failed with the function's reason (`not_configured`,
 `token_refused` named). Guard `tests/library_publish_now.test.js`.
 
-**LIVE: the publishing model and the check run (#3560 parts 1 and 2).** Part 1 (#3572, S687; three migrations applied, runs 44621258767, 44624282220, 44628207752): a new piece's ready draft offers *Publish to Internal Library* and *Publish to Public Library*, and a listing needs a passing check at the page's current version key and url (`cpl_library_set_public()` refuses one without it; the service role is exempt). Part 2 (#3577 `45af74fd` and #3581 `ac093582`, S688; applied from trigger branches, runs 44653210148 and 44673522564): after `--finish`, `library-publish.yml` checks each page it plans (`scripts/library_check.py`, `scripts/a11y.js`), writes one `cpl_library_checks` row per page with its receipt and a content-hash proof, lists a passing piece that holds a typed public summary, and stamps each page's accessibility line from the rows; a pass line prints only while the page on disk matches its proof. The first real run (2026-11-20 12:10Z, run 44733588776, success): 8 check rows, 7 pass and 1 fail. The 21 pieces listed before the checks stay listed as Not yet certified while their findings are fixed (RULED `r-library-legacy-listings-stay-sam-2026-11-19`). Known limit: between runs, a team press of Public can list a page changed at the same url and version on the earlier pass; the next run closes it. Every DECIDED line of parts 1 and 2, in the paragraphs as they stood ([`library_lessons_archive_3`](../../library_lessons_archive_3.md), *Moved from the lane (S690 checkpoint)*): `d-library-check-per-version-key-s687`, `d-library-new-page-unlists-s687`, `d-library-internal-one-press-s687`, `d-library-3560-in-four-prs-s687`, `d-library-check-binds-url-s688`, `d-library-check-run-on-publish-s688`, `d-library-legacy-listings-stay-s688`, `d-library-run-lists-by-guarded-update-s688`, `d-library-list-needs-typed-summary-s688`, `d-library-footer-from-check-s688`, `d-library-footer-binds-page-hash-s688`, `d-library-check-after-page-change-s688`, `d-library-tab-precheck-url-s688`. Guards: `tests/library_publishing_model.test.js`, `tests/public_library.test.js`, `tests/library_publishing_sql_proof.py`, `tests/library_check_test.py`, `tests/library_check_footer.test.js`.
+**LIVE: the publishing model and the check run (#3560 parts 1 and 2; #3572, #3577, #3581):** a listing needs a passing check at the page's current version key and url; the paragraph as it stood, with its DECIDED lines and guards: [`library_lessons_archive_3`](../../library_lessons_archive_3.md), *Moved from the lane (S744 checkpoint)*.
 
 **#3600 (S690, `9fc88a07`): the check line stays out of the reading text and out of new pieces** (the paragraph as it stood: [`library_lessons_archive_3`](../../library_lessons_archive_3.md), *Moved from the lane (S736 checkpoint)*). **Not deployed:** `cpl-chat-deploy.yml` for `cpl-chat` and `library-revise-draft` waits for a plain session.
 
@@ -80,11 +80,26 @@ choices, and only on a matching working title and occasion. Start drafts at once
 offers Change what you asked. The drafter reads any COBI table or published file (`cobi_data.mjs`); a student count
 under 10 reads `<10`; buttons open the college's MAP landing page (`reference_data.mjs`). Deployed (cpl-chat-deploy runs
 107, 108). The full record: [`library_lessons.md`](../../library_lessons.md), *Moved from the lane (S683 Library side
-job)*. **Deep link (S744):** MAP's landing page takes `?Exhibit=<MAP ID>` (Pedro, 2026-11-27): the ID fills the page's
-search box and lists that exhibit's courses; Possible Qualifications stays unpicked. The MAP ID is the exhibit code
-(`MAPICA-SM-1-001`); MAP's page takes a value only if it matches `^[A-Za-z0-9]+(?:-[A-Za-z0-9]+){2,}$` (up to 10, comma-separated; one bad value drops all), so a code with `&`, `--` or `(`, a course code, a title or the numeric `map_id` opens the page alone (`exhibitParam`); `Exhibit` or `exhibit`, no course parameter.
-Verified live at Lassen, Cabrillo and Foothill. `landingButton` builds it and the pick instruction is gone. **NEXT:** Ashley's first new pieces through Start; read the logged usage
-of a tool-reading draft (`library-revise-draft usage`) to see what one costs.
+job)*.
+
+**LIVE (#3909, S744): a Library button opens the landing page on its exhibit.** MAP's landing page takes
+`?Exhibit=<MAP ID>` (Pedro, relayed by COBIx, 2026-11-27; `f-map-landing-exhibit-param-pattern-s744`): the code fills the page's search box and lists that exhibit's
+courses; Possible Qualifications stays unpicked. `reference_data.mjs` `landingButton`/`exhibitParam` pass only codes
+MAP accepts (the pattern and its limits: [`reference-map-landing-page-exhibit-parameter`](../../kb-notes/reference-map-landing-page-exhibit-parameter.md));
+the pick instruction is gone and the drafter is told in `cobi_data.mjs`. Four codes MAP itself refuses (Chaffey
+MAPICI-BP&C-1-001, Laney MAPICI-E&ET-1-001, Modesto Junior MAPICI-E3S--1-001, Cerritos MAPCXA-E&R-1-001) open the page
+alone; renamed, they would work, which is worth passing to Pedro. Cerritos's landing slug on file is `/www.cerritos.edu`.
+
+**The Cable Splicer flyer waits on Sam's press** (`cable-splicer-cpl-opportunities-mwmo31a1`, Apprenticeship Sprint, for
+San Joaquin Adult School; draft, not publicly listed, has a Pages copy). Its five college buttons go to bare landing
+pages. The re-point is *Revise* on its card with the ask *"Point each college's Request CPL button at its exhibit on
+the landing page."*; a session cannot call the revise function. Expected buttons: Cabrillo `CABC?Exhibit=MAPICP-GEC-1-001`
+(all 4 courses, live-checked); Chaffey `CHC?Exhibit=MAPCXS-ITE1-1-001,MAPCXS-OST-1-001` (not live-checked); Laney the
+landing page alone (only a `&` code); Modesto Junior `MJC?Exhibit=MAPCXS-E2OE-1-001,MAPPRA-E2RF-1-001` (2 of 3; ELTEC 320
+has only `--` codes); Norco its IBEW codes (6 of 10). **Open question:** no record exists for "Foothill Sheet Metal"
+(Sam named it); is it filed under another title? **NEXT:** the re-point (Sam's press); Ashley's remaining flyers through
+Start (her press or Sam's); read the logged usage of a tool-reading draft (`library-revise-draft usage`) to see what one
+costs.
 
 ✅ **Version 22 and the List** (2026-11-05): moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (tender-fermi, 2026-11-10)*.
 

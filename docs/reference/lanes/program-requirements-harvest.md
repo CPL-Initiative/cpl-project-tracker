@@ -46,6 +46,22 @@ The plan is a Claude Doc Sam edits and comments on:
 
 **CPL Pathways reads the ROEP record (Sam, 2026-10-04 ~17:20Z):** every record shows, checked or not, each marked; no record is edited by hand. The paragraph as it stood: lessons, *Moved from the lane (S653 checkpoint)*.
 
+**CPL Pathways (S744; the record: [`cpl_pathways_lessons`](../../cpl_pathways_lessons.md), S744).** **LIVE:** #3910
+links each *CPL here* line to the landing page on the course's exhibits;
+#3911 `kb/_build_program_ladders.py` tops a record with its stackable programs
+(`r-stackable-programs-top-row-sam-2026-11-27`; [`methodology-stackable-programs-by-course-containment`](../../kb-notes/methodology-stackable-programs-by-course-containment.md)).
+**IN FLIGHT:** the compact course cards (branch `claude/pathways-compact-cards`, a worker's draft PR;
+`r-compact-course-cards-sam-2026-11-27`, `r-cpl-glyph-map-pointer-sam-2026-11-27`,
+`r-all-lp-links-open-bottom-bar-sam-2026-11-27`, `r-get-credit-on-pathways-cards-sam-2026-11-27`; mock-up
+https://claude.ai/artifact/BQjk5FcRjeHPGZp57bpDJe); the CPL control opens a bottom bar framing the landing page and
+replaces #3910's line; its MAP pointer is a ruled mark (the 27th), so an a11y sweep keeps it.
+**FINDING** `f-cerritos-ironworkers-all-24-cpl-s744`: all 24 Cerritos Field Ironworkers A.S. courses carry CPL through
+the apprenticeship exhibits (`MAPICA-RA4P*`/`SA4P*`), but `kb/coci_articulations.json` feeds the display build only
+`MAPCXA-*`, so the view says 15 of 24. **FINDING** `f-coci-description-shards-mojibake-s744`: `coci_lookup_desc_*.js`
+carries `_x000D_` and cp1252 mojibake. **NEXT (CPL Pathways):** (1) merge the compact-cards PR once `test` is green;
+(2) the display build reads the apprenticeship exhibits (`library/adopt/adopt_data.json` has them), then the B.S.
+page's text; (3) clean the description shards at build in `kb/_build_coci_lookup.py`.
+
 **The display build** (`kb/_build_roep_display.py`) writes each program's facts once, under one build stamp, to `program_requirement_records.display` (Sierra) and `cpl_pathways_roep_data.js` (the page); guard `tests/roep_display_test.py`. Its history (S327-S336): the lessons doc, *Moved from the lane (S346 compaction)*.
 
 **Course objectives, collected with every SLO read (Sam, 2026-11-02):** `course_outcomes.kind` `objective`, never replacing an SLO row; the `objectives_reread_plan` has no step left; an objectives `.load` is written by hand. The paragraph as it stood: lessons, *Moved from the lane (S687 checkpoint)*.

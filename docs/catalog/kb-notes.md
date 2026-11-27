@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-605 document(s).
+607 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -487,6 +487,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Snapshot-with-stamp fallback for live-data dependencies](../kb-notes/methodology-snapshot-with-stamp-fallback.md) | methodology | published | 2026-05-28 | 2026-05-28 |
 | [Split prose from state — the register is the spine, the narrative cites it](../kb-notes/methodology-register-is-the-spine-narrative-cites-it.md) | methodology | published | 2026-08-05 | 2026-08-05 |
 | [Stable DOM keys must exclude live (data-bound) text](../kb-notes/methodology-stable-dom-keys-exclude-live-text.md) | methodology | published | 2026-06-28 | 2026-06-28 |
+| [Stackable programs are found by course containment, not by CIP](../kb-notes/methodology-stackable-programs-by-course-containment.md) | methodology | published | 2026-11-27 | 2026-11-27 |
 | [Styling a native <details> — keep a visible affordance, drive the toggle in JS](../kb-notes/methodology-styling-native-details-toggle.md) | methodology | published | 2026-06-01 | 2026-06-01 |
 | [SUBJ4-consumer semantics — umbrella allowances and alias families must be mirrored everywhere](../kb-notes/methodology-subj4-consumer-semantics.md) | methodology | published | 2026-06-12 |  |
 | [Surface a finer derived layer on a single-grain reference tab (without breaking the grain)](../kb-notes/methodology-surface-derived-layer-on-single-grain-tab.md) | methodology | published | 2026-06-09 | 2026-06-09 |
@@ -593,6 +594,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [For "which colleges offer X", start at the course file, not the program file](../kb-notes/reference-course-level-mis-beats-program-level-coci.md) | reference | published | 2026-08-12 | 2026-08-12 |
 | [Hand it over in place: the hand-over box, where it writes, and the reader's pickup](../kb-notes/reference-commons-hand-over.md) | reference | internal | 2026-11-20 | 2026-11-23 |
 | [Issuing-agency authority sources for CER exhibit canonicalization](../kb-notes/reference-issuing-agency-authority-sources.md) | reference | published | 2026-07-07 |  |
+| [MAP's landing page takes an exhibit code in its address](../kb-notes/reference-map-landing-page-exhibit-parameter.md) | reference | published | 2026-11-27 | 2026-11-27 |
 | [Postgres full-text search pitfalls on freehand credential titles](../kb-notes/reference-postgres-fts-pitfalls-for-credential-titles.md) | reference | published | 2026-08-06 | 2026-08-06 |
 | [Public-domain art sourcing for the dashboard (Adams, plein air, and the traps)](../kb-notes/reference-public-domain-art-sourcing.md) | reference | published | 2026-06-12 | 2026-06-12 |
 | [Recovering screen/computer-use reach on Claude Code (web) — what this environment can and can't do](../kb-notes/reference-claude-code-web-environment-reach.md) | reference | published | 2026-06-04 | 2026-06-04 |
