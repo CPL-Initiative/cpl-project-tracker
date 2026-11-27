@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-27T14:47:58Z",
+ "written_at": "2026-11-27T15:01:42Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17659,
-  "gap": 4676,
+  "passing": 17663,
+  "gap": 4672,
   "with_gap": 118,
   "cost_usd": 1341.37,
-  "passed_at_read": 16561,
+  "passed_at_read": 16566,
   "cost_receipts": 118,
   "spent_usd": 1247.47,
   "spent_runs": 255,
@@ -189,8 +189,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16982,
-  "gap": 4676,
+  "passing": 16986,
+  "gap": 4672,
   "collected_with_gaps": 677,
   "discontinued": 0
  },
@@ -938,12 +938,12 @@
    "harvested": true,
    "slug": "cabrillo",
    "programs": 291,
-   "passing": 263,
-   "gap": 28,
+   "passing": 267,
+   "gap": 24,
    "causes": {
     "no_closed_list": 10,
     "page_not_found": 12,
-    "unknown_without_live": 6
+    "unknown_without_live": 2
    },
    "census_causes": {
     "no_closed_list": 9,
@@ -966,10 +966,10 @@
     "elumen"
    ],
    "objectives_printed": false,
-   "read_at": "2026-11-17T13:16:56Z",
+   "read_at": "2026-11-27T14:26:20Z",
    "read_kind": "capture",
    "cost_usd": 18.22,
-   "passed_at_read": 243,
+   "passed_at_read": 248,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -984,7 +984,7 @@
    "failed_checks": {
     "coverage": 0,
     "invented": 0,
-    "arithmetic": 26,
+    "arithmetic": 21,
     "repeated": 0,
     "outcomes": 0
    },
@@ -994,12 +994,12 @@
    "capture_root": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1552.1,
-   "run": "44090886950",
+   "read_seconds": 1569.8,
+   "run": "46015798176",
    "levers": {
     "reader_page_search": 12,
     "program_course_file_check": 10,
-    "reconcile_steps": 5,
+    "reconcile_steps": 1,
     "scorer_noncredit_hours": 1
    },
    "collection": {
@@ -1008,8 +1008,8 @@
      "models": {
       "claude-opus-5-5": 269
      },
-     "run": "44090886950",
-     "at": "2026-11-17T13:16:56Z",
+     "run": "46015798176",
+     "at": "2026-11-27T14:26:20Z",
      "cost_usd": 18.22,
      "platform": "elumen"
     },

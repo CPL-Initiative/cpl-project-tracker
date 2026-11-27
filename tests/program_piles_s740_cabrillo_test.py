@@ -102,8 +102,10 @@ check(all(B.course_rows(f, c)[0]["units"] == 1 for c in ("MUS40", "MUS68", "MUS6
 # The holds.
 for cn in ("06352", "06380", "06381", "44992"):
     f = W.load(cn)
-    check(f["record"]["blocks"] and all(b.get("rule") == "recommended" for b in f["record"]["blocks"]),
-          "%s: every list is read as recommended, counting nothing" % cn)
+    # S742's reconcile step (recommended_counts) reads these lists as units to choose at their printed figures:
+    # every list recommended as s740d left the record, or none of them once that reconcile files it.
+    check(f["record"]["blocks"] and len({b.get("rule") == "recommended" for b in f["record"]["blocks"]}) == 1,
+          "%s: every list is read as recommended, counting nothing, or a later reconcile counts them all" % cn)
     check(not f["score"].get("gaps") and W.gap_noted(f) is None, "%s: it carries no gap and no entry names one" % cn)
 f = W.load("45306")
 a = f["score"]["arithmetic"]
