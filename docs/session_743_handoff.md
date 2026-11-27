@@ -127,3 +127,15 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 - 13:28Z: both rereads posted. Live at 13:28Z: Cosumnes River 33542 passing at 45972311864 (from its named gap
   `option_lists_read_apart`: an upgrade, not a new record), 31055 and 38017 as kept; San Bernardino Valley 17829 at
   46000859685, incomplete, for plan s742k3.
+- 13:29Z: s742k2's reader (Sonnet): APPLY (both gaps true of their pages: 04873's lists print "Two courses" over one and
+  "Four courses" over two with no unit figure; 39483's List A prints "One to two courses" with no figure, so its lists run
+  23 to 31 against 27-30; S741's hold wanted a kind naming the shape, and the sentence needs none; the guard run against
+  a scratch Postgres aborts on a wrong run, a changed record, a confirm and a missing row). Clean md5 pre-read 2 of 2.
+- 13:30Z: `readers` stop 2 (head `918f6b6d`): the fold's round 2 (`a0226f16`: wrong joins over 3,343,033 sibling pairs
+  fold alone 2, both own pages); the Acalog MINOR and NIT fixed (`d2f211f9`); El Camino's free capture 46003498776 bound
+  all five pins at coverage 1.0 (263 of 263 pages); Coastline 43057's pin and plural heading (`918f6b6d`). 19857 held:
+  the preview hands it the A.S. page on a tie (Acalog's title label reads "Certificate" on every page).
+- 13:31Z: El Camino's paid read dispatched on `claude/s742-readers-ec`, cut at `d2f211f9` (only 19861, 19866, 38948,
+  43993, 19883; sources_from 46003498776; about $0.50). The fold's round 2, the Acalog fix and Coastline's change to the
+  Fable reader's second round. Cuyamaca 18637's paid read filed as run 46003456131 on `claude/s742-readers-cuy`.
+- 13:32Z: s742k2's migrate 46007691479 returned 2, none skipped; `.apply` restored (`25591739`). Records collected: 4.
