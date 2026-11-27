@@ -160,3 +160,5 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 - 07:52Z: `piles` batch 2 (head `18cafe6e`): s741d's recall pinned; s741e (Contra Costa 01400, 40761) and seven
   `site_pages` pins (American River 39731, 39732; Orange Coast 08663, 08626; Fullerton 36798, 35174; El Camino 19883)
   to the batch-1 reader. s741d's clean pre-read 1 of 1; `.apply` pushed (`b6d43195`).
+- 07:53Z: s741d 45961440406 returned 1, none skipped; `piles`' `.apply` restored (`e1480164`). Records collected: 21.
+  Spend at 07:54Z: about $110 at the repo's rates.
