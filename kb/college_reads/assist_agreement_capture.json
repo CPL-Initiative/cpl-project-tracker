@@ -1,0 +1,15 @@
+{
+ "_readme": "S745 SkyTattler, 2026-11-27. For a mock-up Sam will share with ASSIST (a CPL Pathways card carrying an ASSIST chip), read one real agreement's data: Cerritos College's Business Administration 2.0 A.S.-T (control 41822) toward CSU Long Beach. Read 1 finds ASSIST's ids for the two institutions and the current academic year from its public lists (the same addresses its own pages fetch). Reads only; no model call.",
+ "college": "Cerritos College",
+ "outside_hosts": {
+  "assist.org": "ASSIST, the state's transfer articulation system: its public institution and academic-year lists, the data its own pages fetch"
+ },
+ "questions": {
+  "ids": "ASSIST's ids for Cerritos College, CSU Long Beach and academic year 2026-2027."
+ },
+ "keywords": ["Cerritos", "Long Beach", "2026", "2025"],
+ "pages": [
+  {"url": "https://assist.org/api/institutions", "answers": ["ids"]},
+  {"url": "https://assist.org/api/AcademicYears", "answers": ["ids"]}
+ ]
+}
