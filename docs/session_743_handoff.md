@@ -146,3 +146,17 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 - 13:37Z: the Fable reader's round 2: the fold `a0226f16` GO (all 386 sibling admits refuse; the fold alone admits 2,
   both own pages), the Acalog fix `d2f211f9` GO, Coastline 43057's pin and plural heading `918f6b6d` GO (nothing outside
   Coastline moves). El Camino's paid read filed as run 46007782666 on `claude/s742-readers-ec` (`6e5c8ef6`).
+- 13:43Z: `piles` stop 1 (head `ab7346d6`): plan s742a (Santa Monica 21026 `total_differs`, Butte 01312
+  `degree_electives_not_printed`, Cabrillo 45306 and Gavilan 08464 `lists_not_closed`; a new batch plan module
+  `kb/_program_piles_s742.py`); keep-better's `plan_code_own` (a generic heading printing the program's own Academic Plan
+  code counts as its own page; recall over 92 such headings, wrong 0), which would let East Los Angeles's ten keep; the
+  Butte capture 45999110725 running and Orange Coast's pending; sibling branches for Fullerton, Santa Barbara City and
+  Cabrillo's free reconciles (GO). The conductor's live read (13:44Z) in the compact form, all six whole colleges' md5s
+  equal; one person's check among the 13 colleges (Cabrillo 06326).
+- 13:46Z: `keys` ended (its run's limit) with San Jose City 38499 unfinished: one cited renumber (`JOURN138` for the
+  state's `JournalismJO`, from the page's own line; self-recall over 83 records: 1 moves, fail to pass, 0 wrong). The
+  conductor carries it: a reader, then a free reconcile, keep-better and the reread. Held by `keys`: San Diego City 22352
+  and 38732 (no entry in the capture's 228, both Teachout Only; filed as college-named gaps, no write); San Jose City 18449
+  (the state's `ComputerGrap` stands for 13 courses under one key); San Bernardino Valley 04894 (its scorer change moves 9
+  fail to pass and 22 pass to fail).
+- 13:47Z: s742a and San Jose City's pair to one Sonnet reader; `plan_code_own` to a Fable reader.
