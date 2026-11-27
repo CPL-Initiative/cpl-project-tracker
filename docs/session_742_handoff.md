@@ -201,3 +201,7 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 - 08:28Z: piles batch 3's reader: s741f APPLY (Orange Coast 32790's text stops mid-row in Area 5A with no total; the
   run proved by the 07:31Z read) and the Butte 14583 and American River 39341 pins GO. s741f's clean pre-read 1 of 1;
   migrate 45966052595 returned 1, none skipped; `.apply` restored (`1e0d3c84`). Records collected: 27.
+- 08:32Z: `keys` report 10 (head `e8ae2194`): Cuyamaca 18634 to 18636 fail on the degree alone, so the change is a
+  per-college reconcile step (`degree_total_minimum` from "Complete 60 transferable units"; recall over the college's
+  180 records: 4 flagged, right 4, wrong 0, none fails), to the Sonnet reader. 18637's record is Grossmont's page;
+  keep-better's word test ("Science" against "Sciences") is the shared change, next.
