@@ -133,21 +133,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false,
-  "gaps": [
-   {
-    "gap": "lists_not_closed",
-    "label": "A choice list prints no unit figure of its own, one that depends on another choice, or also takes courses from another list, so the lists alone cannot add the program's units.",
-    "words": "Catalog states the required number of restricted elective units depends on the number of work experience units completed, and adds 'Additional restricted electives as needed.' before the 63-unit degree minimum; read as restricted electives within the major, not open electives, so electives_fill_degree is false. | Concentration areas read as 'all' listed courses (ACCT 002 or HOSP 002 counted as one choice in Accounting). Printed concentration totals may not match the sum of listed course units (e.g., e-business lists four courses but states 11; Hospitality lists five courses but states 14; Accounting states 20); reviewer should check."
-   }
-  ],
-  "confidence": {
-   "unit_arithmetic": 30,
-   "course_list_match": 100,
-   "ge_pattern": 100,
-   "catalog_year": 100,
-   "source": 80
-  }
+  "pass": false
  },
  "record": {
   "program": {

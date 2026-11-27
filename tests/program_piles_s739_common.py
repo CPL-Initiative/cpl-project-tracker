@@ -53,13 +53,15 @@ class Checks:
 
 def run(W, *, rows: dict, held: dict, scores: dict, day: str, boundaries: int, prior_held: set | None = None,
         own: dict | None = None, t: Checks | None = None, rolled_back: dict | None = None,
-        refiled: dict | None = None) -> Checks:
+        refiled: dict | None = None, later_flags: dict | None = None) -> Checks:
     """rows: {key: its kind, or B.PASSES}; held: {key: words its reason carries}; scores: {kind: its unit-arithmetic
     score}; boundaries: the count of boundary readings; prior_held: the earlier receipt's held keys (default: read
     from W.held_by); own: {key: the own-page guard's form} for rows read from a shared page; rolled_back: {key:
     its kind} for a row the applied plan wrote and a later rollback took back (it is in held too); refiled: {key:
     the kind a later plan files on a rolled-back row} (S740's s740b on Orange Coast 41373): the committed record
-    then carries that kind alone, over this receipt's before-image."""
+    then carries that kind alone, over this receipt's before-image; later_flags: {key: {program field: value}} for a
+    row a later reconcile step re-filed with a flag on its program (S741's degree floor on Copper Mountain 16657):
+    the committed record is then the receipt's before-image with those fields alone added, in either state."""
     t = t or Checks()
     check = t.check
     receipt = W.receipt_path(day)
@@ -165,7 +167,12 @@ def run(W, *, rows: dict, held: dict, scores: dict, day: str, boundaries: int, p
         check(img["checks"] == r["after_image"]["checks"],
               "%s: the load posts the receipt's after-image" % r["control_number"])
         check((img["checks"].get("gaps") or []) == want, "%s: the image carries its gap, or none" % r["control_number"])
-        check(img["record"] == r["before_image"]["record"], "%s: the record is unchanged" % r["control_number"])
+        flags = (later_flags or {}).get(r["control_number"]) or {}
+        rec_now = dict(img["record"], program={k: v for k, v in img["record"]["program"].items()
+                                               if not (k in flags and v == flags[k]
+                                                       and k not in r["before_image"]["record"]["program"])})
+        check(rec_now == r["before_image"]["record"],
+              "%s: the record is unchanged%s" % (r["control_number"], ", a later step's flag aside" if flags else ""))
         bc, ac = r["before_image"]["checks"], r["after_image"]["checks"]
         if r["moves_to"] == B.PASSES:
             check(not B.F.row_passes(bc) and B.F.row_passes(ac) and not bc.get("gaps") and not ac.get("gaps"),
