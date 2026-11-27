@@ -1207,6 +1207,11 @@ jobs:
       - name: Cheap piles S741 at Contra Costa (the live read as the live-run proof, the plan)
         if: matrix.shard == 2
         run: python3 tests/program_piles_s741_contracosta_test.py
+      # S741's page pins: American River's Level I and Level II windows each hold their own heading (cut by until),
+      # and each site pin (Orange Coast, Fullerton, El Camino, Butte) is its program's own, unfiled address.
+      - name: Page pins S741 (American River's two windows, the site pins)
+        if: matrix.shard == 1
+        run: python3 tests/program_requirements_pins_s741_test.py
       # Discontinued programs (S680; Sam, 2026-11-17 on #3480): a program's own catalog section marks it,
       # or a prior year prints it and this year does not; flagged out of the gap, never deleted. Pure stdlib.
       - name: Discontinued programs (own-section mark, out of the gap, the file is current)
