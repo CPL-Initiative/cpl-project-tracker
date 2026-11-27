@@ -124,3 +124,6 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   18,970 records: not proposed).
 - 13:24Z: no person's check at either college (live read 13:23Z); the rereads dispatched on `claude/s742-keys`, each in
   its own college's concurrency group: Cosumnes River force 45972311864, San Bernardino Valley force 46000859685.
+- 13:28Z: both rereads posted. Live at 13:28Z: Cosumnes River 33542 passing at 45972311864 (from its named gap
+  `option_lists_read_apart`: an upgrade, not a new record), 31055 and 38017 as kept; San Bernardino Valley 17829 at
+  46000859685, incomplete, for plan s742k3.
