@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Marketing",
  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
- "source_url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3551&print",
- "record_shape": 5,
+ "source_url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3552&print",
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6105,
+  "input_tokens": 6262,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6105,
-    "output_tokens": 986,
+    "input_tokens": 6262,
+    "output_tokens": 1101,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,53 +30,53 @@
     "model": null
    }
   ],
-  "output_tokens": 986,
+  "output_tokens": 1101,
   "output_tokens_details": {
-   "thinking_tokens": 658
+   "thinking_tokens": 408
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.04414,
- "ms": 9603,
- "seconds": 9.9,
+ "cost_usd": 0.04707,
+ "ms": 10379,
+ "seconds": 24.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 5,
    "listed": 5,
-   "share": 0.0,
-   "missing": [
-    "BUS108",
-    "BUS110",
-    "BUS111",
-    "BUS112",
-    "BUS113"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "BUSINESS124"
+   ],
+   "flagged": [
+    "BUSINESS124"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    15.0,
+    15.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    15.0,
+    15.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -93,24 +93,28 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 6,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Marketing, AS",
+   "section_heading": "Marketing Certificate of Achievement",
    "measure": "units",
    "total_units": {
+    "min": 15,
+    "max": 15
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "open_elective_units": null,
    "ge_pattern": null,
    "degree_total": {
     "min": null,
@@ -122,34 +126,92 @@
    },
    "electives_fill_degree": false,
    "outcomes": [],
-   "careers": []
+   "careers": [
+    "marketing",
+    "advertising",
+    "product management",
+    "sales",
+    "brand management",
+    "publicity"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "BUS 108",
-    "why": "named only in the A.S. section; certificate section not in the text"
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BUS 108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 113",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "BUS 110",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "BUS 111",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "BUS 112",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "BUS 113",
-    "why": "named only in the A.S. section; certificate section not in the text"
+    "name": "Advised courses (program description)",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "Business 124",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
    }
   ],
-  "notes": []
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The description advises students anticipating employment with large businesses to take Business 112 (already a required course) and those interested in smaller enterprises to complete Business 124. Business 124 is not in the required list or the closed list. It is recorded as a recommended course with no units printed. This advisory text may be outdated; a reviewer should check it.",
+   "A minimum of 9 units must be completed at El Camino College (residency requirement).",
+   "The catalog prints no program learning outcomes in this text.",
+   "The Total Units: 15 printed under Required Courses is recorded as total_units, not as a block stated total."
+  ]
  },
- "extracted_run": 45768189197,
- "read_run": "38631686677"
+ "extracted_run": "46007782666",
+ "catalog_year": "2026-2027"
 }
