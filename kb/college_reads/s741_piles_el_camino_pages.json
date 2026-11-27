@@ -1,0 +1,47 @@
+{
+ "_readme": "S741, lane 2's cheap piles (2026-11-27). Four El Camino records hold on what their pages print. 19883 (Photography certificate) was read from the Photography A.S. page, which prints no certificate section; Programs of Study lists a 'Photography Certificate of Achievement' page of its own, which this read follows. 31319 (Commercial Music certificate): 19 against the printed 20. 42541 (Business Administration 2.0 AS-T): 27-30 against the printed 28-30. 19857 (Architecture certificate): 33 against the printed 36. total_differs is filed only from a page read (kb/program_total_differs.json). This read prints each page as the capture reads it, so a session can read each list's courses, units and figures and the total line word for word. Five loads, no model call, nothing written.",
+ "college": "El Camino College",
+ "http_hosts": {
+  "catalog.elcamino.edu": "the registry's catalog address is http://catalog.elcamino.edu/, and the harvest's capture reads every program page at that address, so each filed source and record carries it; this read asks for the same pages as filed"
+ },
+ "questions": {
+  "photography_certificate": "The address and text of the Photography Certificate of Achievement's own page: its heading, courses with units and total.",
+  "figures": "Each list's courses with their printed units, each list's printed figure and the total line, word for word."
+ },
+ "keywords": [
+  "Total[^\\n]{0,80}",
+  "\\d+(?:-\\d+)? units?\\b[^\\n]{0,60}",
+  "Certificate of Achievement[^\\n]{0,120}"
+ ],
+ "pages": [
+  {
+   "url": "http://catalog.elcamino.edu/content.php?catoid=13&navoid=886",
+   "answers": [
+    "photography_certificate"
+   ],
+   "links": "Photography|Commercial Music|Architecture",
+   "follow": "Photography Certificate"
+  },
+  {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3634&print",
+   "answers": [
+    "figures"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3555&print",
+   "answers": [
+    "figures"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3524&print",
+   "answers": [
+    "figures"
+   ],
+   "capture_view": true
+  }
+ ]
+}

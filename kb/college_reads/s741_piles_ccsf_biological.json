@@ -1,0 +1,25 @@
+{
+ "_readme": "S741, lane 2's cheap piles (2026-11-27). City College of San Francisco 19037 (Biological Sciences A.S.) was read from PDF p.207, which its note says reads as Liberal Arts and Sciences: Emphasis in Science and Mathematics, 17954's own section (read from p.206). This read prints pp.205-208 whole and every page between pp.180 and 260 that names 'Biological Sciences', so a session can see whether the 2026-2027 catalog prints a Biological Sciences A.S. section at all, and where. One load. No model call, nothing written.",
+ "college": "City College of San Francisco",
+ "questions": {
+  "biological_sciences": "Whether the catalog prints a 'Biological Sciences' A.S. degree section (heading, lists, total), and on which page; and the Emphasis in Science and Mathematics section's lists and total on pp.206-207."
+ },
+ "keywords": [
+  "Biological Sciences[^\\n]{0,80}",
+  "Emphasis in Science and Mathematics[^\\n]{0,80}",
+  "Total[^\\n]{0,40}"
+ ],
+ "pdf_span": [
+  180,
+  260
+ ],
+ "pdf_page_cap": 10,
+ "pages": [
+  {
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf",
+   "answers": [
+    "biological_sciences"
+   ]
+  }
+ ]
+}

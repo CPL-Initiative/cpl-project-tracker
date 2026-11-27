@@ -1,0 +1,27 @@
+{
+ "_readme": "S741, lane 2's cheap piles (2026-11-27). Shasta 18625 (General Studies - Coastal Oceanographic Studies A.S., read from PDF p.78) holds as not the program's own: its record prints the 'Emphasis in Coastal Science Technician' list, its note puts its heading on p.77, and S740's read (45837455365) found no 'Coastal Oceanographic' words between pp.74 and 100 on the pages it printed. This read prints pp.76-79 whole, so a session can see which program heading sits above the list on p.78 and whether the catalog prints this program at all. One load, no model call, nothing written.",
+ "college": "Shasta College",
+ "questions": {
+  "coastal_heading": "Which program heading sits above the 'Emphasis in Coastal Science Technician' list on p.78, with its SC Program number, total and emphases."
+ },
+ "keywords": [
+  "Emphasis in[^\\n]{0,80}",
+  "SC Program[^\\n]{0,40}",
+  "General Studies[^\\n]{0,80}",
+  "Geoscience[^\\n]{0,80}",
+  "Total[^\\n]{0,60}"
+ ],
+ "pdf_span": [
+  76,
+  79
+ ],
+ "pdf_page_cap": 4,
+ "pages": [
+  {
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf",
+   "answers": [
+    "coastal_heading"
+   ]
+  }
+ ]
+}

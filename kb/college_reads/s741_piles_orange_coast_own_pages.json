@@ -1,0 +1,32 @@
+{
+ "_readme": "S741, lane 2's cheap piles (2026-11-27). Two Orange Coast records were read from another program's page. 08663 (Food and Beverage Management certificate) was read from the Food and Beverage Management, Advanced certificate's page (43362's); 08626 (Powerplant A.S.) from the Airframe & Powerplant A.S. page (f-occ-08626-wrong-page-s727). Each Orange Coast program page prints its Control Number, so this read prints the two department pages with their program links and follows the links that could be each program's own page, as the capture reads a page. Up to twelve loads. No model call, nothing written.",
+ "college": "Orange Coast College",
+ "questions": {
+  "own_page_08663": "Which page prints Control Number 08663 (Food and Beverage Management, Certificate of Achievement), with its lists and total.",
+  "own_page_08626": "Which page prints Control Number 08626 (Powerplant, Associate in Science), with its lists and total."
+ },
+ "keywords": [
+  "Control Number[^\\n]{0,40}",
+  "[Tt]otal[^\\n]{0,60}[Uu]nits?[^\\n]{0,30}",
+  "Certificate of Achievement[^\\n]{0,60}",
+  "Associate in Science[^\\n]{0,60}"
+ ],
+ "pages": [
+  {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/food-beverage-management/",
+   "answers": [
+    "own_page_08663"
+   ],
+   "links": "food-beverage",
+   "follow": "food-beverage-management/[a-z-]*(coa|certificate)"
+  },
+  {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-maintenance-technology/",
+   "answers": [
+    "own_page_08626"
+   ],
+   "links": "aviation-maintenance-technology/",
+   "follow": "aviation-maintenance-technology/[a-z-]*powerplant"
+  }
+ ]
+}
