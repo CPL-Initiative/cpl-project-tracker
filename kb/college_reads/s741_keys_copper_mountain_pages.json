@@ -1,0 +1,30 @@
+{
+ "_readme": "S741 lane 1 (keys): Copper Mountain College's six records S740 left held (History A.A. 43854; Vocational Nursing A.S. 14737 and certificate 20094; Fire Technology A.S. 14751; Elementary Teacher Education A.A.-T 45594; General Business A.S. 14710), each read 2026-11-26 from the catalog's reissue (run 45855512160). This prints every page of the programs section that prints a major total or a degree's minimum units, line for line, so a session can quote each program's own figures (the total it prints, what its printed units add to, and how it words the degree's 60 or 74) for a named gap or a reconcile step, and can read the same words on every other degree page before any step is written. One load. No model call, nothing written.",
+ "college": "Copper Mountain College",
+ "questions": {
+  "printed_figures": "For each program page: the total it prints for the major, the units printed beside each course and list, and how the page words the degree's units (a minimum, a total, electives as needed)."
+ },
+ "keywords": [
+  "Total Units for the Major",
+  "MINIMUM\\s+(?:TRANSFERABLE|DEGREE)\\s+UNITS",
+  "VOCATIONAL NURSING",
+  "GENERAL BUSINESS",
+  "FIRE TECHNOLOGY",
+  "ELEMENTARY TEACHER EDUCATION"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "printed_figures"
+   ],
+   "why": "43854 14737 20094 14751 45594 14710",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf"
+  }
+ ],
+ "pdf_span": [
+  56,
+  125
+ ],
+ "pdf_page_cap": 80,
+ "pdf_unfolded": true
+}
