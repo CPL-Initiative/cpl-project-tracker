@@ -130,3 +130,11 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   or change an apply, under Sam's cost rules of 2026-11-25).
 - 07:34Z: #3898 merged (`de24433f`, confirmed on `origin/main`; `test` green on `9594732f`, `main` unmoved since its
   update). The census dispatched on `main`.
+- 07:33Z: the Copper Mountain reread 45959225234 (receipt `e9d7729c`): live at 07:35Z, 43854 and 14751 equal at
+  45957316339 (passing); 16657 keeps `prerequisites_counted`; 14710, 14737 and 45594 at the reconciled run with no
+  gap, for s741k2's rebuild. Records collected: 6.
+- 07:35Z: s741k4's reader (Sonnet): APPLY (Mechatronics 36 against each award's own 37-unit major, unlike Palomar's
+  case; ASL 18 against 27; 43134 stays out). MINOR for the follow-up: 38591's notes say its section is cut off, which
+  its page contradicts. Clean md5 pre-read 3 of 3; `.apply` pushed (`4e7f4b4e`), migrate 45959650737 queued.
+- 07:39Z: the census after the display build, 45959377512 on `main` (`473dc192`, live at 07:38Z): 15,642 of 20,282
+  pass, 3,996 have no passing record, 644 collected with a named gap (6 moved since 01:12Z: tonight's 6).
