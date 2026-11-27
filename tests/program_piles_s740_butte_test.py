@@ -54,9 +54,12 @@ check(e["words"] in words and e["also_words"] in words and not W.shared_with("33
 
 f = W.load("01312")
 a = f["score"]["arithmetic"]
+# S742's plan s742a files 01312 as degree_electives_not_printed (S721's own kind for it, on main since): it carries
+# no gap as s740h left it, or that kind alone.
 check(B.same(a["computed"], [60, 61]) and B.same(a["stated"], [62, 69]) and a["against"] == "degree"
-      and not f["score"].get("gaps") and NG.units_within_printed_range(f) is None,
-      "01312: its degree reads 60-61 below the map's 62-69, and it carries no gap")
+      and [x["gap"] for x in f["score"].get("gaps") or []] in ([], ["degree_electives_not_printed"])
+      and NG.units_within_printed_range(f) is None,
+      "01312: its degree reads 60-61 below the map's 62-69, and it carries no gap or S742's kind alone")
 f = W.load("14583")
 check(f["score"]["arithmetic"]["status"] == "incomplete" and "43185" in W.shared_with("14583")
       and not f["score"].get("gaps"),

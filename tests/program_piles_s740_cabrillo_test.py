@@ -107,7 +107,10 @@ for cn in ("06352", "06380", "06381", "44992"):
     check(not f["score"].get("gaps") and W.gap_noted(f) is None, "%s: it carries no gap and no entry names one" % cn)
 f = W.load("45306")
 a = f["score"]["arithmetic"]
-check(B.same(a["computed"], [14, 18]) and B.same(a["stated"], [16, 16]) and not f["score"].get("gaps")
+# S742's plan s742a files 45306 as lists_not_closed (its Electives figure depends on the other list's): it carries no
+# gap as s740d left it, or that kind alone.
+check(B.same(a["computed"], [14, 18]) and B.same(a["stated"], [16, 16])
+      and [x["gap"] for x in f["score"].get("gaps") or []] in ([], ["lists_not_closed"])
       and NG.units_within_printed_range(f) is None and NG.figures_differ_fails(f) is not None,
       "45306: its lists add to 14-18 around the printed 16, and neither figures kind is true of it")
 f = W.load("11293")
