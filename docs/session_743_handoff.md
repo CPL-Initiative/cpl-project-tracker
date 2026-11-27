@@ -245,3 +245,14 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   `4d394536`. Held by `readers`: El Camino 19857 (its page's figures disagree, eight unlisted courses, and the capture
   ties it to the A.S. page), Reedley 30465 (a page read and a pin), Los Angeles Pierce 19181 (number runs), Grossmont
   21402 (a named gap with no record; its text is cut at "Certificate o").
+- 14:43Z: `piles` final (heads: `claude/s742-piles` `99dfe1bd`, `-butte` `a62633da`, `-sbcc` `5cd1912b`, `-fullerton`
+  `9768ce86`, `-cabrillo` `a186f665` with its free reconcile 46015798176 running). Orange Coast's free capture
+  45999669017 binds both pins (08663 at coverage 0.6, 08626 at 1.0 with "held_no_gain"): **DECIDED**
+  `d-orange-coast-read-parked-s742`, the paid read (only 08663,08626, force 08626, about $0.15) is the next session's.
+  Held by `piles` with reasons in its final stop: Butte 14583, Santa Barbara City 43553 and East Los Angeles 31017 posted
+  and still failing; Santa Monica 43767 (live on 37548804006, a run main never filed: a person compares); Cabrillo 11293;
+  Contra Costa 33660; coverage fails at Los Angeles Trade-Technical 31280 and 45285, Santa Barbara City 30746, Fullerton
+  18166, 18749 and 36863, City College of San Francisco 32079 and 41315, Orange Coast 43100; not the program's own: Long
+  Beach City 37213, City College of San Francisco 19037; a reread or scorer reading: Gavilan 45357, East Los Angeles
+  41231, College of the Sequoias 06770 and 45030, Orange Coast 03993, 08670, 36032, 42331.
+- 14:44Z: the checkpoint-docs worker (Sonnet) started; the conductor stops writing this file (one writer).
