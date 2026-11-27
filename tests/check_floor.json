@@ -172,6 +172,7 @@
     "cpl_pathway_ccr.test.js": 21,
     "cpl_pathways.test.js": 143,
     "cpl_pathways_ccr_render.test.js": 21,
+    "cpl_pathways_compact_cards.test.js": 46,
     "cpl_pathways_membership_render.test.js": 19,
     "cpl_pathways_program_ladders.test.js": 17,
     "cpl_pathways_together_alternatives.test.js": 7,

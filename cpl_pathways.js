@@ -1506,17 +1506,77 @@
     ".cplpw-rroe { font-size:.72rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color: var(--seal-blue-text); background: var(--surface-muted); border-radius:999px; padding:2px 9px; white-space:nowrap; }",
     ".cplpw-rrule { font-size:.88rem; color: var(--text-muted); }",
     ".cplpw-rbu { font-size:.88rem; font-weight:600; color: var(--text-strong); font-variant-numeric:tabular-nums; white-space:nowrap; }",
-    ".cplpw-rtiles { list-style:none; margin:0; display:grid; grid-template-columns:repeat(auto-fill, minmax(190px, 1fr)); gap:8px; padding:12px; }",
-    ".cplpw-rtile { border:1px solid var(--border); border-radius:8px; padding:9px 10px; background: var(--surface-subtle); display:grid; gap:3px; min-width:0; align-content:start; }",
-    ".cplpw-rtile.here { border-color: var(--cobalt); box-shadow: inset 4px 0 0 var(--cobalt); background: var(--surface-opaque); }",
-    ".cplpw-rtile .code { font-weight:700; color: var(--text-strong); font-variant-numeric:tabular-nums; }",
-    ".cplpw-rtile .ttl { font-size:.88rem; color: var(--text-body); overflow-wrap:anywhere; }",
-    ".cplpw-rtile .u { font-size:.8rem; color: var(--text-muted); font-variant-numeric:tabular-nums; }",
-    ".cplpw-rmark { font-size:.8rem; color: var(--text-body); overflow-wrap:anywhere; }",
-    ".cplpw-rmark b { font-size:.72rem; letter-spacing:.04em; text-transform:uppercase; color: var(--seal-blue-text); margin-right:4px; }",
-    ".cplpw-rmark.lead b { color: var(--text-muted); }",
-    ".cplpw-getcredit a { color: var(--seal-blue-text); text-decoration: underline; font-weight:600; white-space:nowrap; display:inline-block; min-height:24px; line-height:24px; }",
-    ".cplpw-getcredit .none { color: var(--text-muted); font-style: italic; }",
+    ".cplpw-rtiles { list-style:none; margin:0; display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%, 232px), 1fr)); gap:12px; padding:12px; align-items:start; }",
+    /* The compact card (Sam, 2026-11-27): one size for every card, two rows. */
+    ".cplpw-rtile { position:relative; box-sizing:border-box; height:5.75rem; border:1px solid var(--border); border-radius:12px; padding:10px 14px; background: var(--surface-opaque); display:flex; flex-direction:column; gap:6px; min-width:0; }",
+    ".cplpw-rtile.here { border-color: var(--cobalt-on-dark); }",
+    ".cplpw-rtile.open { border:2px solid var(--seal-blue-text); padding:9px 13px; }",
+    "@media (prefers-reduced-motion: no-preference) { .cplpw-rtile { transition:box-shadow .15s ease; } }",
+    ".cplpw-rtile:hover { box-shadow:0 2px 10px color-mix(in srgb, var(--seal-blue-text) 12%, transparent); }",
+    ".cplpw-rtop { display:flex; flex-wrap:nowrap; justify-content:space-between; align-items:center; gap:8px; white-space:nowrap; min-width:0; }",
+    ".cplpw-rcode { font:inherit; background:none; border:0; padding:0; min-height:24px; cursor:pointer; display:flex; flex-wrap:nowrap; align-items:baseline; gap:8px; min-width:0; overflow:hidden; white-space:nowrap; text-align:left; color: var(--seal-blue-text); }",
+    ".cplpw-rcode .code { font-weight:700; font-size:16px; color: var(--seal-blue-text); text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; font-variant-numeric:tabular-nums; flex:0 0 auto; }",
+    ".cplpw-rcode:hover .code { text-decoration-thickness:2px; }",
+    ".cplpw-rcode .u { font-size:13px; color: var(--text-muted); font-variant-numeric:tabular-nums; overflow:hidden; text-overflow:ellipsis; min-width:0; }",
+    ".cplpw-rtile .ttl { display:-webkit-box; -webkit-line-clamp:2; line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; font-size:14px; line-height:1.3; color: var(--text-body); overflow-wrap:anywhere; }",
+    ".cplpw-rtile .ttl .or { color: var(--text-muted); }",
+    /* The CPL control: the word, then the MAP pointer 2px later, one underline under both; no border, no fill. */
+    ".cplpw-rcpl { flex:0 0 auto; box-sizing:border-box; height:28px; min-width:24px; display:inline-flex; align-items:center; justify-content:center; white-space:nowrap; font:inherit; font-size:16px; line-height:1; font-weight:400; letter-spacing:0; text-transform:uppercase; text-decoration:none; padding:0 0 2px 10px; border:0; background:none; color: var(--seal-blue-text); cursor:pointer; }",
+    ".cplpw-rcpl .ul { display:inline-flex; align-items:center; gap:2px; border-bottom:1px solid var(--seal-blue-text); padding-bottom:2px; }",
+    ".cplpw-mapptr { flex:0 0 auto; display:block; transform:rotate(25deg); }",
+    ".cplpw-rcpl:hover .ul { border-bottom-width:2px; padding-bottom:1px; }",
+    ".cplpw-rcode:focus-visible, .cplpw-rcpl:focus-visible, .cplpw-rgo:focus-visible, .cplpw-cside-close:focus-visible, .cplpw-gbar-close:focus-visible, .cplpw-cside-grip:focus-visible { outline:3px solid var(--focus-ring, var(--cobalt)); outline-offset:2px; }",
+    ".cplpw-rtip { position:absolute; z-index:4; top:2.6rem; left:12px; right:12px; background: var(--seal-blue); color: var(--on-seal-blue); border-radius:8px; padding:10px 12px; font-size:13px; line-height:1.4; box-shadow:0 6px 18px color-mix(in srgb, var(--seal-blue) 25%, transparent); display:flex; flex-direction:column; gap:4px; white-space:normal; }",
+    ".cplpw-rtip[hidden] { display:none; }",
+    ".cplpw-rtip ul { list-style:none; margin:0; padding:0; display:grid; gap:4px; }",
+    ".cplpw-rtip .h, .cplpw-rtip .h2 { font-size:11px; letter-spacing:.06em; text-transform:uppercase; }",
+    ".cplpw-rtip .h2 { text-transform:none; letter-spacing:0; font-size:12px; }",
+    ".cplpw-rmore[hidden] { display:none; }",
+    ".cplpw-rmore { display:grid; gap:10px; min-width:0; }",
+    ".cplpw-rmark { font-size:.85rem; color: var(--text-body); overflow-wrap:anywhere; }",
+    ".cplpw-rmark b { display:block; font-size:12px; letter-spacing:.06em; text-transform:uppercase; color: var(--seal-blue-text); margin-bottom:2px; }",
+    ".cplpw-rmark.lead b { color: var(--mustard-text); }",
+    ".cplpw-rhere h4, .cplpw-cside-body .desc h4 { margin:0 0 6px; font-size:12px; letter-spacing:.06em; text-transform:uppercase; color: var(--seal-blue-text); }",
+    ".cplpw-cside-body .desc h4 { color: var(--text-muted); }",
+    ".cplpw-rhere ul { list-style:none; margin:0; padding:0; display:grid; gap:10px; }",
+    ".cplpw-rhere li { display:flex; flex-direction:column; gap:2px; padding-bottom:10px; border-bottom:1px solid var(--border); }",
+    ".cplpw-rhere .k { font-size:13px; color: var(--text-muted); overflow-wrap:anywhere; }",
+    ".cplpw-rgo, .cplpw-cside-close, .cplpw-gbar-close { align-self:flex-start; font:inherit; font-size:14px; font-weight:600; background:none; border:0; padding:0; min-height:24px; color: var(--accent-link); text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; cursor:pointer; text-align:left; }",
+    ".cplpw-cside-close, .cplpw-gbar-close { font-weight:400; flex:0 0 auto; }",
+    ".cplpw-rgo:hover, .cplpw-cside-close:hover, .cplpw-gbar-close:hover { text-decoration-thickness:2px; }",
+    /* The course sidebar, beside the view (Sam's sidebar rules, 2026-11-22 to 11-24). */
+    ".cplpw-rsplit { display:flex; gap:16px; align-items:flex-start; min-width:0; }",
+    ".cplpw-rmain { flex:1 1 0; min-width:0; }",
+    ".cplpw-cside { position:sticky; top:8px; flex:0 0 auto; width:var(--cplpw-side-w, 400px); max-width:calc(100% - 376px); box-sizing:border-box; max-height:calc(100vh - 16px); display:flex; flex-direction:column; background: var(--surface-opaque); color: var(--text-body); border:1px solid var(--border); border-radius:12px; }",
+    ".cplpw-cside-grip { position:absolute; left:-7px; top:0; bottom:0; width:12px; cursor:col-resize; touch-action:none; display:flex; align-items:center; justify-content:center; }",
+    ".cplpw-cside-grip::after { content:''; width:4px; height:44px; border-radius:2px; background: var(--border-strong); }",
+    ".cplpw-cside-head { flex:0 0 auto; display:flex; justify-content:space-between; align-items:baseline; gap:12px; padding:14px 18px; border-bottom:1px solid var(--border); }",
+    ".cplpw-cside-head .w { display:flex; flex-wrap:wrap; gap:2px 8px; align-items:baseline; min-width:0; }",
+    ".cplpw-cside-head h3 { margin:0; font-size:16px; font-weight:700; color: var(--seal-blue-text); }",
+    ".cplpw-cside-head h3:focus { outline:none; }",
+    ".cplpw-cside-head .u { font-size:13px; color: var(--text-muted); }",
+    ".cplpw-cside-body { flex:1 1 auto; overflow-y:auto; padding:14px 18px 18px; display:grid; gap:16px; align-content:start; font-size:14px; line-height:1.45; }",
+    ".cplpw-cside-body p { margin:0; overflow-wrap:anywhere; }",
+    ".cplpw-cside-body .grp { color: var(--text-muted); }",
+    "@media (max-width: 899px) { .cplpw-cside { position:fixed; z-index:9001; top:0; right:0; bottom:0; max-height:none; max-width:100vw; width:min(100vw, var(--cplpw-side-w, 400px)); border-radius:0; } .cplpw-cside-grip { left:0; } }",
+    /* The bottom bar: the college's landing page in a frame, below the view (Sam, 2026-11-24 and 11-27). */
+    ".cplpw-gbar { position:sticky; bottom:0; z-index:5; margin-top:16px; background: var(--surface-opaque); color: var(--text-body); border-top:2px solid var(--seal-blue-text); box-shadow:0 -6px 18px color-mix(in srgb, var(--seal-blue) 12%, transparent); display:flex; flex-direction:column; }",
+    ".cplpw-gbar-top { display:flex; flex-wrap:wrap; gap:6px 18px; align-items:baseline; justify-content:space-between; padding:12px 16px; border-bottom:1px solid var(--border); }",
+    ".cplpw-gbar-top .w { display:flex; flex-wrap:wrap; gap:4px 12px; align-items:baseline; min-width:0; }",
+    ".cplpw-gbar-top h3 { margin:0; font-size:16px; font-weight:700; color: var(--seal-blue-text); }",
+    ".cplpw-gbar-top h3:focus { outline:none; }",
+    ".cplpw-gbar-top .what { font-size:14px; overflow-wrap:anywhere; }",
+    ".cplpw-gbar-top .via { font-size:13px; color: var(--text-muted); overflow-wrap:anywhere; }",
+    ".cplpw-gbar-body { height:clamp(280px, 55vh, 620px); box-sizing:border-box; padding:12px 16px; display:flex; flex-wrap:wrap; gap:16px; overflow-y:auto; background: var(--paper); }",
+    ".cplpw-gbar-body .frame { flex:3 1 420px; min-width:0; min-height:240px; display:flex; }",
+    ".cplpw-gbar-body iframe { flex:1 1 auto; width:100%; min-height:240px; border:1px solid var(--border); border-radius:8px; background: var(--surface-opaque); }",
+    ".cplpw-gbar-body .frame p { margin:0; align-self:flex-start; font-size:14px; }",
+    ".cplpw-gbar-body .list { flex:1 1 220px; min-width:0; font-size:14px; line-height:1.45; }",
+    ".cplpw-gbar-body .list h4 { margin:0 0 6px; font-size:12px; letter-spacing:.06em; text-transform:uppercase; color: var(--seal-blue-text); }",
+    ".cplpw-gbar-body .list ul { list-style:none; margin:0; padding:0; display:grid; gap:6px; }",
+    ".cplpw-gbar-body .k { color: var(--text-muted); }",
+    "@media (max-width: 560px) { .cplpw-rtiles { grid-template-columns:1fr; } .cplpw-gbar-body { height:70vh; } }",
+    "@media print { .cplpw-cside, .cplpw-gbar, .cplpw-rtip { display:none !important; } }",
     ".cplpw-outchip { display:inline-block; margin-right:8px; border:0; background:none; padding:0; min-height:24px; font:inherit; font-size:.8rem; font-weight:600; color: var(--accent-link); text-decoration:underline; text-underline-offset:3px; cursor:pointer; }",
     ".cplpw-outinline { display:block; margin-top:6px; padding:8px 10px; border-top:1px dashed var(--border-strong); font-size:.85rem; min-width:0; overflow-wrap:anywhere; }",
     ".cplpw-outinline .cplpw-outblock h3 { font-size:.9rem; margin:4px 0; }",
@@ -1989,28 +2049,33 @@
     return { label: "Choose from a list", rule: choose };
   }
 
-  /* Get credit (Sam, 2026-11-27): a "CPL here" course links to the college's MAP landing page opened on the
-     course's exhibit, ?Exhibit=<MAP ID>, which MAP's page puts in its search box and lists that exhibit's courses
+  /* Get credit (Sam, 2026-11-27): a "CPL here" course opens the college's MAP landing page on the course's exhibits,
+     ?Exhibit=<MAP ID>[,<MAP ID>...], which MAP's page puts in its search box and lists those exhibits' courses
      (verified live S744 at Cerritos: MAPICA-RA4P-1-001 lists IWAP 40.07 and 40.50). A course code or a title in
-     that parameter does nothing, nor does a code MAP's pattern refuses (EXHIBIT_CODE), so such a course opens the
-     landing page alone. The landing page is the only target, never the MAP dashboard; a college
-     with no landing page on file says so, with no link in its place. The URLs come from map_college_contacts_pub. */
+     that parameter does nothing, and MAP drops the whole parameter when any one value fails its pattern
+     (EXHIBIT_CODE), so only passing codes are sent, and with none left the landing page opens alone. The landing page
+     is the only target, never the MAP dashboard; a college with no landing page on file says so, with no link in its
+     place. The URLs come from map_college_contacts_pub. Since the compact cards (Sam, 2026-11-27: "all links to lp go
+     to bottom bar iframe of the lp") the page opens in the bottom bar below the view (openGetCreditBar). */
   var landingPages = { map: null, loading: null };
   /* MAP's own test for the parameter (its landing page bundle, read S744): a value that fails it, or any one of a
      comma list, makes the page drop the parameter, so a code holding "&", "--" or "(" is never sent. */
   var EXHIBIT_CODE = /^[A-Za-z0-9]+(?:-[A-Za-z0-9]+){2,}$/;
-  function getCreditExhibit(here) {
-    var ex = (here && here.exhibits) || [];
-    for (var i = 0; i < ex.length; i++) {
-      var id = String((ex[i] && ex[i].exhibit) || "").trim();
-      if (EXHIBIT_CODE.test(id)) return id;
-    }
-    return "";
+  var EXHIBIT_MAX = 10;
+  /* The exhibit codes MAP will take, in order, once each, at most EXHIBIT_MAX. */
+  function getCreditCodes(exhibits) {
+    var out = [];
+    (exhibits || []).forEach(function (e) {
+      var id = String((e && e.exhibit) || "").trim();
+      if (EXHIBIT_CODE.test(id) && out.indexOf(id) < 0 && out.length < EXHIBIT_MAX) out.push(id);
+    });
+    return out;
   }
-  function getCreditUrl(landing, exhibit) {
+  function getCreditUrl(landing, codes) {
     if (!landing) return "";
-    if (!exhibit) return landing;
-    return landing + (landing.indexOf("?") >= 0 ? "&" : "?") + "Exhibit=" + encodeURIComponent(exhibit);
+    var list = Array.isArray(codes) ? codes : (codes ? [codes] : []);
+    if (!list.length) return landing;
+    return landing + (landing.indexOf("?") >= 0 ? "&" : "?") + "Exhibit=" + list.map(encodeURIComponent).join(",");
   }
   function loadLandingPages() {
     if (landingPages.map) return Promise.resolve(landingPages.map);
@@ -2023,27 +2088,344 @@
     }, function () { landingPages.loading = null; return null; });
     return landingPages.loading;
   }
-  /* Fill every Get credit slot under root once the landing pages are read. */
-  function fillGetCredit(root) {
+
+  /* An exhibit in words: its credential (or title), then its CPL type in sentence case. */
+  function exhibitName(e) { return String((e && (e.credential || e.title || e.exhibit)) || "An exhibit"); }
+  function exhibitType(e) {
+    var t = String((e && e.type) || "").trim();
+    return t ? t.charAt(0).toUpperCase() + t.slice(1).toLowerCase() : "";
+  }
+  function exhibitLine(e, cls) {
+    var row = el("li", cls || null, exhibitName(e));
+    var t = exhibitType(e);
+    if (t) row.appendChild(el("span", "k", " · " + t));
+    return row;
+  }
+
+  /* ── The bottom bar: the college's MAP landing page in a frame below the view (Sam, 2026-11-24: "sidebar for narrow
+     work and bottom bar for wide work"; 2026-11-27: "all links to lp go to bottom bar iframe of the lp"). It spans the
+     record view, stays at the bottom of the window while the view scrolls, and its top row (Get credit at the college,
+     the course, Close) stays put. MAP's landing page sends no X-Frame-Options or CSP, so it frames. Beside the frame,
+     the exhibits that give the credit. No landing page on file: the bar says so, with no frame and no other link. */
+  var getBar = { host: null, opener: null };
+  function closeGetCreditBar() {
+    var host = getBar.host;
+    if (!host) return;
+    var bar = host.querySelector(".cplpw-gbar");
+    if (bar) host.removeChild(bar);
+    var back = getBar.opener;
+    getBar.opener = null;
+    if (back && back.hasAttribute && back.hasAttribute("aria-expanded")) back.setAttribute("aria-expanded", "false");
+    if (back && document.contains(back)) { try { back.focus(); } catch (e) { /* best effort */ } }
+  }
+  /* o: { college, what, exhibits, opener } — the bar opens on o.exhibits' passing codes. */
+  function openGetCreditBar(o) {
+    var host = getBar.host;
+    if (!host) return null;
+    var old = host.querySelector(".cplpw-gbar");
+    if (old) host.removeChild(old);
+    if (getBar.opener && getBar.opener !== o.opener && getBar.opener.hasAttribute("aria-expanded")) getBar.opener.setAttribute("aria-expanded", "false");
+    getBar.opener = o.opener || null;
+    if (o.opener) o.opener.setAttribute("aria-expanded", "true");
+    var codes = getCreditCodes(o.exhibits);
+    var bar = el("section", "cplpw-gbar");
+    bar.id = "cplpw-gbar";
+    bar.setAttribute("aria-label", "Get credit at " + o.college + ": " + o.what);
+    var top = el("div", "cplpw-gbar-top");
+    var words = el("div", "w");
+    var h = el("h3", null, "Get credit at " + o.college);
+    h.tabIndex = -1;
+    words.appendChild(h);
+    words.appendChild(el("span", "what", o.what));
+    var via = el("span", "via", codes.length ? "Opened on MAP exhibit " + codes.join(", ")
+      : "MAP cannot open these exhibits by their codes, so the page opens on every course");
+    words.appendChild(via);
+    var close = el("button", "cplpw-gbar-close", "Close");
+    close.type = "button";
+    close.addEventListener("click", closeGetCreditBar);
+    top.appendChild(words);
+    top.appendChild(close);
+    bar.appendChild(top);
+    var body = el("div", "cplpw-gbar-body");
+    var frameBox = el("div", "frame");
+    frameBox.appendChild(el("p", "wait", "Reading " + o.college + "’s landing page…"));
+    body.appendChild(frameBox);
+    var side = el("div", "list");
+    side.appendChild(el("h4", null, "CPL for this course"));
+    var ul = el("ul");
+    (o.exhibits || []).forEach(function (e) { ul.appendChild(exhibitLine(e)); });
+    side.appendChild(ul);
+    body.appendChild(side);
+    bar.appendChild(body);
+    bar.addEventListener("keydown", function (e) { if (e.key === "Escape") closeGetCreditBar(); });
+    host.appendChild(bar);
+    try { h.focus(); } catch (e) { /* best effort */ }
     loadLandingPages().then(function (m) {
-      /* The view may be gone by the time the read answers (a new program chosen, the page closed). */
-      if (!root || typeof root.querySelectorAll !== "function" || !root.ownerDocument || !root.ownerDocument.defaultView) return;
-      try { Array.prototype.forEach.call(root.querySelectorAll(".cplpw-getcredit[data-college]"), function (slot) {
-        if (slot.getAttribute("data-filled")) return;
-        slot.setAttribute("data-filled", "1");
-        if (!m) return;
-        var college = slot.getAttribute("data-college");
-        var landing = m[normCollege(college)];
-        clearNode(slot);
-        if (!landing) { slot.appendChild(el("span", "none", "Landing page not on file")); return; }
-        var a = el("a", null, "Get credit");
-        a.href = getCreditUrl(landing, slot.getAttribute("data-exhibit") || "");
-        a.target = "_blank";
-        a.rel = "noopener";
-        a.setAttribute("aria-label", "Get credit for " + slot.getAttribute("data-code") + " at " + college + " (opens the college's MAP landing page)");
-        slot.appendChild(a);
-      }); } catch (e) { /* the page closed while the read was out; nothing to fill */ }
+      if (!bar.parentNode) return;
+      clearNode(frameBox);
+      if (!m) { frameBox.appendChild(el("p", "none", "The colleges’ landing pages could not be read just now. Close the bar and choose CPL again to retry.")); return; }
+      var landing = m[normCollege(o.college)];
+      if (!landing) { frameBox.appendChild(el("p", "none", o.college + " has no MAP landing page on file, so there is no page to open here.")); return; }
+      var f = document.createElement("iframe");
+      f.src = getCreditUrl(landing, codes);
+      f.title = o.college + "’s CPL page on the MAP platform";
+      f.setAttribute("loading", "lazy");
+      frameBox.appendChild(f);
     });
+    return bar;
+  }
+
+  /* ── The course sidebar: a course card's code opens its details beside the view (Sam's sidebar rules, CLAUDE.md
+     Presentation rules, 2026-11-22 to 11-24): beside, never over, the view giving up the width; it resizes from its
+     inner edge by drag or the arrow keys on the grip, stopping where SIDE_VIEW_MIN of the view is left; its top row
+     with Close stays frozen while the body scrolls; below 900px it covers the view. The card's details (its other
+     marks, Could adopt, the SLOs word, its alternatives) live in the card's hidden region and move into the sidebar
+     while it is open, so each keeps its own listeners; Close moves them back. */
+  var SIDE_MIN = 320, SIDE_VIEW_MIN = 360, SIDE_STEP = 40;
+  var side = { w: 400, split: null, aside: null, opener: null, more: null, tile: null };
+  function sideMax() {
+    var s = side.split;
+    var room = s && s.getBoundingClientRect ? Math.round(s.getBoundingClientRect().width) : 0;
+    return room ? Math.max(SIDE_MIN, room - SIDE_VIEW_MIN - 16) : 0;
+  }
+  function sideSet(w) {
+    var max = sideMax();
+    w = Math.max(SIDE_MIN, Math.round(w));
+    if (max) w = Math.min(w, max);
+    side.w = w;
+    if (side.split) side.split.style.setProperty("--cplpw-side-w", w + "px");
+    var g = side.aside && side.aside.querySelector(".cplpw-cside-grip");
+    if (g) { g.setAttribute("aria-valuenow", String(w)); if (max) g.setAttribute("aria-valuemax", String(max)); }
+  }
+  function sideGrip() {
+    var g = el("span", "cplpw-cside-grip");
+    g.setAttribute("role", "separator");
+    g.setAttribute("tabindex", "0");
+    g.setAttribute("aria-orientation", "vertical");
+    g.setAttribute("aria-label", "Resize the course details");
+    g.setAttribute("aria-valuemin", String(SIDE_MIN));
+    g.setAttribute("aria-valuenow", String(side.w));
+    g.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowLeft") sideSet(side.w + SIDE_STEP);
+      else if (e.key === "ArrowRight") sideSet(side.w - SIDE_STEP);
+      else return;
+      e.preventDefault(); e.stopPropagation();
+    });
+    g.addEventListener("pointerdown", function (e) {
+      if (e.button !== undefined && e.button !== 0) return;
+      e.preventDefault();
+      var x0 = e.clientX, w0 = side.w;
+      try { g.setPointerCapture(e.pointerId); } catch (err) { /* an older engine */ }
+      /* The grip sits on the sidebar's left edge, so a drag to the left widens it. */
+      function move(ev) { sideSet(w0 + (x0 - ev.clientX)); }
+      function up() {
+        document.removeEventListener("pointermove", move);
+        ["pointerup", "pointercancel"].forEach(function (t) { document.removeEventListener(t, up); });
+      }
+      document.addEventListener("pointermove", move);
+      ["pointerup", "pointercancel"].forEach(function (t) { document.addEventListener(t, up); });
+    });
+    return g;
+  }
+  function closeCourseSide(keepFocus) {
+    if (!side.aside || !side.aside.parentNode) return;
+    if (side.more && side.tile) side.tile.appendChild(side.more);
+    side.aside.parentNode.removeChild(side.aside);
+    if (side.split) side.split.classList.remove("open");
+    if (side.tile) side.tile.classList.remove("open");
+    var back = side.opener;
+    side.aside = null; side.more = null; side.tile = null; side.opener = null;
+    if (back) back.setAttribute("aria-expanded", "false");
+    if (!keepFocus && back && document.contains(back)) { try { back.focus(); } catch (e) { /* best effort */ } }
+  }
+  /* COCI's descriptions carry the spreadsheet's carriage returns (_x000D_) and text read as cp1252 once or twice;
+     the common sequences turn back into their characters at display, the stored text untouched. */
+  var MOJIBAKE = [
+    ["Ã¢â‚¬â„¢", "’"], ["Ã¢â‚¬Ëœ", "‘"], ["Ã¢â‚¬Å“", "“"], ["Ã¢â‚¬\u009d", "”"], ["Ã¢â‚¬Â\u009d", "”"],
+    ["Ã¢â‚¬â€œ", "–"], ["Ã¢â‚¬â€\u009d", "—"], ["Ã¢â‚¬Â¦", "…"], ["Ã‚Â", " "],
+    ["â€™", "’"], ["â€˜", "‘"], ["â€œ", "“"], ["â€\u009d", "”"], ["â€“", "–"], ["â€”", "—"], ["â€¦", "…"], ["Â ", " "], ["Â ", " "]
+  ];
+  function cleanDesc(s) {
+    var t = String(s || "").replace(/_x000D_/g, " ");
+    MOJIBAKE.forEach(function (p) { t = t.split(p[0]).join(p[1]); });
+    return t.replace(/ /g, " ").replace(/\s+/g, " ").trim();
+  }
+  /* The course's COCI control number: the display's current version where it names one, else the program's COCI
+     course list (coci_program_courses), read once per record, else that college's row for the code. */
+  var cociCcn = {};
+  function courseCcn(rec, code, info) {
+    if (info && info.coci && info.coci.current_ccn) return Promise.resolve(info.coci.current_ccn);
+    var key = rec.college + "|" + rec.control_number;
+    var want = statKey(code);
+    function pick(rows) {
+      var hit = (rows || []).filter(function (r) { return r && statKey(r.course_code) === want && r.course_control_number; })[0];
+      return hit ? hit.course_control_number : "";
+    }
+    if (!cociCcn[key]) {
+      cociCcn[key] = roepGet("/coci_program_courses?select=course_code,course_control_number&college=eq." + encodeURIComponent(rec.college) +
+        "&program_control_number=eq." + encodeURIComponent(rec.control_number)).catch(function () { return []; });
+    }
+    return cociCcn[key].then(function (rows) {
+      var got = pick(rows);
+      if (got) return got;
+      return roepGet("/coci_program_courses?select=course_code,course_control_number&college=eq." + encodeURIComponent(rec.college) +
+        "&course_code=eq." + encodeURIComponent(code) + "&limit=1").then(pick, function () { return ""; });
+    });
+  }
+  /* The description shards the Courses and Programs tab reads (coci_lookup_desc_<letter>.js, keyed by control
+     number), loaded on first need. */
+  function withCociDesc(code, ccn, cb) {
+    var c = String(code || "0").charAt(0).toUpperCase();
+    var key = c >= "A" && c <= "Z" ? c : "0";
+    var have = window.CPL_COCI_DESC && window.CPL_COCI_DESC[key];
+    if (have) { cb(have[ccn] || ""); return; }
+    var T = window.CPL_TABS;
+    if (!T || typeof T.loadScript !== "function") { cb(null); return; }
+    T.loadScript("coci_lookup_desc_" + key + ".js", null, function () {
+      var d = window.CPL_COCI_DESC && window.CPL_COCI_DESC[key];
+      cb(d ? d[ccn] || "" : null);
+    });
+  }
+  function fillCourseDesc(rec, code, info, slot) {
+    courseCcn(rec, code, info).then(function (ccn) {
+      if (!slot.parentNode) return;
+      if (!ccn) { slot.textContent = "No COCI description is on file for " + code + "."; return; }
+      withCociDesc(code, ccn, function (d) {
+        slot.textContent = d ? cleanDesc(d) : d === null ? "The COCI description could not be read just now." : "No COCI description is on file for " + code + ".";
+      });
+    });
+  }
+  /* o: { rec, code, info, units, group, tile, opener } */
+  function openCourseSide(o) {
+    if (!side.split) return null;
+    var again = side.opener === o.opener;
+    closeCourseSide(true);
+    if (again) { try { o.opener.focus(); } catch (e) { /* best effort */ } return null; }
+    var aside = el("aside", "cplpw-cside");
+    aside.id = "cplpw-cside";
+    aside.setAttribute("aria-labelledby", "cplpw-cside-h");
+    aside.appendChild(sideGrip());
+    var head = el("div", "cplpw-cside-head");
+    var h = el("h3", null, o.code);
+    h.id = "cplpw-cside-h";
+    h.tabIndex = -1;
+    var hw = el("div", "w", [h]);
+    if (o.units) hw.appendChild(el("span", "u", o.units));
+    var close = el("button", "cplpw-cside-close", "Close");
+    close.type = "button";
+    close.addEventListener("click", function () { closeCourseSide(); });
+    head.appendChild(hw);
+    head.appendChild(close);
+    aside.appendChild(head);
+    var body = el("div", "cplpw-cside-body");
+    var who = el("div", "who");
+    if (o.info.title) who.appendChild(el("p", "ttl", o.info.title));
+    if (o.group) who.appendChild(el("p", "grp", o.group));
+    body.appendChild(who);
+    var dsec = el("section", "desc");
+    dsec.appendChild(el("h4", null, "Catalog description"));
+    var dtext = el("p", "dtext", "Reading the COCI description…");
+    dsec.appendChild(dtext);
+    body.appendChild(dsec);
+    var more = o.tile.querySelector(".cplpw-rmore");
+    if (more) { body.appendChild(more); side.more = more; }
+    aside.appendChild(body);
+    aside.addEventListener("keydown", function (e) { if (e.key === "Escape") closeCourseSide(); });
+    side.split.appendChild(aside);
+    side.split.classList.add("open");
+    side.aside = aside; side.tile = o.tile; side.opener = o.opener;
+    o.tile.classList.add("open");
+    o.opener.setAttribute("aria-expanded", "true");
+    sideSet(side.w);
+    try { h.focus(); } catch (e) { /* best effort */ }
+    fillCourseDesc(o.rec, o.code, o.info, dtext);
+    return aside;
+  }
+
+  /* The CPL control's hover and focus note: the exhibits that give CPL for the course, each with its type. */
+  var tipSeq = 0;
+  function cplTip(btn, tip) {
+    function show() { tip.hidden = false; }
+    function hide() { tip.hidden = true; }
+    btn.addEventListener("mouseenter", show);
+    btn.addEventListener("mouseleave", hide);
+    btn.addEventListener("focus", show);
+    btn.addEventListener("blur", hide);
+    btn.addEventListener("keydown", function (e) { if (e.key === "Escape" && !tip.hidden) { hide(); e.stopPropagation(); } });
+  }
+  /* The MAP pointer beside the word CPL. Sam ruled this glyph in (2026-11-27: "incorporate a CPL glyph symbol that
+     becomes recognizable over time ... the MAP directional pointer"; crimson, tilted, beside CPL). It is one of the
+     ruled marks: an accessibility or plain-words sweep must not strip it. It is aria-hidden; the button's name says
+     what it does. */
+  var SVG_NS = "http://www.w3.org/2000/svg";
+  function mapPointer() {
+    var svg = document.createElementNS(SVG_NS, "svg");
+    svg.setAttribute("class", "cplpw-mapptr");
+    svg.setAttribute("viewBox", "0 0 150 122");
+    svg.setAttribute("width", "15");
+    svg.setAttribute("height", "12");
+    svg.setAttribute("aria-hidden", "true");
+    svg.setAttribute("focusable", "false");
+    var p = document.createElementNS(SVG_NS, "path");
+    p.setAttribute("d", "M75 0 L150 122 L75 83 L0 122 Z");
+    p.setAttribute("fill", "var(--map-crimson)");
+    svg.appendChild(p);
+    return svg;
+  }
+  function cplControl(rec, code, info, title) {
+    var exhibits = (info.here && info.here.exhibits) || [];
+    var b = el("button", "cplpw-rcpl");
+    b.type = "button";
+    b.setAttribute("aria-label", "CPL: get credit for " + code + " at " + rec.college + ", in the bar below");
+    b.setAttribute("aria-controls", "cplpw-gbar");
+    b.setAttribute("aria-expanded", "false");
+    var ul = el("span", "ul", [el("span", "w", "CPL")]);
+    ul.appendChild(mapPointer());
+    b.appendChild(ul);
+    var tip = el("div", "cplpw-rtip");
+    tip.id = "cplpw-rtip-" + (++tipSeq);
+    tip.setAttribute("role", "tooltip");
+    tip.hidden = true;
+    tip.appendChild(el("span", "h", "Exhibits with CPL for this course"));
+    var list = el("ul");
+    if (exhibits.length) exhibits.forEach(function (e) { list.appendChild(exhibitLine(e)); });
+    else (info.here.credentials || []).forEach(function (c) { list.appendChild(el("li", null, c)); });
+    tip.appendChild(list);
+    tip.appendChild(el("span", "h2", "Select to get credit on the college’s CPL page"));
+    b.setAttribute("aria-describedby", tip.id);
+    cplTip(b, tip);
+    b.addEventListener("click", function () {
+      tip.hidden = true;
+      openGetCreditBar({ college: rec.college, what: code + (title ? " · " + title : ""), exhibits: exhibits, opener: b });
+    });
+    return { button: b, tip: tip };
+  }
+  /* The sidebar's "Exhibits with CPL here": each exhibit with its type and code, and a control that opens the bar on
+     that one exhibit. */
+  function hereExhibits(rec, code, info) {
+    var ex = (info.here && info.here.exhibits) || [];
+    var sec = el("section", "cplpw-rhere");
+    sec.appendChild(el("h4", null, "Exhibits with CPL here (" + (ex.length || (info.here.credentials || []).length) + ")"));
+    var ul = el("ul");
+    ex.forEach(function (e) {
+      var li = el("li");
+      li.appendChild(el("span", "t", exhibitName(e)));
+      var t = exhibitType(e);
+      li.appendChild(el("span", "k", (t ? t + " · " : "") + "MAP exhibit " + (e.exhibit || "not on file")));
+      var ok = EXHIBIT_CODE.test(String(e.exhibit || "").trim());
+      var go = el("button", "cplpw-rgo", ok ? "Get credit on this exhibit" : "Get credit (MAP cannot open this exhibit by its code)");
+      go.type = "button";
+      go.setAttribute("aria-controls", "cplpw-gbar");
+      go.setAttribute("aria-expanded", "false");
+      go.addEventListener("click", function () {
+        openGetCreditBar({ college: rec.college, what: exhibitName(e) + " · " + code, exhibits: [e], opener: go });
+      });
+      li.appendChild(go);
+      ul.appendChild(li);
+    });
+    if (!ex.length) (info.here.credentials || []).forEach(function (c) { ul.appendChild(el("li", null, el("span", "t", c))); });
+    sec.appendChild(ul);
+    return sec;
   }
 
   // The display build's CPL for one course, in its three kinds.
@@ -2451,6 +2833,10 @@
     return box;
   }
 
+  /* A course card (Sam's compact cards, 2026-11-27: "OK, let's go with that"). Every card is one size and two rows:
+     the course code (a button that opens the course sidebar) with its units, and the CPL control on courses with CPL
+     here; then the title, clamped to two lines, with any alternative's code after it. The card's other details sit
+     in its hidden region (.cplpw-rmore), which moves into the sidebar while the sidebar is open. */
   function roepTile(rec, c, b) {
     var courses = rec.display.courses || {};
     var m = roepMeasure(rec);
@@ -2460,29 +2846,40 @@
     if (pick) marks.push({ kind: "map", label: "On the college's map", text: pick });
     var li = el("li", "cplpw-rtile" + (info.here ? " here" : ""));
     li.setAttribute("data-code", c.code);
-    li.appendChild(el("span", "code", c.code));
-    if (info.title) li.appendChild(el("span", "ttl", info.title));
     var u = c.units != null ? roepAmt(c.units, c.units_max, m) : (info.units_from_state_file != null ? roepAmt(info.units_from_state_file, null, m) + " (COCI)" : "");
     /* A noncredit course's hours as estimated equivalent units, from the display build (the lecture
        rate, 16-18 hours a unit; Sam, 2026-10-11: for estimating only, not awarded units). */
     var eq = m === "hours" && c.units != null ? (info.equivalent_units || [])[0] : null;
     if (u && eq) u += " (about " + roepAmt(eq, (info.equivalent_units || [])[1], "units") + ", estimated equivalent)";
-    if (u) li.appendChild(el("span", "u", u));
+
+    var top = el("div", "cplpw-rtop");
+    var open = el("button", "cplpw-rcode");
+    open.type = "button";
+    open.setAttribute("aria-controls", "cplpw-cside");
+    open.setAttribute("aria-expanded", "false");
+    open.setAttribute("aria-label", "Course details for " + c.code + (info.title ? ", " + info.title : "") + ", beside the page");
+    open.appendChild(el("span", "code", c.code));
+    if (u) { var us = el("span", "u", u); us.title = u; open.appendChild(us); }
+    top.appendChild(open);
+    var cpl = info.here ? cplControl(rec, c.code, info, info.title) : null;
+    if (cpl) top.appendChild(cpl.button);
+    li.appendChild(top);
+    if (cpl) li.appendChild(cpl.tip);
+    var alts = (c.alternatives || []).map(function (a) { return a && a.code; }).filter(Boolean);
+    var ttl = el("span", "ttl", info.title || "");
+    if (alts.length) ttl.appendChild(el("span", "or", (info.title ? " · " : "") + "or " + alts.join(", ")));
+    li.appendChild(ttl);
+
+    var more = el("div", "cplpw-rmore");
+    more.hidden = true;
+    if (info.here) more.appendChild(hereExhibits(rec, c.code, info));
     marks.forEach(function (k) {
-      var mk = el("span", "cplpw-rmark" + (k.kind === "here" ? "" : " lead"), [el("b", null, k.label), k.text]);
-      if (k.kind === "here") {
-        var slot = el("span", "cplpw-getcredit");
-        slot.setAttribute("data-college", rec.college || "");
-        slot.setAttribute("data-code", c.code);
-        slot.setAttribute("data-exhibit", getCreditExhibit(info.here));
-        mk.appendChild(document.createTextNode(" "));
-        mk.appendChild(slot);
-      }
-      li.appendChild(mk);
+      if (k.kind === "here") return;
+      more.appendChild(el("span", "cplpw-rmark lead", [el("b", null, k.label), k.text]));
     });
     var adoptChip = roepAdoptChip(rec, c.code, info);
-    if (adoptChip) li.appendChild(adoptChip);
-    li.appendChild(outcomeSlot(rec.college, c.code, info.title, roepPrintedOutcomes(rec, c.code)));
+    if (adoptChip) more.appendChild(adoptChip);
+    more.appendChild(outcomeSlot(rec.college, c.code, info.title, roepPrintedOutcomes(rec, c.code)));
     /* A paired alternative (S683, #3508): alternatives sharing one "together" label are one option taken
        together in the row's place (Long Beach City 44747: BIO 60 and BIO 60L for ANAT 1). The option names its
        members, each with its own units where it has them, and carries the group's figure: together_units, or
@@ -2508,7 +2905,7 @@
         var gu = members[0].together_units != null ? roepAmt(members[0].together_units, members[0].together_units_max, m)
           : (all ? roepAmt(sum, null, m) : "");
         if (gu) gbits.push(" · " + gu);
-        li.appendChild(el("span", "cplpw-ralt", gbits));
+        more.appendChild(el("span", "cplpw-ralt", gbits));
         return;
       }
       var ai = courses[a.code] || {};
@@ -2518,7 +2915,12 @@
       if (ai.here) bits.push(" · CPL here");
       var apick = b ? roepMapPick(rec, b, c, a.code) : null;
       if (apick) bits.push(" · On the college's map, " + apick);
-      li.appendChild(el("span", "cplpw-ralt", bits));
+      more.appendChild(el("span", "cplpw-ralt", bits));
+    });
+    li.appendChild(more);
+    var group = b ? (b.name || roepRoe(b, m).label) + ", " + roepRoe(b, m).rule.charAt(0).toLowerCase() + roepRoe(b, m).rule.slice(1) : "";
+    open.addEventListener("click", function () {
+      openCourseSide({ rec: rec, code: c.code, info: info, units: u, group: group, tile: li, opener: open });
     });
     return li;
   }
@@ -2918,14 +3320,24 @@
     var grid = el("div", "cplpw-rgrid" + (roepView.who === "college" ? "" : " public"));
     grid.appendChild(roepView.lay === "term" ? roepTermMap(rec) : roepRequirementMap(rec));
     if (roepView.who === "college") grid.appendChild(roepGaps(rec));
-    wrap.appendChild(grid);
+    /* The view and the course sidebar side by side, so the sidebar opens beside the view (openCourseSide). */
+    closeCourseSide(true);
+    getBar.opener = null;
+    var split = el("div", "cplpw-rsplit");
+    split.style.setProperty("--cplpw-side-w", side.w + "px");
+    split.appendChild(el("div", "cplpw-rmain", [grid]));
+    side.split = split;
+    wrap.appendChild(split);
     var d = window.CPL_PATHWAYS_ROEP || {};
     wrap.appendChild(el("p", "cplpw-rfoot", "Display build " + (rec.display.build || d.build || "") + ", read " + (rec.display.built || d.built || "")
       + ". Every figure comes from the college's public catalog and the public MAP platform, the same facts Sierra quotes."));
     clearNode(root);
     root.removeAttribute("style");
+    /* The bottom bar's place: the last thing in the view, so it stays at the bottom of the window (openGetCreditBar). */
+    var barHost = el("div", "cplpw-gbar-host");
+    wrap.appendChild(barHost);
+    getBar.host = barHost;
     root.appendChild(wrap);
-    fillGetCredit(wrap);
   }
 
   // ── Directory card renderer ───────────────────────────────────────────────
@@ -4621,6 +5033,9 @@
     _roepTable: roepTable,
     _roepIndexLanded: roepIndexLanded,
     _roepView: roepView,
+    _getCreditCodes: getCreditCodes,
+    _getCreditUrl: getCreditUrl,
+    _cleanDesc: cleanDesc,
     _ccrWho: function () { return ccrWho; },
     _ladderBlocks: ladderBlocks,
     _certificateFigures: certificateFigures,
