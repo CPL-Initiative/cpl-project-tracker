@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 186,
  "with_closed_list": 186,
- "started": "2026-11-27T08:35:05Z",
+ "started": "2026-11-27T14:38:20Z",
  "scope": "/cuyamaca/",
  "sitemap": {
   "url": "https://catalog.gcccd.edu/sitemap.xml",
@@ -82,7 +82,7 @@
   "yield_refused_passing": 0
  },
  "loads": 226,
- "seconds": 1111.7,
+ "seconds": 1089.7,
  "found": 180,
  "by_method": {
   "not_found": 1,
@@ -363,28 +363,10 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/cuyamaca",
-  "kept": 175,
+  "kept": 176,
   "kept_moved": 0,
-  "programs": 1,
+  "programs": 4,
   "list": [
-   {
-    "control_number": "18637",
-    "title": "University Studies: Social and Behavioral Science",
-    "award": "A.A. Degree",
-    "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/university-studies-social-behavioral-sciences/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/university-studies-social-behavioral-sciences/",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   }
-  ],
-  "held_worse_window": [],
-  "held_no_gain": [],
-  "held_opens_on_list": [],
-  "only": [
-   "18637"
-  ],
-  "not_named": [
    {
     "control_number": "05061",
     "title": "Preschool Children",
@@ -426,6 +408,9 @@
     "was_method": "sitemap_page"
    }
   ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
   "refused_passing": [],
   "forced_unbound": []
  },
@@ -1151,10 +1136,5 @@
    "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/stem/physics/physics-2-transfer-as-t/"
   }
  },
- "staged_from": {
-  "run": "45966682528",
-  "proof": "text sha256 of 180 programs",
-  "pages_loaded": 0
- },
- "run": "46003456131"
+ "run": "46017556328"
 }

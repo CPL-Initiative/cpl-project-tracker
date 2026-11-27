@@ -72,7 +72,7 @@
    "status": "equal",
    "computed": [
     26.0,
-    28.0
+    29.0
    ],
    "stated": [
     26.0,
@@ -80,7 +80,6 @@
    ],
    "against": "program",
    "why": [],
-   "short_high": true,
    "rescored": "Sam's ruling of 2026-11-17, short high end"
   },
   "repeated": {
@@ -237,6 +236,7 @@
    "The certificate's total of 26-29 units falls below 30, consistent with the award band stated for this program."
   ]
  },
- "extracted_run": "38748833332",
- "catalog_year": "2026-2027"
+ "extracted_run": 46017556328,
+ "catalog_year": "2026-2027",
+ "read_run": "38748833332"
 }

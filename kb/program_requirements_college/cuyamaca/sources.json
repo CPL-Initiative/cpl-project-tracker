@@ -226,7 +226,8 @@
     "title": 1.0,
     "section": "as",
     "section_line": "real estate associate in science and certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 12,
@@ -1050,7 +1051,8 @@
     "title": 1.0,
     "section": "as",
     "section_line": "occupational safety and health (osh) management associate in science",
-    "section_fit": 0.8
+    "section_fit": 0.8,
+    "exact": 0
    }
   },
   "listed": 19,
@@ -1169,7 +1171,8 @@
     "title": 1.0,
     "section": "as",
     "section_line": "graphic design associate in science and certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 19,
@@ -1802,7 +1805,8 @@
     "title": 1.0,
     "section": "as",
     "section_line": "web development associate in science and certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 18,
@@ -2277,7 +2281,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "laboratory occupational safety and health technician certificate of achievement",
-    "section_fit": 0.8
+    "section_fit": 0.8,
+    "exact": 0
    }
   },
   "listed": 10,
@@ -2308,7 +2313,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "environmental technician certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 6,
@@ -4106,7 +4112,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "real estate associate in science and certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 12,
@@ -4306,7 +4313,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "web development associate in science and certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 18,
@@ -4765,7 +4773,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "graphic design associate in science and certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 19,
@@ -7386,7 +7395,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "laboratory occupational safety and health technician certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 6,
@@ -8180,7 +8190,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "creative writing certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 19,

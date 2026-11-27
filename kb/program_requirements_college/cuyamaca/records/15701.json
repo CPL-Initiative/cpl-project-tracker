@@ -68,7 +68,7 @@
    "status": "equal",
    "computed": [
     29.0,
-    32.0
+    33.0
    ],
    "stated": [
     29.0,
@@ -76,7 +76,6 @@
    ],
    "against": "program",
    "why": [],
-   "short_high": true,
    "rescored": "Sam's ruling of 2026-11-17, short high end"
   },
   "repeated": {
@@ -264,6 +263,7 @@
    "Program learning outcomes are printed on the certificate page under 'Program Learning Outcomes' for this program."
   ]
  },
- "extracted_run": "38748833332",
- "catalog_year": "2026-2027"
+ "extracted_run": 46017556328,
+ "catalog_year": "2026-2027",
+ "read_run": "38748833332"
 }

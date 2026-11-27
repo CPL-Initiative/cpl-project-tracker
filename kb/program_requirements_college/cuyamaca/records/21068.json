@@ -64,7 +64,7 @@
    "status": "equal",
    "computed": [
     22.0,
-    25.0
+    26.0
    ],
    "stated": [
     22.0,
@@ -72,7 +72,6 @@
    ],
    "against": "program",
    "why": [],
-   "short_high": true,
    "rescored": "Sam's ruling of 2026-11-17, short high end"
   },
   "repeated": {
@@ -260,6 +259,7 @@
    "Footnote markers (Appraiser1, Economist2) removed from career names; footnotes say Appraiser requires a California Bureau of Real Estate Appraisers License and Economist requires a Bachelor Degree or higher."
   ]
  },
- "extracted_run": "38748833332",
- "catalog_year": "2026-2027"
+ "extracted_run": 46017556328,
+ "catalog_year": "2026-2027",
+ "read_run": "38748833332"
 }
