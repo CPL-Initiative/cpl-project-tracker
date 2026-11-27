@@ -216,6 +216,9 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   passing in the run and keeps its ruled hold, `d-sbcc-05934-keeps-hold-s727`); keep-better kept 2. No person's check at
   Santa Barbara City or Fullerton (14:24Z, md5s equal): the reread dispatched (force 46010148668; it posts 32775 passing
   and 43553 rescored to its page's figures, still failing, for a `total_differs` plan next session).
-- 14:26Z: Cabrillo's `recommended_counts` round 2 GO (Fable 5.2: each record steps on its own page alone; all 12 wrong
+- 14:25Z: Cabrillo's `recommended_counts` round 2 GO (Fable 5.2: each record steps on its own page alone; all 12 wrong
   pairings refuse; 4 of 684 records statewide, all Cabrillo; 06326, a person's, does not move). Its free reconcile
   dispatched on `claude/s742-piles-cabrillo`.
+- 14:25Z: live: San Jose City 38499 passing at 46011334736 (records collected: 16); Santa Barbara City 32775 passing at
+  46010148668 (records collected: 17) and 43553 unequal at 46010148668; Butte 14583 at 46012628995, incomplete (its own
+  page now; a gap plan next session).
