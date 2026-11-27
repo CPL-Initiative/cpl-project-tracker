@@ -93,6 +93,6 @@ const click = (w, n) => n.dispatchEvent(new w.Event("click", { bubbles: true }))
     console.log((ok ? "  ok   " : "  FAIL ") + name + (ok ? "" : "  -- " + JSON.stringify(why)));
     if (!ok) fail++;
   }
-  console.log(results.length - fail + "/" + results.length + " passed");
+  console.log(results.length - fail + "/" + results.length + " checks passed: CPL Pathways trained by");
   process.exit(fail ? 1 : 0);
 })();
