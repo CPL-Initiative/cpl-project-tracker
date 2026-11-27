@@ -230,7 +230,22 @@ def page_is_own(rec: dict, source: dict | None = None, note: dict | None = None,
     sources.json entries, {control_number, title, award}) has the same title words and another award kind (COBIx on
     #3557, 7011458372): two awards share the title, so the bare address cannot say whose page it is (College of the
     Redwoods' Welding Technology certificate passed on welding-technology-fall-2025, the A.S.'s page). The row then
-    falls back to the capture's page title or h1; note["shared_title"] names the other programs."""
+    falls back to the capture's page title or h1; note["shared_title"] names the other programs.
+    A word and its plural are one word (S741, PLURAL_FOLD_ON): the state's file titles Cuyamaca 18637 "University
+    Studies: Social and Behavioral Science" and its own page's address and title print "Sciences", so the re-read
+    that placed 92 of its 92 listed courses under the generic heading "Requirements" was set aside (S727). The fold
+    is a second reading, taken only where the exact one shows nothing: an address counts only while the capture's
+    own entry names that page for the program (a sister college's page on a shared host prints the same last
+    segment), and never where another program at the college has a title that holds every word of this one's only
+    once a plural is folded (plural_longer, which takes in plural_twins: "Art" beside "Studio Arts", "Art History"
+    beside "History" never, but "Athletics" beside "Athletic Trainer Aide"; the fold could not say whose page it
+    is). A page title or h1 is folded with its award phrase set aside (AWARD_PHRASE), so "Art" is never read in
+    "Associate in Arts" nor "Sciences" in "Associate of Science", and it names the program only where it prints
+    nothing beside the title's words but an award's words or a program code (fold_names): "Social Science" is not
+    named by "Liberal Arts: Social and Behavioral Sciences Emphasis" (S742, the second reader's finding: handed
+    every sibling's page, the first fold admitted 386 programs on a page that was another's). The exact reading
+    above it is as it was. The statewide self-recall, own pages and siblings' pages both:
+    tests/program_keep_better_plural_s741_test.py."""
     import urllib.parse
     import _program_requirements_college as C
     from _program_requirements_pilot import award_kind
@@ -271,6 +286,12 @@ def page_is_own(rec: dict, source: dict | None = None, note: dict | None = None,
     src = (source or {}).get("source") if isinstance((source or {}).get("source"), dict) else {}
     if not src or not url or _page(src.get("url")) != _page(url):
         return None
+    # The plural fold (S741), a second reading: only on the page the capture itself names for the program (checked
+    # just above), and never where a sibling's title holds this one's words only once a plural is folded (S742).
+    fold = PLURAL_FOLD_ON and not plural_longer(rec, siblings)
+    if fold and named and singular(page_words(named)) == singular(want) and award_ok(re.sub(r"[-_]+", " ", bare)) \
+            and award_named:
+        return "the address's last segment %r names the program, a plural aside" % slug[:80]
     texts = [(key, C.TITLE_SPLIT.split((src.get(key) or "").strip())[0]) for key in ("title", "h1")]
     if any(text and not award_ok(text) for _, text in texts):
         return None
@@ -285,7 +306,67 @@ def page_is_own(rec: dict, source: dict | None = None, note: dict | None = None,
             continue
         if text and want <= words and ("2.0" in want) == ("2.0" in words):
             return "the capture's %s %r names the program" % ("page title" if key == "title" else key, text[:80])
+        if fold and text and fold_names(want, text) and ("2.0" in want) == ("2.0" in words):
+            return "the capture's %s %r names the program, a plural aside" % (
+                "page title" if key == "title" else key, text[:80])
     return None
+
+
+# S741: a word and its plural read as one word, as a second reading inside page_is_own. PLURAL_FOLD_ON lets a test
+# measure the reading with the fold off.
+PLURAL_FOLD_ON = True
+
+
+def singular(words: set[str]) -> set[str]:
+    """Each word less one closing s: "sciences" and "science", "arts" and "art". A word of three letters or fewer,
+    or one ending in ss ("business"), is left as it is."""
+    return {w[:-1] if len(w) > 3 and w.endswith("s") and not w.endswith("ss") else w for w in words}
+
+
+def plural_twins(rec: dict, siblings: list | None) -> list[str]:
+    """The college's other programs whose title differs from this one's by a plural alone, whatever their award:
+    with one, a folded page or address could be either's."""
+    want = page_words(rec.get("title"))
+    return sorted(str(x.get("control_number")) for x in siblings or []
+                  if str(x.get("control_number")) != str(rec.get("control_number"))
+                  and page_words(x.get("title")) != want and singular(page_words(x.get("title"))) == singular(want))
+
+
+# S742: the award a page title or h1 prints beside the program's name. The fold reads a title's words in what is
+# left, so the award's own "Arts" and "Science" never stand in for a title word.
+AWARD_PHRASE = re.compile(r"associates?\s+(?:in|of)\s+(?:arts?|sciences?)|\b(?:a\.?a\.?|a\.?s\.?)\b", re.I)
+
+
+# The words a page title or h1 may print beside a folded title: an award's own words (the pilot's STOP words, which
+# page_words drops, already take in certificate, degree, achievement and program).
+FOLD_BESIDE = frozenset({"transfer", "completion", "competency", "proficiency", "accomplishment", "associate",
+                         "major", "noncredit"})
+
+
+def fold_names(want: set[str], text: str) -> bool:
+    """Whether a page title or h1 names the title's words (want, from page_words) a plural aside: with its award
+    phrase set aside, the text prints every title word, and beside them only an award's words (FOLD_BESIDE) or a
+    program code (a token carrying a digit: "CE1027", "N0470", "5691"). The exact reading asks only that the text
+    hold the title's words; the fold, which loosens each word, asks that it hold nothing else."""
+    words = singular(page_words(AWARD_PHRASE.sub(" ", text or "")))
+    need = singular(want)
+    return need <= words and all(w in FOLD_BESIDE or any(c.isdigit() for c in w) for w in words - need)
+
+
+def plural_longer(rec: dict, siblings: list | None) -> list[str]:
+    """The college's other programs whose title holds every word of this one's once a plural is folded and not as
+    written, whatever their award: "Studio Arts" beside "Art", "Athletic Trainer Aide I" beside "Athletics", and
+    every plural twin (plural_twins). With one, a folded page title, h1 or address could be the longer title's. A
+    title that holds this one's words as written ("Art History" beside "Art") is the exact reading's question,
+    which the fold leaves as it was."""
+    want = page_words(rec.get("title"))
+    out = []
+    for x in siblings or []:
+        theirs = page_words(x.get("title"))
+        if str(x.get("control_number")) != str(rec.get("control_number")) and theirs != want \
+                and singular(want) <= singular(theirs) and not want <= theirs:
+            out.append(str(x.get("control_number")))
+    return sorted(out)
 
 
 # A catalog term or year after the program's words: -2026, -fall-2026, -2026fa, -2026v2, -2026-27, -intersession.

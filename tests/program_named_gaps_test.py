@@ -680,9 +680,19 @@ with open(os.path.join(ROOT, "kb", "receipts", "program_requirement_records_pile
                 and not (r["before_image"]["checks"] or {}).get("gaps")}
 check(_s741b_td == {("El Camino College", "31319"), ("El Camino College", "42541")},
       "the S741 plan moves 31319 and 42541 to total_differs")
+# S742 (lane 1, page reads 46012119450 and 45772822110), by the same record rule inside El Camino's plan s742r2:
+# Photography certificate 19883 (25 under 'Total Units: 26-27') and Entrepreneurial Studies certificate 38948 (25-27
+# under 'Total Units: 19-20'), each read from its own page through its site_pages pin.
+with open(os.path.join(ROOT, "kb", "receipts", "program_requirement_records_piles_s741_el_camino_2026-11-27_s742r2.json"),
+          encoding="utf-8") as _fh:
+    _s742_td = {(r["college"], str(r["control_number"])) for r in _json.load(_fh)["records"]
+                if r["moves_to"] == "total_differs" and r["after_image"]["checks"].get("gaps") == ["total_differs"]
+                and not (r["before_image"]["checks"] or {}).get("gaps")}
+check(_s742_td == {("El Camino College", "19883"), ("El Camino College", "38948")},
+      "the S742 plan moves 19883 and 38948 to total_differs")
 check(_p2["only_gaps"] == ["total_differs"] and not _p2["recall"]["wrong"]
       and _p2_keys | {(r["college"], str(r["control_number"])) for r in _s703_td} | _s714e_td | _s740_td | _s741_td | _s741b_td
-      == set(_td)
+      | _s742_td == set(_td)
       and {(r["college"], str(r["control_number"])) for r in _s703_td} == {("Clovis Community College", "33491")}
       and all(r["after_image"]["checks"].get("gaps") == ["total_differs"]
               and not (r["before_image"]["checks"] or {}).get("gaps") for r in _p2["records"] + _s703_td),

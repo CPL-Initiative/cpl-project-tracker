@@ -13,10 +13,10 @@
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd_run": 0.0,
- "cost_usd_filed": 13.21,
- "cost_per_program": 0.0734,
- "extract_calls": null,
+ "cost_usd_run": 0.15,
+ "cost_usd_filed": 13.15,
+ "cost_per_program": 0.073,
+ "extract_calls": 1,
  "extract_failed": [],
  "not_found": [
   {
@@ -48,5 +48,5 @@
    "status": "Active - Teachout Only"
   }
  ],
- "run": "45966682528"
+ "run": "46003456131"
 }

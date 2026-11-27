@@ -170,7 +170,12 @@ WITHIN_HELD = {
     ("San Bernardino Valley College", "22784"): (None, _WAIVED),
     ("Los Angeles City College", "02746"): (None, "none: prerequisites_counted's reading "
                                                   "(kb/_program_piles_s730_saddleback.py STATEWIDE_OUT)"),
-    ("Modesto Junior College", "35127"): (None, "none: two learner paths, no kind fits (handoff 740, Blocks)"),
+    # S742 (lane 1, readers): handoff 740 held 35127 as "two learner paths, no kind fits", written before this kind
+    # was on main. Its own entry (college page read 45768981024) prints each figure the record holds, and they add
+    # to 23, the top of the printed 19-23; the 19 is the Native/Heritage path, which the blocks do not hold
+    # (kb/_program_piles_s742_modesto.py, s742r1).
+    ("Modesto Junior College", "35127"): (WITHIN, "kb/_program_piles_s742_modesto.py, over s731p's hold "
+                                                  "(kb/_program_piles_s731_pooled.py HAND)"),
     ("Clovis Community College", "37227"): (None, "none: a reread, its note only suspects two courses are "
                                                   "alternatives (kb/_program_piles_s720_clovis.py HAND)"),
     ("Fullerton College", "35174"): (None, "none: not the program's own page (kb/_program_piles_s720_fullerton.py "
@@ -204,7 +209,7 @@ WITHIN_HELD = {
 # The reviewed lists: each S740 plan's module, by its file name. A key filed there is the reviewed lists' answer.
 PLAN_MODULES = ("_program_piles_s740_gavilan", "_program_piles_s740_canyons", "_program_piles_s740_orangecoast",
                 "_program_piles_s740_smc", "_program_piles_s741_santa_ana", "_program_piles_s741_copper_mountain",
-                "_program_piles_s741_sbvc", "_program_piles_s741_shasta")
+                "_program_piles_s741_sbvc", "_program_piles_s741_shasta", "_program_piles_s742_modesto")
 # Shasta 32162 as s740i held it (no S740 plan): the reason, for handoff 741's Blocks. s741a files it since.
 SHASTA_32162 = ("held: its 23-27 sits inside the printed 22-27 and units_within_printed_range is true of its figures, "
                 "but its section is not shown to be its own: its heading sits on the page before the one the read "
