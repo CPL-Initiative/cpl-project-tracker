@@ -232,3 +232,9 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   (only 43057, about $0.15). Held, no plan by the wind-down: Reedley 30465 (its page is headed "Child Development,
   Certificate of Achievement"), Los Angeles Pierce 19181 (number runs), Grossmont 21402 (already a named gap with no
   record), El Camino 19857. s742r2 and the Cuyamaca step to one Sonnet reader.
+- 14:33Z: s742r2's reader (Sonnet): APPLY (both pages print the totals the plan cites, read from the page-read runs'
+  logs; NIT: the page text is not committed, only the run ids); the Cuyamaca step GO (its `only_with` keeps it to
+  `electives_fill_degree` readings; the recall goes red when loosened). Cuyamaca's free reconcile dispatched on a
+  sibling, `claude/s742-readers-cuy2`, cut at `4d394536`. Clean md5 pre-read of s742r2 2 of 2.
+- 14:38Z: s742r2's migrate 46017601125 returned 2, none skipped; `.apply` restored (`8aec0dfb`). Records collected: 19.
+- 14:39Z: Fullerton's reread posted 33680 and 42143, both passing at 46010143379. Records collected: 21.
