@@ -495,3 +495,7 @@ one departure. The full record, his words and the photo list moved verbatim to
 - **A draft read off Pages drops its version stamps** (#3097; `unstamp`): lessons, *Moved from the lane (S653b)*.
 - **Create is one form** (Sam, 2026-11-06): lessons, *Moved from the lane (S653b)*.
 - DSP Credit Starting Points, Version 3 in public (S641, #3151): lessons, *Moved from the lane (S646)*.
+
+## Moved from the lane (S736 checkpoint)
+
+**#3600 (S690, `9fc88a07`; DECIDED `d-main-red-check-line-stays-out-s690`): the check line stays out of the reading text and out of new pieces.** The first run stamped every page's line, the starter page's included (653864b7), so ELL IET's reading text passed Sierra's `LIBRARY_TEXT_MAX` (33,996 to 34,078 of 34,000 characters) and `buildNewPage` copied the starter's line into new pieces; `main` stayed red until the merge. `cpl-chat`'s `libraryPageText`, the drafter's `readingText` and the card's `sierraText` now skip the `cpl-library-check` block, and `buildNewPage` drops it (`sierra_library` 31, `library_revise_draft` 120, `library_qualify_draft` 40 and the footer's 11 pass, with `library_check_test`). **Not deployed:** `cpl-chat-deploy.yml` for `cpl-chat` and `library-revise-draft` waits for a plain session.

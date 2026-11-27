@@ -1,7 +1,7 @@
 ---
 title: Playbook — where a college's local subject title comes from
 created: 2026-11-22
-updated: 2026-11-22
+updated: 2026-11-27
 tags: [playbook, commons, subjects, catalogs, local-subject-titles]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -50,3 +50,17 @@ the list words a little differently: AB, AUTO, EDT, ELAP, NAIS, VCS, WELD and WM
 3. Run `python3 kb/_build_local_subject_titles.py` and read what changed. A code the list titles for the first time,
    and a code whose title the list replaces, should each be right by the college's own page.
 4. Name the file in the commons lane and in the handoff.
+
+## Read the schedule search before guessing (Sam, 2026-11-26)
+
+*"note the strategy for our cpl queue and commons collections to search each college's website for their schedule
+tool, which is almost always listed by subject and title"* (`r-schedule-tool-first-for-subject-titles-sam-2026-11-26`).
+Where the catalog leaves a code untitled, read the college's class schedule search (a PeopleSoft class search, a Banner
+dynamic schedule, Colleague Self-Service) before any recommendation. A district on one system can answer for all its
+colleges at once: LACCD's PeopleSoft guest search has one select-subject lookup per term, 216 subjects for nine
+colleges, and it titled 171 of 212 untitled codes (#3894). Where the schedule's title differs from the catalog's, the
+catalog stands. Record each system in `docs/reference/data_sources.md` when it is found.
+
+Check the code before titling it. COCI glues Cerro Coso's and Porterville's campus letter to some subjects (`PHEDC 103`
+for the college's PHED C103), so a state-only code ending in the letter whose base exists is a fake subject, and
+titling it files the fake (`f-cerro-coso-porterville-letter-glued-to-subject-s736`).

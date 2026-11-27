@@ -130,3 +130,65 @@ The Subjects paragraph's S722 state, verbatim:
 - 2026-11-24 (S722 SkyCormorant, Sam's plain session, full checkpoint): #3768 (a Courses count reads its code's own course file, never the 17 MB state list), #3771 (Titles to check: a derived title stands at 80+, Accept on the row and per title, the 0-100 confidence bar as one component, sidebars never cover the view, quick links land on a link, the Commons names COBI, never Sky); #3770 withdrawn in #3771. KB note: `methodology-a-source-that-only-checks-the-winner-never-wins`.
 - 2026-11-24 (S721 SkySkua, the CPL Queue routine's collection run, conductor, full checkpoint): #3761 (display build `6de40ebdf2fd`, 18,699 rows live), #3765 (Orange Coast's 3 collected with named gaps), #3769 (Palo Verde 15, Porterville 15, Gavilan 7 and Butte 5; three new gap kinds), #3763 (the reader-page lever: 12 loaded, 11 passing; 14 named gaps) and #3764 (the pooled reading, applied: 8 at Modesto, 7 named gaps to passing); 65 records collected; the test kb-note's section on a test that reads its own plan's receipt; 23 memory rows drafted; handoff 722.
 - 2026-11-24 (S720 SkyEider, the CPL Queue routine's collection run, conductor, full checkpoint): #3754 (display build `abf1f6396156`, 18,665 rows live), #3753 (Fullerton's 6 collected with named gaps), #3756 (no electives fill over a cut-off window; a reconcile keeps named gaps); applied and live in open PRs: #3758 (ten colleges' piles, 95 named-gap records), #3759 (American River 04544 corrected; nine `section_cut_off` gaps at Los Rios), #3752 (the reader-page lever, 16 passing at Mendocino, Los Angeles Southwest and American River). Handoff 721; the harvest lane rebuilt under 20,000 bytes; lessons S691 and S697 moved to archive 8.
+
+## Moved from lanes/common-subjects-reference.md (S736 checkpoint)
+
+**For a curator (found in the file-eight fresh read):** five of the 79 are merged into a parent in another discipline:
+BRDC M10AV into JOUR M1016 *Broadcast Journalism*, BRDC M10BF into FTVE M1144, and three noncredit drawing and painting
+courses into BIOL M9004 (*Fundamentals of Drawing for Commercial Artists*, filed under Biological Sciences), FCSH M9055
+and OLAD M9054. The re-key changed no merge; the BIOL parent reads misfiled.
+
+**The two ENVR merge candidates wait for a faculty reviewer (S433, #2278).** `kb/_merge_candidate_queue.py` carries
+them as `surfaced` pairs (`kb/merge_candidates/2026-10-20-forestry/report.md`), survivors proposed by the rule: ENVR
+M1009 *Dendrology* over M1064 (4 colleges to 3), ENVR M1025 *Silviculture* over M10OP (2 to 1), no articulations on
+any. The merge is a curriculum judgment made in the curation UI (ruling 6, 2026-09-05).
+
+**The quarterly routine compares on a cron (S433, #2279).** `csr-quarterly.yml` runs
+`kb/_csr_quarterly_probe.py --compare` at 13:17Z on the 1st of January, April, July and October, and on dispatch. It
+reads each source against `kb/reference/csr_quarterly_baseline.json`, prints `COMPARE` lines (same, changed, unread, no_baseline) and a step summary, and reads red on
+`changed`; a session then diffs the Disciplines Index and opens a card. **LIVE (#3744, S719): the baseline is the 20th
+edition** (the address and sha256 `kb/reference/mq_handbook_20th.json` was read from); dispatch run 45311236371 printed
+COMPARE `same`, 2,983,718 bytes. `tests/csr_quarterly_probe_test.py` ties the baseline to that file rather than to an
+edition number (**DECIDED** `d-csr-baseline-20th-s719`). **The C-ID source a runner reaches (S437,
+#2289):** the site moved to c-idsystem.org (ASCCC), and its search pages live on data-c-idsystem.org with no `www`
+(the probe had asked c-id.net, a runner 403, and www.data-c-idsystem.org, no such host). `/descriptors/final` links its
+own export, `/descriptors/final/csv` (217,763 bytes, `text/csv`); the probe follows and hashes it, and two runs (13:16Z
+and 13:18Z) read the same sha256, now the `cid_data` baseline. `/approved-courses` answers 200 with no export link, so
+`cid_courses` and `cid_home` stay `no_baseline`. Next for it: diff that CSV against `kb/reference/cid_descriptors.json`
+(495 descriptors, the CCCCO file of 2026-05-20) on a runner, so a `changed` names the descriptors that moved. `mq_list` stays `on: false` (half built) until the index diff runs on the runner too.
+
+(From the RULED schedule-tool paragraph, as it stood before #3894:) and ahead of any guess. **Measured 2026-11-26 (S736):** no run has read one. Every one of the 7,102 filed titles came
+from a catalog (`kb/subject_title_hunt/found/`); `kb/status/subject_sources.json` marks the schedule way not needed at
+116 colleges only because the catalog was read; 1,431 college and code pairs still print no title, at 114 colleges.
+Only two systems are on file: LACCD's PeopleSoft guest search (nine colleges, 212 codes with no printed title;
+[`data_sources`](../data_sources.md)) and Riverside's Colleague. The lightning round's codes come first; the
+LACCD read runs on the runners, since a session's network refuses the host.
+
+**LIVE: the Progress view (S425, 2026-10-19).** `#canonical-subj4` opens on Progress, the Commons' dash
+for this reference, drawn by the shared `commons_progress.js` from `canonical_subj4.js`'s definitions: the
+run status from `kb/status/subjects.json`, the headline pair, five milestones with You are here, a card for
+each of Sam's eight steps (consolidated to eight: the MQ list, the C-ID and CCN tables, the authority rule,
+the identity codes, one code one MQ discipline, the cross-listings, confirmation, the scan), the procedures
+under the cards (`kb/csr_procedures.json`) and the findings waiting on a judgment. A count opens the List on
+its filter; `#canonical-subj4/<filter>`, `/progress`, `/list` and `/check` route from the address (the Commons'
+step 3). Guard `tests/csr_progress.test.js`; a11y `canonical-subj4-progress-dark`.
+
+**The machine side.** `kb/_csr_trail.py --latest` runs daily from `daily-dashboard.yml` after the picks sync
+and before the Commons build, read-only, and writes `kb/csr_out/latest.json` (the nine canon rules, every
+minted identity's code under `_mid_codes`); a session's run without the flag writes the dated receipt too.
+Its missed-alignment rule honors a recorded note (CMUS, HIT). `kb/_apply_canonical_subj4.py` and the tab's
+overlay read the pick's reviewer from the code row (a cohort's later note had been read as the pick's
+reviewer on eleven entries; the next daily sync rewrites the seed). The tab's SUBJ check reads a code both
+agriculture umbrellas declare, and a fan-in pair both entries declare, as shared by design. The tab's C-ID index
+now takes a descriptor ending in X (172 of the 495, in 17 subjects: ADS, the three agriculture families, ALTF, AUTO,
+BIOT, BSOT, CMUS, DENA, DMGR, EET, EMS, FIRE, HIT, WELD, WWTR), which it had skipped since May, so its chips and
+suggestions saw 48 of the 65 C-ID subjects.
+
+**The anchor re-key, APPLIED (S612 SkySunflower, 2026-11-08):** 20 anchor keys onto their Common SUBJ, receipt `kb/anchor_rekey_out/2026-11-08/` (last in `kb/alias_chain.py`); held, the three dead-format HOSP keys (the curator worklist). The paragraph as it stood: [`docs/roadmap_archive.md`](../../roadmap_archive.md), *Moved from lanes/common-subjects-reference.md (plain session, 2026-11-20)*.
+
+**The Commons row** (`kb/_build_commons_status.py` `row_subjects`) reads the same files: the settled pair,
+four known issues with owners, the procedures in force, and deep links into the List.
+
+## Moved from lanes/commons.md (S736 checkpoint)
+
+**LIVE (S723 to S726): the Commons top, the Courses List's Common subject in doubt and its bottom bar of tabs, Gather and its saved filters:** the paragraph as it stood, [`docs/roadmap_archive_8.md`](../../roadmap_archive_8.md), *Moved from lanes/commons.md (S729 checkpoint)*, with S724's five rulings and the guards. **DECIDED** `d-gather-first-slice-s725`, `d-gather-saved-filters-s726`. **LANDED (S729): the adapt gather** (34 merges and 133 moves, 167 insert-only rows under `gather-adapt-s726@bot`; plan and receipt `kb/gather_out/2026-11-25_adapt/`) published in the 06:24Z daily run of 2026-11-25: none of the 34 merged M-IDs keeps its own member list, and PEDS M1029 holds 293 local courses at 0 to 4 units. **FACT** `f-adapt-gather-landed-s729`. **ESL:** 10 common courses over about 2,439 local courses; the monthly pass after 2026-11-29 is the ESL work. **NEXT:** the nightly auto combining that reads saved filters (its confidence score first); the SLOs and objectives look-in and the add bars (each a new write surface, Rule 10 a3). **Then the anchor-page build Sam approved on the mock https://claude.ai/artifact/35uJsJ2ahLQ6XcrvfMS8YE (*"looks great, let's go with it"*):** 2 the Common courses / Local courses toggle on the Courses List (**LIVE S726**: Rows on the Courses view, `#coci-lookup/courses/common`; one row per common course on the List's own engine, the job and Browse filters counting common courses, a row opening the bar of Local courses, Common subject and History; guard `tests/coci_list_common_rows.test.js`; **DECIDED** `d-courses-rows-common-s726`); 3 the Commons page as home base, a card's title folding the cards into that card's list with its tabs (**LIVE S726, first slice**: each card with a list of its own opens it from its title, `card({ list })` in `commons_front.js`, Courses data at `#coci-lookup/courses/common`; **LIVE S729, the fold in place**: a card's title folds the page to a trail, *CPL Commons: all cards / <card>*, and that card whole, at `#commons/card/<key>`; the trail's first link unfolds every card, browser Back too; guard `tests/commons_cards_checks.test.js` (6, 7); **DECIDED** `d-commons-fold-link-not-mount-s729`: every card folds with *Open the full list* to its own tab, none mounts its list in place, since each list is a tab of its own (Courses data's is the 17 MB COCI tab with its own root and addresses); **NEXT** mount a list under the trail once one renders into a given container); 4 Needs you as the one ranked queue (**LIVE S730, first slice**: a Needs you link folds the page to the card holding its item, the item's link focused; a doubt ruling saved in the Courses List moves the in-doubt count, Needs you and Rulings to find at once, `doubtLive`; guard `tests/commons_needs_you_queue.test.js`; **DECIDED** `d-needs-you-folds-and-doubt-live-s730`; `npm run a11y` measures the fold, `commons-fold` and `-dark`); then Subjects, Credit Recommendations, Exhibits. Beside it: Sam's remaining doubt rulings; common and local subject labels in the other tabs at their UI pass. **Still on a snapshot:** the ASKED figures, the Unblock catalogs chip (Nov 13) and `commons.json`. **NEXT:** "Noncredit Course for MUS 15" into the review file's held list; "2 Rename batch" moves to curator work, off Sam's list.

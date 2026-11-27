@@ -10820,7 +10820,7 @@
      ],
      "title": "Playbook \u2014 where a college's local subject title comes from",
      "type": "playbook",
-     "updated": "2026-11-22"
+     "updated": "2026-11-27"
     },
     {
      "created": "2026-06-12",
@@ -16594,7 +16594,7 @@
      ],
      "title": "Common Subjects Reference (CSR) \u2014 one Common SUBJ per MQ discipline \u2014 lane state",
      "type": null,
-     "updated": "2026-11-24"
+     "updated": "2026-11-27"
     },
     {
      "created": "2026-08-28",
@@ -16778,7 +16778,7 @@
      ],
      "title": "Library / where decks, films and documents live \u2014 lane state",
      "type": null,
-     "updated": "2026-11-25"
+     "updated": "2026-11-27"
     },
     {
      "created": "2026-08-28",
@@ -17063,7 +17063,7 @@
      ],
      "title": "The Commons \u2014 one tracking system for the common references, and a Commons dash \u2014 lane state",
      "type": null,
-     "updated": "2026-11-25"
+     "updated": "2026-11-27"
     },
     {
      "created": "2026-08-28",
@@ -17589,8 +17589,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 693,
+   "count": 694,
    "docs": [
+    {
+     "created": "2026-11-27",
+     "governs": [],
+     "n": 744,
+     "path": "docs/session_744_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 744 handoff (from SkyBrant, S736, Sam's plain session of 2026-11-26 to 11-27: Library publish fixes, the lightning round, LACCD schedule titles, the Accounting dry run)",
+     "type": null,
+     "updated": "2026-11-27"
+    },
     {
      "created": "2026-11-27",
      "governs": [],
@@ -29065,5 +29079,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1588
+ "total": 1589
 }

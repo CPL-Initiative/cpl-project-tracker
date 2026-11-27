@@ -253,10 +253,19 @@ term (`Campus=LAPC`, `strm=2268`, `subj=`, `catalogid=`). Sam found it on 2026-1
 lightning round: a search for OLD ADL 029CE, *Literature and the Human Experience*, at Pierce named the subject Older
 Adults, the title the lightning round had guessed. Plug-in: a college's own word on its local subject titles, the
 Subjects card's first source for the nine LACCD colleges, and a second signal beside a catalog heading for each
-guess the round shows. Plan: a public read on the runners (this session's network refuses the host); read one
-campus's subject list for the current term, measure how many of the lightning round's LACCD codes it titles, then
-file the titles through `kb/_file_found_subject_titles.py` with the search page as the finding. Connect and schedule:
-the runners' title hunt, once a term. Found by Sam, 2026-11-26; recorded by SkyBrant (S736).
+guess the round shows. **Plugged in (#3894):** a runner read the select-subject lookup (one table per term, 216
+subjects for all nine colleges, term 2268) and titled 171 of the 212 untitled codes, filed under the rule `schedule`;
+87 differ from the catalog, which stands; 41 stay untitled; course descriptions (one page load per class) are not read.
+Schedule: the runners' title hunt, once a term. Found by Sam, 2026-11-26; recorded by SkyBrant (S736).
+
+### Cerro Coso's long-term schedule, for its course codes
+Cerro Coso Community College's *Long-Term Schedule Effective Fall 2024, Active and Inactive Courses* (a 4-page PDF from
+its Excel sheet, course list of July 17, 2024): 459 courses under 53 subjects, each with its division, discipline and
+the terms it runs at Bishop, Mammoth, CC-Online, Main Campus and Tehachapi. Every course is SUBJ plus a C-number (ACAD
+C070, EMTC C070), which shows COCI's `PHEDC 103` style codes are the letter glued on. Plug-in: a second signal for the
+Cerro Coso fold in `kb/_build_coci_lookup.py`, never a title source beyond its codes (it lists inactive courses, and it
+prints KINS where COCI keeps PHED). Shared by Sam, 2026-11-27; the file stays with Sam and its note is in the vault,
+`raw/2026-11-27-cerro-coso-long-term-schedule-fall-2024.md` (sha256 `fbc085ab...0615f4c`). Recorded by SkyBrant (S736).
 
 ### WestEd's environmental scan of datasets and connections
 Sam, 2026-11-04 (S573): *"west ed has a whole environmental scan of datasets and connections I need to feed to you."*

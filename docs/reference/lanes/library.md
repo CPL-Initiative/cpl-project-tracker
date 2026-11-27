@@ -1,7 +1,7 @@
 ---
 title: "Library / where decks, films and documents live — lane state"
 created: 2026-10-05
-updated: 2026-11-25
+updated: 2026-11-27
 tags: [reference, roadmap-lane, library, drive, deliverables]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -28,9 +28,11 @@ card-drafted revision, so a piece built in a session and copied with `library_pa
 **RULED (Sam, 2026-11-25):** *"can you have library auto add a summary I can edit so if I forget and click publish,
 we'll still have a summary?"* (`r-library-publish-prefills-public-summary-sam-2026-11-25`) and *"the libraries sidebar
 should be same height as the listview and use same font type and size. height should be optimized to window hight"*
-(`r-library-sidebar-matches-list-sam-2026-11-25`). Both, with the top Publish button's form drawn in sight for an
-uncertified piece, are in draft **#3865** (`claude/library-pubtop-fix`). A page under `library/` carries the vault's
-canonical header (`public-header/apply.py --tracker-logos ../../sierra/`), never the Catalog's adapted copy
+(`r-library-sidebar-matches-list-sam-2026-11-25`). **LIVE (#3865, S736):** the top *Publish to Public Library* opens
+the form, prefilled from the internal summary; the sidebar matches the list's height and type; a waiting piece shows its
+progress (steps, a bar, and the next `library-publish.yml` run, cron `41 */3 * * *` UTC, a check waits up to three
+hours: `f-library-check-runs-every-3h-s736`) and offers *Add its public summary* while it waits. *File a new version* is
+gone (Sam: *"the file feature is not needed"*). A page under `library/` carries the vault's canonical header (`public-header/apply.py --tracker-logos ../../sierra/`), never the Catalog's adapted copy
 (`tests/library_pages.test.js`).
 
 **PITFALL (S735): a session cannot write `public_summary` or any other public field.** `cpl_library_guard_public`
@@ -40,9 +42,11 @@ needs the team phrase or a reviewer sign-in"*). The S735 summary migration was w
 `adult-ed-cpl-starting-points` holds `public_summary` NULL; a person signed in adds it from the card's *Publish to
 Public Library* form, which #3865 prefills from the internal summary.
 
-**NEXT (S735):** review and merge #3865; merge #3864 (filter, search, 25 more credentials, the record's url on Pages),
-then dispatch `library-publish.yml` so the piece gets its check row; once the check passes, Sam (or anyone signed in)
-types or accepts the public summary in the card's Publish to Public Library form, which lists it.
+**Adult Ed CPL Starting Points failed its first check** (19 findings: target size, the eyebrow's contrast, the column
+grip's aria); #3868 fixed them and the re-check passed at 01:13Z 2026-11-26 with 0 findings. A card must say a failed
+first check plainly, since the piece looks finished. **NEXT:** Sam adds its public summary with *Publish to Public
+Library* on the card (`public_summary` is still NULL), then the next library-publish run lists it; CPLBrain#870 (the
+page's vault source) needs #3868's edits.
 
 **LIVE: Publish now shows one status line (#3562, `0159aacb`; Sam's test of Nov 19, COBIx on #3560).** Publishing,
 Deploying, Live (only once the page's own address answers), or Failed with the function's reason (`not_configured`,
@@ -50,7 +54,7 @@ Deploying, Live (only once the page's own address answers), or Failed with the f
 
 **LIVE: the publishing model and the check run (#3560 parts 1 and 2).** Part 1 (#3572, S687; three migrations applied, runs 44621258767, 44624282220, 44628207752): a new piece's ready draft offers *Publish to Internal Library* and *Publish to Public Library*, and a listing needs a passing check at the page's current version key and url (`cpl_library_set_public()` refuses one without it; the service role is exempt). Part 2 (#3577 `45af74fd` and #3581 `ac093582`, S688; applied from trigger branches, runs 44653210148 and 44673522564): after `--finish`, `library-publish.yml` checks each page it plans (`scripts/library_check.py`, `scripts/a11y.js`), writes one `cpl_library_checks` row per page with its receipt and a content-hash proof, lists a passing piece that holds a typed public summary, and stamps each page's accessibility line from the rows; a pass line prints only while the page on disk matches its proof. The first real run (2026-11-20 12:10Z, run 44733588776, success): 8 check rows, 7 pass and 1 fail. The 21 pieces listed before the checks stay listed as Not yet certified while their findings are fixed (RULED `r-library-legacy-listings-stay-sam-2026-11-19`). Known limit: between runs, a team press of Public can list a page changed at the same url and version on the earlier pass; the next run closes it. Every DECIDED line of parts 1 and 2, in the paragraphs as they stood ([`library_lessons_archive_3`](../../library_lessons_archive_3.md), *Moved from the lane (S690 checkpoint)*): `d-library-check-per-version-key-s687`, `d-library-new-page-unlists-s687`, `d-library-internal-one-press-s687`, `d-library-3560-in-four-prs-s687`, `d-library-check-binds-url-s688`, `d-library-check-run-on-publish-s688`, `d-library-legacy-listings-stay-s688`, `d-library-run-lists-by-guarded-update-s688`, `d-library-list-needs-typed-summary-s688`, `d-library-footer-from-check-s688`, `d-library-footer-binds-page-hash-s688`, `d-library-check-after-page-change-s688`, `d-library-tab-precheck-url-s688`. Guards: `tests/library_publishing_model.test.js`, `tests/public_library.test.js`, `tests/library_publishing_sql_proof.py`, `tests/library_check_test.py`, `tests/library_check_footer.test.js`.
 
-**#3600 (S690, `9fc88a07`; DECIDED `d-main-red-check-line-stays-out-s690`): the check line stays out of the reading text and out of new pieces.** The first run stamped every page's line, the starter page's included (653864b7), so ELL IET's reading text passed Sierra's `LIBRARY_TEXT_MAX` (33,996 to 34,078 of 34,000 characters) and `buildNewPage` copied the starter's line into new pieces; `main` stayed red until the merge. `cpl-chat`'s `libraryPageText`, the drafter's `readingText` and the card's `sierraText` now skip the `cpl-library-check` block, and `buildNewPage` drops it (`sierra_library` 31, `library_revise_draft` 120, `library_qualify_draft` 40 and the footer's 11 pass, with `library_check_test`). **Not deployed:** `cpl-chat-deploy.yml` for `cpl-chat` and `library-revise-draft` waits for a plain session.
+**#3600 (S690, `9fc88a07`): the check line stays out of the reading text and out of new pieces** (the paragraph as it stood: [`library_lessons_archive_3`](../../library_lessons_archive_3.md), *Moved from the lane (S736 checkpoint)*). **Not deployed:** `cpl-chat-deploy.yml` for `cpl-chat` and `library-revise-draft` waits for a plain session.
 
 **NEXT (#3560):** deploy #3600 (a plain session); read the failing piece's findings on its card; then part 4 (Publish all, Add existing, redraft and republish), then part 3 (the progress bar). A plain session's work; conductor runs stay on collection.
 
