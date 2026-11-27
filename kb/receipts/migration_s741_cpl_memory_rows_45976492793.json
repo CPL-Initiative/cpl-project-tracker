@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-27_s741_cpl_memory_rows.sql",
+ "name": "s741_cpl_memory_rows",
+ "version": "20261127094747",
+ "sha256": "35cdbec0be931206838593d744d8fa03d582dba2f097c2b92b43f98b2e191d9b",
+ "run": "45976492793",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"slug\":\"d-crc-filing-parked-for-moved-pdf-s741\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":351},{\"slug\":\"d-reread-before-rebuilt-plan-s741\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":318},{\"slug\":\"d-shared-reader-change-reader-on-fable-s741\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":313},{\"slug\":\"f-ela-committed-passes-live-older-s741\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":339},{\"slug\":\"f-keep-better-major-equal-rank-s741\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":363},{\"slug\":\"m-collection-s741\",\"kind\":\"milestone\",\"status\":\"proposed\",\"summary_len\":315},{\"slug\":\"p-conductor-apply-from-detached-head-s741\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":241},{\"slug\":\"p-migrate-queue-global-pending-cancels-s741\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":298},{\"slug\":\"p-noncredit-test-injected-key-collides-with-live-save-s741\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":323}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
