@@ -74,3 +74,12 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 ## Split changes during the run
 
 - 12:16Z: one writer confirmed (open PRs: #3383 alone; `main` unmoved since #3897).
+- 12:21Z: the declaration pushed (`0f3101e8`), draft #3903.
+- 12:25Z: display build `5b80d4de75e9` pushed on `claude/s742-display` (`2ec94a69`, built on `ee42134e` with Python 3.12;
+  `tests/roep_display_test.py` and `check_generated.sh` clean); the Glendale gate dispatched.
+- 12:27Z: `keys`, `readers` and `piles` started on Fable 5.2 at high effort, each in the harness's own worktree off
+  `ee42134e`, told to open no PR (the conductor opens the land), to dispatch only free runs on their own branch, and to
+  leave paid runs, rereads, loads, `.apply` and every Supabase call to the conductor.
+- 12:29Z: the Glendale gate 45998506887 green at 12:28Z: 242 Glendale rows at `5b80d4de75e9`, nothing else moved (live:
+  18,504 at `a143061a2ae2`, 16 at `0874a3a15f22`, 15 Glendale rows at `bef8ef819af7`, 1 at `4c57fd250cce`, 1 with no
+  display; 18,779 rows). The whole build dispatched on the branch.
