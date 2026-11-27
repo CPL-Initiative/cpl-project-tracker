@@ -34,8 +34,8 @@ number: this run is S742 and writes 743. 739 stays SkyTurnstone's (Sam's next pl
 2a. **Sam's work order (2026-11-20):** collection comes first, data waves before fixes, and a fix goes ahead of the next
    wave only when it blocks it or would file wrong rows (`r-collection-first-sam-2026-11-20`). Collection serves the
    M-IDs, so its fixes are ranked by the M-ID cards they unblock (`r-collect-for-mids-work-order-sam-2026-11-20`).
-3. **Merge order at sign-off:** #3904 (`1a3e3be8`, the display build `5b80d4de75e9`) has merged; the land PR (number to
-   come: the conductor fills it) carries `keys`, `readers`, `piles` and the sibling branches; this checkpoint, #3903,
+3. **Merge order at sign-off:** #3904 (`1a3e3be8`, the display build `5b80d4de75e9`) has merged; the land #3905 (merged
+   `1c12d1a7`, confirmed on `origin/main`) carries `keys`, `readers`, `piles` and the sibling branches; this checkpoint, #3903,
    merges after it, with one update from `main` right before its merge. Open PRs at sign-off: #3903, the land, and
    dependabot's #3383, which waits. The vault note's draft PR on `samueltlee/CPLBrain` merges on its own (Sam's ruling of
    2026-11-21).
@@ -279,19 +279,35 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   Beach City 37213, City College of San Francisco 19037; a reread or scorer reading: Gavilan 45357, East Los Angeles
   41231, College of the Sequoias 06770 and 45030, Orange Coast 03993, 08670, 36032, 42331.
 - 14:44Z: the checkpoint-docs worker (Sonnet) started; the conductor stops writing this file (one writer).
+- 14:56Z: Cabrillo's reconcile 46015798176 filed; the conductor kept its four targets alone (219 restamped records put
+  back), ran keep-better (06326 a person's; md5 equal at 14:56Z; kept 4) and dispatched the reread: 06352, 06380, 06381
+  and 44992 passing at 46015798176 at 15:00Z. Records collected: 25.
+- 15:01Z: Cuyamaca's reconcile 46017556328 filed; keep-better (fresh read at 15:00Z, md5 equal) holds 18637 for a person
+  until the land merges (its live row is tonight's reread run, `main` files the old one): parked on
+  `claude/s742-readers-cuy2` (`284d0270`).
+- 15:06Z: the 8 `cpl_memory` rows applied by migrate 46021590772 on the second try (the first, 46021306187, wrote nothing:
+  the table's kind check has no `pattern`; the three rows take `procedure`); `.apply` restored (`7652c7d0`). The vault note
+  merged as samueltlee/CPLBrain#875 (`904cff53`).
+- 15:07Z to 15:57Z: #3905, the land, through three CI rounds: an either-state edit to the S739 Gavilan test (08464 now
+  posts a later run), then to the S731 pooled test (Cuyamaca 18637's verdict moves with tonight's records), then a real fix
+  in tonight's s742k3 test (its no-Postgres fallback caught `Exception` but not the `SystemExit` the md5 helper raises).
+  `test` green on `24c68b2b`.
+- 16:00Z: #3905 merged as `1c12d1a7`, confirmed on `origin/main`; the closing census dispatched on `main`. The context meter
+  read 109,569 tokens left at 15:17Z (the warning line): this checkpoint was already written, so the run finished the land
+  and signed off.
 
 ## What shipped
 
-In all, at the 14:44Z count: 21 records collected and live (8 passing, 13 named gaps by guarded plans), no outline rows,
-paid reads about $1.10 on their estimates (Cuyamaca $0.25, El Camino $0.50, Butte $0.06, Coastline $0; page reads free).
-The closing count is the conductor's to patch into the last line. Census and headline: the census after the display build,
+In all: 25 records collected and live (12 passing, 13 named gaps by guarded plans), no outline rows, paid reads about
+$0.81 on their estimates (Cuyamaca $0.25, El Camino $0.50, Butte $0.06, Coastline $0; page reads free). Census and headline: the census after the display build,
 46003215768 on `main` (`3502e99c`, 13:04Z): 15,669 of 20,282 pass, 3,950 without, 663 with a named gap; the closing census
 is the next session's first read.
 
 **Merged.**
 - **#3904 (`1a3e3be8`, 12:59Z), the display build `5b80d4de75e9`** (18,747 rows; the gate at Glendale 45998506887, then the
   whole build 45998968540).
-- **The land** (number to come): `keys`, `readers`, `piles` and the sibling branches, merged by the conductor.
+- **#3905, the land** (`claude/s742-land`, merged `1c12d1a7`, confirmed on `origin/main`): `keys`, `readers` at `4d394536`,
+  `piles` and its siblings (Cabrillo included), and `claude/s742-apply`; the closing census was dispatched on `main` after it.
 
 **Live (each applied, reread or loaded).**
 - Keys 6 (and one upgrade): San Jose City 38499 (the cited `JOURN138` renumber; the conductor carried it after `keys` ended); Cuesta 43053,
@@ -306,16 +322,19 @@ is the next session's first read.
   Acalog road reading `site_pages` pins with its host check; Coastline's pin and `site_heading_plural`; San Jose City's
   `JOURN138` renumber; Cuyamaca's `electives_fill_words` step; Cabrillo's `recommended_counts` step; plan modules
   `kb/_program_piles_s742*.py`; the compact live-read form `kb/_live_read_expand.py`.
-- In flight at the wind-down: Cuyamaca 18637 (reconcile on `claude/s742-readers-cuy2`); Cabrillo 06352, 06380, 06381 and
-  44992 (reconcile 46015798176 on `claude/s742-piles-cabrillo`).
+- Cabrillo 06352, 06380, 06381 and 44992 passing by the conductor's reread of reconcile 46015798176 (the four kept
+  alone, 219 restamped records put back, 06326 a person's and untouched), in the land. Cuyamaca 18637 parked on
+  `claude/s742-readers-cuy2` (`284d0270`): keep-better holds it for a person until the land merges (its live row is
+  tonight's reread 46003456131 while `main` filed 38748833332).
 - Parked, not landed: `claude/s742-readers-stagepin` (`f3a01a5b`, Coastline 43057's staging fix, unreviewed); Orange
-  Coast's paid read (capture 45999669017); `claude/s742-piles-cabrillo` if its reread misses the land.
+  Coast's paid read (capture 45999669017); `claude/s742-readers-cuy2` (`284d0270`, Cuyamaca 18637).
 
 ## Open work, from the lanes' NEXT lines
 
 1. **`program-requirements-harvest`** (the routine's), by the lane's NEXT:
    - NEXT (2): the display build carrying S742's records, gate college Glendale, then `harvest-gap-census.yml` on `main`.
-   - NEXT (3), lane 1: Cuyamaca 18637's and Cabrillo's reconciles (keep-better, then a reread); Coastline 43057's staging
+   - NEXT (3), lane 1: Cuyamaca 18637 (`claude/s742-readers-cuy2`, `284d0270`: merge `main`, rerun keep-better, then the reread force
+     46017556328); Coastline 43057's staging
      fix (a Fable second reader, then `only=43057`, about $0.15); Orange Coast 08663 and 08626's paid read (about $0.15);
      the gap plans Butte 14583, Santa Barbara City 43553 and East Los Angeles 31017 unlocked; the holds by key (San Jose City
      18449, San Bernardino Valley 04894, San Diego City 22352 and 38732, Solano 43134, El Camino 19857, Reedley 30465, Los
@@ -338,8 +357,7 @@ Handoff 742's table stands in every row this run did not clear; the rows below c
 
 | Block | Who clears it | Since |
 |---|---|---|
-| Cuyamaca 18637: reconcile on `claude/s742-readers-cuy2`, then keep-better and a reread | Sky, lane 1 | 2026-11-27 (S742) |
-| Cabrillo 06352, 06380, 06381, 44992: reconcile 46015798176 on `claude/s742-piles-cabrillo` | Sky, lane 2 | 2026-11-27 (S742) |
+| Cuyamaca 18637: keep-better after the land, then the reread (`claude/s742-readers-cuy2`, `284d0270`) | Sky, lane 1 | 2026-11-27 (S742) |
 | Coastline 43057: staging fix `claude/s742-readers-stagepin` (`f3a01a5b`, no second reader) | Sky, a Fable second reader, then the paid read | 2026-11-27 (S742) |
 | Orange Coast 08663 and 08626: the paid read (capture 45999669017) | Sky, lane 2 | 2026-11-27 (S742) |
 | Gap plans: Butte 14583, Santa Barbara City 43553, East Los Angeles 31017 | Sky, lane 2 | 2026-11-27 (S742) |
@@ -427,7 +445,10 @@ about $190.
 | #3903 (`claude/awesome-fermat-r0r7bv`) | the declaration, the log and this checkpoint (draft) | merges at sign-off, after the land and one update from `main` |
 | #3904 (`claude/s742-display`) | merged `1a3e3be8` (12:59Z); display build `5b80d4de75e9` live | none |
 | `claude/s742-keys`, `claude/s742-readers`, `-readers-ec`, `-readers-cuy`, `claude/s742-piles`, `-piles-butte`, `-piles-sbcc`, `-piles-fullerton`, `claude/s742-apply` | s742k1 to s742k3, s742r1, s742r2, s742a, s742b applied; reads and rereads live | the land PR (number to come) |
-| `claude/s742-readers-cuy2`, `claude/s742-piles-cabrillo` | reconciles in flight at 14:44Z | NEXT (3): keep-better, a reread; parked if they miss the land |
+| #3905 (`claude/s742-land`) | merged `1c12d1a7` | none |
+| `claude/s742-piles-cabrillo` | reread posted; in the land | none |
+| `claude/s742-readers-cuy2` (`284d0270`) | Cuyamaca's reconcile 46017556328 filed, kept for 18637 alone | NEXT (3): merge `main`, keep-better, the reread |
+| samueltlee/CPLBrain#875 | the vault note, merged `904cff53` | none |
 | `claude/s742-readers-stagepin` (`f3a01a5b`) | parked, unreviewed | the next session (NEXT (3)) |
 | Harvest gap census on `main` | 46003215768 (13:04Z): 15,669 pass | the next session's first read, after the display build carrying these records |
 | #3383 | dependabot's | waits |
@@ -440,8 +461,11 @@ drop. Workers end with the session; each branch is pushed. The vault note for th
 `CPLBrain/07-session-notes/2026-11-27-s742-skygodwit-collection.md`, merged by the conductor under Sam's ruling of
 2026-11-21 that vault note drafts merge on their own.
 
-Spend: <conductor fills>
+Spend: about $185 estimate at list prices (Fable 5.2 $132.62, Opus 5.5 $43.53 to 16:01Z, Sonnet 5.5 $7.65, Haiku 5.5 $0.05, and about $1 for the sign-off), from the session's and its agents' transcripts; collection $185;
+2026-11-27T12:12Z to 2026-11-27T16:15Z. (Fable 5.2 $8/$40 per MTok and cache reads $0.20; Opus 5.5 $4/$20 and $0.20; Sonnet 5.5
+$2/$10 and $0.10; Haiku 5.5 $0.10/$0.50; cache writes at 1.25 times input. The paid reads' own cost, about $0.81 on their
+estimates, is apart.)
 
 Opening line: *Greetings, you are SkyStilt (the next free session number at your start; the routine takes it, so Session 743 and the run after it writes 744), see SkyGodwit's (S742) handoff — `docs/session_743_handoff.md` — let's keep rolling with our queue.*
 
-Conductor model: Opus 5.5 (the form names Fable 5.2); session cost <conductor fills>; 21 records collected and live (8 passing, 13 named gaps) at the 14:44Z count, the conductor patches the closing number; 0 outline rows added; 2 substantive PRs merged (#3904, the land), not counting checkpoints.
+Conductor model: Opus 5.5 (the form names Fable 5.2); session cost about $185 (a token-count estimate; get_session is not available here); 25 records collected and live (12 passing, 13 named gaps); 0 outline rows added; 2 substantive PRs merged (#3904, #3905), not counting checkpoints.
