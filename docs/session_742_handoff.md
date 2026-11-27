@@ -231,3 +231,6 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 - 08:53Z: `readers` (head `eb049d29`): the keep-better fix made (a filed unequal record whose major equals stays
   above), to its reader's second round; Ventura's account keeps all seven, and its reread dispatched (force
   45964322406). Spend at 08:53Z: about $187.
+- 08:54Z: the keep-better fix's round 2 (Fable 5.2): GO (all 79 major-equal unequal records keep their filed record).
+  Ventura's reread 45969224515 posted the seven; live at 08:56Z, all equal at 45964322406 (passing). Records
+  collected: 34. Cuyamaca's free reconcile 45966682528 filed at 08:53Z on `claude/s741-keys`.
