@@ -208,3 +208,8 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 - 08:33Z: Cuyamaca's step GO (Sonnet): the real reconcile flags 18634, 18635 and 18636; the recall's fourth, 18637,
   stays as filed under the moved-page guard (its record is Grossmont's page) until a read of its own page. `keys`
   dispatches the free reconcile.
+- 08:45Z: `readers` reported (head `841c1110`, the Norco sibling merged in): Ventura's seven all pass; Norco's twelve:
+  seven pass, 32830, 37311 and 44961 read incomplete with the major equal to its printed total (`ge_units_not_read`),
+  39998 and 40064 unequal. Its keep-better ranking change (an "incomplete, major equal" re-read above a filed
+  "unequal": 210 such records statewide) to the Fable reader; Norco's reread waits for its GO, Ventura's goes first.
+  Keep-better's live read at 08:46Z: no person's check at Ventura, Norco or San Diego City.
