@@ -5,18 +5,18 @@
  "found": 251,
  "extracted": 251,
  "errors": 0,
- "passed_machine_checks": 229,
+ "passed_machine_checks": 237,
  "failed": {
   "coverage": 1,
   "invented": 0,
-  "arithmetic": 21,
+  "arithmetic": 13,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd_run": 0.2,
+ "cost_usd_run": 0.0,
  "cost_usd_filed": 18.21,
  "cost_per_program": 0.0725,
- "extract_calls": 4,
+ "extract_calls": null,
  "extract_failed": [],
  "not_found": [
   {
@@ -247,7 +247,8 @@
       "Learning Outcomes",
       485
      ]
-    ]
+    ],
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -311,7 +312,8 @@
       "Learning Outcomes",
       264
      ]
-    ]
+    ],
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -384,7 +386,8 @@
    "title": "Secondary Education/Bi-lingual/Biliterate GED Preparation",
    "award": "Noncredit program",
    "near_miss": {
-    "why": "no page read names the program"
+    "why": "no page read names the program",
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -393,7 +396,8 @@
    "title": "Secondary Education/GED Preparation",
    "award": "Noncredit program",
    "near_miss": {
-    "why": "no page read names the program"
+    "why": "no page read names the program",
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -402,7 +406,8 @@
    "title": "ADHS: Adult High School Diploma",
    "award": "Noncredit program",
    "near_miss": {
-    "why": "no page read names the program"
+    "why": "no page read names the program",
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -416,5 +421,5 @@
    "status": "Active - Teachout Only"
   }
  ],
- "run": "44519697720"
+ "run": "46010148668"
 }

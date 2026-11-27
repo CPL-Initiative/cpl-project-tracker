@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 319,
  "with_closed_list": 287,
- "started": "2026-11-19T12:00:23Z",
+ "started": "2026-11-27T13:48:26Z",
  "scope": null,
  "sitemap": {
   "url": "https://catalog.sbcc.edu/sitemap.xml",
@@ -26,13 +26,13 @@
  "banner_h1": "Santa Barbara City College",
  "catalog_lookup": {
   "self_test": {
-   "tested": 243,
+   "tested": 241,
    "hits": 223,
-   "recall": 0.918,
+   "recall": 0.925,
    "false": 0,
    "false_off_own": 3,
    "false_no_claims": 3,
-   "shared": 8,
+   "shared": 10,
    "false_matches": [
     {
      "control_number": "05940",
@@ -98,7 +98,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "05917",
@@ -106,7 +106,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "05921",
@@ -114,7 +114,7 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "08573",
@@ -122,7 +122,7 @@
     "award": "A.A. Degree",
     "status": "Active - Teachout Only",
     "result": "not_searched",
-    "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "08590",
@@ -130,7 +130,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "08591",
@@ -138,7 +138,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "11351",
@@ -146,7 +146,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "15173",
@@ -154,7 +154,7 @@
     "award": "A.A. Degree",
     "status": "Active - Teachout Only",
     "result": "not_searched",
-    "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "18380",
@@ -162,7 +162,7 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "18381",
@@ -170,7 +170,7 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "19658",
@@ -178,7 +178,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "19794",
@@ -186,7 +186,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "19795",
@@ -194,7 +194,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "30730",
@@ -210,7 +210,7 @@
     "award": "A.A- T Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "32407",
@@ -218,7 +218,7 @@
     "award": null,
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "32517",
@@ -226,7 +226,7 @@
     "award": null,
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "32757",
@@ -234,7 +234,7 @@
     "award": null,
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "35241",
@@ -242,7 +242,7 @@
     "award": "A.S. T Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "35494",
@@ -250,7 +250,7 @@
     "award": "Noncredit program",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "35511",
@@ -258,7 +258,7 @@
     "award": "Noncredit program",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "35512",
@@ -266,7 +266,7 @@
     "award": "Noncredit program",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "35513",
@@ -274,7 +274,7 @@
     "award": "Noncredit program",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "35514",
@@ -282,7 +282,7 @@
     "award": "Noncredit program",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "36181",
@@ -290,7 +290,7 @@
     "award": "Noncredit program",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "36182",
@@ -298,7 +298,7 @@
     "award": "Noncredit program",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "36205",
@@ -306,7 +306,7 @@
     "award": "Noncredit program",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "36395",
@@ -314,7 +314,7 @@
     "award": "Noncredit program",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "36396",
@@ -322,7 +322,7 @@
     "award": "Noncredit program",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "36832",
@@ -330,7 +330,7 @@
     "award": "Noncredit program",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "38681",
@@ -338,7 +338,7 @@
     "award": "Noncredit program",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "45037",
@@ -346,7 +346,7 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
    }
   ],
   "yields": [],
@@ -354,7 +354,7 @@
   "yield_refused_passing": 0
  },
  "loads": 378,
- "seconds": 1794.5,
+ "seconds": 1862.6,
  "found": 251,
  "by_method": {
   "no_closed_list": 32,
@@ -366,6 +366,10 @@
   "https://catalog.sbcc.edu/academic-departments/culinary-arts-hotel-management/culinary-arts-professional-as/": [
    "05943",
    "40203"
+  ],
+  "https://catalog.sbcc.edu/academic-departments/accounting-education/assistant-bookkeeper-level-IV-certificate-achievement/": [
+   "10898",
+   "41281"
   ],
   "https://catalog.sbcc.edu/academic-departments/early-childhood-education/associate-child-care-teacher-certificate-achievement/": [
    "17419",
@@ -609,7 +613,8 @@
       "Learning Outcomes",
       485
      ]
-    ]
+    ],
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -673,7 +678,8 @@
       "Learning Outcomes",
       264
      ]
-    ]
+    ],
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -746,7 +752,8 @@
    "title": "Secondary Education/Bi-lingual/Biliterate GED Preparation",
    "award": "Noncredit program",
    "near_miss": {
-    "why": "no page read names the program"
+    "why": "no page read names the program",
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -755,7 +762,8 @@
    "title": "Secondary Education/GED Preparation",
    "award": "Noncredit program",
    "near_miss": {
-    "why": "no page read names the program"
+    "why": "no page read names the program",
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -764,7 +772,8 @@
    "title": "ADHS: Adult High School Diploma",
    "award": "Noncredit program",
    "near_miss": {
-    "why": "no page read names the program"
+    "why": "no page read names the program",
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -962,59 +971,36 @@
  ],
  "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 6,
+  "0.5-0.8": 7,
   "0.8-1.0": 60,
-  "1.0": 185
+  "1.0": 184
  },
  "would_extract": {
   "against": "kb/program_requirements_college/santa_barbara_city",
-  "kept": 247,
+  "kept": 249,
   "kept_moved": 0,
-  "programs": 4,
-  "list": [
+  "programs": 0,
+  "list": [],
+  "held_worse_window": [
    {
     "control_number": "32629",
     "title": "Physics",
     "award": "A.S. T Degree",
     "url": "https://catalog.sbcc.edu/academic-departments/physics/physics-ast/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.sbcc.edu/academic-departments/physics/physics-ast/",
-    "was_coverage": 0.5,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "39376",
-    "title": "Digital Photograph Management",
-    "award": "Noncredit program",
-    "url": "https://catalog.sbcc.edu/sel/career-skills/digital-photograph-management-certificate-completion/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
+    "coverage": 0.5,
+    "was_coverage": 1.0
+   }
+  ],
+  "held_no_gain": [
    {
     "control_number": "41281",
     "title": "Accounting Assistant/Bookkeeper, Level I",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.sbcc.edu/academic-departments/accounting-education/assistant-bookkeeper-level-i-certificate-achievement/",
+    "url": "https://catalog.sbcc.edu/academic-departments/accounting-education/assistant-bookkeeper-level-IV-certificate-achievement/",
     "coverage": 1.0,
-    "was_url": "https://catalog.sbcc.edu/academic-departments/accounting-education/assistant-bookkeeper-level-IV-certificate-achievement/",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "44675",
-    "title": "Digital Photography Level 1",
-    "award": "Noncredit program",
-    "url": "https://catalog.sbcc.edu/sel/career-skills/digital-photography-essentials-nc-completion/",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_coverage": 1.0
    }
   ],
-  "held_worse_window": [],
-  "held_no_gain": [],
   "held_opens_on_list": [],
   "refused_passing": [],
   "forced_unbound": []
@@ -1497,7 +1483,7 @@
    "url": "https://catalog.sbcc.edu/academic-departments/art/studio-art-aat/"
   },
   "32629": {
-   "sha256": "4118f087d4612239806d9ea98fb4dfcec349e191ce29cfef4a6745c4f1e7d1bf",
+   "sha256": "218d39cab52a84f2fef205c6499bc67254c05491cc6c0053052e2a958d750ac2",
    "url": "https://catalog.sbcc.edu/academic-departments/physics/physics-ast/"
   },
   "32650": {
@@ -1865,8 +1851,8 @@
    "url": "https://catalog.sbcc.edu/academic-departments/art/art-history-certificate-achievement/"
   },
   "41281": {
-   "sha256": "d06f71ca75376d515fcd4ce512fa01ef7fd42a04b63855880ce21b4baf467eb5",
-   "url": "https://catalog.sbcc.edu/academic-departments/accounting-education/assistant-bookkeeper-level-i-certificate-achievement/"
+   "sha256": "b5facd267fb87f07c9140f2d570e52f27802d10b2bcae4b5f90ee516d8f63740",
+   "url": "https://catalog.sbcc.edu/academic-departments/accounting-education/assistant-bookkeeper-level-IV-certificate-achievement/"
   },
   "41282": {
    "sha256": "817ad0c50befe4ef59a5801caa3e810b00a2ada4d9eb457c5cbde3ec87cbb585",
@@ -2025,5 +2011,5 @@
    "url": "https://catalog.sbcc.edu/academic-departments/modern-languages/spanish-for-non-heritage-speakers-certificate-achievement/"
   }
  },
- "run": "44519697720"
+ "run": "46010148668"
 }
