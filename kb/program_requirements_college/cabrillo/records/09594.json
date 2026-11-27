@@ -78,6 +78,7 @@
     33.0,
     33.0
    ],
+   "against": "program",
    "why": [
     "the blocks sum to 36.0-36.0; the catalog states 33.0-33.0"
    ]
@@ -100,6 +101,9 @@
    "count": 4,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": false,
   "gaps": [
@@ -319,5 +323,6 @@
    "The Program Map repeats the same courses and is not recorded separately."
   ]
  },
- "extracted_run": "38442109713"
+ "extracted_run": 46015798176,
+ "read_run": "38442109713"
 }

@@ -63,34 +63,34 @@
    "pass": true,
    "status": "equal",
    "computed": [
-    62.0,
-    62.0
+    28.0,
+    28.0
    ],
    "stated": [
-    60.0,
-    60.0
+    28.0,
+    28.0
    ],
-   "against": "degree",
-   "ge": [
-    34.0,
-    34.0
-   ],
+   "against": "program",
    "why": [],
-   "major": {
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     28.0,
-     28.0
+     62.0,
+     62.0
     ],
     "stated": [
-     28.0,
-     28.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
    },
-   "overlap": true,
    "rescored": "Open Asks Sheet 82"
   },
   "repeated": {
@@ -221,7 +221,7 @@
    "The Program Map (Fall Start) lists Cal-GETC GE courses; these were not recorded as blocks. The catalog text is truncated at the beginning (description) and at the end (in the program map)."
   ]
  },
- "extracted_run": 38639316727,
+ "extracted_run": 46015798176,
  "reconciled": [
   {
    "field": "degree_total",
@@ -242,5 +242,5 @@
    "words": "Cal-GETC General Education\n34"
   }
  ],
- "read_run": "38442109713"
+ "read_run": 38639316727
 }

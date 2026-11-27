@@ -108,6 +108,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "read"
+  },
   "pass": true
  },
  "record": {
@@ -385,5 +388,6 @@
    "The page prints one outcomes list for the program; recorded for this A.A.-T."
   ]
  },
- "extracted_run": "38565227455"
+ "extracted_run": 46015798176,
+ "read_run": "38565227455"
 }

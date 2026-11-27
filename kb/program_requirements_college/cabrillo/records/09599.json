@@ -100,6 +100,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "read"
+  },
   "pass": true
  },
  "record": {
@@ -379,5 +382,6 @@
    "The general sentence 'at least 30 units in the major' was not treated as a stated major total."
   ]
  },
- "extracted_run": "38565227455"
+ "extracted_run": 46015798176,
+ "read_run": "38565227455"
 }

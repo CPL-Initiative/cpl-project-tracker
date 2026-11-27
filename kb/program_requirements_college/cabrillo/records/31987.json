@@ -63,34 +63,34 @@
    "pass": true,
    "status": "equal",
    "computed": [
-    64.0,
-    64.0
+    30.0,
+    30.0
    ],
    "stated": [
-    60.0,
-    60.0
+    30.0,
+    30.0
    ],
-   "against": "degree",
-   "ge": [
-    34.0,
-    34.0
-   ],
+   "against": "program",
    "why": [],
-   "major": {
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     30.0,
-     30.0
+     64.0,
+     64.0
     ],
     "stated": [
-     30.0,
-     30.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
    },
-   "overlap": true,
    "rescored": "Open Asks Sheet 82"
   },
   "repeated": {
@@ -220,7 +220,7 @@
    "Careers were taken from the program description, which describes options for physics graduates at the bachelor's level and beyond; reviewer should confirm these phrases count as careers."
   ]
  },
- "extracted_run": 38639316727,
+ "extracted_run": 46015798176,
  "reconciled": [
   {
    "field": "degree_total",
@@ -241,5 +241,5 @@
    "words": "Cal-GETC General Education\n34"
   }
  ],
- "read_run": "38442109713"
+ "read_run": 38639316727
 }

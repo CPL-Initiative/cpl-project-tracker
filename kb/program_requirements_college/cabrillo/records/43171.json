@@ -74,6 +74,7 @@
     16.0,
     16.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -94,6 +95,9 @@
    "count": 4,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -318,5 +322,6 @@
    "Careers are drawn from the program description ('career path in commercial music', 'workforce of professional musicians', 'workforce in commercial music performance in Latin music', 'music teaching career'); reviewer may wish to verify the phrasing chosen."
   ]
  },
- "extracted_run": "38442109713"
+ "extracted_run": 46015798176,
+ "read_run": "38442109713"
 }

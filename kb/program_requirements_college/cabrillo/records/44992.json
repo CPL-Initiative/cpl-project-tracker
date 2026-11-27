@@ -60,11 +60,11 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    24.0,
-    24.0
+    60.0,
+    60.0
    ],
    "stated": [
     60.0,
@@ -75,9 +75,7 @@
     24.0,
     24.0
    ],
-   "why": [
-    "the blocks and general education sum to 24.0-24.0; the catalog prints 60.0-60.0 for the degree"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -101,7 +99,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -136,8 +134,8 @@
   "blocks": [
    {
     "name": "Recommended Major Requirements",
-    "rule": "recommended",
-    "minimum": null,
+    "rule": "choose_units",
+    "minimum": 10,
     "option_group": null,
     "stated": {
      "min": 10,
@@ -169,8 +167,8 @@
    },
    {
     "name": "Recommended Major Electives",
-    "rule": "recommended",
-    "minimum": null,
+    "rule": "choose_units",
+    "minimum": 8,
     "option_group": null,
     "stated": {
      "min": 8,
@@ -251,8 +249,8 @@
    },
    {
     "name": "Recommended General Electives",
-    "rule": "recommended",
-    "minimum": null,
+    "rule": "choose_units",
+    "minimum": 18,
     "option_group": null,
     "stated": {
      "min": 18,
@@ -324,38 +322,28 @@
    "The catalog text begins mid-sentence ('is exciting discipline'), so part of the program description appears to be cut off. The source URL references 'fall-2025' while the catalog year is 2026-2027."
   ]
  },
- "extracted_run": 38639316727,
+ "extracted_run": 46015798176,
  "reconciled": [
   {
-   "field": "degree_total",
-   "was": null,
-   "now": {
-    "min": 60,
-    "max": 60
-   },
-   "words": "Program Requirements\nExercise and Sports Science - Associate in Arts (A.A.)\nComplete the following number of credits: 60"
-  },
-  {
-   "field": "ge_units",
-   "was": null,
-   "now": {
-    "min": 24,
-    "max": 24
-   },
-   "words": "Cabrillo College General Education\n24"
-  },
-  {
-   "field": "total_units",
+   "field": "blocks",
    "was": {
-    "min": 18,
-    "max": 18
+    "rule": "recommended",
+    "lists": [
+     "Recommended Major Requirements",
+     "Recommended Major Electives",
+     "Recommended General Electives"
+    ]
    },
    "now": {
-    "min": null,
-    "max": null
+    "rule": "choose_units",
+    "minimum": [
+     10,
+     8,
+     18
+    ]
    },
-   "words": "at least 18 units in the major"
+   "words": "Recommended Major Requirements Complete the following number of credits: 10; Recommended Major Electives Complete the following number of credits: 8; Recommended General Electives Complete the following number of credits: 18"
   }
  ],
- "read_run": "38442109713"
+ "read_run": 38639316727
 }

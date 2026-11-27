@@ -70,6 +70,7 @@
     99.0,
     99.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -90,6 +91,9 @@
    "count": 3,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -150,5 +154,6 @@
    "The program map (two semesters: BUS482 54 hours, DM457 45 hours) agrees with the requirements."
   ]
  },
- "extracted_run": "38442109713"
+ "extracted_run": 46015798176,
+ "read_run": "38442109713"
 }

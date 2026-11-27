@@ -108,6 +108,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "read"
+  },
   "pass": false,
   "gaps": [
    {
@@ -624,5 +627,6 @@
    "The text opens mid-sentence, so the program description is truncated. No careers are named in the visible text."
   ]
  },
- "extracted_run": "38565227455"
+ "extracted_run": 46015798176,
+ "read_run": "38565227455"
 }

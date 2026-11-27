@@ -98,6 +98,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "read"
+  },
   "pass": true
  },
  "record": {
@@ -300,5 +303,6 @@
    "Catalog text is cut off at the start of the description and in the Program Map; the Program Map (sample schedule with Cal-GETC courses) was not used for blocks."
   ]
  },
- "extracted_run": "38565227455"
+ "extracted_run": 46015798176,
+ "read_run": "38565227455"
 }

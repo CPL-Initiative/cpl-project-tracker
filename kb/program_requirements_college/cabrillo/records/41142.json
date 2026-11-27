@@ -76,6 +76,7 @@
     16.0,
     16.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -96,6 +97,9 @@
    "count": 6,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -234,5 +238,6 @@
    "The heading reads 'Historical and Alternative Photographic Processes Certificate of Achievement'; the source URL references fall-2025 while the catalog year is 2026-2027, which a reviewer may want to confirm."
   ]
  },
- "extracted_run": "38442109713"
+ "extracted_run": 46015798176,
+ "read_run": "38442109713"
 }

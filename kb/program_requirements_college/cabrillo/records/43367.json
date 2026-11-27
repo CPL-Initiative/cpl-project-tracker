@@ -96,6 +96,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "read"
+  },
   "pass": true
  },
  "record": {
@@ -336,5 +339,6 @@
    "Careers: only 'the wine industry' is named as a field students are prepared to enter; reviewer may judge whether it counts as a career field."
   ]
  },
- "extracted_run": "38565227455"
+ "extracted_run": 46015798176,
+ "read_run": "38565227455"
 }

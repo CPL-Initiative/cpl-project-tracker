@@ -70,6 +70,7 @@
     16.0,
     18.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -90,6 +91,9 @@
    "count": 1,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -240,5 +244,6 @@
    "Career entry 'human services' taken from 'prepares students to enter the field of human services'; the listed 'areas' (counseling, substance abuse treatment, etc.) were read as subject areas rather than careers."
   ]
  },
- "extracted_run": "38442109713"
+ "extracted_run": 46015798176,
+ "read_run": "38442109713"
 }

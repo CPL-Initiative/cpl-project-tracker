@@ -513,14 +513,14 @@
    "Source URL slug references 'fall-2025' although the catalog year is 2026-2027."
   ]
  },
- "extracted_run": 38639316727,
+ "extracted_run": 46015798176,
  "reconciled": [
   {
    "field": "open_elective_units",
-   "was": null,
+   "was": 0,
    "now": 0,
    "words": "General electives: any transferable or degree applicable course.\n0"
   }
  ],
- "read_run": "38565227455"
+ "read_run": 38639316727
 }

@@ -84,6 +84,7 @@
     18.0,
     19.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -104,6 +105,9 @@
    "count": 3,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -271,5 +275,6 @@
    "Careers taken from the description's entry-level jobs list; the settings named (gallery display, social media marketing, vlogging, etc.) were not recorded as careers."
   ]
  },
- "extracted_run": "38442109713"
+ "extracted_run": 46015798176,
+ "read_run": "38442109713"
 }

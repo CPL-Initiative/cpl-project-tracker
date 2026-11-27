@@ -76,6 +76,7 @@
     18.0,
     18.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -96,6 +97,9 @@
    "count": 7,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -202,5 +206,6 @@
    "CEM162HR (Home Energy Rating System) is on the closed list but does not appear in this 2026-2027 section; it may have been replaced by CEM162LD."
   ]
  },
- "extracted_run": "38442109713"
+ "extracted_run": 46015798176,
+ "read_run": "38442109713"
 }

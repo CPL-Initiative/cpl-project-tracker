@@ -74,6 +74,7 @@
     19.0,
     19.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -94,6 +95,9 @@
    "count": 8,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -188,5 +192,6 @@
    "'greenhouse and nursery industries' is recorded as a career field from the phrase 'career opportunities in the greenhouse and nursery industries'; the reviewer may decide whether to keep it alongside the listed job titles."
   ]
  },
- "extracted_run": "38442109713"
+ "extracted_run": 46015798176,
+ "read_run": "38442109713"
 }

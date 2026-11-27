@@ -70,6 +70,7 @@
     216.0,
     216.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -90,6 +91,9 @@
    "count": 7,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -154,5 +158,6 @@
    "The catalog URL references fall-2021, while the requested catalog year is 2026-2027; the page is under the 2026-2027 catalog path."
   ]
  },
- "extracted_run": "38442109713"
+ "extracted_run": 46015798176,
+ "read_run": "38442109713"
 }

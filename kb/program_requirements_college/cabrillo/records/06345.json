@@ -106,6 +106,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "read"
+  },
   "pass": true
  },
  "record": {
@@ -309,5 +312,6 @@
    "CEM155 Blueprint Reading appears in Major Electives but is not on the closed list."
   ]
  },
- "extracted_run": "38565227455"
+ "extracted_run": 46015798176,
+ "read_run": "38565227455"
 }

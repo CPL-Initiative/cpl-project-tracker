@@ -70,6 +70,7 @@
     15.5,
     18.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -90,6 +91,9 @@
    "count": 9,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -208,5 +212,6 @@
    "Careers include both the description's list (entry level banquet cooks, banquet servers, event coordinators) and the Career Opportunities list, which overlap in wording; recorded as printed."
   ]
  },
- "extracted_run": "38442109713"
+ "extracted_run": 46015798176,
+ "read_run": "38442109713"
 }

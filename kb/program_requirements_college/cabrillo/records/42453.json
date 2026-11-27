@@ -74,6 +74,7 @@
     18.0,
     18.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -94,6 +95,9 @@
    "count": 5,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -185,5 +189,6 @@
    "The Program Map repeats the same six required courses across Fall and Spring; it adds no further requirements."
   ]
  },
- "extracted_run": "38442109713"
+ "extracted_run": 46015798176,
+ "read_run": "38442109713"
 }
