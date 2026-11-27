@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-27T13:51:27Z",
+ "written_at": "2026-11-27T14:17:37Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,8 +168,8 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17643,
-  "gap": 4692,
+  "passing": 17645,
+  "gap": 4690,
   "with_gap": 118,
   "cost_usd": 1341.37,
   "passed_at_read": 16554,
@@ -190,8 +190,8 @@
  "census_check": {
   "universe": 22335,
   "passing": 16977,
-  "gap": 4692,
-  "collected_with_gaps": 666,
+  "gap": 4690,
+  "collected_with_gaps": 668,
   "discontinued": 0
  },
  "census_live": {
@@ -4287,12 +4287,12 @@
    "harvested": true,
    "slug": "el_camino",
    "programs": 189,
-   "passing": 123,
-   "gap": 66,
+   "passing": 125,
+   "gap": 64,
    "causes": {
     "no_closed_list": 54,
     "page_not_found": 9,
-    "unknown_without_live": 3
+    "unknown_without_live": 1
    },
    "census_causes": {
     "no_closed_list": 54,
@@ -4347,7 +4347,7 @@
    "levers": {
     "program_course_file_check": 54,
     "reader_page_search": 9,
-    "reconcile_steps": 3
+    "reconcile_steps": 1
    },
    "collection": {
     "program_reader": {

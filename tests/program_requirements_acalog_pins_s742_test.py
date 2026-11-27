@@ -130,6 +130,11 @@ def program(cn):
 
 PINS = C.site_pin_entries(ELC)
 FIVE = ["19861", "19866", "19883", "38948", "43993"]
+# The sister degree's page the capture had handed each certificate (the filed capture 45773663927; paid read
+# 46007782666 has since filed each on its own page, so the degree pages are named here, never read from sources.json).
+DEGREE = {"19861": ("3551", "Marketing, AS"), "19866": ("3623", "Journalism, AA-T"),
+          "19883": ("3639", "Photography, AS"), "38948": ("3697", "Entrepreneurial Studies, AS"),
+          "43993": ("3729", "Hybrid, Electric, and Alternative Fuels, AS")}
 
 # ── 1. the pins as the Acalog road reads them ─────────────────────────────────────────────────────
 print("1. ac_pin_in_catalog and ac_site_pins")
@@ -191,8 +196,8 @@ programs = [program(cn) for cn in sorted(BY_CN) if PC.closed_list(ELC, cn)]
 check(len(programs) >= 130 and all(any(p["control_number"] == cn for p in programs) for cn in FIVE),
       "El Camino's programs with a state course list are read offline (%d)" % len(programs))
 own_pages = [page(url_of(poid), h1, HEAD % h1 + body) for poid, h1, body in OWN.values()]
-filed_pages = [page(BY_CN[cn]["source"]["url"], BY_CN[cn]["source"]["h1"],
-                    HEAD % BY_CN[cn]["source"]["h1"] + OWN[cn][2].replace("Certificate of Achievement", "Degree"))
+filed_pages = [page(url_of(DEGREE[cn][0]), DEGREE[cn][1],
+                    HEAD % DEGREE[cn][1] + OWN[cn][2].replace("Certificate of Achievement", "Degree"))
                for cn in OWN]
 pins4 = {cn: p for cn, p in C.ac_site_pins(PINS, BASE, CATOID).items() if cn in OWN}
 bound = C.site_pinned(programs, own_pages + filed_pages, pins4)
@@ -200,7 +205,7 @@ bad = []
 for cn, (poid, h1, body) in sorted(OWN.items()):
     b = (bound.get(cn) or {}).get("best") or {}
     if not (b.get("url") == url_of(poid) and b.get("pinned") is True
-            and (b.get("coverage") or 0) >= C.P.ACCEPT_SHARE and b["url"] != BY_CN[cn]["source"]["url"]):
+            and (b.get("coverage") or 0) >= C.P.ACCEPT_SHARE and b["url"] != url_of(DEGREE[cn][0])):
         bad.append((cn, (bound.get(cn) or {}).get("why"), b.get("coverage")))
 check(not bad and set(bound) == set(OWN),
       "each of the four binds on its own page, never the filed one, marked pinned, at the accept share (%s)" % bad)
@@ -217,10 +222,11 @@ check(all(after[cn] is before[cn] for cn in before if cn not in OWN)
 # ── 4. the wrong joins ────────────────────────────────────────────────────────────────────────────
 print("4. the wrong joins")
 for cn in FIVE:
-    s = BY_CN[cn]["source"]
-    named, head = C.site_heading_names({"url": s["url"], "h1": s["h1"], "title": s["title"]}, program(cn))
+    poid, h1 = DEGREE[cn]
+    named, head = C.site_heading_names({"url": url_of(poid), "h1": h1,
+                                        "title": "Degree & Certificate: %s - El Camino College" % h1}, program(cn))
     check(not named, "%s is not named by the degree page the capture had handed it (%r)" % (cn, head))
-sister = {cn: {"url": BY_CN[cn]["source"]["url"], "evidence": "t"} for cn in OWN}
+sister = {cn: {"url": url_of(DEGREE[cn][0]), "evidence": "t"} for cn in OWN}
 refused = C.site_pinned(programs, own_pages + filed_pages, sister)
 check(all("heading" in (refused.get(cn) or {}).get("why", "") for cn in OWN),
       "a pin to the sister degree's page is refused on its heading, Journalism's transfer degree included (%s)"

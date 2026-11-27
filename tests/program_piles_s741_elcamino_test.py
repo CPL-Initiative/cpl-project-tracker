@@ -41,7 +41,9 @@ check = t.check
 
 with open(os.path.join(ROOT, "kb", "program_total_differs.json"), encoding="utf-8") as fh:
     listed = json.load(fh)["colleges"][M.COLLEGE]
-check(sorted(listed) == ["31319", "42541"], "the file lists El Camino's two programs and no other")
+# S742 (plan s742r2) lists two more, each from its own page read: 19883 and 38948.
+check({"31319", "42541"} <= set(listed) and set(listed) <= {"31319", "42541", "19883", "38948"},
+      "the file lists El Camino's two programs, and since S742 the two s742r2 files (%s)" % sorted(listed))
 with open(os.path.join(ROOT, "kb", "college_reads", "s741_piles_el_camino_pages.json"), encoding="utf-8") as fh:
     urls = [p["url"] for p in json.load(fh)["pages"]]
 for cn in ("31319", "42541"):
@@ -87,8 +89,11 @@ check(not f["score"].get("gaps") and ("El Camino College", "19857") not in NG.to
       and sum(c["units"] for c in f["record"]["blocks"][0]["courses"]) == 27
       and B.same(f["record"]["blocks"][0]["stated"], [30, 30]),
       "19857: its core prints 30 over courses that add to 27; the file does not list it, and it carries no gap")
+# S742: paid read 46007782666 read 19883 from its own page (poid 3640) through its pin, and plan s742r2 files its
+# gap; before it the record sat on the Photography A.S. page with no gap. Read in either state.
 f = W.load("19883")
-check(not f["score"].get("gaps") and "poid=3639" in f["source_url"],
-      "19883: read from the Photography A.S. page (poid 3639), and it carries no gap")
+check((not f["score"].get("gaps") and "poid=3639" in f["source_url"])
+      or ("poid=3640" in f["source_url"] and str(f["extracted_run"]) == "46007782666"),
+      "19883: read from the Photography A.S. page (poid 3639) with no gap, or since S742 from its own page")
 
 sys.exit(t.done())
