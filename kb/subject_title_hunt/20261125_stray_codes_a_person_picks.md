@@ -7,7 +7,7 @@ The 50 local subjects behind the stray M-ID codes whose common subject scores un
 | 89 | Las Positas College | JAMS | Journalism and Media Studies | 1 | Introduction to Media | JOUR Journalism |
 | 89 | Santa Ana College | JAMS | Journalism and Media Studies | 4 | Advanced Intermediate Multimedia News Production; Advanced Multimedia News Production; Vis | JOUR Journalism |
 | 78 | Mt. San Antonio College | AIRT | Air Traffic Control | 1 | Enroute Radar Laboratory | AVIA Aviation |
-| 67 | San Joaquin Delta College | DMEDIA | Digital Media | 1 | Fundamentals of Audio Production | FTVE Film and Media Studies |
+| 68 | San Joaquin Delta College | DMEDIA | Digital Media | 1 | Fundamentals of Audio Production | FTVE Film and Media Studies |
 | 67 | Santa Monica College | IXD | Interaction Design | 1 | Product Design | ARTS Art |
 | 66 | Madera College | LIBSKL | Library Skills | 1 | Information and Computer Literacy | LIBR Library Science |
 | 66 | Reedley College | LIBSKL | Library Skills | 3 | Information and Computer Literacy; Information and Computer Literacy; AI Literacy: in Educ | LIBR Library Science |
