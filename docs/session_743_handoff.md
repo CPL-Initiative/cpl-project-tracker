@@ -139,3 +139,10 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   43993, 19883; sources_from 46003498776; about $0.50). The fold's round 2, the Acalog fix and Coastline's change to the
   Fable reader's second round. Cuyamaca 18637's paid read filed as run 46003456131 on `claude/s742-readers-cuy`.
 - 13:32Z: s742k2's migrate 46007691479 returned 2, none skipped; `.apply` restored (`25591739`). Records collected: 4.
+- 13:34Z: `keys` stop 3 (head `276ddcd4`): plan s742k3 (San Bernardino Valley 17829, `ge_units_not_read`, the named-gaps
+  module's wave pass after reread 46006706537 posted the row; self-recall 1,701 right, 0 wrong). Its Sonnet reader:
+  APPLY (NIT: the rule reads the stored score, not the record). Clean md5 pre-read 1 of 1.
+- 13:37Z: s742k3's migrate 46008643446 returned 1, none skipped; `.apply` restored (`0f322a8d`). Records collected: 5.
+- 13:37Z: the Fable reader's round 2: the fold `a0226f16` GO (all 386 sibling admits refuse; the fold alone admits 2,
+  both own pages), the Acalog fix `d2f211f9` GO, Coastline 43057's pin and plural heading `918f6b6d` GO (nothing outside
+  Coastline moves). El Camino's paid read filed as run 46007782666 on `claude/s742-readers-ec` (`6e5c8ef6`).
