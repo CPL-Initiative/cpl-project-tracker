@@ -716,9 +716,13 @@ Verbatim from `docs/reference/lanes/my-college-action-page.md`, moved to keep th
   https://claude.ai/artifact/BQjk5FcRjeHPGZp57bpDJe (*CPL Pathways Compact Cards*, private), iterated live with Sam
   until *"OK, let's go with that"* (`r-compact-course-cards-sam-2026-11-27`). One-size short cards (~92px): row 1 the
   course code (a button to a sidebar with the catalog description and exhibits), units and the CPL control; row 2 the
-  title. The control: the word CPL (16px, regular weight, navy, uppercase, no border or fill) and the MAP pointer (the
-  notched arrowhead from the A in MAP, `prototype/funding_video/assets/map_arrow.png`) in MAP crimson #9E2A2B, tilted
-  25 degrees clockwise, 2px right of CPL, centered on the letters, one underline under both; hover lists exhibit titles
+  title. The control (the CPL chip, settled 2026-11-27): the word CPL (16px, regular weight, navy, uppercase) and the
+  MAP pointer (the notched arrowhead from the A in MAP, `prototype/funding_video/assets/map_arrow.png`) in MAP crimson
+  #9E2A2B, on one white tile with no underline (*"now give the cpl chip white background and get rid of the
+  underline"*); the pointer leans 30 degrees clockwise in its path data (*"tilt it another 5 degrees to the right"*),
+  sits on the baseline of CPL, rises a little above it and nearly touches the L (*"now just a teeny bit of space between
+  the L and pointer"*). While its bar is open the pointer turns down toward it, right toward a sidebar (*"try it!"*,
+  *"that's cool!"*); the spec is in `reference-ui-design-system`, beside the underlined-words rule. Hover lists exhibit titles
   with type; a click opens a bottom bar framing the landing page on the course's exhibits. Gone: the Details link, the
   counts, the CPL-type line and the Get credit link. Sam: *"the '- 2' in the cpl chips doesn't mean anything to the user
   at this point...so let's take the numbers out"*; *"delete Details link since cpl chip does same thing"*; *"make course
