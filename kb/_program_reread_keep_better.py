@@ -20,12 +20,16 @@ with the same file at origin/main and keeps the better one.
   one the reader's slug_awards reads as the program's award (COBIx on #3553); or the capture's sources.json entry
   for that page (heading_named, the page title, the h1) names every title word, while its title and h1 name no
   other award. S684 set aside Ventura's 4 and Evergreen Valley's 13 good re-reads on the word test alone. A
-  generic heading also passes where it prints the program's own Academic Plan code and no other (plan_code_own,
-  S742): East Los Angeles and Los Angeles Trade-Technical print, beside each award, a letter, a zero and the
-  state's control number ("(Academic Plan E002456C)" is 02456's own section), and a reader that kept the code and
-  dropped the title filed a heading the word test reads as naming no program. S741 restored four such re-reads at
-  East Los Angeles and held two that were already live. A heading carrying another program's words still fails,
-  whatever the address or the code. A re-read that fails is set aside
+  generic heading also passes where it prints the program's own Academic Plan code and no other, and the re-read
+  places its own state list (plan_code_own, S742): East Los Angeles prints, beside each award, "Academic Plan", a
+  letter, a zero and the state's control number ("(Academic Plan E002456C)" is 02456's own section), and a reader
+  that kept the code and dropped the title filed a heading the word test reads as naming no program. S741 restored
+  four such re-reads at East Los Angeles and held two that were already live. The code alone is not enough: East
+  Los Angeles heads Sports Medicine 45986's section with 45717's code (Criminal Investigations), so a re-read of
+  45717 that landed there would carry its own code over another program's courses; coverage tells the two apart
+  (S742's reader). Its reach is East Los Angeles: Los Angeles Trade-Technical's coded headings print no "Academic
+  Plan" before the code and Harbor's print a colon after it, and neither is read here. A heading carrying another
+  program's words still fails, whatever the address or the code. A re-read that fails is set aside
   whatever its score: the filed record is restored, or, with no filed record, the new record moves to
   <folder>/held_for_person/ (out of records/, so no load or reread posts it) and is listed there.
 
@@ -344,24 +348,33 @@ def page_words(text: str | None) -> set[str]:
     return out
 
 
-# S742: an Academic Plan code, as East Los Angeles and Los Angeles Trade-Technical print it beside each award: a
-# letter for the college, a zero, the state's five-digit control number and a letter for the award (E002456C, T045285).
+# S742: an Academic Plan code, as East Los Angeles prints it beside each award: "Academic Plan", a letter for the
+# college, a zero, the state's five-digit control number and a letter for the award (E002456C). PLAN_TOKEN reads
+# every such code in a heading, with or without the phrase before it ("Academic Plan E002456C / E045717D").
 PLAN_CODE = re.compile(r"Academic\s+Plan\s+[A-Z]0?(\d{5})[A-Z]?(?![A-Za-z0-9])")
+PLAN_TOKEN = re.compile(r"(?<![A-Za-z0-9])[A-Z]0?(\d{5})[A-Z]?(?![A-Za-z0-9])")
 
 
 def plan_code_own(rec: dict, heading: str | None = None) -> str | None:
-    """What a heading's Academic Plan code shows of the section being the program's own, or None: the heading prints
-    at least one code, and every code it prints carries the record's own control number. A heading with another
-    program's code beside it shows nothing. The code is evidence where it matches, never a rule that every heading
-    holds its own (plan_code_recall)."""
+    """What a heading's Academic Plan code shows of the section being the program's own, or None. Three things, all
+    of them: the heading prints "Academic Plan" and a code; every code-shaped token in the heading, behind the
+    phrase or not, carries the record's own control number (another program's code beside it shows nothing); and
+    the record places its own state list (score.coverage.pass). The last is the reader's finding (S742): the
+    catalog can print one program's code over another's section (East Los Angeles 45986, Sports Medicine, is
+    headed with 45717's code), so a re-read that carries its own code and another program's courses is not shown
+    its own. The code is evidence where it matches, never a rule that every heading holds its own
+    (plan_code_recall)."""
     if heading is None:
         record = rec.get("record") if isinstance(rec.get("record"), dict) else None
         heading = ((record or {}).get("program") or {}).get("section_heading")
+    heading = str(heading or "")
     cn = str(rec.get("control_number") or "")
-    found = PLAN_CODE.findall(str(heading or ""))
-    if not cn or not found or any(c != cn for c in found):
+    if not cn or not PLAN_CODE.search(heading) or any(c != cn for c in PLAN_TOKEN.findall(heading)):
         return None
-    return "the heading prints the program's own Academic Plan code (%s)" % PLAN_CODE.search(str(heading)).group(0)
+    if (((rec.get("score") or {}).get("coverage") or {}).get("pass")) is not True:
+        return None
+    return ("the heading prints the program's own Academic Plan code (%s), and the record places its own state list"
+            % PLAN_CODE.search(heading).group(0))
 
 
 def plan_code_recall(college_dir: str | None = None) -> dict:
@@ -370,14 +383,17 @@ def plan_code_recall(college_dir: str | None = None) -> dict:
     with the program's title names the program. Counted: named_own (the heading carries a title word and its code is
     the record's own: code and words agree) and named_other (a title word beside another program's code: the code
     shows nothing for such a record, and it is listed); generic_own (no title word, no word that could name a
-    program, the record's own code: the rows plan_code_own lets through) and generic_other; and wrong, a heading
-    whose words name ANOTHER program while its code is the record's own, the one way the code could pass a re-read
-    of another program's section. other_words lists a heading that names another program beside another code."""
+    program, the record's own code and its own list placed: the rows plan_code_own lets through), generic_unplaced
+    (the same heading on a record whose coverage fails: refused) and generic_other; and wrong, a heading whose words
+    name ANOTHER program while its code is the record's own, the one way the code could pass a re-read of another
+    program's section. other_words lists a heading that names another program beside another code. named_other is
+    the case the coverage test answers: 45986's section carries 45717's code, so a code can sit over another
+    program's courses."""
     from _program_requirements_pilot import title_tokens
     from _program_requirements_score import heading_content_words
     college_dir = college_dir or os.path.join(HERE, "program_requirements_college")
-    out = {"read": 0, "colleges": set(), "named_own": 0, "named_other": [], "generic_own": [], "generic_other": [],
-           "other_words": [], "wrong": []}
+    out = {"read": 0, "colleges": set(), "named_own": 0, "named_other": [], "generic_own": [], "generic_unplaced": [],
+           "generic_other": [], "other_words": [], "wrong": []}
     for path in sorted(glob.glob(os.path.join(college_dir, "*", "records", "*.json"))):
         try:
             with open(path, encoding="utf-8") as fh:
@@ -391,7 +407,8 @@ def plan_code_recall(college_dir: str | None = None) -> dict:
         out["read"] += 1
         out["colleges"].add(f.get("college"))
         key = [f.get("college"), str(f.get("control_number")), PLAN_CODE.search(heading).group(0)]
-        own = plan_code_own(f, heading) is not None
+        cn = str(f.get("control_number") or "")
+        own = bool(cn) and all(c == cn for c in PLAN_TOKEN.findall(heading))    # the code alone, coverage aside
         want = set(title_tokens(f.get("title") or ""))
         if want and want & set(title_tokens(heading)):
             if own:
@@ -400,8 +417,10 @@ def plan_code_recall(college_dir: str | None = None) -> dict:
                 out["named_other"].append(key)
         elif heading_content_words(heading):
             (out["wrong"] if own else out["other_words"]).append(key)
+        elif own:
+            (out["generic_own"] if plan_code_own(f, heading) else out["generic_unplaced"]).append(key)
         else:
-            (out["generic_own"] if own else out["generic_other"]).append(key)
+            out["generic_other"].append(key)
     out["colleges"] = sorted(out["colleges"])
     return out
 
