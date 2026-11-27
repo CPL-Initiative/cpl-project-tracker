@@ -61,7 +61,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url || steps.deployment_retry.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -257,8 +257,24 @@ jobs:
         with:
           path: _site
 
+      # S745, 2026-11-27: three runs in a row (46056335058, 46058021958, 46060823655) uploaded the artifact and then
+      # failed in deploy-pages with "Found 0 artifact(s)" 0.3 s after the upload finalized: the artifact listing lags
+      # the upload. Wait before the first try, and try once more after a longer wait.
+      - name: Let the artifact listing catch up
+        run: sleep 20
+
       - name: Deploy to GitHub Pages
         id: deployment
+        continue-on-error: true
         uses: actions/deploy-pages@v5
         # deploy-pages waits at most 10 minutes (MAX_TIMEOUT 600000 in v4 and v5; COBIx on #3088), so the size
         # check in Assemble lean site is what keeps the sync inside it.
+
+      - name: Wait longer before the second try
+        if: steps.deployment.outcome == 'failure'
+        run: sleep 60
+
+      - name: Deploy to GitHub Pages (second try)
+        id: deployment_retry
+        if: steps.deployment.outcome == 'failure'
+        uses: actions/deploy-pages@v5
