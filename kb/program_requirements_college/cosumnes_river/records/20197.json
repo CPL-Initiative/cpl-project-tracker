@@ -46,28 +46,23 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 8,
+   "placed": 9,
    "listed": 9,
-   "share": 0.889,
-   "missing": [
-    "RE296282560"
-   ],
-   "unexplained": [
-    "RE296282560"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "RE296",
     "RE342"
    ],
    "flagged": [
     "RE342"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -105,7 +100,19 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true,
+  "course_renumbers": [
+   {
+    "printed": "RE 296",
+    "listed": "RE296282560",
+    "block": "Certificate Requirements"
+   },
+   {
+    "printed": "RE 296",
+    "listed": "RE296282560",
+    "block": "A minimum of 9 units from the following"
+   }
+  ]
  },
  "record": {
   "program": {
@@ -284,6 +291,5 @@
    "The A.A. degree and Real Estate Salesperson Certificate sections on the same pages were not used."
   ]
  },
- "extracted_run": 45972311864,
- "read_run": "39047009824"
+ "extracted_run": "39047009824"
 }
