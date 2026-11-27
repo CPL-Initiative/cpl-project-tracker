@@ -99,5 +99,5 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   report a wrong, since page match and coverage both hold by construction; MAJOR: the fold lets an award phrase or a
   longer sibling title name the program: across 3,343,033 sibling pairs it admits 386 more, 296 of them "Art" on "Studio
   Arts" or an "Associate in Arts" page). One finding list to `readers`; round 2 is the fold's last.
-- 13:03Z: Cuyamaca 18637's paid read dispatched on a sibling, `claude/s742-readers-cuy`, cut at `main` `1a3e3be8`
+- 13:01Z: Cuyamaca 18637's paid read dispatched on a sibling, `claude/s742-readers-cuy`, cut at `main` `1a3e3be8`
   (only 18637, sources_from 45966682528, about $0.25); its keep-better waits for the fold's round 2.
