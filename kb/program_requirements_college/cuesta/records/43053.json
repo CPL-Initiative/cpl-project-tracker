@@ -98,7 +98,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "pair_read_as_alternatives",
+    "label": "The catalog prints two courses taken together as one option, and the record reads them as separate alternatives, so its low end falls short of the printed total.",
+    "words": "AVMT 110 (5 units) may be replaced by AVMT 110A AND AVMT 110B together (2.5 + 2.5); likewise AVMT 120 by AVMT 120A AND AVMT 120B together. The alternatives are recorded on one entry but both A and B courses are required as a pair, not either one alone."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

@@ -4896,8 +4896,8 @@
   "listed": 0,
   "text_chars": 0,
   "catalog_lookup": {
-   "result": "not_searched",
-   "why": "the matcher found 178 of 199 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
   }
  },
  {

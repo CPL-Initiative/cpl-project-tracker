@@ -3738,7 +3738,8 @@
     "CIS24A": "ComputerInfo",
     "KINPE23": "KINPE 2",
     "KINPE41": "KINPE 4",
-    "KINPE56": "KINPE 009B"
+    "KINPE56": "KINPE 009B",
+    "JOURN138": "JournalismJO"
    },
    "course_renumbers_cited": [
     {
@@ -3840,6 +3841,16 @@
      "session": "S740",
      "date": "2026-11-26",
      "evidence": "The state's file lists control number CCC000529719 in Kinesiology certificate 39391 as 'KinesiologyW Beginning Weight Training'; the state's course list names that control number KINPE 009B (in 32260 the file carries the number under two titles, Beginning Weight Training and Intermediate Badminton). the college's fall 2025 course record (kb/reference/cb_course_basic_fall2025.csv) names the control number KINPE-056 Beginning Weight Training, 1 unit, and the certificate's page prints 'KINPE 056 · Beginning Weight Training · 1' and no KINPE 009B (college-page-read run 45835049303)."
+    },
+    {
+     "printed": "JOURN138",
+     "file": "JournalismJO",
+     "title": "Work Experience",
+     "units": 3,
+     "session": "S742",
+     "date": "2026-11-27",
+     "catalog_sources": ["college_page_read"],
+     "evidence": "The state's file lists control number CCC000438429 at San Jose City as 'JournalismJO Work Experience', a subject name cut short where a code belongs, in one program, Law, Public Policy, and Society A.A.-T 38499; the state's course list names every other 'JournalismJO' row of the college by its code (JOURN 150 for 'Introduction to Public Relations' in 38499), so in every program's list the name stands for this one control number. The program's own page prints 'JOURN 138 · Work Experience · 3' in List A, beside 'JOURN 150 · Introduction to Public Relations · 3' and 'WE 088A · General Work Experience · 3' (college-page-read run 46008386875, the page's table rows): the one title the page and the file both print, under the subject the cut-off name spells. The record's own note (read 43357106423): 'matched by title to catalog JOURN 138'. The college's fall 2025 course record does not hold the control number, which is why S740 left the name out. Over the college's 83 records the pair moves 38499 alone, from failing coverage and invented to passing (tests/program_renumbers_s742_sjcc_test.py)."
     }
    ]
   },

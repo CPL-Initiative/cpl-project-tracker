@@ -116,7 +116,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "lists_not_closed",
+    "label": "A choice list prints no unit figure of its own, one that depends on another choice, or also takes courses from another list, so the lists alone cannot add the program's units.",
+    "words": "List A ('One to two courses from the following') appears to include CHEM 151, CHEM 212, the 'One Biology Course Sequence' (BIOL 250 & BIOL 251, or BIOL 260 & BIOL 261) and the statistics row (STAT C1000 or STAT C1000H or ECON 208 or PSYC 105). The biology sequences are recorded as separate option_group blocks, but a sequence appears to count as one of the List A choices rather than being independently required; reviewer should check. Major total 27-30 is consistent with this reading."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 30,
+   "course_list_match": 100,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

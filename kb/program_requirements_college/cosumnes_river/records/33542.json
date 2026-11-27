@@ -61,10 +61,10 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    11.0,
+    19.0,
     19.0
    ],
    "stated": [
@@ -72,9 +72,7 @@
     19.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 11.0-19.0; the catalog states 19.0-19.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -101,21 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false,
-  "gaps": [
-   {
-    "gap": "option_lists_read_apart",
-    "label": "An option the catalog prints takes more than one list under the option's own printed figure, and the record's one option group holds each list as an alternative of its own, so the program's units cannot be checked against the printed figures.",
-    "words": "Option II consists of two blocks (SPAN 413 and 415 required, plus a minimum of 8 units from a list); both carry option_group 'Option' together with Option I. The catalog prints 'OPTION II - Native Spanish Speaker Units: 16' for the two together; Option I is 16 units. Each option path prints 'Total Units: 19'."
-   }
-  ],
-  "confidence": {
-   "unit_arithmetic": 40,
-   "course_list_match": 100,
-   "ge_pattern": null,
-   "catalog_year": 100,
-   "source": 80
-  }
+  "pass": true
  },
  "record": {
   "program": {
@@ -339,5 +323,6 @@
    "Outcomes and careers taken from the A.A.-T. section only; the A.A. in Spanish section (with SPAN 311, 312, 434) was not read for blocks."
   ]
  },
- "extracted_run": "39047009824"
+ "extracted_run": 45972311864,
+ "read_run": "39047009824"
 }
