@@ -69,8 +69,16 @@ for key, hand in sorted(M.REVIEWED.items()):
 # S739's free reconcile 45768189197 read El Camino's pages: 02513, 02515 and 02517 pass on the page's electives
 # line, so each is read in either state (p-test-asserts-other-pr-absent-recurs-s731).
 S739_READ = {(M.ELC, "02513"), (M.ELC, "02515"), (M.ELC, "02517")}
+# S741's free reconcile 45966682528 filed the degree's floor ('Complete 60 transferable units', degree_total_minimum) on
+# Cuyamaca 18634, 18635 and 18636, which pass by it: each is read in either state, the S727 hold or the S741 record.
+S741_READ = {(M.CUY, cn) for cn in ("18634", "18635", "18636")}
+def _s741_floor(key):
+    f = M.load(key)
+    return (f is not None and str(f.get("extracted_run")) == "45966682528"
+            and f["record"]["program"].get("degree_total_minimum") is True)
 for key in sorted(M.HELD):
-    check(key in S739_READ or M.outcome(key)[0] != "passes", "%s %s: does not pass under the reading alone" % key)
+    check(key in S739_READ or (key in S741_READ and _s741_floor(key)) or M.outcome(key)[0] != "passes",
+          "%s %s: does not pass under the reading alone (or S741's degree floor passes it)" % key)
 # S731's plan s731p (tests/fixtures/pooled_s731.json) takes five of them forward: 38869 and 43164 pass under its
 # reading, 06655, 08109 and 10602 are collected with their gaps named; the rest stay as s727p left them.
 with open(os.path.join(ROOT, "tests", "fixtures", "pooled_s731.json"), encoding="utf-8") as fh:
