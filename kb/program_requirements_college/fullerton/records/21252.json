@@ -95,7 +95,14 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": true,
+  "course_renumbers": [
+   {
+    "printed": "HORT 185 F",
+    "listed": "FHORT185",
+    "block": "Category D"
+   }
+  ]
  },
  "record": {
   "program": {
@@ -374,6 +381,5 @@
    "Careers recorded from the description: 'entry level positions in the landscape design or landscape maintenance industry' and 'self-employment in the landscape design or landscape management industry'."
   ]
  },
- "extracted_run": 46010143379,
- "read_run": "38675136988"
+ "extracted_run": "38675136988"
 }

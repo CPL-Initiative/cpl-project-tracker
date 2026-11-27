@@ -95,7 +95,14 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": true,
+  "course_renumbers": [
+   {
+    "printed": "CRTV 196 F",
+    "listed": "FCRTV196",
+    "block": "Select 5-6 units from the following:"
+   }
+  ]
  },
  "record": {
   "program": {
@@ -284,6 +291,5 @@
    "Closed list stores CRTV 290 F at 2 units and CRTV 280 F at 2 units; catalog prints ranges 2-4 and 2-5."
   ]
  },
- "extracted_run": 46010143379,
- "read_run": "38675136988"
+ "extracted_run": "38675136988"
 }

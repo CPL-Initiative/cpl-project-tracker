@@ -95,7 +95,14 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": true,
+  "course_renumbers": [
+   {
+    "printed": "HORT 185 F",
+    "listed": "FHORT185",
+    "block": "Restricted Electives (11-13 units):"
+   }
+  ]
  },
  "record": {
   "program": {
@@ -327,6 +334,5 @@
    "Catalog title for HORT 169LF is 'Landscape Construction Laboratory' vs. 'Landscape Construction Lab' in the closed list."
   ]
  },
- "extracted_run": 46010143379,
- "read_run": "38675136988"
+ "extracted_run": "38675136988"
 }

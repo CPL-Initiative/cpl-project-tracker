@@ -71,7 +71,9 @@
     18.5
    ],
    "against": "program",
-   "why": [],
+   "why": [
+    "the blocks sum to 17.5-21.0; the catalog states 17.5-18.5"
+   ],
    "meets": true,
    "rescored": "Open Asks Sheet 120 card 1"
   },
@@ -296,6 +298,5 @@
    "Text says the certificate requires between 17.5 and 18.5 units, matching the printed Total Units 17.5-18.5."
   ]
  },
- "extracted_run": 46010143379,
- "read_run": "38675136988"
+ "extracted_run": "38675136988"
 }

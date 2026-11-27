@@ -99,7 +99,14 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": true
+  "pass": true,
+  "course_renumbers": [
+   {
+    "printed": "HORT 002 F",
+    "listed": "FHORT2",
+    "block": "Required Courses - Select at least five courses (18-21 units):"
+   }
+  ]
  },
  "record": {
   "program": {
@@ -255,6 +262,5 @@
    "Careers were taken from the description: 'entry-level positions in retail and wholesale nurseries, parks departments, and landscape contracting'. These name workplaces or fields rather than job titles."
   ]
  },
- "extracted_run": 46010143379,
- "read_run": "38675136988"
+ "extracted_run": "38675136988"
 }

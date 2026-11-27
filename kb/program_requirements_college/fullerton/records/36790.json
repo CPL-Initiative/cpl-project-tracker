@@ -123,7 +123,14 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": true
+  "pass": true,
+  "course_renumbers": [
+   {
+    "printed": "JOUR 140 F",
+    "listed": "FJOUR140",
+    "block": "List A - Select 3 units"
+   }
+  ]
  },
  "record": {
   "program": {
@@ -413,6 +420,5 @@
    "Program student learning outcomes taken from the page's outcomes tab; 'Outcome N:' labels removed."
   ]
  },
- "extracted_run": 46010143379,
- "read_run": "38675136988"
+ "extracted_run": "38675136988"
 }

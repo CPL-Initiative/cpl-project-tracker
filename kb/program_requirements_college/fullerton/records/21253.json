@@ -71,7 +71,9 @@
     24.0
    ],
    "against": "program",
-   "why": [],
+   "why": [
+    "the blocks sum to 24.0-27.0; the catalog states 24.0-24.0"
+   ],
    "meets": true,
    "rescored": "Open Asks Sheet 120 card 1"
   },
@@ -236,6 +238,5 @@
    "Outcomes taken from the page's Program Level Student Learning Outcomes tab; 'Outcome N:' labels omitted."
   ]
  },
- "extracted_run": 46010143379,
- "read_run": "38675136988"
+ "extracted_run": "38675136988"
 }

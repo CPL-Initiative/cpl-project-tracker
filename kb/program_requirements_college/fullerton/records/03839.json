@@ -102,7 +102,14 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": true
+  "pass": true,
+  "course_renumbers": [
+   {
+    "printed": "CSTR 042 F",
+    "listed": "CSTR42",
+    "block": "Required Courses (24-27 units)"
+   }
+  ]
  },
  "record": {
   "program": {
@@ -257,6 +264,5 @@
    "No general education pattern or degree total printed; 24-27 units is the stated degree requirement total for the major list."
   ]
  },
- "extracted_run": 46010143379,
- "read_run": "38675136988"
+ "extracted_run": "38675136988"
 }

@@ -89,7 +89,9 @@
     25.0
    ],
    "against": "program",
-   "why": [],
+   "why": [
+    "the blocks sum to 22.0-27.0; the catalog states 22.0-25.0"
+   ],
    "meets": true,
    "rescored": "Open Asks Sheet 120 card 1"
   },
@@ -436,6 +438,5 @@
    "The Legal block notes '(See a counselor for determination of correct course)'."
   ]
  },
- "extracted_run": 46010143379,
- "read_run": "38675136988"
+ "extracted_run": "38675136988"
 }

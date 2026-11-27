@@ -71,7 +71,9 @@
     23.0
    ],
    "against": "program",
-   "why": [],
+   "why": [
+    "the blocks sum to 21.0-26.0; the catalog states 21.0-23.0"
+   ],
    "meets": true,
    "rescored": "Open Asks Sheet 120 card 1"
   },
@@ -406,6 +408,5 @@
    "Related disciplines named (Global Politics, International Relations, etc.) are transfer majors, not careers, so careers left empty."
   ]
  },
- "extracted_run": 46010143379,
- "read_run": "38675136988"
+ "extracted_run": "38675136988"
 }
