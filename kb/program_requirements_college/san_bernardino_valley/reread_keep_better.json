@@ -1,7 +1,7 @@
 {
  "college": "San Bernardino Valley College",
- "run": "45844530701",
- "written": "2026-11-26T15:34:20Z",
+ "run": "45960735042",
+ "written": "2026-11-27T08:21:13Z",
  "rule": "a checked live row restores, or is held where the base files none; then own program (a heading sharing a title word, or a generic heading on a page the address or the capture shows is the program's own; then heading_award_check), where a failing re-read is restored, or held where the base files none or the live row already holds this run; then a live row holding this run keeps its record and names no dispatch; then a supplied live run other than the filed record's is held for a person; then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one (d-reread-keep-the-better-s683; COBIx on #3544 and #3547)",
  "checked": [],
  "live_runs": {
@@ -187,10 +187,10 @@
   "39612": "38748858322",
   "40280": "43355003065",
   "40832": "38748858322",
-  "40833": "44481529632",
+  "40833": "45844530701",
   "41217": "38748858322",
   "41390": "38748858322",
-  "41756": "44481529632",
+  "41756": "45844530701",
   "41787": "38748858322",
   "41788": "38748858322",
   "41789": "45355976381",
@@ -201,7 +201,7 @@
   "42295": "38748858322",
   "42960": "38748858322",
   "43049": "44481529632",
-  "43133": "43609973859",
+  "43133": "45844530701",
   "43140": "38748858322",
   "43141": "38748858322",
   "43218": "38748858322",
@@ -227,26 +227,22 @@
   "46184": "38748858322",
   "46386": "38748858322"
  },
- "live_read_at": "2026-11-26T15:32:58Z",
+ "live_read_at": "2026-11-27T08:18:54Z",
  "dispatch": [
   {
    "workflow": "program-requirements-college.yml",
-   "ref": "claude/s740-reconcile",
+   "ref": "claude/s741-keys-sbvc",
    "inputs": {
     "college": "San Bernardino Valley College",
     "step": "reread",
-    "force": "45844530701"
+    "force": "45960735042"
    },
-   "posts": 3,
+   "posts": 1,
    "control_numbers": [
-    "40833",
-    "41756",
-    "43133"
+    "22821"
    ],
    "not_live_at_run": [
-    "40833",
-    "41756",
-    "43133"
+    "22821"
    ]
   }
  ],
@@ -255,13 +251,18 @@
    "39404",
    "41865",
    "44567"
+  ],
+  "45844530701": [
+   "40833",
+   "41756",
+   "43133"
   ]
  },
  "counts": {
-  "reread": 8,
-  "kept": 3,
-  "restored": 5,
-  "restored_filed_pass": 4,
+  "reread": 1,
+  "kept": 1,
+  "restored": 0,
+  "restored_filed_pass": 0,
   "restored_not_own_program": 0,
   "held_for_person": 0,
   "held_checked": 0,
@@ -269,7 +270,7 @@
   "new": 0,
   "already_live": 0,
   "kept_on_own_page": 0,
-  "plain_reread_would_lose_pass": 4,
+  "plain_reread_would_lose_pass": 0,
   "kept_by_extraction_guard": 0,
   "run_places_none_after": 0,
   "folder_places_none_after": 0,
@@ -1204,6 +1205,68 @@
      "plain_reread_loses_pass": false,
      "outcome": "kept",
      "why": "the re-read covers more (share 1.0 against 0.86)"
+    }
+   ]
+  },
+  "45960735042": {
+   "base": "origin/main",
+   "base_sha": "473dc192254e258685d6663969251327bf90358c",
+   "decided": "2026-11-27T08:21:13Z",
+   "counts": {
+    "reread": 1,
+    "kept": 1,
+    "restored": 0,
+    "restored_filed_pass": 0,
+    "restored_not_own_program": 0,
+    "held_for_person": 0,
+    "held_checked": 0,
+    "held_live_run": 0,
+    "new": 0,
+    "already_live": 0,
+    "kept_on_own_page": 0,
+    "plain_reread_would_lose_pass": 0,
+    "kept_by_extraction_guard": 0,
+    "run_places_none_after": 0,
+    "folder_places_none_after": 0,
+    "records_after": 221,
+    "dropped_by_filing": 0,
+    "dropped_filed_passes": 0
+   },
+   "kept_by_extraction_guard": {},
+   "next_read_pays": [],
+   "dropped_by_filing": [],
+   "programs": [
+    {
+     "control_number": "22821",
+     "title": "Pharmacy Technology",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/pharmacy-technology/pharmacy-technology-certificate-achievement/",
+     "filed_source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/pharmacy-technology/",
+     "filed_run": "38748858322",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 7,
+      "listed": 7,
+      "arithmetic": "equal"
+     },
+     "live_run": "38748858322",
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 7,
+      "listed": 7,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
     }
    ]
   }
