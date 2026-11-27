@@ -2268,18 +2268,23 @@ def cq_text(html_text: str) -> str:
 # their printed figure by the units of such a row (tests/program_piles_s740_norco_test.py). Where a row that opens
 # no group follows a group, the text now says so on a line of its own. A group followed by another group, by the
 # list's end or by nothing reads as before, so a page with no such row keeps its text to the character.
-CQ_DIV = re.compile(r"<(/?)div\b((?:[^>\"']|\"[^\"]*\"|'[^']*')*)>", re.I)
+# Only a row of the list itself gets the line. A row inside another group's child wrapper gets none (S741 review):
+# in Drafting Technology's Elective Courses (printed 6.00) CON-60 follows "Only one of the following may be used"
+# inside "Select an additional 6-8 units from the following elective courses", and a line there read as the end of
+# the outer group, so the list added to 12. The line says what it means, since the reading model sees the text alone.
+CQ_DIV =re.compile(r"<(/?)div\b((?:[^>\"']|\"[^\"]*\"|'[^']*')*)>", re.I)
 CQ_ROW = re.compile(r"\bdata-row-id\s*=", re.I)
 CQ_GROUP_ROW = re.compile(r"\bdata-is-group-with-condition\s*=\s*[\"']true[\"']", re.I)
 CQ_GROUP_KIDS = re.compile(r"\bdata-child-type\s*=\s*[\"']block-entry-children[\"']", re.I)
-CQ_GROUP_END = "(the group above ends here)"
+CQ_GROUP_END = "(the group above ends here: the rows below are not among its choices)"
 
 
 def cq_rows(html_text: str) -> list[dict] | None:
     """A curriculum block's rows in order, as its div tags nest them: {"at" (the row's offset), "depth", "group"
     (the row opens a group with a condition), "members" (rows inside its child wrapper, a group's own count),
-    "after_group" (the row follows a group's row at its depth, with no row between)}. None when the block's div
-    tags do not balance, so nothing is read from a nesting that cannot be trusted."""
+    "after_group" (the row follows a group's row at its depth, with no row between), "inside" (how many groups'
+    child wrappers hold the row; 0 for a row of the list itself)}. None when the block's div tags do not balance, so
+    nothing is read from a nesting that cannot be trusted."""
     stack: list[dict] = []      # each open div: {"kind": "group" | "kids" | "", "row": its row or None, "n": rows}
     rows: list[dict] = []
     pending: int | None = None  # the depth a closed group's next sibling row would open at
@@ -2308,7 +2313,8 @@ def cq_rows(html_text: str) -> list[dict] | None:
         if CQ_ROW.search(attrs):
             group = bool(CQ_GROUP_ROW.search(attrs))
             row = {"at": m.start(), "depth": depth, "group": group, "members": 0,
-                   "after_group": pending is not None and depth == pending}
+                   "after_group": pending is not None and depth == pending,
+                   "inside": sum(1 for e in stack if e["kind"] == "group")}
             rows.append(row)
             if row["after_group"]:
                 pending = None
@@ -2321,10 +2327,11 @@ def cq_rows(html_text: str) -> list[dict] | None:
 
 
 def cq_group_ends(html_text: str) -> str:
-    """The block's HTML with a line, CQ_GROUP_END, before each row that follows a group and opens none itself.
-    A block whose div tags do not balance, or that holds no such row, comes back unchanged."""
+    """The block's HTML with a line, CQ_GROUP_END, before each row of a list that follows a group and opens none
+    itself; a row inside another group gets none. A block whose div tags do not balance, or that holds no such
+    row, comes back unchanged."""
     rows = cq_rows(html_text)
-    at = [r["at"] for r in rows or [] if r["after_group"] and not r["group"]]
+    at = [r["at"] for r in rows or [] if r["after_group"] and not r["group"] and not r["inside"]]
     for i in reversed(at):
         html_text = html_text[:i] + "<div>%s</div>" % CQ_GROUP_END + html_text[i:]
     return html_text
@@ -2671,6 +2678,7 @@ def cq_pages(reader, start: str, report: dict) -> list[dict]:
     # twin only when its title and award match an entry's, and then its id is
     # recorded on that entry rather than dropped unseen.
     queue, i = list(entries), 0
+    group_ends = {"pages": 0, "lines": 0}
     ids = {e.get("id") for e in entries} | {t for e in entries for t in e.get("twin_ids") or []}
     by_identity = {cq_identity(e): e for e in entries}
     while i < len(queue) and i < MAX_PAGES:
@@ -2694,8 +2702,14 @@ def cq_pages(reader, start: str, report: dict) -> list[dict]:
         pg = cq_page(e, page, prefix, children)
         if pg:
             pages.append(pg)
+            # The account counts the pages whose text carries a group-end line, and the lines (S741 review), so
+            # each catalog's capture files how many of its pages the line changed.
+            ends = sum(1 for ln in pg["body"].split("\n") if ln == CQ_GROUP_END)
+            group_ends["pages"] += 1 if ends else 0
+            group_ends["lines"] += ends
         if i % 50 == 0:
             print("  read %d of %d program pages" % (i, len(queue)), flush=True)
+    report["curriqunet"]["group_ends"] = group_ends
     report["curriqunet"]["entries_read"] = i
     report["curriqunet"]["twin_ids"] = {str(e.get("id")): e["twin_ids"] for e in queue if e.get("twin_ids")}
     report["curriqunet"]["failed_calls"] = failed_calls(errors)   # before the list is cut (pages_account())

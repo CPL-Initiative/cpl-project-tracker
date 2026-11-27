@@ -652,7 +652,8 @@ CQ_ROW_FLAG = re.compile(r"\bdata-([a-z-]+)\s*=\s*[\"']true[\"']", re.I)
 
 def cq_row_outline(pages: list[dict]) -> list[str]:
     """Each curriculum block's rows as cq_rows nests them, one line a row: its depth, whether it opens a group and
-    with how many members, whether it follows a group, the row tag's true flags and the row's first words."""
+    with how many members, whether it follows a group, whether another group holds it, the row tag's true flags and
+    the row's first words."""
     import _program_requirements_college as C
     lines: list[str] = []
     for p in pages:
@@ -666,9 +667,9 @@ def cq_row_outline(pages: list[dict]) -> list[str]:
                 tag = C.CQ_DIV.match(html_text, r["at"])
                 flags = ",".join(CQ_ROW_FLAG.findall(tag.group(2))) if tag else ""
                 words = " · ".join(C.cq_text(html_text[r["at"]:r["at"] + 3000]).split("\n")[:3])[:90]
-                lines.append("block %d depth %d %s%s [%s] %s" % (
+                lines.append("block %d depth %d %s%s%s [%s] %s" % (
                     bi, r["depth"], "GROUP of %d" % r["members"] if r["group"] else "row",
-                    " AFTER A GROUP" if r["after_group"] else "", flags, words))
+                    " AFTER A GROUP" if r["after_group"] else "", " IN A GROUP" if r["inside"] else "", flags, words))
     return lines
 
 

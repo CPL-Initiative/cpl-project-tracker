@@ -843,6 +843,23 @@ lt_window = P.window_keeps_tabs(lt_text, lt_found)
 check("panels longer than the cap leave the visible text its least, and the window stays within the cap",
       len(lt_window) == P.TEXT_CAP and lt_window.index(P.VISIBLE_CUT) == P.VISIBLE_KEPT_MIN
       and lt_window[P.VISIBLE_KEPT_MIN + len(P.VISIBLE_CUT):].startswith("\n\n[Tab: REQUIREMENTS]"))
+# The second reader's finding (S741): Victor Valley 04967's shape, a short visible text ahead of panels longer than
+# the cap. The least kept, taken from fewer visible characters than it, ran into the panels and printed their
+# opening twice. With no more visible text than the least, the window stands as text_window cuts it.
+short_got = dict(blea_got, body="Criminal Justice\nPOSC V01A and POSC V01 open the program.\n" + "Overview. " * 90,
+                 tabPanels=[{"label": "REQUIREMENTS", "id": "r", "text": "Elective\t3\n" * 2000 + blea_tab}])
+short_fb = P.find_codes(short_got["body"], blea_courses)
+sh_text, sh_found, sh_field = P.best_text(short_got, short_fb, {}, blea_courses, True)
+sh_window = P.window_keeps_tabs(sh_text, sh_found)
+check("a visible text shorter than the least kept leaves the window as text_window cuts it, the panels printed once",
+      sh_field == "innerText+tabs" and len(short_got["body"]) < P.VISIBLE_KEPT_MIN and len(sh_text) > P.TEXT_CAP
+      and sh_window == P.text_window(sh_text, sh_found) and sh_window.count("[Tab: REQUIREMENTS]") == 1
+      and P.VISIBLE_CUT not in sh_window)
+for name, win, full in (("long visible text", kept_window, blea_text), ("long panels", lt_window, lt_text)):
+    head = win.split(P.VISIBLE_CUT)[0]
+    check("%s: the cut ends before the panels start, and nothing prints twice" % name,
+          P.VISIBLE_CUT in win and "[Tab: " not in head and full.startswith(head)
+          and win.count("[Tab: REQUIREMENTS]") == 1 and win.split(P.VISIBLE_CUT)[1] in full)
 blea_prog = {"control_number": "35654", "shape": "certificate", "title": "Basic Law Enforcement Academy",
              "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units", "status": "Active",
              "closed_list": blea_courses, "load_id": None}
@@ -902,6 +919,10 @@ elif str(ven_cap.get("run")) == "45847865286" and ven_pre.get("fingerprints"):
     check("a later free capture (run %s), read with window_keeps_tabs: the text of all seven moved pages differs "
           "from the capture's, 35654 and 37415 among them (unchanged: %r)" % (ven_pre.get("run"), still),
           not still and all(cn in fb2 for cn in MOVED))
+    if str(ven_pre.get("run")) == "45955854213":
+        changed = sorted(cn for cn in fa if cn in fb2 and fa[cn]["sha256"] != fb2[cn]["sha256"])
+        check("free capture 45955854213: the seven are the only pages of the 174 whose text differs (%r)" % changed,
+              set(fa) == set(fb2) and len(fa) == 174 and changed == MOVED)
 else:
     ven_src = {s["control_number"]: s for s in _ven("sources.json")}
     check("a later capture is filed: each of the seven moved pages is read from innerText+tabs",

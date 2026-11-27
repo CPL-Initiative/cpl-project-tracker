@@ -256,8 +256,9 @@ VISIBLE_CUT = "\n\n[the page's visible text is cut here; its tab panels follow]"
 
 def window_keeps_tabs(text: str, found: dict) -> str:
     """text_window() for a page read with its tab panels appended (innerText+tabs): the same window wherever the
-    cap cuts nothing or the window holds no panel; where the cap would cut the panels, the visible text's part of
-    the window is cut to leave them room, under a line that says so."""
+    cap cuts nothing, the window holds no panel, or the visible text ahead of the panels is no longer than
+    VISIBLE_KEPT_MIN; where the cap would cut the panels behind a longer visible text, that text's part of the
+    window is cut to leave them room, under a line that says so. The cut always ends before the panels start."""
     win = text_window(text, found)
     at = (text or "").find(TABS_HEAD)
     if at < 0 or not found:
@@ -265,7 +266,10 @@ def window_keeps_tabs(text: str, found: dict) -> str:
     first = min(p[0] for p in found.values())
     last = max(p[-1] for p in found.values())
     a, b = max(0, first - WINDOW_BEFORE), min(len(text), last + WINDOW_AFTER)
-    if b - a <= TEXT_CAP or not a < at < b:
+    # Visible text no longer than the least kept: the cap cuts the panels' own tail, and no cut of the visible text
+    # makes room, so the window stands (S741 review: Victor Valley 04967's shape, where a least taken from fewer
+    # visible characters ran into the panels and printed their opening twice).
+    if b - a <= TEXT_CAP or not a < at < b or at - a <= VISIBLE_KEPT_MIN:
         return win
     tabs = text[at:b]
     room = TEXT_CAP - len(tabs) - len(VISIBLE_CUT)
