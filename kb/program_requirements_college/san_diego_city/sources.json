@@ -3278,7 +3278,12 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cosmetology - certificate of achievement: city",
+    "section_fit": 0.5,
+    "exact": 0,
+    "descriptions_tabs": 1
    }
   },
   "listed": 4,
