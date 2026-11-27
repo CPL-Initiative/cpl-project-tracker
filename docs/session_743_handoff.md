@@ -175,3 +175,7 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 - 13:57Z: s742a's migrate 46011459090 returned 4, none skipped; `.apply` restored (`5d80744d`). Records collected: 9.
 - 13:58Z: live: El Camino 19861, 19866, 43993 passing (loaded; records collected: 12); 38948 and 19883 unequal at
   46007782666, for plan s742r2; Cuyamaca 18637 at 46003456131, degree incomplete, for a reconcile step.
+- 13:59Z: s742r1's reader (Sonnet): APPLY (the lists add 23 inside the printed "Total 19 - 23"; MINOR: the rollback
+  guard does not check the record, which the plan leaves unchanged). Clean md5 pre-read 1 of 1; its plan files taken
+  onto `claude/s742-apply`.
+- 14:00Z: s742r1's migrate 46011828459 returned 1, none skipped; `.apply` restored (`595f694d`). Records collected: 13.
