@@ -76,3 +76,10 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 
 - 06:15Z: `daily-dashboard.yml` dispatched on `main` (step 0).
 - 06:20Z: display build `a143061a2ae2` pushed on `claude/s741-display` (`f5cf3535`); the Glendale gate dispatched.
+- 06:23Z: the declaration pushed (`e8dc9c91`), draft #3897.
+- 06:24Z: the Glendale gate 45951236087 green at 06:23Z: 242 Glendale rows at `a143061a2ae2`, nothing else moved (live:
+  18,501 at `9e28519af71f`, 16 at `0874a3a15f22`, 15 Glendale rows at `bef8ef819af7`, 3 with no display). 06:24Z: the
+  whole build 45951699122 dispatched on the branch.
+- 06:25Z: `keys`, `readers` and `piles` started on Fable 5.2 at high effort, each in the harness's own worktree off
+  `b896d6f4`, told to open no PR (the conductor opens each land), to dispatch only free runs on their own branch, and to
+  leave paid runs, rereads, loads and `.apply` to the conductor.
