@@ -1,5 +1,5 @@
 {
- "_readme": "S742 lane 1 (keys): San Jose City College, Law, Public Policy, and Society A.A.-T 38499's page alone, read plain (the page prints whole), free, no model call, nothing written: the line that prints JOURN 138 and its title in List A's work experience area, for the state's one unnamed row 'JournalismJO Work Experience' (CCC000438429). The first read (46006600029) printed this page ahead of four longer ones, past the reach of a log's tail.",
+ "_readme": "S742 lane 1 (keys): San Jose City College, Law, Public Policy, and Society A.A.-T 38499's page alone, read plain (the page prints whole), free, no model call, nothing written: the line that prints JOURN 138 and its title in List A's work experience area, for the state's one unnamed row 'JournalismJO Work Experience' (CCC000438429). The first read (46006600029) printed this page ahead of four longer ones, past the reach of a log's tail. The plain read (46007139438) printed the Description tab alone, so this plan also prints the table rows that name a JOURN course, a course numbered 138 or WE 088 (rows), wherever the page's tabs hold them.",
  "college": "San Jose City College",
  "questions": {
   "course_lines": "Which line prints JOURN 138, with which title and units, beside which other work experience courses?"
@@ -9,6 +9,13 @@
   "[Ww]ork [Ee]xperience[^\\n]{0,60}"
  ],
  "pages": [
-  {"answers": ["course_lines"], "why": "38499", "url": "https://catalog.sjcc.edu/degrees-certificates/administration-justice/law-public-policy-society-associate-arts-transfer/"}
+  {
+   "answers": [
+    "course_lines"
+   ],
+   "why": "38499",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/administration-justice/law-public-policy-society-associate-arts-transfer/",
+   "rows": "JOURN\\s|\\b138\\b|WE\\s+0?88"
+  }
  ]
 }
