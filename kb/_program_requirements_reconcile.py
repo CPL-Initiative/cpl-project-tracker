@@ -1129,6 +1129,11 @@ def _college_steps(record: dict, text: str | None, college: str, award: str | No
             # record's list states, the list reads as N units to choose. All or none: every "recommended" list
             # of the record carries a stated figure and is printed so, as many times as the record holds it;
             # a record with one list short of that is left as read (06345 and 09600 hold a list with no figure).
+            # And only where the record then adds up (the step's reader, S742): with the lists counted, today's
+            # scorer reads the record's units equal to its printed total; a list the page prints a figure for
+            # and does not count toward the total (an advisory list) would take a passing record past its total,
+            # and such a record is left as read. A college's own step, on the evidence of its own pages: under
+            # other colleges' entries the same words head optional lists ("Recommended electives (optional)").
             lists = [b for b in out.get("blocks") or [] if b.get("rule") == "recommended"]
             if not lists or held_by_step(st, control_number, prog):
                 continue
@@ -1146,6 +1151,13 @@ def _college_steps(record: dict, text: str | None, college: str, award: str | No
                 key = (" ".join(str(b.get("name") or "").split()).lower(), _num(lo), _num(hi))
                 want[key] = want.get(key, 0) + 1
             if any(k[1] is None or printed.get(k, 0) < n for k, n in want.items()):
+                continue
+            from _program_requirements_score import score as _score
+            trial = copy.deepcopy(out)
+            for b in trial.get("blocks") or []:
+                if b.get("rule") == "recommended":
+                    b["rule"], b["minimum"] = "choose_units", _num(_span_of(b.get("stated"))[0])
+            if (_score(trial, [], "", award).get("arithmetic") or {}).get("status") != "equal":
                 continue
             for b in lists:
                 lo, _hi = _span_of(b.get("stated"))

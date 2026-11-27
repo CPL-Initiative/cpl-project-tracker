@@ -18,8 +18,9 @@ Pinned here:
     printed figures, and today's scorer then passes each degree at its printed 60; the same for Dance and Exercise
     and Sports Science on their own lists' figures, printed as the page prints them;
   * the wrong joins it refuses: a page without the lines; a page that prints one list at another figure (all or
-    none); a list that states no figure; two lists of one name and figure the page prints once; a certificate,
-    which the college's steps never read; another college's record;
+    none); a list that states no figure; two lists of one name and figure the page prints once; a record that
+    would not add to its printed total with the lists counted (an advisory list on a passing record, 06345); a
+    certificate, which the college's steps never read; another college's record;
   * the self-recall over every committed Cabrillo record (the S652 review rule, counting what the step joins as well
     as the verdicts), each record's page printing its own lists' figures: the step reads the four degrees alone,
     each turns passing, no passing record turns failing, and nothing but the lists' rule and minimum moves;
@@ -203,7 +204,19 @@ g["blocks"][1] = copy.deepcopy(g["blocks"][0])          # two lists of one name 
 new, notes = recon(g, page_of(rec), f["award"], "06381")
 check(not stepped(notes), "two lists of one name and figure the page prints once are not read")
 new, notes = recon(g, page_of(g), f["award"], "06381")
-check(len(stepped(notes)) == 1, "printed twice, they are")
+check(not stepped(notes), "printed twice, the page shows them, and the record no longer adds to its 60: left as read")
+# The step's reader, MAJOR: a list the page prints a figure for and does not count (an advisory list). Astronomy
+# A.S. 06345 passes with one recommended list that states no figure; given a printed figure, counting it would take
+# the degree past its total, so the record is left as read.
+adv = filed("06345")
+if any(b.get("rule") == "recommended" for b in adv["record"]["blocks"]) and arith(adv, adv["record"])["status"] == "equal":
+    g = copy.deepcopy(adv["record"])
+    for b in g["blocks"]:
+        if b.get("rule") == "recommended":
+            b["stated"] = {"min": 6, "max": 6}
+    new, notes = recon(g, page_of(g), adv["award"], "06345")
+    check(not stepped(notes) and rules(new) == rules(g) and arith(adv, new)["status"] == "equal",
+          "06345: an advisory list with a printed figure is not counted, and the passing record stays as read")
 new, notes = recon(rec, PSYCH, "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units", "06381")
 check(not stepped(notes), "a certificate is never read by the college's steps")
 new, notes = recon(rec, PSYCH, f["award"], "06381", college="Hartnell College")
