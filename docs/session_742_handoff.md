@@ -92,3 +92,8 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   checks expect one more only while no live save holds the key; opened 06:50Z), reproduced red on `2b908677` and green with the fix.
 - 06:48Z: `keys` plan s741k1 (Santa Ana 31859 and 21789, `units_within_printed_range`, head `26272e23`) to a Sonnet
   second reader.
+- 06:57Z: s741k1's reader (Sonnet): APPLY (both gaps true: 31859 computes 19-19.5 in the printed 18-19.5, 21789
+  24.5-29 in 24-30; 13 of 13 and 18 of 18 placed; nothing else gains the kind). MINOR: 31859's printed low end is
+  reachable only through cross-list options the blocks do not encode (its note says so). Clean md5 pre-read 2 of 2;
+  migrate 45955369454 returned 2, none skipped; `.apply` restored on `claude/s741-keys` (`3d62e685`). Live: both rows
+  carry `units_within_printed_range`. Records collected: 2.
