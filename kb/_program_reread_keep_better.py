@@ -20,7 +20,12 @@ with the same file at origin/main and keeps the better one.
   one the reader's slug_awards reads as the program's award (COBIx on #3553); or the capture's sources.json entry
   for that page (heading_named, the page title, the h1) names every title word, while its title and h1 name no
   other award. S684 set aside Ventura's 4 and Evergreen Valley's 13 good re-reads on the word test alone. A
-  heading carrying another program's words still fails, whatever the address. A re-read that fails is set aside
+  generic heading also passes where it prints the program's own Academic Plan code and no other (plan_code_own,
+  S742): East Los Angeles and Los Angeles Trade-Technical print, beside each award, a letter, a zero and the
+  state's control number ("(Academic Plan E002456C)" is 02456's own section), and a reader that kept the code and
+  dropped the title filed a heading the word test reads as naming no program. S741 restored four such re-reads at
+  East Los Angeles and held two that were already live. A heading carrying another program's words still fails,
+  whatever the address or the code. A re-read that fails is set aside
   whatever its score: the filed record is restored, or, with no filed record, the new record moves to
   <folder>/held_for_person/ (out of records/, so no load or reread posts it) and is listed there.
 
@@ -339,12 +344,75 @@ def page_words(text: str | None) -> set[str]:
     return out
 
 
+# S742: an Academic Plan code, as East Los Angeles and Los Angeles Trade-Technical print it beside each award: a
+# letter for the college, a zero, the state's five-digit control number and a letter for the award (E002456C, T045285).
+PLAN_CODE = re.compile(r"Academic\s+Plan\s+[A-Z]0?(\d{5})[A-Z]?(?![A-Za-z0-9])")
+
+
+def plan_code_own(rec: dict, heading: str | None = None) -> str | None:
+    """What a heading's Academic Plan code shows of the section being the program's own, or None: the heading prints
+    at least one code, and every code it prints carries the record's own control number. A heading with another
+    program's code beside it shows nothing. The code is evidence where it matches, never a rule that every heading
+    holds its own (plan_code_recall)."""
+    if heading is None:
+        record = rec.get("record") if isinstance(rec.get("record"), dict) else None
+        heading = ((record or {}).get("program") or {}).get("section_heading")
+    cn = str(rec.get("control_number") or "")
+    found = PLAN_CODE.findall(str(heading or ""))
+    if not cn or not found or any(c != cn for c in found):
+        return None
+    return "the heading prints the program's own Academic Plan code (%s)" % PLAN_CODE.search(str(heading)).group(0)
+
+
+def plan_code_recall(college_dir: str | None = None) -> dict:
+    """plan_code_own's self-recall, over every committed record whose heading prints an Academic Plan code. The held
+    answer is the word test's, which reads the heading's own words and never the code: a heading that shares a word
+    with the program's title names the program. Counted: named_own (the heading carries a title word and its code is
+    the record's own: code and words agree) and named_other (a title word beside another program's code: the code
+    shows nothing for such a record, and it is listed); generic_own (no title word, no word that could name a
+    program, the record's own code: the rows plan_code_own lets through) and generic_other; and wrong, a heading
+    whose words name ANOTHER program while its code is the record's own, the one way the code could pass a re-read
+    of another program's section. other_words lists a heading that names another program beside another code."""
+    from _program_requirements_pilot import title_tokens
+    from _program_requirements_score import heading_content_words
+    college_dir = college_dir or os.path.join(HERE, "program_requirements_college")
+    out = {"read": 0, "colleges": set(), "named_own": 0, "named_other": [], "generic_own": [], "generic_other": [],
+           "other_words": [], "wrong": []}
+    for path in sorted(glob.glob(os.path.join(college_dir, "*", "records", "*.json"))):
+        try:
+            with open(path, encoding="utf-8") as fh:
+                f = json.load(fh)
+        except (OSError, ValueError):
+            continue
+        record = f.get("record") if isinstance(f.get("record"), dict) else {}
+        heading = str((record.get("program") or {}).get("section_heading") or "")
+        if not PLAN_CODE.search(heading):
+            continue
+        out["read"] += 1
+        out["colleges"].add(f.get("college"))
+        key = [f.get("college"), str(f.get("control_number")), PLAN_CODE.search(heading).group(0)]
+        own = plan_code_own(f, heading) is not None
+        want = set(title_tokens(f.get("title") or ""))
+        if want and want & set(title_tokens(heading)):
+            if own:
+                out["named_own"] += 1
+            else:
+                out["named_other"].append(key)
+        elif heading_content_words(heading):
+            (out["wrong"] if own else out["other_words"]).append(key)
+        else:
+            (out["generic_own"] if own else out["generic_other"]).append(key)
+    out["colleges"] = sorted(out["colleges"])
+    return out
+
+
 def own_program_why(rec: dict, source: dict | None = None, note: dict | None = None,
                     siblings: list | None = None) -> tuple[str | None, str | None]:
     """(why the re-read does not hold its own program or None, the page evidence that let a generic heading pass or
     None). The heading must share a word with the title (the pilot's title_tokens). A heading that shares none and
     carries no word that could name a program (the scorer's heading_content_words: "REQUIREMENTS", "Course List",
-    "Major Requirements") is generic: it passes only where page_is_own shows the page is the program's own (S685).
+    "Major Requirements") is generic: it passes only where it prints the program's own Academic Plan code
+    (plan_code_own, S742) or page_is_own shows the page is the program's own (S685).
     A heading that carries another program's words still fails, whatever the address. Then the scorer's
     heading_award_check. A blank heading names no program and fails. source: the capture's sources.json entry.
     note: handed to page_is_own, which writes the address's stripped award ending there when it is consulted."""
@@ -360,7 +428,7 @@ def own_program_why(rec: dict, source: dict | None = None, note: dict | None = N
         if heading_content_words(heading):
             return ("the re-read's heading %r shares no word with the title %r" % (heading[:80], rec.get("title")),
                     None)
-        evidence = page_is_own(rec, source, note, siblings)
+        evidence = plan_code_own(rec, heading) or page_is_own(rec, source, note, siblings)
         if not evidence:
             return ("the re-read's heading %r is generic (it names no program), and nothing in the committed files "
                     "shows its page %s is the program's own" % (heading[:80], (rec.get("source_url") or "")[:120]),
