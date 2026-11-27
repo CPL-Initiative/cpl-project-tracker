@@ -45,25 +45,17 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 28,
+   "placed": 30,
    "listed": 30,
-   "share": 0.933,
-   "missing": [
-    "CNSTA196",
-    "CNSTA197"
-   ],
-   "unexplained": [
-    "CNSTA196",
-    "CNSTA197"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 10,
+   "count": 8,
    "codes": [
-    "ARCH/CNSTA196",
-    "ARCH/CNSTA197",
     "CNSTA150",
     "CNSTA155",
     "CNSTA156",
@@ -83,7 +75,7 @@
     "CNSTA199",
     "CNSTA240"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -121,7 +113,29 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true,
+  "course_renumbers": [
+   {
+    "printed": "ARCH/CNST A196",
+    "listed": "CNSTA196",
+    "block": "Required Prerequisites: Building Construction Certificate of Achievement - Restricted Electives"
+   },
+   {
+    "printed": "ARCH/CNST A197",
+    "listed": "CNSTA197",
+    "block": "Required Prerequisites: Building Construction Certificate of Achievement - Restricted Electives"
+   },
+   {
+    "printed": "ARCH/CNST A196",
+    "listed": "CNSTA196",
+    "block": "Required Courses"
+   },
+   {
+    "printed": "ARCH/CNST A197",
+    "listed": "CNSTA197",
+    "block": "Required Courses"
+   }
+  ]
  },
  "record": {
   "program": {

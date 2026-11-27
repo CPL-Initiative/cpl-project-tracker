@@ -33,13 +33,29 @@ HELD = {"14737": ["54.6", "total_differs"], "20094": ["54.6", "total_differs"], 
         "14710": ["work experience", "no one kind is true"]}
 SCORES = {"prerequisites_counted": 70}
 
-t = T.run(W, rows=ROWS, held=HELD, scores=SCORES, day="2026-11-26", boundaries=4, prior_held=set(M.KEYS))
+# Either state (p-older-pile-tests-pin-runs-later-plans-move-s739): S741's free reconcile 45957316339 re-filed this
+# read's degree records with the catalog's degree floor (degree_total_minimum, kb/program_requirements_reconcile.json),
+# each still read at this read's run; History 43854 and Fire Technology 14751 pass with it.
+LATER = "45957316339"
+FLOOR = {"degree_total_minimum": True}
+t = T.run(W, rows=ROWS, held=HELD, scores=SCORES, day="2026-11-26", boundaries=4, prior_held=set(M.KEYS),
+          later_flags={"16657": FLOOR})
 check = t.check
+
+
+def at_the_read(f):
+    """The record holds the read's run, or the later reconcile's over a read at the read's run."""
+    return str(f["extracted_run"]) == M.READ or (str(f["extracted_run"]) == LATER and str(f.get("read_run")) == M.READ)
+
+
+def passes_by_the_floor(f):
+    return str(f["extracted_run"]) == LATER and f["record"]["program"].get("degree_total_minimum") is True \
+        and S.passes_live(f["score"])
 
 check(len(M.KEYS) == 7 and set(M.KEYS) == set(ROWS) | set(HELD) and M.PASSED_BY_THE_READ == ("18519",),
       "the 7 keys are the records the read left failing")
 f = W.load("18519")
-check(S.passes_live(f["score"]) and str(f["extracted_run"]) == M.READ, "18519 passes at the read's run, and is no key")
+check(S.passes_live(f["score"]) and at_the_read(f), "18519 passes at the read's run, and is no key")
 
 # The live-run reading.
 rereads = []
@@ -50,7 +66,7 @@ for path in glob.glob(os.path.join(NG.RECEIPTS, "program_requirement_records_col
         rereads.append(d)
 check(len(rereads) == 1 and set(M.KEYS) <= {str(k) for k in rereads[0].get("replaced_keys") or []},
       "the reread at the read's run replaced every key")
-check(all(str(W.load(cn)["extracted_run"]) == M.READ for cn in M.KEYS), "every key's record holds the read's run")
+check(all(at_the_read(W.load(cn)) for cn in M.KEYS), "every key's record holds the read's run")
 g = dict(W.load("16657"), extracted_run="1")
 check(not W.on_live_run(g), "a record at another run is not on its live run")
 
@@ -70,10 +86,16 @@ check(any(M.REVIEWED["16657"]["words"] in n for n in B.notes(f)), "16657: the wo
 for cn in ("14737", "20094"):
     a = B.arithmetic(W.load(cn))
     check(a["computed"] == [54.6, 54.6] and a["stated"] == [56.0, 56.0], "%s adds to 54.6 against the printed 56" % cn)
-a = B.arithmetic(W.load("43854"))
-check(a.get("against") == "degree" and a["computed"][0] < a["stated"][0] < a["computed"][1],
-      "43854: the degree's sum holds the printed 60 inside it")
+f = W.load("43854")
+a = B.arithmetic(f)
+p = f["record"]["program"]
+check((a.get("against") == "degree" and a["computed"][0] < a["stated"][0] < a["computed"][1]) or passes_by_the_floor(f),
+      "43854: the degree's sum holds the printed 60 inside it, or it passes by the degree's floor")
+check(p["total_units"] == {"min": 24, "max": 24} and p["ge_units"] == {"min": 34, "max": 43}
+      and p["degree_total"] == {"min": 60, "max": 60}, "43854: the record holds the page's 24, 34-43 and 60")
 for cn in ("14751", "45594", "14710"):
-    check(B.arithmetic(W.load(cn)).get("status") == "unequal", "%s reads unequal" % cn)
+    f = W.load(cn)
+    check(B.arithmetic(f).get("status") == "unequal" or (cn == "14751" and passes_by_the_floor(f)),
+          "%s reads unequal%s" % (cn, ", or passes by the degree's floor" if cn == "14751" else ""))
 
 sys.exit(t.done())

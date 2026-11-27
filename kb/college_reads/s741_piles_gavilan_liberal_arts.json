@@ -1,0 +1,22 @@
+{
+ "_readme": "S741, lane 2's cheap piles (2026-11-27), third read. Gavilan 08464 (Liberal Arts: Multiple Subjects A.A.) reads five areas whose printed figures (3, 3-5, 3, 3-5, 2-4) add to 14-20 under a printed total of 19, and it carries no notes; total_differs is filed only from a page read (kb/program_total_differs.json). This read prints the page as the capture reads it, so a session can read each area's heading with its figure and the total line word for word. One load. No model call, nothing written.",
+ "college": "Gavilan College",
+ "questions": {
+  "area_figures": "Each area's heading with its printed units, every 'Units:' line, and the program's total line, word for word."
+ },
+ "keywords": [
+  "A[Rr][Ee][Aa] \\d[^\\n]{0,80}",
+  "Units:\\s*[0-9.]+[^\\n]{0,30}",
+  "Total[^\\n]{0,40}"
+ ],
+ "pages": [
+  {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4135/4197",
+   "answers": [
+    "area_figures"
+   ],
+   "why": "08464",
+   "capture_view": true
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+{
+ "_readme": "S741, lane 2's cheap piles (2026-11-27), second read. Fullerton 36798 (Chemistry A.S.-T) and 35174 (Chemistry A.S.) were both read from the 'Chemistry Associate in Science Degree for UC Transfer' page (the state's 41936), so each holds as not the program's own. This read prints the degrees and certificates index's Chemistry links and follows them, so a session can name each program's own page for a site_pages pin. Up to six loads. No model call, nothing written.",
+ "college": "Fullerton College",
+ "questions": {
+  "chemistry_pages": "The address, heading, lists and total of each Chemistry award's page: the A.S.-T, the A.S. and the UC Transfer degree."
+ },
+ "keywords": [
+  "Chemistry[^\\n]{0,100}",
+  "[Tt]otal[^\\n]{0,60}",
+  "Associate in Science[^\\n]{0,80}"
+ ],
+ "pages": [
+  {
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/",
+   "answers": [
+    "chemistry_pages"
+   ],
+   "links": "[Cc]hemistry",
+   "follow": "chemistry"
+  }
+ ]
+}

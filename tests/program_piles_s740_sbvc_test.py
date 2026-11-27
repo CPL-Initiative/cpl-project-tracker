@@ -182,11 +182,23 @@ a = W.load("35833")["score"]["arithmetic"]
 check(a["stated"][0] <= a["computed"][0] and a["computed"][1] <= a["stated"][1],
       "35833's 19-22 sits inside its printed 18.5-22")
 f = W.load("22784")
-check(str(f["extracted_run"]) == "45355976381" and not W.on_live_run(f), "22784's run is posted by no committed receipt")
+# Either state (p-older-pile-tests-pin-runs-later-plans-move-s739): no committed receipt posted 22784's run when this
+# plan held it. S741's plan (s741k3) proved the run live from the file's history and its load commits and filed the
+# record's gap, so its receipt now posts the record at that run.
+check(str(f["extracted_run"]) == "45355976381"
+      and (not W.on_live_run(f) or "waived_course_counted" in (f["score"].get("gaps") or {})
+           or any(g == "waived_course_counted" or (isinstance(g, dict) and g.get("gap") == "waived_course_counted")
+                  for g in (f["score"].get("gaps") or []))),
+      "22784's run was posted by no committed receipt (S741's plan has filed its gap since)")
 f = W.load("22821")
-check(f["source_url"].rstrip("/").endswith("/pharmacy-technology") and f["score"]["arithmetic"]["why"] == [NG.NO_TOTAL_WHY]
-      and any("program overview page" in n for n in B.notes(f)),
-      "22821 was read from the department page, and names no total")
+# Either state: the old hold as written, or S741's read (run 45960735042) of the program's own pinned page, which files
+# 22821 passing with its printed Total Units 20 and no gap.
+_held22821 = (f["source_url"].rstrip("/").endswith("/pharmacy-technology") and f["score"]["arithmetic"]["why"] == [NG.NO_TOTAL_WHY]
+              and any("program overview page" in n for n in B.notes(f)))
+_read22821 = (str(f.get("extracted_run")) == "45960735042" and f["score"]["arithmetic"]["stated"] == [20.0, 20.0]
+              and f["score"]["coverage"]["placed"] == 7 and not f["score"].get("gaps") and B.scorer_passes(f))
+check(_held22821 or _read22821,
+      "22821 was read from the department page and names no total, or S741's read of its own pinned page files it passing")
 AUDIO = """Two courses from the following:
 FTVM 112\tFilm Audio Production\t3
 Four courses from the following:

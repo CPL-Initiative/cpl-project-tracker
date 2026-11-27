@@ -116,9 +116,13 @@ check(cj["right"] == 4 and not cj["wrong"] and cj["refused"] == 27,
       "a continued heading joins only a heading with its first word: 4 right, 0 wrong, 27 refused (%s)" % cj)
 check(not rc["pass_to_fail"] and not rc["moved_outside"], "no pass-to-fail, no move outside the plan: %s"
       % rc["moved_outside"])
-check({(c, cn) for c, cn, _, _ in rc["moved"]} == {(M.CUY, "18628"), (M.MODESTO, "38869"), (M.MODESTO, "43164"),
-                                                   (M.POR, "06773"), (M.POR, "30235")},
-      "the verdicts it moves are the plan's: %s" % sorted({(c, cn) for c, cn, _, _ in rc["moved"]}))
+# Either state: S741's free reconcile 45966682528 filed the degree's floor on Cuyamaca 18634, 18635 and 18636, so the
+# pooled major is now all that stands between failing and passing there and the reading moves their verdicts too.
+_plan_moves = {(M.CUY, "18628"), (M.MODESTO, "38869"), (M.MODESTO, "43164"), (M.POR, "06773"), (M.POR, "30235")}
+_moved = {(c, cn) for c, cn, _, _ in rc["moved"]}
+check(_plan_moves <= _moved and _moved - _plan_moves <= {(M.CUY, cn) for cn in ("18634", "18635", "18636")},
+      "the verdicts it moves are the plan's (and S741's three Cuyamaca degrees once their floor is filed): %s"
+      % sorted(_moved))
 for k in (("Grossmont College", "19608"), ("Grossmont College", "19822"), ("Grossmont College", "19824")):
     f = None
     for path in [os.path.join(NG.COLLEGE_DIR, "grossmont", "records", k[1] + ".json")]:
@@ -165,9 +169,13 @@ for key, (gap, words) in sorted(M.GAP_ROWS.items()):
 S739_MOVES = {(M.ELC, cn) for cn in ("02513", "02515", "02517", "19861", "19866", "38948", "43993")} \
     | {(M.MODESTO, "06683"), (M.MODESTO, "42664")}
 check(S739_MOVES <= set(M.HELD), "S739's moves are holds of this plan")
+# S741 moves three more: Cuyamaca 18634, 18635 and 18636 pass once the college's reconcile step files the degree's
+# floor ('Complete 60 transferable units'; free reconcile 45966682528). Read in either state.
+S741_MOVES = {(M.CUY, cn) for cn in ("18634", "18635", "18636")}
+check(S741_MOVES <= set(M.HELD), "S741's moves are holds of this plan")
 for key in sorted(M.HELD):
     f = M.load(key)
-    check(f is not None and (key in S739_MOVES or not S.passes_live(f["score"])),
+    check(f is not None and (key in S739_MOVES | S741_MOVES or not S.passes_live(f["score"])),
           "%s %s: held, and its live score does not pass" % key)
 f = M.load((M.POR, "06773"))
 check([g["gap"] for g in f["score"].get("gaps") or []] == ["pool_figure_not_read"]
@@ -186,9 +194,16 @@ other = dict(f, control_number="99999")
 check(not RC.keep_named_gaps("99999", f["score"], fresh, other).get("gaps"),
       "a passing fresh score on a record no decision holds carries no gap")
 for cn in ("18634", "18635", "18636"):
-    a = M.arithmetic(M.load((M.CUY, cn)))["on"]
-    check((a.get("major") or {}).get("status") == "equal" and a.get("computed") == [52.0, 52.0]
-          and a.get("stated") == [60.0, 60.0], "Cuyamaca %s: the major reads 18, the degree 52 of 60" % cn)
+    f = M.load((M.CUY, cn))
+    a = M.arithmetic(f)["on"]
+    # Either state (p-older-pile-tests-pin-runs-later-plans-move-s739): as S731 read it, or re-filed by S741's free
+    # reconcile 45966682528 with the degree's floor ('Complete 60 transferable units', degree_total_minimum), under
+    # which the pooled major of 18 passes.
+    floor = f["record"]["program"].get("degree_total_minimum") is True and a.get("pass") is True \
+        and a.get("computed") == [18.0, 18.0]
+    check(((a.get("major") or {}).get("status") == "equal" and a.get("computed") == [52.0, 52.0]
+           and a.get("stated") == [60.0, 60.0]) or floor,
+          "Cuyamaca %s: the major reads 18, the degree 52 of 60 (or it passes by the degree's floor since)" % cn)
 
 # ── the plan, read from the fixture ───────────────────────────────────────
 with open(os.path.join(ROOT, fx["receipt"]), encoding="utf-8") as fh:

@@ -112,8 +112,13 @@ for b in r["blocks"]:
 check(not W.scorer_passes(f) and S.score(r, [], "", f["award"])["arithmetic"]["status"] == "equal",
       "32737: its substitution list read as no requirement, today's scorer passes it")
 check(W.scorer_passes(W._load("42331")), "today's scorer passes 42331 as it stands")
-check(all(not NG.collectable(W._load(cn)["score"]) for cn in ("08628", "19473", "19474", "43100")),
-      "coverage or invented fails on the four")
+# s741b passes 08628, 19473 and 19474 by a rename of the page's two cross-listed codes
+# (kb/_program_piles_s741_orangecoast.py): each fails coverage or invented as s721b read it, or carries that rename.
+check(not NG.collectable(W._load("43100")["score"])
+      and all(not NG.collectable(W._load(cn)["score"])
+              or {x.get("printed") for x in W._load(cn)["score"].get("course_renumbers") or []}
+              == {"ARCH/CNST A196", "ARCH/CNST A197"} for cn in ("08628", "19473", "19474")),
+      "coverage or invented fails on the four, or s741b's rename of the two cross-listed codes passes it since")
 
 # 19547's line is the page's own figures: Subtotal 67 less Program Major Units 49 is the 18 the record leaves out.
 check(W.REVIEWED["19547"]["less"] == [-18, -18] and W.line_closes(

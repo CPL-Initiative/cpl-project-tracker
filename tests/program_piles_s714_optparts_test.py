@@ -101,7 +101,8 @@ check(O.notes_claim({"record": {"notes": ["Units are not printed."]}}) == "silen
 bd = O.boundaries(targets)
 check(sum(bd["counts"].values()) == 30 and not bd["wrong"], "30 boundary readings, none wrong: %r" % bd)
 reach = C.option_parts_reach(every)
-check(reach["fires"] == 21 and reach["right"] == 21 and not reach["from_passing"], "the reach: %r" % reach)
+# S741: Roman numerals of two or more letters add Cosumnes River 33542 and Imperial Valley 01873, each held.
+check(reach["fires"] == 23 and reach["right"] == 23 and not reach["from_passing"], "the reach: %r" % reach)
 check(receipt["precision"]["right"] == 15 and receipt["boundaries"]["wrong"] == [] and receipt["claim_checks"] == cc,
       "the receipt's self-recall matches")
 

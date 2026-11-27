@@ -1,0 +1,21 @@
+{
+ "_readme": "S741, lane 2's cheap piles (2026-11-27), second read. The first read (45953358884, pp.63-67) shows the Cal-GETC pattern opens on PDF p.64 ('The California General Education Transfer Curriculum (Cal-GETC)', 'Cal-GETC Requirements') and runs through p.65, before its FAQS on p.66; 45285's read held p.65 alone. Los Angeles Trade-Technical prints each award's Academic Plan code (T0 and the control number), so this read prints every page of the catalog that names 045285 or a Cal-GETC certificate: whether the certificate has a section of its own apart from the pattern's pages. One load. No model call, nothing written.",
+ "college": "Los Angeles Trade-Technical College",
+ "questions": {
+  "certificate_section": "Any page that prints Academic Plan T045285 or a Cal-GETC Certificate of Achievement section, with its heading, lists and total."
+ },
+ "keywords": [
+  "0?45285[A-Z]?[^\\n]{0,60}",
+  "Cal-?GETC[^\\n]{0,40}Certificate[^\\n]{0,60}",
+  "Certificate[^\\n]{0,40}Cal-?GETC[^\\n]{0,60}"
+ ],
+ "pdf_page_cap": 8,
+ "pages": [
+  {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf",
+   "answers": [
+    "certificate_section"
+   ]
+  }
+ ]
+}

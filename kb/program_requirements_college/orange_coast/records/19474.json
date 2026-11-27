@@ -45,25 +45,17 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 29,
+   "placed": 31,
    "listed": 31,
-   "share": 0.935,
-   "missing": [
-    "CNSTA196",
-    "CNSTA197"
-   ],
-   "unexplained": [
-    "CNSTA196",
-    "CNSTA197"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 9,
+   "count": 7,
    "codes": [
-    "ARCH/CNSTA196",
-    "ARCH/CNSTA197",
     "CNSTA150",
     "CNSTA155",
     "CNSTA156",
@@ -81,7 +73,7 @@
     "CNSTA194",
     "CNSTA199"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -119,7 +111,39 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true,
+  "course_renumbers": [
+   {
+    "printed": "ARCH/CNST A196",
+    "listed": "CNSTA196",
+    "block": "Required Prerequisites: Building Construction Certificate of Achievement (18 units) - Restricted Electives"
+   },
+   {
+    "printed": "ARCH/CNST A197",
+    "listed": "CNSTA197",
+    "block": "Required Prerequisites: Building Construction Certificate of Achievement (18 units) - Restricted Electives"
+   },
+   {
+    "printed": "ARCH/CNST A196",
+    "listed": "CNSTA196",
+    "block": "Required Prerequisites: Residential Construction Development Second Award Certificate of Achievement (18 units) - Required Courses"
+   },
+   {
+    "printed": "ARCH/CNST A197",
+    "listed": "CNSTA197",
+    "block": "Required Prerequisites: Residential Construction Development Second Award Certificate of Achievement (18 units) - Required Courses"
+   },
+   {
+    "printed": "ARCH/CNST A196",
+    "listed": "CNSTA196",
+    "block": "Required Courses"
+   },
+   {
+    "printed": "ARCH/CNST A197",
+    "listed": "CNSTA197",
+    "block": "Required Courses"
+   }
+  ]
  },
  "record": {
   "program": {

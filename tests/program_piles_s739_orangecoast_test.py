@@ -67,9 +67,23 @@ for cn in ("32737", "36732"):
     check(cn in [str(k) for k in reread["kept_keys"]] and posted.get(cn) == [(reread["at"], "39726645292")]
           and str(W.load(cn)["extracted_run"]) == "39726645292",
           "%s is on run 39726645292 through the reread's kept keys alone" % cn)
-check(not posted.get("32790") and not W.on_live_run(W.load("32790"), skip=(W.tag,)), "32790 is on no proved live run")
-check(not any(NG.collectable(W.load(cn)["score"]) for cn in ("08628", "19473", "19474", "43100")),
-      "the four coverage holds are not collectable")
+# s741f files 32790 since, its run proved by the conductor's live read (kb/_program_piles_s741_orangecoast2.py): the
+# receipts as they stood before that plan post no run for it.
+check(not W.prior.posted_runs(skip=(W.tag, "s741f")).get("32790")
+      and not W.on_live_run(W.load("32790"), skip=(W.tag, "s741f")),
+      "32790 is on no proved live run by the receipts before s741f")
+# s741b passes 08628, 19473 and 19474 by a rename (the page's ARCH/CNST A196 and A197 are the state's CNST A196 and
+# A197; kb/_program_piles_s741_orangecoast.py), so each is not collectable as s739j read it, or carries that rename.
+
+
+def _cross_listed(cn):
+    return {x.get("printed") for x in W.load(cn)["score"].get("course_renumbers") or []} \
+        == {"ARCH/CNST A196", "ARCH/CNST A197"}
+
+
+check(not NG.collectable(W.load("43100")["score"])
+      and all(not NG.collectable(W.load(cn)["score"]) or _cross_listed(cn) for cn in ("08628", "19473", "19474")),
+      "the four coverage holds are not collectable, or pass since by s741b's rename of the two cross-listed codes")
 
 f = W.load("32737")
 check(f["score"]["arithmetic"]["status"] == "incomplete" and B.closes(f, B.apply_ops(f, [("drop", M._SUBSTITUTION)])),

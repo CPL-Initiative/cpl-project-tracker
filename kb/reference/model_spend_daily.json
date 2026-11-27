@@ -93,7 +93,8 @@
   "2026-11-23": 0.3,
   "2026-11-24": 2.9,
   "2026-11-25": 4.4,
-  "2026-11-26": 1.93
+  "2026-11-26": 1.93,
+  "2026-11-27": 1.91
  },
  "runner_runs": {
   "38322747831": {
@@ -1330,6 +1331,46 @@
    "college": "orange_coast",
    "usd": 0.26,
    "day": "2026-11-26"
+  },
+  "45957316339": {
+   "college": "copper_mountain",
+   "usd": 0.0,
+   "day": "2026-11-27"
+  },
+  "45960365618": {
+   "college": "san_diego_city",
+   "usd": 0.06,
+   "day": "2026-11-27"
+  },
+  "45960735042": {
+   "college": "san_bernardino_valley",
+   "usd": 0.06,
+   "day": "2026-11-27"
+  },
+  "45964322406": {
+   "college": "ventura",
+   "usd": 0.44,
+   "day": "2026-11-27"
+  },
+  "45964327019": {
+   "college": "norco",
+   "usd": 1.16,
+   "day": "2026-11-27"
+  },
+  "45966682528": {
+   "college": "cuyamaca",
+   "usd": 0.0,
+   "day": "2026-11-27"
+  },
+  "45968499315": {
+   "college": "fullerton",
+   "usd": 0.11,
+   "day": "2026-11-27"
+  },
+  "45970104024": {
+   "college": "american_river",
+   "usd": 0.08,
+   "day": "2026-11-27"
   }
  },
  "runner_since": "2026-11-17",
@@ -1360,9 +1401,9 @@
    "sessions": 5,
    "not_available": 0,
    "tags": {
-    "collection": 256.0,
+    "curation": 136.0,
     "infrastructure": 109.9,
-    "curation": 136.0
+    "collection": 256.0
    },
    "untagged_usd": 0.0,
    "estimate_usd": 288.0

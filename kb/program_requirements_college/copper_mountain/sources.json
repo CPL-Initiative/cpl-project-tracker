@@ -1371,12 +1371,7 @@
     107
    ],
    "extractor": "pypdf",
-   "heading_named": true,
-   "page_check": {
-    "rule": "A",
-    "page": 107,
-    "share": 1.0
-   },
+   "heading_named": false,
    "text_sha": "d0813b7aafd9b0c4"
   },
   "listed": 11,

@@ -1,0 +1,2142 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30); Sam's routine prompt of 2026-11-25, as the S739 conductor's brief carries it: a record held for a gap is collected with its gap named and a lower score on the 0-100 bar, never held, unless the record is not the program's own; S739: Orange Coast's records kb/receipts/program_requirement_records_piles_s739_orange_coast_2026-11-26_s739j.json held, read again by key: passed by a rescore where today's scorer's one reading moves them, else collected with their gaps named where the record is the program's own (no reread, no reconcile)",
+ "at": "2026-11-27T07:07:54Z",
+ "college": "Orange Coast College",
+ "keys": {
+  "from": "kb/receipts/program_requirement_records_piles_s739_orange_coast_2026-11-26_s739j.json",
+  "members": [
+   "03993",
+   "08628",
+   "08663",
+   "08664",
+   "08670",
+   "19473",
+   "19474",
+   "32790",
+   "36032",
+   "42331",
+   "43100"
+  ]
+ },
+ "gaps": {
+  "noted_figures_differ": "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires."
+ },
+ "moved": 4,
+ "by": {
+  "passes": 3,
+  "noted_figures_differ": 1
+ },
+ "precision": {
+  "read": 11,
+  "right": 11,
+  "wrong": [],
+  "no_record_file": 0,
+  "not_hand_held": 0,
+  "by_answer": {
+   "none": 7,
+   "passes": 3,
+   "noted_figures_differ": 1
+  }
+ },
+ "claim_checks": {
+  "counts": {
+   "stands": 4
+  },
+  "not_standing": []
+ },
+ "boundaries": {
+  "counts": {
+   "the note's words gone right": 4,
+   "the printed code absent right": 3,
+   "the arithmetic failing right": 3,
+   "the stated total one unit off right": 1,
+   "coverage failing right": 1,
+   "the reading against a total one unit off right": 1
+  },
+  "wrong": []
+ },
+ "held": [
+  {
+   "control_number": "03993",
+   "why": "held: its notes support no kind (18-21 against the printed 20; the core's 'or' alternatives carry no units): a reread",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "08663",
+   "why": "held: not the program's own: it was read from the Food and Beverage Management, Advanced certificate's page (43362's). Page read 45953358884 found its own page, https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/food-beverage-management/food-beverage-management-coa/, which prints 'Food and Beverage Management, Certificate of Achievement' and 'Control Number: 08663': a site_pages pin and a paid read",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "08670",
+   "why": "held: its 62.5-63.5 sits inside the printed 60-63.5, whose low end the page prints as 'Minimum 60 units required for the degree'; no kind's sentence is true of a sum the printed range holds: a scorer reading (S721's degree_total_minimum rule), not a reread",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "32790",
+   "why": "held: its text is cut off mid-Area 5A and it reads no total, and no committed receipt posts its committed run (44747523200) to its live row: load 44749916015 inserted it over five runs, and no reread has kept it since. A file-history proof of its run, then noted_section_cut_off",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "36032",
+   "why": "held: its major passes and the degree reads 55-64 around the printed 60, with electives the page prints as 'Varies' and says fill the rest, so degree_electives_not_printed's sentence is not true of it: a scorer reading, not a reread",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "42331",
+   "why": "held: today's scorer passes it on its record (9.5-16, equal: the page prints no units beside the two courses of its 0-4 choice, and the filed 11.5 takes them from the state's file): a closed-list rescore, never a gap",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "43100",
+   "why": "held: not collectable (collected_with_gaps, kb/_harvest_gap_census.py): coverage fails (PSYC A160 on the state's list, not placed)",
+   "claim": "no entry stands"
+  }
+ ],
+ "records": [
+  {
+   "college": "Orange Coast College",
+   "control_number": "08628",
+   "award": "A.S. Degree",
+   "extracted_run": 38843379313,
+   "moves_to": "passes",
+   "words": "ARCH/CNST A196 and ARCH/CNST A197 are cross-listed codes; matched to closed-list CNST A196 and CNST A197.",
+   "confidence": null,
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/orange_coast/records/08628.json",
+   "reading": "renames",
+   "renamed": {
+    "ARCH/CNST A196": "CNST A196",
+    "ARCH/CNST A197": "CNST A197"
+   },
+   "before_image": {
+    "program_title": "Construction Technology: Residential Construction Dev",
+    "award": "A.S. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/construction-technology/residential-construction-development-first-award-associate-science-degree/",
+    "measure": "units",
+    "total_min": 18,
+    "total_max": 18,
+    "record": {
+     "program": {
+      "section_heading": "Building Construction, Associate in Science Degree",
+      "measure": "units",
+      "total_units": {
+       "min": 18,
+       "max": 18
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "OCC AS General Education",
+      "degree_total": {
+       "min": 60,
+       "max": 60
+      },
+      "ge_units": {
+       "min": 21,
+       "max": 21
+      },
+      "electives_fill_degree": true,
+      "outcomes": [
+       "Demonstrate the knowledge, skills and experience to identify, assess, and participate in many entry-level construction trades.",
+       "Be prepared to work in the construction field in positions including, but not limited to work areas such as inspection, management, and as hands-on skilled tradespeople."
+      ],
+      "careers": [
+       "inspection",
+       "management",
+       "hands-on skilled tradespeople"
+      ],
+      "degree_total_minimum": true
+     },
+     "blocks": [
+      {
+       "name": "Required Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "CNST A165",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A195",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "CNST A194",
+           "units": null,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Restricted Electives",
+       "rule": "choose_units",
+       "minimum": 12,
+       "option_group": null,
+       "stated": {
+        "min": 12,
+        "max": 12
+       },
+       "courses": [
+        {
+         "code": "ARCH/CNST A196",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARCH/CNST A197",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A100",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CNST A112",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CNST A114",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A125",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A150",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CNST A154",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CNST A155",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CNST A156",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CNST A157",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CNST A170",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A180",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A185",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A189",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CNST A190",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A198",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A199",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CNST A209",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A210",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A211",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A220",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A225",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A230",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A240",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A241",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A250",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A252",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A260",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A261",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A265",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A266",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A270",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A275",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A285",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": false,
+     "invented": false,
+     "arithmetic": "equal",
+     "placed": 25,
+     "listed": 27
+    },
+    "extracted_run": "38843379313"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "equal",
+     "placed": 27,
+     "listed": 27
+    }
+   },
+   "i": 1
+  },
+  {
+   "college": "Orange Coast College",
+   "control_number": "08664",
+   "award": "A.S. Degree",
+   "extracted_run": "45858495107",
+   "moves_to": "noted_figures_differ",
+   "words": "The prerequisite certificate heading says '(20.5 Units)' but its course list prints 'Total Units 22'; the block's stated uses the list total of 22.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/orange_coast/records/08664.json",
+   "before_image": {
+    "program_title": "Food and Beverage Management Advanced",
+    "award": "A.S. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/food-beverage-management/food-beverage-management-as/",
+    "measure": "units",
+    "total_min": 38.5,
+    "total_max": 40,
+    "record": {
+     "program": {
+      "section_heading": "Food and Beverage Management, Advanced, Associate in Science Degree",
+      "measure": "units",
+      "total_units": {
+       "min": 38.5,
+       "max": 40
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "OCC AS General Education",
+      "degree_total": {
+       "min": 60,
+       "max": 60
+      },
+      "ge_units": {
+       "min": null,
+       "max": 21
+      },
+      "electives_fill_degree": true,
+      "outcomes": [
+       "Prepare students with the operational and managerial capabilities needed to advance within the food &amp; beverage industry while upholding industry standards."
+      ],
+      "careers": [],
+      "degree_total_minimum": true
+     },
+     "blocks": [
+      {
+       "name": "Recommended Preparation",
+       "rule": "recommended",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "COUN A100",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "Required Prerequisites: Food and Beverage Management Certificate of Achievement (20.5 Units) - Required Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 22,
+        "max": 22
+       },
+       "courses": [
+        {
+         "code": "FBM A100",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FBM A102",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FBM A115",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FBM A190",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FBM A220",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FBM A195",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FBM A215",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FBM A270",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "FN A140",
+         "units": 2,
+         "units_max": 3,
+         "alternatives": [
+          {
+           "code": "FN A170",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "FBM A221",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FBM A140",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FBM A145",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FBM A175",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FBM A222",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FBM A280",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FBM A147",
+         "units": 2.5,
+         "units_max": 3,
+         "alternatives": [
+          {
+           "code": "FBM A146",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Suggested Electives",
+       "rule": "recommended",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "CIS A090",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "EMS A100",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "KIN A203",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 18,
+     "listed": 18
+    },
+    "extracted_run": "45858495107"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 18,
+     "listed": 18,
+     "gaps": [
+      "noted_figures_differ"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 2
+  },
+  {
+   "college": "Orange Coast College",
+   "control_number": "19473",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "extracted_run": "38670927724",
+   "moves_to": "passes",
+   "words": "ARCH/CNST A196 and ARCH/CNST A197 are cross-listed codes matched to closed-list CNST A196 and CNST A197.",
+   "confidence": null,
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/orange_coast/records/19473.json",
+   "reading": "renames",
+   "renamed": {
+    "ARCH/CNST A196": "CNST A196",
+    "ARCH/CNST A197": "CNST A197"
+   },
+   "before_image": {
+    "program_title": "Building Construction Second Award",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/construction-technology/residential-construction-development-second-award-certificate-achievement/",
+    "measure": "units",
+    "total_min": 36,
+    "total_max": 36,
+    "record": {
+     "program": {
+      "section_heading": "Building Construction Second Award, Certificate of Achievement",
+      "measure": "units",
+      "total_units": {
+       "min": 36,
+       "max": 36
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Demonstrate the knowledge, skills and experience to identify, assess, and participate in many entry-level construction trades.",
+       "Be prepared to work in the construction field in positions including, but not limited to work areas such as inspection, management, and as hands-on skilled tradespeople."
+      ],
+      "careers": [
+       "inspection",
+       "management",
+       "hands-on skilled tradespeople"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required Prerequisites: Building Construction Certificate of Achievement - Required Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "CNST A165",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A195",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "CNST A194",
+           "units": null,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Prerequisites: Building Construction Certificate of Achievement - Restricted Electives",
+       "rule": "choose_units",
+       "minimum": 12,
+       "option_group": null,
+       "stated": {
+        "min": 12,
+        "max": 12
+       },
+       "courses": [
+        {
+         "code": "ARCH/CNST A196",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARCH/CNST A197",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A100",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A112",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A114",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A125",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A150",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CNST A154",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A155",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CNST A156",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CNST A157",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CNST A170",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A180",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A185",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A189",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CNST A190",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A198",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A199",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CNST A209",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A210",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A211",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A220",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A225",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A230",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A240",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CNST A241",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A250",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A252",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A260",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A261",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A265",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A266",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A270",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A275",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A285",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Courses",
+       "rule": "choose_units",
+       "minimum": 18,
+       "option_group": null,
+       "stated": {
+        "min": 18,
+        "max": 18
+       },
+       "courses": [
+        {
+         "code": "ARCH/CNST A196",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARCH/CNST A197",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A100",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A112",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A114",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A125",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A154",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A170",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A180",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A185",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A190",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A198",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A209",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A210",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A211",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A220",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A225",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A230",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A240",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CNST A241",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A250",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A252",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A260",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A261",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A265",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A266",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A270",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A275",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A285",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": false,
+     "invented": false,
+     "arithmetic": "equal",
+     "placed": 28,
+     "listed": 30
+    },
+    "extracted_run": "38670927724"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "equal",
+     "placed": 30,
+     "listed": 30
+    }
+   },
+   "i": 3
+  },
+  {
+   "college": "Orange Coast College",
+   "control_number": "19474",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "extracted_run": "38670927724",
+   "moves_to": "passes",
+   "words": "ARCH/CNST A196 and ARCH/CNST A197 are printed as cross-listed codes; matched to closed-list CNST A196 and CNST A197.",
+   "confidence": null,
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/orange_coast/records/19474.json",
+   "reading": "renames",
+   "renamed": {
+    "ARCH/CNST A196": "CNST A196",
+    "ARCH/CNST A197": "CNST A197"
+   },
+   "before_image": {
+    "program_title": "Building Construction Third Award",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/construction-technology/residential-construction-development-third-award-certificate-achievement/",
+    "measure": "units",
+    "total_min": 54,
+    "total_max": 54,
+    "record": {
+     "program": {
+      "section_heading": "Building Construction Third Award, Certificate of Achievement",
+      "measure": "units",
+      "total_units": {
+       "min": 54,
+       "max": 54
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Demonstrate the knowledge, skills and experience to identify, assess, and participate in many entry-level construction trades.",
+       "Be prepared to work in the construction field in positions including, but not limited to work areas such as inspection, management, and as hands-on skilled tradespeople."
+      ],
+      "careers": [
+       "inspection",
+       "management",
+       "hands-on skilled tradespeople"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required Prerequisites: Building Construction Certificate of Achievement (18 units) - Required Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "CNST A165",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A195",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "CNST A194",
+           "units": null,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Prerequisites: Building Construction Certificate of Achievement (18 units) - Restricted Electives",
+       "rule": "choose_units",
+       "minimum": 12,
+       "option_group": null,
+       "stated": {
+        "min": 12,
+        "max": 12
+       },
+       "courses": [
+        {
+         "code": "ARCH/CNST A196",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARCH/CNST A197",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A100",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A112",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A114",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A125",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A150",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CNST A154",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A155",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CNST A156",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CNST A157",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CNST A170",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A180",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A185",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A189",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CNST A190",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A198",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A199",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CNST A209",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A210",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A211",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A220",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A225",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A230",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A240",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A241",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A250",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A252",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A260",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A261",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A265",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A266",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A270",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A275",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A285",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Prerequisites: Residential Construction Development Second Award Certificate of Achievement (18 units) - Required Courses",
+       "rule": "choose_units",
+       "minimum": 18,
+       "option_group": null,
+       "stated": {
+        "min": 18,
+        "max": 18
+       },
+       "courses": [
+        {
+         "code": "ARCH/CNST A196",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARCH/CNST A197",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A100",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A112",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A114",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A125",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A154",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A170",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A180",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A185",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A190",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A198",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A209",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A210",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A211",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A220",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A225",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A230",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A240",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A241",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A250",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A252",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A260",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A261",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A265",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A266",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A270",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A275",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A285",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Courses",
+       "rule": "choose_units",
+       "minimum": 18,
+       "option_group": null,
+       "stated": {
+        "min": 18,
+        "max": 18
+       },
+       "courses": [
+        {
+         "code": "ARCH/CNST A196",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARCH/CNST A197",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A100",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A112",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A114",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A125",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A154",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A170",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A180",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A185",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A190",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A198",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A209",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A210",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A211",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A220",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A225",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A230",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A240",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A241",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A250",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A252",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A260",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A261",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A265",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A266",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A270",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A275",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNST A285",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": false,
+     "invented": false,
+     "arithmetic": "equal",
+     "placed": 29,
+     "listed": 31
+    },
+    "extracted_run": "38670927724"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "equal",
+     "placed": 31,
+     "listed": 31
+    }
+   },
+   "i": 4
+  }
+ ],
+ "live_run_proof": null,
+ "shared_pages": {},
+ "representation": "checks.gaps and checks.confidence added as the load reads the filed score (a passing row: checks.arithmetic to equal); checks.coverage, invented and the record unchanged",
+ "claim_check_reads": "Today's capture (sources.json): every course an entry names among the codes it found, and a course an entry says the printed total leaves out on neither it nor the state's list. A note's quoted figures are the reader's words, never re-read here.",
+ "follow_verdict": "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows (confirm_matches); the apply aborts, writing nothing, unless the count is 0.",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Orange Coast College', '08628', 38843379313, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A165\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"CNST A194\",\"units\":null}],\"catalog_addition\":false,\"code\":\"CNST A195\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH/CNST A196\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH/CNST A197\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A112\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A114\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A125\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A150\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A154\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A155\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A156\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A157\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A170\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A180\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A185\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A189\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A190\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A198\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A199\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A209\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A210\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A211\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A220\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A225\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A230\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A240\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A241\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A250\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A252\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A260\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A261\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A265\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A266\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A270\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A275\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A285\",\"units\":null,\"units_max\":null}],\"minimum\":12,\"name\":\"Restricted Electives\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":12,\"min\":12}}],\"program\":{\"careers\":[\"inspection\",\"management\",\"hands-on skilled tradespeople\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"degree_total_minimum\":true,\"electives_fill_degree\":true,\"ge_pattern\":\"OCC AS General Education\",\"ge_units\":{\"max\":21,\"min\":21},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate the knowledge, skills and experience to identify, assess, and participate in many entry-level construction trades.\",\"Be prepared to work in the construction field in positions including, but not limited to work areas such as inspection, management, and as hands-on skilled tradespeople.\"],\"section_heading\":\"Building Construction, Associate in Science Degree\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":27,\"placed\":25}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":27,\"placed\":27}'::jsonb),\n  (2, 'Orange Coast College', '08664', 45858495107, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"COUN A100\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Recommended Preparation\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A102\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A115\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A190\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A220\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A195\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A215\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A270\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Prerequisites: Food and Beverage Management Certificate of Achievement (20.5 Units) - Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":22,\"min\":22}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"FN A170\",\"units\":3}],\"catalog_addition\":false,\"code\":\"FN A140\",\"units\":2,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A221\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A140\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A145\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A175\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A222\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A280\",\"units\":2,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"FBM A146\",\"units\":3}],\"catalog_addition\":false,\"code\":\"FBM A147\",\"units\":2.5,\"units_max\":3}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CIS A090\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"EMS A100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"KIN A203\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Suggested Electives\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"degree_total_minimum\":true,\"electives_fill_degree\":true,\"ge_pattern\":\"OCC AS General Education\",\"ge_units\":{\"max\":21,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Prepare students with the operational and managerial capabilities needed to advance within the food &amp; beverage industry while upholding industry standards.\"],\"section_heading\":\"Food and Beverage Management, Advanced, Associate in Science Degree\",\"total_units\":{\"max\":40,\"min\":38.5}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":18,\"placed\":18}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":18,\"placed\":18}'::jsonb),\n  (3, 'Orange Coast College', '19473', 38670927724, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A165\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"CNST A194\",\"units\":null}],\"catalog_addition\":false,\"code\":\"CNST A195\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Prerequisites: Building Construction Certificate of Achievement - Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH/CNST A196\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH/CNST A197\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A112\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A114\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A125\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A150\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A154\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A155\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A156\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A157\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A170\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A180\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A185\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A189\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A190\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A198\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A199\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A209\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A210\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A211\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A220\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A225\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A230\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A240\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A241\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A250\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A252\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A260\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A261\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A265\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A266\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A270\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A275\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A285\",\"units\":null,\"units_max\":null}],\"minimum\":12,\"name\":\"Required Prerequisites: Building Construction Certificate of Achievement - Restricted Electives\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH/CNST A196\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH/CNST A197\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A112\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A114\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A125\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A154\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A170\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A180\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A185\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A190\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A198\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A209\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A210\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A211\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A220\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A225\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A230\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A240\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A241\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A250\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A252\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A260\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A261\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A265\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A266\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A270\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A275\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A285\",\"units\":null,\"units_max\":null}],\"minimum\":18,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":18,\"min\":18}}],\"program\":{\"careers\":[\"inspection\",\"management\",\"hands-on skilled tradespeople\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate the knowledge, skills and experience to identify, assess, and participate in many entry-level construction trades.\",\"Be prepared to work in the construction field in positions including, but not limited to work areas such as inspection, management, and as hands-on skilled tradespeople.\"],\"section_heading\":\"Building Construction Second Award, Certificate of Achievement\",\"total_units\":{\"max\":36,\"min\":36}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":30,\"placed\":28}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":30,\"placed\":30}'::jsonb),\n  (4, 'Orange Coast College', '19474', 38670927724, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A165\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"CNST A194\",\"units\":null}],\"catalog_addition\":false,\"code\":\"CNST A195\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Prerequisites: Building Construction Certificate of Achievement (18 units) - Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH/CNST A196\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH/CNST A197\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A112\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A114\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A125\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A150\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A154\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A155\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A156\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A157\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A170\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A180\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A185\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A189\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A190\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A198\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A199\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A209\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A210\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A211\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A220\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A225\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A230\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A240\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A241\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A250\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A252\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A260\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A261\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A265\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A266\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A270\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A275\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A285\",\"units\":null,\"units_max\":null}],\"minimum\":12,\"name\":\"Required Prerequisites: Building Construction Certificate of Achievement (18 units) - Restricted Electives\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH/CNST A196\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH/CNST A197\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A112\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A114\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A125\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A154\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A170\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A180\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A185\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A190\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A198\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A209\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A210\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A211\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A220\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A225\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A230\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A240\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A241\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A250\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A252\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A260\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A261\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A265\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A266\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A270\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A275\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A285\",\"units\":null,\"units_max\":null}],\"minimum\":18,\"name\":\"Required Prerequisites: Residential Construction Development Second Award Certificate of Achievement (18 units) - Required Courses\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":18,\"min\":18}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH/CNST A196\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH/CNST A197\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A112\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A114\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A125\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A154\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A170\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A180\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A185\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A190\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A198\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A209\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A210\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A211\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A220\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A225\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A230\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A240\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A241\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A250\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A252\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A260\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A261\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A265\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A266\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A270\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A275\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A285\",\"units\":null,\"units_max\":null}],\"minimum\":18,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":18,\"min\":18}}],\"program\":{\"careers\":[\"inspection\",\"management\",\"hands-on skilled tradespeople\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate the knowledge, skills and experience to identify, assess, and participate in many entry-level construction trades.\",\"Be prepared to work in the construction field in positions including, but not limited to work areas such as inspection, management, and as hands-on skilled tradespeople.\"],\"section_heading\":\"Building Construction Third Award, Certificate of Achievement\",\"total_units\":{\"max\":54,\"min\":54}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":31,\"placed\":29}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":31,\"placed\":31}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "pre_read_md5": "with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) as (values\n  (1, 'Orange Coast College', '08628', 38843379313, '09847101172dccce74d22e7b063fb112', '6914789d7433515b115a28cf10b0d645', '2c8db1a46fbe242c75e7aee0e3c4dfff'),\n  (2, 'Orange Coast College', '08664', 45858495107, '0323267972faad6d53014b2fbecf2cc7', 'ebd12c758ebab5aaeac4ca39249f2f79', '38668794711474e4a49528c1aef71921'),\n  (3, 'Orange Coast College', '19473', 38670927724, 'b2dd545cb5601997cb717152265d2da7', '4fda625e79bb6947c750abfd135f9573', '0cd7b60aaa7473943434ea5064ba984c'),\n  (4, 'Orange Coast College', '19474', 38670927724, '392d766359ac2ce57d33dc3c91decaa7', '699c8989263e6f5b8909783cf1c7d642', '4e3ebc0fda8804787e65da4f6b18be01'))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.record::text) = v.rec_md5),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.checks::text) = v.chk_md5),\n  'already_after', count(*) filter (where md5(r.checks::text) = v.after_md5),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Orange Coast College', '08628', 38843379313, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A165\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"CNST A194\",\"units\":null}],\"catalog_addition\":false,\"code\":\"CNST A195\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH/CNST A196\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH/CNST A197\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A112\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A114\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A125\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A150\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A154\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A155\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A156\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A157\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A170\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A180\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A185\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A189\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A190\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A198\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A199\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A209\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A210\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A211\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A220\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A225\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A230\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A240\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A241\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A250\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A252\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A260\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A261\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A265\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A266\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A270\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A275\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A285\",\"units\":null,\"units_max\":null}],\"minimum\":12,\"name\":\"Restricted Electives\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":12,\"min\":12}}],\"program\":{\"careers\":[\"inspection\",\"management\",\"hands-on skilled tradespeople\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"degree_total_minimum\":true,\"electives_fill_degree\":true,\"ge_pattern\":\"OCC AS General Education\",\"ge_units\":{\"max\":21,\"min\":21},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate the knowledge, skills and experience to identify, assess, and participate in many entry-level construction trades.\",\"Be prepared to work in the construction field in positions including, but not limited to work areas such as inspection, management, and as hands-on skilled tradespeople.\"],\"section_heading\":\"Building Construction, Associate in Science Degree\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":27,\"placed\":25}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":27,\"placed\":27}'::jsonb),\n  (2, 'Orange Coast College', '08664', 45858495107, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"COUN A100\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Recommended Preparation\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A102\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A115\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A190\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A220\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A195\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A215\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A270\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Prerequisites: Food and Beverage Management Certificate of Achievement (20.5 Units) - Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":22,\"min\":22}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"FN A170\",\"units\":3}],\"catalog_addition\":false,\"code\":\"FN A140\",\"units\":2,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A221\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A140\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A145\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A175\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A222\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A280\",\"units\":2,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"FBM A146\",\"units\":3}],\"catalog_addition\":false,\"code\":\"FBM A147\",\"units\":2.5,\"units_max\":3}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CIS A090\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"EMS A100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"KIN A203\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Suggested Electives\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"degree_total_minimum\":true,\"electives_fill_degree\":true,\"ge_pattern\":\"OCC AS General Education\",\"ge_units\":{\"max\":21,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Prepare students with the operational and managerial capabilities needed to advance within the food &amp; beverage industry while upholding industry standards.\"],\"section_heading\":\"Food and Beverage Management, Advanced, Associate in Science Degree\",\"total_units\":{\"max\":40,\"min\":38.5}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":18,\"placed\":18}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":18,\"placed\":18}'::jsonb),\n  (3, 'Orange Coast College', '19473', 38670927724, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A165\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"CNST A194\",\"units\":null}],\"catalog_addition\":false,\"code\":\"CNST A195\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Prerequisites: Building Construction Certificate of Achievement - Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH/CNST A196\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH/CNST A197\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A112\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A114\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A125\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A150\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A154\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A155\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A156\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A157\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A170\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A180\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A185\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A189\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A190\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A198\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A199\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A209\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A210\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A211\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A220\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A225\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A230\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A240\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A241\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A250\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A252\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A260\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A261\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A265\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A266\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A270\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A275\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A285\",\"units\":null,\"units_max\":null}],\"minimum\":12,\"name\":\"Required Prerequisites: Building Construction Certificate of Achievement - Restricted Electives\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH/CNST A196\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH/CNST A197\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A112\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A114\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A125\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A154\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A170\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A180\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A185\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A190\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A198\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A209\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A210\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A211\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A220\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A225\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A230\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A240\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A241\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A250\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A252\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A260\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A261\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A265\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A266\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A270\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A275\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A285\",\"units\":null,\"units_max\":null}],\"minimum\":18,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":18,\"min\":18}}],\"program\":{\"careers\":[\"inspection\",\"management\",\"hands-on skilled tradespeople\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate the knowledge, skills and experience to identify, assess, and participate in many entry-level construction trades.\",\"Be prepared to work in the construction field in positions including, but not limited to work areas such as inspection, management, and as hands-on skilled tradespeople.\"],\"section_heading\":\"Building Construction Second Award, Certificate of Achievement\",\"total_units\":{\"max\":36,\"min\":36}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":30,\"placed\":28}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":30,\"placed\":30}'::jsonb),\n  (4, 'Orange Coast College', '19474', 38670927724, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A165\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"CNST A194\",\"units\":null}],\"catalog_addition\":false,\"code\":\"CNST A195\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Prerequisites: Building Construction Certificate of Achievement (18 units) - Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH/CNST A196\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH/CNST A197\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A112\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A114\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A125\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A150\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A154\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A155\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A156\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A157\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A170\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A180\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A185\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A189\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A190\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A198\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A199\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A209\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A210\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A211\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A220\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A225\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A230\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A240\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A241\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A250\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A252\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A260\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A261\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A265\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A266\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A270\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A275\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A285\",\"units\":null,\"units_max\":null}],\"minimum\":12,\"name\":\"Required Prerequisites: Building Construction Certificate of Achievement (18 units) - Restricted Electives\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH/CNST A196\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH/CNST A197\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A112\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A114\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A125\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A154\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A170\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A180\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A185\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A190\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A198\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A209\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A210\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A211\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A220\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A225\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A230\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A240\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A241\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A250\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A252\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A260\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A261\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A265\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A266\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A270\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A275\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A285\",\"units\":null,\"units_max\":null}],\"minimum\":18,\"name\":\"Required Prerequisites: Residential Construction Development Second Award Certificate of Achievement (18 units) - Required Courses\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":18,\"min\":18}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH/CNST A196\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH/CNST A197\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A112\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A114\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A125\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A154\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A170\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A180\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A185\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A190\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A198\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A209\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A210\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A211\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A220\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A225\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A230\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A240\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A241\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A250\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A252\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A260\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A261\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A265\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A266\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A270\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A275\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A285\",\"units\":null,\"units_max\":null}],\"minimum\":18,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":18,\"min\":18}}],\"program\":{\"careers\":[\"inspection\",\"management\",\"hands-on skilled tradespeople\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate the knowledge, skills and experience to identify, assess, and participate in many entry-level construction trades.\",\"Be prepared to work in the construction field in positions including, but not limited to work areas such as inspection, management, and as hands-on skilled tradespeople.\"],\"section_heading\":\"Building Construction Third Award, Certificate of Achievement\",\"total_units\":{\"max\":54,\"min\":54}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":31,\"placed\":29}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":31,\"placed\":31}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\nf as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number\n        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true\n       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)),\ne(expect) as (values (4)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when f.n > 0\n            then ('s741b piles confirm guard: ' || f.n || ' rows hold a matching confirm verdict ' || f.keys::text)::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s741b piles guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, f;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Orange Coast College', '08628', 38843379313, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A165\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"CNST A194\",\"units\":null}],\"catalog_addition\":false,\"code\":\"CNST A195\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH/CNST A196\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH/CNST A197\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A112\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A114\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A125\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A150\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A154\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A155\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A156\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A157\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A170\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A180\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A185\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A189\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A190\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A198\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A199\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A209\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A210\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A211\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A220\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A225\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A230\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A240\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A241\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A250\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A252\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A260\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A261\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A265\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A266\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A270\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A275\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A285\",\"units\":null,\"units_max\":null}],\"minimum\":12,\"name\":\"Restricted Electives\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":12,\"min\":12}}],\"program\":{\"careers\":[\"inspection\",\"management\",\"hands-on skilled tradespeople\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"degree_total_minimum\":true,\"electives_fill_degree\":true,\"ge_pattern\":\"OCC AS General Education\",\"ge_units\":{\"max\":21,\"min\":21},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate the knowledge, skills and experience to identify, assess, and participate in many entry-level construction trades.\",\"Be prepared to work in the construction field in positions including, but not limited to work areas such as inspection, management, and as hands-on skilled tradespeople.\"],\"section_heading\":\"Building Construction, Associate in Science Degree\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":27,\"placed\":25}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":27,\"placed\":27}'::jsonb),\n  (2, 'Orange Coast College', '08664', 45858495107, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"COUN A100\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Recommended Preparation\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A102\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A115\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A190\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A220\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A195\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A215\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A270\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Prerequisites: Food and Beverage Management Certificate of Achievement (20.5 Units) - Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":22,\"min\":22}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"FN A170\",\"units\":3}],\"catalog_addition\":false,\"code\":\"FN A140\",\"units\":2,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A221\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A140\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A145\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A175\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A222\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FBM A280\",\"units\":2,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"FBM A146\",\"units\":3}],\"catalog_addition\":false,\"code\":\"FBM A147\",\"units\":2.5,\"units_max\":3}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CIS A090\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"EMS A100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"KIN A203\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Suggested Electives\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"degree_total_minimum\":true,\"electives_fill_degree\":true,\"ge_pattern\":\"OCC AS General Education\",\"ge_units\":{\"max\":21,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Prepare students with the operational and managerial capabilities needed to advance within the food &amp; beverage industry while upholding industry standards.\"],\"section_heading\":\"Food and Beverage Management, Advanced, Associate in Science Degree\",\"total_units\":{\"max\":40,\"min\":38.5}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":18,\"placed\":18}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":18,\"placed\":18}'::jsonb),\n  (3, 'Orange Coast College', '19473', 38670927724, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A165\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"CNST A194\",\"units\":null}],\"catalog_addition\":false,\"code\":\"CNST A195\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Prerequisites: Building Construction Certificate of Achievement - Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH/CNST A196\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH/CNST A197\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A112\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A114\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A125\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A150\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A154\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A155\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A156\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A157\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A170\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A180\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A185\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A189\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A190\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A198\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A199\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A209\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A210\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A211\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A220\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A225\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A230\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A240\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A241\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A250\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A252\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A260\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A261\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A265\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A266\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A270\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A275\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A285\",\"units\":null,\"units_max\":null}],\"minimum\":12,\"name\":\"Required Prerequisites: Building Construction Certificate of Achievement - Restricted Electives\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH/CNST A196\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH/CNST A197\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A112\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A114\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A125\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A154\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A170\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A180\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A185\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A190\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A198\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A209\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A210\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A211\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A220\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A225\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A230\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A240\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A241\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A250\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A252\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A260\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A261\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A265\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A266\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A270\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A275\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A285\",\"units\":null,\"units_max\":null}],\"minimum\":18,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":18,\"min\":18}}],\"program\":{\"careers\":[\"inspection\",\"management\",\"hands-on skilled tradespeople\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate the knowledge, skills and experience to identify, assess, and participate in many entry-level construction trades.\",\"Be prepared to work in the construction field in positions including, but not limited to work areas such as inspection, management, and as hands-on skilled tradespeople.\"],\"section_heading\":\"Building Construction Second Award, Certificate of Achievement\",\"total_units\":{\"max\":36,\"min\":36}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":30,\"placed\":28}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":30,\"placed\":30}'::jsonb),\n  (4, 'Orange Coast College', '19474', 38670927724, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A165\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"CNST A194\",\"units\":null}],\"catalog_addition\":false,\"code\":\"CNST A195\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Prerequisites: Building Construction Certificate of Achievement (18 units) - Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH/CNST A196\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH/CNST A197\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A112\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A114\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A125\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A150\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A154\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A155\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A156\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A157\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A170\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A180\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A185\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A189\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A190\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A198\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CNST A199\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A209\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A210\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A211\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A220\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A225\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A230\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A240\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A241\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A250\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A252\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A260\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A261\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A265\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A266\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A270\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A275\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A285\",\"units\":null,\"units_max\":null}],\"minimum\":12,\"name\":\"Required Prerequisites: Building Construction Certificate of Achievement (18 units) - Restricted Electives\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH/CNST A196\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH/CNST A197\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A112\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A114\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A125\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A154\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A170\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A180\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A185\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A190\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A198\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A209\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A210\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A211\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A220\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A225\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A230\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A240\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A241\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A250\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A252\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A260\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A261\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A265\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A266\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A270\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A275\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A285\",\"units\":null,\"units_max\":null}],\"minimum\":18,\"name\":\"Required Prerequisites: Residential Construction Development Second Award Certificate of Achievement (18 units) - Required Courses\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":18,\"min\":18}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH/CNST A196\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH/CNST A197\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A112\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A114\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A125\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A154\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A170\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A180\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A185\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A190\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A198\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A209\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A210\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A211\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A220\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A225\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A230\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A240\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A241\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A250\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A252\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A260\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A261\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A265\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A266\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A270\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A275\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNST A285\",\"units\":null,\"units_max\":null}],\"minimum\":18,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":18,\"min\":18}}],\"program\":{\"careers\":[\"inspection\",\"management\",\"hands-on skilled tradespeople\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate the knowledge, skills and experience to identify, assess, and participate in many entry-level construction trades.\",\"Be prepared to work in the construction field in positions including, but not limited to work areas such as inspection, management, and as hands-on skilled tradespeople.\"],\"section_heading\":\"Building Construction Third Award, Certificate of Achievement\",\"total_units\":{\"max\":54,\"min\":54}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":31,\"placed\":29}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":31,\"placed\":31}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (4)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s741b piles rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;"
+}

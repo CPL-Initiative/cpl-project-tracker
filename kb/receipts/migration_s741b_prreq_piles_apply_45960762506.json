@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-27_s741b_prreq_piles_apply.sql",
+ "name": "s741b_prreq_piles_apply",
+ "version": "20261127074728",
+ "sha256": "408ef3845bc855f4fb59aa74ff778b3ec9570a727725ebe15a11401d4eee63cc",
+ "run": "45960762506",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"returned\":{\"returned\":4,\"keys\":[1,2,3,4],\"skipped_checked\":[]}}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

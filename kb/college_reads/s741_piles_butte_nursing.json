@@ -1,0 +1,21 @@
+{
+ "_readme": "S741, lane 2's cheap piles (2026-11-27). Butte 14583 (Registered Nursing A.S.) was read from the 'AS Degree in Accelerated Track Registered Nursing' page, whose heading names program code 43185, and its text held admission prerequisites alone. This read prints the Nursing department's page with its program links, so a session can see whether the catalog prints a Registered Nursing A.S. page of its own, and its address. One load. No model call, nothing written.",
+ "college": "Butte College",
+ "questions": {
+  "nursing_pages": "The program pages the Nursing section links, with their addresses and titles: is there an 'AS Degree in Registered Nursing' page apart from the Accelerated Track's?"
+ },
+ "keywords": [
+  "Registered Nursing[^\\n]{0,80}",
+  "AS Degree[^\\n]{0,80}",
+  "\\d{5}\\.\\d\\d[A-Z]{2}"
+ ],
+ "pages": [
+  {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28156",
+   "answers": [
+    "nursing_pages"
+   ],
+   "links": "28156|[Nn]ursing"
+  }
+ ]
+}

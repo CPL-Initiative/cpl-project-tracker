@@ -3843,20 +3843,22 @@
    "PHT74"
   ],
   "source": {
-   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/pharmacy-technology/",
-   "title": "Pharmacy Technology | Academic Catalog",
-   "h1": "Pharmacy Technology",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/pharmacy-technology/pharmacy-technology-certificate-achievement/",
+   "title": "Pharmacy Technology Certificate of Achievement | Academic Catalog",
+   "h1": "Pharmacy Technology Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
     "title": 1.0,
     "section": "coa",
-    "section_line": "pharmacy technology associate of science degree pharmacy technology certificate of achievement",
-    "section_fit": 1.0
-   }
+    "section_line": "pharmacy technology certificate of achievement",
+    "section_fit": 1.0,
+    "exact": 0
+   },
+   "pinned": true
   },
   "listed": 7,
-  "text_chars": 4194
+  "text_chars": 4973
  },
  {
   "control_number": "22822",

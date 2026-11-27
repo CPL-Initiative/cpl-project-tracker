@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 332,
  "with_closed_list": 326,
- "started": "2026-11-20T15:21:59Z",
+ "started": "2026-11-27T08:12:38Z",
  "scope": "/fullerton-college/",
  "sitemap": {
   "url": "https://catalog.nocccd.edu/sitemap.xml",
@@ -24,15 +24,25 @@
  "pages_answered": 434,
  "child_pages": 0,
  "banner_h1": null,
+ "site_pins": {
+  "35174": {
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/chemistry/chemistry-associate-science-degree/",
+   "bound": true
+  },
+  "36798": {
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/chemistry/chemistry-associate-in-science-degree-for-transfer/",
+   "bound": true
+  }
+ },
  "catalog_lookup": {
   "self_test": {
-   "tested": 302,
-   "hits": 285,
+   "tested": 304,
+   "hits": 287,
    "recall": 0.944,
    "false": 1,
    "false_off_own": 2,
    "false_no_claims": 3,
-   "shared": 14,
+   "shared": 12,
    "false_matches": [
     {
      "control_number": "17369",
@@ -95,7 +105,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 285 of 302 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 287 of 304 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "03829",
@@ -103,7 +113,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 285 of 302 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 287 of 304 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "08397",
@@ -111,7 +121,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 285 of 302 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 287 of 304 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "21258",
@@ -119,7 +129,7 @@
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 285 of 302 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 287 of 304 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "40648",
@@ -127,7 +137,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 285 of 302 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 287 of 304 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "40655",
@@ -135,7 +145,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 285 of 302 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 287 of 304 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    }
   ],
   "yields": [],
@@ -143,7 +153,7 @@
   "yield_refused_passing": 0
  },
  "loads": 436,
- "seconds": 2095.2,
+ "seconds": 2075.9,
  "found": 316,
  "by_method": {
   "no_closed_list": 6,
@@ -162,10 +172,6 @@
   "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/fashion/advanced-fashion-design-certificate/": [
    "21273",
    "36787"
-  ],
-  "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/chemistry-associate-in-science-degree-for-uc-transfer/": [
-   "35174",
-   "36798"
   ],
   "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/communication-studies/communication-studies-associate-in-arts-degree-for-transfer-2-0/": [
    "36916",
@@ -488,44 +494,39 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/fullerton",
-  "kept": 313,
+  "kept": 314,
   "kept_moved": 0,
-  "programs": 3,
+  "programs": 2,
   "list": [
    {
-    "control_number": "03876",
-    "title": "Administration of Justice",
+    "control_number": "35174",
+    "title": "Chemistry",
     "award": "A.S. Degree",
-    "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/administration-justice/administration-justice-associate-science-degree/",
+    "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/chemistry/chemistry-associate-science-degree/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/chemistry-associate-in-science-degree-for-uc-transfer/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
-    "control_number": "31527",
-    "title": "Administration of Justice",
+    "control_number": "36798",
+    "title": "Chemistry",
     "award": "A.S. T Degree",
-    "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/administration-justice/administration-justice-associate-science-degree-transfer/",
+    "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/chemistry/chemistry-associate-in-science-degree-for-transfer/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "42418",
-    "title": "Crime Scene Investigation",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/administration-justice/crime-scene-investigation-skills-certificate/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
+    "was_url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/chemistry-associate-in-science-degree-for-uc-transfer/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    }
   ],
   "held_worse_window": [],
   "held_no_gain": [],
   "held_opens_on_list": [],
+  "only": [
+   "35174",
+   "36798"
+  ],
+  "not_named": [],
   "refused_passing": [],
   "forced_unbound": []
  },
@@ -1115,8 +1116,8 @@
    "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/earth-sciences/earth-science-associate-science-degree/"
   },
   "35174": {
-   "sha256": "20f66908b0c9f2ad1dd2aed8bc02d579cb87d936792af0e092da4fc92be140ca",
-   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/chemistry-associate-in-science-degree-for-uc-transfer/"
+   "sha256": "26aac201793b0fbb201486b0e863e4b68411d1d211617f846c59c4b36303d4c4",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/chemistry/chemistry-associate-science-degree/"
   },
   "35804": {
    "sha256": "a0afc90afe418337747428a4608c206509eedf9d01af2db852fd0eab53e81757",
@@ -1203,8 +1204,8 @@
    "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/child-development-educational-studies/child-and-adolescent-development-associate-in-arts-degree-for-transfer/"
   },
   "36798": {
-   "sha256": "f7258edecba3ca5e77c6102354f680e9e8f6e250b8248566ab64888896139ea9",
-   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/chemistry-associate-in-science-degree-for-uc-transfer/"
+   "sha256": "a67b9a12a9a254b03e81dbc0b4014342c46afffae6658727961055b07673b697",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/chemistry/chemistry-associate-in-science-degree-for-transfer/"
   },
   "36819": {
    "sha256": "62ca5e015d49e4acc373331560daf016aa66545be4f201147448bf774922d921",
@@ -1795,5 +1796,10 @@
    "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/theatre-arts-drama/musical-theatre-level-2-certificate/"
   }
  },
- "run": "44762380826"
+ "staged_from": {
+  "run": "45963792185",
+  "proof": "text sha256 of 316 programs",
+  "pages_loaded": 0
+ },
+ "run": "45968499315"
 }

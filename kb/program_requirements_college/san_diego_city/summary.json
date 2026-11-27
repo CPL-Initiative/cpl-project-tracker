@@ -2,100 +2,278 @@
  "college": "San Diego City College",
  "programs": 203,
  "with_closed_list": 191,
- "found": 171,
+ "found": 165,
  "extracted": 171,
  "errors": 0,
- "passed_machine_checks": 160,
+ "passed_machine_checks": 165,
  "failed": {
-  "coverage": 4,
+  "coverage": 3,
   "invented": 0,
-  "arithmetic": 11,
+  "arithmetic": 6,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 12.88,
- "cost_per_program": 0.0753,
+ "cost_usd_run": 0.06,
+ "cost_usd_filed": 12.89,
+ "cost_per_program": 0.0754,
+ "extract_calls": 1,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "05263",
    "title": "German",
-   "award": "A.A. Degree"
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "18127",
    "title": "Liberal Arts and Sciences: Elementary Multiple Subject Teaching Preparation",
-   "award": "A.A. Degree"
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "19266",
    "title": "Real Estate Broker",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u"
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "19710",
    "title": "Real Estate",
-   "award": "A.S. Degree"
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "22333",
+   "title": "Communications Technician Apprenticeship",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15728",
+    "label": {
+     "award": 1,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.625,
+    "body": 0.625,
+    "content": 0.625,
+    "net": 10,
+    "listed": 16,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 19660,
+     "content": 19660,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "22352",
+   "title": "Honeywell Tool and Die Apprenticeship",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program",
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "33180",
    "title": "Business Information Worker",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "33649",
    "title": "Elementary Teacher Education",
-   "award": "A.A- T Degree"
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "36567",
    "title": "Business Information Worker II",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "36568",
    "title": "Business Information Worker",
-   "award": "A.S. Degree"
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "37387",
    "title": "Special Effects (FX) Makeup",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "38732",
+   "title": "Certified Public Accountant (CPA) Preparatory Program",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15760",
+    "label": {
+     "award": 1,
+     "title": 0.8
+    },
+    "field": "innerText",
+    "coverage": 0.6,
+    "body": 0.6,
+    "content": 0.6,
+    "net": 3,
+    "listed": 5,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 4748,
+     "content": 4748,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "38733",
    "title": "Green Building Energy Professional",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
   },
   {
    "control_number": "38735",
    "title": "Green Building Energy Professional",
-   "award": "A.S. Degree"
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
   },
   {
    "control_number": "39358",
    "title": "C++",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
   },
   {
    "control_number": "39387",
    "title": "Energy Analysis and Consultation",
-   "award": "A.S. Degree"
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
   },
   {
    "control_number": "39388",
    "title": "Energy Analysis and Consultation",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
   },
   {
    "control_number": "42744",
    "title": "General Atomics CNC Machine Technician Apprenticeship",
-   "award": "A.S. Degree"
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
   },
   {
    "control_number": "42746",
    "title": "General Atomics HVAC-R Technician Apprenticeship",
-   "award": "A.S. Degree"
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
   }
  ],
- "run": "38347787891"
+ "run": "45960365618",
+ "kept_no_read": [
+  {
+   "control_number": "09462",
+   "title": "Heating, Ventilation, and Air Conditioning Systems Design",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "method": "page_claimed",
+   "status": "Active",
+   "why": "its pages went to other programs",
+   "lost_pages": [
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15694",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15626"
+   ],
+   "filed_source_url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15705",
+   "filed_run": "38252422845"
+  },
+  {
+   "control_number": "37621",
+   "title": "HVAC/R Mechanical Systems Installation and Repair",
+   "award": "A.S. Degree",
+   "method": "page_claimed",
+   "status": "Active",
+   "why": "its pages went to other programs",
+   "lost_pages": [
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15693",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15691"
+   ],
+   "filed_source_url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15704",
+   "filed_run": "38252422845"
+  },
+  {
+   "control_number": "37623",
+   "title": "Advanced HVAC/R Mechanical Systems Installation and Repair",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "method": "page_claimed",
+   "status": "Active",
+   "why": "its pages went to other programs",
+   "lost_pages": [
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15694",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15626",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15692"
+   ],
+   "filed_source_url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15705",
+   "filed_run": "38252422845"
+  }
+ ]
 }

@@ -1,0 +1,111 @@
+{
+ "college": "San Diego City College",
+ "run": "45960365618",
+ "written": "2026-11-27T09:17:58Z",
+ "rule": "a checked live row restores, or is held where the base files none; then own program (a heading sharing a title word, or a generic heading on a page the address or the capture shows is the program's own; then heading_award_check), where a failing re-read is restored, or held where the base files none or the live row already holds this run; then a live row holding this run keeps its record and names no dispatch; then a supplied live run other than the filed record's is held for a person; then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one (d-reread-keep-the-better-s683; COBIx on #3544 and #3547)",
+ "checked": [],
+ "live_runs": {},
+ "live_read_at": "2026-11-27T08:46:32Z",
+ "dispatch": [
+  {
+   "workflow": "program-requirements-college.yml",
+   "ref": "claude/s741-readers",
+   "inputs": {
+    "college": "San Diego City College",
+    "step": "load"
+   },
+   "posts": 1,
+   "control_numbers": [
+    "22367"
+   ],
+   "needs_load": [
+    "22367"
+   ]
+  }
+ ],
+ "carried_runs": {},
+ "counts": {
+  "reread": 1,
+  "kept": 1,
+  "restored": 0,
+  "restored_filed_pass": 0,
+  "restored_not_own_program": 0,
+  "held_for_person": 0,
+  "held_checked": 0,
+  "held_live_run": 0,
+  "new": 0,
+  "already_live": 0,
+  "kept_on_own_page": 0,
+  "plain_reread_would_lose_pass": 0,
+  "kept_by_extraction_guard": 0,
+  "run_places_none_after": 0,
+  "folder_places_none_after": 3,
+  "records_after": 171,
+  "dropped_by_filing": 0,
+  "dropped_filed_passes": 0
+ },
+ "runs": {
+  "45960365618": {
+   "base": "origin/main",
+   "base_sha": "473dc192254e258685d6663969251327bf90358c",
+   "decided": "2026-11-27T09:17:58Z",
+   "counts": {
+    "reread": 1,
+    "kept": 1,
+    "restored": 0,
+    "restored_filed_pass": 0,
+    "restored_not_own_program": 0,
+    "held_for_person": 0,
+    "held_checked": 0,
+    "held_live_run": 0,
+    "new": 0,
+    "already_live": 0,
+    "kept_on_own_page": 0,
+    "plain_reread_would_lose_pass": 0,
+    "kept_by_extraction_guard": 0,
+    "run_places_none_after": 0,
+    "folder_places_none_after": 3,
+    "records_after": 171,
+    "dropped_by_filing": 0,
+    "dropped_filed_passes": 0
+   },
+   "kept_by_extraction_guard": {},
+   "next_read_pays": [],
+   "dropped_by_filing": [],
+   "programs": [
+    {
+     "control_number": "22367",
+     "title": "Cosmetology",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15788",
+     "filed_source_url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15788",
+     "filed_run": "38252422845",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 4,
+      "listed": 4,
+      "arithmetic": "equal"
+     },
+     "live_run": null,
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 4,
+      "arithmetic": "unequal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    }
+   ]
+  }
+ }
+}
