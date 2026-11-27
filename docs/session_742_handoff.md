@@ -194,3 +194,7 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   (passing). Records collected: 25. 08:11Z: San Bernardino Valley 22821's read 45960735042 finished on the sibling;
   08:18Z, its keep-better live read (no person's check, 221 rows) handed to `keys`. 08:17Z to 08:18Z: Ventura's read
   45964322406 and Norco's 45964327019 finished; their results go to `readers`.
+- 08:21Z: San Bernardino Valley 22821 filed passing (read 45960735042: 7 of 7 placed, 20 against the printed 20);
+  keep-better against the 08:18Z read kept it (1 re-read, none restored); the reread (force 45960735042) dispatched on
+  `claude/s741-keys-sbvc`.
+- 08:24Z: 22821 live and passing at 45960735042. Records collected: 26.
