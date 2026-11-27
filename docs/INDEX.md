@@ -68,12 +68,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 6 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 607 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 608 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 95 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 112 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 77 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 696 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1593** | |
+| Session handoffs | 697 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1595** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -124,6 +124,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-27 (S745 SkyTattler, Sam's plain session, full checkpoint): #3916 (Pages deploy wait and retry), #3918 (the Chabot glue fold: statewide subject codes 2,896 to 2,871), #3919 (CPL Pathways credentials bar), #3920 (Industry certs chip), #3921 (frame check; PPM, CVC and ASSIST as priority connections). KB note `reference-outside-tools-framing-and-reading`. Handoff 746.
 - 2026-11-27 (S744 SkyCurlew, Sam's plain session, full checkpoint): #3908 (the campus letter fold, `kb/coci_campus_letter.py`; statewide subject codes 2,924 to 2,896), #3909 (Library buttons open the landing page on the exhibit, `?Exhibit=`), #3910 (CPL Pathways Get credit), #3911 (Stackable programs, `kb/_build_program_ladders.py`); the compact course cards in flight; handoff 745; lanes common-subjects-reference, library (compacted under 20 KB) and program-requirements-harvest; KB notes `reference-map-landing-page-exhibit-parameter`, `methodology-stackable-programs-by-course-containment`; 9 memory rows.
 - 2026-11-27 (S742 SkyGodwit, the CPL Queue routine's collection run, conductor, full checkpoint): #3904 (display build `5b80d4de75e9`) and the land merged; keep-better's `plural_longer` and `plan_code_own`, the Acalog road reading `site_pages` pins, Coastline's pin, San Jose City's `JOURN138` renumber, Cuyamaca's and Cabrillo's reconcile steps, the compact live read; 21 records at the 14:44Z count (8 passing, 13 named gaps). Handoff 743, the harvest lane (S741 posts and NEXT moved), its lessons (*Moved from the lane (S742 checkpoint)*, *S742*), 8 memory rows drafted, `kb/status/program-requirements.json`. Land and census: handoff 743.
 - 2026-11-27 (S736 SkyBrant, Sam's plain session, full checkpoint): #3864, #3865, #3868 (Library publish fixes; Adult Ed CPL Starting Points passes its check), #3867 (the Accounting re-point dry run, apply blocked on Sam's Business filings), #3889 and #3890 (Sign in on a phone, the magic link returns to its view), #3893 (the lightning round: Not a subject, Skip, the training note), #3894 (LACCD schedule titles, 171 of 212); handoff 744 (742 and 743 are the routine's); lanes common-subjects-reference, commons and library compacted under 20 KB.
@@ -131,4 +132,3 @@ Authoritative external sources we've cached:
 - 2026-11-26 (S740 SkySkimmer, the CPL Queue routine's collection run, conductor, full checkpoint): #3886 (display build `9e28519af71f`); the units kind `units_within_printed_range` (by reviewed key only), Copper Mountain's reissue and three records, Santa Ana's first reconcile, Solano, San Jose City and San Bernardino Valley rereads, lane 2's 23 named gaps; 79 records by 16:30Z; handoff 741, the harvest lane, its lessons (*Moved from the lane (S740 checkpoint)*, *S740*), 10 memory rows drafted, `kb/status/program-requirements.json`. Land and census: handoff 741.
 - 2026-11-26 (S739 SkyOystercatcher, the CPL Queue routine's collection run, conductor, full checkpoint): #3880 (display build `3a699eddc8c9`), #3881 (the lever's land), #3882 (the pooled reading's land: El Camino, Modesto) and #3883 (the applied piles s739a to s739h) merged; land 4 carries `piles2`, `waveA` and `waveB`. 99 records collected, 30 named gaps for programs with no record. Handoff 740 (the run's log, kept whole); the harvest lane and its lessons (S720 and S721 to archive 9; S739 section); memory rows `kb/migrations/2026-11-26_s739_cpl_memory_rows.sql`; `kb/status/program-requirements.json`.
 - 2026-11-26 (S737 SkyWhimbrel, light checkpoint): #3870 (the Honors step-4 redraw; `--plan` refuses once step 2 applied; 128 mints), #3873 (suite durations re-measured, six lint shards: the check 10.3 to 7.7 min), #3874 open (the docs-only lint skip for 35 traced steps). Handoff 738.
-- 2026-11-25 (S735 SkyAlvord, a side session beside the main queue, checkpoint with the lanes moved): Adult Education CPL Starting Points, the CAEP noncredit inventory read against MAP (#3861 merged: Library record, memory rows and the Pages copy; #3864 open: filter, search, 25 more credentials, the record's url on Pages; the public summary migration was refused by the public-field guard and withdrawn). Library findings: the check run checks a piece only at its own Pages address; Publish now's scope; #3865 drafts the prefilled summary and the sidebar height. Library lessons' S511 to S518 and four lane paragraphs moved to archive 3. Handoff 735 (SkyBrant).

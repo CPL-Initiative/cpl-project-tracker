@@ -338,6 +338,10 @@
   },
   "changes": [
     {
+      "at": "2026-11-27T21:30:00Z",
+      "text": "CPL Pathways: a program card shows an Industry certs chip, for 1,326 programs at 76 colleges that earn CPL on an industry certification and 634 that prepare for one. The Credentials list opens a bottom bar on the college's own exhibits or the Credential Catalog."
+    },
+    {
       "at": "2026-11-26T06:37:00Z",
       "text": "The display page now carries every filed record: 18,727 programs at build 3a699eddc8c9, after a first apply at Glendale. The four programs that had no display now have one."
     },
