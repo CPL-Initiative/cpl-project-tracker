@@ -344,6 +344,9 @@
     ".cplpw-list { margin:10px 0 16px; min-width:0; }",
     // A program's title opens its pathway, so it reads as a link (the controls-are-underlined-words rule).
     ".cplpw-list .cplpwl-open { color: var(--cobalt); font-weight:600; text-decoration:underline; text-underline-offset:3px; text-align:left; }",
+    /* The Credentials list's titles in the Programs list's blue (Sam, 2026-11-27: "the credential names and links should
+       be the same blue as the programs listview"). */
+    ".cplpw-list .cplpwc-open { color: var(--cobalt); font-weight:600; text-decoration:underline; text-underline-offset:3px; text-align:left; }",
     ".cplpw-backrow { margin:14px 0 6px; }",
     /* Programs or Credentials, and the recommended credentials a college could adopt (Sam, 2026-11-06, the mock). */
     ".cplpw-lens { display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 24px; margin:6px 0 4px; padding-bottom:8px; border-bottom:1px solid var(--border); }",
@@ -2118,7 +2121,8 @@
     if (back && back.hasAttribute && back.hasAttribute("aria-expanded")) back.setAttribute("aria-expanded", "false");
     if (back && document.contains(back)) { try { back.focus(); } catch (e) { /* best effort */ } }
   }
-  /* o: { college, what, exhibits, opener } — the bar opens on o.exhibits' passing codes. */
+  /* o: { college, what, exhibits, opener } — the bar opens on o.exhibits' passing codes. With o.url the bar frames that
+     page instead (the Credential Catalog for a credential the college could add), under o.heading and o.via. */
   function openGetCreditBar(o) {
     var host = getBar.host;
     if (!host) return null;
@@ -2130,14 +2134,15 @@
     var codes = getCreditCodes(o.exhibits);
     var bar = el("section", "cplpw-gbar");
     bar.id = "cplpw-gbar";
-    bar.setAttribute("aria-label", "Get credit at " + o.college + ": " + o.what);
+    var heading = o.heading || ("Get credit at " + o.college);
+    bar.setAttribute("aria-label", heading + ": " + o.what);
     var top = el("div", "cplpw-gbar-top");
     var words = el("div", "w");
-    var h = el("h3", null, "Get credit at " + o.college);
+    var h = el("h3", null, heading);
     h.tabIndex = -1;
     words.appendChild(h);
     words.appendChild(el("span", "what", o.what));
-    var via = el("span", "via", codes.length ? "Opened on MAP exhibit " + codes.join(", ")
+    var via = el("span", "via", o.via ? o.via : codes.length ? "Opened on MAP exhibit " + codes.join(", ")
       : "MAP cannot open these exhibits by their codes, so the page opens on every course");
     words.appendChild(via);
     var close = el("button", "cplpw-gbar-close", "Close");
@@ -2150,16 +2155,27 @@
     var frameBox = el("div", "frame");
     frameBox.appendChild(el("p", "wait", "Reading " + o.college + "’s landing page…"));
     body.appendChild(frameBox);
-    var side = el("div", "list");
-    side.appendChild(el("h4", null, "CPL for this course"));
-    var ul = el("ul");
-    (o.exhibits || []).forEach(function (e) { ul.appendChild(exhibitLine(e)); });
-    side.appendChild(ul);
-    body.appendChild(side);
+    if ((o.exhibits || []).length) {
+      var side = el("div", "list");
+      side.appendChild(el("h4", null, o.listTitle || "CPL for this course"));
+      var ul = el("ul");
+      o.exhibits.forEach(function (e) { ul.appendChild(exhibitLine(e)); });
+      side.appendChild(ul);
+      body.appendChild(side);
+    }
     bar.appendChild(body);
     bar.addEventListener("keydown", function (e) { if (e.key === "Escape") closeGetCreditBar(); });
     host.appendChild(bar);
     try { h.focus(); } catch (e) { /* best effort */ }
+    if (o.url) {
+      clearNode(frameBox);
+      var own = document.createElement("iframe");
+      own.src = o.url;
+      own.title = o.frameTitle || heading;
+      own.setAttribute("loading", "lazy");
+      frameBox.appendChild(own);
+      return bar;
+    }
     loadLandingPages().then(function (m) {
       if (!bar.parentNode) return;
       clearNode(frameBox);
@@ -4452,6 +4468,9 @@
       if (!college) { here.push(row); return; }
       if (at < 0) return;
       var mine = a.filter(function (x) { return x[0] === at; })[0];
+      /* The exhibits this college built for it (the Catalog's m: [exhibit id, building college index, ...]), so the
+         bottom bar opens the college's landing page on them (Sam, 2026-11-27: open "to a bottom bar rather than a new tab"). */
+      row.ex = (c.m || []).filter(function (x) { return x[1] === at; }).map(function (x) { return { exhibit: x[0], credential: c.t }; });
       if (mine) { row.st = "Earns credit here"; row.u = mine[1] != null ? Number(mine[1]) : row.u; row.course = mine[2] || ""; here.push(row); return; }
       var cc = (c.c || []).filter(function (x) { return x[0] === at; })[0];
       if (!cc) return;
@@ -4486,9 +4505,23 @@
           { h: "Median units", w: 7, n: true, v: function (r) { return units(r.u); } },
           { h: "Could adopt", w: 7, n: true, v: function (r) { return r.could; } }]);
       },
-      openLabel: "open it in the Credential Catalog",
-      open: function () {
+      openLabel: college ? "open it in a bar below the list" : "open it in the Credential Catalog",
+      /* A credential opens in the bottom bar below the list, never a new tab (Sam, 2026-11-27): one that earns credit
+         here opens the college's MAP landing page on the exhibits the college built; one it could add, the Credential
+         Catalog for the college. Statewide (no college, so no bar host) it opens the Catalog as before. */
+      open: function (r) {
+        var opener = document.activeElement;
+        if (college && getBar.host && r && r.st === "Earns credit here") {
+          openGetCreditBar({ college: college, what: r.t, exhibits: r.ex || [], opener: opener, listTitle: "Exhibits for this credential" });
+          return;
+        }
         var url = "library/adopt/" + (college ? "?college=" + encodeURIComponent(college) : "");
+        if (college && getBar.host) {
+          openGetCreditBar({ college: college, what: r ? r.t : "", exhibits: [], opener: opener, url: url,
+            heading: "Credential Catalog for " + college, via: (r && r.course ? college + " teaches " + r.course + "; " : "") + "a credential the college could add",
+            frameTitle: "The Credential Catalog for " + college });
+          return;
+        }
         if (typeof window.open === "function") window.open(url, "_blank", "noopener");
       }
     };
@@ -4705,6 +4738,9 @@
       var listHost = el("div", "cplpw-list");
       listHost.id = "cplpw-list";
       host.appendChild(listHost);
+      /* The bottom bar's place in the college's list view (openGetCreditBar), after the list. */
+      var listBarHost = el("div", "cplpw-gbar-host");
+      host.appendChild(listBarHost);
       var myCol = document.createElement("details");
       myCol.className = "cplpw-mycollege";
       myCol.id = "cplpw-mycollege";
@@ -4802,7 +4838,7 @@
         clearNode(listHost);
         paintLens();
         paintRecs(recsHost, college, credSet(college));
-        if (L.lens === "creds") { paintCreds(); paintCards(); return; }
+        if (L.lens === "creds") { if (!state) getBar.host = listBarHost; paintCreds(); paintCards(); return; }
         if (!idxs.length) {
           listHost.appendChild(el("p", "cplpw-nopath", college + " has no pathway on record yet: the catalog sweep has not read its programs."));
         } else if (engine) engine.render(listHost);
