@@ -246,3 +246,7 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   39341's paid read 45970104024 filed it passing on its own page (56 against 56, 34 of 34); its reread (force
   45970104024) dispatched, replacing s739a's wrong-page gap row with the passing record (an upgrade, not a new record).
   `piles` prepares its branch for the land.
+- 09:10Z: the OPTION_PART reader (Fable 5.2): the scorer change GO (its own recall over 18,970 records: 4 newly named, 2
+  parts moved, 0 pass to fail; Imperial Valley 01873 moves fail to pass at its next rescore), with one test to repair
+  before the land (`tests/program_piles_s740_sbvc_test.py` refuses 22784 now that s741k3 posts it). Back to `keys`
+  with the order to wrap up: Cuyamaca's reread, Cosumnes River's reconcile, then the branch green.
