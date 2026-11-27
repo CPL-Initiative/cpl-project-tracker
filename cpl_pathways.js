@@ -1796,6 +1796,179 @@
       root.appendChild(el("div", "cplpw-note", "This program’s record could not be read just now (" + why + "). Choose it again to retry."));
     });
   }
+  /* ── The stack: where a program leads and what it starts from (Sam, 2026-11-27) ──
+     "is it feasible to add a section ... that could expand to show a program such as the field iron worker BS that the
+     AS feeds into?", and "would be nice to see a very compact set of cards in a top section of the pathway view showing
+     the stackable possibilities". kb/_build_program_ladders.py files one small file per college
+     (kb/status/program_ladders/<slug>.json, its index.json naming each college's slug); the record view reads the
+     one it needs. A row of same-size cards in stack order: the programs this one starts from, this program, then
+     where it leads (degrees, then bachelor's). A card opens that program here; a missing file draws nothing. */
+  var STACK_DIR = "kb/status/program_ladders/";
+  var STACK_SHOWN = 4;
+  var STACK_CSS = [
+    ".cplpw-rstack { display:grid; gap:8px; min-width:0; }",
+    ".cplpw-rstack h3 { margin:0; font-size:.9rem; font-weight:700; color: var(--text-strong); }",
+    ".cplpw-rstack ol { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%, 170px), 1fr)); gap:8px; }",
+    ".cplpw-rstack li { background: var(--surface-opaque); border:1px solid var(--border); border-radius:10px; padding:8px 10px; display:grid; gap:2px; align-content:start; min-width:0; }",
+    ".cplpw-rstack li.here { border-width:2px; border-color: var(--seal-blue-text); }",
+    ".cplpw-rstack .st { font-weight:700; font-size:.88rem; color: var(--text-strong); overflow-wrap:anywhere; }",
+    ".cplpw-rstack a.st { color: var(--cobalt); text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }",
+    ".cplpw-rstack a.st:hover { text-decoration-thickness:2px; }",
+    ".cplpw-rstack .sa { font-size:.8rem; color: var(--text-muted); }",
+    ".cplpw-rstack .sk { font-size:.78rem; font-weight:600; color: var(--seal-blue-text); }",
+    ".cplpw-rstack .sw { font-size:.78rem; color: var(--text-body); margin:0; }",
+    ".cplpw-rstack button { font:inherit; font-size:.78rem; font-weight:600; color: var(--cobalt); background:none; border:0; padding:0; min-height:24px; cursor:pointer; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; justify-self:start; }",
+    ".cplpw-rstack button:hover { text-decoration-thickness:2px; }",
+    ".cplpw-rstack a.st:focus-visible, .cplpw-rstack button:focus-visible { outline:3px solid var(--focus-ring, var(--cobalt)); outline-offset:2px; }",
+    "@media (max-width: 560px) { .cplpw-rstack ol { grid-template-columns:1fr; } }"
+  ].join("\n");
+  function ensureStackCss() {
+    if (document.getElementById("cplpw-rstack-css")) return;
+    var s = document.createElement("style");
+    s.id = "cplpw-rstack-css";
+    s.textContent = STACK_CSS;
+    document.head.appendChild(s);
+  }
+  var stackCache = { index: undefined, colleges: {} };
+  function stackJson(path) {
+    if (typeof window.fetch !== "function") return Promise.resolve(null);
+    try {
+      return Promise.resolve(window.fetch(STACK_DIR + path, { cache: "no-cache" })).then(function (r) {
+        return r && r.ok && typeof r.json === "function" ? r.json() : null;
+      }).catch(function () { return null; });
+    } catch (e) { return Promise.resolve(null); }
+  }
+  // The college's ladder file, or null: read once a visit per college, a failed read kept as null.
+  function stackFor(college) {
+    if (stackCache.colleges[college] !== undefined) return Promise.resolve(stackCache.colleges[college]);
+    var idx = stackCache.index !== undefined ? Promise.resolve(stackCache.index)
+      : stackJson("index.json").then(function (d) { stackCache.index = d && d.colleges ? d.colleges : null; return stackCache.index; });
+    return idx.then(function (map) {
+      var slug = map && map[college];
+      if (!slug || !/^[a-z0-9_]+$/.test(slug)) return null;
+      return stackJson(slug + ".json");
+    }).then(function (d) {
+      var v = d && d.programs && typeof d.programs === "object" ? d.programs : null;
+      stackCache.colleges[college] = v;
+      return v;
+    });
+  }
+  // The award in a word or two: Certificate, A.S., A.A., A.S.-T, A.A.-T, B.S., B.A., Noncredit.
+  function stackAward(award) {
+    var a = String(award || "");
+    if (/baccalaureate of science|^b\.s\./i.test(a)) return "B.S.";
+    if (/baccalaureate of arts|^b\.a\./i.test(a)) return "B.A.";
+    if (/certificate/i.test(a)) return "Certificate";
+    if (/noncredit/i.test(a)) return "Noncredit";
+    var m = a.match(/^\s*A\.\s*([AS])\.?\s*-?\s*(T\b)?/i);
+    if (m) return "A." + m[1].toUpperCase() + "." + (m[2] ? "-T" : "");
+    return a.replace(/ requiring.*$/i, "");
+  }
+  function stackUnits(u, unit) {
+    return Array.isArray(u) && u.length ? roepAmt(u[0], u[1], unit) : "";
+  }
+  function stackChip(e) {
+    if (e.kind === "contains") return "Every course carries in";
+    if (e.kind === "mostly") return "Most courses carry in · " + e.shared + " of " + e.of;
+    if (e.kind === "same_field") return "Same field";
+    if (e.kind === "curated") return "Planned";
+    return "";
+  }
+  function stackWhy(e, side) {
+    var cert = side === "from" ? "the certificate" : "this certificate";
+    if (e.kind === "contains" || e.kind === "mostly")
+      return e.shared + " of " + cert + "’s " + e.of + " courses are among the degree’s courses at this college.";
+    if (e.kind === "same_field")
+      return "Both programs carry the program CIP code " + e.cip + " in the state’s program file.";
+    if (e.kind === "curated")
+      return (e.note ? e.note + ". " : "") + "The college’s planned degree; the state’s program file does not list it yet.";
+    return "";
+  }
+  // The address of a target inside this tab (every view has an address), or "" when it has none here.
+  function stackHref(e, college) {
+    var c = "#cpl-pathways/college/" + encodeURIComponent(college);
+    if (e.record && e.control_number) return c + "/record/" + encodeURIComponent(e.control_number);
+    if (e.pathway) return c + "/pathway/" + encodeURIComponent(e.pathway);
+    return "";
+  }
+  function stackCard(e, college, side, unit) {
+    var li = el("li");
+    var href = stackHref(e, college);
+    var t = el(href ? "a" : "span", "st", e.title || "");
+    if (href) t.href = href;
+    li.appendChild(t);
+    var u = stackUnits(e.units, unit);
+    li.appendChild(el("span", "sa", stackAward(e.award) + (u ? " · " + u : "")));
+    li.appendChild(el("span", "sk", stackChip(e)));
+    var why = stackWhy(e, side);
+    if (why) {
+      var b = el("button", null, "Why");
+      b.type = "button";
+      b.setAttribute("aria-expanded", "false");
+      var p = el("p", "sw", why);
+      p.hidden = true;
+      b.addEventListener("click", function () {
+        var open = b.getAttribute("aria-expanded") !== "true";
+        b.setAttribute("aria-expanded", open ? "true" : "false");
+        p.hidden = !open;
+      });
+      li.appendChild(b);
+      li.appendChild(p);
+    }
+    return li;
+  }
+  function stackSide(ol, list, college, side, unit) {
+    list.forEach(function (e, i) {
+      var li = stackCard(e, college, side, unit);
+      if (i >= STACK_SHOWN) { li.hidden = true; li.setAttribute("data-more", side); }
+      ol.appendChild(li);
+    });
+  }
+  function drawStack(host, rec, ladder) {
+    var v = ladder && ladder[String(rec.control_number)];
+    var from = (v && v.comes_from) || [], to = (v && v.leads_to) || [];
+    clearNode(host);
+    if (!from.length && !to.length) { host.hidden = true; return; }
+    host.hidden = false;
+    var unit = roepMeasure(rec);
+    host.appendChild(el("h3", null, "Stackable programs"));
+    var ol = el("ol");
+    ol.setAttribute("aria-label", "Programs this one starts from, this program, and where it leads, in order");
+    stackSide(ol, from, rec.college, "from", unit);
+    var here = el("li", "here");
+    here.setAttribute("aria-current", "true");
+    here.appendChild(el("span", "st", rec.title || ""));
+    var tot = (rec.display && rec.display.figure && rec.display.figure.total) || {};
+    var u = tot.min != null ? roepAmt(tot.min, tot.max, unit) : "";
+    here.appendChild(el("span", "sa", stackAward(rec.award) + (u ? " · " + u : "")));
+    here.appendChild(el("span", "sk", "This program"));
+    ol.appendChild(here);
+    stackSide(ol, to, rec.college, "to", unit);
+    host.appendChild(ol);
+    var hidden = ol.querySelectorAll("li[data-more]").length;
+    if (hidden) {
+      var more = el("button", null, "Show " + hidden + " more");
+      more.type = "button";
+      more.setAttribute("aria-expanded", "false");
+      more.addEventListener("click", function () {
+        Array.prototype.forEach.call(ol.querySelectorAll("li[data-more]"), function (li) { li.hidden = false; });
+        more.parentNode.removeChild(more);
+      });
+      host.appendChild(more);
+    }
+  }
+  // The section's place in the view, drawn when the college's file is read (at once when it was read before).
+  function roepStack(rec) {
+    ensureStackCss();
+    var host = el("section", "cplpw-rstack");
+    host.setAttribute("aria-label", "Stackable programs");
+    host.hidden = true;
+    var have = stackCache.colleges[rec.college];
+    if (have !== undefined) { drawStack(host, rec, have); return host; }
+    stackFor(rec.college).then(function (ladder) { drawStack(host, rec, ladder); }, function () { host.hidden = true; });
+    return host;
+  }
+
   function roepAward(rec) { return String(rec.award || "").replace(/ requiring.*$/i, ""); }
   function roepMeasure(rec) { return rec.measure === "hours" ? "hours" : "units"; }
   function roepAmt(min, max, unit) {
@@ -2741,6 +2914,7 @@
     wrap.appendChild(controls);
 
     wrap.appendChild(roepProgramCard(rec));
+    wrap.appendChild(roepStack(rec));
     var grid = el("div", "cplpw-rgrid" + (roepView.who === "college" ? "" : " public"));
     grid.appendChild(roepView.lay === "term" ? roepTermMap(rec) : roepRequirementMap(rec));
     if (roepView.who === "college") grid.appendChild(roepGaps(rec));

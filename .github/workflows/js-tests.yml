@@ -420,6 +420,11 @@ jobs:
       - name: Subject courses (kb/_build_subject_courses.py)
         if: matrix.shard == 6
         run: python3 tests/subject_courses_test.py
+      # CPL Pathways' program ladders (Sam, 2026-11-27): containment and the 80% band, a bachelor's by program CIP and
+      # never by TOP, links written both ways, the curated Cerritos B.S.; the committed files current. Pure stdlib.
+      - name: Program ladders (kb/_build_program_ladders.py)
+        if: matrix.shard == 6
+        run: python3 tests/program_ladders_test.py
       # The noncredit subject title list (S700, #3655): read from the four large noncredit programs only, a category
       # counted from the export and never read from a heading's words, nothing merged beyond the named synonyms.
       - name: Noncredit subject titles (kb/_build_noncredit_subject_titles.py)
