@@ -178,3 +178,10 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   Languages A.A. twice, with 06538: a person's); San Jose City 18449, 38499 (cut-off names standing for several courses).
   **Split change:** `keys` takes Cuyamaca, Cosumnes River and Cuesta (lane NEXT (3)'s reader and scorer changes:
   Cuyamaca 18634 to 18637, Cosumnes River 33542, Cuesta 43053 and 41744); no other lane holds them.
+- 08:10Z: American River's paid read 45962123468 filed 39731 (12 against 12) and 39732 (24 against 24) from their own
+  pages ($0.16), nothing else moved; `piles` found 39341 (filed by s739a from p.211, the Level IV tail) opens on p.206
+  and pinned it, with Butte 14583's pin, for the next reader. 08:12Z: the reread (force 45962123468) queued on
+  `claude/s741-piles` behind Fullerton's free capture; no person's check at American River.
+- 08:12Z: `readers` round 2 (head `f45aba82`): the window floor fixed (Victor Valley 04967 no longer moves; Ventura's
+  seven are the only pages of 174 that differ), group ends inside another group take no line (Norco whole: 74 of 185
+  pages carry 107 lines, no program moves), rule B's recall pinned. To the same reader, its last round.
