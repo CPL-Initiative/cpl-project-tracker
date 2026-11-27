@@ -10,9 +10,12 @@ COLLECTED WITH A NAMED GAP (1, REVIEWED below):
         unconfirmed: the catalog prints no section under the state's title, and the record read 'Commercial Music:
         Performance' on PDF p.288, a page also read for 38169 and 38206. College-page-read run 45953358884
         (kb/college_reads/s741_piles_east_los_angeles_music.json, pp.287-290 whole) prints that section's heading as
-        'Commercial Music: Performance (Academic Plan E038168D)': East Los Angeles prints each award's Academic Plan
-        code, E0 and the state's control number, so the section is 38168's own under the college's newer title
-        (its page-mates' sections print E038169D and E038206D). The record's heading carries the same code and its
+        'Commercial Music: Performance (Academic Plan E038168D)': East Los Angeles prints an Academic Plan code
+        beside each award, E0 and the state's control number, so the section is 38168's own under the college's
+        newer title (its page-mates' sections print E038169D and E038206D). The code is evidence where it matches,
+        never a rule: of the 92 committed headings that print one, all East Los Angeles's, 90 carry the record's
+        own control number and two carry another (33681 E046343H, 45986 E045717D; plan_code_recall, the second
+        reader's count). The record's heading carries the same code and its
         note names the section (own_section). Its gap, on its own note: the last list's heading says 'COMPLETE FOUR
         UNITS' and its printed figure is '2-3'; the record adds the list at 2-3 (17-19), and with the heading's 4
         today's scorer gives the printed 19-20 at both ends.
@@ -33,7 +36,10 @@ Guard: tests/program_piles_s741_ela_test.py.
 """
 from __future__ import annotations
 
+import glob
+import json
 import os
+import re
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -55,9 +61,39 @@ _LAST = "COMPLETE FOUR UNITS FROM THE FOLLOWING (DEPENDING ON THE AREA OF INTERE
 
 def plan_code(filed: dict, e: dict) -> bool:
     """The record's own heading carries its Academic Plan code, E0 and the state's control number: the section the
-    record read is this program's, whatever title the college prints over it."""
+    record read is this program's, whatever title the college prints over it. A match is the evidence; the code is
+    no rule that every heading holds (plan_code_recall: 90 of the 92 committed headings that print a code)."""
     heading = str(((filed.get("record") or {}).get("program") or {}).get("section_heading") or "")
     return "Academic Plan E0%s" % filed.get("control_number") in heading
+
+
+PLAN_CODE = re.compile(r"Academic Plan [A-Z]0?\d{5}[A-Z]?")
+
+
+def plan_code_recall() -> dict:
+    """The self-recall of plan_code (S741's second reader, MAJOR): every committed record, at any college, whose
+    section_heading prints an Academic Plan code, read against the record's own control number. matches: the code is
+    E0 and the control number; differs: it is another number's, so the record read another program's section or the
+    college printed another code (a record to look at, never one plan_code shows its own)."""
+    out = {"read": 0, "matches": 0, "differs": [], "colleges": set()}
+    for path in sorted(glob.glob(os.path.join(NG.COLLEGE_DIR, "*", "records", "*.json"))):
+        try:
+            with open(path, encoding="utf-8") as fh:
+                f = json.load(fh)
+        except (OSError, ValueError):
+            continue
+        heading = str(((f.get("record") or {}).get("program") or {}).get("section_heading") or "")
+        m = PLAN_CODE.search(heading)
+        if not m:
+            continue
+        out["read"] += 1
+        out["colleges"].add(f.get("college"))
+        if plan_code(f, {}):
+            out["matches"] += 1
+        else:
+            out["differs"].append([f.get("college"), str(f.get("control_number")), m.group(0)])
+    out["colleges"] = sorted(out["colleges"])
+    return out
 
 
 REVIEWED = {

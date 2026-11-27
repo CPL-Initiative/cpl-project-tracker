@@ -333,7 +333,10 @@ check(set(reach) <= {"02481", "02487", "02527", "38839", "38949", "43992"} and l
 check(flips in ([("02487", False, True)], []), "the step moves 02487's verdict alone, fail to pass (%r)" % flips)
 
 print("El Camino: four certificates pinned to their own pages")
-PINS = CO.site_pin_entries(ELC)
+# S741 pinned a fifth certificate the same way (Photography 19883, poid 3640, college-page-read run 45953358884);
+# this test's page texts are S739's four, so it reads those.
+ALL_PINS = CO.site_pin_entries(ELC)
+PINS = {cn: p for cn, p in ALL_PINS.items() if cn != "19883"}
 WANT = {"19861": ("3552", "Marketing", "Marketing, AS",
                   "Required Courses:\nBUS 108 - Written Business Communications 3 units\nBUS 110 - Marketing 3 units\n"
                   "BUS 111 - Digital Marketing 3 units\nBUS 112 - Advertising 3 units\n"
@@ -362,7 +365,9 @@ WANT = {"19861": ("3552", "Marketing", "Marketing, AS",
                   "ATEC 51 - Introduction to Alternative Fuel Vehicles 2 units\n"
                   "ATEC 52 - Introduction to Hybrid, Electric and Fuel-Cell Vehicle Technology 3 units\n"
                   "ATEC 53 - Hybrid, Fuel-Cell and Electric Vehicle Diagnosis & Repair 3 units\nTotal Units: 18\n")}
-check(sorted(PINS) == sorted(WANT), "El Camino's entry pins the four certificates alone (%r)" % sorted(PINS))
+check(sorted(PINS) == sorted(WANT) and sorted(ALL_PINS) == sorted(list(WANT) + ["19883"])
+      and "poid=3640&" in ALL_PINS["19883"]["url"],
+      "El Camino's entry pins the four certificates, and S741's Photography certificate (%r)" % sorted(ALL_PINS))
 for cn, (poid, title, degree_h1, body) in sorted(WANT.items()):
     pin = PINS.get(cn) or {}
     check(pin.get("url") == "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=%s&print" % poid,

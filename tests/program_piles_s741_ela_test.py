@@ -55,6 +55,14 @@ check(W.gap_noted(bare) == ("noted_figures_differ", words) and e["words"] in wor
 heading = bare["record"]["program"]["section_heading"]
 check(heading == "Commercial Music: Performance (Academic Plan E038168D)" and M.plan_code(bare, e),
       "38168: its heading carries its own Academic Plan code, E0 and its control number")
+# plan_code's self-recall (the second reader's MAJOR): the code is evidence where it matches, no universal rule.
+rc = M.plan_code_recall()
+check(rc["read"] == 92 and rc["matches"] == 90 and rc["colleges"] == [M.COLLEGE]
+      and rc["differs"] == [[M.COLLEGE, "33681", "Academic Plan E046343H"], [M.COLLEGE, "45986", "Academic Plan E045717D"]],
+      "plan_code's self-recall: of the 92 committed headings that print an Academic Plan code, all East Los "
+      "Angeles's, 90 carry the record's own control number; 33681 and 45986 carry another (%r)" % (rc["differs"],))
+check(not any(M.plan_code(W.load(cn), e) for cn in ("33681", "45986")) and "38168" not in [d[1] for d in rc["differs"]],
+      "the two headings that carry another number are never shown their own by the code, and 38168 is not one of them")
 mates = W.shared_with("38168")
 check(mates == ["38169", "38206"]
       and all(W.load(m)["record"]["program"]["section_heading"] == W.load(m)["title"] != heading for m in mates)

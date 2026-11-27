@@ -1,0 +1,409 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30); Sam's routine prompt of 2026-11-25, as the S739 conductor's brief carries it: a record held for a gap is collected with its gap named and a lower score on the 0-100 bar, never held, unless the record is not the program's own; S739: Contra Costa's records kb/receipts/program_requirement_records_piles_s740_contra_costa_2026-11-26_s740g.json held, read again by key: passed by a rescore where today's scorer's one reading moves them, else collected with their gaps named where the record is the program's own (no reread, no reconcile)",
+ "at": "2026-11-27T07:40:42Z",
+ "college": "Contra Costa College",
+ "keys": {
+  "from": "kb/receipts/program_requirement_records_piles_s740_contra_costa_2026-11-26_s740g.json",
+  "members": [
+   "01400",
+   "33660",
+   "40761"
+  ]
+ },
+ "gaps": {
+  "degree_summary_ge_none": "The page's unit summary prints the degree total and prints its general education and electives as None or N/A, so the record holds the major alone; the major adds up to its printed major total.",
+  "noted_unit_floor": "The catalog requires a variable-unit course at a minimum above the units printed beside it; with that minimum the courses add to the printed total."
+ },
+ "moved": 2,
+ "by": {
+  "degree_summary_ge_none": 1,
+  "noted_unit_floor": 1
+ },
+ "precision": {
+  "read": 3,
+  "right": 3,
+  "wrong": [],
+  "no_record_file": 0,
+  "not_hand_held": 0,
+  "by_answer": {
+   "degree_summary_ge_none": 1,
+   "none": 1,
+   "noted_unit_floor": 1
+  }
+ },
+ "claim_checks": {
+  "counts": {
+   "stands": 2
+  },
+  "not_standing": []
+ },
+ "boundaries": {
+  "counts": {
+   "the note's words gone right": 2,
+   "the stated total one unit off right": 2,
+   "coverage failing right": 2,
+   "the reading against a total one unit off right": 1
+  },
+  "wrong": []
+ },
+ "held": [
+  {
+   "control_number": "33660",
+   "why": "held: its notes print general education as None and N/A and say nothing of its electives, so degree_summary_ge_none's sentence (general education and electives as None or N/A) is not its own (the second reader, S720), and no other kind's sentence is true of it. Page read 45955333186 printed the page's shell and course rows and not its Unit Summary, so the electives row is still unread: a page read that prints the summary, then degree_summary_ge_none",
+   "claim": "no entry stands"
+  }
+ ],
+ "records": [
+  {
+   "college": "Contra Costa College",
+   "control_number": "01400",
+   "award": "A.S. Degree",
+   "extracted_run": "44687786167",
+   "moves_to": "degree_summary_ge_none",
+   "words": "degree_total 60 is taken from the unit summary 'Min/Max Units - Total Program 60 / 60'. The summary lists Local GE as 'None', CSU/IGETC GE as 'N/A' and electives as 'None', which does not reconcile with 37 major units and 60 total; the description mentions 'breadth requirements' without naming a GE pattern. Reviewer should check.",
+   "confidence": {
+    "unit_arithmetic": 50,
+    "course_list_match": 100,
+    "ge_pattern": 50,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/contra_costa/records/01400.json",
+   "read_against": "today's arithmetic (the filed one is an older scorer's and stays as filed)",
+   "before_image": {
+    "program_title": "Auto Collision Repair Technology",
+    "award": "A.S. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/automotive-collision-repair-technology-fall-2020v2",
+    "measure": "units",
+    "total_min": 37,
+    "total_max": 37,
+    "record": {
+     "program": {
+      "section_heading": "Automotive Collision Repair Technology - A.S. Degree",
+      "measure": "units",
+      "total_units": {
+       "min": 37,
+       "max": 37
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": 60,
+       "max": 60
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "1st Semester",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "AUSER123",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUSER125",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "2nd Semester",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "AUSER124",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUSER126",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUSER153",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "3rd Semester",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "AUSER141",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUSER225",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "4th Semester",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "AUSER226",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AUSER238",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 9,
+     "listed": 9
+    },
+    "extracted_run": "44687786167"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 9,
+     "listed": 9,
+     "gaps": [
+      "degree_summary_ge_none"
+     ],
+     "confidence": {
+      "unit_arithmetic": 50,
+      "course_list_match": 100,
+      "ge_pattern": 50,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 1
+  },
+  {
+   "college": "Contra Costa College",
+   "control_number": "40761",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "44687786167",
+   "moves_to": "noted_unit_floor",
+   "words": "CIS099 (Occupational Work Experience, 1-4 units) is matched to closed-list CIS 99 (Work Experience); the description says the program requires 2 units of occupational work experience, which reconciles the course units (4+4+2+4+3+3+2) with the stated 22-unit total.",
+   "confidence": {
+    "unit_arithmetic": 70,
+    "course_list_match": 83,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/contra_costa/records/40761.json",
+   "before_image": {
+    "program_title": "Information Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/information-technology-summer-2021v2",
+    "measure": "units",
+    "total_min": 22,
+    "total_max": 22,
+    "record": {
+     "program": {
+      "section_heading": "Information Technology - Certificate of Achievement",
+      "measure": "units",
+      "total_units": {
+       "min": 22,
+       "max": 22
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [],
+      "careers": [
+       "Computer User Support Specialists",
+       "Computer Network Support Specialists"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required Courses with suggested sequence",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "CIS101",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CIS135",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "COMP110",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CCT275",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CCT155",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CCT160",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CIS099",
+         "units": 1,
+         "units_max": 4,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 5,
+     "listed": 6
+    },
+    "extracted_run": "44687786167"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 5,
+     "listed": 6,
+     "gaps": [
+      "noted_unit_floor"
+     ],
+     "confidence": {
+      "unit_arithmetic": 70,
+      "course_list_match": 83,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 2
+  }
+ ],
+ "live_run_proof": null,
+ "shared_pages": {},
+ "representation": "checks.gaps and checks.confidence added as the load reads the filed score (a passing row: checks.arithmetic to equal); checks.coverage, invented and the record unchanged",
+ "claim_check_reads": "Today's capture (sources.json): every course an entry names among the codes it found, and a course an entry says the printed total leaves out on neither it nor the state's list. A note's quoted figures are the reader's words, never re-read here.",
+ "follow_verdict": "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows (confirm_matches); the apply aborts, writing nothing, unless the count is 0.",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Contra Costa College', '01400', 44687786167, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUSER123\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUSER125\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"1st Semester\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUSER124\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUSER126\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUSER153\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"2nd Semester\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUSER141\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUSER225\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"3rd Semester\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUSER226\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUSER238\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"4th Semester\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Automotive Collision Repair Technology - A.S. Degree\",\"total_units\":{\"max\":37,\"min\":37}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":50,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"degree_summary_ge_none\"],\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb),\n  (2, 'Contra Costa College', '40761', 44687786167, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CIS101\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CIS135\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"COMP110\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CCT275\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CCT155\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CCT160\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CIS099\",\"units\":1,\"units_max\":4}],\"minimum\":null,\"name\":\"Required Courses with suggested sequence\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"Computer User Support Specialists\",\"Computer Network Support Specialists\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Information Technology - Certificate of Achievement\",\"total_units\":{\"max\":22,\"min\":22}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":6,\"placed\":5}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":83,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":70},\"coverage\":true,\"gaps\":[\"noted_unit_floor\"],\"invented\":true,\"listed\":6,\"placed\":5}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "pre_read_md5": "with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) as (values\n  (1, 'Contra Costa College', '01400', 44687786167, '995f53eeadf5da85a4e41e73619b5cda', '88e2495efd06d1573c7fb0fe096e2788', '37ce6af7298f98308d9573748640f2b5'),\n  (2, 'Contra Costa College', '40761', 44687786167, '5fe3ef935d48460e1235bc0d93acbba4', '0bced9be3226ac8a640d74451a3b44d7', 'ccdf55479aee9b0e87d52f9206af6f41'))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.record::text) = v.rec_md5),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.checks::text) = v.chk_md5),\n  'already_after', count(*) filter (where md5(r.checks::text) = v.after_md5),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Contra Costa College', '01400', 44687786167, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUSER123\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUSER125\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"1st Semester\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUSER124\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUSER126\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUSER153\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"2nd Semester\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUSER141\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUSER225\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"3rd Semester\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUSER226\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUSER238\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"4th Semester\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Automotive Collision Repair Technology - A.S. Degree\",\"total_units\":{\"max\":37,\"min\":37}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":50,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"degree_summary_ge_none\"],\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb),\n  (2, 'Contra Costa College', '40761', 44687786167, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CIS101\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CIS135\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"COMP110\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CCT275\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CCT155\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CCT160\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CIS099\",\"units\":1,\"units_max\":4}],\"minimum\":null,\"name\":\"Required Courses with suggested sequence\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"Computer User Support Specialists\",\"Computer Network Support Specialists\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Information Technology - Certificate of Achievement\",\"total_units\":{\"max\":22,\"min\":22}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":6,\"placed\":5}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":83,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":70},\"coverage\":true,\"gaps\":[\"noted_unit_floor\"],\"invented\":true,\"listed\":6,\"placed\":5}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\nf as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number\n        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true\n       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)),\ne(expect) as (values (2)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when f.n > 0\n            then ('s741e piles confirm guard: ' || f.n || ' rows hold a matching confirm verdict ' || f.keys::text)::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s741e piles guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, f;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Contra Costa College', '01400', 44687786167, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUSER123\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUSER125\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"1st Semester\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUSER124\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUSER126\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUSER153\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"2nd Semester\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUSER141\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUSER225\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"3rd Semester\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUSER226\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AUSER238\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"4th Semester\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Automotive Collision Repair Technology - A.S. Degree\",\"total_units\":{\"max\":37,\"min\":37}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":50,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"degree_summary_ge_none\"],\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb),\n  (2, 'Contra Costa College', '40761', 44687786167, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CIS101\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CIS135\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"COMP110\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CCT275\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CCT155\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CCT160\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CIS099\",\"units\":1,\"units_max\":4}],\"minimum\":null,\"name\":\"Required Courses with suggested sequence\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"Computer User Support Specialists\",\"Computer Network Support Specialists\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Information Technology - Certificate of Achievement\",\"total_units\":{\"max\":22,\"min\":22}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":6,\"placed\":5}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":83,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":70},\"coverage\":true,\"gaps\":[\"noted_unit_floor\"],\"invented\":true,\"listed\":6,\"placed\":5}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (2)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s741e piles rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;"
+}

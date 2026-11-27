@@ -1202,6 +1202,11 @@ jobs:
       - name: Cheap piles S741 at East Los Angeles (the Academic Plan code, a named gap, the plan)
         if: matrix.shard == 6
         run: python3 tests/program_piles_s741_ela_test.py
+      # S741 at Contra Costa (s741e): 01400 and 40761 collected with named gaps, their live run proved by the
+      # conductor's committed live read (LiveRead); 33660 held.
+      - name: Cheap piles S741 at Contra Costa (the live read as the live-run proof, the plan)
+        if: matrix.shard == 2
+        run: python3 tests/program_piles_s741_contracosta_test.py
       # Discontinued programs (S680; Sam, 2026-11-17 on #3480): a program's own catalog section marks it,
       # or a prior year prints it and this year does not; flagged out of the gap, never deleted. Pure stdlib.
       - name: Discontinued programs (own-section mark, out of the gap, the file is current)

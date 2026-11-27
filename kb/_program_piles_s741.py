@@ -14,8 +14,9 @@ committed page read prints the lines that close its section on the page the reco
                   "opens": "<the sentence above the record's lists>", "closes": "<the section's own totals line>",
                   "next": "<the words the next program's section opens on>"}
 
-The code checks what the committed files can show: the plan file is committed and reads the record's own catalog
-file; the record was read from page N; the record's own section_heading carries every word of the program's title
+The code checks what the committed files can show: the plan file is committed, reads the record's own catalog
+file and carries the same three lines under the run and page they were read from (its _quoted); the record was read
+from page N; the record's own section_heading carries every word of the program's title
 and names its kind of award (the reader said whose section it read); the closing line carries every word of the
 title, names the kind of award and prints the record's stated total (the total the record holds is that line's);
 the opening sentence carries every word of the title; and no page-mate's title is inside the closing line, a
@@ -116,12 +117,19 @@ class Pile(B7.Pile):
         plan = os.path.join(ROOT, str(o.get("plan") or ""))
         try:
             with open(plan, encoding="utf-8") as fh:
-                urls = {str(p.get("url")) for p in json.load(fh).get("pages") or []}
+                read = json.load(fh)
         except (OSError, ValueError):
             return False
+        urls = {str(p.get("url")) for p in read.get("pages") or []}
         src = str(filed.get("source_url") or "")
         if not str(o.get("run") or "").isdigit() or src.split("#")[0] not in urls \
                 or not src.endswith("#page=%s" % o.get("page")):
+            return False
+        # The quoted lines are committed in the page read's own plan file, under the run and the page they were
+        # read from (_quoted), and the entry's are those (S741's second reader, MINOR: the guard trusts the quote,
+        # so the quote sits where the read is).
+        quoted = ((read.get("_quoted") or {}).get(str(o.get("run"))) or {}).get(str(o.get("page"))) or {}
+        if any(not o.get(k) or quoted.get(k) != o.get(k) for k in ("opens", "closes", "next")):
             return False
         title = set(B._words(filed.get("title")))
         kind = B.award_kind(filed.get("award"))

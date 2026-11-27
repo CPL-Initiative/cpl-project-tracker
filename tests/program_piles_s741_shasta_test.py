@@ -61,6 +61,12 @@ check(o["run"] == M.PAGE_READ and plan["college"] == M.COLLEGE and plan["pdf_spa
       and bare["source_url"] == plan["pages"][0]["url"] + "#page=%d" % o["page"],
       "the page read's plan is committed, and it reads the record's own catalog file over the page the record was "
       "read from")
+quoted = plan["_quoted"][o["run"]][str(o["page"])]
+logged = " ".join(quoted["as_logged"]).replace(" · ", " ")
+check(all(quoted[k] == o[k] for k in ("opens", "closes", "next"))
+      and all(" ".join(B._words(o[k])) in " ".join(B._words(logged)) for k in ("opens", "closes", "next")),
+      "the plan file carries the entry's three lines under the run and the page, each inside the lines as the log "
+      "prints them")
 check(W.shared_with("32162") == ["18094", "18095"] and W.own(bare, e) == "own_lines" and W.own_lines(bare, e),
       "its page was also read for 18094 and 18095, and the page's own lines show its section its own")
 check(B7.Pile.own(W, bare, e) is None and B.HEADING_GONE.search(bare["record"]["program"]["section_heading"]),
@@ -97,6 +103,15 @@ def no_plan(g, x):
     x["own_lines"] = dict(o, plan="kb/college_reads/no_such_plan.json")
 
 
+def unquoted(g, x):
+    # The entry's own plan, another run: the plan file quotes nothing under it.
+    x["own_lines"] = dict(o, run="45953358884")
+
+
+def other_words(g, x):
+    x["own_lines"] = dict(o, opens=o["opens"] + " Kinesiology")
+
+
 def mate(g, x):
     x["own_lines"] = dict(o, closes=o["closes"] + " University Studies - Physical Education")
 
@@ -108,6 +123,8 @@ def stated(g, x):
 for name, change in (("another heading", heading), ("another page", page),
                      ("a closing line without the record's total", total),
                      ("a closing line that names no award", award), ("a plan that is not committed", no_plan),
+                     ("a run the plan file quotes no lines under", unquoted),
+                     ("an opening line the plan file does not quote", other_words),
                      ("a closing line that also carries the page-mate's title", mate),
                      ("a stated total the closing line does not print", stated)):
     check(moved(change) is None, "32162: with %s the record is not shown to be its own" % name)
