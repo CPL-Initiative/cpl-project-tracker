@@ -6,7 +6,13 @@ collected Registered Nursing 16657 and held six. Each was read on 2026-11-26 fro
 2026-11-18, and each record's own section is printed line for line by college page read 45953233659
 (kb/college_reads/s741_keys_copper_mountain_pages.json; one load of the PDF, free). Sam's ruling
 (sam-collect-with-gaps-2026-11-17): a record with a true gap is collected with the gap named and a lower score on the
-0-100 bar. No catalog read, no reconcile, no record changed, no new kind.
+0-100 bar. No catalog read, no record changed, no new kind.
+
+THE ORDER. The college's reconcile step (the degree's printed floor, below) ran first: free reconcile 45957316339
+re-filed the three degree records here with degree_total_minimum, each still failing on its major, and its reread
+posted them. So 14737, 14710 and 45594 are read at that run and the certificate 20094 at the read's run,
+45855512160. The plan's first build, on the rows as read, was withdrawn unapplied (its second reader: the reconciled
+rows first).
 
 COLLECTED WITH A NAMED GAP (4, REVIEWED below):
   total_differs (50)   14737 Vocational Nursing A.S. (PDF p.113) and 20094 Vocational Nursing certificate (PDF p.114):
@@ -26,8 +32,10 @@ COLLECTED WITH A NAMED GAP (4, REVIEWED below):
         restricted electives is dependent on the number of work experience units a student completes' over 'Take at
         least one (1) unit of work experience. A maximum of four (4) units may be counted', the restricted electives
         at 17 or a concentration at 20, 11, 14, 18 or 15, 'Minimum units needed for the major 42' and 'Additional
-        restricted electives as needed.' A list whose figure depends on another choice: the record's lists add to
-        36-45 against the printed 42. Two gaps on one row: the concentrations print totals with no units beside their
+        restricted electives as needed.' (its lines: 'Restricted Electives: Select seventeen (17) units from the
+        following for general business studies: ... 17', 'Or select a concentration area:' with Accounting 20,
+        e-business 11, Hospitality 14, Real Estate 18 and Skilled Office Professional 15). A list whose figure
+        depends on another choice: the record's lists add to 36-45 against the printed 42. Two gaps on one row: the concentrations print totals with no units beside their
         courses, which the record's second note names; the lower-scored kind is filed with both notes. S740 held the
         row for want of one kind; the page's own sentence is the kind's second clause.
 
@@ -59,6 +67,8 @@ TAG = "s741k2"
 HELD_BY = "kb/receipts/program_requirement_records_piles_s739_copper_mountain_2026-11-26_s740r4.json"
 PAGE_READ = "45953233659"
 READ = "45855512160"
+RECONCILE = "45957316339"
+RUNS = {"14710": RECONCILE, "14737": RECONCILE, "45594": RECONCILE, "20094": READ}
 KEYS = ("14710", "14737", "20094", "45594")
 BY_THE_RECONCILE = ("14751", "43854")
 _ELECTIVES = "Restricted Electives: Select seventeen (17) units from the following for general business studies"

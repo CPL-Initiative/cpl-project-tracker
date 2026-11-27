@@ -123,7 +123,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "units_within_printed_range",
+    "label": "The courses' units as read fall within the printed range of units rather than matching it.",
+    "words": "the courses' units add to 36-49, within the printed 32-49 units | Printed major total 32-49 does not reconcile exactly with block sums (minimum computes to 36 with List C at 3 units); recorded as printed."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 100,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

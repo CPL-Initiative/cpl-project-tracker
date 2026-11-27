@@ -55,6 +55,17 @@ check(set(M.KEYS) | set(M.BY_THE_RECONCILE) == {"14710", "14737", "14751", "2009
       and not set(M.KEYS) & set(M.BY_THE_RECONCILE), "the keys are s740r4's six holds less the reconcile's two")
 check(all(e.get("page") for e in M.REVIEWED.values()) and M.PAGE_READ == "45953233659",
       "each entry carries its page's words, from the page read")
+# The order: the degree-floor reconcile 45957316339 re-filed the three degrees first, and its reread posted them.
+check(all(str(W.load(cn)["extracted_run"]) == run for cn, run in M.RUNS.items()) and set(M.RUNS) == set(M.KEYS),
+      "each row is read at its live run: the three degrees at the reconcile's, the certificate at the read's")
+check(all(W.load(cn)["record"]["program"].get("degree_total_minimum") is True
+          and str(W.load(cn).get("read_run")) == M.READ for cn in ("14710", "14737", "45594"))
+      and "degree_total_minimum" not in W.load("20094")["record"]["program"],
+      "the three degrees carry the degree's floor from the reconcile, over the read's own record; the certificate none")
+p78 = M.REVIEWED["14710"]["page"]
+check("Select seventeen (17) units" in p78 and "e-business 11" in p78 and "Accounting 20" in p78
+      and "Additional restricted electives as needed." in p78 and "dependent on the number of work experience units" in p78,
+      "14710's entry cites the elective line, the concentrations' figures and 'Additional restricted electives as needed.'")
 
 # total_differs: the listing, the record's figures, the rule.
 listed = NG.total_differs_list()
