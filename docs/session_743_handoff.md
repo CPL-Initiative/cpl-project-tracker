@@ -211,3 +211,11 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   keep-better on it from the 13:43Z read (expanded; md5 equal): re-read 1, kept 1 (38499, which now holds score.pass),
   restored 0 (`9718a1dd`). No person's check and the md5 unchanged at 14:24Z; the reread dispatched on
   `claude/s742-keys` (force 46011334736).
+- 14:24Z: Santa Barbara City's free reconcile 46010148668 (on `claude/s742-piles-sbcc`, `1514c613`): 2 fail to pass, 0
+  pass to fail; `piles` kept its two targets and put the other 13 back at main's files, 05934 among them (it turned
+  passing in the run and keeps its ruled hold, `d-sbcc-05934-keeps-hold-s727`); keep-better kept 2. No person's check at
+  Santa Barbara City or Fullerton (14:24Z, md5s equal): the reread dispatched (force 46010148668; it posts 32775 passing
+  and 43553 rescored to its page's figures, still failing, for a `total_differs` plan next session).
+- 14:26Z: Cabrillo's `recommended_counts` round 2 GO (Fable 5.2: each record steps on its own page alone; all 12 wrong
+  pairings refuse; 4 of 684 records statewide, all Cabrillo; 06326, a person's, does not move). Its free reconcile
+  dispatched on `claude/s742-piles-cabrillo`.
