@@ -185,4 +185,4 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   06352, 06380, 06381 and 44992 alone, all four turn passing). In flight on `piles`' branches: Butte's capture
   45999110725 (pin 14583), Orange Coast's 45999669017 pending, free reconciles at Fullerton 46010143379 and Santa Barbara
   City 46010148668. Step 5 over its colleges: 16 discontinued flags, none new; the units rules move 0 rows.
-- 14:05Z: both to the Fable reader (round 2 for `plan_code_own`, its last).
+- 14:03Z: both to the Fable reader (round 2 for `plan_code_own`, its last).
