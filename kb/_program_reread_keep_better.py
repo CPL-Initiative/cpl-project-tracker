@@ -30,12 +30,16 @@ with the same file at origin/main and keeps the better one.
     3. score.coverage.pass true;
     4. score.coverage.none_placed false (places_none() where the key is missing);
     5. the higher score.coverage.share (a share either record lacks is no evidence, and the step is skipped);
-    6. the arithmetic: equal, unstated that passes, incomplete with the major equal, unequal, unstated that does
-       not pass, incomplete, anything else. "Incomplete with the major equal" is a degree whose major adds to its
-       printed major total and whose degree total lacks only the general education units (the named gap
-       ge_units_not_read: the record is collected with that gap), so it stands above a record whose units add to
-       a figure the catalog does not print (S741: Norco 32830, 37311 and 44961, re-read with the group ends marked;
-       each major now equals its printed total, and the old order restored the filed records that read unequal).
+    6. the arithmetic: equal, unstated that passes, unequal, unstated that does not pass, incomplete, anything
+       else. One pair is ranked apart (S741): a record that reads incomplete with its major equal to the printed
+       major total stands above a record that reads unequal with a major that does not equal. The first has the
+       major right and its degree total is not complete (most often no general education units were read, the
+       named gap ge_units_not_read; for a few, electives fill the degree total); the second adds its major to a
+       figure the catalog does not print. Norco 32830, 37311 and 44961, re-read with the group ends marked: each
+       major now equals its printed total (the filed records read 15 of 18, 40 of 41 and 29-30 of 32-33), and the
+       plain order restored the filed records. An unequal record whose own major equals holds the general
+       education units an incomplete re-read lost, so it stays above the incomplete one, as before (the second
+       reader's finding: 79 filed records at 27 colleges read unequal at the degree with the major equal).
   A record with no score (an extraction error) loses every step. A tie keeps the re-read: it is the current catalog
   text. A program with no filed record keeps its new record.
 
@@ -126,18 +130,29 @@ def passes_live(score: dict | None) -> bool:
     return bool(score) and pl(score)
 
 
-def arith_key(score: dict | None) -> str | None:
+def major_equal(score: dict | None) -> bool:
+    """The record's major adds to the major total the page prints (the scorer's arithmetic.major)."""
+    return ((((score or {}).get("arithmetic") or {}).get("major") or {}).get("status")) == "equal"
+
+
+def arith_key(score: dict | None, other: dict | None = None) -> str | None:
+    """The record's arithmetic as step 6 ranks it. Beside `other`, an incomplete record whose major equals reads
+    "incomplete_major_equal" only where other reads unequal with a major that does not equal: there the incomplete
+    record has the major right and the other has not. Against an unequal record whose own major equals (it holds
+    the general education units the incomplete one lost) it is a plain incomplete, below unequal as before
+    (S741 review: 79 filed records at 27 colleges read unequal at the degree with the major equal)."""
     a = (score or {}).get("arithmetic") or {}
     status = a.get("status")
     if status == "unstated":
         return "unstated_pass" if a.get("pass") is True else "unstated_fail"
-    if status == "incomplete" and ((a.get("major") or {}).get("status")) == "equal":
-        return "incomplete_major_equal"      # the degree lacks only its general education units (S741)
+    if status == "incomplete" and major_equal(score) and other is not None \
+            and ((other.get("arithmetic") or {}).get("status")) == "unequal" and not major_equal(other):
+        return "incomplete_major_equal"
     return status
 
 
-def arith_rank(score: dict | None) -> int:
-    k = arith_key(score)
+def arith_rank(score: dict | None, other: dict | None = None) -> int:
+    k = arith_key(score, other)
     return ARITH_ORDER.index(k) if k in ARITH_ORDER else len(ARITH_ORDER)
 
 
@@ -166,9 +181,9 @@ def compare(filed: dict | None, reread: dict | None) -> tuple[str, str]:
     if a is not None and b is not None and a != b:
         return ("filed", "the filed record covers more (share %s against %s)" % (a, b)) if a > b else \
                ("reread", "the re-read covers more (share %s against %s)" % (b, a))
-    a, b = arith_rank(f), arith_rank(r)
+    a, b = arith_rank(f, r), arith_rank(r, f)
     if a != b:
-        fs, rs = arith_key(f), arith_key(r)
+        fs, rs = arith_key(f, r), arith_key(r, f)
         return ("filed", "the filed arithmetic reads %s, the re-read's %s" % (fs, rs)) if a < b else \
                ("reread", "the re-read's arithmetic reads %s, the filed record's %s" % (rs, fs))
     return "reread", "equal on every step: the re-read is the current catalog text"
