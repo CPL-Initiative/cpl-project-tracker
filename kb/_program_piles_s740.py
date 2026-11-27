@@ -153,9 +153,12 @@ WITHIN_HELD = {
     ("Orange Coast College", "41373"): (WITHIN, _S739), ("College of the Canyons", "36793"): (WITHIN, _S739),
     # S739 held 32162 for the kind too. S740's review under the own-page guard: its heading sits on the page before
     # the one the read held (its own section_heading and note say so), and 18094, read from the same page, holds 29
-    # of its 32 courses in the same unit band, so none of the guard's three forms shows the section its own.
-    ("Shasta College", "32162"): (None, "none: not shown to be the program's own (the own-page guard; "
-                                        "kb/_program_piles_s740.py SHASTA_32162)"),
+    # of its 32 courses in the same unit band, so none of the guard's three forms shows the section its own
+    # (SHASTA_32162 below, s740i's hold). S741's review: the page the read held prints the section's own closing
+    # line, which names the degree and prints the record's 22-27, before 18094's heading (college-page-read run
+    # 45837455365; own_lines, kb/_program_piles_s741.py), so the held answer is the kind (s741a).
+    ("Shasta College", "32162"): (WITHIN, "kb/_program_piles_s741_shasta.py, over s740i's hold (SHASTA_32162): the "
+                                          "own-page guard cleared on the page's own lines"),
     ("Saddleback College", "42644"): (None, _WAIVER), ("Saddleback College", "19551"): (None, _WAIVER),
     ("Saddleback College", "22933"): (None, _WAIVER), ("Orange Coast College", "42331"): (None, _WAIVER),
     ("Madera Community College", "39862"): (None, _WAIVER), ("Reedley College", "18957"): (None, _WAIVER),
@@ -182,8 +185,8 @@ WITHIN_HELD = {
 }
 # The reviewed lists: each S740 plan's module, by its file name. A key filed there is the reviewed lists' answer.
 PLAN_MODULES = ("_program_piles_s740_gavilan", "_program_piles_s740_canyons", "_program_piles_s740_orangecoast",
-                "_program_piles_s740_smc")
-# Shasta 32162, held (no plan): the reason, for the handoff's Blocks.
+                "_program_piles_s740_smc", "_program_piles_s741_shasta")
+# Shasta 32162 as s740i held it (no S740 plan): the reason, for handoff 741's Blocks. s741a files it since.
 SHASTA_32162 = ("held: its 23-27 sits inside the printed 22-27 and units_within_printed_range is true of its figures, "
                 "but its section is not shown to be its own: its heading sits on the page before the one the read "
                 "held, and 18094 (University Studies - Physical Education), read from the same PDF page, holds 29 of "

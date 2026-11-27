@@ -126,10 +126,13 @@ for key in sorted(reviewed):
     bare["score"].pop("confidence", None)
     check(NG.units_within_printed_range(bare) is not None, "%s %s: the kind is true of its filed figures" % key)
     check(NG.answer(bare) is None, "%s %s: no record rule names another kind for it" % key)
-check(B7.WITHIN_HELD[("Shasta College", "32162")][0] is None and "own" in B7.SHASTA_32162
-      and NG.units_within_printed_range(by_key[("Shasta College", "32162")]) is not None
-      and not by_key[("Shasta College", "32162")]["score"].get("gaps"),
-      "Shasta 32162: the figures name it, the own-page guard holds it, and its record carries no gap")
+# S740 held Shasta 32162 on the own-page guard (SHASTA_32162); s741a files it by key, the guard cleared on the page's
+# own lines (kb/_program_piles_s741_shasta.py), so its held answer is the kind and its record carries that gap alone.
+check(B7.WITHIN_HELD[("Shasta College", "32162")][0] == B7.WITHIN and "own" in B7.SHASTA_32162
+      and ("Shasta College", "32162") in reviewed
+      and [g.get("gap") for g in by_key[("Shasta College", "32162")]["score"].get("gaps") or []] == [B7.WITHIN],
+      "Shasta 32162: S740 held it on the own-page guard; s741a's reviewed list files it, and its record carries the "
+      "kind alone")
 check(all(len(v) == 2 and v[1] for v in B7.WITHIN_HELD.values()), "every held answer says where it is written")
 
 print("%d checks, %d failures" % (n, len(failures)))

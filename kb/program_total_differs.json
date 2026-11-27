@@ -228,6 +228,36 @@
     "evidence": "Construction Technology: Residential Maintenance, Certificate of Achievement Level 2 08859: the page prints 'Required · 15' over CNSTR 101A (2), 101B (3), 102A (3), 102B (3), 110 (3) and 117 (1), which add to 15; 'Approved Major Electives · 9' over 'Complete 3 non-duplicated units from the following approved major electives:'; and 'Total Units · 36': its own printed figures add to 24 (college-page-read run 45835049303, kb/college_reads/s740_reconcile_san_jose_city_pages.json, read as the capture reads the page). The award's own band is 16 to fewer than 30 units.",
     "run": "45835049303"
    }
+  },
+  "El Camino College": {
+   "31319": {
+    "where": "the program's own page, http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3634&print",
+    "printed_total": [
+     20,
+     20
+    ],
+    "printed_sum": [
+     19,
+     19
+    ],
+    "words": "Total Units: 20",
+    "evidence": "Commercial Music Certificate of Achievement 31319: the page prints 'Required Courses:' MUSI 101 (3 units), MUSI 180 (3), MUSI 181A (2), MUSI 181B (2), MUSI 182 (3), MUSI 284 (3) and MUSI 285 (3), seven courses and no choice, 19 units, under 'Total Units: 20' (college-page-read run 45953358884, kb/college_reads/s741_piles_el_camino_pages.json, read as the capture reads the page). The page prints no other course and no other figure.",
+    "run": "45953358884"
+   },
+   "42541": {
+    "where": "the program's own page, http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3555&print",
+    "printed_total": [
+     28,
+     30
+    ],
+    "printed_sum": [
+     27,
+     30
+    ],
+    "words": "Total Major Units: 28-30",
+    "evidence": "Business Administration 2.0, AS-T 42541: the page prints 'Required Core: 28-30 units' over BUS 150 (4 units), BUS 151 (4), ECON C2001 (3), ECON C2002 or C2002H (3), LAW 4 (4) or LAW 5 (3), MATH 165 (5) or MATH 140 (4) or MATH 190 (5), STAT C1000 or C1000H (4) or BUS 116 (3), and BUS 101 or BUS 108 (3): eight rows whose units add to 27 at the least (LAW 5, MATH 140, BUS 116) and 30 at the most, under 'Total Major Units: 28-30' (college-page-read run 45953358884, kb/college_reads/s741_piles_el_camino_pages.json, read as the capture reads the page). The low end the page prints is one unit above what its rows add to.",
+    "run": "45953358884"
+   }
   }
  }
 }
