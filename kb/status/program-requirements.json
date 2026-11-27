@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-27T09:42:51Z",
-  "session": 741,
-  "moniker": "SkyWillet",
+  "written_at": "2026-11-27T14:48:40Z",
+  "session": 742,
+  "moniker": "SkyGodwit",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_742_handoff.md",
+  "handoff": "docs/session_743_handoff.md",
   "next_step": {
     "title": "Build the display page carrying tonight's records, then the census",
-    "text": "Build the display page carrying S741's records, apply it at Glendale first and then whole, and run the census on main. Then lane 1: review the Cuyamaca plural fold and Cosumnes River's parked filing, read the pinned programs at Butte, Orange Coast and El Camino once their free captures bind, and the reader changes still open; then lane 2's holds and the night's follow-up with the Porterville guard first."
+    "text": "Build the display page carrying S742's records, apply it at Glendale first and then whole, and run the census on main. Then lane 1: finish the Cuyamaca and Cabrillo reconciles, review Coastline's staging fix and run its read, run Orange Coast's paid read, plan the gaps at Butte, Santa Barbara City and East Los Angeles, and the reader changes still open; then lane 2's holds and the night's follow-up with the Porterville guard first."
   },
   "calls": [
     {
@@ -912,6 +912,18 @@
     {
       "at": "2026-11-27T09:36:00Z",
       "text": "San Diego City 22367 passes: 24 units against 24 from its own entry. 52 program records collected tonight: 28 passing and 24 with a named gap."
+    },
+    {
+      "at": "2026-11-27T12:59:00Z",
+      "text": "The display page now carries every filed record at build 5b80d4de75e9: 18,747 programs, after a first apply at Glendale."
+    },
+    {
+      "at": "2026-11-27T13:04:00Z",
+      "text": "The census on main after the display build: 15,669 of 20,282 programs pass, 3,950 have no passing record and 663 are collected with a named gap."
+    },
+    {
+      "at": "2026-11-27T14:39:00Z",
+      "text": "21 program records collected since noon: 8 passing and 13 with a named gap. San Jose City, El Camino, East Los Angeles, Santa Barbara City and Fullerton pass; Cuesta, San Bernardino Valley, Modesto, Santa Monica, Butte, Cabrillo and Gavilan carry a named gap."
     }
   ],
   "headline": [

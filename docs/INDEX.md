@@ -72,8 +72,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 95 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 112 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 77 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 694 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1589** | |
+| Session handoffs | 695 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1590** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -124,6 +124,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-27 (S742 SkyGodwit, the CPL Queue routine's collection run, conductor, full checkpoint): #3904 (display build `5b80d4de75e9`) and the land merged; keep-better's `plural_longer` and `plan_code_own`, the Acalog road reading `site_pages` pins, Coastline's pin, San Jose City's `JOURN138` renumber, Cuyamaca's and Cabrillo's reconcile steps, the compact live read; 21 records at the 14:44Z count (8 passing, 13 named gaps). Handoff 743, the harvest lane (S741 posts and NEXT moved), its lessons (*Moved from the lane (S742 checkpoint)*, *S742*), 8 memory rows drafted, `kb/status/program-requirements.json`. Land and census: handoff 743.
 - 2026-11-27 (S736 SkyBrant, Sam's plain session, full checkpoint): #3864, #3865, #3868 (Library publish fixes; Adult Ed CPL Starting Points passes its check), #3867 (the Accounting re-point dry run, apply blocked on Sam's Business filings), #3889 and #3890 (Sign in on a phone, the magic link returns to its view), #3893 (the lightning round: Not a subject, Skip, the training note), #3894 (LACCD schedule titles, 171 of 212); handoff 744 (742 and 743 are the routine's); lanes common-subjects-reference, commons and library compacted under 20 KB.
 - 2026-11-27 (S741 SkyWillet, the CPL Queue routine's collection run, conductor, full checkpoint): #3900 (`main`'s red noncredit test repaired), #3898 (display build `a143061a2ae2`) and the land merged; rule B, `window_keeps_tabs`, `cq_group_ends`, keep-better's major-equal rank, the Copper Mountain and Cuyamaca degree-floor steps, pins; 52 records (28 passing, 24 named gaps). Handoff 742, the harvest lane (S740 posts and NEXT moved), its lessons (*Moved from the lane (S741 checkpoint)*, *S741*), 9 memory rows drafted, `kb/status/program-requirements.json`. Land and census: handoff 742.
 - 2026-11-26 (S740 SkySkimmer, the CPL Queue routine's collection run, conductor, full checkpoint): #3886 (display build `9e28519af71f`); the units kind `units_within_printed_range` (by reviewed key only), Copper Mountain's reissue and three records, Santa Ana's first reconcile, Solano, San Jose City and San Bernardino Valley rereads, lane 2's 23 named gaps; 79 records by 16:30Z; handoff 741, the harvest lane, its lessons (*Moved from the lane (S740 checkpoint)*, *S740*), 10 memory rows drafted, `kb/status/program-requirements.json`. Land and census: handoff 741.
