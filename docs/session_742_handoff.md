@@ -255,3 +255,8 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 - 09:15Z: s741r1's reader (Sonnet): APPLY. Clean md5 pre-read 5 of 5; migrate 45971839433 returned 5, none skipped;
   `.apply` restored (`96a83de6`). American River 39341 live and passing at 45970104024 (its reread). Records
   collected: 48.
+- 09:18Z: Cuyamaca's keep-better keeps its three (18634, 18635, 18636 pass by the degree's floor); the reread
+  dispatched on a sibling, `claude/s741-keys-cuy` (cut at `3d3bb35f`; force 45966682528), since Cosumnes River's
+  free reconcile 45972311864 (OPTION_PART) holds `claude/s741-keys`. Its keep-better live read at 09:18Z (no
+  person's check). The 18637 word test (recall: 44 answers move at 24 colleges, right 44, wrong 0) sits unreviewed on
+  `claude/s741-keys-wordtest` (`302c12c5`) for the next session; nothing of it lands tonight.
