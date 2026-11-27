@@ -117,7 +117,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "degree_electives_not_printed",
+    "label": "The degree's major and general education add to less than the printed degree total, and the page prints no figure for electives and does not say they fill the rest.",
+    "words": "degree_total 62-69 is taken from the 'Map (Butte GE)' semester plan ('Units: 62.00- 69.00'), which includes Butte GE area choices; the page prints no separate degree total or GE unit total, so a reviewer should confirm that this map total should be read as the degree total. | The map's Graduation Requirement Choice (2 units, GE) notes 'Department recommends BUS 62'; this is a GE item and BUS 62 is not recorded in a block."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 100,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

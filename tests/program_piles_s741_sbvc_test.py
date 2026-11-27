@@ -124,18 +124,30 @@ check(not bare_pile.on_live_run(bare("22784"), skip=(W.tag,)) and W.on_live_run(
       "without the file's history the row is on no proved live run; with it, it is")
 
 # 17829, held: the rule names its gap on today's arithmetic alone.
+# Either state (p-older-pile-tests-pin-runs-later-plans-move-s739): as this plan held it, on the older scorer's
+# arithmetic; or re-filed by S742's free reconcile 46000859685, which keep-better's S741 ranking keeps: the filed
+# arithmetic is then today's (the degree, incomplete, the major equal by the short-high reading), the record rule
+# names ge_units_not_read on it, and a later plan files that gap on the reread row.
 f = bare("17829")
 filed, now = f["score"]["arithmetic"], B.arithmetic(f)
-check(filed["against"] == "program" and filed["computed"] == [50.0, 60.0] and filed["stated"] == [50.0, 63.0]
-      and not W.load("17829")["score"].get("gaps"),
-      "17829: the filed arithmetic reads the major, 50-60 against the printed 50-63, and it carries no gap")
+S742_REFILED = str(f.get("extracted_run")) == "46000859685"
+_gaps17 = [g["gap"] for g in W.load("17829")["score"].get("gaps") or []]
+check((filed["against"] == "program" and filed["computed"] == [50.0, 60.0] and filed["stated"] == [50.0, 63.0]
+       and not _gaps17)
+      or (S742_REFILED and filed["against"] == "degree" and filed["status"] == "incomplete"
+          and (filed.get("major") or {}).get("computed") == [50.0, 60.0]
+          and (filed.get("major") or {}).get("stated") == [50.0, 63.0] and _gaps17 in ([], ["ge_units_not_read"])),
+      "17829: the filed arithmetic reads the major, 50-60 against the printed 50-63, and it carries no gap (or the "
+      "reconcile 46000859685 re-filed it on today's arithmetic)")
 check(now["against"] == "degree" and now["status"] == "incomplete" and now["stated"] == [60.0, 60.0]
       and (now.get("major") or {}).get("pass") is True and (now["major"] or {}).get("short_high") is True
       and now.get("ge") is None,
       "17829: today's scorer passes the major by the short-high reading and reads a degree with no pattern units")
 rule = W._rule(f, now)
-check(NG.answer(f) is None and rule and rule[0] == "ge_units_not_read" and "50-63" in rule[1],
-      "17829: the record rule names the gap on today's arithmetic and none on the filed one")
+check((NG.answer(f) is None or (S742_REFILED and NG.answer(f)[0] == "ge_units_not_read"))
+      and rule and rule[0] == "ge_units_not_read" and "50-63" in rule[1],
+      "17829: the record rule names the gap on today's arithmetic and none on the filed one (once re-filed, the "
+      "filed arithmetic is today's)")
 
 # The holds.
 f = W.load("04894")
@@ -144,8 +156,10 @@ check(B.scorer_passes(f) and not f["score"].get("gaps") and f["score"]["arithmet
 f = W.load("04873")
 two, four = B.blocks(f, "Two courses from the following:"), B.blocks(f, "Four courses from the following:")
 check(len(two) == 1 and two[0]["minimum"] == 2 and len(two[0]["courses"]) == 1
-      and len(four) == 1 and four[0]["minimum"] == 4 and len(four[0]["courses"]) == 2 and not f["score"].get("gaps"),
-      "04873: its two lists hold fewer courses than they ask for, and it carries no gap")
+      and len(four) == 1 and four[0]["minimum"] == 4 and len(four[0]["courses"]) == 2
+      and [g["gap"] for g in f["score"].get("gaps") or []] in ([], ["lists_not_closed"]),
+      "04873: its two lists hold fewer courses than they ask for, and it carries no gap (or S742's plan s742k2 has "
+      "filed lists_not_closed since)")
 f = W.load("22821")
 # Either state: the department's page with no total, or S741's read (run 45960735042) of the program's own pinned page,
 # filed passing with its printed Total Units 20 (7 of 7 placed).
@@ -156,7 +170,9 @@ check((f["source_url"].rstrip("/").endswith("/pharmacy-technology") and f["score
       "22821: read from the department's page with no total, or from its own pinned page (45960735042) passing, no gap")
 f = W.load("39483")
 seq = [b for b in f["record"]["blocks"] if b.get("option_group") == "Biology sequence"]
-check(len(seq) == 2 and all(c.get("units") is None for b in seq for c in b["courses"]) and not f["score"].get("gaps"),
-      "39483: the biology sequences are lists of their own with no units, and it carries no gap")
+check(len(seq) == 2 and all(c.get("units") is None for b in seq for c in b["courses"])
+      and [g["gap"] for g in f["score"].get("gaps") or []] in ([], ["lists_not_closed"]),
+      "39483: the biology sequences are lists of their own with no units, and it carries no gap (or S742's plan "
+      "s742k2 has filed lists_not_closed since)")
 
 sys.exit(t.done())

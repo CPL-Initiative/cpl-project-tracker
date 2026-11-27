@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 189,
  "with_closed_list": 135,
- "started": "2026-11-26T07:18:10Z",
+ "started": "2026-11-27T13:03:13Z",
  "acalog": {
   "base": "http://catalog.elcamino.edu",
   "start_status": 200,
@@ -833,34 +833,44 @@
  "pages_answered": 263,
  "listing_failed": 0,
  "banner_h1": null,
+ "site_pins": {
+  "19861": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3552&print",
+   "bound": true
+  },
+  "19866": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3622&print",
+   "bound": true
+  },
+  "19883": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3640&print",
+   "bound": true
+  },
+  "38948": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3699&print",
+   "bound": true
+  },
+  "43993": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3728&print",
+   "bound": true
+  }
+ },
  "catalog_lookup": {
   "self_test": {
-   "tested": 102,
-   "hits": 95,
-   "recall": 0.931,
-   "false": 1,
-   "false_off_own": 2,
-   "false_no_claims": 2,
-   "shared": 24,
+   "tested": 110,
+   "hits": 104,
+   "recall": 0.945,
+   "false": 0,
+   "false_off_own": 1,
+   "false_no_claims": 1,
+   "shared": 16,
    "false_matches": [
-    {
-     "control_number": "19866",
-     "title": "Journalism",
-     "page": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3622&print"
-    },
     {
      "control_number": "15581",
      "title": "Electronics and Computer Hardware Technology: Computer Technology Option",
      "award": "A.S. Degree",
      "page": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=4013&print",
      "h1": "Electronics and Computer Hardware Technology: Electronics Technology Option, AS"
-    },
-    {
-     "control_number": "19866",
-     "title": "Journalism",
-     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-     "page": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3622&print",
-     "h1": "Journalism Certificate of Achievement"
     }
    ],
    "no_claims_matches": [
@@ -870,13 +880,6 @@
      "award": "A.S. Degree",
      "page": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=4013&print",
      "h1": "Electronics and Computer Hardware Technology: Electronics Technology Option, AS"
-    },
-    {
-     "control_number": "19866",
-     "title": "Journalism",
-     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-     "page": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3622&print",
-     "h1": "Journalism Certificate of Achievement"
     }
    ],
    "searches": false,
@@ -898,7 +901,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "02486",
@@ -906,7 +909,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "02488",
@@ -914,7 +917,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "02490",
@@ -922,7 +925,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "02497",
@@ -930,7 +933,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "02500",
@@ -938,7 +941,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "02501",
@@ -946,7 +949,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "02505",
@@ -954,7 +957,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "02529",
@@ -962,7 +965,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "02530",
@@ -970,7 +973,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "02532",
@@ -978,7 +981,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "02533",
@@ -986,7 +989,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "02537",
@@ -994,7 +997,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "02539",
@@ -1002,7 +1005,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "02540",
@@ -1010,7 +1013,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "02541",
@@ -1018,7 +1021,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "02546",
@@ -1026,7 +1029,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "08020",
@@ -1034,7 +1037,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "08029",
@@ -1042,7 +1045,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "08032",
@@ -1050,7 +1053,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "08033",
@@ -1058,7 +1061,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "09526",
@@ -1066,7 +1069,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "13432",
@@ -1074,7 +1077,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "13433",
@@ -1082,7 +1085,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "13436",
@@ -1090,7 +1093,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "13438",
@@ -1098,7 +1101,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "15253",
@@ -1106,7 +1109,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "15255",
@@ -1114,7 +1117,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "15583",
@@ -1122,7 +1125,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "17488",
@@ -1130,7 +1133,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "18807",
@@ -1138,7 +1141,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "18808",
@@ -1154,7 +1157,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "18927",
@@ -1162,7 +1165,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "18929",
@@ -1170,7 +1173,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "18931",
@@ -1178,7 +1181,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "18933",
@@ -1186,7 +1189,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "19529",
@@ -1194,7 +1197,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "19775",
@@ -1202,7 +1205,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "19862",
@@ -1210,7 +1213,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "19863",
@@ -1218,7 +1221,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "19864",
@@ -1226,7 +1229,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "19867",
@@ -1234,7 +1237,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "19874",
@@ -1242,7 +1245,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "19878",
@@ -1250,7 +1253,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "19879",
@@ -1258,7 +1261,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "19890",
@@ -1266,7 +1269,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "30304",
@@ -1274,7 +1277,7 @@
     "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "30306",
@@ -1282,7 +1285,7 @@
     "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "30307",
@@ -1290,7 +1293,7 @@
     "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "32332",
@@ -1298,7 +1301,7 @@
     "award": "A.A- T Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "32354",
@@ -1306,7 +1309,7 @@
     "award": "A.A- T Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "32939",
@@ -1314,7 +1317,7 @@
     "award": "A.A- T Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "37091",
@@ -1322,7 +1325,7 @@
     "award": "Noncredit program",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 95 of 102 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 104 of 110 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    }
   ],
   "yields": [],
@@ -1330,7 +1333,7 @@
   "yield_refused_passing": 0
  },
  "loads": 271,
- "seconds": 1446.3,
+ "seconds": 1424.0,
  "found": 126,
  "by_method": {
   "no_closed_list": 54,
@@ -1341,10 +1344,6 @@
   "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3523&print": [
    "02481",
    "19857"
-  ],
-  "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3551&print": [
-   "02487",
-   "19861"
   ],
   "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3660&print": [
    "02494",
@@ -1357,10 +1356,6 @@
   "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3668&print": [
    "02506",
    "19881"
-  ],
-  "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3639&print": [
-   "02512",
-   "19883"
   ],
   "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3657&print": [
    "02519",
@@ -1377,14 +1372,6 @@
   "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3518&print": [
    "30301",
    "30302"
-  ],
-  "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3697&print": [
-   "38839",
-   "38948"
-  ],
-  "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3729&print": [
-   "43992",
-   "43993"
   ]
  },
  "not_found": [
@@ -1641,10 +1628,61 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/el_camino",
-  "kept": 122,
+  "kept": 117,
   "kept_moved": 0,
-  "programs": 0,
-  "list": [],
+  "programs": 5,
+  "list": [
+   {
+    "control_number": "19861",
+    "title": "Marketing",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3552&print",
+    "coverage": 1.0,
+    "was_url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3551&print",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "19866",
+    "title": "Journalism",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3622&print",
+    "coverage": 1.0,
+    "was_url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3623&print",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "19883",
+    "title": "Photography",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3640&print",
+    "coverage": 1.0,
+    "was_url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3639&print",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "38948",
+    "title": "Entrepreneurial Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3699&print",
+    "coverage": 1.0,
+    "was_url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3697&print",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "43993",
+    "title": "Hybrid, Electric, and Alternative Fuels",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3728&print",
+    "coverage": 1.0,
+    "was_url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3729&print",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   }
+  ],
   "held_worse_window": [],
   "held_no_gain": [
    {
@@ -1668,6 +1706,7 @@
   "only": [
    "19861",
    "19866",
+   "19883",
    "38948",
    "43993"
   ],
@@ -1842,12 +1881,12 @@
    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3523&print"
   },
   "19861": {
-   "sha256": "56f1a0badd39850a37184c85fdc6bbe8acea7ddebe1690daf0095f98120c826c",
-   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3551&print"
+   "sha256": "55731683910dd9679bb79c02f84c319ee37e442bbcdacac1aff4606cbccbb4e3",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3552&print"
   },
   "19866": {
-   "sha256": "8eeeb7808c4a2dd28a39e8662017b8a8af4cf353f9e1c626d6d390f77d9707d5",
-   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3623&print"
+   "sha256": "59d2b9e401724d818f133c606d87ea561ab3479d37040f018f44c647d5aa79e4",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3622&print"
   },
   "19869": {
    "sha256": "759e006ad886fc7666d3b21f31bf9ce2e5e01ba7145369598625db38b9e0d21a",
@@ -1874,8 +1913,8 @@
    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3668&print"
   },
   "19883": {
-   "sha256": "c86a9922da29d3aef4af9de78d81f958c2bda86a4cd93021f8eb8bfdcaf145e8",
-   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3639&print"
+   "sha256": "f0525d09c0c0a80e2f7fe0a3e4892af37bed7a22dba8c53bad3a3e9367f41a72",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3640&print"
   },
   "19884": {
    "sha256": "c7f67b4f90a1c85ccb90a5d6c8e8693e697010ec2a428fc8e9e0268901b8d277",
@@ -2018,8 +2057,8 @@
    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3697&print"
   },
   "38948": {
-   "sha256": "12eaaccc48e9390300a8e260616be8c68093bfaf5f0fcf86095376b9566859ca",
-   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3697&print"
+   "sha256": "78ffb1237c4f19d5fee0c0712210c4f071cce9ccc6a1de01a5145a6376eb2ebb",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3699&print"
   },
   "38949": {
    "sha256": "099ded0038a5c163a665c0ca51175bdbcdcae75a1c0076e55b8857252a57c035",
@@ -2102,8 +2141,8 @@
    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3729&print"
   },
   "43993": {
-   "sha256": "96b99c5d67a8074e14a5bf2a809f5379988e2eb0c1385b219bfb7468461ae5b7",
-   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3729&print"
+   "sha256": "0e654417545dcd980d027ad4ce2e256aa52258e182057677d0321650311cdf53",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3728&print"
   },
   "44035": {
    "sha256": "320c283eb9e9209a392e96c09c160e93fcc63f02f6254088d16872e77dc45f28",
@@ -2202,5 +2241,10 @@
    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=4034&print"
   }
  },
- "run": "45773663927"
+ "staged_from": {
+  "run": "46003498776",
+  "proof": "text sha256 of 126 programs",
+  "pages_loaded": 0
+ },
+ "run": "46007782666"
 }

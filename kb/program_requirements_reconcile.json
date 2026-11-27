@@ -23,7 +23,8 @@
   "heading_above_code": "a PDF catalog that prints a program's heading on the lines above its control number's line (Los Angeles City, S639: title, award and 'Major Units: 39  T otal Units: Minimum of 60' above '(State Code: 02718; ...)'): the capture's cut at the control number's line keeps up to `lines` lines above it, never a line `stop` names (the running header) and never a line naming a listed course, so the reconcile steps see the heading and the codes found stay the same (kb/_program_requirements_college.py heading_above)",
   "pdf_pages": "a PDF catalog whose picker takes a program to another page than its own (Cosumnes River, S650: Psychology AA-T 30566 to a page naming it as another degree, History AA-T 33072 to the Cal-GETC pattern page): {control number: {page, words, evidence}}, the program's own PDF page (1-based) and the words its filed capture opened on there. The capture reads the program from the start of the line carrying the words (kb/_program_requirements_college.py pdf_pinned_heading), only while the page prints them and every title word; a refused pin is filed in the capture (pdf.pinned), the program gets no fresh text, and its filed record stands. Per program and per college, never a pattern over free catalog text (p-gate-free-text-reading-per-college-s644). Optional fields: through, the last page of a section that runs across a page break (S703); until, the words the next section opens on, where the window ends, cut exactly at both ends (S714); printed_title, the title as the catalog prints it where it drops words of the state's, for the title check (S714)",
   "site_pages": "a site catalog whose picker hands a program a sister award's page or its department's landing page (San Bernardino Valley's CourseLeaf certificates, S720): {control number: {url, evidence}}, the program's own page. The capture reads the page whether or not its listing named it, and binds it only while the page's h1 prints the program's title with its award and the page is a candidate for the program on its own (kb/_program_requirements_college.py site_pinned); a refused pin is filed in the capture (site_pins), the program is read from no page, and its filed record stands. It moves no other program. Per program and per college",
-  "printed_total": "a heading's range whose low end is a test-out, beside a printed total that is its top (Moreno Valley 38758, S674): pattern's lo, hi and total; the record's total_units becomes the total only where it holds exactly lo-hi, the page prints the step's requires words, total equals hi, and the record's blocks are all rule-all with fixed stated figures summing to the total. The one step that replaces a filled figure"
+  "printed_total": "a heading's range whose low end is a test-out, beside a printed total that is its top (Moreno Valley 38758, S674): pattern's lo, hi and total; the record's total_units becomes the total only where it holds exactly lo-hi, the page prints the step's requires words, total equals hi, and the record's blocks are all rule-all with fixed stated figures summing to the total. The one step that replaces a filled figure",
+  "recommended_counts": "a list a degree page heads 'Recommended' and counts (Cabrillo, S742: under the award's 'Complete the following number of credits: 60' each 'Recommended Major Requirements' or 'Recommended Major Electives' list, and each sub-list under one, prints its own 'Complete the following number of credits: N'): pattern's name, min and max read each such line; a list the reading filed as rule 'recommended' becomes choose_units at its stated figure, only where every recommended list of the record states a figure and the page prints that list's name with that very figure, as many times as the record holds it (all or none), and only where today's scorer then reads the record's units equal to its printed total (a list the page prints a figure for and does not count leaves the record as read); a college's own step on its own pages' evidence, never a statewide one; hold names records the step never touches"
  },
  "colleges": {
   "College of the Sequoias": {
@@ -298,6 +299,20 @@
      "read": "college-page-read run 45768981024 (kb/college_reads/cuyamaca_university_studies_s739.json)",
      "source_words": "University Studies: Communication and Language Arts 18634: 'Requirements', 'Complete 60 transferable units', 'CSU or UC transferable units', 'Complete 34 units of transfer general education as required for Cal-GETC', 'Choose a minimum of 18 units'",
      "why": "Each page prints, under 'Requirements': 'Complete 60 transferable units', 'CSU or UC transferable units', 'California General Education Transfer Curriculum (Cal-GETC)', 'Complete 34 units of transfer general education as required for Cal-GETC (see Degree Requirements section of catalog)', 'Choose a minimum of 18 units' and 'Students must complete a minimum of three units in Communication, and three units Language Arts. The remaining twelve units may be taken from either category.' (college page read 45768981024, kb/college_reads/cuyamaca_university_studies_s739.json, the four pages read as the capture reads them; the same lines on each). The page names 34 and 18 of the 60 and no elective line: the 60 is the count of transferable units the degree asks a student to complete, which any CSU or UC transferable units make up, so it is read as the degree's floor (degree_total_minimum; Cerritos's and San Joaquin Delta's steps, S415, and Redwoods's, S608). Each reading's notes quote 'Complete 60 transferable units' and say the page prints no electives line, which is why it left electives_fill_degree false (plan s731p's holds). The step sets the flag on a local degree that already holds a degree total, where the page prints the words. Self-recall over every committed Cuyamaca record (tests/program_reconcile_s741_cuyamaca_test.py): with the words on every page the flag lands on those four degrees alone, each then passes, and no passing record turns failing. In a reconcile run the flag reaches 18634, 18635 and 18636: 18637's filed record was read from Grossmont's page, another address than the capture now names for it, so the moved-page guard leaves it as filed until a read of its own page. Reversible by deleting this entry."
+    },
+    {
+     "kind": "set",
+     "field": "electives_fill_words",
+     "value": "CSU or UC transferable units",
+     "awards": "local",
+     "only_with": [
+      "degree_total",
+      "electives_fill_degree"
+     ],
+     "pattern": "Complete\\s+60\\s+transferable\\s+units\\s+CSU\\s+or\\s+UC\\s+transferable\\s+units\\b",
+     "read": "college-page-read run 45768981024 (kb/college_reads/cuyamaca_university_studies_s739.json)",
+     "source_words": "University Studies: Social and Behavioral Sciences 18637: 'Requirements', 'Complete 60 transferable units', 'CSU or UC transferable units', 'Complete 34 units of transfer general education as required for Cal-GETC', 'Choose a minimum of 18 units'",
+     "why": "S742 (lane 1, readers). Paid read 46003456131 read 18637 from its own Cuyamaca page (92 of its 92 listed courses; the filed record had come from Grossmont's page). Its major pools to the printed 18 and the step above reads the 60 as the degree's floor, and it still failed: this reading took the page's line 'CSU or UC transferable units', printed under 'Complete 60 transferable units', as the transferable units that fill the rest of the 60 (electives_fill_degree true; its note says so), where the readings of 18634, 18635 and 18636 left the flag false. The scorer's electives guard asks the catalog text for the word 'electives' or for the catalog's own sentence filed as electives_fill_words, and it runs ahead of the floor. The page's sentence is those two lines: the 60 are transferable units, 34 of them Cal-GETC and 18 the area of emphasis, and CSU or UC transferable units make up the rest. The step files the page's own words, 'CSU or UC transferable units', only where the page prints them directly under 'Complete 60 transferable units', on a local degree that holds a degree total and already reads electives as filling it; a record that leaves electives_fill_degree false takes nothing (18634, 18635, 18636 pass by the floor alone, as before). The guard then counts the words only where the record's own text prints them. Self-recall over every committed Cuyamaca record (tests/program_reconcile_s741_cuyamaca_test.py): with both lines on every page the words land on 18637 alone, it turns passing, and no passing record turns failing. Reversible by deleting this step."
     }
    ]
   },
@@ -1008,6 +1023,11 @@
      "only_with": "total_units",
      "pattern": "General electives: any transferable or degree applicable course\\.?\\s*(?P<min>\\d+(?:\\.\\d+)?)",
      "skip_if_equal": "open_elective_units"
+    },
+    {
+     "kind": "recommended_counts",
+     "pattern": "(?P<name>[^\\n\\u00b7]{1,80}?)[\\s\\u00b7]+Complete the following number of credits:\\s*(?P<min>\\d+(?:\\.\\d+)?)(?:\\s*-\\s*(?P<max>\\d+(?:\\.\\d+)?))?",
+     "why": "S742 (lane 2's cheap piles): Dance A.A. 06352, Geology A.S. 06380, Psychology A.A. 06381 and Exercise and Sports Science A.A. 44992 head every list 'Recommended', and the reading filed each as rule 'recommended', which adds nothing, so each degree read as general education alone (24 to 33 units under the printed 60). College page read 46001469210 (kb/college_reads/s742_piles_cabrillo_recommended.json, each page's own content call) prints how the page counts them: 'Psychology - Associate in Arts (A.A.)', 'Complete the following number of credits: 60', 'Cabrillo College General Education 24', 'Recommended Major Requirements', 'Complete the following number of credits: 3', 'Recommended Major Requirements', 'Complete the following number of credits: 3-5', 'Recommended Major Requirements', 'Complete the following number of credits: 9-10', 'Recommended Major Electives', 'Complete the following number of credits: 9', 'General electives: any transferable or degree applicable course. 9 - 12' (24 and 24-27 and 9-12 hold the 60); Geology the same with 13, 8 and 9 and 'General electives ... 6' (24, 30 and 6 are the 60). The page's prose says the lists are 'courses recommended by the department that can be used to meet major requirements for this degree': which courses is the student's choice, and the credits are not. Self-recall on held answers: 23 passing Cabrillo degrees carry 'Recommended' lists the reading already counted; each re-read as units to choose at its printed figure still passes (right 23, wrong 0). The pattern reads any heading the page follows with that line, since a list's sub-lists carry it too (Dance's 'Recommended Major Electives', 10, over 'Biology' 4, 'Theatre' 3 and 'Music Appreciation' 3, each filed as a recommended list); only a list the record holds as rule 'recommended' under that name with that figure is read. Of the college's nine records with a recommended-rule list the step reads these four (every list states its figure); 06345 and 09600 hold a list with no figure and stay as read, and three are certificates the college's steps never read."
     }
    ]
   },
@@ -3738,7 +3758,8 @@
     "CIS24A": "ComputerInfo",
     "KINPE23": "KINPE 2",
     "KINPE41": "KINPE 4",
-    "KINPE56": "KINPE 009B"
+    "KINPE56": "KINPE 009B",
+    "JOURN138": "JournalismJO"
    },
    "course_renumbers_cited": [
     {
@@ -3840,6 +3861,16 @@
      "session": "S740",
      "date": "2026-11-26",
      "evidence": "The state's file lists control number CCC000529719 in Kinesiology certificate 39391 as 'KinesiologyW Beginning Weight Training'; the state's course list names that control number KINPE 009B (in 32260 the file carries the number under two titles, Beginning Weight Training and Intermediate Badminton). the college's fall 2025 course record (kb/reference/cb_course_basic_fall2025.csv) names the control number KINPE-056 Beginning Weight Training, 1 unit, and the certificate's page prints 'KINPE 056 · Beginning Weight Training · 1' and no KINPE 009B (college-page-read run 45835049303)."
+    },
+    {
+     "printed": "JOURN138",
+     "file": "JournalismJO",
+     "title": "Work Experience",
+     "units": 3,
+     "session": "S742",
+     "date": "2026-11-27",
+     "catalog_sources": ["college_page_read"],
+     "evidence": "The state's file lists control number CCC000438429 at San Jose City as 'JournalismJO Work Experience', a subject name cut short where a code belongs, in one program, Law, Public Policy, and Society A.A.-T 38499; the state's course list names every other 'JournalismJO' row of the college by its code (JOURN 150 for 'Introduction to Public Relations' in 38499), so in every program's list the name stands for this one control number. The program's own page prints 'JOURN 138 · Work Experience · 3' in List A, beside 'JOURN 150 · Introduction to Public Relations · 3' and 'WE 088A · General Work Experience · 3' (college-page-read run 46008386875, the page's table rows): the one title the page and the file both print, under the subject the cut-off name spells. The record's own note (read 43357106423): 'matched by title to catalog JOURN 138'. The college's fall 2025 course record does not hold the control number, which is why S740 left the name out. Over the college's 83 records the pair moves 38499 alone, from failing coverage and invented to passing (tests/program_renumbers_s742_sjcc_test.py)."
     }
    ]
   },
@@ -3900,6 +3931,17 @@
      "evidence": "The 2026-27 catalog prints 'SOCI 075 Introduction to Sociology of Sport 3.0 Units' and ends its description '(Formerly SOC 075)' (college-page-read run 45835049303 (kb/college_reads/s740_reconcile_solano_pages.json), PDF page 430); the state's file lists SOC075 Introduction to Sociology of Sport (CCC000502742)."
     }
    ]
+  },
+  "Coastline Community College": {
+   "why": "S742 (lane 1, readers): no reconcile step; the entry names one program's own page (site_pages).",
+   "steps": [],
+   "site_pages_why": "S742: the state's file lists two Communication Studies transfer degrees at Coastline, the legacy 'Communication Studies' (33014) and 'Communications Studies 2.0' (43057), and the 2026-27 catalog prints one page, headed 'Communication Studies 2.0, Associate in Arts Degree for Transfer'. The capture gave that page to the legacy degree, whose title its heading prints in full, and left 43057 on the department's landing page, where its record placed none of its courses (S739's hold: the title rule binds legacy 33014). 43057 is pinned to the 2.0 page. The pin binds through the plural reading of a pin's heading (kb/_program_requirements_college.py site_heading_plural: the state's 'Communications', the page's 'Communication', both titles carrying 2.0), and only where the capture reads that page; a refused pin reads the program from no page. The pin moves 43057 alone: the legacy degree's filed record stays as filed. Reversible by deleting this entry.",
+   "site_pages": {
+    "43057": {
+     "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/communication-studies/communication-studies-2-aat/",
+     "evidence": "Communications Studies 2.0 A.A.-T 43057: the page titled 'Communication Studies 2.0, Associate in Arts Degree for Transfer < Coastline College' (the filed capture 45777312083, kb/program_requirements_college/coastline_community/sources.json). The list read from it (records/33014.json: Required Courses CMST C100 and COMM C1000; List A, three of CMST C140, CMST C150, CMST C220 and DMC C100; List B, one of ANTH C100, CMST C101, PSYC C1000 and SOC C100; 18 units) holds all nine courses the state lists for 43057 and nine of the ten it lists for the legacy 33014 (ENGL C1001 is not on the page). The capture read 43057 from the pathway's landing page, where the award appears only as a navigation link (its filed record's own note)."
+    }
+   }
   }
  }
 }

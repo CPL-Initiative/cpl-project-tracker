@@ -66,7 +66,11 @@ check(sum(1 for b in f["record"]["blocks"] if not b.get("courses")) == 5
       and f["score"]["arithmetic"]["status"] == "incomplete" and any("Read in 2 parts" in x for x in B.notes(f))
       and not f["score"].get("gaps") and NG.units_within_printed_range(f) is None,
       "45357: read in two parts, five of its lists hold no course, its arithmetic is incomplete, and it carries no gap")
+# S742's plan s742a files 08464 as lists_not_closed (the page's own sentence from a page read, its run proved by the
+# conductor's live read): no gap and no proved live run as s740a left it, or that kind alone.
 f = W.load("08464")
-check(not f["score"].get("gaps") and not W.on_live_run(f), "08464: on no proved live run, and it carries no gap")
+kinds = [x["gap"] for x in f["score"].get("gaps") or []]
+check((not kinds and not W.on_live_run(f)) or kinds == ["lists_not_closed"],
+      "08464: on no proved live run with no gap, or S742's lists_not_closed alone")
 
 sys.exit(t.done())

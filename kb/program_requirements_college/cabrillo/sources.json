@@ -152,7 +152,8 @@
     "title": 1.0,
     "section": "as",
     "section_line": "general business - associate in science (a.s.)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 18,
@@ -199,7 +200,8 @@
     "title": 1.0,
     "section": "as",
     "section_line": "accounting - associate in science (a.s.)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 22,
@@ -244,7 +246,8 @@
     "title": 1.0,
     "section": "as",
     "section_line": "computer applications/business technology - associate in science (a.s.)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 20,
@@ -334,7 +337,8 @@
     "title": 1.0,
     "section": "as",
     "section_line": "engineering - associate in science (a.s.)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 18,
@@ -373,7 +377,8 @@
     "title": 1.0,
     "section": "as",
     "section_line": "engineering technology - associate in science (a.s.)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 14,
@@ -492,7 +497,8 @@
     "title": 1.0,
     "section": "aa",
     "section_line": "music - associate in arts (a.a.)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 54,
@@ -595,7 +601,8 @@
     "title": 1.0,
     "section": "aa",
     "section_line": "dance - associate in arts (a.a.)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 38,
@@ -919,7 +926,8 @@
     "title": 1.0,
     "section": "aa",
     "section_line": "communication studies - associate in arts (a.a.)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 18,
@@ -960,7 +968,8 @@
     "title": 1.0,
     "section": "aa",
     "section_line": "philosophy - associate in arts (a.a.)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 16,
@@ -1129,7 +1138,8 @@
     "title": 1.0,
     "section": "as",
     "section_line": "geology - associate in science (a.s.)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 28,
@@ -1169,7 +1179,8 @@
     "title": 1.0,
     "section": "aa",
     "section_line": "psychology - associate in arts (a.a.)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 15,
@@ -1223,7 +1234,8 @@
     "title": 1.0,
     "section": "as",
     "section_line": "early childhood education - associate in science (a.s.)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 29,
@@ -1275,7 +1287,8 @@
     "title": 1.0,
     "section": "as",
     "section_line": "fire technology - associate in science (a.s.)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 27,
@@ -1473,7 +1486,8 @@
     "title": 1.0,
     "section": "aa",
     "section_line": "geography - associate in arts (a.a.)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 19,
@@ -1594,7 +1608,8 @@
     "title": 1.0,
     "section": "as",
     "section_line": "culinary arts and hospitality management - associate in science (a.s.)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 12,
@@ -1653,7 +1668,8 @@
     "title": 1.0,
     "section": "as",
     "section_line": "construction management - associate in science (a.s.)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 34,
@@ -1683,7 +1699,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "greenhouse and nursery management certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 5,
@@ -1721,7 +1738,8 @@
     "title": 1.0,
     "section": "as",
     "section_line": "landscape horticulture - associate in science (a.s.)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 14,
@@ -1759,7 +1777,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "landscape horticulture certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 13,
@@ -1798,7 +1817,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "administrative support certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 14,
@@ -1896,7 +1916,8 @@
     "title": 1.0,
     "section": "as",
     "section_line": "building inspection and construction codes - associate in science (a.s.)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 29,
@@ -1932,7 +1953,8 @@
     "title": 1.0,
     "section": "as",
     "section_line": "medical assisting - associate in science (a.s.)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 11,
@@ -2269,7 +2291,8 @@
     "title": 1.0,
     "section": "as",
     "section_line": "human services - associate in science (a.s.)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 34,
@@ -2324,7 +2347,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "early childhood education administration certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 32,
@@ -2363,7 +2387,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "infant/toddler care certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 17,
@@ -2400,7 +2425,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "working with culturally diverse families certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 12,
@@ -2439,7 +2465,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "anti-bias curriculum certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 14,
@@ -2487,7 +2514,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "curriculum planning certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 23,
@@ -2526,7 +2554,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "children's literacy curriculum certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 14,
@@ -2579,7 +2608,8 @@
     "title": 1.0,
     "section": "as",
     "section_line": "computer support - associate in science (a.s.)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 28,
@@ -2622,7 +2652,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "computer programming certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 18,
@@ -2652,7 +2683,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "java programming certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 5,
@@ -2682,7 +2714,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "c++ programming certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 5,
@@ -2722,7 +2755,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "bilingual spanish english teaching certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 16,
@@ -2757,7 +2791,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "general business certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 12,
@@ -2797,7 +2832,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "accounting certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 15,
@@ -2839,7 +2875,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "computer applications/business technology certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 17,
@@ -2932,7 +2969,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "computer support certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 9,
@@ -2969,7 +3007,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "engineering technology certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 14,
@@ -3029,7 +3068,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "construction management certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 37,
@@ -3068,7 +3108,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "building inspection and construction codes certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 14,
@@ -3106,7 +3147,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "medical assisting certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 13,
@@ -3159,7 +3201,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "teaching certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 28,
@@ -3195,7 +3238,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "culinary arts and hospitality management certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 13,
@@ -3239,7 +3283,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "human services certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 21,
@@ -3274,7 +3319,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "mathematics 2.0 associate in science for transfer (a.s.-t)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 17,
@@ -3320,7 +3366,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "sociology associate in arts for transfer (a.a.-t)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 21,
@@ -3528,7 +3575,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "kinesiology associate in arts for transfer (a.a.-t)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 85,
@@ -3573,7 +3621,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "psychology associate in arts for transfer (a.a.-t)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 20,
@@ -3604,7 +3653,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "physics associate in science for transfer (a.s.-t)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 6,
@@ -3647,7 +3697,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "administration of justice associate in science for transfer (a.s.-t)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 18,
@@ -3731,7 +3782,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "theatre arts associate in arts for transfer (a.a.-t)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 8,
@@ -3960,7 +4012,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "music associate in arts for transfer (a.a.-t)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 18,
@@ -4049,7 +4102,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "geography associate in arts for transfer (a.a.-t)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 15,
@@ -4083,7 +4137,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "philosophy associate in arts for transfer (a.a.-t)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 9,
@@ -4119,7 +4174,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "energy management certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 14,
@@ -4177,7 +4233,8 @@
     "title": 1.0,
     "section": "as",
     "section_line": "energy management - associate in science (a.s.)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 33,
@@ -4242,7 +4299,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "anthropology associate in arts for transfer (a.a.-t)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 40,
@@ -4334,7 +4392,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "geology associate in science for transfer (a.s.-t)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 6,
@@ -4474,7 +4533,8 @@
     "title": 1.0,
     "section": "as",
     "section_line": "music technology and recording arts - associate in science (a.s.)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 50,
@@ -4508,7 +4568,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "biology associate in science for transfer (a.s.-t)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 9,
@@ -4535,7 +4596,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "digital literacy certificate of competency",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -4562,7 +4624,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "advanced english fluency certificate of competency",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -4631,7 +4694,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "intermediate english fluency certificate of competency",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -4668,7 +4732,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "business information worker certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 12,
@@ -4732,7 +4797,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "beginning technology skills certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -4783,7 +4849,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "basic kitchen skills certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -4872,7 +4939,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "advanced academic english language skills certificate of competency",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -4899,7 +4967,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "intermediate academic english language skills certificate of competency",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -4938,7 +5007,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "biology laboratory and research skills certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -5012,7 +5082,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "communication studies certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 9,
@@ -5056,7 +5127,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "community health worker certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 19,
@@ -5213,7 +5285,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "latin american and latino/a studies certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 29,
@@ -5243,7 +5316,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "fundamentals of sports medicine athletic training certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 5,
@@ -5272,7 +5346,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "technical theatre certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 4,
@@ -5302,7 +5377,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "magnetic resonance imaging certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 5,
@@ -5329,7 +5405,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "lifeguard professional certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -5375,7 +5452,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "personal trainer certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 21,
@@ -5402,7 +5480,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "strategic job preparation certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -5429,7 +5508,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "professional workplace skills certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -5458,7 +5538,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "computed tomography certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 4,
@@ -5485,7 +5566,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "english for careers certificate of competency",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -5517,7 +5599,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "human relations and resources certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 9,
@@ -5547,7 +5630,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "business information worker level ii certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 5,
@@ -5579,7 +5663,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "entrepreneurship and small business certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 7,
@@ -5612,7 +5697,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "office software certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 8,
@@ -5642,7 +5728,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "biotechnology certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 5,
@@ -5669,7 +5756,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "global citizen certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -5700,7 +5788,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "customer relationship management (crm) certificate of achievement",
-    "section_fit": 0.75
+    "section_fit": 0.75,
+    "exact": 0
    }
   },
   "listed": 6,
@@ -5731,7 +5820,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "payroll accounting certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 6,
@@ -5764,7 +5854,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "musical theatre certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 8,
@@ -5794,7 +5885,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "tax preparation certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 5,
@@ -5858,7 +5950,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "sustainability certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 39,
@@ -5884,7 +5977,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "community health worker certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 1,
@@ -5911,7 +6005,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "computer lab support assistant certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -5947,7 +6042,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "image use in professional settings certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 11,
@@ -5978,7 +6074,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "video certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 6,
@@ -6010,7 +6107,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "historical and alternative photographic processes certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 7,
@@ -6039,7 +6137,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "traditional black and white photography certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 4,
@@ -6066,7 +6165,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "american english pronunciation certificate of competency",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -6176,7 +6276,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "cpa exam preparation certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 11,
@@ -6203,7 +6304,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "basic photoshop for photography certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -6230,7 +6332,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "industry exam preparation certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -6258,7 +6361,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "ccna exam preparation certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 3,
@@ -6293,7 +6397,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "entry level baking certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 10,
@@ -6324,7 +6429,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "entry level cook certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 6,
@@ -6360,7 +6466,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "entry level restaurant preparation certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 11,
@@ -6394,7 +6501,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "entry level catering certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 9,
@@ -6562,7 +6670,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "bookkeeping certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 10,
@@ -6603,7 +6712,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "drug and alcohol studies certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 16,
@@ -6657,7 +6767,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "a+ certification preparation certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -6684,7 +6795,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "google it support certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -6711,7 +6823,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "art and maker entrepreneurship online certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 3,
@@ -6738,7 +6851,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "foundations of teamwork certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -6765,7 +6879,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "de-escalation: verbal communication and self-defense certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -6815,7 +6930,8 @@
     "title": 1.0,
     "section": "as",
     "section_line": "information technology - associate in science (a.s.)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 26,
@@ -6857,7 +6973,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "general horticulture and crop production certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 17,
@@ -6892,7 +7009,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "human services general practice certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 10,
@@ -6923,7 +7041,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "building performance and energy management certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 7,
@@ -6953,7 +7072,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "entry level building inspection and construction codes certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 5,
@@ -6981,7 +7101,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "user interface and user experience (ui/ux) certificate of achievement",
-    "section_fit": 0.6
+    "section_fit": 0.6,
+    "exact": 0
    }
   },
   "listed": 3,
@@ -7035,7 +7156,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "cybercamp certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 3,
@@ -7062,7 +7184,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "accounting for payroll certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -7089,7 +7212,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "advanced photography and visual media certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -7116,7 +7240,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "basic office skills i certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -7143,7 +7268,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "basic office skills ii certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -7170,7 +7296,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "medical assisting administrative exam preparation certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -7197,7 +7324,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "public safety career preparation certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -7224,7 +7352,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "public safety reports, evidence, and testimony certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -7251,7 +7380,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "mushroom cultivation certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -7278,7 +7408,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "portrait photography certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -7305,7 +7436,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "medical assisting clinical exam preparation certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -7336,7 +7468,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "construction business management certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 6,
@@ -7366,7 +7499,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "construction project management certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 5,
@@ -7393,7 +7527,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "podcasting certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -7423,7 +7558,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "construction plumbing and mechanical inspection and codes certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 5,
@@ -7454,7 +7590,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "arboriculture certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 6,
@@ -7484,7 +7621,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "permaculture certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 5,
@@ -7513,7 +7651,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "web design certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 4,
@@ -7546,7 +7685,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "landscape design certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 8,
@@ -7573,7 +7713,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "sustainable construction and blueprint reading certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -7600,7 +7741,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "entry level construction skills certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -7627,7 +7769,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "introduction to infant/toddler development certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -7659,7 +7802,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "entry level construction and energy management skills certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 7,
@@ -7688,7 +7832,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "graphic design certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 4,
@@ -7772,7 +7917,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "digital imaging certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 7,
@@ -7801,7 +7947,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "typography certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 4,
@@ -7828,7 +7975,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "accounting for quickbooks certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -7916,7 +8064,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "game audio production certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -7943,7 +8092,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "food presentation and photography certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -7970,7 +8120,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "cybersecurity competitions i certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -7997,7 +8148,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "cybersecurity competitions ii certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -8024,7 +8176,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "tutor preparation certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -8063,7 +8216,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "cybersecurity competitions iii certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -8114,7 +8268,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "jazz studies certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 14,
@@ -8156,7 +8311,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "voice certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 17,
@@ -8192,7 +8348,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "digital music production certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 11,
@@ -8228,7 +8385,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "audio recording and mixing certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 11,
@@ -8265,7 +8423,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "game audio production certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 12,
@@ -8292,7 +8451,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "basic construction certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -8319,7 +8479,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "family development worker certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -8346,7 +8507,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "introduction to child development certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -8376,7 +8538,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "phlebotomy technician certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 5,
@@ -8403,7 +8566,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "small business certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -8439,7 +8603,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "computer-aided drafting and design certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 11,
@@ -8466,7 +8631,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "stem teaching assistant preparation certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -8498,7 +8664,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "cinema arts studies certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 7,
@@ -8530,7 +8697,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "3d animation and rendering certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 7,
@@ -8566,7 +8734,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "architecture drafting and design certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 11,
@@ -8601,7 +8770,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "wine studies certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 10,
@@ -8644,7 +8814,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "digital illustration certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 6,
@@ -8724,7 +8895,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "accessible design and creation certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 3,
@@ -8766,7 +8938,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "latin american music certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 17,
@@ -8793,7 +8966,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "audio recording and mixing certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -8820,7 +8994,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "digital music production certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -8847,7 +9022,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "creative careers certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -8897,7 +9073,8 @@
     "title": 1.0,
     "section": "as",
     "section_line": "wine studies - associate in science (a.s.)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 25,
@@ -8924,7 +9101,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "black and white technical photography certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -8952,7 +9130,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "mexican mariachi and banda ensemble certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 3,
@@ -9013,7 +9192,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "piano certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 10,
@@ -9040,7 +9220,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "introduction to ui/ux design certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -9096,7 +9277,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "intercollegiate athletics certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 31,
@@ -9125,7 +9307,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "global wines certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 4,
@@ -9166,7 +9349,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "marine science certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 16,
@@ -9193,7 +9377,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "art studio digital fabrication certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -9220,7 +9405,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "heat-pump systems certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -9248,7 +9434,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "basic technical photography certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 3,
@@ -9275,7 +9462,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "master tutor certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -9304,7 +9492,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "photography skills for marketing and outreach certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 4,
@@ -9408,7 +9597,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "coaching certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 79,
@@ -9435,7 +9625,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "marketing and promotion certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -9470,7 +9661,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "early childhood education for elementary teaching certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 10,
@@ -9503,7 +9695,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "early childhood education for teaching transitional kindergarten certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 8,
@@ -9569,7 +9762,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "e-commerce certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 3,
@@ -9596,7 +9790,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "wordpress web design and development certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -9623,7 +9818,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "web design and development certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -9650,7 +9846,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "motion graphics certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -9677,7 +9874,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "photography technician certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -9705,7 +9903,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "video certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 3,
@@ -9736,7 +9935,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "wildland firefighter certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 6,
@@ -9764,7 +9964,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "firefighter academy certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 3,
@@ -9793,7 +9994,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "emergency medical technician (emt) certificate of achievement",
-    "section_fit": 0.75
+    "section_fit": 0.75,
+    "exact": 0
    }
   },
   "listed": 4,
@@ -9825,7 +10027,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "game and interactive media design certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 7,
@@ -9872,7 +10075,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "film, television, and electronic media associate in science for transfer (a.s.-t)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 22,
@@ -9901,7 +10105,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "basic welding certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 4,
@@ -9933,7 +10138,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "advanced sports medicine and athletic training certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 7,
@@ -9966,7 +10172,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "advanced welding certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 8,
@@ -9995,7 +10202,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "information technology (it) institute pre-apprentice certificate of achievement",
-    "section_fit": 0.833
+    "section_fit": 0.833,
+    "exact": 0
    }
   },
   "listed": 4,
@@ -10040,7 +10248,8 @@
     "title": 1.0,
     "section": "aa",
     "section_line": "exercise and sports science - associate in arts (a.a.)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 20,
@@ -10110,7 +10319,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "emergency medical responder certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -10159,7 +10369,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "public health associate in science for transfer (a.s.-t)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 24,
@@ -10247,7 +10458,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "networking certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 10,
@@ -10279,7 +10491,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "cloud computing certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 7,
@@ -10311,7 +10524,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "information technology (it) support apprentice certificate of achievement",
-    "section_fit": 0.8
+    "section_fit": 0.8,
+    "exact": 0
    }
   },
   "listed": 7,
@@ -10342,7 +10556,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "computer information systems foundations certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 6,
@@ -10377,7 +10592,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "information security certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 10,
@@ -10404,7 +10620,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "early childhood education professional pathways certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -10436,7 +10653,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "operating systems certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 7,
@@ -10473,7 +10691,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "video certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 12,
@@ -10511,7 +10730,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "mathematics 2.0 associate in science for transfer (a.s.-t)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 13,
@@ -10538,7 +10758,8 @@
     "title": 1.0,
     "section": "noncredit",
     "section_line": "certified nursing assistant certificate of completion",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 2,
@@ -10697,7 +10918,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "intercultural competency and global awareness certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 75,
@@ -10753,7 +10975,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "python programming certificate of achievement",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 5,

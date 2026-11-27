@@ -1,0 +1,19 @@
+{
+ "_readme": "S742 lane 1 (keys): San Jose City College, five program pages read as the capture reads each (capture_view), free, no model call, nothing written. Law, Public Policy, and Society A.A.-T 38499: the line that prints JOURN 138 and its title, for the state's one unnamed row 'JournalismJO Work Experience' (CCC000438429). Liberal Arts: Arts & Humanities 18449, Graphic Design 41533, User Experience and Interaction Design 42682 and Motion Graphic Design 44388: each CGID course's line and title, for the state's thirteen rows named 'ComputerGrap' and its DMA 1.",
+ "college": "San Jose City College",
+ "questions": {
+  "course_lines": "Which line prints each JOURN and CGID course, with which title and units?"
+ },
+ "keywords": [
+  "JOURN\\s+\\d+[A-Z]?[^\\n]{0,90}",
+  "CGID\\s+\\d+[A-Z]?[^\\n]{0,90}",
+  "[Ww]ork [Ee]xperience[^\\n]{0,60}"
+ ],
+ "pages": [
+  {"answers": ["course_lines"], "why": "38499", "url": "https://catalog.sjcc.edu/degrees-certificates/administration-justice/law-public-policy-society-associate-arts-transfer/", "capture_view": true},
+  {"answers": ["course_lines"], "why": "18449", "url": "https://catalog.sjcc.edu/degrees-certificates/counseling/liberal-arts-arts-humanities-associate-arts/", "capture_view": true},
+  {"answers": ["course_lines"], "why": "41533", "url": "https://catalog.sjcc.edu/degrees-certificates/digital-media-arts/graphic-design-associate-arts/", "capture_view": true},
+  {"answers": ["course_lines"], "why": "42682", "url": "https://catalog.sjcc.edu/degrees-certificates/digital-media-arts/user-experience-interaction-design-associate-science/", "capture_view": true},
+  {"answers": ["course_lines"], "why": "44388", "url": "https://catalog.sjcc.edu/degrees-certificates/digital-media-arts/motion-graphic-design-associate20in20science/", "capture_view": true}
+ ]
+}

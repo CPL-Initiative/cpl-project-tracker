@@ -1,7 +1,7 @@
 {
  "college": "Cuyamaca College",
- "run": "45966682528",
- "written": "2026-11-27T08:54:49Z",
+ "run": "46003456131",
+ "written": "2026-11-27T13:48:19Z",
  "rule": "a checked live row restores, or is held where the base files none; then own program (a heading sharing a title word, or a generic heading on a page the address or the capture shows is the program's own; then heading_award_check), where a failing re-read is restored, or held where the base files none or the live row already holds this run; then a live row holding this run keeps its record and names no dispatch; then a supplied live run other than the filed record's is held for a person; then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one (d-reread-keep-the-better-s683; COBIx on #3544 and #3547)",
  "checked": [],
  "live_runs": {
@@ -67,9 +67,9 @@
   "18631": "44752892297",
   "18632": "44752892297",
   "18633": "38748833332",
-  "18634": "44752892297",
-  "18635": "44752892297",
-  "18636": "44752892297",
+  "18634": "45966682528",
+  "18635": "45966682528",
+  "18636": "45966682528",
   "18637": "38748833332",
   "18779": "38748833332",
   "21055": "38748833332",
@@ -185,26 +185,22 @@
   "46530": "44752892297",
   "46552": "38748833332"
  },
- "live_read_at": "2026-11-27T08:36:20Z",
+ "live_read_at": "2026-11-27T12:46:52Z",
  "dispatch": [
   {
    "workflow": "program-requirements-college.yml",
-   "ref": "claude/s741-keys",
+   "ref": "claude/s742-readers",
    "inputs": {
     "college": "Cuyamaca College",
     "step": "reread",
-    "force": "45966682528"
+    "force": "46003456131"
    },
-   "posts": 3,
+   "posts": 1,
    "control_numbers": [
-    "18634",
-    "18635",
-    "18636"
+    "18637"
    ],
    "not_live_at_run": [
-    "18634",
-    "18635",
-    "18636"
+    "18637"
    ]
   }
  ],
@@ -227,11 +223,16 @@
    "35872",
    "44093",
    "46530"
+  ],
+  "45966682528": [
+   "18634",
+   "18635",
+   "18636"
   ]
  },
  "counts": {
-  "reread": 3,
-  "kept": 3,
+  "reread": 1,
+  "kept": 1,
   "restored": 0,
   "restored_filed_pass": 0,
   "restored_not_own_program": 0,
@@ -240,7 +241,7 @@
   "held_live_run": 0,
   "new": 0,
   "already_live": 0,
-  "kept_on_own_page": 0,
+  "kept_on_own_page": 1,
   "plain_reread_would_lose_pass": 0,
   "kept_by_extraction_guard": 0,
   "run_places_none_after": 0,
@@ -1174,6 +1175,70 @@
      "plain_reread_loses_pass": false,
      "outcome": "kept",
      "why": "the re-read holds score.pass and the filed record does not"
+    }
+   ]
+  },
+  "46003456131": {
+   "base": "origin/main",
+   "base_sha": "3502e99c851d9bb92e10959fd84c0aa12566dc24",
+   "decided": "2026-11-27T13:48:19Z",
+   "counts": {
+    "reread": 1,
+    "kept": 1,
+    "restored": 0,
+    "restored_filed_pass": 0,
+    "restored_not_own_program": 0,
+    "held_for_person": 0,
+    "held_checked": 0,
+    "held_live_run": 0,
+    "new": 0,
+    "already_live": 0,
+    "kept_on_own_page": 1,
+    "plain_reread_would_lose_pass": 0,
+    "kept_by_extraction_guard": 0,
+    "run_places_none_after": 0,
+    "folder_places_none_after": 1,
+    "records_after": 180,
+    "dropped_by_filing": 0,
+    "dropped_filed_passes": 0
+   },
+   "kept_by_extraction_guard": {},
+   "next_read_pays": [],
+   "dropped_by_filing": [],
+   "programs": [
+    {
+     "control_number": "18637",
+     "title": "University Studies: Social and Behavioral Science",
+     "award": "A.A. Degree",
+     "source_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/university-studies-social-behavioral-sciences/",
+     "filed_source_url": "https://catalog.gcccd.edu//grossmont/associate-degree-programs-certificates/social-behavioral-sciences/university-studies-social-behavioral-sciences-aa/",
+     "filed_run": "38748833332",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 92,
+      "listed": 92,
+      "arithmetic": "incomplete"
+     },
+     "own_page": "the address's last segment 'university-studies-social-behavioral-sciences' names the program, a plural aside",
+     "award_tail": "",
+     "live_run": "38748833332",
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.696,
+      "placed": 64,
+      "listed": 92,
+      "arithmetic": "unequal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read covers more (share 1.0 against 0.696)"
     }
    ]
   }

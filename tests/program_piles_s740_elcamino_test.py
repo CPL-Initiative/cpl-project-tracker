@@ -83,7 +83,11 @@ check(f["score"]["arithmetic"].get("stated") is None and B.shape_cut(f, e) and B
 # The holds.
 f = W.load("19857")
 check(not W.on_live_run(f) and not f["score"].get("gaps"), "19857: on no proved live run, and it carries no gap")
-check(W.shared_with("19883") == ["02512"], "19883: read from a page 02512 was read from")
+# S742: the Acalog road reads site_pages pins, and paid read 46007782666 read 19883 from its own page (poid 3640);
+# before it the record sat on the Photography A.S. page with 02512. Read in either state.
+check(W.shared_with("19883") == ["02512"]
+      or ("poid=3640" in W.load("19883")["source_url"] and not W.shared_with("19883")),
+      "19883: read from a page 02512 was read from, or since S742 from its own page (poid 3640)")
 # s741c files both since under total_differs, from a page read of each page (kb/_program_piles_s741_elcamino.py,
 # kb/program_total_differs.json): each carries no gap as s740e left it, or that kind alone.
 for cn in ("31319", "42541"):
