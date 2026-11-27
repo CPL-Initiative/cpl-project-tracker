@@ -101,3 +101,12 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   Arts" or an "Associate in Arts" page). One finding list to `readers`; round 2 is the fold's last.
 - 13:01Z: Cuyamaca 18637's paid read dispatched on a sibling, `claude/s742-readers-cuy`, cut at `main` `1a3e3be8`
   (only 18637, sources_from 45966682528, about $0.25); its keep-better waits for the fold's round 2.
+- 13:04Z: the census after the display build, 46003215768 on `main` (`3502e99c`): 15,669 of 20,282 pass, 3,950 have no
+  passing record, 663 collected with a named gap (unchanged, as a display build moves no record).
+- 13:08Z: `keys` stop 1 (head `599eedf8`): Cosumnes River's parked filing on the branch with the two S739 tests reading
+  either state (the hand-filed PDF's sha256 is unchanged: the capture opens the Marketing window one page earlier);
+  plan s742k1 (Cuesta 43053, 41744, `pair_read_as_alternatives`); San Diego City 22352 and 38732 noted as having no entry
+  in the capture's 228 (both Teachout Only; no write). The conductor's live read at keys' five colleges (13:08Z) checked
+  by the per-college md5 (four equal), handed to `keys` to commit. Two free page reads (San Jose City's JOURN 138 and CGID
+  lines, Cuesta's AVMT entries) GO on `keys`' branch.
+- 13:10Z: s742k1 to a Sonnet plan reader from a detached worktree at `418596af`.
