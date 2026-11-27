@@ -202,3 +202,8 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   (records collected: 14); seven already passed on run 43357061643 and now sit on the committed run
   (`f-ela-committed-passes-live-older-s741` cleared for these ten); 02456 and 31017 unequal. Plan s742b (02456
   `unit_line_not_read`) to a Sonnet reader.
+- 14:19Z: s742b's reader (Sonnet): APPLY (45 + 3 = 48 and 45 + 5 = 50 against the printed 48-50; MINOR: the before
+  record is the load's image, by design). Clean md5 pre-read 1 of 1; its plan files taken onto `claude/s742-apply`.
+- 14:21Z: s742b's migrate 46015104644 returned 1, none skipped; `.apply` restored (`3a9dbbf4`). Records collected: 15.
+  Cabrillo's `recommended_counts` round 2 (`a186f665`: the recall on the four degrees' own committed text, the
+  arithmetic guard) to the Fable reader, its last round.
