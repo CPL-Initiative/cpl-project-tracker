@@ -267,3 +267,9 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   capture moves 04596 and 35899 and two S739 tests (Cosumnes, the lever) go red. **DECIDED**
   `d-crc-filing-parked-for-moved-pdf-s741`: the filing is parked on `claude/s741-keys-crc` and reverted on
   `claude/s741-keys`; 33542 waits for the next session (either-state edits to the two tests, then the reread).
+- 09:36Z: San Diego City's load posted 22367 alone (live, equal at 45960365618; 24 against 24 from its own entry).
+  Records collected: 52. All three lanes' lists done; `land` (Sonnet) started on `claude/s741-land` off `main`
+  (`473dc192`), to merge `claude/s741-keys` (`91950220`), `claude/s741-keys-sbvc` (`a57c13c8`),
+  `claude/s741-keys-cuy` (`303ea541`), `claude/s741-readers` (`33b6e622`, holding the Norco and San Diego
+  City siblings) and `claude/s741-piles` (`6705512e`); parked and left out: `claude/s741-keys-wordtest`,
+  `claude/s741-keys-crc`.
