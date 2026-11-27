@@ -242,3 +242,7 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   Orange Coast's free captures fall to the next session, their pins in place.
 - 09:01Z: Fullerton's paid read 45968499315 filed 36798 (36 against 36, 9 of 9) and 35174 (20 against 20) from their
   own Chemistry pages, nothing else moved; the reread (force 45968499315) queued behind 39341's read 45970104024.
+- 09:10Z: Fullerton's reread posted 36798 and 35174 (live, equal at 45968499315). Records collected: 43. American River
+  39341's paid read 45970104024 filed it passing on its own page (56 against 56, 34 of 34); its reread (force
+  45970104024) dispatched, replacing s739a's wrong-page gap row with the passing record (an upgrade, not a new record).
+  `piles` prepares its branch for the land.
