@@ -185,3 +185,8 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 - 08:12Z: `readers` round 2 (head `f45aba82`): the window floor fixed (Victor Valley 04967 no longer moves; Ventura's
   seven are the only pages of 174 that differ), group ends inside another group take no line (Norco whole: 74 of 185
   pages carry 107 lines, no program moves), rule B's recall pinned. To the same reader, its last round.
+- 08:16Z: the readers' round 2 (Fable 5.2): `window_keeps_tabs` GO and `cq_group_ends` GO (both MAJORs closed; NIT
+  for the follow-up: 2,501 to 2,561 visible characters ahead of the panels cost up to 38 tab characters). 08:17Z:
+  Ventura's paid read on `claude/s741-readers` (sources_from 45955854213, seven `only=`, force 06948 and 08253, about
+  $0.70) and Norco's on a sibling, `claude/s741-readers-norco` (cut at the reviewed `f45aba82`; sources_from
+  45961548900, twelve `only=` and `force=`, about $1.20).
