@@ -149,6 +149,6 @@ function cards(root) {
   for (const [name, ok, why2] of results) {
     if (!ok) { failed++; console.log("FAIL " + name + (why2 !== undefined ? "  [" + (typeof why2 === "string" ? why2 : JSON.stringify(why2)) + "]" : "")); }
   }
-  console.log((results.length - failed) + "/" + results.length + " CPL Pathways program ladder checks passed");
+  console.log((results.length - failed) + "/" + results.length + " checks passed: CPL Pathways program ladders");
   process.exit(failed ? 1 : 0);
 })().catch((e) => { console.log("FAIL threw: " + (e && e.stack)); process.exit(1); });
