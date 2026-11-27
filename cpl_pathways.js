@@ -1515,6 +1515,8 @@
     ".cplpw-rmark { font-size:.8rem; color: var(--text-body); overflow-wrap:anywhere; }",
     ".cplpw-rmark b { font-size:.72rem; letter-spacing:.04em; text-transform:uppercase; color: var(--seal-blue-text); margin-right:4px; }",
     ".cplpw-rmark.lead b { color: var(--text-muted); }",
+    ".cplpw-getcredit a { color: var(--seal-blue-text); text-decoration: underline; font-weight:600; white-space:nowrap; display:inline-block; min-height:24px; line-height:24px; }",
+    ".cplpw-getcredit .none { color: var(--text-muted); font-style: italic; }",
     ".cplpw-outchip { display:inline-block; margin-right:8px; border:0; background:none; padding:0; min-height:24px; font:inherit; font-size:.8rem; font-weight:600; color: var(--accent-link); text-decoration:underline; text-underline-offset:3px; cursor:pointer; }",
     ".cplpw-outinline { display:block; margin-top:6px; padding:8px 10px; border-top:1px dashed var(--border-strong); font-size:.85rem; min-width:0; overflow-wrap:anywhere; }",
     ".cplpw-outinline .cplpw-outblock h3 { font-size:.9rem; margin:4px 0; }",
@@ -1812,6 +1814,60 @@
     var choose = b.rule === "choose_units" ? "Choose " + roepAmt(n, null, m || "units") : "Choose " + (n || 1) + " course" + ((n || 1) === 1 ? "" : "s");
     if (/elective/i.test(b.name || "")) return { label: "Elective", rule: choose };
     return { label: "Choose from a list", rule: choose };
+  }
+
+  /* Get credit (Sam, 2026-11-27): a "CPL here" course links to the college's MAP landing page opened on the
+     course's exhibit, ?Exhibit=<MAP ID>, which MAP's page puts in its search box and lists that exhibit's courses
+     (verified live S744 at Cerritos: MAPICA-RA4P-1-001 lists IWAP 40.07 and 40.50). A course code in that
+     parameter does nothing, and an exhibit code holding "&" finds nothing (MAPICI-BP&C-1-001 at Chaffey), so such a
+     course opens the landing page alone. The landing page is the only target, never the MAP dashboard; a college
+     with no landing page on file says so, with no link in its place. The URLs come from map_college_contacts_pub. */
+  var landingPages = { map: null, loading: null };
+  function getCreditExhibit(here) {
+    var ex = (here && here.exhibits) || [];
+    for (var i = 0; i < ex.length; i++) {
+      var id = String((ex[i] && ex[i].exhibit) || "").trim();
+      if (id && id.indexOf("&") < 0) return id;
+    }
+    return "";
+  }
+  function getCreditUrl(landing, exhibit) {
+    if (!landing) return "";
+    if (!exhibit) return landing;
+    return landing + (landing.indexOf("?") >= 0 ? "&" : "?") + "Exhibit=" + encodeURIComponent(exhibit);
+  }
+  function loadLandingPages() {
+    if (landingPages.map) return Promise.resolve(landingPages.map);
+    if (landingPages.loading) return landingPages.loading;
+    landingPages.loading = roepGet("/map_college_contacts_pub?select=college,landing_page_url", null).then(function (rows) {
+      var m = {};
+      (rows || []).forEach(function (r) { if (r && r.college) m[normCollege(r.college)] = String(r.landing_page_url || "").trim(); });
+      landingPages.map = m;
+      return m;
+    }, function () { landingPages.loading = null; return null; });
+    return landingPages.loading;
+  }
+  /* Fill every Get credit slot under root once the landing pages are read. */
+  function fillGetCredit(root) {
+    loadLandingPages().then(function (m) {
+      /* The view may be gone by the time the read answers (a new program chosen, the page closed). */
+      if (!root || typeof root.querySelectorAll !== "function" || !root.ownerDocument || !root.ownerDocument.defaultView) return;
+      try { Array.prototype.forEach.call(root.querySelectorAll(".cplpw-getcredit[data-college]"), function (slot) {
+        if (slot.getAttribute("data-filled")) return;
+        slot.setAttribute("data-filled", "1");
+        if (!m) return;
+        var college = slot.getAttribute("data-college");
+        var landing = m[normCollege(college)];
+        clearNode(slot);
+        if (!landing) { slot.appendChild(el("span", "none", "Landing page not on file")); return; }
+        var a = el("a", null, "Get credit");
+        a.href = getCreditUrl(landing, slot.getAttribute("data-exhibit") || "");
+        a.target = "_blank";
+        a.rel = "noopener";
+        a.setAttribute("aria-label", "Get credit for " + slot.getAttribute("data-code") + " at " + college + " (opens the college's MAP landing page)");
+        slot.appendChild(a);
+      }); } catch (e) { /* the page closed while the read was out; nothing to fill */ }
+    });
   }
 
   // The display build's CPL for one course, in its three kinds.
@@ -2237,7 +2293,16 @@
     if (u && eq) u += " (about " + roepAmt(eq, (info.equivalent_units || [])[1], "units") + ", estimated equivalent)";
     if (u) li.appendChild(el("span", "u", u));
     marks.forEach(function (k) {
-      li.appendChild(el("span", "cplpw-rmark" + (k.kind === "here" ? "" : " lead"), [el("b", null, k.label), k.text]));
+      var mk = el("span", "cplpw-rmark" + (k.kind === "here" ? "" : " lead"), [el("b", null, k.label), k.text]);
+      if (k.kind === "here") {
+        var slot = el("span", "cplpw-getcredit");
+        slot.setAttribute("data-college", rec.college || "");
+        slot.setAttribute("data-code", c.code);
+        slot.setAttribute("data-exhibit", getCreditExhibit(info.here));
+        mk.appendChild(document.createTextNode(" "));
+        mk.appendChild(slot);
+      }
+      li.appendChild(mk);
     });
     var adoptChip = roepAdoptChip(rec, c.code, info);
     if (adoptChip) li.appendChild(adoptChip);
@@ -2683,6 +2748,7 @@
     clearNode(root);
     root.removeAttribute("style");
     root.appendChild(wrap);
+    fillGetCredit(wrap);
   }
 
   // ── Directory card renderer ───────────────────────────────────────────────
