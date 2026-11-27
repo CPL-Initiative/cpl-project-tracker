@@ -1,7 +1,7 @@
 {
  "college": "Cosumnes River College",
  "run": "45972311864",
- "written": "2026-11-27T09:27:14Z",
+ "written": "2026-11-27T13:10:47Z",
  "rule": "a checked live row restores, or is held where the base files none; then own program (a heading sharing a title word, or a generic heading on a page the address or the capture shows is the program's own; then heading_award_check), where a failing re-read is restored, or held where the base files none or the live row already holds this run; then a live row holding this run keeps its record and names no dispatch; then a supplied live run other than the filed record's is held for a person; then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one (d-reread-keep-the-better-s683; COBIx on #3544 and #3547)",
  "checked": [],
  "live_runs": {
@@ -214,11 +214,11 @@
   "46139": "39047009824",
   "46419": "39047009824"
  },
- "live_read_at": "2026-11-27T09:18:02Z",
+ "live_read_at": "2026-11-27T13:08:13Z",
  "dispatch": [
   {
    "workflow": "program-requirements-college.yml",
-   "ref": "claude/s741-keys",
+   "ref": "claude/s742-keys",
    "inputs": {
     "college": "Cosumnes River College",
     "step": "reread",
@@ -261,8 +261,8 @@
  "runs": {
   "45972311864": {
    "base": "origin/main",
-   "base_sha": "473dc192254e258685d6663969251327bf90358c",
-   "decided": "2026-11-27T09:27:14Z",
+   "base_sha": "3502e99c851d9bb92e10959fd84c0aa12566dc24",
+   "decided": "2026-11-27T13:10:47Z",
    "counts": {
     "reread": 8,
     "kept": 3,

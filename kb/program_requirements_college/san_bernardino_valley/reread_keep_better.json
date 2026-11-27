@@ -1,7 +1,7 @@
 {
  "college": "San Bernardino Valley College",
- "run": "45960735042",
- "written": "2026-11-27T08:21:13Z",
+ "run": "46000859685",
+ "written": "2026-11-27T13:11:05Z",
  "rule": "a checked live row restores, or is held where the base files none; then own program (a heading sharing a title word, or a generic heading on a page the address or the capture shows is the program's own; then heading_award_check), where a failing re-read is restored, or held where the base files none or the live row already holds this run; then a live row holding this run keeps its record and names no dispatch; then a supplied live run other than the filed record's is held for a person; then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one (d-reread-keep-the-better-s683; COBIx on #3544 and #3547)",
  "checked": [],
  "live_runs": {
@@ -93,7 +93,7 @@
   "22818": "45355976381",
   "22819": "38748858322",
   "22820": "38748858322",
-  "22821": "38748858322",
+  "22821": "45960735042",
   "22822": "38748858322",
   "22830": "38748858322",
   "22831": "45355976381",
@@ -227,22 +227,22 @@
   "46184": "38748858322",
   "46386": "38748858322"
  },
- "live_read_at": "2026-11-27T08:18:54Z",
+ "live_read_at": "2026-11-27T13:08:13Z",
  "dispatch": [
   {
    "workflow": "program-requirements-college.yml",
-   "ref": "claude/s741-keys-sbvc",
+   "ref": "claude/s742-keys",
    "inputs": {
     "college": "San Bernardino Valley College",
     "step": "reread",
-    "force": "45960735042"
+    "force": "46000859685"
    },
    "posts": 1,
    "control_numbers": [
-    "22821"
+    "17829"
    ],
    "not_live_at_run": [
-    "22821"
+    "17829"
    ]
   }
  ],
@@ -256,21 +256,24 @@
    "40833",
    "41756",
    "43133"
+  ],
+  "45960735042": [
+   "22821"
   ]
  },
  "counts": {
-  "reread": 1,
+  "reread": 5,
   "kept": 1,
-  "restored": 0,
-  "restored_filed_pass": 0,
+  "restored": 4,
+  "restored_filed_pass": 4,
   "restored_not_own_program": 0,
   "held_for_person": 0,
   "held_checked": 0,
   "held_live_run": 0,
   "new": 0,
   "already_live": 0,
-  "kept_on_own_page": 0,
-  "plain_reread_would_lose_pass": 0,
+  "kept_on_own_page": 1,
+  "plain_reread_would_lose_pass": 4,
   "kept_by_extraction_guard": 0,
   "run_places_none_after": 0,
   "folder_places_none_after": 0,
@@ -1267,6 +1270,205 @@
      "plain_reread_loses_pass": false,
      "outcome": "kept",
      "why": "the re-read holds score.pass and the filed record does not"
+    }
+   ]
+  },
+  "46000859685": {
+   "base": "origin/main",
+   "base_sha": "3502e99c851d9bb92e10959fd84c0aa12566dc24",
+   "decided": "2026-11-27T13:11:05Z",
+   "counts": {
+    "reread": 5,
+    "kept": 1,
+    "restored": 4,
+    "restored_filed_pass": 4,
+    "restored_not_own_program": 0,
+    "held_for_person": 0,
+    "held_checked": 0,
+    "held_live_run": 0,
+    "new": 0,
+    "already_live": 0,
+    "kept_on_own_page": 1,
+    "plain_reread_would_lose_pass": 4,
+    "kept_by_extraction_guard": 0,
+    "run_places_none_after": 0,
+    "folder_places_none_after": 0,
+    "records_after": 221,
+    "dropped_by_filing": 0,
+    "dropped_filed_passes": 0
+   },
+   "kept_by_extraction_guard": {},
+   "next_read_pays": [],
+   "dropped_by_filing": [],
+   "programs": [
+    {
+     "control_number": "17829",
+     "title": "Environmental Science",
+     "award": "A.S. Degree",
+     "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/environmental-science/environmental-science-as-degree/",
+     "filed_source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/environmental-science/environmental-science-as-degree/",
+     "filed_run": "38748858322",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 31,
+      "listed": 31,
+      "arithmetic": "incomplete"
+     },
+     "own_page": "the capture's page title 'Environmental Science Associate of Science Degree' names the program",
+     "award_tail": "-as-degree",
+     "shared_title": [
+      "39519"
+     ],
+     "live_run": "38748858322",
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 31,
+      "listed": 31,
+      "arithmetic": "unequal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read's arithmetic reads incomplete_major_equal, the filed record's unequal"
+    },
+    {
+     "control_number": "38013",
+     "title": "Street Rod Construction",
+     "award": "Noncredit program",
+     "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-collision/steel-rod-construction-certificate-completion/",
+     "filed_source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-collision/steel-rod-construction-certificate-completion/",
+     "filed_run": 43355003065,
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 3,
+      "listed": 3,
+      "arithmetic": "incomplete"
+     },
+     "live_run": "43355003065",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 3,
+      "listed": 3,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": true,
+     "outcome": "restored",
+     "why": "the filed record holds score.pass and the re-read does not",
+     "next_read_held": "held_no_gain"
+    },
+    {
+     "control_number": "38014",
+     "title": "Automotive Interiors",
+     "award": "Noncredit program",
+     "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-collision/automotive-interiors-certificate-completion/",
+     "filed_source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-collision/automotive-interiors-certificate-completion/",
+     "filed_run": 43355003065,
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 4,
+      "listed": 4,
+      "arithmetic": "incomplete"
+     },
+     "live_run": "43355003065",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 4,
+      "listed": 4,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": true,
+     "outcome": "restored",
+     "why": "the filed record holds score.pass and the re-read does not",
+     "next_read_held": "held_no_gain"
+    },
+    {
+     "control_number": "39191",
+     "title": "Smart Systems Automation Technology",
+     "award": "Noncredit program",
+     "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/smart-systems-automation-technology-certificate-completion/",
+     "filed_source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/smart-systems-automation-technology-certificate-completion/",
+     "filed_run": 43355003065,
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 4,
+      "listed": 4,
+      "arithmetic": "incomplete"
+     },
+     "live_run": "43355003065",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 4,
+      "listed": 4,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": true,
+     "outcome": "restored",
+     "why": "the filed record holds score.pass and the re-read does not",
+     "next_read_held": "held_no_gain"
+    },
+    {
+     "control_number": "40280",
+     "title": "Flight Operations",
+     "award": "Noncredit program",
+     "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/aeronautics/flight-operations-certificate-completion/",
+     "filed_source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/aeronautics/flight-operations-certificate-completion/",
+     "filed_run": 43355003065,
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 7,
+      "listed": 7,
+      "arithmetic": "incomplete"
+     },
+     "live_run": "43355003065",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 7,
+      "listed": 7,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": true,
+     "outcome": "restored",
+     "why": "the filed record holds score.pass and the re-read does not",
+     "next_read_held": "held_no_gain"
     }
    ]
   }

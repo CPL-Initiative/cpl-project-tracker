@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-27T13:04:22Z",
+ "written_at": "2026-11-27T13:18:47Z",
  "rows": [
   {
    "key": "requirements",
@@ -63,7 +63,7 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-11-27T09:17:16Z",
+    "at": "2026-11-27T12:43:20Z",
     "every_hours": null
    },
    "facts": {
