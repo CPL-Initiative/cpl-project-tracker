@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-27_s742_cpl_memory_rows.sql",
+ "name": "s742_cpl_memory_rows",
+ "version": "20261127150345",
+ "sha256": "0c8163f606b42e7471097c86595d4f2ee801bb315c28800ecd5a0f1937f8cf90",
+ "run": "46021306187",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 400,
+ "response": "{\"message\":\"Failed to run sql query: ERROR:  23514: new row for relation \\\"cpl_memory\\\" violates check constraint \\\"cpl_memory_kind_check\\\"\\nDETAIL:  Failing row contains (5319b6be-2b02-42b6-a755-ff17979e8aae, 2026-11-27 15:03:46.328064+00, 2026-11-27 15:03:46.328064+00, pattern, S742: a live read returns live_runs grouped by run with a per-co..., null, cpl, t, null, {program-requirements,live-read,conductor,pattern}, docs/session_743_handoff.md, {}, {}, proposed, null, internal, 2026-11-27, SkyGodwit (S742), null, null, null, p-compact-live-read-s742, null, A live read returns runs grouped with a per-college count and md...).\\n\"}"
+}
