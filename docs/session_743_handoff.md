@@ -85,3 +85,10 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   display; 18,779 rows). The whole build dispatched on the branch.
 - 12:36Z: the whole build 45998968540 green at 12:35Z: 18,747 rows at `5b80d4de75e9` (the 1 with no display now carries
   one), the same 32 at older builds, none without a display. #3904 opened from `claude/s742-display` and marked ready.
+- 12:46Z: `readers` stop 1 (head `bb59eaed`): the plural fold for Cuyamaca 18637 (`e3291376`, a cherry-pick of S741's
+  parked `302c12c5`; recall on today's `main`: 44 answers move at 24 colleges, right 44, wrong 0) and the Acalog road
+  reading `site_pages` pins for El Camino (`1f591e73`; 105 own pages, right 98 before and after, wrong 0 from 3).
+  The conductor's live read at the seven `readers` colleges (12:46Z) filed whole on the branch (`b7bf3c7b`), checked
+  against the live table by a per-college md5 of control_number:run (seven equal); no person's check at any of them.
+- 12:50Z: both changes to one Fable 5.2 second reader from a detached worktree at `b7bf3c7b`; `readers` carries on with
+  Coastline, Modesto, Reedley, Los Angeles Pierce and Grossmont.
