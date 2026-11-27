@@ -3900,6 +3900,17 @@
      "evidence": "The 2026-27 catalog prints 'SOCI 075 Introduction to Sociology of Sport 3.0 Units' and ends its description '(Formerly SOC 075)' (college-page-read run 45835049303 (kb/college_reads/s740_reconcile_solano_pages.json), PDF page 430); the state's file lists SOC075 Introduction to Sociology of Sport (CCC000502742)."
     }
    ]
+  },
+  "Coastline Community College": {
+   "why": "S742 (lane 1, readers): no reconcile step; the entry names one program's own page (site_pages).",
+   "steps": [],
+   "site_pages_why": "S742: the state's file lists two Communication Studies transfer degrees at Coastline, the legacy 'Communication Studies' (33014) and 'Communications Studies 2.0' (43057), and the 2026-27 catalog prints one page, headed 'Communication Studies 2.0, Associate in Arts Degree for Transfer'. The capture gave that page to the legacy degree, whose title its heading prints in full, and left 43057 on the department's landing page, where its record placed none of its courses (S739's hold: the title rule binds legacy 33014). 43057 is pinned to the 2.0 page. The pin binds through the plural reading of a pin's heading (kb/_program_requirements_college.py site_heading_plural: the state's 'Communications', the page's 'Communication', both titles carrying 2.0), and only where the capture reads that page; a refused pin reads the program from no page. The pin moves 43057 alone: the legacy degree's filed record stays as filed. Reversible by deleting this entry.",
+   "site_pages": {
+    "43057": {
+     "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/communication-studies/communication-studies-2-aat/",
+     "evidence": "Communications Studies 2.0 A.A.-T 43057: the page titled 'Communication Studies 2.0, Associate in Arts Degree for Transfer < Coastline College' (the filed capture 45777312083, kb/program_requirements_college/coastline_community/sources.json). The list read from it (records/33014.json: Required Courses CMST C100 and COMM C1000; List A, three of CMST C140, CMST C150, CMST C220 and DMC C100; List B, one of ANTH C100, CMST C101, PSYC C1000 and SOC C100; 18 units) holds all nine courses the state lists for 43057 and nine of the ten it lists for the legacy 33014 (ENGL C1001 is not on the page). The capture read 43057 from the pathway's landing page, where the award appears only as a navigation link (its filed record's own note)."
+    }
+   }
   }
  }
 }
