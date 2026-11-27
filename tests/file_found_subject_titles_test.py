@@ -8,7 +8,9 @@ WHAT THIS GUARDS:
   (4) a college whose catalog was not read files nothing;
   (5) the Subjects build lists a headings-only college, and never a college with a course file twice;
   (6) `--csv` (S733): a filled leftovers row with a title and its source URL files with its own method, date and finder;
-      a row with no source URL, or a `department label` row, files nothing; a college with no slug is reported.
+      a row with no source URL, or a `department label` row, files nothing; a college with no slug is reported;
+  (7) a code's own catalog page (rule code_address) that prints the code and the title apart ("FILM - Film") files the
+      title though it spells its code, with the find row's own run (S745); an index heading doing the same does not.
 Run from repo root: `python3 tests/file_found_subject_titles_test.py`.
 """
 import json
@@ -73,6 +75,17 @@ with tempfile.TemporaryDirectory() as root:
     got = B.headings_only(root, {"colleges": [{"slug": "beta", "file": "beta.json.gz", "college": "Beta College"}]})
     check("(5) the build lists a headings-only college once, never one with a course file",
           [c["slug"] for c in got] == ["alpha"] and got[0]["college"] == "Alpha College" and got[0]["file"] is None, json.dumps(got))
+
+    put(os.path.join(F.FOUND, "delta.json"), {"college": "Delta College", "run": "333", "read_at": "2026-11-25T15:00:00Z", "titles": [
+        {"code": "FILM", "title": "Film", "printed": "FILM - Film", "rule": "code_address", "url": "https://delta.example/7576",
+         "run": "444", "found_on": "2026-11-27"},
+        {"code": "ART", "title": "Art", "printed": "ART - Art", "url": "u"},
+        {"code": "MUS", "title": "MUS", "printed": "MUS", "rule": "code_address", "url": "u"}]})
+    r = F.file_one(os.path.join(F.FOUND, "delta.json"), False)
+    rows = {x["code"]: x for x in json.load(open(os.path.join(F.SUBJECTS, "delta.json")))["rows"]}
+    check("(7) the code's own page that prints its code and title apart (FILM - Film) files, with its own run (S745)",
+          (rows.get("FILM") or {}).get("heading") == "Film" and rows["FILM"].get("run") == "444"
+          and "ART" not in rows and "MUS" not in rows and r["added"] == 1 and r["skipped"] == 2, json.dumps(r))
 
 fail = 0
 with tempfile.TemporaryDirectory() as root:
