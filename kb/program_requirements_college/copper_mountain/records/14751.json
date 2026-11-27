@@ -81,38 +81,38 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    63.0,
-    69.0
+    42.0,
+    48.0
    ],
    "stated": [
-    60.0,
-    60.0
+    42.0,
+    42.0
    ],
-   "against": "degree",
-   "ge": [
-    21.0,
-    21.0
-   ],
-   "why": [
-    "the blocks and general education sum to 63.0-69.0; the catalog prints 60.0-60.0 for the degree"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "meets": true,
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     42.0,
-     48.0
+     63.0,
+     69.0
     ],
     "stated": [
-     42.0,
-     42.0
+     60.0,
+     60.0
     ],
-    "against": "program",
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
     "why": [],
-    "meets": true
+    "minimum": true,
+    "fill": null
    }
   },
   "repeated": {
@@ -137,7 +137,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -163,7 +163,8 @@
    },
    "electives_fill_degree": false,
    "outcomes": [],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -394,7 +395,7 @@
    "Required courses sum to 21-27 units; with 13 + 8 elective units the major is 42-48, while the catalog prints 42 as the major total. Major 42 + GE 21 = 63 exceeds the printed 60 minimum degree units; catalog notes that total degree units vary per student."
   ]
  },
- "extracted_run": "45855512160",
+ "extracted_run": 45957316339,
  "catalog_year": "2026-2027",
  "source_sha": "115b6260a0ba82de",
  "source_codes": [
@@ -413,5 +414,14 @@
   "FIWE80",
   "PHIL13"
  ],
- "source_coverage": 0.824
+ "source_coverage": 0.824,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "MINIMUM DEGREE UNITS"
+  }
+ ],
+ "read_run": "45855512160"
 }
