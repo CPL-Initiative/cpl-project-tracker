@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 736,
-  "moniker": "SkyBrant",
+  "session": 744,
+  "moniker": "SkyCurlew",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_744_handoff.md",
+  "handoff": "docs/session_745_handoff.md",
   "calls": [
     {
       "title": "The noncredit subject title list",
@@ -62,11 +62,11 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-27T15:27:23Z",
+  "written_at": "2026-11-27T18:48:39Z",
   "project": "subjects",
   "next_step": {
-    "title": "Fold Cerro Coso's and Porterville's glued letter into the course number",
-    "text": "COCI stores some Cerro Coso courses as PHEDC 103 where the college prints PHED C103, and Porterville's the same with P. Fold those state-only codes in the COCI lookup builder for the two colleges only, dry run first measuring every consumer, then rebuild the subject family."
+    "title": "Make the subject builder honor Not a subject",
+    "text": "The lightning round saves not_a_subject, and kb/subject_decisions.py still lists it as refused, so the status counts do not drop. Make the builder take it, then offer Sam LACCD's 87 schedule titles that differ from the catalog as one list."
   },
   "changes": [
     {
@@ -272,6 +272,10 @@
     {
       "at": "2026-11-26T19:01Z",
       "text": "LACCD's class search titles 171 of 212 untitled codes at the district's nine colleges; 87 differ from the catalog, and the catalog stands (PR 3894)."
+    },
+    {
+      "at": "2026-11-27T17:00Z",
+      "text": "Cerro Coso's and Porterville's glued campus letter is folded into the course number: 130 COCI rows, 20 duplicate listings dropped, statewide codes 2,924 to 2,896. A person's save on a glued code carries to the folded one (Sam's ADMJC title now on ADMJ). ICC stays (PR 3908)."
     }
   ]
 }

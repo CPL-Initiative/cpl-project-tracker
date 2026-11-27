@@ -13,7 +13,8 @@ From SkyCurlew (S744), Sam's plain session of 2026-11-27 from 16:00Z. A **full c
 `kb/_build_coci_lookup.py`, changed): three lanes moved (`common-subjects-reference`, `library`,
 `program-requirements-harvest` for CPL Pathways), nine `cpl_memory` rows landed (receipt
 `kb/receipts/cpl_memory_s744_rows_2026-11-27.sql`), two KB notes added. Skipped: step 7 (no re-mint, no auditor counts
-moved). 745 was the next free number. No `## Conductor settings` block (conductor mode is retired, checkpoint step 8).
+moved) and `kb/status/program-requirements.json` in step 12 (the routine's harvest log; this run did not move the
+harvest). `kb/status/subjects.json` stamped. 745 was the next free number. No `## Conductor settings` block (conductor mode is retired, checkpoint step 8).
 
 ## Open with the standing block
 
