@@ -1231,6 +1231,16 @@ jobs:
       - name: Site pins, the plural reading (S742, Coastline 43057 and the statewide self-recall)
         if: matrix.shard == 5
         run: python3 tests/program_requirements_pin_plural_s742_test.py
+      # S742: a compact live read (live_runs grouped by run, a count and an md5 a college) expands to keep-better's
+      # shape only when it checks out against itself.
+      - name: Live read, the compact form expanded and checked (S742)
+        if: matrix.shard == 2
+        run: python3 tests/live_read_expand_test.py
+      # S742 lane 1 (readers) at Modesto Junior: Spanish A.A.-T 35127 filed by key under the units within-range kind
+      # (its lists add to 23, the top of the printed 19-23; the 19 is the Native/Heritage path).
+      - name: Cheap piles S742 at Modesto Junior (35127, the units kind by key, the plan)
+        if: matrix.shard == 4
+        run: python3 tests/program_piles_s742_modesto_test.py
       # S741: the scorer's option reading takes Roman numerals of two or more letters ('OPTION II', Cosumnes River
       # 33542), with its self-recall over every filed record (two records join, both right; none turns failing).
       - name: Option parts in Roman numerals (S741, the pattern and its statewide self-recall)
