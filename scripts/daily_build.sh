@@ -351,6 +351,14 @@ step "Build the Subjects page's courses by code" <<'STEP'
 python3 kb/_build_subject_courses.py || { git checkout -- kb/status/subject_courses 2>/dev/null || true; echo "::warning title=Subject courses not rebuilt::kb/_build_subject_courses.py failed; the Subjects page's course panel reads yesterday's files under kb/status/subject_courses/."; }
 STEP
 
+# kb/status/program_ladders/<slug>.json (Sam, 2026-11-27): each program's stack, the certificates it starts from
+# and the degrees and bachelor's it leads to (course containment, program CIP, a curated ladder), for CPL Pathways'
+# catalog-record view. No clock is read, so the same inputs write the same bytes (~5 s). Display only, so a failure
+# warns and yesterday's files stand.
+step "Build the program ladders" <<'STEP'
+python3 kb/_build_program_ladders.py || { git checkout -- kb/status/program_ladders 2>/dev/null || true; echo "::warning title=Program ladders not rebuilt::kb/_build_program_ladders.py failed; CPL Pathways' catalog records read yesterday's files under kb/status/program_ladders/."; }
+STEP
+
 step "Build the noncredit subject title list" <<'STEP'
 python3 kb/_build_noncredit_subject_titles.py || { git checkout -- kb/status/noncredit_subject_titles.json 2>/dev/null || true; echo "::warning title=Noncredit subject titles not rebuilt::kb/_build_noncredit_subject_titles.py failed; #commons/subjects/noncredit reads yesterday's kb/status/noncredit_subject_titles.json."; }
 STEP
