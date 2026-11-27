@@ -47,17 +47,29 @@ members = W.census_members(CENSUS_AT_PLAN)
 check(set(members) == set(ROWS) | HELD and len(members) == 22 and not set(W.PERSON) & set(members),
       "the fixture gives the 22 keys")
 pr = W.precision(CENSUS_AT_PLAN)
-check(pr["read"] == 22 and pr["right"] == 22 and not pr["wrong"], "precision 22 of 22: %s" % pr["wrong"])
+# (s741e files 01400 and 40761 since: this plan's own entries read them as it now does, see LATER below.)
+_later = sorted(w[0] for w in pr["wrong"])
+check(pr["read"] == 22 and pr["right"] == 22 - len(_later) and _later in ([], ["01400", "40761"]),
+      "precision 22 of 22, less 01400 and 40761 once s741e's apply posts their run: %s" % pr["wrong"])
 
+# s741e files 01400 and 40761 since, their run proved by the conductor's live read
+# (kb/_program_piles_s741_contracosta.py). Once its apply's receipt is filed the receipts post that run, so this
+# plan's own entries for the two stand as well: two more claims and six more boundary readings, and neither before.
+import glob  # noqa: E402
+LATER = [cn for cn in ("01400", "40761") if W.on_live_run(W._load(cn))]
+S741E = glob.glob(os.path.join(ROOT, "kb", "receipts", "migration_s741e_prreq_piles_apply_*.json"))
+check(len(LATER) in (0, 2) and bool(LATER) == bool(S741E) and _later == sorted(LATER),
+      "01400 and 40761 are on a posted run only once s741e's apply has filed its receipt")
 cc = W.claim_checks(CENSUS_AT_PLAN)
-check(cc["counts"] == {"stands": 16} and not cc["not_standing"], "16 claims stand")
+check(cc["counts"] == {"stands": 16 + len(LATER)} and not cc["not_standing"], "16 claims stand, and s741e's two since")
 src = W._sources()
 s2 = copy.deepcopy(src)
 s2['42085']["codes_found"] = [c for c in s2['42085']["codes_found"] if c != 'AFRAM110']
 check(W.claim(W._load('42085'), s2) == "a named course not found", "a named course the capture lacks holds it")
 
 bd = W.boundaries(CENSUS_AT_PLAN)
-check(not bd["wrong"] and sum(bd["counts"].values()) == 48, "every boundary reading names no gap: %s" % bd)
+check(not bd["wrong"] and sum(bd["counts"].values()) == 48 + 3 * len(LATER),
+      "every boundary reading names no gap: %s" % bd)
 
 with open(RECEIPT, encoding="utf-8") as fh:
     rec = json.load(fh)
@@ -81,8 +93,8 @@ for r in rec["records"]:
     check(img["record"] == r["before_image"]["record"], "%s: the record is unchanged" % r["control_number"])
 
 check(not any(W.scorer_passes(W._load(cn)) for cn in ROWS), "the scorer passes none of the rows (#3753's MAJOR)")
-check(all(W.on_live_run(W._load(cn)) for cn in ROWS) and not W.on_live_run(W._load("01400")),
-      "the rows are on their live runs; 01400's run reached no live row")
+check(all(W.on_live_run(W._load(cn)) for cn in ROWS) and (not W.on_live_run(W._load("01400")) or bool(S741E)),
+      "the rows are on their live runs; 01400's run reached no live row by any receipt before s741e's apply")
 f = W._load("01443")
 check(W.gap_noted(f) == ("degree_summary_ge_none", W.gap_noted(f)[1]), "01443 takes degree_summary_ge_none as filed")
 g = copy.deepcopy(f)
