@@ -2930,7 +2930,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.627,
+  "coverage": 0.647,
   "codes_found": [
    "ADS138",
    "AJ10",
@@ -2957,6 +2957,7 @@
    "GLOBL2",
    "HSCI138",
    "JOURN150",
+   "JOURNALISMJO",
    "PHIL65",
    "POLSC1000",
    "POLSC2",
