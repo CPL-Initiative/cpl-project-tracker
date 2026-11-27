@@ -70,20 +70,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    14.0,
-    21.0
+    20.0,
+    23.0
    ],
    "stated": [
     20.0,
     23.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 14.0-21.0; the catalog states 20.0-23.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -110,7 +108,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -638,5 +636,6 @@
    "Outcomes taken from the page's learning outcomes tab for this award."
   ]
  },
- "extracted_run": "38670933359"
+ "extracted_run": 46010148668,
+ "read_run": "38670933359"
 }

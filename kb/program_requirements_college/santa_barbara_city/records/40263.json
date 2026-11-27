@@ -77,9 +77,7 @@
     24.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 19.0-25.0; the catalog states 19.0-24.0"
-   ],
+   "why": [],
    "meets": true,
    "rescored": "Open Asks Sheet 120 card 1"
   },
@@ -693,5 +691,6 @@
    "Outcomes come from the page's outcomes tab for this program."
   ]
  },
- "extracted_run": "38670933359"
+ "extracted_run": 46010148668,
+ "read_run": "38670933359"
 }

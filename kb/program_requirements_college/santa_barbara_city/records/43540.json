@@ -66,7 +66,7 @@
    "status": "equal",
    "computed": [
     18.0,
-    23.0
+    24.0
    ],
    "stated": [
     18.0,
@@ -74,7 +74,6 @@
    ],
    "against": "program",
    "why": [],
-   "short_high": true,
    "rescored": "Sam's ruling of 2026-11-17, short high end"
   },
   "repeated": {
@@ -451,5 +450,6 @@
    "Outcomes come from the page's outcomes tab, printed for the program as a whole; this award shares them."
   ]
  },
- "extracted_run": "38670933359"
+ "extracted_run": 46010148668,
+ "read_run": "38670933359"
 }

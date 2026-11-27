@@ -63,7 +63,7 @@
    "pass": false,
    "status": "unequal",
    "computed": [
-    30.0,
+    32.0,
     37.0
    ],
    "stated": [
@@ -72,7 +72,7 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 30.0-37.0; the catalog states 35.0-41.0"
+    "the blocks sum to 32.0-37.0; the catalog states 35.0-41.0"
    ]
   },
   "repeated": {
@@ -706,5 +706,6 @@
    "The catalog text begins mid-sentence ('ontext of historical...'), so part of the program description may be cut off."
   ]
  },
- "extracted_run": "38670933359"
+ "extracted_run": 46010148668,
+ "read_run": "38670933359"
 }
