@@ -1,4 +1,4 @@
-{"schema":1,"college":"Cosumnes River College","slug":"cosumnes_river","basis":"live","census_at":"2026-11-27 07:38Z","correction_rules":true,"programs":[
+{"schema":1,"college":"Cosumnes River College","slug":"cosumnes_river","basis":"live","census_at":"2026-11-27 11:03Z","correction_rules":true,"programs":[
 {"cn":"11346","title":"American Studies","award":"A.A. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=425"},
 {"cn":"17868","title":"Liberal Arts - Arts and Humanities","award":"A.A. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=465"},
 {"cn":"11340","title":"Photography: Commercial & Studio Photography","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"coverage_fails","lever":"reconcile_steps","url":"https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=531"},

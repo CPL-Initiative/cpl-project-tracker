@@ -1,4 +1,4 @@
-{"schema":1,"college":"Porterville College","slug":"porterville","basis":"live","census_at":"2026-11-27 07:38Z","correction_rules":false,"programs":[
+{"schema":1,"college":"Porterville College","slug":"porterville","basis":"live","census_at":"2026-11-27 11:03Z","correction_rules":false,"programs":[
 {"cn":"45511","title":"Kinesiology","award":"A.A- T Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=92"},
 {"cn":"45470","title":"Computer Science & Software Engineering (AS-T)","award":"A.S. T Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"32284","title":"Philosophy","award":"A.A- T Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},

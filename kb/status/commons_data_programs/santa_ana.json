@@ -1,4 +1,4 @@
-{"schema":1,"college":"Santa Ana College","slug":"santa_ana","basis":"live","census_at":"2026-11-27 07:38Z","correction_rules":true,"programs":[
+{"schema":1,"college":"Santa Ana College","slug":"santa_ana","basis":"live","census_at":"2026-11-27 11:03Z","correction_rules":true,"programs":[
 {"cn":"04254","title":"Anthropology","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"43223","title":"Bus Operator/Driver","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"10565","title":"Business Administration","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},

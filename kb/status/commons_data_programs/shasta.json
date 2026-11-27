@@ -1,4 +1,4 @@
-{"schema":1,"college":"Shasta College","slug":"shasta","basis":"live","census_at":"2026-11-27 07:38Z","correction_rules":true,"programs":[
+{"schema":1,"college":"Shasta College","slug":"shasta","basis":"live","census_at":"2026-11-27 11:03Z","correction_rules":true,"programs":[
 {"cn":"18153","title":"General Studies: Food & Beverage & Lodging Management","award":"A.S. Degree","cause":"found_not_extracted","lever":"paid_read","url":"https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=61"},
 {"cn":"09498","title":"Agriculture","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"06429","title":"Computer Aided Drafting Technology","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
@@ -31,6 +31,5 @@
 {"cn":"18146","title":"General Studies - Fire - Fire Investigation","award":"A.S. Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=80"},
 {"cn":"18147","title":"General Studies - Fire - Fire Service Command, Company Officer","award":"A.S. Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=80"},
 {"cn":"18152","title":"General Studies - Health","award":"A.S. Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=99"},
-{"cn":"18625","title":"General Studies - Coastal Oceanographic Studies","award":"A.S. Degree","cause":"units_incomplete","lever":"reconcile_steps","url":"https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=78","units":{"sum":[14.0,14.0],"printed":null,"status":"incomplete","measure":"units","against":"program"}},
-{"cn":"32162","title":"Kinesiology","award":"A.A- T Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=100","units":{"sum":[23.0,27.0],"printed":[22.0,27.0],"status":"unequal","measure":"units","against":"program"}}
+{"cn":"18625","title":"General Studies - Coastal Oceanographic Studies","award":"A.S. Degree","cause":"units_incomplete","lever":"reconcile_steps","url":"https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=78","units":{"sum":[14.0,14.0],"printed":null,"status":"incomplete","measure":"units","against":"program"}}
 ]}
