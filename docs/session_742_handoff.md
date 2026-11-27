@@ -166,3 +166,7 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   the printed 22), the seven pins GO as a set (MINOR: no test yet pins American River's Level I and II windows or
   Fullerton's two). s741e's clean pre-read 2 of 2; migrate 45961856192 returned 2, none skipped; `.apply` restored
   (`d4b0d71d`). Records collected: 23.
+- 07:58Z: American River's two pins bind in free capture 45961227651 (39731 at p.207-208, 39732 at p.208-209, each its
+  own page, coverage 1.0; both were read from p.211, the Level IV tail); the paid read dispatched on
+  `claude/s741-piles` (sources_from 45961227651, only 39731 and 39732, about $0.20). `piles`' step 3 over its colleges
+  filed nothing (16 discontinued flags, none new; the units rules' dry run moves 0 rows).
