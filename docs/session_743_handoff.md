@@ -292,7 +292,7 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   posts a later run), then to the S731 pooled test (Cuyamaca 18637's verdict moves with tonight's records), then a real fix
   in tonight's s742k3 test (its no-Postgres fallback caught `Exception` but not the `SystemExit` the md5 helper raises).
   `test` green on `24c68b2b`.
-- 16:00Z: #3905 merged as `1c12d1a7`, confirmed on `origin/main`; the closing census dispatched on `main`. The context meter
+- 16:00Z: #3905 merged as `1c12d1a7`, confirmed on `origin/main`; the closing census dispatched on `main` (46029970004, `8f914656` at 16:06Z: 15,680 pass, 3,927 without, 675 with a named gap). The context meter
   read 109,569 tokens left at 15:17Z (the warning line): this checkpoint was already written, so the run finished the land
   and signed off.
 
@@ -300,8 +300,9 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 
 In all: 25 records collected and live (12 passing, 13 named gaps by guarded plans), no outline rows, paid reads about
 $0.81 on their estimates (Cuyamaca $0.25, El Camino $0.50, Butte $0.06, Coastline $0; page reads free). Census and headline: the census after the display build,
-46003215768 on `main` (`3502e99c`, 13:04Z): 15,669 of 20,282 pass, 3,950 without, 663 with a named gap; the closing census
-is the next session's first read.
+46003215768 on `main` (`3502e99c`, 13:04Z): 15,669 of 20,282 pass, 3,950 without, 663 with a named gap; the closing census,
+46029970004 on `main` (`8f914656`, 16:06Z): 15,680 of 20,282 pass, 3,927 without, 675 with a named gap (from 15,669,
+3,950 and 663).
 
 **Merged.**
 - **#3904 (`1a3e3be8`, 12:59Z), the display build `5b80d4de75e9`** (18,747 rows; the gate at Glendale 45998506887, then the
