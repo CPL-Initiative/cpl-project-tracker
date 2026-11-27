@@ -35,7 +35,7 @@ number: this run is S741 and writes 742. 739 stays SkyTurnstone's (Sam's next pl
    wave only when it blocks it or would file wrong rows (`r-collection-first-sam-2026-11-20`). Collection serves the
    M-IDs, so its fixes are ranked by the M-ID cards they unblock (`r-collect-for-mids-work-order-sam-2026-11-20`).
 3. **Merge order at sign-off:** #3900 (`2d0fa074`) and #3898 (`de24433f`, the display build) have merged; the land
-   (`claude/s741-land`): <LAND>. This checkpoint, #3897, merges at sign-off, with one update from `main` right before its
+   (`claude/s741-land`): #3902 merged at 10:57Z as `63000a44`, confirmed on `origin/main` (`test` green on `7a0ccb67`, after a re-run past an npm registry lag and the S727 pooled test's either-state edit for Cuyamaca). This checkpoint, #3897, merges at sign-off, with one update from `main` right before its
    merge. Open PRs at sign-off: #3897 and dependabot's #3383, which waits.
 
 ## The start (06:12Z firing, 2026-11-27)
@@ -309,7 +309,7 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 ## What shipped
 
 In all: 52 records collected and live (28 passing, 24 named gaps by guarded plans), no outline rows, paid reads about $3
-on their estimates. Census and headline: <CENSUS>. The headline's pair at 09:40Z: 15,669 of 20,282 active programs
+on their estimates. Census and headline: the closing census, run 45986575262 on `main`, dispatched at 10:58Z after the land (its numbers are the next session's first read); the census after the display build, 45959377512 (07:38Z): 15,642 of 20,282 pass, 3,996 without, 644 with a named gap. The headline's pair at 09:40Z: 15,669 of 20,282 active programs
 complete at 118 colleges.
 
 **Merged.**
@@ -318,7 +318,7 @@ complete at 118 colleges.
   the two checks now expect one more only while no live save holds the key.
 - **#3898 (`de24433f`, 07:34Z), the display build `a143061a2ae2`** (18,746 rows; the gate at Glendale 45951236087, then
   the whole build 45951699122); the census after it, 45959377512: 15,642 pass, 3,996 without, 644 with a named gap.
-- **The land** `claude/s741-land`: <LAND>.
+- **The land** `claude/s741-land`: #3902 merged at 10:57Z as `63000a44`, confirmed on `origin/main` (`test` green on `7a0ccb67`, after a re-run past an npm registry lag and the S727 pooled test's either-state edit for Cuyamaca).
 
 **Live (each applied, reread or loaded).**
 - Keys 17: Santa Ana 31859, 21789 (s741k1); San Bernardino Valley 35833, 22784 (s741k3), 22821 (read 45960735042);
@@ -453,9 +453,9 @@ after about $210; the repo's rates read about $187 at 08:53Z.
 | #3897 (`claude/awesome-fermat-e6ozhd`) | the declaration, the log and this checkpoint (draft) | merges at sign-off, after one update from `main` |
 | #3898 (`claude/s741-display`) | merged `de24433f` (07:34Z); display build `a143061a2ae2` live | none |
 | #3900 (`claude/s741-main-red`) | merged `2d0fa074` (07:07Z) | none |
-| `claude/s741-keys`, `-keys-sbvc`, `-keys-cuy`, `claude/s741-readers`, `-readers-norco`, `-readers-sdcity`, `claude/s741-piles` | s741k1 to s741k4, s741r1, s741a to s741f applied; reads and rereads live | the land `claude/s741-land`: <LAND> |
+| `claude/s741-keys`, `-keys-sbvc`, `-keys-cuy`, `claude/s741-readers`, `-readers-norco`, `-readers-sdcity`, `claude/s741-piles` | s741k1 to s741k4, s741r1, s741a to s741f applied; reads and rereads live | the land `claude/s741-land`: #3902 merged at 10:57Z as `63000a44`, confirmed on `origin/main` (`test` green on `7a0ccb67`, after a re-run past an npm registry lag and the S727 pooled test's either-state edit for Cuyamaca) |
 | `claude/s741-keys-wordtest` (`302c12c5`), `claude/s741-keys-crc` (`49e6c644`) | parked, unreviewed | the next session (NEXT (3)) |
-| Harvest gap census on `main` | 45920941316 (01:12Z); after the display build 45959377512 (07:38Z): 15,642 pass | the closing census: <CENSUS> |
+| Harvest gap census on `main` | 45920941316 (01:12Z); after the display build 45959377512 (07:38Z): 15,642 pass | the closing census: the closing census, run 45986575262 on `main`, dispatched at 10:58Z after the land (its numbers are the next session's first read); the census after the display build, 45959377512 (07:38Z): 15,642 of 20,282 pass, 3,996 without, 644 with a named gap |
 | #3383 | dependabot's | waits |
 
 ## Let go
@@ -464,9 +464,9 @@ No PR subscription, artifact watch or COBIx watcher was opened tonight, and the 
 none pending, so there is none to drop. Workers end with the session; each branch is pushed. The vault note for this run is
 `CPLBrain/07-session-notes/2026-11-27-s741-skywillet-collection.md` (merged as samueltlee/CPLBrain#874, `9e6933e0`, under Sam's ruling of 2026-11-21 that vault note drafts merge on their own).
 
-Spend: $<SPEND> estimate; collection $<SPEND>; 2026-11-27T06:12Z to <END>Z. (A token-count estimate at the repo's list
+Spend: $255.25 estimate (Opus 5.5 $43.29, Fable 5.2 $193.44, Sonnet $18.05, Haiku $0.48); collection $255.25; 2026-11-27T06:12Z to 2026-11-27T11:04Z. (A token-count estimate at the repo's list
 prices; the conductor fills the final figure. The paid reads' own cost, about $3 on their estimates, is apart.)
 
 Opening line: *Greetings, you are SkyGodwit (the next free session number at your start; the routine takes it, so Session 742 and the run after it writes 743), see SkyWillet's (S741) handoff — `docs/session_742_handoff.md` — let's keep rolling with our queue.*
 
-Conductor model: Opus 5.5 (the form names Fable 5.2); session cost about $<SPEND> (a token-count estimate; get_session is not available here); 52 records collected and live (28 passing, 24 named gaps); 0 outline rows added; <N> substantive PRs merged (#3900, #3898, <LAND>), not counting checkpoints.
+Conductor model: Opus 5.5 (the form names Fable 5.2); session cost about $255.25 (a token-count estimate; get_session is not available here); 52 records collected and live (28 passing, 24 named gaps); 0 outline rows added; 3 substantive PRs merged (#3900, #3898, #3902 merged at 10:57Z as `63000a44`, confirmed on `origin/main` (`test` green on `7a0ccb67`, after a re-run past an npm registry lag and the S727 pooled test's either-state edit for Cuyamaca)), not counting checkpoints.
