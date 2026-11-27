@@ -1,5 +1,5 @@
 {
- "_readme": "S745 SkyTattler, 2026-11-27. For a mock-up Sam will share with ASSIST (a CPL Pathways card carrying an ASSIST chip), read one real agreement's data: Cerritos College's Business Administration 2.0 A.S.-T (control 41822) toward CSU Long Beach. Read 1 finds ASSIST's ids for the two institutions and the current academic year from its public lists (the same addresses its own pages fetch). Reads only; no model call. Read 1 (run 46067598277): a direct load of /api/institutions or /api/AcademicYears answers 400, so read 2 loads assist.org and finds the two institutions inside the list its own page fetches (the frame-check read, run 46064419390, showed academic year 2026-2027 is id 77). Read 2 (run 46068149361): Cerritos College is ASSIST institution 104, CSU Long Beach 81, 2026-2027 year 77. Read 3 opens ASSIST's agreement list from Cerritos to CSULB by major and finds the Business Administration agreement's key in the data the page fetches.",
+ "_readme": "S745 SkyTattler, 2026-11-27. For a mock-up Sam will share with ASSIST (a CPL Pathways card carrying an ASSIST chip), read one real agreement's data: Cerritos College's Business Administration 2.0 A.S.-T (control 41822) toward CSU Long Beach. Read 1 finds ASSIST's ids for the two institutions and the current academic year from its public lists (the same addresses its own pages fetch). Reads only; no model call. Read 1 (run 46067598277): a direct load of /api/institutions or /api/AcademicYears answers 400, so read 2 loads assist.org and finds the two institutions inside the list its own page fetches (the frame-check read, run 46064419390, showed academic year 2026-2027 is id 77). Read 2 (run 46068149361): Cerritos College is ASSIST institution 104, CSU Long Beach 81, 2026-2027 year 77. Read 3 opens ASSIST's agreement list from Cerritos to CSULB by major and finds the Business Administration agreement's key in the data the page fetches. Read 3 (run 46069112980): the list by major names Business Administration, Management Option, B.S. with key 77/104/to/81/Major/a1a198a4-62e6-4ede-5656-08dec02198ed. Read 4 opens that agreement and keeps its course pairs.",
  "college": "Cerritos College",
  "outside_hosts": {
   "assist.org": "ASSIST, the state's transfer articulation system: its public institution and academic-year lists, the data its own pages fetch"
@@ -9,19 +9,29 @@
   "agreement": "The key of the Cerritos to CSULB Business Administration agreement, and the agreement's course pairs."
  },
  "keywords": [
-  "Business",
-  "Administration"
+  "ACCT",
+  "BUS",
+  "ECON",
+  "MATH",
+  "STAT",
+  "No Course Articulated",
+  "Articulates"
  ],
  "pages": [
   {
-   "url": "https://assist.org/transfer/results?year=77&institution=104&agreement=81&agreementType=to&view=agreement&viewBy=major&viewSendingAgreements=false",
+   "url": "https://assist.org/transfer/results?year=77&institution=104&agreement=81&agreementType=to&view=agreement&viewBy=major&viewSendingAgreements=false&viewByKey=77%2F104%2Fto%2F81%2FMajor%2Fa1a198a4-62e6-4ede-5656-08dec02198ed",
    "answers": [
     "agreement"
    ],
    "network": true,
    "network_find": [
-    "Business",
-    "Accounting"
+    "\"prefix\":\"ACCT\"",
+    "\"prefix\":\"BUS\"",
+    "\"prefix\":\"ECON\"",
+    "\"prefix\":\"MATH\"",
+    "\"prefix\":\"STAT\"",
+    "\"prefix\":\"BLAW\"",
+    "\"prefix\":\"IS\""
    ]
   }
  ]
