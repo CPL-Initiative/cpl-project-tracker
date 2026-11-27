@@ -58,8 +58,8 @@
   },
   "program_titles": {
    "one or mixed": {
-    "right": 1009,
-    "asked": 1824,
+    "right": 1010,
+    "asked": 1825,
     "share": 0.553,
     "score": 55
    },
@@ -230,8 +230,8 @@
   "noncredit_no_title": 242,
   "noncredit_title": 21,
   "noncredit_title_unused_condition": 64,
-  "title_60_to_89": 408,
-  "title_90_plus": 397,
+  "title_60_to_89": 407,
+  "title_90_plus": 398,
   "title_none": 359,
   "title_under_60": 93
  },
@@ -1801,32 +1801,19 @@
      "code": "HVACR",
      "title": {
       "title": "Heating, Ventilation, Air Conditioning, and Refrigeration",
-      "confidence": 89,
+      "confidence": 98,
       "from": "course_joins",
-      "why": "course joins: 13 of 16 joined courses (most courses agree, right 88% of the time); other colleges: 2 of 3 other colleges (mixed, right 87% of the time). Another source reads differently.",
-      "also": [
-       {
-        "title": "Refrigeration Service Technician Apprenticeship",
-        "from": "program_titles"
-       }
-      ],
+      "why": "course joins: 13 of 16 joined courses (most courses agree, right 88% of the time); other colleges: 2 of 3 other colleges (mixed, right 87% of the time). The sources agree.",
+      "also": [],
       "candidates": [
        {
         "title": "Heating, Ventilation, Air Conditioning, and Refrigeration",
-        "confidence": 89,
+        "confidence": 98,
         "from": [
          "course_joins",
          "other_colleges"
         ],
         "why": "course joins: 13 of 16 joined courses (most courses agree, right 88% of the time); other colleges: 2 of 3 other colleges (mixed, right 87% of the time)."
-       },
-       {
-        "title": "Refrigeration Service Technician Apprenticeship",
-        "confidence": 55,
-        "from": [
-         "program_titles"
-        ],
-        "why": "program titles: 1 of 2 programs (one or mixed, right 55% of the time)."
        }
       ]
      }
