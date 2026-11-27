@@ -1,0 +1,25 @@
+{
+ "_readme": "S742, lane 2's cheap piles (2026-11-27). Butte 01312 (Real Estate A.S.): its major adds to the printed 39-40, general education is the Local pattern's 21, and the two add to 60-61 under the 62-69 its 'Map (Butte GE)' prints; its notes name the map's 2-unit Graduation Requirement Choice and an Area 4 choice 'Only necessary if not already met'. degree_electives_not_printed says the page prints no figure for electives and does not say they fill the rest, so this read makes the capture's own calls for the entry (cq_view, catalog 14): a session can read every line of the map with its units, whether any line is an elective, and the map's total, word for word. No model call, nothing written.",
+ "college": "Butte College",
+ "questions": {
+  "map_lines": "Every line of the 'Map (Butte GE)' with its units, any elective line and its note, and the map's 'Units:' total."
+ },
+ "keywords": [
+  "[Ee]lective[^\\n]{0,120}",
+  "Only necessary[^\\n]{0,120}",
+  "Graduation Requirement[^\\n]{0,120}",
+  "Units:[^\\n]{0,40}",
+  "GE Pattern[^\\n]{0,80}"
+ ],
+ "pages": [
+  {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28172/28335",
+   "answers": [
+    "map_lines"
+   ],
+   "why": "01312",
+   "cq_view": true,
+   "cq_catalog": 14
+  }
+ ]
+}
