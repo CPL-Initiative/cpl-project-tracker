@@ -68,7 +68,7 @@
    "status": "equal",
    "computed": [
     19.0,
-    22.0
+    21.0
    ],
    "stated": [
     19.0,
@@ -76,6 +76,7 @@
    ],
    "against": "program",
    "why": [],
+   "short_high": true,
    "rescored": "Sam's ruling of 2026-11-17, short high end"
   },
   "repeated": {
@@ -222,7 +223,6 @@
    "'Laboratory Safety Technicians' is taken from the description's statement of job-market demand; the other four careers are from the sentence on positions graduates will obtain."
   ]
  },
- "extracted_run": 46017556328,
- "catalog_year": "2026-2027",
- "read_run": "38748833332"
+ "extracted_run": "38748833332",
+ "catalog_year": "2026-2027"
 }

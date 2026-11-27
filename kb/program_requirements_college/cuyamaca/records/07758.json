@@ -64,7 +64,7 @@
    "status": "equal",
    "computed": [
     34.0,
-    37.0
+    36.0
    ],
    "stated": [
     34.0,
@@ -72,6 +72,7 @@
    ],
    "against": "program",
    "why": [],
+   "short_high": true,
    "rescored": "Sam's ruling of 2026-11-17, short high end"
   },
   "repeated": {
@@ -312,7 +313,6 @@
    "The Certificate of Achievement consists of the same major requirements; this record covers the A.S. degree."
   ]
  },
- "extracted_run": 46017556328,
- "catalog_year": "2026-2027",
- "read_run": "38748833332"
+ "extracted_run": "38748833332",
+ "catalog_year": "2026-2027"
 }

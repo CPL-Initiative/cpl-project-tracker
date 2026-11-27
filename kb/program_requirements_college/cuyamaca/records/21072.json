@@ -64,7 +64,7 @@
    "status": "equal",
    "computed": [
     29.0,
-    34.0
+    33.0
    ],
    "stated": [
     29.0,
@@ -72,6 +72,7 @@
    ],
    "against": "program",
    "why": [],
+   "short_high": true,
    "rescored": "Sam's ruling of 2026-11-17, short high end"
   },
   "repeated": {
@@ -335,7 +336,6 @@
    "'Plus General Education Requirements' applies to the A.S. degree, not to the certificate; no GE pattern is recorded."
   ]
  },
- "extracted_run": 46017556328,
- "catalog_year": "2026-2027",
- "read_run": "38748833332"
+ "extracted_run": "38748833332",
+ "catalog_year": "2026-2027"
 }
