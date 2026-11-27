@@ -45,11 +45,15 @@
   {
    "code": "ART",
    "title": "Art",
-   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/3973/6083/7544",
    "where": "catalog",
    "method": "subject heading",
+   "rule": "code_address",
    "printed": "ART - Art",
-   "node": 7633
+   "node": 7544,
+   "found_on": "2026-11-27",
+   "found_by": "COBI, a runner read (run 46061067072), from Sam's training note of 2026-11-27",
+   "run": "46061067072"
   },
   {
    "code": "ARTH",
@@ -315,11 +319,15 @@
   {
    "code": "FILM",
    "title": "Film",
-   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/3973/6083/7576",
    "where": "catalog",
    "method": "subject heading",
+   "rule": "code_address",
    "printed": "FILM - Film",
-   "node": 7661
+   "node": 7576,
+   "found_on": "2026-11-27",
+   "found_by": "COBI, a runner read (run 46061067072), from Sam's training note of 2026-11-27",
+   "run": "46061067072"
   },
   {
    "code": "FRNC",
@@ -914,6 +922,19 @@
    "method": "subject heading",
    "printed": "SHEE - Apprenticeship: Sheetmetal",
    "node": 7506
+  },
+  {
+   "code": "PLBG",
+   "title": "Apprenticeship: Plumbing",
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/3973/6083/7609",
+   "where": "catalog",
+   "method": "subject heading",
+   "rule": "code_address",
+   "printed": "PLBG - Apprenticeship: Plumbing",
+   "node": 7609,
+   "found_on": "2026-11-27",
+   "found_by": "COBI, a runner read (run 46061067072), from Sam's training note of 2026-11-27",
+   "run": "46061067072"
   }
  ]
 }

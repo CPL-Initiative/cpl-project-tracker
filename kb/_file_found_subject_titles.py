@@ -100,8 +100,11 @@ def file_doc(slug, d, dry):
         code, printed = str(t.get("code") or "").strip(), str(t.get("title") or "").strip()
         k = code_key(code)
         # A class schedule's lookup prints the code and its title in two columns (S736), so its ART titled Art is a
-        # title; a catalog heading that only repeats its code is not.
-        if not k or not printed or (code_key(printed) == k and t.get("rule") != "schedule"):
+        # title; so is the code's own catalog page (rule code_address) where it prints the code and the title apart
+        # (Chabot's "ART - Art", S745). A catalog heading that only repeats its code is not.
+        apart = t.get("rule") == "code_address" and str(t.get("printed") or "").strip() != printed and code_key(
+            re.sub(r"\s*[-–:]\s*" + re.escape(printed) + r"$", "", str(t.get("printed") or ""))) == k
+        if not k or not printed or (code_key(printed) == k and t.get("rule") != "schedule" and not apart):
             skipped += 1
             continue
         old = have.get(k)
@@ -115,7 +118,7 @@ def file_doc(slug, d, dry):
                "candidate": None, "address": t.get("url"), "where": t.get("where") or "catalog",
                "method": t.get("method") or "subject heading",
                "found_on": t.get("found_on") or (d.get("read_at") or "")[:10] or None,
-               "found_by": t.get("found_by") or "COBI, a runner read (run %s)" % d.get("run"), "run": d.get("run")}
+               "found_by": t.get("found_by") or "COBI, a runner read (run %s)" % d.get("run"), "run": t.get("run") or d.get("run")}
         if old:
             old.update(row)
         else:

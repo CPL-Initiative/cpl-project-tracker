@@ -4,14 +4,14 @@
  "measured_on_titled_codes": {
   "course_joins": {
    "few or mixed": {
-    "right": 1856,
-    "asked": 3795,
+    "right": 1858,
+    "asked": 3796,
     "share": 0.489,
     "score": 49
    },
    "most courses agree": {
     "right": 3652,
-    "asked": 4163,
+    "asked": 4164,
     "share": 0.877,
     "score": 88
    }
@@ -44,8 +44,8 @@
     "score": 95
    },
    "mixed": {
-    "right": 4127,
-    "asked": 4733,
+    "right": 4129,
+    "asked": 4735,
     "share": 0.872,
     "score": 87
    },
@@ -58,8 +58,8 @@
   },
   "program_titles": {
    "one or mixed": {
-    "right": 1009,
-    "asked": 1823,
+    "right": 1010,
+    "asked": 1825,
     "share": 0.553,
     "score": 55
    },
@@ -72,9 +72,9 @@
   },
   "sibling": {
    "one letter apart": {
-    "right": 311,
-    "asked": 443,
-    "share": 0.702,
+    "right": 313,
+    "asked": 445,
+    "share": 0.703,
     "score": 70
    },
    "same letters": {
@@ -202,37 +202,37 @@
   },
   "rows_the_subject_map_settles": {
    "own_courses": {
-    "right": 136,
-    "asked": 136
+    "right": 135,
+    "asked": 135
    },
    "same_code_statewide": {
     "right": 19,
     "asked": 19
    },
    "title": {
-    "right": 195,
-    "asked": 202
+    "right": 196,
+    "asked": 203
    }
   }
  },
  "web_searches_filed": 313,
  "totals": {
   "common_60_to_89": 24,
-  "common_90_plus": 1259,
+  "common_90_plus": 1257,
   "common_no_code_yet": 100,
-  "common_none": 563,
-  "common_under_60": 533,
-  "no_common": 2479,
-  "no_title": 1226,
-  "noncredit_common": 501,
-  "noncredit_no_common": 688,
-  "noncredit_no_title": 242,
+  "common_none": 552,
+  "common_under_60": 531,
+  "no_common": 2464,
+  "no_title": 1199,
+  "noncredit_common": 499,
+  "noncredit_no_common": 682,
+  "noncredit_no_title": 236,
   "noncredit_title": 21,
   "noncredit_title_unused_condition": 64,
-  "title_60_to_89": 385,
+  "title_60_to_89": 383,
   "title_90_plus": 391,
-  "title_none": 358,
-  "title_under_60": 92
+  "title_none": 342,
+  "title_under_60": 83
  },
  "colleges": [
   {
@@ -297,7 +297,7 @@
       "title": "Art",
       "confidence": 89,
       "from": "course_joins",
-      "why": "course joins: 15 of 20 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time). Another source reads differently.",
+      "why": "course joins: 15 of 20 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Ceramics",
@@ -312,7 +312,7 @@
          "course_joins",
          "other_colleges"
         ],
-        "why": "course joins: 15 of 20 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time)."
+        "why": "course joins: 15 of 20 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time)."
        },
        {
         "title": "Ceramics",
@@ -728,7 +728,7 @@
       "title": "Film & Video Production",
       "confidence": 89,
       "from": "other_colleges",
-      "why": "other colleges: 3 of 9 other colleges (mixed, right 87% of the time); program titles: 2 of 2 programs (several agree, right 64% of the time). Another source reads differently.",
+      "why": "other colleges: 4 of 10 other colleges (mixed, right 87% of the time); program titles: 2 of 2 programs (several agree, right 64% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Cinema, Television, Radio",
@@ -743,7 +743,7 @@
          "other_colleges",
          "program_titles"
         ],
-        "why": "other colleges: 3 of 9 other colleges (mixed, right 87% of the time); program titles: 2 of 2 programs (several agree, right 64% of the time)."
+        "why": "other colleges: 4 of 10 other colleges (mixed, right 87% of the time); program titles: 2 of 2 programs (several agree, right 64% of the time)."
        },
        {
         "title": "Cinema, Television, Radio",
@@ -1530,7 +1530,7 @@
       "title": "Art History",
       "confidence": 89,
       "from": "course_joins",
-      "why": "course joins: 17 of 24 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
+      "why": "course joins: 17 of 24 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Animation",
@@ -1546,7 +1546,7 @@
          "other_colleges",
          "sibling"
         ],
-        "why": "course joins: 17 of 24 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
+        "why": "course joins: 17 of 24 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
        },
        {
         "title": "Animation",
@@ -2202,7 +2202,7 @@
       "title": "Art",
       "confidence": 98,
       "from": "course_joins",
-      "why": "course joins: 10 of 16 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time). The sources agree.",
+      "why": "course joins: 10 of 16 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -2212,7 +2212,7 @@
          "course_joins",
          "other_colleges"
         ],
-        "why": "course joins: 10 of 16 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time)."
+        "why": "course joins: 10 of 16 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time)."
        }
       ]
      }
@@ -2394,7 +2394,7 @@
       "title": "Art",
       "confidence": 93,
       "from": "other_colleges",
-      "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); course joins: 13 of 27 joined courses (few or mixed, right 49% of the time). The sources agree.",
+      "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); course joins: 13 of 27 joined courses (few or mixed, right 49% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -2404,7 +2404,7 @@
          "other_colleges",
          "course_joins"
         ],
-        "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); course joins: 13 of 27 joined courses (few or mixed, right 49% of the time)."
+        "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); course joins: 13 of 27 joined courses (few or mixed, right 49% of the time)."
        }
       ]
      }
@@ -2551,7 +2551,7 @@
       "title": "Art",
       "confidence": 89,
       "from": "course_joins",
-      "why": "course joins: 9 of 10 joined courses (most courses agree, right 88% of the time); other colleges: 2 of 7 other colleges (mixed, right 87% of the time). Another source reads differently.",
+      "why": "course joins: 10 of 10 joined courses (most courses agree, right 88% of the time); other colleges: 2 of 7 other colleges (mixed, right 87% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Studio Arts",
@@ -2566,7 +2566,7 @@
          "course_joins",
          "other_colleges"
         ],
-        "why": "course joins: 9 of 10 joined courses (most courses agree, right 88% of the time); other colleges: 2 of 7 other colleges (mixed, right 87% of the time)."
+        "why": "course joins: 10 of 10 joined courses (most courses agree, right 88% of the time); other colleges: 2 of 7 other colleges (mixed, right 87% of the time)."
        },
        {
         "title": "Studio Arts",
@@ -2886,7 +2886,7 @@
       "title": "Art History",
       "confidence": 89,
       "from": "course_joins",
-      "why": "course joins: 14 of 22 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
+      "why": "course joins: 14 of 22 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Ceramics",
@@ -2902,7 +2902,7 @@
          "other_colleges",
          "sibling"
         ],
-        "why": "course joins: 14 of 22 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
+        "why": "course joins: 14 of 22 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
        },
        {
         "title": "Ceramics",
@@ -3040,7 +3040,7 @@
       "title": "Art History",
       "confidence": 89,
       "from": "course_joins",
-      "why": "course joins: 8 of 10 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
+      "why": "course joins: 8 of 10 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Studio Arts",
@@ -3056,7 +3056,7 @@
          "other_colleges",
          "sibling"
         ],
-        "why": "course joins: 8 of 10 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
+        "why": "course joins: 8 of 10 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
        },
        {
         "title": "Studio Arts",
@@ -3582,7 +3582,7 @@
       "title": "Art History",
       "confidence": 99,
       "from": "course_joins",
-      "why": "course joins: 10 of 15 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 1 programs (one or mixed, right 55% of the time). The sources agree.",
+      "why": "course joins: 10 of 15 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 1 programs (one or mixed, right 55% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -3594,7 +3594,7 @@
          "sibling",
          "program_titles"
         ],
-        "why": "course joins: 10 of 15 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 1 programs (one or mixed, right 55% of the time)."
+        "why": "course joins: 10 of 15 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 1 programs (one or mixed, right 55% of the time)."
        }
       ]
      }
@@ -3770,7 +3770,7 @@
       "title": "Art History",
       "confidence": 99,
       "from": "course_joins",
-      "why": "course joins: 10 of 14 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). The sources agree.",
+      "why": "course joins: 10 of 14 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -3781,7 +3781,7 @@
          "other_colleges",
          "sibling"
         ],
-        "why": "course joins: 10 of 14 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
+        "why": "course joins: 10 of 14 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
        }
       ]
      }
@@ -3834,7 +3834,7 @@
       "title": "Film",
       "confidence": 87,
       "from": "other_colleges",
-      "why": "other colleges: 3 of 9 other colleges (mixed, right 87% of the time).",
+      "why": "other colleges: 4 of 10 other colleges (mixed, right 87% of the time).",
       "also": [],
       "candidates": [
        {
@@ -3843,7 +3843,7 @@
         "from": [
          "other_colleges"
         ],
-        "why": "other colleges: 3 of 9 other colleges (mixed, right 87% of the time)."
+        "why": "other colleges: 4 of 10 other colleges (mixed, right 87% of the time)."
        }
       ]
      }
@@ -4009,181 +4009,6 @@
      }
     },
     {
-     "code": "ART",
-     "title": {
-      "title": "Art History",
-      "confidence": 89,
-      "from": "course_joins",
-      "why": "course joins: 7 of 11 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
-      "also": [
-       {
-        "title": "Applied Ceramics",
-        "from": "program_titles"
-       }
-      ],
-      "candidates": [
-       {
-        "title": "Art History",
-        "confidence": 89,
-        "from": [
-         "course_joins",
-         "other_colleges",
-         "sibling"
-        ],
-        "why": "course joins: 7 of 11 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
-       },
-       {
-        "title": "Applied Ceramics",
-        "confidence": 55,
-        "from": [
-         "program_titles"
-        ],
-        "why": "program titles: 1 of 6 programs (one or mixed, right 55% of the time)."
-       }
-      ]
-     }
-    },
-    {
-     "code": "ATHLBB",
-     "title": {
-      "title": "Sports",
-      "confidence": 49,
-      "from": "course_joins",
-      "why": "course joins: 1 of 1 joined courses (few or mixed, right 49% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Sports",
-        "confidence": 49,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 1 of 1 joined courses (few or mixed, right 49% of the time)."
-       }
-      ]
-     }
-    },
-    {
-     "code": "ATHLMB",
-     "title": {
-      "title": "Athletics",
-      "confidence": 49,
-      "from": "course_joins",
-      "why": "course joins: 1 of 1 joined courses (few or mixed, right 49% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Athletics",
-        "confidence": 49,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 1 of 1 joined courses (few or mixed, right 49% of the time)."
-       }
-      ]
-     }
-    },
-    {
-     "code": "ATHLMT",
-     "title": {
-      "title": "Sports",
-      "confidence": 49,
-      "from": "course_joins",
-      "why": "course joins: 1 of 1 joined courses (few or mixed, right 49% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Sports",
-        "confidence": 49,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 1 of 1 joined courses (few or mixed, right 49% of the time)."
-       }
-      ]
-     }
-    },
-    {
-     "code": "ATHLSM",
-     "title": {
-      "title": "Intercollegiate Athletics",
-      "confidence": 49,
-      "from": "course_joins",
-      "why": "course joins: 1 of 1 joined courses (few or mixed, right 49% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Intercollegiate Athletics",
-        "confidence": 49,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 1 of 1 joined courses (few or mixed, right 49% of the time)."
-       }
-      ]
-     }
-    },
-    {
-     "code": "ATHLSW",
-     "title": {
-      "title": "Athletics",
-      "confidence": 49,
-      "from": "course_joins",
-      "why": "course joins: 1 of 1 joined courses (few or mixed, right 49% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Athletics",
-        "confidence": 49,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 1 of 1 joined courses (few or mixed, right 49% of the time)."
-       }
-      ]
-     }
-    },
-    {
-     "code": "ATHLWB",
-     "title": {
-      "title": "Athletics",
-      "confidence": 49,
-      "from": "course_joins",
-      "why": "course joins: 1 of 1 joined courses (few or mixed, right 49% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Athletics",
-        "confidence": 49,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 1 of 1 joined courses (few or mixed, right 49% of the time)."
-       }
-      ]
-     }
-    },
-    {
-     "code": "ATHLWS",
-     "title": {
-      "title": "Sports",
-      "confidence": 49,
-      "from": "course_joins",
-      "why": "course joins: 1 of 1 joined courses (few or mixed, right 49% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Sports",
-        "confidence": 49,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 1 of 1 joined courses (few or mixed, right 49% of the time)."
-       }
-      ]
-     }
-    },
-    {
      "code": "CMGT",
      "common": {
       "code": "CNSM",
@@ -4191,26 +4016,6 @@
       "confidence": 97,
       "from": "title",
       "why": "The title names the discipline Construction Management."
-     }
-    },
-    {
-     "code": "DANCJD",
-     "title": {
-      "title": "Dance",
-      "confidence": 49,
-      "from": "course_joins",
-      "why": "course joins: 1 of 1 joined courses (few or mixed, right 49% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Dance",
-        "confidence": 49,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 1 of 1 joined courses (few or mixed, right 49% of the time)."
-       }
-      ]
      }
     },
     {
@@ -4244,40 +4049,6 @@
      }
     },
     {
-     "code": "FILM",
-     "title": {
-      "title": "Film and Animation",
-      "confidence": 89,
-      "from": "other_colleges",
-      "why": "other colleges: 3 of 9 other colleges (mixed, right 87% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time). Another source reads differently.",
-      "also": [
-       {
-        "title": "Applied Art and Design",
-        "from": "course_joins"
-       }
-      ],
-      "candidates": [
-       {
-        "title": "Film and Animation",
-        "confidence": 89,
-        "from": [
-         "other_colleges",
-         "program_titles"
-        ],
-        "why": "other colleges: 3 of 9 other colleges (mixed, right 87% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time)."
-       },
-       {
-        "title": "Applied Art and Design",
-        "confidence": 49,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 1 of 2 joined courses (few or mixed, right 49% of the time)."
-       }
-      ]
-     }
-    },
-    {
      "code": "FRNC",
      "common": {
       "code": "FLNG",
@@ -4306,28 +4077,6 @@
       "from": "noncredit_category",
       "category": "Courses for Older Adults",
       "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Courses for Older Adults (8 of 8 noncredit courses, 100%)."
-     }
-    },
-    {
-     "code": "HEAGFN",
-     "common": {
-      "code": "OLAD",
-      "discipline": "Older Adults: Noncredit",
-      "confidence": 20,
-      "from": "noncredit_category",
-      "category": "Courses for Older Adults",
-      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Courses for Older Adults (1 of 1 noncredit courses, 100%)."
-     }
-    },
-    {
-     "code": "HEAGSW",
-     "common": {
-      "code": "OLAD",
-      "discipline": "Older Adults: Noncredit",
-      "confidence": 20,
-      "from": "noncredit_category",
-      "category": "Courses for Older Adults",
-      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Courses for Older Adults (1 of 1 noncredit courses, 100%)."
      }
     },
     {
@@ -4421,53 +4170,13 @@
      }
     },
     {
-     "code": "PEACFUN",
+     "code": "PEAC",
      "common": {
       "code": "KINE",
       "discipline": "Kinesiology",
       "confidence": 97,
       "from": "own_courses",
-      "why": "2 of 2 of its courses with an M-ID sit under KINE."
-     }
-    },
-    {
-     "code": "PEACLSF",
-     "common": {
-      "code": "KINE",
-      "discipline": "Kinesiology",
-      "confidence": 97,
-      "from": "own_courses",
-      "why": "2 of 2 of its courses with an M-ID sit under KINE."
-     }
-    },
-    {
-     "code": "PEACWEI",
-     "title": {
-      "title": "Physical Education",
-      "confidence": 49,
-      "from": "course_joins",
-      "why": "course joins: 1 of 1 joined courses (few or mixed, right 49% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Physical Education",
-        "confidence": 49,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 1 of 1 joined courses (few or mixed, right 49% of the time)."
-       }
-      ]
-     }
-    },
-    {
-     "code": "PEACWSC",
-     "common": {
-      "code": "KINE",
-      "discipline": "Kinesiology",
-      "confidence": 97,
-      "from": "own_courses",
-      "why": "3 of 3 of its courses with an M-ID sit under KINE."
+      "why": "97 of 99 of its courses with an M-ID sit under KINE."
      }
     },
     {
@@ -4631,7 +4340,7 @@
       "title": "Art History",
       "confidence": 89,
       "from": "course_joins",
-      "why": "course joins: 13 of 13 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
+      "why": "course joins: 13 of 13 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Studio Arts",
@@ -4647,7 +4356,7 @@
          "other_colleges",
          "sibling"
         ],
-        "why": "course joins: 13 of 13 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
+        "why": "course joins: 13 of 13 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
        },
        {
         "title": "Studio Arts",
@@ -5081,7 +4790,7 @@
       "title": "Art",
       "confidence": 89,
       "from": "other_colleges",
-      "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 16 of 40 joined courses (few or mixed, right 49% of the time). Another source reads differently.",
+      "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 16 of 40 joined courses (few or mixed, right 49% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Ceramics - One Year",
@@ -5097,7 +4806,7 @@
          "sibling",
          "course_joins"
         ],
-        "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 16 of 40 joined courses (few or mixed, right 49% of the time)."
+        "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 16 of 40 joined courses (few or mixed, right 49% of the time)."
        },
        {
         "title": "Ceramics - One Year",
@@ -5336,7 +5045,7 @@
       "title": "Art History",
       "confidence": 89,
       "from": "course_joins",
-      "why": "course joins: 21 of 28 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
+      "why": "course joins: 21 of 28 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Studio Arts",
@@ -5352,7 +5061,7 @@
          "other_colleges",
          "sibling"
         ],
-        "why": "course joins: 21 of 28 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
+        "why": "course joins: 21 of 28 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
        },
        {
         "title": "Studio Arts",
@@ -6052,7 +5761,7 @@
       "title": "Art History",
       "confidence": 89,
       "from": "course_joins",
-      "why": "course joins: 11 of 14 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
+      "why": "course joins: 11 of 14 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Studio Arts",
@@ -6068,7 +5777,7 @@
          "other_colleges",
          "sibling"
         ],
-        "why": "course joins: 11 of 14 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
+        "why": "course joins: 11 of 14 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
        },
        {
         "title": "Studio Arts",
@@ -6256,7 +5965,7 @@
       "title": "Art",
       "confidence": 99,
       "from": "course_joins",
-      "why": "course joins: 12 of 19 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). The sources agree.",
+      "why": "course joins: 12 of 19 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -6267,7 +5976,7 @@
          "other_colleges",
          "sibling"
         ],
-        "why": "course joins: 12 of 19 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
+        "why": "course joins: 12 of 19 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
        }
       ]
      }
@@ -6504,7 +6213,7 @@
       "title": "Practitioner of Fine Art",
       "confidence": 99,
       "from": "course_joins",
-      "why": "course joins: 4 of 4 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); program titles: 1 of 1 programs (one or mixed, right 55% of the time). The sources agree.",
+      "why": "course joins: 4 of 4 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); program titles: 1 of 1 programs (one or mixed, right 55% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -6515,7 +6224,7 @@
          "other_colleges",
          "program_titles"
         ],
-        "why": "course joins: 4 of 4 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); program titles: 1 of 1 programs (one or mixed, right 55% of the time)."
+        "why": "course joins: 4 of 4 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); program titles: 1 of 1 programs (one or mixed, right 55% of the time)."
        }
       ]
      }
@@ -6752,7 +6461,7 @@
       "title": "Art",
       "confidence": 93,
       "from": "other_colleges",
-      "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); course joins: 18 of 32 joined courses (few or mixed, right 49% of the time). The sources agree.",
+      "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); course joins: 18 of 32 joined courses (few or mixed, right 49% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -6762,7 +6471,7 @@
          "other_colleges",
          "course_joins"
         ],
-        "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); course joins: 18 of 32 joined courses (few or mixed, right 49% of the time)."
+        "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); course joins: 18 of 32 joined courses (few or mixed, right 49% of the time)."
        }
       ]
      }
@@ -7147,7 +6856,7 @@
       "title": "Art: Art History",
       "confidence": 99,
       "from": "other_colleges",
-      "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 4 programs (one or mixed, right 55% of the time); course joins: 19 of 34 joined courses (few or mixed, right 49% of the time). The sources agree.",
+      "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 4 programs (one or mixed, right 55% of the time); course joins: 19 of 34 joined courses (few or mixed, right 49% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -7159,7 +6868,7 @@
          "program_titles",
          "course_joins"
         ],
-        "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 4 programs (one or mixed, right 55% of the time); course joins: 19 of 34 joined courses (few or mixed, right 49% of the time)."
+        "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 4 programs (one or mixed, right 55% of the time); course joins: 19 of 34 joined courses (few or mixed, right 49% of the time)."
        }
       ]
      }
@@ -7170,7 +6879,7 @@
       "title": "Film",
       "confidence": 93,
       "from": "other_colleges",
-      "why": "other colleges: 3 of 9 other colleges (mixed, right 87% of the time); course joins: 2 of 8 joined courses (few or mixed, right 49% of the time). The sources agree.",
+      "why": "other colleges: 4 of 10 other colleges (mixed, right 87% of the time); course joins: 2 of 8 joined courses (few or mixed, right 49% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -7180,7 +6889,7 @@
          "other_colleges",
          "course_joins"
         ],
-        "why": "other colleges: 3 of 9 other colleges (mixed, right 87% of the time); course joins: 2 of 8 joined courses (few or mixed, right 49% of the time)."
+        "why": "other colleges: 4 of 10 other colleges (mixed, right 87% of the time); course joins: 2 of 8 joined courses (few or mixed, right 49% of the time)."
        }
       ]
      }
@@ -7289,7 +6998,7 @@
       "title": "Art",
       "confidence": 98,
       "from": "course_joins",
-      "why": "course joins: 18 of 21 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time). The sources agree.",
+      "why": "course joins: 18 of 21 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -7299,7 +7008,7 @@
          "course_joins",
          "other_colleges"
         ],
-        "why": "course joins: 18 of 21 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time)."
+        "why": "course joins: 18 of 21 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time)."
        }
       ]
      }
@@ -8390,7 +8099,7 @@
       "title": "Art History",
       "confidence": 89,
       "from": "course_joins",
-      "why": "course joins: 16 of 26 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
+      "why": "course joins: 16 of 26 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Studio Arts",
@@ -8406,7 +8115,7 @@
          "other_colleges",
          "sibling"
         ],
-        "why": "course joins: 16 of 26 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
+        "why": "course joins: 16 of 26 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
        },
        {
         "title": "Studio Arts",
@@ -8549,7 +8258,7 @@
       "title": "Film Production",
       "confidence": 89,
       "from": "other_colleges",
-      "why": "other colleges: 3 of 9 other colleges (mixed, right 87% of the time); program titles: 2 of 5 programs (several agree, right 64% of the time). Another source reads differently.",
+      "why": "other colleges: 4 of 10 other colleges (mixed, right 87% of the time); program titles: 2 of 5 programs (several agree, right 64% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Cinema",
@@ -8564,7 +8273,7 @@
          "other_colleges",
          "program_titles"
         ],
-        "why": "other colleges: 3 of 9 other colleges (mixed, right 87% of the time); program titles: 2 of 5 programs (several agree, right 64% of the time)."
+        "why": "other colleges: 4 of 10 other colleges (mixed, right 87% of the time); program titles: 2 of 5 programs (several agree, right 64% of the time)."
        },
        {
         "title": "Cinema",
@@ -8858,7 +8567,7 @@
       "title": "Art",
       "confidence": 98,
       "from": "course_joins",
-      "why": "course joins: 13 of 16 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time). The sources agree.",
+      "why": "course joins: 13 of 16 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -8868,7 +8577,7 @@
          "course_joins",
          "other_colleges"
         ],
-        "why": "course joins: 13 of 16 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time)."
+        "why": "course joins: 13 of 16 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time)."
        }
       ]
      }
@@ -9080,7 +8789,7 @@
       "title": "Art History",
       "confidence": 99,
       "from": "course_joins",
-      "why": "course joins: 7 of 10 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time). The sources agree.",
+      "why": "course joins: 7 of 10 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -9092,7 +8801,7 @@
          "sibling",
          "program_titles"
         ],
-        "why": "course joins: 7 of 10 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time)."
+        "why": "course joins: 7 of 10 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time)."
        }
       ]
      }
@@ -9330,7 +9039,7 @@
       "title": "Art History",
       "confidence": 98,
       "from": "other_colleges",
-      "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 9 of 17 joined courses (few or mixed, right 49% of the time). The sources agree.",
+      "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 9 of 17 joined courses (few or mixed, right 49% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -9341,7 +9050,7 @@
          "sibling",
          "course_joins"
         ],
-        "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 9 of 17 joined courses (few or mixed, right 49% of the time)."
+        "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 9 of 17 joined courses (few or mixed, right 49% of the time)."
        }
       ]
      }
@@ -9533,7 +9242,7 @@
       "title": "Art History",
       "confidence": 89,
       "from": "course_joins",
-      "why": "course joins: 16 of 17 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
+      "why": "course joins: 16 of 17 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Studio Arts",
@@ -9549,7 +9258,7 @@
          "other_colleges",
          "sibling"
         ],
-        "why": "course joins: 16 of 17 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
+        "why": "course joins: 16 of 17 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
        },
        {
         "title": "Studio Arts",
@@ -9726,7 +9435,7 @@
       "title": "Art",
       "confidence": 93,
       "from": "other_colleges",
-      "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); course joins: 7 of 15 joined courses (few or mixed, right 49% of the time). The sources agree.",
+      "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); course joins: 8 of 15 joined courses (few or mixed, right 49% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -9736,7 +9445,7 @@
          "other_colleges",
          "course_joins"
         ],
-        "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); course joins: 7 of 15 joined courses (few or mixed, right 49% of the time)."
+        "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); course joins: 8 of 15 joined courses (few or mixed, right 49% of the time)."
        }
       ]
      }
@@ -10005,7 +9714,7 @@
       "title": "Art History",
       "confidence": 89,
       "from": "course_joins",
-      "why": "course joins: 14 of 22 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
+      "why": "course joins: 14 of 22 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Studio Arts",
@@ -10021,7 +9730,7 @@
          "other_colleges",
          "sibling"
         ],
-        "why": "course joins: 14 of 22 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
+        "why": "course joins: 14 of 22 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
        },
        {
         "title": "Studio Arts",
@@ -10336,7 +10045,7 @@
       "title": "Art History",
       "confidence": 99,
       "from": "other_colleges",
-      "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time); course joins: 8 of 17 joined courses (few or mixed, right 49% of the time). The sources agree.",
+      "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time); course joins: 9 of 17 joined courses (few or mixed, right 49% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -10348,7 +10057,7 @@
          "program_titles",
          "course_joins"
         ],
-        "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time); course joins: 8 of 17 joined courses (few or mixed, right 49% of the time)."
+        "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time); course joins: 9 of 17 joined courses (few or mixed, right 49% of the time)."
        }
       ]
      }
@@ -10590,7 +10299,7 @@
       "title": "Art",
       "confidence": 89,
       "from": "course_joins",
-      "why": "course joins: 9 of 11 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time). Another source reads differently.",
+      "why": "course joins: 9 of 11 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Studio Arts",
@@ -10605,7 +10314,7 @@
          "course_joins",
          "other_colleges"
         ],
-        "why": "course joins: 9 of 11 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time)."
+        "why": "course joins: 9 of 11 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time)."
        },
        {
         "title": "Studio Arts",
@@ -11074,7 +10783,7 @@
       "title": "Art History",
       "confidence": 99,
       "from": "other_colleges",
-      "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 6 programs (one or mixed, right 55% of the time); course joins: 13 of 35 joined courses (few or mixed, right 49% of the time). The sources agree.",
+      "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 6 programs (one or mixed, right 55% of the time); course joins: 13 of 35 joined courses (few or mixed, right 49% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -11086,7 +10795,7 @@
          "program_titles",
          "course_joins"
         ],
-        "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 6 programs (one or mixed, right 55% of the time); course joins: 13 of 35 joined courses (few or mixed, right 49% of the time)."
+        "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 6 programs (one or mixed, right 55% of the time); course joins: 13 of 35 joined courses (few or mixed, right 49% of the time)."
        }
       ]
      }
@@ -11280,7 +10989,7 @@
       "title": "Art History",
       "confidence": 98,
       "from": "other_colleges",
-      "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 11 of 28 joined courses (few or mixed, right 49% of the time). The sources agree.",
+      "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 11 of 28 joined courses (few or mixed, right 49% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -11291,7 +11000,7 @@
          "sibling",
          "course_joins"
         ],
-        "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 11 of 28 joined courses (few or mixed, right 49% of the time)."
+        "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 11 of 28 joined courses (few or mixed, right 49% of the time)."
        }
       ]
      }
@@ -11471,7 +11180,7 @@
       "title": "Art History",
       "confidence": 99,
       "from": "course_joins",
-      "why": "course joins: 22 of 29 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time). The sources agree.",
+      "why": "course joins: 22 of 29 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -11483,7 +11192,7 @@
          "sibling",
          "program_titles"
         ],
-        "why": "course joins: 22 of 29 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time)."
+        "why": "course joins: 22 of 29 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time)."
        }
       ]
      }
@@ -11736,7 +11445,7 @@
         "from": [
          "course_joins"
         ],
-        "why": "course joins: 2 of 9 joined courses (few or mixed, right 49% of the time)."
+        "why": "course joins: 2 of 10 joined courses (few or mixed, right 49% of the time)."
        }
       ]
      }
@@ -11820,7 +11529,7 @@
       "title": "Athletics",
       "confidence": 88,
       "from": "course_joins",
-      "why": "course joins: 38 of 58 joined courses (most courses agree, right 88% of the time). Another source reads differently.",
+      "why": "course joins: 35 of 58 joined courses (most courses agree, right 88% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Physical Education",
@@ -11834,7 +11543,7 @@
         "from": [
          "course_joins"
         ],
-        "why": "course joins: 38 of 58 joined courses (most courses agree, right 88% of the time)."
+        "why": "course joins: 35 of 58 joined courses (most courses agree, right 88% of the time)."
        },
        {
         "title": "Physical Education",
@@ -11908,7 +11617,7 @@
       "title": "Art",
       "confidence": 93,
       "from": "other_colleges",
-      "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); course joins: 11 of 20 joined courses (few or mixed, right 49% of the time). The sources agree.",
+      "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); course joins: 11 of 20 joined courses (few or mixed, right 49% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -11918,7 +11627,7 @@
          "other_colleges",
          "course_joins"
         ],
-        "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); course joins: 11 of 20 joined courses (few or mixed, right 49% of the time)."
+        "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); course joins: 11 of 20 joined courses (few or mixed, right 49% of the time)."
        }
       ]
      }
@@ -13455,7 +13164,7 @@
       "title": "Art History",
       "confidence": 89,
       "from": "course_joins",
-      "why": "course joins: 19 of 25 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
+      "why": "course joins: 19 of 25 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Studio Arts",
@@ -13471,7 +13180,7 @@
          "other_colleges",
          "sibling"
         ],
-        "why": "course joins: 19 of 25 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
+        "why": "course joins: 19 of 25 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
        },
        {
         "title": "Studio Arts",
@@ -13710,7 +13419,7 @@
       "title": "Art History",
       "confidence": 89,
       "from": "course_joins",
-      "why": "course joins: 13 of 19 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
+      "why": "course joins: 13 of 19 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Studio Arts",
@@ -13726,7 +13435,7 @@
          "other_colleges",
          "sibling"
         ],
-        "why": "course joins: 13 of 19 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
+        "why": "course joins: 13 of 19 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
        },
        {
         "title": "Studio Arts",
@@ -13991,7 +13700,7 @@
       "title": "Art Education for Children",
       "confidence": 99,
       "from": "course_joins",
-      "why": "course joins: 12 of 18 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time). The sources agree.",
+      "why": "course joins: 13 of 18 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -14003,7 +13712,7 @@
          "sibling",
          "program_titles"
         ],
-        "why": "course joins: 12 of 18 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time)."
+        "why": "course joins: 13 of 18 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time)."
        }
       ]
      }
@@ -14233,7 +13942,7 @@
       "title": "Art",
       "confidence": 97,
       "from": "other_colleges",
-      "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); program titles: 1 of 3 programs (one or mixed, right 55% of the time); course joins: 10 of 21 joined courses (few or mixed, right 49% of the time). The sources agree.",
+      "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); program titles: 1 of 3 programs (one or mixed, right 55% of the time); course joins: 12 of 21 joined courses (few or mixed, right 49% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -14244,7 +13953,7 @@
          "program_titles",
          "course_joins"
         ],
-        "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); program titles: 1 of 3 programs (one or mixed, right 55% of the time); course joins: 10 of 21 joined courses (few or mixed, right 49% of the time)."
+        "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); program titles: 1 of 3 programs (one or mixed, right 55% of the time); course joins: 12 of 21 joined courses (few or mixed, right 49% of the time)."
        }
       ]
      }
@@ -14430,7 +14139,7 @@
       "title": "Art History",
       "confidence": 99,
       "from": "course_joins",
-      "why": "course joins: 15 of 20 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time). The sources agree.",
+      "why": "course joins: 15 of 20 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -14442,7 +14151,7 @@
          "sibling",
          "program_titles"
         ],
-        "why": "course joins: 15 of 20 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time)."
+        "why": "course joins: 15 of 20 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time)."
        }
       ]
      }
@@ -14515,7 +14224,7 @@
       "title": "Film",
       "confidence": 87,
       "from": "other_colleges",
-      "why": "other colleges: 3 of 9 other colleges (mixed, right 87% of the time). Another source reads differently.",
+      "why": "other colleges: 4 of 10 other colleges (mixed, right 87% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Cinema",
@@ -14529,7 +14238,7 @@
         "from": [
          "other_colleges"
         ],
-        "why": "other colleges: 3 of 9 other colleges (mixed, right 87% of the time)."
+        "why": "other colleges: 4 of 10 other colleges (mixed, right 87% of the time)."
        },
        {
         "title": "Cinema",
@@ -14800,7 +14509,7 @@
       "title": "Business of Art",
       "confidence": 99,
       "from": "course_joins",
-      "why": "course joins: 21 of 29 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 5 programs (one or mixed, right 55% of the time). The sources agree.",
+      "why": "course joins: 21 of 29 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 5 programs (one or mixed, right 55% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -14812,7 +14521,7 @@
          "sibling",
          "program_titles"
         ],
-        "why": "course joins: 21 of 29 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 5 programs (one or mixed, right 55% of the time)."
+        "why": "course joins: 21 of 29 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 5 programs (one or mixed, right 55% of the time)."
        }
       ]
      }
@@ -15043,7 +14752,7 @@
       "title": "Art History",
       "confidence": 99,
       "from": "course_joins",
-      "why": "course joins: 12 of 19 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 3 programs (one or mixed, right 55% of the time). The sources agree.",
+      "why": "course joins: 12 of 19 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 3 programs (one or mixed, right 55% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -15055,7 +14764,7 @@
          "sibling",
          "program_titles"
         ],
-        "why": "course joins: 12 of 19 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 3 programs (one or mixed, right 55% of the time)."
+        "why": "course joins: 12 of 19 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 3 programs (one or mixed, right 55% of the time)."
        }
       ]
      }
@@ -15345,7 +15054,7 @@
       "title": "Art History",
       "confidence": 89,
       "from": "other_colleges",
-      "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 17 of 38 joined courses (few or mixed, right 49% of the time). Another source reads differently.",
+      "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 17 of 38 joined courses (few or mixed, right 49% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Animation, Visual Effects, and Game Design",
@@ -15361,7 +15070,7 @@
          "sibling",
          "course_joins"
         ],
-        "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 17 of 38 joined courses (few or mixed, right 49% of the time)."
+        "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 17 of 38 joined courses (few or mixed, right 49% of the time)."
        },
        {
         "title": "Animation, Visual Effects, and Game Design",
@@ -16224,7 +15933,7 @@
       "title": "Art",
       "confidence": 99,
       "from": "course_joins",
-      "why": "course joins: 15 of 22 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). The sources agree.",
+      "why": "course joins: 15 of 22 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -16235,7 +15944,7 @@
          "other_colleges",
          "sibling"
         ],
-        "why": "course joins: 15 of 22 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
+        "why": "course joins: 15 of 22 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
        }
       ]
      }
@@ -16568,7 +16277,7 @@
       "title": "Art History",
       "confidence": 98,
       "from": "other_colleges",
-      "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 17 of 31 joined courses (few or mixed, right 49% of the time). The sources agree.",
+      "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 17 of 31 joined courses (few or mixed, right 49% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -16579,7 +16288,7 @@
          "sibling",
          "course_joins"
         ],
-        "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 17 of 31 joined courses (few or mixed, right 49% of the time)."
+        "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 17 of 31 joined courses (few or mixed, right 49% of the time)."
        }
       ]
      }
@@ -17080,7 +16789,7 @@
       "title": "Art History",
       "confidence": 89,
       "from": "course_joins",
-      "why": "course joins: 11 of 18 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
+      "why": "course joins: 11 of 18 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Studio Arts",
@@ -17096,7 +16805,7 @@
          "other_colleges",
          "sibling"
         ],
-        "why": "course joins: 11 of 18 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
+        "why": "course joins: 11 of 18 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
        },
        {
         "title": "Studio Arts",
@@ -17265,7 +16974,7 @@
       "title": "Art History",
       "confidence": 99,
       "from": "course_joins",
-      "why": "course joins: 18 of 21 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 3 programs (one or mixed, right 55% of the time). The sources agree.",
+      "why": "course joins: 18 of 21 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 3 programs (one or mixed, right 55% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -17277,7 +16986,7 @@
          "sibling",
          "program_titles"
         ],
-        "why": "course joins: 18 of 21 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 3 programs (one or mixed, right 55% of the time)."
+        "why": "course joins: 18 of 21 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 3 programs (one or mixed, right 55% of the time)."
        }
       ]
      }
@@ -17379,7 +17088,7 @@
       "title": "Film and Digital Media",
       "confidence": 89,
       "from": "other_colleges",
-      "why": "other colleges: 3 of 9 other colleges (mixed, right 87% of the time); program titles: 1 of 1 programs (one or mixed, right 55% of the time). Another source reads differently.",
+      "why": "other colleges: 4 of 10 other colleges (mixed, right 87% of the time); program titles: 1 of 1 programs (one or mixed, right 55% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Theatre Arts",
@@ -17394,7 +17103,7 @@
          "other_colleges",
          "program_titles"
         ],
-        "why": "other colleges: 3 of 9 other colleges (mixed, right 87% of the time); program titles: 1 of 1 programs (one or mixed, right 55% of the time)."
+        "why": "other colleges: 4 of 10 other colleges (mixed, right 87% of the time); program titles: 1 of 1 programs (one or mixed, right 55% of the time)."
        },
        {
         "title": "Theatre Arts",
@@ -17526,7 +17235,7 @@
       "title": "Art",
       "confidence": 93,
       "from": "other_colleges",
-      "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); course joins: 13 of 29 joined courses (few or mixed, right 49% of the time). The sources agree.",
+      "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); course joins: 13 of 29 joined courses (few or mixed, right 49% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -17536,7 +17245,7 @@
          "other_colleges",
          "course_joins"
         ],
-        "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); course joins: 13 of 29 joined courses (few or mixed, right 49% of the time)."
+        "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); course joins: 13 of 29 joined courses (few or mixed, right 49% of the time)."
        }
       ]
      }
@@ -17793,7 +17502,7 @@
       "title": "Art History",
       "confidence": 89,
       "from": "course_joins",
-      "why": "course joins: 14 of 21 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
+      "why": "course joins: 14 of 21 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Ceramics",
@@ -17809,7 +17518,7 @@
          "other_colleges",
          "sibling"
         ],
-        "why": "course joins: 14 of 21 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
+        "why": "course joins: 14 of 21 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
        },
        {
         "title": "Ceramics",
@@ -18058,7 +17767,7 @@
       "title": "Art: Emphasis in Painting",
       "confidence": 99,
       "from": "course_joins",
-      "why": "course joins: 5 of 6 joined courses (most courses agree, right 88% of the time); other colleges: 2 of 7 other colleges (mixed, right 87% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time). The sources agree.",
+      "why": "course joins: 12 of 12 joined courses (most courses agree, right 88% of the time); other colleges: 2 of 7 other colleges (mixed, right 87% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -18069,7 +17778,7 @@
          "other_colleges",
          "program_titles"
         ],
-        "why": "course joins: 5 of 6 joined courses (most courses agree, right 88% of the time); other colleges: 2 of 7 other colleges (mixed, right 87% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time)."
+        "why": "course joins: 12 of 12 joined courses (most courses agree, right 88% of the time); other colleges: 2 of 7 other colleges (mixed, right 87% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time)."
        }
       ]
      }
@@ -18298,7 +18007,7 @@
       "title": "Art History",
       "confidence": 89,
       "from": "course_joins",
-      "why": "course joins: 12 of 18 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
+      "why": "course joins: 12 of 18 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Studio Arts",
@@ -18314,7 +18023,7 @@
          "other_colleges",
          "sibling"
         ],
-        "why": "course joins: 12 of 18 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
+        "why": "course joins: 12 of 18 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
        },
        {
         "title": "Studio Arts",
@@ -18501,7 +18210,7 @@
       "title": "Film",
       "confidence": 87,
       "from": "other_colleges",
-      "why": "other colleges: 3 of 9 other colleges (mixed, right 87% of the time).",
+      "why": "other colleges: 4 of 10 other colleges (mixed, right 87% of the time).",
       "also": [],
       "candidates": [
        {
@@ -18510,7 +18219,7 @@
         "from": [
          "other_colleges"
         ],
-        "why": "other colleges: 3 of 9 other colleges (mixed, right 87% of the time)."
+        "why": "other colleges: 4 of 10 other colleges (mixed, right 87% of the time)."
        }
       ]
      }
@@ -18821,7 +18530,7 @@
       "title": "Art",
       "confidence": 98,
       "from": "course_joins",
-      "why": "course joins: 8 of 11 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time). The sources agree.",
+      "why": "course joins: 8 of 11 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -18831,7 +18540,7 @@
          "course_joins",
          "other_colleges"
         ],
-        "why": "course joins: 8 of 11 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time)."
+        "why": "course joins: 8 of 11 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time)."
        }
       ]
      }
@@ -22536,7 +22245,7 @@
       "title": "Art",
       "confidence": 93,
       "from": "other_colleges",
-      "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); course joins: 12 of 30 joined courses (few or mixed, right 49% of the time). The sources agree.",
+      "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); course joins: 13 of 30 joined courses (few or mixed, right 49% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -22546,7 +22255,7 @@
          "other_colleges",
          "course_joins"
         ],
-        "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); course joins: 12 of 30 joined courses (few or mixed, right 49% of the time)."
+        "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); course joins: 13 of 30 joined courses (few or mixed, right 49% of the time)."
        }
       ]
      }
@@ -22719,7 +22428,7 @@
       "title": "Art History",
       "confidence": 89,
       "from": "course_joins",
-      "why": "course joins: 14 of 15 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
+      "why": "course joins: 14 of 15 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Studio Arts",
@@ -22735,7 +22444,7 @@
          "other_colleges",
          "sibling"
         ],
-        "why": "course joins: 14 of 15 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
+        "why": "course joins: 14 of 15 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
        },
        {
         "title": "Studio Arts",
@@ -22830,7 +22539,7 @@
       "title": "Film",
       "confidence": 87,
       "from": "other_colleges",
-      "why": "other colleges: 3 of 9 other colleges (mixed, right 87% of the time). Another source reads differently.",
+      "why": "other colleges: 4 of 10 other colleges (mixed, right 87% of the time). Another source reads differently.",
       "also": [
        {
         "title": "English",
@@ -22844,7 +22553,7 @@
         "from": [
          "other_colleges"
         ],
-        "why": "other colleges: 3 of 9 other colleges (mixed, right 87% of the time)."
+        "why": "other colleges: 4 of 10 other colleges (mixed, right 87% of the time)."
        },
        {
         "title": "English",
@@ -23071,7 +22780,7 @@
       "title": "Art - Painting",
       "confidence": 97,
       "from": "other_colleges",
-      "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time); course joins: 7 of 15 joined courses (few or mixed, right 49% of the time). The sources agree.",
+      "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time); course joins: 7 of 15 joined courses (few or mixed, right 49% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -23082,7 +22791,7 @@
          "program_titles",
          "course_joins"
         ],
-        "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time); course joins: 7 of 15 joined courses (few or mixed, right 49% of the time)."
+        "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time); course joins: 7 of 15 joined courses (few or mixed, right 49% of the time)."
        }
       ]
      }
@@ -23950,7 +23659,7 @@
       "title": "Art Fundamentals",
       "confidence": 97,
       "from": "other_colleges",
-      "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time); course joins: 6 of 12 joined courses (few or mixed, right 49% of the time). The sources agree.",
+      "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time); course joins: 6 of 12 joined courses (few or mixed, right 49% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -23961,7 +23670,7 @@
          "program_titles",
          "course_joins"
         ],
-        "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time); course joins: 6 of 12 joined courses (few or mixed, right 49% of the time)."
+        "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time); course joins: 6 of 12 joined courses (few or mixed, right 49% of the time)."
        }
       ]
      }
@@ -24266,7 +23975,7 @@
       "title": "Art",
       "confidence": 89,
       "from": "other_colleges",
-      "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); course joins: 14 of 24 joined courses (few or mixed, right 49% of the time). Another source reads differently.",
+      "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); course joins: 14 of 24 joined courses (few or mixed, right 49% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Digital Photography",
@@ -24281,7 +23990,7 @@
          "other_colleges",
          "course_joins"
         ],
-        "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); course joins: 14 of 24 joined courses (few or mixed, right 49% of the time)."
+        "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); course joins: 14 of 24 joined courses (few or mixed, right 49% of the time)."
        },
        {
         "title": "Digital Photography",
@@ -24340,7 +24049,7 @@
       "title": "Film",
       "confidence": 87,
       "from": "other_colleges",
-      "why": "other colleges: 3 of 9 other colleges (mixed, right 87% of the time). Another source reads differently.",
+      "why": "other colleges: 4 of 10 other colleges (mixed, right 87% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Cinema",
@@ -24354,7 +24063,7 @@
         "from": [
          "other_colleges"
         ],
-        "why": "other colleges: 3 of 9 other colleges (mixed, right 87% of the time)."
+        "why": "other colleges: 4 of 10 other colleges (mixed, right 87% of the time)."
        },
        {
         "title": "Cinema",
@@ -24753,7 +24462,7 @@
       "title": "Art",
       "confidence": 98,
       "from": "course_joins",
-      "why": "course joins: 13 of 21 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time). The sources agree.",
+      "why": "course joins: 13 of 21 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -24763,7 +24472,7 @@
          "course_joins",
          "other_colleges"
         ],
-        "why": "course joins: 13 of 21 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time)."
+        "why": "course joins: 13 of 21 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time)."
        }
       ]
      }
@@ -25110,7 +24819,7 @@
       "title": "Art",
       "confidence": 98,
       "from": "other_colleges",
-      "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 11 of 25 joined courses (few or mixed, right 49% of the time). The sources agree.",
+      "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 11 of 25 joined courses (few or mixed, right 49% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -25121,7 +24830,7 @@
          "sibling",
          "course_joins"
         ],
-        "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 11 of 25 joined courses (few or mixed, right 49% of the time)."
+        "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 11 of 25 joined courses (few or mixed, right 49% of the time)."
        }
       ]
      }
@@ -25503,7 +25212,7 @@
       "title": "Art",
       "confidence": 98,
       "from": "course_joins",
-      "why": "course joins: 19 of 24 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time). The sources agree.",
+      "why": "course joins: 19 of 24 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -25513,7 +25222,7 @@
          "course_joins",
          "other_colleges"
         ],
-        "why": "course joins: 19 of 24 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time)."
+        "why": "course joins: 19 of 24 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time)."
        }
       ]
      }
@@ -26125,7 +25834,7 @@
       "title": "Art History",
       "confidence": 99,
       "from": "course_joins",
-      "why": "course joins: 15 of 18 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). The sources agree.",
+      "why": "course joins: 15 of 18 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -26136,7 +25845,7 @@
          "other_colleges",
          "sibling"
         ],
-        "why": "course joins: 15 of 18 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
+        "why": "course joins: 15 of 18 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
        }
       ]
      }
@@ -26925,7 +26634,7 @@
       "title": "Art",
       "confidence": 98,
       "from": "other_colleges",
-      "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 12 of 21 joined courses (few or mixed, right 49% of the time). The sources agree.",
+      "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 12 of 21 joined courses (few or mixed, right 49% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -26936,7 +26645,7 @@
          "sibling",
          "course_joins"
         ],
-        "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 12 of 21 joined courses (few or mixed, right 49% of the time)."
+        "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 12 of 21 joined courses (few or mixed, right 49% of the time)."
        }
       ]
      }
@@ -27297,7 +27006,7 @@
       "title": "Film",
       "confidence": 87,
       "from": "other_colleges",
-      "why": "other colleges: 3 of 9 other colleges (mixed, right 87% of the time). Another source reads differently.",
+      "why": "other colleges: 4 of 10 other colleges (mixed, right 87% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Cinema",
@@ -27311,7 +27020,7 @@
         "from": [
          "other_colleges"
         ],
-        "why": "other colleges: 3 of 9 other colleges (mixed, right 87% of the time)."
+        "why": "other colleges: 4 of 10 other colleges (mixed, right 87% of the time)."
        },
        {
         "title": "Cinema",
@@ -27522,7 +27231,7 @@
       "title": "Art History",
       "confidence": 99,
       "from": "course_joins",
-      "why": "course joins: 10 of 14 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). The sources agree.",
+      "why": "course joins: 10 of 14 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -27533,7 +27242,7 @@
          "other_colleges",
          "sibling"
         ],
-        "why": "course joins: 10 of 14 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
+        "why": "course joins: 10 of 14 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
        }
       ]
      }
@@ -27995,7 +27704,7 @@
       "title": "Art History",
       "confidence": 98,
       "from": "other_colleges",
-      "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 12 of 24 joined courses (few or mixed, right 49% of the time). The sources agree.",
+      "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 12 of 24 joined courses (few or mixed, right 49% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -28006,7 +27715,7 @@
          "sibling",
          "course_joins"
         ],
-        "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 12 of 24 joined courses (few or mixed, right 49% of the time)."
+        "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 12 of 24 joined courses (few or mixed, right 49% of the time)."
        }
       ]
      }
@@ -28309,7 +28018,7 @@
       "title": "Art",
       "confidence": 98,
       "from": "course_joins",
-      "why": "course joins: 18 of 30 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time). The sources agree.",
+      "why": "course joins: 18 of 30 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -28319,7 +28028,7 @@
          "course_joins",
          "other_colleges"
         ],
-        "why": "course joins: 18 of 30 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time)."
+        "why": "course joins: 18 of 30 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time)."
        }
       ]
      }
@@ -28999,7 +28708,7 @@
       "title": "Art CCN",
       "confidence": 89,
       "from": "other_colleges",
-      "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
+      "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Photography",
@@ -29014,7 +28723,7 @@
          "other_colleges",
          "sibling"
         ],
-        "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
+        "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
        },
        {
         "title": "Photography",
@@ -29191,7 +28900,7 @@
       "title": "Art-Design",
       "confidence": 89,
       "from": "course_joins",
-      "why": "course joins: 14 of 17 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTD at the same college (one letter apart, right 70% of the time). Another source reads differently.",
+      "why": "course joins: 14 of 17 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTD at the same college (one letter apart, right 70% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Glassblowing",
@@ -29207,7 +28916,7 @@
          "other_colleges",
          "sibling"
         ],
-        "why": "course joins: 14 of 17 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTD at the same college (one letter apart, right 70% of the time)."
+        "why": "course joins: 14 of 17 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTD at the same college (one letter apart, right 70% of the time)."
        },
        {
         "title": "Glassblowing",
@@ -29593,7 +29302,7 @@
       "title": "Art History",
       "confidence": 89,
       "from": "other_colleges",
-      "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 23 of 40 joined courses (few or mixed, right 49% of the time). Another source reads differently.",
+      "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 23 of 40 joined courses (few or mixed, right 49% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Jewelry/Metalworking",
@@ -29609,7 +29318,7 @@
          "sibling",
          "course_joins"
         ],
-        "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 23 of 40 joined courses (few or mixed, right 49% of the time)."
+        "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 23 of 40 joined courses (few or mixed, right 49% of the time)."
        },
        {
         "title": "Jewelry/Metalworking",
@@ -29929,7 +29638,7 @@
       "title": "Art History",
       "confidence": 99,
       "from": "course_joins",
-      "why": "course joins: 9 of 10 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). The sources agree.",
+      "why": "course joins: 9 of 10 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -29940,7 +29649,7 @@
          "other_colleges",
          "sibling"
         ],
-        "why": "course joins: 9 of 10 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
+        "why": "course joins: 9 of 10 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
        }
       ]
      }
@@ -30060,7 +29769,7 @@
       "title": "Art History",
       "confidence": 89,
       "from": "course_joins",
-      "why": "course joins: 12 of 13 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
+      "why": "course joins: 12 of 13 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Studio Arts",
@@ -30076,7 +29785,7 @@
          "other_colleges",
          "sibling"
         ],
-        "why": "course joins: 12 of 13 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
+        "why": "course joins: 12 of 13 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
        },
        {
         "title": "Studio Arts",
@@ -30136,7 +29845,7 @@
       "title": "Film",
       "confidence": 87,
       "from": "other_colleges",
-      "why": "other colleges: 3 of 9 other colleges (mixed, right 87% of the time). Another source reads differently.",
+      "why": "other colleges: 4 of 10 other colleges (mixed, right 87% of the time). Another source reads differently.",
       "also": [
        {
         "title": "English",
@@ -30150,7 +29859,7 @@
         "from": [
          "other_colleges"
         ],
-        "why": "other colleges: 3 of 9 other colleges (mixed, right 87% of the time)."
+        "why": "other colleges: 4 of 10 other colleges (mixed, right 87% of the time)."
        },
        {
         "title": "English",
@@ -30389,7 +30098,7 @@
       "title": "Art History",
       "confidence": 89,
       "from": "other_colleges",
-      "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 18 of 33 joined courses (few or mixed, right 49% of the time). Another source reads differently.",
+      "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 18 of 33 joined courses (few or mixed, right 49% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Studio Arts",
@@ -30405,7 +30114,7 @@
          "sibling",
          "course_joins"
         ],
-        "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 18 of 33 joined courses (few or mixed, right 49% of the time)."
+        "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 18 of 33 joined courses (few or mixed, right 49% of the time)."
        },
        {
         "title": "Studio Arts",
@@ -30773,7 +30482,7 @@
       "title": "Art History",
       "confidence": 99,
       "from": "course_joins",
-      "why": "course joins: 18 of 20 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). The sources agree.",
+      "why": "course joins: 18 of 20 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -30784,7 +30493,7 @@
          "other_colleges",
          "sibling"
         ],
-        "why": "course joins: 18 of 20 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
+        "why": "course joins: 18 of 20 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
        }
       ]
      }
@@ -31028,7 +30737,7 @@
       "title": "Art History",
       "confidence": 99,
       "from": "other_colleges",
-      "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 1 programs (one or mixed, right 55% of the time); course joins: 12 of 26 joined courses (few or mixed, right 49% of the time). The sources agree.",
+      "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 1 programs (one or mixed, right 55% of the time); course joins: 13 of 26 joined courses (few or mixed, right 49% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -31040,7 +30749,7 @@
          "program_titles",
          "course_joins"
         ],
-        "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 1 programs (one or mixed, right 55% of the time); course joins: 12 of 26 joined courses (few or mixed, right 49% of the time)."
+        "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 1 programs (one or mixed, right 55% of the time); course joins: 13 of 26 joined courses (few or mixed, right 49% of the time)."
        }
       ]
      }
@@ -31453,7 +31162,7 @@
       "title": "Art History",
       "confidence": 89,
       "from": "course_joins",
-      "why": "course joins: 15 of 25 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
+      "why": "course joins: 15 of 25 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Studio Arts",
@@ -31469,7 +31178,7 @@
          "other_colleges",
          "sibling"
         ],
-        "why": "course joins: 15 of 25 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
+        "why": "course joins: 15 of 25 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
        },
        {
         "title": "Studio Arts",
@@ -32069,7 +31778,7 @@
       "title": "Art History",
       "confidence": 89,
       "from": "course_joins",
-      "why": "course joins: 16 of 21 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
+      "why": "course joins: 16 of 21 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Graphic Design",
@@ -32085,7 +31794,7 @@
          "other_colleges",
          "sibling"
         ],
-        "why": "course joins: 16 of 21 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
+        "why": "course joins: 16 of 21 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
        },
        {
         "title": "Graphic Design",
@@ -33665,7 +33374,7 @@
       "title": "Art History",
       "confidence": 89,
       "from": "course_joins",
-      "why": "course joins: 16 of 23 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
+      "why": "course joins: 16 of 23 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Studio Arts",
@@ -33681,7 +33390,7 @@
          "other_colleges",
          "sibling"
         ],
-        "why": "course joins: 16 of 23 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
+        "why": "course joins: 16 of 23 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
        },
        {
         "title": "Studio Arts",
@@ -35175,7 +34884,7 @@
       "title": "Art",
       "confidence": 89,
       "from": "other_colleges",
-      "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 15 of 28 joined courses (few or mixed, right 49% of the time). Another source reads differently.",
+      "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 15 of 28 joined courses (few or mixed, right 49% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Studio Arts",
@@ -35191,7 +34900,7 @@
          "sibling",
          "course_joins"
         ],
-        "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 15 of 28 joined courses (few or mixed, right 49% of the time)."
+        "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); course joins: 15 of 28 joined courses (few or mixed, right 49% of the time)."
        },
        {
         "title": "Studio Arts",
@@ -35902,7 +35611,7 @@
       "title": "Art History",
       "confidence": 99,
       "from": "course_joins",
-      "why": "course joins: 10 of 14 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time). The sources agree.",
+      "why": "course joins: 10 of 14 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -35914,7 +35623,7 @@
          "sibling",
          "program_titles"
         ],
-        "why": "course joins: 10 of 14 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time)."
+        "why": "course joins: 10 of 14 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time)."
        }
       ]
      }
@@ -36724,7 +36433,7 @@
       "title": "Art History",
       "confidence": 89,
       "from": "course_joins",
-      "why": "course joins: 14 of 23 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
+      "why": "course joins: 14 of 23 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Studio Arts",
@@ -36740,7 +36449,7 @@
          "other_colleges",
          "sibling"
         ],
-        "why": "course joins: 14 of 23 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
+        "why": "course joins: 14 of 23 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
        },
        {
         "title": "Studio Arts",
@@ -37300,7 +37009,7 @@
       "title": "Art",
       "confidence": 98,
       "from": "course_joins",
-      "why": "course joins: 15 of 19 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time). The sources agree.",
+      "why": "course joins: 15 of 19 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -37310,7 +37019,7 @@
          "course_joins",
          "other_colleges"
         ],
-        "why": "course joins: 15 of 19 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time)."
+        "why": "course joins: 15 of 19 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time)."
        }
       ]
      }
@@ -37862,7 +37571,7 @@
       "title": "Art History",
       "confidence": 99,
       "from": "course_joins",
-      "why": "course joins: 20 of 30 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time). The sources agree.",
+      "why": "course joins: 20 of 30 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -37874,7 +37583,7 @@
          "sibling",
          "program_titles"
         ],
-        "why": "course joins: 20 of 30 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time)."
+        "why": "course joins: 20 of 30 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time)."
        }
       ]
      }
@@ -38019,7 +37728,7 @@
       "title": "Art History",
       "confidence": 99,
       "from": "course_joins",
-      "why": "course joins: 20 of 24 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time). The sources agree.",
+      "why": "course joins: 20 of 24 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -38031,7 +37740,7 @@
          "sibling",
          "program_titles"
         ],
-        "why": "course joins: 20 of 24 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time)."
+        "why": "course joins: 20 of 24 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time)."
        }
       ]
      }
@@ -38160,7 +37869,7 @@
       "title": "Art History",
       "confidence": 89,
       "from": "course_joins",
-      "why": "course joins: 20 of 28 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
+      "why": "course joins: 20 of 28 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Studio Arts",
@@ -38176,7 +37885,7 @@
          "other_colleges",
          "sibling"
         ],
-        "why": "course joins: 20 of 28 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
+        "why": "course joins: 20 of 28 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
        },
        {
         "title": "Studio Arts",
@@ -38265,7 +37974,7 @@
       "title": "Film Television Media Arts",
       "confidence": 93,
       "from": "other_colleges",
-      "why": "other colleges: 3 of 9 other colleges (mixed, right 87% of the time); course joins: 1 of 1 joined courses (few or mixed, right 49% of the time). The sources agree.",
+      "why": "other colleges: 4 of 10 other colleges (mixed, right 87% of the time); course joins: 1 of 1 joined courses (few or mixed, right 49% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -38275,7 +37984,7 @@
          "other_colleges",
          "course_joins"
         ],
-        "why": "other colleges: 3 of 9 other colleges (mixed, right 87% of the time); course joins: 1 of 1 joined courses (few or mixed, right 49% of the time)."
+        "why": "other colleges: 4 of 10 other colleges (mixed, right 87% of the time); course joins: 1 of 1 joined courses (few or mixed, right 49% of the time)."
        }
       ]
      }
@@ -38525,7 +38234,7 @@
       "title": "Art History",
       "confidence": 89,
       "from": "course_joins",
-      "why": "course joins: 19 of 23 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
+      "why": "course joins: 19 of 23 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Studio Arts",
@@ -38541,7 +38250,7 @@
          "other_colleges",
          "sibling"
         ],
-        "why": "course joins: 19 of 23 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
+        "why": "course joins: 19 of 23 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
        },
        {
         "title": "Studio Arts",
@@ -39271,7 +38980,7 @@
       "title": "Art History",
       "confidence": 89,
       "from": "course_joins",
-      "why": "course joins: 8 of 12 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
+      "why": "course joins: 9 of 12 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Studio Arts",
@@ -39287,7 +38996,7 @@
          "other_colleges",
          "sibling"
         ],
-        "why": "course joins: 8 of 12 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
+        "why": "course joins: 9 of 12 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); sibling: code ARTH at the same college (one letter apart, right 70% of the time)."
        },
        {
         "title": "Studio Arts",
@@ -39382,7 +39091,7 @@
       "title": "Art",
       "confidence": 93,
       "from": "other_colleges",
-      "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); course joins: 21 of 40 joined courses (few or mixed, right 49% of the time). The sources agree.",
+      "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); course joins: 21 of 40 joined courses (few or mixed, right 49% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -39392,7 +39101,7 @@
          "other_colleges",
          "course_joins"
         ],
-        "why": "other colleges: 14 of 21 other colleges (mixed, right 87% of the time); course joins: 21 of 40 joined courses (few or mixed, right 49% of the time)."
+        "why": "other colleges: 15 of 22 other colleges (mixed, right 87% of the time); course joins: 21 of 40 joined courses (few or mixed, right 49% of the time)."
        }
       ]
      }
@@ -39434,7 +39143,7 @@
       "title": "Film",
       "confidence": 87,
       "from": "other_colleges",
-      "why": "other colleges: 3 of 9 other colleges (mixed, right 87% of the time). Another source reads differently.",
+      "why": "other colleges: 4 of 10 other colleges (mixed, right 87% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Cinema",
@@ -39448,7 +39157,7 @@
         "from": [
          "other_colleges"
         ],
-        "why": "other colleges: 3 of 9 other colleges (mixed, right 87% of the time)."
+        "why": "other colleges: 4 of 10 other colleges (mixed, right 87% of the time)."
        },
        {
         "title": "Cinema",
@@ -40931,7 +40640,7 @@
       "title": "Art",
       "confidence": 98,
       "from": "course_joins",
-      "why": "course joins: 4 of 6 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time). The sources agree.",
+      "why": "course joins: 4 of 6 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -40941,7 +40650,7 @@
          "course_joins",
          "other_colleges"
         ],
-        "why": "course joins: 4 of 6 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time)."
+        "why": "course joins: 4 of 6 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time)."
        }
       ]
      }
@@ -41092,7 +40801,7 @@
       "title": "Art",
       "confidence": 99,
       "from": "course_joins",
-      "why": "course joins: 15 of 18 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time). The sources agree.",
+      "why": "course joins: 15 of 18 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -41103,7 +40812,7 @@
          "other_colleges",
          "program_titles"
         ],
-        "why": "course joins: 15 of 18 joined courses (most courses agree, right 88% of the time); other colleges: 14 of 21 other colleges (mixed, right 87% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time)."
+        "why": "course joins: 15 of 18 joined courses (most courses agree, right 88% of the time); other colleges: 15 of 22 other colleges (mixed, right 87% of the time); program titles: 1 of 2 programs (one or mixed, right 55% of the time)."
        }
       ]
      }
