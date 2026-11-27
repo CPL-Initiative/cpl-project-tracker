@@ -32,7 +32,7 @@ const ADOPT = {
   colleges: [[MT, "Mt. SAC"], ["Alpha College", "Alpha"]],
   sectors: { "11": "Computer Sciences", "47": "Mechanic and Repair" },
   credentials: [
-    { t: "Awarded Here", i: "Issuer A", s: "11", p: 3, a: [[0, 3, "CIS 1: 3 hours"], [1, 3, ""]], c: [] },
+    { t: "Awarded Here", i: "Issuer A", s: "11", p: 3, a: [[0, 3, "CIS 1: 3 hours"], [1, 3, ""]], c: [], m: [["MAPICI-AH-1-001", 0, ""], ["MAPICI-AH-2-001", 1, ""]] },
     { t: "Both One", i: "ASE", s: "47", p: 3, sw: [{ t: "x" }], ai: 1, a: [[1, 3, ""]], c: [[0, "AUTO 1"]] },
     { t: "Both Two", i: "ASE", s: "47", p: 3, sw: [{ t: "x" }], ai: 1, a: [[1, 3, ""]], c: [[0, "AUTO 2"]] },
     { t: "Statewide Only", i: "POST", s: "11", p: 21, sw: [{ t: "x" }], a: [[1, 21, ""]], c: [[0, "AJ 1"]] },
@@ -109,6 +109,31 @@ function load(opts) {
   check("Show all opens all six in place", names.length === 6 && txt(root.querySelector(".cplpw-more")) === "Show the first 4"
     && root.querySelector(".cplpw-more").getAttribute("aria-expanded") === "true");
   check("each names the course it lines up with and its badges", /teaches AUTO 1/.test(txt(root.querySelector(".cplpw-rec"))) && root.querySelectorAll(".cplpw-rec")[0].querySelectorAll(".cplpw-badge").length === 2);
+
+  // A college's Credentials list: titles in the Programs list's blue, and each opens a bottom bar, never a new tab
+  // (Sam, 2026-11-27: "the same blue as the programs listview"; "open to a bottom bar rather than a new tab").
+  let opened = 0;
+  t.w.open = function () { opened++; return null; };
+  const lb = [...root.querySelectorAll(".cplpw-lens button")];
+  lb[1].click(); await settle();
+  const credBtns = [...root.querySelectorAll("#cplpw-list button.cplpwc-open")];
+  check("the Credentials list's titles are buttons the CSS colors like the Programs list", credBtns.length >= 2
+    && /\.cplpw-list \.cplpwc-open \{ color: var\(--cobalt\)/.test(SRC), String(credBtns.length));
+  const here = credBtns.find((b) => /Awarded Here/.test(txt(b)));
+  here.click(); await settle();
+  let gbar = root.querySelector(".cplpw-gbar");
+  check("a credential that earns credit here opens the bottom bar on the college's landing page", gbar && /^Get credit at Mt\. San Antonio College/.test(txt(gbar.querySelector("h3"))), gbar && txt(gbar.querySelector("h3")));
+  check("on the exhibit this college built, never another college's", gbar && /MAPICI-AH-1-001/.test(txt(gbar.querySelector(".via"))) && !/MAPICI-AH-2-001/.test(txt(gbar)), gbar && txt(gbar.querySelector(".via")));
+  const could = [...root.querySelectorAll("#cplpw-list button.cplpwc-open")].find((b) => /Plain Could/.test(txt(b)));
+  could.click(); await settle();
+  gbar = root.querySelectorAll(".cplpw-gbar");
+  const frame = gbar[0] && gbar[0].querySelector("iframe");
+  check("a credential it could add opens the Credential Catalog in the bar, one bar at a time", gbar.length === 1
+    && /^Credential Catalog for Mt\. San Antonio College/.test(txt(gbar[0].querySelector("h3"))) && frame && /library\/adopt\/\?college=Mt\.%20San%20Antonio%20College/.test(frame.getAttribute("src")),
+    gbar[0] && (txt(gbar[0].querySelector("h3")) + " " + (frame && frame.getAttribute("src"))));
+  check("no credential opened a new tab", opened === 0, String(opened));
+  gbar[0].querySelector(".cplpw-gbar-close").click(); await settle();
+  check("Close takes the bar away", !root.querySelector(".cplpw-gbar"));
 
   // A failed Catalog read says so.
   t = load({ adoptFail: true });
