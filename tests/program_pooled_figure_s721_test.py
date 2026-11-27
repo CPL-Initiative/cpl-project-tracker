@@ -131,9 +131,15 @@ with open(FIXTURE, encoding="utf-8") as fh:
 check(not flips.get("pass_to_fail"), "no pass-to-fail, live: %s" % flips.get("pass_to_fail"))
 with open(os.path.join(ROOT, "tests", "fixtures", "pooled_s731.json"), encoding="utf-8") as fh:
     added = json.load(fh)["s721_fail_to_pass_added"]
-check([{"college": c, "control_number": cn} for c, cn in flips.get("fail_to_pass") or []]
-      == sorted(fx["fail_to_pass"] + added, key=lambda m: (m["college"], m["control_number"])),
-      "the live fail-to-pass members are the fixture's 28 and S731's 4 (%d)" % len(flips.get("fail_to_pass") or []))
+# S741: Cuyamaca 18634, 18635 and 18636 pooled to their 18 and still failed on the degree (52 of 60). Once the
+# college's reconcile step files the degree's floor on them (free reconcile 45966682528), the pooled reading is all
+# that stands between failing and passing, so they join the members. Either state is read.
+_s741 = [{"college": "Cuyamaca College", "control_number": cn} for cn in ("18634", "18635", "18636")]
+_got = [{"college": c, "control_number": cn} for c, cn in flips.get("fail_to_pass") or []]
+_key = lambda m: (m["college"], m["control_number"])  # noqa: E731
+check(_got in (sorted(fx["fail_to_pass"] + added, key=_key), sorted(fx["fail_to_pass"] + added + _s741, key=_key)),
+      "the live fail-to-pass members are the fixture's 28 and S731's 4, and S741's three Cuyamaca degrees once their "
+      "floor is filed (%d)" % len(_got))
 for c, cn in flips.get("fail_to_pass") or []:
     pools = S.pooled_figures(W.load(c, cn)["record"])
     check(pools and all(p["words"] and S._pool_figure(p["words"]) for p in pools),
