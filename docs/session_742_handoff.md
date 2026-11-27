@@ -301,6 +301,10 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 - 09:55Z: the land (head `662a5933`): generated files rebuilt with their builders, hand-written lists keep both sides,
   no record or receipt conflict, `.apply` equal to `main`'s; two San Bernardino Valley tests assumed 22821's old hold
   and now accept either state (`eb16fb5b`). 10:16Z: #3902 opened from `claude/s741-land` and marked ready.
+- 10:30Z: #3902's `test` failed at `npm install` on every suite shard (`No matching version found for
+  tldts-core@^7.6.2`: the registry had published tldts 7.6.2 before the tldts-core it needs). By 10:30Z the registry
+  lists tldts-core 7.6.2, so the failed jobs of run 45980615825 were re-run (a transient external failure; no code
+  change). If it recurs, pin `tldts` to 7.6.1 with `overrides` (troubleshooting: pin exactly).
 
 ## What shipped
 
