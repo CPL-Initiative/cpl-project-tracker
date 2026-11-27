@@ -170,3 +170,11 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   own page, coverage 1.0; both were read from p.211, the Level IV tail); the paid read dispatched on
   `claude/s741-piles` (sources_from 45961227651, only 39731 and 39732, about $0.20). `piles`' step 3 over its colleges
   filed nothing (16 discontinued flags, none new; the units rules' dry run moves 0 rows).
+- 08:00Z: `keys` report 7: its list is done or blocked, 13 collected (Santa Ana 2; San Bernardino Valley 35833, 22784;
+  Copper Mountain 43854, 14751, 14737, 20094, 45594, 14710; Solano 30184, 30185, 38591). Held, each needing shared code:
+  San Bernardino Valley 17829 (keep-better ranks a degree's "incomplete" below the filed "unequal"), 04873 (the page
+  lists fewer courses than its lists ask; no kind names it), 04894 (the scorer adds MUS 141X2 and MUS 241X2 at 1.5 where
+  the heading's pair totals 2), 39483 (no reading adds to the printed 27-30); Solano 43134 (the state lists World
+  Languages A.A. twice, with 06538: a person's); San Jose City 18449, 38499 (cut-off names standing for several courses).
+  **Split change:** `keys` takes Cuyamaca, Cosumnes River and Cuesta (lane NEXT (3)'s reader and scorer changes:
+  Cuyamaca 18634 to 18637, Cosumnes River 33542, Cuesta 43053 and 41744); no other lane holds them.
