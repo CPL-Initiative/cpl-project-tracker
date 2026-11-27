@@ -1,0 +1,39 @@
+{
+ "_readme": "S742, lane 2's cheap piles (2026-11-27). Four Cabrillo degrees (06352 Dance A.A., 06380 Geology A.S., 06381 Psychology A.A., 44992 Exercise and Sports Science A.A.) head every list 'Recommended' and were read as counting nothing; 11293 (Art Studio A.A.) was read with the same lists counted, and adds to 49-58 under the printed 60 with 'General electives' printed as a range. This read asks each page's own content call, so a session can read the sentence that says what a 'Recommended' list is, each list's 'Complete the following number of credits' line, general education, the general electives line and the degree total word for word. Three loads. No model call, nothing written.",
+ "college": "Cabrillo College",
+ "questions": {
+  "recommended_words": "The sentence that says what the 'Recommended' lists are, each list's heading with its 'Complete the following number of credits' line, general education, general electives and the degree total.",
+  "art_studio_figures": "The degree total, general education, the general electives line with its figure, and each list's and each focus's printed figure."
+ },
+ "keywords": [
+  "[Rr]ecommended[^<\"]{0,140}",
+  "[Cc]omplete the following[^<\"]{0,120}",
+  "General [Ee]lectives?[^<\"]{0,140}",
+  "General Education[^<\"]{0,60}",
+  "at least \\d+ units[^<\"]{0,80}",
+  "rule-name|rule-credits"
+ ],
+ "pages": [
+  {
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,psychology-associate-in-arts-a-a-fall-2025?tenant=cabrillo.elumenapp.com",
+   "answers": [
+    "recommended_words"
+   ],
+   "why": "06381"
+  },
+  {
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,geology-associate-in-science-a-s-fall-2025?tenant=cabrillo.elumenapp.com",
+   "answers": [
+    "recommended_words"
+   ],
+   "why": "06380"
+  },
+  {
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,art-studio-associate-in-arts-a-a-fall-2026?tenant=cabrillo.elumenapp.com",
+   "answers": [
+    "art_studio_figures"
+   ],
+   "why": "11293"
+  }
+ ]
+}
