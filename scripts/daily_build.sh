@@ -667,6 +667,15 @@ step "Build the public adoption page's data" <<'STEP'
 python3 kb/_build_adopt_page.py --quiet || echo "::warning title=Adoption page not rebuilt::kb/_build_adopt_page.py failed; library/adopt/ reads the previous file until the next run. Check the step log."
 STEP
 
+# kb/status/program_certs/<slug>.json (Sam, 2026-11-27): each program's industry certifications, the ones that earn
+# CPL on its courses at the college (the adoption file the step above wrote, with kb/exhibits_adoption.json's full
+# lines) and the ones its catalog names, for CPL Pathways' Industry certs. After the adoption page's data, which it
+# reads. No clock is read, so the same inputs write the same bytes (~11 s). Display only, so a failure warns and
+# yesterday's files stand.
+step "Build the program certifications" <<'STEP'
+python3 kb/_build_program_certs.py || { git checkout -- kb/status/program_certs 2>/dev/null || true; echo "::warning title=Program certifications not rebuilt::kb/_build_program_certs.py failed; CPL Pathways' Industry certs read yesterday's files under kb/status/program_certs/."; }
+STEP
+
 # The catalog's analysis for faculty (Sam, 2026-11-06): issuer skill areas against the harvested course
 # outcomes, read from public.course_outcomes. library/adopt/adopt_align.json, read when a panel opens.
 step "Build the catalog's skills-to-outcomes analysis" SUPABASE_SERVICE_KEY <<'STEP'
