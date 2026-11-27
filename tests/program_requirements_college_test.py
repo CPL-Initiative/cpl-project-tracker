@@ -915,6 +915,151 @@ check(gp["body"].split("\n").count(C.CQ_GROUP_END) == 2 and gp["codes"] == C.pag
       and C.page_codes(C.CQ_GROUP_END) == set() and C.RC.page_type("\n".join([C.CQ_GROUP_END] * 40)) == "other",
       "cq_page's text carries the lines; they name no course and no rule B field, so the codes read are the same")
 
+# ── S741: the group-end line's self-recall on held answers ──
+# The held answer is the figure a page prints over a list ("Required Courses", "Units: 14.00- 15.00"): the list's rows
+# must add to it. College-page-reads 45954122786 (Norco's nine entries, the pages of its eleven held records and
+# 30061) and 45956851384 (Riverside City's twelve and Moreno Valley's seven, the same catalog build: records whose
+# units read unequal, and passing records) printed each block's rows as their div tags nest them. Each list is kept
+# here as its heading, its printed figure and its rows in order: G a group's printed figure, R a plain row's units,
+# A a plain row right after a group, U a row whose figure the read's outline does not print (a long title). The
+# check builds each list in the page's own nesting, reads it through cq_page_text, and adds the rows two ways: with
+# the group ends as the text now marks them (a row after a group is a course of its own), and flat, as the text
+# stood (it is one more choice of the group above). Measured 2026-11-27 on 58 lists of 28 pages: 16 close only with
+# the group ends marked, 32 close either way (no row follows a group, and their text is unchanged), 0 close only
+# read flat, 2 close neither way (Norco's elective lists that choose units from a longer list: 5139, 5148), and 8
+# are not summed. Right 16, wrong 0.
+GROUP_LISTS = [
+    ("Norco", "5169", 'Required Courses', "14-15", "G3 G3 G3 G2-3 A3"),
+    ("Norco", "5169", 'Elective Courses', "6", "G6"),
+    ("Norco", "5218", 'Required Courses', "9", "G3 A3 G3"),
+    ("Norco", "5218", 'List A', "6", "G6"),
+    ("Norco", "5218", 'List B', "3", "G3"),
+    ("Norco", "5237", 'Required Courses', "33-34", "G3 G4 G4 G3 G3 G2 G3-4 G1 A4 G3 A3"),
+    ("Norco", "5185", 'Required Courses', "15", "R5 R5 G5"),
+    ("Norco", "5185", 'Electives - List A', "15", "R3 G3 A1 G4 G4"),
+    ("Norco", "5185", 'Electives - List B', "11", "G3 G8"),
+    ("Norco", "5139", 'Required courses', "16", "G16"),
+    ("Norco", "5139", 'Elective Courses', "14-15", "G3 G3 G3 G2 A5 R4 G1 A4 R3"),
+    ("Norco", "5230", 'Required Courses', "10", "G3 A3 G4"),
+    ("Norco", "5230", 'List A', "9-10", "U U U U"),
+    ("Norco", "5578", 'Required Courses', "48", "G3 G3 A3 G3 A3 G3 A3 G4 G4 G3 G4 G3 G3 G3 G3"),
+    ("Norco", "5581", 'Required Courses', "26-27", "G3 A3 G3 G4 G3-4 G4 G3 G3"),
+    ("Norco", "5581", 'Electives', "6", "U"),
+    ("Norco", "5148", 'Major Core Requirements', "18", "R3 G3 A3 R3 G3 G3"),
+    ("Norco", "5148", 'Concentration Requirements', "3", "R3"),
+    ("Norco", "5148", 'Elective Courses', "9", "G3 A3 R3 R3 R3 R1-4"),
+    ("Moreno Valley", "4462", 'Required Courses', "10", "G4 G3 A3"),
+    ("Moreno Valley", "4462", 'Electives - List A', "3-4", "G3-4"),
+    ("Moreno Valley", "4462", 'Electives - List B', "6", "G6"),
+    ("Moreno Valley", "4462", 'Electives - List C', "3", "G3"),
+    ("Moreno Valley", "4723", 'Required Courses', "48", "G3 G3 A3 G3 A3 R3 R3 R3 G4 G4 G3 G4 G3 A3 G3"),
+    ("Moreno Valley", "6376", 'Lower Division Required Courses', "35", "R3 R4 R3 G3 G3 G3 G3 G3 G3 G3 G4"),
+    ("Moreno Valley", "6376", 'Upper Division General Education Courses', "9", "R3 R3 R3"),
+    ("Moreno Valley", "6376", 'Upper Division Required Courses', "30", "R3 R3 R3 R3 R3 R3 U R3 R3 R3"),
+    ("Moreno Valley", "6376", 'Upper Division Elective Courses', "3", "G3"),
+    ("Moreno Valley", "4718", 'Required Courses', "26-27", "R3 G4 G3 G3 G3-4 G4 G3 G3"),
+    ("Moreno Valley", "4718", 'List A - ADJ-9 or 9H', "3", "G3"),
+    ("Moreno Valley", "4718", 'List A - Electives', "3", "U"),
+    ("Moreno Valley", "4858", 'Required Courses', "27-28", "R4 R3 G3 G4 G3 G3 G4 G3-4"),
+    ("Moreno Valley", "4858", 'Electives', "10", "G7 G3"),
+    ("Moreno Valley", "4858", 'Recommended Courses', "0", "U"),
+    ("Moreno Valley", "4489", 'Required Courses', "28-29", "R3 R3 R3 R3 R3 G3 G3 G4 G3-4"),
+    ("Moreno Valley", "4489", 'Elective Courses', "1.5-3", "G1.5-3 U"),
+    ("Moreno Valley", "4491", 'Required Courses', "30", "R3 G3 G3 G3 A4 R4 G3 A4 R3"),
+    ("Moreno Valley", "4491", 'Elective Courses', "3", "G3"),
+    ("Riverside City", "5990", 'Required Courses', "28", "R3 R2 R2 R3 R3 R3 R3 R3 R3 R3"),
+    ("Riverside City", "5990", 'Electives', "6", "G6"),
+    ("Riverside City", "5966", 'Required Courses', "12", "G3 A3 G3 A3"),
+    ("Riverside City", "5966", 'Elective Courses', "12", "G12"),
+    ("Riverside City", "6028", 'Required Courses', "15", "R4 R3 G3 G5"),
+    ("Riverside City", "6028", 'Elective Courses - List A', "9-13", "G9-13"),
+    ("Riverside City", "6028", 'Elective Courses - List B', "3", "G3"),
+    ("Riverside City", "6043", 'Required Courses', "71", "R4 R4 R4 R3 G3 G4 G3 G4 A8.5 R0.5 U R0.5 R8.5 R0.5 U R0.5 U U"),
+    ("Riverside City", "5985", 'Required Courses', "26", "R3 R1 R4 G5 G5 G4 A4"),
+    ("Riverside City", "6050", 'Required Courses', "9", "G3 A3 R3"),
+    ("Riverside City", "6050", 'Elective Courses', "9-10", "G9-10"),
+    ("Riverside City", "6010", 'Required Courses', "26-27", "R3 G4 G3 G3 G3 G3-4 G4 G3"),
+    ("Riverside City", "6010", 'Electives - List A', "6-7", "U"),
+    ("Riverside City", "5946", 'Required Courses', "30", "R3 R4 R4 R3 G3 G3 G3 G4 G3"),
+    ("Riverside City", "5946", 'Elective Courses', "3", "G3"),
+    ("Riverside City", "5948", 'Required Courses', "37", "R3 R4 R4 R3 R4 R3 G3 G3 G3 G4 G3"),
+    ("Riverside City", "5948", 'Elective Courses', "3", "G3"),
+    ("Riverside City", "5931", 'Required Courses', "29", "G4 G3 G3 G3 G4 A4 R4 R4"),
+    ("Riverside City", "5910", 'Required Courses', "26", "R3 R3 R3 G3 G3 G4 G4 G3"),
+    ("Riverside City", "6060", 'Required Courses', "43", "R3 R5 R5 G5 G3 G4 G4 A4 R4 G3 A3"),
+]
+
+
+def _fig(s):
+    lo, _dash, hi = s.partition("-")
+    return float(lo), float(hi or lo)
+
+
+def _list_html(heading, figure, encoded):
+    rows, n = [], 0
+    for k in encoded.split():
+        n += 1
+        lo, hi = _fig(k[1:])
+        units = "%.2f" % lo if lo == hi else "%.2f- %.2f" % (lo, hi)
+        if k[0] == "G":
+            rows.append(cq_group(SEL, units, [cq_course("AAA-%d" % n, "A choice", "%.2f" % lo),
+                                              cq_course("BBB-%d" % n, "Another choice", "%.2f" % hi)]))
+        else:
+            rows.append(cq_course("CCC-%d" % n, "A course", units))
+    return cq_list(heading, figure, rows)
+
+
+def _adds(lines):
+    """The list's units as its lines read: a group counts its printed figure and none of its choices; a course
+    outside a group counts its own units. A group runs to the next group, the group-end line or the list's end."""
+    lo = hi = 0.0
+    in_group = False
+    for i, ln in enumerate(lines):
+        if ln == SEL:
+            a, b = _fig(lines[i + 1].replace(" ", ""))
+            lo, hi, in_group = lo + a, hi + b, True
+        elif ln == C.CQ_GROUP_END:
+            in_group = False
+        elif re.fullmatch(r"[A-C]{3}-\d+", ln) and not in_group:
+            a, b = _fig(lines[i + 2].replace(" ", ""))
+            lo, hi = lo + a, hi + b
+    return lo, hi
+
+
+def _group_recall():
+    """(each list under its outcome, whether every list's text carries one line for each row after a group)."""
+    out = {"only marked": [], "either": [], "only flat": [], "neither": [], "not summed": []}
+    ok = True
+    for where, entry, heading, figure, rows in GROUP_LISTS:
+        if "U" in rows.split():
+            out["not summed"].append((where, entry, heading))
+            continue
+        block = {"page": {"text": heading},
+                 "body": [{"catalogblockheader": None, "text": _list_html(heading, figure, rows)}]}
+        lines = C.cq_page_text(block)[1].split("\n")
+        ok = ok and lines.count(C.CQ_GROUP_END) == sum(1 for k in rows.split() if k[0] == "A")
+        with_ends = _adds(lines) == _fig(figure)
+        as_flat = _adds([ln for ln in lines if ln != C.CQ_GROUP_END]) == _fig(figure)
+        out["only marked" if with_ends and not as_flat else "either" if with_ends else "only flat" if as_flat
+            else "neither"].append((where, entry, heading))
+    return out, ok
+
+
+recall, lines_ok = _group_recall()
+check(lines_ok, "the text carries one group-end line for each row that follows a group, on every list read")
+check({k: len(v) for k, v in recall.items()} == {"only marked": 16, "either": 32, "only flat": 0, "neither": 2,
+                                                 "not summed": 8},
+      "the self-recall on 58 lists whose printed figure is held: %r" % {k: len(v) for k, v in recall.items()})
+check(recall["neither"] == [("Norco", "5139", "Elective Courses"), ("Norco", "5148", "Elective Courses")],
+      "the two lists no reading closes are Norco's elective lists that choose units from a longer list: %r"
+      % recall["neither"])
+check({(c, n) for c, n, _h in recall["only marked"]} >= {("Norco", n) for n in ("5169", "5218", "5237", "5185", "5230",
+                                                                              "5578", "5581", "5148")},
+      "eight of Norco's nine pages hold a list that closes only with the group ends marked (5139, Manufacturing "
+      "Technician 2, holds none: its marked rows sit in a list that chooses units)")
+# ── S741: the self-recall ends ──
+
+
 # what an extraction after a capture would pay for, against the filed read
 _wx = tempfile.mkdtemp()
 try:
