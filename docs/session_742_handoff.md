@@ -83,3 +83,5 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 - 06:25Z: `keys`, `readers` and `piles` started on Fable 5.2 at high effort, each in the harness's own worktree off
   `b896d6f4`, told to open no PR (the conductor opens each land), to dispatch only free runs on their own branch, and to
   leave paid runs, rereads, loads and `.apply` to the conductor.
+- 06:31Z: the whole build 45951699122 green: 18,746 rows at `a143061a2ae2` (the 3 with no display now carry one), the
+  same 32 at older builds, none without a display. 06:33Z: #3898 opened from `claude/s741-display` and marked ready.
