@@ -1,0 +1,1795 @@
+{
+ "college": "Fullerton College",
+ "catalog_url": "https://catalog.nocccd.edu/fullerton-college/",
+ "platform": "courseleaf",
+ "catalog_year": "2026-2027",
+ "programs": 332,
+ "with_closed_list": 326,
+ "started": "2026-11-27T08:12:38Z",
+ "scope": "/fullerton-college/",
+ "sitemap": {
+  "url": "https://catalog.nocccd.edu/sitemap.xml",
+  "status": 200,
+  "listed": 1347,
+  "nested": 0,
+  "program_pages": 434,
+  "refused": null,
+  "errors": null,
+  "failed": null,
+  "challenged": null
+ },
+ "listing_failed": 0,
+ "pages_read": 434,
+ "pages_listed": 434,
+ "pages_answered": 434,
+ "child_pages": 0,
+ "banner_h1": null,
+ "site_pins": {
+  "35174": {
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/chemistry/chemistry-associate-science-degree/",
+   "bound": true
+  },
+  "36798": {
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/chemistry/chemistry-associate-in-science-degree-for-transfer/",
+   "bound": true
+  }
+ },
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 304,
+   "hits": 287,
+   "recall": 0.944,
+   "false": 1,
+   "false_off_own": 2,
+   "false_no_claims": 3,
+   "shared": 12,
+   "false_matches": [
+    {
+     "control_number": "17369",
+     "title": "Physical Education",
+     "page": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/physical-education/physical-education-associate-arts-degree/"
+    },
+    {
+     "control_number": "17369",
+     "title": "Physical Education",
+     "award": "A.A. Degree",
+     "page": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/physical-education/physical-education-associate-arts-degree/",
+     "h1": "Physical Education Associate in Arts Degree"
+    },
+    {
+     "control_number": "21253",
+     "title": "Architectural CAD Technology",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "page": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/technology/architectural-cad-technology-certificate/",
+     "h1": "Architectural CAD Technology Certificate"
+    }
+   ],
+   "no_claims_matches": [
+    {
+     "control_number": "17369",
+     "title": "Physical Education",
+     "award": "A.A. Degree",
+     "page": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/physical-education/physical-education-associate-arts-degree/",
+     "h1": "Physical Education Associate in Arts Degree"
+    },
+    {
+     "control_number": "21253",
+     "title": "Architectural CAD Technology",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "page": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/technology/architectural-cad-technology-certificate/",
+     "h1": "Architectural CAD Technology Certificate"
+    },
+    {
+     "control_number": "46095",
+     "title": "Artificial Intelligence in Business",
+     "award": "A.S. Degree",
+     "page": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/business/artificial-intelligence-in-business-certificate-degree/",
+     "h1": "Artificial Intelligence in Business Certificate"
+    }
+   ],
+   "searches": false,
+   "catalog_list": null
+  },
+  "programs": 6,
+  "by_result": {
+   "not_searched": 6
+  },
+  "found": 0,
+  "found_active": 0,
+  "found_pages": 0,
+  "found_programs": [],
+  "other_programs": [
+   {
+    "control_number": "03821",
+    "title": "Microbiology",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 287 of 304 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03829",
+    "title": "Journalism",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 287 of 304 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "08397",
+    "title": "Radio Production",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 287 of 304 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "21258",
+    "title": "International Business Skills",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 287 of 304 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "40648",
+    "title": "Automotive Maintenance",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 287 of 304 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "40655",
+    "title": "Automotive Manual Drive Train",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 287 of 304 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   }
+  ],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
+ "loads": 436,
+ "seconds": 2075.9,
+ "found": 316,
+ "by_method": {
+  "no_closed_list": 6,
+  "not_found": 10,
+  "sitemap_page": 316
+ },
+ "shared_pages": {
+  "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/theatre-arts-drama/musical-theatre-level-2-certificate/": [
+   "08422",
+   "46182"
+  ],
+  "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/theatre-arts-drama/advanced-technical-theatre-certificate/": [
+   "18750",
+   "42491"
+  ],
+  "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/fashion/advanced-fashion-design-certificate/": [
+   "21273",
+   "36787"
+  ],
+  "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/communication-studies/communication-studies-associate-in-arts-degree-for-transfer-2-0/": [
+   "36916",
+   "44786"
+  ],
+  "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/social-sciences/volunteer-services-skills-certificate/": [
+   "37714",
+   "43893"
+  ],
+  "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/social-sciences/research-fundamentals-skills-certificate/": [
+   "37715",
+   "43892"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "36483",
+   "title": "IGETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "41372",
+   "title": "Autonomous Systems Technician",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/technology/autonomous-systems-technician-certificate/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.4,
+    "body": 0.4,
+    "content": 0.0,
+    "net": 10,
+    "listed": 10,
+    "why": "coverage 0.40 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 3848,
+     "content": 6923,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Program Student Learning Outcomes",
+      550
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "42402",
+   "title": "Uncrewed Aerial Systems Piloting",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/technology/uncrewed-aerial-systems-piloting-certificate/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.333,
+    "body": 0.333,
+    "content": 0.0,
+    "net": 6,
+    "listed": 6,
+    "why": "coverage 0.33 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 3651,
+     "content": 6503,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Program Student Learning Outcomes",
+      318
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "44110",
+   "title": "Drone and Autonomous Systems",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/journalism/drone-and-autonomous-associate-in-science-degree/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.448,
+    "body": 0.448,
+    "content": 0.0,
+    "net": 25,
+    "listed": 29,
+    "why": "coverage 0.45 in innerText+tabs, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 4793,
+     "content": 7697,
+     "tabs": 482
+    },
+    "tab_panels": [
+     [
+      "Program Student Learning Outcomes",
+      441
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "45832",
+   "title": "Cal-GETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/fullerton-college/general-education-breadth-requirements-college-university/california-general-education-transfer-curriculum/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "textContent",
+    "coverage": 0.272,
+    "body": 0.0,
+    "content": 0.272,
+    "net": 88,
+    "listed": 323,
+    "why": "coarse net: the page's code tokens name 88 of 323 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2998,
+     "content": 33344,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Requirements",
+      28604
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "46098",
+   "title": "Drone and Autonomous Systems",
+   "award": "Baccalaureate of Science (B.S.) Degree.",
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/journalism/drone-and-autonomous-bachelors-of-science-degree/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.459,
+    "body": 0.459,
+    "content": 0.0,
+    "net": 37,
+    "listed": 37,
+    "why": "coverage 0.46 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 5725,
+     "content": 8977,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Program Student Learning Outcomes",
+      802
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "46115",
+   "title": "Autonomous Industrial Inspection",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/machine-technology/autonomous-industrial-inspection-certificate/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.25,
+    "body": 0.25,
+    "content": 0.0,
+    "net": 4,
+    "listed": 4,
+    "why": "coverage 0.25 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 3990,
+     "content": 7029,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Program Student Learning Outcomes",
+      477
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "46119",
+   "title": "Drone Maintenance and Repair Technician",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/machine-technology/drone-maintenance-and-repair-technician-certificate/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.286,
+    "body": 0.286,
+    "content": 0.0,
+    "net": 7,
+    "listed": 7,
+    "why": "coverage 0.29 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 3923,
+     "content": 6850,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Program Student Learning Outcomes",
+      371
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "46122",
+   "title": "Drone and Precision Agriculture Technician",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/machine-technology/drone-and-precision-agriculture-technician-certificate/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.417,
+    "body": 0.417,
+    "content": 0.0,
+    "net": 12,
+    "listed": 12,
+    "why": "coverage 0.42 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 4385,
+     "content": 7343,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Program Student Learning Outcomes",
+      427
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "46124",
+   "title": "Solar Panel Inspection Technician",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/technology/solar-panel-inspection-technician-certificate/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.4,
+    "body": 0.4,
+    "content": 0.0,
+    "net": 5,
+    "listed": 5,
+    "why": "coverage 0.40 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 3763,
+     "content": 6716,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Program Student Learning Outcomes",
+      418
+     ]
+    ]
+   },
+   "status": "Active"
+  }
+ ],
+ "page_claimed": [],
+ "page_challenged": [],
+ "coverage_bands": {
+  "0.5-0.8": 13,
+  "0.8-1.0": 104,
+  "1.0": 199
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/fullerton",
+  "kept": 314,
+  "kept_moved": 0,
+  "programs": 2,
+  "list": [
+   {
+    "control_number": "35174",
+    "title": "Chemistry",
+    "award": "A.S. Degree",
+    "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/chemistry/chemistry-associate-science-degree/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/chemistry-associate-in-science-degree-for-uc-transfer/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "36798",
+    "title": "Chemistry",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/chemistry/chemistry-associate-in-science-degree-for-transfer/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/chemistry-associate-in-science-degree-for-uc-transfer/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   }
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
+ },
+ "fingerprints": {
+  "03816": {
+   "sha256": "9e48cc2a53445597163978daf474b61e572cb5b0e48e161bca56913f7b14968d",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/horticulture/nursery-management-associate-arts-degree/"
+  },
+  "03817": {
+   "sha256": "9c117f6ccbbf3ceac09af9a6a12d011a83ce45b62ed0f2d4a184819ac1b91b4e",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/horticulture/landscape-management-associate-science-degree/"
+  },
+  "03818": {
+   "sha256": "321eb031d0b0ad26a39215462eb7e7e56e0a44d3993b0b6d401f61ce563a60a4",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/horticulture/pest-management-certificate/"
+  },
+  "03819": {
+   "sha256": "79a3f9e411e20b9adeb22f6458a7c87c3e77a0709152784d036287ab7b497c25",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/architecture/architecture-associate-science-degree/"
+  },
+  "03820": {
+   "sha256": "95a24a028c203d9cb09780dfabde539d84a09b0fe698b5757aafa6d399507017",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/biology/biology-associate-arts-degree/"
+  },
+  "03823": {
+   "sha256": "0604000f0ad2f2a9f932de061dc033f92d2e293034ae2da4ddaea496f8c6a75f",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/business/business-administration-associate-arts-degree/"
+  },
+  "03824": {
+   "sha256": "790c0c1563e24397bd85a056374c0d8452dc521ec095b8e9f93956ab40d8f75d",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/accounting/accounting-associate-science-degree/"
+  },
+  "03825": {
+   "sha256": "8038249882f942af7c022c8cf23289c9227414043919e0cc819927171ecf9274",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/marketing-management/marketing-management-associate-science-degree/"
+  },
+  "03826": {
+   "sha256": "23f1b804e0b7e9c4c7c0b68c04a9be7a76034c72f31f3c38ef5f554c36ac5bf7",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/real-estate/real-estate-management-associate-science-degree/"
+  },
+  "03831": {
+   "sha256": "5020f3de81874fc46b80a6336f4f33833d2e31a13f2d73754fb89f9bf63803cd",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/computer-information-systems/computer-information-systems-associate-science-degree/"
+  },
+  "03832": {
+   "sha256": "b2d6023fa429ce4e733b79cfdc09a06f66d053e27eb427ab0e90cfd2467faf5b",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/physical-education/physical-education-fitness-associate-science-degree/"
+  },
+  "03834": {
+   "sha256": "0bdd5ca9103495500d2d75ae13345fe9133b8194a76f20fa56ec24b69deb96f8",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/engineering/engineering-associate-science-degree/"
+  },
+  "03837": {
+   "sha256": "017193930612a6c83591ac1cb901c2d7784f15686390eca4e48d4fa06bfdae05",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/printing-technology/printing-technology-associate-science-degree/"
+  },
+  "03838": {
+   "sha256": "09b00448f189b142aa819cf34f00d2b4f400a4a5dcf935002ebe74bb78b77f03",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/automotive-technology/automotive-technology-associate-science/"
+  },
+  "03839": {
+   "sha256": "6b2422833eea8c3d46d63265966cb2903de741e5257f95230001b4c84e696d2f",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/construction/construction-technology-associate-science-degree/"
+  },
+  "03840": {
+   "sha256": "b9ca027c07f7a3c00eedf762b2a5763d7f2c990e4df592a1eaa73ba63dc287b1",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/industrial-drafting/industrial-drafting-associate-science-degree/"
+  },
+  "03842": {
+   "sha256": "d79986dc88d3f733e8c04f2c00cebe0cb86f3ee3214c9bd6f3e06299081b84e2",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/manufacturing-technology/manufacturing-technology-associate-science-degree/"
+  },
+  "03844": {
+   "sha256": "e49b5bc2a6b048582e03123406f5a4202150cc60ac80a6636450720cc32b807b",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/construction/construction-management-associate-science-degree/"
+  },
+  "03847": {
+   "sha256": "5ad5188f46e70dad19009037ea34d5c8efb21fe997f6e8d589fc15354208ec96",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/art/art-associate-arts-degree/"
+  },
+  "03848": {
+   "sha256": "38501385a3d07026eb68e70dcb0f9b07fecf6380b8d1b48378213db8d245319d",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/music/music-associate-arts-degree/"
+  },
+  "03850": {
+   "sha256": "724d69c51e03828fec73c1768b3a986140b6b771b7d669969d983e1cbafcabd3",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/theatre-arts-drama/theatre-arts-drama-associate-arts-degree/"
+  },
+  "03851": {
+   "sha256": "356c35f975e5162c5da04e6b3f22240e8970fb2e095c47f27821d92114c2420b",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/dance/dance-associate-arts-degree/"
+  },
+  "03852": {
+   "sha256": "e0e748c6e0ddd6ae71c06db4a917487f5cc1e9d0b6c9db5da66c405a2883ab92",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/art/advertising-graphic-design-associate-arts-degree/"
+  },
+  "03853": {
+   "sha256": "2f999c7db28355fe30d2b9e408d7e69da0b835a3addc3f40e7bec2b83f8a9b46",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/foreign-language/foreign-language-associate-arts-degree/"
+  },
+  "03860": {
+   "sha256": "e68c3c14203b003458d7ad116a9b6f74812a9ec2cec299656a4c3dcd966303c1",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/interior-design/interior-design-assistant-associate-science-degree/"
+  },
+  "03862": {
+   "sha256": "00604010edd89a2ed7545c33bc41892216a1ae73598c1507c09acf50e42c8bd0",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/fashion/fashion-design-associate-arts-degree/"
+  },
+  "03865": {
+   "sha256": "d3d50d90cd00f3ff96af3fa3261ba7e494924fd3a6fcec0e4d146e5cb55902c5",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/foods-nutrition/nutrition-foods-associate-arts-degree/"
+  },
+  "03866": {
+   "sha256": "b100a1cef6aa3b136dd1dc75e91e02ab1f4c7ec335c03ece82f9ee0fab355bb2",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/english/english-associate-arts-degree/"
+  },
+  "03868": {
+   "sha256": "fb4b6fe4b4771f170da38cd62f4aee8bb2a130852fe759459bbb5f05e3c07cfa",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/philosophy-religious-studies/philosophy-associate-arts-degree/"
+  },
+  "03869": {
+   "sha256": "67b67248b5e3e0d9128ee07f4c86825fa888af113c12c1f51d1ceda8a20e5503",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/philosophy-religious-studies/religious-studies-associate-arts-degree/"
+  },
+  "03871": {
+   "sha256": "a9284edeeba979d92a26cad283263603e3273712df92e54c5218e2d67ba41e4d",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/mathematics/mathematics-associate-science-degree/"
+  },
+  "03873": {
+   "sha256": "dc4f40c9a28ed18cce1c86160f8e97c787f10b21237bb06068f8677277f23823",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/chemistry/chemistry-associate-arts-degree/"
+  },
+  "03874": {
+   "sha256": "a9dd31a72705765825a31a931991f33b7939b1065a63751945c661db64a26040",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/earth-sciences/geology-associate-science-degree/"
+  },
+  "03875": {
+   "sha256": "364ace7276b74aa5b3b1346d5b4cb7add8a0d6437b399992c928b0b852a23867",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/psychology/psychology-associate-arts-degree/"
+  },
+  "03876": {
+   "sha256": "adc109bebb22e275951c92fb5b701772431243a08a4ca127b99323cc580ca63d",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/administration-justice/administration-justice-associate-science-degree/"
+  },
+  "03880": {
+   "sha256": "cd6d2ab36393a71ea63dce3b3f94df1ca0132db96b6355a91625a140adec9e64",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/anthropology/anthropology-associate-arts-degree/"
+  },
+  "03881": {
+   "sha256": "4ef2a07be0d282339e819f0aacbf6a05e25272d270ad0942f63c157f2bd84403",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/ethnic-studies/ethnic-studies-associate-arts-degree/"
+  },
+  "03882": {
+   "sha256": "337c6b1f3469748a822e2ed20a2a30e1c8923437cb9dceb5e77e9d2bd436ffc5",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/economics/economics-associate-arts-degree/"
+  },
+  "03883": {
+   "sha256": "0b8865de787a7ab55d88be89774f44278c2ba31b785bfd29f6a5427111f316fe",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/history/history-associate-arts-degree/"
+  },
+  "03884": {
+   "sha256": "7afba17d9bc832be43016862024cae59f0cf83dd23fa1884249ae680d454447d",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/geography/geography-associate-arts-degree/"
+  },
+  "03887": {
+   "sha256": "e5cc73c6bf2e2c516d562b7205ae448ebfd37876ee47aebdafba918b1b9a9e45",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/cosmetology/cosmetology-associate-science-degree/"
+  },
+  "08387": {
+   "sha256": "f6f4bfc22938767014645d6378fdd48abfe7362f1640cd4a569cf65525a564ca",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/business/business-management-associate-science-degree/"
+  },
+  "08388": {
+   "sha256": "fd62ee2978f660b4784e41669908b84ae4dd44994f536dcb59312e7f14b92b05",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/business/entrepreneurship-associate-science-degree/"
+  },
+  "08391": {
+   "sha256": "2599a2dd858ba2f7da4c0a0546a781dce9b3d80081f1362dc4df90c19c766a5e",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/business/international-business-management-associate-science-degree/"
+  },
+  "08398": {
+   "sha256": "ba03da28dc17bae976bdc1b470cbd30c3c189e9646bfe24bd63bc8410a13bbaf",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/cinema-radio-tv/television-film-associate-arts-degree/"
+  },
+  "08403": {
+   "sha256": "890501bdf47ccc50bd86c05f6c88ce006c19004299eacd337181f49a0f4507e0",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/journalism/public-relations-certificate/"
+  },
+  "08408": {
+   "sha256": "b05c08c242d9b96a5a05b16aa2237f01aed5aa1e1bc1e3b588cc5c30e84147af",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/computer-science/computer-science-associate-science-degree/"
+  },
+  "08414": {
+   "sha256": "d879546d9040dc27f7d44892bfe9e6447e564c1ba74b6c97e923e90989cb171f",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/biology/biological-technician-associate-science-degree/"
+  },
+  "08416": {
+   "sha256": "42f84cb7d5979d883de1701f477d60d7ed1a885f166a9f675caf1cd7d52571a3",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/machine-technology/computer-numerical-control-cnc-certificate/"
+  },
+  "08417": {
+   "sha256": "2006bcbcfb6dcff655136ac5689e5ce1f532dd6664ba93d48987122a03536d86",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/welding/welding-technology-certificate/"
+  },
+  "08419": {
+   "sha256": "51d24f9c5ccf386708b008fd3a967003c9310720f39be673dc20d6ab84922b07",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/music/piano-teaching-certificate/"
+  },
+  "08420": {
+   "sha256": "d8e962c1ea768e3e8c3356786088c9a74234d08a7466726fd9b9a319c69603a1",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/music/music-recording-production-certificate/"
+  },
+  "08422": {
+   "sha256": "e56bce897951fcb186b3ec2c3c4ccc907ab3c5f6c0d4fbbec41bd4a4350afe31",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/theatre-arts-drama/musical-theatre-level-2-certificate/"
+  },
+  "08427": {
+   "sha256": "cc6089c9159fb1de7921566b81829a7001d6fab97dbea651fe14f7f757ea0597",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/fashion/fashion-illustration-certificate/"
+  },
+  "08428": {
+   "sha256": "d38d22b76d69b1cb084d4a169e561880a6f016c40fd9ec66fae3e126076abcc2",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/fashion/dressmaking-alterations-certificate/"
+  },
+  "08429": {
+   "sha256": "d2633a0081dff2f1659f9d23457af6d00c0706690d78a3a6cfe4947ada036075",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/fashion/fashion-stylist-certificate/"
+  },
+  "08430": {
+   "sha256": "3d899add89d5699b58242ccc5f8984b394dbfce5eb390aa963ebefbca886ebc5",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/fashion/fashion-merchandising-associate-arts-degree/"
+  },
+  "08431": {
+   "sha256": "7cdc5d4134e907d5a9b1785ec594cb70ea44a3a62e61ea1b0304120691bc93ed",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/child-development-educational-studies/early-childhood-education-teacher-certificate/"
+  },
+  "08432": {
+   "sha256": "cc7e34a24f51d5addd6552a305b2f4f1d4b10b3a09d0960db5d6138d7d008544",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/child-development-educational-studies/early-childhood-education-administration-certificate/"
+  },
+  "08434": {
+   "sha256": "4328eb0a435a6999665bf7bb2585475bc5d23e9a007fa26b28e4e5fbb1805138",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/paralegal-studies/paralegal-studies-associate-science-degree/"
+  },
+  "08435": {
+   "sha256": "599ffb5502e7ba8184a65790ed6cf6a6f6a67108eec14efbc19056bd26191521",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/environmental-sciences/environmental-science-associate-arts-degree/"
+  },
+  "08436": {
+   "sha256": "7bdcc5dae143aa0b30878c887828f8cde8e74dda12b12cb9885800c349dc55aa",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/earth-sciences/astronomy-associate-science-degree/"
+  },
+  "08438": {
+   "sha256": "bea23413582f484a16fca3b3ee2cf00c1658ae12a2e9ae1bf6ede184ce9471ad",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/latin-american-studies/latin-american-studies-associate-arts-degree/"
+  },
+  "08439": {
+   "sha256": "65fd04b02c24cd00293266a52b5822adb980e27be0a90a420c8e662d24ad0b5c",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/cosmetology/cosmetology-instructor-associate-science-degree/"
+  },
+  "10606": {
+   "sha256": "a343e148c4b246440ca906b9d7ecc195ae5ad9cd7f38325e0994447f64a2f3d6",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/horticulture/ornamental-horticulture-associate-science-degree/"
+  },
+  "10609": {
+   "sha256": "67f870fca1b13fc630389acceaaaacdafb056328c59daea55b543da3623103b3",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/art-computer-graphics/computer-graphics-certificate/"
+  },
+  "10610": {
+   "sha256": "7579f018ceaa5dd6cb6dd7873ab21696410e4fac462a0b89461da5a1e68797f9",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/art-computer-graphics/computer-animation-multi-media-certificate/"
+  },
+  "10611": {
+   "sha256": "bf9b449940499217d5e65ce08cfd65f44baeaf953ab92d3a0e6ec6b3336ea133",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/art-computer-graphics/digital-publishing-certificate/"
+  },
+  "10616": {
+   "sha256": "a431203af1821657c81a7242f19313ba6719549b2de9be76d1dbe13a75e5eff3",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/physical-education/athletic-coach-certificate/"
+  },
+  "10617": {
+   "sha256": "1971b142cea3f1a878e233c4b9b122b11fb526276fdfd65661cda660069de8f7",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/physical-education/personal-trainer-certificate/"
+  },
+  "10618": {
+   "sha256": "7c5729c8ae44e8e602a2732f08dc5e27dc6a510b3dc2bd65264683cead9b4039",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/printing-technology/electronic-imaging-certificate/"
+  },
+  "10619": {
+   "sha256": "7f2ed6f6a3572a285f9be40b4097763daf229120e45c936e643920f668ec3443",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/printing-technology/advanced-sheetfed-offset-presswork-certificate/"
+  },
+  "10620": {
+   "sha256": "1cfaa8ef7d074cf5e42223cdbc23039eb54458c05d3f55c373b615d0e9bef6b6",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/printing-technology/digital-in-plant-graphics-certificate/"
+  },
+  "10621": {
+   "sha256": "c157db8523b97f988ae4d6d06be2ad7cc3d7f176955d6e7ae4e2449f82320df9",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/printing-technology/screen-printing-certificate/"
+  },
+  "10622": {
+   "sha256": "e7b2e842cc2c3c9a58dc041f63d71e9eb299e188fa6e1a2591184a30ee7f1ba5",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/industrial-drafting/industrial-drafting-level-i-certificate/"
+  },
+  "10623": {
+   "sha256": "9e1c8cd6d6f32104cc270dd97559edac353c48623f8491f94d07d0429b668d89",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/industrial-drafting/industrial-drafting-level-ii-certificate/"
+  },
+  "10624": {
+   "sha256": "95efb56337c053aa82e8ac4fd586e78970450d96d48900f4a3dfb9ecf0f33dd0",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/machine-technology/machine-technology-level-ii-certificate/"
+  },
+  "10625": {
+   "sha256": "7a3bd6a4f3d9dd4a445c6a1aea00d9c18c7c31770a6326b5fdc293e2e96e3f2d",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/interior-design/interior-merchandising-level-i-certificate/"
+  },
+  "10626": {
+   "sha256": "586275edfea9dd54ef2571381673c5bbebf94da31c358bdd967f284abe63a825",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/interior-design/commercial-design-certificate/"
+  },
+  "11688": {
+   "sha256": "c4e0caf37f50e27940f027aadeb7033a67a2d3451b72905a7aa293e4feae38c5",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/business/business-skills-certificate/"
+  },
+  "11690": {
+   "sha256": "488c46ff5360a336e93ede882932af9191190b0d95e8c8f788b69fcde7c738e9",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/cinema-radio-tv/radio-television-video-production-certificate/"
+  },
+  "12007": {
+   "sha256": "e31625e6a9576e31293349bbcc619614158a43be0bb148357afd591b35e80277",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/automotive-technology/automotive-service-management-certificate/"
+  },
+  "13207": {
+   "sha256": "890ae5bd52a10932de1045cc54fd2392048d4a2f9bdc5879d2e72794cf004e9b",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/industrial-technology/industrial-technology-associate-arts-degree/"
+  },
+  "13208": {
+   "sha256": "fc93ad60bc81340823120f5b6b6f0e159113f9431168037a8a9b04a831b27b7e",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/construction/construction-inspection-associate-science-degree/"
+  },
+  "13209": {
+   "sha256": "62c933c25aeb2812a9108c876bd89dc44000b67c201e8b2849d2546102dc5226",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/interior-design/residential-interior-design-certificate/"
+  },
+  "13210": {
+   "sha256": "552b0f0ce3ac275d84a525b788ec0c42a3e94ef763a1e450f6c20ac6c5de4b35",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/fashion/textiles-clothing-associate-arts-degree/"
+  },
+  "15781": {
+   "sha256": "d8d16d96592ac9f0471796bba38599852b708b9b49fa0d033c016428c38e3546",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/child-development-educational-studies/infant-toddler-certificate/"
+  },
+  "15845": {
+   "sha256": "052526b1be98f66708d5c195ad44c7aca3d26e1cfe2b794eb276c439bf23016f",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/horticulture/greenhouse-nursery-production-certificate/"
+  },
+  "16658": {
+   "sha256": "c4f1a8e387fd57a518f284edf8e9318888188c7ba18f9a7677dfab396ce96604",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/cosmetology/esthetician-certificate/"
+  },
+  "16767": {
+   "sha256": "d5e4e0c3a2c88b7c61be087d8cb92f586e39703811ce8ed0ece1216444158cfb",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/ethnic-studies/chicanx-and-latinx-studies-associate-in-arts-degree/"
+  },
+  "16838": {
+   "sha256": "b7a95cf52810eb34c3da0ed8fb5b37671d3ab31e29ff5bce49c6f2a164c0e19c",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/child-development-educational-studies/early-childhood-education-associate-arts-degree/"
+  },
+  "16840": {
+   "sha256": "adfda41a9313ce22cb7c620194d214e8739150bb62dff0fb252ee5ae84f2079e",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/child-development-educational-studies/special-education-certificate/"
+  },
+  "17369": {
+   "sha256": "c4c06c5b790d20a123ac9a73ceaa73f47e587de549d525c4e8364a5e099ccd54",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/physical-education/"
+  },
+  "18163": {
+   "sha256": "6b01df354f30803f2787050d81d9f2e9eec0638d506dec6509cf4d70e086a64e",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/interdisciplinary-studies/interdisciplinary-studies-emphasis-science-mathematics-associate-arts-degree/"
+  },
+  "18164": {
+   "sha256": "a016c5f392414efce8e9de5d33e3250fb985e19ccd86021cc9f5458060028f67",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/interdisciplinary-studies/interdisciplinary-studies-emphasis-arts-human-expression-associate-arts-degree/"
+  },
+  "18165": {
+   "sha256": "6bf6231e85591f7d8992d7057809c0466cbb35fd1cb881690bf6ca35a8872cc0",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/interdisciplinary-studies/interdisciplinary-studies-emphasis-social-sciences-associate-arts-degree/"
+  },
+  "18166": {
+   "sha256": "cdaa78296d45560c2ce1dce928049ec484872bcdbcd3bccb6fdcb7551beb75a7",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/interdisciplinary-studies/interdisciplinary-studies-emphasis-social-behavior-self-development-associate-arts-degree/"
+  },
+  "18742": {
+   "sha256": "e3fa996b67cf06494d8da21655050d85baa49fd778d5ccfb13ace68c6dd5e150",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/art/illustration-certificate/"
+  },
+  "18746": {
+   "sha256": "e3c0b7ee877ba04f205848cda82514001384702b5959041cfc59e6d2de570ee2",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/theatre-arts-drama/lighting-technician-certificate/"
+  },
+  "18747": {
+   "sha256": "1529bca9b929360970dc74a7e6370c16f038b2caba5f05962c7ec351d9888318",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/theatre-arts-drama/scenic-artist-certificate/"
+  },
+  "18748": {
+   "sha256": "c24d34ffe67abe7056afcbe72286fa1919971129c7c582c2b17db30c6ace3824",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/theatre-arts-drama/sound-technician-certificate/"
+  },
+  "18749": {
+   "sha256": "9783098fa1c6ec2db7a37f0cd80099842e94f883200ef89686ef820c0882c78d",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/theatre-arts-drama/stage-management-certificate/"
+  },
+  "18750": {
+   "sha256": "99fdbb1aed74d78d8c4310086be57af1c121ac2bd1fcb6fd6027dd01bdc26160",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/theatre-arts-drama/advanced-technical-theatre-certificate/"
+  },
+  "18759": {
+   "sha256": "f918a78997142b11760ede03fa6dfc1f1f2158cd5159400a4921fb2fc1c3f61d",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/theatre-arts-drama/costume-wardrobe-skills-certificate/"
+  },
+  "18800": {
+   "sha256": "3a2223edfec1b50f17a17517e4daa7e0911e02dee00ec49038e6d2afee8d3a54",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/pre-nursing/pre-nursing-associate-in-science-degree/"
+  },
+  "18801": {
+   "sha256": "c49e1602e48f154687887c5c2916784bd89d1bfa990750371cb93a4133497f4a",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/child-development-educational-studies/child-development-educational-studies-associate-arts-degree/"
+  },
+  "19452": {
+   "sha256": "704e883f15e06d169d5716f3777bfb4fd24939a9e3a5e5ac1742cc50d10f9662",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/photography/photography-associate-arts-degree/"
+  },
+  "19453": {
+   "sha256": "78e89b3985f471aac1e72a96375cc31e43075dc4ddb969a26b3d150cba330771",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/photography/professional-photography-certificate/"
+  },
+  "19660": {
+   "sha256": "53aed85f2babeb62445dc0d968bffeca03eb81fc3638043062ddd62ba1324aec",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/theatre-arts-drama/assistant-costume-designer-certificate/"
+  },
+  "19663": {
+   "sha256": "f6f9f72328741f2e990c2f4a16c845dafb8e8bb40270aa29dbc6157861fb3304",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/theatre-arts-drama/costume-cutter-draper-and-stitcher-certificate/"
+  },
+  "21252": {
+   "sha256": "632e92f669c27464f529925f32d3323dfa5c5fa92b390bb3a5b3f92dee55c0b2",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/horticulture/landscape-design-management-certificate/"
+  },
+  "21253": {
+   "sha256": "6e0f45e3ed2d17e7baa7af922f76d7bfa4aa65158bdcd605caf40c4725525108",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/architecture/architectural-cad-certificate/"
+  },
+  "21255": {
+   "sha256": "fe3c802b014c5323d56e154f5b7752375c8f387cb46278cd2c1825b7d33bfc4a",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/accounting/accounting-certificate/"
+  },
+  "21256": {
+   "sha256": "82e07f1a41a1836d9c819a4523966d176e56309baa5cd5d50ede4527917bcfc4",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/business/business-management-certificate/"
+  },
+  "21257": {
+   "sha256": "7524e8f73a70a38f19719a84943d9675286d2dd456ad058c1f7b1630afedfbb3",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/business/entrepreneurship-certificate/"
+  },
+  "21260": {
+   "sha256": "71b712cf1853380ab19a47f80adfe279e3c378b6b994908c4d20d95ef29846b7",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/real-estate/real-estate-management-certificate/"
+  },
+  "21264": {
+   "sha256": "4d585599ae0444d6ae11ffbec88348b341f03519ee83064df838199b8c3562d1",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/journalism/journalism-certificate/"
+  },
+  "21265": {
+   "sha256": "dc8f32be606842c4c94e61d4198737c43c079a0f869520866f374ae11061bbe3",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/cinema-radio-tv/radio-broadcasting-certificate/"
+  },
+  "21266": {
+   "sha256": "3064a62e0c5697ef65ab7862a833dfb7022d3509576c3135beb99f30e92a4713",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/cinema-radio-tv/television-film-production-certificate/"
+  },
+  "21267": {
+   "sha256": "121ffff7a13112579aef81aa766ea382c3cc091b2f4cc47b243c73b9a2117e0f",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/computer-information-systems/computer-information-systems-certificate/"
+  },
+  "21269": {
+   "sha256": "6a9a88202d5b165f95488a7997c45b6bd4b2aec420b71b909b1250ef2fd76d3a",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/printing-technology/printing-technology-general-certificate/"
+  },
+  "21270": {
+   "sha256": "2fd0963af9f5d9cbde65a32588d5099301563cf2de412e3c05e65af18332af7f",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/automotive-technology/automotive-technology-certificate/"
+  },
+  "21271": {
+   "sha256": "f764493d0da0e0d2a30dcca760d0a4b1a2de6f26f005a2a111e9dee91102c742",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/construction/construction-technology-certificate/"
+  },
+  "21272": {
+   "sha256": "46a22fb47eb7c75e81d608b546fae0414f748897da47d832cec65a0bfdfb9431",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/construction/construction-inspection-certificate/"
+  },
+  "21273": {
+   "sha256": "8ded7a562f107f0f93111d78ea278991be35df96501179c4bb8e88aa063be67b",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/fashion/advanced-fashion-design-certificate/"
+  },
+  "21274": {
+   "sha256": "ad7b4b43347b15d3a1b35eb44a63e0e611c3e90fabfce495a2953ba167f608fa",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/fashion/fashion-merchandising-certificate/"
+  },
+  "21275": {
+   "sha256": "080b9d486b9a10214881b9825894431c878d74fbcc107181d503a533e1f1501a",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/paralegal-studies/paralegal-studies-certificate/"
+  },
+  "21276": {
+   "sha256": "043dcc93c2acf3605de12d69f566d101ce1d517b83381044b5e08e02068790f7",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/cosmetology/cosmetology-certificate/"
+  },
+  "30708": {
+   "sha256": "dce485fbe73b29c7440edb21073b29bfe58a6f8bd9622b66ff61de98af2423d5",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/mathematics/mathematics-associate-science-transfer/"
+  },
+  "30802": {
+   "sha256": "3836af1772450257bbeb9f178772bc90cfb1af5b3622640881ecc74030fd0596",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/sociology/sociology-associate-arts-degree-transfer/"
+  },
+  "30885": {
+   "sha256": "0e0744c428c8b53bf2cdd350af0b5331c98620df21bd20910e6dce7dc4240105",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/psychology/psychology-associate-arts-degree-transfer/"
+  },
+  "31128": {
+   "sha256": "a641fc341b655e812c988a69afb886d32b1b29533470eb67ee42f94c7798b318",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/physical-education/pilates-certificate/"
+  },
+  "31520": {
+   "sha256": "a2445261481f5a1f315f69893cf2f7b39173f39512d427079466daf5ac26f29a",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/art/studio-arts-associate-arts-degree-transfer/"
+  },
+  "31522": {
+   "sha256": "57b924e2c856ca916031fcb63d70298f2c04045b3b54dc547248c41ed1e08509",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/history/history-associate-arts-degree-transfer/"
+  },
+  "31523": {
+   "sha256": "e7b9db4428ad8bd8f23a73c0bc2642b2934eb0cbef9c1a7e1231a19a2c968ce1",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/political-science/political-science-associate-arts-degree-transfer/"
+  },
+  "31525": {
+   "sha256": "c5987e0bdd37d8db933c5b0ea0cedf1f609689f813ee61a386717a09b8028055",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/child-development-educational-studies/elementary-teacher-education-associate-arts-degree-transfer/"
+  },
+  "31527": {
+   "sha256": "913f40531b89cf6791843b2de76cff1f56b4ee605e25671e20411251ab543443",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/administration-justice/administration-justice-associate-science-degree-transfer/"
+  },
+  "31529": {
+   "sha256": "0ce31438769c2d55a3da6207d4660fa3651d68769d70706fee58118ae22c3f77",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/art/art-history-associate-arts-degree-transfer/"
+  },
+  "31530": {
+   "sha256": "d87fd3658c191b51b34f81018a5c8eb765e9fbcbc5f612f9cc9db4adf2a605a1",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/music/music-associate-arts-degree-transfer/"
+  },
+  "31580": {
+   "sha256": "3d0f07a1f301d639de9652e5cd1146b71bde698e8801163ef6b57a4237cce965",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/english/english-associate-arts-degree-transfer/"
+  },
+  "31648": {
+   "sha256": "329a88af6a92d488766998f23e95aaa3fe68521adc34766739cdec05127c90e0",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/theatre-arts-drama/theatre-arts-associate-arts-degree-transfer/"
+  },
+  "32438": {
+   "sha256": "91a08825e053c77dbd84a9522ec055ca1d4fca088de45a533fc564d29e2486eb",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/philosophy-religious-studies/philosophy-associate-arts-degree-transfer/"
+  },
+  "33078": {
+   "sha256": "bbc6f75be5de34802251c2641bebaaae7fb7ff16eb1bd8ba28a97df06fc2f409",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/geography/geography-associate-arts-degree-transfer/"
+  },
+  "33126": {
+   "sha256": "4602516165333231dbd8c9824299e512b03becc21bdbd23bdbaf5da5cc64b563",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/spanish/spanish-associate-arts-degree-transfer/"
+  },
+  "33680": {
+   "sha256": "c3bd33195ac6375632c0c567c7600400f9d518f7742c1367f0674500273bc436",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/anthropology/anthropology-associate-arts-degree-transfer/"
+  },
+  "33890": {
+   "sha256": "61f0f51115bc41e191edb8ac6f378f0aeb677fbc81cd7712de2a257bb8440892",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/earth-sciences/earth-science-associate-science-degree/"
+  },
+  "35174": {
+   "sha256": "26aac201793b0fbb201486b0e863e4b68411d1d211617f846c59c4b36303d4c4",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/chemistry/chemistry-associate-science-degree/"
+  },
+  "35804": {
+   "sha256": "a0afc90afe418337747428a4608c206509eedf9d01af2db852fd0eab53e81757",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/foods-nutrition/nutrition-and-dietetics-associate-in-science-degree-for-transfer/"
+  },
+  "35894": {
+   "sha256": "a9b3cf426c111f3cbba47a241479155a73e3d036b7589166387fd7d0e3304a2d",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/art/advertising-and-graphic-design-certificate/"
+  },
+  "36357": {
+   "sha256": "04c5041d412f8b867e5f7df454fb13763690a82ac3dd5e2e336f7c8ae17888f1",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/cinema-radio-tv/sports-broadcasting-skills-certificate/"
+  },
+  "36478": {
+   "sha256": "37f7b7789075702f1d737b8ecccf0bd3121d155d191d410316c1b64f6b341538",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/cinema-radio-tv/radio-broadcast-news-certificate/"
+  },
+  "36481": {
+   "sha256": "a3d6d00eeee81491940806f608b1e4b6d4a41cfd187b6273b181a08a40a348aa",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/cinema-radio-tv/radio-broadcasting-associate-arts-degree/"
+  },
+  "36482": {
+   "sha256": "76a784d719fd8471c8270574e5f5d5032a543e841b2db399acc67068a359b310",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/cinema-radio-tv/radio-broadcast-news-associate-arts-degree/"
+  },
+  "36522": {
+   "sha256": "26c9c8a820cfc158515ad2af632e4e1229cb4c1b45a10d2ca24166290977cee1",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/machine-technology/machine-technology-level-i-certificate/"
+  },
+  "36563": {
+   "sha256": "2d50862252acf55531e08e2cee2534e4a5cd41f17a188feb60ac1fe74afda0c9",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/child-development-educational-studies/early-childhood-education-associate-science-degree-transfer/"
+  },
+  "36689": {
+   "sha256": "2eb529b3b83e73d46b45c8c6c27ddf44033591ae9d9d94ee842cf808c31f4003",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/computer-information-systems/cyber-security-analyst-certificate/"
+  },
+  "36690": {
+   "sha256": "ed9a8896956303ed3b7cc9abfcc51a9db9bb78e850c2ac2b99c1614dc31dbcf0",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/computer-information-systems/cyber-security-master-certificate/"
+  },
+  "36692": {
+   "sha256": "eaedb64c43c7474d785f3783508a33fee22c631ed4e97e10e1967b8d609bfeb8",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/art-computer-graphics/entertainment-arts-certificate/"
+  },
+  "36693": {
+   "sha256": "12d0e0c9bd331b69122b22173c2b0c7e9ea201640e454355cc90670bd7febbaa",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/computer-information-systems/networking-skills-certificate/"
+  },
+  "36696": {
+   "sha256": "836e9dbaf5d28dad0e18541659cd4f11bccb6e023471f51b6382ccd0605e332e",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/cinema-radio-tv/film-television-and-electronic-media-associate-in-science-degree-for-transfer/"
+  },
+  "36698": {
+   "sha256": "9c046b57c049b966fb79bf0541e5c19920ef88fda5665290f4d011eb32da7436",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/computer-information-systems/programming-certificate/"
+  },
+  "36702": {
+   "sha256": "9c1ff053d06045c7e359a96f3b2e25370a28e8a6d04b6efc48f61f5c5ccbe206",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/computer-information-systems/cyber-security-technician-certificate/"
+  },
+  "36705": {
+   "sha256": "968c6a23537a6aeb57861ad374c14345416a9b68f2e31c84054256b66e0b75dc",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/business/retail-management-certificate/"
+  },
+  "36708": {
+   "sha256": "30bbfe6100b4eef12c829855cf71f2e7009d9f5761a7e78e12f56e5b6513b70d",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/biology/biotechnology-laboratory-technician-certificate/"
+  },
+  "36709": {
+   "sha256": "ad2ab6cd9cffa8a6460cb4b3e889bfb6c0631f919ea74b60e310074044da4301",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/biology/biotechnology-biomanufacturing-technician-certificate/"
+  },
+  "36787": {
+   "sha256": "8ded7a562f107f0f93111d78ea278991be35df96501179c4bb8e88aa063be67b",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/fashion/advanced-fashion-design-certificate/"
+  },
+  "36790": {
+   "sha256": "fe7e8d53d83298612916dbbb9678ecb38c5c42ad55757758781f9e299f2c72a7",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/journalism/journalism-associate-arts-degree-transfer/"
+  },
+  "36796": {
+   "sha256": "b6c4518454210a52a7776fb8b7acb4142b271013b1228349136983797714625e",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/child-development-educational-studies/child-and-adolescent-development-associate-in-arts-degree-for-transfer/"
+  },
+  "36798": {
+   "sha256": "a67b9a12a9a254b03e81dbc0b4014342c46afffae6658727961055b07673b697",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/chemistry/chemistry-associate-in-science-degree-for-transfer/"
+  },
+  "36819": {
+   "sha256": "62ca5e015d49e4acc373331560daf016aa66545be4f201147448bf774922d921",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/theatre-arts-drama/theme-park-technician-certificate/"
+  },
+  "36863": {
+   "sha256": "deb609acacb1e9886488d08a79ab90575957ec584b084aade42c8b1ea596e0d3",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/physical-education/kinesiology-associate-arts-degree-transfer/"
+  },
+  "36883": {
+   "sha256": "639f46bf34bafc5a5adfb0f6bb43cba609c310ba2cd346dec060493cff87c6e2",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/earth-sciences/geology-associate-science-degree-transfer/"
+  },
+  "36916": {
+   "sha256": "fb28fc7e74eda6e7dee4191c2103177dbea0fdddbdb6d36badf1a5ef14558dee",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/communication-studies/communication-studies-associate-in-arts-degree-for-transfer-2-0/"
+  },
+  "36961": {
+   "sha256": "3a6eb9e79949d666499f51c378e46c10e24a39ca2568a94c8c2c6be6c06dfd9e",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/economics/economics-associate-arts-degree-transfer/"
+  },
+  "37099": {
+   "sha256": "8ed5a1a6e13033aca22b66d3ba49e0327de5a9f3311e761272e11395ed015cc7",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/computer-information-systems/computer-technician-apprentice-skills-certificate/"
+  },
+  "37106": {
+   "sha256": "e6e1a6e74caabbdc928a797c1b791950298aca8c285af4bb5442b7a83f6dd394",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/computer-information-systems/web-design-certificate/"
+  },
+  "37107": {
+   "sha256": "7097bfac2788a3d1d63ad5d99a9d67e223087f9b51e4e1274f31e943caeae842",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/real-estate/real-estate-brokers-certificate/"
+  },
+  "37108": {
+   "sha256": "d365065a19b0d02c2cc62a4e12970a0b5768f1c541b5c8d04c4cfdc03b93360b",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/computer-information-systems/office-applications-technician-certificate/"
+  },
+  "37109": {
+   "sha256": "81006ed9cfc4585ef02af94416b759e54339b17a1b1368c35b9880a04000043e",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/marketing-management/marketing-management-certificate/"
+  },
+  "37146": {
+   "sha256": "7f9cb323e17dbc5a4fd7c76f8f24e84073fc5b477db778ab04412ac844b36f91",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/computer-information-systems/computer-technician-analyst-certificate/"
+  },
+  "37148": {
+   "sha256": "e3c56105385d68cf6c139a0208f6fa4c0189c477fefc3958625efe1fe3d665bc",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/computer-information-systems/web-design-skills-certificate/"
+  },
+  "37173": {
+   "sha256": "0f2858bf0f7f31faca94bfd521ebc596e05619cca72716c436a9ba49c9e2c25f",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/computer-information-systems/office-applications-apprentice-certificate/"
+  },
+  "37174": {
+   "sha256": "8979ba3bcb3d3f97757eab34f0cc3f6ba2fe9da85b019cff2a08bf9dd65fbdbf",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/biology/biology-associate-in-science-degree-for-transfer/"
+  },
+  "37628": {
+   "sha256": "b8d5d9b234e865775a03438216486c97ce4e89f10256e4de917ea663d3b95304",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/social-justice-studies/social-justice-studies-associate-in-arts-degree-for-transfer/"
+  },
+  "37654": {
+   "sha256": "61a27cd32ba33e47865df445ce127badfd8d9c2a8f4b81d5596d96527cf42881",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/theatre-arts-drama/theme-park-technology-specialist-certificate/"
+  },
+  "37714": {
+   "sha256": "a06f9b38e4561842c11a510a9ac7a1a93fc7d2e3ca00031c8469c676fbd0aabd",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/social-sciences/volunteer-services-skills-certificate/"
+  },
+  "37715": {
+   "sha256": "f8e652adc93c6f4e41e11f67f85cb7facfcb9f697afe8a83b9e2742b6d36f408",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/social-sciences/research-fundamentals-skills-certificate/"
+  },
+  "37761": {
+   "sha256": "5b08d2752f599c21085a83a4cd2bd1a8cd36d379e3a378eac251458c7f3cfb70",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/machine-technology/swiss-lathe-certificate/"
+  },
+  "37762": {
+   "sha256": "082f206ad2eb0ef7bf4eaf8a64a6303cdd82fcd51744a1f468ada89ad7e66d7c",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/machine-technology/metrology-certificate/"
+  },
+  "37963": {
+   "sha256": "33806301d255f0759eb7fdd3a5695253b27ed1aa7a4d4d1ec3901496fee82858",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/automotive-technology/automotive-emission-control-certificate/"
+  },
+  "37975": {
+   "sha256": "317d5ac71b06d7cd2eac30468dc4e42c763b12a3751594c3ad081121a31f96dc",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/art/childrens-book-illustration-certificate/"
+  },
+  "38300": {
+   "sha256": "9c785332bb7249e87ed7c7c03a53d894e9f76466582cb6232f905df8a15fcf14",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/technology/autonomous-systems-development-associate-in-science-degree/"
+  },
+  "38430": {
+   "sha256": "270d9a38f967854b5e2244750e81c027b1e2a94c92a37ed1cf59f1626fd03783",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/social-sciences/law-public-policy-and-society-associate-in-arts-degree-for-transfer/"
+  },
+  "38646": {
+   "sha256": "cc4df0ea7f95a333f88ceed062e0f4f1c5f51702e6b79dff2165964e3d6d613f",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/journalism/spanish-language-media-certificate/"
+  },
+  "39271": {
+   "sha256": "58d06a1b8f037a1ff0421537ae613b1a7a2e2d440915ccf9d9b4a846de87bb48",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/construction/construction-estimating-skills-certificate/"
+  },
+  "39272": {
+   "sha256": "37592227c7d146b2336f1b07cd722f0676d5c3dcd9decd6d1998e2270723b475",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/architecture/architecture-mini-cad-certificate/"
+  },
+  "39434": {
+   "sha256": "605314590f1e56956aa9a7faded46ce68d03ec9dae4e9f8cb91f05dfc620fc37",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/ethnic-studies/africana-studies-associate-in-arts-degree/"
+  },
+  "39439": {
+   "sha256": "fe65807d2c1e7b785b25d963a12918195521d8af8640ac4147d451bab0cad986",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/business/digital-marketing-certificate/"
+  },
+  "39440": {
+   "sha256": "6a6905f09bc0c39a4ca949cb3be87073f8d322fc3917c8e93339431008b8bae7",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/foods-nutrition/nutrition-and-foods-skills-certificate/"
+  },
+  "39441": {
+   "sha256": "314fd90bfb20763e45e91274e7d07557f8d5518beba466804ccc8505e8fcdc2b",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/art/museum-assistant-certificate/"
+  },
+  "39534": {
+   "sha256": "1ed041a1f7f71991060cd85a2f49f4e760c5c1c8ca4e71359df4347d9ffe307c",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/art/storyboarding-certificate/"
+  },
+  "40521": {
+   "sha256": "11c1c1df1694269317e5c9a0261b55c27599b060c6f8d61a62f31b6158ba7543",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/machine-technology/metrology-mini-skills-certificate/"
+  },
+  "40522": {
+   "sha256": "af7afe010db5cf432376f4862b5f8a565a48f5366ff8f813abdc5141077f1901",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/business/finance-skills-certificate/"
+  },
+  "40523": {
+   "sha256": "ea2bd9f2f914f3c65e867a701d9e6305897eaf11e037495a143f56e3cbf03568",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/biology/biotechnology-lab-assistant-skills-cert/"
+  },
+  "40547": {
+   "sha256": "7fa022d1fd300515db0dd030bd1eb2d6e3713e38909ee01553f3bf27e058a1c7",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/ethnic-studies/american-indian-and-indigenous-studies-associate-in-arts-degree/"
+  },
+  "40548": {
+   "sha256": "cee373e7ea643b73ab6f07b0562caee0432f3768893102bcb650354ca7f3cbb0",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/ethnic-studies/asian-pacific-islander-american-studies-associate-in-arts-degree/"
+  },
+  "40553": {
+   "sha256": "8ea18706b1bb378f0edb1f8a478e6112967ed3acec20d868507dbe0d4e41d084",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/business/business-data-analytics-certificate/"
+  },
+  "40638": {
+   "sha256": "192e6ade0526c9822062ddeac649a7cf69d50f764fbd21ecdbc09a28c74ce45e",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/machine-technology/cnc-operator-certificate/"
+  },
+  "40640": {
+   "sha256": "9c869c4ab5e1795dc82364364e0ccc9f88a82802b45eca138508964a8e5415d3",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/real-estate/real-estate-sales-skills-certificate/"
+  },
+  "40645": {
+   "sha256": "fb0fee3a88738832d868690063ea6fa30860090899348963ef4659f998459fe8",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/business/international-business-management-certificate/"
+  },
+  "40646": {
+   "sha256": "79a108a384606b68b3245f0f19857ff4329b6f6ce83e15b6f1dced7559136518",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/automotive-technology/automotive-chassis-certificate/"
+  },
+  "40647": {
+   "sha256": "a5496b1d86e481a75301df345d1a11323adf2fbad488879353f92c06a56fc328",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/automotive-technology/automotive-service-advisor-certificate/"
+  },
+  "40649": {
+   "sha256": "3865f52eb1fabadbe5eb1fdd4877ed3e8f6634dcad4c3fa405d74111689f15f3",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/automotive-technology/automatic-transmission-certificate/"
+  },
+  "40654": {
+   "sha256": "717780eca980970809e52b27e43459f3fde0adc559bbfec52716eafd833ade56",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/automotive-technology/automotive-light-repair-certificate/"
+  },
+  "40657": {
+   "sha256": "434f3f57d70ad42492656863c00425479fd0d978e16a505bd0a53fc90641601a",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/accounting/advanced-bookkeeping-certificate/"
+  },
+  "40658": {
+   "sha256": "4e71c69700952f1f1c3b8f3ca410e9e87dc645e40d04d60d2e6c91f6d7d15778",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/theatre-arts-drama/acting-and-performance-level-1-certificate/"
+  },
+  "40659": {
+   "sha256": "e1f2298e6b725630811d6213f1bc928922fcbe56d67a3eb5a2728168d3ecf80e",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/computer-information-systems-gaming/computer-game-design-skills-certificate/"
+  },
+  "40663": {
+   "sha256": "0b55c3d67a9e15a6d90c013bc9fd6763f3a5d52f7ff647de1107736e5e254293",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/accounting/entry-level-accounting-certificate/"
+  },
+  "40664": {
+   "sha256": "d6fb1ef832b5c6ff5ec2b40cb4be88726d19ee554c245d08575f3c05d806c1e2",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/accounting/cost-accounting-certificate/"
+  },
+  "40669": {
+   "sha256": "8f93fd8a21ff70910929b8319d1aefffb468e961f9d7aeb782902eb2e547ce78",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/accounting/payroll-accounting-certificate/"
+  },
+  "40671": {
+   "sha256": "0a6e4ed07776bcbc9e3bc62820d0d904a0904cda8a8951f1fbd9d012218ba80a",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/accounting/small-business-bookkeeping-certificate/"
+  },
+  "40675": {
+   "sha256": "5d6c49882e3081c84da25ccc056b80799f5936f49123853c4446236f9bff90e0",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/business/the-business-of-art-certificate/"
+  },
+  "40676": {
+   "sha256": "c086be7cc92ef6f4b3e853946b5a7f30e75b5544b99a4546a1eb90d7f28f4018",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/business/mobile-applications-entrepreneur-certificate/"
+  },
+  "40677": {
+   "sha256": "ff463d4024c6696f5b1cc92f3e06a51997a3e040554f7aa844e26257c5ad4398",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/computer-information-systems-gaming/computer-game-programming-skills-certificate/"
+  },
+  "40679": {
+   "sha256": "4172ae2d6fbcea5ba0e878a79cfc13ccbee25854f40bad7bf871931212b8d20c",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/automotive-technology/automotive-fabrication-certificate/"
+  },
+  "40795": {
+   "sha256": "31ba5a7030029321a82344ae9e29be74fad31226c62208a2f80a309e252bdfbd",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/computer-information-systems/cyber-security-associate-in-science-degree/"
+  },
+  "40900": {
+   "sha256": "88d6dc2d5762799a146f9b9cf98ca484db3ab644d9eafceae55c8208b983dd6d",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/automotive-technology/automotive-engine-performance-certificate/"
+  },
+  "40964": {
+   "sha256": "5bf93567a209e05dc26340819728cffb2ae50dfdeff8072d94399719cd26f584",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/business/human-resources-management-certificate/"
+  },
+  "40973": {
+   "sha256": "b0f876a1fbcdcbf22ef3a03e501f4f5026557ce7e09d61c60c5824fc103a46e3",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/business/business-networking-and-sales-certificate/"
+  },
+  "40974": {
+   "sha256": "0a680bc6f052a9770bde5ca0e15eba0e119df5e3babe16cac0d4f1e6b90e1b00",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/marketing-management/marketing-management-skills-certificate/"
+  },
+  "40976": {
+   "sha256": "ae2ce59cbeaae4cba0a055bb5b79fa5131a46df1dd8c0fabb74d54775b5801f9",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/theatre-arts-drama/stage-and-screen-combat-level-1-certificate/"
+  },
+  "40991": {
+   "sha256": "01889b4086d4f82da0778ef0bdb251c084abf26c23589edd31ce399f6828fc7e",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/accounting/financial-accounting-certificate/"
+  },
+  "40992": {
+   "sha256": "7fccc38bb82cdb51f5db42b6cacc9eca215446068dd746b5269bdbd434f96c71",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/accounting/individual-taxation-certificate/"
+  },
+  "41219": {
+   "sha256": "1e07dbc40f62ab7ac34c7cb7ddaa7648ff1fb3005415bdf40a53343a0b3932f9",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/fashion/fashion-skills-certificate/"
+  },
+  "41268": {
+   "sha256": "f6a9f916cd3550b4d31bfead820d4bd152dd64eea496e5cae36130209879472d",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/business/finance-certificate/"
+  },
+  "41269": {
+   "sha256": "b2675165c9708ffb74683ca8a49a74bc41688da608d4f471ba97f48afbae04b7",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/journalism/drone-journalism-certificate/"
+  },
+  "41371": {
+   "sha256": "795db159e1204e80a8de828e4328523cca9c0aac510fc1f6862bb9dbe112867d",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/technology/automation-fundamentals-certificate/"
+  },
+  "41380": {
+   "sha256": "e80ab9e85a74b07e57fd8d34f1d46b87b38c7d188a6d21e3a8b36779220f088c",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/machine-technology/conversational-programming/"
+  },
+  "41398": {
+   "sha256": "d48e851ff73ca753e532f8375339f8e398a8bfeb2fa6462387e0aaeb0890ce58",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/business/business-economics-certificate/"
+  },
+  "41399": {
+   "sha256": "0b483d09601aa0a48c8c199a7ca025e6c3ec17e2f3374c75efb97538d2a5d523",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/technology/electro-mechanical-technician-certificate/"
+  },
+  "41409": {
+   "sha256": "0ce54bee8bacc699b85c68fd0b6c8a1e4f72d263b8d4a87732c683e15823c611",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/social-sciences/aging-studies-certificate/"
+  },
+  "41410": {
+   "sha256": "62f490f8081cde63d9794af686d5215caf32aeb8e35c697da0ae12cc23873686",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/engineering/engineering-technology-certificate/"
+  },
+  "41695": {
+   "sha256": "86afeba74765ddfd3e72a44293ecd7d45ca6cd315a8e18f30ca7b4e7c2784585",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/art/art-history-museum-studies-associate-in-arts-degree/"
+  },
+  "41832": {
+   "sha256": "f4d7fb9c5ef8c7df60711a0ca62bbe5a81c1ea3bf19695bbb2e05018bc8f07cf",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/political-science/practical-politics-certificate/"
+  },
+  "41929": {
+   "sha256": "84936f107071c38b228afc6dc0ecf013a5a999bd8eddb2fc6566077e0caeb256",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/biology/biology-associate-science-degree/"
+  },
+  "41936": {
+   "sha256": "c65fc626971c1fd27712d98361118504fb65c8bc3c462856a631e21b7bad4804",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/chemistry/chemistry-associate-in-science-degree-for-uc-transfer/"
+  },
+  "41956": {
+   "sha256": "4e9c31d873904787ebe81a0214abd4dfc5766a67cee8aff8aa2185b45ffbf44f",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/journalism/multimedia-journalism/"
+  },
+  "42097": {
+   "sha256": "683d634389e08b3182cb2e2c93bdc7af2b86fb7b0894a247309e2c0785ca2be1",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/geography/environmental-sustainability-associate-in-arts-degree/"
+  },
+  "42128": {
+   "sha256": "2630d5a728be1b92d810d2d8339a9b9c48b66da384a0e17c2a26ee5dc6980868",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/cosmetology/barbering-associate-in-science-degree/"
+  },
+  "42143": {
+   "sha256": "d9d0611571701ede41bf2286bb9e35708659567cf38d21c8035a4b2d87dcf6ba",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/art/art-history-associate-arts-degree/"
+  },
+  "42187": {
+   "sha256": "255a4052e4b6244c76784cecf1202d71b849e395543be5c45a65a6dcef5698a3",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/sociology/cannabis-associate-arts-degree/"
+  },
+  "42306": {
+   "sha256": "f7fa85a5ad51556d3c6e15e75f8a55c1ba9bb8f79feda263cdc76a4c9e46550c",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/social-sciences/global-studies-associate-in-arts-degree-for-transfer/"
+  },
+  "42368": {
+   "sha256": "f6c760170cfd0cc684b91b26e629a2a597a23754b76c7e44eb6e4ecf61c7c842",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/theatre-arts-drama/stage-and-screen-combat-level-2-certificate/"
+  },
+  "42394": {
+   "sha256": "eaa6375adc2fc98e5569685c8fe89b010c7ee596945d9fa9198c86dd9965c57d",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/foods-nutrition/dietary-manager-certificate/"
+  },
+  "42413": {
+   "sha256": "3e4e1f598981b64210fc9cc8db0582a91e7a674b877020398bee1b76d17685cc",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/geography/geospatial-technologies-certificate/"
+  },
+  "42418": {
+   "sha256": "de750c9436b93709b0954f3aac894dc951ca3f8820cf4b1d4194135e4cbe5262",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/administration-justice/crime-scene-investigation-skills-certificate/"
+  },
+  "42468": {
+   "sha256": "b4c06f20d5c43c1b6f5fd48b56a692c1912616f65c06f43ce56f54c3cc76b782",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/theatre-arts-drama/acting-and-performance-level-2-certificate/"
+  },
+  "42486": {
+   "sha256": "3d2e27d99a5667449ae3cc3df6aaf2ac2d372d2575dcce4e66a157ba52ae8ead",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/social-justice-studies/social-justice-studies-ethnic-studies-associate-in-arts-degree-for-transfer/"
+  },
+  "42489": {
+   "sha256": "b8b86064d5b8755dd0db0a92843c76b24087ecbf5868902f5c1ec24721bfef9c",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/business/entrepreneurship-skills-certificate/"
+  },
+  "42491": {
+   "sha256": "2bf30ed698bb6ae960d0ae755d1365726aca9f44c0af8f0f6f310606d3e5f7b3",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/theatre-arts-drama/advanced-technical-theatre-certificate/"
+  },
+  "42534": {
+   "sha256": "ada1ee34b02d21398b12b6f5fe471077a7798a51e4f80425ae3707211968624c",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/social-justice-studies/social-justice-studies-gender-studies-associate-in-arts-degree-for-transfer/"
+  },
+  "42562": {
+   "sha256": "78d26aae650466e6b7511a6686c7de1050469bc15304196df74a88dcc1674dfd",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/business/business-administration-associate-science-degree-transfer/"
+  },
+  "42584": {
+   "sha256": "bae0f03a41d953ec0ea0188c2179497e8225255af7391eda9ddb2e61e31a434a",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/cosmetology/barbering-certificate/"
+  },
+  "42767": {
+   "sha256": "e260e4f5704786f47fa34ab149a9229dc1a59a34d6295460f1d7b1444924ad11",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/ethnic-studies/ethnic-studies-for-educators-foundations-certificate/"
+  },
+  "42768": {
+   "sha256": "009559d2e73c56c0d119be38c1abc426f0d47068d3801941ad6cbd854453e198",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/ethnic-studies/ethnic-studies-for-educators-discipline-emphasis-certificate/"
+  },
+  "42887": {
+   "sha256": "dd1620c70f258e802f29eda8d05d7c8e77882d33f73dea688475a32699db2422",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/computer-information-systems/mobile-application-development-certificate/"
+  },
+  "42904": {
+   "sha256": "bc5a3c963bf2ef22ee7ce3d33eda3151ec89dbc5c538acf70e202b153405ac31",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/music/jazz-piano-teaching-certificate/"
+  },
+  "42926": {
+   "sha256": "ce3ae60fe8c149fe9f4a32eacfc33fcbd2f348f4331053e1a2bad658aabee0d1",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/business/cannabis-management-certificate/"
+  },
+  "42927": {
+   "sha256": "568e9d1688a04cb729c8cef386457e3c4e6c2b415f43c4e00b7035329dde3071",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/theatre-arts-drama/assistant-stage-management-certificate/"
+  },
+  "43037": {
+   "sha256": "37e1445cfe3ca2ce8b1f8997b94a0d96702fd056f155a2c37512e0600da178e0",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/physics/physics-associate-science-degree-for-uc-transfer/"
+  },
+  "43687": {
+   "sha256": "8b169f9f3d8065b3d68f18da6863d4710c50ee998bc34b79d0438279eac0ec16",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/business/supply-chain-management-certificate/"
+  },
+  "43698": {
+   "sha256": "b12475675ebfd0a12882ec9de0d4558afd68d797ae7f22b4c2f971ae66848ecf",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/cosmetology/cosmetology-associate-science-degree-1000-hours/"
+  },
+  "43699": {
+   "sha256": "5b35d70c38ad63546db055e3ba9378df98ee749796f304ce1aa59241eb63b34e",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/cosmetology/cosmetology-certificate-1000-hours/"
+  },
+  "43726": {
+   "sha256": "62f54fcee23a12ea03e87f1b6a3405858cba06f47407f719b78dadf49e08dbf4",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/counseling/american-sign-language-and-deaf-culture-associate-in-arts-degrees/"
+  },
+  "43846": {
+   "sha256": "b06d39901f5d13beb5f0e619bbe672886d78801e24d4dd5121650e96420b867a",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/english/esl-certificate-of-proficiency-in-academic-english/"
+  },
+  "43847": {
+   "sha256": "2e3f17b801629ef3d234d2b2200e91b8186bd2397a3af21acda97da03e55d3a7",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/english/esl-milestone-certificate-of-achievement-pathway-to-transfer-written-and-oral-communication/"
+  },
+  "43848": {
+   "sha256": "5d3a382e413adec700c62dfb72a943670b4603ffe32d8bbc6faef6a49885da04",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/environmental-sciences/health-sciences-preparation-for-transfer-certificate/"
+  },
+  "43874": {
+   "sha256": "35b1313185717e980b309d1de8685ce098b3ac45492d7c9844316e27d0e0ffef",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/business/cloud-computing-and-security-skills-certificate/"
+  },
+  "43892": {
+   "sha256": "f8e652adc93c6f4e41e11f67f85cb7facfcb9f697afe8a83b9e2742b6d36f408",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/social-sciences/research-fundamentals-skills-certificate/"
+  },
+  "43893": {
+   "sha256": "a06f9b38e4561842c11a510a9ac7a1a93fc7d2e3ca00031c8469c676fbd0aabd",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/social-sciences/volunteer-services-skills-certificate/"
+  },
+  "44065": {
+   "sha256": "f0af9b3636d9f9de86d9d8b69ed726d3060e67b2fd6b734746cac39cf2991a4c",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/computer-information-systems/programming-skills-certificate/"
+  },
+  "44076": {
+   "sha256": "3dbc2871d920af17509d7d87239c40da0b172b286c29b81b60c4ea271c4de1b1",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/photography/commercial-photography-certificate/"
+  },
+  "44077": {
+   "sha256": "1c05050df5385e656ad199df66e435bfee1f2f2faaac119c4cdf283af5a40522",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/industrial-drafting/industrial-maintenance-technician-certificate/"
+  },
+  "44175": {
+   "sha256": "29d95d1467f513117fe5f774f6eaaf6f59ebc86ebdcf392d1b10b5b6142fbfc1",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/business/cloud-computing-certificate/"
+  },
+  "44381": {
+   "sha256": "146b888eb26b34425d67128b2f7611334545d380bc56f9c0ff2d95d4f11a1ae4",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/biology/forensic-technician-certificate/"
+  },
+  "44439": {
+   "sha256": "68ebacfc251ba11ccfb6f54887a075af24966413bb176371ce9356f6e71417bc",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/journalism/drone-business-and-entrepreneurship-certificate/"
+  },
+  "44676": {
+   "sha256": "3d7b84fb5a9953fd9a93a7fe60683ed368ddd5c139425c14898662e2304c81b8",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/earth-sciences/meteorology-associate-in-science-degree/"
+  },
+  "44677": {
+   "sha256": "4b88a5162f45a6c7a21f7ab8d6faced1bf54385b655d0d50c68608aa48215ec5",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/earth-sciences/oceanography-associate-in-science-degree/"
+  },
+  "44707": {
+   "sha256": "f43e95fd3c97b4862113bc596268da5f6b3e07a1afd8630f837b05e36ae9f3a4",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/mindfulness/mindfulness-certificate/"
+  },
+  "44755": {
+   "sha256": "e8cc1ab2fb7721f280adff982663e4dc3daf9dc8421ef36e5c39f2d8f9f4978c",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/paralegal-studies/criminal-law-specialty-certificate/"
+  },
+  "44756": {
+   "sha256": "166cf9c6363fb5ff4264e4b2c6b325b149165bd3e3e5292ba8fab92778fda26e",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/paralegal-studies/law-school-first-year-prep-certificate/"
+  },
+  "44757": {
+   "sha256": "87fa73aae8e089ebc77a7c8943d0fe06f07c194f65f1e02086ebe8df5db1d1b6",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/paralegal-studies/real-estate-law-specialty-certificate/"
+  },
+  "44758": {
+   "sha256": "5d84d83d5b6ae4ce4d70e15a871de9282cec6c043a44e9a8e5253aded8291228",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/paralegal-studies/ediscovery-and-technology-specialty-certificate/"
+  },
+  "44765": {
+   "sha256": "f52b984a376e8db31239031320d07c1eda32a6082d5aa1dbde8861cb24908d1d",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/foods-nutrition/sports-nutrition-certificate/"
+  },
+  "44786": {
+   "sha256": "fb28fc7e74eda6e7dee4191c2103177dbea0fdddbdb6d36badf1a5ef14558dee",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/communication-studies/communication-studies-associate-in-arts-degree-for-transfer-2-0/"
+  },
+  "44874": {
+   "sha256": "39169ecbaa8df86d040db21f2beda5e088e0177b4918d0a2f74e1fec9405f9f7",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/machine-technology/computer-aided-manufacturing-cam-certificate/"
+  },
+  "44875": {
+   "sha256": "6716583e4845ff318b9eedee0f38cef36b527db312b159c17fe7929b64d107f9",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/machine-technology/mastercam-certificate/"
+  },
+  "44942": {
+   "sha256": "1ae7a54264448ed42087c11e9033f2e767d68c789c2b1190b1c27e3afebe7470",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/theatre-arts-drama/directing-for-theatre-film-and-television-certificate/"
+  },
+  "44959": {
+   "sha256": "98a4b3b93cdd99cd351ce4e3a4dce7cc85d396d9934440352a3c4f79132270bb",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/theatre-arts-drama/theatre-arts-acting-and-performance-associate-in-arts-degree/"
+  },
+  "44960": {
+   "sha256": "b99312df501f7ac2a359d53109268049321c5c95ae3b700bf053a9518e4e6451",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/theatre-arts-drama/theatre-arts-technical-theatre-associate-in-arts-degree/"
+  },
+  "45320": {
+   "sha256": "ea3e00a5919173adbfd019e51cf411a2664b4ed25990549ab1e2f50b8e2d4f4e",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/horticulture/ornamental-horticultural-certificate/"
+  },
+  "45378": {
+   "sha256": "ae2c36889622fa42492b54c7613bae6f0ef3b8626562ee22c1403c3e1f883463",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/horticulture/landscape-horticultural-certificate/"
+  },
+  "45410": {
+   "sha256": "8f96a1dc054fd09628c93f13e50bd075c9474b13c8522c74aefac2055e70de10",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/music/scoring-music-production-and-sound-design-certificate/"
+  },
+  "45534": {
+   "sha256": "2a204b362fcef024abb74a7baaad237383383dd5b78873ad9e83476358efa108",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/art/graphic-design-certificate/"
+  },
+  "45947": {
+   "sha256": "da12965cbca104340d685dcfb36a042b0f3e28af1a6c0a7a5e50fd39458c667f",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/social-sciences/aging-studies-associate-in-arts-degree/"
+  },
+  "46081": {
+   "sha256": "ca426c04b6f823c46c7136f17ec9b884e92b3ae0f4d6cfbdf249b52d87d4b1a5",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/physics/physics-associate-science-degree-for-transfer-2/"
+  },
+  "46094": {
+   "sha256": "0a8650a291dcd3491d9c7d8b064d681e9902d5dc04d59f86fd3bc58e11bc12aa",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/business/artificial-intelligence-in-business-certificate-degree/"
+  },
+  "46095": {
+   "sha256": "56e97b0b5b79e440666c6f1b032475fa3d1352022523c8e345cabe0259c6a2cb",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/business/artificial-intelligence-in-business-associate-science-degree/"
+  },
+  "46113": {
+   "sha256": "e7a5d8af2ace3a57afb0959c2c14742cafb117552fc7431f8be475b7c5187007",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/computer-information-systems/intelligent-systems-programming-certificate/"
+  },
+  "46114": {
+   "sha256": "f9aa2dcd060b6b8c2a7c0972f0014d583df72e6a04dbe818f602914c760603f1",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/architecture/architecture-historic-preservation-certificate/"
+  },
+  "46116": {
+   "sha256": "5860b474824d4f4a835959092e072125bb5e24f888b3fe187aec16866adab805",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/machine-technology/drone-applications-for-marine-and-environmental-research-certificate/"
+  },
+  "46118": {
+   "sha256": "a92d62280c4eb2a4f4052513f13c1196062723bae12c386e10e9899a64eb003a",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/machine-technology/drone-cinematics-and-visual-storytelling-certificate/"
+  },
+  "46123": {
+   "sha256": "83ce1ffd9350868f52626e6ecd0b27a279f17559bb28ff63bf1774b38904d21f",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/technology/lidar-acquisition-technician-certificate/"
+  },
+  "46125": {
+   "sha256": "717f6b45b3a0b5e2fbf0089b046eb9873f6291c3d7cd98c63c270d776832a70c",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/horticulture/plant-based-nutrition-and-sustainable-horticultural-certificate/"
+  },
+  "46147": {
+   "sha256": "2f7d4ed7f0ea4cc034845fd564e569bc24fea13eff6277d0c9f6b4e91144f306",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/business/artificial-intelligence-foundations-certificate/"
+  },
+  "46182": {
+   "sha256": "e56bce897951fcb186b3ec2c3c4ccc907ab3c5f6c0d4fbbec41bd4a4350afe31",
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/theatre-arts-drama/musical-theatre-level-2-certificate/"
+  }
+ },
+ "run": "45963792185"
+}
