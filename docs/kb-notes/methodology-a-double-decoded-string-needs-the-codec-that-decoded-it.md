@@ -1,7 +1,7 @@
 ---
 title: A double-decoded string needs the codec that decoded it — cp1252, a C1 passthrough, and repair before you collapse whitespace
 created: 2026-09-18
-updated: 2026-09-18
+updated: 2026-11-28
 tags: [methodology, encoding, loader, coci, pitfall]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -10,6 +10,7 @@ related:
   - "[[methodology-what-might-qualify-is-a-different-question-from-who-already-grants-it]]"
 artifacts:
   - kb/_text_repair.py
+  - kb/_build_coci_lookup.py
   - kb/_build_college_courses.py
   - chatbox/build_coci_offerings.py
   - tests/course_title_mojibake_test.py
@@ -92,3 +93,14 @@ title, the course builder before `clean()`.
   That is a shared-table write, so it waits for Sam (`s274-sam-course-title-cleanup`).
 - A no-break space that was already flattened in a stored row cannot be
   recovered by the round trip; only the rebuild from the source workbook can.
+
+## S747: a string that mixes correct text with mojibake, and the COCI descriptions
+
+The whole-string round trip fails when a string holds both a correct character outside ASCII and mojibake: the
+correct en dash encodes to 0x96, which is not valid UTF-8 on its own, so `fix_moji` hands the string back untouched.
+`fix_moji_runs` (S747, #3943) repairs each run that starts with a UTF-8 lead byte as cp1252 shows it and continues with
+continuation bytes, to a fixed point; a run that does not decode stays. Callers apply `fix_moji` first. The COCI
+catalog descriptions (`kb/_build_coci_lookup.py`, 130,478 of them) use both: 54 needed the run repair. Two shapes no
+repair reaches are handled by name there: a bare "Â" where the extract dropped a no-break space's second byte, and a
+™ spelled out as "TM" inside a right quote. Guard `tests/coci_desc_clean_test.py`, which also fails a builder that
+carries its own copy of the repair.

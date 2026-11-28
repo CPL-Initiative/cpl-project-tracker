@@ -671,3 +671,29 @@ the name `JournalismJO`, which 8 control numbers share, one unnamed today; `ge_u
 the record; `plan_code_own` compares a bare code with no letter; 04873's note; Cabrillo's quoted text is the worker's copy,
 not the page's; s742k1's and s742r2's page text is not committed, only the run ids; s742r1's rollback guard does not check
 the record, which the plan leaves unchanged; s742b's before record is the load's image, by design.
+
+## S747 (SkyShearwater, 2026-11-28): the 32 records at older display builds; the COCI descriptions cleaned at build
+
+**The 32 older-build records.** `program_requirement_records` holds 32 rows at display builds other than
+`229a759101f7` (De Anza 15 and LACC 1 at `0874a3a15f22`, Glendale 15 at `bef8ef819af7`, Mt. San Antonio 1 at
+`4c57fd250cce`). No current capture files them: the 2026-27 re-captures list De Anza's 15 as `would_extract` (found,
+not extracted) and the other 17 as `not_found` near misses (Glendale Mass Communications A.S.: the page named 3 of 21
+listed courses). The display build reads only filed records, so these keep their last build. They stay as read, with
+their catalog year; extraction and recall are the routine's collection. `f-older-display-builds-are-unrefiled-reads-s747`.
+
+**The COCI descriptions (#3942, #3943).** `clean_desc` in `kb/_build_coci_lookup.py` decodes Excel's `_xHHHH_`
+escapes (78,796 `_x000D_`) and repairs cp1252 mojibake with the one repair module, `kb/_text_repair.py`: `fix_moji`
+first, then `fix_moji_runs` (new in #3943), which repairs run by run to a fixed point for the 54 descriptions that mix
+correct characters with mojibake, where the whole-string round trip fails. #3942 first shipped its own copy; the
+checkpoint found the September KB note and #3943 moved the repair into the shared module, the shards byte-identical. Two shapes the repair cannot reach are handled by name: a bare `Â` left
+where the extract dropped a no-break space's second byte (147), and a right quote whose ™ was spelled out (`â€TM`).
+26,533 of 130,478 descriptions changed; the main data file and course keys are byte-identical. Guard
+`tests/coci_desc_clean_test.py` (lints shard 3).
+
+**Lessons.**
+- Count the markers after a repair, not only before: one pass raised `â€` from 1,959 to 7,653 by peeling one layer off
+  double-encoded text.
+- Search `docs/kb-notes/` for the problem's words before writing a repair: `mojibake` named the September note and its
+  module, which this run reimplemented and then had to fold back in.
+- Read a C1 control character back as its own byte: cp1252 leaves 0x81, 0x8D, 0x8F, 0x90 and 0x9D undefined, and a
+  closing curly quote ends in 0x9D.
