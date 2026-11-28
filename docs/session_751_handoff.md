@@ -106,3 +106,17 @@ rereads, loads and `.apply`, and holds every Supabase call.
   Of consequence: a found-page record stays "no passing record" (`coverage_fails`) until a `no_state_course_list` rule
   in `kb/_program_named_gaps.py` writes the gap and `collected_with_gaps` admits it. `found` fixes the MAJOR, merges
   `main`, reads the six captures and dispatches the five held free ones.
+- 15:50Z: `found` stop 2, its last (`claude/s750-found`, `f654050f`, `main` merged): the display hold-back fixed (the
+  build stamp and its 18,754 statements unchanged). **No paid read is available:** the five captures that came back
+  filed no found page, because each college's live recall counted a wrong answer (Skyline 42 tested, 35 right, 1 wrong;
+  San Mateo 55, 47, 3; Diablo Valley 200, 189, 2; San Joaquin Delta 204, 197, 1; Gavilan 81, 72, 2) and the gate asks
+  for none. Of the nine wrongs, four look like the oracle's error (a passing record read from another award's page: San
+  Mateo 05745, 10927, 33393; Diablo Valley 12908), two are the lookup taking an older catalog version (Skyline 39394,
+  Diablo Valley 12142), three are unread (Gavilan 21292, 30577; San Joaquin Delta 22252). The `.php`/`.xml` inference
+  is untested. Free captures still out: Allan Hancock 46155901281, Cabrillo 46161446837, Coastline 46161449846,
+  Feather River 46161452860, Napa Valley 46161456023, Lemoore 46161458595. The conductor holds the gate as it stands
+  (`d-found-pages-gate-held-s750`): the code lands off for every college as draft #3954, with no deploy and no probe.
+- 15:55Z: `piles`' third report (`claude/s750-piles`, `127c2575`): s750a at seven rows, Cerritos 02235 named as a
+  person's. #3953 (`test` green on `e46b6bc8`, thread empty) merged, `91bffc66`, confirmed on `origin/main`. The clean
+  pre-read: 7 of 7 on run, record and checks, none checked, no matching confirm. The apply pushed on
+  `claude/s750-apply` (`4415bc40`).
