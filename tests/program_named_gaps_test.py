@@ -623,7 +623,9 @@ for (_c, _cn), _e in _td.items():
                                        "Copper Mountain College": "copper_mountain",
                                        "Solano Community College": "solano_community",
                                        "El Camino College": "el_camino",
-                                       "Santa Monica College": "santa_monica"}[_c], "records", _cn + ".json")
+                                       "Santa Monica College": "santa_monica",
+                                       "Santa Barbara City College": "santa_barbara_city"}[_c],
+                      "records", _cn + ".json")
     with open(_p, encoding="utf-8") as _fh:
         _f = _json.load(_fh)
     _bare = dict(_f, score={k: v for k, v in _f["score"].items() if k not in ("gaps", "confidence")})
@@ -707,9 +709,28 @@ with open(os.path.join(ROOT, "kb", "receipts", "program_requirement_records_pile
                 if r["moves_to"] == "total_differs" and r["after_image"]["checks"].get("gaps") == ["total_differs"]
                 and not (r["before_image"]["checks"] or {}).get("gaps")}
 check(_s748_td == {("El Camino College", "19857")}, "the S748 plan moves 19857 to total_differs")
+# S748 (lane 2, page read 45837455365), by the same record rule inside batch s748a's pile at Santa Barbara City: Law,
+# Public Policy, and Society A.A.-T 43553 (its two lists' 26-29 and 6-8 add to 32-37 under 'Total Units 35.00-41.00').
+with open(os.path.join(ROOT, "kb", "receipts",
+                       "program_requirement_records_piles_s748_santa_barbara_city_2026-11-28_s748a.json"),
+          encoding="utf-8") as _fh:
+    _s748a_td = {(r["college"], str(r["control_number"])) for r in _json.load(_fh)["records"]
+                 if r["moves_to"] == "total_differs" and r["after_image"]["checks"].get("gaps") == ["total_differs"]
+                 and not (r["before_image"]["checks"] or {}).get("gaps")}
+check(_s748a_td == {("Santa Barbara City College", "43553")}, "the S748 batch moves 43553 to total_differs")
+# S748 (lane 2, page read 46120012715), batch s748b's pile at East Los Angeles: Environmental Science A.S.-T 41231
+# (its rows add to 39-45 under 'CHOOSE OPTION 1 OR OPTION 2 AND ALL COURSES LISTED BELOW 41-45').
+with open(os.path.join(ROOT, "kb", "receipts",
+                       "program_requirement_records_piles_s748_east_los_angeles_2026-11-28_s748b.json"),
+          encoding="utf-8") as _fh:
+    _s748a_td |= {(r["college"], str(r["control_number"])) for r in _json.load(_fh)["records"]
+                  if r["moves_to"] == "total_differs" and r["after_image"]["checks"].get("gaps") == ["total_differs"]
+                  and not (r["before_image"]["checks"] or {}).get("gaps")}
+check(("East Los Angeles College", "41231") in _s748a_td and len(_s748a_td) == 2,
+      "the S748 batch b moves 41231 to total_differs")
 check(_p2["only_gaps"] == ["total_differs"] and not _p2["recall"]["wrong"]
       and _p2_keys | {(r["college"], str(r["control_number"])) for r in _s703_td} | _s714e_td | _s740_td | _s741_td | _s741b_td
-      | _s742_td | _s742a_td | _s748_td == set(_td)
+      | _s742_td | _s742a_td | _s748_td | _s748a_td == set(_td)
       and {(r["college"], str(r["control_number"])) for r in _s703_td} == {("Clovis Community College", "33491")}
       and all(r["after_image"]["checks"].get("gaps") == ["total_differs"]
               and not (r["before_image"]["checks"] or {}).get("gaps") for r in _p2["records"] + _s703_td),

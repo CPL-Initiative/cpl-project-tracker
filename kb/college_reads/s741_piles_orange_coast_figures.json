@@ -37,5 +37,15 @@
    "why": "03993",
    "capture_view": true
   }
- ]
+ ],
+ "_quoted": {
+  "45955333186": {
+   "repertoire": "DANC A211 Repertoire I 1-4",
+   "major": "Program Major Units 20",
+   "electives": "Select four units of the following: 4",
+   "core": "DANC A150 Dance Improvisation I 1 | DANC A250 Dance Improvisation II 1 | DANC A170 Music for Dancers 2 | DANC A143 Jazz Dance III 2 | or DANC A243 Jazz IV | DANC A144 Ballet III 2 | or DANC A244 Ballet IV | DANC A145 Contemporary/Modern Dance 3 2 | or DANC A245 Contemporary/ Modern Dance 4 | DANC A160 Dance Composition/Choreography I 3 | DANC A211 Repertoire I 1-4 | or DANC A203 Performing Dance Ensemble I",
+   "psyc_a160": "the Athletic Training Level 2 page prints no PSYC A160 on any line",
+   "_what": "Lines of college-page-read run 45955333186's log (S741's second read on claude/s741-piles), the Dance A.A. page's REQUIREMENTS tab as the capture reads it, copied by a session in S748 with each row's tabs written as single spaces and the core's rows joined by ' | '; kb/_program_piles_s742.py page_quote reads 'repertoire' for Orange Coast 03993's gap. 'psyc_a160' is the session's finding over that log (no line of the run prints PSYC A160), not a quoted line."
+  }
+ }
 }

@@ -81,9 +81,15 @@ def _cross_listed(cn):
         == {"ARCH/CNST A196", "ARCH/CNST A197"}
 
 
-check(not NG.collectable(W.load("43100")["score"])
+# S748's plan s748c rescores 43100's coverage on the capture's finding that its page does not print PSYC A160
+# (state_course_not_on_page, tests/program_piles_s748c_test.py): not collectable as s739j read it, or carrying that
+# rescore with the scorer's own coverage beside it.
+_cov = W.load("43100")["score"]["coverage"]
+check((not NG.collectable(W.load("43100")["score"])
+       or (_cov.get("as_scored") == {"pass": False, "unexplained": _cov.get("not_on_page")} and _cov.get("rescored")))
       and all(not NG.collectable(W.load(cn)["score"]) or _cross_listed(cn) for cn in ("08628", "19473", "19474")),
-      "the four coverage holds are not collectable, or pass since by s741b's rename of the two cross-listed codes")
+      "the four coverage holds are not collectable, or pass since by s741b's rename of the two cross-listed codes or "
+      "by s748c's rescore of 43100")
 
 f = W.load("32737")
 check(f["score"]["arithmetic"]["status"] == "incomplete" and B.closes(f, B.apply_ops(f, [("drop", M._SUBSTITUTION)])),

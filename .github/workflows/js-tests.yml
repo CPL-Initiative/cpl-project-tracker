@@ -1356,6 +1356,25 @@ jobs:
       - name: Cheap piles S742 at East Los Angeles (the unit line, on the reread's posted row)
         if: matrix.shard == 6
         run: python3 tests/program_piles_s742_ela_test.py
+      # S748, batch s748a: the gap plans S742's rereads unlocked, one plan over two colleges' piles (S742's Batch
+      # under S748's name). Butte 14583 (noted_section_cut_off, its own page now) and Santa Barbara City 43553
+      # (total_differs, from a page read); East Los Angeles 31017 stays held, its lever pinned.
+      - name: Cheap piles S748, batch a (the gap plans S742's rereads unlocked)
+        if: matrix.shard == 5
+        run: python3 tests/program_piles_s748a_test.py
+      # S748, batch s748b: Orange Coast 03993 (figure_within_variable_units, on the page's own line 'DANC A211
+      # Repertoire I 1-4') and East Los Angeles 41231 (total_differs, from a page read: MATH 261 5 OR MATH 261S 3
+      # under the printed 41-45); the other holds of the lane's seven colleges with their reasons.
+      - name: Cheap piles S748, batch b (Orange Coast 03993, East Los Angeles 41231)
+        if: matrix.shard == 6
+        run: python3 tests/program_piles_s748b_test.py
+      # S748, batch s748c: a new named reading, state_course_not_on_page (the state's list names a course the
+      # program's own page does not print; needs a second reader). Orange Coast 43100, Fullerton 18749 and 36863:
+      # coverage rescored on the capture's finding, no gap filed, each row passing. The statewide self-recall
+      # reports its wrongs (under 0.2% of the placed courses asked; about 4 in 100 of its fires on held answers).
+      - name: Cheap piles S748, batch c (a state-listed course the page does not print)
+        if: matrix.shard == 3
+        run: python3 tests/program_piles_s748c_test.py
       # S742 at Cabrillo: the recommended_counts reconcile step. A list the page heads 'Recommended' and counts
       # ('Complete the following number of credits: N' under its own name) reads as N units to choose, all of a
       # record's recommended lists or none; four degrees pass, 23 held answers right, 0 wrong.
