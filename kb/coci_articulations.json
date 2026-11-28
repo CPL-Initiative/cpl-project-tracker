@@ -35897,7 +35897,7 @@
       ],
       "colleges_offering_count": 20
     },
-    "NUTR M10BK": {
+    "FDNT M10EZ": {
       "identity_system": "M-ID",
       "title": "Nutrition for Culinary Professionals",
       "discipline": "Dietetics/Nutritional Science",
@@ -35916,7 +35916,7 @@
       "_identities_rekeyed_from": "FN M10AH",
       "_identities_rebuilt_at": "2026-11-14T12:23:27Z"
     },
-    "NUTR M10DG": {
+    "FDNT M10DG": {
       "identity_system": "M-ID",
       "title": "Sustainable Meals",
       "discipline": "Dietetics/Nutritional Science",
@@ -39704,7 +39704,7 @@
       "_identities_rekeyed_from": "THAR M1007",
       "_identities_rebuilt_at": "2026-11-14T12:23:27Z"
     },
-    "TOUR M10AB": {
+    "TRVL M10AB": {
       "identity_system": "M-ID",
       "title": "Airline Computer Training",
       "discipline": null,
@@ -39722,7 +39722,7 @@
       "colleges_offering_count": 1,
       "_identities_rebuilt_at": "2026-11-14T12:23:27Z"
     },
-    "TOUR M10AC": {
+    "TRVL M10AC": {
       "identity_system": "M-ID",
       "title": "Introduction to the Exciting World of Travel & Tourism",
       "discipline": null,
@@ -52359,7 +52359,7 @@
       "colleges_offering_count": 2,
       "_identities_rebuilt_at": "2026-11-14T12:23:27Z"
     },
-    "NUTR M10CO": {
+    "FDNT M10GD": {
       "identity_system": "M-ID",
       "title": "Foods for Healthy Lifestyles",
       "discipline": "Dietetics/Nutritional Science",
@@ -52377,7 +52377,7 @@
       "colleges_offering_count": 1,
       "_identities_rebuilt_at": "2026-11-14T12:23:27Z"
     },
-    "NUTR M10DA": {
+    "FDNT M10DA": {
       "identity_system": "M-ID",
       "title": "Rotations in Supervised Practice, Level A",
       "discipline": "Dietetics/Nutritional Science",
@@ -173024,7 +173024,7 @@
       "_remint_from": "M-ID FMT 106"
     },
     {
-      "course_id": "NUTR M10BK",
+      "course_id": "FDNT M10EZ",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -173054,7 +173054,7 @@
       "_remint_from": "M-ID FN 384"
     },
     {
-      "course_id": "NUTR M10DG",
+      "course_id": "FDNT M10DG",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -214881,7 +214881,7 @@
       "_remint_from": "M-ID CUL 124"
     },
     {
-      "course_id": "NUTR M10CO",
+      "course_id": "FDNT M10GD",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -214911,7 +214911,7 @@
       "_remint_from": "M-ID NUTR 194"
     },
     {
-      "course_id": "NUTR M10CO",
+      "course_id": "FDNT M10GD",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -214941,7 +214941,7 @@
       "_remint_from": "M-ID NUTR 194"
     },
     {
-      "course_id": "NUTR M10DA",
+      "course_id": "FDNT M10DA",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -236664,7 +236664,7 @@
       "adoption_leverage_count": 36
     },
     {
-      "course_id": "TOUR M10AB",
+      "course_id": "TRVL M10AB",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -236694,7 +236694,7 @@
       "_remint_from": "M-ID TOUR 102"
     },
     {
-      "course_id": "TOUR M10AC",
+      "course_id": "TRVL M10AC",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,

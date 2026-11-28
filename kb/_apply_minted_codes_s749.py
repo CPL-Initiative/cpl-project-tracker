@@ -17,7 +17,14 @@ stays an alias of Kinesiology (kin_pe_convergence); no pick names PHED or SPIN, 
 FDNT is held: NUTR prefixes 54 M-IDs.
 
 RECEIPT. kb/receipts/minted_codes_s749.json: each change with its before-value; `git revert` of the commit undoes it.
-Run: python3 kb/_apply_minted_codes_s749.py [--apply]
+Run: python3 kb/_apply_minted_codes_s749.py [--apply] [--receipt kb/receipts/<name>.json]
+
+A LATER PASS (S749, the re-mint apply kb/_alignment_remint_apply.py). Once a re-mint moves a held code's M-IDs (AERO's
+nine Air Force ROTC ids went to MILS), the same run changes the code (Aeronautics AERO -> AERN). That pass writes its own
+receipt (--receipt), so the first pass's before-values stay where kb/subject_decisions.py and the dry run read them.
+A code the re-mint ruling chose over the minted list stays after its M-IDs move (RULED: FLTR, PREL, TRVL; Sam,
+2026-11-28, r-remint-dryrun-defaults-sam-2026-11-28). A prefix counts the stand-alone M-IDs as well as the catalog's:
+AERO had 1 catalog id and 8 stand-alone ones.
 """
 import csv
 import json
@@ -29,23 +36,30 @@ from datetime import datetime, timezone
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "kb"))
 import _csr_assign_codes as A  # noqa: E402
+from _apply_canonical_subj4 import record_former  # noqa: E402  (the nightly sync's "formerly" record)
 
 CANON = os.path.join(ROOT, "kb", "discipline_canonical_subj4.json")
 ALIASES = os.path.join(ROOT, "kb", "discipline_aliases.json")
 MINTED = os.path.join(ROOT, "kb", "subject_title_hunt", "minted_codes.csv")
 MINTS = os.path.join(ROOT, "kb", "coci_minted_courses.json")
+SINGLETONS = os.path.join(ROOT, "kb", "coci_minted_singletons.json")
 RECEIPT = os.path.join(ROOT, "kb", "receipts", "minted_codes_s749.json")
 # Codes a person named (Person-settled wins): Sam's four noncredit MQ codes, r-noncredit-four-mq-codes-sam-2026-11-22.
 PERSON_NAMED = {"CTZN", "HLSN", "HMEN", "DSPN"}
 NEW = {"Asian American Studies": "ASAM", "African American Studies": "AFAM"}
+# The codes the re-mint ruling chose where the minted list's proposal collided. Each stays after its M-IDs move (Sam,
+# 2026-11-28, r-remint-dryrun-defaults-sam-2026-11-28: "fine on defaults"; COBIx agrees).
+RULED = {"Flight Attendant Training": "FLTR", "Public Relations": "PREL", "Travel Services": "TRVL"}
 
 
 def plan():
     doc = json.load(open(CANON, encoding="utf-8"))
     D = doc["disciplines"]
-    ids = json.load(open(MINTS, encoding="utf-8"))
-    ids = ids.get("courses") or ids
-    pref = Counter(k.split(" M")[0] for k in ids)
+    pref = Counter()
+    for path in (MINTS, SINGLETONS):
+        if os.path.exists(path):
+            ids = json.load(open(path, encoding="utf-8"))
+            pref.update(k.split(" M")[0] for k in (ids.get("courses") or ids))
     used = {v["canonical_subj4"]: k for k, v in D.items()}
     change, held = [], []
     for r in csv.DictReader(open(MINTED, encoding="utf-8")):
@@ -56,6 +70,8 @@ def plan():
         why = None
         if cur in PERSON_NAMED:
             why = "%s is a code Sam named on 2026-11-22 (r-noncredit-four-mq-codes-sam-2026-11-22): person-settled, kept" % cur
+        elif RULED.get(d) == cur:
+            why = "%s is the code the re-mint ruling chose (r-remint-dryrun-defaults-sam-2026-11-28): kept" % cur
         elif pref.get(cur):
             why = "%s prefixes %d M-ID(s): the re-mint playbook's" % (cur, pref[cur])
         elif pref.get(code):
@@ -68,6 +84,9 @@ def plan():
 
 
 def main(argv):
+    receipt = RECEIPT
+    if "--receipt" in argv:
+        receipt = os.path.join(ROOT, argv[argv.index("--receipt") + 1])
     doc, change, held, add = plan()
     print("change %d, held %d, add %d" % (len(change), len(held), len(add)))
     for h in held:
@@ -78,7 +97,11 @@ def main(argv):
     D = doc["disciplines"]
     for c in change:
         e = D[c["discipline"]]
+        # Keep the code a change replaces (Sam, 2026-11-23: "we might need a formerly XXXX and Title").
+        record_former(e, c["discipline"], c["to"], at, "csr-s749@bot", None)
         e["canonical_subj4"] = c["to"]
+        if e.get("source") == "assigned":       # an assigned code's basis follows the code it now holds
+            e["basis"], e["basis_words"] = "minted", c["basis"]
         e["_notes"] = ("Common SUBJ %s from %s (S749): Sam's 2026-11-28 ruling, every official MQ discipline its own common "
                        "code, COBIx's minted list (#3951): %s. " % (c["to"], c["from"], c["basis"])) + (e.get("_notes") or "")
         e["reviewed_at"], e["reviewed_by"] = at, "csr-s749@bot"
@@ -106,13 +129,13 @@ def main(argv):
     with open(ALIASES, "w", encoding="utf-8") as f:
         json.dump(al, f, indent=2, ensure_ascii=False)
         f.write("\n")
-    os.makedirs(os.path.dirname(RECEIPT), exist_ok=True)
-    with open(RECEIPT, "w", encoding="utf-8") as f:
+    os.makedirs(os.path.dirname(receipt), exist_ok=True)
+    with open(receipt, "w", encoding="utf-8") as f:
         json.dump({"_what": "kb/_apply_minted_codes_s749.py: each change with its before-value; git revert undoes it.",
                    "applied_at": at, "changed": change, "held": held, "added": add,
                    "aliases_before": before_alias, "aliases_after": al["aliases"]}, f, indent=1, ensure_ascii=False)
         f.write("\n")
-    print("applied; receipt %s" % os.path.relpath(RECEIPT, ROOT))
+    print("applied; receipt %s" % os.path.relpath(receipt, ROOT))
     return 0
 
 

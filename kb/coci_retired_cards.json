@@ -1,14 +1,14 @@
 {
 "_about":"Retired shared courses (the version 5 rule), kept for the record and out of every count, waiting pile, to-do and fetch plan (Sam, 2026-11-17). Built by kb/_build_retired_cards.py; read through kb/_flags.py. not_seen_this_term lists cards that stay counted and carry the Fall 2025 note.",
-"_ids_current_through":"kb/stray_code_remint_out/2026-11-25/applied/alias_map.json",
+"_ids_current_through":"kb/alignment_remint_out/2026-11-28/alias_map.json",
 "_inputs":{
 "coci_courses":{
 "path":"coci_lookup_data.js",
-"sha256":"a2c5765891880c2c0b88d90f2ea2a3fdfddc95ce47cbd176532d92095c0c041d"
+"sha256":"07a29cca7249941477943ed0c8ab5218f9549a46648a149b4972b29a3eba5046"
 },
 "curation":{
 "path":"kb/coci_curation.json",
-"sha256":"7d7d50b164c6a2e2e4f121ae0882cb73fcc79fcfce45e49e152ce10ba73fd33d"
+"sha256":"b2b42d05bea3f15f7da33d69738cc1947368007290d92fcef5b3211e4a1ecade"
 },
 "fall_2025":{
 "path":"kb/reference/cb_course_basic_fall2025.csv",
@@ -16,7 +16,7 @@
 },
 "memberships":{
 "path":"kb/coci_minted_memberships.json",
-"sha256":"7bc2e478a1d3a260e5a9abd56a8eefdf532402d43da005103fc761f788668f3b"
+"sha256":"9ec62bb21df66007dba0d450081f658de8f075ca3fdc04a1eb51d46fd46c01af"
 },
 "status":{
 "path":"kb/reference/coci_program_course_file.csv.gz",
@@ -1127,6 +1127,16 @@
 "FCSH M9077",
 "FCSH M9078",
 "FCSH M9079",
+"FDNT M1024",
+"FDNT M1028",
+"FDNT M1036",
+"FDNT M9027",
+"FDNT M9028",
+"FDNT M9029",
+"FDNT M9030",
+"FDNT M9031",
+"FDNT M9032",
+"FDNT M9033",
 "FIRE M1007",
 "FIRE M1019",
 "FIRE M1042",
@@ -1783,16 +1793,6 @@
 "NURP M9001",
 "NURP M9002",
 "NURP M9003",
-"NUTR M1024",
-"NUTR M1028",
-"NUTR M1036",
-"NUTR M9001",
-"NUTR M9002",
-"NUTR M9003",
-"NUTR M9004",
-"NUTR M9005",
-"NUTR M9006",
-"NUTR M9007",
 "OCTA M1001",
 "OLAD M1001",
 "OLAD M1002",

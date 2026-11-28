@@ -286,8 +286,8 @@ Verbatim, newest first.
 
 - 2026-11-26 (S740 SkySkimmer, the CPL Queue routine's collection run, conductor, full checkpoint): #3886 (display build `9e28519af71f`); the units kind `units_within_printed_range` (by reviewed key only), Copper Mountain's reissue and three records, Santa Ana's first reconcile, Solano, San Jose City and San Bernardino Valley rereads, lane 2's 23 named gaps; 79 records by 16:30Z; handoff 741, the harvest lane, its lessons (*Moved from the lane (S740 checkpoint)*, *S740*), 10 memory rows drafted, `kb/status/program-requirements.json`. Land and census: handoff 741.
 
-## Moved from docs/INDEX.md, Update history (S749 checkpoint, 2026-11-28)
+## Moved from docs/INDEX.md, Update history (S750 checkpoint, 2026-11-28)
 
-Verbatim, newest first.
+Verbatim.
 
 - 2026-11-27 (S741 SkyWillet, the CPL Queue routine's collection run, conductor, full checkpoint): #3900 (`main`'s red noncredit test repaired), #3898 (display build `a143061a2ae2`) and the land merged; rule B, `window_keeps_tabs`, `cq_group_ends`, keep-better's major-equal rank, the Copper Mountain and Cuyamaca degree-floor steps, pins; 52 records (28 passing, 24 named gaps). Handoff 742, the harvest lane (S740 posts and NEXT moved), its lessons (*Moved from the lane (S741 checkpoint)*, *S741*), 9 memory rows drafted, `kb/status/program-requirements.json`. Land and census: handoff 742.

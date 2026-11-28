@@ -1,14 +1,14 @@
 {
   "_about": "Curator-confirmed canonical SUBJ4 per M-ID discipline. Consumed by the Phase 1e re-mint (kb/_subj4_dryrun.py / kb/_subj4_apply.py) to fold same-discipline SUBJ4 variants. Every canonical_subj4 MUST be exactly 4 letters [A-Z]{4}. Seeded from data-modal where the modal is 4 letters and comprises ≥60% of the discipline's M-IDs; otherwise blank pending curator review. Edited via the Canonical SUBJ4 tab (Supabase kb_curation, course_id namespace '_CANON_SUBJ4::<discipline>'); kb/_apply_canonical_subj4.py folds Supabase edits back into this file.",
-  "_seeded_at": "2026-11-05",
+  "_seeded_at": "2026-11-28",
   "_seeded_by": "kb/_seed_canonical_subj4.py",
   "_invariant": "every canonical_subj4 must match ^[A-Z]{4}$",
   "_counts": {
-    "total_disciplines": 248,
+    "total_disciplines": 247,
     "multi_subj4_disciplines": 40,
     "needs_review": 0,
-    "seeded_default": 246,
-    "assigned_s717": 95
+    "seeded_default": 247,
+    "assigned_s717": 97
   },
   "disciplines": {
     "Accounting": {
@@ -46,13 +46,11 @@
       "validated_by": null,
       "_notes": "Assigned at Confident (97%): C-ID's own prefix for the discipline. C-ID's ACCT descriptors (ACCT 110, 120); ACCT is the local code at 50 colleges and ACCTG at 18. No M-ID is minted under it yet.",
       "ccn_subject_code": null,
-      "cid_subject_codes": [
-        "ACCT"
-      ],
-      "canonical_source": "c-id",
+      "cid_subject_codes": [],
+      "canonical_source": "csr",
       "authority_chips": [],
-      "authority_flag": null,
-      "authority_note": "Common SUBJ ACCT is the C-ID subject code."
+      "authority_flag": "proposed",
+      "authority_note": "Common SUBJ ACCT is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Adapted Computer Technology: Disabled Students Programs and Services": {
       "canonical_subj4": "ADCT",
@@ -93,7 +91,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ DSAC is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ ADCT is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Addiction Paraprofessional Training": {
       "canonical_subj4": "ADDS",
@@ -134,7 +132,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ ADST is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ ADDS is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Administration of Justice": {
       "canonical_subj4": "CRIM",
@@ -226,12 +224,12 @@
       "authority_note": "Common SUBJ CRIM is the CSR's four-letter code; the authority says C-ID AJ (rule 3: four letters, verbatim code on the chip)."
     },
     "Aeronautics": {
-      "canonical_subj4": "AERO",
+      "canonical_subj4": "AERN",
       "source": "assigned",
       "confidence": 0.86,
       "confidence_level": "Likely",
-      "basis": "college",
-      "basis_words": "AERO is the local code at 7 colleges",
+      "basis": "minted",
+      "basis_words": "Aeronautics MQ. Avoided AERO, a heavily used Aviation (AVIA) local code.",
       "data_modal": null,
       "data_modal_is_4letter": false,
       "data_modal_share": null,
@@ -254,17 +252,67 @@
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": "2026-11-23T19:55:10+00:00",
-      "reviewed_by": "csr-s717@bot",
+      "reviewed_at": "2026-11-28T15:57:49+00:00",
+      "reviewed_by": "csr-s749@bot",
       "validated_at": null,
       "validated_by": null,
-      "_notes": "Assigned at Likely (86%): the local code colleges already use. AERO is the local code at 7 colleges. No M-ID is minted under it yet. AERO also prefixes nine Air Force ROTC M-IDs with no discipline (AS100 Heritage and Values); they belong with Military Studies (MILS).",
+      "_notes": "Common SUBJ AERN from AERO (S749): Sam's 2026-11-28 ruling, every official MQ discipline its own common code, COBIx's minted list (#3951): Aeronautics MQ. Avoided AERO, a heavily used Aviation (AVIA) local code.. Assigned at Likely (86%): the local code colleges already use. AERO is the local code at 7 colleges. No M-ID is minted under it yet. AERO also prefixes nine Air Force ROTC M-IDs with no discipline (AS100 Heritage and Values); they belong with Military Studies (MILS).",
       "ccn_subject_code": null,
       "cid_subject_codes": [],
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ AERO is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ AERN is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18).",
+      "formerly": [
+        {
+          "code": "AERO",
+          "title": "Aeronautics",
+          "until": "2026-11-28T15:57:49+00:00",
+          "by": "csr-s749@bot",
+          "note": null
+        }
+      ]
+    },
+    "African American Studies": {
+      "canonical_subj4": "AFAM",
+      "source": "assigned",
+      "confidence": 0.9,
+      "confidence_level": "Likely",
+      "basis": "minted",
+      "basis_words": "Sam's 2026-11-28 ruling: every official MQ discipline its own common code (COBIx's list, #3951)",
+      "data_modal": null,
+      "data_modal_is_4letter": false,
+      "data_modal_share": null,
+      "variants_observed": {},
+      "total_mids": 0,
+      "local_subject_variants": {},
+      "local_subject_variants_truncated": 0,
+      "local_subject_total": 0,
+      "rows_total": 0,
+      "corroborated_voters": 0,
+      "top_only": false,
+      "top_modal_6digit": null,
+      "top_modal_4digit": null,
+      "top_modal_title": null,
+      "top_category_2digit": null,
+      "top_category_title": null,
+      "cte_share": null,
+      "cte_flag": null,
+      "cte_known_n": 0,
+      "cte_unknown_n": 0,
+      "cip_code": null,
+      "needs_review": false,
+      "reviewed_at": "2026-11-28T15:03:14+00:00",
+      "reviewed_by": "csr-s749@bot",
+      "validated_at": null,
+      "validated_by": null,
+      "_notes": "Assigned at Likely (90%): four letters minted from the discipline's name. Sam's 2026-11-28 ruling: every official MQ discipline its own common code (COBIx's list, #3951). No M-ID is minted under it yet.",
+      "ccn_subject_code": null,
+      "cid_subject_codes": [],
+      "canonical_source": "csr",
+      "authority_chips": [],
+      "authority_flag": "proposed",
+      "authority_note": "Common SUBJ AFAM is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Agricultural Business and Related Services": {
       "canonical_subj4": "AGAB",
@@ -349,7 +397,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ AGEN is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ AGEN is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Agricultural Production": {
       "canonical_subj4": "AGPR",
@@ -705,7 +753,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ ANTM is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ ANTM is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Anthropology": {
       "canonical_subj4": "ANTH",
@@ -829,7 +877,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ APLR is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ APPL is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Archaeological Technology": {
       "canonical_subj4": "ARCT",
@@ -870,7 +918,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ ARCT is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ ARCT is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Architecture": {
       "canonical_subj4": "ARCH",
@@ -961,7 +1009,7 @@
       "source": "curator_override",
       "data_modal": "ART",
       "data_modal_is_4letter": false,
-      "data_modal_share": 0.779,
+      "data_modal_share": 0.778,
       "variants_observed": {
         "ARTS": 2317,
         "ARTH": 9,
@@ -997,6 +1045,7 @@
         "VMD": 10,
         "DART": 8,
         "GRFX": 8,
+        "ARTG": 7,
         "DIGM": 7,
         "DSGN": 7,
         "GA": 7,
@@ -1012,13 +1061,12 @@
         "GDP": 6,
         "MEDIA": 6,
         "PHO": 6,
-        "VISCOM": 6,
-        "AAD": 5
+        "VISCOM": 6
       },
-      "local_subject_variants_truncated": 128,
-      "local_subject_total": 4541,
+      "local_subject_variants_truncated": 130,
+      "local_subject_total": 4547,
       "rows_total": 2387,
-      "corroborated_voters": 4541,
+      "corroborated_voters": 4547,
       "top_only": false,
       "top_modal_6digit": "1002.00",
       "top_modal_4digit": "1002",
@@ -1050,7 +1098,7 @@
       "source": "curator_override",
       "data_modal": "ARTH",
       "data_modal_is_4letter": true,
-      "data_modal_share": 0.537,
+      "data_modal_share": 0.534,
       "variants_observed": {
         "ARTH": 130
       },
@@ -1065,6 +1113,7 @@
         "ART (ART)": 1,
         "ARTB": 1,
         "ARTF": 1,
+        "ARTG": 1,
         "ARTPH": 1,
         "ARTS": 1,
         "ETHN": 1,
@@ -1072,9 +1121,9 @@
         "WMST": 1
       },
       "local_subject_variants_truncated": 0,
-      "local_subject_total": 190,
+      "local_subject_total": 191,
       "rows_total": 130,
-      "corroborated_voters": 190,
+      "corroborated_voters": 191,
       "top_only": false,
       "top_modal_6digit": "1001.00",
       "top_modal_4digit": "1001",
@@ -1172,6 +1221,49 @@
       "_notes_by": "slee@cccco.edu",
       "_notes_at": "2026-11-04T21:25:48.575554+00:00"
     },
+    "Asian American Studies": {
+      "canonical_subj4": "ASAM",
+      "source": "assigned",
+      "confidence": 0.9,
+      "confidence_level": "Likely",
+      "basis": "cid",
+      "basis_words": "C-ID's ASAM prefix (Introduction to Asian American Studies); Sam's 2026-11-28 ruling",
+      "data_modal": null,
+      "data_modal_is_4letter": false,
+      "data_modal_share": null,
+      "variants_observed": {},
+      "total_mids": 0,
+      "local_subject_variants": {},
+      "local_subject_variants_truncated": 0,
+      "local_subject_total": 0,
+      "rows_total": 0,
+      "corroborated_voters": 0,
+      "top_only": false,
+      "top_modal_6digit": null,
+      "top_modal_4digit": null,
+      "top_modal_title": null,
+      "top_category_2digit": null,
+      "top_category_title": null,
+      "cte_share": null,
+      "cte_flag": null,
+      "cte_known_n": 0,
+      "cte_unknown_n": 0,
+      "cip_code": null,
+      "needs_review": false,
+      "reviewed_at": "2026-11-28T15:03:14+00:00",
+      "reviewed_by": "csr-s749@bot",
+      "validated_at": null,
+      "validated_by": null,
+      "_notes": "Assigned at Likely (90%): four letters minted from the discipline's name. Sam's 2026-11-28 ruling: every official MQ discipline its own common code (COBIx's list, #3951). No M-ID is minted under it yet.",
+      "ccn_subject_code": null,
+      "cid_subject_codes": [
+        "ASAM"
+      ],
+      "canonical_source": "c-id",
+      "authority_chips": [],
+      "authority_flag": null,
+      "authority_note": "Common SUBJ ASAM is the C-ID subject code."
+    },
     "Astronomy": {
       "canonical_subj4": "ASTR",
       "source": "curator_override",
@@ -1268,7 +1360,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ ATTR is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ ATTR is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Auto Body Technology": {
       "canonical_subj4": "AUTB",
@@ -1432,7 +1524,7 @@
       "source": "curator_override",
       "data_modal": "AERO",
       "data_modal_is_4letter": true,
-      "data_modal_share": 0.197,
+      "data_modal_share": 0.196,
       "variants_observed": {
         "AVIA": 523,
         "AUTO": 1
@@ -1448,7 +1540,7 @@
         "AIRM": 25,
         "APT": 25,
         "FLGHT": 25,
-        "FLTEC": 23,
+        "FLTEC": 24,
         "AVIATEK": 20,
         "AT": 17,
         "AVMT": 12,
@@ -1481,9 +1573,9 @@
         "GIS": 1
       },
       "local_subject_variants_truncated": 2,
-      "local_subject_total": 564,
+      "local_subject_total": 565,
       "rows_total": 524,
-      "corroborated_voters": 564,
+      "corroborated_voters": 565,
       "top_only": false,
       "top_modal_6digit": "0950.00",
       "top_modal_4digit": "0950",
@@ -1547,7 +1639,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ FINA is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ BFIN is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Barbering": {
       "canonical_subj4": "BARB",
@@ -1633,7 +1725,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ BICY is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ BCYC is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Biological Sciences": {
       "canonical_subj4": "BIOL",
@@ -1804,7 +1896,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ BOOK is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ BKBD is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Brewing,Fermentation and Distillery Sciences": {
       "canonical_subj4": "BREW",
@@ -1845,26 +1937,27 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ BREW is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ BREW is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Broadcasting Technology": {
       "canonical_subj4": "BRDC",
       "source": "curator_override",
       "data_modal": "BRDC",
       "data_modal_is_4letter": true,
-      "data_modal_share": 0.727,
+      "data_modal_share": 0.667,
       "variants_observed": {
         "BRDC": 41
       },
       "total_mids": 41,
       "local_subject_variants": {
         "BRDC": 8,
-        "BRDCSTG": 3
+        "BRDCSTG": 3,
+        "CTVR": 1
       },
       "local_subject_variants_truncated": 0,
-      "local_subject_total": 11,
+      "local_subject_total": 12,
       "rows_total": 335,
-      "corroborated_voters": 11,
+      "corroborated_voters": 12,
       "top_only": false,
       "top_modal_6digit": "0604.00",
       "top_modal_4digit": "0604",
@@ -1981,7 +2074,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ BLDM is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ BLDM is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Business": {
       "canonical_subj4": "BUSI",
@@ -2114,7 +2207,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ BUSE is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ BUED is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Business Machine Technology": {
       "canonical_subj4": "BMAC",
@@ -2155,7 +2248,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ BMTC is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ BMAC is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Cabinet Making": {
       "canonical_subj4": "WWKC",
@@ -2240,7 +2333,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ CVTC is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ CVTE is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Carpentry": {
       "canonical_subj4": "CARP",
@@ -2334,7 +2427,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ CRMT is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ CERM is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Chemistry": {
       "canonical_subj4": "CHEM",
@@ -2586,7 +2679,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ CTZN is proposed by the CSR on Sam's word of 2026-11-22; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ CTZN is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Classics": {
       "canonical_subj4": "CLAS",
@@ -2627,7 +2720,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ CLAS is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ CLAS is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Coaching": {
       "canonical_subj4": "COAC",
@@ -2668,7 +2761,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ COAC is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ COAC is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Commercial Art": {
       "canonical_subj4": "ARTD",
@@ -2894,7 +2987,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ DSCS is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ CDSC is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Computer Information Systems": {
       "canonical_subj4": "ITIS",
@@ -3110,7 +3203,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ CSRV is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ CSRV is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Construction Management": {
       "canonical_subj4": "CNSM",
@@ -3238,7 +3331,7 @@
       "source": "curator_override",
       "data_modal": "COSM",
       "data_modal_is_4letter": true,
-      "data_modal_share": 0.608,
+      "data_modal_share": 0.607,
       "variants_observed": {
         "COSM": 467
       },
@@ -3249,18 +3342,18 @@
         "CSMTLGY": 18,
         "CSMT": 15,
         "COSMETOLOGY (COS)": 12,
+        "ESTI": 4,
         "NC": 4,
         "BAR": 3,
         "ESTH": 3,
-        "ESTI": 3,
         "BARB": 2,
         "ACS": 1,
         "COSY": 1
       },
       "local_subject_variants_truncated": 0,
-      "local_subject_total": 513,
+      "local_subject_total": 514,
       "rows_total": 467,
-      "corroborated_voters": 513,
+      "corroborated_voters": 514,
       "top_only": false,
       "top_modal_6digit": "3007.00",
       "top_modal_4digit": "3007",
@@ -3405,7 +3498,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ EOPS is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ EOPS is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Counseling: Mental Health": {
       "canonical_subj4": "CNMH",
@@ -3446,7 +3539,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ CNMH is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ CNMH is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Court Interpreting": {
       "canonical_subj4": "CINT",
@@ -3487,7 +3580,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ CINT is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ CINT is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Court Reporting": {
       "canonical_subj4": "CTRP",
@@ -3743,7 +3836,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ DSDH is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ DHSP is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Dental Technology": {
       "canonical_subj4": "DENT",
@@ -3871,7 +3964,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ DSDD is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ DDDS is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Diagnostic Medical Technology": {
       "canonical_subj4": "SONO",
@@ -4039,89 +4132,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ DIET is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
-    },
-    "Dietetics/Nutritional Science": {
-      "canonical_subj4": "NUTR",
-      "source": "curator_override",
-      "data_modal": "FN",
-      "data_modal_is_4letter": false,
-      "data_modal_share": 0.467,
-      "variants_observed": {
-        "NUTR": 320
-      },
-      "total_mids": 320,
-      "local_subject_variants": {
-        "FN": 208,
-        "NUTR": 131,
-        "NUTRI": 37,
-        "BIOL": 6,
-        "KIN": 6,
-        "NF": 5,
-        "EXSC": 3,
-        "FCS": 2,
-        "HE": 2,
-        "HEALTH": 2,
-        "HED": 2,
-        "HLED": 2,
-        "HRC": 2,
-        "KIN MAJ": 2,
-        "NTR": 2,
-        "NUTRTN": 2,
-        "PEH": 2,
-        "BIO": 1,
-        "BIOSC": 1,
-        "CA": 1,
-        "CAHS": 1,
-        "CAM": 1,
-        "CFS": 1,
-        "FACS": 1,
-        "FAM &CS": 1,
-        "FAMILY AND CONSUMER STUDIES (FCS)": 1,
-        "GEOG": 1,
-        "H.EC": 1,
-        "HCRS": 1,
-        "HEAL": 1,
-        "HLHSCI": 1,
-        "HLTH": 1,
-        "HM": 1,
-        "HRM": 1,
-        "KINE": 1,
-        "KINES": 1,
-        "N NUTR": 1,
-        "NC": 1,
-        "NFOO": 1,
-        "NNTR": 1
-      },
-      "local_subject_variants_truncated": 6,
-      "local_subject_total": 445,
-      "rows_total": 320,
-      "corroborated_voters": 445,
-      "top_only": false,
-      "top_modal_6digit": "1306.00",
-      "top_modal_4digit": "1306",
-      "top_modal_title": "Nutrition, Foods, and Culinary Arts",
-      "top_category_2digit": "13",
-      "top_category_title": "Family and Consumer Sciences",
-      "cte_share": 0.969,
-      "cte_flag": "all",
-      "cte_known_n": 318,
-      "cte_unknown_n": 2,
-      "cip_code": null,
-      "needs_review": false,
-      "reviewed_at": "2026-05-23T17:42:53.22508+00:00",
-      "reviewed_by": "map@rccd.edu",
-      "validated_at": null,
-      "validated_by": null,
-      "_notes": null,
-      "ccn_subject_code": null,
-      "cid_subject_codes": [
-        "NUTR"
-      ],
-      "canonical_source": "c-id",
-      "authority_chips": [],
-      "authority_flag": null,
-      "authority_note": "Common SUBJ NUTR is the C-ID subject code."
+      "authority_note": "Common SUBJ DTTC is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Digital Fabrication Technician": {
       "canonical_subj4": "MAKR",
@@ -4255,7 +4266,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ DSPN is proposed by the CSR on Sam's word of 2026-11-22; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ DSPN is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Drafting/CADD": {
       "canonical_subj4": "DRAF",
@@ -4538,7 +4549,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ ECOL is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ ECOL is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Economics": {
       "canonical_subj4": "ECON",
@@ -4849,7 +4860,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ EMIC is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ ELMC is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Electronic Technology": {
       "canonical_subj4": "ELCT",
@@ -5033,7 +5044,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ EPLT is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ ELPL is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Emergency Medical Technologies": {
       "canonical_subj4": "EMST",
@@ -5243,7 +5254,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ ENSP is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ ENSP is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Engineering Technology": {
       "canonical_subj4": "ENGT",
@@ -5700,7 +5711,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ ESTG is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ ESTM is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Ethnic Studies": {
       "canonical_subj4": "ETHS",
@@ -5844,7 +5855,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ FABC is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ FBRC is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Family and Consumer Studies/ Home Economics": {
       "canonical_subj4": "FCSH",
@@ -5981,12 +5992,12 @@
         "F TV": 62,
         "FTV": 40,
         "FTVM": 14,
+        "FTMA": 13,
         "FTVE": 13,
-        "FTMA": 12,
         "FS": 11,
+        "TAFILM": 11,
         "CTVR": 10,
         "HUM": 10,
-        "TAFILM": 10,
         "FMA": 8,
         "CRTV": 7,
         "DBA": 6,
@@ -6016,9 +6027,9 @@
         "MCOM": 2
       },
       "local_subject_variants_truncated": 38,
-      "local_subject_total": 779,
+      "local_subject_total": 781,
       "rows_total": 531,
-      "corroborated_voters": 779,
+      "corroborated_voters": 781,
       "top_only": false,
       "top_modal_6digit": "0612.20",
       "top_modal_4digit": "0612",
@@ -6168,7 +6179,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ FLTA is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet.",
+      "authority_note": "Common SUBJ FLTR is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18).",
       "formerly": [
         {
           "code": "FATR",
@@ -6218,7 +6229,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ FLMT is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ FLMT is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Folk Dance": {
       "canonical_subj4": "FLDN",
@@ -6259,7 +6270,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ FDNC is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ FLDN is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Foreign Languages": {
       "canonical_subj4": "FLNG",
@@ -7008,7 +7019,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ HSDR is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ HSDR is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Health and Safety: Noncredit": {
       "canonical_subj4": "HLSN",
@@ -7045,7 +7056,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ HLSN is proposed by the CSR on Sam's word of 2026-11-22; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ HLSN is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Heavy Duty Equipment Mechanics": {
       "canonical_subj4": "HMDT",
@@ -7206,7 +7217,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ HMEN is proposed by the CSR on Sam's word of 2026-11-22; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ HMEN is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Homeland Security": {
       "canonical_subj4": "HLMS",
@@ -7247,7 +7258,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ HSEC is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ HLMS is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Hotel and Motel Services": {
       "canonical_subj4": "HOTL",
@@ -7284,13 +7295,11 @@
       "validated_by": null,
       "_notes": "Common SUBJ HOTL from HOSP (S749): Sam's 2026-11-28 ruling, every official MQ discipline its own common code, COBIx's minted list (#3951): Hotel and Motel Services MQ (lodging). Avoided HOSP, already used locally under CULN for hospitality in general.. Assigned at Leaning (65%): C-ID's own prefix for the discipline. C-ID's HOSP descriptors; HOSP is the local code at 20 colleges. No M-ID is minted under it yet. C-ID's HOSP descriptors sit with Culinary Arts/Food Technology by majority (20 M-IDs, against 3 under Hotel and Motel Services and 3 under Restaurant Management), and HOSP is Culinary's primary C-ID chip. HOSP moves to Hotel and Motel Services as its code; Culinary keeps CULN.",
       "ccn_subject_code": null,
-      "cid_subject_codes": [
-        "HOSP"
-      ],
-      "canonical_source": "c-id",
+      "cid_subject_codes": [],
+      "canonical_source": "csr",
       "authority_chips": [],
-      "authority_flag": null,
-      "authority_note": "Common SUBJ HOSP is the C-ID subject code."
+      "authority_flag": "proposed",
+      "authority_note": "Common SUBJ HOTL is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Humanities": {
       "canonical_subj4": "HUMA",
@@ -7401,7 +7410,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ INDD is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ INDD is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Industrial Maintenance": {
       "canonical_subj4": "IMNT",
@@ -7651,7 +7660,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ INSR is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ INSR is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Interdisciplinary Studies": {
       "canonical_subj4": "IDST",
@@ -7859,7 +7868,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ JANI is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ JANT is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Jewelry": {
       "canonical_subj4": "JEWL",
@@ -7900,7 +7909,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ JEWL is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ JEWL is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Journalism": {
       "canonical_subj4": "JOUR",
@@ -8119,7 +8128,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ LBRL is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ LREL is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Law": {
       "canonical_subj4": "LEGL",
@@ -8191,34 +8200,57 @@
       "source": "curator_override",
       "data_modal": "LRNRE",
       "data_modal_is_4letter": false,
-      "data_modal_share": 0.454,
+      "data_modal_share": 0.308,
       "variants_observed": {
-        "LSKL": 103
+        "LSKL": 104
       },
-      "total_mids": 103,
+      "total_mids": 104,
       "local_subject_variants": {
-        "LRNRE": 74,
-        "GUID": 50,
-        "ACDV": 23,
-        "HCD": 2,
+        "LRNRE": 78,
+        "GUID": 52,
+        "ACDV": 24,
+        "TUTOR": 7,
+        "TUTR": 6,
+        "NC": 4,
+        "ST": 4,
+        "EDU": 3,
+        "ELAC": 3,
+        "ENGL": 3,
+        "HCD": 3,
+        "ILA": 3,
+        "MATH": 3,
+        "ASC": 2,
+        "EDUC": 2,
+        "INS": 2,
+        "LAC": 2,
         "LS": 2,
+        "N BASC": 2,
+        "TU": 2,
+        "TUT": 2,
+        "AED": 1,
+        "BASK": 1,
+        "COLL": 1,
+        "COUN": 1,
+        "CS": 1,
+        "CSKL": 1,
+        "DEAF": 1,
         "DS": 1,
         "EA": 1,
-        "EDU": 1,
-        "ENGL": 1,
+        "ECHD": 1,
+        "ESL": 1,
+        "HSOTH": 1,
+        "HUM": 1,
+        "IDS": 1,
+        "II": 1,
         "IIS": 1,
-        "LCTR": 1,
-        "LNSK": 1,
-        "PD": 1,
-        "POLS": 1,
-        "PSYC": 1,
-        "ST": 1,
-        "VOC ED": 1
+        "INT": 1,
+        "INTD": 1,
+        "IS": 1
       },
-      "local_subject_variants_truncated": 0,
-      "local_subject_total": 163,
-      "rows_total": 103,
-      "corroborated_voters": 163,
+      "local_subject_variants_truncated": 25,
+      "local_subject_total": 253,
+      "rows_total": 104,
+      "corroborated_voters": 253,
       "top_only": false,
       "top_modal_6digit": "4930.32",
       "top_modal_4digit": "4930",
@@ -8227,7 +8259,7 @@
       "top_category_title": "Interdisciplinary Studies",
       "cte_share": 0.049,
       "cte_flag": "none",
-      "cte_known_n": 102,
+      "cte_known_n": 103,
       "cte_unknown_n": 1,
       "cip_code": null,
       "needs_review": false,
@@ -8282,7 +8314,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ DSLD is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ LDDS is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Learning Disabilities: Specialist": {
       "canonical_subj4": "LDSP",
@@ -8323,7 +8355,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ DSLS is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ LDSP is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Legal Assisting": {
       "canonical_subj4": "PARA",
@@ -8569,7 +8601,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ LING is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ LING is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Locksmithing": {
       "canonical_subj4": "LOCK",
@@ -8610,7 +8642,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ LOCK is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ LOCK is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Machine Tool Technology": {
       "canonical_subj4": "MACH",
@@ -8856,7 +8888,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ MDVT is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ MDIV is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Marine Engine Technology": {
       "canonical_subj4": "MREN",
@@ -8897,7 +8929,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ MENG is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ MREN is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Marketing": {
       "canonical_subj4": "MRKT",
@@ -8996,7 +9028,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ MRTL is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ MASD is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Masonry": {
       "canonical_subj4": "CNMA",
@@ -9085,7 +9117,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ MCOM is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ MCOM is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Materials Testing Technology": {
       "canonical_subj4": "MTST",
@@ -9126,7 +9158,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ MTST is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ MTST is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Mathematics": {
       "canonical_subj4": "MATH",
@@ -9254,7 +9286,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ MTHN is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ MBSK is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Media Production": {
       "canonical_subj4": "FMED",
@@ -9350,34 +9382,34 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ MIRP is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ MDIR is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Military Studies": {
       "canonical_subj4": "MILS",
       "source": "assigned",
-      "confidence": 0.82,
-      "confidence_level": "Likely",
-      "basis": "minted",
-      "basis_words": "Military Studies",
-      "data_modal": null,
+      "data_modal": "AEROST",
       "data_modal_is_4letter": false,
-      "data_modal_share": null,
-      "variants_observed": {},
-      "total_mids": 0,
-      "local_subject_variants": {},
+      "data_modal_share": 1.0,
+      "variants_observed": {
+        "MILS": 9
+      },
+      "total_mids": 9,
+      "local_subject_variants": {
+        "AEROST": 8
+      },
       "local_subject_variants_truncated": 0,
-      "local_subject_total": 0,
-      "rows_total": 0,
-      "corroborated_voters": 0,
+      "local_subject_total": 8,
+      "rows_total": 9,
+      "corroborated_voters": 8,
       "top_only": false,
-      "top_modal_6digit": null,
-      "top_modal_4digit": null,
-      "top_modal_title": null,
-      "top_category_2digit": null,
-      "top_category_title": null,
-      "cte_share": null,
-      "cte_flag": null,
-      "cte_known_n": 0,
+      "top_modal_6digit": "1801.00",
+      "top_modal_4digit": "1801",
+      "top_modal_title": "Military Science",
+      "top_category_2digit": "18",
+      "top_category_title": "Military Studies",
+      "cte_share": 0.0,
+      "cte_flag": "none",
+      "cte_known_n": 9,
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
@@ -9391,7 +9423,11 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ MILS is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ MILS is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18).",
+      "confidence": 0.82,
+      "confidence_level": "Likely",
+      "basis": "minted",
+      "basis_words": "Military Studies"
     },
     "Mining and Metallurgy": {
       "canonical_subj4": "METL",
@@ -9432,7 +9468,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ MINE is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ METL is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Mortuary Science": {
       "canonical_subj4": "MORT",
@@ -9518,7 +9554,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ MOTO is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ MOTO is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Multimedia": {
       "canonical_subj4": "MULT",
@@ -9735,7 +9771,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ MUSM is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ MMGT is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Music Merchandising": {
       "canonical_subj4": "MMCH",
@@ -9776,7 +9812,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ MUSD is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ MMCH is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Musical Instrument Repair": {
       "canonical_subj4": "MIRE",
@@ -9817,7 +9853,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ MUIR is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ MIRE is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Nanotechnology": {
       "canonical_subj4": "NANO",
@@ -9858,7 +9894,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ NANO is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ NANO is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Native American/American Indian Studies": {
       "canonical_subj4": "ETHA",
@@ -10029,74 +10065,74 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ NRSC is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ NSCP is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Nutritional Science/Dietetics": {
       "canonical_subj4": "FDNT",
       "source": "curator_override",
-      "data_modal": "NF",
+      "data_modal": "FN",
       "data_modal_is_4letter": false,
-      "data_modal_share": 0.067,
+      "data_modal_share": 0.364,
       "variants_observed": {
-        "FDNT": 104
+        "FDNT": 424
       },
-      "total_mids": 104,
+      "total_mids": 424,
       "local_subject_variants": {
-        "NF": 9,
+        "FN": 211,
+        "NUTR": 137,
+        "NUTRI": 39,
+        "NF": 14,
         "FDNT": 8,
-        "NUTF": 7,
-        "NUTR": 6,
-        "HED": 5,
-        "FAM &CS": 4,
-        "FN": 3,
+        "NUTF": 8,
+        "HED": 7,
+        "BIOL": 6,
+        "KIN": 6,
+        "FAM &CS": 5,
+        "FCS": 4,
+        "NTR": 4,
+        "CA": 3,
+        "EXSC": 3,
+        "FACS": 3,
         "FSN": 3,
+        "H.EC": 3,
+        "HE": 3,
+        "HEAL": 3,
+        "HLED": 3,
+        "HLTH": 3,
         "HS": 3,
-        "CA": 2,
+        "NC": 3,
+        "NUTRTN": 3,
         "CLN ART": 2,
         "DIET": 2,
         "DNTL": 2,
         "DSSS": 2,
-        "FACS": 2,
-        "FCS": 2,
-        "H.EC": 2,
-        "HEAL": 2,
+        "HEALTH": 2,
         "HLH": 2,
-        "HLTH": 2,
-        "NC": 2,
-        "NTR": 2,
+        "HLHSCI": 2,
+        "HRC": 2,
+        "KIN MAJ": 2,
+        "NFOO": 2,
+        "NTRN": 2,
         "NUT": 2,
-        "NUTRI": 2,
+        "PEH": 2,
         "PLS": 2,
         "VEN": 2,
-        "ABT": 1,
-        "AG": 1,
-        "AGNG": 1,
-        "AGS": 1,
-        "ANCT": 1,
-        "ANML SC": 1,
-        "AS": 1,
-        "ASCI": 1,
-        "BMS": 1,
-        "CALS": 1,
-        "CDECE": 1,
-        "CDES": 1,
-        "CDV": 1,
-        "CNAV": 1
+        "VOC": 2
       },
-      "local_subject_variants_truncated": 39,
-      "local_subject_total": 135,
-      "rows_total": 104,
-      "corroborated_voters": 135,
+      "local_subject_variants_truncated": 63,
+      "local_subject_total": 580,
+      "rows_total": 424,
+      "corroborated_voters": 580,
       "top_only": false,
       "top_modal_6digit": "1306.00",
       "top_modal_4digit": "1306",
       "top_modal_title": "Nutrition, Foods, and Culinary Arts",
       "top_category_2digit": "13",
       "top_category_title": "Family and Consumer Sciences",
-      "cte_share": 0.822,
+      "cte_share": 0.933,
       "cte_flag": "most",
-      "cte_known_n": 101,
-      "cte_unknown_n": 3,
+      "cte_known_n": 419,
+      "cte_unknown_n": 5,
       "cip_code": null,
       "needs_review": false,
       "reviewed_at": "2026-05-23T17:36:48.624361+00:00",
@@ -10105,11 +10141,18 @@
       "validated_by": null,
       "_notes": null,
       "ccn_subject_code": null,
-      "cid_subject_codes": [],
+      "cid_subject_codes": [
+        "NUTR"
+      ],
       "canonical_source": "csr",
-      "authority_chips": [],
+      "authority_chips": [
+        {
+          "system": "C-ID",
+          "code": "NUTR"
+        }
+      ],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ FDNT is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
+      "authority_note": "Common SUBJ FDNT is the CSR's four-letter code; the authority says C-ID NUTR (rule 3: four letters, verbatim code on the chip)."
     },
     "Occupational Therapy Assisting": {
       "canonical_subj4": "OCTA",
@@ -10483,7 +10526,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ PCST is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ PCST is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Pharmacy Technology": {
       "canonical_subj4": "PHMT",
@@ -10660,30 +10703,30 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ PHTC is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ CPHT is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Photography": {
       "canonical_subj4": "PHOT",
       "source": "curator_override",
       "data_modal": "PHOT",
       "data_modal_is_4letter": true,
-      "data_modal_share": 0.466,
+      "data_modal_share": 0.462,
       "variants_observed": {
-        "PHOT": 645
+        "PHOT": 649
       },
-      "total_mids": 645,
+      "total_mids": 649,
       "local_subject_variants": {
         "PHOT": 488,
         "PHOTO": 253,
         "ART": 56,
         "AP": 33,
-        "PHTO": 28,
+        "PHTO": 33,
         "VOC": 22,
         "PHO": 17,
         "PHTG": 16,
+        "PHTC": 15,
         "ARTP": 12,
         "ARTPH": 12,
-        "PHTC": 11,
         "ARTF": 6,
         "ARTH": 6,
         "EPHO": 5,
@@ -10715,18 +10758,18 @@
         "ARTDM": 1
       },
       "local_subject_variants_truncated": 26,
-      "local_subject_total": 1048,
-      "rows_total": 645,
-      "corroborated_voters": 1048,
+      "local_subject_total": 1057,
+      "rows_total": 649,
+      "corroborated_voters": 1057,
       "top_only": false,
       "top_modal_6digit": "1012.00",
       "top_modal_4digit": "1012",
       "top_modal_title": "Applied Photography",
       "top_category_2digit": "10",
       "top_category_title": "Fine and Applied Arts",
-      "cte_share": 0.814,
+      "cte_share": 0.815,
       "cte_flag": "most",
-      "cte_known_n": 644,
+      "cte_known_n": 648,
       "cte_unknown_n": 1,
       "cip_code": null,
       "needs_review": false,
@@ -10781,7 +10824,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ DSPD is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ PDDS is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Physical Education Disabled Students": {
       "canonical_subj4": "PEDS",
@@ -11039,7 +11082,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ PIAN is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ PTUN is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Plastics": {
       "canonical_subj4": "PLST",
@@ -11080,7 +11123,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ PLAS is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ PLST is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Plumbing": {
       "canonical_subj4": "PLMB",
@@ -11273,7 +11316,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ PRNT is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ PRNT is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Private Security": {
       "canonical_subj4": "PSEC",
@@ -11314,7 +11357,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ PSEC is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ PSEC is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Prosthetics and Orthotics": {
       "canonical_subj4": "PRTH",
@@ -11355,7 +11398,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ PROS is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ PRTH is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Psychiatric Technician": {
       "canonical_subj4": "NURP",
@@ -11489,29 +11532,31 @@
     "Public Relations": {
       "canonical_subj4": "PREL",
       "source": "assigned",
-      "confidence": 0.82,
-      "confidence_level": "Likely",
-      "basis": "minted",
-      "basis_words": "Public Relations; PUBREL at 4 colleges",
-      "data_modal": null,
+      "data_modal": "PUB REL",
       "data_modal_is_4letter": false,
-      "data_modal_share": null,
-      "variants_observed": {},
-      "total_mids": 0,
-      "local_subject_variants": {},
+      "data_modal_share": 0.6,
+      "variants_observed": {
+        "PREL": 1
+      },
+      "total_mids": 1,
+      "local_subject_variants": {
+        "PUB REL": 3,
+        "JOUR": 1,
+        "PUB": 1
+      },
       "local_subject_variants_truncated": 0,
-      "local_subject_total": 0,
-      "rows_total": 0,
-      "corroborated_voters": 0,
+      "local_subject_total": 5,
+      "rows_total": 1,
+      "corroborated_voters": 5,
       "top_only": false,
-      "top_modal_6digit": null,
-      "top_modal_4digit": null,
-      "top_modal_title": null,
-      "top_category_2digit": null,
-      "top_category_title": null,
-      "cte_share": null,
-      "cte_flag": null,
-      "cte_known_n": 0,
+      "top_modal_6digit": "0606.00",
+      "top_modal_4digit": "0606",
+      "top_modal_title": "Public Relations",
+      "top_category_2digit": "06",
+      "top_category_title": "Media and Communications",
+      "cte_share": 1.0,
+      "cte_flag": "all",
+      "cte_known_n": 1,
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
@@ -11525,7 +11570,11 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ PREL is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ PREL is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18).",
+      "confidence": 0.82,
+      "confidence_level": "Likely",
+      "basis": "minted",
+      "basis_words": "Public Relations; PUBREL at 4 colleges"
     },
     "Public Safety": {
       "canonical_subj4": "PUBS",
@@ -11608,7 +11657,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ RTHR is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ RDTH is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Radiological Technology": {
       "canonical_subj4": "RADT",
@@ -11760,7 +11809,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ RDGN is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ RBSK is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Real Estate": {
       "canonical_subj4": "REAL",
@@ -11925,7 +11974,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ RBTC is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ RBTC is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Registered Veterinary Technician": {
       "canonical_subj4": "VETT",
@@ -12017,7 +12066,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ REHB is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ RHAB is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Religious Studies": {
       "canonical_subj4": "RLST",
@@ -12058,7 +12107,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ RLST is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ RLST is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Respiratory Technician": {
       "canonical_subj4": "RSTT",
@@ -12099,7 +12148,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ RSPC is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ RSTT is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Respiratory Technologies": {
       "canonical_subj4": "RSPT",
@@ -12244,7 +12293,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ RETL is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ RETL is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Robotics": {
       "canonical_subj4": "ROBO",
@@ -12365,7 +12414,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ SANI is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ SPHT is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Search and Rescue": {
       "canonical_subj4": "SARC",
@@ -12406,7 +12455,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ SRCH is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ SARC is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Sheet Metal": {
       "canonical_subj4": "SHME",
@@ -12447,7 +12496,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ SHME is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ SHME is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Ship and Boat Building and Repair": {
       "canonical_subj4": "SHPB",
@@ -12488,7 +12537,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ SHIP is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ SHPB is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Shoe Rebuilding": {
       "canonical_subj4": "SHRB",
@@ -12529,7 +12578,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ SHOE is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ SHRB is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Sign Language, American": {
       "canonical_subj4": "SLNA",
@@ -12724,7 +12773,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ SENG is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ SMEN is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Social Science": {
       "canonical_subj4": "SOCS",
@@ -12891,7 +12940,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ DSVN is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ SPVN is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Speech Language Pathology": {
       "canonical_subj4": "SLPA",
@@ -12977,7 +13026,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ DSSL is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ SLPD is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Stagecraft": {
       "canonical_subj4": "THES",
@@ -13103,7 +13152,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ SCMT is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ SCLT is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Surgical Technology": {
       "canonical_subj4": "SURG",
@@ -13199,7 +13248,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ TELC is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ TCOM is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Transportation": {
       "canonical_subj4": "TRNS",
@@ -13245,29 +13294,29 @@
     "Travel Services": {
       "canonical_subj4": "TRVL",
       "source": "assigned",
-      "confidence": 0.82,
-      "confidence_level": "Likely",
-      "basis": "minted",
-      "basis_words": "Travel",
-      "data_modal": null,
-      "data_modal_is_4letter": false,
-      "data_modal_share": null,
-      "variants_observed": {},
-      "total_mids": 0,
-      "local_subject_variants": {},
+      "data_modal": "TOUR",
+      "data_modal_is_4letter": true,
+      "data_modal_share": 1.0,
+      "variants_observed": {
+        "TRVL": 12
+      },
+      "total_mids": 12,
+      "local_subject_variants": {
+        "TOUR": 8
+      },
       "local_subject_variants_truncated": 0,
-      "local_subject_total": 0,
-      "rows_total": 0,
-      "corroborated_voters": 0,
+      "local_subject_total": 8,
+      "rows_total": 12,
+      "corroborated_voters": 8,
       "top_only": false,
-      "top_modal_6digit": null,
-      "top_modal_4digit": null,
-      "top_modal_title": null,
-      "top_category_2digit": null,
-      "top_category_title": null,
-      "cte_share": null,
-      "cte_flag": null,
-      "cte_known_n": 0,
+      "top_modal_6digit": "3009.00",
+      "top_modal_4digit": "3009",
+      "top_modal_title": "Travel Services and Tourism",
+      "top_category_2digit": "30",
+      "top_category_title": "Commercial Services",
+      "cte_share": 1.0,
+      "cte_flag": "all",
+      "cte_known_n": 12,
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
@@ -13281,7 +13330,11 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ TRVL is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ TRVL is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18).",
+      "confidence": 0.82,
+      "confidence_level": "Likely",
+      "basis": "minted",
+      "basis_words": "Travel"
     },
     "Uncrewed Aircraft System (UAS) Technology": {
       "canonical_subj4": "UASY",
@@ -13322,7 +13375,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ UASY is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ UASY is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Upholstering": {
       "canonical_subj4": "THAR",
@@ -13404,7 +13457,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ VISN is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ VSCT is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Vocational": {
       "canonical_subj4": "VOCE",
@@ -13505,7 +13558,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ WTCH is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ WCLK is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Welding": {
       "canonical_subj4": "WELD",
@@ -13753,102 +13806,18 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ WRTN is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
-    },
-    "Asian American Studies": {
-      "canonical_subj4": "ASAM",
-      "source": "assigned",
-      "confidence": 0.9,
-      "confidence_level": "Likely",
-      "basis": "cid",
-      "basis_words": "C-ID's ASAM prefix (Introduction to Asian American Studies); Sam's 2026-11-28 ruling",
-      "data_modal": null,
-      "data_modal_is_4letter": false,
-      "data_modal_share": null,
-      "variants_observed": {},
-      "total_mids": 0,
-      "local_subject_variants": {},
-      "local_subject_variants_truncated": 0,
-      "local_subject_total": 0,
-      "rows_total": 0,
-      "corroborated_voters": 0,
-      "top_only": false,
-      "top_modal_6digit": null,
-      "top_modal_4digit": null,
-      "top_modal_title": null,
-      "top_category_2digit": null,
-      "top_category_title": null,
-      "cte_share": null,
-      "cte_flag": null,
-      "cte_known_n": 0,
-      "cte_unknown_n": 0,
-      "cip_code": null,
-      "needs_review": false,
-      "reviewed_at": "2026-11-28T15:03:14+00:00",
-      "reviewed_by": "csr-s749@bot",
-      "validated_at": null,
-      "validated_by": null,
-      "_notes": "Assigned at Likely (90%): four letters minted from the discipline's name. Sam's 2026-11-28 ruling: every official MQ discipline its own common code (COBIx's list, #3951). No M-ID is minted under it yet.",
-      "ccn_subject_code": null,
-      "cid_subject_codes": [
-        "ASAM"
-      ],
-      "canonical_source": "c-id",
-      "authority_chips": [],
-      "authority_flag": null,
-      "authority_note": "Common SUBJ ASAM is the C-ID subject code."
-    },
-    "African American Studies": {
-      "canonical_subj4": "AFAM",
-      "source": "assigned",
-      "confidence": 0.9,
-      "confidence_level": "Likely",
-      "basis": "minted",
-      "basis_words": "Sam's 2026-11-28 ruling: every official MQ discipline its own common code (COBIx's list, #3951)",
-      "data_modal": null,
-      "data_modal_is_4letter": false,
-      "data_modal_share": null,
-      "variants_observed": {},
-      "total_mids": 0,
-      "local_subject_variants": {},
-      "local_subject_variants_truncated": 0,
-      "local_subject_total": 0,
-      "rows_total": 0,
-      "corroborated_voters": 0,
-      "top_only": false,
-      "top_modal_6digit": null,
-      "top_modal_4digit": null,
-      "top_modal_title": null,
-      "top_category_2digit": null,
-      "top_category_title": null,
-      "cte_share": null,
-      "cte_flag": null,
-      "cte_known_n": 0,
-      "cte_unknown_n": 0,
-      "cip_code": null,
-      "needs_review": false,
-      "reviewed_at": "2026-11-28T15:03:14+00:00",
-      "reviewed_by": "csr-s749@bot",
-      "validated_at": null,
-      "validated_by": null,
-      "_notes": "Assigned at Likely (90%): four letters minted from the discipline's name. Sam's 2026-11-28 ruling: every official MQ discipline its own common code (COBIx's list, #3951). No M-ID is minted under it yet.",
-      "ccn_subject_code": null,
-      "cid_subject_codes": [],
-      "canonical_source": "csr",
-      "authority_chips": [],
-      "authority_flag": "proposed",
-      "authority_note": "Common SUBJ AFAM is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ WBSK is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     }
   },
   "_authority_codes": {
     "_about": "Item 19 of kb/csr_authority_codes_rulings_2026-09-03.json: per discipline, the CCN / C-ID subject codes attributed from kb/promotions.json evidence plus the rulings; canonical_source says who owns the canonical code; authority_chips is what the CSR, CCR and SkyView show. Rebuilt by kb/_seed_authority_codes.py; the attribution table with its evidence is kb/reference/authority_subject_codes.json.",
-    "_built_at": "2026-11-05",
+    "_built_at": "2026-11-28",
     "counts": {
       "ccn": 13,
       "c-id": 20,
-      "csr": 114,
+      "csr": 214,
       "no_canonical": 0,
-      "with_chips": 24
+      "with_chips": 25
     }
   },
   "_synced_at": "2026-11-28T06:19:17Z",

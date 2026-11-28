@@ -17684,7 +17684,7 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 701,
+   "count": 702,
    "docs": [
     {
      "created": "2026-11-28",
@@ -17697,6 +17697,20 @@
       "session"
      ],
      "title": "Session 752 handoff (from SkyGannet, S749, Sam's plain session of 2026-11-28: Sam's subject alignment, COBI's picks, the CIP taxonomy, the re-mint dry run)",
+     "type": null,
+     "updated": "2026-11-28"
+    },
+    {
+     "created": "2026-11-28",
+     "governs": [],
+     "n": 751,
+     "path": "docs/session_751_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 751 handoff (from SkySandpiper, S750, the CPL Queue routine's collection run of 2026-11-28, from 13:12Z)",
      "type": null,
      "updated": "2026-11-28"
     },
@@ -29272,5 +29286,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1601
+ "total": 1602
 }
