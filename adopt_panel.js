@@ -80,6 +80,10 @@
    * missing: exhibits the build counts that the list does not yet carry (credentials_n beyond credentials);
    * collegesN: the build's count of granting colleges, when it has one. */
   function model(items, extra) {
+    /* A page that builds its own cpladp-chip controls and opens its own panel (the CPL Pathways B.S. directory) reaches
+       neither chip() nor ownPanel(), so the stylesheet goes in with the model (S747: live, the directory's Request
+       Adopt controls and panel rows painted unstyled). */
+    ensureCss();
     var seen = {}, out = [];
     (items || []).forEach(function (it) {
       if (!it || !it.title) return;
@@ -445,6 +449,7 @@
   /* Open the panel for a model. A caller with its own side panel passes opts.open(title, sub, opener) -> body;
    * otherwise this file's panel opens. opts.refind() finds the chip again after the page repaints. */
   function openFor(opener, m, opts) {
+    ensureCss();
     var sub = opts.sub != null ? opts.sub : (opts.home ? opts.home : "");
     var body = opts.open ? opts.open(panelTitle(opts), sub, opener) : openOwn(panelTitle(opts), sub, opener, opts.refind);
     if (opener && opener.setAttribute) opener.setAttribute("aria-expanded", "true");
