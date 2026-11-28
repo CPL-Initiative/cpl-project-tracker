@@ -638,6 +638,10 @@ check("boot lazy-loads the current-course catalog", /loadScript\("cpl_coci_cours
   // One request for the section (Sam, 2026-11-28): the heading's Request Adopt (N) opens every credential unchecked;
   // a row's Request Adopt opens the same list with that one checked. No inline list, no per-row form.
   const dad = Array.from(root.querySelectorAll("button.cplpw-dadopt"));
+  // S747: live, a directory card's Request Adopt controls and panel rows painted unstyled, because this page builds its
+  // own cpladp-chip buttons and panel and so never reached adopt_panel.js's stylesheet.
+  check("a directory card carries the adopt panel's stylesheet", !!w.document.getElementById("cpladp-css") &&
+    /\.cpladp-chip \{[^}]*border:0/.test(w.document.getElementById("cpladp-css").textContent));
   check("the section heading carries Request Adopt (N)", dad.length >= 2 && /^Request Adopt \(\d+\)$/.test(dad[0].textContent) && !!dad[0].closest(".cplpw-sec-head"), dad.map(b => b.textContent));
   check("each row says where it is articulated, in words", /Articulated at \d+ college/.test(root.textContent));
   check("no inline college list and no per-row Quick Adopt form", !root.querySelector(".cplpw-adoptopts") && !root.querySelector("button.how.adopt"));
