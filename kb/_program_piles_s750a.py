@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""S750, the cheap piles, batch s750a: eight records at six colleges whose pages omit a state-listed course.
+"""S750, the cheap piles, batch s750a: seven records at five colleges whose pages omit a state-listed course.
 
 The reading is S748's, state_course_not_on_page (kb/_program_named_gaps.py), and the plan is s748c's
 (kb/_program_piles_s748c.py) in every part: its Pile, its evidence, its rescore, its Batch. Handoff 749 left eleven
@@ -8,7 +8,6 @@ them and keeps Diablo Valley 39775 and Porterville 33085 out tonight. Each recor
 state's list names a course the record neither places nor explains, its units add up, and the committed capture of
 the program's own page finds that course on no line.
 
-  Cerritos 02235        PHOT 242    Photography A.A.
   Citrus 02333          ART 149     Visual Arts A.A.
   College of Marin 46242  ART 135   Studio Arts A.A.-T
   Foothill 11827        APPT 190    Plumbing and Pipefitting Apprenticeship, Certificate of Achievement
@@ -28,7 +27,6 @@ are wrong about 4 times in 100 (NG.state_course_recall, pinned in tests/program_
 checked against a free read of its own page, an answer the finder did not make. College page read 46149637666 (the
 plans kb/college_reads/s750_piles_<college>_coverage.json, each with what the session read under _quoted):
 
-  Cerritos 02235   the page prints 17 PHOT rows (100 to 299, with 234 and 252) and '242' on no line.
   Citrus 02333     the page prints its ART rows from 101 to 268 and '149' on no line (146, then 150).
   Foothill 11827   the page prints APPT 161 to 171, 185 to 187, 189, 191 to 196 and 198, and '190' on no line. Its
                    page-mate 41696, the A.S. read from the same page, explains APPT 190 as 'not in the text' in its
@@ -50,7 +48,12 @@ both headings. boundaries() reads each of those rows with the words changed and 
 nothing; it also reads every row off its live run, as another college's record, with the course explained by the
 record's own reader, and with its units unstated.
 
-HELD, with its reason in MADERA's HAND (no row, so no pile of the batch):
+HELD, each with its reason in its pile's HAND (no row, so no pile of the batch):
+  Cerritos 02235  Photography A.A. A person settled this record: it carries a person's confirm verdict
+        (program_record_verdicts id 36, 2026-10-15) whose fingerprint is the live record's. The conductor's
+        pre-read of this plan's first form found it (confirm_matches 1): the apply's confirm guard would have
+        aborted, and a person-settled record stays untouched. The capture's evidence stands (page read
+        46149637666: 17 PHOT rows, 100 to 299, and '242' on no line), so it is a person's to look at.
   Madera 39810  Elementary Teacher Education A.A.-T. The capture's evidence stands (the entry prints no POLSC C1000
         and no POLSC C1000H, and page read 46149637666 agrees: no political science course on any line). The page
         disagrees with itself: it heads the list 'Required Core Courses (41-47 units)' over courses that add to the
@@ -178,7 +181,15 @@ def _pile(college: str, slug: str, name: str, rows: dict) -> Pile:
                 keys=tuple(rows), reviewed={}, passed=dict(rows), hand={cn: PASSES for cn in rows}, held_by=HELD_BY)
 
 
-CERRITOS = _pile("Cerritos College", "cerritos", "Cerritos", {"02235": _entry("PHOT 242")})
+# Cerritos plans no row (a person's confirm verdict stands on its record), so it is no pile of the batch.
+CERRITOS = Pile(college="Cerritos College", slug="cerritos", tag=TAG, name="Cerritos",
+                prior=B11.LiveRead("Cerritos College", "cerritos"), keys=("02235",), reviewed={}, passed={},
+                hand={"02235": ("held: a person settled this record. It carries a person's confirm verdict "
+                                "(program_record_verdicts id 36, 2026-10-15) whose fingerprint is the live record's, found by the"
+                                " conductor's pre-read of this plan (confirm_matches 1), so the apply's confirm guard would abort"
+                                " and no plan writes the row. The capture's evidence stands (no PHOT 242 on the page; page read "
+                                "46149637666 agrees). For a person: the record fails coverage on PHOT 242 alone")},
+                held_by=HELD_BY)
 CITRUS = _pile("Citrus College", "citrus", "Citrus", {"02333": _entry("ART 149")})
 MARIN = _pile("College of Marin", "college_of_marin", "College of Marin", {"46242": _entry("ART 135")})
 FOOTHILL = _pile("Foothill College", "foothill", "Foothill", {
@@ -200,7 +211,7 @@ MADERA = Pile(college="Madera College", slug="madera", tag=TAG, name="Madera",
                               "gap named. The entry is the 2025-2026 catalog's. For a person: compare the college's "
                               "2026-2027 catalog")},
               held_by=HELD_BY)
-PILES = [CERRITOS, CITRUS, MARIN, FOOTHILL, IRVINE, PALOMAR]
+PILES = [CITRUS, MARIN, FOOTHILL, IRVINE, PALOMAR]
 BATCH = Batch(tag=TAG, piles=PILES)
 
 

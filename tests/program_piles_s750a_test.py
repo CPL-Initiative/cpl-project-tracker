@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""S750, the cheap piles, batch s750a: S748's reading state_course_not_on_page, assigned to eight records at six
+"""S750, the cheap piles, batch s750a: S748's reading state_course_not_on_page, assigned to seven records at five
 colleges (kb/_program_piles_s750a.py; the reading and its statewide self-recall: tests/program_piles_s748c_test.py).
 
 WHY. Sam's ruling of 2026-11-17 (sam-collect-with-gaps-2026-11-17): a record is collected, never held for a reread
@@ -15,14 +15,16 @@ row is planned only where a free read of its own page agrees with the capture. P
     its live run; the record as another college's; the record's own reader explaining the course; the units
     unstated; the own-section words changed, and taken away. And the evidence asked directly with one of its 16
     conditions moved at a time, since the rescore's own tests stand behind several of them;
-  * the plan: eight rows at six colleges under one batch; each row's before-image fails coverage alone and its
+  * the plan: seven rows at five colleges under one batch; each row's before-image fails coverage alone and its
     after-image is the load's image of the committed record: coverage true and nothing else moved, no gap, the
     record unchanged, the row passing as the live table counts it; the four SQL files are the receipts' own;
   * the UPDATE and its rollback, each rebuilt from the receipts' images to the byte with every guard clause once.
-    29 changes to the two files (a guard dropped, expect moved, the count test dropped, the confirm guard dropped
+    28 changes to the two files (a guard dropped, expect moved, the count test dropped, the confirm guard dropped
     or loosened, an image moved, a row dropped or swapped) each fail here, so a row a person checked is skipped and
     a row that changed since the plan read it aborts the apply;
-  * the hold: Madera 39810, whose page disagrees with itself (a 41-47 unit heading over 39.5 units of courses).
+  * the holds: Madera 39810, whose page disagrees with itself (a 41-47 unit heading over 39.5 units of courses),
+    and Cerritos 02235, which a person settled (a confirm verdict on the live record, found by the conductor's
+    pre-read): no row, its record file as the scorer scored it, its key in none of the four SQL files.
 
 A mutation of the plan's code turns this test red too; the run that proved it is in the plan's commit message.
 
@@ -44,8 +46,7 @@ DAY = "2026-11-28"
 READING = "state_course_not_on_page"
 OWN = "its page is its own"
 # (college, control number, the course, how the row is shown its own, the page read's run, its question)
-ROWS = [("Cerritos College", "02235", "PHOT 242", OWN, "46149637666", "phot_242"),
-        ("Citrus College", "02333", "ART 149", OWN, "46149637666", "art_149"),
+ROWS = [("Citrus College", "02333", "ART 149", OWN, "46149637666", "art_149"),
         ("College of Marin", "46242", "ART 135", OWN, "46150287204", "art_135"),
         ("Foothill College", "11827", "APPT 190", "own_section", "46149637666", "appt_190"),
         ("Foothill College", "43194", "PHIL 7", OWN, "46149637666", "phil_7"),
@@ -78,7 +79,7 @@ check([w.college for w in M.PILES] == list(dict.fromkeys(r[0] for r in ROWS))
                                    **({"own_section": w.passed[cn].get("own_section")} if own != OWN else {}))
               for college, cn, code, own, _, _ in ROWS for w in [PILES[college]])
       and all(bool(PILES[c].passed[cn].get("own_section")) == (own != OWN) for c, cn, _, own, _, _ in ROWS),
-      "the reviewed list is the eight rows, each naming its one course, and own-section words on a shared page only")
+      "the reviewed list is the seven rows, each naming its one course, and own-section words on a shared page only")
 
 # ── the page reads ──
 for college, cn, code, own, run, q in ROWS:
@@ -208,8 +209,8 @@ for college, cn, code, own, run, q in ROWS:
 
 # ── the plan ──
 check(M.BATCH.tag == "s750a" and M.BATCH.piles == M.PILES and M.BATCH.session == "S750"
-      and "S750" in M.BATCH.ruling and M.MADERA not in M.BATCH.piles,
-      "one batch of six piles under one tag, named S750's; Madera is no pile of it")
+      and "S750" in M.BATCH.ruling and M.MADERA not in M.BATCH.piles and M.CERRITOS not in M.BATCH.piles,
+      "one batch of five piles under one tag, named S750's; Madera and Cerritos are no piles of it")
 receipts = {}
 for w in M.PILES:
     with open(w.receipt_path(DAY), encoding="utf-8") as fh:
@@ -220,7 +221,7 @@ members = [[c, cn, i] for i, (c, cn, _, _, _, _) in enumerate(ROWS, 1)]
 check(all(r["batch"]["members"] == members and r["batch"]["rows"] == N and r["representation"] == M.REPRESENTATION
           and "checks.coverage to true" in r["representation"] and r["by"] == {B.PASSES: r["moved"]}
           and r["gaps"] == {} and not r["held"] and "S750" in r["rule"] for r in receipts.values()),
-      "every receipt names the batch's eight members, files no gap, and says what the plan writes to checks.coverage")
+      "every receipt names the batch's seven members, files no gap, and says what the plan writes to checks.coverage")
 images = NG._load_images(set(PILES))
 for i, (college, cn, code, own, run, q) in enumerate(ROWS, 1):
     w = PILES[college]
@@ -270,7 +271,8 @@ for part, key in (("apply", "apply"), ("preread", "pre_read"), ("preread_md5", "
     bodies = {r[key] for r in receipts.values()}
     check(len(bodies) == 1 and sql.endswith(bodies.pop() + "\n") and "checks.coverage to true" in sql,
           "%s: one text, in the file and in every receipt, under a header that names the coverage rescore" % part)
-    check(all("'%s'" % cn in sql for _, cn, _, _, _, _ in ROWS) and "'39810'" not in sql, "%s names the eight rows alone" % part)
+    check(all("'%s'" % cn in sql for _, cn, _, _, _, _ in ROWS) and "'39810'" not in sql and "'02235'" not in sql,
+          "%s names the seven rows alone" % part)
 with open(os.path.join(ROOT, "kb", "migrations", "%s_%s_prreq_piles_apply.sql" % (DAY, M.TAG)), encoding="utf-8") as fh:
     apply_sql = fh.read()
 with open(os.path.join(ROOT, "kb", "migrations", "%s_%s_prreq_piles_rollback.sql" % (DAY, M.TAG)), encoding="utf-8") as fh:
@@ -292,7 +294,7 @@ rebuilt_rows = [{"i": x["i"], "college": x["college"], "control_number": x["cont
                  "before_image": {"record": x["before_image"]["record"], "checks": x["before_image"]["checks"]},
                  "after_image": {"checks": x["after_image"]["checks"]}} for x in plan_rows]
 check([(x["college"], x["control_number"], x["i"]) for x in rebuilt_rows] == [(c, cn, i) for i, (c, cn, _, _, _, _) in enumerate(ROWS, 1)],
-      "the receipts' rows are the batch's eight, numbered 1 to 8")
+      "the receipts' rows are the batch's seven, numbered 1 to 7")
 APPLY = M.B11.P.confirm_guarded_apply(rebuilt_rows, M.TAG + " piles")
 ROLLBACK = NG.rollback_sql(rebuilt_rows, M.TAG + " piles rollback")
 RUN, PERSON, EXPECT, COUNT = ("r.extracted_run = v.extracted_run", "r.checked is not true",
@@ -347,7 +349,7 @@ check(apply_stands(apply_sql), "the apply file is the UPDATE rebuilt from the re
                                "once (the confirm guard among them) and each receipt's after-image inside it")
 check(rollback_stands(rollback_sql),
       "the rollback file is the rollback rebuilt from the same images: checks back to the before-image only where the "
-      "row still holds the after-image and no person's check, expecting the batch's eight rows")
+      "row still holds the after-image and no person's check, expecting the batch's seven rows")
 check(all(a == dict(b, coverage=True) and a != b for _, b, a in sql_images(apply_sql)) and len(sql_images(apply_sql)) == N,
       "each after-image the UPDATE writes is its before-image with coverage true, nothing else")
 check(apply_sql.count("update public.program_requirement_records") == 1 and rollback_sql.count("update public.program_requirement_records") == 1
@@ -386,7 +388,7 @@ CHANGED_ROLLBACK = {
     "the rollback writes the after-image": rollback_sql.replace("set checks = v.before_checks", "set checks = v.after_checks"),
 }
 check(len(CHANGED_APPLY) == 15 + N and len(CHANGED_ROLLBACK) == 6,
-      "15 changes to the apply, one more for each row's after-image, and six to the rollback: 29 in all")
+      "15 changes to the apply, one more for each row's after-image, and six to the rollback: 28 in all")
 for what, sql in CHANGED_APPLY.items():
     check(sql != apply_sql, "%s: the change lands on the apply file's text" % what)
     check(not apply_stands(sql), "%s: the test fails on it" % what)
@@ -395,7 +397,21 @@ for what, sql in CHANGED_ROLLBACK.items():
     check(not rollback_stands(sql), "%s: the test fails on it" % what)
 check(all(w.plan(write=False)["rows"] == [] for w in M.PILES), "a second run plans none")
 
-# ── the hold ──
+# ── the holds ──
+# Cerritos 02235: a person's confirm verdict stands on the live record (program_record_verdicts id 36), so the plan
+# names no row for it and leaves its record file as the scorer scored it.
+K = M.CERRITOS
+kf = K.load("02235")
+check(K.hand["02235"].startswith("held") and "confirm verdict" in K.hand["02235"] and "id 36" in K.hand["02235"]
+      and K.passed == {} and K.reviewed == {} and K.plan(write=False)["rows"] == []
+      and K.precision()["wrong"] == [] and K.precision()["by_answer"] == {"none": 1},
+      "02235: held by hand as a person's, with the verdict named; no entry, no row")
+check(not S.passes_live(kf["score"]) and not kf["score"].get("gaps") and "as_scored" not in kf["score"]["coverage"]
+      and "rescored" not in kf["score"]["coverage"] and kf["score"]["coverage"]["pass"] is False
+      and [S.norm_code(c) for c in kf["score"]["coverage"]["unexplained"]] == ["PHOT242"]
+      and K.evidence(kf) is not None and not os.path.exists(K.receipt_path(DAY)),
+      "02235: its record file is as the scorer scored it (coverage failing on PHOT 242), the capture's evidence "
+      "stands, and no receipt of this plan names it")
 W = M.MADERA
 f = W.load("39810")
 with open(os.path.join(ROOT, "kb", "college_reads", "s750_piles_madera_coverage.json"), encoding="utf-8") as fh:

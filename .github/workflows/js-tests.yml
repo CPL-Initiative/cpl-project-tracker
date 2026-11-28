@@ -1393,12 +1393,13 @@ jobs:
       - name: Harvest gap census labels college-named gaps (S750)
         if: matrix.shard == 2
         run: python3 tests/harvest_gap_census_college_named_test.py
-      # S750, batch s750a: S748's reading state_course_not_on_page assigned to eight records at six colleges
-      # (Cerritos 02235, Citrus 02333, College of Marin 46242, Foothill 11827 and 43194, Irvine Valley 44922,
+      # S750, batch s750a: S748's reading state_course_not_on_page assigned to seven records at five colleges
+      # (Citrus 02333, College of Marin 46242, Foothill 11827 and 43194, Irvine Valley 44922,
       # Palomar 08929 and 22528), each checked against a free read of its own page; Madera 39810 held (its page
-      # heads its core 41-47 units over 39.5). The apply and rollback rebuilt from the receipts, 29 changes to
+      # heads its core 41-47 units over 39.5) and Cerritos 02235 held (a person settled it: a confirm verdict on
+      # the live record). The apply and rollback rebuilt from the receipts, 28 changes to
       # them each failing; each of the evidence's 16 conditions pinned on its own.
-      - name: Cheap piles S750, batch a (eight records whose page omits a state-listed course)
+      - name: Cheap piles S750, batch a (seven records whose page omits a state-listed course)
         if: matrix.shard == 4
         run: python3 tests/program_piles_s750a_test.py
       # S742 at Cabrillo: the recommended_counts reconcile step. A list the page heads 'Recommended' and counts
