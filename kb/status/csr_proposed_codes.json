@@ -4,8 +4,8 @@
  "assigned": 97,
  "by_basis": {
   "cid": 3,
-  "college": 18,
-  "minted": 76
+  "college": 17,
+  "minted": 77
  },
  "changed_by_a_person": [
   {
@@ -349,23 +349,18 @@
   },
   {
    "assign": true,
-   "basis": "college",
-   "code": "AERO",
+   "basis": "minted",
+   "code": "AERN",
    "confidence": 0.86,
    "discipline": "Aeronautics",
    "key": "Aeronautics (Airframe and power plant, aircraft mechanics, aeronautical engineering technician, avionics)",
    "level": "Likely",
-   "local_code_now": {
-    "called": "AVIA",
-    "colleges": 7,
-    "courses": 117,
-    "filed": true
-   },
-   "note": "AERO also prefixes nine Air Force ROTC M-IDs with no discipline (AS100 Heritage and Values); they belong with Military Studies (MILS).",
+   "local_code_now": null,
+   "note": "AERN follows the MQ's name (COBIx's minted list, #3951). AERO stays a local code: seven colleges file aviation courses under it, and its nine Air Force ROTC M-IDs moved to Military Studies (MILS) in the S749 re-mint.",
    "types": [
     "any"
    ],
-   "words": "AERO is the local code at 7 colleges"
+   "words": "Aeronautics MQ. Avoided AERO, a heavily used Aviation (AVIA) local code."
   },
   {
    "assign": true,

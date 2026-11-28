@@ -1,0 +1,815 @@
+{
+  "_what": "The kb_curation rows the S749 migration moves, before (course_id, value) and after (new_course_id, new_value), read from the committed overlay.",
+  "_at": "2026-11-28T15:57:41+00:00",
+  "count": 101,
+  "rows": [
+    {
+      "course_id": "AERO M1001",
+      "field": "unified_title",
+      "value": "AS200 Leadership Laboratory C",
+      "new_course_id": "MILS M1001",
+      "new_value": "AS200 Leadership Laboratory C",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "AERO M10BA",
+      "field": "merge_into",
+      "value": "AERO M1001",
+      "new_course_id": "MILS M10BA",
+      "new_value": "MILS M1001",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "AERO M10BB",
+      "field": "merge_into",
+      "value": "AERO M1001",
+      "new_course_id": "MILS M10BB",
+      "new_value": "MILS M1001",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "ANTH M10IQ",
+      "field": "merge_into",
+      "value": "NUTR M1016",
+      "new_course_id": "ANTH M10IQ",
+      "new_value": "FDNT M1061",
+      "by": "automerge-v1@bot"
+    },
+    {
+      "course_id": "ATC M10AU",
+      "field": "merge_into",
+      "value": "TOUR M1002",
+      "new_course_id": "ATC M10AU",
+      "new_value": "TRVL M1002",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "ATC M10AV",
+      "field": "merge_into",
+      "value": "TOUR M1003",
+      "new_course_id": "ATC M10AV",
+      "new_value": "TRVL M1003",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "CULN M10QW",
+      "field": "merge_into",
+      "value": "NUTR M1013",
+      "new_course_id": "CULN M10QW",
+      "new_value": "FDNT M1058",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "CULN M10QX",
+      "field": "merge_into",
+      "value": "NUTR M1013",
+      "new_course_id": "CULN M10QX",
+      "new_value": "FDNT M1058",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "CULN M1109",
+      "field": "merge_into",
+      "value": "NUTR M1014",
+      "new_course_id": "CULN M1109",
+      "new_value": "FDNT M1059",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "FCSH M1021",
+      "field": "merge_into",
+      "value": "NUTR M1017",
+      "new_course_id": "FCSH M1021",
+      "new_value": "FDNT M1062",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "FCSH M10EO",
+      "field": "merge_into",
+      "value": "NUTR M1033",
+      "new_course_id": "FCSH M10EO",
+      "new_value": "FDNT M1033",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "FDNT M1009",
+      "field": "merge_into",
+      "value": "NUTR M1033",
+      "new_course_id": "FDNT M1009",
+      "new_value": "FDNT M1033",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "FDNT M1012",
+      "field": "merge_into",
+      "value": "NUTR M1007",
+      "new_course_id": "FDNT M1012",
+      "new_value": "FDNT M1053",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "FDNT M10AM",
+      "field": "merge_into",
+      "value": "NUTR M1007",
+      "new_course_id": "FDNT M10AM",
+      "new_value": "FDNT M1053",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "FDNT M10BE",
+      "field": "honors_of",
+      "value": "NUTR M1018",
+      "new_course_id": "FDNT M10BE",
+      "new_value": "FDNT M1063",
+      "by": null
+    },
+    {
+      "course_id": "FDNT M10CA",
+      "field": "merge_into",
+      "value": "NUTR M1008",
+      "new_course_id": "FDNT M10CA",
+      "new_value": "FDNT M1054",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "HLTH M1121",
+      "field": "merge_into",
+      "value": "NUTR M1008",
+      "new_course_id": "HLTH M1121",
+      "new_value": "FDNT M1054",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "KINE M13JC",
+      "field": "merge_into",
+      "value": "NUTR M1021",
+      "new_course_id": "KINE M13JC",
+      "new_value": "FDNT M1065",
+      "by": "automerge-v1@bot"
+    },
+    {
+      "course_id": "NUTR M1006",
+      "field": "merge_into",
+      "value": "NUTR M1007",
+      "new_course_id": "FDNT M1052",
+      "new_value": "FDNT M1053",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M1007",
+      "field": "unified_title",
+      "value": "Introduction to Careers in Nutrition, Dietetics, and Food",
+      "new_course_id": "FDNT M1053",
+      "new_value": "Introduction to Careers in Nutrition, Dietetics, and Food",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M1008",
+      "field": "unified_title",
+      "value": "Foods and Nutrition: Overview and Opportunities",
+      "new_course_id": "FDNT M1054",
+      "new_value": "Foods and Nutrition: Overview and Opportunities",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M1013",
+      "field": "unified_title",
+      "value": "Vegetarian and Specialty Cuisine",
+      "new_course_id": "FDNT M1058",
+      "new_value": "Vegetarian and Specialty Cuisine",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M1014",
+      "field": "unified_title",
+      "value": "Cultural Foods of the World",
+      "new_course_id": "FDNT M1059",
+      "new_value": "Cultural Foods of the World",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M1015",
+      "field": "merge_into",
+      "value": "NUTR M1014",
+      "new_course_id": "FDNT M1060",
+      "new_value": "FDNT M1059",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M1016",
+      "field": "unified_title",
+      "value": "The Culture of Food",
+      "new_course_id": "FDNT M1061",
+      "new_value": "The Culture of Food",
+      "by": "automerge-v1@bot"
+    },
+    {
+      "course_id": "NUTR M1017",
+      "field": "unified_title",
+      "value": "Introduction to Therapeutic Diets",
+      "new_course_id": "FDNT M1062",
+      "new_value": "Introduction to Therapeutic Diets",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M1019",
+      "field": "merge_into",
+      "value": "NUTR M1008",
+      "new_course_id": "FDNT M1064",
+      "new_value": "FDNT M1054",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M1021",
+      "field": "unified_title",
+      "value": "Nutrition for Fitness and Sport",
+      "new_course_id": "FDNT M1065",
+      "new_value": "Nutrition for Fitness and Sport",
+      "by": "automerge-v1@bot"
+    },
+    {
+      "course_id": "NUTR M1022",
+      "field": "merge_into",
+      "value": "KINE M1591",
+      "new_course_id": "FDNT M1066",
+      "new_value": "KINE M1591",
+      "by": "automerge-v1@bot"
+    },
+    {
+      "course_id": "NUTR M1033",
+      "field": "unified_title",
+      "value": "Nutrition Throughout the Life Cycle",
+      "new_course_id": "FDNT M1033",
+      "new_value": "Nutrition Throughout the Life Cycle",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M1040",
+      "field": "unified_title",
+      "value": "Rotations in Supervised Practice, Level C",
+      "new_course_id": "FDNT M1040",
+      "new_value": "Rotations in Supervised Practice, Level C",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M1041",
+      "field": "unified_title",
+      "value": "Clinical Experience in Nutritional Care Management",
+      "new_course_id": "FDNT M1041",
+      "new_value": "Clinical Experience in Nutritional Care Management",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M10AO",
+      "field": "merge_into",
+      "value": "AGRI M1027",
+      "new_course_id": "FDNT M10ED",
+      "new_value": "AGRI M1027",
+      "by": "automerge-v1@bot"
+    },
+    {
+      "course_id": "NUTR M10AQ",
+      "field": "merge_into",
+      "value": "NUTR M1040",
+      "new_course_id": "FDNT M10EF",
+      "new_value": "FDNT M1040",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M10AS",
+      "field": "merge_into",
+      "value": "NUTR M1041",
+      "new_course_id": "FDNT M10EH",
+      "new_value": "FDNT M1041",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M10AT",
+      "field": "merge_into",
+      "value": "CULN M1069",
+      "new_course_id": "FDNT M10EI",
+      "new_value": "CULN M1069",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M10AU",
+      "field": "merge_into",
+      "value": "NUTR M1041",
+      "new_course_id": "FDNT M10EJ",
+      "new_value": "FDNT M1041",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M10AV",
+      "field": "merge_into",
+      "value": "NUTR M1041",
+      "new_course_id": "FDNT M10EK",
+      "new_value": "FDNT M1041",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M10AW",
+      "field": "merge_into",
+      "value": "FASH M1136",
+      "new_course_id": "FDNT M10EL",
+      "new_value": "FASH M1136",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M10AZ",
+      "field": "merge_into",
+      "value": "NUTR M1033",
+      "new_course_id": "FDNT M10EO",
+      "new_value": "FDNT M1033",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M10BD",
+      "field": "merge_into",
+      "value": "NUTR M1014",
+      "new_course_id": "FDNT M10ES",
+      "new_value": "FDNT M1059",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M10BI",
+      "field": "merge_into",
+      "value": "FDNT M1043",
+      "new_course_id": "FDNT M10EX",
+      "new_value": "FDNT M1043",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M10BO",
+      "field": "merge_into",
+      "value": "FDNT M1044",
+      "new_course_id": "FDNT M10FD",
+      "new_value": "FDNT M1044",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M10BP",
+      "field": "merge_into",
+      "value": "NUTR M1033",
+      "new_course_id": "FDNT M10FE",
+      "new_value": "FDNT M1033",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M10BR",
+      "field": "merge_into",
+      "value": "NUTR M1007",
+      "new_course_id": "FDNT M10FG",
+      "new_value": "FDNT M1053",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M10BT",
+      "field": "merge_into",
+      "value": "NUTR M1007",
+      "new_course_id": "FDNT M10FI",
+      "new_value": "FDNT M1053",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M10BV",
+      "field": "merge_into",
+      "value": "FDNT M1045",
+      "new_course_id": "FDNT M10FK",
+      "new_value": "FDNT M1045",
+      "by": "automerge-v1@bot"
+    },
+    {
+      "course_id": "NUTR M10CB",
+      "field": "honors_of",
+      "value": "NUTR M10CC",
+      "new_course_id": "FDNT M10FQ",
+      "new_value": "FDNT M10FR",
+      "by": null
+    },
+    {
+      "course_id": "NUTR M10CJ",
+      "field": "merge_into",
+      "value": "CULN M1147",
+      "new_course_id": "FDNT M10FY",
+      "new_value": "CULN M1147",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M10CM",
+      "field": "merge_into",
+      "value": "CULN M1204",
+      "new_course_id": "FDNT M10GB",
+      "new_value": "CULN M1204",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M10CP",
+      "field": "merge_into",
+      "value": "NUTR M1008",
+      "new_course_id": "FDNT M10GE",
+      "new_value": "FDNT M1054",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M10CR",
+      "field": "merge_into",
+      "value": "FDNT M1046",
+      "new_course_id": "FDNT M10GG",
+      "new_value": "FDNT M1046",
+      "by": "automerge-v1@bot"
+    },
+    {
+      "course_id": "NUTR M10CV",
+      "field": "merge_into",
+      "value": "KINE M1663",
+      "new_course_id": "FDNT M10CV",
+      "new_value": "KINE M1663",
+      "by": "automerge-v1@bot"
+    },
+    {
+      "course_id": "NUTR M10CY",
+      "field": "merge_into",
+      "value": "HLTH M1020",
+      "new_course_id": "FDNT M10CY",
+      "new_value": "HLTH M1020",
+      "by": "automerge-v1@bot"
+    },
+    {
+      "course_id": "NUTR M10DA",
+      "field": "merge_into",
+      "value": "NUTR M1040",
+      "new_course_id": "FDNT M10DA",
+      "new_value": "FDNT M1040",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M10DC",
+      "field": "merge_into",
+      "value": "FDNT M1017",
+      "new_course_id": "FDNT M10DC",
+      "new_value": "FDNT M1017",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M10DH",
+      "field": "merge_into",
+      "value": "FDNT M1048",
+      "new_course_id": "FDNT M10DH",
+      "new_value": "FDNT M1048",
+      "by": "automerge-v1@bot"
+    },
+    {
+      "course_id": "NUTR M10DM",
+      "field": "merge_into",
+      "value": "CULN M1108",
+      "new_course_id": "FDNT M10DM",
+      "new_value": "CULN M1108",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M9008",
+      "field": "unified_title",
+      "value": "Dim Sum 1",
+      "new_course_id": "FDNT M9034",
+      "new_value": "Dim Sum 1",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M9009",
+      "field": "unified_title",
+      "value": "Brazilian Cuisine Part 2",
+      "new_course_id": "FDNT M9035",
+      "new_value": "Brazilian Cuisine Part 2",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M9010",
+      "field": "unified_title",
+      "value": "California Grilling 2",
+      "new_course_id": "FDNT M9036",
+      "new_value": "California Grilling 2",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M9011",
+      "field": "unified_title",
+      "value": "Easy but Elegant Cooking",
+      "new_course_id": "FDNT M9037",
+      "new_value": "Easy but Elegant Cooking",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M9012",
+      "field": "unified_title",
+      "value": "Garnishing and Fruit Carving",
+      "new_course_id": "FDNT M9038",
+      "new_value": "Garnishing and Fruit Carving",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M9013",
+      "field": "unified_title",
+      "value": "Chef Skills: Tamales and More",
+      "new_course_id": "FDNT M9039",
+      "new_value": "Chef Skills: Tamales and More",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M9014",
+      "field": "unified_title",
+      "value": "Intro to Vietnamese Cooking",
+      "new_course_id": "FDNT M9040",
+      "new_value": "Intro to Vietnamese Cooking",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M9015",
+      "field": "unified_title",
+      "value": "Fresh Salads and Dressings",
+      "new_course_id": "FDNT M9041",
+      "new_value": "Fresh Salads and Dressings",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M90BB",
+      "field": "merge_into",
+      "value": "CDEV M9029",
+      "new_course_id": "FDNT M90BB",
+      "new_value": "CDEV M9029",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M90BL",
+      "field": "merge_into",
+      "value": "NUTR M9009",
+      "new_course_id": "FDNT M90BL",
+      "new_value": "FDNT M9035",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M90BM",
+      "field": "merge_into",
+      "value": "NUTR M9009",
+      "new_course_id": "FDNT M90BM",
+      "new_value": "FDNT M9035",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M90BW",
+      "field": "merge_into",
+      "value": "NUTR M9011",
+      "new_course_id": "FDNT M90BW",
+      "new_value": "FDNT M9037",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M90BX",
+      "field": "merge_into",
+      "value": "NUTR M9011",
+      "new_course_id": "FDNT M90BX",
+      "new_value": "FDNT M9037",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M90CA",
+      "field": "merge_into",
+      "value": "NUTR M9010",
+      "new_course_id": "FDNT M90CA",
+      "new_value": "FDNT M9036",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M90CB",
+      "field": "merge_into",
+      "value": "NUTR M9010",
+      "new_course_id": "FDNT M90CB",
+      "new_value": "FDNT M9036",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M90CF",
+      "field": "merge_into",
+      "value": "NUTR M9012",
+      "new_course_id": "FDNT M90CF",
+      "new_value": "FDNT M9038",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M90CG",
+      "field": "merge_into",
+      "value": "NUTR M9012",
+      "new_course_id": "FDNT M90CG",
+      "new_value": "FDNT M9038",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M90CH",
+      "field": "merge_into",
+      "value": "NUTR M9012",
+      "new_course_id": "FDNT M90CH",
+      "new_value": "FDNT M9038",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M90CN",
+      "field": "merge_into",
+      "value": "NUTR M9013",
+      "new_course_id": "FDNT M90CN",
+      "new_value": "FDNT M9039",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M90CU",
+      "field": "merge_into",
+      "value": "CULN M9047",
+      "new_course_id": "FDNT M90CU",
+      "new_value": "CULN M9047",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M90CY",
+      "field": "merge_into",
+      "value": "CULN M9050",
+      "new_course_id": "FDNT M90CY",
+      "new_value": "CULN M9050",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M90DO",
+      "field": "merge_into",
+      "value": "CDEV M9029",
+      "new_course_id": "FDNT M90DO",
+      "new_value": "CDEV M9029",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M90DS",
+      "field": "merge_into",
+      "value": "NUTR M9014",
+      "new_course_id": "FDNT M90DS",
+      "new_value": "FDNT M9040",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M90EE",
+      "field": "merge_into",
+      "value": "NUTR M9014",
+      "new_course_id": "FDNT M90EE",
+      "new_value": "FDNT M9040",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M90EO",
+      "field": "merge_into",
+      "value": "NUTR M9008",
+      "new_course_id": "FDNT M90EO",
+      "new_value": "FDNT M9034",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M90EP",
+      "field": "merge_into",
+      "value": "NUTR M9008",
+      "new_course_id": "FDNT M90EP",
+      "new_value": "FDNT M9034",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M90ES",
+      "field": "merge_into",
+      "value": "NUTR M9015",
+      "new_course_id": "FDNT M90ES",
+      "new_value": "FDNT M9041",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M90ET",
+      "field": "merge_into",
+      "value": "NUTR M9015",
+      "new_course_id": "FDNT M90ET",
+      "new_value": "FDNT M9041",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M90EV",
+      "field": "merge_into",
+      "value": "CDEV M9029",
+      "new_course_id": "FDNT M90EV",
+      "new_value": "CDEV M9029",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M90FT",
+      "field": "merge_into",
+      "value": "NUTR M9013",
+      "new_course_id": "FDNT M90FT",
+      "new_value": "FDNT M9039",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "NUTR M90FV",
+      "field": "merge_into",
+      "value": "NUTR M9013",
+      "new_course_id": "FDNT M90FV",
+      "new_value": "FDNT M9039",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "PHTC M10AC",
+      "field": "merge_into",
+      "value": "PHOT M1041",
+      "new_course_id": "PHOT M10RP",
+      "new_value": "PHOT M1041",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "TOUR M1001",
+      "field": "unified_title",
+      "value": "Advanced Airline Computer Training",
+      "new_course_id": "TRVL M1001",
+      "new_value": "Advanced Airline Computer Training",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "TOUR M1002",
+      "field": "unified_title",
+      "value": "Travel Destinations: Europe, Africa, and the Middle East",
+      "new_course_id": "TRVL M1002",
+      "new_value": "Travel Destinations: Europe, Africa, and the Middle East",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "TOUR M1003",
+      "field": "unified_title",
+      "value": "Destinations- Americas and Europe",
+      "new_course_id": "TRVL M1003",
+      "new_value": "Destinations- Americas and Europe",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "TOUR M1004",
+      "field": "unified_title",
+      "value": "World Destinations and Resorts--Western Hemisphere",
+      "new_course_id": "TRVL M1004",
+      "new_value": "World Destinations and Resorts--Western Hemisphere",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "TOUR M10AA",
+      "field": "merge_into",
+      "value": "TOUR M1001",
+      "new_course_id": "TRVL M10AA",
+      "new_value": "TRVL M1001",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "TOUR M10AB",
+      "field": "merge_into",
+      "value": "TOUR M1001",
+      "new_course_id": "TRVL M10AB",
+      "new_value": "TRVL M1001",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "TOUR M10AF",
+      "field": "merge_into",
+      "value": "TOUR M1004",
+      "new_course_id": "TRVL M10AF",
+      "new_value": "TRVL M1004",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "TOUR M10AG",
+      "field": "merge_into",
+      "value": "TOUR M1003",
+      "new_course_id": "TRVL M10AG",
+      "new_value": "TRVL M1003",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "TOUR M10AH",
+      "field": "merge_into",
+      "value": "TOUR M1002",
+      "new_course_id": "TRVL M10AH",
+      "new_value": "TRVL M1002",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "TT M10AD",
+      "field": "merge_into",
+      "value": "TOUR M1002",
+      "new_course_id": "TT M10AD",
+      "new_value": "TRVL M1002",
+      "by": "automerge-titlelane-v1@bot"
+    },
+    {
+      "course_id": "TT M10AF",
+      "field": "merge_into",
+      "value": "TOUR M1004",
+      "new_course_id": "TT M10AF",
+      "new_value": "TRVL M1004",
+      "by": "automerge-titlelane-v1@bot"
+    }
+  ]
+}

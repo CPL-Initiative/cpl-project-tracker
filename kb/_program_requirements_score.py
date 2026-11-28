@@ -9,7 +9,9 @@ course the program lists, and Sam's review added a structural one:
 
   coverage       the listed courses the record places in a block, out of all
                  of them. Bar: 100%, or each missing course explained, and at
-                 least one placed (a record placing none read other text).
+                 least one placed (a record placing none read other text). A
+                 record scored against no listed course never passes: it fails
+                 with the gap named (NO_LIST_GAP, S750).
   invented       courses the record places that the list lacks. Bar: 0, or
                  each one flagged as a catalog addition.
   arithmetic     required units plus each block's minimum plus open electives,
@@ -1877,6 +1879,28 @@ def total_hours_printed(text: str, stated: tuple[float, float], labels: list, re
     return True
 
 
+# ── a record scored against no listed course (S750) ────────────────────────
+# The found-pages change (S748, kb/_program_requirements_college.py ncl_found_source) reads a program the Program
+# Course File lists no course for from its own catalog page. Coverage is a share of the listed courses, so with none
+# listed it had nothing to fail on: 0 of 0 placed, none missing, none unexplained, and the record passed on its
+# arithmetic alone. The S748 second reader rescored 974 live-passing records against an empty list and 966 still
+# passed; a wrong program's page passes the same way. So coverage is false wherever no course is listed, and the
+# score names why: coverage["no_list"] holds the gap (its name, NO_LIST_GAP, and its words), the shape the
+# arithmetic's fill_refused carries. The scorer only refuses the pass. Nothing reads the name yet: no rule in
+# kb/_program_named_gaps.py files no_state_course_list, and the census counts a record collected with gaps only where
+# coverage passes (kb/_harvest_gap_census.py), so such a record stays "no passing record" until a later step applies
+# Sam's ruling of 2026-11-17 (collect with the gap named and a lower score). The display build holds it back
+# (kb/_build_roep_display.py no_state_list).
+# No filed record is scored against an empty list on 2026-11-28 (0 of 18,977), so no filed score moves.
+NO_LIST_GAP = "no_state_course_list"
+NO_LIST_WORDS = ("The state's Program Course File lists no course for this program, so the record's courses were "
+                 "checked against no list: the catalog page alone names them.")
+
+
+def no_list_gap() -> dict:
+    return {"gap": NO_LIST_GAP, "words": NO_LIST_WORDS}
+
+
 def score(record: dict, closed: list[dict], text: str | None = None, award: str | None = None,
           aliases: dict | None = None, packed: bool = False, course_ids: dict | None = None) -> dict:
     """The automatic bars. text is the catalog text the record was read
@@ -2021,13 +2045,16 @@ def score(record: dict, closed: list[dict], text: str | None = None, award: str 
     # City's capture gave the model a hidden course index, and 89 records with
     # no block passed on "appears only in the course index" (S362).
     none_placed = bool(n) and len(missing) == n
-    cov_ok = not unexplained and not none_placed
+    # No course listed (S750): nothing was checked, so coverage fails with the gap named (NO_LIST_GAP).
+    no_list = not n
+    cov_ok = not unexplained and not none_placed and not no_list
     return {
         "measure": measure(record),
         "coverage": {"placed": n - len(missing), "listed": n,
                      "share": round((n - len(missing)) / n, 3) if n else None,
                      "missing": missing, "unexplained": unexplained,
                      "none_placed": none_placed,
+                     **({"no_list": no_list_gap()} if no_list else {}),
                      **({"course_id": [{"printed": p, "listed": k, "matched_by": "course_id"} for p, k in by_id]}
                         if by_id else {}),
                      "pass": cov_ok},

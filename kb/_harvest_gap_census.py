@@ -39,6 +39,17 @@ and is listed beside it with the line that marks it, so universe = passing + gap
 COLLECTED WITH GAPS. A row whose checks.gaps names a gap (kb/_program_named_gaps.py), with coverage and invented
 passing, is collected (Sam, 2026-11-17), after the discontinued flag: it leaves the gap and is listed under collected_with_gaps by name.
 
+COLLEGE-NAMED GAPS (S748's change, redone in S750 with its reader's three fixes; f-census-ignores-college-named-
+gaps-s727). A program a college's own named-gap file lists (kb/program_requirements_college/<slug>/
+named_gaps_*.json: collected as a named gap with no record, its reason and note filed there) has no live row to carry
+checks.gaps, so each fresh census relisted it for a read already made. The census reads those files and labels the
+program ("college_named": its reason). (1) It STAYS IN THE GAP under its own cause, sub-cause and lever: none of these
+programs has a live row or checks.gaps, so none counts as collected or passing, and the Commons' counts do not move.
+(2) The label is given only where NO LIVE ROW exists: a live row is decided by its own checks, and on the committed
+files alone a failing filed record whose live state is unknown takes no label. (3) Only main() hands the files in
+(college_named_gaps()); a caller that passes none (the Commons data build) reads exactly as before. A labeled program
+is left out of the next wave's count, and each lever says how many of its members a file names.
+
 Writes no table. Workflow: .github/workflows/harvest-gap-census.yml (dispatch only, anon only).
 Guard: tests/harvest_gap_census_test.py.
 """
@@ -46,6 +57,7 @@ from __future__ import annotations
 
 import argparse
 import collections
+import glob
 import json
 import re
 import os
@@ -190,6 +202,44 @@ def collected_with_gaps(checks: dict | None) -> list[str]:
     c = checks or {}
     gaps = c.get("gaps") or []
     return list(gaps) if gaps and c.get("coverage") is True and c.get("invented") is True else []
+
+
+def college_named_gaps(base: str = COLLEGE_DIR) -> dict:
+    """{(college, control number): reason} from each college's own named-gap files (named_gaps_*.json: a program
+    collected as a named gap with no record). A file names its college and lists its programs, each with its
+    reason, a key of the file's own reasons; a later file's entry stands over an earlier one's. A file that does not
+    parse, names no college, or an entry with no control number or a reason the file does not define, is left out."""
+    out = {}
+    for path in sorted(glob.glob(os.path.join(base, "*", "named_gaps_*.json"))):
+        try:
+            with open(path, encoding="utf-8") as fh:
+                d = json.load(fh)
+        except (OSError, ValueError):
+            continue
+        if not isinstance(d, dict):
+            continue
+        college, reasons = d.get("college"), d.get("reasons") or {}
+        if not college or not isinstance(d.get("programs"), list):
+            continue
+        for row in d["programs"]:
+            cn = norm_cn((row or {}).get("control_number")) if isinstance(row, dict) else ""
+            if cn and row.get("reason") in reasons:
+                out[(college, cn)] = row["reason"]
+    return out
+
+
+def college_named_reason(college_named: dict | None, names: tuple, cn: str, rec: dict | None,
+                         cause: str, sub: str | None) -> str | None:
+    """The reason a college's own file names for a gap program, or None. Only where no live row exists: a live row
+    (rec) is decided by its own checks, and a failing filed record whose live state is unknown (the committed files
+    alone; a parked college carries that cause as its sub-cause) may be live, so neither takes the label."""
+    own = (sub or "").split(":")[0] if cause == "parked_college" else cause
+    if not college_named or rec is not None or own == "unknown_without_live":
+        return None
+    for name in names:
+        if (name, cn) in college_named:
+            return college_named[(name, cn)]
+    return None
 
 
 def scorer_unstated_fails(checks: dict | None, filed: dict | None) -> bool:
@@ -406,10 +456,13 @@ LEVER_WORDS = {
 
 def census(universe: list[dict], committed: dict, records: dict | None, registry: dict,
            closed_now: dict | None = None, parked: dict | None = None,
-           outside: dict | None = None, discontinued: dict | None = None) -> dict:
+           outside: dict | None = None, discontinued: dict | None = None,
+           college_named: dict | None = None) -> dict:
     """universe: [{college, control_number}]; committed: read_committed(); records: {cn: live row} or
     None when there is no live read; registry: {college: catalog_url}; closed_now: {cn: bool};
-    discontinued: {(college, cn): flag} (kb/_program_discontinued.py keys()), each listed apart from the gap."""
+    discontinued: {(college, cn): flag} (kb/_program_discontinued.py keys()), each listed apart from the gap;
+    college_named: {(college, cn): reason} (college_named_gaps()), each labeled in the gap where it has no live row,
+    or None to read no college's file (the output then carries no college_named_gaps key)."""
     parked = PARKED if parked is None else parked
     live = records is not None
     by_slug = committed
@@ -445,6 +498,10 @@ def census(universe: list[dict], committed: dict, records: dict | None, registry
         ng = named_gap(col, cn, cause, prog.get("title"))
         if ng:
             row["named_gap"], row["other_listing"] = ng
+        # A college's own named-gap file: the program stays in the gap under the cause and lever above, labeled.
+        reason = college_named_reason(college_named, (college, prog["college"]), cn, rec, cause, sub)
+        if reason:
+            row["college_named"] = reason
         gap.append(row)
 
     by_cause = collections.Counter(g["cause"] for g in gap)
@@ -458,6 +515,7 @@ def census(universe: list[dict], committed: dict, records: dict | None, registry
     median_cost = round(statistics.median(costs), 4) if costs else None
     cost_by_college = {c["college"]: c.get("cost_per_program") for c in committed.values() if c.get("college")}
 
+    labeled = {g["control_number"] for g in gap if g.get("college_named")}
     levers = collections.OrderedDict()
     for g in gap:
         key = (g["lever"], g["scope"])
@@ -475,13 +533,17 @@ def census(universe: list[dict], committed: dict, records: dict | None, registry
                            "estimate_usd": est,
                            "over_college_limit": bool(est is not None and scope != "statewide" and est > COLLEGE_LIMIT_USD),
                            "members": sorted(L["members"])})
+        named_here = sum(1 for m in L["members"] if m in labeled)
+        if named_here:
+            # A read already made: these members are named gaps in their college's own file.
+            out_levers[-1]["college_named"] = named_here
     out_levers.sort(key=lambda x: (-x["programs"], x["lever"], x["scope"]))
 
     # The next wave: one college per catalog host, by the programs a read there would gain.
     paid_gain = collections.Counter()
     for g in gap:
         if g["lever"] in ("first_read", "paid_read", "capture_and_read", "reader_page_assignment",
-                          "capture_rerun_closed_list_now_filed"):
+                          "capture_rerun_closed_list_now_filed") and not g.get("college_named"):
             paid_gain[g["college"]] += 1
     hosts = {}
     for college, n in paid_gain.items():
@@ -499,7 +561,7 @@ def census(universe: list[dict], committed: dict, records: dict | None, registry
             hosts[h] = cand
     wave = sorted(hosts.values(), key=lambda x: (-x["programs"], x["college"]))
 
-    return {
+    out = {
         "basis": "live" if live else "committed files only",
         "universe": len(universe),
         "passing": passing,
@@ -529,6 +591,16 @@ def census(universe: list[dict], committed: dict, records: dict | None, registry
         "next_wave": wave,
         "programs": gap,
     }
+    if college_named is not None:
+        named = [g for g in gap if g.get("college_named")]
+        out["college_named_gaps"] = {
+            "what": "named as a gap in the college's own file (named_gaps_*.json), with no live row: still without a "
+                    "passing record, under its own cause; no further read is owed",
+            "programs": len(named),
+            "by_reason": dict(sorted(collections.Counter(g["college_named"] for g in named).items())),
+            "by_cause": dict(sorted(collections.Counter(g["cause"] for g in named).items())),
+            "members": sorted([g["college"], g["control_number"], g["college_named"]] for g in named)}
+    return out
 
 
 def gap_labels(path: str = NG.LABELS_OUT) -> dict:
@@ -589,6 +661,10 @@ def render_md(r: dict, when: str) -> str:
     for k, ng in (r.get("named_gaps") or {}).items():
         if ng["programs"]:
             L += ["Named gap, %d programs: \"%s\"" % (ng["programs"], ng["words"]), ""]
+    if (r.get("college_named_gaps") or {}).get("programs"):
+        L += ["Of those without a passing record, %d are named as a gap in their college's own file, with no live row "
+              "(%s): no further read is owed." % (r["college_named_gaps"]["programs"], ", ".join(
+                  "%s %d" % kv for kv in sorted(r["college_named_gaps"]["by_cause"].items()))), ""]
     L += ["## By cause", "", "| Cause | Programs |", "|---|---:|"]
     for c in CAUSE_IDS:
         if r["statewide_by_cause"].get(c):
@@ -665,7 +741,8 @@ def main(argv=None) -> int:
             os.makedirs(os.path.dirname(os.path.abspath(a.export)), exist_ok=True)
             with open(a.export, "w", encoding="utf-8") as fh:
                 json.dump(data, fh)
-    r = census(universe, committed, records, registry, closed_now, outside=outside, discontinued=D.keys())
+    r = census(universe, committed, records, registry, closed_now, outside=outside, discontinued=D.keys(),
+               college_named=college_named_gaps())
     r["written_at"] = when
     os.makedirs(os.path.dirname(a.json), exist_ok=True)
     with open(a.json, "w", encoding="utf-8") as fh:

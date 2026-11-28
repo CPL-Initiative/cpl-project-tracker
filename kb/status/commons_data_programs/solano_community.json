@@ -1,4 +1,4 @@
-{"schema":1,"college":"Solano Community College","slug":"solano_community","basis":"live","census_at":"2026-11-28 11:55Z","correction_rules":true,"programs":[
+{"schema":1,"college":"Solano Community College","slug":"solano_community","basis":"live","census_at":"2026-11-28 17:12Z","correction_rules":true,"programs":[
 {"cn":"06512","title":"Management","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"06514","title":"Marketing","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"45560","title":"Photography","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},

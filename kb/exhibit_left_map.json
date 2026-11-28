@@ -1,8 +1,8 @@
 {
  "schema": 1,
  "built_from": {
-  "audit": "2026-11-28T06:24:26+00:00",
-  "unified_titles": 6253
+  "audit": "2026-11-28T19:02:46+00:00",
+  "unified_titles": 6257
  },
  "rule": {
   "graded": [
@@ -11834,6 +11834,10 @@
    "type": "Credit By Exam",
    "group": "graded"
   },
+  "Artificial Intelligence Portfolio Review": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
   "Artificial Intelligence: Prompt Engineering and AI Systems": {
    "type": "Credit By Exam",
    "group": "graded"
@@ -13581,6 +13585,10 @@
   "Communications in Criminal Justice": {
    "type": "Portfolio Review and Industry Certification (mixed)",
    "group": "mixed"
+  },
+  "Community Health Worker Certificate": {
+   "type": "CPL type not recorded",
+   "group": ""
   },
   "Community Health Worker Skills": {
    "type": "Credit By Exam",
@@ -21099,6 +21107,10 @@
    "group": "graded"
   },
   "Spanish Grammar and Composition": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "Spanish Literature for Bilinguals": {
    "type": "CPL type not recorded",
    "group": ""
   },

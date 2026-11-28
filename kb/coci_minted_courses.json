@@ -44381,8 +44381,8 @@
       "cte": true,
       "_subj4_fold_from": "PUB M1004"
     },
-    "PUBR M1001": {
-      "course_id": "PUBR M1001",
+    "PREL M1001": {
+      "course_id": "PREL M1001",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -44391,8 +44391,8 @@
       "description": "This course evaluates public relations as a growing profession. The course looks at the principles,_x000D_ history and development, and professional practice of modern public relations. It investigates concepts_x000D_ of planning and executing effective communication strategies, including message design and_x000D_ distribution, for any organization. The use of social media, photography, graphics and marketing is also_x000D_ studied. This course is designed for students interested in learning about the field of public relations.",
       "description_source": "local catalog (representative/modal)",
       "subject": "PUB REL",
-      "subject_4letter": "PUBR",
-      "discipline": null,
+      "subject_4letter": "PREL",
+      "discipline": "Public Relations",
       "discipline_provisional": "PUB REL",
       "typical_units": 3.0,
       "confidence": 0.85,
@@ -44419,7 +44419,8 @@
       "discipline_confidence": null,
       "discipline_inferred_at": null,
       "_remint_from": "M-ID PUBREL 100",
-      "cte": true
+      "cte": true,
+      "_alignment_remint_from": "PUBR M1001"
     },
     "BUSI M9119": {
       "course_id": "BUSI M9119",
@@ -365120,8 +365121,8 @@
         }
       }
     },
-    "NUTR M1012": {
-      "course_id": "NUTR M1012",
+    "FDNT M1057": {
+      "course_id": "FDNT M1057",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -365130,8 +365131,8 @@
       "description": "This course provides students with the theoretical knowledge and practical skills required to be a health and wellness coach. Emphasis is placed on effective coach-to-client communication techniques as well as the fundamentals of coaching structure, goal setting, and behavioral change techniques as they relate to health and wellness coaching. The course will cover the legal considerations, professional ethics, responsibilities, liabilities, scope of practice, and role of the health and wellness coach. This course may be offered in a distance education format.",
       "description_source": "local catalog (representative/modal)",
       "subject": "EXSC",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "NUTR",
       "typical_units": 3.0,
       "confidence": 0.85,
@@ -365162,7 +365163,8 @@
       "_remint_from": "M-ID NUTR 116",
       "_subj4_remint_from": "EXSC M1043",
       "cte": true,
-      "_subj4_fold_from": "NUTR M1018"
+      "_subj4_fold_from": "NUTR M1018",
+      "_alignment_remint_from": "NUTR M1012"
     },
     "KINE M1454": {
       "course_id": "KINE M1454",
@@ -394480,8 +394482,8 @@
       "cte": true,
       "_subj4_fold_from": "CULN M1137"
     },
-    "NUTR M1011": {
-      "course_id": "NUTR M1011",
+    "FDNT M1056": {
+      "course_id": "FDNT M1056",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -394490,8 +394492,8 @@
       "description": "This course examines the nutrition required for optimal physical and mental development of children from conception through adolescence. Topics include the nutritional requirements of pregnant and lactating women, infants, children, and adolescents, social and cultural influences on optimal nutrition, and the ability to recognize and manage developmental feeding disorders.",
       "description_source": "local catalog (representative/modal)",
       "subject": "FN",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "FN",
       "typical_units": 3.0,
       "confidence": 0.68,
@@ -394517,7 +394519,8 @@
       "_remint_from": "M-ID FN 116",
       "_subj4_remint_from": "FN M1002",
       "cte": true,
-      "_subj4_fold_from": "NUTR M1016"
+      "_subj4_fold_from": "NUTR M1016",
+      "_alignment_remint_from": "NUTR M1011"
     },
     "FDNT M1011": {
       "course_id": "FDNT M1011",
@@ -394558,8 +394561,8 @@
       "cte": true,
       "_subj4_fold_from": "NUTR M1029"
     },
-    "NUTR M1018": {
-      "course_id": "NUTR M1018",
+    "FDNT M1063": {
+      "course_id": "FDNT M1063",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -394568,8 +394571,8 @@
       "description": "Fundamentals of nutrition needs for common and uncommon health conditions/diseases including lifecycle variations. Review of the Nutrition Care Process (NCP), scope of practice, screening for nutritional risk, assessment of dietary needs, medical nutrition therapy interventions, modified diets, meal planning, and menu writing.",
       "description_source": "local catalog (representative/modal)",
       "subject": "FN",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "FN",
       "typical_units": 3.0,
       "confidence": 0.85,
@@ -394599,10 +394602,11 @@
       "_remint_from": "M-ID FN 118",
       "_subj4_remint_from": "FN M1004",
       "cte": true,
-      "_subj4_fold_from": "NUTR M1032"
+      "_subj4_fold_from": "NUTR M1032",
+      "_alignment_remint_from": "NUTR M1018"
     },
-    "NUTR M1029": {
-      "course_id": "NUTR M1029",
+    "FDNT M1029": {
+      "course_id": "FDNT M1029",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -394611,8 +394615,8 @@
       "description": "Nutrition and diet patterns throughout the life cycle play an integral role in physical health, emotional health, and the prevention of chronic disease. Students will study this relationship through learning about nutrients and their interactions in the human body. Nutrition will be discussed through the lens of different social, psychological, and cultural considerations. This course includes consumer information on food distribution systems and food safety. Not open to students with credit in Food and Nutrition 40. (A, CSU, UC)",
       "description_source": "local catalog (representative/modal)",
       "subject": "FN",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "FN",
       "typical_units": 3.0,
       "confidence": 0.85,
@@ -394641,10 +394645,11 @@
       "_remint_from": "M-ID FN 120",
       "_subj4_remint_from": "FN M1005",
       "cte": true,
-      "_subj4_fold_from": "NUTR M1045"
+      "_subj4_fold_from": "NUTR M1045",
+      "_alignment_remint_from": "NUTR M1029"
     },
-    "NUTR M1023": {
-      "course_id": "NUTR M1023",
+    "FDNT M1023": {
+      "course_id": "FDNT M1023",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -394653,8 +394658,8 @@
       "description": "An applied nutrition course for individuals interested in health, fitness, and athletics. Principles of nutrition are studied and applied to the athlete and active individuals. Includes pre and post event food and fluid selection, nutrient requirements, supplements, muscle mass and body fat related to performance. Same as Health Education A136. Students completing Food and Nutrition A136 may not receive credit for Health Education A136. May be taken for grades or on a pass-no pass basis. Transfer Credit: CSU.",
       "description_source": "local catalog (representative/modal)",
       "subject": "FN",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "FN",
       "typical_units": 3.0,
       "confidence": 0.68,
@@ -394680,10 +394685,11 @@
       "_remint_from": "M-ID FN 122",
       "_subj4_remint_from": "FN M1006",
       "cte": true,
-      "_subj4_fold_from": "NUTR M1037"
+      "_subj4_fold_from": "NUTR M1037",
+      "_alignment_remint_from": "NUTR M1023"
     },
-    "NUTR M1017": {
-      "course_id": "NUTR M1017",
+    "FDNT M1062": {
+      "course_id": "FDNT M1062",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -394692,8 +394698,8 @@
       "description": "Nutrition is a key component of disease prevention and treatment. This course focuses on nutrition treatment therapies for a variety of disease conditions and abnormal metabolic states. Students will learn how to apply the nutrition care process to acute patient care settings. (A, CSU)",
       "description_source": "local catalog (representative/modal)",
       "subject": "FN",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "FN",
       "typical_units": 3.0,
       "confidence": 0.68,
@@ -394723,10 +394729,11 @@
       "_remint_from": "M-ID FN 126",
       "_subj4_remint_from": "FN M1007",
       "cte": true,
-      "_subj4_fold_from": "NUTR M1031"
+      "_subj4_fold_from": "NUTR M1031",
+      "_alignment_remint_from": "NUTR M1017"
     },
-    "NUTR M1037": {
-      "course_id": "NUTR M1037",
+    "FDNT M1037": {
+      "course_id": "FDNT M1037",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -394735,8 +394742,8 @@
       "description": "Women have unique nutrition needs, particularly in relation to certain life stages such as adolescence, pregnancy, breastfeeding, and menopause. In addition to life cycle nutrition, students will explore the relationship between food and the development of heart disease, obesity, breast cancer, eating disorders, osteoporosis and other nutrition related conditions in women. Research articles are used as the primary materials to study current trends. (A, CSU)",
       "description_source": "local catalog (representative/modal)",
       "subject": "FN",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "FN",
       "typical_units": 3.0,
       "confidence": 0.68,
@@ -394762,10 +394769,11 @@
       "_remint_from": "M-ID FN 130",
       "_subj4_remint_from": "FN M1008",
       "cte": true,
-      "_subj4_fold_from": "NUTR M1055"
+      "_subj4_fold_from": "NUTR M1055",
+      "_alignment_remint_from": "NUTR M1037"
     },
-    "NUTR M9003": {
-      "course_id": "NUTR M9003",
+    "FDNT M9029": {
+      "course_id": "FDNT M9029",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -394774,8 +394782,8 @@
       "description": null,
       "description_source": null,
       "subject": "FN",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "FN",
       "typical_units": 0.0,
       "confidence": 0.68,
@@ -394804,10 +394812,11 @@
       "_remint_from": "M-ID FN 106",
       "_subj4_remint_from": "FN M9001",
       "cte": true,
-      "_subj4_fold_from": "NUTR M9004"
+      "_subj4_fold_from": "NUTR M9004",
+      "_alignment_remint_from": "NUTR M9003"
     },
-    "NUTR M9006": {
-      "course_id": "NUTR M9006",
+    "FDNT M9032": {
+      "course_id": "FDNT M9032",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -394816,8 +394825,8 @@
       "description": null,
       "description_source": null,
       "subject": "FN",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "FN",
       "typical_units": 0.0,
       "confidence": 0.68,
@@ -394843,10 +394852,11 @@
       "_remint_from": "M-ID FN 110",
       "_subj4_remint_from": "FN M9002",
       "cte": true,
-      "_subj4_fold_from": "NUTR M9008"
+      "_subj4_fold_from": "NUTR M9008",
+      "_alignment_remint_from": "NUTR M9006"
     },
-    "NUTR M9004": {
-      "course_id": "NUTR M9004",
+    "FDNT M9030": {
+      "course_id": "FDNT M9030",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -394855,8 +394865,8 @@
       "description": null,
       "description_source": null,
       "subject": "FN",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "FN",
       "typical_units": 0.0,
       "confidence": 0.68,
@@ -394882,10 +394892,11 @@
       "_remint_from": "M-ID FN 114",
       "_subj4_remint_from": "FN M9003",
       "cte": true,
-      "_subj4_fold_from": "NUTR M9005"
+      "_subj4_fold_from": "NUTR M9005",
+      "_alignment_remint_from": "NUTR M9004"
     },
-    "NUTR M9005": {
-      "course_id": "NUTR M9005",
+    "FDNT M9031": {
+      "course_id": "FDNT M9031",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -394894,8 +394905,8 @@
       "description": null,
       "description_source": null,
       "subject": "FN",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "FN",
       "typical_units": 0.0,
       "confidence": 0.68,
@@ -394921,7 +394932,8 @@
       "_remint_from": "M-ID FN 124",
       "_subj4_remint_from": "FN M9004",
       "cte": true,
-      "_subj4_fold_from": "NUTR M9006"
+      "_subj4_fold_from": "NUTR M9006",
+      "_alignment_remint_from": "NUTR M9005"
     },
     "AGRI M1068": {
       "course_id": "AGRI M1068",
@@ -415759,8 +415771,8 @@
       "cte": false,
       "_subj4_fold_from": "HLTH M1108"
     },
-    "NUTR M1028": {
-      "course_id": "NUTR M1028",
+    "FDNT M1028": {
+      "course_id": "FDNT M1028",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -415769,8 +415781,8 @@
       "description": null,
       "description_source": null,
       "subject": "HE",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "FN",
       "typical_units": 2.0,
       "confidence": 0.68,
@@ -415799,7 +415811,8 @@
       "_remint_from": "M-ID FN 112",
       "_subj4_remint_from": "HE M1002",
       "cte": false,
-      "_subj4_fold_from": "NUTR M1043"
+      "_subj4_fold_from": "NUTR M1043",
+      "_alignment_remint_from": "NUTR M1028"
     },
     "HLTH M1136": {
       "course_id": "HLTH M1136",
@@ -417350,8 +417363,8 @@
       "cte": false,
       "_subj4_fold_from": "FLHE M1264"
     },
-    "NUTR M1003": {
-      "course_id": "NUTR M1003",
+    "FDNT M1049": {
+      "course_id": "FDNT M1049",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -417360,8 +417373,8 @@
       "description": "Current issues in nutrition are explored along with weekly meal preparation and analysis emphasizing maximum nutrient intake. Topics covered include energy needs, current research, eating disorders, supplements, functional foods, and food safety.",
       "description_source": "local catalog (representative/modal)",
       "subject": "HED",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "FN",
       "typical_units": 3.0,
       "confidence": 0.68,
@@ -417391,7 +417404,8 @@
       "_remint_from": "M-ID FN 100",
       "_subj4_remint_from": "HED M1001",
       "cte": true,
-      "_subj4_fold_from": "NUTR M1006"
+      "_subj4_fold_from": "NUTR M1006",
+      "_alignment_remint_from": "NUTR M1003"
     },
     "CRIM M1211": {
       "course_id": "CRIM M1211",
@@ -434292,8 +434306,8 @@
       "discipline_inferred_at": "2026-06-11",
       "_subj4_fold_from": "CULN M1072"
     },
-    "NUTR M1006": {
-      "course_id": "NUTR M1006",
+    "FDNT M1052": {
+      "course_id": "FDNT M1052",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -434302,8 +434316,8 @@
       "description": "Exploration of the fields of Dietetics and Food Science/Culinology, including trends, future projections and employment opportunities. Guest speakers and field trips to nutrition services in health care and community agencies and food manufacturing plants are included. Same as NC A100; students who complete FN A100 may not enroll in or receive credit for NC A100. Transfer Credit: CSU.",
       "description_source": "local catalog (representative/modal)",
       "subject": "HRC",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "FN",
       "typical_units": 2.0,
       "confidence": 0.68,
@@ -434332,10 +434346,11 @@
       "_remint_from": "M-ID FN 104",
       "_subj4_remint_from": "HRC M1001",
       "cte": true,
-      "_subj4_fold_from": "NUTR M1012"
+      "_subj4_fold_from": "NUTR M1012",
+      "_alignment_remint_from": "NUTR M1006"
     },
-    "NUTR M1027": {
-      "course_id": "NUTR M1027",
+    "FDNT M1027": {
+      "course_id": "FDNT M1027",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -434344,8 +434359,8 @@
       "description": "Food science is the scientific study of raw food materials and their behavior during formulation, processing, packaging, and storage, and includes evaluation as consumer food products. Meets the AS Laboratory Science requirement. Transfer Credit: CSU.",
       "description_source": "local catalog (representative/modal)",
       "subject": "HRC",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "FN",
       "typical_units": 3.0,
       "confidence": 0.68,
@@ -434371,7 +434386,8 @@
       "_remint_from": "M-ID FN 108",
       "_subj4_remint_from": "HRC M1002",
       "cte": true,
-      "_subj4_fold_from": "NUTR M1042"
+      "_subj4_fold_from": "NUTR M1042",
+      "_alignment_remint_from": "NUTR M1027"
     },
     "CULN M1148": {
       "course_id": "CULN M1148",
@@ -434415,8 +434431,8 @@
       "cte": true,
       "_subj4_fold_from": "CULN M1153"
     },
-    "NUTR M1005": {
-      "course_id": "NUTR M1005",
+    "FDNT M1051": {
+      "course_id": "FDNT M1051",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -434425,8 +434441,8 @@
       "description": "Students will learn how to prepare food using fresh ingredients and basic cooking techniques. Diverse topics of interest such as personal experiences and cultural traditions, nutrition, consumerism, entertaining, and health and safety will be discussed.",
       "description_source": "local catalog (representative/modal)",
       "subject": "HRM",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "FN",
       "typical_units": 3.0,
       "confidence": 0.68,
@@ -434455,7 +434471,8 @@
       "_remint_from": "M-ID FN 102",
       "_subj4_remint_from": "HRM M1001",
       "cte": true,
-      "_subj4_fold_from": "NUTR M1009"
+      "_subj4_fold_from": "NUTR M1009",
+      "_alignment_remint_from": "NUTR M1005"
     },
     "WEXP M1002": {
       "course_id": "WEXP M1002",
@@ -558259,8 +558276,8 @@
       "cte": true,
       "_subj4_fold_from": "CULN M1090"
     },
-    "NUTR M1013": {
-      "course_id": "NUTR M1013",
+    "FDNT M1058": {
+      "course_id": "FDNT M1058",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -558269,8 +558286,8 @@
       "description": "Principles and techniques of vegetarian food preparation and investigation of issues related to vegetarian eating practices. Includes laboratory experience in preparation of vegetarian foods and meals. Off-campus meetings may be required.",
       "description_source": "local catalog (representative/modal)",
       "subject": "NF",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "FN",
       "typical_units": 1.0,
       "confidence": 0.85,
@@ -558296,7 +558313,8 @@
       "_remint_from": "M-ID FN 128",
       "_subj4_remint_from": "NF M1003",
       "cte": true,
-      "_subj4_fold_from": "NUTR M1023"
+      "_subj4_fold_from": "NUTR M1023",
+      "_alignment_remint_from": "NUTR M1013"
     },
     "GEOG M9006": {
       "course_id": "GEOG M9006",
@@ -564882,8 +564900,8 @@
       "cte": true,
       "_subj4_fold_from": "NUTR M1022"
     },
-    "NUTR M1001": {
-      "course_id": "NUTR M1001",
+    "FDNT M1042": {
+      "course_id": "FDNT M1042",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -564892,8 +564910,8 @@
       "description": null,
       "description_source": null,
       "subject": "NUTR",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "NUTR",
       "typical_units": 3.0,
       "confidence": 0.68,
@@ -564919,7 +564937,8 @@
       "_remint_from": "M-ID NUTR 152",
       "_subj4_remint_from": "NUTR M1001",
       "cte": true,
-      "_subj4_fold_from": "NUTR M1002"
+      "_subj4_fold_from": "NUTR M1002",
+      "_alignment_remint_from": "NUTR M1001"
     },
     "FDNT M1001": {
       "course_id": "FDNT M1001",
@@ -564963,8 +564982,8 @@
       "cte": true,
       "_subj4_fold_from": "NUTR M1001"
     },
-    "NUTR M1002": {
-      "course_id": "NUTR M1002",
+    "FDNT M1047": {
+      "course_id": "FDNT M1047",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -564973,8 +564992,8 @@
       "description": "This course helps students enhance their coaching skills with practice coaching sessions and instructor_x000D_ feedback. It also covers the ethical and legal implications of health and wellness coaching. This course_x000D_ is designed to provide students in the Health and Wellness Coaching Program with practical experience_x000D_ in the field of wellness coaching.",
       "description_source": "local catalog (representative/modal)",
       "subject": "NUTR",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "NUTR",
       "typical_units": 1.0,
       "confidence": 0.85,
@@ -565004,10 +565023,11 @@
       "_remint_from": "M-ID NUTR 106",
       "_subj4_remint_from": "NUTR M1003",
       "cte": true,
-      "_subj4_fold_from": "NUTR M1005"
+      "_subj4_fold_from": "NUTR M1005",
+      "_alignment_remint_from": "NUTR M1002"
     },
-    "NUTR M1007": {
-      "course_id": "NUTR M1007",
+    "FDNT M1053": {
+      "course_id": "FDNT M1053",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -565016,8 +565036,8 @@
       "description": "Explore the field of nutrition and dietetics including employment opportunities, internship options, networking tactics, resume building, and trends in the field that may impact future careers. Guest speakers and field trips to nutrition service sites in health care and community agencies are included. Student will identify specific career opportunities of interest in the field of nutrition and dietetics (formerly FN 165).",
       "description_source": "local catalog (representative/modal)",
       "subject": "NUTR",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "NUTR",
       "typical_units": 1.0,
       "confidence": 0.68,
@@ -565046,10 +565066,11 @@
       "_remint_from": "M-ID NUTR 108",
       "_subj4_remint_from": "NUTR M1004",
       "cte": true,
-      "_subj4_fold_from": "NUTR M1013"
+      "_subj4_fold_from": "NUTR M1013",
+      "_alignment_remint_from": "NUTR M1007"
     },
-    "NUTR M1008": {
-      "course_id": "NUTR M1008",
+    "FDNT M1054": {
+      "course_id": "FDNT M1054",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -565058,8 +565079,8 @@
       "description": "36 hours lecture per term. This course will explore careers in nutrition and foods such as dietetics, culinary arts, hospitality, and food science. Trends, future employment projections, and employment opportunities will also be emphasized. (CSU) (Degree Credit)",
       "description_source": "local catalog (representative/modal)",
       "subject": "NUTR",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "NUTR",
       "typical_units": 2.0,
       "confidence": 0.68,
@@ -565085,7 +565106,8 @@
       "_remint_from": "M-ID NUTR 110",
       "_subj4_remint_from": "NUTR M1005",
       "cte": true,
-      "_subj4_fold_from": "NUTR M1014"
+      "_subj4_fold_from": "NUTR M1014",
+      "_alignment_remint_from": "NUTR M1008"
     },
     "FDNT M1004": {
       "course_id": "FDNT M1004",
@@ -565129,8 +565151,8 @@
       "cte": true,
       "_subj4_fold_from": "NUTR M1007"
     },
-    "NUTR M1014": {
-      "course_id": "NUTR M1014",
+    "FDNT M1059": {
+      "course_id": "FDNT M1059",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -565139,8 +565161,8 @@
       "description": "Evaluates the historical and cultural aspects of traditional and contemporary food habits of Native Americans, European Americans, African Americans, Asian Americans, and Hispanic Americans. Examines the influence of industry, technology, politics, the economy, and religion on food patterns. Reviews the role of ethnic families, their therapeutic uses of food, and their nutrition education practices.. Applies to Associate Degree. Transfer Credit: CSU; UC",
       "description_source": "local catalog (representative/modal)",
       "subject": "NUTR",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "NUTR",
       "typical_units": 3.0,
       "confidence": 0.72,
@@ -565170,10 +565192,11 @@
       "_remint_from": "M-ID NUTR 112",
       "_subj4_remint_from": "NUTR M1007",
       "cte": true,
-      "_subj4_fold_from": "NUTR M1024"
+      "_subj4_fold_from": "NUTR M1024",
+      "_alignment_remint_from": "NUTR M1014"
     },
-    "NUTR M1015": {
-      "course_id": "NUTR M1015",
+    "FDNT M1060": {
+      "course_id": "FDNT M1060",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -565182,8 +565205,8 @@
       "description": "Students will explore the typical food customs and meal patterns of various cultures throughout the world. Students will be introduced to the social, religious, economic, and aesthetic significance of these cultures and examine how geographical, agricultural, and socioeconomic factors influence their nutritional status. Students will also explore the preparation and evaluation of the food products.",
       "description_source": "local catalog (representative/modal)",
       "subject": "NUTRI",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "NUTRI",
       "typical_units": 3.0,
       "confidence": 0.85,
@@ -565209,10 +565232,11 @@
       "_remint_from": "M-ID NUTRI 100",
       "_subj4_remint_from": "NUTR M1008",
       "cte": true,
-      "_subj4_fold_from": "NUTR M1025"
+      "_subj4_fold_from": "NUTR M1025",
+      "_alignment_remint_from": "NUTR M1015"
     },
-    "NUTR M1019": {
-      "course_id": "NUTR M1019",
+    "FDNT M1064": {
+      "course_id": "FDNT M1064",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -565221,8 +565245,8 @@
       "description": "Experimental Offering in Nutrition and Foods",
       "description_source": "local catalog (representative/modal)",
       "subject": "NUTRI",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "NUTRI",
       "typical_units": 0.5,
       "confidence": 0.85,
@@ -565248,10 +565272,11 @@
       "_remint_from": "M-ID NUTRI 102",
       "_subj4_remint_from": "NUTR M1009",
       "cte": true,
-      "_subj4_fold_from": "NUTR M1033"
+      "_subj4_fold_from": "NUTR M1033",
+      "_alignment_remint_from": "NUTR M1019"
     },
-    "NUTR M1016": {
-      "course_id": "NUTR M1016",
+    "FDNT M1061": {
+      "course_id": "FDNT M1061",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -565260,8 +565285,8 @@
       "description": "Explores ways in which regional culinary traditions are shaped by many factors, including history, geography, migrations, social customs, technology, and globalization. [D; CSU]",
       "description_source": "local catalog (representative/modal)",
       "subject": "NUTR",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "NUTR",
       "typical_units": 3.0,
       "confidence": 0.72,
@@ -565293,7 +565318,8 @@
       "_remint_from": "M-ID NUTR 114",
       "_subj4_remint_from": "NUTR M1010",
       "cte": true,
-      "_subj4_fold_from": "NUTR M1026"
+      "_subj4_fold_from": "NUTR M1026",
+      "_alignment_remint_from": "NUTR M1016"
     },
     "CULN M1129": {
       "course_id": "CULN M1129",
@@ -565401,8 +565427,8 @@
       "cte": true,
       "_subj4_fold_from": "NUTR M1040"
     },
-    "NUTR M1026": {
-      "course_id": "NUTR M1026",
+    "FDNT M1026": {
+      "course_id": "FDNT M1026",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -565411,8 +565437,8 @@
       "description": "A comprehensive study of the basic principles and techniques involved in professional food preparation. The principles covered within this course will serve as the foundation for all other lab courses. Topics will including: work simplification, measurements/conversions, knife skills, soups, sauces, salads, heat transfer methods, equipment recognition, cleaning, use of hand tools/measuring devices, as well as identifying, cleaning, and cutting raw materials. This course will examine the reasons for procedures and phenomena and the prevention and/or correction of cooking failures. The laboratory emphasizes theory application through the preparation of soups, sauces, salads, vegetables, meats, poultry, seafood, breakfast dishes, grains, pastas and potatoes. This course may require out of class time attendance at events (all required events will be listed in the course syllabus).",
       "description_source": "local catalog (representative/modal)",
       "subject": "NUTRI",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "NUTRI",
       "typical_units": 4.0,
       "confidence": 0.85,
@@ -565442,7 +565468,8 @@
       "_remint_from": "M-ID NUTRI 104",
       "_subj4_remint_from": "NUTR M1013",
       "cte": true,
-      "_subj4_fold_from": "NUTR M1041"
+      "_subj4_fold_from": "NUTR M1041",
+      "_alignment_remint_from": "NUTR M1026"
     },
     "HLTH M1121": {
       "course_id": "HLTH M1121",
@@ -565483,8 +565510,8 @@
       "cte": true,
       "_subj4_fold_from": "HLTH M1132"
     },
-    "NUTR M1030": {
-      "course_id": "NUTR M1030",
+    "FDNT M1030": {
+      "course_id": "FDNT M1030",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -565493,8 +565520,8 @@
       "description": "Principles of nutritional science: Nutrients and their chemical and physiological roles in metabolism; nutrient requirements of humans. Not open for credit to students who have completed or are currently enrolled in NUTR 010, BIOL 031",
       "description_source": "local catalog (representative/modal)",
       "subject": "NUTR",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "NUTR",
       "typical_units": 3.0,
       "confidence": 0.85,
@@ -565524,10 +565551,11 @@
       "_remint_from": "M-ID NUTR 118",
       "_subj4_remint_from": "NUTR M1015",
       "cte": false,
-      "_subj4_fold_from": "NUTR M1046"
+      "_subj4_fold_from": "NUTR M1046",
+      "_alignment_remint_from": "NUTR M1030"
     },
-    "NUTR M1024": {
-      "course_id": "NUTR M1024",
+    "FDNT M1024": {
+      "course_id": "FDNT M1024",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -565536,8 +565564,8 @@
       "description": null,
       "description_source": null,
       "subject": "NUTR",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "NUTR",
       "typical_units": 1.0,
       "confidence": 0.68,
@@ -565563,10 +565591,11 @@
       "_remint_from": "M-ID NUTR 122",
       "_subj4_remint_from": "NUTR M1016",
       "cte": true,
-      "_subj4_fold_from": "NUTR M1038"
+      "_subj4_fold_from": "NUTR M1038",
+      "_alignment_remint_from": "NUTR M1024"
     },
-    "NUTR M1031": {
-      "course_id": "NUTR M1031",
+    "FDNT M1031": {
+      "course_id": "FDNT M1031",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -565575,8 +565604,8 @@
       "description": "The principles of nutrition and dietetics as they relate to medical nutrition therapy (MNT), a nutrition-based treatment for health conditions and diseases. Nutrition assessment and interventions are studied and planned.",
       "description_source": "local catalog (representative/modal)",
       "subject": "NUTR",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "NUTR",
       "typical_units": 3.0,
       "confidence": 0.85,
@@ -565605,10 +565634,11 @@
       "_remint_from": "M-ID NUTR 124",
       "_subj4_remint_from": "NUTR M1017",
       "cte": true,
-      "_subj4_fold_from": "NUTR M1047"
+      "_subj4_fold_from": "NUTR M1047",
+      "_alignment_remint_from": "NUTR M1031"
     },
-    "NUTR M1032": {
-      "course_id": "NUTR M1032",
+    "FDNT M1032": {
+      "course_id": "FDNT M1032",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -565617,8 +565647,8 @@
       "description": "Scientific concepts of nutrition related to the function of nutrients in basic life processes and current health issues with emphasis on dietary requirements of the individual. Students will explore scientific inquiry and apply critical thinking and scientific principles to analyze and evaluate nutrition information while learning foundational principles of nutrition science. Integrates concepts from biology, biochemistry, microbiology, physiology, anatomy, and psychology to learn about the interactions between dietary intake and the human body. Topics include functions and sources of nutrients; Dietary Guidelines and current nutrition recommendations; digestion, absorption, and metabolism of nutrients; and health, fitness, and disease. Students will utilize an information database to analyze dietary intake.",
       "description_source": "local catalog (representative/modal)",
       "subject": "NUTR",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "NUTR",
       "typical_units": 3.0,
       "confidence": 0.85,
@@ -565644,10 +565674,11 @@
       "_remint_from": "M-ID NUTR 126",
       "_subj4_remint_from": "NUTR M1018",
       "cte": true,
-      "_subj4_fold_from": "NUTR M1048"
+      "_subj4_fold_from": "NUTR M1048",
+      "_alignment_remint_from": "NUTR M1032"
     },
-    "NUTR M1034": {
-      "course_id": "NUTR M1034",
+    "FDNT M1034": {
+      "course_id": "FDNT M1034",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -565656,8 +565687,8 @@
       "description": "This course is designed to meet the needs of the Allied Health student and the general education studentÃ‚Â alike. The major aim of this course is to help the student acquire relevant information about nutrition whichÃ‚Â they can use professionally and/or personally. The course will cover the practical aspects of normal nutrition,Ã‚Â ways to promote sound eating habits throughout the life cycle, and physiological contribution nutrients make Ã‚Â to body structure and function. This course is also listed as AH 11. PREREQUISITE: Eligible for English 1A.Ã‚Â ADVISORY: Chemistry 30A and Mathematics 205Ã‚Â",
       "description_source": "local catalog (representative/modal)",
       "subject": "NUTR",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "NUTR",
       "typical_units": 3.0,
       "confidence": 0.72,
@@ -565701,7 +565732,8 @@
       "_remint_from": "M-ID NUTR 130",
       "_subj4_remint_from": "NUTR M1020",
       "cte": true,
-      "_subj4_fold_from": "NUTR M1051"
+      "_subj4_fold_from": "NUTR M1051",
+      "_alignment_remint_from": "NUTR M1034"
     },
     "HLTH M1119": {
       "course_id": "HLTH M1119",
@@ -565748,8 +565780,8 @@
       "cte": false,
       "_subj4_fold_from": "HLTH M1129"
     },
-    "NUTR M1021": {
-      "course_id": "NUTR M1021",
+    "FDNT M1065": {
+      "course_id": "FDNT M1065",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -565758,8 +565790,8 @@
       "description": "Presents a specialized course relating nutrition to physical performance and fitness. Explores current trends, controversies, and professional publications. Provides opportunity to analyze various dietary recommendations and relate them to specific physical needs.",
       "description_source": "local catalog (representative/modal)",
       "subject": "NUTR",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "NUTR",
       "typical_units": 3.0,
       "confidence": 0.68,
@@ -565788,10 +565820,11 @@
       "_remint_from": "M-ID NUTR 132",
       "_subj4_remint_from": "NUTR M1023",
       "cte": true,
-      "_subj4_fold_from": "NUTR M1035"
+      "_subj4_fold_from": "NUTR M1035",
+      "_alignment_remint_from": "NUTR M1021"
     },
-    "NUTR M1022": {
-      "course_id": "NUTR M1022",
+    "FDNT M1066": {
+      "course_id": "FDNT M1066",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -565800,8 +565833,8 @@
       "description": "Investigates the effects of nutrition and various dietary regimens on athletic performance, physical fitness and general health. Compares the physiological effects of optimal nutrition vs. inadequate nutrition for the general population as well as athletes. Cultural, sociological and psychological influences will be examined. Discussion of Ã¢â‚¬Å“fadsÃ¢â‚¬Â and dietary supplements is included.",
       "description_source": "local catalog (representative/modal)",
       "subject": "NUTR",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "NUTR",
       "typical_units": 3.0,
       "confidence": 0.68,
@@ -565830,7 +565863,8 @@
       "_remint_from": "M-ID NUTR 134",
       "_subj4_remint_from": "NUTR M1024",
       "cte": false,
-      "_subj4_fold_from": "NUTR M1036"
+      "_subj4_fold_from": "NUTR M1036",
+      "_alignment_remint_from": "NUTR M1022"
     },
     "FDNT M1002": {
       "course_id": "FDNT M1002",
@@ -565874,8 +565908,8 @@
       "cte": true,
       "_subj4_fold_from": "NUTR M1003"
     },
-    "NUTR M1035": {
-      "course_id": "NUTR M1035",
+    "FDNT M1035": {
+      "course_id": "FDNT M1035",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -565884,8 +565918,8 @@
       "description": "This course will explore nutrition and fitness with emphasis on the relationship among nutrition, physical activity, lifelong fitness, and health. Credit will be awarded for NUTRI 302 or KINES 418 but not both.",
       "description_source": "local catalog (representative/modal)",
       "subject": "NUTRI",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "NUTRI",
       "typical_units": 3.0,
       "confidence": 0.85,
@@ -565914,10 +565948,11 @@
       "_remint_from": "M-ID NUTRI 106",
       "_subj4_remint_from": "NUTR M1026",
       "cte": true,
-      "_subj4_fold_from": "NUTR M1052"
+      "_subj4_fold_from": "NUTR M1052",
+      "_alignment_remint_from": "NUTR M1035"
     },
-    "NUTR M1033": {
-      "course_id": "NUTR M1033",
+    "FDNT M1033": {
+      "course_id": "FDNT M1033",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -565926,8 +565961,8 @@
       "description": "This course is a study of the nutritive needs of persons at various stages of the life cycle with emphasis on special periods such as pregnancy, preschool, adolescence, and aging. This course is particularly helpful to Kinesiology and Early Childhood Education majors as well as those working in social agencies, such as nursing and gerontology.",
       "description_source": "local catalog (representative/modal)",
       "subject": "NUTRI",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "NUTRI",
       "typical_units": 3.0,
       "confidence": 0.85,
@@ -565953,10 +565988,11 @@
       "_remint_from": "M-ID NUTRI 108",
       "_subj4_remint_from": "NUTR M1027",
       "cte": true,
-      "_subj4_fold_from": "NUTR M1049"
+      "_subj4_fold_from": "NUTR M1049",
+      "_alignment_remint_from": "NUTR M1033"
     },
-    "NUTR M1004": {
-      "course_id": "NUTR M1004",
+    "FDNT M1050": {
+      "course_id": "FDNT M1050",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -565965,8 +566001,8 @@
       "description": "Identifies the science and history of plant-based nutrition, health promotion, and environmental sustainability. Examines the sources and functions of plant phytonutrients and fibers, and how the body utilizes and benefits from them. Describes how food choice can promote sustainable food industry, public policy, health, and equity. Explores plant-based sustainable eating from meal planning to shopping, storage, and preparation.",
       "description_source": "local catalog (representative/modal)",
       "subject": "NUTRI",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "NUTR",
       "typical_units": 3.0,
       "confidence": 0.68,
@@ -565992,10 +566028,11 @@
       "_remint_from": "M-ID NUTR 136",
       "_subj4_remint_from": "NUTR M1028",
       "cte": true,
-      "_subj4_fold_from": "NUTR M1008"
+      "_subj4_fold_from": "NUTR M1008",
+      "_alignment_remint_from": "NUTR M1004"
     },
-    "NUTR M1036": {
-      "course_id": "NUTR M1036",
+    "FDNT M1036": {
+      "course_id": "FDNT M1036",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -566004,8 +566041,8 @@
       "description": null,
       "description_source": null,
       "subject": "NUTR",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "NUTR",
       "typical_units": 1.0,
       "confidence": 0.85,
@@ -566031,10 +566068,11 @@
       "_remint_from": "M-ID NUTR 138",
       "_subj4_remint_from": "NUTR M1029",
       "cte": true,
-      "_subj4_fold_from": "NUTR M1053"
+      "_subj4_fold_from": "NUTR M1053",
+      "_alignment_remint_from": "NUTR M1036"
     },
-    "NUTR M1025": {
-      "course_id": "NUTR M1025",
+    "FDNT M1025": {
+      "course_id": "FDNT M1025",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -566043,8 +566081,8 @@
       "description": "Application of food science principles with emphasis on ingredient function and interaction, food preparation techniques, sensory evaluation standards, food safety and sanitation, and nutrient composition of food.",
       "description_source": "local catalog (representative/modal)",
       "subject": "NUTR",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "NUTR",
       "typical_units": 3.0,
       "confidence": 0.68,
@@ -566070,10 +566108,11 @@
       "_remint_from": "M-ID NUTR 140",
       "_subj4_remint_from": "NUTR M1030",
       "cte": true,
-      "_subj4_fold_from": "NUTR M1039"
+      "_subj4_fold_from": "NUTR M1039",
+      "_alignment_remint_from": "NUTR M1025"
     },
-    "NUTR M1009": {
-      "course_id": "NUTR M1009",
+    "FDNT M1055": {
+      "course_id": "FDNT M1055",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -566082,8 +566121,8 @@
       "description": "Formerly F_N 253. This course will address the required standards of sanitation and safety in the handling, preparation, and serving of food to protect the public's health. Students will be prepared to take the ServSafe Food Protection Manager Certification Examination at the conclusion of the course. This Certificate required for those working in a food service and healthcare industries and meets the California State Health Code.",
       "description_source": "local catalog (representative/modal)",
       "subject": "NUTR",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "NUTR",
       "typical_units": 1.0,
       "confidence": 0.68,
@@ -566109,10 +566148,11 @@
       "_remint_from": "M-ID NUTR 142",
       "_subj4_remint_from": "NUTR M1031",
       "cte": true,
-      "_subj4_fold_from": "NUTR M1015"
+      "_subj4_fold_from": "NUTR M1015",
+      "_alignment_remint_from": "NUTR M1009"
     },
-    "NUTR M1038": {
-      "course_id": "NUTR M1038",
+    "FDNT M1038": {
+      "course_id": "FDNT M1038",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -566121,8 +566161,8 @@
       "description": "This course presents the principles of optimal nutrition for enhancing physical activity, athletic performance, and recovery from exercise. The course topics include the appropriate selection of foods, fluids, supplements, and the timing of nutrition for optimal health and performance. Topics are based on the latest peer-reviewed scientific literature, evidence-based analysis, and scientific data on energy needs, body composition, nutrient needs, fluid requirements, and special nutrition requirements during training and competition. This course also includes the use of sports supplements and specific recommendations for vegetarian or vegan athletes. This course draws on recommendations from the American Dietetic Association, the American College of Sports Medicine, and the USDA.",
       "description_source": "local catalog (representative/modal)",
       "subject": "NUTR",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "NUTR",
       "typical_units": 3.0,
       "confidence": 0.72,
@@ -566156,10 +566196,11 @@
       "_remint_from": "M-ID NUTR 144",
       "_subj4_remint_from": "NUTR M1032",
       "cte": true,
-      "_subj4_fold_from": "NUTR M1056"
+      "_subj4_fold_from": "NUTR M1056",
+      "_alignment_remint_from": "NUTR M1038"
     },
-    "NUTR M1039": {
-      "course_id": "NUTR M1039",
+    "FDNT M1039": {
+      "course_id": "FDNT M1039",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -566168,8 +566209,8 @@
       "description": "Topics in Nutrition. See Class Schedule for specific topics offered. Course title will designate subject covered.",
       "description_source": "local catalog (representative/modal)",
       "subject": "NUTR",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "NUTR",
       "typical_units": 0.3,
       "confidence": 0.85,
@@ -566198,10 +566239,11 @@
       "_remint_from": "M-ID NUTR 146",
       "_subj4_remint_from": "NUTR M1033",
       "cte": true,
-      "_subj4_fold_from": "NUTR M1057"
+      "_subj4_fold_from": "NUTR M1057",
+      "_alignment_remint_from": "NUTR M1039"
     },
-    "NUTR M9007": {
-      "course_id": "NUTR M9007",
+    "FDNT M9033": {
+      "course_id": "FDNT M9033",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -566210,8 +566252,8 @@
       "description": "Integrative nutrition combines principles of medical nutrition therapy with integrative and functional lifestyle medicine to provide the science and application behind healthy lifestyle interventions for the prevention and treatment of chronic, lifestyle-related diseases such as cardiovascular disease, diabetes, cancer, and other chronic conditions. Lifestyle medicine connects the science of physical activity, nutrition, stress resiliency, sleep hygiene, and behavior change to the advancement of the total person's mental, emotional, and physical well-being. This course offers students the evidence-based knowledge and practical strategies to instill healthy lifestyle behaviors in clients and patients. This course is intended for students completing certification in the Integrative Health and Wellness Coaching Program. This course may be offered in a distance education format.",
       "description_source": "local catalog (representative/modal)",
       "subject": "NUTR",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "NUTR",
       "typical_units": 0.0,
       "confidence": 0.68,
@@ -566240,10 +566282,11 @@
       "_remint_from": "M-ID NUTR 120",
       "_subj4_remint_from": "NUTR M9001",
       "cte": true,
-      "_subj4_fold_from": "NUTR M9010"
+      "_subj4_fold_from": "NUTR M9010",
+      "_alignment_remint_from": "NUTR M9007"
     },
-    "NUTR M9002": {
-      "course_id": "NUTR M9002",
+    "FDNT M9028": {
+      "course_id": "FDNT M9028",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -566252,8 +566295,8 @@
       "description": "Mother and child nutrition, from conception, to newborn through toddlerhood, to teenager. Methods to encourage positive eating behaviors that promote short and long-term health and prevention of chronic diseases. Topics include basic nutrition principles, prenatal nutrition, breastfeeding, child nutrition, planning healthy meals and snacks, food allergies, food safety, physical activity for children, childhood obesity, cardiovascular disease, diabetes, cancer and life expectancy.",
       "description_source": "local catalog (representative/modal)",
       "subject": "NUTR",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "NUTR",
       "typical_units": 0.0,
       "confidence": 0.68,
@@ -566279,10 +566322,11 @@
       "_remint_from": "M-ID NUTR 128",
       "_subj4_remint_from": "NUTR M9002",
       "cte": true,
-      "_subj4_fold_from": "NUTR M9003"
+      "_subj4_fold_from": "NUTR M9003",
+      "_alignment_remint_from": "NUTR M9002"
     },
-    "NUTR M9001": {
-      "course_id": "NUTR M9001",
+    "FDNT M9027": {
+      "course_id": "FDNT M9027",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -566291,8 +566335,8 @@
       "description": "This course examines the underlying physiology and behavioral aspects of weight regulation. It addresses the basic principles of weight management, nutrition, exercise, and behavior in an integrated approach. It takes a multifaceted, public health approach to examine all factors contributing to weight management issues including detailed coverage of treatment approaches and prevention strategies. This course may be offered in a distance education format.",
       "description_source": "local catalog (representative/modal)",
       "subject": "NUTR",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": "NUTR",
       "typical_units": 0.0,
       "confidence": 0.68,
@@ -566321,7 +566365,8 @@
       "_remint_from": "M-ID NUTR 148",
       "_subj4_remint_from": "NUTR M9003",
       "cte": true,
-      "_subj4_fold_from": "NUTR M9002"
+      "_subj4_fold_from": "NUTR M9002",
+      "_alignment_remint_from": "NUTR M9001"
     },
     "VNRS M1015": {
       "course_id": "VNRS M1015",
@@ -670707,8 +670752,8 @@
       "cross_listed_disciplines": "Administration of Justice, Agricultural Production, Agriculture, Air Conditioning, Refrigeration, Heating, Anthropology, Architecture, Art, Auto Body Technology, Automotive Technology, Aviation, Biological Sciences, Biotechnology, Broadcasting Technology, Building Codes and Regulations, Business, Cabinet Making, Carpentry, Chemistry, Child Development/Early Childhood Education, Commercial Music, Communication Studies, Computer Information Systems, Computer Science, Construction Management, Construction Technology, Cosmetology, Counseling, Culinary Arts/Food Technology, Dance, Dental Technology, Diesel Mechanics, Dietetics/Nutritional Science, Drafting/CADD, Drama/Theater Arts, Earth Science, Economics, Education, Electricity, Electronics, Emergency Medical Technologies, Engineering, Engineering Technology, English, English as a Second Language, Environmental Technologies, Ethnic Studies, Fashion and Related Technologies, Film and Media Studies, Fire Technology, Foreign Languages, Forestry/Natural Resources, Geography, Gerontology, Graphic Arts, Health, Health Care Ancillaries, History, Industrial Maintenance, Industrial Relations, Industrial Safety, Interior Design, Journalism, Kinesiology, Law, Legal Assisting, Library Science, Library Technology, Machine Tool Technology, Management, Manufacturing Technology, Marketing, Mathematics, Media Production, Multimedia, Music, Native American/American Indian Studies, Nursing, Office Technologies, Ornamental Horticulture, Philosophy, Photography, Physical Education, Physical Sciences, Physics/Astronomy, Plumbing, Political Science, Psychiatric Technician, Psychology, Public Safety, Radiological Technology, Real Estate, Respiratory Technologies, Restaurant Management, Sign Language, American, Sign Language/ English Interpreting, Sociology, Stagecraft, Theater Arts, Transportation, Vocational, Welding, Women’s Studies",
       "_subj4_fold_from": "WKEX M1001"
     },
-    "AERO M1001": {
-      "course_id": "AERO M1001",
+    "MILS M1001": {
+      "course_id": "MILS M1001",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -670717,8 +670762,8 @@
       "description": null,
       "description_source": null,
       "subject": "AEROST",
-      "subject_4letter": "AERO",
-      "discipline": null,
+      "subject_4letter": "MILS",
+      "discipline": "Military Studies",
       "discipline_provisional": null,
       "typical_units": 1.0,
       "confidence": null,
@@ -670746,7 +670791,8 @@
       "_machine_cluster_members": [
         "AERO M10BA",
         "AERO M10BB"
-      ]
+      ],
+      "_alignment_remint_from": "AERO M1001"
     },
     "AFXX M1001": {
       "course_id": "AFXX M1001",
@@ -818238,8 +818284,8 @@
         "PHMT M90AO"
       ]
     },
-    "NUTR M1040": {
-      "course_id": "NUTR M1040",
+    "FDNT M1040": {
+      "course_id": "FDNT M1040",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -818248,8 +818294,8 @@
       "description": null,
       "description_source": null,
       "subject": "NUTR",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": null,
       "typical_units": 2.0,
       "confidence": null,
@@ -818277,10 +818323,11 @@
       "_machine_cluster_members": [
         "NUTR M10AQ",
         "NUTR M10DA"
-      ]
+      ],
+      "_alignment_remint_from": "NUTR M1040"
     },
-    "NUTR M1041": {
-      "course_id": "NUTR M1041",
+    "FDNT M1041": {
+      "course_id": "FDNT M1041",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -818289,8 +818336,8 @@
       "description": null,
       "description_source": null,
       "subject": "NUTRI",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": null,
       "typical_units": 3.0,
       "confidence": null,
@@ -818320,7 +818367,8 @@
         "NUTR M10AS",
         "NUTR M10AU",
         "NUTR M10AV"
-      ]
+      ],
+      "_alignment_remint_from": "NUTR M1041"
     },
     "FASH M1136": {
       "course_id": "FASH M1136",
@@ -818619,8 +818667,8 @@
       ],
       "_prefix_fold_from": "NUTR M1048"
     },
-    "NUTR M9008": {
-      "course_id": "NUTR M9008",
+    "FDNT M9034": {
+      "course_id": "FDNT M9034",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -818629,8 +818677,8 @@
       "description": null,
       "description_source": null,
       "subject": "FN",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": null,
       "typical_units": 0.0,
       "confidence": null,
@@ -818658,10 +818706,11 @@
       "_machine_cluster_members": [
         "NUTR M90EO",
         "NUTR M90EP"
-      ]
+      ],
+      "_alignment_remint_from": "NUTR M9008"
     },
-    "NUTR M9009": {
-      "course_id": "NUTR M9009",
+    "FDNT M9035": {
+      "course_id": "FDNT M9035",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -818670,8 +818719,8 @@
       "description": null,
       "description_source": null,
       "subject": "FN",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": null,
       "typical_units": 0.0,
       "confidence": null,
@@ -818699,10 +818748,11 @@
       "_machine_cluster_members": [
         "NUTR M90BL",
         "NUTR M90BM"
-      ]
+      ],
+      "_alignment_remint_from": "NUTR M9009"
     },
-    "NUTR M9010": {
-      "course_id": "NUTR M9010",
+    "FDNT M9036": {
+      "course_id": "FDNT M9036",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -818711,8 +818761,8 @@
       "description": null,
       "description_source": null,
       "subject": "FN",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": null,
       "typical_units": 0.0,
       "confidence": null,
@@ -818741,10 +818791,11 @@
       "_machine_cluster_members": [
         "NUTR M90CA",
         "NUTR M90CB"
-      ]
+      ],
+      "_alignment_remint_from": "NUTR M9010"
     },
-    "NUTR M9011": {
-      "course_id": "NUTR M9011",
+    "FDNT M9037": {
+      "course_id": "FDNT M9037",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -818753,8 +818804,8 @@
       "description": null,
       "description_source": null,
       "subject": "FN",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": null,
       "typical_units": 0.0,
       "confidence": null,
@@ -818782,10 +818833,11 @@
       "_machine_cluster_members": [
         "NUTR M90BW",
         "NUTR M90BX"
-      ]
+      ],
+      "_alignment_remint_from": "NUTR M9011"
     },
-    "NUTR M9012": {
-      "course_id": "NUTR M9012",
+    "FDNT M9038": {
+      "course_id": "FDNT M9038",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -818794,8 +818846,8 @@
       "description": null,
       "description_source": null,
       "subject": "FN",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": null,
       "typical_units": 0.0,
       "confidence": null,
@@ -818824,10 +818876,11 @@
         "NUTR M90CF",
         "NUTR M90CG",
         "NUTR M90CH"
-      ]
+      ],
+      "_alignment_remint_from": "NUTR M9012"
     },
-    "NUTR M9013": {
-      "course_id": "NUTR M9013",
+    "FDNT M9039": {
+      "course_id": "FDNT M9039",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -818836,8 +818889,8 @@
       "description": null,
       "description_source": null,
       "subject": "FN",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": null,
       "typical_units": 0.0,
       "confidence": null,
@@ -818866,10 +818919,11 @@
         "NUTR M90CN",
         "NUTR M90FT",
         "NUTR M90FV"
-      ]
+      ],
+      "_alignment_remint_from": "NUTR M9013"
     },
-    "NUTR M9014": {
-      "course_id": "NUTR M9014",
+    "FDNT M9040": {
+      "course_id": "FDNT M9040",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -818878,8 +818932,8 @@
       "description": null,
       "description_source": null,
       "subject": "FN",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": null,
       "typical_units": 0.0,
       "confidence": null,
@@ -818907,10 +818961,11 @@
       "_machine_cluster_members": [
         "NUTR M90DS",
         "NUTR M90EE"
-      ]
+      ],
+      "_alignment_remint_from": "NUTR M9014"
     },
-    "NUTR M9015": {
-      "course_id": "NUTR M9015",
+    "FDNT M9041": {
+      "course_id": "FDNT M9041",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -818919,8 +818974,8 @@
       "description": null,
       "description_source": null,
       "subject": "FN",
-      "subject_4letter": "NUTR",
-      "discipline": "Dietetics/Nutritional Science",
+      "subject_4letter": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
       "discipline_provisional": null,
       "typical_units": 0.0,
       "confidence": null,
@@ -818948,7 +819003,8 @@
       "_machine_cluster_members": [
         "NUTR M90ES",
         "NUTR M90ET"
-      ]
+      ],
+      "_alignment_remint_from": "NUTR M9015"
     },
     "OCTA M1003": {
       "course_id": "OCTA M1003",
@@ -837012,8 +837068,8 @@
         "THTR M90CK"
       ]
     },
-    "TOUR M1001": {
-      "course_id": "TOUR M1001",
+    "TRVL M1001": {
+      "course_id": "TRVL M1001",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -837022,8 +837078,8 @@
       "description": null,
       "description_source": null,
       "subject": "TOUR",
-      "subject_4letter": "TOUR",
-      "discipline": null,
+      "subject_4letter": "TRVL",
+      "discipline": "Travel Services",
       "discipline_provisional": null,
       "typical_units": 2.0,
       "confidence": null,
@@ -837051,10 +837107,11 @@
       "_machine_cluster_members": [
         "TOUR M10AA",
         "TOUR M10AB"
-      ]
+      ],
+      "_alignment_remint_from": "TOUR M1001"
     },
-    "TOUR M1002": {
-      "course_id": "TOUR M1002",
+    "TRVL M1002": {
+      "course_id": "TRVL M1002",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -837063,8 +837120,8 @@
       "description": null,
       "description_source": null,
       "subject": "ATC",
-      "subject_4letter": "TOUR",
-      "discipline": null,
+      "subject_4letter": "TRVL",
+      "discipline": "Travel Services",
       "discipline_provisional": null,
       "typical_units": 3.0,
       "confidence": null,
@@ -837094,10 +837151,11 @@
         "ATC M10AU",
         "TOUR M10AH",
         "TT M10AD"
-      ]
+      ],
+      "_alignment_remint_from": "TOUR M1002"
     },
-    "TOUR M1003": {
-      "course_id": "TOUR M1003",
+    "TRVL M1003": {
+      "course_id": "TRVL M1003",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -837106,8 +837164,8 @@
       "description": null,
       "description_source": null,
       "subject": "ATC",
-      "subject_4letter": "TOUR",
-      "discipline": null,
+      "subject_4letter": "TRVL",
+      "discipline": "Travel Services",
       "discipline_provisional": null,
       "typical_units": 3.0,
       "confidence": null,
@@ -837136,10 +837194,11 @@
       "_machine_cluster_members": [
         "ATC M10AV",
         "TOUR M10AG"
-      ]
+      ],
+      "_alignment_remint_from": "TOUR M1003"
     },
-    "TOUR M1004": {
-      "course_id": "TOUR M1004",
+    "TRVL M1004": {
+      "course_id": "TRVL M1004",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -837148,8 +837207,8 @@
       "description": null,
       "description_source": null,
       "subject": "TOUR",
-      "subject_4letter": "TOUR",
-      "discipline": null,
+      "subject_4letter": "TRVL",
+      "discipline": "Travel Services",
       "discipline_provisional": null,
       "typical_units": 3.0,
       "confidence": null,
@@ -837177,7 +837236,8 @@
       "_machine_cluster_members": [
         "TOUR M10AF",
         "TT M10AF"
-      ]
+      ],
+      "_alignment_remint_from": "TOUR M1004"
     },
     "TRNS M1007": {
       "course_id": "TRNS M1007",

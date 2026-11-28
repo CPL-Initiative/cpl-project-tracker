@@ -186,6 +186,16 @@ def root_of(_canon_doc):
 
 
 RECODED = os.path.join("kb", "receipts", "minted_codes_s749.json")
+ALIASES = os.path.join("kb", "discipline_aliases.json")
+
+
+def discipline_aliases(root=ROOT):
+    """{another name a discipline answers to: the discipline}, from kb/discipline_aliases.json."""
+    path = os.path.join(root, ALIASES)
+    if not os.path.exists(path):
+        return {}
+    with open(path, encoding="utf-8") as f:
+        return {a: d for d, names in (json.load(f).get("aliases") or {}).items() for a in names or []}
 
 
 def recoded(root=ROOT):
@@ -275,8 +285,13 @@ class Decisions:
                 self.noncredit.setdefault((rec["slug"], base, cat_slug), rec)
             else:
                 self.college.setdefault((rec["slug"], base, rec["band"]), rec)
+        # A filing under a discipline a fold retired follows the fold (S749: Dietetics/Nutritional Science, an alias of
+        # Nutritional Science/Dietetics since the NUTR fold; kb/discipline_aliases.json). The filing stands as filed.
+        folded = discipline_aliases(root_of(canon_doc))
         for s in self.doc.get("statewide") or []:
             code, disc = map_key(s.get("code")), (s.get("discipline") or "").strip()
+            if disc and disc not in by_disc and folded.get(disc) in by_disc:
+                disc = folded[disc]
             common = by_disc.get(disc)
             if not code or not disc:
                 self.refused.append({"key": s.get("key"), "why": "the filing names no code or no discipline"})

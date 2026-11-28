@@ -693,3 +693,110 @@ name set (Glendale: 8 of 165 right); San Bernardino Valley 22830's page holds tw
 
 **For a person:** San Jose City 22225; Allan Hancock 19928; Sierra 33639; Reedley 20762 (filed passing from 30465's
 page); East Los Angeles 31017; Sierra 21525.
+
+## Moved from the lane (S750 checkpoint, 2026-11-28)
+
+Verbatim from `docs/reference/lanes/program-requirements-harvest.md`, as the lane stood before the S750 checkpoint (relative links re-pointed to this folder); the lane keeps the current text.
+
+**Display build `229a759101f7` is live** (S746, #3927 `8ae97588`, run 46092611343 on `main`): 18,751 records at the build, 32 at three older builds (`0874a3a15f22` 16, `bef8ef819af7` 15, `4c57fd250cce` 1; reads no current capture files, S747). It reads MAP's live view (`kb/exhibits_adoption.json`) beside the dated feed. Cerritos 42158 reads up to 38 units in the table Sierra reads. S748's 41 records wait on the next build (NEXT (2)). The census at S748's start (46089216929 on `main`, 00:44Z 2026-11-28): 15,680 of 20,282 active programs pass at 118 colleges, 3,927 have no passing record, 675 are collected with a named gap. S748's closing census: 46141774235 (2026-11-28 11:55Z): 15,698 of 20,282 pass, 3,888 without a passing record, 696 collected with a named gap.
+
+**S748's posts** (`m-collection-s748`; the land #3945 `cd464091`; Mt. San Antonio's land #3946 `852db460`): 41 records collected and live, no outline rows, paid reads about $0.34. By guarded plans 24: named gaps under s748a, s748k1, s748r1, s748b, s748g1 and s748r2 (21, at Butte, Santa Barbara City, College of the Canyons, El Camino, Orange Coast, East Los Angeles, Allan Hancock, Mt. San Antonio and Sierra) and coverage read true under s748c's reading `state_course_not_on_page` (Orange Coast 43100, Fullerton 18749, 36863). By rereads and loads 17, each with its arithmetic equal: Cuyamaca 18637; San Bernardino Valley 04894, 31858; Coastline 43057; Orange Coast 08626, 08663; Lassen 18752, 18756; College of Alameda 32765; Mt. San Antonio's eight. New code in the land: Coastline's staging fix (a bound pin's page stages as read); reconcile steps at San Bernardino Valley, Lassen and College of Alameda; Lassen's guard `only_cal_getc`; plan modules `kb/_program_piles_s748*.py`. Each count, run id and verdict: lessons, *S748*.
+
+**Decisions of S748** (the conductor's, each reversible; rows in `cpl_memory`, one line each in handoff 749): **DECIDED** `d-no-display-build-at-start-s748`; **DECIDED** `d-list-minimum-units-refused-s748`; **DECIDED** `d-census-change-left-out-s748`; **DECIDED** `d-found-pages-probe-held-s748`; **DECIDED** `d-sierra-21525-not-reread-s748`; **DECIDED** `d-canyons-37868-not-rerun-s748`; **DECIDED** `d-hancock-s681-entry-is-lane-assignment-s748`.
+
+**NEXT, in order** (Sam's work order of Nov 20 ranks collection by the M-ID cards each fix unblocks, `r-collect-for-mids-work-order-sam-2026-11-20`: outline fills first, program records second, **DECIDED** `d-mid-ranking-orders-lane-1-s690`; every block is listed until the Commons shows it, `r-a-block-is-a-block-sam-2026-11-21`): (0) Standing, each with its slug: lessons, *Moved from the lane (S748 checkpoint)* and *(S742 checkpoint)*, NEXT (0), and [`conductor_mode`](reference/conductor_mode.md). The ones that bite first: never force a re-extraction blind (`d-rccd-pilot-no-blind-force-s671`) and never rerun a read or a load whose result is unexplained (`d-west-valley-no-blind-rerun-s727`); read a PR's whole thread before its merge or any apply of a file it carries (`p-apply-before-thread-read-s685`); a records change reruns both Commons builders (`p-check-generated-misses-commons-data-s697`); the conductor alone writes `.apply`, after an APPLY verdict and a clean pre-read, on its own apply branch (`d-conductor-owns-applies-s720`, `d-applies-on-own-branch-s742`); a paid read goes on a sibling branch (`p-paid-read-on-sibling-avoids-cancel-s742`); a worker's push counts once `git ls-remote` shows its head (`p-worker-push-proved-by-ls-remote-s731`). S748's: a recall's oracle is independent of the rule it tests and a plan's test turns red when a guard is removed, asked for in every brief (`p-recall-oracle-restates-rule-s748`); a reader reports once, after its background jobs end (`p-worker-handback-repeats-s748`). (1) **Outline readers** (step 11, [`scheduled_sessions`](reference/scheduled_sessions.md)), by the M-ID cards each improves (`f-outline-ranking-s691`): the queue is empty until a census, a harvest capture or a verdict row changes; De Anza, Palo Verde, College of Marin and Antelope Valley each wait on a reader; the standing test in `course-outcomes-load.yml`, the staff-names question and the 12 still-taught hand-ins: lessons, *Moved from the lane (S727 checkpoint)*, NEXT (1). **For a person:** delete the 30-day artifact `course-outcomes-45026998155-part1` (`p-lan-not-outcomes-only-filed-names-s703`). **Golden West's 476 header rows** (`f-golden-west-476-header-rows-s690`; plan on `claude/s690-goldenwest-header` 0995d8b5) wait on a plain session's review. (2) **The display build** carrying S748's 41 records, once no apply is in flight, gate college Glendale, then `harvest-gap-census.yml` on `main`. (3) **The found-pages change, round 2**, the largest lever found (`o-found-pages-194-programs-s748`; `claude/s748-readers-found` `e77ff6a8`, off for every college; Skyline's flag on `claude/s748-readers-found-skyline`, which holds S748's free capture): the capture's lookup finds the own page of a program with no closed list and nothing files it as the source. Before any paid read: the extract function accepts an empty closed list (`chatbox/supabase/functions/program-requirements-extract/index.ts`, lines 480 to 484, answers 400 today); `score()` sets coverage false with a named gap at zero listed courses; the opt-in is tied to a per-college open-setting recall. Then a Fable second reader, a one-program paid probe (Skyline 05809), then 194 programs at 14 colleges for about $19 (the list: handoff 749's log, 08:22Z). **DECIDED** `d-found-pages-probe-held-s748`. (4) **The census reads college-named gap files** (`claude/s748-keys` `50bedbf7`, reverted in the land; **DECIDED** `d-census-change-left-out-s748`), fixed per its reader: keep the 78 in the gap under their own cause; apply only where no live row exists; pin `main()`'s hand-in. (5) **Cosumnes River's `set` step** (`claude/s748-keys-crc` `6a4fe94a`; reaches 04600, 12792, 45317; the local pattern is on PDF pages 84 to 86): `tests/program_requirements_reconcile_test.py` pins the college free of a `ge_units` set step, so the test changes with it, under a second reader. (6) **The 11 coverage-omits records to assign** under the reading `state_course_not_on_page`, evidence standing: Cerritos 02235; Citrus 02333; Marin 46242; Diablo Valley 39775; Foothill 11827, 43194; Irvine Valley 44922; Madera 39810; Palomar 08929, 22528; Porterville 33085. (7) **College of the Canyons 37868:** read the log of the failed paid read 46121986278 before any rerun (**DECIDED** `d-canyons-37868-not-rerun-s748`). (8) **Reader changes:** Reedley 30465; Los Angeles Pierce 19181; Grossmont 21402; Mt. San Antonio 43777 and 43999 (department headings); Sierra's `or_units` step (40181, 31922, 31923); Allan Hancock's 27 found pages ride (3). (9) **The follow-up PR** (after the waves): first the Porterville 06773 guard (`f-porterville-06773-flips-on-reconcile-s731`; no Porterville reconcile before it), then the minors, old (lessons, *Moved from the lane (S748 checkpoint)*, NEXT (6)) and S748's (lessons, *S748*, *Readers' MAJORs and MINORs*). (10) **Holds S748 did not reach** stand as the moved text lists them (lessons, *Moved from the lane (S748 checkpoint)*, NEXT (3) to (5)): San Jose City 18449; San Diego City 22352, 38732; Cabrillo 11293; Contra Costa 33660; East Los Angeles 31017 (54-61 around the printed 60; **DECIDED** `d-list-minimum-units-refused-s748`); Santa Barbara City 30746; Sierra 21525 (a tie, **DECIDED** `d-sierra-21525-not-reread-s748`); West Valley 35588; Southwestern, Pasadena City, Antelope Valley and Mission; Saddleback's `repeat` window before its next read (`f-saddleback-repeat-window-s731`); College of the Desert behind robots.txt; Los Medanos parked; Glendale 44488 the college's call. Then a fresh census's wave over its largest gaps (`f-yield-from-census-gaps-s748`). (11) **Older levers, the printed-course files and the older queue:** lessons, *Moved from the lane (S748 checkpoint)*, NEXT (7) to (16). **For a person:** San Jose City 22225 (held on `claude/s748-paid-sjcc`; the state's "RealEstateRE" names two courses); Allan Hancock 19928 (HUSV 120 and 170 may be alternatives); Sierra 33639 (confirm the degree total 60); Reedley 20762 (filed passing from 30465's page); Solano 43134; Santa Monica 43767; the 30-day artifact above; the records s727f held and the older lists: lessons, *Moved from the lane (S748 checkpoint)*.
+
+**LIVE (S746, the record: [`cpl_pathways_lessons`](cpl_pathways_lessons.md)):** (a) the display build reads
+MAP's live view (`kb/exhibits_adoption.json`) as a third CPL-here source (`adoption_index`, #3927): 2,395 programs gain
+CPL here, 1,573 from none; Cerritos Field Ironworkers 24 of 24, up to 38 units (`f-cerritos-ironworkers-all-24-cpl-s744`
+closed), applied as build `229a759101f7`. (b) *Trained by* on the program card (#3925, `kb/_build_program_certs.py`
+`trained_by`): **DECIDED** `d-trained-by-committees-only-s746`, training committees only; a bare JATC takes its issuer's
+acronym or the issuer; **FINDING** `f-trainer-field-names-one-site-s746` (the field names one college's site on widely
+articulated credentials), so widening waits on a cleaned field. (c) Request Adopt in one form on every view (#3930,
+**DECIDED** `r-request-adopt-one-form-sam-2026-11-28`; Sam: *"That looks good. please use it"*, *"yes, that's the way to
+go. please roll with it"*): the `adopt_panel.js` chip on catalog cards and featured rows, *Request Adopt (N)* and a
+*Request Adopt* per row on the B.S. directory, one sidebar, and each credential's MAP line ONE link to the nearest
+college's exhibit (`map_links.js` `nearest()`). **FINDING** `f-coci-description-shards-mojibake-s744`: `coci_lookup_desc_*.js`
+carries `_x000D_` and cp1252 mojibake. **NEXT (CPL Pathways):** (none from S747). **DONE (S747):** the 06:26Z daily run lists
+Cerritos Field Ironworkers' Trained by as Ironworker JATC with the Reinforcing and Structural Period credentials; the
+description shards are cleaned at build (#3942; #3943 moves the repair into `kb/_text_repair.py`): `clean_desc` in `kb/_build_coci_lookup.py` decodes Excel's `_x000D_` (78,796)
+and repairs cp1252 mojibake, single and double (26,533 of 130,478 descriptions changed, 7 of them only because the
+900-character cut moved past an escape); guard `tests/coci_desc_clean_test.py`. **FINDING (S747)** `f-older-display-builds-are-unrefiled-reads-s747`: the 32 records at older
+display builds (De Anza 15, Glendale 15, LACC 1, Mt. SAC 1) are earlier reads that no current capture files, so the
+build never reaches them. The 2026–27 re-captures hold De Anza's 15 as `would_extract` (found, not yet extracted) and
+the other 17 as `not_found` near misses (Glendale Mass Communications A.S.: 3 of 21 listed courses on the page). They
+stay as read, labeled with their catalog year; extraction and recall are the routine's collection. **DONE (S747):** the featured B.S. page counts the A.S. major
+the catalog prints, the 19-unit core plus the Structural option, 38 units of CPL (was 31.5: Welding I and the Structural
+option sat in an uncounted *in progress* section); Reinforcing shows as the alternate path; guard `tests/cpl_pathways.test.js`.
+
+## S750 (SkySandpiper, the CPL Queue routine's 13:12Z collection run of 2026-11-28): the display build for S748's records, seven records by plan, the found-pages gate held on live recall
+
+A conductor run for collection only under Sam's routine prompt of 2026-11-17 and COBIx's brief on #3358, served by Fable
+5.2, as the routine's form names. One writer (no `list_sessions`, `get_trigger` or `get_session` here). Handoff 751 holds
+the declaration, the college split, every split change with its time and every reader's verdict. Sam spoke no word in
+this session. The census at the start (46141774235 on `main`, 11:55Z): 15,698 of 20,282 active programs pass, 3,888 have
+no passing record, 696 are collected with a named gap.
+
+**Merged.** #3953 (`91bffc66`), the display land. The found-pages code is #3954 and plan s750a rides its own land;
+handoff 751 holds each one's closing state.
+
+**What ran.**
+- **The display build `366c5bbc7b2d`** (worker `display`, `claude/s750-display`): 18,754 statements, the build code
+  unchanged; San Bernardino Valley 31858 and Coastline 43057 gained a display. The Glendale step 46150062374 first (242
+  at the new build, 18,509 at `229a759101f7`, as the worker's count foretold), then the whole build 46157422439: 18,753
+  records at the build, 32 at three older builds, none without one. It carried S748's 41 records to the page.
+- **Plan s750a** (worker `piles`): the reading `state_course_not_on_page` (coverage true, no gap) drafted at eight
+  records, each agreeing with a free page read (46149637666, 46150287204). Its Sonnet reader said APPLY: the eight
+  pages' printed rows exclude the state's course and each stated total is met without it; none has Madera's shape;
+  eight mutations of the reader's own turn the test red. The conductor's pre-read then found Sam's confirm verdict of
+  2026-10-15 (verdict 36) on Cerritos 02235's live record, so the plan narrowed to seven with no second reader round
+  for a row removed: Citrus 02333; Marin 46242; Foothill 11827, 43194; Irvine Valley 44922; Palomar 08929, 22528. A
+  clean pre-read (7 of 7 on run, record and checks, none checked, no matching confirm), then the apply on
+  `claude/s750-apply`; its result is in handoff 751.
+- **The census reading college-named gap files, redone** (`0919feab` on `claude/s750-piles`): the 78 stay in the gap,
+  labeled `college_named`; pass 15,698, none 3,888, named gap 696 before and after; seven mutations turn its test red.
+- **The found-pages code, round 2** (worker `found`, `claude/s750-found`, `f654050f`, #3954): the extract function v13
+  reads an empty closed list only beside `no_closed_list: true` (the runner declares it for `catalog_lookup` sources
+  only); `score()` sets coverage false at zero listed courses with gap `no_state_course_list` (1,523 passing records
+  rescored against an empty list: 0 pass); the capture files found pages at a college only where its own recall is at
+  least 0.8 over at least 30 tested with none wrong. Its Fable reader said GO WITH: 3,163 filed records rescore the
+  same on both trees and 22,357 filed sources stage the same; 0 false finds of 1,453 with each subject's own page
+  removed; four guards removed turn 12 checks red. Its MAJOR, fixed in `f654050f`: the display build's
+  `no_state_list()` read `coverage.basis` alone, so a no-list record would have reached CPL Pathways as "0 of 0 placed".
+
+**Refused or held.**
+- **No paid read ran.** The five free captures that came back filed no found page, because each college's live recall
+  counted a wrong answer and the gate asks for none: Skyline 42 tested, 35 right, 1 wrong; San Mateo 55, 47, 3; Diablo
+  Valley 200, 189, 2; San Joaquin Delta 204, 197, 1; Gavilan 81, 72, 2. Of the nine wrongs, four look like the oracle's
+  error (a passing record read from another award's page: San Mateo 05745, 10927, 33393; Diablo Valley 12908), two are
+  the lookup taking an older catalog version (Skyline 39394, Diablo Valley 12142), three are unread (Gavilan 21292,
+  30577; San Joaquin Delta 22252). The conductor held the gate as its reader had just passed it
+  (`d-found-pages-gate-held-s750`); the code lands off for every college, with no deploy and no probe.
+- **Madera 39810** left the plan before its reader: its page heads the core "41-47 units" over 39.5 units of courses,
+  so the page counts the course it omits (`d-madera-39810-for-a-person-s750`).
+- **Cerritos 02235** left the plan at the pre-read: a person-settled record stays untouched
+  (`d-cerritos-02235-person-confirmed-s750`). Its coverage still reads false.
+- **College of the Canyons 37868:** run 46121986278 stopped at the price step, $0, nothing filed. Staging holds the
+  program as `not_found` (its source carries neither `page_check` nor `pinned`; rule B then A), and a fresh free capture
+  (46157462134, `claude/s750-piles-coc`) reads the same. It needs a `pdf_pages` pin for page 78, a free capture, then a
+  paid read of about $0.10 (`d-canyons-37868-needs-pin-s750`).
+
+**Lessons.**
+- `f-found-pages-live-recall-counts-wrongs-s750`: recall measured on filed pages cleared eleven colleges, and live
+  recall at the capture cleared none of the five that came back. An oracle chosen on course codes still errs where a
+  passing record was itself read from another award's page, so a "none wrong" gate reads the oracle's errors as the
+  rule's. Read each wrong before changing a gate.
+- `p-preread-catches-person-confirm-s750`: a plan's expectation that no row is checked is a forecast. The live
+  pre-read looks for a person's confirm on each record, and the plan drops a row a person settled.
+- `f-display-no-list-holdback-s750`: the display build held a no-list record back on `coverage.basis` alone; a new
+  coverage reason needs the hold-back checked beside the scorer.
+- A second reader's MAJOR can sit outside the diff: the display's hold-back was not in the found-pages change.
+- Worker commit trailers name Opus 5.5 because `.claude/agents/worker.md` says so; the workers ran Fable 5.2.
+
+**Readers' MAJORs and MINORs** (for the follow-up): a later reconcile rescores coverage false on a record
+`state_course_not_on_page` turned true, so s748c and s750a rerun after one; a found-page record stays "no passing
+record" (`coverage_fails`) until a `no_state_course_list` rule in `kb/_program_named_gaps.py` writes the gap and
+`collected_with_gaps` admits it; Glendale's filed rows name programs by code (8 right of 165), so it does not clear;
+the inference that Skyline filed 0 of 55 because it serves each page as `.php` and `.xml` is untested.
+
+**For a person:** Cerritos 02235; Madera 39810.

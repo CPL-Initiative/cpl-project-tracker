@@ -1,24 +1,9 @@
 {
   "_about": "Human curation overlay for the COCI staging KB. Git-canonical and reviewable. Synced from the Supabase kb_curation table by kb/_apply_curation.py, then applied on top of the AI-drafted coci_* files by excel_to_dashboard.py (export_unified_courses) so curation is regen-safe. Keyed by course_id (M-ID / UC cluster / C-ID). Does NOT touch curated common_courses.json / course_crosswalk.json.",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-11-28T06:19:17Z",
-  "count": 31193,
+  "_synced_at": "2026-11-28T18:57:16Z",
+  "count": 31194,
   "curations": {
-    "AERO M1001": {
-      "unified_title": "AS200 Leadership Laboratory C",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "AERO M10BA": {
-      "merge_into": "AERO M1001",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "AERO M10BB": {
-      "merge_into": "AERO M1001",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
     "AF M10AA": {
       "merge_into": "AFXX M1001",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -3099,7 +3084,7 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "ANTH M10IQ": {
-      "merge_into": "NUTR M1016",
+      "merge_into": "FDNT M1061",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
@@ -10592,12 +10577,12 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ATC M10AU": {
-      "merge_into": "TOUR M1002",
+      "merge_into": "TRVL M1002",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ATC M10AV": {
-      "merge_into": "TOUR M1003",
+      "merge_into": "TRVL M1003",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -45780,12 +45765,12 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "CULN M10QW": {
-      "merge_into": "NUTR M1013",
+      "merge_into": "FDNT M1058",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "CULN M10QX": {
-      "merge_into": "NUTR M1013",
+      "merge_into": "FDNT M1058",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -46115,7 +46100,7 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "CULN M1109": {
-      "merge_into": "NUTR M1014",
+      "merge_into": "FDNT M1059",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -78769,7 +78754,7 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "FCSH M1021": {
-      "merge_into": "NUTR M1017",
+      "merge_into": "FDNT M1062",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -79009,7 +78994,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "FCSH M10EO": {
-      "merge_into": "NUTR M1033",
+      "merge_into": "FDNT M1033",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -79369,7 +79354,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "FDNT M1009": {
-      "merge_into": "NUTR M1033",
+      "merge_into": "FDNT M1033",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -79379,7 +79364,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "FDNT M1012": {
-      "merge_into": "NUTR M1007",
+      "merge_into": "FDNT M1053",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -79408,6 +79393,21 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "FDNT M1033": {
+      "unified_title": "Nutrition Throughout the Life Cycle",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M1040": {
+      "unified_title": "Rotations in Supervised Practice, Level C",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M1041": {
+      "unified_title": "Clinical Experience in Nutritional Care Management",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
     "FDNT M1043": {
       "unified_title": "Food and Nutrition: Cross Cultural Perspectives",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -79433,8 +79433,63 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "FDNT M1052": {
+      "merge_into": "FDNT M1053",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M1053": {
+      "unified_title": "Introduction to Careers in Nutrition, Dietetics, and Food",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M1054": {
+      "unified_title": "Foods and Nutrition: Overview and Opportunities",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M1058": {
+      "unified_title": "Vegetarian and Specialty Cuisine",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M1059": {
+      "unified_title": "Cultural Foods of the World",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M1060": {
+      "merge_into": "FDNT M1059",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M1061": {
+      "unified_title": "The Culture of Food",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "FDNT M1062": {
+      "unified_title": "Introduction to Therapeutic Diets",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M1064": {
+      "merge_into": "FDNT M1054",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M1065": {
+      "unified_title": "Nutrition for Fitness and Sport",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "FDNT M1066": {
+      "merge_into": "KINE M1591",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
     "FDNT M10AM": {
-      "merge_into": "NUTR M1007",
+      "merge_into": "FDNT M1053",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -79474,7 +79529,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "FDNT M10BE": {
-      "honors_of": "NUTR M1018"
+      "honors_of": "FDNT M1063"
     },
     "FDNT M10BF": {
       "merge_into": "FDNT M1045",
@@ -79497,7 +79552,7 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "FDNT M10CA": {
-      "merge_into": "NUTR M1008",
+      "merge_into": "FDNT M1054",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -79531,10 +79586,293 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "FDNT M10CV": {
+      "merge_into": "KINE M1663",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "FDNT M10CY": {
+      "merge_into": "HLTH M1020",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "FDNT M10DA": {
+      "merge_into": "FDNT M1040",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M10DC": {
+      "merge_into": "FDNT M1017",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M10DH": {
+      "merge_into": "FDNT M1048",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "FDNT M10DM": {
+      "merge_into": "CULN M1108",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M10ED": {
+      "merge_into": "AGRI M1027",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "FDNT M10EF": {
+      "merge_into": "FDNT M1040",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M10EH": {
+      "merge_into": "FDNT M1041",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M10EI": {
+      "merge_into": "CULN M1069",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M10EJ": {
+      "merge_into": "FDNT M1041",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M10EK": {
+      "merge_into": "FDNT M1041",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M10EL": {
+      "merge_into": "FASH M1136",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M10EO": {
+      "merge_into": "FDNT M1033",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M10ES": {
+      "merge_into": "FDNT M1059",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M10EX": {
+      "merge_into": "FDNT M1043",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M10FD": {
+      "merge_into": "FDNT M1044",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M10FE": {
+      "merge_into": "FDNT M1033",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M10FG": {
+      "merge_into": "FDNT M1053",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M10FI": {
+      "merge_into": "FDNT M1053",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M10FK": {
+      "merge_into": "FDNT M1045",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "FDNT M10FQ": {
+      "honors_of": "FDNT M10FR"
+    },
+    "FDNT M10FY": {
+      "merge_into": "CULN M1147",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M10GB": {
+      "merge_into": "CULN M1204",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M10GE": {
+      "merge_into": "FDNT M1054",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M10GG": {
+      "merge_into": "FDNT M1046",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
     "FDNT M1243": {
       "discipline": "Nutritional Science/Dietetics",
       "reviewed_by": "trailcrew-ccr3-s112@bot",
       "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
+    "FDNT M9034": {
+      "unified_title": "Dim Sum 1",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M9035": {
+      "unified_title": "Brazilian Cuisine Part 2",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M9036": {
+      "unified_title": "California Grilling 2",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M9037": {
+      "unified_title": "Easy but Elegant Cooking",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M9038": {
+      "unified_title": "Garnishing and Fruit Carving",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M9039": {
+      "unified_title": "Chef Skills: Tamales and More",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M9040": {
+      "unified_title": "Intro to Vietnamese Cooking",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M9041": {
+      "unified_title": "Fresh Salads and Dressings",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M90BB": {
+      "merge_into": "CDEV M9029",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M90BL": {
+      "merge_into": "FDNT M9035",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M90BM": {
+      "merge_into": "FDNT M9035",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M90BW": {
+      "merge_into": "FDNT M9037",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M90BX": {
+      "merge_into": "FDNT M9037",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M90CA": {
+      "merge_into": "FDNT M9036",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M90CB": {
+      "merge_into": "FDNT M9036",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M90CF": {
+      "merge_into": "FDNT M9038",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M90CG": {
+      "merge_into": "FDNT M9038",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M90CH": {
+      "merge_into": "FDNT M9038",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M90CN": {
+      "merge_into": "FDNT M9039",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M90CU": {
+      "merge_into": "CULN M9047",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M90CY": {
+      "merge_into": "CULN M9050",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M90DO": {
+      "merge_into": "CDEV M9029",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M90DS": {
+      "merge_into": "FDNT M9040",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M90EE": {
+      "merge_into": "FDNT M9040",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M90EO": {
+      "merge_into": "FDNT M9034",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M90EP": {
+      "merge_into": "FDNT M9034",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M90ES": {
+      "merge_into": "FDNT M9041",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M90ET": {
+      "merge_into": "FDNT M9041",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M90EV": {
+      "merge_into": "CDEV M9029",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M90FT": {
+      "merge_into": "FDNT M9039",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M90FV": {
+      "merge_into": "FDNT M9039",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "FIRE M1001": {
       "merge_into": "FIRE M1010",
@@ -92215,7 +92553,7 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "HLTH M1121": {
-      "merge_into": "NUTR M1008",
+      "merge_into": "FDNT M1054",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -110951,6 +111289,11 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "KINE M1142": {
+      "discipline": "Health",
+      "reviewed_by": "sam-rulings-s749@bot",
+      "reviewed_at": "2026-11-28T15:28:16.418437+00:00"
+    },
     "KINE M1148": {
       "unified_title": "Masters Swimming 1",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -114872,7 +115215,7 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "KINE M13JC": {
-      "merge_into": "NUTR M1021",
+      "merge_into": "FDNT M1065",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
@@ -116398,9 +116741,10 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "KINE M1553": {
-      "unified_title": "Sport and Film",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "discipline": "Kinesiology",
+      "reviewed_by": "sam-rulings-s749@bot",
+      "reviewed_at": "2026-11-28T15:28:16.418437+00:00",
+      "unified_title": "Sport and Film"
     },
     "KINE M1556": {
       "merge_into": "KINE M1596",
@@ -116453,9 +116797,10 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "KINE M1568": {
-      "unified_title": "Low Impact Conditioning Exercises",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "discipline": "Physical Education Disabled Students",
+      "reviewed_by": "sam-rulings-s749@bot",
+      "reviewed_at": "2026-11-28T15:28:16.418437+00:00",
+      "unified_title": "Low Impact Conditioning Exercises"
     },
     "KINE M1570": {
       "unified_title": "Jogging for Fitness, Intermediate",
@@ -117061,9 +117406,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "KINE M1762": {
-      "unified_title": "Introduction to Sport and Recreation Management",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "discipline": "Recreation Administration",
+      "reviewed_by": "sam-rulings-s749@bot",
+      "reviewed_at": "2026-11-28T15:28:16.418437+00:00",
+      "unified_title": "Introduction to Sport and Recreation Management"
     },
     "KINE M1765": {
       "discipline": "Kinesiology",
@@ -124088,6 +124434,21 @@
     },
     "MGMT M9004": {
       "unified_title": "Strategic Thinking, Decision Making and Problem Solving",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "MILS M1001": {
+      "unified_title": "AS200 Leadership Laboratory C",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "MILS M10BA": {
+      "merge_into": "MILS M1001",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "MILS M10BB": {
+      "merge_into": "MILS M1001",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -133694,359 +134055,6 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "NUTR M1006": {
-      "merge_into": "NUTR M1007",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M1007": {
-      "unified_title": "Introduction to Careers in Nutrition, Dietetics, and Food",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M1008": {
-      "unified_title": "Foods and Nutrition: Overview and Opportunities",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M1013": {
-      "unified_title": "Vegetarian and Specialty Cuisine",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M1014": {
-      "unified_title": "Cultural Foods of the World",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M1015": {
-      "merge_into": "NUTR M1014",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M1016": {
-      "unified_title": "The Culture of Food",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
-    },
-    "NUTR M1017": {
-      "unified_title": "Introduction to Therapeutic Diets",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M1019": {
-      "merge_into": "NUTR M1008",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M1021": {
-      "unified_title": "Nutrition for Fitness and Sport",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
-    },
-    "NUTR M1022": {
-      "merge_into": "KINE M1591",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
-    },
-    "NUTR M1033": {
-      "unified_title": "Nutrition Throughout the Life Cycle",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M1040": {
-      "unified_title": "Rotations in Supervised Practice, Level C",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M1041": {
-      "unified_title": "Clinical Experience in Nutritional Care Management",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M10AO": {
-      "merge_into": "AGRI M1027",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
-    },
-    "NUTR M10AQ": {
-      "merge_into": "NUTR M1040",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M10AS": {
-      "merge_into": "NUTR M1041",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M10AT": {
-      "merge_into": "CULN M1069",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M10AU": {
-      "merge_into": "NUTR M1041",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M10AV": {
-      "merge_into": "NUTR M1041",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M10AW": {
-      "merge_into": "FASH M1136",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M10AZ": {
-      "merge_into": "NUTR M1033",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M10BD": {
-      "merge_into": "NUTR M1014",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M10BI": {
-      "merge_into": "FDNT M1043",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M10BO": {
-      "merge_into": "FDNT M1044",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M10BP": {
-      "merge_into": "NUTR M1033",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M10BR": {
-      "merge_into": "NUTR M1007",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M10BT": {
-      "merge_into": "NUTR M1007",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M10BV": {
-      "merge_into": "FDNT M1045",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
-    },
-    "NUTR M10CB": {
-      "honors_of": "NUTR M10CC"
-    },
-    "NUTR M10CJ": {
-      "merge_into": "CULN M1147",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M10CM": {
-      "merge_into": "CULN M1204",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M10CP": {
-      "merge_into": "NUTR M1008",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M10CR": {
-      "merge_into": "FDNT M1046",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
-    },
-    "NUTR M10CV": {
-      "merge_into": "KINE M1663",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
-    },
-    "NUTR M10CY": {
-      "merge_into": "HLTH M1020",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
-    },
-    "NUTR M10DA": {
-      "merge_into": "NUTR M1040",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M10DC": {
-      "merge_into": "FDNT M1017",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M10DH": {
-      "merge_into": "FDNT M1048",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
-    },
-    "NUTR M10DM": {
-      "merge_into": "CULN M1108",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M9008": {
-      "unified_title": "Dim Sum 1",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M9009": {
-      "unified_title": "Brazilian Cuisine Part 2",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M9010": {
-      "unified_title": "California Grilling 2",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M9011": {
-      "unified_title": "Easy but Elegant Cooking",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M9012": {
-      "unified_title": "Garnishing and Fruit Carving",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M9013": {
-      "unified_title": "Chef Skills: Tamales and More",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M9014": {
-      "unified_title": "Intro to Vietnamese Cooking",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M9015": {
-      "unified_title": "Fresh Salads and Dressings",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M90BB": {
-      "merge_into": "CDEV M9029",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M90BL": {
-      "merge_into": "NUTR M9009",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M90BM": {
-      "merge_into": "NUTR M9009",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M90BW": {
-      "merge_into": "NUTR M9011",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M90BX": {
-      "merge_into": "NUTR M9011",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M90CA": {
-      "merge_into": "NUTR M9010",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M90CB": {
-      "merge_into": "NUTR M9010",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M90CF": {
-      "merge_into": "NUTR M9012",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M90CG": {
-      "merge_into": "NUTR M9012",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M90CH": {
-      "merge_into": "NUTR M9012",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M90CN": {
-      "merge_into": "NUTR M9013",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M90CU": {
-      "merge_into": "CULN M9047",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M90CY": {
-      "merge_into": "CULN M9050",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M90DO": {
-      "merge_into": "CDEV M9029",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M90DS": {
-      "merge_into": "NUTR M9014",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M90EE": {
-      "merge_into": "NUTR M9014",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M90EO": {
-      "merge_into": "NUTR M9008",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M90EP": {
-      "merge_into": "NUTR M9008",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M90ES": {
-      "merge_into": "NUTR M9015",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M90ET": {
-      "merge_into": "NUTR M9015",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M90EV": {
-      "merge_into": "CDEV M9029",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M90FT": {
-      "merge_into": "NUTR M9013",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "NUTR M90FV": {
-      "merge_into": "NUTR M9013",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
     "OCTA M1003": {
       "unified_title": "Physical Dysfunction and Rehabilitation for Adults: Theory and Practice Lab",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -138262,6 +138270,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "PHOT M10RP": {
+      "merge_into": "PHOT M1041",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
     "PHOT M1101": {
       "unified_title": "Introduction to Smartphone Photography & Media",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -138932,11 +138945,6 @@
       "merge_into": "ASTR M1052",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
-    },
-    "PHTC M10AC": {
-      "merge_into": "PHOT M1041",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "PHYS M1012": {
       "unified_title": "Introduction to Physics 1 - Calculus Supplement",
@@ -151502,51 +151510,6 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "TOUR M1001": {
-      "unified_title": "Advanced Airline Computer Training",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "TOUR M1002": {
-      "unified_title": "Travel Destinations: Europe, Africa, and the Middle East",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "TOUR M1003": {
-      "unified_title": "Destinations- Americas and Europe",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "TOUR M1004": {
-      "unified_title": "World Destinations and Resorts--Western Hemisphere",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "TOUR M10AA": {
-      "merge_into": "TOUR M1001",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "TOUR M10AB": {
-      "merge_into": "TOUR M1001",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "TOUR M10AF": {
-      "merge_into": "TOUR M1004",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "TOUR M10AG": {
-      "merge_into": "TOUR M1003",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "TOUR M10AH": {
-      "merge_into": "TOUR M1002",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
     "TRNS M1001": {
       "unified_title": "CA Commercial Driver License Permit Preparation",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -151787,13 +151750,58 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "TRVL M1001": {
+      "unified_title": "Advanced Airline Computer Training",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "TRVL M1002": {
+      "unified_title": "Travel Destinations: Europe, Africa, and the Middle East",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "TRVL M1003": {
+      "unified_title": "Destinations- Americas and Europe",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "TRVL M1004": {
+      "unified_title": "World Destinations and Resorts--Western Hemisphere",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "TRVL M10AA": {
+      "merge_into": "TRVL M1001",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "TRVL M10AB": {
+      "merge_into": "TRVL M1001",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "TRVL M10AF": {
+      "merge_into": "TRVL M1004",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "TRVL M10AG": {
+      "merge_into": "TRVL M1003",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "TRVL M10AH": {
+      "merge_into": "TRVL M1002",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
     "TT M10AD": {
-      "merge_into": "TOUR M1002",
+      "merge_into": "TRVL M1002",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "TT M10AF": {
-      "merge_into": "TOUR M1004",
+      "merge_into": "TRVL M1004",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },

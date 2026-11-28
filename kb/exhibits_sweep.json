@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generated_at": "2026-11-22T21:52:02Z",
+ "generated_at": "2026-11-28T19:03:14Z",
  "generated_by": "kb/_sweep_exhibit_titles.py",
  "rules": [
   {
@@ -56,10 +56,38 @@
   "ase": 0,
   "numerals": 0,
   "language": 0,
-  "course-code": 0,
+  "course-code": 1,
   "level": 0,
   "fold": 0
  },
- "local_titles": 0,
- "cards": []
+ "local_titles": 1,
+ "cards": [
+  {
+   "current": "Artificial Intelligence Portfolio Review",
+   "proposed": "Artificial Intelligence",
+   "rules": [
+    "course-code"
+   ],
+   "why": [
+    "drops a method word"
+   ],
+   "locals": [
+    {
+     "raw": "AI-1 and AI-3 Portfolio Review KG 11/23/26",
+     "colleges": [
+      "Chaffey College"
+     ],
+     "course": "AI 1",
+     "credit": "3 hours in Artificial Intelligence: Prompt Engineering and AI Systems"
+    }
+   ],
+   "id": "1a582025f38c",
+   "issuer": "",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  }
+ ]
 }

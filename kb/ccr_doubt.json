@@ -2,58 +2,215 @@
  "_about": "The Courses List's Discipline in doubt job (#coci-lookup/list/doubt), written by kb/_ccr_seed_recheck_dryrun.py --doubt. Each card's description points to another discipline, or TOP alone does. A person rules on each in the List's side panel and says why; a reason marked for similar cards is a proposed procedure (kb/ccr_procedures.json). Read-only: the ruling is the write.",
  "cards": [
   {
-   "colleges": 12,
+   "colleges": 4,
    "desc": [
     [
+     "Recreation Administration",
+     0.1984
+    ],
+    [
+     "Kinesiology",
+     0.1449
+    ],
+    [
+     "Graphic Arts",
+     0.1187
+    ]
+   ],
+   "desc_kind": "desc_differs_clear",
+   "discipline": "Kinesiology",
+   "id": "KINE M1427",
+   "members": 4,
+   "title": "Foundations of Coaching",
+   "verdict": "for_a_curator",
+   "votes": {},
+   "why": [
+    "description"
+   ]
+  },
+  {
+   "colleges": 3,
+   "desc": [
+    [
+     "Health",
+     0.3022
+    ],
+    [
+     "Kinesiology",
+     0.2428
+    ],
+    [
      "Health Care Ancillaries",
-     0.1883
+     0.1676
+    ]
+   ],
+   "desc_kind": "desc_differs_clear",
+   "discipline": "Kinesiology",
+   "id": "KINE M1542",
+   "members": 3,
+   "title": "Athletic Training: Injury Prevention, Evaluation and Care",
+   "verdict": "for_a_curator",
+   "votes": {},
+   "why": [
+    "description"
+   ]
+  },
+  {
+   "colleges": 3,
+   "desc": [
+    [
+     "Health",
+     0.2363
+    ],
+    [
+     "Kinesiology",
+     0.1548
     ],
     [
      "Fire Technology",
-     0.1588
-    ],
-    [
-     "Child Development/Early Childhood Education",
-     0.1538
+     0.1149
     ]
    ],
-   "desc_kind": "desc_differs_close",
+   "desc_kind": "desc_differs_clear",
    "discipline": "Kinesiology",
-   "id": "KINE M1142",
-   "members": 14,
-   "title": "First Aid and CPR",
+   "id": "KINE M1801",
+   "members": 4,
+   "title": "Lifeguarding",
    "verdict": "for_a_curator",
-   "votes": {
-    "Emergency Medical Technologies": 1,
-    "Health": 3,
-    "Kinesiology": 1
-   },
+   "votes": {},
    "why": [
-    "description",
-    "top"
+    "description"
    ]
   },
   {
    "colleges": 2,
    "desc": [
     [
-     "Ethnic Studies",
-     0.2396
+     "Health",
+     0.4391
     ],
     [
-     "Film and Media Studies",
-     0.1817
+     "Respiratory Technologies",
+     0.1033
     ],
     [
-     "Women’s Studies",
-     0.1668
+     "Health Care Ancillaries",
+     0.0765
     ]
    ],
    "desc_kind": "desc_differs_clear",
    "discipline": "Kinesiology",
-   "id": "KINE M1553",
+   "id": "KINE M1108",
+   "members": 3,
+   "title": "Pediatric CPR and AED",
+   "verdict": "for_a_curator",
+   "votes": {},
+   "why": [
+    "description"
+   ]
+  },
+  {
+   "colleges": 2,
+   "desc": [
+    [
+     "Recreation Administration",
+     0.224
+    ],
+    [
+     "Kinesiology",
+     0.1343
+    ],
+    [
+     "Learning Assistance or Learning Skills",
+     0.1022
+    ]
+   ],
+   "desc_kind": "desc_differs_clear",
+   "discipline": "Kinesiology",
+   "id": "KINE M1205",
    "members": 2,
-   "title": "Sport in Film",
+   "title": "Principles and Theory of Athletic Coaching",
+   "verdict": "for_a_curator",
+   "votes": {},
+   "why": [
+    "description"
+   ]
+  },
+  {
+   "colleges": 2,
+   "desc": [
+    [
+     "Health",
+     0.221
+    ],
+    [
+     "Health Care Ancillaries",
+     0.1607
+    ],
+    [
+     "Kinesiology",
+     0.1556
+    ]
+   ],
+   "desc_kind": "desc_differs_clear",
+   "discipline": "Kinesiology",
+   "id": "KINE M1470",
+   "members": 2,
+   "title": "Introduction to CPR and First Aid for Coaches",
+   "verdict": "for_a_curator",
+   "votes": {},
+   "why": [
+    "description"
+   ]
+  },
+  {
+   "colleges": 2,
+   "desc": [
+    [
+     "Health",
+     0.3747
+    ],
+    [
+     "Fire Technology",
+     0.0868
+    ],
+    [
+     "Art",
+     0.0813
+    ]
+   ],
+   "desc_kind": "desc_differs_clear",
+   "discipline": "Kinesiology",
+   "id": "KINE M1476",
+   "members": 2,
+   "title": "CPR, First Aid, and Emergencies",
+   "verdict": "for_a_curator",
+   "votes": {},
+   "why": [
+    "description"
+   ]
+  },
+  {
+   "colleges": 2,
+   "desc": [
+    [
+     "Recreation Administration",
+     0.1879
+    ],
+    [
+     "Older Adults: Noncredit",
+     0.0928
+    ],
+    [
+     "Kinesiology",
+     0.0855
+    ]
+   ],
+   "desc_kind": "desc_differs_clear",
+   "discipline": "Kinesiology",
+   "id": "KINE M1519",
+   "members": 2,
+   "title": "Sport Ethics",
    "verdict": "for_a_curator",
    "votes": {},
    "why": [
@@ -65,53 +222,157 @@
    "desc": [
     [
      "Physical Education Disabled Students",
-     0.3842
+     0.2669
     ],
     [
      "Kinesiology",
-     0.3168
+     0.215
     ],
     [
-     "Health and Safety: Noncredit",
-     0.2522
+     "Health Information Technology",
+     0.1048
     ]
    ],
    "desc_kind": "desc_differs_clear",
    "discipline": "Kinesiology",
-   "id": "KINE M1568",
+   "id": "KINE M1736",
    "members": 2,
-   "title": "Low Impact Fitness",
+   "title": "Personal Trainer Instructor",
    "verdict": "for_a_curator",
-   "votes": {
-    "Kinesiology": 1,
-    "Physical Education Disabled Students": 1
-   },
+   "votes": {},
    "why": [
-    "description",
-    "top"
+    "description"
    ]
   },
   {
    "colleges": 2,
    "desc": [
     [
-     "Hotel and Motel Services",
-     0.1489
+     "Recreation Administration",
+     0.2022
     ],
     [
-     "Interdisciplinary-Basic Skills: Noncredit",
-     0.0813
+     "Kinesiology",
+     0.13
     ],
     [
-     "Learning Assistance or Learning Skills",
-     0.0783
+     "Equine Science",
+     0.0898
     ]
    ],
    "desc_kind": "desc_differs_clear",
    "discipline": "Kinesiology",
-   "id": "KINE M1762",
+   "id": "KINE M1883",
    "members": 2,
-   "title": "Introduction to Sport and Recreation Management",
+   "title": "Theories & Techniques of Coaching Sports",
+   "verdict": "for_a_curator",
+   "votes": {},
+   "why": [
+    "description"
+   ]
+  },
+  {
+   "colleges": 2,
+   "desc": [
+    [
+     "Health",
+     0.4685
+    ],
+    [
+     "Art",
+     0.1246
+    ],
+    [
+     "Respiratory Technologies",
+     0.1067
+    ]
+   ],
+   "desc_kind": "desc_differs_clear",
+   "discipline": "Kinesiology",
+   "id": "KINE M9001",
+   "members": 3,
+   "title": "Adult CPR and AED",
+   "verdict": "for_a_curator",
+   "votes": {},
+   "why": [
+    "description"
+   ]
+  },
+  {
+   "colleges": 2,
+   "desc": [
+    [
+     "Health",
+     0.4359
+    ],
+    [
+     "Health Care Ancillaries",
+     0.1762
+    ],
+    [
+     "Fire Technology",
+     0.1682
+    ]
+   ],
+   "desc_kind": "desc_differs_clear",
+   "discipline": "Kinesiology",
+   "id": "KINE M9026",
+   "members": 4,
+   "title": "Aquatic First Aid/CPR/AED for Lifeguard Rescue Non-Credit",
+   "verdict": "for_a_curator",
+   "votes": {},
+   "why": [
+    "description"
+   ]
+  },
+  {
+   "colleges": 1,
+   "desc": [
+    [
+     "Physical Education Disabled Students",
+     0.3467
+    ],
+    [
+     "Kinesiology",
+     0.262
+    ],
+    [
+     "Health and Safety: Noncredit",
+     0.179
+    ]
+   ],
+   "desc_kind": "desc_differs_clear",
+   "discipline": "Kinesiology",
+   "id": "KINE M1282",
+   "members": 2,
+   "title": "Advanced Core Balance and Fitness",
+   "verdict": "for_a_curator",
+   "votes": {},
+   "why": [
+    "description"
+   ]
+  },
+  {
+   "colleges": 1,
+   "desc": [
+    [
+     "Physical Education Disabled Students",
+     0.3069
+    ],
+    [
+     "Kinesiology",
+     0.2483
+    ],
+    [
+     "Respiratory Technologies",
+     0.1136
+    ]
+   ],
+   "desc_kind": "desc_differs_clear",
+   "discipline": "Kinesiology",
+   "id": "KINE M1956",
+   "members": 2,
+   "title": "Functional Fitness Training Modes",
    "verdict": "for_a_curator",
    "votes": {},
    "why": [
@@ -123,11 +384,11 @@
    "desc": [
     [
      "Kinesiology",
-     0.2756
+     0.2724
     ],
     [
      "Counseling",
-     0.2382
+     0.2385
     ],
     [
      "Health and Safety: Noncredit",
@@ -154,18 +415,18 @@
    "desc": [
     [
      "Kinesiology",
-     0.2427
+     0.2527
     ],
     [
      "Counseling",
-     0.1981
+     0.1988
     ],
     [
      "Nutritional Science/Dietetics",
-     0.1919
+     0.1915
     ]
    ],
-   "desc_kind": "desc_agrees_close",
+   "desc_kind": "desc_agrees_clear",
    "discipline": "Kinesiology",
    "id": "KINE M1847",
    "members": 7,
@@ -184,18 +445,18 @@
    "desc": [
     [
      "Kinesiology",
-     0.1936
+     0.1914
+    ],
+    [
+     "Recreation Administration",
+     0.1582
     ],
     [
      "Nutritional Science/Dietetics",
-     0.1293
-    ],
-    [
-     "Gerontology",
-     0.1053
+     0.1299
     ]
    ],
-   "desc_kind": "desc_agrees_clear",
+   "desc_kind": "desc_agrees_close",
    "discipline": "Kinesiology",
    "id": "KINE M1524",
    "members": 3,
@@ -213,15 +474,15 @@
    "desc": [
     [
      "Kinesiology",
-     0.1904
+     0.1828
     ],
     [
      "Addiction Paraprofessional Training",
-     0.1616
+     0.1619
     ],
     [
      "Health Information Technology",
-     0.1485
+     0.1482
     ]
    ],
    "desc_kind": "desc_agrees_close",
@@ -239,7 +500,7 @@
   }
  ],
  "counts": {
-  "description": 4,
+  "description": 14,
   "top_only": 4
  },
  "discipline": "Kinesiology",

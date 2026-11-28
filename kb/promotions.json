@@ -12507,6 +12507,116 @@
     }
    }
   },
+  "FDNT M1025": {
+   "minted_remnant_members": 2,
+   "official_targets": {
+    "C-ID:NUTR 120": {
+     "members": 2,
+     "colleges": [
+      "Lemoore College",
+      "Rio Hondo College"
+     ]
+    }
+   }
+  },
+  "FDNT M1027": {
+   "minted_remnant_members": 2,
+   "official_targets": {
+    "C-ID:NUTR 120": {
+     "members": 1,
+     "colleges": [
+      "Monterey Peninsula College"
+     ]
+    }
+   }
+  },
+  "FDNT M1030": {
+   "minted_remnant_members": 4,
+   "official_targets": {
+    "C-ID:NUTR 110": {
+     "members": 2,
+     "colleges": [
+      "Pasadena City College",
+      "Santa Barbara City College"
+     ]
+    }
+   }
+  },
+  "FDNT M1032": {
+   "minted_remnant_members": 4,
+   "official_targets": {
+    "C-ID:NUTR 110": {
+     "members": 9,
+     "colleges": [
+      "Bakersfield College",
+      "Imperial Valley College",
+      "Los Angeles Mission College",
+      "Modesto Junior College",
+      "Moorpark College",
+      "Mt. San Jacinto College",
+      "Oxnard College",
+      "Porterville College",
+      "Rio Hondo College"
+     ]
+    }
+   }
+  },
+  "FDNT M1034": {
+   "minted_remnant_members": 34,
+   "official_targets": {
+    "C-ID:NUTR 110": {
+     "members": 24,
+     "colleges": [
+      "American River College",
+      "Antelope Valley College",
+      "Butte College",
+      "Cabrillo College",
+      "Clovis Community College",
+      "College of the Redwoods",
+      "College of the Siskiyous",
+      "Columbia College",
+      "Cosumnes River College",
+      "Cypress College",
+      "Fresno City College",
+      "Gavilan College",
+      "Los Angeles City College",
+      "Los Angeles Harbor College",
+      "Merced College",
+      "Monterey Peninsula College",
+      "Ohlone College",
+      "Orange Coast College",
+      "Porterville College",
+      "Santa Ana College",
+      "Skyline College",
+      "Solano Community College",
+      "Ventura College",
+      "West Los Angeles College"
+     ]
+    }
+   }
+  },
+  "FDNT M10DL": {
+   "minted_remnant_members": 1,
+   "official_targets": {
+    "C-ID:NUTR 110": {
+     "members": 1,
+     "colleges": [
+      "Cuyamaca College"
+     ]
+    }
+   }
+  },
+  "FDNT M10GF": {
+   "minted_remnant_members": 1,
+   "official_targets": {
+    "C-ID:NUTR 110": {
+     "members": 1,
+     "colleges": [
+      "Southwestern College"
+     ]
+    }
+   }
+  },
   "FIRE M1096": {
    "minted_remnant_members": 7,
    "official_targets": {
@@ -23574,116 +23684,6 @@
     }
    }
   },
-  "NUTR M1025": {
-   "minted_remnant_members": 2,
-   "official_targets": {
-    "C-ID:NUTR 120": {
-     "members": 2,
-     "colleges": [
-      "Lemoore College",
-      "Rio Hondo College"
-     ]
-    }
-   }
-  },
-  "NUTR M1027": {
-   "minted_remnant_members": 2,
-   "official_targets": {
-    "C-ID:NUTR 120": {
-     "members": 1,
-     "colleges": [
-      "Monterey Peninsula College"
-     ]
-    }
-   }
-  },
-  "NUTR M1030": {
-   "minted_remnant_members": 4,
-   "official_targets": {
-    "C-ID:NUTR 110": {
-     "members": 2,
-     "colleges": [
-      "Pasadena City College",
-      "Santa Barbara City College"
-     ]
-    }
-   }
-  },
-  "NUTR M1032": {
-   "minted_remnant_members": 4,
-   "official_targets": {
-    "C-ID:NUTR 110": {
-     "members": 9,
-     "colleges": [
-      "Bakersfield College",
-      "Imperial Valley College",
-      "Los Angeles Mission College",
-      "Modesto Junior College",
-      "Moorpark College",
-      "Mt. San Jacinto College",
-      "Oxnard College",
-      "Porterville College",
-      "Rio Hondo College"
-     ]
-    }
-   }
-  },
-  "NUTR M1034": {
-   "minted_remnant_members": 34,
-   "official_targets": {
-    "C-ID:NUTR 110": {
-     "members": 24,
-     "colleges": [
-      "American River College",
-      "Antelope Valley College",
-      "Butte College",
-      "Cabrillo College",
-      "Clovis Community College",
-      "College of the Redwoods",
-      "College of the Siskiyous",
-      "Columbia College",
-      "Cosumnes River College",
-      "Cypress College",
-      "Fresno City College",
-      "Gavilan College",
-      "Los Angeles City College",
-      "Los Angeles Harbor College",
-      "Merced College",
-      "Monterey Peninsula College",
-      "Ohlone College",
-      "Orange Coast College",
-      "Porterville College",
-      "Santa Ana College",
-      "Skyline College",
-      "Solano Community College",
-      "Ventura College",
-      "West Los Angeles College"
-     ]
-    }
-   }
-  },
-  "NUTR M10CQ": {
-   "minted_remnant_members": 1,
-   "official_targets": {
-    "C-ID:NUTR 110": {
-     "members": 1,
-     "colleges": [
-      "Southwestern College"
-     ]
-    }
-   }
-  },
-  "NUTR M10DL": {
-   "minted_remnant_members": 1,
-   "official_targets": {
-    "C-ID:NUTR 110": {
-     "members": 1,
-     "colleges": [
-      "Cuyamaca College"
-     ]
-    }
-   }
-  },
   "PARA M1045": {
    "minted_remnant_members": 14,
    "official_targets": {
@@ -26260,6 +26260,18 @@
     }
    }
   },
+  "PREL M1001": {
+   "minted_remnant_members": 5,
+   "official_targets": {
+    "C-ID:JOUR 150": {
+     "members": 2,
+     "colleges": [
+      "Cerritos College",
+      "Los Angeles Pierce College"
+     ]
+    }
+   }
+  },
   "PSYC M1002": {
    "minted_remnant_members": 4,
    "official_targets": {
@@ -27404,18 +27416,6 @@
      "members": 1,
      "colleges": [
       "Pasadena City College"
-     ]
-    }
-   }
-  },
-  "PUBR M1001": {
-   "minted_remnant_members": 5,
-   "official_targets": {
-    "C-ID:JOUR 150": {
-     "members": 2,
-     "colleges": [
-      "Cerritos College",
-      "Los Angeles Pierce College"
      ]
     }
    }
@@ -31033,7 +31033,7 @@
    }
   }
  },
- "_rekeyed_at": "2026-11-25",
+ "_rekeyed_at": "2026-11-28",
  "_rekeyed_through": [
   "kb/subj4_apply/alias_map.json",
   "kb/crossdisc_out/alias_map.json",
@@ -31061,7 +31061,8 @@
   "kb/blank_stray_remint_out/2026-10-20/alias_map.json",
   "kb/subjects_list_recode_out/2026-11-05/alias_map.json",
   "kb/anchor_rekey_out/2026-11-08/alias_map.json",
-  "kb/stray_code_remint_out/2026-11-25/applied/alias_map.json"
+  "kb/stray_code_remint_out/2026-11-25/applied/alias_map.json",
+  "kb/alignment_remint_out/2026-11-28/alias_map.json"
  ],
  "_rekey_note": "keys re-keyed to current ids through the applied alias chain (chronological single-step per map — an alias map is a simultaneous permutation, never iterated; see the module docstring of kb/_rekey_promotions.py); folded keys sum witnesses; _unresolved entries kept for investigation; receipt: kb/promotions_rekey_out/"
 }

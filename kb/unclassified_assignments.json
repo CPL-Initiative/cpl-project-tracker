@@ -1,8 +1,8 @@
 {
   "_about": "CER unclassified-triage assignments synced from Supabase kb_curation (_UNCLASSIFIED::<raw_title> namespace). Each entry assigns a raw MAP exhibit title a unified credential title (+ optional issuer). RECORDED here for durability/review; the fold into kb/unified_titles.json + kb/credentials.json is PR-3 (dry-run-first, since it mutates the curated credential KB).",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-11-25T19:54:57Z",
-  "count": 3073,
+  "_synced_at": "2026-11-28T18:57:18Z",
+  "count": 3077,
   "assignments": {
     "1st Receiver Ops & Decon": {
       "issuing_agency": "",
@@ -50,6 +50,11 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T15:55:43.566358+00:00",
       "unified_title": "IRS Volunteer Income Tax Assistance (VITA) Program - Tax Preparer"
+    },
+    "ACE CR - Network Fundamentals": {
+      "unified_title": "Networking Fundamentals",
+      "reviewed_by": "sam-rulings-s749@bot",
+      "reviewed_at": "2026-11-28T15:28:16.418437+00:00"
     },
     "ACTG-51 APPLIED ACCOUNTING": {
       "issuing_agency": "California Community Colleges",
@@ -246,6 +251,11 @@
       "reviewed_by": "cer-procedure-course-identity@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "Elements of Plant Science"
+    },
+    "AI-1 and AI-3 Portfolio Review KG 11/23/26": {
+      "unified_title": "Artificial Intelligence Portfolio Review",
+      "reviewed_by": "sam-rulings-s749@bot",
+      "reviewed_at": "2026-11-28T15:28:16.418437+00:00"
     },
     "AJ 101 Criminal Law": {
       "issuing_agency": "California Community Colleges",
@@ -8048,6 +8058,11 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-08T00:04:27.846196+00:00",
       "unified_title": "Communications Systems"
+    },
+    "Community Health Worker Certificate-Code Tenderloin": {
+      "unified_title": "Community Health Worker Certificate",
+      "reviewed_by": "sam-rulings-s749@bot",
+      "reviewed_at": "2026-11-28T15:28:16.418437+00:00"
     },
     "Community and the Justice System": {
       "unified_title": "Community and the Justice System",
@@ -18004,6 +18019,11 @@
       "reviewed_at": "2026-11-01T22:13:28.164+00:00",
       "unified_title": "Elementary Spanish 2",
       "supersedes": "Spanish 2"
+    },
+    "Spanish Literature for Bilinguals Examiantion": {
+      "unified_title": "Spanish Literature for Bilinguals",
+      "reviewed_by": "sam-rulings-s749@bot",
+      "reviewed_at": "2026-11-28T15:28:16.418437+00:00"
     },
     "Specialist Course Module F": {
       "issuing_agency": "",

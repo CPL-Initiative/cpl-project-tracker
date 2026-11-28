@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-28T13:25:28Z",
+ "written_at": "2026-11-28T19:04:23Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,15 +15,15 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 15685,
+     "n": 15691,
      "of": 20282,
      "words": "complete at 118 colleges",
      "open": "#program-requirements/list"
     },
     {
-     "n": 32,
+     "n": 33,
      "of": 20282,
-     "words": "confirmed by a person, 28 of them complete",
+     "words": "confirmed by a person, 29 of them complete",
      "open": "#program-requirements/list",
      "error": null
     }
@@ -34,7 +34,7 @@
    ],
    "issues": [
     {
-     "n": 1680,
+     "n": 1674,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
@@ -68,14 +68,14 @@
    },
    "facts": {
     "active": 20282,
-    "complete": 15685,
-    "failing": 1680,
+    "complete": 15691,
+    "failing": 1674,
     "unread": 2917,
     "records": 18971,
     "colleges": 118,
     "outside_active": 1606,
-    "confirmed": 32,
-    "confirmed_complete": 28
+    "confirmed": 33,
+    "confirmed_complete": 29
    },
    "sources": [
     "coci_programs_data.js",
@@ -98,9 +98,9 @@
    "status_file": "kb/status/exhibit.json",
    "pair": [
     {
-     "n": 3223,
+     "n": 3227,
      "of": 6257,
-     "words": "titles carry a review stamp (1,582 a person's, 1,641 a cohort's), counting 4 titles MAP carries with no entry yet; 2,970 credentials, 2,574 of 3,344 records stamped",
+     "words": "titles carry a review stamp (1,582 a person's, 1,645 a cohort's); 2,973 credentials, 2,577 of 3,347 records stamped",
      "open": "#exhibits/list"
     },
     {
@@ -166,23 +166,23 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-25T19:54:58Z",
+    "at": "2026-11-28T18:57:19Z",
     "every_hours": 24
    },
    "facts": {
-    "titles": 6253,
-    "backlog": 4,
-    "stamped": 3223,
+    "titles": 6257,
+    "backlog": 0,
+    "stamped": 3227,
     "person": 1582,
-    "cohort": 1641,
-    "credentials": 2970,
+    "cohort": 1645,
+    "credentials": 2973,
     "confirmed": 1582,
-    "records": 3344,
-    "records_stamped": 2574,
+    "records": 3347,
+    "records_stamped": 2577,
     "saved_at": "2026-11-25T18:16:01Z",
-    "fold_at": "2026-11-25T19:54:58Z",
+    "fold_at": "2026-11-28T18:57:19Z",
     "map_titles": 5445,
-    "unclassified": 4,
+    "unclassified": 0,
     "left_map": 812,
     "below_80": 1117,
     "below_60": 235,
@@ -224,9 +224,9 @@
    "status_file": "kb/status/course.json",
    "pair": [
     {
-     "n": 4004,
+     "n": 4007,
      "of": 15871,
-     "words": "cards the auditor scores 0.85 or better; 9,674 at needs review, 2,193 at needs repair, 0 not ready",
+     "words": "cards the auditor scores 0.85 or better; 9,680 at needs review, 2,184 at needs repair, 0 not ready",
      "open": "#coci-lookup/courses"
     },
     {
@@ -243,14 +243,14 @@
    ],
    "issues": [
     {
-     "n": 9726,
+     "n": 9727,
      "words": "common courses (cards) carry a discipline no seed has touched, capped at 0.79",
      "owner": "the Common Subjects reference",
      "carry": "no_procedure",
      "open": "#coci-lookup/list/seedless"
     },
     {
-     "n": 4,
+     "n": 14,
      "words": "common courses (cards) whose catalog description reads as another discipline than the one they carry (Kinesiology)",
      "owner": "Sam (rule on each and say why; a reason marked for similar cards becomes a procedure)",
      "carry": "unsure",
@@ -293,14 +293,14 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-28T06:24:11+00:00",
+    "at": "2026-11-28T19:02:33+00:00",
     "every_hours": 24
    },
    "facts": {
     "total": 15871,
-    "ready": 4004,
-    "needs_review": 9674,
-    "needs_repair": 2193,
+    "ready": 4007,
+    "needs_review": 9680,
+    "needs_repair": 2184,
     "not_ready": 0,
     "cap": 0.79,
     "kept_not_counted": {
@@ -316,10 +316,10 @@
     },
     "tags": {
      "blank_description": 5303,
-     "discipline_title_mismatch": 946,
-     "blank_discipline": 72,
-     "seed_untouched_discipline": 9726,
-     "top_discipline_disagreement": 1004,
+     "discipline_title_mismatch": 948,
+     "blank_discipline": 67,
+     "seed_untouched_discipline": 9727,
+     "top_discipline_disagreement": 1041,
      "unit_anomaly": 3200
     }
    },
@@ -383,7 +383,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-27T19:40:49+00:00",
+    "at": "2026-11-19T06:22:43Z",
     "every_hours": null
    },
    "facts": {
@@ -454,15 +454,15 @@
    "status_file": "kb/status/subjects.json",
    "pair": [
     {
-     "n": 246,
-     "of": 246,
-     "words": "MQ disciplines with courses carry a settled Common SUBJ: confirmed (by a person, or by the nightly procedure where the code is the authority's own), on the authority rule, in no collision (138 by a person, 108 by the nightly procedure or a session cohort)",
+     "n": 247,
+     "of": 247,
+     "words": "MQ disciplines with courses carry a settled Common SUBJ: confirmed (by a person, or by the nightly procedure where the code is the authority's own), on the authority rule, in no collision (137 by a person, 110 by the nightly procedure or a session cohort)",
      "open": "#canonical-subj4/list"
     },
     {
-     "n": 138,
-     "of": 246,
-     "words": "confirmed by a person, 138 of them settled",
+     "n": 137,
+     "of": 247,
+     "words": "confirmed by a person, 137 of them settled",
      "open": "#canonical-subj4/list/person",
      "error": null
     }
@@ -475,22 +475,15 @@
    ],
    "issues": [
     {
-     "n": 1,
-     "words": "scan findings to confirm or note (an official prefix on another subject)",
-     "owner": "a curator, after Jev's sitting",
-     "carry": "unsure",
-     "open": "#canonical-subj4/list/scan"
-    },
-    {
-     "n": 3,
+     "n": 4,
      "words": "curated anchor entries keyed off a Common SUBJ that changed, or in the dead key format",
      "owner": "a re-key of the anchor under the playbook",
      "carry": "reaches",
      "open": "#canonical-subj4/progress"
     },
     {
-     "n": 73,
-     "words": "identity codes that are neither a Common SUBJ nor an umbrella code, on 171 identities",
+     "n": 71,
+     "words": "identity codes that are neither a Common SUBJ nor an umbrella code, on 158 identities",
      "owner": "a re-mint under the playbook",
      "carry": "reaches",
      "open": "#coci-lookup/list/stray"
@@ -517,16 +510,16 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-28T06:19:17Z",
+    "at": "2026-11-28T18:57:17Z",
     "every_hours": 24
    },
    "facts": {
-    "disciplines": 246,
-    "confirmed": 246,
-    "person": 138,
-    "cohort": 108,
-    "person_settled": 138,
-    "settled": 246,
+    "disciplines": 247,
+    "confirmed": 247,
+    "person": 137,
+    "cohort": 110,
+    "person_settled": 137,
+    "settled": 247,
     "modal": 0,
     "shared": [],
     "missed_alignment": 0,
@@ -692,7 +685,7 @@
      {
       "ref": "course",
       "title": "Common Course Reference",
-      "n": 9726,
+      "n": 9727,
       "words": "common courses (cards) carry a discipline no seed has touched, capped at 0.79",
       "owner": "the Common Subjects reference",
       "open": "#coci-lookup/list/seedless"
@@ -729,18 +722,10 @@
      {
       "ref": "course",
       "title": "Common Course Reference",
-      "n": 4,
+      "n": 14,
       "words": "common courses (cards) whose catalog description reads as another discipline than the one they carry (Kinesiology)",
       "owner": "Sam (rule on each and say why; a reason marked for similar cards becomes a procedure)",
       "open": "#coci-lookup/list/doubt"
-     },
-     {
-      "ref": "subjects",
-      "title": "Common Subjects Reference",
-      "n": 1,
-      "words": "scan findings to confirm or note (an official prefix on another subject)",
-      "owner": "a curator, after Jev's sitting",
-      "open": "#canonical-subj4/list/scan"
      }
     ]
    },
@@ -750,7 +735,7 @@
      {
       "ref": "subjects",
       "title": "Common Subjects Reference",
-      "n": 3,
+      "n": 4,
       "words": "curated anchor entries keyed off a Common SUBJ that changed, or in the dead key format",
       "owner": "a re-key of the anchor under the playbook",
       "open": "#canonical-subj4/progress"
@@ -758,8 +743,8 @@
      {
       "ref": "subjects",
       "title": "Common Subjects Reference",
-      "n": 73,
-      "words": "identity codes that are neither a Common SUBJ nor an umbrella code, on 171 identities",
+      "n": 71,
+      "words": "identity codes that are neither a Common SUBJ nor an umbrella code, on 158 identities",
       "owner": "a re-mint under the playbook",
       "open": "#coci-lookup/list/stray"
      }
@@ -791,7 +776,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 1680,
+    "n": 1674,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"
@@ -822,15 +807,6 @@
    }
   ],
   "stalled": [
-   {
-    "ref": "exhibit",
-    "title": "Common Exhibit Reference",
-    "kind": "stopped",
-    "what": "the saving run and the fold",
-    "since": "2026-11-25T19:54:58Z",
-    "every_hours": 24,
-    "open": "#exhibits"
-   },
    {
     "ref": "exhibit",
     "title": "Common Exhibit Reference",
@@ -1045,9 +1021,31 @@
  "docket": [],
  "batches": [
   {
+   "kind": "another-look",
+   "n": 1,
+   "of": 1,
+   "open": "#exhibits/another-look/batch",
+   "title": "Another look at 1 exhibit title",
+   "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
+   "stop": "The batch ends when its cards are decided.",
+   "rules": [
+    "course-code"
+   ],
+   "cards": [
+    {
+     "id": "1a582025f38c",
+     "current": "Artificial Intelligence Portfolio Review",
+     "keys": [
+      "_UNCLASSIFIED::AI-1 and AI-3 Portfolio Review KG 11/23/26"
+     ]
+    }
+   ],
+   "at": "2026-11-28T19:03:14Z"
+  },
+  {
    "kind": "job",
    "ref": "course",
-   "n": 4,
+   "n": 14,
    "title": "Common Course Reference",
    "words": "common courses (cards) whose catalog description reads as another discipline than the one they carry (Kinesiology)",
    "teaches": "Sam (rule on each and say why; a reason marked for similar cards becomes a procedure)",
@@ -1056,13 +1054,25 @@
   }
  ],
  "next_batch": {
-  "kind": "job",
-  "ref": "course",
-  "n": 4,
-  "title": "Common Course Reference",
-  "words": "common courses (cards) whose catalog description reads as another discipline than the one they carry (Kinesiology)",
-  "teaches": "Sam (rule on each and say why; a reason marked for similar cards becomes a procedure)",
-  "open": "#coci-lookup/list/doubt",
-  "reason": "unsure"
+  "kind": "another-look",
+  "n": 1,
+  "of": 1,
+  "open": "#exhibits/another-look/batch",
+  "title": "Another look at 1 exhibit title",
+  "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
+  "stop": "The batch ends when its cards are decided.",
+  "rules": [
+   "course-code"
+  ],
+  "cards": [
+   {
+    "id": "1a582025f38c",
+    "current": "Artificial Intelligence Portfolio Review",
+    "keys": [
+     "_UNCLASSIFIED::AI-1 and AI-3 Portfolio Review KG 11/23/26"
+    ]
+   }
+  ],
+  "at": "2026-11-28T19:03:14Z"
  }
 }

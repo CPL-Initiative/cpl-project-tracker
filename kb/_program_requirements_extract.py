@@ -47,6 +47,26 @@ SOURCES = os.path.join(HERE, "program_requirements_pilot", "sources")
 SUPABASE_URL = os.environ.get("SUPABASE_URL", "https://hvuwhnbuahrtptokpqfh.supabase.co").rstrip("/")
 FUNCTION = "program-requirements-extract"
 MIN_COVERAGE = 0.5      # a fixture whose page named fewer listed codes was not the program's page
+NO_LIST_METHOD = "catalog_lookup"   # kb/_program_requirements_college.py NCL_FOUND_METHOD (S748)
+
+
+def sendable(src: dict) -> bool:
+    """Whether a source reaches the extraction's bar: its page names at least MIN_COVERAGE of the program's listed
+    codes. One source has no share to measure (S748): a program the Program Course File lists no course for, filed
+    from its own page by a capture whose college opted in (method catalog_lookup, an empty closed list, the page's
+    text). It is sent on its method. Every other source reads as before, so a capture that files no such source
+    sends exactly what it sent (tests/program_requirements_found_pages_s748_test.py reads every filed source)."""
+    if src.get("method") == NO_LIST_METHOD:
+        return not src.get("closed_list") and bool(src.get("text"))
+    return (src.get("coverage") or 0) >= MIN_COVERAGE
+
+
+def declares_no_list(src: dict) -> bool:
+    """Whether a source's request says the state lists no course for its program (S750): the function's version 13
+    reads an empty closed list only beside no_closed_list true, and answers 400 to an empty list without it, as it
+    always did. Only a catalog_lookup source with an empty list says so; any other source that reaches a call with
+    no courses lost them on the way, and the function's 400 stops it before a model call."""
+    return src.get("method") == NO_LIST_METHOD and not src.get("closed_list")
 # The record shape the function writes (its header names each version). Shape 3
 # (S334, Sam's sheet 33 card 4): program and course outcomes as printed, which
 # the scorer checks word for word against the catalog text. Shape 4 (S360, Sam's
@@ -125,10 +145,14 @@ def call(src: dict, key: str, provider: str | None = None, model: str | None = N
         body["provider"] = provider
     if model:
         body["model"] = model
+    if declares_no_list(src):
+        body["no_closed_list"] = True
     if len(src["closed_list"]) > SPLIT_AT:
         return call_in_parts(src, key, body, meter=meter)
     got = meter.call(lambda: _post(body, key), M.request_chars(body))
-    if any(w in (got.get("error") or "") for w in SPLIT_WHEN):
+    # A read in parts divides the closed list (split_codes); with no course listed there is nothing to divide, so a
+    # no-list record too long for one reply keeps its error (S750).
+    if any(w in (got.get("error") or "") for w in SPLIT_WHEN) and src["closed_list"]:
         return call_in_parts(src, key, body, first=got, meter=meter)
     return got
 
@@ -405,7 +429,7 @@ def price_main(args) -> int:
     the estimate is over the limit, or when a re-run attempt would send programs again (COBIx on #3327, S654;
     the college workflow's check_attempt holds the same rule). With nothing to send it is never refused."""
     import _program_requirements_wave as W
-    n = len([s for s in load_sources(args.only) if (s.get("coverage") or 0) >= MIN_COVERAGE])
+    n = len([s for s in load_sources(args.only) if sendable(s)])
     got = W.price(n, W.DEFAULT_COST_PER_PROGRAM, W.parse_limit(args.limit_usd), True)
     print("pilot extraction: estimate $%.2f for %d programs at $%.4f each with the %.2f margin; %s"
           % (got["price_usd"], n, got["cost_per_program"], got["margin"], got["why"]), flush=True)
@@ -440,7 +464,7 @@ def main(argv: list[str] | None = None) -> int:
     if not key:
         print("SUPABASE_SERVICE_KEY is not set; the Edge Function takes only the service key.")
         return 2
-    sources = [s for s in load_sources(args.only) if (s.get("coverage") or 0) >= MIN_COVERAGE]
+    sources = [s for s in load_sources(args.only) if sendable(s)]
     print("program requirements pilot, extraction: %d programs, writes nothing" % len(sources), flush=True)
     rows = []
     ceiling = float(args.ceiling_usd) if str(args.ceiling_usd or "").strip() else None

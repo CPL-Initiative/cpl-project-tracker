@@ -1,4 +1,4 @@
-{"schema":1,"college":"Fullerton College","slug":"fullerton","basis":"live","census_at":"2026-11-28 11:55Z","correction_rules":true,"programs":[
+{"schema":1,"college":"Fullerton College","slug":"fullerton","basis":"live","census_at":"2026-11-28 17:12Z","correction_rules":true,"programs":[
 {"cn":"18166","title":"Interdisciplinary Studies: Emphasis in Social Behavior and Self-Development","award":"A.A. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://catalog.nocccd.edu/fullerton-college/degrees-certificates/interdisciplinary-studies/interdisciplinary-studies-emphasis-social-behavior-self-development-associate-arts-degree/"},
 {"cn":"40648","title":"Automotive Maintenance","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"40655","title":"Automotive Manual Drive Train","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},

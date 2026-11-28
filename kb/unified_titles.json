@@ -67576,5 +67576,37 @@
     "classified_by": "curator (CER unclassified-triage)",
     "reviewed_at": "2026-11-25T18:16:02.014845+00:00",
     "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "ACE CR - Network Fundamentals": {
+    "unified_title": "Networking Fundamentals",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-28T15:28:16.418437+00:00",
+    "reviewed_by": "sam-rulings-s749@bot"
+  },
+  "AI-1 and AI-3 Portfolio Review KG 11/23/26": {
+    "unified_title": "Artificial Intelligence Portfolio Review",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-28T15:28:16.418437+00:00",
+    "reviewed_by": "sam-rulings-s749@bot"
+  },
+  "Community Health Worker Certificate-Code Tenderloin": {
+    "unified_title": "Community Health Worker Certificate",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-28T15:28:16.418437+00:00",
+    "reviewed_by": "sam-rulings-s749@bot"
+  },
+  "Spanish Literature for Bilinguals Examiantion": {
+    "unified_title": "Spanish Literature for Bilinguals",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-28T15:28:16.418437+00:00",
+    "reviewed_by": "sam-rulings-s749@bot"
   }
 }

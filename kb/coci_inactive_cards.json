@@ -1,34 +1,34 @@
 {
 "_about":"Inactive shared courses, kept for the record and out of every count, waiting pile, to-do and fetch plan (Sam, 2026-11-17: flag the record, never delete it). Built by kb/_build_inactive_cards.py; read through kb/_flags.py.",
-"_ids_current_through":"kb/stray_code_remint_out/2026-11-25/applied/alias_map.json",
+"_ids_current_through":"kb/alignment_remint_out/2026-11-28/alias_map.json",
 "_inputs":{
 "articulations":{
 "path":"kb/coci_articulations.json",
-"sha256":"ac6672e3debe51e2c865995cc989aaf8efc02b149320da7ca83b07678abbc35b"
+"sha256":"912ce1687e76573027cfbf08d21807fda8aa40e9ba00e728a8cdfe7f08b4229f"
 },
 "cards":{
 "path":"kb/coci_minted_courses.json",
-"sha256":"841936de333af82e4e5a0d85817c27582ac9e3a2c4253d9db940784188eba8ba"
+"sha256":"f39fdfbbc72891bb013229fa8b107653583f18031963fc125feef4a9decbb9c7"
 },
 "credential_reference":{
 "path":"credential_reference_data.js",
-"sha256":"24dab87e5e2565901dba33ba3b0677d407de06b14f75c9021744ffd6a5d6506a"
+"sha256":"9b63baafade37d7f1f948139294465e94325f4874e90835d1070d6f03221837d"
 },
 "curation":{
 "path":"kb/coci_curation.json",
-"sha256":"7d7d50b164c6a2e2e4f121ae0882cb73fcc79fcfce45e49e152ce10ba73fd33d"
+"sha256":"32bcc6c2ef02acea2ce6fa63333d1af2eb149d2898b5682c27294a022def3a57"
 },
 "list_members":{
 "path":"unified_courses_members.js",
-"sha256":"5d01385ee08719a9186a7001a0b7a305a76dd01293e088dd4cbcedd4b27db2ca"
+"sha256":"9e99ad05c9e5e86d7cfd3a33a435e68f136a8020e038c11705eb6e88bb6a4e45"
 },
 "memberships":{
 "path":"kb/coci_minted_memberships.json",
-"sha256":"7bc2e478a1d3a260e5a9abd56a8eefdf532402d43da005103fc761f788668f3b"
+"sha256":"9ec62bb21df66007dba0d450081f658de8f075ca3fdc04a1eb51d46fd46c01af"
 },
 "one_course_cards":{
 "path":"kb/coci_minted_singletons.json",
-"sha256":"c371486e55ddf421332c636033f64694b825c52e87837b2ec946ae58b6823c0b"
+"sha256":"db233adcc09f878225eeb602c214885f2d19d1d0ce0eb52d3e7176c41e8a2df2"
 }
 },
 "_note":"Inactive: no college's course sits on this shared course any more, and no exhibit points to it. Kept for the record; nothing to do.",
@@ -35665,6 +35665,353 @@
 ],
 "never_had_a_course":false
 },
+"FDNT M1025":{
+"former_courses":[
+[
+"Cuesta College",
+"CCC000599004",
+[
+"NUTR 120"
+]
+],
+[
+"Santa Monica College",
+"CCC000544682",
+[
+"NUTR 120"
+]
+]
+],
+"never_had_a_course":false
+},
+"FDNT M1027":{
+"former_courses":[
+[
+"Cypress College",
+"CCC000618875",
+[
+"NUTR 120"
+]
+],
+[
+"Orange Coast College",
+"CCC000001848",
+[
+"NUTR 120"
+]
+]
+],
+"never_had_a_course":false
+},
+"FDNT M1030":{
+"former_courses":[
+[
+"Fullerton College",
+"CCC000253101",
+[
+"NUTR 110"
+]
+],
+[
+"Laney College",
+"CCC000348218",
+[
+"NUTR 110"
+]
+],
+[
+"Mission College",
+"CCC000625163",
+[
+"NUTR 110"
+]
+],
+[
+"West Valley College",
+"CCC000605627",
+[
+"NUTR 110"
+]
+]
+],
+"never_had_a_course":false
+},
+"FDNT M1032":{
+"former_courses":[
+[
+"El Camino College",
+"CCC000201137",
+[
+"NUTR 110"
+]
+],
+[
+"Las Positas College",
+"CCC000639488",
+[
+"NUTR 110"
+]
+],
+[
+"Mt. San Antonio College",
+"CCC000579458",
+[
+"NUTR 110"
+]
+],
+[
+"Santa Monica College",
+"CCC000395786",
+[
+"NUTR 110"
+]
+]
+],
+"never_had_a_course":false
+},
+"FDNT M1034":{
+"former_courses":[
+[
+"Barstow Community College",
+"CCC000618809",
+[
+"NUTR 110"
+]
+],
+[
+"CaÃ±ada College",
+"CCC000305695",
+[
+"NUTR 110"
+]
+],
+[
+"Cerro Coso Community College",
+"CCC000556666",
+[
+"NUTR 110"
+]
+],
+[
+"Coastline Community College",
+"CCC000638590",
+[
+"NUTR 110"
+]
+],
+[
+"College of Alameda",
+"CCC000368604",
+[
+"NUTR 110"
+]
+],
+[
+"College of Marin",
+"CCC000373817",
+[
+"NUTR 110"
+]
+],
+[
+"College of San Mateo",
+"CCC000518889",
+[
+"NUTR 110"
+]
+],
+[
+"College of the Canyons",
+"CCC000422208",
+[
+"NUTR 110"
+]
+],
+[
+"College of the Sequoias",
+"CCC000634811",
+[
+"NUTR 110"
+]
+],
+[
+"Compton College",
+"CCC000388026",
+[
+"NUTR 110"
+]
+],
+[
+"Contra Costa College",
+"CCC000291349",
+[
+"NUTR 110"
+]
+],
+[
+"East Los Angeles College",
+"CCC000648307",
+[
+"NUTR 110"
+]
+],
+[
+"Evergreen Valley College",
+"CCC000352192",
+[
+"NUTR 110"
+]
+],
+[
+"Folsom Lake College",
+"CCC000192780",
+[
+"NUTR 110"
+]
+],
+[
+"Gavilan College",
+"CCC000238733",
+[
+"NUTR 110"
+]
+],
+[
+"Hartnell College",
+"CCC000161137",
+[
+"NUTR 110"
+]
+],
+[
+"Lake Tahoe Community College",
+"CCC000452917",
+[
+"NUTR 110"
+]
+],
+[
+"Los Angeles Southwest College",
+"CCC000644411",
+[
+"NUTR 110"
+]
+],
+[
+"Madera College",
+"CCC000615745",
+[
+"NUTR 110"
+]
+],
+[
+"Merritt College",
+"CCC000374863",
+[
+"NUTR 110"
+]
+],
+[
+"Merritt College",
+"CCC000382757",
+[
+"NUTR 110"
+]
+],
+[
+"Norco College",
+"CCC000609620",
+[
+"NUTR 110"
+]
+],
+[
+"Ohlone College",
+"CCC000257087",
+[
+"NUTR 110"
+]
+],
+[
+"Reedley College",
+"CCC000290298",
+[
+"NUTR 110"
+]
+],
+[
+"Riverside City College",
+"CCC000656723",
+[
+"NUTR 110"
+]
+],
+[
+"Sacramento City College",
+"CCC000468899",
+[
+"NUTR 110"
+]
+],
+[
+"San Diego City College",
+"CCC000561367",
+[
+"NUTR 110"
+]
+],
+[
+"San Diego Mesa College",
+"CCC000173129",
+[
+"NUTR 110"
+]
+],
+[
+"San Diego Miramar College",
+"CCC000346101",
+[
+"NUTR 110"
+]
+],
+[
+"San Joaquin Delta College",
+"CCC000349927",
+[
+"NUTR 110"
+]
+],
+[
+"San Jose City College",
+"CCC000348773",
+[
+"NUTR 110"
+]
+],
+[
+"Santiago Canyon College",
+"CCC000225780",
+[
+"NUTR 110"
+]
+],
+[
+"Shasta College",
+"CCC000360879",
+[
+"NUTR 110"
+]
+],
+[
+"Skyline College",
+"CCC000366087",
+[
+"NUTR 110"
+]
+]
+],
+"never_had_a_course":false
+},
 "FDNT M10AO":{
 "former_courses":[
 [
@@ -35748,6 +36095,136 @@
 [
 "Mt. San Antonio College",
 "CCC000579459",
+[
+"NUTR 110"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"FDNT M10CT":{
+"former_courses":[
+[
+"Fullerton College",
+"CCC000589982",
+[
+"NUTR 110"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"FDNT M10CU":{
+"former_courses":[
+[
+"Sacramento City College",
+"CCC000499152",
+[
+"NUTR 110"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"FDNT M10CW":{
+"former_courses":[
+[
+"Palomar College",
+"CCC000561681",
+[
+"NUTR 110"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"FDNT M10DB":{
+"former_courses":[
+[
+"Long Beach City College",
+"CCC000425695",
+[
+"NUTR 110"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"FDNT M10DL":{
+"former_courses":[
+[
+"Grossmont College",
+"CCC000602239",
+[
+"NUTR 110"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"FDNT M10FM":{
+"former_courses":[
+[
+"Glendale Community College",
+"CCC000318678",
+[
+"NUTR 110"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"FDNT M10FV":{
+"former_courses":[
+[
+"San Bernardino Valley College",
+"CCC000558444",
+[
+"NUTR 110"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"FDNT M10FX":{
+"former_courses":[
+[
+"Long Beach City College",
+"CCC000410193",
+[
+"NUTR 120"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"FDNT M10GA":{
+"former_courses":[
+[
+"Grossmont College",
+"CCC000605381",
+[
+"NUTR 120"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"FDNT M10GF":{
+"former_courses":[
+[
+"Saddleback College",
+"CCC000640515",
 [
 "NUTR 110"
 ]
@@ -63776,483 +64253,6 @@
 "never_had_a_course":false,
 "one_course_card":true
 },
-"NUTR M1025":{
-"former_courses":[
-[
-"Cuesta College",
-"CCC000599004",
-[
-"NUTR 120"
-]
-],
-[
-"Santa Monica College",
-"CCC000544682",
-[
-"NUTR 120"
-]
-]
-],
-"never_had_a_course":false
-},
-"NUTR M1027":{
-"former_courses":[
-[
-"Cypress College",
-"CCC000618875",
-[
-"NUTR 120"
-]
-],
-[
-"Orange Coast College",
-"CCC000001848",
-[
-"NUTR 120"
-]
-]
-],
-"never_had_a_course":false
-},
-"NUTR M1030":{
-"former_courses":[
-[
-"Fullerton College",
-"CCC000253101",
-[
-"NUTR 110"
-]
-],
-[
-"Laney College",
-"CCC000348218",
-[
-"NUTR 110"
-]
-],
-[
-"Mission College",
-"CCC000625163",
-[
-"NUTR 110"
-]
-],
-[
-"West Valley College",
-"CCC000605627",
-[
-"NUTR 110"
-]
-]
-],
-"never_had_a_course":false
-},
-"NUTR M1032":{
-"former_courses":[
-[
-"El Camino College",
-"CCC000201137",
-[
-"NUTR 110"
-]
-],
-[
-"Las Positas College",
-"CCC000639488",
-[
-"NUTR 110"
-]
-],
-[
-"Mt. San Antonio College",
-"CCC000579458",
-[
-"NUTR 110"
-]
-],
-[
-"Santa Monica College",
-"CCC000395786",
-[
-"NUTR 110"
-]
-]
-],
-"never_had_a_course":false
-},
-"NUTR M1034":{
-"former_courses":[
-[
-"Barstow Community College",
-"CCC000618809",
-[
-"NUTR 110"
-]
-],
-[
-"CaÃ±ada College",
-"CCC000305695",
-[
-"NUTR 110"
-]
-],
-[
-"Cerro Coso Community College",
-"CCC000556666",
-[
-"NUTR 110"
-]
-],
-[
-"Coastline Community College",
-"CCC000638590",
-[
-"NUTR 110"
-]
-],
-[
-"College of Alameda",
-"CCC000368604",
-[
-"NUTR 110"
-]
-],
-[
-"College of Marin",
-"CCC000373817",
-[
-"NUTR 110"
-]
-],
-[
-"College of San Mateo",
-"CCC000518889",
-[
-"NUTR 110"
-]
-],
-[
-"College of the Canyons",
-"CCC000422208",
-[
-"NUTR 110"
-]
-],
-[
-"College of the Sequoias",
-"CCC000634811",
-[
-"NUTR 110"
-]
-],
-[
-"Compton College",
-"CCC000388026",
-[
-"NUTR 110"
-]
-],
-[
-"Contra Costa College",
-"CCC000291349",
-[
-"NUTR 110"
-]
-],
-[
-"East Los Angeles College",
-"CCC000648307",
-[
-"NUTR 110"
-]
-],
-[
-"Evergreen Valley College",
-"CCC000352192",
-[
-"NUTR 110"
-]
-],
-[
-"Folsom Lake College",
-"CCC000192780",
-[
-"NUTR 110"
-]
-],
-[
-"Gavilan College",
-"CCC000238733",
-[
-"NUTR 110"
-]
-],
-[
-"Hartnell College",
-"CCC000161137",
-[
-"NUTR 110"
-]
-],
-[
-"Lake Tahoe Community College",
-"CCC000452917",
-[
-"NUTR 110"
-]
-],
-[
-"Los Angeles Southwest College",
-"CCC000644411",
-[
-"NUTR 110"
-]
-],
-[
-"Madera College",
-"CCC000615745",
-[
-"NUTR 110"
-]
-],
-[
-"Merritt College",
-"CCC000374863",
-[
-"NUTR 110"
-]
-],
-[
-"Merritt College",
-"CCC000382757",
-[
-"NUTR 110"
-]
-],
-[
-"Norco College",
-"CCC000609620",
-[
-"NUTR 110"
-]
-],
-[
-"Ohlone College",
-"CCC000257087",
-[
-"NUTR 110"
-]
-],
-[
-"Reedley College",
-"CCC000290298",
-[
-"NUTR 110"
-]
-],
-[
-"Riverside City College",
-"CCC000656723",
-[
-"NUTR 110"
-]
-],
-[
-"Sacramento City College",
-"CCC000468899",
-[
-"NUTR 110"
-]
-],
-[
-"San Diego City College",
-"CCC000561367",
-[
-"NUTR 110"
-]
-],
-[
-"San Diego Mesa College",
-"CCC000173129",
-[
-"NUTR 110"
-]
-],
-[
-"San Diego Miramar College",
-"CCC000346101",
-[
-"NUTR 110"
-]
-],
-[
-"San Joaquin Delta College",
-"CCC000349927",
-[
-"NUTR 110"
-]
-],
-[
-"San Jose City College",
-"CCC000348773",
-[
-"NUTR 110"
-]
-],
-[
-"Santiago Canyon College",
-"CCC000225780",
-[
-"NUTR 110"
-]
-],
-[
-"Shasta College",
-"CCC000360879",
-[
-"NUTR 110"
-]
-],
-[
-"Skyline College",
-"CCC000366087",
-[
-"NUTR 110"
-]
-]
-],
-"never_had_a_course":false
-},
-"NUTR M10BX":{
-"former_courses":[
-[
-"Glendale Community College",
-"CCC000318678",
-[
-"NUTR 110"
-]
-]
-],
-"never_had_a_course":false,
-"one_course_card":true
-},
-"NUTR M10CG":{
-"former_courses":[
-[
-"San Bernardino Valley College",
-"CCC000558444",
-[
-"NUTR 110"
-]
-]
-],
-"never_had_a_course":false,
-"one_course_card":true
-},
-"NUTR M10CI":{
-"former_courses":[
-[
-"Long Beach City College",
-"CCC000410193",
-[
-"NUTR 120"
-]
-]
-],
-"never_had_a_course":false,
-"one_course_card":true
-},
-"NUTR M10CL":{
-"former_courses":[
-[
-"Grossmont College",
-"CCC000605381",
-[
-"NUTR 120"
-]
-]
-],
-"never_had_a_course":false,
-"one_course_card":true
-},
-"NUTR M10CQ":{
-"former_courses":[
-[
-"Saddleback College",
-"CCC000640515",
-[
-"NUTR 110"
-]
-]
-],
-"never_had_a_course":false,
-"one_course_card":true
-},
-"NUTR M10CT":{
-"former_courses":[
-[
-"Fullerton College",
-"CCC000589982",
-[
-"NUTR 110"
-]
-]
-],
-"never_had_a_course":false,
-"one_course_card":true
-},
-"NUTR M10CU":{
-"former_courses":[
-[
-"Sacramento City College",
-"CCC000499152",
-[
-"NUTR 110"
-]
-]
-],
-"never_had_a_course":false,
-"one_course_card":true
-},
-"NUTR M10CW":{
-"former_courses":[
-[
-"Palomar College",
-"CCC000561681",
-[
-"NUTR 110"
-]
-]
-],
-"never_had_a_course":false,
-"one_course_card":true
-},
-"NUTR M10DB":{
-"former_courses":[
-[
-"Long Beach City College",
-"CCC000425695",
-[
-"NUTR 110"
-]
-]
-],
-"never_had_a_course":false,
-"one_course_card":true
-},
-"NUTR M10DL":{
-"former_courses":[
-[
-"Grossmont College",
-"CCC000602239",
-[
-"NUTR 110"
-]
-]
-],
-"never_had_a_course":false,
-"one_course_card":true
-},
 "PARA M1045":{
 "former_courses":[
 [
@@ -70929,6 +70929,46 @@
 "never_had_a_course":false,
 "one_course_card":true
 },
+"PREL M1001":{
+"former_courses":[
+[
+"East Los Angeles College",
+"CCC000648426",
+[
+"JOUR 150"
+]
+],
+[
+"Los Angeles City College",
+"CCC000616717",
+[
+"JOUR 150"
+]
+],
+[
+"Los Angeles Harbor College",
+"CCC000619073",
+[
+"JOUR 150"
+]
+],
+[
+"Los Angeles Trade Technical College",
+"CCC000078284",
+[
+"JOUR 150"
+]
+],
+[
+"San Diego Mesa College",
+"CCC000521439",
+[
+"JOUR 150"
+]
+]
+],
+"never_had_a_course":false
+},
 "PSYC M1002":{
 "former_courses":[
 [
@@ -74067,46 +74107,6 @@
 ],
 "never_had_a_course":false,
 "one_course_card":true
-},
-"PUBR M1001":{
-"former_courses":[
-[
-"East Los Angeles College",
-"CCC000648426",
-[
-"JOUR 150"
-]
-],
-[
-"Los Angeles City College",
-"CCC000616717",
-[
-"JOUR 150"
-]
-],
-[
-"Los Angeles Harbor College",
-"CCC000619073",
-[
-"JOUR 150"
-]
-],
-[
-"Los Angeles Trade Technical College",
-"CCC000078284",
-[
-"JOUR 150"
-]
-],
-[
-"San Diego Mesa College",
-"CCC000521439",
-[
-"JOUR 150"
-]
-]
-],
-"never_had_a_course":false
 },
 "PUBS M10OM":{
 "former_courses":[

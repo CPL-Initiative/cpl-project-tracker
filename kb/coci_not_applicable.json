@@ -13,27 +13,27 @@
 "topics":"Not applicable: special or selected topics. What a course like this teaches changes from term to term, so it isn't one course shared across colleges. Kept for the record; nothing to do."
 },
 "_courses_shape":"college|control number -> [kind, title as the state's course list prints it]",
-"_ids_current_through":"kb/stray_code_remint_out/2026-11-25/applied/alias_map.json",
+"_ids_current_through":"kb/alignment_remint_out/2026-11-28/alias_map.json",
 "_inputs":{
 "cards":{
 "path":"kb/coci_minted_courses.json",
-"sha256":"841936de333af82e4e5a0d85817c27582ac9e3a2c4253d9db940784188eba8ba"
+"sha256":"f39fdfbbc72891bb013229fa8b107653583f18031963fc125feef4a9decbb9c7"
 },
 "coci_courses":{
 "path":"coci_lookup_data.js",
-"sha256":"a2c5765891880c2c0b88d90f2ea2a3fdfddc95ce47cbd176532d92095c0c041d"
+"sha256":"cd9881f9a5ddd3968cbec9b7b2701b10e609a8ec736b089d863422e2b29e1972"
 },
 "curation":{
 "path":"kb/coci_curation.json",
-"sha256":"7d7d50b164c6a2e2e4f121ae0882cb73fcc79fcfce45e49e152ce10ba73fd33d"
+"sha256":"32bcc6c2ef02acea2ce6fa63333d1af2eb149d2898b5682c27294a022def3a57"
 },
 "list_members":{
 "path":"unified_courses_members.js",
-"sha256":"5d01385ee08719a9186a7001a0b7a305a76dd01293e088dd4cbcedd4b27db2ca"
+"sha256":"9e99ad05c9e5e86d7cfd3a33a435e68f136a8020e038c11705eb6e88bb6a4e45"
 },
 "one_course_cards":{
 "path":"kb/coci_minted_singletons.json",
-"sha256":"c371486e55ddf421332c636033f64694b825c52e87837b2ec946ae58b6823c0b"
+"sha256":"db233adcc09f878225eeb602c214885f2d19d1d0ce0eb52d3e7176c41e8a2df2"
 }
 },
 "_person_note":"A person reviewed this shared course{on}, and their ruling stands, so it stays in the counts. The machine's note reads: {note}",

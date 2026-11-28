@@ -1,30 +1,30 @@
 {
  "schema": 1,
  "_about": "The Exhibits tab's Review queue (kb/_build_exhibits_review.py): one record per title the CER procedures held, with its proposed canonical title and where that came from, its exhibits, where it is articulated and who could adopt it. Students per title are a reviewer-only read (exhibit_title_students).",
- "written_at": "2026-11-28T06:25:05Z",
+ "written_at": "2026-11-28T19:03:11Z",
  "sources": {
-  "procedures_run": "2026-11-27T17:42:33Z",
+  "procedures_run": "2026-11-28T16:33:23Z",
   "suggestions": "2026-11-26T06:22:21Z",
-  "statewide": "2026-11-28T06:18:07",
-  "audit": "2026-11-28T06:24:26+00:00",
+  "statewide": "2026-11-28T18:56:15",
+  "audit": "2026-11-28T19:02:46+00:00",
   "assignments": {
    "read": "live",
-   "at": "2026-11-28T06:25:01Z",
+   "at": "2026-11-28T19:03:07Z",
    "decided": []
   }
  },
  "tiles": {
   "names": {
-   "n": 6253,
+   "n": 6257,
    "of": 6257,
-   "waiting": 4
+   "waiting": 0
   },
   "aligned": {
-   "n": 3,
-   "of": 4
+   "n": 0,
+   "of": 0
   },
   "saved_not_folded": 0,
-  "settled_since_run": 0,
+  "settled_since_run": 4,
   "review_list": {
    "n": 12,
    "unacknowledged": 0
@@ -93,84 +93,12 @@
   }
  ],
  "steps": {
-  "Proposed": 3,
-  "Wording check": 1,
+  "Proposed": 0,
+  "Wording check": 0,
   "Two issuers": 0,
   "Conflict with the reference": 0
  },
- "colleges": [
-  "Antelope Valley College",
-  "Bakersfield College",
-  "Butte College",
-  "Cabrillo College",
-  "Cerritos College",
-  "Cerro Coso Community College",
-  "Chabot College",
-  "Chaffey College",
-  "Citrus College",
-  "City College of San Francisco",
-  "Clovis Community College",
-  "Coalinga College",
-  "College of San Mateo",
-  "College of the Canyons",
-  "College of the Desert",
-  "College of the Redwoods",
-  "Contra Costa College",
-  "Cosumnes River College",
-  "Cuesta College",
-  "Cuyamaca College",
-  "Diablo Valley College",
-  "East Los Angeles College",
-  "Folsom Lake College",
-  "Fresno City College",
-  "Glendale Community College",
-  "Hartnell College",
-  "Imperial Valley College",
-  "Irvine Valley College",
-  "Las Positas College",
-  "Lassen College",
-  "Lemoore College",
-  "Long Beach City College",
-  "Los Angeles City College",
-  "Los Angeles Harbor College",
-  "Los Angeles Mission College",
-  "Los Angeles Pierce College",
-  "Los Angeles Trade Technical College",
-  "Los Angeles Valley College",
-  "Los Medanos College",
-  "Mendocino College",
-  "Merced College",
-  "MiraCosta College",
-  "Mission College",
-  "Modesto Junior College",
-  "Monterey Peninsula College",
-  "Moorpark College",
-  "Moreno Valley College",
-  "Ohlone College",
-  "Orange Coast College",
-  "Oxnard College",
-  "Palomar College",
-  "Pasadena City College",
-  "Porterville College",
-  "Reedley College",
-  "Rio Hondo College",
-  "Riverside City College",
-  "Sacramento City College",
-  "San Bernardino Valley College",
-  "San Diego City College",
-  "San Diego College of Continuing Education",
-  "San Diego College of Continuing Education Credit",
-  "San Joaquin Delta College",
-  "Santa Barbara City College",
-  "Santa Rosa Junior College",
-  "Sierra College",
-  "Solano Community College",
-  "Southwestern College",
-  "Ventura College",
-  "Victor Valley College",
-  "West Los Angeles College",
-  "West Valley College"
- ],
+ "colleges": [],
  "issuers": [
   "A.B. Miller High School",
   "Adobe",
@@ -543,7 +471,7 @@
   "Villa Park High School"
  ],
  "no_cr": {
-  "of": 3069,
+  "of": 3068,
   "owners_read": "2026-10-26T23:35Z",
   "rows": [
    {
@@ -617,12 +545,6 @@
     "title": "French Level II",
     "type": "Standardized Assessment",
     "college": "Coastline Community College"
-   },
-   {
-    "id": "MAPMM-N-1-001",
-    "title": "Network Fundamentals",
-    "type": "Military",
-    "college": "Cuesta College"
    },
    {
     "id": "MAPPRS-P72-1-001",
@@ -975,9 +897,6 @@
   ]
  },
  "held": [
-  {"raw": "ACE CR - Network Fundamentals", "step": "Proposed", "why": "the classifier is unsure (0.80)", "colleges": [42], "title": "Networking Fundamentals", "issuer": "American Council on Education (ACE)", "from": "the classifier", "proposal_source": "classifier", "ids": ["MAPMM-AC-N-1-001"], "art": [42], "could": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 43, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70], "basis": "C-ID ITIS 150", "same": true, "courses_key": "ITIS 150", "credit_recs": [["CIT 012", "4 hours in Introduction to Networking"]], "confidence": 0.8, "course_title_set_aside": {"title": "Computer Network Fundamentals", "basis": "C-ID ITIS 150", "why": "another path, not credit by exam"}, "aligned_id": "ITIS 150", "course": "CIT 012", "course_college": "Mission College", "under": ["Industry for CIS 66", "Industry for CNT 52", "Network Fundamentals"], "under_count": 3, "exists": true},
-  {"raw": "AI-1 and AI-3 Portfolio Review KG 11/23/26", "step": "Wording check", "why": "the classifier's title has a course code left in", "colleges": [7], "title": "Artificial Intelligence (AI-1 and AI-3)", "issuer": "California Community Colleges", "from": "the classifier", "proposal_source": "classifier", "ids": ["MAPPRA-AAAP-1-001"], "art": [7], "could": [], "basis": "", "same": false, "credit_recs": [["AI 1", "3 hours in Artificial Intelligence: Prompt Engineering and AI Systems"], ["AI 3", "3 hours in Ethics in AI and Technology"]], "confidence": 0.4},
-  {"raw": "Community Health Worker Certificate-Code Tenderloin", "step": "Proposed", "why": "the classifier is unsure (0.60)", "colleges": [9], "title": "Community Health Worker Certificate", "issuer": "Code Tenderloin", "from": "the classifier", "proposal_source": "classifier", "ids": ["MAPICI-CHWC-1-001"], "art": [9], "could": [3, 20, 31, 42, 44], "basis": "M-ID HLTH M1084", "same": true, "courses_key": "HLTH M1084", "credit_recs": [["HLTH 59", "1 hour in Intro to the Community Health Worker Field"]], "local_courses": [[9, "HLTH 59", "Intro to the Community Health Worker Field", 1, "CCC000596848", "1 hour in Intro to the Community Health Worker Field", "An introduction to the roles and core competencies of Community Health Workers (CHW) and the requirements of the CCSF CHW Certificate Program. Students will learn key public health concepts and models for providing person-centered services, and assess their readiness and interest in the CHW Certificate Program._x000D_ STUDENT LEARNING OUTCOMES_x000D_ Upon…"]], "subject": "Health", "subject_course": 0, "confidence": 0.6, "needs_official_name": true, "course_title_set_aside": {"title": "Community Health Worker Skills", "basis": "M-ID HLTH M1084", "why": "industry certification, not credit by exam"}, "aligned_id": "HLTH M1084", "course": "HLTH 59", "course_college": "City College of San Francisco"},
-  {"raw": "Spanish Literature for Bilinguals Examiantion", "step": "Proposed", "why": "the classifier is unsure (0.80)", "colleges": [66], "title": "INTRODUCTION TO LITERATURE FOR BILINGUALS", "issuer": "California Community Colleges", "from": "the course SPAN 221", "proposal_source": "course", "ids": ["MAPCXS-SLFB-1-001"], "art": [66], "could": [], "basis": "the course SPAN 221", "same": false, "credit_recs": [["SPAN 221", "5 hours in INTRODUCTION TO LITERATURE FOR BILINGUALS"]], "local_courses": [[66, "SPAN 221", "INTRODUCTION TO LITERATURE FOR BILINGUALS", 5, "CCC000327638", "5 hours in INTRODUCTION TO LITERATURE FOR BILINGUALS", "Provides second year of study for bilingual students of Spanish. Includes introductory study of Latin American and Peninsular literature to the intermediate native speaker. Emphasizes reading, writing, and analysis of fiction, drama, and poetry, and the use of current technology to research class topics. [D; CSU; UC]"]], "subject": "Foreign Languages", "subject_course": 0, "confidence": 0.8, "alternates": ["Spanish Literature for Bilinguals"], "aligned_id": "SPAN M10FL", "course": "SPAN 221", "course_college": "Southwestern College"}
+
  ]
 }

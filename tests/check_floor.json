@@ -209,6 +209,7 @@
     "exhibits_review_card_panels.test.js": 39,
     "exhibits_same_subject.test.js": 24,
     "exhibits_served_paths.test.js": 9,
+    "extract_closed_list_input.test.js": 25,
     "factsheet_a11y.test.js": 69,
     "factsheet_edit.test.js": 35,
     "factsheet_edit_boxes.test.js": 28,
