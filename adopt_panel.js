@@ -304,7 +304,7 @@
     if (g.length) line("Already gives CPL for it: " + g.join(", ") + ".");
     else line(it.kind === "consider" ? "No college grants it yet; it is a statewide recommendation" + (it.cid ? " for " + it.cid : "") + "." : "No granting college is on file.", true);
     if (it.kind === "consider" && g.length && it.cid) line("A statewide recommendation for " + it.cid + ".");
-    var links = typeof it.links === "function" ? it.links(it.title) : null;
+    var links = typeof it.links === "function" ? it.links(it.title, home) : null;
     if (links) box.appendChild(links);
     return box;
   }
@@ -375,7 +375,7 @@
     }
     var id = "cpladp-f" + (++formSeq);
     var fs = el("fieldset", "cpladp-list");
-    fs.appendChild(el("legend", null, m.items.length + (m.items.length === 1 ? " exhibit" : " exhibits") + " for " + ((opts.course || {}).code || "this course")));
+    fs.appendChild(el("legend", null, m.items.length + (m.items.length === 1 ? " exhibit" : " exhibits") + " for " + ((opts.course || {}).code || (opts.course || {}).title || "this course")));
     var boxes = [];
     m.items.forEach(function (it, i) {
       var row = el("div", "cpladp-row");
@@ -383,6 +383,7 @@
       cb.type = "checkbox";
       cb.id = id + "-x" + i;
       cb.value = String(i);
+      if ((opts.checked || []).indexOf(it.title) >= 0) cb.checked = true;
       var lb = el("label", null, it.title);
       lb.setAttribute("for", cb.id);
       row.appendChild(cb);
