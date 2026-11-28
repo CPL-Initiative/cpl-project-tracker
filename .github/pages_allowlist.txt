@@ -155,6 +155,7 @@ withhold kb/cpl_memory_*seed*.json
 withhold kb/docs_audit
 withhold kb/memory_audit
 withhold kb/migrations
+withhold kb/mid_forwarding.csv
 withhold kb/supabase_*.sql
 withhold map
 # Python scripts at the root and in kb/ (both already split): build and sync tooling, never fetched by a page.
