@@ -4,9 +4,9 @@
   "supabase_tables": 119,
   "rpcs": 68,
   "edge_functions": 16,
-  "file_datasets": 1398,
+  "file_datasets": 1402,
   "external_services": 203,
-  "consumers": 743,
+  "consumers": 744,
   "workflows": 77,
   "data_js_files": 71,
   "tabs": 41
@@ -900,7 +900,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 693
+     "line": 724
     }
    ],
    "main_committers": []
@@ -1038,7 +1038,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1644,
+     "line": 1651,
      "tabs": [
       "commons"
      ]
@@ -1282,7 +1282,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1865
+     "line": 1896
     },
     {
      "id": "module:admin.js",
@@ -1705,7 +1705,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3958,
+     "line": 4196,
      "tabs": [
       "cpl-pathways"
      ]
@@ -2024,7 +2024,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2525
+     "line": 2556
     }
    ],
    "main_committers": []
@@ -2510,7 +2510,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3957,
+     "line": 4195,
      "tabs": [
       "cpl-pathways"
      ]
@@ -2695,7 +2695,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1475
+     "line": 1506
     }
    ],
    "main_committers": []
@@ -2714,7 +2714,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1820
+     "line": 1851
     },
     {
      "id": "module:college_briefing.js",
@@ -3454,7 +3454,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1876
+     "line": 1907
     },
     {
      "id": "module:dashboard_filters.js",
@@ -3707,7 +3707,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3956,
+     "line": 4194,
      "tabs": [
       "cpl-pathways"
      ]
@@ -4014,7 +4014,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1099,
+     "line": 1100,
      "tabs": [
       "commons"
      ]
@@ -4724,7 +4724,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2360,
+     "line": 2595,
      "tabs": [
       "cpl-pathways"
      ]
@@ -4848,7 +4848,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2189
+     "line": 2220
     }
    ],
    "main_committers": []
@@ -6149,7 +6149,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2073
+     "line": 2104
     },
     {
      "id": "module:admin.js",
@@ -6318,14 +6318,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 228
+     "line": 230
     },
     {
      "id": "script:kb/_build_coci_lookup.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 180
+     "line": 182
     },
     {
      "id": "script:kb/_build_local_subject_recommendations.py",
@@ -6339,7 +6339,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 49
+     "line": 50
     },
     {
      "id": "script:kb/_build_not_applicable.py",
@@ -6510,7 +6510,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2280,
+     "line": 2309,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6611,7 +6611,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 751
+     "line": 782
     },
     {
      "id": "module:cip_crosswalk.js",
@@ -6790,7 +6790,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4726,
+     "line": 4984,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6831,7 +6831,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4062,
+     "line": 4300,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7161,7 +7161,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2521,
+     "line": 2522,
      "tabs": [
       "canonical-subj4"
      ]
@@ -7181,7 +7181,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5007,
+     "line": 5265,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7465,7 +7465,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4994,
+     "line": 5252,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7542,7 +7542,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4988,
+     "line": 5246,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7552,14 +7552,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 230
+     "line": 232
     },
     {
      "id": "script:kb/_build_coci_lookup.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 222
+     "line": 224
     }
    ],
    "producers": [
@@ -7578,7 +7578,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2464
+     "line": 2495
     },
     {
      "id": "module:college_briefing.js",
@@ -7791,7 +7791,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1535
+     "line": 1566
     },
     {
      "id": "module:cpl_funding.js",
@@ -7888,7 +7888,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 3347,
+     "line": 3585,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7938,7 +7938,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 4954,
+     "line": 5212,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7961,7 +7961,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 3519,
+     "line": 3757,
      "tabs": [
       "cpl-pathways"
      ]
@@ -8017,14 +8017,14 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 336
+     "line": 367
     },
     {
      "id": "module:cpl_pathways.js",
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5002,
+     "line": 5260,
      "tabs": [
       "cpl-pathways"
      ]
@@ -8041,14 +8041,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 113
+     "line": 115
     },
     {
      "id": "script:kb/_build_roep_display.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 113
+     "line": 115
     },
     {
      "id": "script:kb/_program_requirements_display_apply.py",
@@ -8238,7 +8238,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4975,
+     "line": 5233,
      "tabs": [
       "cpl-pathways"
      ]
@@ -8412,7 +8412,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 112
+     "line": 114
     },
     {
      "id": "script:kb/_exhibit_reanalysis_checks.py",
@@ -8551,7 +8551,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2520,
+     "line": 2521,
      "tabs": [
       "canonical-subj4"
      ]
@@ -10781,6 +10781,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/_build_program_certs.py": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/_build_program_course_graph.py": {
    "consumers": [
     {
@@ -12822,7 +12835,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 107
+     "line": 109
     },
     {
      "id": "script:kb/_build_side_by_side.py",
@@ -13844,7 +13857,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 110
+     "line": 112
     },
     {
      "id": "script:kb/_build_side_by_side.py",
@@ -14374,7 +14387,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 46
+     "line": 47
     },
     {
      "id": "script:kb/_build_cpl_pathway_ccr.py",
@@ -14806,7 +14819,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 47
+     "line": 48
     },
     {
      "id": "script:kb/_build_discipline_local_courses.py",
@@ -15896,7 +15909,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 750
+     "line": 755
     }
    ],
    "served": false,
@@ -16622,6 +16635,13 @@
      "line": 820
     },
     {
+     "id": "script:kb/_build_program_certs.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 68
+    },
+    {
      "id": "script:kb/_build_sheet181_rename_plan.py",
      "kind": "script",
      "direction": "read",
@@ -16906,7 +16926,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1050
+     "line": 1055
     }
    ],
    "served": false,
@@ -16929,7 +16949,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 625
+     "line": 630
     },
     {
      "id": "script:kb/_stray_code_remint.py",
@@ -16993,7 +17013,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 626
+     "line": 631
     }
    ],
    "served": true,
@@ -17291,7 +17311,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 51
+     "line": 52
     },
     {
      "id": "script:kb/_ccr_confidence_apply.py",
@@ -17494,7 +17514,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 57
+     "line": 70
     }
    ],
    "producers": [
@@ -17604,7 +17624,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1201
+     "line": 1206
     },
     {
      "id": "script:kb/_docket_rulings.py",
@@ -18287,6 +18307,20 @@
      "line": 80
     },
     {
+     "id": "script:kb/_build_program_certs.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 67
+    },
+    {
+     "id": "script:kb/_build_roep_display.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 349
+    },
+    {
      "id": "script:kb/_build_side_by_side.py",
      "kind": "script",
      "direction": "read",
@@ -18615,7 +18649,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1142
+     "line": 1147
     },
     {
      "id": "script:kb/_build_exhibits_related.py",
@@ -18990,7 +19024,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 729
+     "line": 734
     },
     {
      "id": "script:kb/_build_exhibit_cert_links.py",
@@ -19718,7 +19752,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 95
+     "line": 97
     },
     {
      "id": "script:kb/_program_requirements_dated_reads.py",
@@ -19775,7 +19809,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 96
+     "line": 98
     },
     {
      "id": "script:kb/_program_requirements_dated_reads.py",
@@ -21670,7 +21704,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 45
+     "line": 46
     },
     {
      "id": "script:kb/_build_college_courses.py",
@@ -22559,7 +22593,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 50
+     "line": 51
     },
     {
      "id": "script:kb/_build_oc_medical_assistant_crosswalk.py",
@@ -23188,7 +23222,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 862
+     "line": 867
     }
    ],
    "producers": [
@@ -23398,7 +23432,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 141,
+     "line": 142,
      "tabs": [
       "commons"
      ]
@@ -23429,7 +23463,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 99,
+     "line": 100,
      "tabs": [
       "commons"
      ]
@@ -23477,7 +23511,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 52
+     "line": 53
     },
     {
      "id": "script:kb/_file_subject_decisions.py",
@@ -23648,7 +23682,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 80
+     "line": 81
     },
     {
      "id": "script:kb/_build_noncredit_categories.py",
@@ -23669,7 +23703,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 67
+     "line": 80
     }
    ],
    "served": true,
@@ -23682,7 +23716,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 153,
+     "line": 154,
      "tabs": [
       "commons"
      ]
@@ -23808,6 +23842,19 @@
    ],
    "served": true,
    "main_committers": []
+  },
+  "file:kb/status/program_certs": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": false,
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
   },
   "file:kb/status/program_discontinued.json": {
    "consumers": [
@@ -23972,7 +24019,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 56
+     "line": 69
     }
    ],
    "producers": [
@@ -24024,7 +24071,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 684
+     "line": 689
     }
    ],
    "served": true,
@@ -24885,7 +24932,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 111
+     "line": 113
     },
     {
      "id": "script:kb/_build_sheet181_rename_plan.py",
@@ -25449,7 +25496,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4419,
+     "line": 4657,
      "tabs": [
       "cpl-pathways"
      ]
@@ -25494,6 +25541,20 @@
      "direction": "read",
      "how": "literal",
      "line": 45
+    },
+    {
+     "id": "script:kb/_build_program_certs.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 66
+    },
+    {
+     "id": "script:kb/_build_roep_display.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 350
     }
    ],
    "producers": [
@@ -27187,7 +27248,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 748
+     "line": 753
     },
     {
      "id": "script:kb/_prefix_alias_census.py",
@@ -28048,7 +28109,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2692,
+     "line": 2928,
      "tabs": [
       "cpl-pathways"
      ]
@@ -29476,6 +29537,19 @@
    "main_committers": []
   },
   "file:tests/college_contacts_harvest_sql_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/college_page_read_frame_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -31533,6 +31607,19 @@
    "main_committers": []
   },
   "file:tests/probe_lifecycle_checks_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_certs_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -35252,7 +35339,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 109
+     "line": 111
     },
     {
      "id": "script:kb/_esl_package_actionable.py",
@@ -35528,7 +35615,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 108
+     "line": 110
     },
     {
      "id": "script:kb/_build_side_by_side.py",
@@ -37668,7 +37755,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 4262,
+     "line": 4500,
      "tabs": [
       "cpl-pathways"
      ]
@@ -37707,7 +37794,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 2265,
+     "line": 2294,
      "tabs": [
       "cpl-pathways"
      ]
@@ -37843,7 +37930,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 2526,
+     "line": 2762,
      "tabs": [
       "cpl-pathways"
      ]
@@ -38592,7 +38679,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1004
+     "line": 1035
     },
     {
      "id": "module:exhibits.js",
@@ -39184,7 +39271,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 322,
+     "line": 323,
      "tabs": [
       "commons"
      ]
@@ -39194,7 +39281,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 345,
+     "line": 346,
      "tabs": [
       "commons"
      ]
@@ -39713,7 +39800,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 2083,
+     "line": 2098,
      "tabs": [
       "cpl-pathways"
      ]
@@ -40493,7 +40580,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 1744,
+     "line": 1759,
      "tabs": [
       "cpl-pathways"
      ]
@@ -40583,7 +40670,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 1767,
+     "line": 1782,
      "tabs": [
       "cpl-pathways"
      ]
@@ -42067,6 +42154,7 @@
     "kb/_build_side_by_side.py",
     "kb/_build_exhibit_slo_neighbors.py",
     "kb/_build_adopt_page.py",
+    "kb/_build_program_certs.py",
     "kb/_build_adopt_align.py",
     "kb/_sync_program_checked.py",
     "kb/_ccr_seed_recheck_dryrun.py",
@@ -42107,6 +42195,7 @@
     "kb/status/local_subject_recommendations.json",
     "kb/status/subject_courses",
     "kb/status/program_ladders",
+    "kb/status/program_certs",
     "kb/status/noncredit_subject_titles.json",
     "kb/status/mid_readiness.json",
     "kb/status/outline_hunt.json",
@@ -42379,6 +42468,7 @@
     "tests/credit_catalogs_filing_test.py",
     "tests/subject_courses_test.py",
     "tests/program_ladders_test.py",
+    "tests/program_certs_test.py",
     "tests/noncredit_subject_titles_test.py",
     "tests/held_subject_codes_test.py",
     "tests/subject_decisions_honored_test.py",
@@ -42581,6 +42671,7 @@
     "tests/row_audit_prune_test.py",
     "tests/receipt_move_gate_test.py",
     "tests/college_page_read_test.py",
+    "tests/college_page_read_frame_test.py",
     "tests/program_map_parse_test.py",
     "tests/queue_status_test.py",
     "tests/ui_pass_test.py",

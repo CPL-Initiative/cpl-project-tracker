@@ -146,7 +146,8 @@ def main() -> int:
     # cpl_pathways.js:93 was read as read-only, and the governance scan lost
     # a human-write surface the old crude regex had caught.
     check("cpl_adoption_interest write survives const indirection",
-          ("module:cpl_pathways.js", "write") in
+          # S746: the intake's one writer is adopt_panel.js (var INTAKE = ... then fetch(INTAKE, POST)).
+          ("module:adopt_panel.js", "write") in
           consumers(p, "supabase:cpl_adoption_interest"))
 
     failed = [n for n, ok in results if not ok]
