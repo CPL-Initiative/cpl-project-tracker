@@ -1246,6 +1246,11 @@ jobs:
       - name: Named gaps S742 plan s742k3 (San Bernardino Valley 17829 on its reread row)
         if: matrix.shard == 1
         run: python3 tests/program_named_gaps_s742k3_test.py
+      # S748 plan s748k1: College of the Canyons 38686, 44273 and 45610 under no_hours_read, by the named-gaps
+      # module's wave pass, on the rows load 44887749460 inserted; Cosumnes River stays free of ge_units_not_read.
+      - name: Named gaps S748 plan s748k1 (College of the Canyons' three noncredit certificates)
+        if: matrix.shard == 1
+        run: python3 tests/program_named_gaps_s748k1_test.py
       # S742 at San Jose City: one cited renumber, JOURN 138 for the state's one unnamed row 'JournalismJO Work
       # Experience', on the page's own line, with its self-recall over the college's records (38499 alone moves).
       - name: Renumber S742 at San Jose City (JOURN 138, the page's own line, the self-recall)

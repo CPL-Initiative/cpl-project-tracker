@@ -1,0 +1,30 @@
+-- S748K1 named gaps over College of the Canyons' re-read run 44886816990 (the rows load 44887749460 inserted): no_hours_read 3.
+-- A: a re-read record a record rule names a gap for (no_units_read, no_hours_read, major_total_differs). B: a re-read record #3502's plan names, meeting its gap's own sentence (kb/program_requirements_reread_plan_s680.json).
+-- Receipt: kb/receipts/program_requirement_records_named_gaps_2026-11-28_s748k1.json (before_image and after_image per row). Only records whose extracted_run is a run of
+-- the wave at the named colleges; never a held, parked or checked one.
+-- Rollback, NOT applied: each row's before-image checks back where the row still holds the
+-- after-image, skipping and listing a row a person checked. A rollback lasts only until the
+-- next load of that college: revert the record files too (git revert of this plan's commit).
+with v(i, part, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values
+  (1, 'A', 'College of the Canyons', '38686', 44886816990, '{"blocks":[{"courses":[{"alternatives":[],"catalog_addition":false,"code":"NC.PHOT-050","units":8,"units_max":null},{"alternatives":[],"catalog_addition":false,"code":"NC.PHOT-051","units":8,"units_max":null},{"alternatives":[],"catalog_addition":false,"code":"NC.PHOT-052","units":8,"units_max":null},{"alternatives":[],"catalog_addition":false,"code":"NC.PHOT-059","units":24,"units_max":null},{"alternatives":[],"catalog_addition":false,"code":"NC.PHOT-099","units":null,"units_max":null}],"minimum":null,"name":"Program Requirements","option_group":null,"rule":"all","stated":{"max":null,"min":null}}],"program":{"careers":["photographic industry"],"degree_elective_units":{"max":null,"min":null},"degree_total":{"max":null,"min":null},"electives_fill_degree":false,"ge_pattern":null,"ge_units":{"max":null,"min":null},"measure":"hours","open_elective_units":null,"outcomes":["Students will be able to demonstrate and apply the basic technical skills and fundamental principles for development of digital photographic projects."],"section_heading":"Certificate of Completion: Digital Photographic Project Fundamentals","total_units":{"max":null,"min":null}}}'::jsonb, '{"arithmetic":"incomplete","coverage":true,"invented":true,"listed":5,"placed":5}'::jsonb, '{"arithmetic":"incomplete","confidence":{"catalog_year":100,"course_list_match":100,"ge_pattern":null,"source":80,"unit_arithmetic":20},"coverage":true,"gaps":["no_hours_read"],"invented":true,"listed":5,"placed":5}'::jsonb),
+  (2, 'A', 'College of the Canyons', '44273', 44886816990, '{"blocks":[{"courses":[{"alternatives":[],"catalog_addition":false,"code":"NC.REC-100","units":30,"units_max":40},{"alternatives":[],"catalog_addition":false,"code":"NC.HLTH-001","units":null,"units_max":null}],"minimum":null,"name":"Program Requirements","option_group":null,"rule":"all","stated":{"max":null,"min":null}}],"program":{"careers":[],"degree_elective_units":{"max":null,"min":null},"degree_total":{"max":null,"min":null},"electives_fill_degree":false,"ge_pattern":null,"ge_units":{"max":null,"min":null},"measure":"hours","open_elective_units":null,"outcomes":[],"section_heading":"Certificate of Completion: Wilderness Leadership","total_units":{"max":null,"min":null}}}'::jsonb, '{"arithmetic":"incomplete","coverage":true,"invented":true,"listed":2,"placed":2}'::jsonb, '{"arithmetic":"incomplete","confidence":{"catalog_year":100,"course_list_match":100,"ge_pattern":null,"source":80,"unit_arithmetic":20},"coverage":true,"gaps":["no_hours_read"],"invented":true,"listed":2,"placed":2}'::jsonb),
+  (3, 'A', 'College of the Canyons', '45610', 44886816990, '{"blocks":[{"courses":[{"alternatives":[],"catalog_addition":false,"code":"NC.CAWT-010A","units":20,"units_max":24},{"alternatives":[],"catalog_addition":true,"code":"NC.CAWT-110","units":null,"units_max":null}],"minimum":null,"name":"Program Requirements","option_group":null,"rule":"all","stated":{"max":null,"min":null}}],"program":{"careers":[],"degree_elective_units":{"max":null,"min":null},"degree_total":{"max":null,"min":null},"electives_fill_degree":false,"ge_pattern":null,"ge_units":{"max":null,"min":null},"measure":"hours","open_elective_units":null,"outcomes":["Analyze and assess key elements of the Windows Operating System, correct keyboarding techniques, and word processing skills.","Utilize key components of the Microsoft Windows Operating System while using correct keyboarding techniques and word processing skills."],"section_heading":"Certificate of Completion: Essential Skills for Microsoft Windows and Keyboarding","total_units":{"max":null,"min":null}}}'::jsonb, '{"arithmetic":"incomplete","coverage":true,"invented":true,"listed":1,"placed":1}'::jsonb, '{"arithmetic":"incomplete","confidence":{"catalog_year":100,"course_list_match":100,"ge_pattern":null,"source":80,"unit_arithmetic":20},"coverage":true,"gaps":["no_hours_read"],"invented":true,"listed":1,"placed":1}'::jsonb)),
+c as (select count(*) filter (where r.checked is true) as n,
+             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys
+        from v join public.program_requirement_records r
+          on r.college = v.college and r.control_number = v.control_number),
+-- A partial rollback: set expect below to the smaller count you mean.
+e(expect) as (values (3)),
+u as (
+update public.program_requirement_records r
+   set checks = v.before_checks
+  from v
+ where r.college = v.college and r.control_number = v.control_number
+   and r.extracted_run = v.extracted_run and r.checks = v.after_checks
+   and r.checked is not true
+returning v.i),
+s as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)
+select case when s.n = e.expect - c.n
+            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)
+            else ('s748k1 named-gaps rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned
+  from s, c, e;
