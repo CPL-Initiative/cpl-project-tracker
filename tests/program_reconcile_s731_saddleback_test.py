@@ -53,12 +53,15 @@ others = {c: [s for s in v.get("steps") or [] if s.get("block_sum")] for c, v in
 SBVC = "San Bernardino Valley College"
 check(sorted(others) == [SBVC], "one other college carries block_sum, San Bernardino Valley: %s" % sorted(others))
 sb = (others.get(SBVC) or [{}])
+# The pattern is pinned whole (the second reader, S748): a substring test passed a pattern widened around those
+# words. Any change to it is a new step, with its own recall.
+SBVC_PATTERN = (r"Complete\s+4\s+semesters\s+totaling\s+2\s+units\s+(?P<code>MUS\s*141X(?P<n>2))"
+                "\\s*\u00b7?\\s*&\\s*MUS\\s*241X2(?![0-9A-Za-z])")
 check(len(sb) == 1 and sb[0].get("kind") == "repeat" and sb[0].get("block_sum") is True
-      and sb[0].get("awards") == "local_aa"
-      and "semesters\\s+totaling\\s+2\\s+units" in (sb[0].get("pattern") or "")
-      and "MUS\\s*141X" in (sb[0].get("pattern") or "") and "MUS\\s*241X2" in (sb[0].get("pattern") or "")
+      and sb[0].get("awards") == "local_aa" and sb[0].get("pattern") == SBVC_PATTERN
       and not sb[0].get("name_pattern") and not sb[0].get("block_pattern"),
-      "San Bernardino Valley's is one repeat step for local A.A. degrees, on its own heading words and its own pair")
+      "San Bernardino Valley's is one repeat step for local A.A. degrees, on its own heading words and its own pair, "
+      "its pattern as filed to the character: %r" % sb[0].get("pattern"))
 check(set(W.TARGETS) == SEVEN and not set(W.KEPT) & SEVEN, "the seven, and the five kept apart")
 
 n_records = len(glob.glob(os.path.join(W.COLLEGE_DIR, W.SLUG, "records", "*.json")))
