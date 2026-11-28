@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-28T17:13:16Z",
+ "written_at": "2026-11-28T19:24:19Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -179,7 +179,7 @@
   "spent_since": "2026-11-17",
   "slo_waiting": 9,
   "scouted": 11,
-  "scout_barrier": 1,
+  "scout_barrier": 0,
   "spot_checked": 8,
   "confidence": {
    "strong": 2,
@@ -6969,7 +6969,10 @@
    "passing": 207,
    "gap": 30,
    "causes": {
-    "parked_college": 30
+    "no_closed_list": 5,
+    "page_not_found": 9,
+    "places_none": 8,
+    "unknown_without_live": 8
    },
    "census_causes": {
     "parked_college": 16
@@ -7016,7 +7019,10 @@
    "read_seconds": 137.5,
    "run": "41188677929",
    "levers": {
-    "unpark": 30
+    "reader_page_search": 9,
+    "reader_page_assignment": 8,
+    "reconcile_steps": 8,
+    "program_course_file_check": 5
    },
    "collection": {
     "program_reader": {
@@ -7059,7 +7065,9 @@
    "passing": 44,
    "gap": 59,
    "causes": {
-    "parked_college": 59
+    "no_closed_list": 6,
+    "page_not_found": 14,
+    "unknown_without_live": 39
    },
    "census_causes": {
     "parked_college": 59
@@ -7108,7 +7116,11 @@
    "read_seconds": 836.2,
    "run": "42376691800",
    "levers": {
-    "unpark": 59
+    "reconcile_steps": 27,
+    "reader_page_search": 14,
+    "ge_units_steps": 10,
+    "program_course_file_check": 6,
+    "scorer_noncredit_hours": 2
    },
    "collection": {
     "program_reader": {
@@ -7875,7 +7887,10 @@
    "passing": 187,
    "gap": 19,
    "causes": {
-    "parked_college": 19
+    "extraction_error": 3,
+    "no_closed_list": 1,
+    "places_none": 2,
+    "unknown_without_live": 13
    },
    "census_causes": {
     "parked_college": 19
@@ -7922,7 +7937,11 @@
    "read_seconds": 1588.3,
    "run": "42195216637",
    "levers": {
-    "unpark": 19
+    "reconcile_steps": 10,
+    "paid_read": 3,
+    "scorer_noncredit_hours": 3,
+    "reader_page_assignment": 2,
+    "program_course_file_check": 1
    },
    "collection": {
     "program_reader": {
@@ -11681,10 +11700,10 @@
    "passed_at_read": 190,
    "slo_queue": null,
    "scout": {
-    "recommendation": "blocked",
-    "challenge": "firewall",
-    "checked_at": "2026-11-13T01:26:36Z",
-    "wave": "scout-2026-11-12",
+    "recommendation": "page_read",
+    "challenge": "none",
+    "checked_at": "2026-11-28T19:25:00Z",
+    "wave": "scout-2026-11-28",
     "platform": "courseleaf",
     "catalog_year": "2026-2027",
     "catalog_url": "https://catalog.swccd.edu/"

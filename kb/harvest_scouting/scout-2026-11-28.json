@@ -1,0 +1,31 @@
+{
+ "schema": 1,
+ "wave": "scout-2026-11-28",
+ "colleges": [
+  {
+   "college": "Southwestern College",
+   "checked_at": "2026-11-28T19:25:00Z",
+   "catalog_url": {
+    "registry": "https://catalog.swccd.edu/",
+    "found": "https://catalog.swccd.edu/",
+    "status": 200,
+    "catalog_year": "2026-2027"
+   },
+   "platform": "courseleaf",
+   "program_index": {
+    "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/",
+    "programs_listed": 272
+   },
+   "access": {
+    "robots_allows": true,
+    "challenge": "none",
+    "timeouts": 0
+   },
+   "fallback_hosts": [],
+   "shares_host_with": [],
+   "registry_disagrees": [],
+   "recommendation": "page_read",
+   "note": "Re-scout by S752 SkyPuffin on Sam's ask of 2026-11-28 (relayed by COBIx: 'Re-scout Southwestern. The catalog is already collected'). Read from the harvest runner's own capture, not a new fetch: this session's sandbox cannot reach catalog.swccd.edu. Capture run 45567354959 (started 2026-11-19T10:53:34Z, after the Nov 13 scout) read 451 of 451 listed pages of the 2026-2027 CourseLeaf catalog, with 0 pages challenged and 0 listing failures; 209 programs have their own page and 233 of 272 a closed list (kb/program_requirements_college/southwestern/capture.json). The firewall challenge the Nov 13 scout met is not in the runner's path, so this entry supersedes it for the Commons."
+  }
+ ]
+}

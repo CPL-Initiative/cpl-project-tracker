@@ -223,6 +223,11 @@ def faults(q, root=ROOT, parts=None):
         for k in ("complete", "checked"):
             if isinstance(e.get("active"), int) and isinstance(e.get(k), int):
                 need(e[k] <= e["active"], w + "." + k + " cannot exceed active")
+        if "gaps_noted" in e:
+            g = e.get("gaps_noted")
+            need(isinstance(g, int) and not isinstance(g, bool) and g >= 0, w + ".gaps_noted must be a whole number")
+            if isinstance(g, int) and isinstance(e.get("complete"), int) and isinstance(e.get("active"), int):
+                need(e["complete"] + g <= e["active"], w + ": complete plus gaps_noted cannot exceed active")
         if isinstance(d, str):
             need(d > prev, w + ".day must come after the entry before it (one entry per day, oldest first)")
             prev = d
@@ -348,10 +353,28 @@ def harvest_faults(h):
     return out
 
 
-def add_headline(hist, day, active, complete, colleges):
-    """hist with day's entry set to the pair: replaced when the day is already there."""
+CENSUS = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "kb", "status", "harvest_gap_census.json")
+
+
+def census_gaps_noted(path=CENSUS):
+    """The census's programs collected with their gaps noted, or None when the file holds none."""
+    try:
+        with open(path, encoding="utf-8") as f:
+            n = (json.load(f).get("collected_with_gaps") or {}).get("programs")
+    except (OSError, ValueError):
+        return None
+    return n if isinstance(n, int) and not isinstance(n, bool) else None
+
+
+def add_headline(hist, day, active, complete, colleges, gaps_noted=None):
+    """hist with day's entry set to the pair: replaced when the day is already there. gaps_noted is the census's
+    collected-with-gaps count, which the Collections ETA counts as collected (Sam, 2026-11-28,
+    r-eta-gaps-noted-count-collected-sam-2026-11-28)."""
     hist = [e for e in (hist if isinstance(hist, list) else []) if not (isinstance(e, dict) and e.get("day") == day)]
-    hist.append({"day": day, "active": active, "complete": complete, "colleges": colleges})
+    row = {"day": day, "active": active, "complete": complete, "colleges": colleges}
+    if gaps_noted is not None:
+        row["gaps_noted"] = gaps_noted
+    hist.append(row)
     return sorted(hist, key=lambda e: str(e.get("day", "")))
 
 
@@ -366,6 +389,7 @@ def main(argv=None):
     ap.add_argument("--next-run", help="the CPL Queue routine's next firing, ISO UTC (get_trigger's next_run_at)")
     ap.add_argument("--headline", nargs=3, type=int, metavar=("ACTIVE", "COMPLETE", "COLLEGES"),
                     help="today's pair: COCI's active programs, the complete ones, their colleges (--headline-sql)")
+    ap.add_argument("--gaps-noted", type=int, help="programs collected with gaps noted (default: the committed census's count)")
     ap.add_argument("--headline-sql", action="store_true", help="print the headline's query and exit")
     ap.add_argument("--harvest", metavar="ROW_JSON",
                     help="the whole-harvest query's row (--harvest-sql prints the query), as JSON")
@@ -390,7 +414,8 @@ def main(argv=None):
             nr["at"] = re.sub(r"\.\d+Z$", "Z", a.next_run.replace("+00:00", "Z"))
             q["next_run"] = nr
         if a.headline:
-            q["headline"] = add_headline(q.get("headline"), q["written_at"][:10], *a.headline)
+            g = a.gaps_noted if a.gaps_noted is not None else census_gaps_noted()
+            q["headline"] = add_headline(q.get("headline"), q["written_at"][:10], *a.headline, gaps_noted=g)
     if a.harvest:
         # The harvest's own day; it never moves written_at, which names the last checkpoint.
         row = json.loads(a.harvest)

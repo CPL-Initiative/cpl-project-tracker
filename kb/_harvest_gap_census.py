@@ -88,11 +88,12 @@ FOUND_METHODS = {"sitemap_page", "pdf_pages", "link_search"}
 # takes the cause parked_college, with the cause it would otherwise carry as its sub-cause.
 # Glendale left the list on Sam's ruling (relayed by COBIx on #3111, 2026-11-12;
 # sam-glendale-unpark-2026-11-12): its 2026-27 Coursedog catalog is read, so its programs take their own causes.
-PARKED = {
-    "Los Angeles Valley College": "lavc-parked-2026-10-31",
-    "Los Medanos College": "parked until an electives sentence in its own words (lane, S633)",
-    "Monterey Peninsula College": "the queue's stopping rule (Sam, 2026-10-30; status file, S641)",
-}
+# Los Angeles Valley and Monterey Peninsula left it on Sam's word (S752, 2026-11-28, relayed from COBIx:
+# "Clear the stale parked_college tags on LA Valley (16) and Monterey (19), since Sam unparked both";
+# r-unpark-lavc-monterey-sam-2026-11-28). Los Medanos left it the same day (Sam's lightning call 1, 2026-11-28:
+# "Unpark Los Medanos. Read it again. Handle outliers afterward"; r-unpark-los-medanos-sam-2026-11-28). The list is
+# empty; a college parks again only by a named decision.
+PARKED = {}
 
 # The closed list. Each gap program takes exactly one, in this order of precedence.
 CAUSES = [

@@ -121,7 +121,8 @@ with tempfile.TemporaryDirectory() as d:
         s = json.load(f)
     today = [e for e in s["headline"] if e["day"] == s["written_at"][:10]]
     check("--headline records today's pair once; a second stamp the same day replaces it",
-          rc == 0 and len(today) == 1 and today[0] == {"day": s["written_at"][:10], "active": 20282, "complete": 22, "colleges": 6}
+          rc == 0 and len(today) == 1 and today[0] == dict({"day": s["written_at"][:10], "active": 20282, "complete": 22, "colleges": 6},
+                                    **({"gaps_noted": M.census_gaps_noted()} if M.census_gaps_noted() is not None else {}))
           and len(s["headline"]) in (before, before + 1), s["headline"])
     check("--headline keeps the earlier days, oldest first",
           s["headline"][0]["day"] == "2026-10-08" and [e["day"] for e in s["headline"]] == sorted(e["day"] for e in s["headline"]), s["headline"])

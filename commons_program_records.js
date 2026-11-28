@@ -10,10 +10,15 @@
 // fetches the file; compute() is pure.
 //
 // The rules, each once:
+//   collected Complete plus the programs collected with their gaps noted (the census's collected_with_gaps), as
+//             the headline day records them in `gaps_noted` (Sam, 2026-11-28, relayed from COBIx: "The 696 'collected,
+//             gap noted' programs count as collected, not as work left"; r-eta-gaps-noted-count-collected-sam-2026-11-28).
+//             A day with no `gaps_noted` counts complete alone. What is left is the target less collected.
 //   target    Every Active program in its college's current catalog: active less the COCI-only programs (in the
 //             Chancellor's Office inventory, not the current catalog; COBIx's open question 4 on #3533). Optional
 //             cleanup, never part of the date.
-//   pace      The last 7 days' net rise in complete. A missed build day never blanks a pace (COBIx on #3371): each
+//   pace      The last 7 days' net rise in complete (complete alone, so the first day that records gaps_noted is not
+//             read as a jump). A missed build day never blanks a pace (COBIx on #3371): each
 //             window ends on the closest earlier day that has a count, within 7 days, and divides by the days it
 //             really spans. The 7 days before give the earlier pace.
 //   date      The last headline day plus the days left at that pace, rounded up; the low end rounds down.
@@ -31,7 +36,8 @@
   /* The headline's days, oldest first, each { n, day, active, complete }. */
   function series(PR) {
     return ((PR && PR.headline) || []).filter(function (r) { return r && r.day && typeof r.complete === "number"; })
-      .map(function (r) { return { n: dnum(r.day), day: String(r.day).slice(0, 10), active: r.active, complete: r.complete }; })
+      .map(function (r) { return { n: dnum(r.day), day: String(r.day).slice(0, 10), active: r.active, complete: r.complete,
+        gapsNoted: typeof r.gaps_noted === "number" ? r.gaps_noted : 0 }; })
       .sort(function (a, b) { return a.n - b.n; });
   }
 
@@ -46,14 +52,15 @@
     function back(n) { for (var k = n; k >= n - 7; k--) if (at(k) != null) return k; return null; }
     var d7 = back(lastN - 7), d14 = d7 == null ? null : back(d7 - 7);
     var complete = last.complete, active = last.active;
-    var target = active - COCI_ONLY, left = Math.max(0, target - complete);
+    var gapsNoted = last.gapsNoted, collected = complete + gapsNoted;
+    var target = active - COCI_ONLY, left = Math.max(0, target - collected);
     var gain = d7 == null ? null : complete - at(d7), span = d7 == null ? null : lastN - d7;
     var prevGain = d14 == null ? null : at(d7) - at(d14), prevSpan = d14 == null ? null : d7 - d14;
     var pace = gain == null || !span ? null : gain / span, prevPace = prevGain == null || !prevSpan ? null : prevGain / prevSpan;
     var exact = left <= 0 ? 0 : pace > 0 ? left / pace : null;
     return {
       lastN: lastN, day: last.day, written: (PR && PR.written_at) || "",
-      complete: complete, active: active, cociOnly: COCI_ONLY, target: target, left: left,
+      complete: complete, gapsNoted: gapsNoted, collected: collected, active: active, cociOnly: COCI_ONLY, target: target, left: left,
       gain: gain, span: span, pace: pace, fromN: d7,
       prevGain: prevGain, prevSpan: prevSpan, prevPace: prevPace, prevFromN: d14,
       exact: exact,

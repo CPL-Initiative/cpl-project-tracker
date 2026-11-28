@@ -1285,7 +1285,8 @@
       "day": "2026-11-28",
       "active": 20282,
       "complete": 15704,
-      "colleges": 118
+      "colleges": 118,
+      "gaps_noted": 696
     }
   ],
   "next_run": {

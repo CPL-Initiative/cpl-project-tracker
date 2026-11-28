@@ -90,7 +90,7 @@ const fmt = (n) => Number(n).toLocaleString("en-US");
   const PR = FILES["kb/status/program-requirements.json"].headline.filter((r) => typeof r.complete === "number");
   const last = PR[PR.length - 1], lastN = dnum(last.day);
   const at = (n) => { for (let i = 0; i < 8; i++) { const r = PR.find((h) => dnum(h.day) === n - i); if (r) return r.complete; } return null; };
-  const pace = (at(lastN) - at(lastN - 7)) / 7, left = last.active - x.F.ASKED.cociOnly - last.complete;
+  const pace = (at(lastN) - at(lastN - 7)) / 7, left = last.active - x.F.ASKED.cociOnly - last.complete - (last.gaps_noted || 0); // gaps noted count as collected (r-eta-gaps-noted-count-collected-sam-2026-11-28)
   const want = longDate(lastN + Math.ceil(left / pace));
   check("⭐ the Data Collection Phase 1 date is the 7-day pace rule on the committed series (" + want + "), labeled estimated", txt(d.querySelector(".cmf-date-v")) === want + " estimated");
   const pair = fmt(last.complete) + " of " + fmt(last.active);
@@ -98,7 +98,7 @@ const fmt = (n) => Number(n).toLocaleString("en-US");
     && txt(d.querySelector('.cmf-card[data-key="programs"] .cmf-big')) === pair);
   /* COBIx's review of #3554: one "left to finish" on the page, the target's (active minus the COCI-only programs minus complete). */
   check("S490: the Colleges card's programs left to finish is the same target-based figure the date uses", txt(d.querySelector('.cmf-card[data-key="colleges"] .cmf-body')).indexOf("about " + fmt(left) + " Active programs in current catalogs left") >= 0
-    && txt(d.querySelector('.cmf-card[data-key="programs"] .cmf-more-body')).indexOf("leaves about " + fmt(left)) >= 0);
+    && txt(d.querySelector('.cmf-card[data-key="programs"] .cmf-more-body')).indexOf("about " + fmt(left) + " remain") >= 0);
   check("no link opens #credentials, which is no route", !d.querySelector('a[href="#credentials"]') && d.querySelector('.cmf-card[data-key="credentials"] .cmf-links a[href="#exhibits/list"]'));
   check("the Data Collection line says program records set its date", /^Set by program records:/.test(txt(d.querySelector(".cmf-date .cmf-date-n"))));
   /* The held line draws only while titles are held (the 2026-11-23 CER run held none, and the line left the card), so the
