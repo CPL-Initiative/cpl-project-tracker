@@ -1,0 +1,31 @@
+{
+ "_readme": "S748, lane 2's cheap piles (2026-11-28). Two Fullerton records fail on coverage alone: the state's list names THEA 231 F for Stage Management 18749 and PE 108 F for Kinesiology A.A.-T 36863, and the committed capture finds neither on its page. Plan s748c files state_course_not_on_page on the capture's finding. This read prints each page as the capture reads it, so a session and the plan's second reader can see for themselves whether any line prints the course. Two loads. No model call, nothing written.",
+ "college": "Fullerton College",
+ "questions": {
+  "thea_231": "Whether the Stage Management certificate page prints THEA 231 F on any line, and each list it prints.",
+  "pe_108": "Whether the Kinesiology A.A.-T page prints PE 108 F on any line, and each list it prints."
+ },
+ "keywords": [
+  "THEA\\s*231[^\\n]{0,80}",
+  "PE\\s*108[^\\n]{0,80}",
+  "Total[^\\n]{0,60}"
+ ],
+ "pages": [
+  {
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/theatre-arts-drama/stage-management-certificate/",
+   "answers": [
+    "thea_231"
+   ],
+   "why": "18749",
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/physical-education/kinesiology-associate-arts-degree-transfer/",
+   "answers": [
+    "pe_108"
+   ],
+   "why": "36863",
+   "capture_view": true
+  }
+ ]
+}

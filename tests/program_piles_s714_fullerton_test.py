@@ -85,8 +85,13 @@ S741_READ = [[cn, "none", "passes"] for cn in ("35174", "36798") if str(F._load(
 # S720 held them for), so the rule reads them passing too once that run's records are filed.
 S742_RECONCILE = [[cn, "none", "passes"] for cn in ("33680", "42143")
                   if str(F._load(cn)["extracted_run"]) == "46010143379"]
-check(pr["read"] == 24 and pr["right"] == 23 - len(S741_READ) - len(S742_RECONCILE)
-      and pr["wrong"] == sorted([["18163", "none", "passes"]] + S741_READ + S742_RECONCILE)
+# S748's plan s748c rescores 18749's and 36863's coverage on the capture's finding that each page does not print the
+# one listed course the record leaves unexplained (state_course_not_on_page, tests/program_piles_s748c_test.py), so
+# the rule reads them passing once the plan's records are filed.
+S748_RESCORE = [[cn, "none", "passes"] for cn in ("18749", "36863")
+                if (F._load(cn)["score"].get("coverage") or {}).get("rescored")]
+check(pr["read"] == 24 and pr["right"] == 23 - len(S741_READ) - len(S742_RECONCILE) - len(S748_RESCORE)
+      and pr["wrong"] == sorted([["18163", "none", "passes"]] + S741_READ + S742_RECONCILE + S748_RESCORE)
       and pr["by_answer"] == {"passes": 11, "none": 13},
       "precision: %r" % pr)
 check({cn for cn, w in F.HAND_HELD.items() if w.startswith("passes")} == PASS, "the eleven passing answers")
