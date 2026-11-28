@@ -45,6 +45,12 @@ ROWS = [("Orange Coast College", "43100", "PSYC A160"), ("Fullerton College", "1
         ("Fullerton College", "36863", "PE 108 F")]
 N = len(ROWS)
 PILES = {"Orange Coast College": M.OCC, "Fullerton College": M.FULLERTON}
+# The capture a row's words name, where it moved after the plan was written: {control number: (the run the plan read,
+# the run on file)}. One row. The plan read Orange Coast's capture 45858495107; the paid read of 08626 and 08663
+# (run 46122364368, landed with this plan in S748) filed a later capture, which finds the same on 43100's page: each
+# of the 22 placed courses, and PSYC A160 on no line. The applied receipt keeps the run it read, and today's words
+# name the run on file; nothing else in the words moves. Fullerton's two rows name the capture the plan read.
+CAPTURE_SINCE = {"43100": ("45858495107", "46122364368")}
 checks, failures = [0], []
 
 
@@ -163,8 +169,12 @@ for i, (college, cn, code) in enumerate(ROWS, 1):
           "%s: today's scorer still reads %s as the one unexplained course" % (cn, code))
     ev = w.evidence(g)
     got = w.passing_score(g)
+    then, now = CAPTURE_SINCE.get(cn, (None, None))
+    words = r["words"] if then is None else r["words"].replace("(run %s)" % then, "(run %s)" % now)
+    check(then is None or (r["words"].count("(run %s)" % then) == 1 and w.capture_run() == now),
+          "%s: the receipt names the capture the plan read (run %s), and the capture on file is run %s" % (cn, then, now))
     check(ev is not None and ev["not_on_page"] == [code] and got is not None and got[0] == f["score"]
-          and got[1] == r["words"] and code in r["words"] and "on no line" in r["words"] and NG.answer(g) is None,
+          and got[1] == words and code in r["words"] and "on no line" in r["words"] and NG.answer(g) is None,
           "%s: the capture's evidence stands on the record as scored, the rescore is the committed score, the words "
           "name %s, and no record rule names a gap" % (cn, code))
     check(w.on_live_run(f) and w.on_live_run(f, skip=(M.TAG,)), "%s: the row is on its live run" % cn)
