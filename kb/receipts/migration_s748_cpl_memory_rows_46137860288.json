@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-28_s748_cpl_memory_rows.sql",
+ "name": "s748_cpl_memory_rows",
+ "version": "20261128110325",
+ "sha256": "868637237e8e45f85711d9ea239332a0030cda34fd7592c18f528c3bd0caefed",
+ "run": "46137860288",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"slug\":\"d-canyons-37868-not-rerun-s748\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":255},{\"slug\":\"d-census-change-left-out-s748\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":391},{\"slug\":\"d-found-pages-probe-held-s748\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":374},{\"slug\":\"d-hancock-s681-entry-is-lane-assignment-s748\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":346},{\"slug\":\"d-list-minimum-units-refused-s748\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":334},{\"slug\":\"d-no-display-build-at-start-s748\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":344},{\"slug\":\"d-sierra-21525-not-reread-s748\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":322},{\"slug\":\"f-harness-pins-worker-to-worktree-s748\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":296},{\"slug\":\"f-yield-from-census-gaps-s748\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":359},{\"slug\":\"m-collection-s748\",\"kind\":\"milestone\",\"status\":\"proposed\",\"summary_len\":343},{\"slug\":\"o-found-pages-194-programs-s748\",\"kind\":\"opportunity\",\"status\":\"proposed\",\"summary_len\":394},{\"slug\":\"p-recall-oracle-restates-rule-s748\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":389},{\"slug\":\"p-worker-handback-repeats-s748\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":226}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

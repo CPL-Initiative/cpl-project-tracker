@@ -53,6 +53,11 @@ lanes under 20,000 bytes, the lane tests, summaries at most 400 characters.
 - **A second reader before any dispatch that uses changed shared reader code**, even when the PR merged clean.
 - **One finding list per PR.** Wait for every reader to report, merge their findings into one list, then brief one
   fix. A fix per reader starts rounds that undo each other.
+- **A recall's oracle must be independent of the rule, and a test must go red when a guard is removed (S748).** A
+  recall that computes its answer the way the rule does cannot report a wrong, and a plan test that only checks row keys
+  stays green with a guard clause gone. The brief asks whether the recall can report a wrong and which mutations turn
+  the test red (`p-recall-oracle-restates-rule-s748`).
+- **A reader reports once and leaves no background job running (S748):** a hand-back repeats each time one ends.
 - **A third round of the same finding class means replace the design.** Residue of a replaced design may merge
   when nothing consumes its output yet; say so on the PR.
 

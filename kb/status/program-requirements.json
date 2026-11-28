@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-28T07:25:02Z",
-  "session": 747,
-  "moniker": "SkyShearwater",
-  "run": "Sam's session",
+  "written_at": "2026-11-28T10:57:27Z",
+  "session": 748,
+  "moniker": "SkyStilt",
+  "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_748_handoff.md",
+  "handoff": "docs/session_749_handoff.md",
   "next_step": {
-    "title": "The CPL Queue routine's next collection run",
-    "text": "Collection continues with the routine: De Anza's 15 programs that the 2026-27 catalog read found but has not extracted, then the near misses at Glendale, Los Angeles City and Mt. San Antonio, beside the colleges the routine's handoff names."
+    "title": "A display build for tonight's 41 records, then the found pages",
+    "text": "The next collection run builds the display for the 41 program records collected on Nov 28, starting at Glendale, and reruns the census. Then it finishes the change that reads a program's own catalog page where the state lists no courses for it: 194 programs at 14 colleges, about $19 of paid reads."
   },
   "calls": [
     {
@@ -944,6 +944,22 @@
     {
       "at": "2026-11-28T07:20:00Z",
       "text": "Course descriptions from the state course list now read as the catalog wrote them: 78,796 stray carriage-return codes and the garbled punctuation in 26,533 of 130,478 descriptions are repaired when the lookup is built."
+    },
+    {
+      "at": "2026-11-28T08:14:00Z",
+      "text": "24 program records collected by 08:14 UTC: Cuyamaca 18637, San Bernardino Valley 04894 and Coastline 43057 pass from their own pages; Butte, Santa Barbara City, College of the Canyons, El Camino, Orange Coast, East Los Angeles, Allan Hancock, Mt. San Antonio and Sierra records carry a named gap."
+    },
+    {
+      "at": "2026-11-28T08:54:00Z",
+      "text": "San Bernardino Valley 31858, Orange Coast 08626 and 08663, Lassen 18752 and 18756 and College of Alameda 32765 pass, each with its arithmetic equal; Orange Coast 43100 and Fullerton 18749 and 36863 now read their courses as covered. 33 records collected tonight."
+    },
+    {
+      "at": "2026-11-28T10:44:00Z",
+      "text": "Eight Mt. San Antonio programs pass after a free reconcile and reread. 41 program records collected tonight: 24 by reviewed plans and 17 by rereads and loads."
+    },
+    {
+      "at": "2026-11-28T10:48:00Z",
+      "text": "Found tonight: 194 programs at 14 colleges have their own catalog page on file and no course list from the state, so nothing reads the page. The change that reads them is built and held for one more review before any paid read."
     }
   ],
   "headline": [
