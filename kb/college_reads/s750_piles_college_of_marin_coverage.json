@@ -1,0 +1,72 @@
+{
+ "college": "College of Marin",
+ "_readme": "S750, the cheap piles (2026-11-28). Plan s750a files the reading state_course_not_on_page (kb/_program_named_gaps.py, S748) where the committed capture finds a state-listed course on no line of the program's own page. The reading's fires are wrong about 4 times in 100, so each row is checked against a free read of its own page before it is planned: this read prints the page so a session and the plan's second reader can see whether any line prints the course. No model call, nothing written. College of Marin Studio Arts A.A.-T 46242: ART 135. Round 2: run 46149637666 printed the rendered page with its PROGRAM REQUIREMENTS section collapsed, so no course row showed. This round opens the collapsed sections on the rendered page, and reads the page's own content call, the one the capture reads (kb/_program_requirements_college.py el_publish_url).",
+ "questions": {
+  "art_135": "Whether the Studio Arts A.A.-T page prints ART 135 (the page writes codes with no space, ART135) on any line, and each ART row it prints."
+ },
+ "keywords": [
+  "ART\\s*1\\d\\d[^<\"\\n]{0,80}",
+  "[Tt]otal[^<\"\\n]{0,60}",
+  "rule-name|rule-credits"
+ ],
+ "pages": [
+  {
+   "url": "https://marin.elumenapp.com/catalog/current/program/aa-t-in-studio-arts-fall-2026-credit-noncredit",
+   "answers": [
+    "art_135"
+   ],
+   "why": "46242: the rendered page, its collapsed sections opened",
+   "capture_view": true,
+   "expand": true
+  },
+  {
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/current,program,aa-t-in-studio-arts-fall-2026-credit-noncredit?tenant=marin.elumenapp.com",
+   "answers": [
+    "art_135"
+   ],
+   "why": "46242: the page's own content call, as the capture reads it"
+  }
+ ],
+ "_quoted": {
+  "46149637666": {
+   "art_135": "the rendered page prints PROGRAM REQUIREMENTS as a collapsed section and no course row, so it answers nothing",
+   "_what": "A session's findings over the run's log (not quoted lines): the rows the page prints, counted by a scratch script from the downloaded log and read by eye. kb/_program_piles_s750a.py cites them beside the capture's own finding."
+  },
+  "46150287204": {
+   "art_135": "no line of the page's own content call (the call the capture reads) prints 135; under 'Major Requirements (Total 27 - 29 Units)' it prints 27 ART codes, ART134 then ART140 among them: ART112, ART113, ART130, ART103, ART111, ART116, ART131, ART134, ART140, ART141, ART144, ART145, ART146, ART147, ART148, ART152, ART153, ART165, ART170, ART171, ART175A, ART176A, ART180, ART181, ART185, ART186, ART193; with ARTHC1100, ARTHC1200 and GDES 112, and Total Degree Units 60. The rendered page still prints the section collapsed",
+   "_what": "A session's findings over the run's log (not quoted lines): the rows the page prints, counted by a scratch script from the downloaded log and read by eye. kb/_program_piles_s750a.py cites them beside the capture's own finding.",
+   "_rows": {
+    "art_135": [
+     "ART112",
+     "ART113",
+     "ART130",
+     "ART103",
+     "ART111",
+     "ART116",
+     "ART131",
+     "ART134",
+     "ART140",
+     "ART141",
+     "ART144",
+     "ART145",
+     "ART146",
+     "ART147",
+     "ART148",
+     "ART152",
+     "ART153",
+     "ART165",
+     "ART170",
+     "ART171",
+     "ART175A",
+     "ART176A",
+     "ART180",
+     "ART181",
+     "ART185",
+     "ART186",
+     "ART193"
+    ]
+   },
+   "_rows_what": "For each question, the course codes of the missing course's subject that the page prints, as printed (Palomar: every course code the page prints), in page order, each once: tests/program_piles_s750a_test.py reads them against the capture's codes_found."
+  }
+ }
+}

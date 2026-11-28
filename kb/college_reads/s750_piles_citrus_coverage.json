@@ -1,0 +1,77 @@
+{
+ "college": "Citrus College",
+ "_readme": "S750, the cheap piles (2026-11-28). Plan s750a files the reading state_course_not_on_page (kb/_program_named_gaps.py, S748) where the committed capture finds a state-listed course on no line of the program's own page. The reading's fires are wrong about 4 times in 100, so each row is checked against a free read of its own page before it is planned: this read prints the page so a session and the plan's second reader can see whether any line prints the course. No model call, nothing written. Citrus Visual Arts A.A. 02333: ART 149.",
+ "questions": {
+  "art_149": "Whether the Visual Arts A.A. page prints ART 149 on any line, and each ART row it prints."
+ },
+ "keywords": [
+  "ART\\s*14\\d[^\\n]{0,80}",
+  "[Tt]otal[^\\n]{0,60}"
+ ],
+ "pages": [
+  {
+   "url": "https://catalog.citruscollege.edu/disciplines/visual-arts/visual-arts-aa/",
+   "answers": [
+    "art_149"
+   ],
+   "why": "02333",
+   "capture_view": true
+  }
+ ],
+ "_quoted": {
+  "46149637666": {
+   "art_149": "no line of the Visual Arts A.A. page prints 149; its course list prints 45 ART rows, ART 146 then ART 150 among them: ART 111, ART 120, ART 101, ART 102, ART 103, ART 104, ART 105, ART 110, ART 112, ART 115, ART 116, ART 121, ART 130, ART 131, ART 140, ART 141, ART 142, ART 143, ART 145, ART 146, ART 150, ART 152, ART 153, ART 158, ART 159, ART 162, ART 167, ART 168, ART 180, ART 181, ART 182, ART 183, ART 184, ART 189, ART 199, ART 199H, ART 206, ART 206H, ART 207, ART 207H, ART 230, ART 240, ART 241, ART 267, ART 268; and Total Units 18",
+   "_what": "A session's findings over the run's log (not quoted lines): the rows the page prints, counted by a scratch script from the downloaded log and read by eye. kb/_program_piles_s750a.py cites them beside the capture's own finding.",
+   "_rows": {
+    "art_149": [
+     "ART 111",
+     "ART 120",
+     "ART 101",
+     "ART 102",
+     "ART 103",
+     "ART 104",
+     "ART 105",
+     "ART 110",
+     "ART 112",
+     "ART 115",
+     "ART 116",
+     "ART 121",
+     "ART 130",
+     "ART 131",
+     "ART 140",
+     "ART 141",
+     "ART 142",
+     "ART 143",
+     "ART 145",
+     "ART 146",
+     "ART 150",
+     "ART 152",
+     "ART 153",
+     "ART 158",
+     "ART 159",
+     "ART 162",
+     "ART 167",
+     "ART 168",
+     "ART 180",
+     "ART 181",
+     "ART 182",
+     "ART 183",
+     "ART 184",
+     "ART 189",
+     "ART 199",
+     "ART 199H",
+     "ART 206",
+     "ART 206H",
+     "ART 207",
+     "ART 207H",
+     "ART 230",
+     "ART 240",
+     "ART 241",
+     "ART 267",
+     "ART 268"
+    ]
+   },
+   "_rows_what": "For each question, the course codes of the missing course's subject that the page prints, as printed (Palomar: every course code the page prints), in page order, each once: tests/program_piles_s750a_test.py reads them against the capture's codes_found."
+  }
+ }
+}

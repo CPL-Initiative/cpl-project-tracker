@@ -1,0 +1,49 @@
+{
+ "college": "Cerritos College",
+ "_readme": "S750, the cheap piles (2026-11-28). Plan s750a files the reading state_course_not_on_page (kb/_program_named_gaps.py, S748) where the committed capture finds a state-listed course on no line of the program's own page. The reading's fires are wrong about 4 times in 100, so each row is checked against a free read of its own page before it is planned: this read prints the page so a session and the plan's second reader can see whether any line prints the course. No model call, nothing written. Cerritos Photography A.A. 02235: PHOT 242.",
+ "questions": {
+  "phot_242": "Whether the Photography A.A. page prints PHOT 242 on any line, and each PHOT row it prints."
+ },
+ "keywords": [
+  "PHOT\\s*2[34]\\d[^\\n]{0,80}",
+  "[Tt]otal[^\\n]{0,60}"
+ ],
+ "pages": [
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/photography-aa/",
+   "answers": [
+    "phot_242"
+   ],
+   "why": "02235",
+   "capture_view": true
+  }
+ ],
+ "_quoted": {
+  "46149637666": {
+   "phot_242": "no line of the Photography A.A. page's requirements prints 242; it prints 17 PHOT rows: PHOT 100, PHOT 102, PHOT 110, PHOT 160, PHOT 234, PHOT 112, PHOT 122, PHOT 150, PHOT 200, PHOT 230, PHOT 232, PHOT 235, PHOT 240, PHOT 250, PHOT 252, PHOT 298, PHOT 299; and Total Units 26",
+   "_what": "A session's findings over the run's log (not quoted lines): the rows the page prints, counted by a scratch script from the downloaded log and read by eye. kb/_program_piles_s750a.py cites them beside the capture's own finding.",
+   "_rows": {
+    "phot_242": [
+     "PHOT 100",
+     "PHOT 102",
+     "PHOT 110",
+     "PHOT 160",
+     "PHOT 234",
+     "PHOT 112",
+     "PHOT 122",
+     "PHOT 150",
+     "PHOT 200",
+     "PHOT 230",
+     "PHOT 232",
+     "PHOT 235",
+     "PHOT 240",
+     "PHOT 250",
+     "PHOT 252",
+     "PHOT 298",
+     "PHOT 299"
+    ]
+   },
+   "_rows_what": "For each question, the course codes of the missing course's subject that the page prints, as printed (Palomar: every course code the page prints), in page order, each once: tests/program_piles_s750a_test.py reads them against the capture's codes_found."
+  }
+ }
+}
