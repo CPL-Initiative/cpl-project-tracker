@@ -85,3 +85,11 @@ paid reads, rereads, loads and `.apply`, and holds every Supabase call.
 - 07:05Z: s748a's reader (Sonnet): APPLY (the real apply and rollback run on a scratch Postgres: a wrong run, a changed
   record, a missing row and a confirm each abort; a checked row is skipped; S742a's output byte-identical under the
   `Batch` change). Clean md5 pre-read 2 of 2. The apply pushed on `claude/s748-apply` (`dc2bc0a0`), migrate 46119599942.
+- 07:08Z: s748a's migrate 46119599942 green; live: Butte 14583 `noted_section_cut_off` and Santa Barbara City 43553
+  `total_differs`, neither checked; `.apply` restored on `claude/s748-apply` (`655c4fe8`). Cuyamaca's reread
+  46119479258 green; 18637 live at 46017556328 with its arithmetic equal. Records collected: 3.
+- 07:09Z: the Coastline fix's second reader (Fable 5.2): GO (over 22,335 filed sources and 10 previews the fix changes one
+  staging, 43057's; MAJOR for the follow-up: test 4c's oracle restates the rule, so its docstring should say "one case,
+  regression pin"; MINOR: a refused program's pinned PDF page would now stage, none today, City College of San
+  Francisco 31602, 36964 and 42318 the nearest). The paid read dispatched on a sibling, `claude/s748-readers-coast`
+  (`b2687880`; only 43057, sources_from 46008933093, about $0.15).
