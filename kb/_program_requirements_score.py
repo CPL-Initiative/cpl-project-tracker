@@ -1886,8 +1886,11 @@ def total_hours_printed(text: str, stated: tuple[float, float], labels: list, re
 # arithmetic alone. The S748 second reader rescored 974 live-passing records against an empty list and 966 still
 # passed; a wrong program's page passes the same way. So coverage is false wherever no course is listed, and the
 # score names why: coverage["no_list"] holds the gap (its name, NO_LIST_GAP, and its words), the shape the
-# arithmetic's fill_refused carries. Sam's ruling of 2026-11-17 (collect with the gap named and a lower score) is
-# the named-gaps step's to apply (kb/_program_named_gaps.py), which reads the name; the scorer only refuses the pass.
+# arithmetic's fill_refused carries. The scorer only refuses the pass. Nothing reads the name yet: no rule in
+# kb/_program_named_gaps.py files no_state_course_list, and the census counts a record collected with gaps only where
+# coverage passes (kb/_harvest_gap_census.py), so such a record stays "no passing record" until a later step applies
+# Sam's ruling of 2026-11-17 (collect with the gap named and a lower score). The display build holds it back
+# (kb/_build_roep_display.py no_state_list).
 # No filed record is scored against an empty list on 2026-11-28 (0 of 18,977), so no filed score moves.
 NO_LIST_GAP = "no_state_course_list"
 NO_LIST_WORDS = ("The state's Program Course File lists no course for this program, so the record's courses were "
