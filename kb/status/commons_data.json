@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-28T00:45:15Z",
+ "written_at": "2026-11-28T07:59:13Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -171,7 +171,7 @@
   "passing": 17663,
   "gap": 4672,
   "with_gap": 118,
-  "cost_usd": 1341.37,
+  "cost_usd": 1341.44,
   "passed_at_read": 16566,
   "cost_receipts": 118,
   "spent_usd": 1247.94,
@@ -10599,7 +10599,7 @@
    "objectives_printed": null,
    "read_at": "2026-11-27T13:56:33Z",
    "read_kind": "capture",
-   "cost_usd": 6.58,
+   "cost_usd": 6.65,
    "passed_at_read": 64,
    "slo_queue": null,
    "scout": null,
@@ -10620,11 +10620,11 @@
    },
    "listed_closed": 90,
    "found": 84,
-   "extracted": 83,
+   "extracted": 84,
    "errors": 0,
    "failed_checks": {
-    "coverage": 8,
-    "invented": 4,
+    "coverage": 9,
+    "invented": 5,
     "arithmetic": 13,
     "repeated": 1,
     "outcomes": 0
@@ -10636,7 +10636,7 @@
    "catalog_now": null,
    "catalog_checks": null,
    "read_seconds": 1131.8,
-   "run": "46011334736",
+   "run": "46121988906",
    "levers": {
     "program_course_file_check": 35,
     "reader_page_search": 6,
@@ -10651,9 +10651,9 @@
      "models": {
       "claude-opus-5-5": 83
      },
-     "run": "46011334736",
+     "run": "46121988906",
      "at": "2026-11-27T13:56:33Z",
-     "cost_usd": 6.58,
+     "cost_usd": 6.65,
      "platform": "courseleaf"
     },
     "slo_read": null,
