@@ -1,7 +1,7 @@
 {
  "_scanned_at": "2026-11-28",
- "_registry_synced_at": "2026-11-28T06:19:17Z",
- "_disciplines": 246,
+ "_registry_synced_at": "2026-11-28T18:57:17Z",
+ "_disciplines": 247,
  "_official_ccn_prefixes": {
   "ANTH": 50,
   "COMM": 192,
@@ -31,13 +31,12 @@
  },
  "_mid_codes": {
   "ids": 75502,
-  "codes": 256,
-  "canonical": 152,
+  "codes": 253,
+  "canonical": 151,
   "umbrella": 31,
-  "stray_codes": 73,
-  "stray_ids": 171,
+  "stray_codes": 71,
+  "stray_ids": 158,
   "codes_seen": [
-   "AERO",
    "AFXX",
    "AGAB",
    "AGAS",
@@ -227,7 +226,6 @@
    "NCVO",
    "NRSR",
    "NURP",
-   "NUTR",
    "OCTA",
    "OFFT",
    "OLAD",
@@ -241,15 +239,14 @@
    "PHMT",
    "PHOT",
    "PHSC",
-   "PHTC",
    "PHTG",
    "PHYS",
    "PLMB",
    "POLS",
    "PORT",
+   "PREL",
    "PSYC",
    "PTAS",
-   "PUBR",
    "PUBS",
    "RADT",
    "RDIO",
@@ -278,8 +275,8 @@
    "THES",
    "THTR",
    "TICU",
-   "TOUR",
    "TRNS",
+   "TRVL",
    "VBUS",
    "VCST",
    "VETT",
@@ -304,13 +301,6 @@
    },
    {
     "code": "OLDR",
-    "ids": 12,
-    "disciplines": {
-     "(no discipline)": 12
-    }
-   },
-   {
-    "code": "TOUR",
     "ids": 12,
     "disciplines": {
      "(no discipline)": 12
@@ -758,13 +748,6 @@
     }
    },
    {
-    "code": "PUBR",
-    "ids": 1,
-    "disciplines": {
-     "(no discipline)": 1
-    }
-   },
-   {
     "code": "RDIO",
     "ids": 1,
     "disciplines": {
@@ -991,15 +974,6 @@
   },
   {
    "id": "CSR0021",
-   "rule": "cs3_squat",
-   "item": "Hotel and Motel Services",
-   "evidence": "canonical HOSP == official CCN prefix (0 rows) but discipline 'Hotel and Motel Services' is NOT its semantic twin",
-   "suggestion": "re-key evidence (Rule-7 re-mint) — official prefixes are reserved",
-   "needs_judgment": true,
-   "group": "ccn"
-  },
-  {
-   "id": "CSR0022",
    "rule": "cs4_aligned",
    "item": "Computer Information Systems",
    "evidence": "canonical ITIS == official CCN prefix (0 official rows) — semantic twin, ALIGNED",
@@ -1008,7 +982,7 @@
    "group": "ccn"
   },
   {
-   "id": "CSR0023",
+   "id": "CSR0022",
    "rule": "cs4_aligned",
    "item": "Journalism",
    "evidence": "canonical JOUR == official CCN prefix (0 official rows) — semantic twin, ALIGNED",
@@ -1017,7 +991,7 @@
    "group": "ccn"
   },
   {
-   "id": "CSR0024",
+   "id": "CSR0023",
    "rule": "cs6_mnemonic_noted",
    "item": "Archaeological Technology",
    "evidence": "canonical ARCT not derivable from name or variants; the note records why: Assigned at Likely (82%): four letters minted from the discipline's name. Archaeological Technology. No M-ID is minted under it yet.",
@@ -1026,7 +1000,7 @@
    "group": null
   },
   {
-   "id": "CSR0025",
+   "id": "CSR0024",
    "rule": "cs6_mnemonic_noted",
    "item": "Building Codes and Regulations",
    "evidence": "canonical CBIT not derivable from name or variants; the note records why: changed to align with discipline",
@@ -1035,7 +1009,7 @@
    "group": null
   },
   {
-   "id": "CSR0026",
+   "id": "CSR0025",
    "rule": "cs6_mnemonic_noted",
    "item": "Cabinet Making",
    "evidence": "canonical WWKC not derivable from name or variants; the note records why: changed to align with Woodworking Furniture Making",
@@ -1044,34 +1018,25 @@
    "group": null
   },
   {
-   "id": "CSR0027",
+   "id": "CSR0026",
    "rule": "cs6_mnemonic_noted",
    "item": "Cardiovascular Technology",
-   "evidence": "canonical CVTC not derivable from name or variants; the note records why: Assigned at Likely (82%): four letters minted from the discipline's name. Cardiovascular Technology; CVT at 2 colleges. No M-ID is minted under it yet.",
+   "evidence": "canonical CVTE not derivable from name or variants; the note records why: Common SUBJ CVTE from CVTC (S749): Sam's 2026-11-28 ruling, every official MQ discipline its own common code, COBIx's minted list (#3951): Cardiovascular Techno",
+   "suggestion": "settled by the curator's note",
+   "needs_judgment": false,
+   "group": null
+  },
+  {
+   "id": "CSR0027",
+   "rule": "cs6_mnemonic_noted",
+   "item": "Community College Counselor of Students with Disabilities",
+   "evidence": "canonical CDSC not derivable from name or variants; the note records why: Common SUBJ CDSC from DSCS (S749): Sam's 2026-11-28 ruling, every official MQ discipline its own common code, COBIx's minted list (#3951): Counselor of Disabled",
    "suggestion": "settled by the curator's note",
    "needs_judgment": false,
    "group": null
   },
   {
    "id": "CSR0028",
-   "rule": "cs6_mnemonic_noted",
-   "item": "Ceramic Technology",
-   "evidence": "canonical CRMT not derivable from name or variants; the note records why: Assigned at Likely (82%): four letters minted from the discipline's name. Ceramic Technology; CERT would read as certificate. No M-ID is minted under it yet.",
-   "suggestion": "settled by the curator's note",
-   "needs_judgment": false,
-   "group": null
-  },
-  {
-   "id": "CSR0029",
-   "rule": "cs6_mnemonic_noted",
-   "item": "Community College Counselor of Students with Disabilities",
-   "evidence": "canonical DSCS not derivable from name or variants; the note records why: Assigned at Likely (82%): four letters minted from the discipline's name. DSPS specialty: Counselor of Students; DSCO would read as disco. No M-ID is minted und",
-   "suggestion": "settled by the curator's note",
-   "needs_judgment": false,
-   "group": null
-  },
-  {
-   "id": "CSR0030",
    "rule": "cs6_mnemonic_noted",
    "item": "Counseling: Extended Opportunity",
    "evidence": "canonical EOPS not derivable from name or variants; the note records why: Assigned at Confident (95%): the local code colleges already use. EOPS is the program's own name, and the local code at 1 college. No M-ID is minted under it ye",
@@ -1080,16 +1045,7 @@
    "group": null
   },
   {
-   "id": "CSR0031",
-   "rule": "cs6_mnemonic_noted",
-   "item": "Deaf and Hearing Impaired: Disabled Students Programs and Services",
-   "evidence": "canonical DSDH not derivable from name or variants; the note records why: Assigned at Likely (82%): four letters minted from the discipline's name. DSPS specialty: Deaf and Hearing Impaired. No M-ID is minted under it yet.",
-   "suggestion": "settled by the curator's note",
-   "needs_judgment": false,
-   "group": null
-  },
-  {
-   "id": "CSR0032",
+   "id": "CSR0029",
    "rule": "cs6_mnemonic_noted",
    "item": "Electromechanical Technology",
    "evidence": "canonical ELMT not derivable from name or variants; the note records why: keep this as the best alternative",
@@ -1098,7 +1054,7 @@
    "group": null
   },
   {
-   "id": "CSR0033",
+   "id": "CSR0030",
    "rule": "cs6_mnemonic_noted",
    "item": "Fluid Mechanics Technology",
    "evidence": "canonical FLMT not derivable from name or variants; the note records why: Assigned at Likely (82%): four letters minted from the discipline's name. Fluid Mechanics Technology. No M-ID is minted under it yet.",
@@ -1107,7 +1063,7 @@
    "group": null
   },
   {
-   "id": "CSR0034",
+   "id": "CSR0031",
    "rule": "cs6_mnemonic_noted",
    "item": "Furniture Making",
    "evidence": "canonical WWKF not derivable from name or variants; the note records why: changed code to better align with cabinet making",
@@ -1116,7 +1072,7 @@
    "group": null
   },
   {
-   "id": "CSR0035",
+   "id": "CSR0032",
    "rule": "cs6_mnemonic_noted",
    "item": "Graphic Arts",
    "evidence": "canonical GFCD not derivable from name or variants; the note records why: changed code to better align with local discipline use",
@@ -1125,16 +1081,16 @@
    "group": null
   },
   {
-   "id": "CSR0036",
+   "id": "CSR0033",
    "rule": "cs6_mnemonic_noted",
-   "item": "Hotel and Motel Services",
-   "evidence": "canonical HOSP not derivable from name or variants; the note records why: Assigned at Leaning (65%): C-ID's own prefix for the discipline. C-ID's HOSP descriptors; HOSP is the local code at 20 colleges. No M-ID is minted under it yet.",
+   "item": "Homeland Security",
+   "evidence": "canonical HLMS not derivable from name or variants; the note records why: Common SUBJ HLMS from HSEC (S749): Sam's 2026-11-28 ruling, every official MQ discipline its own common code, COBIx's minted list (#3951): Homeland Security MQ.",
    "suggestion": "settled by the curator's note",
    "needs_judgment": false,
    "group": null
   },
   {
-   "id": "CSR0037",
+   "id": "CSR0034",
    "rule": "cs6_mnemonic_noted",
    "item": "Interdisciplinary Studies",
    "evidence": "canonical IDST not derivable from name or variants; the note records why: keep this as the best alternative. Note that Interdisciplinary Studies is an MQ that allows any discipline  to teach it and is used for Supervised Tutoring cour",
@@ -1143,7 +1099,7 @@
    "group": null
   },
   {
-   "id": "CSR0038",
+   "id": "CSR0035",
    "rule": "cs6_mnemonic_noted",
    "item": "Masonry",
    "evidence": "canonical CNMA not derivable from name or variants; the note records why: keep this as the best alternative",
@@ -1152,7 +1108,7 @@
    "group": null
   },
   {
-   "id": "CSR0039",
+   "id": "CSR0036",
    "rule": "cs6_mnemonic_noted",
    "item": "Media Production",
    "evidence": "canonical FMED not derivable from name or variants; the note records why: Changed to better align with disciplines. Previously Recoded FIMP -> FTVE (Sam, 2026-09-03 rulings, item 13; the fourteen readings ruled yes to all the same day",
@@ -1161,7 +1117,7 @@
    "group": null
   },
   {
-   "id": "CSR0040",
+   "id": "CSR0037",
    "rule": "cs6_mnemonic_noted",
    "item": "Military Studies",
    "evidence": "canonical MILS not derivable from name or variants; the note records why: Assigned at Likely (82%): four letters minted from the discipline's name. Military Studies. No M-ID is minted under it yet.",
@@ -1170,7 +1126,7 @@
    "group": null
   },
   {
-   "id": "CSR0041",
+   "id": "CSR0038",
    "rule": "cs6_mnemonic_noted",
    "item": "Native American/American Indian Studies",
    "evidence": "canonical ETHA not derivable from name or variants; the note records why: keep this as the best alternative",
@@ -1179,7 +1135,7 @@
    "group": null
   },
   {
-   "id": "CSR0042",
+   "id": "CSR0039",
    "rule": "cs6_mnemonic_noted",
    "item": "Peace Studies",
    "evidence": "canonical PCST not derivable from name or variants; the note records why: Assigned at Likely (82%): four letters minted from the discipline's name. Peace Studies. No M-ID is minted under it yet.",
@@ -1188,16 +1144,7 @@
    "group": null
   },
   {
-   "id": "CSR0043",
-   "rule": "cs6_mnemonic_noted",
-   "item": "Physical Disabilities: Disabled Student Programs and Services",
-   "evidence": "canonical DSPD not derivable from name or variants; the note records why: Assigned at Likely (82%): four letters minted from the discipline's name. DSPS specialty: Physical Disabilities. No M-ID is minted under it yet.",
-   "suggestion": "settled by the curator's note",
-   "needs_judgment": false,
-   "group": null
-  },
-  {
-   "id": "CSR0044",
+   "id": "CSR0040",
    "rule": "cs6_mnemonic_noted",
    "item": "Religious Studies",
    "evidence": "canonical RLST not derivable from name or variants; the note records why: Assigned at Confident (95%): the local code colleges already use. RLST is the local code at 5 colleges (RELS and RELG at 4 each). No M-ID is minted under it yet",
@@ -1206,16 +1153,16 @@
    "group": null
   },
   {
-   "id": "CSR0045",
+   "id": "CSR0041",
    "rule": "cs6_mnemonic_noted",
-   "item": "Speech Language Pathology: Disabled Student Programs and Services",
-   "evidence": "canonical DSSL not derivable from name or variants; the note records why: Assigned at Likely (82%): four letters minted from the discipline's name. DSPS specialty: Speech Language Pathology. No M-ID is minted under it yet.",
+   "item": "Vision Care Technology",
+   "evidence": "canonical VSCT not derivable from name or variants; the note records why: Common SUBJ VSCT from VISN (S749): Sam's 2026-11-28 ruling, every official MQ discipline its own common code, COBIx's minted list (#3951): Vision Care Technolog",
    "suggestion": "settled by the curator's note",
    "needs_judgment": false,
    "group": null
   },
   {
-   "id": "CSR0046",
+   "id": "CSR0042",
    "rule": "cs9_anchor_dead_format",
    "item": "common_courses.json",
    "evidence": "3 anchor entries keyed in the dead pre-remint 'M-ID SUBJ NNN' format",
@@ -1224,7 +1171,7 @@
    "group": "anchor"
   },
   {
-   "id": "CSR0047",
+   "id": "CSR0043",
    "rule": "cs9_anchor_subj_diverge",
    "item": "M-ID HOSP 100",
    "evidence": "anchor id prefix HOSP vs CSR canonical TRVL",
@@ -1233,7 +1180,16 @@
    "group": "anchor"
   },
   {
-   "id": "CSR0048",
+   "id": "CSR0044",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "M-ID HOSP 102",
+   "evidence": "anchor id prefix HOSP vs CSR canonical HOTL",
+   "suggestion": "fold to HOTL at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0045",
    "rule": "cs9_anchor_subj_diverge",
    "item": "M-ID HOSP 104",
    "evidence": "anchor id prefix HOSP vs CSR canonical TRVL",

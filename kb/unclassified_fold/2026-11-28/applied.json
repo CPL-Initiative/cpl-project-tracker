@@ -1,0 +1,67 @@
+{
+  "folded": [
+    {
+      "raw": "ACE CR - Network Fundamentals",
+      "assigned": "Networking Fundamentals",
+      "issuer": "",
+      "reviewed_by": "sam-rulings-s749@bot",
+      "reviewed_at": "2026-11-28T15:28:16.418437+00:00"
+    },
+    {
+      "raw": "AI-1 and AI-3 Portfolio Review KG 11/23/26",
+      "assigned": "Artificial Intelligence Portfolio Review",
+      "issuer": "",
+      "reviewed_by": "sam-rulings-s749@bot",
+      "reviewed_at": "2026-11-28T15:28:16.418437+00:00"
+    },
+    {
+      "raw": "Community Health Worker Certificate-Code Tenderloin",
+      "assigned": "Community Health Worker Certificate",
+      "issuer": "",
+      "reviewed_by": "sam-rulings-s749@bot",
+      "reviewed_at": "2026-11-28T15:28:16.418437+00:00"
+    },
+    {
+      "raw": "Spanish Literature for Bilinguals Examiantion",
+      "assigned": "Spanish Literature for Bilinguals",
+      "issuer": "",
+      "reviewed_by": "sam-rulings-s749@bot",
+      "reviewed_at": "2026-11-28T15:28:16.418437+00:00"
+    }
+  ],
+  "superseded": [],
+  "revised": [],
+  "credential_moved": [],
+  "credential_retired": [],
+  "held": [],
+  "credential_added": [
+    {
+      "raw": "AI-1 and AI-3 Portfolio Review KG 11/23/26",
+      "assigned": "Artificial Intelligence Portfolio Review",
+      "issuer": "",
+      "reviewed_by": "sam-rulings-s749@bot",
+      "reviewed_at": "2026-11-28T15:28:16.418437+00:00"
+    },
+    {
+      "raw": "Community Health Worker Certificate-Code Tenderloin",
+      "assigned": "Community Health Worker Certificate",
+      "issuer": "",
+      "reviewed_by": "sam-rulings-s749@bot",
+      "reviewed_at": "2026-11-28T15:28:16.418437+00:00"
+    },
+    {
+      "raw": "Spanish Literature for Bilinguals Examiantion",
+      "assigned": "Spanish Literature for Bilinguals",
+      "issuer": "",
+      "reviewed_by": "sam-rulings-s749@bot",
+      "reviewed_at": "2026-11-28T15:28:16.418437+00:00"
+    }
+  ],
+  "credential_issuer_fills": [],
+  "credential_issuer_adds": [],
+  "credential_pruned": [],
+  "articulations_repointed": 0,
+  "title_anchors_stamped": 0,
+  "audit_pruned": 4,
+  "unified_titles_count": 6257
+}

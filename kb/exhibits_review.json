@@ -1,28 +1,23 @@
 {
  "schema": 1,
  "_about": "The Exhibits tab's Review queue (kb/_build_exhibits_review.py): one record per title the CER procedures held, with its proposed canonical title and where that came from, its exhibits, where it is articulated and who could adopt it. Students per title are a reviewer-only read (exhibit_title_students).",
- "written_at": "2026-11-28T16:33:29Z",
+ "written_at": "2026-11-28T19:03:11Z",
  "sources": {
   "procedures_run": "2026-11-28T16:33:23Z",
   "suggestions": "2026-11-26T06:22:21Z",
-  "statewide": "2026-11-28T06:18:07",
-  "audit": "2026-11-28T06:24:26+00:00",
+  "statewide": "2026-11-28T18:56:15",
+  "audit": "2026-11-28T19:02:46+00:00",
   "assignments": {
    "read": "live",
-   "at": "2026-11-28T16:33:27Z",
-   "decided": [
-    "ACE CR - Network Fundamentals",
-    "AI-1 and AI-3 Portfolio Review KG 11/23/26",
-    "Community Health Worker Certificate-Code Tenderloin",
-    "Spanish Literature for Bilinguals Examiantion"
-   ]
+   "at": "2026-11-28T19:03:07Z",
+   "decided": []
   }
  },
  "tiles": {
   "names": {
-   "n": 6253,
+   "n": 6257,
    "of": 6257,
-   "waiting": 4
+   "waiting": 0
   },
   "aligned": {
    "n": 0,
@@ -476,7 +471,7 @@
   "Villa Park High School"
  ],
  "no_cr": {
-  "of": 3069,
+  "of": 3068,
   "owners_read": "2026-10-26T23:35Z",
   "rows": [
    {
@@ -550,12 +545,6 @@
     "title": "French Level II",
     "type": "Standardized Assessment",
     "college": "Coastline Community College"
-   },
-   {
-    "id": "MAPMM-N-1-001",
-    "title": "Network Fundamentals",
-    "type": "Military",
-    "college": "Cuesta College"
    },
    {
     "id": "MAPPRS-P72-1-001",

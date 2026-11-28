@@ -1,6 +1,6 @@
 {
  "_about": "CPL Pathways records a person has confirmed (program_requirement_records.checked), synced daily by kb/_sync_program_checked.py for the Commons card. No addresses.",
- "_synced_at": "2026-11-28T06:26:17Z",
+ "_synced_at": "2026-11-28T19:04:11Z",
  "checked": [
   [
    "Cabrillo College",
@@ -81,6 +81,11 @@
    "Mt. San Antonio College",
    "08086",
    "2026-10-04"
+  ],
+  [
+   "Mt. San Antonio College",
+   "30762",
+   "2026-10-11"
   ],
   [
    "Mt. San Antonio College",

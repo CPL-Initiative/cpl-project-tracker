@@ -73377,13 +73377,13 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-SLFB-1-001"
       ],
-      "title": "Spanish Literature for Bilinguals Examiantion",
-      "unified_title": "Spanish Literature for Bilinguals Examiantion",
-      "is_classified": false,
+      "title": "Spanish Literature for Bilinguals",
+      "unified_title": "Spanish Literature for Bilinguals",
+      "is_classified": true,
       "issuing_agency": "",
       "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
+      "confidence_title": 1.0,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Spanish Literature for Bilinguals Examiantion"
@@ -177432,6 +177432,139 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
+      "exhibit_id": "MAPMM-AC-N-1-001|MAPMM-N-1-001",
+      "exhibit_ids": [
+        "MAPMM-AC-N-1-001",
+        "MAPMM-N-1-001"
+      ],
+      "title": "Networking Fundamentals",
+      "unified_title": "Networking Fundamentals",
+      "is_classified": true,
+      "issuing_agency": "American Council on Education (ACE)",
+      "training_agency": "",
+      "confidence_title": 1.0,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "ACE CR - Network Fundamentals",
+        "Network Fundamentals"
+      ],
+      "cpl_type": "Military",
+      "discipline": "Information Technology",
+      "sector": "ICT/Digital Media",
+      "cip_sector": "11",
+      "top_codes": [
+        "36"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Mission College"
+      ],
+      "potential": 63,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Calbright College Non-Credit",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palomar College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "West Los Angeles College",
+        "West Valley College"
+      ],
+      "total_addressable": 64,
+      "credit_recs": [
+        {
+          "course": "CIT 012",
+          "credit": "4 hours in Introduction to Networking"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPMM-AC-N-1-001",
+          "title": "ACE CR - Network Fundamentals",
+          "units": 4.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPMM-N-1-001",
+          "title": "Network Fundamentals",
+          "units": 0,
+          "lines": 0
+        }
+      ],
+      "adopter_units": {
+        "Mission College": 4.0
+      },
+      "adopter_lines": {
+        "Mission College": 1
+      },
+      "adopter_rec_idx": {
+        "Mission College": [
+          0
+        ]
+      },
+      "peer_units_median": 4.0,
+      "peer_units_max": 4.0,
+      "rec_units_total": 4.0
+    },
+    {
       "exhibit_id": "MAPICI-R3EP2-1-001",
       "exhibit_ids": [
         "MAPICI-R3EP2-1-001"
@@ -179438,131 +179571,6 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 3.0,
       "peer_units_max": 3.0,
       "rec_units_total": 3.0
-    },
-    {
-      "exhibit_id": "MAPMM-AC-N-1-001",
-      "exhibit_ids": [
-        "MAPMM-AC-N-1-001"
-      ],
-      "title": "ACE CR - Network Fundamentals",
-      "unified_title": "ACE CR - Network Fundamentals",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "ACE CR - Network Fundamentals"
-      ],
-      "cpl_type": "Military",
-      "discipline": "Information Technology",
-      "sector": "ICT/Digital Media",
-      "cip_sector": "11",
-      "top_codes": [
-        "36"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Mission College"
-      ],
-      "potential": 63,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Calbright College Non-Credit",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Chaffey College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Las Positas College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Ohlone College",
-        "Oxnard College",
-        "Palomar College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "West Los Angeles College",
-        "West Valley College"
-      ],
-      "total_addressable": 64,
-      "credit_recs": [
-        {
-          "course": "CIT 012",
-          "credit": "4 hours in Introduction to Networking"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPMM-AC-N-1-001",
-          "title": "ACE CR - Network Fundamentals",
-          "units": 4.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Mission College": 4.0
-      },
-      "adopter_lines": {
-        "Mission College": 1
-      },
-      "adopter_rec_idx": {
-        "Mission College": [
-          0
-        ]
-      },
-      "peer_units_median": 4.0,
-      "peer_units_max": 4.0,
-      "rec_units_total": 4.0
     },
     {
       "exhibit_id": "MAPSAS-C:IS-1-001|MAPSAS-CEIS1-1-001|MAPSAS-CIS(-1-001|MAPSAS-CIS--1-001|MAPSAS-CIS1-1-001|MAPSAS-CIS10-1-001|MAPSAS-CIS11-1-001|MAPSAS-CIS12-1-001|MAPSAS-CIS13-1-001|MAPSAS-CIS14-1-001|MAPSAS-CIS15-1-001|MAPSAS-CIS16-1-001|MAPSAS-CIS17-1-001|MAPSAS-CIS18-1-001|MAPSAS-CIS19-1-001|MAPSAS-CIS20-1-001|MAPSAS-CIS21-1-001|MAPSAS-CIS22-1-001|MAPSAS-CIS23-1-001|MAPSAS-CIS24-1-001|MAPSAS-CIS25-1-001|MAPSAS-CIS26-1-001|MAPSAS-CIS27-1-001|MAPSAS-CIS28-1-001|MAPSAS-CIS29-1-001|MAPSAS-CIS3-1-001|MAPSAS-CIS30-1-001|MAPSAS-CIS31-1-001|MAPSAS-CIS32-1-001|MAPSAS-CIS33-1-001|MAPSAS-CIS34-1-001|MAPSAS-CIS35-1-001|MAPSAS-CIS36-1-001|MAPSAS-CIS37-1-001|MAPSAS-CIS38-1-001|MAPSAS-CIS39-1-001|MAPSAS-CIS4-1-001|MAPSAS-CIS40-1-001|MAPSAS-CIS41-1-001|MAPSAS-CIS43-1-001|MAPSAS-CIS44-1-001|MAPSAS-CIS45-1-001|MAPSAS-CIS46-1-001|MAPSAS-CIS5-1-001|MAPSAS-CIS6-1-001|MAPSAS-CIS7-1-001|MAPSAS-CIS8-1-001|MAPSAS-CIS9-1-001|MAPSAS-CITS-1-001|MAPSAS-CITS1-1-001|MAPSAS-CITS2-1-001",
@@ -303850,13 +303858,13 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-CHWC-1-001"
       ],
-      "title": "Community Health Worker Certificate-Code Tenderloin",
-      "unified_title": "Community Health Worker Certificate-Code Tenderloin",
-      "is_classified": false,
+      "title": "Community Health Worker Certificate",
+      "unified_title": "Community Health Worker Certificate",
+      "is_classified": true,
       "issuing_agency": "",
       "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
+      "confidence_title": 1.0,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Community Health Worker Certificate-Code Tenderloin"
@@ -389895,13 +389903,13 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPPRA-AAAP-1-001"
       ],
-      "title": "AI-1 and AI-3 Portfolio Review KG 11/23/26",
-      "unified_title": "AI-1 and AI-3 Portfolio Review KG 11/23/26",
-      "is_classified": false,
+      "title": "Artificial Intelligence Portfolio Review",
+      "unified_title": "Artificial Intelligence Portfolio Review",
+      "is_classified": true,
       "issuing_agency": "",
       "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
+      "confidence_title": 1.0,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "AI-1 and AI-3 Portfolio Review KG 11/23/26"
@@ -446946,50 +446954,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 0
     },
     {
-      "exhibit_id": "MAPMM-N-1-001",
-      "exhibit_ids": [
-        "MAPMM-N-1-001"
-      ],
-      "title": "Networking Fundamentals",
-      "unified_title": "Networking Fundamentals",
-      "is_classified": true,
-      "issuing_agency": "American Council on Education (ACE)",
-      "training_agency": "",
-      "confidence_title": 1.0,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Network Fundamentals"
-      ],
-      "cpl_type": "Military",
-      "discipline": "Not Mapped",
-      "sector": "",
-      "cip_sector": "11",
-      "top_codes": [],
-      "collaborative_type": "Local",
-      "adopters": 0,
-      "adopter_names": [],
-      "potential": 0,
-      "potential_names": [],
-      "total_addressable": 0,
-      "credit_recs": [],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPMM-N-1-001",
-          "title": "Network Fundamentals",
-          "units": 0,
-          "lines": 0
-        }
-      ],
-      "adopter_units": {},
-      "adopter_lines": {},
-      "adopter_rec_idx": {},
-      "peer_units_median": 0.0,
-      "peer_units_max": 0.0,
-      "rec_units_total": 0
-    },
-    {
       "exhibit_id": "MAPPRS-A13-1-001",
       "exhibit_ids": [
         "MAPPRS-A13-1-001"
@@ -451435,7 +451399,7 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-11-28T06:18:07",
+  "generated_at": "2026-11-28T18:56:15",
   "total_credit_recs": 17579,
   "cip_sectors": {
     "01": "Agricultural/Animal/Plant/Veterinary Science and Related Fields",
