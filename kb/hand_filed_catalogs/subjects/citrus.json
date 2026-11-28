@@ -73,6 +73,23 @@
    "run": "45623961538"
   },
   {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Art",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
    "code": "ARTH",
    "heading": "Art",
    "heading_printed": "Art",
@@ -247,6 +264,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45623961538)",
    "run": "45623961538"
+  },
+  {
+   "code": "CIS",
+   "heading": "Computer Information Systems",
+   "heading_printed": "Computer Information Systems",
+   "rule": "coci",
+   "codes": [
+    "CIS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Computer Information Systems",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
   },
   {
    "code": "CLNU",
@@ -569,6 +603,23 @@
    "run": "45623961538"
   },
   {
+   "code": "GAME",
+   "heading": "Game Design",
+   "heading_printed": "Game Design",
+   "rule": "coci",
+   "codes": [
+    "GAME"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Game Design",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 95
+  },
+  {
    "code": "GEOG",
    "heading": "Geography",
    "heading_printed": "Geography",
@@ -775,6 +826,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45623961538)",
    "run": "45623961538"
+  },
+  {
+   "code": "MUS",
+   "heading": "Music-Commercial",
+   "heading_printed": "Music-Commercial",
+   "rule": "coci",
+   "codes": [
+    "MUS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Music-Commercial",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
   },
   {
    "code": "MUSC",
@@ -1241,6 +1309,6 @@
    "run": "45623961538"
   }
  ],
- "subjects": 77,
- "with_heading": 77
+ "subjects": 81,
+ "with_heading": 81
 }

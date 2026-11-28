@@ -7,8 +7,8 @@
   "https://gist.githubusercontent.com/cobi-cto/a30b98d33dcbf8070ca5b313eaa2bff5/raw/el-camino-2026-27-catalog-part-02-of-03.txt",
   "https://gist.githubusercontent.com/cobi-cto/a30b98d33dcbf8070ca5b313eaa2bff5/raw/el-camino-2026-27-catalog-part-03-of-03.txt"
  ],
- "subjects": 99,
- "with_heading": 85,
+ "subjects": 107,
+ "with_heading": 106,
  "rows": [
   {
    "code": "ACR",
@@ -275,14 +275,31 @@
    "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
+   "code": "AS",
+   "heading": "Academic Strategies",
+   "heading_printed": "Academic Strategies",
+   "rule": "coci",
+   "codes": [
+    "AS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Academic Strategies",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "ASL",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "American Sign Language",
+   "heading_printed": "American Sign Language",
+   "rule": "coci",
    "codes": [
     "ASL"
    ],
-   "candidate": "Sign Language/Interpreter Training",
+   "candidate": null,
    "page": 1,
    "above": [
     "This advanced course explores bipedal humanoid robotic applications, with an emphasis on humanoid robot kinematics, Zero Moment Point (ZMP) and",
@@ -290,7 +307,14 @@
     "robotics pathway.",
     "Sign Language/Interpreter Training"
    ],
-   "first_course": "ASL 111 - American Sign Language I"
+   "first_course": "ASL 111 - American Sign Language I",
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "ASTR",
@@ -360,13 +384,13 @@
   },
   {
    "code": "BSRC",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Bachelor's Degree in Respiratory Care",
+   "heading_printed": "Bachelor's Degree in Respiratory Care",
+   "rule": "coci",
    "codes": [
     "BSRC"
    ],
-   "candidate": "Respiratory Care",
+   "candidate": null,
    "page": 1,
    "above": [
     "This course covers the history, practices, and philosophy of organized camp and camp counseling. Emphasis is placed on the camp counselor's role in",
@@ -374,13 +398,37 @@
     "recreational camps and outdoor camps, as well as professional opportunities in the field are also examined.",
     "Respiratory Care"
    ],
-   "first_course": "BSRC 371 - Principles of Evidence Based Medicine"
+   "first_course": "BSRC 371 - Principles of Evidence Based Medicine",
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Bachelor's Degree in Respiratory Care",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 80
+  },
+  {
+   "code": "BTEC",
+   "heading": "Biotechnology",
+   "heading_printed": "Biotechnology",
+   "rule": "coci",
+   "codes": [
+    "BTEC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 1 Basic Techniques of Bio Tech; 2 Advncd Techniques of Bio Tech; corrected during QA (was: Manufacturing Technology)",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
   },
   {
    "code": "BUS",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Business",
+   "heading_printed": "Business",
+   "rule": "coci",
    "codes": [
     "BUS"
    ],
@@ -392,7 +440,14 @@
     "Note: *Transfer limitations apply. For eligibility requirements, go to www.elcamino.edu/admissions/credit.asp",
     "(formerly Business 99abc)"
    ],
-   "first_course": "BUS 101 - Introduction to Business"
+   "first_course": "BUS 101 - Introduction to Business",
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 25 Introduction to Business; 101 Introduction to Business",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
   },
   {
    "code": "CADD",
@@ -415,6 +470,23 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 44948526227)"
+  },
+  {
+   "code": "CCE",
+   "heading": "Cooperative Career Education",
+   "heading_printed": "Cooperative Career Education",
+   "rule": "coci",
+   "codes": [
+    "CCE"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Cooperative Career Education",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 80
   },
   {
    "code": "CDEV",
@@ -660,9 +732,9 @@
   },
   {
    "code": "DART",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Digital Arts",
+   "heading_printed": "Digital Arts",
+   "rule": "coci",
    "codes": [
     "DART"
    ],
@@ -674,13 +746,20 @@
     "through an adjudicated competition hosted annually by the Kennedy Center American College Theater Festival (KCACTF).",
     "Digital Art and Design Technology"
    ],
-   "first_course": "DART 95 - Cooperative Work Experience Education"
+   "first_course": "DART 95 - Cooperative Work Experience Education",
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Digital Arts",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "ECHT",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Electronics and Computer Hardware Technology",
+   "heading_printed": "Electronics and Computer Hardware Technology",
+   "rule": "index",
    "codes": [
     "ECHT"
    ],
@@ -692,7 +771,13 @@
     "(formerly Educational Development 40)",
     "Electronics and Computer Hardware Technology"
    ],
-   "first_course": "ECHT 11 - Introduction to Electronics"
+   "first_course": "ECHT 11 - Introduction to Electronics",
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI ECHT 11 Introduction to Electronics",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   },
   {
    "code": "ECON",
@@ -846,13 +931,13 @@
   },
   {
    "code": "ET",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Engineering Technology",
+   "heading_printed": "Engineering Technology",
+   "rule": "coci",
    "codes": [
     "ET"
    ],
-   "candidate": "Sustainable Design",
+   "candidate": null,
    "page": 1,
    "above": [
     "presentations, speaking within a small group and interpersonal conversations, impromptu speaking and briefings will be covered.",
@@ -860,7 +945,14 @@
     "(formerly SUPV 27)",
     "Sustainable Design"
    ],
-   "first_course": "ET 95 - Cooperative Work Experience Education"
+   "first_course": "ET 95 - Cooperative Work Experience Education",
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 99 Independent Study; 165 Sustainable/Regen Practices",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "ETEC",
@@ -1149,6 +1241,23 @@
    "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
+   "code": "IT",
+   "heading": "Industrial Technology",
+   "heading_printed": "Industrial Technology",
+   "rule": "coci",
+   "codes": [
+    "IT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 15 Explrng Career-Indstry/Tchnlgy",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "ITAL",
    "heading": "Italian",
    "heading_printed": "Italian",
@@ -1238,9 +1347,9 @@
   },
   {
    "code": "LGBT",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Lesbian, Gay, Bisexual and Transgender Studies",
+   "heading_printed": "Lesbian, Gay, Bisexual and Transgender Studies",
+   "rule": "coci",
    "codes": [
     "LGBT"
    ],
@@ -1252,7 +1361,14 @@
     "Topics include orientation to college, college readiness, student responsibility in a diverse college setting, learning styles and lifelong learning, goal",
     "setting for college and career, educational planning, study skills, time management, support networks, and college resources."
    ],
-   "first_course": "LGBT 101 - Introduction to LGBTQ+ Studies"
+   "first_course": "LGBT 101 - Introduction to LGBTQ+ Studies",
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 101 Introduction to LGBTQ+ Studies",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "LIBR",
@@ -1680,9 +1796,9 @@
   },
   {
    "code": "PHOT",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Photography",
+   "heading_printed": "Photography",
+   "rule": "coci",
    "codes": [
     "PHOT"
    ],
@@ -1694,7 +1810,14 @@
     "Note: For eligibility requirements, go to www.elcamino.edu/admissions/credit.asp",
     "(formerly Photography 99abc)"
    ],
-   "first_course": "PHOT 101 - Beginning Photography"
+   "first_course": "PHOT 101 - Beginning Photography",
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Photography",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
   },
   {
    "code": "PHYO",
@@ -1830,13 +1953,13 @@
   },
   {
    "code": "RC",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Respiratory Care",
+   "heading_printed": "Respiratory Care",
+   "rule": "coci",
    "codes": [
     "RC"
    ],
-   "candidate": "Credit, Degree Applicable",
+   "candidate": null,
    "page": 1,
    "above": [
     "3. Completion of the 39 required CSU-GE Transfer Pattern units (IGETC)",
@@ -1844,7 +1967,14 @@
     "This course is an introduction to the purpose and application of disease management with emphasis on discharge planning, patient education, ethical",
     "standards of practice, and disease management strategies and methods."
    ],
-   "first_course": "RC 170 - Introduction to Respiratory Care Sciences and the Profession"
+   "first_course": "RC 170 - Introduction to Respiratory Care Sciences and the Profession",
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Respiratory Care",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
   },
   {
    "code": "RE",
@@ -1914,9 +2044,9 @@
   },
   {
    "code": "RTEC",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Radiologic Technology",
+   "heading_printed": "Radiologic Technology",
+   "rule": "coci",
    "codes": [
     "RTEC"
    ],
@@ -1928,13 +2058,20 @@
     "application procedures, radiographic and digital imaging equipment, principles of radiation production, exposure and quality, image processing, radiation",
     "safety, patient care, medical malpractice, professional ethics, and introduction to radiographic examinations."
    ],
-   "first_course": "RTEC 91 - Radiographic Pathology"
+   "first_course": "RTEC 91 - Radiographic Pathology",
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Radiologic Technology",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
   },
   {
    "code": "SLAN",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Sign Language/Interpreter Training",
+   "heading_printed": "Sign Language/Interpreter Training",
+   "rule": "coci",
    "codes": [
     "SLAN"
    ],
@@ -1946,7 +2083,14 @@
     "cognitive skills development, ethical and cultural considerations and study of linguistic and cultural mediation for dynamic equivalency of the message in",
     "both languages. Some out-of-classroom practicum hours will be required to successfully satisfy the course requirement."
    ],
-   "first_course": "SLAN 500 - American Sign Language I"
+   "first_course": "SLAN 500 - American Sign Language I",
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Sign Language/Interpreter Training",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 94
   },
   {
    "code": "SOCI",
@@ -2016,13 +2160,13 @@
   },
   {
    "code": "STAT",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "coci",
    "codes": [
     "STAT"
    ],
-   "candidate": "Noncredit",
+   "candidate": null,
    "page": 1,
    "above": [
     "0 units",
@@ -2030,7 +2174,14 @@
     "Noncredit",
     "This noncredit course is an introduction to the trigonometry of triangles, inverse trig functions, graphs, equations and identities."
    ],
-   "first_course": "STAT C1000 - Introduction to Statistics"
+   "first_course": "STAT C1000 - Introduction to Statistics",
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Statistics",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
   },
   {
    "code": "SUPV",
@@ -2056,9 +2207,9 @@
   },
   {
    "code": "SUST",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Sustainability",
+   "heading_printed": "Sustainability",
+   "rule": "coci",
    "codes": [
     "SUST"
    ],
@@ -2070,7 +2221,14 @@
     "Note: Transfer limitations apply. For eligibility requirements, go to www.elcamino.edu/admissions/credit.asp",
     "(formerly Environmental Technology 99abc)"
    ],
-   "first_course": "SUST 100 - Sustainability in the Building Sector"
+   "first_course": "SUST 100 - Sustainability in the Building Sector",
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Sustainability",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 95
   },
   {
    "code": "THEA",
@@ -2093,6 +2251,74 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 44948526227)"
+  },
+  {
+   "code": "THTRE",
+   "heading": "Theatre",
+   "heading_printed": "Theatre",
+   "rule": "coci",
+   "codes": [
+    "THTRE"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Theatre",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 80
+  },
+  {
+   "code": "TILL",
+   "heading": "Independent Study",
+   "heading_printed": "Independent Study",
+   "rule": "coci",
+   "codes": [
+    "TILL"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 99ABC Independent Study",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
+  },
+  {
+   "code": "TMAT",
+   "heading": "Technical Mathematics",
+   "heading_printed": "Technical Mathematics",
+   "rule": "coci",
+   "codes": [
+    "TMAT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 1 Tech Math-Voc Students",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
+  },
+  {
+   "code": "TUTR",
+   "heading": "Tutoring",
+   "heading_printed": "Tutoring",
+   "rule": "coci",
+   "codes": [
+    "TUTR"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Tutoring",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "WELD",

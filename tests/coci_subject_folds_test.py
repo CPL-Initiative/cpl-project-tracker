@@ -89,7 +89,7 @@ for college, code, num in (
     ("Imperial Valley College", "ICC", "101"),
     ("City College of San Francisco", "GEOL/GEOG", "1"),
     ("City College of San Francisco", "LALS/LGBT", "1"),
-    (AH, "ENGLL", "1"),
+    # ENGLL left this list in S748: Sam ruled it a fold to ENGL (retired_or_fix_batch4.csv, found_by Sam Lee); see (5).
     (AH, "HEALT", "1"),
     (AH, "COMPC", "1"),
     (AH, "SPECI", "1"),
@@ -100,6 +100,25 @@ for college, code, num in (
 ):
     check(csf.fold(college, code, num) == (code, num), "%s %s must not fold" % (college, code))
 check(ccl.fold("Cerro Coso Community College", "ICC", "C101") == ("ICC", "C101"), "campus-letter must still leave ICC")
+
+# (5) whole-code folds a person ruled (S748, #3937): read from the retired_or_fix CSVs, never a machine's row
+check(csf.fold(AH, "ENGLL", "1") == ("ENGL", "1"), "Sam ruled Hancock ENGLL a fold to ENGL")
+check(csf.fold("Glendale Community College", "ETH", "S122") == ("ETH S", "122"), "a split code drops the target's token")
+check(csf.fold("Los Angeles Trade Technical College", "LABR", "ST101") == ("LABR ST", "101"),
+      "COCI's spelling of the college meets the CSV's Trade-Technical")
+check(csf.fold("San Joaquin Delta College", "A CON", "100") == ("A-CON", "100"), "a spaced twin folds to the hyphenated code")
+check(csf.fold(AH, "SOCIO", "x", "SOC SC 149") == ("SOC SC", "149"), "a SOCIO row titled SOC SC goes to SOC SC")
+check(csf.fold(AH, "SOCIO", "x", "SOC 190") == ("SOC", "190"), "a SOCIO row titled SOC goes to SOC")
+check(csf.fold("Los Angeles Southwest College", "ENG", "ELC022") == ("ENG", "ELC022"),
+      "LA Southwest ENG is held: its rows are engineering, not English")
+check(csf.base_code("glendale_community", "ETH") == "ETH S", "a save on a person-folded code carries to its target")
+check(csf.is_not_a_subject("cabrillo", "TEST"), "a person's not_a_subject row marks the code")
+with open(os.path.join(ROOT, "kb", "subject_title_hunt", "20261127_retired_or_fix_batch4.csv"), encoding="utf-8") as f:
+    import csv as _csv
+    machine = [r for r in _csv.DictReader(f) if r["finding"] == "fold" and r["found_by"].strip().upper() in ("COBI", "COBIX")]
+for r in machine:
+    check(csf.fold(r["college"], r["local_subject_code"], "1") == (r["local_subject_code"], "1"),
+          "a machine's fold row waits for a person: %s %s" % (r["college"], r["local_subject_code"]))
 
 # (6) a save on a glued code carries; a direct save wins
 doc = {"decisions": [

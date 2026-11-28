@@ -92,6 +92,23 @@
    "run": "45626788039,45628362566"
   },
   {
+   "code": "ART",
+   "heading": "Art CCN",
+   "heading_printed": "Art CCN",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Art CCN",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 96
+  },
+  {
    "code": "ARTH",
    "heading": "Art CCN",
    "heading_printed": "Art CCN",
@@ -620,6 +637,23 @@
    "run": "45626788039,45628362566"
   },
   {
+   "code": "MUS",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "coci",
+   "codes": [
+    "MUS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Music",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
+  },
+  {
    "code": "NBE",
    "heading": "Noncredit Basic Education",
    "heading_printed": "Noncredit Basic Education",
@@ -844,6 +878,23 @@
    "run": "45626788039,45628362566"
   },
   {
+   "code": "THA",
+   "heading": "Theatre Arts",
+   "heading_printed": "Theatre Arts",
+   "rule": "coci",
+   "codes": [
+    "THA"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Theatre Arts",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "UMJ",
    "heading": "English",
    "heading_printed": "English",
@@ -876,6 +927,6 @@
    "run": "45626788039,45628362566"
   }
  ],
- "subjects": 54,
- "with_heading": 54
+ "subjects": 57,
+ "with_heading": 57
 }

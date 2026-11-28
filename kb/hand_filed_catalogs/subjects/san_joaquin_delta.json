@@ -42,19 +42,28 @@
   },
   {
    "code": "A-ELE",
-   "heading": "Electrical Technology: Apprenticeship",
-   "heading_printed": "Electrical Technology: Apprenticeship",
+   "heading": "Electrical Apprenticeship",
+   "heading_printed": "Electrical Apprenticeship",
    "rule": "index",
    "codes": [
     "A-ELE"
    ],
    "candidate": null,
-   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
-   "where": "catalog",
-   "method": "subject heading",
-   "found_on": "2026-11-25",
-   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
-   "run": "45626064651, 45627087073"
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI A ELE 70A Electrical Apprenticeship I; title goes on the hyphenated code A-ELE",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 100,
+   "replaced": {
+    "heading": "Electrical Technology: Apprenticeship",
+    "heading_printed": "Electrical Technology: Apprenticeship",
+    "rule": "index",
+    "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+    "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+    "found_on": "2026-11-25"
+   }
   },
   {
    "code": "AERO",
@@ -106,19 +115,28 @@
   },
   {
    "code": "A-IND",
-   "heading": "Industrial Technology: Apprenticeship",
-   "heading_printed": "Industrial Technology: Apprenticeship",
+   "heading": "Industrial Apprenticeship",
+   "heading_printed": "Industrial Apprenticeship",
    "rule": "index",
    "codes": [
     "A-IND"
    ],
    "candidate": null,
-   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
-   "where": "catalog",
-   "method": "subject heading",
-   "found_on": "2026-11-25",
-   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
-   "run": "45626064651, 45627087073"
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI A IND 72A Introduction to Apprenticeship; title goes on the hyphenated code A-IND",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 100,
+   "replaced": {
+    "heading": "Industrial Technology: Apprenticeship",
+    "heading_printed": "Industrial Technology: Apprenticeship",
+    "rule": "index",
+    "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+    "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+    "found_on": "2026-11-25"
+   }
   },
   {
    "code": "AJ",
@@ -154,19 +172,28 @@
   },
   {
    "code": "A-MEC",
-   "heading": "Mechanical Technology: Apprenticeship",
-   "heading_printed": "Mechanical Technology: Apprenticeship",
+   "heading": "Mechanical Apprenticeship",
+   "heading_printed": "Mechanical Apprenticeship",
    "rule": "index",
    "codes": [
     "A-MEC"
    ],
    "candidate": null,
-   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
-   "where": "catalog",
-   "method": "subject heading",
-   "found_on": "2026-11-25",
-   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
-   "run": "45626064651, 45627087073"
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI A MEC 074A Basic Welding; 074B Machine Shop; title goes on the hyphenated code A-MEC",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 100,
+   "replaced": {
+    "heading": "Mechanical Technology: Apprenticeship",
+    "heading_printed": "Mechanical Technology: Apprenticeship",
+    "rule": "index",
+    "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+    "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+    "found_on": "2026-11-25"
+   }
   },
   {
    "code": "ANTH",
@@ -199,6 +226,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
    "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 33A Beginning Drawing; 1C Modern and Contemporary Art History",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
   },
   {
    "code": "ARTH",
@@ -409,6 +453,40 @@
    "run": "45626064651, 45627087073"
   },
   {
+   "code": "CHIN",
+   "heading": "Chinese",
+   "heading_printed": "Chinese",
+   "rule": "coci",
+   "codes": [
+    "CHIN"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Chinese",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
+   "code": "CIVIL",
+   "heading": "Civilization",
+   "heading_printed": "Civilization",
+   "rule": "coci",
+   "codes": [
+    "CIVIL"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 3 Autobiography of Civilization",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
+  },
+  {
    "code": "CNT",
    "heading": "Computer Network Technology",
    "heading_printed": "Computer Network Technology",
@@ -457,6 +535,23 @@
    "run": "45626064651, 45627087073"
   },
   {
+   "code": "COM ST",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "coci",
+   "codes": [
+    "COM ST"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Communication Studies",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 96
+  },
+  {
    "code": "COUN",
    "heading": "Counseling",
    "heading_printed": "Counseling",
@@ -503,6 +598,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
    "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "CSC",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "coci",
+   "codes": [
+    "CSC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a college naming pattern; COCI course titles: 32 Ethical Hacking",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 84
   },
   {
    "code": "CSN",
@@ -567,6 +679,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
    "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "DANCE",
+   "heading": "Dance",
+   "heading_printed": "Dance",
+   "rule": "coci",
+   "codes": [
+    "DANCE"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Dance",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
   },
   {
    "code": "DIESL",
@@ -807,6 +936,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
    "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "FASHION",
+   "heading": "Fashion",
+   "heading_printed": "Fashion",
+   "rule": "coci",
+   "codes": [
+    "FASHION"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Fashion",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "FCS",
@@ -1065,6 +1211,23 @@
    "run": "45626064651, 45627087073"
   },
   {
+   "code": "LAW",
+   "heading": "Law",
+   "heading_printed": "Law",
+   "rule": "coci",
+   "codes": [
+    "LAW"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 2 Introduction to Paralegal Studies, Legal Assisting, and Law Office Administration; 16 Introduction to Social Justice: Law and Social Change; corrected during QA (was: Administration of Justice)",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
+  },
+  {
    "code": "LIBRY",
    "heading": "Library Skills",
    "heading_printed": "Library Skills",
@@ -1145,6 +1308,23 @@
    "run": "45626064651, 45627087073"
   },
   {
+   "code": "MUSIC",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "coci",
+   "codes": [
+    "MUSIC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Music",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
+  },
+  {
    "code": "N R",
    "heading": "Natural Resources",
    "heading_printed": "Natural Resources",
@@ -1159,6 +1339,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
    "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "NURS",
+   "heading": "Nursing",
+   "heading_printed": "Nursing",
+   "rule": "coci",
+   "codes": [
+    "NURS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Nursing",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "NURSADN",
@@ -1207,6 +1404,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
    "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "PETHEORY",
+   "heading": "Kinesiology",
+   "heading_printed": "Kinesiology",
+   "rule": "coci",
+   "codes": [
+    "PETHEORY"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Kinesiology",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "PHILO",
@@ -1431,8 +1645,25 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
    "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "WELDING",
+   "heading": "Welding",
+   "heading_printed": "Welding",
+   "rule": "coci",
+   "codes": [
+    "WELDING"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 82 Introduction to Welding and Cutting Processes for the Trades; 10 Basic Welding for the Trades",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   }
  ],
- "subjects": 89,
- "with_heading": 89
+ "subjects": 101,
+ "with_heading": 101
 }

@@ -103,6 +103,23 @@
    "run": "45629430201"
   },
   {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 30 Introduction to Sculpture; 39 Introduction to Digital Art",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "ARTH",
    "heading": "Art History",
    "heading_printed": "ART HISTORY",
@@ -327,6 +344,23 @@
    "run": "45629430201"
   },
   {
+   "code": "CMS",
+   "heading": "Electronic Field Production",
+   "heading_printed": "Electronic Field Production",
+   "rule": "coci",
+   "codes": [
+    "CMS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 60 Introduction to Electronic Field Production",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
+  },
+  {
    "code": "COMM",
    "heading": "Communications",
    "heading_printed": "COMMUNICATIONS",
@@ -343,6 +377,57 @@
    "run": "45629430201"
   },
   {
+   "code": "CORS",
+   "heading": "Administration of Justice",
+   "heading_printed": "Administration of Justice",
+   "rule": "coci",
+   "codes": [
+    "CORS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Administration of Justice",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
+   "code": "COT",
+   "heading": "Computer Office Technology",
+   "heading_printed": "Computer Office Technology",
+   "rule": "coci",
+   "codes": [
+    "COT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 50 Keyboarding, Level 1; 52 Keyboarding, Level 2",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
+   "code": "CS",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "coci",
+   "codes": [
+    "CS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Computer Science",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "DA",
    "heading": "Dental Assisting",
    "heading_printed": "DENTAL ASSISTING",
@@ -357,6 +442,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45629430201)",
    "run": "45629430201"
+  },
+  {
+   "code": "DRA",
+   "heading": "Acting",
+   "heading_printed": "Acting",
+   "rule": "coci",
+   "codes": [
+    "DRA"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 40 Introduction to Acting",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
   },
   {
    "code": "DS",
@@ -439,6 +541,23 @@
    "run": "45629430201"
   },
   {
+   "code": "ENGR",
+   "heading": "Architectural Practice",
+   "heading_printed": "Architectural Practice",
+   "rule": "coci",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 7 Introduction to Architectural Practice; 11 Computer Aided Drafting",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "ES",
    "heading": "Ethnic Studies",
    "heading_printed": "ETHNIC STUDIES",
@@ -471,6 +590,40 @@
    "run": "45629430201"
   },
   {
+   "code": "FILM",
+   "heading": "Film",
+   "heading_printed": "Film",
+   "rule": "coci",
+   "codes": [
+    "FILM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 1 History of the Cinema",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
+   "code": "FOLK",
+   "heading": "Folk",
+   "heading_printed": "Folk",
+   "rule": "coci",
+   "codes": [
+    "FOLK"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 110 Folk Dance: American Square and Round Dance",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
+  },
+  {
    "code": "FOR",
    "heading": "Forestry",
    "heading_printed": "FORESTRY",
@@ -485,6 +638,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45629430201)",
    "run": "45629430201"
+  },
+  {
+   "code": "FREN",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "coci",
+   "codes": [
+    "FREN"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: French",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 94
   },
   {
    "code": "FS",
@@ -549,6 +719,57 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45629430201)",
    "run": "45629430201"
+  },
+  {
+   "code": "GS",
+   "heading": "Machine Shop - Lathe",
+   "heading_printed": "Machine Shop - Lathe",
+   "rule": "coci",
+   "codes": [
+    "GS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 110.01 Introduction to Machine Shop - Lathe; 110.02 Introduction to Machine Shop - Mill",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
+   "code": "GSS",
+   "heading": "Gunsmithing",
+   "heading_printed": "Gunsmithing",
+   "rule": "coci",
+   "codes": [
+    "GSS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 112B Introduction to Knifemaking; 49 Gunsmithing Cooperative Work Experience Overnight decision; GAI agreed. 118 COCI courses; not Gender and Sexuality Studies.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 98
+  },
+  {
+   "code": "HE",
+   "heading": "Health Education",
+   "heading_printed": "Health Education",
+   "rule": "coci",
+   "codes": [
+    "HE"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 150 Clothing Construction; 50A Cook - Salad/Sandwich",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "HIST",
@@ -727,6 +948,23 @@
    "run": "45629430201"
   },
   {
+   "code": "PGT",
+   "heading": "Power Generation Technology",
+   "heading_printed": "Power Generation Technology",
+   "rule": "coci",
+   "codes": [
+    "PGT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 31 Power Generation Laboratory - Beginning; 32 Power Generation Laboratory - Advanced Overnight decision; GAI agreed. Not Business.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 96
+  },
+  {
    "code": "PHIL",
    "heading": "Philosophy",
    "heading_printed": "PHILOSOPHY",
@@ -775,6 +1013,23 @@
    "run": "45629430201"
   },
   {
+   "code": "PLSC",
+   "heading": "Student Leadership",
+   "heading_printed": "Student Leadership",
+   "rule": "coci",
+   "codes": [
+    "PLSC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 11 Student Leadership Not Physical Science and not a fold to already-titled POLS (Political Science). The only COCI course is Student Leadership.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 95
+  },
+  {
    "code": "POLS",
    "heading": "Political Science",
    "heading_printed": "POLITICAL SCIENCE",
@@ -807,6 +1062,23 @@
    "run": "45629430201"
   },
   {
+   "code": "READ",
+   "heading": "Reading",
+   "heading_printed": "Reading",
+   "rule": "coci",
+   "codes": [
+    "READ"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Reading",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "SOC",
    "heading": "Sociology",
    "heading_printed": "SOCIOLOGY",
@@ -837,6 +1109,40 @@
    "found_on": "2026-11-27",
    "found_by": "Sam Lee",
    "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "coci",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Spanish",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 94
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "coci",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Statistics",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 94
   },
   {
    "code": "TUTR",
@@ -903,6 +1209,6 @@
    "run": "45629430201"
   }
  ],
- "subjects": 54,
- "with_heading": 54
+ "subjects": 72,
+ "with_heading": 72
 }

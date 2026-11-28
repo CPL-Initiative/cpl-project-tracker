@@ -57,6 +57,23 @@
    "run": "45632934996"
   },
   {
+   "code": "AHS",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "coci",
+   "codes": [
+    "AHS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 1 History of Western Art: Prehistoric, Ancient, and Medieval; 2 History of Western Art: Renaissance through Contemporary Not Allied Health Sciences.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 96
+  },
+  {
    "code": "AIR",
    "heading": "Air Conditioning & Refrigeration",
    "heading_printed": "Air Conditioning & Refrigeration",
@@ -135,6 +152,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45632934996)",
    "run": "45632934996"
+  },
+  {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 4 Introduction to Visual Culture; 30A Printmaking-Introduction",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
   },
   {
    "code": "ARTH",
@@ -519,6 +553,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45632934996)",
    "run": "45632934996"
+  },
+  {
+   "code": "EST",
+   "heading": "Energy and Sustainable Tech",
+   "heading_printed": "Energy and Sustainable Tech",
+   "rule": "coci",
+   "codes": [
+    "EST"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 22 California Mechanical Codes",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "ETS",
@@ -1241,6 +1292,6 @@
    "run": "45632934996"
   }
  ],
- "subjects": 77,
- "with_heading": 77
+ "subjects": 80,
+ "with_heading": 80
 }

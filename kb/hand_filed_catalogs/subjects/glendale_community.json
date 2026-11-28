@@ -138,6 +138,23 @@
    "run": "45630110282"
   },
   {
+   "code": "AHLTH",
+   "heading": "Allied Health",
+   "heading_printed": "Allied Health",
+   "rule": "coci",
+   "codes": [
+    "AHLTH"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 105 Life Sciences; 145 Nursing Asst/Ltc and Hha",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "ANTHR",
    "heading": "Anthropology",
    "heading_printed": "ANTHROPOLOGY",
@@ -184,6 +201,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45630110282)",
    "run": "45630110282"
+  },
+  {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 170 Introduction to Printmaking; 209 Introduction To 2-D Character Design",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
   },
   {
    "code": "ARTH",
@@ -298,6 +332,23 @@
    "run": "45630110282"
   },
   {
+   "code": "BUSOT",
+   "heading": "Business Office Technology",
+   "heading_printed": "Business Office Technology",
+   "rule": "coci",
+   "codes": [
+    "BUSOT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 125 Beginning Shorthand; 120 A B C Shorthand",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "CABOT",
    "heading": "Computer Application & Business Office Technologies",
    "heading_printed": "COMPUTER APPLICATION & BUSINESS OFFICE TECHNOLOGIES",
@@ -378,6 +429,39 @@
    "run": "45630110282"
   },
   {
+   "code": "CIM",
+   "heading": "Computer Integrated Manufacturing",
+   "heading_printed": "Computer Integrated Manufacturing",
+   "rule": "coci",
+   "codes": [
+    "CIM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 101 Cim Robotics Technology; 102 Automation and Prd Control",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
+   "code": "CLO",
+   "heading": "Clothing",
+   "heading_printed": "Clothing",
+   "rule": "index",
+   "codes": [
+    "CLO"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI CLO 101 Clothing; 102 Intermed Clothing",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "CO ED",
    "heading": "Cooperative Education",
    "heading_printed": "COOPERATIVE EDUCATION",
@@ -410,6 +494,39 @@
    "run": "45630110282"
   },
   {
+   "code": "COSM",
+   "heading": "Cosmetology",
+   "heading_printed": "Cosmetology",
+   "rule": "coci",
+   "codes": [
+    "COSM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Cosmetology",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
+   "code": "CSIS",
+   "heading": "Computer Science and Information Systems",
+   "heading_printed": "Computer Science and Information Systems",
+   "rule": "index",
+   "codes": [
+    "CSIS"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI CSIS 185 Database Management Systems",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "CULIN",
    "heading": "Culinary Arts",
    "heading_printed": "CULINARY ARTS",
@@ -424,6 +541,40 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45630110282)",
    "run": "45630110282"
+  },
+  {
+   "code": "DANCE",
+   "heading": "Dance",
+   "heading_printed": "Dance",
+   "rule": "coci",
+   "codes": [
+    "DANCE"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 101 Introduction to Dance; 190 Beginning Yoga",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
+   "code": "DRAFT",
+   "heading": "Drafting",
+   "heading_printed": "Drafting",
+   "rule": "coci",
+   "codes": [
+    "DRAFT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Drafting",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 95
   },
   {
    "code": "ECON",
@@ -522,6 +673,22 @@
    "run": "45630110282"
   },
   {
+   "code": "ENRTE",
+   "heading": "Entrepreneurship",
+   "heading_printed": "Entrepreneurship",
+   "rule": "index",
+   "codes": [
+    "ENRTE"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI ENRTE 180 Opportunity Analysis",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "ENTRE",
    "heading": "Entrepreneurship",
    "heading_printed": "ENTREPRENEURSHIP",
@@ -536,6 +703,40 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45630110282)",
    "run": "45630110282"
+  },
+  {
+   "code": "ENV",
+   "heading": "Environmental Technology",
+   "heading_printed": "Environmental Technology",
+   "rule": "coci",
+   "codes": [
+    "ENV"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: T150 Intro to Environmental Tech",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
+  },
+  {
+   "code": "ENV T",
+   "heading": "Environmental Technology",
+   "heading_printed": "Environmental Technology",
+   "rule": "coci",
+   "codes": [
+    "ENV T"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 120 Water Treatment Operation and Maintenance I; 130 Water Distribution Operation and Maintenance",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "ESL",
@@ -568,6 +769,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45630110282)",
    "run": "45630110282"
+  },
+  {
+   "code": "FASH",
+   "heading": "Fashion",
+   "heading_printed": "Fashion",
+   "rule": "coci",
+   "codes": [
+    "FASH"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Fashion",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
   },
   {
    "code": "FIL",
@@ -666,6 +884,40 @@
    "run": "45630110282"
   },
   {
+   "code": "GERM",
+   "heading": "German",
+   "heading_printed": "German",
+   "rule": "coci",
+   "codes": [
+    "GERM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: German",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
+   "code": "HIER",
+   "heading": "Hieroglyphs",
+   "heading_printed": "Hieroglyphs",
+   "rule": "coci",
+   "codes": [
+    "HIER"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 49 Hier Independent Study; 101 Egypt Hieroglyphs I",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "HIST",
    "heading": "History",
    "heading_printed": "HISTORY",
@@ -680,6 +932,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45630110282)",
    "run": "45630110282"
+  },
+  {
+   "code": "HIT",
+   "heading": "Health Information Technology",
+   "heading_printed": "Health Information Technology",
+   "rule": "coci",
+   "codes": [
+    "HIT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Health Information Technology",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
   },
   {
    "code": "HLTH",
@@ -760,6 +1029,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45630110282)",
    "run": "45630110282"
+  },
+  {
+   "code": "ITECH",
+   "heading": "Energy Technology",
+   "heading_printed": "Energy Technology",
+   "rule": "coci",
+   "codes": [
+    "ITECH"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 156 Advanced Metering Technology; 157 Verdugo Power Academy I",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
   },
   {
    "code": "JAPAN",
@@ -890,6 +1176,23 @@
    "run": "45630110282"
   },
   {
+   "code": "MAT",
+   "heading": "Materials",
+   "heading_printed": "Materials",
+   "rule": "coci",
+   "codes": [
+    "MAT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: P146 Materials/Processess",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
+  },
+  {
    "code": "MATH",
    "heading": "Mathematics",
    "heading_printed": "MATHEMATICS",
@@ -920,6 +1223,40 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45630110282)",
    "run": "45630110282"
+  },
+  {
+   "code": "MEDIA",
+   "heading": "TV Studio Production",
+   "heading_printed": "TV Studio Production",
+   "rule": "coci",
+   "codes": [
+    "MEDIA"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 101 Introduction to TV Studio Production; 103 Introduction to Motion Picture Production",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
+   "code": "MGMT",
+   "heading": "Management",
+   "heading_printed": "Management",
+   "rule": "coci",
+   "codes": [
+    "MGMT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 150 Written Communicatn",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "MOA",
@@ -954,6 +1291,23 @@
    "run": "45630110282"
   },
   {
+   "code": "MUSIC",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "coci",
+   "codes": [
+    "MUSIC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Music",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
+  },
+  {
    "code": "NS",
    "heading": "Nursing Science",
    "heading_printed": "NURSING SCIENCE",
@@ -970,6 +1324,23 @@
    "run": "45630110282"
   },
   {
+   "code": "NURS",
+   "heading": "Nursing",
+   "heading_printed": "Nursing",
+   "rule": "coci",
+   "codes": [
+    "NURS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 219 Nurs Proc Pt Management; 221 Nurs Proc Leadership",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "NUTR",
    "heading": "Nutrition",
    "heading_printed": "NUTRITION",
@@ -984,6 +1355,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45630110282)",
    "run": "45630110282"
+  },
+  {
+   "code": "OA",
+   "heading": "Office Administration",
+   "heading_printed": "Office Administration",
+   "rule": "coci",
+   "codes": [
+    "OA"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 215 Adv Typing",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
   },
   {
    "code": "OCEAN",
@@ -1066,6 +1454,23 @@
    "run": "45630110282"
   },
   {
+   "code": "PHSCI",
+   "heading": "Physical Science",
+   "heading_printed": "Physical Science",
+   "rule": "coci",
+   "codes": [
+    "PHSCI"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 131 Gen Phy Sci",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "PHY",
    "heading": "Physics",
    "heading_printed": "PHYSICS",
@@ -1114,6 +1519,22 @@
    "run": "45630110282"
   },
   {
+   "code": "PSYCH",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYCH"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI PSYCH 109 Introduction to Gerontology; 107 Intro to Statistics",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "RE",
    "heading": "Real Estate",
    "heading_printed": "REAL ESTATE",
@@ -1128,6 +1549,40 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45630110282)",
    "run": "45630110282"
+  },
+  {
+   "code": "RET S",
+   "heading": "Older Adults",
+   "heading_printed": "Older Adults",
+   "rule": "coci",
+   "codes": [
+    "RET S"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: S02501CG Beginning Stitchery; S00101AG Psychology Aspects",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
+   "code": "RUSS",
+   "heading": "Russian",
+   "heading_printed": "Russian",
+   "rule": "coci",
+   "codes": [
+    "RUSS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Russian",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 95
   },
   {
    "code": "SOC",
@@ -1178,6 +1633,40 @@
    "run": "45630110282"
   },
   {
+   "code": "ST",
+   "heading": "Student Development",
+   "heading_printed": "Student Development",
+   "rule": "coci",
+   "codes": [
+    "ST"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: DV128 Vocational Pathways; DV047 St Dv National Field Studies",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "coci",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Statistics",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
    "code": "ST DV",
    "heading": "Student Development",
    "heading_printed": "STUDENT DEVELOPMENT",
@@ -1208,6 +1697,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45630110282)",
    "run": "45630110282"
+  },
+  {
+   "code": "T ED",
+   "heading": "Technical Mathematics",
+   "heading_printed": "Technical Mathematics",
+   "rule": "coci",
+   "codes": [
+    "T ED"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 143 Tech Mathematics Ii",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
   },
   {
    "code": "THTR",
@@ -1242,6 +1748,6 @@
    "run": "45630110282"
   }
  ],
- "subjects": 73,
- "with_heading": 73
+ "subjects": 103,
+ "with_heading": 103
 }

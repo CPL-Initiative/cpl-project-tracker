@@ -73,6 +73,23 @@
    "run": "45627124597"
   },
   {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 1 Introduction to Art History; 129 Introduction to Mural Art",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "ARTH",
    "heading": "Art History",
    "heading_printed": "Art History",
@@ -343,6 +360,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627124597)",
    "run": "45627124597"
+  },
+  {
+   "code": "DANCE",
+   "heading": "Dance",
+   "heading_printed": "Dance",
+   "rule": "coci",
+   "codes": [
+    "DANCE"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 1 History of Dance; 6 Dance Production, Rehearsal and Performance",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "DANCFOLK",
@@ -745,6 +779,23 @@
    "run": "45627124597"
   },
   {
+   "code": "MEDIA",
+   "heading": "Media Communications",
+   "heading_printed": "Media Communications",
+   "rule": "coci",
+   "codes": [
+    "MEDIA"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 104 Beginning Digital Video Production; 130 Final Cut Pro I: Beginning Nonlinear Editing for Video, Broadcast and Digital Cinematography",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "M/LAT",
    "heading": "Mexican & Latin American Studies",
    "heading_printed": "Mexican & Latin American Studies",
@@ -775,6 +826,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627124597)",
    "run": "45627124597"
+  },
+  {
+   "code": "MUSIC",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "coci",
+   "codes": [
+    "MUSIC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Music",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
   },
   {
    "code": "MUSIC-CM",
@@ -1049,6 +1117,6 @@
    "run": "45627124597"
   }
  ],
- "subjects": 65,
- "with_heading": 65
+ "subjects": 69,
+ "with_heading": 69
 }

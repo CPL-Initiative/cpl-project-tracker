@@ -28,8 +28,8 @@
    "held": 52,
    "members": 3084,
    "member_status": {
-    "settled": 2806,
-    "college not read": 34,
+    "settled": 2805,
+    "college not read": 35,
     "call below Confident": 22,
     "category has no common code": 24,
     "no noncredit category": 198
@@ -2903,13 +2903,13 @@
     "ESOL M9256": {
      "ready": false,
      "members": 964,
-     "settled": 897,
+     "settled": 896,
      "held_members": {
-      "college not read": 13,
+      "college not read": 14,
       "no noncredit category": 54
      },
      "codes": {
-      "ESOL": 455,
+      "ESOL": 454,
       "ESLN": 430,
       "FLNG": 10,
       "ENGL": 1,
@@ -2921,7 +2921,7 @@
       "level": "limited"
      },
      "reasons": [
-      "13 college not read",
+      "14 college not read",
       "54 no noncredit category"
      ],
      "held": [

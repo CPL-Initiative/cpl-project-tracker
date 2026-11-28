@@ -147,9 +147,15 @@ check("S722: every candidate title is listed, most confident first, the first is
 mech = [r["title"] for (sl, cd), r in recs.items() if sl == "clovis_community" and cd == "MECH"]
 # The runner-up is whatever the other sources say today (Law in S722; Business once S730's catalog reads joined more
 # courses): the guard is that the search's title leads over a source that reads differently.
+# S749: COBI's COCI-read title for Clovis MECH (batch 5, Sam's "Yes all" of 2026-11-28) is the search's title, filed, so
+# a titled MECH takes no title recommendation ("a titled row is never given a title"). Where it is filed, the guard is
+# that the filed title is the one the search found; where it is not, the search's title must lead as before.
+_mech_filed = [r for r in json.load(open(os.path.join(ROOT, "kb", "hand_filed_catalogs", "subjects", "clovis_community.json")))["rows"]
+               if r["code"] == "MECH" and r.get("heading")]
 check("S722, Sam: a web search on the college's own site that found the title lifts it (Clovis MECH reads Mechatronics over a differing source)",
-      mech and mech[0]["title"] == "Mechatronics/Industrial Automation" and len(mech[0]["candidates"]) > 1
-      and mech[0]["candidates"][1]["title"] != mech[0]["candidates"][0]["title"] and "web_search" in mech[0]["candidates"][0]["from"])
+      (_mech_filed and _mech_filed[0]["heading"] == "Mechatronics/Industrial Automation" and not (mech and mech[0].get("candidates")))
+      or (mech and mech[0]["title"] == "Mechatronics/Industrial Automation" and len(mech[0]["candidates"]) > 1
+          and mech[0]["candidates"][1]["title"] != mech[0]["candidates"][0]["title"] and "web_search" in mech[0]["candidates"][0]["from"]))
 s30 = doc["common_code"]["sams_30"]
 check("Sam's 30 are all accounted for: agree, diverge or no recommendation",
       s30["agree"] + s30["diverge"] + len(s30["no_recommendation"]) == s30["decisions"] == 30)

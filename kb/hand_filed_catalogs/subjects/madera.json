@@ -89,6 +89,23 @@
    "run": "45626743727"
   },
   {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 33 Introduction to Computer Art & Design; 38 Introduction to Digital Art; corrected during QA (was: Computer Art and Design)",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
+  },
+  {
    "code": "ARTH",
    "heading": "Art History",
    "heading_printed": "Art History",
@@ -263,6 +280,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626743727)",
    "run": "45626743727"
+  },
+  {
+   "code": "COTR",
+   "heading": "Work Experience Education (Formerly (Cotr) Cooperative Work Experience",
+   "heading_printed": "Work Experience Education (Formerly (Cotr) Cooperative Work Experience",
+   "rule": "coci",
+   "codes": [
+    "COTR"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 19G Cooperative Work Experience",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "COUN",
@@ -441,6 +475,23 @@
    "run": "45626743727"
   },
   {
+   "code": "FILM",
+   "heading": "Film",
+   "heading_printed": "Film",
+   "rule": "coci",
+   "codes": [
+    "FILM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Film",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "FN",
    "heading": "Foods and Nutrition",
    "heading_printed": "Foods and Nutrition",
@@ -535,6 +586,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626743727)",
    "run": "45626743727"
+  },
+  {
+   "code": "HONORS",
+   "heading": "Honors",
+   "heading_printed": "Honors",
+   "rule": "coci",
+   "codes": [
+    "HONORS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Honors",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
   },
   {
    "code": "HS",
@@ -825,6 +893,23 @@
    "run": "45626743727"
   },
   {
+   "code": "OT",
+   "heading": "Office Technology",
+   "heading_printed": "Office Technology",
+   "rule": "coci",
+   "codes": [
+    "OT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Office Technology",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 94
+  },
+  {
    "code": "PE",
    "heading": "Physical Education",
    "heading_printed": "Physical Education",
@@ -1113,6 +1198,6 @@
    "run": "45626743727"
   }
  ],
- "subjects": 69,
- "with_heading": 69
+ "subjects": 74,
+ "with_heading": 74
 }

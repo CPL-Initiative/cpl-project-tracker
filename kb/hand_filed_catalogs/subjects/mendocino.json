@@ -107,6 +107,23 @@
    "run": "45629589579"
   },
   {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 51 Introduction to Ceramic Glazes; 206 Introduction to Native American Art; corrected during QA (was: Art - Painting)",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
+  },
+  {
    "code": "ASL",
    "heading": "American Sign Language",
    "heading_printed": "AMERICAN SIGN LANGUAGE",
@@ -235,6 +252,23 @@
    "run": "45629589579"
   },
   {
+   "code": "CCS",
+   "heading": "Chicano/Chicana Studies",
+   "heading_printed": "Chicano/Chicana Studies",
+   "rule": "coci",
+   "codes": [
+    "CCS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 100 Career Planning Success; 101 Career and Life Planning",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "CDV",
    "heading": "Child Development",
    "heading_printed": "CHILD DEVELOPMENT",
@@ -251,6 +285,23 @@
    "run": "45629589579"
   },
   {
+   "code": "CHM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "coci",
+   "codes": [
+    "CHM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Chemistry",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 96
+  },
+  {
    "code": "CLO",
    "heading": "Clothing",
    "heading_printed": "CLOTHING",
@@ -265,6 +316,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45629589579)",
    "run": "45629589579"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "coci",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Communication Studies",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
   },
   {
    "code": "CSC",
@@ -331,6 +399,23 @@
    "run": "45629589579"
   },
   {
+   "code": "ECO",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "coci",
+   "codes": [
+    "ECO"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 200 Principles of Macroeconomics Overnight decision; GAI agreed.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 95
+  },
+  {
    "code": "EDU",
    "heading": "Education",
    "heading_printed": "EDUCATION",
@@ -345,6 +430,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45629589579)",
    "run": "45629589579"
+  },
+  {
+   "code": "EGR",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "coci",
+   "codes": [
+    "EGR"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 199 Independent Study; 202 Statics Overnight decision; GAI agreed.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 92
   },
   {
    "code": "EMS",
@@ -475,6 +577,23 @@
    "run": "45629589579"
   },
   {
+   "code": "HLH",
+   "heading": "Health",
+   "heading_printed": "Health",
+   "rule": "coci",
+   "codes": [
+    "HLH"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 103 Women's Health; 104 Medical Terminology Overnight decision; GAI agreed. Broader than Allied Health.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 90
+  },
+  {
    "code": "HSP",
    "heading": "Hospitality Management",
    "heading_printed": "HOSPITALITY MANAGEMENT",
@@ -555,6 +674,23 @@
    "run": "45629589579"
   },
   {
+   "code": "LRS",
+   "heading": "Learning Skills",
+   "heading_printed": "Learning Skills",
+   "rule": "coci",
+   "codes": [
+    "LRS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 23 Learning Skills Laboratory; 500 Academics for Adult Learners With Disabilities Overnight decision (changed from Employment Work). GAI cited Mendocino Learning Skills SLO/catalog pages.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 96
+  },
+  {
    "code": "LVN",
    "heading": "Licensed Vocational Nursing",
    "heading_printed": "LICENSED VOCATIONAL NURSING",
@@ -587,6 +723,23 @@
    "run": "45629589579"
   },
   {
+   "code": "MUS",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "coci",
+   "codes": [
+    "MUS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Music",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
+  },
+  {
    "code": "NAL",
    "heading": "Native American Languages",
    "heading_printed": "NATIVE AMERICAN LANGUAGES",
@@ -601,6 +754,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45629589579)",
    "run": "45629589579"
+  },
+  {
+   "code": "NRS",
+   "heading": "Natural Resources",
+   "heading_printed": "Natural Resources",
+   "rule": "coci",
+   "codes": [
+    "NRS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 199 Independent Study; 200 Environmental Science; 200L Environmental Science Laboratory Courses are environmental science, not nursing.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 92
   },
   {
    "code": "NUR",
@@ -635,6 +805,40 @@
    "run": "45629589579"
   },
   {
+   "code": "PEF",
+   "heading": "Physical Education-Fitness",
+   "heading_printed": "Physical Education-Fitness",
+   "rule": "coci",
+   "codes": [
+    "PEF"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 80 Individual Exercise Lab; 201 Sport Related Physical Fitness Training",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
+   "code": "PES",
+   "heading": "Kinesiology",
+   "heading_printed": "Kinesiology",
+   "rule": "coci",
+   "codes": [
+    "PES"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Kinesiology",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "PHL",
    "heading": "Philosophy",
    "heading_printed": "PHILOSOPHY",
@@ -665,6 +869,57 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45629589579)",
    "run": "45629589579"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "coci",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Political Science",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "coci",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Psychology",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
+   "code": "PTA",
+   "heading": "Physical Therapist Assistant",
+   "heading_printed": "Physical Therapist Assistant",
+   "rule": "coci",
+   "codes": [
+    "PTA"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Physical Therapist Assistant",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
   },
   {
    "code": "RLS",
@@ -763,6 +1018,40 @@
    "run": "45629589579"
   },
   {
+   "code": "THE",
+   "heading": "Theater Arts",
+   "heading_printed": "Theater Arts",
+   "rule": "coci",
+   "codes": [
+    "THE"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 200 Introduction to Theatre; 201 Introduction to Film",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
+   "code": "WEE",
+   "heading": "Work Experience Education",
+   "heading_printed": "Work Experience Education",
+   "rule": "coci",
+   "codes": [
+    "WEE"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Work Experience Education",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "WLD",
    "heading": "Welding",
    "heading_printed": "WELDING",
@@ -795,6 +1084,6 @@
    "run": "45629589579"
   }
  ],
- "subjects": 47,
- "with_heading": 47
+ "subjects": 64,
+ "with_heading": 64
 }

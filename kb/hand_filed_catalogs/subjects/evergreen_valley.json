@@ -136,6 +136,23 @@
    "run": "45626788039"
   },
   {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 39 Introduction to Digital Video; 66 Introduction to Metalsmithing",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "ARTH",
    "heading": "Art History",
    "heading_printed": "Art History",
@@ -406,6 +423,57 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626788039)",
    "run": "45626788039"
+  },
+  {
+   "code": "DANCE",
+   "heading": "Dance",
+   "heading_printed": "Dance",
+   "rule": "coci",
+   "codes": [
+    "DANCE"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Dance",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
+  },
+  {
+   "code": "DESGN",
+   "heading": "Design",
+   "heading_printed": "Design",
+   "rule": "coci",
+   "codes": [
+    "DESGN"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 31 Design Modelmaking",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 88
+  },
+  {
+   "code": "DISP",
+   "heading": "Public Safety Dispatcher",
+   "heading_printed": "Public Safety Dispatcher",
+   "rule": "coci",
+   "codes": [
+    "DISP"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 172 Public Safety Dispatcher-Update",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
   },
   {
    "code": "DLIT",
@@ -696,6 +764,23 @@
    "run": "45626788039"
   },
   {
+   "code": "LE",
+   "heading": "Law Enforcement",
+   "heading_printed": "Law Enforcement",
+   "rule": "coci",
+   "codes": [
+    "LE"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 154 Basic Police Academy; 160 Basic Police Academy-Modular Format,",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "LIB",
    "heading": "Library Studies",
    "heading_printed": "Library Studies",
@@ -742,6 +827,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626788039)",
    "run": "45626788039"
+  },
+  {
+   "code": "MUSIC",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "coci",
+   "codes": [
+    "MUSIC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Music",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
   },
   {
    "code": "NURS",
@@ -1112,6 +1214,6 @@
    "run": "45626788039"
   }
  ],
- "subjects": 65,
- "with_heading": 65
+ "subjects": 71,
+ "with_heading": 71
 }

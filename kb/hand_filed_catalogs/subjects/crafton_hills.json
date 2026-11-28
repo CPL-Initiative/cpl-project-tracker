@@ -144,6 +144,23 @@
    "run": "45626788039"
   },
   {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Art",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
    "code": "ASL",
    "heading": "American Sign Language",
    "heading_printed": "American Sign Language",
@@ -222,6 +239,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626788039)",
    "run": "45626788039"
+  },
+  {
+   "code": "CD",
+   "heading": "Child Development",
+   "heading_printed": "Child Development",
+   "rule": "coci",
+   "codes": [
+    "CD"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Child Development",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 94
   },
   {
    "code": "CDEV",
@@ -382,6 +416,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626788039)",
    "run": "45626788039"
+  },
+  {
+   "code": "DANCE",
+   "heading": "Dance",
+   "heading_printed": "Dance",
+   "rule": "coci",
+   "codes": [
+    "DANCE"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Dance",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
   },
   {
    "code": "EA",
@@ -656,6 +707,23 @@
    "run": "45626788039"
   },
   {
+   "code": "JAPN",
+   "heading": "Japanese",
+   "heading_printed": "Japanese",
+   "rule": "coci",
+   "codes": [
+    "JAPN"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Japanese",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 95
+  },
+  {
    "code": "JOUR",
    "heading": "Journalism",
    "heading_printed": "Journalism",
@@ -880,6 +948,23 @@
    "run": "45626788039"
   },
   {
+   "code": "MUSIC",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "coci",
+   "codes": [
+    "MUSIC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Music",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
+  },
+  {
    "code": "OCEAN",
    "heading": "Oceanography",
    "heading_printed": "Oceanography",
@@ -976,6 +1061,23 @@
    "run": "45626788039"
   },
   {
+   "code": "PTA",
+   "heading": "Physical Therapist Assistant",
+   "heading_printed": "Physical Therapist Assistant",
+   "rule": "coci",
+   "codes": [
+    "PTA"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Physical Therapist Assistant",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
    "code": "RADIOL",
    "heading": "Radiologic Technology",
    "heading_printed": "Radiologic Technology",
@@ -1040,6 +1142,40 @@
    "run": "45626788039"
   },
   {
+   "code": "SLPA",
+   "heading": "Speech Language Pathology Assistant",
+   "heading_printed": "Speech Language Pathology Assistant",
+   "rule": "coci",
+   "codes": [
+    "SLPA"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Speech Language Pathology Assistant",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
+   "code": "SOC",
+   "heading": "Women's Studies Through an Ethnic Studies Lens",
+   "heading_printed": "Women's Studies Through an Ethnic Studies Lens",
+   "rule": "coci",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 106 Introduction to Women's Studies Through an Ethnic Studies Lens; 132 Identity and Ideology: Intro to Chicano/a & Latino/a Studies",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "SOCI",
    "heading": "Sociology",
    "heading_printed": "Sociology",
@@ -1086,6 +1222,40 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626788039)",
    "run": "45626788039"
+  },
+  {
+   "code": "SPEECH",
+   "heading": "Speech Communication",
+   "heading_printed": "Speech Communication",
+   "rule": "coci",
+   "codes": [
+    "SPEECH"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 110 Voice and Diction Legacy prefix later moved toward COMMST/COMM; keep the historical title.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 90
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "coci",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Statistics",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 94
   },
   {
    "code": "THART",
@@ -1184,6 +1354,6 @@
    "run": "45626788039"
   }
  ],
- "subjects": 69,
- "with_heading": 69
+ "subjects": 79,
+ "with_heading": 79
 }

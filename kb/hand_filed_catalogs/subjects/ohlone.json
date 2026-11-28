@@ -9,6 +9,23 @@
  ],
  "rows": [
   {
+   "code": "AF",
+   "heading": "Aerospace Studies",
+   "heading_printed": "Aerospace Studies",
+   "rule": "coci",
+   "codes": [
+    "AF"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 101B Foundations of the U.S. Air Force; 102B Evolution of the U.S. Air Force Air and Space Power",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "AH",
    "heading": "Allied Health",
    "heading_printed": "Allied Health",
@@ -71,6 +88,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627438096)",
    "run": "45627438096"
+  },
+  {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 101 Art: An Introduction; 109B Introduction to Graphic Design II - Principles and Methods",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
   },
   {
    "code": "ARTH",
@@ -201,6 +235,23 @@
    "run": "45627438096"
   },
   {
+   "code": "BSM",
+   "heading": "Business Supervision and Management",
+   "heading_printed": "Business Supervision and Management",
+   "rule": "coci",
+   "codes": [
+    "BSM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 101 Fundamentals of Supervision; 102 Interpersonal Relations in the Workplace; 103 Management of Human Resources Kept \"and\" rather than a slash; GAI's Business Supervision/Management is a style variant, not used without a catalog typography check.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 92
+  },
+  {
    "code": "CAOT",
    "heading": "Computer Applications and Occupational Technology",
    "heading_printed": "Computer Applications and Occupational Technology",
@@ -215,6 +266,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627438096)",
    "run": "45627438096"
+  },
+  {
+   "code": "CFS",
+   "heading": "Child and Family Studies",
+   "heading_printed": "Child and Family Studies",
+   "rule": "coci",
+   "codes": [
+    "CFS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 109 Nutrition; 202 Special Projects Later move toward ECS/HLTH is a legacy note only.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 90
   },
   {
    "code": "CHEM",
@@ -537,6 +605,23 @@
    "run": "45627438096"
   },
   {
+   "code": "GA",
+   "heading": "Graphic Arts",
+   "heading_printed": "Graphic Arts",
+   "rule": "coci",
+   "codes": [
+    "GA"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 109A Beginning Graphic Design I (Letter Forms and Typography); 101 Visual and Interaction Design; 160A Computer Graphics I Official historical prefix name; later replaced by DAID. Courses are graphic design, but the subject code was Graphic Arts.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 93
+  },
+  {
    "code": "GEOG",
    "heading": "Geography",
    "heading_printed": "Geography",
@@ -633,6 +718,23 @@
    "run": "45627438096"
   },
   {
+   "code": "IS",
+   "heading": "Interdisciplinary Studies",
+   "heading_printed": "Interdisciplinary Studies",
+   "rule": "coci",
+   "codes": [
+    "IS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 110 Introduction to Ethnic Studies; 100 Survey of the Arts",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "JOUR",
    "heading": "Journalism",
    "heading_printed": "Journalism",
@@ -713,6 +815,23 @@
    "run": "45627438096"
   },
   {
+   "code": "LSP",
+   "heading": "Library Science",
+   "heading_printed": "Library Science",
+   "rule": "coci",
+   "codes": [
+    "LSP"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a college naming pattern; COCI course titles: 101 Learning Skills: Reading and Writing; 102 Learning Skills: Quantitative Reasoning",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 84
+  },
+  {
    "code": "MATH",
    "heading": "Mathematics",
    "heading_printed": "Mathematics",
@@ -727,6 +846,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627438096)",
    "run": "45627438096"
+  },
+  {
+   "code": "MM",
+   "heading": "Maintenance Mechanic",
+   "heading_printed": "Maintenance Mechanic",
+   "rule": "coci",
+   "codes": [
+    "MM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 105 Web Site Design; 108 Visual Communication",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "MUS",
@@ -759,6 +895,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627438096)",
    "run": "45627438096"
+  },
+  {
+   "code": "PD",
+   "heading": "Personal Development",
+   "heading_printed": "Personal Development",
+   "rule": "coci",
+   "codes": [
+    "PD"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 111 Strategies for College Success; 120A Student Leadership I",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "PE",
@@ -823,6 +976,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627438096)",
    "run": "45627438096"
+  },
+  {
+   "code": "PS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "coci",
+   "codes": [
+    "PS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 201 Special Projects; 202 Special Projects",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "PSYC",
@@ -985,6 +1155,6 @@
    "run": "45627438096"
   }
  ],
- "subjects": 61,
- "with_heading": 61
+ "subjects": 71,
+ "with_heading": 71
 }

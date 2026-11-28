@@ -3,9 +3,146 @@
  "college": "Mt. San Antonio College",
  "run": "45304208269",
  "source": [],
- "subjects": 0,
- "with_heading": 0,
- "rows": [],
+ "subjects": 8,
+ "with_heading": 8,
+ "rows": [
+  {
+   "code": "AHIS",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "coci",
+   "codes": [
+    "AHIS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Art History",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
+  },
+  {
+   "code": "BUSC",
+   "heading": "Business: Economics",
+   "heading_printed": "Business: Economics",
+   "rule": "coci",
+   "codes": [
+    "BUSC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Business: Economics",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
+   "code": "DSPS",
+   "heading": "Disability Support Programs and Services",
+   "heading_printed": "Disability Support Programs and Services",
+   "rule": "coci",
+   "codes": [
+    "DSPS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 31 Memory Strategies for Students with Disabilities; 32 Technology for Students with Learning Related Disabilities",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
+   "code": "EMT",
+   "heading": "Emergency Medical Technician",
+   "heading_printed": "Emergency Medical Technician",
+   "rule": "coci",
+   "codes": [
+    "EMT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Emergency Medical Technician",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 94
+  },
+  {
+   "code": "EST",
+   "heading": "Energy and Sustainable Tech",
+   "heading_printed": "Energy and Sustainable Tech",
+   "rule": "coci",
+   "codes": [
+    "EST"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 64 Electronic Troubleshooting - II",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
+   "code": "LERN",
+   "heading": "Learning Assistance",
+   "heading_printed": "Learning Assistance",
+   "rule": "coci",
+   "codes": [
+    "LERN"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 48 Basic Math Skills Review; 49 Math Skills Review",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
+   "code": "PAP",
+   "heading": "Physician Assistant Preparation",
+   "heading_printed": "Physician Assistant Preparation",
+   "rule": "coci",
+   "codes": [
+    "PAP"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 103 Hum/Anat/Prosec/Pa/Prep Legacy prefix from Mt. SAC's former PA program. Truncated COCI title still names PA prep.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 88
+  },
+  {
+   "code": "TUTR",
+   "heading": "Tutoring",
+   "heading_printed": "Tutoring",
+   "rule": "coci",
+   "codes": [
+    "TUTR"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Tutoring",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  }
+ ],
  "code_address_tried": [
   {
    "code": "DSPS",

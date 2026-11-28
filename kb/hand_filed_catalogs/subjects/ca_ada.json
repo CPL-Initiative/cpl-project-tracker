@@ -110,6 +110,23 @@
    "run": "45630267572"
   },
   {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 204 Drawing I; 205 Drawing II",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "ARTH",
    "heading": "Art History",
    "heading_printed": "Art History",
@@ -158,6 +175,23 @@
    "run": "45630267572"
   },
   {
+   "code": "BUS.",
+   "heading": "Business",
+   "heading_printed": "Business",
+   "rule": "coci",
+   "codes": [
+    "BUS."
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 100 Introduction to Business; 103 Introduction to Business Information Systems",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "CBOT",
    "heading": "Computer Business Office Technology",
    "heading_printed": "Computer Business Office Technology",
@@ -172,6 +206,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45630267572)",
    "run": "45630267572"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "coci",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Chemistry",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
   },
   {
    "code": "CIS",
@@ -222,6 +273,40 @@
    "run": "45630267572"
   },
   {
+   "code": "DANC",
+   "heading": "Dance",
+   "heading_printed": "Dance",
+   "rule": "coci",
+   "codes": [
+    "DANC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Dance",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
+   "code": "DRAM",
+   "heading": "Theatre Arts",
+   "heading_printed": "Theatre Arts",
+   "rule": "coci",
+   "codes": [
+    "DRAM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Theatre Arts",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 94
+  },
+  {
    "code": "DSKL",
    "heading": "Developmental Learning Skills",
    "heading_printed": "Developmental Learning Skills",
@@ -236,6 +321,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45630267572)",
    "run": "45630267572"
+  },
+  {
+   "code": "ECE.",
+   "heading": "Education/Child Development",
+   "heading_printed": "Education/Child Development",
+   "rule": "coci",
+   "codes": [
+    "ECE."
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Education/Child Development",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 96
   },
   {
    "code": "ECON",
@@ -270,6 +372,23 @@
    "run": "45630267572"
   },
   {
+   "code": "ENGL",
+   "heading": "Linguistics: A Survey of Language",
+   "heading_printed": "Linguistics: a Survey of Language",
+   "rule": "coci",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 200 Introduction to Linguistics: A Survey of Language; C1002 Introduction to Literature",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "ENGR",
    "heading": "Engineering",
    "heading_printed": "Engineering",
@@ -300,6 +419,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45630267572)",
    "run": "45630267572"
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English as a Second Language",
+   "rule": "coci",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 400 Composition for Non-Native Speakers; 800 ESL Preparatory Course",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "ETHN",
@@ -348,6 +484,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45630267572)",
    "run": "45630267572"
+  },
+  {
+   "code": "FSE.",
+   "heading": "Funeral Service Education",
+   "heading_printed": "Funeral Service Education",
+   "rule": "coci",
+   "codes": [
+    "FSE."
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Funeral Service Education",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "GBST",
@@ -446,6 +599,23 @@
    "run": "45630267572"
   },
   {
+   "code": "HUM.",
+   "heading": "Humanities",
+   "heading_printed": "Humanities",
+   "rule": "coci",
+   "codes": [
+    "HUM."
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 650 Study Abroad Life and Culture, A Humanities Perspective",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "IDST",
    "heading": "Interdisciplinary Studies",
    "heading_printed": "Interdisciplinary Studies",
@@ -492,6 +662,39 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45630267572)",
    "run": "45630267572"
+  },
+  {
+   "code": "KINE",
+   "heading": "Kinesiology",
+   "heading_printed": "Kinesiology",
+   "rule": "coci",
+   "codes": [
+    "KINE"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Kinesiology",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
+   "code": "LCTR",
+   "heading": "Learning Center",
+   "heading_printed": "Learning Center",
+   "rule": "index",
+   "codes": [
+    "LCTR"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI LCTR 100 Effective Tutoring and Practicum",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   },
   {
    "code": "LEGL",
@@ -542,6 +745,23 @@
    "run": "45630267572"
   },
   {
+   "code": "LIT.",
+   "heading": "Literature",
+   "heading_printed": "Literature",
+   "rule": "coci",
+   "codes": [
+    "LIT."
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Literature",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 95
+  },
+  {
    "code": "MART",
    "heading": "Digital Art and Animation",
    "heading_printed": "Digital Art and Animation",
@@ -556,6 +776,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45630267572)",
    "run": "45630267572"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "coci",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Mathematics",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
   },
   {
    "code": "MEDA",
@@ -606,6 +843,40 @@
    "run": "45630267572"
   },
   {
+   "code": "MUS.",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "coci",
+   "codes": [
+    "MUS."
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Music",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
+  },
+  {
+   "code": "OCEN",
+   "heading": "Oceanography",
+   "heading_printed": "Oceanography",
+   "rule": "coci",
+   "codes": [
+    "OCEN"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Oceanography",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 95
+  },
+  {
    "code": "PALT",
    "heading": "Photonics and Laser Technology",
    "heading_printed": "Photonics and Laser Technology",
@@ -620,6 +891,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45630267572)",
    "run": "45630267572"
+  },
+  {
+   "code": "P.E.",
+   "heading": "Physical Education Theory",
+   "heading_printed": "Physical Education Theory",
+   "rule": "coci",
+   "codes": [
+    "P.E."
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 695 Independent Study",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "PHIL",
@@ -654,6 +942,23 @@
    "run": "45630267572"
   },
   {
+   "code": "PLSC",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "coci",
+   "codes": [
+    "PLSC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Political Science",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "POLS",
    "heading": "Political Science",
    "heading_printed": "Political Science",
@@ -684,6 +989,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45630267572)",
    "run": "45630267572"
+  },
+  {
+   "code": "RADT",
+   "heading": "Radiologic Technology",
+   "heading_printed": "Radiologic Technology",
+   "rule": "coci",
+   "codes": [
+    "RADT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Radiologic Technology",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 95
   },
   {
    "code": "SOCI",
@@ -798,6 +1120,6 @@
    "run": "45630267572"
   }
  ],
- "subjects": 47,
- "with_heading": 47
+ "subjects": 66,
+ "with_heading": 66
 }

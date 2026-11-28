@@ -5,8 +5,8 @@
  "source": [
   "https://catalog.swccd.edu/course-descriptions/"
  ],
- "subjects": 93,
- "with_heading": 93,
+ "subjects": 107,
+ "with_heading": 107,
  "links_without_a_code": [],
  "rows": [
   {
@@ -88,6 +88,23 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 44948295544)"
+  },
+  {
+   "code": "AMR",
+   "heading": "Work Experience",
+   "heading_printed": "Work Experience",
+   "rule": "coci",
+   "codes": [
+    "AMR"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Work Experience",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "ANTH",
@@ -426,6 +443,23 @@
    "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
+   "code": "CT",
+   "heading": "Construction Technology",
+   "heading_printed": "Construction Technology",
+   "rule": "coci",
+   "codes": [
+    "CT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Construction Technology",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 95
+  },
+  {
    "code": "DANC",
    "heading": "Dance",
    "heading_printed": "Dance",
@@ -618,6 +652,22 @@
    "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English as a Second Language",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "label": "English as a Second Language (ESL)",
+   "address": "https://catalog.swccd.edu/course-descriptions/esl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
+  },
+  {
    "code": "ES/S",
    "heading": "Exercise Science/Specialized",
    "heading_printed": "Exercise Science/Specialized",
@@ -644,22 +694,6 @@
    "candidate": null,
    "label": "Exercise Science/Theory (ES/T)",
    "address": "https://catalog.swccd.edu/course-descriptions/es_t/",
-   "where": "catalog",
-   "method": "subject heading",
-   "found_on": "2026-11-25",
-   "found_by": "COBI, a runner read (run 44948295544)"
-  },
-  {
-   "code": "ESL",
-   "heading": "English as a Second Language",
-   "heading_printed": "English as a Second Language",
-   "rule": "index",
-   "codes": [
-    "ESL"
-   ],
-   "candidate": null,
-   "label": "English as a Second Language (ESL)",
-   "address": "https://catalog.swccd.edu/course-descriptions/esl/",
    "where": "catalog",
    "method": "subject heading",
    "found_on": "2026-11-25",
@@ -696,6 +730,23 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 44948295544)"
+  },
+  {
+   "code": "FCS",
+   "heading": "Family and Consumer Science",
+   "heading_printed": "Family and Consumer Science",
+   "rule": "coci",
+   "codes": [
+    "FCS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Family and Consumer Science",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "FIL",
@@ -856,6 +907,40 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 44948295544)"
+  },
+  {
+   "code": "IDNM",
+   "heading": "Interactive Design and New Media",
+   "heading_printed": "Interactive Design and New Media",
+   "rule": "coci",
+   "codes": [
+    "IDNM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 102 Trends and Careers in New Media; 105 New Media Form and Content",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
+   "code": "IE",
+   "heading": "Industrial Engineering Technology",
+   "heading_printed": "Industrial Engineering Technology",
+   "rule": "coci",
+   "codes": [
+    "IE"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 110 Intro Industrial and Manufacturing Engineering Technology; 150 Introduction to Quality Control Also work measurement, cost estimating, production planning, facilities design.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 94
   },
   {
    "code": "INS",
@@ -1066,6 +1151,23 @@
    "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
+   "code": "MET",
+   "heading": "Meteorology",
+   "heading_printed": "Meteorology",
+   "rule": "coci",
+   "codes": [
+    "MET"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 110 Manufacturing Processes I; 120 Manufacturing Processes Ii",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "MLT",
    "heading": "Medical Laboratory Technician",
    "heading_printed": "Medical Laboratory Technician",
@@ -1176,6 +1278,91 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 44948295544)"
+  },
+  {
+   "code": "PE/A",
+   "heading": "Exercise Science",
+   "heading_printed": "Exercise Science",
+   "rule": "coci",
+   "codes": [
+    "PE/A"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Exercise Science",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
+   "code": "PE/D",
+   "heading": "Physical Education",
+   "heading_printed": "Physical Education",
+   "rule": "coci",
+   "codes": [
+    "PE/D"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 123 Dance Choreography Iii; 124 Dance Choreography Iv",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
+   "code": "PE/I",
+   "heading": "Intercollegiate Physical Education",
+   "heading_printed": "Intercollegiate Physical Education",
+   "rule": "coci",
+   "codes": [
+    "PE/I"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 134 Intercollegiate Water Polo Np (Non",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
+  },
+  {
+   "code": "PE/L",
+   "heading": "Adaptive Physical Education",
+   "heading_printed": "Adaptive Physical Education",
+   "rule": "coci",
+   "codes": [
+    "PE/L"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 102 Individual Adaptation (Sports) for The; 103 Individual Adaptation (Sports) for The",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
+   "code": "PE/T",
+   "heading": "Physical Education-Theory",
+   "heading_printed": "Physical Education-Theory",
+   "rule": "coci",
+   "codes": [
+    "PE/T"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 101 Interscholastic Coaching: Rules and Regulations; 102 Thry Technqs Coaching I: Motor Lrng and Psych Adolescent",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "PHIL",
@@ -1290,6 +1477,23 @@
    "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
+   "code": "QET",
+   "heading": "Quality Engineering Technology",
+   "heading_printed": "Quality Engineering Technology",
+   "rule": "coci",
+   "codes": [
+    "QET"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 220 Statistical Quality Control",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
+  },
+  {
    "code": "RA&T",
    "heading": "Recording Arts & Technology",
    "heading_printed": "Recording Arts & Technology",
@@ -1370,6 +1574,23 @@
    "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
+   "code": "SLA",
+   "heading": "Supervised Learning Assistance",
+   "heading_printed": "Supervised Learning Assistance",
+   "rule": "coci",
+   "codes": [
+    "SLA"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 90 Tutor Training I",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 90
+  },
+  {
    "code": "SOC",
    "heading": "Sociology",
    "heading_printed": "Sociology",
@@ -1400,6 +1621,23 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 44948295544)"
+  },
+  {
+   "code": "SPCH",
+   "heading": "Speech",
+   "heading_printed": "Speech",
+   "rule": "coci",
+   "codes": [
+    "SPCH"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Speech",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "ST",

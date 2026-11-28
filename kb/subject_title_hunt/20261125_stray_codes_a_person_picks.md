@@ -39,7 +39,7 @@ The 50 local subjects behind the stray M-ID codes whose common subject scores un
 | 14 | American River College | TECCOM | (none) | 2 | Introduction to Technical/Professional Communication; Writing Technical Manuals | ESOL English as a Second Language |
 | 12 | Sacramento City College | SURVY | Surveying | 1 | Photogrammetry | BSOT Office Technologies |
 | 8 | Allan Hancock College | LBRY | Library Skills | 1 | Advanced Research | LIBR Library Science |
-| 8 | Saddleback College | TOUR | Travel and Tourism | 8 | ADVANCED AIRLINE COMPUTER TRAINING; AIRLINE COMPUTER TRAINING; WORLD DESTINATIONS-PACIFIC, | HIST History |
+| 8 | Saddleback College | TOUR | Travel and Tourism | 8 | ADVANCED AIRLINE COMPUTER TRAINING; AIRLINE COMPUTER TRAINING; WORLD DESTINATIONS-PACIFIC, | HUMA History |
 | 7 | Mt. San Antonio College | ARTZ | Art: Special Studio Arts | 1 | Specialized Studio-Art Studies | ARTS Art |
 | 7 | San Jose City College | Broadcasting (BROAD) | Broadcasting | 1 | Intermediate Radio Production | FTVE Film and Media Studies |
 | 6 | Citrus College | ESTH | Esthetician | 2 | Salon Success - Full-time; Salon Success Part I - Part-time | COSM Cosmetology |

@@ -5,8 +5,8 @@
  "source": [
   "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf"
  ],
- "subjects": 122,
- "with_heading": 121,
+ "subjects": 130,
+ "with_heading": 129,
  "rows": [
   {
    "code": "ACAD PR",
@@ -51,6 +51,23 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 44948526227)"
+  },
+  {
+   "code": "ADM",
+   "heading": "Administration of Justice",
+   "heading_printed": "Administration of Justice",
+   "rule": "coci",
+   "codes": [
+    "ADM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Administration of Justice",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
   },
   {
    "code": "ADM JUS",
@@ -567,6 +584,23 @@
    "run": "45868955654"
   },
   {
+   "code": "CLN",
+   "heading": "Culinary Arts",
+   "heading_printed": "Culinary Arts",
+   "rule": "coci",
+   "codes": [
+    "CLN"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Culinary Arts",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
    "code": "CLN ART",
    "heading": "Culinary Arts",
    "heading_printed": "CULINARY ARTS",
@@ -649,6 +683,23 @@
    "found_on": "2026-11-26",
    "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
    "run": "45868955654"
+  },
+  {
+   "code": "COOP",
+   "heading": "Work Experience",
+   "heading_printed": "Work Experience",
+   "rule": "coci",
+   "codes": [
+    "COOP"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Work Experience",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "COOP ED",
@@ -1027,6 +1078,23 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 44948526227)"
+  },
+  {
+   "code": "ENG",
+   "heading": "Science, Engineering and Technology",
+   "heading_printed": "Science, Engineering and Technology",
+   "rule": "coci",
+   "codes": [
+    "ENG"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: GEN101 Introduction to Science, Engineering and Technology; GEN131 Statics",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
   },
   {
    "code": "ENG ELC",
@@ -2263,6 +2331,23 @@
    "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
+   "code": "PUB",
+   "heading": "Public Health",
+   "heading_printed": "Public Health",
+   "rule": "coci",
+   "codes": [
+    "PUB"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Public Health",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "PUB REL",
    "heading": "Public Relations",
    "heading_printed": "PUBLIC RELATIONS",
@@ -2391,6 +2476,23 @@
    "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
+   "code": "SHTM",
+   "heading": "Sheet Metal",
+   "heading_printed": "Sheet Metal",
+   "rule": "coci",
+   "codes": [
+    "SHTM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: AP717 Sheet Metal Work Vii",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
+  },
+  {
    "code": "SOC",
    "heading": "Sociology",
    "heading_printed": "SOCIOLOGY",
@@ -2433,6 +2535,23 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 44948526227)"
+  },
+  {
+   "code": "ST",
+   "heading": "Supervised Tutoring",
+   "heading_printed": "Supervised Tutoring",
+   "rule": "coci",
+   "codes": [
+    "ST"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: MAIN103 Street Maintenance (Applied Calculations in Public Works); MAIN200 Survey of Street Services",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "STAT",
@@ -2503,6 +2622,23 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 44948526227)"
+  },
+  {
+   "code": "SWM",
+   "heading": "Solid Waste Management",
+   "heading_printed": "Solid Waste Management",
+   "rule": "coci",
+   "codes": [
+    "SWM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: TEK101 Introduction to Solid Waste Management; TEK102 Refuse Collection Routing",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
   },
   {
    "code": "SWM TEK",
