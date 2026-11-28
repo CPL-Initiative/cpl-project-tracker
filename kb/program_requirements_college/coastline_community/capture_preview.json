@@ -1,0 +1,1427 @@
+{
+ "college": "Coastline Community College",
+ "catalog_url": "https://catalog.cccd.edu/coastline/",
+ "platform": "courseleaf",
+ "catalog_year": "2026-2027",
+ "programs": 175,
+ "with_closed_list": 159,
+ "started": "2026-11-28T15:46:18Z",
+ "scope": "/coastline/",
+ "sitemap": {
+  "url": "https://catalog.cccd.edu/sitemap.xml",
+  "status": 200,
+  "listed": 4749,
+  "nested": 0,
+  "program_pages": 251,
+  "refused": null,
+  "errors": null,
+  "failed": null,
+  "challenged": null
+ },
+ "listing_failed": 0,
+ "pages_read": 252,
+ "pages_listed": 252,
+ "pages_answered": 252,
+ "child_pages": 1,
+ "banner_h1": "ACADEMIC CATALOGS",
+ "site_pins": {
+  "43057": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/communication-studies/communication-studies-2-aat/",
+   "bound": true
+  }
+ },
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 136,
+   "hits": 131,
+   "recall": 0.963,
+   "false": 0,
+   "false_off_own": 0,
+   "false_no_claims": 1,
+   "shared": 8,
+   "false_matches": [],
+   "no_claims_matches": [
+    {
+     "control_number": "20356",
+     "title": "Management",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "page": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/management/management-certificate-achievement/",
+     "h1": ""
+    }
+   ],
+   "searches": true,
+   "catalog_list": null
+  },
+  "programs": 16,
+  "by_result": {
+   "not_matched": 8,
+   "found": 8
+  },
+  "found": 8,
+  "found_active": 7,
+  "found_pages": 8,
+  "found_programs": [
+   {
+    "control_number": "18214",
+    "title": "Economics",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/economics/economics-aa/",
+    "h1": "",
+    "page_title": "Economics, Associate of Arts Degree < Coastline College",
+    "awards": [
+     "aa"
+    ],
+    "filed": true
+   },
+   {
+    "control_number": "18221",
+    "title": "Mathematics",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "url": "https://catalog.cccd.edu/coastline/pathways/science-mathematics/mathematics/mathematics-aa/",
+    "h1": "",
+    "page_title": "Mathematics, Associate of Arts Degree < Coastline College",
+    "awards": [
+     "aa"
+    ],
+    "filed": true
+   },
+   {
+    "control_number": "18719",
+    "title": "Process Technology",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "url": "https://catalog.cccd.edu/coastline/pathways/law-safety/process-technology/process-technology-associate-arts-degree/",
+    "h1": "",
+    "page_title": "Process Technology, Associate of Arts Degree < Coastline College",
+    "awards": [
+     "aa"
+    ],
+    "filed": true
+   },
+   {
+    "control_number": "20364",
+    "title": "Process Technology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://catalog.cccd.edu/coastline/pathways/law-safety/process-technology/process-technology-certificate-achievement/",
+    "h1": "",
+    "page_title": "Process Technology, Certificate of Achievement < Coastline College",
+    "awards": [
+     "coa"
+    ],
+    "filed": true
+   },
+   {
+    "control_number": "20386",
+    "title": "Accounting: General Accounting",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/accounting/accounting-general-as/",
+    "h1": "",
+    "page_title": "Accounting: General Accounting, Associate of Science Degree < Coastline College",
+    "awards": [
+     "as"
+    ],
+    "filed": true
+   },
+   {
+    "control_number": "20387",
+    "title": "General Accounting",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/accounting/accounting-general-coa/",
+    "h1": "",
+    "page_title": "Accounting: General Accounting, Certificate of Achievement < Coastline College",
+    "awards": [
+     "coa"
+    ],
+    "filed": true
+   },
+   {
+    "control_number": "20390",
+    "title": "Accounting: Taxation",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/accounting/accounting-taxation-as/",
+    "h1": "",
+    "page_title": "Accounting: Taxation, Associate of Science Degree < Coastline College",
+    "awards": [
+     "as"
+    ],
+    "filed": true
+   },
+   {
+    "control_number": "46330",
+    "title": "Cybersecurity Specialist (Applied)",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "status": "Approved",
+    "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/cybersecurity/cybersecurity-specialist-applied-coa/",
+    "h1": "",
+    "page_title": "Cybersecurity Specialist (Applied), Certificate of Achievement < Coastline College",
+    "awards": [
+     "coa"
+    ],
+    "filed": true
+   }
+  ],
+  "other_programs": [
+   {
+    "control_number": "17982",
+    "title": "CSU General Education",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active - Teachout Only",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "18050",
+    "title": "Business Administration",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "18053",
+    "title": "Communications",
+    "award": "A.A. Degree",
+    "status": "Active - Teachout Only",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "20391",
+    "title": "Taxation",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "37249",
+    "title": "College and Career Preparation",
+    "award": "Noncredit program",
+    "status": "Active - Teachout Only",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "37793",
+    "title": "Preparation for College Writing",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "38557",
+    "title": "Management Skills for Retail",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "41169",
+    "title": "Preparation for College Mathematics",
+    "award": "Noncredit program",
+    "status": "Active - Teachout Only",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   }
+  ],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0,
+  "found_read": {
+   "tested": 125,
+   "right": 121,
+   "wrong": 0,
+   "not_found": 4,
+   "recall": 0.968,
+   "wrongs": [],
+   "not_read": 0,
+   "floor": 0.8,
+   "min_tested": 30,
+   "clears": true,
+   "reads": true,
+   "filed": 8,
+   "unfiled": {}
+  }
+ },
+ "loads": 259,
+ "seconds": 1230.4,
+ "found": 152,
+ "by_method": {
+  "catalog_lookup": 8,
+  "no_closed_list": 8,
+  "not_found": 9,
+  "page_claimed": 6,
+  "sitemap_page": 144
+ },
+ "shared_pages": {
+  "https://catalog.cccd.edu/coastline/pathways/law-safety/emergency-management/emergency-management-homeland-security-criminal-justice-associate-arts-degree/": [
+   "19515",
+   "30350"
+  ],
+  "https://catalog.cccd.edu/coastline/pathways/business-operations-management/management/management-certificate-achievement/": [
+   "20357",
+   "23050"
+  ],
+  "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/communication-studies/communication-studies-2-aat/": [
+   "33014",
+   "43057"
+  ],
+  "https://catalog.cccd.edu/coastline/pathways/health-wellness/health/public-health-ast/": [
+   "41645",
+   "46077"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "03724",
+   "title": "Supervision",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program",
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "18054",
+   "title": "Physical Education and Health",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program",
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "18217",
+   "title": "Gerontology",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program",
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "19516",
+   "title": "Emergency Management-Homeland Security",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.cccd.edu/coastline/pathways/law-safety/emergency-management/emergency-management-foundations-cos/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.417,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 5,
+    "listed": 12,
+    "why": "coverage 0.42 in innerText+tabs, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 2619,
+     "content": 5380,
+     "tabs": 297
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      277
+     ]
+    ],
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "20353",
+   "title": "Supervision",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program",
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "35740",
+   "title": "Business Information Worker",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "why": "no page read names the program",
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "42005",
+   "title": "Cloud Computing",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/business-computing/medical-administrative-office-technician-cos/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 0 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2508,
+     "content": 5241,
+     "tabs": 332
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      312
+     ]
+    ],
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "42525",
+   "title": "Cisco Certified Networking Administrator (CCNA)",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program",
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "42526",
+   "title": "Offensive Security",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/computer-cyber-sciences/artificialintelligence-ai-readiness3-security-privacy-bias-noncredit/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2592,
+     "content": 5303,
+     "tabs": 205
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      185
+     ]
+    ],
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "11459",
+   "title": "Entrepreneurship & Small Business Management",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "16736",
+   "title": "Retail Management",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/business-as/",
+    "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/business-coa/",
+    "https://catalog.cccd.edu/coastline/pathways/business-operations-management/management/management-applied-coa/",
+    "https://catalog.cccd.edu/coastline/pathways/business-operations-management/management/management-associate-science-degree/",
+    "https://catalog.cccd.edu/coastline/pathways/business-operations-management/management/management-certificate-achievement/",
+    "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/entrepreneurship-small-business-management-certificate-achievement/",
+    "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/global-business-certificate-achievement/",
+    "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/",
+    "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/marketing-associate-science-degree/",
+    "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/marketing-certificate-achievement/",
+    "https://catalog.cccd.edu/coastline/pathways/business-operations-management/management/supply-chain-management-associate-science-degree/",
+    "https://catalog.cccd.edu/coastline/pathways/business-operations-management/management/supply-chain-management-ii-coa/"
+   ],
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "17983",
+   "title": "CalGETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://catalog.cccd.edu/coastline/general-education/associate-degree/"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "18218",
+   "title": "Health and Fitness",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.cccd.edu/coastline/pathways/health-wellness/health/health-science-associate-arts-degree/",
+    "https://catalog.cccd.edu/coastline/pathways/health-wellness/health/wellness-coaching-certificate-achievement/",
+    "https://catalog.cccd.edu/coastline/general-education/associate-degree/"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "40394",
+   "title": "ESL Preparation for Freshman Composition",
+   "award": "Noncredit program",
+   "pages": [
+    "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english-second-language/esl-preparation-college-level-english-certificate-competency/"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "42004",
+   "title": "Cloud Computing",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/information-technology/information-technology-as/",
+    "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/cybersecurity/cybersecurity-as/",
+    "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/cybersecurity/digital-forensics-incident-response-as/",
+    "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/information-technology/",
+    "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/information-technology/information-technology-coa/",
+    "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/information-technology/it-foundation-coa/",
+    "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/information-technology/it-support-specialist-coa/",
+    "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/cybersecurity/cybersecurity-analyst-coa/",
+    "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/cybersecurity/cybersecurity-coa/",
+    "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/cybersecurity/cybersecurity-fundamentals-cos/",
+    "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/cybersecurity/digital-forensics-incident-response-coa/",
+    "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/cybersecurity/"
+   ],
+   "status": "Active - Teachout Only"
+  }
+ ],
+ "page_challenged": [],
+ "coverage_bands": {
+  "0.5-0.8": 13,
+  "0.8-1.0": 27,
+  "1.0": 104
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/coastline_community",
+  "kept": 122,
+  "kept_moved": 0,
+  "programs": 16,
+  "list": [
+   {
+    "control_number": "18002",
+    "title": "Liberal Studies (for Teaching)",
+    "award": "A.A. Degree",
+    "url": "https://catalog.cccd.edu/coastline/pathways/education/education/liberal-studies-for-teaching-aa/",
+    "coverage": 0.951,
+    "was_url": "https://catalog.cccd.edu/coastline/pathways/education/education/liberal-studies-for-teaching-aa/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "18214",
+    "title": "Economics",
+    "award": "A.A. Degree",
+    "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/economics/economics-aa/",
+    "coverage": 0.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "no_closed_list"
+   },
+   {
+    "control_number": "18215",
+    "title": "English",
+    "award": "A.A. Degree",
+    "url": "https://catalog.cccd.edu/coastline/pathways/language-literature/english/english-aa/",
+    "coverage": 0.812,
+    "was_url": "https://catalog.cccd.edu/coastline/pathways/language-literature/english/english-aa/",
+    "was_coverage": 0.938,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "18221",
+    "title": "Mathematics",
+    "award": "A.A. Degree",
+    "url": "https://catalog.cccd.edu/coastline/pathways/science-mathematics/mathematics/mathematics-aa/",
+    "coverage": 0.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "no_closed_list"
+   },
+   {
+    "control_number": "18719",
+    "title": "Process Technology",
+    "award": "A.A. Degree",
+    "url": "https://catalog.cccd.edu/coastline/pathways/law-safety/process-technology/process-technology-associate-arts-degree/",
+    "coverage": 0.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "no_closed_list"
+   },
+   {
+    "control_number": "20356",
+    "title": "Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/management/management-applied-coa/",
+    "coverage": 0.9,
+    "was_url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/management/management-applied-coa/",
+    "was_coverage": 0.967,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "20364",
+    "title": "Process Technology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://catalog.cccd.edu/coastline/pathways/law-safety/process-technology/process-technology-certificate-achievement/",
+    "coverage": 0.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "no_closed_list"
+   },
+   {
+    "control_number": "20386",
+    "title": "Accounting: General Accounting",
+    "award": "A.S. Degree",
+    "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/accounting/accounting-general-as/",
+    "coverage": 0.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "no_closed_list"
+   },
+   {
+    "control_number": "20387",
+    "title": "General Accounting",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/accounting/accounting-general-coa/",
+    "coverage": 0.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "no_closed_list"
+   },
+   {
+    "control_number": "20390",
+    "title": "Accounting: Taxation",
+    "award": "A.S. Degree",
+    "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/accounting/accounting-taxation-as/",
+    "coverage": 0.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "no_closed_list"
+   },
+   {
+    "control_number": "23050",
+    "title": "Business Administration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/management/management-certificate-achievement/",
+    "coverage": 0.727,
+    "was_url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/management/management-certificate-achievement/",
+    "was_coverage": 0.909,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41633",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.cccd.edu/coastline/pathways/health-wellness/foods-nutrition/nutrition-dietetics-associate-science-degree-transfer/",
+    "coverage": 0.667,
+    "was_url": "https://catalog.cccd.edu/coastline/pathways/health-wellness/foods-nutrition/nutrition-dietetics-associate-science-degree-transfer/",
+    "was_coverage": 0.583,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41677",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/anthropology/anthropology-aat/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/anthropology/anthropology-aat/",
+    "was_coverage": 0.952,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "43490",
+    "title": "Environmental Science",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.cccd.edu/coastline/pathways/science-mathematics/envs/environmental-science-ast/",
+    "coverage": 0.706,
+    "was_url": "https://catalog.cccd.edu/coastline/pathways/science-mathematics/envs/environmental-science-ast/",
+    "was_coverage": 0.647,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "46077",
+    "title": "Public Health",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.cccd.edu/coastline/pathways/health-wellness/health/public-health-ast/",
+    "coverage": 0.889,
+    "was_url": "https://catalog.cccd.edu/coastline/pathways/health-wellness/health/public-health-ast/",
+    "was_coverage": 0.833,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "46330",
+    "title": "Cybersecurity Specialist (Applied)",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/cybersecurity/cybersecurity-specialist-applied-coa/",
+    "coverage": 0.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "no_closed_list"
+   }
+  ],
+  "held_worse_window": [
+   {
+    "control_number": "03723",
+    "title": "Management",
+    "award": "A.S. Degree",
+    "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/management/management-associate-science-degree/",
+    "coverage": 0.931,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "18051",
+    "title": "American Studies",
+    "award": "A.A. Degree",
+    "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/history/american-studies-associate-arts-degree/",
+    "coverage": 0.926,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "18052",
+    "title": "Arts & Humanities",
+    "award": "A.A. Degree",
+    "url": "https://catalog.cccd.edu/coastline/pathways/visual-performing-arts/art/arts-humanities-associate-arts-degree/",
+    "coverage": 0.953,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "18056",
+    "title": "Social and Behavioral Sciences",
+    "award": "A.A. Degree",
+    "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/sociology/social-behavioral-sciences-aa/",
+    "coverage": 0.93,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "18219",
+    "title": "History",
+    "award": "A.A. Degree",
+    "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/history/history-aa/",
+    "coverage": 0.905,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "22939",
+    "title": "Supply Chain Management",
+    "award": "A.S. Degree",
+    "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/management/supply-chain-management-associate-science-degree/",
+    "coverage": 0.931,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "23043",
+    "title": "Business",
+    "award": "A.S. Degree",
+    "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/business-as/",
+    "coverage": 0.939,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "23044",
+    "title": "Business",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/business-coa/",
+    "coverage": 0.939,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "31333",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.cccd.edu/coastline/pathways/language-literature/english/english-associate-arts-degree-transfer/",
+    "coverage": 0.619,
+    "was_coverage": 0.667
+   },
+   {
+    "control_number": "41337",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/business-administration-2.0-associate-science-degree-transfer/",
+    "coverage": 0.818,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "41727",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/political-science/political-science-associate-arts-degree-transfer/",
+    "coverage": 0.692,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "44102",
+    "title": "Social Work and Human Services",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/human-services/social-work-human-services-aat/",
+    "coverage": 0.8,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "44223",
+    "title": "Law, Public Policy, and Society",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.cccd.edu/coastline/pathways/law-safety/criminal-justice/law-public-policy-society-aat/",
+    "coverage": 0.846,
+    "was_coverage": 1.0
+   }
+  ],
+  "held_no_gain": [
+   {
+    "control_number": "40476",
+    "title": "Introduction to Careers in Esports",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english/introduction-careers-esports-certificate-completion/",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   }
+  ],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
+ },
+ "fingerprints": {
+  "03723": {
+   "sha256": "c8b760d569af46ef1bea5aa516dd115353eea9386231ad75404060d4fa8269d5",
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/management/management-associate-science-degree/"
+  },
+  "03747": {
+   "sha256": "d222d474a944035a38470f233e9fdf9d36202d844f12446537aae943158353bb",
+   "url": "https://catalog.cccd.edu/coastline/pathways/law-safety/paralegal/paralegal-studies-associate-arts-degree/"
+  },
+  "07510": {
+   "sha256": "09456410b2cb56f4c7fd7e9eb36672f997ae995fae512ce6d5df744f36f5bb06",
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/aging-studies/aging-studies-aa/"
+  },
+  "11378": {
+   "sha256": "6f99fdac3cc5c7af050568c711516467811592c3c2d3b2a09beefc02ced5a69a",
+   "url": "https://catalog.cccd.edu/coastline/pathways/visual-performing-arts/digital-media-design/digital-media-design-coa/"
+  },
+  "18002": {
+   "sha256": "34b43fb1cea2e9ae67a30f4a8e0fded5fd992a079da16d2d77d97a91c2c3410a",
+   "url": "https://catalog.cccd.edu/coastline/pathways/education/education/liberal-studies-for-teaching-aa/"
+  },
+  "18049": {
+   "sha256": "9ce8ebe10e78d4250d9022dd4bb98b4e05ade3bbf64a9f858813dc8ed4c5bdba",
+   "url": "https://catalog.cccd.edu/coastline/pathways/visual-performing-arts/art/art-associate-arts-degree/"
+  },
+  "18051": {
+   "sha256": "5682dbc90d46d89e81a06e10ce3edb80f2c1c5923c4ad47b725afbba97d4a77f",
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/history/american-studies-associate-arts-degree/"
+  },
+  "18052": {
+   "sha256": "e7b7e8a4eeacc80d64a4dcda0a74c0a7d8ab08daaa17e9f70de6c5666c6f1192",
+   "url": "https://catalog.cccd.edu/coastline/pathways/visual-performing-arts/art/arts-humanities-associate-arts-degree/"
+  },
+  "18055": {
+   "sha256": "50a2b526dd88b7e04888f953d61b9cc62af7a738a7bfebbff238bdaeaa3f2aef",
+   "url": "https://catalog.cccd.edu/coastline/pathways/science-mathematics/mathematics/science-math-aa/"
+  },
+  "18056": {
+   "sha256": "0d516aa2b6070e89b727db277c42d179235d05b2afb7c457c4a4e1b86794ae55",
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/sociology/social-behavioral-sciences-aa/"
+  },
+  "18214": {
+   "sha256": "37271b82c00f33d907df387d7ebbeb17f87693b136cdc01f3aa032ee37f836a3",
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/economics/economics-aa/"
+  },
+  "18215": {
+   "sha256": "d6f0070d393d7a870d6741c1db0139dda233adab6a5243c2d702f86c587737da",
+   "url": "https://catalog.cccd.edu/coastline/pathways/language-literature/english/english-aa/"
+  },
+  "18216": {
+   "sha256": "433b375c821382ae610419540beaefdc9891d6e93f1bb4cfdda3143644392b53",
+   "url": "https://catalog.cccd.edu/coastline/pathways/language-literature/french/"
+  },
+  "18219": {
+   "sha256": "f766975b794775934fd5a6fd354e48d79eaca5db994aecd27a59bdbc53a9953d",
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/history/history-aa/"
+  },
+  "18220": {
+   "sha256": "b8ceb7d2332b272eb4de51d401b5e863f1dfc37653cd48a729395bcb83b46550",
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/human-services/human-services-aa/"
+  },
+  "18221": {
+   "sha256": "c4194e2a57ce3586a04091216a25c6965db9739734695c2648589475c55adde3",
+   "url": "https://catalog.cccd.edu/coastline/pathways/science-mathematics/mathematics/mathematics-aa/"
+  },
+  "18222": {
+   "sha256": "012c9fe432be1ce5595453c14342e097f9b5cf65fcf60bb7dcec5ee7cd65f20e",
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/psychology/psychology-aa/"
+  },
+  "18223": {
+   "sha256": "8ad65bc2e18ce28215aa1dba4d98ca263a53237b69fa341d4e57c39ad398b935",
+   "url": "https://catalog.cccd.edu/coastline/pathways/language-literature/spanish/spanish-aa/"
+  },
+  "18224": {
+   "sha256": "be68ff7ece84d93a7be62d15b1f6938cd445e6fb56479f6c7bd2e67dd4639054",
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/sociology/sociology-aa/"
+  },
+  "18719": {
+   "sha256": "0080356cf1c24cc5e553537495895e1f0881f9591fb80cd3f609bb76030a07ea",
+   "url": "https://catalog.cccd.edu/coastline/pathways/law-safety/process-technology/process-technology-associate-arts-degree/"
+  },
+  "19423": {
+   "sha256": "966390018126b34836fb80c56c67dad9dcaf77d548731c76a25fc31122a3fefd",
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/real-estate/real-estate-studies-certificate-achievement/"
+  },
+  "19424": {
+   "sha256": "6c083905636f743ea6cc48aab8427c0d7d7263d0de504a79dcaa3d1580a29657",
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/real-estate/real-estate-broker-certificate-achievement/"
+  },
+  "19515": {
+   "sha256": "55bc8e16b348e4e70a154203dad356acf35abc6714e5cf24dbb310705db14078",
+   "url": "https://catalog.cccd.edu/coastline/pathways/law-safety/emergency-management/emergency-management-homeland-security-criminal-justice-associate-arts-degree/"
+  },
+  "20352": {
+   "sha256": "2bfe5821396de6e993e401fec5af49920640f0f7a075f9f8905969f94bb0ad11",
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/entrepreneurship-small-business-management-certificate-achievement/"
+  },
+  "20356": {
+   "sha256": "5273ba1d08de29b1e233e378772e1a7a82c6acee8ee95bfd112f7bd6620f26b3",
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/management/management-applied-coa/"
+  },
+  "20357": {
+   "sha256": "566a7494b8118ce0c1b8296144f3a7a36cfd654949868a9276f55010d5bff72a",
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/management/management-certificate-achievement/"
+  },
+  "20364": {
+   "sha256": "c8fdc0175f9e9d5b62121ceba4524d2d8bc248951bcef5052ae0f057f68495fc",
+   "url": "https://catalog.cccd.edu/coastline/pathways/law-safety/process-technology/process-technology-certificate-achievement/"
+  },
+  "20365": {
+   "sha256": "e15fa543ff64c944a60024227e88344fec85826757aa2e0e3e5730c485cb0163",
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/aging-studies/aging-studies-coa/"
+  },
+  "20366": {
+   "sha256": "65bac741f1eb6c75e79e0de6708bdb95a07a1457a7dbc3c9e9ac0d7fa16a19a2",
+   "url": "https://catalog.cccd.edu/coastline/pathways/law-safety/paralegal/paralegal-studies-certificate-achievement/"
+  },
+  "20372": {
+   "sha256": "6c5d80ebff1dc760997a38d89cd8ada72b668a9c0cc7c9343cc72a92f81d2841",
+   "url": "https://catalog.cccd.edu/coastline/pathways/law-safety/building-codes-inspector/building-codes-inspector-as/"
+  },
+  "20373": {
+   "sha256": "619332638f09037f61aab4f2f0626eafd72315576178378babf7895cecd14022",
+   "url": "https://catalog.cccd.edu/coastline/pathways/law-safety/building-codes-inspector/building-codes-inspector-coa/"
+  },
+  "20378": {
+   "sha256": "523cae99a2dd5dad3ff89b1a5c13667fc94130d7b2f1240cec06bcbb4fe1a2cc",
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/information-technology/information-technology-as/"
+  },
+  "20379": {
+   "sha256": "c9fc5b814db03b0673ce17bab2b5b160fba53a39938765ca1e399477d1745c82",
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/information-technology/information-technology-coa/"
+  },
+  "20382": {
+   "sha256": "440b752f22099dd312bf0a14c6d2f75b9a0d96e3b9e93eefce3e479635e70d38",
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/cybersecurity/cybersecurity-as/"
+  },
+  "20383": {
+   "sha256": "6fba29db0d4f8b467831247526e4382cfb7d49d539266c7e40e5ac59c6c12ac7",
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/cybersecurity/cybersecurity-coa/"
+  },
+  "20386": {
+   "sha256": "4a2617f2209c54a68cf5e65bccb6f82ad3c98b27fa2a4e641e8445f7caaab2d4",
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/accounting/accounting-general-as/"
+  },
+  "20387": {
+   "sha256": "08dbe6a4dce1b2853240a8033d319d081bc867b8d3262b0e909ea55968af5ea5",
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/accounting/accounting-general-coa/"
+  },
+  "20388": {
+   "sha256": "011e34d6c9502cf549a89fa6b23b713a9dfd0341662df7aa7a4eac925c4c279f",
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/accounting/accounting-bookkeeping-as/"
+  },
+  "20389": {
+   "sha256": "c7a15eaa7daa49d31f2daad9a1dab12ea26c986416a677eb156bf6914dc79bd7",
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/accounting/accounting-bookkeeping-coa/"
+  },
+  "20390": {
+   "sha256": "7cd08b657d59b25d7d7c121f0989910ad42e3f808ff742344d42e1f299adb794",
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/accounting/accounting-taxation-as/"
+  },
+  "22939": {
+   "sha256": "98527963b99cf76d29f83e109105c2db646b8d5b3f4ed5b95ab486a91105a7f0",
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/management/supply-chain-management-associate-science-degree/"
+  },
+  "22940": {
+   "sha256": "9821011cb2a5c90795f2f96ee608b89d11355f37af4a9afbd3746bddd3c4cd82",
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/management/supply-chain-management-ii-coa/"
+  },
+  "23043": {
+   "sha256": "276c0b3ffcb48a438b9c295087c882f60a171eb9a643780777318a1388148c6a",
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/business-as/"
+  },
+  "23044": {
+   "sha256": "a7b8ce713118c0f2d8125f7e82cd48ed3b1fc052a7492c90cf4270ae2d7b13bb",
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/business-coa/"
+  },
+  "23045": {
+   "sha256": "09e37f39a235835636ba67858a375d8273973c889a0cafe3a3f3e75790082551",
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/human-resources-management-associate-science-degree/"
+  },
+  "23046": {
+   "sha256": "13d3ae9b4208524cbd6133a8311907459371557f21db3f02e690278744b21a1c",
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/human-resources-management-certificate-achievement/"
+  },
+  "23047": {
+   "sha256": "34c378292d5926c5643db586aca22b4dd1cccc6a1c313ebec4b10714a1dccbd9",
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/marketing-associate-science-degree/"
+  },
+  "23048": {
+   "sha256": "7347f3772d18ee9014e5375fa19e2c5e5f13c3d2d2f27f698020e0637775c5bf",
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/marketing-certificate-achievement/"
+  },
+  "23049": {
+   "sha256": "6b41431889229a305acfd4ce4764ba8cbaa81b6ffcf109faa7bf07d97ede22bc",
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/"
+  },
+  "23050": {
+   "sha256": "17f734aaf2be78c1f56ccb3b32076cf03d03cd7e114f520cab07d06f9ea7617f",
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/management/management-certificate-achievement/"
+  },
+  "30255": {
+   "sha256": "83ad8f8320a344154c91164617b8670b452ee231b7cc2c2a2b99edf0bfd5d04c",
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/management/health-care-management-associate-science-degree/"
+  },
+  "30256": {
+   "sha256": "7af0f13fff3b61b51f231dd297848cb19e5944232f447f5a7d8bc111f7ec6ac8",
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/management/health-care-management-certificate-achievement/"
+  },
+  "30350": {
+   "sha256": "55bc8e16b348e4e70a154203dad356acf35abc6714e5cf24dbb310705db14078",
+   "url": "https://catalog.cccd.edu/coastline/pathways/law-safety/emergency-management/emergency-management-homeland-security-criminal-justice-associate-arts-degree/"
+  },
+  "30879": {
+   "sha256": "1ba0e305817ba47ca04980449f4b79b16d34342946b173112ab5a6e6983de1ba",
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/sociology/sociology-aat/"
+  },
+  "30891": {
+   "sha256": "69db785810a3186eddedcf6bc7b7a848b47562ca7c953d89c19a08b2f5eb1857",
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/psychology/psychology-associate-arts-degree-transfer/"
+  },
+  "31333": {
+   "sha256": "747c41e84943fd81a1e0248d258aaf111c60e4051a6dfa7e3600f3fd9320b378",
+   "url": "https://catalog.cccd.edu/coastline/pathways/language-literature/english/english-associate-arts-degree-transfer/"
+  },
+  "31453": {
+   "sha256": "8cb0f27a67530e8a90d2a249ebf013290230940d05e79181bdf66bf836457ad2",
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/history/history-aat/"
+  },
+  "32136": {
+   "sha256": "6f98303e2ceeb0ec75d2d1162b93ac1a02432fae9db2f64c8bc2ffa4d1d64957",
+   "url": "https://catalog.cccd.edu/coastline/pathways/science-mathematics/mathematics/mathematics-2.0-ast/"
+  },
+  "33014": {
+   "sha256": "952e05833314ecd1372341c5ccacba7ab34cf83b37f6622be880ba1685de7455",
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/communication-studies/communication-studies-2-aat/"
+  },
+  "33015": {
+   "sha256": "ddb81645d39c9b7315f0c5ff93279befde1f12507947dc3dade7365128f0ba71",
+   "url": "https://catalog.cccd.edu/coastline/pathways/science-mathematics/physics/physics-2.0-associate-science-degree-transfer/"
+  },
+  "33112": {
+   "sha256": "edac2466fc9f08f715247076871a3d315c05a369d8fd662f5945aec15ca40aeb",
+   "url": "https://catalog.cccd.edu/coastline/pathways/science-mathematics/biology/pre-medical-studies-certificate-achievement/"
+  },
+  "33606": {
+   "sha256": "9b30a1f32f6dcfb40c3747845a9cc1b2b03938aef2f32df4fa9e5b27c6ffaf5d",
+   "url": "https://catalog.cccd.edu/coastline/pathways/language-literature/spanish/spanish-associate-arts-degree-transfer/"
+  },
+  "36112": {
+   "sha256": "5d0c0a4aafceb1d2495215c466fe03643ed46a607a1b1b4d600660c8839fdd50",
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/special-education/horticulture-certificate-completion/"
+  },
+  "36288": {
+   "sha256": "60618e0ea6c406d4423d942a441d25fc06a8a4cb69ee166babb1a84b623ac7b6",
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english-second-language/english-second-language-preparation-careers-certificate-completion/"
+  },
+  "36800": {
+   "sha256": "2034db8f407d5d9f56318528cba202ecb758fd2c84d2eb8fa7cca128ed757039",
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/special-education/porter-certificate-completion/"
+  },
+  "37669": {
+   "sha256": "45db10c5a5dfde7c1bb016bd60d2801d62814a51486374af921cf44287cd3423",
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/economics/economics-associate-arts-degree-transfer/"
+  },
+  "37925": {
+   "sha256": "e0ca1dca32c4cb414b2740719ef3c392e0bab15c2cab460166529c7ddb0fbca3",
+   "url": "https://catalog.cccd.edu/coastline/pathways/science-mathematics/biology/biology-associate-science-degree-transfer/"
+  },
+  "38335": {
+   "sha256": "034a2f0f02bfb4e7445899dec9577c257047ff4fedfcb00b98ffd4064b66eda5",
+   "url": "https://catalog.cccd.edu/coastline/pathways/education/education/child-adolescent-development-associate-arts-transfer/"
+  },
+  "38389": {
+   "sha256": "a0ec307e1be426a3ce78a2bb647968064f004441e3c555192e82b981c341c0b0",
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/special-education/animal-care-certificate-completion/"
+  },
+  "38407": {
+   "sha256": "d18d8fd5ba8163b88da69204c178495e2096baf6ba8d696dacd25f7c40422409",
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/business-computing/customer-service-technology1-certificate-completion/"
+  },
+  "38416": {
+   "sha256": "03107fb5429fe0502c3764f03d3d224712b0e0fa6681f158a745834103a95d1c",
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/business-computing/customer-service-technology2-certificate-completion/"
+  },
+  "38543": {
+   "sha256": "4879c35b96b798c367a8d914cfefcf55e41b553a47dd7ee318fb47942815e5d0",
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/computer-information-systems/data-analytics-coa/"
+  },
+  "38553": {
+   "sha256": "3629f2422ee73b00e610613751a0ee91912adb60d7528cba0a5e5d561e3e13e4",
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english-second-language/esl-intermediate-preparation-careers-certificate-completion/"
+  },
+  "38554": {
+   "sha256": "cf0a388dfea826597330243fdd9d73f0febf44e160bfa245a233cc25e312b0f2",
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/special-education/guest-services-certificate-completion/"
+  },
+  "38555": {
+   "sha256": "286ddd9db61b58e2ee98b72bd883eb224472257b53317b8e6950540e6dc74447",
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english-language-learning/language-preparation-us-citizenship-certificate-competency/"
+  },
+  "38556": {
+   "sha256": "67cf6bea869c02658740558b060b182add8a15207ee50e54b39dbacce95681c4",
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/special-education/culinary-arts-certificate-completion/"
+  },
+  "38603": {
+   "sha256": "b72008a2c98bc604c0e3b45f00f02074b0b341f2baf2a2c838c3f6a3def53da1",
+   "url": "https://catalog.cccd.edu/coastline/pathways/science-mathematics/geology/geology-associate-science-degree-transfer/"
+  },
+  "39435": {
+   "sha256": "cc3409c75e38bc6fd7afb08b0a959ddb49a5638813d297a557d21250e2004a9f",
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/computer-information-systems/data-analytics-as/"
+  },
+  "39469": {
+   "sha256": "8c7b73a3f040e16dca4ece1b253bbc21117a5331a4d414b4879c30459966e7ad",
+   "url": "https://catalog.cccd.edu/coastline/pathways/science-mathematics/biology/allied-health-care-careers-certificate-achievement/"
+  },
+  "39477": {
+   "sha256": "a16bb8a543844ae4c2bd6d1f024068a569ea9e7f0b9efd958d17dc87dfb364fa",
+   "url": "https://catalog.cccd.edu/coastline/pathways/health-wellness/health/wellness-coaching-certificate-achievement/"
+  },
+  "39533": {
+   "sha256": "14cd007f96d02864cfccb4cd7509d7afc0dbccfa43732de0c0a2b21a23fe7c23",
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/cybersecurity/digital-forensics-incident-response-as/"
+  },
+  "39568": {
+   "sha256": "53c667024ee50fcc1160e3e5a4db251fcb8762e3b09d5ee48b65cd5722f2ed26",
+   "url": "https://catalog.cccd.edu/coastline/pathways/health-wellness/foods-nutrition/dietary-management-certificate-achievement/"
+  },
+  "39764": {
+   "sha256": "e7f3774b6272962e5ad6f6b617d94d19007766ea3f0d8d30e374b0032abe80a8",
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/special-education/drama-basics-certificate-completion/"
+  },
+  "39880": {
+   "sha256": "6b133849ed93a1069fa2bf7031b464fa62e6f5ccdd6edf6ed4b3207eadd76e44",
+   "url": "https://catalog.cccd.edu/coastline/pathways/education/education/ed-study-stem-math-certificate-achievement/"
+  },
+  "39966": {
+   "sha256": "11ea226808b9ef6d3e7c18b15c0944aaa32b3a183c3287da3b8540ca05a385a4",
+   "url": "https://catalog.cccd.edu/coastline/pathways/education/education/ed-study-ece-unit-concentration-certificate-achievement/"
+  },
+  "39967": {
+   "sha256": "b81d67e915f6c3c3791bee6f22f279e985e7504daca91362a0ea2d2a6e6092a9",
+   "url": "https://catalog.cccd.edu/coastline/pathways/education/education/ed-study-stem-instructional-support-certificate-achievement/"
+  },
+  "39971": {
+   "sha256": "fff4a9bf0ae69d72513d35ec6b63b934ca9f3c0a8bcf5a02eaa393aafd44d389",
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/cybersecurity/digital-forensics-incident-response-coa/"
+  },
+  "39997": {
+   "sha256": "8f76d7d2300f02db544ddbb7e3ae69a5b40e0dcb87300edc79223ef234a2f389",
+   "url": "https://catalog.cccd.edu/coastline/pathways/education/education/ed-study-general-certificate-achievement/"
+  },
+  "40008": {
+   "sha256": "610e0ad05c8cf97651039f6fe24676c52387161657fece22edcba5fad172a9a8",
+   "url": "https://catalog.cccd.edu/coastline/pathways/education/education/ed-study-teach-career-comm-college-teaching-certificate-achievement/"
+  },
+  "40011": {
+   "sha256": "abeaaf4d4dbc7dd8bf668b18d6d668d4e05b00ddf506bff3571a54422c229317",
+   "url": "https://catalog.cccd.edu/coastline/pathways/education/education/ed-study-stem-science-certificate-achievement/"
+  },
+  "40033": {
+   "sha256": "90a3d11a2988047d451db6783617d002fe074df173f0d13a39d085fed734963f",
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/cybersecurity/cybersecurity-analyst-coa/"
+  },
+  "40124": {
+   "sha256": "a9b561a89faac7c6a328a3d64fa9d5a1872f65080b81a40f9acd77a2bb9db7ff",
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english-language-learning/ell-intermediate-advanced-oral-aural-skills-certificate-completion/"
+  },
+  "40125": {
+   "sha256": "97a82df487ef9a757abcfdf0f552f4d9ed320a43446a8eb599e0c865bc89a783",
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english-language-learning/ell-beginning-level-skills-certificate-completion/"
+  },
+  "40476": {
+   "sha256": "cb9082fcd67fd5c213a227c1d5c2d67070730d48d63b751021283d08918f9ea1",
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english/introduction-careers-esports-certificate-completion/"
+  },
+  "40477": {
+   "sha256": "437c68b5d0988e3e76c824443f71b8d24ae713cfdbc375baf02193e32f76a1aa",
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/special-education/music-basics-certificate-completion/"
+  },
+  "40844": {
+   "sha256": "77c9f69ce7081eb6ee32423fb23c23d1fecc5d343a69d9223a0f2c8f0ecaa402",
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/special-education/art-basics-certificate-completion/"
+  },
+  "40845": {
+   "sha256": "7a4dcae4f3a9dbdcc6af4632618e809d9d3eec66c37a2908cf7bd3a6546f67a6",
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/special-education/creative-arts-basics-certificate-completion/"
+  },
+  "41082": {
+   "sha256": "e6efd3caa4e1e3f52886c0e5785fc6b6fdfadc0cb96d8bd6da04f70314a500bd",
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/information-computer-sciences/data-science-coa/"
+  },
+  "41130": {
+   "sha256": "d66b04cb0f244a626a0adfd8d89876be72ace7b2d099625068404bc042bacf0a",
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/global-business-certificate-achievement/"
+  },
+  "41175": {
+   "sha256": "edbc91ff927e4f0b49491c26895f88344fa6b8f7def2bac20668c56ae4622eef",
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/mathematics/mathematics-workforce-developmental-skills-certificate-competency/"
+  },
+  "41337": {
+   "sha256": "aadae59e90f2aad5db6d33d4268a8357a96f7fb0d3647daa6e00a7c33fbfbe54",
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/business-administration-2.0-associate-science-degree-transfer/"
+  },
+  "41525": {
+   "sha256": "40e4477e9321ff97218a6bf8945c5d8cd9826ab08951f931d4144f2a862defa3",
+   "url": "https://catalog.cccd.edu/coastline/pathways/visual-performing-arts/digital-media-design/digital-media-design-aa/"
+  },
+  "41633": {
+   "sha256": "2363ede3df099bf389b58fa8aedb0739d492991168ef03a214a5ff14cde8275e",
+   "url": "https://catalog.cccd.edu/coastline/pathways/health-wellness/foods-nutrition/nutrition-dietetics-associate-science-degree-transfer/"
+  },
+  "41639": {
+   "sha256": "24047b12d154cbd70630f3f10d14d7165b3d0e2360b4b56f227ef3ed896cae0f",
+   "url": "https://catalog.cccd.edu/coastline/pathways/science-mathematics/chemistry/chemistry-ast/"
+  },
+  "41645": {
+   "sha256": "d398c47aeec6179818f90dd43584a8288ce3bdff617a9b4144e8302b84c75d6b",
+   "url": "https://catalog.cccd.edu/coastline/pathways/health-wellness/health/public-health-ast/"
+  },
+  "41677": {
+   "sha256": "6373938f8da3dcf231627511588d2228becc820d9ec2d43a8fb1768704d84a48",
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/anthropology/anthropology-aat/"
+  },
+  "41727": {
+   "sha256": "8588801fc9105d06dfccfb42335eebef850c471fd0a78fd7d97318fb3ab0ca6a",
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/political-science/political-science-associate-arts-degree-transfer/"
+  },
+  "41762": {
+   "sha256": "f48c122ca2588139db09a7ba3b81f1bdddca5a2b278650f7e657803a70c98869",
+   "url": "https://catalog.cccd.edu/coastline/pathways/health-wellness/health/health-science-associate-arts-degree/"
+  },
+  "41801": {
+   "sha256": "703c417b10a983060900e655e9293c36d2fbcd17fe41b2989b9db4387f651878",
+   "url": "https://catalog.cccd.edu/coastline/pathways/language-literature/philosophy/philosophy-associate-arts-degree-transfer/"
+  },
+  "41933": {
+   "sha256": "3c918ad2e8139b1b15bca9147b25fd6dd2aae773f86290d748484481af2b94f7",
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/health/health-wellness-esports-cert-completion/"
+  },
+  "42277": {
+   "sha256": "ae470bc142540b61fd43d161b156d83620bca39f7658d7b0836ea04df511209b",
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english/supplemental-instruction-certificate-competency/"
+  },
+  "42322": {
+   "sha256": "6488ea2d697320ac948cb6b524589dd0dbe75a4c9afa0e07d43e3e66aa695d96",
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/education/online-learning-basics-certificate-competency/"
+  },
+  "42323": {
+   "sha256": "c8b17b845f6635d57a87741841fc6cdeae13a3ea7b5b9be611a30e8b66884283",
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/education/successful-online-learning-certificate-competency/"
+  },
+  "42527": {
+   "sha256": "f99896158c99e5cde68171dd12faee8001ec82d052a145dac4584c89732f4d54",
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/information-technology/it-foundation-coa/"
+  },
+  "42600": {
+   "sha256": "c601c1d9b96ddc9084c74873dd5eab1eac78eeea484a564506f5d25cddffb9ec",
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/geography/geography-associate-arts-degree-transfer/"
+  },
+  "42635": {
+   "sha256": "ad46b66105da2e986b0325f3be6faa115c0baa80e1133846e0327583f768dffe",
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english-second-language/esl-preparation-college-level-english-certificate-competency/"
+  },
+  "42665": {
+   "sha256": "7e2d834b7d4273a96f0a3fd4c0a842d9f3a73d44ae1ced71a4f9c27c5086dfe6",
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english-language-learning/ell-high-beginning-skills-certificate-competency/"
+  },
+  "42710": {
+   "sha256": "fdf7c3169316628b72910b262b8c31316d1f30b8ae9f775b72f8b04b8452093b",
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english-second-language/esl-low-beginning-skills-certificate-competency/"
+  },
+  "42718": {
+   "sha256": "12a96354b8889e061867a9edfa390c953afba8c44db09c994b2ed8a8a28b2b43",
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english-language-learning/ell-low-intermediate-skills-certificate-competency/"
+  },
+  "43029": {
+   "sha256": "a1929d240ef6db514b2756fbc89c1d6ec2aea66ae610b43a646498af6259a287",
+   "url": "https://catalog.cccd.edu/coastline/pathways/visual-performing-arts/art/art-history-aat/"
+  },
+  "43030": {
+   "sha256": "4331725af8fb38fb3173e84aecebef3da5dba4a96d7d6b01d7dfc2dc380a496b",
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/communication-studies/communication-studies-aa/"
+  },
+  "43031": {
+   "sha256": "b4195f06c7884843708d888f6ca1869774c4f51bef1ddb8224bc0288c402cef8",
+   "url": "https://catalog.cccd.edu/coastline/pathways/visual-performing-arts/art/studio-arts-aat/"
+  },
+  "43057": {
+   "sha256": "952e05833314ecd1372341c5ccacba7ab34cf83b37f6622be880ba1685de7455",
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/communication-studies/communication-studies-2-aat/"
+  },
+  "43490": {
+   "sha256": "beb5213ac164832865141c68126ea221310f821713cb21434b2e5311841e44f4",
+   "url": "https://catalog.cccd.edu/coastline/pathways/science-mathematics/envs/environmental-science-ast/"
+  },
+  "43622": {
+   "sha256": "7339a0e12a3b8a9b9d7d438f09ce6fa064ba5ea7192ac84c183aca7f5c561b7a",
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english-second-language/esl-high-intermediate-skills-certificate-competency/"
+  },
+  "43975": {
+   "sha256": "7a1edb8ff0193ea93ea38f326c300eaa28ae6a1fdbd44c4cfe2da01947ec74fe",
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/computer-information-systems/computer-information-systems-coa/"
+  },
+  "43976": {
+   "sha256": "b75fe0669a3ef1e39555f739a33d8c73b0687a2dcef5f63c47bf0039e517fcbf",
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/computer-information-systems/computer-information-systems-as/"
+  },
+  "44017": {
+   "sha256": "e915ad48184574f4c11d18a5f85c7c0b8350c80cff76219db3489787e3cf9649",
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english-second-language/esl-prep-digital-learning-certificate-competency/"
+  },
+  "44102": {
+   "sha256": "b5be63a1eae4c8a4a46a1738b894de5f703584f824b36af836123580c8b2cf46",
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/human-services/social-work-human-services-aat/"
+  },
+  "44204": {
+   "sha256": "a8758acbfa1bfb17b9e1f335bb3984aa52de4e4586810c91194b7d9581476358",
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/management/management-applied-as/"
+  },
+  "44205": {
+   "sha256": "6b0210ebecae901e3ae3343f3694ca56debbcb93d368579a2204c9609d52391b",
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/information-technology/it-support-specialist-coa/"
+  },
+  "44206": {
+   "sha256": "c58c92ac3d7f6e9b742cc116e67a634af9b80874a499451e8b1c558442930145",
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/information-computer-sciences/information-computer-sciences-as/"
+  },
+  "44207": {
+   "sha256": "ce08b305016452a9721765306af0297b56bb72e5a19e0657668f2b48fadb2a66",
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/information-computer-sciences/information-computer-sciences-coa/"
+  },
+  "44223": {
+   "sha256": "804050fe57ff98f991c0976255bc66efb866326f5b24d579af64ef21b22b560d",
+   "url": "https://catalog.cccd.edu/coastline/pathways/law-safety/criminal-justice/law-public-policy-society-aat/"
+  },
+  "45085": {
+   "sha256": "ad410de79af3699eb527bd614b6e1fe3aa51fefbf1efb077f92901c136070bc2",
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/art/core-professional-skills-certificate-completion/"
+  },
+  "45411": {
+   "sha256": "1a89b26db1da3d3394c0535d63e85d911c04427b81449915c0375df11af13b00",
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/cybersecurity/ai-cybersecurity-coa/"
+  },
+  "45416": {
+   "sha256": "f5f20c380bd7afc775322cf5d34b4f787553fd0d67a7de01b94d1ee8b3280c19",
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/information-computer-sciences/artificial-intelligence-coa/"
+  },
+  "45424": {
+   "sha256": "c24182ba22a762a2846b4d46d9caebab48f651e5c531896d7fb40fe6f2076c75",
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/information-computer-sciences/artificial-intelligence-as/"
+  },
+  "45425": {
+   "sha256": "ba7fe6ae0cb83aba92c184da16995e2f8fbca9fc080abf2454b11501edb40deb",
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/information-computer-sciences/data-science-as/"
+  },
+  "45429": {
+   "sha256": "afddf948e16d84026b0f59a0a2b1f6de12b482ba314d04d0e6892dbd742b5e2a",
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/cybersecurity/ai-cybersecurity-as/"
+  },
+  "45622": {
+   "sha256": "94103a55585d9d6015fe8f01b5f9c6d2e3db9a0a19111cd1f6f4da0a41b1f31a",
+   "url": "https://catalog.cccd.edu/coastline/pathways/health-wellness/kinesiology/kinesiology-aat/"
+  },
+  "45695": {
+   "sha256": "e11af4bf3bd67fda2e8b6ae559e1f808a01afb5262abc5be543cfd36ea85b62c",
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/digital-media-communications/social-media-strategist-coa/"
+  },
+  "45872": {
+   "sha256": "7bbe0693ede55dafc7bead5dda2afb5874f52e790f4d301f0bdcbc6d99872471",
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/computer-cyber-sciences/artificialintelligence-ai-readiness2-ethical-creative-applications-noncredit/"
+  },
+  "45873": {
+   "sha256": "cdfb0d7dcce37e851e5343802cdfb5df9d8454cd264f11ae4a28ae06250ea6c9",
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/computer-cyber-sciences/artificialintelligence-ai-readiness3-security-privacy-bias-noncredit/"
+  },
+  "45874": {
+   "sha256": "71b8fdfa86fca437de6bab060e1328bb1616d11ccd4e17e9560ffd415102791d",
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/digital-media-design/visual-design-foundations-noncredit/"
+  },
+  "45879": {
+   "sha256": "dc2551d0a70e7bd3c4da7ff5f3aa858d6f7efedcd1ca1113e6d03fdc24f83e48",
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/computer-cyber-sciences/artificialintelligence-ai-readiness1-in-the-workplace-noncredit/"
+  },
+  "46029": {
+   "sha256": "e243d1036a81bdbdb05d7f489d4de7472796f161aaa26f449bfd483156bb55c7",
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/computer-cyber-sciences/cyber-hygiene-online-safety-noncredit/"
+  },
+  "46030": {
+   "sha256": "ffac93b8f8b60913b3f7fb4b0da901c4b4060c04c6416f4d89e012b555b67786",
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/computer-cyber-sciences/cyber-hygiene-for-workplace-safety-noncredit/"
+  },
+  "46077": {
+   "sha256": "d398c47aeec6179818f90dd43584a8288ce3bdff617a9b4144e8302b84c75d6b",
+   "url": "https://catalog.cccd.edu/coastline/pathways/health-wellness/health/public-health-ast/"
+  },
+  "46330": {
+   "sha256": "47f5caeb7c11a246cc967532d601f08bf513f38535a437e6dab864cb799ab1e8",
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/cybersecurity/cybersecurity-specialist-applied-coa/"
+  },
+  "46538": {
+   "sha256": "7e6ae369915c4a73aab8e74a03a53ea905e582b645dec8a786eed928164bb193",
+   "url": "https://catalog.cccd.edu/coastline/pathways/science-mathematics/mathematics/calculus-coa/"
+  },
+  "46539": {
+   "sha256": "8ed10513d031d49c64ce8b511fd5fb76498fd8d29835cb68b959e3b9d93ab9a3",
+   "url": "https://catalog.cccd.edu/coastline/pathways/law-safety/emergency-management/emergency-management-foundations-cos/"
+  }
+ },
+ "run": "46161449846"
+}
