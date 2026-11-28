@@ -58,6 +58,7 @@ withhold kb/coci_retired_cards.json
 withhold kb/common_courses.json
 withhold kb/course_crosswalk.json
 withhold kb/discipline_inference.json
+withhold kb/found_pages_wrong_verdicts_2026-11-28.json
 withhold kb/promotions.json
 # Re-mint, fold, dry-run and apply output (alias maps, collisions). kb/csr_out/latest.json and
 # kb/cer_procedures_out/latest.json are published by their own lines below, and so are the credential rename
