@@ -69,37 +69,40 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    52.0,
-    52.0
+    18.0,
+    18.0
    ],
    "stated": [
-    60.0,
-    60.0
+    18.0,
+    18.0
    ],
-   "against": "degree",
-   "ge": [
-    34.0,
-    34.0
-   ],
-   "why": [
-    "the record says electives fill the degree total, but the catalog text names no electives"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     18.0,
-     18.0
+     52.0,
+     52.0
     ],
     "stated": [
-     18.0,
-     18.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     8.0,
+     8.0
+    ]
    },
    "pooled": [
     {
@@ -143,7 +146,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -176,7 +179,8 @@
     "Apply knowledge of social and behavioral sciences theories and scientific methods in an assessment of real-world problems."
    ],
    "careers": [],
-   "degree_total_minimum": true
+   "degree_total_minimum": true,
+   "electives_fill_words": "CSU or UC transferable units"
   },
   "blocks": [
    {
@@ -880,14 +884,15 @@
    "The outcomes lead-in sentence is printed twice on the page; it was omitted. The text names baccalaureate majors students may pursue but no careers, so careers is empty."
   ]
  },
- "extracted_run": "46003456131",
+ "extracted_run": 46017556328,
  "catalog_year": "2026-2027",
  "reconciled": [
   {
-   "field": "degree_total_minimum",
+   "field": "electives_fill_words",
    "was": null,
-   "now": true,
-   "words": "Complete 60 transferable units"
+   "now": "CSU or UC transferable units",
+   "words": "Complete 60 transferable units\nCSU or UC transferable units"
   }
- ]
+ ],
+ "read_run": "46003456131"
 }
