@@ -1,4 +1,4 @@
-{"schema":1,"college":"San Jose City College","slug":"san_jose_city","basis":"live","census_at":"2026-11-27 16:06Z","correction_rules":true,"programs":[
+{"schema":1,"college":"San Jose City College","slug":"san_jose_city","basis":"live","census_at":"2026-11-28 00:44Z","correction_rules":true,"programs":[
 {"cn":"22225","title":"Real Estate","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"found_not_extracted","lever":"paid_read","url":"https://catalog.sjcc.edu/degrees-certificates/business/real-estate-certificate-achievement-level-2/"},
 {"cn":"31087","title":"Administration of Justice","award":"A.S. T Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"22989","title":"Administration of Justice : Judicial Administration","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
