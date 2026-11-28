@@ -105,10 +105,14 @@ with tempfile.TemporaryDirectory() as root:
                 "Beta College,FTMA,Film Television Media Arts,https://beta.example/ftma/,catalog,subject heading,2026-11-25,COBIx\n"
                 "Beta College,NOSRC,No Source,,catalog,subject heading,2026-11-25,COBIx\n"
                 "Beta College,APP,Apprenticeship,https://beta.example/courses,catalog,department label,2026-11-25,COBIx\n"
-                "Gamma College,GX,Gamma Things,https://gamma.example/,catalog,subject heading,2026-11-25,COBIx\n")
+                "Gamma College,GX,Gamma Things,https://gamma.example/,catalog,subject heading,2026-11-25,COBIx\n"
+                "Beta College,PSN,Person Named,,person,named by Sam Lee: COCI PSN 1,2026-11-27,Sam Lee\n"
+                "Beta College,NOBY,Nobody Named,,person,named by nobody,2026-11-27,\n")
     finds, unknown = F.read_csv_finds(csvp)
     check("csv: an unknown college is reported, never guessed", unknown == ["Gamma College"], unknown)
-    check("csv: a row with no source URL is not a find", [t["code"] for t in finds["beta"]["titles"]] == ["FTMA", "APP"], finds)
+    check("csv: a row with no source URL is not a find; a person-named row (S746) is, its finder the source",
+          [t["code"] for t in finds["beta"]["titles"]] == ["FTMA", "APP", "PSN"]
+          and [t for t in finds["beta"]["titles"] if t["code"] == "PSN"][0]["url"] is None, finds)
     r = F.file_doc("beta", finds["beta"], False)
     with open(os.path.join(F.SUBJECTS, "beta.json"), encoding="utf-8") as f:
         rows = {x["code"]: x for x in json.load(f)["rows"]}

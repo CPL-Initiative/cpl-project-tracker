@@ -1339,6 +1339,22 @@
    "run": "45625259489"
   },
   {
+   "code": "TUT",
+   "heading": "Tutoring",
+   "heading_printed": "Tutoring",
+   "rule": "index",
+   "codes": [
+    "TUT"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI TUT N01 F Supervised Tutoring",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "WELD",
    "heading": "Welding",
    "heading_printed": "Welding",
@@ -1403,6 +1419,6 @@
    "run": "45625259489"
   }
  ],
- "subjects": 82,
- "with_heading": 82
+ "subjects": 83,
+ "with_heading": 83
 }

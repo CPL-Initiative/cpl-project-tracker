@@ -681,6 +681,22 @@
    "run": "45624360178"
   },
   {
+   "code": "LAR",
+   "heading": "Learning Assistance Resources",
+   "heading_printed": "Learning Assistance Resources",
+   "rule": "index",
+   "codes": [
+    "LAR"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI LAR N01 C Supervised Tutoring: LAR",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "LIB",
    "heading": "Library Technology",
    "heading_printed": "Library Technology",
@@ -1097,6 +1113,6 @@
    "run": "45624360178"
   }
  ],
- "subjects": 68,
- "with_heading": 68
+ "subjects": 69,
+ "with_heading": 69
 }

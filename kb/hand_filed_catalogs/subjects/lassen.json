@@ -823,6 +823,22 @@
    "run": "45629430201"
   },
   {
+   "code": "SOSC",
+   "heading": "Social Science",
+   "heading_printed": "Social Science",
+   "rule": "index",
+   "codes": [
+    "SOSC"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI SOSC 188.1 Social Science for the Senior American",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "TUTR",
    "heading": "Tutoring",
    "heading_printed": "TUTORING",
@@ -887,6 +903,6 @@
    "run": "45629430201"
   }
  ],
- "subjects": 53,
- "with_heading": 53
+ "subjects": 54,
+ "with_heading": 54
 }

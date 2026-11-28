@@ -5,8 +5,8 @@
  "source": [
   "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf"
  ],
- "subjects": 96,
- "with_heading": 96,
+ "subjects": 97,
+ "with_heading": 97,
  "rows": [
   {
    "code": "ACCTG",
@@ -331,6 +331,22 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 44948529916)"
+  },
+  {
+   "code": "BSICKL",
+   "heading": "Basic Skills",
+   "heading_printed": "Basic Skills",
+   "rule": "index",
+   "codes": [
+    "BSICKL"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI BSICKL 028CE Pre-Algebra (likely misspelling of the same code)",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   },
   {
    "code": "BSICSKL",

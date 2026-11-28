@@ -65,6 +65,22 @@
  ],
  "rows": [
   {
+   "code": "ABE",
+   "heading": "Adult Basic Education",
+   "heading_printed": "ADULT BASIC EDUCATION",
+   "rule": "index",
+   "codes": [
+    "ABE"
+   ],
+   "candidate": null,
+   "address": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=852",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "ACA",
    "heading": "Carpentry - Apprenticeship",
    "heading_printed": "CARPENTRY - APPRENTICESHIP",
@@ -401,6 +417,22 @@
    "run": "45629589579"
   },
   {
+   "code": "CNG",
+   "heading": "Counseling and Guidance",
+   "heading_printed": "COUNSELING AND GUIDANCE",
+   "rule": "index",
+   "codes": [
+    "CNG"
+   ],
+   "candidate": null,
+   "address": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=865",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "CNSL",
    "heading": "Counsleing",
    "heading_printed": "COUNSLEING",
@@ -559,6 +591,22 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45629589579)",
    "run": "45629589579"
+  },
+  {
+   "code": "ESL",
+   "heading": "ESL Integrated",
+   "heading_printed": "ESL INTEGRATED",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=866",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   },
   {
    "code": "ETEC",
@@ -801,6 +849,22 @@
    "run": "45629589579"
   },
   {
+   "code": "OAP",
+   "heading": "Older Adults Program",
+   "heading_printed": "Older Adults Program",
+   "rule": "index",
+   "codes": [
+    "OAP"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: catalog p. 875 heading prints \"GERNTOLOGY (GERN)\", a different code; 25 noncredit OAP courses in COCI",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "PHIL",
    "heading": "Philosophy",
    "heading_printed": "PHILOSOPHY",
@@ -847,6 +911,22 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45629589579)",
    "run": "45629589579"
+  },
+  {
+   "code": "PRNT",
+   "heading": "Child Development/Early Care Education",
+   "heading_printed": "CHILD DEVELOPMENT/EARLY CARE EDUCATION",
+   "rule": "index",
+   "codes": [
+    "PRNT"
+   ],
+   "candidate": null,
+   "address": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=864",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   },
   {
    "code": "PSC",
@@ -913,6 +993,22 @@
    "run": "45629589579"
   },
   {
+   "code": "SAFE",
+   "heading": "Health Education",
+   "heading_printed": "HEALTH EDUCATION",
+   "rule": "index",
+   "codes": [
+    "SAFE"
+   ],
+   "candidate": null,
+   "address": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=882",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "SOC",
    "heading": "Sociology",
    "heading_printed": "SOCIOLOGY",
@@ -943,6 +1039,22 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45629589579)",
    "run": "45629589579"
+  },
+  {
+   "code": "SSD",
+   "heading": "Learning Skills Handicap",
+   "heading_printed": "LEARNING SKILLS HANDICAP",
+   "rule": "index",
+   "codes": [
+    "SSD"
+   ],
+   "candidate": null,
+   "address": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=916",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   },
   {
    "code": "SURV",
@@ -977,6 +1089,102 @@
    "run": "45629589579"
   },
   {
+   "code": "VBUS",
+   "heading": "Office Technology/ Computer Applications",
+   "heading_printed": "OFFICE TECHNOLOGY/ COMPUTER APPLICATIONS",
+   "rule": "index",
+   "codes": [
+    "VBUS"
+   ],
+   "candidate": null,
+   "address": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=917",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
+   "code": "VCST",
+   "heading": "Custodial Technician",
+   "heading_printed": "CUSTODIAL TECHNICIAN",
+   "rule": "index",
+   "codes": [
+    "VCST"
+   ],
+   "candidate": null,
+   "address": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=866",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
+   "code": "VDOG",
+   "heading": "Vocational Dog Training",
+   "heading_printed": "VOCATIONAL DOG TRAINING",
+   "rule": "index",
+   "codes": [
+    "VDOG"
+   ],
+   "candidate": null,
+   "address": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=930",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
+   "code": "VMED",
+   "heading": "Vocational Medical",
+   "heading_printed": "VOCATIONAL MEDICAL",
+   "rule": "index",
+   "codes": [
+    "VMED"
+   ],
+   "candidate": null,
+   "address": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=937",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
+   "code": "VRE",
+   "heading": "Vocational Real Estate",
+   "heading_printed": "VOCATIONAL REAL ESTATE",
+   "rule": "index",
+   "codes": [
+    "VRE"
+   ],
+   "candidate": null,
+   "address": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=969",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
+   "code": "VWHS",
+   "heading": "Vocational Warehouse",
+   "heading_printed": "VOCATIONAL WAREHOUSE",
+   "rule": "index",
+   "codes": [
+    "VWHS"
+   ],
+   "candidate": null,
+   "address": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=931",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "WATR",
    "heading": "Water and Wastewater Technology",
    "heading_printed": "WATER AND WASTEWATER TECHNOLOGY",
@@ -991,8 +1199,24 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45629589579)",
    "run": "45629589579"
+  },
+  {
+   "code": "WKPR",
+   "heading": "Adults with Special Needs",
+   "heading_printed": "ADULTS WITH SPECIAL NEEDS",
+   "rule": "index",
+   "codes": [
+    "WKPR"
+   ],
+   "candidate": null,
+   "address": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=854",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   }
  ],
- "subjects": 58,
- "with_heading": 58
+ "subjects": 72,
+ "with_heading": 72
 }

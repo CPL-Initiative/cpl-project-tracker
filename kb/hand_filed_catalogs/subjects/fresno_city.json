@@ -1145,6 +1145,22 @@
    "run": "45628443522"
   },
   {
+   "code": "MMCTC",
+   "heading": "Maintenance Mechanic Career Technical Certificate",
+   "heading_printed": "Maintenance Mechanic Career Technical Certificate",
+   "rule": "index",
+   "codes": [
+    "MMCTC"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI MMCTC 370 Machine Shop and Equipment Repair for Maintenance Mechanics",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "MUS",
    "heading": "Music",
    "heading_printed": "Music",
@@ -1513,6 +1529,22 @@
    "run": "45628443522"
   },
   {
+   "code": "VESL",
+   "heading": "Vocational English as a Second Language",
+   "heading_printed": "Vocational English as a Second Language",
+   "rule": "index",
+   "codes": [
+    "VESL"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI VESL 320 Intermediate English for Vocational Purposes",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "WELD",
    "heading": "Welding Technology",
    "heading_printed": "Welding Technology",
@@ -1561,6 +1593,6 @@
    "run": "45628443522"
   }
  ],
- "subjects": 97,
- "with_heading": 97
+ "subjects": 99,
+ "with_heading": 99
 }

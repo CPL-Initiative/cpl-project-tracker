@@ -568,6 +568,22 @@
    "run": "45625259489"
   },
   {
+   "code": "CNAV",
+   "heading": "Certified Nursing Assistant",
+   "heading_printed": "Certified Nursing Assistant",
+   "rule": "index",
+   "codes": [
+    "CNAV"
+   ],
+   "candidate": null,
+   "address": "https://catalog.sbcc.edu/sel/career-skills/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "CNEE",
    "heading": "Computer Network Engineering",
    "heading_printed": "Computer Network Engineering",
@@ -2104,6 +2120,6 @@
    "run": "45625259489"
   }
  ],
- "subjects": 125,
- "with_heading": 125
+ "subjects": 126,
+ "with_heading": 126
 }

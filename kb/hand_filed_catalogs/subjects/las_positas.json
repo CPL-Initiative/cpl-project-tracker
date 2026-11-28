@@ -1097,6 +1097,22 @@
    "run": "45626743727"
   },
   {
+   "code": "NNTR",
+   "heading": "Noncredit Nutrition",
+   "heading_printed": "Noncredit Nutrition",
+   "rule": "index",
+   "codes": [
+    "NNTR"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI NNTR 201 Introduction to Nutrition Science",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "NPCN",
    "heading": "Noncredit Psychology-Counseling",
    "heading_printed": "Noncredit Psychology-Counseling",
@@ -1449,6 +1465,6 @@
    "run": "45626743727"
   }
  ],
- "subjects": 90,
- "with_heading": 90
+ "subjects": 91,
+ "with_heading": 91
 }

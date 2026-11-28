@@ -921,6 +921,22 @@
    "run": "45631683919"
   },
   {
+   "code": "SCE",
+   "heading": "School of Continuing Education",
+   "heading_printed": "School of Continuing Education",
+   "rule": "index",
+   "codes": [
+    "SCE"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI SCE 804 Engaging Topics for Lifelong Learners",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "SOC",
    "heading": "Sociology",
    "heading_printed": "Sociology",
@@ -1001,6 +1017,6 @@
    "run": "45631683919"
   }
  ],
- "subjects": 62,
- "with_heading": 62
+ "subjects": 63,
+ "with_heading": 63
 }

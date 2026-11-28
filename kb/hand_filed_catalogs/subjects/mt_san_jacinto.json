@@ -81,6 +81,22 @@
  ],
  "rows": [
   {
+   "code": "ABE",
+   "heading": "Adult Basic Education",
+   "heading_printed": "Adult Basic Education",
+   "rule": "index",
+   "codes": [
+    "ABE"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/continuing-education/non-credit-courses/",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "ACCT",
    "heading": "Accounting/Bookkeeping",
    "heading_printed": "Accounting/Bookkeeping",
@@ -321,6 +337,22 @@
    "run": "45625259489"
   },
   {
+   "code": "CEP",
+   "heading": "Career Enhancement Program",
+   "heading_printed": "Career Enhancement Program",
+   "rule": "index",
+   "codes": [
+    "CEP"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/continuing-education/non-credit-courses/",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "CHEM",
    "heading": "Chemistry",
    "heading_printed": "Chemistry",
@@ -399,6 +431,22 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45625259489)",
    "run": "45625259489"
+  },
+  {
+   "code": "CTZN",
+   "heading": "Citizenship",
+   "heading_printed": "Citizenship",
+   "rule": "index",
+   "codes": [
+    "CTZN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/continuing-education/non-credit-courses/",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   },
   {
    "code": "CUL",
@@ -657,6 +705,22 @@
    "run": "45625259489"
   },
   {
+   "code": "GED",
+   "heading": "General Education Development",
+   "heading_printed": "General Education Development",
+   "rule": "index",
+   "codes": [
+    "GED"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/continuing-education/non-credit-courses/",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "GEOG",
    "heading": "Geography",
    "heading_printed": "Geography",
@@ -847,6 +911,38 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45625259489)",
    "run": "45625259489"
+  },
+  {
+   "code": "LL",
+   "heading": "Supervised Tutoring",
+   "heading_printed": "Supervised Tutoring",
+   "rule": "index",
+   "codes": [
+    "LL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/continuing-education/non-credit-courses/",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
+   "code": "LNSK",
+   "heading": "Learning Skills",
+   "heading_printed": "Learning Skills",
+   "rule": "index",
+   "codes": [
+    "LNSK"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/continuing-education/non-credit-courses/",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   },
   {
    "code": "MA",
@@ -1297,6 +1393,6 @@
    "run": "45625259489"
   }
  ],
- "subjects": 76,
- "with_heading": 76
+ "subjects": 82,
+ "with_heading": 82
 }

@@ -8,7 +8,7 @@
   "https://gist.githubusercontent.com/cobi-cto/a30b98d33dcbf8070ca5b313eaa2bff5/raw/el-camino-2026-27-catalog-part-03-of-03.txt"
  ],
  "subjects": 99,
- "with_heading": 82,
+ "with_heading": 85,
  "rows": [
   {
    "code": "ACR",
@@ -395,28 +395,6 @@
    "first_course": "BUS 101 - Introduction to Business"
   },
   {
-   "code": "C H",
-   "heading": "Contemporary Health",
-   "heading_printed": "Contemporary Health",
-   "rule": "fits",
-   "codes": [
-    "C H"
-   ],
-   "candidate": null,
-   "page": 1,
-   "above": [
-    "and health principles. Topics include scope and application of the OSHA construction standards. Special emphasis is placed on those areas that are the",
-    "most hazardous, using OSHA standards as a guide. Upon successful course completion, students will receive an OSHA 30-Hour Construction Outreach",
-    "Training Completion Card.",
-    "Contemporary Health"
-   ],
-   "first_course": "C H 1 - Personal and Community Health Issues",
-   "where": "catalog",
-   "method": "subject heading",
-   "found_on": "2026-11-25",
-   "found_by": "COBI, a runner read (run 44948526227)"
-  },
-  {
    "code": "CADD",
    "heading": "Computer Aided Design/Drafting",
    "heading_printed": "Computer Aided Design/Drafting",
@@ -455,6 +433,28 @@
     "Child Development"
    ],
    "first_course": "CDEV 103 - Child Growth and Development",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
+  },
+  {
+   "code": "C H",
+   "heading": "Contemporary Health",
+   "heading_printed": "Contemporary Health",
+   "rule": "fits",
+   "codes": [
+    "C H"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "and health principles. Topics include scope and application of the OSHA construction standards. Special emphasis is placed on those areas that are the",
+    "most hazardous, using OSHA standards as a guide. Upon successful course completion, students will receive an OSHA 30-Hour Construction Outreach",
+    "Training Completion Card.",
+    "Contemporary Health"
+   ],
+   "first_course": "C H 1 - Personal and Community Health Issues",
    "where": "catalog",
    "method": "subject heading",
    "found_on": "2026-11-25",
@@ -1432,9 +1432,9 @@
   },
   {
    "code": "NATE",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Noncredit Automotive Technology",
+   "heading_printed": "Noncredit Automotive Technology",
+   "rule": "index",
    "codes": [
     "NATE"
    ],
@@ -1446,13 +1446,19 @@
     "requirements.",
     "Note: This is the second of two courses required for ASE G1 Testing."
    ],
-   "first_course": "NATE 3 - Automotive Manufactures Training 1"
+   "first_course": "NATE 3 - Automotive Manufactures Training 1",
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI NATE 3-4 Automotive Manufacturers Training 1-2",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   },
   {
    "code": "NENG",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Noncredit English",
+   "heading_printed": "Noncredit English",
+   "rule": "index",
    "codes": [
     "NENG"
    ],
@@ -1464,13 +1470,19 @@
     "writing and reading for research and revision/editing for clarity and correctness.",
     "Note: This course is repeatable and open for enrollment at registration and at any time during the semester."
    ],
-   "first_course": "NENG 0100S - Noncredit Reading and Writing Support"
+   "first_course": "NENG 0100S - Noncredit Reading and Writing Support",
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI NENG 0100S Reading and Composition Support",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   },
   {
    "code": "NESL",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Noncredit English as a Second Language",
+   "heading_printed": "Noncredit English as a Second Language",
+   "rule": "index",
    "codes": [
     "NESL"
    ],
@@ -1482,7 +1494,13 @@
     "necessary for success on the specific assignments and assessments in the courses for which they seek tutorial support.",
     "Note: This course is repeatable and open for enrollment at registration and at any time during the semester."
    ],
-   "first_course": "NESL 02A - Grammar and Conversation Level I"
+   "first_course": "NESL 02A - Grammar and Conversation Level I",
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI NESL 35 courses, e.g. 02A Conversation/Grammar Level I",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   },
   {
    "code": "NURS",
