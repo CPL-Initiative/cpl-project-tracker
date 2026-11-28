@@ -1,0 +1,989 @@
+{
+ "college": "Napa Valley College",
+ "catalog_url": "https://catalog.napavalley.edu/",
+ "platform": "courseleaf",
+ "catalog_year": "2026-2027",
+ "programs": 127,
+ "with_closed_list": 111,
+ "started": "2026-11-28T15:46:30Z",
+ "scope": null,
+ "sitemap": {
+  "url": "https://catalog.napavalley.edu/sitemap.xml",
+  "status": 200,
+  "listed": 265,
+  "nested": 0,
+  "program_pages": 182,
+  "refused": null,
+  "errors": null,
+  "failed": null,
+  "challenged": null
+ },
+ "listing_failed": 0,
+ "pages_read": 182,
+ "pages_listed": 182,
+ "pages_answered": 182,
+ "child_pages": 0,
+ "banner_h1": null,
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 94,
+   "hits": 91,
+   "recall": 0.968,
+   "false": 0,
+   "false_off_own": 0,
+   "false_no_claims": 0,
+   "shared": 6,
+   "false_matches": [],
+   "no_claims_matches": [],
+   "searches": true,
+   "catalog_list": null
+  },
+  "programs": 16,
+  "by_result": {
+   "not_matched": 10,
+   "found": 6
+  },
+  "found": 6,
+  "found_active": 6,
+  "found_pages": 6,
+  "found_programs": [
+   {
+    "control_number": "03707",
+    "title": "Administration of Justice",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://catalog.napavalley.edu//areas-of-study/administration-of-justice/administration-of-justice-as/",
+    "h1": "ADMINISTRATION OF JUSTICE: AS DEGREE",
+    "page_title": "Administration of Justice: AS Degree | Napa Valley College",
+    "awards": [
+     "as"
+    ],
+    "filed": true
+   },
+   {
+    "control_number": "11495",
+    "title": "University Preparation in a Specific Major",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "url": "https://catalog.napavalley.edu//areas-of-study/counseling/university-preparation-aa/",
+    "h1": "UNIVERSITY PREPARATION FOR A SPECIFIC MAJOR: ASSOCIATE OF ARTS DEGREE",
+    "page_title": "University Preparation for a Specific Major: Associate of Arts Degree | Napa Valley College",
+    "awards": [
+     "aa"
+    ],
+    "filed": false,
+    "unfiled": "rule B: a course-descriptions or general-education page"
+   },
+   {
+    "control_number": "18047",
+    "title": "EMT-P: Paramedic",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://catalog.napavalley.edu//areas-of-study/emergency-medical-services/emt-p-paramedic-as/",
+    "h1": "EMT-P PARAMEDIC: AS DEGREE",
+    "page_title": "EMT-P Paramedic: AS Degree | Napa Valley College",
+    "awards": [
+     "as"
+    ],
+    "filed": true
+   },
+   {
+    "control_number": "18048",
+    "title": "EMT-P: Paramedic",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://catalog.napavalley.edu//areas-of-study/emergency-medical-services/emt-p-paramedic-certificate-of-achievement/",
+    "h1": "EMT-P PARAMEDIC: CERTIFICATE OF ACHIEVEMENT",
+    "page_title": "EMT-P Paramedic: Certificate of Achievement | Napa Valley College",
+    "awards": [
+     "coa"
+    ],
+    "filed": true
+   },
+   {
+    "control_number": "19120",
+    "title": "Psychology",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "url": "https://catalog.napavalley.edu//areas-of-study/psychology/psychology-aa/",
+    "h1": "PSYCHOLOGY: AA DEGREE",
+    "page_title": "Psychology: AA Degree | Napa Valley College",
+    "awards": [
+     "aa"
+    ],
+    "filed": true
+   },
+   {
+    "control_number": "32306",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "status": "Active",
+    "url": "https://catalog.napavalley.edu//areas-of-study/political-science/political-science-aa-t/",
+    "h1": "POLITICAL SCIENCE: AA-T DEGREE",
+    "page_title": "Political Science: AA-T Degree | Napa Valley College",
+    "awards": [
+     "adt"
+    ],
+    "filed": true
+   }
+  ],
+  "other_programs": [
+   {
+    "control_number": "03686",
+    "title": "Machine Tool Technology",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "03698",
+    "title": "Psychiatric Technician",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "11494",
+    "title": "General Studies",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "12909",
+    "title": "Law Enforcement",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "18382",
+    "title": "CSU General Education",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "18383",
+    "title": "IGETC",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "title_has_no_words"
+   },
+   {
+    "control_number": "19943",
+    "title": "Machine Tool Technology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "19947",
+    "title": "Psychiatric Technician",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "35806",
+    "title": "Elementary Teacher Education",
+    "award": "A.A- T Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "45286",
+    "title": "CalGETC",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "title_has_no_words"
+   }
+  ],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0,
+  "found_read": {
+   "tested": 88,
+   "right": 82,
+   "wrong": 0,
+   "not_found": 6,
+   "recall": 0.932,
+   "wrongs": [],
+   "not_read": 0,
+   "floor": 0.8,
+   "min_tested": 30,
+   "clears": true,
+   "reads": true,
+   "filed": 5,
+   "unfiled": {
+    "rule B": 1
+   }
+  }
+ },
+ "loads": 201,
+ "seconds": 937.5,
+ "found": 108,
+ "by_method": {
+  "catalog_lookup": 5,
+  "no_closed_list": 11,
+  "not_found": 7,
+  "page_claimed": 1,
+  "sitemap_page": 103
+ },
+ "shared_pages": {
+  "https://catalog.napavalley.edu//areas-of-study/mathematics/mathematics-2.0-as-t/": [
+   "30819",
+   "46488"
+  ],
+  "https://catalog.napavalley.edu//areas-of-study/communication-studies/communication-studies-2.0-aa-t/": [
+   "31467",
+   "44508"
+  ],
+  "https://catalog.napavalley.edu//areas-of-study/digital-art-and-design/graphic-design-aa/": [
+   "36312",
+   "44506"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "03685",
+   "title": "Digital Design Graphics Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.napavalley.edu//areas-of-study/digital-design-graphics-technology/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2404,
+     "content": 5905,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Curriculum",
+      49
+     ],
+     [
+      "Contact Information",
+      508
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "03696",
+   "title": "Vocational Nursing",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.napavalley.edu//areas-of-study/nursing/nursing-as/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.667,
+    "body": 0.667,
+    "content": 0.0,
+    "net": 2,
+    "listed": 3,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 5314,
+     "content": 6816,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "19942",
+   "title": "Digital Design Graphics Technology",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.napavalley.edu//areas-of-study/digital-design-graphics-technology/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 0 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2404,
+     "content": 5905,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Curriculum",
+      49
+     ],
+     [
+      "Contact Information",
+      508
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "36505",
+   "title": "Entrepreneurship",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.napavalley.edu//areas-of-study/business-and-entrepreneurship/business-marketing-coa/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.062,
+    "body": 0.062,
+    "content": 0.0,
+    "net": 1,
+    "listed": 16,
+    "why": "coarse net: the page's code tokens name 1 of 16 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2748,
+     "content": 4267,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "36865",
+   "title": "Ethnic Studies",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://catalog.napavalley.edu//areas-of-study/ethnic-studies/ethnic-studies-aa/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.462,
+    "body": 0.462,
+    "content": 0.077,
+    "net": 6,
+    "listed": 13,
+    "why": "coverage 0.46 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 4740,
+     "content": 6215,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "37927",
+   "title": "Mechanical Drafting and Design",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "37928",
+   "title": "Architectural Drafting and Design",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "19946",
+   "title": "Vocational Nursing",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://catalog.napavalley.edu//areas-of-study/nursing/",
+    "https://catalog.napavalley.edu//areas-of-study/nursing/nursing-as/",
+    "https://catalog.napavalley.edu//getting-your-degree/c-id/",
+    "https://catalog.napavalley.edu//getting-your-degree/general-education/"
+   ],
+   "status": "Active"
+  }
+ ],
+ "page_challenged": [],
+ "coverage_bands": {
+  "0.5-0.8": 5,
+  "0.8-1.0": 17,
+  "1.0": 81
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/napa_valley",
+  "kept": 99,
+  "kept_moved": 0,
+  "programs": 8,
+  "list": [
+   {
+    "control_number": "03707",
+    "title": "Administration of Justice",
+    "award": "A.S. Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/administration-of-justice/administration-of-justice-as/",
+    "coverage": 0.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "no_closed_list"
+   },
+   {
+    "control_number": "18047",
+    "title": "EMT-P: Paramedic",
+    "award": "A.S. Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/emergency-medical-services/emt-p-paramedic-as/",
+    "coverage": 0.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "no_closed_list"
+   },
+   {
+    "control_number": "18048",
+    "title": "EMT-P: Paramedic",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://catalog.napavalley.edu//areas-of-study/emergency-medical-services/emt-p-paramedic-certificate-of-achievement/",
+    "coverage": 0.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "no_closed_list"
+   },
+   {
+    "control_number": "19120",
+    "title": "Psychology",
+    "award": "A.A. Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/psychology/psychology-aa/",
+    "coverage": 0.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "no_closed_list"
+   },
+   {
+    "control_number": "19126",
+    "title": "Studio Arts-Painting and Drawing Emphasis",
+    "award": "A.A. Degree",
+    "url": "https://catalog.napavalley.edu//getting-your-degree/c-id/",
+    "coverage": 0.846,
+    "was_url": "https://catalog.napavalley.edu//getting-your-degree/c-id/",
+    "was_coverage": 0.846,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "31158",
+    "title": "911 Dispatcher",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.napavalley.edu//areas-of-study/administration-of-justice/law-enforcement-administration-of-justice-certificate-of-achievement/",
+    "coverage": 0.8,
+    "was_url": "https://catalog.napavalley.edu//areas-of-study/administration-of-justice/law-enforcement-administration-of-justice-certificate-of-achievement/",
+    "was_coverage": 0.8,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "32306",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/political-science/political-science-aa-t/",
+    "coverage": 0.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "no_closed_list"
+   },
+   {
+    "control_number": "36528",
+    "title": "Dance",
+    "award": "A.A. Degree",
+    "url": "https://catalog.napavalley.edu//getting-your-degree/",
+    "coverage": 0.867,
+    "was_url": "https://catalog.napavalley.edu//getting-your-degree/",
+    "was_coverage": 0.867,
+    "was_method": "sitemap_page"
+   }
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [
+   {
+    "control_number": "42609",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/business-and-entrepreneurship/business-administration-as-t-2.0/",
+    "coverage": 0.818,
+    "was_coverage": 0.818
+   }
+  ],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
+ },
+ "fingerprints": {
+  "03666": {
+   "sha256": "df599aae4638bcee398e17e04208d336326ced0d4c4a8d09015e5a1cfd98f032",
+   "url": "https://catalog.napavalley.edu//areas-of-study/vineyard-and-winery-technology/viticulture-as/"
+  },
+  "03670": {
+   "sha256": "c5b9b4ffd1f58c3fdab6943551cb09293de83a74b7355ee5d7d3d018ccbd6f37",
+   "url": "https://catalog.napavalley.edu//areas-of-study/accounting/accounting-as/"
+  },
+  "03687": {
+   "sha256": "65e499d5f7fd4f603179f06c6f23c029621f7b94df78497b5bf2b4e6d4f71f90",
+   "url": "https://catalog.napavalley.edu//areas-of-study/welding-technology/welding-technology-as/"
+  },
+  "03695": {
+   "sha256": "aa1502f4fb3e620a9bf60ae1997d64df6b68c3117b1a7375979c1a8cf4ce644e",
+   "url": "https://catalog.napavalley.edu//areas-of-study/nursing/nursing-as/"
+  },
+  "03697": {
+   "sha256": "5bd119f14936fe8331b686088224d9f6a728da865b2b8b6f77863a2caf51f329",
+   "url": "https://catalog.napavalley.edu//areas-of-study/respiratory-care/respiratory-care-as/"
+  },
+  "03707": {
+   "sha256": "feb8fa5145daa6b3b87352251dcf0b42e7f1d852a88cf66a6bec1ac9c50b5b09",
+   "url": "https://catalog.napavalley.edu//areas-of-study/administration-of-justice/administration-of-justice-as/"
+  },
+  "03708": {
+   "sha256": "2ac26edf5b81e273e8db9f066f1dc3f6932b6d7e167623b73e0d79850ece9556",
+   "url": "https://catalog.napavalley.edu//areas-of-study/child-and-family-studies-and-education/child-and-family-studies-as/"
+  },
+  "11482": {
+   "sha256": "30adb974e02de4ec37d36f47deb573047f42d13a69ed156a829a181848f66a97",
+   "url": "https://catalog.napavalley.edu//areas-of-study/vineyard-and-winery-technology/winemaking-as/"
+  },
+  "11483": {
+   "sha256": "e044b895e5c85b53b0e72e47af27c42774fd97da10c6f3fd7ce8eddb10bd7d19",
+   "url": "https://catalog.napavalley.edu//areas-of-study/vineyard-and-winery-technology/wine-marketing-and-sales-as/"
+  },
+  "12318": {
+   "sha256": "8c9a479d7eb8f3c6250f39de7574262198f71026d044b549f507815659da7ce6",
+   "url": "https://catalog.napavalley.edu//areas-of-study/human-services/human-services-as/"
+  },
+  "18047": {
+   "sha256": "84e35bb733c7e5b1ab0689f8a976eb47b6e021eaf51cfdc986da3fe61c398b72",
+   "url": "https://catalog.napavalley.edu//areas-of-study/emergency-medical-services/emt-p-paramedic-as/"
+  },
+  "18048": {
+   "sha256": "c39c66422515cb19944692a45493b05b95ca065ae12a80823284892c2cf3d05b",
+   "url": "https://catalog.napavalley.edu//areas-of-study/emergency-medical-services/emt-p-paramedic-certificate-of-achievement/"
+  },
+  "19036": {
+   "sha256": "3ffe52839485aa9731665fbb22fb792f352e693cdb4845914b957a937b6b03da",
+   "url": "https://catalog.napavalley.edu//areas-of-study/hospitality-culinary-and-tourism-management/hospitality-management-certificate-of-achievement/"
+  },
+  "19114": {
+   "sha256": "e4e08ae4db3a8644f6d50182b03a758e21e271c9a64836766d849e36d34f93ee",
+   "url": "https://catalog.napavalley.edu//areas-of-study/music/music-instrumental-aa/"
+  },
+  "19115": {
+   "sha256": "1c1197dd0320e7f1e7229727ce1d04e7c526e91fe3ab59e8ad5b59d957bd67e2",
+   "url": "https://catalog.napavalley.edu//areas-of-study/music/music-vocal-aa/"
+  },
+  "19117": {
+   "sha256": "4b9e83d63c02a487ab5ce266201eb6fa29961e4ca9712328bf8682c89347f984",
+   "url": "https://catalog.napavalley.edu//areas-of-study/music/musical-theater-aa/"
+  },
+  "19120": {
+   "sha256": "8d14804316a244f59c92b19039c400367aa5e190d423ffacb26fc3c2427da2bd",
+   "url": "https://catalog.napavalley.edu//areas-of-study/psychology/psychology-aa/"
+  },
+  "19123": {
+   "sha256": "696cada86a622ddb1d99efd12fa218a2c64e1369b8abd681647e09bacb8b38cf",
+   "url": "https://catalog.napavalley.edu//areas-of-study/spanish/spanish-for-non-heritage-speakers-aa/"
+  },
+  "19125": {
+   "sha256": "9ed756f1863d120815e7e331674c88047ee7974b3ba284390b970e04a5a0380f",
+   "url": "https://catalog.napavalley.edu//areas-of-study/spanish/spanish-for-heritage-speakers-aa/"
+  },
+  "19126": {
+   "sha256": "28691407516b4b7d568c1aa470d551dbde1a7649e4ab41bb593cb82a32fd9627",
+   "url": "https://catalog.napavalley.edu//getting-your-degree/c-id/"
+  },
+  "19127": {
+   "sha256": "995e7b4fc5880d2c328ec518ab03eac1d76d9a12526839099a97a3a2a7006270",
+   "url": "https://catalog.napavalley.edu//areas-of-study/arts/studio-arts-aa/"
+  },
+  "19128": {
+   "sha256": "0af5509600101e176668a8235e3b981ab181f9a0558c62db4742447410bb2571",
+   "url": "https://catalog.napavalley.edu//areas-of-study/theater-arts/theater-arts-acting-aa/"
+  },
+  "19129": {
+   "sha256": "a8fc6e958ba59869f2610e9910a7189f1c5948c9234f361e42e31e893d233ad6",
+   "url": "https://catalog.napavalley.edu//areas-of-study/theater-arts/theater-arts-technical-theater-aa/"
+  },
+  "19937": {
+   "sha256": "1b0464be5b3ad46cd01fd8c9a345a50bd5c216b4eb230e2dc7df249e24785ada",
+   "url": "https://catalog.napavalley.edu//areas-of-study/vineyard-and-winery-technology/viticulture-and-enology-certificate-of-achievement/"
+  },
+  "19938": {
+   "sha256": "154c543decb6f74a5621c9b68e28168f8f2cfae906e7572687ca328326fdd57d",
+   "url": "https://catalog.napavalley.edu//areas-of-study/vineyard-and-winery-technology/wine-marketing-and-sales-certificate-of-achievement/"
+  },
+  "19939": {
+   "sha256": "9b147d62355f69c30470b13a8294f6ff3bc62195b9eacdae35c79ca856790019",
+   "url": "https://catalog.napavalley.edu//areas-of-study/accounting/accounting-bookkeeping-certificate-of-achievement/"
+  },
+  "19944": {
+   "sha256": "4544a3f7cbe425e4a88279717c6e5552af66d9d2035a2e7b2672e5f9bec0d4b8",
+   "url": "https://catalog.napavalley.edu//areas-of-study/welding-technology/welding-technology-certificate-of-achievement/"
+  },
+  "19948": {
+   "sha256": "217774a4e58f77a208ac5e5847be8034fcfc8e97ac2895901af5db6f1a54aa24",
+   "url": "https://catalog.napavalley.edu//areas-of-study/child-and-family-studies-and-education/child-and-family-studies-certificate-of-achievement/"
+  },
+  "19949": {
+   "sha256": "8d04094b09b883164295825c6507736107848a3f52109ca88a89b1a5dfb0b507",
+   "url": "https://catalog.napavalley.edu//areas-of-study/human-services/human-services-certificate-of-achievement/"
+  },
+  "22827": {
+   "sha256": "74431420998786e80034956b4932824879bd2b89ad7f780d04ba10d5c1e4b930",
+   "url": "https://catalog.napavalley.edu//areas-of-study/art-history/art-history-aa/"
+  },
+  "30819": {
+   "sha256": "a63958a2ea9770a153c133fa5037f91d258931b52ddef2530289ea1c2a5e03c9",
+   "url": "https://catalog.napavalley.edu//areas-of-study/mathematics/mathematics-2.0-as-t/"
+  },
+  "31019": {
+   "sha256": "4dc71738bff52992bf42a5a1c5e48d71ca7469399c18b52058fe8cf95287471c",
+   "url": "https://catalog.napavalley.edu//areas-of-study/child-and-family-studies-and-education/early-childhood-education-as-t/"
+  },
+  "31158": {
+   "sha256": "348699425d6d1baeb7442d1549b138b1d37829e4c2dac51d0c650bb959a28330",
+   "url": "https://catalog.napavalley.edu//areas-of-study/administration-of-justice/law-enforcement-administration-of-justice-certificate-of-achievement/"
+  },
+  "31467": {
+   "sha256": "8e73719d45e0a2e7a8f10c9350581e623be0b938228d273abd4378463e930ccd",
+   "url": "https://catalog.napavalley.edu//areas-of-study/communication-studies/communication-studies-2.0-aa-t/"
+  },
+  "31468": {
+   "sha256": "1a9d5551e9b98a88a6fd37aef14537b4c0534bf2a7722041f198ea22eff7227f",
+   "url": "https://catalog.napavalley.edu//areas-of-study/sociology/sociology-aa-t/"
+  },
+  "31676": {
+   "sha256": "dfdc93119ff48b710d12b11d798475a9baaec0dd9fa8cd896ae8bf591144e27e",
+   "url": "https://catalog.napavalley.edu//areas-of-study/art-history/art-history-aa-t/"
+  },
+  "31686": {
+   "sha256": "4b12b08782656a8b4598abc2c398faab707eb2134a6db80824f4fac72de799da",
+   "url": "https://catalog.napavalley.edu//areas-of-study/arts/studio-arts-aa-t/"
+  },
+  "31745": {
+   "sha256": "c550996f485e5a39ca2e5cddcf756f616c3446e621ea8279852481f622b35dab",
+   "url": "https://catalog.napavalley.edu//areas-of-study/kinesiology/kinesiology-aa-t/"
+  },
+  "32306": {
+   "sha256": "09de3014b4a1fa486efc1f0e48701241c8df78261935af0ae93b01e765884bba",
+   "url": "https://catalog.napavalley.edu//areas-of-study/political-science/political-science-aa-t/"
+  },
+  "32313": {
+   "sha256": "b7cc8c8c26731df3f31393cdd3750e5b4b98f6dfbce89031b261403a95c40837",
+   "url": "https://catalog.napavalley.edu//areas-of-study/administration-of-justice/administration-of-justice-as-t/"
+  },
+  "32314": {
+   "sha256": "4a5911f994c7c68d82f16022ae96cd7edd94031cb21797b9744f27bc6fcb1eaf",
+   "url": "https://catalog.napavalley.edu//areas-of-study/psychology/psychology-aa-t/"
+  },
+  "32315": {
+   "sha256": "4b65c4bd5d8f5966a6e797ec75508f1c1f3fde88f65238d7c03cd9c8da6e30f8",
+   "url": "https://catalog.napavalley.edu//areas-of-study/music/music-aa-t/"
+  },
+  "32329": {
+   "sha256": "4142bce694ae633707ad9605453e479e75b203401338f8a53177b9894472741e",
+   "url": "https://catalog.napavalley.edu//areas-of-study/spanish/spanish-aa-t/"
+  },
+  "32351": {
+   "sha256": "bc6dc3a267ed04fb874758ecfd290ef490507c80bc00cd1cfe10bbfbc26600d1",
+   "url": "https://catalog.napavalley.edu//areas-of-study/anthropology/anthropology-aa-t/"
+  },
+  "32409": {
+   "sha256": "1628aae88de4b530d0ebfcf4c1f6e5dc308f40de9e2698c37b4315fd899e6a87",
+   "url": "https://catalog.napavalley.edu//areas-of-study/english/english-aa-t/"
+  },
+  "32822": {
+   "sha256": "0759dd2de23bbebeafeeffcaacfd08f1a38c4ec5103bd026703b48a567ff0e1f",
+   "url": "https://catalog.napavalley.edu//areas-of-study/business-and-entrepreneurship/business-administration-as/"
+  },
+  "32965": {
+   "sha256": "02224b08e96f4d05ba0dd785efba9b511f5e41e02ac90a78dc7ae03e71973576",
+   "url": "https://catalog.napavalley.edu//areas-of-study/lgbt-education/lgbt-studies-certificate-of-achievement/"
+  },
+  "33287": {
+   "sha256": "41acfee427537573e9845d42adef25a0395300a6a37e37417df54d75bc7a45e9",
+   "url": "https://catalog.napavalley.edu//areas-of-study/theater-arts/theater-arts-aa-t/"
+  },
+  "33722": {
+   "sha256": "9a99cf732a36b3d5ed2edbbd60c2681065aa79bdcc84a304508faa78dc576a17",
+   "url": "https://catalog.napavalley.edu//areas-of-study/history/history-aa-t/"
+  },
+  "35795": {
+   "sha256": "979dd02838c646c4f07b36a507a791acf5a654e07bcb9aed9e89c4ced7c9012b",
+   "url": "https://catalog.napavalley.edu//areas-of-study/physics/physics-2.0-as-t/"
+  },
+  "36251": {
+   "sha256": "c4da9c70d5d29bb4f43cffe166ffa9dd762529f7c33ef42a6602136b392bdaf9",
+   "url": "https://catalog.napavalley.edu//areas-of-study/biology/natural-science-as/"
+  },
+  "36312": {
+   "sha256": "99a23398d8ae98e3a793550a2ad362f5b22f56b870fce3766c65f5aa3e8b272f",
+   "url": "https://catalog.napavalley.edu//areas-of-study/digital-art-and-design/graphic-design-aa/"
+  },
+  "36313": {
+   "sha256": "428fd8f59c9129af4debe53fdc8bdfd42e7fcf9b77f20e4e662f5f4f3da14b6b",
+   "url": "https://catalog.napavalley.edu//areas-of-study/business-and-entrepreneurship/entrepreneurship-as/"
+  },
+  "36453": {
+   "sha256": "9bb30589cb16c1b2394fd70e1f71117932a343ad3a84776c391dfbc2a4feaca0",
+   "url": "https://catalog.napavalley.edu//areas-of-study/biology/pre-health-science-as/"
+  },
+  "36501": {
+   "sha256": "51707a6a76325640a84ffcb7438f3ddd836e4273bbd6fb73bc9f305aad2adee0",
+   "url": "https://catalog.napavalley.edu//areas-of-study/welding-technology/combination-welding-technician-certificate-of-achievement/"
+  },
+  "36504": {
+   "sha256": "a0c682ea640eb6830faf612981adf02c5a274badc29f53b94e4483c7925a85c4",
+   "url": "https://catalog.napavalley.edu//areas-of-study/addiction-studies/addiction-studies-as/"
+  },
+  "36507": {
+   "sha256": "076b1a757290cad7da9ff7633cd174e02e22d05152f615ad551556c84f38cc18",
+   "url": "https://catalog.napavalley.edu//areas-of-study/welding-technology/welding-technician-basic-certificate-of-achievement/"
+  },
+  "36509": {
+   "sha256": "31a401e209a118ac7961fe5a6947701432bb66ee76dc8f656008bf9dc80df9a8",
+   "url": "https://catalog.napavalley.edu//areas-of-study/child-and-family-studies-and-education/early-childhood-intervention-certificate-of-achievement/"
+  },
+  "36528": {
+   "sha256": "06b008141df7518699c9dca9d86108cba80a340a20144ba71ff5a8ff1eeb4862",
+   "url": "https://catalog.napavalley.edu//getting-your-degree/"
+  },
+  "36866": {
+   "sha256": "3dd64229cc6d6544fa5561e9e1598779ef84adee87b5eabcc4faa8846513ab48",
+   "url": "https://catalog.napavalley.edu//areas-of-study/addiction-studies/addiction-studies-certificate-of-achievement/"
+  },
+  "36867": {
+   "sha256": "b446965841d73696230e2c9e57f47f13f9f09d8f8b204453c872b1e4b5a79b8b",
+   "url": "https://catalog.napavalley.edu//areas-of-study/business-and-entrepreneurship/content-marketing-certificate-of-achievement/"
+  },
+  "37330": {
+   "sha256": "182c375f98a7c30fc8eb8b6558bf575a2334cf7f7bd931e85f49ea7292f57f5f",
+   "url": "https://catalog.napavalley.edu//areas-of-study/child-and-family-studies-and-education/child-and-family-studies-associate-teacher-certificate-of-achievement/"
+  },
+  "37331": {
+   "sha256": "18076888b470998af5415e6406f187c12213411ba61d00b0e189f256ed284d9c",
+   "url": "https://catalog.napavalley.edu//areas-of-study/child-and-family-studies-and-education/child-and-family-studies-associate-teacher-with-administration-certificate-of-achievement/"
+  },
+  "37677": {
+   "sha256": "0f49589dd4a4917b735524f1017ec2ca32c3cb9dd47fc61c313dcd2e59103d51",
+   "url": "https://catalog.napavalley.edu//areas-of-study/ethnic-studies/social-justice-studies-ethnic-studies-aa-t/"
+  },
+  "37678": {
+   "sha256": "4bfd0385c63a22f83fd27a0335c2c4ed9af53b7513e06d4895a0fa4f28bd0489",
+   "url": "https://catalog.napavalley.edu//areas-of-study/lgbt-education/lgbt-education-as/"
+  },
+  "38071": {
+   "sha256": "7eb49a1289650345f1b7d8642ec5ae0542374efa101b431da436f293f107b363",
+   "url": "https://catalog.napavalley.edu//areas-of-study/hospitality-culinary-and-tourism-management/hospitality-management-as-t/"
+  },
+  "38383": {
+   "sha256": "84fcdff57523ea5ec12f95c11d3106b4206e83adf9db351b93835077947d2f1a",
+   "url": "https://catalog.napavalley.edu//areas-of-study/lgbt-education/lgbtq-community-awareness-noncredit-certificate-of-completion/"
+  },
+  "39586": {
+   "sha256": "22b4c8bdb9cad7799029c010dba11f5edef5159a08eebcac9fb3790017aeef8c",
+   "url": "https://catalog.napavalley.edu//areas-of-study/lgbt-education/lgbt-education-educators-certificate-of-achievement/"
+  },
+  "39587": {
+   "sha256": "bd1f67b1c8f55a7285d9adffa9aa719b86308d2a542c9d90fce926d22fe46b64",
+   "url": "https://catalog.napavalley.edu//areas-of-study/lgbt-education/lgbt-education-health-care-certificate-of-achievement/"
+  },
+  "40867": {
+   "sha256": "2d8bb276c2367428257a50f76d0b43a6ac01b4caf8a55d4decbf3e130f774505",
+   "url": "https://catalog.napavalley.edu//areas-of-study/film-studies/film-television-and-electronic-media-as-t/"
+  },
+  "40869": {
+   "sha256": "fd9fa2ef55c5d265c4f5aaa6772fc14f10f6a1ef48e9e466b03bc0b732e19529",
+   "url": "https://catalog.napavalley.edu//areas-of-study/human-services/social-work-and-human-services-aa-t/"
+  },
+  "41177": {
+   "sha256": "4de471c7587c3ad37a0f161fe25ab958d27728a7de22644a5b1f4c2f145c4819",
+   "url": "https://catalog.napavalley.edu//areas-of-study/english-second-language/esl-low-advanced-academic-certificate-of-competency/"
+  },
+  "41178": {
+   "sha256": "1921be52eb9e1374d07a9325ea675981600a3ffe75f1d6c4aead1363ec517bc1",
+   "url": "https://catalog.napavalley.edu//areas-of-study/english-second-language/esl-high-intermediate-academic-certificate-of-competency/"
+  },
+  "41179": {
+   "sha256": "a5f52f8f86d57f1538a9c2052e6b27797b90e9781787e384f6193b0129dd789f",
+   "url": "https://catalog.napavalley.edu//areas-of-study/english-second-language/esl-low-intermediate-academic-certificate-of-competency/"
+  },
+  "41180": {
+   "sha256": "e8cda31238f4974d85b14ef1c36268a4e0cf8d28ebed6edecbeeb55f94790354",
+   "url": "https://catalog.napavalley.edu//areas-of-study/english-second-language/esl-pre-intermediate-academic-certificate-of-competency/"
+  },
+  "41366": {
+   "sha256": "33106bda3c912f0e491db1ca64d049e9bb87dbeec15128d5b2f4efb55f8dfb6a",
+   "url": "https://catalog.napavalley.edu//areas-of-study/hospitality-culinary-and-tourism-management/culinary-arts-professional-aa/"
+  },
+  "41498": {
+   "sha256": "5f91a33276d4233243399e9156967aa948f293a75e80235776c1a2472c29c5af",
+   "url": "https://catalog.napavalley.edu//areas-of-study/computer-science/computer-science-as-t/"
+  },
+  "42588": {
+   "sha256": "fdbc6b135f39fc21c507d69ebb29cf285ffe9c911430215e6aca5385b3a1cd9e",
+   "url": "https://catalog.napavalley.edu//areas-of-study/hospitality-culinary-and-tourism-management/culinary-arts-advanced-certificate-of-achievement/"
+  },
+  "42589": {
+   "sha256": "54899af1e4ac4533a55eb2a7b8159563e1ad26c57e9d9d8f0761879a377c7e48",
+   "url": "https://catalog.napavalley.edu//areas-of-study/vineyard-and-winery-technology/wine-production-coa/"
+  },
+  "42590": {
+   "sha256": "878b7ff6c192fd79106a02a56eb8b48c1cfbed099b534378aa89425133eb03c9",
+   "url": "https://catalog.napavalley.edu//areas-of-study/administration-of-justice/law-enforcement-community-policing-coa/"
+  },
+  "42591": {
+   "sha256": "c2cfc70a300f93420b0489528960adf1913ffa66a0a42eaaf594a5e6462ba006",
+   "url": "https://catalog.napavalley.edu//areas-of-study/administration-of-justice/law-enforcement-juvenile-justice-coa/"
+  },
+  "42592": {
+   "sha256": "a8b72232d9aa444ce581ef0804d3b09d5f81e7b23ecf6208b2a64277af0561dc",
+   "url": "https://catalog.napavalley.edu//areas-of-study/administration-of-justice/law-enforcement-mental-health-addiction-coa/"
+  },
+  "42609": {
+   "sha256": "e956f4f226a3e092d63df0401b0aac8e8c7df9dca9ef0852c64ee00cbaa564b7",
+   "url": "https://catalog.napavalley.edu//areas-of-study/business-and-entrepreneurship/business-administration-as-t-2.0/"
+  },
+  "43353": {
+   "sha256": "1d0ad88127b2b8cb01c216fd64e6376e4d863dcf9ce6228902fc2e7d1e449d78",
+   "url": "https://catalog.napavalley.edu//areas-of-study/administration-of-justice/law-enforcement-crime-scene-investigation-coa/"
+  },
+  "43354": {
+   "sha256": "31cd15972daeb4ece7b1f0c9ca7b1e36223114bde91eb60a0349b3c516b98054",
+   "url": "https://catalog.napavalley.edu//areas-of-study/administration-of-justice/law-enforcement-career-preparation-coa/"
+  },
+  "43712": {
+   "sha256": "a5e65b9be790878b3180675ab71f26cf438e204d4097b6f9da127d9c46ea72b3",
+   "url": "https://catalog.napavalley.edu//areas-of-study/environmental-sciences/environmental-science-as-t/"
+  },
+  "43716": {
+   "sha256": "939b537c4216f3a57cbcb37d2b41b7dad928c8bf66ba12684a43038d1c52be3d",
+   "url": "https://catalog.napavalley.edu//areas-of-study/geography/geographic-information-systems-coa/"
+  },
+  "43889": {
+   "sha256": "2831de09761f5c43032afb373197c72cc98712555266adb89a049ce9ef8ace8f",
+   "url": "https://catalog.napavalley.edu//areas-of-study/sociology/sjs-gender-studies-aa-t/"
+  },
+  "43939": {
+   "sha256": "789f98228e97c5a5ad3b2d498eed2dd45894fc8e090753ae385b9331b48e984a",
+   "url": "https://catalog.napavalley.edu//areas-of-study/photography/photography-aa/"
+  },
+  "43940": {
+   "sha256": "a7d411581ae634448dee4257d569afa377a11c20b58c3a0c5a9b147a1595a7aa",
+   "url": "https://catalog.napavalley.edu//areas-of-study/photography/photography-coa/"
+  },
+  "44506": {
+   "sha256": "99a23398d8ae98e3a793550a2ad362f5b22f56b870fce3766c65f5aa3e8b272f",
+   "url": "https://catalog.napavalley.edu//areas-of-study/digital-art-and-design/graphic-design-aa/"
+  },
+  "44507": {
+   "sha256": "df58d396df175c4b1beae99c4b37e7bd1d6e85427754a114aeaf2c5910264d59",
+   "url": "https://catalog.napavalley.edu//areas-of-study/digital-art-and-design/digital-art-aa/"
+  },
+  "44508": {
+   "sha256": "8e73719d45e0a2e7a8f10c9350581e623be0b938228d273abd4378463e930ccd",
+   "url": "https://catalog.napavalley.edu//areas-of-study/communication-studies/communication-studies-2.0-aa-t/"
+  },
+  "44535": {
+   "sha256": "fcc326ec110d58e253b17df976880abec82d4fd6944318084af1face3bd64bfc",
+   "url": "https://catalog.napavalley.edu//areas-of-study/economics/economics-aa-t/"
+  },
+  "44536": {
+   "sha256": "53fd4048e54a432d18745bab9f2bc214e977f8b0ac2897d5994d94f4bb332a28",
+   "url": "https://catalog.napavalley.edu//areas-of-study/sociology/sjs-lgbtq-studies-aa-t/"
+  },
+  "45173": {
+   "sha256": "0d3a9c2004f7426dc32c710aa81833bab88dc09f2a919203b8bea48c080b1755",
+   "url": "https://catalog.napavalley.edu//areas-of-study/music/music-mariachi-coa/"
+  },
+  "45176": {
+   "sha256": "642990660f2326a2b75773dabbd637964fce8462e487c430caea048567dc11d6",
+   "url": "https://catalog.napavalley.edu//areas-of-study/theater-arts/theater-arts-acting-coa/"
+  },
+  "45206": {
+   "sha256": "688f5678f433d0c3dbe258bdf86dc25a362a929a161fab25f1bf7437570f3139",
+   "url": "https://catalog.napavalley.edu//areas-of-study/communication-studies/career-communications-coa/"
+  },
+  "45337": {
+   "sha256": "4e4b2f4a9d12764c67fd6104387b5d1a71df44fd43fc1a50fc36b1f0c01fad44",
+   "url": "https://catalog.napavalley.edu//areas-of-study/non-credit/community-health-worker-certificate-of-completion/"
+  },
+  "45338": {
+   "sha256": "da0e5a00324cd9b37c2a6dffba974d73debff53947435ed267a51e83337b53bc",
+   "url": "https://catalog.napavalley.edu//areas-of-study/non-credit/fire-resilient-landscaping-certificate-of-completion/"
+  },
+  "45339": {
+   "sha256": "183af45617cc39c7e6beb273105832ffac26fd6b0df84cf1e8a55f8b6d010c43",
+   "url": "https://catalog.napavalley.edu//areas-of-study/non-credit/21st-century-employability-skills-certificate-of-completion/"
+  },
+  "45391": {
+   "sha256": "46ccd00b2b0bfa19c08be5b8c559eb93e5e5e46b1589bab4fa73c250dc78ac14",
+   "url": "https://catalog.napavalley.edu//areas-of-study/business-and-entrepreneurship/business-marketing-coa/"
+  },
+  "45487": {
+   "sha256": "b4a3ae97704d6b2a52f991b281878b4156b38b771f1e541b85d0b781423cb896",
+   "url": "https://catalog.napavalley.edu//areas-of-study/child-and-family-studies-and-education/cfs-trauma-informed-early-care-and-education-coa/"
+  },
+  "45798": {
+   "sha256": "768fcb7f50ac9da791a2d26e69f40967938afc1a10cfd94b3f1c7aa9b1fda169",
+   "url": "https://catalog.napavalley.edu//areas-of-study/business-and-entrepreneurship/business-start-up-certificate-of-achievement/"
+  },
+  "46378": {
+   "sha256": "c311fbbbd85925a195d9da87796301daf3e27e67ce103ac08fb999bb4b1d7718",
+   "url": "https://catalog.napavalley.edu//areas-of-study/machine-tool-technology/machine-tool-technology-one-year-coa/"
+  },
+  "46379": {
+   "sha256": "892b8362501156638143a5d9e29f12892661f0d45e247acef806dc9c3eee5798",
+   "url": "https://catalog.napavalley.edu//areas-of-study/welding-technology/welders-assistant-coa/"
+  },
+  "46488": {
+   "sha256": "a63958a2ea9770a153c133fa5037f91d258931b52ddef2530289ea1c2a5e03c9",
+   "url": "https://catalog.napavalley.edu//areas-of-study/mathematics/mathematics-2.0-as-t/"
+  },
+  "46582": {
+   "sha256": "81b503aba2271417b9fd00469b5d253758dec311a44215d4674c71da863954ae",
+   "url": "https://catalog.napavalley.edu//areas-of-study/respiratory-care/respiratory-care-bs/"
+  }
+ },
+ "run": "46161456023"
+}
