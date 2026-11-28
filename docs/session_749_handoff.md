@@ -164,3 +164,20 @@ paid reads, rereads, loads and `.apply`, and holds every Supabase call.
   Migrate 46124310448 green at 08:08Z; all nine carry their gap live. Records collected: 20.
 - 08:09Z: s748r2's reader (Sonnet): APPLY (each kind read from the record's own notes; MINOR: 33639's words ask a reviewer
   to confirm the degree total of 60). Clean md5 pre-read 4 of 4. The apply pushed on `claude/s748-apply`.
+- 08:11Z: `keys` stop 4, its last (`da2cc599`): Cosumnes River's local pattern found (PDF pages 84 to 86, seven area
+  minimums, 24 in all); a `set` step drafted on `claude/s748-keys-crc` (`6a4fe94a`; reaches 04600, 12792, 45317),
+  parked because `tests/program_requirements_reconcile_test.py` pins Cosumnes River free of a `ge_units` set step. The
+  census reads college-named gap files (`50bedbf7`: 3,927 becomes 3,849, 78 college-named) and Lassen's guard
+  `only_cal_getc` (`b79945f3`, four lines of shared code), both to a Fable 5.2 second reader. The s748k1 test now
+  fails on four mutations.
+- 08:14Z: s748r2's migrate green; Sierra 33639, 33646, 36718 and 39209 carry their gaps live. Records collected: 24.
+- 08:16Z: `gaps`' second report (`dda6c4bf`): Mt. San Antonio's eight read unequal on record and live row while
+  today's scorer passes them; a free reconcile dispatched on `claude/s748-gaps-mtsac`. No pin binds at either college
+  (department headings); Allan Hancock's 27 found pages wait on the found-page reader change ($2.70).
+- 08:17Z: `post`'s report: San Bernardino Valley 31858 passes (28 of 28 placed, $0.09), its load dispatched; Orange
+  Coast 08626 passes and 08663 passes the live test ($0.13), the reread force 46122364368 dispatched. San Jose City
+  22225 does not pass (2 of 3 placed, a generic heading; the state names two courses under one code, "RealEstateRE"):
+  held for a person on `claude/s748-paid-sjcc`, no dispatch ($0.06). College of the Canyons 37868's paid read
+  46121986278 failed and is not rerun unexplained. Lassen's capture differs from its recall: 18752 and 18756 pass,
+  18758 and 18848 still read incomplete, 18754's window moved; `post` keeps the two that pass and restores the rest.
+  `post` goes on to Sierra 21525, Alameda and Mt. San Antonio (live read 08:17:06Z, 385 rows, six checked).
