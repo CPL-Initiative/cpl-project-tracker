@@ -1,7 +1,7 @@
 {
  "college": "Fullerton College",
- "run": "44762380826",
- "written": "2026-11-21T07:35:50Z",
+ "run": "46010143379",
+ "written": "2026-11-27T14:25:02Z",
  "rule": "a checked live row restores, or is held where the base files none; then own program (a heading sharing a title word, or a generic heading on a page the address or the capture shows is the program's own; then heading_award_check), where a failing re-read is restored, or held where the base files none or the live row already holds this run; then a live row holding this run keeps its record and names no dispatch; then a supplied live run other than the filed record's is held for a person; then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one (d-reread-keep-the-better-s683; COBIx on #3544 and #3547)",
  "checked": [],
  "live_runs": {
@@ -39,6 +39,7 @@
   "03873": "38675136988",
   "03874": "38675136988",
   "03875": "38675136988",
+  "03876": "44762380826",
   "03880": "38675136988",
   "03881": "38675136988",
   "03882": "38675136988",
@@ -138,6 +139,7 @@
   "31522": "38675136988",
   "31523": "38675136988",
   "31525": "38675136988",
+  "31527": "44762380826",
   "31529": "38675136988",
   "31530": "38675136988",
   "31580": "38675136988",
@@ -147,7 +149,7 @@
   "33126": "38675136988",
   "33680": "38675136988",
   "33890": "38675136988",
-  "35174": "38670930336",
+  "35174": "45968499315",
   "35804": "38675136988",
   "35894": "38675136988",
   "36357": "38675136988",
@@ -169,7 +171,7 @@
   "36787": "38675136988",
   "36790": "38675136988",
   "36796": "38675136988",
-  "36798": "38675136988",
+  "36798": "45968499315",
   "36819": "38675136988",
   "36863": "38675136988",
   "36883": "38675136988",
@@ -256,6 +258,7 @@
   "42368": "38675136988",
   "42394": "38675136988",
   "42413": "38675136988",
+  "42418": "44762380826",
   "42468": "38675136988",
   "42486": "38675136988",
   "42489": "38675136988",
@@ -317,39 +320,44 @@
   "46147": "38675136988",
   "46182": "38675136988"
  },
- "live_read_at": "2026-11-21T07:34:13Z",
+ "live_read_at": "2026-11-27T13:44:16Z",
  "dispatch": [
   {
    "workflow": "program-requirements-college.yml",
-   "ref": "claude/s691-reread",
+   "ref": "claude/s742-piles-fullerton",
    "inputs": {
     "college": "Fullerton College",
-    "step": "load"
+    "step": "reread",
+    "force": "46010143379"
    },
-   "posts": 3,
+   "posts": 2,
    "control_numbers": [
-    "03876",
-    "31527",
-    "42418"
+    "33680",
+    "42143"
    ],
-   "needs_load": [
-    "03876",
-    "31527",
-    "42418"
+   "not_live_at_run": [
+    "33680",
+    "42143"
    ]
   }
  ],
- "carried_runs": {},
+ "carried_runs": {
+  "44762380826": [
+   "03876",
+   "31527",
+   "42418"
+  ]
+ },
  "counts": {
-  "reread": 3,
-  "kept": 0,
+  "reread": 2,
+  "kept": 2,
   "restored": 0,
   "restored_filed_pass": 0,
   "restored_not_own_program": 0,
   "held_for_person": 0,
   "held_checked": 0,
   "held_live_run": 0,
-  "new": 3,
+  "new": 0,
   "already_live": 0,
   "kept_on_own_page": 0,
   "plain_reread_would_lose_pass": 0,
@@ -451,6 +459,100 @@
      "live_run": null,
      "outcome": "new",
      "why": "no filed record on origin/main"
+    }
+   ]
+  },
+  "46010143379": {
+   "base": "HEAD~1",
+   "base_sha": "3502e99c851d9bb92e10959fd84c0aa12566dc24",
+   "decided": "2026-11-27T14:25:02Z",
+   "counts": {
+    "reread": 2,
+    "kept": 2,
+    "restored": 0,
+    "restored_filed_pass": 0,
+    "restored_not_own_program": 0,
+    "held_for_person": 0,
+    "held_checked": 0,
+    "held_live_run": 0,
+    "new": 0,
+    "already_live": 0,
+    "kept_on_own_page": 0,
+    "plain_reread_would_lose_pass": 0,
+    "kept_by_extraction_guard": 0,
+    "run_places_none_after": 0,
+    "folder_places_none_after": 2,
+    "records_after": 316,
+    "dropped_by_filing": 0,
+    "dropped_filed_passes": 0
+   },
+   "kept_by_extraction_guard": {},
+   "next_read_pays": [],
+   "dropped_by_filing": [],
+   "programs": [
+    {
+     "control_number": "33680",
+     "title": "Anthropology",
+     "award": "A.A- T Degree",
+     "source_url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/anthropology/anthropology-associate-arts-degree-transfer/",
+     "filed_source_url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/anthropology/anthropology-associate-arts-degree-transfer/",
+     "filed_run": "38675136988",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.971,
+      "placed": 33,
+      "listed": 34,
+      "arithmetic": "equal"
+     },
+     "live_run": "38675136988",
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.971,
+      "placed": 33,
+      "listed": 34,
+      "arithmetic": "unequal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "42143",
+     "title": "Art History",
+     "award": "A.A. Degree",
+     "source_url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/art/art-history-associate-arts-degree/",
+     "filed_source_url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/art/art-history-associate-arts-degree/",
+     "filed_run": "38675136988",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 16,
+      "listed": 16,
+      "arithmetic": "equal"
+     },
+     "live_run": "38675136988",
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 16,
+      "listed": 16,
+      "arithmetic": "unequal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
     }
    ]
   }

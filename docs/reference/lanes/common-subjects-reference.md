@@ -1,7 +1,7 @@
 ---
 title: "Common Subjects Reference (CSR) — one Common SUBJ per MQ discipline — lane state"
 created: 2026-10-19
-updated: 2026-11-24
+updated: 2026-11-28
 tags: [reference, roadmap-lane, csr, commons, subjects, mq-disciplines]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -76,18 +76,9 @@ experience), never its discipline ([`methodology-top-is-a-last-in-line-signal`](
 `r-mq-view-more-than-codes-sam-2026-11-23`: the MQ view joins disciplines, codes and decisions. **DECIDED**
 `d-next-cip-for-mq-type-sam-2026-11-23`.
 
-**Correction:** commit `8afaa532` says "LING now calls LING"; it does not. The statewide calls still read BUSI for
-ACCT, ACCTG, ACC and ACTG (1,012 courses), ANTH for LING, CULN for HOSP, REAL, HUMA or HIST for the religion codes,
-JOUR for MCOM and AVIA for AERO: the model votes from where the M-IDs sit. They move at the re-point re-mint.
+**Correction** (commit `8afaa532`, the statewide calls until the re-point re-mint): verbatim in [`roadmap_archive_8`](../../roadmap_archive_8.md), *(S745 checkpoint)*.
 
-**LIVE: the Progress view (S425, 2026-10-19).** `#canonical-subj4` opens on Progress, the Commons' dash
-for this reference, drawn by the shared `commons_progress.js` from `canonical_subj4.js`'s definitions: the
-run status from `kb/status/subjects.json`, the headline pair, five milestones with You are here, a card for
-each of Sam's eight steps (consolidated to eight: the MQ list, the C-ID and CCN tables, the authority rule,
-the identity codes, one code one MQ discipline, the cross-listings, confirmation, the scan), the procedures
-under the cards (`kb/csr_procedures.json`) and the findings waiting on a judgment. A count opens the List on
-its filter; `#canonical-subj4/<filter>`, `/progress`, `/list` and `/check` route from the address (the Commons'
-step 3). Guard `tests/csr_progress.test.js`; a11y `canonical-subj4-progress-dark`.
+**LIVE: the Progress view (S425, 2026-10-19; guard `tests/csr_progress.test.js`):** verbatim in [`roadmap_archive_8`](../../roadmap_archive_8.md), *(S736 checkpoint)*.
 
 **LIVE: the List view (2026-11-01) and the Local subjects List (2026-11-03).** `#canonical-subj4/list` (one row per MQ
 discipline; Edit, Edit every row and *Confirm this pick* write the same `_CANON_SUBJ4::` kb_curation rows; the Reference
@@ -106,19 +97,9 @@ disciplines; a person looks only at a code of low confidence. It replaces the co
 [`docs/common_subject_code_tab_lessons.md`](../../common_subject_code_tab_lessons.md), *Moved from the lane (S717)*.
 Measured 2026-11-23 at #3726: 251 of 251 carry a code (164 Confident, 84 Likely, 3 Leaning), none on two disciplines.
 
-**The machine side.** `kb/_csr_trail.py --latest` runs daily from `daily-dashboard.yml` after the picks sync
-and before the Commons build, read-only, and writes `kb/csr_out/latest.json` (the nine canon rules, every
-minted identity's code under `_mid_codes`); a session's run without the flag writes the dated receipt too.
-Its missed-alignment rule honors a recorded note (CMUS, HIT). `kb/_apply_canonical_subj4.py` and the tab's
-overlay read the pick's reviewer from the code row (a cohort's later note had been read as the pick's
-reviewer on eleven entries; the next daily sync rewrites the seed). The tab's SUBJ check reads a code both
-agriculture umbrellas declare, and a fan-in pair both entries declare, as shared by design. The tab's C-ID index
-now takes a descriptor ending in X (172 of the 495, in 17 subjects: ADS, the three agriculture families, ALTF, AUTO,
-BIOT, BSOT, CMUS, DENA, DMGR, EET, EMS, FIRE, HIT, WELD, WWTR), which it had skipped since May, so its chips and
-suggestions saw 48 of the 65 C-ID subjects.
+**The machine side (`kb/_csr_trail.py --latest` daily, `kb/_apply_canonical_subj4.py`, the C-ID index):** verbatim in [`roadmap_archive_8`](../../roadmap_archive_8.md), *(S736 checkpoint)*.
 
-**The Commons row** (`kb/_build_commons_status.py` `row_subjects`) reads the same files: the settled pair,
-four known issues with owners, the procedures in force, and deep links into the List.
+**The Commons row (`kb/_build_commons_status.py` `row_subjects`):** verbatim in [`roadmap_archive_8`](../../roadmap_archive_8.md), *(S736 checkpoint)*.
 
 ## Sam's eight steps against the record (S425's check, 2026-10-19)
 
@@ -159,16 +140,44 @@ search for local subject titles before guessing.** *"note the strategy for our c
 search each college's website for their schedule tool, which is almost always listed by subject and title."* A
 college's schedule search (PeopleSoft class search, Banner dynamic schedule, Colleague Self-Service) lists every
 subject code it schedules beside the title it prints, so it is the second source after the catalog's subject index,
-and ahead of any guess. **Measured 2026-11-26 (S736):** no run has read one. Every one of the 7,102 filed titles came
-from a catalog (`kb/subject_title_hunt/found/`); `kb/status/subject_sources.json` marks the schedule way not needed at
-116 colleges only because the catalog was read; 1,431 college and code pairs still print no title, at 114 colleges.
-Only two systems are on file: LACCD's PeopleSoft guest search (nine colleges, 212 codes with no printed title;
-[`data_sources`](../data_sources.md)) and Riverside's Colleague. The lightning round's codes come first; the
-LACCD read runs on the runners, since a session's network refuses the host.
+and ahead of any guess. **LIVE (#3894, S736): LACCD's schedule titles.** The district's PeopleSoft class search
+answers one select-subject lookup per term (216 subjects, term 2268) for all nine colleges; a runner read it and
+titled 171 of the 212 codes with no printed title (`f-laccd-schedule-subject-lookup-s736`). 87 schedule titles differ
+from the catalog's, and the catalog stands. The filer takes the rule `schedule`, which `kb/_file_subject_headings.py
+--check` accepts. 41 LACCD codes stay untitled; a course description costs one page load per class and is not read.
+Riverside's Colleague is the only other schedule system on file; no other college's schedule has been read
+([`data_sources`](../data_sources.md)). A session's network refuses those hosts, so the reads run on the runners.
 
 ## NEXT
 
-**NEXT (S719), in order:** (1) re-point the folded local codes, a re-mint under
+**LIVE (#3908, S744; #3918, S745): the campus letter fold and the Chabot glue fold.** `kb/coci_campus_letter.py` holds explicit lists (26 Cerro Coso, 6 Porterville, 25 Chabot in `GLUED`), never a suffix rule; a person's save follows the fold (`kb/subject_decisions.py`). Both paragraphs as they stood: [`docs/common_subject_code_tab_lessons.md`](../../common_subject_code_tab_lessons.md), *Moved from the lane (S746)*. **DECIDED:** the wider `code_address` exception (11 titles at five colleges) is held for its own measured change.
+
+**LIVE (#3929, #3932, S746): COBIx's subject-parse bundle on main, the college's own codes.** #3929 rebuilt COBIx's
+#3917 on main (Sam's approval of 2026-11-27): `kb/coci_subject_folds.py` folds 38 Allan Hancock truncated labels and
+9 bad splits; Chabot's duplicates and PHEACJUD were dropped (#3918's list stands). The builder honors a person's
+`not_a_subject` save, so Cabrillo TEST and Fullerton F leave the queue; the note box's *Ask COBI to act on this* writes
+`value.act = true`; allow-list filings ride with it. **RULED** `r-folds-take-the-colleges-own-codes-sam-2026-11-28`: a
+fold lands on the code the college prints today. APPREN APRN, COM SC CS, GRAPHI GRPH, HO EC HOEC, LDRSHP LDER, PHY SC
+PHSC, POL SC POLS, WLD T WLDT, OA CBOT, T ART THTR, AL ST AD ST, FRENCH FRCH, H ED HED. Left unfolded (no current code
+matches): INT ST, SOC SC, RET S, Q CNTRL, AGBUS, CE, HONORS, IT. #3932 filed COBIx's 22 #3926 titles (Canyons 10
+`NC.*`, Santa Barbara City 9, MiraCosta 3). The lightning round on the committed files: 494 to 416 after #3929.
+COBIx's #3917 and #3926 are superseded and left open for Sam or COBIx to close. **FINDING**
+`f-saves-on-a-folded-code-go-unseen-s746`: Sam's four Chabot *Not a subject* saves were keyed to codes #3918 folded, so
+the queue never showed them; a save keyed to a folded code needs carrying to the base code or naming in the queue.
+
+**NEXT (S744), in order:**
+1. **LACCD:** 41 codes still untitled; offer Sam the 87 schedule titles that differ from the catalog as one list.
+2. **The schedule-tool sweep beyond LACCD** (`r-schedule-tool-first-for-subject-titles-sam-2026-11-26`): none read.
+   The most codes left in the lightning round after #3929 (before #3932's 22 titles): Glendale 31, Santa Barbara City 28, North Orange
+   Continuing Education 20, MiraCosta 20, Canyons 17, Santiago Canyon 17, Allan Hancock 15. Name each college's system in `data_sources` as it is found.
+3. **The Accounting re-point apply.** The dry run (#3867, `kb/_acct_repoint_dryrun.py`, `kb/acct_repoint_out/2026-11-26/`):
+   372 M-IDs and 907 courses move to ACCT under Accounting, 1 held, 29 families flagged. **BLOCKED:** Sam's four
+   `_SUBJ_DISC::ACC`, `ACCT`, `ACCTG` and `ACTG` saves of 2026-11-24 12:46 (a 1,311-row batch) file them under
+   Business; they need refiling under Accounting, or his say-so over them (a person's save is terminal). Copper
+   Mountain's ACC is ACCESS (disability services), keyed by college and left out.
+4. **The 35 held and the 50 under 90** (the stray-codes paragraph above): Sam's picks.
+
+**NEXT (S719), in order:** (1) re-point the folded local codes (the Accounting codes' dry run is #3867, item 4 above), a re-mint under
 [`docs/coursecontrolnumber_remint.md`](../../coursecontrolnumber_remint.md), dry run first: ACCT, ACCTG, ACC and ACTG
 to ACCT under Accounting, LING, HOSP, the religion codes (RLST, RELS, RELG) to RLST, MCOM, AERO (its AFROTC courses
 to MILS); `kb/reference/subject_discipline_map.json` still sends ACC, ACCT and ACCTG to Business; AT and INS are
@@ -178,35 +187,17 @@ from the 20th edition. The MQ view and the local subject-title collection live i
 
 **The Subjects card (S694, #3620):** each college's local subject codes and printed names beside the common subject codes, on the Commons front at `#commons/subjects`; where it stands and its NEXT: [`commons`](commons.md).
 
-**DECIDED** `d-step-b-owner-courses-bot-2026-11-20` (the plain session of 2026-11-20, under Sam's delegation: *"want you to go with your recommendation"*): the Courses bot owns curation step b, the local subject title. It drafts each title from the state subject code and the catalog's subject heading, as COBIx suggested on #3584; a curator settles the ones that disagree. No view builds step b yet. His to revise.
+**DECIDED** `d-step-b-owner-courses-bot-2026-11-20`: verbatim in [`roadmap_archive_8`](../../roadmap_archive_8.md), *(S745 checkpoint)*.
 
 **Sheet 107 cards 1-3 (S436, 2026-10-20), applied:** the record moved verbatim to [`docs/common_subject_code_tab_lessons.md`](../../common_subject_code_tab_lessons.md), *Moved from the lane (S577): Sheet 107*.
 
-**For a curator (found in the file-eight fresh read):** five of the 79 are merged into a parent in another discipline:
-BRDC M10AV into JOUR M1016 *Broadcast Journalism*, BRDC M10BF into FTVE M1144, and three noncredit drawing and painting
-courses into BIOL M9004 (*Fundamentals of Drawing for Commercial Artists*, filed under Biological Sciences), FCSH M9055
-and OLAD M9054. The re-key changed no merge; the BIOL parent reads misfiled.
+**For a curator, the five cross-discipline merges:** verbatim in [`roadmap_archive_8`](../../roadmap_archive_8.md), *(S736 checkpoint)*.
 
-**The two ENVR merge candidates wait for a faculty reviewer (S433, #2278).** `kb/_merge_candidate_queue.py` carries
-them as `surfaced` pairs (`kb/merge_candidates/2026-10-20-forestry/report.md`), survivors proposed by the rule: ENVR
-M1009 *Dendrology* over M1064 (4 colleges to 3), ENVR M1025 *Silviculture* over M10OP (2 to 1), no articulations on
-any. The merge is a curriculum judgment made in the curation UI (ruling 6, 2026-09-05).
+**The two ENVR merge candidates (S433, #2278):** verbatim in [`roadmap_archive_8`](../../roadmap_archive_8.md), *(S736 checkpoint)*.
 
-**The quarterly routine compares on a cron (S433, #2279).** `csr-quarterly.yml` runs
-`kb/_csr_quarterly_probe.py --compare` at 13:17Z on the 1st of January, April, July and October, and on dispatch. It
-reads each source against `kb/reference/csr_quarterly_baseline.json`, prints `COMPARE` lines (same, changed, unread, no_baseline) and a step summary, and reads red on
-`changed`; a session then diffs the Disciplines Index and opens a card. **LIVE (#3744, S719): the baseline is the 20th
-edition** (the address and sha256 `kb/reference/mq_handbook_20th.json` was read from); dispatch run 45311236371 printed
-COMPARE `same`, 2,983,718 bytes. `tests/csr_quarterly_probe_test.py` ties the baseline to that file rather than to an
-edition number (**DECIDED** `d-csr-baseline-20th-s719`). **The C-ID source a runner reaches (S437,
-#2289):** the site moved to c-idsystem.org (ASCCC), and its search pages live on data-c-idsystem.org with no `www`
-(the probe had asked c-id.net, a runner 403, and www.data-c-idsystem.org, no such host). `/descriptors/final` links its
-own export, `/descriptors/final/csv` (217,763 bytes, `text/csv`); the probe follows and hashes it, and two runs (13:16Z
-and 13:18Z) read the same sha256, now the `cid_data` baseline. `/approved-courses` answers 200 with no export link, so
-`cid_courses` and `cid_home` stay `no_baseline`. Next for it: diff that CSV against `kb/reference/cid_descriptors.json`
-(495 descriptors, the CCCCO file of 2026-05-20) on a runner, so a `changed` names the descriptors that moved. `mq_list` stays `on: false` (half built) until the index diff runs on the runner too.
+**The quarterly routine and the C-ID source (S433, #2279; the 20th-edition baseline, #3744):** verbatim in [`roadmap_archive_8`](../../roadmap_archive_8.md), *(S736 checkpoint)*.
 
-**The anchor re-key, APPLIED (S612 SkySunflower, 2026-11-08):** 20 anchor keys onto their Common SUBJ, receipt `kb/anchor_rekey_out/2026-11-08/` (last in `kb/alias_chain.py`); held, the three dead-format HOSP keys (the curator worklist). The paragraph as it stood: [`docs/roadmap_archive.md`](../../roadmap_archive.md), *Moved from lanes/common-subjects-reference.md (plain session, 2026-11-20)*.
+**The anchor re-key, APPLIED (S612 SkySunflower, 2026-11-08; receipt `kb/anchor_rekey_out/2026-11-08/`):** verbatim in [`roadmap_archive_8`](../../roadmap_archive_8.md), *(S736 checkpoint)*.
 
 **Then:** the strays Sheet 106 does not cover (86 codes with no checkable answer, and the seven set aside) stay on
 the discipline-blank worklist for a curator; the Commons' remaining Progress

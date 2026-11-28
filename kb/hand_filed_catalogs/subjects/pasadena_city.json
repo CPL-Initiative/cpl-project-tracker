@@ -1499,6 +1499,22 @@
    "run": "45625259489,45626788039"
   },
   {
+   "code": "MAN",
+   "heading": "Medical Assisting Noncredit",
+   "heading_printed": "Medical Assisting Noncredit",
+   "rule": "index",
+   "codes": [
+    "MAN"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI MAN 5000 Medical Front Office Clerk: Office Procedures",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "MATH",
    "heading": "Mathematics",
    "heading_printed": "MATHEMATICS",
@@ -2043,6 +2059,22 @@
    "run": "45625259489,45626788039"
   },
   {
+   "code": "SPEA",
+   "heading": "Special Education Assistant",
+   "heading_printed": "Special Education Assistant",
+   "rule": "index",
+   "codes": [
+    "SPEA"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI SPEA 3410 The Inclusive Special Education Classroom",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "SPSV",
    "heading": "Special Services",
    "heading_printed": "SPECIAL SERVICES",
@@ -2219,6 +2251,6 @@
    "run": "45625259489,45626788039"
   }
  ],
- "subjects": 130,
- "with_heading": 130
+ "subjects": 132,
+ "with_heading": 132
 }

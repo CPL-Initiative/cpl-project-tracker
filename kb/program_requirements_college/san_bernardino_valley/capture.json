@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 236,
  "with_closed_list": 232,
- "started": "2026-11-27T07:46:56Z",
+ "started": "2026-11-27T12:43:20Z",
  "scope": null,
  "sitemap": {
   "url": "https://catalog.valleycollege.edu/sitemap.xml",
@@ -155,7 +155,7 @@
   "yield_refused_passing": 0
  },
  "loads": 306,
- "seconds": 1473.4,
+ "seconds": 1485.5,
  "found": 227,
  "by_method": {
   "no_closed_list": 4,
@@ -319,28 +319,10 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/san_bernardino_valley",
-  "kept": 220,
+  "kept": 221,
   "kept_moved": 0,
-  "programs": 1,
+  "programs": 6,
   "list": [
-   {
-    "control_number": "22821",
-    "title": "Pharmacy Technology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/pharmacy-technology/pharmacy-technology-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/pharmacy-technology/",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   }
-  ],
-  "held_worse_window": [],
-  "held_no_gain": [],
-  "held_opens_on_list": [],
-  "only": [
-   "22821"
-  ],
-  "not_named": [
    {
     "control_number": "16966",
     "title": "Manual Lathe and Milling Machine Operator",
@@ -402,6 +384,9 @@
     "was_method": "sitemap_page"
    }
   ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
   "refused_passing": [],
   "forced_unbound": []
  },
@@ -587,7 +572,7 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/culinary-arts/hospitality-certificate-achievement/"
   },
   "09376": {
-   "sha256": "f0a16a3fda27ef07757b29b869fb296ab5c7389b1af9ff068d3e9c2b46428cde",
+   "sha256": "d5a4b95851765caf2e3398443ef64c2ef2243c8bd7bb48127418ab8a9bae0fc1",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/astronomy/astronomy-as-degree/"
   },
   "11075": {
@@ -771,7 +756,7 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/water-supply-technology/water-supply-technology-certificate-achievement/"
   },
   "22820": {
-   "sha256": "a8eeef76b9207b2387412a857a65c23f9924b89120fb4d6961d5a0df75452eff",
+   "sha256": "ab696410f8e981960728870cad08a9c2f2873a66c75e8f5c4045a4706fa1b8b9",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/art/graphic-design-certificate-achievement/"
   },
   "22821": {
@@ -1039,7 +1024,7 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-collision/automotive-interiors-certificate-achievement/"
   },
   "38129": {
-   "sha256": "b611495082610cacb6a9049e42498cf2029f21d2452bed6650107beedd8f199f",
+   "sha256": "77b9bc78289e451579b4bc2b29db6dc082cf3a584201cdb423959379ee649821",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/business-administration/entrepreneurship-general-certificate-achievement/"
   },
   "38130": {
@@ -1123,7 +1108,7 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/economics/economics-aat-degree/"
   },
   "39404": {
-   "sha256": "b0eff5f2839b5effdce0713fe039aefe8aadb908f1de00abeed821ac7b9a3cd7",
+   "sha256": "4b17b642b2962c291f06d4d5fa6a6a9f308d490478162f15cfd0d8966005320e",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/art/studio-arts-aa-t-degree/"
   },
   "39446": {
@@ -1307,7 +1292,7 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/computer-science/data-science-certificate-achievement/"
   },
   "46184": {
-   "sha256": "144fe01a318d4e31bbb256e1fa1afc892f8fbaa8ec469deb3f95a5e78674e302",
+   "sha256": "a6626eed0d2391fba4ac235ce5ac92213055dc9df0569b58a39f3d95c1797484",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/art/gallery-management-certificate-achievement/"
   },
   "46386": {
@@ -1315,5 +1300,5 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/water-supply-technology/wrm-bs-degree/"
   }
  },
- "run": "45960735042"
+ "run": "46000859685"
 }

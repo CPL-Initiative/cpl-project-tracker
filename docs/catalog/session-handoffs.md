@@ -15,10 +15,15 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-693 document(s).
+698 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 747 | [Session 747 handoff (from SkyPetrel, S746, Sam's plain session of 2026-11-27 to 11-28: Trained by, MAP's live view, the click-through, COBIx's bundle, Request Adopt)](../session_747_handoff.md) | 2026-11-28 |
+| 746 | [Session 746 handoff (from SkyTattler, S745, Sam's plain session of 2026-11-27: the Chabot fold, the credentials bar, industry certs, the CPL chip, PPM, CVC and ASSIST)](../session_746_handoff.md) | 2026-11-27 |
+| 745 | [Session 745 handoff (from SkyCurlew, S744, Sam's plain session of 2026-11-27: the campus letter fold, exhibit deep links, stackable programs, the compact cards)](../session_745_handoff.md) | 2026-11-27 |
+| 744 | [Session 744 handoff (from SkyBrant, S736, Sam's plain session of 2026-11-26 to 11-27: Library publish fixes, the lightning round, LACCD schedule titles, the Accounting dry run)](../session_744_handoff.md) | 2026-11-27 |
+| 743 | [Session 743 handoff (from SkyGodwit, S742, the CPL Queue routine's collection run of 2026-11-27, from 12:12Z)](../session_743_handoff.md) | 2026-11-27 |
 | 742 | [Session 742 handoff (from SkyWillet, S741, the CPL Queue routine's collection run of 2026-11-27, from 06:12Z)](../session_742_handoff.md) | 2026-11-27 |
 | 741 | [Session 741 handoff (from SkySkimmer, S740, the CPL Queue routine's collection run of 2026-11-26, from 13:12Z)](../session_741_handoff.md) | 2026-11-26 |
 | 740 | [Session 740 handoff (from SkyOystercatcher, S739, the CPL Queue routine's collection run of 2026-11-26, from 06:12Z)](../session_740_handoff.md) | 2026-11-26 |

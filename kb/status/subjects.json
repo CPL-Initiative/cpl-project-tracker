@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 733,
-  "moniker": "SkyGodwit",
+  "session": 746,
+  "moniker": "SkyPetrel",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_734_handoff.md",
+  "handoff": "docs/session_747_handoff.md",
   "calls": [
     {
       "title": "The noncredit subject title list",
@@ -62,13 +62,17 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-25T22:09:34Z",
+  "written_at": "2026-11-28T02:20:38Z",
   "project": "subjects",
   "next_step": {
-    "title": "File common subjects for the held stray codes",
-    "text": "The re-mint retired 60 stray M-IDs and holds 35 until their local subject carries a filed common subject. File those, and the 50 local subjects scored under 90, from the picks list or by moving courses in the Local subjects sidebar; then rerun the dry run for the rest."
+    "title": "The Commons Clarity items",
+    "text": "Sam's list from 2026-11-28: the lightning round's counts disagree (433 and 514), the Needs you link opens the card instead of the lightning round with no way back, and a person's save keyed to a code a later fold renames no longer shows."
   },
   "changes": [
+    {
+      "at": "2026-11-27T20:40:00Z",
+      "text": "Chabot's codes glued to a number, such as ATHL7 and PEAC11, now fold to their subject: 159 rows, Chabot's codes 131 to 106 and its untitled codes 31 to 4, statewide subject codes 2,896 to 2,871, and all 47 person decisions kept. Art, Film and Apprenticeship: Plumbing were filed from Chabot's catalog."
+    },
     {
       "at": "2026-11-23T18:40:00Z",
       "text": "The Subjects tab lists all 118 colleges by title source, with a status for each way to look and the next step."
@@ -260,6 +264,30 @@
     {
       "at": "2026-11-25T22:09Z",
       "text": "Local subject recommendations score 0 to 100 and the Subjects panel draws the confidence bar (PR 3859)."
+    },
+    {
+      "at": "2026-11-26T01:27Z",
+      "text": "The Accounting re-point dry run: 372 M-IDs and 907 courses move to ACCT under Accounting, 1 held, 29 families flagged; the apply waits on Sam's four Business filings (PR 3867)."
+    },
+    {
+      "at": "2026-11-26T17:39Z",
+      "text": "The lightning round takes Not a subject, Skip for the visit, the example course's description, the catalog link in a bottom bar, a folded How this works and a training note (PR 3893)."
+    },
+    {
+      "at": "2026-11-26T19:01Z",
+      "text": "LACCD's class search titles 171 of 212 untitled codes at the district's nine colleges; 87 differ from the catalog, and the catalog stands (PR 3894)."
+    },
+    {
+      "at": "2026-11-27T17:00Z",
+      "text": "Cerro Coso's and Porterville's glued campus letter is folded into the course number: 130 COCI rows, 20 duplicate listings dropped, statewide codes 2,924 to 2,896. A person's save on a glued code carries to the folded one (Sam's ADMJC title now on ADMJ). ICC stays (PR 3908)."
+    },
+    {
+      "at": "2026-11-28T01:35:00Z",
+      "text": "COBIx's glued-code bundle is on main: 38 Allan Hancock folds, 9 bad splits, and the folds take each college's own codes (WLD T to WLDT, POL SC to POLS, OA to CBOT and others), so none returns as a new untitled card. A person's Not a subject save now takes the code off the list (Cabrillo's TEST, Fullerton's F). The lightning round on the committed files goes from 494 to 416."
+    },
+    {
+      "at": "2026-11-28T02:05:00Z",
+      "text": "22 catalog subject titles filed from COBIx's search: College of the Canyons 10, Santa Barbara City 9, MiraCosta 3."
     }
   ]
 }

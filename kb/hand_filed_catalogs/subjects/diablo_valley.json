@@ -1304,6 +1304,22 @@
    "run": "45626912350"
   },
   {
+   "code": "WRKP",
+   "heading": "Workforce Preparation",
+   "heading_printed": "Workforce Preparation",
+   "rule": "index",
+   "codes": [
+    "WRKP"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI WRKP 091NC Addressing Barriers to Employment II: Keeping a Job",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "WRKX",
    "heading": "Work Experience",
    "heading_printed": "Work Experience",
@@ -1320,6 +1336,6 @@
    "run": "45626912350"
   }
  ],
- "subjects": 77,
- "with_heading": 77
+ "subjects": 78,
+ "with_heading": 78
 }

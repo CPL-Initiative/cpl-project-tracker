@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-605 document(s).
+608 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -487,6 +487,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Snapshot-with-stamp fallback for live-data dependencies](../kb-notes/methodology-snapshot-with-stamp-fallback.md) | methodology | published | 2026-05-28 | 2026-05-28 |
 | [Split prose from state — the register is the spine, the narrative cites it](../kb-notes/methodology-register-is-the-spine-narrative-cites-it.md) | methodology | published | 2026-08-05 | 2026-08-05 |
 | [Stable DOM keys must exclude live (data-bound) text](../kb-notes/methodology-stable-dom-keys-exclude-live-text.md) | methodology | published | 2026-06-28 | 2026-06-28 |
+| [Stackable programs are found by course containment, not by CIP](../kb-notes/methodology-stackable-programs-by-course-containment.md) | methodology | published | 2026-11-27 | 2026-11-27 |
 | [Styling a native <details> — keep a visible affordance, drive the toggle in JS](../kb-notes/methodology-styling-native-details-toggle.md) | methodology | published | 2026-06-01 | 2026-06-01 |
 | [SUBJ4-consumer semantics — umbrella allowances and alias families must be mirrored everywhere](../kb-notes/methodology-subj4-consumer-semantics.md) | methodology | published | 2026-06-12 |  |
 | [Surface a finer derived layer on a single-grain reference tab (without breaking the grain)](../kb-notes/methodology-surface-derived-layer-on-single-grain-tab.md) | methodology | published | 2026-06-09 | 2026-06-09 |
@@ -565,7 +566,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Playbook — redeploying a shared, live Supabase Edge Function safely](../kb-notes/playbook-deploy-shared-supabase-edge-function.md) | playbook | published | 2026-06-01 | 2026-08-22 |
 | [Playbook — running an NC integration (notes and artifacts → the curated register)](../kb-notes/playbook-nc-integration-run.md) | playbook | published | 2026-08-06 | 2026-08-06 |
 | [Playbook — Trail Crew 🥾: the method + magic audit (deterministic scanner → AI adjudication → adversarial verify → fire-able staged plan)](../kb-notes/playbook-trail-crew-method-magic-audit.md) | playbook | published | 2026-07-10 |  |
-| [Playbook — where a college's local subject title comes from](../kb-notes/playbook-local-subject-title-sources.md) | playbook | internal | 2026-11-22 | 2026-11-22 |
+| [Playbook — where a college's local subject title comes from](../kb-notes/playbook-local-subject-title-sources.md) | playbook | internal | 2026-11-22 | 2026-11-27 |
 | [Playbook: gated bulk auto-curation (dry-run → md5-pinned server-side apply)](../kb-notes/playbook-gated-bulk-autocuration.md) | playbook | published | 2026-06-12 |  |
 | [Playbook: unattended news aggregation into a live dashboard tab](../kb-notes/playbook-cpl-news-aggregation.md) | playbook | published | 2026-06-21 |  |
 | [Re-keying a shared DB from a committed re-mint alias map](../kb-notes/playbook-rekey-shared-db-from-alias-map.md) | playbook | published | 2026-06-15 | 2026-06-15 |
@@ -593,6 +594,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [For "which colleges offer X", start at the course file, not the program file](../kb-notes/reference-course-level-mis-beats-program-level-coci.md) | reference | published | 2026-08-12 | 2026-08-12 |
 | [Hand it over in place: the hand-over box, where it writes, and the reader's pickup](../kb-notes/reference-commons-hand-over.md) | reference | internal | 2026-11-20 | 2026-11-23 |
 | [Issuing-agency authority sources for CER exhibit canonicalization](../kb-notes/reference-issuing-agency-authority-sources.md) | reference | published | 2026-07-07 |  |
+| [MAP's landing page takes an exhibit code in its address](../kb-notes/reference-map-landing-page-exhibit-parameter.md) | reference | published | 2026-11-27 | 2026-11-27 |
 | [Postgres full-text search pitfalls on freehand credential titles](../kb-notes/reference-postgres-fts-pitfalls-for-credential-titles.md) | reference | published | 2026-08-06 | 2026-08-06 |
 | [Public-domain art sourcing for the dashboard (Adams, plein air, and the traps)](../kb-notes/reference-public-domain-art-sourcing.md) | reference | published | 2026-06-12 | 2026-06-12 |
 | [Recovering screen/computer-use reach on Claude Code (web) — what this environment can and can't do](../kb-notes/reference-claude-code-web-environment-reach.md) | reference | published | 2026-06-04 | 2026-06-04 |
@@ -616,6 +618,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [The workplan Activity↔Project linking model — home field vs the N-to-N association table](../kb-notes/reference-workplan-activity-project-linking-model.md) | reference | published | 2026-07-27 | 2026-07-27 |
 | [TMC confidence score & near-auto-approval — what data we hold vs still need](../kb-notes/reference-tmc-confidence-data-requirements.md) | reference | published | 2026-07-01 |  |
 | [Untangling KIN, PE and Athletics costs two identifiers](../kb-notes/reference-kin-pe-athl-identifier-fallout.md) | reference | internal | 2026-09-22 | 2026-09-22 |
+| [What PPM, CVC and ASSIST allow a page to frame or read](../kb-notes/reference-outside-tools-framing-and-reading.md) | reference | published | 2026-11-27 | 2026-11-27 |
 | [CPL Assistant — CCR/CER-grounded recommendations, real-time benchmark & landing-site demand signal](../kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md) | scope | published | 2026-06-19 |  |
 | [CPL Chatbox → Dashboard integration + cpl-knowledge-base re-point (Scope)](../kb-notes/cpl-chatbox-integration-scope.md) | scope | published | 2026-06-01 |  |
 | [Cross-discipline over-merge re-mint (Scope)](../kb-notes/over-merge-remint-scope.md) | scope | published | 2026-05-29 |  |

@@ -7,15 +7,15 @@ The 50 local subjects behind the stray M-ID codes whose common subject scores un
 | 89 | Las Positas College | JAMS | Journalism and Media Studies | 1 | Introduction to Media | JOUR Journalism |
 | 89 | Santa Ana College | JAMS | Journalism and Media Studies | 4 | Advanced Intermediate Multimedia News Production; Advanced Multimedia News Production; Vis | JOUR Journalism |
 | 78 | Mt. San Antonio College | AIRT | Air Traffic Control | 1 | Enroute Radar Laboratory | AVIA Aviation |
-| 67 | San Joaquin Delta College | DMEDIA | Digital Media | 1 | Fundamentals of Audio Production | FTVE Film and Media Studies |
+| 68 | San Joaquin Delta College | DMEDIA | Digital Media | 1 | Fundamentals of Audio Production | FTVE Film and Media Studies |
 | 67 | Santa Monica College | IXD | Interaction Design | 1 | Product Design | ARTS Art |
 | 66 | Madera College | LIBSKL | Library Skills | 1 | Information and Computer Literacy | LIBR Library Science |
 | 66 | Reedley College | LIBSKL | Library Skills | 3 | Information and Computer Literacy; Information and Computer Literacy; AI Literacy: in Educ | LIBR Library Science |
 | 63 | Santa Ana College | INFO | Information Studies | 4 | AI Literacy; Library Research Fundamentals; Researching in the Digital Age | LIBR Library Science |
 | 63 | Santiago Canyon College | INFO | Information Studies | 5 | AI Literacy; Library Research Fundamentals; Researching in the Digital Age | LIBR Library Science |
-| 61 | Cosumnes River College | ENGWR | English - Writing | 1 | Introduction to Technical and Professional Writing | ENGL English |
+| 62 | Cosumnes River College | ENGWR | English - Writing | 1 | Introduction to Technical and Professional Writing | ENGL English |
+| 61 | Palomar College | GCIP | Graphic Communications - Imaging and Publishing | 1 | PAGE LAYOUT AND DESIGN I | ARTS Art |
 | 61 | Palomar College | GCMW | Graphic Communications - Multimedia and Web | 3 | MULTIMEDIA FOR SOCIAL NETWORKING; SEARCH ENGINE OPTIMIZATION (SEO) FOR WEB DESIGN; WEB PAG | ARTS Art |
-| 60 | Palomar College | GCIP | Graphic Communications - Imaging and Publishing | 1 | PAGE LAYOUT AND DESIGN I | ARTS Art |
 | 58 | Sierra College | SKDV | Skill Development | 1 | Information Literacy and Research Skills | LSKL Learning Assistance or Learning Skills |
 | 55 | Contra Costa College | LIBST | Library Studies | 1 | Finding Information on Line and in Print | LIBR Library Science |
 | 50 | Cerro Coso Community College | ARTC | (none) | 1 | Survey of Western Art from Renaissance to Contemporary Honors | ARTS Art |
@@ -29,7 +29,6 @@ The 50 local subjects behind the stray M-ID codes whose common subject scores un
 | 49 | Los Angeles Valley College | LIB SCI | (none) | 1 | MEDIA AND INFORMATION LITERACY: RESEARCH STRATEGIES AND BEYOND | LIBR Library Science |
 | 45 | Coastline Community College | SPED | Special Education | 4 | Exhibition; Guest Services Basics; Maintenance Basics | DSPN Disabled Student Programs and Services: Noncredit |
 | 44 | Las Positas College | NAVI | Noncredit Aviation | 2 | FAA Remote Pilot Certificate Exam Preparation; Orientation to Drones and Unoccupied Aerial | AVIA Aviation |
-| 44 | Porterville College | CMRTP | (none) | 1 | Commercial Layout and Design | ARTS Art |
 | 43 | Chabot College | LIBS | Library Studies | 1 | Library Research and Information Literacy Skills via Popular Culture | LIBR Library Science |
 | 40 | Monterey Peninsula College | ARTV | Art - Video | 1 | Introduction to Film/Video | FTVE Film and Media Studies |
 | 30 | Orange Coast College | ARLN | Airline and Travel Careers | 2 | Airline Service Excellence; Operations, Terminology & Safety | CULN Culinary Arts/Food Technology |
@@ -44,7 +43,7 @@ The 50 local subjects behind the stray M-ID codes whose common subject scores un
 | 7 | Mt. San Antonio College | ARTZ | Art: Special Studio Arts | 1 | Specialized Studio-Art Studies | ARTS Art |
 | 7 | San Jose City College | Broadcasting (BROAD) | Broadcasting | 1 | Intermediate Radio Production | FTVE Film and Media Studies |
 | 6 | Citrus College | ESTH | Esthetician | 2 | Salon Success - Full-time; Salon Success Part I - Part-time | COSM Cosmetology |
-| 5 | Southwestern College | IDNM | (none) | 1 | TRENDS AND CAREERS IN NEW MEDIA | FMED Media Production |
+| 4 | Southwestern College | IDNM | (none) | 1 | TRENDS AND CAREERS IN NEW MEDIA | FMED Media Production |
 | 3 | North Orange Continuing Education Credit | COSY | (none) | 2 | MANICURIST/PEDICURIST; NEW CONCEPTS IN HAIR DESIGN | ARCH Architecture |
 | 3 | Ohlone College | AF | (none) | 2 | Evolution of the U.S. Air Force Air and Space Power; Foundations of the U.S. Air Force | FIRE Fire Technology |
 | 0 | College of the Canyons | NC.COMM | Communications Studies | 3 | Public Speaking for Interviews; Public Speaking for Social Media; Strategies and Tactics o | COMM Communication Studies (Speech Communication) |
@@ -52,5 +51,6 @@ The 50 local subjects behind the stray M-ID codes whose common subject scores un
 | 0 | College of the Canyons | NC.THTR | Theatre | 2 | Business of Acting; Auditioning Skills for Actors | THTR Drama/Theater Arts |
 | 0 | Mendocino College | CSC | Computer Science | 1 | AI Literacy | COMP Computer Science |
 | 0 | Merced College | LRNR | Learning Resources | 1 | Information Concepts and Research Skills | LSKL Learning Assistance or Learning Skills |
+| 0 | Porterville College | CMRTP | (none) | 1 | Commercial Layout and Design |  |
 | 0 | San Diego City College | FJMP | Film, Journalism, and Media Production | 3 | Broadcast News Workshop I; Radio and Podcast Workshop II; Radio and Podcast Workshop III | JOUR Journalism |
 | 0 | Southwestern College | T&T | Travel and Tourism | 2 | Travel Destinations: Europe, Africa, and the Middle East; Travel Destinations: Western Hem |  |

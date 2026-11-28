@@ -295,7 +295,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -597,7 +597,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -663,7 +663,8 @@
     "title": 1.0,
     "section": "aa",
     "section_line": "art art, associate of arts (aa): emphasis in art studio",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 44,
@@ -746,7 +747,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -1328,7 +1329,8 @@
     "title": 1.0,
     "section": "aa",
     "section_line": "psychology psychology, associate of arts (aa)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 48,
@@ -1688,7 +1690,8 @@
     "title": 1.0,
     "section": "aa",
     "section_line": "sociology, associate of arts (aa)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 24,
@@ -2108,7 +2111,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -2454,7 +2457,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -2470,7 +2473,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -3068,7 +3071,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -3350,7 +3353,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -3554,7 +3557,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -3570,7 +3573,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -4125,7 +4128,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -4416,7 +4419,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -4432,7 +4435,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -5816,7 +5819,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "sociology, associate in arts for transfer (aa-t)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 105,
@@ -6570,7 +6574,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -6586,7 +6590,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -6698,7 +6702,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -6783,7 +6787,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "studio arts, associate in arts for transfer (aa-t)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 65,
@@ -7119,7 +7124,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "art art history, associate in arts for transfer (aa-t)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 184,
@@ -7138,7 +7144,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -7227,7 +7233,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "anthropology anthropology, associate in arts for transfer, (aa-t)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 68,
@@ -7532,7 +7539,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "journalism journalism, associate in arts for transfer (aa-t)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 33,
@@ -7624,7 +7632,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "economics, associate in arts for transfer (aa-t)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 69,
@@ -7703,7 +7712,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -7885,7 +7894,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -7998,7 +8007,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -8014,7 +8023,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -8030,7 +8039,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -8046,7 +8055,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -8789,7 +8798,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -8805,7 +8814,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -8965,7 +8974,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -9036,7 +9045,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -9052,7 +9061,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -9302,7 +9311,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -10011,7 +10020,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "global studies, associate in arts for transfer (aa-t)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 36,
@@ -10128,7 +10138,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -10701,7 +10711,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "child and adolescent development, associate in arts for transfer (aa-t)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 72,
@@ -10973,7 +10984,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "art art history, certificate of achievement (c)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 17,
@@ -11289,7 +11301,8 @@
     "title": 1.0,
     "section": "coa",
     "section_line": "studio arts, certificate of achievement (c)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 21,
@@ -11783,7 +11796,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "communication communication studies 2.0, associate in arts for transfer (aa-t)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 42,
@@ -11900,7 +11914,8 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "law, public policy, and society, associate in arts for transfer (aa-t)",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 92,
@@ -12159,7 +12174,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 223 of 241 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {

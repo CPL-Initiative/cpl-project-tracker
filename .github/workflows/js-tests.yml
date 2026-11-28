@@ -234,6 +234,10 @@ jobs:
       - name: Subject titles from a state-list label (TITLE (CODE))
         if: matrix.shard == 3
         run: python3 tests/subject_state_label_title_test.py
+      # Cerro Coso's and Porterville's campus letter folded off the subject code (S744, kb/coci_campus_letter.py).
+      - name: Campus letter fold (Cerro Coso, Porterville)
+        if: matrix.shard == 3
+        run: python3 tests/coci_campus_letter_test.py
       # The docs-only lint skip (S737): the heavy steps listed in tests/lints_docs_only_skip.json read no docs file
       # (traced under strace), so on a docs-only diff they skip with `&& (needs.gate.outputs.decision == 'run')`.
       # Main's push run and every code PR run them. A step joins the skip only through that list.
@@ -416,6 +420,17 @@ jobs:
       - name: Subject courses (kb/_build_subject_courses.py)
         if: matrix.shard == 6
         run: python3 tests/subject_courses_test.py
+      # CPL Pathways' program ladders (Sam, 2026-11-27): containment and the 80% band, a bachelor's by program CIP and
+      # never by TOP, links written both ways, the curated Cerritos B.S.; the committed files current. Pure stdlib.
+      - name: Program ladders (kb/_build_program_ladders.py)
+        if: matrix.shard == 6
+        run: python3 tests/program_ladders_test.py
+      # CPL Pathways' industry certifications (Sam, 2026-11-27): the credit lines' course codes (the "(CIS) 062A"
+      # form), this college's credentials and exhibit codes only, both-marking, the matcher's known false hits kept
+      # out; the committed files current. Pure stdlib.
+      - name: Program certifications (kb/_build_program_certs.py)
+        if: matrix.shard == 6
+        run: python3 tests/program_certs_test.py
       # The noncredit subject title list (S700, #3655): read from the four large noncredit programs only, a category
       # counted from the export and never read from a heading's words, nothing merged beyond the named synonyms.
       - name: Noncredit subject titles (kb/_build_noncredit_subject_titles.py)
@@ -1210,6 +1225,32 @@ jobs:
       - name: Cheap piles S741 at Solano (total_differs on the page's own figures, the own-page guard, the plan)
         if: matrix.shard == 5
         run: python3 tests/program_piles_s741_solano_test.py
+      # S742 at Cuesta (s742k1): the two Aviation Mechanic certificates (43053, 41744) under
+      # pair_read_as_alternatives, the A and B halves of AVMT 110 and 120 taken together; 43053's live run proved by
+      # its record file's history.
+      - name: Cheap piles S742 at Cuesta (the paired halves read as alternatives, the plan)
+        if: matrix.shard == 4
+        run: python3 tests/program_piles_s742_cuesta_test.py
+      # S742 at San Diego City: 22352 and 38732 as the college's named gaps (no record written): the capture read
+      # the catalog's 228 entries and found no entry for either award.
+      - name: Named gaps S742 at San Diego City (two awards the catalog holds no entry for)
+        if: matrix.shard == 5
+        run: python3 tests/program_named_gaps_s742_sdcity_test.py
+      # S742 at San Bernardino Valley (s742k2): two of s741k3's holds under lists_not_closed, each by a shape of its
+      # own (04873's lists shorter than their counts, 39483's count range over sequences with no units); 2 held.
+      - name: Cheap piles S742 at San Bernardino Valley (two open lists by their own shapes, the plan)
+        if: matrix.shard == 6
+        run: python3 tests/program_piles_s742_sbvc_test.py
+      # S742 plan s742k3: San Bernardino Valley 17829 under ge_units_not_read, on the row its reread posted (the free
+      # reconcile kept by keep-better's S741 ranking; the reread before the plan).
+      - name: Named gaps S742 plan s742k3 (San Bernardino Valley 17829 on its reread row)
+        if: matrix.shard == 1
+        run: python3 tests/program_named_gaps_s742k3_test.py
+      # S742 at San Jose City: one cited renumber, JOURN 138 for the state's one unnamed row 'JournalismJO Work
+      # Experience', on the page's own line, with its self-recall over the college's records (38499 alone moves).
+      - name: Renumber S742 at San Jose City (JOURN 138, the page's own line, the self-recall)
+        if: matrix.shard == 2
+        run: python3 tests/program_renumbers_s742_sjcc_test.py
       # S741 at Cuyamaca: the reconcile step that reads the University Studies degrees' 60 as the page words it
       # ('Complete 60 transferable units'), on the page's own words, with its self-recall over the college's records.
       - name: Reconcile S741 at Cuyamaca (the degree's 60 transferable units, the self-recall)
@@ -1285,6 +1326,23 @@ jobs:
       - name: Cheap piles S741 at Contra Costa (the live read as the live-run proof, the plan)
         if: matrix.shard == 2
         run: python3 tests/program_piles_s741_contracosta_test.py
+      # S742, batch s742a: one plan over four colleges' piles (kb/_program_piles_s742.py Batch). Santa Monica 21026
+      # (total_differs, from a page read), Butte 01312 (degree_electives_not_printed), Cabrillo 45306 and Gavilan
+      # 08464 (lists_not_closed, Gavilan's on the page's own sentence); each live run proved by the committed live read.
+      - name: Cheap piles S742, batch a (four colleges in one plan, the page's own words)
+        if: matrix.shard == 5
+        run: python3 tests/program_piles_s742a_test.py
+      # S742 at East Los Angeles (s742b): 02456 under unit_line_not_read, on the row S742's reread (force
+      # 45176404274, kept by keep-better's Academic Plan code) posted; 3 held.
+      - name: Cheap piles S742 at East Los Angeles (the unit line, on the reread's posted row)
+        if: matrix.shard == 6
+        run: python3 tests/program_piles_s742_ela_test.py
+      # S742 at Cabrillo: the recommended_counts reconcile step. A list the page heads 'Recommended' and counts
+      # ('Complete the following number of credits: N' under its own name) reads as N units to choose, all of a
+      # record's recommended lists or none; four degrees pass, 23 held answers right, 0 wrong.
+      - name: Reconcile S742 at Cabrillo (lists headed Recommended that the page counts)
+        if: matrix.shard == 4
+        run: python3 tests/program_reconcile_s742_cabrillo_test.py
       # S741's page pins: American River's Level I and Level II windows each hold their own heading (cut by until),
       # and each site pin (Orange Coast, Fullerton, El Camino, Butte) is its program's own, unfiled address.
       - name: Page pins S741 (American River's two windows, the site pins)
@@ -1406,6 +1464,9 @@ jobs:
       - name: College page read (own-site follow, excerpts, plans)
         if: matrix.shard == 5
         run: python3 tests/college_page_read_test.py
+      - name: College page read, the frame verdict (S745)
+        if: matrix.shard == 5
+        run: python3 tests/college_page_read_frame_test.py
       # A college's own program map read into terms (S336): Irvine Valley's
       # all-maps page and Santa Monica's pathway pages, parsed from the text a
       # college page read printed. Pure-stdlib python; same non-required check.

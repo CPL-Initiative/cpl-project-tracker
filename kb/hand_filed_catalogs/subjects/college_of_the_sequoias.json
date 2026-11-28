@@ -857,6 +857,22 @@
    "run": "45624011924"
   },
   {
+   "code": "LA",
+   "heading": "Learning Assistance",
+   "heading_printed": "Learning Assistance",
+   "rule": "index",
+   "codes": [
+    "LA"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI LA 425 Supervised Tutoring",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "LIBR",
    "heading": "Library",
    "heading_printed": "Library",
@@ -1369,6 +1385,6 @@
    "run": "45624011924"
   }
  ],
- "subjects": 85,
- "with_heading": 85
+ "subjects": 86,
+ "with_heading": 86
 }

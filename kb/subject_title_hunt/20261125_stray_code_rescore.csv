@@ -92,13 +92,13 @@ Mt. San Antonio College,AIRT,Air Traffic Control,,AVIA,Aviation,78,no title and 
 Monterey Peninsula College,ARTV,Art - Video,,FTVE,Film and Media Studies,40,no title and no filing: a person picks,,,1,ARTV M10AA,Introduction to Film/Video,
 Mt. San Antonio College,ARTZ,Art: Special Studio Arts,,ARTS,Art,7,no title and no filing: a person picks,,,1,ARTZ M10AA,Specialized Studio-Art Studies,
 San Jose City College,Broadcasting (BROAD),Broadcasting,,FTVE,Film and Media Studies,7,no title and no filing: a person picks,,,1,BROA M10AA,Intermediate Radio Production,
-Porterville College,CMRTP,,,ARTS,Art,44,no title and no filing: a person picks,,,1,CMRT M1001,Commercial Layout and Design,
+Porterville College,CMRTP,,,,Art,0,no title and no filing: a person picks,,,1,CMRT M1001,Commercial Layout and Design,
 MiraCosta College,DESN,Design,ARCH,ARCH,Architecture,50,title and filing disagree: a person picks,ARCH,statewide_filing,1,DESN M10AC,Fundamentals of Design,"S733: title filed from COBIx (#3837, #3838)"
-San Joaquin Delta College,DMEDIA,Digital Media,,FTVE,Film and Media Studies,67,no title and no filing: a person picks,,,1,DMED M10AD,Fundamentals of Audio Production,
-Cosumnes River College,ENGWR,English - Writing,,ENGL,English,61,no title and no filing: a person picks,,,1,ENGW M10AQ,Introduction to Technical and Professional Writing,
+San Joaquin Delta College,DMEDIA,Digital Media,,FTVE,Film and Media Studies,68,no title and no filing: a person picks,,,1,DMED M10AD,Fundamentals of Audio Production,
+Cosumnes River College,ENGWR,English - Writing,,ENGL,English,62,no title and no filing: a person picks,,,1,ENGW M10AQ,Introduction to Technical and Professional Writing,
 Sacramento City College,SURVY,Surveying,,BSOT,Office Technologies,12,no title and no filing: a person picks,,,1,FLTE M1002,Photogrammetry,
 Moorpark College,FTMA,Film Television Media Arts,FTVE,FTVE,Film and Media Studies,100,"the filed common subject, with a title to check it by",FTVE,statewide_filing,1,FTMA M10AD,Directors and Genres,"S733: title filed from COBIx (#3837, #3838)"
-Southwestern College,IDNM,,,FMED,Media Production,5,no title and no filing: a person picks,,,1,IDNM M10AB,TRENDS AND CAREERS IN NEW MEDIA,
+Southwestern College,IDNM,,,FMED,Media Production,4,no title and no filing: a person picks,,,1,IDNM M10AB,TRENDS AND CAREERS IN NEW MEDIA,
 Las Positas College,JAMS,Journalism and Media Studies,,JOUR,Journalism,89,no title and no filing: a person picks,,,1,JAMS M10AG,Introduction to Media,
 Allan Hancock College,LBRY,Library Skills,,LIBR,Library Science,8,no title and no filing: a person picks,,,1,LBRY M10AA,Advanced Research,
 Madera College,LIBSKL,Library Skills,,LIBR,Library Science,66,no title and no filing: a person picks,,,1,LIBS M1002,Information and Computer Literacy,
@@ -108,7 +108,7 @@ Contra Costa College,LIBST,Library Studies,LIBR,LIBR,Library Science,55,"the tit
 Chabot College,LIBS,Library Studies,,LIBR,Library Science,43,no title and no filing: a person picks,,,1,LIBS M10AH,Library Research and Information Literacy Skills via Popular Culture,
 Los Angeles Valley College,LIB SCI,,,LIBR,Library Science,49,no title and no filing: a person picks,,,1,LIBS M10AI,MEDIA AND INFORMATION LITERACY: RESEARCH STRATEGIES AND BEYOND,
 Merced College,LRNR,Learning Resources,LSKL,LSKL,Learning Assistance or Learning Skills,0,"the title is near a discipline, not its name: a person picks",,,1,LRNR M10AF,Information Concepts and Research Skills,"S733: title filed from COBIx (#3837, #3838)"
-Palomar College,GCIP,Graphic Communications - Imaging and Publishing,,ARTS,Art,60,no title and no filing: a person picks,,,1,MART M1004,PAGE LAYOUT AND DESIGN I,
+Palomar College,GCIP,Graphic Communications - Imaging and Publishing,,ARTS,Art,61,no title and no filing: a person picks,,,1,MART M1004,PAGE LAYOUT AND DESIGN I,
 Bakersfield College,OFFT,Office Technology,,VOCE,Vocational,18,no title and no filing: a person picks,,,1,OFFT M9004,Product Design,
 Santa Monica College,IXD,Interaction Design,,ARTS,Art,67,no title and no filing: a person picks,,,1,OFFT M9004,Product Design,
 Rio Hondo College,RDIO,Radio,,COMM,Communication Studies,21,no title and no filing: a person picks,,,1,RDIO M10AB,Introduction to Radio News Writing,

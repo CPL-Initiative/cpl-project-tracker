@@ -43,6 +43,8 @@ TESTS = os.path.join(REPO, "tests")
 
 # file -> why CI does not run it. One line each. Add a file here only when a workflow cannot run it.
 UNRUN = {
+    "coci_subject_folds_test.py":
+        "run by tests/coci_campus_letter_test.py",
     "lattc_worklist_page_test.py":
         "drives a real Chromium through playwright; js-tests.yml skips the browser download, so a session runs it",
     "kb_curation_guarded_sql_proof.py":

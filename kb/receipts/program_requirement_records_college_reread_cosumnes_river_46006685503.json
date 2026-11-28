@@ -1,0 +1,585 @@
+{
+ "college": "Cosumnes River College",
+ "reread_run": "46006685503",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "45972311864",
+ "at": "2026-11-27T13:24:00Z",
+ "posted": 3,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "07302",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "07320",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "11330",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "11348",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "12741",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "20204",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35350",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35408",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35742",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 3,
+ "absent": 0,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [
+  "31055",
+  "33542",
+  "38017"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 1,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Cosumnes River College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 45972311864;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "A.S. T Degree",
+   "checks": {
+    "listed": 6,
+    "placed": 6,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Degree Requirements",
+      "rule": "all",
+      "stated": {
+       "max": 27,
+       "min": 27
+      },
+      "courses": [
+       {
+        "code": "PHYS 411",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 421",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 431",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 400",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 401",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 402",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "research",
+      "engineering",
+      "computer programming",
+      "teaching"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "explain the scientific method and its application to the fundamental concepts of physics including mechanics, electricity and magnetism, thermodynamics, mechanical and electromagnetic waves, optics and modern physics.",
+      "solve conceptual, numeric and symbolic problems in physics (specifically the fields of mechanics, electricity and magnetism, thermodynamics, mechanical and electromagnetic waves, optics and modern physics) using mathematics through calculus.",
+      "demonstrate the proper use of basic laboratory devices including metersticks, balances, digital multimeters, and oscilloscopes.",
+      "apply mathematical concepts including single and multivariable calculus, vector calculus, and basic differential equations in order to model physical systems and solve physical problems.",
+      "create graphical representations of data and analyze those graphs to determine the results of laboratory activities.",
+      "write a clear, coherent and thorough lab report."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 27,
+      "min": 27
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Degree Requirements",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 27,
+   "total_min": 27,
+   "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=540",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39047009824,
+   "program_title": "Physics",
+   "control_number": "31055"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "gaps": [
+     "option_lists_read_apart"
+    ],
+    "listed": 13,
+    "placed": 13,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal",
+    "confidence": {
+     "source": 80,
+     "ge_pattern": null,
+     "catalog_year": 100,
+     "unit_arithmetic": 40,
+     "course_list_match": 100
+    }
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "A minimum of 3 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "SPAN 426",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 427",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 373",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     },
+     {
+      "name": "OPTION I - Non-Native Spanish Speaker",
+      "rule": "all",
+      "stated": {
+       "max": 16,
+       "min": 16
+      },
+      "courses": [
+       {
+        "code": "SPAN 401",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 402",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 411",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 412",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Option"
+     },
+     {
+      "name": "OPTION II - Native Spanish Speaker",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "SPAN 413",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 415",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Option"
+     },
+     {
+      "name": "OPTION II - Native Spanish Speaker: A minimum of 8 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 8,
+       "min": 8
+      },
+      "courses": [
+       {
+        "code": "SPAN 426",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 427",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 373",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 425",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HUM 331",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGLT 336",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 371",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 8,
+      "option_group": "Option"
+     }
+    ],
+    "program": {
+     "careers": [
+      "Airlines/Travel",
+      "Banking",
+      "Bilingual Education",
+      "Bilingual Telecommunications",
+      "Emergency Services",
+      "Foreign Service",
+      "Foreign Language Teacher",
+      "Import & Export",
+      "Intelligence/Military Service",
+      "International Business",
+      "IRS/State Franchise Tax Board",
+      "Business & Commerce",
+      "Law Enforcement/Correctional Officer",
+      "Social Security Officer",
+      "Social Service",
+      "Translating & Interpreting",
+      "Tourism"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "utilize correct grammatical structures of standard Spanish.",
+      "read Spanish proficiently as found, for example, in Spanish language newspapers, magazines, short stories, essays, and selections of poetry written by Spanish, Spanish-American, and Chicano authors.",
+      "demonstrate appropriate writing and composition skills using Spanish.",
+      "discuss and critique Spanish-American literature in a historical context.",
+      "demonstrate proficiency in these areas: comprehension, speaking, reading, writing, and understanding the peoples and cultures of Spanish-speaking countries."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 19,
+      "min": 19
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "A.A.-T. in Spanish",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 19,
+   "total_min": 19,
+   "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=593",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39047009824,
+   "program_title": "Spanish",
+   "control_number": "33542"
+  },
+  {
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "checks": {
+    "listed": 19,
+    "placed": 11,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Ensemble (beginning of list cut off at page break)",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "MUP 330",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "MUP 357",
+          "units": 2,
+          "catalog_addition": false
+         },
+         {
+          "code": "MUP 360",
+          "units": 2,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "A minimum of 3 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "MUFHL 400",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUFHL 404",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUFHL 412",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUFHL 414",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     },
+     {
+      "name": "Required courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "MUSM 498",
+        "units": 0.5,
+        "units_max": 4,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUFHL 300",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "MUFHL 310",
+          "units": 3,
+          "catalog_addition": false
+         },
+         {
+          "code": "MUFHL 311",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "independent private music instructor",
+      "charter school music instructor",
+      "after school program music instructor",
+      "children's day care and/or pre school music instructor",
+      "private tutor",
+      "music school proprietor"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Students will develop increased artistry and technical mastery with which to attract a more diverse teaching clientele and acquire a knowledge of partner organizations on the local, state, and national levels.",
+      "Students will be proficient in contemporary technologies for the purposes of research, composition, listening, performance, recording, archiving, and cross-discipline collaboration.",
+      "Students will acquire necessary independent contractor business skills for their careers as an independent music teacher and develop a mastery of using social media for recruitment and retention purposes."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 18,
+      "min": 13.5
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Entrepreneurial Arts – Independent Music Instructor",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 18,
+   "total_min": 13.5,
+   "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=502",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39047009824,
+   "program_title": "Entrepreneurial Arts – Independent Music Instructor",
+   "control_number": "38017"
+  }
+ ]
+}

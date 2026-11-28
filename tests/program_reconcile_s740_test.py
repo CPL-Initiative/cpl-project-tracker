@@ -77,18 +77,25 @@ SJCC_PAIRS = {"ACCTG20": "ACCOUNTINGAC", "BUS71": "BUSINESSBUS0", "CA5": "COMPUT
               "SOLAR102": "SOLARRENEWAB", "CIS24A": "COMPUTERINFO", "KINPE23": "KINPE2", "KINPE41": "KINPE4",
               "KINPE56": "KINPE9B"}
 SOLANO_PAIRS = {"SOCI2": "SOC2", "SOCI23": "SOC23", "SOCI40": "SOC40", "SOCI45": "SOC45", "SOCI75": "SOC75"}
+# Either state (p-older-pile-tests-pin-runs-later-plans-move-s739): S742 adds one pair at San Jose City, JOURN 138 for
+# the state's one unnamed row 'JournalismJO Work Experience' (CCC000438429, in 38499's list alone), cited by the line
+# the program's own page prints (tests/program_renumbers_s742_sjcc_test.py). S740 left the name out for want of a
+# source; its eleven pairs stand as written.
+SJCC_S742 = {"JOURN138": "JOURNALISMJO"}
 
 print("the entries as written")
 sb, sj, so = (STEPS.get(c) or {} for c in (SBVC, SJCC, SOLANO))
 check(norm(sb.get("course_renumbers")) == dict(SBVC_S720, **SBVC_PAIRS),
       "San Bernardino Valley's renumbers are S720's nine and S740's six (%r)" % norm(sb.get("course_renumbers")))
 check(sb.get("prefix_aliases") == {"ANTH": "ANTHRO", "ARTH": "ART"}, "its prefix aliases stay S652's two")
-check(norm(sj.get("course_renumbers")) == SJCC_PAIRS and not sj.get("prefix_aliases"),
-      "San Jose City's renumbers are the eleven, and no prefix is aliased (%r)" % norm(sj.get("course_renumbers")))
+check(norm(sj.get("course_renumbers")) in (SJCC_PAIRS, dict(SJCC_PAIRS, **SJCC_S742)) and not sj.get("prefix_aliases"),
+      "San Jose City's renumbers are the eleven (and S742's one), and no prefix is aliased (%r)"
+      % norm(sj.get("course_renumbers")))
 check(norm(so.get("course_renumbers")) == SOLANO_PAIRS and not so.get("prefix_aliases") and so.get("steps") == [],
       "Solano's renumbers are the five, with no prefix alias and no step (%r)" % norm(so.get("course_renumbers")))
 for college, conf, pairs in ((SBVC, sb, SBVC_PAIRS), (SJCC, sj, SJCC_PAIRS), (SOLANO, so, SOLANO_PAIRS)):
-    cited = {S.norm_code(c["printed"]): c for c in conf.get("course_renumbers_cited") or []}
+    cited = {S.norm_code(c["printed"]): c for c in conf.get("course_renumbers_cited") or []
+             if c.get("session") != "S742"}
     check(set(cited) == set(pairs) and all(S.norm_code(c["file"]) == pairs[k] for k, c in cited.items()),
           "%s: each S740 pair carries its citation" % college)
     check(all(c.get("title") and c.get("units") and c.get("session") == "S740" and c.get("date") == "2026-11-26"
@@ -263,7 +270,10 @@ for college, want_pass, want_collect in (
         (SOLANO, ["06555", "08337", "19450", "30678", "35213", "43144"], ["42041"])):
     to_pass, to_fail, collectable = recall(college)
     check(to_fail == [], "%s: the entry turns no passing record into a failing one (%r)" % (college, to_fail))
-    check(to_pass == want_pass, "%s: the entry passes %r (%r)" % (college, want_pass, to_pass))
+    # Either state: with S742's pair filed, San Jose City's entry also passes 38499.
+    check(to_pass == want_pass or (college == SJCC and to_pass == sorted(want_pass + ["38499"])
+                                   and SJCC_S742.items() <= norm(sj.get("course_renumbers")).items()),
+          "%s: the entry passes %r (%r)" % (college, want_pass, to_pass))
     check(collectable == want_collect,
           "%s: with its course list read, %r still fail on their units (%r)" % (college, want_collect, collectable))
 
@@ -362,8 +372,11 @@ check(placed(["SOCI 110"], ["SOC 110"], SBVC) == ["SOC110"], "San Bernardino Val
 check(placed(["SOCI 002"], ["SOC 2"], SJCC) == ["SOCI 002"], "Solano's pairs are Solano's alone")
 check(placed(["ACCTG 020"], ["AccountingAC"], SJCC) == ["ACCOUNTINGAC"], "San Jose City: ACCTG 020 reads as the file's row")
 vals = set(norm(sj.get("course_renumbers")).values())
-check(not vals & {"COMPUTERGRAP", "REALESTATERE", "JOURNALISMJO", "COSMETOLOGYC"},
-      "a cut-off name that stands for several courses, or that no source names, is no pair")
+check(not vals & {"COMPUTERGRAP", "REALESTATERE", "COSMETOLOGYC"}
+      and ("JOURNALISMJO" not in vals or any(c.get("session") == "S742" and S.norm_code(c["printed"]) == "JOURN138"
+                                             for c in sj.get("course_renumbers_cited") or [])),
+      "a cut-off name that stands for several courses, or that no source names, is no pair (JournalismJO only as "
+      "S742 cites it from the page's own line)")
 by_key = {}
 for f in records(SJCC):
     for c in C.closed_list(SJCC, f["control_number"]):

@@ -351,6 +351,14 @@ step "Build the Subjects page's courses by code" <<'STEP'
 python3 kb/_build_subject_courses.py || { git checkout -- kb/status/subject_courses 2>/dev/null || true; echo "::warning title=Subject courses not rebuilt::kb/_build_subject_courses.py failed; the Subjects page's course panel reads yesterday's files under kb/status/subject_courses/."; }
 STEP
 
+# kb/status/program_ladders/<slug>.json (Sam, 2026-11-27): each program's stack, the certificates it starts from
+# and the degrees and bachelor's it leads to (course containment, program CIP, a curated ladder), for CPL Pathways'
+# catalog-record view. No clock is read, so the same inputs write the same bytes (~5 s). Display only, so a failure
+# warns and yesterday's files stand.
+step "Build the program ladders" <<'STEP'
+python3 kb/_build_program_ladders.py || { git checkout -- kb/status/program_ladders 2>/dev/null || true; echo "::warning title=Program ladders not rebuilt::kb/_build_program_ladders.py failed; CPL Pathways' catalog records read yesterday's files under kb/status/program_ladders/."; }
+STEP
+
 step "Build the noncredit subject title list" <<'STEP'
 python3 kb/_build_noncredit_subject_titles.py || { git checkout -- kb/status/noncredit_subject_titles.json 2>/dev/null || true; echo "::warning title=Noncredit subject titles not rebuilt::kb/_build_noncredit_subject_titles.py failed; #commons/subjects/noncredit reads yesterday's kb/status/noncredit_subject_titles.json."; }
 STEP
@@ -657,6 +665,15 @@ STEP
 # from the adoption file the step above wrote. library/adopt/adopt_data.json, adopt_more.json and adopt_ai.json (CPL-AI); library/adopt/.
 step "Build the public adoption page's data" <<'STEP'
 python3 kb/_build_adopt_page.py --quiet || echo "::warning title=Adoption page not rebuilt::kb/_build_adopt_page.py failed; library/adopt/ reads the previous file until the next run. Check the step log."
+STEP
+
+# kb/status/program_certs/<slug>.json (Sam, 2026-11-27): each program's industry certifications, the ones that earn
+# CPL on its courses at the college (the adoption file the step above wrote, with kb/exhibits_adoption.json's full
+# lines) and the ones its catalog names, for CPL Pathways' Industry certs. After the adoption page's data, which it
+# reads. No clock is read, so the same inputs write the same bytes (~11 s). Display only, so a failure warns and
+# yesterday's files stand.
+step "Build the program certifications" <<'STEP'
+python3 kb/_build_program_certs.py || { git checkout -- kb/status/program_certs 2>/dev/null || true; echo "::warning title=Program certifications not rebuilt::kb/_build_program_certs.py failed; CPL Pathways' Industry certs read yesterday's files under kb/status/program_certs/."; }
 STEP
 
 # The catalog's analysis for faculty (Sam, 2026-11-06): issuer skill areas against the harvested course

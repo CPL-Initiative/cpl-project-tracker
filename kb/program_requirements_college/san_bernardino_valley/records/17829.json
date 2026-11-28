@@ -61,35 +61,34 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "unequal",
+   "status": "incomplete",
    "computed": [
     50.0,
     60.0
    ],
    "stated": [
-    50.0,
-    63.0
+    60.0,
+    60.0
    ],
-   "against": "program",
+   "against": "degree",
+   "ge": null,
    "why": [
-    "the blocks sum to 50.0-60.0; the catalog states 50.0-63.0"
+    "the record names the degree total and the SBVC General Education and Graduation Requirements or Cal-GETC - California General Education Transfer Curriculum pattern, but no units for it"
    ],
-   "degree": {
-    "pass": false,
-    "status": "incomplete",
+   "major": {
+    "pass": true,
+    "status": "equal",
     "computed": [
      50.0,
      60.0
     ],
     "stated": [
-     60.0,
-     60.0
+     50.0,
+     63.0
     ],
-    "against": "degree",
-    "ge": null,
-    "why": [
-     "the record names the degree total and the SBVC General Education and Graduation Requirements or Cal-GETC - California General Education Transfer Curriculum pattern, but no units for it"
-    ]
+    "against": "program",
+    "why": [],
+    "short_high": true
    }
   },
   "repeated": {
@@ -114,7 +113,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "ge_units_not_read",
+    "label": "The degree names a general education pattern, and no units for it were read, so the degree's units cannot be added. Its major adds up to the printed major total.",
+    "words": "the degree names the SBVC General Education and Graduation Requirements or Cal-GETC - California General Education Transfer Curriculum pattern and no units were read for it; its major adds to the printed 50-63"
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 100,
+   "ge_pattern": 50,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {
@@ -440,5 +453,6 @@
    "Program learning outcomes taken from the page's outcomes tab."
   ]
  },
- "extracted_run": "38748858322"
+ "extracted_run": 46000859685,
+ "read_run": "38748858322"
 }

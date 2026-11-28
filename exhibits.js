@@ -5977,13 +5977,17 @@
     group.appendChild(el("div", { cls: "exh-dash", role: "list", "aria-label": "What is it called" }, [
       tile("Names", named && named.n, named && named.of, "MAP titles that carry the reference's shared credential name",
         named ? fmt(named.waiting) + " wait for a title" : ""),
-      tile("Aligned course", al.n, al.of,
-        "held titles articulated to a course that names them", "The course names the proposal"),
+      /* No held title left reads in words, never "0 of 0" (Sam's Commons Clarity list, S746 to S747). */
+      al.of === 0 ? tile("Aligned course", null, null, "no title is held for a person", "", "None held")
+        : tile("Aligned course", al.n, al.of, "held titles articulated to a course that names them", "The course names the proposal"),
       studentsTile(), reviewListTile(d)]));
     var rlBox = reviewListBox(d);
     if (rlBox) group.appendChild(rlBox);
     var steps = el("div", { cls: "exh-steps", role: "group", "aria-label": "Filter the review queue by CER step" },
-      [stepTile("", "All held")].concat(STEPS.map(function (s) { return stepTile(s, s); }), [stepTile("Saved, not folded", "Saved, waiting for the nightly run"), sweepTile(), renameTile()]));
+      [stepTile("", "All held")].concat(STEPS.map(function (s) { return stepTile(s, s); }),
+        /* Shown only while a save waits for the nightly run: a standing 0 told the reader nothing (Sam's Commons Clarity
+           list, S746 to S747). */
+        savedNotFolded() > 0 ? [stepTile("Saved, not folded", "Saved, waiting for the nightly run")] : [], [sweepTile(), renameTile()]));
     group.appendChild(steps);
     wrap.appendChild(group);
 

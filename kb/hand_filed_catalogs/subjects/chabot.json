@@ -234,6 +234,22 @@
    "run": "45630435823"
   },
   {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "code_address",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/3973/6083/7544",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBI, a runner read (run 46061067072), from Sam's training note of 2026-11-27",
+   "run": "46061067072"
+  },
+  {
    "code": "ARTH",
    "heading": "Art History",
    "heading_printed": "Art History",
@@ -744,6 +760,22 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45630435823)",
    "run": "45630435823"
+  },
+  {
+   "code": "FILM",
+   "heading": "Film",
+   "heading_printed": "Film",
+   "rule": "code_address",
+   "codes": [
+    "FILM"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/3973/6083/7576",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBI, a runner read (run 46061067072), from Sam's training note of 2026-11-27",
+   "run": "46061067072"
   },
   {
    "code": "FRNC",
@@ -1258,6 +1290,22 @@
    "run": "45630435823"
   },
   {
+   "code": "PLBG",
+   "heading": "Apprenticeship: Plumbing",
+   "heading_printed": "Apprenticeship: Plumbing",
+   "rule": "code_address",
+   "codes": [
+    "PLBG"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/3973/6083/7609",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBI, a runner read (run 46061067072), from Sam's training note of 2026-11-27",
+   "run": "46061067072"
+  },
+  {
    "code": "PLGL",
    "heading": "Paralegal Studies",
    "heading_printed": "Paralegal Studies",
@@ -1335,6 +1383,22 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "PSCI",
+   "heading": "Physical Science",
+   "heading_printed": "Physical Science",
+   "rule": "index",
+   "codes": [
+    "PSCI"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7528",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx, from Chabot All Courses (catalog 2114, parent 7528)",
    "run": "45630435823"
   },
   {
@@ -1594,6 +1658,6 @@
    "run": "45630435823"
   }
  ],
- "subjects": 99,
- "with_heading": 99
+ "subjects": 103,
+ "with_heading": 103
 }

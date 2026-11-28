@@ -1,0 +1,1176 @@
+{
+ "college": "Santa Barbara City College",
+ "reread_run": "46015714377",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "46010148668",
+ "at": "2026-11-27T14:25:35Z",
+ "posted": 2,
+ "batches": 1,
+ "skipped": [],
+ "error": null,
+ "replaced": 2,
+ "absent": 0,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [
+  "32775",
+  "43553"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 1,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Santa Barbara City College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 46010148668;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 68,
+    "placed": 68,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ANTH 101",
+        "units": 3,
+        "units_max": 4,
+        "alternatives": [
+         {
+          "code": "ANTH 101H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANTH 102",
+        "units": 3,
+        "units_max": 4,
+        "alternatives": [
+         {
+          "code": "ANTH 102H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANTH 103",
+        "units": 3,
+        "units_max": 4,
+        "alternatives": [
+         {
+          "code": "ANTH 103H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A - Complete one course from the following:",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 5,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ANTH 104",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANTH 113",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 102",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 103",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 171",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BMS 108",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BOT 121",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 155",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 156",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS 104",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "EH 102",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENG 111",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENG 111H",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "ENGL C1001",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "COMM 235",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "PHIL 111",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ERTH 111",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ERTH 111H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ERTH 171",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "GEOG 171",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ERTH 172",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "GEOG 172",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ERTH 141",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 102",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 107",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 118",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "CS 118",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 130",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "MATH 150",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 160",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NATA 103",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 110",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 111",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLS C1000",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC C1000",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSYC C1000H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 103",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "SPAN 104",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "CHIN 103",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "FR 103",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "FR 104",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "GER 103",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "GER 104",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "ITAL 103",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "JAPN 103",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "SPAN 132",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "SPAN 146",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSY 150",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "SOC 125",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "List B - Complete two courses from the following:",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 10,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "ANTH 109",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 100",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ASL 125",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 200",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FS 109",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     },
+     {
+      "name": "List C - Any course not taken in List A or List B",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 5,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "BMS 107",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ERTH 115",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENVS 115",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ERTH 115L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENVS 115L",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Demonstrate basic knowledge of the holistic nature of Anthropology and the concepts of culture and biology as used by contemporary anthropologists.",
+      "Describe the development of Anthropology as a profession, explaining why it can be considered both a science and a humanity and how it became a distinct field of inquiry while retaining a relationship with other academic disciplines.",
+      "Discuss the four-field nature of Anthropology and the relation of its sub-disciplines to one another, particularly in terms of the biological and social construction of such terms as sex, gender and race",
+      "Describe ways in which different aspects of culture—economic, social, political, and religious practices and institutions—relate to one another in a cultural system, and draw comparisons between different cultures, past and present.",
+      "Demonstrate an awareness and appreciation of cultural diversity enhanced by a holistic perspective on culture as integrated, dynamic, and embedded in broader processes of intercultural connection and globalization.",
+      "Discuss their own cultural biases, as well as the biases of others, explaining why these biases exist while retaining the ability to put said biases aside in order to evaluate the cultural syntheses of others in ethnographies, films, news and media.",
+      "Articulate the importance of ethics in Anthropology, specifically the fundamental obligations of anthropologists to members of the societies they study, their research sponsors and their profession."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 32,
+      "min": 21
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Associate Degree for Transfer Graduation Requirements",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 32,
+   "total_min": 21,
+   "source_url": "https://catalog.sbcc.edu/academic-departments/anthropology/anthropology-transfer-aat/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39782741424,
+   "program_title": "Anthropology",
+   "control_number": "32775"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 92,
+    "placed": 92,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": 29,
+       "min": 26
+      },
+      "courses": [
+       {
+        "code": "AJ 101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "AJ 107",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "BLAW 101",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "BLAW 110",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 235",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "COMM C1000",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "COMM C1000H",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "COMM 141",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1001",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PHIL 205",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1000",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENGL C1000E",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "ENGL C1000H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST C1001",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "HIST C1002",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "HIST C1002H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSY 150",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "SOC 125",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHIL 101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PHIL 101H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLS C1000",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A - Complete two courses from two of the areas listed below: (NOTE: courses must have not been taken in the Required Core)",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 8,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "AJ 101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "AJ 103",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "AJ 104",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "AJ 107",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "AJ 113",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "SOC 106",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "BLAW 101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "BLAW 110",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON C2001",
+        "units": 3,
+        "units_max": 4,
+        "alternatives": [
+         {
+          "code": "ECON C2001H",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "ECON C2002",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "ECON C2002H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 288",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "POLS 121",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "POLS 121H",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "POLS 131",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "POLS 132",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "PSY 200",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON 114",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "GLST 101",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "GLST 102",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "GLST 105",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "JOUR 135",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "MKT 135",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "POLS 104",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "SOC 109",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "SOC 117",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ADC 130",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "AJ 105",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "ANTH 103",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "ANTH 109",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "ASAM 101",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "ASAM 102",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "BLST 101",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "BLST 102",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "BLST 102H",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "BLST 103",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "CHST 101",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "CHST 102",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "CHST 103",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "CHST 121",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "COMM 151",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "ETHS 101",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "ETHS 101H",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "ETHS 103",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "ETHS 107",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "ETHS 109",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "ETHS 110",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "ETHS 120",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "ETHS 121",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "ETHS 122",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "GEOG 102",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "HE 102",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "HIST 110",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "HIST 110H",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "HIST 133",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "HIST 135",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "NATA 101",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "NATA 102",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "NATA 103",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "NATA 104",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "NATA 105",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "SOC 107",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "SOC 113",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "SOC 127",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "PD 100",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PD 110",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "AJ 290",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "BUS 290",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "COMM 295",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "ETHS 295",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "GLST 295",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "PHIL 295",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "POLS 295",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "legal profession",
+      "criminal justice systems",
+      "social service agencies",
+      "regulatory agencies",
+      "political organizations",
+      "non-profit organizations"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Address public problems using the major theories underlying the fields of law, political science and public policy including those related to governance structures, intergovernmental relations, and intersectoral relations.",
+      "Describe the policy process through the application of appropriate various theories, including those related to the role of stakeholders, administrators, and bureaucracies.",
+      "Identify and assess ethical problems in law and public policy and society, and create appropriate solutions based on moral reasoning and ethical values.",
+      "Articulate the value of societal diversity in the public sector and the communities it serves."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 41,
+      "min": 35
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Law, Public Policy, and Society AA-T — Requirements (Associate Degree for Transfer Graduation Requirements / Major Requirements)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 41,
+   "total_min": 35,
+   "source_url": "https://catalog.sbcc.edu/academic-departments/justice-studies/law-public-policy-and-society-aat/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38670933359,
+   "program_title": "Law, Public Policy, and Society",
+   "control_number": "43553"
+  }
+ ]
+}

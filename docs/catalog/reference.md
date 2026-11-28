@@ -27,7 +27,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [College & district identity — lane state](../reference/lanes/college-district-identity.md) | lanes | `college-district-identity.md` | 2026-08-28 | 2026-11-10 |
 | [College CR evidence ('we approved it, but we have no CR') — lane state](../reference/lanes/college-cr-evidence.md) | lanes | `college-cr-evidence.md` | 2026-08-28 | 2026-08-28 |
 | [Common CR Reference — lane state](../reference/lanes/common-cr-reference.md) | lanes | `common-cr-reference.md` | 2026-08-28 | 2026-11-18 |
-| [Common Subjects Reference (CSR) — one Common SUBJ per MQ discipline — lane state](../reference/lanes/common-subjects-reference.md) | lanes | `common-subjects-reference.md` | 2026-10-19 | 2026-11-24 |
+| [Common Subjects Reference (CSR) — one Common SUBJ per MQ discipline — lane state](../reference/lanes/common-subjects-reference.md) | lanes | `common-subjects-reference.md` | 2026-10-19 | 2026-11-28 |
 | [CPL clean-up worklist — lane state](../reference/lanes/cpl-cleanup-worklist.md) | lanes | `cpl-cleanup-worklist.md` | 2026-08-28 | 2026-08-28 |
 | [CSM Workspace / the team's queue for each college — lane state](../reference/lanes/csm-workspace.md) | lanes | `csm-workspace.md` | 2026-11-02 | 2026-11-13 |
 | [CTDL and the partner exchange (Credential Engine, WestEd) — lane state](../reference/lanes/ctdl-partner-exchange.md) | lanes | `ctdl-partner-exchange.md` | 2026-10-20 | 2026-10-20 |
@@ -40,7 +40,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [GR register / CO policy & regulation review — lane state](../reference/lanes/gr-register.md) | lanes | `gr-register.md` | 2026-08-28 | 2026-08-30 |
 | [Implementation Funding tab / the $35M model — lane state](../reference/lanes/implementation-funding.md) | lanes | `implementation-funding.md` | 2026-08-28 | 2026-11-18 |
 | [Letters, Memos & Reports / the communications register — lane state](../reference/lanes/communications.md) | lanes | `communications.md` | 2026-10-23 | 2026-10-24 |
-| [Library / where decks, films and documents live — lane state](../reference/lanes/library.md) | lanes | `library.md` | 2026-10-05 | 2026-11-25 |
+| [Library / where decks, films and documents live — lane state](../reference/lanes/library.md) | lanes | `library.md` | 2026-10-05 | 2026-11-27 |
 | [Local course ↔ CR alignment — lane state](../reference/lanes/local-course-cr-alignment.md) | lanes | `local-course-cr-alignment.md` | 2026-08-28 | 2026-11-07 |
 | [MAP Custom Reports (3 new) / ITPI automation — lane state](../reference/lanes/map-custom-reports.md) | lanes | `map-custom-reports.md` | 2026-08-28 | 2026-11-14 |
 | [MAP Users / student contact — lane state](../reference/lanes/map-users-student-contact.md) | lanes | `map-users-student-contact.md` | 2026-08-28 | 2026-08-28 |
@@ -61,7 +61,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Sierra's page redesign (after america.gov) — lane state](../reference/lanes/sierra-page-redesign.md) | lanes | `sierra-page-redesign.md` | 2026-10-08 | 2026-11-18 |
 | [Sierra: false absences + the statewide flag — lane state](../reference/lanes/sierra-false-absences.md) | lanes | `sierra-false-absences.md` | 2026-08-28 | 2026-11-12 |
 | [SkyView / the CCR curation interface — lane state](../reference/lanes/skyview-ccr-interface.md) | lanes | `skyview-ccr-interface.md` | 2026-08-28 | 2026-09-29 |
-| [The Commons — one tracking system for the common references, and a Commons dash — lane state](../reference/lanes/commons.md) | lanes | `commons.md` | 2026-10-18 | 2026-11-25 |
+| [The Commons — one tracking system for the common references, and a Commons dash — lane state](../reference/lanes/commons.md) | lanes | `commons.md` | 2026-10-18 | 2026-11-28 |
 | [Title 5 §55050 → Ed. Code Article 9 — lane state](../reference/lanes/t5-55050-article-9.md) | lanes | `t5-55050-article-9.md` | 2026-08-28 | 2026-08-30 |
 | [Primary-source statutory and regulatory text](../reference/statute/README.md) | statute | `README.md` |  |  |
 | [Approval-prompt guards — why the allowlist never worked, and where the hooks must live](../reference/approval_prompt_hooks.md) | — | `approval_prompt_hooks.md` | 2026-09-19 | 2026-11-14 |

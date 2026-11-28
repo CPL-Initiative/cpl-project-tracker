@@ -1,0 +1,684 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30)",
+ "gaps": {
+  "major_total_differs": "major total differs from catalog",
+  "no_units_printed": "The catalog prints no units for at least one required course.",
+  "no_units_read": "A required course carries no units as read, so the program's units cannot be added.",
+  "no_hours_read": "A required course carries no hours as read, so the program's hours cannot be added.",
+  "catalog_figures_differ": "The catalog's own figures do not add up: each list matches its printed figure, and the lists sum past the program's printed total.",
+  "noncredit_names_only": "Noncredit certificate: the catalog names it but prints no course list.",
+  "total_not_printed": "The catalog prints no total for this program, so its units cannot be checked against one.",
+  "total_differs": "The catalog prints a total for this program that its own printed units do not add to.",
+  "hours_total_not_read": "A program measured in hours: its courses carry their hours, and no program total was read, so its hours cannot be checked against one.",
+  "hours_within_printed_range": "A program measured in hours: its courses' hours as read fall within the printed range of hours rather than matching it.",
+  "hours_total_differs": "A program measured in hours: its courses' hours as read add to a figure other than the program's printed total.",
+  "ge_units_not_read": "The degree names a general education pattern, and no units for it were read, so the degree's units cannot be added. Its major adds up to the printed major total.",
+  "lists_past_their_figure": "The catalog's figures add up to its printed total, counting each list at its printed figure; the courses in a list carry more units than that figure.",
+  "section_cut_off": "The program's section runs onto a page the read did not hold, so part of its requirements is missing from the record and its units cannot be checked against the printed total.",
+  "noted_figures_differ": "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires.",
+  "noted_unit_floor": "The catalog requires a variable-unit course at a minimum above the units printed beside it; with that minimum the courses add to the printed total.",
+  "lists_not_closed": "A choice list prints no unit figure of its own, one that depends on another choice, or also takes courses from another list, so the lists alone cannot add the program's units.",
+  "no_own_page_total": "The record was read from another award's page, which prints this program's courses inside its own requirements and prints no total for this program.",
+  "pool_figure_not_read": "The catalog prints one figure over several lists or nested options together, and the record adds the parts instead, so its units cannot be checked against that figure.",
+  "one_option_of_shared_page": "The program is one option of a page several programs share; the record holds every option the page prints, so its units are the whole group's, not the program's own.",
+  "pair_read_as_alternatives": "The catalog prints two courses taken together as one option, and the record reads them as separate alternatives, so its low end falls short of the printed total.",
+  "noted_no_total": "The reader's note says the catalog prints no total for this program, so its units cannot be checked against one; no page read has confirmed it.",
+  "noted_section_cut_off": "The reader's note says the program's section runs onto a page the read did not hold, so part of its requirements is missing from the record.",
+  "degree_within_map_range": "The record takes the degree total from the sample map's range, whose low end is the 60 units the page prints as needed to graduate; the major adds up to its printed major total, and the degree's units as read fall inside the map's range and match neither end.",
+  "required_list_outside_total": "The catalog prints a list the program requires apart from its printed total, and the record counts that list; without it the courses add to the printed total.",
+  "ge_figures_other_pattern": "The degree names one general education pattern, and the page prints general education figures only for other patterns, so no units for the named pattern were read and the degree's units cannot be added. Its major adds up to the printed major total.",
+  "repeat_read_once": "The catalog prints a course the program takes more than once, and the record counts it once, so its units fall short of the printed total by the repeats.",
+  "double_count_noted": "The catalog lets some of the program's units count twice, toward the major and general education, and the record adds them twice.",
+  "prerequisites_counted": "The record counts the program's prerequisite courses, which the catalog's printed total leaves out; without them the courses add to the printed total.",
+  "entry_path_range": "The page prints the major as a range over entry paths (a licensed student enters later in the sequence), and the record holds the full path, which matches the range's top; which path a student takes is the college's admission.",
+  "nested_award_not_read": "The program counts another award as one line, and the catalog prints that award's courses in its own section, so the record holds the line without its courses.",
+  "unit_line_not_read": "The catalog prints a requirement as a line of units with no course named, and the record leaves the line out; with it the courses add to the printed total.",
+  "degree_summary_ge_none": "The page's unit summary prints the degree total and prints its general education and electives as None or N/A, so the record holds the major alone; the major adds up to its printed major total.",
+  "figure_within_variable_units": "A required list's printed figure falls inside the range its variable-unit courses carry, and the page does not say how many units each takes; counting each list at its printed figure, the figures add to the printed total.",
+  "degree_electives_not_printed": "The degree's major and general education add to less than the printed degree total, and the page prints no figure for electives and does not say they fill the rest.",
+  "option_lists_read_apart": "An option the catalog prints takes more than one list under the option's own printed figure, and the record's one option group holds each list as an alternative of its own, so the program's units cannot be checked against the printed figures.",
+  "noted_total_cut_off": "The reader's note says the program's total line runs onto a page the read did not hold; every course is placed, so only the printed total is missing and its units cannot be checked against it.",
+  "heading_not_in_text": "The page the read held prints a requirements list but not the program's own heading, which sits on a page the read did not hold; the record takes the list as this program's by its title alone, and no page read has confirmed it.",
+  "waived_course_counted": "The page prints a requirement at a range from zero units, since a student may meet it without the course (a certification, an exam or earlier coursework), and the record counts the course, so its units match the top of the printed range and not its low end.",
+  "units_within_printed_range": "The courses' units as read fall within the printed range of units rather than matching it."
+ },
+ "at": "2026-11-27T13:28:10Z",
+ "why": "f-reread-replaces-labeled-rows-s683: the wave's re-reads replaced labeled rows",
+ "parts": {
+  "A": "a re-read record a record rule names a gap for (no_units_read, no_hours_read, major_total_differs)",
+  "B": "a re-read record #3502's plan names, meeting its gap's own sentence (kb/program_requirements_reread_plan_s680.json)"
+ },
+ "colleges": [
+  "San Bernardino Valley College"
+ ],
+ "held_colleges": [],
+ "wave_runs": {
+  "San Bernardino Valley College": [
+   "44481529632",
+   "45844530701",
+   "45960735042",
+   "46000859685"
+  ]
+ },
+ "checked_excluded": [],
+ "collected": 1,
+ "by_part": {
+  "A": 1
+ },
+ "by_gap": {
+  "ge_units_not_read": 1
+ },
+ "by_college": {
+  "San Bernardino Valley College": 1
+ },
+ "held_out": [],
+ "left_out": [
+  {
+   "part": "A",
+   "college": "Antelope Valley College",
+   "control_number": "38016",
+   "why": "not a named college"
+  },
+  {
+   "part": "A",
+   "college": "City College of San Francisco",
+   "control_number": "24254",
+   "why": "not a named college"
+  },
+  {
+   "part": "A",
+   "college": "City College of San Francisco",
+   "control_number": "32080",
+   "why": "not a named college"
+  },
+  {
+   "part": "A",
+   "college": "City College of San Francisco",
+   "control_number": "33652",
+   "why": "not a named college"
+  },
+  {
+   "part": "A",
+   "college": "City College of San Francisco",
+   "control_number": "46300",
+   "why": "not a named college"
+  },
+  {
+   "part": "A",
+   "college": "Coastline Community College",
+   "control_number": "38389",
+   "why": "not a named college"
+  },
+  {
+   "part": "A",
+   "college": "College of Alameda",
+   "control_number": "01118",
+   "why": "not a named college"
+  },
+  {
+   "part": "A",
+   "college": "College of Alameda",
+   "control_number": "01124",
+   "why": "not a named college"
+  },
+  {
+   "part": "A",
+   "college": "College of the Canyons",
+   "control_number": "38686",
+   "why": "not a named college"
+  },
+  {
+   "part": "A",
+   "college": "College of the Canyons",
+   "control_number": "44273",
+   "why": "not a named college"
+  },
+  {
+   "part": "A",
+   "college": "College of the Canyons",
+   "control_number": "45610",
+   "why": "not a named college"
+  },
+  {
+   "part": "A",
+   "college": "College of the Redwoods",
+   "control_number": "31005",
+   "why": "not a named college"
+  },
+  {
+   "part": "A",
+   "college": "Cosumnes River College",
+   "control_number": "04593",
+   "why": "not a named college"
+  },
+  {
+   "part": "A",
+   "college": "Cosumnes River College",
+   "control_number": "04600",
+   "why": "not a named college"
+  },
+  {
+   "part": "A",
+   "college": "Cosumnes River College",
+   "control_number": "07290",
+   "why": "not a named college"
+  },
+  {
+   "part": "A",
+   "college": "Cosumnes River College",
+   "control_number": "12790",
+   "why": "not a named college"
+  },
+  {
+   "part": "A",
+   "college": "Cosumnes River College",
+   "control_number": "12792",
+   "why": "not a named college"
+  },
+  {
+   "part": "A",
+   "college": "Cosumnes River College",
+   "control_number": "20367",
+   "why": "not a named college"
+  },
+  {
+   "part": "A",
+   "college": "Cosumnes River College",
+   "control_number": "30576",
+   "why": "not a named college"
+  },
+  {
+   "part": "A",
+   "college": "Cosumnes River College",
+   "control_number": "31055",
+   "why": "not a named college"
+  },
+  {
+   "part": "A",
+   "college": "Cosumnes River College",
+   "control_number": "31995",
+   "why": "not a named college"
+  },
+  {
+   "part": "A",
+   "college": "Cosumnes River College",
+   "control_number": "35175",
+   "why": "not a named college"
+  },
+  {
+   "part": "A",
+   "college": "Cosumnes River College",
+   "control_number": "41992",
+   "why": "not a named college"
+  },
+  {
+   "part": "A",
+   "college": "Cosumnes River College",
+   "control_number": "45317",
+   "why": "not a named college"
+  },
+  {
+   "part": "A",
+   "college": "Cosumnes River College",
+   "control_number": "46419",
+   "why": "not a named college"
+  },
+  {
+   "part": "A",
+   "college": "De Anza College",
+   "control_number": "46394",
+   "why": "not a named college"
+  },
+  {
+   "part": "A",
+   "college": "Glendale Community College",
+   "control_number": "24010",
+   "why": "not a named college"
+  },
+  {
+   "part": "A",
+   "college": "Mendocino College",
+   "control_number": "30672",
+   "why": "not a named college"
+  },
+  {
+   "part": "A",
+   "college": "Merritt College",
+   "control_number": "37964",
+   "why": "not a named college"
+  },
+  {
+   "part": "A",
+   "college": "Sacramento City College",
+   "control_number": "07329",
+   "why": "not a named college"
+  },
+  {
+   "part": "A",
+   "college": "Sacramento City College",
+   "control_number": "07334",
+   "why": "not a named college"
+  },
+  {
+   "part": "A",
+   "college": "Sacramento City College",
+   "control_number": "30700",
+   "why": "not a named college"
+  },
+  {
+   "part": "A",
+   "college": "Sacramento City College",
+   "control_number": "32002",
+   "why": "not a named college"
+  },
+  {
+   "part": "A",
+   "college": "San Bernardino Valley College",
+   "control_number": "09267",
+   "why": "not a run of the wave"
+  },
+  {
+   "part": "A",
+   "college": "Solano Community College",
+   "control_number": "32475",
+   "why": "not a named college"
+  },
+  {
+   "part": "A",
+   "college": "West Los Angeles College",
+   "control_number": "46441",
+   "why": "not a named college"
+  }
+ ],
+ "recall": {
+  "held": 1701,
+  "right": 1701,
+  "wrong": 0,
+  "by_answer": {
+   "ge_units_not_read": 178,
+   "none": 1306,
+   "lists_past_their_figure": 22,
+   "hours_total_differs": 17,
+   "section_cut_off": 20,
+   "hours_within_printed_range": 12,
+   "hours_total_not_read": 33,
+   "no_hours_read": 57,
+   "no_units_read": 25,
+   "total_not_printed": 9,
+   "total_differs": 22
+  },
+  "wrong_keys": []
+ },
+ "records": [
+  {
+   "part": "A",
+   "college": "San Bernardino Valley College",
+   "control_number": "17829",
+   "award": "A.S. Degree",
+   "extracted_run": 46000859685,
+   "gap": "ge_units_not_read",
+   "words": "the degree names the SBVC General Education and Graduation Requirements or Cal-GETC - California General Education Transfer Curriculum pattern and no units were read for it; its major adds to the printed 50-63",
+   "confidence": {
+    "unit_arithmetic": 50,
+    "course_list_match": 100,
+    "ge_pattern": 50,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "path": "kb/program_requirements_college/san_bernardino_valley/records/17829.json",
+   "before_image": {
+    "program_title": "Environmental Science",
+    "award": "A.S. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/environmental-science/environmental-science-as-degree/",
+    "measure": "units",
+    "total_min": 50,
+    "total_max": 63,
+    "record": {
+     "program": {
+      "section_heading": "REQUIREMENTS",
+      "measure": "units",
+      "total_units": {
+       "min": 50,
+       "max": 63
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "SBVC General Education and Graduation Requirements or Cal-GETC - California General Education Transfer Curriculum",
+      "degree_total": {
+       "min": 60,
+       "max": 60
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Analyze the interaction between natural and social systems and subsequent impacts on sustainable development, environmental policies, environmental justice, and racial justice.",
+       "Synthesize the fundamentals of sociology, biology, chemistry, Earth sciences, mathematics, physics, and other social and natural sciences within a framework of human-environment interactions with an emphasis on racial equity and social justice.",
+       "Critically interpret and assess environmental news and trends, including green technologies and career opportunities, national and international environmental policies, resource exploitation and conservation, global climate change, sustainable development, and human health within the context of racial equity and social justice."
+      ],
+      "careers": [
+       "environmental toxicology",
+       "public health",
+       "environmental law",
+       "education",
+       "environmental economics",
+       "soil and water science",
+       "restoration ecology",
+       "environmental landscaping",
+       "environmental management",
+       "urban planning"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ENVSCI 100",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL 205",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL 206",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 150",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 151",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECON C2001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ECON C2001H",
+           "units": null,
+           "catalog_addition": false
+          },
+          {
+           "code": "POLS C1000",
+           "units": null,
+           "catalog_addition": false
+          },
+          {
+           "code": "POLS C1000H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOG 110",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH C2210",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH C2220",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "One of the following:",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 1,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "GEOG 111",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "GEOG 111H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOL 101",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOL 111",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "One of the following Physics course sequences: PHYSIC 151 & PHYSIC 152",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Physics sequence",
+       "stated": {
+        "min": 8,
+        "max": 8
+       },
+       "courses": [
+        {
+         "code": "PHYSIC 151",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYSIC 152",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "One of the following Physics course sequences: PHYSIC 202 & PHYSIC 203 & PHYSIC 204",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Physics sequence",
+       "stated": {
+        "min": 12,
+        "max": 12
+       },
+       "courses": [
+        {
+         "code": "PHYSIC 202",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYSIC 203",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYSIC 204",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Two courses from the following:",
+       "rule": "choose_courses",
+       "minimum": 2,
+       "option_group": null,
+       "stated": {
+        "min": 6,
+        "max": 10
+       },
+       "courses": [
+        {
+         "code": "BIOL 104",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL 207",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 205",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 212",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 213",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOG 130",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "GIS 130",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "STAT C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "STAT C1000H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 266",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 31,
+     "listed": 31
+    },
+    "extracted_run": "46000859685"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 31,
+     "listed": 31,
+     "gaps": [
+      "ge_units_not_read"
+     ],
+     "confidence": {
+      "unit_arithmetic": 50,
+      "course_list_match": 100,
+      "ge_pattern": 50,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 1
+  }
+ ],
+ "pre_read": "with v(i, part, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'A', 'San Bernardino Valley College', '17829', 46000859685, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENVSCI 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 205\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 206\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 150\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 151\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ECON C2001H\",\"units\":null},{\"catalog_addition\":false,\"code\":\"POLS C1000\",\"units\":null},{\"catalog_addition\":false,\"code\":\"POLS C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ECON C2001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH C2210\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH C2220\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"GEOG 111H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"GEOG 111\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 111\",\"units\":1,\"units_max\":null}],\"minimum\":1,\"name\":\"One of the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":1}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSIC 151\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSIC 152\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"One of the following Physics course sequences: PHYSIC 151 & PHYSIC 152\",\"option_group\":\"Physics sequence\",\"rule\":\"all\",\"stated\":{\"max\":8,\"min\":8}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSIC 202\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSIC 203\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSIC 204\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"One of the following Physics course sequences: PHYSIC 202 & PHYSIC 203 & PHYSIC 204\",\"option_group\":\"Physics sequence\",\"rule\":\"all\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 104\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 207\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 205\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 212\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 213\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"GIS 130\",\"units\":null}],\"catalog_addition\":false,\"code\":\"GEOG 130\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"STAT C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 266\",\"units\":4,\"units_max\":null}],\"minimum\":2,\"name\":\"Two courses from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":10,\"min\":6}}],\"program\":{\"careers\":[\"environmental toxicology\",\"public health\",\"environmental law\",\"education\",\"environmental economics\",\"soil and water science\",\"restoration ecology\",\"environmental landscaping\",\"environmental management\",\"urban planning\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"SBVC General Education and Graduation Requirements or Cal-GETC - California General Education Transfer Curriculum\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Analyze the interaction between natural and social systems and subsequent impacts on sustainable development, environmental policies, environmental justice, and racial justice.\",\"Synthesize the fundamentals of sociology, biology, chemistry, Earth sciences, mathematics, physics, and other social and natural sciences within a framework of human-environment interactions with an emphasis on racial equity and social justice.\",\"Critically interpret and assess environmental news and trends, including green technologies and career opportunities, national and international environmental policies, resource exploitation and conservation, global climate change, sustainable development, and human health within the context of racial equity and social justice.\"],\"section_heading\":\"REQUIREMENTS\",\"total_units\":{\"max\":63,\"min\":50}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":31,\"placed\":31}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":50,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"ge_units_not_read\"],\"invented\":true,\"listed\":31,\"placed\":31}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'matched', count(*),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'A', json_build_object('listed', count(*) filter (where v.part = 'A'), 'on_run', count(*) filter (where v.part = 'A' and r.extracted_run = v.extracted_run), 'both_before', count(*) filter (where v.part = 'A' and r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks), 'already_after', count(*) filter (where v.part = 'A' and r.checks = v.after_checks), 'checked_now', count(*) filter (where v.part = 'A' and r.checked)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number;",
+ "apply": "with v(i, part, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'A', 'San Bernardino Valley College', '17829', 46000859685, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENVSCI 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 205\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 206\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 150\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 151\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ECON C2001H\",\"units\":null},{\"catalog_addition\":false,\"code\":\"POLS C1000\",\"units\":null},{\"catalog_addition\":false,\"code\":\"POLS C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ECON C2001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH C2210\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH C2220\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"GEOG 111H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"GEOG 111\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 111\",\"units\":1,\"units_max\":null}],\"minimum\":1,\"name\":\"One of the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":1}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSIC 151\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSIC 152\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"One of the following Physics course sequences: PHYSIC 151 & PHYSIC 152\",\"option_group\":\"Physics sequence\",\"rule\":\"all\",\"stated\":{\"max\":8,\"min\":8}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSIC 202\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSIC 203\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSIC 204\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"One of the following Physics course sequences: PHYSIC 202 & PHYSIC 203 & PHYSIC 204\",\"option_group\":\"Physics sequence\",\"rule\":\"all\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 104\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 207\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 205\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 212\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 213\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"GIS 130\",\"units\":null}],\"catalog_addition\":false,\"code\":\"GEOG 130\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"STAT C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 266\",\"units\":4,\"units_max\":null}],\"minimum\":2,\"name\":\"Two courses from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":10,\"min\":6}}],\"program\":{\"careers\":[\"environmental toxicology\",\"public health\",\"environmental law\",\"education\",\"environmental economics\",\"soil and water science\",\"restoration ecology\",\"environmental landscaping\",\"environmental management\",\"urban planning\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"SBVC General Education and Graduation Requirements or Cal-GETC - California General Education Transfer Curriculum\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Analyze the interaction between natural and social systems and subsequent impacts on sustainable development, environmental policies, environmental justice, and racial justice.\",\"Synthesize the fundamentals of sociology, biology, chemistry, Earth sciences, mathematics, physics, and other social and natural sciences within a framework of human-environment interactions with an emphasis on racial equity and social justice.\",\"Critically interpret and assess environmental news and trends, including green technologies and career opportunities, national and international environmental policies, resource exploitation and conservation, global climate change, sustainable development, and human health within the context of racial equity and social justice.\"],\"section_heading\":\"REQUIREMENTS\",\"total_units\":{\"max\":63,\"min\":50}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":31,\"placed\":31}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":50,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"ge_units_not_read\"],\"invented\":true,\"listed\":31,\"placed\":31}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\ne(expect) as (values (1)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s742k3 named-gaps guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;",
+ "rollback": "with v(i, part, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'A', 'San Bernardino Valley College', '17829', 46000859685, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENVSCI 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 205\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 206\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 150\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 151\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ECON C2001H\",\"units\":null},{\"catalog_addition\":false,\"code\":\"POLS C1000\",\"units\":null},{\"catalog_addition\":false,\"code\":\"POLS C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ECON C2001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH C2210\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH C2220\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"GEOG 111H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"GEOG 111\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 111\",\"units\":1,\"units_max\":null}],\"minimum\":1,\"name\":\"One of the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":1}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSIC 151\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSIC 152\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"One of the following Physics course sequences: PHYSIC 151 & PHYSIC 152\",\"option_group\":\"Physics sequence\",\"rule\":\"all\",\"stated\":{\"max\":8,\"min\":8}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSIC 202\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSIC 203\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSIC 204\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"One of the following Physics course sequences: PHYSIC 202 & PHYSIC 203 & PHYSIC 204\",\"option_group\":\"Physics sequence\",\"rule\":\"all\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 104\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 207\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 205\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 212\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 213\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"GIS 130\",\"units\":null}],\"catalog_addition\":false,\"code\":\"GEOG 130\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"STAT C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 266\",\"units\":4,\"units_max\":null}],\"minimum\":2,\"name\":\"Two courses from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":10,\"min\":6}}],\"program\":{\"careers\":[\"environmental toxicology\",\"public health\",\"environmental law\",\"education\",\"environmental economics\",\"soil and water science\",\"restoration ecology\",\"environmental landscaping\",\"environmental management\",\"urban planning\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"SBVC General Education and Graduation Requirements or Cal-GETC - California General Education Transfer Curriculum\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Analyze the interaction between natural and social systems and subsequent impacts on sustainable development, environmental policies, environmental justice, and racial justice.\",\"Synthesize the fundamentals of sociology, biology, chemistry, Earth sciences, mathematics, physics, and other social and natural sciences within a framework of human-environment interactions with an emphasis on racial equity and social justice.\",\"Critically interpret and assess environmental news and trends, including green technologies and career opportunities, national and international environmental policies, resource exploitation and conservation, global climate change, sustainable development, and human health within the context of racial equity and social justice.\"],\"section_heading\":\"REQUIREMENTS\",\"total_units\":{\"max\":63,\"min\":50}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":31,\"placed\":31}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":50,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"ge_units_not_read\"],\"invented\":true,\"listed\":31,\"placed\":31}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (1)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s742k3 named-gaps rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;"
+}

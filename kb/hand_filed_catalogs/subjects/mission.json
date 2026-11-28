@@ -632,6 +632,22 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "NCB",
+   "heading": "Noncredit Basic Skills",
+   "heading_printed": "Noncredit Basic Skills",
+   "rule": "index",
+   "codes": [
+    "NCB"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI NCB 901 Strategies to Improve Writing",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "NCE",
    "heading": "Noncredit English as a Second Language",
    "heading_printed": "Noncredit English as a Second Language",
@@ -662,6 +678,22 @@
    "found_on": "2026-11-25",
    "found_by": "COBIx",
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "NCO",
+   "heading": "Noncredit Older Adults",
+   "heading_printed": "Noncredit Older Adults",
+   "rule": "index",
+   "codes": [
+    "NCO"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI NCO 1611 Older Adult Art (11 courses)",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   },
   {
    "code": "NTR",
@@ -872,6 +904,6 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   }
  ],
- "subjects": 51,
- "with_heading": 51
+ "subjects": 53,
+ "with_heading": 53
 }

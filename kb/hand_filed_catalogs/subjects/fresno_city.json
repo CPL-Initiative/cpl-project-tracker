@@ -889,6 +889,22 @@
    "run": "45628443522"
   },
   {
+   "code": "HMONG",
+   "heading": "Hmong",
+   "heading_printed": "Hmong",
+   "rule": "index",
+   "codes": [
+    "HMONG"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
    "code": "HS",
    "heading": "Human Services",
    "heading_printed": "Human Services",
@@ -1129,6 +1145,22 @@
    "run": "45628443522"
   },
   {
+   "code": "MMCTC",
+   "heading": "Maintenance Mechanic Career Technical Certificate",
+   "heading_printed": "Maintenance Mechanic Career Technical Certificate",
+   "rule": "index",
+   "codes": [
+    "MMCTC"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI MMCTC 370 Machine Shop and Equipment Repair for Maintenance Mechanics",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "MUS",
    "heading": "Music",
    "heading_printed": "Music",
@@ -1321,6 +1353,22 @@
    "run": "45628443522"
   },
   {
+   "code": "PUNJABI",
+   "heading": "Punjabi",
+   "heading_printed": "Punjabi",
+   "rule": "index",
+   "codes": [
+    "PUNJABI"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
    "code": "RAD",
    "heading": "Radiologic Technology",
    "heading_printed": "Radiologic Technology",
@@ -1481,6 +1529,22 @@
    "run": "45628443522"
   },
   {
+   "code": "VESL",
+   "heading": "Vocational English as a Second Language",
+   "heading_printed": "Vocational English as a Second Language",
+   "rule": "index",
+   "codes": [
+    "VESL"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI VESL 320 Intermediate English for Vocational Purposes",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "WELD",
    "heading": "Welding Technology",
    "heading_printed": "Welding Technology",
@@ -1529,6 +1593,6 @@
    "run": "45628443522"
   }
  ],
- "subjects": 95,
- "with_heading": 95
+ "subjects": 99,
+ "with_heading": 99
 }

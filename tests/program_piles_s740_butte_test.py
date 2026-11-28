@@ -54,12 +54,17 @@ check(e["words"] in words and e["also_words"] in words and not W.shared_with("33
 
 f = W.load("01312")
 a = f["score"]["arithmetic"]
+# S742's plan s742a files 01312 as degree_electives_not_printed (S721's own kind for it, on main since): it carries
+# no gap as s740h left it, or that kind alone.
 check(B.same(a["computed"], [60, 61]) and B.same(a["stated"], [62, 69]) and a["against"] == "degree"
-      and not f["score"].get("gaps") and NG.units_within_printed_range(f) is None,
-      "01312: its degree reads 60-61 below the map's 62-69, and it carries no gap")
+      and [x["gap"] for x in f["score"].get("gaps") or []] in ([], ["degree_electives_not_printed"])
+      and NG.units_within_printed_range(f) is None,
+      "01312: its degree reads 60-61 below the map's 62-69, and it carries no gap or S742's kind alone")
 f = W.load("14583")
-check(f["score"]["arithmetic"]["status"] == "incomplete" and "43185" in W.shared_with("14583")
-      and not f["score"].get("gaps"),
-      "14583: its arithmetic is incomplete, its page was read for 43185 too, and it carries no gap")
+# S742 read 14583 from its own page (paid read 46012628995, S741's site pin): still incomplete, on a page no other
+# record was read from; before that read its page was 43185's too.
+check(f["score"]["arithmetic"]["status"] == "incomplete" and not f["score"].get("gaps")
+      and (("43185" in W.shared_with("14583")) != (str(f.get("extracted_run")) == "46012628995")),
+      "14583: its arithmetic is incomplete and it carries no gap; its page was 43185's too, or is its own since S742")
 
 sys.exit(t.done())

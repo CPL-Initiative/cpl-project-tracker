@@ -86,8 +86,13 @@ check(W.claim(W._load("38168")) == "the page is shared and no note names the rec
 del W.REVIEWED["38168"]
 check(not any(W.scorer_passes(W._load(cn)) for cn in ROWS), "the scorer passes none of the rows (#3753's MAJOR)")
 check(set(rec.get("shared_pages") or {}) <= set(ROWS), "the receipt lists the rows' shared pages")
-check(not W.on_live_run(W._load("02456")) and all(W.on_live_run(W._load(cn)) for cn in ROWS),
-      "02456's live row is an older extraction; the rows are on their live runs")
+# S742's reread 46013175731 (force 45176404274) posted 02456's committed record: an older live extraction as this plan
+# found it, or on its live run once that reread's receipt is committed.
+_S742_REREAD = os.path.join(ROOT, "kb", "receipts",
+                            "program_requirement_records_college_reread_east_los_angeles_46013175731.json")
+check((not W.on_live_run(W._load("02456")) or os.path.exists(_S742_REREAD))
+      and all(W.on_live_run(W._load(cn)) for cn in ROWS),
+      "02456's live row is an older extraction (until S742's reread posts it); the rows are on their live runs")
 
 print("%d checks, %d failures" % (checks[0], len(failures)))
 for m in failures:

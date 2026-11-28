@@ -543,6 +543,22 @@
    "run": "45627807594"
   },
   {
+   "code": "HOSP",
+   "heading": "Hospitality Services",
+   "heading_printed": "Hospitality Services",
+   "rule": "index",
+   "codes": [
+    "HOSP"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: not in the Barstow catalog; the only COCI course is HOSP 100 Fundamentals of Hospitality, CCC000638177",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "HUMA",
    "heading": "Humanities",
    "heading_printed": "Humanities",
@@ -605,6 +621,38 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627807594)",
    "run": "45627807594"
+  },
+  {
+   "code": "MAIN",
+   "heading": "Maintenance and Janitorial Services",
+   "heading_printed": "Maintenance and Janitorial Services",
+   "rule": "index",
+   "codes": [
+    "MAIN"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: not in the Barstow catalog; the only COCI course is MAIN 100 Introduction to Maintenance & Janitorial Services, CCC000638178",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
+   "code": "MAKE",
+   "heading": "Maker Space",
+   "heading_printed": "Maker Space",
+   "rule": "index",
+   "codes": [
+    "MAKE"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: not in the Barstow catalog; the only COCI course is MAKE 100 3D Printing, CCC000638179",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   },
   {
    "code": "MATH",
@@ -863,6 +911,6 @@
    "run": "45627807594"
   }
  ],
- "subjects": 51,
- "with_heading": 51
+ "subjects": 54,
+ "with_heading": 54
 }

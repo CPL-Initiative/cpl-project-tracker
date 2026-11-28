@@ -691,3 +691,115 @@ Verbatim from `docs/reference/lanes/my-college-action-page.md`, moved to keep th
 - **The full `npm run a11y` sweep crashes Chromium in the cloud container partway through** (197 "did not finish",
   all after one browser close). A narrowed config of the touched targets passed 10 of 10; the 42 COBI tabs in light
   passed before the crash.
+
+## S744 (SkyCurlew, Sam's plain session, 2026-11-27): Get credit, stackable programs, the compact cards
+
+- **Get credit (#3910, `45349aae`).** Each *CPL here* line links to the college's MAP landing page with the course's
+  exhibit codes (`here.exhibits`); landing URLs are read once from `map_college_contacts_pub`; a code MAP refuses is
+  skipped; a college with no landing page says so. 14 of 15 CPL-here tiles on Cerritos 42158 link to an exhibit;
+  statewide 59 of 96 across 22 programs. The compact cards replace the line (below). Sam's words:
+  *"we could use the CPL Pathways views to add the 'Get Credit' button that goes to the lp"*
+  (`r-get-credit-on-pathways-cards-sam-2026-11-27`).
+- **Stackable programs (#3911, `1d798625`, built by a worker).** `kb/_build_program_ladders.py` writes
+  `kb/status/program_ladders/<slug>.json` and `index.json` (2.9 MB). Kinds: *contains* (every course of a certificate
+  sits in a same-college degree), *mostly* (80% or more), *same_field* (associate to bachelor's by program CIP4, never
+  TOP) and *curated* (Cerritos 42158 to the B.S. Field Ironworker Supervisor, pathway `cerritos-field-ironworker-bs`,
+  first cohort Spring 2027). Measured: 7,696 certificates, 3,680 wholly inside a degree (4,427 pairs), 4,664 at 80% or
+  more; 27 of 35 active bachelor's link to a harvested associate; 8,295 programs carry a link. A compact *Stackable
+  programs* row tops the record view. Wired into `daily_build.sh` (54 blocks), `check_generated.sh`, the daily
+  workflow's `git add`, js-tests shard 6 and the Pages allowlist. Containment beats CIP across fields: Cerritos files
+  its ironworker certificates under Welding 48.0508 and the A.S. under Manufacturing 15.0613. Sam: *"the stackable
+  programs is very exciting development! would be nice to see a very compact set of cards in a top section of the
+  pathway view showing the stackable possibilities..."*; *"yes, measure and build it."*
+  (`r-stackable-programs-top-row-sam-2026-11-27`).
+- **The compact course cards (in flight, branch `claude/pathways-compact-cards`).** Mock-up
+  https://claude.ai/artifact/BQjk5FcRjeHPGZp57bpDJe (*CPL Pathways Compact Cards*, private), iterated live with Sam
+  until *"OK, let's go with that"* (`r-compact-course-cards-sam-2026-11-27`). One-size short cards (~92px): row 1 the
+  course code (a button to a sidebar with the catalog description and exhibits), units and the CPL control; row 2 the
+  title. The control (the CPL chip, settled 2026-11-27): the word CPL (16px, regular weight, navy, uppercase) and the
+  MAP pointer (the notched arrowhead from the A in MAP, `prototype/funding_video/assets/map_arrow.png`) in MAP crimson
+  #9E2A2B, on one white tile with no underline (*"now give the cpl chip white background and get rid of the
+  underline"*); the pointer leans 30 degrees clockwise in its path data (*"tilt it another 5 degrees to the right"*),
+  sits on the baseline of CPL, rises a little above it and nearly touches the L (*"now just a teeny bit of space between
+  the L and pointer"*). While its bar is open the pointer turns down toward it, right toward a sidebar (*"try it!"*,
+  *"that's cool!"*); the spec is in `reference-ui-design-system`, beside the underlined-words rule. Hover lists exhibit titles
+  with type; a click opens a bottom bar framing the landing page on the course's exhibits. Gone: the Details link, the
+  counts, the CPL-type line and the Get credit link. Sam: *"the '- 2' in the cpl chips doesn't mean anything to the user
+  at this point...so let's take the numbers out"*; *"delete Details link since cpl chip does same thing"*; *"make course
+  clickable to show course details in sidebar"*; *"now we could get rid of the cpl type label because user will need to
+  click the cpl chip anyway"*. On links: *"have the get credit link open a bottom bar so the user doesn't get stranded.
+  bottom bars for wide (lots of) information and sidebars for more compact details..."* and *"again, all links to lp go
+  to bottom bar iframe of the lp"* (`r-all-lp-links-open-bottom-bar-sam-2026-11-27`). MAP's landing page sends no
+  X-Frame-Options or CSP, so it can be framed.
+- **The CPL glyph (`r-cpl-glyph-map-pointer-sam-2026-11-27`).** Sam: *"I think we may want to incorporate a CPL glyph
+  symbol that becomes recognizable over time. Thinking of using the MAP directional pointer we incorporate into the A in
+  MAP."* A ruled exception to the glyph rule, the 27th ruled mark beside the 26 of 2026-09-09: an a11y sweep keeps it.
+- **All 24 Cerritos Field Ironworkers A.S. courses carry CPL, not 15** (`f-cerritos-ironworkers-all-24-cpl-s744`). MAP
+  articulates Cerritos's Ironworker Apprenticeship exhibits (Reinforcing and Structural, periods 1 to 8,
+  `MAPICA-RA4P*`/`SA4P*`, issuer the International Association of Bridge, Structural, Ornamental and Reinforcing Iron
+  Workers) to every IWAP course, Welding I and the Structural option included; live-verified (MAPICA-SA4P1-1-001 lists
+  IWAP 40.21 and 41.06; MAPICA-RA4P3-1-001 lists 40.10 and 40.63). The display build (`kb/_build_roep_display.py`, feed
+  `kb/coci_articulations.json`) carries only the credit-by-exam exhibits (`MAPCXA-*`), so the A.S. view says 15 of 24 and
+  the B.S. page says the Structural option carries none yet. `library/adopt/adopt_data.json` holds the apprenticeship
+  exhibits per college (`a` articulations, `m` exhibit codes).
+- **Ways an ironworker apprentice qualifies for CPL at Cerritos** (Sam asked; from MAP data): completed apprenticeship
+  periods (industry certification, apprenticeship mode; each period maps to specific courses), credit by exam per course
+  (15 courses), and adopting another college's credit (American River's H07/H47/H75/H77 modules, 3 courses; not yet
+  adopted).
+- **Why the B.S. view uses rows.** It is the first, hand-built pathway (`cpl_pathways_data.js`, for the Apprenticeship
+  Council presentation), drawn by the original ladder renderer; the card views read catalog records, and Cerritos has
+  not published the B.S. curriculum (not in the June COCI program export either). Sam likes its metric cards.
+- **The description shards carry mojibake** (`f-coci-description-shards-mojibake-s744`): `coci_lookup_desc_*.js` holds
+  `_x000D_` and UTF-8 read as cp1252 (`Ã¢â‚¬â„¢` for a right quote, `Ã‚Â` for a space); the Commons' course hover
+  likely shows it. Clean it at build in `kb/_build_coci_lookup.py`.
+
+## S745 (SkyTattler, Sam's plain session, 2026-11-27): credentials bar, industry certs, the CPL chip, the outside tools
+
+- **What shipped.** #3919 the Credentials list's titles in the Programs blue, opening a bottom bar (the landing page
+  on the college's own exhibits, or the Credential Catalog framed); #3920 the *Industry certs* chip (1,326 programs at
+  76 colleges earn CPL on an industry cert, 634 programs prepare for one, 45 both); #3921 the frame check and the
+  Interconnectivity card's priority connections; #3916 the Pages deploy wait and retry. #3922, the live CPL chip, was
+  finishing at the checkpoint.
+- **Measure a text matcher before it ships.** The prepares-for matcher read 93% and 90% precision over two rounds and
+  about 77% recall (`kb/status/program_certs/_measure.md`); the chip ships with the misses named.
+- **Check an outside page's framing on a runner before designing around it.** Three tools gave three answers: PPM's
+  directory frames, ASSIST refuses, CVC's search refuses readers
+  ([`reference-outside-tools-framing-and-reading`](kb-notes/reference-outside-tools-framing-and-reading.md)).
+- **A sketch in the partner's own logo and terms moves the conversation.** Sam iterated the PPM and ASSIST sketches
+  live and named the advisors (Craig Hayward, Jory Hadsell), both *"all in on interconnecting"*.
+- **Trained by is a gap in `kb/credentials.json`, not in the display.** Only 348 of 2,970 credentials name a training
+  agency; the Cerritos Ironworker Period credentials carry none, so the fill goes through a receipt first.
+
+## S745: the Chabot glue fold (Common Subjects Reference)
+
+- A training note named the pattern (Chabot's ATHL7, PEAC11); explicit code lists again beat a suffix rule, and four
+  look-alike codes (PHEACJUD, MICR, PHSI, PHEA) stay. 47 person decisions carried through the fold, none lost.
+- A filing rule widened for one college (`code_address`) is held at the others until its own measured change.
+
+## S746 (SkyPetrel, Sam's plain session, 2026-11-27 to 11-28): Trained by, MAP's live view, one Request Adopt
+
+- **What shipped.** #3925 *Trained by* on the program card (19 programs: Carpenters Training Committee 9, IBEW JATC 7,
+  Ironworker JATC 3; the 15 Cerritos Period trainers of receipt #3923 fold with the next daily run, since the credential
+  sync runs before the certs build); #3927 the display build reads MAP's live view (`kb/exhibits_adoption.json`) as a
+  third CPL-here source, applied to 18,751 records (run 46092611343, build `229a759101f7`). #3930, Request Adopt in one
+  form on every CPL Pathways view, was open at the checkpoint.
+- **Trained by names training committees only** (`d-trained-by-committees-only-s746`). `training_agency` in
+  `kb/credentials.json` often names the one college site that filed the exhibit, so on a widely articulated credential
+  it reads wrong: AP Biology "trained by" Mater Dei HS at Glendale, MOS Excel by U.S. Armed Forces
+  (`f-trainer-field-names-one-site-s746`). A training committee or JATC is the trainer wherever it appears, so the chip
+  shows those and nothing else until the field is read per college.
+- **A dated feed hides what the live view holds.** The display read MAP's CR text and the feed of 2026-09-03; the
+  Cerritos apprenticeship exhibits reached MAP after that, so Field Ironworkers read 16.5 of 19 core units with Welding I
+  at *None yet*. Adding the live view (only where the other two do not already name the credential) gave 2,395 programs
+  CPL here (1,573 from none) and dropped nothing; Field Ironworkers reads 24 of 24, up to 38 units. A 14-entry sample
+  matched MAP's own lines before the apply.
+- **A test that pins a figure is re-pinned with its reason.** #3927 moved figures five suites pinned (31.5 to 38, Irvine
+  Valley Art 3 to 12, the Structural block 0 to 19). Each re-pin carries a comment naming the source change and the
+  finding, so the next reader can tell a re-pin from a test bent to pass. The featured B.S. page's hero figures
+  (`cpl_pathways_data.js`) still say 31.5 and are open work.
+- **One form for one act** (`r-request-adopt-one-form-sam-2026-11-28`). Sam: *"the new request adopt is not just for BS
+  directory but all cpl pathway programs, right?"* Featured rows take `adopt_panel.js`'s chip; the B.S. directory takes
+  Request Adopt (N) and a per-row Request Adopt into one sidebar; `map_links.js` `nearest(title, home)` gives one MAP
+  link, to the nearest college's exhibit, in place of a list.
+- **The "Last Updated" header is the daily run's time** (`f-pages-header-is-the-daily-run-s746`): a page reading an
+  older time after a merge was Pages still deploying, not a failed build.

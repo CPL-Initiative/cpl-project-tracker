@@ -1049,6 +1049,22 @@
    "run": "45627124597"
   },
   {
+   "code": "NCTE",
+   "heading": "Noncredit Career Technical Education",
+   "heading_printed": "Noncredit Career Technical Education",
+   "rule": "index",
+   "codes": [
+    "NCTE"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI NCTE 713 Food Safety and Sanitation",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "NRAD",
    "heading": "Nursing Registered Assoc. Deg.",
    "heading_printed": "Nursing Registered Assoc. Deg.",
@@ -1449,6 +1465,6 @@
    "run": "45627124597"
   }
  ],
- "subjects": 90,
- "with_heading": 90
+ "subjects": 91,
+ "with_heading": 91
 }

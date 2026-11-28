@@ -2186,7 +2186,8 @@
     var done = Object.keys(on).filter(answeredThisVisit);
     var n = Object.keys(on).length - done.length;
     var left = A.filter(function (f) { return uts[f.item] && done.indexOf(f.item) < 0; }).length;
-    return api.el("p", { cls: "cs-quiet", text: plural(A.length, "scan finding", "scan findings") + " to confirm or note: " +
+    // cs-scan-note: scripts/commons_clickthrough.js reads this figure against the Commons' count (issue 3555).
+    return api.el("p", { cls: "cs-quiet cs-scan-note", text: plural(A.length, "scan finding", "scan findings") + " to confirm or note: " +
       plural(left, "finding", "findings") + " on " + plural(n, "MQ discipline", "MQ disciplines") + " below, each named in its panel" +
       (done.length ? "; " + plural(done.length, "MQ discipline", "MQ disciplines") + " answered since the last scan left the list (" + done.join(", ") + "), and " + SCAN_NEXT : "") +
       (files.length ? "; " + files.map(function (f) { return (RULE_WORDS[f.rule] || f.rule) + " in " + f.item; }).join("; ") +

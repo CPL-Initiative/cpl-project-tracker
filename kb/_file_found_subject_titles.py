@@ -51,6 +51,22 @@ def code_key(s):
     return re.sub(r"[^A-Z0-9&]", "", str(s or "").upper())
 
 
+# Catalog headings that only spell their code, filed by explicit list (COBIx, 2026-11-27). Not a change to the
+# filer rule: a heading that is only its code is still skipped everywhere else, unless rule=="schedule".
+CODE_ONLY_ALLOW = frozenset({
+    ("american_river", "ENERGY"),
+    ("columbia", "MEDIA"),
+    ("cosumnes_river", "HMONG"),
+    ("fresno_city", "HMONG"),
+    ("fresno_city", "PUNJABI"),
+    ("gavilan", "LIFE"),
+    ("madera", "PUNJABI"),
+    ("sacramento_city", "GREEK"),
+    ("san_joaquin_delta", "AUTOBODY"),
+    ("sierra", "RISE"),
+})
+
+
 def dump(path, doc):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
@@ -100,8 +116,13 @@ def file_doc(slug, d, dry):
         code, printed = str(t.get("code") or "").strip(), str(t.get("title") or "").strip()
         k = code_key(code)
         # A class schedule's lookup prints the code and its title in two columns (S736), so its ART titled Art is a
-        # title; a catalog heading that only repeats its code is not.
-        if not k or not printed or (code_key(printed) == k and t.get("rule") != "schedule"):
+        # title; so is the code's own catalog page (rule code_address) where it prints the code and the title apart
+        # (Chabot's "ART - Art", S745). A catalog heading that only repeats its code is not, unless CODE_ONLY_ALLOW
+        # lists it.
+        apart = t.get("rule") == "code_address" and str(t.get("printed") or "").strip() != printed and code_key(
+            re.sub(r"\s*[-–:]\s*" + re.escape(printed) + r"$", "", str(t.get("printed") or ""))) == k
+        if not k or not printed or (code_key(printed) == k and t.get("rule") != "schedule" and not apart
+                                    and (slug, k) not in CODE_ONLY_ALLOW):
             skipped += 1
             continue
         old = have.get(k)
@@ -115,7 +136,7 @@ def file_doc(slug, d, dry):
                "candidate": None, "address": t.get("url"), "where": t.get("where") or "catalog",
                "method": t.get("method") or "subject heading",
                "found_on": t.get("found_on") or (d.get("read_at") or "")[:10] or None,
-               "found_by": t.get("found_by") or "COBI, a runner read (run %s)" % d.get("run"), "run": d.get("run")}
+               "found_by": t.get("found_by") or "COBI, a runner read (run %s)" % d.get("run"), "run": t.get("run") or d.get("run")}
         if old:
             old.update(row)
         else:
@@ -150,7 +171,8 @@ def college_slugs():
 def read_csv_finds(path):
     """The leftovers CSV, filled in by a person or COBIx, as one find per college (S733).
 
-    A row is a find only when it carries both a title and its source URL (p-subject-title-carries-its-source-sam-2026-11-25);
+    A row is a find only when it carries both a title and its source URL (p-subject-title-carries-its-source-sam-2026-11-25),
+    or a title a person named (title_where "person", found_by the person: the person is the source, S746);
     its where, method, searched_on and found_by ride along. A `department label` row passes through and file_doc keeps
     it out of the record, as a hint. A college with no known slug is reported, never guessed."""
     import csv
@@ -159,7 +181,10 @@ def read_csv_finds(path):
     with open(path, encoding="utf-8", newline="") as f:
         for r in csv.DictReader(f):
             title, url = (r.get("local_subject_title") or "").strip(), (r.get("title_source_url") or "").strip()
-            if not title or not url:
+            # A person who names a code is its source (S746): Sam's lightning-round titles, found_by the person and
+            # title_where "person", file with no URL; any other row still needs its URL.
+            named = (r.get("title_where") or "").strip() == "person" and (r.get("found_by") or "").strip()
+            if not title or not (url or named):
                 continue
             college = (r.get("college") or "").strip()
             slug = slugs.get(college.lower())
@@ -170,7 +195,7 @@ def read_csv_finds(path):
             d = finds.setdefault(slug, {"college": college, "catalog_year": None, "read_at": None,
                                         "run": "csv " + os.path.relpath(path, ROOT),
                                         "csv": os.path.relpath(path, ROOT), "titles": []})
-            d["titles"].append({"code": r.get("local_subject_code"), "title": title, "url": url,
+            d["titles"].append({"code": r.get("local_subject_code"), "title": title, "url": url or None,
                                 "where": (r.get("title_where") or "").strip() or "catalog",
                                 "method": (r.get("title_method") or "").strip() or "subject heading",
                                 "found_on": (r.get("searched_on") or "").strip() or None,

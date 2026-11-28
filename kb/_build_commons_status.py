@@ -604,7 +604,12 @@ def row_subjects(root):
     seed = load_json(root, "kb/discipline_canonical_subj4.json")
     D = seed["disciplines"]
     four = re.compile(r"^[A-Z]{4}$")
-    confirmed = {k: v for k, v in D.items() if v.get("source") == "curator_override" and four.match(v.get("canonical_subj4") or "")}
+    # Confirmed as the Subjects List's isConfirmed (canonical_subj4.js) counts it: a four-letter code with a review stamp
+    # or a curator's pick. An S717 assigned code (kb/_csr_assign_codes.py) carries a review stamp and source `assigned`;
+    # the card had counted curator picks only, so Sam's own FLTR pick of 2026-11-23 left "confirmed by a person" at 137
+    # where the List's person filter read 138 (#3555).
+    confirmed = {k: v for k, v in D.items()
+                 if four.match(v.get("canonical_subj4") or "") and (v.get("reviewed_at") or v.get("source") == "curator_override")}
     cohort = sum(1 for v in confirmed.values() if is_cohort(v.get("reviewed_by")))
     modal = [k for k, v in D.items() if v.get("source") == "data_modal"]
     by_code = {}

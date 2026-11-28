@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Registered Nursing",
  "award": "A.S. Degree",
- "source_url": "https://butte.curriqunet.com/catalog/iq/25398/28156/28380",
+ "source_url": "https://butte.curriqunet.com/catalog/iq/25398/28156/28324",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6765,
+  "input_tokens": 6785,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6765,
-    "output_tokens": 1542,
+    "input_tokens": 6785,
+    "output_tokens": 1583,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1542,
+  "output_tokens": 1583,
   "output_tokens_details": {
-   "thinking_tokens": 663
+   "thinking_tokens": 575
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0579,
- "ms": 13516,
- "seconds": 14.0,
+ "cost_usd": 0.0588,
+ "ms": 14929,
+ "seconds": 18.9,
  "parts": null,
  "error": null,
  "score": {
@@ -98,12 +98,12 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 2,
    "courses": 0,
-   "count": 0,
+   "count": 2,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -119,7 +119,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "AS Degree in Accelerated Track Registered Nursing",
+   "section_heading": "AS Degree in Registered Nursing",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -140,7 +140,10 @@
     "max": 21
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Adhere to standards of professional practice, and practice within legal, ethical and regulatory frameworks.",
+    "Demonstrate effective verbal, non-verbal, and written communication using compassion and cultural awareness resulting in trusting relationship"
+   ],
    "careers": [
     "registered nurse"
    ]
@@ -235,14 +238,15 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog text is cut off mid-sentence in the admission point system (Healthcare Experience); the program's course requirements table, any unit totals, and any program learning outcomes are not in the provided text.",
-   "The section heading is 'AS Degree in Accelerated Track Registered Nursing' (program code 43185.00AS), while the program name given is 'Registered Nursing'; reviewer should confirm this is the intended award.",
-   "The two blocks recorded are admission prerequisites that must be completed before application, not the nursing course requirements; they were recorded because they are the only courses printed. FN 2 appears only here. No units were printed beside any prerequisite.",
-   "Careers: only 'registered nurse' is named as an occupation; the listed employment settings (acute care hospital, clinics, etc.) were not recorded as careers.",
-   "No total units, degree total or GE units are printed in the provided text."
+   "The catalog text appears cut off after the second program learning outcome (it ends mid-sentence without a period); the nursing course requirements table, unit totals, and any further outcomes are not in the provided text.",
+   "The only courses printed are application prerequisites (must be completed with a minimum C grade before application); they are recorded as blocks with rule 'all'. Several (CMST 4/COMM C1000, ENGL C1000, PSYC C1000) may also satisfy Butte Local GE; reviewer should confirm whether prerequisites belong in the major requirements.",
+   "No units are printed beside any course and no major or degree total is printed.",
+   "The prerequisite courses other than FN 2 are not in the closed list and are marked as catalog additions; the closed list containing only FN 2 suggests the state file is incomplete or the nursing (NURS) courses are listed elsewhere.",
+   "Career entry 'registered nurse' is taken from 'A registered nurse can seek employment in a variety of settings'; the employment settings listed are workplaces, not careers, and were not recorded."
   ]
  },
- "extracted_run": 42973457189,
+ "extracted_run": "46012628995",
+ "catalog_year": "2026-2027",
  "reconciled": [
   {
    "field": "ge_units",
@@ -256,6 +260,5 @@
    },
    "words": "GE Pattern(s): Butte Local (https://butte.curriqunet.com/catalog/iq/25389/28399/27734: Butte A.A. and A.S. pages: 'GE Pattern(s): Butte Local, Cal-GETC' above 'Map (Butte GE)' (Agriculture Science A.S. 01298; college page read 42957477366); Butte College Local GE Guide AA/AS Degree: 'Complete a minimum of 21 semester units of general education from the approved list according to the following pattern', Areas 1, 1B/C, 2, 3, 4, 5 and 6 each 'One course, 3 semester units' (college page read 42961405888))"
   }
- ],
- "read_run": "38981247046"
+ ]
 }

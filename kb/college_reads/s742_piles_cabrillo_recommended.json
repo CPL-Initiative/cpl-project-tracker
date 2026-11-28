@@ -1,0 +1,46 @@
+{
+ "_readme": "S742, lane 2's cheap piles (2026-11-27). Four Cabrillo degrees (06352 Dance A.A., 06380 Geology A.S., 06381 Psychology A.A., 44992 Exercise and Sports Science A.A.) head every list 'Recommended' and were read as counting nothing; 11293 (Art Studio A.A.) was read with the same lists counted, and adds to 49-58 under the printed 60 with 'General electives' printed as a range. This read asks each page's own content call, so a session can read the sentence that says what a 'Recommended' list is, each list's 'Complete the following number of credits' line, general education, the general electives line and the degree total word for word. Three loads. No model call, nothing written.",
+ "college": "Cabrillo College",
+ "questions": {
+  "recommended_words": "The sentence that says what the 'Recommended' lists are, each list's heading with its 'Complete the following number of credits' line, general education, general electives and the degree total.",
+  "art_studio_figures": "The degree total, general education, the general electives line with its figure, and each list's and each focus's printed figure."
+ },
+ "keywords": [
+  "[Rr]ecommended[^<\"]{0,140}",
+  "[Cc]omplete the following[^<\"]{0,120}",
+  "General [Ee]lectives?[^<\"]{0,140}",
+  "General Education[^<\"]{0,60}",
+  "at least \\d+ units[^<\"]{0,80}",
+  "rule-name|rule-credits"
+ ],
+ "pages": [
+  {
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,psychology-associate-in-arts-a-a-fall-2025?tenant=cabrillo.elumenapp.com",
+   "answers": [
+    "recommended_words"
+   ],
+   "why": "06381"
+  },
+  {
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,geology-associate-in-science-a-s-fall-2025?tenant=cabrillo.elumenapp.com",
+   "answers": [
+    "recommended_words"
+   ],
+   "why": "06380"
+  },
+  {
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,art-studio-associate-in-arts-a-a-fall-2026?tenant=cabrillo.elumenapp.com",
+   "answers": [
+    "art_studio_figures"
+   ],
+   "why": "11293"
+  }
+ ],
+ "_quoted": {
+  "46001469210": {
+   "06381": "Toggle · Program Requirements · Psychology - Associate in Arts (A.A.) · Complete the following number of credits: 60 · Cabrillo College General Education 24 · Recommended Major Requirements · Complete the following number of credits: 3 · PSYCC1000 - Introduction to Psychology 3 · PSYCH1H - Honors General Psychology 3 · Recommended Major Requirements\nComplete the following number of credits: 3-5\nPSYCH2A - Statistics for Behavioral Sciences 3\nBUS9 - Business Statistics 3 · STATC1000 - Introduction to Statistics 5\nNote: students may take only one statistics course. 0\nRecommended Major Requirements\nComplete the following number of credits: 9-10\nPSYCH2B - Research Methods in Psychology 4\nPSYCH4 - Introduction to Biological Psychology 3\nPSYCH6 - Introduction to Social Psychology 3\nPSYCH8 - Introduction to Developmental Psychology 3\nPSYCH12 - Introduction to Cognitive Psychology 3\nPSYCH26 - Introduction to Personality Psychology 3\nRecommended Major Electives · Complete the following number of credits: 9\nPSYCH31 - Introduction to Abnormal Psychology 3\nPSYCH33 - Personal and Social Adjustment 3 · PSYCH35 - Death and Dying 3\nPSYCH39 - Relationships: Marriage and the Family 3\nGeneral electives: any transferable or degree applicable course. 9 - 12\n",
+   "06380": "Toggle · Program Requirements · Geology - Associate in Science (A.S.) · Complete the following number of credits: 60 · Cabrillo College General Education 24 · Recommended Major Requirements · Complete the following number of credits: 13 · GEOL10 - Physical Geology 4 · GEOL20 - Historical Geology 4 · CHEM1A - General Chemistry I 5 · Recommended Major Electives · Complete the following number of credits: 8 · GEOL15 - Environmental Geology 3 · GEOL25 - Geology of National Parks 3\nGEOL27 - Geology of the Pinnacles National Park 1\nGEOL28 - Field Methods of Environmental and Earth Sciences 1\nGEOL30 - Field Geology of Big Sur 1 · OCEAN10 - Introduction to Oceanography 4\nOCEAN20 - Coastal Environmental Monitoring; Field Studies in Oceanography 4\nOCEAN30 - Monterey Bay and Canyon 1\nES10 - Introduction to Environmental Science 3\nES10L - Introduction to Environmental Science Lab 1\nES15 - Energy for a Sustainable Future 4 · ENGR1A - Surveying 4 · ANTHR3 - Introduction to Archaeology 3\nGEOG17 - Introduction to Geographic Information Systems and Techniques 3\nRecommended General Electives · Complete the following number of credits: 9 · MATH5A - Analytic Geometry and Calculus I 5 · MATH5B - Analytic Geometry and Calculus II 5\nMATH5C - Analytic Geometry and Calculus III 5\nMATH6 - Introduction to Linear Algebra 3\nMATH7 - Introduction to Differential Equations 3\nPHYS2A - Physics for Life Sciences I 4 · PHYS2B - Physics for Life Sciences II 4\nPHYS4A - Physics for Scientists and Engineers I 5\nPHYS4B - Physics for Scientists and Engineers II 5\nPHYS4C - Physics for Scientists and Engineers III 5\nCHEM1B - General Chemistry II 5\nor any course not selected from the recommended major or electives course lists. 0\nGeneral electives: any transferable or degree applicable course. 6\n",
+   "_what": "Each page's Program Requirements text as college-page-read run 46001469210 printed it (the page's own content call), from 'Program Requirements' through the general electives line, copied whole by a session from the run's log; tests/program_reconcile_s742_cabrillo_test.py runs the recommended_counts step on these lines."
+  }
+ }
+}

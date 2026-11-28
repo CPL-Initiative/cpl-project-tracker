@@ -809,6 +809,38 @@
    "run": "45623798209"
   },
   {
+   "code": "NCCH",
+   "heading": "Noncredit Chemistry",
+   "heading_printed": "Noncredit Chemistry",
+   "rule": "index",
+   "codes": [
+    "NCCH"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: no catalog heading found; COCI courses NCCH 110 Chemistry Jam and Prep",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
+   "code": "NCCS",
+   "heading": "Noncredit Computer Science",
+   "heading_printed": "Noncredit Computer Science",
+   "rule": "index",
+   "codes": [
+    "NCCS"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: no catalog heading found; COCI courses NCCS 100-154 web and iOS programming",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "NCEL",
    "heading": "ESL and Citizenship (Tuition-Free)",
    "heading_printed": "ESL and Citizenship (Tuition-Free)",
@@ -839,6 +871,22 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45623798209)",
    "run": "45623798209"
+  },
+  {
+   "code": "NCID",
+   "heading": "Noncredit Industrial Design",
+   "heading_printed": "Noncredit Industrial Design",
+   "rule": "index",
+   "codes": [
+    "NCID"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: no catalog heading found; COCI courses NCID 10/20 Design for Advanced Manufacturing",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   },
   {
    "code": "NCLS",
@@ -1257,6 +1305,6 @@
    "run": "45623798209"
   }
  ],
- "subjects": 78,
- "with_heading": 78
+ "subjects": 81,
+ "with_heading": 81
 }

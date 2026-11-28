@@ -116,11 +116,11 @@ check(cj["right"] == 4 and not cj["wrong"] and cj["refused"] == 27,
       "a continued heading joins only a heading with its first word: 4 right, 0 wrong, 27 refused (%s)" % cj)
 check(not rc["pass_to_fail"] and not rc["moved_outside"], "no pass-to-fail, no move outside the plan: %s"
       % rc["moved_outside"])
-# Either state: S741's free reconcile 45966682528 filed the degree's floor on Cuyamaca 18634, 18635 and 18636, so the
+# Either state: S741's free reconcile 45966682528 filed the degree's floor on Cuyamaca 18634, 18635 and 18636 (and S742's reread 18637), so the
 # pooled major is now all that stands between failing and passing there and the reading moves their verdicts too.
 _plan_moves = {(M.CUY, "18628"), (M.MODESTO, "38869"), (M.MODESTO, "43164"), (M.POR, "06773"), (M.POR, "30235")}
 _moved = {(c, cn) for c, cn, _, _ in rc["moved"]}
-check(_plan_moves <= _moved and _moved - _plan_moves <= {(M.CUY, cn) for cn in ("18634", "18635", "18636")},
+check(_plan_moves <= _moved and _moved - _plan_moves <= {(M.CUY, cn) for cn in ("18634", "18635", "18636", "18637")},
       "the verdicts it moves are the plan's (and S741's three Cuyamaca degrees once their floor is filed): %s"
       % sorted(_moved))
 for k in (("Grossmont College", "19608"), ("Grossmont College", "19822"), ("Grossmont College", "19824")):
@@ -173,9 +173,14 @@ check(S739_MOVES <= set(M.HELD), "S739's moves are holds of this plan")
 # floor ('Complete 60 transferable units'; free reconcile 45966682528). Read in either state.
 S741_MOVES = {(M.CUY, cn) for cn in ("18634", "18635", "18636")}
 check(S741_MOVES <= set(M.HELD), "S741's moves are holds of this plan")
+# S742 moves one more: Cuyamaca 18637 passes once the college's second reconcile step reads the page's 'CSU or UC
+# transferable units' as the electives that fill the degree (electives_fill_words; free reconcile 46017556328, kept
+# for 18637 alone, S748). Read in either state.
+S742_MOVES = {(M.CUY, "18637")}
+check(S742_MOVES <= set(M.HELD), "S742's move is a hold of this plan")
 for key in sorted(M.HELD):
     f = M.load(key)
-    check(f is not None and (key in S739_MOVES | S741_MOVES or not S.passes_live(f["score"])),
+    check(f is not None and (key in S739_MOVES | S741_MOVES | S742_MOVES or not S.passes_live(f["score"])),
           "%s %s: held, and its live score does not pass" % key)
 f = M.load((M.POR, "06773"))
 check([g["gap"] for g in f["score"].get("gaps") or []] == ["pool_figure_not_read"]

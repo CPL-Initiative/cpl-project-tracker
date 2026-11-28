@@ -124,8 +124,9 @@ function key(x, el, k, mods) {
   check("(15) ⭐ the explanation sits in a closed How this works section", more && more.tagName === "DETAILS" && !more.open
     && more.contains(x.d.getElementById("csb-rapid-keys")) && /How codes are compared/.test(txt(more)), more && txt(more).slice(0, 120));
   const nb = x.d.getElementById("csb-rapid-note");
-  check("(16) a closed Add a training note section holds a labelled box", nb && nb.tagName === "DETAILS" && !nb.open && /Add a training note/.test(txt(nb.querySelector("summary")))
-    && !!x.d.querySelector('label[for="csb-rapid-note-in"]'));
+  check("(16) a closed Add a training note section holds a labelled box and an Ask COBI to act checkbox", nb && nb.tagName === "DETAILS" && !nb.open && /Add a training note/.test(txt(nb.querySelector("summary")))
+    && !!x.d.querySelector('label[for="csb-rapid-note-in"]') && !!x.d.getElementById("csb-rapid-note-act")
+    && /Ask COBI to act on this/.test(txt(nb)));
 
   check("(6) the controls are underlined-word buttons and the keys show in one line",
     ["csb-rapid-accept", "csb-rapid-skip", "csb-rapid-back"].every((id) => { const b = x.d.getElementById(id); return b && b.tagName === "BUTTON" && b.classList.contains("csb-word"); })
@@ -266,7 +267,20 @@ function key(x, el, k, mods) {
     const w = writesOf(y), nbody = w[0] && JSON.parse(w[0].body);
     check("(16) ⭐ Save the note writes a procedure_note row of its own, with the view and the code",
       w.length === 1 && nbody.field === "procedure_note" && /^NOTE:commons\/subjects\/rapid\|/.test(nbody.course_id)
-      && JSON.parse(nbody.value).note === "Check the schedule search before guessing." && /\|/.test(JSON.parse(nbody.value).code), w[0] && w[0].body);
+      && JSON.parse(nbody.value).note === "Check the schedule search before guessing." && /\|/.test(JSON.parse(nbody.value).code)
+      && JSON.parse(nbody.value).act !== true, w[0] && w[0].body);
+  }
+  /* (16b) Ask COBI to act on this (S745 item 5, COBIx 2026-11-27) */
+  {
+    const y = load("#commons/subjects/rapid", { sess: ME });
+    await y.M.boot(); await settle();
+    y.d.getElementById("csb-rapid-note-in").value = "Re-run the Chabot titles from the All Courses page.";
+    y.d.getElementById("csb-rapid-note-act").checked = true;
+    y.d.getElementById("csb-rapid-note-save").click(); await settle();
+    const w = writesOf(y), nbody = w[0] && JSON.parse(w[0].body), val = nbody && JSON.parse(nbody.value);
+    check("(16b) ⭐ the checkbox writes value.act true on the procedure_note",
+      w.length === 1 && nbody.field === "procedure_note" && val.act === true
+      && val.note === "Re-run the Chabot titles from the All Courses page.", w[0] && w[0].body);
   }
 
   /* (12) Not a subject and Skip take a code off the list (Sam, 2026-11-26: TEST "stays on the list as not having been
