@@ -17,8 +17,17 @@ THE FILE. kb/status/subject_decisions.json, written by kb/_sync_subject_decision
              course_id CRS:<college slug>|<local code>|<course number>, field course_subject_decision, value JSON with
              common_code, from_mid, title and band. One person's decision for one course.
 
-PRECEDENCE for one college's code and band (resolve): the college-keyed decision, then a person's statewide filing,
-then the subject map, then a recommendation (the last two are the callers' own). A credit decision never touches the
+PRECEDENCE for one college's code and band (resolve): the college-keyed decision, then COBI's common-subject pick,
+then a person's statewide filing, then the subject map, then a recommendation (the last two are the callers' own).
+
+COBI'S PICKS (S749; Sam's alignment rulings of 2026-11-28, relayed by COBIx). kb/subject_title_hunt/*common_picks*.csv,
+one row per college code: college (or slug), local_subject_code, band (credit or whole), common_code, confidence
+(0-100), found_by, basis. A pick carries Sam's newer rulings over the Nov 24 statewide filings, so it stands ahead of a
+filing, and a person's college save stands ahead of it (Person-settled wins). It sets the Subjects row's common code,
+with common_source "cobi" and its confidence; it never routes a mint (for_course reads the college save alone), as a
+filing never does. Refused and listed: a noncredit band (the noncredit flag is its own build), a common code the
+canonical file does not hold (the per-language codes and WKPR wait for theirs), a confidence outside 0-100, a row with
+no finder, a college with no slug. A credit decision never touches the
 code's noncredit courses (r-noncredit-disciplines-separate-in-mqs-sam-2026-11-21). Where the row's band has no save and
 the other of credit and whole has one, that save stands, marked moved: the page's rule (commons_subjects.js savedOf),
 so the page and the build read one decision.
@@ -168,19 +177,59 @@ def canonical_codes(canon_doc):
     return by_code, by_disc
 
 
+CHIPS = os.path.join("kb", "subject_title_hunt", "*common_chips*.csv")
+FLNG_DISCIPLINE = "Foreign Languages"
+
+
+def root_of(_canon_doc):
+    return ROOT
+
+
+RECODED = os.path.join("kb", "receipts", "minted_codes_s749.json")
+
+
+def recoded(root=ROOT):
+    """{old common code: new}, from kb/_apply_minted_codes_s749.py's receipt."""
+    path = os.path.join(root, RECODED)
+    if not os.path.exists(path):
+        return {}
+    with open(path, encoding="utf-8") as f:
+        return {c["from"]: c["to"] for c in json.load(f).get("changed") or []}
+
+
+def language_codes(root=ROOT):
+    """The per-language common codes: every common_code the chips file marks with an FLNG chip (S749; Sam's ruling 8)."""
+    import csv
+    import glob
+    out = set()
+    for path in glob.glob(os.path.join(root, CHIPS)):
+        with open(path, encoding="utf-8", newline="") as f:
+            for r in csv.DictReader(f):
+                code = (r.get("common_code") or "").strip().upper()
+                if (r.get("chip") or "").strip().upper() == "FLNG" and re.match(r"^[A-Z]{4}$", code):
+                    out.add(code)
+    return out
+
+
 class Decisions:
     """The decisions a build honors. college[(slug, code, band)] and statewide[map_key(code)] are records with
     key, common_code, local_title, discipline, who and at; refused lists what was not applied and why."""
 
-    def __init__(self, doc, canon_doc, nc_slugs=None, nc_codes=None):
+    def __init__(self, doc, canon_doc, nc_slugs=None, nc_codes=None, picks=None, slugs=None):
         """nc_slugs: {slug: category}, the one list (read_slugs); nc_codes: {category: its common code or None}, the
         noncredit MQ table (kb/_build_noncredit_subject_titles.py MQ). With none given, every nc: band is refused."""
         self.doc = doc or {}
         self.by_code, by_disc = canonical_codes(canon_doc)
+        # A per-language common code (SPAN, LATN, ...; Sam, 2026-11-28) is a common code under Foreign Languages: the
+        # chips file names it with an FLNG chip (language_codes). A pick to it stands; its discipline is Foreign Languages.
+        for code in sorted(language_codes(root_of(canon_doc))):
+            if code not in self.by_code and by_disc.get(FLNG_DISCIPLINE):
+                self.by_code[code] = FLNG_DISCIPLINE
         self.nc_slugs, self.nc_codes = dict(nc_slugs or {}), dict(nc_codes or {})
         self.slug_of = {v: k for k, v in self.nc_slugs.items()}
         self.college, self.noncredit, self.statewide, self.refused = {}, {}, {}, []
         self.course = {}
+        self.picks = {}
         carried = []
         for d in self.doc.get("decisions") or []:
             why = None
@@ -238,6 +287,44 @@ class Decisions:
             self.statewide[code] = {"key": s.get("key"), "code": code, "common_code": common, "discipline": disc,
                                     "local_title": None, "who": s.get("who"), "at": s.get("at"),
                                     "from": "local_subjects_list"}
+        slugs = slugs or {}
+        for p in picks or []:
+            where = "%s:%s" % (p.get("_file"), p.get("_line"))
+            who = (p.get("found_by") or "").strip()
+            raw = (p.get("slug") or p.get("college") or "").strip()
+            slug = slugs.get(raw) or slugs.get(raw.lower())
+            code = code_key(p.get("local_subject_code"))
+            band = (p.get("band") or "credit").strip().lower()
+            common = (p.get("common_code") or "").strip().upper() or None
+            # A pick written against a code the minted list re-coded (CVTC, now CVTE) follows it (S749 receipt).
+            common = recoded().get(common, common)
+            try:
+                conf = int(float((p.get("confidence") or "").strip()))
+            except ValueError:
+                conf = None
+            why = None
+            if not slug:
+                why = "no slug for college %r" % raw
+            elif not code:
+                why = "the row names no local subject code"
+            elif band not in BANDS:
+                why = "the band %s is not credit or whole: noncredit picks wait for the noncredit flag" % band
+            elif not common:
+                why = "the row names no common subject code"
+            elif common not in self.by_code:
+                why = "the common subject code %s is not a canonical SUBJ in %s yet" % (common, CANONICAL.replace(os.sep, "/"))
+            elif conf is None or not 0 <= conf <= 100:
+                why = "the confidence is not a number from 0 to 100"
+            elif not who:
+                why = "the row names no finder (found_by)"
+            if why:
+                self.refused.append({"key": where, "why": why})
+                continue
+            base = code_key(base_code(slug, code))
+            self.picks[(slug, base, band)] = {
+                "key": where, "slug": slug, "code": base, "band": band, "common_code": common,
+                "discipline": self.by_code.get(common), "local_title": None, "confidence": conf, "who": who,
+                "basis": (p.get("basis") or "").strip() or None, "from": "cobi_pick"}
         for c in self.doc.get("courses") or []:
             k = parse_course_key(c.get("key"))
             common = (c.get("common_code") or "").strip().upper() or None
@@ -305,16 +392,30 @@ class Decisions:
             return None
         return self.course.get((slug, code_key(code), course_number_key(number)))
 
+    def pick_for(self, slug, code, band):
+        """COBI's common-subject pick for a row's band, the other of credit and whole marked moved, or None."""
+        if band not in BANDS:
+            return None
+        k = code_key(code)
+        here = self.picks.get((slug, k, band))
+        if here:
+            return dict(here, moved=False)
+        there = self.picks.get((slug, k, OTHER_BAND[band]))
+        return dict(there, moved=True) if there else None
+
     def statewide_for(self, code):
         return self.statewide.get(map_key(code))
 
     def resolve(self, slug, code, band):
-        """(record or None, source): source is subject_decision, local_subjects_list or None (the caller's subject
-        map, then its recommendation, answer)."""
+        """(record or None, source): source is subject_decision, cobi_pick, local_subjects_list or None (the caller's
+        subject map, then its recommendation, answer)."""
         r = self.for_row(slug, code, band)
         if r:
             return r, "subject_decision"
         if band in BANDS:
+            p = self.pick_for(slug, code, band)
+            if p:
+                return p, "cobi_pick"
             s = self.statewide_for(code)
             if s:
                 return s, "local_subjects_list"
@@ -351,11 +452,51 @@ def nc_codes_table():
     return {cat: code for cat, (_d, code) in MQ.items()}
 
 
+PICKS = os.path.join("kb", "subject_title_hunt", "*common_picks*.csv")
+
+
+def college_slug_map(root=ROOT):
+    """College name, lower-cased, and slug -> slug, from the Subjects record and the catalogs' index."""
+    import glob
+    m = {}
+    for path in glob.glob(os.path.join(root, "kb", "hand_filed_catalogs", "subjects", "*.json")):
+        slug = os.path.basename(path)[:-5]
+        try:
+            with open(path, encoding="utf-8") as f:
+                name = (json.load(f).get("college") or "").strip().lower()
+        except (OSError, ValueError):
+            continue
+        m[slug] = slug
+        if name:
+            m.setdefault(name, slug)
+    index = os.path.join(root, "kb", "hand_filed_catalogs", "courses", "index.json")
+    if os.path.exists(index):
+        with open(index, encoding="utf-8") as f:
+            for c in json.load(f).get("colleges") or []:
+                if c.get("slug"):
+                    m.setdefault(c["slug"], c["slug"])
+                    m.setdefault(str(c.get("college") or "").strip().lower(), c["slug"])
+    return m
+
+
+def read_picks(root=ROOT):
+    """COBI's common-subject picks: every row of kb/subject_title_hunt/*common_picks*.csv, with its file."""
+    import csv
+    import glob
+    out = []
+    for path in sorted(glob.glob(os.path.join(root, PICKS))):
+        with open(path, encoding="utf-8", newline="") as f:
+            for i, r in enumerate(csv.DictReader(f), start=2):
+                out.append(dict(r, _file=os.path.relpath(path, root).replace(os.sep, "/"), _line=i))
+    return out
+
+
 def load(root=ROOT, canon_doc=None, path=None):
     if canon_doc is None:
         with open(os.path.join(root, CANONICAL), encoding="utf-8") as f:
             canon_doc = json.load(f)
-    return Decisions(read_status(root, path), canon_doc, read_slugs(root), nc_codes_table())
+    return Decisions(read_status(root, path), canon_doc, read_slugs(root), nc_codes_table(),
+                     picks=read_picks(root), slugs=college_slug_map(root))
 
 
 def slugs_by_college(root=ROOT):

@@ -1,14 +1,295 @@
 {
  "_rule": "Basis in order: a C-ID prefix that belongs to the discipline; a local code colleges already use; four letters minted from the name. Each is four capital letters, unused in the Common Subjects Reference, no C-ID prefix belonging elsewhere, and proposed once.",
  "_what": "Proposed common subject codes for the MQ disciplines with none. Written by kb/_csr_propose_codes.py; nothing here is a decision until a person confirms a code on the Common Subjects Reference.",
- "assigned": 95,
+ "assigned": 97,
  "by_basis": {
-  "cid": 2,
+  "cid": 3,
   "college": 18,
-  "minted": 75
+  "minted": 76
  },
- "changed_by_a_person": [],
- "count": 95,
+ "changed_by_a_person": [
+  {
+   "assigned": "DSAC",
+   "discipline": "Adapted Computer Technology: Disabled Students Programs and Services",
+   "now": "ADCT"
+  },
+  {
+   "assigned": "ADST",
+   "discipline": "Addiction Paraprofessional Training",
+   "now": "ADDS"
+  },
+  {
+   "assigned": "APLR",
+   "discipline": "Appliance Repair",
+   "now": "APPL"
+  },
+  {
+   "assigned": "FINA",
+   "discipline": "Banking and Finance",
+   "now": "BFIN"
+  },
+  {
+   "assigned": "BICY",
+   "discipline": "Bicycle Repair",
+   "now": "BCYC"
+  },
+  {
+   "assigned": "BOOK",
+   "discipline": "Bookbinding",
+   "now": "BKBD"
+  },
+  {
+   "assigned": "BUSE",
+   "discipline": "Business Education",
+   "now": "BUED"
+  },
+  {
+   "assigned": "BMTC",
+   "discipline": "Business Machine Technology",
+   "now": "BMAC"
+  },
+  {
+   "assigned": "CVTC",
+   "discipline": "Cardiovascular Technology",
+   "now": "CVTE"
+  },
+  {
+   "assigned": "CRMT",
+   "discipline": "Ceramic Technology",
+   "now": "CERM"
+  },
+  {
+   "assigned": "DSCS",
+   "discipline": "Community College Counselor of Students with Disabilities",
+   "now": "CDSC"
+  },
+  {
+   "assigned": "DSDH",
+   "discipline": "Deaf and Hearing Impaired: Disabled Students Programs and Services",
+   "now": "DHSP"
+  },
+  {
+   "assigned": "DSDD",
+   "discipline": "Developmental Disabilities: Disabled Students Programs and Services",
+   "now": "DDDS"
+  },
+  {
+   "assigned": "DIET",
+   "discipline": "Dietetic Technician",
+   "now": "DTTC"
+  },
+  {
+   "assigned": "EMIC",
+   "discipline": "Electromicroscopy",
+   "now": "ELMC"
+  },
+  {
+   "assigned": "EPLT",
+   "discipline": "Electroplating",
+   "now": "ELPL"
+  },
+  {
+   "assigned": "ESTG",
+   "discipline": "Estimating",
+   "now": "ESTM"
+  },
+  {
+   "assigned": "FABC",
+   "discipline": "Fabric Care",
+   "now": "FBRC"
+  },
+  {
+   "assigned": "FDNC",
+   "discipline": "Folk Dance",
+   "now": "FLDN"
+  },
+  {
+   "assigned": "HSEC",
+   "discipline": "Homeland Security",
+   "now": "HLMS"
+  },
+  {
+   "assigned": "HOSP",
+   "discipline": "Hotel and Motel Services",
+   "now": "HOTL"
+  },
+  {
+   "assigned": "JANI",
+   "discipline": "Janitorial Services",
+   "now": "JANT"
+  },
+  {
+   "assigned": "LBRL",
+   "discipline": "Labor Relations",
+   "now": "LREL"
+  },
+  {
+   "assigned": "DSLD",
+   "discipline": "Learning Disabilities: Disabled Student Programs and Services",
+   "now": "LDDS"
+  },
+  {
+   "assigned": "DSLS",
+   "discipline": "Learning Disabilities: Specialist",
+   "now": "LDSP"
+  },
+  {
+   "assigned": "MDVT",
+   "discipline": "Marine Diving Technology",
+   "now": "MDIV"
+  },
+  {
+   "assigned": "MENG",
+   "discipline": "Marine Engine Technology",
+   "now": "MREN"
+  },
+  {
+   "assigned": "MRTL",
+   "discipline": "Martial Arts/Self-Defense",
+   "now": "MASD"
+  },
+  {
+   "assigned": "MTHN",
+   "discipline": "Mathematics-Basic Skills: Noncredit",
+   "now": "MBSK"
+  },
+  {
+   "assigned": "MIRP",
+   "discipline": "Medical Instrument Repair",
+   "now": "MDIR"
+  },
+  {
+   "assigned": "MINE",
+   "discipline": "Mining and Metallurgy",
+   "now": "METL"
+  },
+  {
+   "assigned": "MUSM",
+   "discipline": "Music Management",
+   "now": "MMGT"
+  },
+  {
+   "assigned": "MUSD",
+   "discipline": "Music Merchandising",
+   "now": "MMCH"
+  },
+  {
+   "assigned": "MUIR",
+   "discipline": "Musical Instrument Repair",
+   "now": "MIRE"
+  },
+  {
+   "assigned": "NRSC",
+   "discipline": "Nursing Science/Clinical Practice",
+   "now": "NSCP"
+  },
+  {
+   "assigned": "PHTC",
+   "discipline": "Photographic Technology/ Commercial Photography",
+   "now": "CPHT"
+  },
+  {
+   "assigned": "DSPD",
+   "discipline": "Physical Disabilities: Disabled Student Programs and Services",
+   "now": "PDDS"
+  },
+  {
+   "assigned": "PIAN",
+   "discipline": "Piano Tuning and Repair",
+   "now": "PTUN"
+  },
+  {
+   "assigned": "PLAS",
+   "discipline": "Plastics",
+   "now": "PLST"
+  },
+  {
+   "assigned": "PROS",
+   "discipline": "Prosthetics and Orthotics",
+   "now": "PRTH"
+  },
+  {
+   "assigned": "RTHR",
+   "discipline": "Radiation Therapy",
+   "now": "RDTH"
+  },
+  {
+   "assigned": "RDGN",
+   "discipline": "Reading-Basic Skills: Noncredit",
+   "now": "RBSK"
+  },
+  {
+   "assigned": "REHB",
+   "discipline": "Rehabilitation Technician",
+   "now": "RHAB"
+  },
+  {
+   "assigned": "RSPC",
+   "discipline": "Respiratory Technician",
+   "now": "RSTT"
+  },
+  {
+   "assigned": "SANI",
+   "discipline": "Sanitation and Public Health Technology",
+   "now": "SPHT"
+  },
+  {
+   "assigned": "SRCH",
+   "discipline": "Search and Rescue",
+   "now": "SARC"
+  },
+  {
+   "assigned": "SHIP",
+   "discipline": "Ship and Boat Building and Repair",
+   "now": "SHPB"
+  },
+  {
+   "assigned": "SHOE",
+   "discipline": "Shoe Rebuilding",
+   "now": "SHRB"
+  },
+  {
+   "assigned": "SENG",
+   "discipline": "Small Engine Mechanics",
+   "now": "SMEN"
+  },
+  {
+   "assigned": "DSVN",
+   "discipline": "Specialized Instruction (Disabled Student Programs and Services): Vocational Noncredit",
+   "now": "SPVN"
+  },
+  {
+   "assigned": "DSSL",
+   "discipline": "Speech Language Pathology: Disabled Student Programs and Services",
+   "now": "SLPD"
+  },
+  {
+   "assigned": "SCMT",
+   "discipline": "Supply Chain Technology",
+   "now": "SCLT"
+  },
+  {
+   "assigned": "TELC",
+   "discipline": "Telecommunication Technology",
+   "now": "TCOM"
+  },
+  {
+   "assigned": "VISN",
+   "discipline": "Vision Care Technology",
+   "now": "VSCT"
+  },
+  {
+   "assigned": "WTCH",
+   "discipline": "Watch and Clock Repair",
+   "now": "WCLK"
+  },
+  {
+   "assigned": "WRTN",
+   "discipline": "Writing-Basic Skills: Noncredit",
+   "now": "WBSK"
+  }
+ ],
+ "count": 97,
  "problems": [],
  "rows": [
   {
@@ -89,6 +370,26 @@
   {
    "assign": true,
    "basis": "minted",
+   "code": "AFAM",
+   "confidence": 0.82,
+   "discipline": "African American Studies",
+   "key": "African American Studies",
+   "level": "Likely",
+   "local_code_now": {
+    "called": "ETHS",
+    "colleges": 3,
+    "courses": 13,
+    "filed": true
+   },
+   "note": "",
+   "types": [
+    "masters"
+   ],
+   "words": "African American Studies, an official MQ discipline once aliased to Ethnic Studies"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
    "code": "AGEN",
    "confidence": 0.82,
    "discipline": "Agricultural Engineering",
@@ -145,6 +446,26 @@
     "any"
    ],
    "words": "Archaeological Technology"
+  },
+  {
+   "assign": true,
+   "basis": "cid",
+   "code": "ASAM",
+   "confidence": 0.97,
+   "discipline": "Asian American Studies",
+   "key": "Asian American Studies",
+   "level": "Confident",
+   "local_code_now": {
+    "called": "ETHS",
+    "colleges": 5,
+    "courses": 36,
+    "filed": true
+   },
+   "note": "",
+   "types": [
+    "masters"
+   ],
+   "words": "C-ID's ASAM prefix (Introduction to Asian American Studies); Sam's 2026-11-28 ruling: Asian Studies and Asian American Studies to ASAM, with an ETHS chip"
   },
   {
    "assign": true,

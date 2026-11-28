@@ -27,6 +27,9 @@ OUT = "kb/status/csr_proposed_codes.json"
 
 # discipline (the handbook's name, areas left off) -> (code, basis, words)
 PROPOSALS = {
+    # S749 (Sam, 2026-11-28: every official MQ discipline its own common code; COBIx's minted list, #3951).
+    "African American Studies": ("AFAM", "minted", "African American Studies, an official MQ discipline once aliased to Ethnic Studies"),
+    "Asian American Studies": ("ASAM", "cid", "C-ID's ASAM prefix (Introduction to Asian American Studies); Sam's 2026-11-28 ruling: Asian Studies and Asian American Studies to ASAM, with an ETHS chip"),
     "Accounting": ("ACCT", "cid", "C-ID's ACCT descriptors (ACCT 110, 120); ACCT is the local code at 50 colleges and ACCTG at 18"),
     "Adapted Computer Technology: Disabled Students Programs and Services": ("DSAC", "minted", "DSPS specialty: Adapted Computer"),
     "Addiction Paraprofessional Training": ("ADST", "college", "C-ID's ADS (Addiction Studies) in four letters, as CRIM holds C-ID's AJ; ADST is the code at 2 colleges, ADDICST at 5 and AODS at 2"),

@@ -69,6 +69,10 @@ SRC = os.path.join(HERE, "reference", "cip_searchable_260715.xlsx")
 # The CO consultant's certified CTE designations — the authority for the 244
 # codes where the workbook's two tabs disagree (see rule 1 above).
 CERT = os.path.join(HERE, "reference", "cip_cte_certified_260715.json")
+# The final CIP Taxonomy (September 2026, kb/_parse_cip_taxonomy.py; S749): the authority for every code it lists,
+# ahead of the July certified file, which still settles a code the taxonomy leaves out (a moved, retired or reserved
+# code the workbook carries).
+TAXONOMY = os.path.join(HERE, "reference", "cip_taxonomy_202609.json")
 # COCI course inventory — used for the C-ID/CCN course-level floor flag.
 COCI_SRC = os.path.join(HERE, "reference", "coci_course_list.xlsx")
 OUT = os.path.join(REPO, "cip_crosswalk_data.js")
@@ -83,11 +87,13 @@ SUB4_JSON = os.path.join(HERE, "reference", "cip_series4_titles.json")
 SUB4_NCES_CSV = os.path.join(HERE, "reference", "CIPCode2020.csv")
 SUB4_NCES_XLSX = os.path.join(HERE, "reference", "CIPCode2020.xlsx")
 BUILT_AT = "2026-07-16"
-SRC_LABEL = "kb/reference/cip_searchable_260715.xlsx (CCCCO CIP Searchable Workbook, 2026-07-15 cut) + kb/reference/cip_cte_certified_260715.json"
+SRC_LABEL = ("kb/reference/cip_searchable_260715.xlsx (CCCCO CIP Searchable Workbook, 2026-07-15 cut) + "
+             "kb/reference/cip_taxonomy_202609.json (CCCCO CIP Taxonomy, September 2026) + "
+             "kb/reference/cip_cte_certified_260715.json")
 
 # raw workbook/certified flag -> the category shown in the reference
 CATMAP = {
-    "CTE": "CTE", "Both": "Both", "Not CTE": "Non-CTE", "Noncredit CIP": "Noncredit",
+    "CTE": "CTE", "Both": "Both", "Not CTE": "Non-CTE", "Noncredit CIP": "Noncredit", "Noncredit": "Noncredit",
     "Remove": "Retired", "Canadian CIP": "Reserved", "CIP No Longer in Use": "Retired", "": "",
 }
 
@@ -340,6 +346,7 @@ def main():
     # ---- certified CTE designations (authority for the 244 disagreements) ----
     certified = json.load(open(CERT, encoding="utf-8")).get("designations", {})
     certified = {canon(k): v for k, v in certified.items()}
+    certified.update({canon(k): v for k, v in json.load(open(TAXONOMY, encoding="utf-8")).get("designations", {}).items()})
 
     # ---- C-ID/CCN course-level floor, rolled TOP -> CIP ----
     top_flag = coci_top_flags()
@@ -412,7 +419,7 @@ def main():
                  "TOP↔CIP crosswalk.",
         "_category": "rows[].cat = the Chancellor's Office CERTIFIED CIP CTE "
                      "designation (CTE / Both / Non-CTE / Noncredit / Retired / "
-                     "Reserved). Authority = kb/reference/cip_cte_certified_260715.json "
+                     "Reserved). Authority = kb/reference/cip_taxonomy_202609.json (September 2026), then kb/reference/cip_cte_certified_260715.json "
                      "for the 244 codes where the workbook tabs disagree.",
         "_transfer": "rows[].x = 1 if any TOP that maps to this CIP has a course "
                      "carrying a C-ID (transfer-model) or CCN (AB 1111). A FLOOR, not "
