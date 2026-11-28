@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 746,
-  "moniker": "SkyPetrel",
+  "session": 749,
+  "moniker": "SkyGannet",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_747_handoff.md",
+  "handoff": "docs/session_752_handoff.md",
   "calls": [
     {
       "title": "The noncredit subject title list",
@@ -62,11 +62,11 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-28T02:20:38Z",
+  "written_at": "2026-11-28T17:22:58Z",
   "project": "subjects",
   "next_step": {
-    "title": "The Commons Clarity items",
-    "text": "Sam's list from 2026-11-28: the lightning round's counts disagree (433 and 514), the Needs you link opens the card instead of the lightning round with no way back, and a person's save keyed to a code a later fold renames no longer shows."
+    "title": "Apply the re-mint for the new joins",
+    "text": "The dry run moves 346 M-IDs to the codes Sam's Nov 28 alignment names: NUTR to FDNT 320, TOUR to TRVL 12, AERO to MILS 9, PHTC to PHOT 4, PUBR to PREL 1. The next session checks the live rows first, applies it, rebuilds the page and confirms that all 1,663 of COBI's picks apply."
   },
   "changes": [
     {
@@ -288,6 +288,26 @@
     {
       "at": "2026-11-28T02:05:00Z",
       "text": "22 catalog subject titles filed from COBIx's search: College of the Canyons 10, Santa Barbara City 9, MiraCosta 3."
+    },
+    {
+      "at": "2026-11-28T13:09:00Z",
+      "text": "COBIx's Nov 27 and 28 titles filed, with Sam's 103 folds and COBI's titles read from COCI; Sam's own names replace the filed headings. Codes with no title fell from 1,032 to 137."
+    },
+    {
+      "at": "2026-11-28T13:28:00Z",
+      "text": "The final September 2026 CIP Taxonomy is the authority for the career education flag: 5 codes change category, and no MQ discipline changes category."
+    },
+    {
+      "at": "2026-11-28T13:51:00Z",
+      "text": "COBI's common-subject picks file from a list: a person's save comes first, then COBI's pick, then a statewide filing. The page shows each pick's confidence bar and Picked by COBI."
+    },
+    {
+      "at": "2026-11-28T15:47:00Z",
+      "text": "Sam's Nov 28 alignment filed: 56 new codes, Asian American Studies ASAM and African American Studies AFAM, each language's code under Foreign Languages, 83 wrapper titles marked not a subject, and 1,662 of 1,663 picks apply. HMEN stays, as Sam named it on Nov 22."
+    },
+    {
+      "at": "2026-11-28T16:30:00Z",
+      "text": "The re-mint dry run for the Nov 28 joins: 346 M-IDs change code. Nothing is applied yet."
     }
   ]
 }

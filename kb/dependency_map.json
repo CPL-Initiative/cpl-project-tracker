@@ -4,9 +4,9 @@
   "supabase_tables": 119,
   "rpcs": 68,
   "edge_functions": 16,
-  "file_datasets": 1423,
+  "file_datasets": 1446,
   "external_services": 203,
-  "consumers": 752,
+  "consumers": 759,
   "workflows": 77,
   "data_js_files": 71,
   "tabs": 41
@@ -483,7 +483,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2847
+     "line": 3074
     }
    ],
    "main_committers": []
@@ -542,7 +542,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2803
+     "line": 3030
     }
    ],
    "main_committers": []
@@ -710,7 +710,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 133
+     "line": 144
     },
     {
      "id": "script:kb/_xai_smoke.py",
@@ -757,7 +757,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2740
+     "line": 2967
     }
    ],
    "main_committers": []
@@ -1038,7 +1038,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1651,
+     "line": 1659,
      "tabs": [
       "commons"
      ]
@@ -3232,7 +3232,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2241
+     "line": 2468
     },
     {
      "id": "workflow:program-requirements-college.yml",
@@ -4024,7 +4024,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1100,
+     "line": 1108,
      "tabs": [
       "commons"
      ]
@@ -4964,6 +4964,45 @@
      "direction": "read",
      "how": "literal",
      "line": 212
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:*common_chips*.csv": {
+   "consumers": [
+    {
+     "id": "script:kb/subject_decisions.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 180
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:*common_picks*.csv": {
+   "consumers": [
+    {
+     "id": "script:kb/subject_decisions.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 470
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:*retired_or_fix*.csv": {
+   "consumers": [
+    {
+     "id": "script:kb/coci_subject_folds.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 184
     }
    ],
    "served": false,
@@ -6037,14 +6076,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 74
+     "line": 78
     },
     {
      "id": "script:kb/_build_cip_crosswalk.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 74
+     "line": 78
     },
     {
      "id": "script:kb/_build_noncredit_cip_categories.py",
@@ -9326,7 +9365,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7639
+     "line": 7863
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -9346,7 +9385,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7715
+     "line": 7939
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -12199,6 +12238,45 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/alignment_remint_out/2026-11-28/kb_curation_rows.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_alignment_remint_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 92
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/alignment_remint_out/2026-11-28/rollback.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_alignment_remint_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 92
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/alignment_remint_out/<date>/alias_map.json": {
+   "consumers": [
+    {
+     "id": "script:kb/alias_chain.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 95
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/anchor_rekey_dryrun/plan.json": {
    "consumers": [
     {
@@ -13723,6 +13801,13 @@
      "line": 6869
     },
     {
+     "id": "script:kb/_alignment_remint_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 251
+    },
+    {
      "id": "script:kb/_analyze_official_fold_evidence.py",
      "kind": "script",
      "direction": "read",
@@ -13798,6 +13883,13 @@
      "direction": "read",
      "how": "literal",
      "line": 79
+    },
+    {
+     "id": "script:kb/_apply_minted_codes_s749.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 44
     },
     {
      "id": "script:kb/_apply_twin_merge_statewide.py",
@@ -13923,7 +14015,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 185
+     "line": 188
     },
     {
      "id": "script:kb/_csr_stray_triage.py",
@@ -14748,6 +14840,13 @@
      "line": 6869
     },
     {
+     "id": "script:kb/_alignment_remint_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 252
+    },
+    {
      "id": "script:kb/_analyze_official_fold_evidence.py",
      "kind": "script",
      "direction": "read",
@@ -14809,6 +14908,13 @@
      "direction": "write",
      "how": "literal",
      "line": 169
+    },
+    {
+     "id": "script:kb/_apply_minted_codes_s749.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 45
     },
     {
      "id": "script:kb/_audit_subject_map.py",
@@ -14906,7 +15012,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 185
+     "line": 188
     },
     {
      "id": "script:kb/_csr_stray_triage.py",
@@ -16914,6 +17020,13 @@
      "line": 89
     },
     {
+     "id": "script:kb/_alignment_remint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 478
+    },
+    {
      "id": "script:kb/_detect_crnc_mirrors.py",
      "kind": "script",
      "direction": "read",
@@ -17153,6 +17266,20 @@
      "line": 23
     },
     {
+     "id": "script:kb/_alignment_remint_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 95
+    },
+    {
+     "id": "script:kb/_alignment_remint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 65
+    },
+    {
      "id": "script:kb/_apply_drama_theater_convergence.py",
      "kind": "script",
      "direction": "read",
@@ -17165,6 +17292,20 @@
      "direction": "read",
      "how": "literal",
      "line": 308
+    },
+    {
+     "id": "script:kb/_apply_minted_codes_s749.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 42
+    },
+    {
+     "id": "script:kb/_apply_minted_codes_s749.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 42
     },
     {
      "id": "script:kb/_mq_title5_rename.py",
@@ -17207,6 +17348,13 @@
      "direction": "read",
      "how": "literal",
      "line": 459
+    },
+    {
+     "id": "script:kb/subject_decisions.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 189
     }
    ],
    "served": true,
@@ -17287,6 +17435,20 @@
      "line": 64
     },
     {
+     "id": "script:kb/_alignment_remint_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 94
+    },
+    {
+     "id": "script:kb/_alignment_remint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 64
+    },
+    {
      "id": "script:kb/_anchor_rekey_apply.py",
      "kind": "script",
      "direction": "read",
@@ -17327,6 +17489,20 @@
      "direction": "write",
      "how": "literal",
      "line": 173
+    },
+    {
+     "id": "script:kb/_apply_minted_codes_s749.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 41
+    },
+    {
+     "id": "script:kb/_apply_minted_codes_s749.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 41
     },
     {
      "id": "script:kb/_authority_recode_dryrun.py",
@@ -17382,7 +17558,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 202
+     "line": 205
     },
     {
      "id": "script:kb/_csr_trail.py",
@@ -17557,7 +17733,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 70
+     "line": 79
     }
    ],
    "producers": [
@@ -19268,6 +19444,33 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/mid_forwarding.csv": {
+   "consumers": [
+    {
+     "id": "script:kb/_alignment_remint_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 101
+    },
+    {
+     "id": "script:kb/_alignment_remint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 63
+    },
+    {
+     "id": "script:kb/_alignment_remint_dryrun.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 63
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/migrations/<date>_s701_subject_decisions_receipt.json": {
    "consumers": [
     {
@@ -19756,7 +19959,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 3691
+     "line": 3918
     }
    ],
    "served": false,
@@ -19769,7 +19972,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8596
+     "line": 8820
     }
    ],
    "served": false,
@@ -20229,6 +20432,13 @@
      "line": 89
     },
     {
+     "id": "script:kb/_alignment_remint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 478
+    },
+    {
      "id": "script:kb/_analyze_official_fold_evidence.py",
      "kind": "script",
      "direction": "read",
@@ -20471,6 +20681,53 @@
      "direction": "read",
      "how": "literal",
      "line": 995
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/receipts/minted_codes_s749.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_alignment_remint_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 96
+    },
+    {
+     "id": "script:kb/_alignment_remint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 66
+    },
+    {
+     "id": "script:kb/_apply_minted_codes_s749.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 46
+    },
+    {
+     "id": "script:kb/subject_decisions.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 188
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/receipts/minted_codes_s749_aern.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_alignment_remint_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 97
     }
    ],
    "served": false,
@@ -21253,7 +21510,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 83
+     "line": 87
     },
     {
      "id": "script:kb/_build_it_ai_credential_catalog.py",
@@ -21666,7 +21923,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 209
+     "line": 212
     },
     {
      "id": "script:kb/_jev_agri_families.py",
@@ -21782,6 +22039,33 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/reference/cip_taxonomy_202609.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_cip_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 75
+    },
+    {
+     "id": "script:kb/_parse_cip_taxonomy.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 26
+    },
+    {
+     "id": "script:kb/_parse_cip_taxonomy.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 26
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/reference/coci_course_list.xlsx": {
    "consumers": [
     {
@@ -21831,7 +22115,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 73
+     "line": 77
     },
     {
      "id": "script:kb/_build_cip_fitcheck.py",
@@ -21909,6 +22193,13 @@
      "direction": "read",
      "how": "literal",
      "line": 24
+    },
+    {
+     "id": "script:kb/_file_found_subject_titles.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 74
     },
     {
      "id": "script:kb/_join_cid_articulations.py",
@@ -22995,7 +23286,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 172
+     "line": 178
     },
     {
      "id": "script:kb/_correct_top_lookup_code4.py",
@@ -23033,6 +23324,46 @@
     "workflow:cred-rename-apply.yml",
     "workflow:daily-dashboard.yml"
    ]
+  },
+  "file:kb/remint_dryrun/s749_plan.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_alignment_remint_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 100
+    },
+    {
+     "id": "script:kb/_alignment_remint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 62
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/remint_dryrun/s749_report.md": {
+   "consumers": [
+    {
+     "id": "script:kb/_alignment_remint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 61
+    },
+    {
+     "id": "script:kb/_alignment_remint_dryrun.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 61
+    }
+   ],
+   "served": false,
+   "main_committers": []
   },
   "file:kb/returned_titles_acknowledged.json": {
    "consumers": [
@@ -23455,7 +23786,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 66
+     "line": 78
     },
     {
      "id": "script:kb/_harvest_no_closed_list_diagnosis.py",
@@ -23495,7 +23826,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 67
+     "line": 79
     }
    ],
    "producers": [
@@ -23795,7 +24126,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 201
+     "line": 204
     },
     {
      "id": "script:kb/_mq_view.py",
@@ -23844,7 +24175,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 80
+     "line": 89
     }
    ],
    "served": true,
@@ -24063,7 +24394,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 211
+     "line": 214
     },
     {
      "id": "script:kb/_mid_readiness.py",
@@ -24135,6 +24466,20 @@
      "line": 66
     },
     {
+     "id": "script:kb/_alignment_remint_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 99
+    },
+    {
+     "id": "script:kb/_alignment_remint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 67
+    },
+    {
      "id": "script:kb/_held_subject_codes.py",
      "kind": "script",
      "direction": "read",
@@ -24160,7 +24505,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 69
+     "line": 78
     }
    ],
    "producers": [
@@ -24442,6 +24787,46 @@
      "direction": "write",
      "how": "literal",
      "line": 32
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/subject_title_hunt/20261128_common_picks_slate2.csv": {
+   "consumers": [
+    {
+     "id": "script:kb/_alignment_remint_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 74
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/subject_title_hunt/minted_codes.csv": {
+   "consumers": [
+    {
+     "id": "script:kb/_alignment_remint_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 98
+    },
+    {
+     "id": "script:kb/_alignment_remint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 130
+    },
+    {
+     "id": "script:kb/_apply_minted_codes_s749.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 43
     }
    ],
    "served": false,
@@ -25450,7 +25835,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8209
+     "line": 8433
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -25470,7 +25855,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7051
+     "line": 7275
     }
    ],
    "served": false,
@@ -26101,6 +26486,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:named_gaps_*.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_harvest_gap_census.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 213
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:nav_groups.js": {
    "consumers": [
     {
@@ -26147,7 +26545,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8464
+     "line": 8688
     }
    ],
    "served": false,
@@ -26160,7 +26558,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7677
+     "line": 7901
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -26544,6 +26942,19 @@
      "direction": "read",
      "how": "literal",
      "line": 53
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:program_requirements_reread_s750_*_checked.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_piles_s750.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 35
     }
    ],
    "served": false,
@@ -28975,6 +29386,32 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/alignment_remint_apply_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/alignment_remint_dryrun_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/american_spelling_test.py": {
    "consumers": [
     {
@@ -30921,6 +31358,19 @@
    "main_committers": []
   },
   "file:tests/handover_pickup_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/harvest_gap_census_college_named_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -33210,6 +33660,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/program_piles_s750a_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/program_pooled_figure_s721_test.py": {
    "consumers": [
     {
@@ -33562,6 +34025,32 @@
    "main_committers": []
   },
   "file:tests/program_requirements_follow_up_s703_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_requirements_found_pages_s748_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_requirements_found_pages_s750_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -34453,6 +34942,19 @@
    "main_committers": []
   },
   "file:tests/subject_code_history_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/subject_common_picks_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -35375,6 +35877,13 @@
      "direction": "read",
      "how": "literal",
      "line": 90
+    },
+    {
+     "id": "script:kb/_alignment_remint_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 632
     },
     {
      "id": "script:kb/_analyze_witness_kinship.py",
@@ -37361,7 +37870,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 8570
+     "line": 8794
     }
    ],
    "main_committers": []
@@ -37373,7 +37882,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 8687
+     "line": 8911
     }
    ],
    "main_committers": []
@@ -42757,6 +43266,7 @@
     "tests/noncredit_subject_titles_test.py",
     "tests/held_subject_codes_test.py",
     "tests/subject_decisions_honored_test.py",
+    "tests/subject_common_picks_test.py",
     "tests/subject_decisions_noncredit_test.py",
     "tests/subject_course_moves_test.py",
     "tests/outline_hunt_test.py",
@@ -42921,6 +43431,8 @@
     "tests/program_keep_better_plural_s741_test.py",
     "tests/program_requirements_acalog_pins_s742_test.py",
     "tests/program_requirements_pin_plural_s742_test.py",
+    "tests/program_requirements_found_pages_s748_test.py",
+    "tests/program_requirements_found_pages_s750_test.py",
     "tests/live_read_expand_test.py",
     "tests/program_piles_s742_modesto_test.py",
     "tests/program_piles_s742_elcamino_test.py",
@@ -42940,6 +43452,8 @@
     "tests/program_piles_s748a_test.py",
     "tests/program_piles_s748b_test.py",
     "tests/program_piles_s748c_test.py",
+    "tests/harvest_gap_census_college_named_test.py",
+    "tests/program_piles_s750a_test.py",
     "tests/program_reconcile_s742_cabrillo_test.py",
     "tests/program_reconcile_s748_sbvc_test.py",
     "tests/program_reconcile_s748_lassen_test.py",
@@ -43163,6 +43677,8 @@
     "tests/zband_retire_dryrun_test.py",
     "tests/uc_cur_zscheme_dryrun_test.py",
     "tests/subjects_list_recode_test.py",
+    "tests/alignment_remint_dryrun_test.py",
+    "tests/alignment_remint_apply_test.py",
     "tests/acct_repoint_dryrun_test.py",
     "tests/top_gate_test.py",
     "tests/row_audit_subject_outlier_test.py",
@@ -44095,6 +44611,7 @@
   "kb/exhibit_repoint_list.json",
   "kb/harvest_scouting",
   "kb/memory_audit",
+  "kb/mid_forwarding.csv",
   "kb/migrations",
   "kb/program_requirements_cheap_piles_s683.json",
   "kb/program_requirements_college",
@@ -44106,6 +44623,8 @@
   "kb/receipts",
   "kb/reference/*.xlsx",
   "kb/reference/blocked_catalog_hunt.json",
+  "kb/reference/cip_taxonomy_2026-09.pdf",
+  "kb/reference/cip_taxonomy_202609.json",
   "kb/reference/coci_program_*.csv",
   "kb/reference/college_department_lists",
   "kb/reference/cos_certifications.json",

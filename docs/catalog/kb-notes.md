@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-608 document(s).
+609 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -183,6 +183,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A per-entity index cannot answer "which ones](../kb-notes/methodology-a-per-entity-index-cannot-answer-which-ones.md) | methodology | published | 2026-11-02 | 2026-11-02 |
 | [A percentage must never round up into a claim it cannot support](../kb-notes/methodology-a-percentage-must-not-round-up-into-a-claim.md) | methodology | published | 2026-08-11 | 2026-08-11 |
 | [A person's write must survive the next reload](../kb-notes/methodology-a-persons-write-must-survive-the-next-reload.md) | methodology | published | 2026-10-08 | 2026-10-08 |
+| [A person-named value can live in a memory ruling, not only in a curation row](../kb-notes/methodology-a-person-named-value-can-live-in-a-memory-ruling.md) | methodology | published | 2026-11-28 | 2026-11-28 |
 | [A phrase sweep misses what a line break splits](../kb-notes/methodology-a-phrase-sweep-misses-what-a-line-break-splits.md) | methodology | published | 2026-08-31 | 2026-08-31 |
 | [A pipe discards a command's verdict](../kb-notes/methodology-a-pipe-discards-a-commands-verdict.md) | methodology | published | 2026-09-15 | 2026-09-15 |
 | [A piped test run reports the pipe's exit, not the suite's](../kb-notes/methodology-a-piped-test-run-reports-the-pipes-exit.md) | methodology | published | 2026-08-30 |  |

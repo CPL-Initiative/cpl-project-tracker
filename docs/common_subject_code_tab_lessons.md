@@ -974,3 +974,69 @@ is held for its own measured change.
   base; any new fold must carry saves the same way or name the ones it strands.
 - **A person's `not_a_subject` is terminal for the queue.** Cabrillo TEST and Fullerton F left once the builder honored
   the save, which is the Commons rule that a person's save wins over a rebuild.
+
+## Moved from the lane (S749)
+
+The S746 paragraph, verbatim as it stood in `docs/reference/lanes/common-subjects-reference.md` before the S749 checkpoint:
+
+**LIVE (#3929, #3932, S746): COBIx's subject-parse bundle on main, the college's own codes.** #3929 rebuilt COBIx's
+#3917 on main (Sam's approval of 2026-11-27): `kb/coci_subject_folds.py` folds 38 Allan Hancock truncated labels and
+9 bad splits; Chabot's duplicates and PHEACJUD were dropped (#3918's list stands). The builder honors a person's
+`not_a_subject` save, so Cabrillo TEST and Fullerton F leave the queue; the note box's *Ask COBI to act on this* writes
+`value.act = true`; allow-list filings ride with it. **RULED** `r-folds-take-the-colleges-own-codes-sam-2026-11-28`: a
+fold lands on the code the college prints today. APPREN APRN, COM SC CS, GRAPHI GRPH, HO EC HOEC, LDRSHP LDER, PHY SC
+PHSC, POL SC POLS, WLD T WLDT, OA CBOT, T ART THTR, AL ST AD ST, FRENCH FRCH, H ED HED. Left unfolded (no current code
+matches): INT ST, SOC SC, RET S, Q CNTRL, AGBUS, CE, HONORS, IT. #3932 filed COBIx's 22 #3926 titles (Canyons 10
+`NC.*`, Santa Barbara City 9, MiraCosta 3). The lightning round on the committed files: 494 to 416 after #3929.
+COBIx's #3917 and #3926 are superseded and left open for Sam or COBIx to close. **FINDING**
+`f-saves-on-a-folded-code-go-unseen-s746`: Sam's four Chabot *Not a subject* saves were keyed to codes #3918 folded, so
+the queue never showed them; a save keyed to a folded code needs carrying to the base code or naming in the queue.
+
+The S730 stray-codes paragraph, verbatim as it stood under *The stray codes and the title hunt* before the S749 checkpoint:
+
+**RULED** `r-no-mid-on-a-stray-code-sam-2026-11-25`: *"i should have never minted those 88 codes and left the courses in
+a holding pen."* An M-ID is minted only under a common subject; the 88 stray codes (251 M-IDs, 247 local courses) go
+back to Needs an M-ID, through a re-mint with its alias map, once their local subjects carry a common subject.
+**PROCEDURE** `p-subject-title-carries-its-source-sam-2026-11-25`: every collected local subject title records its
+source URL, where (catalog, college site, other), method (subject heading, prefix legend, department label, course
+pages), date and finder; only a catalog heading or prefix legend settles a title. The worklist is
+`kb/subject_title_hunt/` (8,786 college and code pairs with no title, tiered, each with a recommended title at its
+measured confidence), handed to COBIx. **FINDING:** one local code can mean two subjects at two colleges (Glendale's
+AT is Flight Attendant, filed statewide as Automotive), so a statewide filing should stop where a college's titles
+read otherwise. **LIVE (#3832): the runners' title hunt.** Every college's catalog subject index read on runners and filed straight
+into `kb/hand_filed_catalogs/subjects/` by `kb/_file_found_subject_titles.py` (the Subjects build lists a college by
+its headings alone): 103 colleges and 8,147 named codes, from 19 and 1,655. The CSV holds only the 2,500 leftovers for
+COBIx. **RULED** `r-collect-curate-connect-grow-automatic-sam-2026-11-25`. **The stray-code rescore (S730, rerun S733):** `kb/subject_title_hunt/20261125_stray_code_rescore.csv`, scored 0 to
+100 by `kb/_stray_code_rescore.py` (**RULED** `r-confidence-0-100-in-all-commons-procedures-sam-2026-11-25`: no Low,
+Medium or High in a Commons procedure): 66 of 116 local subjects at 90 or more, after COBIx's leftover titles (#3837,
+#3838) filed through `kb/_file_found_subject_titles.py --csv` (911 titles; 96 department labels kept as hints). The 50
+under 90 are one list for a person: `kb/subject_title_hunt/20261125_stray_codes_a_person_picks.md`. **APPLIED** (#3853, S733): 60 stray M-IDs retired, 20 merged shells aliased to their targets (`kb/alias_chain.py`),
+35 held until their local subject's common subject is filed; 27 bot `kb_curation` rows deleted live (restore:
+`kb/stray_code_remint_out/2026-11-25/applied/kb_curation_restore.sql`); Needs an M-ID 1,819 to 1,881. The seeder no
+longer drops assigned codes (#3857). **NEXT:** file common subjects for the 35 held and the 50 under 90 (Sam picks, or
+moves courses in the Local subjects sidebar, #3851), then rerun the dry run for the rest.
+
+## S749 (SkyGannet, Sam's plain session, 2026-11-28 12:01Z to about 17:30Z): Sam's alignment, the picks, the re-mint dry run
+
+- **A person's naming can live outside the curation table** (`p-person-settled-lives-in-memory-too-s749`). The
+  minted-codes applier read `kb_curation` and the reference for person rows and found none on Home Economics:
+  Noncredit, so it re-coded HMEN; Sam had named HMEN on 2026-11-22 in a `cpl_memory` ruling
+  (`r-noncredit-four-mq-codes-sam-2026-11-22`). #3952 keeps HMEN and freezes the four noncredit codes in
+  `PERSON_NAMED`. The note:
+  [`methodology-a-person-named-value-can-live-in-a-memory-ruling`](kb-notes/methodology-a-person-named-value-can-live-in-a-memory-ruling.md).
+- **Measure a taxonomy change against the final document, not the working tab.** COBIx counted about 245 CIP codes
+  changing category against the raw workbook tab; the final September 2026 CIP Taxonomy (#3948) changes 5 (42.2804,
+  43.0102, 43.0406, 45.0199, 50.0301), and no MQ discipline's category moves.
+- **One precedence, written down once** (`d-cobi-common-picks-csv-precedence-s749`): a person's save, then COBI's pick
+  from the CSV, then a statewide filing, then the map. #3949 put it in the builder and the page shows *Picked by COBI*
+  with the 0-100 bar, so a reader can tell a machine pick from a person's.
+- **A rename that touches minted ids goes through the re-mint, held out of the code apply**
+  (`d-minted-codes-applied-held-s749`). #3952 applied 56 codes that no M-ID used and held NUTR, AERO, FLTA, PUBR and TOUR
+  for the dry run (#3955: 346 M-IDs). The apply (#3958) passed a second reader once its rollback aborts on person rows
+  sitting on new ids, which is the Rule 10 a2 point: the receipt has to undo the data, and a person's later row is data.
+- **Untitled fell 1,032 to 137** when COBI's COCI-read titles filed beside COBIx's catalog titles and Sam's names
+  (`r-cobi-coci-titles-file-and-sam-names-win-sam-2026-11-28`). A fold Sam asked for still stops where the courses read
+  otherwise: LA Southwest's ENG is engineering, so ENG to ENGL was held.
+- **A verdict on a program record needs Sam's signed-in session** (`f-program-verdict-needs-signed-in-reviewer-s749`):
+  `program_record_verdict_add` takes a signed-in reviewer, so a session files his rulings on records only by handing
+  him the list.
