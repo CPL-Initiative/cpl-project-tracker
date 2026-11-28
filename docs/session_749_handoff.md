@@ -228,3 +228,12 @@ paid reads, rereads, loads and `.apply`, and holds every Supabase call.
   River's step and Sierra 21525 are left out. The land worker's own edits go to a Sonnet second reader before the merge.
 - 10:41Z: Mt. San Antonio's live rows re-measured (10:40:38Z: 385 rows, the 08:17Z md5, the same six checked); `post` runs
   keep-better on its reconcile.
+- 10:44Z: `post`: Mt. San Antonio's keep-better kept exactly the expected eight (02990, 08045, 16544, 30762, 36697,
+  39709, 39710, 44689), restored 323, the six checked rows untouched (`f546e406`); the reread, force 46124747415,
+  dispatched and live, each equal. Records collected: 41.
+- 10:47Z: the land's second reader (Sonnet): MERGE (no either-state edit weakens a guard; `on_live_run()`'s change sits
+  in the `FROM_HELD` branch, 43388 alone, and writes nothing; San Bernardino Valley's 222 records and 189 passing
+  recount; `.apply` and the census file equal `main`'s). #3945's thread is empty, `test` green on `0add7c1e`, `main`
+  unmoved since its base.
+- 10:48Z: **#3945 merged (`cd464091`, confirmed on `origin/main`).** `post` builds the second land,
+  `claude/s748-land-mtsac`, for Mt. San Antonio's eight.
