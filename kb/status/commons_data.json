@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-28T07:15:40Z",
+ "written_at": "2026-11-28T08:18:33Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17666,
-  "gap": 4669,
+  "passing": 17668,
+  "gap": 4667,
   "with_gap": 118,
   "cost_usd": 1341.37,
-  "passed_at_read": 16566,
+  "passed_at_read": 16568,
   "cost_receipts": 118,
   "spent_usd": 1247.94,
   "spent_runs": 264,
@@ -189,8 +189,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16986,
-  "gap": 4669,
+  "passing": 16988,
+  "gap": 4667,
   "collected_with_gaps": 680,
   "discontinued": 0
  },
@@ -6041,13 +6041,14 @@
    "harvested": true,
    "slug": "lassen",
    "programs": 78,
-   "passing": 42,
-   "gap": 36,
+   "passing": 44,
+   "gap": 34,
    "causes": {
+    "found_not_extracted": 2,
     "no_closed_list": 5,
-    "page_not_found": 9,
+    "page_not_found": 7,
     "places_none": 5,
-    "unknown_without_live": 17
+    "unknown_without_live": 15
    },
    "census_causes": {
     "no_closed_list": 4,
@@ -6071,10 +6072,10 @@
    "outcomes_file": "kb/status/commons_data_programs/lassen.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-17T05:28:43Z",
+   "read_at": "2026-11-28T07:48:12Z",
    "read_kind": "capture",
    "cost_usd": 4.54,
-   "passed_at_read": 42,
+   "passed_at_read": 44,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -6083,13 +6084,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 73,
-   "found": 64,
+   "found": 62,
    "extracted": 64,
    "errors": 0,
    "failed_checks": {
     "coverage": 5,
     "invented": 0,
-    "arithmetic": 22,
+    "arithmetic": 20,
     "repeated": 0,
     "outcomes": 0
    },
@@ -6099,14 +6100,15 @@
    "capture_root": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 30.3,
-   "run": "39006337658",
+   "read_seconds": 65.6,
+   "run": "46122727267",
    "levers": {
-    "ge_units_steps": 9,
-    "reader_page_search": 9,
     "reconcile_steps": 8,
+    "ge_units_steps": 7,
+    "reader_page_search": 7,
     "program_course_file_check": 5,
-    "reader_page_assignment": 5
+    "reader_page_assignment": 5,
+    "paid_read": 2
    },
    "collection": {
     "program_reader": {
@@ -6114,8 +6116,8 @@
      "models": {
       "claude-opus-5-5": 64
      },
-     "run": "39006337658",
-     "at": "2026-10-17T05:28:43Z",
+     "run": "46122727267",
+     "at": "2026-11-28T07:48:12Z",
      "cost_usd": 4.54,
      "platform": "pdf"
     },
