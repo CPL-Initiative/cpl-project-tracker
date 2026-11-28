@@ -1,3 +1,5 @@
 # Harvest scouting files
 
 Each `scout-<YYYY-MM-DD>.json` file here, named by the date COBIx posted it, is a source scout for one program requirements harvest wave, written by COBIx, the team's reviewer, from read-only scouting of the colleges' catalog hosts (robots first, 4 seconds between loads, a user agent that names the CPL Initiative). The contract that sets the file's shape, `schema: 1` with one entry a college, is the conductor's on issue #3111, comment [6840743191](https://github.com/CPL-Initiative/cpl-project-tracker/issues/3111#issuecomment-6840743191). A file is filed exactly as COBIx posted it, with no value changed and nothing added: `scout-2026-11-12.json` is the fenced JSON block of #3111 comment [6841073592](https://github.com/CPL-Initiative/cpl-project-tracker/issues/3111#issuecomment-6841073592).
+
+`scout-2026-11-28.json` is the one file here not posted by COBIx: S752's re-scout of Southwestern College on Sam's ask of 2026-11-28, read from the harvest runner's capture (run 45567354959, 451 of 451 pages, none challenged). The builder reads the files in name order, so a later file's entry for a college replaces an earlier one.
