@@ -1,7 +1,7 @@
 {
   "_built_by": "kb/_build_noncredit_cip_categories.py",
   "_source": "CCCCO 'TOP to CIP Noncredit Mapping', updated 2026-05-26; Basic Skills pairing confirmed by Jenni Abbott (CO consultant), 2026-08-14",
-  "_crosswalk_source": "kb/reference/cip_searchable_260715.xlsx (CCCCO CIP Searchable Workbook, 2026-07-15 cut) + kb/reference/cip_cte_certified_260715.json",
+  "_crosswalk_source": "kb/reference/cip_searchable_260715.xlsx (CCCCO CIP Searchable Workbook, 2026-07-15 cut) + kb/reference/cip_taxonomy_202609.json (CCCCO CIP Taxonomy, September 2026) + kb/reference/cip_cte_certified_260715.json",
   "_note": "The CO page calls these codes EXAMPLES: 'can be used by colleges to identify the most appropriate CIP code that aligns with an existing TOP code.' The college is the decider; this file is what the picker offers, never what it concludes.",
   "_invariants": [
     "cdcp is PER-CODE — a category flag can be overridden by a code (32.0201).",
