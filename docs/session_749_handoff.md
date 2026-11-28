@@ -16,18 +16,18 @@ writes 748), never this file.
 **Numbering.** Handoff 743 (S742 SkyGodwit) named SkyStilt for the routine's next session, to take the next free number.
 747 is Sam's plain session in flight, so this run is S748 and writes 749.
 
-*(Declaration, written at 06:40Z before any worker started.)*
+*(Declaration, written at 06:17Z before any worker started.)*
 
 ## The start (06:12Z firing, 2026-11-28)
 
 - Brief: COBIx's on #3358 (comment 6894464154, Fri Nov 27, written 6:45 PM PT, `main` at `205e6cae`). Handoff 747
   (S746) is the newest numbered file; the routine's own is 743. On `main` since the brief: Sam's S747 merges #3933,
   #3936, #3938 and #3939 (the last at 06:05Z), a plain session, which never stands the queue down.
-- One writer: no `list_sessions`, `get_trigger` or `get_session` here. Open PRs at 06:20Z: COBIx's #3937 (subject
+- One writer: no `list_sessions`, `get_trigger` or `get_session` here. Open PRs at 06:15Z: COBIx's #3937 (subject
   titles, 05:04Z), #3926 and #3917 (superseded, Sam's or COBIx's to close) and dependabot's #3383. None is a queue
   session's. Subject titles are the plain session's lane; this run leaves all four.
 - Step 0: the night's first firing; no `daily-dashboard.yml` run was created on 2026-11-28 UTC, so it was dispatched on
-  `main` at 06:17Z.
+  `main` at 06:15Z.
 - No pause line (handoffs 747 and 743). Three repos attached. `check_hooks_live.py`: ROOT LIVE. No `set_session_tags`.
 - `queue_todo_done` since 2026-11-27: none. Rule 8's memory read: no harvest row since S742's eight. Two Library
   requests wait (held in a conductor run, as S727 to S742 held them). Step 11: the outline queue is empty.
