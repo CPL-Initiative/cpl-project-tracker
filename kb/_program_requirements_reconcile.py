@@ -1490,6 +1490,12 @@ def _college_steps(record: dict, text: str | None, college: str, award: str | No
             needs = st.get("only_with") or []
             if any(_empty(prog.get(n)) or prog.get(n) == "" for n in ([needs] if isinstance(needs, str) else needs)):
                 continue
+            # S748 (Lassen's step for local degrees, its second reader's finding): only_with asks that a pattern
+            # is named, never which. only_cal_getc gives the step's figure only to a record whose pattern is
+            # Cal-GETC alone, by the statewide rule's own test (CAL_GETC_ONLY), so a local degree naming its own
+            # pattern, or two patterns, on a page that also prints Cal-GETC is left alone. Off unless a step sets it.
+            if st.get("only_cal_getc") and not CAL_GETC_ONLY.match(prog.get("ge_pattern") or ""):
+                continue
             words = m.group(0).strip()
             if st.get("source"):
                 words = "%s (%s: %s)" % (words, st["source"], st["source_words"])

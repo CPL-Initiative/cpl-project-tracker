@@ -111,6 +111,16 @@ check(bool(re.search(OLD_PATTERN, UNITS_LINE)) and not re.search(OLD_PATTERN, CO
 for line in ("General Education and Electives 42.00", "G.E. (Cal-GETC) and elective units 35.00",
              "General Education (Cal-GETC) and Electives", "Peralta General Education Electives 0.00"):
     check(not rx.search(line), "%r does not match" % line)
+# The width (the second reader's finding): the two words the catalog prints and no third. A pattern taking any word
+# after 'Elective' would also read a line of another shape (Berkeley City prints 'Elective Requirements 16-21').
+check(step.get("pattern") == r"General\s+Education\s+\(Cal-?GETC\)\s+and\s+Elective\s+(?:Units|Courses)",
+      "the pattern is the two wordings and nothing wider (%r)" % step.get("pattern"))
+for line in ("General Education (Cal-GETC) and Elective Requirements 16-21",
+             "General Education (Cal-GETC) and Elective Areas 42.00",
+             "General Education (Cal-GETC) and Elective Coursework 42.00",
+             "General Education (Cal-GETC) and Elective Unit 42.00",
+             "General Education (Cal-GETC) and Elective 42.00"):
+    check(not rx.search(line), "%r does not match: a third word after 'Elective' is not read" % line)
 
 # ── 32765 ─────────────────────────────────────────────────────────────────
 f = as_read(load(CN))

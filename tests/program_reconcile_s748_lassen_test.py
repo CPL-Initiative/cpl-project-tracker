@@ -91,6 +91,10 @@ check(all(new_step.get(k) == old_step.get(k) for k in same) and new_step.get("va
       "the local step carries the transfer step's figure, pattern, source and guards")
 check(sorted(old_step.get("hold") or {}) == ["31297", "35106", "41912"] and "hold" not in new_step,
       "the transfer step keeps its three held records; the local step holds none")
+check(new_step.get("only_cal_getc") is True and "only_cal_getc" not in old_step,
+      "the local step asks for a record whose pattern is Cal-GETC alone (only_cal_getc)")
+check(not [name for name, c in STEPS.items() if name != LASSEN and isinstance(c, dict)
+           for st in c.get("steps") or [] if "only_cal_getc" in st], "no other college's step carries only_cal_getc")
 check("43570566375" in (CONF.get("why") or "") and "43570566375" in (new_step.get("why") or ""),
       "the entry and the step cite the page read that printed the figure")
 
@@ -120,6 +124,22 @@ for field, empty in (("ge_pattern", None), ("degree_total", {"min": None, "max":
     check((recon(g)[0]["program"].get("ge_units") or {}).get("min") is None, "a record with no %s takes nothing" % field)
 check((recon(f, text="University Studies\nelectives to total 60 units\n")[0]["program"].get("ge_units") or {}).get("min")
       is None, "a page that never names Cal-GETC gives nothing")
+# Which pattern the record names (the second reader's finding): only_with asks that one is named, never which.
+loose = copy.deepcopy(STEPS)
+for st in loose[LASSEN]["steps"]:
+    st.pop("only_cal_getc", None)
+for other in ("Local GE", "General Education Requirements", "Local General Education Pattern or Cal-GETC",
+              "Lassen College General Education or Cal-GETC", "CSU GE Breadth or IGETC"):
+    g = copy.deepcopy(f)
+    g["record"]["program"]["ge_pattern"] = other
+    check((recon(g)[0]["program"].get("ge_units") or {}).get("min") is None,
+          "a local degree naming %r takes nothing, though its page prints Cal-GETC" % other)
+    check((recon(g, steps=loose)[0]["program"].get("ge_units") or {}).get("min") == 34,
+          "without only_cal_getc the same record would take 34 (%r): the guard carries the weight" % other)
+for alone in ("Cal-GETC", "CalGETC", "California General Education Transfer Curriculum (Cal-GETC)"):
+    g = copy.deepcopy(f)
+    g["record"]["program"]["ge_pattern"] = alone
+    check((recon(g)[0]["program"].get("ge_units") or {}).get("min") == 34, "a local degree naming %r takes 34" % alone)
 check((recon(f, award="Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units")[0]["program"]
        .get("ge_units") or {}).get("min") is None, "a certificate takes nothing")
 
