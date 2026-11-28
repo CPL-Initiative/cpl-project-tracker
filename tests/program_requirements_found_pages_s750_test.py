@@ -520,9 +520,10 @@ for folder in sorted(glob.glob(os.path.join(BASE, "*", ""))):
     RECALLS[slug_] = (name, got, look.get("found_active") or 0)
 for slug_, (name, got, found) in sorted(RECALLS.items()):
     if slug_ in TWELVE or found or got["wrong"]:
-        print("   %-24s %s found pages %3d | tested %4d: right %4d, wrong %d, not found %3d | recall %s | %s"
+        print("   %-24s %s found pages %3d | tested %4d: right %4d, wrong %d, not found %3d | recall %s | %s | "
+              "%d passing records' pages not among the filed pages, untested"
               % (slug_, "*" if slug_ in TWELVE else " ", found, got["tested"], got["right"], got["wrong"],
-                 got["not_found"], got["recall"], "clears" if got["clears"] else "under the floor"))
+                 got["not_found"], got["recall"], "clears" if got["clears"] else "under the floor", got["not_read"]))
 tot = collections.Counter()
 for _, got, _ in RECALLS.values():
     tot.update({k: got[k] for k in ("tested", "right", "wrong", "not_found")})
@@ -541,8 +542,44 @@ print("   of the twelve, %d clear the floor on their filed pages: %s" % (len(cle
 print("   under it: %s" % ", ".join(s for s in TWELVE if s not in clearing))
 glendale = RECALLS["glendale_community"][1]
 check(not glendale["clears"] and glendale["recall"] < 0.5,
-      "Glendale is under the floor on its filed pages (%d of %d: a Coursedog capture's pages carry no heading in "
-      "the committed sources); only a capture's own measurement can switch it on" % (glendale["right"], glendale["tested"]))
+      "Glendale is under the floor on its filed pages (%d of %d), so its capture's own measurement decides"
+      % (glendale["right"], glendale["tested"]))
+# WHY, read from its filed sources (S750; an earlier wording said the committed pages carry no heading, which is
+# false). Every source row carries an h1 and a title: the h1 is the site's banner, one on every row, and the title
+# and the address are the Coursedog program code ("MGMT-AS Program", /programs/MGMT-AS/...). A live capture heads
+# each page with the program's name from Coursedog's program search instead (cd_page: "since the page's title names
+# only the code"), and that name is committed in capture.json's catalog, never in a source row. So the filed pages
+# name each program by code, and the lookup, which reads a title, finds 8.
+g_rows = [x for x in load("glendale_community", "sources.json") if (x.get("source") or {}).get("url")]
+g_cat = (load("glendale_community", "capture.json").get("coursedog") or {}).get("catalog") or []
+g_codes = {e.get("code") for e in g_cat}
+g_names = {(e.get("name") or "").strip().lower() for e in g_cat}
+banners = collections.Counter((x["source"].get("h1") or "").strip() for x in g_rows)
+
+
+def g_head(row):
+    """A Glendale source title before its "|", less the word Program: what the page calls itself."""
+    head = (row["source"].get("title") or "").split("|")[0].strip()
+    return head[:-len(" Program")] if head.endswith(" Program") else None
+
+
+# The catalog says what a code is (a transfer degree's has a space in it: "KIN AAT", "AS-T ADMJ"), so no pattern
+# of this file's guesses at one. On 2026-11-28: 242 rows, 241 of them a catalog code, the other one, NCGOC1, a code
+# the committed catalog list lacks; none a catalog name, none the state's title.
+as_code = sum(1 for x in g_rows if g_head(x) in g_codes)
+as_name = [x["control_number"] for x in g_rows
+           if (g_head(x) or "").lower() in g_names or (g_head(x) or "").strip().lower() == (x.get("title") or "").strip().lower()]
+check(len(g_rows) > 200 and all((x["source"].get("h1") or "").strip() for x in g_rows)
+      and banners.most_common(1)[0][1] >= 0.95 * len(g_rows) and all(g_head(x) for x in g_rows),
+      "the cause: each of Glendale's %d filed source rows carries a heading, and it is the site's banner (%d rows "
+      "print %r), over a title of the form '<code> Program'"
+      % (len(g_rows), banners.most_common(1)[0][1], banners.most_common(1)[0][0]))
+check(not as_name and as_code >= 0.95 * len(g_rows),
+      "what that title names is the program's code (%d of %d are codes in the committed catalog), and for none is it "
+      "the program's name or the state's title (%s)" % (as_code, len(g_rows), as_name[:3]))
+check(len(g_cat) > 200 and all((e.get("name") or "").strip() and e.get("code") for e in g_cat),
+      "the name a live capture heads each page with is committed in capture.json's catalog (%d entries, code and "
+      "name), not in the source rows" % len(g_cat))
 check(len(clearing) >= 9 and all(RECALLS[s][1]["wrong"] == 0 for s in TWELVE),
       "%d of the twelve clear it, and none of the twelve has a wrong answer" % len(clearing))
 
