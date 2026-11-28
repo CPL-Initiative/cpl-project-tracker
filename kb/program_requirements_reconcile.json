@@ -900,6 +900,24 @@
       "35106": "overlap: the major plus the printed 34 runs past the degree total of 60 (61-62); a set step checks no standing, so the record stays as main files it (Grossmont 46141, #3252)",
       "41912": "overlap: the major plus the printed 34 runs past the degree total of 60 (62); a set step checks no standing, so the record stays as main files it (Grossmont 46141, #3252)"
      }
+    },
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {
+      "min": 34,
+      "max": 34
+     },
+     "awards": "local",
+     "only_with": [
+      "ge_pattern",
+      "degree_total",
+      "total_units"
+     ],
+     "pattern": "Cal-?\\s?GETC",
+     "source": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=72",
+     "source_words": "Cal-GETC General Education Certificate of Achievement requires 34 Units.",
+     "why": "S748 (lane 1, keys; the census of 2026-11-28 00:44Z, lever ge_units_steps): Lassen's University Studies A.A. degrees are local degrees that name Cal-GETC as their general education pattern, print no figure for it, name the 60 and say electives fill the rest (each reading's notes: 'Cal-GETC is named but no GE unit figure is printed'). The step above gives the catalog's own Cal-GETC figure (PDF p.72, college-page-read run 43570566375) to transfer degrees alone, so these read incomplete against the 60. The same figure from the same page, for a local degree, only where the record names its pattern, its degree total and its major's units, and never over units the reading gave (the local pattern's 21 stays where a record read it). Over the college's 64 committed records, each offered a page naming Cal-GETC, the step reaches five, the University Studies degrees 18752, 18754, 18756, 18758 and 18848, each then passing with its 18 to 21 units, the 34 and electives to 60; no passing record turns failing (tests/program_reconcile_s748_lassen_test.py)."
     }
    ],
    "pdf_pages": {
