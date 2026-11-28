@@ -39,98 +39,11 @@
   // ── The MAP link beside a credential this college could adopt (Sam, Open Asks Sheet 134
   // card 2, 2026-10-27, "build"): map_links.js draws one chip per college that built a
   // verified exhibit, each opening MAP searched for that exhibit's ID. No module, no line.
-  function mapLinksNode(title) {
+  // home, where a caller knows the college that would adopt, makes the line one link: the nearest college's exhibit
+  // (Sam, 2026-11-28; map_links.js nearest()).
+  function mapLinksNode(title, home) {
     var M = window.CPL_MAP_LINKS;
-    return M && title ? M.node(title) : null;
-  }
-
-  // ── ⚡ Quick Adopt intake (v1: records the request; the CPL team routes it.
-  //    Re-point at the MAP platform's authenticated adoption flow when the
-  //    Exhibit Module exposes one.) ──────────────────────────────────────────
-  function buildQuickAdopt(prog, row) {
-    var wrap; // assigned below (el() is declared later; function hoisting covers calls)
-    wrap = el("div", "cplpw-qa");
-    var go = document.createElement("button");
-    go.type = "button";
-    go.className = "go";
-    go.textContent = "Quick Adopt";
-    go.title = "Ask the CPL team to bring this articulation to your college — records a request they follow up with your curriculum office.";
-    var form = el("form", "cplpw-qa-form");
-    form.style.display = "none";
-    function input(name, ph, required, type) {
-      var i = document.createElement("input");
-      i.type = type || "text";
-      i.name = name;
-      i.placeholder = ph + (required ? " *" : "");
-      i.setAttribute("maxlength", "200");
-      return i;
-    }
-    var college = input("adopter_college", "Your college", true);
-    var name = input("contact_name", "Your name", false);
-    var email = input("contact_email", "Work email", true, "email");
-    var note = document.createElement("textarea");
-    note.name = "note";
-    note.placeholder = "Anything the team should know (optional)";
-    note.setAttribute("maxlength", "2000");
-    var err = el("span", "cplpw-qa-err", "");
-    var send = document.createElement("button");
-    send.type = "submit";
-    send.className = "go";
-    send.textContent = "Send adoption request";
-    var rowEl = el("div", "row", [send, err]);
-    form.appendChild(college); form.appendChild(name); form.appendChild(email);
-    form.appendChild(note);
-    form.appendChild(el("div", "cplpw-qa-note",
-      "v1: this records the request for the CPL team (contact info goes only to them — it is not publicly readable). The one-click in-MAP adoption lands when the MAP Exhibit Module exposes its authenticated flow."));
-    form.appendChild(rowEl);
-    go.addEventListener("click", function () {
-      form.style.display = form.style.display === "none" ? "" : "none";
-    });
-    form.addEventListener("submit", function (ev) {
-      ev.preventDefault();
-      err.textContent = "";
-      if (String(college.value).trim().length < 2) { err.textContent = "College is required."; return; }
-      if (String(email.value).indexOf("@") < 1) { err.textContent = "A work email is required."; return; }
-      var creds = (row.adoptOptions || []).map(function (o) { return o.credential; });
-      var precedent = (row.adoptOptions || []).map(function (o) {
-        return o.credential + ": " + o.lines.map(function (l) {
-          return l.college + " " + l.code + (l.units != null ? " (" + fmtU(l.units) + "u)" : "");
-        }).join("; ");
-      }).join(" | ").slice(0, 1200);
-      send.disabled = true;
-      fetch(ADOPT_INTAKE, {
-        method: "POST",
-        headers: {
-          "apikey": SUPABASE_ANON,
-          "Authorization": "Bearer " + SUPABASE_ANON,
-          "Content-Type": "application/json",
-          "Prefer": "return=minimal",
-        },
-        body: JSON.stringify({
-          program_id: prog.id || "unknown",
-          program_label: (prog.college ? prog.college + " — " : "") + (prog.program || ""),
-          course_code: row.code || null,
-          course_title: row.title || "(course)",
-          credentials: creds.join(" | ").slice(0, 600) || "(unspecified)",
-          precedent: precedent || null,
-          adopter_college: String(college.value).trim().slice(0, 120),
-          contact_name: String(name.value).trim().slice(0, 120) || null,
-          contact_email: String(email.value).trim().slice(0, 200),
-          note: String(note.value).trim().slice(0, 2000) || null,
-        }),
-      }).then(function (r) {
-        if (!r.ok) throw new Error("intake " + r.status);
-        var ok = el("div", "cplpw-qa-ok", "✓ Request recorded — the CPL team will follow up with your curriculum office.");
-        wrap.replaceChild(ok, form);
-        go.style.display = "none";
-      }).catch(function () {
-        send.disabled = false;
-        err.textContent = "Could not record the request — try again, or email the CPL team.";
-      });
-    });
-    wrap.appendChild(go);
-    wrap.appendChild(form);
-    return wrap;
+    return M && title ? M.node(title, home) : null;
   }
 
   // ── Pathway status stages ─────────────────────────────────────────────────
@@ -3025,6 +2938,41 @@
     if (!(e && e.detail && e.detail.tab === "cpl-pathways")) closePanel();
   });
 
+  /* A directory program's adoption pool as one adopt_panel.js model: control(title, words) makes an underlined-word
+     button that opens the tab's side panel on every credential, the one named (title) checked, or none (null). */
+  function dirAdoptOpener(prog, pool) {
+    var P = window.CPL_ADOPT_PANEL;
+    if (!P || !pool || !pool.length) return null;
+    var items = pool.map(function (pc) {
+      var cols = [];
+      (pc.lines || []).forEach(function (l) { if (l.college && cols.indexOf(l.college) < 0) cols.push(l.college); });
+      return { title: pc.credential, colleges: cols, kind: "adopt", links: mapLinksNode };
+    });
+    var m = P.model(items);
+    if (!m.items.length) return null;
+    if (!adoptState.data && !adoptState.error) loadAdopt();
+    var college = (prog && (prog.cer_college || prog.college)) || "";
+    var label = (prog && prog.program) || "";
+    var base = { home: college, adopterCollege: college, controls: "cplpw-panel", open: openPanel,
+      sub: college + (label ? ", " + label : ""),
+      course: { code: "", title: label ? label + " (" + ((prog && prog.degree_abbr) || "B.S.") + ")" : "" },
+      program: { id: (prog && prog.id) || college, label: college + (label ? " — " + label : "") } };
+    return {
+      control: function (title, words) {
+        var b = el("button", "cpladp-chip cplpw-dadopt", words);
+        b.type = "button";
+        b.setAttribute("aria-haspopup", "dialog");
+        b.setAttribute("aria-expanded", "false");
+        b.setAttribute("aria-controls", "cplpw-panel");
+        if (title) b.setAttribute("aria-label", "Request Adopt: " + title + ", in the side panel");
+        b.addEventListener("click", function () {
+          P.open(b, m, Object.assign({}, base, { checked: title ? [title] : [] }));
+        });
+        return b;
+      }
+    };
+  }
+
   /* A featured program's course row: its adoption options (collectAdoptOptions) as adopt_panel.js's model, each
      credential's granting colleges from its lines, the MAP line beside each exhibit in the panel. */
   function featuredAdoptChip(prog, r) {
@@ -4084,7 +4032,13 @@
       h2.appendChild(el("span", "sum", m.pool.length + " to adopt"));
       h2.appendChild(el("div", "t", "Adoption opportunities — CPL other colleges have already proven in this field"));
       var capNote = m.pool.length > DIR_POOL_CAP ? " Showing the " + DIR_POOL_CAP + " most widely-adopted first." : "";
-      h2.appendChild(el("div", "s", "Each credential below is articulated for CPL at another California college. This college could adopt it — and a student can request it. ⚡ Quick Adopt records the request for the CPL team." + capNote));
+      h2.appendChild(el("div", "s", "Each credential below is articulated for CPL at another California college. This college could adopt it, and a student can request it." + capNote));
+      /* One request for the section (Sam, 2026-11-28: "yes, that's the way to go. please roll with it"; mock
+         https://claude.ai/artifact/74oA2cnB2wJ66LNaKtHSLf): the heading's Request Adopt (N) opens adopt_panel.js's
+         sidebar on every credential, none checked; a row's Request Adopt opens the same list with that one checked.
+         Each credential's MAP line is one link, the nearest college's exhibit (map_links.js nearest()). */
+      var dirAdopt = dirAdoptOpener(prog, m.pool);
+      if (dirAdopt) h2.appendChild(dirAdopt.control(null, "Request Adopt (" + statNum(m.pool.length) + ")"));
       s2.appendChild(h2);
       var moreWrap = el("div");
       moreWrap.style.display = "none";
@@ -4092,38 +4046,13 @@
         var row = el("div", "cplpw-course");
         row.appendChild(el("span", "g cplpw-glyph adopt", "⊕"));
         var t = el("span", "t", pc.credential);
-        t.title = pc.credential + " — articulated at " + pc.colleges + " college" + (pc.colleges === 1 ? "" : "s");
         row.appendChild(t);
-        if (pc.cpl_types && pc.cpl_types.length) row.appendChild(el("span", "cred", pc.cpl_types.join(", ")));
-        var abtn = document.createElement("button");
-        abtn.className = "how adopt";
-        abtn.type = "button";
-        abtn.textContent = "⊕ " + pc.colleges + " college" + (pc.colleges === 1 ? "" : "s");
-        abtn.setAttribute("aria-expanded", "false");
-        var panel = el("div", "cplpw-adoptopts");
-        panel.style.display = "none";
-        abtn.addEventListener("click", function () {
-          var open = panel.style.display !== "none";
-          panel.style.display = open ? "none" : "";
-          abtn.setAttribute("aria-expanded", open ? "false" : "true");
-        });
-        row.appendChild(abtn);
-        panel.appendChild(el("div", "h", "Already articulated for CPL at:"));
-        var ul = el("ul");
-        pc.lines.forEach(function (l) {
-          ul.appendChild(el("li", null, l.college + ": " + l.code + (l.title ? " — " + l.title : "") +
-            (l.units != null ? " (" + fmtU(l.units) + "u)" : "")));
-        });
-        panel.appendChild(ul);
-        var ml = mapLinksNode(pc.credential);
-        if (ml) panel.appendChild(ml);
-        panel.appendChild(buildQuickAdopt(prog, {
-          code: null, title: pc.credential,
-          adoptOptions: [{ credential: pc.credential, lines: pc.lines }],
-        }));
+        var said = (pc.cpl_types && pc.cpl_types.length ? pc.cpl_types.join(", ") + " · " : "") +
+          "Articulated at " + statNum(pc.colleges) + " college" + (pc.colleges === 1 ? "" : "s");
+        row.appendChild(el("span", "cred", said));
+        if (dirAdopt) row.appendChild(dirAdopt.control(pc.credential, "Request Adopt"));
         var host = (idx < DIR_POOL_CAP) ? s2 : moreWrap;
         host.appendChild(row);
-        host.appendChild(panel);
       });
       if (m.pool.length > DIR_POOL_CAP) {
         var moreBtn = document.createElement("button");
@@ -4790,7 +4719,7 @@
       li.appendChild(b);
       li.appendChild(el("p", null, college + " teaches " + (r.course || "a matching course") + ". " + statNum(r.n) +
         (r.n === 1 ? " college awards" : " colleges award") + " credit for it" + (r.u != null ? ", " + (Math.round(r.u * 10) / 10) + " units at the median college." : ".")));
-      var links = mapLinksNode(r.t);
+      var links = mapLinksNode(r.t, college);
       if (links) li.appendChild(links);
       grid.appendChild(li);
     });

@@ -622,13 +622,25 @@ check("boot lazy-loads the current-course catalog", /loadScript\("cpl_coci_cours
   const text = root.textContent;
   check("directory card renders full width on a press", !!root.querySelector(".cplpw-dirtag") && /Respiratory Care — Bachelor of Science/.test(text) && !root.querySelector("#cplpw-list"));
   check("directory card shows the ✓ in-field CPL", /RCP License/.test(text) && root.querySelectorAll(".cplpw-course.done").length >= 1);
-  check("directory card shows the ⊕ adoption pool", /NBRC CRT/.test(text) && !!root.querySelector("button.how.adopt"));
+  check("directory card shows the ⊕ adoption pool", /NBRC CRT/.test(text) && !!root.querySelector("button.cplpw-dadopt"));
   check("directory card shows the field cohort", !!root.querySelector(".cplpw-cohort") && /Crafton Hills/.test(text));
-  // the adoption panel carries Quick Adopt
-  const adoptBtn = root.querySelector("button.how.adopt");
-  adoptBtn.dispatchEvent(new w.Event("click", { bubbles: true }));
-  check("adoption panel expands with peer lines + Quick Adopt",
-    /El Camino College: RESP 12/.test(root.textContent) && !!root.querySelector(".cplpw-adoptopts .cplpw-qa"));
+  // One request for the section (Sam, 2026-11-28): the heading's Request Adopt (N) opens every credential unchecked;
+  // a row's Request Adopt opens the same list with that one checked. No inline list, no per-row form.
+  const dad = Array.from(root.querySelectorAll("button.cplpw-dadopt"));
+  check("the section heading carries Request Adopt (N)", dad.length >= 2 && /^Request Adopt \(\d+\)$/.test(dad[0].textContent) && !!dad[0].closest(".cplpw-sec-head"), dad.map(b => b.textContent));
+  check("each row says where it is articulated, in words", /Articulated at \d+ college/.test(root.textContent));
+  check("no inline college list and no per-row Quick Adopt form", !root.querySelector(".cplpw-adoptopts") && !root.querySelector("button.how.adopt"));
+  dad[0].dispatchEvent(new w.Event("click", { bubbles: true }));
+  let dside = w.document.getElementById("cplpw-panel");
+  let boxes = dside ? Array.from(dside.querySelectorAll("input[type=checkbox]")) : [];
+  check("the heading opens every credential, none checked", boxes.length === dad.length - 1 && boxes.every(b => !b.checked) && /NBRC CRT/.test(dside.textContent), boxes.length);
+  check("the panel names El Camino as granting it", /El Camino College/.test(dside.textContent));
+  const rowBtn = dad.find((b, i) => i > 0 && /NBRC CRT/.test(b.getAttribute("aria-label") || ""));
+  rowBtn.dispatchEvent(new w.Event("click", { bubbles: true }));
+  dside = w.document.getElementById("cplpw-panel");
+  boxes = Array.from(dside.querySelectorAll(".cpladp-row"));
+  check("a row's Request Adopt opens the list with that credential checked",
+    boxes.filter(r => r.querySelector("input").checked).map(r => r.querySelector("label").textContent).join("|") === "NBRC CRT" || boxes.some(r => r.querySelector("input").checked && /NBRC CRT/.test(r.textContent)));
   check("⭐ Back returns to the college's List", DRIVE.back(w, root) && DRIVE.listTitles(root).join("|") === "Respiratory Care");
   // the frontier college (Crafton) → the whole-field pool
   DRIVE.openPathway(w, root, "Crafton Hills", "Respiratory Care");
@@ -673,7 +685,7 @@ check("boot lazy-loads the current-course catalog", /loadScript\("cpl_coci_cours
   check("overflow hidden initially", !!moreWrap && moreWrap.style.display === "none");
   if (showAll) showAll.dispatchEvent(new w.Event("click", { bubbles: true }));
   check("Show-all reveals the overflow", !!moreWrap && moreWrap.style.display !== "none" && /Show fewer/.test(showAll.textContent));
-  check("all 25 adoption rows present in the DOM", root.querySelectorAll("button.how.adopt").length === 25);
+  check("all 25 adoption rows present in the DOM", root.querySelectorAll(".cplpw-course button.cplpw-dadopt").length === 25);
 }
 
 // ── Report (deferred one macrotask so the async intake checks land first) ──

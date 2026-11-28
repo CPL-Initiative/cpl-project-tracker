@@ -66,12 +66,36 @@ setTimeout(() => {
   check("the chip is a 24px target, underlined, holding its hidden text (position:relative)",
     css && /\.cpl-mapchip\{position:relative;[^}]*min-height:24px;[^}]*text-decoration:underline;/.test(css.textContent));
 
+  // 6. The nearest exhibit (Sam, 2026-11-28): with a home college the line is one link, region first, home's own never.
+  const N = A.CPL_MAP_LINKS;
+  A.CPL_ADOPT_PANEL = { regionOf: (c) => ({ "Rio Hondo College": "LA", "West Los Angeles College": "LA", "College 3": "LA",
+    "Saddleback College": "OC", "College 4": "LA", "College 5": "LA" }[c] || "") };
+  const n1 = N.nearest("California Real Estate Broker License", "Rio Hondo College");
+  check("nearest: a college in home's region before one with more exhibits", n1 && n1.college === "West Los Angeles College" && n1.id === "MAPICI-CREB1-1-001" && n1.others === 1);
+  const n2 = N.nearest("California Real Estate Broker License", "Fresno City College");
+  check("nearest: no college in the region, the one with the most exhibits", n2 && n2.college === "Saddleback College");
+  const n3 = N.nearest("California Real Estate Broker License", "West Los Angeles College");
+  check("nearest: home's own exhibit is never the link", n3 && n3.college === "Saddleback College" && n3.others === 0);
+  const n4 = N.nearest("Many Builders", "Rio Hondo College");
+  check("nearest: ties inside the region go alphabetically", n4 && n4.college === "College 3" && n4.others === 8);
+  const h1 = N.nearestHtml("California Real Estate Broker License", "Rio Hondo College");
+  check("nearest: one link to that exhibit's MAP page, then the others counted",
+    (h1.match(/<a /g) || []).length === 1 && /Open West LA\u2019s exhibit in MAP/.test(h1) && /Exhibit=MAPICI-CREB1-1-001/.test(h1) && /1 more college built one/.test(h1));
+  check("nearest: a title MAP lists nothing for draws nothing", N.nearestHtml("No Such Credential", "Rio Hondo College") === "");
+  const hn = A.document.createElement("div");
+  A.document.body.appendChild(hn);
+  hn.appendChild(N.node("California Real Estate Broker License", "Rio Hondo College"));
+  N.fillAll();
+  check("node(title, home) fills with the nearest link, no chips", !!hn.querySelector("a.cpl-mapnear") && !hn.querySelector("a.cpl-mapchip"));
+
   const cp = fs.readFileSync("cpl_pathways.js", "utf8");
   // S746 (#3930): a featured row's Adopt chip opens adopt_panel.js's sidebar, where each exhibit carries its line.
   check("CPL Pathways: a featured row's Adopt chip gives each credential its line in the panel",
     /function featuredAdoptChip[\s\S]*?kind: "adopt", links: mapLinksNode/.test(cp));
-  check("CPL Pathways: each adoption opportunity's panel asks for its line before Quick Adopt",
-    /panel\.appendChild\(ul\);\s*var ml = mapLinksNode\(pc\.credential\);\s*if \(ml\) panel\.appendChild\(ml\);\s*panel\.appendChild\(buildQuickAdopt/.test(cp));
+  check("CPL Pathways: the directory's one Adopt panel gives each credential its line",
+    /function dirAdoptOpener[\s\S]*?kind: "adopt", links: mapLinksNode/.test(cp));
+  check("adopt_panel.js hands the line its home college, so it draws the nearest exhibit",
+    /it\.links\(it\.title, home\)/.test(fs.readFileSync("adopt_panel.js", "utf8")));
   const cb = fs.readFileSync("college_briefing.js", "utf8");
   check("My College: an exhibit the college has not adopted asks for its line; an adopted one does not",
     /if \(!x\.adopted\) h \+= mapLinks\(x\.cer\);/.test(cb));
