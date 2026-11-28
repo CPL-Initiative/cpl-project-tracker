@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-700 document(s).
+701 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 751 | [Session 751 handoff (from SkySandpiper, S750, the CPL Queue routine's collection run of 2026-11-28, from 13:12Z)](../session_751_handoff.md) | 2026-11-28 |
 | 749 | [Session 749 handoff (from SkyStilt, S748, the CPL Queue routine's collection run of 2026-11-28, from 06:12Z)](../session_749_handoff.md) | 2026-11-28 |
 | 748 | [Session 748 handoff (from SkyShearwater, S747, Sam's plain session of 2026-11-28: the 38-unit B.S., panels beside the view, Commons Clarity 3 and 4, the click-through, COCI descriptions)](../session_748_handoff.md) | 2026-11-28 |
 | 747 | [Session 747 handoff (from SkyPetrel, S746, Sam's plain session of 2026-11-27 to 11-28: Trained by, MAP's live view, the click-through, COBIx's bundle, Request Adopt)](../session_747_handoff.md) | 2026-11-28 |
