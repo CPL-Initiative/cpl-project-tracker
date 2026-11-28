@@ -7,15 +7,15 @@ The 50 local subjects behind the stray M-ID codes whose common subject scores un
 | 89 | Las Positas College | JAMS | Journalism and Media Studies | 1 | Introduction to Media | JOUR Journalism |
 | 89 | Santa Ana College | JAMS | Journalism and Media Studies | 4 | Advanced Intermediate Multimedia News Production; Advanced Multimedia News Production; Vis | JOUR Journalism |
 | 78 | Mt. San Antonio College | AIRT | Air Traffic Control | 1 | Enroute Radar Laboratory | AVIA Aviation |
-| 67 | San Joaquin Delta College | DMEDIA | Digital Media | 1 | Fundamentals of Audio Production | FTVE Film and Media Studies |
+| 68 | San Joaquin Delta College | DMEDIA | Digital Media | 1 | Fundamentals of Audio Production | FTVE Film and Media Studies |
 | 67 | Santa Monica College | IXD | Interaction Design | 1 | Product Design | ARTS Art |
 | 66 | Madera College | LIBSKL | Library Skills | 1 | Information and Computer Literacy | LIBR Library Science |
 | 66 | Reedley College | LIBSKL | Library Skills | 3 | Information and Computer Literacy; Information and Computer Literacy; AI Literacy: in Educ | LIBR Library Science |
 | 63 | Santa Ana College | INFO | Information Studies | 4 | AI Literacy; Library Research Fundamentals; Researching in the Digital Age | LIBR Library Science |
 | 63 | Santiago Canyon College | INFO | Information Studies | 5 | AI Literacy; Library Research Fundamentals; Researching in the Digital Age | LIBR Library Science |
 | 62 | Cosumnes River College | ENGWR | English - Writing | 1 | Introduction to Technical and Professional Writing | ENGL English |
+| 61 | Palomar College | GCIP | Graphic Communications - Imaging and Publishing | 1 | PAGE LAYOUT AND DESIGN I | ARTS Art |
 | 61 | Palomar College | GCMW | Graphic Communications - Multimedia and Web | 3 | MULTIMEDIA FOR SOCIAL NETWORKING; SEARCH ENGINE OPTIMIZATION (SEO) FOR WEB DESIGN; WEB PAG | ARTS Art |
-| 60 | Palomar College | GCIP | Graphic Communications - Imaging and Publishing | 1 | PAGE LAYOUT AND DESIGN I | ARTS Art |
 | 58 | Sierra College | SKDV | Skill Development | 1 | Information Literacy and Research Skills | LSKL Learning Assistance or Learning Skills |
 | 55 | Contra Costa College | LIBST | Library Studies | 1 | Finding Information on Line and in Print | LIBR Library Science |
 | 50 | Cerro Coso Community College | ARTC | (none) | 1 | Survey of Western Art from Renaissance to Contemporary Honors | ARTS Art |

@@ -3,8 +3,8 @@
  "college": "East Los Angeles College",
  "run": "45304208269",
  "source": [],
- "subjects": 110,
- "with_heading": 110,
+ "subjects": 111,
+ "with_heading": 111,
  "rows": [
   {
    "code": "ACAD PR",
@@ -829,6 +829,22 @@
    "rule": "schedule",
    "codes": [
     "ESL  NC"
+   ],
+   "candidate": null,
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=ELAC&strm=2268&subj=ESL%20NC&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
+  },
+  {
+   "code": "ESL NC",
+   "heading": "English Second Language - NC",
+   "heading_printed": "English Second Language - NC",
+   "rule": "schedule",
+   "codes": [
+    "ESL NC"
    ],
    "candidate": null,
    "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=ELAC&strm=2268&subj=ESL%20NC&",

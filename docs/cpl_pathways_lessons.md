@@ -775,3 +775,31 @@ Verbatim from `docs/reference/lanes/my-college-action-page.md`, moved to keep th
 - A training note named the pattern (Chabot's ATHL7, PEAC11); explicit code lists again beat a suffix rule, and four
   look-alike codes (PHEACJUD, MICR, PHSI, PHEA) stay. 47 person decisions carried through the fold, none lost.
 - A filing rule widened for one college (`code_address`) is held at the others until its own measured change.
+
+## S746 (SkyPetrel, Sam's plain session, 2026-11-27 to 11-28): Trained by, MAP's live view, one Request Adopt
+
+- **What shipped.** #3925 *Trained by* on the program card (19 programs: Carpenters Training Committee 9, IBEW JATC 7,
+  Ironworker JATC 3; the 15 Cerritos Period trainers of receipt #3923 fold with the next daily run, since the credential
+  sync runs before the certs build); #3927 the display build reads MAP's live view (`kb/exhibits_adoption.json`) as a
+  third CPL-here source, applied to 18,751 records (run 46092611343, build `229a759101f7`). #3930, Request Adopt in one
+  form on every CPL Pathways view, was open at the checkpoint.
+- **Trained by names training committees only** (`d-trained-by-committees-only-s746`). `training_agency` in
+  `kb/credentials.json` often names the one college site that filed the exhibit, so on a widely articulated credential
+  it reads wrong: AP Biology "trained by" Mater Dei HS at Glendale, MOS Excel by U.S. Armed Forces
+  (`f-trainer-field-names-one-site-s746`). A training committee or JATC is the trainer wherever it appears, so the chip
+  shows those and nothing else until the field is read per college.
+- **A dated feed hides what the live view holds.** The display read MAP's CR text and the feed of 2026-09-03; the
+  Cerritos apprenticeship exhibits reached MAP after that, so Field Ironworkers read 16.5 of 19 core units with Welding I
+  at *None yet*. Adding the live view (only where the other two do not already name the credential) gave 2,395 programs
+  CPL here (1,573 from none) and dropped nothing; Field Ironworkers reads 24 of 24, up to 38 units. A 14-entry sample
+  matched MAP's own lines before the apply.
+- **A test that pins a figure is re-pinned with its reason.** #3927 moved figures five suites pinned (31.5 to 38, Irvine
+  Valley Art 3 to 12, the Structural block 0 to 19). Each re-pin carries a comment naming the source change and the
+  finding, so the next reader can tell a re-pin from a test bent to pass. The featured B.S. page's hero figures
+  (`cpl_pathways_data.js`) still say 31.5 and are open work.
+- **One form for one act** (`r-request-adopt-one-form-sam-2026-11-28`). Sam: *"the new request adopt is not just for BS
+  directory but all cpl pathway programs, right?"* Featured rows take `adopt_panel.js`'s chip; the B.S. directory takes
+  Request Adopt (N) and a per-row Request Adopt into one sidebar; `map_links.js` `nearest(title, home)` gives one MAP
+  link, to the nearest college's exhibit, in place of a list.
+- **The "Last Updated" header is the daily run's time** (`f-pages-header-is-the-daily-run-s746`): a page reading an
+  older time after a merge was Pages still deploying, not a failed build.

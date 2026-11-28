@@ -1386,6 +1386,22 @@
    "run": "45630435823"
   },
   {
+   "code": "PSCI",
+   "heading": "Physical Science",
+   "heading_printed": "Physical Science",
+   "rule": "index",
+   "codes": [
+    "PSCI"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7528",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx, from Chabot All Courses (catalog 2114, parent 7528)",
+   "run": "45630435823"
+  },
+  {
    "code": "PSCN",
    "heading": "Psychology-Counseling",
    "heading_printed": "Psychology-Counseling",
@@ -1642,6 +1658,6 @@
    "run": "45630435823"
   }
  ],
- "subjects": 102,
- "with_heading": 102
+ "subjects": 103,
+ "with_heading": 103
 }

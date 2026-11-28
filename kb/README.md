@@ -184,6 +184,15 @@ the *Industry certs* chip on a CPL Pathways program card: the industry-cert
 exhibits articulated to a program's courses (*earns CPL here*) and the certs its
 catalog text names (*prepares for*); the matcher's measure is
 `kb/status/program_certs/_measure.md`.
+Since S746 (#3925) it also writes a `trained_by` group, the *Trained by* line:
+training committees and JATCs only, because `training_agency` in
+`kb/credentials.json` often names the one site that filed a widely articulated
+credential (`d-trained-by-committees-only-s746`).
+
+`kb/_build_roep_display.py` reads, since S746 (#3927), `kb/exhibits_adoption.json`
+(MAP's live articulated-exhibit view) as a third CPL-here source
+(`adoption_index`), adding a credential to a course only where MAP's CR read and
+the dated feed do not already name it.
 
 ## Governance register (added Session 120, 2026-08-05)
 

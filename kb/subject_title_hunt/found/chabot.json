@@ -935,6 +935,17 @@
    "found_on": "2026-11-27",
    "found_by": "COBI, a runner read (run 46061067072), from Sam's training note of 2026-11-27",
    "run": "46061067072"
+  },
+  {
+   "code": "PSCI",
+   "title": "Physical Science",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7528",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PSCI - Physical Science",
+   "node": 7615,
+   "found_on": "2026-11-27",
+   "found_by": "COBIx, from Chabot All Courses (catalog 2114, parent 7528)"
   }
  ]
 }

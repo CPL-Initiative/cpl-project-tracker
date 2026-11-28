@@ -58,12 +58,16 @@ check("Rule 4: CPL_Dashboard.html === index.html", cpl === idx);
 
 // ── Part B — behavior, loaded into jsdom ──
 const SRC = fs.readFileSync("cpl_pathways.js", "utf8");
+const ADOPT_SRC = fs.readFileSync("adopt_panel.js", "utf8");
 const DRIVE = require("./cpl_pathways_drive.js");
 
 function freshWindow() {
   const dom = new JSDOM(`<body><div id="cpl-pathways-root" style="border:1px dashed"></div></body>`, {
     runScripts: "outside-only", url: "https://example.test/",
   });
+  dom.window.eval(ADOPT_SRC);
+  // The Credential Catalog read as already in, so the Adopt panel paints at once (its own tests cover the wait).
+  dom.window.CPL_ADOPT_PANEL.setCatalog({ credentials: [], colleges: [] });
   dom.window.eval(SRC);
   DRIVE.withList(dom.window);
   return dom.window;
@@ -270,18 +274,19 @@ const PROGRAM_STUB = {
   btn.dispatchEvent(new w.Event("click", { bubbles: true }));
   check("options panel opens on click", panel && panel.style.display !== "none");
   check("panel lists the exam", /Introductory Sociology/.test(panel.textContent));
-  // ⊕ adoption chip rendering
-  const adoptBtns = root.querySelectorAll("button.how.adopt");
-  check("⊕ chips render on the two adopt rows only", adoptBtns.length === 2);
-  check("⊕ chip labels the count", /⊕ adopted elsewhere × 1/.test(adoptBtns[0].textContent));
-  const adoptPanel = root.querySelector(".cplpw-adoptopts");
-  check("adopt panel hidden initially", adoptPanel && adoptPanel.style.display === "none");
-  adoptBtns[0].dispatchEvent(new w.Event("click", { bubbles: true }));
-  check("adopt panel opens on click", adoptPanel.style.display !== "none");
-  check("adopt panel names credential + college + note",
-    /Registered Dental Hygienist/.test(adoptPanel.textContent) &&
-    /West Los Angeles College: DEN HY 421/.test(adoptPanel.textContent) &&
-    /WLAC precedent/.test(adoptPanel.textContent));
+  // The Adopt chip on a featured course row (Sam, 2026-11-28: "please use it"): one underlined line naming a
+  // granting college, opening the tab's side panel with each exhibit, never an inline list of colleges.
+  const adoptChips = root.querySelectorAll(".cplpw-course .cpladp-chip");
+  check("one Adopt chip on each of the two adopt rows", adoptChips.length === 2, adoptChips.length);
+  check("the chip names the granting college", /^West Los Angeles College gives CPL for this course\.$/.test(adoptChips[0].textContent), adoptChips[0].textContent);
+  check("no inline list of colleges and no per-college chip on the row",
+    !root.querySelector(".cplpw-adoptopts") && !root.querySelector("button.how.adopt"));
+  adoptChips[0].dispatchEvent(new w.Event("click", { bubbles: true }));
+  const side = w.document.getElementById("cplpw-panel");
+  check("the chip opens the tab's side panel", side && !side.hidden && adoptChips[0].getAttribute("aria-expanded") === "true");
+  check("the panel lists the exhibit with a checkbox and its college",
+    side && /Registered Dental Hygienist/.test(side.textContent) && side.querySelector("input[type=checkbox]") &&
+    /West Los Angeles College/.test(side.textContent), side && side.textContent.slice(0, 300));
   check("legend gains the ⊕ line", /adoption opportunity/.test(root.querySelector(".cplpw-legend").textContent));
   // XSS
   check("hostile title rendered inert (no <img>)", root.querySelectorAll("img").length === 0 && !w.__xss);
@@ -380,21 +385,23 @@ const PROGRAM_STUB = {
   w.CPL_PATHWAYS = { programs: [PROGRAM_STUB] };
   w.CPL_TABS = { loadScript: function (s, g, cb) { w.CPL_CREDENTIAL_REFERENCE = CER_STUB; cb(); } };
   const calls = [];
-  w.fetch = function (url, opts) { calls.push({ url, opts }); return Promise.resolve({ ok: true }); };
+  w.fetch = function (url, opts) {
+    if (/cpl_adoption_interest/.test(String(url))) calls.push({ url, opts });
+    return Promise.resolve({ ok: true, json: () => Promise.resolve({}) });
+  };
   w.CPL_PATHWAYS_TAB.activate();
   const root = w.document.getElementById("cpl-pathways-root");
-  const qa = root.querySelector(".cplpw-adoptopts .cplpw-qa");
-  check("Quick Adopt block renders inside the adopt panel", !!qa);
-  const goBtn = qa.querySelector("button.go");
-  check("⚡ Quick Adopt button present", !!goBtn && /Quick Adopt/.test(goBtn.textContent));
-  const form = qa.querySelector("form");
-  check("intake form hidden until clicked", !!form && form.style.display === "none");
-  goBtn.dispatchEvent(new w.Event("click", { bubbles: true }));
-  check("intake form opens", form.style.display !== "none");
-  check("privacy note present (write-only intake)", /not publicly readable/.test(form.textContent));
+  const chipBtn = root.querySelector(".cplpw-course .cpladp-chip");
+  chipBtn.dispatchEvent(new w.Event("click", { bubbles: true }));
+  const side = w.document.getElementById("cplpw-panel");
+  const form = side.querySelector("form.cpladp-form");
+  check("the request form renders in the side panel", !!form);
+  check("privacy note present (write-only intake)", /public cannot read them/.test(side.textContent));
+  side.querySelector("input[type=checkbox]").checked = true;
+  form.querySelector("input[name=adopter_college]").value = "";
   form.dispatchEvent(new w.Event("submit", { bubbles: true, cancelable: true }));
   check("invalid submit blocked — no fetch fired", calls.length === 0);
-  check("validation error shown", /required/.test(qa.querySelector(".cplpw-qa-err").textContent));
+  check("validation error shown", /required/.test(form.querySelector(".cpladp-err").textContent));
   form.querySelector("input[name=adopter_college]").value = "Foothill College";
   form.querySelector("input[name=contact_email]").value = "dean@foothill.edu";
   form.dispatchEvent(new w.Event("submit", { bubbles: true, cancelable: true }));
@@ -403,12 +410,12 @@ const PROGRAM_STUB = {
     const body = JSON.parse(calls[0].opts.body);
     check("payload stamped with pathway + precedent context",
       body.program_id === "test-prog" && /Registered Dental Hygienist/.test(body.credentials) &&
-      /West Los Angeles/.test(body.precedent) && body.course_code === "DH 300");
+      /West Los Angeles/.test(body.precedent) && body.course_code === "DH 300", body);
     check("payload carries the requester", body.adopter_college === "Foothill College" && body.contact_email === "dean@foothill.edu");
     check("POST uses the anon key + minimal return", calls[0].opts.headers.apikey && calls[0].opts.headers.Prefer === "return=minimal");
   }
   Promise.resolve().then(() => {}).then(() => {
-    check("success message replaces the form", /Request recorded/.test(qa.textContent) && !qa.contains(form));
+    check("success message replaces the form", /Request recorded/.test(side.textContent) && !side.contains(form));
   });
 }
 // (j2) intake failure keeps the form + shows the error
@@ -418,15 +425,16 @@ const PROGRAM_STUB = {
   w.CPL_TABS = { loadScript: function (s, g, cb) { w.CPL_CREDENTIAL_REFERENCE = CER_STUB; cb(); } };
   w.fetch = function () { return Promise.reject(new Error("down")); };
   w.CPL_PATHWAYS_TAB.activate();
-  const qa = w.document.querySelector(".cplpw-adoptopts .cplpw-qa");
-  const form = qa.querySelector("form");
-  qa.querySelector("button.go").dispatchEvent(new w.Event("click", { bubbles: true }));
+  w.document.querySelector(".cplpw-course .cpladp-chip").dispatchEvent(new w.Event("click", { bubbles: true }));
+  const side = w.document.getElementById("cplpw-panel");
+  const form = side.querySelector("form.cpladp-form");
+  side.querySelector("input[type=checkbox]").checked = true;
   form.querySelector("input[name=adopter_college]").value = "Foothill College";
   form.querySelector("input[name=contact_email]").value = "dean@foothill.edu";
   form.dispatchEvent(new w.Event("submit", { bubbles: true, cancelable: true }));
   Promise.resolve().then(() => {}).then(() => {}).then(() => {
     check("intake failure shows the error + keeps the form",
-      /Could not record/.test(qa.querySelector(".cplpw-qa-err").textContent) && qa.contains(form));
+      /could not be recorded/.test(form.querySelector(".cpladp-err").textContent) && side.contains(form));
   });
 }
 
@@ -614,13 +622,25 @@ check("boot lazy-loads the current-course catalog", /loadScript\("cpl_coci_cours
   const text = root.textContent;
   check("directory card renders full width on a press", !!root.querySelector(".cplpw-dirtag") && /Respiratory Care — Bachelor of Science/.test(text) && !root.querySelector("#cplpw-list"));
   check("directory card shows the ✓ in-field CPL", /RCP License/.test(text) && root.querySelectorAll(".cplpw-course.done").length >= 1);
-  check("directory card shows the ⊕ adoption pool", /NBRC CRT/.test(text) && !!root.querySelector("button.how.adopt"));
+  check("directory card shows the ⊕ adoption pool", /NBRC CRT/.test(text) && !!root.querySelector("button.cplpw-dadopt"));
   check("directory card shows the field cohort", !!root.querySelector(".cplpw-cohort") && /Crafton Hills/.test(text));
-  // the adoption panel carries Quick Adopt
-  const adoptBtn = root.querySelector("button.how.adopt");
-  adoptBtn.dispatchEvent(new w.Event("click", { bubbles: true }));
-  check("adoption panel expands with peer lines + Quick Adopt",
-    /El Camino College: RESP 12/.test(root.textContent) && !!root.querySelector(".cplpw-adoptopts .cplpw-qa"));
+  // One request for the section (Sam, 2026-11-28): the heading's Request Adopt (N) opens every credential unchecked;
+  // a row's Request Adopt opens the same list with that one checked. No inline list, no per-row form.
+  const dad = Array.from(root.querySelectorAll("button.cplpw-dadopt"));
+  check("the section heading carries Request Adopt (N)", dad.length >= 2 && /^Request Adopt \(\d+\)$/.test(dad[0].textContent) && !!dad[0].closest(".cplpw-sec-head"), dad.map(b => b.textContent));
+  check("each row says where it is articulated, in words", /Articulated at \d+ college/.test(root.textContent));
+  check("no inline college list and no per-row Quick Adopt form", !root.querySelector(".cplpw-adoptopts") && !root.querySelector("button.how.adopt"));
+  dad[0].dispatchEvent(new w.Event("click", { bubbles: true }));
+  let dside = w.document.getElementById("cplpw-panel");
+  let boxes = dside ? Array.from(dside.querySelectorAll("input[type=checkbox]")) : [];
+  check("the heading opens every credential, none checked", boxes.length === dad.length - 1 && boxes.every(b => !b.checked) && /NBRC CRT/.test(dside.textContent), boxes.length);
+  check("the panel names El Camino as granting it", /El Camino College/.test(dside.textContent));
+  const rowBtn = dad.find((b, i) => i > 0 && /NBRC CRT/.test(b.getAttribute("aria-label") || ""));
+  rowBtn.dispatchEvent(new w.Event("click", { bubbles: true }));
+  dside = w.document.getElementById("cplpw-panel");
+  boxes = Array.from(dside.querySelectorAll(".cpladp-row"));
+  check("a row's Request Adopt opens the list with that credential checked",
+    boxes.filter(r => r.querySelector("input").checked).map(r => r.querySelector("label").textContent).join("|") === "NBRC CRT" || boxes.some(r => r.querySelector("input").checked && /NBRC CRT/.test(r.textContent)));
   check("⭐ Back returns to the college's List", DRIVE.back(w, root) && DRIVE.listTitles(root).join("|") === "Respiratory Care");
   // the frontier college (Crafton) → the whole-field pool
   DRIVE.openPathway(w, root, "Crafton Hills", "Respiratory Care");
@@ -665,7 +685,7 @@ check("boot lazy-loads the current-course catalog", /loadScript\("cpl_coci_cours
   check("overflow hidden initially", !!moreWrap && moreWrap.style.display === "none");
   if (showAll) showAll.dispatchEvent(new w.Event("click", { bubbles: true }));
   check("Show-all reveals the overflow", !!moreWrap && moreWrap.style.display !== "none" && /Show fewer/.test(showAll.textContent));
-  check("all 25 adoption rows present in the DOM", root.querySelectorAll("button.how.adopt").length === 25);
+  check("all 25 adoption rows present in the DOM", root.querySelectorAll(".cplpw-course button.cplpw-dadopt").length === 25);
 }
 
 // ── Report (deferred one macrotask so the async intake checks land first) ──
