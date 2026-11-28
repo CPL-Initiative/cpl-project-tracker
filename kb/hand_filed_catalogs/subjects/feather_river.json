@@ -727,8 +727,24 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627124597)",
    "run": "45627124597"
+  },
+  {
+   "code": "TUTR",
+   "heading": "Tutoring",
+   "heading_printed": "Tutoring",
+   "rule": "index",
+   "codes": [
+    "TUTR"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI TUTR 300 Supervised Tutoring",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   }
  ],
- "subjects": 45,
- "with_heading": 45
+ "subjects": 46,
+ "with_heading": 46
 }

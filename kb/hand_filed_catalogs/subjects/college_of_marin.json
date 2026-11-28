@@ -489,6 +489,22 @@
    "run": "45630168042"
   },
   {
+   "code": "ESLN",
+   "heading": "English as a Second Language Noncredit",
+   "heading_printed": "English as a Second Language Noncredit",
+   "rule": "index",
+   "codes": [
+    "ESLN"
+   ],
+   "candidate": null,
+   "address": "https://www1.marin.edu/sites/default/files/Catalog-2024-2025-F.pdf#page=75",
+   "where": "catalog",
+   "method": "printed heading: \"English as a Second Language Noncredit (ESLN/ESLV)\" (2024-2025 catalog p. 75)",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "ETST",
    "heading": "Ethnic Studies",
    "heading_printed": "Ethnic Studies",
@@ -1017,6 +1033,22 @@
    "run": "45630168042"
   },
   {
+   "code": "VOCN",
+   "heading": "Nursing Education Vocational",
+   "heading_printed": "Nursing Education Vocational",
+   "rule": "index",
+   "codes": [
+    "VOCN"
+   ],
+   "candidate": null,
+   "address": "https://www1.marin.edu/sites/default/files/Catalog-2024-2025-F.pdf#page=75",
+   "where": "catalog",
+   "method": "printed heading: \"Nursing Education Vocational (VOCN) courses, please see Nursing Education (NE) listings\" (2024-2025 catalog p. 75; current eLumen catalog prints no VOCN legend)",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "WE",
    "heading": "Work Experience Education",
    "heading_printed": "Work Experience Education",
@@ -1049,6 +1081,6 @@
    "run": "45630168042"
   }
  ],
- "subjects": 65,
- "with_heading": 65
+ "subjects": 67,
+ "with_heading": 67
 }

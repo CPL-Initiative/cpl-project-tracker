@@ -1,0 +1,111 @@
+college,local_subject_code,local_subject_title,title_source_url,title_where,title_method,searched_on,found_by,confidence
+Mt. San Jacinto College,ABE,Adult Basic Education,https://catalog.msjc.edu/continuing-education/non-credit-courses/,catalog,prefix legend,2026-11-27,COBIx,95
+Mt. San Jacinto College,CEP,Career Enhancement Program,https://catalog.msjc.edu/continuing-education/non-credit-courses/,catalog,prefix legend,2026-11-27,COBIx,95
+Mt. San Jacinto College,CTZN,Citizenship,https://catalog.msjc.edu/continuing-education/non-credit-courses/,catalog,prefix legend,2026-11-27,COBIx,95
+Mt. San Jacinto College,GED,General Education Development,https://catalog.msjc.edu/continuing-education/non-credit-courses/,catalog,prefix legend,2026-11-27,COBIx,95
+Mt. San Jacinto College,LNSK,Learning Skills,https://catalog.msjc.edu/continuing-education/non-credit-courses/,catalog,prefix legend,2026-11-27,COBIx,95
+Mt. San Jacinto College,LL,Supervised Tutoring,https://catalog.msjc.edu/continuing-education/non-credit-courses/,catalog,prefix legend,2026-11-27,COBIx,95
+Santiago Canyon College,ABE,ADULT BASIC EDUCATION,https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=852,catalog,subject heading,2026-11-27,COBIx,92
+Santiago Canyon College,CNG,COUNSELING AND GUIDANCE,https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=865,catalog,subject heading,2026-11-27,COBIx,90
+Santiago Canyon College,ESL,ESL INTEGRATED,https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=866,catalog,subject heading,2026-11-27,COBIx,85
+Santiago Canyon College,PRNT,CHILD DEVELOPMENT/EARLY CARE EDUCATION,https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=864,catalog,subject heading,2026-11-27,COBIx,75
+Santiago Canyon College,SAFE,HEALTH EDUCATION,https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=882,catalog,subject heading,2026-11-27,COBIx,80
+Santiago Canyon College,SSD,LEARNING SKILLS HANDICAP,https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=916,catalog,subject heading,2026-11-27,COBIx,90
+Santiago Canyon College,VBUS,OFFICE TECHNOLOGY/ COMPUTER APPLICATIONS,https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=917,catalog,subject heading,2026-11-27,COBIx,80
+Santiago Canyon College,VCST,CUSTODIAL TECHNICIAN,https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=866,catalog,subject heading,2026-11-27,COBIx,95
+Santiago Canyon College,VDOG,VOCATIONAL DOG TRAINING,https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=930,catalog,subject heading,2026-11-27,COBIx,95
+Santiago Canyon College,VMED,VOCATIONAL MEDICAL,https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=937,catalog,subject heading,2026-11-27,COBIx,95
+Santiago Canyon College,VRE,VOCATIONAL REAL ESTATE,https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=969,catalog,subject heading,2026-11-27,COBIx,95
+Santiago Canyon College,VWHS,VOCATIONAL WAREHOUSE,https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=931,catalog,subject heading,2026-11-27,COBIx,95
+Santiago Canyon College,WKPR,ADULTS WITH SPECIAL NEEDS,https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=854,catalog,subject heading,2026-11-27,COBIx,90
+Santa Barbara City College,CNAV,Certified Nursing Assistant,https://catalog.sbcc.edu/sel/career-skills/,catalog,subject heading,2026-11-27,COBIx,90
+Bakersfield College,ART,Art,https://programmap.bakersfieldcollege.edu/course-list/20d76051-7f19-4522-8656-924afc914b50/?ti=dc0db31a-2d97-4ec2-ab46-3981a5487fc6&tec=19&term=7&pe=a4c0b7fb-97cd-4536-be38-6bdbf5521d84,schedule,current Program Pathways Mapper course list shows 30 active ART B-numbered courses (ART B1 Art Appreciation; ART B40 Digital Illustration); no printed heading so title is the plain subject name; corroborated by 2012 catalog ART section,2026-11-27,Sam Lee,80
+College of Marin,VOCN,Nursing Education Vocational,https://www1.marin.edu/sites/default/files/Catalog-2024-2025-F.pdf#page=75,catalog,"printed heading: ""Nursing Education Vocational (VOCN) courses, please see Nursing Education (NE) listings"" (2024-2025 catalog p. 75; current eLumen catalog prints no VOCN legend)",2026-11-27,Sam Lee,85
+College of Marin,ESLN,English as a Second Language Noncredit,https://www1.marin.edu/sites/default/files/Catalog-2024-2025-F.pdf#page=75,catalog,"printed heading: ""English as a Second Language Noncredit (ESLN/ESLV)"" (2024-2025 catalog p. 75)",2026-11-27,Sam Lee,85
+Barstow Community College,HOSP,Hospitality Services,,person,"named by Sam Lee: not in the Barstow catalog; the only COCI course is HOSP 100 Fundamentals of Hospitality, CCC000638177",2026-11-27,Sam Lee,100
+Barstow Community College,MAIN,Maintenance and Janitorial Services,,person,"named by Sam Lee: not in the Barstow catalog; the only COCI course is MAIN 100 Introduction to Maintenance & Janitorial Services, CCC000638178",2026-11-27,Sam Lee,100
+Barstow Community College,MAKE,Maker Space,,person,"named by Sam Lee: not in the Barstow catalog; the only COCI course is MAKE 100 3D Printing, CCC000638179",2026-11-27,Sam Lee,100
+Victor Valley College,ADPE,Adaptive Physical Education,,person,named by Sam Lee: no catalog heading found; COCI course ADPE 40A/41A Physical Fitness,2026-11-27,Sam Lee,100
+Victor Valley College,ANUR,Allied Health Nursing,,person,named by Sam Lee: no catalog heading found; COCI course ANUR 11 Nursing Update,2026-11-27,Sam Lee,100
+Victor Valley College,DEAC,Distance Education Advisory Committee,,person,named by Sam Lee: no catalog heading found; COCI course DEAC 50 Distance Education Certification in Canvas,2026-11-27,Sam Lee,100
+West Valley College,NCCH,Noncredit Chemistry,,person,named by Sam Lee: no catalog heading found; COCI courses NCCH 110 Chemistry Jam and Prep,2026-11-27,Sam Lee,100
+West Valley College,NCCS,Noncredit Computer Science,,person,named by Sam Lee: no catalog heading found; COCI courses NCCS 100-154 web and iOS programming,2026-11-27,Sam Lee,100
+West Valley College,NCID,Noncredit Industrial Design,,person,named by Sam Lee: no catalog heading found; COCI courses NCID 10/20 Design for Advanced Manufacturing,2026-11-27,Sam Lee,100
+College of the Desert,ASC,Academic Skills Center,,person,named by Sam Lee: COCI ASC 300 Supervised Tutoring,2026-11-27,Sam Lee,100
+College of the Desert,DPSP,Disabled Programs and Services,,person,named by Sam Lee: COCI DPSP 339 Adaptive Basic Makerspace Skills for Students with Disabilities 2,2026-11-27,Sam Lee,100
+Santiago Canyon College,OAP,Older Adults Program,,person,"named by Sam Lee: catalog p. 875 heading prints ""GERNTOLOGY (GERN)"", a different code; 25 noncredit OAP courses in COCI",2026-11-27,Sam Lee,100
+Antelope Valley College,LACT,Lactation Specialist,,person,named by Sam Lee: COCI LACT 900-902 Lactation Specialist Parts 1-3,2026-11-27,Sam Lee,100
+College of the Sequoias,LA,Learning Assistance,,person,named by Sam Lee: COCI LA 425 Supervised Tutoring,2026-11-27,Sam Lee,100
+College of the Siskiyous,DSPS,Disabled Student Programs and Services,,person,"named by Sam Lee: COCI DSPS 501-503 (3 courses, e.g. Introduction to Academic Success)",2026-11-27,Sam Lee,100
+Cuesta College,NCTE,Noncredit Career Technical Education,,person,named by Sam Lee: COCI NCTE 713 Food Safety and Sanitation,2026-11-27,Sam Lee,100
+El Camino College,NATE,Noncredit Automotive Technology,,person,named by Sam Lee: COCI NATE 3-4 Automotive Manufacturers Training 1-2,2026-11-27,Sam Lee,100
+El Camino College,NENG,Noncredit English,,person,named by Sam Lee: COCI NENG 0100S Reading and Composition Support,2026-11-27,Sam Lee,100
+El Camino College,NESL,Noncredit English as a Second Language,,person,"named by Sam Lee: COCI NESL 35 courses, e.g. 02A Conversation/Grammar Level I",2026-11-27,Sam Lee,100
+College of the Canyons,NC.ADMJ,Administration of Justice,,person,named by Sam Lee: COCI NC.ADMJ 199A Written Exam Workshop for Public Safety Entry Level & Promotion,2026-11-27,Sam Lee,100
+College of the Canyons,NC.ARCH,Architecture,,person,named by Sam Lee: COCI NC.ARCH 50 Introduction to Model Making,2026-11-27,Sam Lee,100
+College of the Canyons,NC.ARCN,Arrest and Control,,person,named by Sam Lee: COCI NC.ARCN 1 Police Defensive Tactics and Arrest & Control I,2026-11-27,Sam Lee,100
+College of the Canyons,NC.BCSK,Basic College Skills,,person,named by Sam Lee: COCI NC.BCSK 1 College Research Skills (10 courses),2026-11-27,Sam Lee,100
+College of the Canyons,NC.CIAC,Crime and Intelligence Analysis,,person,named by Sam Lee: COCI NC.CIAC 101 Introduction to Crime and Intelligence Analysis,2026-11-27,Sam Lee,100
+College of the Canyons,NC.DINE,Diné Language and Culture,,person,named by Sam Lee: COCI NC.DINE 1 Introduction to Diné Language and Culture for the Workplace,2026-11-27,Sam Lee,100
+College of the Canyons,NC.FIRT,Fire Technology,,person,named by Sam Lee: COCI NC.FIRT 1 Fall Firefighter In-Service Training (104 courses),2026-11-27,Sam Lee,100
+College of the Canyons,NC.ID,Interior Design,,person,named by Sam Lee: COCI NC.ID 50 Introduction to Model Making,2026-11-27,Sam Lee,100
+College of the Canyons,NC.LFGD,Lifeguard Training,,person,named by Sam Lee: COCI NC.LFGD 3 Ocean Lifeguard Recheck Instructor Training,2026-11-27,Sam Lee,100
+College of the Canyons,NC.VESL,Vocational English as a Second Language,,person,named by Sam Lee: COCI NC.VESL 1 Preparing for the Workplace,2026-11-27,Sam Lee,100
+MiraCosta College,NCAHM,Affordable Housing Management,,person,named by Sam Lee: COCI NCAHM 50 Introduction to Affordable Housing Management,2026-11-27,Sam Lee,100
+MiraCosta College,NCBOT,Business Office Technology,,person,named by Sam Lee: COCI NCBOT 10 Beginning Keyboarding,2026-11-27,Sam Lee,100
+MiraCosta College,NCVOC,Vocational Education,,person,named by Sam Lee: COCI NCVOC 31 Beginning Microsoft Word (10 courses),2026-11-27,Sam Lee,100
+Santa Barbara City College,ACTV,Accounting Vocational,,person,named by Sam Lee: COCI ACTV NC001 Setting up Quickbooks for Small Business,2026-11-27,Sam Lee,100
+Santa Barbara City College,AHV,Allied Health Vocational,,person,named by Sam Lee: COCI AHV NC005 Medical Assistant 1A Administrative and Clinical Skills Part I,2026-11-27,Sam Lee,100
+Santa Barbara City College,CAV,Culinary Arts Vocational,,person,"named by Sam Lee: COCI CAV NC013 Safe Food Preparation and Serving, Module I",2026-11-27,Sam Lee,100
+Santa Barbara City College,CISV,Computer Information Systems Vocational,,person,named by Sam Lee: COCI CISV NC001 Installing and Configuring Windows Desktop,2026-11-27,Sam Lee,100
+Santa Barbara City College,CMPW,Computer Applications Workforce,,person,named by Sam Lee: COCI CMPW NC001 Typing Keyboarding (Bilingual) (53 courses),2026-11-27,Sam Lee,100
+Santa Barbara City College,CNEW,Computer Networking Workforce,,person,named by Sam Lee: COCI CNEW NC070 Introduction to Handheld Devices,2026-11-27,Sam Lee,100
+Santa Barbara City College,COMW,Communication Workforce,,person,named by Sam Lee: COCI COMW NC001 Building an Equity Mindset,2026-11-27,Sam Lee,100
+Santa Barbara City College,CRAO,Creative Arts Older Adults,,person,named by Sam Lee: COCI CRAO NC101 Beginning Oil Painting: For Older Adults (68 courses),2026-11-27,Sam Lee,100
+Santa Barbara City College,CREO,Creative Writing Older Adults,,person,named by Sam Lee: COCI CREO NC001 Poetry Workshop,2026-11-27,Sam Lee,100
+Santa Barbara City College,CRMO,Creative Music Older Adults,,person,named by Sam Lee: COCI CRMO NC005 Choral Singing: For Older Adults,2026-11-27,Sam Lee,100
+Santa Barbara City College,CRTO,Creative Theater Older Adults,,person,named by Sam Lee: COCI CRTO NC009 Acting For Older Adults,2026-11-27,Sam Lee,100
+Santa Barbara City College,CTV,Construction Technology Vocational,,person,named by Sam Lee: COCI CTV NC001 Construction Framing,2026-11-27,Sam Lee,100
+Santa Barbara City College,ECEP,Early Childhood Education Parenting,,person,named by Sam Lee: COCI ECEP NC008 Preparing for Healthy Childbirth,2026-11-27,Sam Lee,100
+Santa Barbara City College,EHV,Environmental Horticulture Vocational,,person,named by Sam Lee: COCI EHV NC001 Green Gardener Module 1,2026-11-27,Sam Lee,100
+Santa Barbara City College,EMTV,Emergency Medical Technician Vocational,,person,named by Sam Lee: COCI EMTV NC111 Emergency Medical Technician-Basic: Recertification,2026-11-27,Sam Lee,100
+Santa Barbara City College,GDPW,Graphic Design and Production Workforce,,person,named by Sam Lee: COCI GDPW NC001 Digital Design Techniques,2026-11-27,Sam Lee,100
+Santa Barbara City College,GEDB,GED Bilingual,,person,named by Sam Lee: COCI GEDB NC060 Bilingual GED Reading,2026-11-27,Sam Lee,100
+Santa Barbara City College,HMEC,Home Economics,,person,named by Sam Lee: COCI HMEC NC902 Beginning Knitting,2026-11-27,Sam Lee,100
+Santa Barbara City College,IBW,International Business Workforce,,person,named by Sam Lee: COCI IBW NC001 Domestic and Global Issues in Employment Law,2026-11-27,Sam Lee,100
+Santa Barbara City College,LIBW,Library Workforce,,person,named by Sam Lee: COCI LIBW NC001 Online Research Skills,2026-11-27,Sam Lee,100
+Santa Barbara City College,MATW,Multimedia Arts and Technologies Workforce,,person,named by Sam Lee: COCI MATW NC001 Introduction to Dreamweaver,2026-11-27,Sam Lee,100
+Santa Barbara City College,MKTW,Marketing Workforce,,person,named by Sam Lee: COCI MKTW NC001 Marketing Fundamentals,2026-11-27,Sam Lee,100
+Santa Barbara City College,PDW,Personal Development Workforce,,person,named by Sam Lee: COCI PDW NC001 Personalized Career Planning,2026-11-27,Sam Lee,100
+Santa Barbara City College,PHOW,Photography Workforce,,person,"named by Sam Lee: COCI PHOW NC001 Digital Cameras, Digital Photos",2026-11-27,Sam Lee,100
+Santa Barbara City College,PROW,Professional Development Workforce,,person,named by Sam Lee: COCI PROW NC002 Business Writing in the Technology Age (51 courses),2026-11-27,Sam Lee,100
+Santa Barbara City College,SLFO,Self-Development Older Adults,,person,named by Sam Lee: COCI SLFO NC003 Nature and Self-Healing - Beginning: For Older Adults (44 courses),2026-11-27,Sam Lee,100
+Santa Barbara City College,WELO,Wellness Older Adults,,person,named by Sam Lee: COCI WELO NC009 Nutrition for Longevity,2026-11-27,Sam Lee,100
+Cypress College,LAR,Learning Assistance Resources,,person,named by Sam Lee: COCI LAR N01 C Supervised Tutoring: LAR,2026-11-27,Sam Lee,100
+Diablo Valley College,WRKP,Workforce Preparation,,person,named by Sam Lee: COCI WRKP 091NC Addressing Barriers to Employment II: Keeping a Job,2026-11-27,Sam Lee,100
+East Los Angeles College,ESL NC,English as a Second Language Noncredit,,person,named by Sam Lee: COCI ESL NC (24 courses; code contains a space),2026-11-27,Sam Lee,100
+Evergreen Valley College,SG,Surveying and Geomatics,,person,named by Sam Lee: COCI SG 500 Introduction to Surveying & Geomatics,2026-11-27,Sam Lee,100
+Feather River College,TUTR,Tutoring,,person,named by Sam Lee: COCI TUTR 300 Supervised Tutoring,2026-11-27,Sam Lee,100
+Foothill College,NCAL,Noncredit Adult Learning,,person,named by Sam Lee: COCI NCAL 401A History of Western Art for Older Adults (43 courses),2026-11-27,Sam Lee,100
+Fresno City College,MMCTC,Maintenance Mechanic Career Technical Certificate,,person,named by Sam Lee: COCI MMCTC 370 Machine Shop and Equipment Repair for Maintenance Mechanics,2026-11-27,Sam Lee,100
+Fresno City College,VESL,Vocational English as a Second Language,,person,named by Sam Lee: COCI VESL 320 Intermediate English for Vocational Purposes,2026-11-27,Sam Lee,100
+Fullerton College,TUT,Tutoring,,person,named by Sam Lee: COCI TUT N01 F Supervised Tutoring,2026-11-27,Sam Lee,100
+Gavilan College,LIFE,Life Skills,,person,named by Sam Lee: COCI LIFE 700 Workforce Preparation and Job Readiness,2026-11-27,Sam Lee,100
+Golden West College,DM,Digital Media,,person,named by Sam Lee: COCI DM G113N Pro Tools 101,2026-11-27,Sam Lee,100
+Grossmont College,IDS,Interdisciplinary Studies,,person,named by Sam Lee: COCI IDS 299 Selected Topics in IDS,2026-11-27,Sam Lee,100
+Las Positas College,NNTR,Noncredit Nutrition,,person,named by Sam Lee: COCI NNTR 201 Introduction to Nutrition Science,2026-11-27,Sam Lee,100
+Lassen College,SOSC,Social Science,,person,named by Sam Lee: COCI SOSC 188.1 Social Science for the Senior American,2026-11-27,Sam Lee,100
+Lemoore College,NC,Noncredit,,person,named by Sam Lee: COCI NC 15 Career Preparation (38 courses),2026-11-27,Sam Lee,100
+Los Angeles Southwest College,BASIC SKILLS,Basic Skills,,person,named by Sam Lee: COCI BASIC SKILLS 034ACE High School Equivalency Test Preparation - A,2026-11-27,Sam Lee,100
+Los Angeles Southwest College,BSICKL,Basic Skills,,person,named by Sam Lee: COCI BSICKL 028CE Pre-Algebra (likely misspelling of the same code),2026-11-27,Sam Lee,100
+Mission College,NCB,Noncredit Basic Skills,,person,named by Sam Lee: COCI NCB 901 Strategies to Improve Writing,2026-11-27,Sam Lee,100
+Mission College,NCO,Noncredit Older Adults,,person,named by Sam Lee: COCI NCO 1611 Older Adult Art (11 courses),2026-11-27,Sam Lee,100
+Moreno Valley College,SCE,School of Continuing Education,,person,named by Sam Lee: COCI SCE 804 Engaging Topics for Lifelong Learners,2026-11-27,Sam Lee,100
+Palo Verde College,NBE,Noncredit Basic Education,,person,named by Sam Lee: COCI NBE 16 Supplemental Skills for Non-Credit English as a Second Language (28 courses),2026-11-27,Sam Lee,100
+Pasadena City College,MAN,Medical Assisting Noncredit,,person,named by Sam Lee: COCI MAN 5000 Medical Front Office Clerk: Office Procedures,2026-11-27,Sam Lee,100
+Pasadena City College,SPEA,Special Education Assistant,,person,named by Sam Lee: COCI SPEA 3410 The Inclusive Special Education Classroom,2026-11-27,Sam Lee,100
+Porterville College,EVCT,Electric Vehicle Technology,,person,named by Sam Lee: COCI EVCT P50Z Electric Vehicle Fundamental Skills (17 courses),2026-11-27,Sam Lee,100
+Porterville College,LIBR,Library,,person,named by Sam Lee: COCI LIBR P030Z CRLA Training,2026-11-27,Sam Lee,100
+Saddleback College,AEFN,Adult Education Food and Nutrition,,person,named by Sam Lee: COCI AEFN 789NC Basic Food Preparation,2026-11-27,Sam Lee,100
+Ventura College,ATEB,Adult Transition Education Basics,,person,named by Sam Lee: COCI ATEB N105 Skills for Employability,2026-11-27,Sam Lee,100
+West Los Angeles College,BASIC SKILLS,Basic Skills,,person,named by Sam Lee: COCI BASIC SKILLS 70CE Innovation: Igniting Creativity at Work (11 courses),2026-11-27,Sam Lee,100

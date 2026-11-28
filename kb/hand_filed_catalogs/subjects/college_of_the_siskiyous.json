@@ -234,6 +234,22 @@
    "run": "45631971415"
   },
   {
+   "code": "DSPS",
+   "heading": "Disabled Student Programs and Services",
+   "heading_printed": "Disabled Student Programs and Services",
+   "rule": "index",
+   "codes": [
+    "DSPS"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI DSPS 501-503 (3 courses, e.g. Introduction to Academic Success)",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "ECE",
    "heading": "Early Childhood Education",
    "heading_printed": "Early Childhood Education",
@@ -858,6 +874,6 @@
    "run": "45631971415"
   }
  ],
- "subjects": 53,
- "with_heading": 53
+ "subjects": 54,
+ "with_heading": 54
 }

@@ -921,6 +921,22 @@
    "run": "45625854349"
   },
   {
+   "code": "NCAL",
+   "heading": "Noncredit Adult Learning",
+   "heading_printed": "Noncredit Adult Learning",
+   "rule": "index",
+   "codes": [
+    "NCAL"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI NCAL 401A History of Western Art for Older Adults (43 courses)",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "NCBH",
    "heading": "Non-Credit: Biological & Health Sciences",
    "heading_printed": "Non-Credit: Biological & Health Sciences",
@@ -1337,6 +1353,6 @@
    "run": "45625854349"
   }
  ],
- "subjects": 83,
- "with_heading": 83
+ "subjects": 84,
+ "with_heading": 84
 }

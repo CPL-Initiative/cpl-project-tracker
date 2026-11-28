@@ -330,6 +330,22 @@
    "run": "45628303101"
   },
   {
+   "code": "DM",
+   "heading": "Digital Media",
+   "heading_printed": "Digital Media",
+   "rule": "index",
+   "codes": [
+    "DM"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI DM G113N Pro Tools 101",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "DRAF",
    "heading": "Drafting",
    "heading_printed": "Drafting",
@@ -970,6 +986,6 @@
    "run": "45628303101"
   }
  ],
- "subjects": 60,
- "with_heading": 60
+ "subjects": 61,
+ "with_heading": 61
 }

@@ -240,6 +240,22 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "ATEB",
+   "heading": "Adult Transition Education Basics",
+   "heading_printed": "Adult Transition Education Basics",
+   "rule": "index",
+   "codes": [
+    "ATEB"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI ATEB N105 Skills for Employability",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "BIOL",
    "heading": "Biology",
    "heading_printed": "Biology",
@@ -1200,6 +1216,6 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   }
  ],
- "subjects": 70,
- "with_heading": 70
+ "subjects": 71,
+ "with_heading": 71
 }

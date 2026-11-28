@@ -171,7 +171,8 @@ def college_slugs():
 def read_csv_finds(path):
     """The leftovers CSV, filled in by a person or COBIx, as one find per college (S733).
 
-    A row is a find only when it carries both a title and its source URL (p-subject-title-carries-its-source-sam-2026-11-25);
+    A row is a find only when it carries both a title and its source URL (p-subject-title-carries-its-source-sam-2026-11-25),
+    or a title a person named (title_where "person", found_by the person: the person is the source, S746);
     its where, method, searched_on and found_by ride along. A `department label` row passes through and file_doc keeps
     it out of the record, as a hint. A college with no known slug is reported, never guessed."""
     import csv
@@ -180,7 +181,10 @@ def read_csv_finds(path):
     with open(path, encoding="utf-8", newline="") as f:
         for r in csv.DictReader(f):
             title, url = (r.get("local_subject_title") or "").strip(), (r.get("title_source_url") or "").strip()
-            if not title or not url:
+            # A person who names a code is its source (S746): Sam's lightning-round titles, found_by the person and
+            # title_where "person", file with no URL; any other row still needs its URL.
+            named = (r.get("title_where") or "").strip() == "person" and (r.get("found_by") or "").strip()
+            if not title or not (url or named):
                 continue
             college = (r.get("college") or "").strip()
             slug = slugs.get(college.lower())
@@ -191,7 +195,7 @@ def read_csv_finds(path):
             d = finds.setdefault(slug, {"college": college, "catalog_year": None, "read_at": None,
                                         "run": "csv " + os.path.relpath(path, ROOT),
                                         "csv": os.path.relpath(path, ROOT), "titles": []})
-            d["titles"].append({"code": r.get("local_subject_code"), "title": title, "url": url,
+            d["titles"].append({"code": r.get("local_subject_code"), "title": title, "url": url or None,
                                 "where": (r.get("title_where") or "").strip() or "catalog",
                                 "method": (r.get("title_method") or "").strip() or "subject heading",
                                 "found_on": (r.get("searched_on") or "").strip() or None,

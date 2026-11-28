@@ -939,6 +939,22 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "LACT",
+   "heading": "Lactation Specialist",
+   "heading_printed": "Lactation Specialist",
+   "rule": "index",
+   "codes": [
+    "LACT"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI LACT 900-902 Lactation Specialist Parts 1-3",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "LATN",
    "heading": "Latin",
    "heading_printed": "Latin",
@@ -1419,6 +1435,6 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   }
  ],
- "subjects": 83,
- "with_heading": 83
+ "subjects": 84,
+ "with_heading": 84
 }

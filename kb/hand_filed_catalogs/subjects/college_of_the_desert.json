@@ -279,6 +279,22 @@
    "run": "45626788039"
   },
   {
+   "code": "ASC",
+   "heading": "Academic Skills Center",
+   "heading_printed": "Academic Skills Center",
+   "rule": "index",
+   "codes": [
+    "ASC"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI ASC 300 Supervised Tutoring",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "ASL",
    "heading": "American Sign Language",
    "heading_printed": "American Sign Language",
@@ -661,6 +677,22 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626788039)",
    "run": "45626788039"
+  },
+  {
+   "code": "DPSP",
+   "heading": "Disabled Programs and Services",
+   "heading_printed": "Disabled Programs and Services",
+   "rule": "index",
+   "codes": [
+    "DPSP"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI DPSP 339 Adaptive Basic Makerspace Skills for Students with Disabilities 2",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   },
   {
    "code": "DRA",
@@ -1591,6 +1623,6 @@
    "run": "45626788039"
   }
  ],
- "subjects": 93,
- "with_heading": 93
+ "subjects": 95,
+ "with_heading": 95
 }

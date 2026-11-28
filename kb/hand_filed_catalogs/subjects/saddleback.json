@@ -60,6 +60,22 @@
    "run": "45629512231"
   },
   {
+   "code": "AEFN",
+   "heading": "Adult Education Food and Nutrition",
+   "heading_printed": "Adult Education Food and Nutrition",
+   "rule": "index",
+   "codes": [
+    "AEFN"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI AEFN 789NC Basic Food Preparation",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "AESL",
    "heading": "Adult Education English as a Second Language (Noncredit)",
    "heading_printed": "Adult Education English as a Second Language (Noncredit)",
@@ -2076,6 +2092,6 @@
    "run": "45629512231"
   }
  ],
- "subjects": 129,
- "with_heading": 129
+ "subjects": 130,
+ "with_heading": 130
 }

@@ -936,6 +936,22 @@
    "run": "45626788039"
   },
   {
+   "code": "SG",
+   "heading": "Surveying and Geomatics",
+   "heading_printed": "Surveying and Geomatics",
+   "rule": "index",
+   "codes": [
+    "SG"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI SG 500 Introduction to Surveying & Geomatics",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "SL",
    "heading": "Sign Language",
    "heading_printed": "Sign Language",
@@ -1096,6 +1112,6 @@
    "run": "45626788039"
   }
  ],
- "subjects": 64,
- "with_heading": 64
+ "subjects": 65,
+ "with_heading": 65
 }
