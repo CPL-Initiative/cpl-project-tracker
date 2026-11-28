@@ -658,6 +658,22 @@
    "run": "45627087073"
   },
   {
+   "code": "HUMDEV",
+   "heading": "Human Development",
+   "heading_printed": "Human Development",
+   "rule": "index",
+   "codes": [
+    "HUMDEV"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI HUMDEV E00 Introduction to the Emeritus Program",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "IARC",
    "heading": "Interior Architectural Design",
    "heading_printed": "Interior Architectural Design",
@@ -672,6 +688,22 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627087073)",
    "run": "45627087073"
+  },
+  {
+   "code": "INTARC",
+   "heading": "Interior Architectural Design",
+   "heading_printed": "Interior Architectural Design",
+   "rule": "index",
+   "codes": [
+    "INTARC"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI INTARC 28A Visual Studies I",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   },
   {
    "code": "ITAL",
@@ -832,6 +864,22 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627087073)",
    "run": "45627087073"
+  },
+  {
+   "code": "NURSNG",
+   "heading": "Nursing",
+   "heading_printed": "Nursing",
+   "rule": "index",
+   "codes": [
+    "NURSNG"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI NURSNG 20 Introduction to Medical-Surgical Nursing",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   },
   {
    "code": "OFTECH",
@@ -1330,6 +1378,6 @@
    "run": "45627087073"
   }
  ],
- "subjects": 82,
- "with_heading": 82
+ "subjects": 85,
+ "with_heading": 85
 }

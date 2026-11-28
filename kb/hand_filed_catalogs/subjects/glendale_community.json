@@ -378,6 +378,22 @@
    "run": "45630110282"
   },
   {
+   "code": "CLO",
+   "heading": "Clothing",
+   "heading_printed": "Clothing",
+   "rule": "index",
+   "codes": [
+    "CLO"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI CLO 101 Clothing; 102 Intermed Clothing",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "CO ED",
    "heading": "Cooperative Education",
    "heading_printed": "COOPERATIVE EDUCATION",
@@ -408,6 +424,22 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45630110282)",
    "run": "45630110282"
+  },
+  {
+   "code": "CSIS",
+   "heading": "Computer Science and Information Systems",
+   "heading_printed": "Computer Science and Information Systems",
+   "rule": "index",
+   "codes": [
+    "CSIS"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI CSIS 185 Database Management Systems",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   },
   {
    "code": "CULIN",
@@ -520,6 +552,22 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45630110282)",
    "run": "45630110282"
+  },
+  {
+   "code": "ENRTE",
+   "heading": "Entrepreneurship",
+   "heading_printed": "Entrepreneurship",
+   "rule": "index",
+   "codes": [
+    "ENRTE"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI ENRTE 180 Opportunity Analysis",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   },
   {
    "code": "ENTRE",
@@ -1114,6 +1162,22 @@
    "run": "45630110282"
   },
   {
+   "code": "PSYCH",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYCH"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI PSYCH 109 Introduction to Gerontology; 107 Intro to Statistics",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "RE",
    "heading": "Real Estate",
    "heading_printed": "REAL ESTATE",
@@ -1242,6 +1306,6 @@
    "run": "45630110282"
   }
  ],
- "subjects": 73,
- "with_heading": 73
+ "subjects": 77,
+ "with_heading": 77
 }

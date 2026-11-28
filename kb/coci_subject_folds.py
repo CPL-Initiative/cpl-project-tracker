@@ -28,7 +28,13 @@ West SPTP, LAVC BOTH KIN) are not folded; the Subjects build marks them not_a_su
 
 from __future__ import annotations
 
+import csv
+import glob
+import json
+import os
 import re
+
+_HERE = os.path.dirname(os.path.abspath(__file__))
 
 # College name exactly as COCI writes it, then slug for Subjects / decisions.
 SLUG = {
@@ -147,6 +153,76 @@ NOT_A_SUBJECT = frozenset({
 })
 
 
+# Whole-code folds a person ruled (Sam, 2026-11-27 and -28; COBIx's #3937, filed S748): the rows of
+# kb/subject_title_hunt/*retired_or_fix*.csv whose finding is `fold`, with a fix_to, and whose found_by names a person.
+# The code renames to the college's own code; the number is kept, less the target's second token where the code was
+# split (Glendale ETH S122 is ETH S 122), or taken from a Hancock-style title that prints target and number. Rows a
+# machine found (found_by COBI or COBIx) are never read here: they wait for a person. Keyed by the college name with
+# everything but letters and digits dropped, so COCI's and the catalog's spellings meet.
+_MACHINE = {"", "COBI", "COBIX"}
+_HUNT = os.path.join(_HERE, "subject_title_hunt")
+
+# Person-ruled folds held back, with the reason (S748). The row stays in the CSV; the fold waits for a second look.
+HELD_FOLDS = {
+    ("losangelessouthwestcollege", "ENG"): "the ENG rows are engineering courses (ELC022 Electrical Circuits, "
+                                           "GEN056A Computer Augmented Design), not English",
+}
+
+# A Hancock-style row whose title prints another code with its number goes to that code (S748): 8 of SOCIO's 13 rows
+# are titled SOC SC 149, which is Social Science, not Sociology.
+TITLE_ALT = {
+    ("allanhancockcollege", "SOCIO"): ("SOC SC",),
+}
+
+
+def _ckey(s):
+    return re.sub(r"[^a-z0-9]", "", (s or "").lower())
+
+
+def _person_rows():
+    whole, nas = {}, set()
+    for path in sorted(glob.glob(os.path.join(_HUNT, "*retired_or_fix*.csv"))):
+        with open(path, encoding="utf-8", newline="") as f:
+            for r in csv.DictReader(f):
+                who = (r.get("found_by") or "").strip()
+                if who.upper() in _MACHINE:
+                    continue
+                ck, code = _ckey(r.get("college")), (r.get("local_subject_code") or "").strip().upper()
+                finding, to = (r.get("finding") or "").strip(), (r.get("fix_to") or "").strip()
+                if not ck or not code:
+                    continue
+                if finding == "fold" and to and (ck, code) not in HELD_FOLDS:
+                    whole.setdefault(ck, {})[code] = to
+                elif finding == "not_a_subject":
+                    nas.add((ck, code))
+    return whole, nas
+
+
+WHOLE, _PERSON_NOT_A_SUBJECT = _person_rows()
+
+
+def _subject_colleges():
+    """slug -> college name, from the Subjects record (kb/hand_filed_catalogs/subjects/<slug>.json)."""
+    out = {}
+    for path in glob.glob(os.path.join(_HERE, "hand_filed_catalogs", "subjects", "*.json")):
+        try:
+            with open(path, encoding="utf-8") as f:
+                name = (json.load(f) or {}).get("college")
+        except (OSError, ValueError):
+            continue
+        if name:
+            out[os.path.basename(path)[:-5]] = name
+    return out
+
+
+_FOLD_KEYS = set(WHOLE) | {ck for ck, _c in _PERSON_NOT_A_SUBJECT}
+for _slug, _name in _subject_colleges().items():
+    if _ckey(_name) in _FOLD_KEYS and _slug not in SLUG:
+        SLUG[_slug] = _name
+NOT_A_SUBJECT = NOT_A_SUBJECT | frozenset(
+    (slug, code) for slug, name in SLUG.items() for ck, code in _PERSON_NOT_A_SUBJECT if _ckey(name) == ck)
+
+
 def _norm(s):
     return (s or "").strip()
 
@@ -222,6 +298,19 @@ def fold(college, subject, number, title=None):
             if parsed is None and key in TITLE_CODE:
                 parsed = _parse_title(target, title)
             return target, parsed if parsed is not None else num
+
+    ck = _ckey(college)
+    target = (WHOLE.get(ck) or {}).get(key)
+    if target:
+        for alt in TITLE_ALT.get((ck, key), ()):
+            parsed = _parse_title(alt, title)
+            if parsed is not None:
+                return alt, parsed
+        parsed = _parse_title(target, title)
+        if parsed is not None:
+            return target, parsed
+        rest = target[len(subj):].strip() if _upper(target).startswith(key + " ") else ""
+        return target, _strip_prefix(rest, num) if rest else num
 
     return subject, number
 

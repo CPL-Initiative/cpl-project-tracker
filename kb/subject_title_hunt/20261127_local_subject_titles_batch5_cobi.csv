@@ -1,0 +1,686 @@
+college,local_subject_code,local_subject_title,title_source_url,title_where,title_method,searched_on,found_by,confidence
+Allan Hancock College,AGBUS,Agriculture Business,,coci,suggested by COBI from a common subject match,2026-11-27,COBI,88
+Allan Hancock College,ART,Art,,coci,suggested by COBI from the hint: Art,2026-11-27,COBI,98
+Allan Hancock College,CE,Cooperative Education,,coci,suggested by COBI from a common subject match,2026-11-27,COBI,88
+Allan Hancock College,CWE,Cooperative Work Experience,,coci,suggested by COBI from the hint: Cooperative Work Experience,2026-11-27,COBI,88
+Allan Hancock College,ELECT,Electronics,,coci,suggested by COBI from a college naming pattern,2026-11-27,COBI,84
+Allan Hancock College,ENGIN,Engineering,,coci,suggested by COBI from the hint: Engineering,2026-11-27,COBI,95
+Allan Hancock College,ESL,English as a Second Language,,coci,suggested by COBI from a common subject match; COCI course titles: 110 Introduction to Critical Reading; 310 Reading Skills and Strategies,2026-11-27,COBI,88
+Allan Hancock College,FILM,Film and Video Production,,coci,suggested by COBI from the hint: Film and Video Production,2026-11-27,COBI,96
+Allan Hancock College,FIRE,Fire Technology,,coci,suggested by COBI from the hint: Fire Technology,2026-11-27,COBI,88
+Allan Hancock College,GIS,Geographic Information Systems,,coci,suggested by COBI from the hint: Geographic Information Systems,2026-11-27,COBI,88
+Allan Hancock College,HONORS,Honors,,coci,suggested by COBI from a common subject match,2026-11-27,COBI,88
+Allan Hancock College,INFO,Information Studies,,coci,suggested by COBI from the hint: Information Studies,2026-11-27,COBI,95
+Allan Hancock College,ITAL,Italian,,coci,suggested by COBI from the hint: Italian,2026-11-27,COBI,98
+Allan Hancock College,JOURN,Journalism,,coci,suggested by COBI from the hint: Journalism,2026-11-27,COBI,95
+Allan Hancock College,REAL,Real Estate,,coci,suggested by COBI from the hint: Real Estate,2026-11-27,COBI,95
+Allan Hancock College,RVT,Registered Veterinary Technology,,coci,suggested by COBI from COCI course titles: 308 Seminar for Registered Veterinary Technicians,2026-11-27,COBI,85
+Allan Hancock College,STAT,Statistics,,coci,suggested by COBI from the hint: Statistics,2026-11-27,COBI,94
+Glendale Community College,AHLTH,Allied Health,,coci,suggested by COBI from COCI course titles: 105 Life Sciences; 145 Nursing Asst/Ltc and Hha,2026-11-27,COBI,90
+Glendale Community College,ART,Art,,coci,suggested by COBI from COCI course titles: 170 Introduction to Printmaking; 209 Introduction To 2-D Character Design,2026-11-27,COBI,90
+Glendale Community College,BUSOT,Business Office Technology,,coci,suggested by COBI from COCI course titles: 125 Beginning Shorthand; 120 A B C Shorthand,2026-11-27,COBI,90
+Glendale Community College,CIM,Computer Integrated Manufacturing,,coci,suggested by COBI from COCI course titles: 101 Cim Robotics Technology; 102 Automation and Prd Control,2026-11-27,COBI,90
+Glendale Community College,COSM,Cosmetology,,coci,suggested by COBI from the hint: Cosmetology,2026-11-27,COBI,98
+Glendale Community College,CS/IS,Computer Information Systems,,coci,suggested by COBI from COCI course titles: 101 Intro Computer Info; 110 Intro Programming/Basic; corrected during QA (was: Programming Using Java),2026-11-27,COBI,85
+Glendale Community College,DANCE,Dance,,coci,suggested by COBI from a common subject match; COCI course titles: 101 Introduction to Dance; 190 Beginning Yoga,2026-11-27,COBI,88
+Glendale Community College,DRAFT,Drafting,,coci,suggested by COBI from the hint: Drafting,2026-11-27,COBI,95
+Glendale Community College,ENV,Environmental Technology,,coci,suggested by COBI from COCI course titles: T150 Intro to Environmental Tech,2026-11-27,COBI,85
+Glendale Community College,ENV T,Environmental Technology,,coci,suggested by COBI from a common subject match; COCI course titles: 120 Water Treatment Operation and Maintenance I; 130 Water Distribution Operation and Maintenance,2026-11-27,COBI,88
+Glendale Community College,FASH,Fashion,,coci,suggested by COBI from the hint: Fashion,2026-11-27,COBI,98
+Glendale Community College,GERM,German,,coci,suggested by COBI from the hint: German,2026-11-27,COBI,98
+Glendale Community College,HIER,Hieroglyphs,,coci,suggested by COBI from COCI course titles: 49 Hier Independent Study; 101 Egypt Hieroglyphs I,2026-11-27,COBI,90
+Glendale Community College,HIT,Health Information Technology,,coci,suggested by COBI from the hint: Health Information Technology,2026-11-27,COBI,98
+Glendale Community College,ITECH,Energy Technology,,coci,suggested by COBI from COCI course titles: 156 Advanced Metering Technology; 157 Verdugo Power Academy I,2026-11-27,COBI,90
+Glendale Community College,MAT,Materials,,coci,suggested by COBI from COCI course titles: P146 Materials/Processess,2026-11-27,COBI,85
+Glendale Community College,MEDIA,TV Studio Production,,coci,suggested by COBI from COCI course titles: 101 Introduction to TV Studio Production; 103 Introduction to Motion Picture Production,2026-11-27,COBI,90
+Glendale Community College,MGMT,Management,,coci,suggested by COBI from a common subject match; COCI course titles: 150 Written Communicatn,2026-11-27,COBI,88
+Glendale Community College,MUSIC,Music,,coci,suggested by COBI from the hint: Music,2026-11-27,COBI,99
+Glendale Community College,NURS,Nursing,,coci,suggested by COBI from a common subject match; COCI course titles: 219 Nurs Proc Pt Management; 221 Nurs Proc Leadership,2026-11-27,COBI,88
+Glendale Community College,OA,Office Administration,,coci,suggested by COBI from COCI course titles: 215 Adv Typing,2026-11-27,COBI,85
+Glendale Community College,PHSCI,Physical Science,,coci,suggested by COBI from a common subject match; COCI course titles: 131 Gen Phy Sci,2026-11-27,COBI,88
+Glendale Community College,RET S,Older Adults,,coci,suggested by COBI from COCI course titles: S02501CG Beginning Stitchery; S00101AG Psychology Aspects,2026-11-27,COBI,90
+Glendale Community College,RUSS,Russian,,coci,suggested by COBI from the hint: Russian,2026-11-27,COBI,95
+Glendale Community College,ST,Student Development,,coci,suggested by COBI from COCI course titles: DV128 Vocational Pathways; DV047 St Dv National Field Studies,2026-11-27,COBI,90
+Glendale Community College,STAT,Statistics,,coci,suggested by COBI from the hint: Statistics,2026-11-27,COBI,98
+Glendale Community College,T ED,Technical Mathematics,,coci,suggested by COBI from COCI course titles: 143 Tech Mathematics Ii,2026-11-27,COBI,85
+Santa Monica College,ANTH,Anthropology,,coci,suggested by COBI from a common subject match; COCI course titles: 35S Arch Fld Tcnque,2026-11-27,COBI,88
+Santa Monica College,ARABIC,Arabic,,coci,suggested by COBI from the hint: Arabic,2026-11-27,COBI,98
+Santa Monica College,ART,Art,,coci,suggested by COBI from a common subject match; COCI course titles: 13 Form and Space: Introduction to 3D Design; 14 Introduction to Fiber Art,2026-11-27,COBI,88
+Santa Monica College,BUS,Business,,coci,suggested by COBI from the hint: Business,2026-11-27,COBI,94
+Santa Monica College,CIS,Computer Information Systems,,coci,suggested by COBI from the hint: Computer Information Systems,2026-11-27,COBI,88
+Santa Monica College,COUNS,Counseling,,coci,suggested by COBI from the hint: Counseling,2026-11-27,COBI,94
+Santa Monica College,DANCE,Commercial Dance,,coci,suggested by COBI from the hint: Commercial Dance,2026-11-27,COBI,99
+Santa Monica College,ECE,Child Development,,coci,suggested by COBI from the hint: Child Development,2026-11-27,COBI,88
+Santa Monica College,ENGL,English,,coci,suggested by COBI from the hint: English,2026-11-27,COBI,98
+Santa Monica College,ERTHSC,Earth Science,,coci,suggested by COBI from COCI course titles: 88A Independent Studies in Earth Science; 88B Independent Studies in Earth Science,2026-11-27,COBI,90
+Santa Monica College,ESL,English as a Second Language,,coci,suggested by COBI from a common subject match; COCI course titles: 994 ESL for College and Career Pathways-Introduction; 911 Beginning Listening and Speaking,2026-11-27,COBI,88
+Santa Monica College,FRENCH,French,,coci,suggested by COBI from the hint: French,2026-11-27,COBI,99
+Santa Monica College,GERMAN,German,,coci,suggested by COBI from the hint: German,2026-11-27,COBI,99
+Santa Monica College,HEALTH,Allied Health,,coci,suggested by COBI from the hint: Allied Health,2026-11-27,COBI,94
+Santa Monica College,HEBREW,Hebrew,,coci,suggested by COBI from the hint: Hebrew,2026-11-27,COBI,88
+Santa Monica College,KIN PE,Kinesiology,,coci,suggested by COBI from COCI course titles: 3 Introduction To Exercise Physiology I; 4 Introduction to Sport Psychology; corrected during QA (was: Exercise Physiology I),2026-11-27,COBI,85
+Santa Monica College,KOREAN,Korean,,coci,suggested by COBI from the hint: Korean,2026-11-27,COBI,96
+Santa Monica College,MLT,Medical Laboratory Technician,,coci,suggested by COBI from the hint: Medical Laboratory Technician,2026-11-27,COBI,88
+Santa Monica College,MUSIC,Music,,coci,suggested by COBI from the hint: Music,2026-11-27,COBI,99
+Santa Monica College,NURS,Nursing,,coci,suggested by COBI from the hint: Nursing,2026-11-27,COBI,88
+Santa Monica College,NUTR,Nutrition,,coci,suggested by COBI from the hint: Nutrition,2026-11-27,COBI,88
+Santa Monica College,TURKSH,Turkish,,coci,suggested by COBI from COCI course titles: (no usable course titles; subject inferred from the COCI rows),2026-11-27,COBI,88
+Moorpark College,ANPH,Anatomy and Physiology,,coci,suggested by COBI from COCI course titles: M01 Human Anatomy and Physiology; corrected during QA (was: Anthropology),2026-11-27,COBI,80
+Moorpark College,ART,Art,,coci,suggested by COBI from the hint: Art,2026-11-27,COBI,98
+Moorpark College,ARTH,Art History,,coci,suggested by COBI from the hint: Art History,2026-11-27,COBI,98
+Moorpark College,BIOL,Biology,,coci,suggested by COBI from the hint: Biology,2026-11-27,COBI,98
+Moorpark College,BIS,Business Information Systems,,coci,suggested by COBI from a common subject match; COCI course titles: M10 Microsoft Windows â€“ Introduction; M20 Microsoft Office - Introduction,2026-11-27,COBI,88
+Moorpark College,BUS,Business,,coci,suggested by COBI from the hint: Business,2026-11-27,COBI,98
+Moorpark College,CNSE,Computer Information Systems,,coci,suggested by COBI from the hint: Computer Information Systems,2026-11-27,COBI,88
+Moorpark College,EATM,Exotic Animal Training and Management,,coci,suggested by COBI from COCI course titles: M08 Applied Wildlife Conservation; M34 Practical Résumés for Animal Professionals,2026-11-27,COBI,90
+Moorpark College,ENGR,Engineering,,coci,suggested by COBI from the hint: Engineering,2026-11-27,COBI,98
+Moorpark College,ENGT,Engineering Technology,,coci,suggested by COBI from the hint: Engineering Technology,2026-11-27,COBI,88
+Moorpark College,GR,Graphics,,coci,suggested by COBI from COCI course titles: M122 Independent Study-Graphics,2026-11-27,COBI,85
+Moorpark College,JOUR,Journalism,,coci,suggested by COBI from the hint: Journalism,2026-11-27,COBI,98
+Moorpark College,KIN,Kinesiology,,coci,suggested by COBI from the hint: Kinesiology,2026-11-27,COBI,94
+Moorpark College,PHOT,Photography,,coci,suggested by COBI from the hint: Photography,2026-11-27,COBI,98
+Moorpark College,PHSO,Physiology,,coci,suggested by COBI from COCI course titles: M01 Human Physiology; M01H Honors: Human Physiology; corrected during QA (was: Physical Science),2026-11-27,COBI,85
+Moorpark College,PSY,Psychology,,coci,suggested by COBI from the hint: Psychology,2026-11-27,COBI,99
+Moorpark College,RADT,Radiologic Technology,,coci,suggested by COBI from the hint: Radiologic Technology,2026-11-27,COBI,98
+Moorpark College,RBT,Registered Behavior Technician,,coci,suggested by COBI from the hint: Registered Behavior Technician,2026-11-27,COBI,88
+Moorpark College,SOC,Sociology,,coci,suggested by COBI from the hint: Sociology,2026-11-27,COBI,99
+Moorpark College,THA,Theatre Arts,,coci,suggested by COBI from the hint: Theatre Arts,2026-11-27,COBI,88
+Moorpark College,TTHA,Theatre Arts,,coci,suggested by COBI from the hint: Theatre Arts,2026-11-27,COBI,88
+Moorpark College,ZOO,Zoology,,coci,suggested by COBI from COCI course titles: M01 Introduction to Zoology; M122 Independent Study-Zoology,2026-11-27,COBI,90
+El Camino College,AS,Academic Strategies,,coci,suggested by COBI from the hint: Academic Strategies,2026-11-27,COBI,90
+El Camino College,ASL,American Sign Language,,coci,suggested by COBI from a common subject match,2026-11-27,COBI,88
+El Camino College,BSRC,Bachelor's Degree in Respiratory Care,,coci,suggested by COBI from the hint: Bachelor's Degree in Respiratory Care,2026-11-27,COBI,80
+El Camino College,BTEC,Biotechnology,,coci,suggested by COBI from COCI course titles: 1 Basic Techniques of Bio Tech; 2 Advncd Techniques of Bio Tech; corrected during QA (was: Manufacturing Technology),2026-11-27,COBI,85
+El Camino College,BUS,Business,,coci,suggested by COBI from COCI course titles: 25 Introduction to Business; 101 Introduction to Business,2026-11-27,COBI,90
+El Camino College,CCE,Cooperative Career Education,,coci,suggested by COBI from the hint: Cooperative Career Education,2026-11-27,COBI,80
+El Camino College,DART,Digital Arts,,coci,suggested by COBI from the hint: Digital Arts,2026-11-27,COBI,88
+El Camino College,ET,Engineering Technology,,coci,suggested by COBI from a common subject match; COCI course titles: 99 Independent Study; 165 Sustainable/Regen Practices,2026-11-27,COBI,88
+El Camino College,IT,Industrial Technology,,coci,suggested by COBI from a common subject match; COCI course titles: 15 Explrng Career-Indstry/Tchnlgy,2026-11-27,COBI,88
+El Camino College,LGBT,"Lesbian, Gay, Bisexual and Transgender Studies",,coci,suggested by COBI from a common subject match; COCI course titles: 101 Introduction to LGBTQ+ Studies,2026-11-27,COBI,88
+El Camino College,PHOT,Photography,,coci,suggested by COBI from the hint: Photography,2026-11-27,COBI,99
+El Camino College,RC,Respiratory Care,,coci,suggested by COBI from the hint: Respiratory Care,2026-11-27,COBI,99
+El Camino College,RTEC,Radiologic Technology,,coci,suggested by COBI from the hint: Radiologic Technology,2026-11-27,COBI,90
+El Camino College,SLAN,Sign Language/Interpreter Training,,coci,suggested by COBI from the hint: Sign Language/Interpreter Training,2026-11-27,COBI,94
+El Camino College,STAT,Statistics,,coci,suggested by COBI from the hint: Statistics,2026-11-27,COBI,98
+El Camino College,SUST,Sustainability,,coci,suggested by COBI from the hint: Sustainability,2026-11-27,COBI,95
+El Camino College,THTRE,Theatre,,coci,suggested by COBI from the hint: Theatre,2026-11-27,COBI,80
+El Camino College,TILL,Independent Study,,coci,suggested by COBI from COCI course titles: 99ABC Independent Study,2026-11-27,COBI,85
+El Camino College,TMAT,Technical Mathematics,,coci,suggested by COBI from COCI course titles: 1 Tech Math-Voc Students,2026-11-27,COBI,85
+El Camino College,TUTR,Tutoring,,coci,suggested by COBI from the hint: Tutoring,2026-11-27,COBI,88
+Victor Valley College,CARDEV,Career Development,,coci,suggested by COBI from COCI course titles: 57 Employment Interviews,2026-11-27,COBI,85
+Victor Valley College,CHEMH,Chemistry Honors,,coci,suggested by COBI from a college naming pattern; COCI course titles: 206 Honors Introduction to Chemistry Ii: Organic Chemistry,2026-11-27,COBI,84
+Victor Valley College,CRDV,Career Development,,coci,suggested by COBI from COCI course titles: 52 Growing On The Job; 53 Integrating Work And Life; corrected during QA (was: Child Development),2026-11-27,COBI,85
+Victor Valley College,ELEC,Electronics,,coci,suggested by COBI from the hint: Electronics,2026-11-27,COBI,88
+Victor Valley College,ETEC,Computer Tech for Educators,,coci,suggested by COBI from COCI course titles: 106 Intro to Computer Tech for Educators,2026-11-27,COBI,85
+Victor Valley College,FT,Fire Technology,,coci,suggested by COBI from the hint: Fire Technology,2026-11-27,COBI,98
+Victor Valley College,GERM,German,,coci,suggested by COBI from the hint: German,2026-11-27,COBI,98
+Victor Valley College,HISTH,History Honors,,coci,suggested by COBI from a college naming pattern,2026-11-27,COBI,84
+Victor Valley College,HVAC,"Heating, Ventilation, and Air Conditioning",,coci,"suggested by COBI from the hint: Heating, Ventilation, and Air Conditioning",2026-11-27,COBI,88
+Victor Valley College,LATN,Latin,,coci,suggested by COBI from the hint: Latin,2026-11-27,COBI,98
+Victor Valley College,OH,Ornamental Horticulture,,coci,suggested by COBI from a common subject match; COCI course titles: 15 Greenhouse Production and Management; 16 Interior Landscaping,2026-11-27,COBI,88
+Victor Valley College,RESMGT,Restaurant Management,,coci,suggested by COBI from COCI course titles: 71 Basic Food Prep I; 72 Basic Food Prep Ii,2026-11-27,COBI,90
+Victor Valley College,RESPIRATORY THERAPY,Respiratory Therapy,,coci,suggested by COBI from the hint: Respiratory Therapy,2026-11-27,COBI,88
+Victor Valley College,SPCH,Communication Studies,,coci,suggested by COBI from the hint: Communication Studies,2026-11-27,COBI,88
+Lemoore College,AG,Agriculture Business,,coci,suggested by COBI from the hint: Agriculture Business,2026-11-27,COBI,94
+Lemoore College,AGBUS,Agriculture Business,,coci,suggested by COBI from the hint: Agriculture Business,2026-11-27,COBI,99
+Lemoore College,ART,Art,,coci,suggested by COBI from the hint: Art,2026-11-27,COBI,98
+Lemoore College,ASCI,Animal Science,,coci,suggested by COBI from the hint: Animal Science,2026-11-27,COBI,94
+Lemoore College,ASF,Agriculture,,coci,suggested by COBI from the hint: Agriculture,2026-11-27,COBI,88
+Lemoore College,COMM,Public Speaking,,coci,suggested by COBI from COCI course titles: C1000 Introduction to Public Speaking,2026-11-27,COBI,85
+Lemoore College,COMP,Programming Concepts and Methodologies - C#,,coci,suggested by COBI from COCI course titles: 003A Introduction to Programming Concepts and Methodologies - C#; 4 Introduction to Relational Database Systems and SQL,2026-11-27,COBI,90
+Lemoore College,CRPSCI,Plant Science,,coci,suggested by COBI from COCI course titles: 1 Introduction to Plant Science; 19 California Water,2026-11-27,COBI,90
+Lemoore College,DIME,User Experience Design,,coci,suggested by COBI from COCI course titles: 1 Introduction to User Experience Design; 2 User Experience Design Tools and Applications,2026-11-27,COBI,90
+Lemoore College,ELET,Electrical,,coci,suggested by COBI from a common subject match; COCI course titles: 1 Basic Electronics (DC); 2 Electronic Circuits,2026-11-27,COBI,88
+Lemoore College,ENGL,English,,coci,suggested by COBI from a college naming pattern; COCI course titles: C1000 Academic Reading and Writing; C1001 Critical Thinking and Writing,2026-11-27,COBI,84
+Lemoore College,ES,Ethnic Studies,,coci,suggested by COBI from the hint: Ethnic Studies,2026-11-27,COBI,94
+Lemoore College,ITEC,Industrial Technology,,coci,suggested by COBI from the hint: Industrial Technology,2026-11-27,COBI,88
+Lemoore College,PE,Physical Education,,coci,suggested by COBI from a common subject match; COCI course titles: 022A Beginning Volleyball; 2 Archery,2026-11-27,COBI,88
+Lemoore College,PHYSICS,Physics,,coci,suggested by COBI from the hint: Physics,2026-11-27,COBI,99
+Lemoore College,POLS,Political Science,,coci,suggested by COBI from a common subject match; COCI course titles: C1000 American Government and Politics,2026-11-27,COBI,88
+Lemoore College,PSYC,Psychology,,coci,suggested by COBI from the hint: Psychology,2026-11-27,COBI,94
+Lemoore College,SLSCI,Soil Science,,coci,suggested by COBI from COCI course titles: 21 Introduction to Soil Science,2026-11-27,COBI,85
+Lemoore College,SPAN,Spanish,,coci,suggested by COBI from the hint: Spanish,2026-11-27,COBI,98
+Lemoore College,STAT,Statistics,,coci,suggested by COBI from the hint: Statistics,2026-11-27,COBI,94
+College of the Canyons,ART,Art,,coci,suggested by COBI from the hint: Art,2026-11-27,COBI,98
+College of the Canyons,ARTH,Art History,,coci,suggested by COBI from the hint: Art History,2026-11-27,COBI,94
+College of the Canyons,CINEMA,Cinema,,coci,suggested by COBI from the hint: Cinema,2026-11-27,COBI,98
+College of the Canyons,CWE,Cooperative Work Experience,,coci,suggested by COBI from the hint: Cooperative Work Experience,2026-11-27,COBI,88
+College of the Canyons,DANCE,Dance,,coci,suggested by COBI from the hint: Dance,2026-11-27,COBI,98
+College of the Canyons,FRNCH,French,,coci,suggested by COBI from the hint: French,2026-11-27,COBI,96
+College of the Canyons,GEOLOGY,Geology,,coci,suggested by COBI from the hint: Geology,2026-11-27,COBI,99
+College of the Canyons,GERMAN,German,,coci,suggested by COBI from the hint: German,2026-11-27,COBI,98
+College of the Canyons,ITAL,Italian,,coci,suggested by COBI from the hint: Italian,2026-11-27,COBI,98
+College of the Canyons,KPEI,Intercollegiate Athletics,,coci,suggested by COBI from COCI course titles: 153 Off-Season Conditioning for Intercollegiate Sports; 245A Intercollegiate Baseball; corrected during QA (was: Kinesiology - Theory),2026-11-27,COBI,85
+College of the Canyons,MUSIC,Music,,coci,suggested by COBI from the hint: Music,2026-11-27,COBI,99
+College of the Canyons,POLISC,Political Science,,coci,suggested by COBI from the hint: Political Science,2026-11-27,COBI,88
+College of the Canyons,SPAN,Spanish,,coci,suggested by COBI from the hint: Spanish,2026-11-27,COBI,98
+College of the Canyons,STAT,Statistics,,coci,suggested by COBI from the hint: Statistics,2026-11-27,COBI,98
+San Joaquin Delta College,ART,Art,,coci,suggested by COBI from COCI course titles: 33A Beginning Drawing; 1C Modern and Contemporary Art History,2026-11-27,COBI,90
+San Joaquin Delta College,CHIN,Chinese,,coci,suggested by COBI from the hint: Chinese,2026-11-27,COBI,98
+San Joaquin Delta College,CIVIL,Civilization,,coci,suggested by COBI from COCI course titles: 3 Autobiography of Civilization,2026-11-27,COBI,85
+San Joaquin Delta College,COM ST,Communication Studies,,coci,suggested by COBI from the hint: Communication Studies,2026-11-27,COBI,96
+San Joaquin Delta College,CSC,Computer Science,,coci,suggested by COBI from a college naming pattern; COCI course titles: 32 Ethical Hacking,2026-11-27,COBI,84
+San Joaquin Delta College,DANCE,Dance,,coci,suggested by COBI from the hint: Dance,2026-11-27,COBI,99
+San Joaquin Delta College,FASHION,Fashion,,coci,suggested by COBI from the hint: Fashion,2026-11-27,COBI,88
+San Joaquin Delta College,LAW,Law,,coci,"suggested by COBI from COCI course titles: 2 Introduction to Paralegal Studies, Legal Assisting, and Law Office Administration; 16 Introduction to Social Justice: Law and Social Change; corrected during QA (was: Administration of Justice)",2026-11-27,COBI,85
+San Joaquin Delta College,MUSIC,Music,,coci,suggested by COBI from the hint: Music,2026-11-27,COBI,99
+San Joaquin Delta College,NURS,Nursing,,coci,suggested by COBI from the hint: Nursing,2026-11-27,COBI,88
+San Joaquin Delta College,PETHEORY,Kinesiology,,coci,suggested by COBI from the hint: Kinesiology,2026-11-27,COBI,88
+San Joaquin Delta College,WELDING,Welding,,coci,suggested by COBI from a common subject match; COCI course titles: 82 Introduction to Welding and Cutting Processes for the Trades; 10 Basic Welding for the Trades,2026-11-27,COBI,88
+Cañada College,ART,Art,,coci,suggested by COBI from a common subject match; COCI course titles: 204 Drawing I; 205 Drawing II,2026-11-27,COBI,88
+Cañada College,BUS.,Business,,coci,suggested by COBI from a common subject match; COCI course titles: 100 Introduction to Business; 103 Introduction to Business Information Systems,2026-11-27,COBI,88
+Cañada College,CHEM,Chemistry,,coci,suggested by COBI from the hint: Chemistry,2026-11-27,COBI,99
+Cañada College,DANC,Dance,,coci,suggested by COBI from the hint: Dance,2026-11-27,COBI,98
+Cañada College,DRAM,Theatre Arts,,coci,suggested by COBI from the hint: Theatre Arts,2026-11-27,COBI,94
+Cañada College,ECE.,Education/Child Development,,coci,suggested by COBI from the hint: Education/Child Development,2026-11-27,COBI,96
+Cañada College,ENGL,Linguistics: a Survey of Language,,coci,suggested by COBI from COCI course titles: 200 Introduction to Linguistics: A Survey of Language; C1002 Introduction to Literature,2026-11-27,COBI,90
+Cañada College,ESL,English as a Second Language,,coci,suggested by COBI from a common subject match; COCI course titles: 400 Composition for Non-Native Speakers; 800 ESL Preparatory Course,2026-11-27,COBI,88
+Cañada College,FSE.,Funeral Service Education,,coci,suggested by COBI from the hint: Funeral Service Education,2026-11-27,COBI,88
+Cañada College,HUM.,Humanities,,coci,"suggested by COBI from a common subject match; COCI course titles: 650 Study Abroad Life and Culture, A Humanities Perspective",2026-11-27,COBI,88
+Cañada College,KINE,Kinesiology,,coci,suggested by COBI from the hint: Kinesiology,2026-11-27,COBI,88
+Cañada College,LIT.,Literature,,coci,suggested by COBI from the hint: Literature,2026-11-27,COBI,95
+Cañada College,MATH,Mathematics,,coci,suggested by COBI from the hint: Mathematics,2026-11-27,COBI,99
+Cañada College,MUS.,Music,,coci,suggested by COBI from the hint: Music,2026-11-27,COBI,99
+Cañada College,OCEN,Oceanography,,coci,suggested by COBI from the hint: Oceanography,2026-11-27,COBI,95
+Cañada College,P.E.,Physical Education Theory,,coci,suggested by COBI from a common subject match; COCI course titles: 695 Independent Study,2026-11-27,COBI,88
+Cañada College,PLSC,Political Science,,coci,suggested by COBI from the hint: Political Science,2026-11-27,COBI,88
+Cañada College,RADT,Radiologic Technology,,coci,suggested by COBI from the hint: Radiologic Technology,2026-11-27,COBI,95
+American River College,APPRT,Apprenticeship,,coci,suggested by COBI from COCI course titles: 298 Work Experience in Apprenticeable (Occupation); 498 Work Experience in Apprenticeable (Occupation),2026-11-27,COBI,90
+American River College,ART,Art,,coci,suggested by COBI from COCI course titles: 314 Introduction to Illustration; 442 Introduction to Art Gallery Operations,2026-11-27,COBI,90
+American River College,CDCR,California Department of Corrections and Rehabilitation,,coci,suggested by COBI from COCI course titles: 101 CDCR Basic Academy; 298 Work Experience in California Department of Corrections and Rehabilitation,2026-11-27,COBI,90
+American River College,COMM,Communication Studies,,coci,suggested by COBI from the hint: Communication Studies,2026-11-27,COBI,98
+American River College,DANCE,Dance,,coci,suggested by COBI from the hint: Dance,2026-11-27,COBI,98
+American River College,ENGWR,English - Writing,,coci,suggested by COBI from the hint: English - Writing,2026-11-27,COBI,99
+American River College,ETHNS,Ethnic Studies,,coci,suggested by COBI from the hint: Ethnic Studies,2026-11-27,COBI,99
+American River College,HSER,Human Services,,coci,suggested by COBI from the hint: Human Services,2026-11-27,COBI,99
+American River College,HVACR,"Heating, Ventilation, Air Conditioning and Refrigeration",,coci,suggested by COBI from a common subject match; COCI course titles: 144 Introduction to Direct Digital Controls; 146 Introduction to Variable Frequency Drives,2026-11-27,COBI,88
+American River College,INSTL,Flooring Installer Apprenticeship,,coci,suggested by COBI from COCI course titles: 106 Introduction to Resilient; 114 Introduction to Flash Cove,2026-11-27,COBI,90
+American River College,INSUL,Insulator Apprenticeship,,coci,suggested by COBI from COCI course titles: 191 Introduction to Firestop; 120 Blueprint for Insulator I,2026-11-27,COBI,90
+American River College,LA,Legal Assisting,,coci,suggested by COBI from COCI course titles: 300 Introduction to Law and the American Legal System; 310 Civil Procedures and Litigation,2026-11-27,COBI,90
+American River College,RLST,Religious Studies,,coci,suggested by COBI from COCI course titles: 301 Introduction to World Religions; 302 Introduction to Atheism,2026-11-27,COBI,90
+American River College,ROOF,Roofing Apprenticeship,,coci,suggested by COBI from COCI course titles: 298 Work Experience in Roofing and Shingle Apprenticeship,2026-11-27,COBI,85
+American River College,SCFLD,Scaffold Erector Apprenticeship,,coci,suggested by COBI from COCI course titles: 101 Introduction to Scaffolds; 102 Hazard Awareness and Confined Space,2026-11-27,COBI,90
+American River College,SGVT,Student Government,,coci,suggested by COBI from the hint: Student Government,2026-11-27,COBI,99
+American River College,STMFT,Steamfitting Apprenticeship,,coci,suggested by COBI from COCI course titles: 110 Beginning Drawing and Plan Reading for the Piping Trades; 113 Beginning AutoCAD for Steamfitters,2026-11-27,COBI,90
+American River College,TECCOM,Technical and Professional Communication,,coci,suggested by COBI from COCI course titles: 300 Introduction to Technical/Professional Communication; 310 Writing Digital Content,2026-11-27,COBI,90
+Grossmont College,ARABIC,Arabic,,coci,"suggested by COBI from a common subject match; COCI course titles: 148 Language, Culture, and Literature of the Arab World",2026-11-27,COBI,88
+Grossmont College,ART,Art,,coci,suggested by COBI from COCI course titles: 106 Introduction to Mural Painting and Design; 210 Introduction to Printmaking,2026-11-27,COBI,90
+Grossmont College,CHIN,Chinese,,coci,suggested by COBI from the hint: Chinese,2026-11-27,COBI,98
+Grossmont College,DANCE,Dance,,coci,suggested by COBI from the hint: Dance,2026-11-27,COBI,96
+Grossmont College,FACS,The Nanny Profession,,coci,suggested by COBI from COCI course titles: 121 Intro to the Nanny Profession; 148 Fashion Merchandising,2026-11-27,COBI,90
+Grossmont College,FSM,Food Service Management,,coci,suggested by COBI from the hint: Food Service Management,2026-11-27,COBI,95
+Grossmont College,ITAL,Italian,,coci,suggested by COBI from the hint: Italian,2026-11-27,COBI,98
+Grossmont College,JOUR,Journalism,,coci,suggested by COBI from the hint: Journalism,2026-11-27,COBI,94
+Grossmont College,PD,Personal Development,,coci,suggested by COBI from a common subject match; COCI course titles: 80 Diag Assessment/Learn Disabled,2026-11-27,COBI,88
+Grossmont College,PDC,Personal Development,,coci,suggested by COBI from a college naming pattern; COCI course titles: 95 Academic and Financial Aid Planning; 126 Orientation to College: Re-Entry StUdent,2026-11-27,COBI,84
+Grossmont College,PE,Physical Education,,coci,suggested by COBI from the hint: Dance,2026-11-27,COBI,88
+Grossmont College,RECR,Recreation,,coci,suggested by COBI from the hint: Recreation,2026-11-27,COBI,99
+Grossmont College,RUSS,Russian,,coci,suggested by COBI from the hint: Russian,2026-11-27,COBI,95
+Grossmont College,SPCH,Communication Studies,,coci,suggested by COBI from the hint: Communication Studies,2026-11-27,COBI,88
+Lassen College,ART,Art,,coci,suggested by COBI from COCI course titles: 30 Introduction to Sculpture; 39 Introduction to Digital Art,2026-11-27,COBI,90
+Lassen College,CMS,Electronic Field Production,,coci,suggested by COBI from COCI course titles: 60 Introduction to Electronic Field Production,2026-11-27,COBI,85
+Lassen College,CORS,Administration of Justice,,coci,suggested by COBI from the hint: Administration of Justice,2026-11-27,COBI,88
+Lassen College,COT,Computer Office Technology,,coci,"suggested by COBI from COCI course titles: 50 Keyboarding, Level 1; 52 Keyboarding, Level 2",2026-11-27,COBI,90
+Lassen College,CS,Computer Science,,coci,suggested by COBI from the hint: Computer Science,2026-11-27,COBI,88
+Lassen College,DRA,Acting,,coci,suggested by COBI from COCI course titles: 40 Introduction to Acting,2026-11-27,COBI,85
+Lassen College,ENGR,Architectural Practice,,coci,suggested by COBI from COCI course titles: 7 Introduction to Architectural Practice; 11 Computer Aided Drafting,2026-11-27,COBI,90
+Lassen College,FILM,Film,,coci,suggested by COBI from a common subject match; COCI course titles: 1 History of the Cinema,2026-11-27,COBI,88
+Lassen College,FOLK,Folk,,coci,suggested by COBI from COCI course titles: 110 Folk Dance: American Square and Round Dance,2026-11-27,COBI,85
+Lassen College,FREN,French,,coci,suggested by COBI from the hint: French,2026-11-27,COBI,94
+Lassen College,GS,Machine Shop - Lathe,,coci,suggested by COBI from COCI course titles: 110.01 Introduction to Machine Shop - Lathe; 110.02 Introduction to Machine Shop - Mill,2026-11-27,COBI,90
+Lassen College,HE,Health Education,,coci,suggested by COBI from a common subject match; COCI course titles: 150 Clothing Construction; 50A Cook - Salad/Sandwich,2026-11-27,COBI,88
+Lassen College,READ,Reading,,coci,suggested by COBI from the hint: Reading,2026-11-27,COBI,88
+Lassen College,SPAN,Spanish,,coci,suggested by COBI from the hint: Spanish,2026-11-27,COBI,94
+Lassen College,STAT,Statistics,,coci,suggested by COBI from the hint: Statistics,2026-11-27,COBI,94
+Mendocino College,ART,Art,,coci,suggested by COBI from COCI course titles: 51 Introduction to Ceramic Glazes; 206 Introduction to Native American Art; corrected during QA (was: Art - Painting),2026-11-27,COBI,85
+Mendocino College,CCS,Chicano/Chicana Studies,,coci,suggested by COBI from a common subject match; COCI course titles: 100 Career Planning Success; 101 Career and Life Planning,2026-11-27,COBI,88
+Mendocino College,CHM,Chemistry,,coci,suggested by COBI from the hint: Chemistry,2026-11-27,COBI,96
+Mendocino College,COMM,Communication Studies,,coci,suggested by COBI from the hint: Communication Studies,2026-11-27,COBI,99
+Mendocino College,MUS,Music,,coci,suggested by COBI from the hint: Music,2026-11-27,COBI,99
+Mendocino College,PEF,Physical Education-Fitness,,coci,suggested by COBI from a common subject match; COCI course titles: 80 Individual Exercise Lab; 201 Sport Related Physical Fitness Training,2026-11-27,COBI,88
+Mendocino College,PES,Kinesiology,,coci,suggested by COBI from the hint: Kinesiology,2026-11-27,COBI,88
+Mendocino College,POLS,Political Science,,coci,suggested by COBI from the hint: Political Science,2026-11-27,COBI,98
+Mendocino College,PSYC,Psychology,,coci,suggested by COBI from the hint: Psychology,2026-11-27,COBI,98
+Mendocino College,PTA,Physical Therapist Assistant,,coci,suggested by COBI from the hint: Physical Therapist Assistant,2026-11-27,COBI,99
+Mendocino College,THE,Theater Arts,,coci,suggested by COBI from a common subject match; COCI course titles: 200 Introduction to Theatre; 201 Introduction to Film,2026-11-27,COBI,88
+Mendocino College,WEE,Work Experience Education,,coci,suggested by COBI from the hint: Work Experience Education,2026-11-27,COBI,88
+Yuba College,ACCT,Accounting,,coci,suggested by COBI from the hint: Accounting,2026-11-27,COBI,94
+Yuba College,AG,Agriculture,,coci,suggested by COBI from the hint: Agriculture,2026-11-27,COBI,94
+Yuba College,ART,Art,,coci,suggested by COBI from the hint: Art,2026-11-27,COBI,98
+Yuba College,BCA,Business Computer Applications,,coci,suggested by COBI from the hint: Business Computer Applications,2026-11-27,COBI,84
+Yuba College,COMM,Public Speaking,,coci,suggested by COBI from COCI course titles: C1000 Introduction to Public Speaking,2026-11-27,COBI,85
+Yuba College,ENGR,English,,coci,suggested by COBI from a college naming pattern; COCI course titles: 49 Special Projects,2026-11-27,COBI,84
+Yuba College,GNBUS,Business,,coci,suggested by COBI from the hint: Business,2026-11-27,COBI,96
+Yuba College,MUSIC,Music,,coci,suggested by COBI from the hint: Music,2026-11-27,COBI,99
+Yuba College,PHOTO,Photography,,coci,suggested by COBI from the hint: Photography,2026-11-27,COBI,99
+Yuba College,POLS,Political Science,,coci,suggested by COBI from a college naming pattern; COCI course titles: C1000 American Government and Politics,2026-11-27,COBI,84
+Yuba College,READ,Reading,,coci,suggested by COBI from the hint: Reading,2026-11-27,COBI,88
+City College of San Francisco,AAPS,Academic Success,,coci,suggested by COBI from COCI course titles: 100 Achieving an Academic Attitude; 103 Orientation to College Transfer,2026-11-27,COBI,90
+City College of San Francisco,ACCT,Accounting,,coci,suggested by COBI from the hint: Accounting,2026-11-27,COBI,98
+City College of San Francisco,AIRC,Air Conditioning and Refrigeration,,coci,suggested by COBI from a common subject match; COCI course titles: 101 Intro to Aircraft Maintenance; 102 Basic Electricity and Electrical Circuits,2026-11-27,COBI,88
+City College of San Francisco,ART,Art,,coci,suggested by COBI from COCI course titles: 136A Introduction to Illustration; 132A Beginning Figure Drawing,2026-11-27,COBI,90
+City College of San Francisco,BSMA,Business Mathematics,,coci,suggested by COBI from COCI course titles: 68 Mathematics for Business,2026-11-27,COBI,85
+City College of San Francisco,CMST,Communication Studies,,coci,suggested by COBI from the hint: Communication Studies,2026-11-27,COBI,99
+City College of San Francisco,COUN,Counseling,,coci,suggested by COBI from a common subject match; COCI course titles: 105 Student Success Seminar II,2026-11-27,COBI,88
+City College of San Francisco,DSGN,Design,,coci,suggested by COBI from the hint: Design,2026-11-27,COBI,95
+City College of San Francisco,FREN,French,,coci,suggested by COBI from the hint: French,2026-11-27,COBI,99
+City College of San Francisco,GERM,German,,coci,suggested by COBI from the hint: German,2026-11-27,COBI,95
+City College of San Francisco,LALS/LGBT,Latin American and LGBTQ Studies,,coci,suggested by COBI from COCI course titles: 9 The Latinx LGBTQ+ Experience,2026-11-27,COBI,85
+City College of San Francisco,SUST,Sustainability,,coci,suggested by COBI from a common subject match; COCI course titles: 225 Environmental Toxicology,2026-11-27,COBI,88
+Southwestern College,AMR,Work Experience,,coci,suggested by COBI from the hint: Work Experience,2026-11-27,COBI,88
+Southwestern College,CT,Construction Technology,,coci,suggested by COBI from the hint: Construction Technology,2026-11-27,COBI,95
+Southwestern College,FCS,Family and Consumer Science,,coci,suggested by COBI from the hint: Family and Consumer Science,2026-11-27,COBI,88
+Southwestern College,IDNM,Interactive Design and New Media,,coci,suggested by COBI from COCI course titles: 102 Trends and Careers in New Media; 105 New Media Form and Content,2026-11-27,COBI,90
+Southwestern College,MET,Meteorology,,coci,suggested by COBI from a common subject match; COCI course titles: 110 Manufacturing Processes I; 120 Manufacturing Processes Ii,2026-11-27,COBI,88
+Southwestern College,PE/A,Exercise Science,,coci,suggested by COBI from the hint: Exercise Science,2026-11-27,COBI,88
+Southwestern College,PE/D,Physical Education,,coci,suggested by COBI from a common subject match; COCI course titles: 123 Dance Choreography Iii; 124 Dance Choreography Iv,2026-11-27,COBI,88
+Southwestern College,PE/I,Intercollegiate Physical Education,,coci,suggested by COBI from COCI course titles: 134 Intercollegiate Water Polo Np (Non,2026-11-27,COBI,85
+Southwestern College,PE/L,Adaptive Physical Education,,coci,suggested by COBI from COCI course titles: 102 Individual Adaptation (Sports) for The; 103 Individual Adaptation (Sports) for The,2026-11-27,COBI,90
+Southwestern College,PE/T,Physical Education-Theory,,coci,suggested by COBI from a common subject match; COCI course titles: 101 Interscholastic Coaching: Rules and Regulations; 102 Thry Technqs Coaching I: Motor Lrng and Psych Adolescent,2026-11-27,COBI,88
+Southwestern College,QET,Quality Engineering Technology,,coci,suggested by COBI from COCI course titles: 220 Statistical Quality Control,2026-11-27,COBI,85
+Southwestern College,SPCH,Speech,,coci,suggested by COBI from the hint: Speech,2026-11-27,COBI,88
+Chaffey College,ARABIC,Arabic,,coci,suggested by COBI from the hint: Arabic,2026-11-27,COBI,95
+Chaffey College,ART,Art,,coci,suggested by COBI from a common subject match; COCI course titles: 14 Introduction to Drawing; 16 Introduction to Painting,2026-11-27,COBI,88
+Chaffey College,CINEMA,Broadcasting and Cinema,,coci,suggested by COBI from the hint: Broadcasting and Cinema,2026-11-27,COBI,99
+Chaffey College,CIS,Computer Information Systems,,coci,suggested by COBI from the hint: Computer Information Systems,2026-11-27,COBI,98
+Chaffey College,CISCYBR,Systems and Network Cybersecurity,,coci,suggested by COBI from COCI course titles: 1 Introduction to Systems & Network Cybersecurity; 2 Digital Forensics Fundamentals,2026-11-27,COBI,90
+Chaffey College,CISHDSP,Computer Information Systems Hardware,,coci,suggested by COBI from COCI course titles: 40 Microcomputer Hardware,2026-11-27,COBI,85
+Chaffey College,CISIWEB,Computer Information Systems Web,,coci,suggested by COBI from COCI course titles: 72 Web Page Development and Publishing; 74 Creating Dynamic Applications using Javascript,2026-11-27,COBI,90
+Chaffey College,CISNTWK,The Linux Operating System,,coci,suggested by COBI from COCI course titles: 435 Introduction to the Linux Operating System; 11 Microsoft Network Server,2026-11-27,COBI,90
+Chaffey College,DENTAL,Dental Assisting,,coci,suggested by COBI from the hint: Dental Assisting,2026-11-27,COBI,82
+Chaffey College,MUSIC,Music,,coci,suggested by COBI from the hint: Music,2026-11-27,COBI,99
+Chaffey College,THEATRE,Theatre Arts,,coci,suggested by COBI from the hint: Theatre Arts,2026-11-27,COBI,88
+Los Angeles Trade-Technical College,ADM,Administration of Justice,,coci,suggested by COBI from the hint: Administration of Justice,2026-11-27,COBI,98
+Los Angeles Trade-Technical College,CLN,Culinary Arts,,coci,suggested by COBI from the hint: Culinary Arts,2026-11-27,COBI,98
+Los Angeles Trade-Technical College,COOP,Work Experience,,coci,suggested by COBI from the hint: Work Experience,2026-11-27,COBI,88
+Los Angeles Trade-Technical College,ENG,"Science, Engineering and Technology",,coci,"suggested by COBI from COCI course titles: GEN101 Introduction to Science, Engineering and Technology; GEN131 Statics",2026-11-27,COBI,90
+Los Angeles Trade-Technical College,PUB,Public Health,,coci,suggested by COBI from the hint: Public Health,2026-11-27,COBI,88
+Los Angeles Trade-Technical College,SHTM,Sheet Metal,,coci,suggested by COBI from COCI course titles: AP717 Sheet Metal Work Vii,2026-11-27,COBI,85
+Los Angeles Trade-Technical College,ST,Supervised Tutoring,,coci,suggested by COBI from a common subject match; COCI course titles: MAIN103 Street Maintenance (Applied Calculations in Public Works); MAIN200 Survey of Street Services,2026-11-27,COBI,88
+Los Angeles Trade-Technical College,SWM,Solid Waste Management,,coci,suggested by COBI from COCI course titles: TEK101 Introduction to Solid Waste Management; TEK102 Refuse Collection Routing,2026-11-27,COBI,90
+San Diego City College,ARTG,Graphic Design,,coci,suggested by COBI from COCI course titles: 100 Basic Graphic Design; 106 Typography; corrected during QA (was: Art: Gallery and Professional Practices),2026-11-27,COBI,85
+San Diego City College,CONS,Construction,,coci,suggested by COBI from the hint: Construction,2026-11-27,COBI,88
+San Diego City College,ENGN,Engineering Technology,,coci,suggested by COBI from the hint: Engineering Technology,2026-11-27,COBI,96
+San Diego City College,GERM,German,,coci,suggested by COBI from the hint: German,2026-11-27,COBI,99
+San Diego City College,HEOP,Construction Equipment Operator,,coci,suggested by COBI from COCI course titles: 301A Construction Equipment Operator IA; 301B Construction Equipment Operator IB,2026-11-27,COBI,90
+San Diego City College,RADT,Radiologic Technology,,coci,suggested by COBI from a common subject match; COCI course titles: 70L Orientation to X-Ray Equipment,2026-11-27,COBI,88
+San Diego City College,REAL,Real Estate,,coci,suggested by COBI from the hint: Real Estate,2026-11-27,COBI,99
+San Diego City College,RTVF,"Radio, Television and Film",,coci,"suggested by COBI from the hint: Radio, Television and Film",2026-11-27,COBI,88
+San Diego City College,RUSS,Russian,,coci,suggested by COBI from the hint: Russian,2026-11-27,COBI,98
+San Diego City College,TECI,Technical Illustration,,coci,suggested by COBI from COCI course titles: 50 Bridging to Technical Illustration; 101 Basic Technical Illustration,2026-11-27,COBI,90
+San Diego City College,TROL,Trolley Operations,,coci,suggested by COBI from COCI course titles: 301 San Diego Trolley Light Rail Vehicle; 302 San Diego Trolley Light Rail Vehicle II,2026-11-27,COBI,90
+Santiago Canyon College,ACPL,Ap Plasterer,,coci,suggested by COBI from the hint: Ap Plasterer,2026-11-27,COBI,88
+Santiago Canyon College,AMF,Ap Acoustical Installer,,coci,suggested by COBI from the hint: Ap Acoustical Installer,2026-11-27,COBI,88
+Santiago Canyon College,ART,Art,,coci,suggested by COBI from the hint: Art,2026-11-27,COBI,98
+Santiago Canyon College,BIOL,Biology,,coci,suggested by COBI from the hint: Biology,2026-11-27,COBI,98
+Santiago Canyon College,ENGL,English,,coci,suggested by COBI from the hint: English,2026-11-27,COBI,98
+Santiago Canyon College,MATH,Mathematics,,coci,suggested by COBI from the hint: Mathematics,2026-11-27,COBI,98
+Santiago Canyon College,POLT,Political Science,,coci,suggested by COBI from the hint: Political Science,2026-11-27,COBI,96
+Santiago Canyon College,STAT,Statistics,,coci,suggested by COBI from the hint: Statistics,2026-11-27,COBI,98
+Skyline College,ANST,Anesthesia Technology,,coci,suggested by COBI from the hint: Anesthesia Technology,2026-11-27,COBI,88
+Skyline College,ART,Art,,coci,suggested by COBI from a common subject match; COCI course titles: 430 Introduction to Digital Art; 440 Introduction to Web Design,2026-11-27,COBI,88
+Skyline College,COMP,Obj-Oriented Prgrm DE,,coci,suggested by COBI from COCI course titles: 118 Intro to Obj-Oriented Prgrm De,2026-11-27,COBI,85
+Skyline College,ESTM,Solar Photovoltaics (Pv) Systems and Markets,,coci,"suggested by COBI from COCI course titles: 411 Introduction to Solar Photovoltaics (PV) Systems and Markets; 400 Clean Energy Concepts, Policies and Industries",2026-11-27,COBI,90
+Skyline College,FILM,Film,,coci,suggested by COBI from the hint: Film,2026-11-27,COBI,88
+Skyline College,GERO,Gerontology,,coci,suggested by COBI from a common subject match; COCI course titles: 101 Health and Aging; 690 Independent Study - Gero,2026-11-27,COBI,88
+Skyline College,H.R.,Hospitality and Travel,,coci,suggested by COBI from COCI course titles: 100 Intro to Hospitality and Travel; 101 Hospitality Marketing,2026-11-27,COBI,90
+Skyline College,HUM.,Humanities,,coci,suggested by COBI from a common subject match; COCI course titles: 680SA Life and Culture of the Local Area - Spain,2026-11-27,COBI,88
+Skyline College,IBUS,International Business,,coci,suggested by COBI from the hint: International Business,2026-11-27,COBI,94
+Skyline College,PLSC,Political Science,,coci,suggested by COBI from the hint: Political Science,2026-11-27,COBI,88
+Skyline College,PNTR,Painters Apprenticeship,,coci,suggested by COBI from COCI course titles: 710 Painters Apprenticeship-1st Yr; 720 Painters Apprenticeship-2nd Yr,2026-11-27,COBI,90
+College of Marin,ART,Art,,coci,suggested by COBI from the hint: Art,2026-11-27,COBI,94
+College of Marin,CHIN,Chinese,,coci,suggested by COBI from the hint: Chinese,2026-11-27,COBI,94
+College of Marin,H ED,Sports Medicine,,coci,suggested by COBI from COCI course titles: 143 Introduction to Sports Medicine; 249C Directed Study,2026-11-27,COBI,90
+College of Marin,JOUN,Journalism,,coci,"suggested by COBI from COCI course titles: 115 News Reporting/Writing; 122 Newspaper Production, Writing; corrected during QA (was: Counseling)",2026-11-27,COBI,85
+College of Marin,LIBR,Library,,coci,suggested by COBI from the hint: Library,2026-11-27,COBI,88
+College of Marin,PSYC,Psychology,,coci,suggested by COBI from the hint: Psychology,2026-11-27,COBI,98
+College of Marin,SPCH,Communication Studies,,coci,suggested by COBI from the hint: Communication Studies,2026-11-27,COBI,88
+Crafton Hills College,ART,Art,,coci,suggested by COBI from the hint: Art,2026-11-27,COBI,98
+Crafton Hills College,CD,Child Development,,coci,suggested by COBI from the hint: Child Development,2026-11-27,COBI,94
+Crafton Hills College,DANCE,Dance,,coci,suggested by COBI from the hint: Dance,2026-11-27,COBI,98
+Crafton Hills College,JAPN,Japanese,,coci,suggested by COBI from the hint: Japanese,2026-11-27,COBI,95
+Crafton Hills College,MUSIC,Music,,coci,suggested by COBI from the hint: Music,2026-11-27,COBI,99
+Crafton Hills College,PTA,Physical Therapist Assistant,,coci,suggested by COBI from the hint: Physical Therapist Assistant,2026-11-27,COBI,98
+Crafton Hills College,SLPA,Speech Language Pathology Assistant,,coci,suggested by COBI from the hint: Speech Language Pathology Assistant,2026-11-27,COBI,88
+Crafton Hills College,SOC,Women's Studies Through an Ethnic Studies Lens,,coci,suggested by COBI from COCI course titles: 106 Introduction to Women's Studies Through an Ethnic Studies Lens; 132 Identity and Ideology: Intro to Chicano/a & Latino/a Studies,2026-11-27,COBI,90
+Crafton Hills College,STAT,Statistics,,coci,suggested by COBI from the hint: Statistics,2026-11-27,COBI,94
+Merritt College,ART,Art Fundamentals,,coci,suggested by COBI from the hint: Art Fundamentals,2026-11-27,COBI,97
+Merritt College,BLDGM,Maintenance Systems,,coci,suggested by COBI from COCI course titles: 248NA Introduction to Maintenance Systems,2026-11-27,COBI,85
+Merritt College,CHIN,Chinese,,coci,suggested by COBI from the hint: Chinese,2026-11-27,COBI,94
+Merritt College,EDT,Engineering Design Technology,,coci,suggested by COBI from the hint: Engineering Design Technology,2026-11-27,COBI,88
+Merritt College,EDUC,Education,,coci,suggested by COBI from the hint: Education,2026-11-27,COBI,88
+Merritt College,FREN,French,,coci,suggested by COBI from the hint: French,2026-11-27,COBI,94
+Merritt College,HUSV,Human Services,,coci,suggested by COBI from the hint: Human Services,2026-11-27,COBI,95
+Merritt College,MUSIC,Music,,coci,suggested by COBI from the hint: Music,2026-11-27,COBI,99
+Merritt College,RADTE,Radiologic Technology,,coci,suggested by COBI from COCI course titles: 009A Radiologic Science; 10 Radiologic Science,2026-11-27,COBI,90
+Merritt College,RECSE,Recreation,,coci,suggested by COBI from the hint: Recreation,2026-11-27,COBI,88
+Merritt College,V/NUR,Nursing,,coci,suggested by COBI from the hint: Nursing,2026-11-27,COBI,88
+Oxnard College,BIOL,Biology,,coci,suggested by COBI from the hint: Biology,2026-11-27,COBI,98
+Oxnard College,BIS,Business Information Systems,,coci,suggested by COBI from a common subject match; COCI course titles: R122 Microsoft Office; R123 Microsoft Excel,2026-11-27,COBI,88
+Oxnard College,HM,Hospitality Management,,coci,suggested by COBI from the hint: Hospitality Management,2026-11-27,COBI,94
+Oxnard College,LIB,Library,,coci,suggested by COBI from the hint: Library,2026-11-27,COBI,88
+Oxnard College,MATH,Mathematics,,coci,suggested by COBI from the hint: Mathematics,2026-11-27,COBI,98
+Oxnard College,PE,Physical Education,,coci,suggested by COBI from a common subject match; COCI course titles: R156A Baseball I,2026-11-27,COBI,88
+Oxnard College,PLS,Plant Science,,coci,suggested by COBI from a common subject match; COCI course titles: R101 Paralegal Fundamentals,2026-11-27,COBI,88
+Oxnard College,PSY,Psychology,,coci,suggested by COBI from the hint: Psychology,2026-11-27,COBI,99
+Oxnard College,PSYC,Psychology,,coci,suggested by COBI from the hint: Psychology,2026-11-27,COBI,94
+Oxnard College,SOC,Sociology,,coci,suggested by COBI from the hint: Sociology,2026-11-27,COBI,99
+Oxnard College,STAT,Statistics,,coci,suggested by COBI from the hint: Statistics,2026-11-27,COBI,94
+College of the Desert,AJ,Administration of Justice,,coci,suggested by COBI from the hint: Administration of Justice,2026-11-27,COBI,98
+College of the Desert,ART,Art,,coci,suggested by COBI from a common subject match; COCI course titles: 19 Introduction to Painting; 34 Introduction to Digital Art & Media,2026-11-27,COBI,88
+College of the Desert,ENGL,English,,coci,suggested by COBI from a college naming pattern; COCI course titles: C1000 Academic Reading and Writing; C1000E Academic Reading and Writing,2026-11-27,COBI,84
+College of the Desert,FILM,Film Production,,coci,suggested by COBI from the hint: Film Production,2026-11-27,COBI,96
+College of the Desert,HEALTH SCIENCES,Health Sciences,,coci,suggested by COBI from COCI course titles: 68 Pharmacy Technician,2026-11-27,COBI,88
+College of the Desert,NRN,Nursing-Registered,,coci,suggested by COBI from the hint: Nursing-Registered,2026-11-27,COBI,94
+College of the Desert,POLS,Political Science,,coci,suggested by COBI from a common subject match; COCI course titles: C1000 American Government and Politics,2026-11-27,COBI,88
+College of the Desert,PSYC,Psychology,,coci,suggested by COBI from the hint: Psychology,2026-11-27,COBI,98
+College of the Desert,RDG,Reading,,coci,suggested by COBI from the hint: Reading,2026-11-27,COBI,84
+College of the Desert,RE,Recreation and Sport Management,,coci,suggested by COBI from COCI course titles: 1 Introduction To Recreation & Sport Management; 095A Recreation Work Experience,2026-11-27,COBI,90
+College of the Desert,VN,Vocational Nursing,,coci,suggested by COBI from the hint: Vocational Nursing,2026-11-27,COBI,94
+Golden West College,ART,Art,,coci,suggested by COBI from the hint: Art,2026-11-27,COBI,99
+Golden West College,COLL,College,,coci,suggested by COBI from a common subject match; COCI course titles: G100 Becoming A Successful Student; G151 Succeed as an Online Learner,2026-11-27,COBI,88
+Golden West College,ENGW,Writing Center,,coci,suggested by COBI from COCI course titles: G020 Writing Center Conference I; corrected during QA (was: Engineering),2026-11-27,COBI,80
+Golden West College,HIT,Health Information Technology,,coci,suggested by COBI from the hint: Health Information Technology,2026-11-27,COBI,94
+Golden West College,HLTH,Wellness,,coci,suggested by COBI from COCI course titles: ED104 Introduction To Wellness,2026-11-27,COBI,85
+Golden West College,HUM,Humanities,,coci,suggested by COBI from a common subject match; COCI course titles: G126 Music In Motion Picture,2026-11-27,COBI,88
+Golden West College,JOUR,Journalism,,coci,suggested by COBI from the hint: Journalism,2026-11-27,COBI,94
+Golden West College,PEAC,Physical Education Activity,,coci,suggested by COBI from a common subject match; COCI course titles: G100 Peace Studies Intro; G110 Nonviolence and Conflict Resolution,2026-11-27,COBI,88
+Golden West College,SIGN,Sign Language,,coci,suggested by COBI from a common subject match; COCI course titles: G010 Fingerspelling; G068 ASL for Health and Medical Personnel,2026-11-27,COBI,88
+Contra Costa College,ART,Art,"https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,art?tenant=ccc.elumenapp.com",coci,suggested by COBI from the hint: Art,2026-11-27,COBI,94
+Contra Costa College,COMM,Communication Studies/Speech,"https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,comm-studies-speech?tenant=ccc.elumenapp.com",coci,suggested by COBI from the hint: Communication Studies,2026-11-27,COBI,94
+Contra Costa College,COMP,Computer Science,"https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,computer-science?tenant=ccc.elumenapp.com",coci,suggested by COBI from the hint: Computer Science,2026-11-27,COBI,98
+Contra Costa College,DANCE,Dance,"https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,dance?tenant=ccc.elumenapp.com",coci,suggested by COBI from the hint: Dance,2026-11-27,COBI,98
+Contra Costa College,ETHN,Ethnic Studies,"https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,ethnic-studies?tenant=ccc.elumenapp.com",coci,suggested by COBI from the hint: Ethnic Studies,2026-11-27,COBI,95
+Contra Costa College,MEDIA,Media,"https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,media?tenant=ccc.elumenapp.com",coci,suggested by COBI from the hint: Media Arts,2026-11-27,COBI,88
+Contra Costa College,MUSIC,Music,"https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,music?tenant=ccc.elumenapp.com",coci,suggested by COBI from the hint: Music,2026-11-27,COBI,99
+Contra Costa College,POLS,Political Science,"https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,political-science?tenant=ccc.elumenapp.com",coci,suggested by COBI from the hint: Political Science,2026-11-27,COBI,94
+Contra Costa College,PSYC,Psychology,"https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,psychology?tenant=ccc.elumenapp.com",coci,suggested by COBI from the hint: Psychology,2026-11-27,COBI,94
+Contra Costa College,STAT,Statistics,"https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,mathematics?tenant=ccc.elumenapp.com",coci,suggested by COBI from the hint: Statistics,2026-11-27,COBI,94
+Los Angeles Southwest College,ADM,Administration of Justice,,coci,suggested by COBI from a common subject match; COCI course titles: JUS310 Field Work I,2026-11-27,COBI,88
+Los Angeles Southwest College,ANTRHO,Anthropology,,coci,suggested by COBI from the hint: Anthropology,2026-11-27,COBI,90
+Los Angeles Southwest College,CO SCI,Computer Science,,coci,suggested by COBI from the hint: Computer Science,2026-11-27,COBI,90
+Los Angeles Southwest College,FIRE TECHNOLOGY,Fire Technology,,coci,suggested by COBI from the hint: Fire Technology,2026-11-27,COBI,88
+Los Angeles Southwest College,MATHEMATICS,Mathematics,,coci,suggested by COBI from the hint: Mathematics,2026-11-27,COBI,98
+Los Angeles Southwest College,OCEAN,Oceanography,,coci,suggested by COBI from the hint: Oceanography,2026-11-27,COBI,95
+Los Angeles Southwest College,Q CNTRL,Quality Control,,coci,suggested by COBI from COCI course titles: CNTRL010 Fundamentals of Quality Control; CNTRL022 Dimensional Measurements,2026-11-27,COBI,90
+Ohlone College,AF,Aerospace Studies,,coci,suggested by COBI from COCI course titles: 101B Foundations of the U.S. Air Force; 102B Evolution of the U.S. Air Force Air and Space Power,2026-11-27,COBI,90
+Ohlone College,ART,Art,,coci,suggested by COBI from COCI course titles: 101 Art: An Introduction; 109B Introduction to Graphic Design II - Principles and Methods,2026-11-27,COBI,90
+Ohlone College,IS,Interdisciplinary Studies,,coci,suggested by COBI from a common subject match; COCI course titles: 110 Introduction to Ethnic Studies; 100 Survey of the Arts,2026-11-27,COBI,88
+Ohlone College,LSP,Library Science,,coci,suggested by COBI from a college naming pattern; COCI course titles: 101 Learning Skills: Reading and Writing; 102 Learning Skills: Quantitative Reasoning,2026-11-27,COBI,84
+Ohlone College,MM,Maintenance Mechanic,,coci,suggested by COBI from a common subject match; COCI course titles: 105 Web Site Design; 108 Visual Communication,2026-11-27,COBI,88
+Ohlone College,PD,Personal Development,,coci,suggested by COBI from a common subject match; COCI course titles: 111 Strategies for College Success; 120A Student Leadership I,2026-11-27,COBI,88
+Ohlone College,PS,Political Science,,coci,suggested by COBI from a common subject match; COCI course titles: 201 Special Projects; 202 Special Projects,2026-11-27,COBI,88
+College of Alameda,ANTHROPOLOGY,Anthropology,,coci,suggested by COBI from the hint: Anthropology,2026-11-27,COBI,88
+College of Alameda,ART,Art,,coci,suggested by COBI from a common subject match; COCI course titles: 502 Introduction to Art History; 1 Intro to Art History,2026-11-27,COBI,88
+College of Alameda,BIOLOGY,Biology,,coci,suggested by COBI from the hint: Biology,2026-11-27,COBI,98
+College of Alameda,DANCE,Dance,,coci,suggested by COBI from the hint: Dance,2026-11-27,COBI,98
+College of Alameda,EDUC,Education,,coci,suggested by COBI from the hint: Education,2026-11-27,COBI,88
+College of Alameda,ESL,English as a Second Language,,coci,suggested by COBI from a common subject match; COCI course titles: 285B High Beginning Reading and Writing; 052A Advanced Reading and Writing,2026-11-27,COBI,88
+College of Alameda,MAKR,Modern Making,,coci,suggested by COBI from the hint: Modern Making,2026-11-27,COBI,88
+College of Alameda,MUSIC,Gospel Music Performance,,coci,suggested by COBI from the hint: Gospel Music Performance,2026-11-27,COBI,99
+College of Alameda,POLS,Political Science,,coci,suggested by COBI from a common subject match; COCI course titles: C1000 American Government and Politics,2026-11-27,COBI,88
+College of Alameda,PSYC,Psychology,,coci,suggested by COBI from the hint: Psychology,2026-11-27,COBI,98
+Copper Mountain College,ART,Art,,coci,suggested by COBI from COCI course titles: 003A Introduction to Two-Dimensional Design; 005A Introduction to Figure Drawing,2026-11-27,COBI,90
+Copper Mountain College,BI,Biology,,coci,suggested by COBI from the hint: Biology,2026-11-27,COBI,98
+Copper Mountain College,PS,Comparative Government,,coci,suggested by COBI from COCI course titles: 2 Introduction to Comparative Government; 4 Introduction to International Relations,2026-11-27,COBI,90
+Copper Mountain College,SOC,Race and Ethnicity,,coci,suggested by COBI from COCI course titles: 14 Introduction to Race and Ethnicity; 2 Social Problems,2026-11-27,COBI,90
+Mt. San Antonio College,AHIS,Art History,,coci,suggested by COBI from the hint: Art History,2026-11-27,COBI,99
+Mt. San Antonio College,BUSC,Business: Economics,,coci,suggested by COBI from the hint: Business: Economics,2026-11-27,COBI,98
+Mt. San Antonio College,DSPS,Disability Support Programs and Services,,coci,suggested by COBI from a common subject match; COCI course titles: 31 Memory Strategies for Students with Disabilities; 32 Technology for Students with Learning Related Disabilities,2026-11-27,COBI,88
+Mt. San Antonio College,EMT,Emergency Medical Technician,,coci,suggested by COBI from the hint: Emergency Medical Technician,2026-11-27,COBI,94
+Mt. San Antonio College,EST,Energy and Sustainable Tech,,coci,suggested by COBI from a common subject match; COCI course titles: 64 Electronic Troubleshooting - II,2026-11-27,COBI,88
+Mt. San Antonio College,LERN,Learning Assistance,,coci,suggested by COBI from a common subject match; COCI course titles: 48 Basic Math Skills Review; 49 Math Skills Review,2026-11-27,COBI,88
+Mt. San Antonio College,TUTR,Tutoring,,coci,suggested by COBI from the hint: Tutoring,2026-11-27,COBI,88
+Diablo Valley College,ARCLA,Landscape Architecture and Environmental Design,,coci,suggested by COBI from COCI course titles: 120 Introduction to Landscape Architecture and Environmental Design; 121 Landscape Design,2026-11-27,COBI,90
+Diablo Valley College,ART,Art,,coci,suggested by COBI from the hint: Art,2026-11-27,COBI,98
+Diablo Valley College,BIOSC,Biology,,coci,suggested by COBI from the hint: Biology,2026-11-27,COBI,88
+Diablo Valley College,CULN,Culinary Arts,,coci,suggested by COBI from the hint: Culinary Arts,2026-11-27,COBI,94
+Diablo Valley College,DANCE,Dance,,coci,suggested by COBI from the hint: Dance,2026-11-27,COBI,98
+Diablo Valley College,DRAMA,Theatre Arts,,coci,suggested by COBI from the hint: Theatre Arts,2026-11-27,COBI,88
+Diablo Valley College,HSCI,Health Science,,coci,suggested by COBI from the hint: Health Science,2026-11-27,COBI,88
+Diablo Valley College,KNDAN,Kinesiology-Dance,,coci,suggested by COBI from a common subject match; COCI course titles: 164B Ballroom/Social Dance II,2026-11-27,COBI,88
+Diablo Valley College,MUSIC,Music,,coci,suggested by COBI from the hint: Music,2026-11-27,COBI,99
+Feather River College,AGEH,Environmental Horticulture,,coci,"suggested by COBI from COCI course titles: 130 Landscape Plant Materials Use; 132 Turf Grass Management; corrected during QA (was: Agriculture, Equine Studies)",2026-11-27,COBI,85
+Feather River College,ART,Art,,coci,suggested by COBI from a common subject match; COCI course titles: 144 Introduction To Ceramics; 128 Beginning Printmaking,2026-11-27,COBI,88
+Feather River College,ASL,American Sign Language,,coci,suggested by COBI from the hint: American Sign Language,2026-11-27,COBI,98
+Feather River College,CWEE,Fire Application,,coci,suggested by COBI from COCI course titles: 150 General Cooperative Work Experience; 170 Cooperative Work Experience in Fire Application,2026-11-27,COBI,90
+Feather River College,FRN,French,,coci,suggested by COBI from the hint: French,2026-11-27,COBI,88
+Feather River College,GRMN,German,,coci,suggested by COBI from the hint: German,2026-11-27,COBI,98
+Fresno City College,ART,Art,,coci,suggested by COBI from COCI course titles: 52 Introduction to Digital Art/New Media; 3 Two-Dimensional Design; corrected during QA (was: Digital Art/New Media),2026-11-27,COBI,85
+Fresno City College,DANCE,Commercial Dance,,coci,suggested by COBI from the hint: Commercial Dance,2026-11-27,COBI,99
+Fresno City College,FILM,Film,,coci,suggested by COBI from the hint: Film,2026-11-27,COBI,88
+Fresno City College,FRENCH,French,,coci,suggested by COBI from the hint: French,2026-11-27,COBI,99
+Fresno City College,GERMAN,German,,coci,suggested by COBI from the hint: German,2026-11-27,COBI,98
+Fresno City College,GLST,Global Studies,,coci,suggested by COBI from the hint: Global Studies,2026-11-27,COBI,98
+Fresno City College,HONORS,Honors,,coci,suggested by COBI from the hint: Honors,2026-11-27,COBI,88
+Fresno City College,KOREAN,Korean,,coci,suggested by COBI from the hint: Korean,2026-11-27,COBI,88
+Madera College,ART,Art,,coci,suggested by COBI from COCI course titles: 33 Introduction to Computer Art & Design; 38 Introduction to Digital Art; corrected during QA (was: Computer Art and Design),2026-11-27,COBI,85
+Madera College,COTR,Work Experience Education (Formerly (Cotr) Cooperative Work Experience,,coci,suggested by COBI from a common subject match; COCI course titles: 19G Cooperative Work Experience,2026-11-27,COBI,88
+Madera College,FILM,Film,,coci,suggested by COBI from the hint: Film,2026-11-27,COBI,88
+Madera College,HONORS,Honors,,coci,suggested by COBI from the hint: Honors,2026-11-27,COBI,98
+Madera College,OT,Office Technology,,coci,suggested by COBI from the hint: Office Technology,2026-11-27,COBI,94
+Mission College,ART,Art,https://mission.elumenapp.com/catalog/24-25/department/art,coci,suggested by COBI from the hint: Art,2026-11-27,COBI,98
+Mission College,ENGL,English,https://mission.elumenapp.com/catalog/24-25/department/eng,coci,suggested by COBI from the hint: English,2026-11-27,COBI,98
+Mission College,LIB,Library,,coci,suggested by COBI from a common subject match; COCI course titles: 010H Information Competency - Honors; 10 Information Competency,2026-11-27,COBI,88
+Mission College,POLS,Political Science,https://mission.elumenapp.com/catalog/24-25/department/pol,coci,suggested by COBI from the hint: Political Science,2026-11-27,COBI,94
+Mission College,PSYC,Psychology,https://mission.elumenapp.com/catalog/24-25/department/psy,coci,suggested by COBI from the hint: Psychology,2026-11-27,COBI,94
+Mission College,RNB,Nursing,https://mission.elumenapp.com/catalog/24-25/department/nur,coci,suggested by COBI from the hint: Nursing,2026-11-27,COBI,88
+Mission College,VIE,Vietnamese,,coci,suggested by COBI from COCI course titles: 1 First Semester Vietnamese (Elementary Level); 049A Vietnamese for the Vietnamese-Speaking,2026-11-27,COBI,90
+Santa Rosa Junior College,ART,Art,,coci,suggested by COBI from COCI course titles: 3 Introduction to Art and Design; 24 Introduction to the Art of Printmaking,2026-11-27,COBI,90
+Santa Rosa Junior College,ESL,English as a Second Language,,coci,suggested by COBI from a common subject match; COCI course titles: 391 U.S. Life and Culture for ESL Learners,2026-11-27,COBI,88
+Santa Rosa Junior College,GIS,Geographic Information Systems,,coci,suggested by COBI from the hint: Geographic Information Systems,2026-11-27,COBI,94
+Santa Rosa Junior College,KTEAM,Kinesiology Team Sports,,coci,suggested by COBI from COCI course titles: 10.1 Beginning Volleyball Quads; 9 Introductory Outdoor Volleyball,2026-11-27,COBI,90
+Santa Rosa Junior College,MATH,Mathematics,,coci,suggested by COBI from the hint: Mathematics,2026-11-27,COBI,99
+Santa Rosa Junior College,MEDIA,Film and Media Studies,,coci,suggested by COBI from the hint: Film and Media Studies,2026-11-27,COBI,84
+Solano Community College,ART,Art,,coci,suggested by COBI from the hint: Art,2026-11-27,COBI,98
+Solano Community College,ARTD,Art-Design,,coci,suggested by COBI from the hint: Art-Design,2026-11-27,COBI,88
+Solano Community College,BIO,Entomology,,coci,suggested by COBI from COCI course titles: 31 Introduction to Entomology; 30 The Natural History of California,2026-11-27,COBI,90
+Solano Community College,SOC,Sociology,,coci,suggested by COBI from the hint: Sociology,2026-11-27,COBI,99
+Solano Community College,STAT,Statistics,,coci,suggested by COBI from the hint: Statistics,2026-11-27,COBI,98
+Solano Community College,TV,"Film, Television and Video",,coci,"suggested by COBI from the hint: Film, Television and Video",2026-11-27,COBI,94
+Irvine Valley College,ART,Art,,coci,suggested by COBI from COCI course titles: 140 Jewelry I: Intro to Jewelry and Metalsmithing; 60 Introduction to Printmaking,2026-11-27,COBI,90
+Irvine Valley College,CISS,Computer Information Sciences - Security,,coci,suggested by COBI from the hint: Computer Information Sciences - Security,2026-11-27,COBI,88
+Irvine Valley College,FILM,Film and Digital Media,,coci,suggested by COBI from the hint: Film and Digital Media,2026-11-27,COBI,97
+Irvine Valley College,PS,Political Science,,coci,suggested by COBI from the hint: Political Science,2026-11-27,COBI,94
+Irvine Valley College,SIGN,Sign Language,,coci,suggested by COBI from the hint: Sign Language,2026-11-27,COBI,88
+Lake Tahoe Community College,ART,Art,https://ltcc.elumenapp.com/catalog/2026-2027/department/art,coci,suggested by COBI from the hint: Art,2026-11-27,COBI,94
+Lake Tahoe Community College,CMU,Commercial Music,,coci,suggested by COBI from COCI course titles: 131A Special Topics: Beginning Audio Editing,2026-11-27,COBI,85
+Lake Tahoe Community College,COMM,Public Speaking,https://ltcc.elumenapp.com/catalog/2026-2027/department/communications,coci,suggested by COBI from COCI course titles: C1000 Introduction to Public Speaking,2026-11-27,COBI,85
+Lake Tahoe Community College,ENGL,English,https://ltcc.elumenapp.com/catalog/2026-2027/department/english,coci,suggested by COBI from the hint: English,2026-11-27,COBI,98
+Lake Tahoe Community College,INT,Interdisciplinary Studies,https://ltcc.elumenapp.com/catalog/2026-2027/department/interdisciplinary-studies,coci,suggested by COBI from the hint: Architectural Interiors,2026-11-27,COBI,88
+Lake Tahoe Community College,POLS,Political Science,https://ltcc.elumenapp.com/catalog/2026-2027/department/political-science,coci,suggested by COBI from the hint: Political Science,2026-11-27,COBI,94
+Lake Tahoe Community College,PSYC,Psychology,https://ltcc.elumenapp.com/catalog/2026-2027/department/psychology,coci,suggested by COBI from the hint: Psychology,2026-11-27,COBI,94
+Lake Tahoe Community College,STAT,Statistics,https://ltcc.elumenapp.com/catalog/2026-2027/department/mathematics,coci,suggested by COBI from the hint: Statistics,2026-11-27,COBI,94
+Moreno Valley College,AHS,Art History,,coci,suggested by COBI from the hint: Art History,2026-11-27,COBI,88
+Moreno Valley College,ART,Art,,coci,"suggested by COBI from COCI course titles: 31 Introduction to Exhibitions: History, Theory, and Practice; 36A Computer Art-Introduction",2026-11-27,COBI,90
+Moreno Valley College,PHS,Physical Science,,coci,suggested by COBI from the hint: Physical Science,2026-11-27,COBI,94
+San Bernardino Valley College,ART,Art,,coci,suggested by COBI from COCI course titles: 145 Introduction to Digital Applications for Graphic Design; 261 Introduction to Arts Administration,2026-11-27,COBI,90
+San Bernardino Valley College,CD,Child Development,,coci,suggested by COBI from the hint: Child Development,2026-11-27,COBI,98
+San Bernardino Valley College,DANCE,Dance,,coci,suggested by COBI from the hint: Dance,2026-11-27,COBI,98
+San Bernardino Valley College,FRENCH,French,,coci,suggested by COBI from the hint: French,2026-11-27,COBI,95
+Barstow Community College,BARB,Barbering,,coci,suggested by COBI from the hint: Barbering,2026-11-27,COBI,95
+Barstow Community College,CHLD,Child Development,https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=137,coci,suggested by COBI from the hint: Child Development,2026-11-27,COBI,98
+Barstow Community College,POLS,Political Science,https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=197,coci,suggested by COBI from the hint: Political Science,2026-11-27,COBI,98
+Barstow Community College,STAT,Statistics,https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=192,coci,suggested by COBI from the hint: Statistics,2026-11-27,COBI,94
+College of the Redwoods,ART,Art,"https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,art?tenant=redwoods.elumenapp.com",coci,suggested by COBI from the hint: Art,2026-11-27,COBI,98
+College of the Redwoods,ASAM,Asian American Studies,"https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,ethnic-studies?tenant=redwoods.elumenapp.com",coci,suggested by COBI from the hint: Asian American Studies,2026-11-27,COBI,88
+College of the Redwoods,DRAMA,Drama,"https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,drama?tenant=redwoods.elumenapp.com",coci,suggested by COBI from the hint: Theatre Arts,2026-11-27,COBI,88
+College of the Redwoods,HUPA,Hupa,"https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,hupa?tenant=redwoods.elumenapp.com",coci,suggested by COBI from the hint,2026-11-27,COBI,88
+College of the Redwoods,LCAM,Latine and Chicanx Studies,"https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,ethnic-studies?tenant=redwoods.elumenapp.com",coci,suggested by COBI from COCI course titles: 1 Introduction to Latine and Chicanx Studies,2026-11-27,COBI,85
+College of the Redwoods,PTEC,Psychiatric Technician,"https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,psychiatric-technician?tenant=redwoods.elumenapp.com",coci,suggested by COBI from the hint: Process Technology,2026-11-27,COBI,88
+College of the Redwoods,STAT,Statistics,"https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,mathematics?tenant=redwoods.elumenapp.com",coci,suggested by COBI from the hint: Statistics,2026-11-27,COBI,94
+Evergreen Valley College,ART,Art,,coci,suggested by COBI from COCI course titles: 39 Introduction to Digital Video; 66 Introduction to Metalsmithing,2026-11-27,COBI,90
+Evergreen Valley College,DANCE,Dance,,coci,suggested by COBI from the hint: Dance,2026-11-27,COBI,99
+Evergreen Valley College,DISP,Public Safety Dispatcher,,coci,suggested by COBI from COCI course titles: 172 Public Safety Dispatcher-Update,2026-11-27,COBI,85
+Evergreen Valley College,LE,Law Enforcement,,coci,"suggested by COBI from a common subject match; COCI course titles: 154 Basic Police Academy; 160 Basic Police Academy-Modular Format,",2026-11-27,COBI,88
+Evergreen Valley College,MUSIC,Music,,coci,suggested by COBI from the hint: Music,2026-11-27,COBI,99
+Orange Coast College,ART,Art,,coci,suggested by COBI from the hint: Art,2026-11-27,COBI,98
+Orange Coast College,DVP,Display and Vp,,coci,suggested by COBI from COCI course titles: A180 Intro To Display & VP,2026-11-27,COBI,85
+Orange Coast College,EDUC,Education,,coci,suggested by COBI from the hint: Education,2026-11-27,COBI,88
+Orange Coast College,HLED,Health Education,,coci,suggested by COBI from a common subject match; COCI course titles: A111 Cardiopulmonary Resus; A136 Nutritn/Fitness/Perform,2026-11-27,COBI,88
+Orange Coast College,IT,Computer Information Systems,,coci,suggested by COBI from the hint: Computer Information Systems,2026-11-27,COBI,88
+Orange Coast College,STAT,Statistics,,coci,suggested by COBI from the hint: Statistics,2026-11-27,COBI,94
+Reedley College,ART,Art,,coci,suggested by COBI from a common subject match; COCI course titles: 2 Introduction to Visual Culture; 7 Beginning Drawing,2026-11-27,COBI,88
+Reedley College,FILM,Film,,coci,suggested by COBI from the hint: Film,2026-11-27,COBI,88
+Reedley College,FRENCH,French,,coci,suggested by COBI from the hint: French,2026-11-27,COBI,99
+Reedley College,HONORS,Honors,,coci,suggested by COBI from the hint: Honors,2026-11-27,COBI,98
+Reedley College,NR,Natural Resources,,coci,suggested by COBI from the hint: Natural Resources,2026-11-27,COBI,88
+Reedley College,PSYC,Psychology,,coci,suggested by COBI from the hint: Psychology,2026-11-27,COBI,98
+Sacramento City College,ARABIC,Arabic,,coci,suggested by COBI from the hint: Arabic,2026-11-27,COBI,98
+Sacramento City College,ART,Art,,coci,"suggested by COBI from COCI course titles: 394 Wheel Thrown Ceramics, Beginning; 300 Drawing and Composition I",2026-11-27,COBI,90
+Sacramento City College,INDS,Science Technology Engineering and Math,,coci,suggested by COBI from COCI course titles: 370 Introduction to Science Technology Engineering and Math (STEM),2026-11-27,COBI,85
+Sacramento City College,KOREAN,Korean,,coci,suggested by COBI from the hint: Korean,2026-11-27,COBI,88
+Sacramento City College,PNJ,Punjabi,,coci,suggested by COBI from COCI course titles: 499 Experimental Offering in Punjabi,2026-11-27,COBI,88
+Cerro Coso Community College,ART,Art,,coci,suggested by COBI from COCI course titles: C101 Introduction to Art; C105 Survey of Western Art from Prehistory through the Middle Ages,2026-11-27,COBI,90
+Cerro Coso Community College,BUS,Business,,coci,suggested by COBI from the hint: Business,2026-11-27,COBI,88
+Cerro Coso Community College,FILM,Film,,coci,suggested by COBI from a common subject match; COCI course titles: C211 Hispanic Cinema,2026-11-27,COBI,88
+Cerro Coso Community College,HMSV,Human Services,,coci,suggested by COBI from the hint: Human Services,2026-11-27,COBI,98
+Cerro Coso Community College,PHED,Physical Education,,coci,suggested by COBI from the hint: Physical Education,2026-11-27,COBI,95
+Cypress College,AC/R,Air Conditioning and Refrigeration,,coci,suggested by COBI from COCI course titles: 220 C Introduction to Air Conditioning Controls; 273 C Introduction to Personal Computer Hardware and Software; corrected during QA (was: Air Conditioning Controls),2026-11-27,COBI,85
+Cypress College,ACR,Auto Collision Repair,,coci,suggested by COBI from COCI course titles: 020 C Auto Detail/Car Care-Beginning; 021 C Advanced Auto Detailing; corrected during QA (was: Air Conditioning and Refrigeration),2026-11-27,COBI,85
+Cypress College,ART,Art,,coci,suggested by COBI from COCI course titles: 110 C Introduction to Art; 122 C Introduction to Digital Art,2026-11-27,COBI,90
+Cypress College,READ,Reading,,coci,suggested by COBI from the hint: Reading,2026-11-27,COBI,88
+De Anza College,SKIL,Study Skills,,coci,suggested by COBI from COCI course titles: 50 How to Succeed in an Online Class; 232 Adjunct Study Skills,2026-11-27,COBI,90
+MiraCosta College,ART,Art,,coci,suggested by COBI from the hint: Art,2026-11-27,COBI,94
+MiraCosta College,CHLD,Child Development,,coci,suggested by COBI from the hint: Child Development,2026-11-27,COBI,95
+MiraCosta College,FILM,Film,,coci,suggested by COBI from the hint: Film,2026-11-27,COBI,88
+MiraCosta College,PHAR,Pharmacy Technician,,coci,suggested by COBI from a common subject match; COCI course titles: 292 Internship Studies; 299 Occupational Work Experience Education,2026-11-27,COBI,88
+MiraCosta College,SOC,Sociology,,coci,suggested by COBI from a common subject match; COCI course titles: 232 Critical Issues in Chicana and Latina Studies,2026-11-27,COBI,88
+Mt. San Jacinto College,ART,Art,,coci,suggested by COBI from the hint: Art,2026-11-27,COBI,98
+Mt. San Jacinto College,AVIA,Aviation,,coci,suggested by COBI from the hint: Aviation,2026-11-27,COBI,95
+Mt. San Jacinto College,HORT,Horticulture,,coci,suggested by COBI from the hint: Horticulture,2026-11-27,COBI,88
+Mt. San Jacinto College,IPP,Interpreter Preparation,,coci,suggested by COBI from COCI course titles: 510 Introduction to ASL/English Interpreting (formerly IPP-101); 511 Processing Skills Development (formerly IPP-103),2026-11-27,COBI,90
+Mt. San Jacinto College,ORA,Oracle,,coci,suggested by COBI from COCI course titles: 39 Oracle Certification Test Review,2026-11-27,COBI,85
+Riverside City College,ART,Art,,coci,suggested by COBI from COCI course titles: 4 Introduction to Visual Culture; 30A Printmaking-Introduction,2026-11-27,COBI,90
+Riverside City College,EST,Energy and Sustainable Tech,,coci,suggested by COBI from a common subject match; COCI course titles: 22 California Mechanical Codes,2026-11-27,COBI,88
+Saddleback College,ART,Art,,coci,suggested by COBI from a common subject match; COCI course titles: 63 Introduction to Screen Printing; 20 Beginning Graphic Design,2026-11-27,COBI,88
+Saddleback College,CWE,Cooperative Work Experience,,coci,suggested by COBI from a common subject match; COCI course titles: 180 CO-OP-ED - Business,2026-11-27,COBI,88
+Saddleback College,FN,Culinary Arts,,coci,suggested by COBI from the hint: Culinary Arts,2026-11-27,COBI,88
+Saddleback College,HIT,Health Information Technology,,coci,suggested by COBI from the hint: Health Information Technology,2026-11-27,COBI,98
+Saddleback College,MST,Cruising the Channel Islands,,coci,suggested by COBI from COCI course titles: 224 Introduction to Cruising the Channel Islands; 201 Marlinspike Seamanship,2026-11-27,COBI,90
+Saddleback College,PORT,Portuguese,,coci,suggested by COBI from the hint: Portuguese,2026-11-27,COBI,98
+Coastline Community College,ART,Art,,coci,suggested by COBI from the hint: Art,2026-11-27,COBI,99
+Coastline Community College,DGA,Digital Art and Media,,coci,suggested by COBI from COCI course titles: C100 Introduction to Digital Art and Media; C111 3D Animation,2026-11-27,COBI,90
+Coastline Community College,LAW,Law,,coci,suggested by COBI from the hint: Law,2026-11-27,COBI,88
+Coastline Community College,MCOM,"Radio, TV, Film",,coci,"suggested by COBI from COCI course titles: C150 Introduction to Radio, TV, Film; C140 Public Relations",2026-11-27,COBI,90
+College of San Mateo,AOD,Alcohol and Other Drugs,,coci,suggested by COBI from COCI course titles: 680MB Peer Support Specialist Training II; 700 Peer Support Specialist Training I,2026-11-27,COBI,90
+College of San Mateo,ART,Art,,coci,suggested by COBI from COCI course titles: 104 Modern Art; 105 Asian Art and Architecture,2026-11-27,COBI,90
+College of San Mateo,FILM,Film,,coci,suggested by COBI from the hint: Film,2026-11-27,COBI,94
+College of San Mateo,SOSC,Social Sciences,,coci,suggested by COBI from a common subject match; COCI course titles: 301 Introduction to Addiction Studies; 302 Pharm & Phys Effects of Alcoh,2026-11-27,COBI,88
+College of the Siskiyous,AV,Aviation,,coci,suggested by COBI from a common subject match; COCI course titles: 950 Aviation Ground School (Basic),2026-11-27,COBI,88
+College of the Siskiyous,CCT,Computer and Communications Technology,,coci,suggested by COBI from a common subject match; COCI course titles: 9050 Advanced Mill and Cabinet Work,2026-11-27,COBI,88
+College of the Siskiyous,ENVR,Environmental Studies,,coci,suggested by COBI from the hint: Environmental Studies,2026-11-27,COBI,95
+College of the Siskiyous,NR,Natural Resources,,coci,suggested by COBI from the hint: Natural Resources,2026-11-27,COBI,88
+Columbia College,ART,Art,,coci,suggested by COBI from COCI course titles: 17 Introduction to Graphic Design; 43 Introduction to Digital Photography,2026-11-27,COBI,90
+Columbia College,DRAMA,The Theatre,,coci,suggested by COBI from COCI course titles: 10 Introduction to the Theatre; 20 Oral Expression and Interpretation,2026-11-27,COBI,90
+Columbia College,MUSIC,Music,,coci,suggested by COBI from the hint: Music,2026-11-27,COBI,99
+Columbia College,NURSE,Nursing,,coci,suggested by COBI from a common subject match; COCI course titles: 100 Nurse Assistant; 153 Certified Home Health Aide,2026-11-27,COBI,88
+Columbia College,TUTOR,Supervised Learning Assistance,,coci,suggested by COBI from the hint: Supervised Learning Assistance,2026-11-27,COBI,88
+Cosumnes River College,ART,Art,,coci,suggested by COBI from a common subject match; COCI course titles: 325 Introduction to Graphic Design; 338 Introduction to Digital Painting I,2026-11-27,COBI,88
+Cosumnes River College,DANCE,Dance,,coci,suggested by COBI from the hint: Dance,2026-11-27,COBI,98
+Folsom Lake College,ADAPT,Adapted Physical Education,,coci,suggested by COBI from the hint: Adapted Physical Education,2026-11-27,COBI,98
+Folsom Lake College,AI,Artificial Intelligence and Machine Learning,,coci,suggested by COBI from the hint: Artificial Intelligence and Machine Learning,2026-11-27,COBI,98
+Folsom Lake College,ART,Art,,coci,suggested by COBI from a common subject match; COCI course titles: 402 Beginning Clay Sculpture; 300 Drawing and Composition I,2026-11-27,COBI,88
+Folsom Lake College,FIRE,Fire Technology,,coci,suggested by COBI from the hint: Fire Technology,2026-11-27,COBI,94
+Folsom Lake College,FT,Fire Technology,,coci,suggested by COBI from the hint: Fire Technology,2026-11-27,COBI,99
+Fullerton College,ART,Art,,coci,suggested by COBI from COCI course titles: 131 F Introduction to Printmaking; 090 F Advanced Topics in Art; corrected during QA (was: Business of Art),2026-11-27,COBI,85
+Fullerton College,GEOL,Geology,,coci,suggested by COBI from the hint: Geology,2026-11-27,COBI,88
+Fullerton College,PHSC,Physical Science,,coci,suggested by COBI from the hint: Physical Science,2026-11-27,COBI,88
+Fullerton College,SPCH,Speech,,coci,suggested by COBI from a common subject match; COCI course titles: 105 Interpersonal Communication; 120 F Intercultural Communication,2026-11-27,COBI,88
+Laney College,ART,Art,,coci,suggested by COBI from COCI course titles: 1 Introduction to Art History; 129 Introduction to Mural Art,2026-11-27,COBI,90
+Laney College,DANCE,Dance,,coci,"suggested by COBI from a common subject match; COCI course titles: 1 History of Dance; 6 Dance Production, Rehearsal and Performance",2026-11-27,COBI,88
+Laney College,MEDIA,Media Communications,,coci,"suggested by COBI from COCI course titles: 104 Beginning Digital Video Production; 130 Final Cut Pro I: Beginning Nonlinear Editing for Video, Broadcast and Digital Cinematography",2026-11-27,COBI,90
+Laney College,MUSIC,Music,,coci,suggested by COBI from the hint: Music,2026-11-27,COBI,99
+Long Beach City College,BARB,Barbering,,coci,suggested by COBI from the hint: Barbering,2026-11-27,COBI,99
+Long Beach City College,DRAFT,Drafting,,coci,suggested by COBI from a common subject match; COCI course titles: 221 Intermediate CATIA,2026-11-27,COBI,88
+Long Beach City College,HS,Homeland Security Admin,,coci,suggested by COBI from a college naming pattern; COCI course titles: 71 WE: Human Services,2026-11-27,COBI,84
+Long Beach City College,HVAC/R,"Heating, Ventilation, Air Conditioning, and Refrigeration",,coci,suggested by COBI from a common subject match; COCI course titles: 200 HVAC/R Equipment and Components; 202 Mechanical and Safety for HVAC/R,2026-11-27,COBI,88
+Long Beach City College,SHOWB,Show Business,,coci,suggested by COBI from the hint: Show Business,2026-11-27,COBI,80
+Los Medanos College,ART,Art,https://lmc.elumenapp.com/catalog/26-27/art,coci,suggested by COBI from the hint: Art,2026-11-27,COBI,94
+Los Medanos College,CNT,Computer Science,https://lmc.elumenapp.com/catalog/26-27/computerscience,coci,suggested by COBI from the hint: Computer Network Technology,2026-11-27,COBI,88
+Los Medanos College,ECE,Child Development/Early Childhood Education,https://lmc.elumenapp.com/catalog/26-27/childdevelopment/earlychildhoodeducation,coci,suggested by COBI from the hint: Child Development,2026-11-27,COBI,88
+Los Medanos College,MUSIC,Music,https://lmc.elumenapp.com/catalog/26-27/music,coci,suggested by COBI from the hint: Music,2026-11-27,COBI,99
+Los Medanos College,STAT,Statistics,https://lmc.elumenapp.com/catalog/26-27/mathematics,coci,suggested by COBI from the hint: Statistics,2026-11-27,COBI,94
+Norco College,ART,Art,,coci,"suggested by COBI from COCI course titles: 31 Introduction to Exhibitions: History, Theory, and Practice; 36A Computer Art-Introduction",2026-11-27,COBI,90
+San Jose City College,BIOLOGY,Biology,,coci,suggested by COBI from a common subject match; COCI course titles: 98 Directed Study,2026-11-27,COBI,88
+Shasta College,AGVETT,Veterinary Technology,,coci,"suggested by COBI from COCI course titles: 1 Vet Anatomy, Physiology & Med Term; 2 Fundamentals of Animal Health",2026-11-27,COBI,90
+Shasta College,ART,Art,,coci,suggested by COBI from COCI course titles: 1 Introduction to Art; 72 Introduction to Digital Art,2026-11-27,COBI,90
+Shasta College,ENER,Energy Technology,,coci,suggested by COBI from COCI course titles: 101 Photovoltaic Technology I; 102 Photovoltaic Technology II; corrected during QA (was: Engineering),2026-11-27,COBI,85
+Shasta College,REAL,Real Estate,,coci,suggested by COBI from the hint: Real Estate,2026-11-27,COBI,98
+Shasta College,RUSS,Russian,,coci,suggested by COBI from the hint: Russian,2026-11-27,COBI,99
+Ventura College,ART,Art,,coci,suggested by COBI from the hint: Art,2026-11-27,COBI,94
+Ventura College,FILM,Film,,coci,suggested by COBI from the hint: Film,2026-11-27,COBI,88
+Ventura College,PSYC,Psychology,,coci,suggested by COBI from the hint: Psychology,2026-11-27,COBI,94
+Ventura College,STAT,Statistics,,coci,suggested by COBI from the hint: Statistics,2026-11-27,COBI,94
+Chabot College,MICR,Microbiology,,coci,suggested by COBI from the hint: Microbiology,2026-11-27,COBI,95
+Chabot College,PHEA,Athletics,,coci,suggested by COBI from the hint: Athletics,2026-11-27,COBI,88
+Chabot College,PHEACJUD,Physical Education,,coci,suggested by COBI from the hint: Physical Education,2026-11-27,COBI,88
+Citrus College,ART,Art,,coci,suggested by COBI from the hint: Art,2026-11-27,COBI,98
+Citrus College,CIS,Computer Information Systems,,coci,suggested by COBI from the hint: Computer Information Systems,2026-11-27,COBI,98
+Citrus College,GAME,Game Design,,coci,suggested by COBI from the hint: Game Design,2026-11-27,COBI,95
+Citrus College,MUS,Music-Commercial,,coci,suggested by COBI from the hint: Music-Commercial,2026-11-27,COBI,99
+Compton College,ART,Art,,coci,suggested by COBI from COCI course titles: 101 Art and Visual Culture: A Global Perspective; 103 History of Western Art - Proto-Renaissance to 19th Century,2026-11-27,COBI,90
+Compton College,JOUR,Journalism,,coci,suggested by COBI from a common subject match; COCI course titles: 101 News Writing and Reporting; 108 Advanced Reporting and News Editing,2026-11-27,COBI,88
+Compton College,LAW,Law,,coci,suggested by COBI from the hint: Law,2026-11-27,COBI,88
+Compton College,TUTR,Tutoring,,coci,suggested by COBI from the hint: Tutoring,2026-11-27,COBI,88
+Gavilan College,ART,Art,,coci,suggested by COBI from COCI course titles: 8A Introduction to Photography; 7A Beginning Ceramics,2026-11-27,COBI,90
+Gavilan College,COUN,Counseling,,coci,"suggested by COBI from COCI course titles: 52 Peer Mentoring, Education, and Leadership; corrected during QA (was: Communication Studies)",2026-11-27,COBI,80
+Gavilan College,CSIS,Computer and Information Science,,coci,suggested by COBI from the hint: Computer and Information Science,2026-11-27,COBI,94
+Gavilan College,GUID,Learning Skills Laboratory,,coci,suggested by COBI from COCI course titles: 558A Introduction to Learning Skills Laboratory; 600 Introduction to Job Coaching,2026-11-27,COBI,90
+Santa Ana College,CAR,Critical and Academic Reading,,coci,suggested by COBI from the hint: Critical and Academic Reading,2026-11-27,COBI,98
+Santa Ana College,READ,English - Reading,,coci,suggested by COBI from the hint: English - Reading,2026-11-27,COBI,99
+Santa Barbara City College,ART,Art,,coci,suggested by COBI from the hint: Art,2026-11-27,COBI,98
+Santa Barbara City College,ES,Ethnic Studies,,coci,suggested by COBI from the hint: Ethnic Studies,2026-11-27,COBI,88
+Santa Barbara City College,KOR,Korean,,coci,suggested by COBI from the hint: Korean,2026-11-27,COBI,99
+Santa Barbara City College,LATN,Latin,,coci,suggested by COBI from the hint: Latin,2026-11-27,COBI,95
+Sierra College,ARHI,Art History,,coci,suggested by COBI from the hint: Art History,2026-11-27,COBI,88
+Sierra College,ART,Art,,coci,suggested by COBI from a common subject match; COCI course titles: 0032A Introduction to Fiber Arts; 41 Introduction to Jewelry and Metalsmithing,2026-11-27,COBI,88
+Sierra College,PHED,Physical Education,,coci,suggested by COBI from the hint: Physical Education,2026-11-27,COBI,95
+Antelope Valley College,ART,Art,"https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,art?tenant=avc.elumenapp.com",coci,suggested by COBI from the hint: Art,2026-11-27,COBI,98
+Antelope Valley College,PSYC,Psychology,"https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,psychology?tenant=avc.elumenapp.com",coci,suggested by COBI from the hint: Psychology,2026-11-27,COBI,94
+Antelope Valley College,STAT,Statistics,"https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,mathematics?tenant=avc.elumenapp.com",coci,suggested by COBI from the hint: Statistics,2026-11-27,COBI,94
+Cabrillo College,ART,Art,,coci,suggested by COBI from a common subject match; COCI course titles: 1A Introduction to Art-Making Practices; 10A Beginning Color on Metal,2026-11-27,COBI,88
+Cabrillo College,DANCE,Dance,,coci,suggested by COBI from the hint: Dance,2026-11-27,COBI,98
+Cabrillo College,READ,Reading,,coci,suggested by COBI from a common subject match; COCI course titles: 152 Read Math Intro to Calculus; 205 Introduction to College Reading,2026-11-27,COBI,88
+Clovis Community College,FSAP,Food Safety,,coci,suggested by COBI from the hint: Food Safety,2026-11-27,COBI,80
+Clovis Community College,MECH,Mechatronics/Industrial Automation,,coci,suggested by COBI from the hint: Mechatronics/Industrial Automation,2026-11-27,COBI,94
+Clovis Community College,REHT,Rehabilitation Aide,,coci,suggested by COBI from the hint: Rehabilitation Aide,2026-11-27,COBI,80
+Coalinga College,ART,Art,,coci,suggested by COBI from COCI course titles: 013A Beginning Ceramics; 015A Beginning Painting,2026-11-27,COBI,90
+Coalinga College,MATH,Mathematics,,coci,suggested by COBI from the hint: Mathematics,2026-11-27,COBI,99
+Coalinga College,PHYSICS,Physics,,coci,suggested by COBI from the hint: Physics,2026-11-27,COBI,99
+Los Angeles Valley College,CO INFO,Computer Information,,coci,suggested by COBI from a common subject match; COCI course titles: 837 Operating Systems - Intermediate Linux; 838 Operating Systems - Advanced Linux,2026-11-27,COBI,88
+Los Angeles Valley College,CO SCI,Computer Science,,coci,suggested by COBI from the hint: Computer Science,2026-11-27,COBI,90
+Napa Valley College,ARTS,Art,,coci,suggested by COBI from the hint: Art,2026-11-27,COBI,98
+Napa Valley College,FILM,Film,,coci,suggested by COBI from the hint: Film,2026-11-27,COBI,88
+Palo Verde College,ART,Art CCN,,coci,suggested by COBI from the hint: Art CCN,2026-11-27,COBI,96
+Palo Verde College,MUS,Music,,coci,suggested by COBI from the hint: Music,2026-11-27,COBI,99
+Palo Verde College,THA,Theatre Arts,,coci,suggested by COBI from the hint: Theatre Arts,2026-11-27,COBI,88
+Pasadena City College,ART,Art,,coci,suggested by COBI from COCI course titles: 038A Introduction to Ceramics; 40 Introduction to Digital Arts,2026-11-27,COBI,90
+Pasadena City College,DLT,Dental Laboratory Technology,,coci,suggested by COBI from COCI course titles: 201A Directed Studies in Basic Dental Laboratory Techniques; 201B Directed Studies in Intermediate Dental Laboratory Techniques,2026-11-27,COBI,90
+West Los Angeles College,AVIATEK,Aviation Technology,,coci,suggested by COBI from the hint: Aviation Technology,2026-11-27,COBI,80
+West Los Angeles College,THEATER,Theater,,coci,suggested by COBI from the hint: Theater,2026-11-27,COBI,88
+Woodland Community College,ART,Art,,coci,suggested by COBI from the hint: Art,2026-11-27,COBI,98
+Woodland Community College,MUSIC,Music,,coci,suggested by COBI from the hint: Music,2026-11-27,COBI,99
+Butte College,ART,Art,,coci,suggested by COBI from COCI course titles: 81 Introduction to Fiber Arts; 50 Beginning Ceramics,2026-11-27,COBI,90
+Butte College,HUM,Humanities,,coci,suggested by COBI from a common subject match; COCI course titles: 22 Greco-Roman Cultures,2026-11-27,COBI,88
+Cuyamaca College,ART,Art,,coci,suggested by COBI from a common subject match; COCI course titles: 184 Introduction to Animation; 210 Introduction to Printmaking,2026-11-27,COBI,88
+Cuyamaca College,STEM,"Science, Technology, Engineering, and Mathematics",,coci,suggested by COBI from a common subject match; COCI course titles: 101 Introduction to College Success in STEM,2026-11-27,COBI,88
+Imperial Valley College,ART,Art,,coci,suggested by COBI from COCI course titles: 170 Photography - Beginning; 100 History of Art I,2026-11-27,COBI,90
+Las Positas College,APCT,Teamsters Apprenticeship,,coci,suggested by COBI from COCI course titles: 5ALB Teamsters 5 Axle and Low Bed Driver; 94 Work Experience - Teamsters Apprenticeship; corrected during QA (was: Apprenticeship Marine Technology),2026-11-27,COBI,85
+Las Positas College,ARTS,Art,,coci,suggested by COBI from COCI course titles: 2A Introduction to Drawing; 7A Introduction to Watercolor Painting; corrected during QA (was: Art: Emphasis in Painting),2026-11-27,COBI,85
+Merced College,POLS,Political Science,,coci,suggested by COBI from the hint: Political Science,2026-11-27,COBI,98
+Modesto Junior College,ART,Art,,coci,suggested by COBI from the hint: Art,2026-11-27,COBI,98
+Modesto Junior College,DANCE,Dance,,coci,suggested by COBI from the hint: Dance,2026-11-27,COBI,98
+San Diego Miramar College,ARTG,Graphic Design,,coci,suggested by COBI from COCI course titles: 100 Basic Graphic Design; corrected during QA (was: Art-Fine Art),2026-11-27,COBI,80
+San Diego Miramar College,DSPS,Disability Support Programs and Services,,coci,suggested by COBI from a common subject match; COCI course titles: 21 Accessible Computing Lab,2026-11-27,COBI,88
+Berkeley City College,MUSIC,Music,,coci,suggested by COBI from the hint: Music,2026-11-27,COBI,98
+College of the Sequoias,ART,Art,,coci,suggested by COBI from a common subject match; COCI course titles: 23 Introduction to Digital Art; 80 Introduction to Digital Photography - Fine Art Emphasis,2026-11-27,COBI,88
+Cuesta College,ART,Art,,coci,suggested by COBI from COCI course titles: 280 Ceramics I: Introduction to Ceramics; 193 Art Special Topic,2026-11-27,COBI,90
+Foothill College,ART,Art,,coci,suggested by COBI from the hint: Art,2026-11-27,COBI,97
+Los Angeles City College,E.S.L.,English as a Second Language,,coci,suggested by COBI from COCI course titles: 003A College Esl Iii: Writing And Grammar; 003B College Esl Iii: Reading And Vocabulary; corrected during QA (was: English as a Second Language-12),2026-11-27,COBI,85
+Los Angeles Harbor College,A S,American Sign Language,,coci,suggested by COBI from a college naming pattern; COCI course titles: L American Sign Language I,2026-11-27,COBI,84
+Palomar College,ART,Art,,coci,suggested by COBI from COCI course titles: 100 Introduction To Art; 125 Introduction To Portraiture; corrected during QA (was: Art-Design),2026-11-27,COBI,85
+Porterville College,ART,Art,,coci,suggested by COBI from a common subject match; COCI course titles: P116 Introduction to Painting; P123 Introduction to Sculpture,2026-11-27,COBI,88
+Rio Hondo College,ART,Art,,coci,suggested by COBI from COCI course titles: 101 Introduction to Studio Arts; 142 Introduction to Ceramic Handbuilding,2026-11-27,COBI,90
+San Diego Mesa College,BLDC,Building Construction,,coci,suggested by COBI from the hint: Building Construction,2026-11-27,COBI,94
+Taft College,ART,Art,,coci,suggested by COBI from a common subject match; COCI course titles: 1800 Introduction to Digital Art; 1860 Intro to Computer Animation Fo,2026-11-27,COBI,88

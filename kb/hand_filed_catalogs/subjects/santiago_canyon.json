@@ -177,6 +177,22 @@
    "run": "45629589579"
   },
   {
+   "code": "AMM",
+   "heading": "Maintenance Mechanic - Apprenticeship",
+   "heading_printed": "Maintenance Mechanic - Apprenticeship",
+   "rule": "index",
+   "codes": [
+    "AMM"
+   ],
+   "candidate": null,
+   "address": "https://sccollege.elumenapp.com/catalog/2024-2025/program/maintenance-mechanic-as-spring-intersession-2020",
+   "where": "web",
+   "method": "COBI overnight review, approved by Sam Lee:  SCC catalog Maintenance Mechanic A.S./C.A. uses AMM021-AMM028 (Period 1-8) for Metropolitan Water District apprentices. AME is already titled Maintenance Mechanic - Apprenticeship with different course numbers (21, 52-58); do not fold AMM into AME.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "ANTH",
    "heading": "Anthropology",
    "heading_printed": "ANTHROPOLOGY",
@@ -1217,6 +1233,6 @@
    "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   }
  ],
- "subjects": 72,
- "with_heading": 72
+ "subjects": 73,
+ "with_heading": 73
 }

@@ -697,6 +697,22 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "STUDEV",
+   "heading": "Student Development",
+   "heading_printed": "Student Development",
+   "rule": "index",
+   "codes": [
+    "STUDEV"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI STUDEV 1 College Success; 3 Career Exploration",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "SW",
    "heading": "Social Work",
    "heading_printed": "Social Work",
@@ -729,6 +745,6 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   }
  ],
- "subjects": 43,
- "with_heading": 43
+ "subjects": 44,
+ "with_heading": 44
 }

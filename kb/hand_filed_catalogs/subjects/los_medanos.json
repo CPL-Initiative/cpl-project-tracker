@@ -203,6 +203,22 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "CNT",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "index",
+   "codes": [
+    "CNT"
+   ],
+   "candidate": null,
+   "address": "https://lmc.elumenapp.com/catalog/26-27/computerscience",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Computer Network Technology",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv"
+  },
+  {
    "code": "COMM",
    "heading": "Communication Studies",
    "heading_printed": "Communication Studies",
@@ -297,6 +313,22 @@
    "found_on": "2026-11-25",
    "found_by": "Subjects",
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ECE",
+   "heading": "Child Development/Early Childhood Education",
+   "heading_printed": "Child Development/Early Childhood Education",
+   "rule": "index",
+   "codes": [
+    "ECE"
+   ],
+   "candidate": null,
+   "address": "https://lmc.elumenapp.com/catalog/26-27/childdevelopment/earlychildhoodeducation",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Child Development",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv"
   },
   {
    "code": "ECON",
@@ -891,6 +923,22 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://lmc.elumenapp.com/catalog/26-27/mathematics",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Statistics",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv"
+  },
+  {
    "code": "VONUR",
    "heading": "Nursing - Vocational",
    "heading_printed": "Nursing - Vocational",
@@ -939,6 +987,6 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   }
  ],
- "subjects": 55,
- "with_heading": 55
+ "subjects": 58,
+ "with_heading": 58
 }

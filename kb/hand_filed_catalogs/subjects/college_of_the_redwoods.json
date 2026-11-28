@@ -161,6 +161,22 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "ASAM",
+   "heading": "Asian American Studies",
+   "heading_printed": "Asian American Studies",
+   "rule": "index",
+   "codes": [
+    "ASAM"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,ethnic-studies?tenant=redwoods.elumenapp.com",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Asian American Studies",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv"
+  },
+  {
    "code": "ASTRO",
    "heading": "Astronomy",
    "heading_printed": "Astronomy",
@@ -673,6 +689,22 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "LCAM",
+   "heading": "Latine and Chicanx Studies",
+   "heading_printed": "Latine and Chicanx Studies",
+   "rule": "index",
+   "codes": [
+    "LCAM"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,ethnic-studies?tenant=redwoods.elumenapp.com",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 1 Introduction to Latine and Chicanx Studies",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv"
+  },
+  {
    "code": "LIBR",
    "heading": "Library",
    "heading_printed": "Library",
@@ -913,6 +945,22 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "PTEC",
+   "heading": "Psychiatric Technician",
+   "heading_printed": "Psychiatric Technician",
+   "rule": "index",
+   "codes": [
+    "PTEC"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,psychiatric-technician?tenant=redwoods.elumenapp.com",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Process Technology",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv"
+  },
+  {
    "code": "READ",
    "heading": "Reading",
    "heading_printed": "Reading",
@@ -1007,6 +1055,22 @@
    "found_on": "2026-11-25",
    "found_by": "Subjects",
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,mathematics?tenant=redwoods.elumenapp.com",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Statistics",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv"
   },
   {
    "code": "SWHS",
@@ -1105,6 +1169,6 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   }
  ],
- "subjects": 65,
- "with_heading": 65
+ "subjects": 69,
+ "with_heading": 69
 }

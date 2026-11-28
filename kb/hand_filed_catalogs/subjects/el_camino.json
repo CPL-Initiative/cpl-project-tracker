@@ -8,7 +8,7 @@
   "https://gist.githubusercontent.com/cobi-cto/a30b98d33dcbf8070ca5b313eaa2bff5/raw/el-camino-2026-27-catalog-part-03-of-03.txt"
  ],
  "subjects": 99,
- "with_heading": 85,
+ "with_heading": 86,
  "rows": [
   {
    "code": "ACR",
@@ -678,9 +678,9 @@
   },
   {
    "code": "ECHT",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
+   "heading": "Electronics and Computer Hardware Technology",
+   "heading_printed": "Electronics and Computer Hardware Technology",
+   "rule": "index",
    "codes": [
     "ECHT"
    ],
@@ -692,7 +692,13 @@
     "(formerly Educational Development 40)",
     "Electronics and Computer Hardware Technology"
    ],
-   "first_course": "ECHT 11 - Introduction to Electronics"
+   "first_course": "ECHT 11 - Introduction to Electronics",
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI ECHT 11 Introduction to Electronics",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   },
   {
    "code": "ECON",

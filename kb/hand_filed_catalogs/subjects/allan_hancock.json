@@ -428,6 +428,22 @@
    "run": "45626743727"
   },
   {
+   "code": "COMPC",
+   "heading": "Computer Applications",
+   "heading_printed": "Computer Applications",
+   "rule": "index",
+   "codes": [
+    "COMPC"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI COMPC (COCI fields shifted; no course title)",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "COS",
    "heading": "Cosmetology",
    "heading_printed": "Cosmetology",
@@ -794,6 +810,22 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626743727)",
    "run": "45626743727"
+  },
+  {
+   "code": "ENV",
+   "heading": "Environmental Studies",
+   "heading_printed": "Environmental Studies",
+   "rule": "index",
+   "codes": [
+    "ENV"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI ENV (COCI fields shifted)",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   },
   {
    "code": "ENVT",
@@ -1212,6 +1244,38 @@
    "run": "45626743727"
   },
   {
+   "code": "INT ST",
+   "heading": "International Studies",
+   "heading_printed": "International Studies",
+   "rule": "index",
+   "codes": [
+    "INT ST"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI INT ST (COCI fields shifted)",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
+   "code": "IT",
+   "heading": "Industrial Technology",
+   "heading_printed": "Industrial Technology",
+   "rule": "index",
+   "codes": [
+    "IT"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI IT (COCI fields shifted)",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "KIN",
    "heading": "Kinesiology",
    "heading_printed": "Kinesiology",
@@ -1242,6 +1306,22 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626743727)",
    "run": "45626743727"
+  },
+  {
+   "code": "LC",
+   "heading": "Learning Center",
+   "heading_printed": "Learning Center",
+   "rule": "index",
+   "codes": [
+    "LC"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI LC (COCI fields shifted)",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   },
   {
    "code": "LDER",
@@ -1660,6 +1740,22 @@
    "run": "45626743727"
   },
   {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI PSYC C1000 Introduction to Psychology (CCN prefix; kept separate from PSY)",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "RE",
    "heading": "Real Estate",
    "heading_printed": "Real Estate",
@@ -1740,6 +1836,22 @@
    "run": "45626743727"
   },
   {
+   "code": "SGNLNG",
+   "heading": "Sign Language",
+   "heading_printed": "Sign Language",
+   "rule": "index",
+   "codes": [
+    "SGNLNG"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI SGNLNG 120/122/136 (no COCI titles; legacy code, likely now ASL)",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "SOC",
    "heading": "Sociology",
    "heading_printed": "Sociology",
@@ -1756,6 +1868,38 @@
    "run": "45626743727"
   },
   {
+   "code": "SOC SC",
+   "heading": "Social Science",
+   "heading_printed": "Social Science",
+   "rule": "index",
+   "codes": [
+    "SOC SC"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI SOC SC (COCI fields shifted)",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
+   "code": "SPACE",
+   "heading": "Space Technology",
+   "heading_printed": "Space Technology",
+   "rule": "index",
+   "codes": [
+    "SPACE"
+   ],
+   "candidate": null,
+   "address": "https://www.hancockcollege.edu/publicaffairs/documents/CommunityNewsS06.pdf",
+   "where": "person",
+   "method": "named by Sam Lee: Hancock Community News 2006 lists SPACE 102 Introduction to Space (SpaceTEC / space operations); successor code AERO from Fall 2027",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "SPAN",
    "heading": "Spanish",
    "heading_printed": "Spanish",
@@ -1770,6 +1914,38 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626743727)",
    "run": "45626743727"
+  },
+  {
+   "code": "SPCOM",
+   "heading": "Speech Communication",
+   "heading_printed": "Speech Communication",
+   "rule": "index",
+   "codes": [
+    "SPCOM"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI SPCOM (COCI fields shifted)",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
+   "code": "SPECI",
+   "heading": "Special Instruction",
+   "heading_printed": "Special Instruction",
+   "rule": "index",
+   "codes": [
+    "SPECI"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI SPECI (holds SGNLNG 120/122)",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   },
   {
    "code": "STEM",
@@ -1996,6 +2172,6 @@
    "run": "45626743727"
   }
  ],
- "subjects": 123,
- "with_heading": 123
+ "subjects": 134,
+ "with_heading": 134
 }

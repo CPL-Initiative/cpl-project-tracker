@@ -494,6 +494,22 @@
    "run": "45630267572"
   },
   {
+   "code": "LCTR",
+   "heading": "Learning Center",
+   "heading_printed": "Learning Center",
+   "rule": "index",
+   "codes": [
+    "LCTR"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI LCTR 100 Effective Tutoring and Practicum",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "LEGL",
    "heading": "Paralegal Studies",
    "heading_printed": "Paralegal Studies",
@@ -798,6 +814,6 @@
    "run": "45630267572"
   }
  ],
- "subjects": 47,
- "with_heading": 47
+ "subjects": 48,
+ "with_heading": 48
 }

@@ -969,6 +969,22 @@
    "run": "45630168042"
   },
   {
+   "code": "SSC",
+   "heading": "Social Science",
+   "heading_printed": "Social Science",
+   "rule": "index",
+   "codes": [
+    "SSC"
+   ],
+   "candidate": null,
+   "address": "https://www1.marin.edu/sites/default/files/Catalog-2020-21.pdf",
+   "where": "web",
+   "method": "COBI overnight review, approved by Sam Lee:  2020-21 College of Marin catalog heading is \"Social Science – SSC\" (p. 239), including SSC 115 Leadership & Governance and SSC 215 Survey of Current Issues. Overnight Student Leadership was too narrow. Twin code S SC is recommended as a fold to SSC.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "STAT",
    "heading": "Statistics",
    "heading_printed": "Statistics",
@@ -1081,6 +1097,6 @@
    "run": "45630168042"
   }
  ],
- "subjects": 67,
- "with_heading": 67
+ "subjects": 68,
+ "with_heading": 68
 }

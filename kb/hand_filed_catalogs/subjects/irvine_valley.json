@@ -441,6 +441,22 @@
    "run": "45630333350"
   },
   {
+   "code": "ESS",
+   "heading": "English: Special Services",
+   "heading_printed": "English: Special Services",
+   "rule": "index",
+   "codes": [
+    "ESS"
+   ],
+   "candidate": null,
+   "address": "https://www.ivc.edu/sites/default/files/catalog/archive/2017-2018.pdf",
+   "where": "web",
+   "method": "COBI overnight review, approved by Sam Lee:  2017-18 IVC catalog heading is \"English: Special Services\" immediately above ESS 310/315/340/345 (learning-disability grammar, reading, and practicum). Not Environmental Sciences. GAI's Essential Skills / Educational Support Services were guesses; the catalog heading is clearer. Courses were deleted effective Fall 2022.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "ET",
    "heading": "Electronic Technology",
    "heading_printed": "Electronic Technology",
@@ -1129,6 +1145,6 @@
    "run": "45630333350"
   }
  ],
- "subjects": 70,
- "with_heading": 70
+ "subjects": 71,
+ "with_heading": 71
 }

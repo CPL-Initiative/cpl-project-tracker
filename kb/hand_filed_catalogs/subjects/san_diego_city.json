@@ -537,6 +537,22 @@
    "run": "45629512231"
   },
   {
+   "code": "EGEE",
+   "heading": "Energy and Geo-Environmental Engineering",
+   "heading_printed": "Energy and Geo-Environmental Engineering",
+   "rule": "index",
+   "codes": [
+    "EGEE"
+   ],
+   "candidate": null,
+   "address": "https://www.sdcity.edu/academics/schools-programs/business-it-cosmo/energy/index.aspx",
+   "where": "web",
+   "method": "COBI overnight review, approved by Sam Lee:  College program page is titled Energy and Geo-Environmental Engineering (EGEE) and lists the same courses (Building Science Principles, Air Quality Management, Energy Industry Principles, Solar, Energy Storage). GAI's expansion is confirmed, not invented.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "ELAC",
    "heading": "English Language Acquisition",
    "heading_printed": "English Language Acquisition",
@@ -1353,6 +1369,6 @@
    "run": "45629512231"
   }
  ],
- "subjects": 84,
- "with_heading": 84
+ "subjects": 85,
+ "with_heading": 85
 }

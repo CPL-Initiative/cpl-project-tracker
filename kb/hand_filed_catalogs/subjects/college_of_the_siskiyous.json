@@ -602,6 +602,22 @@
    "run": "45631971415"
   },
   {
+   "code": "MUSI",
+   "heading": "Music Industry",
+   "heading_printed": "Music Industry",
+   "rule": "index",
+   "codes": [
+    "MUSI"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos23-24catalog/musi",
+   "where": "web",
+   "method": "COBI overnight review, approved by Sam Lee:  Do not fold to MUS. Official catalog heading is MUSI - Music Industry (Computer Music Technology, Live Audio, Studio Recording). MUS is already titled Music and holds theory/ensemble/piano courses.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "NURS",
    "heading": "Nursing",
    "heading_printed": "Nursing",
@@ -874,6 +890,6 @@
    "run": "45631971415"
   }
  ],
- "subjects": 54,
- "with_heading": 54
+ "subjects": 55,
+ "with_heading": 55
 }

@@ -548,6 +548,22 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "MCOMM",
+   "heading": "Mass Communications",
+   "heading_printed": "Mass Communications",
+   "rule": "index",
+   "codes": [
+    "MCOMM"
+   ],
+   "candidate": null,
+   "address": "https://yc.yccd.edu/academics/language-arts/mass-communications/",
+   "where": "web",
+   "method": "COBI overnight review, approved by Sam Lee:  Department pages and the catalog program list use Mass Communications (plural). Degree titles sometimes say Mass Communication (singular); kept the college's department wording. COCI includes Introduction to Electronic Media and Introduction to Media Writing.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "MFGT",
    "heading": "Manufacturing Technology",
    "heading_printed": "Manufacturing Technology",
@@ -674,6 +690,22 @@
    "found_on": "2026-11-25",
    "found_by": "COBIx",
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "PSYCT",
+   "heading": "Psychiatric Technology",
+   "heading_printed": "Psychiatric Technology",
+   "rule": "index",
+   "codes": [
+    "PSYCT"
+   ],
+   "candidate": null,
+   "address": "https://yc.yccd.edu/academics/career-technical-education/psych-tech/",
+   "where": "web",
+   "method": "COBI overnight review, approved by Sam Lee:  Yuba catalog/program heading is Psychiatric Technology; career/certificate pages also say Psychiatric Technician. Used the program heading. Courses include Psychiatric Disorders, Nursing Science, and Developmental Disabilities.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   },
   {
    "code": "RADT",
@@ -836,6 +868,6 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   }
  ],
- "subjects": 49,
- "with_heading": 49
+ "subjects": 51,
+ "with_heading": 51
 }

@@ -265,6 +265,22 @@
    "run": "45623798209"
   },
   {
+   "code": "DES",
+   "heading": "Drafting and Engineering Support",
+   "heading_printed": "Drafting and Engineering Support",
+   "rule": "index",
+   "codes": [
+    "DES"
+   ],
+   "candidate": null,
+   "address": "https://catalog.sierracollege.edu/course-outlines/des-0095/",
+   "where": "web",
+   "method": "COBI overnight review, approved by Sam Lee:  Official DES title is Drafting and Engineering Support (COCI also has 95 Internship in Drafting and Engineering Support; DES 1/2 Technical Drafting). Later moved into Advanced Manufacturing. Not Drafting and Design.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "DFST",
    "heading": "Deaf Studies",
    "heading_printed": "Deaf Studies",
@@ -985,6 +1001,6 @@
    "run": "45623798209"
   }
  ],
- "subjects": 61,
- "with_heading": 61
+ "subjects": 62,
+ "with_heading": 62
 }

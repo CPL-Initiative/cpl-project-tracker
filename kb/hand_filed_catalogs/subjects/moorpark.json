@@ -712,6 +712,22 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "LAT",
+   "heading": "Latin",
+   "heading_printed": "Latin",
+   "rule": "index",
+   "codes": [
+    "LAT"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI LAT M100 Elementary Latin I",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "LS",
    "heading": "Learning Skills",
    "heading_printed": "Learning Skills",
@@ -920,6 +936,22 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI PSYC C1000 Introduction to Psychology (CCN prefix; kept separate from PSY)",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "SJS",
    "heading": "Social Justice Studies",
    "heading_printed": "Social Justice Studies",
@@ -984,6 +1016,6 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   }
  ],
- "subjects": 57,
- "with_heading": 57
+ "subjects": 59,
+ "with_heading": 59
 }

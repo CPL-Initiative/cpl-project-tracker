@@ -612,6 +612,22 @@
    "run": "45625259489"
   },
   {
+   "code": "CONTCH",
+   "heading": "Construction Technology",
+   "heading_printed": "Construction Technology",
+   "rule": "index",
+   "codes": [
+    "CONTCH"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI CONTCH 72 California Occupational Safety and Health",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "CORT",
    "heading": "Court Reporting",
    "heading_printed": "Court Reporting",
@@ -786,6 +802,22 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45625259489)",
    "run": "45625259489"
+  },
+  {
+   "code": "ELS",
+   "heading": "English Language Skills",
+   "heading_printed": "English Language Skills",
+   "rule": "index",
+   "codes": [
+    "ELS"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI ELS 40 Advanced Pronunciation",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   },
   {
    "code": "EMC",
@@ -1156,6 +1188,22 @@
    "run": "45625259489"
   },
   {
+   "code": "MERT",
+   "heading": "Media and Entertainment Technology",
+   "heading_printed": "Media and Entertainment Technology",
+   "rule": "index",
+   "codes": [
+    "MERT"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI MERT 56 Photoshop for Animators; 54 Adv Tech Pjct Mgmt",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "MNLO",
    "heading": "Manufacturing and Logistics",
    "heading_printed": "Manufacturing and Logistics",
@@ -1362,6 +1410,22 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45625259489)",
    "run": "45625259489"
+  },
+  {
+   "code": "PHYSIO",
+   "heading": "Physiology",
+   "heading_printed": "Physiology",
+   "rule": "index",
+   "codes": [
+    "PHYSIO"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI PHYSIO 2 Human Physiology",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   },
   {
    "code": "POLS",
@@ -1620,6 +1684,6 @@
    "run": "45625259489"
   }
  ],
- "subjects": 95,
- "with_heading": 95
+ "subjects": 99,
+ "with_heading": 99
 }

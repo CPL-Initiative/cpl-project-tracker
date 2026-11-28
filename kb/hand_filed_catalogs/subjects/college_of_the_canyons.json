@@ -241,6 +241,22 @@
    "run": "45627438096"
   },
   {
+   "code": "CHNESE",
+   "heading": "Chinese",
+   "heading_printed": "Chinese",
+   "rule": "index",
+   "codes": [
+    "CHNESE"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI CHNESE 101 Elementary Chinese I - Mandarin",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "CLS",
    "heading": "Clinical Laboratory Scientist",
    "heading_printed": "CLINICAL LABORATORY SCIENTIST",
@@ -1889,6 +1905,22 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "WE",
+   "heading": "Work Experience Education",
+   "heading_printed": "Work Experience Education",
+   "rule": "index",
+   "codes": [
+    "WE"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI WWE 186ID Work Experience Education Interior Design; catalog prints WE-186ID, so title goes on WE",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "WELD",
    "heading": "Welding",
    "heading_printed": "WELDING",
@@ -1921,6 +1953,6 @@
    "run": "45627438096"
   }
  ],
- "subjects": 116,
- "with_heading": 116
+ "subjects": 118,
+ "with_heading": 118
 }

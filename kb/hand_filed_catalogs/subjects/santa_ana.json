@@ -3,9 +3,26 @@
  "college": "Santa Ana College",
  "run": "45304208269",
  "source": [],
- "subjects": 0,
- "with_heading": 0,
- "rows": [],
+ "subjects": 1,
+ "with_heading": 1,
+ "rows": [
+  {
+   "code": "CMSD",
+   "heading": "Communications and Media Studies",
+   "heading_printed": "Communications and Media Studies",
+   "rule": "index",
+   "codes": [
+    "CMSD"
+   ],
+   "candidate": null,
+   "address": "https://www.sac.edu/admissions/catalogarchive/SAC-2023_2024_Catalog.pdf",
+   "where": "web",
+   "method": "COBI overnight review, approved by Sam Lee:  Do not fold to CMST (Communication Studies). 2023-24 SAC catalog lists Communications & Media Studies (CMSD) as its own program (CMSD 102, 105, 298B Designing for Print and Digital Media, etc.). CMST courses are public speaking/interpersonal communication.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  }
+ ],
  "code_address_tried": [
   {
    "code": "CMSD",

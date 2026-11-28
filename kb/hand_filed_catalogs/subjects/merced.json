@@ -553,6 +553,22 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "EDIT",
+   "heading": "Educational Design and Instructional Technology",
+   "heading_printed": "Educational Design and Instructional Technology",
+   "rule": "index",
+   "codes": [
+    "EDIT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/pages/ysMMucClFKD1MtUI5iXr",
+   "where": "web",
+   "method": "COBI overnight review, approved by Sam Lee:  Merced catalog page title is Educational Design and Instructional Technology (EDIT); section header also uses Educational Design (EDIT). GAI correction accepted over Educational and Instructional Technology.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "EDU",
    "heading": "Education, Noncredit",
    "heading_printed": "Education, Noncredit",
@@ -1657,6 +1673,6 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   }
  ],
- "subjects": 103,
- "with_heading": 103
+ "subjects": 104,
+ "with_heading": 104
 }
