@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 328,
  "with_closed_list": 301,
- "started": "2026-11-26T16:25:35Z",
+ "started": "2026-11-27T14:03:42Z",
  "scope": "/orange-coast/",
  "sitemap": {
   "url": "https://catalog.cccd.edu/sitemap.xml",
@@ -29,6 +29,14 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/careers-healthcare/respiratory-care/respiratory-care-associate-science-degree/",
    "bound": true
   },
+  "08626": {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-maintenance-technology/powerplant-associate-science-degree/",
+   "bound": true
+  },
+  "08663": {
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/food-beverage-management/food-beverage-management-coa/",
+   "bound": true
+  },
   "22394": {
    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-maintenance-technology/powerplant-certificate-achievement/",
    "bound": true
@@ -40,13 +48,13 @@
  },
  "catalog_lookup": {
   "self_test": {
-   "tested": 255,
-   "hits": 237,
-   "recall": 0.929,
+   "tested": 259,
+   "hits": 241,
+   "recall": 0.931,
    "false": 1,
    "false_off_own": 1,
    "false_no_claims": 1,
-   "shared": 14,
+   "shared": 10,
    "false_matches": [
     {
      "control_number": "32235",
@@ -88,7 +96,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 237 of 255 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 241 of 259 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "03979",
@@ -96,7 +104,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 237 of 255 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 241 of 259 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "03988",
@@ -104,7 +112,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 237 of 255 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 241 of 259 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "03991",
@@ -112,7 +120,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 237 of 255 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 241 of 259 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "03995",
@@ -120,7 +128,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 237 of 255 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 241 of 259 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "03998",
@@ -128,7 +136,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 237 of 255 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 241 of 259 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "04026",
@@ -136,7 +144,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 237 of 255 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 241 of 259 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "04030",
@@ -144,7 +152,7 @@
     "award": "A.S. Degree",
     "status": "Active - Teachout Only",
     "result": "not_searched",
-    "why": "the matcher found 237 of 255 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 241 of 259 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "04040",
@@ -152,7 +160,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 237 of 255 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 241 of 259 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "08634",
@@ -160,7 +168,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 237 of 255 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 241 of 259 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "08635",
@@ -168,7 +176,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 237 of 255 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 241 of 259 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "08641",
@@ -176,7 +184,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 237 of 255 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 241 of 259 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "08648",
@@ -184,7 +192,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 237 of 255 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 241 of 259 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "08662",
@@ -192,7 +200,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 237 of 255 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 241 of 259 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "11641",
@@ -200,7 +208,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 237 of 255 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 241 of 259 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "14409",
@@ -208,7 +216,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 237 of 255 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 241 of 259 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "14411",
@@ -216,7 +224,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 237 of 255 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 241 of 259 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "22376",
@@ -224,7 +232,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 237 of 255 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 241 of 259 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "22380",
@@ -232,7 +240,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 237 of 255 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 241 of 259 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "22395",
@@ -240,7 +248,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 237 of 255 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 241 of 259 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "22396",
@@ -248,7 +256,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 237 of 255 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 241 of 259 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "22423",
@@ -256,7 +264,7 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 237 of 255 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 241 of 259 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "22425",
@@ -264,7 +272,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 237 of 255 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 241 of 259 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "22433",
@@ -272,7 +280,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 237 of 255 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 241 of 259 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "35944",
@@ -280,7 +288,7 @@
     "award": "Noncredit program",
     "status": "Active - Teachout Only",
     "result": "not_searched",
-    "why": "the matcher found 237 of 255 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 241 of 259 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "37914",
@@ -288,7 +296,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 237 of 255 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 241 of 259 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "44129",
@@ -296,7 +304,7 @@
     "award": "Noncredit program",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 237 of 255 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 241 of 259 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    }
   ],
   "yields": [],
@@ -304,7 +312,7 @@
   "yield_refused_passing": 0
  },
  "loads": 481,
- "seconds": 2297.6,
+ "seconds": 2270.9,
  "found": 271,
  "by_method": {
   "no_closed_list": 27,
@@ -313,14 +321,6 @@
   "sitemap_page": 271
  },
  "shared_pages": {
-  "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-maintenance-technology/airframe-powerplant-associate-science-degree/": [
-   "03977",
-   "08626"
-  ],
-  "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/food-beverage-management/food-beverage-management-advanced-coa/": [
-   "08663",
-   "43362"
-  ],
   "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/manufacturing-technology/cnc-machine-programmer-certificate-achievement/": [
    "19543",
    "41022"
@@ -846,16 +846,27 @@
  ],
  "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 17,
+  "0.5-0.8": 18,
   "0.8-1.0": 40,
-  "1.0": 214
+  "1.0": 213
  },
  "would_extract": {
   "against": "kb/program_requirements_college/orange_coast",
-  "kept": 268,
+  "kept": 266,
   "kept_moved": 0,
-  "programs": 0,
-  "list": [],
+  "programs": 1,
+  "list": [
+   {
+    "control_number": "08663",
+    "title": "Food and Beverage Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/food-beverage-management/food-beverage-management-coa/",
+    "coverage": 0.6,
+    "was_url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/food-beverage-management/food-beverage-management-advanced-coa/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   }
+  ],
   "held_worse_window": [
    {
     "control_number": "30642",
@@ -876,6 +887,14 @@
   ],
   "held_no_gain": [
    {
+    "control_number": "08626",
+    "title": "Powerplant",
+    "award": "A.S. Degree",
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-maintenance-technology/powerplant-associate-science-degree/",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
     "control_number": "38293",
     "title": "ESL Support for Freshman Composition",
     "award": "Noncredit program",
@@ -886,9 +905,8 @@
   ],
   "held_opens_on_list": [],
   "only": [
-   "03954",
-   "08664",
-   "31217"
+   "08626",
+   "08663"
   ],
   "not_named": [],
   "refused_passing": [],
@@ -1028,8 +1046,8 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-maintenance-technology/airframe-associate-science-degree/"
   },
   "08626": {
-   "sha256": "08b13fe943cf69faa0ee889fc807721a170a35870ae06689aa77cc7cb1d429d2",
-   "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-maintenance-technology/airframe-powerplant-associate-science-degree/"
+   "sha256": "a00080de431c07fae47901f1864ebd48cbeabd61cab75eb6c83339928d3fac45",
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-maintenance-technology/powerplant-associate-science-degree/"
   },
   "08628": {
    "sha256": "5bcbee548e45822f4f583d8047dc12165abdb0c54a78ef969279f3aab5f8ba6e",
@@ -1068,8 +1086,8 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/fashion/fashion-merchandising-associate-science-degree/"
   },
   "08663": {
-   "sha256": "fc500d9506eb5155a1f1186de0838ba55aa8ea2f9d2354e4f65587464454d236",
-   "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/food-beverage-management/food-beverage-management-advanced-coa/"
+   "sha256": "8616462bfa98e1c2a75c923e619d1306f3e1d0655678f08e3b841b0b43332426",
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/food-beverage-management/food-beverage-management-coa/"
   },
   "08664": {
    "sha256": "f5b3caddb7d36ee7ac7daf7dcdb61e0f5d58a459d61acc0e571459d974af9972",
@@ -1980,5 +1998,10 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/elementary-teacher-education-integrated-programs-aat/"
   }
  },
- "run": "45858495107"
+ "staged_from": {
+  "run": "45999669017",
+  "proof": "text sha256 of 271 programs",
+  "pages_loaded": 0
+ },
+ "run": "46122364368"
 }
