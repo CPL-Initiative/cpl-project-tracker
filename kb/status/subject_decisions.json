@@ -3,24 +3,35 @@
  "_rule": "A person's save wins over the catalog, the subject map and any recommendation (r-subject-save-path-kb-curation-sam-2026-11-22). Precedence for a college's code and band: its decision, then a statewide filing, then the subject map, then a recommendation. A credit decision reads the code's credit courses only; whole reads a code COCI lists no course under; nc:<slug> reads the code's noncredit courses in that COCI noncredit category only.",
  "statewide_read": true,
  "totals": {
-  "decisions": 52,
+  "decisions": 60,
   "by_band": {
-   "credit": 43,
+   "credit": 50,
    "nc:courses-for-older-adults": 2,
    "nc:courses-for-persons-with-substantial-disabilities": 1,
    "nc:elementary-and-secondary-basic-skills": 1,
    "nc:english-as-a-second-language-esl": 1,
    "nc:health-and-safety": 1,
    "nc:parenting": 1,
-   "nc:short-term-vocational": 1,
+   "nc:short-term-vocational": 2,
    "whole": 1
   },
-  "colleges": 12,
+  "colleges": 14,
   "statewide": 1320,
   "courses": 5,
   "unreadable": 0
  },
  "decisions": [
+  {
+   "key": "SUBJ:cabrillo|TEST|nc:short-term-vocational",
+   "college": "cabrillo",
+   "code": "TEST",
+   "band": "nc:short-term-vocational",
+   "local_title": null,
+   "common_code": null,
+   "not_a_subject": true,
+   "who": "a reviewer",
+   "at": "2026-11-27T15:02:58."
+  },
   {
    "key": "SUBJ:cerritos|A&P|credit",
    "college": "cerritos",
@@ -28,6 +39,7 @@
    "band": "credit",
    "local_title": "Anatomy and Physiology",
    "common_code": "BIOL",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-22T04:45:03."
   },
@@ -38,6 +50,7 @@
    "band": "credit",
    "local_title": "Access Learning",
    "common_code": "DSPS",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-22T04:45:03."
   },
@@ -48,6 +61,7 @@
    "band": "nc:courses-for-older-adults",
    "local_title": null,
    "common_code": "OLAD",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-23T18:35:46."
   },
@@ -58,6 +72,7 @@
    "band": "nc:courses-for-persons-with-substantial-disabilities",
    "local_title": null,
    "common_code": "DSPN",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-23T18:35:50."
   },
@@ -68,6 +83,7 @@
    "band": "nc:elementary-and-secondary-basic-skills",
    "local_title": null,
    "common_code": "BSKL",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-23T18:35:28."
   },
@@ -78,6 +94,7 @@
    "band": "nc:english-as-a-second-language-esl",
    "local_title": null,
    "common_code": "ESLN",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-23T18:35:40."
   },
@@ -88,6 +105,7 @@
    "band": "nc:health-and-safety",
    "local_title": null,
    "common_code": "HLSN",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-23T18:35:56."
   },
@@ -98,6 +116,7 @@
    "band": "nc:short-term-vocational",
    "local_title": "Adult Education",
    "common_code": "OLAD",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-22T14:22:11."
   },
@@ -108,6 +127,7 @@
    "band": "credit",
    "local_title": "Africana Studies",
    "common_code": "ETHS",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-22T04:45:03."
   },
@@ -118,6 +138,7 @@
    "band": "whole",
    "local_title": "Anatomy and Physiology",
    "common_code": "BIOL",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-22T04:45:03."
   },
@@ -128,6 +149,7 @@
    "band": "credit",
    "local_title": "Asian American Studies",
    "common_code": "ETHS",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-22T04:45:03."
   },
@@ -138,6 +160,7 @@
    "band": "credit",
    "local_title": "Athletics",
    "common_code": "KINE",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-22T04:45:03."
   },
@@ -148,6 +171,7 @@
    "band": "credit",
    "local_title": "Business Administration",
    "common_code": "BUSI",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-22T04:45:03."
   },
@@ -158,6 +182,7 @@
    "band": "credit",
    "local_title": "Business Communications Office Technology",
    "common_code": "BSOT",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-22T04:45:03."
   },
@@ -168,6 +193,7 @@
    "band": "credit",
    "local_title": "Biotechnology",
    "common_code": "BIOT",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-22T04:45:03."
   },
@@ -178,6 +204,7 @@
    "band": "credit",
    "local_title": "Culinary Arts",
    "common_code": "CULN",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-22T04:45:03."
   },
@@ -188,6 +215,7 @@
    "band": "credit",
    "local_title": "Child Development/Early Childhood",
    "common_code": "CDEV",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-22T04:45:03."
   },
@@ -198,6 +226,7 @@
    "band": "credit",
    "local_title": "Child Development/Infant Toddler",
    "common_code": "CDEV",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-22T04:45:03."
   },
@@ -208,6 +237,7 @@
    "band": "credit",
    "local_title": "Child Development/Special Education",
    "common_code": "CDEV",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-22T04:45:03."
   },
@@ -218,6 +248,7 @@
    "band": "credit",
    "local_title": "Education",
    "common_code": "EDUC",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-22T04:45:03."
   },
@@ -228,6 +259,7 @@
    "band": "credit",
    "local_title": "Educational Technology",
    "common_code": "EDTC",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-22T04:45:03."
   },
@@ -238,6 +270,7 @@
    "band": "credit",
    "local_title": "Electrical Apprenticeship",
    "common_code": "ELEC",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-22T04:45:03."
   },
@@ -248,6 +281,7 @@
    "band": "credit",
    "local_title": "English as a Second Language",
    "common_code": "ESOL",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-23T08:57:51."
   },
@@ -258,6 +292,7 @@
    "band": "credit",
    "local_title": "Engineering Technology",
    "common_code": "ENGT",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-22T04:45:03."
   },
@@ -268,6 +303,7 @@
    "band": "credit",
    "local_title": "Health Education",
    "common_code": "HLTH",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-22T04:45:03."
   },
@@ -278,6 +314,7 @@
    "band": "credit",
    "local_title": "Journalism and Multimedia Studies",
    "common_code": "JOUR",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-22T04:45:03."
   },
@@ -288,6 +325,7 @@
    "band": "credit",
    "local_title": "Korean",
    "common_code": "FLNG",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-22T04:45:03."
   },
@@ -298,6 +336,7 @@
    "band": "credit",
    "local_title": "Microbiology",
    "common_code": "BIOL",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-22T04:45:03."
   },
@@ -308,6 +347,7 @@
    "band": "credit",
    "local_title": "Native American and Indigenous Studies",
    "common_code": "ETHA",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-22T04:45:03."
   },
@@ -318,6 +358,7 @@
    "band": "credit",
    "local_title": "Nursing",
    "common_code": "NRSR",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-22T04:45:03."
   },
@@ -328,6 +369,7 @@
    "band": "credit",
    "local_title": "Physical Education",
    "common_code": "KINE",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-22T04:45:03."
   },
@@ -338,6 +380,7 @@
    "band": "credit",
    "local_title": "Pharmacy Technician",
    "common_code": "PHMT",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-22T04:45:03."
   },
@@ -348,6 +391,7 @@
    "band": "credit",
    "local_title": "Political Science",
    "common_code": "POLS",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-23T08:58:42."
   },
@@ -358,6 +402,7 @@
    "band": "credit",
    "local_title": "Physical Science",
    "common_code": "PHSC",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-22T04:45:03."
   },
@@ -368,6 +413,7 @@
    "band": "credit",
    "local_title": "Speech-Language Pathology",
    "common_code": "SLPA",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-22T04:45:03."
   },
@@ -378,6 +424,7 @@
    "band": "credit",
    "local_title": "Theatre Arts",
    "common_code": "THTR",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-22T04:45:03."
   },
@@ -388,6 +435,7 @@
    "band": "credit",
    "local_title": "Women's and Gender Studies",
    "common_code": "WMST",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-22T04:45:03."
   },
@@ -398,6 +446,7 @@
    "band": "credit",
    "local_title": "Zoology",
    "common_code": "BIOL",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-22T04:45:03."
   },
@@ -408,8 +457,31 @@
    "band": "credit",
    "local_title": "Administration of Justice",
    "common_code": null,
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-26T16:25:48."
+  },
+  {
+   "key": "SUBJ:cerro_coso_community|BSOTC|credit",
+   "college": "cerro_coso_community",
+   "code": "BSOTC",
+   "band": "credit",
+   "local_title": "Business Office Technology",
+   "common_code": null,
+   "not_a_subject": null,
+   "who": "a reviewer",
+   "at": "2026-11-27T15:06:10."
+  },
+  {
+   "key": "SUBJ:cerro_coso_community|EMTCC|credit",
+   "college": "cerro_coso_community",
+   "code": "EMTCC",
+   "band": "credit",
+   "local_title": "Emergency Medical Technician",
+   "common_code": null,
+   "not_a_subject": null,
+   "who": "a reviewer",
+   "at": "2026-11-27T15:11:42."
   },
   {
    "key": "SUBJ:chabot|PEACBTC|credit",
@@ -418,8 +490,53 @@
    "band": "credit",
    "local_title": "Physical Education Activity",
    "common_code": null,
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-26T16:26:30."
+  },
+  {
+   "key": "SUBJ:chabot|PEACLSF|credit",
+   "college": "chabot",
+   "code": "PEACLSF",
+   "band": "credit",
+   "local_title": null,
+   "common_code": null,
+   "not_a_subject": true,
+   "who": "a reviewer",
+   "at": "2026-11-27T19:12:45."
+  },
+  {
+   "key": "SUBJ:chabot|PEACPLF|credit",
+   "college": "chabot",
+   "code": "PEACPLF",
+   "band": "credit",
+   "local_title": null,
+   "common_code": null,
+   "not_a_subject": true,
+   "who": "a reviewer",
+   "at": "2026-11-27T19:12:49."
+  },
+  {
+   "key": "SUBJ:chabot|PEACSBB|credit",
+   "college": "chabot",
+   "code": "PEACSBB",
+   "band": "credit",
+   "local_title": null,
+   "common_code": null,
+   "not_a_subject": true,
+   "who": "a reviewer",
+   "at": "2026-11-27T19:12:50."
+  },
+  {
+   "key": "SUBJ:chabot|PEACSBM|credit",
+   "college": "chabot",
+   "code": "PEACSBM",
+   "band": "credit",
+   "local_title": null,
+   "common_code": null,
+   "not_a_subject": true,
+   "who": "a reviewer",
+   "at": "2026-11-27T19:12:51."
   },
   {
    "key": "SUBJ:clovis_community|ANTHRO|credit",
@@ -428,6 +545,7 @@
    "band": "credit",
    "local_title": "Anthropology",
    "common_code": "ANTH",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-23T08:59:05."
   },
@@ -438,6 +556,7 @@
    "band": "nc:parenting",
    "local_title": "Child Development",
    "common_code": "PARN",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-23T15:08:12."
   },
@@ -448,6 +567,7 @@
    "band": "credit",
    "local_title": "Work Experience Education (Formerly (Cotr) Cooperative Work Experience",
    "common_code": "WEXP",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-23T15:19:02."
   },
@@ -458,6 +578,7 @@
    "band": "credit",
    "local_title": "Data Science",
    "common_code": "COMP",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-23T15:12:56."
   },
@@ -468,8 +589,20 @@
    "band": "credit",
    "local_title": "English as a Second Language",
    "common_code": "ESOL",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-23T08:57:51."
+  },
+  {
+   "key": "SUBJ:fullerton|F|credit",
+   "college": "fullerton",
+   "code": "F",
+   "band": "credit",
+   "local_title": null,
+   "common_code": null,
+   "not_a_subject": true,
+   "who": "a reviewer",
+   "at": "2026-11-27T15:03:49."
   },
   {
    "key": "SUBJ:long_beach_city|ESL|credit",
@@ -478,6 +611,7 @@
    "band": "credit",
    "local_title": "English as a Second Language",
    "common_code": "ESOL",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-23T08:57:51."
   },
@@ -488,6 +622,7 @@
    "band": "credit",
    "local_title": "English as a Second Language",
    "common_code": "ESOL",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-23T08:57:51."
   },
@@ -498,6 +633,7 @@
    "band": "nc:courses-for-older-adults",
    "local_title": "Older Adults",
    "common_code": null,
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-26T17:06:54."
   },
@@ -508,6 +644,7 @@
    "band": "credit",
    "local_title": "Political Science",
    "common_code": "POLS",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-23T08:58:42."
   },
@@ -518,6 +655,7 @@
    "band": "credit",
    "local_title": "Zoology",
    "common_code": "BIOL",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-23T09:04:19."
   },
@@ -528,6 +666,7 @@
    "band": "credit",
    "local_title": "English as a Second Language",
    "common_code": "ESOL",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-23T08:57:51."
   },
@@ -538,6 +677,7 @@
    "band": "credit",
    "local_title": "English as a Second Language",
    "common_code": "ESOL",
+   "not_a_subject": null,
    "who": "a reviewer",
    "at": "2026-11-23T08:57:51."
   }

@@ -44,9 +44,9 @@
     "score": 95
    },
    "mixed": {
-    "right": 4148,
+    "right": 4150,
     "asked": 4767,
-    "share": 0.87,
+    "share": 0.871,
     "score": 87
    },
    "one college": {
@@ -202,8 +202,8 @@
   },
   "rows_the_subject_map_settles": {
    "own_courses": {
-    "right": 135,
-    "asked": 135
+    "right": 136,
+    "asked": 136
    },
    "same_code_statewide": {
     "right": 19,
@@ -218,11 +218,11 @@
  "web_searches_filed": 313,
  "totals": {
   "common_60_to_89": 22,
-  "common_90_plus": 1250,
+  "common_90_plus": 1251,
   "common_no_code_yet": 100,
   "common_none": 545,
-  "common_under_60": 530,
-  "no_common": 2447,
+  "common_under_60": 531,
+  "no_common": 2449,
   "no_title": 1043,
   "noncredit_common": 498,
   "noncredit_no_common": 681,
@@ -3533,6 +3533,16 @@
       "from": "noncredit_category",
       "category": "Short-term Vocational",
       "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (8 of 8 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "EMTC",
+     "common": {
+      "code": "EMST",
+      "discipline": "Emergency Medical Technologies",
+      "confidence": 97,
+      "from": "own_courses",
+      "why": "3 of 4 of its courses with an M-ID sit under EMST."
      }
     },
     {
@@ -14217,6 +14227,13 @@
         "why": "course joins: 6 of 44 joined courses (few or mixed, right 48% of the time)."
        }
       ]
+     },
+     "common": {
+      "code": "KINE",
+      "discipline": "Kinesiology",
+      "confidence": 49,
+      "from": "title",
+      "why": "The title names the discipline Kinesiology."
      }
     },
     {

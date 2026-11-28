@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-28T01:03:11Z",
+ "written_at": "2026-11-28T06:26:28Z",
  "rows": [
   {
    "key": "requirements",
@@ -293,7 +293,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-27T06:23:07+00:00",
+    "at": "2026-11-28T06:24:11+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -383,7 +383,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-26T23:34:12-08:00",
+    "at": "2026-11-19T06:22:43Z",
     "every_hours": null
    },
    "facts": {
@@ -517,7 +517,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-27T06:19:15Z",
+    "at": "2026-11-28T06:19:17Z",
     "every_hours": 24
    },
    "facts": {
@@ -530,7 +530,7 @@
     "modal": 0,
     "shared": [],
     "missed_alignment": 0,
-    "scanned_at": "2026-11-27",
+    "scanned_at": "2026-11-28",
     "procedures_on": 6
    },
    "sources": [
