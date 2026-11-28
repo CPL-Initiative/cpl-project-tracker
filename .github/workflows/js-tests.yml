@@ -1382,6 +1382,12 @@ jobs:
       - name: Cheap piles S748, batch c (a state-listed course the page does not print)
         if: matrix.shard == 3
         run: python3 tests/program_piles_s748c_test.py
+      # The gap census reads a college's own named-gap files (named_gaps_*.json; S748's change, redone in S750 with
+      # its reader's three fixes): a named program stays in the gap under its own cause, labeled; only where no
+      # live row exists; and main() hands the files in. Passing, gap and collected counts do not move.
+      - name: Harvest gap census labels college-named gaps (S750)
+        if: matrix.shard == 2
+        run: python3 tests/harvest_gap_census_college_named_test.py
       # S750, batch s750a: S748's reading state_course_not_on_page assigned to eight records at six colleges
       # (Cerritos 02235, Citrus 02333, College of Marin 46242, Foothill 11827 and 43194, Irvine Valley 44922,
       # Palomar 08929 and 22528), each checked against a free read of its own page; Madera 39810 held (its page
