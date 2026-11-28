@@ -2014,6 +2014,77 @@ def ncl_account(recs: list[dict], answers: dict[str, dict], test: dict, catalog_
             "yield_refused_passing": held.count("refused_passing")}
 
 
+# ── the found page as the program's source (S748, S652's slice B) ───────────
+# The lookup above only records: a program with no list in the Program Course File keeps method no_closed_list, no
+# source and no text beside its found page, so no read ever sends it (Skyline: 55 found pages, none read; 194 Active
+# programs at 14 colleges on the filed captures of 2026-11-28). Where the college's reconcile entry says
+# "read_found_pages": true, capture() files the found page as the program's source, method catalog_lookup, with the
+# page's text, so a paid read can name it. OFF for every college whose entry lacks the key: its capture files what
+# it filed before, byte for byte (tests/program_requirements_found_pages_s748_test.py).
+#
+# A found page is filed only where it is the program's own by the reader's page checks as well as by the lookup:
+# rules B, C and A (RC.site_page: never a course-descriptions or general-education page, the text read with every
+# tab, and the page prints the program's title with its award). The lookup's own answer already asks that one
+# program page alone names the whole title with a matching award, that no closed-list program holds it and that
+# no other program matches it. A found page that fails the rules stays unfiled, and its answer says why.
+#
+# The state lists no course for such a program, so its source carries no coverage to measure (0.0 of 0 listed) and
+# the extraction's bar, a share of listed codes, does not apply: X.sendable() sends it on its method alone.
+NCL_READ_KEY = "read_found_pages"
+NCL_FOUND_METHOD = "catalog_lookup"
+
+
+def ncl_reads_found(college: str) -> bool:
+    """Whether the college's reconcile entry opts in to reading found pages (NCL_READ_KEY true; absent is off)."""
+    import _program_requirements_reconcile as R
+    return (R.load_steps().get(college) or {}).get(NCL_READ_KEY) is True
+
+
+def ncl_found_source(college: str, program: dict, reg: dict, answer: dict | None,
+                     pages: list[dict]) -> tuple[dict | None, str | None]:
+    """(the source record for a no-closed-list program whose page the lookup found, None), or (None, why it stays
+    unfiled). pages: the pages the capture read. Nothing is filed for a program that has a closed list, for an
+    answer other than found, for a page not read once and once only, or for a page rules B, C and A refuse."""
+    if program.get("closed_list"):
+        return None, "the program has a closed list: the closed-list search reads it"
+    if (answer or {}).get("result") != "found":
+        return None, "the lookup found no page"
+    stem = page_stem((answer.get("page") or {}).get("url"))
+    mine = [pg for pg in pages if stem and page_stem(pg.get("url")) == stem]
+    if len(mine) != 1:
+        return None, "the found page was read %d times among the capture's pages" % len(mine)
+    pg = mine[0]
+    got = pg.get("got") or {}
+    body = got.get("body") or pg.get("body") or ""
+    kept, why = RC.site_page(pg, program, body, {}, "innerText")
+    if kept is None:
+        return None, why
+    text, found, field = kept
+    if not (text or "").strip():
+        return None, "the found page gave no text"
+    award_hit, title = label_score(pg, program)
+    rec = source_record(college, program, reg,
+                        {"url": pg["url"], "got": got, "field": field, "text": text, "found": found, "coverage": 0.0,
+                         "label": {"award": award_hit, "title": title}}, NCL_FOUND_METHOD)
+    rec["source"]["no_closed_list"] = True
+    rec["catalog_lookup"] = answer
+    return rec, None
+
+
+def ncl_filed(college: str, rec: dict, program: dict, reg: dict, answer: dict, pages: list[dict], on: bool) -> dict:
+    """What capture() files for a looked-up program: its no_closed_list record with the lookup's answer, as before
+    S748; or, where the college opted in (on) and the answer is found, the found page as its source
+    (ncl_found_source), or the same record with why the page stays unfiled."""
+    rec["catalog_lookup"] = answer
+    if not on or answer.get("result") != "found":
+        return rec
+    src, why = ncl_found_source(college, program, reg, answer, pages)
+    if src is not None:
+        return src
+    rec["catalog_lookup"] = dict(answer, unfiled=why)
+    return rec
+
+
 REFUSED = "refused"                 # a gated PDF block refused (decision 16): filed as no read page
 NO_READ = ("not_found", REFUSED)    # the methods that carry no page (the extraction keeps a gated one's record)
 
@@ -6242,10 +6313,12 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
                 recs[i].update(lost_pages=[lost], yielded_to=taker)
                 _write(os.path.join(out_dir, "sources", rec["control_number"] + ".json"), recs[i])
                 print("%-6s page_claimed %s (yielded to %s)" % (rec["control_number"], lost, taker), flush=True)
-            for rec in recs:
+            read_found = ncl_reads_found(college)
+            for i, rec in enumerate(recs):
                 ans = answers.get(rec["control_number"])
                 if ans is not None and rec["method"] == "no_closed_list":
-                    rec["catalog_lookup"] = ans
+                    # S748: where the college opted in (NCL_READ_KEY), a found page is the program's source.
+                    recs[i] = rec = ncl_filed(college, rec, by_cn[rec["control_number"]], reg, ans, pages, read_found)
                     _write(os.path.join(out_dir, "sources", rec["control_number"] + ".json"), rec)
                     print("%-6s catalog_lookup %-12s %s" % (rec["control_number"], ans["result"],
                                                            (ans.get("page") or {}).get("url") or ans.get("basis")
@@ -6826,11 +6899,11 @@ def would_extract(college: str, recs: list[dict], folder: str | None = None, onl
     if os.path.isfile(os.path.join(folder, "sources.json")):
         with open(os.path.join(folder, "sources.json")) as fh:
             prev = {x["control_number"]: x for x in json.load(fh)}
-    from _program_requirements_extract import MIN_COVERAGE as bar
+    from _program_requirements_extract import sendable
     out, kept, moved = [], 0, 0
     holds: dict[str, list] = {"held_worse_window": [], "held_no_gain": [], "held_opens_on_list": []}
     for r in recs:
-        if (r.get("coverage") or 0) < bar or not r.get("text"):
+        if not sendable(r) or not r.get("text"):
             continue
         cn = r["control_number"]
         path = os.path.join(folder, "records", cn + ".json")
@@ -7282,7 +7355,7 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
     for path in sorted(glob.glob(os.path.join(out_dir, "sources", "*.json"))):
         with open(path) as fh:
             src = json.load(fh)
-        if (src.get("coverage") or 0) >= X.MIN_COVERAGE and src.get("text"):
+        if X.sendable(src) and src.get("text"):
             sources.append(src)
         elif src.get("method") in REFUSED_METHODS:
             refused.append(src["control_number"])
