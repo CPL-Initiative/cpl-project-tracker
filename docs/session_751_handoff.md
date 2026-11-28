@@ -65,3 +65,13 @@ rereads, loads and `.apply`, and holds every Supabase call.
 - 13:33Z: `display` stop 1, its last (`claude/s750-display`, `52b8a23a`): build `366c5bbc7b2d`, 18,754 statements (two
   programs gain a display: San Bernardino Valley 31858, Coastline 43057), the build code unchanged. The conductor's
   baseline (13:34Z): `229a759101f7` 18,751, older builds 32, none 2. The Glendale step dispatched on the branch.
+- 13:37Z: the Glendale step 46150062374 green. The gate (14:58Z): `366c5bbc7b2d` 242 at Glendale, `229a759101f7`
+  18,509, older builds 32, none 2, as the worker's count foretold.
+- 14:57Z: `piles` stop 1 (`claude/s750-piles`, `8d83103e`): plan s750a, `state_course_not_on_page` (coverage true, no
+  gap) at eight records: Cerritos 02235; Citrus 02333; Marin 46242; Foothill 11827, 43194; Irvine Valley 44922;
+  Palomar 08929, 22528; each agrees with a free page read (46149637666, 46150287204). Dropped for a person: Madera
+  39810 (its page heads the core "41-47 units" over 39.5 units of courses, so the page counts the course it omits).
+  College of the Canyons 37868: run 46121986278 stopped at the price step, $0, nothing filed; staging holds 37868 as
+  `not_found` (its source carries neither `page_check` nor `pinned`); a fresh free capture comes first. s750a to a
+  Sonnet second reader; `piles` goes on to the Canyons capture, the census change and the land's builders.
+- 14:59Z: the whole display build dispatched on `claude/s750-display`.
