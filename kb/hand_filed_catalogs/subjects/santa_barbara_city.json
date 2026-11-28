@@ -648,6 +648,70 @@
    "run": "45625259489"
   },
   {
+   "code": "CRAO",
+   "heading": "Creative Art Courses",
+   "heading_printed": "Creative Art Courses",
+   "rule": "index",
+   "codes": [
+    "CRAO"
+   ],
+   "candidate": null,
+   "address": "https://catalog.sbcc.edu/sel/older-adults/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch3.csv"
+  },
+  {
+   "code": "CREO",
+   "heading": "Creative English Courses",
+   "heading_printed": "Creative English Courses",
+   "rule": "index",
+   "codes": [
+    "CREO"
+   ],
+   "candidate": null,
+   "address": "https://catalog.sbcc.edu/sel/older-adults/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch3.csv"
+  },
+  {
+   "code": "CRMO",
+   "heading": "Creative Music Courses",
+   "heading_printed": "Creative Music Courses",
+   "rule": "index",
+   "codes": [
+    "CRMO"
+   ],
+   "candidate": null,
+   "address": "https://catalog.sbcc.edu/sel/older-adults/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch3.csv"
+  },
+  {
+   "code": "CRTO",
+   "heading": "Creative Theatre Courses",
+   "heading_printed": "Creative Theatre Courses",
+   "rule": "index",
+   "codes": [
+    "CRTO"
+   ],
+   "candidate": null,
+   "address": "https://catalog.sbcc.edu/sel/older-adults/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch3.csv"
+  },
+  {
    "code": "CS",
    "heading": "Computer Science",
    "heading_printed": "Computer Science",
@@ -758,6 +822,22 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45625259489)",
    "run": "45625259489"
+  },
+  {
+   "code": "ECEP",
+   "heading": "Parenting",
+   "heading_printed": "Parenting",
+   "rule": "index",
+   "codes": [
+    "ECEP"
+   ],
+   "candidate": null,
+   "address": "https://catalog.sbcc.edu/sel/parenting/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch3.csv"
   },
   {
    "code": "ECON",
@@ -1080,6 +1160,22 @@
    "run": "45625259489"
   },
   {
+   "code": "GEDB",
+   "heading": "GED (Bilingual)",
+   "heading_printed": "GED (Bilingual)",
+   "rule": "index",
+   "codes": [
+    "GEDB"
+   ],
+   "candidate": null,
+   "address": "https://catalog.sbcc.edu/sel/ahs-ged/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch3.csv"
+  },
+  {
    "code": "GEOG",
    "heading": "Geography",
    "heading_printed": "Geography",
@@ -1206,6 +1302,22 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45625259489)",
    "run": "45625259489"
+  },
+  {
+   "code": "HMEC",
+   "heading": "Home Economics",
+   "heading_printed": "Home Economics",
+   "rule": "index",
+   "codes": [
+    "HMEC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.sbcc.edu/sel/home-economics/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch3.csv"
   },
   {
    "code": "HNRS",
@@ -1768,6 +1880,22 @@
    "run": "45625259489"
   },
   {
+   "code": "SLFO",
+   "heading": "Self-Management Courses",
+   "heading_printed": "Self-Management Courses",
+   "rule": "index",
+   "codes": [
+    "SLFO"
+   ],
+   "candidate": null,
+   "address": "https://catalog.sbcc.edu/sel/older-adults/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch3.csv"
+  },
+  {
    "code": "SOC",
    "heading": "Sociology",
    "heading_printed": "Sociology",
@@ -1912,6 +2040,22 @@
    "run": "45625259489"
   },
   {
+   "code": "WELO",
+   "heading": "Wellness",
+   "heading_printed": "Wellness",
+   "rule": "index",
+   "codes": [
+    "WELO"
+   ],
+   "candidate": null,
+   "address": "https://catalog.sbcc.edu/sel/older-adults/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch3.csv"
+  },
+  {
    "code": "WEXP",
    "heading": "Work Experience",
    "heading_printed": "Work Experience",
@@ -1960,6 +2104,6 @@
    "run": "45625259489"
   }
  ],
- "subjects": 116,
- "with_heading": 116
+ "subjects": 125,
+ "with_heading": 125
 }

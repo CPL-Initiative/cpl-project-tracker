@@ -876,6 +876,38 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "NCAHM",
+   "heading": "Affordable Housing Management",
+   "heading_printed": "Affordable Housing Management",
+   "rule": "index",
+   "codes": [
+    "NCAHM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/continuingeducation/shorttermvoc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch3.csv"
+  },
+  {
+   "code": "NCBOT",
+   "heading": "Business Office Technology",
+   "heading_printed": "Business Office Technology",
+   "rule": "index",
+   "codes": [
+    "NCBOT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/continuingeducation/shorttermvoc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch3.csv"
+  },
+  {
    "code": "NCESL",
    "heading": "Noncredit English as a Second Language",
    "heading_printed": "Noncredit English as a Second Language",
@@ -922,6 +954,22 @@
    "found_on": "2026-11-25",
    "found_by": "COBIx",
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "NCVOC",
+   "heading": "Short-Term Vocational",
+   "heading_printed": "Short-Term Vocational",
+   "rule": "index",
+   "codes": [
+    "NCVOC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/continuingeducation/shorttermvoc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch3.csv"
   },
   {
    "code": "NCWFP",
@@ -1164,6 +1212,6 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   }
  ],
- "subjects": 68,
- "with_heading": 68
+ "subjects": 71,
+ "with_heading": 71
 }
