@@ -75,3 +75,10 @@ rereads, loads and `.apply`, and holds every Supabase call.
   `not_found` (its source carries neither `page_check` nor `pinned`); a fresh free capture comes first. s750a to a
   Sonnet second reader; `piles` goes on to the Canyons capture, the census change and the land's builders.
 - 14:59Z: the whole display build dispatched on `claude/s750-display`.
+- 15:05Z: the whole display build 46157422439 green. The closing count (15:16Z): `366c5bbc7b2d` 18,753, `229a759101f7`
+  none, older builds 32, none without a build. The display land opened as draft #3953 (`claude/s750-display`).
+- 15:15Z: `piles`' second report, its last (`claude/s750-piles`, `bf617f75`): the free Canyons capture 46157462134
+  (`claude/s750-piles-coc`) still reads 37868 as `not_found` (rule B then A), so it needs a `pdf_pages` pin for page 78
+  before another capture and a paid read of about $0.10; the census change redone in its own commit (`0919feab`: the 78
+  stay in the gap, labeled `college_named`; pass 15,698, none 3,888, named gap 696 before and after; seven mutations
+  red); the Commons builders rebuilt (`bf617f75`), to land after s750a's apply.
