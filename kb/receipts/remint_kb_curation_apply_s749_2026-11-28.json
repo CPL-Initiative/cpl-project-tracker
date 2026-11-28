@@ -1,0 +1,10 @@
+{
+  "_what": "Receipt for kb/migrations/2026-11-28_s749_remint_kb_curation_apply.sql, run through the Supabase MCP by S752 SkyPuffin.",
+  "plan": "S749 common-subject alignment re-mint (346 M-IDs), PR #3958; rulings r-full-remint-for-new-joins-sam-2026-11-28, r-remint-dryrun-defaults-sam-2026-11-28",
+  "preread": {"ran_at": "2026-11-28T18:27Z", "returned": {"planned": 101, "touching": 101, "person_rows": [], "unplanned": [], "missing": [], "landing": 0, "go": true,
+    "code_rows": [{"course_id": "_CANON_SUBJ4::Dietetics/Nutritional Science", "field": "canonical_subj4", "value": "NUTR", "by": "map@rccd.edu"}]}},
+  "second_reader": "go (S752): apply guard aborts on every tested case; tuples match kb_curation_rows.json and alias_map.json; rollback restores 101 byte-for-byte. Its MAJOR (rollback person guard missed rows pointing at a new id, and NULL reviewers) is fixed in this commit.",
+  "apply": {"ran_at": "2026-11-28T18:31Z", "returned": {"updated": 101, "cohort_untouched": "reviewer_email and reviewed_at kept"}},
+  "person_row_left_live": "Sam's _CANON_SUBJ4::Dietetics/Nutritional Science = NUTR stays in kb_curation, untouched and unused: the nightly sync skips a discipline missing from kb/discipline_canonical_subj4.json, and the fold moves it to Nutritional Science/Dietetics (FDNT). A git revert brings the seed entry back with it.",
+  "rollback": "kb/migrations/2026-11-28_s749_remint_kb_curation_rollback.sql, then git revert of the land; procedure docs/reference/data_write_rollback.md"
+}
