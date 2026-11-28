@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -58,19 +59,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     19.0,
-    22.0
+    23.0
    ],
    "stated": [
     19.0,
     23.0
    ],
-   "why": [
-    "the blocks sum to 19.0-22.0; the catalog states 19.0-23.0"
-   ]
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -86,7 +86,18 @@
    "heading_without_outcomes": false,
    "pass": true
   },
-  "pass": false
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
  },
  "record": {
   "program": {
@@ -417,5 +428,6 @@
    "Catalog prints PSYC 25 title as 'The Psychology of Women'; closed list spells it 'Pyschology'."
   ]
  },
- "extracted_run": "38059865531"
+ "extracted_run": 46124747415,
+ "read_run": "38059865531"
 }
