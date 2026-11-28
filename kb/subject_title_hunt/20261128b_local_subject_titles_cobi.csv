@@ -1,0 +1,90 @@
+college,local_subject_code,local_subject_title,title_source_url,title_where,title_method,searched_on,found_by,confidence
+Allan Hancock College,COM SCI,Computers and You,,coci,suggested by COBI from COCI course titles: 704 Computers & You Level 3,2026-11-28,COBI,85
+Allan Hancock College,NESL,Noncredit ESL,,coci,suggested by COBI from COCI course titles: 7000 Introduction to English Pre-A; 7001 Intro to English A; 7002 Intro to English A2 (Low Beg),2026-11-28,COBI,90
+Bakersfield College,ART,Art,,coci,suggested by COBI from COCI course titles: B1 Art Appreciation; B10 Ceramics I; B11 Ceramics II,2026-11-28,COBI,90
+City College of San Francisco,ESLB,ESL for Computers,,coci,suggested by COBI from COCI course titles: 3821 ESL for Computers-Intermediate; 3822 Keyboarding for ESL Students; 3845 ESL Computer Projects with Collaborative Apps,2026-11-28,COBI,88
+City College of San Francisco,ESLC,ESL Citizenship,,coci,suggested by COBI from COCI course titles: 2032 ESL Citizenship: Comprehensive; 3032 ESL Citizenship; 3033 ESL Citizenship Intermediate 5-8,2026-11-28,COBI,90
+City College of San Francisco,ESLF,Noncredit ESL,,coci,suggested by COBI from COCI course titles: 3008 Computer Assisted ESL-Begin H; 3020 ESL Digital Language Learning; 3128 Reading-Beginning Low,2026-11-28,COBI,90
+City College of San Francisco,ESLV,Vocational ESL,,coci,suggested by COBI from COCI course titles: 3010 IMMIGRANT WORKERS' RIGHTS; 3800 Comm Skills for the Workplace; 3801 Intermediate ESL Workplace Communication,2026-11-28,COBI,88
+College of Marin,ESBS,Basic Skills,,coci,suggested by COBI from COCI course titles: 3010 GED Preparation; 3020 Basic Skills,2026-11-28,COBI,88
+College of Marin,ESLV,Vocational ESL,,coci,suggested by COBI from COCI course titles: 1 ESL for Customer Service; 11 Intermediate ESL for Customer Service; 12 ESL for Employment Reading and Writing Emphasis,2026-11-28,COBI,88
+College of Marin,PEN,Adapted Physical Education,,coci,suggested by COBI from COCI course titles: 070A Adapted Aquatics; 070B Adapted Aquatics; 071A Adapted Fitness and Strength Training,2026-11-28,COBI,90
+College of the Canyons,NC.TUTR,Supervised Tutoring,,coci,suggested by COBI from COCI course titles: 94 Supervised Tutoring,2026-11-28,COBI,90
+Crafton Hills College,READ/N,Noncredit Reading,,coci,suggested by COBI from COCI course titles: 980 Fundamentals of Reading,2026-11-28,COBI,90
+Crafton Hills College,WRIT/N,Noncredit Writing,,coci,suggested by COBI from COCI course titles: 606 Reading and Writing for Workplace Communication; 976 Fundamentals of Writing,2026-11-28,COBI,90
+Cypress College,AC/R,Air Conditioning and Refrigeration,,coci,suggested by COBI from COCI course titles: 036 C Refrigerant Certification Training; 055 C Technician Customer Relations; 100 C Principles of Thermodynamics and Heat Transfer,2026-11-28,COBI,90
+Glendale Community College,AMN,Citizenship,,coci,suggested by COBI from COCI course titles: 00106CR AMNESTY LEVEL 1-3,2026-11-28,COBI,85
+Glendale Community College,ESLT,ESL Testing,,coci,suggested by COBI from COCI course titles: 001  CR ESL TESTING; 011  BR ENGLISH AS A 2ND LANG TESTING; 12 ESLT 012,2026-11-28,COBI,85
+Glendale Community College,HOM,Home Economics,,coci,suggested by COBI from COCI course titles: A010 CREATIVE STITCHERY; A020 MULTI-LEVEL SEW & DRESSMAKING; A03001CR CREATIVE PATTERN ADAPTATION,2026-11-28,COBI,88
+Glendale Community College,MATHL,High School Arithmetic,,coci,suggested by COBI from COCI course titles: 010  CE HS ARITHMETIC 1; 01101CH HS ARITHMETIC 1; 012  CK ARITHMETIC 2,2026-11-28,COBI,88
+Glendale Community College,NCCS,Noncredit Computer Science,,coci,suggested by COBI from COCI course titles: 25001CP COMPUTER CONCEPTS NC; 25003CP INTRO TO PROGRAMMING; 25005CP INTRO 2D/30 GRAPHICS,2026-11-28,COBI,85
+Glendale Community College,NCECT,Noncredit Electronics,,coci,suggested by COBI from COCI course titles: 23001CP MATH FOR ELECTRONICS; 23002CP ELECTRONIC CIRCUITS; 23003CP HIGH RESOLUTION SOLDERTECH,2026-11-28,COBI,88
+Glendale Community College,OBT,Office Business Technology,,coci,suggested by COBI from COCI course titles: 100 BEGINNING MICROSOFT WORD; 10021CC PAGEMAKER/PUBLISHER; 101 ADVANCED MICROSOFT WORD,2026-11-28,COBI,90
+Glendale Community College,OSC,Office Skills Center,,coci,"suggested by COBI from COCI course titles: 00304CQ SHORTHAND,BEG,INTER,ADVANCED; 00502CM OSC/LAB; 01021CE OSC/WORDPERFECT",2026-11-28,COBI,82
+Glendale Community College,PEP,Parent Education,,coci,suggested by COBI from COCI course titles: 00112CF PARENT PRESCH CHILD INFANT; 00202CE PARENT ED/MULTI AGE; 00203CE PARENT ED/2 YEAR OLDS,2026-11-28,COBI,90
+Glendale Community College,RUSSIAN,Russian,,coci,suggested by COBI from COCI course titles: 116 Russian for the Russian Speaking II,2026-11-28,COBI,90
+Glendale Community College,SCI,High School Science,,coci,suggested by COBI from COCI course titles: L01803CQ HS LIFE SCIENCE 2; L02003CQ HS PHYSICAL SCIENCE,2026-11-28,COBI,88
+Glendale Community College,SCIL,High School Science,,coci,suggested by COBI from COCI course titles: 01704CE HS/LIFE SCIENCE I; 01801CH HS LIFE SCIENCE 2; 01803CE HS/LIFE SCIENCE II,2026-11-28,COBI,88
+Glendale Community College,TLADV,Advanced Tailoring and Dressmaking,,coci,suggested by COBI from COCI course titles: 00501CG ADVANCED TAILORING/DRESSMKG; 00501CN ADVANCED DRESSMAKING,2026-11-28,COBI,85
+Los Angeles Southwest College,BASIC SKILLS,Basic Skills,,coci,suggested by COBI from COCI course titles: 034ACE HIGH SCHOOL EQUIVALENCY TEST PREPARATION  - A; 034BCE HIGH SCHOOL EQUIVALENCY TEST PREPARATION - B,2026-11-28,COBI,88
+MiraCosta College,HSAGT,High School American Government,,coci,suggested by COBI from COCI course titles: 10 American Government,2026-11-28,COBI,88
+MiraCosta College,HSECN,High School Economics,,coci,suggested by COBI from COCI course titles: 10 Economics,2026-11-28,COBI,88
+MiraCosta College,HSENG,High School English,,coci,suggested by COBI from COCI course titles: 15 Everyday Grammar (Career Preparation); 16 Academic Grammar (College Preparation); 17 READING AND STUDY STRATEGIES,2026-11-28,COBI,90
+MiraCosta College,HSETHN,High School Ethnic Studies,,coci,suggested by COBI from COCI course titles: 10 Introduction to Ethnic Studies,2026-11-28,COBI,85
+MiraCosta College,HSIFA,High School Fine Arts,,coci,suggested by COBI from COCI course titles: 11 Introduction to Fine Arts 1 - The History and Development of Theatre; 12 Introduction to Fine Arts 2- The History and Development of Art and Music; 13 Beginning Film and Digital Media Production,2026-11-28,COBI,88
+MiraCosta College,HSMTH,High School Mathematics,,coci,suggested by COBI from COCI course titles: 11 Basic Skills Math 1; 12 Data & Probability; 13 Basic Skills Math 3,2026-11-28,COBI,88
+MiraCosta College,HSSCI,High School Science,,coci,suggested by COBI from COCI course titles: 11 Physical Science 1 - Chemistry; 12 Physical Science 2 - Physics; 21 Life Science 1A - Cell Biology,2026-11-28,COBI,88
+MiraCosta College,HSUSH,High School U.S. History,,coci,suggested by COBI from COCI course titles: 11 US History 1; 12 United States History 2,2026-11-28,COBI,88
+MiraCosta College,HSWHG,High School World History and Geography,,coci,suggested by COBI from COCI course titles: 11 World History and Geography I; 12 World History and Geography II,2026-11-28,COBI,88
+MiraCosta College,NCABE,Noncredit Adult Basic Education,,coci,suggested by COBI from COCI course titles: 11 Mentorship for Student Success; 92 High School Equivalency Preparation,2026-11-28,COBI,90
+MiraCosta College,NCART,Noncredit Art,,coci,suggested by COBI from COCI course titles: 11 Intermediate Techniques in Painting; 12 Advanced Techniques in Painting; 13 Acrylic Painting,2026-11-28,COBI,90
+MiraCosta College,NCENG,Noncredit English,,coci,suggested by COBI from COCI course titles: 15 Everyday Grammar (Career Preparation); 16 Academic Grammar (College Preparation); 17 Basic Skills: Reading and Study Strategies,2026-11-28,COBI,85
+MiraCosta College,NCHORT,Noncredit Horticulture,,coci,suggested by COBI from COCI course titles: 5 Garden Planting and Maintenance,2026-11-28,COBI,88
+MiraCosta College,NCMTH,Noncredit Mathematics,,coci,suggested by COBI from COCI course titles: 11 Number Sense & Arithmetic; 12 Basic Skills Math 2; 13 Geometry & Measurement,2026-11-28,COBI,90
+MiraCosta College,NCNUR,Noncredit Nursing Skills Laboratory,,coci,suggested by COBI from COCI course titles: 185 Nursing Skills/Simulation Laboratory I; 186 Nursing Skills/Simulation Laboratory II; 285 Nursing Skills/Simulation Laboratory III,2026-11-28,COBI,88
+Napa Valley College,ABEN,Noncredit ESL,,coci,suggested by COBI from COCI course titles: 750 E.S.L.; 753 ESL for Hospitality Workers; 755 Preparation for College ESL,2026-11-28,COBI,88
+Napa Valley College,AGN,Basic Gardening,,coci,suggested by COBI from COCI course titles: 820 BASIC GARDENING,2026-11-28,COBI,88
+Napa Valley College,LRNSNC,Learning Skills,,coci,suggested by COBI from COCI course titles: 1 Differential Learning Diagnosis; 11 Differential Learning Tutoring,2026-11-28,COBI,90
+North Orange Continuing Education,ACAR,Air Conditioning and Refrigeration,,coci,suggested by COBI from COCI course titles: 100 TEMP CONTROL BLDG. A/C; 101 ACAR101; 105 SPEC PROJ A/C,2026-11-28,COBI,82
+North Orange Continuing Education,CONS,Construction,,coci,suggested by COBI from COCI course titles: 100 Electrical Wiring & Safety I; 101 Electrical Wiring & Safety II; 102 CONST INSPECTION SOILS,2026-11-28,COBI,90
+North Orange Continuing Education,CRPL,Career Planning,,coci,suggested by COBI from COCI course titles: 120 CAREER ASSESSMENT & DEV; 140 Career Exploration; 145 WOMEN AND CAREERS,2026-11-28,COBI,90
+North Orange Continuing Education,ECE,Early Childhood Education,,coci,suggested by COBI from COCI course titles: 110 Program Principles II,2026-11-28,COBI,88
+North Orange Continuing Education,ECNO,Economics,,coci,suggested by COBI from COCI course titles: 110 PRINCIPLES OF ECONOMICS MICRO,2026-11-28,COBI,85
+North Orange Continuing Education,FLOR,Floral Design,,coci,suggested by COBI from COCI course titles: 103 FLORAL WEDDING DESIGN I; 104 FLORAL WEDDING DESIGN II; 105 FLORAL PROJECTS,2026-11-28,COBI,88
+North Orange Continuing Education,GUNS,Gunsmithing,,coci,suggested by COBI from COCI course titles: 101 GUNSMITHING - BEG,2026-11-28,COBI,88
+North Orange Continuing Education,LABS,Supervised Tutoring,,coci,suggested by COBI from COCI course titles: 100 Supervised Tutoring,2026-11-28,COBI,90
+North Orange Continuing Education,MOER,Marine Engine Technology,,coci,suggested by COBI from COCI course titles: 106 OUTBOARD ENG/STERN DRIVE; 121 VOLVO/X-DP OCEAN SERIES DRIVE; 123 VPST-ELECTRONIC FUEL INJ.,2026-11-28,COBI,88
+North Orange Continuing Education,SAFE,Health and Safety,,coci,suggested by COBI from COCI course titles: 205 Mature Driver Improvement,2026-11-28,COBI,88
+San Diego College of Continuing Education,DIES,Diesel Technology,,coci,suggested by COBI from COCI course titles: 400 INTRO TO DIESEL TECHNOLOGY; 401 MEASURING TOOLS & APPLIED MATH,2026-11-28,COBI,90
+San Diego College of Continuing Education,MARK,Retail Selling,,coci,suggested by COBI from COCI course titles: 510 RETAIL SELLING,2026-11-28,COBI,88
+Santa Barbara City College,ENTW,Entrepreneurship,,coci,suggested by COBI from COCI course titles: NC001 Entrepreneurship 101; NC002 Entrepreneurship Challenge: People and Finance,2026-11-28,COBI,88
+Santa Barbara City College,ESLN,Noncredit ESL,,coci,suggested by COBI from COCI course titles: NC000 Introduction to ESL; NC005 Pronunciation and Speaking Skills: Beginning ESL; NC006 Pronunciation and Conversation: Beyond ESL Basics,2026-11-28,COBI,90
+Santa Barbara City College,ESLNC,ESL Computer Programs,,coci,suggested by COBI from COCI course titles: 24 ESL Using Computer Programs,2026-11-28,COBI,88
+Santa Barbara City College,ESLV,Vocational ESL,,coci,"suggested by COBI from COCI course titles: NC30A Vocational ESL Child Care, Module A; NC30B Vocational ESL Child Care, Module B; NC33A Vocational ESL Healthcare, Module A",2026-11-28,COBI,90
+Santa Barbara City College,GED,GED Preparation,,coci,suggested by COBI from COCI course titles: NC010 GED Language Arts; NC020 GED Social Studies; NC030 GED Science,2026-11-28,COBI,90
+Santa Barbara City College,HSCA,High School Computer Applications,,coci,suggested by COBI from COCI course titles: 40 Learning Skills Excel; NC010 Learning Skills: PowerPoint; NC020 Learning Skills: Access,2026-11-28,COBI,85
+Santa Barbara City College,HSEC,High School Economics,,coci,suggested by COBI from COCI course titles: NC010 Economics; NC020 Introduction to Social Economics,2026-11-28,COBI,88
+Santa Barbara City College,HSEN,High School English,,coci,suggested by COBI from COCI course titles: NC001 Reading and Composition 1; NC002 Reading and Composition 2; NC003 Reading and Composition 3,2026-11-28,COBI,88
+Santa Barbara City College,HSHE,High School Health,,coci,suggested by COBI from COCI course titles: NC010 Health,2026-11-28,COBI,88
+Santa Barbara City College,HSHI,High School History,,coci,suggested by COBI from COCI course titles: NC030 American History: Part 1; NC040 American History: Part 2; NC050 Immigrant Contributions and Experiences in the United States,2026-11-28,COBI,88
+Santa Barbara City College,HSMA,High School Mathematics,,coci,"suggested by COBI from COCI course titles: NC010 Mathematics A: Whole Number Arithmetic; NC020 Mathematics B: Fractions, Decimals, Percents; NC030 Mathematics C: Pre-Algebra",2026-11-28,COBI,88
+Santa Barbara City College,HSPD,High School Learning Skills,,coci,suggested by COBI from COCI course titles: NC010 Learning Skills: Note Taking Strategies; NC020 Learning Skills: Time Management; NC030 Learning Skills: Learning Styles,2026-11-28,COBI,85
+Santa Barbara City College,HSPS,High School Government,,coci,suggested by COBI from COCI course titles: NC020 Survey of U.S. Government; NC030 American Government and Civics,2026-11-28,COBI,88
+Santa Barbara City College,HSSC,High School Science,,coci,suggested by COBI from COCI course titles: NC010 Marine Biology; NC020 Oceanography; NC030 Biology,2026-11-28,COBI,88
+Santa Barbara City College,HSVA,High School Visual Arts,,coci,"suggested by COBI from COCI course titles: NC001 Visual Arts and Media Techniques/Art Studio 1; NC004 Film, Media and Culture; NC01A Visual Arts and Media Techniques/Art Studio 1A",2026-11-28,COBI,88
+Santa Barbara City College,HSWH,High School World History,,coci,suggested by COBI from COCI course titles: NC010 World History 1: Early Civilizations; NC020 World History 2: Modern Regions,2026-11-28,COBI,88
+Santa Barbara City College,MATNC,Noncredit Digital Media,,coci,suggested by COBI from COCI course titles: 1 Introduction to Dreamweaver; 3 Photoshop,2026-11-28,COBI,85
+Santa Barbara City College,TUTW,Supervised Tutoring,,coci,suggested by COBI from COCI course titles: NC001 Supervised Tutoring; NC199 Tutor Training Across the Disciplines,2026-11-28,COBI,90
+Santa Monica College,CNA,Certified Nursing Assistant,,coci,suggested by COBI from COCI course titles: 901 CNA CORE,2026-11-28,COBI,88
+Santa Monica College,HHA,Home Health Aide,,coci,suggested by COBI from COCI course titles: 901 HHA CORE,2026-11-28,COBI,88
+Santa Monica College,SECRTR,Typing Review,,coci,suggested by COBI from COCI course titles: 900 TYPING REVIEW,2026-11-28,COBI,88
+Santa Monica College,SPEECH,Public Speaking,,coci,suggested by COBI from COCI course titles: E00 PUBLIC SPEAKING,2026-11-28,COBI,85
+Santiago Canyon College,CTZN,Citizenship,,coci,suggested by COBI from COCI course titles: 20 Citizenship,2026-11-28,COBI,90
+Santiago Canyon College,HSART,High School Subjects: Art,,coci,suggested by COBI from COCI course titles: 20 Literature Brought to Life; 70 Short Stories; 828 Understanding America Through Art,2026-11-28,COBI,90
+Santiago Canyon College,HSENG,High School Subjects: English,,coci,suggested by COBI from COCI course titles: 20 Literature Brought to Life; 201 Survey of English Level 1; 202 Survey of English Level 2,2026-11-28,COBI,90
+Santiago Canyon College,HSGED,GED Test Preparation,,coci,suggested by COBI from COCI course titles: 31 GED Test Preparation,2026-11-28,COBI,88
+Santiago Canyon College,HSMTH,High School Subjects: Mathematics,,coci,suggested by COBI from COCI course titles: 101 AP Calculus Preparation 1B; 102 Introduction to Calculus 1B; 103 Math Study Skills Support 1A,2026-11-28,COBI,90
+Santiago Canyon College,HSS,High School Equivalency,,coci,suggested by COBI from COCI course titles: 338 Workforce Preparation; 400 High School Equivalency Test Preparation; 401 High School Equivalency Test Preparation - Mathematics,2026-11-28,COBI,90
+Santiago Canyon College,HSSCI,High School Subjects: Natural Sciences,,coci,suggested by COBI from COCI course titles: 100 Chemistry 1B; 168 Life Science 1; 169 Life Science 2,2026-11-28,COBI,90
+Santiago Canyon College,HSSOC,High School Subjects: Social Sciences,,coci,suggested by COBI from COCI course titles: 215 Introduction to Economics; 216 World Cultures 1A; 217 World Cultures 1B,2026-11-28,COBI,90
+Santiago Canyon College,MATHCE,College Preparation Mathematics,,coci,suggested by COBI from COCI course titles: 100 Math Study Skills and Basic Skills Support; 206 College Preparation Essential Mathematics; 255 College Preparation Algebra,2026-11-28,COBI,88
