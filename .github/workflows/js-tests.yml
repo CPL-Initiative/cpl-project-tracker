@@ -1367,6 +1367,12 @@ jobs:
       - name: Reconcile S748 at College of Alameda (the units line's two wordings, the self-recall)
         if: matrix.shard == 4
         run: python3 tests/program_reconcile_s748_alameda_test.py
+      # S748 at Cosumnes River: one set step, the local AA/AS pattern's seven area minimums (24, PDF pp.84-86),
+      # for a local degree whose page prints the local CRC General Education Requirement; over the college's 217
+      # records it reaches three, each then passing; 30576 is held by name and five either-pattern degrees stay.
+      - name: Reconcile S748 at Cosumnes River (the local pattern's 24 units, the self-recall)
+        if: matrix.shard == 6
+        run: python3 tests/program_reconcile_s748_cosumnes_test.py
       # S748: the gap census reads a college's own named-gap files (named_gaps_*.json), so a program collected as
       # a named gap with no record leaves the gap by its reason; on the census of 00:44Z, 78 of 3,927.
       - name: Harvest gap census reads college-named gap files (S748)

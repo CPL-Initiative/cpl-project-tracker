@@ -715,7 +715,29 @@
   },
   "Cosumnes River College": {
    "why": "S648, d-calgetc-34-per-college-evidence-s648. Cosumnes River's catalog names Cal-GETC and prints no unit figure for it: its Cal-GETC page (PDF p.95, filed as the Cal-GETC certificate 45203) prints area minimums and no total (the reading: 'No total units for the certificate is printed (Cal-GETC areas give minimums: Area 1 nine units, Area 2 three, Area 3 six, Area 4 six, Area 6 three)', 'Area 5 prints no unit'), and its transfer degrees' readings say no units are printed for Cal-GETC (30566, 33072, 39656). So the statewide 34 applies (Sam, Sheet 187 card 5). S649: the page's own words, read from the hand-filed copy by college-page-read run 43519918667 (plans kb/college_reads/cosumnes_cal_getc_page.json and cosumnes_calgetc_degree_sections.json), are quoted in the evidence. Reversible by deleting this entry.",
-   "steps": [],
+   "steps": [
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {
+      "min": 24,
+      "max": 24
+     },
+     "awards": "local",
+     "only_with": [
+      "ge_pattern",
+      "degree_total",
+      "total_units"
+     ],
+     "pattern": "local\\s+CRC\\s+General\\s+Education\\s+Requirement",
+     "source": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=84",
+     "source_words": "'Local AA/AS Degree General Education Requirements' (PDF pp.84-86, read from the hand-filed copy, college page read 46123853753) prints a minimum for each of seven areas and no total: L1 'Choose two courses for a minimum of six semester units'; L2, L3, L4, L5 and L6 each 'Choose one course for a minimum of three semester units'; L7 'Choose one course from Area L7A and a minimum of two units from Area L7B, for a minimum of three semester units (four quarter units) total', 24 in all; 'Students whose majors have 45 or more units of required coursework are exempt from the L7: Living Skills requirement.'",
+     "hold": {
+      "30576": "Diagnostic Medical Sonography A.S.: its major's 60 units exempt it from L7, so its pattern takes 21, and the major alone is the degree's 60; it stays as filed"
+     },
+     "why": "S748 (lane 1, keys; the census of 2026-11-28 00:44Z, lever ge_units_steps): nine local degrees name their pattern, the 60 and electives that fill it, with no units read for the pattern, so each reads incomplete. Four print 'the required program, plus the local CRC General Education Requirement, plus sufficient electives to meet a 60-unit total' (04600, 12792, 45317 and 30576). The catalog prints the local pattern's seven area minimums and no total; the step's 24 is their sum, the least the pattern takes, quoted area by area in source_words, and a second reader should weigh a figure the catalog does not print as one number. 04600, 12792 and 45317 take it and then pass with their major, the 24 and electives to 60; 30576 is held by name. Left as filed: the five that name 'the Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)' (04593, 07290, 12790, 20367, 35175), since a degree that takes either pattern takes 24 or Cal-GETC's 34 and today's scorer fails that range against the 60 though electives fill it (a scorer reading, not a step). Over the college's 217 committed records the step reaches three, each then passing; no passing record turns failing (tests/program_reconcile_s748_cosumnes_test.py)."
+    }
+   ],
    "statewide_cal_getc": {
     "evidence": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=95 (PDF pp.95-96, printed 95-96; read from the hand-filed copy, college-page-read run 43519918667): '2026-2027 Cal-GETC Requirements' prints a minimum per area and no total: Area 1 'Choose one course (three units minimum) from each area for a minimum of nine semester units.'; Area 2 'Choose one course for a minimum of three semester units.'; Area 3 'Choose one course (three units minimum) from each area for a minimum of six semester units.'; Area 4 'Choose two courses from different disciplines for a minimum of six semester units.'; Area 5 'Choose a minimum of two courses, with one from 5A. Physical Sciences and one from 5B. Biological Sciences' (no unit figure); Area 6 'Choose one course for a minimum of three semester units.' The three transfer degrees name Cal-GETC with no figure: Psychology AA-T 30566 (p.552) '(b) the California General Education Transfer Curriculum (Cal-GETC) Requirement.'; History AA-T 33072 (p.404) 'Students must complete a total of 60 transferable semester units with a minimum 2.0 GPA, to include the California General Education Transfer Curriculum (Cal-GETC) pattern'; Social Justice Studies: Race and Ethnicity AA-T 39656 (p.576) '(b) the California General Education Transfer Curriculum (Cal-GETC) requirements.'",
     "checked": "2026-11-13",
