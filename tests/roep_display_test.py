@@ -544,6 +544,24 @@ _work = [("k1", "college", "p1", _kept, {}, {}), ("k2", "college", "p2", _gone, 
 check([w[0] for w in b.displayed(_work)] == ["k1", "k3"] and b.no_state_list(_gone["score"])
       and not b.no_state_list(None) and not b.no_state_list(_kept["score"]),
       "the display build leaves out a record whose coverage basis is no_state_list, and keeps the rest")
+# S750: the scorer marks a record scored against zero listed courses with coverage.no_list (a found page's read,
+# NO_LIST_GAP), a different key from the basis above. Scored for real here, so the case follows the scorer: such a
+# record is left out too, where it would have reached the page as "0 of 0 placed". Red when no_state_list() reads
+# the basis alone.
+import _program_requirements_score as _S750  # noqa: E402
+_no_list_rec = {"program": {"total_units": 3, "measure": "units"}, "blocks": [
+    {"name": "Required", "rule": "all", "minimum": None, "option_group": None, "stated": None,
+     "courses": [{"code": "ACTG 121", "units": 3, "catalog_addition": True, "alternatives": []}]}],
+    "missing_explained": [], "notes": []}
+_found = {"score": _S750.score(_no_list_rec, [], "ACTG 121 3 units\nTotal 3 units")}
+_listed = {"score": _S750.score(_no_list_rec, [{"code": "ACTG 121", "units": 3}], "ACTG 121 3 units\nTotal 3 units")}
+_work750 = [("k1", "college", "p1", _listed, {}, {}), ("k2", "college", "p2", _found, {}, {})]
+check(_found["score"]["coverage"]["listed"] == 0 and (_found["score"]["coverage"].get("no_list") or {}).get("gap")
+      == _S750.NO_LIST_GAP and "basis" not in _found["score"]["coverage"]
+      and b.no_state_list(_found["score"]) and not b.no_state_list(_listed["score"])
+      and [w[0] for w in b.displayed(_work750)] == ["k1"],
+      "the display build leaves out a record the scorer scored against zero listed courses (coverage.no_list), "
+      "and keeps the same record scored against its list")
 check("in displayed(work):" in open(os.path.join(ROOT, "kb", "_build_roep_display.py")).read(),
       "the build's program loop reads displayed(work), so the skip is where it chooses what to display")
 check(not [p["key"] for p in progs if b.no_state_list(p.get("score"))],

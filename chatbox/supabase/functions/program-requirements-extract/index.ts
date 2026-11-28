@@ -115,6 +115,16 @@
 // stubs over good records and read as an expired key for an hour. The check lives in
 // ../_shared/service_caller.mjs (plain JavaScript, so tests/service_caller_check.test.js runs it in Node);
 // the runner (kb/_program_requirements_college.py, extract) stops a read at a 503.
+// Version 13 (S750, 2026-11-28): a program the state's Program Course File lists no course for. S748's found-pages
+// change reads such a program from its own catalog page (method catalog_lookup), and every version before this one
+// answered 400 to its empty closed list (the S748 second reader's first blocking finding). An empty list is now
+// read when the body says it means one, no_closed_list true beside closed_list []: the prompt then says the state
+// lists no course, and every course the section prints is a catalog addition. An empty list without the
+// declaration, and a declaration beside a list of courses, still answer 400, so a caller that loses its list spends
+// no model call. A body that sends courses gets the message it always got, byte for byte. The check and the prompt
+// lines live in ../_shared/closed_list.mjs (plain JavaScript, so tests/extract_closed_list_input.test.js runs them
+// in Node). The scorer fails coverage for such a record with the gap named (kb/_program_requirements_score.py,
+// NO_LIST_GAP), so it never passes on arithmetic alone.
 // Deploy from main with cpl-chat-deploy.yml (function program-requirements-extract);
 // before S360 it went out with the Supabase MCP deploy_edge_function (project
 // hvuwhnbuahrtptokpqfh, slug program-requirements-extract).
@@ -124,6 +134,7 @@
 
 import Anthropic from "npm:@anthropic-ai/sdk";
 import { checkServiceCaller } from "../_shared/service_caller.mjs";
+import { closedListLines, readClosedList } from "../_shared/closed_list.mjs";
 
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL") || "https://hvuwhnbuahrtptokpqfh.supabase.co";
 const MODEL = "claude-opus-5-5";
@@ -379,10 +390,9 @@ function readPart(raw: unknown, closedCount: number): Part | null | "bad" {
   return { index, of, codes };
 }
 
-function userMessage(p: Record<string, unknown>, closed: Course[], text: string, part: Part | null = null): string {
-  const list = closed
-    .map((c) => `${c.code}\t${c.title ?? ""}\t${c.units ?? "units not stored"}`)
-    .join("\n");
+function userMessage(
+  p: Record<string, unknown>, closed: Course[], text: string, part: Part | null = null, noList = false,
+): string {
   return [
     `College: ${p.college}`,
     `Program: ${p.title}`,
@@ -390,8 +400,9 @@ function userMessage(p: Record<string, unknown>, closed: Course[], text: string,
     `Catalog year: ${p.catalog_year ?? "not known"}`,
     `Source: ${p.source_url ?? "not known"}`,
     "",
-    "Closed list (code, title, units the state file stores):",
-    list,
+    // The list as it always printed, or, for a program the state lists no course for, the words that say so
+    // (version 13, ../_shared/closed_list.mjs).
+    ...closedListLines(closed, noList),
     "",
     "Catalog text:",
     "<catalog_text>",
@@ -477,11 +488,14 @@ Deno.serve(async (req) => {
   }
   if (provider === "anthropic" && !Deno.env.get("ANTHROPIC_API_KEY")) return reply(500, { error: "ANTHROPIC_API_KEY not set" });
   if (provider === "xai" && !Deno.env.get("XAI_API_KEY")) return reply(500, { error: "XAI_API_KEY not set" });
-  const closed = Array.isArray(body.closed_list) ? (body.closed_list as Course[]) : [];
   const text = typeof body.text === "string" ? body.text : "";
-  if (!text.trim() || !closed.length) {
-    return reply(400, { error: "text and closed_list are both required" });
-  }
+  if (!text.trim()) return reply(400, { error: "text is required" });
+  // The closed list, or the caller's word that the state lists no course (version 13): an empty list without that
+  // word answers 400, as every empty list did before (../_shared/closed_list.mjs).
+  const sent = readClosedList(body);
+  if (!sent.ok) return reply(sent.status, sent.body);
+  const closed = sent.closed as Course[];
+  const noList = sent.noList as boolean;
   if (text.length > MAX_TEXT) {
     return reply(413, { error: `text is ${text.length} characters; the limit is ${MAX_TEXT}` });
   }
@@ -493,7 +507,7 @@ Deno.serve(async (req) => {
   if (provider === "xai") {
     const model = (typeof body.model === "string" && body.model.trim()) || (Deno.env.get("XAI_MODEL") || "").trim();
     if (!model) return reply(500, { error: "XAI_MODEL not set and the body names no model; the model is never guessed" });
-    return reply(200, await readWithXai(model, userMessage(body, closed, text, part), part));
+    return reply(200, await readWithXai(model, userMessage(body, closed, text, part, noList), part));
   }
 
   const client = new Anthropic();
@@ -506,7 +520,7 @@ Deno.serve(async (req) => {
       fallbacks: "default",
       output_config: { effort: EFFORT, format: { type: "json_schema", schema: RECORD_SCHEMA } },
       system: SYSTEM,
-      messages: [{ role: "user", content: userMessage(body, closed, text, part) }],
+      messages: [{ role: "user", content: userMessage(body, closed, text, part, noList) }],
     } as any);
     const out = {
       model: response.model,
