@@ -435,9 +435,12 @@ def calgetc_apply_plan(records: list[dict], college: str, commit: str | None = N
     # At a college whose statewide step quotes the combined line (Berkeley City, S689), a set step for local degrees
     # only (its 18, S639) is no Cal-GETC route: its transfer degrees take the statewide step. Every other college's
     # plan reads its set steps as before (Los Angeles City's and Pierce's keep their route; S689 review, round 1).
+    # S752: the same at Cosumnes River, whose statewide step quotes no combined line and whose set step gives the
+    # local AA/AS pattern's 24 to local degrees alone: a local-only set step at a college with a statewide step is
+    # no Cal-GETC route. Los Angeles City and Pierce carry no statewide step, so their route stands.
+    sw = R.calgetc_step(conf)
     own = [st for st in conf.get("steps") or [] if st.get("kind") == "set" and st.get("field") == "ge_units"
-           and not ((R.calgetc_step(conf) or {}).get("combined_line")
-                    and str(st.get("awards") or "").startswith("local"))]
+           and not (sw is not None and str(st.get("awards") or "").startswith("local"))]
     rows = []
     if own:
         route = "college set step"

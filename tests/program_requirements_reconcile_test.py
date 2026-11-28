@@ -1542,8 +1542,20 @@ _cr_conf = R.load_steps().get("Cosumnes River College") or {}
 _cr_ev = (R.calgetc_step(_cr_conf) or {}).get("evidence", "")
 check("Cosumnes River: the statewide step quotes pp.95-96 (minimums, no total) and each degree's Cal-GETC words",
       "43519918667" in _cr_ev and "for a minimum of nine semester units" in _cr_ev and "no total" in _cr_ev
-      and all(w in _cr_ev for w in ("30566 (p.552)", "33072 (p.404)", "39656 (p.576)"))
-      and not any(s.get("field") == "ge_units" for s in _cr_conf.get("steps") or []))
+      and all(w in _cr_ev for w in ("30566 (p.552)", "33072 (p.404)", "39656 (p.576)")))
+# S752 (Sam's queue ruling of 2026-11-28): Cosumnes River carries one ge_units set step, the local AA/AS pattern's
+# seven area minimums (24, PDF pp.84-86), for local degrees alone; its transfer degrees keep the statewide 34, so
+# the step is no Cal-GETC route (calgetc_apply_plan reads a local-only step beside a statewide step as none).
+_cr_ge = [s for s in _cr_conf.get("steps") or [] if s.get("field") == "ge_units"]
+check("Cosumnes River: one ge_units set step, 24 for local degrees on the local CRC pattern's words, 30576 held",
+      len(_cr_ge) == 1 and _cr_ge[0].get("kind") == "set" and _cr_ge[0].get("value") == {"min": 24, "max": 24}
+      and _cr_ge[0].get("awards") == "local"
+      and _cr_ge[0].get("only_with") == ["ge_pattern", "degree_total", "total_units"]
+      and _cr_ge[0].get("pattern") == r"local\s+CRC\s+General\s+Education\s+Requirement"
+      and _cr_ge[0].get("source", "").endswith("crc-catalog-26-27.pdf#page=84")
+      and list((_cr_ge[0].get("hold") or {}).keys()) == ["30576"]
+      and not R.awards_match(_cr_ge[0].get("awards"), "A.A- T Degree")
+      and RM2.calgetc_apply_plan([], "Cosumnes River College")["route"] == "statewide step")
 _cr_plan = json.load(open(os.path.join(ROOT, "kb", "program_requirements_college", "cosumnes_river",
                                        "calgetc_apply_plan.json")))
 check("Cosumnes River's apply plan: the statewide route fills 30566, 33072 and 39656, the rule holds four overlaps, "
@@ -1619,15 +1631,34 @@ _ls_pins = (R.load_steps().get("Lassen College") or {}).get("pdf_pages") or {}
 # (tests/program_requirements_wave_a_s739_test.py checks the page).
 # S739 wave B: San Diego College of Continuing Education and Yuba pin one program each on the same lever
 # (tests/program_requirements_lever_pins_s739b_test.py checks the pages).
-check("no college but American River, City College of San Francisco, Clovis, Copper Mountain, Cosumnes River, East Los "
-      "Angeles, Folsom Lake, Lassen, Los Angeles Southwest, Mendocino, Ohlone, Sacramento City, San Diego College of "
+# S752: College of the Canyons pins Art History A.A.-T 37868 to its own section, pp.78-79, until the Studio Arts
+# A.A.-T's heading (college-page-read run 46181379137).
+check("no college but American River, City College of San Francisco, Clovis, College of the Canyons, Copper Mountain, "
+      "Cosumnes River, East Los Angeles, Folsom Lake, Lassen, Los Angeles Southwest, Mendocino, Ohlone, Sacramento City, San Diego College of "
       "Continuing Education, Santa Monica, Santiago Canyon and Yuba names pdf_pages",
       sorted(k for k, v in R.load_steps().items() if v.get("pdf_pages"))
       == sorted([_CR, "American River College", "City College of San Francisco", "Clovis Community College",
-                 "Copper Mountain College", "East Los Angeles College",
+                 "College of the Canyons", "Copper Mountain College", "East Los Angeles College",
                  "Folsom Lake College", "Lassen College", "Los Angeles Southwest College", "Mendocino College",
                  "Ohlone College", "Sacramento City College", "San Diego College of Continuing Education",
                  "Santa Monica College", "Santiago Canyon College", "Yuba College"]))
+# S752: the Canyons pin binds on the lines pp.78-79 print (run 46181379137), from the Art History heading to the Studio
+# Arts heading, and binds nothing where the page prints the local A.A. heading in its place.
+_coc_pin = ((R.load_steps().get("College of the Canyons") or {}).get("pdf_pages") or {}).get("37868") or {}
+_coc_p78 = ("Santa Clarita Community College District76\nCREDIT PROGRAMS / COURSE DESCRIPTIONS\nART\n"
+            "the community.\nAssociate in Arts for Transfer Degree:\nArt History\nThe Student Transfer Achievement\n")
+_coc_p79 = ("College of the Canyons 77\nProgram Requirements:\nUnits Required: 18\nARTH-C1100 Survey of Art\n"
+            "ART-115 Art History: U.S and\nEuropean Modernism ......3.0\nAssociate in Arts for Transfer Degree:\n"
+            "Studio Arts\nThe Student Transfer Achievement\n")
+_coc_pages = [""] * 77 + [_coc_p78, _coc_p79]
+_coc_head = CC.pdf_pinned_heading(_coc_pages, {"control_number": "37868", "title": "Art History"}, _coc_pin)[0]
+check("College of the Canyons pins 37868 to p.78 through p.79, from its heading to the Studio Arts A.A.-T's",
+      sorted(_coc_pin) == ["evidence", "page", "through", "until", "words"] and "46181379137" in _coc_pin["evidence"]
+      and _coc_head is not None and _coc_p78[_coc_head["at"]:].startswith("Associate in Arts for Transfer Degree:\nArt")
+      and _coc_head["until"]["page"] == 78 and _coc_p79[_coc_head["until"]["at"]:].startswith(
+          "Associate in Arts for Transfer Degree:\nStudio Arts")
+      and CC.pdf_pinned_heading([""] * 77 + [_coc_p78.replace("for Transfer ", ""), _coc_p79],
+                                {"control_number": "37868", "title": "Art History"}, _coc_pin)[0] is None)
 # S691: Santa Monica pins eleven programs to the page their heading and 'Area of Emphasis' total print on, the page
 # before the one capture 39567439681 handed them (college-page-read runs 44881390798 and 44883047940). After the
 # re-read the filed record is read from the pin's page, so a pin names the filed page or the one after it.
