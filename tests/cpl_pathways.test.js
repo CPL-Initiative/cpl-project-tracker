@@ -646,6 +646,14 @@ check("boot lazy-loads the current-course catalog", /loadScript\("cpl_coci_cours
   let boxes = dside ? Array.from(dside.querySelectorAll("input[type=checkbox]")) : [];
   check("the heading opens every credential, none checked", boxes.length === dad.length - 1 && boxes.every(b => !b.checked) && /NBRC CRT/.test(dside.textContent), boxes.length);
   check("the panel names El Camino as granting it", /El Camino College/.test(dside.textContent));
+  // Beside the view, never over it (Sam, 2026-11-23): from 900px the page gives up the panel's width while it is open.
+  // S747 found the live Request Adopt panel fixed over the right 520px, covering the rows' own Request Adopt buttons.
+  const besideCss = Array.from(w.document.querySelectorAll("style")).map(st => st.textContent).join("\n");
+  check("the open panel marks the page so it gives up the panel's width",
+    w.document.body.classList.contains("cplpw-panel-on") &&
+    /@media \(min-width: 900px\) \{ body\.cplpw-panel-on \{ margin-right:min\(520px, 100vw\); \} \}/.test(besideCss));
+  dside.querySelector(".cplpw-panel-close").dispatchEvent(new w.Event("click", { bubbles: true }));
+  check("Close gives the width back", !w.document.body.classList.contains("cplpw-panel-on") && dside.hidden);
   const rowBtn = dad.find((b, i) => i > 0 && /NBRC CRT/.test(b.getAttribute("aria-label") || ""));
   rowBtn.dispatchEvent(new w.Event("click", { bubbles: true }));
   dside = w.document.getElementById("cplpw-panel");

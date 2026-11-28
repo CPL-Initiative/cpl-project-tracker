@@ -2843,7 +2843,10 @@
     ".cplpw-outslot:empty { display:none; }",
     ".cplpw-outword { justify-self:start; background:none; border:0; padding:0; min-height:24px; font:inherit; font-size:.82rem; font-weight:600; color: var(--accent-link); text-decoration:underline; text-underline-offset:3px; cursor:pointer; text-align:left; }",
     ".cplpw-outword:focus-visible { outline:2px solid var(--focus-ring, var(--cobalt)); outline-offset:2px; }",
-    "@media print { .cplpw-panel { display:none !important; } }"
+    /* Beside the view, never over it (Sam, 2026-11-23: "this is a rule for all sidebars"): from 900px the page gives
+       up the panel's width while it is open and takes it back on Close; below 900px the panel covers the view. */
+    "@media (min-width: 900px) { body.cplpw-panel-on { margin-right:min(520px, 100vw); } }",
+    "@media print { .cplpw-panel { display:none !important; } body.cplpw-panel-on { margin-right:0; } }"
   ].join("\n");
   var panel = null, panelOpener = null, panelSeq = 0;
   function ensurePanelCss() {
@@ -2883,6 +2886,7 @@
   function closePanel() {
     if (!panel || panel.hidden) return;
     panel.hidden = true;
+    document.body.classList.remove("cplpw-panel-on");
     panelSeq++;
     var back = panelOpener;
     panelOpener = null;
@@ -2900,6 +2904,7 @@
     var body = panel.querySelector(".cplpw-panel-body");
     clearNode(body);
     panel.hidden = false;
+    document.body.classList.add("cplpw-panel-on");
     try { panel.querySelector("#cplpw-panel-h").focus(); } catch (e) { /* best effort */ }
     return body;
   }
