@@ -62,3 +62,6 @@ rereads, loads and `.apply`, and holds every Supabase call.
 ## Split changes during the run
 
 - 13:16Z: the declaration pushed; `found`, `display` and `piles` started on Fable 5.2 at high effort.
+- 13:33Z: `display` stop 1, its last (`claude/s750-display`, `52b8a23a`): build `366c5bbc7b2d`, 18,754 statements (two
+  programs gain a display: San Bernardino Valley 31858, Coastline 43057), the build code unchanged. The conductor's
+  baseline (13:34Z): `229a759101f7` 18,751, older builds 32, none 2. The Glendale step dispatched on the branch.
