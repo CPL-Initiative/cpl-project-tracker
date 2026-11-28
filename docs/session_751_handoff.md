@@ -98,3 +98,11 @@ rereads, loads and `.apply`, and holds every Supabase call.
   Six free captures running (Skyline 46155715421, Allan Hancock 46155901281, San Mateo 46157242032, Diablo Valley
   46157353221, San Joaquin Delta 46157465447, Gavilan 46157620485). The function deploys from `main`
   (`cpl-chat-deploy.yml`), so the land comes first. To a Fable 5.2 second reader.
+- 15:45Z: the found-pages reader (Fable 5.2): GO WITH (land and deploy; before the paid probe, fix one MAJOR and see a
+  free Skyline capture file pages). Not refuted: 3,163 filed records rescore the same on both trees and 22,357 filed
+  sources stage the same; zero listed fails every pass path; only `[]` beside `true` reads; 0 false finds of 1,453 with
+  each subject's own page removed; four guards removed turn 12 checks red. MAJOR: the display build's
+  `no_state_list()` reads `coverage.basis` alone, so a no-list record would reach CPL Pathways as "0 of 0 placed".
+  Of consequence: a found-page record stays "no passing record" (`coverage_fails`) until a `no_state_course_list` rule
+  in `kb/_program_named_gaps.py` writes the gap and `collected_with_gaps` admits it. `found` fixes the MAJOR, merges
+  `main`, reads the six captures and dispatches the five held free ones.
