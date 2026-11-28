@@ -177,6 +177,40 @@ def canonical_codes(canon_doc):
     return by_code, by_disc
 
 
+CHIPS = os.path.join("kb", "subject_title_hunt", "*common_chips*.csv")
+FLNG_DISCIPLINE = "Foreign Languages"
+
+
+def root_of(_canon_doc):
+    return ROOT
+
+
+RECODED = os.path.join("kb", "receipts", "minted_codes_s749.json")
+
+
+def recoded(root=ROOT):
+    """{old common code: new}, from kb/_apply_minted_codes_s749.py's receipt."""
+    path = os.path.join(root, RECODED)
+    if not os.path.exists(path):
+        return {}
+    with open(path, encoding="utf-8") as f:
+        return {c["from"]: c["to"] for c in json.load(f).get("changed") or []}
+
+
+def language_codes(root=ROOT):
+    """The per-language common codes: every common_code the chips file marks with an FLNG chip (S749; Sam's ruling 8)."""
+    import csv
+    import glob
+    out = set()
+    for path in glob.glob(os.path.join(root, CHIPS)):
+        with open(path, encoding="utf-8", newline="") as f:
+            for r in csv.DictReader(f):
+                code = (r.get("common_code") or "").strip().upper()
+                if (r.get("chip") or "").strip().upper() == "FLNG" and re.match(r"^[A-Z]{4}$", code):
+                    out.add(code)
+    return out
+
+
 class Decisions:
     """The decisions a build honors. college[(slug, code, band)] and statewide[map_key(code)] are records with
     key, common_code, local_title, discipline, who and at; refused lists what was not applied and why."""
@@ -186,6 +220,11 @@ class Decisions:
         noncredit MQ table (kb/_build_noncredit_subject_titles.py MQ). With none given, every nc: band is refused."""
         self.doc = doc or {}
         self.by_code, by_disc = canonical_codes(canon_doc)
+        # A per-language common code (SPAN, LATN, ...; Sam, 2026-11-28) is a common code under Foreign Languages: the
+        # chips file names it with an FLNG chip (language_codes). A pick to it stands; its discipline is Foreign Languages.
+        for code in sorted(language_codes(root_of(canon_doc))):
+            if code not in self.by_code and by_disc.get(FLNG_DISCIPLINE):
+                self.by_code[code] = FLNG_DISCIPLINE
         self.nc_slugs, self.nc_codes = dict(nc_slugs or {}), dict(nc_codes or {})
         self.slug_of = {v: k for k, v in self.nc_slugs.items()}
         self.college, self.noncredit, self.statewide, self.refused = {}, {}, {}, []
@@ -257,6 +296,8 @@ class Decisions:
             code = code_key(p.get("local_subject_code"))
             band = (p.get("band") or "credit").strip().lower()
             common = (p.get("common_code") or "").strip().upper() or None
+            # A pick written against a code the minted list re-coded (CVTC, now CVTE) follows it (S749 receipt).
+            common = recoded().get(common, common)
             try:
                 conf = int(float((p.get("confidence") or "").strip()))
             except ValueError:

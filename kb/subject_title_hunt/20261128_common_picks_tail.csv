@@ -1,0 +1,542 @@
+college,local_subject_code,band,common_code,confidence,found_by,basis
+Allan Hancock College,COMPC,credit,BSOT,88,COBI,MQ: Office Technologies / computer applications
+Allan Hancock College,EDTC,credit,EDTC,86,COBI,local code is a known variant of EDTC (Instructional Design/Technology)
+Allan Hancock College,EL,credit,ELET,92,COBI,MQ: Electronics
+Allan Hancock College,FCS,credit,FCSH,94,COBI,ruling analog: FCS/Home Ec -> FCSH
+Allan Hancock College,FSN,credit,FDNT,95,COBI,ruling: Nutrition -> FDNT (never NUTR)
+Allan Hancock College,HLCR,credit,NRSR,80,COBI,TOP 1230.00 empirical NRSR (purity 0.89); course titles: Introduction to Health Careers
+Allan Hancock College,INT ST,credit,SOCS,92,COBI,ruling analog: Global/International Studies -> SOCS
+Allan Hancock College,LBRY,credit,LIBR,86,COBI,library info/research skills -> Library Science (LIBR); technician programs stay LIBT
+Allan Hancock College,MB,credit,HTEC,80,COBI,TOP 1208.20 Health Care Ancillaries -> HTEC; course titles: Body Systems and Diseases; MB Administrative Procedures; Medical Billing & In...
+Allan Hancock College,MMAC,credit,MULT,82,COBI,digital media usually Multimedia (MULT); film-heavy courses would move to FTVE
+Allan Hancock College,REC,credit,RECR,86,COBI,local code is a known variant of RECR (Recreation Administration)
+Allan Hancock College,RVT,credit,VETT,95,COBI,ruling/MQ: Vet Tech
+Allan Hancock College,SGNLNG,credit,SLNA,92,COBI,"MQ: Sign Language, American (ASL)"
+Allan Hancock College,SPECI,credit,IDST,80,COBI,existing recommender IDST
+Allan Hancock College,STEM,credit,WEXP,86,COBI,local code is a known variant of WEXP (Work Experience Instructors)
+Allan Hancock College,WFTL,credit,FIRE,84,COBI,TOP 2133.10 Fire Technology -> FIRE; course titles: Display Processor S-245; Recorder Check-in/Status J-248; Ordering Manager J-252
+American River College,ARTPH,credit,PHOT,86,COBI,local code is a known variant of PHOT (Photography)
+American River College,ELTRN,credit,ELEC,88,COBI,"electrician trainee is Electricity (ELEC), not Electronic Technology"
+American River College,GENSCI,credit,PHSC,90,COBI,ruling analog: generic science -> PHSC
+American River College,GERON,credit,GERO,95,COBI,MQ: Gerontology
+American River College,HCI,credit,CINT,92,COBI,"MQ: Court Interpreting (minted CINT) — spoken-language medical interpreting, not ASL (SLNG)"
+American River College,IW,credit,WELD,80,COBI,ironwork often filed under Welding
+American River College,MUSM,credit,MUSI,90,COBI,MQ: Music
+American River College,SHME,credit,SHME,92,COBI,MQ: Sheet Metal (minted SHME); TOP 0956.40 Sheet Metal and Structural Metal
+American River College,SMTEC,credit,SHME,90,COBI,MQ: Sheet Metal (minted SHME)
+Antelope Valley College,AFMT,credit,MANU,90,COBI,MQ: Manufacturing Technology
+Antelope Valley College,MSAM,credit,MANU,90,COBI,MQ: Manufacturing Technology
+Antelope Valley College,REC,credit,RECR,86,COBI,local code is a known variant of RECR (Recreation Administration)
+Bakersfield College,ACDV,credit,LSKL,86,COBI,local code is a known variant of LSKL (Learning Assistance or Learning Skills)
+Bakersfield College,AGBS,credit,AGAB,95,COBI,ruling: Agriculture Business -> AGAB
+Bakersfield College,INDA,credit,ELMT,82,COBI,automation often Electromechanical (ELMT); could be ELET/ROBO
+Bakersfield College,MCAG,credit,AGRI,85,COBI,"TOP 0116 Agricultural Power Equipment Technology (22 of 24 courses); intro mechanized agriculture, farm power"
+Bakersfield College,MEDS,credit,RSPT,80,COBI,local code is a known variant of RSPT (Respiratory Technologies)
+Bakersfield College,NRES,credit,ENVR,90,COBI,MQ: Forestry/Natural Resources
+Bakersfield College,PBHS,credit,HLTH,93,COBI,ruling analog: Public Health -> HLTH
+Bakersfield College,PHTA,credit,PTAS,95,COBI,MQ: Physical Therapy Assisting
+Bakersfield College,SOIL,credit,AGPR,90,COBI,ruling analog: soil science -> AGPR
+Bakersfield College,STEM,credit,WEXP,86,COBI,local code is a known variant of WEXP (Work Experience Instructors)
+Bakersfield College,TECM,credit,MATH,80,COBI,technical math is still Mathematics; CTE-hosted sections can move in the course pass
+Bakersfield College,WOOD,credit,WWKC,82,COBI,woodworking/cabinet -> Cabinet Making (WWKC); furniture would be WWKF
+Barstow Community College,BCTT,credit,CNST,84,COBI,TOP 0952.00 Construction Technology -> CNST; course titles: Safety Orientation
+Barstow Community College,IMEI,credit,IMNT,90,COBI,MQ: Industrial Maintenance
+Barstow Community College,IMMT,credit,IMNT,90,COBI,MQ: Industrial Maintenance
+Berkeley City College,LIS,credit,LIBR,86,COBI,library info/research skills -> Library Science (LIBR); technician programs stay LIBT
+Berkeley City College,MM/MW,credit,MULT,82,COBI,digital media usually Multimedia (MULT); film-heavy courses would move to FTVE
+Butte College,AET,credit,ENGT,94,COBI,MQ: Engineering Technology
+Butte College,AGS,credit,AGRI,88,COBI,"MQ: Agriculture; courses in plant science, animal science, soils"
+Butte College,HIM,credit,HEIT,80,COBI,TOP 1223.00 Health Information Technology -> HEIT; course titles: Intro to Health Info Mgmt; Healthcare Law/Ethics; Introduction to Medic...
+Butte College,LM,credit,COUN,80,COBI,life management usually Counseling / student success
+Butte College,MCGS,credit,WMST,90,COBI,ruling analog: Women's/Gender/Queer -> WMST
+Butte College,SPED,credit,EDUC,93,COBI,ruling: Special Education -> EDUC
+Cabrillo College,ETECH,credit,ENGT,94,COBI,MQ: Engineering Technology
+Cañada College,DSKL,credit,LSKL,93,COBI,ruling analog: Learning/study skills -> LSKL
+Cerritos College,IWAP,credit,WELD,80,COBI,ironwork often filed under Welding; apprenticeship wrappers stay not_a_subject
+Cerritos College,NPD,credit,MANU,82,COBI,new product development usually Manufacturing; sometimes MKTG/ENTR
+Cerritos College,WMT,credit,WWKC,82,COBI,woodworking/cabinet -> Cabinet Making (WWKC); furniture would be WWKF
+Cerro Coso Community College,FRCC,credit,ENVR,90,COBI,MQ: Forestry/Natural Resources
+Cerro Coso Community College,ICC,credit,LIBR,86,COBI,"information competency is library research skills (LIBR), not English"
+Cerro Coso Community College,INDE,credit,ENGR,82,COBI,industrial engineering is Engineering (ENGR)
+Cerro Coso Community College,MIDW,credit,HLTH,80,COBI,"existing recommender HLTH; courses: Midwifery Fundamentals and Skills Laboratory; Introduction to Midwifery: History, Ethics, and Practic..."
+Cerro Coso Community College,SORL,credit,RECR,85,COBI,"5 courses, all TOP 0115.10 Parks and Outdoor Recreation: intro to recreation and leisure, outdoor leadership"
+Chabot College,ESYS,credit,ELCT,88,COBI,MQ: Electronic Technology
+Chabot College,MCOM,credit,MCOM,90,COBI,MQ: Mass Communication (minted MCOM)
+Chabot College,PHEACJUD,credit,KINE,84,COBI,Title is Physical Education; Sam's PE ruling maps PE subjects to KINE. Signal TOP KINE. No Fall 2025 courses on file
+Chaffey College,CISHDSP,credit,ITIS,84,COBI,TOP 0708.20 Computer Information Systems -> ITIS; course titles: Microcomputer Hardware
+Chaffey College,COOPED,credit,WEXP,95,COBI,ruling: general Work Experience
+Chaffey College,DRAFT,credit,DRAF,94,COBI,MQ: Drafting/CADD
+Chaffey College,EGTECH,credit,ENGT,94,COBI,MQ: Engineering Technology
+Chaffey College,IETELMT,credit,ELMT,92,COBI,MQ: Electromechanical Technology
+Chaffey College,IETMECH,credit,ROBO,80,COBI,local code is a known variant of ROBO (Robotics)
+Citrus College,CLNU,credit,FDNT,95,COBI,ruling: Nutrition -> FDNT (never NUTR)
+Citrus College,EOPS,credit,COUN,92,COBI,EOPS counseling is Counseling (Counseling: Extended Opportunity MQ)
+Citrus College,PMET,credit,ENGT,94,COBI,MQ: Engineering Technology
+Citrus College,REC,credit,MUSC,85,COBI,"16 courses, all TOP 1005 Commercial Music: audio engineering, record production, studio workshop"
+Citrus College,SPWG,credit,DIES,84,COBI,TOP 0947.00 Diesel Mechanics -> DIES; course titles: Power Sys 1; Power Sys 2; Power Systems Controls
+Citrus College,STEM,credit,WEXP,86,COBI,local code is a known variant of WEXP (Work Experience Instructors)
+City College of San Francisco,BSEN,credit,BSOT,84,COBI,TOP 0514.00 Office Technologies -> BSOT; course titles: Written Business Communication
+City College of San Francisco,BSMA,credit,BSOT,84,COBI,TOP 0514.00 Office Technologies -> BSOT; course titles: Mathematics of Business
+City College of San Francisco,CLAS,credit,CLAS,88,COBI,MQ: Classics (minted CLAS); course on file: Tragic Drama of Greece
+City College of San Francisco,CVT,credit,CVTE,90,COBI,MQ: Cardiovascular Technology (minted CVTE); TOP 1213. One sonography course would move to SONO in the course pass
+City College of San Francisco,GNBS,credit,BUSI,90,COBI,MQ: Business
+City College of San Francisco,HCT,credit,HTEC,88,COBI,MQ: Health Care Ancillaries / health care technology
+City College of San Francisco,LALS,credit,ETHN,90,COBI,MQ: Chicano Studies
+City College of San Francisco,LALS/LGBT,credit,WMST,90,COBI,ruling analog: Women's/Gender/Queer -> WMST
+City College of San Francisco,LERN,credit,LSKL,93,COBI,ruling analog: Learning/study skills -> LSKL
+City College of San Francisco,LI S,credit,LIBR,86,COBI,library info/research skills -> Library Science (LIBR); technician programs stay LIBT
+City College of San Francisco,PHST,credit,ETHS,84,COBI,TOP 2203.00 Ethnic Studies -> ETHS; course titles: Independent Study; The Filipino Family; Philippine Society and Culture Through Film
+City College of San Francisco,PIL,credit,FILI,93,COBI,ruling: per-language code + FLNG chip
+City College of San Francisco,WGST,credit,WMST,90,COBI,ruling analog: Women's/Gender/Queer -> WMST
+City College of San Francisco,WKEX,credit,BUSI,92,COBI,ruling: field CWE keeps discipline + WEXP chip
+Clovis Community College,MUSCO,credit,MUSC,94,COBI,MQ: Commercial Music
+Clovis Community College,REHT,credit,RHAB,86,COBI,MQ: Rehabilitation Technician (minted RHAB); Rehabilitation Aide courses
+Coalinga College,AET,credit,ENVS,86,COBI,local code is a known variant of ENVS (Environmental Technologies)
+Coalinga College,CRPSCI,credit,AGPR,90,COBI,ruling analog: Plant/soil science -> AGPR
+Coalinga College,DMGR,credit,MULT,82,COBI,digital media usually Multimedia (MULT); film-heavy courses would move to FTVE
+Coalinga College,EQSCI,credit,AGEQ,95,COBI,MQ: Equine Science
+Coalinga College,FLSPN,credit,SPAN,95,COBI,ruling: per-language code + FLNG chip; TOP 1105 Spanish
+Coalinga College,GS,credit,COUN,90,COBI,ruling analog: college/success/guidance -> COUN
+Coalinga College,IMT,credit,IMNT,84,COBI,TOP 0945.00 Industrial Maintenance -> IMNT; course titles: Industrial Core; Industrial Maintenance Mechanic Level I; Industrial Maintenan...
+Coalinga College,SLSCI,credit,AGPR,90,COBI,ruling analog: Plant/soil science -> AGPR
+Coalinga College,VNPT,credit,NURP,84,COBI,TOP 1239.00 Psychiatric Technician -> NURP; course titles: Math for Medical Professions
+Coastline Community College,AGNG,credit,GERO,90,COBI,aging studies -> Gerontology
+Coastline Community College,BC,credit,HTEC,80,COBI,local code is a known variant of HTEC (Health Care Ancillaries)
+Coastline Community College,CST,credit,CSRV,90,COBI,MQ: Computer Service Technology (minted CSRV)
+Coastline Community College,MCOM,credit,FTVE,82,COBI,"Title plus Introduction to Radio, TV, Film (TOP 0601). The Public Relations course can move to PUBR in the course pass"
+College of Alameda,ANTHROPOLOGY,credit,ANTH,95,COBI,MQ: Anthropology
+College of Alameda,LIS,credit,LIBR,86,COBI,library info/research skills -> Library Science (LIBR); technician programs stay LIBT
+College of Marin,JOUN,credit,JOUR,95,COBI,MQ: Journalism
+College of San Mateo,ADAP,credit,PEDS,95,COBI,ruling: Adapted PE -> PEDS
+College of San Mateo,PALN,credit,GEOL,90,COBI,paleontology is Earth Science (GEOL)
+College of the Canyons,BEERST,credit,AGPR,84,COBI,TOP 0104.00 Agricultural Production -> AGPR; course titles: Beer Appreciation
+College of the Canyons,CCE,credit,IDST,80,COBI,existing recommender IDST
+College of the Canyons,ENVRMT,credit,BIOL,92,COBI,ruling: environmental/ecology/sustainability -> BIOL
+College of the Canyons,REC,credit,RECR,92,COBI,MQ: Recreation Administration
+College of the Desert,HEALTH SCIENCES,credit,HLTH,86,COBI,health sciences usually HLTH; allied-health mix possible
+College of the Desert,LIS,credit,BSKL,88,COBI,MQ: Interdisciplinary-Basic Skills: Noncredit (CB22 C)
+College of the Desert,MESA,credit,COUN,84,COBI,"MESA Orientation, TOP 4930.10 Career Guidance and Orientation — STEM-success counseling, per the STEM -> COUN ruling"
+College of the Desert,RED,credit,REAL,80,COBI,local code is a known variant of REAL (Real Estate)
+College of the Desert,RTV,credit,BRDC,84,COBI,TOP 0604.00 Broadcasting Technology -> BRDC; course titles: Broadcast Announcing; Sports Media; Broadcast Writing
+College of the Desert,WEG,credit,WEXP,95,COBI,ruling: general Work Experience
+College of the Redwoods,AQUA,credit,AGPR,88,COBI,MQ: Agricultural Production
+College of the Redwoods,CET,credit,ELET,80,COBI,local code is a known variant of ELET (Electronics)
+College of the Redwoods,HUPA,credit,HUPA,93,COBI,ruling: per-language code + FLNG chip; Elementary Hupa; TOP 1199 Other Foreign Languages
+College of the Redwoods,LCAM,credit,ETHN,90,COBI,MQ: Chicano Studies
+College of the Redwoods,NAS,credit,ETHA,92,COBI,MQ: Native American/American Indian Studies
+College of the Redwoods,PTEC,credit,NURP,95,COBI,MQ: Psychiatric Technician
+College of the Redwoods,VNC,credit,VNRS,94,COBI,title matches MQ discipline Licensed Vocational Nursing
+College of the Redwoods,YUR,credit,YURO,93,COBI,ruling: per-language code + FLNG chip; Elementary Yurok; TOP 1199 Other Foreign Languages
+College of the Sequoias,CINA,credit,FTVE,80,COBI,TOP 0612.00 empirical FTVE (purity 0.82); course titles: Film Appreciation-American; Film Appreciation-International
+College of the Sequoias,NSCI,credit,PHSC,90,COBI,ruling analog: generic science -> PHSC
+College of the Sequoias,SMED,credit,ATTR,85,COBI,"10 courses, all TOP 1228 Athletic Training and Sports Medicine: injury assessment and rehab. Athletic Training minted ATTR"
+College of the Sequoias,VT,credit,VETT,95,COBI,ruling/MQ: Vet Tech
+College of the Siskiyous,AV,credit,AVIA,94,COBI,title matches MQ discipline Aviation
+College of the Siskiyous,FCS,credit,FCSH,94,COBI,ruling analog: FCS/Home Ec -> FCSH
+College of the Siskiyous,OLAD,credit,OLAD,90,COBI,MQ: Older Adults: Noncredit (CB22 H)
+Columbia College,SKLDV,credit,LSKL,86,COBI,ruling analog: skills development -> LSKL
+Compton College,MEDT,credit,HTEC,90,COBI,medical terminology is Health Care Ancillaries (HTEC)
+Compton College,MTEC,credit,MANU,90,COBI,MQ: Manufacturing Technology
+Compton College,NFOO,credit,FDNT,95,COBI,ruling: Nutrition -> FDNT (never NUTR)
+Compton College,PSCI,credit,PHSC,95,COBI,ruling analog: Physical Science -> PHSC
+Contra Costa College,LARAZ,credit,HIST,80,COBI,local code is a known variant of HIST (History)
+Contra Costa College,PUBSR,credit,KINE,84,COBI,TOP 0835.70 Kinesiology -> KINE; course titles: Lifeguard Training; Independent Study
+Copper Mountain College,BUAA,credit,BSOT,84,COBI,TOP 0514.00 Office Technologies -> BSOT; course titles: Administrative Professional
+Copper Mountain College,BUWE,credit,BUSI,92,COBI,ruling: field CWE keeps discipline + WEXP chip
+Copper Mountain College,CUWE,credit,CULN,92,COBI,ruling: field CWE keeps discipline + WEXP chip
+Copper Mountain College,FIWE,credit,FIRE,92,COBI,ruling: field CWE keeps discipline + WEXP chip
+Copper Mountain College,HHA,credit,HTEC,86,COBI,personal care assistant is Health Care Ancillaries (HTEC)
+Copper Mountain College,NA,credit,NRSR,80,COBI,TOP 1230.30 empirical NRSR (purity 0.83); course titles: Nurse Assistant
+Cosumnes River College,CMT,credit,CNSM,95,COBI,ruling/MQ: Construction Management
+Cosumnes River College,FCS,credit,FCSH,94,COBI,ruling analog: FCS/Home Ec -> FCSH
+Cosumnes River College,MUSM,credit,MUSI,90,COBI,MQ: Music
+Cosumnes River College,SURG,credit,SURG,95,COBI,MQ: Surgical Technology
+Crafton Hills College,CHC,credit,COUN,88,COBI,ruling analog: college-success -> COUN (Introduction to Online Learning is a stretch; still a college-success subject)
+Crafton Hills College,EA,credit,LSKL,80,COBI,local code is a known variant of LSKL (Learning Assistance or Learning Skills)
+Crafton Hills College,MULTI,credit,MULT,82,COBI,digital media usually Multimedia (MULT); film-heavy courses would move to FTVE
+Crafton Hills College,SOWO,credit,COUN,84,COBI,TOP 2104.00 Counseling -> COUN; course titles: Introduction to Social Work
+Cuesta College,DIST,credit,LIBT,84,COBI,TOP 1602.00 Library Technology -> LIBT; course titles: Intro To Online
+Cuesta College,PDS,credit,BUSI,84,COBI,"28 courses, mostly TOP 0506 Business Management and 0514 Office Technology: office/retail procedures, project management — workplace busi..."
+Cuesta College,PEDS,credit,COUN,90,COBI,ruling analog: college/success/guidance -> COUN
+Cuesta College,PHS,credit,HLTH,93,COBI,ruling analog: Public Health -> HLTH
+Cuyamaca College,ARAM,credit,ARAM,93,COBI,ruling: per-language code + FLNG chip
+Cuyamaca College,KUMY,credit,ETHS,84,COBI,TOP 2203.00 Ethnic Studies -> ETHS; course titles: Kumeyaay Arts and Culture II; Kumeyaay Language I; Kumeyaay Language II
+Cypress College,MORT,credit,MORT,94,COBI,title matches MQ discipline Mortuary Science
+Cypress College,PHS,credit,HLTH,93,COBI,ruling analog: Public Health -> HLTH
+De Anza College,CHLX,credit,ETHN,90,COBI,MQ: Chicano Studies
+De Anza College,ICS,credit,ITIS,80,COBI,existing recommender ITIS; courses: GRSRTS DEMOCRACE POLI AMER; GRSRTS DEMOC LDRSHP POWER; COMM BASED LRNG ICS INTRAPRS
+De Anza College,INTL,credit,SOCS,92,COBI,ruling analog: Global/International Studies -> SOCS
+De Anza College,LART,credit,ENGL,84,COBI,TOP 1501.00 English -> ENGL; course titles: ACADEMIC READING AND WRITING
+De Anza College,LRNA,credit,LSKL,93,COBI,ruling analog: Learning/study skills -> LSKL
+Diablo Valley College,ARCLA,credit,HORT,92,COBI,MQ: Ornamental Horticulture
+Diablo Valley College,ARTHS,credit,ARTH,95,COBI,ruling/MQ: Art History
+Diablo Valley College,BUSEN,credit,ENTR,88,COBI,MQ: Small Business Development
+Diablo Valley College,IDSGN,credit,INDD,90,COBI,MQ: Industrial Design (minted INDD)
+Diablo Valley College,PERSN,credit,PERS,93,COBI,ruling: per-language code + FLNG chip
+Diablo Valley College,STMFT,credit,STMF,94,COBI,title matches MQ discipline Steamfitting
+East Los Angeles College,COLLEGE,credit,COUN,88,COBI,ruling analog: college-success -> COUN
+East Los Angeles College,ENG SUP,credit,ENSP,90,COBI,MQ: Engineering Support (minted ENSP)
+East Los Angeles College,ENG TEK,credit,ENGT,88,COBI,engineering technician -> Engineering Technology
+East Los Angeles College,GAD,credit,MULT,82,COBI,game design/art usually Multimedia (MULT)
+El Camino College,CCE,credit,WEXP,95,COBI,ruling: general Work Experience
+El Camino College,GPM,credit,MULT,80,COBI,existing recommender MULT; courses: Intro to Game Design and Development; Game Design Fundamentals
+El Camino College,MEDT,credit,HTEC,90,COBI,medical terminology is Health Care Ancillaries (HTEC)
+El Camino College,MTEC,credit,MANU,90,COBI,MQ: Manufacturing Technology
+El Camino College,TMAT,credit,MATH,80,COBI,technical math is still Mathematics; CTE-hosted sections can move in the course pass
+Evergreen Valley College,ATHM,credit,KINE,84,COBI,TOP 0835.50 Kinesiology -> KINE; course titles: Intercollegiate Men's Soccer
+Evergreen Valley College,DESGN,credit,DRAF,86,COBI,local code is a known variant of DRAF (Drafting/CADD)
+Evergreen Valley College,DISP,credit,PUBS,88,COBI,MQ: Public Safety
+Evergreen Valley College,DLIT,credit,EDTC,80,COBI,TOP 0860.00 Instructional Design/Technology -> EDTC; course titles: Introduction to Digital Literacy; MS Office 365 Basic; Basic Computer...
+Evergreen Valley College,EDIT,credit,EDTC,88,COBI,MQ: Instructional Design/Technology
+Evergreen Valley College,FMT,credit,COUN,92,COBI,ruling: Workforce Prep -> COUN (WKPR is not an MQ; COBIx and Sky S749 per Sam's Workforce Skills call)
+Evergreen Valley College,HUMNT,credit,HUMA,95,COBI,MQ: Humanities
+Evergreen Valley College,II,credit,IDST,88,COBI,courses are Tutor Training and Supervised Tutoring (TOP 4930.09) -> IDST
+Feather River College,HUMN,credit,HUMA,95,COBI,MQ: Humanities
+Folsom Lake College,CISA,credit,LIBR,86,COBI,library info/research skills -> Library Science (LIBR); technician programs stay LIBT
+Folsom Lake College,GENSCI,credit,PHSC,90,COBI,ruling analog: generic science -> PHSC
+Folsom Lake College,LTAT,credit,BSKL,88,COBI,MQ: Interdisciplinary-Basic Skills: Noncredit (CB22 C)
+Folsom Lake College,MEDTEC,credit,HTEC,80,COBI,Title is Medical Technology; existing signals are HTEC (Health Care Ancillaries). No Fall 2025 courses on file
+Folsom Lake College,MUSM,credit,MUSI,90,COBI,MQ: Music
+Foothill College,AHS,credit,ARTS,80,COBI,existing recommender ARTS; courses: INTRO ALLIED HEALTH PROGRAMS; MEDICAL TERMINOLOGY; CARDIOLOGY FOR ALLIED HEALTH
+Foothill College,ALTW,credit,VOCE,80,COBI,local code is a known variant of VOCE (Vocational)
+Foothill College,EDAC,credit,DSPS,80,COBI,educational access often DSPS learning support
+Foothill College,HUMN,credit,HUMA,95,COBI,MQ: Humanities
+Foothill College,LINC,credit,MULT,82,COBI,UX/interactive/new media design usually Multimedia
+Foothill College,PSE,credit,PHSC,95,COBI,ruling analog: Physical Science -> PHSC
+Fresno City College,ARMEN,credit,ARMN,93,COBI,ruling: per-language code + FLNG chip
+Fresno City College,CLS,credit,ETHN,90,COBI,MQ: Chicano Studies
+Fresno City College,DEVSER,credit,DSPS,88,COBI,MQ: DSPS (use DSPN if the subject is noncredit disabilities)
+Fresno City College,NATSCI,credit,PHSC,90,COBI,ruling analog: generic science -> PHSC
+Fresno City College,WKEXP,credit,WEXP,95,COBI,ruling: general Work Experience
+Fullerton College,CISG,credit,ITIS,90,COBI,MQ: Computer Information Systems
+Fullerton College,FOOD,credit,CULN,92,COBI,MQ: Culinary Arts/Food Technology
+Fullerton College,METL,credit,METL,88,COBI,MQ: Mining and Metallurgy (minted METL)
+Fullerton College,PRNT,credit,PRNT,95,COBI,MQ: Printing Technology (minted PRNT); 28 Fall 2025 courses under TOP 0936 Printing and Lithography
+Fullerton College,WELL,credit,HLTH,80,COBI,existing recommender HLTH; courses: Pathology: The Massage Conn; Personal Training Internship; The Body-Mind Connection
+Glendale Community College,ARMEN,credit,ARMN,93,COBI,ruling: per-language code + FLNG chip
+Glendale Community College,BUSOT,credit,BSOT,88,COBI,MQ: Office Technologies / computer applications
+Glendale Community College,CO ED,credit,WEXP,95,COBI,ruling: general Work Experience
+Glendale Community College,DRAFT,credit,DRAF,94,COBI,MQ: Drafting/CADD
+Glendale Community College,ENRTE,credit,ENTR,88,COBI,MQ: Small Business Development
+Glendale Community College,ENV,credit,ENVS,88,COBI,MQ: Environmental Technologies
+Glendale Community College,KOREA,credit,KORE,93,COBI,ruling: per-language code + FLNG chip
+Glendale Community College,MCOMM,credit,MCOM,90,COBI,MQ: Mass Communication (minted MCOM)
+Glendale Community College,MOA,credit,BSOT,84,COBI,"7 of 8 courses TOP 0514.20 Medical Office Technology (office-tech family): medical office administration, HIPAA, health insurance"
+Glendale Community College,MTLGY,credit,METL,88,COBI,MQ: Mining and Metallurgy (minted METL)
+Glendale Community College,T ED,credit,MATH,80,COBI,technical math is still Mathematics; CTE-hosted sections can move in the course pass
+Grossmont College,FACS,credit,CDEV,82,COBI,nanny profession is Child Development / ECE
+Grossmont College,HESC,credit,HLTH,86,COBI,health sciences usually HLTH; allied-health mix possible
+Grossmont College,PDC,credit,COUN,90,COBI,ruling analog: college/success/guidance -> COUN
+Grossmont College,PDSS,credit,IDST,80,COBI,existing recommender IDST; courses: Study Strategies for Students with Disablilities; Basic Writing for Students with Disabilities
+Grossmont College,TELE,credit,TCOM,90,COBI,MQ: Telecommunication Technology (minted TCOM)
+Irvine Valley College,MS,credit,GEOL,85,COBI,"Single course is Introduction to Oceanography, TOP 1919; Sam ruled Oceanography -> GEOL"
+Irvine Valley College,SRM,credit,ENVR,82,COBI,sustainable resource management -> Forestry/Natural Resources (ENVR)
+Lake Tahoe Community College,CAO,credit,BSOT,88,COBI,MQ: Office Technologies / computer applications
+Lake Tahoe Community College,COM,credit,COMM,86,COBI,local code is a known variant of COMM (Communication Studies)
+Lake Tahoe Community College,PEH,credit,HLTH,85,COBI,"5 courses, all TOP 0837 Health Education: personal health and wellness, nutrition, nutrition for fitness"
+Lake Tahoe Community College,SPE,credit,COMM,90,COBI,speech is Communication Studies
+Laney College,BNK/F,credit,BFIN,92,COBI,MQ: Banking and Finance (minted BFIN); TOP 0504 Banking and Finance
+Laney College,LABST,credit,LABR,94,COBI,MQ: Industrial Relations / Labor
+Laney College,LCI,credit,CINT,94,COBI,"MQ: Court Interpreting (minted CINT); Spanish legal/medical interpreting, TOP 2140 — not ASL"
+Laney College,WDTEC,credit,WWKC,82,COBI,wood technology -> Cabinet Making (WWKC)
+Las Positas College,ARHS,credit,ARTH,95,COBI,ruling/MQ: Art History
+Las Positas College,FLMS,credit,FTVE,90,COBI,MQ: Film and Media Studies
+Las Positas College,NKIN,credit,KINE,90,COBI,ruling analog: PE/Kinesiology -> KINE
+Las Positas College,VWT,credit,AGPR,88,COBI,MQ: Agricultural Production
+Lassen College,CMS,credit,FMED,82,COBI,electronic field production is Media Production (FMED)
+Lassen College,DRA,credit,THTR,80,COBI,local code is a known variant of THTR (Drama/Theater Arts)
+Lassen College,FOLK,credit,DANC,80,COBI,Folk is usually Folk Dance (MQ) -> DANC
+Lassen College,PGT,credit,ENGT,80,COBI,local code is a known variant of ENGT (Engineering Technology)
+Lemoore College,DIME,credit,MULT,82,COBI,UX/interactive/new media design usually Multimedia
+Lemoore College,ELET,credit,ELET,86,COBI,local code is a known variant of ELET (Electronics)
+Lemoore College,GS,credit,COUN,90,COBI,ruling analog: college/success/guidance -> COUN
+Lemoore College,MM,credit,IMNT,86,COBI,maintenance systems/mechanics -> Industrial Maintenance
+Lemoore College,SLSCI,credit,AGPR,90,COBI,ruling analog: Plant/soil science -> AGPR
+Long Beach City College,CDSED,credit,EDUC,93,COBI,ruling: Special Education -> EDUC
+Long Beach City College,COSE,credit,ITIS,92,COBI,ruling: field CWE keeps discipline + WEXP chip
+Long Beach City College,KHMER,credit,KHMR,93,COBI,ruling: per-language code + FLNG chip; courses are Khmer for Heritage Speakers
+Long Beach City College,LEARN,credit,LSKL,86,COBI,ruling analog: study skills (TOP 4930.14). One Supervised Tutoring course would move to IDST in the course pass
+Long Beach City College,MTFAB,credit,SHME,85,COBI,"TOP 0956.40 Sheet Metal and Structural Metal on all 17 Fall 2025 courses (layout, CNC fab, blueprint, metallurgy)"
+Long Beach City College,OSHA,credit,OSHA,84,COBI,TOP 0956.70 Industrial Safety -> OSHA; course titles: OSHA Standards for General Ind
+Los Angeles City College,ARMEN,credit,ARMN,93,COBI,ruling: per-language code + FLNG chip
+Los Angeles City College,CO TECH,credit,ITIS,80,COBI,computer technology often CIS (ITIS); hardware/service may differ
+Los Angeles City College,COOP ED,credit,WEXP,95,COBI,ruling: general Work Experience
+Los Angeles City College,GAD,credit,MULT,82,COBI,game design/art usually Multimedia (MULT)
+Los Angeles City College,LRNFDTN,credit,LSKL,93,COBI,ruling analog: Learning/study skills -> LSKL
+Los Angeles Harbor College,ENV,credit,ARCH,80,COBI,environmental design usually Architecture
+Los Angeles Harbor College,FAM &CS,credit,FCSH,94,COBI,ruling analog: FCS/Home Ec -> FCSH
+Los Angeles Harbor College,RBT,credit,RBTC,90,COBI,MQ: Registered Behavior Technician (minted RBTC)
+Los Angeles Mission College,ENG SUP,credit,ENSP,90,COBI,MQ: Engineering Support (minted ENSP)
+Los Angeles Pierce College,BSICSKL,credit,BSKL,88,COBI,MQ: Interdisciplinary-Basic Skills: Noncredit (CB22 C)
+Los Angeles Pierce College,INSUR,credit,INSR,92,COBI,MQ: Insurance (minted INSR); TOP 0512 Insurance
+Los Angeles Pierce College,NATIVAM,credit,ETHA,92,COBI,MQ: Native American/American Indian Studies
+Los Angeles Southwest College,CO TECH,credit,ITIS,80,COBI,computer technology often CIS (ITIS); hardware/service may differ
+Los Angeles Southwest College,COLLEGE,credit,COUN,88,COBI,ruling analog: college-success -> COUN
+Los Angeles Southwest College,PERSDEV,credit,COUN,90,COBI,ruling analog: college/success/guidance -> COUN
+Los Angeles Southwest College,Q CNTRL,credit,MANU,80,COBI,quality control usually Manufacturing Technology
+Los Angeles Trade-Technical College,BAR,credit,BARB,95,COBI,MQ: Barbering
+Los Angeles Trade-Technical College,DIGLMD,credit,MULT,82,COBI,digital media usually Multimedia (MULT); film-heavy courses would move to FTVE
+Los Angeles Trade-Technical College,ELECL,credit,ELEC,84,COBI,TOP 0934.40 Electricity -> ELEC; course titles: Pwer Lne Mech Trne
+Los Angeles Trade-Technical College,ENV,credit,ARCH,80,COBI,environmental design usually Architecture
+Los Angeles Trade-Technical College,GAD,credit,MULT,82,COBI,game design/art usually Multimedia (MULT)
+Los Angeles Trade-Technical College,LABR ST,credit,LABR,94,COBI,MQ: Industrial Relations / Labor
+Los Angeles Trade-Technical College,OFF MCH,credit,BSOT,88,COBI,MQ: Office Technologies / computer applications
+Los Angeles Trade-Technical College,OPMAINT,credit,CNSM,84,COBI,TOP 0957.00 Construction Management -> CNSM; course titles: Steam Plant Oper I; Steam Plant Oper II
+Los Angeles Trade-Technical College,PRPLTEK,credit,IMNT,80,COBI,process plant technology is industrial/process operations (IMNT)
+Los Angeles Trade-Technical College,RESTMGT,credit,RMGT,95,COBI,MQ: Restaurant Management
+Los Angeles Trade-Technical College,SHTM,credit,SHME,92,COBI,MQ: Sheet Metal (minted SHME); TOP 0956.40 Sheet Metal and Structural Metal
+Los Angeles Trade-Technical College,ST,credit,IDST,90,COBI,ruling: Tutoring / supervised tutoring -> IDST
+Los Angeles Trade-Technical College,ST MAIN,credit,CNST,84,COBI,"5 courses, all TOP 0957 Civil and Construction Management Technology: street maintenance, sweeper operator, public-works inspection"
+Los Angeles Trade-Technical College,SWM,credit,ENVS,86,COBI,"solid waste management is Environmental Technologies (ENVS), not BUSI"
+Los Angeles Trade-Technical College,TAILRNG,credit,FASH,90,COBI,MQ: Fashion and Related Technologies
+Los Angeles Valley College,ASIAN,credit,HIST,80,COBI,local code is a known variant of HIST (History)
+Los Angeles Valley College,ENVSTDS,credit,ENVS,84,COBI,TOP 0302.00 Environmental Technologies -> ENVS; course titles: Intro To Env Stdies
+Los Angeles Valley College,LGBTQ+,credit,WMST,90,COBI,ruling analog: Women's/Gender/Queer -> WMST
+Los Medanos College,RA,credit,MUSC,84,COBI,TOP 1005.00 Commercial Music -> MUSC; course titles: Introduction to Recording Arts; Sound Reinforcement; Music Fundamentals for Audio Pr...
+Madera College,COTR,credit,WEXP,95,COBI,ruling: general Work Experience
+Madera College,DEVSER,credit,DSPS,88,COBI,MQ: DSPS (use DSPN if the subject is noncredit disabilities)
+Madera College,MM,credit,MANU,80,COBI,local code is a known variant of MANU (Manufacturing Technology)
+Madera College,PUNJABI,credit,PUNJ,93,COBI,ruling: per-language code + FLNG chip
+Madera College,VESL,credit,ESOL,82,COBI,credit VESL is credit ESL (ESOL); all-noncredit ESL would already be ESLN
+Mendocino College,DAM,credit,MULT,82,COBI,digital media usually Multimedia (MULT); film-heavy courses would move to FTVE
+Mendocino College,ECO,credit,ECON,94,COBI,title matches MQ discipline Economics
+Mendocino College,HLH,credit,HLTH,94,COBI,title matches MQ discipline Health
+Mendocino College,SPN,credit,SPAN,93,COBI,ruling: per-language code + FLNG chip
+Mendocino College,WOD,credit,WWKC,82,COBI,woodworking/cabinet -> Cabinet Making (WWKC); furniture would be WWKF
+Merced College,ALLH,credit,HTEC,80,COBI,local code is a known variant of HTEC (Health Care Ancillaries)
+Merced College,AOM,credit,BSOT,80,COBI,TOP 0514.00 Office Technologies -> BSOT; course titles: Introduction to Computer Applications; Essentials of Business Communication; Docu...
+Merced College,GERN,credit,GERM,93,COBI,ruling: per-language code + FLNG chip
+Merced College,VIRT,credit,BSOT,80,COBI,existing recommender BSOT; courses: Virtual Office; Social Media; Social Media Marketing and Strategy
+Merritt College,BLDGM,credit,IMNT,86,COBI,maintenance systems/mechanics -> Industrial Maintenance
+Merritt College,ENVMT,credit,ENVS,88,COBI,MQ: Environmental Technologies
+Merritt College,ENVST,credit,ENVS,88,COBI,MQ: Environmental Technologies
+Merritt College,HLTOC,credit,HLTH,80,COBI,existing recommender HLTH; courses: Medical Terminology; CPR and First Aid; Intro /Health Care Care Career
+Merritt College,LIS,credit,LIBR,86,COBI,library info/research skills -> Library Science (LIBR); technician programs stay LIBT
+Merritt College,V/NUR,credit,NRSR,94,COBI,title matches MQ discipline Nursing
+MiraCosta College,MAP,credit,HLTH,80,COBI,existing recommender HLTH; courses: Internship Studies; Topics in Medical Administrative Professional; Occupational Work Experience Educa...
+Mission College,INS,credit,EDUC,80,COBI,local code is a known variant of EDUC (Education)
+Mission College,NTR,credit,FDNT,95,COBI,ruling: Nutrition -> FDNT (never NUTR)
+Modesto Junior College,CHEMT,credit,CHEM,88,COBI,"analytical chemistry technician is Chemistry (CHEM), not Industrial Technology"
+Modesto Junior College,COLSK,credit,LSKL,86,COBI,ruling analog: skills development -> LSKL
+Modesto Junior College,ELIC,credit,ESOL,80,COBI,local code is a known variant of ESOL (English as a Second Language)
+Modesto Junior College,FAMLF,credit,FCSH,82,COBI,family life -> Family and Consumer Studies (FCSH); parenting NC would be PARN
+Modesto Junior College,FDNTR,credit,FDNT,95,COBI,ruling: Nutrition -> FDNT (never NUTR)
+Modesto Junior College,MFGA,credit,MANU,90,COBI,MQ: Manufacturing Technology
+Modesto Junior College,SM,credit,SHME,92,COBI,MQ: Sheet Metal (minted SHME); TOP 0956.40 Sheet Metal and Structural Metal
+Monterey Peninsula College,ARTV,credit,FTVE,80,COBI,TOP 0612.00 empirical FTVE (purity 0.82); course titles: Introduction to Film/Video
+Monterey Peninsula College,WRLD,credit,HIST,86,COBI,local code is a known variant of HIST (History)
+Moorpark College,ANCT,credit,AGRI,84,COBI,TOP 0102.00 Agriculture -> AGRI; course titles: Animal Care & Handling I; Animal Care & Handling Lab I; Zoo Work Skills First Yr Fall
+Moorpark College,ANPH,credit,BIOL,84,COBI,TOP 0410.00 empirical BIOL (purity 0.97); course titles: Human Anatomy & Physiology
+Moorpark College,COL,credit,COUN,80,COBI,TOP 4930.13 empirical COUN (purity 0.92); course titles: College Strategies; Supervised Tutoring Across Cur; College Skills for Success
+Moorpark College,GAME,credit,MULT,82,COBI,game design/art usually Multimedia (MULT)
+Moorpark College,NTS,credit,FDNT,95,COBI,ruling: Nutrition -> FDNT (never NUTR)
+Moorpark College,RBT,credit,RBTC,92,COBI,MQ: Registered Behavior Technician (minted RBTC)
+Moorpark College,ZOO,credit,BIOL,92,COBI,MQ/ruling analog: life-science subfield -> BIOL
+Moreno Valley College,AHS,credit,ARTH,95,COBI,ruling/MQ: Art History
+Moreno Valley College,ALR,credit,READ,84,COBI,"TOP 1520.00 Reading -> READ; course titles: Reading for Academic and Lifelong Literacy; Critical Reading, Thinking, and Writing; Reading ..."
+Moreno Valley College,CMI,credit,CINT,92,COBI,"MQ: Court Interpreting (minted CINT); Spanish legal/medical interpreting, TOP 2140"
+Moreno Valley College,IAT,credit,ELMT,82,COBI,automation often Electromechanical (ELMT); could be ELET/ROBO
+Mt. San Antonio College,ACCS,credit,IDST,80,COBI,existing recommender IDST; courses: Academic Success Strategies; Math Strategies; Writing Strategies
+Mt. San Antonio College,AGAG,credit,AGRI,80,COBI,TOP 0101.00 empirical AGRI (purity 0.84); course titles: Food Land Use and Politics -GP
+Mt. San Antonio College,ARTZ,credit,ARTS,80,COBI,TOP 1001.00 empirical ARTS (purity 0.88); course titles: Specialized Studio-Art Studies
+Mt. San Antonio College,BTNY,credit,BIOL,92,COBI,MQ/ruling analog: life-science subfield -> BIOL
+Mt. San Antonio College,CISM,credit,ITIS,84,COBI,TOP 0707.30 empirical ITIS (purity 0.95); course titles: Systems Analysis and Design
+Mt. San Antonio College,HT,credit,HTEC,82,COBI,histotechnology is allied health (HTEC); no own canonical
+Mt. San Antonio College,HTL,credit,HTEC,82,COBI,histotechnology is allied health (HTEC); no own canonical
+Mt. San Antonio College,LCAS,credit,ETHN,90,COBI,MQ: Chicano Studies
+Mt. San Antonio College,LERN,credit,LSKL,93,COBI,ruling analog: Learning/study skills -> LSKL
+Mt. San Antonio College,MEDI,credit,HTEC,90,COBI,medical terminology is Health Care Ancillaries (HTEC)
+Mt. San Antonio College,PAP,credit,HTEC,82,COBI,PA preparation is allied health (HTEC); no PA MQ
+Mt. San Jacinto College,AUD,credit,MUSC,80,COBI,TOP 1005.00 Commercial Music -> MUSC; course titles: Introduction to Audio Recording; Studio Recording; Pro Tools I
+Mt. San Jacinto College,ED,credit,EDUC,80,COBI,local code is a known variant of EDUC (Education)
+Mt. San Jacinto College,HEP,credit,HUMA,84,COBI,TOP 1599.00 empirical HUMA (purity 0.91); course titles: Honors Studies: Humanities
+Mt. San Jacinto College,IPP,credit,SLNG,84,COBI,TOP 0850.10 Sign Language/ English Interpreting -> SLNG; course titles: Specialized Interpreting (formerly IPP-210); Practicum and Semina...
+Mt. San Jacinto College,ORA,credit,ITIS,84,COBI,Oracle database coursework sits in Computer Information Systems (ITIS)
+Mt. San Jacinto College,PALS,credit,LSKL,93,COBI,ruling analog: Learning/study skills -> LSKL
+Napa Valley College,PTEC,credit,NURP,95,COBI,MQ: Psychiatric Technician
+Norco College,ALR,credit,READ,84,COBI,TOP 1520.00 Reading -> READ; course titles: Reading Tutor Training; Strategic Reading; Reading for Academic and Lifelong Literacy
+Norco College,GAM,credit,MULT,82,COBI,digital media usually Multimedia (MULT); film-heavy courses would move to FTVE
+Norco College,MAN,credit,MANU,90,COBI,MQ: Manufacturing Technology
+Norco College,SCA,credit,SCLT,88,COBI,MQ: Supply Chain Technology (minted SCLT); automated warehousing / automation networking courses
+Ohlone College,AF,credit,MILS,88,COBI,MQ: Military Studies (minted MILS); Ohlone AF is Air Force ROTC / Aerospace Studies
+Ohlone College,BSM,credit,MGMT,86,COBI,local code is a known variant of MGMT (Management)
+Ohlone College,LSP,credit,LIBR,86,COBI,library info/research skills -> Library Science (LIBR); technician programs stay LIBT
+Orange Coast College,CFT,credit,WWKF,86,COBI,local code is a known variant of WWKF (Furniture Making)
+Orange Coast College,DVP,credit,FASH,90,COBI,"college page: OCC DVP was Display and Visual Presentation, now FASH A119 (https://catalog.cccd.edu/courses/fash-a119/)"
+Orange Coast College,ESEC,credit,BIOL,92,COBI,ruling: environmental/ecology/sustainability -> BIOL
+Orange Coast College,IMVR,credit,MULT,86,COBI,immersive/VR media -> Multimedia
+Orange Coast College,INHL,credit,HLTH,80,COBI,existing recommender HLTH; courses: Integrative Health Coach Principles & Practice I; Clinical Skills for the IHC; Principles & Practice II
+Orange Coast College,MARA,credit,INDT,80,COBI,existing recommender INDT; courses: Introduction to Sailing; Intmd Sail - Intro Keel Boats; Intro to Ocean Sailing
+Orange Coast College,NC,credit,FDNT,95,COBI,ruling: Nutrition -> FDNT (never NUTR)
+Orange Coast College,NDT,credit,HLTH,80,COBI,existing recommender HLTH; courses: Basic EEG; Advanced EEG; Clinical Experience 1
+Orange Coast College,PSG,credit,HLTH,80,COBI,existing recommender HLTH; courses: Polysomnography Basics; Introduction to Polysomnography; Intermediate Polysomnography
+Oxnard College,BRS,credit,ANTH,80,COBI,local code is a known variant of ANTH (Anthropology)
+Oxnard College,MST,credit,INDT,80,COBI,existing recommender INDT; courses: Marine Biology; Marine Biology Laboratory; Introduction to Oceanography
+Oxnard College,PG,credit,COUN,88,COBI,personal growth is a classic Counseling college-success subject
+Palo Verde College,MAN,credit,MGMT,92,COBI,ruling: Management -> MGMT
+Palo Verde College,NSC,credit,HTEC,80,COBI,local code is a known variant of HTEC (Health Care Ancillaries)
+Palomar College,CFT,credit,WWKC,82,COBI,woodworking/cabinet -> Cabinet Making (WWKC); furniture would be WWKF
+Palomar College,CMPST,credit,MACH,80,COBI,local code is a known variant of MACH (Machine Tool Technology)
+Palomar College,GCIP,credit,AVIA,80,COBI,local code is a known variant of AVIA (Aviation)
+Palomar College,GCMW,credit,MULT,82,COBI,digital media usually Multimedia (MULT); film-heavy courses would move to FTVE
+Palomar College,ZEVTEC,credit,AUTO,80,COBI,Title is zero-emissions vehicle technology; signal TOP AUTO. No Fall 2025 courses on file
+Pasadena City College,DLT,credit,DENT,90,COBI,MQ: Dental Technology
+Pasadena City College,HLSC,credit,HLTH,86,COBI,health sciences usually HLTH; allied-health mix possible
+Pasadena City College,PHCA,credit,HTEC,86,COBI,personal care assistant is Health Care Ancillaries (HTEC)
+Porterville College,CMRT,credit,ARTD,94,COBI,title matches MQ discipline Commercial Art
+Porterville College,CMUS,credit,MUSC,94,COBI,MQ: Commercial Music
+Porterville College,OFFT,credit,BSOT,88,COBI,MQ: Office Technologies / computer applications
+Reedley College,CLS,credit,ETHN,90,COBI,MQ: Chicano Studies
+Reedley College,DEVSER,credit,DSPS,88,COBI,MQ: DSPS (use DSPN if the subject is noncredit disabilities)
+Reedley College,NAT,credit,NRSR,80,COBI,TOP 1230.30 empirical NRSR (purity 0.83); course titles: NURSING ASSISTANT TRAINING; NURSING ASSISTANT THEORY; NURSING ASSISTANT CLINICAL
+Rio Hondo College,DSCI,credit,MATH,80,COBI,local code is a known variant of MATH (Mathematics)
+Rio Hondo College,EGSS,credit,WMST,90,COBI,ruling analog: Women's/Gender/Queer -> WMST
+Rio Hondo College,GAD,credit,MULT,82,COBI,game design/art usually Multimedia (MULT)
+Rio Hondo College,HEFR,credit,PLMB,84,COBI,TOP 0952.30 Plumbing -> PLMB; course titles: Insulation IndustryOrientation; Mechanical Piping Systems; Boiler Insulation
+Rio Hondo College,OENG,credit,DIES,85,COBI,"19 courses, all TOP 0947.30 Heavy Equipment Operation; Sam ruled Heavy Equipment / Construction Equip Operator -> DIES"
+Rio Hondo College,ORTH,credit,HTEC,85,COBI,"TOP 1214 Orthopedic Assistant; orthopedic technician assessment, modalities, practicum — allied health (HTEC), not office tech"
+Rio Hondo College,RDIO,credit,BRDC,80,COBI,TOP 0604.00 Broadcasting Technology -> BRDC; course titles: Radio Broadcasting; Introduction to Radio News Writing; Sports Radio Broadcas...
+Rio Hondo College,TCED,credit,WELD,80,COBI,local code is a known variant of WELD (Welding)
+Rio Hondo College,VOCB,credit,ENGL,84,COBI,TOP 1501.00 English -> ENGL; course titles: Vocabulary and Etymology
+Riverside City College,MIL,credit,MILS,86,COBI,MQ: Military Studies (minted MILS); TOP 1801 Military Science (current courses are military history)
+Sacramento City College,BAR,credit,BARB,95,COBI,MQ: Barbering
+Sacramento City College,BIOLFS,credit,BIOL,90,COBI,biology field studies is Biological Sciences (BIOL)
+Sacramento City College,CANT,credit,CANT,93,COBI,ruling: per-language code + FLNG chip
+Sacramento City College,COMDE,credit,COUN,80,COBI,student activities/leadership usually Counseling
+Sacramento City College,ENGLB,credit,ENGL,80,COBI,existing recommender ENGL
+Sacramento City College,GAME,credit,MULT,82,COBI,game design/art usually Multimedia (MULT)
+Sacramento City College,GREEK,credit,GREK,93,COBI,ruling: per-language code + FLNG chip
+Sacramento City College,IMMT,credit,IMNT,90,COBI,MQ: Industrial Maintenance
+Sacramento City College,INDS,credit,IDST,80,COBI,existing recommender IDST
+Sacramento City College,MUSM,credit,MUSC,86,COBI,local code is a known variant of MUSC (Commercial Music)
+Sacramento City College,PNJ,credit,PUNJ,93,COBI,ruling: per-language code + FLNG chip
+Sacramento City College,PNJABI,credit,PUNJ,93,COBI,ruling: per-language code + FLNG chip
+Sacramento City College,RAILR,credit,TRNS,86,COBI,"railroad operations is Transportation (TRNS), not AUTO"
+Sacramento City College,SURVY,credit,ENGT,80,COBI,local code is a known variant of ENGT (Engineering Technology)
+Saddleback College,FA,credit,ARTS,80,COBI,TOP 1001.00 empirical ARTS (purity 0.88); course titles: HONORS INTRODUCTION TO FINE ARTS
+Saddleback College,FCS,credit,FCSH,94,COBI,ruling analog: FCS/Home Ec -> FCSH
+Saddleback College,GSS,credit,WMST,90,COBI,ruling analog: Women's/Gender/Queer -> WMST
+Saddleback College,INTS,credit,IDST,92,COBI,ruling analog: interdisciplinary/general studies -> IDST; CB_COOP_ED_STATUS all C -> WEXP chip
+Saddleback College,SURG,credit,SURG,95,COBI,MQ: Surgical Technology
+Saddleback College,TOUR,credit,TOUR,92,COBI,MQ: Travel Services (minted TOUR); TOP 3009 Travel Services and Tourism
+San Bernardino Valley College,COMMST,credit,COMM,92,COBI,MQ: Communication Studies
+San Bernardino Valley College,ELECTR,credit,ELET,92,COBI,MQ: Electronics
+San Bernardino Valley College,LPPS,credit,LEGL,80,COBI,existing recommender LEGL; courses: Introduction to Law and Society
+San Bernardino Valley College,PSYTCH,credit,NURP,84,COBI,TOP 1239.00 Psychiatric Technician -> NURP; course titles: Introduction to Psychiatric Technology; Psychiatric Technology: Nursing Scienc...
+San Bernardino Valley College,TECALC,credit,MATH,80,COBI,"ruling analog: technical math -> MATH; one course, TOP 0924 Engineering Technology"
+San Diego City College,BCAS,credit,CARP,86,COBI,local code is a known variant of CARP (Carpentry)
+San Diego City College,CRES,credit,PCST,84,COBI,MQ: Peace Studies (minted PCST); conflict resolution / mediation courses
+San Diego City College,DMPR,credit,MULT,82,COBI,digital media usually Multimedia (MULT); film-heavy courses would move to FTVE
+San Diego City College,ENGE,credit,ENGR,94,COBI,MQ: Engineering
+San Diego City College,LBAS,credit,IDST,88,COBI,ruling analog: general/interdisciplinary studies -> IDST (not BIOL)
+San Diego City College,MFET,credit,ENGT,94,COBI,MQ: Engineering Technology
+San Diego City College,SOLR,credit,MACH,84,COBI,TOP 0956.30 Machine Tool Technology -> MACH; course titles: WORK EXPERIENCE
+San Diego Mesa College,ALLH,credit,HTEC,80,COBI,local code is a known variant of HTEC (Health Care Ancillaries)
+San Diego Mesa College,INTE,credit,INTD,94,COBI,title matches MQ discipline Interior Design
+San Diego Mesa College,PHYR,credit,PTAS,95,COBI,MQ: Physical Therapy Assisting
+San Diego Miramar College,AUDI,credit,MUSC,84,COBI,TOP 1005.00 Commercial Music -> MUSC; course titles: SOUND REINFORCEMENT SYSTEMS
+San Diego Miramar College,BANK,credit,BFIN,92,COBI,MQ: Banking and Finance (minted BFIN); TOP 0504 Banking and Finance
+San Diego Miramar College,MLTT,credit,HTEC,85,COBI,"8 courses, all TOP 1205 Medical Laboratory Technology: clinical chem, heme, micro, blood bank, practica"
+San Diego Miramar College,PSMA,credit,PUBS,88,COBI,MQ: Public Safety
+San Joaquin Delta College,CIVIL,credit,HUMA,80,COBI,civilization courses usually Humanities (or HIST if history-titled)
+San Joaquin Delta College,COMM DIS,credit,SLPA,92,COBI,MQ: Speech Language Pathology
+San Joaquin Delta College,DMEDIA,credit,MULT,82,COBI,digital media usually Multimedia (MULT); film-heavy courses would move to FTVE
+San Joaquin Delta College,E TECH,credit,ENGT,94,COBI,MQ: Engineering Technology
+San Joaquin Delta College,FCS,credit,FCSH,94,COBI,ruling analog: FCS/Home Ec -> FCSH
+San Joaquin Delta College,MCOM,credit,MCOM,90,COBI,MQ: Mass Communication (minted MCOM)
+San Jose City College,CONSTRUCTION TECHNOLOGY (CNSTR),credit,CNST,90,COBI,MQ: Construction Technology
+San Jose City College,DIGITAL MEDIA ARTS (DMA),credit,MULT,82,COBI,digital media usually Multimedia (MULT); film-heavy courses would move to FTVE
+San Jose City College,DISABLED STUDENTS PROGRAMS AND SERVICES (DSPS),credit,DSPS,88,COBI,MQ: DSPS (use DSPN if the subject is noncredit disabilities)
+San Jose City College,ELECTRICIAN (ELECT),credit,ELEC,90,COBI,MQ: Electricity
+San Jose City College,FACILITIES MAINTENANCE TECHNOLOGY (FMT),credit,IMNT,90,COBI,MQ: Industrial Maintenance
+San Jose City College,FMT,credit,IMNT,90,COBI,MQ: Industrial Maintenance
+San Jose City College,HEALTH SCIENCE (HSCI),credit,HLTH,86,COBI,health sciences usually HLTH; allied-health mix possible
+San Jose City College,HEALTH SCIENCES (HSCI),credit,HLTH,86,COBI,health sciences usually HLTH; allied-health mix possible
+San Jose City College,JAPANESE (JAPAN),credit,JAPN,93,COBI,ruling: per-language code + FLNG chip
+San Jose City College,KINAW,credit,KINE,90,COBI,ruling analog: PE/Kinesiology -> KINE
+San Jose City College,PHOTOGRAPHY (PHOTO),credit,PHOT,95,COBI,MQ: Photography
+San Jose City College,THEATER ARTS (THEAT),credit,THTR,94,COBI,MQ: Drama/Theater Arts
+San Jose City College,TRANSPORTATION (TRANS),credit,TRNS,94,COBI,MQ: Transportation
+Santa Ana College,INFO,credit,LIBR,86,COBI,library info/research skills -> Library Science (LIBR); technician programs stay LIBT
+Santa Ana College,KNSM,credit,KINE,90,COBI,ruling analog: PE/Kinesiology -> KINE
+Santa Ana College,OS,credit,OCTA,85,COBI,TOP 1218 Occupational Therapy Technology; OTA practice and pediatric/community OT courses
+Santa Barbara City College,MDT,credit,WELD,80,COBI,local code is a known variant of WELD (Welding)
+Santa Barbara City College,TIS,credit,CINT,84,COBI,MQ: Court Interpreting (minted CINT); TOP 2140 Legal and Community Interpretation
+Santa Monica College,AQUA,credit,AGPR,88,COBI,MQ: Agricultural Production
+Santa Monica College,DMPOST,credit,MULT,82,COBI,digital media usually Multimedia (MULT); film-heavy courses would move to FTVE
+Santa Monica College,ERTHSC,credit,GEOL,94,COBI,title matches MQ discipline Earth Science
+Santa Monica College,GAME,credit,MULT,82,COBI,game design/art usually Multimedia (MULT)
+Santa Monica College,HUMDEV,credit,OLAD,90,COBI,MQ: Older Adults: Noncredit (CB22 H)
+Santa Monica College,IXD,credit,MULT,82,COBI,UX/interactive/new media design usually Multimedia
+Santa Monica College,PV,credit,ENVS,80,COBI,local code is a known variant of ENVS (Environmental Technologies)
+Santa Monica College,SCI,credit,PHSC,82,COBI,ruling analog: generic Science / General Science -> PHSC; one Fall 2025 course is scientific research under Biology and can move in the c...
+Santa Monica College,STUGOV,credit,COUN,80,COBI,student activities/leadership usually Counseling
+Santa Monica College,TURKSH,credit,TURK,93,COBI,ruling: per-language code + FLNG chip
+Santa Rosa Junior College,APTE,credit,DRAF,80,COBI,existing recommender DRAF; courses: 3D Animation: Visual Effects and Compositing; 3D Animation: Introduction to Virtual Reality; Problem ...
+Santa Rosa Junior College,BGN,credit,BUSI,90,COBI,MQ: Business
+Santa Rosa Junior College,BTNY,credit,BIOL,92,COBI,MQ/ruling analog: life-science subfield -> BIOL
+Santa Rosa Junior College,CSKL,credit,LSKL,86,COBI,ruling analog: skills development -> LSKL
+Santa Rosa Junior College,DIET,credit,DTTC,95,COBI,"MQ: Dietetic Technician (minted DTTC), distinct from FDNT; Dietetic Technician lecture and field experience"
+Santa Rosa Junior College,DRD,credit,ELEC,80,COBI,local code is a known variant of ELEC (Electricity)
+Santa Rosa Junior College,ENST,credit,ENVS,88,COBI,MQ: Environmental Technologies
+Santa Rosa Junior College,EQSC,credit,AGEQ,95,COBI,MQ: Equine Science
+Santa Rosa Junior College,ESHP,credit,ENTR,88,COBI,MQ: Small Business Development
+Santa Rosa Junior College,FDNT,credit,FDNT,95,COBI,ruling: Nutrition -> FDNT (never NUTR)
+Santa Rosa Junior College,HLC,credit,HTEC,88,COBI,MQ: Health Care Ancillaries / health care technology
+Santa Rosa Junior College,LIR,credit,LIBR,86,COBI,library info/research skills -> Library Science (LIBR); technician programs stay LIBT
+Santa Rosa Junior College,NRA,credit,NRSR,80,COBI,TOP 1230.30 empirical NRSR (purity 0.83); course titles: Certified Nurse Assistant
+Santa Rosa Junior College,SUAG,credit,AGPR,80,COBI,existing recommender AGPR; courses: Composting for Organic Farming and Gardening; Organic Crop Planning and Production; Organic Apple Pro...
+Santa Rosa Junior College,VETT,credit,VETT,95,COBI,ruling/MQ: Vet Tech
+Santa Rosa Junior College,WEOC,credit,WEXP,95,COBI,ruling: general Work Experience
+Santa Rosa Junior College,WINE,credit,AGPR,88,COBI,MQ: Agricultural Production
+Santiago Canyon College,GSWS,credit,WMST,90,COBI,ruling analog: Women's/Gender/Queer -> WMST
+Santiago Canyon College,INFO,credit,LIBR,86,COBI,library info/research skills -> Library Science (LIBR); technician programs stay LIBT
+Santiago Canyon College,TELV,credit,JOUR,80,COBI,local code is a known variant of JOUR (Journalism)
+Shasta College,AGSA,credit,AGRI,80,COBI,TOP 0101.00 empirical AGRI (purity 0.84); course titles: Intro. to Sustainable Ag. & Farm Mgmt.
+Shasta College,AGVIT,credit,AGPR,84,COBI,TOP 0104.00 Agricultural Production -> AGPR; course titles: Vineyard Care
+Sierra College,ESS,credit,BIOL,92,COBI,ruling: environmental/ecology/sustainability -> BIOL
+Sierra College,NUTF,credit,FDNT,95,COBI,ruling: Nutrition -> FDNT (never NUTR)
+Sierra College,RECM,credit,RECR,92,COBI,MQ: Recreation Administration
+Sierra College,RISE,credit,COUN,84,COBI,TOP 4930.13 empirical COUN (purity 0.92); course titles: First Year Seminar
+Sierra College,SKDV,credit,LSKL,86,COBI,ruling analog: skills development -> LSKL
+Skyline College,ADAP,credit,PEDS,80,COBI,local code is a known variant of PEDS (Physical Education Disabled Students)
+Skyline College,EDAC,credit,DSPS,80,COBI,educational access often DSPS learning support
+Skyline College,ESTM,credit,ENVS,80,COBI,existing recommender ENVS
+Skyline College,GERO,credit,GERO,95,COBI,MQ: Gerontology
+Skyline College,H.EC,credit,FCSH,94,COBI,ruling analog: FCS/Home Ec -> FCSH
+Skyline College,SURG,credit,SURG,94,COBI,MQ: Surgical Technology; courses and TOP 1217 Surgical Technician
+Solano Community College,OCED,credit,WEXP,82,COBI,Courses include Occupational Work Exp and General Work Exper plus occupational soft skills / portfolio
+Southwestern College,AFRO,credit,AFAM,92,COBI,MQ: African American Studies (minted AFAM)
+Southwestern College,ES/S,credit,PEDS,84,COBI,TOP 0835.80 Physical Education Disabled Students -> PEDS; course titles: ADAPTIVE AQUATIC SPORT; ADAPTED FLEXIBILITY FITNESS; ADAPTED GEN...
+Southwestern College,FARS,credit,PERS,93,COBI,ruling: per-language code + FLNG chip
+Southwestern College,FCS,credit,FCSH,94,COBI,ruling analog: FCS/Home Ec -> FCSH
+Southwestern College,IDNM,credit,MULT,82,COBI,UX/interactive/new media design usually Multimedia
+Southwestern College,IE,credit,ENGT,94,COBI,MQ: Engineering Technology
+Southwestern College,INS,credit,INSR,92,COBI,MQ: Insurance (minted INSR); TOP 0512 Insurance
+Southwestern College,NC,credit,COUN,92,COBI,ruling: Workforce Prep -> COUN (WKPR is not an MQ; COBIx and Sky S749 per Sam's Workforce Skills call)
+Southwestern College,PE/I,credit,KINE,90,COBI,ruling: Athletics stay KINE
+Southwestern College,PE/L,credit,PEDS,95,COBI,ruling: Adapted PE -> PEDS
+Southwestern College,QET,credit,ENGT,94,COBI,MQ: Engineering Technology
+Southwestern College,RDG,credit,READ,94,COBI,title matches MQ discipline Reading
+Southwestern College,REC,credit,RECR,86,COBI,local code is a known variant of RECR (Recreation Administration)
+Southwestern College,SLA,credit,LSKL,93,COBI,ruling analog: Learning/study skills -> LSKL
+Southwestern College,ST,credit,SURG,95,COBI,MQ: Surgical Technology
+Southwestern College,T&T,credit,TOUR,92,COBI,MQ: Travel Services (minted TOUR); TOP 3009 Travel Services and Tourism
+Ventura College,AIT,credit,INDT,95,COBI,ruling/MQ: Industrial Technology
+Ventura College,ANPH,credit,BIOL,84,COBI,TOP 0410.00 empirical BIOL (purity 0.97); course titles: Intro Human Anatomy/Physiology
+Ventura College,ESRM,credit,BIOL,92,COBI,ruling: environmental/ecology/sustainability -> BIOL
+Victor Valley College,CRDV,credit,COUN,90,COBI,career & life planning is Counseling
+Victor Valley College,CTMF,credit,CNST,90,COBI,MQ: Construction Technology
+Victor Valley College,CTMT,credit,CNST,90,COBI,MQ: Construction Technology
+Victor Valley College,CTPW,credit,CNST,90,COBI,MQ: Construction Technology
+Victor Valley College,DVST,credit,LSKL,90,COBI,"ruling: TOP 4930.32 Learning Skills, Learning Disabled -> LSKL; courses are language analysis, basic math, developmental algebra"
+Victor Valley College,MERT,credit,MULT,80,COBI,existing recommender MULT
+Victor Valley College,PSCI,credit,PHSC,95,COBI,ruling analog: Physical Science -> PHSC
+Victor Valley College,RESMGT,credit,RMGT,95,COBI,MQ: Restaurant Management
+Victor Valley College,TUTR,credit,IDST,90,COBI,ruling: Tutoring -> IDST; courses include Fundamentals of Tutoring and Supervised Tutoring (TOP 4930.09)
+West Los Angeles College,GAD,credit,MULT,82,COBI,game design/art usually Multimedia (MULT)
+West Valley College,ELED,credit,CDEV,84,COBI,TOP 1305.00 Child Development/Early Childhood Education -> CDEV; course titles: Intro to Elementary Teaching; Field Exp. Elementary Teaching
+West Valley College,IDES,credit,INDD,90,COBI,MQ: Industrial Design (minted INDD)
+West Valley College,WGQS,credit,WMST,90,COBI,ruling analog: Women's/Gender/Queer -> WMST
+Yuba College,LEARN,credit,BSKL,88,COBI,MQ: Interdisciplinary-Basic Skills: Noncredit (CB22 C)
+Yuba College,PSYCT,credit,NURP,84,COBI,TOP 1239.00 Psychiatric Technician -> NURP; course titles: Anatomy and Physiology; Human Development; Nursing Science A

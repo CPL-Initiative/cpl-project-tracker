@@ -215,12 +215,14 @@ def _subject_colleges():
     return out
 
 
-_FOLD_KEYS = set(WHOLE) | {ck for ck, _c in _PERSON_NOT_A_SUBJECT}
-for _slug, _name in _subject_colleges().items():
-    if _ckey(_name) in _FOLD_KEYS and _slug not in SLUG:
+# Only a college with a whole-code fold joins SLUG (base_code reads it); a college with only not_a_subject rows (Chabot's
+# apprenticeship wrappers, whose folds stay kb/coci_campus_letter.py's) is matched by its own slug map (S749).
+_ALL_SLUGS = _subject_colleges()
+for _slug, _name in _ALL_SLUGS.items():
+    if _ckey(_name) in WHOLE and _slug not in SLUG:
         SLUG[_slug] = _name
 NOT_A_SUBJECT = NOT_A_SUBJECT | frozenset(
-    (slug, code) for slug, name in SLUG.items() for ck, code in _PERSON_NOT_A_SUBJECT if _ckey(name) == ck)
+    (slug, code) for slug, name in _ALL_SLUGS.items() for ck, code in _PERSON_NOT_A_SUBJECT if _ckey(name) == ck)
 
 
 def _norm(s):
