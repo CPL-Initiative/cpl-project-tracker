@@ -896,37 +896,14 @@
         row.appendChild(chip);
       }
       var adoptPanel = null;
+      /* One Adopt chip on a featured program's course row too (Sam, 2026-11-28, on the Field Ironworker Supervisor
+         B.S.: "That looks good. please use it"; mock https://claude.ai/artifact/HNTRY9Rjymb9pTkZbdJfsp). The row's
+         adoption options become adopt_panel.js's model, so the row reads "<College> and N more give CPL for this
+         course." and opens the tab's side panel with each exhibit, its MAP link and one request (the catalog-record
+         cards' chip, #3424), in place of the inline list of colleges and a chip per college. */
       if (r.adoptOptions) {
-        var nCred = r.adoptOptions.length;
-        var abtn = document.createElement("button");
-        abtn.className = "how adopt";
-        abtn.type = "button";
-        abtn.textContent = "⊕ adopted elsewhere × " + nCred;
-        abtn.title = nCred + " credential(s) already articulated to equivalent coursework at other colleges — an adoption opportunity for this college. Click to list.";
-        abtn.setAttribute("aria-expanded", "false");
-        abtn.addEventListener("click", function () {
-          var open = adoptPanel.style.display !== "none";
-          adoptPanel.style.display = open ? "none" : "";
-          abtn.setAttribute("aria-expanded", open ? "false" : "true");
-        });
-        row.appendChild(abtn);
-        adoptPanel = el("div", "cplpw-adoptopts");
-        adoptPanel.style.display = "none";
-        adoptPanel.appendChild(el("div", "h",
-          "Already articulated at other colleges — CPL this college could adopt" +
-          (r.adoptNote ? " (" + r.adoptNote + ")" : "") + ":"));
-        r.adoptOptions.forEach(function (o) {
-          var ul = el("ul");
-          o.lines.forEach(function (l) {
-            ul.appendChild(el("li", null, l.college + ": " + l.code + " — " + l.title +
-              (l.units != null ? " (" + fmtU(l.units) + "u)" : "")));
-          });
-          adoptPanel.appendChild(el("div", "cred", "⊕ " + o.credential));
-          adoptPanel.appendChild(ul);
-          var ml = mapLinksNode(o.credential);
-          if (ml) adoptPanel.appendChild(ml);
-        });
-        adoptPanel.appendChild(buildQuickAdopt(prog, r));
+        var adoptChip = featuredAdoptChip(prog, r);
+        if (adoptChip) row.appendChild(adoptChip);
       }
       var optsPanel = null;
       if (r.status === "clep" && r.clepOptions) {
@@ -3047,6 +3024,31 @@
   window.addEventListener("cpl-tab-activated", function (e) {
     if (!(e && e.detail && e.detail.tab === "cpl-pathways")) closePanel();
   });
+
+  /* A featured program's course row: its adoption options (collectAdoptOptions) as adopt_panel.js's model, each
+     credential's granting colleges from its lines, the MAP line beside each exhibit in the panel. */
+  function featuredAdoptChip(prog, r) {
+    var P = window.CPL_ADOPT_PANEL;
+    if (!P || !r.adoptOptions || !r.adoptOptions.length) return null;
+    var items = r.adoptOptions.map(function (o) {
+      var cols = [];
+      (o.lines || []).forEach(function (l) { if (l.college && cols.indexOf(l.college) < 0) cols.push(l.college); });
+      return { title: o.credential, colleges: cols, kind: "adopt", links: mapLinksNode };
+    });
+    var m = P.model(items);
+    if (!m.items.length) return null;
+    if (!adoptState.data && !adoptState.error) loadAdopt();
+    var college = (prog && prog.college) || "";
+    var label = (prog && (prog.program || prog.degree)) || "";
+    var chip = P.chip(m, { home: college, adopterCollege: college, controls: "cplpw-panel", open: openPanel,
+      sub: college + (label ? ", " + label : ""),
+      course: { code: r.code || "", title: r.title || "" },
+      program: { id: (prog && prog.id) || college, label: college + (label ? " — " + label : "") } });
+    if (!chip) return null;
+    var box = el("span", "cplpw-radopts");
+    box.appendChild(chip);
+    return box;
+  }
 
   /* One Adopt chip per catalog-record course card (issue #3412 item 4, Sam, 2026-11-16): the shared component in
      adopt_panel.js names a college that already gives CPL for the course, its own Strong Workforce region first, and
