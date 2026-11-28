@@ -3722,6 +3722,8 @@
   "Skyline College": {
    "why": "S739 wave B (the gap census of 2026-11-26 06:54Z, lever reader_page_assignment): no reconcile step; the entry names one program's own page (site_pages).",
    "steps": [],
+   "read_found_pages": true,
+   "read_found_pages_why": "S748: Skyline's catalog gives each program a page of its own, and its capture 45798037585 found the own page of 55 Active programs the Program Course File lists no course for (the catalog lookup, S652: one program page alone names the whole title with a matching award; self-test 27 of 30, none false). With this key the capture files each found page as the program's source (method catalog_lookup) where the reader's page checks keep it (rules B, C and A), so a paid read can name it. Reversible by deleting both keys: the next capture then files what it filed before.",
    "site_pages_why": "S739 wave B: Skyline's catalog gives each program a page of its own, and its program list names one mathematics transfer degree, 'Mathematics for Transfer 2.0' (AS-T). The capture handed Mathematics A.S.-T 30882 the Economics AA-T's page, so extraction placed none of its listed courses. It is pinned to its own page, whose heading, course list and total the capture view of college-page-read run 45784839786 printed. The lever's other program, Solar Technology and Business 32964, is a named gap (kb/program_requirements_college/skyline/named_gaps_s739.json). Reversible by deleting this entry.",
    "site_pages": {
     "30882": {
