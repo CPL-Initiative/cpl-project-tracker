@@ -82,3 +82,9 @@ rereads, loads and `.apply`, and holds every Supabase call.
   before another capture and a paid read of about $0.10; the census change redone in its own commit (`0919feab`: the 78
   stay in the gap, labeled `college_named`; pass 15,698, none 3,888, named gap 696 before and after; seven mutations
   red); the Commons builders rebuilt (`bf617f75`), to land after s750a's apply.
+- 15:20Z: s750a's reader (Sonnet): APPLY (the eight pages' printed rows exclude the state's course and each stated
+  total is met without it; none has Madera's shape; eight mutations of its own turn the test red; MINOR: a later
+  reconcile rescores coverage false again, so the plan reruns after one). The conductor's pre-read: 8 of 8 on run,
+  record and checks, none checked, but one matching confirm: Cerritos 02235 carries Sam's confirm verdict of 2026-10-15
+  (verdict 36) on the live record. A person-settled record stays untouched (`d-cerritos-02235-person-confirmed-s750`):
+  `piles` narrows the plan to seven; no second reader round for a row removed.
