@@ -1,0 +1,75 @@
+college,local_subject_code,common_code,chip,basis
+Antelope Valley College,LATN,LATN,FLNG,per-language code + FLNG chip
+Cerro Coso Community College,LATN,LATN,FLNG,per-language code + FLNG chip
+Chabot College,FRNC,FREN,FLNG,per-language code + FLNG chip
+City College of San Francisco,ASIA,ASAM,ETHS,Sam ruling (Asian Studies / Asian American Studies): ASAM + ETHS chip
+City College of San Francisco,PIL,FILI,FLNG,ruling: per-language code + FLNG chip
+City College of San Francisco,WKEX,BUSI,WEXP,ruling: field CWE keeps discipline + WEXP chip
+Coalinga College,FLSPN,SPAN,FLNG,ruling: per-language code + FLNG chip; TOP 1105 Spanish
+Coastline Community College,BCT,CNSM,WEXP,Sam ruling (Building Codes Tech): CNSM + WEXP chip
+College of the Redwoods,FRNC,FREN,FLNG,per-language code + FLNG chip
+College of the Redwoods,HUPA,HUPA,FLNG,ruling: per-language code + FLNG chip; Elementary Hupa; TOP 1199 Other Foreign Languages
+College of the Redwoods,YUR,YURO,FLNG,ruling: per-language code + FLNG chip; Elementary Yurok; TOP 1199 Other Foreign Languages
+College of the Sequoias,PORT,PORT,FLNG,per-language code + FLNG chip
+Copper Mountain College,BUWE,BUSI,WEXP,ruling: field CWE keeps discipline + WEXP chip
+Copper Mountain College,CUWE,CULN,WEXP,ruling: field CWE keeps discipline + WEXP chip
+Copper Mountain College,FIWE,FIRE,WEXP,ruling: field CWE keeps discipline + WEXP chip
+Cuyamaca College,ARAM,ARAM,FLNG,ruling: per-language code + FLNG chip
+Diablo Valley College,PERSN,PERS,FLNG,ruling: per-language code + FLNG chip
+East Los Angeles College,ASIAN,ASAM,ETHS,Sam ruling (Asian Studies / Asian American Studies): ASAM + ETHS chip
+Feather River College,FRN,FREN,FLNG,per-language code + FLNG chip
+Fresno City College,ARMEN,ARMN,FLNG,ruling: per-language code + FLNG chip
+Fresno City College,ASAMER,ASAM,ETHS,Sam ruling (Asian Studies / Asian American Studies): ASAM + ETHS chip
+Fresno City College,PORT,PORT,FLNG,per-language code + FLNG chip
+Fullerton College,PORT,PORT,FLNG,per-language code + FLNG chip
+Gavilan College,FRNH,FREN,FLNG,per-language code + FLNG chip
+Glendale Community College,ARMEN,ARMN,FLNG,ruling: per-language code + FLNG chip
+Glendale Community College,FIL,FILI,FLNG,per-language code + FLNG chip
+Glendale Community College,HIER,HIER,FLNG,Sam ruling (Hieroglyphs): HIER + FLNG chip
+Glendale Community College,KOREA,KORE,FLNG,ruling: per-language code + FLNG chip
+Lake Tahoe Community College,LAT,LATN,FLNG,per-language code + FLNG chip
+Long Beach City College,COSE,ITIS,WEXP,ruling: field CWE keeps discipline + WEXP chip
+Long Beach City College,KHMER,KHMR,FLNG,ruling: per-language code + FLNG chip; courses are Khmer for Heritage Speakers
+Los Angeles City College,ARMEN,ARMN,FLNG,ruling: per-language code + FLNG chip
+Los Angeles Harbor College,ASIAN,ASAM,ETHS,Sam ruling (Asian Studies / Asian American Studies): ASAM + ETHS chip
+Los Angeles Valley College,HEBREW,HEBR,FLNG,per-language code + FLNG chip
+Madera College,AGED,EDUC,AGRI,Sam ruling (Agriculture Education): EDUC + AGRI chip
+Madera College,PUNJABI,PUNJ,FLNG,ruling: per-language code + FLNG chip
+Mendocino College,SPN,SPAN,FLNG,ruling: per-language code + FLNG chip
+Merced College,GERN,GERM,FLNG,ruling: per-language code + FLNG chip
+Moorpark College,LAT,LATN,FLNG,per-language code + FLNG chip
+Mt. San Antonio College,LATN,LATN,FLNG,per-language code + FLNG chip
+Orange Coast College,PORT,PORT,FLNG,per-language code + FLNG chip
+Oxnard College,FILI,FILI,FLNG,per-language code + FLNG chip
+Palomar College,AAS,ASAM,ETHS,Sam ruling (Asian Studies / Asian American Studies): ASAM + ETHS chip
+Pasadena City College,FRNC,FREN,FLNG,per-language code + FLNG chip
+Pasadena City College,LATN,LATN,FLNG,per-language code + FLNG chip
+Pasadena City College,PORT,PORT,FLNG,per-language code + FLNG chip
+Reedley College,AGED,EDUC,AGRI,Sam ruling (Agriculture Education): EDUC + AGRI chip
+Reedley College,ASAMER,ASAM,ETHS,Sam ruling (Asian Studies / Asian American Studies): ASAM + ETHS chip
+Sacramento City College,CANT,CANT,FLNG,ruling: per-language code + FLNG chip
+Sacramento City College,GREEK,GREK,FLNG,ruling: per-language code + FLNG chip
+Sacramento City College,PNJ,PUNJ,FLNG,ruling: per-language code + FLNG chip
+Sacramento City College,PNJABI,PUNJ,FLNG,ruling: per-language code + FLNG chip
+Saddleback College,HEBR,HEBR,FLNG,per-language code + FLNG chip
+Saddleback College,INTS,IDST,WEXP,ruling analog: interdisciplinary/general studies -> IDST; CB_COOP_ED_STATUS all C -> WEXP chip
+Saddleback College,PORT,PORT,FLNG,per-language code + FLNG chip
+San Diego Mesa College,FILI,FILI,FLNG,per-language code + FLNG chip
+San Diego Miramar College,FILI,FILI,FLNG,per-language code + FLNG chip
+San Jose City College,FRENCH (FREN),FREN,FLNG,per-language code + FLNG chip
+San Jose City College,JAPANESE (JAPAN),JAPN,FLNG,ruling: per-language code + FLNG chip
+Santa Ana College,ASIA,ASAM,ETHS,Sam ruling (Asian Studies / Asian American Studies): ASAM + ETHS chip
+Santa Barbara City College,HEBR,HEBR,FLNG,per-language code + FLNG chip
+Santa Barbara City College,LATN,LATN,FLNG,per-language code + FLNG chip
+Santa Monica College,HEBREW,HEBR,FLNG,per-language code + FLNG chip
+Santa Monica College,PORTGS,PORT,FLNG,per-language code + FLNG chip
+Santa Monica College,TURKSH,TURK,FLNG,ruling: per-language code + FLNG chip
+Skyline College,FILI,FILI,FLNG,per-language code + FLNG chip
+Southwestern College,ASIA,ASAM,ETHS,Sam ruling (Asian Studies / Asian American Studies): ASAM + ETHS chip
+Southwestern College,FARS,PERS,FLNG,ruling: per-language code + FLNG chip
+Southwestern College,FIL,FILI,FLNG,per-language code + FLNG chip
+Southwestern College,PORT,PORT,FLNG,per-language code + FLNG chip
+Victor Valley College,LATN,LATN,FLNG,per-language code + FLNG chip
+West Los Angeles College,ASIAN,ASAM,ETHS,Sam ruling (Asian Studies / Asian American Studies): ASAM + ETHS chip
+West Valley College,FRNC,FREN,FLNG,per-language code + FLNG chip
+Yuba College,ASIAN,ASAM,ETHS,Sam ruling (Asian Studies / Asian American Studies): ASAM + ETHS chip

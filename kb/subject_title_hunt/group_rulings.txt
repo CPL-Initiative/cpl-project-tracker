@@ -1,0 +1,45 @@
+ACCT|72 ACCT/ACCTG rows under BUSI -> ACCT|Sam yes 2026-11-28 4:42 AM PT
+ACCT+|5 ACTG Accounting rows (Canada,CSM,Foothill,Merced,Skyline) under BUSI -> ACCT|Sam 'acct to acct' 4:42 AM PT
+MRKT|39 Marketing rows under BUSI -> MRKT|Sam yes 4:42 AM PT
+MGMT|33 Management rows under BUSI -> MGMT|Sam yes 4:42 AM PT
+NOTE|Sam t1363u: BUS-coded courses that are really MRKT/MGMT (and ACCT) need per-course moves. Proposed: later per-course slate where title+TOP agree (0509/0506/0502); ~217 mkt/61 colleges, ~484 mgmt/86, ~192 acct/41 (rough keyword scan). Flag Entrepreneurship/Business Ethics as judgment.
+NOTE|Sam t1364u: per-course moves judged on title, description, SLOs/outcomes, CIP (not title+TOP alone).
+COMP|72 Computer Science rows under ITIS -> COMP|Sam yes 4:48 AM PT
+SOCI|~125 titled Sociology subjects (SOC/SOCI/SOCIO + twins/spellings) ETHS -> SOCI; ES courses stay ETHS per-course (~14 left for course pass); SOCI 150 not auto-ETHS; Crafton Hills SOC + MiraCosta SOC stay ETHS|Sam yes 4:49 AM PT
+ARTH|35 Art History rows (27 ARTS, 7 HIST, 1 HLTH) -> ARTH|Sam yes 4:49 AM PT
+PE|16 PE under PEDS -> KINE; 3 Adapted PE under KINE -> PEDS; 2 Athletic Training under KINE -> ATTR; ~59 Athletics stay KINE|Sam yes 4:51 AM PT
+LANG|191 language subjects under FLNG -> per-language common codes (SPAN, FREN, JAPN, CHIN, ITAL, GERM, KORE, RUSS, ARAB, VIET...) matching C-ID/M-IDs, grouped under World Languages header (CIP 16); adds ~10 codes not on MQ list|Sam option 2 4:52 AM PT
+LANG+|Each per-language common code carries an FLNG MQ chip/flag (MQ discipline = Foreign Languages)|Sam 4:53 AM PT
+NC-ESL|All noncredit ESL subjects -> ESLN (not ESOL); credit ESL separate|Sam yes 4:53 AM PT
+NC-VOC|Short-term Vocational noncredit subjects (~134) -> credit-counterpart common code by TOP/CIP, with noncredit flag + VOCE chip|Sam option 2 4:54 AM PT
+NC-SMALL|Workforce Prep -> own code WKPR (general job-readiness per Ed Code 84760.5; trade courses belong in STV); Citizenship CTZN, Health&Safety HLSN, Disabilities DSPN keep codes; all NC subjects carry CDCP chip when courses are in an approved CDCP program (COCI CB22 coding)|Sam yes 4:56 AM PT
+2026-11-28 residue batch1: Physical Science -> PHSC (physical sci = physics/chem/bio, distinct from earth sci geology/geography)
+2026-11-28 residue batch1: Global Studies -> SOCS; Physiology -> BIOL; Environmental Science -> BIOL
+2026-11-28 residue batch1: Learning Skills -> LSKL (formerly basic skills/IDST; learning-center supervised tutoring carve-out lets any MQ discipline supervise tutors and claim positive-attendance apportionment)
+2026-11-28 residue batch1: Agriculture Business -> AGAB; Latin -> LATN w/ FLNG chip
+2026-11-28 residue batch1: Oceanography -> GEOL; Religious Studies -> PHIL (no RLST MQ discipline)
+2026-11-28 residue batch1: IDST/LSKL two layers: subject level by name (Learning Skills->LSKL, Interdisciplinary->IDST); course pass: TOP 4930.09 Supervised Tutoring -> IDST any local code; 4930.32 study/LD skills -> LSKL
+2026-11-28 rule: every common-code rec must map to an MQ discipline (per-language codes carry the FLNG MQ chip)
+2026-11-28 residue batch2: Portuguese -> PORT w/ FLNG chip; Social Science -> SOCS (distinct from SOCI); Vet Tech -> VETT; Construction Mgmt -> CNSM; Science -> PHSC (course look later); Women's Studies -> WMST; Public Admin -> POLS; College Studies -> COUN
+2026-11-28 residue batch2: Meteorology -> GEOG
+2026-11-28 residue batch2: Environmental Studies -> BIOL (course pass: env geology->GEOL, env policy/human ecology->GEOG)
+2026-11-28 residue batch3: Work Exp -> WEXP; Filipino -> FILI w/ FLNG chip; Honors -> not_a_subject (course pass); Industrial Tech -> INDT; French -> FREN w/ FLNG chip; Gender Studies -> WMST; Sociology -> SOCI; FCS -> FCSH; Hospitality -> CULN; Sustainability -> BIOL
+2026-11-28 WEXP note: discipline-specific CWE courses (e.g., WEXP in a CTE field) — proposal pending: keep on discipline's common code + WEXP chip
+2026-11-28 RULE WEXP: discipline-specific work experience courses keep their CTE field's common code + WEXP chip (Work Experience Instructors MQ), sourced from CB_COOP_ED_STATUS; general Work Experience subjects stay WEXP
+2026-11-28 residue batch4: Tutoring -> IDST; Linguistics -> ENGL; Public Health -> HLTH; Nutrition -> FDNT (NUTR twin flagged for cleanup); Pharmacy Tech/Technician -> PHMT; Broadcasting -> BRDC; Service Learning -> IDST
+2026-11-28 RULE fold: NUTR (Dietetics/Nutritional Science) folds into FDNT; NUTR retired as alias
+2026-11-28 residue batch5: Hebrew -> HEBR w/ FLNG chip; Apprenticeship -> not_a_subject (course pass to trade code); Special Ed -> EDUC; General Studies -> IDST; Computer Science -> COMP; Ecology -> BIOL; Study Skills -> LSKL; Library Tech -> LIBT; Plant Science -> AGPR
+2026-11-28 residue batch5: STEM -> COUN (course pass: research->IDST, STEM coop/work exp->WEXP chip, teaching career->EDUC)
+2026-11-28 RULE mint: every official MQ discipline lacking a canonical_subj4 gets its own minted common code (see /workspace/cobix/align/minted_codes.csv). ATTR, ACCT, CTZN, HLSN kept; Theater Arts aliases THTR; Speech Communication aliases COMM (no twins). Ecology/Linguistics/Religious Studies codes (ECOL/LING/RLST) are minted for the catalog; Sam's already-ruled residue titles stay BIOL/ENGL/PHIL.
+2026-11-28 REVISION (official MQ list has them): Religious Studies -> RLST; Linguistics -> LING; Ecology -> ECOL; Hospitality -> HOTL (Hotel and Motel Services). Env Sci/Env Studies/Sustainability stay BIOL. Supersedes earlier PHIL/ENGL/BIOL/CULN rulings for those titles.
+2026-11-28 tail flagged batch1: Disability Studies -> EDUC; Energy -> ENGT; Health Occupations -> HLTH (open to HTEC); Learning Center -> IDST; Process Tech -> IMNT; Student Govt -> COUN; Technology -> INDT; Agriculture Education -> EDUC w/ AGRI chip; American Studies -> ETHS; Behavioral Science -> SOCS
+2026-11-28 tail flagged batch2: Business Law -> BUSI; Energy Tech -> ENGT; Leadership -> COUN; Learning Resources -> LIBR; Mfg & Ind Tech -> MANU; Mindfulness -> COUN; Music Tech -> MUSC; Performing Arts -> THTR; Pharmacology -> PHMT; Professional Development -> COUN
+2026-11-28 tail flagged batch3: Public Works -> CNST; Student Development -> COUN; Urban Studies -> GEOG; Adaptive Studies -> PEDS; Adv Mfg Tech -> MANU; Aerospace Leadership -> AVIA; Ag Mechanics -> AGRI; Animal Health Tech -> VETT; Anesthesia Tech -> HTEC; Asian Studies -> ASAM (Asian American Studies MQ, per Sam)
+2026-11-28 tail flagged batch4: Automation -> IMNT; Fire Academy -> FIRE; Building Codes Tech -> CNSM w/ WEXP chip; Building Construction Trade -> CNST; Business Communications -> BSOT; CDCR -> CRIM; Career Life Planning -> COUN; Child Dev Learning Lab -> CDEV; Clinical Lab Scientist -> HTEC; Communications and Media Studies -> COMM
+2026-11-28 tail flagged batch5: Computer Electronics -> ELET; CS Applications -> ITIS; Construction Equip Operator -> DIES; CE Nursing -> NRSR; Critical/Academic Reading -> READ; Digital Media Comm -> MCOM; Drafting/CAD -> DRAF; Earth Sciences -> GEOL; Echocardiography -> EMST (Sam); Emerging Technology -> ELEC
+2026-11-28 tail flagged batch6: Energy & Geo-Env Eng -> ENGT; Energy Systems -> ENGT; Energy Systems Tech -> ENGT; Engineering Electrical -> ELET; Event & Convention Planning -> HOTL; Fashion Merch -> FASH; Film & TV -> FTVE; Finance -> BFIN; Lifeguard -> FIRE; Physical Geography -> GEOG
+2026-11-28 tail flagged batch7: Geology & Geography -> GEOL; Graphic Communications -> GFCD; Heavy Equipment -> DIES; Hieroglyphs -> HIER w/ FLNG chip; Hospitality Tourism Rec Retail -> HOTL; Hospitality Travel & Tourism -> HOTL (travel->TOUR course pass); Hotel Restaurant Casino Mgmt (both) -> HOTL (restaurant->CULN course pass); Independent Study -> not_a_subject; Industrial Electrical Tech -> ELEC
+2026-11-28 tail flagged batch8: Industry & Technology -> IMNT; Instrumentation -> IMNT; Internship -> WEXP; Journalism & Media Studies -> JOUR; Journeypersons -> not_a_subject; Laser Tech -> ELET; Learning Skills & Tutoring -> LSKL (tutoring->IDST course pass); Legal Studies -> PARA; Mfg & Ind Tech (both spellings) -> MANU
+2026-11-28 RULE: Sam OK'd COBIx filing remaining clear flagged titles itself (TOP-settled); only true judgment calls go to Sam
+tail final calls (Sam 2026-11-28): Math Special Services->DSPS; Media Arts Design->FTVE; Media Communications->FTVE; Native American Languages->ETHS; PE-Theory->KINE (ATTR/PTAS course pass); Professional PE->KINE; Social Justice->ETHS; Special Programs->COUN; Special Services->DSPS; Spelling->LSKL; Tech & Prof Communication->ENGL; Upper Div GE->IDST; Workforce Skills->COUN; Writing Center->IDST. Asian Studies and Asian American Studies -> ASAM + ETHS chip. Space Technology: AVIA vs AERN pending.
+Space Technology (Hancock SPACE) -> AERN (Sam 2026-11-28: likely a Space Force special course, emerging area). Tail final calls complete.

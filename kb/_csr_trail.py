@@ -314,7 +314,7 @@ def main(argv=None):
         # anchor officials (0 COCI rows today — the CSR0014-class false positives
         # came from these missing; adjudicator-confirmed twins, 2026-07-10)
         "ACCT": "account", "EDUC": "education", "ENGR": "engineer", "GEOG": "geograph",
-        "JOUR": "journalis", "HOSP": "hospitality", "SPAN": "spanish",
+        "JOUR": "journalis", "HOTL": "hospitality", "SPAN": "spanish",
         "CMUS": "commercial music", "BSOT": "office technolog", "HIT": "health information",
         "ITIS": "information systems",
     }
