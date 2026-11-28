@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-28T07:22:42Z",
+ "written_at": "2026-11-28T07:46:21Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,8 +168,8 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17664,
-  "gap": 4671,
+  "passing": 17668,
+  "gap": 4667,
   "with_gap": 118,
   "cost_usd": 1341.37,
   "passed_at_read": 16566,
@@ -190,8 +190,8 @@
  "census_check": {
   "universe": 22335,
   "passing": 16986,
-  "gap": 4671,
-  "collected_with_gaps": 678,
+  "gap": 4667,
+  "collected_with_gaps": 682,
   "discontinued": 0
  },
  "census_live": {
@@ -11334,13 +11334,13 @@
    "harvested": true,
    "slug": "sierra",
    "programs": 190,
-   "passing": 91,
-   "gap": 99,
+   "passing": 95,
+   "gap": 95,
    "causes": {
     "no_closed_list": 65,
     "page_not_found": 20,
     "places_none": 2,
-    "unknown_without_live": 12
+    "unknown_without_live": 8
    },
    "census_causes": {
     "coverage_fails": 2,
@@ -11405,7 +11405,7 @@
    "levers": {
     "program_course_file_check": 65,
     "reader_page_search": 20,
-    "reconcile_steps": 12,
+    "reconcile_steps": 8,
     "reader_page_assignment": 2
    },
    "collection": {

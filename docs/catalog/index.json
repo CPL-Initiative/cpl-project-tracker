@@ -14405,7 +14405,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 112,
+   "count": 113,
    "docs": [
     {
      "created": "2026-05-30",
@@ -15854,6 +15854,20 @@
       "knowledge-base"
      ],
      "title": "Rules-based official-ID folds \u2014 the severed evidence index + tiered fold rule (the SPAN 200 case)",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-28",
+     "governs": [],
+     "path": "docs/s748_readers_NOTES.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "harvest"
+     ],
+     "title": "S748 readers \u2014 notes for the next session (holds by key, Sierra and Skyline)",
      "type": null,
      "updated": ""
     },
@@ -29196,5 +29210,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1596
+ "total": 1597
 }

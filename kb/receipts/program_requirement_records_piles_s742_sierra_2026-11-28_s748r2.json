@@ -1,0 +1,2673 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30); Sam's routine prompt of 2026-11-25, as the S739 conductor's brief carries it: a record held for a gap is collected with its gap named and a lower score on the 0-100 bar, never held, unless the record is not the program's own; S739: Sierra's records  held, read again by key: passed by a rescore where today's scorer's one reading moves them, else collected with their gaps named where the record is the program's own (no reread, no reconcile)",
+ "at": "2026-11-28T07:42:17Z",
+ "college": "Sierra College",
+ "keys": {
+  "from": "",
+  "members": [
+   "17979",
+   "21525",
+   "31922",
+   "31923",
+   "32007",
+   "33639",
+   "33646",
+   "36718",
+   "38522",
+   "39209",
+   "40181",
+   "45624"
+  ]
+ },
+ "gaps": {
+  "noted_no_total": "The reader's note says the catalog prints no total for this program, so its units cannot be checked against one; no page read has confirmed it.",
+  "noted_section_cut_off": "The reader's note says the program's section runs onto a page the read did not hold, so part of its requirements is missing from the record.",
+  "pair_read_as_alternatives": "The catalog prints two courses taken together as one option, and the record reads them as separate alternatives, so its low end falls short of the printed total."
+ },
+ "moved": 4,
+ "by": {
+  "pair_read_as_alternatives": 2,
+  "noted_no_total": 1,
+  "noted_section_cut_off": 1
+ },
+ "precision": {
+  "read": 12,
+  "right": 12,
+  "wrong": [],
+  "no_record_file": 0,
+  "not_hand_held": 0,
+  "by_answer": {
+   "none": 8,
+   "pair_read_as_alternatives": 2,
+   "noted_no_total": 1,
+   "noted_section_cut_off": 1
+  }
+ },
+ "claim_checks": {
+  "counts": {
+   "stands": 4
+  },
+  "not_standing": []
+ },
+ "boundaries": {
+  "counts": {
+   "the note's words gone right": 4,
+   "the stated total one unit off right": 4,
+   "coverage failing right": 4,
+   "the reading against a total one unit off right": 2,
+   "the no_total shape broken right": 1,
+   "its own section not shown right": 2
+  },
+  "wrong": []
+ },
+ "held": [
+  {
+   "control_number": "17979",
+   "why": "held: the record adds its two 9-unit lists to 18 under a printed 30, and its note only guesses that a further block was cut from the text ('may have been cut'): a free page read of the Liberal Arts page says what the section prints, then noted_section_cut_off or total_differs",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "21525",
+   "why": "held: its live row holds run 38675248607 (the conductor's live read of 2026-11-28 07:38Z) while main files run 39726642315, whose note says its section is 'truncated after 'IT 0060'': keep-better and a reread of 39726642315 first, then noted_section_cut_off",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "31922",
+   "why": "held: FASH 0028 prints 1 unit beside an alternative, FASH 0095, that the state lists at 0.5 to 4, so the low end reads 30.5 against the printed 31; no filed kind names an alternative read under the row's printed unit, and a reconcile step (the alternative takes its row's units) would pass it free",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "31923",
+   "why": "held: the certificate prints the A.S.'s requirements, and its record is 31922's reading: the same half unit at FASH 0095",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "32007",
+   "why": "held: its arithmetic is equal (27 against 27); it fails on coverage alone, 27 of 31 listed courses placed, which no arithmetic gap names",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "38522",
+   "why": "held: its arithmetic is equal (18-20 against 18-20); it fails on coverage alone, 25 of 29 listed courses placed, which no arithmetic gap names",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "40181",
+   "why": "held: the same pair (its note: 'CHEM 0001A is printed with 5-6 units, a range spanning the option of CHEM 0003A & CHEM 0003B'), 39-45 against the printed 41-45. Its halves carry no units, so today's scorer passes the record's own arithmetic and only the state file's 3 for one half fails it: such a record is rescored, never gap-filed (scorer_passes). A reconcile step that gives an alternative its row's printed units passes it free",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "45624",
+   "why": "held: two readings at once. Its note says BIOL 0056 and BIOL 0056L are one alternative pair to BIOL 0011, and that ESCI 0010 and 0010L print one combined 4 units; the record adds to 40-43 against the printed 42, and no one filed kind names both: a reconcile step for the joined lab, then the pair",
+   "claim": "no entry stands"
+  }
+ ],
+ "records": [
+  {
+   "college": "Sierra College",
+   "control_number": "33639",
+   "award": "A.S. T Degree",
+   "extracted_run": "39709837031",
+   "moves_to": "pair_read_as_alternatives",
+   "words": "CHEM 0001A row prints 5-6; alternative is CHEM 0003A & CHEM 0003B taken together (units not printed in the requirements table). | degree_total 60 taken from 'To earn the Associate in Science in Biology for Transfer degree, students must complete 60 CSU-transferable semester units'; this is the standard ADT statement — reviewer should confirm it counts as this award's printed total. No Cal-GETC unit figure printed.",
+   "confidence": {
+    "unit_arithmetic": 50,
+    "course_list_match": 100,
+    "ge_pattern": 50,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/sierra/records/33639.json",
+   "before_image": {
+    "program_title": "Biology",
+    "award": "A.S. T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.sierracollege.edu/departments/biological-sciences/",
+    "measure": "units",
+    "total_min": 31.5,
+    "total_max": 38,
+    "record": {
+     "program": {
+      "section_heading": "Biology for Transfer AS-T Degree",
+      "measure": "units",
+      "total_units": {
+       "min": 31.5,
+       "max": 38
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "Cal-GETC",
+      "degree_total": {
+       "min": 60,
+       "max": 60
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Apply the scientific method to design, conduct experiments, and test hypotheses.",
+       "Conduct scientific literature review, critically evaluate, and interpret biological information.",
+       "Outline the organization and integration of biological systems.",
+       "Apply laboratory and/or field skills necessary to answer biological questions.",
+       "As an informed and responsible individual, evaluate contemporary biological issues that have social and/or ethical implications."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "BIOL 0001",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL 0140",
+         "units": 4.5,
+         "units_max": 9,
+         "alternatives": [
+          {
+           "code": "BIOL 0002",
+           "units": 4.5,
+           "catalog_addition": false
+          },
+          {
+           "code": "BIOL 0003",
+           "units": 4.5,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": true
+        },
+        {
+         "code": "CHEM 0001A",
+         "units": 5,
+         "units_max": 6,
+         "alternatives": [
+          {
+           "code": "CHEM 0003A",
+           "units": null,
+           "catalog_addition": false
+          },
+          {
+           "code": "CHEM 0003B",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 0001B",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 0016A",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "MATH 0030",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Select one of the following physics sequences: PHYS 0105 & 0105L & PHYS 0110 & PHYS 0110L",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "physics sequence",
+       "stated": {
+        "min": 9,
+        "max": 10
+       },
+       "courses": [
+        {
+         "code": "PHYS 0105",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PHYS 0105L",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS 0110",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS 0110L",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Select one of the following physics sequences: PHYS 0205 & 0205L & PHYS 0210 & PHYS 0210L",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "physics sequence",
+       "stated": {
+        "min": 9,
+        "max": 10
+       },
+       "courses": [
+        {
+         "code": "PHYS 0205",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS 0205L",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS 0210",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS 0210L",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 16,
+     "listed": 16
+    },
+    "extracted_run": "39709837031"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 16,
+     "listed": 16,
+     "gaps": [
+      "pair_read_as_alternatives"
+     ],
+     "confidence": {
+      "unit_arithmetic": 50,
+      "course_list_match": 100,
+      "ge_pattern": 50,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 1
+  },
+  {
+   "college": "Sierra College",
+   "control_number": "33646",
+   "award": "A.S. T Degree",
+   "extracted_run": "39709837031",
+   "moves_to": "pair_read_as_alternatives",
+   "words": "CHEM 0001A row prints '5-6' covering the option; the alternative is the pair CHEM 0003A & CHEM 0003B taken together (both required). Individual units for CHEM 0003A/0003B are not printed beside them (closed list stores 3 each), so recorded as null. | No Cal-GETC unit figure is printed, so ge_units is null.",
+   "confidence": {
+    "unit_arithmetic": 50,
+    "course_list_match": 100,
+    "ge_pattern": 50,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/sierra/records/33646.json",
+   "before_image": {
+    "program_title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.sierracollege.edu/departments/nutrition-food-science/",
+    "measure": "units",
+    "total_min": 29,
+    "total_max": 30,
+    "record": {
+     "program": {
+      "section_heading": "Nutrition and Dietetics for Transfer AS-T Degree",
+      "measure": "units",
+      "total_units": {
+       "min": 29,
+       "max": 30
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "Cal-GETC",
+      "degree_total": {
+       "min": 60,
+       "max": 60
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Evaluate personal energy and nutrient requirements and food sources using current dietary assessment tools.",
+       "Demonstrate the understanding the physiological processing of nutrients as they relate to energy balance, metabolism and physical activity.",
+       "Evaluate the impact of external variables on food safety, food choices, food beliefs, and disease risk.",
+       "Identify dietary and lifestyle modifications for improving health throughout the life cycle."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 29,
+        "max": 30
+       },
+       "courses": [
+        {
+         "code": "BIOL 0004",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL 0006",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 0001A",
+         "units": 5,
+         "units_max": 6,
+         "alternatives": [
+          {
+           "code": "CHEM 0003A",
+           "units": null,
+           "catalog_addition": false
+          },
+          {
+           "code": "CHEM 0003B",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 0001B",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NUTF 0005",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NUTF 0010",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 9,
+     "listed": 9
+    },
+    "extracted_run": "39709837031"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 9,
+     "listed": 9,
+     "gaps": [
+      "pair_read_as_alternatives"
+     ],
+     "confidence": {
+      "unit_arithmetic": 50,
+      "course_list_match": 100,
+      "ge_pattern": 50,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 2
+  },
+  {
+   "college": "Sierra College",
+   "control_number": "36718",
+   "award": "A.S. Degree",
+   "extracted_run": "39726642315",
+   "moves_to": "noted_no_total",
+   "words": "No major total is printed for the Pre-Nursing Option (the 'Total Units' lines on the page belong to other sections); total_units left null. The 60-unit sentence is a general degree minimum, not a printed degree total.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "own_heading",
+   "path": "kb/program_requirements_college/sierra/records/36718.json",
+   "before_image": {
+    "program_title": "Allied Health - Pre-Nursing Option",
+    "award": "A.S. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.sierracollege.edu/departments/alh/",
+    "measure": "units",
+    "total_min": null,
+    "total_max": null,
+    "record": {
+     "program": {
+      "section_heading": "Allied Health - Pre-Nursing Option AS Degree",
+      "measure": "units",
+      "total_units": {
+       "min": null,
+       "max": null
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "Sierra College Associate Degree Requirements (Local General Education) or California General Education Transfer Curriculum (Cal-GETC)",
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Demonstrate an understanding of the functions of the organ systems of the human body.",
+       "Use the Scientific Method to investigate biological questions and critically evaluate and effectively communicate scientific data.",
+       "Understand and apply foundational knowledge for a future allied health career or program of study."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ALH 0020",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTH 0002",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "SOC 0001",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL 0004",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL 0005",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL 0006",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 0002A",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "CHEM 0001A",
+           "units": null,
+           "catalog_addition": true
+          },
+          {
+           "code": "CHEM 0003A",
+           "units": null,
+           "catalog_addition": true
+          },
+          {
+           "code": "CHEM 0003B",
+           "units": null,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "COMM C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HDEV 0001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "PSYC 0104",
+           "units": null,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "NUTF 0010",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Demonstrate mathematics proficiency by one of the following:",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 0,
+        "max": 6
+       },
+       "courses": [
+        {
+         "code": "MATH 0012",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MATH 0016A",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 0016B",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 0024",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 0029",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MATH 0030",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 0031",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 0032",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MATH 0033",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MATH 0042",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC 0142",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "SOC 0015",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "STAT C1000",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 17,
+     "listed": 17
+    },
+    "extracted_run": "39726642315"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 17,
+     "listed": 17,
+     "gaps": [
+      "noted_no_total"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 3
+  },
+  {
+   "college": "Sierra College",
+   "control_number": "39209",
+   "award": "A.S. T Degree",
+   "extracted_run": "39726642315",
+   "moves_to": "noted_section_cut_off",
+   "words": "The catalog text is cut off inside the Language Other Than English list ('SPAN 0004 In...'); further courses, the rest of the course list and any total units for this pathway may be missing. No total for the major or for the degree is visible, so total_units and degree_total are null.",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 50,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "own_section",
+   "path": "kb/program_requirements_college/sierra/records/39209.json",
+   "before_image": {
+    "program_title": "UCTP: Chemistry",
+    "award": "A.S. T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.sierracollege.edu/departments/chemistry/",
+    "measure": "units",
+    "total_min": null,
+    "total_max": null,
+    "record": {
+     "program": {
+      "section_heading": "UC Transfer Pathway (UCTP): Chemistry",
+      "measure": "units",
+      "total_units": {
+       "min": null,
+       "max": null
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "Cal-GETC",
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Demonstrate proficiency in chemistry concepts by scoring above the national median in the subject matter ACS (American Chemical Society) exams.",
+       "Demonstrate proficiency in scientific communication.",
+       "Apply critical thinking skills to problem solving."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Courses:",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "CHEM 0001A",
+         "units": 5,
+         "units_max": 6,
+         "alternatives": [
+          {
+           "code": "CHEM 0003A",
+           "units": null,
+           "catalog_addition": false
+          },
+          {
+           "code": "CHEM 0003B",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 0001B",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 0012A",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 0012B",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MATH 0030",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 0031",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 0032",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 0033",
+         "units": 6,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS 0205",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS 0205L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS 0210",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS 0210L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS 0215",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS 0215L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Select 3 units from the following:",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "ENGL C1001",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL C1002",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PHIL 0004",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "Select 3-4 units from the following:",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 4
+       },
+       "courses": [
+        {
+         "code": "AAD 0012",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ARTH C1100",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ARTH 0101",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ARTH 0120",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ARTH 0130",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ARTH 0132",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ARTH 0134",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ARTH 0140",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ARTH 0142",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ARTH 0150",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ARTH 0155",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "COMM 0006",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "COMM 0012",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "DFST 0003",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "DFST 0004",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "DFST 0010",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL 0016",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL 0024",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL 0027",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL 0029",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL 0030A",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL 0030B",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL 0032",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL 0033",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL 0034",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL 0035",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL 0037",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL 0038",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL 0040",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL 0042",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL 0045",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL 0046A",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL 0046B",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL 0047A",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL 0047B",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL 0048",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ETHN 0050",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "FREN 0002",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "FREN 0003",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "FREN 0004",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST 0004A",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST 0004B",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST C1001",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST C1002",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST 0018A",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST 0018B",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST 0019A",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST 0019B",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST 0020",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST 0021",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST 0022",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST 0023",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST 0024",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST 0025",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST 0027",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST 0050",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST 0051",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HUM 0001",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HUM 0002",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HUM 0003",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HUM 0005",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HUM 0009",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HUM 0010",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HUM 0015",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HUM 0017",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HUM 0020",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HUM 0021",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "JPN 0002",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "LGBT 0002",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PHIL 0002",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PHIL 0006",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PHIL 0010",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PHIL 0013",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PHIL 0020",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PHIL 0021",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PHIL 0027",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PHIL 0030",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PHIL 0060",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PHIL 0065",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MUS 0002",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MUS 0006A",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MUS 0009A",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MUS 0010",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MUS 0011",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MUS 0012A",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MUS 0012B",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MUS 0013",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PHOT 0010",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "SPAN 0003",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "SPAN 0004",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "THEA 0013",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "THEA 0016A",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "WMST 0003",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "Select 3-4 units from the following:",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 4
+       },
+       "courses": [
+        {
+         "code": "ADMJ 0050",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "AGRI 0198",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "AGRI 0215",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ANTH 0002",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ANTH 0004",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ANTH 0005",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ANTH 0006",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ANTH 0007",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ANTH 0009",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ANTH 0027",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "BUS 0271",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ARTH 0132",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "COMM 0007",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "COMM 0008",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "COMM 0010",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "COMM 0070",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ECON C2001",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ECON C2002",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ESS 0001",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ETHN 0011",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ETHN 0020",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ETHN 0045",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ETHN 0050",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ETHN 0053",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "GEOG 0002",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "GEOG 0003",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "GEOG 0005",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HDEV 0001",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HDEV 0004",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HDEV 0009",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HDEV 0021",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HDEV 0022",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST 0004A",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST 0004B",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST C1001",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST C1002",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST 0018A",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST 0018B",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST 0019A",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST 0019B",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST 0020",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST 0021",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST 0022",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST 0023",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST 0024",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST 0025",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST 0027",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST 0050",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST 0051",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HUM 0009",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "LGBT 0001",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "POLS C1000",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "POLS 0002",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "POLS 0003",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "POLS 0004",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "POLS 0005",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "POLS 0007",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "POLS 0008",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "POLS 0009",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "POLS 0012",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "POLS 0016",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "POLS 0017",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "POLS 0027",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PSYC C1000",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PSYC 0103",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PSYC 0104",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PSYC 0105",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PSYC 0106",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PSYC 0107",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PSYC 0108",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PSYC 0110",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PSYC 0127",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PSYC 0130",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PSYC 0160",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PSYC 0180",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "SOC 0001",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "SOC 0002",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "SOC 0003",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "SOC 0004",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "SOC 0005",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "SOC 0009",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "SOC 0010",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "SOC 0027",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "SOC 0047",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "SOC 0110",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "WMST 0001",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "WMST 0002",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "WMST 0003",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "WMST 0004",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "Select 3-5 units from the following:",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 5
+       },
+       "courses": [
+        {
+         "code": "AGRI 0156",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "AGRI 0200",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ANTH 0001",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ANTH 0010",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "BIOL 0001",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "BIOL 0002",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "BIOL 0003",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "BIOL 0004",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "BIOL 0005",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "BIOL 0006",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "BIOL 0010",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "BIOL 0011",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "BIOL 0014",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "BIOL 0015",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "BIOL 0021",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "BIOL 0030",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "BIOL 0035",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "BIOL 0055",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "BIOL 0056",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ESS 0014",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PSYC 0140",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "Select one of the following Language Other Than English options:",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 0,
+        "max": 5
+       },
+       "courses": [
+        {
+         "code": "DFST 0001",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "DFST 0002",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "DFST 0003",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "FREN 0001",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "FREN 0002",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "FREN 0003",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "FREN 0004",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "GER 0001",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "GER 0002",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ITAL 0001",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ITAL 0002",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "JPN 0001",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "JPN 0002",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "SPAN 0001",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "SPAN 0002",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "SPAN 0003",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "SPAN 0004",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 16,
+     "listed": 16
+    },
+    "extracted_run": "39726642315"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 16,
+     "listed": 16,
+     "gaps": [
+      "noted_section_cut_off"
+     ],
+     "confidence": {
+      "unit_arithmetic": 20,
+      "course_list_match": 50,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 4
+  }
+ ],
+ "live_run_proof": null,
+ "shared_pages": {
+  "36718": [
+   "36719",
+   "36922",
+   "36923",
+   "44605"
+  ],
+  "39209": [
+   "33637"
+  ]
+ },
+ "representation": "checks.gaps and checks.confidence added as the load reads the filed score (a passing row: checks.arithmetic to equal); checks.coverage, invented and the record unchanged",
+ "claim_check_reads": "Today's capture (sources.json): every course an entry names among the codes it found, and a course an entry says the printed total leaves out on neither it nor the state's list. A note's quoted figures are the reader's words, never re-read here.",
+ "follow_verdict": "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows (confirm_matches); the apply aborts, writing nothing, unless the count is 0.",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Sierra College', '33639', 39709837031, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 0001\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"BIOL 0002\",\"units\":4.5},{\"catalog_addition\":false,\"code\":\"BIOL 0003\",\"units\":4.5}],\"catalog_addition\":true,\"code\":\"BIOL 0140\",\"units\":4.5,\"units_max\":9},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"CHEM 0003A\",\"units\":null},{\"catalog_addition\":false,\"code\":\"CHEM 0003B\",\"units\":null}],\"catalog_addition\":false,\"code\":\"CHEM 0001A\",\"units\":5,\"units_max\":6},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 0001B\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH 0030\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MATH 0016A\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHYS 0105\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 0105L\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 0110\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 0110L\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Select one of the following physics sequences: PHYS 0105 & 0105L & PHYS 0110 & PHYS 0110L\",\"option_group\":\"physics sequence\",\"rule\":\"all\",\"stated\":{\"max\":10,\"min\":9}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 0205\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 0205L\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 0210\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 0210L\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Select one of the following physics sequences: PHYS 0205 & 0205L & PHYS 0210 & PHYS 0210L\",\"option_group\":\"physics sequence\",\"rule\":\"all\",\"stated\":{\"max\":10,\"min\":9}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Apply the scientific method to design, conduct experiments, and test hypotheses.\",\"Conduct scientific literature review, critically evaluate, and interpret biological information.\",\"Outline the organization and integration of biological systems.\",\"Apply laboratory and/or field skills necessary to answer biological questions.\",\"As an informed and responsible individual, evaluate contemporary biological issues that have social and/or ethical implications.\"],\"section_heading\":\"Biology for Transfer AS-T Degree\",\"total_units\":{\"max\":38,\"min\":31.5}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":16,\"placed\":16}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":50,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"pair_read_as_alternatives\"],\"invented\":true,\"listed\":16,\"placed\":16}'::jsonb),\n  (2, 'Sierra College', '33646', 39709837031, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 0004\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 0006\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"CHEM 0003A\",\"units\":null},{\"catalog_addition\":false,\"code\":\"CHEM 0003B\",\"units\":null}],\"catalog_addition\":false,\"code\":\"CHEM 0001A\",\"units\":5,\"units_max\":6},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 0001B\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NUTF 0005\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NUTF 0010\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":30,\"min\":29}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Evaluate personal energy and nutrient requirements and food sources using current dietary assessment tools.\",\"Demonstrate the understanding the physiological processing of nutrients as they relate to energy balance, metabolism and physical activity.\",\"Evaluate the impact of external variables on food safety, food choices, food beliefs, and disease risk.\",\"Identify dietary and lifestyle modifications for improving health throughout the life cycle.\"],\"section_heading\":\"Nutrition and Dietetics for Transfer AS-T Degree\",\"total_units\":{\"max\":30,\"min\":29}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":50,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"pair_read_as_alternatives\"],\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb),\n  (3, 'Sierra College', '36718', 39726642315, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ALH 0020\",\"units\":1,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SOC 0001\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ANTH 0002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 0004\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 0005\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 0006\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"CHEM 0001A\",\"units\":null},{\"catalog_addition\":true,\"code\":\"CHEM 0003A\",\"units\":null},{\"catalog_addition\":true,\"code\":\"CHEM 0003B\",\"units\":null}],\"catalog_addition\":false,\"code\":\"CHEM 0002A\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"PSYC 0104\",\"units\":null}],\"catalog_addition\":false,\"code\":\"HDEV 0001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NUTF 0010\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 0012\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 0016A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 0016B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 0024\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 0029\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 0030\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 0031\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 0032\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 0033\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 0042\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC 0142\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SOC 0015\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"STAT C1000\",\"units\":null,\"units_max\":null}],\"minimum\":1,\"name\":\"Demonstrate mathematics proficiency by one of the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":6,\"min\":0}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Sierra College Associate Degree Requirements (Local General Education) or California General Education Transfer Curriculum (Cal-GETC)\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate an understanding of the functions of the organ systems of the human body.\",\"Use the Scientific Method to investigate biological questions and critically evaluate and effectively communicate scientific data.\",\"Understand and apply foundational knowledge for a future allied health career or program of study.\"],\"section_heading\":\"Allied Health - Pre-Nursing Option AS Degree\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":17,\"placed\":17}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_no_total\"],\"invented\":true,\"listed\":17,\"placed\":17}'::jsonb),\n  (4, 'Sierra College', '39209', 39726642315, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"CHEM 0003A\",\"units\":null},{\"catalog_addition\":false,\"code\":\"CHEM 0003B\",\"units\":null}],\"catalog_addition\":false,\"code\":\"CHEM 0001A\",\"units\":5,\"units_max\":6},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 0001B\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 0012A\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 0012B\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 0030\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 0031\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 0032\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 0033\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 0205\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 0205L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 0210\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 0210L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 0215\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 0215L\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses:\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL C1001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL C1002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 0004\",\"units\":null,\"units_max\":null}],\"minimum\":3,\"name\":\"Select 3 units from the following:\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"AAD 0012\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARTH C1100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARTH 0101\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARTH 0120\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARTH 0130\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARTH 0132\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARTH 0134\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARTH 0140\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARTH 0142\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARTH 0150\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARTH 0155\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"COMM 0006\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"COMM 0012\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"DFST 0003\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"DFST 0004\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"DFST 0010\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0016\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0024\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0027\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0029\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0030A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0030B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0032\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0033\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0034\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0035\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0037\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0038\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0040\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0042\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0045\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0046A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0046B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0047A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0047B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0048\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ETHN 0050\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FREN 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FREN 0003\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FREN 0004\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0004A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0004B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST C1001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST C1002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0018A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0018B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0019A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0019B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0020\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0021\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0022\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0023\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0024\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0025\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0027\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0050\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0051\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HUM 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HUM 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HUM 0003\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HUM 0005\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HUM 0009\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HUM 0010\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HUM 0015\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HUM 0017\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HUM 0020\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HUM 0021\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"JPN 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"LGBT 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 0006\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 0010\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 0013\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 0020\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 0021\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 0027\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 0030\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 0060\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 0065\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUS 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUS 0006A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUS 0009A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUS 0010\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUS 0011\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUS 0012A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUS 0012B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUS 0013\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHOT 0010\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SPAN 0003\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SPAN 0004\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"THEA 0013\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"THEA 0016A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"WMST 0003\",\"units\":null,\"units_max\":null}],\"minimum\":3,\"name\":\"Select 3-4 units from the following:\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":4,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ADMJ 0050\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"AGRI 0198\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"AGRI 0215\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ANTH 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ANTH 0004\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ANTH 0005\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ANTH 0006\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ANTH 0007\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ANTH 0009\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ANTH 0027\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BUS 0271\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARTH 0132\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"COMM 0007\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"COMM 0008\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"COMM 0010\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"COMM 0070\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ECON C2001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ECON C2002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ESS 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ETHN 0011\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ETHN 0020\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ETHN 0045\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ETHN 0050\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ETHN 0053\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GEOG 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GEOG 0003\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GEOG 0005\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HDEV 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HDEV 0004\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HDEV 0009\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HDEV 0021\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HDEV 0022\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0004A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0004B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST C1001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST C1002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0018A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0018B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0019A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0019B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0020\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0021\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0022\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0023\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0024\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0025\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0027\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0050\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0051\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HUM 0009\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"LGBT 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS C1000\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 0003\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 0004\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 0005\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 0007\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 0008\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 0009\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 0012\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 0016\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 0017\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 0027\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC C1000\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC 0103\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC 0104\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC 0105\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC 0106\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC 0107\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC 0108\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC 0110\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC 0127\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC 0130\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC 0160\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC 0180\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SOC 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SOC 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SOC 0003\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SOC 0004\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SOC 0005\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SOC 0009\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SOC 0010\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SOC 0027\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SOC 0047\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SOC 0110\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"WMST 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"WMST 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"WMST 0003\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"WMST 0004\",\"units\":null,\"units_max\":null}],\"minimum\":3,\"name\":\"Select 3-4 units from the following:\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":4,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"AGRI 0156\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"AGRI 0200\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ANTH 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ANTH 0010\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0003\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0004\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0005\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0006\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0010\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0011\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0014\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0015\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0021\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0030\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0035\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0055\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0056\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ESS 0014\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC 0140\",\"units\":null,\"units_max\":null}],\"minimum\":3,\"name\":\"Select 3-5 units from the following:\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":5,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"DFST 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"DFST 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"DFST 0003\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FREN 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FREN 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FREN 0003\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FREN 0004\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GER 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GER 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ITAL 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ITAL 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"JPN 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"JPN 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SPAN 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SPAN 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SPAN 0003\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SPAN 0004\",\"units\":null,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one of the following Language Other Than English options:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":5,\"min\":0}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate proficiency in chemistry concepts by scoring above the national median in the subject matter ACS (American Chemical Society) exams.\",\"Demonstrate proficiency in scientific communication.\",\"Apply critical thinking skills to problem solving.\"],\"section_heading\":\"UC Transfer Pathway (UCTP): Chemistry\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":16,\"placed\":16}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":50,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":20},\"coverage\":true,\"gaps\":[\"noted_section_cut_off\"],\"invented\":true,\"listed\":16,\"placed\":16}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "pre_read_md5": "with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) as (values\n  (1, 'Sierra College', '33639', 39709837031, '89ff486f92b11e32f55c96a077887d31', '972ce3267c8b9670b117327200b82b48', 'f976c1fac03205355fefb17aec6eeede'),\n  (2, 'Sierra College', '33646', 39709837031, 'b4defbbd700549dffbb928a140190eb0', '88e2495efd06d1573c7fb0fe096e2788', '6dbb25ad7129c0a8e142193040d469f9'),\n  (3, 'Sierra College', '36718', 39726642315, '5c5ff66fcffa4d17f6d45550f74c0b19', 'e6dc2db0903ea1bdee923dfafbc1258b', 'd1e72d6710f94cf70bdc2613a7f458eb'),\n  (4, 'Sierra College', '39209', 39726642315, '39464c1c49cf03e288bf8a8ce039bb23', '879f0a7c64b3d6a14abe899e2924556d', '2405bab10276685e835e5dcfa853d147'))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.record::text) = v.rec_md5),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.checks::text) = v.chk_md5),\n  'already_after', count(*) filter (where md5(r.checks::text) = v.after_md5),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Sierra College', '33639', 39709837031, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 0001\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"BIOL 0002\",\"units\":4.5},{\"catalog_addition\":false,\"code\":\"BIOL 0003\",\"units\":4.5}],\"catalog_addition\":true,\"code\":\"BIOL 0140\",\"units\":4.5,\"units_max\":9},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"CHEM 0003A\",\"units\":null},{\"catalog_addition\":false,\"code\":\"CHEM 0003B\",\"units\":null}],\"catalog_addition\":false,\"code\":\"CHEM 0001A\",\"units\":5,\"units_max\":6},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 0001B\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH 0030\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MATH 0016A\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHYS 0105\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 0105L\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 0110\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 0110L\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Select one of the following physics sequences: PHYS 0105 & 0105L & PHYS 0110 & PHYS 0110L\",\"option_group\":\"physics sequence\",\"rule\":\"all\",\"stated\":{\"max\":10,\"min\":9}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 0205\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 0205L\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 0210\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 0210L\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Select one of the following physics sequences: PHYS 0205 & 0205L & PHYS 0210 & PHYS 0210L\",\"option_group\":\"physics sequence\",\"rule\":\"all\",\"stated\":{\"max\":10,\"min\":9}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Apply the scientific method to design, conduct experiments, and test hypotheses.\",\"Conduct scientific literature review, critically evaluate, and interpret biological information.\",\"Outline the organization and integration of biological systems.\",\"Apply laboratory and/or field skills necessary to answer biological questions.\",\"As an informed and responsible individual, evaluate contemporary biological issues that have social and/or ethical implications.\"],\"section_heading\":\"Biology for Transfer AS-T Degree\",\"total_units\":{\"max\":38,\"min\":31.5}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":16,\"placed\":16}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":50,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"pair_read_as_alternatives\"],\"invented\":true,\"listed\":16,\"placed\":16}'::jsonb),\n  (2, 'Sierra College', '33646', 39709837031, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 0004\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 0006\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"CHEM 0003A\",\"units\":null},{\"catalog_addition\":false,\"code\":\"CHEM 0003B\",\"units\":null}],\"catalog_addition\":false,\"code\":\"CHEM 0001A\",\"units\":5,\"units_max\":6},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 0001B\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NUTF 0005\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NUTF 0010\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":30,\"min\":29}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Evaluate personal energy and nutrient requirements and food sources using current dietary assessment tools.\",\"Demonstrate the understanding the physiological processing of nutrients as they relate to energy balance, metabolism and physical activity.\",\"Evaluate the impact of external variables on food safety, food choices, food beliefs, and disease risk.\",\"Identify dietary and lifestyle modifications for improving health throughout the life cycle.\"],\"section_heading\":\"Nutrition and Dietetics for Transfer AS-T Degree\",\"total_units\":{\"max\":30,\"min\":29}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":50,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"pair_read_as_alternatives\"],\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb),\n  (3, 'Sierra College', '36718', 39726642315, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ALH 0020\",\"units\":1,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SOC 0001\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ANTH 0002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 0004\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 0005\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 0006\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"CHEM 0001A\",\"units\":null},{\"catalog_addition\":true,\"code\":\"CHEM 0003A\",\"units\":null},{\"catalog_addition\":true,\"code\":\"CHEM 0003B\",\"units\":null}],\"catalog_addition\":false,\"code\":\"CHEM 0002A\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"PSYC 0104\",\"units\":null}],\"catalog_addition\":false,\"code\":\"HDEV 0001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NUTF 0010\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 0012\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 0016A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 0016B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 0024\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 0029\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 0030\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 0031\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 0032\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 0033\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 0042\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC 0142\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SOC 0015\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"STAT C1000\",\"units\":null,\"units_max\":null}],\"minimum\":1,\"name\":\"Demonstrate mathematics proficiency by one of the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":6,\"min\":0}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Sierra College Associate Degree Requirements (Local General Education) or California General Education Transfer Curriculum (Cal-GETC)\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate an understanding of the functions of the organ systems of the human body.\",\"Use the Scientific Method to investigate biological questions and critically evaluate and effectively communicate scientific data.\",\"Understand and apply foundational knowledge for a future allied health career or program of study.\"],\"section_heading\":\"Allied Health - Pre-Nursing Option AS Degree\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":17,\"placed\":17}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_no_total\"],\"invented\":true,\"listed\":17,\"placed\":17}'::jsonb),\n  (4, 'Sierra College', '39209', 39726642315, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"CHEM 0003A\",\"units\":null},{\"catalog_addition\":false,\"code\":\"CHEM 0003B\",\"units\":null}],\"catalog_addition\":false,\"code\":\"CHEM 0001A\",\"units\":5,\"units_max\":6},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 0001B\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 0012A\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 0012B\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 0030\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 0031\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 0032\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 0033\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 0205\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 0205L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 0210\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 0210L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 0215\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 0215L\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses:\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL C1001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL C1002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 0004\",\"units\":null,\"units_max\":null}],\"minimum\":3,\"name\":\"Select 3 units from the following:\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"AAD 0012\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARTH C1100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARTH 0101\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARTH 0120\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARTH 0130\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARTH 0132\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARTH 0134\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARTH 0140\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARTH 0142\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARTH 0150\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARTH 0155\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"COMM 0006\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"COMM 0012\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"DFST 0003\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"DFST 0004\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"DFST 0010\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0016\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0024\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0027\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0029\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0030A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0030B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0032\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0033\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0034\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0035\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0037\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0038\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0040\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0042\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0045\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0046A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0046B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0047A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0047B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0048\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ETHN 0050\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FREN 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FREN 0003\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FREN 0004\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0004A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0004B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST C1001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST C1002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0018A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0018B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0019A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0019B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0020\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0021\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0022\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0023\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0024\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0025\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0027\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0050\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0051\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HUM 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HUM 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HUM 0003\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HUM 0005\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HUM 0009\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HUM 0010\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HUM 0015\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HUM 0017\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HUM 0020\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HUM 0021\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"JPN 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"LGBT 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 0006\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 0010\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 0013\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 0020\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 0021\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 0027\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 0030\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 0060\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 0065\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUS 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUS 0006A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUS 0009A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUS 0010\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUS 0011\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUS 0012A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUS 0012B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUS 0013\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHOT 0010\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SPAN 0003\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SPAN 0004\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"THEA 0013\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"THEA 0016A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"WMST 0003\",\"units\":null,\"units_max\":null}],\"minimum\":3,\"name\":\"Select 3-4 units from the following:\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":4,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ADMJ 0050\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"AGRI 0198\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"AGRI 0215\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ANTH 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ANTH 0004\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ANTH 0005\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ANTH 0006\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ANTH 0007\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ANTH 0009\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ANTH 0027\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BUS 0271\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARTH 0132\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"COMM 0007\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"COMM 0008\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"COMM 0010\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"COMM 0070\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ECON C2001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ECON C2002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ESS 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ETHN 0011\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ETHN 0020\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ETHN 0045\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ETHN 0050\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ETHN 0053\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GEOG 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GEOG 0003\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GEOG 0005\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HDEV 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HDEV 0004\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HDEV 0009\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HDEV 0021\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HDEV 0022\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0004A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0004B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST C1001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST C1002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0018A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0018B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0019A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0019B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0020\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0021\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0022\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0023\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0024\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0025\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0027\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0050\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0051\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HUM 0009\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"LGBT 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS C1000\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 0003\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 0004\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 0005\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 0007\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 0008\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 0009\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 0012\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 0016\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 0017\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 0027\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC C1000\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC 0103\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC 0104\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC 0105\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC 0106\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC 0107\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC 0108\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC 0110\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC 0127\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC 0130\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC 0160\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC 0180\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SOC 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SOC 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SOC 0003\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SOC 0004\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SOC 0005\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SOC 0009\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SOC 0010\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SOC 0027\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SOC 0047\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SOC 0110\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"WMST 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"WMST 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"WMST 0003\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"WMST 0004\",\"units\":null,\"units_max\":null}],\"minimum\":3,\"name\":\"Select 3-4 units from the following:\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":4,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"AGRI 0156\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"AGRI 0200\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ANTH 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ANTH 0010\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0003\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0004\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0005\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0006\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0010\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0011\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0014\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0015\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0021\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0030\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0035\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0055\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0056\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ESS 0014\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC 0140\",\"units\":null,\"units_max\":null}],\"minimum\":3,\"name\":\"Select 3-5 units from the following:\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":5,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"DFST 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"DFST 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"DFST 0003\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FREN 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FREN 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FREN 0003\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FREN 0004\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GER 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GER 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ITAL 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ITAL 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"JPN 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"JPN 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SPAN 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SPAN 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SPAN 0003\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SPAN 0004\",\"units\":null,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one of the following Language Other Than English options:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":5,\"min\":0}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate proficiency in chemistry concepts by scoring above the national median in the subject matter ACS (American Chemical Society) exams.\",\"Demonstrate proficiency in scientific communication.\",\"Apply critical thinking skills to problem solving.\"],\"section_heading\":\"UC Transfer Pathway (UCTP): Chemistry\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":16,\"placed\":16}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":50,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":20},\"coverage\":true,\"gaps\":[\"noted_section_cut_off\"],\"invented\":true,\"listed\":16,\"placed\":16}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\nf as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number\n        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true\n       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)),\ne(expect) as (values (4)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when f.n > 0\n            then ('s748r2 piles confirm guard: ' || f.n || ' rows hold a matching confirm verdict ' || f.keys::text)::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s748r2 piles guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, f;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Sierra College', '33639', 39709837031, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 0001\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"BIOL 0002\",\"units\":4.5},{\"catalog_addition\":false,\"code\":\"BIOL 0003\",\"units\":4.5}],\"catalog_addition\":true,\"code\":\"BIOL 0140\",\"units\":4.5,\"units_max\":9},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"CHEM 0003A\",\"units\":null},{\"catalog_addition\":false,\"code\":\"CHEM 0003B\",\"units\":null}],\"catalog_addition\":false,\"code\":\"CHEM 0001A\",\"units\":5,\"units_max\":6},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 0001B\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH 0030\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MATH 0016A\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHYS 0105\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 0105L\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 0110\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 0110L\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Select one of the following physics sequences: PHYS 0105 & 0105L & PHYS 0110 & PHYS 0110L\",\"option_group\":\"physics sequence\",\"rule\":\"all\",\"stated\":{\"max\":10,\"min\":9}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 0205\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 0205L\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 0210\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 0210L\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Select one of the following physics sequences: PHYS 0205 & 0205L & PHYS 0210 & PHYS 0210L\",\"option_group\":\"physics sequence\",\"rule\":\"all\",\"stated\":{\"max\":10,\"min\":9}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Apply the scientific method to design, conduct experiments, and test hypotheses.\",\"Conduct scientific literature review, critically evaluate, and interpret biological information.\",\"Outline the organization and integration of biological systems.\",\"Apply laboratory and/or field skills necessary to answer biological questions.\",\"As an informed and responsible individual, evaluate contemporary biological issues that have social and/or ethical implications.\"],\"section_heading\":\"Biology for Transfer AS-T Degree\",\"total_units\":{\"max\":38,\"min\":31.5}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":16,\"placed\":16}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":50,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"pair_read_as_alternatives\"],\"invented\":true,\"listed\":16,\"placed\":16}'::jsonb),\n  (2, 'Sierra College', '33646', 39709837031, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 0004\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 0006\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"CHEM 0003A\",\"units\":null},{\"catalog_addition\":false,\"code\":\"CHEM 0003B\",\"units\":null}],\"catalog_addition\":false,\"code\":\"CHEM 0001A\",\"units\":5,\"units_max\":6},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 0001B\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NUTF 0005\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NUTF 0010\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":30,\"min\":29}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Evaluate personal energy and nutrient requirements and food sources using current dietary assessment tools.\",\"Demonstrate the understanding the physiological processing of nutrients as they relate to energy balance, metabolism and physical activity.\",\"Evaluate the impact of external variables on food safety, food choices, food beliefs, and disease risk.\",\"Identify dietary and lifestyle modifications for improving health throughout the life cycle.\"],\"section_heading\":\"Nutrition and Dietetics for Transfer AS-T Degree\",\"total_units\":{\"max\":30,\"min\":29}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":50,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"pair_read_as_alternatives\"],\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb),\n  (3, 'Sierra College', '36718', 39726642315, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ALH 0020\",\"units\":1,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SOC 0001\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ANTH 0002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 0004\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 0005\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 0006\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"CHEM 0001A\",\"units\":null},{\"catalog_addition\":true,\"code\":\"CHEM 0003A\",\"units\":null},{\"catalog_addition\":true,\"code\":\"CHEM 0003B\",\"units\":null}],\"catalog_addition\":false,\"code\":\"CHEM 0002A\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"PSYC 0104\",\"units\":null}],\"catalog_addition\":false,\"code\":\"HDEV 0001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NUTF 0010\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 0012\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 0016A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 0016B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 0024\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 0029\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 0030\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 0031\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 0032\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 0033\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 0042\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC 0142\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SOC 0015\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"STAT C1000\",\"units\":null,\"units_max\":null}],\"minimum\":1,\"name\":\"Demonstrate mathematics proficiency by one of the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":6,\"min\":0}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Sierra College Associate Degree Requirements (Local General Education) or California General Education Transfer Curriculum (Cal-GETC)\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate an understanding of the functions of the organ systems of the human body.\",\"Use the Scientific Method to investigate biological questions and critically evaluate and effectively communicate scientific data.\",\"Understand and apply foundational knowledge for a future allied health career or program of study.\"],\"section_heading\":\"Allied Health - Pre-Nursing Option AS Degree\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":17,\"placed\":17}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_no_total\"],\"invented\":true,\"listed\":17,\"placed\":17}'::jsonb),\n  (4, 'Sierra College', '39209', 39726642315, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"CHEM 0003A\",\"units\":null},{\"catalog_addition\":false,\"code\":\"CHEM 0003B\",\"units\":null}],\"catalog_addition\":false,\"code\":\"CHEM 0001A\",\"units\":5,\"units_max\":6},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 0001B\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 0012A\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 0012B\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 0030\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 0031\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 0032\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 0033\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 0205\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 0205L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 0210\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 0210L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 0215\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 0215L\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses:\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL C1001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL C1002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 0004\",\"units\":null,\"units_max\":null}],\"minimum\":3,\"name\":\"Select 3 units from the following:\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"AAD 0012\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARTH C1100\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARTH 0101\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARTH 0120\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARTH 0130\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARTH 0132\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARTH 0134\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARTH 0140\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARTH 0142\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARTH 0150\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARTH 0155\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"COMM 0006\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"COMM 0012\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"DFST 0003\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"DFST 0004\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"DFST 0010\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0016\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0024\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0027\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0029\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0030A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0030B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0032\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0033\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0034\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0035\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0037\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0038\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0040\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0042\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0045\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0046A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0046B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0047A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0047B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL 0048\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ETHN 0050\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FREN 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FREN 0003\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FREN 0004\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0004A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0004B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST C1001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST C1002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0018A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0018B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0019A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0019B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0020\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0021\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0022\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0023\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0024\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0025\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0027\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0050\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0051\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HUM 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HUM 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HUM 0003\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HUM 0005\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HUM 0009\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HUM 0010\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HUM 0015\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HUM 0017\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HUM 0020\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HUM 0021\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"JPN 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"LGBT 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 0006\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 0010\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 0013\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 0020\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 0021\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 0027\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 0030\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 0060\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHIL 0065\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUS 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUS 0006A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUS 0009A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUS 0010\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUS 0011\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUS 0012A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUS 0012B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUS 0013\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHOT 0010\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SPAN 0003\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SPAN 0004\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"THEA 0013\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"THEA 0016A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"WMST 0003\",\"units\":null,\"units_max\":null}],\"minimum\":3,\"name\":\"Select 3-4 units from the following:\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":4,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ADMJ 0050\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"AGRI 0198\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"AGRI 0215\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ANTH 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ANTH 0004\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ANTH 0005\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ANTH 0006\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ANTH 0007\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ANTH 0009\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ANTH 0027\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BUS 0271\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARTH 0132\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"COMM 0007\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"COMM 0008\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"COMM 0010\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"COMM 0070\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ECON C2001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ECON C2002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ESS 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ETHN 0011\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ETHN 0020\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ETHN 0045\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ETHN 0050\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ETHN 0053\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GEOG 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GEOG 0003\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GEOG 0005\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HDEV 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HDEV 0004\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HDEV 0009\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HDEV 0021\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HDEV 0022\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0004A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0004B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST C1001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST C1002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0018A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0018B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0019A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0019B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0020\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0021\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0022\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0023\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0024\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0025\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0027\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0050\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST 0051\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HUM 0009\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"LGBT 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS C1000\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 0003\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 0004\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 0005\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 0007\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 0008\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 0009\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 0012\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 0016\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 0017\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"POLS 0027\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC C1000\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC 0103\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC 0104\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC 0105\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC 0106\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC 0107\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC 0108\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC 0110\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC 0127\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC 0130\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC 0160\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC 0180\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SOC 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SOC 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SOC 0003\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SOC 0004\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SOC 0005\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SOC 0009\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SOC 0010\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SOC 0027\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SOC 0047\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SOC 0110\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"WMST 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"WMST 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"WMST 0003\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"WMST 0004\",\"units\":null,\"units_max\":null}],\"minimum\":3,\"name\":\"Select 3-4 units from the following:\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":4,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"AGRI 0156\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"AGRI 0200\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ANTH 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ANTH 0010\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0003\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0004\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0005\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0006\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0010\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0011\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0014\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0015\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0021\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0030\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0035\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0055\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 0056\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ESS 0014\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PSYC 0140\",\"units\":null,\"units_max\":null}],\"minimum\":3,\"name\":\"Select 3-5 units from the following:\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":5,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"DFST 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"DFST 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"DFST 0003\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FREN 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FREN 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FREN 0003\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FREN 0004\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GER 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GER 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ITAL 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ITAL 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"JPN 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"JPN 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SPAN 0001\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SPAN 0002\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SPAN 0003\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SPAN 0004\",\"units\":null,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one of the following Language Other Than English options:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":5,\"min\":0}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate proficiency in chemistry concepts by scoring above the national median in the subject matter ACS (American Chemical Society) exams.\",\"Demonstrate proficiency in scientific communication.\",\"Apply critical thinking skills to problem solving.\"],\"section_heading\":\"UC Transfer Pathway (UCTP): Chemistry\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":16,\"placed\":16}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":50,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":20},\"coverage\":true,\"gaps\":[\"noted_section_cut_off\"],\"invented\":true,\"listed\":16,\"placed\":16}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (4)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s748r2 piles rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;"
+}

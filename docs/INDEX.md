@@ -70,10 +70,10 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Doctrine (behavior-shaping) | 6 | [`catalog/doctrine.md`](catalog/doctrine.md) |
 | KB notes | 608 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 95 | [`catalog/lessons.md`](catalog/lessons.md) |
-| Workstream docs | 112 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
+| Workstream docs | 113 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 77 | [`catalog/reference.md`](catalog/reference.md) |
 | Session handoffs | 698 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1596** | |
+| **total** | **1597** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
