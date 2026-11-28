@@ -228,12 +228,151 @@ for slug, holder, taker in RESOLVED_BY_NOT_FOUND_S677:
     rec = os.path.join(ROOT, "kb", "program_requirements_college", slug, "records", holder + ".json")
     check(holder in nf and not os.path.exists(rec),
           "%s %s stays not_found with no record filed, so it holds no page of %s (S677)" % (slug, holder, taker))
-expected = sorted(set(YIELDS_S668) - set(RESOLVED_BY_CLAIM_S676) - set(RESOLVED_BY_NOT_FOUND_S677))
+# Judged in S753 (lane 2, the matcher's fixes): four colleges' lookups opened by the fixes, and the lookup gave back
+# four pages. Each is read from the census row: the page's own heading names the taker and not the holder, and the
+# holder's filed record was read from that page and fails live (holder_passes_live false); a fifth, Marin 21935's
+# Certificate of Achievement in Business, General, is refused because the holder's record passes (yield_refused_passing).
+# Marin 46068 Biology holds "A.S. in Biology" for 03364 Biology; San Diego City 22333 (a Communications Technician
+# Apprenticeship) holds "Electronics - Certificate of Achievement" for 05238 Electronics; San Diego Mesa 31695
+# (Mathematics) holds the Liberal Arts and Sciences: Science Studies-Biological Science page for 18271, and 18270
+# (Math & Pre-Engineering) the Science Studies-Chemistry page for 18272. They stay pinned until a filing moves them.
+YIELDS_S753 = [("college_of_marin", "46068", "03364"), ("san_diego_city", "22333", "05238"),
+               ("san_diego_mesa", "31695", "18271"), ("san_diego_mesa", "18270", "18272")]
+expected = sorted((set(YIELDS_S668) | set(YIELDS_S753)) - set(RESOLVED_BY_CLAIM_S676) - set(RESOLVED_BY_NOT_FOUND_S677))
 moved = sorted((y["college"], y["holder"], y["taker"]) for y in sw["yield_list"])
 check(moved == expected and sw["yields"] == len(expected) and sw["yields_passing_moved"] == 0,
-      "the census yields exactly the 13 judged in S668 less the 3 resolved by a page claim in S676 and Chaffey 18435 (S677), Skyline's Dance "
+      "the census yields exactly the 13 judged in S668 less the 3 resolved by a page claim in S676 and Chaffey 18435 (S677), plus the 4 judged in S753, Skyline's Dance "
       "A.A. and Automotive Advanced Engine Performance Technology among them, whether a filing has applied them yet "
       "or not: %r" % moved)
+
+# ── S753 (lane 2, the matcher's fixes): each pattern that held a college under the floor, on a fixture, its limit, and
+# the committed census: every college a fix opened passes on merit, none that passed is lost, no false match anywhere.
+def _prog(title, award="A.S. Degree", cn="1"):
+    return {"control_number": cn, "title": title, "award": award, "closed_list": []}
+
+
+def _pages(*items, college="Test College"):
+    return C.ncl_pages([{"url": u, "h1": h, "title": h} for u, h in items], college)
+
+
+def _hit(p, ps):
+    return C.ncl_answer(p, ps, {}, [p])["result"] == "found"
+
+
+U = "https://c.example.edu/p/"
+CW = frozenset({"san", "diego", "city", "college"})
+
+# 1. what follows the award is a tag, not the program's name
+check(C.strip_tail("Accounting - Associate of Science Degree: City", CW) == "Accounting - Associate of Science Degree",
+      "the campus after the award is set aside (San Diego City's 'Degree: City')")
+check(C.strip_tail("Accounting - A.A. Degree - BUS") == "Accounting - A.A. Degree",
+      "a department code after the award is set aside (Merritt)")
+check(C.strip_tail("Math and Science - Associate of Science Degree - (AOE) NAS493/C") ==
+      "Math and Science - Associate of Science Degree", "a program code after the award is set aside (Norco)")
+check(C.strip_tail("Certificate of Achievement in Automotive Technology - Honda, Professional Automotive Career "
+                   "Training (PACT)") != "Certificate of Achievement in Automotive Technology",
+      "an award that leads the heading cuts nothing: what follows it is the title (Butte)")
+check(C.strip_tail("Accounting: Credit Management - A.S. Degree - Cooperative Education Option") ==
+      "Accounting: Credit Management - A.S. Degree - Cooperative Education Option",
+      "a tag with words of its own is the title's, so it is kept")
+check(C.strip_tail("ACCOUNTING - ASSOCIATE OF SCIENCE DEGREE - BUS") == "ACCOUNTING - ASSOCIATE OF SCIENCE DEGREE - BUS",
+      "an all-capitals heading cannot tell a code from a word, so no code is cut from it")
+check(_hit(_prog("Accounting"), _pages((U + "a", "Accounting - Associate of Science Degree: City"),
+                                    college="San Diego City College")),
+      "a program is found on a heading with its campus after the award")
+
+# 2. award spellings
+check(C.award_kinds_in("Geographic Information Systems Cert") == {"coa"}, "'Cert' at a heading's end names a certificate of achievement")
+check(_hit(_prog("Welding", "Certificate of Achievement requiring 16S/24Q"), _pages((U + "w", "Welding Cert"))),
+      "Antelope Valley's 'Welding Cert' is the certificate")
+check(C.award_kinds_in("Fire Science Certificate") == set(), "the bare word certificate is no award kind, only a class")
+ps = _pages((U + "fs-aa", "Fire Science AA"), (U + "fs-cert", "Fire Science Certificate"))
+check(C.ncl_award_kinds({"url": U + "fs2", "h1": "Fire Science Certificate"}) == {"certificate"}
+      and _hit(_prog("Fire Science", "A.A. Degree"), ps) and not _hit(_prog("Fire Science", "A.A. Degree", "2"), ps[1:]),
+      "a heading ending in the word certificate names the class: an A.A. never takes the certificate's page")
+check(C.ncl_award_kinds({"url": "https://m.example.edu/catalog/current/program/a-s-in-art-fall-2026-credit-noncredit",
+                         "h1": "A.S. in Art"}) == {"as"},
+      "Marin's '-credit-noncredit' address tag is not a noncredit award")
+check(C.ncl_words("1. Certificate of Competency, ESL Beginning") == C.ncl_words("ESL Beginning"),
+      "a heading's leading list number is no part of the title")
+check(C.ncl_words("Studio Arts - AA-T Transfer Major (18 units or more)") == C.ncl_words("Studio Arts"),
+      "'Transfer Major (18 units or more)' is decoration (Palomar)")
+check(C.ncl_words("Pathway to Xfer: Business") == C.ncl_words("Pathway to Transfer: Business"),
+      "Xfer is transfer (Grossmont)")
+check(C.ncl_words("Pipe Welding (CM) certificate") == C.ncl_words("Pipe Welding")
+      and C.ncl_words("Customer Relationship Management (CRM)") != C.ncl_words("Customer Relationship Management"),
+      "a two-letter award code in parentheses before the award word is decoration (Merced); a title's own is not")
+check(C.ncl_words("Accounting: Certificate of Achievement (Transcripted)") == C.ncl_words("Accounting"),
+      "'(Transcripted)' is decoration (Santa Ana)")
+check(C.ncl_words("Certificate of Achievement-Advanced (COA-A) Accounting") == C.ncl_words("Accounting"),
+      "De Anza's Advanced certificate is the certificate")
+check(C.ncl_words("Apprenticeship: Electrician") == C.ncl_words("Electrician"), "Imperial Valley's 'Apprenticeship:' prefix is decoration")
+check(C.ncl_words("Liberal Arts Area of Emphasis: Allied Health") == C.ncl_words("Liberal Arts Allied Health"),
+      "'Area of Emphasis' is decoration (Taft)")
+check(C.ncl_words("Dental Hygiene Administration: Bachelor’s of Science") ==
+      C.ncl_words("Dental Hygiene Administration: Bachelor of Science"), "Bachelor's of Science reads as Bachelor of Science (Taft)")
+
+# 3. level and acronym readings are added beside the whole heading, never in place of it
+lv = _pages((U + "re2", "Real Estate - Certificate of Achievement Level 2"))
+check(_hit(_prog("Real Estate", "Certificate of Achievement requiring 16S"), lv)
+      and _hit(_prog("Real Estate Level 2", "Certificate of Achievement requiring 16S"), lv),
+      "a certificate's level tag is read both ways (San Jose City): the title with or without its level")
+two = _pages((U + "re1", "Real Estate - Certificate of Achievement Level 1"), (U + "re2", "Real Estate - Certificate of Achievement Level 2"))
+check(not _hit(_prog("Real Estate", "Certificate of Achievement requiring 16S"), two),
+      "two levels of one program are a tie, and a tie is not found")
+ac = _pages((U + "ifa", "Self Determination Program - Independent Facilitator (IF): Certificate of Completion"))
+check(_hit(_prog("Self Determination Program: Independent Facilitator", "Noncredit program"), ac)
+      and not _hit(_prog("Self Determination Program: Independent Facilitator (LVN)", "Noncredit program"), ac),
+      "an abbreviation that spells the words before it is set aside (Taft); one that does not is a word")
+check(C.strip_acronym("Registered Nurse (RN)") == "Registered Nurse" and C.strip_acronym("Registered Nurse (LVN)") == "Registered Nurse (LVN)",
+      "strip_acronym cuts only the initials")
+
+# 4. a printed award beats a page that prints none, and only that
+pr = _pages((U + "weld", "Welding Technology"), (U + "weld-ca", "Welding Technology, CA"))
+check(_hit(_prog("Welding Technology", "Certificate of Achievement requiring 16S"), pr),
+      "where one page prints the program's award and one prints none, the printed one is the program's")
+check(not _hit(_prog("Welding Technology", "Certificate of Achievement requiring 16S"),
+              _pages((U + "weld", "Welding Technology"), (U + "weld2", "Welding Technology"))),
+      "two pages that print no award stay a tie")
+check(not _hit(_prog("Welding Technology", "Certificate of Achievement requiring 16S"),
+              _pages((U + "w1-ca", "Welding Technology, CA"), (U + "w2-ca", "Welding Technology, COA"))),
+      "two pages that print the award stay a tie")
+# the other program's claim on the unprinted page does not block the one the printed page names
+a_s, coa = _prog("Welding Technology", "A.S. Degree", "1"), _prog("Welding Technology", "Certificate of Achievement requiring 16S", "2")
+check(_hit(a_s, pr) and _hit(coa, pr) and C.ncl_answer(a_s, pr, {}, [a_s, coa])["result"] == "found"
+      and C.ncl_answer(coa, pr, {}, [a_s, coa])["result"] == "found",
+      "the degree takes the page without an award and the certificate the page printing CA, neither blocked by the other")
+
+# 5. DEPARTMENT/PROGRAM headings (Rio Hondo)
+dept = _pages(*[(U + "d%d" % i, "DEPT%d/PROGRAM NUMBER%d - Associate of Science Degree" % (i, i)) for i in range(6)],
+             *[(U + "x%d" % i, "PLAIN%d - Associate of Science Degree" % i) for i in range(6)])
+check(_hit(_prog("Program Number3"), dept), "where a college's headings print DEPARTMENT/PROGRAM, the program's part reads too")
+few = _pages((U + "h", "Hospitality/Management - Associate of Science Degree"),
+            *[(U + "y%d" % i, "PLAIN%d - Associate of Science Degree" % i) for i in range(12)])
+check(not _hit(_prog("Management"), few), "one slash in a college's headings gives no program a department's part (Hospitality/Management)")
+
+# 6. the census: every college a fix opened passes on merit, none that passed is lost, no false match anywhere
+NEWLY = ["antelope_valley", "college_of_marin", "college_of_the_redwoods", "college_of_the_siskiyous", "coalinga",
+         "de_anza", "foothill", "grossmont", "imperial_valley", "lake_tahoe_community", "merced", "merritt",
+         "mission", "moreno_valley", "norco", "palo_verde", "palomar", "rio_hondo", "san_diego_city", "san_diego_mesa",
+         "san_diego_miramar", "san_jose_city", "santa_ana", "taft"]
+STILL_UNDER = ["cerritos", "contra_costa", "madera", "miracosta", "sierra"]
+rows = {}
+for slug in NEWLY + STILL_UNDER:
+    d = os.path.join(C.COLLEGE_DIR, slug)
+    rows[slug] = N.college_census(json.load(open(d + "/sources.json")), json.load(open(d + "/capture.json")), d)
+for slug in NEWLY:
+    r = rows[slug]
+    check(r["searches"] and r["recall"] >= C.NCL_FLOOR and r["tested"] >= C.NCL_MIN_TESTED and r["false"] == 0
+          and r["false_off_own"] == 0, "%s passes its own self-test on merit: %r" % (slug, {k: r[k] for k in ("recall", "tested", "false", "false_off_own")}))
+for slug in STILL_UNDER:
+    check(not rows[slug]["searches"], "%s still reports not searched (the floor is %s, not lowered): %r" % (slug, C.NCL_FLOOR, rows[slug]["recall"]))
+check(C.NCL_FLOOR == 0.8 and C.NCL_MIN_TESTED == 10, "the floor and the minimum are as S652 set them")
+sw = N.census()["statewide"]
+check(sw["false"] == 0 and sw["false_off_own"] == 0, "no college has a false match: %r" % ({k: sw[k] for k in ("false", "false_off_own")}))
+check(sw["colleges_under_floor"] == len(STILL_UNDER),
+      "the colleges under the floor are the five listed: %r" % sw["colleges_under_floor"])
+
 
 if failures:
     print("FAIL: harvest ncl lookup census (%d of %d)" % (len(failures), checks[0]))

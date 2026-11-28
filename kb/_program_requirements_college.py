@@ -1399,7 +1399,8 @@ NCL_ADT = [re.compile(r"associate (?:in|of) (?:arts|science)(?: degree)? for tra
            re.compile(r"\bA\.?\s?[AS]\.?\s?-\s?T\b|\bA[AS]T\b|\bA\.\s?[AS]\.\s?T\b\.?|\bADT\b")]
 NCL_KIND = [("bs", re.compile(r"\bbachelor", re.I)),
             ("noncredit", re.compile(r"\bnon-?credit\b|certificate of (?:completion|competency)", re.I)),
-            ("coa", re.compile(r"certificate of achievement|\bcert\.?\s*(?:of\s+)?achievement", re.I)),
+            ("noncredit", re.compile(r"\bCC\b(?=\s*$)")),     # Mission's "Beginning ESL CC", a certificate of completion
+            ("coa", re.compile(r"certificate (?:of )?achievement|\bcert\.?\s*(?:of\s+)?achievement", re.I)),
             ("other", re.compile(r"certificate of (?:accomplishment|specialization|proficiency|career preparation)|"
                                  r"\bskills? certificate", re.I)),
             ("as", re.compile(r"associate (?:in|of) science", re.I)),
@@ -1408,6 +1409,8 @@ NCL_KIND = [("bs", re.compile(r"\bbachelor", re.I)),
             ("aa", re.compile(r"\bA\.\s?A\.", re.I)),
             ("bs", re.compile(r"\bB\.\s?S\.", re.I)),
             ("coa", re.compile(r"\bCOA\b|\bCA\b")),
+            # Antelope Valley heads a certificate of achievement "Geographic Information Systems Cert" (S753).
+            ("coa", re.compile(r"\bCert\.?(?=\s*$)")),
             ("as", re.compile(r"\bAS\b")),
             ("aa", re.compile(r"\bAA\b")),
             ("bs", re.compile(r"\bBS\b"))]
@@ -1423,13 +1426,17 @@ NCL_CLASS = {"certificate": {"coa", "other", "noncredit"}, "degree": {"as", "aa"
 # "English as a Second Language".
 NCL_DECOR_I = re.compile(
     r"associate (?:in|of) (?:arts|science)(?: degree)?(?: for transfer)?(?: degree)?|"
-    r"certificate of (?:achievement|accomplishment|completion|competency|proficiency|specialization|career preparation)|"
+    r"certificate (?:of )?achievement(?:\s*-\s*advanced(?:\s*\(coa-a\))?)?|"
+    r"\(\s*(?-i:[A-Z]{2})\s*\)(?=\s*(?:certificate|non-?credit|associate|degree)\b)|\barea of emphasis\b|^\s*apprenticeship\s*:|\b(?:bachelor|baccalaureate)[’']?s?\s+(?:of|in)\s+(?:science|arts)\b|\(\s*transcripted\s*\)|"
+    r"certificate of (?:accomplishment|completion|competency|proficiency|specialization|career preparation)|"
+    r"\(\s*non-?credit\b[^)]*\)|\btransfer major\b|(?:less|fewer) than(?=\s+\d)|"
     r"\bcert\.?\s*(?:of\s+)?achievement|\bfor transfer\b|\btransfer degree\b|\bnon-?credit\b|"
     r"\ba\.\s?[as]\.(?:\s?-?\s?t\b\.?)?|\bb\.\s?s\.|"
-    r"#\s*\d+|\b\d+(?:\.\d+)?(?:\s*(?:-|–|to)\s*\d+(?:\.\d+)?)?\s*(?:semester\s+|quarter\s+)?units?\b(?:\s+or\s+(?:more|greater))?|"
+    r"^\s*\d{1,2}\.\s+(?=[^\d\s])|#\s*\d+|\b\d+(?:\.\d+)?(?:\s*(?:-|–|to)\s*\d+(?:\.\d+)?)?\s*(?:semester\s+|quarter\s+)?units?\b(?:\s+or\s+(?:more|greater))?|"
     r"\s[-–|]\s[^-–|]*\bcollege\b[^-–|]*$|\b(?:degree|certificate|majors?|program)\b|"
-    r"\bcal[\s-]?getc\b|\bigetc\b|\bcsu[\s-]*ge(?:[\s-]breadth)?\b|\(?\bformerly\b[^,)]*\)?", re.I)
-NCL_DECOR_CAPS = re.compile(r"\b[A-Z]{1,4}\d{2,}[A-Z]?\b|\bA\.?\s?[AS]\.?(?:\s?-?\s?T\.?)?(?![\w.])|\bA[AS]T\b|\bADT\b|"
+    r"\bca[li][\s-]?getc\b|\bigetc\b|\bcsu[\s-]*ge(?:[\s-]breadth)?\b|\(?\bformerly\b[^,)]*\)?|"
+    r"\bcert\.?(?=\s*$)", re.I)
+NCL_DECOR_CAPS = re.compile(r"\b[A-Z]{1,4}\d{2,}[A-Z]?\b|\bCC(?=\s*$)|\bA\.?\s?[AS]\.?(?:\s?-?\s?T\.?)?(?![\w.])|\bA[AS]T\b|\bADT\b|"
                             r"\bCOA\b|\bCA\b|\bB\.?\s?S\.?(?![\w.])")
 NCL_STOP = set(P.STOP) | {"opt", "concentration", "emphasis"}
 ROMAN = re.compile(r"^(?:i|ii|iii|iv|v|vi|vii|viii|ix|x)$")
@@ -1490,6 +1497,32 @@ def page_award_kinds(pg: dict) -> set[str]:
     return named or award_kinds_in(pg.get("h1")) or award_kinds_in(pg.get("title"))
 
 
+NCL_CREDIT_NONCREDIT = re.compile(r"[-_]credit[-_]noncredit(?=[/?#]|$)", re.I)
+NCL_CLASS_CUE = [("certificate", re.compile(r"\bcertificates?\W*$", re.I)), ("degree", re.compile(r"\bdegree\W*$", re.I))]
+
+
+def ncl_award_kinds(pg: dict) -> set[str]:
+    """The awards a page prints as the lookup reads them (page_award_kinds, S753, two changes). Marin's addresses
+    end in "-credit-noncredit" on every page, A.S. degrees and certificates alike ("a-s-in-art-fall-2026-credit-
+    noncredit": the catalog's both-kinds tag, not a noncredit award), so the tag is set aside before the address is
+    read. A page that prints no award, whose heading ends in the bare word "certificate" ("Fire Science Certificate",
+    Lake Tahoe's; Imperial Valley's "(CERTIFICATE)") or "degree", names the class of award, as a slug's
+    "-certificate" does (NCL_SLUG_CLASS): a degree's page is never a certificate's, nor the reverse."""
+    url = pg.get("url") or ""
+    path, sep, rest = url.partition("?")
+    if NCL_CREDIT_NONCREDIT.search(path):
+        pg = dict(pg, url=NCL_CREDIT_NONCREDIT.sub("", path) + sep + rest)
+    kinds = page_award_kinds(pg)
+    if kinds:
+        return kinds
+    for text in (pg.get("h1"), pg.get("title")):
+        for t in [text] + ([TITLE_SPLIT.split(text)[0]] if text else []):
+            for cls, pat in NCL_CLASS_CUE:
+                if t and pat.search(t.strip()):
+                    return {cls}
+    return kinds
+
+
 @functools.lru_cache(maxsize=None)
 def ncl_words(text: str | None) -> tuple[tuple, tuple]:
     """A title or a page reading as (its words, its identity: numbers, versions, roman numerals and option
@@ -1499,7 +1532,7 @@ def ncl_words(text: str | None) -> tuple[tuple, tuple]:
     if not (letters and sum(c.isupper() for c in letters) > 0.6 * len(letters)):
         t = NCL_DECOR_CAPS.sub(" ", t)
     t = re.sub(r"\b(\d+)\.(\d+)\b", r" v\1\2 ", NCL_DECOR_I.sub(" ", t))
-    toks = re.findall(r"[a-z0-9]+", t.lower())
+    toks = ["transfer" if x == "xfer" else x for x in re.findall(r"[a-z0-9]+", t.lower())]   # Grossmont's "Pathway to Xfer"
     words, ident = [], []
     for i, w in enumerate(toks):
         if w.isdigit() or re.fullmatch(r"v\d+", w) or ROMAN.match(w):
@@ -1544,6 +1577,56 @@ def strip_college(text: str, college_words: frozenset) -> str:
     return joined if joined != " - ".join(x for x in NCL_SEGMENT.split(text) if x.strip()) else text
 
 
+NCL_LEVEL = re.compile(r"(certificate (?:of )?achievement)\s*-?\s*level\s*\d+", re.I)
+NCL_TAIL_CODE = re.compile(r"^[A-Z][A-Z0-9/&.\- ]{0,19}$|^[A-Z]{0,4}\d+[A-Z0-9/]*$")
+
+
+def strip_tail(text: str, college_words: frozenset = frozenset()) -> str:
+    """A heading with what follows its award set aside (S753). A heading prints its title, then its award, and then
+    sometimes a tag that names no program: the campus ("Accounting - Associate of Science Degree: City", San Diego
+    City's; the words of the college's own name, as a segment of their own) or a department or program code
+    ("Accounting - A.A. Degree - BUS", Merritt's; "Math and Science - Associate of Science Degree - (AOE)
+    NAS493/C", Norco's). A code is set aside only after the award and only where the heading is not all capitals
+    (an all-capitals heading cannot tell a code from a word), so a title's own words are never cut."""
+    if not text:
+        return text
+    segs = [x for x in NCL_SEGMENT.split(text) if x.strip()]
+    letters = [c for c in text if c.isalpha()]
+    shouting = bool(letters) and sum(c.isupper() for c in letters) > 0.6 * len(letters)
+    bare = [i for i, x in enumerate(segs) if i >= 1 and ncl_words(x) == ((), ()) and award_kinds_in(x)]
+    if not bare:
+        return text
+    cut = bare[-1] + 1       # the award stands after the title, and only what follows it is a tag
+    for seg in segs[cut:]:
+        seg = seg.strip().strip("-–| ")
+        words = ncl_words(seg)[0]
+        campus = bool(college_words) and bool(words) and set(words) <= set(college_words)
+        code = not shouting and bool(NCL_TAIL_CODE.match(seg)) and ncl_words(seg) != ((), ())
+        if not (campus or code):
+            return text
+    if cut == len(segs):
+        return text
+    return " - ".join(segs[:cut])
+
+
+NCL_ACRONYM = re.compile(r"\s*\(\s*([A-Z]{2,5})\s*\)")
+
+
+def strip_acronym(text: str) -> str:
+    """A reading without the abbreviation its heading prints after the name it abbreviates ("Self Determination
+    Program - Independent Facilitator (IF)": the capitals are the initials of the words just before them), as Taft
+    and Cabrillo print them. Only an abbreviation that spells those initials is set aside, so a parenthesis that
+    says something else ("Registered Nurse (LVN)") stays; the reading with it stays too, for a title that carries it."""
+    for m in NCL_ACRONYM.finditer(text or ""):
+        before = re.findall(r"[A-Za-z][A-Za-z']*", text[:m.start()])
+        n = len(m.group(1))
+        initials = "".join(w[0] for w in before[-n:]).upper() if len(before) >= n else ""
+        initials_all = "".join(w[0] for w in before if w.lower() not in ("of", "and", "the", "for", "in", "to", "a")).upper()
+        if m.group(1) in (initials, initials_all[-n:]):
+            return text[:m.start()] + text[m.end():]
+    return text
+
+
 def ncl_readings(pg: dict, college_words: frozenset = frozenset()) -> list[str]:
     """The page's readings a title is matched against: its heading, its title whole and before a "|" or
     " < ", each with the college's own name set aside (strip_college), and its address's last part with its
@@ -1552,7 +1635,18 @@ def ncl_readings(pg: dict, college_words: frozenset = frozenset()) -> list[str]:
     for t in (pg.get("h1"), pg.get("title")):
         if t and t.strip():
             for x in [t] + [y for y in [TITLE_SPLIT.split(t)[0]] if y != t]:
-                out.append(strip_college(x, college_words))
+                x = strip_tail(strip_college(x, college_words), college_words)
+                out.append(x)
+                # San Jose City tells its certificates of achievement apart by a level ("Real Estate - Certificate of
+                # Achievement Level 2"); the state's file names the program without it, so the page also reads without
+                # the level (the reading with it stays, for a title that carries its own). Two levels of one program
+                # are then two pages that name it, a tie.
+                alt = NCL_LEVEL.sub(r"\1", x)
+                if alt != x:
+                    out.append(alt)
+                alt = strip_acronym(x)
+                if alt != x:
+                    out.append(alt)
     last = "/" + _path_stem(pg.get("url")).rsplit("/", 1)[-1]
     for pat in [SLUG_DEGREE_CERT] + [p for _, p in SLUG_AWARD + NCL_SLUG_AWARD + NCL_SLUG_CLASS]:
         last = pat.sub("", last)
@@ -1577,7 +1671,7 @@ def ncl_page(pg: dict, college_words: frozenset = frozenset()) -> dict:
     path = _path_stem(pg.get("url"))
     readings = [ncl_words(r) for r in ncl_readings(pg, college_words)]
     return {"pg": pg, "key": pg.get("group") or page_stem(pg.get("url")), "keys": page_keys(pg),
-            "readings": readings, "kinds": page_award_kinds(pg),
+            "readings": readings, "kinds": ncl_award_kinds(pg),
             # a fragment a catalog includes is no program page, whatever code it carries (FRAGMENT_PATH, S654)
             "program_page": not FRAGMENT_PATH.search(urllib.parse.urlparse(pg.get("url") or "").path) and (
                 bool(pg.get("code") or pg.get("node") or pg.get("group")) or not (
@@ -1603,6 +1697,32 @@ def ncl_past_year(text: str, catalog_year: str | None) -> bool:
     return bool(m and years and max(years) < int(m.group(1)))
 
 
+NCL_DEPT_SHARE = 0.3        # the share of a college's headings that print DEPARTMENT/PROGRAM before a college reads them so
+NCL_DEPT_HEAD = re.compile(r"^([^/\n]{2,60}?)\s*/\s*([^/\n]{2,80}?)\s*(?:\s[-–|]\s.*)?$")
+
+
+def ncl_dept_readings(feats: list[dict], college_words: frozenset = frozenset()) -> None:
+    """Rio Hondo prints every program "BUSINESS/MANAGEMENT AND SUPERVISION - Associate of Science Degree": the
+    department, a slash and the program, while the state's file names the program alone ("Management and
+    Supervision"). Where most of a college's headings take that form (NCL_DEPT_SHARE), each page also reads as the
+    part after the slash, added beside its whole heading, never in place of it, so two pages that print the same
+    program under two departments are still a tie (S753). A college where few headings take the form (a "Hospitality/
+    Management" here and there) reads as before."""
+    forms = []
+    for f in feats:
+        head = (f["pg"].get("h1") or "").strip() or TITLE_SPLIT.split(f["pg"].get("title") or "")[0]
+        m = NCL_DEPT_HEAD.match(strip_tail(strip_college(head, college_words), college_words)) if head else None
+        forms.append(m)
+    sized = [m for f, m in zip(feats, forms) if (f["pg"].get("h1") or f["pg"].get("title"))]
+    if len(sized) < NCL_MIN_TESTED or sum(1 for m in sized if m) < NCL_DEPT_SHARE * len(sized):
+        return
+    for f, m in zip(feats, forms):
+        if m:
+            w = ncl_words(m.group(2))
+            if w[0] and w not in f["readings"]:
+                f["readings"].append(w)
+
+
 def ncl_pages(pages: list[dict], college: str | None = None, catalog_year: str | None = None) -> list[dict]:
     """Each distinct page once (ncl_page), by its key; of one page's two addresses, the one that prints a
     heading. The college's full name is what strip_college() sets aside. A landing page and an archived or
@@ -1615,6 +1735,7 @@ def ncl_pages(pages: list[dict], college: str | None = None, catalog_year: str |
         if prev is None or (not (prev["pg"].get("h1") or prev["pg"].get("title")) and (pg.get("h1") or pg.get("title"))):
             feats[f["key"]] = f
     out = list(feats.values())
+    ncl_dept_readings(out, college_words)
     paths = {_path_stem(f["pg"].get("url")) for f in out}
     stems = {k for f in out for k in f["keys"]}
     for f in out:
@@ -1708,13 +1829,27 @@ def ncl_shared_by_awards(page: dict, a: dict, b: dict) -> bool:
     return ka != kb and {ka, kb} <= page["kinds"]
 
 
+def ncl_hits(prog: dict, pages: list[dict]) -> list[tuple[dict, dict]]:
+    """The pages that name a program by title and award (ncl_match), with (S753) one preference: where exactly one
+    page prints the program's own award and every other page prints none, the one that prints it is the program's
+    ("Welding Technology, CA" beside the bare "Welding Technology" for a certificate; Foothill's welding-aat beside
+    welding for an A.A.-T; Imperial Valley's "(MAJOR - A.S.)" beside the "(CERTIFICATE)" it printed no class for). A
+    page that prints no award is the weaker claim; two that print it, or a printed award beside a page of another
+    class, stay a tie."""
+    hits = [(pg, m) for pg in pages for m in [ncl_match(pg, prog)] if m]
+    named = [h for h in hits if h[1]["award"] == "named"]
+    if len(hits) > 1 and len(named) == 1:
+        return named
+    return hits
+
+
 def ncl_answer(prog: dict, pages: list[dict], claimed: dict[str, list[str]], everyone: list[dict]) -> dict:
     """One program's answer from the pages (ncl_page): found, or not_matched with the reason. One page gives
     found to one program at most: a page a closed-list program took is never given to a program without a
     list, and a page another program matches too goes to neither."""
     if not ncl_title_forms(prog.get("title")):
         return {"result": "not_matched", "why": "title_has_no_words"}
-    hits = [(pg, m) for pg in pages for m in [ncl_match(pg, prog)] if m]
+    hits = ncl_hits(prog, pages)
     if not hits:
         return {"result": "not_matched", "why": NCL_NO_PAGE}
     if len(hits) > 1:
@@ -1727,7 +1862,8 @@ def ncl_answer(prog: dict, pages: list[dict], claimed: dict[str, list[str]], eve
         why = "page_shared_by_awards" if ncl_shared_by_awards(pg, prog, other) else NCL_WENT_TO
         return {"result": "not_matched", "why": "%s %s (%s)" % (why, cn, other.get("title")), "page": ncl_page_ref(pg, m)}
     for other in everyone:
-        if other["control_number"] != prog["control_number"] and ncl_match(pg, other):
+        if other["control_number"] != prog["control_number"] and ncl_match(pg, other) and any(
+                h[0] is pg for h in ncl_hits(other, pages)):
             why = "page_shared_by_awards" if ncl_shared_by_awards(pg, prog, other) else "the page names"
             return {"result": "not_matched", "why": "%s %s (%s)" % (why, other["control_number"], other.get("title")),
                     "page": ncl_page_ref(pg, m)}
