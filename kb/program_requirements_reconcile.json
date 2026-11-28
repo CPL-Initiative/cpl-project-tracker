@@ -2596,7 +2596,6 @@
     }
    ],
    "why": "S644, the harvest's NEXT 5 (a noncredit total printed 'Total Hours N-M' with no colon). San Bernardino Valley's noncredit certificates print the course list with a UNITS column of 0 and the line 'Total Hours 48-54' (each reading's notes: Job Readiness Skills 35699 'Total Hours 48-54', Workforce Literacy Skills 35700 'Total Hours 194-297', Office Technology Fundamentals 36070 'Total Hours 108'; 'The course list prints 0 in a UNITS column beside each course ... The page prints no per-course hours'). The step names the scorer's no-colon reading for this catalog alone (program.hours_total_printed), which then asks the page for positive evidence in the record's own section (total_hours_printed, kb/_program_requirements_score.py): one total after the last listed course, both ends the record's, each course's row an explicit 0 or N/A and no other number, no other hours figure. Measured on the filed records by kb/_program_requirements_readings_measure.py: 19 noncredit records fail as incomplete with a total and no course figure, and each reading quotes the no-colon total and a UNITS column of 0; none passes today, so none can fail. Free page read to confirm the table before the reconcile run: the diagnosis's plan san_bernardino_valley_noncredit_hours (docs/harvest_wave3_diagnoses_s639.md). Session decision for Sam to revise (d-hours-total-no-colon-s644), beside the S422 total-only reading; reversible by deleting this entry.",
-   "awards": "noncredit",
    "steps": [
     {
      "kind": "set",
@@ -2605,6 +2604,21 @@
      "awards": "noncredit",
      "pattern": "\\bTotal\\s+Hours\\b[ \\t]*(?:\\n[ \\t]*)?\\d",
      "source_words": "San Bernardino Valley noncredit certificates: 'Total Hours 48-54' over a UNITS column of 0 (the readings of 35699, 35700 and 36070, notes)"
+    },
+    {
+     "kind": "and_units",
+     "awards": "local_aa",
+     "read": "college-page-read runs 46117225783 (the page as the capture reads it, kb/college_reads/s748_keys_san_bernardino_valley_04894.json) and 46117535772 (its course-list rows, kb/college_reads/s748_keys_san_bernardino_valley_04894_rows.json)",
+     "source_words": "Music A.A. 04894: 'Applied Courses: · Complete 4 semesters totaling 2 units · MUS 141X2 · & MUS 241X2 Applied Music I · and Applied Music II 1' ... 'Total Units 27-37' (college-page-read run 46117535772)",
+     "why": "S748 (lane 1, keys; the hold S740 to S742 left by key): Music A.A. 04894's page prints its applied pair as one row, 'MUS 141X2 · & MUS 241X2', with one figure, 1, beside the pair. The reading put the 1 on MUS 141X2 and left MUS 241X2 without units (its own note), and the scorer priced MUS 241X2 from the state's list at 0.5 a second time, so the record added to 26.5-36.5 against the printed 27-37. The joined course takes 0: the row's figure is the pair's. The entry's own award gate is lifted for this (it read noncredit programs alone, and its one earlier step keeps its own noncredit gate); this step and the next read local A.A. degrees alone. Over the college's 221 committed records, each offered a page printing every such pair joined, the two steps reach 04894 alone (tests/program_reconcile_s748_sbvc_test.py)."
+    },
+    {
+     "kind": "repeat",
+     "field": "blocks",
+     "awards": "local_aa",
+     "pattern": "Complete\\s+4\\s+semesters\\s+totaling\\s+2\\s+units\\s+(?P<code>MUS\\s*141X(?P<n>2))\\s*·?\\s*&\\s*MUS\\s*241X2(?![0-9A-Za-z])",
+     "block_sum": true,
+     "why": "S748: the page prints 'Complete 4 semesters totaling 2 units' over the pair's row, and each of the pair's codes prints its own count, X2 (the ensemble list under it prints 'Complete 4 semesters totaling 4 units' over courses coded X4 at 1 unit). Four semesters over the two courses is the row taken twice, so the row's 1 counts twice and the list adds to the 2 units its heading prints: 16 of theory, 3 of history, 2 applied, 4 of ensemble and a pathway of 2 to 12 add to the printed 27-37. The count is read from the code the page prints, only under those heading words, and block_sum holds it to the heading's figure: the row counts twice only where the list then adds exactly to the 2 its heading states."
     }
    ],
    "course_renumbers": {
