@@ -51,6 +51,10 @@ for name, raw, want in CASES:
     got = B.clean_desc(raw)
     check("(1) " + name, got == want, (raw, got, want))
 
+SRC = open(os.path.join(ROOT, "kb", "_build_coci_lookup.py"), encoding="utf-8").read()
+check("(1) the builder uses the one repair module (kb/_text_repair.py), not a copy",
+      "from _text_repair import fix_moji, fix_moji_runs" in SRC and "def _unmoji" not in SRC and "def fix_moji" not in SRC)
+
 ARTIFACT = re.compile(r"_x[0-9A-Fa-f]{4}_|â€|Ã[\x80-\xbf‚ƒ„…†‡ˆ‰Š‹ŒŽ‘’“”•–—˜™š›œžŸ]|Â(?![^\W\d_])")
 shards = sorted(glob.glob(os.path.join(ROOT, "coci_lookup_desc_*.js")))
 check("(2) the description shards are committed", len(shards) >= 20, len(shards))
