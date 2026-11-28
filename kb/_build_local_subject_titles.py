@@ -60,7 +60,7 @@ DEPARTMENT_TITLE = "the college's department list"
 COLUMNS = ["code", "printed_name", "catalog_courses", "state_courses", "side", "common", "discipline",
            "title_state", "title_source", "candidate", "address", "credit_courses", "noncredit_courses", "page_codes",
            "noncredit_plain", "noncredit_enhanced", "categories", "common_source", "decision", "noncredit_decisions",
-           "renamed_to", "history"]
+           "renamed_to", "history", "common_confidence"]
 CODE_HISTORY = "the college's code history"
 # A state-list subject written as its title and code, "ADAPTED PHYSICAL EDUCATION (APE)" (San Jose City College, S737):
 # the label carries the title, so a code the catalog gives none takes it from the label.
@@ -219,7 +219,7 @@ def build(root=ROOT):
          "state_only": 0, "with_common": 0, "not_read": 0, "blocked": 0, "not_in_catalog": 0,
          "noncredit_only": 0, "credit_and_noncredit": 0, "pages_not_read": 0,
          "colleges_named": 0, "colleges_not_in_state_list": 0, "named_by_person": 0, "common_by_person": 0,
-         "common_by_statewide_filing": 0}
+         "common_by_statewide_filing": 0, "common_by_cobi": 0}
     for c in sorted(index.get("colleges") or [], key=lambda x: x["slug"]) + headings_only(root, index):
         if c.get("file"):
             with gzip.open(os.path.join(root, CATALOGS, c["file"]), "rt", encoding="utf-8") as f:
@@ -360,6 +360,12 @@ def build(root=ROOT):
                         nc_why[r["key"]] = ("saved; waiting on the per-course reader (kb/subject_decisions.py "
                                             "for_noncredit_course has no caller yet), so no built column takes it")
             decision = None
+            common_conf = None
+            # COBI's common-subject pick (kb/subject_decisions.py, S749): the common code, its source and confidence;
+            # no title and no person's decision, so the page never reads it as a save.
+            if rec and by == "cobi_pick":
+                common, disc, common_src, common_conf = rec["common_code"], rec["discipline"], "cobi", rec["confidence"]
+                rec = None
             if rec:
                 was = {"printed_name": name, "title_state": state_, "title_source": source, "common": common,
                        "discipline": disc, "common_source": common_src}
@@ -385,7 +391,8 @@ def build(root=ROOT):
             page_codes = sorted(codes_at.get(addr) or ()) if addr and not e and addr in read_urls else None
             out.append([k, name, e["n"] if e else 0, st.get(k, 0), side, common, disc, state_, source,
                         (h or {}).get("candidate") if not name else None, addr, cr_n, nc_n, page_codes or None,
-                        nc_n - ens.get(k, 0), ens.get(k, 0), parts or None, common_src, decision, nc_list, renamed_to, history])
+                        nc_n - ens.get(k, 0), ens.get(k, 0), parts or None, common_src, decision, nc_list, renamed_to, history,
+                        common_conf])
         n = {"codes": len(out), "catalog_codes": len(set(cat) | listed), "named": sum(1 for r in out if r[1]),
              "both": sum(1 for r in out if r[4] == "both"), "catalog_only": sum(1 for r in out if r[4] == "catalog"),
              "state_only": sum(1 for r in out if r[4] == "state"), "with_common": sum(1 for r in out if r[5]),
@@ -395,7 +402,8 @@ def build(root=ROOT):
              "pages_not_read": 0 if c.get("headings_only") else sum(1 for r in out if r[10] and not r[2] and r[10] not in read_urls),
              "named_by_person": sum(1 for r in out if r[7] == "person"),
              "common_by_person": sum(1 for r in out if r[17] == "person"),
-             "common_by_statewide_filing": sum(1 for r in out if r[17] == "statewide_filing")}
+             "common_by_statewide_filing": sum(1 for r in out if r[17] == "statewide_filing"),
+             "common_by_cobi": sum(1 for r in out if r[17] == "cobi")}
         out_colleges.append({"slug": c["slug"], "college": c["college"], "catalog_year": c.get("catalog_year"),
                              "read_at": c.get("read_at"), "in_state_list": si is not None,
                              "courses": len(rows), **n, "rows": out})
@@ -429,7 +437,9 @@ def build(root=ROOT):
                   "prints its courses under, where that is not this code). A person's saved decision "
                   "(kb/status/subject_decisions.json) replaces the title and the common code it names: title_state "
                   "person, common_source person or statewide_filing (else subject_map), and decision names the save "
-                  "with what the files gave in was. renamed_to names the code a college renamed this one to, from "
+                  "with what the files gave in was. COBI's common-subject pick (kb/subject_title_hunt/*common_picks*.csv) "
+                  "sets the common code ahead of a statewide filing and behind a person's save: common_source cobi, "
+                  "common_confidence its 0-100 confidence, and no decision. renamed_to names the code a college renamed this one to, from "
                   "its code history (kb/reference/subject_code_history/), which also titles it; history lists each "
                   "change of code or title that names this code, with its source and who recorded it. "
                   "Built by kb/_build_local_subject_titles.py; "
