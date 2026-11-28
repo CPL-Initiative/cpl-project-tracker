@@ -2834,6 +2834,7 @@ jobs:
           python3 tests/zband_retire_dryrun_test.py
           python3 tests/uc_cur_zscheme_dryrun_test.py
           python3 tests/subjects_list_recode_test.py
+          python3 tests/alignment_remint_dryrun_test.py
           python3 tests/acct_repoint_dryrun_test.py
           python3 tests/top_gate_test.py
           python3 tests/row_audit_subject_outlier_test.py
