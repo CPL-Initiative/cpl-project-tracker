@@ -185,7 +185,7 @@ window.CPL_PATHWAYS = {
         {
           id: "as-major",
           title: "Ironworker apprenticeship major — articulated in MAP today",
-          note: "The Apprenticeship: Field Ironworkers A.S. requires 34–38 major units in the 2026–27 catalog: the core plus the Reinforcing or Structural option. Cerritos has articulated up to 31.5 of the 34 Reinforcing units as Credit by Exam; Welding I (IWAP 40.10) and the Structural option carry none yet.",
+          note: "The Apprenticeship: Field Ironworkers A.S. requires 34–38 major units in the 2026–27 catalog: the core plus the Reinforcing or Structural option. Cerritos articulates every course of the major in MAP: 15 as Credit by Exam, and all 24, Welding I (IWAP 40.10) and the Structural option included, through the apprenticeship's period credentials (Reinforcing and Structural, Periods 1 to 8).",
           wide: true,
           courses: [
             { code: "IWAP 40.07", title: "FIW — Orientation", units: 4.0,
