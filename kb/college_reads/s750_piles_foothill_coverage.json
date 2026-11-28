@@ -28,5 +28,44 @@
    "why": "43194",
    "capture_view": true
   }
- ]
+ ],
+ "_quoted": {
+  "46149637666": {
+   "appt_190": "no line of the Plumbing and Pipefitting Apprenticeship page prints 190; its one course list, 'Core and Support Courses', prints 24 rows: APPT 161, APPT 162, APPT 163, APPT 164, APPT 165, APPT 166, APPT 167, APPT 168, APPT 169, APPT 170, APPT 147B, APPT 171, APPR 160A, APPT 185, APPT 186, APPT 187, APPT 189, APPT 196, APPT 198, APPT 191, APPT 192, APPT 193, APPT 194, APPT 195; and Total Units 48-50. The page names both awards over that list: 'Associate Degree Requirements' and 'Certificate of Achievement in Plumbing and Pipefitting Apprenticeship', the certificate 'awarded upon completion of the core courses'",
+   "phil_7": "no line of the Communication Studies 2.0 A.A.-T page prints PHIL 7; its one PHIL row is PHIL 1, and its rows numbered 7 are PSYC 7 and SOC 7; Total Units 29-30",
+   "_what": "A session's findings over the run's log (not quoted lines): the rows the page prints, counted by a scratch script from the downloaded log and read by eye. kb/_program_piles_s750a.py cites them beside the capture's own finding.",
+   "_rows": {
+    "appt_190": [
+     "APPT 161",
+     "APPT 162",
+     "APPT 163",
+     "APPT 164",
+     "APPT 165",
+     "APPT 166",
+     "APPT 167",
+     "APPT 168",
+     "APPT 169",
+     "APPT 170",
+     "APPT 147B",
+     "APPT 171",
+     "APPR 160A",
+     "APPT 185",
+     "APPT 186",
+     "APPT 187",
+     "APPT 189",
+     "APPT 196",
+     "APPT 198",
+     "APPT 191",
+     "APPT 192",
+     "APPT 193",
+     "APPT 194",
+     "APPT 195"
+    ],
+    "phil_7": [
+     "PHIL 1"
+    ]
+   },
+   "_rows_what": "For each question, the course codes of the missing course's subject that the page prints, as printed (Palomar: every course code the page prints), in page order, each once: tests/program_piles_s750a_test.py reads them against the capture's codes_found."
+  }
+ }
 }

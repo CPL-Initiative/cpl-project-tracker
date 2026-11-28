@@ -39,5 +39,11 @@
    "cq_view": true,
    "cq_catalog": 6
   }
- ]
+ ],
+ "_quoted": {
+  "46149637666": {
+   "polsc": "no line of the entry 'Elementary Teacher Education for Transfer, Associate in Arts - Major #M.5891.AA-T' (node 1074) prints POLSC C1000, POLSC C1000H or any political science course. It prints 'Required Core Courses (41-47 units)' and beneath it 39.5, the sum of the core's printed units (BIOL C1001 3.0 and BIOL C1001L 1.0, CDEV C1000 3.0, COMM C1000 3.0, EDUC 10 3.0, ENGL C1002 3.0, ENGL C1000 4.0, GEOG 6 3.0, GEOL 9 3.5, HIST C1001 3.0, HIST 20 3.0, MATH 10A 3.0, SCI 1A 4.0), and 'Total : 48.5'. So the heading counts 1.5 to 7.5 units more than the list holds; the state's POLSC C1000 is 3 units",
+   "_what": "A session's findings over the run's log (not quoted lines): the rows the page prints, counted by a scratch script from the downloaded log and read by eye. kb/_program_piles_s750a.py cites them beside the capture's own finding."
+  }
+ }
 }

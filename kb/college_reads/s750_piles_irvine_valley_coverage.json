@@ -18,5 +18,28 @@
    "cq_view": true,
    "cq_catalog": 4690
   }
- ]
+ ],
+ "_quoted": {
+  "46149637666": {
+   "dma_75": "no line of the Digital Media Art certificate's entry (node 51441, its Requirements and Summary pages) prints DMA 75 or any 75; it prints 12 DMA codes: DMA 10, DMA 12, DMA 51, DMA 55, DMA 65, DMA 70, DMA 192, DMA 52, DMA 56, DMA 62, DMA 175, DMA 195; and Total : 24.0",
+   "_what": "A session's findings over the run's log (not quoted lines): the rows the page prints, counted by a scratch script from the downloaded log and read by eye. kb/_program_piles_s750a.py cites them beside the capture's own finding.",
+   "_rows": {
+    "dma_75": [
+     "DMA 10",
+     "DMA 12",
+     "DMA 51",
+     "DMA 55",
+     "DMA 65",
+     "DMA 70",
+     "DMA 192",
+     "DMA 52",
+     "DMA 56",
+     "DMA 62",
+     "DMA 175",
+     "DMA 195"
+    ]
+   },
+   "_rows_what": "For each question, the course codes of the missing course's subject that the page prints, as printed (Palomar: every course code the page prints), in page order, each once: tests/program_piles_s750a_test.py reads them against the capture's codes_found."
+  }
+ }
 }

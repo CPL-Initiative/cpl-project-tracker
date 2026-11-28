@@ -26,5 +26,47 @@
    ],
    "why": "46242: the page's own content call, as the capture reads it"
   }
- ]
+ ],
+ "_quoted": {
+  "46149637666": {
+   "art_135": "the rendered page prints PROGRAM REQUIREMENTS as a collapsed section and no course row, so it answers nothing",
+   "_what": "A session's findings over the run's log (not quoted lines): the rows the page prints, counted by a scratch script from the downloaded log and read by eye. kb/_program_piles_s750a.py cites them beside the capture's own finding."
+  },
+  "46150287204": {
+   "art_135": "no line of the page's own content call (the call the capture reads) prints 135; under 'Major Requirements (Total 27 - 29 Units)' it prints 27 ART codes, ART134 then ART140 among them: ART112, ART113, ART130, ART103, ART111, ART116, ART131, ART134, ART140, ART141, ART144, ART145, ART146, ART147, ART148, ART152, ART153, ART165, ART170, ART171, ART175A, ART176A, ART180, ART181, ART185, ART186, ART193; with ARTHC1100, ARTHC1200 and GDES 112, and Total Degree Units 60. The rendered page still prints the section collapsed",
+   "_what": "A session's findings over the run's log (not quoted lines): the rows the page prints, counted by a scratch script from the downloaded log and read by eye. kb/_program_piles_s750a.py cites them beside the capture's own finding.",
+   "_rows": {
+    "art_135": [
+     "ART112",
+     "ART113",
+     "ART130",
+     "ART103",
+     "ART111",
+     "ART116",
+     "ART131",
+     "ART134",
+     "ART140",
+     "ART141",
+     "ART144",
+     "ART145",
+     "ART146",
+     "ART147",
+     "ART148",
+     "ART152",
+     "ART153",
+     "ART165",
+     "ART170",
+     "ART171",
+     "ART175A",
+     "ART176A",
+     "ART180",
+     "ART181",
+     "ART185",
+     "ART186",
+     "ART193"
+    ]
+   },
+   "_rows_what": "For each question, the course codes of the missing course's subject that the page prints, as printed (Palomar: every course code the page prints), in page order, each once: tests/program_piles_s750a_test.py reads them against the capture's codes_found."
+  }
+ }
 }

@@ -17,5 +17,33 @@
    "why": "02235",
    "capture_view": true
   }
- ]
+ ],
+ "_quoted": {
+  "46149637666": {
+   "phot_242": "no line of the Photography A.A. page's requirements prints 242; it prints 17 PHOT rows: PHOT 100, PHOT 102, PHOT 110, PHOT 160, PHOT 234, PHOT 112, PHOT 122, PHOT 150, PHOT 200, PHOT 230, PHOT 232, PHOT 235, PHOT 240, PHOT 250, PHOT 252, PHOT 298, PHOT 299; and Total Units 26",
+   "_what": "A session's findings over the run's log (not quoted lines): the rows the page prints, counted by a scratch script from the downloaded log and read by eye. kb/_program_piles_s750a.py cites them beside the capture's own finding.",
+   "_rows": {
+    "phot_242": [
+     "PHOT 100",
+     "PHOT 102",
+     "PHOT 110",
+     "PHOT 160",
+     "PHOT 234",
+     "PHOT 112",
+     "PHOT 122",
+     "PHOT 150",
+     "PHOT 200",
+     "PHOT 230",
+     "PHOT 232",
+     "PHOT 235",
+     "PHOT 240",
+     "PHOT 250",
+     "PHOT 252",
+     "PHOT 298",
+     "PHOT 299"
+    ]
+   },
+   "_rows_what": "For each question, the course codes of the missing course's subject that the page prints, as printed (Palomar: every course code the page prints), in page order, each once: tests/program_piles_s750a_test.py reads them against the capture's codes_found."
+  }
+ }
 }
