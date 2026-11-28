@@ -1,0 +1,412 @@
+{
+ "_what": "kb/_apply_minted_codes_s749.py: each change with its before-value; git revert undoes it.",
+ "applied_at": "2026-11-28T15:03:14+00:00",
+ "changed": [
+  {
+   "discipline": "Adapted Computer Technology: Disabled Students Programs and Services",
+   "from": "DSAC",
+   "to": "ADCT",
+   "basis": "DSPS specialist MQ: adapted computer technology. Avoided ACCT (Accounting)."
+  },
+  {
+   "discipline": "Addiction Paraprofessional Training",
+   "from": "ADST",
+   "to": "ADDS",
+   "basis": "Addiction Paraprofessional Training MQ (C-ID ADS family). ADDS is unused as a canonical."
+  },
+  {
+   "discipline": "Appliance Repair",
+   "from": "APLR",
+   "to": "APPL",
+   "basis": "Appliance Repair MQ. APPL is unused as a canonical."
+  },
+  {
+   "discipline": "Banking and Finance",
+   "from": "FINA",
+   "to": "BFIN",
+   "basis": "Banking and Finance MQ (TOP 0504). BFIN is unused as a canonical; BANK is a local code at some colleges for this same field."
+  },
+  {
+   "discipline": "Bicycle Repair",
+   "from": "BICY",
+   "to": "BCYC",
+   "basis": "Bicycle Repair MQ. BCYC is unused as a canonical."
+  },
+  {
+   "discipline": "Bookbinding",
+   "from": "BOOK",
+   "to": "BKBD",
+   "basis": "Bookbinding MQ. BKBD is unused as a canonical."
+  },
+  {
+   "discipline": "Business Education",
+   "from": "BUSE",
+   "to": "BUED",
+   "basis": "Business Education MQ. BUED is unused as a canonical."
+  },
+  {
+   "discipline": "Business Machine Technology",
+   "from": "BMTC",
+   "to": "BMAC",
+   "basis": "Business Machine Technology MQ. BMAC is unused as a canonical."
+  },
+  {
+   "discipline": "Cardiovascular Technology",
+   "from": "CVTC",
+   "to": "CVTE",
+   "basis": "Cardiovascular Technology MQ (TOP 1213). CVTE is unused as a canonical. Distinct from SONO and EMST."
+  },
+  {
+   "discipline": "Ceramic Technology",
+   "from": "CRMT",
+   "to": "CERM",
+   "basis": "Ceramic Technology MQ (industrial ceramics, not studio art). CERM is unused as a canonical."
+  },
+  {
+   "discipline": "Community College Counselor of Students with Disabilities",
+   "from": "DSCS",
+   "to": "CDSC",
+   "basis": "Counselor of Disabled Students MQ (distinct from DSPS instructional specialist MQs). CDSC is unused as a canonical."
+  },
+  {
+   "discipline": "Deaf and Hearing Impaired: Disabled Students Programs and Services",
+   "from": "DSDH",
+   "to": "DHSP",
+   "basis": "DSPS specialist MQ. Avoided DEAF, a heavily used American Sign Language (SLNA) local code."
+  },
+  {
+   "discipline": "Developmental Disabilities: Disabled Students Programs and Services",
+   "from": "DSDD",
+   "to": "DDDS",
+   "basis": "DSPS specialist MQ for developmental disabilities. DDDS is unused as a canonical."
+  },
+  {
+   "discipline": "Dietetic Technician",
+   "from": "DIET",
+   "to": "DTTC",
+   "basis": "Dietetic Technician MQ, distinct from Nutritional Science/Dietetics (FDNT). DTTC is unused as a canonical."
+  },
+  {
+   "discipline": "Electromicroscopy",
+   "from": "EMIC",
+   "to": "ELMC",
+   "basis": "Electromicroscopy MQ. ELMC is unused as a canonical."
+  },
+  {
+   "discipline": "Electroplating",
+   "from": "EPLT",
+   "to": "ELPL",
+   "basis": "Electroplating MQ. ELPL is unused as a canonical."
+  },
+  {
+   "discipline": "Estimating",
+   "from": "ESTG",
+   "to": "ESTM",
+   "basis": "Estimating MQ (construction/industrial estimating). ESTM is unused as a canonical."
+  },
+  {
+   "discipline": "Fabric Care",
+   "from": "FABC",
+   "to": "FBRC",
+   "basis": "Fabric Care MQ. FBRC is unused as a canonical."
+  },
+  {
+   "discipline": "Folk Dance",
+   "from": "FDNC",
+   "to": "FLDN",
+   "basis": "Folk Dance MQ, distinct from Dance (DANC). FLDN is unused as a canonical."
+  },
+  {
+   "discipline": "Homeland Security",
+   "from": "HSEC",
+   "to": "HLMS",
+   "basis": "Homeland Security MQ. Avoided HLSN (Health and Safety noncredit). HLMS is unused as a canonical."
+  },
+  {
+   "discipline": "Hotel and Motel Services",
+   "from": "HOSP",
+   "to": "HOTL",
+   "basis": "Hotel and Motel Services MQ (lodging). Avoided HOSP, already used locally under CULN for hospitality in general."
+  },
+  {
+   "discipline": "Janitorial Services",
+   "from": "JANI",
+   "to": "JANT",
+   "basis": "Janitorial Services MQ. JANT is unused as a canonical."
+  },
+  {
+   "discipline": "Labor Relations",
+   "from": "LBRL",
+   "to": "LREL",
+   "basis": "Labor Relations MQ, distinct from Industrial Relations (LABR). LREL is unused as a canonical."
+  },
+  {
+   "discipline": "Learning Disabilities: Disabled Student Programs and Services",
+   "from": "DSLD",
+   "to": "LDDS",
+   "basis": "DSPS specialist MQ for learning disabilities instruction. LDDS is unused as a canonical."
+  },
+  {
+   "discipline": "Learning Disabilities: Specialist",
+   "from": "DSLS",
+   "to": "LDSP",
+   "basis": "Learning Disabilities Specialist MQ, distinct from the DSPS instructional MQ and from LSKL. LDSP is unused as a canonical."
+  },
+  {
+   "discipline": "Marine Diving Technology",
+   "from": "MDVT",
+   "to": "MDIV",
+   "basis": "Marine Diving Technology MQ. MDIV is unused as a canonical."
+  },
+  {
+   "discipline": "Marine Engine Technology",
+   "from": "MENG",
+   "to": "MREN",
+   "basis": "Marine Engine Technology MQ. Avoided MENG (reads as mechanical/engineering). MREN is unused as a canonical."
+  },
+  {
+   "discipline": "Martial Arts/Self-Defense",
+   "from": "MRTL",
+   "to": "MASD",
+   "basis": "Martial Arts/Self-Defense MQ. Avoided MART, which appears as a local Art/Multimedia variant. MASD is unused as a canonical."
+  },
+  {
+   "discipline": "Mathematics-Basic Skills: Noncredit",
+   "from": "MTHN",
+   "to": "MBSK",
+   "basis": "Mathematics-Basic Skills: Noncredit MQ, distinct from MATH and from BSKL. MBSK is unused as a canonical."
+  },
+  {
+   "discipline": "Medical Instrument Repair",
+   "from": "MIRP",
+   "to": "MDIR",
+   "basis": "Medical Instrument Repair MQ. MDIR is unused as a canonical."
+  },
+  {
+   "discipline": "Mining and Metallurgy",
+   "from": "MINE",
+   "to": "METL",
+   "basis": "Mining and Metallurgy MQ. METL is unused as a canonical."
+  },
+  {
+   "discipline": "Music Management",
+   "from": "MUSM",
+   "to": "MMGT",
+   "basis": "Music Management MQ, distinct from Music (MUSI) and Management (MGMT). MMGT is unused as a canonical."
+  },
+  {
+   "discipline": "Music Merchandising",
+   "from": "MUSD",
+   "to": "MMCH",
+   "basis": "Music Merchandising MQ. MMCH is unused as a canonical."
+  },
+  {
+   "discipline": "Musical Instrument Repair",
+   "from": "MUIR",
+   "to": "MIRE",
+   "basis": "Musical Instrument Repair MQ. MIRE is unused as a canonical."
+  },
+  {
+   "discipline": "Nursing Science/Clinical Practice",
+   "from": "NRSC",
+   "to": "NSCP",
+   "basis": "Nursing Science/Clinical Practice MQ, distinct from Nursing (NRSR). NSCP is unused as a canonical."
+  },
+  {
+   "discipline": "Photographic Technology/ Commercial Photography",
+   "from": "PHTC",
+   "to": "CPHT",
+   "basis": "Photographic Technology / Commercial Photography MQ, distinct from Photography (PHOT). Avoided PHTC, which appears under both PHOT and PHMT. CPHT is unused as a canonical."
+  },
+  {
+   "discipline": "Physical Disabilities: Disabled Student Programs and Services",
+   "from": "DSPD",
+   "to": "PDDS",
+   "basis": "DSPS specialist MQ for physical disabilities. PDDS is unused as a canonical."
+  },
+  {
+   "discipline": "Piano Tuning and Repair",
+   "from": "PIAN",
+   "to": "PTUN",
+   "basis": "Piano Tuning and Repair MQ. PTUN is unused as a canonical."
+  },
+  {
+   "discipline": "Plastics",
+   "from": "PLAS",
+   "to": "PLST",
+   "basis": "Plastics MQ. PLST is unused as a canonical."
+  },
+  {
+   "discipline": "Prosthetics and Orthotics",
+   "from": "PROS",
+   "to": "PRTH",
+   "basis": "Prosthetics and Orthotics MQ. PRTH is unused as a canonical."
+  },
+  {
+   "discipline": "Radiation Therapy",
+   "from": "RTHR",
+   "to": "RDTH",
+   "basis": "Radiation Therapy MQ, distinct from Radiological Technology (RADT). RDTH is unused as a canonical."
+  },
+  {
+   "discipline": "Reading-Basic Skills: Noncredit",
+   "from": "RDGN",
+   "to": "RBSK",
+   "basis": "Reading-Basic Skills: Noncredit MQ, distinct from READ and BSKL. RBSK is unused as a canonical."
+  },
+  {
+   "discipline": "Rehabilitation Technician",
+   "from": "REHB",
+   "to": "RHAB",
+   "basis": "Rehabilitation Technician MQ. RHAB is unused as a canonical."
+  },
+  {
+   "discipline": "Respiratory Technician",
+   "from": "RSPC",
+   "to": "RSTT",
+   "basis": "Respiratory Technician MQ, distinct from Respiratory Technologies (RSPT). RSTT is unused as a canonical."
+  },
+  {
+   "discipline": "Sanitation and Public Health Technology",
+   "from": "SANI",
+   "to": "SPHT",
+   "basis": "Sanitation and Public Health Technology MQ. SPHT is unused as a canonical."
+  },
+  {
+   "discipline": "Search and Rescue",
+   "from": "SRCH",
+   "to": "SARC",
+   "basis": "Search and Rescue MQ. SARC is unused as a canonical."
+  },
+  {
+   "discipline": "Ship and Boat Building and Repair",
+   "from": "SHIP",
+   "to": "SHPB",
+   "basis": "Ship and Boat Building and Repair MQ. SHPB is unused as a canonical."
+  },
+  {
+   "discipline": "Shoe Rebuilding",
+   "from": "SHOE",
+   "to": "SHRB",
+   "basis": "Shoe Rebuilding MQ. SHRB is unused as a canonical."
+  },
+  {
+   "discipline": "Small Engine Mechanics",
+   "from": "SENG",
+   "to": "SMEN",
+   "basis": "Small Engine Mechanics MQ. SMEN is unused as a canonical."
+  },
+  {
+   "discipline": "Specialized Instruction: Vocational Noncredit",
+   "from": "DSVN",
+   "to": "SPVN",
+   "basis": "Specialized Instruction: Vocational Noncredit MQ. SPVN is unused as a canonical."
+  },
+  {
+   "discipline": "Speech Language Pathology: Disabled Student Programs and Services",
+   "from": "DSSL",
+   "to": "SLPD",
+   "basis": "DSPS specialist MQ, distinct from Speech Language Pathology (SLPA). SLPD is unused as a canonical."
+  },
+  {
+   "discipline": "Supply Chain Technology",
+   "from": "SCMT",
+   "to": "SCLT",
+   "basis": "Supply Chain Technology MQ. SCLT is unused as a canonical."
+  },
+  {
+   "discipline": "Telecommunication Technology",
+   "from": "TELC",
+   "to": "TCOM",
+   "basis": "Telecommunication Technology MQ (TOP 0934.30). Avoided TELE as too generic; TCOM is unused as a canonical."
+  },
+  {
+   "discipline": "Vision Care Technology",
+   "from": "VISN",
+   "to": "VSCT",
+   "basis": "Vision Care Technology MQ. VSCT is unused as a canonical."
+  },
+  {
+   "discipline": "Watch and Clock Repair",
+   "from": "WTCH",
+   "to": "WCLK",
+   "basis": "Watch and Clock Repair MQ. WCLK is unused as a canonical."
+  },
+  {
+   "discipline": "Writing-Basic Skills: Noncredit",
+   "from": "WRTN",
+   "to": "WBSK",
+   "basis": "Writing-Basic Skills: Noncredit MQ, distinct from ENGL and BSKL. WBSK is unused as a canonical."
+  }
+ ],
+ "held": [
+  {
+   "discipline": "Aeronautics",
+   "from": "AERO",
+   "to": "AERN",
+   "basis": "Aeronautics MQ. Avoided AERO, a heavily used Aviation (AVIA) local code.",
+   "why": "AERO prefixes 1 M-ID(s): the re-mint playbook's"
+  },
+  {
+   "discipline": "Flight Attendant Training",
+   "from": "FLTR",
+   "to": "FLTA",
+   "basis": "Flight Attendant Training MQ. FLTA is unused as a canonical.",
+   "why": "FLTA already prefixes 6 M-ID(s)"
+  },
+  {
+   "discipline": "Public Relations",
+   "from": "PREL",
+   "to": "PUBR",
+   "basis": "Public Relations MQ. PUBR is unused as a canonical.",
+   "why": "PUBR already prefixes 1 M-ID(s)"
+  },
+  {
+   "discipline": "Travel Services",
+   "from": "TRVL",
+   "to": "TOUR",
+   "basis": "Travel Services MQ (TOP 3009). TOUR is unused as a canonical. Avoided HOSP, which is filed under CULN.",
+   "why": "TOUR already prefixes 4 M-ID(s)"
+  },
+  {
+   "discipline": "Home Economics: Noncredit",
+   "from": "HMEN",
+   "to": "HECN",
+   "basis": "Home Economics: Noncredit MQ, distinct from credit FCSH. HECN is unused as a canonical.",
+   "why": "HMEN is a code Sam named on 2026-11-22 (r-noncredit-four-mq-codes-sam-2026-11-22): person-settled, kept"
+  }
+ ],
+ "added": [
+  {
+   "discipline": "Asian American Studies",
+   "to": "ASAM"
+  },
+  {
+   "discipline": "African American Studies",
+   "to": "AFAM"
+  }
+ ],
+ "aliases_before": {
+  "Kinesiology": [
+   "Physical Education"
+  ],
+  "Drama/Theater Arts": [
+   "Theater Arts"
+  ],
+  "Ethnic Studies": [
+   "African American Studies",
+   "Asian American Studies"
+  ]
+ },
+ "aliases_after": {
+  "Kinesiology": [
+   "Physical Education"
+  ],
+  "Drama/Theater Arts": [
+   "Theater Arts"
+  ],
+  "Communication Studies": [
+   "Speech Communication"
+  ]
+ }
+}

@@ -55,8 +55,10 @@ spec2.loader.exec_module(pc)
 P = pc.build()
 check("(6) every assigned code has its record of how it was chosen, each four letters, proposed once, never another discipline's C-ID prefix",
       P["problems"] == [] and P["count"] == V["totals"]["assigned"], P["problems"][:5])
-check("(6) every MQ discipline carries a common subject code, the 95 assigned ones each with a confidence and a level",
-      V["totals"]["without_code"] == 0 and V["totals"]["assigned"] == 95
+# 95 assigned at S717, plus African American Studies AFAM and Asian American Studies ASAM (S749; Sam, 2026-11-28: every
+# official MQ discipline its own common code, kb/_apply_minted_codes_s749.py).
+check("(6) every MQ discipline carries a common subject code, the 97 assigned ones each with a confidence and a level",
+      V["totals"]["without_code"] == 0 and V["totals"]["assigned"] == 97
       and all(r["confidence"] is not None and r["level"] for r in V["rows"] if r["code_source"] == "assigned"))
 check("(6) ACCT is Accounting's code from C-ID, Confident, and the view flags C-ID's ACCT still attributed to Business",
       R["Accounting"]["code"] == "ACCT" and R["Accounting"]["level"] == "Confident"
