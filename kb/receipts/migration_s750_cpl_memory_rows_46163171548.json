@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-28_s750_cpl_memory_rows.sql",
+ "name": "s750_cpl_memory_rows",
+ "version": "20261128161147",
+ "sha256": "d2184ec00d22168cbfe89ca98d0469e0d30f0128251d5e4b6f8b530319c4ea15",
+ "run": "46163171548",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"slug\":\"d-canyons-37868-needs-pin-s750\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":312},{\"slug\":\"d-cerritos-02235-person-confirmed-s750\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":356},{\"slug\":\"d-found-pages-gate-held-s750\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":399},{\"slug\":\"d-madera-39810-for-a-person-s750\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":276},{\"slug\":\"f-display-no-list-holdback-s750\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":380},{\"slug\":\"f-found-pages-live-recall-counts-wrongs-s750\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":398},{\"slug\":\"m-collection-s750\",\"kind\":\"milestone\",\"status\":\"proposed\",\"summary_len\":373},{\"slug\":\"p-preread-catches-person-confirm-s750\",\"kind\":\"procedure\",\"status\":\"proposed\",\"summary_len\":347}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

@@ -1,4 +1,4 @@
-{"schema":1,"college":"East Los Angeles College","slug":"east_los_angeles","basis":"live","census_at":"2026-11-28 11:55Z","correction_rules":true,"programs":[
+{"schema":1,"college":"East Los Angeles College","slug":"east_los_angeles","basis":"live","census_at":"2026-11-28 17:12Z","correction_rules":true,"programs":[
 {"cn":"21158","title":"Accounting","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"02470","title":"Administration of Justice","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"21184","title":"Administration of Justice","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},

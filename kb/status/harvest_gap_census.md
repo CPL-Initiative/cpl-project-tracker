@@ -1,8 +1,8 @@
 # Harvest gap census
 
-Written by `kb/_harvest_gap_census.py` (2026-11-28 11:55Z, live). Every active program without a passing record, each with one cause and one lever. Counts are a snapshot; rerun `harvest-gap-census.yml` for today's.
+Written by `kb/_harvest_gap_census.py` (2026-11-28 17:12Z, live). Every active program without a passing record, each with one cause and one lever. Counts are a snapshot; rerun `harvest-gap-census.yml` for today's.
 
-Universe 20282 · passing 15698 · without a passing record 3888.
+Universe 20282 · passing 15704 · without a passing record 3882.
 
 Of the passing, 54 counts as passing on the tab; the scorer's own test fails (listed in the JSON, not counted as gaps).
 
@@ -13,6 +13,8 @@ Read by the harvest but outside the universe: Active - Teachout Only 630, Approv
 Named gap, 136 programs: "General-education pattern certificate. It has no fixed course list by design."
 
 Named gap, 4 programs: "The state lists this program twice. The other listing has the course list."
+
+Of those without a passing record, 78 are named as a gap in their college's own file, with no live row (extraction_error 2, found_not_extracted 8, places_none 68): no further read is owed.
 
 ## By cause
 
@@ -25,7 +27,7 @@ Named gap, 4 programs: "The state lists this program twice. The other listing ha
 | extracted, places none of its courses | 122 |
 | extracted, not loaded | 1 |
 | extracted, no score (an error) | 3 |
-| live, coverage fails | 107 |
+| live, coverage fails | 101 |
 | live, a course added | 2 |
 | live, units unequal | 500 |
 | live, units incomplete | 206 |
@@ -65,22 +67,22 @@ Named gap, 4 programs: "The state lists this program twice. The other listing ha
 | College | Host | Programs a read would gain | Estimate | Read before |
 |---|---|---:|---:|---|
 | College of the Desert | catalog.collegeofthedesert.edu | 23 | $1.83 | yes |
-| Saddleback College | saddleback.curriqunet.com | 7 | $0.56 | yes |
 | Golden West College | catalog.cccd.edu | 6 | $0.39 | yes |
-| Los Angeles Southwest College | lasc.edu | 4 | $0.26 | yes |
-| MiraCosta College | catalog.miracosta.edu | 4 | $0.34 | yes |
-| North Orange Continuing Education | catalog.nocccd.edu | 4 | $0.18 | yes |
-| Sacramento City College | scc.losrios.edu | 4 | $0.36 | yes |
-| Shasta College | scmainweb.s3.us-west-1.amazonaws.com | 4 | $0.38 | yes |
-| Cosumnes River College | crc.losrios.edu | 3 | $0.26 | yes |
-| Napa Valley College | catalog.napavalley.edu | 3 | $0.19 | yes |
-| Santiago Canyon College | sccollege.edu | 3 | $0.22 | yes |
-| Allan Hancock College | hancockcollege.curriqunet.com | 2 | $0.16 | yes |
-| Citrus College | catalog.citruscollege.edu | 2 | $0.13 | yes |
+| Shasta College | scmainweb.s3.us-west-1.amazonaws.com | 3 | $0.28 | yes |
 | College of the Canyons | canyons.edu | 2 | $0.15 | yes |
-| College of the Redwoods | redwoods.elumenapp.com | 2 | $0.15 | yes |
-| East Los Angeles College | elac.edu | 2 | $0.16 | yes |
+| Cypress College | catalog.nocccd.edu | 2 | $0.13 | yes |
 | Long Beach City College | lbcc-public.courseleaf.com | 2 | $0.10 | yes |
-| Los Angeles Harbor College | lahc.edu | 2 | $0.16 | yes |
-| Los Angeles Mission College | lamc.edu | 2 | $0.14 | yes |
-| Los Angeles Pierce College | lapc.edu | 2 | $0.16 | yes |
+| Southwestern College | catalog.swccd.edu | 2 | $0.13 | yes |
+| Cerritos College | cerritos-public.courseleaf.com | 1 | $0.06 | yes |
+| Clovis Community College | cloviscollege.edu | 1 | $0.08 | yes |
+| Cuyamaca College | catalog.gcccd.edu | 1 | $0.07 | yes |
+| Gavilan College | gavilan.curriqunet.com | 1 | $0.07 | yes |
+| Los Angeles Mission College | lamc.edu | 1 | $0.07 | yes |
+| Los Angeles Trade Technical College | lattc.edu | 1 | $0.08 | yes |
+| Mission College | mission.elumenapp.com | 1 | $0.07 | yes |
+| Modesto Junior College | mjc.elumenapp.com | 1 | $0.06 | yes |
+| Pasadena City College | curriculum.pasadena.edu | 1 | $0.07 | yes |
+| Reedley College | reedley.curriqunet.com | 1 | $0.06 | yes |
+| San Diego Mesa College | sdccd.curriqunet.com | 1 | $0.09 | yes |
+| San Jose City College | catalog.sjcc.edu | 1 | $0.08 | yes |
+| Santa Monica College | catalog.smc.edu | 1 | $0.09 | yes |
