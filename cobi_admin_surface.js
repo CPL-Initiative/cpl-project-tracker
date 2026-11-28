@@ -234,7 +234,6 @@ window.COBI_ADMIN_SURFACE = {
         "program_source_registry"
       ],
       "writes": [
-        "cpl_adoption_interest",
         "cpl_funding_config",
         "cpl_funding_nc_attestation",
         "cpl_funding_nc_attestation_pub",

@@ -4,9 +4,9 @@
   "supabase_tables": 119,
   "rpcs": 68,
   "edge_functions": 16,
-  "file_datasets": 1402,
+  "file_datasets": 1423,
   "external_services": 203,
-  "consumers": 744,
+  "consumers": 752,
   "workflows": 77,
   "data_js_files": 71,
   "tabs": 41
@@ -1044,6 +1044,16 @@
      ]
     },
     {
+     "id": "module:cpl_pathways.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 810,
+     "tabs": [
+      "cpl-pathways"
+     ]
+    },
+    {
      "id": "module:exhibits.js",
      "kind": "module",
      "direction": "read",
@@ -1705,7 +1715,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4196,
+     "line": 4129,
      "tabs": [
       "cpl-pathways"
      ]
@@ -2510,7 +2520,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4195,
+     "line": 4128,
      "tabs": [
       "cpl-pathways"
      ]
@@ -3707,7 +3717,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4194,
+     "line": 4127,
      "tabs": [
       "cpl-pathways"
      ]
@@ -4724,7 +4734,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2595,
+     "line": 2482,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6318,14 +6328,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 230
+     "line": 251
     },
     {
      "id": "script:kb/_build_coci_lookup.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 182
+     "line": 203
     },
     {
      "id": "script:kb/_build_local_subject_recommendations.py",
@@ -6510,7 +6520,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2309,
+     "line": 2196,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6790,7 +6800,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4984,
+     "line": 4917,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6831,7 +6841,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4300,
+     "line": 4233,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7181,7 +7191,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5265,
+     "line": 5198,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7465,7 +7475,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5252,
+     "line": 5185,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7542,7 +7552,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5246,
+     "line": 5179,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7552,14 +7562,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 232
+     "line": 253
     },
     {
      "id": "script:kb/_build_coci_lookup.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 224
+     "line": 245
     }
    ],
    "producers": [
@@ -7888,7 +7898,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 3585,
+     "line": 3537,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7938,7 +7948,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 5212,
+     "line": 5145,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7961,7 +7971,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 3757,
+     "line": 3709,
      "tabs": [
       "cpl-pathways"
      ]
@@ -8024,7 +8034,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5260,
+     "line": 5193,
      "tabs": [
       "cpl-pathways"
      ]
@@ -8238,7 +8248,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5233,
+     "line": 5166,
      "tabs": [
       "cpl-pathways"
      ]
@@ -8292,7 +8302,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 89,
+     "line": 92,
      "pages": [
       "CPL_Dashboard.html",
       "fact-sheet/index.html",
@@ -9316,7 +9326,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7624
+     "line": 7639
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -9336,7 +9346,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7700
+     "line": 7715
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -14387,7 +14397,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 47
+     "line": 48
     },
     {
      "id": "script:kb/_build_cpl_pathway_ccr.py",
@@ -14819,7 +14829,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 48
+     "line": 49
     },
     {
      "id": "script:kb/_build_discipline_local_courses.py",
@@ -15515,6 +15525,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/college_reads/s740_piles_sbcc_figures.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_piles_s748_sbcc.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 45
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/college_reads/s740_piles_shasta_sections.json": {
    "consumers": [
     {
@@ -15536,6 +15559,13 @@
      "direction": "read",
      "how": "literal",
      "line": 86
+    },
+    {
+     "id": "script:kb/_program_piles_s748_orangecoast.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 51
     }
    ],
    "served": true,
@@ -15549,6 +15579,19 @@
      "direction": "read",
      "how": "literal",
      "line": 45
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/college_reads/s748_piles_east_los_angeles_environmental.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_piles_s748_ela.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 48
     }
    ],
    "served": true,
@@ -19726,7 +19769,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8581
+     "line": 8596
     }
    ],
    "served": false,
@@ -20525,6 +20568,32 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/receipts/program_requirement_records_piles_ccsf_<date>_s720c.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_piles_s748c.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 242
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/receipts/program_requirement_records_piles_fullerton_<date>_s720f.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_piles_s748c.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 229
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/receipts/program_requirement_records_piles_s720_cabrillo_<date>_s720b.json": {
    "consumers": [
     {
@@ -20876,6 +20945,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/receipts/program_requirement_records_piles_s739_santa_barbara_city_<date>_s739d.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_piles_s748_sbcc.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 42
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/receipts/program_requirement_records_piles_s739_shasta_<date>_s739b.json": {
    "consumers": [
     {
@@ -21039,6 +21121,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/receipts/program_requirement_records_piles_s741_el_camino_<date>_s742r2.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_piles_s748_elcamino.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 43
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/receipts/program_requirement_records_piles_s741_orange_coast_<date>_s741b.json": {
    "consumers": [
     {
@@ -21047,6 +21142,52 @@
      "direction": "read",
      "how": "literal",
      "line": 35
+    },
+    {
+     "id": "script:kb/_program_piles_s748_orangecoast.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 48
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/receipts/program_requirement_records_piles_s742_butte_<date>_s742a.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_piles_s748_butte.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 38
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/receipts/program_requirement_records_piles_s742_east_los_angeles_<date>_s742b.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_piles_s748_ela.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 45
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/receipts/program_requirement_records_piles_s748_orange_coast_<date>_s748b.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_piles_s748c.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 224
     }
    ],
    "served": false,
@@ -21704,7 +21845,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 46
+     "line": 47
     },
     {
      "id": "script:kb/_build_college_courses.py",
@@ -25309,7 +25450,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8194
+     "line": 8209
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -25329,7 +25470,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7036
+     "line": 7051
     }
    ],
    "served": false,
@@ -25496,7 +25637,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4657,
+     "line": 4590,
      "tabs": [
       "cpl-pathways"
      ]
@@ -26006,7 +26147,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8449
+     "line": 8464
     }
    ],
    "served": false,
@@ -26019,7 +26160,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7662
+     "line": 7677
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -26383,6 +26524,26 @@
      "direction": "read",
      "how": "literal",
      "line": 54
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:program_requirements_reread_s748_*_checked.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_piles_s748.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 35
+    },
+    {
+     "id": "script:kb/_program_piles_s748_sierra.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 53
     }
    ],
    "served": false,
@@ -28109,7 +28270,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2928,
+     "line": 2815,
      "tabs": [
       "cpl-pathways"
      ]
@@ -29439,6 +29600,19 @@
    "main_committers": []
   },
   "file:tests/coci_campus_letter_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/coci_desc_clean_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -31814,6 +31988,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/program_named_gaps_s748k1_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/program_named_gaps_test.py": {
    "consumers": [
     {
@@ -32945,6 +33132,84 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/program_piles_s748_elcamino_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_piles_s748_sierra_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_piles_s748a_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_piles_s748b_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_piles_s748c_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_piles_s748g1_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/program_pooled_figure_s721_test.py": {
    "consumers": [
     {
@@ -33063,6 +33328,45 @@
    "main_committers": []
   },
   "file:tests/program_reconcile_s742_cabrillo_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_reconcile_s748_alameda_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_reconcile_s748_lassen_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_reconcile_s748_sbvc_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -37057,7 +37361,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 8555
+     "line": 8570
     }
    ],
    "main_committers": []
@@ -37069,7 +37373,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 8672
+     "line": 8687
     }
    ],
    "main_committers": []
@@ -37755,7 +38059,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 4500,
+     "line": 4433,
      "tabs": [
       "cpl-pathways"
      ]
@@ -37794,7 +38098,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 2294,
+     "line": 2181,
      "tabs": [
       "cpl-pathways"
      ]
@@ -37930,7 +38234,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 2762,
+     "line": 2649,
      "tabs": [
       "cpl-pathways"
      ]
@@ -37994,30 +38298,10 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 356,
+     "line": 360,
      "pages": [
       "CPL_Dashboard.html",
       "library/cpl-opportunity/index.html"
-     ]
-    },
-    {
-     "id": "module:cpl_pathways.js",
-     "kind": "module",
-     "direction": "read",
-     "how": "literal",
-     "line": 37,
-     "tabs": [
-      "cpl-pathways"
-     ]
-    },
-    {
-     "id": "module:cpl_pathways.js",
-     "kind": "module",
-     "direction": "write",
-     "how": "literal",
-     "line": 101,
-     "tabs": [
-      "cpl-pathways"
      ]
     }
    ],
@@ -39800,7 +40084,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 2098,
+     "line": 1985,
      "tabs": [
       "cpl-pathways"
      ]
@@ -40580,7 +40864,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 1759,
+     "line": 1646,
      "tabs": [
       "cpl-pathways"
      ]
@@ -40670,7 +40954,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 1782,
+     "line": 1669,
      "tabs": [
       "cpl-pathways"
      ]
@@ -42437,6 +42721,7 @@
     "tests/governance_docs_panel.test.js",
     "tests/subject_state_label_title_test.py",
     "tests/coci_campus_letter_test.py",
+    "tests/coci_desc_clean_test.py",
     "tests/lints_docs_only_skip_test.py",
     "tests/pages_allowlist.test.js",
     "scripts/repo_size_guard.py",
@@ -42630,6 +42915,7 @@
     "tests/program_named_gaps_s742_sdcity_test.py",
     "tests/program_piles_s742_sbvc_test.py",
     "tests/program_named_gaps_s742k3_test.py",
+    "tests/program_named_gaps_s748k1_test.py",
     "tests/program_renumbers_s742_sjcc_test.py",
     "tests/program_reconcile_s741_cuyamaca_test.py",
     "tests/program_keep_better_plural_s741_test.py",
@@ -42638,6 +42924,8 @@
     "tests/live_read_expand_test.py",
     "tests/program_piles_s742_modesto_test.py",
     "tests/program_piles_s742_elcamino_test.py",
+    "tests/program_piles_s748_elcamino_test.py",
+    "tests/program_piles_s748_sierra_test.py",
     "tests/program_option_roman_s741_test.py",
     "tests/program_reconcile_s741_copper_mountain_test.py",
     "tests/program_piles_s741_shasta_test.py",
@@ -42647,8 +42935,15 @@
     "tests/program_piles_s741_ela_test.py",
     "tests/program_piles_s741_contracosta_test.py",
     "tests/program_piles_s742a_test.py",
+    "tests/program_piles_s748g1_test.py",
     "tests/program_piles_s742_ela_test.py",
+    "tests/program_piles_s748a_test.py",
+    "tests/program_piles_s748b_test.py",
+    "tests/program_piles_s748c_test.py",
     "tests/program_reconcile_s742_cabrillo_test.py",
+    "tests/program_reconcile_s748_sbvc_test.py",
+    "tests/program_reconcile_s748_lassen_test.py",
+    "tests/program_reconcile_s748_alameda_test.py",
     "tests/program_requirements_pins_s741_test.py",
     "tests/program_discontinued_test.py",
     "tests/reader_page_checks_test.py",
