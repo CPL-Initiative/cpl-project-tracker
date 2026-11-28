@@ -167,7 +167,11 @@ class Pile(B8.Pile):
 
 class Batch:
     """One plan over a few colleges' piles: each pile's own self-recall and receipt, one pre-read, one guarded UPDATE
-    and one rollback over every pile's rows."""
+    and one rollback over every pile's rows. A later session's batch (kb/_program_piles_s748.py) names its own
+    session and brief in its receipts' rule (session, ruling)."""
+
+    session = "S742"
+    ruling = RULING_S742
 
     def __init__(self, *, tag: str, piles: list):
         self.tag, self.piles = tag, list(piles)
@@ -228,10 +232,10 @@ class Batch:
         for w, res in results:
             mine = res["rows"]
             mine_by = dict(collections.Counter(r["moves_to"] for r in mine))
-            body = {"rule": "%s; %s; %s. S742: %s's records %s held, read again by key: collected with their gaps "
+            body = {"rule": "%s; %s; %s. %s: %s's records %s held, read again by key: collected with their gaps "
                             "named where the gap is true on the page and the record is the program's own (no reread, "
                             "no reconcile, no record changed)"
-                            % (NG.RULING, B.RULING_S739, RULING_S742, w.name, w.held_by),
+                            % (NG.RULING, B.RULING_S739, self.ruling, self.session, w.name, w.held_by),
                     "at": time.strftime("%Y-%m-%dT%H:%M:%SZ", stamp), "college": w.college,
                     "batch": {"tag": self.tag, "rows": len(rows), "colleges": [x.college for x in self.piles],
                               "members": members,

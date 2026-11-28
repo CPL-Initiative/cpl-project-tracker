@@ -382,6 +382,22 @@
     "evidence": "Cosmetology certificate 21026: the 2026-2027 catalog PDF, p.121, under 'Cosmetology, Associate Degree or Certificate of Achievement', prints 'Area of Emphasis: (26.5 units)' and 'Required Hours: (1,000 hours minimum including the courses specified below)', then nine headed lists of required courses with their units: Related Science (COSM 10A 1, 10B 1, 20 1, 30 1, 49C 2, 50C 1.5), Hair Cutting (11A 1, 21A 1, 42 1), Hair Styling (11B 1, 21B 1), Hair Coloring (11C 1, 21C 1), Permanent Wave (11D 1), Curly Hair Technique (21E 1), Nail Care (16 1, 26 1, 36 1), Esthetician (18 1, 28A 1, 28B 1, 48B 1) and Salon Management (64 2), 25.5 units in all; then 'Salon Experience Courses: ... students must enroll in one or more of the following Salon courses (2 units minimum)' over COSM 95A (1), 95B (2) and 95C (3). The required courses and the 2-unit minimum add to 27.5 under the printed 26.5 (college-page-read run 45953358884, kb/college_reads/s741_piles_santa_monica_cosmetology.json, pp.120-122 printed whole). The Barbering section before it on the same page prints the same '(26.5 units)' over its own lists.",
     "run": "45953358884"
    }
+  },
+  "Santa Barbara City College": {
+   "43553": {
+    "where": "the program's own page, https://catalog.sbcc.edu/academic-departments/justice-studies/law-public-policy-and-society-aat/",
+    "printed_total": [
+     35,
+     41
+    ],
+    "printed_sum": [
+     32,
+     37
+    ],
+    "words": "Required Core 26-29 units ... List A ... 6-8 units ... Total Units 35.00-41.00",
+    "evidence": "Law, Public Policy, and Society A.A.-T 43553: the page's Requirements tab prints 'Major Requirements', then 'Required Core 26-29 units' over its rows, then 'List A - Complete two courses from two of the areas listed below: (NOTE: courses must have not been taken in the Required Core) 6-8 units' over eight areas, and 'Total Units 35.00-41.00' (college-page-read run 45837455365, kb/college_reads/s740_piles_sbcc_figures.json, read as the capture reads the page). The two list figures are the page's only figures over its lists, and they add to 32-37 under the printed 35-41; the one course with units printed beside it is ECON C2001 (3-4), inside the Required Core's figure. The page prints no other list and no other total.",
+    "run": "45837455365"
+   }
   }
  }
 }
