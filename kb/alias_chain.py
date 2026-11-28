@@ -92,6 +92,7 @@ ALIAS_MAPS = [
     "kb/subjects_list_recode_out/2026-11-05/alias_map.json",  # 2026-11-05 (the Subjects List recode, SkyKumquat — stamps: _subjects_list_recode_from; eleven disciplines onto the Common SUBJ Sam saved on the List 2026-11-04: CSAI->CSIS BCST->BRDC CNSR->CBIT CNSC->WWKC AUTD->DIES ESCI->ENVS CSTF->WWKF GRAF->GFCD PLGL->PARA NRSV->VNRS, and Media Production FTVE->FMED, ending the fan-in)
     "kb/anchor_rekey_out/2026-11-08/alias_map.json",      # 2026-11-08 (the anchor re-key, SkySunflower S612 — stamps: _anchor_rekey_from; the curated anchor's 20 flagged keys onto their Common SUBJ, anchor-only ids, Sam's "As proposed", Open Asks Sheet 171 card 4)
     "kb/stray_code_remint_out/2026-11-25/applied/alias_map.json",  # 2026-11-25 (the stray-code re-mint, S733 SkyGodwit — r-no-mid-on-a-stray-code-sam-2026-11-25; only the 20 merged shells, each onto its merge target; the 60 retired ids have no successor and take no map)
+    "kb/alignment_remint_out/2026-11-28/alias_map.json",  # 2026-11-28 (the common-subject alignment re-mint, S749 — stamps: _alignment_remint_from; r-full-remint-for-new-joins-sam-2026-11-28 and r-remint-dryrun-defaults-sam-2026-11-28: 346 ids, NUTR->FDNT 320, AERO->MILS 9, PHTC->PHOT 4, PUBR->PREL 1, TOUR->TRVL 12; the ledger is kb/mid_forwarding.csv)
 ]
 
 

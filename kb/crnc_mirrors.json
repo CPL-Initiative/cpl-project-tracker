@@ -14115,7 +14115,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "NUTR M1012": {
+  "FDNT M1057": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -16558,7 +16558,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "NUTR M1028": {
+  "FDNT M1028": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -17248,7 +17248,7 @@
     ]
    ]
   },
-  "NUTR M1005": {
+  "FDNT M1051": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -20713,7 +20713,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "NUTR M1013": {
+  "FDNT M1058": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -20900,7 +20900,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "NUTR M1002": {
+  "FDNT M1047": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -20912,7 +20912,7 @@
     ]
    ]
   },
-  "NUTR M1016": {
+  "FDNT M1061": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -20925,7 +20925,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "NUTR M1032": {
+  "FDNT M1032": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -20937,13 +20937,13 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "NUTR M1009": {
+  "FDNT M1055": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "NUTR M9007": {
+  "FDNT M9033": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -20955,13 +20955,13 @@
     ]
    ]
   },
-  "NUTR M9002": {
+  "FDNT M9028": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "NUTR M9001": {
+  "FDNT M9027": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -24416,8 +24416,9 @@
   "kb/blank_stray_remint_out/2026-10-20/alias_map.json",
   "kb/subjects_list_recode_out/2026-11-05/alias_map.json",
   "kb/anchor_rekey_out/2026-11-08/alias_map.json",
-  "kb/stray_code_remint_out/2026-11-25/applied/alias_map.json"
+  "kb/stray_code_remint_out/2026-11-25/applied/alias_map.json",
+  "kb/alignment_remint_out/2026-11-28/alias_map.json"
  ],
- "_rekeyed_at": "2026-11-25",
+ "_rekeyed_at": "2026-11-28",
  "_rekeyed_by": "kb/_rekey_crnc_mirrors.py"
 }

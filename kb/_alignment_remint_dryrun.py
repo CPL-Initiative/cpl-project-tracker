@@ -67,6 +67,7 @@ RECEIPT = os.path.join(HERE, "receipts", "minted_codes_s749.json")
 DECISIONS = os.path.join(HERE, "status", "subject_decisions.json")
 PICKS_GLOB = "kb/subject_title_hunt/20261128_common_picks_"
 FORWARDING_HEADER = ["old_mid", "new_mid", "reason", "date"]
+APPLIED = os.path.join(HERE, "alignment_remint_out", "2026-11-28", "alias_map.json")   # kb/_alignment_remint_apply.py
 
 # Each scope: the code it moves, where to, the discipline the rows join, and the words that rule it.
 # `seed` is the seed edit the apply makes beside the re-key (None when #3952 already made it, or no edit is needed).
@@ -721,6 +722,19 @@ def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--check", action="store_true", help="the committed plan and forwarding map match a fresh run")
     args = ap.parse_args(argv)
+    if os.path.exists(APPLIED) and load(APPLIED).get("_applied_at"):
+        # The apply landed (kb/_alignment_remint_apply.py): the plan and the forwarding map are its record, frozen. A
+        # fresh run would find nothing left to move and write an empty forwarding map over the ledger.
+        rows = list(csv.reader(io.StringIO(open(FORWARDING, encoding="utf-8").read())))[1:]
+        aliases = {k: v["new_id"] for k, v in load(APPLIED)["aliases"].items()}
+        same = {r[0]: r[1] for r in rows} == aliases == load(PLAN).get("alias")
+        if args.check:
+            print(f"alignment re-mint dry run: applied, frozen ({len(aliases)} forwarding rows"
+                  + (", matching the receipt)" if same else ") - the forwarding map or plan differs from the receipt"))
+            return 0 if same else 1
+        print(f"alignment re-mint dry run: applied ({os.path.relpath(APPLIED, ROOT)}); the plan, report and forwarding "
+              "map are frozen, so nothing is written")
+        return 1
     plan = build()
     bad = [k for k, v in plan["validation"].items() if not v.get("pass")]
     fwd = render_forwarding(plan)

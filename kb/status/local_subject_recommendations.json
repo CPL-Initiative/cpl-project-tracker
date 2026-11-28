@@ -122,9 +122,9 @@
   },
   "common_code_from_the_category": {
    "right": 18,
-   "wrong": 73,
-   "asked": 91,
-   "share": 0.198,
+   "wrong": 72,
+   "asked": 90,
+   "share": 0.2,
    "score": 20
   },
   "note": "Measured on the noncredit-only codes that hold a catalog heading (titles) or a common code from the subject map (codes), each left out of its own vote. A title condition right less than half the time is a guess: it stays measured here, used false, and gives no recommendation. The common code's answer key is the subject map, which reads a code without its credit or noncredit band (f-subject-map-ignores-credit-band-s698), so its share is a floor."
@@ -202,29 +202,29 @@
   },
   "rows_the_subject_map_settles": {
    "own_courses": {
-    "right": 52,
-    "asked": 52
+    "right": 47,
+    "asked": 47
    },
    "same_code_statewide": {
-    "right": 13,
-    "asked": 13
+    "right": 10,
+    "asked": 10
    },
    "title": {
     "right": 284,
-    "asked": 292
+    "asked": 291
    }
   }
  },
  "web_searches_filed": 313,
  "totals": {
-  "common_90_plus": 57,
+  "common_90_plus": 58,
   "common_no_code_yet": 100,
-  "common_none": 107,
-  "common_under_60": 506,
-  "no_common": 770,
+  "common_none": 114,
+  "common_under_60": 507,
+  "no_common": 779,
   "no_title": 155,
-  "noncredit_common": 498,
-  "noncredit_no_common": 681,
+  "noncredit_common": 499,
+  "noncredit_no_common": 682,
   "noncredit_no_title": 128,
   "noncredit_title": 12,
   "noncredit_title_unused_condition": 28,
@@ -3013,6 +3013,17 @@
       "from": "noncredit_category",
       "category": "English as a Second Language (ESL)",
       "why": "The noncredit MQ discipline of its dominant COCI noncredit category, English as a Second Language (ESL) (22 of 23 noncredit courses, 96%)."
+     }
+    },
+    {
+     "code": "FN",
+     "common": {
+      "code": "OLAD",
+      "discipline": "Older Adults: Noncredit",
+      "confidence": 20,
+      "from": "noncredit_category",
+      "category": "Courses for Older Adults",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Courses for Older Adults (1 of 1 noncredit courses, 100%)."
      }
     }
    ]
@@ -6291,6 +6302,16 @@
       "from": "noncredit_category",
       "category": "Courses for Older Adults",
       "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Courses for Older Adults (2 of 2 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "FN",
+     "common": {
+      "code": "CULN",
+      "discipline": "Culinary Arts/Food Technology",
+      "confidence": 97,
+      "from": "title",
+      "why": "The title names the discipline Culinary Arts/Food Technology."
      }
     },
     {

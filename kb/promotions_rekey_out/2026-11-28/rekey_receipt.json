@@ -1,0 +1,80 @@
+{
+ "date": "2026-11-28",
+ "baseline": "kb/promotions.json",
+ "maps_applied": [
+  "kb/alignment_remint_out/2026-11-28/alias_map.json"
+ ],
+ "witness_total": 9826,
+ "targets": 446,
+ "stamp_gate": {
+  "checked": 0,
+  "conflicts": 0
+ },
+ "counts": {
+  "rekeyed": 8,
+  "folded": 0,
+  "unresolved": 0,
+  "unchanged": 1978
+ },
+ "rekeyed": [
+  {
+   "old": "NUTR M1025",
+   "new": "FDNT M1025",
+   "hops": [
+    "FDNT M1025"
+   ]
+  },
+  {
+   "old": "NUTR M1027",
+   "new": "FDNT M1027",
+   "hops": [
+    "FDNT M1027"
+   ]
+  },
+  {
+   "old": "NUTR M1030",
+   "new": "FDNT M1030",
+   "hops": [
+    "FDNT M1030"
+   ]
+  },
+  {
+   "old": "NUTR M1032",
+   "new": "FDNT M1032",
+   "hops": [
+    "FDNT M1032"
+   ]
+  },
+  {
+   "old": "NUTR M1034",
+   "new": "FDNT M1034",
+   "hops": [
+    "FDNT M1034"
+   ]
+  },
+  {
+   "old": "NUTR M10CQ",
+   "new": "FDNT M10GF",
+   "hops": [
+    "FDNT M10GF"
+   ]
+  },
+  {
+   "old": "NUTR M10DL",
+   "new": "FDNT M10DL",
+   "hops": [
+    "FDNT M10DL"
+   ]
+  },
+  {
+   "old": "PUBR M1001",
+   "new": "PREL M1001",
+   "hops": [
+    "PREL M1001"
+   ]
+  }
+ ],
+ "folded": [],
+ "unresolved": [],
+ "unchanged": 1978
+}

@@ -90,13 +90,13 @@
       "corroboration": "2 of 2 identities"
     },
     {
-      "subj4": "TOUR",
+      "subj4": "TRVL",
       "identities_blank": 4,
       "ids": [
-        "TOUR M1001",
-        "TOUR M1002",
-        "TOUR M1003",
-        "TOUR M1004"
+        "TRVL M1001",
+        "TRVL M1002",
+        "TRVL M1003",
+        "TRVL M1004"
       ],
       "titles": [
         "Advanced Airline Computer Training",

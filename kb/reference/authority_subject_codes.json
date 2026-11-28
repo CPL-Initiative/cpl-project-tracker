@@ -1,6 +1,6 @@
 {
   "_about": "Every C-ID / CCN subject code in kb/reference, the disciplines its rows sit under in kb/promotions.json (evidence), and where it is attributed (basis: ruled | canonical | majority | name); dismissed pairs are item 17 of the 2026-09-03 rulings. Built by kb/_seed_authority_codes.py.",
-  "_built_at": "2026-11-25",
+  "_built_at": "2026-11-28",
   "_rules": {
     "majority_floor": 4,
     "dismissed_pairs": [
@@ -403,6 +403,13 @@
       "code": "ASAM",
       "evidence": {},
       "attributed": [
+        {
+          "discipline": "Asian American Studies",
+          "basis": "canonical",
+          "rows": 0,
+          "chip": false,
+          "chip_primary": true
+        },
         {
           "discipline": "Ethnic Studies",
           "basis": "name",
@@ -1070,11 +1077,12 @@
       "code": "JOUR",
       "evidence": {
         "Journalism": 40,
-        "(blank)": 5,
         "Communication Studies": 4,
+        "(blank)": 4,
         "Multimedia": 2,
         "Architecture": 1,
         "Photography": 1,
+        "Public Relations": 1,
         "Sociology": 1
       },
       "attributed": [
@@ -1192,19 +1200,18 @@
       "system": "c-id",
       "code": "NUTR",
       "evidence": {
-        "Dietetics/Nutritional Science": 7,
+        "Nutritional Science/Dietetics": 8,
         "Culinary Arts/Food Technology": 4,
         "Biological Sciences": 2,
         "Agriculture": 1,
-        "Child Development/Early Childhood Education": 1,
-        "Nutritional Science/Dietetics": 1
+        "Child Development/Early Childhood Education": 1
       },
       "attributed": [
         {
-          "discipline": "Dietetics/Nutritional Science",
-          "basis": "canonical",
-          "rows": 7,
-          "chip": false,
+          "discipline": "Nutritional Science/Dietetics",
+          "basis": "majority",
+          "rows": 8,
+          "chip": true,
           "chip_primary": true
         }
       ],
