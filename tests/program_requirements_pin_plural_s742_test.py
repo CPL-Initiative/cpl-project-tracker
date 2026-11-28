@@ -30,10 +30,12 @@ Pinned here:
      other program; with the fold off the pin is refused on its heading, as before S742.
   4b. stage_sources() stages a bound pin's page as read (a fixture: the pinned page kept, an unpinned page of a
      refused program held, only= names the pinned program). Paid read 46016403916 sent nothing without it.
-  4c. That staging rule's self-recall (S748) over every filed capture and preview, C.stage_held() against the rule
-     before it. The answer held: a page the reconcile entry pins is the program's own (stage it); any other page of
-     a program that stands refused, with no page_check, is the page the rules refused (hold it). 2026-11-28: 231
-     answers; before 230 right, 1 wrong (Coastline 43057's pinned page held); after 231 right, 0 wrong.
+  4c. One case, regression pin (S748): C.stage_held() against the rule before it, over every filed capture and
+     preview. Its oracle restates the rule (a pinned page or a page_check page is staged; any other page of a
+     program that stands refused is held), so it is no independent recall: it pins that the change moves one page
+     and no other. 2026-11-28: 231 pages; the rule before held Coastline 43057's pinned page, and the rule as it
+     stands stages it and holds the same 230 others. The check with its own evidence is that every pinned page
+     filed is one the college's reconcile entry pins for its program.
   5. The entry: Coastline's site_pages pins 43057 to the page the filed capture gave 33014.
   6. The statewide self-recall (the S652 review rule) over every filed source on a site page. The answer held: a
      program alone on its page, whose filed record was read from that page and places its courses, read its own
@@ -285,14 +287,16 @@ try:
 finally:
     shutil.rmtree(td)
 
-# ── 4c. the staging rule's self-recall (S748) ─────────────────────────────────────────────────────
-# Every filed capture and preview, staged by the rule before S742 and by C.stage_held() as it stands. The answer held:
-# a page the college's reconcile entry pins for the program (site_pages or pdf_pages), bound at the capture, is the
-# program's own, so staging it as read is right and holding it is wrong; any other page of a program that stands
-# refused, with no page_check, is the page the rules refused, so holding it is right. A filed capture keeps each
-# source's marks and text_chars; a preview keeps the fingerprint of every program with text and its bound pins (no
-# page_check, which a preview does not file: such a page counts as held under both rules, so no difference hides).
-print("4c. the staging rule's self-recall over every filed capture and preview")
+# ── 4c. the staging rule: one case, regression pin (S748) ─────────────────────────────────────────
+# Every filed capture and preview, staged by the rule before S742 and by C.stage_held() as it stands. `own` below
+# restates the rule, so "right" and "wrong" here measure the change, not the rule's truth: the one page that leaves
+# the held set is Coastline 43057's, and no other page moves. The rule's ground is the pin itself: a page the
+# college's reconcile entry pins for the program (site_pages or pdf_pages), bound at the capture, is the program's
+# own (checked below against the entry); any other page of a program that stands refused, with no page_check, is the
+# page the rules refused. A filed capture keeps each source's marks and text_chars; a preview keeps the fingerprint
+# of every program with text and its bound pins (no page_check, which a preview does not file: such a page counts
+# as held under both rules, so no difference hides).
+print("4c. the staging rule, one case: every filed capture and preview")
 import _program_requirements_reconcile as R  # noqa: E402
 
 STEPS = R.load_steps()
