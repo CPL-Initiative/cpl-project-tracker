@@ -51,11 +51,19 @@
     "PHOT171",
     "PHOT242"
    ],
-   "unexplained": [
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true,
+   "not_on_page": [
     "PHOT242"
    ],
-   "none_placed": false,
-   "pass": false
+   "rescored": "S750 (plan s750a): the unexplained course is explained by the capture, which finds it on no line of the program's own page (state_course_not_on_page), and a free read of the page agrees (college page read 46149637666; College of Marin's, 46150287204); the scorer's own reading is kept in as_scored",
+   "as_scored": {
+    "pass": false,
+    "unexplained": [
+     "PHOT242"
+    ]
+   }
   },
   "invented": {
    "count": 2,
@@ -128,7 +136,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

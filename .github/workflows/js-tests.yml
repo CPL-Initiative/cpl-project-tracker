@@ -1382,6 +1382,14 @@ jobs:
       - name: Cheap piles S748, batch c (a state-listed course the page does not print)
         if: matrix.shard == 3
         run: python3 tests/program_piles_s748c_test.py
+      # S750, batch s750a: S748's reading state_course_not_on_page assigned to eight records at six colleges
+      # (Cerritos 02235, Citrus 02333, College of Marin 46242, Foothill 11827 and 43194, Irvine Valley 44922,
+      # Palomar 08929 and 22528), each checked against a free read of its own page; Madera 39810 held (its page
+      # heads its core 41-47 units over 39.5). The apply and rollback rebuilt from the receipts, 29 changes to
+      # them each failing; each of the evidence's 16 conditions pinned on its own.
+      - name: Cheap piles S750, batch a (eight records whose page omits a state-listed course)
+        if: matrix.shard == 4
+        run: python3 tests/program_piles_s750a_test.py
       # S742 at Cabrillo: the recommended_counts reconcile step. A list the page heads 'Recommended' and counts
       # ('Complete the following number of credits: N' under its own name) reads as N units to choose, all of a
       # record's recommended lists or none; four degrees pass, 23 held answers right, 0 wrong.
