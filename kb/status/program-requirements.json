@@ -962,6 +962,10 @@
       "text": "Found tonight: 194 programs at 14 colleges have their own catalog page on file and no course list from the state, so nothing reads the page. The change that reads them is built and held for one more review before any paid read."
     },
     {
+      "at": "2026-11-28T17:20:00Z",
+      "text": "Sam's recommendations to speed up the catalog reads: reread the 17 stale records first, look up program titles and awards by district, find pages per catalog platform, add Southwestern to the Catalogs view, and ask about the 3 parked colleges and the Ohlone, Madera and Mission links."
+    },
+    {
       "at": "2026-11-28T15:16:00Z",
       "text": "The display page now carries the 41 program records collected earlier on Nov 28: 18,753 programs at build 366c5bbc7b2d, after a first apply at Glendale. San Bernardino Valley 31858 and Coastline 43057 gained a display. 32 records stay at three older builds."
     },
