@@ -68,12 +68,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 6 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 608 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 609 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 95 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 113 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 77 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 701 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1600** | |
+| Session handoffs | 702 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1602** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -124,6 +124,8 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-28 (S749 SkyGannet, Sam's plain session, full checkpoint): #3947 (COBIx's titles, Sam's 103 folds, untitled 1,032 to 137), #3948 (the September 2026 CIP Taxonomy: 5 codes change category), #3949 (COBI's common-picks filer), #3952 (Sam's Nov 28 alignment: 56 codes, 1,662 of 1,663 picks), #3955 (the re-mint dry run, 346 M-IDs; the apply is #3958); 12 kb_curation rows filed; handoff 752, the subjects, commons and harvest lanes, the subjects lessons (S749), KB note `methodology-a-person-named-value-can-live-in-a-memory-ruling`, the status files, one memory row drafted.
+
 - 2026-11-28 (S750 SkySandpiper, the CPL Queue routine's collection run, conductor, full checkpoint): #3953 (display build `366c5bbc7b2d`, 18,753 records, carrying S748's 41 to the page) merged; plan s750a (`state_course_not_on_page` at seven records), the census change redone, and the found-pages code, round 2 (#3954, off for every college: the "none wrong" gate held on live recall, so no paid read ran); handoff 751, the harvest lane (compacted to 18.7 KB), its lessons (*Moved from the lane (S750 checkpoint)*, *S750*), 8 memory rows drafted, `kb/status/program-requirements.json`. The apply's result, its land and the census: handoff 751.
 - 2026-11-28 (S748 SkyStilt, the CPL Queue routine's collection run, conductor, full checkpoint): the land #3945 (`cd464091`) merged; Coastline's staging fix, reconcile steps at San Bernardino Valley, Lassen and College of Alameda, Lassen's `only_cal_getc`, the reading `state_course_not_on_page`; 41 records (24 by guarded plans, 17 by rereads and loads); the found-pages change held for round 2, `list_minimum_units` refused, the census change left out. Handoff 749, the harvest lane (S742-era NEXT moved), its lessons (*Moved from the lane (S748 checkpoint)*, *S748*; S739's sections to archive 9), 13 memory rows drafted, `kb/status/program-requirements.json`. Second land and census: handoff 749.
 - 2026-11-28 (S747 SkyShearwater, Sam's plain session, full checkpoint): #3936 (the featured Field Ironworker B.S. counts 38 units; panels beside the view), #3938 (Commons Clarity 3 and 4: Exhibits' way back, empty tiles in words), #3939 (the adopt panel's stylesheet on directory cards), #3941 (the click-through's nosubj equality; 13 of 15), #3942 (COCI descriptions cleaned at build); #3943 open (the one repair module). KB note updated: `methodology-a-double-decoded-string-needs-the-codec-that-decoded-it`. Handoff `docs/session_748_handoff.md` (SkyGannet).

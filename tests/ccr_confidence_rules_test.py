@@ -141,7 +141,11 @@ for cid, r in rows.items():
 check("(1) every seedless card is in one band", len(rows) == len(seed) and set(by) <= {
     "ruled", "merged_away", "not_openable", "flagged", "auto_accept", "for_sam", "waiting"}, sorted(by))
 ruled = M.ruled_set(inp.cur)
-check("(2) ⭐ the six ruled cards of issue 3447 land in ruled", all(rows[m]["band"] == "ruled" for m in M.RULED_3447))
+# A ruled card that is still seedless lands in ruled; one whose ruling has since landed as a discipline row (Sam's
+# S749 filing, cohort sam-rulings-s749@bot: KINE M1553, M1568, M1762) leaves the seedless set with its ruling held.
+check("(2) ⭐ the six ruled cards of issue 3447 land in ruled, or carry their ruling's discipline",
+      all((rows[m]["band"] == "ruled") if m in rows else bool((inp.cur.get(m) or {}).get("discipline")) for m in M.RULED_3447),
+      [(m, rows[m]["band"] if m in rows else (inp.cur.get(m) or {}).get("discipline")) for m in M.RULED_3447])
 check("(2) ⭐ no rule moves a ruled, merged or not-openable card",
       all(not r["rule"] and r["discipline"] == r["guess"] for r in rows.values()
           if r["base"] in ("ruled", "merged_away", "not_openable")))
