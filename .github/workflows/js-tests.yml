@@ -1343,6 +1343,18 @@ jobs:
       - name: Cheap piles S748, batch a (the gap plans S742's rereads unlocked)
         if: matrix.shard == 5
         run: python3 tests/program_piles_s748a_test.py
+      # S748, batch s748b: Orange Coast 03993 (figure_within_variable_units, on the page's own line 'DANC A211
+      # Repertoire I 1-4') and East Los Angeles 41231 (total_differs, from a page read: MATH 261 5 OR MATH 261S 3
+      # under the printed 41-45); the other holds of the lane's seven colleges with their reasons.
+      - name: Cheap piles S748, batch b (Orange Coast 03993, East Los Angeles 41231)
+        if: matrix.shard == 6
+        run: python3 tests/program_piles_s748b_test.py
+      # S748 at East Los Angeles: the list_minimum_units reconcile step (a new kind; needs a second reader before a
+      # dispatch). The movement list printed '(minimum 3 units) ... any three (3) of the following areas' reads as 3
+      # units to choose; 31017 alone of 136 records, it turns passing, no passing record turns failing.
+      - name: Reconcile S748 at East Los Angeles (a choice list printed with its least units)
+        if: matrix.shard == 4
+        run: python3 tests/program_reconcile_s748_ela_test.py
       # S742 at Cabrillo: the recommended_counts reconcile step. A list the page heads 'Recommended' and counts
       # ('Complete the following number of credits: N' under its own name) reads as N units to choose, all of a
       # record's recommended lists or none; four degrees pass, 23 held answers right, 0 wrong.

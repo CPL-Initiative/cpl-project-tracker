@@ -181,6 +181,21 @@
     "words": "Total . . . 24",
     "evidence": "Recording and Sound Design (Academic Plan E045602D), a Certificate of Achievement: the page prints one list with no choice, MUSIC 161, 165, 166, 172 and 205 (3 each), MUSIC 261-1 (3), MUSIC 365-1 and 365-2 (2 each), TECTHTR 330 (3) and TECTHTR 347 (2), 27 units, under 'Total 24' (college-page-read run 45173349853, S714). The reader's note says the same and that MUSIC 205 is the course the state's file does not list.",
     "run": "45173349853"
+   },
+   "41231": {
+    "page": 92,
+    "where": "PDF pp.92-93",
+    "printed_total": [
+     41,
+     45
+    ],
+    "printed_sum": [
+     39,
+     45
+    ],
+    "words": "CHOOSE OPTION 1 OR OPTION 2 AND ALL COURSES LISTED BELOW 41-45 ... MATH 261 Calculus I 5 OR MATH 261S Calculus I With Support 3",
+    "evidence": "Environmental Science A.S.-T (Academic Plan E041231H): PDF p.92 prints 'CHOOSE OPTION 1 OR OPTION 2 AND ALL COURSES LISTED BELOW 41-45', Option 1 (BIOLOGY 006 5, BIOLOGY 007 5, CHEM 101 5) or Option 2 (BIOLOGY 006 5, CHEM 101 5, CHEM 102 5) under 'Subtotal 15', then 'AND ALL COURSES LISTED BELOW': ENV SCI 001 (3); GEOLOGY 001 (3) and GEOLOGY 006 (1), or GEOLOGY 004 (4), or GEOG 001 (3) and GEOG 015 (2); BUS 015 (3) or ECON 020 (3) or PSYCH 091 (4) or STAT C1000 (4) or, on p.93, STAT C1000E (4); 'MATH 261 Calculus I 5' OR 'MATH 261S Calculus I With Support 3'; ECON C2001 (3); PHYSICS 006 (4) and PHYSICS 007 (4), or PHYSICS 101 (5) and PHYSICS 102 (5) (college-page-read run 46120012715, kb/college_reads/s748_piles_east_los_angeles_environmental.json, pp.91-93 printed whole). The rows add to 39 at the least (the option's 15, 3, 4, 3, MATH 261S at 3, 3 and 8) and 45 at the most, under the printed 41-45: the low end the page prints is what the rows add to with MATH 261 at 5.",
+    "run": "46120012715"
    }
   },
   "San Bernardino Valley College": {

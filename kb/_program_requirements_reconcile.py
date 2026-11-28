@@ -1167,6 +1167,48 @@ def _college_steps(record: dict, text: str | None, college: str, award: str | No
                           "now": {"rule": "choose_units", "minimum": [b.get("minimum") for b in lists]},
                           "words": "; ".join(first[k] for k in sorted(want, key=lambda k: list(first).index(k)))})
             continue
+        if st["kind"] == "list_minimum_units":
+            # A choice list the page prints with its least units and a count of courses (East Los Angeles's
+            # Kinesiology A.A.-T 31017, S748: the movement list's "(minimum 3 units) Select a maximum of one (1)
+            # course from any three (3) of the following areas"). A reading that took the count filed the list as
+            # choose_courses, three courses of 1 to 4 units, so the record's high end runs past the page's own
+            # figures. Where the page prints the step's words with the very figure the list states and the very
+            # count the list holds, the list reads as that many units to choose. One list, named by block_pattern
+            # (the step's own list, never a pattern over every list); its stated figure is one figure; every
+            # course of it carries units; the count's cheapest courses reach no more than the figure (the figure
+            # is the least a student can take); and only where today's scorer fails the record as read and reads
+            # its units equal with the list at its figure. A record that passes as read, or that the reading
+            # does not close, is left as read.
+            named = re.compile(st["block_pattern"])
+            lists = [b for b in out.get("blocks") or [] if named.search(b.get("name") or "")
+                     and b.get("rule") == "choose_courses"]
+            if len(lists) != 1 or held_by_step(st, control_number, prog):
+                continue
+            block = lists[0]
+            lo, hi = _span_of(block.get("stated"))
+            n = _num(lo) if lo is not None else None
+            count = _num(block.get("minimum")) if block.get("minimum") is not None else None
+            if not n or (hi is not None and _num(hi) != n) or not count or not isinstance(count, int):
+                continue
+            pm = next((m for m in re.finditer(st["pattern"], text)
+                       if _num(m.group("n")) == n and _count(m.group("count")) == count), None)
+            units = [_num(c.get("units")) if c.get("units") is not None else None
+                     for c in block.get("courses") or []]
+            if pm is None or None in units or len(units) < count or sum(sorted(units)[:count]) > n:
+                continue
+            from _program_requirements_score import score as _score
+            trial = copy.deepcopy(out)
+            at = (out.get("blocks") or []).index(block)
+            trial["blocks"][at]["rule"], trial["blocks"][at]["minimum"] = "choose_units", n
+            if (_score(out, [], text, award).get("arithmetic") or {}).get("status") == "equal" \
+                    or (_score(trial, [], text, award).get("arithmetic") or {}).get("status") != "equal":
+                continue
+            block["rule"], block["minimum"] = "choose_units", n
+            notes.append({"field": "blocks",
+                          "was": {block.get("name"): {"rule": "choose_courses", "minimum": count}},
+                          "now": {block.get("name"): {"rule": "choose_units", "minimum": n}},
+                          "words": " ".join(pm.group(0).split())})
+            continue
         if st["kind"] == "pool_areas":
             # A total the page prints over each area's sub-areas (Hartnell's CalGETC 45096, S491: "A total of
             # 6 semester units is required" over Area 3A and 3B; "A total of 7" over 5A, 5B and 5C). Each
