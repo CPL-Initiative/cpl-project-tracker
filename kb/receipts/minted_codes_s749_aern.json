@@ -1,0 +1,71 @@
+{
+ "_what": "kb/_apply_minted_codes_s749.py: each change with its before-value; git revert undoes it.",
+ "applied_at": "2026-11-28T15:57:49+00:00",
+ "changed": [
+  {
+   "discipline": "Aeronautics",
+   "from": "AERO",
+   "to": "AERN",
+   "basis": "Aeronautics MQ. Avoided AERO, a heavily used Aviation (AVIA) local code."
+  }
+ ],
+ "held": [
+  {
+   "discipline": "Flight Attendant Training",
+   "from": "FLTR",
+   "to": "FLTA",
+   "basis": "Flight Attendant Training MQ. FLTA is unused as a canonical.",
+   "why": "FLTR is the code the re-mint ruling chose (r-remint-dryrun-defaults-sam-2026-11-28): kept"
+  },
+  {
+   "discipline": "Home Economics: Noncredit",
+   "from": "HMEN",
+   "to": "HECN",
+   "basis": "Home Economics: Noncredit MQ, distinct from credit FCSH. HECN is unused as a canonical.",
+   "why": "HMEN is a code Sam named on 2026-11-22 (r-noncredit-four-mq-codes-sam-2026-11-22): person-settled, kept"
+  },
+  {
+   "discipline": "Public Relations",
+   "from": "PREL",
+   "to": "PUBR",
+   "basis": "Public Relations MQ. PUBR is unused as a canonical.",
+   "why": "PREL is the code the re-mint ruling chose (r-remint-dryrun-defaults-sam-2026-11-28): kept"
+  },
+  {
+   "discipline": "Travel Services",
+   "from": "TRVL",
+   "to": "TOUR",
+   "basis": "Travel Services MQ (TOP 3009). TOUR is unused as a canonical. Avoided HOSP, which is filed under CULN.",
+   "why": "TRVL is the code the re-mint ruling chose (r-remint-dryrun-defaults-sam-2026-11-28): kept"
+  }
+ ],
+ "added": [],
+ "aliases_before": {
+  "Kinesiology": [
+   "Physical Education"
+  ],
+  "Drama/Theater Arts": [
+   "Theater Arts"
+  ],
+  "Communication Studies": [
+   "Speech Communication"
+  ],
+  "Nutritional Science/Dietetics": [
+   "Dietetics/Nutritional Science"
+  ]
+ },
+ "aliases_after": {
+  "Kinesiology": [
+   "Physical Education"
+  ],
+  "Drama/Theater Arts": [
+   "Theater Arts"
+  ],
+  "Communication Studies": [
+   "Speech Communication"
+  ],
+  "Nutritional Science/Dietetics": [
+   "Dietetics/Nutritional Science"
+  ]
+ }
+}

@@ -1,0 +1,51 @@
+{
+ "_about": "kb/crnc_mirrors.json re-keyed through the applied alias chain (old -> new)",
+ "_at": "2026-11-28",
+ "maps_applied": [
+  "kb/alignment_remint_out/2026-11-28/alias_map.json"
+ ],
+ "rekeyed_through": [
+  "kb/subj4_apply/alias_map.json",
+  "kb/crossdisc_out/alias_map.json",
+  "kb/fl_subj4_out/2026-06-09/alias_map.json",
+  "kb/kin_pe_out/2026-06-10/alias_map.json",
+  "kb/drama_theater_out/2026-06-10/alias_map.json",
+  "kb/convergence_singletons_out/2026-06-10/alias_map.json",
+  "kb/twin_merge_out/2026-06-10/alias_map.json",
+  "kb/twin_merge_out/2026-06-12/alias_map.json",
+  "kb/subj4_fold_out/2026-06-12/alias_map.json",
+  "kb/twin_merge_out/2026-06-12-postfold/alias_map.json",
+  "kb/kin_pe_pass2_out/2026-06-12/alias_map.json",
+  "kb/pols_remint_out/2026-07-10/alias_map.json",
+  "kb/authority_recode_out/2026-09-03/alias_map.json",
+  "kb/zband_retire_out/2026-09-03/alias_map.json",
+  "kb/prefix_fold_out/2026-09-03/alias_map.json",
+  "kb/eths_remint_out/2026-09-28/ruled/alias_map.json",
+  "kb/eths_remint_out/2026-09-29/standalone+missed/alias_map.json",
+  "kb/athl_remint_out/2026-09-30/alias_map.json",
+  "kb/agab_remint_out/2026-10-19/alias_map.json",
+  "kb/agri_family_remint_out/2026-10-20/alias_map.json",
+  "kb/forestry_wine_remint_out/2026-10-20/alias_map.json",
+  "kb/forestry_wine_remint_out/2026-10-20-stragglers/alias_map.json",
+  "kb/fl_stray_remint_out/2026-10-20/alias_map.json",
+  "kb/blank_stray_remint_out/2026-10-20/alias_map.json",
+  "kb/subjects_list_recode_out/2026-11-05/alias_map.json",
+  "kb/anchor_rekey_out/2026-11-08/alias_map.json",
+  "kb/stray_code_remint_out/2026-11-25/applied/alias_map.json",
+  "kb/alignment_remint_out/2026-11-28/alias_map.json"
+ ],
+ "count": 11,
+ "moved": {
+  "NUTR M1002": "FDNT M1047",
+  "NUTR M1005": "FDNT M1051",
+  "NUTR M1009": "FDNT M1055",
+  "NUTR M1012": "FDNT M1057",
+  "NUTR M1013": "FDNT M1058",
+  "NUTR M1016": "FDNT M1061",
+  "NUTR M1028": "FDNT M1028",
+  "NUTR M1032": "FDNT M1032",
+  "NUTR M9001": "FDNT M9027",
+  "NUTR M9002": "FDNT M9028",
+  "NUTR M9007": "FDNT M9033"
+ }
+}

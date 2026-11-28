@@ -259,12 +259,13 @@ check("re-mint: a base the re-mint moved still holds the pair (the bot merge int
 check("re-mint: a live base is never resolved again (no telescoping through an older slot)",
       ho.honors_map({"X M1001H": {"honors_of": "MATH M1036"}}, live={"MATH M1036"}, maps=MAPS)
       == {"X M1001H": "MATH M1036"})
-# One map after the baseline today: the stray-code re-mint's merged shells (S733, 2026-11-25).
+# Two maps after the baseline today: the stray-code re-mint's merged shells (S733, 2026-11-25) and the common-subject
+# alignment re-mint (S749, 2026-11-28).
 import alias_chain as _ac  # noqa: E402
-check("re-mint: the maps read are those after the field's baseline (the stray-code shells' map today)",
+check("re-mint: the maps read are those after the field's baseline (the stray-code shells' and S749's maps today)",
       ho.FIELD_BASELINE.endswith("2026-11-08/alias_map.json")
       and ho.pending_alias_maps() == _ac.load_maps(_ac.ALIAS_MAPS[_ac.ALIAS_MAPS.index(ho.FIELD_BASELINE) + 1:])
-      and len(ho.pending_alias_maps()) == 1)
+      and len(ho.pending_alias_maps()) == 2)
 merged_base = {"MATH M1036H": {"honors_of": "MATH M1036"}, "MATH M1036": {"merge_into": "MATH M1050"}}
 hm_end = ho.honors_map(merged_base, merge_end=True)
 check("merged base: the worklists read the base at its merge end",

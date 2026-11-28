@@ -1,0 +1,2130 @@
+{
+  "_status": "S749 common-subject alignment re-mint old->new alias (receipt + rollback inverse) - APPLIED",
+  "_applied_at": "2026-11-28T15:57:41+00:00",
+  "_rulings": "r-full-remint-for-new-joins-sam-2026-11-28; r-remint-dryrun-defaults-sam-2026-11-28",
+  "_scopes": [
+    "aero",
+    "nutr-fold",
+    "phtc",
+    "pubr",
+    "tour"
+  ],
+  "_stamp": "_alignment_remint_from",
+  "_count": 346,
+  "_dry_run": "kb/remint_dryrun/s749_plan.json",
+  "_forwarding": "kb/mid_forwarding.csv",
+  "aliases": {
+    "AERO M1001": {
+      "new_id": "MILS M1001",
+      "scope": "aero",
+      "discipline_before": null,
+      "discipline_after": "Military Studies"
+    },
+    "AERO M10AW": {
+      "new_id": "MILS M10AW",
+      "scope": "aero",
+      "discipline_before": null,
+      "discipline_after": "Military Studies"
+    },
+    "AERO M10AX": {
+      "new_id": "MILS M10AX",
+      "scope": "aero",
+      "discipline_before": null,
+      "discipline_after": "Military Studies"
+    },
+    "AERO M10AY": {
+      "new_id": "MILS M10AY",
+      "scope": "aero",
+      "discipline_before": null,
+      "discipline_after": "Military Studies"
+    },
+    "AERO M10AZ": {
+      "new_id": "MILS M10AZ",
+      "scope": "aero",
+      "discipline_before": null,
+      "discipline_after": "Military Studies"
+    },
+    "AERO M10BA": {
+      "new_id": "MILS M10BA",
+      "scope": "aero",
+      "discipline_before": null,
+      "discipline_after": "Military Studies"
+    },
+    "AERO M10BB": {
+      "new_id": "MILS M10BB",
+      "scope": "aero",
+      "discipline_before": null,
+      "discipline_after": "Military Studies"
+    },
+    "AERO M10BC": {
+      "new_id": "MILS M10BC",
+      "scope": "aero",
+      "discipline_before": null,
+      "discipline_after": "Military Studies"
+    },
+    "AERO M10BD": {
+      "new_id": "MILS M10BD",
+      "scope": "aero",
+      "discipline_before": null,
+      "discipline_after": "Military Studies"
+    },
+    "NUTR M1001": {
+      "new_id": "FDNT M1042",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M1002": {
+      "new_id": "FDNT M1047",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M1003": {
+      "new_id": "FDNT M1049",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M1004": {
+      "new_id": "FDNT M1050",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M1005": {
+      "new_id": "FDNT M1051",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M1006": {
+      "new_id": "FDNT M1052",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M1007": {
+      "new_id": "FDNT M1053",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M1008": {
+      "new_id": "FDNT M1054",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M1009": {
+      "new_id": "FDNT M1055",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M1011": {
+      "new_id": "FDNT M1056",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M1012": {
+      "new_id": "FDNT M1057",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M1013": {
+      "new_id": "FDNT M1058",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M1014": {
+      "new_id": "FDNT M1059",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M1015": {
+      "new_id": "FDNT M1060",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M1016": {
+      "new_id": "FDNT M1061",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M1017": {
+      "new_id": "FDNT M1062",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M1018": {
+      "new_id": "FDNT M1063",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M1019": {
+      "new_id": "FDNT M1064",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M1021": {
+      "new_id": "FDNT M1065",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M1022": {
+      "new_id": "FDNT M1066",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M1023": {
+      "new_id": "FDNT M1023",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M1024": {
+      "new_id": "FDNT M1024",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M1025": {
+      "new_id": "FDNT M1025",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M1026": {
+      "new_id": "FDNT M1026",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M1027": {
+      "new_id": "FDNT M1027",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M1028": {
+      "new_id": "FDNT M1028",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M1029": {
+      "new_id": "FDNT M1029",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M1030": {
+      "new_id": "FDNT M1030",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M1031": {
+      "new_id": "FDNT M1031",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M1032": {
+      "new_id": "FDNT M1032",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M1033": {
+      "new_id": "FDNT M1033",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M1034": {
+      "new_id": "FDNT M1034",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M1035": {
+      "new_id": "FDNT M1035",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M1036": {
+      "new_id": "FDNT M1036",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M1037": {
+      "new_id": "FDNT M1037",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M1038": {
+      "new_id": "FDNT M1038",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M1039": {
+      "new_id": "FDNT M1039",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M1040": {
+      "new_id": "FDNT M1040",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M1041": {
+      "new_id": "FDNT M1041",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10AA": {
+      "new_id": "FDNT M10DP",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10AB": {
+      "new_id": "FDNT M10DQ",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10AC": {
+      "new_id": "FDNT M10DR",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10AD": {
+      "new_id": "FDNT M10DS",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10AE": {
+      "new_id": "FDNT M10DT",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10AF": {
+      "new_id": "FDNT M10DU",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10AG": {
+      "new_id": "FDNT M10DV",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10AH": {
+      "new_id": "FDNT M10DW",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10AI": {
+      "new_id": "FDNT M10DX",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10AJ": {
+      "new_id": "FDNT M10DY",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10AK": {
+      "new_id": "FDNT M10DZ",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10AL": {
+      "new_id": "FDNT M10EA",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10AM": {
+      "new_id": "FDNT M10EB",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10AN": {
+      "new_id": "FDNT M10EC",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10AO": {
+      "new_id": "FDNT M10ED",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10AP": {
+      "new_id": "FDNT M10EE",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10AQ": {
+      "new_id": "FDNT M10EF",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10AR": {
+      "new_id": "FDNT M10EG",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10AS": {
+      "new_id": "FDNT M10EH",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10AT": {
+      "new_id": "FDNT M10EI",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10AU": {
+      "new_id": "FDNT M10EJ",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10AV": {
+      "new_id": "FDNT M10EK",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10AW": {
+      "new_id": "FDNT M10EL",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10AX": {
+      "new_id": "FDNT M10EM",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10AY": {
+      "new_id": "FDNT M10EN",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10AZ": {
+      "new_id": "FDNT M10EO",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10BA": {
+      "new_id": "FDNT M10EP",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10BB": {
+      "new_id": "FDNT M10EQ",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10BC": {
+      "new_id": "FDNT M10ER",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10BD": {
+      "new_id": "FDNT M10ES",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10BE": {
+      "new_id": "FDNT M10ET",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10BF": {
+      "new_id": "FDNT M10EU",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10BG": {
+      "new_id": "FDNT M10EV",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10BH": {
+      "new_id": "FDNT M10EW",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10BI": {
+      "new_id": "FDNT M10EX",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10BJ": {
+      "new_id": "FDNT M10EY",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10BK": {
+      "new_id": "FDNT M10EZ",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10BL": {
+      "new_id": "FDNT M10FA",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10BM": {
+      "new_id": "FDNT M10FB",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10BN": {
+      "new_id": "FDNT M10FC",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10BO": {
+      "new_id": "FDNT M10FD",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10BP": {
+      "new_id": "FDNT M10FE",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10BQ": {
+      "new_id": "FDNT M10FF",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10BR": {
+      "new_id": "FDNT M10FG",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10BS": {
+      "new_id": "FDNT M10FH",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10BT": {
+      "new_id": "FDNT M10FI",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10BU": {
+      "new_id": "FDNT M10FJ",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10BV": {
+      "new_id": "FDNT M10FK",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10BW": {
+      "new_id": "FDNT M10FL",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10BX": {
+      "new_id": "FDNT M10FM",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10BY": {
+      "new_id": "FDNT M10FN",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10BZ": {
+      "new_id": "FDNT M10FO",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10CA": {
+      "new_id": "FDNT M10FP",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10CB": {
+      "new_id": "FDNT M10FQ",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10CC": {
+      "new_id": "FDNT M10FR",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10CD": {
+      "new_id": "FDNT M10FS",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10CE": {
+      "new_id": "FDNT M10FT",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10CF": {
+      "new_id": "FDNT M10FU",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10CG": {
+      "new_id": "FDNT M10FV",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10CH": {
+      "new_id": "FDNT M10FW",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10CI": {
+      "new_id": "FDNT M10FX",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10CJ": {
+      "new_id": "FDNT M10FY",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10CK": {
+      "new_id": "FDNT M10FZ",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10CL": {
+      "new_id": "FDNT M10GA",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10CM": {
+      "new_id": "FDNT M10GB",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10CN": {
+      "new_id": "FDNT M10GC",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10CO": {
+      "new_id": "FDNT M10GD",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10CP": {
+      "new_id": "FDNT M10GE",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10CQ": {
+      "new_id": "FDNT M10GF",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10CR": {
+      "new_id": "FDNT M10GG",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10CS": {
+      "new_id": "FDNT M10CS",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10CT": {
+      "new_id": "FDNT M10CT",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10CU": {
+      "new_id": "FDNT M10CU",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10CV": {
+      "new_id": "FDNT M10CV",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10CW": {
+      "new_id": "FDNT M10CW",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10CX": {
+      "new_id": "FDNT M10CX",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10CY": {
+      "new_id": "FDNT M10CY",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10CZ": {
+      "new_id": "FDNT M10CZ",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10DA": {
+      "new_id": "FDNT M10DA",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10DB": {
+      "new_id": "FDNT M10DB",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10DC": {
+      "new_id": "FDNT M10DC",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10DD": {
+      "new_id": "FDNT M10DD",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10DE": {
+      "new_id": "FDNT M10DE",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10DF": {
+      "new_id": "FDNT M10DF",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10DG": {
+      "new_id": "FDNT M10DG",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10DH": {
+      "new_id": "FDNT M10DH",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10DI": {
+      "new_id": "FDNT M10DI",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10DJ": {
+      "new_id": "FDNT M10DJ",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10DK": {
+      "new_id": "FDNT M10DK",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10DL": {
+      "new_id": "FDNT M10DL",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10DM": {
+      "new_id": "FDNT M10DM",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10DN": {
+      "new_id": "FDNT M10DN",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M10DO": {
+      "new_id": "FDNT M10DO",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M9001": {
+      "new_id": "FDNT M9027",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M9002": {
+      "new_id": "FDNT M9028",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M9003": {
+      "new_id": "FDNT M9029",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M9004": {
+      "new_id": "FDNT M9030",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M9005": {
+      "new_id": "FDNT M9031",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M9006": {
+      "new_id": "FDNT M9032",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M9007": {
+      "new_id": "FDNT M9033",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M9008": {
+      "new_id": "FDNT M9034",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M9009": {
+      "new_id": "FDNT M9035",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M9010": {
+      "new_id": "FDNT M9036",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M9011": {
+      "new_id": "FDNT M9037",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M9012": {
+      "new_id": "FDNT M9038",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M9013": {
+      "new_id": "FDNT M9039",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M9014": {
+      "new_id": "FDNT M9040",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M9015": {
+      "new_id": "FDNT M9041",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90AA": {
+      "new_id": "FDNT M90GR",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90AB": {
+      "new_id": "FDNT M90GS",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90AC": {
+      "new_id": "FDNT M90GT",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90AD": {
+      "new_id": "FDNT M90GU",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90AE": {
+      "new_id": "FDNT M90GV",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90AF": {
+      "new_id": "FDNT M90GW",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90AG": {
+      "new_id": "FDNT M90AG",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90AH": {
+      "new_id": "FDNT M90AH",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90AI": {
+      "new_id": "FDNT M90AI",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90AJ": {
+      "new_id": "FDNT M90AJ",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90AK": {
+      "new_id": "FDNT M90AK",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90AL": {
+      "new_id": "FDNT M90AL",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90AM": {
+      "new_id": "FDNT M90AM",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90AN": {
+      "new_id": "FDNT M90AN",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90AO": {
+      "new_id": "FDNT M90AO",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90AP": {
+      "new_id": "FDNT M90AP",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90AQ": {
+      "new_id": "FDNT M90AQ",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90AR": {
+      "new_id": "FDNT M90AR",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90AS": {
+      "new_id": "FDNT M90AS",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90AT": {
+      "new_id": "FDNT M90AT",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90AU": {
+      "new_id": "FDNT M90AU",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90AV": {
+      "new_id": "FDNT M90AV",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90AW": {
+      "new_id": "FDNT M90AW",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90AX": {
+      "new_id": "FDNT M90AX",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90AY": {
+      "new_id": "FDNT M90AY",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90AZ": {
+      "new_id": "FDNT M90AZ",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90BA": {
+      "new_id": "FDNT M90BA",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90BB": {
+      "new_id": "FDNT M90BB",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90BC": {
+      "new_id": "FDNT M90BC",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90BD": {
+      "new_id": "FDNT M90BD",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90BE": {
+      "new_id": "FDNT M90BE",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90BF": {
+      "new_id": "FDNT M90BF",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90BG": {
+      "new_id": "FDNT M90BG",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90BH": {
+      "new_id": "FDNT M90BH",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90BI": {
+      "new_id": "FDNT M90BI",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90BJ": {
+      "new_id": "FDNT M90BJ",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90BK": {
+      "new_id": "FDNT M90BK",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90BL": {
+      "new_id": "FDNT M90BL",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90BM": {
+      "new_id": "FDNT M90BM",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90BN": {
+      "new_id": "FDNT M90BN",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90BO": {
+      "new_id": "FDNT M90BO",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90BP": {
+      "new_id": "FDNT M90BP",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90BQ": {
+      "new_id": "FDNT M90BQ",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90BR": {
+      "new_id": "FDNT M90BR",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90BS": {
+      "new_id": "FDNT M90BS",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90BT": {
+      "new_id": "FDNT M90BT",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90BU": {
+      "new_id": "FDNT M90BU",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90BV": {
+      "new_id": "FDNT M90BV",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90BW": {
+      "new_id": "FDNT M90BW",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90BX": {
+      "new_id": "FDNT M90BX",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90BY": {
+      "new_id": "FDNT M90BY",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90BZ": {
+      "new_id": "FDNT M90BZ",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90CA": {
+      "new_id": "FDNT M90CA",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90CB": {
+      "new_id": "FDNT M90CB",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90CC": {
+      "new_id": "FDNT M90CC",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90CD": {
+      "new_id": "FDNT M90CD",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90CE": {
+      "new_id": "FDNT M90CE",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90CF": {
+      "new_id": "FDNT M90CF",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90CG": {
+      "new_id": "FDNT M90CG",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90CH": {
+      "new_id": "FDNT M90CH",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90CI": {
+      "new_id": "FDNT M90CI",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90CJ": {
+      "new_id": "FDNT M90CJ",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90CK": {
+      "new_id": "FDNT M90CK",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90CL": {
+      "new_id": "FDNT M90CL",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90CM": {
+      "new_id": "FDNT M90CM",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90CN": {
+      "new_id": "FDNT M90CN",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90CO": {
+      "new_id": "FDNT M90CO",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90CP": {
+      "new_id": "FDNT M90CP",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90CQ": {
+      "new_id": "FDNT M90CQ",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90CR": {
+      "new_id": "FDNT M90CR",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90CS": {
+      "new_id": "FDNT M90CS",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90CT": {
+      "new_id": "FDNT M90CT",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90CU": {
+      "new_id": "FDNT M90CU",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90CV": {
+      "new_id": "FDNT M90CV",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90CW": {
+      "new_id": "FDNT M90CW",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90CX": {
+      "new_id": "FDNT M90CX",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90CY": {
+      "new_id": "FDNT M90CY",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90CZ": {
+      "new_id": "FDNT M90CZ",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90DA": {
+      "new_id": "FDNT M90DA",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90DB": {
+      "new_id": "FDNT M90DB",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90DC": {
+      "new_id": "FDNT M90DC",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90DD": {
+      "new_id": "FDNT M90DD",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90DE": {
+      "new_id": "FDNT M90DE",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90DF": {
+      "new_id": "FDNT M90DF",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90DG": {
+      "new_id": "FDNT M90DG",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90DH": {
+      "new_id": "FDNT M90DH",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90DI": {
+      "new_id": "FDNT M90DI",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90DJ": {
+      "new_id": "FDNT M90DJ",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90DK": {
+      "new_id": "FDNT M90DK",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90DL": {
+      "new_id": "FDNT M90DL",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90DM": {
+      "new_id": "FDNT M90DM",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90DN": {
+      "new_id": "FDNT M90DN",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90DO": {
+      "new_id": "FDNT M90DO",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90DP": {
+      "new_id": "FDNT M90DP",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90DQ": {
+      "new_id": "FDNT M90DQ",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90DR": {
+      "new_id": "FDNT M90DR",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90DS": {
+      "new_id": "FDNT M90DS",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90DT": {
+      "new_id": "FDNT M90DT",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90DU": {
+      "new_id": "FDNT M90DU",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90DV": {
+      "new_id": "FDNT M90DV",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90DW": {
+      "new_id": "FDNT M90DW",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90DX": {
+      "new_id": "FDNT M90DX",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90DY": {
+      "new_id": "FDNT M90DY",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90DZ": {
+      "new_id": "FDNT M90DZ",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90EA": {
+      "new_id": "FDNT M90EA",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90EB": {
+      "new_id": "FDNT M90EB",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90EC": {
+      "new_id": "FDNT M90EC",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90ED": {
+      "new_id": "FDNT M90ED",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90EE": {
+      "new_id": "FDNT M90EE",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90EF": {
+      "new_id": "FDNT M90EF",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90EG": {
+      "new_id": "FDNT M90EG",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90EH": {
+      "new_id": "FDNT M90EH",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90EI": {
+      "new_id": "FDNT M90EI",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90EJ": {
+      "new_id": "FDNT M90EJ",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90EK": {
+      "new_id": "FDNT M90EK",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90EL": {
+      "new_id": "FDNT M90EL",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90EM": {
+      "new_id": "FDNT M90EM",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90EN": {
+      "new_id": "FDNT M90EN",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90EO": {
+      "new_id": "FDNT M90EO",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90EP": {
+      "new_id": "FDNT M90EP",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90EQ": {
+      "new_id": "FDNT M90EQ",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90ER": {
+      "new_id": "FDNT M90ER",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90ES": {
+      "new_id": "FDNT M90ES",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90ET": {
+      "new_id": "FDNT M90ET",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90EU": {
+      "new_id": "FDNT M90EU",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90EV": {
+      "new_id": "FDNT M90EV",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90EW": {
+      "new_id": "FDNT M90EW",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90EX": {
+      "new_id": "FDNT M90EX",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90EY": {
+      "new_id": "FDNT M90EY",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90EZ": {
+      "new_id": "FDNT M90EZ",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90FA": {
+      "new_id": "FDNT M90FA",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90FB": {
+      "new_id": "FDNT M90FB",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90FC": {
+      "new_id": "FDNT M90FC",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90FD": {
+      "new_id": "FDNT M90FD",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90FE": {
+      "new_id": "FDNT M90FE",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90FF": {
+      "new_id": "FDNT M90FF",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90FG": {
+      "new_id": "FDNT M90FG",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90FH": {
+      "new_id": "FDNT M90FH",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90FI": {
+      "new_id": "FDNT M90FI",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90FJ": {
+      "new_id": "FDNT M90FJ",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90FK": {
+      "new_id": "FDNT M90FK",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90FL": {
+      "new_id": "FDNT M90FL",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90FM": {
+      "new_id": "FDNT M90FM",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90FN": {
+      "new_id": "FDNT M90FN",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90FO": {
+      "new_id": "FDNT M90FO",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90FP": {
+      "new_id": "FDNT M90FP",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90FQ": {
+      "new_id": "FDNT M90FQ",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90FR": {
+      "new_id": "FDNT M90FR",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90FS": {
+      "new_id": "FDNT M90FS",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90FT": {
+      "new_id": "FDNT M90FT",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90FU": {
+      "new_id": "FDNT M90FU",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90FV": {
+      "new_id": "FDNT M90FV",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90FW": {
+      "new_id": "FDNT M90FW",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90FX": {
+      "new_id": "FDNT M90FX",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90FY": {
+      "new_id": "FDNT M90FY",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90FZ": {
+      "new_id": "FDNT M90FZ",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90GA": {
+      "new_id": "FDNT M90GA",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90GB": {
+      "new_id": "FDNT M90GB",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90GC": {
+      "new_id": "FDNT M90GC",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90GD": {
+      "new_id": "FDNT M90GD",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90GE": {
+      "new_id": "FDNT M90GE",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90GF": {
+      "new_id": "FDNT M90GF",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90GG": {
+      "new_id": "FDNT M90GG",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90GH": {
+      "new_id": "FDNT M90GH",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90GI": {
+      "new_id": "FDNT M90GI",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90GJ": {
+      "new_id": "FDNT M90GJ",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90GK": {
+      "new_id": "FDNT M90GK",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90GL": {
+      "new_id": "FDNT M90GL",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90GM": {
+      "new_id": "FDNT M90GM",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90GN": {
+      "new_id": "FDNT M90GN",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90GO": {
+      "new_id": "FDNT M90GO",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90GP": {
+      "new_id": "FDNT M90GP",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "NUTR M90GQ": {
+      "new_id": "FDNT M90GQ",
+      "scope": "nutr-fold",
+      "discipline_before": "Dietetics/Nutritional Science",
+      "discipline_after": "Nutritional Science/Dietetics"
+    },
+    "PHTC M10AB": {
+      "new_id": "PHOT M10RO",
+      "scope": "phtc",
+      "discipline_before": null,
+      "discipline_after": "Photography"
+    },
+    "PHTC M10AC": {
+      "new_id": "PHOT M10RP",
+      "scope": "phtc",
+      "discipline_before": null,
+      "discipline_after": "Photography"
+    },
+    "PHTC M10AO": {
+      "new_id": "PHOT M10RQ",
+      "scope": "phtc",
+      "discipline_before": null,
+      "discipline_after": "Photography"
+    },
+    "PHTC M10AP": {
+      "new_id": "PHOT M10RR",
+      "scope": "phtc",
+      "discipline_before": null,
+      "discipline_after": "Photography"
+    },
+    "PUBR M1001": {
+      "new_id": "PREL M1001",
+      "scope": "pubr",
+      "discipline_before": null,
+      "discipline_after": "Public Relations"
+    },
+    "TOUR M1001": {
+      "new_id": "TRVL M1001",
+      "scope": "tour",
+      "discipline_before": null,
+      "discipline_after": "Travel Services"
+    },
+    "TOUR M1002": {
+      "new_id": "TRVL M1002",
+      "scope": "tour",
+      "discipline_before": null,
+      "discipline_after": "Travel Services"
+    },
+    "TOUR M1003": {
+      "new_id": "TRVL M1003",
+      "scope": "tour",
+      "discipline_before": null,
+      "discipline_after": "Travel Services"
+    },
+    "TOUR M1004": {
+      "new_id": "TRVL M1004",
+      "scope": "tour",
+      "discipline_before": null,
+      "discipline_after": "Travel Services"
+    },
+    "TOUR M10AA": {
+      "new_id": "TRVL M10AA",
+      "scope": "tour",
+      "discipline_before": null,
+      "discipline_after": "Travel Services"
+    },
+    "TOUR M10AB": {
+      "new_id": "TRVL M10AB",
+      "scope": "tour",
+      "discipline_before": null,
+      "discipline_after": "Travel Services"
+    },
+    "TOUR M10AC": {
+      "new_id": "TRVL M10AC",
+      "scope": "tour",
+      "discipline_before": null,
+      "discipline_after": "Travel Services"
+    },
+    "TOUR M10AD": {
+      "new_id": "TRVL M10AD",
+      "scope": "tour",
+      "discipline_before": null,
+      "discipline_after": "Travel Services"
+    },
+    "TOUR M10AE": {
+      "new_id": "TRVL M10AE",
+      "scope": "tour",
+      "discipline_before": null,
+      "discipline_after": "Travel Services"
+    },
+    "TOUR M10AF": {
+      "new_id": "TRVL M10AF",
+      "scope": "tour",
+      "discipline_before": null,
+      "discipline_after": "Travel Services"
+    },
+    "TOUR M10AG": {
+      "new_id": "TRVL M10AG",
+      "scope": "tour",
+      "discipline_before": null,
+      "discipline_after": "Travel Services"
+    },
+    "TOUR M10AH": {
+      "new_id": "TRVL M10AH",
+      "scope": "tour",
+      "discipline_before": null,
+      "discipline_after": "Travel Services"
+    }
+  },
+  "_counts": {
+    "courses": 60,
+    "singletons": 286,
+    "articulations": 7,
+    "identities": 6,
+    "pointers": 57,
+    "curation_keys": 84
+  },
+  "_person_rows_changed": [
+    "filing:_SUBJ_DISC::NF",
+    "filing:_SUBJ_DISC::NUTR",
+    "filing:_SUBJ_DISC::NUTRI",
+    "filing:_SUBJ_DISC::NUTRTN",
+    "seed:Dietetics/Nutritional Science"
+  ],
+  "_person_ok": [
+    "seed:Dietetics/Nutritional Science",
+    "filing:_SUBJ_DISC::NF",
+    "filing:_SUBJ_DISC::NUTR",
+    "filing:_SUBJ_DISC::NUTRI",
+    "filing:_SUBJ_DISC::NUTRTN"
+  ],
+  "_gates": {
+    "P1_matches_the_dry_run": true,
+    "P1_dry_run_gates_pass": true,
+    "P1_every_move_answered": true,
+    "V1_conservation": true,
+    "V3_discipline_follows_route": true,
+    "V4_articulations": true,
+    "V5_nothing_left_on_an_old_id": true,
+    "P2_no_identity_dropped": true,
+    "P3_aern_alone": true,
+    "P4_person_rows_only_the_ok_list": true
+  },
+  "_kb_curation_rows": 101,
+  "_migration": "kb/migrations/2026-11-28_s749_remint_kb_curation_{preread,apply,rollback}.sql"
+}

@@ -1,0 +1,4134 @@
+{
+  "_what": "Every before-value the S749 re-mint apply overwrote; kb/_alignment_remint_apply.py --rollback restores those bytes. git revert of the land restores the rest.",
+  "_at": "2026-11-28T15:57:41+00:00",
+  "records": {
+    "PREL M1001": {
+      "source": "courses",
+      "old_id": "PUBR M1001",
+      "before": {
+        "course_id": "PUBR M1001",
+        "subject_4letter": "PUBR",
+        "discipline": null
+      },
+      "absent": []
+    },
+    "FDNT M1057": {
+      "source": "courses",
+      "old_id": "NUTR M1012",
+      "before": {
+        "course_id": "NUTR M1012",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M1056": {
+      "source": "courses",
+      "old_id": "NUTR M1011",
+      "before": {
+        "course_id": "NUTR M1011",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M1063": {
+      "source": "courses",
+      "old_id": "NUTR M1018",
+      "before": {
+        "course_id": "NUTR M1018",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M1029": {
+      "source": "courses",
+      "old_id": "NUTR M1029",
+      "before": {
+        "course_id": "NUTR M1029",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M1023": {
+      "source": "courses",
+      "old_id": "NUTR M1023",
+      "before": {
+        "course_id": "NUTR M1023",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M1062": {
+      "source": "courses",
+      "old_id": "NUTR M1017",
+      "before": {
+        "course_id": "NUTR M1017",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M1037": {
+      "source": "courses",
+      "old_id": "NUTR M1037",
+      "before": {
+        "course_id": "NUTR M1037",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M9029": {
+      "source": "courses",
+      "old_id": "NUTR M9003",
+      "before": {
+        "course_id": "NUTR M9003",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M9032": {
+      "source": "courses",
+      "old_id": "NUTR M9006",
+      "before": {
+        "course_id": "NUTR M9006",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M9030": {
+      "source": "courses",
+      "old_id": "NUTR M9004",
+      "before": {
+        "course_id": "NUTR M9004",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M9031": {
+      "source": "courses",
+      "old_id": "NUTR M9005",
+      "before": {
+        "course_id": "NUTR M9005",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M1028": {
+      "source": "courses",
+      "old_id": "NUTR M1028",
+      "before": {
+        "course_id": "NUTR M1028",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M1049": {
+      "source": "courses",
+      "old_id": "NUTR M1003",
+      "before": {
+        "course_id": "NUTR M1003",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M1052": {
+      "source": "courses",
+      "old_id": "NUTR M1006",
+      "before": {
+        "course_id": "NUTR M1006",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M1027": {
+      "source": "courses",
+      "old_id": "NUTR M1027",
+      "before": {
+        "course_id": "NUTR M1027",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M1051": {
+      "source": "courses",
+      "old_id": "NUTR M1005",
+      "before": {
+        "course_id": "NUTR M1005",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M1058": {
+      "source": "courses",
+      "old_id": "NUTR M1013",
+      "before": {
+        "course_id": "NUTR M1013",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M1042": {
+      "source": "courses",
+      "old_id": "NUTR M1001",
+      "before": {
+        "course_id": "NUTR M1001",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M1047": {
+      "source": "courses",
+      "old_id": "NUTR M1002",
+      "before": {
+        "course_id": "NUTR M1002",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M1053": {
+      "source": "courses",
+      "old_id": "NUTR M1007",
+      "before": {
+        "course_id": "NUTR M1007",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M1054": {
+      "source": "courses",
+      "old_id": "NUTR M1008",
+      "before": {
+        "course_id": "NUTR M1008",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M1059": {
+      "source": "courses",
+      "old_id": "NUTR M1014",
+      "before": {
+        "course_id": "NUTR M1014",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M1060": {
+      "source": "courses",
+      "old_id": "NUTR M1015",
+      "before": {
+        "course_id": "NUTR M1015",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M1064": {
+      "source": "courses",
+      "old_id": "NUTR M1019",
+      "before": {
+        "course_id": "NUTR M1019",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M1061": {
+      "source": "courses",
+      "old_id": "NUTR M1016",
+      "before": {
+        "course_id": "NUTR M1016",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M1026": {
+      "source": "courses",
+      "old_id": "NUTR M1026",
+      "before": {
+        "course_id": "NUTR M1026",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M1030": {
+      "source": "courses",
+      "old_id": "NUTR M1030",
+      "before": {
+        "course_id": "NUTR M1030",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M1024": {
+      "source": "courses",
+      "old_id": "NUTR M1024",
+      "before": {
+        "course_id": "NUTR M1024",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M1031": {
+      "source": "courses",
+      "old_id": "NUTR M1031",
+      "before": {
+        "course_id": "NUTR M1031",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M1032": {
+      "source": "courses",
+      "old_id": "NUTR M1032",
+      "before": {
+        "course_id": "NUTR M1032",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M1034": {
+      "source": "courses",
+      "old_id": "NUTR M1034",
+      "before": {
+        "course_id": "NUTR M1034",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M1065": {
+      "source": "courses",
+      "old_id": "NUTR M1021",
+      "before": {
+        "course_id": "NUTR M1021",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M1066": {
+      "source": "courses",
+      "old_id": "NUTR M1022",
+      "before": {
+        "course_id": "NUTR M1022",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M1035": {
+      "source": "courses",
+      "old_id": "NUTR M1035",
+      "before": {
+        "course_id": "NUTR M1035",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M1033": {
+      "source": "courses",
+      "old_id": "NUTR M1033",
+      "before": {
+        "course_id": "NUTR M1033",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M1050": {
+      "source": "courses",
+      "old_id": "NUTR M1004",
+      "before": {
+        "course_id": "NUTR M1004",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M1036": {
+      "source": "courses",
+      "old_id": "NUTR M1036",
+      "before": {
+        "course_id": "NUTR M1036",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M1025": {
+      "source": "courses",
+      "old_id": "NUTR M1025",
+      "before": {
+        "course_id": "NUTR M1025",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M1055": {
+      "source": "courses",
+      "old_id": "NUTR M1009",
+      "before": {
+        "course_id": "NUTR M1009",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M1038": {
+      "source": "courses",
+      "old_id": "NUTR M1038",
+      "before": {
+        "course_id": "NUTR M1038",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M1039": {
+      "source": "courses",
+      "old_id": "NUTR M1039",
+      "before": {
+        "course_id": "NUTR M1039",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M9033": {
+      "source": "courses",
+      "old_id": "NUTR M9007",
+      "before": {
+        "course_id": "NUTR M9007",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M9028": {
+      "source": "courses",
+      "old_id": "NUTR M9002",
+      "before": {
+        "course_id": "NUTR M9002",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M9027": {
+      "source": "courses",
+      "old_id": "NUTR M9001",
+      "before": {
+        "course_id": "NUTR M9001",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "MILS M1001": {
+      "source": "courses",
+      "old_id": "AERO M1001",
+      "before": {
+        "course_id": "AERO M1001",
+        "subject_4letter": "AERO",
+        "discipline": null
+      },
+      "absent": []
+    },
+    "FDNT M1040": {
+      "source": "courses",
+      "old_id": "NUTR M1040",
+      "before": {
+        "course_id": "NUTR M1040",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M1041": {
+      "source": "courses",
+      "old_id": "NUTR M1041",
+      "before": {
+        "course_id": "NUTR M1041",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M9034": {
+      "source": "courses",
+      "old_id": "NUTR M9008",
+      "before": {
+        "course_id": "NUTR M9008",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M9035": {
+      "source": "courses",
+      "old_id": "NUTR M9009",
+      "before": {
+        "course_id": "NUTR M9009",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M9036": {
+      "source": "courses",
+      "old_id": "NUTR M9010",
+      "before": {
+        "course_id": "NUTR M9010",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M9037": {
+      "source": "courses",
+      "old_id": "NUTR M9011",
+      "before": {
+        "course_id": "NUTR M9011",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M9038": {
+      "source": "courses",
+      "old_id": "NUTR M9012",
+      "before": {
+        "course_id": "NUTR M9012",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M9039": {
+      "source": "courses",
+      "old_id": "NUTR M9013",
+      "before": {
+        "course_id": "NUTR M9013",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M9040": {
+      "source": "courses",
+      "old_id": "NUTR M9014",
+      "before": {
+        "course_id": "NUTR M9014",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M9041": {
+      "source": "courses",
+      "old_id": "NUTR M9015",
+      "before": {
+        "course_id": "NUTR M9015",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "TRVL M1001": {
+      "source": "courses",
+      "old_id": "TOUR M1001",
+      "before": {
+        "course_id": "TOUR M1001",
+        "subject_4letter": "TOUR",
+        "discipline": null
+      },
+      "absent": []
+    },
+    "TRVL M1002": {
+      "source": "courses",
+      "old_id": "TOUR M1002",
+      "before": {
+        "course_id": "TOUR M1002",
+        "subject_4letter": "TOUR",
+        "discipline": null
+      },
+      "absent": []
+    },
+    "TRVL M1003": {
+      "source": "courses",
+      "old_id": "TOUR M1003",
+      "before": {
+        "course_id": "TOUR M1003",
+        "subject_4letter": "TOUR",
+        "discipline": null
+      },
+      "absent": []
+    },
+    "TRVL M1004": {
+      "source": "courses",
+      "old_id": "TOUR M1004",
+      "before": {
+        "course_id": "TOUR M1004",
+        "subject_4letter": "TOUR",
+        "discipline": null
+      },
+      "absent": []
+    },
+    "MILS M10AW": {
+      "source": "singletons",
+      "old_id": "AERO M10AW",
+      "before": {
+        "course_id": "AERO M10AW",
+        "subject_4letter": "AERO",
+        "discipline": null
+      },
+      "absent": []
+    },
+    "MILS M10AX": {
+      "source": "singletons",
+      "old_id": "AERO M10AX",
+      "before": {
+        "course_id": "AERO M10AX",
+        "subject_4letter": "AERO",
+        "discipline": null
+      },
+      "absent": []
+    },
+    "MILS M10AY": {
+      "source": "singletons",
+      "old_id": "AERO M10AY",
+      "before": {
+        "course_id": "AERO M10AY",
+        "subject_4letter": "AERO",
+        "discipline": null
+      },
+      "absent": []
+    },
+    "MILS M10AZ": {
+      "source": "singletons",
+      "old_id": "AERO M10AZ",
+      "before": {
+        "course_id": "AERO M10AZ",
+        "subject_4letter": "AERO",
+        "discipline": null
+      },
+      "absent": []
+    },
+    "MILS M10BA": {
+      "source": "singletons",
+      "old_id": "AERO M10BA",
+      "before": {
+        "course_id": "AERO M10BA",
+        "subject_4letter": "AERO",
+        "discipline": null
+      },
+      "absent": []
+    },
+    "MILS M10BB": {
+      "source": "singletons",
+      "old_id": "AERO M10BB",
+      "before": {
+        "course_id": "AERO M10BB",
+        "subject_4letter": "AERO",
+        "discipline": null
+      },
+      "absent": []
+    },
+    "MILS M10BC": {
+      "source": "singletons",
+      "old_id": "AERO M10BC",
+      "before": {
+        "course_id": "AERO M10BC",
+        "subject_4letter": "AERO",
+        "discipline": null
+      },
+      "absent": []
+    },
+    "MILS M10BD": {
+      "source": "singletons",
+      "old_id": "AERO M10BD",
+      "before": {
+        "course_id": "AERO M10BD",
+        "subject_4letter": "AERO",
+        "discipline": null
+      },
+      "absent": []
+    },
+    "PHOT M10RO": {
+      "source": "singletons",
+      "old_id": "PHTC M10AB",
+      "before": {
+        "course_id": "PHTC M10AB",
+        "subject_4letter": "PHTC",
+        "discipline": null
+      },
+      "absent": []
+    },
+    "PHOT M10RP": {
+      "source": "singletons",
+      "old_id": "PHTC M10AC",
+      "before": {
+        "course_id": "PHTC M10AC",
+        "subject_4letter": "PHTC",
+        "discipline": null
+      },
+      "absent": []
+    },
+    "PHOT M10RQ": {
+      "source": "singletons",
+      "old_id": "PHTC M10AO",
+      "before": {
+        "course_id": "PHTC M10AO",
+        "subject_4letter": "PHTC",
+        "discipline": null
+      },
+      "absent": []
+    },
+    "PHOT M10RR": {
+      "source": "singletons",
+      "old_id": "PHTC M10AP",
+      "before": {
+        "course_id": "PHTC M10AP",
+        "subject_4letter": "PHTC",
+        "discipline": null
+      },
+      "absent": []
+    },
+    "TRVL M10AA": {
+      "source": "singletons",
+      "old_id": "TOUR M10AA",
+      "before": {
+        "course_id": "TOUR M10AA",
+        "subject_4letter": "TOUR",
+        "discipline": null
+      },
+      "absent": []
+    },
+    "TRVL M10AB": {
+      "source": "singletons",
+      "old_id": "TOUR M10AB",
+      "before": {
+        "course_id": "TOUR M10AB",
+        "subject_4letter": "TOUR",
+        "discipline": null
+      },
+      "absent": []
+    },
+    "TRVL M10AC": {
+      "source": "singletons",
+      "old_id": "TOUR M10AC",
+      "before": {
+        "course_id": "TOUR M10AC",
+        "subject_4letter": "TOUR",
+        "discipline": null
+      },
+      "absent": []
+    },
+    "TRVL M10AD": {
+      "source": "singletons",
+      "old_id": "TOUR M10AD",
+      "before": {
+        "course_id": "TOUR M10AD",
+        "subject_4letter": "TOUR",
+        "discipline": null
+      },
+      "absent": []
+    },
+    "TRVL M10AE": {
+      "source": "singletons",
+      "old_id": "TOUR M10AE",
+      "before": {
+        "course_id": "TOUR M10AE",
+        "subject_4letter": "TOUR",
+        "discipline": null
+      },
+      "absent": []
+    },
+    "TRVL M10AF": {
+      "source": "singletons",
+      "old_id": "TOUR M10AF",
+      "before": {
+        "course_id": "TOUR M10AF",
+        "subject_4letter": "TOUR",
+        "discipline": null
+      },
+      "absent": []
+    },
+    "TRVL M10AG": {
+      "source": "singletons",
+      "old_id": "TOUR M10AG",
+      "before": {
+        "course_id": "TOUR M10AG",
+        "subject_4letter": "TOUR",
+        "discipline": null
+      },
+      "absent": []
+    },
+    "TRVL M10AH": {
+      "source": "singletons",
+      "old_id": "TOUR M10AH",
+      "before": {
+        "course_id": "TOUR M10AH",
+        "subject_4letter": "TOUR",
+        "discipline": null
+      },
+      "absent": []
+    },
+    "FDNT M10DS": {
+      "source": "singletons",
+      "old_id": "NUTR M10AD",
+      "before": {
+        "course_id": "NUTR M10AD",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10FV": {
+      "source": "singletons",
+      "old_id": "NUTR M10CG",
+      "before": {
+        "course_id": "NUTR M10CG",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10EQ": {
+      "source": "singletons",
+      "old_id": "NUTR M10BB",
+      "before": {
+        "course_id": "NUTR M10BB",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10FG": {
+      "source": "singletons",
+      "old_id": "NUTR M10BR",
+      "before": {
+        "course_id": "NUTR M10BR",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10FT": {
+      "source": "singletons",
+      "old_id": "NUTR M10CE",
+      "before": {
+        "course_id": "NUTR M10CE",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10FE": {
+      "source": "singletons",
+      "old_id": "NUTR M10BP",
+      "before": {
+        "course_id": "NUTR M10BP",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10EO": {
+      "source": "singletons",
+      "old_id": "NUTR M10AZ",
+      "before": {
+        "course_id": "NUTR M10AZ",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10EZ": {
+      "source": "singletons",
+      "old_id": "NUTR M10BK",
+      "before": {
+        "course_id": "NUTR M10BK",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10DF": {
+      "source": "singletons",
+      "old_id": "NUTR M10DF",
+      "before": {
+        "course_id": "NUTR M10DF",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10EK": {
+      "source": "singletons",
+      "old_id": "NUTR M10AV",
+      "before": {
+        "course_id": "NUTR M10AV",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10GB": {
+      "source": "singletons",
+      "old_id": "NUTR M10CM",
+      "before": {
+        "course_id": "NUTR M10CM",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10DG": {
+      "source": "singletons",
+      "old_id": "NUTR M10DG",
+      "before": {
+        "course_id": "NUTR M10DG",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10ER": {
+      "source": "singletons",
+      "old_id": "NUTR M10BC",
+      "before": {
+        "course_id": "NUTR M10BC",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90GC": {
+      "source": "singletons",
+      "old_id": "NUTR M90GC",
+      "before": {
+        "course_id": "NUTR M90GC",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90GO": {
+      "source": "singletons",
+      "old_id": "NUTR M90GO",
+      "before": {
+        "course_id": "NUTR M90GO",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90DI": {
+      "source": "singletons",
+      "old_id": "NUTR M90DI",
+      "before": {
+        "course_id": "NUTR M90DI",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90FY": {
+      "source": "singletons",
+      "old_id": "NUTR M90FY",
+      "before": {
+        "course_id": "NUTR M90FY",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90FC": {
+      "source": "singletons",
+      "old_id": "NUTR M90FC",
+      "before": {
+        "course_id": "NUTR M90FC",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90BQ": {
+      "source": "singletons",
+      "old_id": "NUTR M90BQ",
+      "before": {
+        "course_id": "NUTR M90BQ",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90GF": {
+      "source": "singletons",
+      "old_id": "NUTR M90GF",
+      "before": {
+        "course_id": "NUTR M90GF",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90AJ": {
+      "source": "singletons",
+      "old_id": "NUTR M90AJ",
+      "before": {
+        "course_id": "NUTR M90AJ",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90AQ": {
+      "source": "singletons",
+      "old_id": "NUTR M90AQ",
+      "before": {
+        "course_id": "NUTR M90AQ",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90AT": {
+      "source": "singletons",
+      "old_id": "NUTR M90AT",
+      "before": {
+        "course_id": "NUTR M90AT",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90AW": {
+      "source": "singletons",
+      "old_id": "NUTR M90AW",
+      "before": {
+        "course_id": "NUTR M90AW",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90BB": {
+      "source": "singletons",
+      "old_id": "NUTR M90BB",
+      "before": {
+        "course_id": "NUTR M90BB",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90BD": {
+      "source": "singletons",
+      "old_id": "NUTR M90BD",
+      "before": {
+        "course_id": "NUTR M90BD",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90BF": {
+      "source": "singletons",
+      "old_id": "NUTR M90BF",
+      "before": {
+        "course_id": "NUTR M90BF",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90BG": {
+      "source": "singletons",
+      "old_id": "NUTR M90BG",
+      "before": {
+        "course_id": "NUTR M90BG",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90BH": {
+      "source": "singletons",
+      "old_id": "NUTR M90BH",
+      "before": {
+        "course_id": "NUTR M90BH",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90BL": {
+      "source": "singletons",
+      "old_id": "NUTR M90BL",
+      "before": {
+        "course_id": "NUTR M90BL",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90BM": {
+      "source": "singletons",
+      "old_id": "NUTR M90BM",
+      "before": {
+        "course_id": "NUTR M90BM",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90BN": {
+      "source": "singletons",
+      "old_id": "NUTR M90BN",
+      "before": {
+        "course_id": "NUTR M90BN",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90BV": {
+      "source": "singletons",
+      "old_id": "NUTR M90BV",
+      "before": {
+        "course_id": "NUTR M90BV",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90BZ": {
+      "source": "singletons",
+      "old_id": "NUTR M90BZ",
+      "before": {
+        "course_id": "NUTR M90BZ",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90BA": {
+      "source": "singletons",
+      "old_id": "NUTR M90BA",
+      "before": {
+        "course_id": "NUTR M90BA",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90CA": {
+      "source": "singletons",
+      "old_id": "NUTR M90CA",
+      "before": {
+        "course_id": "NUTR M90CA",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90CB": {
+      "source": "singletons",
+      "old_id": "NUTR M90CB",
+      "before": {
+        "course_id": "NUTR M90CB",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90AH": {
+      "source": "singletons",
+      "old_id": "NUTR M90AH",
+      "before": {
+        "course_id": "NUTR M90AH",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90CC": {
+      "source": "singletons",
+      "old_id": "NUTR M90CC",
+      "before": {
+        "course_id": "NUTR M90CC",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90CE": {
+      "source": "singletons",
+      "old_id": "NUTR M90CE",
+      "before": {
+        "course_id": "NUTR M90CE",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90CI": {
+      "source": "singletons",
+      "old_id": "NUTR M90CI",
+      "before": {
+        "course_id": "NUTR M90CI",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90CK": {
+      "source": "singletons",
+      "old_id": "NUTR M90CK",
+      "before": {
+        "course_id": "NUTR M90CK",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90CL": {
+      "source": "singletons",
+      "old_id": "NUTR M90CL",
+      "before": {
+        "course_id": "NUTR M90CL",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90CM": {
+      "source": "singletons",
+      "old_id": "NUTR M90CM",
+      "before": {
+        "course_id": "NUTR M90CM",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90CO": {
+      "source": "singletons",
+      "old_id": "NUTR M90CO",
+      "before": {
+        "course_id": "NUTR M90CO",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90CN": {
+      "source": "singletons",
+      "old_id": "NUTR M90CN",
+      "before": {
+        "course_id": "NUTR M90CN",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90CP": {
+      "source": "singletons",
+      "old_id": "NUTR M90CP",
+      "before": {
+        "course_id": "NUTR M90CP",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90CQ": {
+      "source": "singletons",
+      "old_id": "NUTR M90CQ",
+      "before": {
+        "course_id": "NUTR M90CQ",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90CR": {
+      "source": "singletons",
+      "old_id": "NUTR M90CR",
+      "before": {
+        "course_id": "NUTR M90CR",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90CT": {
+      "source": "singletons",
+      "old_id": "NUTR M90CT",
+      "before": {
+        "course_id": "NUTR M90CT",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90CU": {
+      "source": "singletons",
+      "old_id": "NUTR M90CU",
+      "before": {
+        "course_id": "NUTR M90CU",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90CV": {
+      "source": "singletons",
+      "old_id": "NUTR M90CV",
+      "before": {
+        "course_id": "NUTR M90CV",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90CX": {
+      "source": "singletons",
+      "old_id": "NUTR M90CX",
+      "before": {
+        "course_id": "NUTR M90CX",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90DB": {
+      "source": "singletons",
+      "old_id": "NUTR M90DB",
+      "before": {
+        "course_id": "NUTR M90DB",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90CZ": {
+      "source": "singletons",
+      "old_id": "NUTR M90CZ",
+      "before": {
+        "course_id": "NUTR M90CZ",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90DF": {
+      "source": "singletons",
+      "old_id": "NUTR M90DF",
+      "before": {
+        "course_id": "NUTR M90DF",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90DG": {
+      "source": "singletons",
+      "old_id": "NUTR M90DG",
+      "before": {
+        "course_id": "NUTR M90DG",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90DV": {
+      "source": "singletons",
+      "old_id": "NUTR M90DV",
+      "before": {
+        "course_id": "NUTR M90DV",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90DO": {
+      "source": "singletons",
+      "old_id": "NUTR M90DO",
+      "before": {
+        "course_id": "NUTR M90DO",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90DW": {
+      "source": "singletons",
+      "old_id": "NUTR M90DW",
+      "before": {
+        "course_id": "NUTR M90DW",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90DK": {
+      "source": "singletons",
+      "old_id": "NUTR M90DK",
+      "before": {
+        "course_id": "NUTR M90DK",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90BO": {
+      "source": "singletons",
+      "old_id": "NUTR M90BO",
+      "before": {
+        "course_id": "NUTR M90BO",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90DY": {
+      "source": "singletons",
+      "old_id": "NUTR M90DY",
+      "before": {
+        "course_id": "NUTR M90DY",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90BT": {
+      "source": "singletons",
+      "old_id": "NUTR M90BT",
+      "before": {
+        "course_id": "NUTR M90BT",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90DA": {
+      "source": "singletons",
+      "old_id": "NUTR M90DA",
+      "before": {
+        "course_id": "NUTR M90DA",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90DZ": {
+      "source": "singletons",
+      "old_id": "NUTR M90DZ",
+      "before": {
+        "course_id": "NUTR M90DZ",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90EG": {
+      "source": "singletons",
+      "old_id": "NUTR M90EG",
+      "before": {
+        "course_id": "NUTR M90EG",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90EJ": {
+      "source": "singletons",
+      "old_id": "NUTR M90EJ",
+      "before": {
+        "course_id": "NUTR M90EJ",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90EK": {
+      "source": "singletons",
+      "old_id": "NUTR M90EK",
+      "before": {
+        "course_id": "NUTR M90EK",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90EN": {
+      "source": "singletons",
+      "old_id": "NUTR M90EN",
+      "before": {
+        "course_id": "NUTR M90EN",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90EP": {
+      "source": "singletons",
+      "old_id": "NUTR M90EP",
+      "before": {
+        "course_id": "NUTR M90EP",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90EO": {
+      "source": "singletons",
+      "old_id": "NUTR M90EO",
+      "before": {
+        "course_id": "NUTR M90EO",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90EQ": {
+      "source": "singletons",
+      "old_id": "NUTR M90EQ",
+      "before": {
+        "course_id": "NUTR M90EQ",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90BW": {
+      "source": "singletons",
+      "old_id": "NUTR M90BW",
+      "before": {
+        "course_id": "NUTR M90BW",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90EX": {
+      "source": "singletons",
+      "old_id": "NUTR M90EX",
+      "before": {
+        "course_id": "NUTR M90EX",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90EY": {
+      "source": "singletons",
+      "old_id": "NUTR M90EY",
+      "before": {
+        "course_id": "NUTR M90EY",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90GU": {
+      "source": "singletons",
+      "old_id": "NUTR M90AD",
+      "before": {
+        "course_id": "NUTR M90AD",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90EA": {
+      "source": "singletons",
+      "old_id": "NUTR M90EA",
+      "before": {
+        "course_id": "NUTR M90EA",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90FA": {
+      "source": "singletons",
+      "old_id": "NUTR M90FA",
+      "before": {
+        "course_id": "NUTR M90FA",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90DN": {
+      "source": "singletons",
+      "old_id": "NUTR M90DN",
+      "before": {
+        "course_id": "NUTR M90DN",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90BK": {
+      "source": "singletons",
+      "old_id": "NUTR M90BK",
+      "before": {
+        "course_id": "NUTR M90BK",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90FF": {
+      "source": "singletons",
+      "old_id": "NUTR M90FF",
+      "before": {
+        "course_id": "NUTR M90FF",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90EV": {
+      "source": "singletons",
+      "old_id": "NUTR M90EV",
+      "before": {
+        "course_id": "NUTR M90EV",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90ES": {
+      "source": "singletons",
+      "old_id": "NUTR M90ES",
+      "before": {
+        "course_id": "NUTR M90ES",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90GG": {
+      "source": "singletons",
+      "old_id": "NUTR M90GG",
+      "before": {
+        "course_id": "NUTR M90GG",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90CG": {
+      "source": "singletons",
+      "old_id": "NUTR M90CG",
+      "before": {
+        "course_id": "NUTR M90CG",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90CH": {
+      "source": "singletons",
+      "old_id": "NUTR M90CH",
+      "before": {
+        "course_id": "NUTR M90CH",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90AK": {
+      "source": "singletons",
+      "old_id": "NUTR M90AK",
+      "before": {
+        "course_id": "NUTR M90AK",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90FJ": {
+      "source": "singletons",
+      "old_id": "NUTR M90FJ",
+      "before": {
+        "course_id": "NUTR M90FJ",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90CF": {
+      "source": "singletons",
+      "old_id": "NUTR M90CF",
+      "before": {
+        "course_id": "NUTR M90CF",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90DM": {
+      "source": "singletons",
+      "old_id": "NUTR M90DM",
+      "before": {
+        "course_id": "NUTR M90DM",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90FO": {
+      "source": "singletons",
+      "old_id": "NUTR M90FO",
+      "before": {
+        "course_id": "NUTR M90FO",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90FP": {
+      "source": "singletons",
+      "old_id": "NUTR M90FP",
+      "before": {
+        "course_id": "NUTR M90FP",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90BP": {
+      "source": "singletons",
+      "old_id": "NUTR M90BP",
+      "before": {
+        "course_id": "NUTR M90BP",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90AR": {
+      "source": "singletons",
+      "old_id": "NUTR M90AR",
+      "before": {
+        "course_id": "NUTR M90AR",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90DJ": {
+      "source": "singletons",
+      "old_id": "NUTR M90DJ",
+      "before": {
+        "course_id": "NUTR M90DJ",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90FU": {
+      "source": "singletons",
+      "old_id": "NUTR M90FU",
+      "before": {
+        "course_id": "NUTR M90FU",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90FV": {
+      "source": "singletons",
+      "old_id": "NUTR M90FV",
+      "before": {
+        "course_id": "NUTR M90FV",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90DP": {
+      "source": "singletons",
+      "old_id": "NUTR M90DP",
+      "before": {
+        "course_id": "NUTR M90DP",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90GW": {
+      "source": "singletons",
+      "old_id": "NUTR M90AF",
+      "before": {
+        "course_id": "NUTR M90AF",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90BJ": {
+      "source": "singletons",
+      "old_id": "NUTR M90BJ",
+      "before": {
+        "course_id": "NUTR M90BJ",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90FW": {
+      "source": "singletons",
+      "old_id": "NUTR M90FW",
+      "before": {
+        "course_id": "NUTR M90FW",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90DQ": {
+      "source": "singletons",
+      "old_id": "NUTR M90DQ",
+      "before": {
+        "course_id": "NUTR M90DQ",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90CD": {
+      "source": "singletons",
+      "old_id": "NUTR M90CD",
+      "before": {
+        "course_id": "NUTR M90CD",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90BE": {
+      "source": "singletons",
+      "old_id": "NUTR M90BE",
+      "before": {
+        "course_id": "NUTR M90BE",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90CJ": {
+      "source": "singletons",
+      "old_id": "NUTR M90CJ",
+      "before": {
+        "course_id": "NUTR M90CJ",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90AS": {
+      "source": "singletons",
+      "old_id": "NUTR M90AS",
+      "before": {
+        "course_id": "NUTR M90AS",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90EW": {
+      "source": "singletons",
+      "old_id": "NUTR M90EW",
+      "before": {
+        "course_id": "NUTR M90EW",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90FZ": {
+      "source": "singletons",
+      "old_id": "NUTR M90FZ",
+      "before": {
+        "course_id": "NUTR M90FZ",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90DS": {
+      "source": "singletons",
+      "old_id": "NUTR M90DS",
+      "before": {
+        "course_id": "NUTR M90DS",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90EE": {
+      "source": "singletons",
+      "old_id": "NUTR M90EE",
+      "before": {
+        "course_id": "NUTR M90EE",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90EU": {
+      "source": "singletons",
+      "old_id": "NUTR M90EU",
+      "before": {
+        "course_id": "NUTR M90EU",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90GB": {
+      "source": "singletons",
+      "old_id": "NUTR M90GB",
+      "before": {
+        "course_id": "NUTR M90GB",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90GA": {
+      "source": "singletons",
+      "old_id": "NUTR M90GA",
+      "before": {
+        "course_id": "NUTR M90GA",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90DT": {
+      "source": "singletons",
+      "old_id": "NUTR M90DT",
+      "before": {
+        "course_id": "NUTR M90DT",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90AL": {
+      "source": "singletons",
+      "old_id": "NUTR M90AL",
+      "before": {
+        "course_id": "NUTR M90AL",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90FD": {
+      "source": "singletons",
+      "old_id": "NUTR M90FD",
+      "before": {
+        "course_id": "NUTR M90FD",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90AY": {
+      "source": "singletons",
+      "old_id": "NUTR M90AY",
+      "before": {
+        "course_id": "NUTR M90AY",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90GE": {
+      "source": "singletons",
+      "old_id": "NUTR M90GE",
+      "before": {
+        "course_id": "NUTR M90GE",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90BI": {
+      "source": "singletons",
+      "old_id": "NUTR M90BI",
+      "before": {
+        "course_id": "NUTR M90BI",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90EL": {
+      "source": "singletons",
+      "old_id": "NUTR M90EL",
+      "before": {
+        "course_id": "NUTR M90EL",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90EB": {
+      "source": "singletons",
+      "old_id": "NUTR M90EB",
+      "before": {
+        "course_id": "NUTR M90EB",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90DX": {
+      "source": "singletons",
+      "old_id": "NUTR M90DX",
+      "before": {
+        "course_id": "NUTR M90DX",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90FH": {
+      "source": "singletons",
+      "old_id": "NUTR M90FH",
+      "before": {
+        "course_id": "NUTR M90FH",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90FT": {
+      "source": "singletons",
+      "old_id": "NUTR M90FT",
+      "before": {
+        "course_id": "NUTR M90FT",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90BU": {
+      "source": "singletons",
+      "old_id": "NUTR M90BU",
+      "before": {
+        "course_id": "NUTR M90BU",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90EC": {
+      "source": "singletons",
+      "old_id": "NUTR M90EC",
+      "before": {
+        "course_id": "NUTR M90EC",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90AO": {
+      "source": "singletons",
+      "old_id": "NUTR M90AO",
+      "before": {
+        "course_id": "NUTR M90AO",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90BY": {
+      "source": "singletons",
+      "old_id": "NUTR M90BY",
+      "before": {
+        "course_id": "NUTR M90BY",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90FQ": {
+      "source": "singletons",
+      "old_id": "NUTR M90FQ",
+      "before": {
+        "course_id": "NUTR M90FQ",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90FE": {
+      "source": "singletons",
+      "old_id": "NUTR M90FE",
+      "before": {
+        "course_id": "NUTR M90FE",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90DU": {
+      "source": "singletons",
+      "old_id": "NUTR M90DU",
+      "before": {
+        "course_id": "NUTR M90DU",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90EZ": {
+      "source": "singletons",
+      "old_id": "NUTR M90EZ",
+      "before": {
+        "course_id": "NUTR M90EZ",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90GH": {
+      "source": "singletons",
+      "old_id": "NUTR M90GH",
+      "before": {
+        "course_id": "NUTR M90GH",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90FR": {
+      "source": "singletons",
+      "old_id": "NUTR M90FR",
+      "before": {
+        "course_id": "NUTR M90FR",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90AN": {
+      "source": "singletons",
+      "old_id": "NUTR M90AN",
+      "before": {
+        "course_id": "NUTR M90AN",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90FS": {
+      "source": "singletons",
+      "old_id": "NUTR M90FS",
+      "before": {
+        "course_id": "NUTR M90FS",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90GL": {
+      "source": "singletons",
+      "old_id": "NUTR M90GL",
+      "before": {
+        "course_id": "NUTR M90GL",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90GM": {
+      "source": "singletons",
+      "old_id": "NUTR M90GM",
+      "before": {
+        "course_id": "NUTR M90GM",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90GK": {
+      "source": "singletons",
+      "old_id": "NUTR M90GK",
+      "before": {
+        "course_id": "NUTR M90GK",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90AV": {
+      "source": "singletons",
+      "old_id": "NUTR M90AV",
+      "before": {
+        "course_id": "NUTR M90AV",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90DL": {
+      "source": "singletons",
+      "old_id": "NUTR M90DL",
+      "before": {
+        "course_id": "NUTR M90DL",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90CS": {
+      "source": "singletons",
+      "old_id": "NUTR M90CS",
+      "before": {
+        "course_id": "NUTR M90CS",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90FL": {
+      "source": "singletons",
+      "old_id": "NUTR M90FL",
+      "before": {
+        "course_id": "NUTR M90FL",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90FM": {
+      "source": "singletons",
+      "old_id": "NUTR M90FM",
+      "before": {
+        "course_id": "NUTR M90FM",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90FG": {
+      "source": "singletons",
+      "old_id": "NUTR M90FG",
+      "before": {
+        "course_id": "NUTR M90FG",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90ET": {
+      "source": "singletons",
+      "old_id": "NUTR M90ET",
+      "before": {
+        "course_id": "NUTR M90ET",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90AP": {
+      "source": "singletons",
+      "old_id": "NUTR M90AP",
+      "before": {
+        "course_id": "NUTR M90AP",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90EH": {
+      "source": "singletons",
+      "old_id": "NUTR M90EH",
+      "before": {
+        "course_id": "NUTR M90EH",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90EM": {
+      "source": "singletons",
+      "old_id": "NUTR M90EM",
+      "before": {
+        "course_id": "NUTR M90EM",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90GD": {
+      "source": "singletons",
+      "old_id": "NUTR M90GD",
+      "before": {
+        "course_id": "NUTR M90GD",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90EI": {
+      "source": "singletons",
+      "old_id": "NUTR M90EI",
+      "before": {
+        "course_id": "NUTR M90EI",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90BX": {
+      "source": "singletons",
+      "old_id": "NUTR M90BX",
+      "before": {
+        "course_id": "NUTR M90BX",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90DD": {
+      "source": "singletons",
+      "old_id": "NUTR M90DD",
+      "before": {
+        "course_id": "NUTR M90DD",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90FN": {
+      "source": "singletons",
+      "old_id": "NUTR M90FN",
+      "before": {
+        "course_id": "NUTR M90FN",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90DE": {
+      "source": "singletons",
+      "old_id": "NUTR M90DE",
+      "before": {
+        "course_id": "NUTR M90DE",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90FI": {
+      "source": "singletons",
+      "old_id": "NUTR M90FI",
+      "before": {
+        "course_id": "NUTR M90FI",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90ED": {
+      "source": "singletons",
+      "old_id": "NUTR M90ED",
+      "before": {
+        "course_id": "NUTR M90ED",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90DR": {
+      "source": "singletons",
+      "old_id": "NUTR M90DR",
+      "before": {
+        "course_id": "NUTR M90DR",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90AI": {
+      "source": "singletons",
+      "old_id": "NUTR M90AI",
+      "before": {
+        "course_id": "NUTR M90AI",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90GN": {
+      "source": "singletons",
+      "old_id": "NUTR M90GN",
+      "before": {
+        "course_id": "NUTR M90GN",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90AU": {
+      "source": "singletons",
+      "old_id": "NUTR M90AU",
+      "before": {
+        "course_id": "NUTR M90AU",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90GP": {
+      "source": "singletons",
+      "old_id": "NUTR M90GP",
+      "before": {
+        "course_id": "NUTR M90GP",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90FK": {
+      "source": "singletons",
+      "old_id": "NUTR M90FK",
+      "before": {
+        "course_id": "NUTR M90FK",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90GI": {
+      "source": "singletons",
+      "old_id": "NUTR M90GI",
+      "before": {
+        "course_id": "NUTR M90GI",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90FX": {
+      "source": "singletons",
+      "old_id": "NUTR M90FX",
+      "before": {
+        "course_id": "NUTR M90FX",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90AZ": {
+      "source": "singletons",
+      "old_id": "NUTR M90AZ",
+      "before": {
+        "course_id": "NUTR M90AZ",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90GJ": {
+      "source": "singletons",
+      "old_id": "NUTR M90GJ",
+      "before": {
+        "course_id": "NUTR M90GJ",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90GQ": {
+      "source": "singletons",
+      "old_id": "NUTR M90GQ",
+      "before": {
+        "course_id": "NUTR M90GQ",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90AX": {
+      "source": "singletons",
+      "old_id": "NUTR M90AX",
+      "before": {
+        "course_id": "NUTR M90AX",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90AM": {
+      "source": "singletons",
+      "old_id": "NUTR M90AM",
+      "before": {
+        "course_id": "NUTR M90AM",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90EF": {
+      "source": "singletons",
+      "old_id": "NUTR M90EF",
+      "before": {
+        "course_id": "NUTR M90EF",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90DH": {
+      "source": "singletons",
+      "old_id": "NUTR M90DH",
+      "before": {
+        "course_id": "NUTR M90DH",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90CW": {
+      "source": "singletons",
+      "old_id": "NUTR M90CW",
+      "before": {
+        "course_id": "NUTR M90CW",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90AG": {
+      "source": "singletons",
+      "old_id": "NUTR M90AG",
+      "before": {
+        "course_id": "NUTR M90AG",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90GS": {
+      "source": "singletons",
+      "old_id": "NUTR M90AB",
+      "before": {
+        "course_id": "NUTR M90AB",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90FB": {
+      "source": "singletons",
+      "old_id": "NUTR M90FB",
+      "before": {
+        "course_id": "NUTR M90FB",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90DC": {
+      "source": "singletons",
+      "old_id": "NUTR M90DC",
+      "before": {
+        "course_id": "NUTR M90DC",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90GT": {
+      "source": "singletons",
+      "old_id": "NUTR M90AC",
+      "before": {
+        "course_id": "NUTR M90AC",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90ER": {
+      "source": "singletons",
+      "old_id": "NUTR M90ER",
+      "before": {
+        "course_id": "NUTR M90ER",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10DT": {
+      "source": "singletons",
+      "old_id": "NUTR M10AE",
+      "before": {
+        "course_id": "NUTR M10AE",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10EB": {
+      "source": "singletons",
+      "old_id": "NUTR M10AM",
+      "before": {
+        "course_id": "NUTR M10AM",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10EE": {
+      "source": "singletons",
+      "old_id": "NUTR M10AP",
+      "before": {
+        "course_id": "NUTR M10AP",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10EN": {
+      "source": "singletons",
+      "old_id": "NUTR M10AY",
+      "before": {
+        "course_id": "NUTR M10AY",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10EG": {
+      "source": "singletons",
+      "old_id": "NUTR M10AR",
+      "before": {
+        "course_id": "NUTR M10AR",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10EH": {
+      "source": "singletons",
+      "old_id": "NUTR M10AS",
+      "before": {
+        "course_id": "NUTR M10AS",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10EP": {
+      "source": "singletons",
+      "old_id": "NUTR M10BA",
+      "before": {
+        "course_id": "NUTR M10BA",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10ES": {
+      "source": "singletons",
+      "old_id": "NUTR M10BD",
+      "before": {
+        "course_id": "NUTR M10BD",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10EV": {
+      "source": "singletons",
+      "old_id": "NUTR M10BG",
+      "before": {
+        "course_id": "NUTR M10BG",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10EW": {
+      "source": "singletons",
+      "old_id": "NUTR M10BH",
+      "before": {
+        "course_id": "NUTR M10BH",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10EY": {
+      "source": "singletons",
+      "old_id": "NUTR M10BJ",
+      "before": {
+        "course_id": "NUTR M10BJ",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10FC": {
+      "source": "singletons",
+      "old_id": "NUTR M10BN",
+      "before": {
+        "course_id": "NUTR M10BN",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10FJ": {
+      "source": "singletons",
+      "old_id": "NUTR M10BU",
+      "before": {
+        "course_id": "NUTR M10BU",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10FM": {
+      "source": "singletons",
+      "old_id": "NUTR M10BX",
+      "before": {
+        "course_id": "NUTR M10BX",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10FN": {
+      "source": "singletons",
+      "old_id": "NUTR M10BY",
+      "before": {
+        "course_id": "NUTR M10BY",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10FR": {
+      "source": "singletons",
+      "old_id": "NUTR M10CC",
+      "before": {
+        "course_id": "NUTR M10CC",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10FB": {
+      "source": "singletons",
+      "old_id": "NUTR M10BM",
+      "before": {
+        "course_id": "NUTR M10BM",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10EX": {
+      "source": "singletons",
+      "old_id": "NUTR M10BI",
+      "before": {
+        "course_id": "NUTR M10BI",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10GC": {
+      "source": "singletons",
+      "old_id": "NUTR M10CN",
+      "before": {
+        "course_id": "NUTR M10CN",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10FX": {
+      "source": "singletons",
+      "old_id": "NUTR M10CI",
+      "before": {
+        "course_id": "NUTR M10CI",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10GD": {
+      "source": "singletons",
+      "old_id": "NUTR M10CO",
+      "before": {
+        "course_id": "NUTR M10CO",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10GF": {
+      "source": "singletons",
+      "old_id": "NUTR M10CQ",
+      "before": {
+        "course_id": "NUTR M10CQ",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10FS": {
+      "source": "singletons",
+      "old_id": "NUTR M10CD",
+      "before": {
+        "course_id": "NUTR M10CD",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10FA": {
+      "source": "singletons",
+      "old_id": "NUTR M10BL",
+      "before": {
+        "course_id": "NUTR M10BL",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10FQ": {
+      "source": "singletons",
+      "old_id": "NUTR M10CB",
+      "before": {
+        "course_id": "NUTR M10CB",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10CT": {
+      "source": "singletons",
+      "old_id": "NUTR M10CT",
+      "before": {
+        "course_id": "NUTR M10CT",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10CV": {
+      "source": "singletons",
+      "old_id": "NUTR M10CV",
+      "before": {
+        "course_id": "NUTR M10CV",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10CX": {
+      "source": "singletons",
+      "old_id": "NUTR M10CX",
+      "before": {
+        "course_id": "NUTR M10CX",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10FU": {
+      "source": "singletons",
+      "old_id": "NUTR M10CF",
+      "before": {
+        "course_id": "NUTR M10CF",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10ED": {
+      "source": "singletons",
+      "old_id": "NUTR M10AO",
+      "before": {
+        "course_id": "NUTR M10AO",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10FF": {
+      "source": "singletons",
+      "old_id": "NUTR M10BQ",
+      "before": {
+        "course_id": "NUTR M10BQ",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10FW": {
+      "source": "singletons",
+      "old_id": "NUTR M10CH",
+      "before": {
+        "course_id": "NUTR M10CH",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10EM": {
+      "source": "singletons",
+      "old_id": "NUTR M10AX",
+      "before": {
+        "course_id": "NUTR M10AX",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10CZ": {
+      "source": "singletons",
+      "old_id": "NUTR M10CZ",
+      "before": {
+        "course_id": "NUTR M10CZ",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10FH": {
+      "source": "singletons",
+      "old_id": "NUTR M10BS",
+      "before": {
+        "course_id": "NUTR M10BS",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10CY": {
+      "source": "singletons",
+      "old_id": "NUTR M10CY",
+      "before": {
+        "course_id": "NUTR M10CY",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10DK": {
+      "source": "singletons",
+      "old_id": "NUTR M10DK",
+      "before": {
+        "course_id": "NUTR M10DK",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10DC": {
+      "source": "singletons",
+      "old_id": "NUTR M10DC",
+      "before": {
+        "course_id": "NUTR M10DC",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10EI": {
+      "source": "singletons",
+      "old_id": "NUTR M10AT",
+      "before": {
+        "course_id": "NUTR M10AT",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10FY": {
+      "source": "singletons",
+      "old_id": "NUTR M10CJ",
+      "before": {
+        "course_id": "NUTR M10CJ",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10DP": {
+      "source": "singletons",
+      "old_id": "NUTR M10AA",
+      "before": {
+        "course_id": "NUTR M10AA",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10DI": {
+      "source": "singletons",
+      "old_id": "NUTR M10DI",
+      "before": {
+        "course_id": "NUTR M10DI",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10DQ": {
+      "source": "singletons",
+      "old_id": "NUTR M10AB",
+      "before": {
+        "course_id": "NUTR M10AB",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10DZ": {
+      "source": "singletons",
+      "old_id": "NUTR M10AK",
+      "before": {
+        "course_id": "NUTR M10AK",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10DX": {
+      "source": "singletons",
+      "old_id": "NUTR M10AI",
+      "before": {
+        "course_id": "NUTR M10AI",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10CS": {
+      "source": "singletons",
+      "old_id": "NUTR M10CS",
+      "before": {
+        "course_id": "NUTR M10CS",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10DB": {
+      "source": "singletons",
+      "old_id": "NUTR M10DB",
+      "before": {
+        "course_id": "NUTR M10DB",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10DH": {
+      "source": "singletons",
+      "old_id": "NUTR M10DH",
+      "before": {
+        "course_id": "NUTR M10DH",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10DJ": {
+      "source": "singletons",
+      "old_id": "NUTR M10DJ",
+      "before": {
+        "course_id": "NUTR M10DJ",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10DR": {
+      "source": "singletons",
+      "old_id": "NUTR M10AC",
+      "before": {
+        "course_id": "NUTR M10AC",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10DU": {
+      "source": "singletons",
+      "old_id": "NUTR M10AF",
+      "before": {
+        "course_id": "NUTR M10AF",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10DW": {
+      "source": "singletons",
+      "old_id": "NUTR M10AH",
+      "before": {
+        "course_id": "NUTR M10AH",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10FO": {
+      "source": "singletons",
+      "old_id": "NUTR M10BZ",
+      "before": {
+        "course_id": "NUTR M10BZ",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10GG": {
+      "source": "singletons",
+      "old_id": "NUTR M10CR",
+      "before": {
+        "course_id": "NUTR M10CR",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10CU": {
+      "source": "singletons",
+      "old_id": "NUTR M10CU",
+      "before": {
+        "course_id": "NUTR M10CU",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10ET": {
+      "source": "singletons",
+      "old_id": "NUTR M10BE",
+      "before": {
+        "course_id": "NUTR M10BE",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10FK": {
+      "source": "singletons",
+      "old_id": "NUTR M10BV",
+      "before": {
+        "course_id": "NUTR M10BV",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10EJ": {
+      "source": "singletons",
+      "old_id": "NUTR M10AU",
+      "before": {
+        "course_id": "NUTR M10AU",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10EU": {
+      "source": "singletons",
+      "old_id": "NUTR M10BF",
+      "before": {
+        "course_id": "NUTR M10BF",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10DE": {
+      "source": "singletons",
+      "old_id": "NUTR M10DE",
+      "before": {
+        "course_id": "NUTR M10DE",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10EC": {
+      "source": "singletons",
+      "old_id": "NUTR M10AN",
+      "before": {
+        "course_id": "NUTR M10AN",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10DA": {
+      "source": "singletons",
+      "old_id": "NUTR M10DA",
+      "before": {
+        "course_id": "NUTR M10DA",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10EA": {
+      "source": "singletons",
+      "old_id": "NUTR M10AL",
+      "before": {
+        "course_id": "NUTR M10AL",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10EF": {
+      "source": "singletons",
+      "old_id": "NUTR M10AQ",
+      "before": {
+        "course_id": "NUTR M10AQ",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10DM": {
+      "source": "singletons",
+      "old_id": "NUTR M10DM",
+      "before": {
+        "course_id": "NUTR M10DM",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10CW": {
+      "source": "singletons",
+      "old_id": "NUTR M10CW",
+      "before": {
+        "course_id": "NUTR M10CW",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10DL": {
+      "source": "singletons",
+      "old_id": "NUTR M10DL",
+      "before": {
+        "course_id": "NUTR M10DL",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10FP": {
+      "source": "singletons",
+      "old_id": "NUTR M10CA",
+      "before": {
+        "course_id": "NUTR M10CA",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10DY": {
+      "source": "singletons",
+      "old_id": "NUTR M10AJ",
+      "before": {
+        "course_id": "NUTR M10AJ",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10DN": {
+      "source": "singletons",
+      "old_id": "NUTR M10DN",
+      "before": {
+        "course_id": "NUTR M10DN",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10DO": {
+      "source": "singletons",
+      "old_id": "NUTR M10DO",
+      "before": {
+        "course_id": "NUTR M10DO",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10FI": {
+      "source": "singletons",
+      "old_id": "NUTR M10BT",
+      "before": {
+        "course_id": "NUTR M10BT",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10FZ": {
+      "source": "singletons",
+      "old_id": "NUTR M10CK",
+      "before": {
+        "course_id": "NUTR M10CK",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10EL": {
+      "source": "singletons",
+      "old_id": "NUTR M10AW",
+      "before": {
+        "course_id": "NUTR M10AW",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10FL": {
+      "source": "singletons",
+      "old_id": "NUTR M10BW",
+      "before": {
+        "course_id": "NUTR M10BW",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10GA": {
+      "source": "singletons",
+      "old_id": "NUTR M10CL",
+      "before": {
+        "course_id": "NUTR M10CL",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10GE": {
+      "source": "singletons",
+      "old_id": "NUTR M10CP",
+      "before": {
+        "course_id": "NUTR M10CP",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10DD": {
+      "source": "singletons",
+      "old_id": "NUTR M10DD",
+      "before": {
+        "course_id": "NUTR M10DD",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10DV": {
+      "source": "singletons",
+      "old_id": "NUTR M10AG",
+      "before": {
+        "course_id": "NUTR M10AG",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M10FD": {
+      "source": "singletons",
+      "old_id": "NUTR M10BO",
+      "before": {
+        "course_id": "NUTR M10BO",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90BR": {
+      "source": "singletons",
+      "old_id": "NUTR M90BR",
+      "before": {
+        "course_id": "NUTR M90BR",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90BS": {
+      "source": "singletons",
+      "old_id": "NUTR M90BS",
+      "before": {
+        "course_id": "NUTR M90BS",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90GR": {
+      "source": "singletons",
+      "old_id": "NUTR M90AA",
+      "before": {
+        "course_id": "NUTR M90AA",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90GV": {
+      "source": "singletons",
+      "old_id": "NUTR M90AE",
+      "before": {
+        "course_id": "NUTR M90AE",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90CY": {
+      "source": "singletons",
+      "old_id": "NUTR M90CY",
+      "before": {
+        "course_id": "NUTR M90CY",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    },
+    "FDNT M90BC": {
+      "source": "singletons",
+      "old_id": "NUTR M90BC",
+      "before": {
+        "course_id": "NUTR M90BC",
+        "subject_4letter": "NUTR",
+        "discipline": "Dietetics/Nutritional Science"
+      },
+      "absent": []
+    }
+  },
+  "memberships": [
+    "FDNT M1057",
+    "FDNT M1056",
+    "FDNT M1063",
+    "FDNT M1029",
+    "FDNT M1023",
+    "FDNT M1062",
+    "FDNT M1037",
+    "FDNT M9029",
+    "FDNT M9032",
+    "FDNT M9030",
+    "FDNT M9031",
+    "FDNT M1028",
+    "FDNT M1049",
+    "FDNT M1052",
+    "FDNT M1027",
+    "FDNT M1051",
+    "FDNT M1058",
+    "FDNT M1042",
+    "FDNT M1047",
+    "FDNT M1053",
+    "FDNT M1054",
+    "FDNT M1059",
+    "FDNT M1060",
+    "FDNT M1064",
+    "FDNT M1061",
+    "FDNT M1026",
+    "FDNT M1030",
+    "FDNT M1024",
+    "FDNT M1031",
+    "FDNT M1032",
+    "FDNT M1034",
+    "FDNT M1065",
+    "FDNT M1066",
+    "FDNT M1035",
+    "FDNT M1033",
+    "FDNT M1050",
+    "FDNT M1036",
+    "FDNT M1025",
+    "FDNT M1055",
+    "FDNT M1038",
+    "FDNT M1039",
+    "FDNT M9033",
+    "FDNT M9028",
+    "FDNT M9027",
+    "PREL M1001"
+  ],
+  "articulations": [
+    2931,
+    2932,
+    3912,
+    3913,
+    3914,
+    4327,
+    4328
+  ],
+  "identities": [
+    "FDNT M10EZ",
+    "FDNT M10DG",
+    "TRVL M10AB",
+    "TRVL M10AC",
+    "FDNT M10GD",
+    "FDNT M10DA"
+  ],
+  "curation": {
+    "keys": {
+      "MILS M1001": "AERO M1001",
+      "MILS M10BA": "AERO M10BA",
+      "MILS M10BB": "AERO M10BB",
+      "FDNT M1052": "NUTR M1006",
+      "FDNT M1053": "NUTR M1007",
+      "FDNT M1054": "NUTR M1008",
+      "FDNT M1058": "NUTR M1013",
+      "FDNT M1059": "NUTR M1014",
+      "FDNT M1060": "NUTR M1015",
+      "FDNT M1061": "NUTR M1016",
+      "FDNT M1062": "NUTR M1017",
+      "FDNT M1064": "NUTR M1019",
+      "FDNT M1065": "NUTR M1021",
+      "FDNT M1066": "NUTR M1022",
+      "FDNT M1033": "NUTR M1033",
+      "FDNT M1040": "NUTR M1040",
+      "FDNT M1041": "NUTR M1041",
+      "FDNT M10ED": "NUTR M10AO",
+      "FDNT M10EF": "NUTR M10AQ",
+      "FDNT M10EH": "NUTR M10AS",
+      "FDNT M10EI": "NUTR M10AT",
+      "FDNT M10EJ": "NUTR M10AU",
+      "FDNT M10EK": "NUTR M10AV",
+      "FDNT M10EL": "NUTR M10AW",
+      "FDNT M10EO": "NUTR M10AZ",
+      "FDNT M10ES": "NUTR M10BD",
+      "FDNT M10EX": "NUTR M10BI",
+      "FDNT M10FD": "NUTR M10BO",
+      "FDNT M10FE": "NUTR M10BP",
+      "FDNT M10FG": "NUTR M10BR",
+      "FDNT M10FI": "NUTR M10BT",
+      "FDNT M10FK": "NUTR M10BV",
+      "FDNT M10FQ": "NUTR M10CB",
+      "FDNT M10FY": "NUTR M10CJ",
+      "FDNT M10GB": "NUTR M10CM",
+      "FDNT M10GE": "NUTR M10CP",
+      "FDNT M10GG": "NUTR M10CR",
+      "FDNT M10CV": "NUTR M10CV",
+      "FDNT M10CY": "NUTR M10CY",
+      "FDNT M10DA": "NUTR M10DA",
+      "FDNT M10DC": "NUTR M10DC",
+      "FDNT M10DH": "NUTR M10DH",
+      "FDNT M10DM": "NUTR M10DM",
+      "FDNT M9034": "NUTR M9008",
+      "FDNT M9035": "NUTR M9009",
+      "FDNT M9036": "NUTR M9010",
+      "FDNT M9037": "NUTR M9011",
+      "FDNT M9038": "NUTR M9012",
+      "FDNT M9039": "NUTR M9013",
+      "FDNT M9040": "NUTR M9014",
+      "FDNT M9041": "NUTR M9015",
+      "FDNT M90BB": "NUTR M90BB",
+      "FDNT M90BL": "NUTR M90BL",
+      "FDNT M90BM": "NUTR M90BM",
+      "FDNT M90BW": "NUTR M90BW",
+      "FDNT M90BX": "NUTR M90BX",
+      "FDNT M90CA": "NUTR M90CA",
+      "FDNT M90CB": "NUTR M90CB",
+      "FDNT M90CF": "NUTR M90CF",
+      "FDNT M90CG": "NUTR M90CG",
+      "FDNT M90CH": "NUTR M90CH",
+      "FDNT M90CN": "NUTR M90CN",
+      "FDNT M90CU": "NUTR M90CU",
+      "FDNT M90CY": "NUTR M90CY",
+      "FDNT M90DO": "NUTR M90DO",
+      "FDNT M90DS": "NUTR M90DS",
+      "FDNT M90EE": "NUTR M90EE",
+      "FDNT M90EO": "NUTR M90EO",
+      "FDNT M90EP": "NUTR M90EP",
+      "FDNT M90ES": "NUTR M90ES",
+      "FDNT M90ET": "NUTR M90ET",
+      "FDNT M90EV": "NUTR M90EV",
+      "FDNT M90FT": "NUTR M90FT",
+      "FDNT M90FV": "NUTR M90FV",
+      "PHOT M10RP": "PHTC M10AC",
+      "TRVL M1001": "TOUR M1001",
+      "TRVL M1002": "TOUR M1002",
+      "TRVL M1003": "TOUR M1003",
+      "TRVL M1004": "TOUR M1004",
+      "TRVL M10AA": "TOUR M10AA",
+      "TRVL M10AB": "TOUR M10AB",
+      "TRVL M10AF": "TOUR M10AF",
+      "TRVL M10AG": "TOUR M10AG",
+      "TRVL M10AH": "TOUR M10AH"
+    },
+    "pointers": [
+      [
+        "MILS M10BA",
+        "merge_into",
+        "AERO M1001",
+        "MILS M1001"
+      ],
+      [
+        "MILS M10BB",
+        "merge_into",
+        "AERO M1001",
+        "MILS M1001"
+      ],
+      [
+        "ANTH M10IQ",
+        "merge_into",
+        "NUTR M1016",
+        "FDNT M1061"
+      ],
+      [
+        "ATC M10AU",
+        "merge_into",
+        "TOUR M1002",
+        "TRVL M1002"
+      ],
+      [
+        "ATC M10AV",
+        "merge_into",
+        "TOUR M1003",
+        "TRVL M1003"
+      ],
+      [
+        "CULN M10QW",
+        "merge_into",
+        "NUTR M1013",
+        "FDNT M1058"
+      ],
+      [
+        "CULN M10QX",
+        "merge_into",
+        "NUTR M1013",
+        "FDNT M1058"
+      ],
+      [
+        "CULN M1109",
+        "merge_into",
+        "NUTR M1014",
+        "FDNT M1059"
+      ],
+      [
+        "FCSH M1021",
+        "merge_into",
+        "NUTR M1017",
+        "FDNT M1062"
+      ],
+      [
+        "FCSH M10EO",
+        "merge_into",
+        "NUTR M1033",
+        "FDNT M1033"
+      ],
+      [
+        "FDNT M1009",
+        "merge_into",
+        "NUTR M1033",
+        "FDNT M1033"
+      ],
+      [
+        "FDNT M1012",
+        "merge_into",
+        "NUTR M1007",
+        "FDNT M1053"
+      ],
+      [
+        "FDNT M10AM",
+        "merge_into",
+        "NUTR M1007",
+        "FDNT M1053"
+      ],
+      [
+        "FDNT M10BE",
+        "honors_of",
+        "NUTR M1018",
+        "FDNT M1063"
+      ],
+      [
+        "FDNT M10CA",
+        "merge_into",
+        "NUTR M1008",
+        "FDNT M1054"
+      ],
+      [
+        "HLTH M1121",
+        "merge_into",
+        "NUTR M1008",
+        "FDNT M1054"
+      ],
+      [
+        "KINE M13JC",
+        "merge_into",
+        "NUTR M1021",
+        "FDNT M1065"
+      ],
+      [
+        "FDNT M1052",
+        "merge_into",
+        "NUTR M1007",
+        "FDNT M1053"
+      ],
+      [
+        "FDNT M1060",
+        "merge_into",
+        "NUTR M1014",
+        "FDNT M1059"
+      ],
+      [
+        "FDNT M1064",
+        "merge_into",
+        "NUTR M1008",
+        "FDNT M1054"
+      ],
+      [
+        "FDNT M10EF",
+        "merge_into",
+        "NUTR M1040",
+        "FDNT M1040"
+      ],
+      [
+        "FDNT M10EH",
+        "merge_into",
+        "NUTR M1041",
+        "FDNT M1041"
+      ],
+      [
+        "FDNT M10EJ",
+        "merge_into",
+        "NUTR M1041",
+        "FDNT M1041"
+      ],
+      [
+        "FDNT M10EK",
+        "merge_into",
+        "NUTR M1041",
+        "FDNT M1041"
+      ],
+      [
+        "FDNT M10EO",
+        "merge_into",
+        "NUTR M1033",
+        "FDNT M1033"
+      ],
+      [
+        "FDNT M10ES",
+        "merge_into",
+        "NUTR M1014",
+        "FDNT M1059"
+      ],
+      [
+        "FDNT M10FE",
+        "merge_into",
+        "NUTR M1033",
+        "FDNT M1033"
+      ],
+      [
+        "FDNT M10FG",
+        "merge_into",
+        "NUTR M1007",
+        "FDNT M1053"
+      ],
+      [
+        "FDNT M10FI",
+        "merge_into",
+        "NUTR M1007",
+        "FDNT M1053"
+      ],
+      [
+        "FDNT M10FQ",
+        "honors_of",
+        "NUTR M10CC",
+        "FDNT M10FR"
+      ],
+      [
+        "FDNT M10GE",
+        "merge_into",
+        "NUTR M1008",
+        "FDNT M1054"
+      ],
+      [
+        "FDNT M10DA",
+        "merge_into",
+        "NUTR M1040",
+        "FDNT M1040"
+      ],
+      [
+        "FDNT M90BL",
+        "merge_into",
+        "NUTR M9009",
+        "FDNT M9035"
+      ],
+      [
+        "FDNT M90BM",
+        "merge_into",
+        "NUTR M9009",
+        "FDNT M9035"
+      ],
+      [
+        "FDNT M90BW",
+        "merge_into",
+        "NUTR M9011",
+        "FDNT M9037"
+      ],
+      [
+        "FDNT M90BX",
+        "merge_into",
+        "NUTR M9011",
+        "FDNT M9037"
+      ],
+      [
+        "FDNT M90CA",
+        "merge_into",
+        "NUTR M9010",
+        "FDNT M9036"
+      ],
+      [
+        "FDNT M90CB",
+        "merge_into",
+        "NUTR M9010",
+        "FDNT M9036"
+      ],
+      [
+        "FDNT M90CF",
+        "merge_into",
+        "NUTR M9012",
+        "FDNT M9038"
+      ],
+      [
+        "FDNT M90CG",
+        "merge_into",
+        "NUTR M9012",
+        "FDNT M9038"
+      ],
+      [
+        "FDNT M90CH",
+        "merge_into",
+        "NUTR M9012",
+        "FDNT M9038"
+      ],
+      [
+        "FDNT M90CN",
+        "merge_into",
+        "NUTR M9013",
+        "FDNT M9039"
+      ],
+      [
+        "FDNT M90DS",
+        "merge_into",
+        "NUTR M9014",
+        "FDNT M9040"
+      ],
+      [
+        "FDNT M90EE",
+        "merge_into",
+        "NUTR M9014",
+        "FDNT M9040"
+      ],
+      [
+        "FDNT M90EO",
+        "merge_into",
+        "NUTR M9008",
+        "FDNT M9034"
+      ],
+      [
+        "FDNT M90EP",
+        "merge_into",
+        "NUTR M9008",
+        "FDNT M9034"
+      ],
+      [
+        "FDNT M90ES",
+        "merge_into",
+        "NUTR M9015",
+        "FDNT M9041"
+      ],
+      [
+        "FDNT M90ET",
+        "merge_into",
+        "NUTR M9015",
+        "FDNT M9041"
+      ],
+      [
+        "FDNT M90FT",
+        "merge_into",
+        "NUTR M9013",
+        "FDNT M9039"
+      ],
+      [
+        "FDNT M90FV",
+        "merge_into",
+        "NUTR M9013",
+        "FDNT M9039"
+      ],
+      [
+        "TRVL M10AA",
+        "merge_into",
+        "TOUR M1001",
+        "TRVL M1001"
+      ],
+      [
+        "TRVL M10AB",
+        "merge_into",
+        "TOUR M1001",
+        "TRVL M1001"
+      ],
+      [
+        "TRVL M10AF",
+        "merge_into",
+        "TOUR M1004",
+        "TRVL M1004"
+      ],
+      [
+        "TRVL M10AG",
+        "merge_into",
+        "TOUR M1003",
+        "TRVL M1003"
+      ],
+      [
+        "TRVL M10AH",
+        "merge_into",
+        "TOUR M1002",
+        "TRVL M1002"
+      ],
+      [
+        "TT M10AD",
+        "merge_into",
+        "TOUR M1002",
+        "TRVL M1002"
+      ],
+      [
+        "TT M10AF",
+        "merge_into",
+        "TOUR M1004",
+        "TRVL M1004"
+      ]
+    ],
+    "was_sorted": true
+  },
+  "seed": {
+    "index": 69,
+    "entry": {
+      "canonical_subj4": "NUTR",
+      "source": "curator_override",
+      "data_modal": "FN",
+      "data_modal_is_4letter": false,
+      "data_modal_share": 0.467,
+      "variants_observed": {
+        "NUTR": 320
+      },
+      "total_mids": 320,
+      "local_subject_variants": {
+        "FN": 208,
+        "NUTR": 131,
+        "NUTRI": 37,
+        "BIOL": 6,
+        "KIN": 6,
+        "NF": 5,
+        "EXSC": 3,
+        "FCS": 2,
+        "HE": 2,
+        "HEALTH": 2,
+        "HED": 2,
+        "HLED": 2,
+        "HRC": 2,
+        "KIN MAJ": 2,
+        "NTR": 2,
+        "NUTRTN": 2,
+        "PEH": 2,
+        "BIO": 1,
+        "BIOSC": 1,
+        "CA": 1,
+        "CAHS": 1,
+        "CAM": 1,
+        "CFS": 1,
+        "FACS": 1,
+        "FAM &CS": 1,
+        "FAMILY AND CONSUMER STUDIES (FCS)": 1,
+        "GEOG": 1,
+        "H.EC": 1,
+        "HCRS": 1,
+        "HEAL": 1,
+        "HLHSCI": 1,
+        "HLTH": 1,
+        "HM": 1,
+        "HRM": 1,
+        "KINE": 1,
+        "KINES": 1,
+        "N NUTR": 1,
+        "NC": 1,
+        "NFOO": 1,
+        "NNTR": 1
+      },
+      "local_subject_variants_truncated": 6,
+      "local_subject_total": 445,
+      "rows_total": 320,
+      "corroborated_voters": 445,
+      "top_only": false,
+      "top_modal_6digit": "1306.00",
+      "top_modal_4digit": "1306",
+      "top_modal_title": "Nutrition, Foods, and Culinary Arts",
+      "top_category_2digit": "13",
+      "top_category_title": "Family and Consumer Sciences",
+      "cte_share": 0.969,
+      "cte_flag": "all",
+      "cte_known_n": 318,
+      "cte_unknown_n": 2,
+      "cip_code": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:42:53.22508+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "validated_at": null,
+      "validated_by": null,
+      "_notes": null,
+      "ccn_subject_code": null,
+      "cid_subject_codes": [
+        "NUTR"
+      ],
+      "canonical_source": "c-id",
+      "authority_chips": [],
+      "authority_flag": null,
+      "authority_note": "Common SUBJ NUTR is the C-ID subject code."
+    },
+    "counts": {
+      "total_disciplines": 248,
+      "multi_subj4_disciplines": 40,
+      "needs_review": 0,
+      "seeded_default": 246,
+      "assigned_s717": 95
+    },
+    "aeronautics": {
+      "canonical_subj4": "AERO",
+      "source": "assigned",
+      "confidence": 0.86,
+      "confidence_level": "Likely",
+      "basis": "college",
+      "basis_words": "AERO is the local code at 7 colleges",
+      "data_modal": null,
+      "data_modal_is_4letter": false,
+      "data_modal_share": null,
+      "variants_observed": {},
+      "total_mids": 0,
+      "local_subject_variants": {},
+      "local_subject_variants_truncated": 0,
+      "local_subject_total": 0,
+      "rows_total": 0,
+      "corroborated_voters": 0,
+      "top_only": false,
+      "top_modal_6digit": null,
+      "top_modal_4digit": null,
+      "top_modal_title": null,
+      "top_category_2digit": null,
+      "top_category_title": null,
+      "cte_share": null,
+      "cte_flag": null,
+      "cte_known_n": 0,
+      "cte_unknown_n": 0,
+      "cip_code": null,
+      "needs_review": false,
+      "reviewed_at": "2026-11-23T19:55:10+00:00",
+      "reviewed_by": "csr-s717@bot",
+      "validated_at": null,
+      "validated_by": null,
+      "_notes": "Assigned at Likely (86%): the local code colleges already use. AERO is the local code at 7 colleges. No M-ID is minted under it yet. AERO also prefixes nine Air Force ROTC M-IDs with no discipline (AS100 Heritage and Values); they belong with Military Studies (MILS).",
+      "ccn_subject_code": null,
+      "cid_subject_codes": [],
+      "canonical_source": "csr",
+      "authority_chips": [],
+      "authority_flag": "proposed",
+      "authority_note": "Common SUBJ AERO is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+    }
+  },
+  "aliases_before": {
+    "_about": "Fan-in discipline aliases: canonical → [alternate names]. Surfaced as an 'also:' chip on the CSR. See docs/kin_pe_convergence_scope.md.",
+    "aliases": {
+      "Kinesiology": [
+        "Physical Education"
+      ],
+      "Drama/Theater Arts": [
+        "Theater Arts"
+      ],
+      "Communication Studies": [
+        "Speech Communication"
+      ]
+    },
+    "_updated_at": "2026-09-08",
+    "_updated_by": "Sam, 2026-09-08 (the hard-ones sheet, item 2): \"Put these in ethnic studies.\" African American Studies and Asian American Studies are MQ disciplines carrying ZERO courses anywhere on the map, while their three siblings carry 534 (Ethnic Studies, ETHS), 35 (Chicano Studies, ETHN) and 33 (Native American/American Indian Studies, ETHA). The two with courses stay distinct; the two empty ones fold in. ⚠️ They are real MQ disciplines, not alternate spellings — this records where we FILE such a course, not that the names are synonyms.",
+    "renamed": {
+      "Community College Counselor of Students with Disabilities 53414": "Community College Counselor of Students with Disabilities",
+      "Deaf and Hearing Impaired: Disabled Students Programs 53414": "Deaf and Hearing Impaired: Disabled Students Programs and Services",
+      "Developmental Disabilities: Disabled Students Programs and Services 53414": "Developmental Disabilities: Disabled Students Programs and Services",
+      "Disabled Student Programs and": "Disabled Student Programs and Services (DSPS)",
+      "English as a Second Language Noncredit 53412": "English as a Second Language (ESL): Noncredit",
+      "Interdisciplinary-Basic Skills: Noncredit 53412": "Interdisciplinary-Basic Skills: Noncredit",
+      "Learning Disabilities: Disabled Student Programs and Services 53414": "Learning Disabilities: Disabled Student Programs and Services",
+      "Physical Disabilities: Disabled Student Programs and Services 53414": "Physical Disabilities: Disabled Student Programs and Services",
+      "Speech Language Pathology: Disabled Student Programs and 53414 Services": "Speech Language Pathology: Disabled Student Programs and Services"
+    },
+    "_renamed_about": "Old spelling -> current MQ name, resolved by kb/_alias_canon.py for the inference passes; the CSR's also: chips read `aliases` only. The nine Title 5-numbered and cut-short names took the handbook's spellings on Sam's Open Asks Sheet 99 card 6 (2026-10-19, \"Rename as the handbook spells them\"; kb/_mq_title5_rename.py, S430)."
+  },
+  "aern_receipt": "kb/receipts/minted_codes_s749_aern.json",
+  "aern_receipt_existed": false,
+  "picks": [
+    {
+      "file": "kb/subject_title_hunt/20261128_common_picks_slate2.csv",
+      "line": 68,
+      "before": "Fresno City College,AEROST,credit,AERO,97,COBI,M-ID AERO\n",
+      "after": "Fresno City College,AEROST,credit,MILS,97,COBI,M-ID MILS (the nine Air Force ROTC M-IDs moved from AERO in the S749 re-mint)\n"
+    }
+  ]
+}
