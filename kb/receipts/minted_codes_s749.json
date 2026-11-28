@@ -117,12 +117,6 @@
    "basis": "Folk Dance MQ, distinct from Dance (DANC). FLDN is unused as a canonical."
   },
   {
-   "discipline": "Home Economics: Noncredit",
-   "from": "HMEN",
-   "to": "HECN",
-   "basis": "Home Economics: Noncredit MQ, distinct from credit FCSH. HECN is unused as a canonical."
-  },
-  {
    "discipline": "Homeland Security",
    "from": "HSEC",
    "to": "HLMS",
@@ -373,6 +367,13 @@
    "to": "TOUR",
    "basis": "Travel Services MQ (TOP 3009). TOUR is unused as a canonical. Avoided HOSP, which is filed under CULN.",
    "why": "TOUR already prefixes 4 M-ID(s)"
+  },
+  {
+   "discipline": "Home Economics: Noncredit",
+   "from": "HMEN",
+   "to": "HECN",
+   "basis": "Home Economics: Noncredit MQ, distinct from credit FCSH. HECN is unused as a canonical.",
+   "why": "HMEN is a code Sam named on 2026-11-22 (r-noncredit-four-mq-codes-sam-2026-11-22): person-settled, kept"
   }
  ],
  "added": [

@@ -7172,7 +7172,7 @@
       "authority_note": "Common SUBJ HIST is the CCN subject code (rule 2: CCN first)."
     },
     "Home Economics: Noncredit": {
-      "canonical_subj4": "HECN",
+      "canonical_subj4": "HMEN",
       "source": "curator_override",
       "data_modal": null,
       "data_modal_is_4letter": false,
@@ -7196,11 +7196,11 @@
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": "2026-11-28T15:03:14+00:00",
-      "reviewed_by": "csr-s749@bot",
+      "reviewed_at": "2026-11-22T16:20:00+00:00",
+      "reviewed_by": "Sam (in session, S705)",
       "validated_at": null,
       "validated_by": null,
-      "_notes": "Common SUBJ HECN from HMEN (S749): Sam's 2026-11-28 ruling, every official MQ discipline its own common code, COBIx's minted list (#3951): Home Economics: Noncredit MQ, distinct from credit FCSH. HECN is unused as a canonical.. Minted on Sam's word of 2026-11-22 (r-noncredit-four-mq-codes-sam-2026-11-22): the noncredit MQ discipline gets its own common code; no M-ID is minted under it yet.",
+      "_notes": "Minted on Sam's word of 2026-11-22 (r-noncredit-four-mq-codes-sam-2026-11-22): the noncredit MQ discipline gets its own common code; no M-ID is minted under it yet.",
       "ccn_subject_code": null,
       "cid_subject_codes": [],
       "canonical_source": "csr",

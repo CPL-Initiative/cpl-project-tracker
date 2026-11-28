@@ -35,6 +35,8 @@ ALIASES = os.path.join(ROOT, "kb", "discipline_aliases.json")
 MINTED = os.path.join(ROOT, "kb", "subject_title_hunt", "minted_codes.csv")
 MINTS = os.path.join(ROOT, "kb", "coci_minted_courses.json")
 RECEIPT = os.path.join(ROOT, "kb", "receipts", "minted_codes_s749.json")
+# Codes a person named (Person-settled wins): Sam's four noncredit MQ codes, r-noncredit-four-mq-codes-sam-2026-11-22.
+PERSON_NAMED = {"CTZN", "HLSN", "HMEN", "DSPN"}
 NEW = {"Asian American Studies": "ASAM", "African American Studies": "AFAM"}
 
 
@@ -52,7 +54,9 @@ def plan():
         if not cur or cur == code:
             continue
         why = None
-        if pref.get(cur):
+        if cur in PERSON_NAMED:
+            why = "%s is a code Sam named on 2026-11-22 (r-noncredit-four-mq-codes-sam-2026-11-22): person-settled, kept" % cur
+        elif pref.get(cur):
             why = "%s prefixes %d M-ID(s): the re-mint playbook's" % (cur, pref[cur])
         elif pref.get(code):
             why = "%s already prefixes %d M-ID(s)" % (code, pref[code])
