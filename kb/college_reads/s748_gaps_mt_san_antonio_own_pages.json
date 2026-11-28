@@ -1,0 +1,32 @@
+{
+ "_readme": "S748 (worker gaps), Mt. San Antonio College, page not found: Digital Media Specialist 43777 and Regenerative Communities 43999. S703's free read 45029764686 found each program's own page linked from the Short-Term Vocational index (kb/program_requirements_college/mt_san_antonio/no_record_s703.json, own_page_not_reached), and capture 45789994593 still reads 'no page read names the program' for both. This reads each page as the capture reads it, so a session checks a site_pages pin against the heading and the course list the capture will read. Two loads. No model call, nothing written. The five pages the S748 conductor named are not read again: S703's read 45029764686 shows Mt. San Antonio 15574, 22161 and 31598 on pages other programs hold, and S727's read 45564881318 shows Allan Hancock 42208 and 42210 on their own entries, which name under half of the state's courses (allan_hancock/named_gaps_s730.json).",
+ "college": "Mt. San Antonio College",
+ "questions": {
+  "own_page": "Whether the page is the program's own: its heading, its award, its course list and its total hours, and which of the state's listed course codes it prints."
+ },
+ "keywords": [
+  "Digital Media Specialist[^\\n]{0,80}",
+  "Regenerative Communities[^\\n]{0,80}",
+  "Certificate of (?:Competency|Completion)[^\\n]{0,80}",
+  "Total[^\\n]{0,40}",
+  "VOC[ \\-]?(?:OCBA|BCDP|CPNET|DCIS|DMB|MIT|RG|FS|LFC)\\b[^\\n]{0,80}"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-vocational-re-entry/digitalmediaspecialisttext/",
+   "capture_view": true,
+   "why": "43777: the state lists VOC OCBA, VOC BCDP, VOC CPNET, VOC DCIS, VOC DMB and VOC MIT"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-vocational-re-entry/regenerativecommunitiestext/",
+   "capture_view": true,
+   "why": "43999: the state lists VOC RG, VOC FS and VOC LFC"
+  }
+ ]
+}
