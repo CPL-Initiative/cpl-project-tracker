@@ -109,3 +109,21 @@ paid reads, rereads, loads and `.apply`, and holds every Supabase call.
 - 07:28Z: San Bernardino Valley's reread, force 46118801512, dispatched on `claude/s748-keys-sbvc`. Coastline's paid
   read 46119872022 green at 07:10Z; 43057 has no live row (live read 07:27:28Z, 141 rows, none checked); a small Fable
   worker runs keep-better before any load.
+- 07:31Z: s748k1's migrate 46121263022 green; College of the Canyons 38686, 44273 and 45610 live with `no_hours_read`.
+  San Bernardino Valley's reread green: 04894 live at 46118801512, arithmetic equal; the four restored records unmoved.
+- 07:33Z: Coastline's keep-better (a small Fable worker, `54d8eddf`): 43057 passes on its own pinned page (9 of 9
+  placed, major 18 and degree 60 equal), the read cost $0.06; its load dispatched and live at 46119872022.
+  Records collected: 8.
+- 07:35Z: `readers` stop 2 (`e056d2bd`): plan s748r1 (El Camino 19857, `total_differs`: free page read 46119948370
+  prints 27 under "Required Core: 30 units", then 6, under "Total Units: 36"). Reedley 30465 waits on a reader change
+  (its own page found, a pin fails rule A; for a person: 20762 is filed passing from that page). Los Angeles Pierce
+  19181 and Grossmont 21402 are already college-named gaps. Ventura's seven and Norco's 12 were collected in S741.
+  Split change: `readers` takes Sierra and Skyline; a fourth Fable worker, `gaps`, takes Allan Hancock and Mt. San
+  Antonio (the census's largest gaps outside the lanes).
+- 07:36Z: `keys` stop 3 (`344d4d2c`): general education unit steps of existing kinds at Lassen (reaches 5, fail to pass
+  5, pass to fail 0 over 64 records) and College of Alameda (reaches 1 over 59), to a Sonnet second reader. Berkeley
+  City's five and three of Cosumnes River's are the overlap the statewide rule holds by design. Three paid reads
+  dispatched on siblings off `main` (`claude/s748-paid-sbvc`, `-coc`, `-sjcc`): San Bernardino Valley 31858, College
+  of the Canyons 37868, San Jose City 22225, about $0.23 together.
+- 07:37Z: s748r1's reader (Sonnet): APPLY (the record is the certificate's own page, poid 3524; MINOR: the S740 test's
+  edit should tie to `total_differs_list()`). Clean md5 pre-read 1 of 1. The apply pushed on `claude/s748-apply`.
