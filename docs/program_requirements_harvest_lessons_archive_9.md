@@ -1,7 +1,7 @@
 ---
 title: "Program requirements harvest lessons — archive 9 (S714 onward)"
 created: 2026-11-25
-updated: 2026-11-26
+updated: 2026-11-28
 tags: [lessons, archive, program-requirements, catalog-harvest]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/lessons
@@ -12,7 +12,7 @@ related:
 
 # Program requirements harvest lessons — archive 9
 
-Sections moved verbatim from [the lessons doc](program_requirements_harvest_lessons.md) when it neared its budget (S731 checkpoint compaction). Archive 8 holds S687 to S713. The S720 and S721 sections moved here at the S739 checkpoint.
+Sections moved verbatim from [the lessons doc](program_requirements_harvest_lessons.md) when it neared its budget (S731 checkpoint compaction). Archive 8 holds S687 to S713. The S720 and S721 sections moved here at the S739 checkpoint. The S739 sections moved here at the S748 checkpoint.
 
 ## Moved from the lane (S714 checkpoint, 2026-11-23)
 
@@ -664,3 +664,100 @@ are in the handoff's last lines.
   the reread, which write the tables.
 - **A load that holds several runs** (`d-multi-run-load-history-proves-run-s731c`): each row's run is proved from its
   record file's commit history on `main`.
+
+## Moved from the lane (S739 checkpoint, 2026-11-26)
+
+Verbatim from `docs/reference/lanes/program-requirements-harvest.md`, as the lane stood before the S739 checkpoint (relative links re-pointed to this folder); the lane keeps the current text.
+
+**Display build `2c8507c058b1` is live, confirmed by its closing count** (S731, #3825 `9a5deb35`; 18,724 records; the gate at Glendale 45602360120, 242 rows, then the whole build 45602989427): 18,723 rows at the build, the same 32 at older builds and none without a display. The confirming read pages by key, never by offset (**DECIDED** `d-display-keyset-confirm-s687`). The census after it, run 45606909979 on `main` (11:49Z): 15,562 of 20,282 active programs pass, 4,210 have no passing record, 510 are collected with a named gap; the closing census: handoff 732.
+
+**S731's posts** (`m-collection-s731`; #3825 `9a5deb35` and #3830 `dafe74c6` merged; #3827, the second land PR, carries the eLumen follow-up, s731p and the lever, each applied or loaded and live before its merge; land 3 carries Saddleback's `repeat` steps): 83 records collected and live for $3.11 of paid reads, plus 3 named gaps for programs with no record. Lane 2's wording-rule piles under Sam's collect-with-gaps ruling (`sam-collect-with-gaps-2026-11-17`), 26 on #3830: Los Angeles Trade-Technical 6 named gaps (s730a), Saddleback 8 (s730b; `waived_course_counted` is new) and Long Beach City 12 (s731c: 3 passing on a rescore, 9 named gaps). The pooled reading's next (s731p, the shared scorer behind `POOLED_S731`): 7, 4 passing and 3 named gaps. The eLumen follow-up: 40 at Antelope Valley and Redwoods read from their own pages (1 new, 39 replaced). The lever: West Valley 06276 and 32021 and Allan Hancock 43770, all passing. Saddleback's `repeat` steps: the seven s730b held, read again, each now its printed total and passing. No outline rows. Each college's count and run id: lessons, *S731*.
+
+**Decisions of S731** (the conductor's, each reversible; rows in `cpl_memory`, one line each in handoff 732): **DECIDED** `d-routine-yields-730-to-plain-s731`; **DECIDED** `d-lever-dispatches-paid-reads-in-words-s731`; **DECIDED** `d-elumen-read-before-reader-s731`; **DECIDED** `d-display-merged-without-main-update-s731`; **DECIDED** `d-waived-course-counted-keeps-50-s731`; **DECIDED** `d-lbcc-42970-no-units-read-or-hold-s731`; **DECIDED** `d-porterville-06773-keeps-s721c-gap-s731`; **DECIDED** `d-saddleback-reconcile-before-reader-s731`; and the worker's **DECIDED** `d-multi-run-load-history-proves-run-s731c`, confirmed by its second reader. S727's, S721's, S720's, S714's and S713's decisions stand: lessons, *Moved from the lane (S731 checkpoint)*, *(S727 checkpoint)*, *(S721 checkpoint)* and *(S720 checkpoint)*, and lessons archive 9, *(S714 checkpoint)*.
+
+**NEXT, in order** (Sam's work order of Nov 20 ranks collection by the M-ID cards each fix unblocks, `r-collect-for-mids-work-order-sam-2026-11-20`: outline fills first, program records second, **DECIDED** `d-mid-ranking-orders-lane-1-s690`; every block is listed until the Commons shows it, `r-a-block-is-a-block-sam-2026-11-21`): (0) Standing, each with its slug: lessons, *Moved from the lane (S731 checkpoint)*, NEXT (0), and [`conductor_mode`](conductor_mode.md). The ones that bite first: never force a re-extraction blind (`d-rccd-pilot-no-blind-force-s671`), and never rerun a read or a load whose result is unexplained (`d-west-valley-no-blind-rerun-s727`); read a PR's whole thread before its merge or any apply of a file it carries (`p-apply-before-thread-read-s685`); a generated file is built with Python 3.12 ([note](kb-notes/methodology-a-generated-file-is-built-with-the-runners-python.md)), and a records change reruns both Commons builders (`p-check-generated-misses-commons-data-s697`); the conductor alone writes `.apply`, after an APPLY verdict and a clean pre-read (`d-conductor-owns-applies-s720`). S731's (lessons, *S731*): a worker's push counts once `git ls-remote` shows its head, and the conductor reads the head before a dispatch (`p-worker-push-proved-by-ls-remote-s731`); a plan's test accepts either state of a record another open branch moves (`p-test-asserts-other-pr-absent-recurs-s731`); a scorer change gets an Opus reader and a statewide self-recall that counts what the rule joins as well as the verdicts (`p-pooled-change-opus-reader-recall-s731`, [note](kb-notes/methodology-a-self-check-must-see-what-the-rule-writes.md)); a green read is checked for what it filed (`f-green-read-files-only-preview-s731`). (1) **Outline readers** (step 11, [`scheduled_sessions`](scheduled_sessions.md)), by the M-ID cards each improves (`f-outline-ranking-s691`): the queue is empty until a census, a harvest capture or a verdict row changes; De Anza, Palo Verde, College of Marin and Antelope Valley each wait on a reader; the standing test in `course-outcomes-load.yml`, the staff-names question and the 12 still-taught hand-ins: lessons, *Moved from the lane (S727 checkpoint)*, NEXT (1). **For a person:** delete the 30-day artifact `course-outcomes-45026998155-part1`, whose shape-trial pages print an Originator's name (`p-lan-not-outcomes-only-filed-names-s703`). **Golden West's 476 header rows** (`f-golden-west-476-header-rows-s690`; plan on `claude/s690-goldenwest-header` 0995d8b5) wait on a plain session's review. (2) **The display build** carrying tonight's records (S731's posts, above), once no apply is in flight, gate college Glendale, then `harvest-gap-census.yml` on `main`. (3) **Lane 1** (free page reads first; a paid read with `only=`, at most $5 a college on the estimate): the lever's next, Los Angeles Southwest 4; Sacramento City 4 with its one reread (`f-sacramento-city-course-id-gains-s720`); Cosumnes River 3 with 33542 (Option II's two blocks read as alternatives); Folsom Lake 38736 (pinned to p.176, not yet read); Santiago Canyon 3; Coastline 7; East Los Angeles 38332 and 45540 (a paid read, about $0.16); Napa Valley 3. Held: West Valley 35588 (its extraction overran the model's output limit even in two parts); Southwestern 32693 and 36634 and Pasadena City 31599 (rule A refuses each page's heading, a title with no award word: a reader change and a second reader). The pooled reading's next, each reason in s731p's receipt: El Camino 02513, 02515 and 02517 (a free reconcile, `extract=0`); El Camino 19861, 19866, 38948 and 43993 (a paid read; the host is blocked from the sandbox); Cuyamaca 18634, 18635 and 18636 (a reconcile step on "Complete 60 transferable units", which needs page text) and 18637 (read from Grossmont's page); Modesto 06683 (a 15-unit GE block in its total), 35127 (two learner paths) and 42664 (adds up; only the invented check fails); Porterville 06773 keeps s721c's gap, and no Porterville reconcile runs before (6)'s guard; the `pool_figure_not_read` rows applied elsewhere, checked against it. The eLumen follow-up's rest: Antelope Valley 16468 keeps its sister-page record (its own page adds to 59 to 61 against a stated 60); 02139 and 20148 read unequal, collected with no gap; Mission College's 8 binds move at its next capture (`f-mission-binds-move-s727`). Then a fresh census's wave, read against the 14 programs it relists (`f-census-ignores-college-named-gaps-s727`). Orange Coast 08626 sits on the wrong page (`f-occ-08626-wrong-page-s727`), and a title heading check alone passes a successor's page (`f-heading-passes-successor-page-s727`). College of the Desert's 23 stay behind robots.txt and its 8 keep their gap (`f-desert-prior-catalog-behind-robots-s689`). (4) **Saddleback's `repeat` steps** (`claude/s731-saddleback-repeat`; an opt-in `block_sum` guard; its Opus reader's REREAD: only the seven differ over 18,962 records): reread 45632688186 replaced 19050, 19051, 41420, 41422, 41423, 41425 and 41426, all passing. Next, land 3, its own PR after #3827 (a `commons_data` conflict at its land); before Saddleback's next read, put `units:?\s*2(?:\.0+)?\s*` before the code, drop the second step and rerun the recall (`f-saddleback-repeat-window-s731`). (5) **Lane 2, cheap piles** (each hold by key, with its reason, in its plan's receipt): held tonight, Los Angeles Trade-Technical 11 (02911, 21855, 31090, 31280 and 41150 on a rename or prefix lever; 31089, 41011 and 45285 coverage; 18857 the pooled reading's; 38737 a fill step from its own table row; 37706 the own-page guard), Saddleback 04073 (two gaps at once) and 36625 (no kind names its figure), Long Beach City 4 (43021 read from 02677's page; 37213 another award's page; 44848 cut off mid-Area 4; 42970, `d-lbcc-42970-no-units-read-or-hold-s731`). S727's stand: American River 7 (07207, 12191, 12238, 30595, 39341, 39731, 39732), Shasta 15, College of the Canyons 14, Santa Barbara City 5 (19012, 30746, 43553, 45452, 46520) and 05934 (`d-sbcc-05934-keeps-hold-s727`). S721's stand: Orange Coast 17 (`f-orange-coast-wording-rules-s721`), Palo Verde 5, Porterville 4, Gavilan 11; S720's at eleven colleges (ids in lessons, *Moved from the lane (S721 checkpoint)*, NEXT (6)). Next: Cosumnes River's 17 once lane 1 leaves it, Orange Coast's 17 and 08626 in a run with room, then a fresh census's piles. Los Medanos stays parked. (6) **The night's one follow-up** (after the waves): first, before any Porterville reconcile, keep the filed arithmetic for a `GAP_HELD` record (`kb/_program_requirements_college.py`, about line 7884), with a test that 06773 still fails (`f-porterville-06773-flips-on-reconcile-s731`); "LIST A" then "LIST B CONTINUED" still joins, and GE and list-size sentences fire the new phrasings (`f-continued-heading-list-b-joins-s731`); the waiver shape misses six (`f-waiver-shape-misses-six-s731`); a read whose price step holds a partial capture fails or says so (`f-green-read-files-only-preview-s731`); the pile guards' cast-error abort and `js-tests.yml`'s Long Beach City comment (`f-follow-up-minors-s731`). Then the older items, each with its slug (S713's list, SDCCE's 6 SLO-label rows first; COBIx's `f-cobix-minors-s713` and `f-cobix-minors-s714`; Cerritos 35166's pin; the free rules; S721's minors; S727's three): lessons, *Moved from the lane (S731 checkpoint)*, NEXT (6). (7) **Older levers and holds** (City College of San Francisco's 20 unnamed and its Cal-GETC dry run, a plain session's; MiraCosta 36144 and 36171, a wider text window; Fullerton's 15 off their own page; Sacramento City 07334; Cosumnes River 35364; Las Positas 01037, 09227; Antelope Valley 39295; Santa Rosa Junior 06566, 32298; Glendale 38973 to Copper Mountain): each with its slug, lessons, *Moved from the lane (S727 checkpoint)*, NEXT (3), (6) and (7). (8) **The printed-course files** (`m-printed-catalog-courses-s690`, **DECIDED** `d-course-rows-gzipped-s690`): 17,341 printed courses at 16 colleges; no committed pipeline yet fills an M-ID card's missing description from them (lessons archive 8, *Moved from the lane (S703 checkpoint)*). (9) to (16), the older queue, from Lassen's structured fields ([`reference/roep_display_structured_fields_design`](roep_display_structured_fields_design.md)) to #3465's `spent_usd`: lessons, *Moved from the lane (S720 checkpoint)*. **For a person:** the artifact above (S703); the records s727f held, each reason in its receipt: Santa Monica 03281, Glendale 44488, Clovis 36326 and 39539, East Los Angeles 33013, Los Angeles City 32832, Cerritos 44984 (a reload); and Los Angeles Mission 44849 (no live row). Older lists: lessons, S653, S666, *Moved from the lane (S684 checkpoint)* to *(S731 checkpoint)*.
+
+**The extraction gate and one spend meter** (`d-extraction-gate-every-run-s653`, `d-one-spend-meter-s654`; `kb/_spend_meter.py` holds the $40 stop): the paragraph as it stood, lessons, *Moved from the lane (S680 checkpoint)*.
+
+**Cheap piles (S680 to S685; Sam, relayed by COBIx on #3358: *"my priority is completion and will find the funding to make it happen"*):** collect with gaps; undo newest first (#3548's rollback, then the 99-row plan's, then S680's). The paragraph as it stood: lessons, *Moved from the lane (S687 checkpoint)*.
+
+**The unblocker step (Sam, 2026-11-18, relayed by COBIx on #3510):** try a college's other public routes before Sam's hand-fetch list; never script around a WAF or a bot check, never ignore robots.txt ([`scheduled_sessions`](scheduled_sessions.md) step 12). The paragraph as it stood: lessons, *Moved from the lane (S687 checkpoint)*.
+
+**Rule D** (S687 to S688, `d-rule-d-from-committed-previews-s687`): `kb/status/program_discontinued.json` flags a program printed only in the prior year's catalog; a program not printed is a candidate for a prior-year read, never a flag. The paragraph as it stood: lessons, *Moved from the lane (S703 checkpoint)*.
+
+## S739 (SkyOystercatcher, the CPL Queue routine's 06:12Z collection run of 2026-11-26): 99 records, the display build, the lever, the pooled reading, piles at fourteen colleges, two waves
+
+The routine's 06:12Z firing, a conductor run for collection only under Sam's routine prompt of 2026-11-17 and COBIx's
+brief on #3358, served by Opus 5.5 (the routine's form names Fable 5.2). No other session showed live (no `list_sessions` here; the open PRs and `main`), so the run took the
+queue at once; handoff 738 named SkyTurnstone as Sam's next plain Session 738, so the run took S739 and writes handoff
+740 (`d-routine-takes-next-free-number-s713`). Handoff 740 holds the declaration, the college split, every split change
+with its time and every reader's verdict. In all: 99 records collected, 22 live by reads and loads and 77 by guarded
+plans (14 passing on a rescore by a rename, 63 named gaps), 30 named gaps for programs with no record, no outline rows,
+about $1.23 of paid reads. The census on `main` after the display build (45771011713, 06:55Z): of 20,282 active
+programs, 15,578 pass and 4,175 have no passing record. Headline at 11:14Z: 15,610 complete at 118 colleges.
+
+**Merged.** #3880 (`075d1ee8`, 06:50Z), the display build `3a699eddc8c9`; #3881 (`48966ffa`, 08:24Z), the lever's land;
+#3882 (`1caef64a`, 09:15Z), the pooled reading's land; #3883 (`2e4ccabb`, 10:27Z), the applied piles s739a to s739h
+from a land branch cut apart. Land 4 carries `piles2` (s739i to s739n and 41373's rollback), `waveA` and `waveB`.
+
+**What ran.**
+- **The lever** (Folsom Lake 38736, East Los Angeles 38332 and Coastline 40476 live and passing; $0.34 of paid reads;
+  Sacramento City's reconcile and reread restamped 30 rows and moved no verdict; plan s739l, 2 rows at 40, migrate
+  45780554871). Six named gaps with no record (East Los Angeles 45540 `list_by_reference`; Coastline 03724, 20353,
+  18054, 11459, 18216 `credit_not_in_catalog`); Coastline 43057 held on the title rule binding legacy 33014.
+- **The pooled reading** (El Camino 02513, 02515, 02517 by reconcile 45768189197 and reread 45774563911; Modesto 06683
+  and 42664 by reconcile 45772245635 and reread 45774398044; $0 paid). Blast radius: El Camino 126 records, 0 pass to
+  fail, 3 fail to pass; Modesto 188, 0 pass to fail, 2 fail to pass.
+- **Lane 2's piles**, each plan with a second reader and the conductor's apply: s739a American River 5, s739b Shasta 12,
+  s739c College of the Canyons 13 (7 passing by a rename their notes name), s739d Santa Barbara City 3, s739e Los
+  Angeles Trade-Technical 6 (41150 left the plan: a rename on a note that names a title mismatch), s739f Saddleback 2
+  (04073 `waived_course_counted`, 36625 `pool_figure_not_read`), s739g Long Beach City 1 (44848
+  `noted_section_cut_off`), s739h Clovis 2 (36326 `lists_not_closed`, 39539 `heading_not_in_text`), s739i Cosumnes
+  River 11 (4 passing by a rename to a fused state code, MKT 495 and RE 296, on the committed
+  `kb/reference/cb_course_basic_fall2025.csv`; 7 named gaps), s739j Orange Coast 4 less 41373, s739k Palo Verde 5, s739m
+  Gavilan 5, s739n Ventura 7. The shared `kb/_program_piles_s739.py` adds the own-page guard on the record's own heading
+  and a rename rescore (S721 Porterville's form); `LiveRuns` reads live runs for a college with no earlier module.
+- **The waves** (`waveA` 13 colleges, `waveB` 19, each checking its colleges' own named-gap files first; paid reads
+  $0.50 and $0.385): `waveA` 8 records live (De Anza, Las Positas, Cuesta, Grossmont, Bakersfield; six pass), 8 named
+  gaps with no record, 11 relists; `waveB` 6 live (Riverside City, San Diego College of Continuing Education, Yuba,
+  Evergreen Valley, Mt. San Antonio, Skyline; five pass), 15 named gaps with no record, 2 relists, one plan row.
+
+**Patterns.**
+- **One combined land for applied branches** (`d-one-land-for-piles2-and-waves-s739`), as S731's #3830 did: three
+  working branches, one PR off `main`, once the applies finish.
+- **A land branch cut apart from a working branch** (`d-land-applied-piles-apart-s739`): the applied plans merged while
+  `piles` kept writing; the land branch took `main`, the three Commons files took `main`'s side and both builders
+  reran.
+- **The apply script waits for each receipt:** each apply runs after the last one's receipt, with a retry on the
+  shared clone's `shallow.lock`; the migrate workflow takes one pending slot, so one apply is in flight at a time and
+  `.apply` goes back to `main`'s value after each.
+- **A free, branch-only page read is inside the lift's words** (`d-free-page-read-workflow-in-lift-s739`).
+- **A sum inside a printed range files no gap** (`d-within-range-sums-hold-for-units-kind-s739`): the second reader found
+  five records filed `noted_figures_differ` whose units sums sit inside their printed ranges (36 in 30-36, 27 in 26-27,
+  24 in 14-24, 53-60 in 48-60); four left s739m, 41373 rolled back from s739j's receipt to its before-checks (the
+  rollback's own md5 pre-read, `kb/migrations/2026-11-26_s739j_41373_rollback.sql`, and its committed record file put
+  back to `main`'s copy so no later load re-posts the gap), and all five wait for a units twin of
+  `hours_within_printed_range`.
+
+**Pitfalls.**
+- **`p-shared-clone-origin-main-stale-s739`:** this container's shared clone had `origin/main` at S719's commit
+  (`56c38abf`), days stale, so the harness made each worker's worktree there. The conductor fetched `main` by name and
+  told all three workers to start their branches at it before any work; fetch `main` by name first, every run.
+- **`p-new-ci-step-docs-only-skip-needs-list-s739`:** #3882's `test` failed lints 2 and 5, then #3883's lints 2 and 6.
+  A new test step carrying the docs-only skip needs a line in `tests/lints_docs_only_skip.json` (nine S739 steps, now run
+  on every diff), and a page plan that reads http pages names the `http_hosts` reason.
+- **`p-older-pile-tests-pin-runs-later-plans-move-s739`:** an older plan's test that pins posted runs fails when a later
+  plan posts on top of it (`tests/program_piles_s727_shasta_test.py` after s739b; `..._canyons_test.py`, which pinned
+  15477's run, after s739c); each now takes `skip=`. Run all 47 piles and reconcile tests before a push.
+- **A date field's form on `main`:** this container's git prints `+00:00` where `main` sometimes holds `Z`, so a hand
+  edit crept in twice; read the form on `main` first.
+- **The heading-apart guard:** `_heading_apart` let both same-title sisters claim `own_heading` when the heading names
+  both awards (Palomar's "A.A. Degree Major or Certificate of Achievement": 27 of 348 identical-heading sister pairs);
+  no row tonight hit it; `piles` fixed it with a Palomar-shaped test (`f-heading-apart-both-awards-s739`).
+- **`f-elcamino-02487-stale-pass-s739`:** El Camino 02487's filed `score` reads pass (27-28) while the scorer gives fail
+  (51-62 against 60), a pass on `main` the scorer rejects; its committed `was` step fixes it at the next reconcile.
+- **`f-shasta-30580-shares-43618-list-s739`:** Shasta 30580 holds the same list as 43618 from one "Communication Studies
+  2.0" section and looks mis-filed.
+- **`f-four-new-named-gap-labels-s739`:** `catalog_list_differs`, `certificate_names_the_major`,
+  `list_printed_as_number_run` and `catalog_renumbered` are free text in inert `named_gaps_s739.json` files; no matcher
+  reads them, and none may until a recall test says it joins nothing it should not.

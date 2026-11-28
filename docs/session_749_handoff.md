@@ -11,12 +11,34 @@ obsidian-folder: cpl-project-tracker/handoffs
 get_session is not among this run's tools, so the header is the only readout.**
 
 **Routing, both ways.** A CPL Queue routine firing follows this file. A plain session Sam opens follows the newest
-handoff his plain sessions write (747, S746 SkyPetrel's, naming SkyShearwater for Session 747, which is live tonight and
-writes 748), never this file.
+handoff his plain sessions write (748, S747 SkyShearwater's, naming SkyGannet), never this file.
 **Numbering.** Handoff 743 (S742 SkyGodwit) named SkyStilt for the routine's next session, to take the next free number.
-747 is Sam's plain session in flight, so this run is S748 and writes 749.
+747 was Sam's plain session in flight at the start, so this run is S748 and writes 749. Handoff 748 calls SkyGannet
+"Session 748"; this run took that number first, so Sam's next plain session takes the next free one. The routine's next
+session is **SkySandpiper**, to take the next free number at its start.
 
-*(Declaration, written at 06:17Z before any worker started.)*
+*(Declaration, written at 06:17Z before any worker started; the sections after the log were written at the checkpoint.)*
+
+## Open with the standing block (COBIx on #3358, 21:20Z 2026-11-18, corrected 21:36Z; Sam's rule for the next two or three sessions)
+
+0. **COBIx's brief is on issue #3358**: read the newest (comment 6894464154, Fri Nov 27, 6:45 PM PT, at this writing),
+   and comment 7064588752 (Sam's two rulings of 2026-11-21), before the split.
+1. **No COBIx watcher.** Sam, 01:53Z 2026-11-23, to S712: *"No need for the Cobix check ins for now"*
+   (`d-cobix-watcher-stopped-on-sam-word-s714`). Read a PR's whole thread before you merge it or apply what it carries.
+1a. **Clone light (Sam, 2026-11-19):** `git clone --filter=blob:none` (or `--depth=1` when history is not needed),
+   never a full clone. Fetch a branch by name; a worker's push counts once `git ls-remote` shows its head
+   (`p-worker-push-proved-by-ls-remote-s731`). Fetch `main` by name first (`p-shared-clone-origin-main-stale-s739`).
+   The harness pins each worker to its own worktree (`f-harness-pins-worker-to-worktree-s748`).
+2. **Merge rules:** at most 3 open PRs (plus #3511 and dependabot's), the oldest finished first, one update from `main`
+   right before its merge, no dependency-map rebuild inside a PR, no full rerun when the input fingerprints match. Stop
+   a review after two rounds. Records PRs merge one at a time (`p-records-prs-merge-one-at-a-time-s703`).
+2a. **Sam's work order (2026-11-20):** collection comes first, data waves before fixes, and a fix goes ahead of the next
+   wave only when it blocks it or would file wrong rows (`r-collection-first-sam-2026-11-20`). Collection serves the
+   M-IDs, so its fixes are ranked by the M-ID cards they unblock (`r-collect-for-mids-work-order-sam-2026-11-20`).
+3. **Merge order at sign-off:** the land #3945 has merged (`cd464091`); the second land, Mt. San Antonio's eight
+   (`claude/s748-land-mtsac`: PR number and merge sha, the conductor fills in), merges next; this checkpoint, #3940,
+   merges after it, with one update from `main` right before its merge. Open beside them: COBIx's #3937, #3926 and
+   #3917 (Sam's or COBIx's) and dependabot's #3383, which waits.
 
 ## The start (06:12Z firing, 2026-11-28)
 
@@ -237,3 +259,206 @@ paid reads, rereads, loads and `.apply`, and holds every Supabase call.
   unmoved since its base.
 - 10:48Z: **#3945 merged (`cd464091`, confirmed on `origin/main`).** `post` builds the second land,
   `claude/s748-land-mtsac`, for Mt. San Antonio's eight.
+
+## What shipped
+
+In all: **41 records collected and live**, no outline rows, paid reads about $0.34 on their receipts (Coastline $0.06,
+San Bernardino Valley $0.09, San Jose City $0.06, Orange Coast $0.13; College of the Canyons' read failed; page reads
+and reconciles free). A **full checkpoint** (data receipts were written and the harvest lane moved). The census at the
+start is in *The start* above. The closing census: (run id and counts: the conductor fills in).
+
+**Merged.**
+- **#3945, the land** (`claude/s748-land`, merged `cd464091`, 10:48Z, confirmed on `origin/main`): 33 records' plans,
+  receipts and reads, Coastline's staging fix, the reconcile steps at San Bernardino Valley, Lassen and College of
+  Alameda, Lassen's guard `only_cal_getc`, the plan modules `kb/_program_piles_s748*.py`. `test` green on `0add7c1e`
+  (run 46134498846); a Sonnet second reader said MERGE.
+- **The second land, Mt. San Antonio's eight** (`claude/s748-land-mtsac`, built by `post`): (PR number and merge sha:
+  the conductor fills in).
+
+**Live (each applied, reread or loaded).**
+- By guarded plans, 24. Named gaps, 21: s748a Butte 14583, Santa Barbara City 43553; s748k1 College of the Canyons
+  38686, 44273, 45610; s748r1 El Camino 19857; s748b Orange Coast 03993, East Los Angeles 41231; s748g1 Allan Hancock 7
+  and Mt. San Antonio 2; s748r2 Sierra 33639, 33646, 36718, 39209. Coverage read true, 3: s748c Orange Coast 43100,
+  Fullerton 18749 and 36863 (the reading `state_course_not_on_page`).
+- By rereads and loads, 17, each with its arithmetic equal: Cuyamaca 18637; San Bernardino Valley 04894 and 31858;
+  Coastline 43057; Orange Coast 08626 and 08663; Lassen 18752 and 18756; College of Alameda 32765; Mt. San Antonio
+  02990, 08045, 16544, 30762, 36697, 39709, 39710 and 44689.
+- The log's running count proves the split: 3, 8, 9, 11, 20, 24, 27, 30, 33, 41.
+- Left out of the land, each on its branch (the Ledger): the census change, the found-pages change, Cosumnes River's
+  `set` step, Sierra 21525, San Jose City 22225.
+
+## Read in order
+
+1. This file's *Open work*, then `docs/reference/lanes/program-requirements-harvest.md`, *S748's posts* and *NEXT*.
+2. `docs/program_requirements_harvest_lessons.md`, *S748* (the refusals, the lessons, the readers' MAJORs and MINORs).
+3. `docs/reference/conductor_mode.md`, *Back for collection only*, and COBIx's newest brief on #3358.
+
+## Open work, from the lanes' NEXT lines
+
+1. **`program-requirements-harvest`** (the routine's), by the lane's NEXT:
+   - NEXT (2): a display build carrying S748's 41 records, gate college Glendale, then `harvest-gap-census.yml` on
+     `main`.
+   - NEXT (3): **the found-pages change, round 2**, the largest lever found (`claude/s748-readers-found` `e77ff6a8`;
+     Skyline's flag on `claude/s748-readers-found-skyline`, which holds tonight's free capture). The extract function
+     must accept an empty closed list (`chatbox/supabase/functions/program-requirements-extract/index.ts`, lines 480 to
+     484); `score()` must set coverage false with a named gap at zero listed courses; the opt-in must be tied to a
+     per-college open-setting recall. Then a one-program paid probe (Skyline 05809), then 194 programs at 14 colleges
+     for about $19 (the list: the log at 08:22Z).
+   - NEXT (4): the census reading college-named gap files (`claude/s748-keys` `50bedbf7`, reverted in the land), fixed
+     per its reader: keep the 78 in the gap under their own cause; apply only when no live row exists; pin `main()`'s
+     hand-in.
+   - NEXT (5): Cosumnes River's `set` step (`claude/s748-keys-crc`, `6a4fe94a`; a test pins the college free of it).
+   - NEXT (6): the 11 coverage-omits records to assign under `state_course_not_on_page`: Cerritos 02235; Citrus 02333;
+     Marin 46242; Diablo Valley 39775; Foothill 11827, 43194; Irvine Valley 44922; Madera 39810; Palomar 08929, 22528;
+     Porterville 33085.
+   - NEXT (7): College of the Canyons 37868's failed paid read 46121986278: read its log before any rerun.
+   - NEXT (8): reader changes: Reedley 30465, Los Angeles Pierce 19181, Grossmont 21402, Mt. San Antonio 43777 and
+     43999 (department headings), Sierra's `or_units` step (40181, 31922, 31923).
+   - NEXT (9): the follow-up's minors, old and new (tonight's: the s748k1 and s748b test mutation gaps the readers
+     named, 45610's kind, the uncommitted page-read outputs; lessons, *S748*, *Readers' MAJORs and MINORs*).
+   - NEXT (10) and (11): the holds S748 did not reach and the older queue. Step 11: the outline queue is empty until a
+     census, a capture or a verdict row changes (NEXT (1)).
+   - **For a person:** San Jose City 22225 (held for a person; "RealEstateRE" names two courses); Allan Hancock 19928
+     (HUSV 120 and 170 may be alternatives); Sierra 33639 (confirm the degree total 60); Reedley 20762 (filed passing
+     from 30465's page); East Los Angeles 31017 (54-61 around 60); Sierra 21525 (a tie; neither passes).
+2. **`common-subjects-reference`** (a plain session's; conductor runs stay on collection): its NEXT (S744) in the
+   lane, with `commons`, which Sam's plain sessions hold (handoff 748). None was worked in this run.
+3. **A plain session's, each by its lane's NEXT:** `implementation-funding` (27,661 bytes against 20,000: compact
+   first); `cer-procedures` (21,633: compact first); the rest as handoff 748 lists them.
+
+## Blocks (Sam's ruling 1: listed here until the Commons' Needs you shows them)
+
+Handoff 743's table stands in every row this run did not clear; the rows below changed.
+
+| Block | Who clears it | Since |
+|---|---|---|
+| The found-pages change, round 2 (`claude/s748-readers-found`, `e77ff6a8`): the extract function, `score()` at zero listed, the opt-in | Sky, a Fable second reader, then the paid probe | 2026-11-28 (S748) |
+| The census reading college-named gap files (`50bedbf7`, reverted in the land) | Sky, the fix its reader named | 2026-11-28 (S748) |
+| Cosumnes River's `set` step (`claude/s748-keys-crc`, `6a4fe94a`): a test pins the college free of it | Sky, with a second reader | 2026-11-28 (S748) |
+| College of the Canyons 37868: paid read 46121986278 failed, unexplained | Sky, its log first | 2026-11-28 (S748) |
+| The 11 coverage-omits records to assign (`state_course_not_on_page`) | Sky, a guarded plan | 2026-11-28 (S748) |
+| Reedley 30465; Los Angeles Pierce 19181; Grossmont 21402; Mt. San Antonio 43777, 43999; Sierra 40181, 31922, 31923 | Sky, reader changes with second readers | 2026-11-27 (S742) to 2026-11-28 (S748) |
+| San Jose City 22225; Allan Hancock 19928; Sierra 33639; Reedley 20762; East Los Angeles 31017; Sierra 21525 | a person | 2026-11-28 (S748) |
+| San Jose City 18449; San Diego City 22352, 38732; Solano 43134 (a person's); Santa Monica 43767 (a person compares) | Sky, shared code; Solano and Santa Monica a person | 2026-11-26 (S740) to 2026-11-27 (S742) |
+| The follow-up's minors from S748's readers (lessons *S748*, *Readers' MAJORs and MINORs*) | Sky, the follow-up | 2026-11-28 (S748) |
+
+Cleared tonight: Cuyamaca 18637; Coastline 43057 and its staging fix; Orange Coast 08663 and 08626; the gap plans Butte
+14583 and Santa Barbara City 43553; San Bernardino Valley 04894; El Camino 19857; Orange Coast 03993 and 43100; East Los
+Angeles 41231; Fullerton 18749 and 36863. Found already collected (S741): Santa Ana 31859 and 21789; Copper Mountain
+43854, 14737 and 20094; San Diego City 22367; Ventura's seven; Norco's 12.
+
+## For Sam
+
+Nothing waits on Sam ([Open Asks Sheet 200](https://claude.ai/artifact/5ShC7pGgNuz9bJUhkdsc8Y), current). Every call
+tonight was the conductor's, recorded below and reversible. Six records wait on a person's look (the Blocks table).
+
+## Decisions Sam made
+
+None tonight. Sam's words in this session: none. The run acted on his routine prompt of 2026-11-17, his
+collect-with-gaps ruling of the same day (`sam-collect-with-gaps-2026-11-17`), his work order of 2026-11-20 and his
+cost rules of 2026-11-25.
+
+## Decisions (the conductor's, each reversible)
+
+- `d-no-display-build-at-start-s748`: no display build at the start; S746's build `229a759101f7` was current.
+- `d-list-minimum-units-refused-s748`: the new reconcile kind got a NO GO, accepted with no second round, and was
+  removed; East Los Angeles 31017 stays held.
+- `d-census-change-left-out-s748`: the census reading college-named gap files stays out of the land (FIX THEN LAND).
+- `d-found-pages-probe-held-s748`: the paid probe is held until round 2; the free Skyline capture ran.
+- `d-sierra-21525-not-reread-s748`: a tie; a reread would rewrite twelve live records for no gain.
+- `d-canyons-37868-not-rerun-s748`: the failed paid read is not rerun unexplained.
+- `d-hancock-s681-entry-is-lane-assignment-s748`: `kb/collection_lane.py`'s S681 Allan Hancock entry is a lane
+  assignment, so s748g1 applied.
+
+Memory rows: `kb/migrations/2026-11-28_s748_cpl_memory_rows.sql` (13 rows, all proposed, INSERT-only with
+`ON CONFLICT DO NOTHING`, rollback in its header), drafted by the checkpoint-docs worker, applied by the conductor.
+
+## Patterns that worked
+
+- **Plan, second reader, clean md5 pre-read, one apply, `.apply` restored**, seven times (`claude/s748-apply`); a
+  Sonnet reader for plans, a Fable 5.2 reader for shared reader code, and no second round on a NO GO.
+- **Rank the census's gap by college** and send workers to the largest (Sierra, Skyline, Allan Hancock, Mt. San
+  Antonio): the brief's named lists were largely collected already (`f-yield-from-census-gaps-s748`).
+- **A sibling branch for each read** (`-keys-sbvc`, `-keys-lassen`, `-keys-alameda`, `-readers-coast`, `-piles-oc`,
+  `-paid-*`, `-gaps-mtsac`), and a small worker, `post`, for keep-better on each filed run.
+- **Keep-better from the conductor's live read before every reread**, re-measured when a reconcile files hours later
+  (Mt. San Antonio: the 08:17Z md5 held at 10:40Z).
+- **A land worker and a second reader on the land worker's own edits** before the merge.
+
+## Findings
+
+- `p-recall-oracle-restates-rule-s748`: twice a recall's oracle restated its rule and twice a test stayed green with a
+  guard removed; every brief now asks for an independent oracle and a test that turns red on each guard's removal.
+- `f-yield-from-census-gaps-s748`: the yield came from the census's largest gaps, not the brief's named lists.
+- `o-found-pages-194-programs-s748`: 194 programs at 14 colleges have a found own page and no closed list.
+- `p-worker-handback-repeats-s748`: a worker that leaves background jobs running hands back again; brief readers to
+  report once.
+- `f-harness-pins-worker-to-worktree-s748`: the harness pins a worker to its own worktree.
+
+## Safety patterns to honor
+
+All of handoff 743's. New tonight: a recall's oracle is independent of the rule it tests; a plan's test turns red when
+any guard is removed; a record scored against zero listed courses must never pass on arithmetic alone; a paid read
+that failed is not rerun before its log is read; live rows are re-measured before keep-better when a run files late.
+Never file a person's name from an outline page anywhere. A permission-check refusal is never routed around.
+
+## Conductor settings
+
+A conductor run for collection only, under Sam's routine prompt of 2026-11-17 (`docs/reference/conductor_mode.md`,
+*Back for collection only*; review rounds as his ruling of 2026-11-20 sets them). Settings block (Sam, 2026-11-11, his
+latest change; the block copied from `docs/reference/conductor_mode.md`):
+
+- Conductor model: Fable 5.2 (`claude-fable-5-2`), working with COBIx; the routine's form sets the model and ultracode;
+  medium effort lives in its prompt. Tonight Fable 5.2 served the conductor, as the form names.
+- Ultracode on. The conductor at medium effort.
+- Workers on Opus 5.5 (named in each Agent call, `model: opus`); tonight no Opus worker ran: `keys`, `readers`,
+  `piles`, `gaps`, `post`, `sbvc`, `coast` and `land` ran Fable 5.2 at high effort, the eight plan readers ran Sonnet,
+  the five shared-code readers ran Fable 5.2, and pr-gate was not used (the conductor read #3945 itself).
+- A worker building anything that writes shared data or changes an apply runs at **high** effort.
+- A review workflow uses **at most 9 agents in all**, readers and second readers together.
+- **Cost limits:** $40 per college per run, on the estimate, for program-requirements extraction, and a separate $40 per
+  college for SLOs, PLOs and course objectives; per run, never a remaining pot. Paid runs go through the conductor.
+
+Also: two lanes, never on one college; about $750 a day for everything, $10k running total for the whole job; stop rules
+from the brief: a day over $300 with fewer than 40 new programs; over $12 per new program or $0.50 per outline row; a
+rollback that undoes over 1% of a day's rows; the $10k checkpoint. This run aimed at about $250, with no new worker after
+about $190.
+
+## Ledger
+
+| PR or branch | State | Next |
+|---|---|---|
+| #3940 (`claude/nice-maxwell-ykve9f`) | the declaration, the log and this checkpoint (draft, docs only) | merges at sign-off, after the lands and one update from `main` |
+| #3945 (`claude/s748-land`) | merged `cd464091` (10:48Z); the branch is gone | none |
+| `claude/s748-land-mtsac` | the second land, Mt. San Antonio's eight, built by `post` | (PR number and merge sha: the conductor fills in) |
+| `claude/s748-apply` (`686e6b94`) | s748a, s748k1, s748r1, s748b, s748g1, s748r2 and s748c applied; `.apply` restored | none; in the land |
+| `claude/s748-keys` (`da2cc599`) | in the land, less the census change `50bedbf7` (reverted there) | NEXT (4): the census fix |
+| `claude/s748-keys-sbvc`, `-keys-lassen`, `-keys-alameda` | reconciles and rereads live (04894; 18752, 18756; 32765) | none; in the land |
+| `claude/s748-keys-crc` (`6a4fe94a`) | Cosumnes River's `set` step, parked | NEXT (5) |
+| `claude/s748-readers` (`aeeb33d2`), `-readers-cuy2`, `-readers-stagepin` (`b2687880`), `-readers-coast` | Cuyamaca 18637, the staging fix and Coastline 43057 live | none; in the land |
+| `claude/s748-readers-found` (`e77ff6a8`) | the found-pages change, off for every college; GO WITH, the probe held | NEXT (3): round 2 |
+| `claude/s748-readers-found-skyline` (`b3c087f8`) | Skyline's flag (`1f7a211b`) and tonight's free capture | NEXT (3): the probe's sources |
+| `claude/s748-piles` (`239dc152`), `-piles-oc` | s748a, s748b, s748c and Orange Coast's read live; `list_minimum_units` removed | none; in the land |
+| `claude/s748-gaps` (`dda6c4bf`) | s748g1 applied | none; in the land |
+| `claude/s748-gaps-mtsac` (`d3bd1163`) | Mt. San Antonio's reconcile 46124747415, keep-better's eight, the reread live | the second land |
+| `claude/s748-paid-sbvc` | San Bernardino Valley 31858 loaded and live | none; in the land |
+| `claude/s748-paid-sjcc` (`6bad0e1a`) | San Jose City 22225 held for a person, no dispatch | a person's look |
+| `claude/s748-paid-coc` (`2975e3fd`) | College of the Canyons 37868's paid read 46121986278 failed | NEXT (7): its log first |
+| `claude/s748-post-sierra` (`f26375bd`) | Sierra 21525, a tie, no dispatch | a person's look |
+| `claude/s742-readers-cuy2`, `claude/s742-readers-stagepin` | superseded by their `s748` copies, in the land | none |
+| Harvest gap census on `main` | 46089216929 (00:44Z): 15,680 pass; the closing run: (run id and counts: the conductor fills in) | the next run's first read, after the display build |
+| #3937, #3926, #3917 | COBIx's (subject titles; two superseded) | Sam's or COBIx's |
+| #3383 | dependabot's | waits |
+
+## Let go
+
+The conductor holds no PR subscription, check-in or artifact watch: it opened no `subscribe_pr_activity` subscription
+on #3940 or #3945, no COBIx watcher (stopped by Sam, `d-cobix-watcher-stopped-on-sam-word-s714`) and no scheduled wake,
+so none is to drop. Workers end with the session; each branch is pushed. The vault note for this run: (the conductor
+fills in its path and PR).
+
+Spend: not available; 2026-11-28T06:12Z to (the conductor fills in the figure, its tags and the end time).
+
+Opening line: *Greetings, you are SkySandpiper (the next free session number at your start; the routine takes it), see SkyStilt's (S748) handoff — `docs/session_749_handoff.md` — let's keep rolling with our queue.*
+
+(Last line: the conductor fills in: conductor model, session cost, records collected, outline rows, substantive PRs merged.)
