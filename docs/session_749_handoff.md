@@ -219,3 +219,12 @@ paid reads, rereads, loads and `.apply`, and holds every Supabase call.
   here: 2,658 of 16,913 passing records already pass with a listed course unplaced; the reading is used only in this
   plan; `list_minimum_units` is cleanly gone). Clean md5 pre-read 3 of 3. The apply pushed on `claude/s748-apply`; the
   test pins go into the land.
+- 08:54Z: s748c's migrate 46127704066 green; Orange Coast 43100 and Fullerton 18749 and 36863 read coverage true live.
+  Records collected: 33. A Fable worker, `land`, builds `claude/s748-land`.
+- 09:03Z: Mt. San Antonio's reconcile 46124747415 filed on `claude/s748-gaps-mtsac` (`c43676dc`).
+- 10:38Z: `land`'s report: **#3945** ready at `0add7c1e`, `test` green (run 46134498846); 69 test files, 5,513 checks;
+  the merged state broke 12 test files, each fixed as a named either-state edit; one plan-code change (`on_live_run()`
+  in `kb/_program_piles_s727_canyons.py`, Canyons 43388 alone). The census change, the found-pages branches, Cosumnes
+  River's step and Sierra 21525 are left out. The land worker's own edits go to a Sonnet second reader before the merge.
+- 10:41Z: Mt. San Antonio's live rows re-measured (10:40:38Z: 385 rows, the 08:17Z md5, the same six checked); `post` runs
+  keep-better on its reconcile.
