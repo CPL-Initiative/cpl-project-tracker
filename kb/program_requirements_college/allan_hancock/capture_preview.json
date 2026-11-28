@@ -1,0 +1,2878 @@
+{
+ "college": "Allan Hancock College",
+ "catalog_url": "https://hancockcollege.curriqunet.com/catalog/iq/28553",
+ "platform": "curriqunet",
+ "catalog_year": "2026-2027",
+ "programs": 226,
+ "with_closed_list": 179,
+ "started": "2026-11-28T14:41:53Z",
+ "curriqunet": {
+  "catalog": 9,
+  "view_prefix": "https://hancockcollege.curriqunet.com/catalog/iq/",
+  "errors": [],
+  "sections": [
+   "Degrees & Programs"
+  ],
+  "nodes_read": 48,
+  "calls": 97,
+  "entries": 507,
+  "stopped_at_cap": false,
+  "same_title_entries": 251,
+  "group_ends": {
+   "pages": 90,
+   "lines": 126
+  },
+  "entries_read": 256,
+  "twin_ids": {
+   "31158": [
+    30886
+   ],
+   "31157": [
+    30804
+   ],
+   "31156": [
+    30803
+   ],
+   "31155": [
+    30885
+   ],
+   "31154": [
+    30914
+   ],
+   "31406": [
+    31407
+   ],
+   "31153": [
+    30884
+   ],
+   "31152": [
+    30802
+   ],
+   "31151": [
+    30883
+   ],
+   "31150": [
+    30882
+   ],
+   "31149": [
+    30801
+   ],
+   "31148": [
+    30913
+   ],
+   "31147": [
+    30800
+   ],
+   "31146": [
+    30799
+   ],
+   "31145": [
+    30912
+   ],
+   "31144": [
+    30881
+   ],
+   "31143": [
+    30880
+   ],
+   "31142": [
+    30798
+   ],
+   "31405": [
+    31465
+   ],
+   "31141": [
+    30797
+   ],
+   "31140": [
+    30796
+   ],
+   "31139": [
+    30911
+   ],
+   "31709": [
+    31699
+   ],
+   "31710": [
+    31700
+   ],
+   "31138": [
+    30879
+   ],
+   "31137": [
+    30878
+   ],
+   "31136": [
+    30795
+   ],
+   "31135": [
+    30877
+   ],
+   "31134": [
+    30910
+   ],
+   "31133": [
+    30794
+   ],
+   "31132": [
+    30793
+   ],
+   "31131": [
+    30876
+   ],
+   "31130": [
+    30875
+   ],
+   "31129": [
+    30874
+   ],
+   "31128": [
+    30873
+   ],
+   "31127": [
+    30872
+   ],
+   "31126": [
+    30792
+   ],
+   "31124": [
+    30790
+   ],
+   "31123": [
+    30789
+   ],
+   "31401": [
+    31430
+   ],
+   "31122": [
+    30871
+   ],
+   "31121": [
+    30909
+   ],
+   "31120": [
+    30788
+   ],
+   "31119": [
+    30870
+   ],
+   "31118": [
+    30908
+   ],
+   "31117": [
+    30787
+   ],
+   "31116": [
+    30786
+   ],
+   "31115": [
+    30785
+   ],
+   "31114": [
+    30784
+   ],
+   "31113": [
+    30869
+   ],
+   "31112": [
+    30868
+   ],
+   "31111": [
+    30783
+   ],
+   "31110": [
+    30782
+   ],
+   "31481": [
+    31476
+   ],
+   "31399": [
+    31428
+   ],
+   "31109": [
+    30781
+   ],
+   "31108": [
+    30867
+   ],
+   "31107": [
+    30907
+   ],
+   "31397": [
+    31426
+   ],
+   "31396": [
+    31425
+   ],
+   "31106": [
+    30780
+   ],
+   "30984": [
+    30715
+   ],
+   "31104": [
+    30779
+   ],
+   "31103": [
+    30778
+   ],
+   "31102": [
+    30777
+   ],
+   "31101": [
+    30906
+   ],
+   "31100": [
+    30866
+   ],
+   "31099": [
+    30776
+   ],
+   "31098": [
+    30775
+   ],
+   "31097": [
+    30774
+   ],
+   "31096": [
+    30773
+   ],
+   "31095": [
+    30772
+   ],
+   "31094": [
+    30771
+   ],
+   "31093": [
+    30770
+   ],
+   "31092": [
+    30865
+   ],
+   "31091": [
+    30769
+   ],
+   "31090": [
+    30864
+   ],
+   "31089": [
+    30768
+   ],
+   "31088": [
+    30767
+   ],
+   "31087": [
+    30863
+   ],
+   "31086": [
+    30766
+   ],
+   "31085": [
+    30765
+   ],
+   "31084": [
+    30764
+   ],
+   "31083": [
+    30862
+   ],
+   "31082": [
+    30763
+   ],
+   "31081": [
+    30861
+   ],
+   "31080": [
+    30860
+   ],
+   "31079": [
+    30762
+   ],
+   "31078": [
+    30859
+   ],
+   "31077": [
+    30761
+   ],
+   "31076": [
+    30858
+   ],
+   "31075": [
+    30905
+   ],
+   "31074": [
+    30760
+   ],
+   "31731": [
+    31794
+   ],
+   "31732": [
+    31799
+   ],
+   "31733": [
+    31804
+   ],
+   "31734": [
+    31809
+   ],
+   "31073": [
+    30857
+   ],
+   "31072": [
+    30759
+   ],
+   "31071": [
+    30758
+   ],
+   "31070": [
+    30757
+   ],
+   "31069": [
+    30756
+   ],
+   "31068": [
+    30755
+   ],
+   "31067": [
+    30856
+   ],
+   "31497": [
+    31502
+   ],
+   "31066": [
+    30855
+   ],
+   "31065": [
+    30754
+   ],
+   "31064": [
+    30854
+   ],
+   "31063": [
+    30753
+   ],
+   "31062": [
+    30752
+   ],
+   "31061": [
+    30904
+   ],
+   "31392": [
+    31391
+   ],
+   "31673": [
+    31678
+   ],
+   "31058": [
+    30852
+   ],
+   "31057": [
+    30750
+   ],
+   "31056": [
+    31423
+   ],
+   "31055": [
+    30851
+   ],
+   "31054": [
+    30749
+   ],
+   "31053": [
+    31422
+   ],
+   "31052": [
+    30850
+   ],
+   "31051": [
+    30748
+   ],
+   "31050": [
+    30849
+   ],
+   "31049": [
+    30747
+   ],
+   "30921": [
+    31412
+   ],
+   "31048": [
+    31421
+   ],
+   "31047": [
+    30903
+   ],
+   "31046": [
+    30848
+   ],
+   "31045": [
+    30746
+   ],
+   "31044": [
+    30745
+   ],
+   "31043": [
+    30744
+   ],
+   "31042": [
+    30743
+   ],
+   "31041": [
+    30742
+   ],
+   "31040": [
+    30741
+   ],
+   "31753": [
+    31815
+   ],
+   "31038": [
+    30847
+   ],
+   "31037": [
+    30739
+   ],
+   "31558": [
+    31559
+   ],
+   "31036": [
+    30846
+   ],
+   "31035": [
+    30845
+   ],
+   "31034": [
+    30738
+   ],
+   "31033": [
+    30844
+   ],
+   "31032": [
+    30843
+   ],
+   "31031": [
+    30902
+   ],
+   "31030": [
+    30842
+   ],
+   "31029": [
+    30737
+   ],
+   "31758": [
+    30841
+   ],
+   "31763": [
+    31820
+   ],
+   "31769": [
+    31825
+   ],
+   "31774": [
+    31830
+   ],
+   "31779": [
+    31837
+   ],
+   "31028": [
+    30840
+   ],
+   "31026": [
+    30736
+   ],
+   "31025": [
+    30735
+   ],
+   "31024": [
+    30838
+   ],
+   "31023": [
+    30734
+   ],
+   "31022": [
+    30837
+   ],
+   "31021": [
+    30733
+   ],
+   "31020": [
+    30836
+   ],
+   "31019": [
+    30732
+   ],
+   "31018": [
+    30731
+   ],
+   "31017": [
+    31420
+   ],
+   "31015": [
+    30730
+   ],
+   "31014": [
+    30901
+   ],
+   "31013": [
+    30900
+   ],
+   "31012": [
+    30835
+   ],
+   "31011": [
+    31418
+   ],
+   "31010": [
+    30899
+   ],
+   "31007": [
+    30723
+   ],
+   "31002": [
+    30833
+   ],
+   "31001": [
+    30718
+   ],
+   "31000": [
+    31417
+   ],
+   "30999": [
+    30717
+   ],
+   "31027": [
+    30839
+   ],
+   "30997": [
+    30832
+   ],
+   "30996": [
+    30898
+   ],
+   "30995": [
+    30831
+   ],
+   "30994": [
+    30830
+   ],
+   "30993": [
+    30829
+   ],
+   "30992": [
+    30828
+   ],
+   "30990": [
+    30826
+   ],
+   "30989": [
+    30716
+   ],
+   "30988": [
+    30897
+   ],
+   "30987": [
+    30825
+   ],
+   "30986": [
+    30824
+   ],
+   "30985": [
+    30823
+   ],
+   "30983": [
+    30822
+   ],
+   "30982": [
+    30714
+   ],
+   "30981": [
+    30821
+   ],
+   "30980": [
+    30820
+   ],
+   "30979": [
+    30819
+   ],
+   "30978": [
+    30713
+   ],
+   "30977": [
+    30712
+   ],
+   "30976": [
+    30711
+   ],
+   "30975": [
+    30710
+   ],
+   "30973": [
+    30709
+   ],
+   "30972": [
+    30708
+   ],
+   "30971": [
+    30818
+   ],
+   "30970": [
+    30896
+   ],
+   "30969": [
+    30707
+   ],
+   "30968": [
+    30706
+   ],
+   "30967": [
+    30705
+   ],
+   "30966": [
+    30704
+   ],
+   "30965": [
+    30817
+   ],
+   "30964": [
+    31446
+   ],
+   "30963": [
+    30816
+   ],
+   "30962": [
+    31445
+   ],
+   "30961": [
+    30895
+   ],
+   "30960": [
+    31444
+   ],
+   "30959": [
+    30815
+   ],
+   "30958": [
+    31443
+   ],
+   "31784": [
+    31842
+   ],
+   "30955": [
+    30894
+   ],
+   "30954": [
+    30814
+   ],
+   "30953": [
+    30893
+   ],
+   "30952": [
+    30892
+   ],
+   "30951": [
+    31657
+   ],
+   "30950": [
+    30813
+   ],
+   "30949": [
+    30891
+   ],
+   "30948": [
+    31441
+   ],
+   "30947": [
+    30812
+   ],
+   "30945": [
+    30890
+   ],
+   "30944": [
+    30811
+   ],
+   "30943": [
+    30889
+   ],
+   "30942": [
+    31440
+   ],
+   "30941": [
+    30810
+   ],
+   "30940": [
+    30888
+   ],
+   "30939": [
+    31439
+   ],
+   "30938": [
+    31438
+   ],
+   "30937": [
+    31437
+   ],
+   "30935": [
+    30808
+   ],
+   "30934": [
+    31436
+   ],
+   "30933": [
+    30807
+   ],
+   "30932": [
+    31435
+   ],
+   "30931": [
+    30887
+   ],
+   "30930": [
+    31434
+   ],
+   "30929": [
+    31433
+   ],
+   "31789": [
+    31847
+   ],
+   "30927": [
+    31431
+   ],
+   "30926": [
+    31454
+   ],
+   "30925": [
+    31453
+   ],
+   "31568": [
+    31569
+   ],
+   "31644": [
+    31649
+   ],
+   "30924": [
+    31452
+   ],
+   "30923": [
+    31451
+   ],
+   "30922": [
+    31450
+   ],
+   "30920": [
+    30806
+   ],
+   "30919": [
+    31449
+   ],
+   "30918": [
+    31448
+   ],
+   "30917": [
+    31447
+   ],
+   "30916": [
+    30805
+   ],
+   "30915": [
+    31457
+   ]
+  },
+  "failed_calls": 0
+ },
+ "pages_read": 256,
+ "pages_listed": 256,
+ "pages_answered": 256,
+ "listing_failed": 0,
+ "banner_h1": null,
+ "site_pins": {
+  "43770": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31144",
+   "bound": true
+  }
+ },
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 149,
+   "hits": 139,
+   "recall": 0.933,
+   "false": 0,
+   "false_off_own": 0,
+   "false_no_claims": 0,
+   "shared": 4,
+   "false_matches": [],
+   "no_claims_matches": [],
+   "searches": true,
+   "catalog_list": null
+  },
+  "programs": 47,
+  "by_result": {
+   "not_matched": 20,
+   "found": 27
+  },
+  "found": 27,
+  "found_active": 27,
+  "found_pages": 27,
+  "found_programs": [
+   {
+    "control_number": "05849",
+    "title": "Computer Science",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31076",
+    "h1": "Computer Science - Associate in Arts",
+    "page_title": "Computer Science - Associate in Arts",
+    "awards": [
+     "aa"
+    ],
+    "filed": false,
+    "unfiled": "the recall did not clear the floor"
+   },
+   {
+    "control_number": "05850",
+    "title": "Computer Business Information Systems",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31100",
+    "h1": "Computer Business Information Systems - Associate in Science",
+    "page_title": "Computer Business Information Systems - Associate in Science",
+    "awards": [
+     "as"
+    ],
+    "filed": false,
+    "unfiled": "the recall did not clear the floor"
+   },
+   {
+    "control_number": "05852",
+    "title": "Engineering Technology",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31036",
+    "h1": "Engineering Technology - Associate in Science",
+    "page_title": "Engineering Technology - Associate in Science",
+    "awards": [
+     "as"
+    ],
+    "filed": false,
+    "unfiled": "the recall did not clear the floor"
+   },
+   {
+    "control_number": "05856",
+    "title": "Auto Body Technology",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31131",
+    "h1": "Auto Body Technology - Associate in Science",
+    "page_title": "Auto Body Technology - Associate in Science",
+    "awards": [
+     "as"
+    ],
+    "filed": false,
+    "unfiled": "the recall did not clear the floor"
+   },
+   {
+    "control_number": "05863",
+    "title": "Art",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31135",
+    "h1": "Art - Associate in Arts",
+    "page_title": "Art - Associate in Arts",
+    "awards": [
+     "aa"
+    ],
+    "filed": false,
+    "unfiled": "the recall did not clear the floor"
+   },
+   {
+    "control_number": "05877",
+    "title": "Early Childhood Studies: General",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31055",
+    "h1": "Early Childhood Studies: General - Associate in Science",
+    "page_title": "Early Childhood Studies: General - Associate in Science",
+    "awards": [
+     "as"
+    ],
+    "filed": false,
+    "unfiled": "the recall did not clear the floor"
+   },
+   {
+    "control_number": "05884",
+    "title": "Chemistry",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31108",
+    "h1": "Chemistry - Associate in Arts",
+    "page_title": "Chemistry - Associate in Arts",
+    "awards": [
+     "aa"
+    ],
+    "filed": false,
+    "unfiled": "the recall did not clear the floor"
+   },
+   {
+    "control_number": "05892",
+    "title": "Fire Technology",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31020",
+    "h1": "Fire Technology - Associate in Science",
+    "page_title": "Fire Technology - Associate in Science",
+    "awards": [
+     "as"
+    ],
+    "filed": false,
+    "unfiled": "the recall did not clear the floor"
+   },
+   {
+    "control_number": "05894",
+    "title": "Social Science",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30944",
+    "h1": "Social Science - Associate in Arts",
+    "page_title": "Social Science - Associate in Arts",
+    "awards": [
+     "aa"
+    ],
+    "filed": false,
+    "unfiled": "the recall did not clear the floor"
+   },
+   {
+    "control_number": "07172",
+    "title": "Business",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31120",
+    "h1": "Business - Certificate of Achievement",
+    "page_title": "Business - Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "filed": false,
+    "unfiled": "the recall did not clear the floor"
+   },
+   {
+    "control_number": "07174",
+    "title": "Computer Business Office Technology: Word/Info Processing",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31087",
+    "h1": "Computer Business Office Technology: Word/Information Processing - Associate in Science",
+    "page_title": "Computer Business Office Technology: Word/Information Processing - Associate in Science",
+    "awards": [
+     "as"
+    ],
+    "filed": false,
+    "unfiled": "the recall did not clear the floor"
+   },
+   {
+    "control_number": "07175",
+    "title": "Computer Business Office Tech: Legal Secretarial",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31090",
+    "h1": "Computer Business Office Technology: Legal Secretarial - Associate in Science",
+    "page_title": "Computer Business Office Technology: Legal Secretarial - Associate in Science",
+    "awards": [
+     "as"
+    ],
+    "filed": false,
+    "unfiled": "the recall did not clear the floor"
+   },
+   {
+    "control_number": "07179",
+    "title": "Sound Technology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30942",
+    "h1": "Sound Technology - Certificate of Achievement",
+    "page_title": "Sound Technology - Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "filed": false,
+    "unfiled": "the recall did not clear the floor"
+   },
+   {
+    "control_number": "07185",
+    "title": "Family & Consumer Sciences: General",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31028",
+    "h1": "Family and Consumer Science General - Associate in Science",
+    "page_title": "Family and Consumer Science General - Associate in Science",
+    "awards": [
+     "as"
+    ],
+    "filed": false,
+    "unfiled": "the recall did not clear the floor"
+   },
+   {
+    "control_number": "07192",
+    "title": "Civil Engineering Technology",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31033",
+    "h1": "Engineering Technology: Civil Engineering - Associate in Science",
+    "page_title": "Engineering Technology: Civil Engineering - Associate in Science",
+    "awards": [
+     "as"
+    ],
+    "filed": false,
+    "unfiled": "the recall did not clear the floor"
+   },
+   {
+    "control_number": "10153",
+    "title": "Early Childhood Studies: Special Education",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31050",
+    "h1": "Early Childhood Studies: Special Education - Associate in Science",
+    "page_title": "Early Childhood Studies: Special Education - Associate in Science",
+    "awards": [
+     "as"
+    ],
+    "filed": false,
+    "unfiled": "the recall did not clear the floor"
+   },
+   {
+    "control_number": "17582",
+    "title": "Culinology¿",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31067",
+    "h1": "Culinology - Associate in Arts",
+    "page_title": "Culinology - Associate in Arts",
+    "awards": [
+     "aa"
+    ],
+    "filed": false,
+    "unfiled": "the recall did not clear the floor"
+   },
+   {
+    "control_number": "18575",
+    "title": "Liberal Arts- Mathematics & Science",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30993",
+    "h1": "Liberal Arts: Mathematics & Science - Associate in Arts",
+    "page_title": "Liberal Arts: Mathematics & Science - Associate in Arts",
+    "awards": [
+     "aa"
+    ],
+    "filed": false,
+    "unfiled": "the recall did not clear the floor"
+   },
+   {
+    "control_number": "18576",
+    "title": "Liberal Arts: Social & Behavioral Sciences",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30992",
+    "h1": "Liberal Arts: Social and Behavioral Sciences - Associate in Arts",
+    "page_title": "Liberal Arts: Social and Behavioral Sciences - Associate in Arts",
+    "awards": [
+     "aa"
+    ],
+    "filed": false,
+    "unfiled": "the recall did not clear the floor"
+   },
+   {
+    "control_number": "19901",
+    "title": "Computer Business Office Technology: Word/Info Processing",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31086",
+    "h1": "Computer Business Office Technology: Word/Information Processing - Certificate of Achievement",
+    "page_title": "Computer Business Office Technology: Word/Information Processing - Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "filed": false,
+    "unfiled": "the recall did not clear the floor"
+   },
+   {
+    "control_number": "19902",
+    "title": "Computer Business Office Tech: Legal Secretarial",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31089",
+    "h1": "Computer Business Office Technology: Legal Secretarial - Certificate of Achievement",
+    "page_title": "Computer Business Office Technology: Legal Secretarial - Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "filed": false,
+    "unfiled": "the recall did not clear the floor"
+   },
+   {
+    "control_number": "19903",
+    "title": "Computer Business Information Systems",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31099",
+    "h1": "Computer Business Information Systems - Certificate of Achievement",
+    "page_title": "Computer Business Information Systems - Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "filed": false,
+    "unfiled": "the recall did not clear the floor"
+   },
+   {
+    "control_number": "19906",
+    "title": "Early Childhood Studies: Elementary Education in Diversity Studies",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31057",
+    "h1": "Early Childhood Studies: Elementary Education in Diversity Studies - Certificate of Achievement",
+    "page_title": "Early Childhood Studies: Elementary Education in Diversity Studies - Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "filed": false,
+    "unfiled": "the recall did not clear the floor"
+   },
+   {
+    "control_number": "19915",
+    "title": "Welding Technology: Pipe Welding",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30917",
+    "h1": "Welding: Pipe Welding Technology - Certificate of Achievement",
+    "page_title": "Welding: Pipe Welding Technology - Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "filed": false,
+    "unfiled": "the recall did not clear the floor"
+   },
+   {
+    "control_number": "19925",
+    "title": "Early Childhood Studies: General",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31054",
+    "h1": "Early Childhood Studies: General - Certificate of Achievement",
+    "page_title": "Early Childhood Studies: General - Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "filed": false,
+    "unfiled": "the recall did not clear the floor"
+   },
+   {
+    "control_number": "19926",
+    "title": "Early Childhood Studies: Special Education",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31049",
+    "h1": "Early Childhood Studies: Special Education - Certificate of Achievement",
+    "page_title": "Early Childhood Studies: Special Education - Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "filed": false,
+    "unfiled": "the recall did not clear the floor"
+   },
+   {
+    "control_number": "19930",
+    "title": "Fire Technology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31019",
+    "h1": "Fire Technology - Certificate of Achievement",
+    "page_title": "Fire Technology - Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "filed": false,
+    "unfiled": "the recall did not clear the floor"
+   }
+  ],
+  "other_programs": [
+   {
+    "control_number": "05844",
+    "title": "Management",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "05845",
+    "title": "Marketing",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "05857",
+    "title": "Electrical Apprenticeship",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "05858",
+    "title": "Plumbing Apprenticeship",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "05862",
+    "title": "Welding Technology: General Welding",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "05869",
+    "title": "",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "title_has_no_words"
+   },
+   {
+    "control_number": "07177",
+    "title": "Apprenticeship: Operating",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "07181",
+    "title": "Graphic Communication",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "09515",
+    "title": "Applied Design/Media: Animation: Traditional Drawing",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "10151",
+    "title": "Early Childhood Studies: Preschool/Infant-Toddler Prog. Dir.",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "13700",
+    "title": "Restaurant Management",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "15599",
+    "title": "Welding Technology: Metal Fabrication",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "15600",
+    "title": "Welding Technology: Pipe Welding",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "17480",
+    "title": "Engineering Technology: Mechatronics",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "19907",
+    "title": "Engineering Technology: Mechatronics",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "19913",
+    "title": "Welding Technology: General Welding",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "19914",
+    "title": "Welding Technology: Metal Fabrication",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "19935",
+    "title": "Interior Design Merchandising",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "43817",
+    "title": "Pathways to U.S. Citizenship",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "45033",
+    "title": "Cal-GETC",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "title_has_no_words"
+   }
+  ],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0,
+  "found_read": {
+   "tested": 138,
+   "right": 124,
+   "wrong": 2,
+   "not_found": 12,
+   "recall": 0.899,
+   "wrongs": [
+    {
+     "control_number": "05853",
+     "title": "Computer Networking and Electronics Technology: Electronics Technology",
+     "award": "A.S. Degree",
+     "found": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31081",
+     "read_from": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31083"
+    },
+    {
+     "control_number": "42211",
+     "title": "Emergency Medical Services: Paramedicine",
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "found": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31753",
+     "read_from": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31045"
+    }
+   ],
+   "not_read": 1,
+   "floor": 0.8,
+   "min_tested": 30,
+   "clears": false,
+   "reads": false,
+   "filed": 0,
+   "unfiled": {
+    "the recall did not clear the floor": 27
+   }
+  }
+ },
+ "loads": 1378,
+ "seconds": 6874.6,
+ "found": 157,
+ "by_method": {
+  "no_closed_list": 47,
+  "not_found": 19,
+  "page_claimed": 3,
+  "sitemap_page": 157
+ },
+ "shared_pages": {
+  "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31083": [
+   "05853",
+   "10158"
+  ],
+  "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31118": [
+   "31828",
+   "41542"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "24138",
+   "title": "Interior/Exterior Maintenance Repair Technology Certificate",
+   "award": null,
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "24217",
+   "title": "Gardening and Landscaping",
+   "award": null,
+   "near_miss": {
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31011",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 7369,
+     "content": 7369,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "31100",
+   "title": "Kinesiology",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30997",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.244,
+    "body": 0.244,
+    "content": 0.244,
+    "net": 11,
+    "listed": 45,
+    "why": "coarse net: the page's code tokens name 11 of 45 listed courses",
+    "error": null,
+    "chars": {
+     "body": 10104,
+     "content": 10104,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "42208",
+   "title": "Viticulture Level 2",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31644",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.588,
+    "body": 0.588,
+    "content": 0.588,
+    "net": 10,
+    "listed": 17,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 9244,
+     "content": 9244,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "42210",
+   "title": "Viticulture Level 3",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31644",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.55,
+    "body": 0.55,
+    "content": 0.55,
+    "net": 11,
+    "listed": 20,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 9244,
+     "content": 9244,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "43479",
+   "title": "Personal Care Attendant",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31784",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 7027,
+     "content": 7027,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "43741",
+   "title": "Certified Registered Central Service Technician",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "44646",
+   "title": "Advanced English Language Development",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31406",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.385,
+    "body": 0.385,
+    "content": 0.385,
+    "net": 5,
+    "listed": 13,
+    "why": "coarse net: the page's code tokens name 5 of 13 listed courses",
+    "error": null,
+    "chars": {
+     "body": 8466,
+     "content": 8466,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "44658",
+   "title": "Spanish Literacy",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30941",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 11032,
+     "content": 11032,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "44659",
+   "title": "Basic English Language Development",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31406",
+    "label": {
+     "award": 0,
+     "title": 0.75
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 8466,
+     "content": 8466,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "45282",
+   "title": "EDUN Instructional Aide",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "45964",
+   "title": "Annual Firefighter In-Service Training",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "45965",
+   "title": "Bulldog Bootcamp for Career Education",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "45966",
+   "title": "Microsoft Office Basics",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "45967",
+   "title": "Beginning Computer Skills",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31093",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 8042,
+     "content": 8042,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "45968",
+   "title": "Intermediate Computer Skills",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31093",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 8042,
+     "content": 8042,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "45970",
+   "title": "Barbering",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "46126",
+   "title": "Foundations of Sewing",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "46368",
+   "title": "Foundations of Machine Embroidery",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "45971",
+   "title": "Early Childhood Studies NC: Family Childcare License Preparation",
+   "award": "Noncredit program",
+   "pages": [
+    "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31056"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "45972",
+   "title": "Early Childhood Studies NC: Family, Friend, & Neighbor Childcare",
+   "award": "Noncredit program",
+   "pages": [
+    "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31056",
+    "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30921"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "45973",
+   "title": "ELDV Family Childcare License Preparation",
+   "award": "Noncredit program",
+   "pages": [
+    "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31056",
+    "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30921"
+   ],
+   "status": "Active"
+  }
+ ],
+ "page_challenged": [],
+ "coverage_bands": {
+  "0.5-0.8": 6,
+  "0.8-1.0": 25,
+  "1.0": 126
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/allan_hancock",
+  "kept": 114,
+  "kept_moved": 0,
+  "programs": 42,
+  "list": [
+   {
+    "control_number": "05839",
+    "title": "Agribusiness: Enology/Viticulture",
+    "award": "A.A. Degree",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31153",
+    "coverage": 1.0,
+    "was_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31153",
+    "was_coverage": 0.913,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "05840",
+    "title": "Architectural Technology",
+    "award": "A.S. Degree",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31137",
+    "coverage": 0.704,
+    "was_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31137",
+    "was_coverage": 0.667,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "05870",
+    "title": "Spanish",
+    "award": "A.A. Degree",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30941",
+    "coverage": 0.971,
+    "was_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30941",
+    "was_coverage": 0.941,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "05878",
+    "title": "English",
+    "award": "A.A. Degree",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31032",
+    "coverage": 1.0,
+    "was_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31032",
+    "was_coverage": 0.944,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "05881",
+    "title": "Mathematics: Computer Science",
+    "award": "A.A. Degree",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30987",
+    "coverage": 1.0,
+    "was_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30987",
+    "was_coverage": 0.667,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "05883",
+    "title": "Physics",
+    "award": "A.A. Degree",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30954",
+    "coverage": 1.0,
+    "was_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30954",
+    "was_coverage": 0.778,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "05898",
+    "title": "Cosmetology",
+    "award": "A.S. Degree",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31731",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "07176",
+    "title": "Engineering",
+    "award": "A.A. Degree",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31038",
+    "coverage": 1.0,
+    "was_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31038",
+    "was_coverage": 0.913,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "07191",
+    "title": "Global Studies",
+    "award": "A.A. Degree",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31012",
+    "coverage": 1.0,
+    "was_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31012",
+    "was_coverage": 0.913,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "09516",
+    "title": "Media Arts: Animation & Game Art",
+    "award": "A.S. Degree",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30985",
+    "coverage": 1.0,
+    "was_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30985",
+    "was_coverage": 0.926,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "10152",
+    "title": "Early Childhood Studies: Elementary Education in Diversity Studies",
+    "award": "A.S. Degree",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31058",
+    "coverage": 1.0,
+    "was_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31058",
+    "was_coverage": 0.947,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "10158",
+    "title": "Computer Networking and Electronics Technology: Electronic Engineering Technology",
+    "award": "A.S. Degree",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31083",
+    "coverage": 0.875,
+    "was_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31083",
+    "was_coverage": 0.812,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "12129",
+    "title": "Mathematics: Physics",
+    "award": "A.A. Degree",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30986",
+    "coverage": 1.0,
+    "was_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30986",
+    "was_coverage": 0.714,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "12466",
+    "title": "Media Arts: Photography",
+    "award": "A.S. Degree",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30979",
+    "coverage": 1.0,
+    "was_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30979",
+    "was_coverage": 0.96,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "12664",
+    "title": "Psychology",
+    "award": "A.A. Degree",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30950",
+    "coverage": 1.0,
+    "was_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30950",
+    "was_coverage": 0.944,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "18574",
+    "title": "Liberal Arts: Arts & Humanities",
+    "award": "A.A. Degree",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30994",
+    "coverage": 1.0,
+    "was_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30994",
+    "was_coverage": 0.8,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "19898",
+    "title": "Environmental Health & Safety",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31763",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "19927",
+    "title": "Early Childhood Studies: Program Director/Administration Emphasis",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31051",
+    "coverage": 1.0,
+    "was_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31051",
+    "was_coverage": 0.958,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "19934",
+    "title": "Cosmetology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31732",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "30363",
+    "title": "Recreation Management",
+    "award": "A.S. Degree",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30947",
+    "coverage": 0.857,
+    "was_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30947",
+    "was_coverage": 0.786,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "31713",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31010",
+    "coverage": 1.0,
+    "was_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31010",
+    "was_coverage": 0.8,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "31828",
+    "title": "Business Administration",
+    "award": "A.S. T Degree",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31118",
+    "coverage": 1.0,
+    "was_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31118",
+    "was_coverage": 0.75,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "31831",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31031",
+    "coverage": 1.0,
+    "was_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31031",
+    "was_coverage": 0.963,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "31929",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31061",
+    "coverage": 1.0,
+    "was_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31061",
+    "was_coverage": 0.8,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "32574",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30943",
+    "coverage": 1.0,
+    "was_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30943",
+    "was_coverage": 0.917,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "32589",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31139",
+    "coverage": 1.0,
+    "was_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31139",
+    "was_coverage": 0.833,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "33594",
+    "title": "Elementary Teacher Education",
+    "award": "A.A- T Degree",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31047",
+    "coverage": 0.967,
+    "was_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31047",
+    "was_coverage": 0.833,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "35632",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31075",
+    "coverage": 1.0,
+    "was_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31075",
+    "was_coverage": 0.5,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "35691",
+    "title": "Chemistry",
+    "award": "A.S. T Degree",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31107",
+    "coverage": 1.0,
+    "was_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31107",
+    "was_coverage": 0.667,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "40108",
+    "title": "Social Justice Studies: LGBTQ Studies",
+    "award": "A.A- T Degree",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30945",
+    "coverage": 1.0,
+    "was_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30945",
+    "was_coverage": 0.875,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41542",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31118",
+    "coverage": 1.0,
+    "was_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31118",
+    "was_coverage": 0.75,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "42209",
+    "title": "Media Arts: Graphic Design (CSU Option)",
+    "award": "A.S. Degree",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30981",
+    "coverage": 1.0,
+    "was_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30981",
+    "was_coverage": 0.889,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "42211",
+    "title": "Emergency Medical Services: Paramedicine",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31753",
+    "coverage": 1.0,
+    "was_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31045",
+    "was_coverage": 0.667,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "42409",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31013",
+    "coverage": 1.0,
+    "was_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31013",
+    "was_coverage": 0.667,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "43004",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31101",
+    "coverage": 1.0,
+    "was_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31101",
+    "was_coverage": 0.833,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "43636",
+    "title": "Communication Skills for Public Service Professionals",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31104",
+    "coverage": 1.0,
+    "was_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31104",
+    "was_coverage": 0.667,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "43637",
+    "title": "Communication Skills for the Business Professional",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31103",
+    "coverage": 1.0,
+    "was_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31103",
+    "was_coverage": 0.667,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "43710",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31134",
+    "coverage": 1.0,
+    "was_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31134",
+    "was_coverage": 0.846,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "45671",
+    "title": "Early Childhood Studies Associate Teacher",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31392",
+    "coverage": 1.0,
+    "was_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31392",
+    "was_coverage": 0.833,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "45905",
+    "title": "Early Childhood Studies Teacher Certification",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31663",
+    "coverage": 1.0,
+    "was_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31663",
+    "was_coverage": 0.889,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "46058",
+    "title": "Early Childhood Studies Master Teacher",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31673",
+    "coverage": 1.0,
+    "was_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31673",
+    "was_coverage": 0.941,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "46093",
+    "title": "Engineering Fundamentals",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31558",
+    "coverage": 1.0,
+    "was_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31558",
+    "was_coverage": 0.667,
+    "was_method": "sitemap_page"
+   }
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [
+   {
+    "control_number": "12065",
+    "title": "Environmental Health & Safety",
+    "award": "A.S. Degree",
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31758",
+    "coverage": 0.765,
+    "was_coverage": 0.765
+   }
+  ],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
+ },
+ "fingerprints": {
+  "05839": {
+   "sha256": "5c0ae5623d524f4409ecdeb4861199d174b94b56f2ecd3abbfa4e3f874424d98",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31153"
+  },
+  "05840": {
+   "sha256": "a6cfda616e6147aefd8b3a5499472b523dee8f689475d9824b4aa58deeb1eb43",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31137"
+  },
+  "05841": {
+   "sha256": "5feef74fe1b9a65c0b5ee49136f98f2769fb3d45ac5e043e5adbe4c6ba90d4c3",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31122"
+  },
+  "05843": {
+   "sha256": "80ae05968a824af3cce2e3c0218f77e07f4aa010e413e797acf126fd93fb96b2",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31158"
+  },
+  "05846": {
+   "sha256": "2da6107843b604aa0d2fff593b1479b7831e4968d964fe33415a4720907c0afb",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31092"
+  },
+  "05853": {
+   "sha256": "553c6708030270c85ff9c1797e6e3811a88001458523a4ad8648611d96637f79",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31083"
+  },
+  "05855": {
+   "sha256": "67909f87d8f5915cd67357c4522330c86bdccb1389cafcd2c4dd48e81371762b",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31129"
+  },
+  "05864": {
+   "sha256": "e357f692db8f2393788349873e09cee9b9318c7e86f2dc81e7b0ae80c2b6176e",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30971"
+  },
+  "05865": {
+   "sha256": "0ba806db5366543e00f3ae8b6959d4cfafc408dac579baadf1e0a23a108af83e",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30929"
+  },
+  "05867": {
+   "sha256": "ae5f0d45e30360c477b3ec3bf8e5325ed15b6e234ad8c164511617a817eaddd8",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31066"
+  },
+  "05868": {
+   "sha256": "4f66d2067579db239c514ab2a07b5a3491cfa0de86835ceb443bba8a586b7111",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31021"
+  },
+  "05870": {
+   "sha256": "bf716fc446d4c302fe9c3640dec71cb957731e46a7d6b235f0c4cb4620b95ff3",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30941"
+  },
+  "05871": {
+   "sha256": "91af6cde2510328d05f3f3f7fa1d0ff66daac102c085fd0bcd82c004c75fab0d",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30965"
+  },
+  "05874": {
+   "sha256": "4b628cc6161e0aabbe9cc445795970e3e69dca147fef808e2239e4aeb419b51a",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31064"
+  },
+  "05876": {
+   "sha256": "2cee6fc846ec3ca577eb5435523875f02c0e9a5032cbb9638fc1d1d27e4f0558",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31024"
+  },
+  "05878": {
+   "sha256": "3110a921647de77bbcaa487fcc21eb0906b6044bc1efb8e0ee68732b644fa583",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31032"
+  },
+  "05881": {
+   "sha256": "ce826ed7e9d34e0f190b9d4ae4462bb4a181e8a114a5ac0da3957b4cd3598b02",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30987"
+  },
+  "05883": {
+   "sha256": "5ca0b6501d711a0de6e080454ccf41a06a07c4003cbc0471b0a88ed7ff894f6f",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30954"
+  },
+  "05887": {
+   "sha256": "8c6e79f4df8d67349c567e1ab85de160c729cae30258f6bea87c64c4867e87eb",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31002"
+  },
+  "05888": {
+   "sha256": "086f36a1ad9fcc4320b3f42089cdb8479b20bbb2e70ea0b672c3f4d87e87fb6b",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31155"
+  },
+  "05898": {
+   "sha256": "12ecd262886a158d0c5b93c22ead6296b6e61250106072d67cc99c109b38585d",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31731"
+  },
+  "05900": {
+   "sha256": "7ee38c88db25d9419df5891ab0246eea0c9d970588029197bd1ce79a459425a4",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30963"
+  },
+  "07176": {
+   "sha256": "b001c8945cdf62a1b256a2e608e08484875b9764521055acbfa5af05f1bb5ec8",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31038"
+  },
+  "07186": {
+   "sha256": "8c42e3e3d2e64161bc36b126765f3d36fbb761c04a9a58a5d4416902f680371f",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31027"
+  },
+  "07191": {
+   "sha256": "9af66cb50377eb73f58ac6824fa4bf54112288b32172bf66fbe82fab6ae6edd8",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31012"
+  },
+  "09514": {
+   "sha256": "83f507831d730e29717b2671831a5cab4688f484144d781ee66828c12e796a2d",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30980"
+  },
+  "09516": {
+   "sha256": "e6d071e71e8d8cb0a5fd2e4328e7e93727714124a3236a491e37de6465c0f6c3",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30985"
+  },
+  "09517": {
+   "sha256": "e732ba0e45ef9abc37463e050cb9c76f33b79b1a9891ee80cdc384e147f32e22",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31022"
+  },
+  "10143": {
+   "sha256": "8203e796c4241a4b9f34008154c79a8e7945f0f149484cc88bc22882e6cb8077",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31150"
+  },
+  "10152": {
+   "sha256": "a8313980d97b6afc8f699efbfeb08be9094787d3c2f7bd71763a1781d6ac0ad7",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31058"
+  },
+  "10158": {
+   "sha256": "3ed16f1a61c2d3a4db6ae52964b2cb6ff3e47604d3008193f08f9b9447560366",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31083"
+  },
+  "10160": {
+   "sha256": "159229abd8b5476aadbea9099b8b21fb8feb5b4820161eeefdd1d774a54320b0",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31128"
+  },
+  "10161": {
+   "sha256": "e8057d0132917352ff75a53a240ec446dab23b1fa965a6e3e29fb9ac92236769",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31130"
+  },
+  "10162": {
+   "sha256": "00ceb3272ac53e9dd96b1de1552d6e469ea9099fd2d6fa277186d58a2b77bf5e",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31127"
+  },
+  "10163": {
+   "sha256": "756204ea83a08c012ceeb584c75bfa204535b5fbbed8efbad7482eb6276ee959",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31125"
+  },
+  "10164": {
+   "sha256": "723f6b2ada609508e65f5b859444f87f7047aa1000e2ba7198de12acd4a70398",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31126"
+  },
+  "10166": {
+   "sha256": "5ae64469fa03ead92bfaa01a676a65f3c95b4538a03013b863b4f9fadfa874bc",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31133"
+  },
+  "11352": {
+   "sha256": "5be1d1c240eb505681ee40555c60b529f746cd26d523f4ef88902eb87b9fcb9e",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30916"
+  },
+  "11996": {
+   "sha256": "f6fe8a564da0dbdf99caac9b0c6550606feb6f500bebb9b69b73332d07959a57",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31078"
+  },
+  "12065": {
+   "sha256": "4cf89e5c9d7abb5b797a5afdea65ab32de74826a436d47b912bdeb792c1b9e2c",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31758"
+  },
+  "12129": {
+   "sha256": "453c612fca874452c72471134fef534a15d2d4966b3d07263aa04354ec3fd576",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30986"
+  },
+  "12466": {
+   "sha256": "a7bef4f82dc10255f99ba4d72a18156f201805775792a24f37e1365448f00afc",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30979"
+  },
+  "12649": {
+   "sha256": "8e2614f5de60be2cc7560e2a0df42ccef4b30f0ef60428cdcb69049f36950a6d",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31151"
+  },
+  "12664": {
+   "sha256": "96edff1a34bcbfd90cdcbfeae56f8e257cd5aef2ed98e853fd7bce7e785e1e46",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30950"
+  },
+  "15550": {
+   "sha256": "77c8bb1a5e987eb8097201bc6233971a460dcc07a7643abf14a220e31af377f8",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31007"
+  },
+  "15596": {
+   "sha256": "890ea7b444f792c70bf07819c41709bb94f2745d49dc957e3d054ad465bb4d4d",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31082"
+  },
+  "15598": {
+   "sha256": "4dda3cf22a350fb5a8e408dbf08cc920384a50ab4b42c5f1fd35fc742bcb14c0",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30990"
+  },
+  "17481": {
+   "sha256": "96700b3f3094d2b71148b6b4382ed6fb4678eb3e3c7386b560c4e9354283017b",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31080"
+  },
+  "18574": {
+   "sha256": "d07ea69170ac43d5e0ca3f437322ff0a2923926ba3e454a64a48489207503704",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30994"
+  },
+  "19896": {
+   "sha256": "31160495ca8e6e756549cf7e25453d38ffd9bca2e2c5994390366c448657c495",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30924"
+  },
+  "19897": {
+   "sha256": "9a0de4f53bf239dfdeabc825684a3685d7260dd9c1a41f4163d093a14e44d716",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31149"
+  },
+  "19898": {
+   "sha256": "6e60db953e9ba4de9b37f3fee318646d070cc657559ffef062205dc59ad3f637",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31763"
+  },
+  "19899": {
+   "sha256": "092f3d9bc8e986abf515acda2303ac518c30c4a9da506e6f802621430d411921",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31157"
+  },
+  "19900": {
+   "sha256": "dc9bf3ad5f797c191cc6413c75312a444fe6f67aa937a0c262bfa8a9651c0466",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31091"
+  },
+  "19904": {
+   "sha256": "2f996c3683eab68a9332b19d62add2d8cb422cadeb6bb6faf2fcce414898401e",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31077"
+  },
+  "19908": {
+   "sha256": "9a5d5643ea8150cfcfb649f6ce2cf44d7206c80cc76f73cafaa8d2e896c98531",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31084"
+  },
+  "19912": {
+   "sha256": "69ca4b6121568872202987381007b6f8eb5c397bf34bceefa8d91d7d501c85bb",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30989"
+  },
+  "19920": {
+   "sha256": "d2240856f81484d47996085475d409968203539d9537f23f5ca8b35b019927ba",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30969"
+  },
+  "19921": {
+   "sha256": "a08cea85db032081f4cacf11db2e13e2ecc594ac40b71c9ad54802dc84a09391",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30964"
+  },
+  "19922": {
+   "sha256": "ec756dd29e37252fd8b7da9ac3c2050665c3bd928a226617025dae666e36e6eb",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31063"
+  },
+  "19924": {
+   "sha256": "ce70ce929a6ba59e95eac19921b8b6588310242a3ed33cb85ee82afec7ceac67",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31023"
+  },
+  "19927": {
+   "sha256": "47c65d1721f2e3e15043c64264b6856be995323c03f30b647a9c385c33065b9c",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31051"
+  },
+  "19928": {
+   "sha256": "eebd0e294d11f8bacc5144616590f738dcf562a99f84a9b8dffdeee32a381369",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31001"
+  },
+  "19931": {
+   "sha256": "52bbf98cf4d1f9cac96448991c36223aa0fdcf3ed12e2c3dd0e5c59fdb1fd598",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30915"
+  },
+  "19934": {
+   "sha256": "1e27c0d6f54f3fb2cbd771114d6f4b1052a79d10dc3c5e56901d3e402326bd93",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31732"
+  },
+  "19936": {
+   "sha256": "049afdae21d5387362976254625e3efefdea45a0b6af788a9fddbd280f187572",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31079"
+  },
+  "23098": {
+   "sha256": "66b4c04e5f572a143f9b9adc295997d58c7fc595c8ff73a80f0a966c3ad55396",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31065"
+  },
+  "24105": {
+   "sha256": "36e47b51c2fd699eec18326b649cd011b9db2d1744589d3fbfb00da2089896d3",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31399"
+  },
+  "24167": {
+   "sha256": "27c82058e77a9ff9045923ef6af1e1ffac7a621cea72a05086ff20a712528ac4",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31000"
+  },
+  "30363": {
+   "sha256": "9b298423b7effd8424d4df9496eabdfecbf3f4507b29740930af90690fdd6dd1",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30947"
+  },
+  "30364": {
+   "sha256": "8ca8c0ad42039a0850b21aee6b97431c0eafa4d673787ce5cd2f8a48e113ec8e",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30948"
+  },
+  "30429": {
+   "sha256": "24e4cc830087aee48e213c86e6bb819015ef4d344895cd50981e03f4f63adef9",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30976"
+  },
+  "30482": {
+   "sha256": "030f313c2bd2aa72b24aa9906c70a6d2c3ba6709392efd875a2c723812ec3d0b",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30959"
+  },
+  "30487": {
+   "sha256": "e43c21d46badee789352f458a3cde5dbc942e8e8a457d0ffbdcd298b01131df4",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30958"
+  },
+  "30492": {
+   "sha256": "3d71f45650152365f3fff08ba35bf3253f076adc83849d4edf34bb826379c163",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30975"
+  },
+  "30564": {
+   "sha256": "aa42c0b45ae1fc5474a4403515674d19d2c8faa48fff4cf2c6cfe780ef6ae124",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31029"
+  },
+  "30565": {
+   "sha256": "45b4dba0037099f094540c1fd08cf82ac4eaf9bac2b6f97e6fbd0c9e2f572f1d",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31030"
+  },
+  "30791": {
+   "sha256": "28db06d8729e4e1a3fbc16f90219cb800eb58ab0c7dc1341a01bd1dce0a01c3a",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30988"
+  },
+  "30934": {
+   "sha256": "66162139acca8e1b2c345712dd7c20efab0cc16440bb8ec1556b3f77d33f69a7",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31017"
+  },
+  "31001": {
+   "sha256": "efafb1844953ab295b6c3847fddb8ed4d64bd5e3ee74ccb19bc8b4ffff4e361a",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31011"
+  },
+  "31092": {
+   "sha256": "360e2b32d68c00d96015924cd7343268b26665bbf65cf0b97f033222d3910d69",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31397"
+  },
+  "31093": {
+   "sha256": "5619db064912875be7df3661017c0f1978438ea1b9b1c627943cf4e7d828a70f",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31396"
+  },
+  "31713": {
+   "sha256": "43f7c6a4f0fd4d843225959cd02fb6052baccbab00cc13cb5e65702503611e3c",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31010"
+  },
+  "31784": {
+   "sha256": "99434ea44664b7f3d627209318ed4d987b20fa1e51b330a5fa7c1dfd949740e3",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30926"
+  },
+  "31828": {
+   "sha256": "5ee2a537461dae5365b60569fb1dc4f0c7b0a3c5539cd59abe11ae36ee4f9cc9",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31118"
+  },
+  "31831": {
+   "sha256": "09d9e1ba5007a7d0f4f49176beca2f1ad86e112e53039401f47e4e4acc478bb7",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31031"
+  },
+  "31832": {
+   "sha256": "faab571ec5acca55150026908f9c868d6644dbfea7712736e11747b6e6311080",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31154"
+  },
+  "31929": {
+   "sha256": "1d7c586b809cdf694d84494fa32150451e65b72304e01ac6dcf5dd37ae1ee962",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31061"
+  },
+  "32574": {
+   "sha256": "f4e8c1a8828dbfb107292c03b2a7a6ad298c50169ed9ff999439c538e0cf1798",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30943"
+  },
+  "32587": {
+   "sha256": "4b89cf3a8e63303bfa1d85193307c491e6084a193cbd502c5f6d34e9a3bb67d9",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30952"
+  },
+  "32589": {
+   "sha256": "a880b9d84d4a746de0afc4fe38d26a73aec90bb812aed703c3739c7cf78b4670",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31139"
+  },
+  "32604": {
+   "sha256": "a39cc41ceb3b69a72699ad09be90e676e4f16ab05d0518ce5fbae4a6ac52556a",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30940"
+  },
+  "32611": {
+   "sha256": "a426c9563b207b3b24641360cd048eac1aa922d7a6861e706a573b3c954d24b8",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30996"
+  },
+  "32936": {
+   "sha256": "f18d586510ac6a47a7d92a2c47729f055eb247da32cbf4106371c3b7a8fe713c",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30949"
+  },
+  "33594": {
+   "sha256": "83b9f8d51a862a10790ea258e47878d75082f89587f732bd095b9759c1cfab4e",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31047"
+  },
+  "33693": {
+   "sha256": "7f6903b61eddde12c3af7787598693380423128db142b079eed77e2d55228f55",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30935"
+  },
+  "33843": {
+   "sha256": "85f0092325819e020cc94f2e9ff0d21462bc58c13eceaa4edf3c2cc3ae359960",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31142"
+  },
+  "33865": {
+   "sha256": "e11c1042e64b1416f2af7348cb651f5ba2df812189be845bc4b5114a232fa337",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31143"
+  },
+  "35632": {
+   "sha256": "d4faf4f637d86cd2c67a2e2f76e0cfcfad11b58e8de6a0c3aa08c98322f4bff1",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31075"
+  },
+  "35691": {
+   "sha256": "9771cd96394664b5ffd5752c274f2bf5498a4478f20de81f622c19079183f66f",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31107"
+  },
+  "36635": {
+   "sha256": "0f932ecfb306b8132bb870138e23ac244ddd7c637ab9455a2fdacdcf0a4a3789",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30931"
+  },
+  "36983": {
+   "sha256": "9d0faaaf46b25174722fb0e59c3173bb94054a5a9ff04fbada306f6aae5eb5c8",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30961"
+  },
+  "38494": {
+   "sha256": "8e702cfb4f084c87b696d3e769f0926e9d78e968c1c470f154e0b55bc0569ced",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30927"
+  },
+  "38581": {
+   "sha256": "926d8c9508f4ddb16e92cabc486bfd30ac5bf12606478a64a285eab39970ed6f",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31109"
+  },
+  "38584": {
+   "sha256": "5b33c70e56b1680d720abc96a1c536bcb83ed5c4c31835a29a5643297dd0d6bd",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31148"
+  },
+  "38585": {
+   "sha256": "25da79bfac4d20e85c779b86704d0db791536dd39d786a255bdd6335b3092d71",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31145"
+  },
+  "38992": {
+   "sha256": "88480afe0fd47dc8236aac19c3939c03c9f3b7d7e19fdba4146331271b52a3b8",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31401"
+  },
+  "38993": {
+   "sha256": "66fb341c4cfced0e412285be4d3698aec43ecc7ca20409c495349b83f6bdc705",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30946"
+  },
+  "39204": {
+   "sha256": "6ea41fe9df95374835df8f088a368500e330004b5bba57bda51824b9a2777567",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31073"
+  },
+  "39350": {
+   "sha256": "ab95313a4998c9ce17e098be17a2ef04c947b7e7e6313b19715894f611db5a85",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30995"
+  },
+  "39962": {
+   "sha256": "29a56f15c3aa2f9b369181be2f2a0f27cc092b0cafee7397922c5669ed633ad8",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31156"
+  },
+  "39963": {
+   "sha256": "5cf6651f4f633330fe29023e0cde822b9c232f3a99badcabac7687d3be1f3107",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30984"
+  },
+  "39991": {
+   "sha256": "e2a32266cd61583e237b0f753400d690c9a800fef47a4587ef89dd1291c22375",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30978"
+  },
+  "39992": {
+   "sha256": "e7ca1e71423876e7efc4e45551bd29248ac9fe2a7a5076290b2a70df61bdbce8",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31147"
+  },
+  "40002": {
+   "sha256": "7fcefff46a7391fd19e56e367774cd3079673888e3ea396c210ef1cd7c16a839",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30982"
+  },
+  "40003": {
+   "sha256": "0891ebe05bc6760cbe5a1d8ae95b58604d6ae7acd6897292b5cded2a2267aad8",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31123"
+  },
+  "40004": {
+   "sha256": "27304a8340408f12cba6da8024866264d56bb5fd63b6c8337e6e6deea0514bfc",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30977"
+  },
+  "40056": {
+   "sha256": "486611dcc2a5d67b7fa3dc05dfa62a5c517a1ec8976b946a3d2be0e7ee942816",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30955"
+  },
+  "40108": {
+   "sha256": "bdadf926c5b08de2e97bff4d04e6e69a86c6623303671e3d4168d5398b44ecb0",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30945"
+  },
+  "40121": {
+   "sha256": "d2cbdad4cbdb242bef8df8e45a04cd170f252fb066c92b0a50ba915142563e34",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31014"
+  },
+  "40277": {
+   "sha256": "4103770ec8c23b9887e6037bcb4e86255916b5e56a05f5646ec88a97cfcf7489",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31146"
+  },
+  "40292": {
+   "sha256": "25de4396ee8075ae8723d5fff2036c48c7080d8b9eb7b6e1b0c1a919c7f94dcf",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31106"
+  },
+  "40437": {
+   "sha256": "7c280b0eb7911ac6ac7ad6113dca79247f024d95ce98a571e47ad7c21c183a98",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30934"
+  },
+  "40623": {
+   "sha256": "558d6ca504733dd0c8b544721aac7965d84c458bf6dae7eaf1ba33b7c7e9285f",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31048"
+  },
+  "40624": {
+   "sha256": "eb6592cd8287e5447caee77f13f5b99d80bed3f3da567b2509a84ff251d2439d",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30921"
+  },
+  "40625": {
+   "sha256": "8587c1f125c27957c5ce5593cfea1d58f8758b1fe120610f0012c4622f6a3ec4",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31053"
+  },
+  "40739": {
+   "sha256": "fd66249b7120b9bc1bd8ae9b761cecdbb0812567895b903b725cb24bfb3dc306",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31056"
+  },
+  "41542": {
+   "sha256": "5ee2a537461dae5365b60569fb1dc4f0c7b0a3c5539cd59abe11ae36ee4f9cc9",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31118"
+  },
+  "42209": {
+   "sha256": "bb2e4ea779d16091e76e49d344fc56f9ec8b176e8f61f290e8132e99abe5a7c7",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30981"
+  },
+  "42211": {
+   "sha256": "85acc9b9eefbd1f1e457f40e9a8b99ef68f48e13620ed398073e7a9e9a1a3046",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31753"
+  },
+  "42409": {
+   "sha256": "954cf2cd0cb6da8fa171f34db45d2994bc43ce05b422f21e04ec590f3d3e3d51",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31013"
+  },
+  "42487": {
+   "sha256": "f392f436fbaa054c769f6204bac49922ab70912dbe205db48462df7b4971e8f9",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30970"
+  },
+  "43004": {
+   "sha256": "d3b326e1778c23ef6f3ee529ad643c80fbefba4904672f355f21b2628f64416b",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31101"
+  },
+  "43256": {
+   "sha256": "fe8fd35b7adb84f24e6c2bdc4b8730f6e18e5a860f8ee61d97ea7ec3b548eb5b",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31124"
+  },
+  "43636": {
+   "sha256": "48c8209205d05edac76cb7404a416a42693aea7359aba33256e55dcd5c79a575",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31104"
+  },
+  "43637": {
+   "sha256": "ac5bfed5489b5001c8fb29d79a0d386877439aae7c0983c755ff77034a97baa7",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31103"
+  },
+  "43638": {
+   "sha256": "ca6b39ef74a101e2a8209a52d7a77994e8b5e002ffda4696a4683ccd23293713",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31102"
+  },
+  "43710": {
+   "sha256": "51fb29c023d1b5155b941332e76651dd7c042458b0992f31b7ad80fbcca866c5",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31134"
+  },
+  "43770": {
+   "sha256": "fb066ab9e943b4f343d12811291eaac12030f9d4bf3516da1d4223007bd78eb4",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31144"
+  },
+  "43885": {
+   "sha256": "ff9dba35f30bf1e561e5babf42609d92c1f25c60eab6282a95ca4f24b5d0910c",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31138"
+  },
+  "43899": {
+   "sha256": "840ba332c04595c893b4cff632845bdb72d67380bbf4f9425ee7aefb7e403361",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30932"
+  },
+  "43911": {
+   "sha256": "835e3f825a3583917acd54838660be64b2d90c47c00d81bde767ff20407a4677",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30933"
+  },
+  "43912": {
+   "sha256": "10b790f50ba89bee907a75dab5dd20cfb439c1919b694613f38324112d39ab64",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31025"
+  },
+  "43913": {
+   "sha256": "1fbc7ef2c4e86479d9d4a0e5d4a999fc8b657b25d60d91b4cdf359052d92b1ad",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31136"
+  },
+  "44766": {
+   "sha256": "f9e2bd0cc4c7b538a1174235ba546541909ebdf84cda93e610488accbe2aed8a",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31140"
+  },
+  "44768": {
+   "sha256": "7c6de1a0c3b40e916be1fbc0afbd34270673d8df9c932708f1fc28591b815a0d",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30951"
+  },
+  "44769": {
+   "sha256": "2cd7c64151656ef6f4fc1969ad5e71e53da60c4351bf998147b2d27587df84ac",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31141"
+  },
+  "44870": {
+   "sha256": "96cade1dfc19ac47358e059feec5b02a73ea16ec162c2d7313cef1c08d35144a",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31015"
+  },
+  "44871": {
+   "sha256": "bc7d597cc91953403349e1b1e029afe470a3b6b51ab347e8235948ca7211b235",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30973"
+  },
+  "44872": {
+   "sha256": "359887486494eeb3631ffb9965bdb8c41abdfd1952e696775930c094224e457f",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30972"
+  },
+  "45671": {
+   "sha256": "d4aa3397c5b44368d9b1166d41209c1802e824652329f584a92af9feb2e0bfdf",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31392"
+  },
+  "45905": {
+   "sha256": "b4cce0bf0849ffe820a6f16ec8290427f0bfc371b062c23f1177df9de13441a5",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31663"
+  },
+  "45969": {
+   "sha256": "a2a36f769c866e22d4bc51e00d3fc83208fe93dc6e99eafab6c0e2f8c65c7512",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31568"
+  },
+  "46003": {
+   "sha256": "a6c04c210a0a8ad2efb7280118356e3f4e08cdd5a8b15c10de4d47986e7f2837",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31497"
+  },
+  "46058": {
+   "sha256": "12807098d71a6200f7b1f626db55089b0b97b60d042bdbba4982b2264ff7aea6",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31673"
+  },
+  "46093": {
+   "sha256": "3fdbcb6cb3131fbc2d727d84610d38155f5705db6b4093fed638da42af83784c",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31558"
+  },
+  "46134": {
+   "sha256": "c293f9e7ffc453730d09c4fcd17516937ca912115f56e1cf60777d31011b2aea",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31644"
+  }
+ },
+ "run": "46155901281"
+}
