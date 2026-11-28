@@ -1286,6 +1286,17 @@ jobs:
       - name: Site pins, the plural reading (S742, Coastline 43057 and the statewide self-recall)
         if: matrix.shard == 5
         run: python3 tests/program_requirements_pin_plural_s742_test.py
+      # S748: where a college opts in, the capture files the catalog lookup's found page as a no-closed-list
+      # program's source (off for every college today), with its self-recall against each passing record's page.
+      - name: Found pages of no-closed-list programs (S748, off by default, the statewide self-recall)
+        if: matrix.shard == 5
+        run: python3 tests/program_requirements_found_pages_s748_test.py
+      # S750, round 2: the request says the state lists no course (the function's version 13), the scorer fails
+      # coverage at zero listed courses with the gap named, the opt-in is tied to the recall a capture measures on
+      # its own pages, and a page served under two addresses is filed from the one the lookup matched.
+      - name: Found pages, round 2 (S750, the request, the scorer at zero listed, the measured opt-in)
+        if: matrix.shard == 5
+        run: python3 tests/program_requirements_found_pages_s750_test.py
       # S742: a compact live read (live_runs grouped by run, a count and an md5 a college) expands to keep-better's
       # shape only when it checks out against itself.
       - name: Live read, the compact form expanded and checked (S742)
@@ -1387,6 +1398,21 @@ jobs:
       - name: Cheap piles S748, batch c (a state-listed course the page does not print)
         if: matrix.shard == 3
         run: python3 tests/program_piles_s748c_test.py
+      # The gap census reads a college's own named-gap files (named_gaps_*.json; S748's change, redone in S750 with
+      # its reader's three fixes): a named program stays in the gap under its own cause, labeled; only where no
+      # live row exists; and main() hands the files in. Passing, gap and collected counts do not move.
+      - name: Harvest gap census labels college-named gaps (S750)
+        if: matrix.shard == 2
+        run: python3 tests/harvest_gap_census_college_named_test.py
+      # S750, batch s750a: S748's reading state_course_not_on_page assigned to seven records at five colleges
+      # (Citrus 02333, College of Marin 46242, Foothill 11827 and 43194, Irvine Valley 44922,
+      # Palomar 08929 and 22528), each checked against a free read of its own page; Madera 39810 held (its page
+      # heads its core 41-47 units over 39.5) and Cerritos 02235 held (a person settled it: a confirm verdict on
+      # the live record). The apply and rollback rebuilt from the receipts, 28 changes to
+      # them each failing; each of the evidence's 16 conditions pinned on its own.
+      - name: Cheap piles S750, batch a (seven records whose page omits a state-listed course)
+        if: matrix.shard == 4
+        run: python3 tests/program_piles_s750a_test.py
       # S742 at Cabrillo: the recommended_counts reconcile step. A list the page heads 'Recommended' and counts
       # ('Complete the following number of credits: N' under its own name) reads as N units to choose, all of a
       # record's recommended lists or none; four degrees pass, 23 held answers right, 0 wrong.
@@ -2823,6 +2849,7 @@ jobs:
           python3 tests/zband_retire_dryrun_test.py
           python3 tests/uc_cur_zscheme_dryrun_test.py
           python3 tests/subjects_list_recode_test.py
+          python3 tests/alignment_remint_dryrun_test.py
           python3 tests/acct_repoint_dryrun_test.py
           python3 tests/top_gate_test.py
           python3 tests/row_audit_subject_outlier_test.py

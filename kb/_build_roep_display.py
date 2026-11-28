@@ -963,10 +963,13 @@ def map_status(college: str, reg: dict) -> dict:
 
 
 def no_state_list(score) -> bool:
-    """A record filed for a program the state lists no courses for (S668's #3414, behind NCL_EXTRACT): its
-    score's coverage basis is "no_state_list". The display build leaves every such record out, so none reaches
-    cpl_pathways_roep_data.js or program_requirement_records.display."""
-    return (((score or {}).get("coverage") or {}).get("basis")) == "no_state_list"
+    """A record filed for a program the state lists no courses for. Two marks say so, and either holds it back:
+    its score's coverage basis is "no_state_list" (S668's #3414, behind NCL_EXTRACT), or its coverage carries
+    no_list (S750: the scorer's mark on a record scored against zero listed courses, a found page's read,
+    kb/_program_requirements_score.py NO_LIST_GAP). The display build leaves every such record out, so none
+    reaches cpl_pathways_roep_data.js or program_requirement_records.display as "0 of 0 placed"."""
+    cov = (score or {}).get("coverage") or {}
+    return cov.get("basis") == "no_state_list" or bool(cov.get("no_list"))
 
 
 def displayed(work: list) -> list:
