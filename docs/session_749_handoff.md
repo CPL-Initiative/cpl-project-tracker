@@ -158,3 +158,9 @@ paid reads, rereads, loads and `.apply`, and holds every Supabase call.
   largest lever:** the capture's lookup finds the own page of a program with no closed list and nothing files it as
   the source (S652's slice B, never built): 194 programs at 14 colleges, about $14 on the estimator, Skyline's 55 about
   $3.90. `readers` builds it on `claude/s748-readers-found`, off by default, for a Fable second reader.
+- 08:07Z: s748g1's reader (Sonnet): APPLY (the real SQL on a scratch Postgres; `kb/collection_lane.py`'s S681 entry for
+  Allan Hancock is a lane assignment no session lifted, not a person's hold; MINOR: Allan Hancock 19928's gap may come
+  from the reading, HUSV 120 and 170 "may be alternatives", for a person to compare). Clean md5 pre-read 9 of 9.
+  Migrate 46124310448 green at 08:08Z; all nine carry their gap live. Records collected: 20.
+- 08:09Z: s748r2's reader (Sonnet): APPLY (each kind read from the record's own notes; MINOR: 33639's words ask a reviewer
+  to confirm the degree total of 60). Clean md5 pre-read 4 of 4. The apply pushed on `claude/s748-apply`.
