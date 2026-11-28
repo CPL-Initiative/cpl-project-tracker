@@ -1364,7 +1364,8 @@ jobs:
         run: python3 tests/program_piles_s742_ela_test.py
       # S748, batch s748a: the gap plans S742's rereads unlocked, one plan over two colleges' piles (S742's Batch
       # under S748's name). Butte 14583 (noted_section_cut_off, its own page now) and Santa Barbara City 43553
-      # (total_differs, from a page read); East Los Angeles 31017 stays held, its lever pinned.
+      # (total_differs, from a page read); East Los Angeles 31017 stays held (the page's figures give 54-61 around
+      # the printed 60), and the reading its second reader refused is pinned as refused.
       - name: Cheap piles S748, batch a (the gap plans S742's rereads unlocked)
         if: matrix.shard == 5
         run: python3 tests/program_piles_s748a_test.py
