@@ -1462,7 +1462,9 @@ check(gf["record"] is None and gf["error"].startswith("part 2 of 2: HTTP 504"),
       "a part that fails fails the record, named by part")
 fn = open(os.path.join(ROOT, "chatbox", "supabase", "functions", "program-requirements-extract", "index.ts")).read()
 check("function partRequest(part: Part)" in fn and "readPart(body.part, closed.length)" in fn
-      and "userMessage(body, closed, text, part)" in fn and "].concat(part ? [\"\", partRequest(part)] : [])" in fn,
+      # S750: the message also takes noList, the caller's word that the state lists no course (version 13).
+      and "userMessage(body, closed, text, part, noList)" in fn
+      and "].concat(part ? [\"\", partRequest(part)] : [])" in fn,
       "the function reads body.part and asks for that part only; a body without part reads as version 5 did")
 import _program_requirements_college as PC  # noqa: E402
 import tempfile as _tf  # noqa: E402

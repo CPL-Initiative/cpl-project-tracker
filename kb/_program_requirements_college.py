@@ -1970,7 +1970,8 @@ def ncl_lookup(programs: list[dict], pages: list[dict], own: dict[str, str], lis
     return out, test
 
 
-def ncl_account(recs: list[dict], answers: dict[str, dict], test: dict, catalog_year: str | None = None) -> dict:
+def ncl_account(recs: list[dict], answers: dict[str, dict], test: dict, catalog_year: str | None = None,
+                found_read: dict | None = None) -> dict:
     """The capture's account of the lookup: the self-test, how many it searched and found, the pages found
     (so a paid read of them can be priced before it is asked for), and every looked-up program's answer in
     short: a found one's page heading and the awards it prints, any other's reason or basis. A capture-only
@@ -1978,7 +1979,11 @@ def ncl_account(recs: list[dict], answers: dict[str, dict], test: dict, catalog_
     so the branch has to carry enough to judge each answer (S652). yields: each page a program took from the
     closed-list program holding it (holder, taker, the page and its heading, and catalog_year, the year the lookup
     ran under, which a later capture's filed yield must match: ncl_capture_yields); yield_unjudged and
-    yield_refused_passing: the candidates whose page stayed (ncl_yield, S668)."""
+    yield_refused_passing: the candidates whose page stayed (ncl_yield, S668).
+    found_read (S750): given only where the college's entry asks for its found pages to be read (ncl_asks_found):
+    the recall the capture measured (ncl_found_recall) and whether it read them. The account then carries it with
+    how many found pages were filed as sources and how many stayed unfiled, by reason, and each found program says
+    which it was. A college that does not ask gets the account it always got, key for key."""
     by: dict[str, int] = {}
     for a in answers.values():
         by[a["result"]] = by.get(a["result"], 0) + 1
@@ -1988,6 +1993,23 @@ def ncl_account(recs: list[dict], answers: dict[str, dict], test: dict, catalog_
               "page_title": answers[r["control_number"]]["page"].get("title"),
               "awards": answers[r["control_number"]]["page"].get("awards")}
              for r in recs if (answers.get(r["control_number"]) or {}).get("result") == "found"]
+    read_account = {}
+    if found_read is not None:
+        by_cn = {r["control_number"]: r for r in recs}
+        unfiled: dict[str, int] = {}
+        filed = 0
+        for f in found:
+            r = by_cn[f["control_number"]]
+            f["filed"] = r.get("method") == NCL_FOUND_METHOD
+            filed += f["filed"]
+            if not f["filed"]:
+                why = (r.get("catalog_lookup") or {}).get("unfiled") or (
+                    "the recall did not clear the floor" if not found_read.get("reads") else "not filed")
+                f["unfiled"] = why
+                # A rule's reason names the rule; the rest of a reason names one page, so it is counted by its start.
+                key = why.split(":")[0][:80]
+                unfiled[key] = unfiled.get(key, 0) + 1
+        read_account = {"found_read": dict(found_read, filed=filed, unfiled=unfiled)}
     others = []
     for r in recs:
         a = answers.get(r["control_number"])
@@ -2011,7 +2033,7 @@ def ncl_account(recs: list[dict], answers: dict[str, dict], test: dict, catalog_
             "found_active": sum(1 for f in found if f["status"] == "Active"),
             "found_pages": len({page_stem(f["url"]) for f in found}), "found_programs": found,
             "other_programs": others, "yields": yields, "yield_unjudged": held.count("unjudged"),
-            "yield_refused_passing": held.count("refused_passing")}
+            "yield_refused_passing": held.count("refused_passing"), **read_account}
 
 
 # ── the found page as the program's source (S748, S652's slice B) ───────────
@@ -2030,30 +2052,118 @@ def ncl_account(recs: list[dict], answers: dict[str, dict], test: dict, catalog_
 #
 # The state lists no course for such a program, so its source carries no coverage to measure (0.0 of 0 listed) and
 # the extraction's bar, a share of listed codes, does not apply: X.sendable() sends it on its method alone.
+#
+# ROUND 2 (S750), on the S748 second reader's findings.
+#   THE OPT-IN IS TIED TO A MEASURED RECALL. The key alone was a hand-edited name set (the reader: Glendale, 8 of 165
+#   right on the filed pages). The key now only asks. The capture answers by measuring, on the pages it read that
+#   day, how the lookup does on programs whose answer is already held (ncl_found_recall), and files found pages only
+#   where that recall clears the floor (ncl_reads_found). The capture's account carries the measurement
+#   (found_read), so a branch that holds only capture_preview.json says why a college's pages were or were not filed.
+#   ONE PAGE, TWO ADDRESSES. Free capture 46126538324 (Skyline, the key on) filed 0 of its 55 found pages as a
+#   source (by_method no_closed_list 86, would_extract 1 program), and its account did not say why. The cause, read
+#   from the code and the committed files, since a run's artifact cannot be read from a session: S748 filed a found
+#   page only where one page read shared its stem (page_stem), and Skyline serves each program page under two
+#   addresses, accounting-as.php and accounting-as.xml, one stem (page_stem's own note; its filed sources name 44
+#   .php pages and 4 .xml; its sitemap lists 470 program pages for 144 programs), so each found page was "read 2
+#   times" and refused. No other refusal fits all 55: rule A keeps each of the 55 on its heading, title and address
+#   alone, and 26 are certificates, whose pages rule B's general-education test seldom refuses. The page filed is
+#   now the one the answer names by its whole address, the page the lookup matched, and the account names each
+#   unfiled page's reason (ncl_account, found_read), so the next capture confirms or refutes this.
 NCL_READ_KEY = "read_found_pages"
 NCL_FOUND_METHOD = "catalog_lookup"
+# The floor for reading found pages. NCL_READ_FLOOR is the lookup's own floor (NCL_FLOOR, 0.8), set in S652 for the
+# same matcher's self-test, taken here unchanged so no figure is fitted to the colleges it admits. A wrong answer is
+# a program read from another program's page, so none is allowed. NCL_READ_MIN_TESTED: with no wrong answer in at
+# least 30 tested and 80% found, 24 or more right answers stand behind the "none wrong".
+NCL_READ_FLOOR = NCL_FLOOR
+NCL_READ_MIN_TESTED = 30
 
 
-def ncl_reads_found(college: str) -> bool:
-    """Whether the college's reconcile entry opts in to reading found pages (NCL_READ_KEY true; absent is off)."""
+def ncl_asks_found(college: str) -> bool:
+    """Whether the college's reconcile entry asks for its found pages to be read (NCL_READ_KEY true; absent is no).
+    Asking does not switch the read on: ncl_reads_found() also needs the measured recall."""
     import _program_requirements_reconcile as R
     return (R.load_steps().get(college) or {}).get(NCL_READ_KEY) is True
+
+
+def ncl_found_recall(programs: list[dict], pages: list[dict], filed) -> dict:
+    """The lookup's recall in the open setting, against answers already held (S750).
+
+    SUBJECTS: every closed-list program whose filed record passes as the live table counts it (_passing_filed_rec)
+    and was read from exactly one of `pages` (ncl_page; ncl_read_from). filed(control number) gives the record
+    (ncl_filed_records).
+    THE ORACLE is that page, and the rule under test never chose it: the closed-list search took the page on the
+    share of the state's listed course codes it prints, and the extraction then placed every listed course on it,
+    invented none and added to the printed total. The lookup reads a page's heading, title and address against the
+    program's title and award (ncl_match) and no course code.
+    THE OPEN SETTING: each subject is looked up as a program with no list, against every page, with no page claimed
+    by any program (claimed is empty). With the other programs' pages claimed, the only page left to give a subject
+    is its own, so a wrong answer cannot be counted (the S748 reader: "wrong 0" was structural). Here every page is
+    a candidate, and a wrong answer is one that names another page than the oracle's.
+    Returns tested, right, wrong, not_found, recall (right / tested), wrongs (each wrong answer), not_read (passing
+    records whose page is not among the pages, untested) and clears: at least NCL_READ_MIN_TESTED tested, recall at
+    least NCL_READ_FLOOR, and none wrong."""
+    tested = right = not_found = not_read = 0
+    wrongs = []
+    for prog in programs:
+        if not prog.get("closed_list"):
+            continue
+        rec = filed(prog["control_number"])
+        if not _passing_filed_rec(rec):
+            continue
+        own = [pg for pg in pages if ncl_read_from(rec, pg)]
+        if len(own) != 1:
+            not_read += 1
+            continue
+        tested += 1
+        ans = ncl_answer(dict(prog, closed_list=[]), pages, {}, programs)
+        if ans["result"] != "found":
+            not_found += 1
+        elif page_stem(ans["page"]["url"]) in own[0]["keys"]:
+            right += 1
+        else:
+            wrongs.append({"control_number": prog["control_number"], "title": prog.get("title"),
+                           "award": prog.get("award"), "found": ans["page"]["url"], "read_from": rec.get("source_url")})
+    recall = round(right / tested, 3) if tested else None
+    return {"tested": tested, "right": right, "wrong": len(wrongs), "not_found": not_found, "recall": recall,
+            "wrongs": wrongs[:20], "not_read": not_read, "floor": NCL_READ_FLOOR, "min_tested": NCL_READ_MIN_TESTED,
+            "clears": bool(tested >= NCL_READ_MIN_TESTED and right / tested >= NCL_READ_FLOOR and not wrongs)}
+
+
+def ncl_reads_found(college: str, recall: dict | None) -> bool:
+    """Whether the capture files the college's found pages as sources: its reconcile entry asks (ncl_asks_found) and
+    the recall this capture measured on its own pages clears the floor (ncl_found_recall). No recall is no read."""
+    return ncl_asks_found(college) and bool((recall or {}).get("clears"))
+
+
+def ncl_found_page(answer: dict | None, pages: list[dict]) -> tuple[dict | None, str | None]:
+    """(the page the answer names among the pages the capture read, None), or (None, why). The page is the one read at
+    the answer's whole address, the page the lookup matched. A catalog that serves one page under two addresses
+    (Skyline's accounting-as.php and accounting-as.xml, one page_stem) has both among its pages, and only the one the
+    lookup matched is filed. The same address read more than once is one page only where every read gave one text."""
+    url = ((answer or {}).get("page") or {}).get("url")
+    mine = [pg for pg in pages if url and pg.get("url") == url]
+    if not mine:
+        return None, "the found page was read 0 times among the capture's pages"
+    bodies = {(pg.get("got") or {}).get("body") or pg.get("body") or "" for pg in mine}
+    if len(bodies) != 1:
+        return None, "the found page was read %d times among the capture's pages, with different text" % len(mine)
+    return mine[0], None
 
 
 def ncl_found_source(college: str, program: dict, reg: dict, answer: dict | None,
                      pages: list[dict]) -> tuple[dict | None, str | None]:
     """(the source record for a no-closed-list program whose page the lookup found, None), or (None, why it stays
     unfiled). pages: the pages the capture read. Nothing is filed for a program that has a closed list, for an
-    answer other than found, for a page not read once and once only, or for a page rules B, C and A refuse."""
+    answer other than found, for a page the capture did not read at the answer's address (ncl_found_page), or for a
+    page rules B, C and A refuse."""
     if program.get("closed_list"):
         return None, "the program has a closed list: the closed-list search reads it"
     if (answer or {}).get("result") != "found":
         return None, "the lookup found no page"
-    stem = page_stem((answer.get("page") or {}).get("url"))
-    mine = [pg for pg in pages if stem and page_stem(pg.get("url")) == stem]
-    if len(mine) != 1:
-        return None, "the found page was read %d times among the capture's pages" % len(mine)
-    pg = mine[0]
+    pg, why = ncl_found_page(answer, pages)
+    if pg is None:
+        return None, why
     got = pg.get("got") or {}
     body = got.get("body") or pg.get("body") or ""
     kept, why = RC.site_page(pg, program, body, {}, "innerText")
@@ -2083,6 +2193,40 @@ def ncl_filed(college: str, rec: dict, program: dict, reg: dict, answer: dict, p
         return src
     rec["catalog_lookup"] = dict(answer, unfiled=why)
     return rec
+
+
+def ncl_file_found(college: str, recs: list[dict], programs: list[dict], pages: list[dict], answers: dict[str, dict],
+                   reg: dict, filed, write=None) -> dict | None:
+    """capture()'s step after the lookup: each looked-up program's record in recs is replaced by what ncl_filed()
+    files for it, and written (write(rec)). A found page becomes a source only where the college's entry asks
+    (ncl_asks_found) and the recall measured here clears the floor (ncl_found_recall on the pages this capture
+    read, against the passing records filed for the college, filed(control number)). Returns the measurement with
+    reads (whether the pages were filed), or None for a college that does not ask: nothing is measured for it, and
+    it files what it filed before S748."""
+    found_read = None
+    if ncl_asks_found(college):
+        found_read = ncl_found_recall(programs, ncl_pages(pages, college, reg.get("catalog_year")), filed)
+        found_read["reads"] = ncl_reads_found(college, found_read)
+        print("found pages: the lookup finds %d of %d held answers on these pages (wrong %d, not found %d; the floor "
+              "is %.0f%% of at least %d, none wrong): %s"
+              % (found_read["right"], found_read["tested"], found_read["wrong"], found_read["not_found"],
+                 NCL_READ_FLOOR * 100, NCL_READ_MIN_TESTED,
+                 "the found pages are filed as sources" if found_read["reads"] else "no found page is filed"),
+              flush=True)
+    on = bool(found_read and found_read["reads"])
+    by_cn = {p["control_number"]: p for p in programs}
+    for i, rec in enumerate(recs):
+        ans = answers.get(rec["control_number"])
+        if ans is not None and rec["method"] == "no_closed_list":
+            recs[i] = rec = ncl_filed(college, rec, by_cn[rec["control_number"]], reg, ans, pages, on)
+            if write is not None:
+                write(rec)
+            print("%-6s catalog_lookup %-12s %s%s" % (
+                rec["control_number"], ans["result"],
+                (ans.get("page") or {}).get("url") or ans.get("basis") or ans.get("why") or "",
+                " (unfiled: %s)" % rec["catalog_lookup"]["unfiled"] if (rec.get("catalog_lookup") or {}).get("unfiled")
+                else " (filed as its source)" if rec["method"] == NCL_FOUND_METHOD else ""), flush=True)
+    return found_read
 
 
 REFUSED = "refused"                 # a gated PDF block refused (decision 16): filed as no read page
@@ -6313,17 +6457,12 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
                 recs[i].update(lost_pages=[lost], yielded_to=taker)
                 _write(os.path.join(out_dir, "sources", rec["control_number"] + ".json"), recs[i])
                 print("%-6s page_claimed %s (yielded to %s)" % (rec["control_number"], lost, taker), flush=True)
-            read_found = ncl_reads_found(college)
-            for i, rec in enumerate(recs):
-                ans = answers.get(rec["control_number"])
-                if ans is not None and rec["method"] == "no_closed_list":
-                    # S748: where the college opted in (NCL_READ_KEY), a found page is the program's source.
-                    recs[i] = rec = ncl_filed(college, rec, by_cn[rec["control_number"]], reg, ans, pages, read_found)
-                    _write(os.path.join(out_dir, "sources", rec["control_number"] + ".json"), rec)
-                    print("%-6s catalog_lookup %-12s %s" % (rec["control_number"], ans["result"],
-                                                           (ans.get("page") or {}).get("url") or ans.get("basis")
-                                                           or ans.get("why") or ""), flush=True)
-            report["catalog_lookup"] = ncl_account(recs, answers, test, reg.get("catalog_year"))
+            # S748, S750: each looked-up program's record, a found page as its source only where the college's
+            # entry asks and the recall this capture measures on its own pages clears the floor (ncl_file_found).
+            found_read = ncl_file_found(
+                college, recs, programs, pages, answers, reg, ncl_filed_records(folder),
+                lambda rec: _write(os.path.join(out_dir, "sources", rec["control_number"] + ".json"), rec))
+            report["catalog_lookup"] = ncl_account(recs, answers, test, reg.get("catalog_year"), found_read)
     finally:
         browser.close()
         pw.stop()

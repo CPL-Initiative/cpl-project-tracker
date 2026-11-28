@@ -11,7 +11,10 @@ programs, and 194 Active programs at 14 colleges have a found page on the filed 
 for a later slice.
 
 THE CHANGE (kb/_program_requirements_college.py, kb/_program_requirements_extract.py).
-  * ncl_reads_found(college): the college's reconcile entry carries "read_found_pages": true. No entry does today.
+  * ncl_asks_found(college): the college's reconcile entry carries "read_found_pages": true. No entry does today.
+    Since S750 the key only asks: ncl_reads_found(college, recall) also needs the recall the capture measures on
+    its own pages to clear the floor (tests/program_requirements_found_pages_s750_test.py pins that, the function's
+    version 13, the scorer at zero listed courses, and the page filed where one page has two addresses).
   * ncl_found_source(): the found page as a source record, method catalog_lookup, the page's text read with every
     tab, only where the reader's own page checks keep it (RC.site_page: rules B, C and A).
   * ncl_filed(): what capture() files for a looked-up program; with the flag off, the record it filed before.
@@ -19,13 +22,15 @@ THE CHANGE (kb/_program_requirements_college.py, kb/_program_requirements_extrac
     method; every other source reads as before.
 
 Pinned here:
-  1. OFF by default: no reconcile entry carries the key, ncl_reads_found() is false for every filed college, and
-     ncl_filed() with the flag off returns the record as S652 filed it.
+  1. OFF by default: ncl_asks_found() is true only for an entry that carries the key, ncl_reads_found() is false
+     for every filed college with no recall measured, and ncl_filed() with the flag off returns the record as S652
+     filed it.
   2. The fixture, Skyline's Accounting A.S. 05809 as its filed answer names its page: filed with the flag on, with
      the text and the marks a reader of the source needs. Refused, each with its reason: a program that has a
-     closed list, an answer that is not found, a page the capture did not read, a page read twice, a
-     course-descriptions page (rule B), a heading without the award and a page that prints another title (rule
-     A), a page with no text. A refused page leaves the no_closed_list record, with why, and is not sent.
+     closed list, an answer that is not found, a page the capture did not read, a page read twice with two
+     texts (S750: one address read twice with one text is one page), a course-descriptions page (rule B), a heading
+     without the award and a page that prints another title (rule A), a page with no text. A refused page leaves the
+     no_closed_list record, with why, and is not sent.
   3. The bar: over every filed source in the repo sendable() equals the bar as it was (a share of at least
      MIN_COVERAGE), and none carries the new method, so no filed capture sends anything else.
   4. THE SELF-RECALL (the S652 review rule). Subjects: every closed-list program whose filed record passes as the
@@ -42,7 +47,7 @@ Pinned here:
   5. The fourteen colleges with a found page, their Active programs, and the estimator's price.
 
 MUTATIONS (run in memory 2026-11-28, nothing on disk changed; each goes red):
-  the flag dropped (ncl_reads_found always true): section 1, 1 check. The change reverted (ncl_filed files nothing):
+  the flag dropped (ncl_asks_found always true): section 1, 1 check. The change reverted (ncl_filed files nothing):
   section 2, 2 checks. Rules B, C and A dropped: section 2, 5 checks. The bar as it was (sendable ignores the
   method): 2 checks; the bar dropped (sendable always true): 4 checks. The title match loosened (NCL_OWN 0.5) and
   the award match dropped: section 4's count of right answers, 1,738 and 1,267 against 1,916. Said plainly: those
@@ -90,21 +95,22 @@ FOLDERS = sorted(glob.glob(os.path.join(BASE, "*", "")))
 # ── 1. off by default ─────────────────────────────────────────────────────────────────────────────
 print("1. off by default")
 STEPS = R.load_steps()
-# The colleges a reviewed commit may turn on, each by its own entry. None is on at this commit; Skyline is the first
-# planned (55 found pages), on a sibling branch, so the test reads it in either state.
-MAY_OPT_IN = {"Skyline College"}
+# The colleges whose entry asks, each by its own key. None asks on main; a sibling branch carries one college's key
+# for its capture, so the test reads either state. Which college may ask is the S750 test's rule: one with a
+# measured recall that clears the floor (tests/program_requirements_found_pages_s750_test.py, section 6).
 opted = {c for c, e in STEPS.items() if isinstance(e, dict) and C.NCL_READ_KEY in e}
-check(opted <= MAY_OPT_IN and all(STEPS[c][C.NCL_READ_KEY] is True for c in opted),
-      "no college's reconcile entry carries %r but the ones named here, each as true (%s)"
-      % (C.NCL_READ_KEY, sorted(opted)))
+check(all(STEPS[c][C.NCL_READ_KEY] is True for c in opted),
+      "each reconcile entry that carries %r carries it as true (%s)" % (C.NCL_READ_KEY, sorted(opted)))
 colleges = []
 for folder in FOLDERS:
     try:
         colleges.append(load(os.path.basename(os.path.dirname(folder)), "capture.json").get("college"))
     except (OSError, ValueError):
         pass
-check(len(colleges) >= 100 and [c for c in colleges if C.ncl_reads_found(c)] == sorted(opted),
-      "ncl_reads_found() is false for each of the %d filed colleges but those (%d on)" % (len(colleges), len(opted)))
+check(len(colleges) >= 100 and sorted(c for c in colleges if C.ncl_asks_found(c)) == sorted(opted)
+      and not any(C.ncl_reads_found(c, None) for c in colleges),
+      "ncl_asks_found() is false for each of the %d filed colleges but those (%d ask), and with no recall measured "
+      "ncl_reads_found() is false for every one" % (len(colleges), len(opted)))
 check(C.NCL_FOUND_METHOD == X.NO_LIST_METHOD == "catalog_lookup", "the capture and the extraction name one method")
 
 # ── 2. the fixture ────────────────────────────────────────────────────────────────────────────────
@@ -150,7 +156,7 @@ REFUSALS = [
     ("a program that has a closed list", dict(PROG, closed_list=[{"code": "ACTG 121"}]), ANSWER, [page()], "closed list"),
     ("an answer that is not found", PROG, {"result": "not_matched", "why": "x"}, [page()], "found no page"),
     ("a page the capture did not read", PROG, ANSWER, [page(url=src["30882"]["source"]["url"])], "read 0 times"),
-    ("a page read twice", PROG, ANSWER, [page(), page()], "read 2 times"),
+    ("a page read twice with two texts", PROG, ANSWER, [page(), page(body=BODY + "Electives\n")], "read 2 times"),
     ("a course-descriptions page", PROG, ANSWER,
      [page(body="\n".join("ACTG %d Course Title\nUnits: 3\nPrerequisite: none\nDescription of the course."
                           % i for i in range(100, 140)))], "rule B"),

@@ -59,6 +59,14 @@ def sendable(src: dict) -> bool:
     if src.get("method") == NO_LIST_METHOD:
         return not src.get("closed_list") and bool(src.get("text"))
     return (src.get("coverage") or 0) >= MIN_COVERAGE
+
+
+def declares_no_list(src: dict) -> bool:
+    """Whether a source's request says the state lists no course for its program (S750): the function's version 13
+    reads an empty closed list only beside no_closed_list true, and answers 400 to an empty list without it, as it
+    always did. Only a catalog_lookup source with an empty list says so; any other source that reaches a call with
+    no courses lost them on the way, and the function's 400 stops it before a model call."""
+    return src.get("method") == NO_LIST_METHOD and not src.get("closed_list")
 # The record shape the function writes (its header names each version). Shape 3
 # (S334, Sam's sheet 33 card 4): program and course outcomes as printed, which
 # the scorer checks word for word against the catalog text. Shape 4 (S360, Sam's
@@ -137,10 +145,14 @@ def call(src: dict, key: str, provider: str | None = None, model: str | None = N
         body["provider"] = provider
     if model:
         body["model"] = model
+    if declares_no_list(src):
+        body["no_closed_list"] = True
     if len(src["closed_list"]) > SPLIT_AT:
         return call_in_parts(src, key, body, meter=meter)
     got = meter.call(lambda: _post(body, key), M.request_chars(body))
-    if any(w in (got.get("error") or "") for w in SPLIT_WHEN):
+    # A read in parts divides the closed list (split_codes); with no course listed there is nothing to divide, so a
+    # no-list record too long for one reply keeps its error (S750).
+    if any(w in (got.get("error") or "") for w in SPLIT_WHEN) and src["closed_list"]:
         return call_in_parts(src, key, body, first=got, meter=meter)
     return got
 
