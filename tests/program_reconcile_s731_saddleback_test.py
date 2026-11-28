@@ -5,8 +5,12 @@ WHY. S730's plan s730b held seven Saddleback records on the reconcile lever (p-g
 each page prints 'The following course must be taken twice for a total of two units: 2.0' over ETT 142 or MUS 50 at 1
 unit, and the reading lists the course once. Pinned here:
 
-  * the config: Saddleback carries two repeat steps with block_sum, and no other college carries block_sum, so the
-    reconcile module's new guard moves no record elsewhere;
+  * the config: Saddleback carries two repeat steps with block_sum, so the reconcile module's guard moves no record
+    elsewhere. One other college carries it since S748, named here with its reason: San Bernardino Valley, one
+    repeat step for local A.A. degrees whose pattern names its own heading words and its own pair ('Complete 4
+    semesters totaling 2 units' over MUS 141X2 & MUS 241X2, Music A.A. 04894;
+    tests/program_reconcile_s748_sbvc_test.py holds its self-recall). Any third carrier, a second San Bernardino
+    Valley step, or that step read wider than those words, fails here;
   * the self-recall: over every committed Saddleback record, with a stand-in text printing the words over both
     courses, the steps fire on the seven alone (a fire on an eighth record fails here), each fire counts its course
     twice once, and today's scorer then passes it; the five other records that carry either course stay as filed;
@@ -43,8 +47,18 @@ conf = W.R.load_steps()
 sts = W.steps()
 check(len(sts) == 2 and all(s.get("block_sum") is True and s.get("pattern") for s in sts)
       and len(conf[W.COLLEGE]["steps"]) == 2, "Saddleback carries two repeat steps with block_sum")
-others = [c for c, v in conf.items() if c != W.COLLEGE and any(s.get("block_sum") for s in v.get("steps") or [])]
-check(not others, "no other college carries block_sum: %s" % others)
+others = {c: [s for s in v.get("steps") or [] if s.get("block_sum")] for c, v in conf.items()
+          if c != W.COLLEGE and isinstance(v, dict) and any(s.get("block_sum") for s in v.get("steps") or [])}
+# S748: San Bernardino Valley's one step, for Music A.A. 04894's applied pair, is the only other carrier.
+SBVC = "San Bernardino Valley College"
+check(sorted(others) == [SBVC], "one other college carries block_sum, San Bernardino Valley: %s" % sorted(others))
+sb = (others.get(SBVC) or [{}])
+check(len(sb) == 1 and sb[0].get("kind") == "repeat" and sb[0].get("block_sum") is True
+      and sb[0].get("awards") == "local_aa"
+      and "semesters\\s+totaling\\s+2\\s+units" in (sb[0].get("pattern") or "")
+      and "MUS\\s*141X" in (sb[0].get("pattern") or "") and "MUS\\s*241X2" in (sb[0].get("pattern") or "")
+      and not sb[0].get("name_pattern") and not sb[0].get("block_pattern"),
+      "San Bernardino Valley's is one repeat step for local A.A. degrees, on its own heading words and its own pair")
 check(set(W.TARGETS) == SEVEN and not set(W.KEPT) & SEVEN, "the seven, and the five kept apart")
 
 n_records = len(glob.glob(os.path.join(W.COLLEGE_DIR, W.SLUG, "records", "*.json")))

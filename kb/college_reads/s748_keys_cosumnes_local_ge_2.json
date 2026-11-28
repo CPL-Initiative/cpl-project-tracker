@@ -1,0 +1,25 @@
+{
+ "_readme": "S748 lane 1 (keys): Cosumnes River College, the hand-filed 2026-27 catalog's PDF pp.89-91 alone. Read 46122189139 (kb/college_reads/s748_keys_cosumnes_local_ge.json) printed pp.89-93, 476 lines, and its last pages are the transfer guidance (pp.92-93, which name the associate degree graduation requirements and print no figure for the local pattern); the pages that print the associate degree's graduation requirements come first. This plan prints those three pages alone, so the catalog's words on the local general education pattern's units are read back in one short log. One load of the hand-filed copy, free, no model call, nothing written.",
+ "college": "Cosumnes River College",
+ "questions": {
+  "local_ge_units": "How many units does the catalog print for the local general education pattern of the associate degree, in which words, and does it print a total?"
+ },
+ "keywords": [
+  "Local General Education",
+  "General Education Requirement",
+  "Graduation Requirements",
+  "minimum of \\d+ (?:semester )?units"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "local_ge_units"
+   ],
+   "url": "https://github.com/user-attachments/files/33599449/crc-catalog-26-27.pdf"
+  }
+ ],
+ "pdf_span": [
+  89,
+  91
+ ]
+}

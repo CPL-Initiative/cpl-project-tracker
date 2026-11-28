@@ -1,0 +1,22 @@
+{
+ "_readme": "S748 lane 1 (keys): San Bernardino Valley College, Music A.A. 04894's own page alone, read as the capture reads it (capture_view), free, no model call, nothing written. S741's read 45953233659 printed the page among four and its text is not committed; S741 and S742 quote two of its lines ('Complete 4 semesters totaling 2 units' over 'MUS 141X2 & MUS 241X2 ... 1'). The college's reconcile steps for the applied pair (and_units for the row the page joins with '&', then repeat with block_sum for the two enrollments each X2 code prints) read the capture's text, so the lines are read once more here, line for line, and quoted in this file under the run that printed them: the heading over the applied row, the row as its cells break, and the ensemble heading under it, with the page's own totals.",
+ "college": "San Bernardino Valley College",
+ "questions": {
+  "applied_row": "How does the capture's text print the heading over the applied pair, the pair's row and its one figure, and the totals?"
+ },
+ "keywords": [
+  "MUS\\s+[12]41X2[^\\n]{0,80}",
+  "[Cc]omplete\\s+4\\s+semesters[^\\n]{0,60}",
+  "[Tt]otal[^\\n]{0,40}[Uu]nits?[^\\n]{0,20}"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "applied_row"
+   ],
+   "why": "04894",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/music/music-aa-degree/",
+   "capture_view": true
+  }
+ ]
+}

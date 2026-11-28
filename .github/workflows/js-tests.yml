@@ -1250,6 +1250,11 @@ jobs:
       - name: Named gaps S742 plan s742k3 (San Bernardino Valley 17829 on its reread row)
         if: matrix.shard == 1
         run: python3 tests/program_named_gaps_s742k3_test.py
+      # S748 plan s748k1: College of the Canyons 38686, 44273 and 45610 under no_hours_read, by the named-gaps
+      # module's wave pass, on the rows load 44887749460 inserted; Cosumnes River stays free of ge_units_not_read.
+      - name: Named gaps S748 plan s748k1 (College of the Canyons' three noncredit certificates)
+        if: matrix.shard == 1
+        run: python3 tests/program_named_gaps_s748k1_test.py
       # S742 at San Jose City: one cited renumber, JOURN 138 for the state's one unnamed row 'JournalismJO Work
       # Experience', on the page's own line, with its self-recall over the college's records (38499 alone moves).
       - name: Renumber S742 at San Jose City (JOURN 138, the page's own line, the self-recall)
@@ -1347,6 +1352,30 @@ jobs:
       - name: Reconcile S742 at Cabrillo (lists headed Recommended that the page counts)
         if: matrix.shard == 4
         run: python3 tests/program_reconcile_s742_cabrillo_test.py
+      # S748 at San Bernardino Valley: two reconcile steps for Music A.A. 04894's applied pair, kinds the reconcile
+      # already holds (and_units for the row the page joins with '&'; repeat with block_sum for the two enrollments
+      # each X2 code prints under 'Complete 4 semesters totaling 2 units'), on the page's own lines; over the
+      # college's 221 records the steps reach 04894 alone, which turns passing.
+      - name: Reconcile S748 at San Bernardino Valley (the applied pair's one row, the self-recall)
+        if: matrix.shard == 5
+        run: python3 tests/program_reconcile_s748_sbvc_test.py
+      # S748 at Lassen: one more set step of the catalog's own Cal-GETC figure (34, PDF p.72), for local degrees
+      # naming Cal-GETC alone; over the college's 64 records it reaches five University Studies degrees, each then
+      # passing, and no passing record turns failing.
+      - name: Reconcile S748 at Lassen (the catalog's 34 for local degrees naming Cal-GETC, the self-recall)
+        if: matrix.shard == 3
+        run: python3 tests/program_reconcile_s748_lassen_test.py
+      # S748 at College of Alameda: the set step for Cal-GETC's 34 reads the units line under both its wordings
+      # ('Elective Units', 'Elective Courses'); over the college's 59 records the wider pattern reaches Art History
+      # A.A.-T 32765 alone, which turns passing.
+      - name: Reconcile S748 at College of Alameda (the units line's two wordings, the self-recall)
+        if: matrix.shard == 4
+        run: python3 tests/program_reconcile_s748_alameda_test.py
+      # S748: the gap census reads a college's own named-gap files (named_gaps_*.json), so a program collected as
+      # a named gap with no record leaves the gap by its reason; on the census of 00:44Z, 78 of 3,927.
+      - name: Harvest gap census reads college-named gap files (S748)
+        if: matrix.shard == 2
+        run: python3 tests/harvest_gap_census_college_named_test.py
       # S741's page pins: American River's Level I and Level II windows each hold their own heading (cut by until),
       # and each site pin (Orange Coast, Fullerton, El Camino, Butte) is its program's own, unfiled address.
       - name: Page pins S741 (American River's two windows, the site pins)
