@@ -137,3 +137,10 @@ paid reads, rereads, loads and `.apply`, and holds every Supabase call.
 - 07:46Z: Lassen's and Alameda's second reader (Sonnet): GO each (34 is the catalog's printed figure, PDF page 72; MAJOR
   for `keys` before the land: the S731 Saddleback test fails on San Bernardino Valley's `block_sum`; two MINOR test
   pins). The free reconciles dispatched on `claude/s748-keys-lassen` and `-alameda` (`344d4d2c`).
+- 07:48Z: the conductor's live read at six colleges (07:47:48Z, no checked row at any; counts and md5 checked) to a
+  Fable worker, `post`, which runs keep-better on the three filed paid reads (San Bernardino Valley 46121983588, San
+  Jose City 46121988906, Orange Coast 46122364368) and on Lassen's, Alameda's and College of the Canyons' runs as they
+  file.
+- 07:51Z: s748b's reader (Sonnet): APPLY (the real SQL on a scratch Postgres; each older-test edit is keyed to its own
+  rows; part of the mutation check unfinished on a slow machine). Clean md5 pre-read 2 of 2. Migrate 46123111643 green
+  at 07:54Z: Orange Coast 03993 and East Los Angeles 41231. Records collected: 11.
