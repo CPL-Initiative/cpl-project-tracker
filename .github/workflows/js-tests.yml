@@ -238,6 +238,10 @@ jobs:
       - name: Campus letter fold (Cerro Coso, Porterville)
         if: matrix.shard == 3
         run: python3 tests/coci_campus_letter_test.py
+      # COCI catalog descriptions read as the catalog wrote them: Excel escapes and cp1252 mojibake undone at the build (S747).
+      - name: COCI description cleanup (no _x000D_, no mojibake in the shards)
+        if: matrix.shard == 3
+        run: python3 tests/coci_desc_clean_test.py
       # The docs-only lint skip (S737): the heavy steps listed in tests/lints_docs_only_skip.json read no docs file
       # (traced under strace), so on a docs-only diff they skip with `&& (needs.gate.outputs.decision == 'run')`.
       # Main's push run and every code PR run them. A step joins the skip only through that list.

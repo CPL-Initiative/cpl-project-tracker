@@ -51,6 +51,49 @@ CID_SENTINELS = {"", "NULL", "N/A", "NA", "NONE", "NOT APPLICABLE"}
 DESC_MAX = 900  # catalog descriptions avg ~420 chars; hard-cap the tail
 
 
+# COCI's CatalogDescription carries Excel's escapes for control characters (_x000D_, a carriage return, about
+# 78,800 times) and UTF-8 text read as cp1252 ("studentâ€™s", "Â" before a no-break space). Both are undone here,
+# at the build, so the description shards read as the catalog wrote them (S747; f-coci-description-shards-mojibake-s744).
+_XESC = re.compile(r"_x([0-9A-Fa-f]{4})_")
+# A run that starts with a UTF-8 lead byte as cp1252 shows it (Â to ô) and continues with continuation bytes as cp1252
+# shows them: 0x80-0xBF in Latin-1, plus the cp1252 letters and punctuation that sit at 0x80-0x9F.
+_CONT = "\x80-\xbf\u0152\u0153\u0160\u0161\u0178\u017d\u017e\u0192\u02c6\u02dc\u2013\u2014\u2018-\u201e\u2020-\u2022\u2026\u2030\u2039\u203a\u20ac\u2122"
+_MOJI = re.compile("[\xc2-\xf4][" + _CONT + "]+")
+
+
+def _byte(c):
+    """The byte cp1252 shows as c; a C1 control (0x81, 0x8D, 0x8F, 0x90, 0x9D, which cp1252 leaves undefined)
+    stands for itself."""
+    o = ord(c)
+    return o if o < 0x100 else c.encode("cp1252")[0]
+
+
+def _unmoji(m):
+    run = m.group(0)
+    try:
+        return bytes(_byte(c) for c in run).decode("utf-8")
+    except (UnicodeEncodeError, UnicodeDecodeError):
+        return run
+
+
+def clean_desc(text):
+    """A catalog description as the catalog wrote it: Excel escapes decoded, mojibake runs read back as UTF-8,
+    whitespace (the decoded carriage returns and no-break spaces among it) folded to single spaces."""
+    t = _XESC.sub(lambda m: chr(int(m.group(1), 16)), text or "")
+    # Some descriptions went through cp1252 twice ("Ã‚Â" before a no-break space); one pass peels one layer, so
+    # repeat until the text stops changing (three passes undo anything seen in the extract).
+    for _ in range(3):
+        u = _MOJI.sub(_unmoji, t)
+        if u == t:
+            break
+        t = u
+    # What the repair cannot reach: a no-break space whose second byte the extract dropped leaves a bare "Â" at the
+    # end of a description or before a quote (147 in the Nov 2026 extract), and one right quote whose ™ was spelled
+    # out ("artisanâ€TMs"). A "Â" before a letter (French "Âme") stays.
+    t = re.sub(r"Â+(?![^\W\d_])", " ", t).replace("â€TM", "’")
+    return re.sub(r"\s+", " ", t).strip()
+
+
 def credit_char(credit_type, units):
     ct = (credit_type or "").strip().lower()
     if ct == "credit course":
@@ -163,7 +206,7 @@ def main():
         rows.append([ci, ctrl, subj, num, title, units, cc, top, cid, ccn, mid])
         desc = str(row[idx["CatalogDescription"]] or "").strip()
         if desc:
-            desc = re.sub(r"\s+", " ", desc)
+            desc = clean_desc(desc)
             if len(desc) > DESC_MAX:
                 desc = desc[:DESC_MAX - 1] + "…"
             shards.setdefault(shard_key(subj), {})[ctrl] = desc
