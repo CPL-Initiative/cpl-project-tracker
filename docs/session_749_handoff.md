@@ -144,3 +144,17 @@ paid reads, rereads, loads and `.apply`, and holds every Supabase call.
 - 07:51Z: s748b's reader (Sonnet): APPLY (the real SQL on a scratch Postgres; each older-test edit is keyed to its own
   rows; part of the mutation check unfinished on a slow machine). Clean md5 pre-read 2 of 2. Migrate 46123111643 green
   at 07:54Z: Orange Coast 03993 and East Los Angeles 41231. Records collected: 11.
+- 08:02Z: the `list_minimum_units` second reader (Fable 5.2): NO GO, accepted with no second round (BLOCKING: the pass
+  comes from a ceiling the catalog does not print: the page's Subtotal 20-27 gives the degree 54-61 around the printed
+  60; the step's exactly-3 passes only because its trial-score gate picks the reading the scorer likes). `piles`
+  removes the kind; East Los Angeles 31017 stays held.
+- 08:05Z: `gaps` report (`claude/s748-gaps`, `624e286a`): Allan Hancock 87 = no closed list 47, page not found 23,
+  unequal 14, incomplete 1, places none 2; Mt. San Antonio 83 = no closed list 41, page not found 28, unequal 13,
+  incomplete 1. Plan s748g1 (Allan Hancock 7, Mt. San Antonio 2; 22 held with reasons) to a Sonnet plan reader. A free
+  Mt. San Antonio reconcile after the apply may pass eight more.
+- 08:01Z: `readers` stop 3 (`aeeb33d2`): Sierra 99 = no closed list 65, no page 20, unequal 7, incomplete 3, coverage 2,
+  places none 2; Skyline 93 = no closed list 86, no page 5, places none 1, incomplete 1. Plan s748r2 (Sierra 33639,
+  33646, 36718, 39209) to a Sonnet plan reader. Sierra 21525 waits on keep-better and a free reread. **The night's
+  largest lever:** the capture's lookup finds the own page of a program with no closed list and nothing files it as
+  the source (S652's slice B, never built): 194 programs at 14 colleges, about $14 on the estimator, Skyline's 55 about
+  $3.90. `readers` builds it on `claude/s748-readers-found`, off by default, for a Fable second reader.
