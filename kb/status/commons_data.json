@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-28T00:45:15Z",
+ "written_at": "2026-11-28T07:30:10Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17663,
-  "gap": 4672,
+  "passing": 17664,
+  "gap": 4671,
   "with_gap": 118,
   "cost_usd": 1341.37,
-  "passed_at_read": 16566,
+  "passed_at_read": 16567,
   "cost_receipts": 118,
   "spent_usd": 1247.94,
   "spent_runs": 264,
@@ -189,8 +189,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16986,
-  "gap": 4672,
+  "passing": 16987,
+  "gap": 4671,
   "collected_with_gaps": 677,
   "discontinued": 0
  },
@@ -2085,12 +2085,12 @@
    "harvested": true,
    "slug": "coastline_community",
    "programs": 175,
-   "passing": 126,
-   "gap": 49,
+   "passing": 127,
+   "gap": 48,
    "causes": {
     "no_closed_list": 16,
     "page_not_found": 5,
-    "places_none": 13,
+    "places_none": 12,
     "unknown_without_live": 15
    },
    "census_causes": {
@@ -2117,10 +2117,10 @@
     "courseleaf"
    ],
    "objectives_printed": null,
-   "read_at": "2026-11-26T07:20:09Z",
+   "read_at": "2026-11-27T13:39:58Z",
    "read_kind": "capture",
    "cost_usd": 8.52,
-   "passed_at_read": 126,
+   "passed_at_read": 127,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -2129,13 +2129,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 159,
-   "found": 143,
+   "found": 144,
    "extracted": 154,
    "errors": 0,
    "failed_checks": {
-    "coverage": 13,
+    "coverage": 12,
     "invented": 0,
-    "arithmetic": 28,
+    "arithmetic": 27,
     "repeated": 1,
     "outcomes": 0
    },
@@ -2145,11 +2145,11 @@
    "capture_root": "https://catalog.cccd.edu/coastline/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1229.1,
-   "run": "45777312083",
+   "read_seconds": 1255.8,
+   "run": "46119872022",
    "levers": {
     "program_course_file_check": 16,
-    "reader_page_assignment": 13,
+    "reader_page_assignment": 12,
     "reconcile_steps": 10,
     "reader_page_search": 5,
     "scorer_noncredit_hours": 5
@@ -2160,8 +2160,8 @@
      "models": {
       "claude-opus-5-5": 154
      },
-     "run": "45777312083",
-     "at": "2026-11-26T07:20:09Z",
+     "run": "46119872022",
+     "at": "2026-11-27T13:39:58Z",
      "cost_usd": 8.52,
      "platform": "courseleaf"
     },
@@ -2172,7 +2172,7 @@
      "source_kind": "course_outline",
      "file": "kb/course_outcomes/cccd/read_43984094171_p2of2.json"
     },
-    "plo_programs": 141,
+    "plo_programs": 142,
     "ppm_member": {
      "host": "programmap.coastline.edu",
      "by": "programmapper.org/ppm-schools, copied 2026-10-21"
