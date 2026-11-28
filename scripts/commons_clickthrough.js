@@ -96,7 +96,7 @@ async function landing(page, tab, filter) {
     const fl = pane && pane.querySelector('[data-arrived="' + filter + '"]');
     const cur = fl && (fl.querySelector("[aria-current]") || fl);
     const r = cur && cur.getBoundingClientRect();
-    const meta = pane ? [...pane.querySelectorAll(".cplcoci-meta, .ccl-doubt-note p, [data-unit]")].map((n) => n.textContent.replace(/\s+/g, " ").trim()) : [];
+    const meta = pane ? [...pane.querySelectorAll(".cplcoci-meta, .ccl-doubt-note p, .cs-scan-note, [data-unit]")].map((n) => n.textContent.replace(/\s+/g, " ").trim()) : [];
     const doubt = pane && pane.querySelector("[data-doubt-desc]");
     return { hash: location.hash, shown, selected: !!fl, current: cur ? cur.textContent.replace(/\s+/g, " ").trim() : null,
       inView: !!r && r.bottom > 0 && r.top < window.innerHeight, unit: (pane && pane.querySelector("[data-unit]") || {}).textContent || null,
