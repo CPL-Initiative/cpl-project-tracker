@@ -4,14 +4,14 @@
  "measured_on_titled_codes": {
   "course_joins": {
    "few or mixed": {
-    "right": 1858,
-    "asked": 3796,
-    "share": 0.489,
+    "right": 1863,
+    "asked": 3822,
+    "share": 0.487,
     "score": 49
    },
    "most courses agree": {
-    "right": 3652,
-    "asked": 4164,
+    "right": 3655,
+    "asked": 4168,
     "share": 0.877,
     "score": 88
    }
@@ -24,8 +24,8 @@
     "score": 99
    },
    "mixed": {
-    "right": 177,
-    "asked": 201,
+    "right": 178,
+    "asked": 202,
     "share": 0.881,
     "score": 88
    },
@@ -44,22 +44,22 @@
     "score": 95
    },
    "mixed": {
-    "right": 4129,
-    "asked": 4735,
+    "right": 4130,
+    "asked": 4736,
     "share": 0.872,
     "score": 87
    },
    "one college": {
-    "right": 431,
-    "asked": 637,
-    "share": 0.677,
+    "right": 439,
+    "asked": 647,
+    "share": 0.679,
     "score": 68
    }
   },
   "program_titles": {
    "one or mixed": {
-    "right": 1010,
-    "asked": 1825,
+    "right": 1012,
+    "asked": 1829,
     "share": 0.553,
     "score": 55
    },
@@ -72,15 +72,15 @@
   },
   "sibling": {
    "one letter apart": {
-    "right": 313,
-    "asked": 445,
+    "right": 322,
+    "asked": 458,
     "share": 0.703,
     "score": 70
    },
    "same letters": {
-    "right": 4,
-    "asked": 4,
-    "share": 1.0,
+    "right": 6,
+    "asked": 8,
+    "share": 0.75,
     "score": 59
    }
   }
@@ -97,17 +97,17 @@
    },
    "letters, one title": {
     "right": 36,
-    "wrong": 61,
-    "asked": 97,
-    "share": 0.371,
-    "score": 37,
+    "wrong": 63,
+    "asked": 99,
+    "share": 0.364,
+    "score": 36,
     "used": false
    },
    "letters, several titles": {
     "right": 13,
-    "wrong": 79,
-    "asked": 92,
-    "share": 0.141,
+    "wrong": 80,
+    "asked": 93,
+    "share": 0.14,
     "score": 14,
     "used": false
    },
@@ -217,27 +217,47 @@
  },
  "web_searches_filed": 313,
  "totals": {
-  "common_60_to_89": 24,
-  "common_90_plus": 1257,
+  "common_60_to_89": 22,
+  "common_90_plus": 1250,
   "common_no_code_yet": 100,
-  "common_none": 552,
-  "common_under_60": 531,
-  "no_common": 2464,
-  "no_title": 1199,
-  "noncredit_common": 499,
-  "noncredit_no_common": 682,
-  "noncredit_no_title": 236,
+  "common_none": 545,
+  "common_under_60": 530,
+  "no_common": 2447,
+  "no_title": 1108,
+  "noncredit_common": 498,
+  "noncredit_no_common": 681,
+  "noncredit_no_title": 194,
   "noncredit_title": 21,
-  "noncredit_title_unused_condition": 64,
-  "title_60_to_89": 383,
-  "title_90_plus": 391,
-  "title_none": 342,
-  "title_under_60": 83
+  "noncredit_title_unused_condition": 60,
+  "title_60_to_89": 367,
+  "title_90_plus": 394,
+  "title_none": 266,
+  "title_under_60": 81
  },
  "colleges": [
   {
    "slug": "allan_hancock",
    "rows": [
+    {
+     "code": "AGBUS",
+     "title": {
+      "title": "Agriculture Business",
+      "confidence": 95,
+      "from": "other_colleges",
+      "why": "other colleges: 2 of 2 other colleges (all agree, right 95% of the time).",
+      "also": [],
+      "candidates": [
+       {
+        "title": "Agriculture Business",
+        "confidence": 95,
+        "from": [
+         "other_colleges"
+        ],
+        "why": "other colleges: 2 of 2 other colleges (all agree, right 95% of the time)."
+       }
+      ]
+     }
+    },
     {
      "code": "AJN",
      "common": {
@@ -358,21 +378,21 @@
      }
     },
     {
-     "code": "BIOLO",
+     "code": "CE",
      "title": {
-      "title": "Biology",
-      "confidence": 70,
-      "from": "sibling",
-      "why": "sibling: code BIOL at the same college (one letter apart, right 70% of the time).",
+      "title": "Cooperative Education",
+      "confidence": 87,
+      "from": "other_colleges",
+      "why": "other colleges: 2 of 3 other colleges (mixed, right 87% of the time).",
       "also": [],
       "candidates": [
        {
-        "title": "Biology",
-        "confidence": 70,
+        "title": "Cooperative Education",
+        "confidence": 87,
         "from": [
-         "sibling"
+         "other_colleges"
         ],
-        "why": "sibling: code BIOL at the same college (one letter apart, right 70% of the time)."
+        "why": "other colleges: 2 of 3 other colleges (mixed, right 87% of the time)."
        }
       ]
      }
@@ -385,36 +405,6 @@
       "confidence": 97,
       "from": "own_courses",
       "why": "5 of 6 of its courses with an M-ID sit under INDT."
-     }
-    },
-    {
-     "code": "CHEMI",
-     "title": {
-      "title": "Chemistry",
-      "confidence": 70,
-      "from": "sibling",
-      "why": "sibling: code CHEM at the same college (one letter apart, right 70% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Chemistry",
-        "confidence": 70,
-        "from": [
-         "sibling"
-        ],
-        "why": "sibling: code CHEM at the same college (one letter apart, right 70% of the time)."
-       }
-      ]
-     }
-    },
-    {
-     "code": "COMPU",
-     "common": {
-      "code": "ITIS",
-      "discipline": "Computer Information Systems",
-      "confidence": 97,
-      "from": "own_courses",
-      "why": "13 of 21 of its courses with an M-ID sit under ITIS."
      }
     },
     {
@@ -453,26 +443,6 @@
          "other_colleges"
         ],
         "why": "other colleges: 3 of 3 other colleges (all agree, right 95% of the time)."
-       }
-      ]
-     }
-    },
-    {
-     "code": "ECONO",
-     "title": {
-      "title": "Economics",
-      "confidence": 70,
-      "from": "sibling",
-      "why": "sibling: code ECON at the same college (one letter apart, right 70% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Economics",
-        "confidence": 70,
-        "from": [
-         "sibling"
-        ],
-        "why": "sibling: code ECON at the same college (one letter apart, right 70% of the time)."
        }
       ]
      }
@@ -567,26 +537,6 @@
          "other_colleges"
         ],
         "why": "other colleges: 5 of 5 other colleges (all agree, right 95% of the time)."
-       }
-      ]
-     }
-    },
-    {
-     "code": "ENGLI",
-     "title": {
-      "title": "English",
-      "confidence": 70,
-      "from": "sibling",
-      "why": "sibling: code ENGL at the same college (one letter apart, right 70% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "English",
-        "confidence": 70,
-        "from": [
-         "sibling"
-        ],
-        "why": "sibling: code ENGL at the same college (one letter apart, right 70% of the time)."
        }
       ]
      }
@@ -689,16 +639,6 @@
         "why": "course joins: 1 of 1 joined courses (few or mixed, right 49% of the time)."
        }
       ]
-     }
-    },
-    {
-     "code": "FACS",
-     "common": {
-      "code": "FASH",
-      "discipline": "Fashion and Related Technologies",
-      "confidence": 97,
-      "from": "own_courses",
-      "why": "2 of 2 of its courses with an M-ID sit under FASH."
      }
     },
     {
@@ -809,26 +749,6 @@
      }
     },
     {
-     "code": "GEOLO",
-     "title": {
-      "title": "Geology",
-      "confidence": 70,
-      "from": "sibling",
-      "why": "sibling: code GEOL at the same college (one letter apart, right 70% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Geology",
-        "confidence": 70,
-        "from": [
-         "sibling"
-        ],
-        "why": "sibling: code GEOL at the same college (one letter apart, right 70% of the time)."
-       }
-      ]
-     }
-    },
-    {
      "code": "GIS",
      "title": {
       "title": "Geographic Information Systems",
@@ -846,33 +766,6 @@
         "why": "other colleges: 11 of 13 other colleges (mixed, right 87% of the time)."
        }
       ]
-     }
-    },
-    {
-     "code": "HEALE",
-     "title": {
-      "title": "Health & Safety (NC)",
-      "confidence": 70,
-      "from": "sibling",
-      "why": "sibling: code HEAL at the same college (one letter apart, right 70% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Health & Safety (NC)",
-        "confidence": 70,
-        "from": [
-         "sibling"
-        ],
-        "why": "sibling: code HEAL at the same college (one letter apart, right 70% of the time)."
-       }
-      ]
-     },
-     "common": {
-      "code": "HLSN",
-      "discipline": "Health and Safety: Noncredit",
-      "confidence": 70,
-      "from": "title",
-      "why": "The title names the discipline Health and Safety: Noncredit."
      }
     },
     {
@@ -896,23 +789,30 @@
      }
     },
     {
-     "code": "HISTO",
+     "code": "HONORS",
      "title": {
-      "title": "History",
-      "confidence": 70,
-      "from": "sibling",
-      "why": "sibling: code HIST at the same college (one letter apart, right 70% of the time).",
+      "title": "Honors",
+      "confidence": 87,
+      "from": "other_colleges",
+      "why": "other colleges: 1 of 2 other colleges (mixed, right 87% of the time).",
       "also": [],
       "candidates": [
        {
-        "title": "History",
-        "confidence": 70,
+        "title": "Honors",
+        "confidence": 87,
         "from": [
-         "sibling"
+         "other_colleges"
         ],
-        "why": "sibling: code HIST at the same college (one letter apart, right 70% of the time)."
+        "why": "other colleges: 1 of 2 other colleges (mixed, right 87% of the time)."
        }
       ]
+     },
+     "common": {
+      "code": "IDST",
+      "discipline": "Interdisciplinary Studies",
+      "confidence": 96,
+      "from": "same_code_statewide",
+      "why": "18 of 22 courses under this code statewide sit under IDST."
      }
     },
     {
@@ -931,26 +831,6 @@
          "other_colleges"
         ],
         "why": "other colleges: 25 of 25 other colleges (all agree, right 95% of the time)."
-       }
-      ]
-     }
-    },
-    {
-     "code": "INDUS",
-     "title": {
-      "title": "Industrial Technology",
-      "confidence": 68,
-      "from": "other_colleges",
-      "why": "other colleges: 1 of 1 other colleges (one college, right 68% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Industrial Technology",
-        "confidence": 68,
-        "from": [
-         "other_colleges"
-        ],
-        "why": "other colleges: 1 of 1 other colleges (one college, right 68% of the time)."
        }
       ]
      }
@@ -980,6 +860,26 @@
       "confidence": 97,
       "from": "own_courses",
       "why": "13 of 13 of its courses with an M-ID sit under ITIS."
+     }
+    },
+    {
+     "code": "IT",
+     "title": {
+      "title": "Industrial Technology",
+      "confidence": 87,
+      "from": "other_colleges",
+      "why": "other colleges: 5 of 8 other colleges (mixed, right 87% of the time).",
+      "also": [],
+      "candidates": [
+       {
+        "title": "Industrial Technology",
+        "confidence": 87,
+        "from": [
+         "other_colleges"
+        ],
+        "why": "other colleges: 5 of 8 other colleges (mixed, right 87% of the time)."
+       }
+      ]
      }
     },
     {
@@ -1064,26 +964,6 @@
      }
     },
     {
-     "code": "MEDIC",
-     "title": {
-      "title": "Medical Assisting",
-      "confidence": 68,
-      "from": "other_colleges",
-      "why": "other colleges: 1 of 1 other colleges (one college, right 68% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Medical Assisting",
-        "confidence": 68,
-        "from": [
-         "other_colleges"
-        ],
-        "why": "other colleges: 1 of 1 other colleges (one college, right 68% of the time)."
-       }
-      ]
-     }
-    },
-    {
      "code": "MUSIC",
      "title": {
       "title": "Music",
@@ -1112,16 +992,6 @@
       "from": "noncredit_category",
       "category": "Health & Safety",
       "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Health & Safety (5 of 6 noncredit courses, 83%)."
-     }
-    },
-    {
-     "code": "OFFIC",
-     "common": {
-      "code": "BSOT",
-      "discipline": "Office Technologies",
-      "confidence": 97,
-      "from": "own_courses",
-      "why": "18 of 18 of its courses with an M-ID sit under BSOT."
      }
     },
     {
@@ -1185,96 +1055,6 @@
         "why": "other colleges: 22 of 22 other colleges (all agree, right 95% of the time)."
        }
       ]
-     }
-    },
-    {
-     "code": "PHYSE",
-     "title": {
-      "title": "Physics",
-      "confidence": 70,
-      "from": "sibling",
-      "why": "sibling: code PHYS at the same college (one letter apart, right 70% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Physics",
-        "confidence": 70,
-        "from": [
-         "sibling"
-        ],
-        "why": "sibling: code PHYS at the same college (one letter apart, right 70% of the time)."
-       }
-      ]
-     }
-    },
-    {
-     "code": "PHYSI",
-     "title": {
-      "title": "Physics",
-      "confidence": 70,
-      "from": "sibling",
-      "why": "sibling: code PHYS at the same college (one letter apart, right 70% of the time). Another source reads differently.",
-      "also": [
-       {
-        "title": "Physiology",
-        "from": "other_colleges"
-       }
-      ],
-      "candidates": [
-       {
-        "title": "Physics",
-        "confidence": 70,
-        "from": [
-         "sibling"
-        ],
-        "why": "sibling: code PHYS at the same college (one letter apart, right 70% of the time)."
-       },
-       {
-        "title": "Physiology",
-        "confidence": 68,
-        "from": [
-         "other_colleges"
-        ],
-        "why": "other colleges: 1 of 1 other colleges (one college, right 68% of the time)."
-       }
-      ]
-     },
-     "common": {
-      "code": "PHYS",
-      "discipline": "Physics/Astronomy",
-      "confidence": 70,
-      "from": "title",
-      "why": "The title names the discipline Physics/Astronomy."
-     }
-    },
-    {
-     "code": "PHYSS",
-     "title": {
-      "title": "Physics",
-      "confidence": 70,
-      "from": "sibling",
-      "why": "sibling: code PHYS at the same college (one letter apart, right 70% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Physics",
-        "confidence": 70,
-        "from": [
-         "sibling"
-        ],
-        "why": "sibling: code PHYS at the same college (one letter apart, right 70% of the time)."
-       }
-      ]
-     }
-    },
-    {
-     "code": "POLIT",
-     "common": {
-      "code": "POLS",
-      "discipline": "Political Science",
-      "confidence": 97,
-      "from": "own_courses",
-      "why": "4 of 4 of its courses with an M-ID sit under POLS."
      }
     },
     {
@@ -1347,16 +1127,6 @@
       "confidence": 97,
       "from": "own_courses",
       "why": "4 of 6 of its courses with an M-ID sit under RECR."
-     }
-    },
-    {
-     "code": "SOCIA",
-     "common": {
-      "code": "SOCS",
-      "discipline": "Social Science",
-      "confidence": 97,
-      "from": "own_courses",
-      "why": "2 of 3 of its courses with an M-ID sit under SOCS."
      }
     },
     {
@@ -1460,16 +1230,6 @@
       "from": "noncredit_category",
       "category": "Workforce Preparation",
       "why": "The category has no common subject code yet: its dominant COCI noncredit category, Workforce Preparation (1 of 1 noncredit courses, 100%)."
-     }
-    },
-    {
-     "code": "WELDI",
-     "common": {
-      "code": "WELD",
-      "discipline": "Welding",
-      "confidence": 97,
-      "from": "own_courses",
-      "why": "8 of 13 of its courses with an M-ID sit under WELD."
      }
     },
     {
@@ -1680,48 +1440,6 @@
     },
     {
      "code": "ENERGY",
-     "title": {
-      "title": "Energy Efficiency",
-      "confidence": 68,
-      "from": "other_colleges",
-      "why": "other colleges: 1 of 1 other colleges (one college, right 68% of the time). Another source reads differently.",
-      "also": [
-       {
-        "title": "Solar Energy Systems Design, Estimation & Sales",
-        "from": "program_titles"
-       },
-       {
-        "title": "Environmental Studies",
-        "from": "course_joins"
-       }
-      ],
-      "candidates": [
-       {
-        "title": "Energy Efficiency",
-        "confidence": 68,
-        "from": [
-         "other_colleges"
-        ],
-        "why": "other colleges: 1 of 1 other colleges (one college, right 68% of the time)."
-       },
-       {
-        "title": "Solar Energy Systems Design, Estimation & Sales",
-        "confidence": 55,
-        "from": [
-         "program_titles"
-        ],
-        "why": "program titles: 1 of 2 programs (one or mixed, right 55% of the time)."
-       },
-       {
-        "title": "Environmental Studies",
-        "confidence": 49,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 1 of 1 joined courses (few or mixed, right 49% of the time)."
-       }
-      ]
-     },
      "common": {
       "code": "ENVS",
       "discipline": "Environmental Technologies",
@@ -5402,7 +5120,7 @@
       "title": "Physical Education",
       "confidence": 59,
       "from": "sibling",
-      "why": "sibling: code PE at the same college (same letters, right 100% of the time).",
+      "why": "sibling: code PE at the same college (same letters, right 75% of the time).",
       "also": [],
       "candidates": [
        {
@@ -5411,7 +5129,7 @@
         "from": [
          "sibling"
         ],
-        "why": "sibling: code PE at the same college (same letters, right 100% of the time)."
+        "why": "sibling: code PE at the same college (same letters, right 75% of the time)."
        }
       ]
      }
@@ -6441,7 +6159,7 @@
       "title": "Administration of Justice",
       "confidence": 59,
       "from": "sibling",
-      "why": "sibling: code AJ at the same college (same letters, right 100% of the time).",
+      "why": "sibling: code AJ at the same college (same letters, right 75% of the time).",
       "also": [],
       "candidates": [
        {
@@ -6450,7 +6168,7 @@
         "from": [
          "sibling"
         ],
-        "why": "sibling: code AJ at the same college (same letters, right 100% of the time)."
+        "why": "sibling: code AJ at the same college (same letters, right 75% of the time)."
        }
       ]
      }
@@ -6564,7 +6282,7 @@
       "title": "Health Education",
       "confidence": 87,
       "from": "other_colleges",
-      "why": "other colleges: 1 of 1 other colleges (one college, right 68% of the time); sibling: code HED at the same college (same letters, right 100% of the time). Another source reads differently.",
+      "why": "other colleges: 1 of 1 other colleges (one college, right 68% of the time); sibling: code HED at the same college (same letters, right 75% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Kinesiology",
@@ -6579,7 +6297,7 @@
          "other_colleges",
          "sibling"
         ],
-        "why": "other colleges: 1 of 1 other colleges (one college, right 68% of the time); sibling: code HED at the same college (same letters, right 100% of the time)."
+        "why": "other colleges: 1 of 1 other colleges (one college, right 68% of the time); sibling: code HED at the same college (same letters, right 75% of the time)."
        },
        {
         "title": "Kinesiology",
@@ -6645,7 +6363,7 @@
       "title": "Nursing Education: Registered",
       "confidence": 59,
       "from": "sibling",
-      "why": "sibling: code NE at the same college (same letters, right 100% of the time).",
+      "why": "sibling: code NE at the same college (same letters, right 75% of the time).",
       "also": [],
       "candidates": [
        {
@@ -6654,7 +6372,7 @@
         "from": [
          "sibling"
         ],
-        "why": "sibling: code NE at the same college (same letters, right 100% of the time)."
+        "why": "sibling: code NE at the same college (same letters, right 75% of the time)."
        }
       ]
      }
@@ -6665,7 +6383,7 @@
       "title": "Physical Education",
       "confidence": 59,
       "from": "sibling",
-      "why": "sibling: code PE at the same college (same letters, right 100% of the time).",
+      "why": "sibling: code PE at the same college (same letters, right 75% of the time).",
       "also": [],
       "candidates": [
        {
@@ -6674,7 +6392,7 @@
         "from": [
          "sibling"
         ],
-        "why": "sibling: code PE at the same college (same letters, right 100% of the time)."
+        "why": "sibling: code PE at the same college (same letters, right 75% of the time)."
        }
       ]
      }
@@ -9099,39 +8817,6 @@
      }
     },
     {
-     "code": "MEDIA",
-     "title": {
-      "title": "Media Studies",
-      "confidence": 68,
-      "from": "other_colleges",
-      "why": "other colleges: 1 of 1 other colleges (one college, right 68% of the time). Another source reads differently.",
-      "also": [
-       {
-        "title": "Graphic Design",
-        "from": "course_joins"
-       }
-      ],
-      "candidates": [
-       {
-        "title": "Media Studies",
-        "confidence": 68,
-        "from": [
-         "other_colleges"
-        ],
-        "why": "other colleges: 1 of 1 other colleges (one college, right 68% of the time)."
-       },
-       {
-        "title": "Graphic Design",
-        "confidence": 49,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 2 of 4 joined courses (few or mixed, right 49% of the time)."
-       }
-      ]
-     }
-    },
-    {
      "code": "MUSIC",
      "title": {
       "title": "Music",
@@ -9567,31 +9252,19 @@
      "code": "MEDIA",
      "title": {
       "title": "Media Arts",
-      "confidence": 88,
+      "confidence": 98,
       "from": "course_joins",
-      "why": "course joins: 2 of 3 joined courses (most courses agree, right 88% of the time). Another source reads differently.",
-      "also": [
-       {
-        "title": "Media Studies",
-        "from": "other_colleges"
-       }
-      ],
+      "why": "course joins: 2 of 3 joined courses (most courses agree, right 88% of the time); other colleges: 1 of 2 other colleges (mixed, right 87% of the time). The sources agree.",
+      "also": [],
       "candidates": [
        {
         "title": "Media Arts",
-        "confidence": 88,
+        "confidence": 98,
         "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 2 of 3 joined courses (most courses agree, right 88% of the time)."
-       },
-       {
-        "title": "Media Studies",
-        "confidence": 68,
-        "from": [
+         "course_joins",
          "other_colleges"
         ],
-        "why": "other colleges: 1 of 1 other colleges (one college, right 68% of the time)."
+        "why": "course joins: 2 of 3 joined courses (most courses agree, right 88% of the time); other colleges: 1 of 2 other colleges (mixed, right 87% of the time)."
        }
       ]
      }
@@ -11349,7 +11022,7 @@
       "title": "Child Development",
       "confidence": 95,
       "from": "course_joins",
-      "why": "course joins: 9 of 12 joined courses (most courses agree, right 88% of the time); sibling: code CD at the same college (same letters, right 100% of the time). The sources agree.",
+      "why": "course joins: 9 of 12 joined courses (most courses agree, right 88% of the time); sibling: code CD at the same college (same letters, right 75% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -11359,7 +11032,7 @@
          "course_joins",
          "sibling"
         ],
-        "why": "course joins: 9 of 12 joined courses (most courses agree, right 88% of the time); sibling: code CD at the same college (same letters, right 100% of the time)."
+        "why": "course joins: 9 of 12 joined courses (most courses agree, right 88% of the time); sibling: code CD at the same college (same letters, right 75% of the time)."
        }
       ]
      }
@@ -11380,7 +11053,7 @@
       "title": "Environmental Studies",
       "confidence": 59,
       "from": "sibling",
-      "why": "sibling: code ES at the same college (same letters, right 100% of the time). Another source reads differently.",
+      "why": "sibling: code ES at the same college (same letters, right 75% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Business: Management",
@@ -11394,7 +11067,7 @@
         "from": [
          "sibling"
         ],
-        "why": "sibling: code ES at the same college (same letters, right 100% of the time)."
+        "why": "sibling: code ES at the same college (same letters, right 75% of the time)."
        },
        {
         "title": "Business: Management",
@@ -11423,7 +11096,7 @@
       "title": "Film and Television Production",
       "confidence": 59,
       "from": "sibling",
-      "why": "sibling: code F/TV at the same college (same letters, right 100% of the time). Another source reads differently.",
+      "why": "sibling: code F/TV at the same college (same letters, right 75% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Film and Media Arts",
@@ -11437,7 +11110,7 @@
         "from": [
          "sibling"
         ],
-        "why": "sibling: code F/TV at the same college (same letters, right 100% of the time)."
+        "why": "sibling: code F/TV at the same college (same letters, right 75% of the time)."
        },
        {
         "title": "Film and Media Arts",
@@ -11476,7 +11149,7 @@
       "title": "Learning Strategies",
       "confidence": 59,
       "from": "sibling",
-      "why": "sibling: code LS at the same college (same letters, right 100% of the time). Another source reads differently.",
+      "why": "sibling: code LS at the same college (same letters, right 75% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Counseling",
@@ -11490,7 +11163,7 @@
         "from": [
          "sibling"
         ],
-        "why": "sibling: code LS at the same college (same letters, right 100% of the time)."
+        "why": "sibling: code LS at the same college (same letters, right 75% of the time)."
        },
        {
         "title": "Counseling",
@@ -11551,7 +11224,7 @@
         "from": [
          "sibling"
         ],
-        "why": "sibling: code PE at the same college (same letters, right 100% of the time)."
+        "why": "sibling: code PE at the same college (same letters, right 75% of the time)."
        }
       ]
      }
@@ -12485,7 +12158,7 @@
       "title": "Contemporary Health",
       "confidence": 89,
       "from": "web_search",
-      "why": "web search: the college's own site gives this title (set at 80 of 100, not measured); sibling: code C H at the same college (same letters, right 100% of the time); course joins: 1 of 1 joined courses (few or mixed, right 49% of the time). Another source reads differently.",
+      "why": "web search: the college's own site gives this title (set at 80 of 100, not measured); sibling: code C H at the same college (same letters, right 75% of the time); course joins: 1 of 1 joined courses (few or mixed, right 49% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Chemistry",
@@ -12501,7 +12174,7 @@
          "sibling",
          "course_joins"
         ],
-        "why": "web search: the college's own site gives this title (set at 80 of 100, not measured); sibling: code C H at the same college (same letters, right 100% of the time); course joins: 1 of 1 joined courses (few or mixed, right 49% of the time)."
+        "why": "web search: the college's own site gives this title (set at 80 of 100, not measured); sibling: code C H at the same college (same letters, right 75% of the time); course joins: 1 of 1 joined courses (few or mixed, right 49% of the time)."
        },
        {
         "title": "Chemistry",
@@ -12586,7 +12259,7 @@
       "title": "Educational Development",
       "confidence": 92,
       "from": "web_search",
-      "why": "web search: the college's own site gives this title (set at 80 of 100, not measured); sibling: code EDEV at the same college (same letters, right 100% of the time). The sources agree.",
+      "why": "web search: the college's own site gives this title (set at 80 of 100, not measured); sibling: code EDEV at the same college (same letters, right 75% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -12596,7 +12269,7 @@
          "web_search",
          "sibling"
         ],
-        "why": "web search: the college's own site gives this title (set at 80 of 100, not measured); sibling: code EDEV at the same college (same letters, right 100% of the time)."
+        "why": "web search: the college's own site gives this title (set at 80 of 100, not measured); sibling: code EDEV at the same college (same letters, right 75% of the time)."
        }
       ],
       "search": {
@@ -14954,26 +14627,6 @@
      }
     },
     {
-     "code": "AD",
-     "title": {
-      "title": "Addiction Counseling",
-      "confidence": 68,
-      "from": "other_colleges",
-      "why": "other colleges: 1 of 1 other colleges (one college, right 68% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Addiction Counseling",
-        "confidence": 68,
-        "from": [
-         "other_colleges"
-        ],
-        "why": "other colleges: 1 of 1 other colleges (one college, right 68% of the time)."
-       }
-      ]
-     }
-    },
-    {
      "code": "AD ST",
      "title": {
       "title": "Addiction Studies Counseling",
@@ -15005,7 +14658,7 @@
         "from": [
          "sibling"
         ],
-        "why": "sibling: code ADST at the same college (same letters, right 100% of the time)."
+        "why": "sibling: code ADST at the same college (same letters, right 75% of the time)."
        },
        {
         "title": "Addictive Disorders Studies",
@@ -15485,10 +15138,10 @@
     {
      "code": "MEDIA",
      "title": {
-      "title": "Media Studies",
-      "confidence": 68,
+      "title": "Media",
+      "confidence": 87,
       "from": "other_colleges",
-      "why": "other colleges: 1 of 1 other colleges (one college, right 68% of the time). Another source reads differently.",
+      "why": "other colleges: 1 of 2 other colleges (mixed, right 87% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Cinema",
@@ -15497,12 +15150,12 @@
       ],
       "candidates": [
        {
-        "title": "Media Studies",
-        "confidence": 68,
+        "title": "Media",
+        "confidence": 87,
         "from": [
          "other_colleges"
         ],
-        "why": "other colleges: 1 of 1 other colleges (one college, right 68% of the time)."
+        "why": "other colleges: 1 of 2 other colleges (mixed, right 87% of the time)."
        },
        {
         "title": "Cinema",
@@ -15690,7 +15343,7 @@
       "title": "Political Science",
       "confidence": 59,
       "from": "sibling",
-      "why": "sibling: code POLS at the same college (same letters, right 100% of the time). Another source reads differently.",
+      "why": "sibling: code POLS at the same college (same letters, right 75% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Global Studies",
@@ -15704,7 +15357,7 @@
         "from": [
          "sibling"
         ],
-        "why": "sibling: code POLS at the same college (same letters, right 100% of the time)."
+        "why": "sibling: code POLS at the same college (same letters, right 75% of the time)."
        },
        {
         "title": "Global Studies",
@@ -15749,17 +15402,6 @@
         "why": "course joins: 1 of 2 joined courses (few or mixed, right 49% of the time)."
        }
       ]
-     }
-    },
-    {
-     "code": "RET",
-     "common": {
-      "code": "OLAD",
-      "discipline": "Older Adults: Noncredit",
-      "confidence": 20,
-      "from": "noncredit_category",
-      "category": "Courses for Older Adults",
-      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Courses for Older Adults (3 of 3 noncredit courses, 100%)."
      }
     },
     {
@@ -15893,33 +15535,6 @@
       "from": "noncredit_category",
       "category": "Short-term Vocational",
       "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (30 of 48 noncredit courses, 62%)."
-     }
-    },
-    {
-     "code": "T",
-     "title": {
-      "title": "Theatre Arts",
-      "confidence": 49,
-      "from": "course_joins",
-      "why": "course joins: 1 of 1 joined courses (few or mixed, right 49% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Theatre Arts",
-        "confidence": 49,
-        "from": [
-         "course_joins"
-        ],
-        "why": "course joins: 1 of 1 joined courses (few or mixed, right 49% of the time)."
-       }
-      ]
-     },
-     "common": {
-      "code": "THTR",
-      "discipline": "Drama/Theater Arts",
-      "confidence": 97,
-      "from": "own_courses",
-      "why": "2 of 3 of its courses with an M-ID sit under THTR."
      }
     }
    ]
@@ -16824,7 +16439,7 @@
       "title": "Automotive Technology",
       "confidence": 98,
       "from": "course_joins",
-      "why": "course joins: 5 of 5 joined courses (most courses agree, right 88% of the time); program titles: 2 of 4 programs (several agree, right 64% of the time); sibling: code AUT at the same college (same letters, right 100% of the time). The sources agree.",
+      "why": "course joins: 5 of 5 joined courses (most courses agree, right 88% of the time); program titles: 2 of 4 programs (several agree, right 64% of the time); sibling: code AUT at the same college (same letters, right 75% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -16835,7 +16450,7 @@
          "program_titles",
          "sibling"
         ],
-        "why": "course joins: 5 of 5 joined courses (most courses agree, right 88% of the time); program titles: 2 of 4 programs (several agree, right 64% of the time); sibling: code AUT at the same college (same letters, right 100% of the time)."
+        "why": "course joins: 5 of 5 joined courses (most courses agree, right 88% of the time); program titles: 2 of 4 programs (several agree, right 64% of the time); sibling: code AUT at the same college (same letters, right 75% of the time)."
        }
       ]
      }
@@ -17607,10 +17222,10 @@
     {
      "code": "MEDIA",
      "title": {
-      "title": "Media Studies",
-      "confidence": 68,
+      "title": "Media",
+      "confidence": 87,
       "from": "other_colleges",
-      "why": "other colleges: 1 of 1 other colleges (one college, right 68% of the time). Another source reads differently.",
+      "why": "other colleges: 1 of 2 other colleges (mixed, right 87% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Business",
@@ -17619,12 +17234,12 @@
       ],
       "candidates": [
        {
-        "title": "Media Studies",
-        "confidence": 68,
+        "title": "Media",
+        "confidence": 87,
         "from": [
          "other_colleges"
         ],
-        "why": "other colleges: 1 of 1 other colleges (one college, right 68% of the time)."
+        "why": "other colleges: 1 of 2 other colleges (mixed, right 87% of the time)."
        },
        {
         "title": "Business",
@@ -17665,7 +17280,7 @@
       "title": "Commercial Music",
       "confidence": 59,
       "from": "sibling",
-      "why": "sibling: code MUSIC-CM at the same college (same letters, right 100% of the time). Another source reads differently.",
+      "why": "sibling: code MUSIC-CM at the same college (same letters, right 75% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Business",
@@ -17679,7 +17294,7 @@
         "from": [
          "sibling"
         ],
-        "why": "sibling: code MUSIC-CM at the same college (same letters, right 100% of the time)."
+        "why": "sibling: code MUSIC-CM at the same college (same letters, right 75% of the time)."
        },
        {
         "title": "Business",
@@ -19409,16 +19024,6 @@
      }
     },
     {
-     "code": "PHYSI",
-     "common": {
-      "code": "PHSC",
-      "discipline": "Physical Sciences",
-      "confidence": 96,
-      "from": "same_code_statewide",
-      "why": "26 of 26 courses under this code statewide sit under PHSC."
-     }
-    },
-    {
      "code": "SHOWB",
      "title": {
       "title": "Show Business",
@@ -20266,58 +19871,6 @@
       "confidence": 96,
       "from": "same_code_statewide",
       "why": "18 of 18 courses under this code statewide sit under BIOL."
-     }
-    },
-    {
-     "code": "NRS-HCA",
-     "title": {
-      "title": "Nursing-Health Care Ancillaries",
-      "confidence": 59,
-      "from": "sibling",
-      "why": "sibling: code NRS HCA at the same college (same letters, right 100% of the time). Another source reads differently.",
-      "also": [
-       {
-        "title": "Certified Nurse Assistant and Home Health Aide",
-        "from": "program_titles"
-       },
-       {
-        "title": "Cna-Hha",
-        "from": "web_search"
-       }
-      ],
-      "candidates": [
-       {
-        "title": "Nursing-Health Care Ancillaries",
-        "confidence": 59,
-        "from": [
-         "sibling"
-        ],
-        "why": "sibling: code NRS HCA at the same college (same letters, right 100% of the time)."
-       },
-       {
-        "title": "Certified Nurse Assistant and Home Health Aide",
-        "confidence": 55,
-        "from": [
-         "program_titles"
-        ],
-        "why": "program titles: 1 of 1 programs (one or mixed, right 55% of the time)."
-       },
-       {
-        "title": "Cna-Hha",
-        "confidence": 55,
-        "from": [
-         "web_search"
-        ],
-        "why": "web search: the college's own site gives a department or program label (set at 55 of 100, not measured)."
-       }
-      ],
-      "search": {
-       "query": "\"Los Angeles Mission College\" NRS-HCA Nurse Assistant Training Program Home Health Aide",
-       "searched_on": "2026-11-24",
-       "result_title": "CNA-HHA Courses/Certificate",
-       "result_url": "https://lamission.edu:443/academics/aos/nursing-assitant-hha",
-       "where": "college site"
-      }
      }
     },
     {
@@ -21174,7 +20727,7 @@
      }
     },
     {
-     "code": "Q",
+     "code": "Q CNTRL",
      "title": {
       "title": "Manufacturing Engineering Technology",
       "confidence": 49,
@@ -21190,14 +20743,7 @@
         ],
         "why": "course joins: 1 of 1 joined courses (few or mixed, right 49% of the time)."
        }
-      ],
-      "search": {
-       "query": "Los Angeles Southwest College \"quality control\" \"non-destructive testing\" lasc.edu",
-       "searched_on": "2026-11-21",
-       "result_title": null,
-       "result_url": null,
-       "where": "none"
-      }
+      ]
      },
      "common": {
       "code": "INDT",
@@ -21605,33 +21151,6 @@
       "confidence": 97,
       "from": "own_courses",
       "why": "2 of 3 of its courses with an M-ID sit under WELD."
-     }
-    },
-    {
-     "code": "OFF",
-     "title": {
-      "title": "Office Technology",
-      "confidence": 68,
-      "from": "other_colleges",
-      "why": "other colleges: 1 of 1 other colleges (one college, right 68% of the time).",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Office Technology",
-        "confidence": 68,
-        "from": [
-         "other_colleges"
-        ],
-        "why": "other colleges: 1 of 1 other colleges (one college, right 68% of the time)."
-       }
-      ],
-      "search": {
-       "query": "Los Angeles Trade-Technical College lattc.edu \"Adding and Calculating Machines\" office machines",
-       "searched_on": "2026-11-21",
-       "result_title": null,
-       "result_url": null,
-       "where": "none"
-      }
      }
     },
     {
@@ -26246,7 +25765,7 @@
       "title": "Dance: Theory",
       "confidence": 99,
       "from": "course_joins",
-      "why": "course joins: 2 of 3 joined courses (most courses agree, right 88% of the time); web search: the college's own catalog gives this title (set at 80 of 100, not measured); sibling: code DN-T at the same college (same letters, right 100% of the time). The sources agree.",
+      "why": "course joins: 2 of 3 joined courses (most courses agree, right 88% of the time); web search: the college's own catalog gives this title (set at 80 of 100, not measured); sibling: code DN-T at the same college (same letters, right 75% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
@@ -26257,7 +25776,7 @@
          "web_search",
          "sibling"
         ],
-        "why": "course joins: 2 of 3 joined courses (most courses agree, right 88% of the time); web search: the college's own catalog gives this title (set at 80 of 100, not measured); sibling: code DN-T at the same college (same letters, right 100% of the time)."
+        "why": "course joins: 2 of 3 joined courses (most courses agree, right 88% of the time); web search: the college's own catalog gives this title (set at 80 of 100, not measured); sibling: code DN-T at the same college (same letters, right 75% of the time)."
        }
       ],
       "search": {
@@ -26506,7 +26025,7 @@
       "title": "Radio & Television",
       "confidence": 89,
       "from": "web_search",
-      "why": "web search: the college's own catalog gives this title (set at 80 of 100, not measured); sibling: code R-TV at the same college (same letters, right 100% of the time). Another source reads differently.",
+      "why": "web search: the college's own catalog gives this title (set at 80 of 100, not measured); sibling: code R-TV at the same college (same letters, right 75% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Business",
@@ -26521,7 +26040,7 @@
          "web_search",
          "sibling"
         ],
-        "why": "web search: the college's own catalog gives this title (set at 80 of 100, not measured); sibling: code R-TV at the same college (same letters, right 100% of the time)."
+        "why": "web search: the college's own catalog gives this title (set at 80 of 100, not measured); sibling: code R-TV at the same college (same letters, right 75% of the time)."
        },
        {
         "title": "Business",
@@ -33188,7 +32707,7 @@
       "title": "Construction Technology: Apprenticeship",
       "confidence": 59,
       "from": "sibling",
-      "why": "sibling: code A-CON at the same college (same letters, right 100% of the time). Another source reads differently.",
+      "why": "sibling: code A-CON at the same college (same letters, right 75% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Carpentry",
@@ -33202,7 +32721,7 @@
         "from": [
          "sibling"
         ],
-        "why": "sibling: code A-CON at the same college (same letters, right 100% of the time)."
+        "why": "sibling: code A-CON at the same college (same letters, right 75% of the time)."
        },
        {
         "title": "Carpentry",
@@ -33228,7 +32747,7 @@
       "title": "Electrical Technology: Apprenticeship",
       "confidence": 59,
       "from": "sibling",
-      "why": "sibling: code A-ELE at the same college (same letters, right 100% of the time). Another source reads differently.",
+      "why": "sibling: code A-ELE at the same college (same letters, right 75% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Building Construction Trade",
@@ -33242,7 +32761,7 @@
         "from": [
          "sibling"
         ],
-        "why": "sibling: code A-ELE at the same college (same letters, right 100% of the time)."
+        "why": "sibling: code A-ELE at the same college (same letters, right 75% of the time)."
        },
        {
         "title": "Building Construction Trade",
@@ -33268,7 +32787,7 @@
       "title": "Industrial Technology: Apprenticeship",
       "confidence": 59,
       "from": "sibling",
-      "why": "sibling: code A-IND at the same college (same letters, right 100% of the time). Another source reads differently.",
+      "why": "sibling: code A-IND at the same college (same letters, right 75% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Automotive Service Technology",
@@ -33282,7 +32801,7 @@
         "from": [
          "sibling"
         ],
-        "why": "sibling: code A-IND at the same college (same letters, right 100% of the time)."
+        "why": "sibling: code A-IND at the same college (same letters, right 75% of the time)."
        },
        {
         "title": "Automotive Service Technology",
@@ -33308,7 +32827,7 @@
       "title": "Mechanical Technology: Apprenticeship",
       "confidence": 59,
       "from": "sibling",
-      "why": "sibling: code A-MEC at the same college (same letters, right 100% of the time). Another source reads differently.",
+      "why": "sibling: code A-MEC at the same college (same letters, right 75% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Welding",
@@ -33322,7 +32841,7 @@
         "from": [
          "sibling"
         ],
-        "why": "sibling: code A-MEC at the same college (same letters, right 100% of the time)."
+        "why": "sibling: code A-MEC at the same college (same letters, right 75% of the time)."
        },
        {
         "title": "Welding",
@@ -33405,24 +32924,6 @@
     },
     {
      "code": "AUTOBODY",
-     "title": {
-      "title": "Auto Body Intermediate Repair and Restoration",
-      "confidence": 77,
-      "from": "program_titles",
-      "why": "program titles: 1 of 1 programs (one or mixed, right 55% of the time); course joins: 1 of 1 joined courses (few or mixed, right 49% of the time). The sources agree.",
-      "also": [],
-      "candidates": [
-       {
-        "title": "Auto Body Intermediate Repair and Restoration",
-        "confidence": 77,
-        "from": [
-         "program_titles",
-         "course_joins"
-        ],
-        "why": "program titles: 1 of 1 programs (one or mixed, right 55% of the time); course joins: 1 of 1 joined courses (few or mixed, right 49% of the time)."
-       }
-      ]
-     },
      "common": {
       "code": "AUTB",
       "discipline": "Auto Body Technology",
@@ -36690,19 +36191,19 @@
      "code": "MEDIA",
      "title": {
       "title": "Film and Media Studies",
-      "confidence": 84,
+      "confidence": 93,
       "from": "other_colleges",
-      "why": "other colleges: 1 of 1 other colleges (one college, right 68% of the time); course joins: 1 of 1 joined courses (few or mixed, right 49% of the time). The sources agree.",
+      "why": "other colleges: 1 of 2 other colleges (mixed, right 87% of the time); course joins: 1 of 1 joined courses (few or mixed, right 49% of the time). The sources agree.",
       "also": [],
       "candidates": [
        {
         "title": "Film and Media Studies",
-        "confidence": 84,
+        "confidence": 93,
         "from": [
          "other_colleges",
          "course_joins"
         ],
-        "why": "other colleges: 1 of 1 other colleges (one college, right 68% of the time); course joins: 1 of 1 joined courses (few or mixed, right 49% of the time)."
+        "why": "other colleges: 1 of 2 other colleges (mixed, right 87% of the time); course joins: 1 of 1 joined courses (few or mixed, right 49% of the time)."
        }
       ]
      }
@@ -40162,7 +39663,7 @@
       "title": "Family and Consumer Studies",
       "confidence": 89,
       "from": "district",
-      "why": "district: 4 of 5 colleges in the district (mixed, right 88% of the time); web search: the college's own site gives this title (set at 80 of 100, not measured); sibling: code FAM & CS at the same college (same letters, right 100% of the time). Another source reads differently.",
+      "why": "district: 4 of 5 colleges in the district (mixed, right 88% of the time); web search: the college's own site gives this title (set at 80 of 100, not measured); sibling: code FAM & CS at the same college (same letters, right 75% of the time). Another source reads differently.",
       "also": [
        {
         "title": "Nutrition",
@@ -40178,7 +39679,7 @@
          "web_search",
          "sibling"
         ],
-        "why": "district: 4 of 5 colleges in the district (mixed, right 88% of the time); web search: the college's own site gives this title (set at 80 of 100, not measured); sibling: code FAM & CS at the same college (same letters, right 100% of the time)."
+        "why": "district: 4 of 5 colleges in the district (mixed, right 88% of the time); web search: the college's own site gives this title (set at 80 of 100, not measured); sibling: code FAM & CS at the same college (same letters, right 75% of the time)."
        },
        {
         "title": "Nutrition",
