@@ -28,6 +28,12 @@ Pinned here:
   4. site_pinned() binds 43057 on the 2.0 page (its list as records/33014.json holds it, the one record read from
      that page), marked for the reader's page checks as its filed record places none, at coverage 1.0, and moves no
      other program; with the fold off the pin is refused on its heading, as before S742.
+  4b. stage_sources() stages a bound pin's page as read (a fixture: the pinned page kept, an unpinned page of a
+     refused program held, only= names the pinned program). Paid read 46016403916 sent nothing without it.
+  4c. That staging rule's self-recall (S748) over every filed capture and preview, C.stage_held() against the rule
+     before it. The answer held: a page the reconcile entry pins is the program's own (stage it); any other page of
+     a program that stands refused, with no page_check, is the page the rules refused (hold it). 2026-11-28: 231
+     answers; before 230 right, 1 wrong (Coastline 43057's pinned page held); after 231 right, 0 wrong.
   5. The entry: Coastline's site_pages pins 43057 to the page the filed capture gave 33014.
   6. The statewide self-recall (the S652 review rule) over every filed source on a site page. The answer held: a
      program alone on its page, whose filed record was read from that page and places its courses, read its own
@@ -279,7 +285,86 @@ try:
 finally:
     shutil.rmtree(td)
 
-# ── 5. the entry ──────────────────────────────────────────────────────────────────────────────────
+# ── 4c. the staging rule's self-recall (S748) ─────────────────────────────────────────────────────
+# Every filed capture and preview, staged by the rule before S742 and by C.stage_held() as it stands. The answer held:
+# a page the college's reconcile entry pins for the program (site_pages or pdf_pages), bound at the capture, is the
+# program's own, so staging it as read is right and holding it is wrong; any other page of a program that stands
+# refused, with no page_check, is the page the rules refused, so holding it is right. A filed capture keeps each
+# source's marks and text_chars; a preview keeps the fingerprint of every program with text and its bound pins (no
+# page_check, which a preview does not file: such a page counts as held under both rules, so no difference hides).
+print("4c. the staging rule's self-recall over every filed capture and preview")
+import _program_requirements_reconcile as R  # noqa: E402
+
+STEPS = R.load_steps()
+STAGE_CASE = ("coastline_community", "43057")   # the one page the rule before S742 held wrongly (preview 46008933093)
+st = collections.Counter()
+wrong_before, wrong_after, pin_not_entry = [], [], []
+for folder in sorted(glob.glob(os.path.join(ROOT, "kb", "program_requirements_college", "*", ""))):
+    slug = os.path.basename(os.path.dirname(folder))
+    standing = C.RC.refused_standing(folder)
+    staged_sets = []
+    try:
+        with open(os.path.join(folder, "capture.json"), encoding="utf-8") as fh:
+            college = json.load(fh).get("college")
+        with open(os.path.join(folder, "sources.json"), encoding="utf-8") as fh:
+            staged_sets.append(("capture", [dict(s, text="x" if s.get("text_chars") else "") for s in json.load(fh)]))
+    except (OSError, ValueError):
+        continue
+    st["colleges"] += 1
+    try:
+        with open(os.path.join(folder, "capture_preview.json"), encoding="utf-8") as fh:
+            pv = json.load(fh)
+        bound = {cn for cn, pin in (pv.get("site_pins") or {}).items() if pin.get("bound")
+                 and C._page_key(pin.get("url")) == C._page_key(((pv.get("fingerprints") or {}).get(cn) or {}).get("url"))}
+        bound |= {cn for cn, pin in ((pv.get("pdf") or {}).get("pinned") or {}).items() if pin.get("bound")}
+        staged_sets.append(("preview", [{"control_number": cn, "text": "x",
+                                         "source": dict({"url": fp.get("url")}, **({"pinned": True} if cn in bound else {}))}
+                                        for cn, fp in sorted((pv.get("fingerprints") or {}).items())]))
+        st["previews"] += 1
+    except (OSError, ValueError):
+        pass
+    entry = STEPS.get(college) or {}
+    site_entry = {str(cn): C._page_key(pin.get("url")) for cn, pin in (entry.get("site_pages") or {}).items()
+                  if isinstance(pin, dict)}
+    for kind, srcs in staged_sets:
+        after = set(C.stage_held(srcs, standing))
+        for s in srcs:
+            cn, src = s["control_number"], s.get("source") or {}
+            if not s.get("text") or not (src.get("pinned") or cn in standing):
+                continue
+            st["answers"] += 1
+            st["pinned"] += bool(src.get("pinned"))
+            st["refused"] += cn in standing
+            if src.get("pinned") and not (site_entry.get(cn) == C._page_key(src.get("url"))
+                                          or cn in (entry.get("pdf_pages") or {})):
+                pin_not_entry.append((slug, cn, kind))
+            own = bool(src.get("pinned") or src.get("page_check"))      # the answer: stage it
+            before_held = cn in standing and not src.get("page_check")  # the rule before S742
+            if before_held == own:
+                wrong_before.append((slug, cn))
+            if (cn in after) == own:
+                wrong_after.append((slug, cn))
+            st["held_before"] += before_held
+            st["held_after"] += cn in after
+print("   %d colleges, %d previews; %d held answers (%d pinned pages, %d pages of a program that stands refused); "
+      "before: %d right, %d wrong, %d held; after: %d right, %d wrong, %d held"
+      % (st["colleges"], st["previews"], st["answers"], st["pinned"], st["refused"],
+         st["answers"] - len(wrong_before), len(wrong_before), st["held_before"],
+         st["answers"] - len(wrong_after), len(wrong_after), st["held_after"]))
+check(st["colleges"] >= 100 and st["pinned"] >= 100 and st["refused"] >= 50,
+      "the recall read every filed capture (%d colleges, %d pinned pages, %d pages of refused programs)"
+      % (st["colleges"], st["pinned"], st["refused"]))
+check(not pin_not_entry, "every pinned page filed is one the college's reconcile entry pins for its program (%s)"
+      % pin_not_entry[:5])
+check(set(wrong_before) <= {STAGE_CASE} and (ON_ITS_PAGE or wrong_before == [STAGE_CASE]),
+      "the rule before S742 held one pinned page, Coastline 43057's in preview 46008933093, until a read through the "
+      "pin files it (%s)" % wrong_before)
+check(not wrong_after and st["held_after"] == st["held_before"] - len(wrong_before),
+      "as it stands the rule stages every pinned page and holds every other page of a refused program: no wrong "
+      "answer, and no page but the pinned one leaves the held set (%d held, %d before)"
+      % (st["held_after"], st["held_before"]))
+
+# ── 5. the entry──────────────────────────────────────────────────────────────────────────────────
 print("5. Coastline's entry")
 check(sorted(PINS) == ["43057"] and PINS["43057"]["url"] == CC_SRC["33014"]["source"]["url"]
       and PINS["43057"]["url"] != LANDING_URL
