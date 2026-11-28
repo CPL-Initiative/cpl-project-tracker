@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-28T02:20:38Z",
-  "session": 742,
-  "moniker": "SkyGodwit",
-  "run": "the CPL Queue routine",
+  "written_at": "2026-11-28T07:25:02Z",
+  "session": 747,
+  "moniker": "SkyShearwater",
+  "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_743_handoff.md",
+  "handoff": "docs/session_748_handoff.md",
   "next_step": {
-    "title": "Build the display page carrying tonight's records, then the census",
-    "text": "Build the display page carrying S742's records, apply it at Glendale first and then whole, and run the census on main. Then lane 1: finish the Cuyamaca and Cabrillo reconciles, review Coastline's staging fix and run its read, run Orange Coast's paid read, plan the gaps at Butte, Santa Barbara City and East Los Angeles, and the reader changes still open; then lane 2's holds and the night's follow-up with the Porterville guard first."
+    "title": "The CPL Queue routine's next collection run",
+    "text": "Collection continues with the routine: De Anza's 15 programs that the 2026-27 catalog read found but has not extracted, then the near misses at Glendale, Los Angeles City and Mt. San Antonio, beside the colleges the routine's handoff names."
   },
   "calls": [
     {
@@ -932,6 +932,18 @@
     {
       "at": "2026-11-28T01:29:00Z",
       "text": "CPL Pathways' display build now reads MAP's live view of articulated exhibits beside the dated feed: 2,395 programs gained CPL here, 1,573 of them from none, and Cerritos's Field Ironworkers A.S. reads 24 of 24 courses and up to 38 units. Applied to the program records Sierra reads (build 229a759101f7, 18,751 records)."
+    },
+    {
+      "at": "2026-11-28T05:04:00Z",
+      "text": "The featured Field Ironworker Supervisor bachelor's page now lays out the associate degree's major as Cerritos's catalog prints it, a core and two options, and counts 38 units of credit for prior learning, up from 31.5."
+    },
+    {
+      "at": "2026-11-28T06:30:00Z",
+      "text": "The 32 program records still on older display builds were traced: each is an earlier read that no current catalog capture files, 15 at De Anza waiting to be extracted and 17 near misses at Glendale, Los Angeles City and Mt. San Antonio. They stay as read, with their catalog year."
+    },
+    {
+      "at": "2026-11-28T07:20:00Z",
+      "text": "Course descriptions from the state course list now read as the catalog wrote them: 78,796 stray carriage-return codes and the garbled punctuation in 26,533 of 130,478 descriptions are repaired when the lookup is built."
     }
   ],
   "headline": [
@@ -1244,14 +1256,14 @@
     {
       "day": "2026-11-28",
       "active": 20282,
-      "complete": 15680,
+      "complete": 15681,
       "colleges": 118
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-28T06:12:00Z"
+    "at": "2026-11-28T08:12:00Z"
   },
   "harvest": {
     "day": "2026-11-28",

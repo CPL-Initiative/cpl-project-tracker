@@ -766,3 +766,23 @@ the h2 above the folded card, 24px card titles, quick-link bullets on their firs
 must refuse to redraw that step's migration: `_honors_of_s653_dryrun.py --plan` rewrote the applied rows SQL until
 #3870 (now `--redraw`, its own folder, diffed against the applied plan). Before building from a dated mock, read the
 page as it stands: the 2026-11-20 mock's NEXT was met by the 11-21 to 11-23 rebuild. Handoff 738.
+
+## S747 (SkyShearwater, 2026-11-28): Commons Clarity items 3 and 4; the click-through's last written difference
+
+**What shipped.** #3938: Exhibits (`#exhibits`, every view) carries *Back to CPL Commons* however it is reached
+(`commonsView` in `commons_front.js` now names the exhibits tab, and the link goes in that tab's own pane by `tabOf`).
+The Aligned course tile reads *None held* instead of *0 of 0*; *Saved, waiting for the nightly run* shows only while a
+save waits. #3941: the click-through's `#exhibits/list/nosubj` rule became an equality (both sides read 597; the List's
+filter now counts credentials). A dispatched run on main passed 13 of 15.
+
+**Not done, and why.** Item 1 (433 against 514): `held_subject_codes.json` read 433 codes at every commit from Nov 26
+to 28 and no Commons data file holds 514, so the source of 514 is unknown. Item 2: opening the lightning round straight
+from Needs you would reverse Sam's S723 ruling that a Needs you item lands on its card link; held for his words.
+
+**Lessons.**
+- A test that uses one tab as its example of *a tab outside the Commons* pins that tab's membership. Three such checks
+  named `#exhibits`; each was re-pointed with its reason in a comment.
+- A written difference in the click-through fails when the two sides come to agree. Read a failure's figures before
+  treating it as a regression.
+- The click-through's cron reads 04:37Z, but GitHub has been starting it near 14:17Z; it takes `workflow_dispatch` and
+  is read-only, so a session can run it on demand.

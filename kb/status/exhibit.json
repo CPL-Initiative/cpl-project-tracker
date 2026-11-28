@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 683,
-  "moniker": "SkyDipper",
+  "session": 747,
+  "moniker": "SkyShearwater",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_683_handoff.md",
+  "handoff": "docs/session_748_handoff.md",
   "calls": [
     {
       "title": "Correct seven triage titles?",
@@ -72,11 +72,11 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-19T20:21:11Z",
+  "written_at": "2026-11-28T07:25:16Z",
   "project": "exhibit",
   "next_step": {
-    "title": "Carry out the two blocker rules",
-    "text": "The two rules Sam approved re-point 95 local titles to 76 matching certifications and keep 75 titles that have left MAP. Tonight's run rebuilds the list if its inputs moved, checks it against a fresh copy of MAP, then applies it with its undo kept."
+    "title": "Name the 4 held titles; the subject fill takes the rest",
+    "text": "As the live Exhibits page read on Nov 28: 4 titles are held for a person to name, 597 credentials carry no common subject code, which the nightly subject fill takes where courses and issuer families settle it, and 812 old titles no MAP exhibit uses wait to be retired or kept."
   },
   "changes": [
     {
@@ -114,6 +114,10 @@
     {
       "at": "2026-11-14T06:50:00Z",
       "text": "A title cleared in another browser tab or session now reopens its card without a reload, and the two dry-run files the Related panel reads are published, so its folds work on the deployed site."
+    },
+    {
+      "at": "2026-11-28T05:40:00Z",
+      "text": "The Exhibits pages always carry a link back to the CPL Commons, however they are reached; the Aligned course figure reads None held instead of 0 of 0, and the saved-and-waiting count shows only while a save waits."
     }
   ]
 }

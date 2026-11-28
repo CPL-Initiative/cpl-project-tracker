@@ -60,7 +60,7 @@ go. please roll with it"*): the `adopt_panel.js` chip on catalog cards and featu
 college's exhibit (`map_links.js` `nearest()`). **FINDING** `f-coci-description-shards-mojibake-s744`: `coci_lookup_desc_*.js`
 carries `_x000D_` and cp1252 mojibake. **NEXT (CPL Pathways):** (none from S747). **DONE (S747):** the 06:26Z daily run lists
 Cerritos Field Ironworkers' Trained by as Ironworker JATC with the Reinforcing and Structural Period credentials; the
-description shards are cleaned at build: `clean_desc` in `kb/_build_coci_lookup.py` decodes Excel's `_x000D_` (78,796)
+description shards are cleaned at build (#3942; #3943 moves the repair into `kb/_text_repair.py`): `clean_desc` in `kb/_build_coci_lookup.py` decodes Excel's `_x000D_` (78,796)
 and repairs cp1252 mojibake, single and double (26,533 of 130,478 descriptions changed, 7 of them only because the
 900-character cut moved past an escape); guard `tests/coci_desc_clean_test.py`. **FINDING (S747)** `f-older-display-builds-are-unrefiled-reads-s747`: the 32 records at older
 display builds (De Anza 15, Glendale 15, LACC 1, Mt. SAC 1) are earlier reads that no current capture files, so the

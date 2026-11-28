@@ -803,3 +803,24 @@ Verbatim from `docs/reference/lanes/my-college-action-page.md`, moved to keep th
   link, to the nearest college's exhibit, in place of a list.
 - **The "Last Updated" header is the daily run's time** (`f-pages-header-is-the-daily-run-s746`): a page reading an
   older time after a merge was Pages still deploying, not a failed build.
+
+## S747 (SkyShearwater, Sam's plain session, 2026-11-28): the featured B.S. counts 38; panels beside the view; the adopt stylesheet
+
+**What shipped.** #3936: the featured Field Ironworker Supervisor B.S. (`cpl_pathways_data.js`) lays out the A.S. major
+as the catalog prints it (42158: a 19-unit core, then the Structural option, 19 units, or the Reinforcing option, 15
+units). The core and Structural sections count (38 units of CPL, matching the record's *up to 38*); Reinforcing renders
+as the uncounted alternate path. The nine courses MAP now articulates through the Period credentials carry `cpl`
+stamps from the record's display build. The page had said 31.5: Welding I (IWAP 40.10, a core course) and the eight
+Structural courses sat in an uncounted *articulations in progress* section. #3936 also made `.cplpw-panel` (the Request
+Adopt and SLO panel) open beside the view from 900px (`body.cplpw-panel-on` gives up `min(520px, 100vw)`); live it had
+covered the rows' own Request Adopt buttons on Foothill Dental Hygiene. #3939: `adopt_panel.js` adds its stylesheet
+in `model()` and `openFor()`; a B.S. directory card builds its own chips and panel, so it reached neither `chip()` nor
+`ownPanel()` and painted unstyled.
+
+**Lessons.**
+- A hand-curated page that fixes its sections around today's articulations goes stale when MAP adds more. Lay a
+  program out the way its catalog does (core, options) so a new articulation lands in a counted section.
+- Look at a shipped view live, not only in jsdom: both the panel overlap and the missing stylesheet passed every test
+  and were plain on the deployed page. A path that skips a shared module's entry point skips its side effects too.
+- Request Adopt shows on 4 of the 45 B.S. directory cards (Foothill and Fresno City Dental Hygiene, Santa Monica
+  Interaction Design, Modesto Respiratory Care); the rest have nothing to adopt.
