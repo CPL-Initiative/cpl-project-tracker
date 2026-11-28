@@ -46,7 +46,7 @@ puts the read at $2.70: 27 programs at the $0.08 floor rate with its 1.25 margin
 
 ## 4. `kb/collection_lane.py`'s hold on Allan Hancock
 
-S681 set the hold for one night's split; no later run lifted it. Three tools read it:
+S681 set the hold for one night's split; no later run lifted it. Four tools read it:
 `kb/_program_named_gaps.py` (its record-rule runs and labels skip the college),
 `kb/_program_requirements_units_rules.py` and `kb/_program_discontinued.py` (their plans skip it), and
 `kb/_harvest_gap_census.py` `named_gap` (the census gives the college's programs no label).
@@ -55,4 +55,28 @@ For tonight it changes nothing in plan `s748g1`: a by-key pile never reads the h
 any college, and the census counts a live row with a gap as collected whatever the lane says. The four Allan Hancock
 rows the record rules name are in `s748g1` already. With the hold lifted, the census would label one more program
 (45033 Cal-GETC, `ge_pattern_certificate`), measured by calling `named_gap` over the college's 87 with the hold off.
-Lifting it is the conductor's split to change: one line in a shared file three tools import.
+Lifting it is the conductor's split to change: one line in a shared file four tools import.
+
+## 5. The read of 43777 and 43999 (college-page-read run 46124279963, 2026-11-28 08:06Z): own pages, no pin written
+
+Both pages answered 200 and each is the program's own. Read as the capture reads them:
+
+| Program | Page (under `.../vocational-programs/voc-vocational-re-entry/`) | What it prints |
+|---|---|---|
+| 43777 Digital Media Specialist | `digitalmediaspecialisttext/` (2,423 characters, sha256 `9d2ecd0431997a1b`) | 'Digital Media Specialist', 'Certificate of Completion', '#43777'; Required Courses VOC DCIS, VOC DMB or VOC CPNET; Recommended Electives VOC MIT, VOC BCDP, VOC OCBA: all six courses the state lists. No hours beside a course and no total. |
+| 43999 Regenerative Communities | `regenerativecommunitiestext/` (2,909 characters, sha256 `32d691787b404f9a`) | 'Regenerative Communities', 'Certificate of Completion', '#43999'; Required Courses VOC RG, VOC FS; Recommended Elective VOC LFC: all three courses the state lists. No hours and no total. |
+
+No pin is written, because the capture would refuse it. Each page's `h1` is 'Vocational Re-Entry' and its title
+'Vocational Re-Entry < Mt. San Antonio College', the department's heading, and a `site_pages` pin binds only where
+the page's own heading prints the program's title with its award. I ran the capture's own test
+(`kb/_program_requirements_college.py` `site_pinned`) over both pages as the log prints them, with the programs built
+from the committed sources and state lists: both come back "the pinned page's heading ('Vocational Re-Entry') does
+not print the program's title with its award". A refused pin reads the program from no page, so a pin here gains
+nothing, and no free capture is named.
+
+What would bind them is a reader change, which is a last resort and needs a second reader: the pin's heading test
+reading the page's own block, the program's title, then its award, then '#' and the state's control number, which is
+the program's own number as the state lists it. Its self-recall would run over Mt. San Antonio's filed noncredit
+pages (which of them print '#' and a control number, and whose). Not written here. Both programs would then go to a
+paid read with `only=43777,43999`: the estimator prices it at $0.20 (two programs at the $0.08 floor, margin 1.25).
+Since neither page prints hours or a total, each record would be collected with a named gap, never as passing.
