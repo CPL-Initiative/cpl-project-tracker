@@ -135,11 +135,19 @@ with open(os.path.join(ROOT, "tests", "fixtures", "pooled_s731.json"), encoding=
 # college's reconcile step files the degree's floor on them (free reconcile 45966682528), the pooled reading is all
 # that stands between failing and passing, so they join the members. Either state is read.
 _s741 = [{"college": "Cuyamaca College", "control_number": cn} for cn in ("18634", "18635", "18636")]
+# S742, landed in S748: one more Cuyamaca degree, 18637, told by its run. The college's second reconcile step reads
+# the page's 'CSU or UC transferable units' as the electives that fill the degree (free reconcile 46017556328, kept
+# for 18637 alone); on that record the pooled reading is all that stands between failing and passing, so it joins
+# the three. On any earlier record of 18637 the members are as S741 left them.
+_s742 = [{"college": "Cuyamaca College", "control_number": "18637"}]
+_r18637 = str(W.load("Cuyamaca College", "18637").get("extracted_run")) == "46017556328"
 _got = [{"college": c, "control_number": cn} for c, cn in flips.get("fail_to_pass") or []]
 _key = lambda m: (m["college"], m["control_number"])  # noqa: E731
-check(_got in (sorted(fx["fail_to_pass"] + added, key=_key), sorted(fx["fail_to_pass"] + added + _s741, key=_key)),
-      "the live fail-to-pass members are the fixture's 28 and S731's 4, and S741's three Cuyamaca degrees once their "
-      "floor is filed (%d)" % len(_got))
+_want = ((sorted(fx["fail_to_pass"] + added + _s741 + _s742, key=_key),) if _r18637 else
+         (sorted(fx["fail_to_pass"] + added, key=_key), sorted(fx["fail_to_pass"] + added + _s741, key=_key)))
+check(_got in _want,
+      "the live fail-to-pass members are the fixture's 28 and S731's 4, S741's three Cuyamaca degrees once their "
+      "floor is filed, and 18637 once its reconcile record is filed (%d)" % len(_got))
 for c, cn in flips.get("fail_to_pass") or []:
     pools = S.pooled_figures(W.load(c, cn)["record"])
     check(pools and all(p["words"] and S._pool_figure(p["words"]) for p in pools),
