@@ -5,8 +5,8 @@
  "source": [
   "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf"
  ],
- "subjects": 104,
- "with_heading": 103,
+ "subjects": 105,
+ "with_heading": 104,
  "rows": [
   {
    "code": "ACAD PR",
@@ -1703,6 +1703,30 @@
    "rule": "schedule",
    "codes": [
     "NRS HCA"
+   ],
+   "candidate": null,
+   "page": 145,
+   "above": [
+    "control, methods for providing physical care, and emotional",
+    "and social support. Upon successful completion of this course,",
+    "students will be eligible to take the California’s Nurse",
+    "Assistant Certification Examination."
+   ],
+   "first_course": "NRS-HCA 399A NURSE ASSISTANT TRAINING PROGRAM",
+   "address": "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?Campus=LAMC&strm=2268&subj=NRS-HCA&",
+   "where": "class schedule",
+   "method": "subject lookup",
+   "found_on": "2026-11-26",
+   "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
+   "run": "45868955654"
+  },
+  {
+   "code": "NRS-HCA",
+   "heading": "Nursing-Health Care Ancillaries",
+   "heading_printed": "Nursing-Health Care Ancillaries",
+   "rule": "schedule",
+   "codes": [
+    "NRS-HCA"
    ],
    "candidate": null,
    "page": 145,

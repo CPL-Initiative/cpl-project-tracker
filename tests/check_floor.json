@@ -185,6 +185,7 @@
     "csr_alias_chip.test.js": 7,
     "csr_authority_chip.test.js": 9,
     "csr_fl_split.test.js": 6,
+    "csr_person_count_agrees.test.js": 7,
     "csr_subj_check.test.js": 28,
     "csr_ui_tweaks.test.js": 8,
     "cvma_three_rows_s649.test.js": 15,

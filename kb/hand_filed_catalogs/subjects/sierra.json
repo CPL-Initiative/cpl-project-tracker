@@ -857,6 +857,22 @@
    "run": "45623798209"
   },
   {
+   "code": "RISE",
+   "heading": "Rise",
+   "heading_printed": "Rise",
+   "rule": "index",
+   "codes": [
+    "RISE"
+   ],
+   "candidate": null,
+   "address": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
    "code": "SKDV",
    "heading": "Skill Development",
    "heading_printed": "Skill Development",
@@ -969,6 +985,6 @@
    "run": "45623798209"
   }
  ],
- "subjects": 60,
- "with_heading": 60
+ "subjects": 61,
+ "with_heading": 61
 }
