@@ -195,3 +195,17 @@ paid reads, rereads, loads and `.apply`, and holds every Supabase call.
   than filing a gap (4.2% of its fires wrong over 16,812 records), to a Fable 5.2 second reader. To assign, evidence
   standing: Cerritos 02235; Citrus 02333; Marin 46242; Diablo Valley 39775; Foothill 11827, 43194; Irvine Valley
   44922; Madera 39810; Palomar 08929, 22528; Porterville 33085.
+- 08:33Z: `post`'s second report: Lassen 18752 and 18756 pass (degree 52 of 60, electives fill 8) and are kept alone
+  (`802f9c1c`); College of Alameda 32765 passes and is kept alone (`d3c4d279`); both rereads dispatched (force
+  46122727267 and 46122729926). Sierra 21525 is a tie on every step and neither record passes (18 units, no total, the
+  section cut off after IT 0060): no dispatch, since a reread would rewrite twelve live records for no gain
+  (`claude/s748-post-sierra`, `f26375bd`). Mt. San Antonio's reconcile 46124747415 still runs.
+- 08:35Z: the found-pages second reader (Fable 5.2): **GO WITH, the paid probe held.** BLOCKING: the extract function
+  answers 400 on an empty closed list (`chatbox/supabase/functions/program-requirements-extract/index.ts`, lines 480 to
+  484), so the paid read cannot work as built; and a record scored against zero listed courses passes on arithmetic
+  alone (966 of 974 live-passing records rescored against an empty list still pass; a wrong program's page passes
+  equally), so `score()` must set coverage false with a named gap at zero listed. MAJOR: the recall's "wrong 0" is
+  structural; the honest figure is 1 wrong in 1,969 found (San Bernardino Valley 22830's page holds two other
+  certificates); the opt-in is a hand-edited name set (Glendale: 8 of 165 right). Flag off: 0 differences at 118
+  colleges. Round 2 is the next run's. The free Skyline capture dispatched on `claude/s748-readers-found-skyline`
+  (`1f7a211b`), as the reader allowed, so the next run has its sources.
