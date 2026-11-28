@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -72,6 +73,7 @@
    "status": "unstated",
    "computed": null,
    "stated": null,
+   "against": null,
    "why": [
     "the catalog prints no total, no hours and no units"
    ]
@@ -89,6 +91,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -184,5 +194,6 @@
    "Outcomes taken from the page's outcomes tab (#tgl0), which follows the page footer in the extracted text; the trailing line 'Review Student Learning Outcomes (SLOs) for this program.' is a link, not an outcome, and was not recorded."
   ]
  },
- "extracted_run": "38059865531"
+ "extracted_run": 46124747415,
+ "read_run": "38059865531"
 }

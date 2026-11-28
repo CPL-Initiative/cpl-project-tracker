@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -68,6 +69,7 @@
     15.0,
     15.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -83,6 +85,14 @@
    "heading_printed": true,
    "heading_without_outcomes": true,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -154,5 +164,6 @@
    "The catalog's printed total of 15 units is the only stated total; it covers the Required Courses list, which has no separate block total."
   ]
  },
- "extracted_run": "38059865531"
+ "extracted_run": 46124747415,
+ "read_run": "38059865531"
 }

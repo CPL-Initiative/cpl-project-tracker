@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -72,6 +73,7 @@
     49.5,
     49.5
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -87,6 +89,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -375,5 +388,6 @@
    "Beginning Fall 2026 the program uses a limited admissions process."
   ]
  },
- "extracted_run": "38064250199"
+ "extracted_run": 46124747415,
+ "read_run": "38064250199"
 }

@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -76,6 +77,7 @@
     28.5,
     28.5
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -91,6 +93,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -240,5 +250,6 @@
    "The outcome comes from the page's Outcomes tab under 'Program Learning Outcomes' for this certificate; it is printed without a closing period and copied as is."
   ]
  },
- "extracted_run": "38059865531"
+ "extracted_run": 46124747415,
+ "read_run": "38059865531"
 }

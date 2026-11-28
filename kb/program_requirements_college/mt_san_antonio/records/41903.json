@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -68,6 +69,7 @@
     18.0,
     19.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -83,6 +85,14 @@
    "heading_printed": true,
    "heading_without_outcomes": true,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -215,5 +225,6 @@
    "The catalog labels this award 'Certificate N0856'; the award type given in the request is Certificate of Achievement (16-<30 units), consistent with the 18-19 unit total."
   ]
  },
- "extracted_run": "38059865531"
+ "extracted_run": 46124747415,
+ "read_run": "38059865531"
 }

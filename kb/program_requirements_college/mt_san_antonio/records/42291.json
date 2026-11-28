@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -72,6 +73,7 @@
     21.0,
     21.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -87,6 +89,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -209,5 +219,6 @@
    "The outcomes tab prints one Program Learning Outcome with the lead-in 'Upon successful completion of this program, a student will:'; the outcome is copied as printed (lowercase start). The tab also links to SLOs that are not in the text."
   ]
  },
- "extracted_run": "38059865531"
+ "extracted_run": 46124747415,
+ "read_run": "38059865531"
 }

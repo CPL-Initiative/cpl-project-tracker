@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -66,6 +67,7 @@
    "status": "unstated",
    "computed": null,
    "stated": null,
+   "against": null,
    "why": [
     "the catalog prints no total, no hours and no units"
    ]
@@ -83,6 +85,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -153,5 +163,6 @@
    "The outcomes come from the page's outcomes tab (#tgl0), which is printed after the page footer. The 'Program Learning Outcomes' heading appears in the main text with no outcomes under it. The line 'Review Student Learning Outcomes (SLOs) for this program.' is a link and is not recorded as an outcome."
   ]
  },
- "extracted_run": "38059865531"
+ "extracted_run": 46124747415,
+ "read_run": "38059865531"
 }

@@ -58,7 +58,8 @@
     "HRM52"
    ],
    "unexplained": [],
-   "pass": true
+   "none_placed": true,
+   "pass": false
   },
   "invented": {
    "count": 0,
@@ -74,6 +75,7 @@
     0.0
    ],
    "stated": null,
+   "against": null,
    "why": [
     "the record names no total"
    ]
@@ -91,6 +93,14 @@
    "heading_printed": true,
    "heading_without_outcomes": true,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": false
  },
@@ -149,5 +159,6 @@
    "A reviewer should fetch the Level I certificate page (N0888) to record its requirements."
   ]
  },
- "extracted_run": "38064250199"
+ "extracted_run": 46124747415,
+ "read_run": "38064250199"
 }

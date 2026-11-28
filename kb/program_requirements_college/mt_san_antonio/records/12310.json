@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -80,6 +81,7 @@
     21.5,
     21.5
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -95,6 +97,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -198,5 +208,6 @@
    "The page also lists other Business certificates and degrees in navigation; only the Level II (N0474) section was read."
   ]
  },
- "extracted_run": "38059865531"
+ "extracted_run": 46124747415,
+ "read_run": "38059865531"
 }

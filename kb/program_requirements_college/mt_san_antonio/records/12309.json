@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -82,6 +83,7 @@
     32.5,
     32.5
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -97,6 +99,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -216,5 +229,6 @@
    "BUSM 60, BUSM 61, BUSM 62, BUSS 36, BUSS 50 and CISB 15 appear in the catalog's required list but not in the closed list; recorded as catalog additions."
   ]
  },
- "extracted_run": "38059865531"
+ "extracted_run": 46124747415,
+ "read_run": "38059865531"
 }
