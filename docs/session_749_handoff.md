@@ -181,3 +181,17 @@ paid reads, rereads, loads and `.apply`, and holds every Supabase call.
   46121986278 failed and is not rerun unexplained. Lassen's capture differs from its recall: 18752 and 18756 pass,
   18758 and 18848 still read incomplete, 18754's window moved; `post` keeps the two that pass and restores the rest.
   `post` goes on to Sierra 21525, Alameda and Mt. San Antonio (live read 08:17:06Z, 385 rows, six checked).
+- 08:22Z: `readers` stop 4, its last: the found-pages change on `claude/s748-readers-found` (`e77ff6a8`, off for every
+  college; `read_found_pages` in a college's reconcile entry; recall with an oracle independent of the rule: 2,295
+  tested at 17 colleges, right 1,916, wrong 0, not found 379) and Skyline's flag on `-found-skyline` (`1f7a211b`), to a
+  Fable 5.2 second reader. 194 programs at 14 colleges, $19.40 on the estimator: Skyline 55, Allan Hancock 27, San
+  Mateo 21, Diablo Valley 20, San Joaquin Delta 14, Gavilan 12, Glendale 12, Cabrillo 9, Coastline 7, Feather River 6,
+  Napa Valley 6, Lemoore 3, Saddleback 1, West Valley 1. Open: a record with an empty closed list passes coverage at 0
+  of 0.
+- 08:25Z: live: San Bernardino Valley 31858 at 46121983588 and Orange Coast 08626 and 08663 at 46122364368, each with
+  its arithmetic equal. Records collected: 27.
+- 08:29Z: `piles` stop 3, its last (`239dc152`): `list_minimum_units` removed (`16f341f6`). Plan s748c (Orange Coast
+  43100, Fullerton 18749 and 36863) with a new reading, `state_course_not_on_page`, which turns coverage true rather
+  than filing a gap (4.2% of its fires wrong over 16,812 records), to a Fable 5.2 second reader. To assign, evidence
+  standing: Cerritos 02235; Citrus 02333; Marin 46242; Diablo Valley 39775; Foothill 11827, 43194; Irvine Valley
+  44922; Madera 39810; Palomar 08929, 22528; Porterville 33085.
