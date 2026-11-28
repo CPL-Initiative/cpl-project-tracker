@@ -71,3 +71,17 @@ paid reads, rereads, loads and `.apply`, and holds every Supabase call.
   Valley 04894: two reconcile steps of existing kinds (recall over 221 records: 1 fail to pass, 0 pass to fail), to a
   Sonnet second reader before the free reconcile. San Jose City 18449: left unfinished (its four sit outside the Active
   count). `keys` moves to the fresh census's wave over colleges outside both lanes.
+- 06:55Z: 04894's second reader (Sonnet): GO (the steps reach 04894 alone over the college's 221 records; six mutations
+  turn the test red; MINOR: the two page reads' printed output is not committed). The free reconcile 46118801512
+  dispatched on a sibling, `claude/s748-keys-sbvc`, cut at `83f67d9e`.
+- 06:56Z: `piles` stop 1 (`claude/s748-piles`, `dbfa9e08`): plan s748a (Butte 14583 `noted_section_cut_off`, Santa
+  Barbara City 43553 `total_differs`). Held: East Los Angeles 31017 (no filed kind is true of a sum on both sides of the
+  printed 60; a reconcile step is its lever) and Santa Barbara City 30746 (its page does not print PSY 200).
+- 07:00Z: `readers` stop 1: Cuyamaca 18637 merged with `main` on `claude/s748-readers-cuy2`; Coastline 43057's staging
+  fix on `claude/s748-readers-stagepin` (`b2687880`; recall over 231 held answers: 230 right and 1 wrong before, 231 and
+  0 after), to a Fable 5.2 second reader. The conductor's Cuyamaca live read (07:00:13Z): 179 rows, none checked, 18637
+  alone at 46003456131.
+- 07:03Z: keep-better kept 18637 (`3e2062aa`); the reread, force 46017556328, dispatched on `claude/s748-readers-cuy2`.
+- 07:05Z: s748a's reader (Sonnet): APPLY (the real apply and rollback run on a scratch Postgres: a wrong run, a changed
+  record, a missing row and a confirm each abort; a checked row is skipped; S742a's output byte-identical under the
+  `Batch` change). Clean md5 pre-read 2 of 2. The apply pushed on `claude/s748-apply` (`dc2bc0a0`), migrate 46119599942.
