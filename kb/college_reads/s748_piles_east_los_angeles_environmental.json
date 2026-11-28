@@ -1,0 +1,30 @@
+{
+ "_readme": "S748, lane 2's cheap piles (2026-11-28). East Los Angeles 41231 (Environmental Science A.S.-T, Academic Plan E041231H) was read from PDF p.92: its courses add to 39-45 against the printed 41-45. Its low end takes MATH 261S (3 units) in place of MATH 261 (5); with MATH 261 alone the courses add to the printed 41-45. This read prints pp.91-93 whole, so a session can read how the page prints MATH 261 and MATH 261S (one or the other, or the two together) and the line 'CHOOSE OPTION 1 OR OPTION 2 AND ALL COURSES LISTED BELOW 41-45'. One load. No model call, nothing written.",
+ "college": "East Los Angeles College",
+ "questions": {
+  "math_261": "The rows that print MATH 261 and MATH 261S, word for word, with their units and any 'or', 'and' or 'with' between them.",
+  "totals_41231": "The option subtotals, the '41-45' line and the 'Total 62-66' line of Academic Plan E041231H."
+ },
+ "keywords": [
+  "Academic\\W+Plan\\W+E0?41231[A-Z]?[^\\n]{0,40}",
+  "MATH\\s+261S?[^\\n]{0,100}",
+  "(?i)subtotal[^\\n]{0,40}",
+  "(?i)choose option[^\\n]{0,100}",
+  "Total[^\\n]{0,40}"
+ ],
+ "pdf_span": [
+  91,
+  93
+ ],
+ "pdf_page_cap": 3,
+ "pages": [
+  {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf",
+   "answers": [
+    "math_261",
+    "totals_41231"
+   ],
+   "why": "41231"
+  }
+ ]
+}

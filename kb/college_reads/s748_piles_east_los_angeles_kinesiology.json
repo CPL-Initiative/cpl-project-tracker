@@ -1,0 +1,30 @@
+{
+ "_readme": "S748, lane 2's cheap piles (2026-11-28). East Los Angeles 31017 (Kinesiology A.A.-T, Academic Plan E031017G) was read from PDF p.240. Its note quotes the movement list's rule, '(minimum 3 units) Select a maximum of one (1) course from any three (3) of the following areas', and the record reads the list as three courses of 1 to 4 units, so its degree reads 54-67 around the printed 60. This read prints pp.239-241 whole, so a session can read the list's own heading line, the 'Subtotal' and 'Total' lines and the electives sentence word for word, for a reconcile step that reads the list at its printed 3 units. One load. No model call, nothing written.",
+ "college": "East Los Angeles College",
+ "questions": {
+  "movement_list": "The movement-based list's heading and rule line, word for word, with its printed units figure.",
+  "totals_31017": "The 'Subtotal', 'Cal-GETC' and 'Total' lines of Academic Plan E031017G and the sentence on additional CSU units."
+ },
+ "keywords": [
+  "Academic\\W+Plan\\W+E0?31017[A-Z]?[^\\n]{0,40}",
+  "(?i)minimum\\s+\\d+\\s+units?[^\\n]{0,120}",
+  "(?i)movement[^\\n]{0,100}",
+  "(?i)subtotal[^\\n]{0,40}",
+  "Total[^\\n]{0,40}"
+ ],
+ "pdf_span": [
+  239,
+  241
+ ],
+ "pdf_page_cap": 3,
+ "pages": [
+  {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf",
+   "answers": [
+    "movement_list",
+    "totals_31017"
+   ],
+   "why": "31017"
+  }
+ ]
+}
