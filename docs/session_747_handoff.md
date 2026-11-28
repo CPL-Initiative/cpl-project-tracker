@@ -12,8 +12,8 @@ obsidian-folder: cpl-project-tracker/handoffs
 From SkyPetrel (S746), Sam's plain session of 2026-11-27 22:46Z to 2026-11-28 02:15Z. A **full checkpoint** (KB
 generators changed: `kb/_build_program_certs.py`, `kb/_build_roep_display.py`, `kb/_build_commons_status.py`,
 `kb/coci_subject_folds.py`; one Rule 10 display write). Lanes moved: `common-subjects-reference` (compacted to 19,542
-bytes) and `commons` (compacted to 19,026); `program-requirements-harvest` is written by the conductor after #3930
-merges. Skipped: step 7 (no roadmap status or auditor counts moved), `README.md` (no tab joined or left) and a KB note
+bytes) and `commons` (compacted to 19,026); `program-requirements-harvest` (compacted to 18,549; the S744 and S745 CPL Pathways text moved verbatim to
+`roadmap_archive_8`). Skipped: step 7 (no roadmap status or auditor counts moved), `README.md` (no tab joined or left) and a KB note
 (the dated-feed lesson is already `methodology-a-dispatch-only-feed-goes-stale-without-a-sound`). No `## Conductor
 settings` block (conductor mode is retired, checkpoint step 8).
 
@@ -29,7 +29,7 @@ settings` block (conductor mode is retired, checkpoint step 8).
 2a. **Sam's work order (2026-11-20):** collection first, data waves before fixes (`r-collection-first-sam-2026-11-20`);
    collection's fixes rank by the M-ID cards they unblock (`r-collect-for-mids-work-order-sam-2026-11-20`).
 2b. **Before a push, `bash scripts/check_generated.sh` must read all ok.**
-3. **Merge order:** #3930 (Request Adopt in one form) first, then this checkpoint's PR. COBIx's #3917 and #3926 are
+3. **Merge order:** this checkpoint's PR; #3930 merged (`6713dc48`). COBIx's #3917 and #3926 are
    superseded by #3929 and #3932 and stay open for Sam or COBIx to close; #3888 closes after Sam checks it on his phone.
 4. **At start, read the training notes** (`kb_curation` rows, `field = 'procedure_note'`, newest first, and any with
    `value.act = true`) and act on what they ask.
@@ -66,7 +66,7 @@ Memory rows written and logged this run (step 10, by the conductor): `d-trained-
   subject (person 138; confirmed and settled 151 to 246).
 - **#3929** COBIx's #3917 on main: 38 Hancock remaps to Hancock's codes, 9 bad splits, `not_a_subject` honored, the *Ask
   COBI to act* checkbox; lightning round 494 to 416. **#3932** COBIx's 22 #3926 titles filed.
-- **Open:** #3930, Request Adopt in one form on every CPL Pathways view (mocks
+- **#3930** (merged `6713dc48`): Request Adopt in one form on every CPL Pathways view (mocks
   https://claude.ai/artifact/HNTRY9Rjymb9pTkZbdJfsp, https://claude.ai/artifact/74oA2cnB2wJ66LNaKtHSLf).
 
 ## Read in order
@@ -77,7 +77,8 @@ Memory rows written and logged this run (step 10, by the conductor): `d-trained-
 
 ## Open work, in order (from the lanes' NEXT lines)
 
-1. **Merge #3930** if still open (`test` green on head), then confirm it live.
+1. **Look at #3930 live** on a catalog card, the Field Ironworker Supervisor B.S. and a B.S. directory card (one chip,
+   one sidebar, the nearest-exhibit link).
 2. **Commons Clarity** (`commons` NEXT, none worked in S746): the 433 against 514 counts; Needs you opens the card, not
    the lightning round, with no link back; the Exhibits pages lack back links; the Exhibits tiles read *0 of 0* and
    *Saved, waiting* 0 with no Needs you route; Sam's question whether procedure notes stay hidden and whether a
@@ -112,10 +113,10 @@ routine's; **implementation-funding** waits on the team.
 
 ## Let go
 
-At sign-off the conductor drops its PR subscriptions (#3930, this checkpoint's PR) and its artifact watches
+At sign-off the conductor drops its PR subscriptions (this checkpoint's PR, CPLBrain#879) and its artifact watches
 (https://claude.ai/artifact/HNTRY9Rjymb9pTkZbdJfsp, https://claude.ai/artifact/74oA2cnB2wJ66LNaKtHSLf); no COBIx
 watcher, no check-in.
 
-Spend: not available; 2026-11-27T22:46Z to 2026-11-28T02:15Z.
+Spend: not available; 2026-11-27T22:46Z to 2026-11-28T02:40Z.
 
 Opening line: *Greetings, you are SkyShearwater (Session 747), see SkyPetrel's handoff — `docs/session_747_handoff.md` — let's keep rolling with our queue.*

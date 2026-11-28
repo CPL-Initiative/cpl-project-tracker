@@ -235,3 +235,47 @@ Three paragraphs, verbatim as they stood; each kept its NEXT in the lane.
 ## INDEX update history, moved (S746 checkpoint)
 
 - 2026-11-26 (S737 SkyWhimbrel, light checkpoint): #3870 (the Honors step-4 redraw; `--plan` refuses once step 2 applied; 128 mints), #3873 (suite durations re-measured, six lint shards: the check 10.3 to 7.7 min), #3874 open (the docs-only lint skip for 35 traced steps). Handoff 738.
+
+## Moved from lanes/program-requirements-harvest (S746 checkpoint)
+
+**CPL Pathways (S744, S745; the record: [`cpl_pathways_lessons`](../../cpl_pathways_lessons.md)).** **LIVE:** #3911
+`kb/_build_program_ladders.py` tops a record with its stackable programs (`r-stackable-programs-top-row-sam-2026-11-27`;
+[`methodology-stackable-programs-by-course-containment`](../../kb-notes/methodology-stackable-programs-by-course-containment.md));
+#3913 the compact course cards (the CPL control opens a bottom bar framing the landing page; its MAP pointer is the
+27th ruled mark, kept by an a11y sweep); #3919 the Credentials list's titles in the Programs blue (`.cplpwc-open`),
+opening a bottom bar: *earns credit here* to the landing page on the college's own exhibits (`adopt_data` `m`), *could
+add* to the Credential Catalog, framed (`openGetCreditBar` takes `o.url`, `o.heading`, `o.via`; Sam: *"the credential
+names and links should be the same blue as the programs listview"*, *"they should open to a bottom bar rather than a new
+tab"*); #3920 the *Industry certs* chip on a program card (`kb/_build_program_certs.py`, `kb/status/program_certs/`):
+*earns CPL here* on 1,326 programs at 76 colleges (3,432 entries, 1,551 with a college-built exhibit code), *prepares
+for* on 634 programs (707 entries), both on 45; the matcher's precision 93% and 90%, recall about 77% (`kb/status/program_certs/_measure.md`). **LIVE:** #3922 the live CPL chip
+(`r-cpl-chip-white-tile-sam-2026-11-27`, refining the pointer ruling: a white tile, the pointer pre-rotated 30 degrees on
+the baseline, no underline; on open it turns toward what it opened, down for a list or bottom bar, right for a sidebar,
+200 ms, snapping under reduced motion; Sam: *"that's cool!"*). **APPLIED:** Trained by on a credential (Sam: *"yes,
+this is what we could want to show: Trained by Ironworker JATC"*): `kb/credentials.json` names a training agency on 348
+of 2,970 (Carpenters CTCNC 93, CAL FIRE 31, U.S. Armed Forces 26, UA Local 342 JATC 23, Ironworker committees about 50);
+the 16 Cerritos Ironworker Period credentials took the Ironworker JATC through `kb_curation`
+`training_agency_override` (`credentials-s745@bot`; receipt `kb/receipts/credential_trainer_fill_s745_2026-11-27.sql`).
+
+From the same lane, S746 compaction (superseded wording of the S746 LIVE lines, kept verbatim):
+
+**LIVE (S746):** the display build reads MAP's live view, `kb/exhibits_adoption.json` (rebuilt each morning), as a
+third CPL-here source beside MAP's CR read and the dated feed (`adoption_index` in `kb/_build_roep_display.py`):
+2,395 programs gain CPL here, 1,573 from none, 8,264 course entries, nothing drops; Cerritos Field Ironworkers reads
+24 of 24 and up to 38 units (was 15 and 31.5), its certificates 34 of 34 and 38 of 38 (`f-cerritos-ironworkers-all-24-cpl-s744`
+closed). Largest gains: AP exams and the UA and Carpenters apprenticeships. The feed's stamp was 2026-09-03. **FINDING** `f-coci-description-shards-mojibake-s744`: `coci_lookup_desc_*.js`
+carries `_x000D_` and cp1252 mojibake. MAP at Bakersfield: 6 Welding A.S. courses carry CPL (NCCER Levels 1-4, AWS
+D1.1/D1.5/D1.8, ASME IX, LA City Certified Welder, credit by exam); Cerritos Business Administration 2.0 A.S.-T has none
+and could adopt on 10 of 11 courses (AP, CLEP, IB calculus, statistics, economics). **LIVE (S746):** *Trained by* on the
+program card (`kb/_build_program_certs.py` `trained_by`, `tests/cpl_pathways_trained_by.test.js`): an underlined-word
+control per training committee, *Trained by Ironworker JATC*, opening the sidebar with the committee's full name and
+each credential with its courses. **DECIDED** `d-trained-by-committees-only-s746`: training committees only (a name
+saying apprenticeship, training committee or JATC); a bare *Joint Apprenticeship Training Committee (JATC)* takes its
+issuer's acronym (*IBEW JATC*) or the issuer when that is a committee (*Carpenters Training Committee*). 19 programs at
+American River, Cabrillo, Cerritos and Santiago Canyon before the sync folds the 15 Cerritos Period trainers (06:17Z
+cron, the sync runs before the build). **FINDING** `f-trainer-field-names-one-site-s746`: `training_agency` names one
+college's site on credentials many colleges articulate (AP Biology by Mater Dei High School at Glendale; Microsoft
+Office Specialist Excel by the U.S. Armed Forces), and neither `confidence_trainer` nor `classified_by` separates those;
+widening the chip waits on a cleaned field. **LIVE (S746):** a featured program's course rows (the Field Ironworker Supervisor B.S. and the other `cpl_pathways_data.js` programs) carry the one Adopt chip from `adopt_panel.js` (`featuredAdoptChip`), opening the tab's side panel with each exhibit, its MAP link and one request, in place of the inline college list and a chip per college (Sam, 2026-11-28: *"That looks good. please use it"*; mock https://claude.ai/artifact/HNTRY9Rjymb9pTkZbdJfsp). The B.S. directory's "Adoption opportunities" section has one *Request Adopt (N)* on its heading and a *Request Adopt* per row, both opening the same sidebar (the row's credential checked), each row saying *Articulated at N colleges*. **DECIDED** (Sam, 2026-11-28, *"yes, that's the way to go. please roll with it"*; mock https://claude.ai/artifact/74oA2cnB2wJ66LNaKtHSLf): where a caller names the adopting college, each credential's MAP line is ONE link, the nearest college's exhibit (`map_links.js` `nearest()`: home's Strong Workforce region first, then most exhibits, ties alphabetical, home's own never) with "N more colleges built one"; the adopt sidebar and CPL Pathways' recommendations take it. **NEXT (CPL Pathways):** (1) after the 2026-11-28 cron, confirm Cerritos
+Field Ironworkers' Trained by lists the Period credentials; (2) look at the live cards; (3) after the display PR merges, dispatch `program-requirements-college.yml` with `step=display` so
+`program_requirement_records.display` (Sierra, college views) carries the build; (4) clean the description shards at build in `kb/_build_coci_lookup.py`.
