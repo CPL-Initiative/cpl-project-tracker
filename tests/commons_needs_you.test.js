@@ -284,15 +284,17 @@ const count = (hay, needle) => hay.split(needle).length - 1;
     await go(x, "#commons/needs-you");
     check("(B) back at Needs you, the link is gone (" + href + ")", !x.d.getElementById("cpl-back-needs"));
   }
-  const plain = load("#exhibits/held");
+  // A tab outside the Commons. (This was #exhibits/held until S747, when Exhibits, the Exhibit titles card's own page,
+  // began to carry Back to CPL Commons however it is reached.)
+  const plain = load("#program-requirements/list");
   await settle();
-  plain.w.dispatchEvent(new plain.w.CustomEvent("cpl-tab-activated", { detail: { tab: "exhibits" } }));
+  plain.w.dispatchEvent(new plain.w.CustomEvent("cpl-tab-activated", { detail: { tab: "program-requirements" } }));
   check("(B) a view opened without Needs you carries no back link, and nothing is stored for it", !plain.d.getElementById("cpl-back-needs") && !/localStorage\.setItem|sessionStorage/.test(FRONT.slice(FRONT.indexOf("var BACK = "), FRONT.indexOf("function ensureBackCss"))));
   const away = load("#commons");
   await away.M.boot(); await settle();
   away.d.querySelector('#cmf-needs a[href="#cr-reference/names"]').dispatchEvent(new away.w.MouseEvent("click", { bubbles: true, cancelable: true }));
   await go(away, "#cr-reference/names");
-  await go(away, "#exhibits");
+  await go(away, "#cpl-pathways");   // a tab outside the Commons (was #exhibits until S747)
   check("(B) leaving the tab a Needs you link opened drops the link", !away.d.getElementById("cpl-back-needs"));
 
   /* Sam, 2026-11-24 (S723): "the 417 link goes to Courses and Programs, which is good, but there's no link back to
