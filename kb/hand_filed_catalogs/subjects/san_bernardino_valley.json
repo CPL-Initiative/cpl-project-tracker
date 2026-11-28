@@ -202,6 +202,23 @@
    "run": "45626788039"
   },
   {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 145 Introduction to Digital Applications for Graphic Design; 261 Introduction to Arts Administration",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "ARTH",
    "heading": "Art History",
    "heading_printed": "Art History",
@@ -298,6 +315,23 @@
    "run": "45626788039"
   },
   {
+   "code": "CD",
+   "heading": "Child Development",
+   "heading_printed": "Child Development",
+   "rule": "coci",
+   "codes": [
+    "CD"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Child Development",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
    "code": "CDEV",
    "heading": "Child Development",
    "heading_printed": "Child Development",
@@ -378,6 +412,23 @@
    "run": "45626788039"
   },
   {
+   "code": "COMMST",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "coci",
+   "codes": [
+    "COMMST"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 111 Interpersonal Communication Retired/legacy prefix; current catalogs use COMM. Title stays Communication Studies.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 94
+  },
+  {
    "code": "CONST",
    "heading": "Construction Technology",
    "heading_printed": "Construction Technology",
@@ -424,6 +475,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626788039)",
    "run": "45626788039"
+  },
+  {
+   "code": "DANCE",
+   "heading": "Dance",
+   "heading_printed": "Dance",
+   "rule": "coci",
+   "codes": [
+    "DANCE"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Dance",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
   },
   {
    "code": "ECON",
@@ -584,6 +652,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626788039)",
    "run": "45626788039"
+  },
+  {
+   "code": "FRENCH",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "coci",
+   "codes": [
+    "FRENCH"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: French",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 95
   },
   {
    "code": "FTVM",
@@ -1370,6 +1455,6 @@
    "run": "45626788039"
   }
  ],
- "subjects": 80,
- "with_heading": 80
+ "subjects": 85,
+ "with_heading": 85
 }

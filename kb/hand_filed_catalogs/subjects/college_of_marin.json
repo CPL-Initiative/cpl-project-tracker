@@ -73,6 +73,23 @@
    "run": "45630168042"
   },
   {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Art",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 94
+  },
+  {
    "code": "ASL",
    "heading": "American Sign Language",
    "heading_printed": "American Sign Language",
@@ -169,6 +186,23 @@
    "run": "45630168042"
   },
   {
+   "code": "BOS",
+   "heading": "Business Office Systems",
+   "heading_printed": "Business Office Systems",
+   "rule": "coci",
+   "codes": [
+    "BOS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 114 Beginning Word Processing; 120 Computer Keyboarding; 151 Electronic Office Skills",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 94
+  },
+  {
    "code": "BUS",
    "heading": "Business",
    "heading_printed": "Business",
@@ -199,6 +233,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45630168042)",
    "run": "45630168042"
+  },
+  {
+   "code": "CHIN",
+   "heading": "Chinese",
+   "heading_printed": "Chinese",
+   "rule": "coci",
+   "codes": [
+    "CHIN"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Chinese",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 94
   },
   {
    "code": "CIS",
@@ -713,6 +764,23 @@
    "run": "45630168042"
   },
   {
+   "code": "JOUN",
+   "heading": "Journalism",
+   "heading_printed": "Journalism",
+   "rule": "coci",
+   "codes": [
+    "JOUN"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 115 News Reporting/Writing; 122 Newspaper Production, Writing; corrected during QA (was: Counseling)",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
+  },
+  {
    "code": "JPNS",
    "heading": "Japanese",
    "heading_printed": "Japanese",
@@ -743,6 +811,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45630168042)",
    "run": "45630168042"
+  },
+  {
+   "code": "LIBR",
+   "heading": "Library",
+   "heading_printed": "Library",
+   "rule": "coci",
+   "codes": [
+    "LIBR"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Library",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "MACH",
@@ -921,6 +1006,23 @@
    "run": "45630168042"
   },
   {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "coci",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Psychology",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
    "code": "REAL",
    "heading": "Real Estate",
    "heading_printed": "Real Estate",
@@ -967,6 +1069,39 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45630168042)",
    "run": "45630168042"
+  },
+  {
+   "code": "SPCH",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "coci",
+   "codes": [
+    "SPCH"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Communication Studies",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
+   "code": "SSC",
+   "heading": "Social Science",
+   "heading_printed": "Social Science",
+   "rule": "index",
+   "codes": [
+    "SSC"
+   ],
+   "candidate": null,
+   "address": "https://www1.marin.edu/sites/default/files/Catalog-2020-21.pdf",
+   "where": "web",
+   "method": "COBI overnight review, approved by Sam Lee:  2020-21 College of Marin catalog heading is \"Social Science – SSC\" (p. 239), including SSC 115 Leadership & Governance and SSC 215 Survey of Current Issues. Overnight Student Leadership was too narrow. Twin code S SC is recommended as a fold to SSC.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   },
   {
    "code": "STAT",
@@ -1081,6 +1216,6 @@
    "run": "45630168042"
   }
  ],
- "subjects": 67,
- "with_heading": 67
+ "subjects": 75,
+ "with_heading": 75
 }

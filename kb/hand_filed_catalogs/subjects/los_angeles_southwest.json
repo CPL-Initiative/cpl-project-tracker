@@ -5,8 +5,8 @@
  "source": [
   "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf"
  ],
- "subjects": 97,
- "with_heading": 97,
+ "subjects": 106,
+ "with_heading": 106,
  "rows": [
   {
    "code": "ACCTG",
@@ -51,6 +51,23 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 44948529916)"
+  },
+  {
+   "code": "ADM",
+   "heading": "Administration of Justice",
+   "heading_printed": "Administration of Justice",
+   "rule": "coci",
+   "codes": [
+    "ADM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: JUS310 Field Work I",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "ADM JUS",
@@ -180,6 +197,23 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 44948529916)"
+  },
+  {
+   "code": "ANTRHO",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "coci",
+   "codes": [
+    "ANTRHO"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Anthropology",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
   },
   {
    "code": "ART",
@@ -593,6 +627,23 @@
    "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
+   "code": "CO SCI",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "coci",
+   "codes": [
+    "CO SCI"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Computer Science",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "CO TECH",
    "heading": "Computer Technology",
    "heading_printed": "COMPUTER TECHNOLOGY",
@@ -703,6 +754,23 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 44948529916)"
+  },
+  {
+   "code": "DIRECTED STUDIES",
+   "heading": "Work Experience",
+   "heading_printed": "Work Experience",
+   "rule": "coci",
+   "codes": [
+    "DIRECTED STUDIES"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 185 Work Experience - General I; 385 Work Experience - General I The code itself is DIRECTED STUDIES, but both COCI courses are Work Experience - General. COOP ED is already titled Cooperative Education (0 COCI rows); not folded because the course titles say Work Experience.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 88
   },
   {
    "code": "EARTH",
@@ -1043,6 +1111,23 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 44948529916)"
+  },
+  {
+   "code": "FIRE TECHNOLOGY",
+   "heading": "Fire Technology",
+   "heading_printed": "Fire Technology",
+   "rule": "coci",
+   "codes": [
+    "FIRE TECHNOLOGY"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Fire Technology",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "FIRETEK",
@@ -1485,6 +1570,23 @@
    "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
+   "code": "MATHEMATICS",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "coci",
+   "codes": [
+    "MATHEMATICS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Mathematics",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
    "code": "MGMT",
    "heading": "Management",
    "heading_printed": "MANAGEMENT",
@@ -1633,6 +1735,23 @@
    "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
+   "code": "OCEAN",
+   "heading": "Oceanography",
+   "heading_printed": "Oceanography",
+   "rule": "coci",
+   "codes": [
+    "OCEAN"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Oceanography",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 95
+  },
+  {
    "code": "OCEANO",
    "heading": "Oceanogrpahy",
    "heading_printed": "OCEANOGRPAHY",
@@ -1697,6 +1816,23 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 44948529916)"
+  },
+  {
+   "code": "PERSDEV",
+   "heading": "Personal Development",
+   "heading_printed": "Personal Development",
+   "rule": "coci",
+   "codes": [
+    "PERSDEV"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 1 Introduction to College Later transition toward COUNSEL is a legacy note only.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 90
   },
   {
    "code": "PHILOS",
@@ -1911,6 +2047,23 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 44948529916)"
+  },
+  {
+   "code": "Q CNTRL",
+   "heading": "Quality Control",
+   "heading_printed": "Quality Control",
+   "rule": "coci",
+   "codes": [
+    "Q CNTRL"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: CNTRL010 Fundamentals of Quality Control; CNTRL022 Dimensional Measurements",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
   },
   {
    "code": "READING",

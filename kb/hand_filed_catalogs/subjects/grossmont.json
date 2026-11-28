@@ -41,6 +41,23 @@
    "run": "45627459464"
   },
   {
+   "code": "ARABIC",
+   "heading": "Arabic",
+   "heading_printed": "Arabic",
+   "rule": "coci",
+   "codes": [
+    "ARABIC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 148 Language, Culture, and Literature of the Arab World",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "ARBC",
    "heading": "Arabic",
    "heading_printed": "Arabic",
@@ -55,6 +72,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627459464)",
    "run": "45627459464"
+  },
+  {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 106 Introduction to Mural Painting and Design; 210 Introduction to Printmaking",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
   },
   {
    "code": "ARTH",
@@ -185,6 +219,23 @@
    "run": "45627459464"
   },
   {
+   "code": "CCS",
+   "heading": "Cross-Cultural Studies",
+   "heading_printed": "Cross-Cultural Studies",
+   "rule": "coci",
+   "codes": [
+    "CCS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 116 Introduction to Women's Studies; 134 Intro to American Indian Art Overnight decision; GAI agreed. Grossmont CCS is the historical/active department title.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 95
+  },
+  {
    "code": "CD",
    "heading": "Child Development",
    "heading_printed": "Child Development",
@@ -231,6 +282,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627459464)",
    "run": "45627459464"
+  },
+  {
+   "code": "CHIN",
+   "heading": "Chinese",
+   "heading_printed": "Chinese",
+   "rule": "coci",
+   "codes": [
+    "CHIN"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Chinese",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
   },
   {
    "code": "COMM",
@@ -311,6 +379,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627459464)",
    "run": "45627459464"
+  },
+  {
+   "code": "DANCE",
+   "heading": "Dance",
+   "heading_printed": "Dance",
+   "rule": "coci",
+   "codes": [
+    "DANCE"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Dance",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 96
   },
   {
    "code": "ECON",
@@ -409,6 +494,23 @@
    "run": "45627459464"
   },
   {
+   "code": "FACS",
+   "heading": "The Nanny Profession",
+   "heading_printed": "The Nanny Profession",
+   "rule": "coci",
+   "codes": [
+    "FACS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 121 Intro to the Nanny Profession; 148 Fashion Merchandising",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "FREN",
    "heading": "French",
    "heading_printed": "French",
@@ -439,6 +541,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627459464)",
    "run": "45627459464"
+  },
+  {
+   "code": "FSM",
+   "heading": "Food Service Management",
+   "heading_printed": "Food Service Management",
+   "rule": "coci",
+   "codes": [
+    "FSM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Food Service Management",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 95
   },
   {
    "code": "GEND",
@@ -521,6 +640,23 @@
    "run": "45627459464"
   },
   {
+   "code": "HESC",
+   "heading": "Health Sciences",
+   "heading_printed": "Health Sciences",
+   "rule": "coci",
+   "codes": [
+    "HESC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 115 Technique/Develop Disab Spclst; 199 Special Studies in Hesc; 299 Selected Topics in Hesc Overnight decision; GAI agreed.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 90
+  },
+  {
    "code": "HIST",
    "heading": "History",
    "heading_printed": "History",
@@ -569,6 +705,23 @@
    "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   },
   {
+   "code": "ITAL",
+   "heading": "Italian",
+   "heading_printed": "Italian",
+   "rule": "coci",
+   "codes": [
+    "ITAL"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Italian",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
    "code": "JAPN",
    "heading": "Japanese",
    "heading_printed": "Japanese",
@@ -583,6 +736,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627459464)",
    "run": "45627459464"
+  },
+  {
+   "code": "JOUR",
+   "heading": "Journalism",
+   "heading_printed": "Journalism",
+   "rule": "coci",
+   "codes": [
+    "JOUR"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Journalism",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 94
   },
   {
    "code": "LIB",
@@ -729,6 +899,57 @@
    "run": "45627459464"
   },
   {
+   "code": "PD",
+   "heading": "Personal Development",
+   "heading_printed": "Personal Development",
+   "rule": "coci",
+   "codes": [
+    "PD"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 80 Diag Assessment/Learn Disabled",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
+   "code": "PDC",
+   "heading": "Personal Development",
+   "heading_printed": "Personal Development",
+   "rule": "coci",
+   "codes": [
+    "PDC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a college naming pattern; COCI course titles: 95 Academic and Financial Aid Planning; 126 Orientation to College: Re-Entry StUdent",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 84
+  },
+  {
+   "code": "PDEO",
+   "heading": "Personal Development",
+   "heading_printed": "Personal Development",
+   "rule": "coci",
+   "codes": [
+    "PDEO"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 299A Transition to Independent Living Overnight kept Personal Development. GAI alternative: Personal Development - Educational Opportunities (unverified expansion of the acronym). Only one special-topics course in COCI.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 70
+  },
+  {
    "code": "PDSS",
    "heading": "Personal Dev-Success Services",
    "heading_printed": "Personal Dev-Success Services",
@@ -743,6 +964,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627459464)",
    "run": "45627459464"
+  },
+  {
+   "code": "PE",
+   "heading": "Physical Education",
+   "heading_printed": "Physical Education",
+   "rule": "coci",
+   "codes": [
+    "PE"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Dance",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "PHIL",
@@ -873,6 +1111,23 @@
    "run": "45627459464"
   },
   {
+   "code": "RECR",
+   "heading": "Recreation",
+   "heading_printed": "Recreation",
+   "rule": "coci",
+   "codes": [
+    "RECR"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Recreation",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
+  },
+  {
    "code": "RELG",
    "heading": "Religious Studies",
    "heading_printed": "Religious Studies",
@@ -903,6 +1158,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627459464)",
    "run": "45627459464"
+  },
+  {
+   "code": "RUSS",
+   "heading": "Russian",
+   "heading_printed": "Russian",
+   "rule": "coci",
+   "codes": [
+    "RUSS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Russian",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 95
   },
   {
    "code": "SCI",
@@ -969,6 +1241,23 @@
    "run": "45627459464"
   },
   {
+   "code": "SPCH",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "coci",
+   "codes": [
+    "SPCH"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Communication Studies",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "STAT",
    "heading": "Statistics",
    "heading_printed": "Statistics",
@@ -983,6 +1272,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627459464)",
    "run": "45627459464"
+  },
+  {
+   "code": "TELE",
+   "heading": "Telecommunications",
+   "heading_printed": "Telecommunications",
+   "rule": "coci",
+   "codes": [
+    "TELE"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 161 The Film as Communication Art; 162 Film Adaptations of Literature; 231 Videoconferencing Overnight decision (changed from Film). Courses mix film with videoconferencing; TELE is the legacy pre-MCOM prefix. GAI agreed on Telecommunications.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 88
   },
   {
    "code": "THTR",
@@ -1001,6 +1307,6 @@
    "run": "45627459464"
   }
  ],
- "subjects": 62,
- "with_heading": 62
+ "subjects": 80,
+ "with_heading": 80
 }

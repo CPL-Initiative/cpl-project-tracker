@@ -297,6 +297,23 @@
    "run": "45629430201"
   },
   {
+   "code": "AGVETT",
+   "heading": "Veterinary Technology",
+   "heading_printed": "Veterinary Technology",
+   "rule": "coci",
+   "codes": [
+    "AGVETT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 1 Vet Anatomy, Physiology & Med Term; 2 Fundamentals of Animal Health",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "AGVIT",
    "heading": "Ag – Viticulture",
    "heading_printed": "AG – VITICULTURE",
@@ -375,6 +392,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45629430201)",
    "run": "45629430201"
+  },
+  {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 1 Introduction to Art; 72 Introduction to Digital Art",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
   },
   {
    "code": "ARTH",
@@ -711,6 +745,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45629430201)",
    "run": "45629430201"
+  },
+  {
+   "code": "ENER",
+   "heading": "Energy Technology",
+   "heading_printed": "Energy Technology",
+   "rule": "coci",
+   "codes": [
+    "ENER"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 101 Photovoltaic Technology I; 102 Photovoltaic Technology II; corrected during QA (was: Engineering)",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
   },
   {
    "code": "ENGL",
@@ -1401,6 +1452,23 @@
    "run": "45629430201"
   },
   {
+   "code": "REAL",
+   "heading": "Real Estate",
+   "heading_printed": "Real Estate",
+   "rule": "coci",
+   "codes": [
+    "REAL"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Real Estate",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
    "code": "REGN",
    "heading": "Registered Nursing",
    "heading_printed": "REGISTERED NURSING",
@@ -1415,6 +1483,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45629430201)",
    "run": "45629430201"
+  },
+  {
+   "code": "RUSS",
+   "heading": "Russian",
+   "heading_printed": "Russian",
+   "rule": "coci",
+   "codes": [
+    "RUSS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Russian",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
   },
   {
    "code": "SDEV",
@@ -1625,6 +1710,6 @@
    "run": "45629430201"
   }
  ],
- "subjects": 97,
- "with_heading": 97
+ "subjects": 102,
+ "with_heading": 102
 }

@@ -25,6 +25,23 @@
    "run": "45630168042"
   },
   {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 17 Introduction to Graphic Design; 43 Introduction to Digital Photography",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "ARTH",
    "heading": "Art History",
    "heading_printed": "Art History",
@@ -167,6 +184,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45630168042)",
    "run": "45630168042"
+  },
+  {
+   "code": "DRAMA",
+   "heading": "The Theatre",
+   "heading_printed": "The Theatre",
+   "rule": "coci",
+   "codes": [
+    "DRAMA"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 10 Introduction to the Theatre; 20 Oral Expression and Interpretation",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
   },
   {
    "code": "ECON",
@@ -505,6 +539,40 @@
    "run": "45630168042"
   },
   {
+   "code": "MUSIC",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "coci",
+   "codes": [
+    "MUSIC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Music",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
+  },
+  {
+   "code": "NURSE",
+   "heading": "Nursing",
+   "heading_printed": "Nursing",
+   "rule": "coci",
+   "codes": [
+    "NURSE"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 100 Nurse Assistant; 153 Certified Home Health Aide",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "PHILO",
    "heading": "Philosophy",
    "heading_printed": "Philosophy",
@@ -713,6 +781,23 @@
    "run": "45630168042"
   },
   {
+   "code": "TUTOR",
+   "heading": "Supervised Learning Assistance",
+   "heading_printed": "Supervised Learning Assistance",
+   "rule": "coci",
+   "codes": [
+    "TUTOR"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Supervised Learning Assistance",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "WKEXP",
    "heading": "Work Experience",
    "heading_printed": "Work Experience",
@@ -745,6 +830,6 @@
    "run": "45630168042"
   }
  ],
- "subjects": 46,
- "with_heading": 46
+ "subjects": 51,
+ "with_heading": 51
 }

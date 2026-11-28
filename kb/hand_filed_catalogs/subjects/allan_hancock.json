@@ -76,6 +76,23 @@
    "run": "45626743727"
   },
   {
+   "code": "AGBUS",
+   "heading": "Agriculture Business",
+   "heading_printed": "Agriculture Business",
+   "rule": "coci",
+   "codes": [
+    "AGBUS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "AJ",
    "heading": "Administration of Justice",
    "heading_printed": "Administration of Justice",
@@ -154,6 +171,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626743727)",
    "run": "45626743727"
+  },
+  {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Art",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
   },
   {
    "code": "ASL",
@@ -348,6 +382,23 @@
    "run": "45626743727"
   },
   {
+   "code": "CE",
+   "heading": "Cooperative Education",
+   "heading_printed": "Cooperative Education",
+   "rule": "coci",
+   "codes": [
+    "CE"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "CEL",
    "heading": "Computer Electronics",
    "heading_printed": "Computer Electronics",
@@ -428,6 +479,22 @@
    "run": "45626743727"
   },
   {
+   "code": "COMPC",
+   "heading": "Computer Applications",
+   "heading_printed": "Computer Applications",
+   "rule": "index",
+   "codes": [
+    "COMPC"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI COMPC (COCI fields shifted; no course title)",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "COS",
    "heading": "Cosmetology",
    "heading_printed": "Cosmetology",
@@ -458,6 +525,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626743727)",
    "run": "45626743727"
+  },
+  {
+   "code": "CWE",
+   "heading": "Cooperative Work Experience",
+   "heading_printed": "Cooperative Work Experience",
+   "rule": "coci",
+   "codes": [
+    "CWE"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Cooperative Work Experience",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "DA",
@@ -716,6 +800,23 @@
    "run": "45626743727"
   },
   {
+   "code": "ELECT",
+   "heading": "Electronics",
+   "heading_printed": "Electronics",
+   "rule": "coci",
+   "codes": [
+    "ELECT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a college naming pattern",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 84
+  },
+  {
    "code": "EMS",
    "heading": "Emergency Medical Services",
    "heading_printed": "Emergency Medical Services",
@@ -746,6 +847,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626743727)",
    "run": "45626743727"
+  },
+  {
+   "code": "ENGIN",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "coci",
+   "codes": [
+    "ENGIN"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Engineering",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 95
   },
   {
    "code": "ENGL",
@@ -796,6 +914,22 @@
    "run": "45626743727"
   },
   {
+   "code": "ENV",
+   "heading": "Environmental Studies",
+   "heading_printed": "Environmental Studies",
+   "rule": "index",
+   "codes": [
+    "ENV"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI ENV (COCI fields shifted)",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "ENVT",
    "heading": "Environmental Technology",
    "heading_printed": "Environmental Technology",
@@ -826,6 +960,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626743727)",
    "run": "45626743727"
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English as a Second Language",
+   "rule": "coci",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 110 Introduction to Critical Reading; 310 Reading Skills and Strategies",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "ET",
@@ -890,6 +1041,40 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626743727)",
    "run": "45626743727"
+  },
+  {
+   "code": "FILM",
+   "heading": "Film and Video Production",
+   "heading_printed": "Film and Video Production",
+   "rule": "coci",
+   "codes": [
+    "FILM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Film and Video Production",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 96
+  },
+  {
+   "code": "FIRE",
+   "heading": "Fire Technology",
+   "heading_printed": "Fire Technology",
+   "rule": "coci",
+   "codes": [
+    "FIRE"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Fire Technology",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "FRCH",
@@ -1020,6 +1205,23 @@
    "run": "45626743727"
   },
   {
+   "code": "GIS",
+   "heading": "Geographic Information Systems",
+   "heading_printed": "Geographic Information Systems",
+   "rule": "coci",
+   "codes": [
+    "GIS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Geographic Information Systems",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "GRPH",
    "heading": "Graphics",
    "heading_printed": "Graphics",
@@ -1148,6 +1350,23 @@
    "run": "45626743727"
   },
   {
+   "code": "HONORS",
+   "heading": "Honors",
+   "heading_printed": "Honors",
+   "rule": "coci",
+   "codes": [
+    "HONORS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "HOSP",
    "heading": "Hospitality Management",
    "heading_printed": "Hospitality Management",
@@ -1196,6 +1415,23 @@
    "run": "45626743727"
   },
   {
+   "code": "INFO",
+   "heading": "Information Studies",
+   "heading_printed": "Information Studies",
+   "rule": "coci",
+   "codes": [
+    "INFO"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Information Studies",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 95
+  },
+  {
    "code": "INTD",
    "heading": "Interior Design",
    "heading_printed": "Interior Design",
@@ -1210,6 +1446,72 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626743727)",
    "run": "45626743727"
+  },
+  {
+   "code": "INT ST",
+   "heading": "International Studies",
+   "heading_printed": "International Studies",
+   "rule": "index",
+   "codes": [
+    "INT ST"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI INT ST (COCI fields shifted)",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
+   "code": "IT",
+   "heading": "Industrial Technology",
+   "heading_printed": "Industrial Technology",
+   "rule": "index",
+   "codes": [
+    "IT"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI IT (COCI fields shifted)",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
+   "code": "ITAL",
+   "heading": "Italian",
+   "heading_printed": "Italian",
+   "rule": "coci",
+   "codes": [
+    "ITAL"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Italian",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
+   "code": "JOURN",
+   "heading": "Journalism",
+   "heading_printed": "Journalism",
+   "rule": "coci",
+   "codes": [
+    "JOURN"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Journalism",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 95
   },
   {
    "code": "KIN",
@@ -1242,6 +1544,22 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626743727)",
    "run": "45626743727"
+  },
+  {
+   "code": "LC",
+   "heading": "Learning Center",
+   "heading_printed": "Learning Center",
+   "rule": "index",
+   "codes": [
+    "LC"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI LC (COCI fields shifted)",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   },
   {
    "code": "LDER",
@@ -1660,6 +1978,22 @@
    "run": "45626743727"
   },
   {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI PSYC C1000 Introduction to Psychology (CCN prefix; kept separate from PSY)",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "RE",
    "heading": "Real Estate",
    "heading_printed": "Real Estate",
@@ -1690,6 +2024,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626743727)",
    "run": "45626743727"
+  },
+  {
+   "code": "REAL",
+   "heading": "Real Estate",
+   "heading_printed": "Real Estate",
+   "rule": "coci",
+   "codes": [
+    "REAL"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Real Estate",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 95
   },
   {
    "code": "REC",
@@ -1724,6 +2075,23 @@
    "run": "45626743727"
   },
   {
+   "code": "RVT",
+   "heading": "Registered Veterinary Technology",
+   "heading_printed": "Registered Veterinary Technology",
+   "rule": "coci",
+   "codes": [
+    "RVT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 308 Seminar for Registered Veterinary Technicians",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
+  },
+  {
    "code": "SEWN",
    "heading": "Sewing (NC)",
    "heading_printed": "Sewing (NC)",
@@ -1738,6 +2106,22 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626743727)",
    "run": "45626743727"
+  },
+  {
+   "code": "SGNLNG",
+   "heading": "Sign Language",
+   "heading_printed": "Sign Language",
+   "rule": "index",
+   "codes": [
+    "SGNLNG"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI SGNLNG 120/122/136 (no COCI titles; legacy code, likely now ASL)",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   },
   {
    "code": "SOC",
@@ -1756,6 +2140,38 @@
    "run": "45626743727"
   },
   {
+   "code": "SOC SC",
+   "heading": "Social Science",
+   "heading_printed": "Social Science",
+   "rule": "index",
+   "codes": [
+    "SOC SC"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI SOC SC (COCI fields shifted)",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
+   "code": "SPACE",
+   "heading": "Space Technology",
+   "heading_printed": "Space Technology",
+   "rule": "index",
+   "codes": [
+    "SPACE"
+   ],
+   "candidate": null,
+   "address": "https://www.hancockcollege.edu/publicaffairs/documents/CommunityNewsS06.pdf",
+   "where": "person",
+   "method": "named by Sam Lee: Hancock Community News 2006 lists SPACE 102 Introduction to Space (SpaceTEC / space operations); successor code AERO from Fall 2027",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "SPAN",
    "heading": "Spanish",
    "heading_printed": "Spanish",
@@ -1770,6 +2186,55 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626743727)",
    "run": "45626743727"
+  },
+  {
+   "code": "SPCOM",
+   "heading": "Speech Communication",
+   "heading_printed": "Speech Communication",
+   "rule": "index",
+   "codes": [
+    "SPCOM"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI SPCOM (COCI fields shifted)",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
+   "code": "SPECI",
+   "heading": "Special Instruction",
+   "heading_printed": "Special Instruction",
+   "rule": "index",
+   "codes": [
+    "SPECI"
+   ],
+   "candidate": null,
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI SPECI (holds SGNLNG 120/122)",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "coci",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Statistics",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 94
   },
   {
    "code": "STEM",
@@ -1996,6 +2461,6 @@
    "run": "45626743727"
   }
  ],
- "subjects": 123,
- "with_heading": 123
+ "subjects": 151,
+ "with_heading": 151
 }

@@ -41,6 +41,23 @@
    "run": "45632683302"
   },
   {
+   "code": "AHS",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "coci",
+   "codes": [
+    "AHS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 1 History of Western Art: Prehistoric, Ancient, and Medieval; 2 History of Western Art: Renaissance through Contemporary Sister-college curriculum with RCC; not Allied Health Sciences.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 96
+  },
+  {
    "code": "ALR",
    "heading": "Reading (Academic Literacy and Reading)",
    "heading_printed": "Reading (Academic Literacy and Reading)",
@@ -119,6 +136,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45632683302)",
    "run": "45632683302"
+  },
+  {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 31 Introduction to Exhibitions: History, Theory, and Practice; 36A Computer Art-Introduction",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
   },
   {
    "code": "ARTH",
@@ -1033,6 +1067,6 @@
    "run": "45632683302"
   }
  ],
- "subjects": 64,
- "with_heading": 64
+ "subjects": 66,
+ "with_heading": 66
 }

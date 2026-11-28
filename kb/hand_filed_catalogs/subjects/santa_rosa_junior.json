@@ -297,6 +297,23 @@
    "run": "45629430201"
   },
   {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 3 Introduction to Art and Design; 24 Introduction to the Art of Printmaking",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "ARTH",
    "heading": "Art History",
    "heading_printed": "Art History",
@@ -1001,6 +1018,23 @@
    "run": "45629430201"
   },
   {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English as a Second Language",
+   "rule": "coci",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 391 U.S. Life and Culture for ESL Learners",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "ETHS",
    "heading": "Ethnic Studies",
    "heading_printed": "Ethnic Studies",
@@ -1175,6 +1209,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45629430201)",
    "run": "45629430201"
+  },
+  {
+   "code": "GIS",
+   "heading": "Geographic Information Systems",
+   "heading_printed": "Geographic Information Systems",
+   "rule": "coci",
+   "codes": [
+    "GIS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Geographic Information Systems",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 94
   },
   {
    "code": "HIST",
@@ -1385,6 +1436,23 @@
    "run": "45629430201"
   },
   {
+   "code": "KAQUA",
+   "heading": "Kinesiology Aquatics",
+   "heading_printed": "Kinesiology Aquatics",
+   "rule": "coci",
+   "codes": [
+    "KAQUA"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 10.2 Intermediate Springboard Diving",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 94
+  },
+  {
    "code": "KFIT",
    "heading": "Kinesiology Fitness",
    "heading_printed": "Kinesiology Fitness",
@@ -1481,6 +1549,23 @@
    "run": "45629430201"
   },
   {
+   "code": "KTEAM",
+   "heading": "Kinesiology Team Sports",
+   "heading_printed": "Kinesiology Team Sports",
+   "rule": "coci",
+   "codes": [
+    "KTEAM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 10.1 Beginning Volleyball Quads; 9 Introductory Outdoor Volleyball",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "LIR",
    "heading": "Library & Information Resource",
    "heading_printed": "Library & Information Resource",
@@ -1543,6 +1628,40 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45629430201)",
    "run": "45629430201"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "coci",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Mathematics",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
+  },
+  {
+   "code": "MEDIA",
+   "heading": "Film and Media Studies",
+   "heading_printed": "Film and Media Studies",
+   "rule": "coci",
+   "codes": [
+    "MEDIA"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Film and Media Studies",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 84
   },
   {
    "code": "MICR",
@@ -2137,6 +2256,6 @@
    "run": "45629430201"
   }
  ],
- "subjects": 127,
- "with_heading": 127
+ "subjects": 134,
+ "with_heading": 134
 }

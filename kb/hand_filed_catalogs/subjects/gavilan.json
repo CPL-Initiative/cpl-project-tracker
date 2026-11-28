@@ -121,6 +121,23 @@
    "run": "45627124597"
   },
   {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 8A Introduction to Photography; 7A Beginning Ceramics",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "ARTH",
    "heading": "Art History",
    "heading_printed": "Art History",
@@ -361,6 +378,40 @@
    "run": "45627124597"
   },
   {
+   "code": "COUN",
+   "heading": "Counseling",
+   "heading_printed": "Counseling",
+   "rule": "coci",
+   "codes": [
+    "COUN"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 52 Peer Mentoring, Education, and Leadership; corrected during QA (was: Communication Studies)",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 80
+  },
+  {
+   "code": "CSIS",
+   "heading": "Computer and Information Science",
+   "heading_printed": "Computer and Information Science",
+   "rule": "coci",
+   "codes": [
+    "CSIS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Computer and Information Science",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 94
+  },
+  {
    "code": "CUL",
    "heading": "Culinary",
    "heading_printed": "Culinary",
@@ -585,6 +636,23 @@
    "run": "45627124597"
   },
   {
+   "code": "GUID",
+   "heading": "Learning Skills Laboratory",
+   "heading_printed": "Learning Skills Laboratory",
+   "rule": "coci",
+   "codes": [
+    "GUID"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 558A Introduction to Learning Skills Laboratory; 600 Introduction to Job Coaching",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "HE",
    "heading": "Health Education",
    "heading_printed": "Health Education",
@@ -762,19 +830,28 @@
   },
   {
    "code": "LIFE",
-   "heading": "Life",
-   "heading_printed": "Life",
+   "heading": "Life Skills",
+   "heading_printed": "Life Skills",
    "rule": "index",
    "codes": [
     "LIFE"
    ],
    "candidate": null,
-   "address": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
-   "where": "catalog",
-   "method": "subject heading",
-   "found_on": "2026-11-25",
-   "found_by": "COBI, a runner read (run 45627124597)",
-   "run": "45627124597"
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI LIFE 700 Workforce Preparation and Job Readiness",
+   "found_on": "2026-11-27",
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 100,
+   "replaced": {
+    "heading": "Life",
+    "heading_printed": "Life",
+    "rule": "index",
+    "address": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+    "found_by": "COBI, a runner read (run 45627124597)",
+    "found_on": "2026-11-25"
+   }
   },
   {
    "code": "MATH",
@@ -1081,6 +1158,6 @@
    "run": "45627124597"
   }
  ],
- "subjects": 67,
- "with_heading": 67
+ "subjects": 71,
+ "with_heading": 71
 }

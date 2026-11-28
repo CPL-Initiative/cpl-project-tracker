@@ -203,7 +203,12 @@ _R = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 _CL = json.load(open(os.path.join(_R, "kb", "hand_filed_catalogs", "subjects", "clovis_community.json")))
 check("(9) the Clovis index names Sam, the session and the PDF's page 3", "Sam" in _CL["read_by"] and "S715" in _CL["read_by"]
       and _CL["source"] == ["https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=3"])
-check("(9) the index holds the subjects it prints, and no former code", all(r["rule"] == "index" for r in _CL["rows"]) and len(_CL["rows"]) == 62)
+# S749: COBI's COCI-read titles (rule "coci", Sam's "Yes all" of 2026-11-28) file beside the index rows (FSAP, MECH,
+# REHT); the guard stays on the index: its rows are the 62 subjects it prints, and every other row is COBI's.
+_CL_IX = [r for r in _CL["rows"] if r["rule"] == "index"]
+check("(9) the index holds the subjects it prints, and no former code",
+      len(_CL_IX) == 62 and all(r["rule"] in ("index", "coci") for r in _CL["rows"])
+      and not any(r["code"] == "ANTHRO" for r in _CL["rows"]))
 _T = json.load(open(os.path.join(_R, "kb", "status", "local_subject_titles.json")))
 _C = [c for c in _T["colleges"] if c["slug"] == "clovis_community"][0]
 _CR = {r[0]: dict(zip(_T["columns"], r)) for r in _C["rows"]}
@@ -218,6 +223,8 @@ check("(9) ⭐ both codes of a rename list the change with its source", [h["from
 check("(9) a title change alone is listed on its code", [(h["from_title"], h["to_title"]) for h in _CR["ECE"]["history"]] == [("Child Development", "Early Childhood Education")]
       and _CR["ECE"]["renamed_to"] is None)
 check("(9) ⭐ a listed code COCI holds is titled from the index", _CR["ESC"]["printed_name"] == "Educational Strategies Courses" and _CR["ESC"]["title_source"] == "index")
-check("(9) a code the contents does not name keeps its reason", _CR["REHT"]["printed_name"] is None and _CR["REHT"]["title_state"] == "not_in_catalog")
+# S749: the contents still does not name REHT; its title now comes from COBI's COCI read, and says so.
+check("(9) a code the contents does not name keeps its reason",
+      not any(r["code"] == "REHT" for r in _CL_IX) and _CR["REHT"]["title_source"] == "COBI, from the COCI course list")
 print(("FAILED " + str(len(FAILS))) if FAILS else "all passed")
 sys.exit(1 if FAILS else 0)

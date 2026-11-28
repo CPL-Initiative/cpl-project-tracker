@@ -57,6 +57,23 @@
    "run": "45631683919"
   },
   {
+   "code": "AHS",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "coci",
+   "codes": [
+    "AHS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Art History",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "ALR",
    "heading": "Academic Literacy and Reading",
    "heading_printed": "Academic Literacy and Reading",
@@ -103,6 +120,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45631683919)",
    "run": "45631683919"
+  },
+  {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 31 Introduction to Exhibitions: History, Theory, and Practice; 36A Computer Art-Introduction",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
   },
   {
    "code": "ARTH",
@@ -841,6 +875,23 @@
    "run": "45631683919"
   },
   {
+   "code": "PHS",
+   "heading": "Physical Science",
+   "heading_printed": "Physical Science",
+   "rule": "coci",
+   "codes": [
+    "PHS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Physical Science",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 94
+  },
+  {
    "code": "PHY",
    "heading": "Physics",
    "heading_printed": "Physics",
@@ -1017,6 +1068,6 @@
    "run": "45631683919"
   }
  ],
- "subjects": 63,
- "with_heading": 63
+ "subjects": 66,
+ "with_heading": 66
 }

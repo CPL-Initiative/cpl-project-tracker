@@ -168,6 +168,40 @@
    "run": "45626912350"
   },
   {
+   "code": "ARCLA",
+   "heading": "Landscape Architecture and Environmental Design",
+   "heading_printed": "Landscape Architecture and Environmental Design",
+   "rule": "coci",
+   "codes": [
+    "ARCLA"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 120 Introduction to Landscape Architecture and Environmental Design; 121 Landscape Design",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Art",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
    "code": "ARTDM",
    "heading": "Art Digital Media",
    "heading_printed": "Art Digital Media",
@@ -230,6 +264,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626912350)",
    "run": "45626912350"
+  },
+  {
+   "code": "BIOSC",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "coci",
+   "codes": [
+    "BIOSC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Biology",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "BUS",
@@ -456,6 +507,40 @@
    "run": "45626912350"
   },
   {
+   "code": "CULN",
+   "heading": "Culinary Arts",
+   "heading_printed": "Culinary Arts",
+   "rule": "coci",
+   "codes": [
+    "CULN"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Culinary Arts",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 94
+  },
+  {
+   "code": "DANCE",
+   "heading": "Dance",
+   "heading_printed": "Dance",
+   "rule": "coci",
+   "codes": [
+    "DANCE"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Dance",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
    "code": "DENHY",
    "heading": "Dental Hygiene",
    "heading_printed": "Dental Hygiene",
@@ -486,6 +571,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626912350)",
    "run": "45626912350"
+  },
+  {
+   "code": "DRAMA",
+   "heading": "Theatre Arts",
+   "heading_printed": "Theatre Arts",
+   "rule": "coci",
+   "codes": [
+    "DRAMA"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Theatre Arts",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "ECE",
@@ -808,6 +910,23 @@
    "run": "45626912350"
   },
   {
+   "code": "HSCI",
+   "heading": "Health Science",
+   "heading_printed": "Health Science",
+   "rule": "coci",
+   "codes": [
+    "HSCI"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Health Science",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "HUMAN",
    "heading": "Humanities",
    "heading_printed": "Humanities",
@@ -952,6 +1071,23 @@
    "run": "45626912350"
   },
   {
+   "code": "KNDAN",
+   "heading": "Kinesiology-Dance",
+   "heading_printed": "Kinesiology-Dance",
+   "rule": "coci",
+   "codes": [
+    "KNDAN"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 164B Ballroom/Social Dance II",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "KNICA",
    "heading": "Kinesiology Intercollegiate Athletics",
    "heading_printed": "Kinesiology Intercollegiate Athletics",
@@ -998,6 +1134,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626912350)",
    "run": "45626912350"
+  },
+  {
+   "code": "MUSIC",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "coci",
+   "codes": [
+    "MUSIC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Music",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
   },
   {
    "code": "MUSX",
@@ -1336,6 +1489,6 @@
    "run": "45626912350"
   }
  ],
- "subjects": 78,
- "with_heading": 78
+ "subjects": 87,
+ "with_heading": 87
 }

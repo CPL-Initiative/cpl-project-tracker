@@ -121,19 +121,28 @@
   },
   {
    "code": "ACTV",
-   "heading": "Accounting",
-   "heading_printed": "Accounting",
+   "heading": "Accounting Vocational",
+   "heading_printed": "Accounting Vocational",
    "rule": "index",
    "codes": [
     "ACTV"
    ],
    "candidate": null,
-   "address": "https://catalog.sbcc.edu/sel/career-skills",
-   "where": "catalog",
-   "method": "subject heading",
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI ACTV NC001 Setting up Quickbooks for Small Business",
    "found_on": "2026-11-27",
-   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
-   "run": "45625259489"
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 100,
+   "replaced": {
+    "heading": "Accounting",
+    "heading_printed": "Accounting",
+    "rule": "index",
+    "address": "https://catalog.sbcc.edu/sel/career-skills",
+    "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
+    "found_on": "2026-11-27"
+   }
   },
   {
    "code": "ADC",
@@ -169,19 +178,28 @@
   },
   {
    "code": "AHV",
-   "heading": "Allied Health",
-   "heading_printed": "Allied Health",
+   "heading": "Allied Health Vocational",
+   "heading_printed": "Allied Health Vocational",
    "rule": "index",
    "codes": [
     "AHV"
    ],
    "candidate": null,
-   "address": "https://catalog.sbcc.edu/sel/career-skills",
-   "where": "catalog",
-   "method": "subject heading",
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI AHV NC005 Medical Assistant 1A Administrative and Clinical Skills Part I",
    "found_on": "2026-11-27",
-   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
-   "run": "45625259489"
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 100,
+   "replaced": {
+    "heading": "Allied Health",
+    "heading_printed": "Allied Health",
+    "rule": "index",
+    "address": "https://catalog.sbcc.edu/sel/career-skills",
+    "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
+    "found_on": "2026-11-27"
+   }
   },
   {
    "code": "AJ",
@@ -230,6 +248,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45625259489)",
    "run": "45625259489"
+  },
+  {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Art",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
   },
   {
    "code": "ARTH",
@@ -425,19 +460,28 @@
   },
   {
    "code": "CAV",
-   "heading": "Culinary Arts",
-   "heading_printed": "Culinary Arts",
+   "heading": "Culinary Arts Vocational",
+   "heading_printed": "Culinary Arts Vocational",
    "rule": "index",
    "codes": [
     "CAV"
    ],
    "candidate": null,
-   "address": "https://catalog.sbcc.edu/sel/career-skills",
-   "where": "catalog",
-   "method": "subject heading",
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI CAV NC013 Safe Food Preparation and Serving, Module I",
    "found_on": "2026-11-27",
-   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
-   "run": "45625259489"
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 100,
+   "replaced": {
+    "heading": "Culinary Arts",
+    "heading_printed": "Culinary Arts",
+    "rule": "index",
+    "address": "https://catalog.sbcc.edu/sel/career-skills",
+    "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
+    "found_on": "2026-11-27"
+   }
   },
   {
    "code": "CHEM",
@@ -521,35 +565,53 @@
   },
   {
    "code": "CISV",
-   "heading": "Computer Information Systems",
-   "heading_printed": "Computer Information Systems",
+   "heading": "Computer Information Systems Vocational",
+   "heading_printed": "Computer Information Systems Vocational",
    "rule": "index",
    "codes": [
     "CISV"
    ],
    "candidate": null,
-   "address": "https://catalog.sbcc.edu/sel/career-skills",
-   "where": "catalog",
-   "method": "subject heading",
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI CISV NC001 Installing and Configuring Windows Desktop",
    "found_on": "2026-11-27",
-   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
-   "run": "45625259489"
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 100,
+   "replaced": {
+    "heading": "Computer Information Systems",
+    "heading_printed": "Computer Information Systems",
+    "rule": "index",
+    "address": "https://catalog.sbcc.edu/sel/career-skills",
+    "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
+    "found_on": "2026-11-27"
+   }
   },
   {
    "code": "CMPW",
-   "heading": "Computer Applications",
-   "heading_printed": "Computer Applications",
+   "heading": "Computer Applications Workforce",
+   "heading_printed": "Computer Applications Workforce",
    "rule": "index",
    "codes": [
     "CMPW"
    ],
    "candidate": null,
-   "address": "https://catalog.sbcc.edu/sel/career-skills",
-   "where": "catalog",
-   "method": "subject heading",
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI CMPW NC001 Typing Keyboarding (Bilingual) (53 courses)",
    "found_on": "2026-11-27",
-   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
-   "run": "45625259489"
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 100,
+   "replaced": {
+    "heading": "Computer Applications",
+    "heading_printed": "Computer Applications",
+    "rule": "index",
+    "address": "https://catalog.sbcc.edu/sel/career-skills",
+    "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
+    "found_on": "2026-11-27"
+   }
   },
   {
    "code": "CNA",
@@ -601,19 +663,28 @@
   },
   {
    "code": "CNEW",
-   "heading": "Computer Network",
-   "heading_printed": "Computer Network",
+   "heading": "Computer Networking Workforce",
+   "heading_printed": "Computer Networking Workforce",
    "rule": "index",
    "codes": [
     "CNEW"
    ],
    "candidate": null,
-   "address": "https://catalog.sbcc.edu/sel/career-skills",
-   "where": "catalog",
-   "method": "subject heading",
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI CNEW NC070 Introduction to Handheld Devices",
    "found_on": "2026-11-27",
-   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
-   "run": "45625259489"
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 100,
+   "replaced": {
+    "heading": "Computer Network",
+    "heading_printed": "Computer Network",
+    "rule": "index",
+    "address": "https://catalog.sbcc.edu/sel/career-skills",
+    "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
+    "found_on": "2026-11-27"
+   }
   },
   {
    "code": "COMM",
@@ -649,83 +720,128 @@
   },
   {
    "code": "COMW",
-   "heading": "Communication",
-   "heading_printed": "Communication",
+   "heading": "Communication Workforce",
+   "heading_printed": "Communication Workforce",
    "rule": "index",
    "codes": [
     "COMW"
    ],
    "candidate": null,
-   "address": "https://catalog.sbcc.edu/sel/career-skills",
-   "where": "catalog",
-   "method": "subject heading",
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI COMW NC001 Building an Equity Mindset",
    "found_on": "2026-11-27",
-   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
-   "run": "45625259489"
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 100,
+   "replaced": {
+    "heading": "Communication",
+    "heading_printed": "Communication",
+    "rule": "index",
+    "address": "https://catalog.sbcc.edu/sel/career-skills",
+    "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
+    "found_on": "2026-11-27"
+   }
   },
   {
    "code": "CRAO",
-   "heading": "Creative Art Courses",
-   "heading_printed": "Creative Art Courses",
+   "heading": "Creative Arts Older Adults",
+   "heading_printed": "Creative Arts Older Adults",
    "rule": "index",
    "codes": [
     "CRAO"
    ],
    "candidate": null,
-   "address": "https://catalog.sbcc.edu/sel/older-adults/",
-   "where": "catalog",
-   "method": "subject heading",
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI CRAO NC101 Beginning Oil Painting: For Older Adults (68 courses)",
    "found_on": "2026-11-27",
-   "found_by": "COBIx",
-   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch3.csv"
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 100,
+   "replaced": {
+    "heading": "Creative Art Courses",
+    "heading_printed": "Creative Art Courses",
+    "rule": "index",
+    "address": "https://catalog.sbcc.edu/sel/older-adults/",
+    "found_by": "COBIx",
+    "found_on": "2026-11-27"
+   }
   },
   {
    "code": "CREO",
-   "heading": "Creative English Courses",
-   "heading_printed": "Creative English Courses",
+   "heading": "Creative Writing Older Adults",
+   "heading_printed": "Creative Writing Older Adults",
    "rule": "index",
    "codes": [
     "CREO"
    ],
    "candidate": null,
-   "address": "https://catalog.sbcc.edu/sel/older-adults/",
-   "where": "catalog",
-   "method": "subject heading",
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI CREO NC001 Poetry Workshop",
    "found_on": "2026-11-27",
-   "found_by": "COBIx",
-   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch3.csv"
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 100,
+   "replaced": {
+    "heading": "Creative English Courses",
+    "heading_printed": "Creative English Courses",
+    "rule": "index",
+    "address": "https://catalog.sbcc.edu/sel/older-adults/",
+    "found_by": "COBIx",
+    "found_on": "2026-11-27"
+   }
   },
   {
    "code": "CRMO",
-   "heading": "Creative Music Courses",
-   "heading_printed": "Creative Music Courses",
+   "heading": "Creative Music Older Adults",
+   "heading_printed": "Creative Music Older Adults",
    "rule": "index",
    "codes": [
     "CRMO"
    ],
    "candidate": null,
-   "address": "https://catalog.sbcc.edu/sel/older-adults/",
-   "where": "catalog",
-   "method": "subject heading",
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI CRMO NC005 Choral Singing: For Older Adults",
    "found_on": "2026-11-27",
-   "found_by": "COBIx",
-   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch3.csv"
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 100,
+   "replaced": {
+    "heading": "Creative Music Courses",
+    "heading_printed": "Creative Music Courses",
+    "rule": "index",
+    "address": "https://catalog.sbcc.edu/sel/older-adults/",
+    "found_by": "COBIx",
+    "found_on": "2026-11-27"
+   }
   },
   {
    "code": "CRTO",
-   "heading": "Creative Theatre Courses",
-   "heading_printed": "Creative Theatre Courses",
+   "heading": "Creative Theater Older Adults",
+   "heading_printed": "Creative Theater Older Adults",
    "rule": "index",
    "codes": [
     "CRTO"
    ],
    "candidate": null,
-   "address": "https://catalog.sbcc.edu/sel/older-adults/",
-   "where": "catalog",
-   "method": "subject heading",
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI CRTO NC009 Acting For Older Adults",
    "found_on": "2026-11-27",
-   "found_by": "COBIx",
-   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch3.csv"
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 100,
+   "replaced": {
+    "heading": "Creative Theatre Courses",
+    "heading_printed": "Creative Theatre Courses",
+    "rule": "index",
+    "address": "https://catalog.sbcc.edu/sel/older-adults/",
+    "found_by": "COBIx",
+    "found_on": "2026-11-27"
+   }
   },
   {
    "code": "CS",
@@ -777,19 +893,28 @@
   },
   {
    "code": "CTV",
-   "heading": "Construction Technology",
-   "heading_printed": "Construction Technology",
+   "heading": "Construction Technology Vocational",
+   "heading_printed": "Construction Technology Vocational",
    "rule": "index",
    "codes": [
     "CTV"
    ],
    "candidate": null,
-   "address": "https://catalog.sbcc.edu/sel/career-skills",
-   "where": "catalog",
-   "method": "subject heading",
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI CTV NC001 Construction Framing",
    "found_on": "2026-11-27",
-   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
-   "run": "45625259489"
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 100,
+   "replaced": {
+    "heading": "Construction Technology",
+    "heading_printed": "Construction Technology",
+    "rule": "index",
+    "address": "https://catalog.sbcc.edu/sel/career-skills",
+    "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
+    "found_on": "2026-11-27"
+   }
   },
   {
    "code": "DRFT",
@@ -841,19 +966,28 @@
   },
   {
    "code": "ECEP",
-   "heading": "Parenting",
-   "heading_printed": "Parenting",
+   "heading": "Early Childhood Education Parenting",
+   "heading_printed": "Early Childhood Education Parenting",
    "rule": "index",
    "codes": [
     "ECEP"
    ],
    "candidate": null,
-   "address": "https://catalog.sbcc.edu/sel/parenting/",
-   "where": "catalog",
-   "method": "subject heading",
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI ECEP NC008 Preparing for Healthy Childbirth",
    "found_on": "2026-11-27",
-   "found_by": "COBIx",
-   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch3.csv"
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 100,
+   "replaced": {
+    "heading": "Parenting",
+    "heading_printed": "Parenting",
+    "rule": "index",
+    "address": "https://catalog.sbcc.edu/sel/parenting/",
+    "found_by": "COBIx",
+    "found_on": "2026-11-27"
+   }
   },
   {
    "code": "ECON",
@@ -905,19 +1039,28 @@
   },
   {
    "code": "EHV",
-   "heading": "Environmental Horticulture",
-   "heading_printed": "Environmental Horticulture",
+   "heading": "Environmental Horticulture Vocational",
+   "heading_printed": "Environmental Horticulture Vocational",
    "rule": "index",
    "codes": [
     "EHV"
    ],
    "candidate": null,
-   "address": "https://catalog.sbcc.edu/sel/career-skills",
-   "where": "catalog",
-   "method": "subject heading",
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI EHV NC001 Green Gardener Module 1",
    "found_on": "2026-11-27",
-   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
-   "run": "45625259489"
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 100,
+   "replaced": {
+    "heading": "Environmental Horticulture",
+    "heading_printed": "Environmental Horticulture",
+    "rule": "index",
+    "address": "https://catalog.sbcc.edu/sel/career-skills",
+    "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
+    "found_on": "2026-11-27"
+   }
   },
   {
    "code": "EMT",
@@ -937,19 +1080,28 @@
   },
   {
    "code": "EMTV",
-   "heading": "Emergency Medical Tech",
-   "heading_printed": "Emergency Medical Tech",
+   "heading": "Emergency Medical Technician Vocational",
+   "heading_printed": "Emergency Medical Technician Vocational",
    "rule": "index",
    "codes": [
     "EMTV"
    ],
    "candidate": null,
-   "address": "https://catalog.sbcc.edu/sel/career-skills",
-   "where": "catalog",
-   "method": "subject heading",
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI EMTV NC111 Emergency Medical Technician-Basic: Recertification",
    "found_on": "2026-11-27",
-   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
-   "run": "45625259489"
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 100,
+   "replaced": {
+    "heading": "Emergency Medical Tech",
+    "heading_printed": "Emergency Medical Tech",
+    "rule": "index",
+    "address": "https://catalog.sbcc.edu/sel/career-skills",
+    "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
+    "found_on": "2026-11-27"
+   }
   },
   {
    "code": "ENG",
@@ -1046,6 +1198,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45625259489)",
    "run": "45625259489"
+  },
+  {
+   "code": "ES",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "coci",
+   "codes": [
+    "ES"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Ethnic Studies",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "ESL",
@@ -1161,35 +1330,53 @@
   },
   {
    "code": "GDPW",
-   "heading": "Graphic Design",
-   "heading_printed": "Graphic Design",
+   "heading": "Graphic Design and Production Workforce",
+   "heading_printed": "Graphic Design and Production Workforce",
    "rule": "index",
    "codes": [
     "GDPW"
    ],
    "candidate": null,
-   "address": "https://catalog.sbcc.edu/sel/career-skills",
-   "where": "catalog",
-   "method": "subject heading",
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI GDPW NC001 Digital Design Techniques",
    "found_on": "2026-11-27",
-   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
-   "run": "45625259489"
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 100,
+   "replaced": {
+    "heading": "Graphic Design",
+    "heading_printed": "Graphic Design",
+    "rule": "index",
+    "address": "https://catalog.sbcc.edu/sel/career-skills",
+    "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
+    "found_on": "2026-11-27"
+   }
   },
   {
    "code": "GEDB",
-   "heading": "GED (Bilingual)",
-   "heading_printed": "GED (Bilingual)",
+   "heading": "GED Bilingual",
+   "heading_printed": "GED Bilingual",
    "rule": "index",
    "codes": [
     "GEDB"
    ],
    "candidate": null,
-   "address": "https://catalog.sbcc.edu/sel/ahs-ged/",
-   "where": "catalog",
-   "method": "subject heading",
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI GEDB NC060 Bilingual GED Reading",
    "found_on": "2026-11-27",
-   "found_by": "COBIx",
-   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch3.csv"
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 100,
+   "replaced": {
+    "heading": "GED (Bilingual)",
+    "heading_printed": "GED (Bilingual)",
+    "rule": "index",
+    "address": "https://catalog.sbcc.edu/sel/ahs-ged/",
+    "found_by": "COBIx",
+    "found_on": "2026-11-27"
+   }
   },
   {
    "code": "GEOG",
@@ -1369,19 +1556,28 @@
   },
   {
    "code": "IBW",
-   "heading": "International Business",
-   "heading_printed": "International Business",
+   "heading": "International Business Workforce",
+   "heading_printed": "International Business Workforce",
    "rule": "index",
    "codes": [
     "IBW"
    ],
    "candidate": null,
-   "address": "https://catalog.sbcc.edu/sel/career-skills",
-   "where": "catalog",
-   "method": "subject heading",
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI IBW NC001 Domestic and Global Issues in Employment Law",
    "found_on": "2026-11-27",
-   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
-   "run": "45625259489"
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 100,
+   "replaced": {
+    "heading": "International Business",
+    "heading_printed": "International Business",
+    "rule": "index",
+    "address": "https://catalog.sbcc.edu/sel/career-skills",
+    "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
+    "found_on": "2026-11-27"
+   }
   },
   {
    "code": "ID",
@@ -1448,6 +1644,40 @@
    "run": "45625259489"
   },
   {
+   "code": "KOR",
+   "heading": "Korean",
+   "heading_printed": "Korean",
+   "rule": "coci",
+   "codes": [
+    "KOR"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Korean",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
+  },
+  {
+   "code": "LATN",
+   "heading": "Latin",
+   "heading_printed": "Latin",
+   "rule": "coci",
+   "codes": [
+    "LATN"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Latin",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 95
+  },
+  {
    "code": "LIBR",
    "heading": "Library",
    "heading_printed": "Library",
@@ -1465,19 +1695,28 @@
   },
   {
    "code": "LIBW",
-   "heading": "Library",
-   "heading_printed": "Library",
+   "heading": "Library Workforce",
+   "heading_printed": "Library Workforce",
    "rule": "index",
    "codes": [
     "LIBW"
    ],
    "candidate": null,
-   "address": "https://catalog.sbcc.edu/sel/career-skills",
-   "where": "catalog",
-   "method": "subject heading",
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI LIBW NC001 Online Research Skills",
    "found_on": "2026-11-27",
-   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
-   "run": "45625259489"
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 100,
+   "replaced": {
+    "heading": "Library",
+    "heading_printed": "Library",
+    "rule": "index",
+    "address": "https://catalog.sbcc.edu/sel/career-skills",
+    "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
+    "found_on": "2026-11-27"
+   }
   },
   {
    "code": "MAT",
@@ -1513,19 +1752,28 @@
   },
   {
    "code": "MATW",
-   "heading": "Multimedia",
-   "heading_printed": "Multimedia",
+   "heading": "Multimedia Arts and Technologies Workforce",
+   "heading_printed": "Multimedia Arts and Technologies Workforce",
    "rule": "index",
    "codes": [
     "MATW"
    ],
    "candidate": null,
-   "address": "https://catalog.sbcc.edu/sel/career-skills",
-   "where": "catalog",
-   "method": "subject heading",
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI MATW NC001 Introduction to Dreamweaver",
    "found_on": "2026-11-27",
-   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
-   "run": "45625259489"
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 100,
+   "replaced": {
+    "heading": "Multimedia",
+    "heading_printed": "Multimedia",
+    "rule": "index",
+    "address": "https://catalog.sbcc.edu/sel/career-skills",
+    "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
+    "found_on": "2026-11-27"
+   }
   },
   {
    "code": "MDT",
@@ -1577,19 +1825,28 @@
   },
   {
    "code": "MKTW",
-   "heading": "Marketing",
-   "heading_printed": "Marketing",
+   "heading": "Marketing Workforce",
+   "heading_printed": "Marketing Workforce",
    "rule": "index",
    "codes": [
     "MKTW"
    ],
    "candidate": null,
-   "address": "https://catalog.sbcc.edu/sel/career-skills",
-   "where": "catalog",
-   "method": "subject heading",
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI MKTW NC001 Marketing Fundamentals",
    "found_on": "2026-11-27",
-   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
-   "run": "45625259489"
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 100,
+   "replaced": {
+    "heading": "Marketing",
+    "heading_printed": "Marketing",
+    "rule": "index",
+    "address": "https://catalog.sbcc.edu/sel/career-skills",
+    "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
+    "found_on": "2026-11-27"
+   }
   },
   {
    "code": "MUS",
@@ -1673,19 +1930,28 @@
   },
   {
    "code": "PDW",
-   "heading": "Personal Development",
-   "heading_printed": "Personal Development",
+   "heading": "Personal Development Workforce",
+   "heading_printed": "Personal Development Workforce",
    "rule": "index",
    "codes": [
     "PDW"
    ],
    "candidate": null,
-   "address": "https://catalog.sbcc.edu/sel/career-skills",
-   "where": "catalog",
-   "method": "subject heading",
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI PDW NC001 Personalized Career Planning",
    "found_on": "2026-11-27",
-   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
-   "run": "45625259489"
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 100,
+   "replaced": {
+    "heading": "Personal Development",
+    "heading_printed": "Personal Development",
+    "rule": "index",
+    "address": "https://catalog.sbcc.edu/sel/career-skills",
+    "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
+    "found_on": "2026-11-27"
+   }
   },
   {
    "code": "PE",
@@ -1737,19 +2003,28 @@
   },
   {
    "code": "PHOW",
-   "heading": "Photography",
-   "heading_printed": "Photography",
+   "heading": "Photography Workforce",
+   "heading_printed": "Photography Workforce",
    "rule": "index",
    "codes": [
     "PHOW"
    ],
    "candidate": null,
-   "address": "https://catalog.sbcc.edu/sel/career-skills",
-   "where": "catalog",
-   "method": "subject heading",
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI PHOW NC001 Digital Cameras, Digital Photos",
    "found_on": "2026-11-27",
-   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
-   "run": "45625259489"
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 100,
+   "replaced": {
+    "heading": "Photography",
+    "heading_printed": "Photography",
+    "rule": "index",
+    "address": "https://catalog.sbcc.edu/sel/career-skills",
+    "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
+    "found_on": "2026-11-27"
+   }
   },
   {
    "code": "PHSC",
@@ -1817,19 +2092,28 @@
   },
   {
    "code": "PROW",
-   "heading": "Professional Development",
-   "heading_printed": "Professional Development",
+   "heading": "Professional Development Workforce",
+   "heading_printed": "Professional Development Workforce",
    "rule": "index",
    "codes": [
     "PROW"
    ],
    "candidate": null,
-   "address": "https://catalog.sbcc.edu/sel/career-skills",
-   "where": "catalog",
-   "method": "subject heading",
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI PROW NC002 Business Writing in the Technology Age (51 courses)",
    "found_on": "2026-11-27",
-   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
-   "run": "45625259489"
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 100,
+   "replaced": {
+    "heading": "Professional Development",
+    "heading_printed": "Professional Development",
+    "rule": "index",
+    "address": "https://catalog.sbcc.edu/sel/career-skills",
+    "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
+    "found_on": "2026-11-27"
+   }
   },
   {
    "code": "PSY",
@@ -1897,19 +2181,28 @@
   },
   {
    "code": "SLFO",
-   "heading": "Self-Management Courses",
-   "heading_printed": "Self-Management Courses",
+   "heading": "Self-Development Older Adults",
+   "heading_printed": "Self-Development Older Adults",
    "rule": "index",
    "codes": [
     "SLFO"
    ],
    "candidate": null,
-   "address": "https://catalog.sbcc.edu/sel/older-adults/",
-   "where": "catalog",
-   "method": "subject heading",
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI SLFO NC003 Nature and Self-Healing - Beginning: For Older Adults (44 courses)",
    "found_on": "2026-11-27",
-   "found_by": "COBIx",
-   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch3.csv"
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 100,
+   "replaced": {
+    "heading": "Self-Management Courses",
+    "heading_printed": "Self-Management Courses",
+    "rule": "index",
+    "address": "https://catalog.sbcc.edu/sel/older-adults/",
+    "found_by": "COBIx",
+    "found_on": "2026-11-27"
+   }
   },
   {
    "code": "SOC",
@@ -2057,19 +2350,28 @@
   },
   {
    "code": "WELO",
-   "heading": "Wellness",
-   "heading_printed": "Wellness",
+   "heading": "Wellness Older Adults",
+   "heading_printed": "Wellness Older Adults",
    "rule": "index",
    "codes": [
     "WELO"
    ],
    "candidate": null,
-   "address": "https://catalog.sbcc.edu/sel/older-adults/",
-   "where": "catalog",
-   "method": "subject heading",
+   "address": null,
+   "where": "person",
+   "method": "named by Sam Lee: COCI WELO NC009 Nutrition for Longevity",
    "found_on": "2026-11-27",
-   "found_by": "COBIx",
-   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch3.csv"
+   "found_by": "Sam Lee",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 100,
+   "replaced": {
+    "heading": "Wellness",
+    "heading_printed": "Wellness",
+    "rule": "index",
+    "address": "https://catalog.sbcc.edu/sel/older-adults/",
+    "found_by": "COBIx",
+    "found_on": "2026-11-27"
+   }
   },
   {
    "code": "WEXP",
@@ -2120,6 +2422,6 @@
    "run": "45625259489"
   }
  ],
- "subjects": 126,
- "with_heading": 126
+ "subjects": 130,
+ "with_heading": 130
 }

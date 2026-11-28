@@ -27,6 +27,23 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "https://ltcc.elumenapp.com/catalog/2026-2027/department/art",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Art",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 94
+  },
+  {
    "code": "ASL",
    "heading": "American Sign Language",
    "heading_printed": "American Sign Language",
@@ -139,6 +156,23 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "CMU",
+   "heading": "Commercial Music",
+   "heading_printed": "Commercial Music",
+   "rule": "coci",
+   "codes": [
+    "CMU"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 131A Special Topics: Beginning Audio Editing",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
+  },
+  {
    "code": "CNT",
    "heading": "Construction Trades",
    "heading_printed": "Construction Trades",
@@ -169,6 +203,22 @@
    "found_on": "2026-11-25",
    "found_by": "Subjects",
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "COMM",
+   "heading": "Public Speaking",
+   "heading_printed": "Public Speaking",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://ltcc.elumenapp.com/catalog/2026-2027/department/communications",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: C1000 Introduction to Public Speaking",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv"
   },
   {
    "code": "COU",
@@ -297,6 +347,22 @@
    "found_on": "2026-11-25",
    "found_by": "Subjects",
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://ltcc.elumenapp.com/catalog/2026-2027/department/english",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: English",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv"
   },
   {
    "code": "ESL",
@@ -523,6 +589,22 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "INT",
+   "heading": "Interdisciplinary Studies",
+   "heading_printed": "Interdisciplinary Studies",
+   "rule": "index",
+   "codes": [
+    "INT"
+   ],
+   "candidate": null,
+   "address": "https://ltcc.elumenapp.com/catalog/2026-2027/department/interdisciplinary-studies",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Architectural Interiors",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv"
+  },
+  {
    "code": "JPN",
    "heading": "Japanese",
    "heading_printed": "Japanese",
@@ -731,6 +813,22 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://ltcc.elumenapp.com/catalog/2026-2027/department/political-science",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Political Science",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv"
+  },
+  {
    "code": "PSY",
    "heading": "Psychology",
    "heading_printed": "Psychology",
@@ -745,6 +843,22 @@
    "found_on": "2026-11-25",
    "found_by": "Subjects",
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "https://ltcc.elumenapp.com/catalog/2026-2027/department/psychology",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Psychology",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv"
   },
   {
    "code": "REL",
@@ -843,6 +957,22 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://ltcc.elumenapp.com/catalog/2026-2027/department/mathematics",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Statistics",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv"
+  },
+  {
    "code": "THE",
    "heading": "Theatre Arts",
    "heading_printed": "Theatre Arts",
@@ -891,6 +1021,6 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   }
  ],
- "subjects": 55,
- "with_heading": 55
+ "subjects": 63,
+ "with_heading": 63
 }

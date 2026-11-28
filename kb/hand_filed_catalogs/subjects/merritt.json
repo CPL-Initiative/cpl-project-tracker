@@ -57,6 +57,23 @@
    "run": "45630333350"
   },
   {
+   "code": "ART",
+   "heading": "Art Fundamentals",
+   "heading_printed": "Art Fundamentals",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Art Fundamentals",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 97
+  },
+  {
    "code": "ASAME",
    "heading": "Asian & Asian American Studies",
    "heading_printed": "Asian & Asian American Studies",
@@ -137,6 +154,23 @@
    "run": "45630333350"
   },
   {
+   "code": "BLDGM",
+   "heading": "Maintenance Systems",
+   "heading_printed": "Maintenance Systems",
+   "rule": "coci",
+   "codes": [
+    "BLDGM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 248NA Introduction to Maintenance Systems",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
+  },
+  {
    "code": "BUS",
    "heading": "Business",
    "heading_printed": "Business",
@@ -183,6 +217,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45630333350)",
    "run": "45630333350"
+  },
+  {
+   "code": "CHIN",
+   "heading": "Chinese",
+   "heading_printed": "Chinese",
+   "rule": "coci",
+   "codes": [
+    "CHIN"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Chinese",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 94
   },
   {
    "code": "CIS",
@@ -297,6 +348,40 @@
    "run": "45630333350"
   },
   {
+   "code": "EDT",
+   "heading": "Engineering Design Technology",
+   "heading_printed": "Engineering Design Technology",
+   "rule": "coci",
+   "codes": [
+    "EDT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Engineering Design Technology",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
+   "code": "EDUC",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "coci",
+   "codes": [
+    "EDUC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Education",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "EMT",
    "heading": "Emergency Medical Technician",
    "heading_printed": "Emergency Medical Technician",
@@ -393,6 +478,23 @@
    "run": "45630333350"
   },
   {
+   "code": "FREN",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "coci",
+   "codes": [
+    "FREN"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: French",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 94
+  },
+  {
    "code": "GEOG",
    "heading": "Geography",
    "heading_printed": "Geography",
@@ -487,6 +589,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45630333350)",
    "run": "45630333350"
+  },
+  {
+   "code": "HUSV",
+   "heading": "Human Services",
+   "heading_printed": "Human Services",
+   "rule": "coci",
+   "codes": [
+    "HUSV"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Human Services",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 95
   },
   {
    "code": "KIN",
@@ -601,6 +720,23 @@
    "run": "45630333350"
   },
   {
+   "code": "MUSIC",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "coci",
+   "codes": [
+    "MUSIC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Music",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
+  },
+  {
    "code": "NATAM",
    "heading": "Native American Studies",
    "heading_printed": "Native American Studies",
@@ -697,6 +833,23 @@
    "run": "45630333350"
   },
   {
+   "code": "PHYSC",
+   "heading": "Physical Science",
+   "heading_printed": "Physical Science",
+   "rule": "coci",
+   "codes": [
+    "PHYSC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 48 Philosophy (COCI title appears to be a bad CB02); PHYSC 48 is listed as Selected Topics in Physical Science on Merritt-to-CSU articulation Not Physics (PHYS is already titled Physics). Do not fold to PHIL: the PHYSC 48 official course is Selected Topics in Physical Science, and PHIL already has its own series (1, 2, 10, 49).",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 90
+  },
+  {
    "code": "POLS",
    "heading": "Political Science",
    "heading_printed": "Political Science",
@@ -777,6 +930,40 @@
    "run": "45630333350"
   },
   {
+   "code": "RADTE",
+   "heading": "Radiologic Technology",
+   "heading_printed": "Radiologic Technology",
+   "rule": "coci",
+   "codes": [
+    "RADTE"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 009A Radiologic Science; 10 Radiologic Science",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
+   "code": "RECSE",
+   "heading": "Recreation",
+   "heading_printed": "Recreation",
+   "rule": "coci",
+   "codes": [
+    "RECSE"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Recreation",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "RLEST",
    "heading": "Real Estate",
    "heading_printed": "Real Estate",
@@ -839,8 +1026,25 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45630333350)",
    "run": "45630333350"
+  },
+  {
+   "code": "V/NUR",
+   "heading": "Nursing",
+   "heading_printed": "Nursing",
+   "rule": "coci",
+   "codes": [
+    "V/NUR"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Nursing",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   }
  ],
- "subjects": 52,
- "with_heading": 52
+ "subjects": 64,
+ "with_heading": 64
 }

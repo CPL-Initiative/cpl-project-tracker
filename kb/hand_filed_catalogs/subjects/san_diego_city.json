@@ -169,6 +169,23 @@
    "run": "45629512231"
   },
   {
+   "code": "ARTG",
+   "heading": "Graphic Design",
+   "heading_printed": "Graphic Design",
+   "rule": "coci",
+   "codes": [
+    "ARTG"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 100 Basic Graphic Design; 106 Typography; corrected during QA (was: Art: Gallery and Professional Practices)",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
+  },
+  {
    "code": "ARTH",
    "heading": "Art History",
    "heading_printed": "Art History",
@@ -377,6 +394,23 @@
    "run": "45629512231"
   },
   {
+   "code": "CONS",
+   "heading": "Construction",
+   "heading_printed": "Construction",
+   "rule": "coci",
+   "codes": [
+    "CONS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Construction",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "COSM",
    "heading": "Cosmetology",
    "heading_printed": "Cosmetology",
@@ -439,6 +473,40 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45629512231)",
    "run": "45629512231"
+  },
+  {
+   "code": "DJRN",
+   "heading": "Digital Journalism",
+   "heading_printed": "Digital Journalism",
+   "rule": "coci",
+   "codes": [
+    "DJRN"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 100 Mass Media in the Digital Age; 200 Newswriting for Multimedia GAI agreed. Historical prefix after the later FJMP merger is a note only.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 94
+  },
+  {
+   "code": "DMPR",
+   "heading": "Digital Media Production",
+   "heading_printed": "Digital Media Production",
+   "rule": "coci",
+   "codes": [
+    "DMPR"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 154 Game Design; 155 Advanced Nonlinear Editing GAI agreed.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 92
   },
   {
    "code": "DRAM",
@@ -537,6 +605,22 @@
    "run": "45629512231"
   },
   {
+   "code": "EGEE",
+   "heading": "Energy and Geo-Environmental Engineering",
+   "heading_printed": "Energy and Geo-Environmental Engineering",
+   "rule": "index",
+   "codes": [
+    "EGEE"
+   ],
+   "candidate": null,
+   "address": "https://www.sdcity.edu/academics/schools-programs/business-it-cosmo/energy/index.aspx",
+   "where": "web",
+   "method": "COBI overnight review, approved by Sam Lee:  College program page is titled Energy and Geo-Environmental Engineering (EGEE) and lists the same courses (Building Science Principles, Air Quality Management, Energy Industry Principles, Solar, Energy Storage). GAI's expansion is confirmed, not invented.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
    "code": "ELAC",
    "heading": "English Language Acquisition",
    "heading_printed": "English Language Acquisition",
@@ -615,6 +699,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45629512231)",
    "run": "45629512231"
+  },
+  {
+   "code": "ENGN",
+   "heading": "Engineering Technology",
+   "heading_printed": "Engineering Technology",
+   "rule": "coci",
+   "codes": [
+    "ENGN"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Engineering Technology",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 96
   },
   {
    "code": "EXSC",
@@ -713,6 +814,23 @@
    "run": "45629512231"
   },
   {
+   "code": "GERM",
+   "heading": "German",
+   "heading_printed": "German",
+   "rule": "coci",
+   "codes": [
+    "GERM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: German",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
+  },
+  {
    "code": "GISG",
    "heading": "Geographic Information Systems",
    "heading_printed": "Geographic Information Systems",
@@ -759,6 +877,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45629512231)",
    "run": "45629512231"
+  },
+  {
+   "code": "HEOP",
+   "heading": "Construction Equipment Operator",
+   "heading_printed": "Construction Equipment Operator",
+   "rule": "coci",
+   "codes": [
+    "HEOP"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 301A Construction Equipment Operator IA; 301B Construction Equipment Operator IB",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
   },
   {
    "code": "HIST",
@@ -1241,6 +1376,74 @@
    "run": "45629512231"
   },
   {
+   "code": "RADT",
+   "heading": "Radiologic Technology",
+   "heading_printed": "Radiologic Technology",
+   "rule": "coci",
+   "codes": [
+    "RADT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 70L Orientation to X-Ray Equipment",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
+   "code": "REAL",
+   "heading": "Real Estate",
+   "heading_printed": "Real Estate",
+   "rule": "coci",
+   "codes": [
+    "REAL"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Real Estate",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
+  },
+  {
+   "code": "RTVF",
+   "heading": "Radio, Television and Film",
+   "heading_printed": "Radio, Television and Film",
+   "rule": "coci",
+   "codes": [
+    "RTVF"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Radio, Television and Film",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
+   "code": "RUSS",
+   "heading": "Russian",
+   "heading_printed": "Russian",
+   "rule": "coci",
+   "codes": [
+    "RUSS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Russian",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
    "code": "SDGE",
    "heading": "San Diego Gas and Electric",
    "heading_printed": "San Diego Gas and Electric",
@@ -1337,6 +1540,40 @@
    "run": "45629512231"
   },
   {
+   "code": "TECI",
+   "heading": "Technical Illustration",
+   "heading_printed": "Technical Illustration",
+   "rule": "coci",
+   "codes": [
+    "TECI"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 50 Bridging to Technical Illustration; 101 Basic Technical Illustration",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
+   "code": "TROL",
+   "heading": "Trolley Operations",
+   "heading_printed": "Trolley Operations",
+   "rule": "coci",
+   "codes": [
+    "TROL"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 301 San Diego Trolley Light Rail Vehicle; 302 San Diego Trolley Light Rail Vehicle II",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "WORK",
    "heading": "Work Experience",
    "heading_printed": "Work Experience",
@@ -1353,6 +1590,6 @@
    "run": "45629512231"
   }
  ],
- "subjects": 84,
- "with_heading": 84
+ "subjects": 98,
+ "with_heading": 98
 }

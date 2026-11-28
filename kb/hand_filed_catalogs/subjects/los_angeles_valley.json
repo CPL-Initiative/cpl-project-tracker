@@ -5,8 +5,8 @@
  "source": [
   "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf"
  ],
- "subjects": 101,
- "with_heading": 100,
+ "subjects": 103,
+ "with_heading": 102,
  "rows": [
   {
    "code": "ACAD PR",
@@ -463,6 +463,23 @@
    "run": "45868955654"
   },
   {
+   "code": "CO INFO",
+   "heading": "Computer Information",
+   "heading_printed": "Computer Information",
+   "rule": "coci",
+   "codes": [
+    "CO INFO"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 837 Operating Systems - Intermediate Linux; 838 Operating Systems - Advanced Linux",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "COLLEGE",
    "heading": "College Studies",
    "heading_printed": "College Studies",
@@ -517,6 +534,23 @@
    "found_on": "2026-11-26",
    "found_by": "COBI, a runner read of LACCD's class search (run 45868955654)",
    "run": "45868955654"
+  },
+  {
+   "code": "CO SCI",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "coci",
+   "codes": [
+    "CO SCI"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Computer Science",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
   },
   {
    "code": "COUNSEL",

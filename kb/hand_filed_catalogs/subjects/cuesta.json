@@ -153,6 +153,23 @@
    "run": "45627124597"
   },
   {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 280 Ceramics I: Introduction to Ceramics; 193 Art Special Topic",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "ARTH",
    "heading": "Art History",
    "heading_printed": "Art History",
@@ -1465,6 +1482,6 @@
    "run": "45627124597"
   }
  ],
- "subjects": 91,
- "with_heading": 91
+ "subjects": 92,
+ "with_heading": 92
 }

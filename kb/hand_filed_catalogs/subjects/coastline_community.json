@@ -74,6 +74,23 @@
    "run": "45627908005"
   },
   {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Art",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
+  },
+  {
    "code": "ARTH",
    "heading": "Art",
    "heading_printed": "Art",
@@ -298,6 +315,23 @@
    "run": "45627908005"
   },
   {
+   "code": "CST",
+   "heading": "Computer Service Technology",
+   "heading_printed": "Computer Service Technology",
+   "rule": "coci",
+   "codes": [
+    "CST"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: C104 IT Fundamentals Coastline catalog heading for the legacy prefix is Computer Service Technology (CST); courses later moved under already-titled IT (Information Technology). Not Computer Science Technology.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 91
+  },
+  {
    "code": "CYBR",
    "heading": "Cybersecurity",
    "heading_printed": "Cybersecurity",
@@ -312,6 +346,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627908005)",
    "run": "45627908005"
+  },
+  {
+   "code": "DGA",
+   "heading": "Digital Art and Media",
+   "heading_printed": "Digital Art and Media",
+   "rule": "coci",
+   "codes": [
+    "DGA"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: C100 Introduction to Digital Art and Media; C111 3D Animation",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
   },
   {
    "code": "DMC",
@@ -714,6 +765,23 @@
    "run": "45627908005"
   },
   {
+   "code": "LAW",
+   "heading": "Law",
+   "heading_printed": "Law",
+   "rule": "coci",
+   "codes": [
+    "LAW"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Law",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "LIBR",
    "heading": "Library",
    "heading_printed": "Library",
@@ -744,6 +812,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627908005)",
    "run": "45627908005"
+  },
+  {
+   "code": "MCOM",
+   "heading": "Radio, TV, Film",
+   "heading_printed": "Radio, TV, Film",
+   "rule": "coci",
+   "codes": [
+    "MCOM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: C150 Introduction to Radio, TV, Film; C140 Public Relations",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
   },
   {
    "code": "MGMT",
@@ -1066,6 +1151,6 @@
    "run": "45627908005"
   }
  ],
- "subjects": 66,
- "with_heading": 66
+ "subjects": 71,
+ "with_heading": 71
 }

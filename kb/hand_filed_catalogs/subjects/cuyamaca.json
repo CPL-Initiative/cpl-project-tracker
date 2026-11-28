@@ -120,6 +120,23 @@
    "run": "45625259489"
   },
   {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 184 Introduction to Animation; 210 Introduction to Printmaking",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "ARTH",
    "heading": "Art History",
    "heading_printed": "Art History",
@@ -1000,6 +1017,23 @@
    "run": "45625259489"
   },
   {
+   "code": "STEM",
+   "heading": "Science, Technology, Engineering, and Mathematics",
+   "heading_printed": "Science, Technology, Engineering, and Mathematics",
+   "rule": "coci",
+   "codes": [
+    "STEM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 101 Introduction to College Success in STEM",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "SURV",
    "heading": "Surveying",
    "heading_printed": "Surveying",
@@ -1064,6 +1098,6 @@
    "run": "45625259489"
   }
  ],
- "subjects": 62,
- "with_heading": 62
+ "subjects": 64,
+ "with_heading": 64
 }

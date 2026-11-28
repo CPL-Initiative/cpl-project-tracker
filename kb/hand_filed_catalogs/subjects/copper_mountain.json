@@ -74,6 +74,23 @@
    "run": "45629430201"
   },
   {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 003A Introduction to Two-Dimensional Design; 005A Introduction to Figure Drawing",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "ARTH",
    "heading": "Art History",
    "heading_printed": "Art History",
@@ -152,6 +169,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45629430201)",
    "run": "45629430201"
+  },
+  {
+   "code": "BI",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "coci",
+   "codes": [
+    "BI"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Biology",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
   },
   {
    "code": "BIOL",
@@ -842,6 +876,23 @@
    "run": "45629430201"
   },
   {
+   "code": "PS",
+   "heading": "Comparative Government",
+   "heading_printed": "Comparative Government",
+   "rule": "coci",
+   "codes": [
+    "PS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 2 Introduction to Comparative Government; 4 Introduction to International Relations",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "PSYC",
    "heading": "Psychology",
    "heading_printed": "Psychology",
@@ -872,6 +923,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45629430201)",
    "run": "45629430201"
+  },
+  {
+   "code": "SOC",
+   "heading": "Race and Ethnicity",
+   "heading_printed": "Race and Ethnicity",
+   "rule": "coci",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 14 Introduction to Race and Ethnicity; 2 Social Problems",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
   },
   {
    "code": "SOCI",
@@ -1002,6 +1070,57 @@
    "run": "45629430201"
   },
   {
+   "code": "VSM",
+   "heading": "Varsity Sports, Men",
+   "heading_printed": "Varsity Sports, Men",
+   "rule": "coci",
+   "codes": [
+    "VSM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 002C Intercollegiate Basketball Fall - Men; 002D Intercollegiate Basketball Spring - Men GAI preferred hyphens (Varsity Sports - Men). Kept the overnight comma form; style-only change not applied.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 90
+  },
+  {
+   "code": "VSO",
+   "heading": "Varsity Sports, Off-Season",
+   "heading_printed": "Varsity Sports, Off-Season",
+   "rule": "coci",
+   "codes": [
+    "VSO"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 001A Intercollegiate Varsity Sports Pre-Season Conditioning; 003A Intercollegiate Varsity Sports Off-Season Conditioning Same punctuation note as VSM.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 90
+  },
+  {
+   "code": "VSW",
+   "heading": "Varsity Sports, Women",
+   "heading_printed": "Varsity Sports, Women",
+   "rule": "coci",
+   "codes": [
+    "VSW"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 002A Intercollegiate Varsity Sports Pre-Conference Season - Women; 002B Intercollegiate Varsity Sports Conference Season - Women",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 90
+  },
+  {
    "code": "WEG",
    "heading": "Work Experience – General",
    "heading_printed": "Work Experience – General",
@@ -1034,6 +1153,6 @@
    "run": "45629430201"
   }
  ],
- "subjects": 64,
- "with_heading": 64
+ "subjects": 71,
+ "with_heading": 71
 }

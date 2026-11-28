@@ -105,6 +105,23 @@
    "run": "45625529988"
   },
   {
+   "code": "AOD",
+   "heading": "Alcohol and Other Drugs",
+   "heading_printed": "Alcohol and Other Drugs",
+   "rule": "coci",
+   "codes": [
+    "AOD"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 680MB Peer Support Specialist Training II; 700 Peer Support Specialist Training I",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "AQUA",
    "heading": "Aquatics",
    "heading_printed": "Aquatics",
@@ -135,6 +152,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45625529988)",
    "run": "45625529988"
+  },
+  {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 104 Modern Art; 105 Asian Art and Architecture",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
   },
   {
    "code": "ARTH",
@@ -551,6 +585,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45625529988)",
    "run": "45625529988"
+  },
+  {
+   "code": "FILM",
+   "heading": "Film",
+   "heading_printed": "Film",
+   "rule": "coci",
+   "codes": [
+    "FILM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Film",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 94
   },
   {
    "code": "FIRE",
@@ -1017,6 +1068,23 @@
    "run": "45625529988"
   },
   {
+   "code": "SOSC",
+   "heading": "Social Sciences",
+   "heading_printed": "Social Sciences",
+   "rule": "coci",
+   "codes": [
+    "SOSC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 301 Introduction to Addiction Studies; 302 Pharm & Phys Effects of Alcoh",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "SPAN",
    "heading": "Spanish",
    "heading_printed": "Spanish",
@@ -1081,6 +1149,6 @@
    "run": "45625529988"
   }
  ],
- "subjects": 67,
- "with_heading": 67
+ "subjects": 71,
+ "with_heading": 71
 }

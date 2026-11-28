@@ -137,6 +137,23 @@
    "run": "45627124597"
   },
   {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 81 Introduction to Fiber Arts; 50 Beginning Ceramics",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "ARTH",
    "heading": "Art History",
    "heading_printed": "Art History",
@@ -761,6 +778,23 @@
    "run": "45627124597"
   },
   {
+   "code": "HUM",
+   "heading": "Humanities",
+   "heading_printed": "Humanities",
+   "rule": "coci",
+   "codes": [
+    "HUM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 22 Greco-Roman Cultures",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "HVAC",
    "heading": "Heating, Ventilation, and Air Conditioning",
    "heading_printed": "Heating, Ventilation, and Air Conditioning",
@@ -1305,6 +1339,6 @@
    "run": "45627124597"
   }
  ],
- "subjects": 81,
- "with_heading": 81
+ "subjects": 83,
+ "with_heading": 83
 }

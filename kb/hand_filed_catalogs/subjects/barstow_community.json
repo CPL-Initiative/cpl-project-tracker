@@ -191,6 +191,23 @@
    "run": "45627807594"
   },
   {
+   "code": "BARB",
+   "heading": "Barbering",
+   "heading_printed": "Barbering",
+   "rule": "coci",
+   "codes": [
+    "BARB"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Barbering",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 95
+  },
+  {
    "code": "BCTT",
    "heading": "Building Construction Trade Technology",
    "heading_printed": "Building Construction Trade Technology",
@@ -269,6 +286,22 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627807594)",
    "run": "45627807594"
+  },
+  {
+   "code": "CHLD",
+   "heading": "Child Development",
+   "heading_printed": "Child Development",
+   "rule": "index",
+   "codes": [
+    "CHLD"
+   ],
+   "candidate": null,
+   "address": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=137",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Child Development",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv"
   },
   {
    "code": "COMM",
@@ -703,6 +736,23 @@
    "run": "45627807594"
   },
   {
+   "code": "NUAS",
+   "heading": "Nursing Assistant",
+   "heading_printed": "Nursing Assistant",
+   "rule": "coci",
+   "codes": [
+    "NUAS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 10 Nursing Assistant Theory; 11 Nursing Assistant Clinical Lab; 12 Nursing Assistant Skills Lab",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 95
+  },
+  {
    "code": "OCEA",
    "heading": "Oceanography",
    "heading_printed": "Oceanography",
@@ -799,6 +849,22 @@
    "run": "45627807594"
   },
   {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=197",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Political Science",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv"
+  },
+  {
    "code": "PSYC",
    "heading": "Psychology",
    "heading_printed": "Psychology",
@@ -863,6 +929,22 @@
    "run": "45627807594"
   },
   {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=192",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Statistics",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv"
+  },
+  {
    "code": "TART",
    "heading": "Theatre Arts",
    "heading_printed": "Theatre Arts",
@@ -911,6 +993,6 @@
    "run": "45627807594"
   }
  ],
- "subjects": 54,
- "with_heading": 54
+ "subjects": 59,
+ "with_heading": 59
 }

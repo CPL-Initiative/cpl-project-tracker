@@ -3,7 +3,8 @@ Subjects build lists a college by its headings alone (kb/_build_local_subject_ti
 
 WHAT THIS GUARDS:
   (1) a find for a college with no record files one row per code, with its source, where, method, date and finder;
-  (2) a heading already in the record is never replaced, and the find is counted as agreeing or differing;
+  (2) a heading already in the record is never replaced by a machine's find, and the find is counted as agreeing or
+      differing; a person-named row replaces it (S749, (8));
   (3) a find that only repeats its code, or has no title, is not filed;
   (4) a college whose catalog was not read files nothing;
   (5) the Subjects build lists a headings-only college, and never a college with a course file twice;
@@ -121,6 +122,39 @@ with tempfile.TemporaryDirectory() as root:
     check("csv: the find files with its source, date and finder",
           ft.get("address") == "https://beta.example/ftma/" and ft.get("found_on") == "2026-11-25"
           and ft.get("found_by") == "COBIx" and ft.get("method") == "subject heading", ft)
+
+# (8) S749 (Sam, 2026-11-28, "Yes all", on COBIx's #3937): a COBI row read from COCI's course list (title_where coci,
+# confidence under 100) files with the COCI course list as its source, even where its title spells its code; a COBI
+# coci row at 100, or a machine coci row that differs from a filed heading, does not. A person-named row replaces a
+# different filed heading and keeps the one it replaced.
+with tempfile.TemporaryDirectory() as root:
+    F.FOUND = os.path.join(root, "kb", "subject_title_hunt", "found")
+    F.SUBJECTS = os.path.join(root, "kb", "hand_filed_catalogs", "subjects")
+    put(os.path.join(F.SUBJECTS, "beta.json"), {"college": "Beta College", "rows": [
+        {"code": "OLD", "heading": "Old Catalog Name", "rule": "index", "address": "https://beta.example/"},
+        {"code": "CAT", "heading": "Catalog Heading", "rule": "index", "address": "https://beta.example/"}]})
+    csvp = os.path.join(root, "b5.csv")
+    with open(csvp, "w", encoding="utf-8") as f:
+        f.write("college,local_subject_code,local_subject_title,title_source_url,title_where,title_method,searched_on,found_by,confidence\n"
+                "Beta College,ART,Art,,coci,suggested by COBI,2026-11-27,COBI,98\n"
+                "Beta College,AGBUS,Agriculture Business,,coci,suggested by COBI,2026-11-27,COBI,88\n"
+                "Beta College,FULL,Full Marks,,coci,suggested by COBI,2026-11-27,COBI,100\n"
+                "Beta College,CAT,Machine Differs,,coci,suggested by COBI,2026-11-27,COBI,90\n"
+                "Beta College,OLD,Sam's Name,,person,named by Sam Lee,2026-11-27,Sam Lee,100\n")
+    finds, _u = F.read_csv_finds(csvp)
+    r = F.file_doc("beta", finds["beta"], False)
+    with open(os.path.join(F.SUBJECTS, "beta.json"), encoding="utf-8") as f:
+        rows = {x["code"]: x for x in json.load(f)["rows"]}
+    ag = rows.get("AGBUS") or {}
+    check("coci: a COBI row files with the COCI course list as its source and its confidence",
+          ag.get("address") == F.COCI_SOURCE and ag.get("rule") == "coci" and ag.get("confidence") == 88
+          and ag.get("found_by") == "COBI", ag)
+    check("coci: a title that spells its code (ART, Art) files", (rows.get("ART") or {}).get("heading") == "Art", rows.get("ART"))
+    check("coci: a COBI row at 100 is not a coci find", "FULL" not in rows, rows.get("FULL"))
+    check("coci: a machine row never replaces a filed heading", rows["CAT"]["heading"] == "Catalog Heading" and r["differ"] == 1, r)
+    check("person: Sam's name replaces the filed heading and keeps the old one",
+          rows["OLD"]["heading"] == "Sam's Name" and (rows["OLD"].get("replaced") or {}).get("heading") == "Old Catalog Name"
+          and r["replaced"] == 1, rows["OLD"])
 
 for n, ok, why in results:
     print(("PASS " if ok else "FAIL ") + n + ("" if ok else "\n     " + why))

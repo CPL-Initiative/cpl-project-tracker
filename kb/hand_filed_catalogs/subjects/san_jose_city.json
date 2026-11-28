@@ -196,6 +196,23 @@
    "run": "45623798209"
   },
   {
+   "code": "ART (ART)",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART (ART)"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 24 Beginning Drawing; 71 Introduction to Media Arts COCI \"NAME (NAME)\" malformation. No bare ART code exists at SJCC, so this is not a fold. ARTH is already titled Art but is a different code; do not fold into ARTH.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 92
+  },
+  {
    "code": "ARTH",
    "heading": "Art",
    "heading_printed": "Art",
@@ -242,6 +259,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45623798209)",
    "run": "45623798209"
+  },
+  {
+   "code": "BIOLOGY",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "coci",
+   "codes": [
+    "BIOLOGY"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 98 Directed Study",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "BROAD",
@@ -402,6 +436,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45623798209)",
    "run": "45623798209"
+  },
+  {
+   "code": "DANCE (DANCE)",
+   "heading": "Dance",
+   "heading_printed": "Dance",
+   "rule": "coci",
+   "codes": [
+    "DANCE (DANCE)"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 10 Ballet, Beginning 1; 010B Ballet, Beginning 2 Same NAME (NAME) malformation. No bare DANCE code exists at SJCC, so this is not a fold.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 92
   },
   {
    "code": "DENT",
@@ -1044,6 +1095,23 @@
    "run": "45623798209"
   },
   {
+   "code": "MUSIC (MUSIC)",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "coci",
+   "codes": [
+    "MUSIC (MUSIC)"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 32 Introduction to Chicanx/Latinx Music in the U.S.; 040A Introduction to Digital Audio Production I Same NAME (NAME) malformation. No bare MUSIC code exists at SJCC, so this is not a fold.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 90
+  },
+  {
    "code": "OCEAN",
    "heading": "Oceanography",
    "heading_printed": "Oceanography",
@@ -1332,6 +1400,6 @@
    "run": "45623798209"
   }
  ],
- "subjects": 78,
- "with_heading": 78
+ "subjects": 82,
+ "with_heading": 82
 }

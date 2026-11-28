@@ -231,6 +231,23 @@
    "run": "45626788039"
   },
   {
+   "code": "AJ",
+   "heading": "Administration of Justice",
+   "heading_printed": "Administration of Justice",
+   "rule": "coci",
+   "codes": [
+    "AJ"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Administration of Justice",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
    "code": "ANTH",
    "heading": "Anthropology",
    "heading_printed": "Anthropology",
@@ -261,6 +278,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626788039)",
    "run": "45626788039"
+  },
+  {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 19 Introduction to Painting; 34 Introduction to Digital Art & Media",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "ARTH",
@@ -839,6 +873,23 @@
    "run": "45626788039"
   },
   {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "coci",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a college naming pattern; COCI course titles: C1000 Academic Reading and Writing; C1000E Academic Reading and Writing",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 84
+  },
+  {
    "code": "ENGR",
    "heading": "Engineering, General",
    "heading_printed": "Engineering, General",
@@ -949,6 +1000,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626788039)",
    "run": "45626788039"
+  },
+  {
+   "code": "FILM",
+   "heading": "Film Production",
+   "heading_printed": "Film Production",
+   "rule": "coci",
+   "codes": [
+    "FILM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Film Production",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 96
   },
   {
    "code": "FIRE",
@@ -1077,6 +1145,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626788039)",
    "run": "45626788039"
+  },
+  {
+   "code": "HEALTH SCIENCES",
+   "heading": "Health Sciences",
+   "heading_printed": "Health Sciences",
+   "rule": "coci",
+   "codes": [
+    "HEALTH SCIENCES"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 68 Pharmacy Technician",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "HIST",
@@ -1335,6 +1420,23 @@
    "run": "45626788039"
   },
   {
+   "code": "NRN",
+   "heading": "Nursing-Registered",
+   "heading_printed": "Nursing-Registered",
+   "rule": "coci",
+   "codes": [
+    "NRN"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Nursing-Registered",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 94
+  },
+  {
    "code": "NVN",
    "heading": "Nursing, Vocational",
    "heading_printed": "Nursing, Vocational",
@@ -1383,6 +1485,23 @@
    "run": "45626788039"
   },
   {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "coci",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: C1000 American Government and Politics",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "PS",
    "heading": "Political Science",
    "heading_printed": "Political Science",
@@ -1415,6 +1534,23 @@
    "run": "45626788039"
   },
   {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "coci",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Psychology",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
    "code": "PTA",
    "heading": "Physical Therapy Assistant",
    "heading_printed": "Physical Therapy Assistant",
@@ -1429,6 +1565,40 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626788039)",
    "run": "45626788039"
+  },
+  {
+   "code": "RDG",
+   "heading": "Reading",
+   "heading_printed": "Reading",
+   "rule": "coci",
+   "codes": [
+    "RDG"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Reading",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 84
+  },
+  {
+   "code": "RE",
+   "heading": "Recreation and Sport Management",
+   "heading_printed": "Recreation and Sport Management",
+   "rule": "coci",
+   "codes": [
+    "RE"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 1 Introduction To Recreation & Sport Management; 095A Recreation Work Experience",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
   },
   {
    "code": "RED",
@@ -1543,6 +1713,23 @@
    "run": "45626788039"
   },
   {
+   "code": "VN",
+   "heading": "Vocational Nursing",
+   "heading_printed": "Vocational Nursing",
+   "rule": "coci",
+   "codes": [
+    "VN"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Vocational Nursing",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 94
+  },
+  {
    "code": "VSM",
    "heading": "Varsity Sports, Men",
    "heading_printed": "Varsity Sports, Men",
@@ -1623,6 +1810,6 @@
    "run": "45626788039"
   }
  ],
- "subjects": 95,
- "with_heading": 95
+ "subjects": 106,
+ "with_heading": 106
 }

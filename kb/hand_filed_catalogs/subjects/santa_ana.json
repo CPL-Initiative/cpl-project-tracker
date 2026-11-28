@@ -3,9 +3,77 @@
  "college": "Santa Ana College",
  "run": "45304208269",
  "source": [],
- "subjects": 0,
- "with_heading": 0,
- "rows": [],
+ "subjects": 4,
+ "with_heading": 4,
+ "rows": [
+  {
+   "code": "CAR",
+   "heading": "Critical and Academic Reading",
+   "heading_printed": "Critical and Academic Reading",
+   "rule": "coci",
+   "codes": [
+    "CAR"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Critical and Academic Reading",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
+   "code": "CMSD",
+   "heading": "Communications and Media Studies",
+   "heading_printed": "Communications and Media Studies",
+   "rule": "index",
+   "codes": [
+    "CMSD"
+   ],
+   "candidate": null,
+   "address": "https://www.sac.edu/admissions/catalogarchive/SAC-2023_2024_Catalog.pdf",
+   "where": "web",
+   "method": "COBI overnight review, approved by Sam Lee:  Do not fold to CMST (Communication Studies). 2023-24 SAC catalog lists Communications & Media Studies (CMSD) as its own program (CMSD 102, 105, 298B Designing for Print and Digital Media, etc.). CMST courses are public speaking/interpersonal communication.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
+   "code": "READ",
+   "heading": "English - Reading",
+   "heading_printed": "English - Reading",
+   "rule": "coci",
+   "codes": [
+    "READ"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: English - Reading",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
+  },
+  {
+   "code": "SPEC",
+   "heading": "Special Programs",
+   "heading_printed": "Special Programs",
+   "rule": "coci",
+   "codes": [
+    "SPEC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: N50A English for the Deaf and Hard of Hearing; N83 Career Exploration; N91 Computer Assisted Cognitive Learning Noncredit/DSPS-adjacent special programs. GAI agreed.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 88
+  }
+ ],
  "code_address_tried": [
   {
    "code": "CMSD",

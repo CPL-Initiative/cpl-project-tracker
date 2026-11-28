@@ -58,6 +58,23 @@
    "run": "45628303101"
   },
   {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Art",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
+  },
+  {
    "code": "ARTH",
    "heading": "Art",
    "heading_printed": "Art",
@@ -234,6 +251,23 @@
    "run": "45628303101"
   },
   {
+   "code": "COLL",
+   "heading": "College",
+   "heading_printed": "College",
+   "rule": "coci",
+   "codes": [
+    "COLL"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: G100 Becoming A Successful Student; G151 Succeed as an Online Learner",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "COMM",
    "heading": "Communication Studies",
    "heading_printed": "Communication Studies",
@@ -248,6 +282,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45628303101)",
    "run": "45628303101"
+  },
+  {
+   "code": "COOP",
+   "heading": "Cooperative Work Experience",
+   "heading_printed": "Cooperative Work Experience",
+   "rule": "coci",
+   "codes": [
+    "COOP"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: G191C Cooperative Work Experience - General Title taken from the course itself. College now also brands the area Work Experience Education; that is a legacy/style note only.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 92
   },
   {
    "code": "COSM",
@@ -442,6 +493,23 @@
    "run": "45628303101"
   },
   {
+   "code": "ENGW",
+   "heading": "Writing Center",
+   "heading_printed": "Writing Center",
+   "rule": "coci",
+   "codes": [
+    "ENGW"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: G020 Writing Center Conference I; corrected during QA (was: Engineering)",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 80
+  },
+  {
    "code": "ESL",
    "heading": "English as a Second Language",
    "heading_printed": "English as a Second Language",
@@ -554,6 +622,23 @@
    "run": "45628303101"
   },
   {
+   "code": "HIT",
+   "heading": "Health Information Technology",
+   "heading_printed": "Health Information Technology",
+   "rule": "coci",
+   "codes": [
+    "HIT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Health Information Technology",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 94
+  },
+  {
    "code": "HLED",
    "heading": "Health Education",
    "heading_printed": "Health Education",
@@ -570,6 +655,40 @@
    "run": "45628303101"
   },
   {
+   "code": "HLTH",
+   "heading": "Wellness",
+   "heading_printed": "Wellness",
+   "rule": "coci",
+   "codes": [
+    "HLTH"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: ED104 Introduction To Wellness",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
+  },
+  {
+   "code": "HUM",
+   "heading": "Humanities",
+   "heading_printed": "Humanities",
+   "rule": "coci",
+   "codes": [
+    "HUM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: G126 Music In Motion Picture",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "INTR",
    "heading": "Interpreting",
    "heading_printed": "Interpreting",
@@ -584,6 +703,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45628303101)",
    "run": "45628303101"
+  },
+  {
+   "code": "JOUR",
+   "heading": "Journalism",
+   "heading_printed": "Journalism",
+   "rule": "coci",
+   "codes": [
+    "JOUR"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Journalism",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 94
   },
   {
    "code": "KIN",
@@ -746,6 +882,23 @@
    "run": "45628303101"
   },
   {
+   "code": "PEAC",
+   "heading": "Physical Education Activity",
+   "heading_printed": "Physical Education Activity",
+   "rule": "coci",
+   "codes": [
+    "PEAC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: G100 Peace Studies Intro; G110 Nonviolence and Conflict Resolution",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "PHIL",
    "heading": "Philosophy",
    "heading_printed": "Philosophy",
@@ -826,6 +979,23 @@
    "run": "45628303101"
   },
   {
+   "code": "PPE",
+   "heading": "Professional Physical Education",
+   "heading_printed": "Professional Physical Education",
+   "rule": "coci",
+   "codes": [
+    "PPE"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: G200 Water Safety Instruction Older GWC catalogs had a Professional Physical Education section; current catalog no longer lists PPE/G200. Only Water Safety Instruction remains in COCI.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 86
+  },
+  {
    "code": "PSCI",
    "heading": "Political Science",
    "heading_printed": "Political Science",
@@ -856,6 +1026,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45628303101)",
    "run": "45628303101"
+  },
+  {
+   "code": "SIGN",
+   "heading": "Sign Language",
+   "heading_printed": "Sign Language",
+   "rule": "coci",
+   "codes": [
+    "SIGN"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: G010 Fingerspelling; G068 ASL for Health and Medical Personnel",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "SOC",
@@ -986,6 +1173,6 @@
    "run": "45628303101"
   }
  ],
- "subjects": 61,
- "with_heading": 61
+ "subjects": 72,
+ "with_heading": 72
 }

@@ -114,6 +114,40 @@
  ],
  "rows": [
   {
+   "code": "AAPS",
+   "heading": "Academic Success",
+   "heading_printed": "Academic Success",
+   "rule": "coci",
+   "codes": [
+    "AAPS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 100 Achieving an Academic Attitude; 103 Orientation to College Transfer",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
+   "code": "ACCT",
+   "heading": "Accounting",
+   "heading_printed": "Accounting",
+   "rule": "coci",
+   "codes": [
+    "ACCT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Accounting",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
    "code": "ADMJ",
    "heading": "Administration of Justice",
    "heading_printed": "Administration of Justice",
@@ -144,6 +178,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627438096)",
    "run": "45627438096"
+  },
+  {
+   "code": "AIRC",
+   "heading": "Air Conditioning and Refrigeration",
+   "heading_printed": "Air Conditioning and Refrigeration",
+   "rule": "coci",
+   "codes": [
+    "AIRC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 101 Intro to Aircraft Maintenance; 102 Basic Electricity and Electrical Circuits",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "AMS",
@@ -224,6 +275,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627438096)",
    "run": "45627438096"
+  },
+  {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 136A Introduction to Illustration; 132A Beginning Figure Drawing",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
   },
   {
    "code": "ARTH",
@@ -402,6 +470,23 @@
    "run": "45627438096"
   },
   {
+   "code": "BSMA",
+   "heading": "Business Mathematics",
+   "heading_printed": "Business Mathematics",
+   "rule": "coci",
+   "codes": [
+    "BSMA"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 68 Mathematics for Business",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
+  },
+  {
    "code": "BTEC",
    "heading": "Biotechnology",
    "heading_printed": "Biotechnology",
@@ -562,6 +647,23 @@
    "run": "45627438096"
   },
   {
+   "code": "CMST",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "coci",
+   "codes": [
+    "CMST"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Communication Studies",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
+  },
+  {
    "code": "CNIT",
    "heading": "Comp. Networking & Infor.Tech",
    "heading_printed": "Comp. Networking & Infor.Tech",
@@ -624,6 +726,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627438096)",
    "run": "45627438096"
+  },
+  {
+   "code": "COUN",
+   "heading": "Counseling",
+   "heading_printed": "Counseling",
+   "rule": "coci",
+   "codes": [
+    "COUN"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 105 Student Success Seminar II",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "CRER",
@@ -736,6 +855,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627438096)",
    "run": "45627438096"
+  },
+  {
+   "code": "DSGN",
+   "heading": "Design",
+   "heading_printed": "Design",
+   "rule": "coci",
+   "codes": [
+    "DSGN"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Design",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 95
   },
   {
    "code": "DSPS",
@@ -1042,6 +1178,23 @@
    "run": "45627438096"
   },
   {
+   "code": "FREN",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "coci",
+   "codes": [
+    "FREN"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: French",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
+  },
+  {
    "code": "F SC",
    "heading": "Fire Science Technology",
    "heading_printed": "Fire Science Technology",
@@ -1088,6 +1241,40 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627438096)",
    "run": "45627438096"
+  },
+  {
+   "code": "GEOL/GEOG",
+   "heading": "Geology and Geography",
+   "heading_printed": "Geology and Geography",
+   "rule": "coci",
+   "codes": [
+    "GEOL/GEOG"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 41A Climate Change Combined/cross-listed COCI subject (Geology/Geography), not a standalone department. Kept as a title rather than not_a_subject because the code and course are real in COCI.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 88
+  },
+  {
+   "code": "GERM",
+   "heading": "German",
+   "heading_printed": "German",
+   "rule": "coci",
+   "codes": [
+    "GERM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: German",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 95
   },
   {
    "code": "GNBS",
@@ -1296,6 +1483,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627438096)",
    "run": "45627438096"
+  },
+  {
+   "code": "LALS/LGBT",
+   "heading": "Latin American and LGBTQ Studies",
+   "heading_printed": "Latin American and LGBTQ Studies",
+   "rule": "coci",
+   "codes": [
+    "LALS/LGBT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 9 The Latinx LGBTQ+ Experience",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
   },
   {
    "code": "LBCS",
@@ -1890,6 +2094,23 @@
    "run": "45627438096"
   },
   {
+   "code": "SUST",
+   "heading": "Sustainability",
+   "heading_printed": "Sustainability",
+   "rule": "coci",
+   "codes": [
+    "SUST"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 225 Environmental Toxicology",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "TH A",
    "heading": "Theatre Arts",
    "heading_printed": "Theatre Arts",
@@ -2018,6 +2239,6 @@
    "run": "45627438096"
   }
  ],
- "subjects": 119,
- "with_heading": 119
+ "subjects": 132,
+ "with_heading": 132
 }

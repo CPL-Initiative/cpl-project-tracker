@@ -1082,6 +1082,23 @@
    "run": "45630435823"
   },
   {
+   "code": "MICR",
+   "heading": "Microbiology",
+   "heading_printed": "Microbiology",
+   "rule": "coci",
+   "codes": [
+    "MICR"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Microbiology",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 95
+  },
+  {
    "code": "MTH",
    "heading": "Mathematics",
    "heading_printed": "Mathematics",
@@ -1242,6 +1259,40 @@
    "run": "45630435823"
   },
   {
+   "code": "PHEA",
+   "heading": "Athletics",
+   "heading_printed": "Athletics",
+   "rule": "coci",
+   "codes": [
+    "PHEA"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Athletics",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
+   "code": "PHEACJUD",
+   "heading": "Physical Education",
+   "heading_printed": "Physical Education",
+   "rule": "coci",
+   "codes": [
+    "PHEACJUD"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Physical Education",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "PHIL",
    "heading": "Philosophy",
    "heading_printed": "Philosophy",
@@ -1272,6 +1323,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45630435823)",
    "run": "45630435823"
+  },
+  {
+   "code": "PHSI",
+   "heading": "Physiology",
+   "heading_printed": "Physiology",
+   "rule": "coci",
+   "codes": [
+    "PHSI"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 1 Human Physiology Legacy prefix later moved under BIOS; keep the historical title.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 94
   },
   {
    "code": "PHYS",
@@ -1658,6 +1726,6 @@
    "run": "45630435823"
   }
  ],
- "subjects": 103,
- "with_heading": 103
+ "subjects": 107,
+ "with_heading": 107
 }

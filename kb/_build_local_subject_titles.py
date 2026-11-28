@@ -266,7 +266,8 @@ def build(root=ROOT):
             h = filed.get(k)
             if not name and h and h.get("heading"):
                 name, source = h["heading"], {"index": "index", "code_address": "the code's own catalog page", "search_page": "a page a web search found",
-                                   "schedule": "the college's class schedule"}.get(h.get("rule"), "heading above the first course")
+                                   "schedule": "the college's class schedule",
+                                   "coci": "COBI, from the COCI course list"}.get(h.get("rule"), "heading above the first course")
             name = title_case(without_code(name, college_codes))
             if not name:
                 source = None

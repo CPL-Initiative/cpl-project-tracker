@@ -1324,6 +1324,23 @@
    "run": "45623983494"
   },
   {
+   "code": "SKIL",
+   "heading": "Study Skills",
+   "heading_printed": "Study Skills",
+   "rule": "coci",
+   "codes": [
+    "SKIL"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 50 How to Succeed in an Online Class; 232 Adjunct Study Skills",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "SOC",
    "heading": "Sociology",
    "heading_printed": "Sociology",
@@ -1436,6 +1453,6 @@
    "run": "45623983494"
   }
  ],
- "subjects": 84,
- "with_heading": 84
+ "subjects": 85,
+ "with_heading": 85
 }
