@@ -1,0 +1,43 @@
+{
+ "college": "Madera College",
+ "_readme": "S750, the cheap piles (2026-11-28). Plan s750a files the reading state_course_not_on_page (kb/_program_named_gaps.py, S748) where the committed capture finds a state-listed course on no line of the program's own page. The reading's fires are wrong about 4 times in 100, so each row is checked against a free read of its own page before it is planned: this read prints the page so a session and the plan's second reader can see whether any line prints the course. No model call, nothing written. Madera Elementary Teacher Education A.A.-T 39810: POLSC C1000 and POLSC C1000H. Two loads: the filed address with the data its own scripts fetch, and the entry as the capture reads it (cq_view, catalog 6; the filed address ends in the entry's id, 1074, and the section in the address is a placeholder, so the read reports the node as not among its siblings).",
+ "questions": {
+  "polsc": "Whether the Elementary Teacher Education A.A.-T entry prints POLSC C1000 or POLSC C1000H on any line, which political science course it prints, and its total."
+ },
+ "keywords": [
+  "POLS[A-Z]*\\s*[A-Z]?\\d+[^\\n]{0,80}",
+  "[Pp]olitical [Ss]cience[^\\n]{0,80}",
+  "[Aa]merican [Gg]overnment[^\\n]{0,80}",
+  "[Tt]otal[^\\n]{0,60}"
+ ],
+ "outside_hosts": {
+  "curriqunet.com": "the college's own catalog (madera.curriqunet.com), served on its catalog vendor's domain; the page's own scripts fetch the entry's text from it"
+ },
+ "pages": [
+  {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1074",
+   "answers": [
+    "polsc"
+   ],
+   "why": "39810: the filed address",
+   "network": true,
+   "network_hosts": [
+    "madera.curriqunet.com"
+   ],
+   "network_find": [
+    "POLS",
+    "Government",
+    "Total"
+   ]
+  },
+  {
+   "url": "https://madera.curriqunet.com/catalog/iq/0/0/1074",
+   "answers": [
+    "polsc"
+   ],
+   "why": "39810: the entry as the capture reads it",
+   "cq_view": true,
+   "cq_catalog": 6
+  }
+ ]
+}

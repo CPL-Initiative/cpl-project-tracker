@@ -1,0 +1,21 @@
+{
+ "college": "Citrus College",
+ "_readme": "S750, the cheap piles (2026-11-28). Plan s750a files the reading state_course_not_on_page (kb/_program_named_gaps.py, S748) where the committed capture finds a state-listed course on no line of the program's own page. The reading's fires are wrong about 4 times in 100, so each row is checked against a free read of its own page before it is planned: this read prints the page so a session and the plan's second reader can see whether any line prints the course. No model call, nothing written. Citrus Visual Arts A.A. 02333: ART 149.",
+ "questions": {
+  "art_149": "Whether the Visual Arts A.A. page prints ART 149 on any line, and each ART row it prints."
+ },
+ "keywords": [
+  "ART\\s*14\\d[^\\n]{0,80}",
+  "[Tt]otal[^\\n]{0,60}"
+ ],
+ "pages": [
+  {
+   "url": "https://catalog.citruscollege.edu/disciplines/visual-arts/visual-arts-aa/",
+   "answers": [
+    "art_149"
+   ],
+   "why": "02333",
+   "capture_view": true
+  }
+ ]
+}

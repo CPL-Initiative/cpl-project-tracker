@@ -1,0 +1,35 @@
+{
+ "college": "Palomar College",
+ "_readme": "S750, the cheap piles (2026-11-28). Plan s750a files the reading state_course_not_on_page (kb/_program_named_gaps.py, S748) where the committed capture finds a state-listed course on no line of the program's own page. The reading's fires are wrong about 4 times in 100, so each row is checked against a free read of its own page before it is planned: this read prints the page so a session and the plan's second reader can see whether any line prints the course. No model call, nothing written. Palomar Apprenticeship-Carpentry A.S. 08929 and certificate 22528, one shared section: AP C 730. One load: the filed address with the data its own scripts fetch (the calls name the entry's id, which a later cq_view read needs).",
+ "questions": {
+  "apc_730": "Whether the Apprenticeship-Carpentry section prints AP C 730 on any line, each AP C 72x and 73x row it prints, and how its heading names the degree and the certificate."
+ },
+ "keywords": [
+  "AP\\s*C\\s*7[23]\\d[^\\n]{0,80}",
+  "AP\\s*WE\\s*730[^\\n]{0,80}",
+  "A\\.S\\. Degree[^\\n]{0,80}",
+  "[Tt]otal[^\\n]{0,60}"
+ ],
+ "outside_hosts": {
+  "curriqunet.com": "the college's own catalog (palomar.curriqunet.com), served on its catalog vendor's domain; the page's own scripts fetch the entry's text from it"
+ },
+ "pages": [
+  {
+   "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Apprenticeship-Carpentry-AS-CA",
+   "answers": [
+    "apc_730"
+   ],
+   "why": "08929 and 22528: the filed address",
+   "network": true,
+   "network_hosts": [
+    "palomar.curriqunet.com"
+   ],
+   "network_find": [
+    "AP C 729",
+    "AP C 730",
+    "AP C 735",
+    "730"
+   ]
+  }
+ ]
+}

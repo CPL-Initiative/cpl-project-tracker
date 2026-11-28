@@ -1,0 +1,32 @@
+{
+ "college": "Foothill College",
+ "_readme": "S750, the cheap piles (2026-11-28). Plan s750a files the reading state_course_not_on_page (kb/_program_named_gaps.py, S748) where the committed capture finds a state-listed course on no line of the program's own page. The reading's fires are wrong about 4 times in 100, so each row is checked against a free read of its own page before it is planned: this read prints the page so a session and the plan's second reader can see whether any line prints the course. No model call, nothing written. Foothill Plumbing and Pipefitting Apprenticeship certificate 11827: APPT 190 (the page is shared with the A.S., 41696). Communication Studies 2.0 A.A.-T 43194: PHIL 7.",
+ "questions": {
+  "appt_190": "Whether the Plumbing and Pipefitting Apprenticeship page prints APPT 190 on any line, each APPT row it prints, and how it names the certificate and the degree.",
+  "phil_7": "Whether the Communication Studies 2.0 A.A.-T page prints PHIL 7 (or PHIL 007) on any line, and each PHIL row it prints."
+ },
+ "keywords": [
+  "APPT\\s*19\\d[^\\n]{0,80}",
+  "PHIL\\s*0*\\d+[^\\n]{0,80}",
+  "[Cc]ertificate of [Aa]chievement[^\\n]{0,80}",
+  "[Tt]otal[^\\n]{0,60}"
+ ],
+ "pages": [
+  {
+   "url": "https://catalog.foothill.edu/degrees-certificates/apprenticeship-plumbing-and-pipefitting/",
+   "answers": [
+    "appt_190"
+   ],
+   "why": "11827 (and its page-mate 41696)",
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.foothill.edu/degrees-certificates/communication-studies-2-aat/",
+   "answers": [
+    "phil_7"
+   ],
+   "why": "43194",
+   "capture_view": true
+  }
+ ]
+}
