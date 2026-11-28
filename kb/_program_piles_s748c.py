@@ -36,7 +36,8 @@ placed courses asked it misses 248 (it would name a course the page prints, abou
 call not in the text it agrees on 5,655. Put as the reading's own fires on held answers: 5,655 right and 248 wrong, 4
 wrong in 100. So it is no record rule: it is filed from this reviewed list, by key, and each row is checked against
 a free page read of its own page: college page read 45955333186 prints Orange Coast 43100's page with no PSYC A160,
-and kb/college_reads/s748_piles_fullerton_coverage.json reads Fullerton's two pages on this plan's push.
+and college page read 46125626841 (kb/college_reads/s748_piles_fullerton_coverage.json) prints Fullerton's two
+pages with no THEA 231 F and no PE 108 F on any line.
 
 HELD, each reason in CCSF's HAND (no row, so no pile of the batch):
   City College of San Francisco 32079  the capture finds MATH 115 on no line, but the own-page guard refuses the
