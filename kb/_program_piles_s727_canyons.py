@@ -390,10 +390,21 @@ def posted_runs(skip: tuple = ()) -> dict:
 def on_live_run(filed: dict) -> bool:
     """The committed record's run is the run the latest committed receipt posted for the row (the pre-read class of
     East Los Angeles 02456: a reconcile rewrote the file, and its run never reached the live row). A record collected
-    from held_for_person/ has no live row: no receipt but this plan's own posts it."""
+    from held_for_person/ has no live row: no receipt but this plan's own posts it.
+
+    Once the plan has applied, its own receipt posts the row it inserted, and a live read taken after that reads the
+    row back (S748's six-college read of 2026-11-28 07:47Z posts 43388 at 44886816990, the run this plan inserted).
+    Such a read is no earlier post: the record is on its live run where every other post is later than the plan's
+    own and names the record's own run, and off it where one names another run. Before the plan applies, the rule is
+    as it was: no other receipt posts the row."""
     cn = str(filed.get("control_number"))
     if cn in FROM_HELD:
-        return not posted_runs(skip=(TAG,)).get(cn)
+        others = posted_runs(skip=(TAG,)).get(cn) or []
+        own = [x for x in posted_runs().get(cn) or [] if x not in others]
+        if not own:
+            return not others
+        first = min(own)[0]
+        return all(at > first and run == str(filed.get("extracted_run")) for at, run in others)
     rows = posted_runs().get(cn) or []
     return bool(rows) and max(rows)[1] == str(filed.get("extracted_run"))
 

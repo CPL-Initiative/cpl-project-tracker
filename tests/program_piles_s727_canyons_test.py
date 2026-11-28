@@ -186,18 +186,48 @@ check(W._load("16962")["score"]["confidence"]["course_list_match"] == 31, "16962
 check(not any(W.scorer_passes(W._load(cn)) for cn in ROWS), "the scorer passes none of the gap rows (#3753's MAJOR)")
 check(all(W.scorer_passes(W._load(cn)) for cn in ("10302", "19386", "32723", "33814", "40090", "44260", "44657")),
       "the seven coverage holds pass the scorer's arithmetic, so none is gap-filed")
-# Read as the receipts stood before this plan's own apply (its s727a receipts post its rows once migrated).
-before = W.posted_runs(skip=("s727a", "s739c"))
+# Read as the receipts stood before this plan's own apply (its s727a receipts post its rows once migrated). A post
+# dated after the plan's own receipt (2026-11-25T07:34:40Z) is later evidence and is read apart, below. One read is:
+# S748's six-college live read of 2026-11-28 07:47Z (kb/receipts/program_requirements_reread_s748_six_checked.json,
+# 247 College of the Canyons rows), which reads back each of the plan's rows.
+PLAN_AT = "2026-11-25T07:34:40Z"
+check(rec["at"] == PLAN_AT, "the plan's own receipt is dated %s" % PLAN_AT)
+posted = W.posted_runs(skip=("s727a", "s739c"))
+before = {cn: [x for x in rows if x[0] < PLAN_AT] for cn, rows in posted.items()}
+before = {cn: rows for cn, rows in before.items() if rows}
+later = {cn: [x for x in rows if x[0] > PLAN_AT] for cn, rows in posted.items()}
 check(all(max(before[cn])[1] == str(W._load(cn)["extracted_run"]) for cn in ROWS if cn != "43388"),
       "before the apply, every UPDATE row's latest posted run is its committed run")
 check(max(before["15477"]) == ("2026-11-21T08:54:36Z", "44769429877"), "S691's live read posts 15477's run")
 check("43388" not in before, "no receipt before this plan posts 43388")
+S748_READ = "2026-11-28T07:47:48Z"
+check(all(run == str(W._load(cn)["extracted_run"]) for cn in ROWS for _, run in later.get(cn) or [])
+      and (later.get("43388") or []) in ([], [(S748_READ, "44886816990")]),
+      "every read after the plan posts each of its rows at the committed run; S748's read posts 43388 at the run "
+      "this plan inserted: %s" % {cn: later.get(cn) for cn in ROWS})
 check(all(W.on_live_run(W._load(cn)) for cn in ROWS), "every row is on its live run, or has none (43388)")
 check(all(max(W.posted_runs()[r["control_number"]])[1] == str(r["extracted_run"]) for r in rec["records"]
           if r["write"] == "update"), "the posted run is the plan's run, applied or not")
 real = W.posted_runs
 W.posted_runs = lambda skip=(): {"43388": [("2026-11-25T00:00:00Z", "44886816990")]}
 check(not W.on_live_run(W._load("43388")), "a posted 43388 row holds the insert")
+# Once the plan has applied (its own receipt posts the row), a read taken after it at the record's run reads back the
+# row the plan inserted; a later read at another run, or a post dated before the plan's own, holds the record.
+OWN_POST = (PLAN_AT, "44886816990")
+
+
+def applied_with(*others):
+    return lambda skip=(): {"43388": ([] if "s727a" in skip else [OWN_POST]) + list(others)}
+
+
+W.posted_runs = applied_with()
+check(W.on_live_run(W._load("43388")), "applied, with no other post, 43388 is on the run the plan inserted")
+W.posted_runs = applied_with((S748_READ, "44886816990"))
+check(W.on_live_run(W._load("43388")), "a live read after the plan, at the plan's run, reads the insert back")
+W.posted_runs = applied_with((S748_READ, "44886816991"))
+check(not W.on_live_run(W._load("43388")), "a live read after the plan at another run holds the record")
+W.posted_runs = applied_with(("2026-11-24T00:00:00Z", "44886816990"))
+check(not W.on_live_run(W._load("43388")), "a post dated before the plan's own holds the record, at any run")
 W.posted_runs = real
 
 print("%d checks, %d failures" % (checks[0], len(failures)))
