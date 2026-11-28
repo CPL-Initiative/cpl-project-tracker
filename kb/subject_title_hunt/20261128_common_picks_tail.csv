@@ -418,7 +418,7 @@ Saddleback College,FCS,credit,FCSH,94,COBI,ruling analog: FCS/Home Ec -> FCSH
 Saddleback College,GSS,credit,WMST,90,COBI,ruling analog: Women's/Gender/Queer -> WMST
 Saddleback College,INTS,credit,IDST,92,COBI,ruling analog: interdisciplinary/general studies -> IDST; CB_COOP_ED_STATUS all C -> WEXP chip
 Saddleback College,SURG,credit,SURG,95,COBI,MQ: Surgical Technology
-Saddleback College,TOUR,credit,TOUR,92,COBI,MQ: Travel Services (minted TOUR); TOP 3009 Travel Services and Tourism
+Saddleback College,TOUR,credit,TRVL,92,COBI,MQ: Travel Services (TRVL; TOUR prefixes M-IDs, COBIx and Sky S749); TOP 3009 Travel Services and Tourism
 San Bernardino Valley College,COMMST,credit,COMM,92,COBI,MQ: Communication Studies
 San Bernardino Valley College,ELECTR,credit,ELET,92,COBI,MQ: Electronics
 San Bernardino Valley College,LPPS,credit,LEGL,80,COBI,existing recommender LEGL; courses: Introduction to Law and Society
@@ -521,7 +521,7 @@ Southwestern College,RDG,credit,READ,94,COBI,title matches MQ discipline Reading
 Southwestern College,REC,credit,RECR,86,COBI,local code is a known variant of RECR (Recreation Administration)
 Southwestern College,SLA,credit,LSKL,93,COBI,ruling analog: Learning/study skills -> LSKL
 Southwestern College,ST,credit,SURG,95,COBI,MQ: Surgical Technology
-Southwestern College,T&T,credit,TOUR,92,COBI,MQ: Travel Services (minted TOUR); TOP 3009 Travel Services and Tourism
+Southwestern College,T&T,credit,TRVL,92,COBI,MQ: Travel Services (TRVL; TOUR prefixes M-IDs, COBIx and Sky S749); TOP 3009 Travel Services and Tourism
 Ventura College,AIT,credit,INDT,95,COBI,ruling/MQ: Industrial Technology
 Ventura College,ANPH,credit,BIOL,84,COBI,TOP 0410.00 empirical BIOL (purity 0.97); course titles: Intro Human Anatomy/Physiology
 Ventura College,ESRM,credit,BIOL,92,COBI,ruling: environmental/ecology/sustainability -> BIOL
