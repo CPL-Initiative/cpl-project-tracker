@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-28T10:57:27Z",
-  "session": 748,
-  "moniker": "SkyStilt",
+  "written_at": "2026-11-28T16:04:47Z",
+  "session": 750,
+  "moniker": "SkySandpiper",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_749_handoff.md",
+  "handoff": "docs/session_751_handoff.md",
   "next_step": {
-    "title": "A display build for tonight's 41 records, then the found pages",
-    "text": "The next collection run builds the display for the 41 program records collected on Nov 28, starting at Glendale, and reruns the census. Then it finishes the change that reads a program's own catalog page where the state lists no courses for it: 194 programs at 14 colleges, about $19 of paid reads."
+    "title": "Read the nine wrong answers, then decide the gate for a program's own page",
+    "text": "The change that reads a program's own catalog page where the state lists no courses for it is built and switched off at every college. On Nov 28 its check found one to three wrong pages at each of five colleges, so no page was read for a fee. The next collection run reads those nine, decides whether the check or the pages were wrong, and then tries one program at Skyline before the other 193."
   },
   "calls": [
     {
@@ -960,6 +960,18 @@
     {
       "at": "2026-11-28T10:48:00Z",
       "text": "Found tonight: 194 programs at 14 colleges have their own catalog page on file and no course list from the state, so nothing reads the page. The change that reads them is built and held for one more review before any paid read."
+    },
+    {
+      "at": "2026-11-28T15:16:00Z",
+      "text": "The display page now carries the 41 program records collected earlier on Nov 28: 18,753 programs at build 366c5bbc7b2d, after a first apply at Glendale. San Bernardino Valley 31858 and Coastline 43057 gained a display. 32 records stay at three older builds."
+    },
+    {
+      "at": "2026-11-28T15:50:00Z",
+      "text": "The change that reads a program's own catalog page is finished and switched off at every college. Its check on live captures at Skyline, San Mateo, Diablo Valley, San Joaquin Delta and Gavilan found one to three wrong pages at each, so no paid read ran. A record read with no state course list no longer reaches CPL Pathways."
+    },
+    {
+      "at": "2026-11-28T15:20:00Z",
+      "text": "Cerritos 02235 and Madera 39810 wait on a person: Cerritos 02235 was confirmed by Sam on Oct 15 and is left as he confirmed it, and Madera 39810's page counts a course it does not print."
     }
   ],
   "headline": [
@@ -1272,7 +1284,7 @@
     {
       "day": "2026-11-28",
       "active": 20282,
-      "complete": 15681,
+      "complete": 15704,
       "colleges": 118
     }
   ],
@@ -1283,7 +1295,7 @@
   },
   "harvest": {
     "day": "2026-11-28",
-    "gaps": 3398,
+    "gaps": 3399,
     "parts": {
       "links": {
         "catalog": [
@@ -1304,7 +1316,7 @@
         20282
       ],
       "coci": [
-        17265,
+        17267,
         20282
       ],
       "outcomes": {
@@ -1313,12 +1325,12 @@
           88736
         ],
         "plo": [
-          17265,
+          17267,
           20282
         ]
       },
       "careers": [
-        16298,
+        16300,
         20282
       ]
     }
