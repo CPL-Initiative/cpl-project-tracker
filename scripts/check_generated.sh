@@ -44,6 +44,7 @@ srun "status: mid_readiness.json"                 "python3 kb/_mid_readiness.py 
 srun "status: outline_hunt.json"                  "python3 kb/_outline_hunt.py --check"
 srun "status: statewide_subject_codes.json"       "python3 kb/_statewide_subject_codes.py --check"
 srun "status: subject_sources.json"               "python3 kb/_subject_sources.py --check"
+srun "status: subject_courses/"                  "python3 kb/_build_subject_courses.py --check"   # reads the COCI folds (S749: a fold change staled it unseen)
 srun "status: mq_view.json"                       "python3 kb/_mq_view.py --check"
 srun "status: csr_proposed_codes.json"            "python3 kb/_csr_propose_codes.py --check"
 # The harvest's committed-file builds.
