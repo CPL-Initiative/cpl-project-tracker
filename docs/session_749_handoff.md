@@ -65,3 +65,9 @@ paid reads, rereads, loads and `.apply`, and holds every Supabase call.
 
 ## Split changes during the run
 
+- 06:17Z: the declaration pushed, draft #3940; `keys`, `readers` and `piles` started on Fable 5.2 at high effort.
+- 06:50Z: `keys` stop 1 (`claude/s748-keys`, `83f67d9e`): Santa Ana 31859 and 21789 and Copper Mountain 14737 and 20094
+  are already collected with named gaps (S741); Copper Mountain 43854 and San Diego City 22367 pass. San Bernardino
+  Valley 04894: two reconcile steps of existing kinds (recall over 221 records: 1 fail to pass, 0 pass to fail), to a
+  Sonnet second reader before the free reconcile. San Jose City 18449: left unfinished (its four sit outside the Active
+  count). `keys` moves to the fresh census's wave over colleges outside both lanes.
