@@ -1966,9 +1966,10 @@
       "max": 34
      },
      "awards": "transfer",
-     "pattern": "General\\s+Education\\s+\\(Cal-?GETC\\)\\s+and\\s+Elective\\s+Units",
+     "pattern": "General\\s+Education\\s+\\(Cal-?GETC\\)\\s+and\\s+Elective\\s+(?:Units|Courses)",
      "source": "https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/",
-     "source_words": "College of Alameda AA-T and AS-T pages: 'General Education (Cal-GETC) and Elective Units 41.00- 42.00 / Total Units 60.00' (Sociology 33032; college page read 42609117444); Cal-GETC 'satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T)'"
+     "source_words": "College of Alameda AA-T and AS-T pages: 'General Education (Cal-GETC) and Elective Units 41.00- 42.00 / Total Units 60.00' (Sociology 33032; college page read 42609117444) and, on Art History 32765's entry, 'Total units required for major: 18 · 18.00 · General Education (Cal-GETC) and Elective Courses · 42.00 · Total Units Required for Degree · 60.00' (college page read 46121438840, the entry as the capture reads it); Cal-GETC 'satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T)'",
+     "why": "S748 (lane 1, keys; the census of 2026-11-28 00:44Z, lever ge_units_steps): the pattern read 'Elective Units' alone, and Art History A.A.-T 32765's entry prints the line with 'Elective Courses', so the step S619 wrote for it never reached it and it read incomplete against its 60. The pattern takes either word, after the same 'General Education (Cal-GETC) and'. Over the college's 59 committed records the wider pattern reaches 32765 alone, which then passes with its 18, the 34 and transferable electives to 60; no passing record turns failing (tests/program_reconcile_s748_alameda_test.py)."
     },
     {
      "kind": "semester_sum",
