@@ -73,6 +73,23 @@
    "run": "45630333350"
   },
   {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 140 Jewelry I: Intro to Jewelry and Metalsmithing; 60 Introduction to Printmaking",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "ARTH",
    "heading": "Art History",
    "heading_printed": "Art History",
@@ -199,6 +216,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45630333350)",
    "run": "45630333350"
+  },
+  {
+   "code": "CISS",
+   "heading": "Computer Information Sciences - Security",
+   "heading_printed": "Computer Information Sciences - Security",
+   "rule": "coci",
+   "codes": [
+    "CISS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Computer Information Sciences - Security",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "COMM",
@@ -487,6 +521,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45630333350)",
    "run": "45630333350"
+  },
+  {
+   "code": "FILM",
+   "heading": "Film and Digital Media",
+   "heading_printed": "Film and Digital Media",
+   "rule": "coci",
+   "codes": [
+    "FILM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Film and Digital Media",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 97
   },
   {
    "code": "FN",
@@ -985,6 +1036,23 @@
    "run": "45630333350"
   },
   {
+   "code": "PS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "coci",
+   "codes": [
+    "PS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Political Science",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 94
+  },
+  {
    "code": "PSYC",
    "heading": "Psychology",
    "heading_printed": "Psychology",
@@ -1001,6 +1069,23 @@
    "run": "45630333350"
   },
   {
+   "code": "RD",
+   "heading": "Reading",
+   "heading_printed": "Reading",
+   "rule": "coci",
+   "codes": [
+    "RD"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 74 Critical Reading; 171 Efficient and Flexible Reading",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 94
+  },
+  {
    "code": "RE",
    "heading": "Real Estate",
    "heading_printed": "Real Estate",
@@ -1015,6 +1100,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45630333350)",
    "run": "45630333350"
+  },
+  {
+   "code": "SIGN",
+   "heading": "Sign Language",
+   "heading_printed": "Sign Language",
+   "rule": "coci",
+   "codes": [
+    "SIGN"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Sign Language",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "SOC",
@@ -1145,6 +1247,6 @@
    "run": "45630333350"
   }
  ],
- "subjects": 71,
- "with_heading": 71
+ "subjects": 77,
+ "with_heading": 77
 }

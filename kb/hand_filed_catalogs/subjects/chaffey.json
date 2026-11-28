@@ -89,6 +89,40 @@
    "run": "45629512231"
   },
   {
+   "code": "ARABIC",
+   "heading": "Arabic",
+   "heading_printed": "Arabic",
+   "rule": "coci",
+   "codes": [
+    "ARABIC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Arabic",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 95
+  },
+  {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 14 Introduction to Drawing; 16 Introduction to Painting",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "ARTGD",
    "heading": "Art: Graphic Design/Digital Media",
    "heading_printed": "Art: Graphic Design/Digital Media",
@@ -329,6 +363,74 @@
    "run": "45629512231"
   },
   {
+   "code": "CINEMA",
+   "heading": "Broadcasting and Cinema",
+   "heading_printed": "Broadcasting and Cinema",
+   "rule": "coci",
+   "codes": [
+    "CINEMA"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Broadcasting and Cinema",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
+  },
+  {
+   "code": "CIS",
+   "heading": "Computer Information Systems",
+   "heading_printed": "Computer Information Systems",
+   "rule": "coci",
+   "codes": [
+    "CIS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Computer Information Systems",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
+   "code": "CISCO",
+   "heading": "Cisco Networking",
+   "heading_printed": "Cisco Networking",
+   "rule": "coci",
+   "codes": [
+    "CISCO"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 1 Cisco Internetworking I; 2 Cisco Internetworking II Legacy prefix; Chaffey later moved these to ITIS 51/52. Do not add (Legacy) to the title.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 94
+  },
+  {
+   "code": "CISCYBR",
+   "heading": "Systems and Network Cybersecurity",
+   "heading_printed": "Systems and Network Cybersecurity",
+   "rule": "coci",
+   "codes": [
+    "CISCYBR"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 1 Introduction to Systems & Network Cybersecurity; 2 Digital Forensics Fundamentals",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "CISGAME",
    "heading": "Computer Information Systems: Game Development",
    "heading_printed": "Computer Information Systems: Game Development",
@@ -343,6 +445,74 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45629512231)",
    "run": "45629512231"
+  },
+  {
+   "code": "CISHDSP",
+   "heading": "Computer Information Systems Hardware",
+   "heading_printed": "Computer Information Systems Hardware",
+   "rule": "coci",
+   "codes": [
+    "CISHDSP"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 40 Microcomputer Hardware",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
+  },
+  {
+   "code": "CISIWEB",
+   "heading": "Computer Information Systems Web",
+   "heading_printed": "Computer Information Systems Web",
+   "rule": "coci",
+   "codes": [
+    "CISIWEB"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 72 Web Page Development and Publishing; 74 Creating Dynamic Applications using Javascript",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
+   "code": "CISNTWK",
+   "heading": "The Linux Operating System",
+   "heading_printed": "The Linux Operating System",
+   "rule": "coci",
+   "codes": [
+    "CISNTWK"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 435 Introduction to the Linux Operating System; 11 Microsoft Network Server",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
+   "code": "CISPROG",
+   "heading": "Computer Programming",
+   "heading_printed": "Computer Programming",
+   "rule": "coci",
+   "codes": [
+    "CISPROG"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 1 Introduction to Computer Programming; 5 Programming with Python; 6 Python Data Analytics GAI agreed. Later transition toward ITIS/COMPSCI is a legacy note only.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 94
   },
   {
    "code": "CJ",
@@ -409,6 +579,23 @@
    "run": "45629512231"
   },
   {
+   "code": "COOPED",
+   "heading": "Cooperative Education",
+   "heading_printed": "Cooperative Education",
+   "rule": "coci",
+   "codes": [
+    "COOPED"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 497A Cooperative Education: General Work Experience; 497B Cooperative Education: General Work Experience; 497C Cooperative Education: General Work Experience; 497D Cooperative Education: General Work Experience Not Business. WORKEXP is already titled Work Experience with a different course series (97A/697); do not fold, the college uses both prefixes.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 94
+  },
+  {
    "code": "CUL",
    "heading": "Culinary Arts",
    "heading_printed": "Culinary Arts",
@@ -423,6 +610,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45629512231)",
    "run": "45629512231"
+  },
+  {
+   "code": "DENTAL",
+   "heading": "Dental Assisting",
+   "heading_printed": "Dental Assisting",
+   "rule": "coci",
+   "codes": [
+    "DENTAL"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Dental Assisting",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 82
   },
   {
    "code": "DRAFT",
@@ -969,6 +1173,23 @@
    "run": "45629512231"
   },
   {
+   "code": "MUSIC",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "coci",
+   "codes": [
+    "MUSIC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Music",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
+  },
+  {
    "code": "NF",
    "heading": "Nutrition and Food",
    "heading_printed": "Nutrition and Food",
@@ -1337,6 +1558,23 @@
    "run": "45629512231"
   },
   {
+   "code": "THEATRE",
+   "heading": "Theatre Arts",
+   "heading_printed": "Theatre Arts",
+   "rule": "coci",
+   "codes": [
+    "THEATRE"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Theatre Arts",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "WORKEXP",
    "heading": "Work Experience",
    "heading_printed": "Work Experience",
@@ -1353,6 +1591,6 @@
    "run": "45629512231"
   }
  ],
- "subjects": 84,
- "with_heading": 84
+ "subjects": 98,
+ "with_heading": 98
 }

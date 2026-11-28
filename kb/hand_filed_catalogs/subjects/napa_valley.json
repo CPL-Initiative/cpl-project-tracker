@@ -161,6 +161,23 @@
    "run": "45626064651"
   },
   {
+   "code": "ARTS",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ARTS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Art",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
    "code": "ARTSNC",
    "heading": "Arts for Older Adults-Noncredit",
    "heading_printed": "Arts for Older Adults-Noncredit",
@@ -577,6 +594,23 @@
    "run": "45626064651"
   },
   {
+   "code": "FILM",
+   "heading": "Film",
+   "heading_printed": "Film",
+   "rule": "coci",
+   "codes": [
+    "FILM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Film",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "FREN",
    "heading": "French",
    "heading_printed": "French",
@@ -815,6 +849,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626064651)",
    "run": "45626064651"
+  },
+  {
+   "code": "LRNS",
+   "heading": "Learning Skills",
+   "heading_printed": "Learning Skills",
+   "rule": "coci",
+   "codes": [
+    "LRNS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 60 Study and Test-Taking Techniques",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 94
   },
   {
    "code": "MACH",
@@ -1217,6 +1268,6 @@
    "run": "45626064651"
   }
  ],
- "subjects": 71,
- "with_heading": 71
+ "subjects": 74,
+ "with_heading": 74
 }

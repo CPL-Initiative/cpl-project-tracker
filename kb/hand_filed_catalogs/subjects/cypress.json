@@ -57,6 +57,23 @@
    "run": "45624360178"
   },
   {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 110 C Introduction to Art; 122 C Introduction to Digital Art",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "ARTH",
    "heading": "Art History",
    "heading_printed": "Art History",
@@ -1001,6 +1018,23 @@
    "run": "45624360178"
   },
   {
+   "code": "READ",
+   "heading": "Reading",
+   "heading_printed": "Reading",
+   "rule": "coci",
+   "codes": [
+    "READ"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Reading",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "REC",
    "heading": "Recreation",
    "heading_printed": "Recreation",
@@ -1113,6 +1147,6 @@
    "run": "45624360178"
   }
  ],
- "subjects": 69,
- "with_heading": 69
+ "subjects": 71,
+ "with_heading": 71
 }

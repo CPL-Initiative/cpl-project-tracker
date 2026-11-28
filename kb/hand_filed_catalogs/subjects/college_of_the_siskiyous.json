@@ -122,6 +122,23 @@
    "run": "45631971415"
   },
   {
+   "code": "AV",
+   "heading": "Aviation",
+   "heading_printed": "Aviation",
+   "rule": "coci",
+   "codes": [
+    "AV"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 950 Aviation Ground School (Basic)",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "BA",
    "heading": "Business Administration",
    "heading_printed": "Business Administration",
@@ -152,6 +169,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45631971415)",
    "run": "45631971415"
+  },
+  {
+   "code": "CCT",
+   "heading": "Computer and Communications Technology",
+   "heading_printed": "Computer and Communications Technology",
+   "rule": "coci",
+   "codes": [
+    "CCT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 9050 Advanced Mill and Cabinet Work",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "CHEM",
@@ -328,6 +362,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45631971415)",
    "run": "45631971415"
+  },
+  {
+   "code": "ENVR",
+   "heading": "Environmental Studies",
+   "heading_printed": "Environmental Studies",
+   "rule": "coci",
+   "codes": [
+    "ENVR"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Environmental Studies",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 95
   },
   {
    "code": "ENVS",
@@ -618,6 +669,23 @@
    "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   },
   {
+   "code": "NR",
+   "heading": "Natural Resources",
+   "heading_printed": "Natural Resources",
+   "rule": "coci",
+   "codes": [
+    "NR"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Natural Resources",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "NURS",
    "heading": "Nursing",
    "heading_printed": "Nursing",
@@ -890,6 +958,6 @@
    "run": "45631971415"
   }
  ],
- "subjects": 55,
- "with_heading": 55
+ "subjects": 59,
+ "with_heading": 59
 }

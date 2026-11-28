@@ -8,8 +8,11 @@ p-subject-title-carries-its-source-sam-2026-11-25: every title records its sourc
 date and the finder. Those ride on each row as `address` (the source), `where`, `method`, `found_on` and `found_by`.
 
 RULES.
-  - A row already filed for a code is never replaced: a heading already in the record (a runner's earlier read, or a
-    person's) stands, and the find is counted as agreeing or differing in the report.
+  - A row already filed for a code is never replaced by a machine's find: a heading already in the record stands, and
+    the find is counted as agreeing or differing in the report. A title a person named replaces it (S749; Sam,
+    2026-11-28, on #3937), and the row keeps the heading it replaced as `replaced`.
+  - A COBI row read from COCI's course list (`--csv`, title_where "coci", confidence under 100; S749) files with
+    kb/reference/coci_course_list.xlsx as its source, rule "coci", and its confidence.
   - A find with no title, or one that only repeats its code, is not filed; nor is a code the find prints under two
     different headings, which is left for a person.
   - A heading is saved in Title Case (subject_title_case), with the catalog's own spelling in `heading_printed`.
@@ -67,6 +70,10 @@ CODE_ONLY_ALLOW = frozenset({
 })
 
 
+MACHINE = {"COBI", "COBIX"}
+COCI_SOURCE = "kb/reference/coci_course_list.xlsx"
+
+
 def dump(path, doc):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
@@ -90,12 +97,12 @@ def file_doc(slug, d, dry):
             doc = json.load(f)
     if doc is None:
         if not titles:
-            return {"slug": slug, "added": 0, "agree": 0, "differ": 0, "skipped": 0, "not_read": d.get("not_read")}
+            return {"slug": slug, "added": 0, "agree": 0, "differ": 0, "skipped": 0, "replaced": 0, "not_read": d.get("not_read")}
         doc = {"_what": WHAT.format(college=d.get("college")), "college": d.get("college"),
                "catalog_year": d.get("catalog_year"), "read_at": d.get("read_at"), "run": d.get("run"),
                "source": sorted({t.get("url") for t in titles if t.get("url")}), "rows": []}
     have = {code_key(r.get("code")): r for r in doc.get("rows") or []}
-    added = agree = differ = skipped = 0
+    added = agree = differ = skipped = replaced_n = 0
     # A code the find prints under two different headings (Santa Monica prints sections without codes) is left for a
     # person: neither heading is filed, and the leftovers list names it.
     seen = {}
@@ -121,7 +128,7 @@ def file_doc(slug, d, dry):
         # lists it.
         apart = t.get("rule") == "code_address" and str(t.get("printed") or "").strip() != printed and code_key(
             re.sub(r"\s*[-–:]\s*" + re.escape(printed) + r"$", "", str(t.get("printed") or ""))) == k
-        if not k or not printed or (code_key(printed) == k and t.get("rule") != "schedule" and not apart
+        if not k or not printed or (code_key(printed) == k and t.get("rule") not in ("schedule", "coci") and not apart
                                     and (slug, k) not in CODE_ONLY_ALLOW):
             skipped += 1
             continue
@@ -129,14 +136,24 @@ def file_doc(slug, d, dry):
         if old and old.get("heading"):
             if title_case(printed).lower() == str(old["heading"]).lower():
                 agree += 1
-            else:
+                continue
+            # A title a person named replaces a different filed heading (S749; Sam, 2026-11-28, on #3937: "Where a row
+            # is Sam-named, keep Sam's version"); the heading it replaces is kept on the row as `replaced`. Anything
+            # else leaves the filed heading standing.
+            if not t.get("person"):
                 differ += 1
-            continue
+                continue
+            replaced = {f: old.get(f) for f in ("heading", "heading_printed", "rule", "address", "found_by", "found_on")}
         row = {"code": code, "heading": title_case(printed), "heading_printed": printed, "rule": t.get("rule") or "index", "codes": [code],
                "candidate": None, "address": t.get("url"), "where": t.get("where") or "catalog",
                "method": t.get("method") or "subject heading",
                "found_on": t.get("found_on") or (d.get("read_at") or "")[:10] or None,
                "found_by": t.get("found_by") or "COBI, a runner read (run %s)" % d.get("run"), "run": t.get("run") or d.get("run")}
+        if t.get("confidence") is not None:
+            row["confidence"] = t["confidence"]
+        if old and old.get("heading"):
+            row["replaced"] = replaced
+            replaced_n += 1
         if old:
             old.update(row)
         else:
@@ -148,7 +165,8 @@ def file_doc(slug, d, dry):
     doc["with_heading"] = sum(1 for r in doc["rows"] if r.get("heading"))
     if added and not dry:
         dump(path, doc)
-    return {"slug": slug, "added": added, "agree": agree, "differ": differ, "skipped": skipped, "not_read": d.get("not_read")}
+    return {"slug": slug, "added": added, "agree": agree, "differ": differ, "skipped": skipped, "replaced": replaced_n,
+            "not_read": d.get("not_read")}
 
 
 def college_slugs():
@@ -184,6 +202,17 @@ def read_csv_finds(path):
             # A person who names a code is its source (S746): Sam's lightning-round titles, found_by the person and
             # title_where "person", file with no URL; any other row still needs its URL.
             named = (r.get("title_where") or "").strip() == "person" and (r.get("found_by") or "").strip()
+            # A COBI title read from COCI's own course list (S749; Sam, 2026-11-28, "Yes all", relaying COBIx on #3937):
+            # title_where "coci", found_by COBI or COBIx, confidence under 100. The COCI course list is its source, so it
+            # files with that file as its address and rule "coci", and the Subjects build names COBI as the finder.
+            try:
+                conf = int(float((r.get("confidence") or "").strip()))
+            except ValueError:
+                conf = None
+            coci = ((r.get("title_where") or "").strip() == "coci" and (r.get("found_by") or "").strip().upper() in MACHINE
+                    and conf is not None and conf < 100)
+            if coci and not url:
+                url = COCI_SOURCE
             if not title or not (url or named):
                 continue
             college = (r.get("college") or "").strip()
@@ -199,7 +228,9 @@ def read_csv_finds(path):
                                 "where": (r.get("title_where") or "").strip() or "catalog",
                                 "method": (r.get("title_method") or "").strip() or "subject heading",
                                 "found_on": (r.get("searched_on") or "").strip() or None,
-                                "found_by": (r.get("found_by") or "").strip() or None})
+                                "found_by": (r.get("found_by") or "").strip() or None,
+                                "rule": "coci" if coci else None, "confidence": conf,
+                                "person": bool(named) and conf in (None, 100)})
     return finds, sorted(unknown)
 
 
@@ -236,7 +267,7 @@ def main(argv):
     dry = "--dry-run" in argv
     if "--backfill" in argv:
         print("backfilled the source fields on %d filed headings%s" % (backfill(dry), " (dry run)" if dry else ""))
-    tot = {"added": 0, "agree": 0, "differ": 0, "skipped": 0}
+    tot = {"added": 0, "agree": 0, "differ": 0, "skipped": 0, "replaced": 0}
     if "--csv" in argv:
         finds, unknown = read_csv_finds(argv[argv.index("--csv") + 1])
         jobs = [(lambda s=s, d=d: file_doc(s, d, dry)) for s, d in sorted(finds.items())]

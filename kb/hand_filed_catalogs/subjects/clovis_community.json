@@ -6,8 +6,8 @@
  "source": [
   "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=3"
  ],
- "subjects": 62,
- "with_heading": 62,
+ "subjects": 65,
+ "with_heading": 65,
  "links_without_a_code": [],
  "rows": [
   {
@@ -459,6 +459,23 @@
    "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
+   "code": "FSAP",
+   "heading": "Food Safety",
+   "heading_printed": "Food Safety",
+   "rule": "coci",
+   "codes": [
+    "FSAP"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Food Safety",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 80
+  },
+  {
    "code": "GEOG",
    "heading": "Geography",
    "heading_printed": "GEOGRAPHY",
@@ -715,6 +732,23 @@
    "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
+   "code": "MECH",
+   "heading": "Mechatronics/Industrial Automation",
+   "heading_printed": "Mechatronics/Industrial Automation",
+   "rule": "coci",
+   "codes": [
+    "MECH"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Mechatronics/Industrial Automation",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 94
+  },
+  {
    "code": "MKTG",
    "heading": "Marketing",
    "heading_printed": "MARKETING",
@@ -905,6 +939,23 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
+  },
+  {
+   "code": "REHT",
+   "heading": "Rehabilitation Aide",
+   "heading_printed": "Rehabilitation Aide",
+   "rule": "coci",
+   "codes": [
+    "REHT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Rehabilitation Aide",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 80
   },
   {
    "code": "SCI",

@@ -57,6 +57,23 @@
    "run": "45623798209"
   },
   {
+   "code": "ANST",
+   "heading": "Anesthesia Technology",
+   "heading_printed": "Anesthesia Technology",
+   "rule": "coci",
+   "codes": [
+    "ANST"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Anesthesia Technology",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "ANTH",
    "heading": "Anthropology",
    "heading_printed": "Anthropology",
@@ -87,6 +104,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45623798209)",
    "run": "45623798209"
+  },
+  {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 430 Introduction to Digital Art; 440 Introduction to Web Design",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "ARTH",
@@ -327,6 +361,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45623798209)",
    "run": "45623798209"
+  },
+  {
+   "code": "COMP",
+   "heading": "Obj-Oriented Prgrm DE",
+   "heading_printed": "Obj-Oriented Prgrm DE",
+   "rule": "coci",
+   "codes": [
+    "COMP"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 118 Intro to Obj-Oriented Prgrm De",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
   },
   {
    "code": "COSM",
@@ -601,6 +652,23 @@
    "run": "45623798209"
   },
   {
+   "code": "ESTM",
+   "heading": "Solar Photovoltaics (Pv) Systems and Markets",
+   "heading_printed": "Solar Photovoltaics (Pv) Systems and Markets",
+   "rule": "coci",
+   "codes": [
+    "ESTM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 411 Introduction to Solar Photovoltaics (PV) Systems and Markets; 400 Clean Energy Concepts, Policies and Industries",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "ETHN",
    "heading": "Ethnic Studies",
    "heading_printed": "Ethnic Studies",
@@ -631,6 +699,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45623798209)",
    "run": "45623798209"
+  },
+  {
+   "code": "FILM",
+   "heading": "Film",
+   "heading_printed": "Film",
+   "rule": "coci",
+   "codes": [
+    "FILM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Film",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "FITN",
@@ -697,6 +782,40 @@
    "run": "45623798209"
   },
   {
+   "code": "GERO",
+   "heading": "Gerontology",
+   "heading_printed": "Gerontology",
+   "rule": "coci",
+   "codes": [
+    "GERO"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 101 Health and Aging; 690 Independent Study - Gero",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
+   "code": "H.EC",
+   "heading": "Home Economics",
+   "heading_printed": "Home Economics",
+   "rule": "coci",
+   "codes": [
+    "H.EC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 113 Textiles; 118 Flat Pattern Design Legacy prefix later split into fashion/nutrition; keep the historical title.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 92
+  },
+  {
    "code": "HIST",
    "heading": "History",
    "heading_printed": "History",
@@ -711,6 +830,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45623798209)",
    "run": "45623798209"
+  },
+  {
+   "code": "H.R.",
+   "heading": "Hospitality and Travel",
+   "heading_printed": "Hospitality and Travel",
+   "rule": "coci",
+   "codes": [
+    "H.R."
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 100 Intro to Hospitality and Travel; 101 Hospitality Marketing",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
   },
   {
    "code": "HSCI",
@@ -743,6 +879,40 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45623798209)",
    "run": "45623798209"
+  },
+  {
+   "code": "HUM.",
+   "heading": "Humanities",
+   "heading_printed": "Humanities",
+   "rule": "coci",
+   "codes": [
+    "HUM."
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 680SA Life and Culture of the Local Area - Spain",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
+   "code": "IBUS",
+   "heading": "International Business",
+   "heading_printed": "International Business",
+   "rule": "coci",
+   "codes": [
+    "IBUS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: International Business",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 94
   },
   {
    "code": "IDST",
@@ -985,6 +1155,23 @@
    "run": "45623798209"
   },
   {
+   "code": "OFAD",
+   "heading": "Office Administration",
+   "heading_printed": "Office Administration",
+   "rule": "coci",
+   "codes": [
+    "OFAD"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 103 Typing for Non-Native Speakers; 110 Typing Documents on Microcomps Legacy prefix later absorbed into BCM; keep the historical title.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 92
+  },
+  {
    "code": "P.E.",
    "heading": "Kinesiology – Physical Education",
    "heading_printed": "Kinesiology – Physical Education",
@@ -1031,6 +1218,40 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45623798209)",
    "run": "45623798209"
+  },
+  {
+   "code": "PLSC",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "coci",
+   "codes": [
+    "PLSC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Political Science",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
+   "code": "PNTR",
+   "heading": "Painters Apprenticeship",
+   "heading_printed": "Painters Apprenticeship",
+   "rule": "coci",
+   "codes": [
+    "PNTR"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 710 Painters Apprenticeship-1st Yr; 720 Painters Apprenticeship-2nd Yr",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
   },
   {
    "code": "POLS",
@@ -1193,6 +1414,23 @@
    "run": "45623798209"
   },
   {
+   "code": "TAGA",
+   "heading": "Tagalog",
+   "heading_printed": "Tagalog",
+   "rule": "coci",
+   "codes": [
+    "TAGA"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 111 Elementary Tagalog I; 112 Elementary Tagalog II",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 96
+  },
+  {
    "code": "TEAM",
    "heading": "Kinesiology - Team Sports",
    "heading_printed": "Kinesiology - Team Sports",
@@ -1257,6 +1495,6 @@
    "run": "45623798209"
   }
  ],
- "subjects": 78,
- "with_heading": 78
+ "subjects": 92,
+ "with_heading": 92
 }

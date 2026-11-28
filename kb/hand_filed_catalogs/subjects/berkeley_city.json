@@ -585,6 +585,23 @@
    "run": "45626743727"
   },
   {
+   "code": "MUSIC",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "coci",
+   "codes": [
+    "MUSIC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Music",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
    "code": "PHIL",
    "heading": "Philosophy",
    "heading_printed": "Philosophy",
@@ -777,6 +794,6 @@
    "run": "45626743727"
   }
  ],
- "subjects": 48,
- "with_heading": 48
+ "subjects": 49,
+ "with_heading": 49
 }

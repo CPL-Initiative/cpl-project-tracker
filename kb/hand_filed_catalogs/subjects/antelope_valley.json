@@ -267,6 +267,23 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,art?tenant=avc.elumenapp.com",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Art",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
    "code": "ASTR",
    "heading": "Astronomy",
    "heading_printed": "Astronomy",
@@ -1467,6 +1484,6 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   }
  ],
- "subjects": 86,
- "with_heading": 86
+ "subjects": 87,
+ "with_heading": 87
 }

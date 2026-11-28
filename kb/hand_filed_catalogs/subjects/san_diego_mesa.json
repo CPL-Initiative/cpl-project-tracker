@@ -185,6 +185,23 @@
    "run": "45634961820"
   },
   {
+   "code": "BLDC",
+   "heading": "Building Construction",
+   "heading_printed": "Building Construction",
+   "rule": "coci",
+   "codes": [
+    "BLDC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Building Construction",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 94
+  },
+  {
    "code": "BUSE",
    "heading": "Business",
    "heading_printed": "Business",
@@ -1353,6 +1370,6 @@
    "run": "45634961820"
   }
  ],
- "subjects": 84,
- "with_heading": 84
+ "subjects": 85,
+ "with_heading": 85
 }

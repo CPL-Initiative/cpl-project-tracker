@@ -107,6 +107,40 @@
    "run": "45625671325"
   },
   {
+   "code": "APPRT",
+   "heading": "Apprenticeship",
+   "heading_printed": "Apprenticeship",
+   "rule": "coci",
+   "codes": [
+    "APPRT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 298 Work Experience in Apprenticeable (Occupation); 498 Work Experience in Apprenticeable (Occupation)",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 314 Introduction to Illustration; 442 Introduction to Art Gallery Operations",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "ARTH",
    "heading": "Art History",
    "heading_printed": "Art History",
@@ -299,6 +333,23 @@
    "run": "45625671325"
   },
   {
+   "code": "CDCR",
+   "heading": "California Department of Corrections and Rehabilitation",
+   "heading_printed": "California Department of Corrections and Rehabilitation",
+   "rule": "coci",
+   "codes": [
+    "CDCR"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 101 CDCR Basic Academy; 298 Work Experience in California Department of Corrections and Rehabilitation",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "CHEM",
    "heading": "Chemistry",
    "heading_printed": "Chemistry",
@@ -425,6 +476,40 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45625671325)",
    "run": "45625671325"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "coci",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Communication Studies",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
+   "code": "DANCE",
+   "heading": "Dance",
+   "heading_printed": "Dance",
+   "rule": "coci",
+   "codes": [
+    "DANCE"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Dance",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
   },
   {
    "code": "DCDT",
@@ -699,6 +784,23 @@
    "run": "45625671325"
   },
   {
+   "code": "ENGWR",
+   "heading": "English - Writing",
+   "heading_printed": "English - Writing",
+   "rule": "coci",
+   "codes": [
+    "ENGWR"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: English - Writing",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
+  },
+  {
    "code": "ESL",
    "heading": "English as a Second Language",
    "heading_printed": "English as a Second Language",
@@ -809,6 +911,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45625671325)",
    "run": "45625671325"
+  },
+  {
+   "code": "ETHNS",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "coci",
+   "codes": [
+    "ETHNS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Ethnic Studies",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
   },
   {
    "code": "FASHN",
@@ -1115,6 +1234,23 @@
    "run": "45625671325"
   },
   {
+   "code": "HSER",
+   "heading": "Human Services",
+   "heading_printed": "Human Services",
+   "rule": "coci",
+   "codes": [
+    "HSER"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Human Services",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
+  },
+  {
    "code": "HUM",
    "heading": "Humanities",
    "heading_printed": "Humanities",
@@ -1129,6 +1265,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45625671325)",
    "run": "45625671325"
+  },
+  {
+   "code": "HVACR",
+   "heading": "Heating, Ventilation, Air Conditioning and Refrigeration",
+   "heading_printed": "Heating, Ventilation, Air Conditioning and Refrigeration",
+   "rule": "coci",
+   "codes": [
+    "HVACR"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 144 Introduction to Direct Digital Controls; 146 Introduction to Variable Frequency Drives",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "IDES",
@@ -1161,6 +1314,40 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45625671325)",
    "run": "45625671325"
+  },
+  {
+   "code": "INSTL",
+   "heading": "Flooring Installer Apprenticeship",
+   "heading_printed": "Flooring Installer Apprenticeship",
+   "rule": "coci",
+   "codes": [
+    "INSTL"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 106 Introduction to Resilient; 114 Introduction to Flash Cove",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
+   "code": "INSUL",
+   "heading": "Insulator Apprenticeship",
+   "heading_printed": "Insulator Apprenticeship",
+   "rule": "coci",
+   "codes": [
+    "INSUL"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 191 Introduction to Firestop; 120 Blueprint for Insulator I",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
   },
   {
    "code": "INTRP",
@@ -1257,6 +1444,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45625671325)",
    "run": "45625671325"
+  },
+  {
+   "code": "LA",
+   "heading": "Legal Assisting",
+   "heading_printed": "Legal Assisting",
+   "rule": "coci",
+   "codes": [
+    "LA"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 300 Introduction to Law and the American Legal System; 310 Civil Procedures and Litigation",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
   },
   {
    "code": "LIBR",
@@ -1707,6 +1911,40 @@
    "run": "45625671325"
   },
   {
+   "code": "RLST",
+   "heading": "Religious Studies",
+   "heading_printed": "Religious Studies",
+   "rule": "coci",
+   "codes": [
+    "RLST"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 301 Introduction to World Religions; 302 Introduction to Atheism",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
+   "code": "ROOF",
+   "heading": "Roofing Apprenticeship",
+   "heading_printed": "Roofing Apprenticeship",
+   "rule": "coci",
+   "codes": [
+    "ROOF"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 298 Work Experience in Roofing and Shingle Apprenticeship",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
+  },
+  {
    "code": "RUSS",
    "heading": "Russian",
    "heading_printed": "Russian",
@@ -1721,6 +1959,40 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45625671325)",
    "run": "45625671325"
+  },
+  {
+   "code": "SCFLD",
+   "heading": "Scaffold Erector Apprenticeship",
+   "heading_printed": "Scaffold Erector Apprenticeship",
+   "rule": "coci",
+   "codes": [
+    "SCFLD"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 101 Introduction to Scaffolds; 102 Hazard Awareness and Confined Space",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
+   "code": "SGVT",
+   "heading": "Student Government",
+   "heading_printed": "Student Government",
+   "rule": "coci",
+   "codes": [
+    "SGVT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Student Government",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
   },
   {
    "code": "SHME",
@@ -1883,6 +2155,23 @@
    "run": "45625671325"
   },
   {
+   "code": "STMFT",
+   "heading": "Steamfitting Apprenticeship",
+   "heading_printed": "Steamfitting Apprenticeship",
+   "rule": "coci",
+   "codes": [
+    "STMFT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 110 Beginning Drawing and Plan Reading for the Piping Trades; 113 Beginning AutoCAD for Steamfitters",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "SWCD",
    "heading": "Social Work and Chemical Dependency",
    "heading_printed": "Social Work and Chemical Dependency",
@@ -1947,6 +2236,23 @@
    "run": "45625671325"
   },
   {
+   "code": "TECCOM",
+   "heading": "Technical and Professional Communication",
+   "heading_printed": "Technical and Professional Communication",
+   "rule": "coci",
+   "codes": [
+    "TECCOM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 300 Introduction to Technical/Professional Communication; 310 Writing Digital Content",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "TMACT",
    "heading": "Team Activity",
    "heading_printed": "Team Activity",
@@ -1995,6 +2301,6 @@
    "run": "45625671325"
   }
  ],
- "subjects": 124,
- "with_heading": 124
+ "subjects": 142,
+ "with_heading": 142
 }

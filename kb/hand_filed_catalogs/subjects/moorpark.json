@@ -120,6 +120,23 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "ANPH",
+   "heading": "Anatomy and Physiology",
+   "heading_printed": "Anatomy and Physiology",
+   "rule": "coci",
+   "codes": [
+    "ANPH"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: M01 Human Anatomy and Physiology; corrected during QA (was: Anthropology)",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 80
+  },
+  {
    "code": "ANSC",
    "heading": "Animal Science",
    "heading_printed": "Animal Science",
@@ -152,6 +169,40 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Art",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "coci",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Art History",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
    "code": "AST",
    "heading": "Astronomy",
    "heading_printed": "Astronomy",
@@ -166,6 +217,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBIx",
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "coci",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Biology",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
   },
   {
    "code": "BIOT",
@@ -184,6 +252,23 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "BIS",
+   "heading": "Business Information Systems",
+   "heading_printed": "Business Information Systems",
+   "rule": "coci",
+   "codes": [
+    "BIS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: M10 Microsoft Windows â€“ Introduction; M20 Microsoft Office - Introduction",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "BOT",
    "heading": "Botany",
    "heading_printed": "Botany",
@@ -198,6 +283,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBIx",
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "BUS",
+   "heading": "Business",
+   "heading_printed": "Business",
+   "rule": "coci",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Business",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
   },
   {
    "code": "CD",
@@ -262,6 +364,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBIx",
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "CNSE",
+   "heading": "Computer Information Systems",
+   "heading_printed": "Computer Information Systems",
+   "rule": "coci",
+   "codes": [
+    "CNSE"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Computer Information Systems",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "COL",
@@ -360,6 +479,23 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "EATM",
+   "heading": "Exotic Animal Training and Management",
+   "heading_printed": "Exotic Animal Training and Management",
+   "rule": "coci",
+   "codes": [
+    "EATM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: M08 Applied Wildlife Conservation; M34 Practical Résumés for Animal Professionals",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "ECON",
    "heading": "Economics",
    "heading_printed": "Economics",
@@ -422,6 +558,40 @@
    "found_on": "2026-11-25",
    "found_by": "COBIx",
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ENGR",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "coci",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Engineering",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
+   "code": "ENGT",
+   "heading": "Engineering Technology",
+   "heading_printed": "Engineering Technology",
+   "rule": "coci",
+   "codes": [
+    "ENGT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Engineering Technology",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "ENSC",
@@ -584,6 +754,23 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "GR",
+   "heading": "Graphics",
+   "heading_printed": "Graphics",
+   "rule": "coci",
+   "codes": [
+    "GR"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: M122 Independent Study-Graphics",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
+  },
+  {
    "code": "HED",
    "heading": "Health Education",
    "heading_printed": "Health Education",
@@ -710,6 +897,40 @@
    "found_on": "2026-11-25",
    "found_by": "COBIx",
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "JOUR",
+   "heading": "Journalism",
+   "heading_printed": "Journalism",
+   "rule": "coci",
+   "codes": [
+    "JOUR"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Journalism",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
+   "code": "KIN",
+   "heading": "Kinesiology",
+   "heading_printed": "Kinesiology",
+   "rule": "coci",
+   "codes": [
+    "KIN"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Kinesiology",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 94
   },
   {
    "code": "LAT",
@@ -856,6 +1077,23 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "PHOT",
+   "heading": "Photography",
+   "heading_printed": "Photography",
+   "rule": "coci",
+   "codes": [
+    "PHOT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Photography",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
    "code": "PHSC",
    "heading": "Physical Science",
    "heading_printed": "Physical Science",
@@ -870,6 +1108,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBIx",
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "PHSO",
+   "heading": "Physiology",
+   "heading_printed": "Physiology",
+   "rule": "coci",
+   "codes": [
+    "PHSO"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: M01 Human Physiology; M01H Honors: Human Physiology; corrected during QA (was: Physical Science)",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
   },
   {
    "code": "PHTC",
@@ -936,6 +1191,23 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "PSY",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "coci",
+   "codes": [
+    "PSY"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Psychology",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
+  },
+  {
    "code": "PSYC",
    "heading": "Psychology",
    "heading_printed": "Psychology",
@@ -952,6 +1224,40 @@
    "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   },
   {
+   "code": "RADT",
+   "heading": "Radiologic Technology",
+   "heading_printed": "Radiologic Technology",
+   "rule": "coci",
+   "codes": [
+    "RADT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Radiologic Technology",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
+   "code": "RBT",
+   "heading": "Registered Behavior Technician",
+   "heading_printed": "Registered Behavior Technician",
+   "rule": "coci",
+   "codes": [
+    "RBT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Registered Behavior Technician",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "SJS",
    "heading": "Social Justice Studies",
    "heading_printed": "Social Justice Studies",
@@ -966,6 +1272,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBIx",
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "coci",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Sociology",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
   },
   {
    "code": "SPAN",
@@ -1014,8 +1337,59 @@
    "found_on": "2026-11-25",
    "found_by": "COBIx",
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "THA",
+   "heading": "Theatre Arts",
+   "heading_printed": "Theatre Arts",
+   "rule": "coci",
+   "codes": [
+    "THA"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Theatre Arts",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
+   "code": "TTHA",
+   "heading": "Theatre Arts",
+   "heading_printed": "Theatre Arts",
+   "rule": "coci",
+   "codes": [
+    "TTHA"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Theatre Arts",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
+   "code": "ZOO",
+   "heading": "Zoology",
+   "heading_printed": "Zoology",
+   "rule": "coci",
+   "codes": [
+    "ZOO"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: M01 Introduction to Zoology; M122 Independent Study-Zoology",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
   }
  ],
- "subjects": 59,
- "with_heading": 59
+ "subjects": 81,
+ "with_heading": 81
 }

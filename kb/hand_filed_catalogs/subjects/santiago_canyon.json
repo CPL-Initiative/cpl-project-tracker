@@ -129,6 +129,40 @@
    "run": "45629589579"
   },
   {
+   "code": "ACPD",
+   "heading": "Carpentry Pile Driver - Apprenticeship",
+   "heading_printed": "Carpentry Pile Driver - Apprenticeship",
+   "rule": "coci",
+   "codes": [
+    "ACPD"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 024A Piles and Hammers A; 024B Piles and Hammers B; 028A Bridge and Deck Forms A; 34 Marine Safety; 35 Dock Systems Not general carpentry (that is ACA, already titled Carpentry - Apprenticeship). Title style matches other SCC apprenticeship codes (e.g. Maintenance Mechanic - Apprenticeship).",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 95
+  },
+  {
+   "code": "ACPL",
+   "heading": "Ap Plasterer",
+   "heading_printed": "Ap Plasterer",
+   "rule": "coci",
+   "codes": [
+    "ACPL"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Ap Plasterer",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "ACS",
    "heading": "Cosmetology - Apprenticeship",
    "heading_printed": "COSMETOLOGY - APPRENTICESHIP",
@@ -161,6 +195,23 @@
    "run": "45629589579"
   },
   {
+   "code": "AIN",
+   "heading": "Insulation - Apprenticeship",
+   "heading_printed": "Insulation - Apprenticeship",
+   "rule": "coci",
+   "codes": [
+    "AIN"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 23 Insulation Basics; 27 Flexible Foam Insulation; 32 Specialty Insulation; 36 Loose Fill and Spray Insulation; 37 Rigid Foam and Cellular Glass Insulation Installations COCI courses are clearly insulation, not acoustical installer. (AMF is the already-titled Ap Acoustical Installer code and its courses are modular furniture/installations.) GAI's Insulation correction is backed by the course list.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 96
+  },
+  {
    "code": "AME",
    "heading": "Maintenance Mechanic - Apprenticeship",
    "heading_printed": "MAINTENANCE MECHANIC - APPRENTICESHIP",
@@ -177,6 +228,23 @@
    "run": "45629589579"
   },
   {
+   "code": "AMF",
+   "heading": "Ap Acoustical Installer",
+   "heading_printed": "Ap Acoustical Installer",
+   "rule": "coci",
+   "codes": [
+    "AMF"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Ap Acoustical Installer",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "AMM",
    "heading": "Maintenance Mechanic - Apprenticeship",
    "heading_printed": "Maintenance Mechanic - Apprenticeship",
@@ -191,6 +259,23 @@
    "found_on": "2026-11-27",
    "found_by": "COBI",
    "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
+  },
+  {
+   "code": "AMW",
+   "heading": "Millwright - Apprenticeship",
+   "heading_printed": "Millwright - Apprenticeship",
+   "rule": "coci",
+   "codes": [
+    "AMW"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 023B Millwright General Skills - B; 28 Machinery Shaft Alignment; 036A Machinery Installation and Erection - A; 47 Steam Turbine GAI agreed. Style aligned with other SCC apprenticeship titles.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 95
   },
   {
    "code": "ANTH",
@@ -257,6 +342,23 @@
    "run": "45629589579"
   },
   {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Art",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
    "code": "ASL",
    "heading": "American Sign Language",
    "heading_printed": "AMERICAN SIGN LANGUAGE",
@@ -303,6 +405,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45629589579)",
    "run": "45629589579"
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "coci",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Biology",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
   },
   {
    "code": "BUS",
@@ -577,6 +696,23 @@
    "run": "45629589579"
   },
   {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "coci",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: English",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
    "code": "ENGR",
    "heading": "Engineering",
    "heading_printed": "ENGINEERING",
@@ -801,6 +937,23 @@
    "run": "45629589579"
   },
   {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "coci",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Mathematics",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
    "code": "MGMT",
    "heading": "Management",
    "heading_printed": "MANAGEMENT",
@@ -881,6 +1034,23 @@
    "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   },
   {
+   "code": "PBLC",
+   "heading": "Public Works",
+   "heading_printed": "Public Works",
+   "rule": "coci",
+   "codes": [
+    "PBLC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 50 Fundamentals of Public Works; 68 Fundamentals of Storm Water Management; 70 Construction Inspection; 85 Code Enforcement Officer; 80 Introduction of Project Management Project Management appears only as courses inside the Public Works department. GAI correction accepted.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 97
+  },
+  {
    "code": "PHIL",
    "heading": "Philosophy",
    "heading_printed": "PHILOSOPHY",
@@ -927,6 +1097,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45629589579)",
    "run": "45629589579"
+  },
+  {
+   "code": "POLT",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "coci",
+   "codes": [
+    "POLT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Political Science",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 96
   },
   {
    "code": "PRNT",
@@ -1073,6 +1260,23 @@
    "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   },
   {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "coci",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Statistics",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
    "code": "SURV",
    "heading": "Survey/Mapping Sciences",
    "heading_printed": "SURVEY/MAPPING SCIENCES",
@@ -1087,6 +1291,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45629589579)",
    "run": "45629589579"
+  },
+  {
+   "code": "TELV",
+   "heading": "Television/Video Communications",
+   "heading_printed": "Television/Video Communications",
+   "rule": "coci",
+   "codes": [
+    "TELV"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 104 History of Film From 1945 to Present; 105 Mass Media and Society GAI/catalog wording is Television/Video Communications (legacy prefix; later film/media courses sit under CINE). Slight refinement of Television and Video.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 90
   },
   {
    "code": "THEA",
@@ -1233,6 +1454,6 @@
    "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   }
  ],
- "subjects": 73,
- "with_heading": 73
+ "subjects": 86,
+ "with_heading": 86
 }

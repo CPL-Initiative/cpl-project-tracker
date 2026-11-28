@@ -161,6 +161,23 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,art?tenant=redwoods.elumenapp.com",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Art",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
    "code": "ASAM",
    "heading": "Asian American Studies",
    "heading_printed": "Asian American Studies",
@@ -367,6 +384,23 @@
    "found_on": "2026-11-25",
    "found_by": "Subjects",
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "DRAMA",
+   "heading": "Drama",
+   "heading_printed": "Drama",
+   "rule": "coci",
+   "codes": [
+    "DRAMA"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,drama?tenant=redwoods.elumenapp.com",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Theatre Arts",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "DT",
@@ -655,6 +689,23 @@
    "found_on": "2026-11-25",
    "found_by": "Subjects",
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "HUPA",
+   "heading": "Hupa",
+   "heading_printed": "Hupa",
+   "rule": "coci",
+   "codes": [
+    "HUPA"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,hupa?tenant=redwoods.elumenapp.com",
+   "where": "coci",
+   "method": "suggested by COBI from the hint",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "IT",
@@ -1169,6 +1220,6 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   }
  ],
- "subjects": 69,
- "with_heading": 69
+ "subjects": 72,
+ "with_heading": 72
 }

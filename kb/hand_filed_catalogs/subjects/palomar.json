@@ -345,6 +345,23 @@
    "run": "45628443522"
   },
   {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 100 Introduction To Art; 125 Introduction To Portraiture; corrected during QA (was: Art-Design)",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
+  },
+  {
    "code": "ARTD",
    "heading": "Art-Design",
    "heading_printed": "Art-Design",
@@ -2217,6 +2234,6 @@
    "run": "45628443522"
   }
  ],
- "subjects": 138,
- "with_heading": 138
+ "subjects": 139,
+ "with_heading": 139
 }

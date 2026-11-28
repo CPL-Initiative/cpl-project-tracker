@@ -138,6 +138,23 @@
    "run": "45627311665"
   },
   {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Art",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
    "code": "ASTR",
    "heading": "Astronomy",
    "heading_printed": "Astronomy",
@@ -506,6 +523,23 @@
    "run": "45627311665"
   },
   {
+   "code": "DVP",
+   "heading": "Display and Vp",
+   "heading_printed": "Display and Vp",
+   "rule": "coci",
+   "codes": [
+    "DVP"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: A180 Intro To Display & VP",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
+  },
+  {
    "code": "ECON",
    "heading": "Economics",
    "heading_printed": "Economics",
@@ -520,6 +554,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627311665)",
    "run": "45627311665"
+  },
+  {
+   "code": "EDUC",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "coci",
+   "codes": [
+    "EDUC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Education",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "ELEC",
@@ -826,6 +877,23 @@
    "run": "45627311665"
   },
   {
+   "code": "HLED",
+   "heading": "Health Education",
+   "heading_printed": "Health Education",
+   "rule": "coci",
+   "codes": [
+    "HLED"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: A111 Cardiopulmonary Resus; A136 Nutritn/Fitness/Perform",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "HORT",
    "heading": "Horticulture",
    "heading_printed": "Horticulture",
@@ -840,6 +908,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627311665)",
    "run": "45627311665"
+  },
+  {
+   "code": "HTEL",
+   "heading": "Hotel Management",
+   "heading_printed": "Hotel Management",
+   "rule": "coci",
+   "codes": [
+    "HTEL"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: A291 Dir Study; A292 Dir Study; A293 Dir Study; A294 Dir Study; A295 Dir Study OCC catalog course family is Hotel Management (HTEL). COCI rows are only directed study, but the official subject heading is Hotel Management. Legacy toward hospitality/FBM is a note only.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 92
   },
   {
    "code": "HTT",
@@ -936,6 +1021,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627311665)",
    "run": "45627311665"
+  },
+  {
+   "code": "IT",
+   "heading": "Computer Information Systems",
+   "heading_printed": "Computer Information Systems",
+   "rule": "coci",
+   "codes": [
+    "IT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Computer Information Systems",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "ITAL",
@@ -1546,6 +1648,23 @@
    "run": "45627311665"
   },
   {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "coci",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Statistics",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 94
+  },
+  {
    "code": "TECH",
    "heading": "Technology",
    "heading_printed": "Technology",
@@ -1626,6 +1745,6 @@
    "run": "45627311665"
   }
  ],
- "subjects": 101,
- "with_heading": 101
+ "subjects": 108,
+ "with_heading": 108
 }

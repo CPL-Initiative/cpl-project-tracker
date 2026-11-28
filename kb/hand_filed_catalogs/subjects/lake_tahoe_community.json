@@ -27,6 +27,23 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "https://ltcc.elumenapp.com/catalog/2026-2027/department/art",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Art",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 94
+  },
+  {
    "code": "ASL",
    "heading": "American Sign Language",
    "heading_printed": "American Sign Language",
@@ -137,6 +154,23 @@
    "found_on": "2026-11-25",
    "found_by": "Subjects",
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "CMU",
+   "heading": "Commercial Music",
+   "heading_printed": "Commercial Music",
+   "rule": "coci",
+   "codes": [
+    "CMU"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 131A Special Topics: Beginning Audio Editing",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
   },
   {
    "code": "CNT",
@@ -987,6 +1021,6 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   }
  ],
- "subjects": 61,
- "with_heading": 61
+ "subjects": 63,
+ "with_heading": 63
 }

@@ -299,6 +299,23 @@
    "run": "45625259489,45626788039"
   },
   {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 038A Introduction to Ceramics; 40 Introduction to Digital Arts",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "ARTH",
    "heading": "Art History",
    "heading_printed": "ART HISTORY",
@@ -713,6 +730,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45625259489,45626788039)",
    "run": "45625259489,45626788039"
+  },
+  {
+   "code": "DLT",
+   "heading": "Dental Laboratory Technology",
+   "heading_printed": "Dental Laboratory Technology",
+   "rule": "coci",
+   "codes": [
+    "DLT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 201A Directed Studies in Basic Dental Laboratory Techniques; 201B Directed Studies in Intermediate Dental Laboratory Techniques",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
   },
   {
    "code": "DMA",
@@ -1979,6 +2013,23 @@
    "run": "45625259489,45626788039"
   },
   {
+   "code": "SET",
+   "heading": "Special Education",
+   "heading_printed": "Special Education",
+   "rule": "coci",
+   "codes": [
+    "SET"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 108 Introduction to Learning Disabilities; 111 Introduction to Developmental Disabilities; 112 Working with the Developmentally Disabled",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 92
+  },
+  {
    "code": "SLPA",
    "heading": "Speech Language Pathology Assistant",
    "heading_printed": "SPEECH LANGUAGE PATHOLOGY ASSISTANT",
@@ -2251,6 +2302,6 @@
    "run": "45625259489,45626788039"
   }
  ],
- "subjects": 132,
- "with_heading": 132
+ "subjects": 135,
+ "with_heading": 135
 }

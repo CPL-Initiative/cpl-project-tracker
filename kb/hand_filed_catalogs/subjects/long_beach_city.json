@@ -5,8 +5,8 @@
  "source": [
   "https://lbcc-public.courseleaf.com/course-descriptions/"
  ],
- "subjects": 128,
- "with_heading": 128,
+ "subjects": 133,
+ "with_heading": 133,
  "links_without_a_code": [
   {
    "label": "C-ID Numbering",
@@ -285,6 +285,23 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 44948295544)"
+  },
+  {
+   "code": "BARB",
+   "heading": "Barbering",
+   "heading_printed": "Barbering",
+   "rule": "coci",
+   "codes": [
+    "BARB"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Barbering",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
   },
   {
    "code": "BCOM",
@@ -766,6 +783,23 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 44948295544)"
+  },
+  {
+   "code": "DRAFT",
+   "heading": "Drafting",
+   "heading_printed": "Drafting",
+   "rule": "coci",
+   "codes": [
+    "DRAFT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 221 Intermediate CATIA",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "DSGN",
@@ -1264,6 +1298,23 @@
    "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
+   "code": "HS",
+   "heading": "Homeland Security Admin",
+   "heading_printed": "Homeland Security Admin",
+   "rule": "coci",
+   "codes": [
+    "HS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a college naming pattern; COCI course titles: 71 WE: Human Services",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 84
+  },
+  {
    "code": "HSA",
    "heading": "Homeland Security Admin",
    "heading_printed": "Homeland Security Admin",
@@ -1294,6 +1345,23 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 44948295544)"
+  },
+  {
+   "code": "HVAC/R",
+   "heading": "Heating, Ventilation, Air Conditioning, and Refrigeration",
+   "heading_printed": "Heating, Ventilation, Air Conditioning, and Refrigeration",
+   "rule": "coci",
+   "codes": [
+    "HVAC/R"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 200 HVAC/R Equipment and Components; 202 Mechanical and Safety for HVAC/R",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "IBUS",
@@ -1886,6 +1954,23 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 44948295544)"
+  },
+  {
+   "code": "SHOWB",
+   "heading": "Show Business",
+   "heading_printed": "Show Business",
+   "rule": "coci",
+   "codes": [
+    "SHOWB"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Show Business",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 80
   },
   {
    "code": "SOCI",

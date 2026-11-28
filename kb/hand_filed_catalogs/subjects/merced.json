@@ -1305,6 +1305,23 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "coci",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Political Science",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
    "code": "POSC",
    "heading": "Political Science",
    "heading_printed": "Political Science",
@@ -1673,6 +1690,6 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   }
  ],
- "subjects": 104,
- "with_heading": 104
+ "subjects": 105,
+ "with_heading": 105
 }

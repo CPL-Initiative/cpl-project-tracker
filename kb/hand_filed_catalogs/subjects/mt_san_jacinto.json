@@ -177,6 +177,23 @@
    "run": "45625259489"
   },
   {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Art",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
    "code": "ARTH",
    "heading": "Art",
    "heading_printed": "Art",
@@ -255,6 +272,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45625259489)",
    "run": "45625259489"
+  },
+  {
+   "code": "AVIA",
+   "heading": "Aviation",
+   "heading_printed": "Aviation",
+   "rule": "coci",
+   "codes": [
+    "AVIA"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Aviation",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 95
   },
   {
    "code": "BADM",
@@ -833,6 +867,23 @@
    "run": "45625259489"
   },
   {
+   "code": "HORT",
+   "heading": "Horticulture",
+   "heading_printed": "Horticulture",
+   "rule": "coci",
+   "codes": [
+    "HORT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Horticulture",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "HS",
    "heading": "Health Science",
    "heading_printed": "Health Science",
@@ -847,6 +898,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45625259489)",
    "run": "45625259489"
+  },
+  {
+   "code": "IPP",
+   "heading": "Interpreter Preparation",
+   "heading_printed": "Interpreter Preparation",
+   "rule": "coci",
+   "codes": [
+    "IPP"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 510 Introduction to ASL/English Interpreting (formerly IPP-101); 511 Processing Skills Development (formerly IPP-103)",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
   },
   {
    "code": "JOUR",
@@ -1055,6 +1123,40 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45625259489)",
    "run": "45625259489"
+  },
+  {
+   "code": "ORA",
+   "heading": "Oracle",
+   "heading_printed": "Oracle",
+   "rule": "coci",
+   "codes": [
+    "ORA"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 39 Oracle Certification Test Review",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
+  },
+  {
+   "code": "OTEC",
+   "heading": "Office Technology",
+   "heading_printed": "Office Technology",
+   "rule": "coci",
+   "codes": [
+    "OTEC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 505 Office Procedures and Systems (formerly OTEC-098) Legacy prefix; later folded into BADM-505 under Business Administration. Keep the historical title.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 90
   },
   {
    "code": "PALS",
@@ -1393,6 +1495,6 @@
    "run": "45625259489"
   }
  ],
- "subjects": 82,
- "with_heading": 82
+ "subjects": 88,
+ "with_heading": 88
 }

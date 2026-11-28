@@ -105,6 +105,23 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,art?tenant=ccc.elumenapp.com",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Art",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 94
+  },
+  {
    "code": "ASTRO",
    "heading": "Astronomy",
    "heading_printed": "Astronomy",
@@ -327,6 +344,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBIx",
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "DANCE",
+   "heading": "Dance",
+   "heading_printed": "Dance",
+   "rule": "coci",
+   "codes": [
+    "DANCE"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,dance?tenant=ccc.elumenapp.com",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Dance",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
   },
   {
    "code": "DRAMA",
@@ -665,6 +699,40 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "MEDCM",
+   "heading": "Media Communications",
+   "heading_printed": "Media Communications",
+   "rule": "coci",
+   "codes": [
+    "MEDCM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 298 Independent Study Only Independent Study in COCI; title follows the MEDCM code. Later consolidation into COMM/Digital Media is a legacy note only.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 82
+  },
+  {
+   "code": "MEDIA",
+   "heading": "Media",
+   "heading_printed": "Media",
+   "rule": "coci",
+   "codes": [
+    "MEDIA"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,media?tenant=ccc.elumenapp.com",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Media Arts",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "MEDIC",
    "heading": "Medical Assisting",
    "heading_printed": "Medical Assisting",
@@ -679,6 +747,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBIx",
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "MUSIC",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "coci",
+   "codes": [
+    "MUSIC"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,music?tenant=ccc.elumenapp.com",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Music",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
   },
   {
    "code": "NURS",
@@ -953,6 +1038,6 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   }
  ],
- "subjects": 56,
- "with_heading": 56
+ "subjects": 61,
+ "with_heading": 61
 }

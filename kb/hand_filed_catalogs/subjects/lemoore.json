@@ -41,6 +41,40 @@
  ],
  "rows": [
   {
+   "code": "AG",
+   "heading": "Agriculture Business",
+   "heading_printed": "Agriculture Business",
+   "rule": "coci",
+   "codes": [
+    "AG"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Agriculture Business",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 94
+  },
+  {
+   "code": "AGBUS",
+   "heading": "Agriculture Business",
+   "heading_printed": "Agriculture Business",
+   "rule": "coci",
+   "codes": [
+    "AGBUS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Agriculture Business",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
+  },
+  {
    "code": "AOJ",
    "heading": "Administration of Justice",
    "heading_printed": "Administration of Justice",
@@ -55,6 +89,57 @@
    "found_on": "2026-11-25",
    "found_by": "COBIx",
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Art",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
+   "code": "ASCI",
+   "heading": "Animal Science",
+   "heading_printed": "Animal Science",
+   "rule": "coci",
+   "codes": [
+    "ASCI"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Animal Science",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 94
+  },
+  {
+   "code": "ASF",
+   "heading": "Agriculture",
+   "heading_printed": "Agriculture",
+   "rule": "coci",
+   "codes": [
+    "ASF"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Agriculture",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "ASL",
@@ -185,6 +270,57 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "COMM",
+   "heading": "Public Speaking",
+   "heading_printed": "Public Speaking",
+   "rule": "coci",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: C1000 Introduction to Public Speaking",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
+  },
+  {
+   "code": "COMP",
+   "heading": "Programming Concepts and Methodologies - C#",
+   "heading_printed": "Programming Concepts and Methodologies - C#",
+   "rule": "coci",
+   "codes": [
+    "COMP"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 003A Introduction to Programming Concepts and Methodologies - C#; 4 Introduction to Relational Database Systems and SQL",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
+   "code": "CRPSCI",
+   "heading": "Plant Science",
+   "heading_printed": "Plant Science",
+   "rule": "coci",
+   "codes": [
+    "CRPSCI"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 1 Introduction to Plant Science; 19 California Water",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "CUL",
    "heading": "Culinary",
    "heading_printed": "Culinary",
@@ -199,6 +335,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBIx",
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "DIME",
+   "heading": "User Experience Design",
+   "heading_printed": "User Experience Design",
+   "rule": "coci",
+   "codes": [
+    "DIME"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 1 Introduction to User Experience Design; 2 User Experience Design Tools and Applications",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
   },
   {
    "code": "ECON",
@@ -233,6 +386,23 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "ELET",
+   "heading": "Electrical",
+   "heading_printed": "Electrical",
+   "rule": "coci",
+   "codes": [
+    "ELET"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 1 Basic Electronics (DC); 2 Electronic Circuits",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "EMT",
    "heading": "Emergency Medical Training",
    "heading_printed": "Emergency Medical Training",
@@ -265,6 +435,23 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "coci",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a college naming pattern; COCI course titles: C1000 Academic Reading and Writing; C1001 Critical Thinking and Writing",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 84
+  },
+  {
    "code": "ENGR",
    "heading": "Engineering",
    "heading_printed": "Engineering",
@@ -279,6 +466,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBIx",
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ES",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "coci",
+   "codes": [
+    "ES"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Ethnic Studies",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 94
   },
   {
    "code": "ESCI",
@@ -457,6 +661,23 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "ITEC",
+   "heading": "Industrial Technology",
+   "heading_printed": "Industrial Technology",
+   "rule": "coci",
+   "codes": [
+    "ITEC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Industrial Technology",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "JOURN",
    "heading": "Journalism",
    "heading_printed": "Journalism",
@@ -617,6 +838,23 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "PE",
+   "heading": "Physical Education",
+   "heading_printed": "Physical Education",
+   "rule": "coci",
+   "codes": [
+    "PE"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 022A Beginning Volleyball; 2 Archery",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "PHIL",
    "heading": "Philosophy",
    "heading_printed": "Philosophy",
@@ -649,6 +887,40 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "PHYSICS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "coci",
+   "codes": [
+    "PHYSICS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Physics",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "coci",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: C1000 American Government and Politics",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "POLSCI",
    "heading": "Political Science",
    "heading_printed": "Political Science",
@@ -663,6 +935,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBIx",
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "coci",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Psychology",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 94
   },
   {
    "code": "PSYCH",
@@ -681,6 +970,23 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "SLSCI",
+   "heading": "Soil Science",
+   "heading_printed": "Soil Science",
+   "rule": "coci",
+   "codes": [
+    "SLSCI"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 21 Introduction to Soil Science",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
+  },
+  {
    "code": "SOC",
    "heading": "Sociology",
    "heading_printed": "Sociology",
@@ -695,6 +1001,40 @@
    "found_on": "2026-11-25",
    "found_by": "COBIx",
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "coci",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Spanish",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "coci",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Statistics",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 94
   },
   {
    "code": "STUDEV",
@@ -745,6 +1085,6 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   }
  ],
- "subjects": 44,
- "with_heading": 44
+ "subjects": 64,
+ "with_heading": 64
 }

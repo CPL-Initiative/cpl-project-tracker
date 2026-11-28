@@ -484,6 +484,23 @@
    "run": "45625259489"
   },
   {
+   "code": "CARDEV",
+   "heading": "Career Development",
+   "heading_printed": "Career Development",
+   "rule": "coci",
+   "codes": [
+    "CARDEV"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 57 Employment Interviews",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
+  },
+  {
    "code": "CART",
    "heading": "Commercial Art",
    "heading_printed": "Commercial Art",
@@ -546,6 +563,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45625259489)",
    "run": "45625259489"
+  },
+  {
+   "code": "CHEMH",
+   "heading": "Chemistry Honors",
+   "heading_printed": "Chemistry Honors",
+   "rule": "coci",
+   "codes": [
+    "CHEMH"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a college naming pattern; COCI course titles: 206 Honors Introduction to Chemistry Ii: Organic Chemistry",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 84
   },
   {
    "code": "CIS",
@@ -658,6 +692,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45625259489)",
    "run": "45625259489"
+  },
+  {
+   "code": "CRDV",
+   "heading": "Career Development",
+   "heading_printed": "Career Development",
+   "rule": "coci",
+   "codes": [
+    "CRDV"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 52 Growing On The Job; 53 Integrating Work And Life; corrected during QA (was: Child Development)",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
   },
   {
    "code": "CT",
@@ -804,6 +855,23 @@
    "run": "45625259489"
   },
   {
+   "code": "ELEC",
+   "heading": "Electronics",
+   "heading_printed": "Electronics",
+   "rule": "coci",
+   "codes": [
+    "ELEC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Electronics",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "ELS",
    "heading": "English Language Skills",
    "heading_printed": "English Language Skills",
@@ -948,6 +1016,23 @@
    "run": "45625259489"
   },
   {
+   "code": "ETEC",
+   "heading": "Computer Tech for Educators",
+   "heading_printed": "Computer Tech for Educators",
+   "rule": "coci",
+   "codes": [
+    "ETEC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 106 Intro to Computer Tech for Educators",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
+  },
+  {
    "code": "ETH",
    "heading": "Ethnic Studies",
    "heading_printed": "Ethnic Studies",
@@ -996,6 +1081,23 @@
    "run": "45625259489"
   },
   {
+   "code": "FT",
+   "heading": "Fire Technology",
+   "heading_printed": "Fire Technology",
+   "rule": "coci",
+   "codes": [
+    "FT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Fire Technology",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
    "code": "GEOG",
    "heading": "Geography",
    "heading_printed": "Geography",
@@ -1026,6 +1128,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45625259489)",
    "run": "45625259489"
+  },
+  {
+   "code": "GERM",
+   "heading": "German",
+   "heading_printed": "German",
+   "rule": "coci",
+   "codes": [
+    "GERM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: German",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
   },
   {
    "code": "GLST",
@@ -1076,6 +1195,23 @@
    "run": "45625259489"
   },
   {
+   "code": "HISTH",
+   "heading": "History Honors",
+   "heading_printed": "History Honors",
+   "rule": "coci",
+   "codes": [
+    "HISTH"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a college naming pattern",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 84
+  },
+  {
    "code": "HLTH",
    "heading": "Health",
    "heading_printed": "Health",
@@ -1106,6 +1242,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45625259489)",
    "run": "45625259489"
+  },
+  {
+   "code": "HVAC",
+   "heading": "Heating, Ventilation, and Air Conditioning",
+   "heading_printed": "Heating, Ventilation, and Air Conditioning",
+   "rule": "coci",
+   "codes": [
+    "HVAC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Heating, Ventilation, and Air Conditioning",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "JOUR",
@@ -1154,6 +1307,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45625259489)",
    "run": "45625259489"
+  },
+  {
+   "code": "LATN",
+   "heading": "Latin",
+   "heading_printed": "Latin",
+   "rule": "coci",
+   "codes": [
+    "LATN"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Latin",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
   },
   {
    "code": "LIBR",
@@ -1282,6 +1452,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45625259489)",
    "run": "45625259489"
+  },
+  {
+   "code": "OH",
+   "heading": "Ornamental Horticulture",
+   "heading_printed": "Ornamental Horticulture",
+   "rule": "coci",
+   "codes": [
+    "OH"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 15 Greenhouse Production and Management; 16 Interior Landscaping",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "PADM",
@@ -1492,6 +1679,40 @@
    "run": "45625259489"
   },
   {
+   "code": "RESMGT",
+   "heading": "Restaurant Management",
+   "heading_printed": "Restaurant Management",
+   "rule": "coci",
+   "codes": [
+    "RESMGT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 71 Basic Food Prep I; 72 Basic Food Prep Ii",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
+   "code": "RESPIRATORY THERAPY",
+   "heading": "Respiratory Therapy",
+   "heading_printed": "Respiratory Therapy",
+   "rule": "coci",
+   "codes": [
+    "RESPIRATORY THERAPY"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Respiratory Therapy",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "RLST",
    "heading": "Religious Studies",
    "heading_printed": "Religious Studies",
@@ -1586,6 +1807,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45625259489)",
    "run": "45625259489"
+  },
+  {
+   "code": "SPCH",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "coci",
+   "codes": [
+    "SPCH"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Communication Studies",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "STAT",
@@ -1684,6 +1922,6 @@
    "run": "45625259489"
   }
  ],
- "subjects": 99,
- "with_heading": 99
+ "subjects": 113,
+ "with_heading": 113
 }

@@ -73,6 +73,23 @@
    "run": "45627124597"
   },
   {
+   "code": "AGEH",
+   "heading": "Environmental Horticulture",
+   "heading_printed": "Environmental Horticulture",
+   "rule": "coci",
+   "codes": [
+    "AGEH"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 130 Landscape Plant Materials Use; 132 Turf Grass Management; corrected during QA (was: Agriculture, Equine Studies)",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 85
+  },
+  {
    "code": "AGEQ",
    "heading": "Agriculture, Equine Studies",
    "heading_printed": "Agriculture, Equine Studies",
@@ -137,6 +154,23 @@
    "run": "45627124597"
   },
   {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 144 Introduction To Ceramics; 128 Beginning Printmaking",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "ARTH",
    "heading": "Art History",
    "heading_printed": "Art History",
@@ -151,6 +185,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627124597)",
    "run": "45627124597"
+  },
+  {
+   "code": "ASL",
+   "heading": "American Sign Language",
+   "heading_printed": "American Sign Language",
+   "rule": "coci",
+   "codes": [
+    "ASL"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: American Sign Language",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
   },
   {
    "code": "BIOL",
@@ -247,6 +298,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627124597)",
    "run": "45627124597"
+  },
+  {
+   "code": "CWEE",
+   "heading": "Fire Application",
+   "heading_printed": "Fire Application",
+   "rule": "coci",
+   "codes": [
+    "CWEE"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 150 General Cooperative Work Experience; 170 Cooperative Work Experience in Fire Application",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
   },
   {
    "code": "ECE",
@@ -361,6 +429,23 @@
    "run": "45627124597"
   },
   {
+   "code": "FRN",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "coci",
+   "codes": [
+    "FRN"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: French",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "GEOG",
    "heading": "Geography",
    "heading_printed": "Geography",
@@ -391,6 +476,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627124597)",
    "run": "45627124597"
+  },
+  {
+   "code": "GRMN",
+   "heading": "German",
+   "heading_printed": "German",
+   "rule": "coci",
+   "codes": [
+    "GRMN"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: German",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
   },
   {
    "code": "HES",
@@ -455,6 +557,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627124597)",
    "run": "45627124597"
+  },
+  {
+   "code": "ICT",
+   "heading": "Information and Communication Technology",
+   "heading_printed": "Information and Communication Technology",
+   "rule": "coci",
+   "codes": [
+    "ICT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 111 Introduction to Information Technology; 101 Computer Literacy; 91 Keyboarding I; 131 Computer Information Systems",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 90
   },
   {
    "code": "MATH",
@@ -745,6 +864,6 @@
    "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv"
   }
  ],
- "subjects": 46,
- "with_heading": 46
+ "subjects": 53,
+ "with_heading": 53
 }

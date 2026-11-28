@@ -104,6 +104,23 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "https://mission.elumenapp.com/catalog/24-25/department/art",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Art",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
    "code": "AST",
    "heading": "Astronomy",
    "heading_printed": "Astronomy",
@@ -520,6 +537,23 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "INF",
+   "heading": "Food Service Sanitation",
+   "heading_printed": "Food Service Sanitation",
+   "rule": "coci",
+   "codes": [
+    "INF"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 50 Sanitation and Safety Only INF 050 Sanitation and Safety appears in COCI (and in articulation tables). Current equivalent is FDR 056 under already-titled Food Service and Restaurant Management. Alternative: Institutional Food Service / Institutional Food Management (GAI), not confirmed on a Mission catalog page.",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 72
+  },
+  {
    "code": "INS",
    "heading": "Instructional Support",
    "heading_printed": "Instructional Support",
@@ -566,6 +600,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBIx",
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "LIB",
+   "heading": "Library",
+   "heading_printed": "Library",
+   "rule": "coci",
+   "codes": [
+    "LIB"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 010H Information Competency - Honors; 10 Information Competency",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "LIN",
@@ -952,6 +1003,23 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "VIE",
+   "heading": "Vietnamese",
+   "heading_printed": "Vietnamese",
+   "rule": "coci",
+   "codes": [
+    "VIE"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 1 First Semester Vietnamese (Elementary Level); 049A Vietnamese for the Vietnamese-Speaking",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "WRK",
    "heading": "Work Experience",
    "heading_printed": "Work Experience",
@@ -968,6 +1036,6 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   }
  ],
- "subjects": 57,
- "with_heading": 57
+ "subjects": 61,
+ "with_heading": 61
 }

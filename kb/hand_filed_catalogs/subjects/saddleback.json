@@ -172,6 +172,23 @@
    "run": "45629512231"
   },
   {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 63 Introduction to Screen Printing; 20 Beginning Graphic Design",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "ARTH",
    "heading": "Art History",
    "heading_printed": "Art History",
@@ -570,6 +587,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45629512231)",
    "run": "45629512231"
+  },
+  {
+   "code": "CWE",
+   "heading": "Cooperative Work Experience",
+   "heading_printed": "Cooperative Work Experience",
+   "rule": "coci",
+   "codes": [
+    "CWE"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: 180 CO-OP-ED - Business",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "DANC",
@@ -1164,6 +1198,23 @@
    "run": "45629512231"
   },
   {
+   "code": "FN",
+   "heading": "Culinary Arts",
+   "heading_printed": "Culinary Arts",
+   "rule": "coci",
+   "codes": [
+    "FN"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Culinary Arts",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "FR",
    "heading": "French",
    "heading_printed": "French",
@@ -1338,6 +1389,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45629512231)",
    "run": "45629512231"
+  },
+  {
+   "code": "HIT",
+   "heading": "Health Information Technology",
+   "heading_printed": "Health Information Technology",
+   "rule": "coci",
+   "codes": [
+    "HIT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Health Information Technology",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
   },
   {
    "code": "HLTH",
@@ -1692,6 +1760,23 @@
    "run": "45629512231"
   },
   {
+   "code": "MST",
+   "heading": "Cruising the Channel Islands",
+   "heading_printed": "Cruising the Channel Islands",
+   "rule": "coci",
+   "codes": [
+    "MST"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: 224 Introduction to Cruising the Channel Islands; 201 Marlinspike Seamanship",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "MUS",
    "heading": "Music",
    "heading_printed": "Music",
@@ -1866,6 +1951,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45629512231)",
    "run": "45629512231"
+  },
+  {
+   "code": "PORT",
+   "heading": "Portuguese",
+   "heading_printed": "Portuguese",
+   "rule": "coci",
+   "codes": [
+    "PORT"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Portuguese",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
   },
   {
    "code": "PRSN",
@@ -2092,6 +2194,6 @@
    "run": "45629512231"
   }
  ],
- "subjects": 130,
- "with_heading": 130
+ "subjects": 136,
+ "with_heading": 136
 }

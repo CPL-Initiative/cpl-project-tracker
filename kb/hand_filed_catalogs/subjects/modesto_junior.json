@@ -169,6 +169,23 @@
    "run": "45623983494"
   },
   {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Art",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
    "code": "ARTH",
    "heading": "Art",
    "heading_printed": "Art",
@@ -455,6 +472,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45623983494)",
    "run": "45623983494"
+  },
+  {
+   "code": "DANCE",
+   "heading": "Dance",
+   "heading_printed": "Dance",
+   "rule": "coci",
+   "codes": [
+    "DANCE"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Dance",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
   },
   {
    "code": "EASCI",
@@ -1785,6 +1819,6 @@
    "run": "45623983494"
   }
  ],
- "subjects": 111,
- "with_heading": 111
+ "subjects": 113,
+ "with_heading": 113
 }

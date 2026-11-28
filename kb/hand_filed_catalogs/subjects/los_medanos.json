@@ -107,6 +107,23 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "https://lmc.elumenapp.com/catalog/26-27/art",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Art",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 94
+  },
+  {
    "code": "ASTRO",
    "heading": "Astronomy",
    "heading_printed": "Astronomy",
@@ -667,6 +684,23 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
+   "code": "MUSIC",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "coci",
+   "codes": [
+    "MUSIC"
+   ],
+   "candidate": null,
+   "address": "https://lmc.elumenapp.com/catalog/26-27/music",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Music",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 99
+  },
+  {
    "code": "NUTRI",
    "heading": "Nutrition",
    "heading_printed": "Nutrition",
@@ -987,6 +1021,6 @@
    "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   }
  ],
- "subjects": 58,
- "with_heading": 58
+ "subjects": 60,
+ "with_heading": 60
 }

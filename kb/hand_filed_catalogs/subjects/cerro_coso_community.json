@@ -126,6 +126,23 @@
    "run": "45629589579"
   },
   {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "coci",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from COCI course titles: C101 Introduction to Art; C105 Survey of Western Art from Prehistory through the Middle Ages",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 90
+  },
+  {
    "code": "ARTH",
    "heading": "Art History",
    "heading_printed": "Art History",
@@ -204,6 +221,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45629589579)",
    "run": "45629589579"
+  },
+  {
+   "code": "BUS",
+   "heading": "Business",
+   "heading_printed": "Business",
+   "rule": "coci",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Business",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
   },
   {
    "code": "CHDV",
@@ -446,6 +480,23 @@
    "run": "45629589579"
   },
   {
+   "code": "FILM",
+   "heading": "Film",
+   "heading_printed": "Film",
+   "rule": "coci",
+   "codes": [
+    "FILM"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from a common subject match; COCI course titles: C211 Hispanic Cinema",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 88
+  },
+  {
    "code": "FRCC",
    "heading": "Forestry, Climate, and Conservation",
    "heading_printed": "Forestry, Climate, and Conservation",
@@ -558,6 +609,23 @@
    "run": "45629589579"
   },
   {
+   "code": "HMSV",
+   "heading": "Human Services",
+   "heading_printed": "Human Services",
+   "rule": "coci",
+   "codes": [
+    "HMSV"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Human Services",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 98
+  },
+  {
    "code": "HSCI",
    "heading": "Health Science",
    "heading_printed": "Health Science",
@@ -572,6 +640,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45629589579)",
    "run": "45629589579"
+  },
+  {
+   "code": "ICC",
+   "heading": "Information Competency",
+   "heading_printed": "Information Competency",
+   "rule": "coci",
+   "codes": [
+    "ICC"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "COBI overnight review, approved by Sam Lee: COCI courses: 75 Intro Library Research/Bibliog",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch4.csv",
+   "confidence": 92
   },
   {
    "code": "INDE",
@@ -748,6 +833,23 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45629589579)",
    "run": "45629589579"
+  },
+  {
+   "code": "PHED",
+   "heading": "Physical Education",
+   "heading_printed": "Physical Education",
+   "rule": "coci",
+   "codes": [
+    "PHED"
+   ],
+   "candidate": null,
+   "address": "kb/reference/coci_course_list.xlsx",
+   "where": "coci",
+   "method": "suggested by COBI from the hint: Physical Education",
+   "found_on": "2026-11-27",
+   "found_by": "COBI",
+   "run": "csv kb/subject_title_hunt/20261127_local_subject_titles_batch5_cobi.csv",
+   "confidence": 95
   },
   {
    "code": "PHIL",
@@ -958,6 +1060,6 @@
    "run": "45629589579"
   }
  ],
- "subjects": 57,
- "with_heading": 57
+ "subjects": 63,
+ "with_heading": 63
 }
