@@ -1,7 +1,7 @@
 {
  "college": "San Bernardino Valley College",
- "run": "46118801512",
- "written": "2026-11-28T07:23:07Z",
+ "run": "46121983588",
+ "written": "2026-11-28T07:50:21Z",
  "rule": "a checked live row restores, or is held where the base files none; then own program (a heading sharing a title word, or a generic heading on a page the address or the capture shows is the program's own; then heading_award_check), where a failing re-read is restored, or held where the base files none or the live row already holds this run; then a live row holding this run keeps its record and names no dispatch; then a supplied live run other than the filed record's is held for a person; then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one (d-reread-keep-the-better-s683; COBIx on #3544 and #3547)",
  "checked": [],
  "live_runs": {
@@ -19,7 +19,7 @@
   "04883": "38748858322",
   "04891": "38748858322",
   "04893": "38748858322",
-  "04894": "38748858322",
+  "04894": "46118801512",
   "04896": "38748858322",
   "04907": "38748858322",
   "04920": "38748858322",
@@ -227,22 +227,21 @@
   "46184": "38748858322",
   "46386": "38748858322"
  },
- "live_read_at": "2026-11-28T07:21:35Z",
+ "live_read_at": "2026-11-28T07:47:48Z",
  "dispatch": [
   {
    "workflow": "program-requirements-college.yml",
-   "ref": "claude/s748-keys-sbvc",
+   "ref": "claude/s748-paid-sbvc",
    "inputs": {
     "college": "San Bernardino Valley College",
-    "step": "reread",
-    "force": "46118801512"
+    "step": "load"
    },
    "posts": 1,
    "control_numbers": [
-    "04894"
+    "31858"
    ],
-   "not_live_at_run": [
-    "04894"
+   "needs_load": [
+    "31858"
    ]
   }
  ],
@@ -265,22 +264,22 @@
   ]
  },
  "counts": {
-  "reread": 5,
-  "kept": 1,
-  "restored": 4,
-  "restored_filed_pass": 4,
+  "reread": 1,
+  "kept": 0,
+  "restored": 0,
+  "restored_filed_pass": 0,
   "restored_not_own_program": 0,
   "held_for_person": 0,
   "held_checked": 0,
   "held_live_run": 0,
-  "new": 0,
+  "new": 1,
   "already_live": 0,
   "kept_on_own_page": 0,
-  "plain_reread_would_lose_pass": 4,
+  "plain_reread_would_lose_pass": 0,
   "kept_by_extraction_guard": 0,
   "run_places_none_after": 0,
   "folder_places_none_after": 0,
-  "records_after": 221,
+  "records_after": 222,
   "dropped_by_filing": 0,
   "dropped_filed_passes": 0
  },
@@ -1666,6 +1665,57 @@
      "outcome": "restored",
      "why": "the filed record holds score.pass and the re-read does not",
      "next_read_held": "held_no_gain"
+    }
+   ]
+  },
+  "46121983588": {
+   "base": "origin/main",
+   "base_sha": "59453d4eb60024a44f12a58f6f130d0d7344fc54",
+   "decided": "2026-11-28T07:50:21Z",
+   "counts": {
+    "reread": 1,
+    "kept": 0,
+    "restored": 0,
+    "restored_filed_pass": 0,
+    "restored_not_own_program": 0,
+    "held_for_person": 0,
+    "held_checked": 0,
+    "held_live_run": 0,
+    "new": 1,
+    "already_live": 0,
+    "kept_on_own_page": 0,
+    "plain_reread_would_lose_pass": 0,
+    "kept_by_extraction_guard": 0,
+    "run_places_none_after": 0,
+    "folder_places_none_after": 0,
+    "records_after": 222,
+    "dropped_by_filing": 0,
+    "dropped_filed_passes": 0
+   },
+   "kept_by_extraction_guard": {},
+   "next_read_pays": [],
+   "dropped_by_filing": [],
+   "programs": [
+    {
+     "control_number": "31858",
+     "title": "Administration of Justice",
+     "award": "A.S. T Degree",
+     "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/administration-justice/administration-justice-aat-degree/",
+     "filed_source_url": null,
+     "filed_run": null,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 28,
+      "listed": 28,
+      "arithmetic": "equal"
+     },
+     "live_run": null,
+     "outcome": "new",
+     "why": "no filed record on origin/main"
     }
    ]
   }
