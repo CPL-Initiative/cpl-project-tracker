@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-28T10:57:27Z",
-  "session": 748,
-  "moniker": "SkyStilt",
-  "run": "the CPL Queue routine",
+  "written_at": "2026-11-28T17:22:58Z",
+  "session": 749,
+  "moniker": "SkyGannet",
+  "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_749_handoff.md",
+  "handoff": "docs/session_752_handoff.md",
   "next_step": {
-    "title": "A display build for tonight's 41 records, then the found pages",
-    "text": "The next collection run builds the display for the 41 program records collected on Nov 28, starting at Glendale, and reruns the census. Then it finishes the change that reads a program's own catalog page where the state lists no courses for it: 194 programs at 14 colleges, about $19 of paid reads."
+    "title": "Program records wait on Sam, signed in",
+    "text": "San Jose City 22225, Allan Hancock 19928 and Sierra 33639 read a total of 60; East Los Angeles 31017 confirms at 20 to 27 of 60; Reedley 20762 needs a reread from the Teacher page. Recording a verdict takes Sam's own signed-in session. The next collection run rereads Sierra 21525 and starts the catalog speed-up Sam approved."
   },
   "calls": [
     {
@@ -960,6 +960,10 @@
     {
       "at": "2026-11-28T10:48:00Z",
       "text": "Found tonight: 194 programs at 14 colleges have their own catalog page on file and no course list from the state, so nothing reads the page. The change that reads them is built and held for one more review before any paid read."
+    },
+    {
+      "at": "2026-11-28T17:20:00Z",
+      "text": "Sam's recommendations to speed up the catalog reads: reread the 17 stale records first, look up program titles and awards by district, find pages per catalog platform, add Southwestern to the Catalogs view, and ask about the 3 parked colleges and the Ohlone, Madera and Mission links."
     }
   ],
   "headline": [

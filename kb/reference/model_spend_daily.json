@@ -1487,9 +1487,9 @@
    "sessions": 5,
    "not_available": 0,
    "tags": {
-    "collection": 256.0,
+    "curation": 136.0,
     "infrastructure": 109.9,
-    "curation": 136.0
+    "collection": 256.0
    },
    "untagged_usd": 0.0,
    "estimate_usd": 288.0
@@ -1574,7 +1574,7 @@
   "2026-11-28": {
    "usd": 183.98,
    "sessions": 1,
-   "not_available": 2,
+   "not_available": 3,
    "tags": {
     "collection": 183.98
    },

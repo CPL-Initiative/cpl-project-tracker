@@ -92,6 +92,8 @@ option sat in an uncounted *in progress* section); Reinforcing shows as the alte
 
 **The reader's page checks (#3514, #3587, #3590) and the reread waves** (rules A to D and `fold`; `refused_filed`; keep-the-better; the S683 reread plan, worked through row 73 in S691; the $40 stop per college per run, `d-reads-stop-is-forty-dollars-s685`): the paragraph as it stood, with its slugs, lessons archive 9, *Moved from the lane (S714 checkpoint)*.
 
+**NEXT from S749 (Sam's session), for the routine:** the catalog speed-up (`r-catalog-speedup-recs-sam-2026-11-28`): the stale-17 reread first (approved), a title-and-award lookup by district, a page finder per platform, Southwestern into Catalogs, and the 3 parked colleges and the Ohlone, Madera and Mission links as Open Asks cards; Sierra 21525's reread. **For Sam, signed in** (`f-program-verdict-needs-signed-in-reviewer-s749`): San Jose City 22225, Allan Hancock 19928 and Sierra 33639 at a total of 60; East LA 31017 confirms at 20-27 of 60; Reedley 20762 needs_fix, reread from the Teacher page.
+
 **S742's posts:** verbatim in [`roadmap_archive_8`](../../roadmap_archive_8.md), *Moved from lanes/program-requirements-harvest.md (S745 checkpoint)*.
 
 **Decisions of S742:** verbatim in [`roadmap_archive_8`](../../roadmap_archive_8.md), *(S745 checkpoint)*.

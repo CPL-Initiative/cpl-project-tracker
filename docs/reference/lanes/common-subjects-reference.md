@@ -113,27 +113,7 @@ Their record moved verbatim to [`docs/common_subject_code_tab_lessons.md`](../..
 
 ## The stray codes and the title hunt (S730, Sam, 2026-11-25)
 
-**RULED** `r-no-mid-on-a-stray-code-sam-2026-11-25`: *"i should have never minted those 88 codes and left the courses in
-a holding pen."* An M-ID is minted only under a common subject; the 88 stray codes (251 M-IDs, 247 local courses) go
-back to Needs an M-ID, through a re-mint with its alias map, once their local subjects carry a common subject.
-**PROCEDURE** `p-subject-title-carries-its-source-sam-2026-11-25`: every collected local subject title records its
-source URL, where (catalog, college site, other), method (subject heading, prefix legend, department label, course
-pages), date and finder; only a catalog heading or prefix legend settles a title. The worklist is
-`kb/subject_title_hunt/` (8,786 college and code pairs with no title, tiered, each with a recommended title at its
-measured confidence), handed to COBIx. **FINDING:** one local code can mean two subjects at two colleges (Glendale's
-AT is Flight Attendant, filed statewide as Automotive), so a statewide filing should stop where a college's titles
-read otherwise. **LIVE (#3832): the runners' title hunt.** Every college's catalog subject index read on runners and filed straight
-into `kb/hand_filed_catalogs/subjects/` by `kb/_file_found_subject_titles.py` (the Subjects build lists a college by
-its headings alone): 103 colleges and 8,147 named codes, from 19 and 1,655. The CSV holds only the 2,500 leftovers for
-COBIx. **RULED** `r-collect-curate-connect-grow-automatic-sam-2026-11-25`. **The stray-code rescore (S730, rerun S733):** `kb/subject_title_hunt/20261125_stray_code_rescore.csv`, scored 0 to
-100 by `kb/_stray_code_rescore.py` (**RULED** `r-confidence-0-100-in-all-commons-procedures-sam-2026-11-25`: no Low,
-Medium or High in a Commons procedure): 66 of 116 local subjects at 90 or more, after COBIx's leftover titles (#3837,
-#3838) filed through `kb/_file_found_subject_titles.py --csv` (911 titles; 96 department labels kept as hints). The 50
-under 90 are one list for a person: `kb/subject_title_hunt/20261125_stray_codes_a_person_picks.md`. **APPLIED** (#3853, S733): 60 stray M-IDs retired, 20 merged shells aliased to their targets (`kb/alias_chain.py`),
-35 held until their local subject's common subject is filed; 27 bot `kb_curation` rows deleted live (restore:
-`kb/stray_code_remint_out/2026-11-25/applied/kb_curation_restore.sql`); Needs an M-ID 1,819 to 1,881. The seeder no
-longer drops assigned codes (#3857). **NEXT:** file common subjects for the 35 held and the 50 under 90 (Sam picks, or
-moves courses in the Local subjects sidebar, #3851), then rerun the dry run for the rest.
+The stray-codes paragraph (S730 to S733: `r-no-mid-on-a-stray-code-sam-2026-11-25`, `p-subject-title-carries-its-source-sam-2026-11-25`, the runners' title hunt #3832, the 0-100 rescore, the apply #3853 with its restore file): verbatim in [`docs/common_subject_code_tab_lessons.md`](../../common_subject_code_tab_lessons.md), *Moved from the lane (S749)*. **NEXT:** file common subjects for the 35 held and the 50 under 90 (`kb/subject_title_hunt/20261125_stray_codes_a_person_picks.md`), then rerun the dry run for the rest.
 
 **RULED (Sam, 2026-11-26) `r-schedule-tool-first-for-subject-titles-sam-2026-11-26`: read each college's class schedule
 search for local subject titles before guessing.** *"note the strategy for our cpl queue and commons collections to
@@ -152,18 +132,17 @@ Riverside's Colleague is the only other schedule system on file; no other colleg
 
 **LIVE (#3908, S744; #3918, S745): the campus letter fold and the Chabot glue fold.** `kb/coci_campus_letter.py` holds explicit lists (26 Cerro Coso, 6 Porterville, 25 Chabot in `GLUED`), never a suffix rule; a person's save follows the fold (`kb/subject_decisions.py`). Both paragraphs as they stood: [`docs/common_subject_code_tab_lessons.md`](../../common_subject_code_tab_lessons.md), *Moved from the lane (S746)*. **DECIDED:** the wider `code_address` exception (11 titles at five colleges) is held for its own measured change.
 
-**LIVE (#3929, #3932, S746): COBIx's subject-parse bundle on main, the college's own codes.** #3929 rebuilt COBIx's
-#3917 on main (Sam's approval of 2026-11-27): `kb/coci_subject_folds.py` folds 38 Allan Hancock truncated labels and
-9 bad splits; Chabot's duplicates and PHEACJUD were dropped (#3918's list stands). The builder honors a person's
-`not_a_subject` save, so Cabrillo TEST and Fullerton F leave the queue; the note box's *Ask COBI to act on this* writes
-`value.act = true`; allow-list filings ride with it. **RULED** `r-folds-take-the-colleges-own-codes-sam-2026-11-28`: a
-fold lands on the code the college prints today. APPREN APRN, COM SC CS, GRAPHI GRPH, HO EC HOEC, LDRSHP LDER, PHY SC
-PHSC, POL SC POLS, WLD T WLDT, OA CBOT, T ART THTR, AL ST AD ST, FRENCH FRCH, H ED HED. Left unfolded (no current code
-matches): INT ST, SOC SC, RET S, Q CNTRL, AGBUS, CE, HONORS, IT. #3932 filed COBIx's 22 #3926 titles (Canyons 10
-`NC.*`, Santa Barbara City 9, MiraCosta 3). The lightning round on the committed files: 494 to 416 after #3929.
-COBIx's #3917 and #3926 are superseded and left open for Sam or COBIx to close. **FINDING**
-`f-saves-on-a-folded-code-go-unseen-s746`: Sam's four Chabot *Not a subject* saves were keyed to codes #3918 folded, so
-the queue never showed them; a save keyed to a folded code needs carrying to the base code or naming in the queue.
+**LIVE (#3929, #3932, S746): COBIx's subject-parse bundle, the college's own codes:** verbatim in [`docs/common_subject_code_tab_lessons.md`](../../common_subject_code_tab_lessons.md), *Moved from the lane (S749)*. **RULED** `r-folds-take-the-colleges-own-codes-sam-2026-11-28`; **FINDING** `f-saves-on-a-folded-code-go-unseen-s746`.
+
+**LIVE (S749, Sam's plain session of 2026-11-28): titles, folds, COBI's picks and Sam's alignment.** #3947 filed COBIx's Nov 27-28 titles, Sam's 103 folds through `kb/coci_subject_folds.py` (LA Southwest ENG to ENGL held: engineering courses) and COBI's COCI-read titles file; Sam's names replace the filed headings (`r-cobi-coci-titles-file-and-sam-names-win-sam-2026-11-28`). Untitled codes: 1,032 to 137. #3949 files COBI's common-subject picks from `kb/subject_title_hunt/*common_picks*.csv`: a person's save, then the pick, then a statewide filing, then the map (**DECIDED** `d-cobi-common-picks-csv-precedence-s749`); the page shows the 0-100 bar and *Picked by COBI*. #3952 files Sam's alignment from COBIx's #3951 (`r-common-subject-alignment-rulings-sam-2026-11-28`): 56 minted codes (`kb/_apply_minted_codes_s749.py`, receipt `kb/receipts/minted_codes_s749.json`; **DECIDED** `d-minted-codes-applied-held-s749`), ASAM and AFAM added, per-language codes valid under Foreign Languages through the FLNG chips file, 83 wrapper titles `not_a_subject`, 1,662 of 1,663 picks apply. HMEN stays: Sam named it on 2026-11-22 in a memory ruling that no curation row carries (**PITFALL** `p-person-settled-lives-in-memory-too-s749`; [`methodology-a-person-named-value-can-live-in-a-memory-ruling`](../../kb-notes/methodology-a-person-named-value-can-live-in-a-memory-ruling.md)). **DECIDED** `d-person-folds-read-from-retired-or-fix-s749`. #3948: the final CIP Taxonomy of September 2026 (`kb/reference/cip_taxonomy_2026-09.pdf`, `kb/_parse_cip_taxonomy.py`) is the CTE authority (**DECIDED** `d-cip-taxonomy-sept-2026-authority-s749`): 5 codes change category (42.2804, 43.0102, 43.0406, 45.0199, 50.0301; COBIx's figure of about 245 was measured against the raw workbook tab), and no MQ discipline's category moves.
+
+**The re-mint for the new joins** (`r-full-remint-for-new-joins-sam-2026-11-28`; Sam on the dry run's defaults, *"fine on defaults"*, `r-remint-dryrun-defaults-sam-2026-11-28`). The dry run (#3955, `kb/_alignment_remint_dryrun.py`) moves 346 M-IDs: NUTR to FDNT 320, AERO to MILS 9 (Fresno's Air Force ROTC), PHTC to PHOT 4, PUBR to PREL 1, TOUR to TRVL 12. The apply is #3958 (`claude/remint-apply-s749`, head `961471c9`), with the second reader's two fixes made: the COCI lookup rebuilt, and the rollback aborts when person rows sit on new ids.
+
+**NEXT (S749), in order:**
+1. **#3958, the re-mint apply:** `test` green on the head; run `kb/migrations/2026-11-28_s749_remint_kb_curation_preread.sql` through the Supabase MCP and require `go: true`; run the `_apply.sql` and commit its returned row as a receipt; update #3958 from `main`, merge; dispatch `daily-dashboard.yml` (the size guard leaves `unified_courses_member_desc.js` and `_details.js` to the runner); confirm 1,663 picks apply, 0 refused. Not blocking: SkyView's leftover *Dietetics/Nutritional Science* island; stale `_machine_cluster_members` and `current_home` fields.
+2. **COBIx's #3956** (titles for the 137 untitled, Sam's rulings, folds, chips): Sky files it.
+3. **The rest of COBIx's list:** display chips (FLNG, WEXP, AGRI, ETHS, VOCE, CDCP) and the noncredit flag; noncredit picks (refused today); 33 duplicate college and code keys; CIP-family headers on Subjects; course-level moves (BUS to MRKT, MGMT, ACCT and the rest).
+4. Then the S744 list.
 
 **NEXT (S744), in order:**
 1. **LACCD:** 41 codes still untitled; offer Sam the 87 schedule titles that differ from the catalog as one list.
@@ -181,7 +160,7 @@ the queue never showed them; a save keyed to a folded code needs carrying to the
 [`docs/coursecontrolnumber_remint.md`](../../coursecontrolnumber_remint.md), dry run first: ACCT, ACCTG, ACC and ACTG
 to ACCT under Accounting, LING, HOSP, the religion codes (RLST, RELS, RELG) to RLST, MCOM, AERO (its AFROTC courses
 to MILS); `kb/reference/subject_discipline_map.json` still sends ACC, ACCT and ACCTG to Business; AT and INS are
-homonyms (Automotive, tutoring), read college by college; (2) test CIP in place of TOP for MQ type; (3) collect the
+homonyms (Automotive, tutoring), read college by college; (2) test CIP in place of TOP for MQ type, on the September 2026 taxonomy (#3948); (3) collect the
 outline's MQ discipline in the SLO pass ([`data_sources`](../data_sources.md)); (4) re-read `kb/reference/mq_sections.json`
 from the 20th edition. The MQ view and the local subject-title collection live in [`commons`](commons.md).
 
