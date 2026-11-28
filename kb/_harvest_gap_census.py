@@ -39,12 +39,6 @@ and is listed beside it with the line that marks it, so universe = passing + gap
 COLLECTED WITH GAPS. A row whose checks.gaps names a gap (kb/_program_named_gaps.py), with coverage and invented
 passing, is collected (Sam, 2026-11-17), after the discontinued flag: it leaves the gap and is listed under collected_with_gaps by name.
 
-COLLEGE-NAMED GAPS (S748, f-census-ignores-college-named-gaps-s727). A program a college's own named-gap file lists
-(kb/program_requirements_college/<slug>/named_gaps_*.json: collected as a named gap with no record, its reason and
-note filed there) is collected the same way, by that reason, marked by "college_named": it has no live row to carry
-checks.gaps, so the census reads the committed file. A passing row and a discontinued flag come first. Only main()
-hands the files in (college_named_gaps()); a caller that passes none reads as before.
-
 Writes no table. Workflow: .github/workflows/harvest-gap-census.yml (dispatch only, anon only).
 Guard: tests/harvest_gap_census_test.py.
 """
@@ -52,7 +46,6 @@ from __future__ import annotations
 
 import argparse
 import collections
-import glob
 import json
 import re
 import os
@@ -197,28 +190,6 @@ def collected_with_gaps(checks: dict | None) -> list[str]:
     c = checks or {}
     gaps = c.get("gaps") or []
     return list(gaps) if gaps and c.get("coverage") is True and c.get("invented") is True else []
-
-
-def college_named_gaps(base: str = COLLEGE_DIR) -> dict:
-    """{(college, control number): reason} from each college's own named-gap files (named_gaps_*.json: a program
-    collected as a named gap with no record). A file names its college and lists its programs, each with its
-    reason, a key of the file's own reasons; a later file's entry stands over an earlier one's. A file that does not
-    parse, names no college, or an entry with no control number or a reason the file does not define, is left out."""
-    out = {}
-    for path in sorted(glob.glob(os.path.join(base, "*", "named_gaps_*.json"))):
-        try:
-            with open(path, encoding="utf-8") as fh:
-                d = json.load(fh)
-        except (OSError, ValueError):
-            continue
-        college, reasons = d.get("college"), d.get("reasons") or {}
-        if not college or not isinstance(d.get("programs"), list):
-            continue
-        for row in d["programs"]:
-            cn = norm_cn((row or {}).get("control_number")) if isinstance(row, dict) else ""
-            if cn and row.get("reason") in reasons:
-                out[(college, cn)] = row["reason"]
-    return out
 
 
 def scorer_unstated_fails(checks: dict | None, filed: dict | None) -> bool:
@@ -435,13 +406,10 @@ LEVER_WORDS = {
 
 def census(universe: list[dict], committed: dict, records: dict | None, registry: dict,
            closed_now: dict | None = None, parked: dict | None = None,
-           outside: dict | None = None, discontinued: dict | None = None,
-           college_named: dict | None = None) -> dict:
+           outside: dict | None = None, discontinued: dict | None = None) -> dict:
     """universe: [{college, control_number}]; committed: read_committed(); records: {cn: live row} or
     None when there is no live read; registry: {college: catalog_url}; closed_now: {cn: bool};
-    discontinued: {(college, cn): flag} (kb/_program_discontinued.py keys()), each listed apart from the gap;
-    college_named: {(college, cn): reason} (college_named_gaps()), each collected by its reason, or None to read
-    no college's file."""
+    discontinued: {(college, cn): flag} (kb/_program_discontinued.py keys()), each listed apart from the gap."""
     parked = PARKED if parked is None else parked
     live = records is not None
     by_slug = committed
@@ -470,10 +438,6 @@ def census(universe: list[dict], committed: dict, records: dict | None, registry
             continue
         if checks is not None and collected_with_gaps(checks):
             collected.append({"college": college, "control_number": cn, "gaps": collected_with_gaps(checks)})
-            continue
-        reason = (college_named or {}).get((college, cn)) or (college_named or {}).get((prog["college"], cn))
-        if reason:
-            collected.append({"college": college, "control_number": cn, "gaps": [reason], "college_named": True})
             continue
         cause, sub = assign({"control_number": cn, "college": prog["college"]}, col, rec, live, parked)
         lever, scope = lever_of(cause, sub, college, (closed_now or {}).get(cn) if closed_now is not None else None)
@@ -545,7 +509,6 @@ def census(universe: list[dict], committed: dict, records: dict | None, registry
                      "members": sorted(tab_only, key=lambda x: (x["college"], x["control_number"]))},
         "collected_with_gaps": {"what": "collected with its gaps named (checks.gaps), counted as collected",
                                 "programs": len(collected),
-                                "college_named": sum(1 for c in collected if c.get("college_named")),
                                 "by_gap": dict(collections.Counter(g for c in collected for g in c["gaps"])),
                                 "members": sorted(collected, key=lambda x: (x["college"], x["control_number"]))},
         "gap_labels": gap_labels(),
@@ -702,8 +665,7 @@ def main(argv=None) -> int:
             os.makedirs(os.path.dirname(os.path.abspath(a.export)), exist_ok=True)
             with open(a.export, "w", encoding="utf-8") as fh:
                 json.dump(data, fh)
-    r = census(universe, committed, records, registry, closed_now, outside=outside, discontinued=D.keys(),
-               college_named=college_named_gaps())
+    r = census(universe, committed, records, registry, closed_now, outside=outside, discontinued=D.keys())
     r["written_at"] = when
     os.makedirs(os.path.dirname(a.json), exist_ok=True)
     with open(a.json, "w", encoding="utf-8") as fh:

@@ -1371,11 +1371,6 @@ jobs:
       - name: Reconcile S748 at College of Alameda (the units line's two wordings, the self-recall)
         if: matrix.shard == 4
         run: python3 tests/program_reconcile_s748_alameda_test.py
-      # S748: the gap census reads a college's own named-gap files (named_gaps_*.json), so a program collected as
-      # a named gap with no record leaves the gap by its reason; on the census of 00:44Z, 78 of 3,927.
-      - name: Harvest gap census reads college-named gap files (S748)
-        if: matrix.shard == 2
-        run: python3 tests/harvest_gap_census_college_named_test.py
       # S741's page pins: American River's Level I and Level II windows each hold their own heading (cut by until),
       # and each site pin (Orange Coast, Fullerton, El Camino, Butte) is its program's own, unfiled address.
       - name: Page pins S741 (American River's two windows, the site pins)
