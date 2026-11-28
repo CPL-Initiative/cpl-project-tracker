@@ -1,0 +1,651 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30); Sam's routine prompt of 2026-11-25, as the S739 conductor's brief carries it: a record held for a gap is collected with its gap named and a lower score on the 0-100 bar, never held, unless the record is not the program's own; COBIx's brief of 2026-11-28, as the S748 conductor carries it: name the gap rather than paying for a third reread; a gap is named only where it is true on the page; plans batched a few colleges each. S748: Orange Coast's records kb/receipts/program_requirement_records_piles_s741_orange_coast_2026-11-27_s741b.json held, read again by key: collected with their gaps named where the gap is true on the page and the record is the program's own (no reread, no reconcile, no record changed)",
+ "at": "2026-11-28T07:19:11Z",
+ "college": "Orange Coast College",
+ "batch": {
+  "tag": "s748b",
+  "rows": 2,
+  "colleges": [
+   "Orange Coast College",
+   "East Los Angeles College"
+  ],
+  "members": [
+   [
+    "Orange Coast College",
+    "03993",
+    1
+   ],
+   [
+    "East Los Angeles College",
+    "41231",
+    2
+   ]
+  ],
+  "what": "one pre-read, one guarded UPDATE and one rollback over every member; the UPDATE writes all of the batch's rows or none"
+ },
+ "keys": {
+  "from": "kb/receipts/program_requirement_records_piles_s741_orange_coast_2026-11-27_s741b.json",
+  "members": [
+   "03993",
+   "08663",
+   "08670",
+   "36032",
+   "42331",
+   "43100"
+  ]
+ },
+ "gaps": {
+  "figure_within_variable_units": "A required list's printed figure falls inside the range its variable-unit courses carry, and the page does not say how many units each takes; counting each list at its printed figure, the figures add to the printed total."
+ },
+ "moved": 1,
+ "by": {
+  "figure_within_variable_units": 1
+ },
+ "precision": {
+  "read": 6,
+  "right": 6,
+  "wrong": [],
+  "no_record_file": 0,
+  "not_hand_held": 0,
+  "by_answer": {
+   "figure_within_variable_units": 1,
+   "none": 5
+  }
+ },
+ "claim_checks": {
+  "counts": {
+   "stands": 1
+  },
+  "not_standing": []
+ },
+ "boundaries": {
+  "counts": {
+   "the page read's sentence another right": 1,
+   "the record read from another address right": 1,
+   "the stated total one unit off right": 1,
+   "coverage failing right": 1,
+   "the variable_course shape broken right": 1
+  },
+  "wrong": []
+ },
+ "held": [
+  {
+   "control_number": "08663",
+   "why": "held: not the program's own: it was read from the Food and Beverage Management, Advanced certificate's page (43362's). Page read 45953358884 found its own page, https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/food-beverage-management/food-beverage-management-coa/, which prints 'Food and Beverage Management, Certificate of Achievement' and 'Control Number: 08663': a site_pages pin and a paid read. S742's free capture 45999669017 binds the pin (coverage 0.6); the paid read (only 08663,08626; force 08626) is the conductor's",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "08670",
+   "why": "held: its 62.5-63.5 sits inside the printed 60-63.5, whose low end the page prints as 'Minimum 60 units required for the degree'; no kind's sentence is true of a sum the printed range holds: a scorer reading (S721's degree_total_minimum rule), not a reread",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "36032",
+   "why": "held: its major passes and the degree reads 55-64 around the printed 60, with electives the page prints as 'Varies' and says fill the rest, so degree_electives_not_printed's sentence is not true of it: a scorer reading, not a reread. The shape of East Los Angeles 31017: no filed kind is true of a sum on both sides of its printed total",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "42331",
+   "why": "held: today's scorer passes it on its record (9.5-16, equal: the page prints no units beside the two courses of its 0-4 choice, and the filed 11.5 takes them from the state's file): a closed-list rescore, never a gap",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "43100",
+   "why": "held: not collectable (collected_with_gaps, kb/_harvest_gap_census.py): coverage fails (PSYC A160 on the state's list, not placed). College page read 45955333186 prints its page with no PSYC A160 on any line: a reading that files the missing course's reason, then a reread",
+   "claim": "no entry stands"
+  }
+ ],
+ "records": [
+  {
+   "college": "Orange Coast College",
+   "control_number": "03993",
+   "award": "A.A. Degree",
+   "extracted_run": 43136182950,
+   "moves_to": "figure_within_variable_units",
+   "words": "The page prints: 'DANC A211 Repertoire I 1-4' (college page read 45955333186)",
+   "confidence": {
+    "unit_arithmetic": 60,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "own": "its page is its own",
+   "path": "kb/program_requirements_college/orange_coast/records/03993.json",
+   "before_image": {
+    "program_title": "Dance",
+    "award": "A.A. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/dance/dance-associate-arts-degree/",
+    "measure": "units",
+    "total_min": 20,
+    "total_max": 20,
+    "record": {
+     "program": {
+      "section_heading": "Dance, Associate in Arts Degree",
+      "measure": "units",
+      "total_units": {
+       "min": 20,
+       "max": 20
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "OCC AA General Education",
+      "degree_total": {
+       "min": 60,
+       "max": 60
+      },
+      "ge_units": {
+       "min": null,
+       "max": 27
+      },
+      "electives_fill_degree": true,
+      "outcomes": [
+       "Develop an understanding and appreciation of the art of dance and its relevance to the multicultural world we live in.",
+       "Acquire the dance technical skills necessary to transfer to a university program or a similar advanced dance study program.",
+       "Implement critical thinking skills and kinesthetic awareness in their observation, analysis, and interpretation of dance performances on stage or in media.",
+       "Develop dance composition and performance skills necessary to successfully transfer to a university program or a similar advanced dance study program."
+      ],
+      "careers": [
+       "dance-related careers"
+      ],
+      "degree_total_minimum": true
+     },
+     "blocks": [
+      {
+       "name": "Core Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "DANC A150",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A250",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A170",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A143",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "DANC A243",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A144",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "DANC A244",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A145",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "DANC A245",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A160",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A211",
+         "units": 1,
+         "units_max": 4,
+         "alternatives": [
+          {
+           "code": "DANC A203",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Restricted Electives",
+       "rule": "choose_units",
+       "minimum": 4,
+       "option_group": null,
+       "stated": {
+        "min": 4,
+        "max": 4
+       },
+       "courses": [
+        {
+         "code": "DANC A101",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A102",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A108",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A110",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A111",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A113",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A115",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A116",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A119",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A120",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A121",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A125",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A126",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A130",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A135",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A138",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A146",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A147",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A148",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A149",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A154",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A155",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A156",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A157",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A158",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A159",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A165",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A168",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A169",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "DANC A269",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A171",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A172",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A173",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A174",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A175",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A176",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A180",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A191",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A200",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A205",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A206",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A210",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "DANC A230",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A246",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A247",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "DANC A267",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A248",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "DANC A264",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC A256",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "DANC A257",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 60,
+     "listed": 60
+    },
+    "extracted_run": "43136182950"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 60,
+     "listed": 60,
+     "gaps": [
+      "figure_within_variable_units"
+     ],
+     "confidence": {
+      "unit_arithmetic": 60,
+      "course_list_match": 100,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 1
+  }
+ ],
+ "live_run_proof": null,
+ "shared_pages": {},
+ "representation": "checks.gaps and checks.confidence added as the load reads the filed score (a passing row: checks.arithmetic to equal); checks.coverage, invented and the record unchanged",
+ "claim_check_reads": "Today's capture (sources.json): every course an entry names among the codes it found, and a course an entry says the printed total leaves out on neither it nor the state's list. A note's quoted figures are the reader's words, never re-read here; a page read's sentence is committed in its plan file under its run.",
+ "follow_verdict": "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows (confirm_matches); the apply aborts, writing nothing, unless the count is 0.",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Orange Coast College', '03993', 43136182950, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A150\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A250\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A170\",\"units\":2,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"DANC A243\",\"units\":null}],\"catalog_addition\":false,\"code\":\"DANC A143\",\"units\":2,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"DANC A244\",\"units\":null}],\"catalog_addition\":false,\"code\":\"DANC A144\",\"units\":2,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"DANC A245\",\"units\":null}],\"catalog_addition\":false,\"code\":\"DANC A145\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A160\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"DANC A203\",\"units\":null}],\"catalog_addition\":false,\"code\":\"DANC A211\",\"units\":1,\"units_max\":4}],\"minimum\":null,\"name\":\"Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A101\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A102\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A108\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A110\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A111\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A113\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A115\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A116\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A119\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A120\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A121\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A125\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A126\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A130\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A135\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A138\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A146\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A147\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A148\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A149\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A154\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A155\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A156\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A157\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A158\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A159\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A165\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A168\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"DANC A269\",\"units\":null}],\"catalog_addition\":false,\"code\":\"DANC A169\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A171\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A172\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A173\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A174\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A175\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A176\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A180\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A191\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A200\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A205\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A206\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"DANC A210\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A230\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A246\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"DANC A267\",\"units\":null}],\"catalog_addition\":false,\"code\":\"DANC A247\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"DANC A264\",\"units\":null}],\"catalog_addition\":false,\"code\":\"DANC A248\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"DANC A256\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A257\",\"units\":null,\"units_max\":null}],\"minimum\":4,\"name\":\"Restricted Electives\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":4,\"min\":4}}],\"program\":{\"careers\":[\"dance-related careers\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"degree_total_minimum\":true,\"electives_fill_degree\":true,\"ge_pattern\":\"OCC AA General Education\",\"ge_units\":{\"max\":27,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Develop an understanding and appreciation of the art of dance and its relevance to the multicultural world we live in.\",\"Acquire the dance technical skills necessary to transfer to a university program or a similar advanced dance study program.\",\"Implement critical thinking skills and kinesthetic awareness in their observation, analysis, and interpretation of dance performances on stage or in media.\",\"Develop dance composition and performance skills necessary to successfully transfer to a university program or a similar advanced dance study program.\"],\"section_heading\":\"Dance, Associate in Arts Degree\",\"total_units\":{\"max\":20,\"min\":20}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":60,\"placed\":60}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":60},\"coverage\":true,\"gaps\":[\"figure_within_variable_units\"],\"invented\":true,\"listed\":60,\"placed\":60}'::jsonb),\n  (2, 'East Los Angeles College', '41231', 43357061643, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOLOGY 006\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOLOGY 007\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 101\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Option 1\",\"option_group\":\"Core option\",\"rule\":\"all\",\"stated\":{\"max\":15,\"min\":15}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOLOGY 006\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 101\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 102\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Option 2\",\"option_group\":\"Core option\",\"rule\":\"all\",\"stated\":{\"max\":15,\"min\":15}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENV SCI 001\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"And all courses listed below\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOLOGY 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOLOGY 006\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Geology sequence: GEOLOGY 001 and GEOLOGY 006\",\"option_group\":\"Geology\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOLOGY 004\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Geology option: GEOLOGY 004\",\"option_group\":\"Geology\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GEOG 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GEOG 015\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"Geography sequence: GEOG 001 and GEOG 015\",\"option_group\":\"Geology\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ECON 020\",\"units\":3},{\"catalog_addition\":true,\"code\":\"PSYCH 091\",\"units\":4},{\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4},{\"catalog_addition\":false,\"code\":\"STAT C1000E\",\"units\":4}],\"catalog_addition\":true,\"code\":\"BUS 015\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"MATH 261S\",\"units\":3}],\"catalog_addition\":false,\"code\":\"MATH 261\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON C2001\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"And all courses listed below (statistics, calculus, economics)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSICS 006\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSICS 007\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Physics sequence: PHYSICS 006 and PHYSICS 007\",\"option_group\":\"Physics\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHYSICS 101\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHYSICS 102\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Physics sequence: PHYSICS 101 and PHYSICS 102\",\"option_group\":\"Physics\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":66,\"min\":62},\"electives_fill_degree\":false,\"electives_fill_words\":\"ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS\",\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Analyze issues of resource management and depletion particularly as they apply to diminishing supplies of energy sources, minerals, water, food, and natural habitat.\",\"Analyze the scientific basis underlying environmental degradation particularly pollution of water, air, and land, and the components of global climate change.\",\"Critique the human response to environmental challenges including the economics of pollution, the character of environmental justice, and the effects of population change.\",\"Demonstrate scientific thinking, quantitative reasoning, sound environmental principles, and ethical purposefulness.\"],\"section_heading\":\"(Academic Plan E041231H)\",\"total_units\":{\"max\":45,\"min\":41}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":15,\"placed\":14}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":93,\"ge_pattern\":100,\"source\":80,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":15,\"placed\":14}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "pre_read_md5": "with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) as (values\n  (1, 'Orange Coast College', '03993', 43136182950, 'ece3b4edea7b89b364152476fff69106', '7ac5cb2e725612f15f2560620a3266ac', '55b854232b7645d8182d350f4bd4157f'),\n  (2, 'East Los Angeles College', '41231', 43357061643, '82ead54ab9ac268e1a21c783cb05d196', '9b1f1d670fff2ae1355332e88bab98c0', '26e27c5f8c906e17cb95dc13e5a64f75'))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.record::text) = v.rec_md5),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.checks::text) = v.chk_md5),\n  'already_after', count(*) filter (where md5(r.checks::text) = v.after_md5),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Orange Coast College', '03993', 43136182950, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A150\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A250\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A170\",\"units\":2,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"DANC A243\",\"units\":null}],\"catalog_addition\":false,\"code\":\"DANC A143\",\"units\":2,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"DANC A244\",\"units\":null}],\"catalog_addition\":false,\"code\":\"DANC A144\",\"units\":2,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"DANC A245\",\"units\":null}],\"catalog_addition\":false,\"code\":\"DANC A145\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A160\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"DANC A203\",\"units\":null}],\"catalog_addition\":false,\"code\":\"DANC A211\",\"units\":1,\"units_max\":4}],\"minimum\":null,\"name\":\"Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A101\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A102\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A108\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A110\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A111\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A113\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A115\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A116\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A119\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A120\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A121\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A125\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A126\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A130\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A135\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A138\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A146\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A147\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A148\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A149\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A154\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A155\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A156\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A157\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A158\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A159\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A165\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A168\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"DANC A269\",\"units\":null}],\"catalog_addition\":false,\"code\":\"DANC A169\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A171\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A172\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A173\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A174\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A175\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A176\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A180\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A191\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A200\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A205\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A206\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"DANC A210\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A230\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A246\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"DANC A267\",\"units\":null}],\"catalog_addition\":false,\"code\":\"DANC A247\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"DANC A264\",\"units\":null}],\"catalog_addition\":false,\"code\":\"DANC A248\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"DANC A256\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A257\",\"units\":null,\"units_max\":null}],\"minimum\":4,\"name\":\"Restricted Electives\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":4,\"min\":4}}],\"program\":{\"careers\":[\"dance-related careers\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"degree_total_minimum\":true,\"electives_fill_degree\":true,\"ge_pattern\":\"OCC AA General Education\",\"ge_units\":{\"max\":27,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Develop an understanding and appreciation of the art of dance and its relevance to the multicultural world we live in.\",\"Acquire the dance technical skills necessary to transfer to a university program or a similar advanced dance study program.\",\"Implement critical thinking skills and kinesthetic awareness in their observation, analysis, and interpretation of dance performances on stage or in media.\",\"Develop dance composition and performance skills necessary to successfully transfer to a university program or a similar advanced dance study program.\"],\"section_heading\":\"Dance, Associate in Arts Degree\",\"total_units\":{\"max\":20,\"min\":20}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":60,\"placed\":60}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":60},\"coverage\":true,\"gaps\":[\"figure_within_variable_units\"],\"invented\":true,\"listed\":60,\"placed\":60}'::jsonb),\n  (2, 'East Los Angeles College', '41231', 43357061643, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOLOGY 006\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOLOGY 007\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 101\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Option 1\",\"option_group\":\"Core option\",\"rule\":\"all\",\"stated\":{\"max\":15,\"min\":15}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOLOGY 006\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 101\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 102\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Option 2\",\"option_group\":\"Core option\",\"rule\":\"all\",\"stated\":{\"max\":15,\"min\":15}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENV SCI 001\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"And all courses listed below\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOLOGY 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOLOGY 006\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Geology sequence: GEOLOGY 001 and GEOLOGY 006\",\"option_group\":\"Geology\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOLOGY 004\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Geology option: GEOLOGY 004\",\"option_group\":\"Geology\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GEOG 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GEOG 015\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"Geography sequence: GEOG 001 and GEOG 015\",\"option_group\":\"Geology\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ECON 020\",\"units\":3},{\"catalog_addition\":true,\"code\":\"PSYCH 091\",\"units\":4},{\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4},{\"catalog_addition\":false,\"code\":\"STAT C1000E\",\"units\":4}],\"catalog_addition\":true,\"code\":\"BUS 015\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"MATH 261S\",\"units\":3}],\"catalog_addition\":false,\"code\":\"MATH 261\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON C2001\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"And all courses listed below (statistics, calculus, economics)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSICS 006\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSICS 007\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Physics sequence: PHYSICS 006 and PHYSICS 007\",\"option_group\":\"Physics\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHYSICS 101\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHYSICS 102\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Physics sequence: PHYSICS 101 and PHYSICS 102\",\"option_group\":\"Physics\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":66,\"min\":62},\"electives_fill_degree\":false,\"electives_fill_words\":\"ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS\",\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Analyze issues of resource management and depletion particularly as they apply to diminishing supplies of energy sources, minerals, water, food, and natural habitat.\",\"Analyze the scientific basis underlying environmental degradation particularly pollution of water, air, and land, and the components of global climate change.\",\"Critique the human response to environmental challenges including the economics of pollution, the character of environmental justice, and the effects of population change.\",\"Demonstrate scientific thinking, quantitative reasoning, sound environmental principles, and ethical purposefulness.\"],\"section_heading\":\"(Academic Plan E041231H)\",\"total_units\":{\"max\":45,\"min\":41}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":15,\"placed\":14}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":93,\"ge_pattern\":100,\"source\":80,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":15,\"placed\":14}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\nf as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number\n        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true\n       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)),\ne(expect) as (values (2)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when f.n > 0\n            then ('s748b piles confirm guard: ' || f.n || ' rows hold a matching confirm verdict ' || f.keys::text)::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s748b piles guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, f;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Orange Coast College', '03993', 43136182950, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A150\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A250\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A170\",\"units\":2,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"DANC A243\",\"units\":null}],\"catalog_addition\":false,\"code\":\"DANC A143\",\"units\":2,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"DANC A244\",\"units\":null}],\"catalog_addition\":false,\"code\":\"DANC A144\",\"units\":2,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"DANC A245\",\"units\":null}],\"catalog_addition\":false,\"code\":\"DANC A145\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A160\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"DANC A203\",\"units\":null}],\"catalog_addition\":false,\"code\":\"DANC A211\",\"units\":1,\"units_max\":4}],\"minimum\":null,\"name\":\"Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A101\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A102\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A108\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A110\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A111\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A113\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A115\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A116\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A119\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A120\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A121\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A125\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A126\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A130\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A135\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A138\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A146\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A147\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A148\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A149\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A154\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A155\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A156\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A157\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A158\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A159\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A165\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A168\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"DANC A269\",\"units\":null}],\"catalog_addition\":false,\"code\":\"DANC A169\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A171\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A172\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A173\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A174\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A175\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A176\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A180\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A191\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A200\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A205\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A206\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"DANC A210\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A230\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A246\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"DANC A267\",\"units\":null}],\"catalog_addition\":false,\"code\":\"DANC A247\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"DANC A264\",\"units\":null}],\"catalog_addition\":false,\"code\":\"DANC A248\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"DANC A256\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC A257\",\"units\":null,\"units_max\":null}],\"minimum\":4,\"name\":\"Restricted Electives\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":4,\"min\":4}}],\"program\":{\"careers\":[\"dance-related careers\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"degree_total_minimum\":true,\"electives_fill_degree\":true,\"ge_pattern\":\"OCC AA General Education\",\"ge_units\":{\"max\":27,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Develop an understanding and appreciation of the art of dance and its relevance to the multicultural world we live in.\",\"Acquire the dance technical skills necessary to transfer to a university program or a similar advanced dance study program.\",\"Implement critical thinking skills and kinesthetic awareness in their observation, analysis, and interpretation of dance performances on stage or in media.\",\"Develop dance composition and performance skills necessary to successfully transfer to a university program or a similar advanced dance study program.\"],\"section_heading\":\"Dance, Associate in Arts Degree\",\"total_units\":{\"max\":20,\"min\":20}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":60,\"placed\":60}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":60},\"coverage\":true,\"gaps\":[\"figure_within_variable_units\"],\"invented\":true,\"listed\":60,\"placed\":60}'::jsonb),\n  (2, 'East Los Angeles College', '41231', 43357061643, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOLOGY 006\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOLOGY 007\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 101\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Option 1\",\"option_group\":\"Core option\",\"rule\":\"all\",\"stated\":{\"max\":15,\"min\":15}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOLOGY 006\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 101\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 102\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Option 2\",\"option_group\":\"Core option\",\"rule\":\"all\",\"stated\":{\"max\":15,\"min\":15}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENV SCI 001\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"And all courses listed below\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOLOGY 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOLOGY 006\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Geology sequence: GEOLOGY 001 and GEOLOGY 006\",\"option_group\":\"Geology\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOLOGY 004\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Geology option: GEOLOGY 004\",\"option_group\":\"Geology\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GEOG 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GEOG 015\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"Geography sequence: GEOG 001 and GEOG 015\",\"option_group\":\"Geology\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ECON 020\",\"units\":3},{\"catalog_addition\":true,\"code\":\"PSYCH 091\",\"units\":4},{\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4},{\"catalog_addition\":false,\"code\":\"STAT C1000E\",\"units\":4}],\"catalog_addition\":true,\"code\":\"BUS 015\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"MATH 261S\",\"units\":3}],\"catalog_addition\":false,\"code\":\"MATH 261\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON C2001\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"And all courses listed below (statistics, calculus, economics)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSICS 006\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSICS 007\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Physics sequence: PHYSICS 006 and PHYSICS 007\",\"option_group\":\"Physics\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHYSICS 101\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PHYSICS 102\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Physics sequence: PHYSICS 101 and PHYSICS 102\",\"option_group\":\"Physics\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":66,\"min\":62},\"electives_fill_degree\":false,\"electives_fill_words\":\"ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS\",\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Analyze issues of resource management and depletion particularly as they apply to diminishing supplies of energy sources, minerals, water, food, and natural habitat.\",\"Analyze the scientific basis underlying environmental degradation particularly pollution of water, air, and land, and the components of global climate change.\",\"Critique the human response to environmental challenges including the economics of pollution, the character of environmental justice, and the effects of population change.\",\"Demonstrate scientific thinking, quantitative reasoning, sound environmental principles, and ethical purposefulness.\"],\"section_heading\":\"(Academic Plan E041231H)\",\"total_units\":{\"max\":45,\"min\":41}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":15,\"placed\":14}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":93,\"ge_pattern\":100,\"source\":80,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":15,\"placed\":14}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (2)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s748b piles rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;"
+}
