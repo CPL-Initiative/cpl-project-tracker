@@ -34,12 +34,10 @@ run is S750 and writes 751. The routine's next session is **SkyDowitcher**, to t
 2a. **Sam's work order (2026-11-20):** collection comes first, data waves before fixes, and a fix goes ahead of the next
    wave only when it blocks it or would file wrong rows (`r-collection-first-sam-2026-11-20`). Collection serves the
    M-IDs, so its fixes are ranked by the M-ID cards they unblock (`r-collect-for-mids-work-order-sam-2026-11-20`).
-3. **Merge order at sign-off:** the display land #3953 has merged (`91bffc66`, confirmed on `origin/main`); s750a's
-   land (`claude/s750-piles` with the apply's receipt) merges once the apply's migrate closes green; #3954, the
-   found-pages code, off for every college, merges if its `test` is green; this checkpoint, #3950, merges last, with
-   one update from `main` right before its merge. **Pending at this writing:** the apply's result, the land's PR and
-   #3954's merge (the Ledger). Open beside them: Sam's S749 draft #3955 (a re-mint dry run), COBIx's #3951, #3926 and
-   #3917 (Sam's or COBIx's) and dependabot's #3383, which waits.
+3. **Merge order at sign-off:** all three lands have merged, each confirmed on `origin/main`: the display land #3953
+   (`91bffc66`), the found-pages code #3954 (`0d6524eb`, off for every college) and s750a's land #3957 (`a83f4868`).
+   This checkpoint, #3950, merges last, with one update from `main` right before its merge. Open beside it: Sam's or
+   COBIx's #3951, #3949, #3948, #3937, #3926 and #3917, and dependabot's #3383, which waits.
 
 ## The start (13:12Z firing, 2026-11-28)
 
@@ -146,27 +144,29 @@ rereads, loads and `.apply`, and holds every Supabase call.
 
 ## What shipped
 
-In all: **7 records collected, pending the apply's result** (plan s750a turns coverage true at seven records; migrate
-46161770404 was in progress at this writing), no outline rows, no paid read ($0 of reads; page reads and captures free).
+In all: **7 records collected and live** (plan s750a turns coverage true at seven records; migrate 46161770404 green,
+live read 7 of 7 at 16:02Z), no outline rows, no paid read ($0 of reads; page reads and captures free).
 The display build `366c5bbc7b2d` carried S748's 41 records to the page. A **full checkpoint** (a Rule 10 data write and
 a display build ran); it skipped step 2 (`kb/README.md`: the build code is unchanged), step 3 (`README.md`: no
 user-facing surface changed), step 5 (no KB note cleared the bar: the gate question is still open) and step 7 (the
 Pipeline tab: no roadmap row, auditor count or re-mint moved). The census at the start is in *The start* above; **the
-closing census is pending** (`harvest-gap-census.yml` on `main`, after s750a's land).
+closing census** ran on `main` after s750a's land (run 46168887109, dispatched 17:08Z; its counts are the next run's first
+read, in `main`'s census commit).
 
 **Merged.**
 - **#3953, the display land** (`claude/s750-display`, merged `91bffc66`, confirmed on `origin/main`; `test` green on
   `e46b6bc8`, thread empty): build `366c5bbc7b2d`, 18,754 statements, the build code unchanged.
 
-**Open at this writing.**
-- **#3954, the found-pages code, round 2** (`claude/s750-found`, `f654050f`, draft): off for every college, no deploy,
-  no probe. It merges at sign-off if `test` is green.
-- **s750a's land** (not yet a PR): `claude/s750-piles` (`127c2575`: the plan, the census change `0919feab`, the Commons
-  builders) with the apply's receipt from `claude/s750-apply` (`4415bc40`), then the census on `main`.
+- **#3954, the found-pages code, round 2** (`claude/s750-found`, merged `0d6524eb`, confirmed on `origin/main`; `test`
+  green on `f654050f`, thread empty): off for every college, no deploy, no probe. Merged without a second update from
+  `main`: the two commits it lacked touched no file it changes (`d-3954-merged-clean-without-update-s750`, the
+  conductor's, reversible).
+- **#3957, s750a's land** (`claude/s750-apply`, merged `a83f4868`, confirmed on `origin/main`; `test` green on
+  `4e5aba99`, thread empty): the plan and its receipt, the census labeling college-named gaps, the Commons counts.
 
 **Live.**
 - The display build: 18,753 records at `366c5bbc7b2d`, 32 at three older builds, none without a build (15:16Z).
-- Plan s750a, **pending**: Citrus 02333; Marin 46242; Foothill 11827, 43194; Irvine Valley 44922; Palomar 08929, 22528
+- Plan s750a, live (7 of 7 coverage true, none checked, 16:02Z): Citrus 02333; Marin 46242; Foothill 11827, 43194; Irvine Valley 44922; Palomar 08929, 22528
   read coverage true under `state_course_not_on_page`, all passing, no named gap filed.
 
 ## Read in order
@@ -178,8 +178,7 @@ closing census is pending** (`harvest-gap-census.yml` on `main`, after s750a's l
 ## Open work, from the lanes' NEXT lines
 
 1. **`program-requirements-harvest`** (the routine's), by the lane's NEXT:
-   - First, close what this run left pending: s750a's migrate result, its land, #3954's merge, then
-     `harvest-gap-census.yml` on `main` (NEXT (2) and (4)).
+   - Nothing of this run is left pending: the three lands merged and the closing census ran (the Ledger).
    - NEXT (3): **the found pages, the gate question.** Read the nine wrongs (four look like the oracle's error, two are
      an older catalog version, three are unread; the log at 15:50Z); decide, under a Fable second reader, whether a
      wrong that is the oracle's error counts against the "none wrong" gate; then a free capture that files pages, the
@@ -225,7 +224,7 @@ Handoff 743's table and handoff 749's rows stand in every row this run did not c
 
 Cleared this run: the display build for S748's 41 records; the census reading college-named gap files, redone
 (`0919feab`; it lands with s750a); the found-pages code's three round-2 fixes and the display hold-back; seven of the
-eleven coverage-omits records (pending the apply's result).
+eleven coverage-omits records (live).
 
 ## For Sam
 
@@ -306,30 +305,30 @@ about $150.
 |---|---|---|
 | #3950 (`claude/nice-maxwell-smmt1u`) | the declaration, the log and this checkpoint (draft, docs only) | merges last, after one update from `main` |
 | #3953 (`claude/s750-display`) | merged `91bffc66`; the branch is gone | none |
-| #3954 (`claude/s750-found`, `f654050f`) | draft: the found-pages code, off for every college, no deploy, no probe | merges at sign-off if `test` is green (pending); then NEXT (3) |
-| `claude/s750-apply` (`4415bc40`) | s750a's apply pushed; migrate 46161770404 in progress at this writing | pending: its result, `.apply` restored, the receipt into the land |
-| `claude/s750-piles` (`127c2575`) | plan s750a at seven rows, the census change `0919feab`, the Commons builders | pending: the land PR with the apply's receipt, then `harvest-gap-census.yml` on `main` |
+| #3954 (`claude/s750-found`, `f654050f`) | merged `0d6524eb` (`test` green on `f654050f`, thread empty): the found-pages code, off for every college, no deploy, no probe | NEXT (3) |
+| #3957 (`claude/s750-apply`, `4e5aba99`) | merged `a83f4868` (`test` green on `4e5aba99`, thread empty): plan s750a applied (migrate 46161770404 green), `.apply` restored, the receipt, the census change, the Commons builders; one merge of `main` for a `kb/status/commons.json` conflict, rebuilt | none |
+| `claude/s750-piles` (`127c2575`) | plan s750a at seven rows, the census change `0919feab`, the Commons builders | none; in #3957 |
 | `claude/s750-piles-coc` | College of the Canyons' free capture 46157462134: 37868 still `not_found` | NEXT (7): the pin first |
 | `claude/s750-found-*` siblings | free captures read: Skyline 46155715421, San Mateo 46157242032, Diablo Valley 46157353221, San Joaquin Delta 46157465447, Gavilan 46157620485 (none filed a found page) | NEXT (3): the nine wrongs |
 | `claude/s750-found-*` siblings, still out at the close | Allan Hancock 46155901281, Cabrillo 46161446837, Coastline 46161449846, Feather River 46161452860, Napa Valley 46161456023, Lemoore 46161458595 | read each with NEXT (3) |
 | `claude/s748-readers-found`, `-found-skyline` | superseded by `claude/s750-found` | none |
 | `claude/s748-keys-crc` (`6a4fe94a`) | Cosumnes River's `set` step, parked | NEXT (5) |
 | `claude/s748-paid-sjcc`, `claude/s748-post-sierra` | San Jose City 22225 and Sierra 21525, each a person's look | a person |
-| Harvest gap census on `main` | 46141774235 (11:55Z): 15,698 pass, 3,888 without, 696 with a named gap | pending: a run after s750a's land |
+| Harvest gap census on `main` | 46141774235 (11:55Z): 15,698 pass, 3,888 without, 696 with a named gap; the closing run 46168887109 (17:08Z) | the next run's first read |
 | #3955 | Sam's S749 draft (a re-mint dry run) | Sam's plain session's |
 | #3951, #3926, #3917 | COBIx's (common-subject alignment files; subject titles) | Sam's or COBIx's |
 | #3383 | dependabot's | waits |
 
 ## Let go
 
-The ledger the conductor gave this checkpoint names no PR subscription, check-in or artifact watch: no `subscribe_pr_activity` subscription
-on #3950, #3953 or #3954, no COBIx watcher (stopped by Sam, `d-cobix-watcher-stopped-on-sam-word-s714`) and no
-scheduled wake, so none is to drop. Workers end with the session; each branch is pushed. The vault note for this run:
+The conductor subscribed to #3954 and #3957 (`subscribe_pr_activity`) to wait on CI; both merged, which ends each
+subscription. It holds no check-in, artifact watch, COBIx watcher (stopped by Sam,
+`d-cobix-watcher-stopped-on-sam-word-s714`) or scheduled wake. Workers end with the session; each branch is pushed. The vault note for this run:
 `CPLBrain/07-session-notes/2026-11-28-s750-skysandpiper-collection.md`, on `claude/youthful-bardeen-smmt1u`, draft samueltlee/CPLBrain#882, which merges on its own.
 
 Spend: $80.38 estimate (Fable 5.2 $77.93, Sonnet 5.5 $2.31, Haiku 5.5 $0.14); collection $80.38; 2026-11-28T13:12Z to 2026-11-28T15:58Z.
-(A token-count estimate at the repo's list prices (`kb/_spend_meter.py`'s table), measured from this session's and its agents' transcripts at 15:58Z, with Fable 5.2 priced at the Opus 5.5 rate as S739 to S748 did, since the table names no Fable rate; Sonnet at the table's Sonnet rate and Haiku at $1 and $5 per million tokens; get_session is not among this run's tools. The checkpoint's last steps and the sign-off after 15:58Z are not in it. No paid read ran.)
+(A token-count estimate at the repo's list prices (`kb/_spend_meter.py`'s table), measured from this session's and its agents' transcripts at 15:58Z, with Fable 5.2 priced at the Opus 5.5 rate as S739 to S748 did, since the table names no Fable rate; Sonnet at the table's Sonnet rate and Haiku at $1 and $5 per million tokens; get_session is not among this run's tools. The checkpoint's last steps, the lands and the sign-off from 15:58Z to about 17:20Z are not in it (the conductor's own turns and four Haiku gate checks; a few dollars). No paid read ran.)
 
 Opening line: *Greetings, you are SkyDowitcher (the next free session number at your start; the routine takes it), see SkySandpiper's (S750) handoff — `docs/session_751_handoff.md` — let's keep rolling with our queue.*
 
-Conductor model: Fable 5.2 (claude-fable-5-2), as the run header reports and the form names; session cost about $80.38 (a token-count estimate at 15:58Z; get_session is not available here); 7 records collected, pending the apply's result (all passing coverage, no named gap filed); 0 outline rows added; 1 substantive PR merged (#3953 `91bffc66`, confirmed on `origin/main`), with #3954 and s750a's land pending at this writing, not counting this checkpoint.
+Conductor model: Fable 5.2 (claude-fable-5-2), as the run header reports and the form names; session cost about $80.38 (a token-count estimate at 15:58Z; get_session is not available here); 7 records collected and live (all passing coverage, no named gap filed); 0 outline rows added; 3 substantive PRs merged (#3953 `91bffc66`, #3954 `0d6524eb` and #3957 `a83f4868`, each confirmed on `origin/main`), not counting this checkpoint.
