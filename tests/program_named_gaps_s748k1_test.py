@@ -110,6 +110,61 @@ check(named == [(str(i), "A", c, cn, run) for i, (c, cn, run, _) in enumerate(RO
       "the UPDATE's values name exactly the plan's rows (%s)" % named)
 check("checked" in apply_sql and "skipped_checked" in apply_sql and "update " in apply_sql.lower(),
       "the UPDATE is guarded: a row a person checked is skipped and listed")
+
+
+def flat(sql):
+    """The SQL after its values, comment lines dropped and white space folded, so each clause reads as one string."""
+    body = sql[sql.rindex("::jsonb"):]
+    return " ".join(" ".join(ln for ln in body.split("\n") if not ln.lstrip().startswith("--")).split())
+
+
+def images(sql):
+    """Each values row's three jsonb literals, parsed: [(before_record, before_checks, after_checks)]."""
+    lits = re.findall(r"'((?:[^']|'')*)'::jsonb", sql[sql.index("with v("):])
+    got = [json.loads(x.replace("''", "'")) for x in lits]
+    return [tuple(got[i:i + 3]) for i in range(0, len(got), 3)] if len(got) % 3 == 0 else []
+
+
+# The plan reader's MAJOR: each guard clause, the count the UPDATE must match, and the images the SQL writes are
+# asserted as written, so a changed expect, a dropped clause or a changed after-image fails here.
+tail = flat(apply_sql)
+expect = re.findall(r"e\(expect\) as \(values \((\d+)\)\)", tail)
+check(expect == [str(len(rows))] and len(rows) == len(ROWS),
+      "the UPDATE expects exactly the plan's %d rows (%s)" % (len(rows), expect))
+UPDATE = ("update public.program_requirement_records r set checks = v.after_checks from v "
+          "where r.college = v.college and r.control_number = v.control_number "
+          "and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record "
+          "and r.checked is not true returning v.i)")
+check(tail.count(UPDATE) == 1 and tail.lower().count("update public.") == 1 and tail.count(" set ") == 1,
+      "one UPDATE, of checks alone, where the row holds the filed run, the before-image's checks and record, and "
+      "no person's check")
+check("c as (select count(*) filter (where r.checked is true) as n, coalesce(json_agg(v.i order by v.i) filter "
+      "(where r.checked is true), '[]'::json) as keys from v join public.program_requirement_records r on "
+      "r.college = v.college and r.control_number = v.control_number)" in tail,
+      "the rows a person checked are counted and listed")
+check("select case when s.n = e.expect - c.n then json_build_object('returned', s.n, 'keys', s.keys, "
+      "'skipped_checked', c.keys) else (" in tail and "::int::text::json end as returned from s, c, e;" in tail,
+      "the statement aborts unless the UPDATE matched the expected rows less those a person checked")
+sql_images = images(apply_sql)
+check(len(sql_images) == len(rows)
+      and all(b_rec == r["before_image"]["record"] and b_chk == r["before_image"]["checks"]
+              and a_chk == r["after_image"]["checks"] for (b_rec, b_chk, a_chk), r in zip(sql_images, rows)),
+      "the UPDATE's before record, before checks and after checks are the receipt's images, row for row")
+check(all(a_chk == dict(b_chk, gaps=[r["gap"]], confidence=r["confidence"])
+          for (_, b_chk, a_chk), r in zip(sql_images, rows)),
+      "each after-image the SQL writes is its before-image with the row's gap and confidence added, nothing else")
+back_sql = open(MIG % "rollback", encoding="utf-8").read()
+back_tail = flat(back_sql)
+check(re.findall(r"e\(expect\) as \(values \((\d+)\)\)", back_tail) == [str(len(rows))]
+      and back_tail.count("update public.program_requirement_records r set checks = v.before_checks from v "
+                          "where r.college = v.college and r.control_number = v.control_number "
+                          "and r.extracted_run = v.extracted_run and r.checks = v.after_checks "
+                          "and r.checked is not true returning v.i)") == 1
+      and "select case when s.n = e.expect - c.n then" in back_tail and images(back_sql) == sql_images,
+      "the rollback puts the before-image's checks back, on the same images, only where the row still holds the "
+      "after-image and no person's check")
+pre_images = images(open(MIG % "preread", encoding="utf-8").read())
+check(pre_images == sql_images, "the pre-read compares the same images")
 check(all(os.path.isfile(MIG % part) for part in ("preread", "preread_md5", "rollback")),
       "the pre-read, the md5 pre-read and the rollback are filed beside it")
 pre, back = open(MIG % "preread", encoding="utf-8").read(), open(MIG % "rollback", encoding="utf-8").read()
