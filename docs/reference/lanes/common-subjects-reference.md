@@ -1,7 +1,7 @@
 ---
 title: "Common Subjects Reference (CSR) — one Common SUBJ per MQ discipline — lane state"
 created: 2026-10-19
-updated: 2026-11-27
+updated: 2026-11-28
 tags: [reference, roadmap-lane, csr, commons, subjects, mq-disciplines]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -150,41 +150,25 @@ Riverside's Colleague is the only other schedule system on file; no other colleg
 
 ## NEXT
 
-**LIVE (#3908, S744, `c66c805b`): the campus letter fold.** Cerro Coso and Porterville number courses with a campus
-letter, and COCI stored some as `PHEDC 103` (`f-cerro-coso-porterville-letter-glued-to-subject-s736`; Sam's training
-note on EMTCC). `kb/coci_campus_letter.py` holds explicit lists: 26 Cerro Coso codes (ADMJC to SPANC) and 6 Porterville
-(BIOLP CMRTP ENGLP FIREP HLEDP MATHP); the real codes stay (PSYC MUSC EDUC PHSC SOSC PTEC FRCC EMTC; HOSP). **DECIDED**
-`d-icc-not-folded-s744`: ICC stays (no IC subject, not on the schedule). `kb/_build_coci_lookup.py` folds 130 rows and
-drops 20 twins (one control number listed glued and lettered); the older duplicates at De Anza, Cerritos and Victor
-Valley (25 rows) stand. `kb/subject_decisions.py` carries a save on a glued code to the folded code (Sam's ADMJC
-"Administration of Justice" save of 2026-11-26 lands on ADMJ); a direct save on the base wins. Statewide subject codes
-2,924 to 2,896; no person's decision lost. The stray-code rescore reran
-(Porterville CMRTP now 0; its M-ID CMRT M1001 sits on CMRT). Test `tests/coci_campus_letter_test.py`. Evidence: Cerro
-Coso's *Long-Term Schedule Effective Fall 2024* (vault `raw/2026-11-27-cerro-coso-long-term-schedule-fall-2024.md`).
+**LIVE (#3908, S744; #3918, S745): the campus letter fold and the Chabot glue fold.** `kb/coci_campus_letter.py` holds explicit lists (26 Cerro Coso, 6 Porterville, 25 Chabot in `GLUED`), never a suffix rule; a person's save follows the fold (`kb/subject_decisions.py`). Both paragraphs as they stood: [`docs/common_subject_code_tab_lessons.md`](../../common_subject_code_tab_lessons.md), *Moved from the lane (S746)*. **DECIDED:** the wider `code_address` exception (11 titles at five colleges) is held for its own measured change.
 
-**LIVE (#3918, S745): the Chabot glue fold.** Sam's Chabot training note: `kb/coci_campus_letter.py` `GLUED` maps a code
-to (base, letters), 25 explicit Chabot codes (ATHL 7, DANC 1, HEAG 6, PEAC 11); PHEACJUD, MICR, PHSI and PHEA stay. 159
-rows fold (29 at Chabot), 20 twins unchanged; Chabot's codes 131 to 106, its untitled 31 to 4; statewide subject codes
-2,896 to 2,871; 47 decisions applied, none lost (the PEACBTC save carries to PEAC). ART Art, FILM Film and PLBG
-Apprenticeship: Plumbing filed from the Chabot catalog (runs 46060688269, 46061067072; rule `code_address` in
-`kb/_file_found_subject_titles.py`). **DECIDED:** the wider `code_address` exception (11 more titles at five colleges:
-Allan Hancock ART FILM; Berkeley City MUSIC; Chaffey ARABIC ART CINEMA DENTAL MUSIC THEATRE; Palomar ART; Rio Hondo ART)
-is held for its own measured change.
-
-**LIVE (S746 port of COBIx's #3917, branch `claude/subject-parse-bundle-port`): the subject-parse bundle.** Sam's
-approval of 2026-11-27: `kb/coci_subject_folds.py` folds 38 Hancock truncated labels, 9 bad splits and no Chabot code
-(#3918's list stands; PHEACJUD stays); Cypress C, Golden West SPTP and LAVC BOTH KIN read `not_a_subject`, and the
-builder honors a person's `not_a_subject` save; the note box's *Ask COBI to act on this* writes `value.act = true`;
-29 titles filed (10 code-only headings, Chabot PSCI, 18 SBCC). **DECIDED** (Sam, 2026-11-28): a fold lands on the
-code the college prints today, so Hancock APPREN, COM SC, GRAPHI, HO EC, LDRSHP, OA, PHY SC, POL SC, WLD T (and
-FRENCH, H ED) fold to APRN, CS, GRPH, HOEC, LDER, CBOT, PHSC, POLS, WLDT (FRCH, HED) and take their headings; Glendale
-T ART is THTR and AL ST joins AD ST; Hancock INT ST and SOC SC, Glendale RET S and LA Southwest Q CNTRL keep the
-printed code (no current code matches). The lightning round on the committed files: 494 to 416.
+**LIVE (#3929, #3932, S746): COBIx's subject-parse bundle on main, the college's own codes.** #3929 rebuilt COBIx's
+#3917 on main (Sam's approval of 2026-11-27): `kb/coci_subject_folds.py` folds 38 Allan Hancock truncated labels and
+9 bad splits; Chabot's duplicates and PHEACJUD were dropped (#3918's list stands). The builder honors a person's
+`not_a_subject` save, so Cabrillo TEST and Fullerton F leave the queue; the note box's *Ask COBI to act on this* writes
+`value.act = true`; allow-list filings ride with it. **RULED** `r-folds-take-the-colleges-own-codes-sam-2026-11-28`: a
+fold lands on the code the college prints today. APPREN APRN, COM SC CS, GRAPHI GRPH, HO EC HOEC, LDRSHP LDER, PHY SC
+PHSC, POL SC POLS, WLD T WLDT, OA CBOT, T ART THTR, AL ST AD ST, FRENCH FRCH, H ED HED. Left unfolded (no current code
+matches): INT ST, SOC SC, RET S, Q CNTRL, AGBUS, CE, HONORS, IT. #3932 filed COBIx's 22 #3926 titles (Canyons 10
+`NC.*`, Santa Barbara City 9, MiraCosta 3). The lightning round on the committed files: 494 to 416 after #3929.
+COBIx's #3917 and #3926 are superseded and left open for Sam or COBIx to close. **FINDING**
+`f-saves-on-a-folded-code-go-unseen-s746`: Sam's four Chabot *Not a subject* saves were keyed to codes #3918 folded, so
+the queue never showed them; a save keyed to a folded code needs carrying to the base code or naming in the queue.
 
 **NEXT (S744), in order:**
 1. **LACCD:** 41 codes still untitled; offer Sam the 87 schedule titles that differ from the catalog as one list.
 2. **The schedule-tool sweep beyond LACCD** (`r-schedule-tool-first-for-subject-titles-sam-2026-11-26`): none read.
-   The most codes left in the lightning round after the S746 port: Glendale 31, Santa Barbara City 28, North Orange
+   The most codes left in the lightning round after #3929 (before #3932's 22 titles): Glendale 31, Santa Barbara City 28, North Orange
    Continuing Education 20, MiraCosta 20, Canyons 17, Santiago Canyon 17, Allan Hancock 15. Name each college's system in `data_sources` as it is found.
 3. **The Accounting re-point apply.** The dry run (#3867, `kb/_acct_repoint_dryrun.py`, `kb/acct_repoint_out/2026-11-26/`):
    372 M-IDs and 907 courses move to ACCT under Accounting, 1 held, 29 families flagged. **BLOCKED:** Sam's four

@@ -934,3 +934,43 @@ match count is exact.
   candidates and 3 gain one; the retired and not-applicable cards change only their input hash; CPL Pathways'
   retired-course filter is unchanged at both colleges. CI then needed `kb/status/subject_courses` rebuilt (19 colleges)
   and the stray-code rescore rerun (Porterville CMRTP now 0; its M-ID CMRT M1001 sits on CMRT).
+
+## Moved from the lane (S746)
+
+The campus letter fold and the Chabot glue fold, verbatim from `docs/reference/lanes/common-subjects-reference.md` as they stood at the S746 checkpoint.
+
+**LIVE (#3908, S744, `c66c805b`): the campus letter fold.** Cerro Coso and Porterville number courses with a campus
+letter, and COCI stored some as `PHEDC 103` (`f-cerro-coso-porterville-letter-glued-to-subject-s736`; Sam's training
+note on EMTCC). `kb/coci_campus_letter.py` holds explicit lists: 26 Cerro Coso codes (ADMJC to SPANC) and 6 Porterville
+(BIOLP CMRTP ENGLP FIREP HLEDP MATHP); the real codes stay (PSYC MUSC EDUC PHSC SOSC PTEC FRCC EMTC; HOSP). **DECIDED**
+`d-icc-not-folded-s744`: ICC stays (no IC subject, not on the schedule). `kb/_build_coci_lookup.py` folds 130 rows and
+drops 20 twins (one control number listed glued and lettered); the older duplicates at De Anza, Cerritos and Victor
+Valley (25 rows) stand. `kb/subject_decisions.py` carries a save on a glued code to the folded code (Sam's ADMJC
+"Administration of Justice" save of 2026-11-26 lands on ADMJ); a direct save on the base wins. Statewide subject codes
+2,924 to 2,896; no person's decision lost. The stray-code rescore reran
+(Porterville CMRTP now 0; its M-ID CMRT M1001 sits on CMRT). Test `tests/coci_campus_letter_test.py`. Evidence: Cerro
+Coso's *Long-Term Schedule Effective Fall 2024* (vault `raw/2026-11-27-cerro-coso-long-term-schedule-fall-2024.md`).
+
+**LIVE (#3918, S745): the Chabot glue fold.** Sam's Chabot training note: `kb/coci_campus_letter.py` `GLUED` maps a code
+to (base, letters), 25 explicit Chabot codes (ATHL 7, DANC 1, HEAG 6, PEAC 11); PHEACJUD, MICR, PHSI and PHEA stay. 159
+rows fold (29 at Chabot), 20 twins unchanged; Chabot's codes 131 to 106, its untitled 31 to 4; statewide subject codes
+2,896 to 2,871; 47 decisions applied, none lost (the PEACBTC save carries to PEAC). ART Art, FILM Film and PLBG
+Apprenticeship: Plumbing filed from the Chabot catalog (runs 46060688269, 46061067072; rule `code_address` in
+`kb/_file_found_subject_titles.py`). **DECIDED:** the wider `code_address` exception (11 more titles at five colleges:
+Allan Hancock ART FILM; Berkeley City MUSIC; Chaffey ARABIC ART CINEMA DENTAL MUSIC THEATRE; Palomar ART; Rio Hondo ART)
+is held for its own measured change.
+
+## S746 (SkyPetrel, Sam's plain session, 2026-11-27 to 11-28): COBIx's bundle on main, the college's own codes
+
+- **Rebuild a contributor's stale PR on main rather than merging it.** COBIx's #3917 and #3926 were cut before #3918's
+  Chabot fold; #3929 and #3932 rebuilt them on main, dropped what #3918 had already done (the Chabot duplicates,
+  PHEACJUD), and left the originals open for Sam or COBIx to close.
+- **A fold lands on the code the college prints today** (`r-folds-take-the-colleges-own-codes-sam-2026-11-28`). Sam
+  asked before the merge that Hancock's truncated labels fold to Hancock's own codes (APPREN to APRN, COM SC to CS, OA to
+  CBOT) rather than to a statewide code; a label with no current code (INT ST, SOC SC, RET S, Q CNTRL, AGBUS, CE, HONORS,
+  IT) stays as printed. The lightning round fell 494 to 416 on the committed files.
+- **A save keyed to a folded code goes unseen** (`f-saves-on-a-folded-code-go-unseen-s746`). Sam's four Chabot *Not a
+  subject* saves sat on codes #3918 folded, so the queue never showed them. #3908 carries a save on a glued code to its
+  base; any new fold must carry saves the same way or name the ones it strands.
+- **A person's `not_a_subject` is terminal for the queue.** Cabrillo TEST and Fullerton F left once the builder honored
+  the save, which is the Commons rule that a person's save wins over a rebuild.

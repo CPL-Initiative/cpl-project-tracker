@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 745,
-  "moniker": "SkyTattler",
+  "session": 746,
+  "moniker": "SkyPetrel",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_746_handoff.md",
+  "handoff": "docs/session_747_handoff.md",
   "calls": [
     {
       "title": "The noncredit subject title list",
@@ -62,11 +62,11 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-27T22:06:57Z",
+  "written_at": "2026-11-28T02:20:38Z",
   "project": "subjects",
   "next_step": {
-    "title": "Make the subject builder honor Not a subject",
-    "text": "The lightning round saves not_a_subject, and kb/subject_decisions.py still lists it as refused, so the status counts do not drop. Make the builder take it, then offer Sam LACCD's 87 schedule titles that differ from the catalog as one list."
+    "title": "The Commons Clarity items",
+    "text": "Sam's list from 2026-11-28: the lightning round's counts disagree (433 and 514), the Needs you link opens the card instead of the lightning round with no way back, and a person's save keyed to a code a later fold renames no longer shows."
   },
   "changes": [
     {
@@ -280,6 +280,14 @@
     {
       "at": "2026-11-27T17:00Z",
       "text": "Cerro Coso's and Porterville's glued campus letter is folded into the course number: 130 COCI rows, 20 duplicate listings dropped, statewide codes 2,924 to 2,896. A person's save on a glued code carries to the folded one (Sam's ADMJC title now on ADMJ). ICC stays (PR 3908)."
+    },
+    {
+      "at": "2026-11-28T01:35:00Z",
+      "text": "COBIx's glued-code bundle is on main: 38 Allan Hancock folds, 9 bad splits, and the folds take each college's own codes (WLD T to WLDT, POL SC to POLS, OA to CBOT and others), so none returns as a new untitled card. A person's Not a subject save now takes the code off the list (Cabrillo's TEST, Fullerton's F). The lightning round on the committed files goes from 494 to 416."
+    },
+    {
+      "at": "2026-11-28T02:05:00Z",
+      "text": "22 catalog subject titles filed from COBIx's search: College of the Canyons 10, Santa Barbara City 9, MiraCosta 3."
     }
   ]
 }
