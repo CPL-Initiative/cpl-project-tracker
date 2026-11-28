@@ -3010,5 +3010,97 @@ def state_course_recall(every: list[dict], sources: dict, closed_of) -> dict:
     return out
 
 
+# ── no_state_course_list (S752) ─────────────────────────────────────────────
+# A program the state's Program Course File lists no course for, read from the page the catalog lookup found as its
+# own (kb/_program_requirements_college.py ncl_found_source, method catalog_lookup, S748). The scorer fails its
+# coverage with this gap named (S.NO_LIST_GAP in coverage.no_list, S750), since there was no list to check it
+# against. Sam, 2026-11-17: collect it with the gap named and a lower score. The lane's words (NEXT (3),
+# docs/reference/lanes/program-requirements-harvest.md): the rule files the gap where
+#   1. coverage.no_list is the sole reason: coverage fails, nothing is listed, no listed course is unexplained, and
+#      invented passes (every course is a flagged catalog addition), the other half of collectable();
+#   2. the record is from its own page: its source in the college's sources.json is the lookup's (method
+#      catalog_lookup, no_closed_list), at the record's own address, and the lookup's answer found that page;
+#   3. it places at least one course;
+#   4. it adds to a printed total: the units check passes against a figure the page prints (not "unstated", which
+#      passes a page that prints none, and not an hours total read with no course's hours added).
+# Its scores: unit arithmetic 100 (the check passes), course-list match none (no list), source UNKNOWN_SOURCE's 60
+# (catalog_lookup is not in FOUND_SOURCE), so the record is collected with a lower score than a listed one.
+# The census (kb/_harvest_gap_census.py collected_with_gaps) asks coverage to pass, so it admits such a row only
+# once it reads collected_no_list() below: the live row carries checks.gaps and the booleans, and the gap's name
+# there stands for the four conditions, since no other rule files it. No filed record is scored against an empty
+# list on 2026-11-28, so the rule moves none today. Guard: tests/program_named_gaps_no_list_s752_test.py.
+NO_LIST = S.NO_LIST_GAP
+GAPS.setdefault(NO_LIST, "The state lists no course for this program, so its courses were read from the program's "
+                         "own catalog page alone and checked against no list.")
+
+
+def no_list_sole_reason(sc: dict) -> bool:
+    """Condition 1: coverage fails for the empty list alone, and invented passes."""
+    cov = sc.get("coverage") or {}
+    return bool(cov.get("pass") is False and (cov.get("no_list") or {}).get("gap") == NO_LIST
+                and cov.get("listed") == 0 and not cov.get("unexplained") and not cov.get("none_placed")
+                and (sc.get("invented") or {}).get("pass") is True)
+
+
+def no_list_own_page(filed: dict, src: dict | None) -> bool:
+    """Condition 2: the record was read from the page the catalog lookup found as the program's own."""
+    import _program_requirements_college as C
+    src = src or {}
+    source = src.get("source") if isinstance(src.get("source"), dict) else {}
+    url = filed.get("source_url")
+    ans = src.get("catalog_lookup") or {}
+    return bool(url and src.get("method") == C.NCL_FOUND_METHOD and source.get("no_closed_list") is True
+                and source.get("url") == url and ans.get("result") == "found"
+                and (ans.get("page") or {}).get("url") == url)
+
+
+def no_list_placed(filed: dict) -> int:
+    """Condition 3: the courses the record places."""
+    return len({k for k, _, _ in S.placed_codes(filed.get("record") or {}) if k})
+
+
+def no_list_printed_total(sc: dict) -> bool:
+    """Condition 4: the units check passes against a total the page prints."""
+    a = sc.get("arithmetic") or {}
+    return bool(a.get("pass") is True and a.get("status") not in (None, "unstated") and a.get("stated") is not None
+                and a.get("computed") is not None and not a.get("total_only"))
+
+
+def _no_list_source(filed: dict) -> dict | None:
+    """The record's entry in its college's committed sources.json."""
+    import _program_requirements_college as C
+    college = filed.get("college")
+    if not college:
+        return None
+    src, _ = _sources(os.path.join(COLLEGE_DIR, C.slug_of(college), "records", "x.json"))
+    return src.get(str(filed.get("control_number")))
+
+
+def no_state_course_list(filed: dict, src: dict | None = None) -> str | None:
+    """The gap's words, or None. src: the record's sources.json entry (read from its college's folder when None)."""
+    sc = filed.get("score") or {}
+    if not no_list_sole_reason(sc) or not no_list_printed_total(sc):
+        return None
+    if not no_list_own_page(filed, _no_list_source(filed) if src is None else src):
+        return None
+    n = no_list_placed(filed)
+    if n < 1:
+        return None
+    return ("the state lists no course for this program; the record was read from the page the catalog lookup found "
+            "as its own (%s), places %d course%s and adds to the printed total %s"
+            % (filed["source_url"], n, "" if n == 1 else "s", R._fig(sc["arithmetic"].get("stated"))))
+
+
+def collected_no_list(checks: dict | None) -> bool:
+    """For the census: a live row collected with no_state_course_list, whose coverage fails for the empty list alone
+    (checks.gaps names the gap, invented passes, the units check reads equal)."""
+    c = checks or {}
+    return bool(NO_LIST in (c.get("gaps") or []) and c.get("coverage") is False and c.get("invented") is True
+                and c.get("arithmetic") == "equal")
+
+
+RECORD_RULES = RECORD_RULES + ((NO_LIST, no_state_course_list),)
+
+
 if __name__ == "__main__":
     sys.exit(main())

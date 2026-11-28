@@ -1297,6 +1297,15 @@ jobs:
       - name: Found pages, round 2 (S750, the request, the scorer at zero listed, the measured opt-in)
         if: matrix.shard == 5
         run: python3 tests/program_requirements_found_pages_s750_test.py
+      # S752: a wrong the committed verdicts confirm as the oracle's error leaves the found-pages recall's wrong count
+      # (Sam, 2026-11-28), keyed by college and control number; probable and unconfirmed verdicts still count.
+      - name: Found pages, a confirmed oracle error not counted (S752, San Mateo's three)
+        if: matrix.shard == 5
+        run: python3 tests/program_requirements_found_oracle_error_s752_test.py
+      # S752: the no_state_course_list rule, each of the lane's four conditions broken alone.
+      - name: Named gaps, no_state_course_list (S752, the four conditions)
+        if: matrix.shard == 5
+        run: python3 tests/program_named_gaps_no_list_s752_test.py
       # S742: a compact live read (live_runs grouped by run, a count and an md5 a college) expands to keep-better's
       # shape only when it checks out against itself.
       - name: Live read, the compact form expanded and checked (S742)
