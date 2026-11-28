@@ -481,7 +481,7 @@ def references(ids, root=ROOT):
     idset = set(ids)
     for line in out.splitlines():
         f, _, tok = line.rpartition(":")
-        if tok in idset and f not in ("kb/mid_forwarding.csv",) and not f.startswith("kb/remint_dryrun/s749_"):
+        if tok in idset and f not in ("kb/mid_forwarding.csv", "kb/_alignment_remint_dryrun.py", "tests/alignment_remint_dryrun_test.py") and not f.startswith("kb/remint_dryrun/s749_"):
             hits[f][tok] += 1
     return {f: dict(c) for f, c in sorted(hits.items())}, behind
 
@@ -644,7 +644,7 @@ def render_report(plan, refs, behind):
         fs = sorted(per_class_files.get(cl, ()))
         if fs:
             L.append(f"| {cl} | {len(fs)} | {', '.join(fs[:6])}{' …' if len(fs) > 6 else ''} |")
-    L += ["", "Open PRs touching those files (read 2026-11-28 15:30Z): #3917 (COBIx: kb/status/csr_proposed_codes.json, "
+    L += ["", "Open PRs touching those files (read 2026-11-28 15:17Z): #3917 (COBIx: kb/status/csr_proposed_codes.json, "
           "local_subject_recommendations.json, mq_view.json, statewide_subject_codes.json, statewide_code_courses/*; "
           "rebuilt by their builders after the apply) and #3953 (kb/status/commons.json, commons_history.json; counts "
           "only, no M-ID). #3951 is #3952's source. #3950, #3926 and #3383 touch none.", ""]

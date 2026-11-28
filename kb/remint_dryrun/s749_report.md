@@ -195,7 +195,7 @@ Exact id tokens (`git grep`), on the working tree the dry run read. Era check: e
 | other kb file | 2 | kb/discipline_blanks_worklist.json, kb/remint_blast_worklist.json |
 | other | 3 | archive/coci_unified_courses_clusters_2026-05-30_pre-dissolution.json, coci_lookup_data.js, excel_to_dashboard.py |
 
-Open PRs touching those files (read 2026-11-28 15:30Z): #3917 (COBIx: kb/status/csr_proposed_codes.json, local_subject_recommendations.json, mq_view.json, statewide_subject_codes.json, statewide_code_courses/*; rebuilt by their builders after the apply) and #3953 (kb/status/commons.json, commons_history.json; counts only, no M-ID). #3951 is #3952's source. #3950, #3926 and #3383 touch none.
+Open PRs touching those files (read 2026-11-28 15:17Z): #3917 (COBIx: kb/status/csr_proposed_codes.json, local_subject_recommendations.json, mq_view.json, statewide_subject_codes.json, statewide_code_courses/*; rebuilt by their builders after the apply) and #3953 (kb/status/commons.json, commons_history.json; counts only, no M-ID). #3951 is #3952's source. #3950, #3926 and #3383 touch none.
 
 ## Every M-ID that would change
 
