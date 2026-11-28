@@ -13,44 +13,45 @@ The ruling (r-full-remint-for-new-joins-sam-2026-11-28; Sam via COBIx, 2026-11-2
 - **V4_every_planned_id_has_a_forwarding_row**: pass
 - **V5_codes_free**: pass
 - **V7_person_settled_codes_kept**: pass
+- **V8_every_yes_no_answered**: pass
 - **V6_person_rows_held**: pass
 
-## Totals: 346 M-IDs (323 needs_yes, 23 planned)
+## Totals: 346 M-IDs (323 approved, 23 planned)
 
 | Scope | Reason | Code | Discipline join after | Ids | Catalog | Stand-alone | Kept number | Gap-filled | Status |
 |---|---|---|---|---|---|---|---|---|---|
-| nutr-fold | NUTR folds into FDNT (Sam, 2026-11-28, group_rulings.txt: NUTR (Dietetics/Nutritional Science) folds into FDNT; NUTR retired as alias) | NUTR -> FDNT | Nutritional Science/Dietetics | 320 | 54 | 266 | 209 | 111 | 320 needs_yes |
-| aero | Aeronautics AERO -> AERN (Sam, 2026-11-28, COBIx's minted list #3951; AERO stays a local variant of Aviation) | AERO -> AERN | Aeronautics | 9 | 1 | 8 | 9 | 0 | 9 planned |
+| nutr-fold | NUTR folds into FDNT (Sam, 2026-11-28, group_rulings.txt: NUTR (Dietetics/Nutritional Science) folds into FDNT; NUTR retired as alias) | NUTR -> FDNT | Nutritional Science/Dietetics | 320 | 54 | 266 | 209 | 111 | 320 approved |
+| aero | Aeronautics leaves AERO for AERN (Sam, 2026-11-28, COBIx's minted list #3951); the nine AERO ids are Fresno's Air Force ROTC and go to Military Studies (Sam, r-remint-dryrun-defaults-sam-2026-11-28) | AERO -> MILS | Military Studies | 9 | 1 | 8 | 9 | 0 | 9 planned |
 | phtc | PHTC left Photographic Technology/ Commercial Photography for CPHT in #3952; a person filed the local code PHTC under Photography (_SUBJ_DISC::PHTC, 2026-11-24) | PHTC -> PHOT | Photography | 4 | 0 | 4 | 0 | 4 | 4 planned |
-| pubr | PUBR is no discipline's code; the Nov 28 picks join its local subject (PUB REL) to Public Relations, whose code is PREL (Sam, 2026-11-28: codes no M-ID starts with) | PUBR -> PREL | Public Relations | 1 | 1 | 0 | 1 | 0 | 1 needs_yes |
-| tour | TOUR is no discipline's code; the Nov 28 picks join its local subject to Travel Services, whose code is TRVL (Sam, 2026-11-28: codes no M-ID starts with) | TOUR -> TRVL | Travel Services | 12 | 4 | 8 | 12 | 0 | 2 needs_yes, 10 planned |
+| pubr | PUBR is no discipline's code; the Nov 28 picks join its local subject (PUB REL) to Public Relations, whose code is PREL (Sam, 2026-11-28: codes no M-ID starts with) | PUBR -> PREL | Public Relations | 1 | 1 | 0 | 1 | 0 | 1 approved |
+| tour | TOUR is no discipline's code; the Nov 28 picks join its local subject to Travel Services, whose code is TRVL (Sam, 2026-11-28: codes no M-ID starts with) | TOUR -> TRVL | Travel Services | 12 | 4 | 8 | 12 | 0 | 2 approved, 10 planned |
 
 Seed and picks edits the apply makes beside the re-key (proposed here, not committed):
 
 - nutr-fold: Dietetics/Nutritional Science leaves the seed and becomes an alias of Nutritional Science/Dietetics in kb/discipline_aliases.json; NUTR joins FDNT's local variants.
-- aero: Aeronautics canonical_subj4 AERO -> AERN (held by kb/_apply_minted_codes_s749.py for this pass).
-- tour: the two TOUR picks move to TRVL, `kb/subject_title_hunt/20261128_common_picks_tail.csv` (Saddleback College TOUR, Southwestern College T&T).
-- aero: Fresno City College AEROST's pick (COBI, `M-ID AERO`) follows Aeronautics to AERN; Allan Hancock SPACE's pick already names AERN (Space Technology follows Aeronautics) and applies once AERN exists.
+- aero: Aeronautics canonical_subj4 AERO -> AERN, minted at the apply (held by kb/_apply_minted_codes_s749.py for this pass); AERN starts with Space Technology alone (Allan Hancock SPACE) and no M-ID; AERO stays a local variant of Aviation.
+- tour: the two Travel Services picks (Saddleback College TOUR, Southwestern College T&T) already take TRVL on #3952 (9f56672c); nothing to edit.
+- aero: Fresno City College AEROST's pick (COBI, `M-ID AERO`) moves to MILS with its nine M-IDs; Allan Hancock SPACE's pick already names AERN and applies once the apply mints AERN for Aeronautics.
 - Codes the ruling asked for where the minted list collided (already the seed's, checked free by V5): Flight Attendant Training **FLTR** (FLTA prefixes 6 Foreign Languages (Filipino) M-IDs; FLTR is Sam's own pick of 2026-11-23 (S717) and no M-ID starts with it); Public Relations **PREL** (PUBR prefixes 1 M-ID with no discipline); Travel Services **TRVL** (TOUR prefixes 12 M-IDs with no discipline).
 - Cardiovascular Technology: CVTC -> CVTE landed in #3952; no M-ID carries CVTC or CVTE (V0 measured every prefix).
 
-## Frozen-row conflicts: yes/no for Sam
+## Frozen-row conflicts and Sam's answers
 
-Each is a person's value that a Nov 28 ruling or the minted list would change. Where Sam's ruling names the change, the plan follows it and the apply refuses those rows until the yes is recorded; where only the minted list proposes it, the person's code stays and nothing moves. Sam's four noncredit codes of 2026-11-22 (HMEN, CTZN, HLSN, DSPN) are frozen (V7).
+Each is a person's value that a Nov 28 ruling or the minted list would change. Sam answered all of them on 2026-11-28 ("fine on defaults", r-remint-dryrun-defaults-sam-2026-11-28; COBIx agrees): every ruled move is approved, and every person-named code stays. Sam's four noncredit codes of 2026-11-22 (HMEN, CTZN, HLSN, DSPN) are frozen (V7). A conflict a later run finds in a scope he has not answered leaves its rows `needs_yes`, and V8 fails.
 
-1. Dietetics/Nutritional Science holds NUTR by map@rccd.edu's curator override (2026-05-23). Fold it as ruled (NUTR -> FDNT)? Example: NUTR M1001 *Advanced Nutrition* -> FDNT M1042. *Yes* or *No*.
-2. A person filed the local code NUTR under Dietetics/Nutritional Science (2026-11-24), the discipline the fold retires. Fold it as ruled (NUTR -> FDNT)? Example: NUTR M1001 *Advanced Nutrition* -> FDNT M1042. *Yes* or *No*.
-3. A person filed the local code JOUR under Journalism (2026-11-24), and the ids it feeds join Public Relations. Re-mint them as planned (PUBR -> PREL)? Example: PUBR M1001 *Principles of Public Relations* -> PREL M1001. Ids: PUBR M1001. *Yes* or *No*.
-4. A person filed the local code ATC under Aviation (2026-11-24), and the ids it feeds join Travel Services. Re-mint them as planned (TOUR -> TRVL)? Example: TOUR M1002 *Travel Destinations: Europe, Africa, and the Middle East* -> TRVL M1002. Ids: TOUR M1002, TOUR M1003. *Yes* or *No*.
-5. Flight Attendant Training: COBIx's minted list proposes FLTA; Sam (in session, S717) named FLTR (2026-11-23). The plan keeps FLTR and moves nothing. Keep FLTR? *Yes* or *No*.
-6. Home Economics: Noncredit: COBIx's minted list proposes HECN; Sam (in session, S705) named HMEN (2026-11-22). The plan keeps HMEN and moves nothing. Keep HMEN? *Yes* or *No*.
+1. Dietetics/Nutritional Science holds NUTR by map@rccd.edu's curator override (2026-05-23). The plan moves NUTR -> FDNT. Example: NUTR M1001 *Advanced Nutrition* -> FDNT M1042. Answer: yes, all 320 (Sam, 2026-11-28).
+2. A person filed the local code NUTR under Dietetics/Nutritional Science (2026-11-24), the discipline the fold retires. The plan moves NUTR -> FDNT. Example: NUTR M1001 *Advanced Nutrition* -> FDNT M1042. Answer: yes, all 320 (Sam, 2026-11-28).
+3. A person filed the local code JOUR under Journalism (2026-11-24), and the ids it feeds join Public Relations. The plan moves PUBR -> PREL. Example: PUBR M1001 *Principles of Public Relations* -> PREL M1001. Ids: PUBR M1001. Answer: yes, PUBR M1001 to PREL (Sam, 2026-11-28).
+4. A person filed the local code ATC under Aviation (2026-11-24), and the ids it feeds join Travel Services. The plan moves TOUR -> TRVL. Example: TOUR M1002 *Travel Destinations: Europe, Africa, and the Middle East* -> TRVL M1002. Ids: TOUR M1002, TOUR M1003. Answer: yes, TOUR to TRVL (Sam, 2026-11-28).
+5. Flight Attendant Training: COBIx's minted list proposes FLTA; Sam (in session, S717) named FLTR (2026-11-23). The plan keeps FLTR and moves nothing. Answer: FLTR stays (Sam, 2026-11-28: FLTR, HMEN, CTZN, HLSN and DSPN stay).
+6. Home Economics: Noncredit: COBIx's minted list proposes HECN; Sam (in session, S705) named HMEN (2026-11-22). The plan keeps HMEN and moves nothing. Answer: HMEN stays (Sam, 2026-11-28: FLTR, HMEN, CTZN, HLSN and DSPN stay).
 
 No moving M-ID carries a person's kb_curation row in the committed overlay, and no person points at one; the SELECT below re-reads the live table.
 
 ## Surprises
 
 1. **NUTR is 320 M-IDs, not 54**: 54 catalog and 266 stand-alone. FDNT already holds its own ids, so 111 NUTR ids gap-fill rather than keep their number.
-2. **AERO is 9 M-IDs, not 1**, and none is aeronautics: all are Fresno City College's Air Force ROTC (local subject AEROST, TOP 1801 Military Studies; *AS100 Heritage and Values*). The seed's own note on Aeronautics says they belong with Military Studies (MILS), where eight Army ROTC ids already sit. The plan follows the ruling's words (AERN); yes/no: send these nine to MILS instead?
+2. **AERO is 9 M-IDs, not 1**, and none is aeronautics: all are Fresno City College's Air Force ROTC (local subject AEROST, TOP 1801 Military Studies; *AS100 Heritage and Values*). Sam sent them to Military Studies (MILS), beside eight Army ROTC ids (2026-11-28); AERN starts with Space Technology alone.
 3. **PHTC was missed by #3952**: it re-coded Photographic Technology/ Commercial Photography PHTC -> CPHT counting catalog M-IDs only, and 4 stand-alone ids carry PHTC (Antelope Valley, Moorpark). A person filed the local code PHTC under Photography (2026-11-24), and one of the four already merges into PHOT M1041, so they move to PHOT.
 4. **TOUR is 12 M-IDs**: 4 catalog and 8 Saddleback stand-alones; two catalog ids came from a local subject ATC (TOUR M1002, M1003).
 5. **The alias changes move nothing**: no M-ID's discipline is African American Studies, Asian American Studies or Speech Communication. Ethnic Studies' 754 rows keep ETHS; sorting its African American and Asian American titles into AFAM and ASAM is new classification, not a join change, so it is outside this pass.
@@ -169,7 +170,7 @@ No moving M-ID carries a person's kb_curation row in the committed overlay, and 
 | TELE | 2 | TCOM 2 |
 | TH | 2 | none |
 | TICU | 2 | none |
-| TT | 7 | TOUR 7 |
+| TT | 7 | TRVL 7 |
 | TV | 2 | none |
 | TVR | 3 | BRDC 1 |
 | VBUS | 1 | none |
@@ -199,347 +200,347 @@ Open PRs touching those files (read 2026-11-28 15:17Z): #3917 (COBIx: kb/status/
 
 ## Every M-ID that would change
 
-Status: planned · needs_yes (the yes/no list) · held_person. Discipline before is the row's (a curator's overlay wins); none means it joined only by its code. References: files by class (id: identity, gen: generated, sky: SkyView, cer: exhibits/CER/EACR, ccr: CCR cards, st: status, t: tests, hist: receipts).
+Status: planned · approved (a person-settled conflict Sam approved) · needs_yes · held_person. Discipline before is the row's (a curator's overlay wins); none means it joined only by its code. References: files by class (id: identity, gen: generated, sky: SkyView, cer: exhibits/CER/EACR, ccr: CCR cards, st: status, t: tests, hist: receipts).
 
 | Old id | New id | How | Code | Discipline before -> after | Title | Status | Overlay | References |
 |---|---|---|---|---|---|---|---|---|
-| AERO M1001 | AERN M1001 | kept number | AERO -> AERN | none -> Aeronautics | AS200 Leadership Laboratory C | planned | unified_title | sky 2, cer 1, gen 5, hist 10, id 2, o 1, st 2, t 2 |
-| AERO M10AW | AERN M10AW | kept number | AERO -> AERN | none -> Aeronautics | As100 Heritage and Values | planned | - | sky 2, gen 6, hist 3, id 1, o 2, st 1 |
-| AERO M10AX | AERN M10AX | kept number | AERO -> AERN | none -> Aeronautics | AS100 Heritage and Values A | planned | - | sky 2, gen 6, hist 3, id 1, o 2, st 1 |
-| AERO M10AY | AERN M10AY | kept number | AERO -> AERN | none -> Aeronautics | AS100 Leadership Laboratory A | planned | - | sky 2, gen 6, hist 3, id 1, o 1, st 2 |
-| AERO M10AZ | AERN M10AZ | kept number | AERO -> AERN | none -> Aeronautics | AS100 Leadership Laboratory B | planned | - | sky 2, gen 6, hist 3, id 1, o 1, st 2 |
-| AERO M10BA | AERN M10BA | kept number | AERO -> AERN | none -> Aeronautics | AS200 Leadership Laboratory C | planned | merge_into | gen 1, hist 6, id 3, o 1, t 1 |
-| AERO M10BB | AERN M10BB | kept number | AERO -> AERN | none -> Aeronautics | AS200 Leadership Laboratory D | planned | merge_into | gen 1, hist 6, id 3, o 1 |
-| AERO M10BC | AERN M10BC | kept number | AERO -> AERN | none -> Aeronautics | As200 Team and Leadership Fundamentals | planned | - | sky 2, gen 6, hist 3, id 1, o 2, st 2 |
-| AERO M10BD | AERN M10BD | kept number | AERO -> AERN | none -> Aeronautics | AS200 Team and Leadership Fundamentals A | planned | - | sky 2, gen 6, hist 3, id 1, o 2, st 2 |
-| NUTR M1001 | FDNT M1042 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Advanced Nutrition | needs_yes | - | ccr 1, sky 2, cer 2, gen 6, hist 7, id 2, o 1, st 2 |
-| NUTR M1002 | FDNT M1047 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Applications of Health and Wellness Coaching | needs_yes | - | sky 2, cer 2, gen 5, hist 7, id 3, o 1, st 4 |
-| NUTR M1003 | FDNT M1049 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Applied Nutrition | needs_yes | - | sky 2, cer 2, gen 5, hist 7, id 2, o 1, st 3 |
-| NUTR M1004 | FDNT M1050 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Plant-Based Nutrition | needs_yes | - | sky 2, cer 2, gen 5, hist 10, id 2, o 1, st 2 |
-| NUTR M1005 | FDNT M1051 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Basic Cooking Techniques | needs_yes | - | sky 2, cer 2, gen 5, hist 9, id 3, o 1, st 3 |
-| NUTR M1006 | FDNT M1052 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Careers in Dietetics and Food Science | needs_yes | merge_into | gen 2, hist 9, id 3, o 1 |
-| NUTR M1007 | FDNT M1053 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Careers in Nutrition and Dietetics | needs_yes | unified_title | sky 2, cer 2, gen 6, hist 12, id 3, o 1, st 5 |
-| NUTR M1008 | FDNT M1054 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Careers in Nutrition and Foods | needs_yes | unified_title | sky 2, cer 2, gen 6, hist 10, id 3, o 1, st 3 |
-| NUTR M1009 | FDNT M1055 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | ServSafe Certification Exam Prep | needs_yes | - | sky 2, cer 2, gen 5, hist 7, id 3, o 1, st 2 |
-| NUTR M1011 | FDNT M1056 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Maternal and Child Nutrition | needs_yes | - | sky 2, cer 2, gen 5, hist 17, id 2, o 1, st 2 |
-| NUTR M1012 | FDNT M1057 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Health and Wellness Coaching | needs_yes | - | sky 2, cer 2, gen 6, hist 10, id 3, o 1, st 4 |
-| NUTR M1013 | FDNT M1058 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Vegetarian Cuisine | needs_yes | unified_title | sky 2, cer 2, gen 6, hist 12, id 4, o 1, st 6 |
-| NUTR M1014 | FDNT M1059 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Cultural Foods | needs_yes | unified_title | sky 2, cer 2, gen 6, hist 16, id 3, o 1, st 4 |
-| NUTR M1015 | FDNT M1060 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Cultural Foods of the World | needs_yes | merge_into | gen 2, hist 11, id 3, o 1 |
-| NUTR M1016 | FDNT M1061 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Food and Culture | needs_yes | unified_title | ccr 1, sky 2, cer 2, gen 7, hist 13, id 4, o 1, st 10 |
-| NUTR M1017 | FDNT M1062 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Therapeutic Diets | needs_yes | unified_title | sky 2, cer 2, gen 6, hist 10, id 3, o 1, st 3 |
-| NUTR M1018 | FDNT M1063 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition and Disease | needs_yes | - | sky 2, cer 2, gen 5, hist 18, id 3, o 1, st 3 |
-| NUTR M1019 | FDNT M1064 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Experimental Offering in Nutrition and Foods | needs_yes | merge_into | gen 2, hist 8, id 3, o 1 |
-| NUTR M1021 | FDNT M1065 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition for Fitness and Sport | needs_yes | unified_title | sky 2, cer 2, gen 7, hist 11, id 3, o 1, st 4 |
-| NUTR M1022 | FDNT M1066 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition for Fitness and Sports | needs_yes | merge_into | gen 2, hist 9, id 3, o 1 |
-| NUTR M1023 | FDNT M1023 | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutritn/Fitness/Perform | needs_yes | - | sky 2, cer 2, gen 5, hist 7, id 2, o 1, st 3 |
-| NUTR M1024 | FDNT M1024 | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Intro Insti Food Ser | needs_yes | - | ccr 1, sky 2, cer 2, gen 3, hist 7, id 2, o 1, st 1 |
-| NUTR M1025 | FDNT M1025 | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Principles of Food with Lab | needs_yes | - | ccr 1, cer 1, gen 2, hist 8, id 3, o 1 |
-| NUTR M1026 | FDNT M1026 | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Food Theory and Preparation | needs_yes | - | sky 2, cer 3, gen 5, hist 7, id 2, o 1, st 2 |
-| NUTR M1027 | FDNT M1027 | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Food Science | needs_yes | - | ccr 1, gen 2, hist 8, id 3, o 1 |
-| NUTR M1028 | FDNT M1028 | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | International Foods | needs_yes | - | ccr 1, sky 2, cer 2, gen 3, hist 8, id 3, o 1, st 2 |
-| NUTR M1029 | FDNT M1029 | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition and Health | needs_yes | - | sky 2, cer 3, gen 6, hist 9, id 2, o 1, st 2 |
-| NUTR M1030 | FDNT M1030 | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Human Nutrition | needs_yes | - | ccr 1, cer 1, gen 2, hist 10, id 3, o 1 |
-| NUTR M1031 | FDNT M1031 | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Introduction to Medical Nutrition Therapy | needs_yes | - | sky 2, cer 2, gen 6, hist 8, id 2, o 1, st 2 |
-| NUTR M1032 | FDNT M1032 | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Introduction to Nutrition Science | needs_yes | - | ccr 1, cer 1, gen 2, hist 8, id 4, o 1, st 2 |
-| NUTR M1033 | FDNT M1033 | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition Issues Throughout Life | needs_yes | unified_title | sky 2, cer 2, gen 6, hist 11, id 3, o 1, st 4 |
-| NUTR M1034 | FDNT M1034 | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition | needs_yes | - | ccr 1, cer 1, gen 2, hist 8, id 3, o 1, st 2 |
-| NUTR M1035 | FDNT M1035 | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition for Physical Performance | needs_yes | - | sky 2, cer 2, gen 5, hist 7, id 2, o 1, st 2 |
-| NUTR M1036 | FDNT M1036 | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Practical Nutrition | needs_yes | - | ccr 1, sky 2, cer 2, gen 3, hist 6, id 2, o 1, st 1 |
-| NUTR M1037 | FDNT M1037 | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Women's Nutrition | needs_yes | - | sky 2, cer 2, gen 5, hist 5, id 2, o 1, st 2 |
-| NUTR M1038 | FDNT M1038 | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Sports Nutrition | needs_yes | - | sky 2, cer 2, gen 6, hist 8, id 2, o 1, st 12 |
-| NUTR M1039 | FDNT M1039 | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Topics in Nutrition | needs_yes | - | sky 2, cer 2, gen 5, hist 7, id 2, o 1, st 1 |
-| NUTR M1040 | FDNT M1040 | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Rotations in Supervised Practice, Level C | needs_yes | unified_title | ccr 1, sky 2, cer 2, gen 6, hist 11, id 2, st 2 |
-| NUTR M1041 | FDNT M1041 | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Clinical Experience in Nutritional Care Management | needs_yes | unified_title | sky 2, cer 2, gen 5, hist 10, id 2, st 2 |
-| NUTR M10AA | FDNT M10DP | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | NUTR 7 - Food and Culture | needs_yes | - | sky 2, gen 5, hist 6, id 1, o 1, st 1 |
-| NUTR M10AB | FDNT M10DQ | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition: Across the Life Span | needs_yes | - | sky 2, gen 5, hist 6, id 1, o 1, st 1 |
-| NUTR M10AC | FDNT M10DR | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition for Adults and Aging | needs_yes | - | sky 2, gen 6, hist 7, id 1, o 1, st 2 |
-| NUTR M10AD | FDNT M10DS | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Advanced Food Preparation | needs_yes | - | ccr 1, sky 2, gen 6, hist 6, id 1, o 1, st 1 |
-| NUTR M10AE | FDNT M10DT | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Advanced Medical Nutrition Therapy | needs_yes | - | sky 2, gen 6, hist 6, id 1, o 1, st 2 |
-| NUTR M10AF | FDNT M10DU | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition for Healthy Aging and Longevity | needs_yes | - | sky 2, gen 6, hist 7, id 1, o 1, st 2 |
-| NUTR M10AG | FDNT M10DV | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Weight Management for Healthy Aging | needs_yes | - | sky 2, gen 6, hist 7, id 1, o 1, st 1 |
-| NUTR M10AH | FDNT M10DW | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition for Nursing and Allied Health Professionals | needs_yes | - | sky 2, gen 5, hist 6, id 1, o 1, st 2 |
-| NUTR M10AI | FDNT M10DX | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition and Health: Personal Applications | needs_yes | - | sky 2, gen 5, hist 6, id 1, o 1, st 1 |
-| NUTR M10AJ | FDNT M10DY | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Sports Nutrition: Fueling the Athlete | needs_yes | - | sky 2, gen 5, hist 6, id 1, o 1, st 1 |
-| NUTR M10AK | FDNT M10DZ | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition and Athletic Performance | needs_yes | - | sky 2, gen 5, hist 6, id 1, o 1, st 1 |
-| NUTR M10AL | FDNT M10EA | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Rotations in Supervised Practice, Level B | needs_yes | - | ccr 1, sky 2, gen 6, hist 6, id 1, o 1, st 2 |
-| NUTR M10AM | FDNT M10EB | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Baking Basics and Business | needs_yes | - | sky 2, gen 6, hist 7, id 1, o 1, st 1 |
-| NUTR M10AN | FDNT M10EC | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Plant-Based Food Principles and Preparation | needs_yes | - | sky 2, gen 5, hist 6, id 1, o 1, st 1 |
-| NUTR M10AO | FDNT M10ED | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Introduction to Beer and Brewing | needs_yes | merge_into | gen 1, hist 9, id 3, o 1 |
-| NUTR M10AP | FDNT M10EE | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Certified Dietary Manager (CDM) Board Exam Review | needs_yes | - | sky 2, gen 6, hist 7, id 1, o 1, st 1 |
-| NUTR M10AQ | FDNT M10EF | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Rotations in Supervised Practice, Level C | needs_yes | merge_into | gen 1, hist 9, id 3, o 1 |
-| NUTR M10AR | FDNT M10EG | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Clinical Experience in Health Care Facilities | needs_yes | - | ccr 1, sky 2, gen 5, hist 6, id 1, o 1, st 1 |
-| NUTR M10AS | FDNT M10EH | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Clinical Experience in Nutritional Care Management | needs_yes | merge_into | gen 1, hist 9, id 3, o 1 |
-| NUTR M10AT | FDNT M10EI | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Management of the Dietary Department in Health Care Facilities | needs_yes | merge_into | gen 1, hist 9, id 2, o 1 |
-| NUTR M10AU | FDNT M10EJ | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutritional Care Management | needs_yes | merge_into | gen 1, hist 17, id 3, o 1 |
-| NUTR M10AV | FDNT M10EK | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutritional Care | needs_yes | merge_into | gen 1, hist 11, id 3, o 1 |
-| NUTR M10AW | FDNT M10EL | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | The Food System and Career Opportunities | needs_yes | merge_into | gen 1, hist 9, id 3, o 1, st 1 |
-| NUTR M10AX | FDNT M10EM | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Introduction to Nutrition and Hospitality Careers | needs_yes | - | ccr 1, sky 2, gen 5, hist 6, id 1, o 1, st 1 |
-| NUTR M10AY | FDNT M10EN | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Children and Weight Concerns | needs_yes | - | ccr 1, sky 2, gen 5, hist 6, id 1, o 1, st 1 |
-| NUTR M10AZ | FDNT M10EO | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Life Cycle Nutrition: Children | needs_yes | merge_into | gen 1, hist 9, id 2, o 1 |
-| NUTR M10BA | FDNT M10EP | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Clinical Nutrition | needs_yes | - | sky 2, gen 6, hist 6, id 1, o 1, st 1 |
-| NUTR M10BB | FDNT M10EQ | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Introduction to Nutrition Concepts | needs_yes | - | sky 2, gen 5, hist 6, id 1, o 1, st 2 |
-| NUTR M10BC | FDNT M10ER | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Weight Control | needs_yes | - | sky 2, gen 5, hist 6, id 1, o 1, st 1 |
-| NUTR M10BD | FDNT M10ES | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Cooking Cultural Foods | needs_yes | merge_into | gen 1, hist 9, id 2, o 1, st 1 |
-| NUTR M10BE | FDNT M10ET | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition in Healthy Cooking | needs_yes | - | sky 2, gen 6, hist 7, id 1, o 1, st 2 |
-| NUTR M10BF | FDNT M10EU | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutritional Cooking | needs_yes | - | sky 2, gen 5, hist 6, id 1, o 1, st 2 |
-| NUTR M10BG | FDNT M10EV | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Cooking for Singles | needs_yes | - | sky 2, gen 5, hist 6, id 1, o 1, st 2 |
-| NUTR M10BH | FDNT M10EW | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Cooking for Wellness | needs_yes | - | sky 2, gen 5, hist 6, id 1, o 1, st 2 |
-| NUTR M10BI | FDNT M10EX | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Food and Nutrition: Cross Cultural Perspectives | needs_yes | merge_into | gen 1, hist 9, id 3, o 1 |
-| NUTR M10BJ | FDNT M10EY | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Culture and Cuisine of the World | needs_yes | - | sky 2, gen 6, hist 7, id 1, o 1, st 1 |
-| NUTR M10BK | FDNT M10EZ | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition for Culinary Professionals | needs_yes | - | sky 2, cer 2, gen 9, hist 14, id 2, o 1, kb 1, st 1 |
-| NUTR M10BL | FDNT M10FA | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Honors - Cultural Foods of the World | needs_yes | - | sky 2, gen 5, hist 10, id 1, o 1, st 1 |
-| NUTR M10BM | FDNT M10FB | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Food and Culture in the United States | needs_yes | - | sky 2, gen 5, hist 6, id 1, o 1, st 2 |
-| NUTR M10BN | FDNT M10FC | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Current Topics in Nutrition | needs_yes | - | sky 2, gen 5, hist 6, id 1, o 1, st 1 |
-| NUTR M10BO | FDNT M10FD | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | World Food Customs and Nutrition | needs_yes | merge_into | gen 1, hist 9, id 3, o 1 |
-| NUTR M10BP | FDNT M10FE | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Life Cycle Nutrition | needs_yes | merge_into | gen 1, hist 9, id 2, o 1 |
-| NUTR M10BQ | FDNT M10FF | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Introduction to Dietary Management | needs_yes | - | ccr 1, sky 2, gen 5, hist 6, id 1, o 1, st 1 |
-| NUTR M10BR | FDNT M10FG | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Introduction to Nutrition, Dietetics and Food Science | needs_yes | merge_into | gen 1, hist 9, id 2, o 1 |
-| NUTR M10BS | FDNT M10FH | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Introduction to the Dietetics Profession | needs_yes | - | sky 2, gen 5, hist 6, id 1, o 1, st 1 |
-| NUTR M10BT | FDNT M10FI | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Survey of Nutrition and Dietetics | needs_yes | merge_into | gen 1, hist 9, id 2, o 1 |
-| NUTR M10BU | FDNT M10FJ | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Dieting (Sifting Fact from Fiction) | needs_yes | - | sky 2, gen 5, hist 6, id 1, o 1, st 1 |
-| NUTR M10BV | FDNT M10FK | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition, Weight Management, and Eating Disorders | needs_yes | merge_into | gen 1, hist 9, id 3, o 1 |
-| NUTR M10BW | FDNT M10FL | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | The Science of Weight Management and Eating Disorders | needs_yes | - | sky 2, gen 5, hist 6, id 1, o 1 |
-| NUTR M10BX | FDNT M10FM | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Elements of Nutrition | needs_yes | - | ccr 1, cer 1, hist 6, id 1, o 1 |
-| NUTR M10BY | FDNT M10FN | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Essentials of Nutrition | needs_yes | - | sky 2, gen 6, hist 6, id 1, o 1, st 1 |
-| NUTR M10BZ | FDNT M10FO | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition for Sport, Exercise, and Health | needs_yes | - | sky 2, gen 5, hist 6, id 1, o 1, st 1 |
-| NUTR M10CA | FDNT M10FP | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Sports and Exercise Nutrition | needs_yes | - | sky 2, gen 6, hist 7, id 1, o 1, st 1 |
-| NUTR M10CB | FDNT M10FQ | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Honors Family Nutrition | needs_yes | honors_of | sky 2, gen 5, hist 13, id 2, o 1, st 1 |
-| NUTR M10CC | FDNT M10FR | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Family Nutrition | needs_yes | - | sky 2, gen 5, hist 12, id 2, o 1, st 1 |
-| NUTR M10CD | FDNT M10FS | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Healthy Lifestyle: Food and Fitness | needs_yes | - | sky 2, gen 5, hist 6, id 1, o 1, st 1 |
-| NUTR M10CE | FDNT M10FT | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Issue Food/Nutr/FoodSCI | needs_yes | - | sky 2, gen 3, hist 6, id 1, o 1, st 1 |
-| NUTR M10CF | FDNT M10FU | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Intro to Food Service/ Work Organizations | needs_yes | - | sky 2, gen 5, hist 6, id 1, o 1, st 2 |
-| NUTR M10CG | FDNT M10FV | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Introduction to Food and Nutrition | needs_yes | - | ccr 1, cer 1, hist 6, id 1, o 1 |
-| NUTR M10CH | FDNT M10FW | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Introduction to Nutrition and Food Professions | needs_yes | - | sky 2, gen 5, hist 6, id 1, o 1, st 1 |
-| NUTR M10CI | FDNT M10FX | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Food Selection and Meal Preparation | needs_yes | - | ccr 1, cer 1, hist 6, id 1, o 1, st 1 |
-| NUTR M10CJ | FDNT M10FY | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Menu Planning and Food Purchasing | needs_yes | merge_into | gen 1, hist 9, id 2, o 1, st 1 |
-| NUTR M10CK | FDNT M10FZ | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Sustainable Nutrition and Food Systems | needs_yes | - | sky 2, gen 5, hist 14, id 1, o 1, st 1 |
-| NUTR M10CL | FDNT M10GA | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | The Scientific Principles of Food Preparation | needs_yes | - | ccr 1, cer 1, hist 6, id 1, o 1 |
-| NUTR M10CM | FDNT M10GB | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Servsafe in Food Production | needs_yes | merge_into | gen 1, hist 9, id 3, o 1 |
-| NUTR M10CN | FDNT M10GC | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Food-Production Systems | needs_yes | - | sky 2, gen 5, hist 6, id 1, o 1, st 1 |
-| NUTR M10CO | FDNT M10GD | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Foods for Healthy Lifestyles | needs_yes | - | sky 2, cer 2, gen 9, hist 12, id 2, o 1, kb 1, st 2 |
-| NUTR M10CP | FDNT M10GE | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Topics in Nutrition and Foods | needs_yes | merge_into | gen 1, hist 11, id 2, o 1 |
-| NUTR M10CQ | FDNT M10GF | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Fundamentals of Nutrition | needs_yes | - | ccr 1, cer 1, hist 7, id 2, o 1 |
-| NUTR M10CR | FDNT M10GG | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition, Health, and Wellness | needs_yes | merge_into | gen 1, hist 9, id 3, o 1 |
-| NUTR M10CS | FDNT M10CS | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition and Healthy Weight | needs_yes | - | sky 2, gen 6, hist 7, id 1, o 1, st 2 |
-| NUTR M10CT | FDNT M10CT | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Honors Human Nutrition | needs_yes | - | ccr 1, cer 1, hist 6, id 1, o 1 |
-| NUTR M10CU | FDNT M10CU | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition Honors | needs_yes | - | ccr 1, cer 1, hist 6, id 1, o 1 |
-| NUTR M10CV | FDNT M10CV | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Human Performance and Sports Nutrition | needs_yes | merge_into | gen 1, hist 9, id 2, o 1 |
-| NUTR M10CW | FDNT M10CW | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Science of Human Nutrition | needs_yes | - | ccr 1, cer 1, hist 6, id 1, o 1 |
-| NUTR M10CX | FDNT M10CX | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Independ Study | needs_yes | - | sky 2, gen 3, hist 6, id 1, o 1, st 1 |
-| NUTR M10CY | FDNT M10CY | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Introduction to the Nutrition Professions | needs_yes | merge_into | gen 1, hist 9, id 3, o 1 |
-| NUTR M10CZ | FDNT M10CZ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Introduction to Nutrition and Trauma | needs_yes | - | sky 2, gen 6, hist 7, id 1, o 1, st 2 |
-| NUTR M10DA | FDNT M10DA | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Rotations in Supervised Practice, Level A | needs_yes | merge_into | cer 2, gen 4, hist 15, id 4, o 1, kb 1, st 1 |
-| NUTR M10DB | FDNT M10DB | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition and Life | needs_yes | - | ccr 1, cer 1, hist 6, id 1, o 1, st 1 |
-| NUTR M10DC | FDNT M10DC | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Lifecycle Nutrition | needs_yes | merge_into | gen 1, hist 9, id 2, o 1 |
-| NUTR M10DD | FDNT M10DD | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Vegetarian Lifestyle | needs_yes | - | sky 2, gen 5, hist 4, id 1, o 1, st 2 |
-| NUTR M10DE | FDNT M10DE | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Personalized Nutrition Planning for Lifetime Wellness | needs_yes | - | sky 2, gen 5, hist 4, id 1, o 1, st 2 |
-| NUTR M10DF | FDNT M10DF | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition Management | needs_yes | - | sky 2, gen 5, hist 4, id 1, o 1, st 1 |
-| NUTR M10DG | FDNT M10DG | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Sustainable Meals | needs_yes | - | sky 2, cer 2, gen 9, hist 12, id 2, o 1, kb 1, st 1 |
-| NUTR M10DH | FDNT M10DH | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition and Menu Planning | needs_yes | merge_into | gen 1, hist 7, id 3, o 1 |
-| NUTR M10DI | FDNT M10DI | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutri & Metabolism | needs_yes | - | sky 2, gen 5, hist 4, id 1, o 1, st 1 |
-| NUTR M10DJ | FDNT M10DJ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition and Metabolism | needs_yes | - | sky 2, gen 5, hist 4, id 1, o 1, st 1 |
-| NUTR M10DK | FDNT M10DK | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | IS: Nutrition | needs_yes | - | sky 2, gen 5, hist 4, id 1, o 1, st 1 |
-| NUTR M10DL | FDNT M10DL | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Science of Nutrition | needs_yes | - | ccr 1, hist 5, id 2, o 1 |
-| NUTR M10DM | FDNT M10DM | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Sanitation/Safety | needs_yes | merge_into | gen 1, hist 7, id 2, o 1 |
-| NUTR M10DN | FDNT M10DN | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Supervision/Training | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 2 |
-| NUTR M10DO | FDNT M10DO | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Supervison and Training Techniques | needs_yes | - | sky 2, gen 5, hist 4, id 1, o 1, st 3 |
-| NUTR M9001 | FDNT M9027 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Weight Regulation: Biology and Behavior | needs_yes | - | ccr 1, sky 2, cer 2, gen 5, hist 7, id 3, o 1, st 2 |
-| NUTR M9002 | FDNT M9028 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Mother and Childhood Nutrition | needs_yes | - | ccr 1, sky 2, cer 2, gen 5, hist 7, id 3, o 1, st 1 |
-| NUTR M9003 | FDNT M9029 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Chinese Cooking | needs_yes | - | ccr 1, sky 2, cer 2, gen 3, hist 7, id 2, o 1, st 1 |
-| NUTR M9004 | FDNT M9030 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Intro to Japanese Cooking | needs_yes | - | ccr 1, sky 2, cer 2, gen 3, hist 5, id 2, o 1, st 1 |
-| NUTR M9005 | FDNT M9031 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Quick and Easy Salad Meals | needs_yes | - | ccr 1, sky 2, cer 2, gen 4, hist 6, id 2, o 1, st 1 |
-| NUTR M9006 | FDNT M9032 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Holiday Gifts from the Kitchen | needs_yes | - | ccr 1, sky 2, cer 2, gen 3, hist 5, id 2, o 1, st 1 |
-| NUTR M9007 | FDNT M9033 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Integrative Nutrition and Wellness | needs_yes | - | ccr 1, sky 2, cer 2, gen 5, hist 5, id 3, o 1, st 2 |
-| NUTR M9008 | FDNT M9034 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Dim Sum 1 | needs_yes | unified_title | sky 2, cer 2, gen 3, hist 9, id 2, st 1 |
-| NUTR M9009 | FDNT M9035 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Brazilian Cuisine Part 2 | needs_yes | unified_title | sky 2, cer 2, gen 3, hist 9, id 2, st 1 |
-| NUTR M9010 | FDNT M9036 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | California Grilling 2 | needs_yes | unified_title | sky 2, cer 2, gen 3, hist 9, id 2, st 1 |
-| NUTR M9011 | FDNT M9037 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Easy but Elegant Cooking | needs_yes | unified_title | sky 2, cer 2, gen 3, hist 9, id 2, st 1 |
-| NUTR M9012 | FDNT M9038 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Garnishing and Fruit Carving | needs_yes | unified_title | sky 2, cer 2, gen 3, hist 5, id 2, st 1 |
-| NUTR M9013 | FDNT M9039 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Chef Skills: Tamales and More | needs_yes | unified_title | sky 2, cer 2, gen 3, hist 5, id 2, st 1 |
-| NUTR M9014 | FDNT M9040 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Intro to Vietnamese Cooking | needs_yes | unified_title | sky 2, cer 2, gen 3, hist 5, id 2, st 1 |
-| NUTR M9015 | FDNT M9041 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Fresh Salads and Dressings | needs_yes | unified_title | sky 2, cer 2, gen 3, hist 5, id 2, st 1 |
-| NUTR M90AA | FDNT M90GR | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | CDM Board Exam Preparation 1 | needs_yes | - | sky 2, gen 6, hist 6, id 1, o 1, st 2 |
-| NUTR M90AB | FDNT M90GS | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Valentine Treats (Ages 6-10) | needs_yes | - | sky 2, gen 4, hist 6, id 1, o 1, st 1 |
-| NUTR M90AC | FDNT M90GT | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Who's Setting the Table? (6-10 | needs_yes | - | sky 2, gen 3, hist 6, id 1, o 1, st 1 |
-| NUTR M90AD | FDNT M90GU | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Espresso 101 | needs_yes | - | sky 2, gen 3, hist 6, id 1, o 1, st 1 |
-| NUTR M90AE | FDNT M90GV | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | CDM Board Exam Preparation 2 | needs_yes | - | sky 2, gen 6, hist 6, id 1, o 1, st 2 |
-| NUTR M90AF | FDNT M90GW | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | How 2 Make Fab Cheesecakes! | needs_yes | - | sky 2, gen 3, hist 6, id 1, o 1, st 1 |
-| NUTR M90AG | FDNT M90AG | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Valentine Treats (Ages 3-5) | needs_yes | - | sky 2, gen 4, hist 4, id 1, o 1, st 1 |
-| NUTR M90AH | FDNT M90AH | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Can I Help with Dinner? (3-5) | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90AI | FDNT M90AI | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Spring Is Made 4 T, 4U & Frnds | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90AJ | FDNT M90AJ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | All About Tarts | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90AK | FDNT M90AK | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Fun Make-Ahead Light Dinners | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90AL | FDNT M90AL | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Italian Cuisine Al Forno | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90AM | FDNT M90AM | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | The Amazing Fish | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90AN | FDNT M90AN | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Party Starters - Amuse-Bouche | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90AO | FDNT M90AO | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Not Just Any Cookie! | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90AP | FDNT M90AP | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Salsa Anyone? | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90AQ | FDNT M90AQ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Appetizers from Around the Wor | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90AR | FDNT M90AR | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Holiday Appetizers | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90AS | FDNT M90AS | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | ICS: Party Hors D'oeuvres/Appt | needs_yes | - | sky 2, gen 4, hist 5, id 1, o 1, st 1 |
-| NUTR M90AT | FDNT M90AT | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Artisan Breads Workshop | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90AU | FDNT M90AU | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Sugar Artistry | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90AV | FDNT M90AV | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Quick & Healthy Asian Cuisine | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90AW | FDNT M90AW | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Asian & Pacific Rim Cuisines | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90AX | FDNT M90AX | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Tea in Autumn | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90AY | FDNT M90AY | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Let's Bring Back Sunday Dinner | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90AZ | FDNT M90AZ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Tapas Bar | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90BA | FDNT M90BA | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Cake Decorating-Basic | needs_yes | - | sky 2, gen 4, hist 5, id 1, o 1, st 1 |
-| NUTR M90BB | FDNT M90BB | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Basics: Sushi Made Easy | needs_yes | merge_into | gen 1, hist 7, id 2, o 1 |
-| NUTR M90BC | FDNT M90BC | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition Basics: Menu Planning | needs_yes | - | sky 2, gen 5, hist 4, id 1, o 1, st 1 |
-| NUTR M90BD | FDNT M90BD | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Bean Crocks & Cider Mugs | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90BE | FDNT M90BE | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Ice Carving (Beginning) | needs_yes | - | sky 2, gen 4, hist 4, id 1, o 1, st 1 |
-| NUTR M90BF | FDNT M90BF | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Beginning Cooking | needs_yes | - | sky 2, gen 4, hist 4, id 1, o 1, st 1 |
-| NUTR M90BG | FDNT M90BG | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Best Ever Holiday Meals | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90BH | FDNT M90BH | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Biscotti, Breads and More! | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90BI | FDNT M90BI | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Love at First Bite: Cheesecake | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90BJ | FDNT M90BJ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | How to Boil Water | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90BK | FDNT M90BK | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Festive Cookie/Candy Bonanza | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90BL | FDNT M90BL | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Brazilian Cuisine | needs_yes | merge_into | gen 1, hist 7, id 3, o 1 |
-| NUTR M90BM | FDNT M90BM | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Brazilian Cuisine Part 2 | needs_yes | merge_into | gen 1, hist 7, id 3, o 1 |
-| NUTR M90BN | FDNT M90BN | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Bread, Bread and More Bread! | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90BO | FDNT M90BO | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Creative Breadmaking | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90BP | FDNT M90BP | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Hearty Soups and Breads | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90BQ | FDNT M90BQ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | A Williamsburg Breakfast | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90BR | FDNT M90BR | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Breastfeeding and Nutrition Stage 1 | needs_yes | - | sky 2, gen 6, hist 4, id 1, o 1, st 2 |
-| NUTR M90BS | FDNT M90BS | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Breastfeeding and Nutrition Stage 2 | needs_yes | - | sky 2, gen 6, hist 4, id 1, o 1, st 2 |
-| NUTR M90BT | FDNT M90BT | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Creme Brulee Made Easy | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90BU | FDNT M90BU | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Mother's Day Brunch | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90BV | FDNT M90BV | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Busy People's Slow Simmer | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90BW | FDNT M90BW | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Easy but Elegant Cooking | needs_yes | merge_into | gen 1, hist 7, id 3, o 1 |
-| NUTR M90BX | FDNT M90BX | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Simple but Elegant | needs_yes | merge_into | gen 1, hist 7, id 3, o 1 |
-| NUTR M90BY | FDNT M90BY | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nothing Is Quite as Good as Ca | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90BZ | FDNT M90BZ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Cajun Cookin' | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90CA | FDNT M90CA | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | California Grilling | needs_yes | merge_into | gen 1, hist 7, id 3, o 1 |
-| NUTR M90CB | FDNT M90CB | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | California Grilling 2 | needs_yes | merge_into | gen 1, hist 7, id 3, o 1 |
-| NUTR M90CC | FDNT M90CC | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Can There Ever...chocolate | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90CD | FDNT M90CD | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | I Can Make That Special Dish | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90CE | FDNT M90CE | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Candlelight Dinner for Two | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90CF | FDNT M90CF | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Garnishing and Fruit Carving | needs_yes | merge_into | gen 1, hist 7, id 3, o 1 |
-| NUTR M90CG | FDNT M90CG | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Fruit Carving 1 | needs_yes | merge_into | gen 1, hist 7, id 3, o 1 |
-| NUTR M90CH | FDNT M90CH | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Fruit & Vegetable Carving | needs_yes | merge_into | gen 1, hist 7, id 3, o 1 |
-| NUTR M90CI | FDNT M90CI | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Celebrate French Cuisine | needs_yes | - | sky 2, gen 4, hist 5, id 1, o 1, st 1 |
-| NUTR M90CJ | FDNT M90CJ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | ICS: Celebrate Greece | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90CK | FDNT M90CK | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Celebrate Vegetables | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90CL | FDNT M90CL | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Cheesecakes Galore! | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90CM | FDNT M90CM | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Chef Skills: Classic Sauce 1 | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90CN | FDNT M90CN | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Chef Skills: Tamales and More | needs_yes | merge_into | gen 1, hist 7, id 3, o 1 |
-| NUTR M90CO | FDNT M90CO | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Chef Skills: Soups On | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90CP | FDNT M90CP | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Chinese Cooking - Classic | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90CQ | FDNT M90CQ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Chinese Cooking/Quick | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90CR | FDNT M90CR | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Chinese Cooking-Vegetarian | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90CS | FDNT M90CS | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Regional Chinese Flavors | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90CT | FDNT M90CT | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Chinese Noodles | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90CU | FDNT M90CU | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Chocolate Desserts for the Sou | needs_yes | merge_into | gen 1, hist 7, id 3, o 1 |
-| NUTR M90CV | FDNT M90CV | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Chocolate Lovers Wanted! | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90CW | FDNT M90CW | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Valentine Chocolate Truffles | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90CX | FDNT M90CX | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Chocolates & More Valentine | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90CY | FDNT M90CY | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Healthy Choices from the Garden | needs_yes | merge_into | gen 1, hist 7, id 3, o 1 |
-| NUTR M90CZ | FDNT M90CZ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Christmas Goodies and Cookies | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90DA | FDNT M90DA | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Creole Christmas Dinner | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90DB | FDNT M90DB | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Christmas Gifts & Heirlooms | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90DC | FDNT M90DC | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | White Christmas Tea | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90DD | FDNT M90DD | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Simply Delicious Cinn Rolls | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90DE | FDNT M90DE | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Sinful Cinnamon Rolls | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90DF | FDNT M90DF | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Come to My Garden Party | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90DG | FDNT M90DG | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Cooking for Compliments | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90DH | FDNT M90DH | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | The Rib Connection | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90DI | FDNT M90DI | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | A Taste of French Country Cook | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90DJ | FDNT M90DJ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Holiday Cookie Exchange | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90DK | FDNT M90DK | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Country Inn Cooking | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90DL | FDNT M90DL | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Quilt Country Cooking | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90DM | FDNT M90DM | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Great Meals: Crockery Cooking | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90DN | FDNT M90DN | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Family Cooking - Desserts | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90DO | FDNT M90DO | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Cooking Made Easy | needs_yes | merge_into | gen 1, hist 7, id 2, o 1 |
-| NUTR M90DP | FDNT M90DP | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Hot & Spicy Thai Cooking | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90DQ | FDNT M90DQ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Hungarian Cooking Treasures | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90DR | FDNT M90DR | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Southern Immigrant Cooking | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90DS | FDNT M90DS | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Intro to Vietnamese Cooking | needs_yes | merge_into | gen 1, hist 7, id 3, o 1 |
-| NUTR M90DT | FDNT M90DT | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Italian Cooking from Tuscany | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90DU | FDNT M90DU | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition/Cooking for One or Two | needs_yes | - | sky 2, gen 5, hist 4, id 1, o 1, st 1 |
-| NUTR M90DV | FDNT M90DV | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Cooking for You or Two | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90DW | FDNT M90DW | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Cooking/Vim, Vigor & Vitality | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90DX | FDNT M90DX | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Mardi Gras Crazy | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90DY | FDNT M90DY | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Creative Cuisine | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90DZ | FDNT M90DZ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Crepes | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90EA | FDNT M90EA | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Everyday French Cuisine | needs_yes | - | sky 2, gen 4, hist 5, id 1, o 1, st 1 |
-| NUTR M90EB | FDNT M90EB | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Low Fat Mexican Cuisine | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90EC | FDNT M90EC | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | North Indian Cuisine | needs_yes | - | sky 2, gen 4, hist 5, id 1, o 1, st 1 |
-| NUTR M90ED | FDNT M90ED | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | South Indian Cuisine | needs_yes | - | sky 2, gen 4, hist 5, id 1, o 1, st 1 |
-| NUTR M90EE | FDNT M90EE | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Intro Vietnamese Cuisine | needs_yes | merge_into | gen 1, hist 7, id 3, o 1 |
-| NUTR M90EF | FDNT M90EF | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | The Cuisine of Southern Italy | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90EG | FDNT M90EG | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Culinary Hearts Kitchen | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90EH | FDNT M90EH | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Scrumptious Hors D'oeuvres | needs_yes | - | sky 2, gen 4, hist 5, id 1, o 1, st 1 |
-| NUTR M90EI | FDNT M90EI | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Shrimply Delicious Dining! | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90EJ | FDNT M90EJ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Delicious Hot Soups Plus! | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90EK | FDNT M90EK | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Delicious Pastas,pizzas,sauces | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90EL | FDNT M90EL | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Lover's Delight | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90EM | FDNT M90EM | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Sensational Summer Desserts | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90EN | FDNT M90EN | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Did Someone Say Tamales? | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90EO | FDNT M90EO | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Dim Sum 1 | needs_yes | merge_into | gen 1, hist 7, id 3, o 1 |
-| NUTR M90EP | FDNT M90EP | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Dim Sum | needs_yes | merge_into | gen 1, hist 7, id 3, o 1 |
-| NUTR M90EQ | FDNT M90EQ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Dinner with a "Lighter" Flair | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90ER | FDNT M90ER | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Wok's for Dinner?! | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90ES | FDNT M90ES | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Fresh Salads and Dressings | needs_yes | merge_into | gen 1, hist 7, id 3, o 1 |
-| NUTR M90ET | FDNT M90ET | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Salads and Salad Dressings | needs_yes | merge_into | gen 1, hist 7, id 3, o 1 |
-| NUTR M90EU | FDNT M90EU | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | It's Never Too Early for Xmas | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90EV | FDNT M90EV | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | French Pastry Made Easy | needs_yes | merge_into | gen 1, hist 7, id 2, o 1 |
-| NUTR M90EW | FDNT M90EW | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | If I Knew IT Was This Easy... | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90EX | FDNT M90EX | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Eat Out in Your Own Kitchen | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90EY | FDNT M90EY | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Elegant Tarts and Tartlets | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90EZ | FDNT M90EZ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition for Esports | needs_yes | - | sky 2, gen 5, hist 4, id 1, o 1, st 1 |
-| NUTR M90FA | FDNT M90FA | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Exotic Salads | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90FB | FDNT M90FB | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Wahoo's Famous Fish Tacos | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90FC | FDNT M90FC | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | A Taste of Sante Fe | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90FD | FDNT M90FD | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Italian Harvest Festival | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90FE | FDNT M90FE | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nuevo Latino Fiesta | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90FF | FDNT M90FF | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Flavors of Mexico | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90FG | FDNT M90FG | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Rolled Fondant | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90FH | FDNT M90FH | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Mexican Food - from My Kitchen | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90FI | FDNT M90FI | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Sizzling Fresh Salsas | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90FJ | FDNT M90FJ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Game Time | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90FK | FDNT M90FK | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Sunshine Garden Tea | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90FL | FDNT M90FL | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Roasted Garlic/Pasta Sauce | needs_yes | - | sky 2, gen 4, hist 5, id 1, o 1, st 1 |
-| NUTR M90FM | FDNT M90FM | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Roasted Garlic & Summer Pizzas | needs_yes | - | sky 2, gen 4, hist 5, id 1, o 1, st 1 |
-| NUTR M90FN | FDNT M90FN | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Simply Gourmet 2 | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90FO | FDNT M90FO | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Great Soup | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90FP | FDNT M90FP | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Grills That Sizzle | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90FQ | FDNT M90FQ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Now That's Italian! Guest | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90FR | FDNT M90FR | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Paella, Paella (Guest Series) | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90FS | FDNT M90FS | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Pasta Pronto for Health of IT! | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90FT | FDNT M90FT | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | More Holiday Tamales | needs_yes | merge_into | gen 1, hist 7, id 3, o 1 |
-| NUTR M90FU | FDNT M90FU | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Holiday Specialties | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90FV | FDNT M90FV | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Holiday Tamales | needs_yes | merge_into | gen 1, hist 7, id 3, o 1 |
-| NUTR M90FW | FDNT M90FW | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | How to Master Stocks & Sauces | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90FX | FDNT M90FX | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Tamales 2 | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90FY | FDNT M90FY | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | A Taste of India | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90FZ | FDNT M90FZ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | International Soups | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90GA | FDNT M90GA | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | It's Time for Some Thai | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90GB | FDNT M90GB | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | It's Teatime | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90GC | FDNT M90GC | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | A Kiss of Quiche | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90GD | FDNT M90GD | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Sharpen Your Knife Skills | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90GE | FDNT M90GE | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Light 'N Lively Suppers | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90GF | FDNT M90GF | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | A "Wok" on the Lighter Side | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90GG | FDNT M90GG | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | From the Shores of Mexico | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90GH | FDNT M90GH | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Pack Your Picnic with Style | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90GI | FDNT M90GI | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Sushi Party | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90GJ | FDNT M90GJ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Tapas Party | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90GK | FDNT M90GK | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Pleasing Pastries | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90GL | FDNT M90GL | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Petits for the Season | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90GM | FDNT M90GM | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Picnic Under the Stars | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90GN | FDNT M90GN | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Springtime Soups and Salads | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90GO | FDNT M90GO | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | A Special Tea | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90GP | FDNT M90GP | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Summertime Tamales | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
-| NUTR M90GQ | FDNT M90GQ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Taste of Thailand | needs_yes | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| AERO M1001 | MILS M1001 | kept number | AERO -> MILS | none -> Military Studies | AS200 Leadership Laboratory C | planned | unified_title | sky 2, cer 1, gen 5, hist 10, id 2, o 1, st 2, t 2 |
+| AERO M10AW | MILS M10AW | kept number | AERO -> MILS | none -> Military Studies | As100 Heritage and Values | planned | - | sky 2, gen 6, hist 3, id 1, o 2, st 1 |
+| AERO M10AX | MILS M10AX | kept number | AERO -> MILS | none -> Military Studies | AS100 Heritage and Values A | planned | - | sky 2, gen 6, hist 3, id 1, o 2, st 1 |
+| AERO M10AY | MILS M10AY | kept number | AERO -> MILS | none -> Military Studies | AS100 Leadership Laboratory A | planned | - | sky 2, gen 6, hist 3, id 1, o 1, st 2 |
+| AERO M10AZ | MILS M10AZ | kept number | AERO -> MILS | none -> Military Studies | AS100 Leadership Laboratory B | planned | - | sky 2, gen 6, hist 3, id 1, o 1, st 2 |
+| AERO M10BA | MILS M10BA | kept number | AERO -> MILS | none -> Military Studies | AS200 Leadership Laboratory C | planned | merge_into | gen 1, hist 6, id 3, o 1, t 1 |
+| AERO M10BB | MILS M10BB | kept number | AERO -> MILS | none -> Military Studies | AS200 Leadership Laboratory D | planned | merge_into | gen 1, hist 6, id 3, o 1 |
+| AERO M10BC | MILS M10BC | kept number | AERO -> MILS | none -> Military Studies | As200 Team and Leadership Fundamentals | planned | - | sky 2, gen 6, hist 3, id 1, o 2, st 2 |
+| AERO M10BD | MILS M10BD | kept number | AERO -> MILS | none -> Military Studies | AS200 Team and Leadership Fundamentals A | planned | - | sky 2, gen 6, hist 3, id 1, o 2, st 2 |
+| NUTR M1001 | FDNT M1042 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Advanced Nutrition | approved | - | ccr 1, sky 2, cer 2, gen 6, hist 7, id 2, o 1, st 2 |
+| NUTR M1002 | FDNT M1047 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Applications of Health and Wellness Coaching | approved | - | sky 2, cer 2, gen 5, hist 7, id 3, o 1, st 4 |
+| NUTR M1003 | FDNT M1049 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Applied Nutrition | approved | - | sky 2, cer 2, gen 5, hist 7, id 2, o 1, st 3 |
+| NUTR M1004 | FDNT M1050 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Plant-Based Nutrition | approved | - | sky 2, cer 2, gen 5, hist 10, id 2, o 1, st 2 |
+| NUTR M1005 | FDNT M1051 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Basic Cooking Techniques | approved | - | sky 2, cer 2, gen 5, hist 9, id 3, o 1, st 3 |
+| NUTR M1006 | FDNT M1052 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Careers in Dietetics and Food Science | approved | merge_into | gen 2, hist 9, id 3, o 1 |
+| NUTR M1007 | FDNT M1053 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Careers in Nutrition and Dietetics | approved | unified_title | sky 2, cer 2, gen 6, hist 12, id 3, o 1, st 5 |
+| NUTR M1008 | FDNT M1054 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Careers in Nutrition and Foods | approved | unified_title | sky 2, cer 2, gen 6, hist 10, id 3, o 1, st 3 |
+| NUTR M1009 | FDNT M1055 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | ServSafe Certification Exam Prep | approved | - | sky 2, cer 2, gen 5, hist 7, id 3, o 1, st 2 |
+| NUTR M1011 | FDNT M1056 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Maternal and Child Nutrition | approved | - | sky 2, cer 2, gen 5, hist 17, id 2, o 1, st 2 |
+| NUTR M1012 | FDNT M1057 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Health and Wellness Coaching | approved | - | sky 2, cer 2, gen 6, hist 10, id 3, o 1, st 4 |
+| NUTR M1013 | FDNT M1058 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Vegetarian Cuisine | approved | unified_title | sky 2, cer 2, gen 6, hist 12, id 4, o 1, st 6 |
+| NUTR M1014 | FDNT M1059 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Cultural Foods | approved | unified_title | sky 2, cer 2, gen 6, hist 16, id 3, o 1, st 4 |
+| NUTR M1015 | FDNT M1060 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Cultural Foods of the World | approved | merge_into | gen 2, hist 11, id 3, o 1 |
+| NUTR M1016 | FDNT M1061 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Food and Culture | approved | unified_title | ccr 1, sky 2, cer 2, gen 7, hist 13, id 4, o 1, st 10 |
+| NUTR M1017 | FDNT M1062 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Therapeutic Diets | approved | unified_title | sky 2, cer 2, gen 6, hist 10, id 3, o 1, st 3 |
+| NUTR M1018 | FDNT M1063 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition and Disease | approved | - | sky 2, cer 2, gen 5, hist 18, id 3, o 1, st 3 |
+| NUTR M1019 | FDNT M1064 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Experimental Offering in Nutrition and Foods | approved | merge_into | gen 2, hist 8, id 3, o 1 |
+| NUTR M1021 | FDNT M1065 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition for Fitness and Sport | approved | unified_title | sky 2, cer 2, gen 7, hist 11, id 3, o 1, st 4 |
+| NUTR M1022 | FDNT M1066 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition for Fitness and Sports | approved | merge_into | gen 2, hist 9, id 3, o 1 |
+| NUTR M1023 | FDNT M1023 | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutritn/Fitness/Perform | approved | - | sky 2, cer 2, gen 5, hist 7, id 2, o 1, st 3 |
+| NUTR M1024 | FDNT M1024 | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Intro Insti Food Ser | approved | - | ccr 1, sky 2, cer 2, gen 3, hist 7, id 2, o 1, st 1 |
+| NUTR M1025 | FDNT M1025 | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Principles of Food with Lab | approved | - | ccr 1, cer 1, gen 2, hist 8, id 3, o 1 |
+| NUTR M1026 | FDNT M1026 | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Food Theory and Preparation | approved | - | sky 2, cer 3, gen 5, hist 7, id 2, o 1, st 2 |
+| NUTR M1027 | FDNT M1027 | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Food Science | approved | - | ccr 1, gen 2, hist 8, id 3, o 1 |
+| NUTR M1028 | FDNT M1028 | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | International Foods | approved | - | ccr 1, sky 2, cer 2, gen 3, hist 8, id 3, o 1, st 2 |
+| NUTR M1029 | FDNT M1029 | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition and Health | approved | - | sky 2, cer 3, gen 6, hist 9, id 2, o 1, st 2 |
+| NUTR M1030 | FDNT M1030 | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Human Nutrition | approved | - | ccr 1, cer 1, gen 2, hist 10, id 3, o 1 |
+| NUTR M1031 | FDNT M1031 | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Introduction to Medical Nutrition Therapy | approved | - | sky 2, cer 2, gen 6, hist 8, id 2, o 1, st 2 |
+| NUTR M1032 | FDNT M1032 | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Introduction to Nutrition Science | approved | - | ccr 1, cer 1, gen 2, hist 8, id 4, o 1, st 2 |
+| NUTR M1033 | FDNT M1033 | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition Issues Throughout Life | approved | unified_title | sky 2, cer 2, gen 6, hist 11, id 3, o 1, st 4 |
+| NUTR M1034 | FDNT M1034 | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition | approved | - | ccr 1, cer 1, gen 2, hist 8, id 3, o 1, st 2 |
+| NUTR M1035 | FDNT M1035 | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition for Physical Performance | approved | - | sky 2, cer 2, gen 5, hist 7, id 2, o 1, st 2 |
+| NUTR M1036 | FDNT M1036 | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Practical Nutrition | approved | - | ccr 1, sky 2, cer 2, gen 3, hist 6, id 2, o 1, st 1 |
+| NUTR M1037 | FDNT M1037 | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Women's Nutrition | approved | - | sky 2, cer 2, gen 5, hist 5, id 2, o 1, st 2 |
+| NUTR M1038 | FDNT M1038 | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Sports Nutrition | approved | - | sky 2, cer 2, gen 6, hist 8, id 2, o 1, st 12 |
+| NUTR M1039 | FDNT M1039 | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Topics in Nutrition | approved | - | sky 2, cer 2, gen 5, hist 7, id 2, o 1, st 1 |
+| NUTR M1040 | FDNT M1040 | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Rotations in Supervised Practice, Level C | approved | unified_title | ccr 1, sky 2, cer 2, gen 6, hist 11, id 2, st 2 |
+| NUTR M1041 | FDNT M1041 | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Clinical Experience in Nutritional Care Management | approved | unified_title | sky 2, cer 2, gen 5, hist 10, id 2, st 2 |
+| NUTR M10AA | FDNT M10DP | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | NUTR 7 - Food and Culture | approved | - | sky 2, gen 5, hist 6, id 1, o 1, st 1 |
+| NUTR M10AB | FDNT M10DQ | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition: Across the Life Span | approved | - | sky 2, gen 5, hist 6, id 1, o 1, st 1 |
+| NUTR M10AC | FDNT M10DR | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition for Adults and Aging | approved | - | sky 2, gen 6, hist 7, id 1, o 1, st 2 |
+| NUTR M10AD | FDNT M10DS | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Advanced Food Preparation | approved | - | ccr 1, sky 2, gen 6, hist 6, id 1, o 1, st 1 |
+| NUTR M10AE | FDNT M10DT | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Advanced Medical Nutrition Therapy | approved | - | sky 2, gen 6, hist 6, id 1, o 1, st 2 |
+| NUTR M10AF | FDNT M10DU | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition for Healthy Aging and Longevity | approved | - | sky 2, gen 6, hist 7, id 1, o 1, st 2 |
+| NUTR M10AG | FDNT M10DV | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Weight Management for Healthy Aging | approved | - | sky 2, gen 6, hist 7, id 1, o 1, st 1 |
+| NUTR M10AH | FDNT M10DW | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition for Nursing and Allied Health Professionals | approved | - | sky 2, gen 5, hist 6, id 1, o 1, st 2 |
+| NUTR M10AI | FDNT M10DX | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition and Health: Personal Applications | approved | - | sky 2, gen 5, hist 6, id 1, o 1, st 1 |
+| NUTR M10AJ | FDNT M10DY | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Sports Nutrition: Fueling the Athlete | approved | - | sky 2, gen 5, hist 6, id 1, o 1, st 1 |
+| NUTR M10AK | FDNT M10DZ | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition and Athletic Performance | approved | - | sky 2, gen 5, hist 6, id 1, o 1, st 1 |
+| NUTR M10AL | FDNT M10EA | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Rotations in Supervised Practice, Level B | approved | - | ccr 1, sky 2, gen 6, hist 6, id 1, o 1, st 2 |
+| NUTR M10AM | FDNT M10EB | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Baking Basics and Business | approved | - | sky 2, gen 6, hist 7, id 1, o 1, st 1 |
+| NUTR M10AN | FDNT M10EC | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Plant-Based Food Principles and Preparation | approved | - | sky 2, gen 5, hist 6, id 1, o 1, st 1 |
+| NUTR M10AO | FDNT M10ED | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Introduction to Beer and Brewing | approved | merge_into | gen 1, hist 9, id 3, o 1 |
+| NUTR M10AP | FDNT M10EE | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Certified Dietary Manager (CDM) Board Exam Review | approved | - | sky 2, gen 6, hist 7, id 1, o 1, st 1 |
+| NUTR M10AQ | FDNT M10EF | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Rotations in Supervised Practice, Level C | approved | merge_into | gen 1, hist 9, id 3, o 1 |
+| NUTR M10AR | FDNT M10EG | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Clinical Experience in Health Care Facilities | approved | - | ccr 1, sky 2, gen 5, hist 6, id 1, o 1, st 1 |
+| NUTR M10AS | FDNT M10EH | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Clinical Experience in Nutritional Care Management | approved | merge_into | gen 1, hist 9, id 3, o 1 |
+| NUTR M10AT | FDNT M10EI | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Management of the Dietary Department in Health Care Facilities | approved | merge_into | gen 1, hist 9, id 2, o 1 |
+| NUTR M10AU | FDNT M10EJ | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutritional Care Management | approved | merge_into | gen 1, hist 17, id 3, o 1 |
+| NUTR M10AV | FDNT M10EK | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutritional Care | approved | merge_into | gen 1, hist 11, id 3, o 1 |
+| NUTR M10AW | FDNT M10EL | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | The Food System and Career Opportunities | approved | merge_into | gen 1, hist 9, id 3, o 1, st 1 |
+| NUTR M10AX | FDNT M10EM | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Introduction to Nutrition and Hospitality Careers | approved | - | ccr 1, sky 2, gen 5, hist 6, id 1, o 1, st 1 |
+| NUTR M10AY | FDNT M10EN | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Children and Weight Concerns | approved | - | ccr 1, sky 2, gen 5, hist 6, id 1, o 1, st 1 |
+| NUTR M10AZ | FDNT M10EO | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Life Cycle Nutrition: Children | approved | merge_into | gen 1, hist 9, id 2, o 1 |
+| NUTR M10BA | FDNT M10EP | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Clinical Nutrition | approved | - | sky 2, gen 6, hist 6, id 1, o 1, st 1 |
+| NUTR M10BB | FDNT M10EQ | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Introduction to Nutrition Concepts | approved | - | sky 2, gen 5, hist 6, id 1, o 1, st 2 |
+| NUTR M10BC | FDNT M10ER | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Weight Control | approved | - | sky 2, gen 5, hist 6, id 1, o 1, st 1 |
+| NUTR M10BD | FDNT M10ES | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Cooking Cultural Foods | approved | merge_into | gen 1, hist 9, id 2, o 1, st 1 |
+| NUTR M10BE | FDNT M10ET | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition in Healthy Cooking | approved | - | sky 2, gen 6, hist 7, id 1, o 1, st 2 |
+| NUTR M10BF | FDNT M10EU | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutritional Cooking | approved | - | sky 2, gen 5, hist 6, id 1, o 1, st 2 |
+| NUTR M10BG | FDNT M10EV | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Cooking for Singles | approved | - | sky 2, gen 5, hist 6, id 1, o 1, st 2 |
+| NUTR M10BH | FDNT M10EW | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Cooking for Wellness | approved | - | sky 2, gen 5, hist 6, id 1, o 1, st 2 |
+| NUTR M10BI | FDNT M10EX | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Food and Nutrition: Cross Cultural Perspectives | approved | merge_into | gen 1, hist 9, id 3, o 1 |
+| NUTR M10BJ | FDNT M10EY | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Culture and Cuisine of the World | approved | - | sky 2, gen 6, hist 7, id 1, o 1, st 1 |
+| NUTR M10BK | FDNT M10EZ | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition for Culinary Professionals | approved | - | sky 2, cer 2, gen 9, hist 14, id 2, o 1, kb 1, st 1 |
+| NUTR M10BL | FDNT M10FA | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Honors - Cultural Foods of the World | approved | - | sky 2, gen 5, hist 10, id 1, o 1, st 1 |
+| NUTR M10BM | FDNT M10FB | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Food and Culture in the United States | approved | - | sky 2, gen 5, hist 6, id 1, o 1, st 2 |
+| NUTR M10BN | FDNT M10FC | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Current Topics in Nutrition | approved | - | sky 2, gen 5, hist 6, id 1, o 1, st 1 |
+| NUTR M10BO | FDNT M10FD | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | World Food Customs and Nutrition | approved | merge_into | gen 1, hist 9, id 3, o 1 |
+| NUTR M10BP | FDNT M10FE | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Life Cycle Nutrition | approved | merge_into | gen 1, hist 9, id 2, o 1 |
+| NUTR M10BQ | FDNT M10FF | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Introduction to Dietary Management | approved | - | ccr 1, sky 2, gen 5, hist 6, id 1, o 1, st 1 |
+| NUTR M10BR | FDNT M10FG | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Introduction to Nutrition, Dietetics and Food Science | approved | merge_into | gen 1, hist 9, id 2, o 1 |
+| NUTR M10BS | FDNT M10FH | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Introduction to the Dietetics Profession | approved | - | sky 2, gen 5, hist 6, id 1, o 1, st 1 |
+| NUTR M10BT | FDNT M10FI | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Survey of Nutrition and Dietetics | approved | merge_into | gen 1, hist 9, id 2, o 1 |
+| NUTR M10BU | FDNT M10FJ | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Dieting (Sifting Fact from Fiction) | approved | - | sky 2, gen 5, hist 6, id 1, o 1, st 1 |
+| NUTR M10BV | FDNT M10FK | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition, Weight Management, and Eating Disorders | approved | merge_into | gen 1, hist 9, id 3, o 1 |
+| NUTR M10BW | FDNT M10FL | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | The Science of Weight Management and Eating Disorders | approved | - | sky 2, gen 5, hist 6, id 1, o 1 |
+| NUTR M10BX | FDNT M10FM | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Elements of Nutrition | approved | - | ccr 1, cer 1, hist 6, id 1, o 1 |
+| NUTR M10BY | FDNT M10FN | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Essentials of Nutrition | approved | - | sky 2, gen 6, hist 6, id 1, o 1, st 1 |
+| NUTR M10BZ | FDNT M10FO | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition for Sport, Exercise, and Health | approved | - | sky 2, gen 5, hist 6, id 1, o 1, st 1 |
+| NUTR M10CA | FDNT M10FP | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Sports and Exercise Nutrition | approved | - | sky 2, gen 6, hist 7, id 1, o 1, st 1 |
+| NUTR M10CB | FDNT M10FQ | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Honors Family Nutrition | approved | honors_of | sky 2, gen 5, hist 13, id 2, o 1, st 1 |
+| NUTR M10CC | FDNT M10FR | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Family Nutrition | approved | - | sky 2, gen 5, hist 12, id 2, o 1, st 1 |
+| NUTR M10CD | FDNT M10FS | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Healthy Lifestyle: Food and Fitness | approved | - | sky 2, gen 5, hist 6, id 1, o 1, st 1 |
+| NUTR M10CE | FDNT M10FT | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Issue Food/Nutr/FoodSCI | approved | - | sky 2, gen 3, hist 6, id 1, o 1, st 1 |
+| NUTR M10CF | FDNT M10FU | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Intro to Food Service/ Work Organizations | approved | - | sky 2, gen 5, hist 6, id 1, o 1, st 2 |
+| NUTR M10CG | FDNT M10FV | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Introduction to Food and Nutrition | approved | - | ccr 1, cer 1, hist 6, id 1, o 1 |
+| NUTR M10CH | FDNT M10FW | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Introduction to Nutrition and Food Professions | approved | - | sky 2, gen 5, hist 6, id 1, o 1, st 1 |
+| NUTR M10CI | FDNT M10FX | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Food Selection and Meal Preparation | approved | - | ccr 1, cer 1, hist 6, id 1, o 1, st 1 |
+| NUTR M10CJ | FDNT M10FY | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Menu Planning and Food Purchasing | approved | merge_into | gen 1, hist 9, id 2, o 1, st 1 |
+| NUTR M10CK | FDNT M10FZ | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Sustainable Nutrition and Food Systems | approved | - | sky 2, gen 5, hist 14, id 1, o 1, st 1 |
+| NUTR M10CL | FDNT M10GA | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | The Scientific Principles of Food Preparation | approved | - | ccr 1, cer 1, hist 6, id 1, o 1 |
+| NUTR M10CM | FDNT M10GB | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Servsafe in Food Production | approved | merge_into | gen 1, hist 9, id 3, o 1 |
+| NUTR M10CN | FDNT M10GC | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Food-Production Systems | approved | - | sky 2, gen 5, hist 6, id 1, o 1, st 1 |
+| NUTR M10CO | FDNT M10GD | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Foods for Healthy Lifestyles | approved | - | sky 2, cer 2, gen 9, hist 12, id 2, o 1, kb 1, st 2 |
+| NUTR M10CP | FDNT M10GE | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Topics in Nutrition and Foods | approved | merge_into | gen 1, hist 11, id 2, o 1 |
+| NUTR M10CQ | FDNT M10GF | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Fundamentals of Nutrition | approved | - | ccr 1, cer 1, hist 7, id 2, o 1 |
+| NUTR M10CR | FDNT M10GG | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition, Health, and Wellness | approved | merge_into | gen 1, hist 9, id 3, o 1 |
+| NUTR M10CS | FDNT M10CS | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition and Healthy Weight | approved | - | sky 2, gen 6, hist 7, id 1, o 1, st 2 |
+| NUTR M10CT | FDNT M10CT | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Honors Human Nutrition | approved | - | ccr 1, cer 1, hist 6, id 1, o 1 |
+| NUTR M10CU | FDNT M10CU | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition Honors | approved | - | ccr 1, cer 1, hist 6, id 1, o 1 |
+| NUTR M10CV | FDNT M10CV | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Human Performance and Sports Nutrition | approved | merge_into | gen 1, hist 9, id 2, o 1 |
+| NUTR M10CW | FDNT M10CW | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Science of Human Nutrition | approved | - | ccr 1, cer 1, hist 6, id 1, o 1 |
+| NUTR M10CX | FDNT M10CX | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Independ Study | approved | - | sky 2, gen 3, hist 6, id 1, o 1, st 1 |
+| NUTR M10CY | FDNT M10CY | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Introduction to the Nutrition Professions | approved | merge_into | gen 1, hist 9, id 3, o 1 |
+| NUTR M10CZ | FDNT M10CZ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Introduction to Nutrition and Trauma | approved | - | sky 2, gen 6, hist 7, id 1, o 1, st 2 |
+| NUTR M10DA | FDNT M10DA | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Rotations in Supervised Practice, Level A | approved | merge_into | cer 2, gen 4, hist 15, id 4, o 1, kb 1, st 1 |
+| NUTR M10DB | FDNT M10DB | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition and Life | approved | - | ccr 1, cer 1, hist 6, id 1, o 1, st 1 |
+| NUTR M10DC | FDNT M10DC | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Lifecycle Nutrition | approved | merge_into | gen 1, hist 9, id 2, o 1 |
+| NUTR M10DD | FDNT M10DD | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Vegetarian Lifestyle | approved | - | sky 2, gen 5, hist 4, id 1, o 1, st 2 |
+| NUTR M10DE | FDNT M10DE | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Personalized Nutrition Planning for Lifetime Wellness | approved | - | sky 2, gen 5, hist 4, id 1, o 1, st 2 |
+| NUTR M10DF | FDNT M10DF | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition Management | approved | - | sky 2, gen 5, hist 4, id 1, o 1, st 1 |
+| NUTR M10DG | FDNT M10DG | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Sustainable Meals | approved | - | sky 2, cer 2, gen 9, hist 12, id 2, o 1, kb 1, st 1 |
+| NUTR M10DH | FDNT M10DH | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition and Menu Planning | approved | merge_into | gen 1, hist 7, id 3, o 1 |
+| NUTR M10DI | FDNT M10DI | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutri & Metabolism | approved | - | sky 2, gen 5, hist 4, id 1, o 1, st 1 |
+| NUTR M10DJ | FDNT M10DJ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition and Metabolism | approved | - | sky 2, gen 5, hist 4, id 1, o 1, st 1 |
+| NUTR M10DK | FDNT M10DK | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | IS: Nutrition | approved | - | sky 2, gen 5, hist 4, id 1, o 1, st 1 |
+| NUTR M10DL | FDNT M10DL | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Science of Nutrition | approved | - | ccr 1, hist 5, id 2, o 1 |
+| NUTR M10DM | FDNT M10DM | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Sanitation/Safety | approved | merge_into | gen 1, hist 7, id 2, o 1 |
+| NUTR M10DN | FDNT M10DN | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Supervision/Training | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 2 |
+| NUTR M10DO | FDNT M10DO | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Supervison and Training Techniques | approved | - | sky 2, gen 5, hist 4, id 1, o 1, st 3 |
+| NUTR M9001 | FDNT M9027 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Weight Regulation: Biology and Behavior | approved | - | ccr 1, sky 2, cer 2, gen 5, hist 7, id 3, o 1, st 2 |
+| NUTR M9002 | FDNT M9028 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Mother and Childhood Nutrition | approved | - | ccr 1, sky 2, cer 2, gen 5, hist 7, id 3, o 1, st 1 |
+| NUTR M9003 | FDNT M9029 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Chinese Cooking | approved | - | ccr 1, sky 2, cer 2, gen 3, hist 7, id 2, o 1, st 1 |
+| NUTR M9004 | FDNT M9030 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Intro to Japanese Cooking | approved | - | ccr 1, sky 2, cer 2, gen 3, hist 5, id 2, o 1, st 1 |
+| NUTR M9005 | FDNT M9031 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Quick and Easy Salad Meals | approved | - | ccr 1, sky 2, cer 2, gen 4, hist 6, id 2, o 1, st 1 |
+| NUTR M9006 | FDNT M9032 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Holiday Gifts from the Kitchen | approved | - | ccr 1, sky 2, cer 2, gen 3, hist 5, id 2, o 1, st 1 |
+| NUTR M9007 | FDNT M9033 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Integrative Nutrition and Wellness | approved | - | ccr 1, sky 2, cer 2, gen 5, hist 5, id 3, o 1, st 2 |
+| NUTR M9008 | FDNT M9034 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Dim Sum 1 | approved | unified_title | sky 2, cer 2, gen 3, hist 9, id 2, st 1 |
+| NUTR M9009 | FDNT M9035 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Brazilian Cuisine Part 2 | approved | unified_title | sky 2, cer 2, gen 3, hist 9, id 2, st 1 |
+| NUTR M9010 | FDNT M9036 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | California Grilling 2 | approved | unified_title | sky 2, cer 2, gen 3, hist 9, id 2, st 1 |
+| NUTR M9011 | FDNT M9037 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Easy but Elegant Cooking | approved | unified_title | sky 2, cer 2, gen 3, hist 9, id 2, st 1 |
+| NUTR M9012 | FDNT M9038 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Garnishing and Fruit Carving | approved | unified_title | sky 2, cer 2, gen 3, hist 5, id 2, st 1 |
+| NUTR M9013 | FDNT M9039 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Chef Skills: Tamales and More | approved | unified_title | sky 2, cer 2, gen 3, hist 5, id 2, st 1 |
+| NUTR M9014 | FDNT M9040 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Intro to Vietnamese Cooking | approved | unified_title | sky 2, cer 2, gen 3, hist 5, id 2, st 1 |
+| NUTR M9015 | FDNT M9041 | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Fresh Salads and Dressings | approved | unified_title | sky 2, cer 2, gen 3, hist 5, id 2, st 1 |
+| NUTR M90AA | FDNT M90GR | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | CDM Board Exam Preparation 1 | approved | - | sky 2, gen 6, hist 6, id 1, o 1, st 2 |
+| NUTR M90AB | FDNT M90GS | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Valentine Treats (Ages 6-10) | approved | - | sky 2, gen 4, hist 6, id 1, o 1, st 1 |
+| NUTR M90AC | FDNT M90GT | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Who's Setting the Table? (6-10 | approved | - | sky 2, gen 3, hist 6, id 1, o 1, st 1 |
+| NUTR M90AD | FDNT M90GU | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Espresso 101 | approved | - | sky 2, gen 3, hist 6, id 1, o 1, st 1 |
+| NUTR M90AE | FDNT M90GV | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | CDM Board Exam Preparation 2 | approved | - | sky 2, gen 6, hist 6, id 1, o 1, st 2 |
+| NUTR M90AF | FDNT M90GW | gap-filled | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | How 2 Make Fab Cheesecakes! | approved | - | sky 2, gen 3, hist 6, id 1, o 1, st 1 |
+| NUTR M90AG | FDNT M90AG | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Valentine Treats (Ages 3-5) | approved | - | sky 2, gen 4, hist 4, id 1, o 1, st 1 |
+| NUTR M90AH | FDNT M90AH | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Can I Help with Dinner? (3-5) | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90AI | FDNT M90AI | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Spring Is Made 4 T, 4U & Frnds | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90AJ | FDNT M90AJ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | All About Tarts | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90AK | FDNT M90AK | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Fun Make-Ahead Light Dinners | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90AL | FDNT M90AL | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Italian Cuisine Al Forno | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90AM | FDNT M90AM | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | The Amazing Fish | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90AN | FDNT M90AN | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Party Starters - Amuse-Bouche | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90AO | FDNT M90AO | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Not Just Any Cookie! | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90AP | FDNT M90AP | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Salsa Anyone? | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90AQ | FDNT M90AQ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Appetizers from Around the Wor | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90AR | FDNT M90AR | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Holiday Appetizers | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90AS | FDNT M90AS | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | ICS: Party Hors D'oeuvres/Appt | approved | - | sky 2, gen 4, hist 5, id 1, o 1, st 1 |
+| NUTR M90AT | FDNT M90AT | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Artisan Breads Workshop | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90AU | FDNT M90AU | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Sugar Artistry | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90AV | FDNT M90AV | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Quick & Healthy Asian Cuisine | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90AW | FDNT M90AW | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Asian & Pacific Rim Cuisines | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90AX | FDNT M90AX | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Tea in Autumn | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90AY | FDNT M90AY | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Let's Bring Back Sunday Dinner | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90AZ | FDNT M90AZ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Tapas Bar | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90BA | FDNT M90BA | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Cake Decorating-Basic | approved | - | sky 2, gen 4, hist 5, id 1, o 1, st 1 |
+| NUTR M90BB | FDNT M90BB | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Basics: Sushi Made Easy | approved | merge_into | gen 1, hist 7, id 2, o 1 |
+| NUTR M90BC | FDNT M90BC | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition Basics: Menu Planning | approved | - | sky 2, gen 5, hist 4, id 1, o 1, st 1 |
+| NUTR M90BD | FDNT M90BD | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Bean Crocks & Cider Mugs | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90BE | FDNT M90BE | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Ice Carving (Beginning) | approved | - | sky 2, gen 4, hist 4, id 1, o 1, st 1 |
+| NUTR M90BF | FDNT M90BF | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Beginning Cooking | approved | - | sky 2, gen 4, hist 4, id 1, o 1, st 1 |
+| NUTR M90BG | FDNT M90BG | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Best Ever Holiday Meals | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90BH | FDNT M90BH | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Biscotti, Breads and More! | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90BI | FDNT M90BI | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Love at First Bite: Cheesecake | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90BJ | FDNT M90BJ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | How to Boil Water | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90BK | FDNT M90BK | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Festive Cookie/Candy Bonanza | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90BL | FDNT M90BL | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Brazilian Cuisine | approved | merge_into | gen 1, hist 7, id 3, o 1 |
+| NUTR M90BM | FDNT M90BM | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Brazilian Cuisine Part 2 | approved | merge_into | gen 1, hist 7, id 3, o 1 |
+| NUTR M90BN | FDNT M90BN | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Bread, Bread and More Bread! | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90BO | FDNT M90BO | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Creative Breadmaking | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90BP | FDNT M90BP | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Hearty Soups and Breads | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90BQ | FDNT M90BQ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | A Williamsburg Breakfast | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90BR | FDNT M90BR | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Breastfeeding and Nutrition Stage 1 | approved | - | sky 2, gen 6, hist 4, id 1, o 1, st 2 |
+| NUTR M90BS | FDNT M90BS | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Breastfeeding and Nutrition Stage 2 | approved | - | sky 2, gen 6, hist 4, id 1, o 1, st 2 |
+| NUTR M90BT | FDNT M90BT | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Creme Brulee Made Easy | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90BU | FDNT M90BU | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Mother's Day Brunch | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90BV | FDNT M90BV | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Busy People's Slow Simmer | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90BW | FDNT M90BW | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Easy but Elegant Cooking | approved | merge_into | gen 1, hist 7, id 3, o 1 |
+| NUTR M90BX | FDNT M90BX | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Simple but Elegant | approved | merge_into | gen 1, hist 7, id 3, o 1 |
+| NUTR M90BY | FDNT M90BY | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nothing Is Quite as Good as Ca | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90BZ | FDNT M90BZ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Cajun Cookin' | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90CA | FDNT M90CA | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | California Grilling | approved | merge_into | gen 1, hist 7, id 3, o 1 |
+| NUTR M90CB | FDNT M90CB | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | California Grilling 2 | approved | merge_into | gen 1, hist 7, id 3, o 1 |
+| NUTR M90CC | FDNT M90CC | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Can There Ever...chocolate | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90CD | FDNT M90CD | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | I Can Make That Special Dish | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90CE | FDNT M90CE | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Candlelight Dinner for Two | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90CF | FDNT M90CF | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Garnishing and Fruit Carving | approved | merge_into | gen 1, hist 7, id 3, o 1 |
+| NUTR M90CG | FDNT M90CG | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Fruit Carving 1 | approved | merge_into | gen 1, hist 7, id 3, o 1 |
+| NUTR M90CH | FDNT M90CH | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Fruit & Vegetable Carving | approved | merge_into | gen 1, hist 7, id 3, o 1 |
+| NUTR M90CI | FDNT M90CI | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Celebrate French Cuisine | approved | - | sky 2, gen 4, hist 5, id 1, o 1, st 1 |
+| NUTR M90CJ | FDNT M90CJ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | ICS: Celebrate Greece | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90CK | FDNT M90CK | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Celebrate Vegetables | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90CL | FDNT M90CL | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Cheesecakes Galore! | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90CM | FDNT M90CM | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Chef Skills: Classic Sauce 1 | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90CN | FDNT M90CN | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Chef Skills: Tamales and More | approved | merge_into | gen 1, hist 7, id 3, o 1 |
+| NUTR M90CO | FDNT M90CO | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Chef Skills: Soups On | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90CP | FDNT M90CP | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Chinese Cooking - Classic | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90CQ | FDNT M90CQ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Chinese Cooking/Quick | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90CR | FDNT M90CR | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Chinese Cooking-Vegetarian | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90CS | FDNT M90CS | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Regional Chinese Flavors | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90CT | FDNT M90CT | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Chinese Noodles | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90CU | FDNT M90CU | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Chocolate Desserts for the Sou | approved | merge_into | gen 1, hist 7, id 3, o 1 |
+| NUTR M90CV | FDNT M90CV | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Chocolate Lovers Wanted! | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90CW | FDNT M90CW | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Valentine Chocolate Truffles | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90CX | FDNT M90CX | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Chocolates & More Valentine | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90CY | FDNT M90CY | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Healthy Choices from the Garden | approved | merge_into | gen 1, hist 7, id 3, o 1 |
+| NUTR M90CZ | FDNT M90CZ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Christmas Goodies and Cookies | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90DA | FDNT M90DA | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Creole Christmas Dinner | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90DB | FDNT M90DB | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Christmas Gifts & Heirlooms | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90DC | FDNT M90DC | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | White Christmas Tea | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90DD | FDNT M90DD | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Simply Delicious Cinn Rolls | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90DE | FDNT M90DE | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Sinful Cinnamon Rolls | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90DF | FDNT M90DF | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Come to My Garden Party | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90DG | FDNT M90DG | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Cooking for Compliments | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90DH | FDNT M90DH | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | The Rib Connection | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90DI | FDNT M90DI | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | A Taste of French Country Cook | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90DJ | FDNT M90DJ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Holiday Cookie Exchange | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90DK | FDNT M90DK | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Country Inn Cooking | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90DL | FDNT M90DL | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Quilt Country Cooking | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90DM | FDNT M90DM | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Great Meals: Crockery Cooking | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90DN | FDNT M90DN | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Family Cooking - Desserts | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90DO | FDNT M90DO | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Cooking Made Easy | approved | merge_into | gen 1, hist 7, id 2, o 1 |
+| NUTR M90DP | FDNT M90DP | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Hot & Spicy Thai Cooking | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90DQ | FDNT M90DQ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Hungarian Cooking Treasures | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90DR | FDNT M90DR | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Southern Immigrant Cooking | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90DS | FDNT M90DS | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Intro to Vietnamese Cooking | approved | merge_into | gen 1, hist 7, id 3, o 1 |
+| NUTR M90DT | FDNT M90DT | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Italian Cooking from Tuscany | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90DU | FDNT M90DU | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition/Cooking for One or Two | approved | - | sky 2, gen 5, hist 4, id 1, o 1, st 1 |
+| NUTR M90DV | FDNT M90DV | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Cooking for You or Two | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90DW | FDNT M90DW | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Cooking/Vim, Vigor & Vitality | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90DX | FDNT M90DX | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Mardi Gras Crazy | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90DY | FDNT M90DY | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Creative Cuisine | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90DZ | FDNT M90DZ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Crepes | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90EA | FDNT M90EA | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Everyday French Cuisine | approved | - | sky 2, gen 4, hist 5, id 1, o 1, st 1 |
+| NUTR M90EB | FDNT M90EB | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Low Fat Mexican Cuisine | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90EC | FDNT M90EC | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | North Indian Cuisine | approved | - | sky 2, gen 4, hist 5, id 1, o 1, st 1 |
+| NUTR M90ED | FDNT M90ED | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | South Indian Cuisine | approved | - | sky 2, gen 4, hist 5, id 1, o 1, st 1 |
+| NUTR M90EE | FDNT M90EE | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Intro Vietnamese Cuisine | approved | merge_into | gen 1, hist 7, id 3, o 1 |
+| NUTR M90EF | FDNT M90EF | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | The Cuisine of Southern Italy | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90EG | FDNT M90EG | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Culinary Hearts Kitchen | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90EH | FDNT M90EH | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Scrumptious Hors D'oeuvres | approved | - | sky 2, gen 4, hist 5, id 1, o 1, st 1 |
+| NUTR M90EI | FDNT M90EI | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Shrimply Delicious Dining! | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90EJ | FDNT M90EJ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Delicious Hot Soups Plus! | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90EK | FDNT M90EK | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Delicious Pastas,pizzas,sauces | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90EL | FDNT M90EL | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Lover's Delight | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90EM | FDNT M90EM | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Sensational Summer Desserts | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90EN | FDNT M90EN | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Did Someone Say Tamales? | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90EO | FDNT M90EO | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Dim Sum 1 | approved | merge_into | gen 1, hist 7, id 3, o 1 |
+| NUTR M90EP | FDNT M90EP | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Dim Sum | approved | merge_into | gen 1, hist 7, id 3, o 1 |
+| NUTR M90EQ | FDNT M90EQ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Dinner with a "Lighter" Flair | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90ER | FDNT M90ER | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Wok's for Dinner?! | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90ES | FDNT M90ES | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Fresh Salads and Dressings | approved | merge_into | gen 1, hist 7, id 3, o 1 |
+| NUTR M90ET | FDNT M90ET | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Salads and Salad Dressings | approved | merge_into | gen 1, hist 7, id 3, o 1 |
+| NUTR M90EU | FDNT M90EU | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | It's Never Too Early for Xmas | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90EV | FDNT M90EV | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | French Pastry Made Easy | approved | merge_into | gen 1, hist 7, id 2, o 1 |
+| NUTR M90EW | FDNT M90EW | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | If I Knew IT Was This Easy... | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90EX | FDNT M90EX | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Eat Out in Your Own Kitchen | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90EY | FDNT M90EY | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Elegant Tarts and Tartlets | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90EZ | FDNT M90EZ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nutrition for Esports | approved | - | sky 2, gen 5, hist 4, id 1, o 1, st 1 |
+| NUTR M90FA | FDNT M90FA | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Exotic Salads | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90FB | FDNT M90FB | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Wahoo's Famous Fish Tacos | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90FC | FDNT M90FC | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | A Taste of Sante Fe | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90FD | FDNT M90FD | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Italian Harvest Festival | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90FE | FDNT M90FE | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Nuevo Latino Fiesta | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90FF | FDNT M90FF | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Flavors of Mexico | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90FG | FDNT M90FG | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Rolled Fondant | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90FH | FDNT M90FH | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Mexican Food - from My Kitchen | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90FI | FDNT M90FI | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Sizzling Fresh Salsas | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90FJ | FDNT M90FJ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Game Time | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90FK | FDNT M90FK | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Sunshine Garden Tea | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90FL | FDNT M90FL | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Roasted Garlic/Pasta Sauce | approved | - | sky 2, gen 4, hist 5, id 1, o 1, st 1 |
+| NUTR M90FM | FDNT M90FM | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Roasted Garlic & Summer Pizzas | approved | - | sky 2, gen 4, hist 5, id 1, o 1, st 1 |
+| NUTR M90FN | FDNT M90FN | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Simply Gourmet 2 | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90FO | FDNT M90FO | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Great Soup | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90FP | FDNT M90FP | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Grills That Sizzle | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90FQ | FDNT M90FQ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Now That's Italian! Guest | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90FR | FDNT M90FR | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Paella, Paella (Guest Series) | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90FS | FDNT M90FS | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Pasta Pronto for Health of IT! | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90FT | FDNT M90FT | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | More Holiday Tamales | approved | merge_into | gen 1, hist 7, id 3, o 1 |
+| NUTR M90FU | FDNT M90FU | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Holiday Specialties | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90FV | FDNT M90FV | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Holiday Tamales | approved | merge_into | gen 1, hist 7, id 3, o 1 |
+| NUTR M90FW | FDNT M90FW | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | How to Master Stocks & Sauces | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90FX | FDNT M90FX | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Tamales 2 | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90FY | FDNT M90FY | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | A Taste of India | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90FZ | FDNT M90FZ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | International Soups | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90GA | FDNT M90GA | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | It's Time for Some Thai | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90GB | FDNT M90GB | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | It's Teatime | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90GC | FDNT M90GC | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | A Kiss of Quiche | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90GD | FDNT M90GD | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Sharpen Your Knife Skills | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90GE | FDNT M90GE | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Light 'N Lively Suppers | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90GF | FDNT M90GF | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | A "Wok" on the Lighter Side | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90GG | FDNT M90GG | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | From the Shores of Mexico | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90GH | FDNT M90GH | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Pack Your Picnic with Style | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90GI | FDNT M90GI | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Sushi Party | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90GJ | FDNT M90GJ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Tapas Party | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90GK | FDNT M90GK | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Pleasing Pastries | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90GL | FDNT M90GL | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Petits for the Season | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90GM | FDNT M90GM | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Picnic Under the Stars | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90GN | FDNT M90GN | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Springtime Soups and Salads | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90GO | FDNT M90GO | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | A Special Tea | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90GP | FDNT M90GP | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Summertime Tamales | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
+| NUTR M90GQ | FDNT M90GQ | kept number | NUTR -> FDNT | Dietetics/Nutritional Science -> Nutritional Science/Dietetics | Taste of Thailand | approved | - | sky 2, gen 3, hist 4, id 1, o 1, st 1 |
 | PHTC M10AB | PHOT M10RO | gap-filled | PHTC -> PHOT | none -> Photography | Documentary and Photojournalism | planned | - | sky 2, gen 5, hist 3, id 1, o 1, st 1 |
 | PHTC M10AC | PHOT M10RP | gap-filled | PHTC -> PHOT | none -> Photography | Foundations of Cameras & Composition | planned | merge_into | gen 1, hist 6, id 2, o 1 |
 | PHTC M10AO | PHOT M10RQ | gap-filled | PHTC -> PHOT | none -> Photography | Studio Lighting 1 | planned | - | sky 2, gen 6, hist 3, id 1, o 1, st 1 |
 | PHTC M10AP | PHOT M10RR | gap-filled | PHTC -> PHOT | none -> Photography | Studio Lighting 2 | planned | - | sky 2, gen 6, hist 3, id 1, o 1, st 1 |
-| PUBR M1001 | PREL M1001 | kept number | PUBR -> PREL | none -> Public Relations | Principles of Public Relations | needs_yes | - | ccr 1, cer 1, gen 2, hist 5, id 3, o 1, st 4 |
+| PUBR M1001 | PREL M1001 | kept number | PUBR -> PREL | none -> Public Relations | Principles of Public Relations | approved | - | ccr 1, cer 1, gen 2, hist 5, id 3, o 1, st 4 |
 | TOUR M1001 | TRVL M1001 | kept number | TOUR -> TRVL | none -> Travel Services | Advanced Airline Computer Training | planned | unified_title | sky 2, gen 5, hist 8, id 2, kb 1, st 1, t 1 |
-| TOUR M1002 | TRVL M1002 | kept number | TOUR -> TRVL | none -> Travel Services | Travel Destinations: Europe, Africa, and the Middle East | needs_yes | unified_title | sky 2, gen 5, hist 10, id 2, kb 1, st 1 |
-| TOUR M1003 | TRVL M1003 | kept number | TOUR -> TRVL | none -> Travel Services | Destinations- Americas and Europe | needs_yes | unified_title | sky 2, gen 5, hist 10, id 2, kb 1, st 1 |
+| TOUR M1002 | TRVL M1002 | kept number | TOUR -> TRVL | none -> Travel Services | Travel Destinations: Europe, Africa, and the Middle East | approved | unified_title | sky 2, gen 5, hist 10, id 2, kb 1, st 1 |
+| TOUR M1003 | TRVL M1003 | kept number | TOUR -> TRVL | none -> Travel Services | Destinations- Americas and Europe | approved | unified_title | sky 2, gen 5, hist 10, id 2, kb 1, st 1 |
 | TOUR M1004 | TRVL M1004 | kept number | TOUR -> TRVL | none -> Travel Services | World Destinations and Resorts--Western Hemisphere | planned | unified_title | sky 2, gen 5, hist 8, id 2, kb 1, st 1 |
 | TOUR M10AA | TRVL M10AA | kept number | TOUR -> TRVL | none -> Travel Services | Advanced Airline Computer Training | planned | merge_into | gen 1, hist 6, id 3, o 1 |
 | TOUR M10AB | TRVL M10AB | kept number | TOUR -> TRVL | none -> Travel Services | Airline Computer Training | planned | merge_into | cer 2, gen 4, hist 12, id 4, o 1, kb 1, st 1 |

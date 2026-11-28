@@ -28,7 +28,8 @@ every code change with its before-value, and each M-ID's code is compared with i
 
 PERSON-SETTLED ROWS ARE FROZEN. An M-ID with a person's kb_curation row (or a person's pointer at it) is HELD, never
 moved, and listed. A code a person curated that a Nov 28 ruling changes goes on the yes/no list and its rows are
-`needs_yes`: the apply refuses them until the yes is recorded. A person's filing of a local subject under a discipline
+`needs_yes`: the apply refuses them until the yes is recorded in APPROVED (Sam answered all of them on 2026-11-28,
+r-remint-dryrun-defaults-sam-2026-11-28, so they read `approved`; V8 fails on any left waiting). A person's filing of a local subject under a discipline
 (kb/status/subject_decisions.json `statewide`) decides where a discipline-less M-ID on that local code goes.
 
 Run (from the repo root):
@@ -79,10 +80,12 @@ SCOPES = {
         "discipline_moves": True,
     },
     "aero": {
-        "from": "AERO", "to": "AERN", "join": "Aeronautics", "leaves": None,
-        "reason": "Aeronautics AERO -> AERN (Sam, 2026-11-28, COBIx's minted list #3951; AERO stays a local variant of "
-                  "Aviation)",
-        "seed": "Aeronautics canonical_subj4 AERO -> AERN (held by kb/_apply_minted_codes_s749.py for this pass)",
+        "from": "AERO", "to": "MILS", "join": "Military Studies", "leaves": None,
+        "reason": "Aeronautics leaves AERO for AERN (Sam, 2026-11-28, COBIx's minted list #3951); the nine AERO ids are "
+                  "Fresno's Air Force ROTC and go to Military Studies (Sam, r-remint-dryrun-defaults-sam-2026-11-28)",
+        "seed": "Aeronautics canonical_subj4 AERO -> AERN, minted at the apply (held by kb/_apply_minted_codes_s749.py "
+                "for this pass); AERN starts with Space Technology alone (Allan Hancock SPACE) and no M-ID; AERO stays "
+                "a local variant of Aviation",
         "discipline_moves": False,
     },
     "phtc": {
@@ -124,6 +127,15 @@ SETTLED_CODES = {
     "Disabled Student Programs and Services: Noncredit": "DSPN",
 }
 MINTED = os.path.join(HERE, "subject_title_hunt", "minted_codes.csv")
+# Sam's answers to the yes/no list ("fine on defaults", 2026-11-28; COBIx agrees): the scopes whose person-settled
+# conflicts he approved. A conflict in a scope not named here leaves its rows `needs_yes`, and V8 fails.
+APPROVED_RULING = "r-remint-dryrun-defaults-sam-2026-11-28"
+APPROVED = {
+    "nutr-fold": "yes, all 320",
+    "pubr": "yes, PUBR M1001 to PREL",
+    "tour": "yes, TOUR to TRVL",
+}
+KEPT_ANSWER = "stays (Sam, 2026-11-28: FLTR, HMEN, CTZN, HLSN and DSPN stay)"
 # Held changes in the S749 receipt that a code choice answers instead of a move.
 RECEIPT_HELD_ANSWERED = {"Flight Attendant Training", "Public Relations", "Travel Services"}
 
@@ -330,7 +342,7 @@ def compute_plan(courses, singletons, curations, memberships, seed, receipt, ali
             if person_on.get(cid):
                 status = "held_person"
             elif name in scope_wide or cid in needs_yes_ids:
-                status = "needs_yes"
+                status = "approved" if name in APPROVED else "needs_yes"
             moves[cid] = {
                 "old_id": cid, "source": src, "scope": name, "title": r.get("common_title") or "",
                 "code_before": s["from"], "code_after": s["to"],
@@ -376,15 +388,13 @@ def compute_plan(courses, singletons, curations, memberships, seed, receipt, ali
     for name, s in SCOPES.items():
         to, join = s["to"], s["join"]
         held = owners.get(to, set()) - {join}
-        if name == "aero":
-            held -= {"Aeronautics"}
         if held:
             v5.append(f"{name}: {to} is also {', '.join(sorted(held))}'s code")
         home = to in codes_of(seed.get(join) or {})
         if pref_disc.get(to) and not home:
             v5.append(f"{name}: {to} already prefixes M-IDs of {sorted(map(str, pref_disc[to]))} and is not "
                       f"{join}'s code")
-        if name != "aero" and join in seed and seed[join].get("canonical_subj4") != to and to not in codes_of(seed[join]):
+        if join in seed and seed[join].get("canonical_subj4") != to and to not in codes_of(seed[join]):
             v5.append(f"{name}: the seed gives {join} {seed[join].get('canonical_subj4')}, not {to}")
     for d, (code, _why) in CODE_CHOICES.items():
         if (seed.get(d) or {}).get("canonical_subj4") != code:
@@ -395,8 +405,8 @@ def compute_plan(courses, singletons, curations, memberships, seed, receipt, ali
             v5.append(f"{d}: {code} already prefixes M-IDs")
         if vacated_pref.get(code) and code not in {s['to'] for s in SCOPES.values()}:
             v5.append(f"{d}: an earlier re-mint used {code}")
-    if "AERN" in owners:
-        v5.append("AERN is already a discipline's code")
+    if owners.get("AERN", set()) - {"Aeronautics"} or pref_disc.get("AERN"):
+        v5.append("AERN, Aeronautics' code at the apply, is already another discipline's or an M-ID's prefix")
 
     new_ids = [v["new_id"] for v in moves.values()]
     two_codes = sorted(k for k, v in moves.items() if not v["new_id"] or not v["new_id"].startswith(v["code_after"] + " "))
@@ -415,6 +425,8 @@ def compute_plan(courses, singletons, curations, memberships, seed, receipt, ali
             "pass": forwarded == {k for k, v in moves.items() if v["status"] != "held_person"}},
         "V5_codes_free": {"pass": not v5, "problems": v5},
         "V7_person_settled_codes_kept": {"pass": not v7, "problems": v7},
+        "V8_every_yes_no_answered": {"pass": not [k for k, v in moves.items() if v["status"] == "needs_yes"],
+                                     "waiting": sorted(k for k, v in moves.items() if v["status"] == "needs_yes")[:10]},
         "V6_person_rows_held": {
             "pass": all(v["status"] == "held_person" for v in moves.values() if v["person"]),
             "held": sorted(k for k, v in moves.items() if v["status"] == "held_person")},
@@ -501,6 +513,8 @@ def forwarding_rows(plan):
         reason = f"{v['scope']}: {v['code_before']} -> {v['code_after']}"
         if v["status"] == "needs_yes":
             reason += " (waits on Sam's yes: a person-curated code)"
+        elif v["status"] == "approved":
+            reason += f" (approved: Sam, 2026-11-28, {APPROVED_RULING})"
         out.append([k, plan["alias"][k], reason, plan["date"]])
     return out
 
@@ -566,32 +580,33 @@ def render_report(plan, refs, behind):
     for name, s in SCOPES.items():
         if s.get("seed"):
             L.append(f"- {name}: {s['seed']}.")
-    L += ["- tour: the two TOUR picks move to TRVL, `kb/subject_title_hunt/20261128_common_picks_tail.csv` "
-          "(Saddleback College TOUR, Southwestern College T&T).",
-          "- aero: Fresno City College AEROST's pick (COBI, `M-ID AERO`) follows Aeronautics to AERN; Allan Hancock "
-          "SPACE's pick already names AERN (Space Technology follows Aeronautics) and applies once AERN exists.",
+    L += ["- tour: the two Travel Services picks (Saddleback College TOUR, Southwestern College T&T) already take TRVL "
+          "on #3952 (9f56672c); nothing to edit.",
+          "- aero: Fresno City College AEROST's pick (COBI, `M-ID AERO`) moves to MILS with its nine M-IDs; Allan "
+          "Hancock SPACE's pick already names AERN and applies once the apply mints AERN for Aeronautics.",
           "- Codes the ruling asked for where the minted list collided (already the seed's, checked free by V5): "
           + "; ".join(f"{d} **{c}** ({w})" for d, (c, w) in CODE_CHOICES.items()) + ".",
           "- Cardiovascular Technology: CVTC -> CVTE landed in #3952; no M-ID carries CVTC or CVTE (V0 measured every "
           "prefix).", ""]
-    L += ["## Frozen-row conflicts: yes/no for Sam", "",
-          "Each is a person's value that a Nov 28 ruling or the minted list would change. Where Sam's ruling names the "
-          "change, the plan follows it and the apply refuses those rows until the yes is recorded; where only the "
-          "minted list proposes it, the person's code stays and nothing moves. Sam's four noncredit codes of "
-          "2026-11-22 (HMEN, CTZN, HLSN, DSPN) are frozen (V7).", ""]
+    L += ["## Frozen-row conflicts and Sam's answers", "",
+          "Each is a person's value that a Nov 28 ruling or the minted list would change. Sam answered all of them on "
+          f"2026-11-28 (\"fine on defaults\", {APPROVED_RULING}; COBIx agrees): every ruled move is approved, and every "
+          "person-named code stays. Sam's four noncredit codes of 2026-11-22 (HMEN, CTZN, HLSN, DSPN) are frozen (V7). "
+          "A conflict a later run finds in a scope he has not answered leaves its rows `needs_yes`, and V8 fails.", ""]
     ex = {}
     for v in sorted(mv.values(), key=lambda x: x["old_id"]):
         ex.setdefault(v["scope"], v)
     for i, c in enumerate(plan["conflicts"], 1):
         if c["scope"] is None:
-            L.append(f"{i}. {c['what']}. The plan keeps {c['kept']} and moves nothing. Keep {c['kept']}? *Yes* or *No*.")
+            L.append(f"{i}. {c['what']}. The plan keeps {c['kept']} and moves nothing. Answer: {c['kept']} {KEPT_ANSWER}.")
             continue
         e = mv.get(c["ids"][0]) if c.get("ids") else ex.get(c["scope"])
         eg = f" Example: {e['old_id']} *{e['title']}* -> {e['new_id']}." if e else ""
         if c.get("ids"):
             eg += f" Ids: {', '.join(c['ids'])}."
-        L.append(f"{i}. {c['what']}. " + ("Fold it as ruled" if c["scope"] == "nutr-fold" else "Re-mint them as planned") + f" ({SCOPES[c['scope']]['from']} -> {SCOPES[c['scope']]['to']})?{eg} "
-                 "*Yes* or *No*.")
+        ans = APPROVED.get(c["scope"])
+        L.append(f"{i}. {c['what']}. The plan moves {SCOPES[c['scope']]['from']} -> {SCOPES[c['scope']]['to']}.{eg} "
+                 + (f"Answer: {ans} (Sam, 2026-11-28)." if ans else "Waiting on Sam: *Yes* or *No*."))
     held = sorted(k for k, v in mv.items() if v["status"] == "held_person")
     if held:
         L += ["", f"Held, a person's row on the id ({len(held)}): " + ", ".join(held[:20])]
@@ -606,9 +621,8 @@ def render_report(plan, refs, behind):
           f"{sum(v['source'] == 'singleton' for v in nutr)} stand-alone. FDNT already holds its own ids, so "
           f"{sum(v['how'] == 'gap-filled' for v in nutr)} NUTR ids gap-fill rather than keep their number.",
           f"2. **AERO is {len(aero)} M-IDs, not 1**, and none is aeronautics: all are Fresno City College's Air Force "
-          "ROTC (local subject AEROST, TOP 1801 Military Studies; *AS100 Heritage and Values*). The seed's own note on "
-          "Aeronautics says they belong with Military Studies (MILS), where eight Army ROTC ids already sit. The plan "
-          "follows the ruling's words (AERN); yes/no: send these nine to MILS instead?",
+          "ROTC (local subject AEROST, TOP 1801 Military Studies; *AS100 Heritage and Values*). Sam sent them to "
+          "Military Studies (MILS), beside eight Army ROTC ids (2026-11-28); AERN starts with Space Technology alone.",
           "3. **PHTC was missed by #3952**: it re-coded Photographic Technology/ Commercial Photography PHTC -> CPHT "
           "counting catalog M-IDs only, and 4 stand-alone ids carry PHTC (Antelope Valley, Moorpark). A person filed "
           "the local code PHTC under Photography (2026-11-24), and one of the four already merges into PHOT M1041, so "
@@ -649,7 +663,7 @@ def render_report(plan, refs, behind):
           "rebuilt by their builders after the apply) and #3953 (kb/status/commons.json, commons_history.json; counts "
           "only, no M-ID). #3951 is #3952's source. #3950, #3926 and #3383 touch none.", ""]
     L += ["## Every M-ID that would change", "",
-          "Status: planned · needs_yes (the yes/no list) · held_person. Discipline before is the row's (a curator's "
+          "Status: planned · approved (a person-settled conflict Sam approved) · needs_yes · held_person. Discipline before is the row's (a curator's "
           "overlay wins); none means it joined only by its code. References: files by class (id: identity, gen: "
           "generated, sky: SkyView, cer: exhibits/CER/EACR, ccr: CCR cards, st: status, t: tests, hist: receipts).", "",
           "| Old id | New id | How | Code | Discipline before -> after | Title | Status | Overlay | References |",

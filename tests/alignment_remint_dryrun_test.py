@@ -35,6 +35,7 @@ def seed():
         "Nutritional Science/Dietetics": {"canonical_subj4": "FDNT", **BOT},
         "Aeronautics": {"canonical_subj4": "AERO", **BOT},
         "Aviation": {"canonical_subj4": "AVIA", **BOT},
+        "Military Studies": {"canonical_subj4": "MILS", **BOT},
         "Photography": {"canonical_subj4": "PHOT", **BOT},
         "Photographic Technology/ Commercial Photography": {"canonical_subj4": "CPHT", **BOT},
         "Public Relations": {"canonical_subj4": "PREL", **BOT},
@@ -89,8 +90,9 @@ check(p["moves"]["NUTR M1002"]["new_id"] == "FDNT M1002" and p["moves"]["NUTR M1
       "a free number is kept (NUTR M1002 -> FDNT M1002)")
 check(p["moves"]["NUTR M1001"]["new_id"] != "FDNT M1001" and p["moves"]["NUTR M1001"]["new_id"].startswith("FDNT M1"),
       "a taken number gap-fills (FDNT M1001 already exists)")
-check(p["moves"]["PHTC M10AB"]["new_id"].startswith("PHOT ") and p["moves"]["AERO M1001"]["new_id"] == "AERN M1001",
-      "PHTC goes to PHOT, AERO to AERN")
+check(p["moves"]["PHTC M10AB"]["new_id"].startswith("PHOT ") and p["moves"]["AERO M1001"]["new_id"] == "MILS M1001",
+      "PHTC goes to PHOT; the AERO (Air Force ROTC) ids go to MILS, not AERN")
+check(not any(v["new_id"].startswith("AERN ") for v in p["moves"].values()), "AERN starts with no M-ID")
 check("FLTA M1001" not in p["moves"] and "AVIA M1001" not in p["moves"] and "FDNT M1001" not in p["moves"],
       "every other M-ID is left alone")
 check(p["moves"]["NUTR M1002"]["discipline_after"] == "Nutritional Science/Dietetics",
@@ -121,6 +123,9 @@ sd = seed()
 sd["Tourism"] = {"canonical_subj4": "TRVL", **BOT}
 check(not ok(plan(sd=sd), "V5_codes_free"), "V5 catches a target code another discipline holds")
 c = courses()
+c["AERN M1005"] = row(None, "a stray already on AERN")
+check(not ok(plan(c=c), "V5_codes_free"), "V5 catches AERN, Aeronautics' code at the apply, already prefixing an M-ID")
+c = courses()
 c["FLTR M1001"] = row(None, "stray on FLTR")
 check(not ok(plan(c=c), "V5_codes_free"), "V5 catches a chosen code (FLTR) that an M-ID already starts with")
 
@@ -142,13 +147,24 @@ check(p5["moves"]["TOUR M1001"]["status"] == "held_person" and "TOUR M1001" not 
 check(not any(r[0] in ("NUTR M1002", "TOUR M1001") for r in ar.forwarding_rows(p5)), "held ids take no forwarding row")
 sd = seed()
 sd["Dietetics/Nutritional Science"]["reviewed_by"] = "map@rccd.edu"
-p6 = plan(sd=sd)
+saved = ar.APPROVED
+ar.APPROVED = {}
+try:
+    p6 = plan(sd=sd)
+finally:
+    ar.APPROVED = saved
 check(any(x["scope"] == "nutr-fold" for x in p6["conflicts"])
       and all(v["status"] == "needs_yes" for v in p6["moves"].values() if v["scope"] == "nutr-fold"),
       "a person-curated code the fold retires goes on the yes/no list and its rows wait on the yes")
+check(not ok(p6, "V8_every_yes_no_answered"), "V8 fails while a conflict waits on Sam")
+p6b = plan(sd=sd)
+check(all(v["status"] == "approved" for v in p6b["moves"].values() if v["scope"] == "nutr-fold")
+      and ok(p6b, "V8_every_yes_no_answered")
+      and all("approved" in r[2] for r in ar.forwarding_rows(p6b) if r[0].startswith("NUTR")),
+      "Sam's yes marks the fold's rows approved, in the plan and the forwarding reason")
 dec = {"statewide": [{"code": "PUB REL", "discipline": "Journalism", "who": "a reviewer", "at": "2026-11-24"}]}
 p7 = plan(decisions=dec)
-check(p7["moves"]["PUBR M1001"]["status"] == "needs_yes" and p7["moves"]["TOUR M1001"]["status"] == "planned",
+check(p7["moves"]["PUBR M1001"]["status"] == "approved" and p7["moves"]["TOUR M1001"]["status"] == "planned",
       "a person's filing of a row's local subject flags that row alone")
 minted = [{"mq_discipline": "Flight Attendant Training", "proposed_code": "FLTA"}]
 p8 = plan(minted=minted)
