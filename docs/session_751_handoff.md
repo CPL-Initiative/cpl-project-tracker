@@ -16,7 +16,7 @@ handoff his plain sessions write, never this file.
 number. Sam's plain session in flight at the start carries S749 on its PRs (#3948, #3949) and will write 750, so this
 run is S750 and writes 751.
 
-*(Declaration, written at 13:25Z before any worker started; the sections after the log are written at the checkpoint.)*
+*(Declaration, written at 13:16Z before any worker started; the sections after the log are written at the checkpoint.)*
 
 ## The start (13:12Z firing, 2026-11-28)
 
@@ -61,4 +61,4 @@ rereads, loads and `.apply`, and holds every Supabase call.
 
 ## Split changes during the run
 
-- 13:25Z: the declaration pushed; `found`, `display` and `piles` started on Fable 5.2 at high effort.
+- 13:16Z: the declaration pushed; `found`, `display` and `piles` started on Fable 5.2 at high effort.
