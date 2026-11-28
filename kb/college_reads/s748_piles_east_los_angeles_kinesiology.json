@@ -7,9 +7,9 @@
  },
  "keywords": [
   "Academic\\W+Plan\\W+E0?31017[A-Z]?[^\\n]{0,40}",
-  "(?i)minimum\\s+\\d+\\s+units?[^\\n]{0,120}",
-  "(?i)movement[^\\n]{0,100}",
-  "(?i)subtotal[^\\n]{0,40}",
+  "minimum\\s+\\d+\\s+units?[^\\n]{0,120}",
+  "movement[^\\n]{0,100}",
+  "subtotal[^\\n]{0,40}",
   "Total[^\\n]{0,40}"
  ],
  "pdf_span": [

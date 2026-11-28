@@ -8,8 +8,8 @@
  "keywords": [
   "Academic\\W+Plan\\W+E0?41231[A-Z]?[^\\n]{0,40}",
   "MATH\\s+261S?[^\\n]{0,100}",
-  "(?i)subtotal[^\\n]{0,40}",
-  "(?i)choose option[^\\n]{0,100}",
+  "subtotal[^\\n]{0,40}",
+  "choose option[^\\n]{0,100}",
   "Total[^\\n]{0,40}"
  ],
  "pdf_span": [
