@@ -217,10 +217,10 @@
  },
  "web_searches_filed": 313,
  "totals": {
-  "common_90_plus": 58,
+  "common_90_plus": 64,
   "common_no_code_yet": 100,
-  "common_none": 114,
-  "common_under_60": 507,
+  "common_none": 106,
+  "common_under_60": 509,
   "no_common": 779,
   "no_title": 155,
   "noncredit_common": 499,
@@ -658,6 +658,16 @@
      }
     },
     {
+     "code": "FN",
+     "common": {
+      "code": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
+      "confidence": 95,
+      "from": "own_courses",
+      "why": "3 of 5 of its courses with an M-ID sit under FDNT."
+     }
+    },
+    {
      "code": "HAL",
      "common": {
       "code": "OLAD",
@@ -1066,6 +1076,16 @@
      }
     },
     {
+     "code": "FN",
+     "common": {
+      "code": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
+      "confidence": 59,
+      "from": "same_code_statewide",
+      "why": "33 of 46 courses under this code statewide sit under FDNT."
+     }
+    },
+    {
      "code": "HONORS",
      "common": {
       "code": "IDST",
@@ -1105,6 +1125,16 @@
       "from": "noncredit_category",
       "category": "English as a Second Language (ESL)",
       "why": "The noncredit MQ discipline of its dominant COCI noncredit category, English as a Second Language (ESL) (11 of 11 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "FN",
+     "common": {
+      "code": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
+      "confidence": 59,
+      "from": "same_code_statewide",
+      "why": "31 of 39 courses under this code statewide sit under FDNT."
      }
     }
    ]
@@ -2525,6 +2555,16 @@
   {
    "slug": "fresno_city",
    "rows": [
+    {
+     "code": "FN",
+     "common": {
+      "code": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
+      "confidence": 95,
+      "from": "own_courses",
+      "why": "6 of 6 of its courses with an M-ID sit under FDNT."
+     }
+    },
     {
      "code": "HONORS",
      "common": {
@@ -3952,6 +3992,16 @@
    "slug": "madera",
    "rows": [
     {
+     "code": "FN",
+     "common": {
+      "code": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
+      "confidence": 95,
+      "from": "own_courses",
+      "why": "2 of 2 of its courses with an M-ID sit under FDNT."
+     }
+    },
+    {
      "code": "HONORS",
      "common": {
       "code": "IDST",
@@ -5210,6 +5260,16 @@
      }
     },
     {
+     "code": "FN",
+     "common": {
+      "code": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
+      "confidence": 95,
+      "from": "own_courses",
+      "why": "10 of 10 of its courses with an M-ID sit under FDNT."
+     }
+    },
+    {
      "code": "PHMT",
      "common": {
       "code": "VOCE",
@@ -5786,6 +5846,16 @@
      }
     },
     {
+     "code": "FN",
+     "common": {
+      "code": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
+      "confidence": 95,
+      "from": "own_courses",
+      "why": "3 of 3 of its courses with an M-ID sit under FDNT."
+     }
+    },
+    {
      "code": "HONORS",
      "common": {
       "code": "IDST",
@@ -6344,6 +6414,21 @@
       "from": "noncredit_category",
       "category": "Elementary and Secondary Basic Skills",
       "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (1 of 1 noncredit courses, 100%)."
+     }
+    }
+   ]
+  },
+  {
+   "slug": "san_bernardino_valley",
+   "rows": [
+    {
+     "code": "FN",
+     "common": {
+      "code": "FDNT",
+      "discipline": "Nutritional Science/Dietetics",
+      "confidence": 95,
+      "from": "own_courses",
+      "why": "3 of 5 of its courses with an M-ID sit under FDNT."
      }
     }
    ]

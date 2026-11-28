@@ -5,7 +5,7 @@
 -- Rollback, NOT applied: each row back to its before-value, where it still holds the after-value. It aborts,
 -- writing nothing, when a row sits on an old id again or the UPDATE matches other than the plan's rows. Pair it with
 -- `git revert` of the land. It also aborts when a person has saved a row on any of the 346 new ids since the apply
--- (second reader, S749): those rows would be stranded on an id the revert takes away. (the overlay and the identity files) in one cron window.
+-- (second reader, S749): those rows would be stranded on an id the revert takes away.
 with v(course_id, field, value, new_course_id, new_value) as (values
   ('AERO M1001', 'unified_title', 'AS200 Leadership Laboratory C', 'MILS M1001', 'AS200 Leadership Laboratory C'),
   ('AERO M10BA', 'merge_into', 'AERO M1001', 'MILS M10BA', 'MILS M1001'),

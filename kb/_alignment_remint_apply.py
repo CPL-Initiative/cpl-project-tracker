@@ -354,23 +354,33 @@ def migration_sql(alias, rows, receipt_rel, rows_rel):
            f"            when s.n = {n} then json_build_object('updated', s.n, 'cohort_untouched', 'reviewer_email and reviewed_at kept')\n"
            f"            else ('s749 re-mint guard: the UPDATE matched ' || s.n || ' rows, the plan names {n}')::int::text::json end as returned\n"
            "  from g, s;\n")
+    # Second reader (S749): the rollback also aborts when a person row sits on any of the moved ids' new ids, which a
+    # revert would strand. The new ids are the receipt's own (alias_map.json), read here so the SQL stays derived.
+    _am = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "kb", "alignment_remint_out", "2026-11-28", "alias_map.json")
+    _new = sorted({x["new_id"] for x in json.load(open(_am, encoding="utf-8"))["aliases"].values()}) if os.path.exists(_am) else []
+    _w = ", ".join("('%s')" % i for i in _new) or "(NULL)"
     back = (head + "-- Rollback, NOT applied: each row back to its before-value, where it still holds the after-value. It aborts,\n"
             "-- writing nothing, when a row sits on an old id again or the UPDATE matches other than the plan's rows. Pair it with\n"
-            "-- `git revert` of the land (the overlay and the identity files) in one cron window.\n"
+            "-- `git revert` of the land. It also aborts when a person has saved a row on any of the 346 new ids since the apply\n"
+            "-- (second reader, S749): those rows would be stranded on an id the revert takes away.\n"
             f"with v(course_id, field, value, new_course_id, new_value) as (values\n{v}),\n"
+            f"w(new_id) as (values {_w}),\n"
+            "p as (select count(*) as person_n from public.kb_curation k where k.course_id in (select new_id from w)\n"
+            "         and k.reviewer_email not like '%@bot' and k.reviewer_email not like '%.bot'),\n"
             "g as (select count(*) as back_n from public.kb_curation k where k.course_id in (select course_id from v)\n"
             "         and k.course_id <> all (select new_course_id from v)),\n"
             "u as (update public.kb_curation k\n"
             "         set course_id = v.course_id, value = v.value\n"
-            "        from v, g\n"
-            "       where g.back_n = 0 and k.course_id = v.new_course_id and k.field = v.field and k.value = v.new_value\n"
+            "        from v, g, p\n"
+            "       where g.back_n = 0 and p.person_n = 0 and k.course_id = v.new_course_id and k.field = v.field and k.value = v.new_value\n"
             "         and k.reviewer_email like '%@bot'\n"
             "      returning k.course_id, k.field),\n"
             "s as (select count(*) as n from u)\n"
-            "select case when g.back_n > 0 then ('s749 rollback guard: ' || g.back_n || ' rows already on an old id')::int::text::json\n"
+            "select case when p.person_n > 0 then ('s749 rollback guard: ' || p.person_n || ' person rows sit on a new id; rolling back would strand them')::int::text::json\n"
+            "            when g.back_n > 0 then ('s749 rollback guard: ' || g.back_n || ' rows already on an old id')::int::text::json\n"
             f"            when s.n = {n} then json_build_object('restored', s.n)\n"
             f"            else ('s749 rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names {n}')::int::text::json end as returned\n"
-            "  from g, s;\n")
+            "  from g, s, p;\n")
     return {"preread": pre, "apply": app, "rollback": back}
 
 
