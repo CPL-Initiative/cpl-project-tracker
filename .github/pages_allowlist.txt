@@ -81,6 +81,8 @@ withhold kb/row_audit/*.md
 withhold kb/receipts
 # The CareerOneStop registry (tracker-internal under its terms), the MOC crosswalk registry, workbooks.
 withhold kb/reference/*.xlsx
+withhold kb/reference/cip_taxonomy_2026-09.pdf
+withhold kb/reference/cip_taxonomy_202609.json
 withhold kb/reference/cos_certifications.json
 withhold kb/reference/moc_crosswalk.json
 # The restricted tables' measured grants and policies (S660); the CDC builder reads it, no page does.

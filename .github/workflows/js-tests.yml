@@ -452,6 +452,11 @@ jobs:
       - name: Subject decisions honored (kb/_sync_subject_decisions.py, kb/subject_decisions.py)
         if: matrix.shard == 5
         run: python3 tests/subject_decisions_honored_test.py
+      # COBI's common-subject picks (S749): a pick stands ahead of a statewide filing and behind a person's save, never
+      # routes a mint, and a noncredit band or a code not yet canonical is refused and listed. Pure stdlib.
+      - name: COBI common-subject picks (kb/subject_decisions.py)
+        if: matrix.shard == 5
+        run: python3 tests/subject_common_picks_test.py
       # Noncredit subject decisions, one per COCI noncredit category (#3655): an nc:<slug> decision changes only that
       # category's noncredit courses at that college, never a credit course and never a mint route; an unknown slug is
       # refused and listed; the sync accepts credit, whole and nc:<a listed slug>. Pure stdlib.
