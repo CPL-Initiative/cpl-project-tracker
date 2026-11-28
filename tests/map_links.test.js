@@ -67,8 +67,9 @@ setTimeout(() => {
     css && /\.cpl-mapchip\{position:relative;[^}]*min-height:24px;[^}]*text-decoration:underline;/.test(css.textContent));
 
   const cp = fs.readFileSync("cpl_pathways.js", "utf8");
-  check("CPL Pathways: the pathway row's adopted-elsewhere panel asks for each credential's line",
-    /adoptPanel\.appendChild\(ul\);\s*var ml = mapLinksNode\(o\.credential\);\s*if \(ml\) adoptPanel\.appendChild\(ml\);/.test(cp));
+  // S746 (#3930): a featured row's Adopt chip opens adopt_panel.js's sidebar, where each exhibit carries its line.
+  check("CPL Pathways: a featured row's Adopt chip gives each credential its line in the panel",
+    /function featuredAdoptChip[\s\S]*?kind: "adopt", links: mapLinksNode/.test(cp));
   check("CPL Pathways: each adoption opportunity's panel asks for its line before Quick Adopt",
     /panel\.appendChild\(ul\);\s*var ml = mapLinksNode\(pc\.credential\);\s*if \(ml\) panel\.appendChild\(ml\);\s*panel\.appendChild\(buildQuickAdopt/.test(cp));
   const cb = fs.readFileSync("college_briefing.js", "utf8");
