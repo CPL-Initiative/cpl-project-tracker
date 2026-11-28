@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-28T17:22:58Z",
+  "written_at": "2026-11-28T17:28:37Z",
   "session": 749,
   "moniker": "SkyGannet",
   "run": "Sam's session",
@@ -1276,7 +1276,7 @@
     {
       "day": "2026-11-28",
       "active": 20282,
-      "complete": 15681,
+      "complete": 15704,
       "colleges": 118
     }
   ],
