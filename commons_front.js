@@ -2035,8 +2035,8 @@
      from any surface") ──
      A link on the Commons front page, one of its cards, or College Data Collection marks the tab it opens; that tab then
      carries one link at its top until the person leaves it or returns to the front page: "Back to Needs you" when Needs
-     you opened it, else "Back to CPL Commons". College Data Collection (#collect) and every Commons view under
-     #commons/ carry "Back to CPL Commons" however they were reached. The mark lives in this page's memory only: nothing
+     you opened it, else "Back to CPL Commons". College Data Collection (#collect), every Commons view under
+     #commons/ and Exhibits (#exhibits) carry "Back to CPL Commons" however they were reached. The mark lives in this page's memory only: nothing
      is stored (tabs never remember, Sam 2026-10-21). The link sits in the tab's pane, before its main container, so a
      view that redraws its own root keeps it, and it comes first in the pane's tab order. */
   var BACK = { tab: null, from: "", id: "cpl-back-needs" };
@@ -2045,13 +2045,17 @@
     return t === "collect" ? "commons" : t;
   }
   function atFront(h) { return /^#?(commons\/?|commons\/needs-you(\/.*)?|commons\/course\/.*|commons\/card\/.*)?$/.test(String(h || "")); }
-  /* College Data Collection or a Commons view other than the front page. */
-  function commonsView(h) { var s = String(h || "").replace(/^#/, ""); return /^(commons\/)?collect(\/|$)/.test(s) || (/^commons\/./.test(s) && !atFront(s)); }
+  /* College Data Collection, a Commons view other than the front page, or Exhibits, the Exhibit titles card's own page
+     (Sam's Commons Clarity list, S746 to S747: "the Exhibits pages lack back links"). */
+  function commonsView(h) {
+    var s = String(h || "").replace(/^#/, "");
+    return /^(commons\/)?collect(\/|$)/.test(s) || (/^commons\/./.test(s) && !atFront(s)) || /^exhibits(\/|$)/.test(s);
+  }
   function placeBack() {
     var old = document.getElementById(BACK.id), h = location.hash || "", t = tabOf(h);
     if (BACK.tab && (t !== BACK.tab || atFront(h))) { BACK.tab = null; BACK.from = ""; }
     var tab = BACK.tab, from = BACK.from;
-    if (!tab && commonsView(h)) { tab = "commons"; from = "commons"; }
+    if (!tab && commonsView(h)) { tab = tabOf(h); from = "commons"; }
     if (!tab) { watchBack(null); if (old) old.parentNode.removeChild(old); return null; }
     var pane = document.getElementById("tab-" + tab);
     if (!pane) return null;
