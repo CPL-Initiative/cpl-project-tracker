@@ -4630,27 +4630,35 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.667,
+  "coverage": 1.0,
   "codes_found": [
+   "ANTHC100",
    "CMSTC100",
    "CMSTC101",
    "CMSTC140",
    "CMSTC150",
    "CMSTC220",
-   "COMMC1000"
+   "COMMC1000",
+   "PSYCC1000",
+   "SOCC100"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/communication-studies/",
-   "title": "Communication Studies < Coastline College",
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/communication-studies/communication-studies-2-aat/",
+   "title": "Communication Studies 2.0, Associate in Arts Degree for Transfer < Coastline College",
    "h1": "ACADEMIC CATALOGS",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 0.5
-   }
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies communication studies 2.0, associate in arts degree for transfer",
+    "section_fit": 0.667,
+    "exact": 0
+   },
+   "pinned": true
   },
   "listed": 9,
-  "text_chars": 11002
+  "text_chars": 3119
  },
  {
   "control_number": "43490",
