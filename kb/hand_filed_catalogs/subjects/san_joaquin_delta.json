@@ -281,6 +281,22 @@
    "run": "45626064651, 45627087073"
   },
   {
+   "code": "AUTOBODY",
+   "heading": "Auto Body",
+   "heading_printed": "Auto Body",
+   "rule": "index",
+   "codes": [
+    "AUTOBODY"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
    "code": "AUTOMECH",
    "heading": "Auto Mechanics",
    "heading_printed": "Auto Mechanics",
@@ -1417,6 +1433,6 @@
    "run": "45626064651, 45627087073"
   }
  ],
- "subjects": 88,
- "with_heading": 88
+ "subjects": 89,
+ "with_heading": 89
 }

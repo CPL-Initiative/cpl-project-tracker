@@ -51,6 +51,22 @@ def code_key(s):
     return re.sub(r"[^A-Z0-9&]", "", str(s or "").upper())
 
 
+# Catalog headings that only spell their code, filed by explicit list (COBIx, 2026-11-27). Not a change to the
+# filer rule: a heading that is only its code is still skipped everywhere else, unless rule=="schedule".
+CODE_ONLY_ALLOW = frozenset({
+    ("american_river", "ENERGY"),
+    ("columbia", "MEDIA"),
+    ("cosumnes_river", "HMONG"),
+    ("fresno_city", "HMONG"),
+    ("fresno_city", "PUNJABI"),
+    ("gavilan", "LIFE"),
+    ("madera", "PUNJABI"),
+    ("sacramento_city", "GREEK"),
+    ("san_joaquin_delta", "AUTOBODY"),
+    ("sierra", "RISE"),
+})
+
+
 def dump(path, doc):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
@@ -101,10 +117,12 @@ def file_doc(slug, d, dry):
         k = code_key(code)
         # A class schedule's lookup prints the code and its title in two columns (S736), so its ART titled Art is a
         # title; so is the code's own catalog page (rule code_address) where it prints the code and the title apart
-        # (Chabot's "ART - Art", S745). A catalog heading that only repeats its code is not.
+        # (Chabot's "ART - Art", S745). A catalog heading that only repeats its code is not, unless CODE_ONLY_ALLOW
+        # lists it.
         apart = t.get("rule") == "code_address" and str(t.get("printed") or "").strip() != printed and code_key(
             re.sub(r"\s*[-–:]\s*" + re.escape(printed) + r"$", "", str(t.get("printed") or ""))) == k
-        if not k or not printed or (code_key(printed) == k and t.get("rule") != "schedule" and not apart):
+        if not k or not printed or (code_key(printed) == k and t.get("rule") != "schedule" and not apart
+                                    and (slug, k) not in CODE_ONLY_ALLOW):
             skipped += 1
             continue
         old = have.get(k)

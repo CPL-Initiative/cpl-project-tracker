@@ -171,20 +171,27 @@ Apprenticeship: Plumbing filed from the Chabot catalog (runs 46060688269, 460610
 Allan Hancock ART FILM; Berkeley City MUSIC; Chaffey ARABIC ART CINEMA DENTAL MUSIC THEATRE; Palomar ART; Rio Hondo ART)
 is held for its own measured change.
 
+**LIVE (S746 port of COBIx's #3917, branch `claude/subject-parse-bundle-port`): the subject-parse bundle.** Sam's
+approval of 2026-11-27: `kb/coci_subject_folds.py` folds 38 Hancock truncated labels, 9 bad splits and no Chabot code
+(#3918's list stands; PHEACJUD stays); Cypress C, Golden West SPTP and LAVC BOTH KIN read `not_a_subject`, and the
+builder honors a person's `not_a_subject` save; the note box's *Ask COBI to act on this* writes `value.act = true`;
+29 titles filed (10 code-only headings, Chabot PSCI, 18 SBCC). **DECIDED** (Sam, 2026-11-28): a fold lands on the
+code the college prints today, so Hancock APPREN, COM SC, GRAPHI, HO EC, LDRSHP, OA, PHY SC, POL SC, WLD T (and
+FRENCH, H ED) fold to APRN, CS, GRPH, HOEC, LDER, CBOT, PHSC, POLS, WLDT (FRCH, HED) and take their headings; Glendale
+T ART is THTR and AL ST joins AD ST; Hancock INT ST and SOC SC, Glendale RET S and LA Southwest Q CNTRL keep the
+printed code (no current code matches). The lightning round on the committed files: 494 to 416.
+
 **NEXT (S744), in order:**
-1. **The builder honors `not_a_subject`.** The lightning round saves `{not_a_subject: true}`
-   (`d-lightning-round-not-a-subject-and-skip-s736`), and `kb/subject_decisions.py` lists it as refused today, so the
-   status counts do not drop; make the builder take it.
-2. **LACCD:** 41 codes still untitled; offer Sam the 87 schedule titles that differ from the catalog as one list.
-3. **The schedule-tool sweep beyond LACCD** (`r-schedule-tool-first-for-subject-titles-sam-2026-11-26`): none read.
-   The colleges with the most untitled codes: Allan Hancock 77, Glendale 57, Santa Barbara City 51, Santiago Canyon 39,
-   Santa Monica 36, Canyons 34, Cerro Coso 32 (Chabot 4 since #3918). Name each college's system in `data_sources` as it is found.
-4. **The Accounting re-point apply.** The dry run (#3867, `kb/_acct_repoint_dryrun.py`, `kb/acct_repoint_out/2026-11-26/`):
+1. **LACCD:** 41 codes still untitled; offer Sam the 87 schedule titles that differ from the catalog as one list.
+2. **The schedule-tool sweep beyond LACCD** (`r-schedule-tool-first-for-subject-titles-sam-2026-11-26`): none read.
+   The most codes left in the lightning round after the S746 port: Glendale 31, Santa Barbara City 28, North Orange
+   Continuing Education 20, MiraCosta 20, Canyons 17, Santiago Canyon 17, Allan Hancock 15. Name each college's system in `data_sources` as it is found.
+3. **The Accounting re-point apply.** The dry run (#3867, `kb/_acct_repoint_dryrun.py`, `kb/acct_repoint_out/2026-11-26/`):
    372 M-IDs and 907 courses move to ACCT under Accounting, 1 held, 29 families flagged. **BLOCKED:** Sam's four
    `_SUBJ_DISC::ACC`, `ACCT`, `ACCTG` and `ACTG` saves of 2026-11-24 12:46 (a 1,311-row batch) file them under
    Business; they need refiling under Accounting, or his say-so over them (a person's save is terminal). Copper
    Mountain's ACC is ACCESS (disability services), keyed by college and left out.
-5. **The 35 held and the 50 under 90** (the stray-codes paragraph above): Sam's picks.
+4. **The 35 held and the 50 under 90** (the stray-codes paragraph above): Sam's picks.
 
 **NEXT (S719), in order:** (1) re-point the folded local codes (the Accounting codes' dry run is #3867, item 4 above), a re-mint under
 [`docs/coursecontrolnumber_remint.md`](../../coursecontrolnumber_remint.md), dry run first: ACCT, ACCTG, ACC and ACTG

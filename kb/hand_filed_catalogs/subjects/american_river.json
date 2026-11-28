@@ -587,6 +587,22 @@
    "run": "45625671325"
   },
   {
+   "code": "ENERGY",
+   "heading": "Energy",
+   "heading_printed": "Energy",
+   "rule": "index",
+   "codes": [
+    "ENERGY"
+   ],
+   "candidate": null,
+   "address": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625671325)",
+   "run": "45625671325"
+  },
+  {
    "code": "ENGCW",
    "heading": "English – Creative Writing",
    "heading_printed": "English – Creative Writing",
@@ -1979,6 +1995,6 @@
    "run": "45625671325"
   }
  ],
- "subjects": 123,
- "with_heading": 123
+ "subjects": 124,
+ "with_heading": 124
 }
