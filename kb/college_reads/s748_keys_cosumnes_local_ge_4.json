@@ -1,0 +1,24 @@
+{
+ "_readme": "S748 lane 1 (keys): Cosumnes River College, the hand-filed 2026-27 catalog, PDF pp.84-87: 'Local AA/AS Degree General Education Requirements'. Read 46123612923 printed p.84, where the pattern begins: area L1 'Choose two courses for a minimum of six semester units' and area L2 'Choose one course for a minimum of three semester units'. This plan prints the pages that carry the rest of the areas, each with its minimum, and any total the pattern prints. One load of the hand-filed copy, free, no model call, nothing written.",
+ "college": "Cosumnes River College",
+ "questions": {
+  "local_ge_units": "Which minimum does each area of the local AA/AS pattern print, and does the pattern print a total?"
+ },
+ "keywords": [
+  "L[1-9][A-Z]?: ",
+  "minimum of \\w+ semester units",
+  "Local AA/AS Degree General Education"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "local_ge_units"
+   ],
+   "url": "https://github.com/user-attachments/files/33599449/crc-catalog-26-27.pdf"
+  }
+ ],
+ "pdf_span": [
+  84,
+  87
+ ]
+}
