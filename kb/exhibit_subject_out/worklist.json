@@ -2,7 +2,7 @@
  "schema": 1,
  "_about": "Credentials with no Common SUBJ after the subject fill (kb/_exhibit_subject_fill.py), each with why, and a suggested subject from its title words where one exists. A suggestion is never a decision: title words were wrong on ASE MIL7 (Sam, 2026-11-11). The Commons' Exhibit card counts `no_subject`.",
  "rule": "A credential with no Common SUBJ takes the subject of the courses colleges credit for it (over half of them, several colleges first, then one), else its issuer family's; title words, TOP and CIP never decide; a family or certification link that names another subject holds it for a person; a subject already on the title always wins.",
- "written_at": "2026-11-27T17:42:36Z",
+ "written_at": "2026-11-28T16:33:27Z",
  "mode": "preview",
  "live_read": true,
  "by_rung": {
@@ -189,7 +189,7 @@
    "exhibits": [
     "MAPICA-ATEF12-1-001"
    ],
-   "suggested": "RDGN",
+   "suggested": "RBSK",
    "suggested_from": "title words (a suggestion, never a decision)"
   },
   {
@@ -442,7 +442,7 @@
    "exhibits": [
     "MAPPRA-BMBR-1-001"
    ],
-   "suggested": "RDGN",
+   "suggested": "RBSK",
    "suggested_from": "title words (a suggestion, never a decision)"
   },
   {
@@ -632,7 +632,7 @@
    "exhibits": [
     "MAPCXS-CP-B-1-001"
    ],
-   "suggested": "PIAN",
+   "suggested": "PTUN",
    "suggested_from": "title words (a suggestion, never a decision)"
   },
   {
@@ -898,7 +898,7 @@
    "exhibits": [
     "MAPSAS-DMAB-1-001"
    ],
-   "suggested": "FINA",
+   "suggested": "BFIN",
    "suggested_from": "title words (a suggestion, never a decision)"
   },
   {
@@ -919,7 +919,7 @@
    "exhibits": [
     "MAPSAS-DPF-1-001"
    ],
-   "suggested": "FINA",
+   "suggested": "BFIN",
    "suggested_from": "title words (a suggestion, never a decision)"
   },
   {
@@ -976,7 +976,7 @@
    "exhibits": [
     "MAPSAS-DTW-1-001"
    ],
-   "suggested": "WRTN",
+   "suggested": "WBSK",
    "suggested_from": "title words (a suggestion, never a decision)"
   },
   {
@@ -1315,7 +1315,7 @@
     "EMST": 1,
     "PARA": 1
    },
-   "suggested": "DSCS",
+   "suggested": "CDSC",
    "suggested_from": "title words (a suggestion, never a decision)"
   },
   {
@@ -1325,7 +1325,7 @@
    "exhibits": [
     "MAPCXS-C1CB-1-001"
    ],
-   "suggested": "DSCS",
+   "suggested": "CDSC",
    "suggested_from": "title words (a suggestion, never a decision)"
   },
   {
@@ -1867,7 +1867,7 @@
    "exhibits": [
     "MAPCXS-C01-1-001"
    ],
-   "suggested": "LBRL",
+   "suggested": "LREL",
    "suggested_from": "title words (a suggestion, never a decision)"
   },
   {
@@ -2618,7 +2618,7 @@
    "exhibits": [
     "MAPCXS-PHCE-1-001"
    ],
-   "suggested": "SANI",
+   "suggested": "SPHT",
    "suggested_from": "title words (a suggestion, never a decision)"
   },
   {
@@ -2816,7 +2816,7 @@
    "exhibits": [
     "MAPCXS-ASER-1-001"
    ],
-   "suggested": "SENG",
+   "suggested": "SMEN",
    "suggested_from": "title words (a suggestion, never a decision)"
   },
   {

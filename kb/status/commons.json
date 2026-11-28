@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-28T13:25:28Z",
+ "written_at": "2026-11-28T16:33:38Z",
  "rows": [
   {
    "key": "requirements",
@@ -383,7 +383,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-27T19:40:49+00:00",
+    "at": "2026-11-19T06:22:43Z",
     "every_hours": null
    },
    "facts": {
@@ -454,14 +454,14 @@
    "status_file": "kb/status/subjects.json",
    "pair": [
     {
-     "n": 246,
-     "of": 246,
-     "words": "MQ disciplines with courses carry a settled Common SUBJ: confirmed (by a person, or by the nightly procedure where the code is the authority's own), on the authority rule, in no collision (138 by a person, 108 by the nightly procedure or a session cohort)",
+     "n": 248,
+     "of": 248,
+     "words": "MQ disciplines with courses carry a settled Common SUBJ: confirmed (by a person, or by the nightly procedure where the code is the authority's own), on the authority rule, in no collision (138 by a person, 110 by the nightly procedure or a session cohort)",
      "open": "#canonical-subj4/list"
     },
     {
      "n": 138,
-     "of": 246,
+     "of": 248,
      "words": "confirmed by a person, 138 of them settled",
      "open": "#canonical-subj4/list/person",
      "error": null
@@ -521,12 +521,12 @@
     "every_hours": 24
    },
    "facts": {
-    "disciplines": 246,
-    "confirmed": 246,
+    "disciplines": 248,
+    "confirmed": 248,
     "person": 138,
-    "cohort": 108,
+    "cohort": 110,
     "person_settled": 138,
-    "settled": 246,
+    "settled": 248,
     "modal": 0,
     "shared": [],
     "missed_alignment": 0,
