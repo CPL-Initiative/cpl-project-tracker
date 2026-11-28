@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 469,
  "with_closed_list": 428,
- "started": "2026-11-26T09:14:36Z",
+ "started": "2026-11-28T08:15:31Z",
  "scope": null,
  "sitemap": {
   "url": "https://catalog.mtsac.edu/sitemap.xml",
@@ -459,7 +459,7 @@
   "yield_refused_passing": 0
  },
  "loads": 581,
- "seconds": 2926.8,
+ "seconds": 2875.8,
  "found": 386,
  "by_method": {
   "link_search": 15,
@@ -1347,28 +1347,10 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/mt_san_antonio",
-  "kept": 384,
+  "kept": 385,
   "kept_moved": 0,
   "programs": 1,
   "list": [
-   {
-    "control_number": "41116",
-    "title": "Electronics Technology - Level 1",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-technology-level-1-certificate/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-computer-engineering-technology-certificate/",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   }
-  ],
-  "held_worse_window": [],
-  "held_no_gain": [],
-  "held_opens_on_list": [],
-  "only": [
-   "41116"
-  ],
-  "not_named": [
    {
     "control_number": "41569",
     "title": "Electronics Technology - Level 1",
@@ -1380,6 +1362,9 @@
     "was_method": "sitemap_page"
    }
   ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
   "refused_passing": [],
   "forced_unbound": []
  },
@@ -2929,5 +2914,5 @@
    "url": "https://catalog.mtsac.edu/programs/programsaz/printmaking-certificate/"
   }
  },
- "run": "45789994593"
+ "run": "46124747415"
 }

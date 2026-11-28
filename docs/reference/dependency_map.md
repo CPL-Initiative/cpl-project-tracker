@@ -84,7 +84,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `college_short_names` | tabs: `college-identity` · scripts: `kb/_apply_college_short_names.py` | tabs: `college-identity` |
 | `commons_handover` | modules: `commons_handover.js` · scripts: `kb/_handover_pickup.py` | — |
 | `course_outcomes` | tabs: `coci-lookup`, `commons`, `cpl-pathways`, `program-requirements` · modules: `kb/_commons_data_live.py` · scripts: `kb/_build_adopt_align.py`, `kb/_build_exhibit_slo_neighbors.py`, `kb/_mid_outcomes_compare.py` | — |
-| `cpl_adoption_interest` | tabs: `cpl-pathways` · pages: `CPL_Dashboard.html`, `library/cpl-opportunity/index.html` | tabs: `cpl-pathways` · pages: `CPL_Dashboard.html`, `library/cpl-opportunity/index.html` |
+| `cpl_adoption_interest` | pages: `CPL_Dashboard.html`, `library/cpl-opportunity/index.html` | pages: `CPL_Dashboard.html`, `library/cpl-opportunity/index.html` |
 | `cpl_comms` | tabs: `letters` | — |
 | `cpl_contract_deliverables` | tabs: `contracts` | — |
 | `cpl_contract_documents` | tabs: `contracts` | tabs: `contracts` |
@@ -727,9 +727,11 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/college_reads/<plan>.json` | scripts: `kb/_program_piles_s741.py`, `kb/_program_piles_s742.py` | — |
 | `kb/college_reads/laccd_schedule_subjects.json` | scripts: `kb/_laccd_schedule_subjects.py` | — |
 | `kb/college_reads/s730_elumen_own_page.json` | scripts: `kb/_elumen_own_page_s730.py` | — |
+| `kb/college_reads/s740_piles_sbcc_figures.json` | scripts: `kb/_program_piles_s748_sbcc.py` | — |
 | `kb/college_reads/s740_piles_shasta_sections.json` | scripts: `kb/_program_piles_s741_shasta.py` | — |
-| `kb/college_reads/s741_piles_orange_coast_figures.json` | scripts: `kb/_program_piles_s741_orangecoast.py` | — |
+| `kb/college_reads/s741_piles_orange_coast_figures.json` | scripts: `kb/_program_piles_s741_orangecoast.py`, `kb/_program_piles_s748_orangecoast.py` | — |
 | `kb/college_reads/s742_piles_gavilan_liberal_arts.json` | scripts: `kb/_program_piles_s742_gavilan.py` | — |
+| `kb/college_reads/s748_piles_east_los_angeles_environmental.json` | scripts: `kb/_program_piles_s748_ela.py` | — |
 | `kb/college_short_names.json` | scripts: `chatbox/build_coci_offerings.py`, `funding/_build_funding_ess.py`, `funding/_build_funding_performance.py`, `kb/_apply_college_short_names.py`, `kb/_build_adopt_page.py`, `kb/_build_college_identity_crosswalk.py`, `kb/_build_domain_cpl_crosswalk.py`, `kb/_build_program_ladders.py`, `kb/_build_regional_cpl_opportunity.py`, `kb/_seed_college_short_names.py`, `tmc/_build_college_adts.py` | scripts: `kb/_seed_college_short_names.py` · committed by: `daily-dashboard.yml` |
 | `kb/common_courses.json` | scripts: `excel_to_dashboard.py`, `kb/_add_descriptions.py`, `kb/_anchor_rekey_apply.py`, `kb/_anchor_rekey_dryrun.py`, `kb/_csr_trail.py`, `kb/_curation_01.py`, `kb/_row_audit.py`, `kb/_seed_coci_minted_mids.py`, `kb/_zband_retire_dryrun.py` | scripts: `kb/_add_descriptions.py`, `kb/_anchor_rekey_apply.py`, `kb/_seed_cx_common_courses.py` |
 | `kb/common_courses_era.json` | scripts: `kb/_anchor_rekey_apply.py`, `kb/_anchor_rekey_dryrun.py` | — |
@@ -919,6 +921,8 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/receipts/program_requirement_records_cut_window_fill_s720.json` | scripts: `kb/_program_fill_cut_window_s720.py` | scripts: `kb/_program_fill_cut_window_s720.py` |
 | `kb/receipts/program_requirement_records_cut_window_gaps_s720r.json` | scripts: `kb/_program_cut_window_gaps_s720.py` | scripts: `kb/_program_cut_window_gaps_s720.py` |
 | `kb/receipts/program_requirement_records_floor_rescore_<date>_s529.json` | scripts: `kb/_program_piles_s731_lbcc.py` | — |
+| `kb/receipts/program_requirement_records_piles_ccsf_<date>_s720c.json` | scripts: `kb/_program_piles_s748c.py` | — |
+| `kb/receipts/program_requirement_records_piles_fullerton_<date>_s720f.json` | scripts: `kb/_program_piles_s748c.py` | — |
 | `kb/receipts/program_requirement_records_piles_s720_cabrillo_<date>_s720b.json` | scripts: `kb/_program_piles_s740_cabrillo.py` | — |
 | `kb/receipts/program_requirement_records_piles_s720_contracosta_<date>_s720k.json` | scripts: `kb/_program_piles_s740_contracosta.py` | — |
 | `kb/receipts/program_requirement_records_piles_s720_ela_<date>_s720e.json` | scripts: `kb/_program_piles_s741_ela.py` | — |
@@ -946,6 +950,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/receipts/program_requirement_records_piles_s739_san_bernardino_valley_<date>_s740c3.json` | scripts: `kb/_program_piles_s741_sbvc.py` | — |
 | `kb/receipts/program_requirement_records_piles_s739_san_jose_city_<date>_s740c4.json` | scripts: `kb/_program_piles_s740_sjcc2.py` | — |
 | `kb/receipts/program_requirement_records_piles_s739_santa_ana_<date>_s740r2.json` | scripts: `kb/_program_piles_s741_santa_ana.py` | — |
+| `kb/receipts/program_requirement_records_piles_s739_santa_barbara_city_<date>_s739d.json` | scripts: `kb/_program_piles_s748_sbcc.py` | — |
 | `kb/receipts/program_requirement_records_piles_s739_shasta_<date>_s739b.json` | scripts: `kb/_program_piles_s740_shasta.py` | — |
 | `kb/receipts/program_requirement_records_piles_s739_solano_community_<date>_s740c2.json` | scripts: `kb/_program_piles_s740_solano2.py`, `kb/_program_piles_s741_solano.py` | — |
 | `kb/receipts/program_requirement_records_piles_s740_butte_<date>_s740h.json` | scripts: `kb/_program_piles_s742_butte.py` | — |
@@ -958,7 +963,11 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/receipts/program_requirement_records_piles_s740_shasta_<date>_s740i.json` | scripts: `kb/_program_piles_s741_shasta.py` | — |
 | `kb/receipts/program_requirement_records_piles_s741_east_los_angeles_<date>_s741d.json` | scripts: `kb/_program_piles_s742_ela.py` | — |
 | `kb/receipts/program_requirement_records_piles_s741_el_camino_<date>_s741c.json` | scripts: `kb/_program_piles_s742_elcamino.py` | — |
-| `kb/receipts/program_requirement_records_piles_s741_orange_coast_<date>_s741b.json` | scripts: `kb/_program_piles_s741_orangecoast2.py` | — |
+| `kb/receipts/program_requirement_records_piles_s741_el_camino_<date>_s742r2.json` | scripts: `kb/_program_piles_s748_elcamino.py` | — |
+| `kb/receipts/program_requirement_records_piles_s741_orange_coast_<date>_s741b.json` | scripts: `kb/_program_piles_s741_orangecoast2.py`, `kb/_program_piles_s748_orangecoast.py` | — |
+| `kb/receipts/program_requirement_records_piles_s742_butte_<date>_s742a.json` | scripts: `kb/_program_piles_s748_butte.py` | — |
+| `kb/receipts/program_requirement_records_piles_s742_east_los_angeles_<date>_s742b.json` | scripts: `kb/_program_piles_s748_ela.py` | — |
+| `kb/receipts/program_requirement_records_piles_s748_orange_coast_<date>_s748b.json` | scripts: `kb/_program_piles_s748c.py` | — |
 | `kb/receipts/program_requirement_records_piles_smc_<date>_s720s.json` | scripts: `kb/_program_piles_s740_smc.py` | — |
 | `kb/reclustering_s648_out/2026-11-13/honors_worklist.json` | scripts: `kb/_reclustering_s649.py` | scripts: `kb/_reclustering_s648_dryrun.py` |
 | `kb/reclustering_s648_out/<date>/post_read.json` | scripts: `kb/_reclustering_s648_dryrun.py` | — |
@@ -1161,6 +1170,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `program_requirements_reread_*_checked.json` | scripts: `kb/_program_piles_s727_canyons.py`, `kb/_program_piles_s727_persons.py`, `kb/_program_piles_s730_lattc.py` | — |
 | `program_requirements_reread_s741_*_checked.json` | scripts: `kb/_program_piles_s741.py`, `kb/_program_piles_s742.py` | — |
 | `program_requirements_reread_s742_*_checked.json` | scripts: `kb/_program_piles_s742.py` | — |
+| `program_requirements_reread_s748_*_checked.json` | scripts: `kb/_program_piles_s748.py`, `kb/_program_piles_s748_sierra.py` | — |
 | `project_lifecycle.js` | pages: `CPL_Dashboard.html` | — |
 | `projects_editor.js` | pages: `CPL_Dashboard.html` | — |
 | `prototype/build_ccr_atlas.py` | workflows: `daily-dashboard.yml` | — |
@@ -1311,6 +1321,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/cobi_live_banner.test.js` | workflows: `js-tests.yml` | — |
 | `tests/cobix_watch_test.py` | workflows: `js-tests.yml` | — |
 | `tests/coci_campus_letter_test.py` | workflows: `js-tests.yml` | — |
+| `tests/coci_desc_clean_test.py` | workflows: `js-tests.yml` | — |
 | `tests/coci_flags_test.py` | workflows: `js-tests.yml` | — |
 | `tests/coci_offerings_sync_chunk_test.py` | workflows: `js-tests.yml` | — |
 | `tests/coci_program_cip_test.py` | workflows: `js-tests.yml` | — |
@@ -1489,6 +1500,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/program_named_gaps_s739b_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_named_gaps_s742_sdcity_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_named_gaps_s742k3_test.py` | workflows: `js-tests.yml` | — |
+| `tests/program_named_gaps_s748k1_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_named_gaps_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_option_roman_s741_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_piles_s713_clovis_test.py` | workflows: `js-tests.yml` | — |
@@ -1576,6 +1588,12 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/program_piles_s742_modesto_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_piles_s742_sbvc_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_piles_s742a_test.py` | workflows: `js-tests.yml` | — |
+| `tests/program_piles_s748_elcamino_test.py` | workflows: `js-tests.yml` | — |
+| `tests/program_piles_s748_sierra_test.py` | workflows: `js-tests.yml` | — |
+| `tests/program_piles_s748a_test.py` | workflows: `js-tests.yml` | — |
+| `tests/program_piles_s748b_test.py` | workflows: `js-tests.yml` | — |
+| `tests/program_piles_s748c_test.py` | workflows: `js-tests.yml` | — |
+| `tests/program_piles_s748g1_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_pooled_figure_s721_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_reconcile_s727_butte_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_reconcile_s731_saddleback_test.py` | workflows: `js-tests.yml` | — |
@@ -1586,6 +1604,9 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/program_reconcile_s741_copper_mountain_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_reconcile_s741_cuyamaca_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_reconcile_s742_cabrillo_test.py` | workflows: `js-tests.yml` | — |
+| `tests/program_reconcile_s748_alameda_test.py` | workflows: `js-tests.yml` | — |
+| `tests/program_reconcile_s748_lassen_test.py` | workflows: `js-tests.yml` | — |
+| `tests/program_reconcile_s748_sbvc_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_record_verdicts_sql_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_renumbers_s740_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_renumbers_s742_sjcc_test.py` | workflows: `js-tests.yml` | — |
@@ -1766,7 +1787,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `cdnjs.cloudflare.com` | scripts: `prototype/globe/build_globe.py` |
 | `cerritos-public.courseleaf.com` | scripts: `kb/_subject_code_address_probe.py` |
 | `chaffey.curriqunet.com` | scripts: `kb/_course_outline_census.py` |
-| `claude.ai` | tabs: `admin`, `canonical-subj4`, `coci-lookup`, `commons`, `exhibits` · modules: `a11y.config.js`, `commons_front.js` · scripts: `kb/_build_claude_md_audit_decision_sheet.py`, `kb/_build_esl_followup_decision_sheet.py`, `kb/_build_esl_merging_decision_sheet.py`, `kb/_esl_monthly_pass.py`, `kb/_esl_new_identities_dryrun.py`, `kb/_esl_sheet_apply_build.py`, `scripts/announce_session_hint.py`, `scripts/build_exhibits_list_preview.py` · workflows: `cpl-chat-health.yml`, `map-users-sync.yml` |
+| `claude.ai` | tabs: `admin`, `canonical-subj4`, `coci-lookup`, `commons`, `cpl-pathways`, `exhibits` · modules: `a11y.config.js`, `commons_front.js` · scripts: `kb/_build_claude_md_audit_decision_sheet.py`, `kb/_build_esl_followup_decision_sheet.py`, `kb/_build_esl_merging_decision_sheet.py`, `kb/_esl_monthly_pass.py`, `kb/_esl_new_identities_dryrun.py`, `kb/_esl_sheet_apply_build.py`, `scripts/announce_session_hint.py`, `scripts/build_exhibits_list_preview.py` · workflows: `cpl-chat-health.yml`, `map-users-sync.yml` |
 | `coci2.ccctechcenter.net` | scripts: `kb/_write_oc_medical_assistant_html.py`, `kb/_write_oc_medical_assistant_workbook.py` |
 | `code.claude.com` | scripts: `scripts/install_prompt_guards.py` |
 | `commons.wikimedia.org` | tabs: `first-light` · pages: `CPL_Dashboard.html` · scripts: `scripts/fetch_gallery_thumbs.py`, `scripts/fetch_sierra_art.py`, `tools/source_first_light_art.mjs` |
@@ -1966,5 +1987,5 @@ check these BY HAND before trusting an absence:
 - `kb/_row_audit_prune.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 119 Supabase tables · 68 RPCs · 16 edge functions · 1402 file
-datasets · 203 external services · 744 consumers · 77 workflows · 41 tabs.
+Coverage: 119 Supabase tables · 68 RPCs · 16 edge functions · 1423 file
+datasets · 203 external services · 752 consumers · 77 workflows · 41 tabs.

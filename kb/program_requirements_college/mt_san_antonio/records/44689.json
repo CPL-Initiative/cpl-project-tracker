@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -58,19 +59,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    32.0,
+    36.0,
     38.0
    ],
    "stated": [
     36.0,
     38.0
    ],
-   "why": [
-    "the blocks sum to 32.0-38.0; the catalog states 36.0-38.0"
-   ]
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -86,7 +86,15 @@
    "heading_without_outcomes": false,
    "pass": true
   },
-  "pass": false
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
  },
  "record": {
   "program": {
@@ -318,5 +326,6 @@
    "Program outcomes are taken from the description ('Students who successfully complete the Certificate Level II will be able to:'). The outcomes tab prints a 'Program Learning Outcomes' heading with only a link to review SLOs and no outcomes text."
   ]
  },
- "extracted_run": "38059865531"
+ "extracted_run": 46124747415,
+ "read_run": "38059865531"
 }
