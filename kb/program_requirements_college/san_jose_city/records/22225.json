@@ -1,0 +1,296 @@
+{
+ "college": "San Jose City College",
+ "control_number": "22225",
+ "shape": "certificate",
+ "title": "Real Estate",
+ "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+ "source_url": "https://catalog.sjcc.edu/degrees-certificates/business/real-estate-certificate-achievement-level-2/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7042,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7042,
+    "output_tokens": 1775,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1775,
+  "output_tokens_details": {
+   "thinking_tokens": 477
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06367,
+ "ms": 14382,
+ "seconds": 18.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 3,
+   "share": 0.667,
+   "missing": [
+    "REALESTATERE"
+   ],
+   "unexplained": [
+    "REALESTATERE"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 8,
+   "codes": [
+    "BUS71",
+    "REST122",
+    "REST123",
+    "REST124",
+    "REST125",
+    "REST126",
+    "REST127",
+    "REST128"
+   ],
+   "flagged": [
+    "BUS71",
+    "REST122",
+    "REST124",
+    "REST126",
+    "REST127",
+    "REST128"
+   ],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    28.0
+   ],
+   "stated": [
+    24.0,
+    28.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 28
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Complete the educational requirements for California Real Estate licensing and prepare for the state licensing exams.",
+    "Discriminate among knowledge and skills to uncover and apply the core competencies for a successful career in real estate.",
+    "Evaluate real estate together with personal financial principles to discern its role in an individual's personal financial well-being."
+   ],
+   "careers": [
+    "Real Estate Office",
+    "Property Management",
+    "Related Housing and Financial Institutions"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "REST 122",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "REST 123",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "REST 124",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "REST 125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "REST 126",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Select one course from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "ACCTG 020",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCTG 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "REST 128",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Select two non-duplicated courses from the following:",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "ACCTG 020",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCTG 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 071",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "REST 127",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "REST 128",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Closed list entries have garbled codes ('AccountingAC' Financial Accounting, 'RealEstateRE' Real Estate Practice, 'RealEstateRE' Real Estate Appraisal); matched by title to ACCTG 020, REST 125 and REST 123 respectively and marked catalog_addition false. Reviewer should confirm.",
+   "The overview text refers to 'REAL 123' (printed twice) for the Broker license; the requirements list uses the REST subject. Likely a typo; not recorded as a course.",
+   "The 'Select two non-duplicated courses' list repeats ACCTG 020, ACCTG 101 and REST 128 from the 'Select one' list; presumably a course used in one list cannot be reused in the other.",
+   "Outcomes are printed on the page's outcomes tab for the program; the page also mentions an AS degree, so the list may be shared with the AS.",
+   "Career options are listed as fields: Real Estate Office, Property Management, Related Housing and Financial Institutions."
+  ]
+ },
+ "extracted_run": "46121988906",
+ "catalog_year": "2026-2027"
+}
