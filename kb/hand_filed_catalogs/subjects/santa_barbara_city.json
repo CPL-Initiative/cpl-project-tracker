@@ -120,6 +120,22 @@
    "run": "45625259489"
   },
   {
+   "code": "ACTV",
+   "heading": "Accounting",
+   "heading_printed": "Accounting",
+   "rule": "index",
+   "codes": [
+    "ACTV"
+   ],
+   "candidate": null,
+   "address": "https://catalog.sbcc.edu/sel/career-skills",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
+   "run": "45625259489"
+  },
+  {
    "code": "ADC",
    "heading": "Addictive Disorders Counseling",
    "heading_printed": "Addictive Disorders Counseling",
@@ -149,6 +165,22 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "AHV",
+   "heading": "Allied Health",
+   "heading_printed": "Allied Health",
+   "rule": "index",
+   "codes": [
+    "AHV"
+   ],
+   "candidate": null,
+   "address": "https://catalog.sbcc.edu/sel/career-skills",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
    "run": "45625259489"
   },
   {
@@ -392,6 +424,22 @@
    "run": "45625259489"
   },
   {
+   "code": "CAV",
+   "heading": "Culinary Arts",
+   "heading_printed": "Culinary Arts",
+   "rule": "index",
+   "codes": [
+    "CAV"
+   ],
+   "candidate": null,
+   "address": "https://catalog.sbcc.edu/sel/career-skills",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
+   "run": "45625259489"
+  },
+  {
    "code": "CHEM",
    "heading": "Chemistry",
    "heading_printed": "Chemistry",
@@ -472,6 +520,38 @@
    "run": "45625259489"
   },
   {
+   "code": "CISV",
+   "heading": "Computer Information Systems",
+   "heading_printed": "Computer Information Systems",
+   "rule": "index",
+   "codes": [
+    "CISV"
+   ],
+   "candidate": null,
+   "address": "https://catalog.sbcc.edu/sel/career-skills",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
+   "run": "45625259489"
+  },
+  {
+   "code": "CMPW",
+   "heading": "Computer Applications",
+   "heading_printed": "Computer Applications",
+   "rule": "index",
+   "codes": [
+    "CMPW"
+   ],
+   "candidate": null,
+   "address": "https://catalog.sbcc.edu/sel/career-skills",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
+   "run": "45625259489"
+  },
+  {
    "code": "CNA",
    "heading": "Certified Nursing Assistant",
    "heading_printed": "Certified Nursing Assistant",
@@ -504,6 +584,22 @@
    "run": "45625259489"
   },
   {
+   "code": "CNEW",
+   "heading": "Computer Network",
+   "heading_printed": "Computer Network",
+   "rule": "index",
+   "codes": [
+    "CNEW"
+   ],
+   "candidate": null,
+   "address": "https://catalog.sbcc.edu/sel/career-skills",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
+   "run": "45625259489"
+  },
+  {
    "code": "COMM",
    "heading": "Communication",
    "heading_printed": "Communication",
@@ -533,6 +629,22 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "COMW",
+   "heading": "Communication",
+   "heading_printed": "Communication",
+   "rule": "index",
+   "codes": [
+    "COMW"
+   ],
+   "candidate": null,
+   "address": "https://catalog.sbcc.edu/sel/career-skills",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
    "run": "45625259489"
   },
   {
@@ -581,6 +693,22 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "CTV",
+   "heading": "Construction Technology",
+   "heading_printed": "Construction Technology",
+   "rule": "index",
+   "codes": [
+    "CTV"
+   ],
+   "candidate": null,
+   "address": "https://catalog.sbcc.edu/sel/career-skills",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
    "run": "45625259489"
   },
   {
@@ -680,6 +808,22 @@
    "run": "45625259489"
   },
   {
+   "code": "EHV",
+   "heading": "Environmental Horticulture",
+   "heading_printed": "Environmental Horticulture",
+   "rule": "index",
+   "codes": [
+    "EHV"
+   ],
+   "candidate": null,
+   "address": "https://catalog.sbcc.edu/sel/career-skills",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
+   "run": "45625259489"
+  },
+  {
    "code": "EMT",
    "heading": "Emergency Medical Technician",
    "heading_printed": "Emergency Medical Technician",
@@ -693,6 +837,22 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "EMTV",
+   "heading": "Emergency Medical Tech",
+   "heading_printed": "Emergency Medical Tech",
+   "rule": "index",
+   "codes": [
+    "EMTV"
+   ],
+   "candidate": null,
+   "address": "https://catalog.sbcc.edu/sel/career-skills",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
    "run": "45625259489"
   },
   {
@@ -904,6 +1064,22 @@
    "run": "45625259489"
   },
   {
+   "code": "GDPW",
+   "heading": "Graphic Design",
+   "heading_printed": "Graphic Design",
+   "rule": "index",
+   "codes": [
+    "GDPW"
+   ],
+   "candidate": null,
+   "address": "https://catalog.sbcc.edu/sel/career-skills",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
+   "run": "45625259489"
+  },
+  {
    "code": "GEOG",
    "heading": "Geography",
    "heading_printed": "Geography",
@@ -1064,6 +1240,22 @@
    "run": "45625259489"
   },
   {
+   "code": "IBW",
+   "heading": "International Business",
+   "heading_printed": "International Business",
+   "rule": "index",
+   "codes": [
+    "IBW"
+   ],
+   "candidate": null,
+   "address": "https://catalog.sbcc.edu/sel/career-skills",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
+   "run": "45625259489"
+  },
+  {
    "code": "ID",
    "heading": "Interior Design",
    "heading_printed": "Interior Design",
@@ -1144,6 +1336,22 @@
    "run": "45625259489"
   },
   {
+   "code": "LIBW",
+   "heading": "Library",
+   "heading_printed": "Library",
+   "rule": "index",
+   "codes": [
+    "LIBW"
+   ],
+   "candidate": null,
+   "address": "https://catalog.sbcc.edu/sel/career-skills",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
+   "run": "45625259489"
+  },
+  {
    "code": "MAT",
    "heading": "Multimedia Arts and Technologies",
    "heading_printed": "Multimedia Arts and Technologies",
@@ -1173,6 +1381,22 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "MATW",
+   "heading": "Multimedia",
+   "heading_printed": "Multimedia",
+   "rule": "index",
+   "codes": [
+    "MATW"
+   ],
+   "candidate": null,
+   "address": "https://catalog.sbcc.edu/sel/career-skills",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
    "run": "45625259489"
   },
   {
@@ -1221,6 +1445,22 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "MKTW",
+   "heading": "Marketing",
+   "heading_printed": "Marketing",
+   "rule": "index",
+   "codes": [
+    "MKTW"
+   ],
+   "candidate": null,
+   "address": "https://catalog.sbcc.edu/sel/career-skills",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
    "run": "45625259489"
   },
   {
@@ -1304,6 +1544,22 @@
    "run": "45625259489"
   },
   {
+   "code": "PDW",
+   "heading": "Personal Development",
+   "heading_printed": "Personal Development",
+   "rule": "index",
+   "codes": [
+    "PDW"
+   ],
+   "candidate": null,
+   "address": "https://catalog.sbcc.edu/sel/career-skills",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
+   "run": "45625259489"
+  },
+  {
    "code": "PE",
    "heading": "Physical Education/Health Education/Dance/Athletics",
    "heading_printed": "Physical Education/Health Education/Dance/Athletics",
@@ -1349,6 +1605,22 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "PHOW",
+   "heading": "Photography",
+   "heading_printed": "Photography",
+   "rule": "index",
+   "codes": [
+    "PHOW"
+   ],
+   "candidate": null,
+   "address": "https://catalog.sbcc.edu/sel/career-skills",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
    "run": "45625259489"
   },
   {
@@ -1413,6 +1685,22 @@
    "method": "subject heading",
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "PROW",
+   "heading": "Professional Development",
+   "heading_printed": "Professional Development",
+   "rule": "index",
+   "codes": [
+    "PROW"
+   ],
+   "candidate": null,
+   "address": "https://catalog.sbcc.edu/sel/career-skills",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-27",
+   "found_by": "COBIx, from the SBCC Skill Enrichment (SEL) career-skills page; second-reader accept at 85",
    "run": "45625259489"
   },
   {
@@ -1672,6 +1960,6 @@
    "run": "45625259489"
   }
  ],
- "subjects": 98,
- "with_heading": 98
+ "subjects": 116,
+ "with_heading": 116
 }

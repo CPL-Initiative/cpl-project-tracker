@@ -87,6 +87,13 @@ with tempfile.TemporaryDirectory() as root:
           (rows.get("FILM") or {}).get("heading") == "Film" and rows["FILM"].get("run") == "444"
           and "ART" not in rows and "MUS" not in rows and r["added"] == 1 and r["skipped"] == 2, json.dumps(r))
 
+    put(os.path.join(F.FOUND, "sierra.json"), {"college": "Sierra College", "run": "333", "read_at": "2026-11-27T19:00:00Z",
+        "titles": [{"code": "RISE", "title": "RISE", "url": "https://sierra.example/rise"}]})
+    r = F.file_one(os.path.join(F.FOUND, "sierra.json"), False)
+    rows = {x["code"]: x for x in json.load(open(os.path.join(F.SUBJECTS, "sierra.json")))["rows"]}
+    check("(8) an explicit allow-list code-only heading is filed; the global rule is unchanged",
+          r["added"] == 1 and rows["RISE"]["heading"] == "Rise" and r["skipped"] == 0, json.dumps(r))
+
 fail = 0
 with tempfile.TemporaryDirectory() as root:
     F.FOUND = os.path.join(root, "kb", "subject_title_hunt", "found")

@@ -1131,6 +1131,22 @@
    "run": "45623883828"
   },
   {
+   "code": "GREEK",
+   "heading": "Greek",
+   "heading_printed": "Greek",
+   "rule": "index",
+   "codes": [
+    "GREEK"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
    "code": "HCD",
    "heading": "Human/Career Development",
    "heading_printed": "Human/Career Development",
@@ -2139,6 +2155,6 @@
    "run": "45623883828"
   }
  ],
- "subjects": 133,
- "with_heading": 133
+ "subjects": 134,
+ "with_heading": 134
 }
