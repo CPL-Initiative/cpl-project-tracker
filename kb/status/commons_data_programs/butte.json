@@ -1,4 +1,4 @@
-{"schema":1,"college":"Butte College","slug":"butte","basis":"live","census_at":"2026-11-28 00:44Z","correction_rules":true,"programs":[
+{"schema":1,"college":"Butte College","slug":"butte","basis":"live","census_at":"2026-11-28 11:55Z","correction_rules":true,"programs":[
 {"cn":"11137","title":"Agriculture and Natural Resources","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"01301","title":"Agriculture Business","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"19042","title":"Communication Studies","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
@@ -25,6 +25,5 @@
 {"cn":"01363","title":"Social and Behavioral Science","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"44891","title":"Cal-GETC","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"16226","title":"Child Development","award":"A.S. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
-{"cn":"30774","title":"Noncredit Certificate of Competency in ESL","award":null,"cause":"page_not_found","lever":"reader_page_search","url":null},
-{"cn":"14583","title":"Registered Nursing","award":"A.S. Degree","cause":"units_incomplete","lever":"reconcile_steps","url":"https://butte.curriqunet.com/catalog/iq/25398/28156/28324","units":{"sum":[0.0,0.0],"printed":null,"status":"incomplete","measure":"units","against":"program"}}
+{"cn":"30774","title":"Noncredit Certificate of Competency in ESL","award":null,"cause":"page_not_found","lever":"reader_page_search","url":null}
 ]}

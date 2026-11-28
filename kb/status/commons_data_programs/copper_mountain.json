@@ -1,4 +1,4 @@
-{"schema":1,"college":"Copper Mountain College","slug":"copper_mountain","basis":"live","census_at":"2026-11-28 00:44Z","correction_rules":true,"programs":[
+{"schema":1,"college":"Copper Mountain College","slug":"copper_mountain","basis":"live","census_at":"2026-11-28 11:55Z","correction_rules":true,"programs":[
 {"cn":"43192","title":"Adult High School Diploma","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"14712","title":"Business Administration","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"42765","title":"Computer Science","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},

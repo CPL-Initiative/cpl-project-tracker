@@ -94,7 +94,8 @@
   "2026-11-24": 2.9,
   "2026-11-25": 4.4,
   "2026-11-26": 1.93,
-  "2026-11-27": 2.38
+  "2026-11-27": 2.72,
+  "2026-11-28": 0.0
  },
  "runner_runs": {
   "38322747831": {
@@ -1416,6 +1417,46 @@
    "college": "cabrillo",
    "usd": 0.0,
    "day": "2026-11-27"
+  },
+  "46017556328": {
+   "college": "cuyamaca",
+   "usd": 0.0,
+   "day": "2026-11-27"
+  },
+  "46119872022": {
+   "college": "coastline_community",
+   "usd": 0.06,
+   "day": "2026-11-27"
+  },
+  "46121983588": {
+   "college": "san_bernardino_valley",
+   "usd": 0.09,
+   "day": "2026-11-27"
+  },
+  "46121988906": {
+   "college": "san_jose_city",
+   "usd": 0.06,
+   "day": "2026-11-27"
+  },
+  "46122364368": {
+   "college": "orange_coast",
+   "usd": 0.13,
+   "day": "2026-11-27"
+  },
+  "46122727267": {
+   "college": "lassen",
+   "usd": 0.0,
+   "day": "2026-11-28"
+  },
+  "46122729926": {
+   "college": "college_of_alameda",
+   "usd": 0.0,
+   "day": "2026-11-28"
+  },
+  "46124747415": {
+   "college": "mt_san_antonio",
+   "usd": 0.0,
+   "day": "2026-11-28"
   }
  },
  "runner_since": "2026-11-17",
@@ -1446,9 +1487,9 @@
    "sessions": 5,
    "not_available": 0,
    "tags": {
-    "curation": 136.0,
+    "collection": 256.0,
     "infrastructure": 109.9,
-    "collection": 256.0
+    "curation": 136.0
    },
    "untagged_usd": 0.0,
    "estimate_usd": 288.0

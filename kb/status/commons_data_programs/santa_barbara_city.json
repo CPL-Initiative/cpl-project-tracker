@@ -1,4 +1,4 @@
-{"schema":1,"college":"Santa Barbara City College","slug":"santa_barbara_city","basis":"live","census_at":"2026-11-28 00:44Z","correction_rules":false,"programs":[
+{"schema":1,"college":"Santa Barbara City College","slug":"santa_barbara_city","basis":"live","census_at":"2026-11-28 11:55Z","correction_rules":false,"programs":[
 {"cn":"30746","title":"Sociology","award":"A.A- T Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://catalog.sbcc.edu/academic-departments/sociology/sociology-aat/"},
 {"cn":"35241","title":"Biology","award":"A.S. T Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"45037","title":"California General Education Transfer Curriculum (Cal-GETC)","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
@@ -58,6 +58,5 @@
 {"cn":"36970","title":"Secondary Education/Bi-lingual/Biliterate GED Preparation","award":"Noncredit program","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"36971","title":"Secondary Education/GED Preparation","award":"Noncredit program","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"35508","title":"Strategic Marketing","award":"Noncredit program","cause":"page_not_found","lever":"reader_page_search","url":null},
-{"cn":"43553","title":"Law, Public Policy, and Society","award":"A.A- T Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://catalog.sbcc.edu/academic-departments/justice-studies/law-public-policy-and-society-aat/","units":{"sum":[32.0,37.0],"printed":[35.0,41.0],"status":"unequal","measure":"units","against":"program"}},
 {"cn":"05934","title":"Psychology","award":"A.A. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://catalog.sbcc.edu/academic-departments/psychology/psychology-aa/","units":{"sum":[14.0,21.0],"printed":[20.0,23.0],"status":"unequal","measure":"units","against":"program"}}
 ]}
