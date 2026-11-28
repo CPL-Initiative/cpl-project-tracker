@@ -144,11 +144,11 @@ paid reads, rereads, loads and `.apply`, and holds every Supabase call.
 - 07:51Z: s748b's reader (Sonnet): APPLY (the real SQL on a scratch Postgres; each older-test edit is keyed to its own
   rows; part of the mutation check unfinished on a slow machine). Clean md5 pre-read 2 of 2. Migrate 46123111643 green
   at 07:54Z: Orange Coast 03993 and East Los Angeles 41231. Records collected: 11.
-- 08:02Z: the `list_minimum_units` second reader (Fable 5.2): NO GO, accepted with no second round (BLOCKING: the pass
+- 07:57Z: the `list_minimum_units` second reader (Fable 5.2): NO GO, accepted with no second round (BLOCKING: the pass
   comes from a ceiling the catalog does not print: the page's Subtotal 20-27 gives the degree 54-61 around the printed
   60; the step's exactly-3 passes only because its trial-score gate picks the reading the scorer likes). `piles`
   removes the kind; East Los Angeles 31017 stays held.
-- 08:05Z: `gaps` report (`claude/s748-gaps`, `624e286a`): Allan Hancock 87 = no closed list 47, page not found 23,
+- 07:59Z: `gaps` report (`claude/s748-gaps`, `624e286a`): Allan Hancock 87 = no closed list 47, page not found 23,
   unequal 14, incomplete 1, places none 2; Mt. San Antonio 83 = no closed list 41, page not found 28, unequal 13,
   incomplete 1. Plan s748g1 (Allan Hancock 7, Mt. San Antonio 2; 22 held with reasons) to a Sonnet plan reader. A free
   Mt. San Antonio reconcile after the apply may pass eight more.
