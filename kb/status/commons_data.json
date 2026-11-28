@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-28T00:45:15Z",
+ "written_at": "2026-11-28T07:51:17Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,8 +168,8 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17663,
-  "gap": 4672,
+  "passing": 17672,
+  "gap": 4663,
   "with_gap": 118,
   "cost_usd": 1341.37,
   "passed_at_read": 16566,
@@ -190,8 +190,8 @@
  "census_check": {
   "universe": 22335,
   "passing": 16986,
-  "gap": 4672,
-  "collected_with_gaps": 677,
+  "gap": 4663,
+  "collected_with_gaps": 686,
   "discontinued": 0
  },
  "census_live": {
@@ -212,13 +212,13 @@
    "harvested": true,
    "slug": "allan_hancock",
    "programs": 226,
-   "passing": 139,
-   "gap": 87,
+   "passing": 146,
+   "gap": 80,
    "causes": {
     "no_closed_list": 47,
     "page_not_found": 23,
     "places_none": 2,
-    "unknown_without_live": 15
+    "unknown_without_live": 8
    },
    "census_causes": {
     "no_closed_list": 47,
@@ -278,10 +278,8 @@
    "levers": {
     "program_course_file_check": 47,
     "reader_page_search": 23,
-    "reconcile_steps": 12,
-    "reader_page_assignment": 2,
-    "scorer_noncredit_hours": 2,
-    "ge_units_steps": 1
+    "reconcile_steps": 8,
+    "reader_page_assignment": 2
    },
    "collection": {
     "program_reader": {
@@ -8180,13 +8178,13 @@
    "harvested": true,
    "slug": "mt_san_antonio",
    "programs": 469,
-   "passing": 367,
-   "gap": 102,
+   "passing": 369,
+   "gap": 100,
    "causes": {
     "no_closed_list": 41,
     "page_not_found": 42,
     "places_none": 2,
-    "unknown_without_live": 17
+    "unknown_without_live": 15
    },
    "census_causes": {
     "no_closed_list": 41,
@@ -8242,7 +8240,7 @@
    "levers": {
     "reader_page_search": 42,
     "program_course_file_check": 41,
-    "reconcile_steps": 17,
+    "reconcile_steps": 15,
     "reader_page_assignment": 2
    },
    "collection": {

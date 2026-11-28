@@ -1336,6 +1336,12 @@ jobs:
       - name: Cheap piles S742, batch a (four colleges in one plan, the page's own words)
         if: matrix.shard == 5
         run: python3 tests/program_piles_s742a_test.py
+      # S748, batch s748g1: one plan over Allan Hancock (7 rows) and Mt. San Antonio (2), the census's failing filed
+      # records read by key. The guarded UPDATE is rebuilt from the receipts' before-images and the load's own
+      # after-images and must be the file's; a dropped guard clause, a moved expect or a moved image fails it.
+      - name: Cheap piles S748, batch g1 (Allan Hancock and Mt. San Antonio, the UPDATE rebuilt and mutated)
+        if: matrix.shard == 5
+        run: python3 tests/program_piles_s748g1_test.py
       # S742 at East Los Angeles (s742b): 02456 under unit_line_not_read, on the row S742's reread (force
       # 45176404274, kept by keep-better's Academic Plan code) posted; 3 held.
       - name: Cheap piles S742 at East Los Angeles (the unit line, on the reread's posted row)

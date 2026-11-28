@@ -98,7 +98,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "units_within_printed_range",
+    "label": "The courses' units as read fall within the printed range of units rather than matching it.",
+    "words": "the courses' units add to 22, within the printed 21-22 units | LE 310 is required only for self-sponsored students; this explains the stated 21-22 unit total range (21 for sponsored, 22 for self-sponsored). Recorded as an 'all' block with that condition in its name."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

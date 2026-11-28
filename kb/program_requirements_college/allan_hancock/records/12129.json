@@ -110,7 +110,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "noted_figures_differ",
+    "label": "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires.",
+    "words": "Unit totals conflict: the page states 'A major of 26 units is required for the degree', the core heading says '(22 units)' but its printed block total is 21.0 (courses sum to 21), and the requirements 'Total : 25.0' (21 + 4). total_units recorded as the stated 26; reviewer should check."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 71,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

@@ -147,7 +147,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "lists_not_closed",
+    "label": "A choice list prints no unit figure of its own, one that depends on another choice, or also takes courses from another list, so the lists alone cannot add the program's units.",
+    "words": "Students who choose HRM 52 for List A must choose a minimum of 7 units in List B. | List B reads 'Choose a minimum of two courses (a minimum of 6 units) from the following or any course not already used in List A'; recorded as choose_units 6, also requiring at least two courses, and List A courses not used there may also count."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 30,
+   "course_list_match": 100,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {
