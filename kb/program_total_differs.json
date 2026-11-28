@@ -364,6 +364,20 @@
     "words": "Total Units: 19-20",
     "evidence": "Entrepreneurial Studies Certificate of Achievement 38948: the page prints 'Required Core:' BUS 111 (3 units), BUS 113 (3), BUS 124 (3), BUS 125 (3), BUS 127 (3), BUS 128 (1 unit) and CIS 13 (3), seven courses that add to 19, then '3-4 units from:' over BUS 126 (3) and BUS 150 (4), and a second '3-4 units from:' over BUS 119 (3) and BUS 120 (3), under 'Total Units: 19-20' (college-page-read run 45772822110, kb/college_reads/el_camino_certificate_pages_s739.json, read as the capture reads the page). The core alone adds to the low end of the printed total, and the two lists the page prints at 3-4 units each bring its own figures to 25-27. The page prints no other course and no other figure.",
     "run": "45772822110"
+   },
+   "19857": {
+    "where": "the program's own page, http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3524&print",
+    "printed_total": [
+     36,
+     36
+    ],
+    "printed_sum": [
+     33,
+     33
+    ],
+    "words": "Total Units: 36",
+    "evidence": "Architecture Certificate of Achievement 19857: the page prints 'Required Core: 30 units' over ARCH 100 (1 unit), ARCH 107 (3 units), ARCH 108 (3), ARCH 251 (3), ARCH 170 (3), ARCH 171 (3), ARCH 149 (3), ARCH 199 (4) and ARCH 299 (4), nine courses and no choice, whose units add to 27, then '6 units from:' over ARCH 119 (3), ARCH 121 (3), ARCH 125 (3), ARCH 252 (3), ARCH 258 (3), ARCH 174 (2) and ARCH 172 (3), under 'Total Units: 36' (college-page-read run 46119948370, kb/college_reads/s748_readers_el_camino_architecture.json, read as the capture reads the page; S741's read 45953358884 printed the same lines). The core's courses add to 27 where its heading prints 30, so the page's own units add to 33, three under the total it prints; with the heading's 30 the lists add to the printed 36. The page prints no other course and no other figure.",
+    "run": "46119948370"
    }
   },
   "Santa Monica College": {

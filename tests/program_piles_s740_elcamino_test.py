@@ -82,7 +82,9 @@ check(f["score"]["arithmetic"].get("stated") is None and B.shape_cut(f, e) and B
 
 # The holds.
 f = W.load("19857")
-check(not W.on_live_run(f) and not f["score"].get("gaps"), "19857: on no proved live run, and it carries no gap")
+# S748 (plan s748r1) collects it under total_differs from its own page read (46119948370). Read in either state.
+check(not W.on_live_run(f) and [g["gap"] for g in f["score"].get("gaps") or []] in ([], ["total_differs"]),
+      "19857: on no proved live run by this plan's receipts, and it carries no gap until S748's total_differs")
 # S742: the Acalog road reads site_pages pins, and paid read 46007782666 read 19883 from its own page (poid 3640);
 # before it the record sat on the Photography A.S. page with 02512. Read in either state.
 check(W.shared_with("19883") == ["02512"]

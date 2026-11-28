@@ -699,9 +699,17 @@ with open(os.path.join(ROOT, "kb", "receipts", "program_requirement_records_pile
                  if r["moves_to"] == "total_differs" and r["after_image"]["checks"].get("gaps") == ["total_differs"]
                  and not (r["before_image"]["checks"] or {}).get("gaps")}
 check(_s742a_td == {("Santa Monica College", "21026")}, "the S742 batch moves 21026 to total_differs")
+# S748 (lane 1, page read 46119948370), by the same record rule inside El Camino's plan s748r1: Architecture
+# certificate 19857 (33 under 'Total Units: 36'), held by S741 and S742.
+with open(os.path.join(ROOT, "kb", "receipts", "program_requirement_records_piles_s742_el_camino_2026-11-28_s748r1.json"),
+          encoding="utf-8") as _fh:
+    _s748_td = {(r["college"], str(r["control_number"])) for r in _json.load(_fh)["records"]
+                if r["moves_to"] == "total_differs" and r["after_image"]["checks"].get("gaps") == ["total_differs"]
+                and not (r["before_image"]["checks"] or {}).get("gaps")}
+check(_s748_td == {("El Camino College", "19857")}, "the S748 plan moves 19857 to total_differs")
 check(_p2["only_gaps"] == ["total_differs"] and not _p2["recall"]["wrong"]
       and _p2_keys | {(r["college"], str(r["control_number"])) for r in _s703_td} | _s714e_td | _s740_td | _s741_td | _s741b_td
-      | _s742_td | _s742a_td == set(_td)
+      | _s742_td | _s742a_td | _s748_td == set(_td)
       and {(r["college"], str(r["control_number"])) for r in _s703_td} == {("Clovis Community College", "33491")}
       and all(r["after_image"]["checks"].get("gaps") == ["total_differs"]
               and not (r["before_image"]["checks"] or {}).get("gaps") for r in _p2["records"] + _s703_td),
