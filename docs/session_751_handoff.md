@@ -88,3 +88,13 @@ rereads, loads and `.apply`, and holds every Supabase call.
   record and checks, none checked, but one matching confirm: Cerritos 02235 carries Sam's confirm verdict of 2026-10-15
   (verdict 36) on the live record. A person-settled record stays untouched (`d-cerritos-02235-person-confirmed-s750`):
   `piles` narrows the plan to seven; no second reader round for a row removed.
+- 15:22Z: `found` stop 1 (`claude/s750-found`, `21f0f3ee`): the extract function v13 reads an empty closed list only
+  beside `no_closed_list: true` (the runner declares it for `catalog_lookup` sources only); `score()` sets coverage
+  false at zero listed courses with gap `no_state_course_list` (1,523 passing records rescored against an empty list:
+  0 pass); the opt-in only asks, and the capture files found pages at a college only where its own recall is at least
+  0.8 over at least 30 tested with none wrong. Recall on filed pages, with an oracle chosen on course codes while the
+  rule reads title and award: eleven colleges clear; Glendale does not (8 right of 165; its filed rows name programs
+  by code). S748's Skyline capture filed 0 of 55, by inference because Skyline serves each page as `.php` and `.xml`.
+  Six free captures running (Skyline 46155715421, Allan Hancock 46155901281, San Mateo 46157242032, Diablo Valley
+  46157353221, San Joaquin Delta 46157465447, Gavilan 46157620485). The function deploys from `main`
+  (`cpl-chat-deploy.yml`), so the land comes first. To a Fable 5.2 second reader.
