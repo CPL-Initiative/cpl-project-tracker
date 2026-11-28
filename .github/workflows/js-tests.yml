@@ -1276,6 +1276,11 @@ jobs:
       - name: Site pins, the plural reading (S742, Coastline 43057 and the statewide self-recall)
         if: matrix.shard == 5
         run: python3 tests/program_requirements_pin_plural_s742_test.py
+      # S748: where a college opts in, the capture files the catalog lookup's found page as a no-closed-list
+      # program's source (off for every college today), with its self-recall against each passing record's page.
+      - name: Found pages of no-closed-list programs (S748, off by default, the statewide self-recall)
+        if: matrix.shard == 5
+        run: python3 tests/program_requirements_found_pages_s748_test.py
       # S742: a compact live read (live_runs grouped by run, a count and an md5 a college) expands to keep-better's
       # shape only when it checks out against itself.
       - name: Live read, the compact form expanded and checked (S742)
