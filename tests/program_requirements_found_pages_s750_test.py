@@ -16,7 +16,9 @@ probe. This file pins what round 2 changed:
      live-passing filed record at the twelve colleges, read as the function is told to read a no-list program
      (each course a catalog addition) and scored against an empty list: none passes coverage, though most would
      pass on their arithmetic alone. No filed record is scored against an empty list, so no filed score moves.
-  3. THE OPT-IN. The reconcile entry's key only asks. The capture measures the lookup's recall on its own pages
+  3. THE OPT-IN. A college asks in the map "read_found_pages" at the top of kb/program_requirements_reconcile.json
+     (C.ncl_asking; beside "colleges", never inside it, since an entry there tells the Commons the college has
+     correction rules of its own), and asking switches nothing on. The capture measures the lookup's recall on its own pages
      against answers already held (C.ncl_found_recall, the open setting) and files found pages only where it
      clears the floor (C.ncl_reads_found, C.ncl_file_found).
      HOW THE ORACLE DIFFERS FROM THE RULE. The rule (C.ncl_match) reads a page's heading, title and address
@@ -332,11 +334,11 @@ check(mixed["tested"] == 30 and mixed["right"] == 30 and mixed["not_read"] == 4 
       "only held answers are tested: a failing record is no answer, and a passing record whose page was not read is "
       "counted apart (not_read %d)" % mixed["not_read"])
 
-real_steps = R.load_steps
+real_asking = C.ncl_asking
 
 
 def with_key(on):
-    R.load_steps = lambda *a, **k: {FIX: {"steps": [], C.NCL_READ_KEY: True}} if on else {FIX: {"steps": []}}
+    C.ncl_asking = (lambda: {FIX: "the fixture asks"}) if on else (lambda: {})
 
 
 def file_found(on, **kw):
@@ -359,7 +361,7 @@ def file_found(on, **kw):
         written = []
         got = quiet(C.ncl_file_found, FIX, recs, programs, pages, answers, REG, filed.get, written.append)
     finally:
-        R.load_steps = real_steps
+        C.ncl_asking = real_asking
     return recs, got, answers, written
 
 
@@ -377,7 +379,7 @@ try:
     check(not C.ncl_asks_found(FIX) and not C.ncl_reads_found(FIX, clean),
           "the key off: a recall that clears switches nothing on")
 finally:
-    R.load_steps = real_steps
+    C.ncl_asking = real_asking
 
 recs, got, answers, written = file_found(True)
 check(all(a["result"] == "found" for a in answers.values()) and methods(recs) == [C.NCL_FOUND_METHOD] * 2
@@ -445,7 +447,7 @@ with_key(True)
 try:
     acct = C.ncl_account(recs, answers, {"searches": True}, REG["catalog_year"], got)
 finally:
-    R.load_steps = real_steps
+    C.ncl_asking = real_asking
 fr = acct.get("found_read") or {}
 check(fr.get("filed") == 2 and fr.get("unfiled") == {} and fr.get("reads") is True and fr.get("tested") == 36
       and all(f.get("filed") is True and "unfiled" not in f for f in acct["found_programs"]),
@@ -471,7 +473,7 @@ try:
     got = quiet(C.ncl_file_found, FIX, recs, programs, pages, answers, REG, filed.get)
     acct_why = C.ncl_account(recs, answers, {"searches": True}, REG["catalog_year"], got)
 finally:
-    R.load_steps = real_steps
+    C.ncl_asking = real_asking
 whys = {f["control_number"]: f.get("unfiled") for f in acct_why["found_programs"]}
 check(got["reads"] is True and acct_why["found_read"]["filed"] == 0
       and "rule A" in (whys["10001"] or "") and "read 0 times" in (whys["10002"] or "")
@@ -547,7 +549,9 @@ check(len(clearing) >= 9 and all(RECALLS[s][1]["wrong"] == 0 for s in TWELVE),
 # ── 6. no entry asks without a measurement behind it ─────────────────────────────────────────────────
 print("6. the committed opt-ins")
 STEPS = R.load_steps()
-asking = sorted(c for c, e in STEPS.items() if isinstance(e, dict) and C.NCL_READ_KEY in e)
+asking = sorted(C.ncl_asking())
+with open(R.STEPS, encoding="utf-8") as fh:
+    WHOLE = json.load(fh)
 by_name = {name: (s, got) for s, (name, got, _) in RECALLS.items()}
 
 
@@ -568,8 +572,14 @@ def measured(college_):
     return False
 
 
-check(all(STEPS[c][C.NCL_READ_KEY] is True for c in asking) and all(measured(c) for c in asking),
-      "every reconcile entry that asks (%s) has a recall that clears the floor behind it" % (asking or "none today"))
+check(all(isinstance(C.ncl_asking()[c], str) and len(C.ncl_asking()[c]) > 40 for c in asking)
+      and all(measured(c) for c in asking),
+      "every college that asks (%s) says why and has a recall that clears the floor behind it" % (asking or "none today"))
+check(asking == sorted(WHOLE.get(C.NCL_READ_KEY) or {}) and C.NCL_READ_KEY == "read_found_pages"
+      and not any(isinstance(e, dict) and C.NCL_READ_KEY in e for e in STEPS.values())
+      and set(asking) <= set(by_name),
+      "the ask lives in the map at the top of the reconcile file, names filed colleges, and no college's entry "
+      "under \"colleges\" carries it (an entry there reads as correction rules on the Commons)")
 check(not measured("Glendale Community College") and measured("Skyline College")
       and not measured("San Bernardino Valley College"),
       "the rule itself: Skyline may ask on its filed pages; Glendale and San Bernardino Valley may not, until a "

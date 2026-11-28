@@ -1980,7 +1980,7 @@ def ncl_account(recs: list[dict], answers: dict[str, dict], test: dict, catalog_
     closed-list program holding it (holder, taker, the page and its heading, and catalog_year, the year the lookup
     ran under, which a later capture's filed yield must match: ncl_capture_yields); yield_unjudged and
     yield_refused_passing: the candidates whose page stayed (ncl_yield, S668).
-    found_read (S750): given only where the college's entry asks for its found pages to be read (ncl_asks_found):
+    found_read (S750): given only where the college asks for its found pages to be read (ncl_asks_found):
     the recall the capture measured (ncl_found_recall) and whether it read them. The account then carries it with
     how many found pages were filed as sources and how many stayed unfiled, by reason, and each found program says
     which it was. A college that does not ask gets the account it always got, key for key."""
@@ -2039,10 +2039,11 @@ def ncl_account(recs: list[dict], answers: dict[str, dict], test: dict, catalog_
 # ── the found page as the program's source (S748, S652's slice B) ───────────
 # The lookup above only records: a program with no list in the Program Course File keeps method no_closed_list, no
 # source and no text beside its found page, so no read ever sends it (Skyline: 55 found pages, none read; 194 Active
-# programs at 14 colleges on the filed captures of 2026-11-28). Where the college's reconcile entry says
-# "read_found_pages": true, capture() files the found page as the program's source, method catalog_lookup, with the
-# page's text, so a paid read can name it. OFF for every college whose entry lacks the key: its capture files what
-# it filed before, byte for byte (tests/program_requirements_found_pages_s748_test.py).
+# programs at 14 colleges on the filed captures of 2026-11-28). Where the college asks (S750: the map
+# "read_found_pages" at the top of kb/program_requirements_reconcile.json, ncl_asking; S748 kept a key in the
+# college's entry) and its measured recall clears the floor, capture() files the found page as the program's source,
+# method catalog_lookup, with the page's text, so a paid read can name it. OFF for every college that does not ask:
+# its capture files what it filed before, byte for byte (tests/program_requirements_found_pages_s748_test.py).
 #
 # A found page is filed only where it is the program's own by the reader's page checks as well as by the lookup:
 # rules B, C and A (RC.site_page: never a course-descriptions or general-education page, the text read with every
@@ -2079,11 +2080,22 @@ NCL_READ_FLOOR = NCL_FLOOR
 NCL_READ_MIN_TESTED = 30
 
 
-def ncl_asks_found(college: str) -> bool:
-    """Whether the college's reconcile entry asks for its found pages to be read (NCL_READ_KEY true; absent is no).
-    Asking does not switch the read on: ncl_reads_found() also needs the measured recall."""
+def ncl_asking() -> dict[str, str]:
+    """{college: why} of the colleges that ask for their found pages to be read: the map under NCL_READ_KEY at the top
+    of kb/program_requirements_reconcile.json, beside "colleges" and never inside it. A college's entry under
+    "colleges" says it has correction rules of its own (the Commons reads the entry's presence,
+    kb/_build_commons_data_status.py correction_rule_colleges), and five of the first twelve colleges to ask have
+    none, so the ask does not live there. No map, or a college absent from it, is no ask."""
     import _program_requirements_reconcile as R
-    return (R.load_steps().get(college) or {}).get(NCL_READ_KEY) is True
+    with open(R.STEPS, encoding="utf-8") as fh:
+        asking = json.load(fh).get(NCL_READ_KEY)
+    return asking if isinstance(asking, dict) else {}
+
+
+def ncl_asks_found(college: str) -> bool:
+    """Whether the college asks for its found pages to be read (ncl_asking). Asking does not switch the read on:
+    ncl_reads_found() also needs the measured recall."""
+    return college in ncl_asking()
 
 
 def ncl_found_recall(programs: list[dict], pages: list[dict], filed) -> dict:
@@ -2131,7 +2143,7 @@ def ncl_found_recall(programs: list[dict], pages: list[dict], filed) -> dict:
 
 
 def ncl_reads_found(college: str, recall: dict | None) -> bool:
-    """Whether the capture files the college's found pages as sources: its reconcile entry asks (ncl_asks_found) and
+    """Whether the capture files the college's found pages as sources: the college asks (ncl_asks_found) and
     the recall this capture measured on its own pages clears the floor (ncl_found_recall). No recall is no read."""
     return ncl_asks_found(college) and bool((recall or {}).get("clears"))
 
@@ -2198,7 +2210,7 @@ def ncl_filed(college: str, rec: dict, program: dict, reg: dict, answer: dict, p
 def ncl_file_found(college: str, recs: list[dict], programs: list[dict], pages: list[dict], answers: dict[str, dict],
                    reg: dict, filed, write=None) -> dict | None:
     """capture()'s step after the lookup: each looked-up program's record in recs is replaced by what ncl_filed()
-    files for it, and written (write(rec)). A found page becomes a source only where the college's entry asks
+    files for it, and written (write(rec)). A found page becomes a source only where the college asks
     (ncl_asks_found) and the recall measured here clears the floor (ncl_found_recall on the pages this capture
     read, against the passing records filed for the college, filed(control number)). Returns the measurement with
     reads (whether the pages were filed), or None for a college that does not ask: nothing is measured for it, and
@@ -6457,8 +6469,8 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
                 recs[i].update(lost_pages=[lost], yielded_to=taker)
                 _write(os.path.join(out_dir, "sources", rec["control_number"] + ".json"), recs[i])
                 print("%-6s page_claimed %s (yielded to %s)" % (rec["control_number"], lost, taker), flush=True)
-            # S748, S750: each looked-up program's record, a found page as its source only where the college's
-            # entry asks and the recall this capture measures on its own pages clears the floor (ncl_file_found).
+            # S748, S750: each looked-up program's record, a found page as its source only where the college
+            # asks and the recall this capture measures on its own pages clears the floor (ncl_file_found).
             found_read = ncl_file_found(
                 college, recs, programs, pages, answers, reg, ncl_filed_records(folder),
                 lambda rec: _write(os.path.join(out_dir, "sources", rec["control_number"] + ".json"), rec))

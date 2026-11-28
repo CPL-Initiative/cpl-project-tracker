@@ -11,7 +11,10 @@ programs, and 194 Active programs at 14 colleges have a found page on the filed 
 for a later slice.
 
 THE CHANGE (kb/_program_requirements_college.py, kb/_program_requirements_extract.py).
-  * ncl_asks_found(college): the college's reconcile entry carries "read_found_pages": true. No entry does today.
+  * ncl_asks_found(college): the college asks for its found pages to be read. No college does on main. (S748 kept
+    the ask as a key in the college's reconcile entry; S750 moved it to the map "read_found_pages" at the top of
+    kb/program_requirements_reconcile.json, C.ncl_asking, since an entry under "colleges" tells the Commons the
+    college has correction rules of its own.)
     Since S750 the key only asks: ncl_reads_found(college, recall) also needs the recall the capture measures on
     its own pages to clear the floor (tests/program_requirements_found_pages_s750_test.py pins that, the function's
     version 13, the scorer at zero listed courses, and the page filed where one page has two addresses).
@@ -95,12 +98,13 @@ FOLDERS = sorted(glob.glob(os.path.join(BASE, "*", "")))
 # ── 1. off by default ─────────────────────────────────────────────────────────────────────────────
 print("1. off by default")
 STEPS = R.load_steps()
-# The colleges whose entry asks, each by its own key. None asks on main; a sibling branch carries one college's key
+# The colleges that ask (C.ncl_asking). None asks on main; a sibling branch carries one college's ask
 # for its capture, so the test reads either state. Which college may ask is the S750 test's rule: one with a
 # measured recall that clears the floor (tests/program_requirements_found_pages_s750_test.py, section 6).
-opted = {c for c, e in STEPS.items() if isinstance(e, dict) and C.NCL_READ_KEY in e}
-check(all(STEPS[c][C.NCL_READ_KEY] is True for c in opted),
-      "each reconcile entry that carries %r carries it as true (%s)" % (C.NCL_READ_KEY, sorted(opted)))
+opted = set(C.ncl_asking())
+check(not any(isinstance(e, dict) and C.NCL_READ_KEY in e for e in STEPS.values()),
+      "no college's reconcile entry carries %r: the ask lives in the file's own map (%s ask)"
+      % (C.NCL_READ_KEY, sorted(opted) or "none"))
 colleges = []
 for folder in FOLDERS:
     try:
