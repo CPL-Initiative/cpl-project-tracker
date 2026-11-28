@@ -21,16 +21,20 @@ coverage with the course explained, as a reader's own 'not in the text' explains
     after-image is the load's image of the committed record: coverage true and nothing else moved, no gap, the
     record unchanged, the row passing as the live table counts it; the reconcile's keep_named_gaps leaves each
     committed score as it is; the four SQL files are the receipts' own, the UPDATE expects 3, a second run plans
-    none;
+    none; the apply and the rollback are each rebuilt from the receipts' images to the byte, with every guard
+    clause once, and 19 changes to them (a guard dropped, expect moved, the confirm guard dropped, an image
+    moved) each fail here;
   * the holds: City College of San Francisco 32079 (the own-page guard) and 41315 (the capture finds the course);
   * where the evidence stands statewide on a record still failing, by college, for the conductor to assign.
 
 Run from repo root: python3 tests/program_piles_s748c_test.py
 """
 import collections
+import copy
 import glob
 import json
 import os
+import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -191,6 +195,103 @@ with open(os.path.join(ROOT, "kb", "migrations", "%s_%s_prreq_piles_apply.sql" %
 check(apply_sql.count("e(expect) as (values (%d))" % N) == 1 and "r.checked is not true" in apply_sql
       and "r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record" in apply_sql,
       "the one UPDATE expects the batch's three rows, each on its run, its before-image and no person's check")
+
+# ── the UPDATE and its rollback as written (the second reader, S748: five changes to the two files left this test
+# passing: the rollback's r.checks = v.after_checks, its r.checked is not true, its expect, the apply's confirm
+# guard, and an after-image's checks inside the apply text) ──
+with open(os.path.join(ROOT, "kb", "migrations", "%s_%s_prreq_piles_rollback.sql" % (DAY, M.TAG)), encoding="utf-8") as fh:
+    rollback_sql = fh.read()
+plan_rows = sorted((x for rc in receipts.values() for x in rc["records"]), key=lambda x: x["i"])
+rebuilt_rows = [{"i": x["i"], "college": x["college"], "control_number": x["control_number"],
+                 "extracted_run": images[(x["college"], x["control_number"])]["extracted_run"],
+                 "before_image": {"record": x["before_image"]["record"], "checks": x["before_image"]["checks"]},
+                 "after_image": {"checks": x["after_image"]["checks"]}} for x in plan_rows]
+check([(x["college"], x["control_number"], x["i"]) for x in rebuilt_rows] == [(c, cn, i) for i, (c, cn, _) in enumerate(ROWS, 1)],
+      "the receipts' rows are the batch's three, numbered 1 to 3")
+APPLY = M.B10.P.confirm_guarded_apply(rebuilt_rows, M.TAG + " piles")
+ROLLBACK = NG.rollback_sql(rebuilt_rows, M.TAG + " piles rollback")
+RUN, PERSON, EXPECT, COUNT = ("r.extracted_run = v.extracted_run", "r.checked is not true",
+                              "e(expect) as (values (%d))" % N, "when s.n = e.expect - c.n")
+CONFIRM = ("when f.n > 0", "lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)")
+APPLY_GUARDS = (RUN, "r.checks = v.before_checks", "r.record = v.before_record", PERSON, EXPECT, COUNT,
+                "set checks = v.after_checks") + CONFIRM
+ROLLBACK_GUARDS = (RUN, "r.checks = v.after_checks", PERSON, EXPECT, COUNT, "set checks = v.before_checks")
+
+
+def body(sql: str) -> str:
+    """The SQL below the file's comment header."""
+    return "".join(ln for ln in sql.splitlines(True) if not ln.startswith("--"))
+
+
+def sql_images(sql: str) -> list:
+    """Each values row's three jsonb literals as the file writes them, parsed: (before record, before checks, after
+    checks)."""
+    got = [json.loads(x.replace("''", "'")) for x in re.findall(r"'((?:[^']|'')*)'::jsonb", sql[sql.index("with v("):])]
+    return [tuple(got[i:i + 3]) for i in range(0, len(got), 3)] if len(got) % 3 == 0 else []
+
+
+def apply_stands(sql: str) -> bool:
+    """The file is the plan: the UPDATE rebuilt from the receipts' images to the byte, each guard clause in it once,
+    and each row's three images the receipt's own."""
+    return (body(sql) == APPLY + "\n" and all(sql.count(g) == 1 for g in APPLY_GUARDS)
+            and sql_images(sql) == [(x["before_image"]["record"], x["before_image"]["checks"], x["after_image"]["checks"])
+                                    for x in plan_rows])
+
+
+def rollback_stands(sql: str) -> bool:
+    """The rollback is the plan's: rebuilt from the same images to the byte (its own comment line on a partial
+    rollback included), each of its guard clauses once, no confirm guard, and the apply's images row for row."""
+    return (sql.endswith("\n" + ROLLBACK + "\n") and all(sql.count(g) == 1 for g in ROLLBACK_GUARDS)
+            and "f.n" not in sql and sql_images(sql) == sql_images(apply_sql))
+
+
+check(apply_stands(apply_sql), "the apply file is the UPDATE rebuilt from the receipts' images, with every guard clause "
+                               "once (the confirm guard among them) and each receipt's after-image inside it")
+check(rollback_stands(rollback_sql),
+      "the rollback file is the rollback rebuilt from the same images: checks back to the before-image only where the "
+      "row still holds the after-image and no person's check, expecting the batch's three rows")
+check(all(a == dict(b, coverage=True) and a != b for _, b, a in sql_images(apply_sql)),
+      "each after-image the UPDATE writes is its before-image with coverage true, nothing else")
+CHANGED_APPLY = {
+    "the run guard dropped": apply_sql.replace(RUN + " and ", ""),
+    "the before-checks guard dropped": apply_sql.replace(" and r.checks = v.before_checks", ""),
+    "the before-record guard dropped": apply_sql.replace(" and r.record = v.before_record", ""),
+    "the person's-check guard dropped": apply_sql.replace("   and " + PERSON + "\n", ""),
+    "expect moved": apply_sql.replace(EXPECT, "e(expect) as (values (%d))" % (N - 1)),
+    "the count test dropped": apply_sql.replace(COUNT, "when true"),
+    "the confirm guard dropped": apply_sql.replace(CONFIRM[0], "when false"),
+    "the confirm guard reads any verdict": apply_sql.replace("lv.verdict = 'confirm' and ", ""),
+    "a before-image moved": apply_sql.replace(NG._values([rebuilt_rows[0]]), NG._values(
+        [dict(rebuilt_rows[0], before_image=dict(rebuilt_rows[0]["before_image"],
+                                                  checks=dict(rebuilt_rows[0]["before_image"]["checks"], invented=False)))])),
+    "a row dropped": apply_sql.replace(NG._values([rebuilt_rows[-1]]), NG._values([rebuilt_rows[-2]])),
+}
+for x in rebuilt_rows:
+    moved = copy.deepcopy(x)
+    moved["after_image"]["checks"]["arithmetic"] = "unstated"
+    CHANGED_APPLY["%s's after-image moved" % x["control_number"]] = apply_sql.replace(NG._values([x]), NG._values([moved]))
+CHANGED_ROLLBACK = {
+    "the rollback's after-checks guard dropped": rollback_sql.replace(" and r.checks = v.after_checks", ""),
+    "the rollback's person's-check guard dropped": rollback_sql.replace("   and " + PERSON + "\n", ""),
+    "the rollback's expect moved": rollback_sql.replace(EXPECT, "e(expect) as (values (%d))" % (N - 1)),
+    "the rollback's count test dropped": rollback_sql.replace(COUNT, "when true"),
+    "the rollback's run guard dropped": rollback_sql.replace(RUN + " and ", ""),
+    "the rollback writes the after-image": rollback_sql.replace("set checks = v.before_checks", "set checks = v.after_checks"),
+}
+for what, sql in CHANGED_APPLY.items():
+    check(sql != apply_sql, "%s: the change lands on the apply file's text" % what)
+    check(not apply_stands(sql), "%s: the test fails on it" % what)
+for what, sql in CHANGED_ROLLBACK.items():
+    check(sql != rollback_sql, "%s: the change lands on the rollback file's text" % what)
+    check(not rollback_stands(sql), "%s: the test fails on it" % what)
+# Each of the five the reader named fails on its guard's own clause, the rebuilt text aside.
+check(CHANGED_ROLLBACK["the rollback's after-checks guard dropped"].count("r.checks = v.after_checks") == 0
+      and CHANGED_ROLLBACK["the rollback's person's-check guard dropped"].count(PERSON) == 0
+      and CHANGED_ROLLBACK["the rollback's expect moved"].count(EXPECT) == 0
+      and CHANGED_APPLY["the confirm guard dropped"].count(CONFIRM[0]) == 0
+      and all(sql_images(CHANGED_APPLY["%s's after-image moved" % x["control_number"]])[x["i"] - 1][2]
+              != x["after_image"]["checks"] for x in rebuilt_rows),
+      "each of the reader's five changes removes the clause, or moves the image, that this test pins")
 check(all(w.plan(write=False)["rows"] == [] for w in PILES.values()), "a second run plans none")
 
 # ── the holds ──
