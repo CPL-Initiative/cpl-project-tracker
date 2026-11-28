@@ -93,3 +93,19 @@ paid reads, rereads, loads and `.apply`, and holds every Supabase call.
   regression pin"; MINOR: a refused program's pinned PDF page would now stage, none today, City College of San
   Francisco 31602, 36964 and 42318 the nearest). The paid read dispatched on a sibling, `claude/s748-readers-coast`
   (`b2687880`; only 43057, sources_from 46008933093, about $0.15).
+- 07:20Z: `keys` stop 2 (`b879a3b8`): plan s748k1 (College of the Canyons 38686, 44273, 45610, `no_hours_read`, the
+  named-gaps wave pass; recall 1,695 right, 0 wrong). The census's gap ranks Sierra 99, Skyline 93, Allan Hancock 87,
+  Mt. San Antonio 83, Marin 71, Golden West 66, Ohlone 65, Cañada 64, mostly no closed list or page not found; 54
+  relisted programs sit in college-named gap files (a census change, no write); only three programs are found and not
+  extracted (San Bernardino Valley 31858, College of the Canyons 37868, San Jose City 22225, about $0.23 together).
+  Split change: `keys` takes Cosumnes River, Alameda, Berkeley City and Lassen for general education unit steps
+  (existing kinds, 28 programs), and College of the Canyons.
+- 07:21Z: San Bernardino Valley's reconcile 46118801512 green; the conductor's live read (07:21:35Z): 221 rows, none
+  checked. A small Fable worker ran keep-better: re-read 5, kept 04894 alone (27-37 against the printed 27-37),
+  restored 4 (`2d4dcc03`).
+- 07:26Z: s748k1's reader (Sonnet): APPLY (the real SQL on a scratch Postgres; MAJOR for the follow-up: the plan's test
+  stays green when a guard is removed; MINOR: 45610 may fit `section_cut_off` better). Clean md5 pre-read 3 of 3. The
+  apply pushed on `claude/s748-apply` (`c368dd0e`), migrate 46121263022.
+- 07:28Z: San Bernardino Valley's reread, force 46118801512, dispatched on `claude/s748-keys-sbvc`. Coastline's paid
+  read 46119872022 green at 07:10Z; 43057 has no live row (live read 07:27:28Z, 141 rows, none checked); a small Fable
+  worker runs keep-better before any load.
