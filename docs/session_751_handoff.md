@@ -98,7 +98,7 @@ rereads, loads and `.apply`, and holds every Supabase call.
   Six free captures running (Skyline 46155715421, Allan Hancock 46155901281, San Mateo 46157242032, Diablo Valley
   46157353221, San Joaquin Delta 46157465447, Gavilan 46157620485). The function deploys from `main`
   (`cpl-chat-deploy.yml`), so the land comes first. To a Fable 5.2 second reader.
-- 15:45Z: the found-pages reader (Fable 5.2): GO WITH (land and deploy; before the paid probe, fix one MAJOR and see a
+- 15:34Z: the found-pages reader (Fable 5.2): GO WITH (land and deploy; before the paid probe, fix one MAJOR and see a
   free Skyline capture file pages). Not refuted: 3,163 filed records rescore the same on both trees and 22,357 filed
   sources stage the same; zero listed fails every pass path; only `[]` beside `true` reads; 0 false finds of 1,453 with
   each subject's own page removed; four guards removed turn 12 checks red. MAJOR: the display build's
