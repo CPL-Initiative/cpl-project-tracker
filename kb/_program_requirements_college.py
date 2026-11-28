@@ -2098,7 +2098,52 @@ def ncl_asks_found(college: str) -> bool:
     return college in ncl_asking()
 
 
-def ncl_found_recall(programs: list[dict], pages: list[dict], filed) -> dict:
+# A CONFIRMED ORACLE ERROR IS NOT COUNTED (Sam, 2026-11-28, r-found-pages-oracle-error-not-counted-sam-2026-11-28):
+# "a confirmed oracle error (the finder picked the right page and the saved record came from the wrong page) no longer
+# counts against the college." The verdicts are data, committed files read by path (NCL_ORACLE_VERDICTS), each a
+# person's or COBIx's judgment of one wrong answer against both pages: verdict "oracle_error" with confidence
+# "confirmed" means both pages were loaded and compared. Such a wrong leaves the wrong count, keyed by college and
+# control number, and stays tested: it is neither right nor wrong, so recall (right / tested) is not raised by it. A
+# probable or unconfirmed verdict, and a real wrong ("wrong_stands"), still count. The record behind a confirmed
+# oracle error is re-read from the right page; until then the account names it under oracle_errors.
+NCL_ORACLE_VERDICTS = (os.path.join(HERE, "found_pages_wrong_verdicts_2026-11-28.json"),)
+
+
+def ncl_oracle_errors(paths=None) -> dict[str, set[str]]:
+    """{college: {control number}} of the wrong answers the committed verdicts confirm as the oracle's error: verdict
+    oracle_error with confidence confirmed, no other. A verdicts file that is missing or does not parse names none."""
+    out: dict[str, set[str]] = {}
+    for path in (NCL_ORACLE_VERDICTS if paths is None else paths):
+        try:
+            with open(path, encoding="utf-8") as fh:
+                rows = json.load(fh).get("verdicts") or []
+        except (OSError, ValueError, AttributeError):
+            continue
+        for v in rows:
+            if (isinstance(v, dict) and v.get("verdict") == "oracle_error" and v.get("confidence") == "confirmed"
+                    and v.get("college") and v.get("control_number")):
+                out.setdefault(v["college"], set()).add(str(v["control_number"]))
+    return out
+
+
+def ncl_recall_tally(tested: int, right: int, not_found: int, not_read: int, wrongs: list[dict],
+                     college: str | None = None, oracle_errors: dict | None = None) -> dict:
+    """ncl_found_recall's account from its counts: a wrong the verdicts confirm as the oracle's error at this college
+    (ncl_oracle_errors, keyed by college and control number) leaves the wrong count and is listed under oracle_errors;
+    it stays tested and is not right. clears: at least NCL_READ_MIN_TESTED tested, recall at least NCL_READ_FLOOR, and
+    no wrong counted. No college names no oracle error."""
+    confirmed = (ncl_oracle_errors() if oracle_errors is None else oracle_errors).get(college, set()) if college else set()
+    excused = [w for w in wrongs if str(w.get("control_number")) in confirmed]
+    counted = [w for w in wrongs if str(w.get("control_number")) not in confirmed]
+    recall = round(right / tested, 3) if tested else None
+    return {"tested": tested, "right": right, "wrong": len(counted), "not_found": not_found, "recall": recall,
+            "wrongs": counted[:20], "oracle_errors": excused, "not_read": not_read, "floor": NCL_READ_FLOOR,
+            "min_tested": NCL_READ_MIN_TESTED,
+            "clears": bool(tested >= NCL_READ_MIN_TESTED and right / tested >= NCL_READ_FLOOR and not counted)}
+
+
+def ncl_found_recall(programs: list[dict], pages: list[dict], filed, college: str | None = None,
+                     oracle_errors: dict | None = None) -> dict:
     """The lookup's recall in the open setting, against answers already held (S750).
 
     SUBJECTS: every closed-list program whose filed record passes as the live table counts it (_passing_filed_rec)
@@ -2112,9 +2157,10 @@ def ncl_found_recall(programs: list[dict], pages: list[dict], filed) -> dict:
     by any program (claimed is empty). With the other programs' pages claimed, the only page left to give a subject
     is its own, so a wrong answer cannot be counted (the S748 reader: "wrong 0" was structural). Here every page is
     a candidate, and a wrong answer is one that names another page than the oracle's.
-    Returns tested, right, wrong, not_found, recall (right / tested), wrongs (each wrong answer), not_read (passing
-    records whose page is not among the pages, untested) and clears: at least NCL_READ_MIN_TESTED tested, recall at
-    least NCL_READ_FLOOR, and none wrong."""
+    Returns tested, right, wrong, not_found, recall (right / tested), wrongs (each wrong answer counted), oracle_errors
+    (each wrong the committed verdicts confirm as the oracle's error at `college`, not counted: ncl_recall_tally),
+    not_read (passing records whose page is not among the pages, untested) and clears: at least NCL_READ_MIN_TESTED
+    tested, recall at least NCL_READ_FLOOR, and no wrong counted."""
     tested = right = not_found = not_read = 0
     wrongs = []
     for prog in programs:
@@ -2136,10 +2182,7 @@ def ncl_found_recall(programs: list[dict], pages: list[dict], filed) -> dict:
         else:
             wrongs.append({"control_number": prog["control_number"], "title": prog.get("title"),
                            "award": prog.get("award"), "found": ans["page"]["url"], "read_from": rec.get("source_url")})
-    recall = round(right / tested, 3) if tested else None
-    return {"tested": tested, "right": right, "wrong": len(wrongs), "not_found": not_found, "recall": recall,
-            "wrongs": wrongs[:20], "not_read": not_read, "floor": NCL_READ_FLOOR, "min_tested": NCL_READ_MIN_TESTED,
-            "clears": bool(tested >= NCL_READ_MIN_TESTED and right / tested >= NCL_READ_FLOOR and not wrongs)}
+    return ncl_recall_tally(tested, right, not_found, not_read, wrongs, college, oracle_errors)
 
 
 def ncl_reads_found(college: str, recall: dict | None) -> bool:
@@ -2217,11 +2260,12 @@ def ncl_file_found(college: str, recs: list[dict], programs: list[dict], pages: 
     it files what it filed before S748."""
     found_read = None
     if ncl_asks_found(college):
-        found_read = ncl_found_recall(programs, ncl_pages(pages, college, reg.get("catalog_year")), filed)
+        found_read = ncl_found_recall(programs, ncl_pages(pages, college, reg.get("catalog_year")), filed, college)
         found_read["reads"] = ncl_reads_found(college, found_read)
-        print("found pages: the lookup finds %d of %d held answers on these pages (wrong %d, not found %d; the floor "
-              "is %.0f%% of at least %d, none wrong): %s"
+        print("found pages: the lookup finds %d of %d held answers on these pages (wrong %d, not found %d, %d the "
+              "oracle's confirmed error; the floor is %.0f%% of at least %d, none wrong): %s"
               % (found_read["right"], found_read["tested"], found_read["wrong"], found_read["not_found"],
+                 len(found_read["oracle_errors"]),
                  NCL_READ_FLOOR * 100, NCL_READ_MIN_TESTED,
                  "the found pages are filed as sources" if found_read["reads"] else "no found page is filed"),
               flush=True)
