@@ -1,0 +1,48 @@
+college,local_subject_code,band,common_code,confidence,found_by,basis
+Allan Hancock College,GEOGR,credit,GEOG,100,Sam Lee,Sam ruling 2026-11-28 untitled-137: Geography -> GEOG fold into sibling; title and code follow Geography.
+Allan Hancock College,HUMAN,credit,COUN,100,Sam Lee,Sam ruling 2026-11-28 untitled-137: Human Services -> COUN fold into sibling; title and code follow Human Services.
+City College of San Francisco,LIS,credit,LIBR,100,Sam Lee,Sam ruling 2026-11-28 untitled-137: Information Research Skills -> LIBR
+College of Marin,H ED,credit,ATTR,100,Sam Lee,Sam ruling 2026-11-28 untitled-137: Sports Medicine -> ATTR
+College of Marin,VOCH,credit,HOTL,100,Sam Lee,"Sam ruling 2026-11-28 untitled-137: Hospitality -> HOTL HOTL, with a later course pass of food-safety courses to CULN."
+College of the Canyons,NC.BUS,credit,BUSI,100,Sam Lee,"Sam ruling 2026-11-28 untitled-137: Noncredit Business -> BUSI BUSI, with a later course pass to ENTR/ACCT."
+College of the Canyons,NC.HLTH,credit,HTEC,100,Sam Lee,"Sam ruling 2026-11-28 untitled-137: Noncredit Health Occupations -> HTEC HTEC, with a later course pass (CPR -> HLTH, trainer/self-defense -> KINE)."
+College of the Canyons,NC.WATR,credit,HORT,100,Sam Lee,Sam ruling 2026-11-28 untitled-137: Green Gardener -> HORT
+Cypress College,ACR,credit,AUTB,100,Sam Lee,Sam ruling 2026-11-28 untitled-137: Auto Collision Repair -> AUTB
+Glendale Community College,ADST,credit,ADDS,100,Sam Lee,"Sam ruling 2026-11-28 untitled-137: AD ST folds into ADST, and both use ADDS. ADST moves from COUN to ADDS (Addiction Paraprofessional Training)."
+Glendale Community College,BASIC,credit,HMEN,100,Sam Lee,Sam ruling 2026-11-28 untitled-137: Basic Sewing -> HMEN
+Glendale Community College,BLS,credit,DSPN,100,Sam Lee,Sam ruling 2026-11-28 untitled-137: Basic Life Skills -> DSPN
+Glendale Community College,CS/IS,credit,ITIS,100,Sam Lee,Sam ruling 2026-11-28 untitled-137: Computer Science and Information Systems -> ITIS fold into sibling; title and code follow Computer Science and Information Systems.
+Glendale Community College,DSL,credit,ENGL,100,Sam Lee,"Sam ruling 2026-11-28 untitled-137: High School Subjects -> ENGL title High School Subjects; subject-level ENGL (11 of 17 courses); course pass by discipline (MATH, GEOG, ARTS)."
+Glendale Community College,LAW,credit,LEGL,100,Sam Lee,"Sam ruling 2026-11-28 untitled-137: High School Law -> LEGL high-school rule: TOP 4930.62 courses file under their own discipline, so LEGL not BSKL."
+Glendale Community College,NCSOT,credit,BSOT,100,Sam Lee,Sam ruling 2026-11-28 untitled-137: Macintosh Basics -> BSOT
+Glendale Community College,POL S,credit,POLS,100,Sam Lee,Sam ruling 2026-11-28 untitled-137: Political Science -> POLS fold into sibling; title and code follow Political Science.
+Glendale Community College,SPECD,credit,DSPN,100,Sam Lee,Sam ruling 2026-11-28 untitled-137: Special Education -> DSPN
+Los Angeles Southwest College,ENG,credit,ENGR,100,Sam Lee,"Sam ruling 2026-11-28 untitled-137: Engineering, General -> ENGR fold into ENG GEN, ENGR + WEXP."
+MiraCosta College,HSWFP,credit,ITIS,100,Sam Lee,Sam ruling 2026-11-28 untitled-137: High School Applied Computer Skills -> ITIS high-school rule: Applied Computer Skills -> ITIS.
+MiraCosta College,NCHAS,credit,OLAD,100,Sam Lee,Sam ruling 2026-11-28 untitled-137: Health and Fitness for Older Adults -> OLAD OLAD; no CDCP chip.
+MiraCosta College,NCPSY,credit,OLAD,100,Sam Lee,Sam ruling 2026-11-28 untitled-137: Lifelong Learning -> OLAD OLAD; no CDCP chip.
+MiraCosta College,NCWRT,credit,ENGL,100,Sam Lee,Sam ruling 2026-11-28 untitled-137: Noncredit Creative Writing -> ENGL
+Napa Valley College,FAMN,credit,GERO,100,Sam Lee,Sam ruling 2026-11-28 untitled-137: Elder Care -> GERO
+North Orange Continuing Education,ACRT,credit,AUTO,100,Sam Lee,"Sam ruling 2026-11-28 untitled-137: Automotive Technology -> AUTO AUTO, with a later course pass of collision courses to AUTB."
+North Orange Continuing Education,CCTR,credit,ITIS,100,Sam Lee,Sam ruling 2026-11-28 untitled-137: Computer Internet -> ITIS
+North Orange Continuing Education,ELEC,credit,CSRV,100,Sam Lee,Sam ruling 2026-11-28 untitled-137: Electronics -> CSRV
+North Orange Continuing Education,ENED,credit,EDUC,100,Sam Lee,Sam ruling 2026-11-28 untitled-137: Environmental Education -> EDUC
+North Orange Continuing Education,GPHY,credit,GEOG,100,Sam Lee,Sam ruling 2026-11-28 untitled-137: Geography -> GEOG
+North Orange Continuing Education,PHSY,credit,PHIL,100,Sam Lee,Sam ruling 2026-11-28 untitled-137: Philosophy -> PHIL
+North Orange Continuing Education,PSYC,credit,GERO,100,Sam Lee,Sam ruling 2026-11-28 untitled-137: Gerontology -> GERO
+North Orange Continuing Education,RSST,credit,NURP,100,Sam Lee,Sam ruling 2026-11-28 untitled-137: Residential Services Specialist -> NURP
+North Orange Continuing Education,SHOP,credit,WWKC,100,Sam Lee,Sam ruling 2026-11-28 untitled-137: Cabinet and Millwork -> WWKC
+San Diego College of Continuing Education,BIOL,credit,BIOL,100,Sam Lee,"Sam ruling 2026-11-28 untitled-137: High School Life Science -> BIOL high-school rule: LIFE SCIENCE 1-2 -> BIOL, not BSKL."
+San Diego College of Continuing Education,ENGE,credit,ENGR,100,Sam Lee,Sam ruling 2026-11-28 untitled-137: Engineering -> ENGR
+San Diego College of Continuing Education,OFBA,credit,SPAN,100,Sam Lee,Sam ruling 2026-11-28 untitled-137: Vocational Spanish -> SPAN
+San Diego College of Continuing Education,PHYN,credit,PHSC,100,Sam Lee,"Sam ruling 2026-11-28 untitled-137: High School Physical Science -> PHSC high-school rule: PHYSICAL SCIENCE 1 -> PHSC, not BSKL."
+Santa Barbara City College,HEAL,credit,HLSN,100,Sam Lee,Sam ruling 2026-11-28 untitled-137: Health and Wellness -> HLSN HLSN; not OLAD (health-and-safety).
+Santa Monica College,BILING,credit,OLAD,100,Sam Lee,Sam ruling 2026-11-28 untitled-137: World Literature for Older Adults -> OLAD OLAD; no CDCP chip.
+Santa Monica College,CT,credit,OLAD,100,Sam Lee,Sam ruling 2026-11-28 untitled-137: The Fix-It Class -> OLAD The Fix-It Class / OLAD; no CDCP chip.
+Santa Monica College,HME EC,credit,HMEN,100,Sam Lee,Sam ruling 2026-11-28 untitled-137: Home Economics -> HMEN HMEN; no CDCP chip.
+Santa Monica College,HUMREL,credit,OLAD,100,Sam Lee,Sam ruling 2026-11-28 untitled-137: Cultures -> OLAD OLAD; no CDCP chip.
+Santa Monica College,KNIT,credit,HMEN,100,Sam Lee,Sam ruling 2026-11-28 untitled-137: Knitting -> HMEN
+Santa Monica College,OCC,credit,OLAD,100,Sam Lee,Sam ruling 2026-11-28 untitled-137: Older Adult Computer Skills -> OLAD OLAD; no CDCP chip.
+Santiago Canyon College,HSOTH,credit,COUN,100,Sam Lee,"Sam ruling 2026-11-28 untitled-137: High School Subjects: Other -> COUN subject-level COUN; course pass by discipline (tutoring IDST, Spanish SPAN+FLNG, leadership COUN)."
+Santiago Canyon College,MUSCE,credit,MUSI,100,Sam Lee,Sam ruling 2026-11-28 untitled-137: Chorale Music -> MUSI high-school rule: Chorale Music -> MUSI.
+West Los Angeles College,BASIC SKILLS,credit,COUN,100,Sam Lee,Sam ruling 2026-11-28 untitled-137: Basic Skills -> COUN COUN (Workforce Prep majority).
