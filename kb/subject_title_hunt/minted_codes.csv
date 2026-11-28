@@ -1,0 +1,102 @@
+mq_discipline,proposed_code,basis,section,in_tail
+Accounting,ACCT,Already the canonical_subj4 for Accounting in discipline_canonical_subj4.json (C-ID ACCT). Not missing.,already_in_canonical,no
+Adapted Computer Technology: Disabled Students Programs and Services,ADCT,DSPS specialist MQ: adapted computer technology. Avoided ACCT (Accounting).,other,no
+Addiction Paraprofessional Training,ADDS,Addiction Paraprofessional Training MQ (C-ID ADS family). ADDS is unused as a canonical.,other,no
+Aeronautics,AERN,"Aeronautics MQ. Avoided AERO, a heavily used Aviation (AVIA) local code.",other,no
+African American Studies,AFAM,Standard 4-letter code for the African American Studies MQ (alongside ETHN/ETHA). AFAM does not collide with a canonical.,used_in_tail,yes
+Agricultural Engineering,AGEN,Agricultural Engineering MQ. AGEN is unused as a canonical.,other,no
+Animal Training and Management,ANTM,Animal Training and Management MQ. ANTM is unused as a canonical.,other,no
+Appliance Repair,APPL,Appliance Repair MQ. APPL is unused as a canonical.,other,no
+Archaeological Technology,ARCT,Archaeological Technology MQ. Avoided ARCH (Architecture).,other,no
+Asian American Studies,ASAM,Matches the C-ID ASAM prefix for the Asian American Studies MQ. Distinct from area-studies ASIA.,used_in_tail,yes
+Athletic Training,ATTR,Already approved in the PE group ruling (Adapted PE / Athletic Training / Athletics). Missing from discipline_canonical_subj4.json.,already_assigned,no
+Banking and Finance,BFIN,Banking and Finance MQ (TOP 0504). BFIN is unused as a canonical; BANK is a local code at some colleges for this same field.,used_in_tail,yes
+Bicycle Repair,BCYC,Bicycle Repair MQ. BCYC is unused as a canonical.,other,no
+Bookbinding,BKBD,Bookbinding MQ. BKBD is unused as a canonical.,other,no
+Building Maintenance,BLDM,Building Maintenance MQ. BLDM is unused as a canonical.,other,no
+Business Education,BUED,Business Education MQ. BUED is unused as a canonical.,other,no
+Business Machine Technology,BMAC,Business Machine Technology MQ. BMAC is unused as a canonical.,other,no
+Cardiovascular Technology,CVTE,Cardiovascular Technology MQ (TOP 1213). CVTE is unused as a canonical. Distinct from SONO and EMST.,used_in_tail,yes
+Ceramic Technology,CERM,"Ceramic Technology MQ (industrial ceramics, not studio art). CERM is unused as a canonical.",other,no
+Citizenship: Noncredit,CTZN,Already assigned in the NC-SMALL ruling (keep CTZN).,already_assigned,no
+Classics,CLAS,Classics MQ. CLAS is unused as a canonical.,used_in_tail,yes
+Coaching,COAC,"Coaching MQ, distinct from Kinesiology and Athletic Training. COAC is unused as a canonical.",other,no
+Community College Counselor of Students with Disabilities,CDSC,Counselor of Disabled Students MQ (distinct from DSPS instructional specialist MQs). CDSC is unused as a canonical.,other,no
+Computer Service Technology,CSRV,Computer Service Technology MQ. CSRV was already the residue signal and does not collide.,used_in_tail,yes
+Counseling: Extended Opportunity,EOPS,EOPS counseling MQ. EOPS is the established local program code for this work and is unused as a canonical.,other,no
+Court Interpreting,CINT,"Court Interpreting MQ, also covering legal/community/medical spoken-language interpreting (TOP 2140). Unused as a canonical. Sign-language interpreting stays SLNG.",used_in_tail,yes
+Deaf and Hearing Impaired: Disabled Students Programs and Services,DHSP,"DSPS specialist MQ. Avoided DEAF, a heavily used American Sign Language (SLNA) local code.",other,no
+Developmental Disabilities: Disabled Students Programs and Services,DDDS,DSPS specialist MQ for developmental disabilities. DDDS is unused as a canonical.,other,no
+Dietetic Technician,DTTC,"Dietetic Technician MQ, distinct from Nutritional Science/Dietetics (FDNT). DTTC is unused as a canonical.",used_in_tail,yes
+Ecology,ECOL,"Ecology MQ. Minted for the catalog; Sam already ruled the residue title 'Ecology' (and environmental/sustainability analogs) to BIOL, and those ruled titles stay BIOL.",other,no
+Electromicroscopy,ELMC,Electromicroscopy MQ. ELMC is unused as a canonical.,other,no
+Electroplating,ELPL,Electroplating MQ. ELPL is unused as a canonical.,other,no
+Engineering Support,ENSP,Engineering Support MQ. ENSP was already the title-signal code in the residue file and does not collide.,used_in_tail,yes
+Estimating,ESTM,Estimating MQ (construction/industrial estimating). ESTM is unused as a canonical.,other,no
+Fabric Care,FBRC,Fabric Care MQ. FBRC is unused as a canonical.,other,no
+Flight Attendant Training,FLTA,Flight Attendant Training MQ. FLTA is unused as a canonical.,other,no
+Fluid Mechanics Technology,FLMT,Fluid Mechanics Technology MQ. FLMT is unused as a canonical.,other,no
+Folk Dance,FLDN,"Folk Dance MQ, distinct from Dance (DANC). FLDN is unused as a canonical.",other,no
+Health Services Director/Health,HSDR,Health Services Director/Health MQ. HSDR is unused as a canonical.,other,no
+Health and Safety: Noncredit,HLSN,Already assigned in the NC-SMALL ruling (keep HLSN).,already_assigned,no
+Home Economics: Noncredit,HECN,"Home Economics: Noncredit MQ, distinct from credit FCSH. HECN is unused as a canonical.",other,no
+Homeland Security,HLMS,Homeland Security MQ. Avoided HLSN (Health and Safety noncredit). HLMS is unused as a canonical.,other,no
+Hotel and Motel Services,HOTL,"Hotel and Motel Services MQ (lodging). Avoided HOSP, already used locally under CULN for hospitality in general.",used_in_tail,yes
+Industrial Design,INDD,"Industrial Design MQ. Avoided IDES, which is a heavily used Interior Design (INTD) local code.",used_in_tail,yes
+Insurance,INSR,Insurance MQ (TOP 0512). INSR is unused as a canonical.,used_in_tail,yes
+Janitorial Services,JANT,Janitorial Services MQ. JANT is unused as a canonical.,other,no
+Jewelry,JEWL,Jewelry MQ. JEWL is unused as a canonical.,other,no
+Labor Relations,LREL,"Labor Relations MQ, distinct from Industrial Relations (LABR). LREL is unused as a canonical.",other,no
+Learning Disabilities: Disabled Student Programs and Services,LDDS,DSPS specialist MQ for learning disabilities instruction. LDDS is unused as a canonical.,other,no
+Learning Disabilities: Specialist,LDSP,"Learning Disabilities Specialist MQ, distinct from the DSPS instructional MQ and from LSKL. LDSP is unused as a canonical.",other,no
+Linguistics,LING,"Linguistics MQ. Minted for the catalog; Sam already ruled the residue title 'Linguistics' to ENGL, and that ruled title stays ENGL.",other,no
+Locksmithing,LOCK,Locksmithing MQ. LOCK is unused as a canonical.,other,no
+Marine Diving Technology,MDIV,Marine Diving Technology MQ. MDIV is unused as a canonical.,other,no
+Marine Engine Technology,MREN,Marine Engine Technology MQ. Avoided MENG (reads as mechanical/engineering). MREN is unused as a canonical.,other,no
+Martial Arts/Self-Defense,MASD,"Martial Arts/Self-Defense MQ. Avoided MART, which appears as a local Art/Multimedia variant. MASD is unused as a canonical.",other,no
+Mass Communication,MCOM,"Standard code for the Mass Communication MQ (distinct from COMM, JOUR, FTVE). MCOM is unused as a canonical.",used_in_tail,yes
+Materials Testing Technology,MTST,Materials Testing Technology MQ. MTST is unused as a canonical.,other,no
+Mathematics-Basic Skills: Noncredit,MBSK,"Mathematics-Basic Skills: Noncredit MQ, distinct from MATH and from BSKL. MBSK is unused as a canonical.",other,no
+Medical Instrument Repair,MDIR,Medical Instrument Repair MQ. MDIR is unused as a canonical.,other,no
+Military Studies,MILS,"Military Studies / ROTC / Aerospace Studies MQ (TOP 1801). Avoided AERO, which is a heavily used Aviation local code.",used_in_tail,yes
+Mining and Metallurgy,METL,Mining and Metallurgy MQ. METL is unused as a canonical.,used_in_tail,yes
+Motorcycle Repair,MOTO,Motorcycle Repair MQ. MOTO is unused as a canonical.,other,no
+Music Management,MMGT,"Music Management MQ, distinct from Music (MUSI) and Management (MGMT). MMGT is unused as a canonical.",other,no
+Music Merchandising,MMCH,Music Merchandising MQ. MMCH is unused as a canonical.,other,no
+Musical Instrument Repair,MIRE,Musical Instrument Repair MQ. MIRE is unused as a canonical.,other,no
+Nanotechnology,NANO,Nanotechnology MQ. NANO is unused as a canonical.,other,no
+Nursing Science/Clinical Practice,NSCP,"Nursing Science/Clinical Practice MQ, distinct from Nursing (NRSR). NSCP is unused as a canonical.",other,no
+Peace Studies,PCST,"Peace Studies MQ. Avoided PEAC, which is a heavily used PE-Activity (Kinesiology) local code (~183).",used_in_tail,yes
+Photographic Technology/ Commercial Photography,CPHT,"Photographic Technology / Commercial Photography MQ, distinct from Photography (PHOT). Avoided PHTC, which appears under both PHOT and PHMT. CPHT is unused as a canonical.",other,no
+Physical Disabilities: Disabled Student Programs and Services,PDDS,DSPS specialist MQ for physical disabilities. PDDS is unused as a canonical.,other,no
+Physical Education,PHED,"Physical Education MQ, distinct from Kinesiology (KINE) and from PEDS. PHED is the established local PE code (same meaning, not a collision with another field). Tail PE rows already ruled to KINE stay on KINE.",other,no
+Piano Tuning and Repair,PTUN,Piano Tuning and Repair MQ. PTUN is unused as a canonical.,other,no
+Plastics,PLST,Plastics MQ. PLST is unused as a canonical.,other,no
+Printing Technology,PRNT,Printing Technology MQ (TOP 0936 Printing and Lithography). PRNT is unused as a canonical.,used_in_tail,yes
+Private Security,PSEC,"Private Security MQ, distinct from Public Safety (PUBS). PSEC is unused as a canonical.",other,no
+Prosthetics and Orthotics,PRTH,Prosthetics and Orthotics MQ. PRTH is unused as a canonical.,other,no
+Public Relations,PUBR,Public Relations MQ. PUBR is unused as a canonical.,other,no
+Radiation Therapy,RDTH,"Radiation Therapy MQ, distinct from Radiological Technology (RADT). RDTH is unused as a canonical.",other,no
+Reading-Basic Skills: Noncredit,RBSK,"Reading-Basic Skills: Noncredit MQ, distinct from READ and BSKL. RBSK is unused as a canonical.",other,no
+Registered Behavior Technician,RBTC,Registered Behavior Technician MQ. RBTC is unused as a canonical.,used_in_tail,yes
+Rehabilitation Technician,RHAB,Rehabilitation Technician MQ. RHAB is unused as a canonical.,used_in_tail,yes
+Religious Studies,RLST,"Religious Studies MQ. Minted for the catalog; Sam already ruled the residue title 'Religious Studies' (and religion analogs) to PHIL, and those ruled titles stay PHIL.",other,no
+Respiratory Technician,RSTT,"Respiratory Technician MQ, distinct from Respiratory Technologies (RSPT). RSTT is unused as a canonical.",other,no
+Retailing,RETL,Retailing MQ. RETL is unused as a canonical.,used_in_tail,yes
+Sanitation and Public Health Technology,SPHT,Sanitation and Public Health Technology MQ. SPHT is unused as a canonical.,other,no
+Search and Rescue,SARC,Search and Rescue MQ. SARC is unused as a canonical.,other,no
+Sheet Metal,SHME,Established local/proposed code for the Sheet Metal MQ (TOP 0956.40). Not a canonical and not used for another discipline.,used_in_tail,yes
+Ship and Boat Building and Repair,SHPB,Ship and Boat Building and Repair MQ. SHPB is unused as a canonical.,other,no
+Shoe Rebuilding,SHRB,Shoe Rebuilding MQ. SHRB is unused as a canonical.,other,no
+Small Engine Mechanics,SMEN,Small Engine Mechanics MQ. SMEN is unused as a canonical.,other,no
+Specialized Instruction,SPIN,Specialized Instruction MQ. SPIN is unused as a canonical.,other,no
+Specialized Instruction: Vocational Noncredit,SPVN,Specialized Instruction: Vocational Noncredit MQ. SPVN is unused as a canonical.,other,no
+Speech Communication,COMM,"Same official discipline as Communication Studies (canonical COMM); SPCH is a heavily used local variant of COMM. Listed as an alias, not a new twin code.",alias_of_existing,no
+Speech Language Pathology: Disabled Student Programs and Services,SLPD,"DSPS specialist MQ, distinct from Speech Language Pathology (SLPA). SLPD is unused as a canonical.",other,no
+Supply Chain Technology,SCLT,Supply Chain Technology MQ. SCLT is unused as a canonical.,used_in_tail,yes
+Telecommunication Technology,TCOM,Telecommunication Technology MQ (TOP 0934.30). Avoided TELE as too generic; TCOM is unused as a canonical.,used_in_tail,yes
+Theater Arts,THTR,"Same official discipline as Drama/Theater Arts (canonical THTR). Listed as an alias, not a new twin code.",alias_of_existing,no
+Travel Services,TOUR,"Travel Services MQ (TOP 3009). TOUR is unused as a canonical. Avoided HOSP, which is filed under CULN.",used_in_tail,yes
+Vision Care Technology,VSCT,Vision Care Technology MQ. VSCT is unused as a canonical.,other,no
+Watch and Clock Repair,WCLK,Watch and Clock Repair MQ. WCLK is unused as a canonical.,other,no
+Writing-Basic Skills: Noncredit,WBSK,"Writing-Basic Skills: Noncredit MQ, distinct from ENGL and BSKL. WBSK is unused as a canonical.",other,no

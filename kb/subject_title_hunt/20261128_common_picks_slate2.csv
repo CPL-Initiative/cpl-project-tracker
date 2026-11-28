@@ -1,0 +1,218 @@
+college,local_subject_code,band,common_code,confidence,found_by,basis
+Allan Hancock College,SPCOM,credit,COMM,80,COBI,title + TOP COMM
+Allan Hancock College,VEN,credit,AGPR,97,COBI,M-ID AGPR
+American River College,CISA,credit,BSOT,97,COBI,M-ID BSOT
+American River College,DESGN,credit,DRAF,97,COBI,M-ID DRAF
+American River College,IDES,credit,INTD,97,COBI,M-ID INTD
+American River College,PROPTX,credit,BUSI,97,COBI,TOP BUSI
+Antelope Valley College,AFAB,credit,AVIA,97,COBI,TOP AVIA
+Antelope Valley College,ANDI,credit,WELD,97,COBI,M-ID WELD
+Antelope Valley College,ELTE,credit,ELET,97,COBI,title ELET
+Antelope Valley College,IMTA,credit,MANU,97,COBI,M-ID MANU
+Bakersfield College,ELET,credit,ELET,80,COBI,title + code ELET
+Bakersfield College,FDST,credit,AGRI,97,COBI,TOP AGRI
+Butte College,LIS,credit,LIBR,80,COBI,title + TOP LIBR
+Cañada College,PALT,credit,INDT,97,COBI,M-ID INDT
+Cañada College,WORK,credit,WEXP,96,COBI,title WEXP
+Cerro Coso Community College,EMTC,credit,EMST,97,COBI,title EMST
+Chabot College,GEOS,credit,GEOL,80,COBI,title + TOP + M-ID GEOL
+Chabot College,LIBS,credit,LIBR,80,COBI,title + TOP LIBR
+Chabot College,MURT,credit,MUSI,80,COBI,TOP MUSI
+Chaffey College,CISGAME,credit,ITIS,80,COBI,TOP ITIS
+Citrus College,GAME,credit,MULT,97,COBI,M-ID MULT
+City College of San Francisco,ECGT,credit,HLTH,97,COBI,M-ID HLTH
+City College of San Francisco,LBCS,credit,LABR,97,COBI,M-ID LABR
+Clovis Community College,HCA,credit,HTEC,97,COBI,title HTEC
+Clovis Community College,WKEXP,credit,WEXP,96,COBI,title WEXP
+Coalinga College,COM,credit,COMM,80,COBI,title + TOP + M-ID COMM
+Coalinga College,FSS,credit,AGRI,97,COBI,TOP AGRI
+Coalinga College,SW,credit,COUN,96,COBI,TOP COUN
+College of Alameda,HLTOC,credit,HLTH,97,COBI,M-ID HLTH
+College of San Mateo,PNPA,credit,PUBS,97,COBI,M-ID PUBS
+College of the Desert,BUFI,credit,BUSI,97,COBI,TOP BUSI
+College of the Desert,G,credit,GEOL,80,COBI,title + TOP + M-ID GEOL
+College of the Desert,GOLF,credit,FCSH,97,COBI,M-ID FCSH
+College of the Desert,ICS,credit,FIRE,97,COBI,TOP FIRE
+College of the Desert,MC,credit,MCOM,97,COBI,title MCOM
+College of the Desert,RDG,credit,READ,83,COBI,title READ
+College of the Redwoods,REC,credit,RECR,97,COBI,title RECR
+College of the Sequoias,REC,credit,RECR,97,COBI,title RECR
+College of the Siskiyous,PEFI,credit,KINE,80,COBI,title + TOP KINE
+Columbia College,ELL,credit,ESOL,97,COBI,TOP ESOL
+Columbia College,TUTOR,credit,EDUC,97,COBI,TOP EDUC
+Compton College,CH,credit,HLTH,97,COBI,TOP HLTH
+Contra Costa College,COOP,credit,WEXP,96,COBI,title WEXP
+Contra Costa College,LIBST,credit,LIBR,80,COBI,title + TOP LIBR
+Copper Mountain College,G,credit,GEOL,80,COBI,title + TOP GEOL
+Copper Mountain College,SP,credit,COMM,80,COBI,title + TOP + M-ID COMM
+Copper Mountain College,SW,credit,COUN,96,COBI,TOP COUN
+Copper Mountain College,WEG,credit,WEXP,97,COBI,M-ID WEXP
+Cosumnes River College,CISA,credit,BSOT,97,COBI,M-ID BSOT
+Cosumnes River College,ESLP,credit,ESOL,97,COBI,TOP ESOL
+Cosumnes River College,HMONG,credit,FLNG,97,COBI,TOP FLNG
+Cosumnes River College,SONOG,credit,SONO,80,COBI,title + TOP SONO
+Cuesta College,AVMT,credit,AVIA,97,COBI,M-ID AVIA
+Cuesta College,PHLB,credit,HTEC,97,COBI,TOP HTEC
+Cuesta College,REC,credit,RECR,97,COBI,title RECR
+Cuyamaca College,PDSS,credit,IDST,97,COBI,M-ID IDST
+Cuyamaca College,SW,credit,COUN,97,COBI,TOP COUN
+Cypress College,REC,credit,RECR,97,COBI,title RECR
+De Anza College,EDAC,credit,IDST,97,COBI,M-ID IDST
+Diablo Valley College,MUSX,credit,MUSI,80,COBI,title + TOP MUSI
+East Los Angeles College,ENV,credit,ARCH,97,COBI,TOP ARCH
+East Los Angeles College,PUB REL,credit,PREL,97,COBI,title PREL
+East Los Angeles College,READING,credit,READ,97,COBI,title READ
+El Camino College,APHY,credit,BIOL,97,COBI,TOP BIOL
+Folsom Lake College,ENGLB,credit,ENGL,96,COBI,TOP ENGL
+Folsom Lake College,ESLP,credit,ESOL,96,COBI,TOP ESOL
+Fresno City College,AEROST,credit,AERO,97,COBI,M-ID AERO
+Fresno City College,DRAFT,credit,DRAF,97,COBI,title DRAF
+Fresno City College,HMONG,credit,FLNG,97,COBI,TOP FLNG
+Fresno City College,MILSC,credit,MILS,97,COBI,M-ID MILS
+Fresno City College,PUNJABI,credit,FLNG,97,COBI,TOP FLNG
+Fresno City College,REC,credit,RECR,97,COBI,title RECR
+Fullerton College,IDES,credit,INTD,97,COBI,M-ID INTD
+Glendale Community College,OA,credit,BSOT,80,COBI,title + TOP BSOT
+Golden West College,COOP,credit,WEXP,96,COBI,title WEXP
+Grossmont College,CVTE,credit,CVTC,97,COBI,title CVTC
+Grossmont College,PDEO,credit,COUN,80,COBI,title + TOP COUN
+Imperial Valley College,ELTR,credit,ELET,97,COBI,M-ID ELET
+Imperial Valley College,ELTT,credit,ELET,97,COBI,M-ID ELET
+Imperial Valley College,PLNT,credit,IMNT,97,COBI,M-ID IMNT
+Imperial Valley College,SW,credit,COUN,96,COBI,TOP COUN
+Irvine Valley College,ESS,credit,IDST,97,COBI,M-ID IDST
+Irvine Valley College,RD,credit,READ,49,COBI,title READ
+Lake Tahoe Community College,CMU,credit,MUSI,80,COBI,title + TOP MUSI
+Lake Tahoe Community College,MOA,credit,HTEC,80,COBI,TOP HTEC
+Laney College,M/SVN,credit,BUSI,80,COBI,title + TOP BUSI
+Las Positas College,RADS,credit,INDT,97,COBI,M-ID INDT
+Lassen College,COT,credit,BSOT,97,COBI,TOP BSOT
+Lassen College,GS,credit,MACH,97,COBI,TOP MACH
+Lemoore College,COM,credit,COMM,80,COBI,title + TOP + M-ID COMM
+Lemoore College,SW,credit,COUN,96,COBI,TOP COUN
+Long Beach City College,CDFDC,credit,CDEV,97,COBI,TOP CDEV
+Long Beach City College,DRAFT,credit,DRAF,96,COBI,title DRAF
+Los Angeles City College,ASIAN,credit,ETHS,96,COBI,TOP ETHS
+Los Angeles City College,PUB REL,credit,PREL,97,COBI,title PREL
+Los Angeles Harbor College,GAD,credit,MULT,97,COBI,M-ID MULT
+Los Angeles Harbor College,LRNFDTN,credit,IDST,97,COBI,M-ID IDST
+Los Angeles Harbor College,PUB REL,credit,PREL,97,COBI,title PREL
+Los Angeles Mission College,DRAFT,credit,DRAF,97,COBI,title DRAF
+Los Angeles Mission College,GAD,credit,MULT,97,COBI,M-ID MULT
+Los Angeles Pierce College,ENV,credit,ARCH,97,COBI,TOP ARCH
+Los Angeles Pierce College,PUB REL,credit,PREL,97,COBI,title PREL
+Los Angeles Southwest College,OCEANO,credit,GEOL,97,COBI,TOP GEOL
+Los Angeles Southwest College,READING,credit,READ,97,COBI,title READ
+Los Angeles Trade-Technical College,DRAFT,credit,DRAF,97,COBI,title DRAF
+Los Angeles Trade-Technical College,WASTE,credit,ENVS,97,COBI,TOP ENVS
+Los Angeles Valley College,CO INFO,credit,ITIS,97,COBI,TOP ITIS
+Los Angeles Valley College,COOP ED,credit,WEXP,97,COBI,M-ID WEXP
+Los Angeles Valley College,DEV COM,credit,READ,97,COBI,M-ID READ
+Los Angeles Valley College,JEWISH,credit,ETHS,97,COBI,TOP ETHS
+Los Medanos College,MANGT,credit,BUSI,80,COBI,title + TOP BUSI
+Los Medanos College,WRKX,credit,WEXP,97,COBI,title WEXP
+Madera College,WKEXP,credit,WEXP,96,COBI,title WEXP
+Mendocino College,CLO,credit,FASH,97,COBI,TOP FASH
+Mendocino College,EGR,credit,ENGR,83,COBI,title ENGR
+Merced College,DRON,credit,ITIS,80,COBI,TOP ITIS
+Merced College,EDIT,credit,EDTC,97,COBI,M-ID EDTC
+Merced College,HMNG,credit,FLNG,97,COBI,TOP FLNG
+Merced College,TUTR,credit,EDUC,96,COBI,TOP EDUC
+Merritt College,MEDAS,credit,HTEC,80,COBI,title + TOP HTEC
+MiraCosta College,WKEX,credit,WEXP,96,COBI,title WEXP
+Mission College,INF,credit,CULN,49,COBI,TOP CULN
+Mission College,REA,credit,NRSR,97,COBI,title NRSR
+Modesto Junior College,AGEC,credit,AGRI,97,COBI,title AGRI
+Modesto Junior College,AUBDY,credit,AUTB,97,COBI,M-ID AUTB
+Modesto Junior College,EASCI,credit,GEOL,97,COBI,title GEOL
+Modesto Junior College,ENSCI,credit,BIOL,80,COBI,title + TOP BIOL
+Modesto Junior College,HUMSR,credit,COUN,80,COBI,title + TOP COUN
+Modesto Junior College,REC,credit,RECR,97,COBI,title RECR
+Moorpark College,EATM,credit,AGRI,97,COBI,TOP AGRI
+Moorpark College,GR,credit,ARTS,80,COBI,title + TOP ARTS
+Mt. San Antonio College,APIS,credit,ETHS,80,COBI,title + TOP ETHS
+Mt. San Antonio College,BUSO,credit,BUSI,97,COBI,TOP BUSI
+Mt. San Antonio College,IDE,credit,DRAF,97,COBI,M-ID DRAF
+Mt. San Antonio College,LCOM,credit,IDST,97,COBI,M-ID IDST
+Mt. San Jacinto College,CAPP,credit,BSOT,97,COBI,TOP BSOT
+Mt. San Jacinto College,LEAD,credit,BUSI,96,COBI,title BUSI
+Mt. San Jacinto College,OTEC,credit,BSOT,80,COBI,title + TOP BSOT
+Mt. San Jacinto College,WINE,credit,AGPR,97,COBI,M-ID AGPR
+Napa Valley College,VWT,credit,AGPR,97,COBI,M-ID AGPR
+Norco College,AHS,credit,ARTS,97,COBI,TOP ARTS
+Ohlone College,MM,credit,MULT,97,COBI,M-ID MULT
+Orange Coast College,ARLN,credit,AVIA,97,COBI,TOP AVIA
+Orange Coast College,CVT,credit,CVTC,97,COBI,title CVTC
+Orange Coast College,HTEL,credit,CULN,80,COBI,title + TOP CULN
+Orange Coast College,LRNG,credit,IDST,97,COBI,M-ID IDST
+Palo Verde College,SPE,credit,COMM,80,COBI,title + TOP + M-ID COMM
+Palomar College,MCS,credit,ETHS,97,COBI,TOP ETHS
+Pasadena City College,ARMN,credit,FLNG,97,COBI,TOP FLNG
+Pasadena City College,ELTN,credit,ELET,97,COBI,TOP ELET
+Pasadena City College,FLNG,credit,FLNG,80,COBI,TOP + code FLNG
+Porterville College,ERSC,credit,GEOL,97,COBI,title GEOL
+Reedley College,WGSS,credit,ETHS,80,COBI,title + TOP ETHS
+Reedley College,WKEXP,credit,WEXP,96,COBI,title WEXP
+Riverside City College,AHS,credit,ARTS,97,COBI,TOP ARTS
+Riverside City College,ALR,credit,READ,97,COBI,M-ID READ
+Sacramento City College,ATCAD,credit,AVIA,97,COBI,M-ID AVIA
+Sacramento City College,CHEMT,credit,INDT,97,COBI,M-ID INDT
+Sacramento City College,CHW,credit,HLTH,97,COBI,M-ID HLTH
+Sacramento City College,CISA,credit,BSOT,97,COBI,M-ID BSOT
+Sacramento City College,CNC,credit,MACH,97,COBI,TOP MACH
+Sacramento City College,ESLP,credit,ESOL,96,COBI,TOP ESOL
+Sacramento City College,GERON,credit,GERO,97,COBI,title GERO
+Sacramento City College,MODL,credit,MULT,97,COBI,M-ID MULT
+Sacramento City College,NDT,credit,WELD,97,COBI,M-ID WELD
+Sacramento City College,OPT,credit,HLTH,97,COBI,M-ID HLTH
+Sacramento City College,TGLG,credit,FLNG,97,COBI,title FLNG
+Saddleback College,CIMA,credit,ITIS,80,COBI,TOP ITIS
+Saddleback College,CMT,credit,INDT,97,COBI,M-ID INDT
+Saddleback College,MST,credit,INDT,97,COBI,M-ID INDT
+Saddleback College,PHLB,credit,HTEC,96,COBI,TOP HTEC
+Saddleback College,PRSN,credit,FLNG,97,COBI,title FLNG
+San Bernardino Valley College,OSHA,credit,OSHA,97,COBI,code OSHA
+San Diego City College,ELDT,credit,ELET,97,COBI,M-ID ELET
+San Diego City College,HEAN,credit,HTEC,97,COBI,TOP HTEC
+San Diego City College,LABR,credit,LABR,97,COBI,code LABR
+San Diego City College,SDGE,credit,ELEC,97,COBI,M-ID ELEC
+San Diego City College,TECI,credit,INDT,97,COBI,M-ID INDT
+San Diego City College,TROL,credit,INDT,97,COBI,M-ID INDT
+San Diego Mesa College,NDTE,credit,HLTH,97,COBI,M-ID HLTH
+San Diego Mesa College,PHLB,credit,HTEC,96,COBI,TOP HTEC
+San Diego Miramar College,DFLM,credit,FTVE,97,COBI,TOP FTVE
+San Joaquin Delta College,E M,credit,INDT,97,COBI,M-ID INDT
+San Jose City College,AIR CONDITIONING (AIRC),credit,HVAC,97,COBI,TOP HVAC
+San Jose City College,HEALTH EDUCATION (HED),credit,HLTH,97,COBI,title HLTH
+San Jose City College,HUMANITIES (HUMNT),credit,HUMA,97,COBI,title HUMA
+San Jose City College,LIBRARY STUDIES (LIB),credit,LIBR,80,COBI,title + TOP LIBR
+Santa Ana College,BANK,credit,BUSI,97,COBI,TOP BUSI
+Santa Ana College,POLT,credit,POLS,97,COBI,title POLS
+Santa Monica College,PERSIN,credit,FLNG,97,COBI,title FLNG
+Santa Monica College,SMM,credit,ENVS,97,COBI,M-ID ENVS
+Santa Rosa Junior College,DE,credit,DENT,97,COBI,TOP DENT
+Santa Rosa Junior College,HLE,credit,HLTH,80,COBI,title + TOP HLTH
+Santa Rosa Junior College,INDE,credit,INTD,97,COBI,M-ID INTD
+Santa Rosa Junior College,KAQUA,credit,KINE,80,COBI,title + TOP KINE
+Santiago Canyon College,PHLT,credit,ENVS,97,COBI,M-ID ENVS
+Sierra College,NRSA,credit,NRSR,80,COBI,title + TOP NRSR
+Skyline College,WORK,credit,WEXP,96,COBI,title WEXP
+Solano Community College,FLNG,credit,FLNG,80,COBI,TOP + code FLNG
+Taft College,EDTC,credit,EDTC,80,COBI,title + code EDTC
+Taft College,PETC,credit,INDT,97,COBI,M-ID INDT
+Ventura College,CDL,credit,IDST,97,COBI,M-ID IDST
+Victor Valley College,CARDEV,credit,COUN,80,COBI,title + TOP COUN
+Victor Valley College,CHEMH,credit,CHEM,70,COBI,TOP CHEM
+Victor Valley College,CONTCH,credit,CNST,80,COBI,title + TOP CNST
+Victor Valley College,ELS,credit,ESOL,49,COBI,TOP ESOL
+Victor Valley College,HISTH,credit,HIST,85,COBI,TOP HIST
+Victor Valley College,RESPIRATORY THERAPY,credit,RSPT,80,COBI,title + TOP RSPT
+West Valley College,LRSV,credit,IDST,97,COBI,M-ID IDST
+West Valley College,SJST,credit,ETHS,80,COBI,title + TOP ETHS
+Woodland Community College,SPECH,credit,COMM,80,COBI,title + TOP + M-ID COMM
+Yuba College,BCA,credit,BSOT,97,COBI,TOP BSOT
+Yuba College,DRAFT,credit,DRAF,97,COBI,title DRAF
+Yuba College,MCOMM,credit,FTVE,80,COBI,title FTVE
+Yuba College,NTRSC,credit,ENVR,97,COBI,M-ID ENVR
+Yuba College,SPECH,credit,COMM,80,COBI,title + TOP + M-ID COMM
+Yuba College,WORK,credit,WEXP,96,COBI,title WEXP
